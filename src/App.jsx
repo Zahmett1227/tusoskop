@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import SubjectCard from './components/SubjectCard';
 import { TUS_DATA } from './data/tusData';
 import { SUBJECTS } from './data/subjects';
+import TopicTracker from './components/TopicTrackerView';
 
 export default function App() {
   const [view, setView] = useState('dashboard');
@@ -94,14 +95,21 @@ export default function App() {
             </section>
           ))}
 
-          <div className="mt-10 text-center">
-            <button
-              onClick={() => setView('suggestions')}
-              className="px-6 py-3 rounded-2xl bg-emerald-500 text-white font-bold hover:opacity-90"
-            >
-              2027/1 TUS 1.'si Tulu Paşa'dan altın değerinde Öneriler
-            </button>
-          </div>
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+  <button
+    onClick={() => setView('suggestions')}
+    className="px-6 py-3 rounded-2xl bg-emerald-500 text-white font-bold hover:opacity-90"
+  >
+    Öneriler
+  </button>
+
+  <button
+    onClick={() => setView('tracker')}
+    className="px-6 py-3 rounded-2xl bg-slate-800 text-white font-bold hover:bg-slate-700"
+  >
+    Konu Takip
+  </button>
+</div>
         </div>
       </div>
     );
@@ -135,6 +143,9 @@ export default function App() {
       </div>
     );
   }
+  if (view === 'tracker') {
+  return <TopicTracker onBack={goDashboard} />;
+}
 
   if (view === 'summary') {
     return (
