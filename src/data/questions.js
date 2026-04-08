@@ -4414,6 +4414,4614 @@ export const QUESTIONS = [
     ],
     correct: 2,
     exp: "Hormon sinyal iletimi klasik TUS biyokimya bilgisidir. Glukagon (ve Epinefrin/Adrenalin), zardaki Gs-proteinine kenetli reseptöre bağlanır. Gs, Adenilat Siklazı aktive eder. Adenilat siklaz ATP'den 'cAMP (Siklik AMP)' üretir. Hücrede cAMP miktarının artması, cAMP-bağımlı protein kinaz olan 'Protein Kinaz A (PKA)'nın inaktif alt ünitelerinden kurtulup aktifleşmesine neden olur. PKA da gider fosforilaz kinazı fosforiller, o da glikojen fosforilazı fosforilleyerek glikojeni parçalar (glukoz kana verilir)."
+  },
+    {
+    id: 277,
+    ders: "Genel Cerrahi",
+    konu: "Asit Baz Bozuklukları",
+    diff: 4,
+    q: "Elli beş yaşında erkek hasta, son 1 haftadır devam eden fışkırır tarzda kusma ve kilo kaybı şikayetiyle acile başvuruyor. Özgeçmişinde uzun süredir devam eden peptik ülser öyküsü olan hastanın fizik muayenesinde turgor ve tonus azalmış (dehidrate) saptanıyor. Arteriyel kan gazında pH: 7.54, pCO2: 48 mmHg, HCO3: 36 mEq/L saptanıyor. İdrar klor düzeyi < 10 mEq/L'dir. Mide çıkış obstrüksiyonuna bağlı gelişen bu asit-baz bozukluğunun (metabolik alkaloz) böbrekler tarafından düzeltilemeyip 'sürdürülmesine (idame ettirilmesine)' neden olan temel fizyopatolojik mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Kusma ile kaybedilen potasyumun tübüler sekresyonu artırması",
+      "Hipovolemiye sekonder aktive olan Renin-Anjiyotensin-Aldosteron sisteminin (RAAS), sodyumu geri emerken idrara H+ ve K+ pompalaması",
+      "Klor kaybına bağlı olarak makula densa'nın tübüloglomerüler feedback'i durdurması",
+      "Hipoksinin proksimal tübülde laktat üretimini artırması",
+      "Artmış pCO2 seviyelerinin solunum merkezini deprese etmesi"
+    ],
+    correct: 1,
+    exp: "Vaka, mide sıvısı (HCl) kaybına bağlı gelişen Hipokloremik Hipokalemik Metabolik Alkalozdur. Böbreğin normalde fazla bikarbonatı idrarla atarak bu alkalozu düzeltmesi gerekir. ANCAK hasta kusmaya bağlı şiddetli 'hipovolemik (susuz)' kalmıştır. Vücut hacmi korumak için Aldosteron salgılar. Aldosteron, böbrekten sodyumu (ve suyu) zorla geri emerken, karşılığında idrara zorunlu olarak Potasyum (K+) ve Hidrojen (H+) atar. Zaten alkalozda olan vücut, hacmi korumak uğruna daha çok asit (H+) kaybeder ve alkaloz körüklenir (Kontraksiyon alkalozu). Tedavi izotonik (NaCl) sıvı vererek hipovolemiyi ve klor açığını kapatmaktır."
+  },
+  {
+    id: 278,
+    ders: "Genel Cerrahi",
+    konu: "Asit Baz Bozuklukları",
+    diff: 5,
+    q: "Atriyal fibrilasyon öyküsü olan 75 yaşındaki kadın hasta, aniden başlayan şiddetli ve diffüz karın ağrısı ile acile getiriliyor. Muayenede batın defans ve rebound vermiyor ancak hastanın ağrısı fizik bulgularla orantısız derecede şiddetlidir (pain out of proportion). Kan gazında pH: 7.22, pCO2: 30 mmHg, HCO3: 12 mEq/L; biyokimyada Na: 140 mEq/L, Cl: 100 mEq/L saptanıyor. Akut mezenterik iskemi düşünülen bu hastadaki asit-baz bozukluğunun patogenezinden sorumlu olan birikmiş anyon aşağıdakilerden hangisidir?",
+    options: [
+      "Asetoasetat",
+      "Beta-hidroksibutirat",
+      "Klorür",
+      "Laktat",
+      "Sülfat"
+    ],
+    correct: 3,
+    exp: "Vaka, bağırsak iskemisine (mezenter arter embolisi) sekonder Laktik Asidoz (Artmış Anyon Açıklı Metabolik Asidoz) tablosudur. Anyon açığı = Na - (Cl + HCO3) = 140 - (100+12) = 28 (Normali 8-12). Anyon açığı artmıştır çünkü bağırsak dokusu oksijensiz (iskemik) kalınca hücreler anaerobik glikolize girer ve 'Laktat (Laktik asit)' üretir. Laktik asit kana karıştığında bir H+ (asit) ve bir Laktat (ölçülmeyen anyon) olarak ayrışır. H+ iyonu bikarbonatı tüketerek asidoz yapar, laktat ise anyon açığını artırır."
+  },
+  {
+    id: 279,
+    ders: "Genel Cerrahi",
+    konu: "Asit Baz Bozuklukları",
+    diff: 4,
+    q: "Masif gastrointestinal kanama nedeniyle opere edilen ve postoperatif yoğun bakımda takip edilen hastaya, resüsitasyon amacıyla 24 saat içinde 8 litre %0.9 Sodyum Klorür (İzotonik / Normal Saline) solüsyonu infüze ediliyor. Ertesi gün hastanın kan gazında Anyon Açığı NORMAL olan (hiperkloremik) metabolik asidoz geliştiği gözleniyor. Bu iyatrojenik asit-baz bozukluğunun ortaya çıkmasındaki temel biyokimyasal ve fizyolojik neden aşağıdakilerden hangisidir?",
+    options: [
+      "Solüsyonun içindeki yüksek sodyumun hücre içi potasyum ile yer değiştirmesi",
+      "Plazmaya verilen aşırı klor yükünün, elektrokimyasal dengeyi sağlamak (elektronötralite) amacıyla hücre dışındaki bikarbonatı (HCO3) hücre içine itmesi veya renal atılımını artırması",
+      "İzotonik sıvının böbrek tübüllerinde laktat atılımını bloke etmesi",
+      "Damar içi hacim artışının atriyal natriüretik peptid (ANP) aracılığıyla asit retansiyonu yapması",
+      "Sıvının doğrudan karaciğerde keton cismi üretimini tetiklemesi"
+    ],
+    correct: 1,
+    exp: "Tıpta en sık yapılan sıvı resüsitasyon hatalarından biridir. %0.9 NaCl (İzotonik) solüsyonunda 154 mEq Na ve 154 mEq Klor (Cl) vardır. İnsan plazmasındaki normal klor ise yaklaşık 100 mEq'dır. Hastaya litrelerce %0.9 NaCl verildiğinde kana devasa bir 'Klor' yükü biner (Hiperkloremi). Kanın elektro-nötralitesini (negatif/pozitif dengesini) korumak için, artan negatif yüklü klora yer açmak maksadıyla diğer bir ana negatif iyon olan Bikarbonat (HCO3) ya böbrekten atılır ya da hücre içine girer. Bikarbonat azalınca 'Hiperkloremik (Normal Anyon Açıklı) Metabolik Asidoz' gelişir."
+  },
+  {
+    id: 280,
+    ders: "Genel Cerrahi",
+    konu: "Hemostaz ve Kan Transfüzyonu",
+    diff: 4,
+    q: "Ağır trafik kazası sonrası multipl travma ile acile getirilen ve hemorajik şokta olan 35 yaşındaki hastaya Masif Transfüzyon Protokolü (MTP) başlatılarak 2 saat içinde 10 ünite Eritrosit Süspansiyonu (ES) ve 10 ünite Taze Donmuş Plazma (TDP) veriliyor. Transfüzyonun sonlarına doğru hastanın EKG'sinde QT mesafesinde uzama ve hipotansiyonunda derinleşme gözleniyor, ayrıca dudak çevresinde kasılmalar saptanıyor. Kan ürünlerinin koruyucu solüsyonundan kaynaklanan bu hayatı tehdit edici komplikasyon aşağıdakilerden hangisidir?",
+    options: [
+      "Hiperkalemiye bağlı ventriküler fibrilasyon",
+      "Sitrat toksisitesine bağlı gelişen akut hipokalsemi",
+      "Taze donmuş plazma içindeki lökositlere bağlı anaflaksi",
+      "Eritrosit yıkımına bağlı masif hemoglobinüri ve akut böbrek hasarı",
+      "Transfüzyon ilişkili akut akciğer hasarı (TRALI)"
+    ],
+    correct: 1,
+    exp: "Kan bankalarında kanın pıhtılaşmasını önlemek için torbalara antikoagülan olarak 'Sitrat' eklenir. Masif transfüzyonlarda (kısa sürede çok fazla kan ürünü verildiğinde), karaciğerin bu sitratı metabolize etme kapasitesi aşılır. Kanda biriken sitrat, hastanın serumundaki serbest Kalsiyum iyonlarını (Ca+2) bir sünger gibi bağlar (şelasyon). Sonuçta aniden gelişen şiddetli 'Hipokalsemi' ortaya çıkar. Hipokalsemi perioral uyuşma, tetani, EKG'de QT uzaması ve kalbin kasılma gücünün düşmesine (hipotansiyon) neden olur. Tedavide IV Kalsiyum Glukonat verilir."
+  },
+  {
+    id: 281,
+    ders: "Genel Cerrahi",
+    konu: "Hemostaz ve Kan Transfüzyonu",
+    diff: 4,
+    q: "Von Willebrand Hastalığı (Tip 1) tanısı ile takip edilen 25 yaşındaki kadın hasta, elektif laparoskopik kolesistektomi operasyonu için hazırlanıyor. Hastanın preoperatif koagülasyon testlerinde kanama zamanı (BZ) ve aPTT hafif uzun bulunuyor. Cerrahi sırasında ve sonrasında kanamayı önlemek amacıyla operasyondan 30 dakika önce intravenöz olarak uygulanan ve endotel hücrelerindeki Weibel-Palade cisimciklerinden von Willebrand Faktör (vWF) ile Faktör VIII salınımını tetikleyen farmakolojik ajan aşağıdakilerden hangisidir?",
+    options: [
+      "Kriyopresipitat",
+      "Traneksamik asit",
+      "Desmopressin (DDAVP)",
+      "Rekombinant Faktör VIIa",
+      "Aminokaproik asit"
+    ],
+    correct: 2,
+    exp: "Tip 1 von Willebrand Hastalığı (vWD), vWF'nin miktar olarak yetersiz (eksik) üretilmesidir. Hastanın kendi endotel hücrelerindeki depolarında (Weibel-Palade cisimcikleri) aslında yeterince vWF ve Faktör 8 vardır, sadece kana salınmıyordur. Bir ADH (Antidiüretik Hormon) analoğu olan 'Desmopressin (DDAVP)', bu endotel depolarını aniden sıkarak içlerindeki vWF ve Faktör 8'i kana boşaltır ve kanamayı mucizevi şekilde durdurur. (Not: Kriyopresipitat kan ürünüdür, ilaç değildir; Traneksamik asit ise pıhtı yıkımını önler)."
+  },
+  {
+    id: 282,
+    ders: "Genel Cerrahi",
+    konu: "Hemostaz ve Kan Transfüzyonu",
+    diff: 5,
+    q: "Kırk yaşında erkek hasta, mide kanaması nedeniyle 2 ünite Taze Donmuş Plazma (TDP) transfüzyonu alıyor. Transfüzyonun başlamasından 2 saat sonra hastada aniden şiddetli nefes darlığı, hipoksi (PaO2: 50 mmHg) ve ateş gelişiyor. Çekilen akciğer grafisinde bilateral yaygın alveolar infiltratlar (beyaz akciğer) saptanıyor. Ekokardiyografide ejeksiyon fraksiyonu normal ve juguler venöz dolgunluk YOKTUR. Transfüzyon İlişkili Akut Akciğer Hasarı (TRALI) tanısı konan bu ölümcül reaksiyonun patogenezinden sorumlu immünolojik mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Verici (Donör) kanındaki anti-lökosit antikorlarının (Anti-HLA), alıcının akciğer kapillerlerindeki nötrofilleri aktive edip endoteli parçalaması",
+      "Alıcının (Hastanın) IgA antikorlarının, donör plazmasındaki IgA'ya karşı masif anafilaksi başlatması",
+      "Transfüze edilen kanın hacmine bağlı gelişen akut sol kalp yetmezliği ve kardiyojenik akciğer ödemi",
+      "Donör lenfositlerinin alıcının kemik iliğine saldırarak masif sitokin fırtınası yaratması",
+      "Kan torbasında üreyen Yersinia enterocolitica bakterisinin endotoksin şoku"
+    ],
+    correct: 0,
+    exp: "Transfüzyona bağlı en sık ölüm nedeni TRALI'dir. Klinik olarak akut solunum sıkıntısı sendromuna (ARDS) benzer. TACO'dan (Transfüzyona bağlı volüm yüklenmesi) farkı, hastada kalp yetmezliği (hipervolemi) bulgularının OLMAMASIDIR. Patofizyoloji: Kanı veren kişinin (donörün - sıklıkla çok doğum yapmış kadınlar) plazmasında bulunan HLA antikorları hastaya verilir. Bu antikorlar, hastanın akciğer kılcal damarlarında bekleyen nötrofillere bağlanır, onları patlatır ve açığa çıkan reaktif oksijen ürünleri/enzimler akciğerleri eritir (non-kardiyojenik pulmoner ödem)."
+  },
+  {
+    id: 283,
+    ders: "Genel Cerrahi",
+    konu: "Şok",
+    diff: 4,
+    q: "Yüksekten düşme sonucu acil servise getirilen 25 yaşındaki hastanın bilinci açık ancak alt ekstremitelerini hareket ettiremiyor ve hissedemiyor. Hastanın kan basıncı 80/50 mmHg, kalp tepe atımı (nabız) 55/dk saptanıyor. Fizik muayenesinde kollarının ve bacaklarının sıcak, pembe olduğu görülüyor. Bu hastanın klinik tablosundan (Nörojenik Şok) sorumlu olan hemodinamik profil (Sistemik Vasküler Direnç, Kardiyak Debi ve Pulmoner Kapiller Kama Basıncı) aşağıdakilerden hangisinde doğru verilmiştir?",
+    options: [
+      "SVR Artmış / Kardiyak Debi Düşmüş / PCWP Düşmüş",
+      "SVR Düşmüş / Kardiyak Debi Artmış / PCWP Artmış",
+      "SVR Düşmüş / Kardiyak Debi Düşmüş veya Normal / PCWP Düşmüş",
+      "SVR Artmış / Kardiyak Debi Artmış / PCWP Düşmüş",
+      "SVR Artmış / Kardiyak Debi Düşmüş / PCWP Artmış"
+    ],
+    correct: 2,
+    exp: "Vaka tipik Nörojenik Şoktur. Yüksek seviyeli (servikal/üst torakal) omurilik hasarı sonucu, damar tonusunu ve kalbi uyaran 'Sempatik Sinir Sistemi' felç olur. Sempatik tonus gidince damarlar sonuna kadar gevşer ve Sistemik Vasküler Direnç (SVR) DÜŞER. Damarlar açıldığı için uçlar sıcaktır. Kan göllenir, kalbe dönen kan azalır (PCWP düşer). Sempatik uyarı olmadığı için hipotansiyona karşı beklenen refleks taşikardi OLMAZ, aksine vagal tonus baskın kaldığı için Bradikardi ve düşük kardiyak debi görülür (Şokta olup bradikardik ve sıcak olan tek tablodur)."
+  },
+  {
+    id: 284,
+    ders: "Genel Cerrahi",
+    konu: "Şok",
+    diff: 4,
+    q: "Perfore apandisit ve fekal peritonit nedeniyle opere edilen hasta postoperatif yoğun bakımda hipotansif (Tansiyon: 70/40 mmHg) seyrediyor. Hastaya 3 litre izotonik sıvı replasmanı (resüsitasyon) yapılmasına rağmen kan basıncı düzelmiyor. Septik şok tablosunda olan ve sıvıya dirençli bu hastada, kardiyovasküler tonusu sağlamak (vazokonstriksiyon) amacıyla ilk seçenek olarak başlanması gereken 'vazopressör' ajan ve primer etki ettiği reseptör aşağıdakilerden hangisidir?",
+    options: [
+      "Dobutamin / Beta-1 reseptör",
+      "Epinefrin (Adrenalin) / Beta-2 reseptör",
+      "Norepinefrin (Noradrenalin) / Alfa-1 reseptör",
+      "Dopamin / Dopamin-1 reseptörü",
+      "Milrinon / Fosfodiesteraz-3"
+    ],
+    correct: 2,
+    exp: "Septik şok 'distribütif' (dağılımsal) bir şoktur. Sitokinler (TNF-alfa, IL-1, NO) damarları felç eder ve muazzam bir vazodilatasyon yapar (SVR çok düşüktür). İlk tedavi agresif sıvı (kristalloid) verilmesidir. Eğer sıvıya rağmen tansiyon düzelmiyorsa, damarları büzerek direnci (SVR'yi) artırmak için kılavuzların önerdiği 1. basamak (ilk tercih) vazopressör ajan 'Norepinefrin (Noradrenalin)'dir. Norepinefrin çok güçlü bir 'Alfa-1' agonistidir; periferik damar düz kaslarını şiddetle kasarak kan basıncını hızla yükseltir."
+  },
+  {
+    id: 285,
+    ders: "Genel Cerrahi",
+    konu: "Şok",
+    diff: 5,
+    q: "Sol göğüs ön duvarına (parasternal bölge) bıçaklanma sonucu acile getirilen hastanın kan basıncı 75/40 mmHg, nabzı 130/dk saptanıyor. Boyun venlerinin dolgun (JVD pozitif) olduğu ve kalp seslerinin derinden (muffled) geldiği duyuluyor. Hasta derin nefes aldığında (inspirasyon), sistolik kan basıncının 15 mmHg daha düştüğü (Pulsus paradoksus) fark ediliyor. Kardiyak Tamponad tablosundaki bu hastada, pulsus paradoksusun ortaya çıkmasını sağlayan anatomik ve hemodinamik mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "İnspirasyonla artan intratorasik basıncın aorta bası yaparak atım hacmini düşürmesi",
+      "İnspirasyonla sağ atriyuma dönen kanın artması sonucu şişen sağ ventrikülün, esnemeyen perikard nedeniyle interventriküler septumu sola doğru iterek sol ventrikül doluşunu engellemesi",
+      "Vagus sinirinin refleks aktivasyonuyla bradikardiye yol açması",
+      "Plevral boşluğa dolan havanın venöz dönüşü bloke etmesi",
+      "Kan kaybına bağlı gelişen hipovoleminin kalbin doluş basınçlarını sıfırlaması"
+    ],
+    correct: 1,
+    exp: "Vaka delici kalp yaralanmasına bağlı gelişen Akut Kardiyak Tamponaddır (Beck Triadı: Hipotansiyon, JVD, Derinden gelen kalp sesleri). Pulsus paradoksus, nefes alırken sistolik kan basıncının 10 mmHg'den fazla düşmesidir. Mekanizma: Tamponadda kalbin etrafı kanla dolu, kaskatı bir zırh (perikard) ile çevrilidir; kalbin toplam genişleme hacmi sabittir. İnspirasyonla göğüs basıncı düşünce sağ kalbe bol miktarda kan hücum eder. Sağ ventrikül şişer, ancak perikard esnemediği için dışa doğru genişleyemez; mecburen tek esnek yer olan 'İnterventriküler Septum'u sol ventrikülün içine doğru iter. Sol ventrikül ezilir, hacmi daralır, kan pompalaması düşer ve tansiyon çakılır."
+  },
+  {
+    id: 286,
+    ders: "Genel Cerrahi",
+    konu: "Travmaya Sistemik Cevap",
+    diff: 4,
+    q: "Ağır yanık ve çoklu kemik kırıkları nedeniyle yoğun bakımda yatan hastanın travmadan sonraki 4. gününde kalp tepe atımının arttığı (hiperdinamik durum), vücut ısısının yükseldiği ve idrarda masif azot (üre) atılımının başladığı gözleniyor. Travmaya sistemik yanıtın 'Akış (Flow) Fazı'nda olan bu hastada, yara iyileşmesi ve glukoneogenez için gerekli olan amino asitleri sağlamak amacıyla çizgili kaslarda katabolizmayı (yıkımı) şiddetle tetikleyen temel stres hormonu aşağıdakilerden hangisidir?",
+    options: [
+      "İnsülin",
+      "Glukagon",
+      "Kortizol",
+      "Büyüme Hormonu (GH)",
+      "Tiroksin (T4)"
+    ],
+    correct: 2,
+    exp: "Sir David Cuthbertson travmaya yanıtı Ebb (Çekilme - ilk 24 saat, şok) ve Flow (Akış - günlerce süren hipermetabolizma) olarak ikiye ayırmıştır. Akış fazının amacı hasarlı dokuyu onarmaktır. Onarım için glukoz ve amino aside ihtiyaç vardır. Bu dönemin baş aktörü 'Kortizol'dür. Kortizol periferik dokularda (özellikle çizgili kaslarda) protein yıkımını (katabolizma) sonuna kadar açar. Yıkılan kaslardan kana dökülen amino asitler karaciğere gider ve glukoneogenez ile şekere çevrilir. Bu yüzden majör cerrahi/travma hastaları hızla kas erimesi yaşar (Negatif azot dengesi)."
+  },
+  {
+    id: 287,
+    ders: "Genel Cerrahi",
+    konu: "Travmaya Sistemik Cevap",
+    diff: 4,
+    q: "Planlı (elektif) kolon rezeksiyonu geçiren 60 yaşındaki hastanın postoperatif 2. gün kan tahlillerinde C-Reaktif Protein (CRP), Fibrinojen ve Hepcidin seviyelerinin çok yüksek olduğu, Albümin ve Transferrin seviyelerinin ise düştüğü görülüyor. Karaciğerde sentezlenen bu 'Akut Faz Reaktanlarının' üretimini başlatan ve travma/cerrahi bölgesindeki makrofajlardan salınan birincil (en potent) sitokin aşağıdakilerden hangisidir?",
+    options: [
+      "İnterlökin-2 (IL-2)",
+      "Tümör Nekrozis Faktör-alfa (TNF-alfa)",
+      "İnterlökin-6 (IL-6)",
+      "İnterferon-gama (IFN-gama)",
+      "İnterlökin-10 (IL-10)"
+    ],
+    correct: 2,
+    exp: "Travma veya cerrahi sonrası yara yerindeki makrofajlar sitokin fırtınası başlatır. Sırasıyla TNF-alfa, IL-1 ve IL-6 salgılanır. Bu sitokinler içinde 'İnterlökin-6 (IL-6)', kan yoluyla karaciğere ulaşarak Akut Faz Reaktanlarının (CRP, fibrinojen, amiloid vb.) sentezini tetikleyen en önemli (birincil) habercidir. IL-6 ayrıca cerrahinin şiddeti ve mortalite ile en yakından ilişkili sitokindir. (Albümin ve transferrin ise karaciğer enerjisini akut fazlara harcadığı için üretimi azalan 'negatif' akut faz reaktanlarıdır)."
+  },
+  {
+    id: 288,
+    ders: "Genel Cerrahi",
+    konu: "Travmaya Sistemik Cevap",
+    diff: 5,
+    q: "Ağır bir abdominal cerrahi geçiren 40 yaşındaki erkek hasta, postoperatif 1. günde oligürik (idrar çıkışı < 30 ml/saat) hale geliyor. Hastanın idrar dansitesi (özgül ağırlığı) 1.025 (yüksek), serum sodyumu 132 mEq/L (hafif hiponatremi) ve idrar sodyumu 10 mEq/L saptanıyor. Kan basıncı normal olan bu hastada, cerrahinin yarattığı stres, ağrı ve hafif hipovolemiye yanıt olarak salgılanan ve böbrek toplayıcı tübüllerinden saf 'Serbest Su' geri emilimini artırarak bu tabloyu (oligüri ve dilüsyonel hiponatremi) yaratan endokrin hormon aşağıdakilerden hangisidir?",
+    options: [
+      "Aldosteron",
+      "Atriyal Natriüretik Peptid (ANP)",
+      "Antidiüretik Hormon (ADH / Vazopressin)",
+      "Kortizol",
+      "Adrenalin"
+    ],
+    correct: 2,
+    exp: "Cerrahi travma, ağrı, anestezi ve volüm kaybı, arka hipofizden güçlü bir şekilde Antidiüretik Hormon (ADH / Vazopressin) salınımını uyarır. ADH'nin görevi vücudun suyunu korumaktır. Böbrek toplayıcı tübüllerine Aquaporin-2 kanallarını yerleştirerek idrardaki 'serbest suyu' (sodyumsuz suyu) kana geri çeker. Su kana çekildiği için idrar azalır (Oligüri) ve koyulaşır (Dansite artar). Kana eklenen aşırı saf su ise kandaki mevcut sodyumu seyreltir ve 'Dilüsyonel Hiponatremi' yaratır. Post-op ilk 1-2 gündeki bu fizyolojik su tutulumu nedeniyle hastalara aşırı hipotonik mayi verilmemelidir."
+  },
+  {
+    id: 289,
+    ders: "Genel Cerrahi",
+    konu: "Beslenme",
+    diff: 5,
+    q: "Yutma güçlüğü (akalazya) nedeniyle son 2 aydır katı-sıvı hiçbir şey yiyemeyen ve 15 kg kaybeden (Ağır Malnütrisyon) 60 yaşındaki hastaya santral venöz kateter açılarak agresif (yüksek kalorili) Total Parenteral Nütrisyon (TPN) başlanıyor. TPN'nin 2. gününde hastada aniden solunum yetmezliği, derin kas güçsüzlüğü ve EKG'de ventriküler aritmi gelişiyor. Hastanın kan tahlilinde saptanan ve 'Yeniden Beslenme (Refeeding) Sendromu'nun ölümcül sonuçlarına yol açan asıl elektrolit bozukluğu aşağıdakilerden hangisidir?",
+    options: [
+      "Hiperkalsemi",
+      "Hipofosfatemi",
+      "Hipernatremi",
+      "Hipoglisemi",
+      "Hiperkalemi"
+    ],
+    correct: 1,
+    exp: "Uzun süre aç kalan (starvasyon) hücrelerde enzimler, mineraller ve vitamin depoları tükenir (özellikle Fosfor, Potasyum ve Magnezyum). Bu hastaya aniden damardan karbonhidrat bombardımanı (TPN) yaparsanız, pankreastan masif bir 'İnsülin' deşarjı olur. İnsülin, kanda kalan son kırıntı Fosforu, Potasyumu ve Magnezyumu da hücrelerin içine çeker (Glikoliz ve ATP sentezi için fosfor şarttır). Kanda Fosfor aniden sıfırlanır (Şiddetli Hipofosfatemi). Fosfor bitince hücreler ATP üretemez (solunum kasları felç olur) ve eritrositlerde 2,3-BPG düşerek doku hipoksisi gelişir. Sonuç: Aritmi, felç ve ölüm."
+  },
+  {
+    id: 290,
+    ders: "Genel Cerrahi",
+    konu: "Beslenme",
+    diff: 4,
+    q: "Mide kanseri nedeniyle total gastrektomi yapılan hastanın postoperatif 3. gününde hemodinamisi tamamen stabil, ancak henüz oral alıma başlayamıyor. Hastanın beslenmesini sağlamak amacıyla cerrah tarafından Santral Venöz TPN (Total Parenteral Nütrisyon) yerine, ameliyat sırasında yerleştirilmiş olan beslenme jejunostomisinden Enteral Nütrisyon (bağırsaktan beslenme) tercih ediliyor. Parenteral (damardan) yola kıyasla, 'Enteral' beslenmenin bağırsak fizyolojisi açısından en önemli spesifik avantajı aşağıdakilerden hangisidir?",
+    options: [
+      "Kan şekerinde daha az dalgalanma yaparak diyabet riskini sıfırlaması",
+      "Bağırsak mukozasını doğrudan besleyerek (trofik etki) villus atrofisini ve bakteriyel translokasyonu önlemesi",
+      "Hepatik steatoz (karaciğer yağlanması) riskini tamamen ortadan kaldırması",
+      "Kalori ve protein hedeflerine ilk 24 saatte kesin ulaşılmasını garantilemesi",
+      "Kateter kaynaklı kan akımı enfeksiyonlarını (CRBSI) artırarak bağışıklığı uyarması"
+    ],
+    correct: 1,
+    exp: "Genel Cerrahinin altın kurallarından biri: 'If the gut works, use it (Bağırsak çalışıyorsa kullan)'. Bağırsakları döşeyen enterosit hücreleri besinlerini kandan değil, doğrudan lümenden geçen yiyeceklerden alırlar (Özellikle glutamin ve kısa zincirli yağ asitleri). Eğer hastayı uzun süre damardan (TPN) beslerseniz, bağırsak lümeni boş kalır ve enterositler açlıktan ölür (Villus atrofisi). Bağırsak duvarı incelince, içerideki dışkı bakterileri kana karışır (Bakteriyel Translokasyon -> Sepsis). Enteral beslenme bu bağırsak bariyerini (GALT sistemini) korur."
+  },
+  {
+    id: 291,
+    ders: "Genel Cerrahi",
+    konu: "Beslenme",
+    diff: 4,
+    q: "Ağır sepsis, yanık ve majör travma gibi katabolik stres durumlarında olan yoğun bakım hastalarında; immün sistem hücreleri (lenfositler, makrofajlar) ve ince bağırsak epitel hücreleri (enterositler) için BİRİNCİL enerji kaynağı olan ve bu nedenle hastalık durumlarında 'koşullu (şartlı) esansiyel' hale gelerek enteral solüsyonlara özellikle eklenen amino asit aşağıdakilerden hangisidir?",
+    options: [
+      "Arjinin",
+      "Glutamin",
+      "Lösin",
+      "Glisin",
+      "Alanin"
+    ],
+    correct: 1,
+    exp: "Glutamin insan vücudunda kanda ve kasta en bol bulunan amino asittir. Normalde vücut bunu kendisi üretebilir (esansiyel değildir). Ancak Travma, yanık ve sepsis gibi hiperkatabolik durumlarda vücudun bağışıklık hücreleri (makrofaj/lenfosit) ve bağırsak epitel hücreleri çılgınca bölünmeye ve savaşmaya başlar. Bu hücrelerin HIZLI enerjiye ihtiyacı vardır ve yakıt olarak glukozdan ziyade 'Glutamin'i kullanırlar. Vücudun glutamin üretimi bu masif tüketime yetişemez ve glutamin depoları tükenir. Bu yüzden yoğun bakım mamalarına immünnütrisyon amacıyla zorunlu olarak (koşullu esansiyel) Glutamin eklenir."
+  },
+  {
+    id: 292,
+    ders: "Genel Cerrahi",
+    konu: "Yanık",
+    diff: 4,
+    q: "Ağır bir ev yangınından kurtarılan 70 kg ağırlığındaki 35 yaşındaki hastanın her iki bacağının tamamında ve gövdesinin ön yüzünde 2. ve 3. derece yanıklar (Toplam Vücut Yüzey Alanının %54'ü) saptanıyor. Parkland (Baxter) formülüne göre sıvı resüsitasyonuna başlanacak olan bu hastada, ilk 24 saatte kullanılacak tercih edilen intravenöz sıvı (Ringer Laktat) ve bu sıvının %0.9 Sodyum Klorür'e (İzotonik) göre yanık hastalarında sağladığı en önemli fizyolojik avantaj aşağıdakilerden hangisidir?",
+    options: [
+      "İçerdiği yüksek sodyum sayesinde hücre içi ödemi daha hızlı çözmesi",
+      "Klor içeriğinin plazmaya daha yakın (düşük) olması nedeniyle hiperkloremik metabolik asidoz riskini azaltması",
+      "İçerdiği potasyum sayesinde yanığa bağlı gelişen hipokalemiyi anında tedavi etmesi",
+      "Laktatın karaciğerde doğrudan keton cisimlerine dönüşerek beyne enerji sağlaması",
+      "Onkotik basıncı artırarak yanık dokusundan plazma sızıntısını durdurması"
+    ],
+    correct: 1,
+    exp: "Yanık resüsitasyonunda (Parkland: 4 ml x kg x %Yanık Alanı) ilk 24 saatte kullanılacak altın standart kristalloid sıvı Ringer Laktat'tır (RL). %0.9 NaCl (İzotonik) solüsyonu 154 mEq Klor içerir (kanın normali ~100'dür). Yanık gibi devasa (litrelerce) sıvı verilmesi gereken durumlarda %0.9 NaCl verilirse hastaya ölümcül bir klor yükü biner ve 'Hiperkloremik (Normal anyon açıklı) metabolik asidoz' gelişir. Ringer Laktatın klor içeriği (109 mEq) kana çok daha yakındır ve içerdiği laktat karaciğerde bikarbonata dönüşerek yanık asidozunu tamponlar."
+  },
+  {
+    id: 293,
+    ders: "Genel Cerrahi",
+    konu: "Yanık",
+    diff: 5,
+    q: "Yüzde 40 alev yanığı olan ve yoğun bakımda 5. gününde takip edilen hastanın kalın yanık eskarlarının (kabuklarının) tedavisinde 'Mafenid Asetat' pomadı kullanılıyor. İki gün sonra hastanın solunum hızının çok arttığı (hiperventilasyon) ve arteriyel kan gazında metabolik asidoz geliştiği saptanıyor. Böbrek fonksiyonları ve kan laktat düzeyi normal olan bu hastada, Mafenid Asetat kullanımına sekonder gelişen bu asit-baz bozukluğunun (asidozun) farmakolojik nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "İlacın karaciğerde oksitlenerek doğrudan formik aside dönüşmesi",
+      "Mafenid asetatın renal tübüllerde 'Karbonik Anhidraz' enzimini inhibe ederek bikarbonat (HCO3) atılımına yol açması",
+      "İlacın mitokondride oksidatif fosforilasyonu ayırarak (uncoupling) laktik asidoz yapması",
+      "Mide mukozasında aşırı HCl üretimini tetikleyerek bağırsaklardan asit emilimini artırması",
+      "Yanık dokusundaki proteinleri eriterek kana masif sülfürik asit deşarjı yapması"
+    ],
+    correct: 1,
+    exp: "Yanık yarası tedavisinde kullanılan topikal ajanların spesifik yan etkileri TUS'un klasik sorularındandır. 1) Gümüş Sülfadiazin: Ağrısızdır, en sık kullanılandır ancak 'Lökopeni (Nötropeni)' yapar ve eskarı iyi geçemez. 2) Mafenid Asetat: Eskarı (kalın yanık dokusunu) muazzam iyi geçer (kıkırdak/kulak yanıklarında çok iyidir), uygularken çok ağrılıdır ve sistemik emildiğinde 'Karbonik Anhidraz' enzimini bloke eder. Bikarbonat böbreklerden geri emilemez ve idrarla atılır. Sonuç: Hastada Hiperkloremik Metabolik Asidoz (ve bunu kompanze etmek için hiperventilasyon) gelişir."
+  },
+  {
+    id: 294,
+    ders: "Genel Cerrahi",
+    konu: "Yanık",
+    diff: 4,
+    q: "Yüksek gerilim hattında elektrik akımına kapılan 25 yaşındaki işçi acil servise getiriliyor. Ciltteki giriş ve çıkış delikleri nispeten küçük olmasına rağmen sağ kolu ve sağ bacağı taş gibi sert, şiş ve gergindir. Hastanın idrarının çay renginde (koyu kahverengi) olduğu ve idrar stribinde kan (hem) pozitif olmasına rağmen idrar mikroskopisinde hiç eritrosit görülmediği saptanıyor. Bu hastada böbrek yetmezliğini önlemek amacıyla agresif intravenöz sıvı tedavisine ek olarak idrarı alkalileştirmek (Sodyum Bikarbonat vermek) ve osmotik diürez yapmak (Mannitol) gerekmesinin patofizyolojik amacı aşağıdakilerden hangisidir?",
+    options: [
+      "Elektrik akımının doğrudan böbrek glomerüllerini yakmasını engellemek",
+      "Serbest radikallerin neden olduğu lipid peroksidasyonunu durdurmak",
+      "Yıkılan (nekroza uğrayan) çizgili kaslardan kana karışan miyoglobinin asidik idrarda kristalleşerek tübülleri tıkamasını önlemek",
+      "Sistemik asidozun kalpte neden olacağı ventriküler fibrilasyonu geri döndürmek",
+      "Hemolize uğrayan eritrositlerin içinden çıkan potasyumun kalbi durdurmasını geciktirmek"
+    ],
+    correct: 2,
+    exp: "Yüksek voltajlı elektrik yanıklarında asıl hasar, akımın ciltte değil, vücut içindeki kemik ve kaslar boyunca ilerlerken yarattığı devasa ısı (Joule etkisi) nedeniyle 'Çizgili Kaslarda Masif Nekroz' (Rabdomiyoliz) oluşmasıdır. Cilt iyi görünse de içeride kompartman sendromu ve kas ölümü vardır. Ölen kaslardan kana bol miktarda 'Miyoglobin' karışır. Miyoglobin idrar stribinde kan (hem) gibi pozitif verir ama hücre (eritrosit) yoktur. Miyoglobin asidik idrarda hızla çöker (kristalleşir) ve akut tübüler nekroz (böbrek yetmezliği) yapar. Tedavinin belkemiği idrarı alkalileştirerek (Bikarbonat) miyoglobinin eriyik kalmasını sağlamak ve Mannitol ile tübülleri yıkayıp atmaktır."
+  },
+  {
+    id: 295,
+    ders: "Genel Cerrahi",
+    konu: "Transplantasyon",
+    diff: 4,
+    q: "Kadavradan böbrek transplantasyonu yapılan 45 yaşındaki hastada, böbreğin damar anastomozları (atardamar ve toplardamar bağlantıları) yapılıp klempler açıldıktan (kanlanma sağlandıktan) sadece dakikalar sonra, yeni takılan böbreğin aniden şiştiği, morardığı (siyanoz) ve idrar çıkışının hiç başlamadığı gözleniyor. Cerrah böbreği hemen geri çıkarmak (nefrektomi) zorunda kalıyor. Bu fulminan (hiperakut) rejeksiyonun temelinde yatan immünolojik mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Alıcının CD8+ sitotoksik T hücrelerinin greftin tübül hücrelerine saldırması (Hücresel immünite)",
+      "Greftin içindeki donör lenfositlerinin alıcının vücuduna saldırması (GVHD)",
+      "Alıcının kanında önceden var olan (pre-forme) anti-ABO veya anti-HLA antikorlarının greft endoteline bağlanarak kompleman sistemini aktive etmesi",
+      "İmmünsüpresif ilaçların böbrek damarlarında kalsinörin aracılı vazospazm yapması",
+      "Donör böbreğindeki makrofajların masif sitokin (TNF-alfa) fırtınası yaratması"
+    ],
+    correct: 2,
+    exp: "Transplant rejeksiyonları zamana göre ayrılır. 1) Hiperakut Rejeksiyon: Dakikalar/saatler içinde olur. Nedeni hastanın kanında ÖNCEDEN HAZIR BULUNAN (pre-forme) antikorlardır (Yanlış kan grubu veya daha önceki gebelik/kan transfüzyonları nedeniyle oluşmuş HLA antikorları). Tip II aşırı duyarlılık reaksiyonudur, damarları tıkar (tromboz), tedavisi yoktur, böbrek alınır. 2) Akut Rejeksiyon: Haftalar/Aylar içinde olur. Hücreseldir (T hücreleri). İlaçla geri döndürülebilir. 3) Kronik Rejeksiyon: Aylar/Yıllar içinde olur. Damar duvarında fibrozis (ateroskleroz) yapar, geri dönüşsüzdür."
+  },
+  {
+    id: 296,
+    ders: "Genel Cerrahi",
+    konu: "Transplantasyon",
+    diff: 5,
+    q: "Karaciğer nakli olan 50 yaşındaki hastaya idame immünsüpresif tedavi olarak Takrolimus, Mikofenolat Mofetil ve Prednizolon üçlüsü başlanıyor. Nakilden 3 ay sonra hasta renal fonksiyonlarda hafif bozulma (Kreatinin yüksekliği) ve yeni başlangıçlı diyabet bulgularıyla başvuruyor. Bu yan etkilere yol açan 'Takrolimus'un (FK506) T-lenfositler içindeki aktivasyonu durdurduğu ana moleküler hedefi ve spesifik mekanizması aşağıdakilerden hangisinde doğru verilmiştir?",
+    options: [
+      "Hücre içi FK Bağlayıcı Protein'e (FKBP) bağlanarak, IL-2 transkripsiyonunu sağlayan 'Kalsinörin' enzimini inhibe etmesi",
+      "Siklofilin proteinine bağlanarak mTOR yolağını bloke etmesi",
+      "İnozin Monofosfat Dehidrogenaz (IMPDH) enzimini bloke ederek *de novo* pürin sentezini durdurması",
+      "Doğrudan CD3 reseptörüne bağlanarak T hücresi apoptozunu tetiklemesi",
+      "IL-2 reseptörünün (CD25) alfa zincirini kompetitif olarak bloke etmesi"
+    ],
+    correct: 0,
+    exp: "İmmünsüpresif ilaçların hedefleri USMLE/TUS klasik bilgisidir. Takrolimus (ve Siklosporin), bir 'Kalsinörin İnhibitörü (CNI)'dür. Kalsinörin, T hücresi aktive olduğunda NFAT adlı proteini fosfatından arındırıp çekirdeğe yollayan (ve IL-2 üretimini başlatan) ana enzimdir. Siklosporin hücrede 'Siklofilin'e bağlanarak, Takrolimus ise 'FKBP'ye bağlanarak kalsinörini felç ederler. En sık yan etkileri Nefrotoksisite'dir. (Ayrıca Takrolimus diyabet yaparken, Siklosporin diş eti büyümesi ve kıllanma yapar. IMPDH blokörü olan ilaç Mikofenolat'tır. mTOR blokörü ise Sirolimus'tur)."
+  },
+  {
+    id: 297,
+    ders: "Genel Cerrahi",
+    konu: "Transplantasyon",
+    diff: 4,
+    q: "Kırk yaşında akut lösemi hastasına, HLA tam uyumlu kardeşinden allojenik kemik iliği (kök hücre) nakli yapılıyor. Nakilden 3 hafta sonra hastada avuç içi ve ayak tabanlarında başlayan makülopapüler döküntü, sarılık (direkt bilirubin yüksekliği) ve günde 2 litreyi bulan bol sulu yeşil diyare (ishal) tablosu ortaya çıkıyor. Hastanın karaciğer biyopsisinde safra kanaliküllerinde hasar ve deride bazal tabaka apoptozu saptanıyor. Graft-Versus-Host Hastalığı (GVHD) tanısı konan bu tablonun patogenezinde dokulara saldıran immün hücrelerin 'kaynağı' ve 'hedefi' aşağıdakilerden hangisinde doğru verilmiştir?",
+    options: [
+      "Kaynak: Alıcının (hastanın) CD8+ T hücreleri / Hedef: Vericinin kemik iliği kök hücreleri",
+      "Kaynak: Alıcının (hastanın) B lenfositleri / Hedef: Vericinin eritrosit antijenleri",
+      "Kaynak: Vericinin (donörün) kemik iliğindeki makrofajlar / Hedef: Alıcının santral sinir sistemi dokuları",
+      "Kaynak: Vericinin (donörün) olgun T hücreleri / Hedef: Alıcının (hastanın) cilt, karaciğer ve bağırsak antijenleri",
+      "Kaynak: Vericinin antikorları (IgG) / Hedef: Alıcının damar endotel hücreleri"
+    ],
+    correct: 3,
+    exp: "Graft-Versus-Host Disease (GVHD), adından da anlaşılacağı gibi 'Yamanın (Graft) Ev Sahibine (Host) Saldırması'dır. Sıklıkla kemik iliği naklinde (ve çok nadiren karaciğer/bağırsak nakli veya kan transfüzyonu sonrası) görülür. Donörden gelen kemik iliğinin içinde bulunan 'Donörün (Vericinin) yetkin (olgun) T lenfositleri', nakil sonrası hastanın (alıcının) dokularına girer ve alıcının hücrelerini 'yabancı' olarak algılayıp onlara savaş açar. En çok saldırdıkları klasik 3 hedef organ: Cilt (döküntü), Karaciğer (sarılık) ve GİS (şiddetli ishal) epitelleridir."
+  },
+  {
+    id: 298,
+    ders: "Genel Cerrahi",
+    konu: "Deri Hastalıkları",
+    diff: 4,
+    q: "Elli beş yaşında erkek hasta, sırtında giderek büyüyen ve rengi koyulaşan asimetrik bir ben (nevüs) nedeniyle genel cerrahi polikliniğine başvuruyor. Dermatoskopi sonrası eksizyonel biyopsi yapılan hastanın patoloji raporu; 'Malign Melanom, Breslow derinliği: 1.6 mm, ülserasyon yok, sınır temiz' olarak geliyor. Bu hastanın cerrahi tedavisinin tamamlanması için yapılması gereken 'geniş lokal eksizyon' marjı (güvenli sınır) ve lenf nodu yönetimi (Sentinel Lenf Nodu Biyopsisi - SLNB) için en uygun yaklaşım aşağıdakilerden hangisidir?",
+    options: [
+      "0.5 cm eksizyon marjı / SLNB yapılmasına gerek yoktur",
+      "1.0 cm eksizyon marjı / SLNB yapılmalıdır",
+      "2.0 cm eksizyon marjı / SLNB yapılmalıdır",
+      "3.0 cm eksizyon marjı / Profilaktik total aksiller/inguinal lenf nodu diseksiyonu yapılmalıdır",
+      "5.0 cm eksizyon marjı / Sadece klinik lenf nodu varsa biyopsi yapılmalıdır"
+    ],
+    correct: 2,
+    exp: "Malign Melanom cerrahisi kalınlığa (Breslow) göre şekillenir. Güncel kılavuzlara göre Cerrahi Sınır (Marj): İn situ melanomda 0.5 cm; 1 mm'den ince (≤1 mm) melanomlarda 1 cm; 1.01 mm ile 2 mm arası melanomlarda (vakamızda 1.6 mm) 1-2 cm (genellikle 2 cm tercih edilir); >2 mm melanomlarda ise maksimum 2 cm marj yeterlidir (eskiden 5 cm yapılırdı, terk edildi). Sentinel Lenf Nodu Biyopsisi (SLNB) endikasyonu ise: Breslow > 0.8 mm olan TÜM vakalara veya <0.8 mm olsa bile 'ülserasyon varlığı / mitoz yüksekliği' durumlarında KESİNLİKLE yapılmalıdır. Hastamız 1.6 mm olduğu için 2 cm marj ve SLNB endikedir."
+  },
+  {
+    id: 299,
+    ders: "Genel Cerrahi",
+    konu: "Deri Hastalıkları",
+    diff: 4,
+    q: "Kırsal kesimde çiftçilik yapan 65 yaşındaki hastanın üst dudağında ve burnunun yan tarafında (nazolabial oluk), ortası çökük/ülsere, kenarları inci tanesi gibi kabarık ve parlak (pearly border), üzerinde belirgin kılcal damarların (telenjiektazi) olduğu yavaş büyüyen bir kitle saptanıyor. Biyopsi sonucu 'Bazal Hücreli Karsinom (BCC)' olarak raporlanan bu deri kanserinin biyolojik davranışı ve uzak metastaz potansiyeli ile ilgili en doğru ifade aşağıdakilerden hangisidir?",
+    options: [
+      "Kan yoluyla hızla akciğer ve beyne metastaz yapma eğilimindedir, bu nedenle sistemik kemoterapi ilk seçenektir.",
+      "Lokal olarak son derece agresif, invaziv ve doku yıkıcıdır ancak lenf nodlarına ve uzak organlara metastaz yapma ihtimali pratik olarak (%0.1) sıfıra yakındır.",
+      "Tüm deri kanserleri içinde en ölümcül olanıdır, sağkalım oranı %50'nin altındadır.",
+      "Güneş gören bölgelerde değil, genellikle avuç içi ve ayak tabanlarında (akral bölgelerde) yerleşmeyi sever.",
+      "Patolojisinde keratin incileri (keratin pearls) ve intersellüler köprüler görülmesi tanısaldır."
+    ],
+    correct: 1,
+    exp: "Bazal Hücreli Karsinom (BCC), dünyada en sık görülen kanser türüdür. İnci tanesi gibi parlak kenarlı, telenjiektazik ve ortası ülsere lezyonlardır. Yüzün üst kısmını (burun, üst dudak) çok sever. BCC'nin en meşhur özelliği şudur: Olduğu yerde (lokal) kemiği, kıkırdağı (burnu) bile oyacak kadar agresif ve yıkıcı ('rodent ulcer / kemirgen ülser') olabilir, ANCAK kana veya lenfe karışıp uzak metastaz yapma huyu YOKTUR (Pratikte metastaz oranı %0.1'den düşüktür). Cerrahi eksizyon (veya yüzde Mohs cerrahisi) ile %100'e yakın kür sağlanır."
+  },
+  {
+    id: 300,
+    ders: "Genel Cerrahi",
+    konu: "Deri Hastalıkları",
+    diff: 5,
+    q: "Çocukluğunda sağ bacağında geniş bir kaynar su yanığı oluşan ve orası yıllardır iyileşmemiş atrofik skar dokusu (nedbe) halinde kalan 45 yaşındaki hastanın, son 6 aydır bu eski yanık izinin üzerinde hızla büyüyen, kanayan, pis kokulu, kötü huylu karnabahar (ekzofitik) görünümünde bir yara ortaya çıkıyor. Bu kronik inflamasyon ve nedbe zemininde gelişen agresif karsinom (Marjolin Ülseri), histopatolojik olarak çoğunlukla aşağıdaki kanser tiplerinden hangisidir?",
+    options: [
+      "Malign Melanom",
+      "Bazal Hücreli Karsinom (BCC)",
+      "Yassı (Skuamöz) Hücreli Karsinom (SCC)",
+      "Merkel Hücreli Karsinom",
+      "Dermatofibrosarkoma Protuberans"
+    ],
+    correct: 2,
+    exp: "Marjolin Ülseri cerrahide çok önemli bir kavramdır. Yıllar/on yıllar önce oluşmuş yanık skarları, kronik fistül ağızları (osteomiyelit), hidradenitis süppürativa veya iyileşmeyen kronik venöz ülserlerin zemininde kanser gelişmesidir. Kronik inflamasyon ve sürekli hücre yıkımı/yapımı (turnover) döngüsü DNA hasarına (p53 mutasyonlarına) yol açar. Marjolin ülseri zemininde gelişen bu kanser hemen her zaman 'Yassı (Skuamöz) Hücreli Karsinom (SCC)'dur. Normal güneş yanığıyla olan SCC'lere göre çok daha agresiftir ve metastaz oranı çok daha yüksektir."
+  },
+  {
+    id: 301,
+    ders: "Genel Cerrahi",
+    konu: "Tiroid ve Paratiroid Hastalıkları",
+    diff: 4,
+    q: "Otuz iki yaşında kadın hasta boynunda ele gelen şişlik nedeniyle başvuruyor. Yapılan İnce İğne Aspirasyon Biyopsisinde (İİAB); hücre çekirdeklerinin soluk, boş ve birbirinin üzerine bindiği (Buzlu cam / Orphan Annie Gözü çekirdekleri) saptanıyor ve nükleer yarıklar (grooves) izleniyor. İntranükleer sitoplazmik inklüzyonları ve Psammoma cisimcikleri olan bu Papiller Tiroid Kanserinin, biyolojik davranış modeli ve cerrahi sonrası klinik takip belirteci (tümör markeri) aşağıdakilerden hangisinde doğru verilmiştir?",
+    options: [
+      "Hematojen yolla (kanla) akciğer/kemiklere yayılır / Takipte Serum Kalsitonin kullanılır",
+      "Lenfojen yolla (boyun lenf bezlerine) yayılır / Takipte Serum Tiroglobulin kullanılır",
+      "Sadece lokal invazyon yapar, metastaz yapmaz / Takipte Anti-TPO antikorları kullanılır",
+      "Multisentrik olup feokromositoma ile birliktedir / Takipte İdrar VMA kullanılır",
+      "Hızlı büyüyen anaplastik forma dönüşür / Takipte CEA kullanılır"
+    ],
+    correct: 1,
+    exp: "Papiller Tiroid Kanseri en sık görülen ve en iyi huylu tiroid karsinomudur. İİAB ile tanısı konabilen tek tiroid kanseridir (Çünkü tanısı hücre nükleusu yapısına bağlıdır: Orphan Annie / buzlu cam nükleus, yarıklar ve psammoma cisimcikleri). Bu tümör kana çok nadir geçer, yayılımını 'Lenfatik' yolla (boyun lenf bezlerine) yapar. Ameliyatta tiroid tamamen alındıktan (Total Tiroidektomi) sonra vücutta hiç tiroid dokusu kalmaz. Bu nedenle nüks (geriye dönüş) olup olmadığını anlamak için spesifik olarak 'Serum Tiroglobulin' seviyesi ölçülür (Sıfır olmalıdır, artarsa nüks veya metastaz demektir). (Hematojen yayılan Foliküler kanserdir. Kalsitonin ise Medüller kanserin markerıdır)."
+  },
+  {
+    id: 302,
+    ders: "Genel Cerrahi",
+    konu: "Tiroid ve Paratiroid Hastalıkları",
+    diff: 5,
+    q: "Ailesinde MEN 2A sendromu (Multipl Endokrin Neoplazi Tip 2A) öyküsü olan 25 yaşındaki erkek hastada, boyunda kitle ve inatçı ishal şikayetleri mevcuttur. Tiroid nodülü biyopsisinde Kongo kırmızısı ile boyanan, elma yeşili refle veren 'Amiloid' stroma saptanıyor. RET proto-onkogen mutasyonuna bağlı gelişen bu Medüller Tiroid Kanserinin cerrahi tedavisinden (Total tiroidektomi) ÖNCE, ameliyat sırasında masif hipertansif kriz ve ölüm riskini ekarte etmek amacıyla MUTLAKA araştırılması ve varsa önce onun tedavi edilmesi gereken yandaş endokrin patoloji aşağıdakilerden hangisidir?",
+    options: [
+      "Primer Hiperparatiroidi (Paratiroid adenomu)",
+      "Hipofizer Makroadenom (Akromegali)",
+      "Feokromositoma (Adrenal medulla tümörü)",
+      "Pankreas Nöroendokrin Tümörü (Gastrinoma / Zollinger-Ellison)",
+      "Bilateral Adrenal Korteks Hiperplazisi (Cushing)"
+    ],
+    correct: 2,
+    exp: "Medüller Tiroid Kanseri, tiroidin parafoliküler C hücrelerinden köken alır ve Kalsitonin salgılar. MEN 2A sendromunun bir parçasıdır. MEN 2A Triadı = Medüller Tiroid Kanseri + Feokromositoma + Paratiroid Hiperplazisi. Medüller kanser tanısı alan her hastada cerrahi öncesi mutlaka 'Feokromositoma' dışlanmalıdır (İdrar metanefrin/katekolamin düzeyleri ile). Eğer hastada gizli bir feokromositoma varsa ve cerrah bunu bilmeden hastayı anesteziye alıp tiroid ameliyatına başlarsa, ameliyatın stresiyle devasa bir adrenalin deşarjı olur ve hasta ameliyat masasında malign hipertansif krizden (kalp krizi/beyin kanaması) ölür. Varsa ÖNCE feokromositoma ameliyatı yapılır, SONRA tiroid alınır."
+  },
+  {
+    id: 303,
+    ders: "Genel Cerrahi",
+    konu: "Tiroid ve Paratiroid Hastalıkları",
+    diff: 4,
+    q: "Kırk beş yaşında kadın hasta, böbrek taşı, yaygın kemik ağrıları, konstipasyon (kabızlık) ve depresyon şikayetleriyle başvuruyor ('Stones, bones, abdominal groans, psychiatric overtones'). Kan tetkiklerinde Serum Kalsiyum: 11.5 mg/dL (Yüksek), Fosfor: 2.2 mg/dL (Düşük) ve İntakt Parathormon (iPTH): 150 pg/mL (Yüksek) saptanıyor. Sestamibi sintigrafisinde sağ alt paratiroid bezinde adenom tespit ediliyor. Cerrahi eksplorasyonda sadece sağ alt paratiroid bezi çıkarılıyor. Cerrahiden 2 gün sonra hastanın sesinin kalıcı olarak kısık ve çatallı olduğu (hoarseness) fark ediliyor. Bu cerrahi komplikasyonda hasar gören sinir ve vokal kordun aldığı pozisyon aşağıdakilerden hangisidir?",
+    options: [
+      "Eksternal Laringeal Sinir (Superior Laringeal Sinirin dalı) / Kordlar tamamen açık (abduksiyon) kalır",
+      "Sağ Rekürren Laringeal Sinir / Sağ vokal kord orta hattın hemen yanında (paramedian) felçli kalır",
+      "Sol Rekürren Laringeal Sinir / Her iki vokal kord orta hatta (median) felçli kalır",
+      "İnternal Laringeal Sinir / Kordlar spastik şekilde birleşir",
+      "Vagus siniri ana gövdesi / Glottik bölge tamamen çöker"
+    ],
+    correct: 1,
+    exp: "Primer Hiperparatiroidi tedavisinde adenom çıkarılırken (paratiroidektomi) veya tiroidektomide en çok korkulan komplikasyon sinir kesileridir. Tiroide komşu seyreden 'Rekürren Laringeal Sinir (RLN)' vokal kordların hareketini sağlayan ana motordur. Tek taraflı RLN kesisi (vakamızda ameliyat olan sağ taraf) durumunda o taraftaki vokal kord orta hattın hafif yanında (Paramedian pozisyon) hareketsiz kalır. Karşı taraf (sağlam) kord gelip ona çarparak sesi çıkarır ancak hava kaçtığı için ses 'kısık, havalı ve çatallı (hoarseness)' çıkar. Eğer sinir ÇİFT TARAFLI (bilateral) kesilirse iki kord da paramedian kapanır, hasta nefes alamaz ve acil trakeostomi gerekir."
+  },
+  {
+    id: 304,
+    ders: "Genel Cerrahi",
+    konu: "Adrenal Bez Hastalıkları",
+    diff: 4,
+    q: "Otuz beş yaşında kadın hasta, ataklar halinde gelen baş ağrısı, aşırı terleme ve çarpıntı (palpitasyon) şikayetiyle başvuruyor. Ataklar sırasında kan basıncının 220/120 mmHg'ye ulaştığı saptanıyor. İdrarda 24 saatlik metanefrin ve VMA düzeyleri çok yüksek bulunuyor. Çekilen Batın MR'ında sol sürrenal (adrenal) bezde 4 cm'lik kitle saptanan ve Feokromositoma tanısı kesinleşen hastaya elektif cerrahi (Adrenalektomi) planlanıyor. Ameliyat öncesi dönemde (preoperatif hazırlıkta) hastayı kardiyovasküler krizden korumak için izlenmesi gereken doğru farmakolojik blokaj sırası ve ilaç kombinasyonu aşağıdakilerden hangisidir?",
+    options: [
+      "Önce Alfa-blokör (Fenoksibenzamin) verilir, damar hacmi dolduktan sonra Beta-blokör (Propranolol) eklenir.",
+      "Önce Beta-blokör verilir kalbin hızı yavaşlatılır, sonra Alfa-blokör eklenir.",
+      "Sadece Beta-blokör vermek yeterlidir, alfa blokaja gerek yoktur.",
+      "Labetalol gibi non-spesifik tek bir ajanla hemen cerrahiye alınır.",
+      "Önce Kalsiyum kanal blokörü, sonra ACE inhibitörü başlanır."
+    ],
+    correct: 0,
+    exp: "Feokromositoma krizleri aşırı adrenalin/noradrenalin deşarjına bağlıdır. Cerrahiye hazırlık (1-2 hafta öncesinden) çok kritiktir. Altın kural: HER ZAMAN İLK OLARAK ALFA-BLOKÖR (örn: Fenoksibenzamin) başlanmalıdır. Alfa blokör damarları genişletir, tansiyonu düşürür ve kısıtlanmış olan kan hacminin geri dolmasını sağlar. Eğer ilk önce Beta-blokör verirseniz, iskelet kaslarındaki Beta-2'nin (damar gevşetici) etkisi kaybolur; katekolaminler tamamen serbest kalmış olan Alfa-1 (damar büzücü) reseptörlere yüklenir ve hastayı 'Karşılanmamış (Unopposed) Alfa Etkisi' nedeniyle ölümcül hipertansif krize sokar. Bu nedenle önce Alfa, sonra Beta blokör verilir."
+  },
+  {
+    id: 305,
+    ders: "Genel Cerrahi",
+    konu: "Adrenal Bez Hastalıkları",
+    diff: 5,
+    q: "Kırk beş yaşında erkek hasta, dirençli hipertansiyon (üçlü ilaç tedavisine yanıt vermeyen) ve şiddetli kas güçsüzlüğü şikayetiyle başvuruyor. Kan tahlillerinde Serum Potasyum: 2.5 mEq/L (Şiddetli Hipokalemi), Sodyum: 148 mEq/L (Hipernatremi) ve Metabolik Alkaloz saptanıyor. Hastanın Plazma Aldosteron/Plazma Renin Aktivitesi Oranı (ARR) > 30 (Çok yüksek) bulunuyor. Primer Hiperaldosteronizm (Conn Sendromu) şüphesi olan bu hastada, cerrahi tedavi kararı (tek taraflı adenom vs. iki taraflı hiperplazi) verebilmek için yapılması gereken en spesifik (altın standart) lokalizasyon testi aşağıdakilerden hangisidir?",
+    options: [
+      "Yüksek doz deksametazon baskılama testi",
+      "Abdominal Tomografi (BT)",
+      "Selektif Adrenal Venöz Örnekleme (Adrenal Vein Sampling - AVS)",
+      "İyot-131 MIBG Sintigrafisi",
+      "Kaptoril (ACE inhibitörü) supresyon testi"
+    ],
+    correct: 2,
+    exp: "Conn Sendromu (Primer Hiperaldosteronizm); Hipertansiyon + Hipokalemi + Metabolik Alkaloz ve (düşük renine karşılık) çok yüksek aldosteron ile karakterizedir. Tanı konduktan sonra en kritik soru şudur: Bu fazladan aldosteron tek bir böbrek üstü bezindeki urdan mı (Adenom) geliyor, yoksa her iki bezin de çılgınca büyümesinden (Bilateral Hiperplazi) mi? Adenomsa tedavisi Cerrahi (kesip çıkarmak), Hiperplazi ise tedavisi Medikaldir (Spironolakton). BT'de küçük bir adenom veya asimetrik kalınlaşma yanıltıcı olabilir. Bu yüzden altın standart 'Adrenal Venöz Örnekleme'dir. Kasıktan kateterle girilip sağ ve sol adrenal venlerden ayrı ayrı kan alınır, hangi taraf fazlaysa cerrahi ona yapılır."
+  },
+  {
+    id: 306,
+    ders: "Genel Cerrahi",
+    konu: "Adrenal Bez Hastalıkları",
+    diff: 4,
+    q: "Elli yaşında kadın hasta; aydede yüzü (moon facies), ensede yağ birikimi (buffalo hump), karın bölgesinde mor çatlaklar (stria) ve santral obezite ile başvuruyor. 24 saatlik idrar serbest kortizol düzeyi belirgin yüksek saptanıyor (Cushing Sendromu). Hastalığın kaynağını bulmak için testler yapılıyor. Düşük doz Deksametazon baskılama testinde kortizol BASKILANMIYOR. Yüksek doz (8 mg) Deksametazon baskılama testinde de kortizol BASKILANMIYOR. Hastanın Plazma ACTH düzeyi < 5 pg/mL (Belirgin düşük/baskılanmış) olarak ölçülüyor. Bu laboratuvar bulguları ışığında hastadaki Cushing Sendromunun en olası etyolojisi aşağıdakilerden hangisidir?",
+    options: [
+      "Hipofizer Mikroadenom (Cushing Hastalığı)",
+      "Adrenal Kortikal Adenom (veya Karsinom)",
+      "Küçük Hücreli Akciğer Kanserine bağlı ektopik ACTH salınımı",
+      "Hipotalamik CRH (Kortikotropin Salgılatıcı Hormon) üreten hamartom",
+      "Uzun süreli eksojen (dışarıdan) kortikosteroid hap kullanımı"
+    ],
+    correct: 1,
+    exp: "Cushing sendromu algoritması adım adımdır. 1. Adım: Hastada Cushing var mı? (İdrar serbest kortizolü veya Düşük Doz Deksametazon). Baskılanmıyorsa hasta Cushing'dir. 2. Adım: Kaynak neresi? (ACTH düzeyine bakılır). Eğer ACTH yüksekse kaynak yukarıdadır (Hipofiz veya Akciğer). Eğer ACTH DÜŞÜK (baskılanmış) ise, sorun böbrek üstü bezinin KENDİNDEDİR. Adrenal korteks kafasına göre bağımsız (otonom) kortizol üretiyordur (Adenom/Kanser). Bu aşırı kortizol de gidip hipofizi ezer ve ACTH'yi düşürür. Vakamızda ACTH çok düşük olduğu için sorun Adrenal Adenomdur (ve yüksek doza da asla baskılanmaz). Eksojen kullanımda da benzer profil olur ancak vaka sorusunda dışarıdan ilaç alımı verilmemiştir."
+  },
+  {
+    id: 307,
+    ders: "Genel Cerrahi",
+    konu: "İnce Barsak Hastalıkları",
+    diff: 4,
+    q: "Kırk beş yaşında kadın hasta, ataklar halinde gelen yüzde kızarma (flushing), ishal ve nefes darlığı (bronkospazm) şikayetleriyle başvuruyor. Ekokardiyografisinde sağ kalpte triküspit yetmezliği ve pulmoner stenoz saptanırken, sol kalp kapakları tamamen normal bulunuyor. Batın tomografisinde terminal ileumda kitle ve karaciğerde multipl metastazlar izleniyor. Karsinoid Sendrom tanısı konan bu hastada, salgılanan vazoaktif maddelerin (özellikle Serotonin) sağ kalpte fibrozis (karsinoid kalp hastalığı) yapmasına rağmen, sol kalbi korumasının (sol kapakların sağlam kalmasının) fizyolojik nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "Serotoninin sol kalpteki yüksek oksijen basıncı altında inaktif hale gelmesi",
+      "Serotoninin akciğer yatağından geçerken pulmoner endoteldeki Monoamin Oksidaz (MAO) enzimi tarafından yıkılarak inaktif 5-HİAA'ya dönüştürülmesi",
+      "Sol kalp endokardının serotonin reseptörlerinden (5-HT2B) yoksun olması",
+      "Karaciğer metastazlarının sadece sağ atriyuma dökülen hepatik venlere hormon deşarj etmesi",
+      "Sağ kalpteki basıncın düşük olmasının fibrotik plakların birikmesine zemin hazırlaması"
+    ],
+    correct: 1,
+    exp: "Karsinoid tümörler en sık inçe bağırsakta (apendiks ve terminal ileum) görülür. GİS karsinoidleri karaciğere metastaz yapmadıkça sendrom (flushing, ishal) YARATMAZLAR; çünkü portal sisteme dökülen serotonin karaciğerde yıkılır. Ancak karaciğer metastazı varsa, serotonin karaciğeri bypass edip hepatik venle doğrudan sistemik dolaşıma (ve sağ kalbe) girer. Sağ kalpte endokardiyal fibrozis (Triküspit yetmezliği/Pulmoner stenoz) yapar. Ancak bu kan akciğere gittiğinde, pulmoner endotelde çok zengin bulunan 'Monoamin Oksidaz (MAO)' enzimi serotonini yakalar ve yıkar. Sol kalbe serotonin ulaşamaz, bu nedenle sol kapaklar sağlam kalır."
+  },
+  {
+    id: 308,
+    ders: "Genel Cerrahi",
+    konu: "İnce Barsak Hastalıkları",
+    diff: 4,
+    q: "Özgeçmişinde 5 yıl önce açık apandektomi öyküsü olan 50 yaşındaki erkek hasta, 2 gündür devam eden karın ağrısı, safralı kusma ve gaz/gaita çıkaramama şikayetiyle acile başvuruyor. Batın oskültasyonunda metalik sesler (tinkling) duyuluyor. Akut Mekanik İntestinal Obstrüksiyon (İnce bağırsak tıkanıklığı) düşünülen bu hastada, bağırsak anslarının kanlanmasının bozulduğuna (Strangülasyon / İskemi) ve acil cerrahi laparotomi gerektiğine işaret eden EN ERKEN ve EN SPESİFİK klinik bulgu aşağıdakilerden hangisidir?",
+    options: [
+      "Kusmanın fekaloit (kötü kokulu gaita gibi) vasıf alması",
+      "Ağrının ataklar/kramplar (kolik) halinden çıkıp, KESİNTİSİZ, SÜREKLİ ve DİRENÇLİ bir hal alması",
+      "Ayakta direkt batın grafisinde (ADBG) hava-sıvı seviyelerinin sayısının 5'i geçmesi",
+      "Bağırsak seslerinin tamamen kaybolması (Sessiz batın)",
+      "Hastanın ateşinin 39°C üzerine çıkması"
+    ],
+    correct: 1,
+    exp: "İnce bağırsak tıkanıklıklarının (İBO) en sık nedeni geçirilmiş ameliyatlara bağlı yapışıklıklardır (Adezyon). Tıkanıklık basitse ağrı 'Kolik' tarzdadır (Bağırsak kasıldıkça gelir, gevşeyince geçer). Basit tıkanıklık nazogastrik dekompresyon ve sıvı ile izlenebilir. Ancak bağırsak kendi etrafında döner veya bir bandın altında sıkışıp kanlanması bozulursa (Strangülasyon), bağırsak iskemisi başlar. İskemi doku ölümüdür; iskemi ağrısı KESİNTİSİZ, SÜREKLİ ve KIVRANDIRICIDIR. Kolik ağrının aniden sürekli ağrıya dönmesi, strangülasyonun en kritik ve en erken bulgusudur (Taşikardi, lökositoz ve lokalize asidoz da eşlik eder). Acil ameliyat gerektirir."
+  },
+  {
+    id: 309,
+    ders: "Genel Cerrahi",
+    konu: "İnce Barsak Hastalıkları",
+    diff: 5,
+    q: "Crohn Hastalığı nedeniyle terminal ileum rezeksiyonu (100 cm'lik kısmın çıkarılması) yapılan 35 yaşındaki hastada postoperatif takiplerde sağ üst kadran ağrısı ve ultrasonografide safra kesesi taşları (Kolelitiazis) saptanıyor. Normalde genç yaşta beklenmeyen bu kolesterol taşlarının oluşumunu açıklayan, rezeksiyon işlemiyle doğrudan ilişkili biyokimyasal/fizyolojik mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Bilirubin metabolizmasının bozularak pigmente taş oluşumunun tetiklenmesi",
+      "Rezeksiyon sonrası artan CCK (Kolesistokinin) düzeylerinin kesede spazm yapması",
+      "Terminal ileumdan emilemeyen safra tuzlarının fekal yolla kaybedilmesi sonucu, safradaki safra asidi havuzunun azalması ve kolesterolün çökelmesi",
+      "Kalın bağırsağa geçen safra asitlerinin kolonda deoksikolik aside dönüşüp taşlaşması",
+      "Emilemeyen yağların (steatore) kalsiyumu bağlayarak kese içinde kalsifikasyon yapması"
+    ],
+    correct: 2,
+    exp: "Kolesterol, safra kesesinde 'Safra asitleri' ve 'Lesitin' tarafından miseller halinde sıvı formda (eriyik) tutulur. Safra asitleri görevini yaptıktan sonra GİS'in SADECE tek bir yerinden, 'Terminal İleum'dan %95 oranında geri emilir (Enterohepatik sirkülasyon). Eğer Crohn veya rezeksiyon nedeniyle terminal ileum yoksa, safra asitleri dışkıyla kaybedilir. Karaciğerin üretimi bu devasa kaybı karşılayamaz. Safradaki safra asidi miktarı azalınca, kolesterolü sıvı halde tutacak deterjan kalmaz. Kolesterol kristalleri çökelir ve safra taşı (Kolelitiazis) oluşur. Terminal ileum rezeksiyonlarının iki klasik sonucu vardır: B12 eksikliği anemisi ve Safra taşı."
+  },
+  {
+    id: 310,
+    ders: "Genel Cerrahi",
+    konu: "Mezenterik Hastalıklar",
+    diff: 4,
+    q: "Atriyal fibrilasyon ve kalp yetmezliği tanısı olan 75 yaşındaki erkek hasta, aniden başlayan ve fizik muayene bulgularıyla uyuşmayan (karnı yumuşak olmasına rağmen morfinle bile geçmeyen) şiddetli karın ağrısı ile acile getiriliyor. Akut Mezenterik İskemi tanısı alan bu hastada, kalpten kopan embolinin anatomik yapısı ve kan akım dinamiği gereği GİS'te EN SIK tıkadığı atardamar ve tıkanma seviyesi aşağıdakilerden hangisidir?",
+    options: [
+      "Çölyak turunkus / Aorttan çıkış noktasında",
+      "İnferior Mezenterik Arter (İMA) / Sol kolik arter ayrımında",
+      "Superior Mezenterik Arter (SMA) / Middle kolik (Orta kolik) arter çıkışının hemen distalinde",
+      "Gastroduodenal Arter / Pankreatikoduodenal ark seviyesinde",
+      "Superior Mezenterik Arter (SMA) / Aorttan çıktığı ilk ostium hizasında"
+    ],
+    correct: 2,
+    exp: "Akut Mezenterik İskeminin en sık nedeni 'Arteriyel Emboli'dir (Kalpten / Atriyal Fibrilasyondan kopan pıhtı). Emboli, Aorttan çok dar bir açıyla çıkan çölyak artere veya İMA'ya değil, Aortun akım yönüne paralel (dar açılı) giden, çok büyük çaplı Superior Mezenterik Artere (SMA) girer. Ancak emboli SMA'nın kökünü (aorttan çıktığı ostiumu) değil, kalibrasyonunun daraldığı ilk önemli dalı olan 'Orta Kolik Arter (Arteria Colica Media)' çıkışının hemen sonrasını (distalini) tıkar. Bu nedenle proksimal jejunum genellikle kurtulur, geriye kalan tüm ince bağırsaklar ve sağ kolon iskemik kalır."
+  },
+  {
+    id: 311,
+    ders: "Genel Cerrahi",
+    konu: "Mezenterik Hastalıklar",
+    diff: 5,
+    q: "Yaygın aterosklerotik kalp hastalığı öyküsü olan 65 yaşındaki kadın hasta, yemek yedikten 30-40 dakika sonra başlayan, 2 saat süren karın ağrısı ve buna bağlı olarak yemek yemekten korkma (sitofobi) ve ciddi kilo kaybı ile başvuruyor. 'İntestinal Angina (Kronik Mezenterik İskemi)' tanısı konan bu hastada, klinik semptomların (ağrının) ortaya çıkması için 3 ana visseral damardan (Çölyak, SMA, İMA) en az kaçının belirgin şekilde daralmış veya tıkanmış olması gerekir?",
+    options: [
+      "Sadece SMA'nın %50 daralması yeterlidir.",
+      "Sadece Çölyak arterin tam tıkanması yeterlidir.",
+      "Visseral damarlar arasındaki zengin kollateral ağ nedeniyle, semptom olması için genellikle 3 ana damardan en az 2'sinin şiddetli darlığı veya tam tıkanıklığı gerekir.",
+      "Sadece İMA'nın tam tıkanması sol kolon iskemisi için yeterlidir.",
+      "Çölyak arter ve Gastroduodenal arterin mikrovasküler hastalığı şarttır."
+    ],
+    correct: 2,
+    exp: "Kronik Mezenterik İskemi (Bağırsak anjinası); ateroskleroza bağlıdır. Bağırsaklar açken kan akımı yeterlidir, ancak yemekten sonra artan sindirim eforu için gereken ekstra kan akımı darlık nedeniyle sağlanamaz ve ağrı başlar. Mide-bağırsak sistemini besleyen 3 ana arter (Çölyak, SMA, İMA) arasında muazzam bir 'kollateral (yedek) ağ' vardır (Örn: Pankreatikoduodenal ark, Riolan arkı, Drummond marjinal arteri). Bu zengin ağ sayesinde, tek bir damarın (hatta yavaş gelişiyorsa iki damarın) tıkanması bile genellikle tolere edilir. Klinik bulgu (İntestinal angina) verebilmesi için klasik kural; 3 ana damardan en az 2'sinin kritik stenozu veya tam tıkanıklığı olmasıdır."
+  },
+  {
+    id: 312,
+    ders: "Genel Cerrahi",
+    konu: "Mezenterik Hastalıklar",
+    diff: 4,
+    q: "Oral kontraseptif (doğum kontrol hapı) kullanan ve Faktör V Leiden mutasyonu taşıyan 30 yaşındaki kadın hasta, 1 haftadır giderek şiddetlenen künt karın ağrısı, bulantı ve kanlı ishal şikayetiyle başvuruyor. Karın muayenesinde belirgin distansiyon saptanıyor. Laktat seviyesi hafif yüksek olan hastanın kontrastlı Batın Tomografisinde (BT) Superior Mezenterik Ven (SMV) içinde lümeni dolduran dolum defekti saptanıyor. Mezenterik Venöz Tromboz (MVT) tanısı kesinleşen ancak henüz peritonit bulgusu/barsak nekrozu OLMAYAN bu hastada, tedavinin ilk ve en kritik adımı aşağıdakilerden hangisidir?",
+    options: [
+      "Acil laparotomi ve ince bağırsak rezeksiyonu",
+      "Trombolitik tedavi (tPA) ile pıhtının eritilmesi",
+      "Terapötik dozda intravenöz sistemik antikoagülasyon (Heparin) başlanması",
+      "Superior mezenterik artere stent yerleştirilmesi",
+      "Vena kava inferior (IVC) filtresi takılması"
+    ],
+    correct: 2,
+    exp: "Mezenterik İskemiler içinde Mezenterik Venöz Tromboz (MVT), arteriyel olanlara göre (emboli/tromboz) daha yavaş, sinsi seyreder (1-2 haftalık öykü). Neredeyse her zaman altta yatan bir hiperkoagülabilite (pıhtılaşma bozukluğu - Faktör V Leiden, OKS kullanımı, polisitemi vera vb.) vardır. Ven tıkandığı için bağırsak kanı boşaltamaz, şişer, ödemlenir ve sonunda kan gitmediği için iskemik kalır. Eğer bağırsak henüz ölmemişse (peritonit/perforasyon yoksa), tedavide cerrahi YAPILMAZ. İlk ve en önemli hayat kurtarıcı adım 'Sistemik Antikoagülasyon (Heparin)' başlanmasıdır. Bu, venöz trombozun ilerlemesini durdurur ve kollaterallerin açılmasına zaman tanır."
+  },
+  {
+    id: 313,
+    ders: "Genel Cerrahi",
+    konu: "Kolon Rektum Hastalıkları",
+    diff: 4,
+    q: "Yirmi beş yaşındaki erkek hastanın kolonoskopisinde tüm kolon ve rektumu döşeyen yüzlerce adenomatöz polip saptanıyor. Babasının da 40 yaşında kolon kanserinden vefat ettiği öğreniliyor. Ailesel Adenomatöz Polipozis (FAP) tanısı alan bu hastada, hastalığa neden olan genetik mutasyonun (APC geni) Wnt sinyal yolağında yaratmış olduğu hücresel düzeydeki biyokimyasal sonuç aşağıdakilerden hangisidir?",
+    options: [
+      "DNA mismatch onarım enzimlerinin sentezlenememesi (Mikrosatellit instabilitesi)",
+      "Beta-katenin molekülünün yıkılamayarak (degrade edilemeyerek) hücre çekirdeğine gitmesi ve sürekli hücre bölünmesini (proliferasyon) tetiklemesi",
+      "p53 tümör süpresör geninin aşırı metillenmesi",
+      "E-kaderin moleküllerinin hücre zarından kaybolarak metastazı başlatması",
+      "K-RAS onkogeninin sürekli GTP'ye bağlı kalarak mitojenik sinyal göndermesi"
+    ],
+    correct: 1,
+    exp: "Ailesel Adenomatöz Polipozis (FAP), otozomal dominant geçişli ve %100 kolon kanserine dönüşen bir hastalıktır. APC (Adenomatous Polyposis Coli) tümör süpresör geni mutasyona uğramıştır. Normal sağlıklı bir hücrede APC proteini, 'Beta-katenin' adlı molekülü yakalayıp yıkarak onun çekirdeğe gitmesini engeller. Eğer APC mutasyona uğrar ve görevini yapamazsa, Beta-katenin serbest kalır, çekirdeğe girer ve hücreye 'Sürekli Bölün (Proliferasyon)' emri verir (Wnt sinyal yolağının aşırı aktivasyonu). Bu da yüzlerce polip ve kanser oluşumuyla sonuçlanır. (DNA mismatch onarım defekti ise HNPCC/Lynch sendromunun mekanizmasıdır)."
+  },
+  {
+    id: 314,
+    ders: "Genel Cerrahi",
+    konu: "Kolon Rektum Hastalıkları",
+    diff: 5,
+    q: "Altmış beş yaşında erkek hasta, son 6 aydır devam eden halsizlik, çabuk yorulma ve eforla gelen nefes darlığı şikayetiyle dahiliye polikliniğine başvuruyor. Hastanın bağırsak alışkanlıklarında hiçbir değişiklik, kabızlık veya gözle görülür (makroskopik) kanaması YOKTUR. Kan tahlilinde Hemoglobin 8.5 g/dL, MCV 70 fL (Mikrositer anemi) ve Ferritin çok düşük saptanıyor. İleri yaşta açıklanamayan demir eksikliği anemisi saptanan bu hastada, tümörün kolonda GİZLİ (okkült) kanama yaparak anemiyle bulgu verdiği ancak dışkı çapı geniş olduğu için OBSTRÜKSİYON (tıkanıklık) YAPMADIĞI en olası anatomik lokalizasyon aşağıdakilerden hangisidir?",
+    options: [
+      "Çekum ve Çıkan Kolon (Sağ Kolon)",
+      "Transvers Kolon",
+      "İnen Kolon",
+      "Sigmoid Kolon",
+      "Rektum"
+    ],
+    correct: 0,
+    exp: "Kolon kanserinin klinik prezentasyonu anatomik yerleşime göre tamamen zıttır. Sol kolon (İnen/Sigmoid) çapı dardır ve içindeki dışkı katıdır. Sol kolon tümörleri yüzük (peçete halkası) gibi büyür ve katı gaita geçemediği için klasik olarak 'Kabızlık, Bağırsak alışkanlığında değişme ve Tıkanıklık (Obstrüksiyon)' ile bulgu verir. Sağ Kolon (Çekum) ise çapı en geniş yerdir ve içindeki dışkı sıvı haldedir. Buradaki tümörler karnabahar gibi büyür ve asla tıkanıklık yapmaz. Ancak sıvı gaita tümöre sürttükçe sürekli milimetrik 'GİZLİ KANAMA' yapar. Bu nedenle Sağ Kolon kanseri hastaları sadece açıklanamayan (kronik) 'Demir Eksikliği Anemisi' ile gelirler."
+  },
+  {
+    id: 315,
+    ders: "Genel Cerrahi",
+    konu: "Kolon Rektum Hastalıkları",
+    diff: 4,
+    q: "Huzurevinde kalan 80 yaşındaki demans ve kronik kabızlık (konstipasyon) öyküsü olan erkek hasta, 3 gündür gaz/gaita çıkaramama ve karnında devasa şişlik (distansiyon) nedeniyle acile getiriliyor. Muayenede batın davul gibi gergin ancak asimetrik şişmiş. Ayakta direkt batın grafisinde (ADBG), sol alt kadrandan sağ üst kadrana doğru uzanan, içi hava dolu dev bir ters 'U' harfi (Kahve Çekirdeği / Coffee Bean manzarası) izleniyor. Peritonit bulgusu OLMAYAN bu hastada (Sigmoid Volvulus) tanıyı kesinleştiren ve aynı zamanda İLK tedavi (dekompresyon) adımı olan müdahale aşağıdakilerden hangisidir?",
+    options: [
+      "Acil cerrahi ile Hartmann prosedürü uygulanması",
+      "Rijit veya Fleksibl Sigmoidoskopi eşliğinde rektal tüp yerleştirilerek obstrüksiyonun açılması",
+      "Perkütan transhepatik kolanjiografi (PTK) yapılması",
+      "Nazogastrik tüp takılarak lavman (enema) uygulanması",
+      "Açık karın (Open abdomen) bırakılarak laparostomi yapılması"
+    ],
+    correct: 1,
+    exp: "Vaka çok klasik bir Sigmoid Volvulus tablosudur. İleri yaş, yatağa bağımlılık, psikiyatrik ilaç kullanımı ve kronik kabızlık en büyük risk faktörleridir. Genişleyen sigmoid kolon kendi kökü etrafında dönerek (volvulus) kapalı ans tıkanıklığı yaratır. ADBG'de görülen dev U şeklindeki gaz gölgesi 'Kahve Çekirdeği' bulgusudur. Hastada iskemi veya peritonit bulgusu (defans/rebound) YOKSA, ilk yapılacak adım ASLA cerrahi değildir. 'Rijit veya Fleksibl Sigmoidoskopi' ile dönen bölgeye ulaşılır, bir rektal tüp nazikçe ilerletilerek birikmiş devasa gaz/gaita tahliye edilir (Dekompresyon). Dönen kolon açılır, hasta rahatlar, günler sonra elektif cerrahi planlanır."
+  },
+  {
+    id: 316,
+    ders: "Genel Cerrahi",
+    konu: "Appendix Hastalıkları",
+    diff: 4,
+    q: "Yirmi yaşında erkek hasta, iştahsızlık (anoreksi) ve göbek çevresinde (periumblikal) hissettiği künt bir karın ağrısı ile güne başlıyor. Ağrı 6 saat sonra göbek çevresinden kayboluyor ve sağ alt kadrana (kasığa doğru) yerleşerek öksürmekle ve yürümekle artan şiddetli/keskin bir karaktere bürünüyor. Akut apandisit atağında görülen bu klasik 'Ağrının Yer Değiştirmesi (Shifting pain)' fenomeninin altında yatan anatomik/nörolojik patofizyoloji aşağıdakilerden hangisidir?",
+    options: [
+      "Apendiks lümenindeki obstrüksiyonun çözülüp inflamasyonun çekuma yayılması",
+      "İlk ağrının visseral sinirlerle T10 dermatomuna (göbek) yansıması, inflamasyon apendiks duvarını aşıp paryetal peritona değdiğinde ise somatik sinirlerle sağ alt kadrana lokalize olması",
+      "Apendiks içindeki fekalitin hareket ederek ileoçekal valvi tıkaması",
+      "Otonomik vagus sinirinin başlangıçta spazm yapıp, daha sonra yorularak ağrıyı pudendal sinire devretmesi",
+      "Mezenterik lenf nodlarındaki reaktif hiperplazinin peritonu gerdirmesi"
+    ],
+    correct: 1,
+    exp: "Akut apandisitin en klasik hikayesi ağrının göbekten sağ alt kadrana yer değiştirmesidir. Patofizyoloji: Lümen tıkanır, apendiks şişer. Apendiks (orta bağırsak kökenli) gerildiğinde, bu ağrı miyelinsiz otonomik (visseral) C lifleriyle omuriliğe taşınır ve beyin bu ağrıyı apendiksin embriyolojik kökenine denk gelen 'T10 dermatomunda' (Yani Göbek Çevresinde) künt, yer tam gösterilemeyen bir ağrı olarak algılar. Saatler geçer, apendiks iyice iltihaplanır ve tam üzerindeki (karnın iç duvarını döşeyen) 'Paryetal Periton' dokusuna değer (veya tahriş eder). Paryetal periton 'Somatik' (mielinli, keskin A-delta) liflerle döşelidir. Bu sayede hasta ağrıyı tam olarak apendiksin bulunduğu yer olan Sağ Alt Kadranda (McBurney noktası) keskin, net ve batıcı olarak hisseder."
+  },
+  {
+    id: 317,
+    ders: "Genel Cerrahi",
+    konu: "Appendix Hastalıkları",
+    diff: 5,
+    q: "Akut apandisit ön tanısıyla ameliyata alınan 25 yaşındaki hastanın apandektomi materyalinin patolojik incelemesinde; apendiks ucunda (tipinde) yerleşmiş, 1.2 cm çapında 'Karsinoid Tümör' saptanıyor. Tümörün apendiks köküne (bazisine) veya mezoapendikse (yağ dokusuna) invazyonu saptanmıyor ve cerrahi sınırlar temiz. Apendiksin bu en sık görülen tümöründe, hastaya sağ hemikolektomi (kalın bağırsağın sağ yarısının alınması) DEĞİL DE sadece yapılmış olan apandektominin (apendiksin alınmasının) yeterli ve küratif kabul edilmesi için tümör boyutunun maksimum limiti aşağıdakilerden hangisidir?",
+    options: [
+      "0.5 cm",
+      "1.0 cm",
+      "2.0 cm",
+      "3.0 cm",
+      "4.0 cm"
+    ],
+    correct: 2,
+    exp: "Apendiksin en sık görülen tümörü Karsinoid Tümördür ve çoğunlukla apandektomi sonrası patolojide şans eseri saptanır. Cerrahi yönetimin kuralı çok nettir: 1) Eğer karsinoid tümör 2 cm'den KÜÇÜKSE (<2 cm) ve apendiks ucunda/ortasında yerleşmişse, SADECE APANDEKTOMİ küratiftir, başka bir şey yapılmaz. 2) Ancak tümör 2 cm'den BÜYÜKSE (>2 cm), veya 2 cm'den küçük bile olsa 'Apendiks Kökünü/Tabanını' (çekuma yakın) tutmuşsa, veya Mezoapendikse (vasküler/lenfatik alan) invaze olmuşsa; o zaman basit apandektomi yetmez, lenf nodlarını temizlemek için 'Sağ Hemikolektomi' yapmak zorunludur. Vakamızda tümör 1.2 cm ve uçta olduğu için apandektomi yeterlidir."
+  },
+  {
+    id: 318,
+    ders: "Genel Cerrahi",
+    konu: "Appendix Hastalıkları",
+    diff: 4,
+    q: "Altmış yaşında kadın hasta, aylardır süren karın şişliği (asit) ve pelvik ağrı şikayetiyle başvuruyor. Çekilen batın tomografisinde, karın içinde tüm visseral organların yüzeyini kaplayan ve peritona yayılmış masif jelatinöz/müsinöz sıvı (Jelly Belly) saptanıyor. Laparoskopide bu jöle kıvamındaki sıvının tüm karnı doldurduğu görülüyor. Pseudomyxoma Peritonei adı verilen bu korkunç tablonun primer (orijin aldığı) kaynağı vakaların neredeyse tamamında aşağıdakilerden hangisidir?",
+    options: [
+      "Over (Yumurtalık) Müsinöz Kistadenomu",
+      "Apendiks Müsinöz Neoplazisi (veya rüptüre mukoseli)",
+      "Mide Taşlı Yüzük Hücreli Karsinomu",
+      "Pankreas İntraduktal Papiller Müsinöz Neoplazisi (IPMN)",
+      "Kolon Adenokarsinomu"
+    ],
+    correct: 1,
+    exp: "Pseudomyxoma Peritonei (Jelly Belly); periton boşluğunun mukus üreten epitel hücreleri tarafından işgal edilip, karın içinin litrelerce jöle/jelatinöz sıvı ile dolmasıdır. Yıllarca bu tablonun kadınlarda over (yumurtalık) kaynaklı olduğu zannedilmişse de, güncel patolojik ve genetik çalışmalar kanıtlamıştır ki; Pseudomyxoma Peritonei'nin primer (asıl) kaynağı hemen her zaman 'Apendiksin Müsinöz Neoplazileri (Adenom, Kistadenom veya Kanser)'nin yırtılıp (rüptüre olup) hücrelerinin karın içine yayılmasıdır. Overde görülen tümör bile aslında apendiksten oraya dökülüp büyüyen bir metastazdır. Tedavisi çok zordur (Sitoredüktif Cerrahi + HİPEC)."
+  },
+  {
+    id: 319,
+    ders: "Genel Cerrahi",
+    konu: "Perianal Hastalıklar",
+    diff: 4,
+    q: "Otuz yaşında kadın hasta, tuvaletini yaparken (defekasyon sırasında) anüsünde cam kesiği / jilet kesiği gibi yırtılır tarzda şiddetli bir ağrı hissettiğini, ağrının tuvaletten sonra saatlerce devam ettiğini ve peçetede birkaç damla parlak kırmızı kan gördüğünü belirtiyor. Fizik muayenede anal sfinkterin şiddetli spazmda olduğu ve posterior orta hatta (saat 6 hizasında) yırtık saptanıyor. Anal Fissür tablosunun ezici çoğunlukla 'Posterior Orta Hatta' yerleşmesinin temel anatomik nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "Fekal kitlelerin anatomik olarak doğrudan posterior duvara çarpması",
+      "O bölgedeki lenfatik drenajın yokluğu",
+      "İnternal anal sfinkter kas liflerinin posterior orta hatta zayıf ve V şeklinde (eliptik) birleşmesi, ayrıca bu bölgenin kanlanmasının (anodermal perfüzyonun) en zayıf olduğu iskemik alan olması",
+      "Pudendal sinir dallarının sadece posterior orta hatta yoğunlaşarak ağrı yaratması",
+      "Gebelikte ve normal doğumda sadece posterior hattan kesi (epizyotomi) yapılması"
+    ],
+    correct: 2,
+    exp: "Anal Fissür, dentat çizginin altında anodermin (skuamöz epitelin) uzunlamasına yırtılmasıdır. Defekasyonda 'cam batması' hissi klasik bulgusudur. Fissürlerin %90'ı 'Posterior Orta Hat'ta yerleşir. Bunun iki çok önemli anatomik nedeni vardır: 1) İnternal anal sfinkteri oluşturan kas lifleri anüsü sararken, posterior orta hatta birleşme yerlerinde zayıf bir 'Y' veya 'V' şeklinde boşluk bırakırlar. 2) İnfarior rektal arterden gelen kanlanmanın en son ulaştığı, perfüzyonu en zayıf olan yer posterior orta hattır. Kabızlık/Ikınma sonucu sfinkter spazma girince, zaten sınırda olan bu kan akımı tamamen kesilir (İskemi) ve doku beslenemeyip yırtılır."
+  },
+  {
+    id: 320,
+    ders: "Genel Cerrahi",
+    konu: "Perianal Hastalıklar",
+    diff: 5,
+    q: "Kırk yaşında erkek hasta, makat (anüs) çevresinde sürekli akıntı yapan küçük bir delik (Perianal Fistül) nedeniyle inceleniyor. Hastanın jinekolojik litotomi pozisyonunda yapılan muayenesinde; anüsü yatay olarak (saat 3-9 hizasında) ikiye bölen 'Transvers Çizgi'nin ÖN (Anterior) tarafında ve anal vergeden 4 cm uzakta (lateralde) yerleşmiş bir eksternal (dış) fistül ağzı saptanıyor. Goodsall Kuralına göre, bu hastadaki fistül yolunun izleyeceği trake (yol) ve internal (iç) ağzının bulunacağı yer aşağıdakilerden hangisidir?",
+    options: [
+      "Radyal (düz) bir yolla ilerleyerek kendisine en yakın anterior (ön) kriptaya açılır.",
+      "Kıvrımlı (eğri) bir yol izleyerek anal kanalın posterior (arka) orta hattına açılır.",
+      "İntersfinkterik düzlemde yukarı çıkarak rektuma açılır.",
+      "Etrafından dolanarak karşı tarafın iskiyorektal fossasına (At nalı fistül) açılır.",
+      "Radyal (düz) bir yolla ilerleyerek anterior (ön) orta hatta açılır."
+    ],
+    correct: 1,
+    exp: "Perianal fistüllerin iç ağzını (kaynağını) bulmak için altın kural 'Goodsall Kuralı'dır. Anüsü saat 3-9 hizasından yatay bir çizgiyle ikiye böleriz. Kural 1: Dış delik çizginin ARKA (posterior) yarısındaysa, yol eğri (kıvrımlı) bir şekilde gider ve hep Posterior Orta Hatta açılır. Kural 2: Dış delik çizginin ÖN (anterior) yarısındaysa, yol 'Düz (Radyal)' gider ve hizasındaki en yakın kriptaya açılır. İSTİSNA KURAL (Vakamızdaki durum): Eğer dış delik çizginin ÖN tarafında ama anüse 3 cm'den DAHA UZAKTA (vakamızda 4 cm) yerleşmişse, ön taraf kuralı İPTAL OLUR. Bu delik arka taraf gibi davranır, eğri bir yol çizer ve taa Posterior Orta Hatta açılır."
+  },
+  {
+    id: 321,
+    ders: "Genel Cerrahi",
+    konu: "Perianal Hastalıklar",
+    diff: 4,
+    q: "Elli yaşında erkek hasta, tuvaletini yaptıktan sonra klozete (suya) damla damla, parlak kırmızı renkli kanama şikayetiyle başvuruyor. Ağrısı olmadığını belirten hastanın muayenesinde eksternal bir lezyon görülmüyor, ancak anoskopide dentat çizginin ÜZERİNDE, sağ anterior, sağ posterior ve sol lateral yerleşimli, ıkınmakla dışarı sarkan ve kendiliğinden geri giren (Evre 2) genişlemiş venöz/vasküler yastıkçıklar saptanıyor. İç Hemoroid (İnternal Hemoroidal Hastalık) tanısı konan bu hastada, kanamanın tamamen AĞRISIZ olmasının embriyolojik ve nöroanatomik nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "Bölgenin somatik (Pudendal) sinirler tarafından uyarılması",
+      "Kanamanın arteryel değil venöz kökenli olması nedeniyle doku distansiyonu yaratmaması",
+      "İnternal hemoroidlerin dentat çizginin proksimalinde (Endoderm / Arka barsak kökenli) yer alması ve bu nedenle ağrı reseptörü olmayan otonomik visseral sinirlerle innerve edilmesi",
+      "Hemoroid yastıkçıklarının etrafındaki kas dokusunun (Treitz kası) ağrı liflerini bloke etmesi",
+      "Oluşan anal fissürlerin otonomik refleksi kırarak ağrıyı hissettirmemesi"
+    ],
+    correct: 2,
+    exp: "Anorektal bölgeyi 'Dentat Çizgi' ikiye ayırır. Dentat çizginin ÜSTÜ (proksimali) embriyolojik olarak Endoderm (Arka barsak) kökenlidir, otonom sinirlerle uyarılır. Burada ağrı (dokunma, kesme, yanma) reseptörü YOKTUR. Bu nedenle iç hemoroidler bağlansa da, yakılsa da, kanasa da KESİNLİKLE AĞRI YAPMAZ (Sadece tromboze veya inkarserre olup sfinktere sıkışırsa ağrır). Dentat çizginin ALTI (distali) ise Ektoderm kökenlidir, somatik pudendal sinir (Ağrı, ısı, dokunma) ile uyarılır. Bu nedenle dış hemoroidler veya anal fissür (aşağıda oldukları için) ölümcül derecede AĞRILIDIR."
+  },
+  {
+    id: 322,
+    ders: "Anatomi",
+    konu: "Anatomiye Giriş ve Terminoloji",
+    diff: 4,
+    q: "Şiddetli diş ağrısı ve yüksek ateş şikayetiyle başvuran 45 yaşındaki hastanın alt çene (mandibula) 3. molar diş apsesi olduğu saptanıyor. Günler içinde hastanın boynunda şişlik ve solunum sıkıntısı gelişiyor. Çekilen boyun ve toraks tomografisinde, enfeksiyonun boyun derin fasyası fasyal planları arasından süzülerek arka mediastene (mediastinum posterius) ve oradan da diyafragmaya kadar indiği saptanıyor. Boyun enfeksiyonlarının kafatası tabanından diyafragmaya kadar engelsiz bir şekilde mediastene inmesine olanak sağlayan 'Tehlike Alanı (Danger Space)', anatomi terminolojisine göre hangi iki fasya yaprağı arasında yer alır?",
+    options: [
+      "Fascia pretrachealis ile Fascia buccopharyngea arası",
+      "Fascia alaris ile Fascia prevertebralis arası",
+      "Fascia buccopharyngea ile Fascia alaris arası (Retrofarengeal aralık)",
+      "Lamina superficialis ile Fascia pretrachealis arası",
+      "Fascia cervicalis superficialis ile Platysma kası arası"
+    ],
+    correct: 1,
+    exp: "Boyun derin fasyasının fasyal aralıkları enfeksiyonların yayılımı açısından çok kritiktir. 'Retrofarengeal aralık', fascia buccopharyngea ile fascia alaris arasındadır ve T1-T2 (bazen T4) seviyesinde sonlanır. Ancak asıl ölümcül olan ve 'Tehlike Alanı (Danger Space)' olarak bilinen aralık, 'Fascia Alaris ile Fascia Prevertebralis' arasındadır. Bu boşluk kafatası tabanından (kordondan) başlar ve diyafragmaya kadar hiçbir anatomik bariyer olmaksızın arka mediastene uzanır. Boyun apseleri bu aralığa girdiğinde hızla mediastinite ve ölüme yol açar."
+  },
+  {
+    id: 323,
+    ders: "Anatomi",
+    konu: "Anatomiye Giriş ve Terminoloji",
+    diff: 5,
+    q: "Trafik kazası sonrası künt karın travması nedeniyle acil laparotomiye alınan hastada, karaciğer laserasyonuna bağlı masif kanama saptanıyor. Cerrah, kanamayı geçici olarak durdurmak amacıyla 'Pringle Manevrası' uyguluyor ve işaret parmağını Omentum minus'un serbest kenarının arkasındaki doğal açıklıktan (Foramen epiploicum / Winslow deliği) geçirerek ligamentum hepatoduodenale'yi parmakları arasına sıkıştırıyor. Bu manevra sırasında cerrahın işaret parmağının hemen ARKA (posterior) komşuluğunda bulunan ve baskı altında kalma riski taşıyan retroperitoneal büyük damar aşağıdakilerden hangisidir?",
+    options: [
+      "Vena portae hepatis",
+      "Aorta abdominalis",
+      "Vena cava inferior",
+      "Arteria hepatica propria",
+      "Arteria mesenterica superior"
+    ],
+    correct: 2,
+    exp: "Foramen epiploicum (Winslow deliği), bursa omentalis'e (küçük periton boşluğuna) giriş kapısıdır. Cerrah Pringle manevrası yaparken parmağını bu delikten sokar ve hepatoduodenal ligamenti (içinde Vena portae, Arteria hepatica propria ve Ductus choledochus bulunur) sıkarak karaciğere giden kanı keser. Bu esnada parmağın ÖNÜNDE (ligamentin içinde) bu üçlü yapı vardır. Parmağın ARKASINDA (deliğin posterior sınırında) ise retroperitoneal olarak seyreden 'Vena Cava İnferior (VCI)' bulunur. (Deliğin üstünde karaciğer caudat lobu, altında duodenumun 1. kıtası yer alır)."
+  },
+  {
+    id: 324,
+    ders: "Anatomi",
+    konu: "Anatomiye Giriş ve Terminoloji",
+    diff: 4,
+    q: "Sağ kasık bölgesinde şişlik şikayetiyle başvuran 60 yaşındaki erkek hastada indirekt inguinal herni saptanıyor. Fıtık kesesinin, inguinal kanalı geçerek skrotuma kadar indiği görülüyor. Spermatik kordun (funiculus spermaticus) etrafını saran fasyal tabakaların embriyolojik kökenleri göz önüne alındığında, inguinal kanalın yüzeyel halkasından (anulus inguinalis superficialis) çıkarken korda eklenen en dış tabaka olan 'Fascia spermatica externa', karın ön duvarındaki hangi kasın aponevrozunun devamıdır?",
+    options: [
+      "Musculus transversus abdominis",
+      "Musculus obliquus internus abdominis",
+      "Musculus obliquus externus abdominis",
+      "Musculus rectus abdominis",
+      "Fascia transversalis"
+    ],
+    correct: 2,
+    exp: "Testisler embriyolojik hayatta skrotuma inerken karın ön duvarının tabakalarını sürükleyerek kendilerine kılıf yaparlar. 1) En içteki 'Fascia spermatica interna', Fascia transversalis'in devamıdır (Anulus inguinalis profundus'tan çıkar). 2) Ortadaki 'Musculus ve Fascia cremasterica', Musculus obliquus internus abdominis'in devamıdır. 3) En dıştaki 'Fascia spermatica externa' ise inguinal kanalın çıkış kapısı olan anulus inguinalis superficialis'i oluşturan 'Musculus obliquus externus abdominis' aponevrozunun devamıdır."
+  },
+  {
+    id: 325,
+    ders: "Anatomi",
+    konu: "Anatomiye Giriş ve Terminoloji",
+    diff: 4,
+    q: "Açık el üzerine düşme (FOOSH) öyküsü ile acile başvuran hastanın, el bileğinin radial (dış) tarafında şiddetli ağrısı mevcuttur. Başparmak tam ekstansiyona getirildiğinde el bileğinde beliren 'Anatomik Enfiye Çukuru (Fovea radialis / Snuffbox)' palpe edildiğinde derin hassasiyet saptanıyor. Bu çukurun tabanını (zeminini) oluşturan ve kırık şüphesi olan karpal kemikler ile bu çukurun içinden geçerek nabzı alınabilen arter aşağıdakilerden hangisinde doğru eşleştirilmiştir?",
+    options: [
+      "Os lunatum ve Os triquetrum / Arteria ulnaris",
+      "Os scaphoideum ve Os trapezium / Arteria radialis",
+      "Os capitatum ve Os hamatum / Arteria interossea anterior",
+      "Os pisiforme ve Os hamatum / Arteria radialis",
+      "Os scaphoideum ve Os trapezoideum / Arteria ulnaris"
+    ],
+    correct: 1,
+    exp: "Anatomik enfiye çukuru (Fovea radialis), el bileğinin radial tarafındaki üçgen çukurdur. Sınırları: Önde (lateralde) M. abductor pollicis longus (APL) ve M. extensor pollicis brevis (EPB) tendonları; Arkada (medialde) M. extensor pollicis longus (EPL) tendonu. Bu çukurun tabanını (zeminini) iki karpal kemik oluşturur: 'Os Scaphoideum' (Skafoit) ve 'Os Trapezium'. Skafoit kırıklarında tam bu noktaya basmakla ağrı olur. Bu çukurun tam ortasından derinden geçerek ele giden ve nabzı alınabilen damar ise 'Arteria Radialis'tir."
+  },
+  {
+    id: 326,
+    ders: "Anatomi",
+    konu: "Kemikler",
+    diff: 5,
+    q: "On altı yaşında ritmik jimnastik sporcusu, son aylarda giderek artan mekanik bel ağrısı şikayetiyle başvuruyor. Lomber bölge oblik (verev) radyografisinde L5 omurgasında 'İskoç köpeği (Scotty dog)' manzarası izleniyor ve köpeğin boynunda bir kırık hattı (tasmalı köpek görünümü) saptanıyor. Spondilolizis tanısı konan bu hastada, omurganın kırık olan ve üstteki eklem çıkıntısı (processus articularis superior) ile alttaki eklem çıkıntısı (processus articularis inferior) arasında kalan anatomik bölümü aşağıdakilerden hangisidir?",
+    options: [
+      "Lamina arcus vertebrae",
+      "Pediculus arcus vertebrae",
+      "Pars interarticularis",
+      "Processus spinosus",
+      "Corpus vertebrae"
+    ],
+    correct: 2,
+    exp: "Spondilolizis (Omurga kırığı/çatlağı), özellikle jimnastik, halter gibi omurganın aşırı hiperekstansiyon yaptığı sporlarda sık görülür. Klasik radyolojik bulgusu oblik grafideki 'Scotty Dog (İskoç köpeği)' manzarasıdır. Köpeğin burnu processus transversus, kulağı processus articularis superior, ön bacağı processus articularis inferiordur. Köpeğin 'boynu' ise bu iki eklem çıkıntısı (superior ve inferior faseter) arasında kalan ince kemik köprü olan 'Pars Interarticularis'tir. Boyunda kırık/tasma görülmesi Pars interarticularis kırığı (Spondilolizis) anlamına gelir."
+  },
+  {
+    id: 327,
+    ders: "Anatomi",
+    konu: "Kemikler",
+    diff: 4,
+    q: "Başına sert bir cisimle vurulan hastanın, kafatasının yan tarafında şakak kemiği bölgesindeki 'H' şeklindeki kemik birleşme noktası (Pterion) kırılıyor. Hasta acilde aniden komaya giriyor ve kraniyal BT'de epidural hematom saptanıyor. Kanayan Arteria Meningea Media damarına ulaşmak için cerrahın trepanasyon (kafatası açma) yapacağı 'Pterion' noktasını oluşturan 4 kranial kemik aşağıdakilerden hangisinde eksiksiz ve doğru olarak verilmiştir?",
+    options: [
+      "Os frontale, Os parietale, Os temporale, Os sphenoidale",
+      "Os frontale, Os parietale, Os occipitale, Os temporale",
+      "Os parietale, Os temporale, Os sphenoidale, Os zygomaticum",
+      "Os frontale, Os ethmoidale, Os temporale, Os parietale",
+      "Os sphenoidale, Os maxilla, Os zygomaticum, Os frontale"
+    ],
+    correct: 0,
+    exp: "Pterion, kafatasının lateral yüzünde frontal, parietal, temporal ve sfenoid (ala major parçası) kemiklerin birleştiği zayıf ve H harfi şeklindeki sutur bölgesidir. Kafatasının en ince yerlerinden biridir ve tam altından, duramater ile kafatası arasında 'Arteria meningea media' (A. maxillaris'in dalı) geçer. Pterion bölgesine alınan darbeler bu damarı yırtarak ölümcül Epidural Hematoma yol açar."
+  },
+  {
+    id: 328,
+    ders: "Anatomi",
+    konu: "Kemikler",
+    diff: 4,
+    q: "Motokros kazası geçiren 25 yaşındaki hastanın sağ bacak grafilerinde 'Fibula boynu (collum fibulae)' parçalı kırığı saptanıyor. Ortopedi muayenesinde hastanın sağ ayak bileğini yukarı doğru kaldıramadığı (dorsifleksiyon kaybı / düşük ayak) ve ayağını dışa doğru çeviremediği (eversiyon kaybı) gözleniyor. Ayrıca bacağın dış yan yüzünde ve ayak sırtında duyu kaybı saptanıyor. Bu hastada fibula boynu kırığı nedeniyle doğrudan ezilen ve zedelenen sinir aşağıdakilerden hangisidir?",
+    options: [
+      "Nervus tibialis",
+      "Nervus peroneus (fibularis) profundus",
+      "Nervus peroneus (fibularis) superficialis",
+      "Nervus peroneus (fibularis) communis",
+      "Nervus suralis"
+    ],
+    correct: 3,
+    exp: "Fibula boynu kırıkları, anatomik komşuluk nedeniyle 'Nervus Peroneus (Fibularis) Communis' (Ortak Peroneal Sinir) hasarı açısından çok yüksek risk taşır. Ortak peroneal sinir, dizin hemen altında fibula boynuna sarılarak öne doğru döner. Burada ikiye ayrılır: 1) N. peroneus profundus: Tibialis anterior kasını uyarır (ayak dorsifleksiyonu/yukarı kalkması). 2) N. peroneus superficialis: Peroneus longus ve brevis kaslarını uyarır (ayağın eversiyonu/dışa dönmesi) ve ayak sırtının duyusunu alır. Her iki fonksiyon da kaybolduğu için hasar dallara ayrılmadan önceki ANA gövdededir, yani N. peroneus communis'tir."
+  },
+  {
+    id: 329,
+    ders: "Anatomi",
+    konu: "Kemikler",
+    diff: 5,
+    q: "Zorlu ve uzun süren bir vajinal doğum sırasında, obstetrisyen annenin ağrısını azaltmak amacıyla vajinal yoldan parmakla girerek bir kemik çıkıntıyı referans alıyor ve transvajinal 'Pudendal Sinir Bloğu' uyguluyor. Lokal anestezik enjeksiyonu için temel anatomik kılavuz nokta (land-mark) olarak palpe edilen kemik çıkıntı ve bu çıkıntıya tutunan pelvik ligament aşağıdakilerden hangisidir?",
+    options: [
+      "Tuber ischiadicum / Ligamentum sacrotuberale",
+      "Spina ischiadica / Ligamentum sacrospinale",
+      "Symphysis pubica / Ligamentum pubicum superius",
+      "Promontorium / Ligamentum longitudinale anterius",
+      "Eminentia iliopubica / Ligamentum inguinale"
+    ],
+    correct: 1,
+    exp: "Pudendal sinir (S2-S3-S4), perinenin (vajina, anüs, dış genitalya) temel duyusal ve motor siniridir. Pelvisten Foramen ischiadicum majus yoluyla çıkar, ancak perisindeki hedefine ulaşmak için Foramen ischiadicum minus'tan tekrar içeri girmesi gerekir. Bu iki deliği birbirinden ayıran kemik çıkıntı 'Spina ischiadica'dır. Pudendal sinir, spina ischiadica'nın tam arkasından ve etrafından dolanarak geçer. Bu nedenle vajinal doğumda ağrı kontrolü (Pudendal blok) için parmakla 'Spina ischiadica' palpe edilir ve anestezi oraya yapılır. Spina ischiadica'ya tutunan temel bağ ise Ligamentum sacrospinale'dir."
+  },
+  {
+    id: 330,
+    ders: "Anatomi",
+    konu: "Eklemler",
+    diff: 4,
+    q: "Omuz üzerine düşme sonrası acile başvuran 20 yaşındaki hastanın sağ omuzu asimetrik, apolet belirtisi pozitif (omuz yuvarlaklığı kaybolmuş) saptanıyor. Çekilen röntgende humerus başının glenoid kavitenin ön-altına doğru yer değiştirdiği (Anterior Omuz Çıkığı) görülüyor. Bu hastada çıkık sonucu omuz bölgesinde oluşan sinir hasarını tespit etmek için bakılması gereken 'EN SPESİFİK' duyu alanı ve test edilecek kas fonksiyonu aşağıdakilerden hangisidir?",
+    options: [
+      "Kolun medial (iç) yüzünde duyu / M. pectoralis major ile adduksiyon",
+      "Önkolun lateral (dış) yüzünde duyu / M. biceps brachii ile fleksiyon",
+      "Omuzun lateral (dış/apolet) bölgesinde duyu / M. deltoideus ile 15 dereceden sonraki abduksiyon",
+      "Omuzun posterior (arka) bölgesinde duyu / M. triceps brachii ile ekstansiyon",
+      "Kolun posterior yüzünde duyu / M. latissimus dorsi ile adduksiyon"
+    ],
+    correct: 2,
+    exp: "Omuz ekleminin (Art. humeri) en zayıf noktası ön-alt (anteroinferior) kısımdır ve omuz çıkıkları %95 bu yöne olur. Humerus başı aşağıya ve öne kaydığında, humerus cerrahi boynu etrafından dolanan 'Nervus Axillaris (Aksiller Sinir)' sıkışır ve gerilir. Aksiller sinir M. Deltoideus ve M. Teres Minor kaslarını innerve eder, omuzun (apolet bölgesinin) cilt duyusunu alır. Hasarında omuzun dış yan (lateral) kısmında duyu kaybı olur ve M. Deltoideus çalışmadığı için kolun 15 ile 90 derece arasındaki abduksiyonu felç olur (İlk 15 dereceyi Supraspinatus yapar)."
+  },
+  {
+    id: 331,
+    ders: "Anatomi",
+    konu: "Eklemler",
+    diff: 4,
+    q: "Halı sahada futbol oynarken, sağ ayağı yerde sabit basılı iken dizine dış taraftan (lateralden) şiddetli bir darbe alan hasta acı içinde yere yığılıyor. Ortopedi muayenesinde sağ dizde 'O'Donoghue’nin Mutsuz Üçlüsü (Unhappy Triad)' yaralanması saptanıyor. Bu kompleks yaralanmada kopan ve alt bacağın (tibianın) uyluğa (femura) göre anormal şekilde 'ÖNE' doğru kaymasını engelleyen asıl stabilizatör eklem içi yapı aşağıdakilerden hangisidir?",
+    options: [
+      "Ligamentum cruciatum posterius (PCL)",
+      "Ligamentum collaterale fibulare (LCL)",
+      "Ligamentum patellae",
+      "Ligamentum cruciatum anterius (ACL)",
+      "Meniscus lateralis"
+    ],
+    correct: 3,
+    exp: "Dize dışarıdan (lateralden) gelen şiddetli darbeler valgus stresi yaratır ve klasik olarak 'Mutsuz Üçlü (Unhappy Triad)' denilen üç yapıyı aynı anda yırtar: 1) Ligamentum collaterale tibiale (MCL - İç yan bağ), 2) Meniscus medialis (MCL'ye sıkıca yapışık olduğu için beraber kopar), 3) Ligamentum cruciatum anterius (ACL - Ön çapraz bağ). Tibianın (kaval kemiğinin) femura göre ÖNE doğru kaymasını (Anterior drawer / Ön çekmece) engelleyen ana yapı Ön Çapraz Bağdır (ACL). ACL yırtıklarında Lachman ve Ön Çekmece testleri pozitifleşir."
+  },
+  {
+    id: 332,
+    ders: "Anatomi",
+    konu: "Eklemler",
+    diff: 5,
+    q: "Esnerken (ağzını aşırı açtığında) aniden çenesi kilitlenen ve ağzını bir daha kapatamayan hastanın acil serviste çekilen grafisinde, mandibula kondilinin (caput mandibulae) fossa mandibularis'ten çıkarak tuberculum articulare'nin 'önüne' kaydığı (Temporomandibular Eklem - TMJ Çıkığı) saptanıyor. Çene kilitlendiği için hastanın ağzı açık kalmıştır. Bu hastada, mandibula kondilini ve eklem diskini (discus articularis) kasılarak öne doğru çekmeye devam eden ve çenenin geri kapanmasını engelleyen asıl çiğneme kası aşağıdakilerden hangisidir?",
+    options: [
+      "Musculus masseter",
+      "Musculus temporalis",
+      "Musculus pterygoideus medialis",
+      "Musculus pterygoideus lateralis",
+      "Musculus buccinator"
+    ],
+    correct: 3,
+    exp: "Çiğneme kaslarının dördü de Nervus Mandibularis (V3) tarafından uyarılır. Çeneyi kapatanlar (elevasyon): Masseter, Temporalis ve Pterygoideus Medialis'tir. Çeneyi AÇAN ve öne çeken (protrüzyon) TEK çiğneme kası ise 'Musculus Pterygoideus Lateralis'tir. Bu kasın üst lifleri doğrudan TMJ içindeki eklem diskine ve kondile tutunur. Çene anteriora çıkıp kilitlendiğinde, Lateral pterygoid kası spazma girer ve kondili önde tutmaya devam ederek ağzın kapanmasını fiziksel olarak imkansız hale getirir. Redüksiyon (çeneyi geri oturtma) için çeneyi aşağı bastırıp (kasın spazmını yenip) sonra arkaya itmek gerekir."
+  },
+  {
+    id: 333,
+    ders: "Anatomi",
+    konu: "Eklemler",
+    diff: 4,
+    q: "Yenidoğan döneminde Gelişimsel Kalça Displazisi (GKD) saptanan bir bebekte, femur başının asetabulum içinde sabit kalmadığı tespit ediliyor. Kalça eklemi anatomi fizyolojisinde, özellikle çocukluk çağında (epifiz plakları kapanmadan önce) femur başının kanlanmasında hayati bir rol oynayan ve 'Fovea capitis femoris'e tutunan ligamentin (Ligamentum capitis femoris) içinden geçen küçük arter hangi ana damarın dalıdır?",
+    options: [
+      "Arteria femoralis",
+      "Arteria obturatoria",
+      "Arteria circumflexa femoris medialis",
+      "Arteria pudenda interna",
+      "Arteria iliaca externa"
+    ],
+    correct: 1,
+    exp: "Femur başının kanlanması çocukluk ve erişkinlikte farklılık gösterir. Erişkinlerde ana kanlanma A. circumflexa femoris medialis ve lateralis'ten (Özellikle medialis) sağlanır. Ancak epifiz plakları açık olan çocuklarda, bu retinakküler damarlar kıkırdak plağı geçemez. Bu nedenle çocuklarda femur başının kanlanması büyük oranda kalça ekleminin içinde, 'Ligamentum capitis femoris (Ligamentum teres)' içinde seyreden arter (Ramus acetabularis) tarafından sağlanır. Bu küçük damar 'Arteria Obturatoria'nın dalıdır. Çocukluk çağında bu bağın yırtılması veya damarın hasar görmesi femur başı avasküler nekrozuna (Legg-Calve-Perthes Hastalığı) neden olur."
+  },
+  {
+    id: 334,
+    ders: "Anatomi",
+    konu: "Kaslar",
+    diff: 4,
+    q: "Pencere silme ve perde asma gibi kollarını sürekli baş seviyesinin üzerinde kullanan 50 yaşındaki ev hanımı, sağ omzunda şiddetli ağrı şikayetiyle başvuruyor. Muayenede hastadan kollarını yana doğru 90 derece kaldırması ve başparmakları yeri gösterecek şekilde çevirmesi istenip (Boş Kutu / Empty Can Testi), doktor kollarını aşağı bastırdığında hasta sağ kolunu dirençli tutamıyor (kuvvetsizlik) ve ağrı hissediyor. Rotator Manşet yırtığı tanısı alan bu hastada, kolun 'ilk 15 derecelik abduksiyonunu' başlatan ve en sık yırtılan kas aşağıdakilerden hangisidir?",
+    options: [
+      "Musculus infraspinatus",
+      "Musculus subscapularis",
+      "Musculus teres minor",
+      "Musculus supraspinatus",
+      "Musculus deltoideus"
+    ],
+    correct: 3,
+    exp: "Rotator Manşet (Cuff) kasları 4 tanedir (SITS): Supraspinatus, Infraspinatus, Teres minor, Subscapularis. Kolun yana açılmasını (abduksiyon) başlatan (ilk 15 dereceyi yapan) ve acromion altında sıkışmaya (impingement) en yatkın olduğu için EN SIK yırtılan kas 'Musculus Supraspinatus'tur. Boş kutu (Empty can / Jobe) testi bu kasın fonksiyonunu ölçer. Supraspinatus koptuğunda hasta kolunu kendi başına yana açmaya başlayamaz; doktor kolu 15 derece havaya kaldırırsa, oradan sonrasını Deltoid kası devralarak kolu 90 dereceye kadar kaldırabilir."
+  },
+  {
+    id: 335,
+    ders: "Anatomi",
+    konu: "Kaslar",
+    diff: 5,
+    q: "Radikal mastektomi ve aksiller lenf nodu diseksiyonu operasyonu geçiren 45 yaşındaki meme kanseri hastası, ameliyattan 1 ay sonra cerraha başvuruyor. Hasta kollarını öne doğru uzatıp duvara ittiğinde, sağ kürek kemiğinin iç (medial) kenarının duvardan belirgin şekilde ayrılıp arkaya doğru çıkıntı yaptığı ('Kanatlanan Skapula / Winged Scapula') gözleniyor. Ayrıca hasta sağ kolunu 90 derecenin üzerine (başının üstüne) tam olarak kaldıramıyor. Bu hastada aksiller diseksiyon sırasında hangi sinir ve hangi kas zedelenmiştir?",
+    options: [
+      "Nervus thoracicus longus / Musculus serratus anterior",
+      "Nervus thoracodorsalis / Musculus latissimus dorsi",
+      "Nervus axillaris / Musculus deltoideus",
+      "Nervus suprascapularis / Musculus supraspinatus",
+      "Nervus accessorius / Musculus trapezius"
+    ],
+    correct: 0,
+    exp: "Kanatlanan Skapula (Winged Scapula) klasik bir TUS/USMLE sorusudur. Musculus Serratus Anterior kası, skapulayı göğüs kafesine (toraks duvarına) yapışık tutar ve kol 90 dereceyi geçtikten sonra skapulaya yukarı doğru rotasyon yaptırarak kolun baş üstüne (180 dereceye) kalkmasını sağlar. Bu kasın motor siniri 'Nervus Thoracicus Longus'tur. Aksiller lenf bezlerinin temizlenmesi (diseksiyon) veya bıçaklanma sırasında bu sinir kesilirse Serratus Anterior felç olur. Hasta duvara yaslandığında skapulanın medial kenarı torakstan ayrılıp kanat gibi dışarı fırlar ve kol baş üstüne kalkamaz."
+  },
+  {
+    id: 336,
+    ders: "Anatomi",
+    konu: "Kaslar",
+    diff: 4,
+    q: "Sağ elinde ince işleri (düğme ilikleme, iğne iplik kullanma) yaparken zorlanma ve avuç içinde başparmak kökünde incelme (Tenar atrofi) şikayetiyle başvuran hastaya Karpal Tünel Sendromu tanısı konuyor. Muayenede hastanın elindeki bazı küçük kasların felç olduğu saptanıyor. Karpal tünelin içinden geçen Median Sinir zedelenmesine bağlı olarak aşağıdaki kaslardan hangisinin fonksiyonunu kaybetmesi BEKLENMEZ?",
+    options: [
+      "Musculus opponens pollicis",
+      "Musculus abductor pollicis brevis",
+      "Musculus flexor pollicis brevis (yüzeyel başı)",
+      "Lumbrical kaslar (1. ve 2. parmak)",
+      "Musculus adductor pollicis"
+    ],
+    correct: 4,
+    exp: "Eldeki küçük (intrensek) kasların büyük çoğunluğunu (tüm interosseözler, adduktor pollicis, 3-4. lumbrikaller, hipotenar kaslar) Ulnar Sinir innerve eder. Median Sinir elde sadece 'LOAF' akronimiyle bilinen 5 kası uyarır: L (Lumbrical 1 ve 2), O (Opponens pollicis), A (Abductor pollicis brevis), F (Flexor pollicis brevis'in yüzeyel başı). Başparmağı işaret parmağına yaklaştıran (adduksiyon) 'Musculus adductor pollicis' kasının siniri ULNAR SİNİR'dir ve Karpal Tünel Sendromundan (Median sinir lezyonundan) etkilenmez. Bu özellik muayenede çok kritiktir (Froment belirtisi ulnar sinir testidir)."
+  },
+  {
+    id: 337,
+    ders: "Anatomi",
+    konu: "Kaslar",
+    diff: 4,
+    q: "İntramüsküler (İM) enjeksiyon (iğne) uygulaması sonrasında, ilacın siyatik sinire hasar vermesini önlemek amacıyla gluteal bölge dörde bölünür ve enjeksiyon her zaman 'Dış-Üst (Üst-Dış / Süperolateral)' kadrana yapılır. Ancak gluteal bölgeye yapılan bir enjeksiyon yanlışlıkla Dış-Alt (İnferolateral) kadrana veya orta hatta çok yakın yapılırsa zedelenme riski en yüksek olan ve yürüme sırasında yere basmayan tarafın pelvisinin aşağı düşmesine (Trendelenburg yürüyüşü) neden olan sinir-kas ikilisi aşağıdakilerden hangisidir?",
+    options: [
+      "Nervus gluteus inferior / Musculus gluteus maximus",
+      "Nervus ischiadicus (Siyatik sinir) / Musculus piriformis",
+      "Nervus gluteus superior / Musculus gluteus medius ve minimus",
+      "Nervus obturatorius / Musculus obturator internus",
+      "Nervus pudendus / Pelvik taban kasları"
+    ],
+    correct: 2,
+    exp: "Kalça enjeksiyonlarının Üst-Dış (süperolateral) kadrana yapılmasının amacı Siyatik siniri korumaktır. Ancak bu kadranda da güvende olmanız gereken başka bir sinir vardır: 'Nervus Gluteus Superior'. İğne çok yukarı-içe veya mediale kayarsa bu sinir zedelenebilir. Nervus gluteus superior, kalçanın abduktorleri olan 'Gluteus Medius ve Minimus' kaslarını uyarır. Bu kasların görevi, biz tek ayak üzerinde dururken (yürürken), havadaki (yere basmayan) karşı taraf pelvisin yere düşmesini engellemektir. Sinir kesilirse kaslar pelvisi tutamaz ve hasta yürürken sağlam bacağını havaya her kaldırdığında o taraf kalçası yere çöker (Trendelenburg Belirtisi Pozitif). Şıklardaki Siyatik sinir zedelenirse Trendelenburg DEĞİL, bacakta duyu kaybı ve düşük ayak olur."
+  },
+  {
+    id: 338,
+    ders: "Anatomi",
+    konu: "Solunum",
+    diff: 4,
+    q: "İki yaşındaki erkek çocuk evde fıstık yerken aniden şiddetli öksürük ve morarma krizi geçiriyor. Acil servise getirildiğinde sağ akciğerde solunum seslerinin azaldığı ve hışıltı (wheezing) saptanıyor. Çocuğun yabancı cismi (fıstığı) soluk borusuna (trakea) kaçırdığı anlaşılıyor. Yabancı cisimlerin, anatomik yapısı nedeniyle sol ana bronşa kıyasla 'Sağ Ana Bronşa (Bronchus principalis dexter)' kaçma ihtimalinin çok daha yüksek olmasının nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "Sağ ana bronşun sol ana bronşa göre daha dar, daha uzun ve daha yatay (horizontal) olması",
+      "Sağ ana bronşun sol ana bronşa göre daha geniş, daha kısa ve daha dik (vertikal/düşey) olması",
+      "Carina tracheae'nın anatomik olarak sağa doğru daha fazla çıkıntı yapması",
+      "Sağ akciğerin üç loblu olmasının emici (vakum) basıncını sol taraftan daha fazla artırması",
+      "Sağ ana bronş kıkırdak halkalarının tam halka şeklinde olması"
+    ],
+    correct: 1,
+    exp: "Yabancı cisim aspirasyonlarının büyük çoğunluğu (%80) sağ akciğere kaçar. Bunun tamamen anatomik bir nedeni vardır. İki ana bronş trakeadan ayrılırken (Carina'da); Sağ ana bronş (Bronchus principalis dexter) sol tarafa kıyasla DAHA GENİŞ (çapı büyük), DAHA KISA ve DAHA DİK (vertikal / yere daha dik açıyla) seyreder. Adeta trakeanın düz bir devamı gibidir. Sol ana bronş ise kalbin (sol ventrikülün) üzerinden atlamak zorunda olduğu için daha dar, daha uzun ve daha yatay (horizontal) bir açı ile ayrılır. Yerçekimi ve genişlik nedeniyle cisimler direkt sağa düşer."
+  },
+  {
+    id: 339,
+    ders: "Anatomi",
+    konu: "Solunum",
+    diff: 5,
+    q: "Tiroid kanseri nedeniyle total tiroidektomi operasyonu geçiren hastanın ameliyatı sırasında, tiroid bezinin üst kutbunu (superior polünü) besleyen Arteria Thyroidea Superior damarı bağlanırken hemen komşuluğundaki bir sinir yanlışlıkla kesiliyor. Hastanın ameliyat sonrası günlük konuşma sesi (normal volümü) büyük oranda korunmuş olsa da, şarkı söylerken tiz (ince) sesleri çıkaramadığı, bağıramadığı ve sesinin yorulduğu fark ediliyor. Larenkse giden bu sinir hasarı sonucu felç olan ve ses tellerini (vokal kordları) GEREREK sesin incelmesini/tizleşmesini sağlayan KAS aşağıdakilerden hangisidir?",
+    options: [
+      "Musculus cricoarytenoideus posterior",
+      "Musculus thyroarytenoideus",
+      "Musculus vocalis",
+      "Musculus cricoarytenoideus lateralis",
+      "Musculus cricothyroideus"
+    ],
+    correct: 4,
+    exp: "Tiroidektomi cerrahisinde 2 önemli sinir riski vardır. 1) Tiroidin alt kutbunda N. laryngeus recurrens (RLN) riski: Hasarında ses tamamen kısılır veya kapanır. 2) Tiroidin üst kutbunda 'Arteria thyroidea superior' bağlanırken 'Nervus Laryngeus Superior'un Eksternal dalı' (Dış laringeal sinir) risk altındadır. Bu sinir larenkste SADECE TEK BİR KASI uyarır: 'Musculus Cricothyroideus'. Bu kasın görevi vokal kordları uzatıp gerginleştirmektir (gitar teli gibi). Kas felç olursa kordlar gerilemez, hasta günlük konuşur ama tiz (ince) sesleri çıkaramaz, bağıramaz ve şan sanatçılarında kariyer bitirici olur."
+  },
+  {
+    id: 340,
+    ders: "Anatomi",
+    konu: "Solunum",
+    diff: 4,
+    q: "Yetmiş yaşında, 40 paket/yıl sigara içen erkek hasta; sağ omuz ağrısı, sağ kolda uyuşma, sağ göz kapağında düşüklük (pitozis), sağ göz bebeğinde küçülme (miyozis) ve sağ yüz yarısında terleme kaybı (anhidroz) ile başvuruyor. Çekilen akciğer grafisinde sağ akciğerin en üst uç kısmında (apeks) kitle saptanıyor. Pancoast Tümörü (Akciğer süperior sulkus tümörü) tanısı konan bu hastada, göz bulgularına (Horner Sendromu) yol açan anatomik yapının tümör tarafından invaze edildiği bölge aşağıdakilerden hangisidir?",
+    options: [
+      "Plexus brachialis'in superior trunkusu (C5-C6)",
+      "Ganglion stellatum (Cervicothoracic sympathetic ganglion)",
+      "Nervus vagus'un sağ dalı",
+      "Nervus laryngeus recurrens",
+      "Nervus phrenicus"
+    ],
+    correct: 1,
+    exp: "Pancoast Tümörü, akciğer apeksine (en tepesine) yerleşen kanserdir. Yukarıya doğru büyüyerek göğüs çıkımındaki yapılara bası yapar. En sık iki yapı ezilir: 1) Plexus Brachialis'in alt kökleri (C8-T1): Kolda uyuşma, omuz ağrısı ve elde kas erimesi yapar. 2) Sempatik Zincir ve özellikle 'Ganglion Stellatum' (Alt servikal ve birinci torakal sempatik ganglion birleşimi). Sempatik zincir ezildiğinde yüze giden sempatik sinyaller kesilir. Sempatik sistem gözü büyütür (midriyazis), kapağı açık tutar ve terletir. Kesildiğinde zıttı olur: Göz bebeği küçülür (Miyozis), kapak düşer (Pitozis) ve yüz terlemez (Anhidroz). Bu üçlüye Horner Sendromu denir."
+  },
+  {
+    id: 341,
+    ders: "Anatomi",
+    konu: "Solunum",
+    diff: 4,
+    q: "Ağır toraks travması sonrası solunum sıkıntısı gelişen hastanın sağ hemitoraksına takılan göğüs tüpünden (tüp torakostomi), süt beyazı renginde, yağlı görünümlü (şilöz) sıvı gelmeye başlıyor. Sıvının analizi 'Şilotoraks (Chylothorax)' olarak raporlanıyor. Vücudun alt yarısının ve sol üst yarısının lenf drenajını toplayan 'Ductus Thoracicus'un travma sonucu yırtıldığı anlaşılıyor. Ductus thoracicus'un göğüs boşluğunu geçtikten sonra lenf sıvısını venöz sisteme (kana) boşalttığı anatomik kavşak (nokta) aşağıdakilerden hangisidir?",
+    options: [
+      "Vena cava superior ile Vena azygos'un birleşim yeri",
+      "Vena jugularis interna sinistra (sol) ile Vena subclavia sinistra'nın (sol) birleştiği Pirogoff açısı (Angulus venosus sinister)",
+      "Vena jugularis interna dextra (sağ) ile Vena subclavia dextra'nın birleştiği açı",
+      "Vena brachiocephalica sinistra ile Vena cava superior'un birleşim yeri",
+      "Atrium dextrum (Sağ atriyum)"
+    ],
+    correct: 1,
+    exp: "Ductus Thoracicus, vücudun en büyük lenfatik damarıdır. Cisterna chyli'den (batından) başlar, aorta ile birlikte diyafragmayı geçer, arka mediastende ilerler ve boyun kökünde sola döner. Bağırsaklardan emilen tüm yağlar (şilomikronlar) bu kanal ile taşınır. Ductus thoracicus, topladığı bu süt beyazı (şilos) lenf sıvısını kana 'Sol Vena Jugularis İnterna' ile 'Sol Vena Subclavia'nın birleşerek Vena Brachiocephalica Sinistra'yı oluşturduğu köşe olan Sol Venöz Açı'dan (Angulus Venosus Sinister / Pirogoff Açısı) boşaltır. Yırtılması plevral boşluğa süt gibi sıvı dolmasına (Şilotoraks) neden olur. (Sağ lenfatik kanal ise sağ venöz açıya dökülür)."
+  },
+  {
+    id: 342,
+    ders: "Anatomi",
+    konu: "Dolaşım",
+    diff: 4,
+    q: "Altmış beş yaşında erkek hasta, göğüs ağrısı şikayetiyle acile getiriliyor. EKG'sinde DII, DIII ve aVF derivasyonlarında ST elevasyonu (İnferior Miyokard Enfarktüsü) saptanıyor. Hastanın takiplerinde kalp hızının aniden 40/dk'ya düştüğü ve atriyoventriküler (AV) tam blok geliştiği görülüyor. Toplumun %80-85'inde sağ dominant koroner dolaşım olduğu göz önüne alındığında, bu hastada tıkalı olan koroner arter ve AV düğümü besleyen dalı aşağıdakilerden hangisidir?",
+    options: [
+      "Arteria coronaria sinistra / Ramus interventricularis anterior (LAD)",
+      "Arteria coronaria dextra / Ramus interventricularis posterior (PDA)",
+      "Arteria circumflexa / Ramus marginalis sinister",
+      "Arteria coronaria sinistra / Ramus diagonalis",
+      "Arteria coronaria dextra / Ramus nodi sinuatrialis"
+    ],
+    correct: 1,
+    exp: "İnferior miyokard enfarktüsü (DII, DIII, aVF) tipik olarak kalbin alt (diyafragmatik) yüzünü besleyen Ramus Interventricularis Posterior (PDA) damarının tıkanıklığını gösterir. Toplumun büyük çoğunluğunda (%85) PDA, Arteria Coronaria Dextra'dan (Sağ Koroner Arter - RCA) çıkar (Sağ dominant kalp). AV düğümü besleyen 'Ramus nodi atrioventricularis' de %90 oranında sağ koroner arterden (PDA'nın ayrıldığı bölgeden) çıkar. Bu nedenle inferior MI geçiren hastalarda sağ koroner tıkanıklığına bağlı olarak AV düğüm iskemisi ve AV blok (bradikardi) çok sık görülür."
+  },
+  {
+    id: 343,
+    ders: "Anatomi",
+    konu: "Dolaşım",
+    diff: 5,
+    q: "Kırk yaşında kadın hasta, katı gıdaları yutarken takılma hissi (disfaji) şikayetiyle başvuruyor. Baryumlu özofagus grafisinde, özofagusun arka duvarında T3-T4 vertebra seviyesinde dışarıdan basıya bağlı oblik bir dolum defekti saptanıyor. Toraks BT anjiyografide, aort arkından (arcus aortae) en son dal olarak çıkan ve özofagusun arkasından dolanarak sağ kola doğru ilerleyen aberan (anormal) bir atardamar tespit ediliyor. Disfajiya lusoria olarak adlandırılan bu tabloya neden olan aberan damar aşağıdakilerden hangisidir?",
+    options: [
+      "Arteria carotis communis dextra",
+      "Arteria subclavia dextra",
+      "Truncus brachiocephalicus",
+      "Arteria vertebralis dextra",
+      "Arteria thyroidea ima"
+    ],
+    correct: 1,
+    exp: "Arcus aortae'nın normal dallanma sırası (sağdan sola): Truncus brachiocephalicus, A. carotis communis sinistra, A. subclavia sinistra şeklindedir. Embriyolojik gelişim kusuru sonucu sağ 4. aortik ark gerilerse, 'Arteria Subclavia Dextra' truncus brachiocephalicus'tan çıkmak yerine, aort arkının en son (en sol ve en arka) dalı olarak çıkar. Aberan sağ subklavyan arter adını alan bu damar, sağ kola gitmek için mecburen özofagusun arkasından geçer ve onu ezerek yutma güçlüğüne (Dysphagia lusoria) neden olur."
+  },
+  {
+    id: 344,
+    ders: "Anatomi",
+    konu: "Dolaşım",
+    diff: 4,
+    q: "Alkolik siroz nedeniyle takip edilen 55 yaşındaki hastanın fizik muayenesinde; karın derisi üzerinde, göbek deliği (umbilikus) çevresinden dışarıya doğru ışınsal olarak yayılan ve belirginleşmiş, kıvrımlı venöz damar ağları (Caput Medusae) saptanıyor. Portal hipertansiyon sonucu açılan bu porto-kaval anastomoz, hangi iki venöz sistem arasında gerçekleşmektedir?",
+    options: [
+      "Vena splenica ile Vena renalis sinistra",
+      "Vena gastrica sinistra ile Venae esophageales",
+      "Venae rectales superiores ile Venae rectales mediae/inferiores",
+      "Venae paraumbilicales ile Venae epigastricae superficiales",
+      "Vena mesenterica inferior ile Vena cava inferior"
+    ],
+    correct: 3,
+    exp: "Portal hipertansiyonda kan, karaciğerden geçemediği için sistemik dolaşıma (Vena Cava'ya) kaçabileceği yedek yollar (porto-kaval anastomozlar) arar. 1) Özofagus alt ucu: V. gastrica sinistra (portal) ile V. esophageales (kaval) birleşir -> Özofagus varisleri. 2) Rektum: V. rectalis superior (portal) ile V. rectalis media/inferior (kaval) birleşir -> Hemoroid. 3) Göbek çevresi: Ligamentum teres uteri içindeki Venae paraumbilicales (portal) ile karın ön duvarındaki Venae epigastricae superficiales/inferiores (kaval) birleşir. Genişleyen bu venler göbek etrafında Medusa başı (Caput Medusae) görünümü yaratır."
+  },
+  {
+    id: 345,
+    ders: "Anatomi",
+    konu: "Dolaşım",
+    diff: 4,
+    q: "Açık kalp cerrahisi (koroner bypass) geçiren bir hastada, solunum kaslarını uyaran sinirin hasar görmesi sonucu diyafragmanın sol yarısında paralizi (felç) geliştiği ve radyografide sol hemidiyafragmanın yukarıda kaldığı (elevasyon) görülüyor. Bu komplikasyona yol açan Nervus Phrenicus, mediastende kalbe doğru ilerlerken aşağıdaki anatomik yapıların hangisinin 'ÖNÜNDEN' (anteriorundan) geçerek seyrine devam eder?",
+    options: [
+      "Radix pulmonis (Akciğer kökü)",
+      "Arcus aortae",
+      "Esophagus",
+      "Vena azygos",
+      "Ductus thoracicus"
+    ],
+    correct: 0,
+    exp: "Nervus phrenicus ve Nervus vagus'un torakstaki seyri sınavlarda çok sık sorulur. Her ikisi de boyundan göğüs boşluğuna girer. Farkları şudur: Nervus Phrenicus, kalbin zarına (perikarda) yapışık olarak ilerler ve her iki akciğer kökünün (Radix pulmonis / Hilum) ÖNÜNDEN geçer. Nervus Vagus ise sindirim sistemine (özofagusa/mideye) doğru inmek zorunda olduğu için akciğer kökünün (Radix pulmonis) ARKASINDAN geçer."
+  },
+  {
+    id: 346,
+    ders: "Anatomi",
+    konu: "Sindirim",
+    diff: 4,
+    q: "Üç yaşındaki çocuk, oynarken yuttuğu bir madeni paranın boğazına takılması sonucu acile getiriliyor. Çekilen servikal radyografide paranın özofagusun başlangıç kısmında, en dar yerinde sıkıştığı görülüyor. Özofagusun anatomik olarak en dar olduğu bu birinci darlık bölgesi (üst özofageal sfinkter), hangi kasın lifleri tarafından oluşturulur?",
+    options: [
+      "Musculus constrictor pharyngis superior",
+      "Musculus thyropharyngeus",
+      "Musculus cricopharyngeus",
+      "Musculus palatopharyngeus",
+      "Musculus stylopharyngeus"
+    ],
+    correct: 2,
+    exp: "Özofagusun 3 anatomik darlığı vardır: 1) Başlangıç darlığı (C6 seviyesi - En dar yer), 2) Aort arkı ve sol ana bronşun çaprazladığı torakal darlık (T4-T5), 3) Diyafragmayı geçtiği yer (T10). Yutulan yabancı cisimlerin en sık takıldığı yer olan başlangıç darlığı (Üst Özofageal Sfinkter - UES), Musculus constrictor pharyngis inferior'un en alt parçası olan 'Musculus Cricopharyngeus' tarafından oluşturulur. Bu kas aynı zamanda Zenker divertikülünün oluştuğu zayıf alanın (Killian üçgeni) alt sınırıdır."
+  },
+  {
+    id: 347,
+    ders: "Anatomi",
+    konu: "Sindirim",
+    diff: 5,
+    q: "Ellibeş yaşında erkek hasta, masif üst gastrointestinal kanama (hematemez ve melena) ve hemorajik şok tablosuyla acil ameliyata alınıyor. Endoskopide duodenumun birinci parçasının (bulbus) 'arka duvarında' yerleşmiş ve kanayan dev bir peptik ülser saptanıyor. Ülserin derinleşerek deldiği ve ölümcül arteriyel kanamaya yol açan damar, anatomik komşuluğu gereği aşağıdakilerden hangisidir?",
+    options: [
+      "Arteria gastrica sinistra",
+      "Arteria splenica",
+      "Arteria gastroduodenalis",
+      "Arteria mesenterica superior",
+      "Arteria gastroepiploica dextra"
+    ],
+    correct: 2,
+    exp: "Duodenal ülserler en sık bulbusun (1. kıta) ön duvarında görülür ve delinerek peritonite (pnömoperitoneum) yol açarlar. Ancak bulbusun ARKA (posterior) duvarındaki ülserler çok daha tehlikelidir; çünkü duodenumun 1. kıtasının hemen arkasından, pankreas başı ile duodenum arasından aşağıya doğru inen çok büyük bir damar geçer: 'Arteria Gastroduodenalis'. Arka duvar ülseri delindiğinde peritonit değil, bu atardamarı aşındırarak durdurulamayan masif GİS kanaması yapar. (Mide küçük kurvatur ülserleri ise A. gastrica sinistra'yı kanatır)."
+  },
+  {
+    id: 348,
+    ders: "Anatomi",
+    konu: "Sindirim",
+    diff: 4,
+    q: "Kolesistektomi (Safra kesesinin alınması) operasyonu sırasında cerrahın, safra kesesini besleyen Arteria Cystica'yı bulmak ve güvenle bağlamak için diseke ettiği 'Calot Üçgeni (Trigonum cystohepaticum)' adı verilen anatomik bölgenin sınırları aşağıdakilerden hangisinde doğru olarak verilmiştir?",
+    options: [
+      "Ductus cysticus, Ductus hepaticus communis, Karaciğerin alt kenarı",
+      "Ductus choledochus, Arteria hepatica propria, Vena portae",
+      "Ductus cysticus, Ductus choledochus, Pankreasın üst kenarı",
+      "Ligamentum falciforme, Karaciğerin alt kenarı, Ductus hepaticus communis",
+      "Arteria cystica, Ductus cysticus, Karaciğerin alt kenarı"
+    ],
+    correct: 0,
+    exp: "Kolesistektomi cerrahisinin kalbi 'Calot Üçgeni'dir. Bu üçgenin sınırlarını bilmek safra yolu yaralanmalarını önlemek için şarttır. Sınırları: Dıştan (lateralden) safra kesesi kanalı 'Ductus Cysticus', İçten (medialden) ana karaciğer kanalı 'Ductus Hepaticus Communis' ve Üstten 'Karaciğerin alt kenarı (viseral yüzü)' oluşturur. Bu üçgenin tam içinden safra kesesini besleyen 'Arteria Cystica' (sıklıkla sağ hepatik arterden çıkarak) geçer ve Lenf nodu (Lund/Calot nodu) bulunur."
+  },
+  {
+    id: 349,
+    ders: "Anatomi",
+    konu: "Sindirim",
+    diff: 4,
+    q: "Rektum kanseri nedeniyle opere edilen hastanın patoloji raporunda, tümörün Linea Pectinata'nın (Dentat çizgi) 'ÜSTÜNDE' (proksimalinde) yerleştiği belirtiliyor. Embriyolojik olarak arka bağırsaktan (hindgut) köken alan bu bölgenin anatomik lenfatik drenajı ve kanın döküldüğü venöz sistem prensip olarak nereye yönlenir?",
+    options: [
+      "Nodi lymphoidei inguinales superficiales / Vena cava inferior",
+      "Nodi lymphoidei iliaci interni / Vena portae hepatis (Vena mesenterica inferior aracılığıyla)",
+      "Nodi lymphoidei iliaci externi / Vena cava inferior (Vena pudenda interna aracılığıyla)",
+      "Nodi lymphoidei sacrales / Vena azygos",
+      "Nodi lymphoidei lumbales / Vena renalis sinistra"
+    ],
+    correct: 1,
+    exp: "Anorektal bölgede 'Linea Pectinata (Dentat çizgi)' embriyolojik bir sınır taşıdır. ÜST KISMI (Endoderm): Ağrıya duyarsızdır (otonom sinirler), İç hemoroid buradadır. Venöz kanı V. rectalis superior -> V. mesenterica inferior üzerinden 'Vena Portae'ya dökülür (Kanserleri karaciğere gider). Lenfleri yukarıya, 'İliak intern ve Para-aortik/Mezenterik' nodlara gider. ALT KISMI (Ektoderm): Ağrıya çok duyarlıdır (N. pudendus). Dış hemoroid buradadır. Venöz kanı V. rectalis inferior -> V. pudenda interna üzerinden 'Vena Cava'ya (sistemik dolaşıma) dökülür. Lenfleri ise yüzeyel kasık (İnguinal yüzeyel) nodlarına gider."
+  },
+  {
+    id: 350,
+    ders: "Anatomi",
+    konu: "Ürogenital",
+    diff: 5,
+    q: "Kırk beş yaşında kadın hasta, multipl myomları nedeniyle radikal histerektomi ameliyatına alınıyor. Operasyon sırasında uterusun alınabilmesi için Uterus atardamarının (Arteria Uterina) serviks hizasında bağlanması gerekiyor. Bu işlem sırasında cerrahın son derece dikkatli olması gereken, çünkü arteria uterinanın tam ALTINDAN ('Köprünün altından akan su' misali) geçerek mesaneye doğru ilerleyen anatomik yapı aşağıdakilerden hangisidir?",
+    options: [
+      "Ligamentum teres uteri (Yuvarlak bağ)",
+      "Tuba uterina (Fallop tüpü)",
+      "Ureter",
+      "Nervus obturatorius",
+      "Vena ovarica"
+    ],
+    correct: 2,
+    exp: "Jinekolojik cerrahinin en klasik anatomik kuralı: 'Su köprünün altından akar (Water runs under the bridge)'. Su idrarı, yani 'Üreter'i temsil eder. Köprü ise kanı, yani 'Arteria Uterina'yı temsil eder. Ureter, böbrekten mesaneye inerken pelvisin derinliklerinde, serviksin yaklaşık 1-2 cm lateralinde Arteria Uterina'nın altından (arkasından) çapraz yaparak geçer. Histerektomi sırasında uterus arterleri klemplenirken en çok kesilme/bağlanma riski taşıyan organ üreterdir."
+  },
+  {
+    id: 351,
+    ders: "Anatomi",
+    konu: "Ürogenital",
+    diff: 4,
+    q: "On iki yaşındaki erkek çocuk bisiklete binerken dengesini kaybediyor ve bacakları açık şekilde bisikletin demir iskeletinin üzerine düşüyor (Straddle injury - Ata biner tarzı travma). Acil serviste çocuğun skrotumunun, penisinin ve karın ön duvarının alt kısmının idrar extravazasyonuna bağlı olarak devasa şiştiği görülüyor. Ancak idrarın uyluklara (bacaklara) SIZMADIĞI gözleniyor. Bu hastada yırtılan üretra parçası ve idrarın uyluklara sızmasını anatomik olarak engelleyen fasya birleşimi aşağıdakilerden hangisidir?",
+    options: [
+      "Pars membranacea / Fascia lata'nın Fascia iliaca'ya yapışması",
+      "Pars prostatica / Fascia transversalis'in peritoneum ile birleşmesi",
+      "Pars spongiosa (Bulböz parça) / Perineal fasya'nın (Colles fasyası) uyluktaki Fascia Lata'ya yapışması",
+      "Pars spongiosa (Pena parça) / Dartos fasyasının Buck fasyasıyla kaynaşması",
+      "Pars preprostatica / Scarpa fasyasının inguinal ligamente yapışması"
+    ],
+    correct: 2,
+    exp: "Ata biner tarzda (Straddle) travmalarda testisler değil, pubik simfiz ile demir arasına sıkışan 'Erkek Üretrasının Bulböz (Pars Spongiosa) Parçası' yırtılır. İdrar Buck fasyasını delerse, Yüzeyel Perine Aralığına yayılır. Bu idrar; skrotuma (Dartos fasyası altı), penise ve yukarıya karın ön duvarına (Scarpa/Colles fasyası altı) yayılabilir. Ancak idrar ASLA uyluklara (bacaklara) geçemez; çünkü yüzeyel perineyi saran Colles Fasyası, uylukların derin fasyası olan 'Fascia Lata'ya sımsıkı yapışarak geçilmez bir anatomik baraj oluşturur. (Eğer pelvis kırığı olsaydı, üretra Pars Membranacea'dan yırtılır ve idrar Derin Perine Aralığına -prostat etrafına- dolardı)."
+  },
+  {
+    id: 352,
+    ders: "Anatomi",
+    konu: "Ürogenital",
+    diff: 4,
+    q: "Altmış beş yaşında erkek hasta, idrar başlatmada zorluk ve idrar tazyikinde azalma (Benign Prostat Hiperplazisi - BPH bulguları) nedeniyle ürolojiye başvuruyor. Yapılan rektal muayenede (DRE) prostat bezi tamamen pürüzsüz ve düzgün palpe ediliyor ancak boyutu artmış bulunuyor. PSA seviyesi normaldir. Prostat bezinin glandüler anatomisi göz önüne alındığında, BPH patolojisinin geliştiği ve üretrayı sararak erken dönemde idrar tıkanıklığı semptomları veren anatomik zon aşağıdakilerden hangisidir?",
+    options: [
+      "Santral (Merkezi) Zon",
+      "Periferik Zon",
+      "Tranzisyonel (Geçiş) Zon",
+      "Anterior Fibromüsküler Stroma",
+      "Verumontanum bölgesi"
+    ],
+    correct: 2,
+    exp: "Prostat anatomisinde zonların klinik korelasyonu hayati önem taşır. Prostat kanseri vakalarının %70-80'i prostatın arkasında, rektuma komşu olan 'Periferik Zon'dan gelişir (Bu yüzden parmakla muayenede kanser sert bir nodül olarak hissedilir, ancak geç bulgu verir çünkü üretraya uzaktır). Benign Prostat Hiperplazisi (BPH) ise üretrayı tam bir simit gibi saran 'Tranzisyonel (Geçiş) Zon'dan köken alır. Bu yüzden rektumdan muayenede kolay hissedilmez, ancak üretrayı hemen boğduğu için işeme semptomlarını (zorlanma, tıkanıklık) çok erken dönemde verir."
+  },
+  {
+    id: 353,
+    ders: "Anatomi",
+    konu: "Ürogenital",
+    diff: 4,
+    q: "Pelvik kitle nedeniyle ooforektomi (yumurtalığın alınması) planlanan bir hastada cerrah, overleri asan ve içinde ovariyan damarları (Arteria ve Vena ovarica) barındıran bağları (ligamentleri) bağlıyor. Operasyon sırasında bağlanarak kesilen bu anatomik yapı ve hemen altından/yakınından geçtiği için yaralanma riski taşıyan organ aşağıdakilerden hangisinde doğru eşleştirilmiştir?",
+    options: [
+      "Ligamentum ovarii proprium / Nervus femoralis",
+      "Ligamentum suspensorium ovarii (İnfundibulopelvik bağ) / Üreter",
+      "Ligamentum latum uteri (Geniş bağ) / Arteria iliaca interna",
+      "Ligamentum teres uteri (Yuvarlak bağ) / Mesane",
+      "Ligamentum uterosacrale / Rektum"
+    ],
+    correct: 1,
+    exp: "Yumurtalığı (overi) pelvik duvara asan ve içinde yumurtalığın asıl kan damarlarını (A. ve V. ovarica) barındıran yapı 'Ligamentum suspensorium ovarii'dir (Diğer adıyla İnfundibulopelvik ligament). Ooforektomi ameliyatında kanamayı durdurmak için ilk bu bağ klemplenip kesilir. Ureter, böbrekten inip pelvise girerken tam bu bağın tabanında, ovariyan damarların hemen altından çapraz yaparak geçer. Bu nedenle infundibulopelvik ligament bağlanırken üreter yanlışlıkla kesilebilir veya bağlanabilir. (Ligamentum ovarii proprium ise overi uterusa bağlar, içinde damar yoktur)."
+  },
+  {
+    id: 354,
+    ders: "Anatomi",
+    konu: "Nöroanatomi",
+    diff: 5,
+    q: "Atriyal fibrilasyon öyküsü olan 60 yaşındaki erkek hasta, aniden başlayan baş dönmesi, sağ tarafa dengesizlik ve yutma güçlüğü (disfaji) ile acile getiriliyor. Nörolojik muayenesinde sağ göz kapağında düşüklük (pitozis) ve miyozis (Horner sendromu), sağ vokal kord felci (ses kısıklığı) saptanıyor. Ağrı ve ısı duyusu hastanın YÜZÜNÜN SAĞ YARISINDA kaybolmuşken, VÜCUDUNUN SOL YARISINDA (karşı taraf) kaybolmuştur. Kol ve bacak kas gücü tamamen normaldir. Wallenberg (Lateral Medüller) Sendromu tablosundaki bu hastada, ses kısıklığı ve yutma güçlüğüne yol açan, iskemiye uğramış beyin sapı çekirdeği (nükleusu) aşağıdakilerden hangisidir?",
+    options: [
+      "Nucleus tractus solitarii",
+      "Nucleus ambiguus",
+      "Nucleus olivaris inferior",
+      "Nucleus cuneatus",
+      "Fasciculus longitudinalis medialis (MLF)"
+    ],
+    correct: 1,
+    exp: "Wallenberg Sendromu; Posterior İnferior Serebellar Arter (PICA) tıkanıklığı sonucu gelişen 'Lateral Medulla (Bulbus)' infarktıdır. Çok klasik çapraz duyu kaybı yapar: Trigeminal sinir çekirdeği etkilenir (Aynı taraf yüzde ağrı/ısı kaybı), Spinotalamik traktus etkilenir (Karşı taraf vücutta ağrı/ısı kaybı). Kortikospinal yol (piramitler) önde (medialde) olduğu için felç OLMAZ. Sendromun en spesifik bulgusu olan ses kısıklığı ve yutma güçlüğü ise; 9, 10 ve 11. kranial sinirlerin motor kaslarını (farenks/larenks) uyaran 'Nucleus Ambiguus'un iskemiye uğramasından kaynaklanır."
+  },
+  {
+    id: 355,
+    ders: "Anatomi",
+    konu: "Nöroanatomi",
+    diff: 4,
+    q: "Yetmiş yaşında kontrolsüz hipertansiyon öyküsü olan erkek hasta, sağ kolu ve sağ bacağında aniden başlayan, kontrol edemediği, şiddetli, savurucu ve geniş genlikli istemsiz hareketler şikayetiyle getiriliyor. Görüntülemede sol serebral hemisferin derinlerinde küçük bir laküner infarkt (inme) saptanıyor. Hemiballismus adı verilen bu motor bozukluğun patofizyolojisinden sorumlu olan ve normalde globus pallidus internus'u uyararak (eksitatör etkiyle) hareketi frenleyen bazal ganglion yapısı aşağıdakilerden hangisidir?",
+    options: [
+      "Substantia nigra pars compacta",
+      "Nucleus caudatus",
+      "Putamen",
+      "Nucleus subthalamicus (Subtalamik nükleus)",
+      "Thalamus'un ventrolateral (VL) çekirdeği"
+    ],
+    correct: 3,
+    exp: "Hemiballismus; vücudun bir yarısında aniden ortaya çıkan, çok şiddetli ve savurucu (flinging) istemsiz hareketlerdir. Bu tablo anatomik olarak karşı tarafın 'Nucleus Subthalamicus (Subtalamik Çekirdek)' lezyonuna (sıklıkla laküner inme) spesifiktir. Bazal ganglionların indirekt (frenleyici) yolağında yer alan Subtalamik Nükleus, Globus Pallidus İnternus'a (GPi) 'Glutamat' salgılayarak onu aktive eder, GPi de gidip talamusu frenler. Subtalamik nükleus ölürse, GPi uyarılamaz, talamus serbest kalır ve kortekse 'Sürekli hareket et' sinyali yollar."
+  },
+  {
+    id: 356,
+    ders: "Anatomi",
+    konu: "Nöroanatomi",
+    diff: 4,
+    q: "Yirmi beş yaşında erkek hasta, son 1 yıldır kollarında ve omuzlarında sıcaklık hissini fark edemediğini (kahve fincanı tutarken elinin yandığını hissetmediğini) belirtiyor. Muayenesinde bilateral pelerin tarzında (omuzlar ve kollar boyunca) 'ağrı ve ısı duyusu kaybı' saptanırken, dokunma, titreşim ve propriyosepsiyon (pozisyon) duyularının tamamen KORUNDUĞU görülüyor. Bacaklarında duyu kaybı yoktur. Siringomiyeli tanısı konan bu hastada, omurilik içinde genişleyen kavitasyonun (sirenks boşluğunun) ezerek tahrip ettiği anatomik yapı aşağıdakilerden hangisidir?",
+    options: [
+      "Fasciculus gracilis ve cuneatus (Arka kordon)",
+      "Tractus corticospinalis lateralis",
+      "Cornu anterius (Ön boynuz motor nöronları)",
+      "Commissura alba anterior (Ön beyaz komissür)",
+      "Ganglion spinale (Arka kök ganglionu)"
+    ],
+    correct: 3,
+    exp: "Siringomiyeli, omuriliğin santral kanalının (sıklıkla servikal bölgede) kistik olarak genişlemesidir. Bu genişleyen sıvı dolu kist ilk olarak kanalın hemen önünden geçen çapraz yapan lifleri ezer. Ağrı ve ısı duyusunu taşıyan Spinotalamik Traktus lifleri, omuriliğe girdikten hemen sonra orta hattı çaprazlayarak (Commissura Alba Anterior üzerinden) karşı tarafa geçer. Sirenks ilk olarak bu 'Ön Beyaz Komissür (Commissura Alba Anterior)'ü tahrip ettiği için bilateral, seviye veren, sadece pelerin tarzı ağrı/ısı kaybı görülür. Arka kordondan geçen dokunma/titreşim duyuları çaprazı taa bulbusta yaptığı için korunur (Dissosiye duyu kusuru)."
+  },
+  {
+    id: 357,
+    ders: "Anatomi",
+    konu: "Nöroanatomi",
+    diff: 4,
+    q: "Sabah uyandığında yüzünün sağ tarafını hareket ettiremediğini fark eden hasta, inme (felç) geçirdiği korkusuyla acile başvuruyor. Muayenede hastanın sağ gözünü kapatamadığı, sağ tarafa gülemediği (ağız köşesi sola kaymış) ve en önemlisi sağ alnını kırıştıramadığı (kaşını kaldıramadığı) görülüyor. Kollarda ve bacaklarda güç kaybı yoktur. Sağ Fasiyal Sinir (Nervus Facialis) Periferik Felci (Bell Paralizisi) tanısı konan bu tablonun, beyindeki bir inme (Santral Fasiyal Felç) kaynaklı OLMADIĞINI kanıtlayan klinik anatomik bulgu aşağıdakilerden hangisidir?",
+    options: [
+      "Ağız köşesinin sağlam tarafa (sola) kayması",
+      "Hastanın sağ gözünü kapatamaması ve alnını kırıştıramaması (Üst yüz yarısının da felç olması)",
+      "Tat duyusunun korunmuş olması",
+      "İşitme kaybının eşlik etmemesi",
+      "Çiğneme kaslarının felçten etkilenmemesi"
+    ],
+    correct: 1,
+    exp: "Fasiyal felcin periferik (Bell paralizisi) ve santral (İnme/Strok) ayrımı hayat kurtarır. Yüzün alt yarısına (ağız çevresi) giden sinirler SADECE karşı beyin yarımküresinden motor uyarı alır. Ancak yüzün üst yarısına (alın ve göz kapakları) giden motor nükleuslar ÇİFT TARAFLI (her iki beyin yarımküresinden de) uyarı alır. Bu nedenle beyinde inme (strok) olursa, sağlam beyin yarımküresi alnı çalıştırmaya devam eder; hasta alnını kırıştırabilir, sadece ağzı kayar (Santral felç). Ancak sinirin beyin sapından çıktıktan sonraki gövdesi kesilirse (Periferik Bell Paralizisi), yukarıdan gelen çift desteğin bir anlamı kalmaz; tüm yüz (alın dahil) o tarafta tamamen felç olur."
+  },
+  {
+    id: 358,
+    ders: "Anatomi",
+    konu: "Duyu",
+    diff: 5,
+    q: "Merdiven inmekte veya kitap okumakta zorlandığını ve çift gördüğünü (diplopi) belirten 40 yaşındaki hasta, polikliniğe girerken başını sürekli olarak sol omzuna doğru eğik (head tilt) tutmaktadır. Muayenede sağ gözünün hafifçe yukarıya kaydığı (hipertropya) ve hastanın sağ gözüyle 'aşağı ve içe' bakamadığı saptanıyor. Başını sola eğmesi çift görmeyi düzeltmektedir. Bu klinik tabloda felç olan kranial sinir ve uyarması gereken ekstraoküler göz kası aşağıdakilerden hangisinde doğru verilmiştir?",
+    options: [
+      "Nervus Oculomotorius (III) / Musculus rectus medialis",
+      "Nervus Trochlearis (IV) / Musculus obliquus superior",
+      "Nervus Abducens (VI) / Musculus rectus lateralis",
+      "Nervus Opticus (II) / Musculus levator palpebrae superioris",
+      "Nervus Oculomotorius (III) / Musculus obliquus inferior"
+    ],
+    correct: 1,
+    exp: "Göz kaslarının innervasyonu SO4, LR6 geri kalanlar 3 (Superior Oblique -> CN IV, Lateral Rectus -> CN VI) kuralıyla ezberlenir. Troklear sinir (CN IV) sadece Musculus Obliquus Superior'u uyarır. Bu kasın görevi gözü aşağı, dışa çeker ve asıl olarak göz küresini İÇE (buruna doğru) döndürür (İntorsiyon). Kas felç olduğunda (Sağ CN IV felci) göz dışa/yukarı kayar ve dışa döner (Ekstorsiyon). Ekstorsiyon nedeniyle çift gören hasta, dünyayı tekrar hizalamak için başını felçli gözün TERSİ yöne (Sola) eğer (Kompansatuar Head Tilt). Merdiven inmek (aşağı bakış) en çok zorlandıkları eylemdir."
+  },
+  {
+    id: 359,
+    ders: "Anatomi",
+    konu: "Duyu",
+    diff: 4,
+    q: "Sağ kulağında şiddetli ağrı ve yüz felci ile başvuran hastaya Ramsay Hunt Sendromu (Herpes Zoster Oticus) tanısı konuyor. Hasta ayrıca ortamdaki normal sesleri bile tahammül edilemez derecede yüksek, yankılı ve rahatsız edici (Hiperakuzi) duyduğunu ifade ediyor. Normalde orta kulakta yüksek şiddetli ses dalgalarını sönümleyerek iç kulağı (kohleayı) koruyan ve bu hastada fasiyal sinir felci nedeniyle çalışmayan kas aşağıdakilerden hangisidir?",
+    options: [
+      "Musculus tensor tympani",
+      "Musculus stapedius",
+      "Musculus salpingopharyngeus",
+      "Musculus levator veli palatini",
+      "Musculus auricularis posterior"
+    ],
+    correct: 1,
+    exp: "Orta kulakta ses dalgalarının şiddetini azaltan (akustik refleks) iki minik kas vardır. 1) M. Tensor Tympani: Çekice (malleus) tutunur, N. Mandibularis (V3) uyarır. 2) M. Stapedius: Üzengiye (stapes) tutunur, vücudun en küçük kasıdır ve Nervus Facialis (CN VII) uyarır. Fasiyal felçte M. Stapedius felç olur. Üzengi kemiği oval pencereye kontrolsüzce ve şiddetle vurur. Bu durum hastada en ufak seslerin bile devasa ve yankılı duyulmasına (Hiperakuzi) neden olur."
+  },
+  {
+    id: 360,
+    ders: "Anatomi",
+    konu: "Duyu",
+    diff: 4,
+    q: "Kafatasının ön bölgesine (frontal bölge) şiddetli darbe alan motosiklet sürücüsünde, koku alma duyusunun tamamen kaybolduğu (anozmi) ve burnundan berrak, su gibi bir sıvının damladığı (BOS rinoresi) saptanıyor. Nöroanatomik yapı göz önüne alındığında, koku (olfaktör) sinir liflerinin koptuğu ve beyin omurilik sıvısının (BOS) burun boşluğuna sızmasına neden olan kırık kafa tabanı kemiği bölgesi aşağıdakilerden hangisidir?",
+    options: [
+      "Sella turcica (Os sphenoidale)",
+      "Lamina cribrosa (Os ethmoidale)",
+      "Crista galli (Os frontale)",
+      "Clivus (Os occipitale)",
+      "Foramen rotundum (Os sphenoidale)"
+    ],
+    correct: 1,
+    exp: "Koku siniri (Nervus Olfactorius - CN I), burun mukozasından (regio olfactoria) aldığı koku uyarılarını, beyne ulaştırmak için Os Ethmoidale'nin kalbur gibi delikli bir kemik yapısı olan 'Lamina Cribrosa (Cribriform plate)' adlı bölgesinden geçer. Kafa tabanı kırıklarında (özellikle ön fossa) bu incecik kemik plaka kırılır. Kırıldığı an içinden geçen ince koku sinirleri kopar (Anozmi) ve hemen üzerindeki subaraknoid mesafedeki BOS sıvısı burun boşluğuna akmaya başlar (BOS Rinoresi). Bu hastalara nazogastrik tüp takılması beyne girebileceği için kontrendikedir."
+  },
+  {
+    id: 361,
+    ders: "Anatomi",
+    konu: "Duyu",
+    diff: 4,
+    q: "Otuz beş yaşında kadın hasta, son aylarda arabayı park ederken yan aynaları veya yandan gelen arabaları göremediği, sürekli omuzlarını çarptığı şikayetiyle göz polikliniğine başvuruyor. Yapılan perimetrik görme alanı muayenesinde her iki gözde dış (temporal) görme alanlarının kaybolduğu (Bitemporal Hemianopsi) saptanıyor. Ek olarak hastada memelerden süt gelme (galaktore) şikayeti mevcuttur. Bu hastanın görme yollarında anatomik olarak basıya (kompresyona) uğrayan bölge aşağıdakilerden hangisidir?",
+    options: [
+      "Sağ Nervus Opticus",
+      "Sol Tractus Opticus",
+      "Chiasma Opticum",
+      "Corpus Geniculatum Laterale",
+      "Radiatio Optica (Meyer loop)"
+    ],
+    correct: 2,
+    exp: "Bitemporal hemianopsi (her iki gözün dış / şakak tarafındaki görme alanını kaybetmesi, at gözlüğü takmış gibi olma) klasik bir Hipofiz Makroadenomu bulgusudur (Vakadaki galaktore de Prolaktinoma'yı işaret ediyor). Gözlerin buruna bakan (nazal) retinalarından çıkan sinir lifleri 'Dış/Temporal' görme alanının görüntüsünü taşır. Bu nazal lifler beyne giderken optik sinirleri geçer ve tam hipofiz bezinin üzerinde yer alan 'Chiasma Opticum (Optik Kiazma)' adlı bölgede çapraz yaparlar. Hipofiz adenomu yukarı büyüyüp Optik kiazmanın tam ortasına bası yaptığında sadece çaprazlayan bu nazal lifleri ezer ve bilateral temporal görme alanı kaybı (Bitemporal hemianopsi) oluşur."
+  },
+  {
+    id: 322,
+    ders: "Dahiliye",
+    konu: "Gastroenteroloji",
+    diff: 4,
+    q: "Yetmiş yaşında erkek hasta, Abdominal Aort Anevrizması (AAA) onarımı operasyonundan 2 gün sonra başlayan sol alt kadran ağrısı ve kanlı ishal şikayetiyle değerlendiriliyor. Hastanın hemodinamisi stabildir ve peritonit bulgusu yoktur. Yapılan fleksibl sigmoidoskopide; inen kolon ile transvers kolonun birleşim yeri olan splenik fleksurada mukozanın ödemli, siyanotik ve ülsere (İskemik Kolit) olduğu saptanıyor. Kolonun bu spesifik bölgesinin (Griffith noktası) iskemiye karşı en duyarlı alan olmasının anatomik nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "Sadece submukozal venöz pleksuslarla kanlanıp arteriyel desteğinin olmaması",
+      "Vasa rektaların (düz damarların) bu bölgede çok kısa ve kıvrımlı olması",
+      "Superior Mezenterik Arter (SMA) ile İnferior Mezenterik Arter (İMA) sulama alanlarının birleştiği, anastomozun en zayıf olduğu 'sınır (watershed)' bölgesi olması",
+      "Otonomik innervasyon eksikliğine bağlı lokal vazospazm gelişmesi",
+      "İliohipogastrik sinir kompresyonuna bağlı refleks vazokonstriksiyon"
+    ],
+    correct: 2,
+    exp: "Vaka tipik bir İskemik Kolit (Non-oklüzif mezenterik iskemi) tablosudur. Genellikle aort cerrahisi, diyaliz veya şiddetli hipotansiyon sonrası görülür. Klasik bulgusu sol alt kadran ağrısı ve kanlı ishaldir. Kalın bağırsağın kanlanmasında iki kritik 'Watershed (sınır/havza)' noktası vardır. Bunlardan ilki SMA ile İMA'nın anastomoz yaptığı Splenik Fleksura (Griffith noktası), ikincisi ise İMA ile internal iliak arter dallarının anastomoz yaptığı Rektosigmoid bileşkedir (Sudeck noktası). Bu bölgeler iki büyük arterin en uç sınırları olduğu için, sistemik tansiyon düştüğünde kanın ilk çekildiği (iskemiye uğrayan) ve en zayıf olan yerlerdir."
+  },
+  {
+    id: 323,
+    ders: "Dahiliye",
+    konu: "Hepatoloji",
+    diff: 5,
+    q: "Elli yaşında erkek hasta; yorgunluk, eklem ağrıları (özellikle 2. ve 3. metakarpofalangeal eklemlerde), cinsel isteksizlik ve ciltte koyulaşma şikayetleriyle başvuruyor. Hastanın açlık kan şekeri 180 mg/dL (Yeni tanı DM), ferritin düzeyi 1500 ng/mL (Çok yüksek) ve transferrin satürasyonu %75 saptanıyor. Herediter Hemokromatozis (Bronz Diyabet) tanısı alan bu hastada, demir birikimine yol açan HFE gen mutasyonunun enterositlerde (bağırsak hücrelerinde) demir emilimini artırmasını sağlayan asıl hücresel mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Hepcidin hormon sentezinin azalması sonucu enterositlerin bazolateral zarındaki 'Ferroportin' kanallarının açık kalarak kana sürekli demir pompalaması",
+      "Divalan Metal Taşıyıcı-1 (DMT-1) reseptörlerinin doğrudan aşırı aktivasyonu",
+      "Transferrin reseptörlerinin karaciğer yüzeyinden silinerek demirin plazmada birikmesi",
+      "Makrofajların içindeki ferritin depolarının lizozomal enzimlerle parçalanması",
+      "Enterositlerdeki seruloplazmin oksidaz aktivitesinin kaybı"
+    ],
+    correct: 0,
+    exp: "Herediter Hemokromatozis otozomal resesif bir demir depo hastalığıdır (Siroz, Diyabet, Bronz cilt, Restriktif kardiyomiyopati, Gonadal yetmezlik). En sık HFE gen mutasyonu (C282Y) görülür. HFE geni normalde karaciğerden 'Hepsidin (Hepcidin)' hormonunun üretimini uyarır. Hepsidin, vücudun demir frenidir; bağırsaklardaki demir çıkış kapısı olan 'Ferroportin' kanallarını yıkarak demirin kana geçmesini engeller. HFE mutasyonunda Hepsidin ÜRETİLEMEZ. Fren (Hepsidin) olmayınca, bağırsaklardaki Ferroportin kapıları sonuna kadar açık kalır ve yenilen tüm demir fütursuzca kana karışarak organlarda birikir."
+  },
+  {
+    id: 324,
+    ders: "Dahiliye",
+    konu: "Nefroloji",
+    diff: 4,
+    q: "Altmış beş yaşında erkek hasta, kemik ağrıları ve halsizlik nedeniyle araştırılırken Multipl Miyelom tanısı alıyor. Hastanın kan gazında Anyon Açığı NORMAL olan metabolik asidoz saptanıyor. İdrar tahlilinde glukozüri (kan şekeri normal olmasına rağmen), aminoasidüri ve fosfatüri tespit ediliyor. Serum fosforu ve ürik asidi DÜŞÜK bulunuyor. Miyelomun hafif zincir toksisitesine bağlı olarak gelişen ve proksimal tübüldeki emilim fonksiyonlarının tümünün çökmesiyle karakterize bu tablo aşağıdakilerden hangisidir?",
+    options: [
+      "Bartter Sendromu",
+      "Gitelman Sendromu",
+      "Tip 1 Renal Tübüler Asidoz (Distal RTA)",
+      "Fanconi Sendromu (Tip 2 Proksimal RTA)",
+      "Liddle Sendromu"
+    ],
+    correct: 3,
+    exp: "Vaka, proksimal tübülün global disfonksiyonu olan Fanconi Sendromudur. Proksimal tübül, idrardaki glukozun, aminoasitlerin, ürik asidin, fosforun ve bikarbonatın emildiği yerdir. Bu tübül harabiyete uğradığında (Çocuklarda en sık neden Sistinozis, erişkinde Multipl Miyelom/hafif zincir toksisitesi ve tenofovir gibi ilaçlardır), bu maddelerin hepsi idrarla kaçar. Kan şekeri normalken idrarda şeker çıkması (normoglisemik glukozüri) çok tipiktir. Bikarbonat geri emilemediği için 'Tip 2 Proksimal Renal Tübüler Asidoz (Normal anyon açıklı)' gelişir."
+  },
+  {
+    id: 325,
+    ders: "Dahiliye",
+    konu: "Endokrinoloji",
+    diff: 5,
+    q: "Altmış yaşında, 50 paket-yıl sigara içen erkek hasta; son bir ayda hızla gelişen kas güçsüzlüğü, yüzde ödem, ciltte yaygın koyulaşma (hiperpigmentasyon) ve tansiyon yüksekliği (180/110 mmHg) ile başvuruyor. Toraks BT'de santral yerleşimli akciğer kitlesi izleniyor. Laboratuvarda ACTH düzeyi > 500 pg/mL (Çok yüksek) ve Serum Potasyumu: 2.1 mEq/L (Şiddetli Hipokalemi) saptanıyor. Yüksek doz deksametazon baskılama testine yanıt alınamayan bu Ektopik ACTH Sendromu vakasında, şiddetli hipokalemi ve hipertansiyonun asıl hücresel mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Tümörden eş zamanlı olarak salgılanan ektopik Aldosteron hormonunun etkisi",
+      "Akciğer tümörünün böbrek üstü bezine metastaz yaparak adrenal veni tıkaması",
+      "Aşırı yüksek düzeylerdeki kortizolün, böbrek tübüllerindeki 11-beta-HSD2 enzimini doyurarak inaktive edememesi ve kortizolün doğrudan Mineralokortikoid Reseptörlerini (Aldosteron gibi) şiddetle uyarması",
+      "ACTH molekülünün doğrudan renal tübüllerdeki sodyum-potasyum pompasını aktive etmesi",
+      "Hipokaleminin aslında eşlik eden paraneoplastik Liddle Sendromundan kaynaklanması"
+    ],
+    correct: 2,
+    exp: "Küçük Hücreli Akciğer Kanserine bağlı 'Ektopik ACTH' salınımında, Cushing sendromu çok hızlı geliştiği için obezite/stria gibi klasik bulgulara vakit kalmaz; en belirgin bulgular Hiperpigmentasyon (yüksek ACTH'a bağlı) ve Şiddetli Hipokalemik Hipertansiyondur. Patofizyoloji şudur: Normalde Kortizol de aldosteron reseptörüne bağlanabilir ama böbrekteki 11-beta-HSD2 enzimi kortizolü inaktif kortizona çevirip bunu engeller. Ancak ektopik sendromda üretilen kortizol seviyesi o kadar DEHŞET vericidir ki, bu enzim kapasitesini doldurur (sature olur). İptal edilemeyen devasa kortizol seli, aldosteron reseptörlerini kırıp geçer ve masif sodyum tutulumu/potasyum atılımı yapar."
+  },
+  {
+    id: 326,
+    ders: "Dahiliye",
+    konu: "Hematoloji",
+    diff: 4,
+    q: "Altmış yaşında erkek hasta; yüzünde kızarıklık (pletora), sıcak duş aldıktan sonra tüm vücudunda ortaya çıkan dayanılmaz kaşıntı (akuajenik pruritus) ve ayak tabanlarında yanıcı ağrı (eritromelalji) şikayetleriyle başvuruyor. Hemogramda Hemoglobin: 19.5 g/dL, Lökosit: 15.000 /mm3, Trombosit: 600.000 /mm3 (Pansitoz) saptanıyor. Serum Eritropoetin (EPO) düzeyi DÜŞÜK olan bu Polisitemia Vera hastasında, kliniğin ortaya çıkmasına neden olan genetik mutasyonun (JAK2 V617F) sitoplazmik sinyal yolağında yarattığı etki aşağıdakilerden hangisidir?",
+    options: [
+      "Hücre zarındaki EPO reseptörlerinin yıkımını (degradasyonunu) engelleyerek reseptör sayısını artırması",
+      "Tirozin kinaz enziminin, ortama EPO (ligand) bağlanmasına gerek duymadan sürekli (konstitütif) olarak aktif kalıp hücreye 'Bölün' sinyali (STAT aktivasyonu) göndermesi",
+      "Hücre döngüsünü frenleyen p53 tümör süpresör genini hipermetilasyonla susturması",
+      "Kemik iliğindeki makrofajların aşırı demir depolamasını uyararak eritropoezi hızlandırması",
+      "Apoptozu başlatan sitokrom C salınımını doğrudan bloke etmesi"
+    ],
+    correct: 1,
+    exp: "Polisitemia Vera (PV), bir Miyeloproliferatif Neoplazmdır (MPN). Sıcak banyo sonrası kaşıntı (mast hücre degranülasyonu), pletora ve pansitoz tipiktir. En kritik laboratuvar bulgusu EPO düzeyinin DÜŞÜK (baskılanmış) olmasıdır. Hastaların >%95'inde JAK2 (V617F) gen mutasyonu vardır. JAK2, eritropoetin reseptörünün kuyruğuna bağlı olan bir tirozin kinazdır. Normalde EPO gelince çalışır. Ancak mutasyona uğradığında, ortama EPO gelmese bile (liganddan bağımsız olarak) kendini sürekli 'açık/aktif' konumda kilitler ve çekirdeğe durmaksızın STAT proteinleri aracılığıyla çoğalma sinyali yollar."
+  },
+  {
+    id: 327,
+    ders: "Dahiliye",
+    konu: "Onkoloji",
+    diff: 4,
+    q: "Altmış beş yaşında, yoğun sigara içicisi erkek hasta; son haftalarda giderek artan halsizlik, kabızlık, aşırı susama ve sık idrara çıkma (poliüri) şikayetiyle acile getiriliyor. Toraks BT'de sol akciğer hilusunda kitle (Yassı Hücreli Karsinom) izleniyor. Biyokimyasında Serum Kalsiyum: 14.5 mg/dL (Şiddetli Hiperkalsemi) ve İntakt PTH düzeyi: 5 pg/mL (Baskılanmış/Düşük) saptanıyor. Kemik sintigrafisi normal (metastaz yok) olan bu hastadaki hiperkalseminin patofizyolojisinden sorumlu asıl molekül aşağıdakilerden hangisidir?",
+    options: [
+      "Paratiroid bezini uyaran ektopik Kalsitonin salınımı",
+      "Makrofajlar tarafından sentezlenen 1,25-dihidroksi Vitamin D (Kalsitriol)",
+      "Tümör dokusundan salgılanan Paratiroid Hormon İlişkili Peptid (PTHrP)",
+      "Kemik iliğinden salınan Osteoklast Aktive Edici Faktör (OAF / IL-1)",
+      "Tümörün salgıladığı aşırı M-CSF (Makrofaj koloni uyarıcı faktör)"
+    ],
+    correct: 2,
+    exp: "Vaka, Malignite Hiperkalsemisi tablosudur. Kemik metastazı olmamasına (osteolitik lezyon yok) ve asıl PTH hormonunun çok düşük (baskılanmış) olmasına rağmen kalsiyum fırlamıştır. Buna 'Humoral Hiperkalsemi' denir ve en sık Akciğerin Yassı (Squamous) Hücreli Karsinomunda görülür (sCamous -> Calcium). Tümör, gerçek PTH'ya çok benzeyen ama ölçümlerde çıkmayan 'PTHrP (PTH-related peptide)' salgılar. Bu sahte hormon, kemik ve böbreklerdeki PTH-1 reseptörlerini uyararak osteoklastları aktive eder ve kalsiyumu kana çeker."
+  },
+  {
+    id: 328,
+    ders: "Dahiliye",
+    konu: "Kardiyoloji",
+    diff: 5,
+    q: "Ellibeş yaşında erkek hasta, Akut İnferiyor Miyokard Enfarktüsü (ST elevasyonlu MI) tanısı ile koroner yoğun bakıma yatırılıyor. Takiplerinin 5. gününde hasta aniden şiddetli nefes darlığı ve hipotansiyon (kardiyojenik şok) tablosuna giriyor. Kalp apekssinde koltuk altına (aksillaya) yayılan, yeni duyulmaya başlanan 4/6 şiddetinde holosistolik üfürüm saptanıyor. Akciğerlerde yaygın raller duyuluyor. Papiller kas rüptürüne bağlı Akut Ciddi Mitral Yetmezliği gelişen bu hastada, nekroza giderek kopan papiller kasın anatomisi ve en sık tıkalı olan sorumlu koroner arter aşağıdakilerden hangisinde doğru verilmiştir?",
+    options: [
+      "Anterolateral papiller kas / Sol Ön İnen Arter (LAD)",
+      "Posteromedial papiller kas / Sağ Koroner Arter (RCA) veya Posterior İnen Arter (PDA)",
+      "Anterolateral papiller kas / Sirkumfleks Arter (Cx)",
+      "Posteromedial papiller kas / Sirkumfleks Arter (Cx)",
+      "Septal papiller kas / Sol Ana Koroner Arter (LMCA)"
+    ],
+    correct: 1,
+    exp: "MI sonrası mekanik komplikasyonlar genellikle 3-7. günlerde (makrofajların nekrotik dokuyu yumuşatıp erittiği dönemde) görülür. Apekste yeni holosistolik üfürüm + Akut akciğer ödemi + Şok = Akut Mitral Yetmezliğidir (Papiller kas rüptürü). Mitral kapakta iki papiller kas vardır. 'Anterolateral' kas, hem LAD hem de Cx arterinden çift kan desteği alır (kopması zordur). Ancak 'Posteromedial' kas kanı SADECE tek bir damardan, Posterior İnen Arterden (PDA - sıklıkla RCA'nın dalı) alır. Çift desteği olmadığı için iskemiye çok kırılgandır ve İnferiyor MI vakalarında sağ koroner (RCA) tıkanınca kolayca kopar."
+  },
+  {
+    id: 329,
+    ders: "Dahiliye",
+    konu: "Göğüs Hastalıkları",
+    diff: 4,
+    q: "Otuz yaşında, bilinen hiçbir kronik hastalığı olmayan kadın hasta, son 1 yıldır artan efor dispnesi ve yorgunluk şikayetiyle başvuruyor. Akciğer grafisinde akciğer parankimi tamamen temiz ancak ana pulmoner arterler genişlemiş izleniyor. Ekokardiyografide sağ ventrikül hipertrofisi ve Pulmoner Arter Sistolik Basıncı 60 mmHg (Normali <25) saptanıyor. Pulmoner emboli dışlanan İdiyopatik Pulmoner Arteriyel Hipertansiyon (Grup 1 PAH) hastasının genetik incelemesinde saptanması en muhtemel mutasyon ve bu mutasyonun pulmoner damar yatağındaki etkisi aşağıdakilerden hangisidir?",
+    options: [
+      "FBN1 mutasyonu / Elastin fibrillerinin parçalanması",
+      "CFTR mutasyonu / Mukus tıkacına bağlı refleks vazokonstriksiyon",
+      "BMPR2 mutasyonu / Vasküler düz kas hücre proliferasyonunu durduran inhibitör sinyalin kaybolması",
+      "SERPINA1 mutasyonu / Alfa-1 antitripsin eksikliğine bağlı amfizem",
+      "KCNH2 mutasyonu / Potasyum kanallarının sürekli açık kalarak vazodilatasyon yapamaması"
+    ],
+    correct: 2,
+    exp: "İdiyopatik Pulmoner Arteriyel Hipertansiyon (İPAH), sıklıkla genç kadınlarda görülen, akciğer hastalığı veya sol kalp yetmezliği OLMADAN pulmoner damarların kendi kendine daralmasıdır. Vakaların çoğunda 'BMPR2 (Bone Morphogenetic Protein Receptor Type 2)' gen mutasyonu (Otozomal Dominant) bulunur. BMPR2 normalde damar düz kas hücrelerinin çoğalmasını (proliferasyonunu) baskılayan bir frendir. Bu gen mutasyona uğradığında fren boşalır, pulmoner damarların içindeki düz kas ve endotel hücreleri kontrolsüzce çoğalır, damar lümeni soğan zarı gibi daralarak (pleksiform lezyon) tıkanır ve sağ kalbi yetmezliğe (Cor Pulmonale) götürür."
+  },
+  {
+    id: 330,
+    ders: "Dahiliye",
+    konu: "Romatoloji",
+    diff: 4,
+    q: "Kırk yaşında kadın hasta, her iki elinin proksimal interfalangeal (PIP) ve metakarpofalangeal (MCP) eklemlerinde şişlik, ağrı ve sabahları uyandığında 1 saatten uzun süren katılık (sabah tutukluğu) şikayetiyle başvuruyor. Laboratuvarında Romatoid Faktör (RF) ve Anti-CCP (Siklik Sitrülline Peptid) antikorları pozitif bulunuyor. Romatoid Artrit (RA) tanısı alan bu hastada, spesifik otoantikorların (Anti-CCP) hedefi olan 'sitrülinizasyon' işlemini (proteinlerdeki arginin aminoasidinin sitrülline dönüşmesini) katalizleyen enzim ve bu süreci en güçlü şekilde tetikleyen çevresel faktör aşağıdakilerden hangisidir?",
+    options: [
+      "Siklooksijenaz (COX-2) / Obezite",
+      "Peptidilarginin deiminaz (PAD) / Sigara içimi",
+      "Miyeloperoksidaz (MPO) / Alkol tüketimi",
+      "Ksantin oksidaz / Pürinden zengin diyet",
+      "Tirozin kinaz / Ultraviolet (UV) güneş ışığı"
+    ],
+    correct: 1,
+    exp: "Romatoid Artrit (RA) patogenezindeki en önemli konseptlerden biri 'Sitrülinizasyon'dur. Normalde vücutta bulunmayan sitrüllin molekülü, proteinlerin içindeki 'arginin' amino asidinin modifiye edilmesiyle oluşur. Bu işlemi 'Peptidilarginin deiminaz (PAD)' enzimi yapar. Vücut bağışıklık sistemi bu sitrüllinlenmiş proteinleri yabancı olarak algılayıp Anti-CCP antikorlarını üretir. Anti-CCP, RA için Romatoid Faktörden çok daha spesifiktir. Sitrülinizasyonu ve PAD enzim aktivitesini akciğer mukozasında en çok tetikleyen, RA'nın da bilinen en güçlü çevresel risk faktörü olan şey 'SİGARA İÇİMİ'dir."
+  },
+  {
+    id: 331,
+    ders: "Dahiliye",
+    konu: "Geriartri",
+    diff: 4,
+    q: "Yetmiş beş yaşında, bilinen hipertansiyon, diyabet ve hiperlipidemi öyküsü olan erkek hasta; son 2 yıl içinde ataklar halinde (basamaklı bir şekilde) kötüleşen unutkanlık ve kişilik değişiklikleri ile getiriliyor. Hastanın ailesi, her kötüleşme dönemi öncesinde hafif peltek konuşma veya kolda geçici uyuşma gibi olaylar yaşandığını ifade ediyor. Muayenede hastada belirgin bir apati (ilgisizlik) ve yürüyüş bozukluğu saptanıyor. Kognitif yıkımın Alzheimer'dan ziyade Vasküler Demans (Subkortikal İskemik Demans / Binswanger Hastalığı) olduğuna işaret eden, kraniyal MRG'deki patognomonik lezyon dağılımı aşağıdakilerden hangisidir?",
+    options: [
+      "Hipokampus ve medial temporal loblarda selektif atrofi",
+      "Frontal ve temporal loblarda asimetrik (bıçak sırtı) atrofi",
+      "Serebral kortekste amiloid anjiyopatiye bağlı lober mikrokanamalar",
+      "Bilateral diffüz periventriküler beyaz cevher iskemisi (Lökoaraiozis) ve bazal ganglionlarda çoklu laküner infarktlar",
+      "Substantia nigra pars kompaktada nöronal kayıp ve Lewy cisimcikleri"
+    ],
+    correct: 3,
+    exp: "Vasküler Demans, kognitif yıkımın ikinci en sık nedenidir. Alzheimer'dan (sinsi ve yavaş ilerler) farklı olarak, vasküler demans vuruşlar halinde (basamaklı / stepwise) kötüleşir. Eşlik eden fokal nörolojik defisitler (inme bulguları) ve güçlü kardiyovasküler risk faktörleri (DM, HT) vardır. Subkortikal İskemik Vasküler Demans (Binswanger Hastalığı); küçük damar hastalığına bağlıdır. Beyni besleyen küçük penetran arterler tıkanır. MRG'de bunun karşılığı, periventriküler derin beyaz cevherde yaygın iskemi (beyaz lekelenmeler -> Lökoaraiozis) ve talamus/bazal ganglionlarda küçük delikler şeklindeki 'Laküner infarkt'lardır. (Hipokampal atrofi Alzheimer, Frontotemporal atrofi Pick hastalığı, Lewy cisimciği Parkinson/LBD bulgusudur)."
+  },
+  {
+    id: 332,
+    ders: "Dahiliye",
+    konu: "Hematoloji",
+    diff: 5,
+    q: "Otuz beş yaşında erkek hasta; diş eti kanaması, yaygın ekimozlar ve şiddetli yorgunluk şikayetiyle acil servise başvuruyor. Fizik muayenesinde ateş 38.5°C ve ciltte yaygın peteşiler saptanıyor, splenomegali yoktur. Laboratuvarda Lökosit: 45.000/mm3, Hemoglobin: 7.5 g/dL, Trombosit: 15.000/mm3 saptanıyor. Koagülasyon panelinde PT ve aPTT belirgin uzun, D-dimer yüksek, Fibrinojen ise çok düşük (60 mg/dL) ölçülüyor (Yaygın Damar İçi Pıhtılaşma - DIC tablosu). Periferik yaymada çekirdekleri katlanmış (böbrek şeklinde) ve sitoplazmalarında bol miktarda çubuksu (Auer cisimciği) granüller içeren immatür hücreler izleniyor. Bu hastanın tedavisinde diferansiyasyonu (olgunlaşmayı) sağlayarak DIC tablosunu hızla tersine çeviren ajanın hedeflediği spesifik kromozomal translokasyon aşağıdakilerden hangisidir?",
+    options: [
+      "t(8;21)",
+      "t(9;22)",
+      "t(15;17)",
+      "t(14;18)",
+      "t(11;14)"
+    ],
+    correct: 2,
+    exp: "Vaka, Akut Promyelositik Lösemi (APL / AML M3) tablosudur. Genç erişkinde pansitopeni, periferik yaymada 'Auer cisimcikleri' içeren promyelositler ve başlangıçta ölümcül olabilen DİC (Yaygın Damar İçi Pıhtılaşma) tablosu APL için patognomoniktir. APL'nin genetik temeli t(15;17) translokasyonudur (PML-RARA füzyon geni). Bu genetik bozukluk, hücrelerin promyelosit aşamasında takılı kalmasına neden olur. Tedavide kullanılan ATRA (All-trans retinoik asit), bu hücrelerin olgunlaşmasını (diferansiyasyonunu) sağlayarak lösemik klonu temizler ve hayatı tehdit eden DIC tablosunu hızla durdurur."
+  },
+  {
+    id: 333,
+    ders: "Dahiliye",
+    konu: "Hematoloji",
+    diff: 4,
+    q: "Kırk beş yaşında kadın hasta, son birkaç aydır çabuk doyma (erken doygunluk) ve karnının sol üst kısmında dolgunluk hissi şikayetiyle başvuruyor. Muayenede dalağın kosta kenarını 15 cm geçtiği (masif splenomegali) saptanıyor. Hemogramda Lökosit: 120.000/mm3, Hemoglobin: 10.5 g/dL, Trombosit: 500.000/mm3 olarak bulunuyor. Periferik yaymada miyeloblasttan olgun nötrofile kadar miyeloid serinin 'tüm olgunlaşma evreleri' bir arada izleniyor ve %5 oranında bazofili dikkat çekiyor. Lökosit Alkalen Fosfataz (LAP) skoru belirgin DÜŞÜK saptanan bu hastanın primer tedavisinde kullanılması gereken hedefe yönelik ajan ve etki mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Ruksolitinib / JAK2 tirozin kinaz inhibisyonu",
+      "İmatinib / BCR-ABL tirozin kinaz inhibisyonu",
+      "Venetoklaks / BCL-2 anti-apoptotik protein inhibisyonu",
+      "Rituksimab / CD20 pozitif B hücrelerinin lizizi",
+      "Bortezomib / Proteazom inhibisyonu"
+    ],
+    correct: 1,
+    exp: "Vaka Kronik Miyeloid Lösemi (KML) tablosudur. Masif splenomegali (erken doyma hissi yapar), aşırı lökositoz (tüm olgunlaşma evrelerinin kanda görülmesi - sola kayma), bazofili ve DÜŞÜK LAP skoru klasiktir. (Lökomoid reaksiyonda LAP skoru yüksek olur). KML'nin genetik temeli Philadelphia kromozomudur [t(9;22)] ve bu translokasyon BCR-ABL füzyon genini oluşturur. BCR-ABL sürekli aktif bir tirozin kinazdır. Tedavide bu kinazı mucizevi bir şekilde bloke eden 'İmatinib' (ve diğer -tinib türevleri) kullanılır."
+  },
+  {
+    id: 334,
+    ders: "Dahiliye",
+    konu: "Hematoloji",
+    diff: 4,
+    q: "Altmış yaşında erkek hasta; yorgunluk, karın şişliği ve sol üst kadran ağrısı ile başvuruyor. Fizik muayenede dalağın pelvise kadar uzandığı (dev splenomegali) görülüyor, lenfadenopati saptanmıyor. Hemogramda pansitopeni mevcut. Periferik yaymada eritrositlerde gözyaşı damlası görünümü (dakrositler) ve çekirdekli eritrositler ile immatür lökositler (lökoeritroblastik tablo) izleniyor. Kemik iliği aspirasyonu yapılmaya çalışıldığında iğneye ilik gelmiyor (Dry tap / Kuru tap). Primer Miyelofibrozis tanısı konan bu hastada, kemik iliğini kaplayan fibrotik (bağ) dokunun oluşumunu tetikleyen fibroblastları aktive eden asıl sitokin kaynağı aşağıdakilerden hangisidir?",
+    options: [
+      "Malign transformasyona uğramış T lenfositler",
+      "Klonaj megakaryositler",
+      "Kemik iliğindeki endotel hücreleri",
+      "Kanserleşmiş osteoblastlar",
+      "Aktive olmuş Kupffer hücreleri"
+    ],
+    correct: 1,
+    exp: "Primer Miyelofibrozis, kemik iliğinin bağ dokusuyla (fibrozis) kaplandığı bir miyeloproliferatif hastalıktır. İlik kuruduğu için kan üretimi dalak ve karaciğere kayar (Ekstramedüller hematopoez -> Dev splenomegali). İlikten çıkmaya çalışan hücreler dar yerlerden geçerken şekilleri bozulur ve 'Gözyaşı hücresi (Dakrosit)' şeklini alırlar. Aspirasyon 'kuru' sonuç verir. Buradaki ince detay şudur: Kemik iliğindeki fibroblastlar KANSERLİ DEĞİLDİR (poliklonaldir, normaldir). Onları fibrozis yapmaya zorlayan şey, neoplastik klon olan 'Anormal Megakaryositlerden' aşırı miktarda salgılanan TGF-beta ve PDGF (Trombosit Kaynaklı Büyüme Faktörü) gibi sitokinlerdir."
+  },
+  {
+    id: 335,
+    ders: "Dahiliye",
+    konu: "Hematoloji",
+    diff: 5,
+    q: "Yetmiş yaşında erkek hasta; tekrarlayan burun kanaması (epistaksis), baş ağrısı ve gözlerde bulanık görme şikayetiyle başvuruyor. Muayenesinde yaygın lenfadenopati ve hafif splenomegali saptanıyor. Göz dibi muayenesinde retinal venlerin genişlediği ve sosis benzeri boğumlar oluşturduğu izleniyor. Serum protein elektroforezinde (SPEP) belirgin monoklonal M-bandı saptanırken, immünfiksasyon elektroforezinde bu bandın 'IgM' tipinde olduğu doğrulanıyor. İskelet grafisinde litik kemik lezyonu YOKTUR. Hiperviskozite sendromu ile prezente olan bu hastanın en olası tanısı aşağıdakilerden hangisidir?",
+    options: [
+      "Multipl Miyelom",
+      "Monoklonal Gammapati (MGUS)",
+      "Waldenström Makroglobulinemisi",
+      "Primer Amiloidoz",
+      "Kriyoglobulinemi"
+    ],
+    correct: 2,
+    exp: "Waldenström Makroglobulinemisi (Lenfoplazmasitik Lenfoma); B hücrelerinin aşırı miktarda 'IgM' ürettiği bir hastalıktır. Multipl Miyelomdan (MM) farkları: 1) Litik kemik lezyonu yapmaz (kemik ağrısı ve hiperkalsemi yoktur). 2) Böbrek yetmezliği nadirdir. 3) IgM çok büyük (pentamer) bir molekül olduğu için kanın kıvamını koyulaştırır (Hiperviskozite Sendromu). Hiperviskozite; baş ağrısı, retinal venlerde sosis benzeri genişleme, kanama (trombosit disfonksiyonu) ve nörolojik bulgularla karakterizedir. Tedavide acil plazmaferez hayat kurtarır."
+  },
+  {
+    id: 336,
+    ders: "Dahiliye",
+    konu: "Hematoloji",
+    diff: 4,
+    q: "Ağır Hemofili A tanısı ile yıllardır faktör replasman tedavisi alan 18 yaşındaki erkek hasta, diş çekimi sonrası durmayan kanama ile acile başvuruyor. Uygulanan standart ve yüksek doz Faktör VIII infüzyonlarına rağmen kanama kontrol altına alınamıyor ve hastanın aPTT değeri uzamış (>80 sn) olarak devam ediyor. Laboratuvara gönderilen hastanın plazması, eşit hacimde 'normal insan plazması' ile karıştırıldığında (Karışım / Mixing Testi) aPTT değerinin NORMALE DÖNMEDİĞİ (düzelmediği) saptanıyor. Bu hastada gelişen yeni ve dirençli kanama tablosunun patogenezi aşağıdakilerden hangisidir?",
+    options: [
+      "Hastada Faktör VIII'e karşı nötralizan alloantikor (İnhibitör) gelişimi",
+      "Hastada eş zamanlı von Willebrand Faktör eksikliği (Edinsel vWD)",
+      "Karaciğer yetmezliğine sekonder Faktör II, VII, IX, X eksikliği",
+      "Faktör VIII molekülünün aşırı yıkımına yol açan dalak büyümesi (Hipersplenizm)",
+      "Dissemine İntravasküler Koagülasyon (DIC) gelişimi"
+    ],
+    correct: 0,
+    exp: "Hemofili A (Faktör VIII eksikliği) hastalarında en çok korkulan komplikasyonlardan biri, dışarıdan sürekli verilen Faktör VIII'e karşı bağışıklık sisteminin 'Alloantikor (İnhibitör)' geliştirmesidir. İnhibitör gelişen hasta eskiden fayda gördüğü ilaca yanıt vermez ve kanar. Tanı 'Karışım (Mixing) Testi' ile konur: Normal plazmada tüm faktörler tamdır; eğer hastada sadece faktör 'eksikliği' varsa, normal plazma eklenince aPTT düzelir. Ancak hastanın kanında bir 'Antikor (İnhibitör)' varsa, normal plazmadan gelen faktörleri de anında parçalar ve aPTT DÜZELMEZ."
+  },
+  {
+    id: 337,
+    ders: "Dahiliye",
+    konu: "Hematoloji",
+    diff: 4,
+    q: "Derin ven trombozu (DVT) nedeniyle 6 gün önce anfraksiyone heparin (UFH) başlanan 55 yaşındaki kadın hastanın, başlangıçta 300.000/mm3 olan trombosit sayısı bugün 120.000/mm3'e geriliyor. Eş zamanlı olarak hastanın sol bacağında yeni bir şişlik, ısı artışı ve doppler USG'de iliofemoral venöz tromboz uzanımı (yeni DVT) saptanıyor. Heparin İlişkili Trombositopeni (HİT Tip 2) tanısı konan bu hastada, antikorların hedef aldığı 'Trombosit Faktör 4 (PF4) - Heparin' kompleksi trombositler üzerinde hangi reseptöre bağlanarak masif trombosit aktivasyonuna (ve pıhtılaşmaya) yol açar?",
+    options: [
+      "Glikoprotein IIb/IIIa reseptörü",
+      "Fc Gama RIIA (CD32) reseptörü",
+      "Trombin (PAR-1) reseptörü",
+      "Glikoprotein Ib/IX/V kompleksi",
+      "Von Willebrand Faktör reseptörü"
+    ],
+    correct: 1,
+    exp: "HİT Tip 2, heparin tedavisi alanlarda görülen paradoksal bir tablodur: Trombositler düşerken kanama OLMAZ, aksine ölümcül yeni trombozlar (pıhtılar) gelişir. Mekanizma: Heparin, trombositlerin içinden salınan PF4 proteini ile kompleks yapar. Vücut bu komplekse IgG tipi otoantikorlar üretir. Oluşan dev 'IgG-PF4-Heparin' immün kompleksi, trombositlerin yüzeyindeki 'Fc Gama RIIA (CD32)' reseptörlerine (antikorun kuyruk kısmından) bağlanır. Bu bağlanma trombositleri çılgınca aktive eder, mikrotrombüsler oluşur (trombositler bu pıhtılarda tüketildiği için kanda sayıları düşer)."
+  },
+  {
+    id: 338,
+    ders: "Dahiliye",
+    konu: "Hematoloji",
+    diff: 4,
+    q: "Üç yıldır katı vegan diyet uygulayan 28 yaşındaki erkek hasta, giderek artan halsizlik, ayaklarında karıncalanma ve yürürken denge kaybı (ataksi) şikayetleriyle başvuruyor. Nörolojik muayenesinde bilateral vibrasyon ve propriyosepsiyon duyusu kaybı ile Babinski pozitifliği saptanıyor. Hemogramda Hemoglobin: 9 g/dL, MCV: 115 fL (Makrositer) bulunuyor. Periferik yaymada hipersegmente nötrofiller izleniyor. B12 vitamini (Kobalamin) eksikliği saptanan bu hastada, Subakut Kombine Dejenerasyon olarak bilinen nörolojik hasarın (miyelin yıkımının) patogenezinde rol oynayan B12 bağımlı enzim aşağıdakilerden hangisidir?",
+    options: [
+      "Metiyonin Sentaz",
+      "Metilmalonil-CoA Mutaz",
+      "Dihidrofolat Redüktaz",
+      "Timidilat Sentaz",
+      "Sistatiyonin Beta-Sentaz"
+    ],
+    correct: 1,
+    exp: "Makrositer anemi + Nörolojik bulgu (arka kordon ve piramidal traktus tutulumu) = B12 (Kobalamin) eksikliğidir. (Folik asit eksikliğinde nörolojik bulgu olmaz). B12 vitamini hücrede 2 enzimin kofaktörüdür: 1) Metiyonin sentaz (eksikliğinde homosistein artar, anemi yapar). 2) Metilmalonil-CoA Mutaz (eksikliğinde metilmalonik asit artar). Metilmalonik asit, nöronların miyelin kılıfına toksiktir ve anormal yağ asidi birikimine yol açarak kılıfı eritir. Bu nedenle B12 eksikliğinde anemi tedavi edilse (dışarıdan folat verilse) bile, B12 verilmezse nörolojik hasar (Subakut kombine dejenerasyon) kalıcı olur."
+  },
+  {
+    id: 339,
+    ders: "Dahiliye",
+    konu: "Hematoloji",
+    diff: 5,
+    q: "Sistemik Lupus Eritematozus (SLE) tanılı 30 yaşındaki kadın hasta, idrar renginde koyulaşma, sarılık ve çarpıntı ile acile getiriliyor. Laboratuvarında Hemoglobin: 7.0 g/dL, Retikülosit: %10 (Yüksek), Laktat Dehidrogenaz (LDH): 900 U/L ve İndirekt Bilirubin: 4.5 mg/dL saptanıyor. Haptoglobin düzeyi saptanamayacak kadar düşüktür. Periferik yaymada bol miktarda sferosit (küre şeklinde eritrosit) izleniyor. Direkt Coombs (DAT) testi IgG ve C3d için kuvvetli pozitif saptanıyor. Sıcak tip Otoimmün Hemolitik Anemi (Sıcak AİHA) tanısı konan bu hastada, IgG ile kaplı eritrositlerin dalakta makrofajlar tarafından ısırılmasına (fagositozuna) aracılık eden reseptör aşağıdakilerden hangisidir?",
+    options: [
+      "Glikoprotein Ib reseptörü",
+      "Fc reseptörü (Makrofajlardaki Fc gamma reseptörleri)",
+      "Kompleman C5a reseptörü",
+      "CD55 (DAF) ve CD59 reseptörleri",
+      "Toll-like reseptör 4 (TLR-4)"
+    ],
+    correct: 1,
+    exp: "Sıcak tip AİHA, IgG tipi otoantikorların 37°C'de eritrositlere bağlanmasıyla oluşur (SLE, KLL, İlaçlar en sık nedenlerdir). IgG ile kaplanmış eritrositler dalağa geldiklerinde, dalak kordonlarındaki makrofajlar kendi yüzeylerinde bulunan 'Fc Reseptörleri' ile bu IgG'nin kuyruk kısmını (Fc) tanır ve eritrositi yakalar. Makrofaj eritrositten bir ısırık alır, zarından kaybeden eritrosit küçülerek küre şeklini (Sferosit) alır ve bir sonraki turda tamamen parçalanır (Ekstravasküler Hemoliz)."
+  },
+  {
+    id: 340,
+    ders: "Dahiliye",
+    konu: "Hematoloji",
+    diff: 4,
+    q: "Yirmi dört yaşında kadın hasta, boynunda ele gelen ağrısız, lastik kıvamında lenf bezi büyüklüğü ve son bir aydır geceleri çamaşır değiştirecek kadar terleme (B semptomları) şikayetiyle başvuruyor. Ayrıca alkol aldığında büyüyen lenf bezinde şiddetli ağrı hissettiğini belirtiyor. Eksizyonel lenf nodu biyopsisinde; lenfoid dokuyu nodüllere ayıran kalın kollajen bantlar ve arka planda eozinofil, nötrofil, makrofajlardan zengin bir zemin içinde 'baykuş gözü' benzeri nükleusları olan CD15(+) ve CD30(+) Reed-Sternberg hücreleri görülüyor. Hodgkin Lenfoma'nın en sık görülen alt tipi olan 'Nodüler Sklerozan' tip ile uyumlu bu vakada, neoplastik (kanserleşmiş) olan asıl hücre olan Reed-Sternberg hücresi, normal lenf nodunun hangi hücresel soyundan köken almıştır?",
+    options: [
+      "Germinal merkez B lenfositleri",
+      "Parakortikal T lenfositleri",
+      "Medüller kord plazma hücreleri",
+      "Tingible-body makrofajları",
+      "Foliküler dendritik hücreler"
+    ],
+    correct: 0,
+    exp: "Hodgkin Lenfoma, genç erişkinlerde ağrısız LAP (alkolle ağrıyan) ve B semptomlarıyla prezente olur. En sık görülen tipi Nodüler Sklerozan'dır (Kadınlarda sıktır, mediastinal kitle yapmayı sever). Patolojisinde dev, çok çekirdekli (baykuş gözü) Reed-Sternberg (RS) hücreleri patognomoniktir. RS hücreleri, CD15 ve CD30 belirteçlerini eksprese ederler ve embriyolojik / hücresel köken olarak 'Germinal Merkez B Lenfositlerinden' köken alan, ancak tipik B hücre belirteçlerini (CD20 gibi) kaybetmiş neoplastik hücrelerdir."
+  },
+  {
+    id: 341,
+    ders: "Dahiliye",
+    konu: "Hematoloji",
+    diff: 4,
+    q: "Hastanedeki kan merkezinden O Rh(-) Eritrosit Süspansiyonu (ES) transfüzyonu başlatılan 40 yaşındaki hastanın, infüzyonun 2. saatinde aniden ateşi 39.2°C'ye çıkıyor ve şiddetli titreme (üşüme-titreme) atakları başlıyor. İdrar rengi normal olan hastanın kan basıncı (tansiyonu) stabil seyrediyor. Solunum sıkıntısı ve döküntüsü (ürtiker) yoktur. Kan torbası ve hasta kanı tekrar test edildiğinde uyuşmazlık (hemoliz) saptanmıyor (Direkt Coombs negatif). Febril Non-Hemolitik Transfüzyon Reaksiyonu (FNHTR) olarak adlandırılan bu en sık transfüzyon reaksiyonunun patogenezinden sorumlu olan asıl faktör aşağıdakilerden hangisidir?",
+    options: [
+      "Hastanın kanındaki anti-IgA antikorlarının donör IgA'sına saldırması",
+      "Donörün plazmasındaki ABO antikorlarının hastanın eritrositlerini yıkması",
+      "Beklemiş kan torbasında donör lökositlerinden salınan pre-forme sitokinlerin (IL-1, IL-6, TNF) hastaya verilmesi",
+      "Donör eritrositlerindeki Kell ve Duffy antijenlerinin alloimmünizasyonu",
+      "Torba içinde yavaş üreyen Gram negatif bakterilerin endotoksin salgılaması"
+    ],
+    correct: 2,
+    exp: "Febril Non-Hemolitik Transfüzyon Reaksiyonu (FNHTR), kan transfüzyonlarının en sık görülen yan etkisidir (1-6 saat içinde ateş ve titreme). Hemoliz (idrar kararması, şok, Coombs pozitifliği) YOKTUR. Patogenez: Torbadaki kan beklerken, vericinin (donörün) lökositleri torba içine interlökinler (IL-1, IL-6, TNF) salgılar. Kan hastaya verildiğinde bu hazır (pre-forme) sitokinler doğrudan hastanın hipotalamusunu uyararak ateş ve titreme yapar. Bunu önlemenin (profilaksinin) yolu, kan saklanmadan önce filtre edilerek 'Lökositlerinin arındırılması (Leukoreduction)' işlemidir."
+  },
+  {
+    id: 342,
+    ders: "Dahiliye",
+    konu: "Hematoloji",
+    diff: 4,
+    q: "On beş yıldır şiddetli Romatoid Artrit nedeniyle takip edilen 50 yaşındaki kadın hastanın rutin poliklinik kontrolünde Hemoglobin: 9.5 g/dL, MCV: 78 fL (Mikrositer) saptanıyor. Hastanın demir paneli istendiğinde; Serum Demiri DÜŞÜK, Total Demir Bağlama Kapasitesi (TİBK) DÜŞÜK ve Ferritin düzeyi YÜKSEK (350 ng/mL) bulunuyor. Kronik Hastalık Anemisi tanısı ile uyumlu olan bu laboratuvar profilinde, demirin kemik iliğine (eritropoeze) gidişini engelleyerek makrofajlar içinde hapsedilmesine neden olan temel hepatik protein aşağıdakilerden hangisidir?",
+    options: [
+      "Transferrin",
+      "Seruloplazmin",
+      "Hepsidin (Hepcidin)",
+      "Haptoglobin",
+      "Eritropoetin (EPO)"
+    ],
+    correct: 2,
+    exp: "Kronik Hastalık Anemisi (Anemia of Chronic Disease - ACD); kronik inflamasyon (Romatoid artrit, enfeksiyon, kanser vb.) varlığında vücudun demiri 'patojenlerden veya tümörden' saklamak amacıyla geliştirdiği bir savunma mekanizmasıdır. İnflamatuar sitokinler (IL-6), karaciğerden 'Hepsidin' üretimini tetikler. Hepsidin, bağırsak enterositlerindeki ve dalak makrofajlarındaki demir çıkış kapısı olan 'Ferroportin'i yıkar. Demir makrofajların içinde (Ferritin olarak) hapis kalır, kana (Transferrine) geçemez. Sonuç: Kan demiri düşük, kemik iliği demirsiz, ancak depo demiri (Ferritin) yüksektir."
+  },
+  {
+    id: 343,
+    ders: "Dahiliye",
+    konu: "Hematoloji",
+    diff: 4,
+    q: "Otuz yaşında erkek hasta; son bir ayda artan diş eti kanaması, bacaklarda peteşiler ve ciddi halsizlik şikayetiyle başvuruyor. Hastanın ateş öyküsü var ancak fizik muayenesinde karaciğer veya dalak büyüklüğü (organomegali) KESİNLİKLE YOKTUR. Laboratuvarda Lökosit: 1.500/mm3 (Nötropeni), Hemoglobin: 7.0 g/dL (Anemi), Trombosit: 15.000/mm3 (Trombositopeni) saptanıyor. Retikülosit sayısı <%1 (Çok düşük). Kemik iliği biyopsisinde hematopoetik hücrelerin yerini büyük oranda yağ dokusunun aldığı (%10 selülarite) görülüyor. Ağır Aplastik Anemi tanısı konan bu hastada, hematopoetik kök hücreleri yok eden temel patofizyolojik mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Kök hücre zarındaki GPI çapası (PIGA geni) mutasyonu",
+      "Otoimmün mekanizmalarla aktive olmuş sitotoksik T lenfositlerin (CD8+) hematopoetik kök hücrelerde apoptozise yol açması",
+      "Kemik iliği stromal hücrelerinde PDGF eksikliğine bağlı yetersiz destek",
+      "Parvovirüs B19'un tüm serileri doğrudan enfekte edip lize etmesi",
+      "Kemik iliğinin tümöral hücreler (lösemi/lenfoma) tarafından fiziksel olarak işgal edilmesi"
+    ],
+    correct: 1,
+    exp: "Aplastik Anemi; kemik iliğinin boşalması ve yağ dokusu ile dolması (hiposelüler ilik) sonucu gelişen pansitopenidir. Organomegali (Dalak büyüklüğü) OLMAMASI çok önemli bir ipucudur (Eğer dalak büyükse lösemi veya miyelofibrozis düşünülür). Olguların çoğu idiyopatiktir ve patogenezinde anormal aktive olmuş 'Sitotoksik T Lenfositlerinin (Hücresel İmmünite)' hastanın kendi hematopoetik kök hücrelerine (Fas/FasL yoluyla) saldırarak onları yok etmesi yatar. Bu yüzden tedavide immünsüpresifler (Antitimosit Globulin - ATG ve Siklosporin) veya kök hücre nakli kullanılır."
+  },
+  {
+    id: 344,
+    ders: "Dahiliye",
+    konu: "Hematoloji",
+    diff: 4,
+    q: "Gebelik öncesi tarama için gelen sağlıklı 25 yaşındaki kadının tam kan sayımında Hemoglobin: 10.5 g/dL (Hafif anemi), MCV: 62 fL (Belirgin mikrositer) ve Eritrosit Sayısı (RBC): 5.6 milyon/mm3 (YÜKSEK) saptanıyor. Mentzer indeksi (MCV/RBC) 11 (<13) olarak hesaplanıyor. Demir, TİBK ve Ferritin düzeyleri tamamen NORMAL bulunuyor. Periferik yaymada hedef hücreleri (Target cells) izleniyor. Beta-Talasemi Taşıyıcılığı (Minör) düşünülen bu hastada, tanıyı kesinleştirmek için yapılacak Hemoglobin Elektroforezinde hangi laboratuvar bulgusunun saptanması beklenir?",
+    options: [
+      "Hemoglobin F (HbF) düzeyinin > %90 olması",
+      "Hemoglobin A2 (HbA2) düzeyinin > %3.5 olması",
+      "Hemoglobin S (HbS) bandının izlenmesi",
+      "Hemoglobin H (HbH) inklüzyon cisimciklerinin saptanması",
+      "Hemoglobin A1 (HbA1) düzeyinin %100 olması"
+    ],
+    correct: 1,
+    exp: "Beta-Talasemi Taşıyıcılığı (Minör); çok hafif anemi, belirgin mikrositoz (düşük MCV) ve artmış eritrosit sayısı (RBC) ile karakterizedir (Demir eksikliğinde RBC düşüktür). Mentzer indeksi (MCV/RBC < 13) talasemi taşıyıcılığını destekler. Demir parametreleri normaldir. Beta zincir üretiminin bir alelde azaldığı bu durumda, vücut telafi etmek için diğer globin zincirlerini (Delta zincirini) artırır. Alfa ve Delta zincirlerinin birleşimi olan 'Hemoglobin A2 (HbA2)' düzeyi normalde <%3 iken, Beta-Talasemi Minör hastalarında elektroforezde %3.5 - %8 arasına YÜKSELİR ve bu bulgu tanısaldır."
+  },
+  {
+    id: 345,
+    ders: "Dahiliye",
+    konu: "Nefroloji",
+    diff: 4,
+    q: "Elli beş yaşında erkek hasta, son haftalarda giderek artan bacak ödemi ve idrarda aşırı köpüklenme şikayetiyle polikliniğe başvuruyor. Fizik muayenesinde bilateral 3+ pretibial gode bırakan ödem saptanıyor. Kan basıncı 130/80 mmHg. Laboratuvarında Serum Albümini: 2.1 g/dL, Kolesterol: 380 mg/dL ve 24 saatlik idrar protein atılımı 6.5 gram (Nefrotik Sendrom) olarak ölçülüyor. Renal biyopsinin ışık mikroskopisinde glomerüler kapiller duvarlarda kalınlaşma saptanırken, gümüş boyamasında 'spike and dome (dikensi çıkıntılar ve kubbeler)' görünümü izleniyor. Primer (İdiyopatik) Membranöz Nefropati tanısı konan bu hastada, subepitelyal alana çöken immün komplekslerin hedef aldığı podosit yüzey antijeni aşağıdakilerden hangisidir?",
+    options: [
+      "Tip IV Kollajen Alfa-3 zinciri (NC1 domain)",
+      "Fosfolipaz A2 Reseptörü (PLA2R)",
+      "Trombospondin Tip 1 Domain-içeren 7A (THSD7A)",
+      "Nötrofil Sitoplazmik Antijeni (PR3)",
+      "Galaktozdan fakir IgA1 (Gd-IgA1)"
+    ],
+    correct: 1,
+    exp: "Erişkinlerde görülen primer nefrotik sendromların en sık nedenlerinden biri Membranöz Nefropatidir. Biyopside 'Spike and dome' görünümü ve kapiller duvar kalınlaşması (membranöz) patognomoniktir. Hastaların %70-80'inde, hastalığın primer (otoimmün) formundan sorumlu olan ve podositlerin yüzeyinde bulunan 'Fosfolipaz A2 Reseptörüne (PLA2R)' karşı gelişmiş otoantikorlar saptanır. Bu antikorların (Anti-PLA2R) kanda yüksek titrede saptanması, hastalığın tanısında ve takibinde biyopsi ihtiyacını bile ortadan kaldırabilecek kadar spesifiktir."
+  },
+  {
+    id: 346,
+    ders: "Dahiliye",
+    konu: "Nefroloji",
+    diff: 5,
+    q: "Sjögren Sendromu nedeniyle takip edilen 40 yaşındaki kadın hasta, şiddetli kas güçsüzlüğü ve yürüme zorluğu ile acile getiriliyor. Laboratuvarında Serum Potasyumu: 2.2 mEq/L (Derin Hipokalemi) saptanıyor. Kan gazında pH: 7.25, HCO3: 12 mEq/L ve Anyon Açığı: 10 (Normal Anyon Açıklı Metabolik Asidoz) olarak ölçülüyor. Hastanın idrar pH'sı 6.5 (Alkali) ve idrar anyon açığı pozitif bulunuyor. Batın ultrasonografisinde bilateral nefrokalsinozis (böbrek taşları) izlenen bu hastadaki Tip 1 Renal Tübüler Asidozun (Distal RTA) temel hücresel mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Proksimal tübülde Karbonik Anhidraz II enziminin otoimmün inhibisyonu",
+      "Kollektör tübüllerdeki (toplayıcı kanallar) Alfa-interkale hücrelerin apikal membranından H+ (hidrojen) iyonu sekresyonunun bozulması",
+      "Henle kulbunun çıkan kalın kolunda NKCC2 pompası mutasyonu",
+      "Kollektör tübüllerdeki Esas (Principal) hücrelerde ENaC sodyum kanallarının aşırı aktivitesi",
+      "Jukstaglomerüler aparat harabiyetine bağlı hiporeninemik hipoaldosteronizm"
+    ],
+    correct: 1,
+    exp: "Tip 1 (Distal) Renal Tübüler Asidoz (RTA); otoimmün hastalıklarla (özellikle Sjögren) güçlü birliktelik gösterir. Şiddetli hipokalemi, normal anyon açıklı metabolik asidoz ve kalsiyum fosfat taşları (nefrokalsinozis) klasik bulgularıdır. Patofizyolojisinde, toplayıcı kanallardaki 'Alfa-interkale' hücrelerde yer alan H+ ATPaz (veya H+/K+ ATPaz) pompasının bozulması yatar. Böbrek asidi (H+) idrara atamaz. Bu nedenle sistemik kan asidozda (pH düşük) olmasına rağmen, asit atılamadığı için idrar alkali (pH > 5.5) kalır. Asidozu tamponlamak için kemikten kalsiyum çekilir ve bu kalsiyum alkali idrarda çökelerek taş yapar."
+  },
+  {
+    id: 347,
+    ders: "Dahiliye",
+    konu: "Nefroloji",
+    diff: 4,
+    q: "Yirmi iki yaşında erkek hasta, 2 gündür süren boğaz ağrısı, burun akıntısı ve ateş (Üst Solunum Yolu Enfeksiyonu - ÜSYE) şikayetleriyle birlikte idrarının kola renginde (makroskopik hematüri) olduğunu fark ederek acile başvuruyor. Hastanın tansiyonu 140/90 mmHg. İdrar mikroskopisinde eritrosit silendirleri saptanıyor. Biyokimyasında Serum Kompleman (C3 ve C4) düzeyleri NORMAL bulunuyor. Hastanın daha önce de benzer ÜSYE atakları sırasında idrarında kanama olduğu öğreniliyor. IgA Nefropatisi (Berger Hastalığı) tanısı alan bu hastada glomerüler hasara yol açan asıl patolojik molekül aşağıdakilerden hangisidir?",
+    options: [
+      "Podosit ayakçıklarını eriten dolaşımdaki lenfokinler",
+      "Endotel hücrelerindeki Gb3 reseptörlerine bağlanan Shiga toksini",
+      "O-glikozilasyon defekti içeren (Galaktozdan fakir) IgA1 moleküllerinin oluşturduğu immün kompleksler",
+      "Glomerüler bazal membrandaki Tip IV kollajene karşı gelişen otoantikorlar",
+      "Alternatif kompleman yolağını durmaksızın aktive eden C3 Nefritik Faktör (C3NeF)"
+    ],
+    correct: 2,
+    exp: "IgA Nefropatisi (Berger Hastalığı), dünyada en sık görülen primer glomerülonefrittir. Genç erişkinlerde 'üst solunum yolu (veya GİS) enfeksiyonu ile AYNI ANDA (Senfarenjitik)' ortaya çıkan makroskopik hematüri atakları çok tipiktir (Post-streptokoksik GN ise enfeksiyondan 1-3 hafta SONRA çıkar ve C3 düşüktür). IgA nefropatisinde kompleman düzeyleri NORMALDİR. Patogenezde; mukozal enfeksiyonlara yanıt olarak üretilen IgA1 moleküllerinin menteşe bölgesinde (hinge region) galaktoz eksikliği (anormal glikozilasyon) vardır. Vücut bu kusurlu IgA1'i yabancı algılayıp IgG üretir; oluşan dev immün kompleksler böbrekte mezangiuma çökerek hematüri yapar."
+  },
+  {
+    id: 348,
+    ders: "Dahiliye",
+    konu: "Nefroloji",
+    diff: 4,
+    q: "Elli yaşında kadın hasta, diz ağrısı nedeniyle son 2 haftadır düzenli olarak İbuprofen (NSAİİ) kullanmaktadır. Hasta son 3 gündür halsizlik, hafif ateş ve vücudunda makülopapüler döküntü şikayetiyle başvuruyor. Laboratuvarında Serum Kreatinin: 1.0 mg/dL'den 2.8 mg/dL'ye (Akut Böbrek Hasarı) yükselmiş ve periferik yaymada eozinofili saptanıyor. İdrar mikroskopisinde steril piyüri (bakteri olmadan lökosit varlığı) ve Lökosit silendirleri izlenirken, idrar Hansel boyamasında eozinofilürisi pozitif bulunuyor. İlaca bağlı Akut İnterstisyel Nefrit (AİN) tanısı konan bu hastadaki böbrek hasarının immünolojik mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Tip I Aşırı Duyarlılık (IgE aracılı mast hücre degranülasyonu)",
+      "Tip II Aşırı Duyarlılık (Tübüler bazal membrana karşı sitotoksik antikor gelişimi)",
+      "Tip III Aşırı Duyarlılık (Dolaşan immün komplekslerin tübüllere çökmesi)",
+      "Tip IV Aşırı Duyarlılık (Tübül proteinleriyle birleşen ilaç haptenlerine karşı T lenfosit aracılı hücresel immünite)",
+      "İlacın doğrudan proksimal tübül fırçamsı kenarlarında serbest radikal hasarı yapması (Direkt toksisite)"
+    ],
+    correct: 3,
+    exp: "Akut İnterstisyel Nefrit (AİN), böbrek tübüllerinin ve interstisyumunun sıklıkla ilaçlara (Penisilinler, Sefalosporinler, NSAİİ, PPI'lar) karşı geliştirdiği alerjik bir iltihaptır. Klasik triad: Ateş, Döküntü ve Eozinofili'dir (ancak üçü birden sadece %10 hastada görülür). İdrarda Eozinofil ve Lökosit silendirleri bulunması çok spesifiktir. İlaç molekülü böbrek tübül hücrelerine yapışarak bir 'Hapten' gibi davranır. Vücudun hücresel bağışıklık sistemi (T lenfositler ve makrofajlar) bu ilaç-protein kompleksine saldırarak interstisyumda lenfositik inflamasyon yaratır. Bu durum Tip IV (Gecikmiş tip / Hücresel) Aşırı Duyarlılık reaksiyonudur."
+  },
+  {
+    id: 349,
+    ders: "Dahiliye",
+    konu: "Nefroloji",
+    diff: 5,
+    q: "Kronik Böbrek Yetmezliği (Evre 4 KBY) olan 65 yaşındaki erkek hasta, ilerleyici kemik ağrıları ve kaşıntı şikayetiyle polikliniğe geliyor. Laboratuvarında Serum Kalsiyumu: 8.0 mg/dL (Düşük), Fosfor: 6.5 mg/dL (Yüksek) ve İntakt Parathormon (iPTH): 450 pg/mL (Çok yüksek) saptanıyor. Renal Osteodistrofi (Sekonder Hiperparatiroidi) gelişen bu hastada, KBY'nin erken evrelerinden itibaren yükselmeye başlayan ve böbreklerde '1-alfa hidroksilaz' enzimini inhibe ederek D vitamini eksikliğine (ve dolayısıyla kalsiyum düşüklüğüne) primer olarak katkıda bulunan hormon aşağıdakilerden hangisidir?",
+    options: [
+      "Kalsitonin",
+      "Fibroblast Büyüme Faktörü-23 (FGF-23)",
+      "Klotho proteini",
+      "Osteokalsin",
+      "Sclerostin"
+    ],
+    correct: 1,
+    exp: "KBY hastalarında kemik-mineral bozukluğunun (Sekonder Hiperparatiroidi) ilk ve en erken basamağı Fosfor atılımının bozulmasıdır. Böbrekler fosforu atamayınca, kanda hafifçe yükselen fosfor, kemikteki osteositleri uyarır. Osteositler 'FGF-23 (Fibroblast Büyüme Faktörü-23)' salgılar. FGF-23'ün amacı böbrekten fosfor atılımını zorlamaktır. Ancak FGF-23'ün çok kötü bir yan etkisi vardır: Böbreklerdeki '1-alfa hidroksilaz' enzimini çok güçlü şekilde İNHİBE eder. Bu enzim inhibe olunca aktif D vitamini (Kalsitriol) üretilemez, bağırsaktan kalsiyum emilmez ve hipokalsemi gelişir. Hipokalsemi de Paratiroid bezini çılgınca uyararak sekonder hiperparatiroidi yapar."
+  },
+  {
+    id: 350,
+    ders: "Dahiliye",
+    konu: "Nefroloji",
+    diff: 4,
+    q: "Yirmi beş yaşında sağlıklı kadın, rutin işe giriş muayenesinde yapılan kan tahlilinde tesadüfen Serum Potasyumu: 2.8 mEq/L (Hipokalemi) saptanması üzerine nefrolojiye yönlendiriliyor. Hastanın tansiyonu 110/70 mmHg (Normal). Kan gazında Metabolik Alkaloz saptanıyor. Hastada kusma veya ishal öyküsü yoktur. İdrar kalsiyum atılımı belirgin olarak DÜŞÜK (Hipokalsiüri) ve serum Magnezyumu DÜŞÜK bulunuyor. Diüretik kullanımı gizlice ilaç alma şüphesi dışlanan bu hastada saptanan genetik defekt (Gitelman Sendromu), böbreğin hangi anatomik bölgesindeki hangi spesifik iyon kanalını etkilemektedir?",
+    options: [
+      "Henle kulbunun çıkan kalın kolundaki Na-K-2Cl (NKCC2) pompası",
+      "Kortikal toplayıcı tübüllerdeki Epitelyal Sodyum Kanalı (ENaC)",
+      "Proksimal tübüldeki Sodyum-Glukoz (SGLT-2) ko-transporteri",
+      "Distal kıvrımlı tübüldeki Sodyum-Klorür (Na-Cl) ko-transporteri",
+      "Toplayıcı tübüllerdeki Alfa-interkale hücrelerin H+ ATPaz pompası"
+    ],
+    correct: 3,
+    exp: "Genç erişkinde Normal Tansiyon + Hipokalemik Metabolik Alkaloz + Hipomagnezemi = Gitelman Sendromudur. Hastalığın en önemli ayırıcı özelliği idrarda kalsiyum atılımının ÇOK DÜŞÜK (Hipokalsiüri) olmasıdır (Bartter sendromunda hiperkalsiüri olur). Gitelman Sendromu, genetik olarak 'Tiyazid grubu diüretik kullanıyormuş' gibi davranan bir mutasyondur. Sorun, Distal Kıvrımlı Tübülde (DCT) yer alan 'Sodyum-Klorür (Na-Cl)' ko-transporter genindeki (SLC12A3) inaktive edici mutasyondur. (Bartter sendromu ise Henle kulbundaki NKCC2 mutasyonudur ve furosemid/lasix almış gibi klinik verir)."
+  },
+  {
+    id: 351,
+    ders: "Dahiliye",
+    konu: "Nefroloji",
+    diff: 4,
+    q: "Konjestif Kalp Yetmezliği nedeniyle takip edilen 70 yaşındaki erkek hasta, nefes darlığı ve bacaklarda masif ödem ile başvuruyor. Laboratuvarında Serum Sodyumu: 122 mEq/L (Hipervolemik Hiponatremi) saptanıyor. Sıvı kısıtlamasına ve loop diüretiklerine (Furosemid) rağmen hastanın hiponatremisi düzeltilemiyor. Bu dirençli hipervolemik hiponatremi tablosunu tedavi etmek amacıyla reçete edilen Vaptan grubu ilaçların (örn: Tolvaptan) böbrek üzerindeki spesifik etki mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Proksimal tübülde Karbonik Anhidraz enzimini bloke etmek",
+      "Kollektör tübüllerin bazolateral zarında bulunan Vazopressin-2 (V2) reseptörlerini kompetitif olarak antagonize etmek",
+      "Henle kulbunda aquaporin-1 kanallarının ekspresyonunu artırmak",
+      "Adrenal korteksten aldosteron salınımını doğrudan inhibe etmek",
+      "Kollektör tübüllerdeki ENaC kanallarını geri dönüşümsüz olarak bloke etmek"
+    ],
+    correct: 1,
+    exp: "Kalp yetmezliği veya Siroz gibi ödemli durumlarda gelişen hiponatreminin nedeni, düşük efektif arteriyel kan hacminin (efektif volüm) beyni uyararak masif ADH (Vazopressin) salgılatmasıdır. Böbrek toplayıcı kanallarından sürekli saf su geri emilir (dilüsyonel hiponatremi). Sıvı kısıtlamasının yetmediği durumlarda kullanılan 'Vaptanlar (Tolvaptan, Konivaptan)', toplayıcı tübül hücrelerinin bazolateral zarında (kana bakan yüzünde) bulunan 'V2 (Vazopressin-2) reseptörlerinin kompetitif antagonistleridir'. ADH bu reseptöre bağlanamayınca, hücre apikal zara Aquaporin-2 kanallarını yerleştiremez. Sonuçta vücut tuzu tutarken sadece saf suyu idrarla atar (Aquaretik etki) ve sodyum seviyesi normale döner."
+  },
+  {
+    id: 352,
+    ders: "Dahiliye",
+    konu: "Nefroloji",
+    diff: 5,
+    q: "Otuz yaşında erkek hasta, 3 gündür devam eden kan tükürme (hemoptizi) ve idrarda kanama (makroskopik hematüri) şikayetiyle acil servise başvuruyor. Akciğer grafisinde bilateral alveolar infiltratlar izleniyor. Biyokimyasında Kreatinin 3.5 mg/dL (Akut böbrek yetmezliği) saptanıyor. Serumda ANCA (p-ANCA ve c-ANCA) testleri negatif olan hastanın yapılan acil böbrek biyopsisinin İmmünfloresan (IF) incelemesinde, glomerüler bazal membran (GBM) boyunca 'lineer (kesintisiz çizgisel)' tarzda IgG birikimi saptanıyor. Goodpasture Sendromu tanısı kesinleşen bu hastada, lineer IgG birikimine neden olan otoantikorların hedef aldığı spesifik kolajen zinciri aşağıdakilerden hangisidir?",
+    options: [
+      "Tip I Kollajen",
+      "Tip II Kollajen",
+      "Tip III Kollajen",
+      "Tip IV Kollajen Alfa-3 zincirinin (NC1 domaini)",
+      "Tip VII Kollajen"
+    ],
+    correct: 3,
+    exp: "Genç erkek + Hemoptizi (Akciğer) + Hematüri (Böbrek) = Pulmoner-Renal Sendrom. Ayırıcı tanıda ANCA vaskülitleri ve Goodpasture Sendromu (Anti-GBM hastalığı) vardır. ANCA vaskülitlerinde (Wegener, Mikroskobik Polianjiit) biyopside immün birikim YOKTUR (Pauci-immune). Ancak vakamızdaki İmmünfloresanda görülen 'Lineer (Kesintisiz Çizgisel) IgG birikimi', Goodpasture sendromu için patognomoniktir. Hastalığın temelinde, hem akciğer alveol duvarında hem de böbrek glomerülünde ortak olarak bulunan 'Tip IV Kollajenin Alfa-3 zincirindeki NC1 (non-collagenous) alanına' karşı gelişmiş otoantikorlar yatar."
+  },
+  {
+    id: 353,
+    ders: "Dahiliye",
+    konu: "Nefroloji",
+    diff: 4,
+    q: "Altmış beş yaşında, diyabetik nefropatisi (Bazal Kreatinin: 1.6 mg/dL) olan erkek hastaya, stabil angina pektoris nedeniyle koroner anjiyografi (iyotlu kontrast madde kullanılarak) yapılıyor. İşlemden 48 saat sonra hastanın idrar çıkışı azalıyor ve serum kreatinini 3.2 mg/dL'ye fırlıyor. İdrar analizinde FENa (Fraksiyone Sodyum Atılımı) > %2 saptanıyor ve idrar mikroskopisinde 'çamur rengi granüler silendirler (muddy brown casts)' izleniyor. Kontrast İlişkili Nefropati'ye bağlı gelişen bu Akut Tübüler Nekroz (ATN) tablosunun patofizyolojisinden sorumlu ana mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Kontrast maddenin glomerüler bazal membranda otoimmün reaksiyon başlatması",
+      "Kontrast maddenin böbrek medullasında şiddetli vazokonstriksiyon yaparak ağır iskemik nekroza ve doğrudan tübüler toksisiteye yol açması",
+      "Dolaşımdaki kolesterol plaklarının koparak renal arteriyolleri tıkaması (Ateroemboli)",
+      "İyot moleküllerinin proksimal tübülde ürik asit ile birleşerek kristal nefropatisi oluşturması",
+      "Kontrast maddenin efferent arteriyolü genişleterek (vazodilatasyon) glomerüler filtrasyon basıncını sıfırlaması"
+    ],
+    correct: 1,
+    exp: "Kontrast Nefropatisi, hastanede yatan hastalarda akut böbrek hasarının (AKI) önemli bir nedenidir (Özellikle diyabetiklerde ve KBY hastalarında). İşlemden 24-48 saat sonra kreatinin artar. FENa > %2 olması ve idrarda epitel döküntüleri olan 'Çamur rengi (muddy brown) granüler silendirler' izlenmesi tablonun iskemik/toksik bir 'Akut Tübüler Nekroz (ATN)' olduğunu ispatlar. Kontrast madde böbreğe iki şekilde zarar verir: 1) Tübül epitel hücrelerine doğrudan toksik (zehir) etkisi yapar. 2) Vasküler yatakta yoğun bir Oksidatif stres ve 'Vazokonstriksiyon' yaratarak (özellikle oksijene en aç olan böbrek Medullasında) ağır iskemik nekroza neden olur. En iyi profilaksisi işlem öncesi ve sonrası bol İzotonik sıvı (Hidrasyon) vermektir."
+  },
+  {
+    id: 354,
+    ders: "Dahiliye",
+    konu: "Nefroloji",
+    diff: 4,
+    q: "Kırk beş yaşında erkek hasta, sağ yan (flank) ağrısı ve idrarda kanama (hematüri) ile başvuruyor. Çekilen Direkt Üriner Sistem Grafisinde (DÜSG / Röntgen) böbrek lojunda opak (beyaz) bir taş GÖRÜLEMİYOR. Ancak kontrastsız batın tomografisinde sağ üreterde 8 mm çapında taş saptanıyor. Hastanın özgeçmişinde Crohn Hastalığı nedeniyle kronik ishal ve terminal ileum rezeksiyonu öyküsü mevcuttur. Hastanın idrar pH'sı 5.0 (Asidik) olarak ölçülüyor. Röntgen'de görünmeyen (radyolüsen) bu taşın Ürik Asit taşı olduğu düşünülürse, kronik ishalin bu taş oluşumunu tetikleyen fizyopatolojik mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "İshal ile kaybedilen kalsiyumun idrarda ürik asit ile kompleks oluşturması",
+      "Bağırsaktan emilemeyen yağ asitlerinin kalsiyumu bağlaması sonucu serbest kalan oksalatın böbrekten atılarak asidoz yapması",
+      "Kronik ishal sonucu bağırsaklardan masif 'Bikarbonat (HCO3)' kaybedilmesiyle gelişen kronik metabolik asidozun, idrar pH'sını aşırı asidik hale getirerek ürik asidin çözünürlüğünü yok etmesi",
+      "Terminal ileum rezeksiyonunun doğrudan pürin metabolizmasını hızlandırarak kan ürik asit düzeyini tavan yaptırması",
+      "Kronik ishalde artan sitokinlerin böbreklerde ürik asit sekresyonunu aktif olarak artırması"
+    ],
+    correct: 2,
+    exp: "Ürik Asit Taşları, üriner sistem taşlarının %5-10'unu oluşturur ve röntgende (DÜSG) GÖRÜNMEYEN (radyolüsen) tek ana taş grubudur (Tomografide görünürler). Ürik asit taşının oluşması için kan ürik asitinin çok yüksek olması şart DEĞİLDİR. En kritik faktör İDRARIN AŞIRI ASİDİK (pH < 5.5) olmasıdır. Çünkü ürik asit alkali idrarda kolayca çözünürken, asidik idrarda anında çökelir. Crohn hastalığı gibi kronik ishali olan hastalar, bağırsaklardan sürekli baz (Bikarbonat) kaybederler. Vücut asidoza girer ve böbrekler asidozu düzeltmek için idrara bol miktarda asit (H+) pompalar. İdrar çok asidik olunca, normal miktardaki ürik asit bile anında taşlaşır. Tedavisi Potassium Sitrat vererek idrarı alkalileştirmektir."
+  },
+  {
+    id: 355,
+    ders: "Dahiliye",
+    konu: "Nefroloji",
+    diff: 5,
+    q: "Otuz beş yaşında kadın hasta, bir haftadır süren baş ağrısı ve halsizlik şikayetiyle başvuruyor. Kan basıncı 200/120 mmHg (Malign Hipertansiyon) ölçülüyor. Laboratuvarında Kreatinin: 4.5 mg/dL (Şiddetli AKI), Hemoglobin: 8 g/dL ve Trombosit: 40.000 /mm3 saptanıyor. Periferik yaymada şistositler mevcut. Hastanın dışkı kültürü negatif ve kan ADAMTS13 enzim aktivitesi %65 (NORMAL) olarak bulunuyor. Atipik Hemolitik Üremik Sendrom (aHÜS) tanısı alan bu hastada, endotel hasarını ve mikrovasküler trombozu başlatan temel genetik/immünolojik defekt aşağıdakilerden hangisidir?",
+    options: [
+      "Enterohemorajik E. coli (EHEC) kaynaklı Shiga toksin varlığı",
+      "Kompleman sisteminin 'Alternatif Yolağını' frenleyen kontrol proteinlerinde (özellikle Kompleman Faktör H) gelişen inaktive edici mutasyonlar",
+      "Podositlerdeki nefrin proteinini kodlayan NPHS1 gen delesyonu",
+      "Faktör V Leiden mutasyonuna bağlı Aktif Protein C direnci",
+      "Trombosit yüzeyindeki Glikoprotein Ib reseptörünün aşırı glikozilasyonu"
+    ],
+    correct: 1,
+    exp: "Trombotik Mikroanjiyopatiler (TMA) grubunda MAHA (şistosit), trombositopeni ve organ hasarı vardır. Eğer ADAMTS13 < %10 ise tanı TTP'dir. Eğer ADAMTS13 normalse ve hastada kanlı ishal/Shiga toksini varsa tanı Tipik HÜS'tür (STEC-HUS). EĞER ADAMTS13 normal, ishal yok ve şiddetli böbrek hasarı (veya malign HT) varsa tanı 'Atipik HÜS'tür (aHÜS). aHÜS, kompleman sisteminin (özellikle Alternatif yolağın) kontrolden çıkıp hastanın kendi damar endoteline saldırmasıyla oluşur. Bunun nedeni normalde komplemanı frenleyen 'Kompleman Faktör H (veya Faktör I, MCP)' proteinlerindeki genetik mutasyonlardır. Freni patlayan kompleman endoteli delik deşik eder, pıhtılar oluşur. Tedavisi kompleman C5 blokörü olan 'Ekulizumab'dır."
+  },
+  {
+    id: 356,
+    ders: "Dahiliye",
+    konu: "Nefroloji",
+    diff: 4,
+    q: "Altmış yaşında erkek hasta, boynunda ağrısız lenf bezi şişlikleri nedeniyle hematoloji tarafından Hodgkin Lenfoma tanısı alıyor. Lenfoma tedavisi planlanırken hastada aniden bacaklarda şişlik ve idrarda köpüklenme gelişiyor. Yapılan 24 saatlik idrar analizinde 8 gram/gün protein atılımı (Nefrotik Sendrom) saptanıyor. Hastanın böbrek biyopsisinde ışık mikroskopisi ve immünfloresan boyamalar tamamen NORMAL bulunuyor. Sadece elektron mikroskopisinde podosit ayakçıklarında yaygın silinme (effacement) izleniyor. Bu erişkin hastada (Hodgkin Lenfoma zemininde) Minimal Değişiklik Hastalığı'na (MCD) yol açan nefrojenik sinyal molekülünün kaynağı aşağıdakilerden hangisidir?",
+    options: [
+      "Böbrekteki mezangiyal hücreler tarafından salgılanan TGF-beta",
+      "Karaciğerde aşırı sentezlenen amiloid A (SAA) proteini",
+      "Neoplastik (kanserli) Reed-Sternberg hücrelerinden ve T lenfositlerden salgılanan dolaşımdaki sirkülan 'Permeabilite Faktörleri' (Sitokinler)",
+      "Kemik iliğindeki plazma hücrelerinin ürettiği monoklonal hafif zincirler",
+      "Glomerüler bazal membranı doğrudan yıkan lizozomal enzimler"
+    ],
+    correct: 2,
+    exp: "Minimal Değişiklik Hastalığı (MCD) çocukluk çağında idiyopatik olarak sıktır. Erişkinlerde ise nadirdir, ancak görüldüğünde aklımıza iki klasik sekonder neden gelmelidir: 1) NSAİİ kullanımı, 2) Hodgkin Lenfoma. Hodgkin lenfomanın karakteristik hücresi olan Reed-Sternberg hücreleri ve etrafındaki reaktif T-lenfositler, kana masif miktarda sitokin (interlökin 13, TNF, permeabilite faktörleri) salgılar. Bu sirküle eden sitokinler kana karışıp böbreğe ulaşır ve podositlerin ayakçıklarını toksik bir şekilde eritir (effacement). Filtre bozulan böbrekten albümin kaçar (nefrotik sendrom). Lenfoma kemoterapiyle tedavi edildiğinde, nefrotik sendrom da kendiliğinden düzelir."
+  },
+  {
+    id: 357,
+    ders: "Dahiliye",
+    konu: "Nefroloji",
+    diff: 4,
+    q: "Son dönem böbrek yetmezliği nedeniyle haftada 3 gün hemodiyalize giren 55 yaşındaki erkek hasta, bir diyaliz seansını kaçırdıktan sonra acil servise ciddi kas güçsüzlüğü ve göğsünde sıkışma hissi ile getiriliyor. Çekilen EKG'sinde dar ve sivri (çadır) T dalgaları, PR mesafesinde uzama ve QRS kompleksinde genişleme saptanıyor. Laboratuvarda Serum Potasyumu: 7.8 mEq/L (Ağır Hiperkalemi) olarak bulunuyor. Ölümcül aritmi riski yüksek olan bu hastanın acil resüsitasyonunda, potasyum seviyesini DÜŞÜRMEMESİNE RAĞMEN, kardiyak hücre zarını stabilize etmek için 'ilk saniyelerde' verilmesi gereken intravenöz ilacın (Kalsiyum Glukonat) elektrofizyolojik etki mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Hücre dışındaki potasyumu hücre içine iten sodyum-potasyum pompasını hızlandırmak",
+      "Kardiyomiyositlerin 'eşik (threshold) potansiyelini' daha pozitif bir değere (yukarıya) çekerek, artmış potasyumun yarattığı istirahat zarı depolarizasyonuna karşı kalbin uyarılabilirliğini normale döndürmek",
+      "Bağırsaklarda potasyum bağlayıcı reçine gibi davranarak emilimi bloke etmek",
+      "Böbrek tübüllerinde aldosteron reseptörlerini anında aktive ederek potasyum atılımını sağlamak",
+      "Miyokard hücrelerindeki potasyum (KATP) kanallarını kapatarak hücre içindeki kalsiyumu bağlamak"
+    ],
+    correct: 1,
+    exp: "Hiperkalemi acil bir durumdur çünkü kalbi durdurur (Aritmi/Asistoli). EKG'de T sivriliği, QRS genişlemesi ve P dalgası kaybı (sinüs arresti) görülür. Yüksek potasyum, hücrenin istirahat membran potansiyelini (RMP) daha pozitif (eşik değere daha yakın) hale getirerek kalbi aniden çok uyarılabilir (irritable) yapar. Tedavinin İLK ve EN ACİL adımı (Eğer EKG değişikliği varsa) İV Kalsiyum Glukonat (veya Klorür) vermektir. Kalsiyum, kan potasyum seviyesini ASLA DÜŞÜRMEZ. Yaptığı iş şudur: Kardiyomiyositlerin 'Eşik (Threshold) Potansiyelini' de RMP ile birlikte yukarı çeker. Böylece RMP ile Eşik arasındaki güvenli mesafe tekrar sağlanır ve hücre zarı stabilize olur. Sonrasında potasyumu hücre içine sokacak insülin/glukoz ve vücuttan atacak diyaliz/kayeksalat tedavilerine geçilir."
+  },
+  {
+    id: 358,
+    ders: "Dahiliye",
+    konu: "Endokrinoloji",
+    diff: 4,
+    q: "Kırk beş yaşında erkek hasta, son 6 aydır ellerinde ve ayaklarında büyüme (ayakkabı numarasında artış), yüz hatlarında kabalaşma, seste kalınlaşma ve aşırı terleme şikayetleriyle başvuruyor. Fizik muayenesinde prognatizm (çene çıkıklığı) ve makroglossi (büyük dil) saptanıyor. Akromegali ön tanısı ile yapılan laboratuvar incelemesinde Serum IGF-1 düzeyi yaş ve cinsiyete göre belirgin yüksek bulunuyor. Tanıyı 'kesinleştirmek (doğrulamak)' amacıyla yapılması gereken dinamik test ve bu testte beklenen patolojik (Akromegali lehine) yanıt aşağıdakilerden hangisidir?",
+    options: [
+      "İnsülin tolerans testi / Büyüme hormonu (GH) düzeyinin 5 ng/mL'nin üzerine çıkamaması",
+      "Oral Glukoz Tolerans Testi (OGTT) / Büyüme hormonu (GH) düzeyinin 1 ng/mL'nin altına baskılanamaması",
+      "TRH stimülasyon testi / Büyüme hormonu düzeyinin paradoksal olarak düşmesi",
+      "Su kısıtlama testi / İdrar osmolalitesinin artmaması",
+      "Düşük doz deksametazon baskılama testi / Kortizol düzeyinin baskılanamaması"
+    ],
+    correct: 1,
+    exp: "Akromegali şüphesinde İLK yapılan (tarama) test Serum IGF-1 düzeyidir (Çünkü GH pulsatil salınır ve yarı ömrü çok kısadır, oysa IGF-1 sabittir). IGF-1 yüksekse tanı KESİNLEŞTİRİLMEK zorundadır. Doğrulama testi 'Oral Glukoz Tolerans Testi (OGTT)'dir. Normal sağlıklı bir insana şeker (glukoz) içirildiğinde, yükselen kan şekeri Büyüme Hormonu (GH) salınımını baskılar (GH < 1 ng/mL veya < 0.4 mcg/L olmalıdır). Ancak Akromegali hastasında hipofiz adenomu otonom çalıştığı için, glukoz verilmesine rağmen GH baskılanamaz ve yüksek kalmaya devam eder. Bu durum tanıyı kesinleştirir."
+  },
+  {
+    id: 359,
+    ders: "Dahiliye",
+    konu: "Endokrinoloji",
+    diff: 4,
+    q: "Otuz iki yaşında kadın hasta, son 3 aydır devam eden çarpıntı, kilo kaybı (iştahının açık olmasına rağmen), aşırı terleme ve sinirlilik şikayetleriyle başvuruyor. Muayenesinde kalp hızı 110/dk, tiroid bezi diffüz olarak büyümüş ve üzerinde üfürüm (trill) duyuluyor. Gözlerinde belirgin ekzoftalmus (proptozis) ve pretibial miksödem saptanıyor. Graves Hastalığı tanısı alan bu hastada, göz bulgularının (oftalmopati/ekzoftalmus) ve pretibial miksödemin patogenezinden sorumlu spesifik otoimmün hedef aşağıdakilerden hangisidir?",
+    options: [
+      "Göz dışı kasların (ekstraoküler kaslar) motor nöronlarına karşı gelişen antikorlar",
+      "Retroorbital fibroblastlar ve adipositlerin yüzeyinde de bulunan 'TSH reseptörlerinin' TSHR-Uyarıcı Antikorlar (TSI) tarafından aktive edilmesi",
+      "Tiroid peroksidaz (TPO) enzimine karşı gelişen antikorların doğrudan optik sinire saldırması",
+      "Yüksek seviyelerdeki serbest T3 ve T4 hormonlarının göz küresi arkasındaki yağ dokusunda doğrudan lipojenezi artırması",
+      "Tiroglobuline karşı gelişen immün komplekslerin retroorbital damarlara çökmesi"
+    ],
+    correct: 1,
+    exp: "Graves Hastalığı, TSH reseptörüne karşı gelişen 'uyarıcı' antikorların (TSH Receptor Stimulating Antibodies - TSI / TRAb) tiroid bezini durmaksızın çalıştırmasıdır (Hipertiroidi). Graves'in diğer hipertiroidi nedenlerinden (Toksik nodül vb.) farkı; Ekzoftalmus (gözlerin dışarı fırlaması) ve Pretibial Miksödem görülmesidir. Bunun nedeni; TSH reseptörlerinin SADECE tiroid bezinde değil, göz arkasındaki (retroorbital) fibroblastlarda ve bacak ön yüzündeki cilt fibroblastlarında da bulunmasıdır. Otoantikorlar bu bölgelerdeki TSH reseptörlerini de uyarır. Fibroblastlar çılgınca glikozaminoglikan (GAG - hyaluronik asit) üretir ve suyu çeker (şişme). Kaslar ve yağ dokusu şişerek gözü öne iter."
+  },
+  {
+    id: 360,
+    ders: "Dahiliye",
+    konu: "Endokrinoloji",
+    diff: 5,
+    q: "Altmış yaşında, Tip 2 Diabetes Mellitus tanısıyla 10 yıldır Metformin kullanan erkek hastanın HbA1c düzeyi %8.5 olarak bulunuyor. Hastanın özgeçmişinde 'Kalp Yetersizliği (Ejeksiyon Fraksiyonu %35)' ve 'Obezite (VKİ: 32)' öyküsü mevcuttur. Hastanın böbrek fonksiyonları normaldir (eGFR > 60). Kılavuzlara göre, bu hastanın glisemik kontrolünü sağlamak, kilo vermesine yardımcı olmak ve özellikle KALP YETERSİZLİĞİNE bağlı hastaneye yatış ve mortalite riskini kanıta dayalı olarak DÜŞÜRMEK amacıyla Metformin tedavisine eklenmesi gereken birinci tercih ilaç sınıfı aşağıdakilerden hangisidir?",
+    options: [
+      "Sülfonilüreler (örn: Gliklazid)",
+      "DPP-4 İnhibitörleri (örn: Sitagliptin)",
+      "Tiazolidindionlar (örn: Pioglitazon)",
+      "SGLT-2 İnhibitörleri (örn: Empagliflozin veya Dapagliflozin)",
+      "Bazal İnsülin (örn: İnsülin Glargin)"
+    ],
+    correct: 3,
+    exp: "Tip 2 DM tedavisinde paradigma değişmiştir. Eskiden sadece şekeri düşürmek hedeflenirken, artık 'Kardiyovasküler ve Renal' koruma sağlayan ilaçlar ön plandadır. Eğer hastada KALP YETERSİZLİĞİ (veya KBY) varsa, kılavuzların mutlak ilk (Metforminden sonra veya birlikte) önerisi SGLT-2 İnhibitörleridir (-gliflozinler). SGLT-2 inhibitörleri böbrekten glukoz (ve sodyum) atılımını artırarak hem şekeri düşürür, hem kalori kaybettirir (kilo verdirir), hem de hafif bir diüretik/natriüretik etki yaratarak Kalp Yetersizliği yükünü (mortaliteyi) dramatik şekilde azaltır. (Not: Tiazolidindionlar sıvı tutulumu yaptığı için Kalp Yetersizliğinde KONTRENDİKEDİR)."
+  },
+  {
+    id: 361,
+    ders: "Dahiliye",
+    konu: "Endokrinoloji",
+    diff: 4,
+    q: "Yirmi sekiz yaşında kadın hasta, boynunun ön tarafında şiddetli ağrı, yutkunma güçlüğü ve ateş şikayetiyle başvuruyor. Hastanın 2 hafta önce viral bir üst solunum yolu enfeksiyonu (ÜSYE) geçirdiği öğreniliyor. Fizik muayenesinde tiroid bezi çok sert ve dokunmakla aşırı derecede hassas (ağrılı) bulunuyor. Laboratuvarında Sedimantasyon Hızı: 85 mm/saat (Çok yüksek), TSH: <0.01 (Baskılanmış) ve sT4 yüksek saptanıyor. Subakut Tiroidit (De Quervain Tiroiditi) tanısı konan bu hastada, tirotoksikoz bulgularını (çarpıntı vb.) ve tiroiddeki inflamatuar ağrıyı kontrol altına almak için kullanılması gereken en uygun farmakolojik tedavi kombinasyonu aşağıdakilerden hangisidir?",
+    options: [
+      "Propiltiourasil (PTU) ve Propranolol",
+      "Metimazol ve Radyoaktif İyot (I-131)",
+      "Sadece İntravenöz Geniş Spektrumlu Antibiyotik",
+      "Aspirin (veya NSAİİ) ve Propranolol (Beta blokör)",
+      "Yüksek doz İyot solüsyonu (Lugol) ve Glukokortikoid"
+    ],
+    correct: 3,
+    exp: "Subakut Granülomatöz Tiroidit (De Quervain); sıklıkla viral bir ÜSYE sonrası gelişen, tiroidin 'EN AĞRILI' hastalığıdır. Sedimantasyon (ESR) çok yüksektir. Tiroid folikülleri virüs ve inflamasyon nedeniyle parçalanır (destrüktif tiroidit) ve içindeki hazır tiroid hormonları kana dökülerek geçici bir hipertiroidi (tirotoksikoz) yaratır. Yeni hormon sentezi YOKTUR, sadece depolar boşalıyordur. Bu nedenle yeni hormon sentezini durduran Antitiroid ilaçlar (PTU, Metimazol) KESİNLİKLE İŞE YARAMAZ. Tedavinin temeli semptomatiktir: Ağrı ve inflamasyon için NSAİİ (Aspirin/İbuprofen), çok şiddetliyse Steroid; çarpıntı/tremor gibi sempatik bulgular için ise Beta Blokör (Propranolol) verilir."
+  },
+  {
+    id: 362,
+    ders: "Dahiliye",
+    konu: "Endokrinoloji",
+    diff: 4,
+    q: "Kırk yaşında kadın hasta, son 1 yıldır artan baş ağrısı, her iki memeden süt gelmesi (galaktore) ve adet görememe (amenore) şikayetleriyle başvuruyor. Görme alanı muayenesinde bitemporal hemianopsi (dış yarıları görememe) saptanıyor. Kranial MRG'de hipofiz bezinde 1.5 cm çapında makroadenom izleniyor. Serum Prolaktin düzeyi: 350 ng/mL (Normali <25) olarak bulunuyor. Prolaktinoma tanısı kesinleşen bu hastada, cerrahi tedaviye (Transsfenoidal rezeksiyon) gitmeden ÖNCE ilk basamak olarak başlanması gereken ve tümörü küçültme/hormon seviyesini normale döndürme şansı çok yüksek olan medikal tedavi aşağıdakilerden hangisidir?",
+    options: [
+      "Somatostatin analoğu (Oktreotid)",
+      "Dopamin reseptör agonisti (Kabergolin veya Bromokriptin)",
+      "GnRH agonisti (Löprolid)",
+      "Östrojen reseptör antagonisti (Tamoksifen)",
+      "Serotonin geri alım inhibitörü (Sertralin)"
+    ],
+    correct: 1,
+    exp: "Prolaktinomalar, en sık görülen fonksiyonel hipofiz adenomlarıdır. Amenore, galaktore ve görme alanı defekti klasik bulgularıdır. Hipofiz tümörlerinin büyük çoğunluğunda (Akromegali, Cushing vs.) ilk tedavi Cerrahidir. ANCAK Prolaktinoma bunun EN BÜYÜK İSTİSNASIDIR. Prolaktinoma ne kadar büyük olursa olsun (Makroadenom bile olsa) veya görme alanı defekti yapsa bile, İLK BASAMAK TEDAVİ HER ZAMAN MEDİKAL TEDAVİDİR. Prolaktin salınımını baskılayan doğal hormon Dopamin'dir (PIF). Bu nedenle Dopamin Agonistleri (Kabergolin, Bromokriptin) verildiğinde tümör mucizevi bir şekilde küçülür ve hormon seviyesi normale döner. Cerrahi sadece ilaca dirençli veya ilacı tolere edemeyen vakalara saklanır."
+  },
+  {
+    id: 363,
+    ders: "Dahiliye",
+    konu: "Endokrinoloji",
+    diff: 5,
+    q: "Diyabetik Ketoasidoz (DKA) koması ile acil servise getirilen 18 yaşındaki Tip 1 DM hastasının kan şekeri 550 mg/dL, pH: 7.10 ve Serum Potasyumu: 5.5 mEq/L (Normalin üst sınırı) saptanıyor. Hastaya agresif intravenöz sıvı (İzotonik NaCl) ve sürekli İnsülin infüzyonu başlanıyor. Tedavinin 3. saatinde hastanın kan şekeri 250 mg/dL'ye düşüyor, ancak hasta aniden solunum yetmezliğine giriyor ve EKG'de U dalgaları ile T dalgası düzleşmesi saptanıyor. Laboratuvar tekrarlandığında Serum Potasyumunun 2.0 mEq/L'ye (Derin Hipokalemi) düştüğü görülüyor. DKA tedavisinde bu ani ve ölümcül hipokalemiyi tetikleyen temel iyatrojenik/fizyolojik mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "İzotonik sıvının böbreklerden masif sodyum atılımı ile birlikte potasyum kaybı yaratması",
+      "Asidozun düzelmesi ve verilen insülinin, serumdaki potasyumu hızla hücre içine (intraselüler alana) sokması",
+      "İnsülinin doğrudan bağırsaklardan potasyum emilimini bloke etmesi",
+      "Keton cisimlerinin idrarla atılırken yanlarında mecburi potasyum sürüklemesi",
+      "Verilen sıvıların dilüsyonel (seyreltici) etkisine bağlı rölatif potasyum düşüşü"
+    ],
+    correct: 1,
+    exp: "Diyabetik Ketoasidoz (DKA) yönetimindeki en ölümcül tuzak Potasyum yönetimidir. DKA'lı hasta acile geldiğinde kanda potasyum YÜKSEK (Hiperkalemi) veya normal görünür. Çünkü asidoz (H+ hücreye girer, K+ dışarı çıkar) ve insülin eksikliği potasyumu hücre DIŞINA itmiştir. Ancak hastanın total vücut potasyum deposu, idrarla kayıplar nedeniyle aslında ÇOK DÜŞÜKTÜR. Siz hastaya 'İnsülin' verip asidozu düzelttiğiniz anda, kanda duran o yüksek potasyum saniyeler içinde hızla HÜCRE İÇİNE geri döner. Kan potasyumu aniden çakılır (Derin Hipokalemi -> Solunum durması, U dalgası, Aritmi). Bu nedenle DKA tedavisinde, potasyum düzeyi < 5.2 mEq/L olduğu anda (hatta <3.3 ise insülin hiç başlanmadan) İV sıvıya mutlaka Potasyum eklenmelidir."
+  },
+  {
+    id: 364,
+    ders: "Dahiliye",
+    konu: "Endokrinoloji",
+    diff: 4,
+    q: "Otuz beş yaşında kadın hasta, boynunda eline gelen bir şişlik nedeniyle polikliniğe başvuruyor. Tiroid ultrasonografisinde sağ lobda 2 cm çapında, hipoekoik, kenarları düzensiz ve içinde mikrokalsifikasyonlar barındıran solid bir nodül saptanıyor. Hastanın TSH düzeyi normal sınırlarda (1.5 mIU/L) bulunuyor. Nodülden malignite (tiroid kanseri) şüphesi olduğu için İnce İğne Aspirasyon Biyopsisi (İİAB) yapılıyor. Biyopsi sonucu 'Folliküler Neoplazi Şüphesi (Bethesda Kategori IV)' olarak raporlanıyor. Bu aşamada, nodülün Folliküler Adenom (iyi huylu) mu yoksa Folliküler Karsinom (kanser) mu olduğunu 'kesin olarak' ayırt etmek için yapılması gereken tanısal yaklaşım aşağıdakilerden hangisidir?",
+    options: [
+      "Aynı nodülden ikinci kez kalın iğne (tru-cut) biyopsisi almak",
+      "Radyoaktif İyot (I-131) sintigrafisi çekerek nodülün sıcak mı soğuk mu olduğuna bakmak",
+      "Serum Tiroglobulin seviyesini ölçmek",
+      "Tiroid lobektomi veya total tiroidektomi (Cerrahi eksizyon) yaparak tüm dokunun kapsül ve damar invazyonu açısından histopatolojik incelemesini yapmak",
+      "Hastaya 6 ay boyunca L-Tiroksin (Levotiron) verip nodülün küçülüp küçülmediğini ultrasonla takip etmek (TSH supresyonu)"
+    ],
+    correct: 3,
+    exp: "Tiroid nodüllerine yaklaşımda en kritik kör nokta Folliküler lezyonlardır. İnce İğne Biyopsisi (İİAB) hücreleri (sitolojiyi) gösterir. Papiller kanserin hücreleri çok tipik olduğu için İİAB ile tanınır. Ancak Folliküler Adenom (iyi huylu) ile Folliküler Karsinomun (kanser) hücreleri BİREBİR AYNIDIR. Aralarındaki tek fark; Kanser olanın tümör kapsülünü yırtıp dışarı taşması (kapsül invazyonu) veya damarların içine girmesidir (vasküler invazyon). İğne biyopsisi ile tümörün bütünlüğünü (kapsülünü) göremezsiniz. Bu nedenle Folliküler Neoplazi şüphesinde KESİN TANI İÇİN iğne yetmez; o tiroid lobunu ameliyatla çıkarıp (Lobektomi) patoloğun mikroskop altında tüm kapsülü incelemesi ŞARTTIR."
+  },
+  {
+    id: 365,
+    ders: "Dahiliye",
+    konu: "Endokrinoloji",
+    diff: 4,
+    q: "Kırk beş yaşında erkek hasta, kan basıncı yüksekliği (160/100 mmHg), kas güçsüzlüğü ve sık idrara çıkma şikayetleriyle başvuruyor. Laboratuvarında Serum Potasyum: 2.8 mEq/L (Hipokalemi) ve Serum Sodyum: 146 mEq/L saptanıyor. Tarama testinde Plazma Aldosteron / Renin Aktivitesi Oranı (ARR) > 30 (Çok Yüksek) bulunuyor ve Primer Hiperaldosteronizm (Conn Sendromu) şüphesi oluşuyor. Tanıyı doğrulamak (konfirmasyon) amacıyla hastaya 'İntravenöz Serum Fizyolojik (İzotonik Tuz) Yükleme Testi' yapılıyor. Testin sonucunda, hastanın Primer Hiperaldosteronizm TANISINI KESİNLEŞTİREN biyokimyasal yanıt aşağıdakilerden hangisidir?",
+    options: [
+      "Plazma aldosteron düzeyinin < 5 ng/dL'nin altına düşmesi (Baskılanması)",
+      "Plazma renin aktivitesinin belirgin olarak yükselmesi",
+      "Serum potasyum düzeyinin aniden normale (4.0 mEq/L) dönmesi",
+      "Plazma aldosteron düzeyinin yüksek kalmaya devam etmesi (Baskılanamaması)",
+      "Kortizol düzeyinin 1.8 mcg/dL'nin altına düşmesi"
+    ],
+    correct: 3,
+    exp: "Primer Hiperaldosteronizm (Conn Sendromu) teşhis algoritması 3 aşamalıdır: 1) Tarama (ARR > 20-30 ve Aldosteron > 15 ise pozitif). 2) Doğrulama. 3) Lokalizasyon. Doğrulama testi tuz yükleme (İV Serum Fizyolojik veya Oral sodyum) ile yapılır. Fizyolojik kural şudur: Vücuda bol tuz (hacim) girince böbreğe giden kan artar, Renin salgısı durur, Renin durunca da ALDOSTERON üretimi durur (Baskılanır - Normal yanıt). Ancak Conn sendromunda adrenal bezdeki tümör (veya hiperplazi) otonomdur (kafasına göre çalışır). Siz ne kadar tuz verirseniz verin (hacmi ne kadar artırırsanız artırın), Aldosteron seviyesi BASKILANAMAZ ve yüksek kalmaya devam eder (> 10 ng/dL). Bu durum tanıyı kesinleştirir."
+  },
+  {
+    id: 366,
+    ders: "Dahiliye",
+    konu: "Endokrinoloji",
+    diff: 5,
+    q: "Ailesel Multipl Endokrin Neoplazi Tip 1 (MEN 1) Sendromu öyküsü olan 35 yaşındaki kadın hasta, son aylarda sık tekrarlayan hipoglisemi atakları, bayılma hissi ve konfüzyon şikayetiyle acile başvuruyor. Atak sırasında bakılan açlık kan şekeri 35 mg/dL saptanıyor. Eş zamanlı alınan kan örneğinde; İnsülin düzeyi yüksek, C-peptid düzeyi yüksek ve Proinsülin düzeyi yüksek bulunuyor. İnsülinoma tanısı alan bu hastada, tümör hücrelerinden aşırı insülin salgılanmasını başlatan ve İnsülin sekresyonunun ana tetikleyicisi olan hücresel olay (fizyolojik mekanizma) aşağıdakilerden hangisidir?",
+    options: [
+      "Hücre içindeki glukagon reseptörlerinin down-regülasyonu",
+      "Beta hücresinde ATP/ADP oranının artması sonucu ATP'ye duyarlı Potasyum (K+ATP) kanallarının kapanması ve hücre membranının depolarize olması",
+      "Voltaj kapılı Sodyum kanallarının açılarak hücre içine masif sodyum girişi sağlaması",
+      "Hücre içi kalsiyum depolarının (sarkoplazmik retikulum) tükenmesi",
+      "Somatostatin reseptörlerinin mutasyona uğrayarak inhibisyon yapamaması"
+    ],
+    correct: 1,
+    exp: "İnsülinoma, pankreas beta hücrelerinden kaynaklanan ve Whipple triadını (Açlık hipoglisemisi + o sırada kan şekeri <50 + şeker yiyince düzelme) yapan nöroendokrin tümördür. Eksojen insülin alımından farkı, İnsülin ile birlikte C-Peptid'in de yüksek olmasıdır (endojen üretimi kanıtlar). Pankreas beta hücresinden insülin salınım mekanizması farmakolojinin kalbidir: Hücre içine giren Glukoz (veya tümöral otonomi) Glikoliz/Krebs ile hücre içi ATP miktarını artırır (ATP/ADP oranı yükselir). Artan ATP, hücre zarındaki 'ATP'ye duyarlı Potasyum (K+ATP) kanallarını' KAPATIR. Potasyum dışarı çıkamayınca hücre içi pozitifleşir (Depolarizasyon). Bu durum Voltaj kapılı Kalsiyum kanallarını açar, kalsiyum içeri girer ve insülin veziküllerini dışarı fırlatır (Ekzositoz). (Not: Sülfonilüre grubu diyabet ilaçları da K-ATP kanallarını kapatarak insülin salgılatır)."
+  },
+  {
+    id: 367,
+    ders: "Dahiliye",
+    konu: "Endokrinoloji",
+    diff: 4,
+    q: "Otuz iki yaşında kadın hasta, son zamanlarda giderek artan halsizlik, kilo kaybı, ayağa kalktığında baş dönmesi (ortostatik hipotansiyon) ve tuzlu yiyeceklere karşı aşırı istek (tuz açlığı) şikayetleriyle başvuruyor. Fizik muayenesinde kan basıncı 90/60 mmHg saptanıyor. Hastanın yüzünde, diş etlerinde, el içi çizgilerinde ve eski yara izlerinde belirgin esmerleşme (hiperpigmentasyon) izleniyor. Laboratuvarda Hiponatremi (Na: 130 mEq/L) ve Hiperkalemi (K: 5.5 mEq/L) bulunuyor. Primer Adrenal Yetmezlik (Addison Hastalığı) şüphesi olan bu hastada, ciltteki hiperpigmentasyonun patofizyolojik nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "Aldosteron eksikliğine bağlı sodyum kaybının melanositleri doğrudan uyarması",
+      "Kortizol eksikliğinin hipofizden Proopiomelanokortin (POMC) ve buna bağlı ACTH (Adrenokortikotropik Hormon) ile MSH (Melanosit Uyarıcı Hormon) üretimini aşırı artırması",
+      "Adrenal bezdeki otoimmün yıkımın doğrudan melanositlere de saldıran çapraz antikorlar üretmesi",
+      "Hipogliseminin ciltteki melanin pigmentinin yıkılmasını engellemesi",
+      "Düşük kan basıncının ciltte kronik venöz staz ve hemosiderin birikimi yapması"
+    ],
+    correct: 1,
+    exp: "Addison Hastalığı (Primer Adrenal Yetmezlik), böbrek üstü bezinin tüm tabakalarının (glomerüloza, fasikülata, retikülaris) sıklıkla otoimmün harabiyetidir. Aldosteron yoktur (Tuz kaybı, hipotansiyon, hiponatremi, hiperkalemi). Kortizol yoktur (Hipoglisemi, yorgunluk). Kortizol olmayınca, beynin (Hipofizin) freni (negatif feedback) boşalır. Hipofiz böbrek üstü bezini uyarmak için çılgınca ACTH üretmeye başlar. ACTH, 'POMC' (Proopiomelanokortin) adlı dev bir öncü proteinden kesilerek yapılır. POMC kesilirken ACTH'nın yanı sıra yan ürün olarak 'MSH (Melanosit Uyarıcı Hormon)' da üretilir. Kanda tavan yapan ACTH ve MSH, gidip cilde renk veren melanositleri uyarır ve bronzlaşma (hiperpigmentasyon) yapar. (Sekonder adrenal yetmezlikte ise sorun hipofizdedir, ACTH düşüktür, bu yüzden ciltte esmerleşme OLMAZ, soluk kalır)."
+  },
+  {
+    id: 368,
+    ders: "Dahiliye",
+    konu: "Endokrinoloji",
+    diff: 4,
+    q: "Kırk yaşında obez kadın hasta, poliklinik kontrolünde Açlık Kan Şekeri 145 mg/dL ve 150 mg/dL (iki ayrı ölçümde) saptanarak Tip 2 Diabetes Mellitus tanısı alıyor. Hastaya yaşam tarzı değişiklikleri (diyet ve egzersiz) öneriliyor ve medikal tedavinin ilk basamağı olarak (kontrendikasyon olmadığı için) Biguanid grubu bir ajan olan 'Metformin' başlanıyor. Metforminin kan şekerini düşürücü etkisini sağlayan temel hücresel ve fizyolojik mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Pankreas beta hücrelerindeki potasyum kanallarını kapatarak insülin salgısını artırmak",
+      "İnce bağırsaklarda karbonhidratları parçalayan alfa-glukozidaz enzimini inhibe edip glukoz emilimini geciktirmek",
+      "Karaciğerde AMP-aktif protein kinaz (AMPK) enzimini aktive ederek hepatik glukoneogenezi (yeni glukoz üretimini) güçlü bir şekilde baskılamak",
+      "Yağ dokusunda PPAR-gama reseptörlerini aktive ederek periferik insülin duyarlılığını artırmak",
+      "Böbrek proksimal tübüllerinde SGLT-2 taşıyıcısını bloke edip glukozun idrarla atılmasını sağlamak"
+    ],
+    correct: 2,
+    exp: "Tip 2 DM tedavisinin tartışmasız 1. basamağı ve temel taşı Metformindir. Kilo aldırmaz ve hipoglisemi yapmaz (çünkü pankreastan insülin salgılatmaz). Metforminin birincil etki yeri Karaciğerdir. Hücre içinde enerji sensörü olan AMPK (AMP-activated protein kinase) enzimini aktive eder. AMPK aktifleşince karaciğerin 'yeni şeker üretme (Glukoneogenez)' işlemi durur. Karaciğer kana şeker vermeyi kesince sabah açlık kan şekerleri dramatik şekilde normale döner. İkincil bir etki olarak kaslarda insülin duyarlılığını da hafifçe artırır. En önemli yan etkisi Laktik Asidoz riskidir (Özellikle KBY, Kalp yetmezliği ve Karaciğer yetmezliği olanlarda kontrendikedir)."
+  },
+  {
+    id: 369,
+    ders: "Dahiliye",
+    konu: "Endokrinoloji",
+    diff: 5,
+    q: "Altmış beş yaşında erkek hasta, kemik ağrıları, işitme kaybı ve başının büyümesi (şapkalarının dar gelmesi) şikayetiyle başvuruyor. Çekilen iskelet grafilerinde kafatasında 'pamuk atığı (cotton wool)' görünümü, uzun kemiklerde kortikal kalınlaşma ve eğilmeler (kılıç kını tibia) saptanıyor. Laboratuvarında Serum Kalsiyum ve Fosfor düzeyleri TAMAMEN NORMAL bulunurken, Alkalen Fosfataz (ALP) düzeyi normalin 10 katı yüksek saptanıyor. Paget Hastalığı (Osteitis Deformans) tanısı konan bu hastada, hastalığın başlangıç fazından sorumlu olan ve kemik döngüsünü (turnover) kaotik bir şekilde hızlandıran asıl patolojik hücre grubu aşağıdakilerden hangisidir?",
+    options: [
+      "Multinükleer, aşırı aktif, dev Osteoklastlar",
+      "Hatalı tip I kollajen sentezleyen Osteoblastlar",
+      "Otoimmün reaksiyonla aktive olmuş T lenfositler",
+      "Metastatik prostat kanseri hücreleri",
+      "Paratiroid adenomundan kaynaklanan neoplastik şef hücreleri"
+    ],
+    correct: 0,
+    exp: "Paget Hastalığı (Osteitis Deformans), ileri yaşlarda görülen bölgesel bir kemik hastalığıdır (Tüm iskeleti tutmaz). Hastalığın temelinde, kemik yıkımından sorumlu olan 'Osteoklast' hücrelerinin kafayı yemesi (belki paramiksovirüs enfeksiyonuna bağlı) yatar. Osteoklastlar devasa boyutlara ulaşır ve çılgınca (aşırı aktif) kemiği yıkmaya başlarlar (Litik faz). Kemik çok yıkılınca bunu telafi etmek için 'Osteoblastlar' da hızla işe koyulur ve kaba, düzensiz, zayıf bir kemik örerler (Sklerotik/Miks faz). Bu hızlı yapım/yıkım kaosu kemiği büyütür ama kalitesizleştirir (Kırıklar, kafa büyümesi, işitme siniri basısı). Kalsiyum/Fosfor NORMALDİR (primer hiperparatiroididen ayrılır). Ancak osteoblastların yoğun mesaisi nedeniyle Alkalen Fosfataz (ALP) muazzam YÜKSEKTİR. En korkulan komplikasyonu zemininde 'Osteosarkom' gelişmesidir."
+  },
+  {
+    id: 370,
+    ders: "Dahiliye",
+    konu: "Endokrinoloji",
+    diff: 4,
+    q: "Yirmi beş yaşında obez kadın hasta, amenore (adet görememe) ve yüzünde artan tüylenme şikayetiyle polikliniğe geliyor. Hastada Cushing sendromu ve Konjenital Adrenal Hiperplazi testleri negatif çıkıyor. Ultrasonografide her iki overde periferik dizilimli çok sayıda milimetrik folikül (inci kolyesi görünümü) saptanıyor. Polikistik Over Sendromu (PCOS) tanısı alan bu hastada, infertilite şikayeti yoksa ve sadece 'Tüylenmeyi (Hirsutizm) ve Adet Düzensizliğini' tedavi etmek isteniyorsa, başlanması gereken en uygun birinci basamak tıbbi tedavi aşağıdakilerden hangisidir?",
+    options: [
+      "Klomifen sitrat veya Letrozol (Ovulasyon indüksiyonu)",
+      "Kombine Oral Kontraseptifler (Östrojen + Progestin hapları)",
+      "Spironolakton (Sadece androjen reseptör blokörü)",
+      "Metformin (Sadece insülin duyarlaştırıcı)",
+      "Siklik medroksiprogesteron asetat (Sadece progestin)"
+    ],
+    correct: 1,
+    exp: "PCOS tedavisinde yaklaşım hastanın isteğine göre değişir. Eğer hasta GEBE KALMAK İSTİYORSA birinci basamak tedavi ovulasyon indüksiyonudur (Letrozol). ANCAK vakamızda olduğu gibi hasta gebe kalmak İSTEMİYORSA, sadece tüylenme (hirsutizm) ve adet düzensizliği (amenore) şikayeti varsa, ALTIN STANDART İLK TERCİH 'Kombine Oral Kontraseptif (OKS)' haplarıdır. OKS'ler 3 mucizevi iş yapar: 1) İçindeki östrojen, karaciğerden SHBG (Seks Hormonu Bağlayıcı Globulin) üretimini artırarak kandaki serbest (aktif) testosteronu bağlar ve tüylenmeyi azaltır. 2) LH salınımını baskılayarak overlerden androjen üretimini durdurur. 3) Düzenli progestin çekilmesi sağlayarak endometriumu korur ve kanser (Endometrium Ca) riskini önler. Eğer 6 ay OKS'ye rağmen tüylenme geçmezse tedaviye Spironolakton eklenebilir."
+  },
+  {
+    id: 371,
+    ders: "Dahiliye",
+    konu: "Kardiyoloji",
+    diff: 5,
+    q: "Altmış beş yaşında erkek hasta, 4 gün önce geçirdiği akut anterior miyokard enfarktüsü (STEMI) nedeniyle koroner yoğun bakımda takip edilirken aniden nefes darlığı ve hipotansiyon (kardiyojenik şok) geliştiriyor. Fizik muayenesinde sol sternal kenar alt kısmında yeni duyulmaya başlanan, şiddetli, trilli (palpe edilebilen) holosistolik üfürüm saptanıyor. Sağ kalp kateterizasyonunda sağ atriyum oksijen satürasyonu %65 iken, sağ ventrikül oksijen satürasyonunun %80'e (Oksijen step-up bulgusu) fırladığı görülüyor. Akut Ventriküler Septal Rüptür (VSR) tanısı konan bu hastada, miyokard dokusunun yırtılmasına zemin hazırlayan hücresel patogenez aşağıdakilerden hangisidir?",
+    options: [
+      "Erken dönemde bölgeye göç eden nötrofillerin miyokard hücrelerinde serbest radikal hasarı yapması",
+      "İskemik bölgedeki makrofajların fagositik aktivitesi ve salgıladıkları metaloproteinazların nekrotik dokuyu eriterek mekanik zayıflık yaratması",
+      "Aşırı sempatik deşarja bağlı kordae tendineaların koparak septuma çarpması",
+      "Kollajen tip I ve tip III birikiminin enfarkt bölgesinde aşırı nedbe (skar) dokusu oluşturarak esnekliği bozması",
+      "Hücre içi kalsiyum birikiminin miyozin başlarını kilitleyerek kalıcı kontraksiyon bandı nekrozu yaratması"
+    ],
+    correct: 1,
+    exp: "Akut MI sonrası mekanik komplikasyonlar (Ventriküler Septal Rüptür, Serbest Duvar Rüptürü, Papiller Kas Rüptürü) genellikle enfarktüsten sonraki 3-5. günlerde görülür. Sol sternal kenarda yeni, trilli holosistolik üfürüm ve sağ ventrikülde oksijenin aniden artması (oksijenlenmiş kanın sol ventrikülden sağa geçmesi) VSR için patognomoniktir. Patogenezde, bu günlerde nekrotik bölgeye göç eden 'Makrofajların' dokuyu fagositozla temizlemesi ve matris metalloproteinaz enzimleri salgılaması yatar. Makrofajlar ölü dokuyu eritirken kalp duvarı maksimum derecede zayıflar (sarı yumuşama evresi) ve yüksek basınca dayanamayarak yırtılır."
+  },
+  {
+    id: 372,
+    ders: "Dahiliye",
+    konu: "Kardiyoloji",
+    diff: 4,
+    q: "Yetmiş iki yaşında, hipertansiyon ve diyabet öyküsü olan kadın hasta çarpıntı şikayetiyle başvuruyor. EKG'sinde P dalgalarının izlenmediği ve R-R mesafelerinin tamamen düzensiz olduğu (Atriyal Fibrilasyon) saptanıyor. Hastanın inme (strok) risk skoru yüksek (CHA2DS2-VASc: 4) olduğu için inme profilaksisi amacıyla Yeni Nesil Oral Antikoagülan (YNOA / DOAC) ajanlardan 'Rivaroksaban' reçete ediliyor. Bu ilacın, atriyal apendikste pıhtı oluşumunu engelleyen spesifik farmakodinamik etki mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Antitrombin III'ü aktive ederek pıhtılaşma kaskadını dolaylı yoldan inhibe etmek",
+      "Vitamin K epoksit redüktaz enzimini bloke ederek Faktör II, VII, IX ve X sentezini durdurmak",
+      "Trombosit yüzeyindeki Glikoprotein IIb/IIIa reseptörlerini antagonize etmek",
+      "Doğrudan ve kompetitif (tersinir) olarak pıhtılaşma Faktör Xa'nın aktif bölgesine bağlanarak onu inhibe etmek",
+      "Fibrinojenin fibrine dönüşümünü sağlayan Trombin (Faktör IIa) molekülünü doğrudan bloke etmek"
+    ],
+    correct: 3,
+    exp: "Atriyal fibrilasyonda inme profilaksisinde Warfarin'in yerini büyük ölçüde YNOA'lar (Yeni Nesil Oral Antikoagülanlar) almıştır. İsimlendirmeleri mekanizmalarını ele verir: Riva-ROXA-ban, Apixa-ban, Edoxa-ban molekülleri içlerindeki 'Xa' hecesinden anlaşılacağı üzere DOĞRUDAN Faktör Xa inhibitörleridir. Faktör Xa, protrombini trombine çeviren ortak yolağın başaktörüdür. (Not: İsminde 'Xa' olmayan Dabigatran ise doğrudan Trombin / Faktör IIa inhibitörüdür. Warfarin Vitamin K antagonistidir. Heparin Antitrombin III'ü kullanır)."
+  },
+  {
+    id: 373,
+    ders: "Dahiliye",
+    konu: "Kardiyoloji",
+    diff: 4,
+    q: "Yetmiş sekiz yaşında erkek hasta, merdiven çıkarken aniden gözlerinin karardığını ve bayıldığını (efor senkopu) belirterek acile getiriliyor. Fizik muayenesinde karotis nabzının zayıf ve geç geldiği (pulsus parvus et tardus), sağ 2. interkostal aralıkta duyulan ve boyna yayılan, sistolün geç döneminde zirve yapan (geç pikli) kreşendo-dekreşendo tarzı üfürüm saptanıyor. Ekokardiyografide Ciddi Aort Darlığı tespit edilen bu hastada, efor sırasında bayılmanın (senkopun) ortaya çıkmasına neden olan temel hemodinamik mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Eforla birlikte kalp hızının artması sonucu diyastolik doluş zamanının kısalması ve stroke volümün düşmesi",
+      "Egzersiz yapan kaslardaki yaygın vazodilatasyona (düşen periferik dirence) karşılık, kireçlenmiş (sabit) aort kapağı nedeniyle kalbin kardiyak debiyi yeterince artıramaması ve beyin perfüzyonunun çökmesi",
+      "Sol ventrikül hipertrofisine bağlı olarak miyokardiyal oksijen tüketiminin artması ve ileti yollarında iskemiye bağlı geçici tam kalp bloğu gelişmesi",
+      "Artmış sol ventrikül basıncının vagal (Bezold-Jarisch) refleksi tetikleyerek masif bradikardi yapması",
+      "Aort kökündeki baroreseptörlerin artmış basınca aşırı yanıt vererek sempatik tonusu aniden kapatması"
+    ],
+    correct: 1,
+    exp: "Aort Darlığı (Aort Stenozu), erişkinlerde senkopun en önemli kardiyak nedenlerinden biridir. Klasik triadı: Efor anjinası, Efor senkopu ve Kalp Yetersizliği'dir. Üfürümü boyna yayılır, nabız küçük ve geçtir (pulsus parvus et tardus). Senkopun mekanizması fizyolojiktir: Egzersiz yapıldığında iskelet kaslarındaki damarlar oksijen alabilmek için sonuna kadar açılır (Sistemik Vasküler Direnç / SVR düşer). Sağlıklı bir kalp bu düşen tansiyonu telafi etmek için pompa gücünü (kardiyak debiyi) artırır. Ancak Aort Darlığında çıkış kapısı kireçli ve daracıktır (Sabit Debi). Kalp debiyi artıramaz, kan kaslara göllenir, beyne giden kan aniden kesilir ve hasta bayılır."
+  },
+  {
+    id: 374,
+    ders: "Dahiliye",
+    konu: "Kardiyoloji",
+    diff: 5,
+    q: "Altmış sekiz yaşında erkek hasta, nefes darlığı ve bacaklarda ödem şikayetiyle başvuruyor. Ekokardiyografide Ejeksiyon Fraksiyonu (EF) %60 (Korunmuş) saptanıyor, ancak sol ve sağ ventrikül duvarları belirgin derecede kalınlaşmış (hipertrofik) ve miyokard 'parlak/benekli (sparkling)' bir görünüm sergiliyor. Hastanın EKG'sinde duvar kalınlığına zıt olacak şekilde mikrodalga (düşük voltaj) QRS kompleksleri izleniyor. Özgeçmişinde bilateral Karpal Tünel Sendromu opere öyküsü olan bu hastada (Kardiyak Amiloidoz), miyokardiyuma çökerek kalbi katılaştıran (Restriktif Kardiyomiyopati) hatalı katlanmış protein kompleksi aşağıdakilerden hangisidir?",
+    options: [
+      "Monoklonal immünglobulin hafif zincirleri (AL amiloid)",
+      "Serum Amiloid A (AA amiloid)",
+      "Mutasyona uğramış Transtiretin (TTR amiloid)",
+      "Beta-2 Mikroglobulin",
+      "Beta-amiloid peptidi (A-beta)"
+    ],
+    correct: 2,
+    exp: "Vaka tipik bir Restriktif Kardiyomiyopati tablosudur. Duvarlar kalın ama içi boş (Korunmuş EF / HFpEF). EKG'de düşük voltaj olması ve Eko'da 'parlak (granular sparkling)' miyokard görünümü Kardiyak Amiloidoz için patognomoniktir (Hipertrofik KMY'de EKG'de devasa yüksek voltaj olur). İleri yaş, erkek cinsiyet, kalp yetmezliği ve 'Karpal Tünel Sendromu' birlikteliği (sinir kılıfına çökerek) spesifik olarak 'Yabanıl (Wild-type) Transtiretin (TTR)' amiloidozunu işaret eder (Senil Sistemik Amiloidoz). Transtiretin normalde karaciğerde sentezlenen ve tiroid hormonu/retinol taşıyan bir proteindir; yaşlandıkça hatalı katlanıp kalbe çöker."
+  },
+  {
+    id: 375,
+    ders: "Dahiliye",
+    konu: "Kardiyoloji",
+    diff: 4,
+    q: "Otuz beş yaşında erkek hasta, 2 gündür devam eden ve derin nefes almakla, öksürmekle veya sırtüstü yatmakla şiddetlenen batıcı tarzda (plöritik) göğüs ağrısı ile acile başvuruyor. Ağrısının öne doğru eğildiğinde hafiflediğini belirtiyor. Çekilen EKG'sinde aVR ve V1 derivasyonları hariç TÜM derivasyonlarda (yaygın) konkav ST elevasyonu ve PR çökmesi saptanıyor. Akut Perikardit tanısı konan bu hastada, nüksleri (tekrarlamayı) önlemek amacıyla NSAİİ (İbuprofen) tedavisine ek olarak mutlaka verilmesi gereken birinci basamak ilacın (Kolşisin) farmakolojik etki mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Araşidonik asit yolağında Siklooksijenaz-2 (COX-2) enzimini inhibe etmek",
+      "Nötrofillerde hücre iskeletini oluşturan mikrotübüllerin polimerizasyonunu engelleyerek inflamatuar hücre göçünü (kemotaksisi) durdurmak",
+      "T lenfositlerde Kalsinörin enzimini inhibe ederek IL-2 üretimini baskılamak",
+      "TNF-alfa molekülüne doğrudan bağlanarak onu nötralize etmek",
+      "Makrofajlarda IL-1 beta üretimini sağlayan inflamozom kompleksini (NLRP3) doğrudan bloke etmek"
+    ],
+    correct: 1,
+    exp: "Akut Perikardit klasik triadı: Plöritik göğüs ağrısı (öne eğilmekle geçer), Perikardiyal frotman ve EKG'de yaygın ST elevasyonu / PR depresyonudur. Tedavide asıl amaç ağrıyı kesmek ve hastalığın tekrarlamasını (nüksünü) önlemektir. 1. Basamak tedavi yüksek doz NSAİİ (İbuprofen/Aspirin) ve mutlaka + Kolşisin'dir. Kolşisin nüks oranını yarı yarıya düşürür. Kolşisin, hücre içindeki tübülin proteinlerine bağlanıp 'mikrotübül polimerizasyonunu' bozar. Mikrotübülleri felç olan Nörofiller hareket edemez, perikarda göçemez ve inflamasyon durur."
+  },
+  {
+    id: 376,
+    ders: "Dahiliye",
+    konu: "Kardiyoloji",
+    diff: 4,
+    q: "İntravenöz uyuşturucu madde (eroin) kullanım öyküsü olan 40 yaşındaki erkek hasta, 1 haftadır süren yüksek ateş (39°C), üşüme-titreme ve kan tükürme (hemoptizi) şikayetleriyle getiriliyor. Fizik muayenede sol sternal kenar alt kısmında duyulan ve derin inspirasyonla şiddeti ARTAN (Carvallo belirtisi pozitif) holosistolik bir üfürüm saptanıyor. Akciğer grafisinde her iki alanda multipl, kaviteleşme eğiliminde nodüler lezyonlar (septik emboli) izleniyor. İnfektif Endokardit tablosundaki bu hastada, en olası patojeni belirleyen ve bu bakterinin sağlam kalp kapaklarına (endotele) yapışmasını sağlayan temel virülans faktörü aşağıdakilerden hangisidir?",
+    options: [
+      "Streptococcus viridans / Dextran (biofilm) üretimi",
+      "Enterococcus faecalis / Sitolisin enzimi",
+      "Staphylococcus aureus / Fibronektin bağlayıcı proteinler ve Koagülaz enzimi",
+      "Streptococcus gallolyticus (S. bovis) / Safra tuzlarına direnç kapsülü",
+      "Pseudomonas aeruginosa / Aljinat kapsül ve Ekzotoksin A"
+    ],
+    correct: 2,
+    exp: "İntravenöz uyuşturucu kullananlarda (İVDU) endokardit en sık SAĞ KALBİ (Triküspit Kapağı) tutar. Triküspit yetmezliği üfürümü inspirasyonla artar (Carvallo belirtisi). Kapaktaki devasa vejetasyonlardan kopan septik pıhtılar doğrudan Akciğerlere gider ve multipl kaviteli apseler (septik emboli / hemoptizi) yapar. İVDU grubunda açık ara en sık ve en ölümcül etken Staphylococcus aureus'tur. S. aureus'un en önemli virülans faktörleri, zedelenmemiş (sağlam) kalp kapağına bile tutunmasını sağlayan 'Fibronektin bağlayıcı proteinleri' ve pıhtı ağını oluşturup içine saklanmasını sağlayan 'Koagülaz' enzimidir. (S. viridans daha çok hasarlı kapaklara tutunur ve subakut seyreder)."
+  },
+  {
+    id: 377,
+    ders: "Dahiliye",
+    konu: "Kardiyoloji",
+    diff: 4,
+    q: "Yirmi beş yaşında kadın hasta, otururken aniden başlayan ve boynunda bir 'atma' hissinin eşlik ettiği (kurbağa belirtisi) şiddetli çarpıntı ile acile başvuruyor. Monitörizasyonda kalp hızı 180/dk, QRS kompleksleri dar (<120 ms) ve R-R mesafeleri tamamen düzenli (regüler) izleniyor, P dalgaları QRS'in içine gizlenmiştir. AV Nodal Reentran Taşikardi (AVNRT) düşünülen hastaya hekim tarafından tek taraflı Karotis Sinüs Masajı (vagal manevra) uygulanıyor ve taşikardi aniden kırılarak normal sinüs ritmine dönülüyor. Bu vagal manevranın supraventriküler taşikardiyi (SVT) sonlandırmasını sağlayan elektrofizyolojik mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Karotis sinüs baroreseptörlerinin uyarılmasıyla sempatik sinir sisteminin aktive olup sinoatriyal (SA) nodun atımını hızlandırması",
+      "Parasempatik (vagal) uyarımın AV nod üzerindeki asetilkolin deşarjını artırarak, AV nodun refrakter (cevapsız) periyodunu uzatması ve re-entry döngüsünü kırması",
+      "Vagus sinirinin atriyal miyositlerde kalsiyum kanallarını açarak atriyumu depolarize durumda kilitlemesi",
+      "Karotis masajının refleks olarak Purkinje liflerinin iletim hızını artırması",
+      "Vagal refleksin aksesuar yolağı (Kent hüzmesi) kalıcı olarak bloke etmesi"
+    ],
+    correct: 1,
+    exp: "Düzenli, dar QRS'li ve P dalgası olmayan hızlı taşikardilerin (SVT) en sık nedeni AVNRT'dir. Hastanın kendi AV nodunun içinde biri hızlı diğeri yavaş (farklı refrakter periyotlara sahip) iki ayrı yolak oluşmuştur; elektrik akımı bu iki yol arasında fırıl fırıl döner (Re-entry). Taşikardiyi kırmak için bu dönen elektriğin önüne bir duvar örmek (yolu yavaşlatmak) gerekir. Karotis sinüs masajı (veya soğuk su, Valsalva) parasempatik (Vagal) siniri uyarır. Vagus, AV noda Asetilkolin bırakır. Asetilkolin AV nodun iletimini yavaşlatır ve 'Refrakter (uyanılmaz) Periyodunu UZATIR'. Dönen akım bu uyanılmaz yolağa çarpıp söner, re-entry kırılır ve SA nod tekrar kontrolü ele alır."
+  },
+  {
+    id: 378,
+    ders: "Dahiliye",
+    konu: "Kardiyoloji",
+    diff: 5,
+    q: "Kırk beş yaşında kadın hasta, son yıllarda giderek artan efor dispnesi ve gece yatarken boğulma hissi (ortopne) şikayetiyle başvuruyor. Çocukluğunda sık sık bademcik enfeksiyonu geçirdiğini belirtiyor. Fizik muayenede kalp apekssinde diastolik rulman (uğultu) ve diyastolün hemen başında 'Açılma Sesi (Opening Snap)' duyuluyor. EKG'sinde sağ aks sapması ve P mitrale (geniş, çentikli P dalgası) mevcut. Romatizmal Mitral Darlığı olan bu hastanın klinik seyrinde, aniden gelişen çarpıntı ile birlikte hastayı saatler içinde Akut Akciğer Ödemine sokan dekompansasyonun (kötüleşmenin) fizyolojik nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "Sol atriyumun aşırı genişlemesine bağlı farengeal sinirlere bası yapması",
+      "Mitral darlığının ilerleyerek sol ventrikül hipertrofisi ve sekonder kalp yetmezliği yaratması",
+      "Atriyal Fibrilasyon (AF) gelişimiyle birlikte, sol ventrikül diyastolik doluşuna son ve en kritik katkıyı sağlayan 'Atriyal Sistolün (Atrial Kick)' aniden kaybolması",
+      "Sağ ventrikül yetmezliğinin karaciğer konjesyonu ve asit oluşturması",
+      "Artmış pulmoner basıncın refleks olarak sistemik vazodilatasyon yapması"
+    ],
+    correct: 2,
+    exp: "Mitral Darlığı (MS); Romatizmal ateş sekeli olarak yıllar içinde yavaş yavaş gelişir. Mitral kapak daraldığı için Sol Atriyum (Kulakçık) kanı aşağıya basamaz, basıncı artar ve devasa boyutlara ulaşır (Sol ventrikül ise tamamen korunmuştur, büyümez!). MS hastası yıllarca bu dar kapakla iyi kötü yaşar. Ancak devasa hale gelen sol atriyumun gerilen kas lifleri elektriksel olarak bozulur ve aniden 'Atriyal Fibrilasyon (AF)' başlar. Dar bir kapaktan kanı aşağı indirmek için Atriyumun güçlü bir şekilde KASILMASI (Atrial Kick) şarttır. AF'de atriyum titrer, kasılamaz; atrial kick %100 KAYBOLUR. Kan aniden akciğerlere doğru geri teper (Akut pulmoner ödem) ve kalp hızı fırladığı için (Taşikardi) diyastol zamanı kısalıp kapağın doluşu iyice bozulur."
+  },
+  {
+    id: 379,
+    ders: "Dahiliye",
+    konu: "Kardiyoloji",
+    diff: 4,
+    q: "Altmış yaşında erkek hasta, sigara içicisi (50 paket-yıl), 200 metre yürüdükten sonra her iki baldırında ortaya çıkan ve dinlenmekle 5 dakika içinde tamamen geçen kramp tarzı ağrı (İntermittan Klodikasyon) şikayetiyle başvuruyor. Fizik muayenede her iki dorsalis pedis nabzı zayıf alınıyor ve Ayak Bileği-Kol İndeksi (ABI) 0.65 saptanıyor. Periferik Arter Hastalığı (PAD) tanısı alan bu hastada, egzersiz kapasitesini artırmak (ağrısız yürüme mesafesini uzatmak) amacıyla spesifik olarak reçete edilen; fosfodiesteraz-3 enzimini inhibe ederek hem vazodilatasyon sağlayan hem de eritrositlerin damar içindeki esnekliğini artıran ilaç aşağıdakilerden hangisidir?",
+    options: [
+      "Klopidogrel",
+      "Silostazol (Cilostazol)",
+      "Pentoksifilin",
+      "Aspirin",
+      "Sildefanil"
+    ],
+    correct: 1,
+    exp: "Periferik Arter Hastalığının (PAD) klasik semptomu İntermittan Klodikasyon'dur (Eforla gelen bacak ağrısı, baldır anginası). Tanı ABI (Ayak bileği-kol basınç indeksi) < 0.9 olmasıyla konur. Hastalara mortaliteyi düşürmek için Aspirin ve Statin mutlaka verilir. ANCAK Aspirin hastanın yürüyüş mesafesini ARTIRMAZ. Hastanın ağrısız yürüme kapasitesini belirgin şekilde artıran, efor kapasitesini düzelten semptomatik 1. basamak ilaç 'Silostazol (Cilostazol)'dür. Silostazol bir Fosfodiesteraz-3 (PDE-3) inhibitörüdür; damar düz kasında ve trombositte cAMP'yi artırır -> Güçlü vazodilatasyon ve anti-trombosit etki yapar. (Kalp yetmezliğinde kontrendikedir)."
+  },
+  {
+    id: 380,
+    ders: "Dahiliye",
+    konu: "Kardiyoloji",
+    diff: 4,
+    q: "Elli beş yaşında erkek hasta, son 1 yıldır Düşük Ejeksiyon Fraksiyonlu Kalp Yetersizliği (HFrEF, EF: %30) nedeniyle Ramipril (ACE inhibitörü), Metoprolol ve Spironolakton tedavisi almaktadır. Ancak hastanın efor dispnesi devam etmektedir. Kardiyoloji kılavuzlarına göre hastanın Ramipril tedavisi kesilip, 36 saat beklendikten sonra yerine mortaliteyi daha fazla düşürdüğü kanıtlanmış olan 'Sakubitril / Valsartan' (ARNI) kombinasyonuna geçiliyor. Bu yeni tedavideki Sakubitril ajanının etki mekanizması ve kalp yetmezliğinde sağladığı asıl hemodinamik fayda aşağıdakilerden hangisidir?",
+    options: [
+      "Anjiyotensin reseptörlerini (AT1) doğrudan bloke ederek fibrozisi önlemesi",
+      "Neprilisin enzimini inhibe ederek, güçlü bir vazodilatatör ve diüretik olan Natriüretik Peptidlerin (BNP ve ANP) yıkımını engellemesi",
+      "Miyokard hücrelerindeki Sodyum-Kalsiyum değiştiricisini bloke ederek inotropiyi artırması",
+      "Aldosteron reseptörlerini bloke edip potasyum tutulumunu sağlaması",
+      "Sinoatriyal (SA) düğümdeki İf (funny) kanallarını kapatarak kalp hızını düşürmesi"
+    ],
+    correct: 1,
+    exp: "Kalp Yetmezliği tedavisinde en büyük devrim ARNI (Anjiyotensin Reseptör-Neprilisin İnhibitörü) sınıfıdır (Sakubitril/Valsartan). Kalp yetmezliğinde kalbin gerilmesiyle salgılanan BNP (Beyin Natriüretik Peptid) ve ANP, vücudun kendini koruma mekanizmasıdır (Vazodilatasyon ve diürez yapar). Ancak vücutta bulunan 'Neprilisin' adlı enzim bu iyi niyetli peptidleri hızla parçalar. 'Sakubitril', bu Neprilisin enzimini inhibe eder. Böylece kandaki BNP ve ANP seviyeleri uçar, muazzam bir vazodilatasyon, su atılımı ve kalbin iş yükünde azalma sağlanır. Yalnız Neprilisin aynı zamanda Bradikinini de yıktığı için, Bradikinini artıran bir ACE inhibitörü (Ramipril) ile aynı anda verilirse ölümcül Anjiyoödem yapar (O yüzden ACEi kesilip 36 saat arınma süresi beklenir ve ARB ile kombine edilir)."
+  },
+  {
+    id: 381,
+    ders: "Dahiliye",
+    konu: "Kardiyoloji",
+    diff: 5,
+    q: "Otuz yaşında kadın hasta, idrar yolu enfeksiyonu nedeniyle 3 gündür Makrolid (Azitromisin) antibiyotiği kullanmaktadır. Özgeçmişinde depresyon nedeniyle Sitalopram (SSRI) kullandığı öğreniliyor. Hasta evde aniden bayılıyor ve acile getirildiğinde EKG monitöründe, QRS komplekslerinin izoelektrik hat etrafında kendi ekseni etrafında dönerek şekil ve genlik değiştirdiği polimorfik ventriküler taşikardi atağı (Torsades de Pointes) izleniyor. Bu hastada ilaçların sinerjistik toksisitesine bağlı olarak gelişen ve bu ölümcül aritmiyi (TdP) tetikleyen hücresel elektrofizyolojik defekt aşağıdakilerden hangisidir?",
+    options: [
+      "Miyositlerde hızlı sodyum kanallarının (Faz 0) aşırı inhibisyonu sonucu QRS uzaması",
+      "Gecikmiş düzeltici potasyum kanallarının (IKr) bloke olması sonucu, ventriküler aksiyon potansiyelinde Faz 3 repolarizasyonunun belirgin şekilde uzaması",
+      "L-Tipi Kalsiyum kanallarının aşırı açılmasına bağlı kalsiyum yüklenmesi",
+      "Sinoatriyal düğümün otomatik atım hızının masif vagal deşarjla sıfırlanması",
+      "Sarkoplazmik retikulumdan Ryanodin reseptörü aracılı spontan kalsiyum kaçakları"
+    ],
+    correct: 1,
+    exp: "Torsades de Pointes (TdP); EKG'de QRS komplekslerinin bir kurdele gibi büküldüğü, ölümcül bir polimorfik VT tipidir. TdP'nin olmazsa olmaz kuralı, zemininde her zaman 'Uzun QT Sendromu' olmasıdır. QT mesafesi, kalbin repolarizasyon (elektriksel olarak toparlanma) süresini temsil eder. Birçok ilaç (Makrolidler, Florokinolonlar, Antipsikotikler, SSRI'lar, Ondansetron vb.) miyokardiyumdaki Faz 3 repolarizasyonu sağlayan 'Gecikmiş Düzeltici Potasyum Kanallarını (hERG / IKr akımı)' bloke eder. Potasyum hücre dışına çıkamayınca kalp bir türlü repolarize olamaz (QTc > 500 ms). Bu upuzun bekleme süresinde hücresel kalsiyum kaçakları erken vurular (EAD) yaratarak fırtınayı (TdP) başlatır. Tedavide acil IV Magnezyum Sülfat verilir."
+  },
+  {
+    id: 382,
+    ders: "Dahiliye",
+    konu: "Kardiyoloji",
+    diff: 4,
+    q: "Kırk yaşında kadın hasta, son birkaç aydır genellikle gece yarısı veya sabaha karşı istirahat halindeyken ortaya çıkan, 15 dakika süren ve kendiliğinden geçen göğüs ağrısı şikayetiyle başvuruyor. Ağrı sırasında çekilen EKG'sinde V1-V4 derivasyonlarında belirgin ST segment elevasyonu saptanıyor; ancak ağrı geçer geçmez EKG tamamen normale dönüyor. Koroner anjiyografisinde damarları tamamen açık ve pürüzsüz saptanan Prinzmetal (Vazospastik / Varyant) Anjina hastasında, spazmı tetikleyebileceği ve tabloyu ölümcül hale getirebileceği için kullanılması KESİNLİKLE KONTRENDİKE olan ilaç sınıfı aşağıdakilerden hangisidir?",
+    options: [
+      "Kalsiyum Kanal Blokörleri (Örn: Diltiazem)",
+      "Nitratlar (Örn: İzosorbid Mononitrat)",
+      "Non-selektif Beta-Blokörler (Örn: Propranolol)",
+      "Antiplatelet ajanlar (Örn: Aspirin)",
+      "Statinler (Örn: Rosuvastatin)"
+    ],
+    correct: 2,
+    exp: "Vazospastik (Prinzmetal / Varyant) Anjina; aterosklerotik plaktan ziyade koroner arterlerin (özellikle sigara içen genç kadınlarda) hiperreaktivite göstererek aniden şiddetli spazma girmesidir (damar büzüşür). Spazm o kadar güçlüdür ki damarı tam tıkar ve eforla değil 'istirahat anında (sabaha karşı)' ST elevasyonlu anjina (transmural iskemi) yapar. Tedavide damarı gevşeten Kalsiyum Kanal Blokörleri ve Nitratlar kullanılır. ANCAK 'Non-selektif Beta-Blokörler' (Propranolol gibi) KESİNLİKLE KONTRENDİKEDİR. Çünkü Beta-2 reseptörleri koroner damarları GEVŞETİR. Siz bu reseptörü bloke ederseniz, damardaki Alfa-1 büzücü reseptörler yalnız (karşılanmamış/unopposed) kalır ve spazmı katlayarak hastayı kalp krizinden öldürür."
+  },
+  {
+    id: 383,
+    ders: "Dahiliye",
+    konu: "Kardiyoloji",
+    diff: 4,
+    q: "Yetmiş beş yaşında kalp yetmezliği hastası; 3 gündür devam eden bulantı, kusma, iştahsızlık ve etrafı 'sarı-yeşil' renkli görme (ksantopsi) şikayetiyle acile getiriliyor. EKG'sinde sık ventriküler erken vurular (PVC) ve ST segmentlerinde 'ters dönmüş bıyık (scooped / salvador dali bıyığı)' görünümü saptanıyor. Digoksin toksisitesi tanısı konan bu hastada, digoksinin kardiyak hücre zarı üzerindeki hedef reseptörüne (Na+/K+ ATPaz) olan affinitesini (bağlanma gücünü) dramatik şekilde artırarak toksisiteyi kolaylaştıran elektrolit bozukluğu aşağıdakilerden hangisidir?",
+    options: [
+      "Hipernatremi",
+      "Hipokalemi",
+      "Hiperkalsemi",
+      "Hipomagnezemi",
+      "Hiperkalemi"
+    ],
+    correct: 1,
+    exp: "Digoksin Toksisitesi; bulantı/kusma (en erken), sarı-yeşil görme ve ölümcül aritmilerle (Sık PVC, AV blok) seyreder. EKG'deki 'kepçe / Salvador Dali bıyığı (scooping)' ST çökmesi digoksin kullananlarda normaldir, toksisiteyi göstermez ancak ilacı aldığını gösterir. Digoksin kalpteki 'Sodyum-Potasyum ATPaz (Na+/K+ ATPaz)' pompasının dışa bakan yüzeyine bağlanarak onu bloke eder ve hücre içi Kalsiyumu artırarak kalbi güçlü kastırır (Pozitif inotrop). Digoksin ile Kanda gezen 'Potasyum (K+)' iyonları, bu pompadaki aynı koltuğa oturmak için rekabet ederler. Eğer hastada (örneğin diüretik kullanımına bağlı) 'Hipokalemi' varsa, rekabetçi potasyum azalır, Digoksin boş kalan tüm koltuklara yapışarak ölümcül toksisiteye yol açar. Bu yüzden Digoksin alan hastanın Potasyumu asla düşmemelidir."
+  },
+  {
+    id: 384,
+    ders: "Dahiliye",
+    konu: "Göğüs Hastalıkları",
+    diff: 4,
+    q: "Kırk yaşında kadın hasta, çocukluğundan beri devam eden ve son 1 yılda sıklaşan nefes darlığı, hışıltılı solunum (wheezing) ve gece öksürükleri şikayetiyle polikliniğe başvuruyor. Hastanın yüksek doz inhale kortikosteroid (İKS) ve uzun etkili beta-agonist (LABA) kullanmasına rağmen astım atakları kontrol altına alınamıyor. Tam kan sayımında periferik kanda belirgin eozinofili (800 hücre/mikroL) saptanıyor. Allerji testlerinde spesifik bir IgE yüksekliği bulunmuyor. Ağır eozinofilik astım tanısı alan bu hastada, eozinofillerin kemik iliğinden kana çıkmasını, dokulara göç etmesini ve sağkalımını sağlayan asıl sitokini bloke ederek atakları dramatik şekilde azaltan monoklonal antikor (örn: Mepolizumab) aşağıdakilerden hangisini hedefler?",
+    options: [
+      "İnterlökin-4 (IL-4)",
+      "İnterlökin-5 (IL-5)",
+      "Tümör Nekrozis Faktör-alfa (TNF-alfa)",
+      "İmmünglobulin E (IgE)",
+      "Lökotrien D4 (LTD4) reseptörü"
+    ],
+    correct: 1,
+    exp: "Ağır astım tedavisinde fenotipe yönelik biyolojik ajanlar güncel TUS/USMLE sorularının favorisidir. Allerjik (IgE aracılı) astımda Omalizumab (Anti-IgE) kullanılırken; vakamızdaki gibi kanda ve balgamda eozinofillerin hakim olduğu 'Ağır Eozinofilik Astım'da hedef 'İnterlökin-5 (IL-5)'tir. IL-5, vücutta eozinofillerin üretiminden, olgunlaşmasından ve dokuda hayatta kalmasından sorumlu en temel sitokindir. Mepolizumab ve Reslizumab doğrudan IL-5'i bağlarken, Benralizumab IL-5 reseptörünü bloke ederek eozinofilik inflamasyonu durdurur."
+  },
+  {
+    id: 385,
+    ders: "Dahiliye",
+    konu: "Göğüs Hastalıkları",
+    diff: 5,
+    q: "Altmış beş yaşında, 50 paket-yıl sigara içicisi olan KOAH (Kronik Obstrüktif Akciğer Hastalığı) hastası, artan nefes darlığı ve pürülan balgam şikayetiyle acil servise getiriliyor. Gelişinde bilinci açık olan hastanın oksijen satürasyonu (SpO2) %82 olarak ölçülüyor. Hastaya geri dönüşümsüz maske ile 10 lt/dk'dan yüksek akımlı (%100) oksijen tedavisi başlanıyor. Yarım saat sonra hastanın oksijen satürasyonu %98'e çıkmasına rağmen, bilincinin kapandığı (koma) ve solunumunun yüzeyelleştiği görülüyor. Alınan arteriyel kan gazında pCO2: 85 mmHg (Şiddetli hiperkapni) saptanıyor. KOAH atak hastasında yüksek akımlı oksijen verilmesinin tehlikeli hiperkapniye ve komaya (CO2 narkozu) yol açmasının EN ÖNEMLİ fizyopatolojik mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Periferik kemoreseptörlerin (karotis cisimcikleri) hipoksemi uyarısını kaybederek solunum dürtüsünü (drive) tamamen kapatması",
+      "Akciğerlerde iyi havalanmayan (kötü ventile olan) alveollerdeki koruyucu 'hipoksik pulmoner vazokonstriksiyonun' ortadan kalkarak, kanın ölü boşluklara (dead space) yönlenmesi ve V/Q uyumsuzluğunun artması",
+      "Yüksek oksijenin beyin sapındaki solunum merkezini doğrudan toksik etkiyle deprese etmesi",
+      "Oksijen radikallerinin diyafram kasında akut miyopati ve yorgunluk yapması",
+      "Kandaki bikarbonatın yüksek oksijen basıncı altında aniden karbonik aside dönüşmesi"
+    ],
+    correct: 1,
+    exp: "Kronik CO2 retansiyonu olan KOAH hastalarına yüksek doz O2 verilmesi tehlikelidir (CO2 narkozu yapar). Klasik bilgi, bunun sadece 'hipoksik solunum dürtüsünün kaybolmasından' kaynaklandığını söyler ancak bu EKSİK ve YANLIŞTIR; solunum frekansı çok az düşer. ASIL ve EN ÖNEMLİ mekanizma şudur: KOAH'lı akciğerde bazı alveoller tıkalıdır (kötü ventile olur). Vücut akıllıdır, bu kötü alveollere giden damarları büzer (Hipoksik Pulmoner Vazokonstriksiyon) ve kanı sağlam alveollere yollar. Siz hastaya %100 O2 verdiğinizde, o tıkalı alveollere bile O2 dolar. Damarlar 'Aaa oksijen geldi' deyip gevşer (vazodilatasyon). Ancak o alveoller aslında mekanik olarak tıkalıdır (havayı dışarı atamazlar). Kan bu işe yaramaz bölgelere hücum eder (Ölü boşluk / V/Q mismatch artar) ve kanın içindeki CO2 dışarı atılamayarak kanda hapsolur. (Buna ek olarak Haldane etkisi de CO2 artışına katkıda bulunur)."
+  },
+  {
+    id: 386,
+    ders: "Dahiliye",
+    konu: "Göğüs Hastalıkları",
+    diff: 4,
+    q: "Sağ diz protez ameliyatı sonrası 5. gününde olan 70 yaşındaki erkek hasta, yataktan ilk kez kalktığında aniden başlayan nefes darlığı, sağ yan (plöritik) göğüs ağrısı ve çarpıntı ile yere yığılıyor. Kan basıncı 85/50 mmHg, nabız 120/dk ve solunum sayısı 30/dk ölçülüyor. EKG'sinde sağ aks sapması, D1'de belirgin S dalgası, D3'te Q dalgası ve T negatifliği (S1Q3T3 paterni) saptanıyor. Masif Pulmoner Emboli tablosunda olan bu hastada, aniden gelişen şiddetli hipokseminin ve nefes darlığının temelini oluşturan havalanma-kanlanma (V/Q) bozukluğu aşağıdakilerden hangisidir?",
+    options: [
+      "Fizyolojik şant (V/Q = 0)",
+      "Alveolar ölü boşluk artışı (V/Q = Sonsuz)",
+      "Difüzyon kapasitesinde (DLCO) artış",
+      "Bilateral yaygın bronkospazm",
+      "Hipoventilasyona bağlı global asidoz"
+    ],
+    correct: 1,
+    exp: "Pulmoner Embolide (PE), akciğere giden ana atardamarlardan biri veya birkaçı pıhtı ile tıkanır. Bu durumda o bölgedeki alveollere dışarıdan mükemmel bir şekilde hava girip çıkar (Ventilasyon / V = Normal). Ancak pıhtı nedeniyle o alveollerin etrafındaki kılcal damarlara KAN GİTMEZ (Perfüzyon / Q = Sıfır). Herhangi bir sayının sıfıra bölümü matematikte SONSUZ (V/Q = ∞) kabul edilir. Havalanan ancak kanlanmayan bu alanlar gaz alışverişine katılamaz ve havayı boşuna israf ederler. Bu duruma 'Alveolar Ölü Boşluk (Dead Space) artışı' denir ve masif PE'deki hipokseminin ana nedenidir."
+  },
+  {
+    id: 387,
+    ders: "Dahiliye",
+    konu: "Göğüs Hastalıkları",
+    diff: 4,
+    q: "Altmış yaşında, 40 paket-yıl sigara içicisi erkek hasta; son 2 aydır sağ omuzundan başlayıp sağ kolunun iç yüzüne (ulnar sinir trasesine) ve 4.-5. parmaklarına yayılan şiddetli ağrı şikayetiyle başvuruyor. Nörolojik muayenesinde sağ kolda uyuşukluk, sağ göz kapağında düşüklük (pitozis), sağ göz bebeğinde küçülme (miyozis) ve sağ yüz yarısında terleme kaybı (anhidroz) saptanıyor. Toraks BT'de sağ akciğer üst lob apeksinde 5 cm'lik kitle (Pancoast Tümörü) izleniyor. Bu hastadaki otonomik göz bulgularına (Horner Sendromu) yol açan anatomik yapının tümör tarafından istila edilmesi (invazyonu) aşağıdaki yapılardan hangisinde gerçekleşmiştir?",
+    options: [
+      "Frenik sinir",
+      "Servikal sempatik zincir ve Stellat ganglion",
+      "Nervus laringeus rekürrens",
+      "Brakial pleksusun üst trunkusu (C5-C6)",
+      "Superior vena kava (SVC)"
+    ],
+    correct: 1,
+    exp: "Pancoast Tümörü (Superior Sulkus Tümörü), akciğerin en tepe noktasında (apeks) yerleşen, genellikle Yassı Hücreli Karsinom veya Adenokarsinom tipi bir tümördür. Yeri gereği akciğer bulgusundan (öksürük vb.) ziyade komşuluk yaptığı anatomik yapılara bası bulgularıyla gelir. C8-T1 sinir köklerini (brakial pleksus alt trunkus) ezerek ulnar sinir trasesinde omuz/kol ağrısı ve el kaslarında erime yapar. Daha da önemlisi, hemen arkadan geçen 'Servikal Sempatik Zinciri (özellikle Stellat Ganglionu)' ezerek veya içine sızarak o taraftaki sempatik uyarıyı keser. Sempatik uyarı kesilince göz bebeği büyüyemez (Miyozis), kapak kası (Müller) çalışamaz (Pitozis) ve ter bezleri çalışamaz (Anhidroz). Bu üçlüye Horner Sendromu denir."
+  },
+  {
+    id: 388,
+    ders: "Dahiliye",
+    konu: "Göğüs Hastalıkları",
+    diff: 4,
+    q: "Otuz yaşında kadın hasta; 3 haftadır devam eden kuru öksürük, efor dispnesi ve her iki bacağının ön yüzünde ortaya çıkan kırmızı, ağrılı, sert şişlikler (Eritema nodozum) şikayetiyle başvuruyor. Çekilen akciğer grafisinde 'Bilateral Hiler Lenfadenopati (BHL)' saptanıyor. Sarkoidoz (Löfgren Sendromu) ön tanısı ile hastaya bronkoskopi yapılarak Bronkoalveolar Lavaj (BAL) sıvısı alınıyor. Sarkoidoz tanısını destekleyen BAL sıvısı hücresel analiz bulgusu (Lenfosit profili) aşağıdakilerden hangisidir?",
+    options: [
+      "Eozinofil oranının %25'in üzerinde olması",
+      "Nötrofil hakimiyeti ve köpüklü makrofajların varlığı",
+      "CD4+ T Lenfosit / CD8+ T Lenfosit oranının belirgin YÜKSEK (>3.5) olması",
+      "CD4+ T Lenfosit / CD8+ T Lenfosit oranının belirgin DÜŞÜK (<1.0) olması",
+      "PAS (Periodik Asit-Schiff) pozitif proteinöz materyal birikimi"
+    ],
+    correct: 2,
+    exp: "Sarkoidoz, etyolojisi bilinmeyen sistemik non-kazeifiye granülomatöz bir hastalıktır. Genç kadınlarda Bilateral Hiler LAP + Eritema Nodozum + Poliartrit triadı (Löfgren Sendromu) akut ve iyi huylu formudur. Sarkoidoz immunolojik olarak hücresel bağışıklığın (Th1) aşırı reaksiyonudur. Bu nedenle hastalığın merkezi olan akciğerlerde (BAL sıvısında), devasa miktarda 'CD4+ T helper (yardımcı)' lenfosit birikir. Normalde BAL'da CD4/CD8 oranı 1-2 arasındayken, Sarkoidozda bu oran klasik olarak >3.5'in üzerine çıkar. (Tam tersi olarak Hipersensitivite Pnömonisinde ise CD8 artar ve CD4/CD8 oranı <1'in altına düşer)."
+  },
+  {
+    id: 389,
+    ders: "Dahiliye",
+    konu: "Göğüs Hastalıkları",
+    diff: 4,
+    q: "Altmış sekiz yaşında erkek hasta, son 1 yıldır yavaş yavaş artan nefes darlığı ve inatçı, balgamsız (kuru) öksürük şikayetiyle polikliniğe başvuruyor. Muayenesinde her iki akciğer tabanında, inspiryum (nefes alma) sonunda duyulan ince, çıtırtı tarzında sesler ('Velcro / Cırt-cırt' ralleri) ve parmaklarda çomaklaşma (clubbing) saptanıyor. Solunum Fonksiyon Testinde (SFT) FEV1/FVC oranı %85 (Normal/Yüksek), Total Akciğer Kapasitesi (TLC) ise beklenenin %60'ı (Düşük) olarak bulunuyor. Yüksek Çözünürlüklü Bilgisayarlı Tomografide (HRCT) akciğer bazallerinde ve subplevral (zara yakın) alanlarda 'Bal Peteği (Honeycombing)' görünümü izleniyor. İdiyopatik Pulmoner Fibrozis (İPF) tanısı alan bu hastada, akciğer parankiminde sürekli ve durdurulamaz fibrozis (bağ dokusu birikimi) oluşumunu tetikleyen en kritik büyüme faktörü / sitokin aşağıdakilerden hangisidir?",
+    options: [
+      "İnterlökin-5 (IL-5)",
+      "Transforme edici büyüme faktörü-beta (TGF-beta)",
+      "İnterferon-gama (IFN-gama)",
+      "Tümör Nekrozis Faktör-alfa (TNF-alfa)",
+      "Eritropoetin (EPO)"
+    ],
+    correct: 1,
+    exp: "İdiyopatik Pulmoner Fibrozis (İPF), yaşlı erkeklerde görülen, nedeni bilinmeyen, ilerleyici ve ölümcül bir interstisyel akciğer hastalığıdır. Akciğerler büzüşür, sertleşir ve küçülür (Restriktif SFT paterni: FVC ve TLC düşer, ancak hava yolu açık olduğu için FEV1/FVC oranı normal veya yüksektir). Tomografideki 'Bal peteği (honeycombing)' kistik boşluklar ve traksiyon bronşektazileri kesin tanı koydurucudur. Patogenez; alveolar epitelin tekrarlayan mikroskobik hasarları sonucu anormal bir yara iyileşmesi sürecine girmesidir. Bu süreçte miyofibroblastları aktive eden ve akciğeri kollajen (skar) dokusuna boğan en önemli (kötü adam) medyatör 'TGF-beta (Transforming Growth Factor-beta)'dır. Güncel tedavide kullanılan Pirfenidon ve Nintedanib gibi ilaçlar bu yolağı hedefler."
+  },
+  {
+    id: 390,
+    ders: "Dahiliye",
+    konu: "Göğüs Hastalıkları",
+    diff: 4,
+    q: "Otelde katıldığı bir kongreden dönen 55 yaşındaki erkek hasta, 40°C ateş, üşüme-titreme, kuru öksürük ve şiddetli sulu ishal (diyare) şikayetiyle acile başvuruyor. Muayenede hastanın ateşi çok yüksek olmasına rağmen kalp tepe atımı 75/dk (Rölatif bradikardi) saptanıyor. Hastada belirgin konfüzyon (bilinç bulanıklığı) mevcut. Akciğer grafisinde sağ alt lobda yamalı infiltrasyon izleniyor. Biyokimyasında Serum Sodyumu 126 mEq/L (Hiponatremi) ve karaciğer enzimleri hafif yüksek bulunuyor. Toplum Kökenli Atipik Pnömoni tablosundaki bu hastada etkeni en hızlı ve spesifik şekilde doğrulamak için yapılması gereken İLK tanısal test aşağıdakilerden hangisidir?",
+    options: [
+      "Kan kültürü",
+      "Balgamda Gram boyama",
+      "İdrar antijen testi (İdrarda bakteri antijeni aranması)",
+      "Soğuk aglütinin testi",
+      "Serumda Asit-Fast (ARB) boyama"
+    ],
+    correct: 2,
+    exp: "Vaka, 'Legionella pneumophila'nın neden olduğu Lejyoner Hastalığıdır. Otel/klima/su deposu teması, yüksek ateşle uyumsuz nabız (Rölatif Bradikardi), akciğer dışı bulgular olan ishal (GİS tutulumu), konfüzyon (nörolojik tutulum) ve laboratuvarda Hiponatremi (sıklıkla SIADH veya tübüler kayba bağlı) ile karaciğer enzim yüksekliği Lejyonella için klasik anahtar kelimelerdir. Legionella hücresi içi bir bakteridir ve standart Gram boyamada GÖRÜLMEZ. Kültürü (BCYE agar) çok zor ve uzundur. Bu nedenle klinikte tanıyı anında koyduran en pratik ve ilk test 'İdrar Antijen Testi'dir (Özellikle Serogrup 1 için %90 duyarlıdır)."
+  },
+  {
+    id: 391,
+    ders: "Dahiliye",
+    konu: "Göğüs Hastalıkları",
+    diff: 4,
+    q: "Aktif akciğer Tüberkülozu (Verem) tanısı konan 45 yaşındaki kadın hastaya dörtlü anti-tüberküloz tedavi (İzoniyazid, Rifampisin, Pirazinamid ve Etambutol) başlanıyor. Tedavinin 2. ayında hasta, görmesinde bulanıklık olduğunu ve kırmızı ile yeşil renkleri birbirinden ayırt edemediğini (Kırmızı-yeşil renk körlüğü) belirterek göz hastalıkları polikliniğine başvuruyor. Yapılan muayenede bilateral retrobulber optik nörit saptanıyor. Hastanın tedavisinde bu spesifik ve geri dönüşümlü (erken kesilirse) oküler yan etkiye yol açan ajan aşağıdakilerden hangisidir?",
+    options: [
+      "İzoniyazid (INH)",
+      "Rifampisin",
+      "Pirazinamid",
+      "Etambutol",
+      "Streptomisin"
+    ],
+    correct: 3,
+    exp: "Anti-TB ilaçların spesifik yan etkileri klasik TUS/USMLE bilgi havuzudur. 'Etambutol', mikobakteri hücre duvarındaki arabinogalaktan sentezini bloke eden bakteriyostatik bir ajandır. En meşhur ve korkulan yan etkisi 'Optik Nörit'tir. Görme keskinliğinde azalma ve santral skotom ile başlar, klasik olarak 'Kırmızı-Yeşil Renk Körlüğü' (diskromatopsi) yapar. Bu yan etki doza bağımlıdır ve erken fark edilip ilaç kesilirse geri dönüşümlüdür (Gözleri kör eden Etambutol'dür - 'E' for Eye). Diğerleri: İzoniyazid (Nöropati/Hepatit), Rifampisin (Turuncu idrar/CYP450 indüksiyonu), Pirazinamid (Hiperürisemi/Gut), Streptomisin (Ototoksisite/Sağırlık)."
+  },
+  {
+    id: 392,
+    ders: "Dahiliye",
+    konu: "Göğüs Hastalıkları",
+    diff: 4,
+    q: "Şiddetli akut pankreatit nedeniyle yoğun bakımda takip edilen 50 yaşındaki erkek hastada, yatışının 3. gününde aniden başlayan ilerleyici nefes darlığı ve oksijen tedavisine (maske ile %100 O2) dirençli derin hipoksemi (PaO2: 45 mmHg) gelişiyor. Çekilen akciğer grafisinde kalp büyüklüğü NORMAL (Kardiyomegali yok) olmasına rağmen, her iki akciğerde yaygın, homojen 'beyazlaşma' (bilateral diffüz alveolar infiltratlar) saptanıyor. Ekokardiyografisi normal olan ve Pulmoner Kapiller Kama Basıncı (PCWP) 12 mmHg (<18 mmHg) ölçülen hastaya Akut Solunum Sıkıntısı Sendromu (ARDS) tanısı konuyor. Bu hastada alveollerin sıvıyla dolmasına (akciğer ödemine) neden olan asıl patofizyolojik mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Sol ventrikül yetmezliğine bağlı artmış pulmoner venöz hidrostatik basınç",
+      "Pankreatit kaynaklı sistemik inflamasyonun (sitokinlerin) pulmoner kapiller endotelini ve alveol epitelini parçalayarak damar geçirgenliğini (permeabiliteyi) artırması",
+      "Böbrek yetmezliğine bağlı hipoalbuminemi sonucu azalan plazma onkotik basıncı",
+      "Akciğer lenfatik drenajının pankreatik enzimler tarafından tıkanması",
+      "Sürfaktan eksikliğine bağlı alveollerin kollabe olması (Atelektazi)"
+    ],
+    correct: 1,
+    exp: "ARDS, akciğerlerin sistemik bir felakete (Sepsis, Travma, Pankreatit vb.) verdiği şiddetli inflamatuar yanıttır. Klasik bulgusu bilateral infiltratlar ve hipoksemidir. Ancak bu akciğer ödemi Kalp Yetmezliğinden (Kardiyojenik Ödemden) tamamen farklıdır. Kalp yetmezliğinde kalpte sorun vardır, basınç (PCWP > 18) artar ve su akciğere 'basınçla' sızar. ARDS'de ise kalp tamamen SAĞLAMDIR (PCWP < 18, Kardiyomegali yok). Sorun damarların zedelenmesidir (Non-Kardiyojenik Ödem). Sistemik sitokin fırtınası akciğerdeki kapiller endoteli ve tip I pnömositleri delik deşik eder (Artmış Permeabilite). Deliklerden sızan proteinden zengin plazma, alveolleri doldurur ve proteinler pıhtılaşarak gaz alışverişini bloke eden 'Hiyalin Membranlar'ı oluşturur."
+  },
+  {
+    id: 393,
+    ders: "Dahiliye",
+    konu: "Göğüs Hastalıkları",
+    diff: 4,
+    q: "Vücut kitle indeksi (VKİ) 38 (Ağır Obez) olan 50 yaşındaki erkek hasta; gündüzleri aşırı uyku hali (toplantılarda uyuyakalma), sabah baş ağrıları ve eşinin ifadesine göre gece uyurken şiddetli horlama ve ara ara 'nefesinin durması' şikayetleriyle başvuruyor. Polisomnografi (Uyku testi) ile Obstrüktif Uyku Apnesi Sendromu (OSAS) tanısı konan hastanın laboratuvarında Hematokrit: %58 (Polisitemi) saptanıyor. Ayrıca ekokardiyografisinde sağ ventrikül hipertrofisi ve Pulmoner Hipertansiyon izleniyor. OSAS hastalarında ölümcül olabilen bu pulmoner hipertansiyonun (ve sekonder kor pulmonalenin) gelişimine yol açan tekrarlayıcı (aralıklı) nokturnal fizyolojik tetikleyici aşağıdakilerden hangisidir?",
+    options: [
+      "Uyku sırasındaki hiperkapninin (CO2 artışı) beyin sapını deprese etmesi",
+      "Gündüz uykululuğunun fiziksel inaktiviteye ve venöz tromboemboliye yol açması",
+      "Apne atakları sırasında gelişen aralıklı hipokseminin, akciğer damarlarında güçlü 'Hipoksik Pulmoner Vazokonstriksiyon' refleksini her gece saatlerce tetiklemesi",
+      "Obeziteye bağlı göğüs duvarı kompliyansının azalmasının kalbe dışarıdan bası yapması",
+      "Uyku bölünmelerinin kronik stres ve aşırı kortizol salınımı yaratarak sistemik damarları büzmesi"
+    ],
+    correct: 2,
+    exp: "Obstrüktif Uyku Apnesi (OSAS); uykuda üst hava yollarının yumuşak doku (obezite) nedeniyle kapanması, hastanın boğulması (apne) ve mikrouyanışlarla (arousal) nefes alması döngüsüdür. Apne sırasında hasta nefes alamaz ve kan oksijeni (PO2) hızla düşer (Aralıklı / İntermittan Hipoksemi). Akciğerlerin hipoksiye verdiği refleks yanıt 'Vazokonstriksiyon (Damar büzülmesi)'dur (Kanı iyi havalanan yere yönlendirmek için). OSAS hastası her gece yüzlerce kez boğulduğunda, akciğer damarları her gece saatlerce şiddetle büzülür. Bu kronik büzülme zamanla kalıcı damar kalınlaşmasına, Pulmoner Hipertansiyona ve sağ kalbin bu basınca karşı yorulup büyümesine (Sağ Kalp Yetmezliği / Kor Pulmonale) yol açar. (Hematokrit yüksekliği de yine aynı nokturnal hipokseminin böbrekten EPO salgılatmasına bağlıdır)."
+  },
+  {
+    id: 394,
+    ders: "Dahiliye",
+    konu: "Göğüs Hastalıkları",
+    diff: 4,
+    q: "Altmış beş yaşında, Romatoid Artrit öyküsü olan kadın hasta, sağ yan ağrısı ve nefes darlığı ile başvuruyor. Akciğer grafisinde sağ plevral boşlukta sıvı (plevral efüzyon) saptanıyor. Tanısal torasentez ile alınan plevra sıvısının analizinde; Sıvı Proteini: 4.5 g/dL (Serum Proteini: 6.0 g/dL), Sıvı LDH: 400 U/L (Serum LDH: 200 U/L) olarak ölçülüyor. Sıvıda glukoz düzeyi ise 15 mg/dL (Çok düşük) saptanıyor. Light Kriterlerine göre bu efüzyonun biyokimyasal niteliği (Transüda/Eksüda) ve en olası etyolojisi aşağıdakilerden hangisidir?",
+    options: [
+      "Transüda / Konjestif Kalp Yetmezliği",
+      "Transüda / Karaciğer Sirozu",
+      "Eksüda / Romatoid Artrit tutulumu (Romatoid plörezi)",
+      "Eksüda / Nefrotik Sendrom",
+      "Transüda / Pulmoner Emboli"
+    ],
+    correct: 2,
+    exp: "Plevral efüzyonların ayırıcı tanısında altın standart 'Light Kriterleri'dir. Sıvının Eksüda (inflamatuar/hücresel) olması için şu 3 kriterden BİRİNİN olması yeterlidir: 1) Plevra Proteini / Serum Proteini > 0.5 (Vakamızda 4.5/6 = 0.75). 2) Plevra LDH / Serum LDH > 0.6 (Vakamızda 400/200 = 2.0). 3) Plevra LDH'sının, serum LDH normal üst sınırının 2/3'ünden büyük olması. Vakamızdaki sıvı KESİNLİKLE EKSÜDADIR (Kalp yetmezliği, siroz ve nefrotik sendrom Transüda yapar). Eksüda nedenleri enfeksiyon, kanser veya otoimmün (Romatoid Artrit) olabilir. Romatoid plörezinin en meşhur, patognomoniğe yakın sıvı bulgusu ise glukozun tüketilmesine bağlı sıvıda 'ÇOK DÜŞÜK GLUKOZ (<30 mg/dL)' saptanmasıdır."
+  },
+  {
+    id: 395,
+    ders: "Dahiliye",
+    konu: "Göğüs Hastalıkları",
+    diff: 5,
+    q: "Yirmi yaşında, uzun boylu ve zayıf yapılı (Marfanoid) erkek hasta, basketbol oynarken aniden sağ göğsüne bıçak saplanır tarzda ağrı giriyor ve şiddetli nefes darlığı ile yere düşüyor. Acil servise getirildiğinde bilinci kapanmaya yakın, kan basıncı 70/40 mmHg (Şok), nabız 135/dk ve boyun venleri belirgin dolgun (JVD pozitif) saptanıyor. Fizik muayenede sağ hemitoraksta solunum sesleri ALINAMIYOR, perküsyonla o bölgede hiperrezonans (kutu gibi ses) duyuluyor. Trakeanın sola (sağlam tarafa) doğru itildiği fark ediliyor. Tansiyon Pnömotoraks tablosundaki bu hastada, kardiyovasküler kollapsa (şoka) ve ölüme yol açan hemodinamik mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Akciğer dokusunun sönmesinin doğrudan sağ ventrikül kontraktilitesini baskılaması",
+      "Plevral boşlukta sürekli artan pozitif basıncın, mediasteni karşıya iterek kalbe ve Vena Kava'lara (büyük venlere) bası yapması sonucu kalbe venöz dönüşün (Preload) aniden kesilmesi",
+      "Hipoksinin beyin sapını deprese ederek otonomik vazodilatasyon (nörojenik şok) yaratması",
+      "Plevral zarların yırtılmasının masif kanamaya (hemotoraks) yol açarak hipovolemik şok yapması",
+      "Artan intratorasik basıncın aorta bası yaparak sol ventrikül afterload'unu sonsuza çıkarması"
+    ],
+    correct: 1,
+    exp: "Pnömotoraks (akciğerin sönmesi) genellikle stabil seyreder. Ancak 'Tansiyon Pnömotoraks' acil bir ölüm kalım meselesidir. Yırtılan akciğer zarı bir 'check-valf (tek yönlü kapak)' gibi davranır. Hasta nefes aldıkça plevra boşluğuna hava girer ama dışarı çıkamaz. Göğüs içindeki basınç her nefeste artar ve sağ akciğeri ezip bitirdikten sonra, kalbi ve tüm organları (mediasteni) SOLA iter (Trakea deviasyonu). Bu devasa pozitif basınç, kalbe kan getiren ince duvarlı Vena Kava Superior ve İnferior'u ezip tıkar. Kalbe kan gelemez (Venöz dönüş / Preload biter), kan gelemeyince kalp kan pompalayamaz (Obstrüktif Şok) ve hasta saniyeler içinde ölür. Boyun venlerinin dolgunlaşması kanın kalbe giremeyip boyunda göllenmesindendir. Tedavisi röntgen beklemeden acil iğne dekompresyonu (havayı boşaltmak) yapmaktır."
+  },
+  {
+    id: 396,
+    ders: "Dahiliye",
+    konu: "Göğüs Hastalıkları",
+    diff: 4,
+    q: "Yirmi yıldır kum püskürtme (sandblasting) işinde çalışan 45 yaşındaki erkek hasta, eforla gelen nefes darlığı ve kuru öksürük nedeniyle başvuruyor. Çekilen Akciğer Grafisinde özellikle üst loblarda yoğunlaşan milimetrik nodüler kalsifikasyonlar ve her iki hiler lenf nodunun çevresinde 'Yumurta Kabuğu (Eggshell)' şeklinde kalsifikasyonlar saptanıyor. Silikozis (Pnömokonyoz) tanısı kesinleşen bu hastanın takiplerinde, özellikle PPD (Tüberkülin) testi yapılarak uyanık olunması gereken ve bu hastalarda riski belirgin şekilde artan sekonder enfeksiyon aşağıdakilerden hangisidir?",
+    options: [
+      "Pneumocystis jirovecii pnömonisi",
+      "Aspergillus fumigatus invazyonu",
+      "Mycobacterium tuberculosis enfeksiyonu",
+      "Sitomegalovirüs (CMV) pnömoniti",
+      "Legionella pneumophila enfeksiyonu"
+    ],
+    correct: 2,
+    exp: "Silikozis, kuvars/kristal silika tozlarının (madenciler, kum püskürtücüler, cam/seramik işçileri) solunmasıyla oluşan mesleki bir akciğer hastalığıdır. Akciğer üst loblarını tutar ve radyolojideki hiler lenf bezlerindeki 'Yumurta Kabuğu (Eggshell)' kalsifikasyonu en spesifik bulgusudur. Silika tozları alveollere girdiğinde makrofajlar tarafından yutulur. Ancak silika, makrofajların içindeki fagolizozomları parçalar ve makrofajları felç eder/öldürür. Makrofajlar hücresel bağışıklığın (Tüberküloz mikrobuna karşı savaşın) temelidir. Makrofajları felç olan Silikozis hastalarında 'Tüberküloz (Mycobacterium tuberculosis)' gelişme riski normal popülasyona göre muazzam derecede (yaklaşık 30 kat) artmıştır."
+  },
+  {
+    id: 397,
+    ders: "Dahiliye",
+    konu: "Gastroenteroloji",
+    diff: 4,
+    q: "Otuz yaşında erkek hasta, hem katı hem de sıvı gıdalara karşı son 6 aydır giderek artan yutma güçlüğü (disfaji), geceleri sindirilmemiş gıdaları ağzına geri getirme (regürjitasyon) ve göğüs ağrısı şikayetleriyle başvuruyor. Baryumlu özofagus grafisinde 'kuş gagası (bird's beak)' görünümü saptanıyor. Özofageal manometride özofagus gövdesinde peristaltik kasılmaların olmadığı (aperistaltizm) ve Alt Özofagus Sfinkterinin (AÖS) yutkunma ile gevşeyemediği saptanıyor. Akalazya tanısı konan bu hastada, sfinkterin gevşeyememesine yol açan asıl nöropatolojik defekt aşağıdakilerden hangisidir?",
+    options: [
+      "Auerbach (miyenterik) pleksusunda Nitrik Oksit (NO) ve Vazoaktif İntestinal Peptid (VIP) salgılayan inhibitör nöronların otoimmün veya idiyopatik kaybı",
+      "Meissner (submukozal) pleksusunda asetilkolin salgılayan eksitatör nöronların hipertrofisi",
+      "Vagus sinirinin dorsal motor çekirdeğinde amiloid plak birikimine bağlı denervasyon",
+      "Özofagus düz kaslarındaki voltaj kapılı kalsiyum kanallarının sürekli açık kalarak tetanik kasılma yapması",
+      "AÖS'deki dopamin reseptörlerinin down-regülasyonu"
+    ],
+    correct: 0,
+    exp: "Akalazya; özofagusta aperistaltizm ve Alt Özofagus Sfinkterinin (AÖS) yetersiz gevşemesi ile karakterize bir motilite bozukluğudur. Hem katı hem sıvı disfajisi olması mekanik bir tıkanıklık (kanser/darlık) olmadığını, nöromüsküler bir sorun olduğunu gösterir. Patofizyolojide, özofagus düz kasları arasındaki 'Auerbach (Miyenterik) Pleksusu'nda yer alan ve gevşemeyi (inhibisyonu) sağlayan Nitrik Oksit (NO) ve VIP salgılayan nöronların harabiyeti yatar. İnhibitör sinyal ortadan kalkınca, eksitatör (asetilkolin) sinyaller baskın kalır ve sfinkter kasılı kalarak (hipertonik) gevşeyemez."
+  },
+  {
+    id: 398,
+    ders: "Dahiliye",
+    konu: "Gastroenteroloji",
+    diff: 4,
+    q: "Elli beş yaşında, 15 yıldır şiddetli Gastroözofageal Reflü Hastalığı (GÖRH) öyküsü olan obez erkek hastaya kontrol amaçlı üst GİS endoskopisi yapılıyor. Endoskopide Z-çizgisinin (skuamokolumnar bileşke) proksimale (yukarıya) doğru yer değiştirdiği ve distal özofagusta somon renginde mukoza alanları olduğu izleniyor. Alınan biyopside, normalde özofagusta bulunmaması gereken ve müsin içeren 'Goblet hücreleri'nin varlığı saptanıyor. Barrett Özofagusu tanısı alan bu hastadaki hücresel değişikliğin patofizyolojik temeli aşağıdakilerden hangisidir?",
+    options: [
+      "Asit maruziyetine karşı koruma sağlamak amacıyla çok katlı yassı epitelin, tek katlı kolumnar (silindirik) epitele dönüşmesi (İntestinal Metaplazi)",
+      "Kronik irritasyon sonucu özofagus epitelinde bazal hücre hiperplazisi ve hiperkeratoz gelişimi",
+      "Mide mukozasındaki paryetal hücrelerin özofagusa göç ederek ektopik mide dokusu oluşturması",
+      "Özofagus submukozasındaki bezlerin (glandların) asit asimilasyonu için adenomatöz proliferasyonu",
+      "Skuamöz hücrelerde p53 mutasyonuna bağlı doğrudan karsinoma in situ gelişimi"
+    ],
+    correct: 0,
+    exp: "Barrett Özofagusu, kronik asit (ve safra) reflüsünün yarattığı kimyasal strese karşı özofagusun geliştirdiği bir savunma/adaptasyon mekanizmasıdır. Normalde asite dayanıksız olan 'Çok katlı yassı (skuamöz) epitel', asite dayanıklı olan müsin salgılayan Goblet hücrelerini içeren 'Tek katlı kolumnar (silindirik) epitele' dönüşür. Bir erişkin hücresinin başka bir erişkin hücresine dönüşmesine 'Metaplazi' denir (Spesifik olarak İntestinal Metaplazi). Bu metaplazi asitten korur ancak hücrelerin genetik stabilitesini bozduğu için, hastayı ilerleyen yıllarda 'Özofagus Adenokarsinomu' açısından çok yüksek riske sokar."
+  },
+  {
+    id: 399,
+    ders: "Dahiliye",
+    konu: "Gastroenteroloji",
+    diff: 4,
+    q: "Kırk beş yaşında erkek hasta, standart proton pompa inhibitörü (PPI) tedavisine dirençli, sık tekrarlayan peptik ülserler ve kronik sulu ishal şikayetleriyle başvuruyor. Endoskopide midede, duodenum bulbunda ve post-bulber bölgede (duodenum 2. ve 3. kıtalarında) çok sayıda atipik yerleşimli ülser saptanıyor. Açlık serum gastrin düzeyi 800 pg/mL (Normal <100) olarak ölçülüyor. Zollinger-Ellison Sendromu (Gastrinoma) tanısını kesinleştirmek için uygulanan 'Sekretin Stimülasyon Testi'nde, dışarıdan sekretin verilmesinin ardından gastrin düzeyinde ortaya çıkan patognomonik yanıt ve nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "Sekretin normal G hücrelerini uyarırken, tümör hücrelerini baskıladığı için gastrin düzeyi düşer.",
+      "Sekretin parietal hücreleri doğrudan inhibe ettiği için midede pH artar ve refleks olarak gastrin fırlar.",
+      "Sekretin pankreastan somatostatin salınımını artırarak gastrin düzeyini sıfıra indirir.",
+      "Sekretin normal G hücrelerinden gastrin salınımını İNHİBE EDERKEN, gastrinoma (tümör) hücrelerinden paradoksal olarak gastrin salınımını ŞİDDETLE ARTIRIR.",
+      "Sekretin gastrin reseptörlerini bloke ederek gastrinin kanda serbest kalmasını ve düzeyinin artmasını sağlar."
+    ],
+    correct: 3,
+    exp: "Zollinger-Ellison Sendromu (ZES), genellikle pankreas veya duodenum yerleşimli bir nöroendokrin tümörün (Gastrinoma) aşırı gastrin üretmesidir. Çoklu ve atipik yerleşimli ülserler + İshal klasiktir. (İshalin nedeni asidin pankreatik enzimleri inaktive etmesidir). Açlık gastrini yüksek bulunduğunda, bunun pernisiyöz anemi (aklordriye bağlı sekonder artış) mi yoksa ZES mi olduğunu ayırmak için Sekretin Testi yapılır. Fizyolojik olarak Sekretin (duodenumdan salgılanır) mide asidini ve gastrin salınımını İNHİBE eder (baskılar). ANCAK, gastrinoma tümör hücrelerinde sekretin reseptörleri bozuk çalışır (anormal sinyal ileti yolları) ve sekretin verildiğinde gastrin düzeyi düşmek yerine paradoksal olarak daha da ARTAR (>200 pg/mL artış). Bu paradoksal artış ZES için kesin tanısaldır."
+  },
+  {
+    id: 400,
+    ders: "Dahiliye",
+    konu: "Gastroenteroloji",
+    diff: 4,
+    q: "Otuz iki yaşında kadın hasta; 6 aydır süren kronik ishal, karın şişliği, kilo kaybı ve açıklanamayan demir eksikliği anemisi şikayetiyle polikliniğe başvuruyor. Ayrıca her iki dirseğinde ve dizlerinde şiddetli kaşıntılı, içi su dolu küçük kabarcıklar (Dermatitis herpetiformis) olduğunu belirtiyor. Çölyak Hastalığı şüphesiyle yapılan kan testlerinde spesifik otoantikorlar pozitif bulunuyor ve duodenum biyopsisinde intraepitelyal lenfositoz, kript hiperplazisi ve villus atrofisi saptanıyor. Bu hastalıkta (Çölyak), genetik olarak duyarlı (HLA-DQ2/DQ8) bireylerde bağışıklık sistemini tetikleyen ve otoantikorların (Anti-tTG) asıl hedefi olan hücresel/moleküler yapı aşağıdakilerden hangisidir?",
+    options: [
+      "Enterosit fırçamsı kenarlarındaki laktaz enzimi",
+      "Gliadin peptidlerini deamine ederek onları T hücreleri için daha immünojenik hale getiren 'Doku Transglutaminaz (tTG)' enzimi",
+      "Paryetal hücrelerdeki H+/K+ ATPaz pompası",
+      "Bağırsak epitel hücreleri arasındaki sıkı kavşakları (tight junctions) oluşturan zonulin proteini",
+      "Cilt ve bağırsakta ortak bulunan desmoglein-3 proteini"
+    ],
+    correct: 1,
+    exp: "Çölyak hastalığı, gluten proteinine karşı gelişen otoimmün/allerjik bir enteropatidir. Duedonumu etkiler (demir eksikliği yapar). Glutenin içindeki asıl patojenik kısım 'Gliadin'dir. Gliadin bağırsak mukozasına girdiğinde, epitelin hemen altındaki 'Doku Transglutaminaz (tTG)' enzimi tarafından deamine edilir (şekli değiştirilir). Bu deamine gliadin, HLA-DQ2/DQ8 taşıyan makrofajlar tarafından T hücrelerine çok güçlü bir şekilde sunulur. Vücut bu duruma o kadar sinirlenir ki, sadece gliadine değil, gliadini deamine eden tTG enziminin KENDİSİNE karşı da otoantikor üretir (Anti-tTG antikorları). Aynı antikorlar ciltte Epidermal Transglutaminaza saldırarak Dermatitis Herpetiformis (kaşıntılı veziküler döküntü) yapar."
+  },
+  {
+    id: 401,
+    ders: "Dahiliye",
+    konu: "Gastroenteroloji",
+    diff: 5,
+    q: "Elli yaşında erkek hasta; 1 yıldır devam eden kronik sulu ishal, kilo kaybı, gezici (migratuar) eklem ağrıları ve son zamanlarda ortaya çıkan unutkanlık, göz hareketlerinde anormallikler (okülomastikatuar miyokromi) şikayetiyle başvuruyor. Çekilen ince bağırsak biyopsisinde; lamina propriayı tamamen dolduran, içi köpüklü, 'PAS (Periodik Asit-Schiff) boyası ile koyu pembe boyanan ancak Asit-Fast (ARB) boyası ile boyanmayan' dev makrofajlar saptanıyor. Bu multisistemik hastalığın etyolojisinde rol alan etken ve patogenezi aşağıdakilerden hangisidir?",
+    options: [
+      "Mycobacterium avium-intracellulare / İmmün yetmezlikli konakta bağırsak duvarı invazyonu",
+      "Tropheryma whipplei / Gram pozitif basillerin fagozomlar içinde parçalanamayarak makrofajları doldurması ve lenfatik tıkanıklık yapması",
+      "Giardia lamblia / Fırçamsı kenarlara tutunarak emilim yüzeyini bloke etmesi",
+      "Clostridioides difficile / Toxin A ve B'nin bağırsak hücre iskeletini yıkması",
+      "Abetalipoproteinemi / Apo-B sentez defektine bağlı enterositlerde lipid birikimi"
+    ],
+    correct: 1,
+    exp: "Vaka çok klasik bir Whipple Hastalığı tablosudur. İshal + Gezici Artrit + Nörolojik bulgular (Okülomastikatuar miyokromi = göz kaslarıyla çiğneme kaslarının aynı anda ritmik kasılması patognomoniktir). Etken Tropheryma whipplei adlı Gram pozitif bir bakteridir. Bağırsak biyopsisinde Lamina propriada 'PAS pozitif, ARB negatif' makrofajlar görülmesi tanı koydurucudur. (ARB pozitif olsaydı Mycobacterium avium/MAC enfeksiyonu düşünülürdü). Makrofajlar bu bakterileri yutar ama sindiremez (fagolizozom defekti), içi bakteri dolu dev makrofajlar bağırsak lenfatiklerini tıkayarak yağ emilimini (malabsorpsiyon/ishal) bozar. Tedavide Kan-Beyin bariyerini geçen (Seftriakson sonrası 1 yıl TMP-SMX) uzun süreli antibiyotik şarttır."
+  },
+  {
+    id: 402,
+    ders: "Dahiliye",
+    konu: "Gastroenteroloji",
+    diff: 4,
+    q: "Yirmi beş yaşında erkek hasta, sağ alt kadranda kramp tarzında ağrı, ishal, hafif ateş ve kilo kaybı şikayetiyle başvuruyor. Hastanın perianal muayenesinde bir adet fistül yolu ve anal fissür izleniyor. Yapılan kolonoskopide; inen kolon normalken, çekum ve terminal ileumda ülserasyonlar, mukozada 'kaldırım taşı (cobblestone)' görünümü ve lezyonlar arasında tamamen sağlıklı mukoza adacıkları (atlamalı lezyonlar / skip lesions) saptanıyor. Alınan derin biyopside, inflamasyonun tüm duvar katmanlarını (mukoza, submukoza, muskularis ve seroza) tuttuğu görülüyor. Crohn Hastalığı tanısı alan bu hastada, biyopside görülmesi durumunda ülseratif kolitten ayrımı 'kesinleştiren' patognomonik histolojik bulgu aşağıdakilerden hangisidir?",
+    options: [
+      "Kript apseleri ve kript distorsiyonu",
+      "Goblet hücre deplesyonu (sayısında azalma)",
+      "Non-kazeifiye (kazeifikasyon nekrozu içermeyen) granülomlar",
+      "Süperfisyal (sadece mukozayı tutan) nötrofilik infiltrasyon",
+      "Mukozada yalancı poliplerin (psödopolip) varlığı"
+    ],
+    correct: 2,
+    exp: "İnflamatuar Bağırsak Hastalıklarında (İBH) Crohn ve Ülseratif Kolit (ÜK) ayrımı esastır. Crohn Hastalığı; ağızdan anüse kadar her yeri tutabilir (en sık terminal ileum), atlamalı lezyonlar (skip lesions) yapar, inflamasyon 'Transmural'dir (tüm duvarı tutar, bu yüzden fistül, apse ve striktür yapar). Mikroskobik incelemede Crohn hastalığı için en karakteristik (ÜK'te ASLA görülmeyen) bulgu 'Non-Kazeifiye Granülom'lardır. (Tüberkülozda kazeifiye/ortası nekrozlu granülom olur). Kript apsesi, psödopolip ve mukozal yüzeyel tutulum ise Ülseratif Kolitin özellikleridir."
+  },
+  {
+    id: 403,
+    ders: "Dahiliye",
+    konu: "Gastroenteroloji",
+    diff: 5,
+    q: "Metastatik Karsinoid Tümör nedeniyle karaciğerinde çok sayıda kitle bulunan 45 yaşındaki hasta, ishal ve flushing atakları için somatostatin analoğu (oktreotid) tedavisi almaktadır. Takiplerinde hastanın boynunda ve kollarında güneşe maruz kalan bölgelerde pullanan, simetrik kırmızı döküntüler (dermatit) ve belirgin hafıza kaybı (demans) gelişiyor. Karsinoid sendromun ilerlemesine bağlı olarak ortaya çıkan bu yeni klinik tablonun (Pellegra) temel biyokimyasal nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "Tümörden salgılanan serotoninin bağırsaktan niasin emilimini doğrudan bloke etmesi",
+      "Aşırı serotonin sentezi nedeniyle, vücuttaki temel öncül amino asit olan 'Triptofan'ın tüketilmesi ve bunun sonucunda Niasin (B3 Vitamini) sentezlenememesi",
+      "Tümörün ektopik olarak Niasinaz enzimi salgılayarak kandaki vitamini yıkması",
+      "Kronik ishalin sadece B kompleks vitaminlerinin malabsorpsiyonuna yol açması",
+      "Serotoninin beyindeki dopamin reseptörlerini bağlayarak demans benzeri tablo yaratması"
+    ],
+    correct: 1,
+    exp: "Karsinoid Sendromda, tümör hücreleri (karaciğer metastazı varsa) kana masif miktarda Serotonin (5-HT) salgılar. Vücutta serotonin, esansiyel bir amino asit olan 'Triptofan'dan sentezlenir. Sağlıklı bir insanda diyetle alınan triptofanın sadece %1'i serotonine giderken, geri kalan büyük kısmı 'Niasin (B3 Vitamini)' ve protein sentezinde kullanılır. Ancak Karsinoid tümör adeta bir asalak gibi vücuttaki triptofanın %60-70'ini çalarak serotonine çevirir. Triptofan tükenince vücut Niasin (B3 vitamini) üretemez. Niasin eksikliği 'Pellegra' (Dermatit, Diyare, Demans, Ölüm) tablosuna yol açar. Bu yüzden bu hastalara Niasin ve proteinden zengin diyet verilmelidir."
+  },
+  {
+    id: 404,
+    ders: "Dahiliye",
+    konu: "Gastroenteroloji",
+    diff: 4,
+    q: "Kırk beş yaşında erkek hasta, alkol alımını takiben başlayan, sırta vuran kuşak tarzında şiddetli karın ağrısı, bulantı ve kusma şikayetiyle acile başvuruyor. Kan tahlilinde Serum Amilaz: 1200 U/L ve Lipaz: 4500 U/L saptanarak Akut Pankreatit tanısı konuyor. Pankreasın kendi kendini sindirdiği (otodigesyon) bu klinik tabloda, pankreatik asiner hücrelerin içinde enzimatik fırtınayı başlatan İLK olay aşağıdakilerden hangisidir?",
+    options: [
+      "Enterokinaz enziminin duodenuma ulaşmadan önce yanlışlıkla pankreas kanalında aktive olması",
+      "Lizozomal bir enzim olan 'Katepsin B'nin, zymogen (inaktif) granüllerin içine sızarak 'Tripsinojen'i aktif 'Tripsin'e dönüştürmesi",
+      "Alkolün doğrudan lipaz enzimini parçalayarak serbest yağ asitlerini pankreas dokusuna kusması",
+      "Safra asitlerinin pankreasın asiner hücre zarlarındaki kalsiyum kanallarını bloke etmesi",
+      "Pankreatik kanal epitelindeki CFTR klor kanallarının tıkanması sonucu asidik pH'ın enzimleri aktive etmesi"
+    ],
+    correct: 1,
+    exp: "Akut pankreatit, pankreasın otodigesyonu (kendi kendini sindirmesi) tablosudur. Pankreas enzimleri (tripsinojen, kimotripsinojen, proelastaz) normalde hücre içinde inaktif (zymogen) granüller halinde paketlenir. Bu enzimler ancak duodenuma döküldüklerinde, fırçamsı kenardaki 'Enterokinaz' tarafından aktive edilirler. Akut pankreatitte (alkol veya safra taşı tıkanıklığına bağlı) hücresel stres gelişir. Asiner hücre içindeki 'Lizozomlar' ile 'Zymogen granüller' yanlışlıkla birbirine kaynaşır (füzyon). Lizozomun içindeki 'Katepsin B' enzimi, Tripsinojen'i pankreasın İÇİNDEYKEN aktif Tripsin'e çevirir. Ortaya çıkan bu çılgın Tripsin, diğer tüm enzimleri (lipaz, elastaz) de aktifler ve pankreas saniyeler içinde erimeye, kanamaya (nekroz) başlar."
+  },
+  {
+    id: 405,
+    ders: "Dahiliye",
+    konu: "Gastroenteroloji",
+    diff: 5,
+    q: "Kırk yaşında kadın hasta, günde 15-20 kez olan, çay renginde, kokusuz ve masif miktarda (>3 litre/gün) sulu ishal şikayetiyle başvuruyor. Hasta aç kaldığında (oruç tuttuğunda) ishalin miktarı ASLA AZALMIYOR (Sekretuvar ishal). Laboratuvarında Serum Potasyum: 2.1 mEq/L (Şiddetli Hipokalemi) saptanırken, mide asit analizi Aklordri (mide asidi yokluğu) gösteriyor. Batın BT'sinde pankreas kuyruğunda 4 cm'lik nöroendokrin tümör saptanıyor. Verner-Morrison (WDHA) sendromuna neden olan VIPoma tanısı konan bu hastada, Vazoaktif İntestinal Peptid (VIP) hormonunun bağırsaklardaki su ve elektrolit sekresyonunu tetikleyen moleküler mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Bağırsak epitel hücrelerinde Guanilat siklazı uyararak cGMP miktarını artırması",
+      "Enterositlerdeki Adenilat siklazı uyararak cAMP düzeyini artırması ve apikal zardaki CFTR klor kanallarını açması",
+      "Na+/K+ ATPaz pompasını bloke ederek sodyumun lümende kalmasını sağlaması",
+      "Paryetal hücrelerdeki H+/K+ ATPaz pompasını sürekli aktive edip, ince bağırsaklarda pH şoku yaratması",
+      "Vibrio cholerae benzeri bir toksin üreterek G-proteinlerinin Gi (inhibitör) alt birimini ADP-ribozile etmesi"
+    ],
+    correct: 1,
+    exp: "VIPoma (Verner-Morrison Sendromu); Watery Diarrhea, Hypokalemia, Achlorhydria (WDHA) triadı ile seyreder. VIP (Vazoaktif İntestinal Peptid) bir nörotransmitterdir ve normalde bağırsakları gevşetir, sekresyonu artırır. Tümörden masif salgılandığında enterositlerin bazolateral zarındaki reseptörüne bağlanır, Gs proteini üzerinden 'Adenilat Siklazı' aktive eder. Hücrede 'cAMP' fırlar. cAMP, lümene bakan taraftaki CFTR (Kistik Fibrozis Klor kanalları) kapılarını sonuna kadar açar. Klor lümene dökülür, peşinden sodyumu ve litrerlerce suyu çeker. Ortaya kolera benzeri (ancak enfeksiyonsuz), açlıkla geçmeyen devasa bir sekretuvar ishal çıkar. (Not: VIP mide asidini de baskıladığı için aklordri olur). Kolera toksini de aynı mekanizmayla cAMP'yi artırır ancak o Gs proteinini kalıcı olarak aktifleştirir."
+  },
+  {
+    id: 406,
+    ders: "Dahiliye",
+    konu: "Gastroenteroloji",
+    diff: 4,
+    q: "Yirmi beş yaşında, alerjik rinit ve astım öyküsü olan erkek hasta, katı gıdaları yutarken takılma (disfaji) ve ara ara lokmaların yemek borusunda kalması (food impaction) şikayetiyle başvuruyor. Hastaya standart doz Proton Pompa İnhibitörü (PPI) tedavisi verilmesine rağmen şikayetleri geçmiyor. Yapılan üst GİS endoskopisinde özofagus mukozasında ardışık halkalar (trakealizasyon), beyaz eksüdatif plaklar ve çizgilenmeler saptanıyor. Özofagusun hem distalinden hem de proksimalinden alınan çoklu biyopsilerde 'Büyük büyütme alanında (HPF) >15 Eozinofil' izleniyor. Eozinofilik Özofajit (EoE) tanısı alan bu hastanın patogenezinde, eozinofil göçünü ve epitel hasarını tetikleyen temel immünolojik yolak aşağıdakilerden hangisidir?",
+    options: [
+      "T-helper 1 (Th1) hücrelerinden salınan İnterferon-gama (IFN-γ)",
+      "Paryetal hücrelere saldıran CD8+ sitotoksik T lenfositler",
+      "İnterlökin-4, İnterlökin-5 ve İnterlökin-13 gibi sitokinlerin aracılık ettiği T-helper 2 (Th2) yolağı (Tip 2 inflamasyon)",
+      "Mast hücrelerinden salınan masif histamin deşarjı (Tip 1 Anafilaksi)",
+      "Helicobacter pylori enfeksiyonuna sekonder IgA birikimi"
+    ],
+    correct: 2,
+    exp: "Eozinofilik Özofajit (EoE), genç alerjik (atopik) erkeklerde disfaji ve gıda takılması ile prezente olan, GÖRH'den (asit reflüsünden) farklı olarak PPI tedavisine dirençli klinik bir tablodur. Endoskopide 'trakealizasyon (halkalanma)' ve biyopside '>15 Eozinofil/HPF' saptanması tanısaldır. Patogenez, gıda veya aeroalerjenlere karşı özofagusun geliştirdiği kronik bir 'Allerjik / Tip 2 (Th2) İnflamasyon'udur. Th2 hücreleri IL-4, IL-13 (bariyeri bozar ve fibrozis yapar) ve IL-5 (eozinofilleri kemik iliğinden çağırıp dokuda yaşatır) salgılar. Tedavide diyet (6 besin eliminasyon diyeti) ve yutulan (topikal) steroidler (Budesonid, Flutikazon) veya Dupilumab (Anti-IL-4/IL-13) kullanılır."
+  },
+  {
+    id: 407,
+    ders: "Dahiliye",
+    konu: "Gastroenteroloji",
+    diff: 4,
+    q: "Elli beş yaşında kadın hasta, son 4 aydır erken doyma (erken tokluk hissi), iştahsızlık ve 10 kg kilo kaybı şikayetiyle başvuruyor. Fizik muayenesinde sol köprücük kemiği üstünde sert ve ağrısız lenf bezi (Virchow nodülü) palpe ediliyor. Üst GİS endoskopisinde midede belirgin bir kitle (ülser) saptanmıyor ancak midenin hiç genişlemediği, duvarının kalın ve kösele gibi sert (Linitis Plastica) olduğu görülüyor. Alınan derin biyopsilerde, hücre çekirdeklerinin müsin dolu kofullar tarafından hücrenin köşesine (periferine) itildiği saptanıyor. Lauren Sınıflamasına göre 'Difüz Tip Mide Kanseri (Taşlı Yüzük Hücreli Karsinom)' tanısı alan bu agresif tümörün moleküler temelinde, hücrelerin bir arada kalmasını (adhezyonunu) sağlayan hangi gendeki mutasyon yatar?",
+    options: [
+      "APC (Adenomatous Polyposis Coli) geni",
+      "CDH1 geni (E-Kaderin proteinini kodlayan gen)",
+      "c-KIT (Tirozin kinaz reseptör) geni",
+      "MSH2 (DNA Mismatch onarım) geni",
+      "SMAD4 geni"
+    ],
+    correct: 1,
+    exp: "Mide kanserleri Lauren sınıflamasına göre 2'ye ayrılır: İntestinal Tip ve Difüz Tip. 1) İntestinal Tip: H. pylori, kronik gastrit ve metaplazi zemininde gelişen, ekzofitik (kitle yapan) ve en sık görülen tiptir. 2) Difüz Tip (Taşlı Yüzük Hücreli): H. pylori veya gastrit ile İLİŞKİSİZ, gençlerde sık görülen, hücrelerin arasına müsin dolduğu için çekirdeğin kenara itilip yüzüğe benzediği tiptir. Bu tümörde hücrelerin birbirine tutunmasını (adhezyonunu) sağlayan 'E-Kaderin' proteini (CDH1 geni) mutasyona uğramıştır. Hücreler birbirine yapışamadığı için kitle oluşturmazlar, midenin tüm duvarına yayılarak (infiltrasyon) mideyi kaskatı bir su tulumuna (Linitis Plastica) çevirirler. Kanser hücreleri birbirinden bağımsız hareket edebildiği için metastaz yetenekleri korkunç yüksektir."
+  },
+  {
+    id: 408,
+    ders: "Dahiliye",
+    konu: "Gastroenteroloji",
+    diff: 4,
+    q: "Altmış beş yaşında erkek hasta, hastanede pnömoni tedavisi (Klindamisin ve Sefotaksim) aldıktan 1 hafta sonra taburcu ediliyor. Evde şiddetli, pis kokulu sulu ishal, karın ağrısı ve ateş şikayetleri başlıyor. Tekrar acile getirilen hastanın Lökosit sayısı 35.000/mm3 saptanıyor. Fleksibl sigmoidoskopide kolon mukozasında sarı-beyaz renkli, birleşme eğiliminde plaklar (Psödomembranöz Enterokolit) izleniyor. Clostridioides difficile enfeksiyonu tanısı alan bu hastada, lümene salgılanan Toksin A (Enterotoksin) ve Toksin B'nin (Sitotoksin) kolon epiteline hasar verirken kullandığı asıl enzimatik/hücresel mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Ribozomal 60S alt ünitesini inaktive ederek protein sentezini durdurması",
+      "Adenilat siklazı kalıcı olarak aktifleştirip hücre içi cAMP'yi artırması",
+      "Aktin hücre iskeletinin düzenlenmesinden sorumlu olan 'Rho ailesi GTPaz' enzimlerini glukozilasyon ile (şeker ekleyerek) İNAKTİVE etmesi",
+      "Hücre zarında delikler (porlar) açarak kalsiyum sızıntısı (sitokinin fırtınası) yaratması",
+      "Endotelyal sodyum kanallarını bloke ederek hücreleri kurutması"
+    ],
+    correct: 2,
+    exp: "Clostridioides difficile (eski adıyla Clostridium difficile), geniş spektrumlu antibiyotik (özellikle Klindamisin, Sefalosporin, Florokinolon) kullanımı sonrası bozulan flora zemininde üreyen Gram pozitif, sporlu bir anaerobdur. Hastalık yapıcı etkisi ürettiği iki ekzotoksine (Toksin A ve B) bağlıdır. Bu toksinlerin etki mekanizması son derece spesifiktir: Hücre içine girdiklerinde, bağırsak epitel hücrelerinin iskeletini (Aktin yapısını) ve hücreleri birbirine bağlayan Sıkı Kavşakları (Tight junctions) kontrol eden 'Rho-GTPaz' proteinlerini 'Glukozilasyon' (UDP-glukozdan glukoz transferi) yoluyla İNAKTİVE ederler. İskeleti çöken ve birbirinden kopan bağırsak hücreleri apoptoza gider, mukoza dökülür ve ortaya ölü hücre, fibrin ve nötrofillerden oluşan 'Psödomembranlar' (Yalancı zarlar) çıkar. Tedavide Oral Vankomisin veya Fidaksomisin kullanılır."
+  },
+  {
+    id: 409,
+    ders: "Dahiliye",
+    konu: "Gastroenteroloji",
+    diff: 4,
+    q: "Altmış yaşında kadın hasta; giderek artan yorgunluk, dilinde yanma-kızarıklık (Biftek dil / Atrofik glossit) ve ayaklarında uyuşma-karıncalanma şikayetleriyle başvuruyor. Hemogramda Hemoglobin: 8.5 g/dL ve MCV: 118 fL (Makrositer) saptanıyor. Hastaya üst GİS endoskopisi yapıldığında, midenin antrum bölgesinin tamamen NORMAL olduğu, ancak midenin gövde (korpus) ve fundus bölgesinde mukozanın kağıt gibi inceldiği (atrofi) ve rugaların silindiği görülüyor. Otoimmün Metaplazik Atrofik Gastrit (Tip A Gastrit) tanısı konan bu hastada, gelişen pernisiyöz aneminin patogenezi ve eşlik eden sekonder laboratuvar bulgusu aşağıdakilerden hangisinde doğru verilmiştir?",
+    options: [
+      "Şef hücrelere karşı otoantikor gelişmesi / Kan pepsinojen seviyesinde artış",
+      "Paryetal hücrelerdeki H+/K+ ATPaz pompasına ve İntrinsik Faktör'e karşı otoantikor gelişmesi / Buna sekonder olarak antrumdaki G hücrelerinden masif Gastrin salgılanması (Hipergastrinemi)",
+      "Helicobacter pylori enfeksiyonuna bağlı çapraz immünite / Düşük Gastrin seviyesi",
+      "Antrumdaki G hücrelerine karşı otoantikor gelişmesi / Hipogastrinemi ve Aklordri",
+      "Goblet hücrelerine karşı otoantikor gelişmesi / İntestinal metaplazi yokluğu"
+    ],
+    correct: 1,
+    exp: "Gastritler klinik olarak Tip A (Otoimmün) ve Tip B (Bakteriyel - H. Pylori) olarak ikiye ayrılır. Otoimmün Gastrit (Tip A), midenin asit ve İntrinsik Faktör üreten kısmını (Korpus ve Fundus) tutar. Antrum KORUNUR (Antrumu H. Pylori tutar). Vücudun T hücreleri ve otoantikorları, paryetal hücrelerdeki 'H+/K+ ATPaz (Proton pompası)' ve 'İntrinsik Faktör' proteinlerine saldırır. İntrinsik Faktör yok olunca B12 vitamini emilemez (Pernisiyöz Anemi -> Makrositoz, nöropati, glossit). Proton pompası yıkılınca mide asit üretemez (Aklordri). Mide ortamı bazik olunca (asit freni kalkınca), tamamen sağlam olan Antrum bölgesindeki G hücreleri durmaksızın 'Gastrin' hormonu salgılar (Şiddetli Hipergastrinemi). Bu yüksek gastrin, midede kalan enterochromaffin-like (ECL) hücreleri uyararak ileride Nöroendokrin Tümör (Karsinoid tümör) gelişme riskini artırır."
+  },
+  {
+    id: 410,
+    ders: "Dahiliye",
+    konu: "Hepatoloji",
+    diff: 4,
+    q: "Kırk yaşında kadın hasta, son 2 aydır artan yorgunluk, sarılık ve eklem ağrıları şikayetiyle başvuruyor. Özgeçmişinde Hashimoto tiroiditi öyküsü mevcuttur. Laboratuvarında AST: 850 U/L, ALT: 1050 U/L (Belirgin yüksek), Alkalen Fosfataz (ALP): 140 U/L saptanıyor. Viral hepatit belirteçleri negatif bulunuyor. Serum protein elektroforezinde poliklonal hipergammaglobulinemi (özellikle IgG yüksekliği) saptanıyor. Karaciğer biyopsisinde portal alanı aşıp parankime taşan 'İnterface hepatit (Piecemeal nekroz)' ve yoğun plazma hücresi infiltrasyonu izleniyor. Tip 1 Otoimmün Hepatit (AİH) tanısı alan bu hastada, kanda saptanması en muhtemel otoantikorun (Anti-Düz Kas Antikoru - ASMA) hedef aldığı hücresel yapı aşağıdakilerden hangisidir?",
+    options: [
+      "Mitokondriyal pirüvat dehidrogenaz kompleksi",
+      "F-Aktin (Mikrofilamanlar)",
+      "Karaciğer-Böbrek Mikrozomları (Sitokrom P450 2D6)",
+      "Asialoglikoprotein reseptörü",
+      "Çözünür Karaciğer Antijeni (SLA)"
+    ],
+    correct: 1,
+    exp: "Otoimmün Hepatit (AİH); genç/orta yaş kadınlarda, diğer otoimmün hastalıklarla (tiroidit vb.) birlikte görülen, yüksek transaminazlar, yüksek IgG ve 'İnterface Hepatit' ile karakterize tablodur. İki ana tipi vardır. Erişkinlerde en sık görülen 'Tip 1 AİH'dir; kanda ANA (Antinükleer Antikor) ve ASMA (Anti-Düz Kas Antikoru) pozitifliği vardır. ASMA'nın asıl hedefi hücre iskeletini oluşturan 'F-Aktin' proteinleridir. (Not: Tip 2 AİH çocuklarda görülür ve Anti-LKM1 antikoru pozitiftir, bunun da hedefi Sitokrom P450 2D6'dır. AMA ise Primer Biliyer Kolanjit'te pozitiftir)."
+  },
+  {
+    id: 411,
+    ders: "Dahiliye",
+    konu: "Hepatoloji",
+    diff: 5,
+    q: "Yirmi iki yaşında erkek hasta, son 6 aydır giderek kötüleşen okul başarısı, davranış değişiklikleri ve ellerinde istirahat halinde bile olan kaba bir titreme (tremor) şikayetiyle psikiyatri ve nöroloji tarafından değerlendiriliyor. Yapılan rutin kan tahlillerinde AST ve ALT'nin hafif yüksek olduğu fark edilerek hepatolojiye yönlendiriliyor. Göz muayenesinde korneanın periferinde (Descemet membranında) kahverengi-yeşil halkalar (Kayser-Fleischer halkası) saptanıyor. Serum seruloplazmin düzeyi DÜŞÜK bulunan bu Wilson Hastalığı vakasında, ATP7B gen mutasyonunun hücresel düzeyde doğrudan bozduğu enzimatik/taşıyıcı fonksiyon aşağıdakilerden hangisidir?",
+    options: [
+      "Bağırsak (enterosit) fırçamsı kenarından diyetle alınan bakırın emilimi",
+      "Bakırın karaciğer hücreleri içinde Seruloplazmin proteinine bağlanması ve fazlasının safraya atılması",
+      "Kanda serbest bakırı taşıyan albüminin karaciğere girişi",
+      "Makrofajların içindeki bakırın oksidatif stres oluşturmasını engelleyen lizozomal sekresyon",
+      "Bakırın böbrek proksimal tübüllerinden geri emilimi"
+    ],
+    correct: 1,
+    exp: "Wilson Hastalığı (Hepatolentiküler Dejenerasyon); karaciğer (siroz), beyin (bazal ganglionlar/parkinsonizm/psikiyatri) ve gözde (KF halkası) bakır birikimiyle giden otozomal resesif bir hastalıktır. Sorun bağırsaktaki emilim DEĞİLDİR (Emilimi bozan Menkes hastalığıdır, ATP7A mutasyonudur). Wilson'da diyetle alınan bakır bağırsaktan normal emilir, karaciğere gelir. Ancak karaciğerdeki 'ATP7B' pompası bozuk olduğu için karaciğer bu bakırı Apo-seruloplazmin ile birleştirip kana 'Seruloplazmin' olarak veremez VE karaciğer içindeki fazla bakırı safra kanalına pompalayıp (atılım) vücuttan uzaklaştıramaz. Atılamayan bakır karaciğerde birikir, taşıp beyne ve göze çöker. Kanda seruloplazmin düşük, idrarda serbest bakır yüksek bulunur."
+  },
+  {
+    id: 412,
+    ders: "Dahiliye",
+    konu: "Hepatoloji",
+    diff: 4,
+    q: "Alkolik siroz tanısıyla takip edilen 60 yaşındaki erkek hasta, 2 gündür süren siyah renkli dışkılama (melena) öyküsünün ardından ailesi tarafından uykuya meyil, nerede olduğunu bilememe (konfüzyon) ve ellerinde çırpınma tarzı titreme (Flapping tremor / Asteriksis) tablosuyla acile getiriliyor. Kan amonyak düzeyi yüksek (Hepatik Ensefalopati) saptanan hastaya bağırsak temizliği ve 'Laktüloz' tedavisi başlanıyor. Laktülozun hepatik ensefalopatiyi tedavi etmesindeki BİRİNCİL biyokimyasal etki mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Amonyak üreten bağırsak bakterilerini doğrudan öldürmek (Antibiyotik etki)",
+      "Karaciğerde üre siklusunu aktive ederek amonyağın üreye dönüşümünü hızlandırmak",
+      "Kolon lümenini asidik hale getirerek (pH'ı düşürerek) emilebilir olan Amonyağı (NH3), emilemeyen Amonyum (NH4+) iyonuna çevirip dışkıyla atılmasını sağlamak",
+      "Kan-beyin bariyerindeki astrositleri stabilize ederek amonyağın beyne geçişini bloke etmek",
+      "Bağırsaklarda glutaminaz enzimini inhibe ederek glutaminden amonyak oluşumunu kesmek"
+    ],
+    correct: 2,
+    exp: "Sirozlu hastada GİS kanaması (melena) bağırsağa muazzam bir protein (kan) yükü bindirir. Bakteriler bu proteini parçalar ve Amonyak (NH3) üretir. Karaciğer sirotik olduğu için amonyağı temizleyemez, beyne giden amonyak ensefalopati ve asteriksis yapar. Laktüloz (sentetik bir disakkarit) ince bağırsaktan emilmez, kolona geçer. Kolon bakterileri laktülozu yıkarak laktik asit ve asetik asit üretir. Kolonun pH'sı düşer (asidik olur). Asidik ortam, bağırsaktaki emilebilir gaz formundaki Amonyağı (NH3), bağırsak duvarından geçemeyen iyonize Amonyuma (NH4+) çevirir (İyon tuzağı / Ion trapping). Emilemeyen amonyum ishal etkisiyle dışkıyla atılır ve hasta uyanır."
+  },
+  {
+    id: 413,
+    ders: "Dahiliye",
+    konu: "Hepatoloji",
+    diff: 5,
+    q: "Dekompansasyon evresindeki karaciğer sirozu ve masif asiti olan 55 yaşındaki erkek hasta, 38.5°C ateş ve karın ağrısı ile başvuruyor. Asit sıvısından yapılan parasentezde Polimorfonükleer Lökosit (PMN) sayısı 600 /mm3 (>250) saptanarak Spontan Bakteriyel Peritonit (SBP) tanısı konuyor. Hastaya derhal intravenöz Sefotaksim (3. kuşak sefalosporin) başlanıyor. Bu hastada SBP'nin en ölümcül komplikasyonu olan Akut Böbrek Hasarını (Hepatorenal Sendrom) önlemek ve mortaliteyi kanıta dayalı olarak DÜŞÜRMEK için, antibiyotiğe ek olarak tedavinin 1. ve 3. günlerinde KESİNLİKLE intravenöz olarak verilmesi gereken medikal tedavi aşağıdakilerden hangisidir?",
+    options: [
+      "İntravenöz Furosemid (Diüretik)",
+      "İntravenöz Taze Donmuş Plazma (TDP)",
+      "İntravenöz İnsan Albümini (1. gün 1.5 g/kg, 3. gün 1.0 g/kg)",
+      "İntravenöz N-asetilsistein (NAC)",
+      "Oral Midodrin ve Subkütan Oktreotid"
+    ],
+    correct: 2,
+    exp: "Spontan Bakteriyel Peritonit (SBP), sirozlu hastada asit sıvısının enfekte olmasıdır. En sık etkenler E. coli ve Klebsiella'dır. SBP'de ölüm genellikle enfeksiyondan ziyade, enfeksiyonun tetiklediği masif splanknik vazodilatasyon ve buna bağlı gelişen akut 'Hepatorenal Sendrom (Böbrek Yetmezliği)' nedeniyledir. Kılavuzlara göre, SBP tanısı alan her hastaya böbrekleri korumak (intravasküler volümü ve böbrek perfüzyonunu desteklemek) amacıyla İLK GÜN ve ÜÇÜNCÜ GÜN yüksek doz İntravenöz Albümin verilmesi zorunludur. Albümin infüzyonu hepatorenal sendrom gelişimini önler ve sağkalımı (mortaliteyi) belirgin şekilde iyileştirir."
+  },
+  {
+    id: 414,
+    ders: "Dahiliye",
+    konu: "Hepatoloji",
+    diff: 4,
+    q: "On yıldır Ülseratif Kolit nedeniyle meşalazin kullanan 35 yaşındaki erkek hasta, son 6 aydır şiddetlenen kaşıntı (pruritus), sağ üst kadran ağrısı ve yorgunluk şikayetiyle başvuruyor. Biyokimyasında Alkalen Fosfataz (ALP) ve GGT değerleri çok yüksek bulunuyor. p-ANCA testi pozitiftir. Çekilen Manyetik Rezonans Kolanjiyopankreatografi (MRCP) görüntülemesinde; karaciğer içi (intrahepatik) ve dışı (ekstrahepatik) safra yollarında ardışık darlıklar ve genişlemeler (Tespih tanesi / Beading görünümü) saptanıyor. Primer Sklerozan Kolanjit (PSC) tanısı alan bu hastanın ömür boyu takibinde, gelişme riski en yüksek olan ve mortalitenin bir numaralı sebebi olan safra yolu malignitesi aşağıdakilerden hangisidir?",
+    options: [
+      "Hepatoselüler karsinom (HCC)",
+      "Safra kesesi adenokarsinomu",
+      "Kolanjiyokarsinom",
+      "Pankreas başı karsinomu",
+      "Mide MALT lenfoması"
+    ],
+    correct: 2,
+    exp: "Primer Sklerozan Kolanjit (PSC), safra yollarının kronik, fibrozan ve inflamatuar bir hastalığıdır. Klasik olarak 'Genç Erkek + Ülseratif Kolit öyküsü + p-ANCA pozitifliği + MRCP'de tespih tanesi (beading) darlıkları' ile sorulur. Karaciğer biyopsisinde safra kanalları etrafında 'Soğan zarı (Onion skin)' fibrozis patognomoniktir. Hastalığın seyri siroza ve karaciğer nakline kadar gider. Ancak bu hastaların en çok korkulan, ölümcül komplikasyonu safra yollarından köken alan kanser olan 'Kolanjiyokarsinom'dur (Hastaların %10-20'sinde gelişir). Yıllık CA 19-9 ve MRCP ile taranmaları gerekir."
+  },
+  {
+    id: 415,
+    ders: "Dahiliye",
+    konu: "Hepatoloji",
+    diff: 5,
+    q: "Refrakter (diüretiklere dirençli) asit ve hepatit C sirozu olan 65 yaşındaki erkek hastada son 1 hafta içinde serum kreatinin düzeyi 1.1 mg/dL'den 2.8 mg/dL'ye yükseliyor. Hastanın idrar çıkışı azalmış (oligüri), idrar sodyumu < 10 mEq/L ve FENa < %1 (Prerenal patern) olarak saptanıyor. İdrar mikroskopisi temiz, ultrasonografide böbrek boyutları ve parankimi tamamen NORMAL bulunuyor. Hastaya albümin infüzyonu ve sıvı desteği verilmesine rağmen böbrek fonksiyonları düzelmiyor. Hepatorenal Sendrom (HRS) tanısı alan bu hastada, morfolojik olarak tamamen sağlam olan böbreklerin aniden fonksiyonunu kaybetmesine (akut böbrek hasarına) neden olan asıl hemodinamik mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Sirozda azalan üre sentezine bağlı böbrek medullasında osmotik gradientin kaybolması",
+      "Karaciğer yetmezliğine bağlı safranın tübüllerde birikerek toksik hasar yaratması (Kolemik nefroz)",
+      "Artmış portal basınca bağlı portal venöz kanın böbrek venini sıkıştırması",
+      "Ağır portal hipertansiyona bağlı gelişen 'Masif Splanknik Vazodilatasyon'un sistemik kan basıncını düşürmesi ve buna refleks olarak gelişen 'Şiddetli Renal Vazokonstriksiyon (Böbrek kan akımının kesilmesi)'",
+      "HCV'ye bağlı immün komplekslerin glomerülleri tıkaması (Kriyoglobulinemik GN)"
+    ],
+    correct: 3,
+    exp: "Hepatorenal Sendrom (HRS), sirozun son evrelerinde görülen, böbreklerin aslında tamamen SAĞLAM (histolojik/anatomik olarak normal) olduğu, ancak 'kanlanamadığı' için çalışmadığı fonksiyonel bir böbrek yetmezliğidir (Böbreği çıkarıp başkasına taksanız tıkır tıkır çalışır). Patofizyoloji şudur: Sirozda portal hipertansiyon nedeniyle bağırsak (splanknik) yatağında devasa miktarda NO (Nitrik oksit) birikir ve splanknik damarlar sonuna kadar GEVŞER (Vazodilatasyon). Tüm kan karnın içine göllenir, kalbe kan dönmez, sistemik tansiyon düşer. Vücut tansiyonu toparlamak için RAAS ve Sempatik sistemi sonuna kadar açar. Bu sistemler de gidip böbrek damarlarını (Renal arterleri) kaskatı büzer (Vazokonstriksiyon). Böbreğe kan gitmediği için oligüri ve prerenal böbrek yetmezliği gelişir. Tedavisi splanknik damarları büzerek kanı böbreğe yönlendiren Terlipressin + Albümin, kesin tedavisi ise Karaciğer Nakli'dir."
+  },
+  {
+    id: 416,
+    ders: "Dahiliye",
+    konu: "Hepatoloji",
+    diff: 4,
+    q: "Hastanede çalışan 28 yaşındaki bir hemşireye, iğne batması yaralanmasından 3 ay sonra rutin tarama amacıyla Hepatit B serolojisi bakılıyor. Hastanın test sonuçları şu şekildedir: HBsAg: Negatif, Anti-HBs: Negatif, Anti-HBc IgM: Pozitif, HBeAg: Negatif, HBV-DNA: Negatif. Daha önce Hepatit B aşısı yaptırmadığını ifade eden bu hastanın mevcut klinik tablosu (Serolojik profili) aşağıdakilerden hangisi ile en uyumludur?",
+    options: [
+      "Hasta enfeksiyonu geçirmiş ve tamamen iyileşerek bağışıklık kazanmıştır.",
+      "Hasta kronik inaktif Hepatit B taşıyıcısıdır.",
+      "Hasta akut enfeksiyonu yeni geçirmiş ancak 'Pencere Dönemi (Window Period)'ndedir.",
+      "Aşıya bağlı gelişmiş bir serolojik yanıttır.",
+      "Test sonuçları laboratuvar hatasıdır (Yalancı pozitiflik)."
+    ],
+    correct: 2,
+    exp: "Hepatit B serolojisinde 'Pencere Dönemi (Window Period)' çok klasik ve kritik bir tablodur. Akut enfeksiyonun ilk aylarında HBsAg (yüzey antijeni) pozitiftir. Bir süre sonra vücut HBsAg'yi yener ve antijen kandan kaybolur (HBsAg Negatif olur). Ancak vücudun koruyucu antikoru olan 'Anti-HBs' henüz kanda ölçülebilir seviyeye ULAŞMAMIŞTIR (O da negatiftir). Antijenin kaybolduğu ama antikorun henüz çıkmadığı bu boşluk dönemine Pencere Dönemi denir. Bu dönemde hastanın Hepatit B geçirmekte olduğunu gösteren YEGANE (tek) pozitif belirteç, çekirdeğe karşı üretilen akut faz antikoru olan 'Anti-HBc IgM'dir. Vakamızda sadece Anti-HBc IgM pozitifliği pencere dönemini ispatlar. (Geçirilmiş tam bağışıklıkta Anti-HBs (+) ve Anti-HBc IgG (+) olurdu. Aşıda ise SADECE Anti-HBs (+) olur)."
+  },
+  {
+    id: 417,
+    ders: "Dahiliye",
+    konu: "Hepatoloji",
+    diff: 4,
+    q: "On dokuz yaşında kadın hasta, 1 gün önce intihar amacıyla kutularca Parasetamol (Asetaminofen) hapı içtiğini belirterek acil servise getiriliyor. Bilinci açık olan hastanın bulantı ve kusması mevcut. Laboratuvarında AST: 5500 U/L, ALT: 6200 U/L (Masif artış) saptanarak Akut Toksik Hepatit (Fulminan Karaciğer Yetmezliği) tanısı konuyor. Hastaya derhal hayat kurtarıcı antidot olan N-asetilsistein (NAC) tedavisi başlanıyor. N-asetilsisteinin (NAC) karaciğer nekrozunu durdurmasını sağlayan temel hücresel mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Parasetamolün GİS'ten emilimini bağlayarak bloke etmesi (Aktif kömür etkisi)",
+      "Karaciğerde Sitokrom P450 (CYP2E1) enzimini doğrudan inhibe ederek toksik metabolit oluşumunu kesmesi",
+      "Parasetamolün böbreklerden atılımını (glukuronidasyonunu) hızlandırması",
+      "Hücre içi tükenmiş olan 'Glutatyon' depolarını yenileyerek, oluşan toksik NAPQI metabolitini zararsız hale getirip (nötralize edip) hücre ölümünü engellemesi",
+      "Kupffer hücrelerinin inflamatuar sitokin deşarjını baskılaması"
+    ],
+    correct: 3,
+    exp: "Parasetamol (Asetaminofen) karaciğerin en meşhur toksinidir. Terapötik dozlarda karaciğerde sülfasyon ve glukuronidasyon ile zararsızca atılır. Ancak aşırı doz alındığında (intihar), bu yollar doyar (sature olur) ve ilaç mecburen Sitokrom P450 (CYP2E1) yolağına kayar. Bu yolak, ilacı parçalayarak 'NAPQI' adı verilen son derece TOKSİK ve hücreyi eriten bir serbest radikale dönüştürür. Karaciğer normalde bu NAPQI'yi 'Glutatyon' kullanarak etkisizleştirir. Ancak intihar dozunda glutatyon depoları anında TÜKENİR ve NAPQI hücreleri öldürmeye başlar. Antidot olarak verdiğimiz N-asetilsistein (NAC), karaciğere glutatyon yapması için 'sistein' sağlar, glutatyon depoları hızla yeniden dolar, toksin nötralize edilir ve hasta kurtulur."
+  },
+  {
+    id: 418,
+    ders: "Dahiliye",
+    konu: "Hepatoloji",
+    diff: 4,
+    q: "Kırk yaşında, hiç sigara içmemiş erkek hasta; nefes darlığı ve son aylarda karın şişliği (asit) şikayetiyle başvuruyor. Akciğer grafisinde özellikle alt loblarda daha belirgin olan amfizem (Panasiner amfizem) izleniyor. Karaciğer enzimlerinde hafif yükseklik ve batın USG'de sirotik karaciğer saptanıyor. Hastaya karaciğer biyopsisi yapıldığında; periportal hepatositlerin içinde 'PAS (Periodik Asit-Schiff) boyası ile pembe-kırmızı boyanan ve Diastaz enzimi ile sindirilemeyen (diastaza dirençli)' eozinofilik küresel cisimcikler (globüller) biriktiği görülüyor. Alfa-1 Antitripsin (A1AT) Eksikliği tanısı konan bu hastada, karaciğer sirozuna yol açan temel hücresel mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Eksik olan A1AT nedeniyle karaciğerde nötrofil elastaz aktivitesinin artarak dokuyu eritmesi",
+      "PiZ varyantı mutant A1AT proteininin hatalı katlanarak (misfolded) Endoplazmik Retikulum'dan dışarı çıkamaması ve hepatosit içinde birikerek hücreyi öldürmesi (toksisite)",
+      "Eksik enzimin yol açtığı demir birikiminin Fenton reaksiyonu ile siroz yapması",
+      "Normal A1AT moleküllerinin safra yollarına çökerek obstrüktif kolanjit oluşturması",
+      "Mutant proteinlerin Kupffer hücrelerinde inflamozomları uyararak granülomatöz hepatit yapması"
+    ],
+    correct: 1,
+    exp: "Alfa-1 Antitripsin (A1AT) Eksikliği, hem akciğeri hem karaciğeri vuran otozomal kodominant (PiZZ genotipi en ağırıdır) bir genetik hastalıktır. Akciğer ve karaciğerdeki hasar mekanizmaları TAMAMEN ZITTIR. Akciğerdeki hasarın nedeni 'Enzimin yokluğudur'; A1AT kana geçemediği için akciğeri nötrofil elastazından koruyamaz ve akciğer erir (Panasiner amfizem). Karaciğerdeki hasarın nedeni ise 'Mutant Enzimin Toksik Birikimidir'. Mutant (hatalı katlanmış) A1AT proteini, hepatositlerin 'Granüllü Endoplazmik Retikulumunda' üretilir ama hatalı olduğu için oradan dışarı kana çıkamaz. Çıkamayan proteinler hücre içinde devasa PAS-pozitif diastaza dirençli globüller halinde birikir ve hücreyi patlatarak Siroz yapar."
+  },
+  {
+    id: 419,
+    ders: "Dahiliye",
+    konu: "Hepatoloji",
+    diff: 5,
+    q: "Kırsal kesimde yaşayan ve kronik Hepatit B virüsü (HBV) enfeksiyonu olan 55 yaşındaki erkek hasta, karaciğer sağ lobda 6 cm çapında hipervasküler kitle ile başvuruyor. Serum Alfa-Fetoprotein (AFP) düzeyi 1500 ng/mL olarak ölçülüyor ve Hepatoselüler Karsinom (HCC) tanısı konuyor. Hastanın diyet öyküsünde uzun yıllardır uygunsuz koşullarda (nemli ve sıcak) depolanmış tahıl ve yer fıstığı tükettiği öğreniliyor. Bu hastada HCC gelişiminde rol oynayan 'Aflatoksin B1' maruziyetinin karsinogenezi tetiklerken neden olduğu spesifik moleküler/genetik mutasyon aşağıdakilerden hangisidir?",
+    options: [
+      "Wnt sinyal yolağında APC gen delesyonu",
+      "K-RAS onkogeninde sürekli aktivasyona yol açan nokta mutasyonu",
+      "TP53 tümör süpresör geninin 249. kodonunda (Arginin -> Serin) gelişen spesifik nokta mutasyonu",
+      "Hücre zarındaki c-KIT reseptörünün aşırı ekspresyonu",
+      "Retinoblastom (Rb) geninin viral onkoproteinler tarafından inaktivasyonu"
+    ],
+    correct: 2,
+    exp: "Hepatoselüler Karsinom (HCC) gelişiminin iki büyük babası Viral Hepatitler (B ve C) ile Aflatoksin maruziyetidir. Aflatoksin B1, 'Aspergillus flavus' adlı mantarın (küfün) ürettiği, kötü saklanmış tahıl ve kuruyemişlerde üreyen son derece güçlü bir kanserojendir. Karaciğere ulaştığında doğrudan DNA'ya saldırır ve çok spesifik bir iz bırakır: 'TP53 Tümör Süpresör Geninin 249. Kodonunda mutasyon (Argininin yerine Serin geçmesi)'. Genomun koruyucusu olan p53 iptal olunca, özellikle Hepatit B'nin de yardımıyla hücreler kontrolsüz çoğalır ve Karaciğer Kanseri (HCC) gelişir."
+  },
+  {
+    id: 420,
+    ders: "Dahiliye",
+    konu: "Hepatoloji",
+    diff: 4,
+    q: "Kırk beş yaşında kadın hasta; aniden başlayan şiddetli sağ üst kadran ağrısı, karnında hızla büyüyen şişlik (masif asit) ve karaciğer boyutlarında hızlı bir artış (ağrılı hepatomegali) ile acile getiriliyor. Hastanın özgeçmişinde Polisitemia Vera öyküsü (JAK2 V617F mutasyonu pozitif) mevcuttur. Çekilen Doppler Ultrasonografide hepatik venlerde (karaciğer toplardamarlarında) kan akımının olmadığı ve tıkanıklık saptanıyor. Budd-Chiari Sendromu tablosundaki bu hastada, karaciğer dokusunda akut olarak gelişen asıl histopatolojik bulgu (hasar paterni) aşağıdakilerden hangisidir?",
+    options: [
+      "Periportal (Zon 1) alanda masif kazeifikasyon nekrozu",
+      "Karaciğerin sentrilobüler (Zon 3) bölgesinde şiddetli konjesyon (kan göllenmesi) ve iskemik (hemorajik) nekroz",
+      "Safra kanalları etrafında soğan zarı şeklinde fibrozis",
+      "Hepatositlerde yaygın mikroveziküler yağlanma (steatoz)",
+      "Karaciğer sinüzoidlerinde amiloid birikimi"
+    ],
+    correct: 1,
+    exp: "Budd-Chiari Sendromu, karaciğerden kanı çıkaran 'Hepatik Venlerin' (Toplardamarların) pıhtı ile aniden tıkanmasıdır. En sık neden hiperkoagülabilite durumlarıdır (Polisitemia Vera / JAK2 mutasyonları, Faktör V Leiden, OKS kullanımı vb.). Kan karaciğere portal venden girmeye devam eder ama hepatik venden çıkamaz. Karaciğer kanla şişer (ağrılı hepatomegali), içi basınçtan patlayacak duruma gelir ve sıvıyı batına sızdırır (masif asit). Kanın çıkış kapısı (santral venler) tıkandığı için kan göllenmesi (konjesyon) ve oksijensizlik (iskemi) en çok bu 'Sentrilobüler (Zon 3)' bölgeyi vurur. Zon 3'te masif santral hemorajik nekroz görülmesi (Nutmeg / Hindistan cevizi karaciğeri görünümü) patognomoniktir."
+  },
+  {
+    id: 421,
+    ders: "Dahiliye",
+    konu: "Hepatoloji",
+    diff: 4,
+    q: "Elli yaşında obez, Tip 2 Diyabet (DM) ve hiperlipidemi öyküsü olan erkek hastanın rutin tahlillerinde ALT: 85 U/L ve AST: 60 U/L (ALT > AST) saptanıyor. Hastanın alkol kullanımı yoktur ve viral hepatit testleri negatiftir. Batın USG'de karaciğer ekojenitesi artmış (Grade 2 hepatosteatoz / Parlak karaciğer) olarak izleniyor. Non-Alkolik Yağlı Karaciğer Hastalığı (NAFLD / YMAS) tanısı alan bu hastada, karaciğerde sadece basit yağlanma (steatoz) aşamasından, inflamasyon ve hücre ölümünün eşlik ettiği 'Non-Alkolik Steatohepatit (NASH)' aşamasına geçişi tetikleyen 'ikinci vuruş (second hit)' patomekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Alkol dehidrogenaz enziminin aşırı çalışması sonucu artan asetaldehit toksisitesi",
+      "Safra asitlerinin hepatositler içinde birikerek litokolik aside dönüşmesi",
+      "İnsülin direnci zemininde karaciğerde biriken serbest yağ asitlerinin yol açtığı 'Oksidatif Stres ve Lipid Peroksidasyonu (Lipotoksisite)'",
+      "Karaciğerde bakır birikimine bağlı gelişen fokal nodüler hiperplazi",
+      "Viral DNA'nın hepatosit genomuna entegre olarak onkogenleri aktive etmesi"
+    ],
+    correct: 2,
+    exp: "Non-Alkolik Yağlı Karaciğer Hastalığı (yeni adıyla MASLD), dünyada en sık görülen kronik karaciğer hastalığıdır. Obezite, insülin direnci ve metabolik sendrom ile birebir ilişkilidir (Alkol kullanımı yoktur, bu nedenle ALT > AST'dir). Patogenezi 'İki Vuruş (Two-Hit) Hipotezi' ile açıklanır. 1. Vuruş: İnsülin direnci nedeniyle yağ dokusundan karaciğere aşırı Serbest Yağ Asidi (FFA) akması ve karaciğerin yağlanmasıdır (Basit Steatoz). 2. Vuruş (Hastalığı NASH'e yani iltihaplı hepatite ve siroza götüren asıl olay): Biriken bu yağ asitlerinin mitokondride yanarken (oksidasyon) yarattığı 'Oksidatif Stres, Reaktif Oksijen Radikalleri (ROS) ve Lipid Peroksidasyonu'dur. Bu lipotoksisite hepatositleri öldürür (balonlaşma dejenerasyonu), inflamasyonu başlatır ve siroza ilerletir."
+  },
+  {
+    id: 422,
+    ders: "Dahiliye",
+    konu: "Hepatoloji",
+    diff: 4,
+    q: "Yirmi yaşında tıp fakültesi öğrencisi erkek hasta, sınav haftasında yoğun stres, uykusuzluk ve 24 saatlik açlık (oruç/diyet) sonrası göz aklarında sararma (ikter) fark ederek başvuruyor. Fizik muayenede organomegali saptanmıyor. Laboratuvarında Total Bilirubin: 3.5 mg/dL, İndirekt (Ankonjuge) Bilirubin: 3.1 mg/dL olarak bulunuyor. Hemogram (Hb normal, retikülosit normal, haptoglobin normal) ve Karaciğer Enzimleri (AST, ALT, ALP) TAMAMEN NORMAL sınırlardadır. Gilbert Sendromu tanısı konan bu hastada, açlık ve stresle tetiklenen hafif şiddetli indirekt hiperbilirubineminin genetik temeli aşağıdakilerden hangisidir?",
+    options: [
+      "UDP-glukuronil transferaz enziminin (UGT1A1) promotor bölgesindeki (TATA box) TA tekrar sayısındaki artışa bağlı gen transkripsiyonunun azalması",
+      "UDP-glukuronil transferaz enzimini kodlayan genin tamamen (homozigot) delesyonu sonucu hiç üretilememesi",
+      "Konjuge bilirubini safraya atan MRP2 (Multidrug Resistance Protein 2) pompa defekti",
+      "Bilirubini karaciğer hücreleri içine alan OATP1B1 transport proteini eksikliği",
+      "Eritrositlerde membran defektine bağlı stres anında gelişen gizli hemoliz"
+    ],
+    correct: 0,
+    exp: "Gilbert Sendromu; toplumda çok sık (%5-10) görülen, tamamen iyi huylu, karaciğerin ve kanın (hemoliz yoktur) sapasağlam olduğu bir indirekt hiperbilirubinemi durumudur. Klasik hikayesi: 'Genç, sağlıklı birey + Stres/Açlık/Enfeksiyon sonrası hafif sararma + Tamamen normal karaciğer enzimleri'. Patogenez: Bilirubini karaciğerde glukuronik asitle birleştirip suda çözünür (konjuge) hale getiren 'UDP-glukuronil transferaz (UGT1A1)' enziminin üretiminde hafif bir tembellik vardır. Bu enzimi üreten genin başlangıç (promotor) bölgesinde (TATA kutusunda) fazladan nükleotid (TA) tekrarları oluşmuştur. Bu nedenle enzim daha az miktarda (%30 kapasiteyle) üretilir. Normalde bu yeterlidir ama stres/açlık durumunda bilirubin yükü artınca enzim yetişemez ve kana İndirekt Bilirubin taşar. (Enzimin Tümüyle yokluğu ölümcül olan Crigler-Najjar Tip 1'dir. MRP2 pompa defekti ise direkt hiperbilirubinemi yapan Dubin-Johnson Sendromudur)."
+  },
+  {
+    id: 423,
+    ders: "Dahiliye",
+    konu: "Romatoloji",
+    diff: 4,
+    q: "Kırk beş yaşında kadın hasta, dirençli hipertansiyon nedeniyle 6 ay önce başlanan Hidralazin tedavisini kullanmaktadır. Son 2 haftadır yeni başlayan yaygın eklem ağrıları, ateş ve nefes alırken batan tarzda göğüs ağrısı (plörezi) şikayetleriyle başvuruyor. Fizik muayenede yüzünde hafif kızarıklık saptanıyor. Laboratuvarında ANA (Antinükleer Antikor) 1:640 pozitif ve Anti-Histon antikorları kuvvetli pozitif bulunuyor. İlaca Bağlı Lupus (Drug-Induced Lupus) tanısı konan bu hastada, ilacın vücuttan atılımını yavaşlatarak bu otoimmün tabloya zemin hazırlayan genetik polimorfizm (tembellik), karaciğerdeki hangi Faz II metabolizma reaksiyonunu etkilemektedir?",
+    options: [
+      "Glukuronidasyon",
+      "Sülfasyon",
+      "Metilasyon",
+      "N-Asetilasyon",
+      "Glutatyon konjugasyonu"
+    ],
+    correct: 3,
+    exp: "İlaca Bağlı Lupus (Drug-Induced Lupus Erythematosus - DILE), en sık Hidralazin, Prokainamid ve İzoniyazid kullanımı sonrası gelişir. Klasik SLE'den farklı olarak böbrek ve SSS tutulumu nadirdir, döküntü ve plörit/perikardit sıktır. Spesifik belirteci 'Anti-Histon' antikorudur. Bu ilaçların ortak özelliği karaciğerde Faz II metabolizma yolağı olan 'N-Asetilasyon' ile yıkılmalarıdır. Toplumda genetik olarak bazı insanlar 'Yavaş Asetilatör'dür. Bu kişilerde ilaç karaciğerde asetillenip atılamaz, kanda birikir, metabolitleri DNA/protein komplekslerine bağlanarak onları immünojenik hale getirir ve otoantikor (Lupus) gelişimini tetikler."
+  },
+  {
+    id: 424,
+    ders: "Dahiliye",
+    konu: "Romatoloji",
+    diff: 5,
+    q: "Otuz yaşında kadın hasta, sol bacağında şişlik ve ağrı (Derin Ven Trombozu - DVT) şikayetiyle acile başvuruyor. Hastanın özgeçmişinde ardışık 3 kez 10. gebelik haftasından önce gerçekleşen düşük (abortus) öyküsü mevcuttur. Pıhtılaşma testlerinde aPTT süresi belirgin uzun (>70 sn) saptanıyor. Hastanın plazması normal insan plazması ile karıştırıldığında (Mixing test) aPTT süresinin KISALMADIĞI (düzelmediği) gözleniyor. Antifosfolipid Sendromu (APS) tanısı kesinleşen bu hastada, tromboza (pıhtıya) ve aPTT uzamasına yol açan otoantikorların (Lupus Antikoagülanı) kanda bağlandığı asıl fizyolojik hedef molekül aşağıdakilerden hangisidir?",
+    options: [
+      "Faktör VIII",
+      "Faktör V",
+      "Beta-2 Glikoprotein I",
+      "Antitrombin III",
+      "Protein C"
+    ],
+    correct: 2,
+    exp: "Antifosfolipid Sendromu (APS); tekrarlayan arteriyel/venöz trombozlar ve tekrarlayan gebelik kayıpları ile karakterizedir. Kanda dolaşan Antifosfolipid antikorları (Lupus antikoagülanı, Antikardiyolipin ve Anti-Beta-2 Glikoprotein I) vardır. İn vitro (tüpte) aPTT'yi UZATIRLAR çünkü testte kullanılan fosfolipidleri bağlayarak reaksiyonu bozarlar (Karışım testinde düzelmeme antikor varlığını kanıtlar). Ancak in vivo (vücutta) kanatmazlar, tam tersine pıhtılaşmayı (trombozu) tetiklerler. Bu antikorların kandaki asıl hedefi (bağlandığı protein) 'Beta-2 Glikoprotein I (Apolipoprotein H)' molekülüdür. Bu kompleks endoteli aktive ederek masif pıhtılaşma fırtınası başlatır."
+  },
+  {
+    id: 425,
+    ders: "Dahiliye",
+    konu: "Romatoloji",
+    diff: 4,
+    q: "Elli yaşında kadın hasta; parmak uçlarında soğukta beyazlaşma-morarma (Raynaud fenomeni), yutma güçlüğü ve cildinde kalınlaşma şikayetiyle başvuruyor. Fizik muayenesinde ciltteki gerginliğin ve kalınlaşmanın sadece ellerinde değil, kollarına, göğsüne ve karnına kadar (proksimale) yayıldığı saptanıyor. Diffüz Sistemik Skleroz tanısı alan bu hastada, interstisyel akciğer hastalığı riskini de belirgin olarak artıran spesifik otoantikorun (Anti-Scl-70) hedef aldığı çekirdek enzimi aşağıdakilerden hangisidir?",
+    options: [
+      "RNA Polimeraz III",
+      "DNA Helikaz",
+      "DNA Topoizomeraz I",
+      "Sentromer kinetokor proteinleri",
+      "Histidil-tRNA sentetaz"
+    ],
+    correct: 2,
+    exp: "Sistemik Skleroz (Skleroderma) iki ana gruba ayrılır. 1) Sınırlı (Limited/CREST) tip: Cilt kalınlaşması diz ve dirseklerin distalindedir (yüze vurabilir). Anti-Sentromer antikorları pozitiftir ve en sık ölüm nedeni Pulmoner Arteriyel Hipertansiyondur (PAH). 2) Diffüz tip: Cilt kalınlaşması gövdeye (proksimale) yayılır. 'Anti-Scl-70' antikorları pozitiftir ve en sık ölüm nedeni İnterstisyel Akciğer Hastalığıdır (İPF / Fibrozis). Anti-Scl-70 antikorunun hücresel hedefi, DNA replikasyonu sırasında DNA sarmalındaki gerilimi çözen 'DNA Topoizomeraz I' enzimidir."
+  },
+  {
+    id: 426,
+    ders: "Dahiliye",
+    konu: "Romatoloji",
+    diff: 4,
+    q: "Gözlerde kum kaçmış hissi (kseroftalmi) ve ağız kuruluğu (kserostomi) nedeniyle Sjögren Sendromu tanısıyla takip edilen 32 yaşındaki kadın hasta, ilk gebeliğinin 20. haftasında rutin kadın doğum kontrolüne gidiyor. Hastanın romatoloji kayıtlarında Anti-Ro (SSA) ve Anti-La (SSB) antikorlarının yüksek titrede pozitif olduğu biliniyor. Bu antikorların plasentadan fetüse geçmesi durumunda (Neonatal Lupus), fetüsün kalbinde gelişme ihtimali en yüksek olan ve acil fetal ekokardiyografi ile taranması gereken ölümcül kardiyak komplikasyon aşağıdakilerden hangisidir?",
+    options: [
+      "Büyük arterlerin transpozisyonu (TGA)",
+      "Konjenital Tam (3. Derece) Kalp Bloğu",
+      "Hipertrofik obstrüktif kardiyomiyopati",
+      "Aort koarktasyonu",
+      "Patent Duktus Arteriozus (PDA)"
+    ],
+    correct: 1,
+    exp: "Sjögren Sendromu ve SLE hastalarında sıklıkla saptanan Anti-Ro (SSA) ve Anti-La (SSB) otoantikorları, küçük moleküller oldukları için plasentayı (IgG formunda) kolayca geçebilirler. Fetüse geçen bu antikorlar, bebeğin kalbindeki atriyoventriküler (AV) nod dokusuna yapışarak inflamasyon ve kalıcı fibrozis (kireçlenme) yaparlar. Bu durum fetüste 'Konjenital Tam (3. Derece) Kalp Bloğuna' yol açar. Kalp atımları 40-50/dk'ya düşen fetüs kalp yetmezliği (hidrops fetalis) ile ölebilir. Bu nedenle Anti-Ro/La pozitif gebeler 16. haftadan itibaren haftalık fetal EKO ile taranmalıdır."
+  },
+  {
+    id: 427,
+    ders: "Dahiliye",
+    konu: "Romatoloji",
+    diff: 4,
+    q: "Altmış beş yaşında erkek hasta, sağ ayak başparmağında ani başlayan, sabaha karşı uykudan uyandıran, şiddetli kızarık, şiş ve sıcak bir eklem atağı (Podagra) ile acile başvuruyor. Eklem sıvısı aspirasyonunda iğne şeklinde, negatif çift kırılma (birefringence) gösteren monosodyum ürat kristalleri saptanıyor. Akut Gut atağı yatıştıktan sonra hastaya ürik asit üretimini azaltmak için Allopurinol başlanıyor. Ancak hastanın aynı zamanda böbrek nakli nedeniyle 'Azatiyoprin (İmmünsüpresif)' kullandığı öğreniliyor. Bu iki ilacın birlikte kullanılması durumunda, Azatiyoprinin yıkılamayarak kanda toksik seviyelere ulaşmasına ve ölümcül kemik iliği supresyonu (pansitopeni) yapmasına neden olan etkileşimin hedefi olan enzim aşağıdakilerden hangisidir?",
+    options: [
+      "Tiopürin Metiltransferaz (TPMT)",
+      "Hipoksantin-guanin fosforiboziltransferaz (HGPRT)",
+      "Adenozin Deaminaz (ADA)",
+      "Ksantin Oksidaz",
+      "Dihidrofolat Redüktaz"
+    ],
+    correct: 3,
+    exp: "Farmakolojinin ve Romatolojinin en meşhur, en tehlikeli ilaç etkileşimlerinden biridir. Azatiyoprin, vücutta aktif formu olan 6-Merkaptopürine (6-MP) dönüşerek DNA sentezini bozan bir bağışıklık baskılayıcıdır. Vücut bu toksik ilacı temizlemek (parçalamak) için karaciğerdeki 'Ksantin Oksidaz' enzimini kullanır. Gut tedavisinde kullandığımız Allopurinol (ve Febuksostat) ise bizzat 'Ksantin Oksidaz İnhibitörü'dür. Siz Allopurinol verip bu enzimi kilitlerseniz, Azatiyoprin (veya 6-MP) vücuttan atılamaz. Kanda biriken devasa doz, kemik iliğini tamamen sıfırlar (aplastik anemi / pansitopeni) ve hastayı sepsisten öldürür. Birlikte kullanılmamalıdır (veya Azatiyoprin dozu %75 azaltılmalıdır)."
+  },
+  {
+    id: 428,
+    ders: "Dahiliye",
+    konu: "Romatoloji",
+    diff: 4,
+    q: "Yetmiş yaşında, Tip 2 diyabet ve karaciğer fonksiyon bozukluğu olan erkek hasta; sağ dizinde aniden gelişen şiddetli ağrı, şişlik ve ısı artışı (Akut Monoartrit) ile acile başvuruyor. Çekilen diz grafisinde eklem kıkırdağında ince beyaz kireçlenme hatları (Kondrokalsinozis) saptanıyor. Eklem sıvısı aspirasyonunda lökosit sayısı 35.000/mm3 saptanıyor ve mikroskopide 'Eşkenar dörtgen (romboid) şeklinde, zayıf pozitif çift kırılma (birefringence) gösteren kristaller' izleniyor. Psödogut (Yalancı Gut) tanısı konan bu hastada, kristal birikimine zemin hazırlayan ve araştırılması gereken asıl altta yatan sekonder hastalık aşağıdakilerden hangisidir?",
+    options: [
+      "Hemokromatozis",
+      "Primer Biliyer Kolanjit",
+      "Orak Hücreli Anemi",
+      "Alfa-1 Antitripsin Eksikliği",
+      "Von Willebrand Hastalığı"
+    ],
+    correct: 0,
+    exp: "Yalancı Gut (Pseudogout), eklem boşluğuna 'Kalsiyum Pirofosfat Dihidrat (CPPD)' kristallerinin dökülmesiyle gelişen akut bir artrittir. Guttan farkları: İğne değil Eşkenar dörtgen (romboid) kristallerdir, Negatif değil Pozitif çift kırılma yaparlar (Polarize ışığa paralelken mavi, dikken sarı görünürler - Gut'un tam tersi), ayak başparmağını değil en sık DİZ eklemini tutarlar. Röntgendeki kıkırdak kireçlenmesine 'Kondrokalsinozis' denir. İleri yaşta idiyopatiktir ancak daha gençlerde (veya diyabet/karaciğer bulguları eşlik ediyorsa) kesinlikle sekonder nedenler aranmalıdır. CPPD birikimini en güçlü tetikleyen metabolik hastalıklar 'Hemokromatozis (demir birikimi)', Hiperparatiroidizm ve Hipotiroidizmdir."
+  },
+  {
+    id: 429,
+    ders: "Dahiliye",
+    konu: "Romatoloji",
+    diff: 4,
+    q: "Yirmi beş yaşında erkek hasta, son 1 yıldır özellikle sabahları kalktığında şiddetli olan, hareket ettikçe ve gün içinde azalan bel ve sırt ağrısı (İnflamatuar bel ağrısı) şikayetiyle başvuruyor. Geçen ay sağ gözünde kızarıklık ve ışığa hassasiyet (Akut Anterior Üveit) atağı geçirdiği öğreniliyor. Çekilen pelvik grafide her iki sakroiliak eklemde skleroz ve daralma (Bilateral Sakroiliit) saptanıyor. Ankilozan Spondilit (AS) tanısı alan bu hastanın uzun dönem takibinde kardiyolojiye sevk edilmesini gerektiren, AS'nin en sık görülen ve en önemli kardiyovasküler komplikasyonu aşağıdakilerden hangisidir?",
+    options: [
+      "Mitral kapak prolapsusu (MVP)",
+      "Aort kökü dilatasyonu ve Aort Yetmezliği (Aortit)",
+      "Konstriktif perikardit",
+      "Hipertrofik obstrüktif kardiyomiyopati",
+      "Atriyal Septal Defekt (ASD)"
+    ],
+    correct: 1,
+    exp: "Ankilozan Spondilit (AS); genç erkeklerde sabah tutukluğu, sakroiliit, HLA-B27 pozitifliği ve omurgada sindesmofitler (bambu kamışı) ile giden seronegatif bir spondiloartropatidir. Eklemler dışında birçok organı tutar. Gözde en sık 'Akut Anterior Üveit' (kızarık ve ağrılı göz), akciğerde 'Apikal Fibrozis' (üst lob kaviteleri) yapar. Kalpteki en meşhur tutulumu ise aort kökünü saran inflamasyondur (Aortit). Aort kökü genişler (dilatasyon) ve aort kapakları tam kapanamaz. Sonuçta hastada üfürüm ve kalp yetmezliğine giden 'Aort Yetmezliği' ile iletim yollarında fibrozise bağlı 'Kalp Blokları (AV blok)' gelişir."
+  },
+  {
+    id: 430,
+    ders: "Dahiliye",
+    konu: "Romatoloji",
+    diff: 4,
+    q: "Yirmi sekiz yaşında erkek hasta; sağ dizinde ve sol ayak bileğinde şiddetli ağrı, şişlik (Oligoartrit) şikayetiyle polikliniğe başvuruyor. Hastanın gözlerinde kızarıklık (Konjonktivit) ve idrar yaparken yanma (Üretrit) şikayetleri de mevcuttur. Muayenesinde ayak tabanlarında hiperkeratotik, sedef benzeri döküntüler (Keratoderma blennorrhagicum) saptanıyor. Özgeçmişinde 3 hafta önce ishalli bir hastalık geçirdiği öğreniliyor. Reaktif Artrit (Reiter Sendromu) tablosundaki bu hastanın şiş olan dizinden alınan eklem sıvısı (sinovyal sıvı) kültüründe aşağıdaki sonuçlardan hangisinin saptanması beklenir?",
+    options: [
+      "Salmonella enteritidis üremesi",
+      "Chlamydia trachomatis üremesi",
+      "Neisseria gonorrhoeae üremesi",
+      "Kültürde hiçbir üreme olmaması (Steril sıvı)",
+      "Staphylococcus aureus üremesi"
+    ],
+    correct: 3,
+    exp: "Reaktif Artrit (Reiter Sendromu); klasik olarak 'Göremiyorum (Konjonktivit), İşeyemiyorum (Üretrit), Ağaca tırmanamıyorum (Artrit)' triadı ile bilinir. HLA-B27 ilişkilidir. Genellikle bir gastrointestinal (Salmonella, Shigella, Campylobacter, Yersinia) veya genitoüriner (Chlamydia) enfeksiyondan 1-4 hafta SONRA ortaya çıkar. En kritik nokta şudur: Eklemdeki şişlik ve inflamasyon bakterinin ekleme girmesinden değil, çapraz bağışıklık reaksiyonundan (immün kompleksler/antijenler) kaynaklanır. Bu nedenle şişmiş olan o eklemden su çekip mikrobiyolojiye (kültüre) ekerseniz HİÇBİR ŞEY ÜREMEZ, sıvı 'STERİL'dir. Eğer bakteri üreseydi buna reaktif artrit değil, 'Septik Artrit' denirdi."
+  },
+  {
+    id: 431,
+    ders: "Dahiliye",
+    konu: "Romatoloji",
+    diff: 4,
+    q: "Kırk yaşında erkek hasta, son 3 aydır devam eden kanlı burun akıntısı, burun kökünde çökme (Semer burun deformitesi) ve kanlı balgam (hemoptizi) şikayetiyle başvuruyor. Laboratuvarında Serum Kreatinin: 2.5 mg/dL (Akut böbrek yetmezliği) ve idrarda dismorfik eritrositler izleniyor. İmmünolojik taramada c-ANCA (Sitoplazmik Antinötrofil Sitoplazmik Antikor) titresi çok yüksek bulunuyor. Granülomatöz Polianjiit (Wegener Granülomatozu) tanısı alan bu hastada, c-ANCA otoantikorlarının nötrofil sitoplazmasında bağlandığı (hedef aldığı) spesifik antijenik enzim aşağıdakilerden hangisidir?",
+    options: [
+      "Miyeloperoksidaz (MPO)",
+      "Proteinaz-3 (PR3)",
+      "Lizozim",
+      "Elastaz",
+      "Katalaz"
+    ],
+    correct: 1,
+    exp: "Granülomatöz Polianjiit (Eski adıyla Wegener Granülomatozu); küçük çaplı damarları tutan, 'Üst Solunum Yolu (Sinüzit/Semer burun) + Alt Solunum Yolu (Kaviteli akciğer nodülleri/Hemoptizi) + Böbrek (Kresentik Glomerülonefrit/Hematuri)' triadıyla giden ölümcül bir vaskülittir. Tanısında altın standart c-ANCA (Sitoplazmik ANCA) pozitifliğidir. c-ANCA'nın hücresel hedefi nötrofillerin içindeki 'Proteinaz-3 (PR3)' enzimidir. (Not: Mikroskobik Polianjiit ve Eozinofilik Granülomatöz Polianjiit/Churg-Strauss hastalıklarında ise p-ANCA yani Perinükleer ANCA pozitiftir. p-ANCA'nın hedefi ise 'Miyeloperoksidaz - MPO' enzimidir)."
+  },
+  {
+    id: 432,
+    ders: "Dahiliye",
+    konu: "Romatoloji",
+    diff: 4,
+    q: "Yetmiş iki yaşında kadın hasta; sağ şakağında şiddetli ve zonklayıcı baş ağrısı, yemek yerken (çiğnerken) çenesinde yorulma/ağrı (çene klodikasyonu) ve bu sabah sağ gözünde aniden ortaya çıkıp 10 dakika sonra geçen geçici görme kaybı (Amaurosis fugax) şikayetiyle acile getiriliyor. Fizik muayenede sağ temporal arter kalınlaşmış, sert ve dokunmakla hassas saptanıyor. Laboratuvarda Sedimantasyon Hızı (ESR) 110 mm/saat ölçülüyor. Dev Hücreli Arterit (Temporal Arterit) düşünülen bu hastada, körlüğü önlemek için acil yüksek doz steroid başlanıyor. Steroide dirençli vakalarda veya steroidi azaltmak amacıyla kullanılan, hastalığın patogenezindeki ana sitokini hedefleyen 'Tosilizumab (Tocilizumab)' adlı monoklonal antikor aşağıdaki sitokinlerden hangisini bloke eder?",
+    options: [
+      "Tümör Nekrozis Faktör-alfa (TNF-alfa)",
+      "İnterlökin-1 (IL-1)",
+      "İnterlökin-6 (IL-6)",
+      "İnterlökin-17 (IL-17)",
+      "İnterferon-gama (IFN-gama)"
+    ],
+    correct: 2,
+    exp: "Dev Hücreli Arterit, büyük damarları (Aort ve dalları, özellikle karotis ekstra-kraniyal dalları) tutan ve körlük (iskemik optik nöropati) riski taşıyan acil bir vaskülittir. Polimiyaljiya Romatika ile sık birliktedir. Tanı için temporal arter biyopsisi (dev hücreli granülomatöz inflamasyon) yapılır ama biyopsi sonucu beklenmeden steroid başlanmalıdır. Hastalığın inflamasyon motorunu, T hücrelerinden ve makrofajlardan salınan 'İnterlökin-6 (IL-6)' oluşturur. Yüksek sedimantasyon ve CRP de doğrudan IL-6'nın karaciğeri uyarmasıyla oluşur. Bu nedenle güncel kılavuzlarda steroid dozunu azaltmak (steroid-sparing) ve dirençli vakaları tedavi etmek için IL-6 reseptör blokörü olan 'Tosilizumab' kullanılır."
+  },
+  {
+    id: 433,
+    ders: "Dahiliye",
+    konu: "Romatoloji",
+    diff: 5,
+    q: "Elli yaşında kadın hasta, şiddetli ve deforme edici Romatoid Artrit (RA) nedeniyle Metotreksat kullanmaktadır. Ancak hastalık kontrol altına alınamadığı için tedavisine bir 'Tümör Nekrozis Faktör-alfa (TNF-alfa) inhibitörü' olan İnfliksimab eklenmesine karar veriliyor. İlaç başlanmadan önce hastaya PPD (Tüberkülin cilt testi) ve Akciğer Grafisi yapılarak Gizli (Latent) Tüberküloz taraması yapılıyor ve negatif bulunduktan sonra biyolojik ajan başlanıyor. Anti-TNF ilaçların kullanılmasının, vücutta latent olarak uyuyan Tüberküloz basilinin aniden alevlenmesine (reaktivasyonuna) ve miliyer tüberküloza yol açmasının immunolojik nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "İlacın makrofaj yüzeyindeki CD14 reseptörünü bloke ederek fagositozu durdurması",
+      "TNF-alfa'nın akciğerde mikrobakteriyi hapseden ve etrafını saran 'Granülom' yapısının bütünlüğünü ve devamlılığını sağlamada zorunlu bir sitokin olması",
+      "TNF inhibisyonunun B lenfositlerde antikor üretimini sıfırlayarak humoral bağışıklığı çökertmesi",
+      "İlacın alveolar makrofajlarda reaktif oksijen radikallerini (ROS) doğrudan inaktive etmesi",
+      "TNF-alfa eksikliğinin kompleman sistemini (C3b) bloke ederek basillerin opsonizasyonunu engellemesi"
+    ],
+    correct: 1,
+    exp: "Romatoid Artrit ve Ankilozan Spondilit tedavisinde çığır açan Anti-TNF ajanların (İnfliksimab, Adalimumab, Etanercept vb.) en çok korkulan yan etkisi 'Latent Tüberküloz Reaktivasyonu'dur. Tüberküloz basili akciğere girdiğinde makrofajlar onu yutar ama öldüremez. Vücut basili hapse atmak için etrafını T lenfositleri ve epiteloid makrofajlarla sararak bir 'Granülom' inşa eder. Bu granülom duvarının örülmesi ve yıllarca yıkılmadan ayakta kalması (basilin hapiste uyuması) T hücrelerinden ve makrofajlardan salınan 'TNF-alfa' sitokini sayesinde olur. Siz hastaya Anti-TNF ilaç verirseniz, granülomu ayakta tutan çimento erir, duvar yıkılır ve içeride uyuyan milyonlarca tüberküloz basili aniden kana karışarak hastayı öldürebilir."
+  },
+  {
+    id: 434,
+    ders: "Dahiliye",
+    konu: "Romatoloji",
+    diff: 4,
+    q: "Otuz yaşında erkek hasta, son 2 yılda yılda en az 4 kez tekrarlayan ağrılı oral aftlar ve skrotumda iz bırakarak iyileşen genital ülserler şikayetiyle polikliniğe başvuruyor. Ayrıca her iki gözünde bulanık görme (Panüveit) atakları öyküsü mevcuttur. Hastanın ön koluna steril iğne batırıldığında, 48 saat sonra iğne yerinde pürülan bir püstül geliştiği (Paterji testi pozitifliği) saptanıyor. Behçet Hastalığı tanısı kesinleşen bu hastada, ölümcül (mortal) sonuçlara yol açabilen ve bu hastalıkta diğer vaskülitlere göre çok daha sık görülen majör vasküler tutulum paterni aşağıdakilerden hangisidir?",
+    options: [
+      "Aortik diseksiyon ve rüptür",
+      "Koroner arterlerde mikrovasküler spazm ve miyokard enfarktüsü",
+      "Renal arter stenozuna bağlı malign hipertansiyon",
+      "Pulmoner arter anevrizması rüptürü ve dural venöz sinüs trombozu",
+      "Mezenterik arter tıkanıklığına bağlı bağırsak nekrozu"
+    ],
+    correct: 3,
+    exp: "Behçet Hastalığı, Türkiye ve İpekyolu ülkelerinde sık görülen, HLA-B51 ilişkili, hem atardamarları (arter) hem de toplardamarları (ven) tutabilen eşsiz bir vaskülittir. Tanısında Oral aft (şarttır) + Genital ülser + Üveit + Paterji pozitifliği kullanılır. Hastaların çoğunda ağrılı nodüller (Eritema nodozum) görülür. Behçet hastalığının en korkulan, genç yaşta ölüme yol açan vasküler komplikasyonları şunlardır: 1) Pulmoner Arter Anevrizması (Genişleyen akciğer atardamarı yırtılır ve hasta masif hemoptizi/kan kusarak ölür). 2) Dural Venöz Sinüs Trombozu (Beyin toplardamarları pıhtıyla tıkanır, kafa içi basınç fırlar ve körlük/koma yapar)."
+  },
+  {
+    id: 435,
+    ders: "Dahiliye",
+    konu: "Romatoloji",
+    diff: 4,
+    q: "Kırk beş yaşında kadın hasta, sandalyeden kalkarken ve saçını tararken kollarında ve bacaklarında hissettiği şiddetli kas güçsüzlüğü (Proksimal miyopati) şikayetiyle başvuruyor. Muayenede üst göz kapaklarında morumsu kızarıklık ve ödem (Heliotrop raş), el parmak eklemlerinin (MCP ve PIP) üzerinde kırmızı-mor renkli, hafif pullanan döküntüler (Gottron papülleri) saptanıyor. Laboratuvarında Kreatin Kinaz (CK) ve Aldolaz düzeyleri çok yüksek bulunuyor. Dermatomiyozit tanısı alan bu hastanın kanında 'Anti-Jo-1' otoantikorları pozitif saptanıyor. Bu antikora (Anti-sentetaz sendromu) sahip hastaların klinik takibinde en yakından izlenmesi gereken majör organ komplikasyonu aşağıdakilerden hangisidir?",
+    options: [
+      "Hızlı ilerleyen böbrek yetmezliği (Glomerülonefrit)",
+      "Akut miyokardit ve ölümcül aritmiler",
+      "İnterstisyel Akciğer Hastalığı (Akciğer Fibrozisi)",
+      "Karaciğer yetmezliği ve siroz",
+      "Masif gastrointestinal kanama"
+    ],
+    correct: 2,
+    exp: "Dermatomiyozit, proksimal kas zayıflığı ve cilt bulgularıyla (Heliotrop raş, Gottron papülleri, V bulgusu) giden otoimmün bir miyopatidir. Dermatomiyozit (ve Polimiyozit) hastalarının bir alt grubunda 'Anti-Jo-1' antikorları bulunur. Anti-Jo-1'in hedefi hücre içindeki 'Histidil-tRNA sentetaz' enzimidir. Eğer bir hastada Anti-Jo-1 pozitifse, bu hastada 'Anti-sentetaz Sendromu' gelişir. Sendromun özellikleri: Ateş, Raynaud fenomeni, teknisyen elleri (ellerde çatlama/kalınlaşma) ve en ölümcül olanı İNTERSTİSYEL AKCİĞER HASTALIĞIDIR (Akciğerin sertleşmesi/fibrozisi). Bu nedenle Anti-Jo-1 pozitif her hastaya solunum fonksiyon testi ve Yüksek Çözünürlüklü Akciğer Tomografisi (HRCT) yapılmalıdır."
+  },
+  {
+    id: 436,
+    ders: "Dahiliye",
+    konu: "Onkoloji",
+    diff: 4,
+    q: "Burkitt Lenfoma tanısıyla agresif kemoterapi başlanan 20 yaşındaki hastada, tedavinin ilk 24 saatinde kanda masif ürik asit, potasyum ve fosfor yüksekliği (Tümör Lizis Sendromu) gelişiyor. Hastaya hiperürisemiyi hızla düşürmek ve böbrek yetmezliğini önlemek amacıyla rekombinant bir enzim olan 'Rasburikaz' intravenöz olarak uygulanıyor. Bu enzimin plazma ürik asit düzeyini dakikalar içinde düşürmesini sağlayan spesifik biyokimyasal mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Ksantin oksidaz enzimini inhibe ederek ürik asit sentezini durdurması",
+      "Suda çözünürlüğü çok düşük olan ürik asidi, oksidasyon reaksiyonuyla suda son derece kolay çözünen 'Allantoin' molekülüne dönüştürmesi",
+      "Böbrek proksimal tübüllerindeki URAT1 transporterini bloke ederek ürik asidin idrarla atılımını artırması",
+      "Ürik asidi doğrudan inaktif pürin bazlarına (adenin ve guanin) geri döndürmesi",
+      "Kanda ürik asit moleküllerini bağlayarak makrofajlar tarafından fagositozunu kolaylaştırması"
+    ],
+    correct: 1,
+    exp: "Tümör Lizis Sendromunda (TLS) hücre yıkımıyla kana devasa pürin (ürik asit) dökülür ve böbrekleri tıkar. Profilakside Ksantin Oksidaz inhibitörü (Allopurinol) kullanılır ancak bu sadece 'yeni' ürik asit oluşumunu engeller, var olanı temizlemez. Acil durumda kanda halihazırda bulunan yüksek ürik asidi temizlemek için 'Rasburikaz (Rekombinant Urat Oksidaz)' kullanılır. İnsanlarda doğal olarak bulunmayan bu enzim, ürik asidi suda çok kolay çözünen ve böbrekten anında atılan 'Allantoin' molekülüne çevirir."
+  },
+  {
+    id: 437,
+    ders: "Dahiliye",
+    konu: "Onkoloji",
+    diff: 5,
+    q: "HER2/neu pozitif metastatik meme kanseri nedeniyle 'Trastuzumab (Herceptin)' ve 'Doksorubisin' içeren bir kemoterapi rejimi alan 45 yaşındaki kadın hastada, tedavinin 6. ayında efor dispnesi ve düşük ejeksiyon fraksiyonlu (%35) kalp yetmezliği gelişiyor. Doksorubisine bağlı kardiyotoksisitenin (Tip 1) serbest radikal hasarına ve hücre ölümüne bağlı olduğu bilinmektedir. Trastuzumaba bağlı gelişen kardiyotoksisitenin (Tip 2) geri dönüşümlü (reversibl) olmasını sağlayan ve doğrudan hedef reseptörle ilişkili olan hücresel mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Kardiyomiyositlerdeki HER2 sinyal yolağının bloke edilmesi sonucu, miyokardın kendini onarma ve oksidatif strese karşı hayatta kalma (survival) fonksiyonlarının geçici olarak durması",
+      "Kardiyak miyozin ağır zincirine karşı gelişen otoimmün inflamatuar yanıt",
+      "İlacın kalsiyum kanallarını bloke ederek geçici inotropik yetmezlik yaratması",
+      "Sarkoplazmik retikulumda ATP depolarının geri dönüşümlü tükenmesi",
+      "Kardiyomiyositlerde geçici mitokondriyal şişme ve apoptoz"
+    ],
+    correct: 0,
+    exp: "Kardiyotoksisite Onkolojide iki tiptir. Tip 1 (Antrasiklinler/Doksorubisin): Serbest oksijen radikalleri ile miyokardı kalıcı olarak öldürür, geri dönüşsüzdür, doza bağımlıdır. Tip 2 (Trastuzumab): HER2 reseptörü sadece kanserde değil, kalp kası hücrelerinde de (koruyucu/onarıcı olarak) bulunur. Trastuzumab kalpteki bu reseptörü bloke edince, kalp kası hücreleri strese karşı savunmasız kalır ve kasılma gücü (EF) düşer. Ancak hücre ÖLMEZ (apoptoz/nekroz yoktur). Bu nedenle ilaç kesildiğinde veya ara verildiğinde kalp fonksiyonları eski haline geri döner (reversibldir) ve kümülatif doza bağımlı değildir."
+  },
+  {
+    id: 438,
+    ders: "Dahiliye",
+    konu: "Onkoloji",
+    diff: 4,
+    q: "Metastatik malign melanom tanısıyla immün kontrol noktası inhibitörü (Checkpoint inhibitor) olan 'Nivolumab' tedavisi başlanan 55 yaşındaki hastada tümör boyutlarında dramatik bir küçülme saptanıyor. Bu monoklonal antikorun, hastanın kendi bağışıklık sistemini tümöre karşı yeniden aktive etmesini sağlayan immünolojik etki mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "T lenfositlerin yüzeyindeki CTLA-4 reseptörünü bloke ederek dendritik hücrelerle etkileşimi artırmak",
+      "Tümör hücrelerinin yüzeyindeki CD20 antijenine bağlanarak Kompleman aracılı lizis yapmak",
+      "T lenfositlerin yüzeyindeki PD-1 reseptörüne bağlanarak, tümör hücrelerinin salgıladığı PD-L1 ligantının 'T hücresini inaktive etme (kapatma)' sinyalini engellemek",
+      "Makrofajlarda Toll-like reseptörleri (TLR) aktive ederek fagositozu başlatmak",
+      "Doğrudan tümör hücresi içine girerek apoptozu tetiklemek"
+    ],
+    correct: 2,
+    exp: "Kanser hücreleri, bağışıklık sisteminden kaçmak için zekice bir yöntem kullanır: Yüzeylerinde 'PD-L1 (Programmed Death-Ligand 1)' üretirler. Vücudu savunan Sitotoksik T hücrelerinin yüzeyinde ise 'PD-1' reseptörü vardır. Tümör hücresi PD-L1'i T hücresinin PD-1'ine taktığı anda T hücresini 'kapatır' (İnhibisyon / Anergy). Nivolumab ve Pembrolizumab gibi ilaçlar bizzat 'Anti-PD-1' antikorlarıdır. Gidip T hücresindeki PD-1'i kapatırlar, böylece tümör T hücresini susturamaz ve uyanık kalan T hücreleri kanseri yok eder."
+  },
+  {
+    id: 439,
+    ders: "Dahiliye",
+    konu: "Onkoloji",
+    diff: 4,
+    q: "Metastatik kolon kanseri nedeniyle '5-Florourasil (5-FU)' ve Lökovorin (Folik asit) içeren kemoterapi rejimi uygulanan hastada, tedavinin etkinliğini artıran enzimatik inhibisyon mekanizması moleküler düzeyde değerlendiriliyor. 5-FU'nun aktif metaboliti olan F-dUMP'nin, hücrede DNA sentezini durdurarak 'Timinsiz Ölüm (Thymineless death)'e yol açmasını sağlayan hedef enzimi aşağıdakilerden hangisidir?",
+    options: [
+      "Dihidrofolat Redüktaz",
+      "Timidin Kinaz",
+      "Ribonükleotid Redüktaz",
+      "Timidilat Sentaz",
+      "DNA Topoizomeraz I"
+    ],
+    correct: 3,
+    exp: "5-Florourasil (5-FU) bir antimetabolittir (pirimidin analoğu). Hücre içine girince F-dUMP'ye dönüşür. F-dUMP, normalde dUMP'yi dTMP'ye (Timin nükleotidi) çeviren 'Timidilat Sentaz' enzimine ve folat kofaktörüne kovalent (tersinmez) olarak sıkıca bağlanır ve enzimi kilitler. Hücre DNA sentezi için hayati olan 'Timin' bazını üretemez. Timin eksikliği DNA replikasyonunu durdurur ve hücrenin 'Timinsiz ölümüne' neden olur. (Not: Dihidrofolat Redüktaz'ı bloke eden Metotreksattır)."
+  },
+  {
+    id: 440,
+    ders: "Dahiliye",
+    konu: "Onkoloji",
+    diff: 4,
+    q: "Testis kanseri nedeniyle BEP (Bleomisin, Etoposid, Sisplatin) kemoterapisi alan 28 yaşındaki erkek hasta, tedavinin 3. ayında kuru öksürük ve ilerleyici nefes darlığı ile başvuruyor. Yüksek Çözünürlüklü Akciğer Tomografisinde (HRCT) bilateral interstisyel fibrozis saptanıyor. Bleomisine bağlı toksisitenin, vücuttaki diğer organlardan ziyade spesifik olarak 'Akciğer (ve Cilt)' dokusunu vurmasının biyokimyasal nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "Akciğer epitelinde bleomisin için spesifik aktif transport reseptörlerinin bulunması",
+      "Akciğer ve cildin, ilacı inaktive eden (yıkan) 'Bleomisin hidrolaz' enziminden yoksun olması",
+      "İlacın akciğerdeki yüksek oksijen basıncı altında daha hızlı serbest radikal üretmesi",
+      "İlacın moleküler boyutunun sadece alveolar kapiller membranda takılıp kalmasına izin vermesi",
+      "Akciğerde ilacın atılımını sağlayan P-glikoprotein pompalarının bulunmaması"
+    ],
+    correct: 1,
+    exp: "Bleomisin, DNA zincirlerini serbest oksijen radikalleri üreterek kıran bir antibiyotik/kemoterapötiktir. En korkulan yan etkisi Pulmoner Fibrozis (Akciğer sertleşmesi) ve ciltte hiperpigmentasyondur. Vücuttaki çoğu doku (karaciğer, böbrek, kemik iliği) 'Bleomisin Hidrolaz' adı verilen bir enzim içerir ve bu ilaç geldiğinde onu yıkarak toksisiteden korunur. Ancak insan vücudunda 'Akciğer ve Cilt' dokusunda Bleomisin Hidrolaz enzimi EKSİKTİR (yoktur). İlaç bu organlarda yıkılamaz, birikir, serbest radikal fırtınası koparır ve kalıcı fibrozise neden olur."
+  },
+  {
+    id: 441,
+    ders: "Dahiliye",
+    konu: "Onkoloji",
+    diff: 4,
+    q: "İleri evre Prostat Kanseri olan 70 yaşındaki erkek hasta, şiddetli bel ve kalça ağrısı şikayetiyle başvuruyor. Çekilen direkt grafilerde ve kemik sintigrafisinde lomber omurgalarda ve pelviste yaygın 'Osteoblastik (Radyoopak / Sklerotik)' metastazlar saptanıyor. Prostat kanseri hücrelerinin kemiğe metastaz yaptığında kemiği eritmek (osteolitik) yerine, yeni ve düzensiz kemik yapımını (osteoblastik lezyonları) tetiklemesini sağlayan anahtar molekül (parakrin faktör) aşağıdakilerden hangisidir?",
+    options: [
+      "Paratiroid Hormon İlişkili Peptid (PTHrP)",
+      "Endotelin-1 (ET-1) ve Wnt proteinleri",
+      "Osteoklast Aktive Edici Faktör (IL-1)",
+      "Transforme Edici Büyüme Faktörü Beta (TGF-beta)",
+      "Vasküler Endotelyal Büyüme Faktörü (VEGF)"
+    ],
+    correct: 1,
+    exp: "Kanserlerin kemik metastazları genellikle kemiği eritir (Osteolitik - Örn: Multipl Miyelom, Akciğer, Böbrek kanserleri). Ancak Prostat Kanseri kemiğe gittiğinde kemik YAPIMINI uyarır (Osteoblastik/Sklerotik metastaz). Bunun nedeni; prostat kanseri hücrelerinin kemik iliği ortamında 'Endotelin-1 (ET-1)', 'Wnt' ve 'Kemik Morfogenetik Proteinleri (BMPs)' gibi parakrin sinyaller salgılamasıdır. Bu moleküller doğrudan kemik yapıcı hücreleri (Osteoblastları) uyararak kaba, düzensiz ve ağrılı yeni kemik dokusu (skleroz) oluşturmalarına neden olur."
+  },
+  {
+    id: 442,
+    ders: "Dahiliye",
+    konu: "Onkoloji",
+    diff: 4,
+    q: "Akut Miyeloid Lösemi (AML) tedavisi için konsolidasyon kemoterapisi alan hastanın 10. gününde ateşi 39.2°C'ye ulaşıyor. Hastanın Mutlak Nötrofil Sayısı (ANC) < 100/mm3 (Febril Nötropeni) olarak saptanıyor. Fizik muayenesinde akciğer oskültasyonunda raller duyulmasına rağmen akciğer grafisinde konsolidasyon (infiltrasyon) YOKTUR; idrar kültüründe E. coli üremesine rağmen idrar tahlilinde 'piyüri (lökosit)' YOKTUR. Nötropenik hastalarda enfeksiyonlara ait klasik lokalizasyon bulgularının (irin, infiltrasyon, kızarıklık) GİZLENMESİNİN temel hücresel nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "Kemoterapi ilaçlarının ateş merkezini (hipotalamusu) bozması",
+      "Makrofajların fagositoz yeteneğinin kemoterapi ile sıfırlanması",
+      "Eksüda, pürülan akıntı (irin) ve inflamatuar infiltrasyonun ana yapıtaşı olan 'nötrofillerin' kanda bulunmaması nedeniyle lokal doku yanıtının oluşturulamaması",
+      "Kemoterapinin kompleman sistemini bloke ederek kemotaksisi engellemesi",
+      "Lenfositlerin Th1 yolağından Th2 yolağına kayması"
+    ],
+    correct: 2,
+    exp: "Febril Nötropeni, onkolojik acillerin en önemlisidir. Klinikte en büyük tuzak şudur: Hastanın şiddetli pnömonisi, idrar yolu enfeksiyonu veya apsesi olsa bile, bu bölgelerde X-ray'de beyazlık (konsolidasyon) veya idrarda iltihap (piyüri/irin) GÖRÜLMEZ. Çünkü pürülan (cerahatli) inflamasyonu, irini ve akciğerdeki beyaz infiltrasyonları yaratan bizzat 'NÖTROFİLLERİN' dokuya göç edip ölmesidir. Hastanın kanında nötrofil kalmadığı için (ANC < 500), mikroplar dokuyu istila etse de orada bir inflamasyon savaşı ve kalıntısı (irin) oluşamaz. Bu nedenle nötropenik hastada odak bulunamasa bile derhal geniş spektrumlu anti-psödomonal antibiyotik başlanmalıdır."
+  },
+  {
+    id: 443,
+    ders: "Dahiliye",
+    konu: "Geriartri",
+    diff: 4,
+    q: "Seksen yaşında sağlıklı yaşlanma süreci geçiren bir erkek hastaya anksiyete şikayeti nedeniyle standart erişkin dozunda lipofilik bir ilaç olan 'Diazepam' reçete ediliyor. İlacı aldıktan sonra hastanın uykuya meylinin ve sersemlik halinin beklenen süreden çok daha uzun (3 gün) sürdüğü gözlemleniyor. Yaşlı hastalarda lipofilik (yağda çözünen) ilaçların vücuttaki yarı ömrünün (t1/2) uzamasına yol açan asıl farmakokinetik fizyolojik değişiklik aşağıdakilerden hangisidir?",
+    options: [
+      "Karaciğerde Faz II konjugasyon reaksiyonlarının tamamen durması",
+      "Yaşlanmayla birlikte vücut total su oranının artması",
+      "Yaşlanmayla birlikte yağsız kas kütlesinin azalıp, vücut total YAĞ ORANININ (adipoz dokunun) rölatif olarak artması ve ilacın dağılım hacminin (Vd) genişlemesi",
+      "Böbrek tübüllerinden lipofilik ilaçların geri emiliminin artması",
+      "Serum albümin seviyesinin artarak ilacı kanda hapsedip atılımını yavaşlatması"
+    ],
+    correct: 2,
+    exp: "Geriatrik farmakoloji TUS/USMLE'nin değişmez konusudur. Yaşlanma ile birlikte vücut kompozisyonu değişir: Toplam vücut suyu AZALIR (hidrofilik ilaçların dozu çabuk toksik olur), yağsız kas kütlesi AZALIR (sarkopeni), ancak vücut YAĞ ORANI (rölatif olarak) ARTAR. Diazepam gibi lipofilik (yağda çözünen) ilaçlar verildiğinde, bu artan yağ dokusu ilacı bir sünger gibi içine çeker. İlacın Dağılım Hacmi (Volume of Distribution - Vd) devasa boyutlara ulaşır. İlaç yağdan kana yavaş yavaş, günlerce salınmaya devam eder. Bu nedenle lipofilik ilaçların yaşlılarda yarı ömrü belirgin UZAR ve etkileri/toksisiteleri çok daha uzun sürer."
+  },
+  {
+    id: 444,
+    ders: "Dahiliye",
+    konu: "Geriartri",
+    diff: 4,
+    q: "İdrar yolu enfeksiyonu nedeniyle servise yatırılan hafif demanslı 85 yaşındaki kadın hasta; yatışının 2. gecesinde aniden ajite oluyor, dikkatini toplayamıyor, hemşirelere küfür ediyor ve odada olmayan insanları gördüğünü (görsel halüsinasyonlar) söylüyor. Gündüzleri ise sürekli uyku halinde kalıyor. Akut gelişen bu 'Deliryum' tablosunun patogenezinde, beyinde ortaya çıkan ana nörotransmitter dengesizliği (eksiklik ve fazlalık) aşağıdakilerden hangisidir?",
+    options: [
+      "Serotonin eksikliği ve GABA fazlalığı",
+      "Global Kolinerjik eksiklik ve Dopaminerjik fazlalık",
+      "Glutamat eksikliği ve Histamin fazlalığı",
+      "Noradrenalin eksikliği ve Asetilkolin fazlalığı",
+      "Endorfin eksikliği ve Serotonin fazlalığı"
+    ],
+    correct: 1,
+    exp: "Deliryum, yaşlılarda akut gelişen, dalgalanan (gece artan) ve DİKKAT EKSİKLİĞİ (inattention) ile karakterize organik bir beyin yetmezliğidir (Demans gibi sinsi değildir, saatler içinde gelişir). Patofizyolojisinde beynin nörotransmitter ağındaki akut çöküş yatar. Ana problem: Beyindeki uyanıklık ve dikkati sağlayan 'Kolinerjik (Asetilkolin)' tonusun global olarak çökmesi (Eksiklik) ve buna zıt çalışan 'Dopaminerjik' sistemin aşırı uyarılmasıdır (Fazlalık). Bu nedenle yaşlılara Antikolinerjik ilaç (Asetilkolini bloke eden alerji/soğuk algınlığı ilaçları) vermek deliryumu tetikler. Tedavide (eğer hasta kendine veya çevreye zarar verecekse) dopamin blokörü olan düşük doz Antipsikotikler (Haloperidol vb.) kullanılır."
+  },
+  {
+    id: 445,
+    ders: "Dahiliye",
+    konu: "Geriartri",
+    diff: 4,
+    q: "Kapsamlı geriatrik değerlendirme yapılan 82 yaşındaki erkek hastada; yürüme hızında belirgin yavaşlama (0.6 m/sn), el kavrama gücünde azalma (dinamometre ile düşük ölçüm) ve son 1 yılda istemsiz 5 kg kilo kaybı saptanıyor. Frailty (Kırılganlık) Sendromunun ana bileşeni olan 'Sarkopeni' tanısı alan bu hastada, iskelet kasında yaşlanmaya bağlı gelişen ve kas gücünün düşmesine yol açan karakteristik hücresel / histolojik değişim aşağıdakilerden hangisidir?",
+    options: [
+      "Mitokondrilerin kas hücrelerinde devasa boyutlara ulaşıp mekanik kasılmayı engellemesi",
+      "Tip I (Yavaş kasılan / Aerobik) kas liflerinin selektif (öncelikli) atrofisi ve ölümü",
+      "Tip II (Hızlı kasılan / Glikolitik) kas liflerinin öncelikli olarak boyutlarının küçülmesi (atrofi) ve apoptoza uğraması",
+      "Nöromüsküler kavşakta asetilkolin reseptörlerine karşı otoantikor gelişimi",
+      "Sarkoplazmik retikulumun aşırı kalsiyum pompalayarak hücreyi spazmda bırakması"
+    ],
+    correct: 2,
+    exp: "Sarkopeni; yaşla birlikte gelişen, kas kütlesi, kas gücü ve fiziksel performansın ilerleyici kaybıdır (Kırılganlığın temelidir). Yaşlanan iskelet kasında tüm lifler eşit oranda erimez. Yaşlanma sürecinde motor nöron kayıpları ve anabolik direnç nedeniyle, patognomonik olarak 'Tip II (Hızlı kasılan, güç üreten, glikolitik)' kas liflerinde öncelikli ve şiddetli bir atrofi / kayıp yaşanır. Tip I (Yavaş kasılan, dayanıklılık/postür) lifleri ise nispeten daha iyi korunur. Bu nedenle yaşlılarda patlayıcı güç (el sıkma, sandalyeden hızlı kalkma, düşmeyi engelleme refleksi) azalırken, yavaş/sabit hareketler korunabilir."
+  },
+  {
+    id: 446,
+    ders: "Dahiliye",
+    konu: "Geriartri",
+    diff: 4,
+    q: "Yetmiş sekiz yaşında hipertansif kadın hasta, sabah yataktan kalktığı anda gözlerinin karardığını, başının döndüğünü ve birkaç kez düştüğünü belirterek başvuruyor. Yatar pozisyondayken tansiyonu 140/80 mmHg, ayağa kalktıktan 3 dakika sonra ise 110/60 mmHg (sistolikte 30 mmHg düşüş) olarak ölçülüyor. Ancak bu düşüşe rağmen hastanın kalp hızında (nabız) anlamlı bir artış (taşikardi) olmadığı görülüyor. Yaşlı hastalarda Ortostatik (Postüral) Hipotansiyonu ve senkopları kolaylaştıran asıl fizyolojik (yaşlanma) mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Aort kapağının kireçlenerek (skleroz) efor sırasında kalbin atım hacmini artırmasını engellemesi",
+      "Aort kavsi ve karotis sinüsteki 'Baroreseptör' hassasiyetinin (duyarlılığının) yaşla birlikte azalması ve damar sertliğine bağlı refleks sempatik yanıtın (vazokonstriksiyon/taşikardi) gecikmesi/yetersizliği",
+      "Kalpteki sinoatriyal (SA) düğüm hücrelerinin artarak kalbi bradikardiye zorlaması",
+      "Venöz kapakçıkların aşırı çalışarak kanı bacaklarda kilitlemesi",
+      "Beyin sapındaki vazomotor merkezin amiloid plaklarla tıkanması"
+    ],
+    correct: 1,
+    exp: "Ortostatik Hipotansiyon (ayağa kalkınca sistoliğin >20 veya diyastoliğin >10 mmHg düşmesi); yaşlılarda düşmelerin ve kalça kırıklarının majör nedenidir. Genç bir insan ayağa kalktığında kan bacaklara göllenir, tansiyon anlık düşer; ancak boyundaki 'Baroreseptörler' bunu anında sezip sempatik sistemi ateşler (Refleks Taşikardi ve Vazokonstriksiyon) ve tansiyon saniyeler içinde toparlar. Yaşlılarda ise damarlar sertleşmiştir ve 'Baroreseptör Refleks Duyarlılığı (Sensitivity)' ciddi şekilde KÖRELMİŞTİR. Yaşlı kişi ayağa kalktığında vücut bu düşüşü algılayıp zamanında refleks taşikardi / vazokonstriksiyon yaratamaz. Kan beyinden çekilir ve hasta düşer."
+  },
+  {
+    id: 447,
+    ders: "Dahiliye",
+    konu: "Geriartri",
+    diff: 4,
+    q: "Altmış beş yaşında, hayatı boyunca hiç gözlük kullanmamış olan erkek hasta; son yıllarda gazete okurken veya telefonuna bakarken yazıları net göremediğini, okuyabilmek için yazıları kol mesafesinde (uzağa) tutmak zorunda kaldığını belirterek başvuruyor. Uzağı görmesinde ise hiçbir problem yoktur. Göz muayenesinde katarakt veya makula dejenerasyonu saptanmıyor. 'Presbiyopi (Yaşlı gözü)' adı verilen bu fizyolojik görme kusurunun anatomik ve optik mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Retinadaki koni hücrelerinin yaşa bağlı apoptoza uğraması",
+      "Göz küresinin ön-arka ekseninin (aksiyel uzunluğunun) yaşla birlikte uzayarak miyopi yaratması",
+      "Kornea eğriliğinin kırıcılığını tamamen kaybetmesi",
+      "Siliyer kaslar kasıldığında bile, lensin (merceğin) yaşa bağlı sertleşmesi (elastikiyet kaybı) nedeniyle küreselleşememesi ve 'akomodasyon (uyum)' yapamaması",
+      "Vitreus sıvısının koyulaşarak ışığın kırılmasını engellemesi"
+    ],
+    correct: 3,
+    exp: "Presbiyopi (Yaşlılık Hipermetropisi), 40'lı yaşlardan itibaren herkesin başına gelen yakın görme bozukluğudur. İnsan yakına bakarken normalde 'Akomodasyon (Uyum)' refleksi devreye girer: Siliyer kaslar kasılır, asıcı bağlar gevşer ve esnek olan Göz Merceği (Lens) kendi haline kalarak yuvarlaklaşır/küreselleşir. Küreselleşen lensin kırma gücü artar ve yakındaki yazılar retinaya düşer. Ancak yaşlandıkça lens kristalleşir, sertleşir ve ELASTİKİYETİNİ KAYBEDER. Siz yakına bakmak için siliyer kası kassanız bile, o kaskatı lens yuvarlaklaşıp şekil değiştiremez. Kırma gücü artmadığı için görüntü retinanın 'arkasına' düşer (yakını bulanık görür). Çözüm (+) kırıcılıklı yakın gözlüğü (yakın okuma gözlüğü) kullanmaktır."
+  },
+  {
+    id: 448,
+    ders: "Dahiliye",
+    konu: "Geriartri",
+    diff: 5,
+    q: "Yetmiş iki yaşında kadın hasta, son 3 yıldır yavaş yavaş ilerleyen yakın zaman hafıza kaybı, kelime bulma zorluğu ve eşyalarını kaybetme şikayetiyle getiriliyor. Nörolojik muayenesinde fokal nörolojik defisit (felç vs.) saptanmıyor. Kranial MRG'de bilateral hipokampal (medial temporal) atrofi saptanıyor. Alzheimer Hastalığı tanısı alan bu hastada, nöronların dışında (ekstraselüler) birikerek senil plakları oluşturan ve hastalığın patogenezini başlatan nörotoksik peptidin (Amiloid-beta) oluşum mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Tau proteininin hiperfosforilasyon sonucu mikrotübüllerden ayrılması",
+      "Amiloid Prekürsör Proteininin (APP), normal yolak olan Alfa-sekretaz yerine, ardışık olarak 'Beta-sekretaz ve Gama-sekretaz' enzimleri tarafından kesilmesi",
+      "Apolipoprotein E4'ün (ApoE4) doğrudan nöron zarını delmesi",
+      "Prion proteininin (PrPc) beta kırmalı tabaka formuna (PrPsc) dönüşmesi",
+      "Lewy cisimcikleri içindeki alfa-sinüklein agregasyonu"
+    ],
+    correct: 1,
+    exp: "Alzheimer hastalığının moleküler temelinde iki büyük patoloji vardır: Hücre Dışında 'Amiloid Beta Plakları' ve Hücre İçinde 'Nörofibriler Yumaklar (Hiperfosforile Tau)'. Amiloid beta'nın oluşum mekanizması şöyledir: Nöron zarında bulunan Amiloid Prekürsör Proteini (APP), normal sağlıklı insanlarda 'Alfa-sekretaz' ve Gama-sekretaz enzimleri ile kesilerek suda çözünen zararsız parçalara ayrılır (Non-amiloidojenik yol). Ancak Alzheimer hastalarında bu protein, Alfa yerine 'BETA-SEKRETAZ (BACE)' ve ardından Presenilin içeren 'GAMA-SEKRETAZ' enzimleri tarafından kesilir. Bu hatalı kesim ortaya suda çözünmeyen, toksik 'Amiloid Beta 42 (A-beta-42)' polimerini çıkarır. Bu polimerler hücre dışına çöker, plak oluşturur ve nöronu zehirleyerek öldürür."
+  },
+  {
+    id: 449,
+    ders: "Dahiliye",
+    konu: "Geriartri",
+    diff: 4,
+    q: "Seksen yaşında kadın hasta, tuvalete gitme hissi (sıkışma) geldiği anda tuvalete yetişemeden idrarını kaçırma şikayetiyle başvuruyor. Hasta günde 10-12 kez tuvalete gittiğini ve geceleri idrara çıkmak için 3 kez uyandığını (noktüri) belirtiyor. Öksürme veya hapşırma ile idrar kaçırma (Stres inkontinans) şikayeti YOKTUR. İdrar yolu enfeksiyonu ve prolapsus (sarkma) ekarte edilen bu hastadaki en olası idrar kaçırma tipi (Sıkışma / Urge İnkontinans) tablosunun ürodinamik ve patofizyolojik nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "Pelvik taban kaslarının ve puboservikal fasyanın zayıflamasına bağlı üretral hipermobilite",
+      "Prostat büyümesine (veya darlığa) bağlı mesanenin tamamen dolup taşması (Taşma / Overflow inkontinans)",
+      "Mesanenin dolum fazı sırasında (henüz dolmadan) Detrusor kasının istemsiz, inhibe edilemeyen otonomik aşırı aktivitesi (kasılması)",
+      "Pudendal sinir felcine bağlı eksternal üretral sfinkterin tamamen açık kalması",
+      "Kognitif yıkım nedeniyle hastanın tuvaletin yerini bulamaması (Fonksiyonel inkontinans)"
+    ],
+    correct: 2,
+    exp: "Yaşlılarda görülen idrar kaçırma tipleri (İnkontinans) mekanizma olarak ayrılır. 1) Stres İnkontinans: Öksürünce/Gülünce kaçar, nedeni 'Pelvik taban zayıflığı/Üretral hipermobilite'dir. 2) Urge (Sıkışma) İnkontinans: Yaşlılarda en sık görülen tiptir. Tuvalet hissi gelir ama hasta tutamaz ve yolda kaçırır (Aşırı aktif mesane). Nedeni; mesane (Detrusor) kasının idrar biriktirme (dolum) fazı sırasında beynin baskılayıcı sinyallerini dinlemeyip, 'istemsiz ve zamansız bir şekilde kendi kendine kasılması (Aşırı Aktivitesi)'dir. Tedavide bu kasılmayı durdurmak için mesaneyi gevşeten Antimuskarinik ilaçlar (Oksibutinin, Tolterodin) veya Beta-3 agonistleri (Mirabegron) kullanılır."
+  },
+  {
+    id: 450,
+    ders: "Pediatri",
+    konu: "Yenidoğan",
+    diff: 4,
+    q: "Otuz sekizinci gebelik haftasında elektif sezaryen (C/S) ile doğan 3200 gram ağırlığındaki erkek yenidoğan, doğumdan 2 saat sonra başlayan hızlı soluma (taşipne), inleme ve hafif çekilmeler nedeniyle yenidoğan yoğun bakıma alınıyor. Çekilen akciğer grafisinde havalanma artışı, belirgin interlober fissürler ve perihiler vasküler belirginleşme (ışınsal taranma) izleniyor. Hastaya sadece oksijen (ve nazal CPAP) başlanıyor ve bulgular 48 saat içinde tamamen düzeliyor. Yenidoğanın Geçici Taşipnesi (TTN) tanısı alan bu bebeğin klinik tablosunun temelindeki fizyopatolojik mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Sürfaktan üretiminde primer eksiklik veya inaktivasyon",
+      "Mekonyumun küçük hava yollarını tıkayarak check-valf (bilye-valf) mekanizması yapması",
+      "Fetal akciğer sıvısının doğum sonrasında lenfatik ve venöz sistemler aracılığıyla emiliminde (klirensinde) gecikme",
+      "Doğum asfiksisi sonucu gelişen persistan pulmoner hipertansiyon (PPHN)",
+      "Konjenital alveolar kapiller displaziye bağlı difüzyon defekti"
+    ],
+    correct: 2,
+    exp: "Yenidoğanın Geçici Taşipnesi (TTN - Yaş Akciğer / Wet Lung); genellikle miyadında (term) veya sınırda prematüre doğan, özellikle travay (doğum eylemi) başlamadan elektif sezaryenle doğan bebeklerde görülür. Normal doğum eylemi sırasında salgılanan katekolaminler, fetal akciğer sıvısının emilimini sağlayan ENaC sodyum kanallarını aktive eder. Sezaryende bu stres/katekolamin deşarjı olmadığı için akciğer sıvısı alveollerde ve interstisyel alanda kalır (emilim gecikir). Grafide fissürlerde sıvı çizgilenmeleri tipiktir. Benign bir tablodur, 2-3 günde kendiliğinden düzelir."
+  },
+  {
+    id: 451,
+    ders: "Pediatri",
+    konu: "Yenidoğan",
+    diff: 4,
+    q: "Gestasyonel diyabet öyküsü olan anneden 36. haftada 4200 gram (makrozomik) olarak doğan bebek, doğumun ilk saatinde şiddetli solunum sıkıntısı ve morarma tablosu geliştiriyor. Akciğer grafisinde her iki akciğer alanında yaygın ince retikülonodüler görünüm ve hava bronkogramları (buzlu cam manzarası) saptanıyor. Respiratuar Distres Sendromu (RDS) tanısı alan bu bebekte, maternal diyabetin RDS gelişim riskini artırmasının (akciğer matürasyonunu geciktirmesinin) fizyolojik temeli aşağıdakilerden hangisidir?",
+    options: [
+      "Fetal hipergliseminin doğrudan Tip II pnömositleri apoptoza uğratması",
+      "Annede yüksek olan glukagonun plasentayı geçerek fetal kortizol üretimini durdurması",
+      "Fetal hiperinsülineminin, akciğerlerde sürfaktan sentezini uyaran fetal kortizolün etkisini antagonize (bloke) etmesi",
+      "Diyabetik annelerde amniyon sıvısı miktarının azalmasına bağlı pulmoner hipoplazi gelişimi",
+      "Yüksek insülin düzeylerinin sfingomiyelin sentezini artırıp lesitin sentezini durdurması"
+    ],
+    correct: 2,
+    exp: "Respiratuar Distres Sendromu (RDS / Hiyalin Membran Hastalığı), temel olarak Tip II pnömositlerden salgılanan Sürfaktan eksikliğine bağlıdır. En büyük risk faktörü prematüritedir. Ancak diyabetik anne bebeklerinde (İnfant of Diabetic Mother - IDM), bebek term'e yakın doğsa bile RDS riski çok yüksektir. Annenin yüksek şekeri bebeğe geçer, bebekte masif 'Hiperinsülinemi' yapar. İnsülin çok güçlü bir anabolik hormondur ancak akciğer olgunlaşması için gereken 'Kortizol'ün (katabolik bir stres hormonu) sürfaktan sentezleyici etkisini bloke eder (antagonizma). Bu nedenle IDM bebeklerinde akciğerler geç olgunlaşır."
+  },
+  {
+    id: 452,
+    ders: "Pediatri",
+    konu: "Yenidoğan",
+    diff: 5,
+    q: "Hayatının 3. haftasında olan ve sadece anne sütüyle beslenen yenidoğan, giderek artan sarılık şikayetiyle getiriliyor. Fizik muayenede hepatosplenomegali yoktur, bebek canlıdır ve emmesi iyidir. Laboratuvarda Total Bilirubin: 14 mg/dL, Direkt Bilirubin: 0.8 mg/dL (İndirekt hiperbilirubinemi) saptanıyor. Anne ve bebeğin kan grupları uyumludur (ABO/Rh uygunsuzluğu yok), retikülosit sayısı ve periferik yayma normaldir. Uzamış anne sütü sarılığı düşünülen bu vakada, anne sütü içinde bulunan ve bağırsaklarda konjuge bilirubini tekrar ankonjuge forma çevirerek enterohepatik sirkülasyonu (geri emilimi) artıran enzim aşağıdakilerden hangisidir?",
+    options: [
+      "Lipoprotein lipaz",
+      "Beta-glukuronidaz",
+      "UDP-glukuronil transferaz",
+      "Oksidoredüktaz",
+      "Biliverdin redüktaz"
+    ],
+    correct: 1,
+    exp: "Anne Sütü Sarılığı (Geç tip); 2-3. haftalarda ortaya çıkan, tamamen sağlıklı, iyi büyüyen bebeklerde görülen masum bir indirekt hiperbilirubinemi tablosudur. Patogenezi tam aydınlatılamamakla birlikte, en kabul gören mekanizma anne sütünde yüksek miktarda bulunan 'Beta-Glukuronidaz' enzimidir. Normalde karaciğer bilirubini glukuronik asitle konjuge edip (suda çözünür yapıp) safrayla bağırsağa atar. Anne sütündeki Beta-glukuronidaz enzimi bağırsağa geldiğinde bu bağı keser, bilirubini tekrar ankonjuge (yağda çözünür) hale getirir. Ankonjuge bilirubin bağırsaktan kana geri emilir (Enterohepatik sirkülasyon artar) ve sarılık uzar."
+  },
+  {
+    id: 453,
+    ders: "Pediatri",
+    konu: "Yenidoğan",
+    diff: 4,
+    q: "Göbek kordonu doğumdan 5 hafta sonra (gecikmiş olarak) düşen 6 aylık erkek bebek, hayatı boyunca tekrarlayan omfalit, selülit ve pnömoni atakları geçirmesi nedeniyle bağışıklık testlerine alınıyor. Çocuğun geçirdiği ağır bakteriyel deri enfeksiyonlarının hiçbirinde 'püy (irin / cerahat)' oluşumu izlenmiyor ve lezyon çevresinde eritem olmuyor. Kan sayımında lökosit sayısı 45.000/mm3 (Belirgin Lökositoz) ve nötrofil hakimiyeti saptanıyor. Lökosit Adezyon Defekti Tip 1 (LAD-1) tanısı konan bu hastada, nötrofillerin damar dışına (enfeksiyon bölgesine) çıkmasını sağlayan hangi integrin alt biriminin genetik eksikliği mevcuttur?",
+    options: [
+      "CD40 ligandı",
+      "L-Selektin",
+      "CD18 (Beta-2 integrin)",
+      "Sialyl-Lewis X",
+      "ICAM-1"
+    ],
+    correct: 2,
+    exp: "Lökosit Adezyon Defekti (LAD Tip 1); çok klasik bir primer immün yetmezliktir. Klasik triad: Gecikmiş göbek kordonu düşmesi (>30 gün), püy (irin) olmayan tekrarlayan ağır enfeksiyonlar ve kanda masif nötrofilik lökositozdur. Kanda bolca nötrofil vardır (lökositoz) ancak bu nötrofiller damar endoteline yapışıp (adezyon) dokuya geçemezler. Dokuda nötrofil olmadığı için irin/püy (ölü nötrofil birikintisi) oluşamaz. Patogenezde nötrofil yüzeyinde bulunan, endoteldeki ICAM-1'e sıkıca tutunmayı sağlayan 'CD18 (Beta-2 integrin)' alt biriminin eksikliği (ITGB2 gen mutasyonu) yatar."
+  },
+  {
+    id: 454,
+    ders: "Pediatri",
+    konu: "Yenidoğan",
+    diff: 4,
+    q: "Ağır oligohidramnios (amniyon sıvısı azlığı) öyküsü olan anneden miyadında doğan yenidoğanın muayenesinde; basık yüz hatları, düşük kulaklar, basık burun kökü (Potter yüzü) ve her iki bacakta varus deformitesi (çarpık ayak) saptanıyor. Doğumdan hemen sonra şiddetli solunum yetmezliğine giren bebek, entübasyona rağmen kaybediliyor. Potter Sekansı (Sendromu) olarak bilinen bu tablonun patogenezinde, oligohidramniosa ve buna bağlı gelişen sekonder bulgulara (akciğer hipoplazisi ve yüz deformitelerine) yol açan birincil anatomik defekt genellikle aşağıdakilerden hangisidir?",
+    options: [
+      "Bilateral renal agenezi (böbreklerin gelişmemesi)",
+      "Konjenital diyafragma hernisi",
+      "Trakeoözofageal fistül",
+      "Duodenal atrezi",
+      "Posterior üretral valv (PUV) yokluğu"
+    ],
+    correct: 0,
+    exp: "Potter Sekansı, bir sendromdan ziyade olaylar dizisidir (Kaskad). Fetal dönemde amniyon sıvısının ana kaynağı fetüsün idrarıdır. Eğer fetüsün iki böbreği de gelişmemişse (Bilateral Renal Agenezi) idrar üretemez ve 'Oligohidramnios' gelişir. Amniyon sıvısı azaldığı için rahim bebeği her taraftan sıkıştırır (Yüz basıklaşır, bacaklar eğrilir = Potter yüzü/deformiteleri). Ayrıca amniyon sıvısı fetal akciğerlerin içine girip çıkarak (solunum hareketleriyle) akciğerin büyümesini ve olgunlaşmasını sağlayan mekanik bir stresi oluşturur. Sıvı olmayınca akciğerler gelişemez (Pulmoner Hipoplazi). Bebek böbreksizlikten değil, doğumda nefes alamadığı için akciğer hipoplazisinden ölür."
+  },
+  {
+    id: 455,
+    ders: "Pediatri",
+    konu: "Genetik",
+    diff: 4,
+    q: "Doğumda bariz bir anomalisi olmayan, ancak 18 aylık olduğunda dudaklarını ve parmaklarını kanatana kadar ısırması (self-mutilasyon), istemsiz kıvranma hareketleri (koreoatetoz) ve motor gelişim geriliği ile getirilen erkek çocuğun bezinde zaman zaman turuncu-kırmızı renkte kum taneleri (kristaller) görüldüğü belirtiliyor. Kanda ve idrarda ürik asit düzeyi çok yüksek saptanan Lesch-Nyhan Sendromlu bu hastada eksikliği olan enzimin (HGPRT) hücresel düzeydeki fonksiyonu aşağıdakilerden hangisidir?",
+    options: [
+      "Pürin nükleotidlerinin (Adenin ve Guanin) sıfırdan (de novo) sentezlenmesi",
+      "Yıkılmakta olan hipoksantin ve guaninin PRPP kullanılarak tekrar nükleotidlere (IMP ve GMP) geri dönüştürülmesi (Pürin Kurtarma Yolağı)",
+      "Pürin bazlarının ürik aside çevrilmesi",
+      "Ribonükleotidlerin deoksiribonükleotidlere dönüştürülerek DNA sentezinin başlatılması",
+      "Adenozinin inozine deaminasyonu"
+    ],
+    correct: 1,
+    exp: "Lesch-Nyhan Sendromu, X'e bağlı resesif geçen, pürin kurtarma yolağı (Salvage pathway) enzimi olan HGPRT (Hipoksantin-guanin fosforiboziltransferaz) eksikliğidir. Klasik kliniği: Kendi kendini yeme (Self-mutilasyon), zeka geriliği, distoni ve masif hiperürisemi (bezde turuncu kum). Vücut normalde yıkılan DNA/RNA bazlarını (hipoksantin, guanin) çöpe atmak yerine HGPRT enzimi ile yakalar ve tekrar kullanılabilir nükleotidlere çevirir. HGPRT yoksa, tüm bu bazlar çöpe yani 'Ürik aside' gider ve ürik asit kanı zehirler. Aynı zamanda kurtarma işlemi yapılamadığı için vücut PRPP moleküllerini mecburen sıfırdan pürin sentezine (de novo) harcayarak sistemi daha da bozar."
+  },
+  {
+    id: 456,
+    ders: "Pediatri",
+    konu: "Genetik",
+    diff: 4,
+    q: "Kısa boy ve primer amenore (hiç adet görememe) şikayetiyle başvuran 16 yaşındaki kız hastanın fizik muayenesinde; boyun kenarlarında yelkenlenme (webbed neck), geniş ve kalkan şeklinde göğüs kafesi (shield chest), meme uçlarının birbirinden uzak (aralıklı) olması ve dirseklerde dışa dönüklük (kübitus valgus) saptanıyor. Zeka düzeyi tamamen normaldir. Turner Sendromu (45,X0) ön tanısı konan bu hastada, ilerleyen yaşlarda aort rüptürü ve ölüme neden olabilen en sık görülen spesifik konjenital kalp defekti aşağıdakilerden hangisidir?",
+    options: [
+      "Atriyal Septal Defekt (ASD) sekundum tip",
+      "Fallot Tetralojisi",
+      "Biküspit Aort Kapağı (ve sıklıkla eşlik eden Aort Koarktasyonu)",
+      "Büyük Arterlerin Transpozisyonu",
+      "Trunkus Arteriozus"
+    ],
+    correct: 2,
+    exp: "Turner Sendromu (45,X0); kız çocuklarında kısa boy, yele boyun (kistik higroma sekeli) ve primer amenorenin (gonadal disgenezi / streak over) en sık nedenidir. Zeka genellikle NORMALDİR. Turner sendromuna eşlik eden majör anomaliler kalp ve böbrektedir (At nalı böbrek). En sık görülen konjenital kalp hastalığı 'Biküspit Aort Kapağı'dır (%30-50). İkinci sıklıkla 'Aort Koarktasyonu' (Pre-duktal tip) görülür. Bu iki defekt genellikle birlikte bulunur ve zamanla aort kökü dilatasyonuna, diseksiyona ve rüptüre yol açarak Turner hastalarının erken yaşta ölmesine neden olabilir."
+  },
+  {
+    id: 457,
+    ders: "Pediatri",
+    konu: "Genetik",
+    diff: 4,
+    q: "Üç yaşındaki kız çocuk, konuşma gecikmesi, aşırı dostane ve girişken (yabancılara hemen sarılan) kişilik yapısı, belirgin dudakları, geniş ağzı ve şişkin yanakları (Elfin / Peri yüzü) ile dikkat çekiyor. Poliklinikte yapılan kan tetkiklerinde Serum Kalsiyum: 11.8 mg/dL (Hiperkalsemi) saptanıyor. Ekokardiyografisinde Supravalvüler Aort Stenozu tespit edilen bu sendromun (Williams Sendromu) genetik temelinde, 7. kromozomun uzun kolunda (7q11.23) delesyon sonucu hangi spesifik genin kaybı rol oynamaktadır?",
+    options: [
+      "Fibrillin-1 geni",
+      "Elastin (ELN) geni",
+      "Kollajen Tip I geni",
+      "D distrofin geni",
+      "FGFR3 (Fibroblast Growth Factor Receptor 3) geni"
+    ],
+    correct: 1,
+    exp: "Williams Sendromu; çok karakteristik 'Elfin (Peri)' yüzü, kokteyl parti kişiliği (aşırı sosyal, konuşkan ama zeka geriliği olan), Supravalvüler Aort Darlığı ve bebeklik döneminde (D vitamini duyarlılığına bağlı) 'İdiyopatik Hiperkalsemi' ile seyreden bir mikrodelesyon sendromudur. Defekt kromozom 7q11.23'tedir. Bu bölgeden kopan (delesyona uğrayan) en önemli gen 'Elastin (ELN) Geni'dir. Elastin geninin kaybı, özellikle büyük damarlarda (aortta) elastikiyet kaybına ve Supravalvüler Aort Stenozuna yol açar. (Not: Fibrillin-1 mutasyonu Marfan sendromunda, FGFR3 mutasyonu Akondroplazide görülür)."
+  },
+  {
+    id: 458,
+    ders: "Pediatri",
+    konu: "Genetik",
+    diff: 4,
+    q: "Altı yaşında erkek çocuk, konuşma geriliği, dikkat eksikliği hiperaktivite bozukluğu (DEHB) ve otistik davranışlar sergilemesi nedeniyle getiriliyor. Fizik muayenesinde uzun ve dar bir yüz yapısı, belirgin bir alın, kepçe kulaklar ve prepubertal bir çocuk olmasına rağmen testis hacminin yaşa göre çok büyük olduğu (Makroorşidizm) saptanıyor. Erkeklerde kalıtsal zeka geriliğinin en sık nedeni olan Frajil X Sendromu tanısı alan bu hastada, X kromozomu üzerindeki FMR1 geninin susturulmasına (hipermetilasyon) neden olan genetik mutasyon paterni aşağıdakilerden hangisidir?",
+    options: [
+      "GAA üçlü tekrar sayısının artması",
+      "CAG üçlü tekrar sayısının artması",
+      "CGG üçlü tekrar sayısının artması",
+      "CTG üçlü tekrar sayısının artması",
+      "Kromozom 15'te paternal mikrodelesyon"
+    ],
+    correct: 2,
+    exp: "Frajil X Sendromu, 'Kalıtsal' zeka geriliğinin en sık nedenidir (Down sendromu en sık zeka geriliği nedenidir ancak kalıtsal değil, sporadik kromozom ayrılmamasına bağlıdır). Frajil X kliniği: Uzun yüz, büyük-kepçe kulak, mental retardasyon, otistik özellikler ve klasik olarak 'Makroorşidizm'dir (Büyük testisler). Patogenez; X kromozomundaki FMR1 geninin promotor bölgesinde 'CGG' (Citozin-Guanin-Guanin) üçlü (trinükleotid) tekrarlarının 200'ün üzerine (tam mutasyon) çıkmasıdır. Bu aşırı tekrar, geni hipermetilasyona uğratarak susturur, FMRP proteini üretilemez ve beyin gelişimi bozulur. (GAA tekrarı Friedreich Ataksisi, CAG tekrarı Huntington, CTG tekrarı Miyotonik Distrofi'dir)."
+  },
+  {
+    id: 459,
+    ders: "Pediatri",
+    konu: "Genetik",
+    diff: 5,
+    q: "Yenidoğan yoğun bakımda yatan ve hayatının 3. gününde jeneralize tonik-klonik nöbet geçiren bebeğin tetkiklerinde Serum Kalsiyum: 6.0 mg/dL (Derin Hipokalsemi) saptanıyor. Fizik muayenede mikrognati (küçük çene), yarık damak ve düşük kulaklar izleniyor. Çekilen akciğer grafisinde timus gölgesi izlenmeyen (Timik aplazi) ve ekokardiyografisinde Konotrunkal kalp anomalisi (Turunkus arteriozus) saptanan bu hastanın (DiGeorge Sendromu), immünolojik olarak T hücre yetmezliği yaşamasına neden olan embriyolojik defekt hangi yutak kavsi/cebi (faringeal pouch) yapısının gelişim kusurundan kaynaklanır?",
+    options: [
+      "1. ve 2. Faringeal Cepler (Pouches)",
+      "3. ve 4. Faringeal Cepler (Pouches)",
+      "2. ve 3. Faringeal Arkuslar",
+      "1. Faringeal Yarık (Cleft)",
+      "5. ve 6. Faringeal Arkuslar"
+    ],
+    correct: 1,
+    exp: "DiGeorge Sendromu (Velo-Kardiyo-Fasiyal Sendrom / 22q11.2 Delesyonu); klasik olarak CATCH-22 akronimiyle bilinir: Cardiac defects, Abnormal facies, Thymic hypoplasia, Cleft palate, Hypocalcemia. Hipokalsemiye bağlı yenidoğan konvülsiyonları çok tipiktir. Bu sendromun anatomik temeli, embriyolojik hayattaki '3. ve 4. Faringeal Ceplerin (Pouch)' gelişememesidir. 3. Cep, inferior paratiroid bezini ve Timus'u oluşturur. 4. Cep ise superior paratiroid bezini oluşturur. Bu cepler gelişemediğinde Paratiroid bezi oluşamaz (PTH yok = Hipokalsemi) ve Timus oluşamaz (T lenfositler olgunlaşamaz = İmmün yetmezlik)."
+  },
+  {
+    id: 460,
+    ders: "Pediatri",
+    konu: "Büyüme ve Gelişme",
+    diff: 4,
+    q: "Polikliniğe rutin sağlam çocuk kontrolü için getirilen bir çocuğun nöromotor ve psikososyal gelişimi değerlendiriliyor. Çocuğun tek başına merdiven inip çıkabildiği (her basamağa iki ayağını basarak), altı adet küpü üst üste dizerek kule yapabildiği, kaşıkla kendi kendine yemek yiyebildiği, iki kelimelik basit cümleler kurabildiği ('Anne su', 'Topu at') ve vücudundaki 4-5 kısmı (göz, burun, kulak) gösterebildiği saptanıyor. Çişini veya kakasını söylediği belirtiliyor. Bu gelişimsel beceriler, aşağıdaki kronolojik yaşlardan hangisi ile en uyumludur?",
+    options: [
+      "12 ay (1 yaş)",
+      "15 ay",
+      "18 ay",
+      "24 ay (2 yaş)",
+      "36 ay (3 yaş)"
+    ],
+    correct: 3,
+    exp: "Gelişim basamakları Pediatride banko sorudur. Vakamızdaki çocuk 2 yaş (24 ay) becerilerini tam olarak sergilemektedir. 2 yaşın en klasik bulguları (İkiler kuralı): 2 ayakla basamağa basarak merdiven çıkar, 2 kelimeli cümle kurar, 2/4 (yani yarım) oranda yabancılar tarafından konuşması anlaşılır, küplerden 6 katlı kule yapar, koşabilir ve tuvalet ihtiyacını ifade etmeye başlar. (12 ay: 2-3 kelime bilir, yürür. 18 ay: 10 kelime, 3-4 küp kule, elinden tutulup merdiven çıkar. 3 yaş: 3 tekerlekli bisiklet, 3 kelimeli cümle, ayak değiştirerek merdiven çıkar, yaşını/cinsiyetini bilir)."
+  },
+  {
+    id: 461,
+    ders: "Pediatri",
+    konu: "Büyüme ve Gelişme",
+    diff: 4,
+    q: "On dört yaşında bir erkek çocuk, yaşıtlarına göre boyunun kısa olması ve henüz ergenliğe girmemesi (puberte bulgusu olmaması) şikayetiyle babası tarafından getiriliyor. Muayenede boy 3. persentilin altındadır, testis hacmi 3 ml (prepubertal). Babası kendi lise yıllarında da sınıfın en kısası olduğunu, lise sonda aniden uzadığını belirtiyor. Çocuğun sol el bilek grafisinde kemik yaşı 11 yaş ile uyumlu bulunuyor. Çocuğun hedef boyu (genetik potansiyeli) ise 50. persentildedir. Yapısal Büyüme ve Puberte Gecikmesi (Constitutional Delay of Growth and Puberty - CDGP) tanısı alan bu hastanın büyüme paterni için en doğru ifade aşağıdakilerden hangisidir?",
+    options: [
+      "Kemik yaşı kronolojik yaşa eşittir, ancak boy yaşı geridir.",
+      "Nihai erişkin boyu, genetik hedef boyunun belirgin olarak altında kalacaktır.",
+      "Büyüme hızı (cm/yıl) çocukluk çağı boyunca sürekli olarak normalin altındadır.",
+      "Kemik yaşı geridir (kronolojik yaşından küçüktür) ve geçireceği pubertal büyüme atağı sayesinde nihai erişkin boyu genetik potansiyeline (hedef boya) ulaşacaktır.",
+      "Tanı ve tedavi için acil Büyüme Hormonu (GH) replasmanı başlanması şarttır."
+    ],
+    correct: 3,
+    exp: "Boy kısalıklarının en sık görülen iki normal varyantı Ailesel Boy Kısalığı ve Yapısal Büyüme Gecikmesi'dir (CDGP). CDGP (Yapısal gecikme) olan çocuklarda ailede (genellikle babada) 'late bloomer (geç açan çiçek)' öyküsü vardır. Çocuğun büyüme hızı normaldir ancak yaşıtları ergenliğe girip hızla uzarken bu çocuk girmediği için kısa kalır. En önemli bulgusu Kemik Yaşının GERİ olmasıdır (Kemik yaşı = Boy yaşı < Kronolojik yaş). Epifizleri geç kapanacağı için, bu çocuklar ergenliğe 2-3 yıl geç girer ama sonunda genetik hedef boylarına ULAŞIRLAR. (Ailesel boy kısalığında ise kemik yaşı normaldir, yaşıtlarıyla aynı anda ergenliğe girer ve kısa bir erişkin olurlar)."
+  },
+  {
+    id: 462,
+    ders: "Pediatri",
+    konu: "Büyüme ve Gelişme",
+    diff: 4,
+    q: "Sekiz yaşındaki kız çocuk, yaşıtlarına göre aşırı kilo alımı (obezite) nedeniyle endokrinoloji polikliniğine getiriliyor. Fizik muayenesinde boyu 90. persentilde (uzun), vücut ağırlığı 97. persentilin üzerinde (şişman) bulunuyor. Çekilen sol el-el bilek grafisinde kemik yaşı 10 yaş (ileri) olarak raporlanıyor. Sistemik veya dismorfik bir bulgusu olmayan bu hastada, boyun uzun ve kemik yaşının ileri olması obezitenin hangi tipte olduğunu gösteren klasik bir bulgudur?",
+    options: [
+      "Prader-Willi Sendromuna bağlı genetik obezite",
+      "Hipotiroidiye sekonder obezite",
+      "Cushing sendromuna sekonder obezite",
+      "Eksojen (Nutrisyonel / Beslenmeye bağlı) obezite",
+      "Büyüme hormonu eksikliğine bağlı obezite"
+    ],
+    correct: 3,
+    exp: "Çocukluk çağında obezitenin nedenini ayırmanın en pratik ve en önemli yolu 'Boy Uzunluğu ve Kemik Yaşı'na bakmaktır. Eğer bir çocuk obezse ve boyu UZUNSA (veya normal) ve kemik yaşı İLERİ ise bu %99 oranında 'Eksojen (Beslenmeye bağlı) Obezite'dir. Fazla alınan kaloriler ve insülin artışı büyümeyi kamçılar, çocuğu hem şişmanlatır hem uzatır. Ancak bir çocuk obezse ve boyu KISAYSA, kemik yaşı GERİ ise, bu mutlaka bir 'Endokrin veya Genetik' hastalığı (Hipotiroidi, Cushing, Büyüme hormonu eksikliği, Prader-Willi vb.) gösterir. Sorudaki hastanın boyu uzun ve kemik yaşı ileri olduğu için tanı basit eksojen obezitedir."
+  },
+  {
+    id: 463,
+    ders: "Pediatri",
+    konu: "Büyüme ve Gelişme",
+    diff: 5,
+    q: "Dört aylık erkek bebek, başının giderek şekilsiz bir hal alması (uzun ve ince kafa) nedeniyle getiriliyor. Muayenede bebeğin başının anteroposterior (ön-arka) eksende normalden uzun, bitemporal eksende (yanlardan) ise dar olduğu saptanıyor. Nörolojik gelişimi normaldir ve KİBAS (kafa içi basınç artışı) bulgusu yoktur. Kranial 3D Tomografide, kafatasındaki spesifik bir sütürün erken yaşta kemikleşerek (füzyona uğrayarak) kapandığı izleniyor. 'Skafosefali (Kayık kafa)' olarak adlandırılan bu en sık görülen kraniyosinostoz tipinde, erken kapanan kafatası sütürü aşağıdakilerden hangisidir?",
+    options: [
+      "Koronal sütür",
+      "Metopik sütür",
+      "Sagital sütür",
+      "Lambdoid sütür",
+      "Squamöz sütür"
+    ],
+    correct: 2,
+    exp: "Kraniyosinostoz, kafatası sütürlerinden bir veya birkaçının erken kapanmasıdır. Kafa, kapanan sütüre dik açıda (diğer açık sütürlere doğru) büyüyerek şekil bozukluğu yapar. En sık görülen (%50) kraniyosinostoz tipi 'Sagital Sütür'ün erken kapanmasıdır. Sagital sütür beyni sağ-sol olarak ikiye böler. Bu sütür kapanınca kafa yanlara (genişliğine) doğru büyüyemez; mecburen öne ve arkaya doğru uzayarak kayık şeklini alır. Bu deformiteye Skafosefali (veya Dolikosefali) denir. (Koronal sütür tek taraflı kapanırsa Plagiosefali, Metopik sütür kapanırsa Trigonosefali/Üçgen kafa oluşur)."
+  },
+  {
+    id: 464,
+    ders: "Pediatri",
+    konu: "Büyüme ve Gelişme",
+    diff: 4,
+    q: "İlk çocuğunu büyüten bir anne, 13 aylık bebeğinin henüz hiç diş çıkarmamış olması nedeniyle endişeyle polikliniğe başvuruyor. Bebeğin doğum kilosu ve boyu normal olup, motor gelişimi 13 ayla uyumludur (desteksiz yürüyor). Fizik muayenede ön fontanelin henüz kapanmadığı ve geniş (3x3 cm) olduğu saptanıyor. Anneye ilk dişlerin genellikle hangi ay aralığında çıktığı ve bebeklerde 'gecikmiş diş çıkarma' (delayed dentition) tanısı koyabilmek için bebeğin en az kaç aylık olmasına rağmen hiç diş çıkarmamış olması gerektiği bilgisi verilmelidir?",
+    options: [
+      "İlk diş 2-4 ayda çıkar / Gecikme tanısı için 9 ay beklenir",
+      "İlk diş 6-8 ayda çıkar / Gecikme tanısı için 13 ay beklenir",
+      "İlk diş 4-6 ayda çıkar / Gecikme tanısı için 18 ay beklenir",
+      "İlk diş 9-11 ayda çıkar / Gecikme tanısı için 24 ay beklenir",
+      "İlk diş 12-14 ayda çıkar / Gecikme tanısı için 36 ay beklenir"
+    ],
+    correct: 2,
+    exp: "Pediatride diş çıkarma fizyolojisi önemlidir. Normal bir bebekte ilk çıkan diş 'Alt Santral Kesici' dişlerdir ve ortalama 6. ayda (geniş bir aralıkla 4-8 ay arası) çıkarlar. Anne sütü, D vitamini eksikliği, genetik faktörler diş çıkışını etkiler. Bir bebekte 'Gecikmiş Diş Çıkarma' diyebilmek (ve hipotiroidi, raşitizm, ektodermal displazi gibi hastalıkları araştırmaya başlamak) için bebeğin KESİNTİSİZ 13 aya kadar diş çıkarmamış olması eskiden kabul edilirdi, ancak güncel temel pediatri kaynakları (Nelson) ilk diş için 15-18 aya kadar beklenebileceğini (özellikle 18. ayda hiç diş yoksa patolojik kabul edileceğini) belirtmektedir. Bu nedenle 13 aylık bebeğin gelişimi normalse telaş edilecek bir durum yoktur, 18. aya kadar gözlenebilir."
+  },
+  {
+    id: 465,
+    ders: "Pediatri",
+    konu: "Beslenme",
+    diff: 4,
+    q: "Sadece anne sütüyle beslenen ve D vitamini takviyesi almayan 10 aylık erkek bebek; huzursuzluk, kafatasında masa tenisi topu gibi esneme (kraniotabes) ve el bileklerinde genişleme şikayetleriyle getiriliyor. Çekilen el bilek grafisinde metafizlerde fırçamsı (fraying) ve kadehleşme (cupping) izleniyor. Nutrisyonel Raşitizm tanısı alan bu hastada, laboratuvar bulgularında 'Alkalen Fosfataz (ALP)' enziminin belirgin şekilde yüksek saptanmasının fizyolojik nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "Karaciğerde D vitamini sentezinin artmasına sekonder gelişen hepatosit hasarı",
+      "Kalsiyum eksikliğine yanıt olarak osteoklastların kemiği yıkarken asit salgılaması",
+      "Kemiğin mineralizasyon defektini (zayıflığını) telafi etmek amacıyla 'Osteoblast' aktivitesinin (kemik yapım eforunun) aşırı derecede artması",
+      "Bağırsak fırçamsı kenarlarında kalsiyum emilimini artırmak için mikrovillusların hipertrofisi",
+      "Düşük fosfor seviyelerinin böbrek tübüllerinde enzimi serbest bırakması"
+    ],
+    correct: 2,
+    exp: "D vitamini eksikliği raşitizminde kalsiyum ve fosfor emilimi azalır. Vücut kalsiyumu normal tutmak için PTH salgılar (sekonder hiperparatiroidi), bu da kemiği yıkar ve fosforu idrarla atar (hipofosfatemi). Kemik zayıfladığında (mineralize olamadığında), kemik yapımından sorumlu olan 'Osteoblastlar' çılgınca çalışarak telafi etmeye (yeni kemik örmeye) çalışır. Alkalen Fosfataz (ALP), bizzat osteoblastların aktivite göstergesidir. Bu yoğun yapım eforu nedeniyle kanda ALP düzeyi tavan yapar."
+  },
+  {
+    id: 466,
+    ders: "Pediatri",
+    konu: "Beslenme",
+    diff: 4,
+    q: "Afrika'da mülteci kampında yaşayan 2 yaşındaki çocuk, sütten kesildikten sonra ağırlıklı olarak düşük proteinli karbonhidrat lapası ile beslenmektedir. Muayenesinde belirgin ödem, 'ay dede' yüzü, ciltte pul pul dökülmeler (flaky paint) ve masif hepatomegali saptanıyor. Kwashiorkor tanısı alan bu hastada, ağır protein eksikliğinin karaciğerde masif yağlanmaya (steatoz / hepatomegali) yol açmasının temel hücresel mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Karbonhidratların doğrudan hepatositlerde kolesterole dönüşmesi",
+      "Karaciğerin ürettiği trigliseridleri kana taşıyacak olan 'Apolipoproteinlerin' (özellikle ApoB-100) protein eksikliği nedeniyle sentezlenememesi",
+      "Lipoprotein lipaz enziminin genetik eksikliği",
+      "Masif glukagon salınımının karaciğer içi lipolizi durdurması",
+      "Albümin eksikliğine bağlı serbest yağ asitlerinin kanda taşınamaması"
+    ],
+    correct: 1,
+    exp: "Kwashiorkor, total kalori eksikliğinden ziyade şiddetli 'Protein' eksikliğidir. Ödemin nedeni albümin sentezlenememesidir (düşük onkotik basınç). Karaciğer yağlanır (hepatomegali) çünkü karaciğer yağ üretir ama bu yağları kana (VLDL formunda) salabilmek için 'Apolipoprotein' (taşıyıcı protein) üretmek zorundadır. Protein diyette hiç olmadığı için apolipoprotein yapılamaz; üretilen yağlar hepatositlerin içinde kilitli kalır ve karaciğeri devasa boyutlara ulaştırır. (Marasmusta ise tüm kalori eksik olduğu için yağ da yapılamaz, bu yüzden karaciğer büyümez)."
+  },
+  {
+    id: 467,
+    ders: "Pediatri",
+    konu: "Beslenme",
+    diff: 4,
+    q: "Dört aylık bebeğine sadece inek sütü veren anneye, inek sütünün 1 yaşından önce ana besin kaynağı olarak kullanılmaması gerektiği anlatılıyor. İnek sütünün anne sütüne kıyasla içerdiği makrobesin ve mineraller göz önüne alındığında, bebeklerde 'Hipernatremik Dehidratasyon' riskini belirgin şekilde artıran spot fizyolojik mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "İnek sütünün whey protein oranının çok yüksek olması",
+      "İnek sütündeki uzun zincirli çoklu doymamış yağ asitlerinin azlığı",
+      "İnek sütünün yüksek protein, sodyum, potasyum ve klor içeriğinin böbreklere yüksek 'Renal Solüt Yük' bindirerek idrarla zorunlu su kaybını artırması",
+      "İnek sütünde demir emilimini inhibe eden laktoferrin olmaması",
+      "İnek sütünün mide boşalma süresini kısaltarak ishale yol açması"
+    ],
+    correct: 2,
+    exp: "İnek sütü, anne sütüne göre yaklaşık 3 kat fazla protein ve çok daha fazla mineral (Na, K, Cl) içerir. Bu maddelerin kanda birikmemesi için böbrekten atılması gerekir. Buna 'Renal Solüt Yük' denir. Bebek böbreği henüz idrarı iyi konsantre edemediği için (suyu tutamadığı için), bu yüksek solüt yükü idrarla atarken yanında mecburen bolca 'su' da sürükler. Eğer bebek ateşlenir veya ishal olursa, bu durum hızla hücre içi suyun kaybına ve ölümcül 'Hipernatremik Dehidratasyona' yol açar."
+  },
+  {
+    id: 468,
+    ders: "Pediatri",
+    konu: "Beslenme",
+    diff: 5,
+    q: "Altı aylık erkek bebek, anne sütünden ek gıdaya (veya inek sütüne) geçildikten birkaç hafta sonra ağız çevresinde, burun deliklerinde ve anüs çevresinde (periorifisyal) sulantılı, kızarık ve kabuklu döküntüler (dermatit), inatçı ishal ve saç dökülmesi (alopesi) şikayetleriyle getiriliyor. Çocuğun büyüme eğrisinde duraklama olduğu saptanıyor. Akrodermatitis Enteropatika tanısı konan bu otozomal resesif hastalıkta eksikliği olan ve kliniğe yol açan eser element aşağıdakilerden hangisidir?",
+    options: [
+      "Bakır",
+      "Çinko",
+      "Selenyum",
+      "Krom",
+      "Magnezyum"
+    ],
+    correct: 1,
+    exp: "Akrodermatitis Enteropatika; bağırsaklardan 'Çinko' emilimini sağlayan spesifik bir taşıyıcı proteinin (ZIP4) genetik kusurudur. Klasik triadı: Periorifisyal (ağız/makat çevresi) ve akral dermatit, alopesi (saç dökülmesi) ve kronik ishaldir. Anne sütünde çinko emilimini çok kolaylaştıran bağlayıcı ligandlar olduğu için bebek emzirilirken sağlıklıdır. Ancak anne sütü kesilip inek sütü/ek gıdaya geçildiği anda (bu gıdalardaki çinko emilemediği için) hastalık aniden patlak verir. Tedavisi ömür boyu yüksek doz oral çinko takviyesidir."
+  },
+  {
+    id: 469,
+    ders: "Pediatri",
+    konu: "Beslenme",
+    diff: 4,
+    q: "Bir yaşında, sadece inek sütü ile beslenen ve ek gıda almayı reddeden erkek çocuk; bacaklarında ağrı, dokunmaya karşı aşırı hassasiyet (irritabilite) ve bacaklarını kurbağa (frog-leg) pozisyonunda tutma şikayetiyle getiriliyor. Fizik muayenesinde diş etlerinde morarma, şişlik ve ciltte yaygın peteşiler izleniyor. Kemik grafilerinde uzun kemik uçlarında beyaz bir hat (Frankel çizgisi) ve subperiostal kanamalar saptanıyor. Skorbüt (Scurvy) tablosundaki bu hastada, C vitamini eksikliğinin yol açtığı 'kanamalara' neden olan kolajen sentez defekti biyokimyasal olarak hangi basamaktır?",
+    options: [
+      "Prokollajen peptidaz enzim eksikliğine bağlı tropokollajen oluşamaması",
+      "Kollajen zincirindeki glisin amino asidinin yerine serin geçmesi",
+      "Polipeptid zincirindeki 'Prolin' ve 'Lizin' kalıntılarının hidroksillenememesi sonucu üçlü sarmalın (triple helix) dayanıksız olması",
+      "Bakır eksikliğine sekonder lizil oksidazın çalışamaması",
+      "Elastin liflerinin fibrillin ile çapraz bağ kuramaması"
+    ],
+    correct: 2,
+    exp: "C vitamini (Askorbik asit), hücre içinde kolajen sentezinde kritik olan Prolil ve Lizil Hidroksilaz enzimlerinin mutlak kofaktörüdür. Bu enzimler kolajen zincirindeki prolin ve lizini hidroksilleyerek (OH ekleyerek), üçlü sarmalın kendi aralarında hidrojen bağı kurmasını ve 'halat gibi sağlam' olmasını sağlar. C vitamini eksikse bu bağlar kurulamaz, kolajen (özellikle damar duvarları, diş etleri ve kemik periostu) çok zayıf kalır ve en ufak travmada yırtılarak kanar (Skorbüt). Bebeğin bacak ağrısı, kemik zarı (periost) altındaki kanamanın yarattığı dayanılmaz ağrıdandır."
+  },
+  {
+    id: 470,
+    ders: "Pediatri",
+    konu: "Pediatrik Gastroenteroloji",
+    diff: 4,
+    q: "Sekiz aylık sağlıklı bir erkek bebek, aniden bacaklarını karnına çekerek ağlama krizlerine giriyor. Ataklar arasında tamamen normal görünüyor. Bezinde 'çilek jölesi' kıvamında kanlı-mukuslu dışkı saptanıyor. Çekilen batın ultrasonografisinde (USG) sağ alt kadranda 'hedef (target)' işareti görülerek İnvajinasyon (İntussusepsiyon) tanısı konuyor. Süt çocukluğu dönemindeki (ilk 2 yaş) invajinasyonların %90'ından fazlasında, bağırsağın kendi içine girmesine (teleskopik geçiş) kılavuzluk eden (lead point) asıl patofizyolojik odak aşağıdakilerden hangisidir?",
+    options: [
+      "Meckel divertikülü",
+      "Bağırsak lenfoması (Burkitt)",
+      "Polipler",
+      "Viral enfeksiyon (Adenovirüs/Rotavirüs) sonrası reaktif olarak büyüyen Peyer Plakları (Lenfoid hiperplazi)",
+      "Gastrointestinal duplikasyon kistleri"
+    ],
+    correct: 3,
+    exp: "İnvajinasyon, bağırsağın bir bölümünün kendi içine doğru eldiven parmağı gibi girmesidir (En sık ileo-kolik bölgede). Bağırsak duvarı sıkışır, iskemi gelişir ve mukoza dökülüp kanla karışarak 'Çilek jölesi' dışkı yapar. Süt çocuklarında (> %90) altta yatan organik bir kitle yoktur. İnvajinasyonu başlatan 'öncü nokta (lead point)', sıklıkla geçirilmiş bir viral enfeksiyona bağlı olarak terminal ileumda şişen/büyüyen 'Peyer Plakları'dır (Lenfoid hiperplazi). Bağırsak peristaltizmi bu şişkinliği kitle sanıp aşağıya doğru itmeye çalışırken tüm bağırsağı içine çeker. (Eğer hasta >2 yaşında veya yenidoğansa, altta yatan organik bir neden - Meckel, polip, lenfoma - mutlaka aranmalıdır)."
+  },
+  {
+    id: 471,
+    ders: "Pediatri",
+    konu: "Pediatrik Gastroenteroloji",
+    diff: 4,
+    q: "Doğumdan sonraki ilk 48 saat içinde mekonyum çıkarmayan, kusma ve giderek artan karın şişliği (distansiyon) gelişen yenidoğanın rektal muayenesinde; ampullanın boş olduğu ve parmak geri çekildiğinde fışkırır tarzda gaz-gaita çıkışı olduğu saptanıyor. Hirschsprung Hastalığı şüphesiyle çekilen kontrastlı lavman grafisinde dar bir rektum ve üzerinde aniden genişlemiş kolon (geçiş zonu) izleniyor. Kesin tanı için rektumdan alınan tam kat biyopside beklenen patognomonik embriyolojik/histolojik defekt aşağıdakilerden hangisidir?",
+    options: [
+      "Mukozada PAS pozitif makrofajların varlığı",
+      "Meissner (Submukozal) ve Auerbach (Miyenterik) pleksuslarda ganglion hücrelerinin yokluğu (Aganglionozis)",
+      "Bağırsak duvarında yoğun eozinofilik infiltrasyon",
+      "Kript abseleri ve goblet hücre deplesyonu",
+      "Düz kas hücrelerinde kalsiyum kanalı mutasyonuna bağlı hipertrofi"
+    ],
+    correct: 1,
+    exp: "Hirschsprung Hastalığı (Konjenital Aganglionik Megakolon); embriyolojik dönemde (5-12. haftalar) nöral krest hücrelerinin kraniokaudal yönde (yukarıdan aşağıya) bağırsak duvarına göç etmesindeki kusurdur. Göç rektumda tamamlanamadığı için, distal bağırsakta parasempatik sinir ağları olan 'Auerbach ve Meissner pleksusları (ganglionları) BULUNMAZ'. Ganglion olmayan bağırsak kısmı gevşeyemez ve spastik (dar) kalır. Üstteki sağlıklı bağırsak ise dışkıyı itemediği için şişer (Megakolon). Tanı, rektal biyopside ganglion hücrelerinin OLMADIĞININ (Aganglionozis) gösterilmesiyle kesinleşir."
+  },
+  {
+    id: 472,
+    ders: "Pediatri",
+    konu: "Pediatrik Gastroenteroloji",
+    diff: 5,
+    q: "Altı haftalık kız bebek, doğumdan beri giderek artan sarılık, koyu çay renkli idrar ve camcı macunu (beyaz/gri) renginde dışkılama şikayetiyle getiriliyor. Kanda Direkt Bilirubin ve GGT çok yüksek saptanıyor. Batın USG'de safra kesesi küçük/büzüşmüş izleniyor ve portal ven önünde fibrotik bant ('Triangular cord' bulgusu) saptanıyor. Ekstrahepatik Biliyer Atrezi tanısı konan bu hastada, siroza gidişi engellemek ve safra akışını sağlamak için yapılacak olan Kasai (Hepatoportoenterostomi) operasyonunun başarı oranını (kür şansını) belirleyen EN ÖNEMLİ prognostik faktör aşağıdakilerden hangisidir?",
+    options: [
+      "Operasyon sırasında kullanılan antibiyotik rejimi",
+      "Ameliyatın yapıldığı ZAMANLAMANIN bebeğin ilk 60 günü (2 ay) içinde olması",
+      "Karaciğerin sitomegalovirüs (CMV) ile enfekte olup olmaması",
+      "Safra kesesi kalıntısının boyutları",
+      "Preoperatif dönemde başlanan yüksek doz ursodeoksikolik asit tedavisi"
+    ],
+    correct: 1,
+    exp: "Biliyer Atrezi, karaciğer dışı safra yollarının idiyopatik, ilerleyici fibrozisi ve tıkanmasıdır. Tıkanma karaciğerde kolestaza ve hızla bilier siroza yol açar. Hayat kurtarıcı ameliyat 'Kasai operasyonu'dur; safra yolları tamamen kesilir ve karaciğerin hilusu doğrudan ince bağırsağa (jejunum) dikilir. Bu ameliyatın başarısı KESİNLİKLE 'Zamanlama'ya bağlıdır. Eğer ameliyat bebeğin ilk 60 günü içinde (ideali ilk 45 gün) yapılırsa başarı (safra akışı) %80'dir. Ancak 90. günden (3 ay) sonra fibrozis karaciğer İÇİ safra yollarını da tıkamış olacağından ameliyat başarısız olur ve hastanın tek şansı Karaciğer Nakli olarak kalır."
+  },
+  {
+    id: 473,
+    ders: "Pediatri",
+    konu: "Pediatrik Gastroenteroloji",
+    diff: 4,
+    q: "Üç yaşındaki kız çocuk, büyüme geriliği, kronik ishal (kötü kokulu, bol miktarda), karın şişliği ve inatçı demir eksikliği anemisi şikayetleriyle araştırılıyor. Çölyak Hastalığı şüphesiyle alınan duodenum biyopsisinde 'villus atrofisi, kript hiperplazisi ve intraepitelyal lenfositoz' saptanıyor. Hastada Çölyak tanısını serolojik olarak koymak ve takibinde (diyete uyumu) kullanmak için sensitivitesi ve spesifisitesi EN YÜKSEK olan otoantikor aşağıdakilerden hangisidir?",
+    options: [
+      "Anti-Saccharomyces cerevisiae antikoru (ASCA)",
+      "Perinükleer Anti-Nötrofil Sitoplazmik Antikor (p-ANCA)",
+      "İgA tipi Doku Transglutaminaz (Anti-tTG) antikoru",
+      "Anti-mitokondriyal antikor (AMA)",
+      "Anti-paryetal hücre antikoru"
+    ],
+    correct: 2,
+    exp: "Çölyak hastalığı taramasında ve takibinde (eğer hastada IgA eksikliği yoksa) ilk bakılması gereken, duyarlılığı (%95) ve özgüllüğü (%95) en yüksek olan test 'IgA tipi Doku Transglutaminaz (Anti-tTG)' antikorudur. tTG enzimi, glutenin içindeki gliadini modifiye ederek immünojenik hale getiren hedeftir. Hastalar diyete (glutensiz diyete) tam uyduklarında bu antikorların titresi düşer ve kaybolur. (Not: ASCA Crohn hastalığında, p-ANCA Ülseratif Kolit ve Primer Sklerozan Kolanjitte, AMA Primer Biliyer Kolanjitte, Anti-paryetal hücre antikoru ise Pernisiyöz anemide görülür)."
+  },
+  {
+    id: 474,
+    ders: "Pediatri",
+    konu: "Pediatrik Gastroenteroloji",
+    diff: 4,
+    q: "İki yaşındaki erkek çocuk, aniden ortaya çıkan ve tamamen 'ağrısız' olan, bezini dolduracak kadar masif ve parlak kırmızı renkli rektal kanama şikayetiyle acile getiriliyor. Muayenede hastanın batını tamamen rahat, defans veya kitle yoktur. Vital bulguları taşikardik ve hipotansiftir (şok sınırında). Çekilen Tc-99m Perteknetat sintigrafisinde, sağ alt kadranda mide dışında (ektopik) fokal madde tutulumu izleniyor. Meckel Divertikülü kanaması olan bu çocukta, kanamanın doğrudan anatomik/patofizyolojik nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "Divertikülün bağırsak duvarında invajinasyona (teleskopik geçiş) neden olması",
+      "Divertikülün içindeki 'ektopik pankreas' dokusunun tripsin salgılaması",
+      "Divertikülün içindeki 'ektopik mide' mukozasının asit salgılayarak, asite dayanıklı olmayan komşu ileum mukozasını delmesi (ülser/kanama)",
+      "Omfalomezenterik kanal artığına binen rotasyonun (volvulus) damar rüptürü yapması",
+      "Divertikül içindeki stazın bakteriyel apse ve perforasyon yaratması"
+    ],
+    correct: 2,
+    exp: "Meckel Divertikülü, GİS'in en sık konjenital anomalisidir (İleoçekal valvin 60 cm/2 feet proksimalindedir). 2 yaş altı çocuklarda 'Ağrısız, devasa alt GİS kanaması'nın en sık nedenidir. Divertikülün kendi içinde kanamasına neden olan şey, lümeninde yer alan 'Ektopik Mide Mukozası'dır. Bu mide dokusu bağırsak içinde sürekli hidroklorik asit (HCl) salgılar. İnce bağırsak mukozası asite dayanıklı değildir, anında ülserleşir ve altındaki damar patlayarak devasa kanama yapar. Mide dokusunu boyayan Tc-99m sintigrafisi (Meckel sintigrafisi) tanıda altın standarttır."
+  },
+  {
+    id: 475,
+    ders: "Pediatri",
+    konu: "Pediatrik Nöroloji",
+    diff: 5,
+    q: "Altı aylık kız bebek, başını tutamama, hiç dönememe ve kollarını bacaklarını hareket ettirememe (hipotoni / gevşek bebek) şikayetiyle getiriliyor. Fizik muayenede zeka ve göz hareketleri tamamen NORMAL; ancak derin tendon refleksleri alınamıyor (arefleksi) ve dilde belirgin seğirmeler (fasikülasyon) gözleniyor. Solunumu yüzeyel ve göğüs kafesi çan şeklindedir (paradoksal solunum). Bu hastaya Spinal Musküler Atrofi Tip 1 (Werdnig-Hoffmann) tanısı konuyor. SMA hastalığının patogenezinde, genetik delesyonu (SMN1 geninde) sonucu apoptotik ölüme giden ve kasları felç bırakan spesifik hücre grubu aşağıdakilerden hangisidir?",
+    options: [
+      "Serebral korteksteki Betz hücreleri (Üst motor nöronlar)",
+      "Spinal kord ön boynuz (anterior horn) motor nöronları",
+      "Periferik sinirleri saran Schwann hücreleri",
+      "Nöromüsküler kavşaktaki asetilkolin reseptörleri",
+      "İskelet kaslarındaki distrofin proteini"
+    ],
+    correct: 1,
+    exp: "Spinal Musküler Atrofi (SMA), SMN1 (Survival Motor Neuron 1) geninin delesyonu sonucu gelişen otozomal resesif bir dejeneratif hastalıktır. Vücutta motor sinirlerin gövdeleri (alt motor nöronlar) omuriliğin (spinal kord) 'Ön Boynuzunda (Anterior Horn)' yer alır. SMN proteini yokluğunda bu nöronlar kendi kendilerini imha eder (apoptoz). Motor sinir kaslara uyarı götüremeyince kaslar erir (atrofi), refleksler kaybolur ve dil gibi küçük kaslarda fasikülasyon (seğirme) başlar. Hastaların zekası, duyuları (ağrı/dokunma) ve üst motor nöronları sapa sağlamdır. Çan şeklinde göğüs, diyafram sinirinin (frenik sinir) sağlam kalıp, göğüs kaslarının (interkostal) erimesine bağlıdır."
+  },
+  {
+    id: 476,
+    ders: "Pediatri",
+    konu: "Pediatrik Nöroloji",
+    diff: 4,
+    q: "Dört yaşında erkek çocuk, yürümede gecikme, sık düşme ve yerden kalkarken ellerini dizlerine dayayarak tırmanma (Gowers belirtisi) şikayetleriyle getiriliyor. Fizik muayenede baldırlarında dikkat çekici bir irilik (psödohipertrofi) saptanıyor. Laboratuvarında Kreatin Kinaz (CK) düzeyi 15.000 U/L (Normali <200) olarak ölçülüyor. Duchenne Musküler Distrofisi (DMD) tanısı alan bu hastada, iskelet kası hücre zarı (sarkolemma) ile hücre iskeleti (aktin) arasındaki bağlantıyı koparan genetik mutasyonun moleküler karakteri aşağıdakilerden hangisidir?",
+    options: [
+      "Distrofin geninde üçlü tekrar (CTG) sayısının artması",
+      "Distrofin geninde X'e bağlı kalıtılan, okuma çerçevesini tamamen bozan (frameshift) veya nonsense (anlamsız) delesyon/mutasyon",
+      "Kromozom 15'te distrofin geni metilasyonu",
+      "Distrofin geninde otozomal dominant nokta mutasyonu (missense)",
+      "Sarkoglikan genlerinin tamamının yok olması"
+    ],
+    correct: 1,
+    exp: "Duchenne Musküler Distrofisi (DMD), X kromozomunda bulunan ve insan vücudunun en büyük geni olan 'Distrofin' genindeki yıkıcı mutasyonlar sonucu gelişir. DMD'de mutasyon 'Frameshift (okuma çerçevesini kaydıran)' veya 'Nonsense (dur kodonu)' şeklindedir. Bu nedenle protein HİÇ ÜRETİLEMEZ (Miktar %0). Distrofin proteini, kasın iç iskeletini (aktini) dış zarına bağlayan amortisördür. Olmadığında her kasılmada zar yırtılır, kalsiyum içeri girer, kas ölür ve enzimleri (CK) kana boşalır. (Not: Eğer aynı gende okuma çerçevesini bozmayan 'In-frame' bir delesyon olsaydı, kısa/hatalı ama kısmen işlevsel bir protein üretilir ve daha hafif seyreden 'Becker Musküler Distrofisi' gelişirdi)."
+  },
+  {
+    id: 477,
+    ders: "Pediatri",
+    konu: "Pediatrik Nöroloji",
+    diff: 5,
+    q: "Yedi aylık erkek bebek, günde 20-30 kez olan, uykudan uyanırken başın ve gövdenin aniden öne bükülmesi (fleksiyon / jackknife) şeklindeki kasılmalar (spazmlar) nedeniyle getiriliyor. Çocuğun nöromotor gelişiminin durakladığı ve gerilediği (gülümsemesinin kaybolduğu) belirtiliyor. Çekilen EEG'sinde 'Hipsaritmi' (kaotik, yüksek voltajlı, düzensiz yavaş dalga ve dikenler) saptanıyor. Bebeğin cildinde Wood lambası ile hipopigmente lekeler (Kül yaprağı lekeleri) tespit ediliyor. Tüberoskleroz zemininde gelişen bu İnfantil Spazm (West Sendromu) tablosunda, spazmları durdurmak için İLK TERCİH edilmesi gereken spesifik antiepileptik ajan ve mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "ACTH / Kortizol salınımıyla immünmodülasyon",
+      "Karbamazepin / Sodyum kanal blokajı",
+      "Vigabatrin / GABA transaminaz enzimini geri dönüşümsüz inhibe ederek beyinde GABA'yı artırmak",
+      "Etosüksimid / Talamik T-tipi kalsiyum kanallarını bloke etmek",
+      "Fenitoin / NMDA reseptör blokajı"
+    ],
+    correct: 2,
+    exp: "İnfantil Spazm + Gelişimsel gerileme + EEG'de Hipsaritmi = West Sendromu'dur. İnfantil spazmların genel tedavisinde ilk tercih ACTH'dır. ANCAK, hasta eğer Tüberoskleroz Kompleksi (Kül yaprağı lekeleri, adenoma sebaceum, rhabdomiyom vs.) zemininde infantil spazm geçiriyorsa, ACTH yerine ALTIN STANDART İLK TERCİH İLAÇ 'Vigabatrin'dir. Vigabatrin, inhibitör nörotransmitter olan GABA'yı yıkan enzim 'GABA-Transaminaz'ı geri dönüşümsüz bloke eder. Beyinde GABA artar ve nöbetler baskılanır. (En korkulan yan etkisi kalıcı görme alanı daralmasıdır)."
+  },
+  {
+    id: 478,
+    ders: "Pediatri",
+    konu: "Pediatrik Nöroloji",
+    diff: 4,
+    q: "Beş yaşında kız çocuk, 2 hafta önce geçirdiği ateşli kanlı ishal (Campylobacter jejuni olduğu düşünülüyor) atağının ardından, dün bacaklarında başlayan ve bugün kollarına doğru tırmanan (asendan) kas güçsüzlüğü şikayetiyle getiriliyor. Fizik muayenede kollar ve bacaklarda flask (gevşek) paralizi ve Derin Tendon Reflekslerinin alınamadığı (Arefleksi) saptanıyor. Lomber ponksiyonda BOS sıvısında hücre sayısı normal iken (0-5/mm3), protein düzeyi 150 mg/dL (Çok yüksek) bulunuyor. Guillain-Barré Sendromu (GBS) tanısı konan bu hastada, asendan paraliziye neden olan periferik sinir miyelin yıkımının (demiyelinizasyonun) patogenezindeki spesifik immünolojik mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Bağırsak enfeksiyonuna karşı üretilen IgG antikorlarının, periferik sinir zarlarındaki 'GM1 Gangliozid'lere yapısal benzerlik (Moleküler Mimicry) nedeniyle yanlışlıkla saldırması",
+      "Campylobacter jejuni'nin doğrudan omurilik ön boynuz motor hücrelerini enfekte etmesi",
+      "Nöromüsküler kavşaktaki voltaj kapılı kalsiyum kanallarına karşı otoantikor üretimi",
+      "Sitotoksik T hücrelerinin kas hücrelerindeki distrofin proteinini yıkması",
+      "Enfeksiyona ikincil gelişen vaskülitin vasa nervorumları tıkayarak sinir iskemisi yapması"
+    ],
+    correct: 0,
+    exp: "Guillain-Barré Sendromu (GBS); akut, simetrik, asendan (aşağıdan yukarı çıkan) ve arefleksiyle (DTR yokluğu) giden bir inflamatuar polinöropatidir. BOS'ta hücre artmadan proteinin artmasına 'Albüminositolojik Disosiyasyon' denir ve tanısaldır. Patogenez klasik bir 'Moleküler Mimicry (Çapraz Reaksiyon)' olayıdır. C. jejuni (veya viral enfeksiyon) vücuda girdiğinde, bağışıklık sistemi bakterinin yüzey proteinlerine karşı antikor üretir. Ancak bu antikorlar, periferik sinirlerimizi saran Schwann hücrelerinin veya akson zarlarının yapısındaki 'Gangliozidlere (GM1, GD1a vb.)' çok benzer. Vücut bakteriyi vururken yanlışlıkla kendi sinir kılıflarını da parçalar ve sinir iletimi felç olur."
+  },
+  {
+    id: 479,
+    ders: "Pediatri",
+    konu: "Pediatrik Nöroloji",
+    diff: 4,
+    q: "İki yaşında erkek çocuk, karında şişlik ve göz çevresinde morluklar (Rakun gözü / Periorbital ekimoz) şikayetiyle getiriliyor. Fizik muayenede batında orta hattı GEÇEN, sert ve düzensiz bir kitle palpe ediliyor. Hastanın gözlerinin sürekli her yöne hızlıca seğirdiği ve kollarında/bacaklarında sıçramalar olduğu (Opsoklonus-miyoklonus / Dans eden gözler sendromu) gözleniyor. 24 saatlik idrar tahlilinde VMA (Vanilmandelik asit) ve HVA (Homovanilik asit) düzeyleri belirgin yüksek saptanıyor. Nöroblastom tanısı konan bu ekstra-kraniyal solid tümörün köken aldığı embriyolojik doku ve patogenezinde rol oynayan prognostik onkogen amplifikasyonu aşağıdakilerden hangisidir?",
+    options: [
+      "Metanefrik blastem / WT1 gen delesyonu",
+      "Embriyonik notokord / SHH gen ekspresyonu",
+      "Nöral krest hücreleri (Sempatik zincir) / N-myc gen amplifikasyonu",
+      "Nöral tüp ektodermi / p53 mutasyonu",
+      "Endodermal arka bağırsak / K-RAS mutasyonu"
+    ],
+    correct: 2,
+    exp: "Nöroblastom; çocukluk çağının en sık ekstra-kraniyal (beyin dışı) solid tümörüdür. Adrenal medulladan veya sempatik zincir boyunca herhangi bir yerden gelişebilir. Kitle batında orta hattı GEÇER (Wilms tümörü ise böbrekten çıkar, orta hattı genellikle geçmez). Göz çevresi metastazları (rakun gözü) ve paraneoplastik Opsoklonus-Miyoklonus (dans eden gözler) sendromu tipiktir. Katekolamin salgıladığı için idrarda yıkım ürünleri (VMA/HVA) artar. Embriyolojik olarak adrenal medullanın kaynağı olan 'Nöral Krest (Neural Crest)' hücrelerinden köken alır. Kötü prognozu gösteren ve tümörün agresifliğini belirleyen en önemli genetik faktör 'N-myc (MYCN)' onkogeninin amplifikasyonudur (aşırı kopyalanması)."
+  },
+  {
+    id: 480,
+    ders: "Pediatri",
+    konu: "Pediatrik Kardiyoloji",
+    diff: 4,
+    q: "Dört aylık erkek bebek, sık nefes alma (taşipne), emerken çabuk yorulma ve aşırı terleme şikayetleriyle getiriliyor. Fizik muayenesinde sol sternal kenar alt kısmında 3/6 şiddetinde, thrill (titreşim) veren pansistolik üfürüm duyuluyor. Akciğer grafisinde kardiyomegali ve pulmoner vaskülaritede artış (akciğerlerin pletorik görünümü) saptanıyor. Ventriküler Septal Defekt (VSD) tanısı alan bu hastada, kalp yetmezliği bulgularının doğumda değil de 1-2 ay sonra ortaya çıkmasının temel hemodinamik nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "Sağ ventrikülün zamanla hipertrofiye uğraması",
+      "Doğumdan sonraki haftalarda fizyolojik pulmoner vasküler direncin (PVR) yavaş yavaş düşerek soldan sağa şant miktarını artırması",
+      "Duktus arteriozusun kapanmasının şant akımını sol ventriküle yönlendirmesi",
+      "Sistemik vasküler direncin (SVR) zamanla azalarak sol ventrikül debisini düşürmesi",
+      "Foramen ovalenin kapanmasıyla atriyumlar arası basınç dengesinin bozulması"
+    ],
+    correct: 1,
+    exp: "VSD, çocukluk çağının en sık görülen doğuştan kalp hastalığıdır. VSD'li bebekler doğduklarında üfürümleri duyulmaz ve kalp yetmezliği bulguları yoktur. Çünkü fetüste ve yeni doğan bebekte akciğer damar direnci (PVR) çok yüksektir (sistemik dirence yakındır). İki ventrikülün basıncı birbirine yakın olduğu için şant olmaz. Ancak bebek büyüdükçe (1-2 ay içinde) akciğer damarları gevşer, PVR düşer. PVR düşünce sol ventriküldeki yüksek basınçlı kan, delikten (VSD) düşük basınçlı sağ ventriküle ve oradan da akciğerlere hücum eder (Soldan sağa şant). Akciğer kanla göllenir ve kalp yetmezliği bulguları (emerken yorulma, terleme) başlar."
+  },
+  {
+    id: 481,
+    ders: "Pediatri",
+    konu: "Pediatrik Kardiyoloji",
+    diff: 5,
+    q: "Diyabetik anne bebeği olarak 39. haftada doğan erkek yenidoğan, doğumun 2. saatinde oksijen tedavisine yanıt vermeyen (PaO2 < 30 mmHg) şiddetli morarma (siyanoz) tablosuna giriyor. Akciğer grafisinde kalp 'yan duran yumurta (egg on a string)' şeklinde ve akciğer damarlanması artmış olarak izleniyor. Büyük Arterlerin Transpozisyonu (TGA) tanısı konan bu bebeğin hayatta kalabilmesi (iki paralel dolaşım arasında kanın karışabilmesi) için acil olarak başlanması gereken hayat kurtarıcı infüzyon tedavisi aşağıdakilerden hangisidir?",
+    options: [
+      "İndometazin",
+      "Prostaglandin E1 (PGE1 / Alprostadil)",
+      "Yüksek konsantrasyonlu (%100) Oksijen",
+      "Milrinon",
+      "İbuprofen"
+    ],
+    correct: 1,
+    exp: "Büyük Arterlerin Transpozisyonu (TGA), yenidoğan döneminde en sık görülen siyanotik kalp hastalığıdır. Aort sağ ventrikülden, pulmoner arter sol ventrikülden çıkar. Vücutta iki paralel, birbiriyle karışmayan kapalı devre oluşur (Kirli kan vücuda, temiz kan akciğere döner). Bebeğin yaşayabilmesi için bu iki devre arasında mutlaka bir bağlantı (ASD, VSD veya PDA) olmalıdır. Doğumdan sonra kapanmaya meyleden Duktus Arteriozus'u (PDA) 'AÇIK TUTMAK' ve kanların karışmasını (mixing) sağlamak için acil olarak İntravenöz Prostaglandin E1 (PGE1) başlanmalıdır. Oksijen vermek duktusu kapatacağı için tehlikelidir."
+  },
+  {
+    id: 482,
+    ders: "Pediatri",
+    konu: "Pediatrik Kardiyoloji",
+    diff: 4,
+    q: "Bir yaşında erkek çocuk, ağladığında veya sinirlendiğinde aniden ortaya çıkan şiddetli morarma (siyanoz) ve huzursuzluk atakları geçiriyor. Atak sırasında çocuğun bacaklarını karnına doğru çektiği (çömelme / squatting pozisyonu) ve bu hareketin morarmayı hafiflettiği gözleniyor. Fallot Tetralojisi (TOF) hastası olan bu çocukta, 'Hipoksik Tet Hecelemesi (Tet Spell)' adı verilen bu krizlerin temel mekanizması ve çömelmenin fizyolojik faydası aşağıdakilerden hangisidir?",
+    options: [
+      "Sağ ventrikül çıkış yolu (İnfundibulum) spazmı ile sağdan sola şantın artması / Çömelmenin sistemik vasküler direnci (SVR) artırarak şantı azaltması",
+      "Masif pulmoner vazodilatasyon sonucu kalbe venöz dönüşün azalması / Çömelmenin venöz dönüşü artırması",
+      "VSD'nin aniden kapanması / Çömelmenin karın içi basıncı artırıp VSD'yi açması",
+      "Aort kapağının eforla daralması / Çömelmenin kalp hızını yavaşlatması",
+      "Pulmoner arterde tromboz gelişimi / Çömelmenin fibrinolitik sistemi aktive etmesi"
+    ],
+    correct: 0,
+    exp: "Fallot Tetralojisinde (TOF) krizler (Tet Spells), sağ ventrikül çıkış yolundaki (infundibuler) kasların spazma girmesiyle oluşur. Akciğere gidemeyen kirli kan, mecburen VSD'den aortaya (sağdan-sola şant) kaçar ve derin siyanoz yapar. Çocuk içgüdüsel olarak çömelir (diz-göğüs pozisyonu). Çömelmek, femoral ve iliak arterleri sıkıştırarak Aort basıncını (Sistemik Vasküler Direnç - SVR) aniden yükseltir. Aort basıncı sağ ventrikül basıncını aşınca, kirli kan aortaya kaçamaz (şant durur veya sola-sağa döner), mecburen akciğere yönelir ve çocuğun rengi açılır."
+  },
+  {
+    id: 483,
+    ders: "Pediatri",
+    konu: "Pediatrik Kardiyoloji",
+    diff: 4,
+    q: "Beş yaşında erkek çocuk; 6 gündür devam eden 39.5°C ateş, dudaklarda çatlama, dilde 'çilek' görünümü, iki taraflı pürülan olmayan konjonktivit, boyunda tek taraflı lenfadenopati ve gövdede polimorfik döküntü ile başvuruyor. Kawasaki Hastalığı tanısı alan bu çocukta, yüksek doz İntravenöz İmmünglobulin (IVIG) ve Aspirin tedavisinin erken dönemde başlanmasının temel (hayat kurtarıcı) amacı aşağıdakilerden hangisidir?",
+    options: [
+      "Febril konvülsiyon gelişimini önlemek",
+      "Böbreklerde glomerülonefrit ve yetmezlik gelişimini durdurmak",
+      "Koroner arter anevrizması ve buna bağlı miyokard enfarktüsü riskini azaltmak",
+      "Gastrointestinal sistemde invajinasyon tablosunu engellemek",
+      "Santral sinir sisteminde aseptik menenjit sekelini önlemek"
+    ],
+    correct: 2,
+    exp: "Kawasaki Hastalığı, çocukluk çağının en sık görülen sonradan kazanılmış (akkiz) kalp hastalığı nedenidir. Orta çaplı damarları tutan bir vaskülittir. En çok korkulan ve ölüme yol açan komplikasyonu, kalbi besleyen 'Koroner Arterlerde' inflamasyon, anevrizma (balonlaşma) ve bunu takip eden tromboz/miyokard enfarktüsüdür. Hastalığın ilk 10 günü içinde verilen IVIG ve anti-inflamatuar dozdaki Aspirin, bu koroner anevrizma gelişme riskini %25'lerden %5'in altına düşüren altın standart tedavidir."
+  },
+  {
+    id: 484,
+    ders: "Pediatri",
+    konu: "Pediatrik Kardiyoloji",
+    diff: 4,
+    q: "On yaşında kız çocuk, 3 hafta önce geçirdiği şiddetli boğaz ağrısı (Farenjit) öyküsünün ardından; önce sağ dizinde başlayan, birkaç gün sonra iyileşip sol ayak bileğinde ortaya çıkan gezici eklem ağrısı (migratuar poliartrit) ve gövdesinde halka şeklinde, ortası soluk kızarık döküntüler (Eritema marginatum) ile başvuruyor. Kalp oskültasyonunda yeni duyulan apikal sistolik üfürüm (Mitral yetmezliği) saptanıyor. Akut Romatizmal Ateş (ARA) tanısı konan bu hastada, kalp kapaklarında hasara yol açan immünolojik mekanizma (Moleküler Mimicry) A grubu beta-hemolitik streptokokların (GAS) hangi hücresel antijenine karşı gelişen antikorlarla ilişkilidir?",
+    options: [
+      "Streptolizin O (SLO)",
+      "Streptokinaz",
+      "Hiyalüronik asit kapsülü",
+      "M proteini",
+      "Eritrojenik (Pirojenik) toksin"
+    ],
+    correct: 3,
+    exp: "Akut Romatizmal Ateş (ARA), Streptococcus pyogenes (GAS) farenjitinden 2-3 hafta sonra gelişen sistemik otoimmün bir hastalıktır. Patogenezi bir 'Çapraz Reaksiyon (Moleküler Mimicry)' örneğidir. Vücut, bakterinin yüzeyinde bulunan ve en önemli virülans faktörü olan 'M proteini'ni yok etmek için antikor üretir. Ancak M proteininin amino asit dizilimi, insan kalp kasındaki miyozin ve kalp kapak endoteli proteinlerine çok benzer. Antikorlar bakteriyi yok ettikten sonra hedef şaşırır ve kendi kalp kapaklarını parçalamaya başlar (Kardit)."
+  },
+  {
+    id: 485,
+    ders: "Pediatri",
+    konu: "Pediatrik Göğüs Hastalıkları",
+    diff: 5,
+    q: "Üç yaşında erkek çocuk, tekrarlayan akciğer enfeksiyonları (balgam kültüründe Pseudomonas aeruginosa üremesi) ve büyüme geriliği ile değerlendiriliyor. Ailesi çocuğun cildinin öptüklerinde 'çok tuzlu' olduğunu ifade ediyor. Ter testi pozitif (Klor > 60 mEq/L) saptanarak Kistik Fibrozis tanısı konuyor. Hastanın genetik analizinde CFTR geninde en sık görülen mutasyon olan 'Delta F508' saptanıyor. Bu spesifik mutasyonun epitel hücrelerinde yarattığı hücresel defektin (Sınıf 2 mutasyon) mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "CFTR protein sentezinin ribozomda anlamsız (nonsense) kodon nedeniyle tamamen erken durması",
+      "Sentezlenen CFTR proteininin Endoplazmik Retikulum/Golgi'de yanlış katlanması (misfolding) nedeniyle hücre zarına ulaşamadan proteazomlarda yıkılması",
+      "Klor kanalının hücre zarına ulaşması ancak klor iyonlarına karşı geçirgenliğini kaybetmesi",
+      "Kanalın zara ulaşması ancak cAMP bağımlı aktivasyon sinyallerine yanıt vermemesi",
+      "Siliyer epiteldeki dynein kollarının sentezlenememesi sonucu mukosiliyer klirensin durması"
+    ],
+    correct: 1,
+    exp: "Kistik Fibrozis (KF), CFTR (Kistik Fibrozis Transmembran Regülatör) klor kanalının disfonksiyonudur. En sık görülen mutasyon Delta F508 (Fenilalanin delesyonu)'dur. Bu mutasyon 'Sınıf II' defekttir. Protein ribozomda sentezlenir, ancak üç boyutlu yapısı 'hatalı katlandığı' (misfolded) için hücrenin kalite kontrol mekanizmasına takılır. Endoplazmik retikulum bu hatalı proteini hücre zarına göndermez, ubiquitin işaretleyerek proteazomlarda yıkar. Apikal zarda klor kanalı bulunmadığı için hücre klor (ve peşinden su) salgılayamaz, mukus susuz kalıp koyulaşır ve tüm kanalları (akciğer, pankreas, bağırsak) tıkar."
+  },
+  {
+    id: 486,
+    ders: "Pediatri",
+    konu: "Pediatrik Göğüs Hastalıkları",
+    diff: 4,
+    q: "Altı aylık kız bebek, kış ayında burun akıntısı ve hafif ateş ile başlayan şikayetlerinin 3. gününde hızlı soluma (takipne), burun kanadı solunumu ve göğüsten gelen 'ıslık' (hışıltı/wheezing) sesi ile acile getiriliyor. Fizik muayenesinde ekspiryum uzun ve akciğerlerde yaygın ronküsler saptanıyor. Akciğer grafisinde havalanma artışı (hiperinflasyon) izleniyor. Süt çocukluğu dönemindeki bu en sık alt solunum yolu enfeksiyonu (Akut Bronşiolit) tablosunda, solunum sıkıntısına yol açan temel patofizyolojik mekanizma ve en sık etken aşağıdakilerden hangisidir?",
+    options: [
+      "Bronş düz kaslarında yaygın spazm / Etken: İnfluenza virüs",
+      "Alveollerde masif eksüda ve fibrin birikimi / Etken: Streptococcus pneumoniae",
+      "Subglottik bölgede laringeal ödem / Etken: Parainfluenza virüs",
+      "Küçük hava yollarında (bronşiyollerde) mukozal ödem, epitel döküntüsü ve mukus tıkaçlarına bağlı tıkanıklık / Etken: Respiyratuvar Sinsityal Virüs (RSV)",
+      "Plevral yapraklarda inflamasyon ve sıvı birikimi / Etken: Adenovirüs"
+    ],
+    correct: 3,
+    exp: "Akut Bronşiolit, 2 yaş altı (özellikle ilk 6 ay) çocuklarda kış aylarında görülen en sık alt solunum yolu enfeksiyonudur. En sık (ve en klasik) etkeni Respiratuar Sinsityal Virüs (RSV)'tür. Bronşiolit astımdan farklıdır; astımda ana sorun 'bronş düz kas spazmı' iken, bronşiolitte ana sorun virüsün terminal bronşiyol (küçük hava yolları) epitelini öldürmesi, mukozal ödem ve dökülen ölü hücrelerin 'mukus tıkaçları' oluşturarak havayolunu fiziksel olarak tıkamasıdır. Bronkodilatörler (Salbutamol) bu yüzden bronşiolitte genellikle işe yaramaz. Semptomatik destek (Oksijen ve hidrasyon) asıl tedavidir."
+  },
+  {
+    id: 487,
+    ders: "Pediatri",
+    konu: "Pediatrik Göğüs Hastalıkları",
+    diff: 4,
+    q: "Aşıları eksik olan 4 yaşındaki erkek çocuk, aniden başlayan 40°C ateş, şiddetli boğaz ağrısı ve yutkunamama (disfaji) şikayetiyle kucakta acile getiriliyor. Çocuğun yatağa yatmayı reddederek öne doğru eğilip oturduğu (tripod pozisyonu), ağzından sürekli tükürük aktığı (drooling) ve nefes alırken kaba bir ses (stridor) çıkardığı gözleniyor. Çocuğun sesi boğuk (muffled) ancak havlar tarzda öksürüğü YOKTUR. Akut Epiglottit tablosundaki bu hastanın acil yönetiminde hayat kurtarıcı olan ve KESİNLİKLE YAPILMAMASI GEREKEN klinik hamle aşağıdakilerden hangisidir?",
+    options: [
+      "Çocuğun sakin kalmasını sağlamak ve annesinin kucağında tutmak",
+      "Tanıyı doğrulamak için acil serviste tahta abeslang (dil basacağı) ile boğazına bakmak",
+      "Ameliyathane koşullarında (KBB ve anestezi uzmanı eşliğinde) acil entübasyon hazırlığı yapmak",
+      "İntravenöz 3. kuşak sefalosporin (Seftriakson) tedavisi başlamak",
+      "Damar yolu açmak gibi ağrılı/invaziv işlemleri hava yolu güvenliği sağlanana kadar ertelemek"
+    ],
+    correct: 1,
+    exp: "Akut Epiglottit, Haemophilus influenzae tip b (Hib) aşısı olmayan çocuklarda görülen ölümcül bir havayolu acilidir. Havlar tarzda öksürük Krupta görülür, epiglottitte yoktur; onun yerine 'Tripod pozisyonu, Salya akıntısı (Drooling) ve Toksik görünüm' vardır. Epiglottit şüphesi olan bir çocukta (havayolu güvenliği sağlanmadan önce) TAHTA ABESLANG İLE BOĞAZ MUAYENESİ YAPMAK KESİNLİKLE KONTRENDİKEDİR. İltihaplı ve ödemli olan epiglott, o fiziksel uyarana maruz kaldığı anda refleks olarak spazma girer, havayolunu sımsıkı kapatır ve çocuk saniyeler içinde boğularak (asfiksi) ölür. Entübasyon daima ameliyathanede kontrollü yapılmalıdır."
+  },
+  {
+    id: 488,
+    ders: "Pediatri",
+    konu: "Pediatrik Göğüs Hastalıkları",
+    diff: 4,
+    q: "İki yaşında sağlıklı bir kız çocuk, evde kuruyemiş (fıstık) yerken aniden morarma ve şiddetli öksürük krizi (choking) geçiriyor. Acil servise getirildiğinde öksürüğü azalmış ancak sağ akciğerinde solunum sesleri derinden geliyor ve 'tek taraflı (unilateral) wheezing (hışıltı)' duyuluyor. Yabancı cisim aspirasyonu şüphesiyle çekilen ekspiryum (nefes verme) akciğer grafisinde; sağ akciğerin sönmediği (havalanmasının arttığı) ve mediastenin sol tarafa doğru itildiği izleniyor. Yabancı cisim aspirasyonlarının en çok 'Sağ Ana Bronşa' kaçmasının anatomik nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "Sağ ana bronşun sol ana bronşa göre daha dar, daha uzun ve yatay seyirli olması",
+      "Sağ ana bronşun sol ana bronşa göre daha geniş, daha kısa ve trakeanın dikey eksenine (düz bir hatta) daha uygun açıyla inmesi",
+      "Sağ akciğerin 3 loblu olması nedeniyle yarattığı yüksek negatif basınç (vakum) etkisi",
+      "Sol ana bronşun aort kavsi tarafından sıkıştırılarak tamamen kapalı kalması",
+      "Yutkunma refleksinin anatomik olarak sağ asimetrik kasılımı"
+    ],
+    correct: 1,
+    exp: "Süt çocuklarında ve küçük çocuklarda aniden başlayan, açıklanamayan, tek taraflı wheezing (hışıltı) her zaman 'Yabancı Cisim Aspirasyonunu' düşündürmelidir (Kuruyemişler en sıktır). Cisim bir check-valve (tek yönlü kapak) gibi davranır; hava girer ama çıkamaz, bu yüzden grafide 'Hava hapsi / Havalanma artışı' görülür. Yabancı cisimlerin %70-80'i Sağ Ana Bronşa kaçar. Bunun tamamen anatomik bir nedeni vardır: Sağ ana bronş sol ana bronşa göre daha KISA, daha GENİŞ ve trakeanın dikey eksenine daha 'DİK/DÜZ (vertical)' açıyla iner. Yerçekimiyle düşen bir cisim doğal olarak bu düz ve geniş boruyu tercih eder. Kesin tanı ve tedavi Rijit Bronkoskopi ile cismin çıkarılmasıdır."
+  },
+  {
+    id: 489,
+    ders: "Pediatri",
+    konu: "Pediatrik Göğüs Hastalıkları",
+    diff: 4,
+    q: "Üç yaşında erkek çocuk, son 2 gündür hafif ateş ve burun akıntısı sonrası başlayan, özellikle geceleri artan 'havlar tarzda (barking)' kaba bir öksürük ve nefes alırken (inspiryumda) duyulan stridor şikayetiyle getiriliyor. Çocuğun genel durumu iyi, toksik görünümü ve salya akıntısı yoktur. Çekilen boyun ön-arka grafisinde subglottik bölgede daralma (Kalem ucu / Steeple işareti) saptanıyor. Krup (Akut Laringotrakeobronşit) tanısı konan bu hastada, hava yolu ödemine ve klinik tabloya neden olan en sık viral etken aşağıdakilerden hangisidir?",
+    options: [
+      "Respiratuar Sinsityal Virüs (RSV)",
+      "Parainfluenza virüs",
+      "Adenovirüs",
+      "Rinovirüs",
+      "Epstein-Barr Virüs (EBV)"
+    ],
+    correct: 1,
+    exp: "Krup (Akut Laringotrakeobronşit), 6 ay - 3 yaş arası çocuklarda görülen üst hava yolu enfeksiyonudur. Ses tellerinin hemen altındaki (subglottik) bölgenin inflamasyonu ve ödemine bağlıdır. Klasik triadı: Havlar tarzda (köpek veya fok balığı gibi) öksürük, inspiratuar stridor ve ses kısıklığıdır. Toksik görünüm ve salya akması YOKTUR (Epiglottitten ayırır). Röntgen'de hava yolunun daralmasını gösteren 'Kalem ucu (Steeple sign)' tipiktir. En sık (ve en klasik) etkeni 'Parainfluenza Virüs (Tip 1 ve 2)'tür. Tedavide soğuk buhar, tek doz Deksametazon ve gerekirse (stridor istirahatte de varsa) Nebülize Adrenalin kullanılır."
+  },
+  {
+    id: 490,
+    ders: "Pediatri",
+    konu: "Pediatrik Enfeksiyon Hastalıkları",
+    diff: 4,
+    q: "Beş yaşındaki kız çocuk, 3 gündür devam eden yüksek ateş, burun akıntısı (koriza) ve şiddetli göz kızarıklığı (konjonktivit) ile başvuruyor. Muayenede yanak mukozasında 2. azı dişleri hizasında tuz tanesi büyüklüğünde, etrafı kırmızı halkalı beyaz lekeler (Koplik lekeleri) saptanıyor. Ertesi gün çocuğun kulak arkasından ve yüzünden başlayarak gövdesine doğru yayılan makülopapüler döküntüleri ortaya çıkıyor. Kızamık (Rubeola) tanısı kesinleşen bu hastada, epitel onarımını hızlandırarak pnömoni ve körlük gibi ölümcül komplikasyonları (mortaliteyi) azalttığı için Dünya Sağlık Örgütü (WHO) tarafından tedavide verilmesi şiddetle önerilen vitamin aşağıdakilerden hangisidir?",
+    options: [
+      "C Vitamini",
+      "D Vitamini",
+      "A Vitamini",
+      "B12 Vitamini",
+      "K Vitamini"
+    ],
+    correct: 2,
+    exp: "Kızamık enfeksiyonu, prodrom dönemindeki 3C bulgusu (Cough/Öksürük, Coryza/Nezle, Conjunctivitis) ve ağız içindeki patognomonik 'Koplik Lekeleri' ile tanınır. Döküntü yüzden başlar ve aşağı iner. Kızamık virüsü vücuttaki epitel dokularını (solunum, GİS, göz korneası) ağır şekilde tahrip eder. A Vitamini (Retinol), epitel dokusunun farklılaşması ve onarımı için mutlak gerekli bir vitamindir. Kızamık geçiren çocuklara yüksek doz 'A Vitamini' takviyesi verilmesi; epitelin hızla onarılmasını sağlayarak kseroftalmiyi (körlüğü), ishalleri ve en sık ölüm nedeni olan sekonder bakteriyel pnömonileri belirgin şekilde azaltır. Bu nedenle WHO kılavuzlarında standart tedavidir."
+  },
+  {
+    id: 491,
+    ders: "Pediatri",
+    konu: "Pediatrik Enfeksiyon Hastalıkları",
+    diff: 4,
+    q: "Aşıları tam olmayan 6 aylık erkek bebek, 2 haftadır süren soğuk algınlığı benzeri dönemin ardından başlayan şiddetli öksürük krizleriyle getiriliyor. Annesi, öksürüğün peş peşe 15-20 kez geldiğini, bebeğin bu sırada morardığını ve krizin sonunda derin, tiz bir iç çekme ('whoop') sesi çıkardığını belirtiyor. Tam kan sayımında Lökosit: 50.000 /mm3 ve bunun %85'inin Lenfosit olduğu (masif lenfositoz) görülüyor. Boğmaca (Pertussis) tanısı konan bu hastada, hastalık 'Paroksismal' (öksürük krizleri) evresine ulaştıktan sonra başlanan Makrolid grubu (Örn: Azitromisin) antibiyotiklerin EN TEMEL klinik amacı aşağıdakilerden hangisidir?",
+    options: [
+      "Pertussis toksinini kan dolaşımında bağlayarak nötralize etmek",
+      "Öksürük krizlerinin şiddetini ve süresini saniyeler içinde anında kesmek",
+      "Bakteriyi nazofarenksten eradike ederek hastanın çevresindeki diğer kişilere 'Bulaştırıcılığını' ortadan kaldırmak",
+      "Beyinde ensefalopati gelişimini kalıcı olarak durdurmak",
+      "Lökositozu düşürerek kan viskozitesini normale döndürmek"
+    ],
+    correct: 2,
+    exp: "Boğmaca (Bordetella pertussis); kataral (nezle), paroksismal (kriz/whoop) ve konvalesan evrelerden oluşur. Laboratuvarda izlenen aşırı lenfositoz (Lökomoid reaksiyon) pertussis toksinine bağlıdır. Hastalık kataral evredeyken antibiyotik verirseniz klinik iyileşebilir; ANCAK hasta size geldiğinde genellikle 'Paroksismal' evrededir (öksürük krizleri başlamıştır). Bu evrede toksinler hücrelere çoktan bağlanmıştır. Bu yüzden vereceğiniz Makrolid antibiyotik (Azitromisin), öksürük krizlerinin süresini veya şiddetini DEĞİŞTİRMEZ (iyileştirmez). Antibiyotik vermemizin YEGANE AMACI; bakteriyi boğazdan temizleyerek hastanın topluma (diğer bebeklere) hastalığı yaymasını (bulaşmasını) engellemektir (İzolasyon)."
+  },
+  {
+    id: 492,
+    ders: "Pediatri",
+    konu: "Pediatrik Enfeksiyon Hastalıkları",
+    diff: 4,
+    q: "Yedi yaşında erkek çocuk, hafif ateş ve halsizlik sonrası yanaklarında aniden ortaya çıkan ve sanki tokat yemiş gibi duran canlı kırmızı renkli bir döküntü (Slapped-cheek appearance) ile getiriliyor. İki gün sonra bu döküntü kollarına ve bacaklarına yayılarak ortası soluk, ağsı 'dantelimsi (lacy)' bir görünüm alıyor. Eritema İnfektiyozum (Beşinci Hastalık) tanısı konan bu hastada enfeksiyona neden olan virüs (Parvovirüs B19), özellikle aşağıdaki hematolojik hastalıklardan hangisine sahip çocuklara bulaştığında hayatı tehdit eden 'Aplastik Kriz' tablosuna yol açar?",
+    options: [
+      "İdiyopatik Trombositopenik Purpura (ITP)",
+      "Hemofili A",
+      "Orak Hücreli Anemi (veya Herediter Sferositoz)",
+      "Akut Lenfoblastik Lösemi (ALL)",
+      "Glukoz-6-Fosfat Dehidrogenaz (G6PD) eksikliği"
+    ],
+    correct: 2,
+    exp: "Eritema İnfektiyozum (5. Hastalık); 'Tokatlanmış yüz' ve 'Dantelimsi döküntü' ile karakterize, sağlıklı çocuklarda çok masum seyreden bir hastalıktır. Etkeni Parvovirüs B19'dur. Parvovirüs B19'un spesifik özelliği, kemik iliğindeki 'Eritroid Öncül Hücrelerini (P eritrosit antijeni üzerinden)' doğrudan enfekte edip öldürmesidir. Sağlıklı bir çocukta kemik iliği 1 hafta eritrosit üretemese (retikülosit sıfırlansa) bile, eritrosit ömrü 120 gün olduğu için anemi gelişmez. ANCAK, eritrosit ömrünün çok kısa olduğu (10-20 gün) kronik hemolitik anemi hastalarında (Orak Hücreli Anemi, Sferositoz, Talasemi) kemik iliği 1 hafta durursa, kan anında tükenir ve ölümcül, derin bir anemi (Geçici Aplastik Kriz) gelişir."
+  },
+  {
+    id: 493,
+    ders: "Pediatri",
+    konu: "Pediatrik Enfeksiyon Hastalıkları",
+    diff: 4,
+    q: "On aylık sağlıklı kız bebek, 3 gündür devam eden ve ateş düşürücülere dirençli 40°C yüksek ateş nedeniyle acile getiriliyor. Muayenesinde ateşi dışında belirgin bir odak bulunamıyor (boğaz, kulak normal). Dördüncü gün bebeğin ateşi aniden tamamen düşüyor (kriziz/lizis) ve ateşin düşmesiyle EŞ ZAMANLI olarak gövdesinde başlayıp boyuna yayılan pembe renkli makülopapüler döküntüler ortaya çıkıyor. Bebek döküntülü dönemde neşeli ve aktiftir. Roseola İnfantum (Altıncı Hastalık / Ekzantema Subitum) tanısı konan bu viral enfeksiyonun en sık ajanı ve en sık görülen nörolojik komplikasyonu aşağıdakilerden hangisidir?",
+    options: [
+      "İnsan Herpes Virüs 6 (HHV-6) / Febril Konvülsiyon (Ateşli Havale)",
+      "Coxsackie virüs A / Aseptik menenjit",
+      "Kızamıkçık (Rubella) virüsü / Sensorinöral işitme kaybı",
+      "Suçiçeği (VZV) / Serebellar ataksi",
+      "Epstein-Barr Virüs (EBV) / Guillain-Barré sendromu"
+    ],
+    correct: 0,
+    exp: "Roseola İnfantum (6. Hastalık), süt çocukluğu döneminin (6-15 ay) klasik döküntülü hastalığıdır. Kuralı şudur: 'Ateş 3-4 gün çok yüksektir, ateş aniden düşer ve DÖKÜNTÜ ÇIKAR'. (Diğerlerinde ateş ve döküntü beraberdir). Etkeni %90 oranında İnsan Herpes Virüs 6 (HHV-6)'dır. Ateşin ilk 3 gün çok yüksek ve inatçı olması nedeniyle, süt çocukluğu döneminde görülen 'Febril Konvülsiyonların (Ateşli Havale)' en sık viral nedenlerinden biri HHV-6 enfeksiyonudur. Döküntü çıkıp ateş düştüğünde hastalık tamamen iyileşmiş sayılır."
+  },
+  {
+    id: 494,
+    ders: "Pediatri",
+    konu: "Pediatrik Enfeksiyon Hastalıkları",
+    diff: 4,
+    q: "Aşı takvimi eksik olan 10 yaşındaki erkek çocuk, 2 gündür süren ateş, baş ağrısı ve her iki kulak önünde/altında çiğnemekle artan ağrılı şişlik (Bilateral Parotit) şikayetiyle başvuruyor. Kabakulak (Mumps) tanısı konan bu hastada, enfeksiyonun ilerleyen günlerinde tükürük bezleri DIŞINDA en sık görülen, spesifik ve ağrılı majör komplikasyon aşağıdakilerden hangisidir?",
+    options: [
+      "Akut pankreatit",
+      "Aseptik menenjit",
+      "Epididimo-Orşit (Testis iltihabı)",
+      "Miyokardit",
+      "Optik nörit"
+    ],
+    correct: 2,
+    exp: "Kabakulak (Mumps), Paramyxoviridae ailesinden bir virüsün neden olduğu, tükürük bezlerini (özellikle Parotis) tutan sistemik bir enfeksiyondur. Aşıyla önlenebilir. Parotit dışında birçok organı tutabilir. Tüm yaş gruplarında en sık ekstra-salivary (tükürük bezi dışı) komplikasyon Aseptik Menenjit'tir. ANCAK puberte (ergenlik) sonrası veya puberte dönemindeki 'Erkek çocuklarda' en spesifik, en ağrılı ve en korkulan ekstra-salivary komplikasyon 'Orşit (veya Epididimo-orşit)'tir. Testis tek taraflı veya çift taraflı şişer ve çok ağrılıdır. Bilateral olursa kısırlık (infertilite) yapma riski taşır. (Akut pankreatit de kabakulağın nadir ama klasik bir bulgusudur, amilazı yükseltir)."
+  },
+  {
+    id: 495,
+    ders: "Pediatri",
+    konu: "Pediatrik İmmünoloji/Alerji",
+    diff: 4,
+    q: "İki yaşındaki erkek çocuk, hayatının 6. ayından itibaren tekrarlayan pnömoni ve otitis media (S. pneumoniae ve H. influenzae üremesi) atakları nedeniyle getiriliyor. Fizik muayenesinde tonsillerinin (bademcik) ve periferik lenf bezlerinin tamamen yok olduğu (palpe edilemediği) saptanıyor. Laboratuvarında tüm immünglobulin (IgG, IgA, IgM) düzeyleri belirgin DÜŞÜK ve periferik kanda CD19+ B lenfosit oranı <%1 olarak bulunuyor. X'e bağlı Agammaglobulinemi (Bruton Hastalığı) tanısı alan bu hastada, B hücrelerinin kemik iliğinden çıkıp olgunlaşamamasına neden olan defektli enzimin (BTK) temel hücresel görevi aşağıdakilerden hangisidir?",
+    options: [
+      "Hücre zarındaki CD40 ligandının ekspresyonunu sağlamak",
+      "Makrofajlarda fagozom ile lizozomu birleştirerek fagolizozom oluşturmak",
+      "Pre-B hücre reseptöründen (pre-BCR) hücre içine olgunlaşma ve sağkalım sinyalini iletmek",
+      "T hücrelerinin timusta pozitif ve negatif seçilimini organize etmek",
+      "Nötrofillerde solunumsal patlamayı (oksidatif burst) tetiklemek"
+    ],
+    correct: 2,
+    exp: "Bruton Agammaglobulinemisi, X'e bağlı resesif geçen ve Bruton Tirozin Kinaz (BTK) gen mutasyonu sonucu oluşan bir immün yetmezliktir. Anneden geçen IgG'ler bittiğinde (6. aydan sonra) kapsüllü bakteri enfeksiyonları başlar. Kanda B hücresi (CD19/CD20) yoktur, antikor hiç üretilemez ve tonsil/lenf nodu gelişemez. BTK enziminin görevi, kemik iliğindeki 'Pre-B hücrelerinin' olgun B hücresine dönüşmesi (matürasyonu) için gereken sinyal iletimini sağlamaktır. Enzim yokluğunda B hücreleri kemik iliğinde takılı kalır ve apoptoza uğrar."
+  },
+  {
+    id: 496,
+    ders: "Pediatri",
+    konu: "Pediatrik İmmünoloji/Alerji",
+    diff: 5,
+    q: "Dört aylık erkek bebek; geçmeyen ağız içi pamukçuk (kandidiyazis), kronik sulu ishal, büyüme geriliği ve Pneumocystis jirovecii pnömonisi ile yoğun bakıma alınıyor. Akciğer grafisinde timus gölgesi izlenmiyor. Laboratuvarda belirgin lenfopeni (Lenfosit: 300 /mm3) saptanıyor. Akım sitometrisinde T hücreleri (CD3+) yok, NK hücreleri (CD56+) yok, ancak B hücreleri (CD19+) normal sayıda (T- B+ NK- profili) bulunuyor. Ağır Kombine İmmün Yetmezliğin (SCID) en sık görülen bu formunda, lenfositlerin gelişimini durduran genetik defekt aşağıdakilerden hangisidir?",
+    options: [
+      "Adenozin deaminaz (ADA) enzim eksikliği",
+      "İnterlökin-2 (IL-2) reseptörünün gama zincirindeki mutasyon",
+      "Pürin nükleozid fosforilaz (PNP) eksikliği",
+      "RAG1 ve RAG2 genlerinde rekombinasyon kusuru",
+      "WASP geninde hücre iskeleti polimerizasyon kusuru"
+    ],
+    correct: 1,
+    exp: "Ağır Kombine İmmün Yetmezlik (SCID), T hücrelerinin olmadığı ve bu nedenle B hücrelerinin de fonksiyon göremediği ölümcül bir tablodur. En sık (%45-50) görülen formu X'e bağlı resesif geçişli olan 'IL-2 Reseptör Gama Zinciri (Ortak Gama Zinciri)' defektidir. Bu zincir IL-2, IL-4, IL-7, IL-9 ve IL-15 reseptörlerinin ortak parçasıdır. Bu sitokinler lenfositlerin yaşam ve çoğalma sinyalleridir. Sinyal alamayan T ve NK hücreleri gelişemez (T- NK-). B hücreleri sayıca normal (B+) olsa da, T hücresi yardımı olmadığı için antikor üretemezler. (ADA eksikliğinde tüm hücreler zehirlendiği için T- B- NK- profili görülür)."
+  },
+  {
+    id: 497,
+    ders: "Pediatri",
+    konu: "Pediatrik İmmünoloji/Alerji",
+    diff: 4,
+    q: "Beş yaşında erkek çocuk; karaciğerde, akciğerde ve lenf bezlerinde tekrarlayan apseler nedeniyle başvuruyor. Kültürlerde sıklıkla Staphylococcus aureus ve Aspergillus fumigatus ürüyor. Hastanın nötrofil sayısı ve morfolojisi tamamen normaldir ancak Dihidrorodamin (DHR) akım sitometri testi ve Nitroblue Tetrazolium (NBT) testi NEGATİF (boyanma yok) olarak saptanıyor. Kronik Granülomatöz Hastalık (CGD) tanısı alan bu hastada, nötrofillerin fagositoz yapmasına rağmen bakteriyi içeride öldürememesine neden olan eksik enzim kompleksi aşağıdakilerden hangisidir?",
+    options: [
+      "Miyeloperoksidaz",
+      "Glukoz-6-Fosfat Dehidrogenaz (G6PD)",
+      "NADPH oksidaz",
+      "Süperoksit dismutaz",
+      "Katalaz"
+    ],
+    correct: 2,
+    exp: "Kronik Granülomatöz Hastalık (CGD), nötrofil ve makrofajların fagositoz yeteneğinin normal olduğu, ancak bakteriyi yuttuktan sonra onu eritecek olan serbest oksijen radikallerini (süperoksit vb.) üretemediği bir hastalıktır. Sorun 'NADPH Oksidaz' enzim kompleksindedir (Solunumsal patlama / Oxidative burst defekti). Hücreler bakteriyi yutar ama öldüremez, etrafını sararak devasa apseler ve granülomlar oluştururlar. Bu hastalar özellikle 'Katalaz pozitif' (S. aureus, Aspergillus, Serratia, Burkholderia, Nocardia) organizmalara karşı çaresizdir. NBT ve DHR testleri bu oksijen radikallerinin üretimini ölçer ve CGD'de sonuç negatiftir."
+  },
+  {
+    id: 498,
+    ders: "Pediatri",
+    konu: "Pediatrik İmmünoloji/Alerji",
+    diff: 4,
+    q: "Sekiz yaşında kız çocuk; soğuk (inflamasyonsuz) stafilokokal deri apseleri, şiddetli egzama (atopik dermatit), kaba yüz hatları ve geniş bir burun kökü ile polikliniğe getiriliyor. Annesi, çocuğun süt dişlerinin henüz dökülmediğini (çift sıra dişlenme) belirtiyor. Laboratuvarında Serum IgE düzeyi > 2000 IU/mL (Çok yüksek) ve eozinofili saptanıyor. Hiper IgE Sendromu (Job Sendromu) tanısı konan bu hastadaki immünolojik patogenezden sorumlu olan STAT3 gen mutasyonunun hücresel sonucu aşağıdakilerden hangisidir?",
+    options: [
+      "Th17 (T helper 17) hücrelerinin farklılaşamaması ve nötrofillerin dokuya çağrılamaması",
+      "T hücrelerinin CD40 ligandı eksprese edemeyerek B hücrelerinde izotip sınıf değişimi yapamaması",
+      "Mast hücrelerinin anafilaktik degranülasyon eşiğinin düşmesi",
+      "Kompleman C3b molekülünün fagositoz için opsonizasyon yapamaması",
+      "Makrofajlarda lizozomal sekresyonun durması"
+    ],
+    correct: 0,
+    exp: "Hiper IgE Sendromu (Job Sendromu), STAT3 gen mutasyonu sonucu gelişir. FATED akronimi ile bilinir: Facies (kaba yüz), Abscesses (soğuk stafilokokal deri apseleri), Teeth (süt dişlerinin düşmemesi), IgE yüksekliği (>2000), Dermatologic problems (şiddetli egzama). STAT3 mutasyonu, CD4+ T hücrelerinin 'Th17' hücrelerine dönüşmesini engeller. Th17 hücreleri, dokuda bakteri mantar olduğunda nötrofilleri olay yerine çağıran IL-17'yi üretir. Th17 olmayınca nötrofiller dokuya gelemez, enfeksiyon bölgesi kızaramaz/ısınamaz ve ortaya içi bakteri dolu ama ateşi/kızarıklığı olmayan 'Soğuk Apseler' çıkar."
+  },
+  {
+    id: 499,
+    ders: "Pediatri",
+    konu: "Pediatrik İmmünoloji/Alerji",
+    diff: 4,
+    q: "Üç yaşında erkek çocuk; gövdesinde yaygın ve kaşıntılı döküntüler (egzama) ve tekrarlayan orta kulak enfeksiyonları nedeniyle getiriliyor. Hastanın muayenesinde vücudunda yaygın morluklar (peteşi/ekimoz) izleniyor. Tam kan sayımında Trombosit sayısı: 25.000 /mm3 saptanırken, periferik yaymada trombosit boyutlarının normalden çok küçük (mikrotrombosit) olduğu fark ediliyor. Wiskott-Aldrich Sendromu tanısı alan bu hastada, hücre iskeleti polimerizasyonunu bozarak hem lenfosit hem de trombosit fonksiyonlarını çökerten genetik mutasyon aşağıdakilerden hangisidir?",
+    options: [
+      "LYST geni",
+      "ATM geni",
+      "WASP geni",
+      "RAG geni",
+      "Btk geni"
+    ],
+    correct: 2,
+    exp: "Wiskott-Aldrich Sendromu (WAS); X'e bağlı resesif kalıtılan ve WATER (Wiskott-Aldrich, Trombositopeni - küçük boyutlu, Egzama, Recurrent enfeksiyonlar) klasik dörtlüsüyle seyreden bir immün yetmezliktir. Ig profili 'M'üşük (düşük IgM), 'A' ve 'E' yüksek şeklindedir (IgA ve IgE yüksektir). Mutasyon 'WASP (Wiskott-Aldrich Sendrom Proteini)' genindedir. Bu protein hücre iskeletini (Aktin flamanları) düzenler. İskeleti bozulan trombositler küçücük kalır ve dalakta hızla yıkılır (kanama yapar). İskeleti bozulan T lenfositler ve makrofajlar ise antijen sunumu yapamaz ve hareket edemezler (immün yetmezlik yapar)."
+  },
+  {
+    id: 500,
+    ders: "Pediatri",
+    konu: "Pediatrik Endokrinoloji ve Metabolizma",
+    diff: 4,
+    q: "Doğumdan sonraki 10. günde şiddetli kusma, dehidratasyon ve letarji tablosuyla acile getirilen kız bebeğin fizik muayenesinde dış genital organlarının erkek görünümünde (ambiguus genitale / klitoromegali) olduğu saptanıyor. Laboratuvarında Serum Sodyumu: 122 mEq/L (Düşük) ve Potasyumu: 6.8 mEq/L (Yüksek) olarak bulunuyor. Klasik Konjenital Adrenal Hiperplazi (KAH) şüphesiyle gönderilen testlerde 17-Hidroksiprogesteron (17-OHP) düzeyi belirgin yüksek saptanıyor. Bu hastada eksik olan enzimin (21-Hidroksilaz) sentezleyemediği ve hiponatremi/hiperkalemi kliniğine (tuz kaybına) neden olan steroid hormon aşağıdakilerden hangisidir?",
+    options: [
+      "Kortizol",
+      "Testosteron",
+      "Aldosteron",
+      "Dehidroepiandrosteron (DHEA)",
+      "Östradiol"
+    ],
+    correct: 2,
+    exp: "Konjenital Adrenal Hiperplazilerin (KAH) %95'inden fazlası '21-Alfa Hidroksilaz' enzim eksikliğine bağlıdır. Bu enzim kolesterolden gelen steroid yolağında hem Aldosteron hem de Kortizol sentezi için ŞARTTIR. Enzim bloke olunca Mineralokortikoid olan 'Aldosteron' üretilemez (Tuz kaybı, dehidratasyon, hiponatremi, hiperkalemi). Kortizol üretilemez (Hipoglisemi, şok). Üretilemeyen bu ürünlerin gerisinde kalan öncül maddeler (17-OHP) mecburen tıkalı olmayan tek yola, yani Androjen (Testosteron) sentez yolağına yönelir. Anne karnında aşırı androjene maruz kalan kız bebek, erkek benzeri dış genitalyaya (virilizasyon) sahip olarak doğar."
+  },
+  {
+    id: 501,
+    ders: "Pediatri",
+    konu: "Pediatrik Endokrinoloji ve Metabolizma",
+    diff: 4,
+    q: "Yenidoğan tarama testi (topuk kanı) pozitif gelen 3 haftalık erkek bebekte Fenilketonüri (PKU) tanısı doğrulanıyor. Bebek asemptomatiktir ancak ailesine ömür boyu fenilalaninden kısıtlı diyet uygulamaları gerektiği, aksi takdirde ağır zeka geriliği ve mikrosefali gelişeceği anlatılıyor. Klasik PKU'da eksik olan 'Fenilalanin Hidroksilaz' enzimi, normalde esansiyel bir amino asit olan fenilalanini vücutta hangi amino aside dönüştürmekle görevlidir?",
+    options: [
+      "Triptofan",
+      "Tirozin",
+      "Metiyonin",
+      "Histidin",
+      "Sistein"
+    ],
+    correct: 1,
+    exp: "Fenilketonüri (PKU), otozomal resesif geçen bir amino asit metabolizma hastalığıdır. Fenilalanin Hidroksilaz enzimi (veya kofaktörü olan BH4 - Tetrahidrobiyopterin) eksiktir. Fenilalanin karaciğerde normalde 'Tirozin' amino asidine dönüştürülür. Bu dönüşüm olmayınca iki sorun çıkar: 1) Kanda biriken fenilalanin beyne geçerek ağır zeka geriliği, konvülsiyon ve idrarda 'küf/fare kokusu' yapar. 2) Vücut Tirozin üretemez. Tirozin, melanin (cilt pigmenti) ve katekolaminlerin öncüsüdür. Bu nedenle hastalar sarı saçlı, mavi gözlü (açık tenli) olur ve normalde esansiyel olmayan Tirozin, bu hastalar için diyetle dışarıdan alınması zorunlu (esansiyel) hale gelir."
+  },
+  {
+    id: 502,
+    ders: "Pediatri",
+    konu: "Pediatrik Endokrinoloji ve Metabolizma",
+    diff: 5,
+    q: "Hayatının 3. gününde anne sütü almaya başladıktan sonra inatçı kusma, letarji ve sarılık ile getirilen yenidoğanın muayenesinde her iki gözünde katarakt ve karaciğerinde büyüme (hepatomegali) saptanıyor. Hastanın kan kültüründe E. coli üremesi (sepsis) gerçekleşiyor. İdrar tahlilinde glukoz negatif iken, bakır redüksiyon testi (Clinitest) ile idrarda 'indirgeyici madde' pozitif bulunuyor. Klasik Galaktozemi tanısı alan bu hastada, lenslerde katarakt oluşumuna yol açan ve galaktozu galaktitole çeviren enzim aşağıdakilerden hangisidir?",
+    options: [
+      "Galaktoz-1-fosfat üridiltransferaz (GALT)",
+      "Aldoz redüktaz",
+      "Galaktokinaz",
+      "Fruktokinaz",
+      "Hegzokinaz"
+    ],
+    correct: 1,
+    exp: "Klasik Galaktozemi, GALT (Galaktoz-1-fosfat üridiltransferaz) enzim eksikliği sonucu anne sütündeki laktozun (glukoz+galaktoz) yıkılamamasıdır. Galaktoz ve Galaktoz-1-fosfat dokularda birikir. En tipik bulguları karaciğer yetmezliği, katarakt ve E. coli sepsisine (nedeni tam bilinmeyen) muazzam yatkınlıktır. Kataraktın oluşma nedeni, göz merceğinde (lens) biriken fazla galaktozun 'Aldoz Redüktaz' enzimi tarafından osmotik olarak çok aktif bir şeker alkolü olan 'Galaktitol'e dönüştürülmesidir. Galaktitol lense bolca su çeker, lifleri şişirir ve katarakta yol açar. (Not: Eksik olan enzim GALT'tır, kataraktı yapan enzim Aldoz Redüktaz'dır)."
+  },
+  {
+    id: 503,
+    ders: "Pediatri",
+    konu: "Pediatrik Endokrinoloji ve Metabolizma",
+    diff: 4,
+    q: "Sekiz yaşında erkek çocuk, 1 haftadır giderek artan çok su içme (polidipsi), çok idrara çıkma (poliüri) ve karın ağrısı şikayetiyle acile getiriliyor. Muayenesinde bilinci uykuya meyilli, solunumu derin ve hızlı (Kussmaul solunumu) ve nefesinde aseton (çürük elma) kokusu saptanıyor. Kan şekeri 450 mg/dL, kan gazında pH: 7.15 (Metabolik asidoz) bulunuyor. Diyabetik Ketoasidoz (DKA) tanısı alan bu Tip 1 DM hastasında, karaciğerde yağ asitlerinden aşırı miktarda 'keton cisimleri (beta-hidroksibutirat ve asetoasetat)' üretimini tetikleyen ve insülin eksikliği ile birlikte çalışan asıl karşıt hormon aşağıdakilerden hangisidir?",
+    options: [
+      "Büyüme Hormonu (GH)",
+      "Glukagon",
+      "Kortizol",
+      "Epinefrin (Adrenalin)",
+      "Tiroksin (T4)"
+    ],
+    correct: 1,
+    exp: "Tip 1 Diabetes Mellitus, otoimmün pankreas beta hücre yıkımına bağlı mutlak insülin eksikliğidir. DKA, insülin yokluğunda hücrelerin glukozu kullanamayıp açlık çekmesi ve enerji için yağları (trigliseridleri) yıkmasıyla oluşur. DKA gelişiminin temelinde 'İnsülin eksikliği' VE 'Glukagon fazlalığı' dengesizliği yatar. İnsülin yokluğunda serbest kalan Glukagon, karaciğerde mitokondriye yağ asitlerinin girişini (Karnitin mekiğini açarak) serbest bırakır. Yağ asitleri hızla Asetil-CoA'ya ve ardından asidik keton cisimlerine (Asetoasetat ve Beta-hidroksibutirat) dönüşür. Bu ketonlar kanın pH'ını düşürerek ölümcül metabolik asidozu (DKA) ve Kussmaul solunumunu (asidi solunumla atma çabası) yaratır."
+  },
+  {
+    id: 504,
+    ders: "Pediatri",
+    konu: "Pediatrik Endokrinoloji ve Metabolizma",
+    diff: 4,
+    q: "İki yaşındaki kız çocuk, son aylarda oturma ve yürüme becerilerinde gerileme, solukluk ve karnında belirgin şişlik şikayetiyle getiriliyor. Muayenesinde dalağının pelvise kadar indiği (masif splenomegali) saptanıyor. Hemogramda pansitopeni (Hb: 7 g/dL, Plt: 50.000) mevcut. Kemik grafilerinde femur distalinde 'Erlenmeyer şişesi' deformitesi görülüyor. Kemik iliği aspirasyonunda, sitoplazması 'buruşuk kağıt (crumpled tissue paper)' görünümünde olan, lipid yüklü dev makrofajlar saptanıyor. En sık görülen lizozomal depo hastalığı olan Gaucher hastalığı tanısı konan bu vakada, makrofajların içinde biriken sfingolipid aşağıdakilerden hangisidir?",
+    options: [
+      "Sfingomiyelin",
+      "Seramid triheksozid",
+      "Glukoserebrozid",
+      "Galaktoserebrozid",
+      "Gangliozid GM2"
+    ],
+    correct: 2,
+    exp: "Gaucher Hastalığı, 'Glukoserebrozidaz (Beta-glukozidaz)' enziminin eksikliğidir ve en sık görülen lizozomal depo hastalığıdır. Enzim eksik olunca 'Glukoserebrozid' (özellikle yaşlanan eritrosit ve lökositlerin zarından gelen lipidler) makrofajların lizozomlarında parçalanamaz ve birikir. Bu içi lipid dolu makrofajlara 'Gaucher hücreleri' denir (Buruşuk kağıt manzarası patognomoniktir). Bu hücreler dalakta (masif splenomegali), kemik iliğinde (pansitopeni ve kemik ağrıları/Erlenmeyer deformitesi) ve karaciğerde birikir. Tip 1 (en sık) formunda nörolojik tutulum YOKTUR. Enzim replasman tedavisine (İmigluseraz) mükemmel yanıt verir."
+  },
+  {
+    id: 505,
+    ders: "Pediatri",
+    konu: "Pediatrik Hematoloji ve Onkoloji",
+    diff: 4,
+    q: "Üç yaşında kız çocuk, ateş ve bacak ağrıları (kemik ağrısı) şikayetiyle başvuruyor. Fizik muayenesinde solukluk, yaygın lenfadenopati ve splenomegali saptanıyor. Hemogramda Lökosit: 45.000 /mm3, Hemoglobin: 7.0 g/dL ve Trombosit: 25.000 /mm3 bulunuyor. Periferik yaymada nükleolleri belirgin olmayan, dar sitoplazmalı, agranüler blast hücreleri görülüyor. Kemik iliği aspirasyonunda %85 oranında lenfoblast (TdT ve CD10 pozitif) saptanarak Akut Lenfoblastik Lösemi (ALL) tanısı konuyor. Çocukluk çağının en sık kanseri olan ALL'nin standart kemoterapi protokolünde, kan-beyin bariyerini geçemeyen ilaçlara bağlı santral sinir sistemi nükslerini (relaps) önlemek için TÜM hastalara rutin olarak uygulanan profilaksi aşağıdakilerden hangisidir?",
+    options: [
+      "Profilaktik tüm beyin ışınlaması (Kranial Radyoterapi)",
+      "İntravenöz yüksek doz İmmünglobulin (IVIG)",
+      "İntratekal Metotreksat (BOS içine kemoterapi)",
+      "Oral İmatinib (Tirozin kinaz inhibitörü)",
+      "İntravenöz Rituksimab"
+    ],
+    correct: 2,
+    exp: "Akut Lenfoblastik Lösemi (ALL), çocuklarda en sık görülen lösemi ve kanser türüdür. Blastların TdT (Terminal deoksinükleotidil transferaz) ve CALLA (CD10) pozitif olması tipiktir. ALL blastları, kemoterapi ilaçlarının ulaşamadığı 'Korunaklı Bölgelere (Sanctuary sites)' saklanmayı çok sever. Bu iki ana bölge Santral Sinir Sistemi (BOS) ve Testislerdir. Eğer önlem alınmazsa, ilik tamamen temizlense bile aylar sonra beyinden veya testisten nüks (relaps) olur. Bu nedenle, tanı anında BOS'ta blast görülsün veya görülmesin, ALL tedavisi alan HER ÇOCUĞA 'İntratekal (belden su alma iğnesiyle) Metotreksat' verilerek MSS profilaksisi yapılması altın kuraldır."
+  },
+  {
+    id: 506,
+    ders: "Pediatri",
+    konu: "Pediatrik Hematoloji ve Onkoloji",
+    diff: 4,
+    q: "Üç yaşında erkek çocuk, annesi banyo yaptırırken karnında tesadüfen fark ettiği sert ve ağrısız bir şişlik nedeniyle getiriliyor. Çocuğun genel durumu iyi, ancak kan basıncı 140/90 mmHg (Hipertansif) ölçülüyor ve idrarında mikroskobik hematüri saptanıyor. Batın muayenesinde sağ kadranda yer alan, 'orta hattı GEÇMEYEN' sert ve düzgün yüzeyli kitle palpe ediliyor. Wilms Tümörü (Nefroblastoma) şüphesi olan bu çocukluk çağı böbrek tümörünün köken aldığı embriyolojik doku ve sıklıkla mutasyona uğrayan gen aşağıdakilerden hangisidir?",
+    options: [
+      "Nöral krest hücreleri / N-myc geni",
+      "Mezonefrik kanal / RET proto-onkogeni",
+      "Üreterik tomurcuk (Ureteric bud) / p53 geni",
+      "Metanefrik blastem / WT1 geni",
+      "Nöral tüp ektodermi / APC geni"
+    ],
+    correct: 3,
+    exp: "Wilms Tümörü (Nefroblastoma), çocukluk çağının en sık görülen böbrek tümörüdür. Klasik olarak sağlam, asemptomatik bir çocukta tesadüfen fark edilen, orta hattı geçmeyen (Nöroblastom geçer) düzgün batın kitlesidir. Tümörün renin salgılamasına veya böbrek damarına bası yapmasına bağlı Hipertansiyon ve Hematüri sıktır. Wilms tümörü, normalde böbrek parankimini (glomerül ve tübülleri) oluşturması gereken ilkel embriyolojik doku olan 'Metanefrik Blastem' hücrelerinden köken alır. Sendromik vakalarda (WAGR, Denys-Drash) sıklıkla 11. kromozomda bulunan WT1 (Wilms Tumor 1) tümör süpresör gen mutasyonu/delesyonu rol oynar."
+  },
+  {
+    id: 507,
+    ders: "Pediatri",
+    konu: "Pediatrik Hematoloji ve Onkoloji",
+    diff: 4,
+    q: "Dokuz yaşında kız çocuk, zaman zaman gözlerinin sararması ve çabuk yorulma şikayetiyle başvuruyor. Özgeçmişinde yenidoğan döneminde uzamış sarılık nedeniyle ışın tedavisi (fototerapi) aldığı öğreniliyor. Muayenede dalak kosta kenarını 4 cm geçiyor (Splenomegali). Batın ultrasonografisinde safra kesesinde çok sayıda kalsifiye pigment taşı saptanıyor. Hemogramda Hb: 9.5 g/dL, Retikülosit: %8 ve MCHC (Ortalama Korpusküler Hemoglobin Konsantrasyonu): %38 (YÜKSEK) saptanıyor. Periferik yaymada santral solukluğu kaybolmuş küçük, yuvarlak ve koyu boyanan eritrositler izleniyor. Herediter Sferositoz tanısı alan bu hastada, eritrosit membranını dayanıksız hale getiren temel yapısal protein defekti aşağıdakilerden hangisidir?",
+    options: [
+      "Glikoforin C",
+      "Band 3, Ankirin veya Spektrin proteinlerindeki mutasyonlar",
+      "Glikozilfosfatidilinozitol (GPI) çapası",
+      "Hemoglobinin beta zinciri",
+      "Glukoz-6-fosfat dehidrogenaz (G6PD) enzimi"
+    ],
+    correct: 1,
+    exp: "Herediter Sferositoz, otozomal dominant geçen, eritrosit zar iskeleti defektidir. Zarı destekleyen 'Ankirin, Spektrin veya Band 3' proteinlerindeki genetik kusurlar nedeniyle eritrosit zarı dayanıksızdır. Hücre dolaşırken zarı koparak azalır, hacmi küçülür ve küre (Sferosit) şeklini alır. Sferositler dalaktan geçerken esneyemedikleri için dalak makrofajları tarafından parçalanır (Ekstravasküler hemoliz, Sarılık, Splenomegali). Hemoliz nedeniyle bilirubin safraya dökülür ve çocuk yaşta pigment safra taşları yapar. MCHC'nin (hücre içi hemoglobin yoğunluğunun) YÜKSEK olduğu tek anemidir. Kesin tanı 'Osmotik Frajilite Testi' ile konur. Şiddetli vakalarda tedavi splenektomidir."
+  },
+  {
+    id: 508,
+    ders: "Pediatri",
+    konu: "Pediatrik Hematoloji ve Onkoloji",
+    diff: 4,
+    q: "Beş yaşında sağlıklı erkek çocuk, 2 hafta önce geçirdiği viral üst solunum yolu enfeksiyonunun (ÜSYE) ardından bacaklarında ve gövdesinde aniden ortaya çıkan yaygın iğne ucu kadar kanamalar (peteşi) ve morluklar (ekimoz) ile acile getiriliyor. Çocuğun genel durumu çok iyi, ateşi ve organomegalisi YOKTUR. Hemogramda Lökosit: 8.000 /mm3, Hemoglobin: 12.0 g/dL ve Trombosit: 15.000 /mm3 (İzole Trombositopeni) saptanıyor. Periferik yaymada trombositler iri (makrotrombosit) görünümde olup diğer seriler normaldir. İmmün Trombositopenik Purpura (ITP) tanısı alan bu hastada, trombosit yıkımına yol açan patogenez aşağıdakilerden hangisidir?",
+    options: [
+      "Kemik iliğinde megakaryositlerin viral enfeksiyonla aplaziye uğraması",
+      "Trombosit yüzey glikoproteinlerine (özellikle GPIIb/IIIa) karşı gelişen IgG yapısındaki otoantikorların trombositleri kaplayıp dalakta makrofajlara parçalatması",
+      "ADAMTS13 enzim eksikliğine bağlı yaygın mikrovasküler trombosit tüketimi",
+      "Dalak büyümesine (hipersplenizm) bağlı trombositlerin dalakta göllenerek sekestre olması",
+      "Bakteriyel toksinlerin doğrudan trombosit zarını eritmesi"
+    ],
+    correct: 1,
+    exp: "İmmün (İdiyopatik) Trombositopenik Purpura (ITP), çocuklarda en sık görülen kanama bozukluğudur. Klasik öykü: 2-6 yaş arası SAĞLAM çocuk + 1-4 hafta önce VİRAL enfeksiyon + Aniden başlayan peteşi/ekimoz + İZOLE TROMBOSİTOPENİ. Lökosit ve Hemoglobin tamamen normaldir, karaciğer/dalak KESİNLİKLE büyümez (Eğer dalak büyükse lösemi veya depo hastalığı düşün). Viral enfeksiyon bağışıklık sistemini tetikler ve trombosit yüzeyindeki Glikoprotein IIb/IIIa reseptörlerine karşı çapraz reaksiyon gösteren 'IgG otoantikorları' üretilir. Opsonize olan trombositler dalağa gidince makrofajlar tarafından ısırılıp parçalanır (yıkım artışı). Kemik iliği bunu telafi etmek için bolca genç ve iri trombosit (makrotrombosit) üretir. Çoğu vaka haftalar içinde kendiliğinden düzelir."
+  },
+  {
+    id: 509,
+    ders: "Pediatri",
+    konu: "Pediatrik Hematoloji ve Onkoloji",
+    diff: 5,
+    q: "On dört yaşında, Orak Hücreli Anemi (HbSS) tanılı erkek hasta, son 2 gündür giderek artan halsizlik, solukluk ve kalp hızında artış şikayetiyle getiriliyor. Hastanın gözlerindeki sarılığın (ikter) azaldığı fark ediliyor. Hemogramda Hemoglobin düzeyi normalde seyrettiği 8 g/dL'den aniden 4 g/dL'ye düşmüş olarak saptanıyor. Retikülosit sayısı %0.1 (Neredeyse SIFIR) bulunuyor. Hastanın dalak boyutu normaldir. Bu hastada, hayatı tehdit eden aniden derinleşen aneminin (Aplastik Kriz) en olası nedeni ve patogenezi aşağıdakilerden hangisidir?",
+    options: [
+      "Dalağın aniden büyüyerek tüm kanı içine hapsetmesi (Splenik Sekestrasyon Krizi)",
+      "Folik asit eksikliğine bağlı kemik iliğinde megaloblastik duraklama",
+      "Parvovirüs B19 enfeksiyonunun kemik iliğindeki eritroid öncül hücreleri (eritroblastları) doğrudan enfekte edip apoptoza uğratarak alyuvar üretimini geçici olarak durdurması",
+      "Soğuk havaya maruziyete bağlı şiddetli damar içi (intravasküler) hemoliz atağı",
+      "Otoimmün sıcak antikor gelişimine bağlı yeni bir hemolitik kriz"
+    ],
+    correct: 2,
+    exp: "Orak Hücreli Anemi (ve Herediter Sferositoz gibi kronik hemolitik anemiler) hastalarında eritrosit ömrü çok kısadır (10-20 gün). Bu nedenle hastanın kemik iliği, kansızlığı telafi etmek için retikülosit sayısını hep yüksek tutarak durmaksızın çalışmak zorundadır (Retikülosit %10-20 arasıdır). Eğer bu hasta 'Parvovirüs B19 (5. Hastalık)' virüsü ile enfekte olursa, bu virüs spesifik olarak kemik iliğindeki eritroid prekürsörleri öldürür. İlik 1-2 hafta boyunca hiç alyuvar üretemez (Retikülosit %0.1'e düşer). Sağlam insanda alyuvar 120 gün yaşadığı için bu 1 haftalık duraklama hissedilmez bile. Ancak orak hücreli hastada eldeki alyuvarlar 10 günde eridiği ve yenisi de yapılamadığı için Hemoglobin aniden 4 g/dL'ye çakılır. Bu ölümcül tabloya 'Geçici Aplastik Kriz' denir. (Splenik sekestrasyonda ise retikülosit çok yüksektir ve dalak devasa büyüktür)."
+  },
+  {
+    id: 510,
+    ders: "Pediatri",
+    konu: "Pediatrik Nefroloji",
+    diff: 4,
+    q: "Altı yaşında erkek çocuk, sabahları göz kapaklarında şişlik (periorbital ödem) ve idrarının 'kola renginde' olması şikayetiyle getiriliyor. İki hafta önce ciltte bal rengi kabuklu yaralar (impetigo) geçirdiği öğreniliyor. Fizik muayenede kan basıncı 135/85 mmHg (Hipertansif) saptanıyor. Laboratuvarda Serum C3 düzeyi belirgin DÜŞÜK, C4 düzeyi ise normal bulunuyor. İdrar mikroskopisinde eritrosit silendirleri izleniyor. Akut Post-Streptokoksik Glomerülonefrit (APSGN) tanısı konan bu hastada, glomerüler hasara ve C3 düşüklüğüne yol açan immünolojik patogenez aşağıdakilerden hangisidir?",
+    options: [
+      "Bakteriyel toksinlerin doğrudan glomerül bazal membranını (GBM) eritmesi",
+      "Dolaşımdan gelen veya in situ oluşan immün komplekslerin (IgG ve C3) glomerüllerde 'subepitelyal' alana çökerek Alternatif Kompleman Yolağını aktive etmesi",
+      "Podositlerdeki nefrin gen mutasyonuna sekonder masif protein kaçağı",
+      "Streptokokal antijenlere karşı gelişen T hücrelerinin glomerül endoteline saldırması",
+      "Anti-GBM antikorlarının lineer olarak membrana yapışması"
+    ],
+    correct: 1,
+    exp: "APSGN, çocukluk çağının en sık görülen akut nefritik sendromudur. Farenjit veya pyodermi (impetigo) sonrası 1-3 hafta latent dönem vardır. Hematüri (kola renkli idrar), ödem, hipertansiyon ve oligüri klasiktir. Hastalığın temelinde A grubu beta-hemolitik streptokokların (GAS) nefritojenik antijenlerine (SpeB vb.) karşı gelişen antikorların oluşturduğu İmmün Kompleksler yatar. Bu kompleksler glomerülde 'Subepitelyal hörgüçler (humps)' şeklinde çöker. Çöken kompleksler Klasik yoldan ziyade 'Alternatif Kompleman Yolağını' çılgınca aktive eder; kanda C3 tüketilir (düşer) ancak C4 normal kalır. Genellikle 6-8 hafta içinde C3 normale döner ve hasta tamamen iyileşir."
+  },
+  {
+    id: 511,
+    ders: "Pediatri",
+    konu: "Pediatrik Nefroloji",
+    diff: 4,
+    q: "Dört yaşında erkek çocuk, tüm vücudunda yaygın şişlik (anazarka tarzı ödem) ve idrarda aşırı köpüklenme ile başvuruyor. Tansiyonu normaldir ve idrarında kanama (hematüri) yoktur. Laboratuvarında 24 saatlik idrarda masif proteinüri (4.5 gram/gün), Serum Albümini: 1.8 g/dL ve Kolesterol: 350 mg/dL saptanıyor. Serum C3 ve C4 düzeyleri NORMAL bulunuyor. Minimal Değişiklik Hastalığı (MCD) düşünülen bu çocukta, glomerüler filtrasyon bariyerinden masif albümin kaçağına (seçici proteinüriye) neden olan temel moleküler bozukluk aşağıdakilerden hangisidir?",
+    options: [
+      "Glomerül bazal membranında (GBM) Tip IV kollajen yapım kusuru",
+      "T lenfositlerden salınan dolaşan sitokinlerin (permeabilite faktörleri), podosit ayakçıklarını silmesi ve GBM'deki negatif elektrik yükünü (heparan sülfat) yok etmesi",
+      "Endotel hücrelerindeki fenestraların aniden devasa boyutlara ulaşması",
+      "IgA immün komplekslerinin mezangial alanda inflamasyon başlatması",
+      "Podositlerdeki PLA2R reseptörlerine karşı gelişen otoantikorlar"
+    ],
+    correct: 1,
+    exp: "Minimal Değişiklik Hastalığı (MCD), çocukluk çağının (%80-90) en sık Nefrotik Sendrom nedenidir. Saf (selektif) proteinüri (sadece albümin kaçağı) yapar, hematüri ve hipertansiyon beklenmez. Işık mikroskobunda böbrek tamamen NORMAL görünür (adı bu yüzden minimal değişikliktir). Ancak elektron mikroskobunda podosit ayakçıklarında yaygın silinme (effacement) vardır. Patogenez: Atopi veya enfeksiyonla tetiklenen T hücreleri, kana 'permeabilite faktörleri' salgılar. Bu sitokinler podositleri bozar ve glomerül bazal membranındaki eksi (-) yüklü polianyonik molekülleri (Heparan Sülfat) sıfırlar. Normalde eksi yüklü olan Albümin, eksi yük bariyeri kalkınca kolayca idrara kaçar. Steroid tedavisine (Prednizolon) çok hızlı ve dramatik yanıt verir."
+  },
+  {
+    id: 512,
+    ders: "Pediatri",
+    konu: "Pediatrik Nefroloji",
+    diff: 4,
+    q: "Üç yaşında kız çocuk, 4 gün önce başlayan kanlı ishal atağının ardından bugün idrar miktarında belirgin azalma (oligüri), solukluk ve vücudunda yaygın peteşiler ile acile getiriliyor. Kan tahlilinde Hemoglobin: 7.5 g/dL, Trombosit: 35.000 /mm3 ve Kreatinin: 2.8 mg/dL (Akut Böbrek Hasarı) saptanıyor. Periferik yaymada bol miktarda şistosit izleniyor. Tipik Hemolitik Üremik Sendrom (STEC-HÜS) tanısı konan bu hastada, ishal etkeni olan bakterinin (E. coli O157:H7) ürettiği Shiga toksininin glomerüler kapiller endotel hücrelerinde bağlandığı spesifik reseptör aşağıdakilerden hangisidir?",
+    options: [
+      "Toll-like reseptör 4 (TLR-4)",
+      "Glikoprotein IIb/IIIa reseptörü",
+      "Globotriaosylceramide (Gb3) reseptörü",
+      "Kompleman C5a reseptörü",
+      "Vazopressin V2 reseptörü"
+    ],
+    correct: 2,
+    exp: "Hemolitik Üremik Sendrom (HÜS); Mikroanjiyopatik Hemolitik Anemi (Şistosit), Trombositopeni ve Akut Böbrek Yetmezliği triadı ile karakterizedir. Çocuklarda en sık görülen formu ishal ilişkili (Tipik) HÜS'tür ve %90 etkeni Shiga-toksin üreten E. coli'dir (STEC O157:H7). Bakterinin ürettiği Shiga toksini kana karışır ve özellikle böbrek ile beyin endotel hücrelerinin yüzeyinde bolca bulunan 'Gb3 (Globotriaosylceramide)' reseptörlerine sıkıca bağlanır. Endotel hücresinin içine girerek protein sentezini (60S ribozomu inaktive ederek) durdurur ve endoteli öldürür. Ölen endotelde devasa mikrotrombüsler (pıhtılar) oluşur. Bu pıhtılar trombositleri tüketir (trombositopeni) ve aralarından geçmeye çalışan eritrositleri parçalayarak (şistosit) anemiye yol açar."
+  },
+  {
+    id: 513,
+    ders: "Pediatri",
+    konu: "Pediatrik Nefroloji",
+    diff: 4,
+    q: "On yaşında erkek çocuk, tekrarlayan makroskopik hematüri (idrarda gözle görülür kanama) atakları nedeniyle değerlendiriliyor. Hastanın öyküsünde idrarda kanamanın yanında yüksek frekanslı sesleri duymada zorluk (sensörinöral işitme kaybı) olduğu da öğreniliyor. Göz muayenesinde anterior lentikonus (lensin öne doğru koni şeklini alması) saptanıyor. Aile öyküsünde dayısının genç yaşta diyalize girdiği belirtiliyor. Alport Sendromu tanısı alan bu hastada, böbrek biyopsisinde elektron mikroskobunda 'sepet örgüsü (basket-weave)' görünümüne yol açan genetik mutasyon aşağıdakilerden hangisinde gerçekleşmiştir?",
+    options: [
+      "Tip I Kollajen geninde",
+      "Tip II Kollajen geninde",
+      "Tip IV Kollajen Alfa-5 zincirini kodlayan COL4A5 geninde",
+      "Fibrillin-1 geninde",
+      "Podosin proteinini kodlayan NPHS2 geninde"
+    ],
+    correct: 2,
+    exp: "Alport Sendromu, genellikle X'e bağlı resesif geçen, Tip IV Kollajen yapım kusuruyla karakterize kalıtsal bir nefrittir. Tip IV kollajen, vücutta üç kritik yapının (Böbrek glomerül bazal membranı, İç kulak kokleası ve Göz lensi) temel yapıtaşıdır. Mutasyon nedeniyle bu membranlar düzgün örülemez. Elektron mikroskobunda bazal membranın yer yer incelip kalınlaşması (Sepet örgüsü / Basket-weave görünümü) patognomoniktir. Hastalarda klasik triad: 'Nefrit (Hematüri/KBY) + Sağırlık (Sensörinöral işitme kaybı) + Göz bulguları (Anterior lentikonus)'dur."
+  },
+  {
+    id: 514,
+    ders: "Pediatri",
+    konu: "Pediatrik Nefroloji",
+    diff: 4,
+    q: "İki yaşında kız çocuk, son 6 ay içinde 3 kez ateşli İdrar Yolu Enfeksiyonu (Pyelonefrit) geçirmesi nedeniyle nefrolojiye yönlendiriliyor. Çekilen böbrek ultrasonografisinde (USG) her iki böbreğin üst ve alt kutuplarında parankimal skarlaşma (nedbeleşme) ve kortikal incelme izleniyor. İdrarın mesaneden geriye, üreterlere doğru kaçtığını (Vezikoüreteral Reflü - VUR) doğrulamak için Voiding Sistoüretrografi (VCUG) planlanıyor. Primer VUR patogenezinde, üreterin mesane duvarındaki hangi anatomik kusuru, valf mekanizmasının bozulmasına ve idrarın böbreğe kaçmasına neden olur?",
+    options: [
+      "Üreterin mesane submukozası içinde kat ettiği tünel mesafesinin (submukozal tünel) doğuştan kısa olması",
+      "Detrusor kasının sfinkter ile uyumsuz kasılması (Detrusor-sfinkter dissinerjisi)",
+      "Üreteropelvik bileşkede (UPJ) konjenital darlık",
+      "Posterior üretral valvlerin mesane çıkışını tıkaması",
+      "Üreterin ektopik olarak vajinaya veya vulvaya açılması"
+    ],
+    correct: 0,
+    exp: "Vezikoüreteral Reflü (VUR), çocukluk çağında tekrarlayan idrar yolu enfeksiyonu ve böbrek skarlaşmasının (kronik böbrek yetmezliğine giden yolun) en sık nedenidir. Ateşli İYE geçiren küçük çocuklarda mutlaka USG ve ardından VCUG (İşeme sistoüretrografisi) ile aranmalıdır. Normal fizyolojide üreter mesaneye girdikten sonra, mesane mukozasının altında belli bir mesafe (tünel) boyunca ilerler ve sonra lümene açılır. Mesane dolduğunda veya işeme sırasında detrusor kası kasıldığında, bu tünel yassılaşarak kapanır ve idrarın geriye kaçmasını (valf gibi) engeller. Primer VUR'da sorun; bu submukozal tünelin doğuştan çok KISA olmasıdır. İşeme anında basınç artınca tünel kapanamaz ve enfekte idrar böbreğe (özellikle papillerin düz olduğu alt ve üst kutuplara) hızla kaçarak pyelonefrit ve skar yapar."
+  },
+  {
+    id: 515,
+    ders: "Pediatri",
+    konu: "Pediatrik Romatoloji",
+    diff: 4,
+    q: "Beş yaşında erkek çocuk; bacaklarında ve kalçalarında yer alan, basmakla solmayan kabarık mor döküntüler (palpabl purpura), her iki dizinde şişlik/ağrı ve kıvrandırıcı (kolik) karın ağrısı şikayetleriyle getiriliyor. Hastanın 2 hafta önce üst solunum yolu enfeksiyonu geçirdiği öğreniliyor. Trombosit sayısı ve koagülasyon testleri tamamen normaldir. IgA Vasküliti (Henoch-Schönlein Purpurası) tanısı alan bu hastada, karın ağrısı şikayetinin yakından takip edilmesini gerektiren ve GİS duvarındaki kanamalara sekonder gelişebilen en akut ve tehlikeli cerrahi komplikasyon aşağıdakilerden hangisidir?",
+    options: [
+      "Akut apandisit rüptürü",
+      "Meckel divertikülü kanaması",
+      "İleo-ileal veya ileo-çekal İnvajinasyon (İntussusepsiyon)",
+      "Toksik megakolon",
+      "Spontan dalak rüptürü"
+    ],
+    correct: 2,
+    exp: "IgA Vasküliti (Eski adıyla Henoch-Schönlein Purpurası - HSP), çocukluk çağının en sık görülen vaskülitidir. Küçük damarlara (kapiller ve venüllere) IgA içeren immün komplekslerin çökmesiyle oluşur. Klasik dörtlüsü: Palpabl purpura (yerçekimine bağlı olarak bacak ve kalçada), Artrit/Artralji, Abdominal ağrı ve Nefrit'tir (hematüri/proteinüri). Trombosit sayısı NORMALDİR. Vaskülit bağırsak duvarında ödem ve submukozal kanamalar (hematom) yapar. Bu hematomlar bağırsak lümeninde bir 'kitle (lead point)' gibi davranarak bağırsağın kendi içine geçmesine, yani 'İnvajinasyona (İntussusepsiyon)' neden olur. HSP'li çocukta karın ağrısı aniden kıvrandırıcı olur ve çilek jölesi dışkı başlarsa ilk akla invajinasyon (sıklıkla ileo-ileal) gelmelidir."
+  },
+  {
+    id: 516,
+    ders: "Pediatri",
+    konu: "Pediatrik Romatoloji",
+    diff: 4,
+    q: "Üç yaşında kız çocuk, son 1 aydır sabahları uyandığında sağ dizinde şişlik ve topallama (aksama) şikayetiyle getiriliyor. Gün içinde hareket ettikçe topallamasının azaldığı belirtiliyor. Başka bir ekleminde şişlik veya ateş öyküsü yoktur. Laboratuvarında RF (Romatoid Faktör) negatif, ancak ANA (Antinükleer Antikor) pozitif olarak saptanıyor. Oligoartiküler JIA (Juvenil İdiyopatik Artrit) tanısı konan bu hastanın klinik takibinde, tamamen ASEMPTOMATİK seyredebilen ancak erken saptanmazsa kalıcı körlüğe yol açabilen sekonder komplikasyonu taramak için mutlaka yapılması gereken konsültasyon/muayene aşağıdakilerden hangisidir?",
+    options: [
+      "Düzenli Ekokardiyografi ile aort kökü genişlemesi taraması",
+      "Solunum Fonksiyon Testi ile akciğer fibrozisi taraması",
+      "Yarık Lamba (Slit-lamp) muayenesi ile Kronik Anterior Üveit taraması",
+      "DEXA taraması ile osteoporoz kontrolü",
+      "Odyometri ile sensörinöral işitme kaybı taraması"
+    ],
+    correct: 2,
+    exp: "Oligoartiküler JIA, Jüvenil İdiyopatik Artritin en sık görülen formudur. En sık 1-4 yaş arası kız çocuklarında görülür ve 4 veya daha az (sıklıkla asimetrik, diz veya ayak bileği) eklemi tutar. RF negatiftir. Bu hastalardaki en büyük ve en sinsi tehlike 'Kronik Anterior Üveit (İridosiklit)' gelişimidir. Erişkinlerdeki üveitlerin aksine, bu çocuklarda göz KIZARMAZ ve AĞRIMAZ (Tamamen asemptomatiktir). Sinsice ilerler ve sineşiler yaparak kalıcı körlük (katarakt/band keratopati) ile sonuçlanır. Üveit riski özellikle 'ANA (+) pozitif' olan kız çocuklarında en yüksektir. Bu nedenle Oligoartiküler JIA tanısı alan her çocuğa, şikayeti olmasa bile düzenli aralıklarla göz doktoru tarafından 'Yarık Lamba (Slit-lamp)' muayenesi yapılması şarttır."
+  },
+  {
+    id: 517,
+    ders: "Pediatri",
+    konu: "Pediatrik Romatoloji",
+    diff: 4,
+    q: "Altı yaşında erkek çocuk; her gün 39.5°C'ye kadar yükselen ve günde bir kez normalin altına inen şiddetli ateş (spiking fever), ateşle birlikte belirginleşip ateş düşünce kaybolan 'somon balığı renginde' maküler döküntü, yaygın lenfadenopati ve karaciğer-dalak büyüklüğü (hepatosplenomegali) ile başvuruyor. Artrit bulguları mevcuttur. Laboratuvarında Lökosit: 35.000 /mm3 (nötrofil hakimiyeti) ve Serum Ferritin: 5.000 ng/mL (Aşırı yüksek) saptanıyor. Sistemik JIA (Still Hastalığı) tanısı alan bu hastada, hastalığın patogenezini sürükleyen ve biyolojik tedavilerde (Anakinra, Tosilizumab) hedeflenen ana sitokinler aşağıdakilerden hangileridir?",
+    options: [
+      "İnterlökin-1 (IL-1) ve İnterlökin-6 (IL-6)",
+      "İnterferon-gama (IFN-γ) ve IL-2",
+      "Tümör Nekrozis Faktör-alfa (TNF-alfa) ve IL-10",
+      "İnterlökin-4 (IL-4) ve IL-13",
+      "İnterlökin-5 (IL-5) ve Eotaksin"
+    ],
+    correct: 0,
+    exp: "Sistemik başlangıçlı JIA (eski adıyla Still Hastalığı); artritten ziyade masif sistemik inflamasyonla (Hektik ateş, somon rengi döküntü, HSM, serozit) prezente olan bir otoinflamatuar tablodur. Aşırı yüksek Ferritin düzeyi ve lökositoz klasiktir. Patogenezi T hücre (adaptif) kökenli olmaktan ziyade, doğuştan gelen (innate) bağışıklık sisteminin, makrofaj ve monositlerin kontrolden çıkmasına bağlıdır. Bu masif inflamatuar yangıyı başlatan iki temel 'ateş yapıcı ve akut faz tetikleyici' sitokin 'İnterlökin-1 (IL-1)' ve 'İnterlökin-6 (IL-6)'dır. Bu yüzden tedavide ilk seçenek steroidler olsa da, dirençli vakalarda doğrudan IL-1 blokörü (Anakinra, Canakinumab) veya IL-6 blokörü (Tosilizumab) biyolojik ajanlar mucizevi etki gösterir."
+  },
+  {
+    id: 518,
+    ders: "Pediatri",
+    konu: "Pediatrik Romatoloji",
+    diff: 4,
+    q: "Türk kökenli 8 yaşındaki erkek çocuk, 2-3 günde bir tekrarlayan yüksek ateş, şiddetli karın ağrısı (peritonit) ve göğüs ağrısı (plörit) atakları nedeniyle getiriliyor. Atak aralarında çocuğun tamamen sağlıklı olduğu belirtiliyor. Ayak bileği çevresinde erizipel benzeri kırmızı kızarıklıklar saptanıyor. Ailevi Akdeniz Ateşi (FMF) düşünülen bu hastada, otoinflamatuar süreci başlatan MEFV gen mutasyonu, hangi proteinin normalde yapması gereken 'inflamozom baskılayıcı' görevini bozarak kontrolsüz IL-1beta salınımına yol açar?",
+    options: [
+      "Kriyopirin (NALP3)",
+      "Pyrin (Marenostrin)",
+      "Tümör Nekrozis Faktör Reseptörü (TNFR)",
+      "Kaspaz-1",
+      "Toll-Like Reseptör 4 (TLR4)"
+    ],
+    correct: 1,
+    exp: "Ailevi Akdeniz Ateşi (FMF), otozomal resesif geçen ve özellikle Türk, Yahudi, Ermeni ve Arap popülasyonlarında sık görülen klasik bir 'Otoinflamatuar' (otoimmün değil) hastalıktır. 16. kromozomdaki MEFV geninde mutasyon vardır. Bu gen, lökositlerde bulunan 'Pyrin (Marenostrin)' proteinini kodlar. Pyrin proteininin normal görevi, hücre içindeki 'inflamozom' kompleksini kontrol altında tutmak ve aşırı iltihap üretimini frenlemektir. Mutasyon nedeniyle Pyrin bozuk olunca fren patlar; inflamozom kendi kendine aktive olur, Kaspaz-1'i uyarır ve devasa miktarda aktif 'İnterlökin-1 beta (IL-1b)' kana salınır. IL-1b en güçlü ateş ve iltihap (peritonit) yapıcı sitokindir. En korkulan komplikasyonu AA tip Amiloidozdur; önlemek için ömür boyu 'Kolşisin' kullanılır."
+  },
+  {
+    id: 519,
+    ders: "Pediatri",
+    konu: "Pediatrik Romatoloji",
+    diff: 4,
+    q: "Ondört yaşında kız çocuk, son 1 ayda yanaklarında ve burun sırtında güneşe çıkmakla artan kızarıklık (malar raş), ağız içinde ağrısız ülserler ve sabahları ellerinde eklem ağrısı şikayetiyle başvuruyor. Hemogramda Lökosit: 3.000 /mm3 (Lökopeni) ve Trombosit: 90.000 /mm3 saptanıyor. İdrar tahlilinde proteinüri ve eritrosit silendirleri mevcut. Sistemik Lupus Eritematozus (SLE) tanısı kesinleşen bu hastada, hastalığın patogenezini başlatan ve antinükleer antikorların (ANA, Anti-dsDNA) hedefi haline gelen nükleer antijenlerin bağışıklık sistemine sunulmasına neden olan asıl hücresel defekt aşağıdakilerden hangisidir?",
+    options: [
+      "Apoptoza uğrayan ölü hücrelerin ve nükleer kalıntıların (apopitotik cisimciklerin), makrofajlar tarafından etkin bir şekilde temizlenememesi (Fagositoz defekti)",
+      "Timusta T hücrelerinin pozitif seçilim sırasında aşırı reaktif klonları öldürememesi",
+      "Epstein-Barr Virüsünün (EBV) doğrudan B lenfosit DNA'sına entegre olarak onları ölümsüzleştirmesi",
+      "Güneş ışınlarının (UV) melanositleri öldürerek histamin deşarjı yaratması",
+      "Kompleman C3 proteininin karaciğerde sentezlenememesi"
+    ],
+    correct: 0,
+    exp: "Sistemik Lupus Eritematozus (SLE), immün toleransın kaybolduğu prototipik bir otoimmün hastalıktır. Güneş duyarlılığı, malar döküntü, sitopeniler ve böbrek tutulumu (Lupus nefriti) klasiktir. SLE patogenezinin kalbinde 'Apopitotik Klerens Defekti' yatar. Vücudumuzda her gün milyonlarca hücre apoptoza uğrar (programlı hücre ölümü). Normalde makrofajlar, bu ölü hücreleri zarları patlamadan sessizce yutar ve temizler. Ancak SLE hastalarında (genetik ve çevresel faktörlerle) makrofajlar bu ölü cisimcikleri (apopitotik body'leri) YUTAMAZ. Temizlenemeyen ölü hücreler patlar ve içlerindeki saklı 'Çekirdek Antijenleri (DNA, histonlar vb.)' ortalığa saçılır. Bağışıklık sistemi ilk kez gördüğü bu nükleer antijenleri yabancı sanıp onlara karşı ANA, Anti-dsDNA gibi otoantikorlar üretir. Bu antikorlar antijenlerle birleşip böbreğe, cilde ve eklemlere çökerek (Tip III aşırı duyarlılık) hasar yapar."
+  },
+  {
+    id: 520,
+    ders: "Pediatri",
+    konu: "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+    diff: 4,
+    q: "İki yaşında erkek çocuk, büyükannesinin reçeteli ilaçlarından (kırmızı renkli haplar) bir avuç yuttuktan 2 saat sonra şiddetli kusma ve kanlı ishal ile acil servise getiriliyor. Çocuğun genel durumu letarjik, solunumu derin ve hızlıdır. Kan gazında laktik asidoz saptanıyor. Çekilen ayakta direkt batın grafisinde mide ve bağırsak lümeninde çok sayıda 'radyoopak (beyaz)' hap görüntüsü izleniyor. Akut Demir Zehirlenmesi tanısı konan bu hastada, demirin sistemik hücre hasarına ve ölümcül metabolik asidoza yol açan hücresel toksisite mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Hemoglobin molekülündeki oksijenin yerine geçerek asfiksi yaratması",
+      "Serbest demirin mitokondride oksidatif fosforilasyonu ayırarak (uncoupling) ATP sentezini durdurması ve güçlü serbest oksijen radikalleri (Fenton reaksiyonu) ile lipid peroksidasyonu yapması",
+      "GABA reseptörlerini bloke ederek santral sinir sisteminde konvülsiyonları tetiklemesi",
+      "Asetilkolinesteraz enzimini inhibe ederek kolinerjik krize yol açması",
+      "Hücre zarındaki sodyum-potasyum pompasını kalıcı olarak inaktive etmesi"
+    ],
+    correct: 1,
+    exp: "Demir hapı zehirlenmesi çocukluk çağının en ölümcül intihar/kaza zehirlenmelerinden biridir. Karakteristik olarak batın röntgeninde (radyoopak olduğu için) beyaz haplar görünür. Demir gastrointestinal mukozaya çok şiddetli koroziv (yakıcı) etki yapar, kanlı kusma/ishale neden olur. Sistemik emildiğinde ise hücrelerin içine girer. Serbest demir, 'Fenton Reaksiyonu' ile devasa bir serbest oksijen radikali fırtınası koparır. Hücre zarlarını (lipid peroksidasyonu) eritir ve daha da önemlisi mitokondrileri zehirleyerek (uncoupling) aerobik solunumu durdurur. ATP üretemeyen hücreler laktik asit üretir ve şiddetli laktik asidoz gelişir. Spesifik antidotu olan 'Deferoksamin' demiri bağlayarak (şelasyon) idrarla (şarap/gül rengi idrar) atılmasını sağlar."
+  },
+  {
+    id: 521,
+    ders: "Pediatri",
+    konu: "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+    diff: 4,
+    q: "Üç yaşında erkek çocuk, evdeki tatlı şuruplardan (büyük olasılıkla Salisilat/Aspirin) bir şişe içtikten sonra acile getiriliyor. Çocuk aşırı derecede huzursuz, ateşi 39°C ve çok derin/hızlı nefes alıp veriyor (Hiperventilasyon). Ailesi çocuğun sürekli kulaklarını ovuşturduğunu (çınlama/tinnitus) belirtiyor. Alınan arteriyel kan gazında, aspirin toksisitesi için ÇOK SPESİFİK olan mikst (karma) asit-baz bozukluğu paterni aşağıdakilerden hangisidir?",
+    options: [
+      "Primer Solunumsal Asidoz + Sekonder Metabolik Alkaloz",
+      "Primer Solunumsal Alkaloz + Primer Metabolik Asidoz (Artmış anyon açıklı)",
+      "Sadece izole Normal Anyon Açıklı Metabolik Asidoz",
+      "Primer Metabolik Alkaloz + Sekonder Solunumsal Asidoz",
+      "Sadece izole Solunumsal Asidoz"
+    ],
+    correct: 1,
+    exp: "Salisilat (Aspirin) zehirlenmesi; hiperventilasyon, ateş (uncoupling nedeniyle aşırı ısı üretimi) ve Tinnitus (kulak çınlaması) ile seyreder. Aspirin toksisitesinin kan gazı paterni sınavlarda efsanedir: İki farklı asit-baz bozukluğunu AYNI ANDA ve PRİMER olarak yapar. 1) Salisilat, beyin sapındaki solunum merkezini doğrudan uyarır. Hasta çılgınca nefes alır, CO2'yi atar ve 'Primer Solunumsal Alkaloz' gelişir. 2) Aynı zamanda salisilat, hücrelerde Krebs döngüsünü bozar ve laktik asit, ketoasitler ile salisilik asidin kendisi kanda birikir. Bu da 'Primer (Artmış anyon açıklı) Metabolik Asidoz' yapar. Kanda pH normal gibi görünebilir (çünkü asit ve alkaloz birleşir) ama HCO3 ve pCO2 diplerdedir. Tedavisi (antidotu) Sodyum Bikarbonat vererek kanı ve idrarı alkalileştirmek, böylece zayıf bir asit olan aspirini iyonize (çözünür) edip idrarla vücuttan atmaktır."
+  },
+  {
+    id: 522,
+    ders: "Pediatri",
+    konu: "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+    diff: 4,
+    q: "Dört yaşında kız çocuk, ailesinin çiftliğindeki tarım ilaçlarının (Pestisit) bulunduğu depoda oynadıktan sonra baygın bulunuyor. Acile getirildiğinde ağzından sürekli tükürük aktığı, gözyaşı salgısının arttığı, altına idrar ve gaita kaçırdığı görülüyor. Nabzı 50/dk (Bradikardi) ve göz bebekleri iğne ucu kadar küçülmüş (Miyozis) saptanıyor. Çocuğun kaslarında yaygın seğirmeler (fasikülasyon) mevcuttur. Organofosfat zehirlenmesi (SLUDGE sendromu) tanısı konan bu hastanın tedavisinde kullanılan hayat kurtarıcı iki antidotun (Atropin ve Pralidoksim) farmakolojik mekanizmaları aşağıdakilerden hangisinde doğru eşleştirilmiştir?",
+    options: [
+      "Atropin: Asetilkolinesteraz enzimini yeniden aktive eder / Pralidoksim: Nikotinik reseptörleri bloke eder",
+      "Atropin: Asetilkolinin muskarinik reseptörlere bağlanmasını bloke eder / Pralidoksim: Organofosfatı Asetilkolinesteraz enziminden kopararak enzimi tekrar aktif hale getirir",
+      "Atropin: Santral sinir sistemini deprese eder / Pralidoksim: Kalpteki beta reseptörleri uyarır",
+      "Atropin: Organofosfatı doğrudan kanda bağlar (şelasyon) / Pralidoksim: Muskarinik reseptörleri uyarır",
+      "Atropin: Asetilkolin üretimini durdurur / Pralidoksim: Glutamat reseptörlerini bloke eder"
+    ],
+    correct: 1,
+    exp: "Organofosfatlar (Tarım ilaçları, böcek ilaçları), 'Asetilkolinesteraz' enzimini geri dönüşümsüz bloke eden zehirlerdir. Enzim durunca sinapslarda devasa miktarda Asetilkolin birikir. Aşırı asetilkolin, Muskarinik reseptörleri aşırı uyararak SLUDGE sendromu yapar (Salivation/Tükürük, Lacrimation/Gözyaşı, Urination/İdrar, Defecation/Gaita, GI kramp, Emesis/Kusma, Bradikardi, Miyozis). Ayrıca Nikotinik reseptörleri uyararak kaslarda seğirme/felç yapar. Tedavide ÇİFT antidot kullanılır. 1) 'Atropin': Güçlü bir Muskarinik Blokördür; sekresyonları kurutur, nabzı artırır, hayatı anında kurtarır (ama nikotinik etkiyi/kas felcini düzeltemez). 2) 'Pralidoksim (2-PAM)': Bir enzim reaktivatörüdür; gidip organofosfat zehrini enzimin üzerinden koparıp atar ve enzimi tekrar çalışır hale getirir (hem muskarinik hem nikotinik bulguları kökten çözer, ancak erken verilmelidir, yoksa enzim yaşlanarak kalıcı bloke olur)."
+  },
+  {
+    id: 523,
+    ders: "Pediatri",
+    konu: "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+    diff: 4,
+    q: "On beş yaşında kız hasta, kavga ettiği erkek arkadaşına sinirlenerek evdeki Trisiklik Antidepresan (TCA - Örn: Amitriptilin) haplarından 20 adet içiyor. Acil servise getirildiğinde bilinci kapanıyor ve jeneralize tonik-klonik nöbet geçiriyor. Cildi kırmızı, kuru ve sıcaktır (Antikolinerjik bulgular). Çekilen EKG'sinde QRS süresinin 140 ms'ye uzadığı (Geniş QRS) ve aVR derivasyonunda R dalgasının belirginleştiği saptanıyor. TCA zehirlenmesinde ölümcül aritmileri önlemek ve QRS'i daraltmak için acil İntravenöz SODYUM BİKARBONAT verilmesinin birincil etki mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "İdrarı alkalileştirerek zayıf bir asit olan TCA'nın böbreklerden atılımını hızlandırmak",
+      "Bikarbonatın TCA'yı kanda şelatlayarak etkisiz hale getirmesi",
+      "Kan pH'sını artırarak TCA'nın proteine bağlanmasını artırmak VE içerdiği masif 'Sodyum (Na+)' yükü ile TCA'nın miyokarddaki sodyum kanalları üzerindeki kompetitif blokajını ezerek aşmak",
+      "Kan-beyin bariyerinin geçirgenliğini azaltarak ilacın nöbet yapıcı etkisini durdurmak",
+      "Asetilkolin esteraz enzimini aktive ederek antikolinerjik etkiyi tersine çevirmek"
+    ],
+    correct: 2,
+    exp: "Trisiklik Antidepresan (TCA) zehirlenmesi acil nöroloji ve kardiyoloji pratisyenleri için bir kabustur (Anti-kolinerjik etki + Nöbet + Ölümcül Aritmi). TCA'ların kalpteki en tehlikeli etkisi 'Hızlı Sodyum Kanallarını' bloke etmeleridir. Sodyum hücreye giremeyince kalp depolarize olamaz ve EKG'de QRS devasa genişler (Aritmi / Ventriküler Fibrilasyon eşiği). QRS > 100 ms ise acil Sodyum Bikarbonat verilir. Bunun İKİ amacı vardır: 1) Bolca verilen sodyum (Na+), gidip kalp kasındaki sodyum kanallarında TCA ile rekabete girer, çoğunluk sodyumda olduğu için TCA'yı kapıdan kovar ve kanalı açar. 2) Bikarbonat kan pH'sını alkalileştirir (pH 7.45-7.55); alkali ortamda TCA molekülü kan proteinlerine sıkıca yapışır (bağlanır) ve kalbe gidecek serbest aktif TCA miktarı aniden düşer. (Not: Aspirinin aksine TCA'da amaç idrarı değil 'Kanı' alkalileştirmektir)."
+  },
+  {
+    id: 524,
+    ders: "Pediatri",
+    konu: "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+    diff: 4,
+    q: "Üç yaşında, eski (1970'ler öncesi yapım) bir evde yaşayan ve duvarlardaki dökülen boyaları yeme huyu (Pika) olan erkek çocuk, son aylarda giderek artan hırçınlık, karın ağrısı ve konuşma gelişiminde gerileme şikayetiyle getiriliyor. Hemogramda Hemoglobin: 8 g/dL (Anemi) saptanıyor. Periferik yayma incelendiğinde, eritrositlerin içinde mavi-mor renkli, noktalanma tarzında ribozomal RNA birikimleri (Bazofilik Stippling) izleniyor. Kurşun zehirlenmesi tanısı konan bu hastada, kurşunun hem sentezini inhibe ederek anemiye neden olduğu iki temel enzim aşağıdakilerden hangisidir?",
+    options: [
+      "ALA Sentaz ve Üroporfirinojen Dekarboksilaz",
+      "ALA Dehidrataz (Porfobilinojen sentaz) ve Ferroşelataz",
+      "Heme Oksijenaz ve Biliverdin Redüktaz",
+      "Koproporfirinojen Oksidaz ve Katalaz",
+      "Tirozin Kinaz ve G6PD"
+    ],
+    correct: 1,
+    exp: "Çocuklarda Kurşun Zehirlenmesi (Plumbizm), özellikle eski ev boyaları (tatlıdır, çocuklar severek yer - pika) veya kirli su kaynaklarıyla alınır. Hedef organları Beyin (Ensefalopati, gelişim geriliği), Batın (Kolik karın ağrısı) ve Kan (Anemi)'dır. Kurşun, kanda eritrositlerin içindeki rRNA'ları çökerterek periferik yaymada patognomonik 'Bazofilik Stippling (Noktalanma)' görünümü yapar. Anemi yapmasının nedeni ise Hem (Heme) sentez yolağını iki kritik yerden felç etmesidir: 1) Sitoplazmadaki 'ALA Dehidrataz' (Delta-aminolevülinik asit dehidrataz) enzimini inhibe eder. 2) Mitokondride demiri halkanın içine yerleştiren 'Ferroşelataz' enzimini inhibe eder. Bu enzimler çalışmayınca demir kullanılamaz, mikrositer bir anemi gelişir. Tedavisi şelasyon ajanlarıdır (Dimerkaprol/BAL, EDTA veya Succimer/DMSA)."
   }
 ];
 
