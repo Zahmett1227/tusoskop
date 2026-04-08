@@ -1,8 +1,10 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import SubjectCard from './components/SubjectCard';
+import TopicTracker from './components/TopicTracker';
+import TusCountdown from './components/TusCountDown';
 import { TUS_DATA } from './data/tusData';
 import { SUBJECTS } from './data/subjects';
-import TopicTracker from './components/TopicTrackerView';
+import { QUESTIONS } from './data/questions';
 
 export default function App() {
   const [view, setView] = useState('dashboard');
@@ -12,24 +14,28 @@ export default function App() {
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
 
-  const questions = useMemo(() => {
-    return currentSubject ? TUS_DATA[currentSubject] || [] : [];
-  }, [currentSubject]);
+  const [selectedLesson, setSelectedLesson] = useState('');
+  const [selectedTopic, setSelectedTopic] = useState('');
+  const [activeQuestions, setActiveQuestions] = useState([]);
 
+  const questions = activeQuestions;
   const q = questions[currentIndex];
   const progress = questions.length
     ? ((currentIndex + 1) / questions.length) * 100
     : 0;
 
   const startSubject = (subjectName) => {
-    if (!TUS_DATA[subjectName] || TUS_DATA[subjectName].length === 0) return;
+  const filtered = QUESTIONS.filter((item) => item.ders === subjectName);
 
-    setCurrentSubject(subjectName);
-    setCurrentIndex(0);
-    setSelected(null);
-    setShowResult(false);
-    setScore(0);
-    setView('study');
+  if (filtered.length === 0) return;
+
+  setCurrentSubject(subjectName);
+  setActiveQuestions(filtered);
+  setCurrentIndex(0);
+  setSelected(null);
+  setShowResult(false);
+  setScore(0);
+  setView('study');
   };
 
   const goDashboard = () => {
@@ -39,6 +45,9 @@ export default function App() {
     setSelected(null);
     setShowResult(false);
     setScore(0);
+    setSelectedLesson('');
+    setSelectedTopic('');
+    setActiveQuestions([]);
   };
 
   const handleSelect = (index) => {
@@ -76,6 +85,8 @@ export default function App() {
             </p>
           </header>
 
+          <TusCountdown />
+
           {['Temel', 'Klinik'].map((type) => (
             <section key={type} className="mb-12">
               <h2 className="text-2xl font-bold mb-5 text-slate-200 border-b border-slate-800 pb-3">
@@ -87,7 +98,7 @@ export default function App() {
                   <SubjectCard
                     key={s.name}
                     subject={s}
-                    count={TUS_DATA[s.name]?.length || 0}
+                    count={QUESTIONS.filter((item) => item.ders === s.name).length}
                     onClick={() => startSubject(s.name)}
                   />
                 ))}
@@ -96,23 +107,133 @@ export default function App() {
           ))}
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-  <button
-    onClick={() => setView('suggestions')}
-    className="px-6 py-3 rounded-2xl bg-emerald-500 text-white font-bold hover:opacity-90"
-  >
-    Öneriler
-  </button>
+            <button
+              onClick={() => setView('suggestions')}
+              className="px-6 py-3 rounded-2xl bg-emerald-500 text-white font-bold hover:opacity-90"
+            >
+              Öneriler
+            </button>
 
-  <button
-    onClick={() => setView('tracker')}
-    className="px-6 py-3 rounded-2xl bg-slate-800 text-white font-bold hover:bg-slate-700"
-  >
-    Konu Takip
-  </button>
-</div>
+            <button
+              onClick={() => setView('tracker')}
+              className="px-6 py-3 rounded-2xl bg-slate-800 text-white font-bold hover:bg-slate-700"
+            >
+              Konu Takip
+            </button>
+
+            <button
+              onClick={() => setView('questionSetup')}
+              className="px-6 py-3 rounded-2xl bg-cyan-600 text-white font-bold hover:opacity-90"
+            >
+              Ders / Konu Seçerek Çöz
+            </button>
+          </div>
         </div>
       </div>
     );
+  }
+
+  if (view === 'questionSetup') {
+    const availableLessons = [...new Set(QUESTIONS.map((item) => item.ders))];
+
+    const availableTopics = selectedLesson
+      ? [
+          ...new Set(
+            QUESTIONS.filter((item) => item.ders === selectedLesson).map(
+              (item) => item.konu
+            )
+          ),
+        ]
+      : [];
+
+    const startTopicTest = () => {
+      const filtered = QUESTIONS.filter(
+        (item) =>
+          item.ders === selectedLesson && item.konu === selectedTopic
+      );
+
+      if (filtered.length === 0) {
+        alert('Bu ders ve konu için henüz soru eklenmemiş.');
+        return;
+      }
+
+      setCurrentSubject(`${selectedLesson} / ${selectedTopic}`);
+      setActiveQuestions(filtered);
+      setCurrentIndex(0);
+      setSelected(null);
+      setShowResult(false);
+      setScore(0);
+      setView('study');
+    };
+
+    return (
+      <div className="min-h-screen bg-slate-950 text-white p-6 md:p-10">
+        <div className="max-w-3xl mx-auto bg-slate-900 border border-slate-800 rounded-[2rem] p-8 md:p-10">
+          <h2 className="text-3xl font-black mb-6 text-emerald-400">
+            Ders ve konu seç
+          </h2>
+
+          <div className="space-y-5">
+            <div>
+              <label className="block text-sm text-slate-400 mb-2">Ders</label>
+              <select
+                value={selectedLesson}
+                onChange={(e) => {
+                  setSelectedLesson(e.target.value);
+                  setSelectedTopic('');
+                }}
+                className="w-full bg-slate-950 border border-slate-800 rounded-2xl px-4 py-3 text-white outline-none focus:border-emerald-500"
+              >
+                <option value="">Ders seç</option>
+                {availableLessons.map((lesson) => (
+                  <option key={lesson} value={lesson}>
+                    {lesson}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm text-slate-400 mb-2">Konu</label>
+              <select
+                value={selectedTopic}
+                onChange={(e) => setSelectedTopic(e.target.value)}
+                disabled={!selectedLesson}
+                className="w-full bg-slate-950 border border-slate-800 rounded-2xl px-4 py-3 text-white outline-none focus:border-emerald-500 disabled:opacity-50"
+              >
+                <option value="">Konu seç</option>
+                {availableTopics.map((topic) => (
+                  <option key={topic} value={topic}>
+                    {topic}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-3 mt-8">
+            <button
+              onClick={startTopicTest}
+              disabled={!selectedLesson || !selectedTopic}
+              className="px-5 py-3 rounded-2xl bg-emerald-500 text-white font-bold hover:opacity-90 disabled:opacity-50"
+            >
+              Soruları başlat
+            </button>
+
+            <button
+              onClick={goDashboard}
+              className="px-5 py-3 rounded-2xl bg-slate-800 text-white font-bold hover:bg-slate-700"
+            >
+              Panele dön
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (view === 'tracker') {
+    return <TopicTracker onBack={goDashboard} />;
   }
 
   if (view === 'suggestions') {
@@ -124,11 +245,13 @@ export default function App() {
           </h2>
 
           <ul className="space-y-4 text-slate-300 leading-relaxed">
-            <li>• Kural 1:</li>
-            <li>• Pratisyen iken TUS kazanılmaz.</li>
-            <li>• Para biriktir</li>
-            <li>• Ve hemen ardından istifa et.</li>
-            <li> PROFESYONEL TUS VE HALK SAĞLIĞI UZMANI DR.TUĞBA ÇAĞLAR </li>
+            <li>• Her gün az ama düzenli çalış.</li>
+            <li>• Soru çözmeden TUS kazanılmaz.</li>
+            <li>• Yanlış yaptığın soruları mutlaka tekrar et.</li>
+            <li>• Son aylarda deneme ve tekrar ağırlıklı git.</li>
+            <li>• Zayıf olduğun dersleri sona bırakma.</li>
+            <li>• Kaynak sayısını değil, tekrar sayısını artır.</li>
+            <li>• Motivasyon düşse bile rutini bırakma.</li>
           </ul>
 
           <div className="mt-8">
@@ -143,9 +266,6 @@ export default function App() {
       </div>
     );
   }
-  if (view === 'tracker') {
-  return <TopicTracker onBack={goDashboard} />;
-}
 
   if (view === 'summary') {
     return (
@@ -166,7 +286,13 @@ export default function App() {
 
           <div className="flex gap-3">
             <button
-              onClick={() => startSubject(currentSubject)}
+              onClick={() => {
+                setCurrentIndex(0);
+                setSelected(null);
+                setShowResult(false);
+                setScore(0);
+                setView('study');
+              }}
               className="px-5 py-3 rounded-2xl bg-emerald-500 text-white font-bold hover:opacity-90"
             >
               Tekrar çöz
@@ -184,7 +310,7 @@ export default function App() {
     );
   }
 
-  if (!q) {
+  if (!q && view === 'study') {
     return (
       <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center p-6">
         <div className="text-center">
@@ -199,6 +325,10 @@ export default function App() {
         </div>
       </div>
     );
+  }
+
+  if (view !== 'study') {
+    return null;
   }
 
   return (
@@ -332,3 +462,4 @@ export default function App() {
     </div>
   );
 }
+     
