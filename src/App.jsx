@@ -9,6 +9,9 @@ import {
   analyzeExamResults,
   getEstimatedTusResult,
 } from "./utils/examUtils";
+//import Dashboard from "./components/screens/Dashboard";
+import ExamScreen from "./components/ExamScreen";
+import ExamAnalysisScreen from "./components/ExamAnalysisScreen";
 
 const FULL_EXAM_BLUEPRINT = {
   Anatomi: 13,
@@ -196,8 +199,7 @@ export default function App() {
         ),
       ]
     : [];
-
-  if (view === "dashboard") {
+if (view === "dashboard") {
     return (
       <div className="min-h-screen bg-slate-950 text-white px-4 py-6 md:px-8 md:py-10">
         <div className="max-w-6xl mx-auto">
@@ -345,6 +347,7 @@ export default function App() {
     );
   }
 
+  
   if (view === "questionSetup") {
     return (
       <div className="min-h-screen bg-slate-950 text-white p-6 md:p-10">
@@ -489,309 +492,31 @@ export default function App() {
       </div>
     );
   }
-
-  if (view === "exam" && !examQ) {
-    return (
-      <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center p-6">
-        <div className="text-center">
-          <p className="text-2xl font-bold mb-3">Deneme oluşturulamadı</p>
-          <button
-            onClick={goDashboard}
-            className="px-5 py-3 rounded-2xl bg-slate-800 hover:bg-slate-700"
-          >
-            Panele dön
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  if (view === "exam") {
-    return (
-      <div className="min-h-screen bg-slate-950 text-white px-4 py-6 md:px-8 md:py-10">
-        <div className="max-w-5xl mx-auto">
-          <header className="mb-6 md:mb-8">
-            <div className="mb-4 flex items-center justify-between gap-4">
-              <button
-                onClick={goDashboard}
-                className="group inline-flex items-center gap-2 rounded-2xl border border-slate-800 bg-slate-900/80 px-4 py-3 text-slate-300 font-semibold transition hover:border-fuchsia-400/30 hover:text-white"
-              >
-                <span className="transition group-hover:-translate-x-1">←</span>
-                <span>Panele dön</span>
-              </button>
-
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/80 px-4 py-3 text-right shadow-sm">
-                <div className="text-sm text-slate-400">
-                  Deneme • {examIndex + 1} / {examQuestions.length}
-                </div>
-                <div className="text-sm md:text-base text-fuchsia-300 font-bold">
-                  200 soru
-                </div>
-              </div>
-            </div>
-
-            <div className="overflow-hidden rounded-full bg-slate-800 h-3">
-              <div
-                className="h-full rounded-full bg-gradient-to-r from-fuchsia-500 via-violet-500 to-cyan-400 transition-all duration-500"
-                style={{ width: `${examProgress}%` }}
-              />
-            </div>
-          </header>
-
-          <div className="relative overflow-hidden rounded-[2rem] border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900/95 to-slate-950 p-6 md:p-8 shadow-[0_0_40px_rgba(168,85,247,0.08)]">
-            <div className="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_top_right,rgba(168,85,247,0.16),transparent_35%)] pointer-events-none" />
-
-            <div className="relative z-10">
-              <div className="mb-6 flex items-start justify-between gap-4">
-                <div>
-                  <div className="inline-flex items-center gap-2 rounded-xl bg-slate-800/80 px-3 py-1 text-xs font-bold uppercase tracking-wide text-fuchsia-300">
-                    <span className="h-2 w-2 rounded-full bg-fuchsia-400 animate-pulse" />
-                    {examQ.ders} • {examQ.konu}
-                  </div>
-
-                  <h2 className="mt-4 text-2xl md:text-3xl font-black leading-tight text-white">
-                    {examQ.q}
-                  </h2>
-                </div>
-
-                <div className="shrink-0 rounded-2xl border border-slate-800 bg-slate-900/80 px-3 py-2">
-                  <div className="flex gap-1 text-yellow-400 text-lg md:text-xl">
-                    {[...Array(5)].map((_, i) => (
-                      <span
-                        key={i}
-                        className={i < examQ.diff ? "opacity-100" : "opacity-20"}
-                      >
-                        ★
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                {examQ.options.map((opt, i) => {
-                  const isSelected = examSelected === i;
-
-                  return (
-                    <button
-                      key={i}
-                      onClick={() => handleExamSelect(i)}
-                      className={`group w-full text-left rounded-2xl border-2 p-4 md:p-5 transition-all duration-200 flex items-center gap-4 ${
-                        isSelected
-                          ? "border-fuchsia-500 bg-fuchsia-500/10 shadow-[0_0_20px_rgba(168,85,247,0.18)]"
-                          : "border-slate-800 bg-slate-900/50 hover:border-slate-600 hover:bg-slate-800/80 hover:-translate-y-[2px]"
-                      }`}
-                    >
-                      <div
-                        className={`flex h-11 w-11 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-xl font-black text-base md:text-lg transition ${
-                          isSelected
-                            ? "bg-fuchsia-500 text-white"
-                            : "bg-slate-800 text-slate-300 group-hover:bg-slate-700"
-                        }`}
-                      >
-                        {String.fromCharCode(65 + i)}
-                      </div>
-
-                      <div className="flex-1 text-base md:text-lg leading-relaxed text-white">
-                        {opt}
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-
-              <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <button
-                  onClick={handleExamBlank}
-                  className="px-5 py-3 rounded-2xl bg-slate-800 text-white font-bold hover:bg-slate-700 transition"
-                >
-                  Boş bırak
-                </button>
-
-                <button
-                  onClick={handleExamNext}
-                  className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-fuchsia-500 via-violet-500 to-cyan-400 px-6 py-3 text-white font-black shadow-[0_0_25px_rgba(168,85,247,0.25)] transition hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(34,211,238,0.25)]"
-                >
-                  <span>
-                    {examIndex < examQuestions.length - 1
-                      ? "Sonraki soru"
-                      : "Analizi gör"}
-                  </span>
-                  <span className="transition group-hover:translate-x-1">→</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (view === "examAnalysis" && examAnalysis) {
-    const lessonRows = Object.entries(examAnalysis.byLesson);
-
-    return (
-      <div className="min-h-screen bg-slate-950 text-white px-4 py-6 md:px-8 md:py-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-black text-fuchsia-300">
-                Deneme Analizi
-              </h2>
-              <p className="mt-2 text-slate-400">
-                Hangi derste zorlandın, hangi konulara dönmen gerekiyor, hepsi burada.
-              </p>
-            </div>
-
-            <button
-              onClick={goDashboard}
-              className="px-5 py-3 rounded-2xl bg-slate-800 text-white font-bold hover:bg-slate-700"
-            >
-              Panele dön
-            </button>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
-            <div className="rounded-3xl border border-slate-800 bg-slate-900/80 p-5">
-              <p className="text-sm text-slate-400">Toplam</p>
-              <p className="text-3xl font-black text-white">{examAnalysis.summary.total}</p>
-            </div>
-            <div className="rounded-3xl border border-slate-800 bg-slate-900/80 p-5">
-              <p className="text-sm text-slate-400">Doğru</p>
-              <p className="text-3xl font-black text-emerald-400">{examAnalysis.summary.correct}</p>
-            </div>
-            <div className="rounded-3xl border border-slate-800 bg-slate-900/80 p-5">
-              <p className="text-sm text-slate-400">Yanlış</p>
-              <p className="text-3xl font-black text-red-400">{examAnalysis.summary.wrong}</p>
-            </div>
-            <div className="rounded-3xl border border-slate-800 bg-slate-900/80 p-5">
-              <p className="text-sm text-slate-400">Boş</p>
-              <p className="text-3xl font-black text-slate-200">{examAnalysis.summary.blank}</p>
-            </div>
-            <div className="rounded-3xl border border-slate-800 bg-slate-900/80 p-5">
-              <p className="text-sm text-slate-400">Net</p>
-              <p className="text-3xl font-black text-fuchsia-300">{examAnalysis.summary.net}</p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 mb-8">
-            <div className="xl:col-span-2 rounded-[2rem] border border-slate-800 bg-slate-900/80 p-6">
-              <h3 className="text-2xl font-black text-white mb-5">Ders bazlı performans</h3>
-
-              <div className="overflow-x-auto">
-                <table className="w-full text-left">
-                  <thead>
-                    <tr className="border-b border-slate-800 text-slate-400 text-sm">
-                      <th className="pb-3 pr-4">Ders</th>
-                      <th className="pb-3 pr-4">Toplam</th>
-                      <th className="pb-3 pr-4">Doğru</th>
-                      <th className="pb-3 pr-4">Yanlış</th>
-                      <th className="pb-3 pr-4">Boş</th>
-                      <th className="pb-3 pr-4">Başarı</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {lessonRows.map(([lesson, stats]) => (
-                      <tr key={lesson} className="border-b border-slate-900">
-                        <td className="py-3 pr-4 font-semibold text-white">{lesson}</td>
-                        <td className="py-3 pr-4 text-slate-300">{stats.total}</td>
-                        <td className="py-3 pr-4 text-emerald-400 font-bold">{stats.correct}</td>
-                        <td className="py-3 pr-4 text-red-400 font-bold">{stats.wrong}</td>
-                        <td className="py-3 pr-4 text-slate-300">{stats.blank}</td>
-                        <td className="py-3 pr-4 text-fuchsia-300 font-bold">%{stats.successRate}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div className="rounded-[2rem] border border-slate-800 bg-gradient-to-br from-fuchsia-900/30 via-slate-900 to-slate-950 p-6">
-              <h3 className="text-2xl font-black text-white mb-4">Tahmini TUS bandı</h3>
-
-              <div className="rounded-3xl bg-slate-950/70 border border-fuchsia-500/20 p-5">
-                <p className="text-sm text-slate-400 mb-2">Tahmini puan</p>
-                <p className="text-4xl font-black text-fuchsia-300 mb-2">{estimatedTus.score}</p>
-                <p className="text-lg font-bold text-white mb-3">{estimatedTus.label}</p>
-                <p className="text-slate-300 leading-relaxed">{estimatedTus.advice}</p>
-              </div>
-
-              <div className="mt-5 rounded-3xl bg-slate-950/70 border border-slate-800 p-5">
-                <p className="text-sm text-slate-400 mb-2">Kaba yönlendirme</p>
-                <p className="text-slate-300 leading-relaxed">
-                  Bu ekran kesin tercih danışmanlığı değil. Ama mevcut performansınla
-                  ulaşılabilir branş bandını kabaca gösterir. Netin arttıkça daha rekabetçi
-                  merkezler ve bölümler masaya gelir.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-[2rem] border border-slate-800 bg-slate-900/80 p-6 mb-8">
-            <h3 className="text-2xl font-black text-white mb-5">Geliştirilmesi gereken alanlar</h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {examAnalysis.weakestLessons.map((lesson) => (
-                <div
-                  key={lesson.lesson}
-                  className="rounded-3xl border border-slate-800 bg-slate-950/70 p-5"
-                >
-                  <div className="mb-3 flex items-center justify-between gap-4">
-                    <h4 className="text-xl font-black text-fuchsia-300">{lesson.lesson}</h4>
-                    <span className="text-sm font-bold text-slate-300">
-                      %{lesson.successRate} başarı
-                    </span>
-                  </div>
-
-                  <p className="text-slate-400 mb-3">
-                    Doğru: <span className="text-emerald-400 font-bold">{lesson.correct}</span>{" "}
-                    • Yanlış: <span className="text-red-400 font-bold">{lesson.wrong}</span>{" "}
-                    • Boş: <span className="text-slate-200 font-bold">{lesson.blank}</span>
-                  </p>
-
-                  <div>
-                    <p className="text-sm text-slate-400 mb-2">Yanlış yapılan konu başlıkları</p>
-
-                    <div className="flex flex-wrap gap-2">
-                      {lesson.weakTopics.length > 0 ? (
-                        lesson.weakTopics.slice(0, 8).map((topic) => (
-                          <span
-                            key={topic}
-                            className="px-3 py-1 rounded-full bg-fuchsia-500/10 border border-fuchsia-400/20 text-fuchsia-200 text-sm"
-                          >
-                            {topic}
-                          </span>
-                        ))
-                      ) : (
-                        <span className="text-slate-500">Belirgin yanlış konu yok.</span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-3">
-            <button
-              onClick={startFullExam}
-              className="px-5 py-3 rounded-2xl bg-gradient-to-r from-fuchsia-600 via-violet-600 to-cyan-500 text-white font-black hover:opacity-90"
-            >
-              Yeni deneme çöz
-            </button>
-
-            <button
-              onClick={goDashboard}
-              className="px-5 py-3 rounded-2xl bg-slate-800 text-white font-bold hover:bg-slate-700"
-            >
-              Panele dön
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
+if (view === "exam") {
+  return (
+    <ExamScreen
+      examQ={examQ}
+      examIndex={examIndex}
+      examQuestions={examQuestions}
+      examSelected={examSelected}
+      handleExamSelect={handleExamSelect}
+      handleExamBlank={handleExamBlank}
+      handleExamNext={handleExamNext}
+      goDashboard={goDashboard}
+    />
+  );
+}
+  
+ if (view === "examAnalysis" && examAnalysis) {
+  return (
+    <ExamAnalysisScreen
+      examAnalysis={examAnalysis}
+      estimatedTus={estimatedTus}
+      startFullExam={startFullExam}
+      goDashboard={goDashboard}
+    />
+  );
+}
   if (!q && view === "study") {
     return (
       <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center p-6">
