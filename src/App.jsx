@@ -12,6 +12,9 @@ import {
 //import Dashboard from "./components/screens/Dashboard";
 import ExamScreen from "./components/ExamScreen";
 import ExamAnalysisScreen from "./components/ExamAnalysisScreen";
+import StudyScreen from "./components/StudyScreen";
+import QuestionSetupScreen from "./components/QuestionSetupScreen";
+import ExamSetSelectScreen from "./components/ExamSetSelectScreen";
 
 const FULL_EXAM_BLUEPRINT = {
   Anatomi: 13,
@@ -63,6 +66,11 @@ export default function App() {
     if (!examQuestions.length) return null;
     return analyzeExamResults(examQuestions, examAnswers);
   }, [examQuestions, examAnswers]);
+  
+  const handleSelectExamSet = (setKey) => {
+  console.log("Seçilen deneme seti:", setKey);
+  startFullExam();
+};
 
   const estimatedTus = useMemo(() => {
     if (!examAnalysis) return null;
@@ -107,7 +115,15 @@ export default function App() {
   const startTopicTest = () => {
     const filtered = QUESTIONS.filter(
       (item) => item.ders === selectedLesson && item.konu === selectedTopic
+      
     );
+    const startTopicTest = () => {
+  console.log("startTopicTest çalıştı");
+  console.log("selectedLesson:", selectedLesson);
+  console.log("selectedTopic:", selectedTopic);
+
+  // mevcut kodların altı...
+};
 
     if (filtered.length === 0) {
       alert("Bu ders ve konu için henüz soru eklenmemiş.");
@@ -250,7 +266,7 @@ if (view === "dashboard") {
 
               <div className="flex w-full flex-col gap-3 sm:flex-row lg:w-auto lg:flex-col">
                 <button
-                  onClick={startFullExam}
+                  onClick={() => setView("examSetSelect")}
                   className="
                     group relative overflow-hidden
                     w-full lg:min-w-[220px]
@@ -349,71 +365,20 @@ if (view === "dashboard") {
 
   
   if (view === "questionSetup") {
-    return (
-      <div className="min-h-screen bg-slate-950 text-white p-6 md:p-10">
-        <div className="max-w-3xl mx-auto bg-slate-900 border border-slate-800 rounded-[2rem] p-8 md:p-10">
-          <h2 className="text-3xl font-black mb-6 text-emerald-400">
-            Ders ve konu seç
-          </h2>
+  return (
+    <QuestionSetupScreen
+      selectedLesson={selectedLesson}
+      setSelectedLesson={setSelectedLesson}
+      selectedTopic={selectedTopic}
+      setSelectedTopic={setSelectedTopic}
+      availableLessons={availableLessons}
+      availableTopics={availableTopics}
+      startTopicTest={startTopicTest}
+      goDashboard={goDashboard}
+    />
+  );
+}
 
-          <div className="space-y-5">
-            <div>
-              <label className="block text-sm text-slate-400 mb-2">Ders</label>
-              <select
-                value={selectedLesson}
-                onChange={(e) => {
-                  setSelectedLesson(e.target.value);
-                  setSelectedTopic("");
-                }}
-                className="w-full bg-slate-950 border border-slate-800 rounded-2xl px-4 py-3 text-white outline-none focus:border-emerald-500"
-              >
-                <option value="">Ders seç</option>
-                {availableLessons.map((lesson) => (
-                  <option key={lesson} value={lesson}>
-                    {lesson}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div>
-              <label className="block text-sm text-slate-400 mb-2">Konu</label>
-              <select
-                value={selectedTopic}
-                onChange={(e) => setSelectedTopic(e.target.value)}
-                disabled={!selectedLesson}
-                className="w-full bg-slate-950 border border-slate-800 rounded-2xl px-4 py-3 text-white outline-none focus:border-emerald-500 disabled:opacity-50"
-              >
-                <option value="">Konu seç</option>
-                {availableTopics.map((topic) => (
-                  <option key={topic} value={topic}>
-                    {topic}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-3 mt-8">
-            <button
-              onClick={startTopicTest}
-              disabled={!selectedLesson || !selectedTopic}
-              className="px-5 py-3 rounded-2xl bg-emerald-500 text-white font-bold hover:opacity-90 disabled:opacity-50"
-            >
-              Soruları başlat
-            </button>
-
-            <button
-              onClick={goDashboard}
-              className="px-5 py-3 rounded-2xl bg-slate-800 text-white font-bold hover:bg-slate-700"
-            >
-              Panele dön
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   if (view === "tracker") {
     return <TopicTracker onBack={goDashboard} />;
@@ -492,6 +457,14 @@ if (view === "dashboard") {
       </div>
     );
   }
+  if (view === "examSetSelect") {
+  return (
+    <ExamSetSelectScreen
+      onSelectSet={handleSelectExamSet}
+      goDashboard={goDashboard}
+    />
+  );
+}
 if (view === "exam") {
   return (
     <ExamScreen
@@ -517,179 +490,20 @@ if (view === "exam") {
     />
   );
 }
-  if (!q && view === "study") {
-    return (
-      <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center p-6">
-        <div className="text-center">
-          <p className="text-2xl font-bold mb-3">Soru bulunamadı</p>
-
-          <button
-            onClick={goDashboard}
-            className="px-5 py-3 rounded-2xl bg-slate-800 hover:bg-slate-700"
-          >
-            Panele dön
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  if (view !== "study") {
-    return null;
-  }
-
+if (view === "study") {
   return (
-    <div className="min-h-screen bg-slate-950 text-white px-4 py-6 md:px-8 md:py-10">
-      <div className="max-w-5xl mx-auto">
-        <header className="mb-6 md:mb-8">
-          <div className="mb-4 flex items-center justify-between gap-4">
-            <button
-              onClick={goDashboard}
-              className="group inline-flex items-center gap-2 rounded-2xl border border-slate-800 bg-slate-900/80 px-4 py-3 text-slate-300 font-semibold transition hover:border-emerald-400/30 hover:text-white"
-            >
-              <span className="transition group-hover:-translate-x-1">←</span>
-              <span>Panele dön</span>
-            </button>
-
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/80 px-4 py-3 text-right shadow-sm">
-              <div className="text-sm text-slate-400">
-                {currentIndex + 1} / {questions.length}
-              </div>
-              <div className="text-sm md:text-base text-emerald-400 font-bold">
-                Skor: {score}
-              </div>
-            </div>
-          </div>
-
-          <div className="overflow-hidden rounded-full bg-slate-800 h-3">
-            <div
-              className="h-full rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-500 transition-all duration-500"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
-        </header>
-
-        <div className="relative overflow-hidden rounded-[2rem] border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900/95 to-slate-950 p-6 md:p-8 shadow-[0_0_40px_rgba(16,185,129,0.08)]">
-          <div className="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.12),transparent_35%)] pointer-events-none" />
-          <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-emerald-400/10 blur-3xl pointer-events-none" />
-
-          <div className="relative z-10">
-            <div className="mb-6 flex items-start justify-between gap-4">
-              <div>
-                <div className="inline-flex items-center gap-2 rounded-xl bg-slate-800/80 px-3 py-1 text-xs font-bold uppercase tracking-wide text-emerald-300">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                  {currentSubject}
-                </div>
-
-                <h2 className="mt-4 text-2xl md:text-3xl font-black leading-tight text-white">
-                  {q.q}
-                </h2>
-              </div>
-
-              <div className="shrink-0 rounded-2xl border border-slate-800 bg-slate-900/80 px-3 py-2">
-                <div className="flex gap-1 text-yellow-400 text-lg md:text-xl">
-                  {[...Array(5)].map((_, i) => (
-                    <span
-                      key={i}
-                      className={i < q.diff ? "opacity-100" : "opacity-20"}
-                    >
-                      ★
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              {q.options.map((opt, i) => {
-                const isSelected = selected === i;
-                const isCorrect = q.correct === i;
-
-                let classes =
-                  "group w-full text-left rounded-2xl border-2 p-4 md:p-5 transition-all duration-200 flex items-center gap-4 ";
-
-                if (showResult) {
-                  if (isCorrect) {
-                    classes +=
-                      "border-emerald-500 bg-emerald-500/10 shadow-[0_0_20px_rgba(16,185,129,0.12)]";
-                  } else if (isSelected && !isCorrect) {
-                    classes +=
-                      "border-red-500 bg-red-500/10 shadow-[0_0_20px_rgba(239,68,68,0.10)]";
-                  } else {
-                    classes += "border-slate-800 bg-slate-900/50";
-                  }
-                } else {
-                  classes +=
-                    "border-slate-800 bg-slate-900/50 hover:border-slate-600 hover:bg-slate-800/80 hover:-translate-y-[2px]";
-                }
-
-                return (
-                  <button
-                    key={i}
-                    onClick={() => handleSelect(i)}
-                    disabled={showResult}
-                    className={classes}
-                  >
-                    <div
-                      className={`flex h-11 w-11 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-xl font-black text-base md:text-lg transition ${
-                        showResult
-                          ? isCorrect
-                            ? "bg-emerald-500 text-white"
-                            : isSelected
-                            ? "bg-red-500 text-white"
-                            : "bg-slate-800 text-slate-400"
-                          : "bg-slate-800 text-slate-300 group-hover:bg-slate-700"
-                      }`}
-                    >
-                      {String.fromCharCode(65 + i)}
-                    </div>
-
-                    <div className="flex-1 text-base md:text-lg leading-relaxed text-white">
-                      {opt}
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-
-            {showResult && (
-              <div className="mt-8 overflow-hidden rounded-[1.75rem] border border-slate-800 bg-slate-950/90">
-                <div
-                  className={`h-1.5 w-full ${
-                    selected === q.correct ? "bg-emerald-500" : "bg-red-500"
-                  }`}
-                />
-
-                <div className="p-6">
-                  <p
-                    className={`text-2xl font-black mb-3 ${
-                      selected === q.correct ? "text-emerald-400" : "text-red-400"
-                    }`}
-                  >
-                    {selected === q.correct ? "Doğru cevap" : "Yanlış cevap"}
-                  </p>
-
-                  <p className="text-slate-300 leading-relaxed mb-6">
-                    <span className="font-bold text-white">Açıklama:</span> {q.exp}
-                  </p>
-
-                  <button
-                    onClick={handleNext}
-                    className="group inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-500 px-6 py-3 text-slate-950 font-black shadow-[0_0_25px_rgba(16,185,129,0.25)] transition hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(34,211,238,0.35)]"
-                  >
-                    <span>
-                      {currentIndex < questions.length - 1
-                        ? "Sonraki soru"
-                        : "Testi bitir"}
-                    </span>
-                    <span className="transition group-hover:translate-x-1">→</span>
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
+    <StudyScreen
+      q={q}
+      index={currentIndex}
+      total={questions.length}
+      selected={selected}
+      setSelected={setSelected}
+      showAnswer={showResult}
+      setShowAnswer={setShowResult}
+      nextQuestion={handleNext}
+      prevQuestion={() => {}}
+      goDashboard={goDashboard}
+    />
   );
+}
 }

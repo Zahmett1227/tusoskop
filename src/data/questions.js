@@ -9022,6 +9022,486 @@ export const QUESTIONS = [
     ],
     correct: 1,
     exp: "Çocuklarda Kurşun Zehirlenmesi (Plumbizm), özellikle eski ev boyaları (tatlıdır, çocuklar severek yer - pika) veya kirli su kaynaklarıyla alınır. Hedef organları Beyin (Ensefalopati, gelişim geriliği), Batın (Kolik karın ağrısı) ve Kan (Anemi)'dır. Kurşun, kanda eritrositlerin içindeki rRNA'ları çökerterek periferik yaymada patognomonik 'Bazofilik Stippling (Noktalanma)' görünümü yapar. Anemi yapmasının nedeni ise Hem (Heme) sentez yolağını iki kritik yerden felç etmesidir: 1) Sitoplazmadaki 'ALA Dehidrataz' (Delta-aminolevülinik asit dehidrataz) enzimini inhibe eder. 2) Mitokondride demiri halkanın içine yerleştiren 'Ferroşelataz' enzimini inhibe eder. Bu enzimler çalışmayınca demir kullanılamaz, mikrositer bir anemi gelişir. Tedavisi şelasyon ajanlarıdır (Dimerkaprol/BAL, EDTA veya Succimer/DMSA)."
+  },
+  {
+    id: 525,
+    ders: "Fizyoloji",
+    konu: "Hücre Histolojisi ve Fizyolojisi",
+    diff: 4,
+    q: "Konjestif kalp yetmezliği tedavisi için Digoksin (bir kardiyak glikozid) kullanan hastada miyokardiyal kasılma gücünün (inotropi) artması amaçlanmaktadır. Digoksinin hücre zarındaki 'Na+/K+ ATPaz' pompasını inhibe etmesinin ardından, miyokard hücresi içinde kalsiyum (Ca+2) artışını sağlayan SEKONDER mekanizma aşağıdakilerden hangisidir?",
+    options: [
+      "Hücre içinde biriken sodyumun (Na+), 'Na+/Ca+2 değiştirici (NCX)' pompasının çalışma yönünü tersine çevirerek kalsiyumu hücre içine alması",
+      "Sodyumun doğrudan sarkoplazmik retikulumdaki Ryanodin reseptörlerini uyarması",
+      "Hücre dışında biriken potasyumun (K+) L-tipi kalsiyum kanallarını kalıcı olarak açık tutması",
+      "Azalan ATP tüketiminin, Ca+2 ATPaz (SERCA) pompasını aşırı aktifleştirmesi",
+      "İnhibe olan pompanın hücre zarında depolarizasyon yaparak voltaj kapılı kalsiyum kanallarını tetiklemesi"
+    ],
+    correct: 0,
+    exp: "Na+/K+ ATPaz pompası normalde 3 Na'yı dışarı atar, 2 K'yı içeri alır. Ouabain veya Digoksin bu pompanın potasyum bağlanan bölgesine yapışarak onu bloke eder. Pompa durunca hücre içindeki Na+ dışarı atılamaz ve sitoplazmada birikir. Miyokard zarında bulunan ve normalde kalsiyumu dışarı atıp sodyumu içeri alan 'Na+/Ca+2 Değiştirici (NCX)' adlı sekonder aktif taşıma pompası, içeride sodyumun çok arttığını (gradyentin bozulduğunu) görünce ÇALIŞMA YÖNÜNÜ TERSİNE ÇEVİRİR. Fazla sodyumu dışarı atmak için karşılığında dışarıdan Kalsiyumu (Ca+2) hücre içine çekmeye başlar. Hücrede kalsiyum artar ve kasılma gücü (pozitif inotropi) şiddetlenir."
+  },
+  {
+    id: 526,
+    ders: "Fizyoloji",
+    konu: "Hücre Histolojisi ve Fizyolojisi",
+    diff: 4,
+    q: "Hücre içi veziküler transport mekanizmalarını araştıran bir çalışmada, proteinlerin Golgi aygıtından (cis-Golgi) Granüllü Endoplazmik Retikuluma (RER) doğru 'retrograd (geriye doğru)' taşınmasından sorumlu olan vezikül örtü proteini incelenmektedir. Bu retrograd taşımayı sağlayan ve özellikle 'KDEL' aminoasit dizisine sahip ER proteinlerini geri kurtaran örtü proteini aşağıdakilerden hangisidir?",
+    options: [
+      "Klatrin (Clathrin)",
+      "COP I (Coatomer I)",
+      "COP II (Coatomer II)",
+      "Kaveolin",
+      "Dinamin"
+    ],
+    correct: 1,
+    exp: "Hücre içi vezikül trafiğinde kaplayıcı (coat) proteinler rotayı belirler. 1) COP II (İleri/Anterograd): Proteinleri Granüllü ER'den alır, Golgi'ye (cis) taşır (Step 2 = COP II = İleri). 2) COP I (Geri/Retrograd): Golgi'den ER'ye geri taşır (Step 1 = COP I = Geri). Yanlışlıkla Golgi'ye kaçmış olan ve üzerinde 'KDEL' (ER tutunma sinyali) şifresi bulunan demirbaş ER proteinlerini COP I yakalar ve evine (ER'ye) geri getirir. 3) Klatrin: Golgi'den lizozoma gidenleri (M6P işaretli) veya hücre zarından reseptör aracılı endositozla (LDL gibi) içeri girenleri kaplar."
+  },
+  {
+    id: 527,
+    ders: "Fizyoloji",
+    konu: "Hücre Histolojisi ve Fizyolojisi",
+    diff: 4,
+    q: "Kırk beş yaşında kadın hasta, cildinde kolayca patlayan ve içi sıvı dolu gevşek büllerle (Pemphigus Vulgaris) başvuruyor. Yapılan immünfloresan incelemede, epidermal hücreleri birbirine bağlayan bağlantı komplekslerine karşı gelişmiş (Anti-Desmoglein) IgG tipi otoantikorlar saptanıyor. Bu hastada fonksiyonu bozulan ve hücreleri 'perçin (punto)' şeklinde birbirine bağlayarak mekanik strese karşı koruyan hücreler arası bağlantı yapısı aşağıdakilerden hangisidir?",
+    options: [
+      "Zonula occludens (Sıkı bağlantılar / Tight junctions)",
+      "Zonula adherens (Kemer bağlantıları)",
+      "Macula adherens (Desmozomlar)",
+      "Hemidesmozomlar",
+      "Neksus (Oluklu bağlantılar / Gap junctions)"
+    ],
+    correct: 2,
+    exp: "Epitel dokusunda hücreleri bir arada tutan yapılar klinik için çok önemlidir. Pemphigus Vulgaris'te otoantikorların hedefi 'Desmoglein 1 ve 3' adlı kaderin ailesi proteinlerdir. Desmoglein, hücreleri birbirine adeta bir perçin gibi sıkıca bağlayan 'Macula Adherens (Desmozom)'lerin ana yapısıdır. Desmozomlar hücre içindeki keratin (ara) filamanlarına tutunarak deriye mekanik dayanıklılık verir. Bunlar yıkılınca epidermis hücreleri birbirinden kopar (akantoliz) ve büller oluşur. (Not: Hemidesmozomlar ise hücreyi bazal membrana bağlar ve Bullöz Pemfigoid hastalığında yıkılırlar)."
+  },
+  {
+    id: 528,
+    ders: "Fizyoloji",
+    konu: "Hücre Histolojisi ve Fizyolojisi",
+    diff: 5,
+    q: "Sempatik sinir sistemi aktivasyonu sırasında, nörotransmitter olan Noradrenalin, damar düz kas hücrelerindeki Alfa-1 (α1) adrenerjik reseptörlere bağlanır. Bu reseptör bir G-protein kenetli reseptördür (Gq). Alfa-1 reseptörünün aktivasyonu ile başlayıp düz kas kasılmasıyla sonuçlanan hücre içi ikinci haberci yolağındaki SIRA aşağıdakilerden hangisinde doğru verilmiştir?",
+    options: [
+      "Fosfolipaz C aktivasyonu → PIP2'nin yıkılması → IP3 ve DAG oluşumu → IP3'ün endoplazmik retikulumdan kalsiyum salgılatması",
+      "Adenilat Siklaz aktivasyonu → cAMP artışı → Protein Kinaz A aktivasyonu → Miyozin hafif zincir kinaz inhibisyonu",
+      "Fosfolipaz A2 aktivasyonu → Araşidonik asit salınımı → Lökotrien sentezi",
+      "Guanilat Siklaz aktivasyonu → cGMP artışı → Protein Kinaz G aktivasyonu → Düz kas gevşemesi",
+      "Tirozin Kinaz aktivasyonu → STAT proteinlerinin fosforilasyonu → Çekirdekte transkripsiyon"
+    ],
+    correct: 0,
+    exp: "Otonom sinir sistemi reseptörlerinin hücre içi sinyal yolakları TUS/USMLE'nin vazgeçilmezidir. QISS ve QIQ (Kıs-kik) kuralını hatırlayalım. Alfa-1 reseptörü 'Gq' kenetlidir. Gq proteinleri daima 'Fosfolipaz C' enzimini aktive eder. Fosfolipaz C, hücre zarındaki PIP2'yi ikiye böler: IP3 ve DAG. İkincil habercilerden DAG zarda kalarak Protein Kinaz C'yi (PKC) uyarır. IP3 ise sitoplazmaya geçip Sarkoplazmik/Endoplazmik Retikulumun kalsiyum kapılarını açar. Hücreye dolan Kalsiyum, damar düz kasını kasar. (Not: Adenilat Siklaz / cAMP yolağını Gs proteinleri - Beta-1, Beta-2 - kullanır)."
+  },
+  {
+    id: 529,
+    ders: "Fizyoloji",
+    konu: "Hücre Histolojisi ve Fizyolojisi",
+    diff: 4,
+    q: "İstirahat halindeki tipik bir memeli nöronunun hücre zarı potansiyeli (Resting Membrane Potential - RMP) yaklaşık -70 mV civarındadır. Bu potansiyelin oluşmasında hücre zarının belirli iyonlara karşı seçici geçirgenliği rol oynar. Nöronun istirahat zar potansiyelini KENDİ denge (Nernst) potansiyeline en çok yaklaştıran (ve zarın istirahatte en geçirgen olduğu) iyon aşağıdakilerden hangisidir?",
+    options: [
+      "Sodyum (Na+)",
+      "Kalsiyum (Ca+2)",
+      "Klor (Cl-)",
+      "Potasyum (K+)",
+      "Magnezyum (Mg+2)"
+    ],
+    correct: 3,
+    exp: "Hücre zarının İstirahat Potansiyelinin (RMP) ana sorumlusu 'Potasyum (K+)' iyonudur. Çünkü hücre zarı, istirahat halindeyken (hiçbir uyarı yokken) sızma kanalları (leak channels) aracılığıyla Potasyuma karşı diğer iyonlardan çok daha fazla (yaklaşık 50-100 kat) geçirgendir. Sodyum için denge potansiyeli +60 mV, Potasyum için -90 mV'dur. Zar potasyuma aşırı geçirgen olduğu için, istirahat potansiyeli (-70 mV) mecburen potasyumun denge potansiyeline doğru çekilir (Nernst denklemi ve Goldman-Hodgkin-Katz eşitliği). Sodyum içeri sızarak bu değeri -90'dan -70'e getirir."
+  },
+  {
+    id: 530,
+    ders: "Fizyoloji",
+    konu: "Doku Histolojisi ve Fizyolojisi",
+    diff: 4,
+    q: "Çocukluk çağından beri tekrarlayan sinüzit, bronşektazi ve otitis media atakları olan 25 yaşındaki erkek hasta, infertilite (kısırlık) şikayetiyle başvuruyor. Çekilen akciğer grafisinde kalbin sağ tarafta yerleştiği (Dextrocardia) ve tam situs inversus olduğu görülüyor. Kartagener Sendromu tanısı alan bu hastada, solunum epiteli ve sperm kuyruğundaki (kamçı) hareketliliği bozarak bu klinik tabloya yol açan ultrastrüktürel hücre iskeleti defekti aşağıdakilerden hangisidir?",
+    options: [
+      "Aktin mikrofilamanlarında polimerizasyon kusuru",
+      "Konneksin proteinlerindeki mutasyon",
+      "Mikrotübüllerin 'Dinein (Dynein)' kollarındaki yapısal eksiklik",
+      "Mikrovillus yapısındaki miyozin-1 eksikliği",
+      "Kollajen tip IV sentez defekti"
+    ],
+    correct: 2,
+    exp: "Kartagener Sendromu (Primer Siliyer Diskinezi), 'Silya (Tüy)' ve 'Flagella (Kamçı)' yapısının genetik defektidir. Solunum yolunda silyalar mukusu itemez (bronşektazi, sinüzit). Sperm kamçısı hareket edemez (infertilite). Fallop tüpü silyaları embriyoyu itemez (ektopik gebelik). Anne karnında embriyonun organ yerleşimini belirleyen silyalar çalışmazsa organlar ters yerleşir (Situs Inversus). Silya ve kamçının temel yapısı mikrotübüllerdir (9+2 dizilimi). Bu mikrotübüllerin birbiri üzerinde kaymasını (hareketini) sağlayan motor protein ise 'Dinein (Dynein)' kollarıdır. Dinein kollarının eksikliği tüm bu siliyer hareketi felç eder."
+  },
+  {
+    id: 531,
+    ders: "Fizyoloji",
+    konu: "Doku Histolojisi ve Fizyolojisi",
+    diff: 4,
+    q: "Sık kemik kırıkları, işitme kaybı ve göz aklarında mavimsi renk değişikliği (mavi sklera) ile karakterize Osteogenezis İmperfekta (Cam Kemik Hastalığı) hastası bir çocuk değerlendiriliyor. Bu hastalıkta, bağ dokusunun en bol bulunan proteini olan 'Tip 1 Kollajen'in sentez basamaklarından hangisi ve nerede bozulmuştur?",
+    options: [
+      "Hücre dışında propeptidaz enzimleriyle tropokollajen oluşumu",
+      "Granüllü Endoplazmik Retikulum (RER) lümeninde, üç adet alfa zincirinin birleşerek (glisin mutasyonu nedeniyle) 'Üçlü Sarmal (Triple Helix)' yapısını oluşturamaması",
+      "Golgi aygıtında kollajenin ekzositoz veziküllerine paketlenememesi",
+      "Hücre dışında Lizil oksidaz enzimi ile kollajen lifleri arasında çapraz bağ (cross-link) kurulamaması",
+      "RER'de prolin ve lizin kalıntılarının C vitamini eksikliği nedeniyle hidroksillenememesi"
+    ],
+    correct: 1,
+    exp: "Osteogenezis İmperfekta (Oİ), genellikle Tip 1 Kollajeni kodlayan (COL1A1 veya COL1A2) genlerdeki otozomal dominant bir mutasyondur. Sıklıkla kollajen zincirindeki en küçük aminoasit olan 'Glisin'in yerine başka (daha büyük) bir aminoasit geçer. Kollajenin çok sıkı olan 'Üçlü Sarmal (Triple Helix)' yapısının oluşabilmesi için her 3 aminoasitten birinin mutlaka Glisin olması ŞARTTIR. Glisin mutasyona uğrayınca, RER (Granüllü ER) lümeninde üçlü sarmal düzgün kıvrılamaz ve hatalı kollajen üretilir (veya yıkılır). Bu da kemiği, dişi ve sklerayı dayanıksız hale getirir. (Not: Lizil oksidaz/çapraz bağ defekti Ehlers-Danlos veya Menkes'te; hidroksilasyon defekti ise C vitamini eksikliği Skorbüt'te görülür)."
+  },
+  {
+    id: 532,
+    ders: "Fizyoloji",
+    konu: "Doku Histolojisi ve Fizyolojisi",
+    diff: 4,
+    q: "Kısa kollar ve bacaklar (rizomelik cücelik), belirgin bir alın ve normal boyutta bir gövde ile karakterize Akondroplazi hastası bir çocuk inceleniyor. Hastalığın temelinde Fibroblast Büyüme Faktörü Reseptörü-3 (FGFR3) geninde otozomal dominant 'kazanç (gain-of-function)' mutasyonu saptanıyor. FGFR3 reseptörünün sürekli aktif kalması, epifiz kıkırdağında (büyüme plağında) endokondral kemikleşmeyi nasıl etkileyerek cüceliğe yol açar?",
+    options: [
+      "Kondrosit proliferasyonunu (çoğalmasını) sürekli ve aşırı şekilde uyararak büyüme plağını hızla kapatır.",
+      "Kondrositlerin proliferasyonunu ve hipertrofisini SÜREKLİ OLARAK İNHİBE EDER (baskılar), böylece kıkırdak dokusu çoğalamaz ve kemik uzayamaz.",
+      "Osteoblastların kemik matriks sentezlemesini bloke ederek sadece kıkırdak kalmasına neden olur.",
+      "Epifiz plağındaki osteoklastik aktiviteyi artırarak yeni oluşan kemiği anında eritir.",
+      "Kollajen tip X sentezini bozarak kıkırdağın kireçlenmesini engeller."
+    ],
+    correct: 1,
+    exp: "Akondroplazi, cüceliğin en sık nedenidir (Endokondral kemikleşme bozukluğudur). Membranöz kemikleşme (kafatası, köprücük kemiği) normal olduğu için baş büyüktür, kol ve bacaklar kısadır. İnsan vücudunda FGFR3 reseptörünün normal (fizyolojik) görevi, epifiz plağındaki kondrositlerin (kıkırdak hücrelerinin) büyümesini 'FRENLEMEK' (inhibe etmek) tir. Mutasyon bir 'Gain-of-Function (işlev kazancı)' mutasyonudur. Yani fren pedalı takılı kalır (sürekli aktiftir). Kondrositler sürekli inhibe edilir, çoğalamazlar ve uzun kemiklerin büyüme plakları çalışamadığı için kemikler uzayamaz."
+  },
+  {
+    id: 533,
+    ders: "Fizyoloji",
+    konu: "Doku Histolojisi ve Fizyolojisi",
+    diff: 4,
+    q: "Yenidoğan bebeklerde üşümeye karşı vücut sıcaklığını korumak için titremesiz termojenez (non-shivering thermogenesis) çok önemlidir. Bu ısı üretimi, özellikle boyun, sırt ve böbrek çevresinde bulunan 'Kahverengi Yağ Dokusu (Brown Adipose Tissue)' tarafından sağlanır. Kahverengi yağ dokusunun mitokondrilerinde ısı üretimini sağlayan ve oksidatif fosforilasyonu ayırarak ATP yerine ısı açığa çıkaran spesifik protein aşağıdakilerden hangisidir?",
+    options: [
+      "Sitokrom c oksidaz",
+      "Leptin",
+      "Termogenin (UCP-1)",
+      "Adiponektin",
+      "ATP Sentaz"
+    ],
+    correct: 2,
+    exp: "Beyaz yağ dokusu tek bir büyük yağ damlacığı içerir (enerji deposudur). Kahverengi yağ dokusu ise bol miktarda küçük yağ damlacığı ve devasa miktarda demir içeren mitokondri içerir (rengi bu yüzden kahverengidir). Yenidoğanlarda titreme refleksi gelişmediği için soğuğa karşı Kahverengi Yağ dokusunu kullanırlar. Bu dokunun mitokondri iç zarında 'Termogenin (Uncoupling Protein 1 - UCP-1)' adı verilen özel bir kanal vardır. Bu kanal, solunum zincirinde zarlar arasına pompalanan protonların (H+) ATP sentazdan geçerek ATP yapmasını engeller (Ayırıcı/Uncoupler). Protonlar UCP-1'den içeri sızdıkça enerji ATP yerine 'Isı' olarak açığa çıkar ve bebeği ısıtır."
+  },
+  {
+    id: 534,
+    ders: "Fizyoloji",
+    konu: "Doku Histolojisi ve Fizyolojisi",
+    diff: 4,
+    q: "Ergenlik döneminde artan androjenlerin etkisiyle yüzde ve sırtta sivilce (Akne Vulgaris) oluşumu hızlanmaktadır. Akne patogenezinde kilit rol oynayan 'Sebase (yağ) bezleri', salgılarını kıl folikülüne boşaltırken hücrenin tümünün parçalanarak salgının bir parçası haline geldiği bir yöntem kullanırlar. Epitel hücrelerinde görülen bu spesifik salgılama (sekresyon) tipi aşağıdakilerden hangisidir?",
+    options: [
+      "Merokrin sekresyon",
+      "Apokrin sekresyon",
+      "Holokrin sekresyon",
+      "Parakrin sekresyon",
+      "Endokrin sekresyon"
+    ],
+    correct: 2,
+    exp: "Glandüler (bez) epitelinin salgılama yöntemleri histolojide 3'e ayrılır: 1) Merokrin (Ekrin): Salgı sadece ekzositozla atılır, hücre hiç zarar görmez (Ter bezleri, pankreas, tükürük bezleri). 2) Apokrin: Hücrenin tepe (apikal) kısmı salgıyla birlikte kopar ve atılır (Koltuk altı koku bezleri, Meme bezi lipid salgısı). 3) Holokrin: Tüm hücre (holo=bütün) salgıyla dolar, çekirdeği parçalanır, hücre ÖLÜR ve tamamı salgının kendisi haline gelir. Sebase (yağ) bezlerinin salgılama şekli her zaman HOLOKRİN'dir."
+  },
+  {
+    id: 535,
+    ders: "Fizyoloji",
+    konu: "Kas Dokusu HistoFizyolojisi",
+    diff: 4,
+    q: "Ölümden birkaç saat sonra tüm iskelet kaslarının kaskatı kesilmesi durumuna 'Rigor Mortis (Ölüm Katılığı)' adı verilir. Çapraz köprü (cross-bridge) döngüsü göz önüne alındığında, kasların gevşeyemeyip sürekli kasılı kalmasına neden olan biyokimyasal eksiklik ve bu eksikliğin kasılma döngüsündeki karşılığı aşağıdakilerden hangisidir?",
+    options: [
+      "Kalsiyum eksikliği / Tropomiyozinin aktin üzerinden çekilememesi",
+      "Asetilkolin eksikliği / Motor uç plakta aksiyon potansiyelinin durması",
+      "ATP eksikliği / Miyozin başının aktin flamanından KOPAMAMASI (ayrılamaması)",
+      "Kreatin fosfat eksikliği / Z çizgilerinin birbirinden uzaklaşamaması",
+      "Magnezyum eksikliği / Miyozin hafif zincir kinazın aktive olamaması"
+    ],
+    correct: 2,
+    exp: "İskelet kası kasılmasında miyozin başı aktine bağlanarak (power stroke) kası büzer. Ancak bu kasılmanın bitmesi ve miyozin başının aktinden 'kurtulup/ayrılıp' kasın GEVŞEMESİ için ortama YENİ BİR ATP molekülünün gelip miyozin başına bağlanması ŞARTTIR. Kişi öldüğünde hücresel solunum durur ve ATP üretimi biter. Ortamda yeni ATP kalmadığı için, miyozin başları aktin flamanlarına sıkıca kenetli kalır ve asla ayrılamaz. Tüm kaslar kaskatı kesilir (Rigor Mortis). Katılık, kas proteinleri lizozomal enzimlerle otolize uğrayıp çürüyene kadar (15-25 saat) devam eder."
+  },
+  {
+    id: 536,
+    ders: "Fizyoloji",
+    konu: "Kas Dokusu HistoFizyolojisi",
+    diff: 4,
+    q: "Gastrointestinal kanal, kan damarları ve solunum yollarında bulunan Düz Kas hücrelerinin kasılma fizyolojisi iskelet kasından farklıdır. Düz kasta çizgilenme (sarkomer) yoktur ve troponin kompleksi BULUNMAZ. Düz kasta kalsiyumun (Ca+2) hücre içine girdikten sonra kasılmayı başlatmak için bağlandığı spesifik protein ve aktive ettiği yolak aşağıdakilerden hangisidir?",
+    options: [
+      "Kalsiyum Tropomiyozin'e bağlanır ve aktin bölgelerini açar",
+      "Kalsiyum 'Kalmodulin' proteinine bağlanır, bu kompleks 'Miyozin Hafif Zincir Kinazı (MLCK)' aktive ederek miyozin başını fosforiller.",
+      "Kalsiyum doğrudan Miyozin fosfataz enzimini aktive ederek kasılmayı başlatır",
+      "Kalsiyum Troponin C'ye bağlanarak yapısal değişikliğe neden olur",
+      "Kalsiyum Kaldesmon'a bağlanarak miyozin başının ATPase aktivitesini durdurur"
+    ],
+    correct: 1,
+    exp: "İskelet ve Kalp kasında kalsiyumun hedefi Troponin C'dir. Ancak Düz Kasta troponin YOKTUR. Düz kasta hücre içine giren kalsiyum, 'Kalmodulin' adı verilen özel bir proteine bağlanır (Ca-Kalmodulin kompleksi). Bu kompleks gider, hücredeki 'Miyozin Hafif Zincir Kinaz (MLCK)' enzimini uyarır. Adı üzerinde, bu kinaz enzimi miyozinin boynundaki hafif zincire bir fosfat (P) takar. Düz kasta miyozinin aktine bağlanabilmesi (kasılabilmesi) için P ile fosforillenmesi şarttır. Gevşemek için ise bu fosfatı koparan 'Miyozin Fosfataz' enzimi devreye girer."
+  },
+  {
+    id: 537,
+    ders: "Fizyoloji",
+    konu: "Kas Dokusu HistoFizyolojisi",
+    diff: 4,
+    q: "Kardiyak ventrikül kas hücresinin (miyosit) aksiyon potansiyeli grafiği incelendiğinde, iskelet kasından farklı olarak çok uzun süren bir 'Plato Fazı (Faz 2)' olduğu görülür. Bu plato fazı, kalp kasının tetaniye (krampa) girmesini engelleyen uzun bir refrakter periyot sağlar. Plato fazının oluşmasını ve hücrenin o sürede pozitif kalmasını sağlayan, birbirini dengeleyen iki ana iyon akımı aşağıdakilerden hangisidir?",
+    options: [
+      "Hücre içine Sodyum (Na+) girişi ve Hücre içine Kalsiyum (Ca+2) girişi",
+      "Hücre içine yavaş Kalsiyum (L-tipi Ca+2) girişi ile Hücre DIŞINA Potasyum (K+) çıkışı",
+      "Hücre dışına Sodyum (Na+) çıkışı ile Hücre içine Klor (Cl-) girişi",
+      "Hücre içine Kalsiyum (T-tipi Ca+2) girişi ile Hücre DIŞINA Sodyum (Na+) çıkışı",
+      "Hücre dışına Potasyum (K+) çıkışı ile Hücre dışına Kalsiyum (Ca+2) çıkışı"
+    ],
+    correct: 1,
+    exp: "Kalp ventrikül kasının aksiyon potansiyeli 5 fazdır: Faz 0 (Hızlı depolarizasyon): Sodyum (Na) içeri girer. Faz 1 (Erken repolarizasyon): Sodyum kanalı kapanır, Potasyum (K) dışarı çıkmaya başlar. **Faz 2 (Plato):** Repolarizasyon (voltajın düşmesi) aniden durur ve düz bir çizgi (plato) oluşur. Bunun nedeni, hücre zarındaki yavaş 'L-Tipi Kalsiyum kanalları'nın açılmasıdır. Pozitif Kalsiyum içeri girerken, pozitif Potasyum dışarı çıkmaktadır. İki artı yük birbiriyle inatlaşır ve voltaj dengede (plato) kalır. Kalsiyum kanalları kapanınca (Faz 3), Potasyum dışarı akmaya devam eder ve hücre hızla eksiye döner (Repolarizasyon). Faz 4 istirahat potansiyelidir."
+  },
+  {
+    id: 538,
+    ders: "Fizyoloji",
+    konu: "Kas Dokusu HistoFizyolojisi",
+    diff: 5,
+    q: "Ağır bir yük kaldırmaya çalışan haltercide, kas tendonu kopma sınırına geldiği anda refleks olarak tüm iskelet kasları aniden gevşer ve yük elinden düşer (Uzama / Gevşeme refleksi). Aşırı kasılma gücü (gerilim/tansiyon) durumunda kası korumak amacıyla alfa motor nöronları İNHİBE ederek bu refleks gevşemeyi başlatan duyusal reseptör ve bağlı olduğu sinir lifi tipi aşağıdakilerden hangisidir?",
+    options: [
+      "Kas iğciği (Muscle spindle) / Ia afferent lifler",
+      "Pacini cisimciği / A-beta lifleri",
+      "Golgi Tendon Organı (GTO) / Ib afferent lifler",
+      "Ruffini sonlanmaları / C lifleri",
+      "Eklem kapsül reseptörleri / Grup III lifler"
+    ],
+    correct: 2,
+    exp: "İskelet kaslarında iki önemli propriyoseptör (koruyucu sensör) vardır: Kas İğciği ve Golgi Tendon Organı. 1) Kas İğciği (Kasın ortasındadır): Kasın UZUNLUĞUNU (boyunu) algılar. Kas aniden gerilirse/uzarsa, iğcik Ia lifleriyle uyarılır ve kasın kopmasını önlemek için kası KASTIRIR (Patella germe refleksi budur). 2) Golgi Tendon Organı (GTO - Kasın tendonundadır): Kasın uyguladığı GERİLİMİ (Tansiyonu/Gücü) algılar. Eğer kas tendonu kopartacak kadar aşırı kasılırsa, GTO Ib lifleriyle uyarılır, inhibitör ara nöronlar üzerinden kasın motor sinirini felç eder ve kası aniden GEVŞETİR (Ters miyotatik refleks). Haltercinin yükü düşürmesi budur."
+  },
+  {
+    id: 539,
+    ders: "Fizyoloji",
+    konu: "Kas Dokusu HistoFizyolojisi",
+    diff: 4,
+    q: "Uluslararası bir maraton koşucusunun bacak kaslarından alınan biyopside, ağırlıklı olarak Tip 1 iskelet kası liflerinin hakim olduğu görülüyor. Yavaş kasılan ve yorulmaya karşı son derece dirençli olan Tip 1 kas liflerinin (kırmızı kas) bu dayanıklılığını sağlayan temel metabolik ve hücresel özellikler aşağıdakilerden hangisidir?",
+    options: [
+      "Çok yüksek glikojen depoları, zengin glikolitik enzimler ve devasa çap",
+      "Çok yüksek miyoglobin içeriği, bol kapiller ağ, zengin mitokondri ve yüksek oksidatif kapasite",
+      "Düşük miyoglobin, az mitokondri ve anaerobik glikoliz kapasitesi",
+      "Yüksek miyozin ATPaz aktivitesi ve hızlı kalsiyum pompalanması",
+      "Sadece yağ asitlerini değil, ağırlıklı olarak laktik asidi kullanabilme yeteneği"
+    ],
+    correct: 1,
+    exp: "İskelet kası lifleri temel olarak Tip 1 ve Tip 2 olarak ayrılır. Tip 1 lifler (Yavaş Oksidatif / Kırmızı kas): Maraton koşucuları ve sırt/postür kaslarında hakimdir. Renkleri kırmızıdır çünkü oksijen taşıyan 'Miyoglobin'leri çok fazladır. Çapları küçüktür, etrafları çok zengin kılcal damarlarla çevrilidir. Bol mitokondrileri vardır ve enerjiyi Aerobik Oksidatif fosforilasyonla üretirler. Çok yavaş yorulurlar. Tip 2b lifler (Hızlı Glikolitik / Beyaz kas): Sprint koşucuları (100 metre) ve göz kaslarında bulunur. Beyazdır (miyoglobini azdır). Mitokondrisi az, 'Glikojen' deposu ve glikoliz enzimleri çoktur. Hızlı kasılır ama saniyeler içinde laktik asit biriktirip yorulurlar."
+  },
+  {
+    id: 540,
+    ders: "Fizyoloji",
+    konu: "Genital Sistem HistoFizyolojisi",
+    diff: 4,
+    q: "İnfertilite (kısırlık) şikayetiyle başvuran 28 yaşındaki erkek hastanın testis biyopsisinde, seminifer tübüllerde otoimmün bir inflamasyon saptanıyor ve hastanın kendi spermlerine karşı antikor ürettiği (Anti-sperm antikorları) tespit ediliyor. Normal fizyolojide bağışıklık sisteminin, genetik olarak farklılaşmış olan (haploid) sperm hücrelerini tanımasını ve onlara saldırmasını engelleyen 'Kan-Testis Bariyeri'ni oluşturan hücreler arası bağlantı kompleksi aşağıdakilerden hangisidir?",
+    options: [
+      "Leydig hücreleri arasındaki neksuslar (Gap junctions)",
+      "Sertoli hücreleri arasındaki sıkı bağlantılar (Zonula occludens)",
+      "Miyoid hücreler ile bazal membran arasındaki hemidesmozomlar",
+      "Spermatogoniumlar arasındaki desmozomlar (Macula adherens)",
+      "Sertoli hücreleri ile spermatidler arasındaki adezyon plakları"
+    ],
+    correct: 1,
+    exp: "Kan-Testis bariyeri, puberteden sonra mayoz bölünme geçirerek 'yabancı (haploid)' hale gelen spermleri, vücudun kendi bağışıklık sisteminden koruyan hayati bir duvardır. Bu bariyer, seminifer tübülün destek hücreleri olan 'Sertoli hücreleri'nin birbirlerine sıkıca bağlanmasıyla (Zonula occludens / Tight junctions) oluşur. Bariyer, tübülü bazal (immün sisteme açık) ve adluminal (immün sistemden izole) olarak iki kompartmana ayırır. Bariyer yıkılırsa vücut spermlere antikor üretir ve infertilite gelişir."
+  },
+  {
+    id: 541,
+    ders: "Fizyoloji",
+    konu: "Genital Sistem HistoFizyolojisi",
+    diff: 4,
+    q: "Erkek üreme sisteminin hormonal kontrolü incelendiğinde, ön hipofizden salgılanan Luteinleştirici Hormonun (LH), testislerde spesifik bir hücre grubunu uyararak androjen sentezini (özellikle testosteron) başlattığı bilinmektedir. LH'nin bağlandığı bu hücrelerin histolojik incelemesinde, steroid hormon sentezinden sorumlu oldukları için sitoplazmalarında aşırı derecede gelişmiş (baskın) olarak bulunan organel aşağıdakilerden hangisidir?",
+    options: [
+      "Granüllü Endoplazmik Retikulum (RER)",
+      "Golgi Aygıtı",
+      "Düz (Granülsüz) Endoplazmik Retikulum (SER)",
+      "Lizozomlar",
+      "Peroksizomlar"
+    ],
+    correct: 2,
+    exp: "Erkeklerde LH'nin hedefi testis interstisyumunda bulunan 'Leydig hücreleri'dir (L-L kuralı). Leydig hücreleri testosteron (steroid) üretir. Protein ve peptit yapılı hormon (örn: insülin, büyüme hormonu) üreten hücrelerde Granüllü ER (RER) ve Golgi çok gelişmişken; kolesterolden 'Steroid' hormon (testosteron, östrojen, kortizol vb.) üreten tüm hücrelerde (Leydig hücreleri, adrenal korteks hücreleri, korpus luteum) 'Düz Endoplazmik Retikulum (SER)' ve tübüler kristalı mitokondriler aşırı gelişmiştir. Çünkü steroid sentez enzimleri SER zarlarında yer alır."
+  },
+  {
+    id: 542,
+    ders: "Fizyoloji",
+    konu: "Genital Sistem HistoFizyolojisi",
+    diff: 5,
+    q: "Otuz yaşında sağlıklı bir kadının 28 günlük düzenli menstrüel döngüsünün 21. gününde (Luteal Faz) endometrium biyopsisi yapılıyor. Biyopside endometrial bezlerin kıvrımlı ve salgıyla dolu olduğu (sekretuvar faz) izleniyor. Endometriumu bu evrede tutarak embriyonun tutunması için hazırlayan ve esas olarak 'Progesteron' salgılayan overyan yapı (Korpus Luteum), ovülasyon (yumurtlama) öncesi folikülün hangi hücrelerinin hipertrofisi ve luteinizasyonu ile oluşur?",
+    options: [
+      "Sadece Oosit ve korona radiata hücreleri",
+      "Sadece Granüloza hücreleri",
+      "Granüloza ve Teka İnterna hücreleri",
+      "Teka Eksterna hücreleri ve over stroma hücreleri",
+      "Primordiyal folikülün yassı epitel hücreleri"
+    ],
+    correct: 2,
+    exp: "Ovülasyon (LH piki) gerçekleştikten sonra, çatlayan (yırtılan) folikülün geride kalan duvarları hızla değişime uğrar ve 'Korpus Luteum (Sarı cisim)' adını alır. Korpus luteumu oluşturan ana hücreler, ovülasyon öncesi folikülü döşeyen 'Granüloza hücreleri' (Granüloza lutein hücrelerine dönüşür) ve 'Teka İnterna hücreleri'dir (Teka lutein hücrelerine dönüşür). Bu iki hücre grubu da LH etkisiyle sitoplazmalarında lipid (kolesterol) biriktirerek (sarı renk) hızla hipertrofiye uğrar ve bol miktarda Progesteron (ve az miktarda östrojen) sentezleyerek rahmi gebeliğe hazırlar."
+  },
+  {
+    id: 543,
+    ders: "Fizyoloji",
+    konu: "Genital Sistem HistoFizyolojisi",
+    diff: 4,
+    q: "Yirmi beş yaşındaki sağlıklı bir kadında gebelik gerçekleşmediği için korpus luteum gerilemiş (korpus albikansa dönüşmüş) ve kandaki progesteron ile östrojen seviyeleri aniden düşmüştür. Bu hormonal çekilme (withdrawal) sonucunda, endometriumda iskemi ve nekroz gelişerek menstrüel kanama (adet kanaması) başlamıştır. Menstrüasyon sırasında endometriumun fonksiyonel tabakasının (Stratum functionale) dökülmesini sağlayan şiddetli vazospazm (kasılma), spesifik olarak hangi damarlarda gerçekleşir?",
+    options: [
+      "Arkuad arterler",
+      "Düz (Straight) arterler",
+      "Spiral (Helikozal) arterler",
+      "Radyal arterler",
+      "Uterin venöz pleksus"
+    ],
+    correct: 2,
+    exp: "Endometrium histolojik olarak iki tabakadan oluşur: Altta kalıcı olan 'Stratum basale' (Düz arterler besler) ve her ay dökülüp yeniden yapılan 'Stratum functionale' (Spiral arterler besler). Gebelik olmazsa düşen progesteron seviyesi, prostaglandin (PGF2-alfa) salınımını tetikler. Prostaglandinler, fonksiyonel tabakayı besleyen kıvrımlı 'Spiral Arterler'de saatlerce süren çok şiddetli bir vazospazm (kasılma) yapar. Kan gitmeyen fonksiyonel tabaka iskemiden ölür (nekroz) ve damarlar tekrar gevşediğinde kan basıncıyla koparak adet kanaması şeklinde vajinadan atılır."
+  },
+  {
+    id: 544,
+    ders: "Fizyoloji",
+    konu: "Genital Sistem HistoFizyolojisi",
+    diff: 4,
+    q: "Tubal ektopik gebelik (dış gebelik) geçiren bir hastanın Fallop tüpü (Tuba uterina) cerrahi olarak çıkarılıyor. Tüp mukozasının histolojik incelemesinde tek katlı prizmatik (silindirik) epitel izleniyor. Bu epitelde, döllenmiş ovumu uterusa doğru süpüren silyalı hücrelerin yanı sıra, embriyoyu beslemek ve spermi kapasitasyona uğratmak için gerekli besleyici sıvıyı salgılayan, apikal yüzeyleri silyasız ve kubbe şeklinde lümene taşan spesifik hücreler saptanıyor. Tuba uterinada bu salgı fonksiyonunu üstlenen hücre aşağıdakilerden hangisidir?",
+    options: [
+      "Goblet hücreleri",
+      "Peg (Çivi) hücreleri",
+      "Paneth hücreleri",
+      "Klara (Clara) hücreleri",
+      "M hücreleri"
+    ],
+    correct: 1,
+    exp: "Tuba uterina (Fallop tüpü) epiteli iki ana hücre tipinden oluşur: 1) Silyalı hücreler: Östrojen etkisiyle sayıları artar ve yumurtayı rahme doğru süpürürler. 2) Peg (Çivi/Sekretuvar) hücreleri: Progesteron etkisiyle sayıları/salgıları artar. Apikal kısımları silyasızdır, bir kubbe veya çivi gibi lümene taşarlar. Görevleri, yumurtanın, spermin ve döllenmiş embriyonun tüpteki yolculuğu (3-4 gün sürer) boyunca beslenmesini sağlayacak glikoprotein ve lipidden zengin besleyici sıvıyı salgılamaktır. (Not: Goblet bağırsağın, Clara solunum yolunun, Paneth ince bağırsağın dibindeki antimikrobiyal hücredir)."
+  },
+  {
+    id: 545,
+    ders: "Fizyoloji",
+    konu: "Genel Embriyoloji",
+    diff: 4,
+    q: "Fertilizasyon (döllenme) sırasında, kapasitasyona uğramış bir sperm hücresi oositin etrafındaki Zona Pellucida'yı (ZP3 reseptörleri aracılığıyla) delip oosit zarına ulaştığında ve kaynaştığında, oositin içinde ani bir hücre içi kalsiyum (Ca+2) dalgası oluşur. Bu kalsiyum dalgası, oosit zarının hemen altındaki kortikal granüllerin ekzositozla dışarı boşalmasına (Kortikal Reaksiyon) neden olur. Kortikal reaksiyonun embriyolojik açıdan en kritik fizyolojik işlevi aşağıdakilerden hangisidir?",
+    options: [
+      "Oositin 2. mayoz bölünmesini tamamlamasını başlatmak",
+      "Zona Pellucida'nın yapısını (ZP3 reseptörlerini) değiştirerek ve sertleştirerek polispermiyi (birden fazla spermin girmesini) engellemek",
+      "Erkek ve dişi pronükleuslarının birleşmesini (singami) kolaylaştırmak",
+      "Zigotun mitoz bölünmelerini (klivaj) tetikleyecek ATP sentezini başlatmak",
+      "Embriyonun endometriyuma tutunması için gerekli enzimleri serbest bırakmak"
+    ],
+    correct: 1,
+    exp: "Fertilizasyonda en büyük risk 'Polispermi'dir (bir yumurtaya iki sperm girerse 69 kromozomlu, yaşamaz bir triploidi oluşur). İlk sperm yumurta zarına dokunduğu anda, yumurta içindeki kalsiyum fırlar ve zardaki kortikal granüller dışarı kusulur (Kortikal reaksiyon). Bu granüllerin içindeki enzimler, yumurtayı saran jölemsi kılıf olan 'Zona Pellucida'yı anında sertleştirir ve üzerindeki sperm bağlayıcı ZP3 reseptörlerini yıkar. Buna 'Zona Reaksiyonu' denir. Böylece arkadan gelen diğer spermlerin yumurtaya girmesi mekanik olarak engellenir ve polispermi önlenir."
+  },
+  {
+    id: 546,
+    ders: "Fizyoloji",
+    konu: "Genel Embriyoloji",
+    diff: 4,
+    q: "Döllenmeden yaklaşık 6-7 gün sonra, blastosist aşamasındaki embriyo uterus (rahim) endometriumuna tutunmaya (implantasyon) başlar. Blastosistin dış tabakası olan trofoblastlar iki farklı hücre tabakasına farklılaşır. Bu tabakalardan biri hücre sınırlarını kaybederek anne dokusunun içine doğru agresif bir şekilde invaze olan ve aynı zamanda gebelik testi için kullanılan Human Koryonik Gonadotropin (hCG) hormonunu sentezleyen çok çekirdekli dev bir kitle oluşturur. Bu agresif ve hormon sentezleyen embriyolojik doku aşağıdakilerden hangisidir?",
+    options: [
+      "Sitotrofoblast",
+      "Embriyoblast (İç hücre kitlesi)",
+      "Sinsityotrofoblast",
+      "Ekstraembriyonik mezoderm",
+      "Hipoblast"
+    ],
+    correct: 2,
+    exp: "İmplantasyon sırasında embriyonun dış zarı olan Trofoblastlar ikiye ayrılır: İçte tek çekirdekli, düzgün sınırlı 'Sitotrofoblastlar' (hücre fabrikasıdır, sürekli bölünürler) ve dışta bu hücrelerin birleşerek oluşturduğu, hücre zarlarının eridiği, çok çekirdekli dev bir süngerimsi doku olan 'Sinsityotrofoblastlar'. Sinsityotrofoblastlar, annenin kan damarlarını ve dokusunu eriterek embriyoyu rahme gömen agresif parmakçuklardır. Aynı zamanda kana 'hCG (Human Koryonik Gonadotropin)' salgılayarak annenin overindeki Korpus Luteum'a 'Ben geldim, progesteron üretmeye devam et, adet kanaması yapma' mesajını iletirler."
+  },
+  {
+    id: 547,
+    ders: "Fizyoloji",
+    konu: "Genel Embriyoloji",
+    diff: 5,
+    q: "Gelişimin 3. haftasında (Gastrulasyon evresi), epiblast hücreleri primitif çizgi (primitive streak) boyunca göç ederek üç temel germ yaprağını (Ektoderm, Mezoderm ve Endoderm) oluştururlar. Aynı dönemde primitif düğümden başa doğru (kraniyal yönde) uzanan silindirik bir hücre kordonu olan 'Notokord' gelişir. Notokordun embriyolojik gelişimdeki (organogenez) en önemli BİRİNCİL indükleyici (uyarıcı) görevi aşağıdakilerden hangisidir?",
+    options: [
+      "Altındaki endodermi uyararak sindirim kanalını oluşturmak",
+      "Üzerindeki ektodermi indükleyerek Nöral Plağın (dolayısıyla santral sinir sisteminin) gelişmesini başlatmak",
+      "Yanlarındaki paraksiyal mezodermi uyararak somitlerin parçalanmasını sağlamak",
+      "İlkel kalp tüpünün birleşmesi için kılavuzluk etmek",
+      "Gelecekteki göbek kordonunun kan damarlarını oluşturmak"
+    ],
+    correct: 1,
+    exp: "Gastrulasyonun en kritik olayı Notokordun oluşumudur (Notokord mezoderm kökenlidir). Notokord, embriyonun ilkel omurgası gibidir. Organogenezde 'İndüksiyon (bir dokunun diğerine emir vermesi)' kavramının en meşhur örneği Notokord'dur. Notokord, hemen kendi ÜZERİNDE bulunan yüzey ektodermi hücrelerine moleküler sinyaller (Sonic Hedgehog / SHH vb.) göndererek onları kalınlaştırır ve 'Nöral Plak' olmasını sağlar (Nöroektoderm). Nöral plak kıvrılarak nöral tüpü (Beyin ve Omuriliği) oluşturur. Yani Notokord olmasaydı sinir sistemimiz gelişemezdi. İlerleyen yaşlarda notokord kalıntısı intervertebral disklerin ortasındaki 'Nucleus pulposus' olarak hayatına devam eder."
+  },
+  {
+    id: 548,
+    ders: "Fizyoloji",
+    konu: "Genel Embriyoloji",
+    diff: 4,
+    q: "Gelişimin 3. ve 4. haftalarında notokordun her iki yanında yer alan 'Paraksiyal Mezoderm', baş-kuyruk ekseni boyunca parçalara ayrılarak 'Somit' adı verilen kübik blokları oluşturur. Somitler daha sonra üç farklı embriyolojik taslağa farklılaşır. Bu somitlerin medial ve ventral kısmında yer alan ve göç ederek notokord ile nöral tüpün etrafını sarıp gelecekteki 'Vertebraları (Omurları)' ve kaburgaları oluşturacak olan embriyolojik doku taslağı aşağıdakilerden hangisidir?",
+    options: [
+      "Dermatom",
+      "Miyotom",
+      "Sklerotom",
+      "Ara (İntermediate) mezoderm",
+      "Somatoplevrik mezoderm"
+    ],
+    correct: 2,
+    exp: "Somitler (Paraksiyal mezoderm kökenli), insan vücudunun segmental (bölmeli) yapısını oluşturur. Her bir somit 3 parçaya ayrılır: 1) Sklerotom: En içte ve alttadır (ventromedial). Göç ederek nöral tüpü sarar ve eksenel iskeleti (Vertebralar/Omurlar ve Kaburgalar) oluşturur (Sklero=Sert/Kemik). 2) Miyotom: Ortadadır, vücudun tüm iskelet kaslarını oluşturur. 3) Dermatom: En dıştadır, sırt bölgesindeki cildin dermis tabakasını oluşturur. (Not: Ara mezoderm ürogenital sistemi, somatoplevrik mezoderm ise parietal zarları ve ekstremite kemiklerini yapar)."
+  },
+  {
+    id: 549,
+    ders: "Fizyoloji",
+    konu: "Genel Embriyoloji",
+    diff: 4,
+    q: "Nöral tüpün kapanması sırasında, nöral katlantıların tepe kısmında yer alan özel bir hücre grubu, ektodermal bağlantılarını kopararak embriyonun dört bir yanına göç etmeye başlar. 'Dördüncü germ yaprağı' olarak da adlandırılan bu Nöral Krest (Neural Crest) hücreleri birçok farklı organın gelişimine katılır. Aşağıdaki doku veya hücre tiplerinden hangisi Nöral Krest hücrelerinden KÖKEN ALMAZ?",
+    options: [
+      "Ciltteki melanositler (pigment hücreleri)",
+      "Adrenal (Böbrek üstü) bezin medullası",
+      "Periferik sinir sistemindeki Schwann hücreleri",
+      "Yüz ve kafatası kemiklerinin büyük bir kısmı (Fasiyal iskelet)",
+      "Santral sinir sistemindeki mikroglialar"
+    ],
+    correct: 4,
+    exp: "Nöral Krest (Krista) hücreleri ektoderm kökenli muazzam göçmen hücrelerdir. Gittikleri yerde şu yapıları oluştururlar: Adrenal medulla (katekolamin üreten kromaffin hücreler), Melanositler (cilde renk verenler), Schwann hücreleri (periferik miyelin), Pia ve Araknoid zarlar, Tiroidin C (kalsitonin) hücreleri, Yüz-çene (fasiyal) kemikleri ve kıkırdakları, Kalpteki aortikopulmoner septum, Otonom ve arka kök ganglionları. ANCAK, santral sinir sisteminin çöpçüleri olan 'Mikroglialar' nöral krestten DEĞİL, kemik iliğindeki makrofajlar gibi 'Mezodermden (Mononükleer fagositik sistem)' köken alırlar."
+  },
+  {
+    id: 550,
+    ders: "Fizyoloji",
+    konu: "Hematopoetik Sistem HistoFizyolojisi",
+    diff: 4,
+    q: "Akut kan kaybı sonrası kemik iliğinde eritropoez (kırmızı kan hücresi yapımı) hızlanan bir hastanın periferik kan yayması supravital boyalarla (örn: Yeni Metilen Mavisi) inceleniyor. Yaymada, olgun eritrositlerden biraz daha büyük olan ve sitoplazmalarında ağsı (retiküler) lacivert iplikçikler içeren hücrelerin sayısında artış saptanıyor. Eritrosit olgunlaşma serisinin kana çıkan en son öncül hücresi olan bu retikülositlerde boyanan ağsı (retiküler) materyalin hücresel kaynağı aşağıdakilerden hangisidir?",
+    options: [
+      "Parçalanmış hücre çekirdeği (DNA) kalıntıları",
+      "Mitokondriyal krista döküntüleri",
+      "Ribozomal RNA (rRNA) ve poliribozom kalıntıları",
+      "Golgi aygıtı vezikülleri",
+      "Denatüre olmuş hemoglobin çökeltileri"
+    ],
+    correct: 2,
+    exp: "Eritrositler kemik iliğinde olgunlaşırken önce çekirdeklerini atarlar. Çekirdeğini yeni atmış, henüz tam olgunlaşmamış genç alyuvarlara 'Retikülosit' denir. Retikülositler kemik iliğinden çıkıp kanda 1-2 gün dolaştıktan sonra içlerindeki son organelleri de atıp olgun eritrosite dönüşürler. Normal boyalarla polikromatofilik (morumsu) görünürler. Ancak supravital boyalarla (Yeni Metilen Mavisi, Parlak Krezil Mavisi) boyandıklarında sitoplazmalarında bir ağ (retikulum) belirir. Bu ağsı yapı, hücrenin hemoglobin sentezlemek için kullandığı son 'Ribozomal RNA (rRNA)' ve poliribozom kalıntılarıdır. Kanama veya hemoliz durumunda kemik iliğinin çalıştığını (telafi ettiğini) gösteren en iyi bulgu kanda retikülosit artışıdır."
+  },
+  {
+    id: 551,
+    ders: "Fizyoloji",
+    konu: "Hematopoetik Sistem HistoFizyolojisi",
+    diff: 4,
+    q: "Trombopoetin (TPO) hormonunun uyarısıyla kemik iliğinde trombosit üretimi gerçekleşmektedir. Trombositlerin köken aldığı Megakaryositler, vücudun en büyük hücrelerinden biridir ve devasa (poliploid) bir çekirdeğe sahiptirler. Megakaryositlerin, hücre bölünmesi (sitokinez) olmaksızın sadece DNA'larını kopyalayarak devasa çekirdeklere ulaşmasını sağlayan spesifik hücre döngüsü mekanizması (ve trombosit oluşturma yöntemi) aşağıdakilerden hangisinde doğru verilmiştir?",
+    options: [
+      "Mayoz bölünme / Ekzositozla protein sekresyonu",
+      "Endomitoz (Endoreduplikasyon) / Sitoplazmada demarkasyon kanalları oluşturup sitoplazmanın parçalanması (fragmentasyon)",
+      "Amitoz / Pinositoz keseciklerinin atılması",
+      "Klivaj / Apoptotik cisimciklerin kana karışması",
+      "Şizogoni / Hücre zarının tomurcuklanması"
+    ],
+    correct: 1,
+    exp: "Trombositler bir hücre DEĞİL, kemik iliğindeki devasa bir hücrenin (Megakaryosit) kopan sitoplazma parçacıklarıdır. Megakaryositler büyürken çok ilginç bir yol izlerler: 'Endomitoz (Endoreduplikasyon)'. Yani hücre DNA'sını 2n, 4n, 8n, 16n, 32n, 64n şeklinde sürekli kopyalar ama hücre ve çekirdek ASLA BÖLÜNMEZ. Sonuçta devasa loblu bir çekirdek ve dev bir sitoplazma oluşur. Yeterince büyüyen megakaryosit, sitoplazmasının içine 'Demarkasyon Kanalları' adı verilen zarlar çizer. Bu zarlar birleşerek sitoplazmayı binlerce küçük pulcuğa ayırır. Sonunda megakaryosit parçalanır (fragmentasyon) ve bu pulcuklar kana 'Trombosit' olarak dökülür."
+  },
+  {
+    id: 552,
+    ders: "Fizyoloji",
+    konu: "Hematopoetik Sistem HistoFizyolojisi",
+    diff: 4,
+    q: "X'e bağlı Agammaglobulinemi (Bruton Hastalığı) tanısı alan ve vücudunda hiç B lenfositi (CD19+ hücre) bulunmayan bir erkek çocuğun lenf nodu biyopsisi histolojik olarak inceleniyor. Lenf nodunun yapısında T hücrelerine ait bölgelerin normal olduğu görülürken, spesifik olarak B hücrelerinin yerleştiği ve çoğaldığı bölgelerin tamamen boş (hipoplastik) olduğu gözleniyor. Bu hastanın lenf nodunda gelişmemiş ve boş görünen anatomik bölge aşağıdakilerden hangisidir?",
+    options: [
+      "Parakorteks",
+      "Yüzeyel (Dış) Korteks (Foliküller ve Germinal Merkezler)",
+      "Medüller kordlar",
+      "Subkapsüler sinüs",
+      "Trabeküler sinüs"
+    ],
+    correct: 1,
+    exp: "Lenf nodları histolojik olarak T ve B lenfositlerin ayrı ayrı yerleştiği mahallelere sahiptir. 1) Yüzeyel (Dış) Korteks: B lenfositlerin mahallesidir. Burada yuvarlak 'Foliküller' ve ortalarında B hücrelerinin antijenle karşılaşıp çoğaldığı 'Germinal Merkezler' bulunur. B hücre eksikliği olan Bruton hastalığında bu bölge tamamen bomboştur. 2) Parakorteks (İç korteks): T lenfositlerin mahallesidir (Timus bağımlı bölge). DiGeorge sendromu gibi T hücre eksikliklerinde Parakorteks boş kalır. 3) Medulla: Plazma hücrelerinin (antikor üreten fabrikalar) ve makrofajların kordonlar halinde bulunduğu en iç kısımdır."
+  },
+  {
+    id: 553,
+    ders: "Fizyoloji",
+    konu: "Hematopoetik Sistem HistoFizyolojisi",
+    diff: 5,
+    q: "Timus bezi, immün sistemin eğitim merkezi olup T lenfositlerinin olgunlaştığı (T hücre toleransının geliştiği) organdır. Timus histolojisi incelendiğinde, medüllada (öz bölgesinde) sadece timusa özgü olan, Tip VI epitelyoretiküler hücrelerin soğan zarı gibi eşmerkezli (konsantrik) olarak dizilmesiyle oluşan ve merkezinde keratinleşme/nekroz görülebilen eozinofilik yapılar saptanır. İlerleyen yaşla birlikte sayısı ve boyutu artan bu spesifik histolojik yapı aşağıdakilerden hangisidir?",
+    options: [
+      "Peyer plakları",
+      "Hassall cisimcikleri (Hassall korpüskülleri)",
+      "Billroth kordonları",
+      "Malpighi cisimcikleri",
+      "Herring cisimcikleri"
+    ],
+    correct: 1,
+    exp: "Hematopoetik organların kendilerine has (kimlik kartı niteliğinde) histolojik yapıları vardır. Timusun kimlik kartı medüllasında bulunan 'Hassall Cisimcikleri'dir. Bunlar Tip VI (6) epitelyoretiküler hücrelerin kendi etraflarında soğan zarı gibi (konsantrik) sarılıp, merkezlerinde keratinleşmesi veya kireçlenmesiyle oluşur. Kesin görevleri tam bilinmemekle birlikte IL-T (Timik stromal lenfopoetin) salgılayarak T hücrelerinin eğitimine ve dendritik hücre aktivasyonuna katıldıkları düşünülmektedir. (Not: Peyer plakları ileumda, Billroth kordonları dalak kırmızı pulpasında, Malpighi cisimcikleri dalak beyaz pulpasında, Herring cisimcikleri ise nörohipofizde bulunur)."
+  },
+  {
+    id: 554,
+    ders: "Fizyoloji",
+    konu: "Hematopoetik Sistem HistoFizyolojisi",
+    diff: 4,
+    q: "Herediter Sferositoz hastasında eritrositlerin esnekliği (deformabilitesi) kaybolmuş ve küre şeklini (sferosit) almışlardır. Bu anormal alyuvarlar dolaşırken dalağa geldiklerinde, dalağın 'Kırmızı Pulpa'sında bulunan spesifik bir anatomik bariyerden (dar yarıklar) esneyip geçemezler ve dalak kordonlarında hapsolarak makrofajlar tarafından parçalanırlar. Dalak sinüzoidlerinin duvarını döşeyen ve alyuvarların esnekliğini test eden bu uzun, çubuk şeklindeki endotel hücrelerine ne ad verilir?",
+    options: [
+      "Kupffer hücreleri",
+      "Littoral hücreler",
+      "Fıçı hücreleri (Stave cells / Çıtak hücreleri)",
+      "Foliküler dendritik hücreler",
+      "M (Mikrofold) hücreleri"
+    ],
+    correct: 2,
+    exp: "Dalak, kanın kalite kontrol merkezidir. Kan, dalaktaki Kırmızı Pulpaya (Billroth kordonlarına) dökülür. Buradan tekrar venöz dolaşıma dönebilmek için 'Dalak Sinüzoidleri'nin (venöz sinüslerin) içine girmek zorundadır. Ancak bu sinüzoidlerin duvarı sıva gibi düz değildir; fıçı (varil) tahtaları gibi yan yana dizilmiş uzun, ince endotel hücrelerinden (Fıçı hücreleri / Stave cells / Çıtak hücreler) oluşur. İki fıçı hücresi arasındaki boşluk (yarık) yaklaşık 2-3 mikrometre kadardır. Oysa eritrositin çapı 7-8 mikrometredir. Normal bir eritrosit çok esnek olduğu için katlanarak bu delikten içeri sızar. Ancak Sferositoz gibi hastalıklarda eritrosit katı/sert bir top gibidir, bu yarıktan geçemez, dışarıda (Billroth kordonlarında) takılı kalır ve orada bekleyen makrofajlar tarafından yutulup parçalanır (Ekstravasküler hemoliz)."
   }
 ];
 
