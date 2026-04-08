@@ -2577,7 +2577,7 @@ export const QUESTIONS = [
   },
    {
     id: 162,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "Jinekoloji",
     diff: 4,
     q: "Yirmi sekiz yaşında nullipar kadın hasta; son iki yıldır artan şiddetli dismenore, derin disparoni ve pelvik ağrı şikayetleriyle başvuruyor. Pelvik muayenesinde uterosakral ligamentler üzerinde nodülarite ve hassasiyet saptanıyor. Transvajinal ultrasonografide her iki overde 4'er cm'lik 'buzlu cam' manzaralı kistler (endometrioma) izleniyor. Hastaya medikal tedavi olarak sürekli (sürekli salınımlı) GnRH agonisti (Löprolid) başlanıyor. Bu ajanın terapötik etkisini (hipoöstrojenik durum yaratmasını) sağlayan hücresel düzeydeki temel farmakodinamik mekanizma aşağıdakilerden hangisidir?",
@@ -2593,7 +2593,7 @@ export const QUESTIONS = [
   },
   {
     id: 163,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "Jinekoloji",
     diff: 5,
     q: "Elli beş yaşında, 4 vajinal doğum öyküsü olan kadın hasta; öksürme, hapşırma ve gülme ile idrar kaçırma (stres inkontinans) şikayetiyle başvuruyor. Pamuklu çubuk (Q-tip) testinde, ıkınma ile üretral aksın 45 dereceden fazla yer değiştirdiği saptanıyor. Ürodinamik incelemede detrusor kontraksiyonu saptanmıyor ancak karın içi basınç arttığında sızıntı (leakage) izleniyor. Bu hastadaki stres inkontinansın patofizyolojisinde zayıflayan ve üretranın hipermobilitesine neden olan temel anatomik destek yapısı aşağıdakilerden hangisidir?",
@@ -2609,7 +2609,7 @@ export const QUESTIONS = [
   },
   {
     id: 164,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "Jinekoloji",
     diff: 4,
     q: "Yirmi dört yaşında kadın hasta, 6 haftalık amenore, kasık ağrısı ve hafif vajinal kanama şikayetiyle acile başvuruyor. Serum Beta-hCG düzeyi 3500 mIU/mL saptanmasına rağmen transvajinal ultrasonografide intrauterin gebelik kesesi İZLENMİYOR. Sağ adnekste 3 cm'lik heterojen bir kitle saptanıyor. Tanısal amaçlı yapılan endometrial biyopside koriyonik villüsler izlenmezken, glandların hipersekretuar, genişlemiş ve nükleusların hiperkromatik/atipik olduğu bir görünüm (Arias-Stella reaksiyonu) saptanıyor. Endometriumdaki bu hücresel değişikliği tetikleyen temel hormon aşağıdakilerden hangisidir?",
@@ -2625,7 +2625,7 @@ export const QUESTIONS = [
   },
   {
     id: 165,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "Jinekoloji",
     diff: 5,
     q: "Polikistik Over Sendromu (PCOS) tanılı 22 yaşındaki obez kadın hasta, hirsutizm ve oligomenore nedeniyle takip ediliyor. Hastanın laboratuvarında LH/FSH oranı 3:1 olarak saptanıyor. PCOS patogenezinde periferik insülin direncinin rolü büyüktür. Bu hastada yüksek seviyelerdeki insülinin, overlerdeki spesifik bir hücre grubunda IGF-1 reseptörleri üzerinden sinyal ileterek 'androjen sentezini (androstenedion ve testosteron)' doğrudan uyardığı hücreler aşağıdakilerden hangisidir?",
@@ -2641,7 +2641,7 @@ export const QUESTIONS = [
   },
   {
     id: 166,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "Jinekoloji",
     diff: 4,
     q: "Yirmi altı yaşında kadın hasta; ateş, kötü kokulu pürülan vajinal akıntı ve sağ üst kadran (karaciğer bölgesi) ağrısı şikayetiyle başvuruyor. Pelvik muayenede servikal hareket hassasiyeti (Chandelier bulgusu) pozitiftir. Tanısal laparoskopide karaciğer kapsülü ile anterior karın duvarı arasında 'keman yayı (violin string)' şeklinde fibrotik yapışıklıklar izleniyor. Bu klinik tabloya en sık yol açan patojenin, konak hücresi içine girdikten sonra çoğalabilmek için dönüştüğü metabolik olarak aktif form aşağıdakilerden hangisidir?",
@@ -2657,7 +2657,7 @@ export const QUESTIONS = [
   },
   {
     id: 167,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "Onkoloji",
     diff: 5,
     q: "Otuz beş yaşında kadın hasta, koitus sonrası (postkoital) kanama şikayetiyle başvuruyor. Servikste izlenen kitle biyopsisi sonucu İnvaziv Yassı Hücreli Karsinom (SCC) saptanıyor. Hastanın doku analizinde yüksek riskli HPV Tip 16 DNA'sı pozitif bulunuyor. Karsinogenez sürecinde, HPV'nin genomuna entegre olan ve hücre döngüsünde 'G1'den S fazına' geçişi frenleyen Retinoblastom (Rb) tümör süpresör proteinini bağlayarak inaktive eden (ve E2F'yi serbest bırakan) viral onkoprotein aşağıdakilerden hangisidir?",
@@ -2673,7 +2673,7 @@ export const QUESTIONS = [
   },
   {
     id: 168,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "Onkoloji",
     diff: 4,
     q: "Altmış sekiz yaşında, ince yapılı (BMI: 20) ve hiç doğum yapmamış kadın hasta postmenopozal kanama şikayetiyle başvuruyor. Endometrial biyopsisinde; atrofik bir zemin üzerinde gelişmiş, glandüler yapıların papiller (parmakımsı) çıkıntılar oluşturduğu ve içlerinde Psammoma cisimciklerinin yer aldığı, belirgin nükleer atipi gösteren tümöral yapı izleniyor. Oldukça agresif seyirli olduğu bilinen bu Tip 2 Endometrium Kanserinin (Seröz Karsinom) patogenezinde en sık saptanan genetik mutasyon aşağıdakilerden hangisidir?",
@@ -2689,7 +2689,7 @@ export const QUESTIONS = [
   },
   {
     id: 169,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "Onkoloji",
     diff: 5,
     q: "Ailesinde yaygın meme ve over kanseri öyküsü olan, germline BRCA1 mutasyonu taşıyan 50 yaşındaki kadın hastada pelvik kitle ve masif asit saptanıyor. CA-125 düzeyi 1500 U/mL ölçülüyor. Yapılan cerrahi evrelemede 'Yüksek Dereceli (High-Grade) Seröz Over Karsinomu' tanısı kesinleşiyor. Son yıllardaki güncel moleküler ve patolojik araştırmalara göre, overin bu en sık ve en ölümcül kanser türünün (Yüksek dereceli seröz) asıl orijin aldığı (başladığı) öncü hücresel lezyon (STIC - Serous Tubal Intraepithelial Carcinoma) aşağıdaki anatomik bölgelerin hangisinde yerleşir?",
@@ -2705,7 +2705,7 @@ export const QUESTIONS = [
   },
   {
     id: 170,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "Onkoloji",
     diff: 4,
     q: "Yirmi yaşında nullipar kadın, 10 haftalık gebelik ve şiddetli bulantı-kusma (hiperemezis) şikayetiyle başvuruyor. Muayenesinde uterus büyüklüğü 16 hafta ile uyumlu (beklenenden çok büyük) bulunuyor. Beta-hCG düzeyi > 500.000 mIU/mL saptanıyor. Ultrasonografide intrauterin embriyo izlenmiyor, bunun yerine uterusu dolduran yaygın kistik veziküller (kar fırtınası manzarası) izleniyor. Tahliye edilen materyalin patolojik incelemesinde Komple (Tam) Mol Hidatidiform saptanıyor. Bu lezyonun sitogenetik yapısı ve maternal p57(kip2) boyanma paterni aşağıdakilerden hangisinde doğru verilmiştir?",
@@ -2721,7 +2721,7 @@ export const QUESTIONS = [
   },
   {
     id: 171,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "Onkoloji",
     diff: 4,
     q: "Yetmiş beş yaşında kadın hasta, yıllardır devam eden şiddetli vulvar kaşıntı (pruritus) şikayetiyle başvuruyor. Muayenede vulva cildinin incelmiş, beyaz parşömen kağıdı gibi göründüğü (Liken sklerozis) ve labia majora üzerinde 2 cm'lik sert, ülsere bir kitle bulunduğu saptanıyor. Kitle biyopsisi Yassı Hücreli Karsinom (SCC) olarak raporlanıyor. İleri yaşta, liken sklerozis zemininde gelişen ve HPV ile İLİŞKİLİ OLMAYAN bu vulva kanseri tipinin patogenezinde en sık saptanan genetik mutasyon aşağıdakilerden hangisidir?",
@@ -2737,7 +2737,7 @@ export const QUESTIONS = [
   },
   {
     id: 172,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "Perinatoloji",
     diff: 4,
     q: "Otuz iki haftalık primigravid hasta, şiddetli baş ağrısı, bulanık görme ve sağ üst kadran ağrısı şikayetleriyle başvuruyor. Kan basıncı 170/110 mmHg, 24 saatlik idrarda protein 5 gram olarak ölçülüyor. Preeklampsi tanısı konan bu hastanın patofizyolojisinde; maternal endotel disfonksiyonuna ve sistemik vazospazma neden olan, plasentadan aşırı salgılanarak dolaşımdaki VEGF (Vasküler Endotelyal Büyüme Faktörü) ve PIGF'yi (Plasental Büyüme Faktörü) bağlayıp nötralize eden anti-anjiyojenik protein aşağıdakilerden hangisidir?",
@@ -2753,7 +2753,7 @@ export const QUESTIONS = [
   },
   {
     id: 173,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "Perinatoloji",
     diff: 5,
     q: "Kan grubu A Rh(-) olan 2. gebeliğindeki gebenin (eşi Rh pozitif), indirekt Coombs testi 1:64 pozitif (Anti-D saptanıyor) olarak geliyor. Yirmi sekizinci haftada yapılan fetal ultrasonografide MCA-PSV (Middle Cerebral Artery - Peak Systolic Velocity) ölçümü > 1.5 MoM olarak bulunuyor ve fetüste asit/plevral efüzyon (Hidrops fetalis) izleniyor. Fetal anemiyi saptamakta altın standart non-invaziv test olan MCA-PSV'nin (beyin orta arterindeki kan akım hızının) anemik fetüste artmasına neden olan temel hemodinamik mekanizma aşağıdakilerden hangisidir?",
@@ -2769,7 +2769,7 @@ export const QUESTIONS = [
   },
   {
     id: 174,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "Perinatoloji",
     diff: 4,
     q: "Kırkıncı gebelik haftasında, 4500 gram makrozomik bir bebek doğuran ve travay öyküsü uzamış olan multipar hastada, plasentanın ayrılmasını takiben şiddetli, durdurulamayan vajinal kanama (Postpartum Kanama) başlıyor. Karın muayenesinde uterusun umbilikus seviyesinin üzerinde, yumuşak (hamur kıvamında) ve kontrakte olmadığı (Uterin Atoni) saptanıyor. Hastanın özgeçmişinde 'Şiddetli Astım' öyküsü mevcuttur. Bu hastada uterusu kasmak (uterotonik etki) amacıyla verilmesi KESİNLİKLE KONTRENDİKE olan farmakolojik ajan aşağıdakilerden hangisidir?",
@@ -2785,7 +2785,7 @@ export const QUESTIONS = [
   },
   {
     id: 175,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "Perinatoloji",
     diff: 4,
     q: "Otuz sekizinci haftada indüksiyon ile doğumu başlatılan gebenin elektronik fetal kalp atım hızı izleminde (Kardiyotokografi - NST/CTG); bazal kalp tepe atımı 140/dk ve varyabilitesi normal olarak izleniyor. Ancak uterus kontraksiyonlarının en tepe noktasına ulaştığı anı TAKİBEN (kontraksiyon bittikten sonra başlayan) ve yavaş yavaş toparlanan tekrarlayıcı deselerasyonlar (Geç deselerasyonlar) saptanıyor. Fetal kalp hızındaki bu spesifik trasesinin patofizyolojisi aşağıdakilerden hangisidir?",
@@ -2801,7 +2801,7 @@ export const QUESTIONS = [
   },
   {
     id: 176,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "Perinatoloji",
     diff: 5,
     q: "Otuz beş yaşındaki G4P3 gebenin öyküsünde 3 kez sezaryen (C/S) ameliyatı bulunuyor. Şimdiki gebeliğinde yapılan ultrasonografisinde plasentanın anterior yerleşimli olduğu ve internal servikal os'u tamamen kapattığı (Plasenta Previa Totalis) saptanıyor. Ayrıca hastanın son 2 haftadır şiddetli idrarda kanama (makroskopik hematüri) şikayeti mevcuttur. Plasental adezyon anomalisi (Plasenta Perkreta) şüphesiyle sezaryen-histerektomi planlanan bu hastanın patogenezinde, plasental koryon villuslarının miyometriyuma ve komşu organlara (mesane) yapışmasına yol açan histolojik eksiklik aşağıdakilerden hangisidir?",
@@ -2817,7 +2817,7 @@ export const QUESTIONS = [
   },
   {
     id: 177,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "İnfertilite",
     diff: 4,
     q: "Yirmi sekiz yaşında kadın hasta, son 1 yıldır adet görememe (sekonder amenore) ve çocuk sahibi olamama şikayetiyle başvuruyor. Anamnezinde 1.5 yıl önce kaçırılmış abortus (missed abortion) nedeniyle dilatasyon ve küretaj (D&C) operasyonu geçirdiği öğreniliyor. Hastanın serum FSH, LH, Estradiol ve Prolaktin düzeyleri tamamen normal saptanıyor. Yapılan Progesteron çekilme testinde (10 gün medroksiprogesteron asetat sonrası) kanama OLMUYOR. Ardından uygulanan Östrojen + Progesteron ardışık testinde de vajinal kanama İZLENMİYOR. Bu hastadaki sekonder amenorenin patofizyolojisinden sorumlu olay aşağıdakilerden hangisidir?",
@@ -2833,7 +2833,7 @@ export const QUESTIONS = [
   },
   {
     id: 178,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "İnfertilite",
     diff: 5,
     q: "İn Vitro Fertilizasyon (Tüp Bebek - İVF) tedavisi gören 32 yaşındaki PCOS tanılı hastada, oosit matürasyonunu tetiklemek için hCG enjeksiyonu (çatlatma iğnesi) yapılıyor. Yumurta toplama işleminden 5 gün sonra hasta; şiddetli karın şişliği, nefes darlığı ve oligüri (idrar çıkışında azalma) ile acile başvuruyor. Muayenede masif asit, plevral efüzyon saptanıyor. Laboratuvarda Hct: %55 (Hemokonsantrasyon) ve Kreatinin yüksek bulunuyor. Bu ölümcül tablonun (Ovaryan Hiperstimülasyon Sendromu - OHSS) patogenezinde, üçüncü boşluklara (asit/efüzyon) masif sıvı kaçışına neden olan temel vazoaktif medyatör aşağıdakilerden hangisidir?",
@@ -2849,7 +2849,7 @@ export const QUESTIONS = [
   },
   {
     id: 179,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "İnfertilite",
     diff: 4,
     q: "Sekiz ay önce evde vajinal doğum yapan ve doğum sırasında ciddi kanama (postpartum hemoraji) nedeniyle acile kaldırılarak 4 ünite kan transfüzyonu yapılan 30 yaşındaki hasta, dahiliye polikliniğine başvuruyor. Doğumdan beri bebeğini hiç emziremediğini (sütü gelmediğini), adetlerinin geri dönmediğini (amenore), aşırı yorgunluk hissettiğini ve aksiller/pubik kıllarının döküldüğünü belirtiyor. Fizik muayenede kan basıncı 90/60 mmHg saptanıyor. Bu klinik tablonun patofizyolojik temeli aşağıdakilerden hangisidir?",
@@ -2865,7 +2865,7 @@ export const QUESTIONS = [
   },
   {
     id: 180,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "İnfertilite",
     diff: 5,
     q: "On yedi yaşında kız çocuğu primer amenore (hiç adet görememe) şikayetiyle getiriliyor. Fizik muayenesinde boyu 172 cm, meme gelişimi Tanner Evre 4 (normal) ancak pubik ve aksiller kıllanma YOKTUR (Evre 1). Pelvik ultrasonografide uterus, fallop tüpleri ve overler İZLENMİYOR. Kasık kanallarında (inguinal kanal) bilye büyüklüğünde kitleler palpe ediliyor. Hastanın genetik analizinde karyotip 46,XY olarak raporlanıyor ve serum testosteron düzeyi erkek referans aralığında (çok yüksek) bulunuyor. Bu hastada yüksek testosterona rağmen erkek iç ve dış genital yapılarının gelişememesinin hücresel düzeydeki nedeni aşağıdakilerden hangisidir?",
@@ -2881,7 +2881,7 @@ export const QUESTIONS = [
   },
   {
     id: 181,
-    ders: "Kadın Doğum",
+    ders: "Kadın Hastalıkları ve Doğum",
     konu: "İnfertilite",
     diff: 4,
     q: "Otuz yaşında PCOS (Polikistik Over Sendromu) tanılı hasta infertilite nedeniyle tedavi planlanıyor. Hastaya ovulasyon indüksiyonu (yumurtlama tedavisi) amacıyla birinci basamak tedavi olarak Letrozol başlanıyor. Eskiden bu amaçla altın standart olan Klomifen sitrat yerine günümüzde ilk tercih konumuna gelen Letrozol'ün ovulasyonu tetiklemesini sağlayan farmakodinamik mekanizması aşağıdakilerden hangisidir?",
@@ -3934,6 +3934,486 @@ export const QUESTIONS = [
     ],
     correct: 1,
     exp: "Liken Planus, İngilizce'de '6P' kuralı ile ezberlenen (Pruritic, Purple, Polygonal, Planar, Papules, and Plaques) kronik kaşıntılı bir deri hastalığıdır. Deri lezyonları mor renklidir, üzerinde 'Wickham striaları' (beyaz ağsı çizgiler) bulunur. Fleksör yüzleri (bilek içleri) sever. Mukozalarda (ağız içi) lökoplaki benzeri beyaz dantelimsi izler yapar. Liken Planus'un tıp literatüründe en güçlü ilişkilendirildiği viral hastalık 'Hepatit C Virüsü (HCV)' enfeksiyonudur. Bu nedenle her yeni Liken Planus vakasında Anti-HCV taranması önerilir."
+  },
+  {
+    id: 247,
+    ders: "Biyokimya",
+    konu: "Karbonhidratlar",
+    diff: 4,
+    q: "Hayatının ilk günlerinde tamamen sağlıklı görünen yenidoğan, anne sütü almaya başladıktan kısa bir süre sonra kusma, sarılık ve letarji tablosuyla getiriliyor. Fizik muayenesinde hepatomegali ve her iki gözünde katarakt saptanıyor. Kan kültüründe E. coli üreyen hastanın idrarında indirgeyici madde pozitif bulunuyor. Bu hastada biriken ve özellikle katarakt oluşumuna yol açan toksik metaboliti üreten enzim aşağıdakilerden hangisidir?",
+    options: [
+      "Galaktoz-1-fosfat üridiltransferaz (GALT)",
+      "Galaktokinaz",
+      "Aldoz redüktaz",
+      "Fruktokinaz",
+      "Aldolaz B"
+    ],
+    correct: 2,
+    exp: "Vaka tipik bir Klasik Galaktozemi (GALT enzim eksikliği) tablosudur. Anne sütündeki laktoz, bağırsakta glukoz ve galaktoza yıkılır. GALT enzimi eksik olduğunda hücre içinde Galaktoz-1-fosfat ve Galaktoz birikir. Biriken bu fazla galaktoz, lens gibi dokularda 'Aldoz Redüktaz' enzimi tarafından osmotik olarak çok aktif olan 'Galaktitol'e dönüştürülür. Merceğe su çeken galaktitol katarakta neden olur. E. coli sepsisine yatkınlık bu hastalığın en ölümcül klinik korelasyonlarından biridir."
+  },
+  {
+    id: 248,
+    ders: "Biyokimya",
+    konu: "Karbonhidratlar",
+    diff: 5,
+    q: "Yirmi yaşında erkek hasta, çocukluğundan beri zaman zaman alevlenen sarılık ve kronik yorgunluk şikayetiyle başvuruyor. Laboratuvarında normositer anemi, indirekt hiperbilirubinemi ve yüksek retikülosit saptanıyor. Periferik yaymada Heinz cisimciği izlenmiyor. Hastanın eritrosit içi 2,3-Bifosfogliserat (2,3-BPG) düzeyinin normalin 3 katı olduğu ve oksihemoglobin disosiasyon eğrisinin sağa kaydığı saptanıyor. Bu hastadaki hemolitik aneminin temelinde yatan enzimatik defektin hücre içindeki birincil sonucu aşağıdakilerden hangisidir?",
+    options: [
+      "Hücre zarı iskelet proteinlerinde (spektrin) çapraz bağlanma kusuru",
+      "Oksidatif stres altında glutatyonun indirgenememesi",
+      "Glikolizin son basamağının bloke olmasına bağlı ATP üretiminde yetersizlik ve Na/K-ATPaz pompası disfonksiyonu",
+      "Pentoz fosfat yolunda NADPH üretiminin tamamen durması",
+      "Eritrosit içinde methemoglobin birikimi"
+    ],
+    correct: 2,
+    exp: "Vaka Pirüvat Kinaz (PK) eksikliğidir. Glikolizin son basamağı olan fosfoenolpirüvattan (PEP) pirüvat oluşumunu ve ATP sentezini katalizler. Eritrositlerin mitokondrisi olmadığı için tek enerji kaynağı glikolizdir. PK eksikliğinde ATP üretilemez, Na/K-ATPaz pompası çalışmaz ve hücre su alarak parçalanır (Hemoliz). Enzimin bloku nedeniyle glikoliz ara ürünleri (özellikle 1,3-BPG) birikir ve bu da 2,3-BPG'ye dönüşerek eğriyi sağa kaydırır (Bu sayede hasta anemiyi daha iyi tolere eder). Heinz cisimciği olmaması G6PD eksikliğinden ayırır."
+  },
+  {
+    id: 249,
+    ders: "Biyokimya",
+    konu: "Karbonhidratlar",
+    diff: 4,
+    q: "Altı aylık erkek bebek, ek gıdaya (meyve püreleri ve meyve suları) başlandıktan sonra ortaya çıkan şiddetli hipoglisemi, terleme, kusma ve uyku hali şikayetleriyle getiriliyor. Sadece anne sütü aldığı ilk 6 ay boyunca tamamen asemptomatik olduğu öğreniliyor. Hastanın laboratuvarında hipofosfatemi ve fruktozemi saptanıyor. Herediter Fruktoz İntoleransı tanısı konan bu hastada, hipogliseminin ortaya çıkmasının hücresel düzeydeki ana nedeni aşağıdakilerden hangisidir?",
+    options: [
+      "Fruktoz-1-fosfat birikiminin hücre içi inorganik fosfatı (Pi) tüketerek glikojenoliz ve glukoneogenezi durdurması",
+      "Fruktokinaz enzim eksikliğine bağlı fruktozun hücreye girememesi",
+      "Fruktozun pankreastan masif insülin deşarjına yol açması",
+      "Fruktozun doğrudan glukagon reseptörlerini bloke etmesi",
+      "Karaciğerde fruktozun glukoza dönüştürülürken aşırı ATP tüketmesi"
+    ],
+    correct: 0,
+    exp: "Herediter Fruktoz İntoleransında eksik olan enzim Aldolaz B'dir. Meyve yendiğinde (fruktoz veya sükroz), fruktokinaz enzimi fruktozu hızla Fruktoz-1-fosfat'a (F-1-P) çevirir. Ancak Aldolaz B olmadığı için F-1-P yıkılamaz ve hepatosit içinde birikir. Bu birikim, hücredeki tüm serbest inorganik fosfatı (Pi) hapseder. Fosfat tükenince ATP yapılamaz. ATP ve Pi olmayınca karaciğer ne glikojeni yıkabilir (Glikojen fosforilaz Pi gerektirir) ne de yeni glukoz üretebilir. Sonuç: Meyve yedikten sonra ölümcül hipoglisemi."
+  },
+  {
+    id: 250,
+    ders: "Biyokimya",
+    konu: "Lipid Metabolizması",
+    diff: 4,
+    q: "Üç yaşındaki kız çocuk, geçirdiği bir üst solunum yolu enfeksiyonu nedeniyle 18 saat boyunca yemek yememesinin (açlık) ardından sabah yatağında koma halinde bulunuyor. Acil serviste kan şekeri 30 mg/dL saptanıyor. İdrar tahlilinde keton cismine rastlanmıyor (Hipoketotik hipoglisemi). Kan gazında metabolik asidoz saptanan hastanın idrar organik asit profilinde masif miktarda 'orta zincirli dikarboksilik asitler' saptanıyor. Bu klinik tablonun patogenezinde mitokondride gerçekleşemeyen biyokimyasal reaksiyon aşağıdakilerden hangisidir?",
+    options: [
+      "Uzun zincirli yağ asitlerinin karnitin mekiği ile mitokondriye taşınması",
+      "Orta zincirli yağ asitlerinin beta-oksidasyonunun ilk basamağı olan dehidrogenasyon",
+      "Asetil-CoA'nın sitrat döngüsüne girmesi",
+      "HMG-CoA sentaz aracılı keton cismi sentezi",
+      "Hormona duyarlı lipazın yağ dokusunda trigliseridleri yıkması"
+    ],
+    correct: 1,
+    exp: "Vaka MCAD (Medium-Chain Acyl-CoA Dehydrogenase) eksikliğidir. En sık görülen yağ asidi oksidasyon defektidir. Çocuklar toklukta tamamen normaldir, ancak uzun süren açlıkta glikojen depoları bitince enerji için yağları yakmaları gerekir. MCAD eksikliğinde 8-10 karbonlu (orta zincirli) yağ asitleri mitokondride beta-oksidasyona giremez (dehidrogenasyon basamağı bozuktur). Yağlar yakılamayınca keton yapılamaz (Hipoketotik) ve glukoneogenez için enerji (ATP) sağlanamadığı için kan şekeri düşer (Hipoglisemi). Yıkılamayan orta zincirli yağlar omega-oksidasyona saparak idrarda dikarboksilik asitler olarak atılır."
+  },
+  {
+    id: 251,
+    ders: "Biyokimya",
+    konu: "Lipid Metabolizması",
+    diff: 4,
+    q: "Ailesel Hiperkolesterolemi tanısı ile Atorvastatin (Statin) tedavisi başlanan 45 yaşındaki hastanın takiplerinde serum LDL kolesterol düzeyinin %40 oranında düştüğü görülüyor. Statinlerin kolesterol sentezindeki hız kısıtlayıcı enzimi (HMG-CoA Redüktaz) kompetitif olarak inhibe etmesinin ardından, serumdaki LDL kolesterol seviyesinin belirgin şekilde düşmesini sağlayan 'asıl hücresel kompanzasyon' mekanizması aşağıdakilerden hangisidir?",
+    options: [
+      "Bağırsaklardan diyetsel kolesterol emiliminin durması",
+      "Karaciğer hücrelerinin (hepatositlerin) yüzeyindeki LDL reseptör sentezinin up-regülasyonu (artışı)",
+      "VLDL sekresyonunun hepatositlerden tamamen durdurulması",
+      "Kolesterolün safraya safra asidi olarak atılımının masif olarak hızlanması",
+      "Makrofajların okside LDL fagositozunun bloke edilmesi"
+    ],
+    correct: 1,
+    exp: "Statinler karaciğerde HMG-CoA Redüktazı inhibe ederek hücre içi *de novo* kolesterol sentezini durdurur. Hücre içi kolesterol havuzu boşalınca, hepatositler hayatta kalabilmek için dışarıdan (kandan) kolesterol çekmek zorunda kalır. SREBP (Sterol Regulatory Element-Binding Protein) yolağı aktive olur ve hücre zarına yoğun miktarda yeni 'LDL Reseptörü' yerleştirilir (Up-regülasyon). Bu reseptörler kandaki LDL'yi sünger gibi emerek hücre içine alır ve serum LDL düzeyi dramatik şekilde düşer."
+  },
+  {
+    id: 252,
+    ders: "Biyokimya",
+    konu: "Lipid Metabolizması",
+    diff: 5,
+    q: "Bir yaşındaki erkek bebek, son aylarda motor becerilerinde gerileme (önceden otururken artık oturamama) ve dalak/karaciğerinde büyüme (hepatosplenomegali) şikayetiyle getiriliyor. Kemik ağrıları nedeniyle çekilen röntgenlerde femurda 'Erlenmeyer şisesi' deformitesi izleniyor. Kemik iliği biyopsisinde sitoplazması buruşuk kağıt (crumpled tissue paper) görünümünde dev makrofajlar saptanıyor. Bir lizozomal depo hastalığı olan bu tabloda, makrofajların içinde biriken ve parçalanamayan sfingolipid yapısı aşağıdakilerden hangisidir?",
+    options: [
+      "Sfingomiyelin",
+      "Gangliozid GM2",
+      "Glukoserebrozid",
+      "Seramid triheksozid",
+      "Sülfatid"
+    ],
+    correct: 2,
+    exp: "Vaka Gaucher Hastalığı'dır. En sık görülen lizozomal depo hastalığıdır. Hepatosplenomegali, kemik krizleri, pansitopeni ve kemik iliğinde 'buruşuk kağıt' görünümlü Gaucher hücreleri (lipid yüklü makrofajlar) klasiktir. Eksik olan enzim Glukoserebrozidaz (Beta-glukozidaz), biriken lipid ise 'Glukoserebrozid'dir. (Sfingomiyelin -> Niemann-Pick'te birikir; GM2 Gangliozid -> Tay-Sachs'ta birikir, organomegali YAPMAZ; Seramid triheksozid -> Fabry; Sülfatid -> Metakromatik Lökodistrofi)."
+  },
+  {
+    id: 253,
+    ders: "Biyokimya",
+    konu: "Metabolizma Organizasyonu",
+    diff: 4,
+    q: "Ağır bir Aspirin (Salisilat) zehirlenmesi ile acil servise getirilen hastanın ateşi 39.5°C olarak ölçülüyor, solunumu son derece hızlı ve derindir. Laboratuvarında arteriyel laktat seviyesi yüksek bulunuyor. Salisilatlar yüksek dozlarda mitokondriyal iç zarda 'ayırıcı (uncoupler)' ajan olarak davranırlar. Bu toksik etki mekanizmasının hücresel sonuçları bağlamında aşağıdaki parametrelerden hangisinde 'AZALMA' gözlenir?",
+    options: [
+      "Mitokondriyal Oksijen (O2) tüketimi",
+      "Mitokondri iç zarındaki proton (H+) gradienti",
+      "NADH ve FADH2 oksidasyon hızı",
+      "Elektron transport zincirindeki elektron akış hızı",
+      "Hücre içi ısı (vücut ısısı) üretimi"
+    ],
+    correct: 1,
+    exp: "Aspirin, 2,4-Dinitrofenol (2,4-DNP) veya Termogenin gibi ajanlar 'Uncoupler (Ayırıcı)'dır. Mitokondri iç zarının geçirgenliğini bozarak, membranlar arasında birikmiş olan Protonların (H+) ATP Sentaz (Kompleks V) kanalından geçmesine izin vermeden doğrudan matrikse sızmasına neden olurlar. Sonuç: Proton gradienti (elektrokimyasal potansiyel) AZALIR. ATP üretilemez. Hücre ATP bulabilmek için Elektron Transport Zincirini (ETC) delice çalıştırır; Oksijen tüketimi, elektron akışı ve NADH oksidasyonu ARTAR. Üretilemeyen ATP enerjisi ISI olarak açığa çıkar (Hiperpireksi/Ateş)."
+  },
+  {
+    id: 254,
+    ders: "Biyokimya",
+    konu: "Metabolizma Organizasyonu",
+    diff: 5,
+    q: "Kapalı bir alanda çıkan yangından kurtarılan itfaiye eri, koma halinde ve şiddetli laktik asidozla acile getiriliyor. Oksijen tedavisine rağmen doku hipoksisi tablosu düzelmiyor ve kanı parlak kırmızı (venöz kanı da arteriyel gibi kırmızı) renkte saptanıyor. Siyanür zehirlenmesi tanısı konan bu hastada, siyanürün mitokondride doğrudan bağlanarak bloke ettiği ve oksijenin suya indirgenmesini durdurduğu enzimatik kompleks aşağıdakilerden hangisidir?",
+    options: [
+      "Kompleks I (NADH dehidrogenaz)",
+      "Kompleks II (Süksinat dehidrogenaz)",
+      "Kompleks III (Sitokrom bc1 kompleksi)",
+      "Kompleks IV (Sitokrom c oksidaz)",
+      "Kompleks V (ATP sentaz)"
+    ],
+    correct: 3,
+    exp: "Siyanür zehirlenmesi hücresel (histotoksik) hipoksi yapar. Kan oksijen doludur (venöz kan bile kırmızıdır), ancak hücreler bu oksijeni kullanamaz. Çünkü siyanür (ve Karbonmonoksit), Elektron Transport Zincirinin son halkası olan Kompleks IV'teki (Sitokrom c oksidaz) demirin Fe3+ (ferrik) formuna dönüşümsüz olarak bağlanır. Elektronlar oksijene aktarılamaz, ETC durur, ATP üretimi sıfırlanır ve hücre hızla laktik asidoza kayar. (Amil nitrit verilerek Fe2+ olan hemoglobin, siyanürü kendine çeken Fe3+ methemoglobine çevrilerek tedavi sağlanır)."
+  },
+  {
+    id: 255,
+    ders: "Biyokimya",
+    konu: "Metabolizma Organizasyonu",
+    diff: 4,
+    q: "Erken çocukluk döneminde motor gelişim geriliği ve tekrarlayan laktik asidoz atakları olan erkek hastada Pirüvat Dehidrogenaz (PDH) Kompleks eksikliği tanısı konuyor. Hastanın glikoliz sonucu oluşan pirüvatı Asetil-CoA'ya çeviremediği ve bu nedenle pirüvatın laktata saptığı belirleniyor. Bu hastanın tedavisinde, PDH enzimini atlayarak doğrudan Asetil-CoA üzerinden TCA siklusuna (Krebs döngüsüne) girebilen ve laktik asidozu artırmayan 'pür ketojenik' diyetin temelini oluşturan amino asitler aşağıdakilerden hangisidir?",
+    options: [
+      "Lösin ve Lizin",
+      "Alanin ve Glutamin",
+      "Fenilalanin ve Tirozin",
+      "Valin ve İzolösin",
+      "Serin ve Glisin"
+    ],
+    correct: 0,
+    exp: "Pirüvat Dehidrogenaz (PDH) eksikliğinde karbonhidrat (glukoz) alımı hastayı zehirler, çünkü oluşan pirüvat Asetil-CoA'ya dönemez ve laktik aside dönüşerek beyni tahrip eder. Hastanın enerji için Asetil-CoA'ya ihtiyacı vardır. Çözüm, karbonhidratı kesip hastaya doğrudan keton ve Asetil-CoA veren 'Ketojenik Diyet' uygulamaktır. Doğada glukoz yapımına (glukoneogeneze) HİÇ GİRMEYEN, tamamen keton ve Asetil-CoA'ya dönüşen (pür ketojenik) sadece iki amino asit vardır: Lösin ve Lizin. Tedavide bu amino asitlerden zengin beslenme hayat kurtarır."
+  },
+  {
+    id: 256,
+    ders: "Biyokimya",
+    konu: "Nükleik Asitler ve Genom",
+    diff: 4,
+    q: "İki yaşındaki erkek çocuk, dudaklarını ve parmaklarını yara olana kadar kemirmesi (kendi kendine zarar verme / self-mutilasyon), gelişim geriliği ve bezinde turuncu kum taneleri (ürik asit kristalleri) bulunması nedeniyle araştırılıyor. Kan ürik asit seviyesi çok yüksek saptanan Lesch-Nyhan Sendromlu bu hastada, pürin bazlarının kurtarılmasını (salvage pathway) sağlayan hangi enzimin eksikliği, sekonder olarak *de novo* pürin sentezinde kontrolsüz bir hızlanmaya neden olmaktadır?",
+    options: [
+      "Adenozin deaminaz (ADA)",
+      "Ksantin oksidaz",
+      "Hipoksantin-guanin fosforiboziltransferaz (HGPRT)",
+      "PRPP sentetaz",
+      "Ribonükleotid redüktaz"
+    ],
+    correct: 2,
+    exp: "Lesch-Nyhan Sendromu, X'e bağlı resesif geçen ve HGPRT enzim eksikliğiyle giden pürin kurtarma (salvage) yolağı defektidir. Klasik bulgusu hiperürisemi, zeka geriliği ve dudak/parmak ısırma (self-mutilasyon)'dur. HGPRT enzimi, Hipoksantin ve Guanin'i alıp tekrar nükleotide çevirir. Bu enzim çalışmadığında, bazlar yıkılarak aşırı Ürik Asit oluşturur. Daha kötüsü, kurtarma işleminde kullanılamayan PRPP molekülü hücrede birikir ve bu birikim hücreyi sıfırdan pürin yapmaya (*de novo* sentez) zorlayarak sistemi iyice kısır döngüye sokar."
+  },
+  {
+    id: 257,
+    ders: "Biyokimya",
+    konu: "Nükleik Asitler ve Genom",
+    diff: 4,
+    q: "Hücre bölünmesi sırasında DNA replikasyonu gerçekleşirken, çift sarmalın DNA helikaz enzimi tarafından açılması, ilerleyen replikasyon çatalının önünde aşırı bir pozitif süperkıvrılmaya (supercoiling / gerilime) neden olur. Bu fiziksel gerilimi, DNA ipliğini kesip geçirerek ve sonra tekrar birleştirerek çözen, aynı zamanda kinolon grubu antibiyotiklerin (örn: Siprofloksasin) de hedefi olan enzim ailesi aşağıdakilerden hangisidir?",
+    options: [
+      "DNA Ligaz",
+      "DNA Polimeraz III",
+      "Primaz",
+      "Topoisomeraz",
+      "Telomeraz"
+    ],
+    correct: 3,
+    exp: "DNA helikaz fermuarı açtıkça ön tarafta ipler birbirine dolanır ve aşırı gerilir (süperkıvrılma). Bu gerilimi alıp ipliğin kopmasını engelleyen enzimler Topoisomerazlardır (Tip 1 tek zinciri, Tip 2 çift zinciri kesip rahatlatır ve geri diker). Bakterilerdeki Topoisomeraz II'nin özel adı 'DNA Giraz'dır. Kinolon grubu antibiyotikler (Siprofloksasin, Levofloksasin vb.) bakteriyel DNA girazı inhibe ederek bakterinin replikasyon sırasında DNA'sını parçalayarak ölmesini sağlarlar. İnsan Topo II inhibitörü olarak da Etoposid (kemoterapi) kullanılır."
+  },
+  {
+    id: 258,
+    ders: "Biyokimya",
+    konu: "Nükleik Asitler ve Genom",
+    diff: 5,
+    q: "Kanser hücrelerinin sınırsız bölünme kapasitesi (ölümsüzlük) kazanmalarında, somatik hücrelerde normalde sessiz olan bir enzimin reaktivasyonu kritik rol oynar. Kendi yapısında taşıdığı kısa bir RNA şablonunu kullanarak kromozomların 3' uçlarına 'TTAGGG' tekrarlarını sentezleyen ve böylece DNA kısalmasını engelleyen bu enzim, biyokimyasal aktivitesi bakımından aşağıdakilerden hangisidir?",
+    options: [
+      "DNA bağımlı RNA polimeraz",
+      "RNA bağımlı DNA polimeraz (Revers transkriptaz)",
+      "RNA bağımlı RNA polimeraz",
+      "DNA bağımlı DNA polimeraz",
+      "Peptidil transferaz"
+    ],
+    correct: 1,
+    exp: "Soruda bahsedilen enzim Telomeraz'dır. Ökaryotik kromozomların uçları (telomerler) her hücre bölünmesinde biraz kısalır (hücresel yaşlanma/senesens). Telomeraz enzimi, kendi içindeki RNA'yı şablon olarak okuyup, bunun üzerinden DNA sentezleyerek uçları uzatır. Yani RNA'dan DNA yapar. Bu özellik biyokimyasal olarak 'RNA bağımlı DNA polimeraz' (Ters Transkriptaz / Reverse Transcriptase) aktivitesidir. Kanser hücreleri ve kök hücreler telomeraz aktivitesini yüksek tutarak ölümsüzlük kazanırlar."
+  },
+  {
+    id: 259,
+    ders: "Biyokimya",
+    konu: "Aminoasitler",
+    diff: 4,
+    q: "Yenidoğan tarama testinde (topuk kanı) şüpheli sonuç saptanan 1 aylık kız bebeğin tetkiklerinde Fenilketonüri (PKU) tanısı kesinleşiyor. Anneye bebeğin beslenmesinde fenilalaninden kısıtlı diyet uygulaması gerektiği, aksi takdirde zeka geriliği ve mikrosefali gelişeceği anlatılıyor. Bu hastalıkta eksik olan Fenilalanin Hidroksilaz enzimi normalde fenilalanini hangi amino aside dönüştürerek onu esansiyel (dışarıdan alınması zorunlu) olmaktan çıkarır?",
+    options: [
+      "Triptofan",
+      "Tirozin",
+      "Alanin",
+      "Sistein",
+      "Metiyonin"
+    ],
+    correct: 1,
+    exp: "Klasik Fenilketonüri (PKU), Fenilalanin Hidroksilaz (veya kofaktörü BH4) eksikliğidir. Fenilalanin yıkılıp 'Tirozin'e dönüşemez. Hastalıkta iki ana sorun vardır: 1) Fenilalanin beyinde birikerek nörotoksik etki yapar (zeka geriliği, küf/fare kokusu). 2) Fenilalaninden elde edilemeyen Tirozin eksik kalır. Tirozin melanin (pigment), dopamin ve tiroid hormonlarının öncüsüdür. Bu yüzden hastalar açık tenli/sarı saçlı (hipopigmentasyon) olur ve Tirozin bu hastalar için diyetle alınması zorunlu 'esansiyel' bir amino aside dönüşür."
+  },
+  {
+    id: 260,
+    ders: "Biyokimya",
+    konu: "Aminoasitler",
+    diff: 5,
+    q: "Hayatının ilk haftasında zayıf emme, kusma, hipotoni ve ardından koma tablosu gelişen erkek yenidoğanın bezinde yanık şeker / akçaağaç şurubu (maple syrup) kokusu fark ediliyor. Laboratuvarda idrarda dallı zincirli alfa-keto asitlerin seviyesi yüksek saptanıyor. Maple Syrup Urine Disease (MSUD) tanısı konan bu hastanın çalışmayan dehidrogenaz enzimi için mutlak gerekli olan 5 koenzimden (kofaktörden) biri aşağıdakilerden hangisidir?",
+    options: [
+      "Biyotin (B7 vitamini)",
+      "Tetrahidrofolat (THF)",
+      "Tiamin pirofosfat (B1 vitamini)",
+      "Askorbik asit (C vitamini)",
+      "Piridoksal fosfat (B6 vitamini)"
+    ],
+    correct: 2,
+    exp: "Akçaağaç Şurubu İdrar Hastalığı (MSUD); dallı zincirli amino asitlerin (Lösin, İzolösin, Valin - I Love Vermont) yıkımındaki Dallı Zincirli Alfa-Keto Asit Dehidrogenaz enziminin eksikliğidir. Bu enzim yapısı gereği tıpkı Pirüvat Dehidrogenaz ve Alfa-Ketoglutarat Dehidrogenaz gibidir ve aynı 5 kofaktöre ihtiyaç duyar: Tiamin (B1), Lipoik asit, CoA (B5), FAD (B2), NAD (B3). (Tender Loving Care For Nancy şifresi). Bu nedenle bazı hafif MSUD vakaları yüksek doz Tiamin (B1 vitamini) tedavisine yanıt verir."
+  },
+  {
+    id: 261,
+    ders: "Biyokimya",
+    konu: "Aminoasitler",
+    diff: 4,
+    q: "On iki yaşında erkek çocuk; ince uzun boy, uzun parmaklar (araknodaktili), göğüs kafesi deformitesi ve göz merceğinde aşağı-içe kayma (ektopia lentis) bulgularıyla değerlendiriliyor. Marfan sendromuna çok benzeyen bu hastanın öyküsünden 1 yıl önce derin ven trombozu (DVT) geçirdiği öğreniliyor. Kanda homosistein ve metiyonin düzeyleri yüksek saptanıyor. Klasik Homosistinüri tanısı konan bu hastada, homosisteinin sisteinalanina dönüşmesini sağlayan defektli enzim (Sistatiyonin beta-sentaz) için gerekli kofaktör aşağıdakilerden hangisidir?",
+    options: [
+      "B12 Vitamini (Kobalamin)",
+      "B6 Vitamini (Piridoksal Fosfat)",
+      "B9 Vitamini (Folik Asit)",
+      "B7 Vitamini (Biyotin)",
+      "B2 Vitamini (Riboflavin)"
+    ],
+    correct: 1,
+    exp: "Homosistinüri kliniği Marfan sendromuyla çok karışır. Ayırıcı tanıda Homosistinüri'de zeka geriliği, tromboza (pıhtıya) muazzam bir eğilim ve lensin 'Aşağı-İçe' kayması vardır (Marfanda zeka normal, lens Yukarı-Dışa kayar). En sık neden Sistatiyonin Beta-Sentaz enzim eksikliğidir. Bu enzim Homosistein'i Sistein'e dönüştürür ve kofaktör olarak B6 Vitamini (Piridoksal fosfat) kullanır. Hastaların önemli bir kısmı sadece yüksek doz B6 vitamini verilerek tedavi edilebilir. (Homosisteini Metiyonine çeviren diğer yolda ise B12 ve Folat kofaktördür)."
+  },
+    {
+    id: 262,
+    ders: "Biyokimya",
+    konu: "Proteinler",
+    diff: 4,
+    q: "Aylardır taze meyve ve sebze tüketmeyen, yalnız yaşayan 65 yaşındaki erkek hasta; diş etlerinde kanama, ciltte kolay morarma (peteşi/ekimoz) ve kıl diplerinde kanamalı hiperkeratoz (tirbuşon kılı) şikayetleriyle başvuruyor. Skorbüt (C vitamini eksikliği) tanısı konan bu hastada, kanamalara yol açan zayıf kolajen yapısının temelindeki biyokimyasal bozukluk aşağıdakilerden hangisidir?",
+    options: [
+      "Tropokolajen moleküllerinin hücre dışına (ekstraselüler alana) salgılanamaması",
+      "Kolajen zincirindeki prolin ve lizin kalıntılarının post-translasyonel olarak hidroksillenememesi",
+      "Lizil oksidaz enziminin bakır eksikliği nedeniyle çalışamamasına bağlı çapraz bağların kurulamaması",
+      "Kolajen alfa zincirlerinin ribozomda sentezlenmesi sırasında glisin amino asidinin eklenememesi",
+      "Prokolajen peptidaz enziminin çalışamaması sonucu çözünür prokolajenin inaktif kalması"
+    ],
+    correct: 1,
+    exp: "Vaka tipik bir C vitamini eksikliği olan Skorbüt (Scurvy) tablosudur. Kolajen sentezinde, ribozomda üretilen alfa zincirlerinin birbiriyle sağlam bir üçlü sarmal (triple helix) oluşturabilmesi için 'Prolin' ve 'Lizin' amino asitlerinin hidroksillenmesi gerekir (Hidroksiprolin ve Hidroksilizin). Bu işlemi yapan Prolil/Lizil Hidroksilaz enzimlerinin mutlak kofaktörü C Vitamini'dir (Askorbik asit). C vitamini yoksa hidroksilasyon olmaz, zayıf kolajen sentezlenir ve damar duvarları çatlayarak (kanama/morarma) klinik bulgu verir."
+  },
+  {
+    id: 263,
+    ders: "Biyokimya",
+    konu: "Proteinler",
+    diff: 5,
+    q: "Altmış yaşında kadın hasta, son birkaç ay içinde hızla ilerleyen demans (unutkanlık), kişilik değişiklikleri ve kollarda ani sıçrama tarzında istemsiz hareketler (miyoklonus) ile nörolojiye getiriliyor. EEG'sinde periyodik keskin dalga kompleksleri saptanan hastanın beyin biyopsisinde inflamasyon olmaksızın yaygın süngerimsi (spongioform) vakuolizasyon izleniyor. Creutzfeldt-Jakob Hastalığı (CJH) tanısı konan bu prion hastalığında, normal hücresel prion proteininin (PrPc) hastalık yapıcı forma (PrPsc) dönüşürken geçirdiği spesifik 'sekonder yapı' değişikliği aşağıdakilerden hangisidir?",
+    options: [
+      "Gelişigüzel yumak yapısının (random coil) tam katlanmış tersiyer yapıya dönüşmesi",
+      "Sistein kalıntıları arasındaki disülfit bağlarının kırılarak proteinin denatüre olması",
+      "Alfa-sarmal (alpha-helix) yapıların büyük oranda Beta-kırmalı tabaka (beta-pleated sheet) yapısına dönüşmesi",
+      "Protein zincirine masif ubikuitin eklenmesi sonucu proteazomlara yönlendirilmesi",
+      "Monomerik yapının non-kovalent bağlarla tetramerik bir kuaterner yapı oluşturması"
+    ],
+    correct: 2,
+    exp: "Prion hastalıkları (Creutzfeldt-Jakob, Kuru, Deli Dana), bulaşıcı protein katlanma bozukluklarıdır. Normalde beynimizde bulunan fizyolojik prion proteini (PrPc), ağırlıklı olarak 'Alfa-sarmal' sekonder yapıya ve suyla barışık (çözünür) bir özelliğe sahiptir. Ancak hastalık yapan patojenik prion (PrPsc) geldiğinde, normal proteinlerin uzaysal yapısını değiştirerek onları ağırlıklı olarak 'Beta-kırmalı tabaka' yapısına çevirir. Beta tabaka formu proteaza dirençlidir, suda çözünmez ve beyinde çökerek hücreleri öldürür (Süngerimsi ensefalopati)."
+  },
+  {
+    id: 264,
+    ders: "Biyokimya",
+    konu: "Proteinler",
+    diff: 4,
+    q: "Afrika kökenli 15 yaşındaki erkek çocuk, yüksek rakımlı bir dağa tırmanışı sırasında aniden başlayan şiddetli karın ve kemik ağrıları (vazooklüzif kriz) ile acile getiriliyor. Orak Hücreli Anemi (HbS) hastası olduğu bilinen bu vakada, deoksijenize ortamda hemoglobin moleküllerinin polimerize olarak eritrositi 'orak' şekline sokmasına neden olan genetik mutasyonun moleküler temeli aşağıdakilerden hangisidir?",
+    options: [
+      "Alfa globin zincirinde 6. pozisyondaki glutamatın yerine lizin geçmesi",
+      "Beta globin zincirinde 6. pozisyondaki hidrofilik glutamatın yerine hidrofobik valin geçmesi",
+      "Beta globin geninde bir bazın delesyonu sonucu okuma çerçevesinin (frameshift) kayması",
+      "Gama globin zincirinde histidin kalıntısının tirozin ile yer değiştirmesi",
+      "Beta globin mRNA'sında anlamsız (nonsense) mutasyon sonucu erken stop kodonu oluşması"
+    ],
+    correct: 1,
+    exp: "Orak Hücreli Anemi (Orak Hücre Hastalığı), kalıtsal bir hemoglobinopatidir. Mutasyon her zaman 'Beta globin' zincirindedir. Normal erişkin hemoglobininde (HbA) beta zincirinin 6. pozisyonunda suyu seven (hidrofilik) ve negatif yüklü 'Glutamat' amino asidi bulunur. HbS mutasyonunda ise bu bölgeye suyu sevmeyen (hidrofobik) ve yüksüz olan 'Valin' geçer (Nokta mutasyonu / Missense). Oksijen azaldığında (yüksek rakım), bu hidrofobik valinler birbirine tutunarak uzun kristal polimerler oluşturur ve eritrositi orak şekline sokar."
+  },
+  {
+    id: 265,
+    ders: "Biyokimya",
+    konu: "Enzimler ve Klinik Biyokimya",
+    diff: 4,
+    q: "Ailesel Hiperkolesterolemi hastasına kolesterol sentezini durdurmak amacıyla bir Statin (örn: Atorvastatin) reçete ediliyor. Statinler, kolesterol sentezindeki hız kısıtlayıcı enzim olan HMG-CoA Redüktaz enzimine, enzimin doğal substratı olan HMG-CoA'ya çok benzer bir yapıda oldukları için bağlanarak onu bloke ederler. Bu 'Kompetitif (Yarışmalı) İnhibisyon' durumunda, enzimin Michaelis-Menten kinetik parametreleri olan Vmax (Maksimum Hız) ve Km (Michaelis Sabiti) nasıl değişir?",
+    options: [
+      "Vmax azalır, Km değişmez",
+      "Vmax azalır, Km azalır",
+      "Vmax değişmez, Km artar",
+      "Vmax artar, Km azalır",
+      "Vmax değişmez, Km değişmez"
+    ],
+    correct: 2,
+    exp: "Kompetitif (Yarışmalı) İnhibisyonda, ilaç (inhibitör) ile doğal substrat, enzimin aynı 'Aktif Merkezine' oturmak için yarışırlar. İlaç varken substratın enzime bağlanma afinitesi (ilgisi) düşer; afinitenin düşmesi demek Km değerinin ARTMASI demektir (Km ile afinite ters orantılıdır). ANCAK, eğer ortama devasa miktarda substrat eklerseniz ilacı yenip enzimi tekrar tam kapasite çalıştırabilirsiniz. Bu yüzden yarışmalı inhibisyonda enzimin ulaşabileceği maksimum hız (Vmax) DEĞİŞMEZ. (Non-kompetitif inhibisyonda ise Vmax düşer, Km değişmez)."
+  },
+  {
+    id: 266,
+    ders: "Biyokimya",
+    konu: "Enzimler ve Klinik Biyokimya",
+    diff: 4,
+    q: "Acil servise kronik alkol kullanım öyküsü ve şiddetli karın ağrısı ile getirilen hastada akut alkolik hepatit şüphesi mevcuttur. Hastanın karaciğer fonksiyon testleri (KFT) incelendiğinde, hepatosit hasarını gösteren transaminazlardan AST (Aspartat Aminotransferaz) ve ALT (Alanin Aminotransferaz) seviyelerinde artış saptanıyor. Bu hastanın kliniğini 'Viral Hepatitten' ayırt ederek 'Alkolik Hepatit' lehine yorumlamayı sağlayan en spesifik enzim profili aşağıdakilerden hangisidir?",
+    options: [
+      "ALT seviyesinin AST seviyesinden belirgin derecede (en az 2 kat) yüksek olması",
+      "Alkalen Fosfataz (ALP) seviyesinin transaminazlardan çok daha fazla artması",
+      "Sadece sitoplazmik bir enzim olan AST'nin normal kalıp ALT'nin çok yükselmesi",
+      "AST / ALT oranının 2'den büyük (genellikle 2:1 veya daha fazla) olması ve eş zamanlı GGT yüksekliği",
+      "Laktat dehidrogenaz (LDH) seviyesinin AST ve ALT'den daha düşük seyretmesi"
+    ],
+    correct: 3,
+    exp: "Karaciğer enzimlerinin yorumu klinikte çok değerlidir. Çoğu karaciğer hasarında (viral hepatit, toksik hepatit vb.) ALT her zaman AST'den daha fazla yükselir (ALT > AST). Çünkü ALT sadece sitoplazmadadır ve karaciğere daha spesifiktir. ANCAK kronik alkolizm bir istisnadır. Alkolik hepatitte AST/ALT oranı 2'nin üzerine çıkar (AST > ALT). Bunun iki nedeni vardır: 1) Alkol, AST'nin hem sitoplazmik hem de mitokondriyal formlarını kana döker (mitokondri hasarı yapar). 2) Alkolizmde B6 vitamini eksikliği gelişir; ALT enzimi AST'ye göre B6 eksikliğinden çok daha olumsuz etkilenir ve sentezi düşer. Ayrıca alkol GGT enzimini de çok spesifik olarak indükler (artırır)."
+  },
+  {
+    id: 267,
+    ders: "Biyokimya",
+    konu: "Enzimler ve Klinik Biyokimya",
+    diff: 5,
+    q: "Tokluk durumunda (yemekten hemen sonra), pankreastan salınan insülin hormonu karaciğerde glikoliz yolağını aktive ederek kan şekerinin düşürülmesine yardımcı olur. İnsülinin glikolizin en önemli hız kısıtlayıcı enzimi olan 'Fosfofruktokinaz-1 (PFK-1)' enzimini allosterik olarak aktif hale getirmesini sağlayan ve hücre içindeki miktarı insülin/glukagon oranına göre ayarlanan EN GÜÇLÜ allosterik aktivatör molekül aşağıdakilerden hangisidir?",
+    options: [
+      "Fruktoz-1,6-bifosfat",
+      "Sitrat",
+      "Fruktoz-2,6-bifosfat",
+      "Adenozin Trifosfat (ATP)",
+      "Glukoz-6-fosfat"
+    ],
+    correct: 2,
+    exp: "Glikolizin ana kumandanı PFK-1 (Fosfofruktokinaz-1) enzimidir. Toklukta glikolizin hızlanması gerekir. İnsülin, PFK-2 adlı başka bir enzimi defosforile ederek aktive eder. PFK-2, ortamdaki fruktoz-6-fosfatı 'Fruktoz-2,6-bifosfat'a (F-2,6-BP) çevirir. Bu oluşan F-2,6-BP maddesi, asıl enzim olan PFK-1'in bilinen 'EN GÜÇLÜ ALLOSTERİK AKTİVATÖRÜDÜR'. PFK-1'i coşturur ve glikoliz muazzam hızlanır. (Aynı zamanda F-2,6-BP, glukoneogenez enzimi olan FBPaz-1'i inhibe ederek karaciğerin glukoz üretmesini de frenler). (Not: Sitrat ve ATP, PFK-1'i inhibe eder)."
+  },
+  {
+    id: 268,
+    ders: "Biyokimya",
+    konu: "Hücre ve Organeller",
+    diff: 5,
+    q: "Sekiz aylık kız bebek; belirgin iskelet anomalileri, eklem kısıtlılıkları, kalın ve kaba yüz hatları (gargoylism) ve ciddi motor/mental gerilik bulgularıyla değerlendiriliyor. Hastanın serumunda (kanında) asit hidrolaz, beta-heksozaminidaz gibi lizozomal enzimlerin seviyelerinin normalin yüzlerce katı yüksek olduğu, ancak hastanın hücre İÇİNDE bu enzimlerin hiç bulunmadığı (eksik olduğu) saptanıyor. I-Cell Hastalığı (Mukolipidoz Tip II) tanısı alan bu hastada, yeni sentezlenen enzimlerin lizozomlara yönlendirilmesini sağlayan ve Golgi aygıtında gerçekleşen spesifik post-translasyonel modifikasyon defekti aşağıdakilerden hangisidir?",
+    options: [
+      "N-asetilglukozamin-1-fosfotransferaz enzim eksikliği nedeniyle lizozomal enzimlere 'Mannoz-6-Fosfat' etiketinin takılamaması",
+      "Lizozomal asidifikasyonun (V-ATPaz pompası) bozulması sonucu enzimlerin inaktif kalması",
+      "Mannoz kalıntılarının kaba endoplazmik retikulumda proteinlere eklenememesi (Dolikol fosfat defekti)",
+      "Ubikuitin ligaz enziminin aşırı çalışarak lizozomal enzimleri proteazomda yıkması",
+      "Klatrin kaplı veziküllerin hücre zarından endositoz yapamaması"
+    ],
+    correct: 0,
+    exp: "I-Cell (Inclusion-Cell) Hastalığı, bir yönlendirme (sorting) kusurudur. Ribozomlarda üretilen hidrolitik enzimlerin lizozoma gidebilmesi için üzerine bir posta pulu (etiket) yapıştırılması gerekir. Bu etiket Golgi aygıtında takılan 'Mannoz-6-Fosfat'tır (M6P). M6P'ı takan enzim ise N-asetilglukozamin-1-fosfotransferaz'dır. Bu enzim eksikse, üretilen lizozomal enzimler adresini bulamaz ve yanlışlıkla hücre DİŞİNA (kana) salgılanır. Hücrenin (lizozomun) içi boş kalırken, hastanın kanında lizozomal enzimler patlama yapar."
+  },
+  {
+    id: 269,
+    ders: "Biyokimya",
+    konu: "Hücre ve Organeller",
+    diff: 4,
+    q: "Yenidoğan erkek bebek, doğumdan hemen sonra şiddetli hipotoni (gevşek bebek), emme güçlüğü ve nöbet geçirme şikayetleriyle yenidoğan yoğun bakıma alınıyor. Hastanın belirgin kraniyofasiyal anomalileri (yüksek alın, geniş bıngıldak) ve masif hepatomegalisi saptanıyor. Biyokimyasal incelemede kanda 'Çok Uzun Zincirli Yağ Asitleri (VLCFA)' düzeyleri aşırı yüksek bulunuyor ve hastalık ilk 6 ay içinde ölümle sonuçlanıyor. Zellweger Sendromu tanısı konan bu hastada, biyogenezi ve fonksiyonu tamamen çöken (veya hiç oluşmayan) hücresel organel aşağıdakilerden hangisidir?",
+    options: [
+      "Mitokondri",
+      "Düz Endoplazmik Retikulum (SER)",
+      "Lizozom",
+      "Peroksizom",
+      "Golgi aygıtı"
+    ],
+    correct: 3,
+    exp: "Zellweger Sendromu (Serebrohepatorenal Sendrom), peroksizom biyogenezi defektidir. Peroksizomlar, özellikle Çok Uzun Zincirli Yağ Asitlerinin (VLCFA - 22 karbondan uzun) beta-oksidasyonunun yapıldığı ve dallı zincirli yağ asitlerinin alfa-oksidasyonla yıkıldığı (safra asidi sentezi vb.) tek organeldir (Mitokondri VLCFA'ları yakamaz). Peroksizomlar oluşmadığında (PEX gen mutasyonları), VLCFA'lar kanda ve dokularda (özellikle beyin nöron zarlarında) birikerek miyelin yapısını tahrip eder ve ağır nörolojik bulgular (nöbet, hipotoni, erken ölüm) yaratır."
+  },
+  {
+    id: 270,
+    ders: "Biyokimya",
+    konu: "Hücre ve Organeller",
+    diff: 4,
+    q: "Yirmi beş yaşında erkek hasta, bir gözünde aniden başlayan ve haftalar içinde diğer gözünde de ortaya çıkan ağrısız, kalıcı ve tam görme kaybı şikayetiyle başvuruyor. Nörolojik muayenesinde ek anomali saptanmıyor. Aile öyküsünde annesinin erkek kardeşinin (dayısının) ve annesinin kız kardeşinin oğlunun (kuzeninin) da 20'li yaşlarda benzer şekilde kör olduğu öğreniliyor. Leber'in Herediter Optik Nöropatisi (LHON) düşünülen bu hastalıkta saptanan DNA mutasyonu ve kalıtım modeli aşağıdakilerden hangisinde doğru verilmiştir?",
+    options: [
+      "Çekirdek DNA'sında (nükleer DNA) mutasyon / Otozomal Resesif",
+      "X kromozomunda mutasyon / X'e bağlı Resesif",
+      "Mitokondriyal DNA'da (mtDNA) Kompleks I gen mutasyonu / Sadece anneden çocuklara aktarılan Maternal kalıtım",
+      "Çekirdek DNA'sında üçlü tekrar (CAG) artışı / Otozomal Dominant",
+      "Mitokondriyal DNA'da nokta mutasyonu / Sadece babadan çocuklara aktarılan Paternal kalıtım"
+    ],
+    correct: 2,
+    exp: "Leber'in Herediter Optik Nöropatisi (LHON), klasik bir Mitokondriyal Hastalıktır. Sperm hücresinin mitokondrisi zigota katılmaz, tüm mitokondrilerimiz yumurtadan (Anneden) gelir. Bu nedenle mitokondriyal hastalıklar SADECE ANNEDEN çocuklara (hem kız hem erkek) geçer; hasta erkek çocuğu hastalığı kimseye aktaramaz (Maternal Kalıtım). Dayı ve kuzen (annenin kız kardeşinin oğlu) anne soyundan geldikleri için risk altındadır. LHON'da mitokondriyal DNA'daki solunum zinciri (Özellikle Kompleks I) genleri mutasyona uğrar ve enerjiye çok aç olan optik sinir (ganglion hücreleri) ATP'siz kalarak dejenere olur (Körlük)."
+  },
+  {
+    id: 271,
+    ders: "Biyokimya",
+    konu: "Vitaminler",
+    diff: 4,
+    q: "Altmış beş yaşında, mide rezeksiyonu öyküsü olan hasta; yorgunluk, ayaklarda uyuşma ve karıncalanma, yürüme güçlüğü ve hafıza problemleri ile başvuruyor. Hemogramda Makrositer Anemi (MCV: 115 fL) saptanıyor. B12 (Kobalamin) eksikliği tanısı konan bu hastanın anemisi, folik asit takviyesi verilerek düzeltilebilir ANCAK nörolojik bulgular düzelmez. B12 eksikliğinde, nöronal miyelin kılıfın bütünlüğünü bozarak nörolojik hasara (Subakut Kombine Dejenerasyon) yol açan enzimatik bozukluk sonucu biriken toksik metabolit aşağıdakilerden hangisidir?",
+    options: [
+      "Homosistein",
+      "Metilmalonik asit (Metilmalonil-CoA)",
+      "Formiminoglutamik asit (FİGLU)",
+      "Ürik asit",
+      "Tetrahidrofolat"
+    ],
+    correct: 1,
+    exp: "B12 Vitamini (Kobalamin) hücre içinde sadece 2 enzimin kofaktörüdür: 1) Metiyonin Sentaz (Eksikliğinde Homosistein birikir ve makrositer anemi yapar. Bu anemi folat verilerek atlanabilir). 2) Metilmalonil-CoA Mutaz. Bu enzim, yağ asitleri yıkımından gelen Metilmalonil-CoA'yı Süksinil-CoA'ya çevirir. B12 yoksa bu işlem durur ve ortamda 'Metilmalonik asit' birikir. Biriken bu anormal yağ asidi öncülü, nöronların miyelin kılıfına katılarak kılıfı bozar ve B12 eksikliğinin o spesifik, geri dönüşümsüz nörolojik hasarına (kordun posterior ve lateral kolonlarının yıkımı) yol açar."
+  },
+  {
+    id: 272,
+    ders: "Biyokimya",
+    konu: "Vitaminler",
+    diff: 4,
+    q: "Evde doğan ve K vitamini iğnesi yapılmayan 3 günlük yenidoğan, göbek kordonundan sızıntı tarzında kanama ve kafa içi kanama (intrakraniyal hemoraji) ile acile getiriliyor. K Vitamini Eksikliğine Bağlı Kanama (Yenidoğan Hemorajik Hastalığı) tanısı konuyor. K vitamininin pıhtılaşma faktörlerinin (Faktör II, VII, IX, X) aktivasyonunda üstlendiği temel biyokimyasal (post-translasyonel) rol aşağıdakilerden hangisidir?",
+    options: [
+      "Pıhtılaşma faktörlerine hücre içinde sülfat gruplarının eklenmesi",
+      "Karaciğerde üretilen inaktif faktörlerdeki glutamat kalıntılarının gama-karboksilasyonu",
+      "Fibrinojenin fibrine dönüşmesini sağlayan trombine doğrudan allosterik aktivasyon",
+      "Pıhtılaşma faktörlerinin disülfit bağlarını indirgeyerek aktif formlarına getirmesi",
+      "Faktörlerin kalsiyum bağlayan bölgelerindeki serin amino asitlerinin fosforilasyonu"
+    ],
+    correct: 1,
+    exp: "K vitamini karaciğerde sentezlenen inaktif pıhtılaşma faktörlerini (II, VII, IX, X ile Protein C ve S) aktif hale getiren 'Gama-glutamil Karboksilaz' enziminin mutlak kofaktörüdür. Bu enzim, faktörlerin ucundaki 'Glutamat (Glutamik asit)' kalıntılarına bir karboksil (COO-) grubu ekler (Gama-karboksilasyon). Bu ekstra eksi (-) yük, faktörlerin ortamdaki artı yüklü Kalsiyumu (Ca+2) bir köprü gibi kullanarak trombositlerin zarına yapışmasını ve pıhtılaşma şelalesini başlatmasını sağlar. Yenidoğanların bağırsağı sterildir (K vitamini üreten bakteri yoktur), bu nedenle doğumda K vitamini iğnesi zorunludur."
+  },
+  {
+    id: 273,
+    ders: "Biyokimya",
+    konu: "Vitaminler",
+    diff: 4,
+    q: "Afrika'da mısır ağırlıklı (niasin açısından çok fakir) beslenen bir çocuk, boynunda gerdanlık şeklinde güneşe maruz kalan bölgelerde döküntü (Casal gerdanlığı / Dermatit), şiddetli ishal ve unutkanlık (Demans) tablosu ile sağlık ocağına getiriliyor. Pellegra tanısı konan bu hastada, Niasin (B3 vitamini) diyette yetersiz kalsa bile, vücut normal koşullarda bu vitamini endojen olarak sentezlemek için hangi esansiyel amino asidi öncül (prekürsör) madde olarak kullanabilir?",
+    options: [
+      "Tirozin",
+      "Fenilalanin",
+      "Triptofan",
+      "Metiyonin",
+      "Arjinin"
+    ],
+    correct: 2,
+    exp: "Pellegra hastalığı Niasin (B3 Vitamini) eksikliğidir. Klasik 3D bulgusu vardır: Dermatit, Diyare, Demans (ve tedavi edilmezse Death-Ölüm). Vücudumuz B3 vitaminini tamamen dışarıdan almak zorunda değildir; eğer protein ağırlıklı besleniyorsak, esansiyel bir amino asit olan 'Triptofan'dan karaciğerde Niasin sentezleyebilir (60 mg triptofandan 1 mg Niasin yapılır). Bu nedenle Triptofan emiliminin bozulduğu Hartnup Hastalığında veya Triptofanın serotonine dönüştüğü Karsinoid Sendromda 'sekonder Pellegra' kliniği görülür."
+  },
+  {
+    id: 274,
+    ders: "Biyokimya",
+    konu: "Hormon Metabolizması",
+    diff: 4,
+    q: "Doğumdan birkaç gün sonra şiddetli dehidratasyon, kusma, hiponatremi ve hiperkalemi ile getirilen kız yenidoğanın dış genital organlarının erkek görünümünde (virilizan - klitoromegali ve labiyal füzyon) olduğu saptanıyor. Laboratuvarda serum 17-Hidroksiprogesteron (17-OHP) düzeyi çok yüksek bulunuyor. Klasik Konjenital Adrenal Hiperplazi (KAH) tanısı konan bu hastada, steroid biyosentez yolağında mutasyona uğramış olan ve hem kortizol hem de aldosteron üretimini durduran sitokrom P450 enzimi aşağıdakilerden hangisidir?",
+    options: [
+      "17-alfa hidroksilaz",
+      "21-alfa hidroksilaz",
+      "11-beta hidroksilaz",
+      "Aromataz",
+      "Desmolaz (Kolesterol yan zincir koparıcı enzim)"
+    ],
+    correct: 1,
+    exp: "Konjenital Adrenal Hiperplazilerin (KAH) %95'i 21-Alfa Hidroksilaz enzim eksikliği sonucu oluşur. 21-hidroksilaz, progesteronu aldosterona ve 17-OH progesteronu kortizole götüren ana yoldur. Bu enzim bloke olunca Mineralokortikoid (Aldosteron) üretilemez (Tuz kaybı, hiponatremi, hiperkalemi). Glukokortikoid (Kortizol) üretilemez (Hipoglisemi, şok). Öncesinde biriken madde (17-OHP) mecburen tıkalı olmayan tek yola, yani Androjen (Testosteron) sentez yolağına kayar ve kız çocukta anne karnında erkekleşmeye (virilizasyon) neden olur."
+  },
+  {
+    id: 275,
+    ders: "Biyokimya",
+    konu: "Hormon Metabolizması",
+    diff: 5,
+    q: "Yemekten sonra kan glukoz düzeyi yükseldiğinde, pankreas beta hücrelerinden salınan insülin molekülü, iskelet kası ve yağ dokusundaki (adiposit) hedef hücrelerinin yüzeyindeki İnsülin Reseptörlerine (IR) bağlanır. İnsülinin bağlanmasıyla hücre içinde bir dizi sinyal şelalesi başlar ve sonuçta GLUT-4 taşıyıcıları hücre zarına yerleşerek glukozu içeri alır. Bu sinyal ileti yolağını başlatan İnsülin Reseptörünün sitoplazmik kuyruğunun (beta alt ünitesi) sahip olduğu İntrensek (kendinden) enzimatik aktivite aşağıdakilerden hangisidir?",
+    options: [
+      "Serin/Treonin kinaz",
+      "Tirozin kinaz",
+      "Adenilat siklaz",
+      "Fosfolipaz C",
+      "Guanylat siklaz"
+    ],
+    correct: 1,
+    exp: "İnsülin Reseptörü (ve İnsülin Benzeri Büyüme Faktörü - IGF reseptörü), hücre zarında G-proteini kullanmayan, kendi başına enzim gibi davranan özel bir reseptör tipidir: 'Tirozin Kinaz Reseptörü'. İnsülin alfa alt ünitelerine bağlandığında, hücre içindeki beta alt üniteleri birbirini aktive eder ve kendilerini 'Tirozin' amino asidi kalıntılarından fosforillerler (Otofosforilasyon). Ardından İnsülin Reseptör Substratı (IRS) proteinlerini fosforilleyerek PI3K/AKT yolağını aktive ederler ve GLUT-4 keseciklerinin zara çıkışını sağlarlar."
+  },
+  {
+    id: 276,
+    ders: "Biyokimya",
+    konu: "Hormon Metabolizması",
+    diff: 4,
+    q: "Açlık durumunda kan şekeri düştüğünde, pankreas alfa hücrelerinden salınan Glukagon hormonu karaciğer hücrelerine (hepatositlere) ulaşarak glikojen yıkımını (glikojenoliz) başlatır. Glukagonun hepatosit zarındaki G-protein kenetli reseptörüne (GPCR) bağlanıp Adenilat Siklaz enzimini uyarması sonucunda sitoplazmada artan İkinci Haberci molekül (cAMP), hücre içinde hangi hedef enzimi doğrudan bağlayarak aktive eder?",
+    options: [
+      "Protein Kinaz B (AKT)",
+      "Protein Kinaz C (PKC)",
+      "Protein Kinaz A (PKA)",
+      "Kalsiyum-Kalmodulin bağımlı kinaz",
+      "Fosfodiesteraz"
+    ],
+    correct: 2,
+    exp: "Hormon sinyal iletimi klasik TUS biyokimya bilgisidir. Glukagon (ve Epinefrin/Adrenalin), zardaki Gs-proteinine kenetli reseptöre bağlanır. Gs, Adenilat Siklazı aktive eder. Adenilat siklaz ATP'den 'cAMP (Siklik AMP)' üretir. Hücrede cAMP miktarının artması, cAMP-bağımlı protein kinaz olan 'Protein Kinaz A (PKA)'nın inaktif alt ünitelerinden kurtulup aktifleşmesine neden olur. PKA da gider fosforilaz kinazı fosforiller, o da glikojen fosforilazı fosforilleyerek glikojeni parçalar (glukoz kana verilir)."
   }
 ];
 

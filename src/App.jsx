@@ -92,7 +92,6 @@ export default function App() {
               <h2 className="text-2xl font-bold mb-5 text-slate-200 border-b border-slate-800 pb-3">
                 {type} Bilimler
               </h2>
-
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {SUBJECTS.filter((s) => s.type === type).map((s) => (
                   <SubjectCard
