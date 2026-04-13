@@ -73,44 +73,50 @@ export default function ExamScreen({
         </div>
       </div>
 
-      {/* SAĞ TARAF: REALİST MODERNİST OPTİK FORM */}
+      {/* SAĞ TARAF: GELİŞMİŞ REALİST OPTİK FORM */}
       <div className="w-80 bg-[#f4f4f2] hidden lg:flex flex-col shadow-[-10px_0_30px_rgba(0,0,0,0.3)]">
-        {/* Optik Başlık */}
+        {/* Optik Başlık Bilgileri */}
         <div className="p-6 bg-[#e5e5e3] border-b border-[#d1d1cf]">
-          <h3 className="text-slate-800 font-black text-center tracking-tighter text-xl">CEVAP KAĞIDI</h3>
-          <div className="mt-4 grid grid-cols-2 gap-2">
-            <div className="bg-white p-2 border border-[#d1d1cf] rounded">
-              <p className="text-[10px] text-slate-400 uppercase font-bold">Aday</p>
-              <p className="text-xs text-slate-800 font-bold truncate">AHMET</p>
+          <h3 className="text-slate-800 font-black text-center tracking-tighter text-xl mb-4">CEVAP KAĞIDI</h3>
+          <div className="grid grid-cols-2 gap-2">
+            <div className="bg-white p-2 border border-[#d1d1cf] rounded shadow-sm">
+              <p className="text-[9px] text-slate-400 uppercase font-black mb-0.5">Aday</p>
+              <p className="text-[11px] text-slate-800 font-bold truncate">TUSİYER</p>
             </div>
-            <div className="bg-white p-2 border border-[#d1d1cf] rounded">
-              <p className="text-[10px] text-slate-400 uppercase font-bold">Hedef</p>
-              <p className="text-xs text-emerald-600 font-bold">TUS 65+</p>
+            <div className="bg-white p-2 border border-[#d1d1cf] rounded shadow-sm">
+              <p className="text-[9px] text-slate-400 uppercase font-black mb-0.5">ÖSYM</p>
+              <p className="text-[11px] text-slate-800 font-bold">2026-TUS</p>
             </div>
           </div>
         </div>
 
-        {/* Optik Kabarcıklar (Scrollable) */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-slate-300">
+        {/* Optik Kabarcıklar (Zebra Çizgili Satırlar) */}
+        <div className="flex-1 overflow-y-auto p-2 space-y-0.5 scrollbar-thin scrollbar-thumb-slate-300">
           {examQuestions.map((_, idx) => {
             const currentAnswer = idx === examIndex ? examSelected : examAnswers[idx];
+            
+            // Zebra desen: Çift sayılar açık, tek sayılar hafif koyu
+            const rowBg = idx % 2 === 0 ? "bg-[#f4f4f2]" : "bg-[#ebebe9]";
+            const activeStyle = idx === examIndex ? "bg-cyan-100/80 ring-1 ring-cyan-300 z-10" : rowBg;
+
             return (
               <div 
                 key={idx} 
                 onClick={() => onJump(idx)}
-                className={`flex items-center gap-3 p-1.5 rounded-lg cursor-pointer transition-colors ${
-                  idx === examIndex ? "bg-cyan-100/50 ring-1 ring-cyan-200" : "hover:bg-slate-200/50"
-                }`}
+                className={`flex items-center gap-3 p-1.5 rounded transition-all cursor-pointer group ${activeStyle}`}
               >
-                <span className="w-6 text-[10px] font-bold text-slate-400 text-right">{idx + 1}</span>
+                <span className={`w-6 text-[10px] font-black ${idx === examIndex ? "text-cyan-700" : "text-slate-400"} text-right`}>
+                  {idx + 1}
+                </span>
+                
                 <div className="flex gap-1.5">
                   {['A', 'B', 'C', 'D', 'E'].map((letter, letterIdx) => (
                     <div 
                       key={letter}
                       className={`w-6 h-6 rounded-full border border-slate-400 flex items-center justify-center text-[10px] font-bold transition-all ${
                         currentAnswer === letterIdx 
-                          ? "bg-[#2d2d2d] text-white border-[#2d2d2d] shadow-inner scale-110" 
-                          : "bg-white text-slate-400"
+                          ? "bg-[#2d2d2d] text-white border-[#2d2d2d] shadow-inner scale-105" 
+                          : "bg-white text-slate-400 group-hover:border-slate-500"
                       }`}
                     >
                       {currentAnswer === letterIdx ? "" : letter}
@@ -123,9 +129,9 @@ export default function ExamScreen({
         </div>
 
         {/* Optik Alt Bilgi */}
-        <div className="p-4 bg-[#e5e5e3] border-t border-[#d1d1cf] text-center">
-          <p className="text-[10px] text-slate-500 font-medium">
-            Toplam 200 Soru • Optik Form V1.0
+        <div className="p-3 bg-[#e5e5e3] border-t border-[#d1d1cf] text-center">
+          <p className="text-[9px] text-slate-500 font-bold uppercase tracking-widest">
+            ÖSYM Sınav Simülasyonu
           </p>
         </div>
       </div>
