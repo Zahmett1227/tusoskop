@@ -5,7 +5,7 @@ export default function StudyScreen({
   selected,
   setSelected,
   showAnswer,
-  setShowAnswer,
+  revealAnswer,
   nextQuestion,
   prevQuestion,
   goDashboard,
@@ -75,7 +75,7 @@ export default function StudyScreen({
         {!showAnswer ? (
           <div className="grid grid-cols-2 gap-2.5">
             <button
-              onClick={() => setShowAnswer(true)}
+              onClick={revealAnswer}
               className="px-4 py-3 rounded-2xl bg-emerald-500 text-white text-sm md:text-base font-bold"
             >
               Cevabı göster
@@ -110,17 +110,18 @@ export default function StudyScreen({
 
             <div className="grid grid-cols-2 gap-2.5">
               <button
+                className="px-4 py-3 rounded-2xl border border-slate-700 bg-slate-900 text-sm md:text-base font-bold disabled:opacity-50"
                 onClick={prevQuestion}
-                className="px-4 py-3 rounded-2xl bg-slate-800 text-sm md:text-base font-bold"
+                disabled={index === 0}
               >
-                Önceki
+                Önceki soru
               </button>
 
               <button
                 onClick={nextQuestion}
                 className="px-4 py-3 rounded-2xl bg-emerald-500 text-white text-sm md:text-base font-bold"
               >
-                Sonraki
+                {index < total - 1 ? "Sonraki" : "Özete git"}
               </button>
             </div>
           </div>
