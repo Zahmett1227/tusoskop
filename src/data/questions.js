@@ -12942,12 +12942,4984 @@ options: [
 ],
 correct: 3,
 exp: "Spironolakton (ve Eplerenon), bir Potasyum Tutucu Diüretik (Aldosteron Antagonisti)dir. Kalp yetmezliğinde kalbi yoran ve fibrozis (kireçlenme) yaptıran en zararlı hormonlardan biri 'Aldosteron'dur. Spironolakton gidip bu Aldosteron reseptörlerini bloke eder; su/tuz atar, potasyumu tutar ve kalp ömrünü uzatır (mortaliteyi düşürür). ANCAK Spironolakton'un kimyasal yapısı (steroid çekirdeği) cinsiyet hormonlarına çok benzer. Bu yüzden sadece Aldosteron reseptörünü değil, yanlışlıkla 'Androjen (Testosteron)' reseptörlerini de bloke eder. Testosteronu bloke edip östrojen etkisini artırdığı için erkeklerde 'Jinekomasti (meme büyümesi)' ve impotans yapar. (Eplerenon daha seçicidir, jinekomasti yapmaz)."
-}
+},
+{
+    "id": 793,
+    "ders": "Mikrobiyoloji",
+    "konu": "Genel Mikrobiyoloji",
+    "diff": 4,
+    "q": "Kronik bir apsenin cerrahi drenajı sonrasında alınan kültürde üreyen bakterilerin, laboratuvar ortamında (in vitro) beta-laktam antibiyotiklere son derece duyarlı olduğu saptanıyor. Ancak hastaya yüksek doz beta-laktam tedavisi verilmesine rağmen, apse içindeki canlı bakteri yükünde anlamlı bir azalma sağlanamıyor. Antibiyotiğin apse boşluğuna yeterli konsantrasyonda ulaştığı kanıtlandığına göre, in vivo ortamda gözlenen bu direnç (tolerasızlık), bakterilerin apse içinde hangi spesifik hücresel aktiviteyi neredeyse tamamen durdurmuş olmasıyla doğrudan ilişkilidir?",
+    "options": [
+      "Hücre zarına kolesterol entegrasyonu",
+      "Aktif peptidoglikan sentezi ve hücre bölünmesi",
+      "Plazmid aracılı beta-laktamaz sekresyonu",
+      "Porin kanallarının ekspresyonu",
+      "Ribozomal 50S alt biriminin protein translasyonu"
+    ],
+    "correct": 1,
+    "exp": "Beta-laktam antibiyotiklerin (penisilinler, sefalosporinler) bakteriyi öldürebilmesi için (bakterisidal etki), bakterinin aktif olarak bölünüyor ve YENİ bir hücre duvarı (peptidoglikan) sentezliyor olması şarttır. Apse gibi hipoksik, asidik ve besin açısından fakir kapalı ortamlarda, bakteriler logaritmik üreme fazından çıkarak 'Durağan (Stationary) Faza' geçerler. Bu fazda hücre bölünmesi ve yeni peptidoglikan sentezi durduğu için, beta-laktamların bağlanacağı/bloke edeceği aktif PBP (Penisilin Bağlayan Protein) hedefleri çalışmaz haldedir. İlaç ortama ulaşsa bile bakteri bölünmediği için etki gösteremez (Fenotipik tolerans/direnç)."
+  },
+  {
+    "id": 794,
+    "ders": "Mikrobiyoloji",
+    "konu": "Genel Mikrobiyoloji",
+    "diff": 5,
+    "q": "Geniş spektrumlu antibiyotik kullanımı sonrasında bir yoğun bakım ünitesinde VRE (Vankomisine Dirençli Enterokok) salgını patlak veriyor. Yapılan moleküler analizde, direnç geninin (vanA) kromozomlar arasında hiçbir DNA dizilim benzerliği (homoloji) OLMAMASINA rağmen, bir plazmidden doğrudan bakterinin ana kromozomuna sıçradığı tespit ediliyor. Homolog rekombinasyona ihtiyaç duymadan gerçekleşen bu agresif genetik sıçrama eylemi, bakterinin içindeki hangi spesifik enzim tarafından doğrudan orkestre edilmektedir?",
+    "options": [
+      "DNA Giraz",
+      "Transkriptaz",
+      "Transpozaz",
+      "Restriksiyon Endonükleaz",
+      "Helikaz"
+    ],
+    "correct": 2,
+    "exp": "Bakterilerde genetik materyalin homolog olmayan bölgeler arasında (örneğin bir plazmidden ana kromozoma veya tersi yönde) sıçramasını sağlayan yapılara 'Transpozonlar (Sıçrayan genler)' denir. Transpozonlar kendi içlerinde 'Transpozaz' adı verilen spesifik bir enzimi kodlarlar. Transpozaz enzimi, DNA zincirini kasten keser ve taşıdığı direnç genini (örn: vanA) hiçbir dizi benzerliğine ihtiyaç duymadan yeni hedefine yapıştırır. Bu mekanizma, bakterilerin çoklu ilaç direnci (MDR) kazanmasındaki en korkutucu ve hızlı yollardan biridir."
+  },
+  {
+    "id": 795,
+    "ders": "Mikrobiyoloji",
+    "konu": "İmmünoloji",
+    "diff": 5,
+    "q": "Malign melanom tedavisi için geliştirilen ve hastanın kendi T lenfositlerinin tümöre karşı çok daha agresif saldırmasını sağlayan monoklonal bir antikor (İpilimumab) hastaya intravenöz olarak veriliyor. Bu ilacın başarısı, T lenfositlerinin antijenle karşılaştıktan bir süre sonra kendi kendini 'kapatmasını' engellemesine dayanmaktadır. Sağlıklı bir fizyolojik durumda, T hücresini inaktive eden bu 'kapatma (fren)' sinyali, T hücresi üzerindeki hangi reseptörün, antijen sunan hücredeki B7 (CD80/86) molekülüne bağlanmasıyla tetiklenir?",
+    "options": [
+      "CD28",
+      "CTLA-4",
+      "CD40 Ligandı",
+      "MHC Sınıf I",
+      "T Hücre Reseptörü (TCR)"
+    ],
+    "correct": 1,
+    "exp": "T hücre aktivasyonu çift sinyal gerektirir: 1) TCR'nin MHC'ye bağlanması, 2) T hücresindeki CD28'in, antijen sunan hücredeki B7'ye bağlanması (Ateşleyici sinyal). Ancak bağışıklık yanıtı sonsuza dek süremez, frenlenmelidir. T hücresi aktive olduktan bir süre sonra yüzeyine 'CTLA-4' adlı fren reseptörünü çıkarır. CTLA-4, CD28'den çok daha yüksek bir afiniteyle B7'ye yapışır ve T hücresine 'Artık dur, anerjiye (uykuya) geç' sinyali yollar. İpilimumab gibi immünoterapi ilaçları bu CTLA-4 reseptörünü bloke ederek, kansere saldıran T hücrelerinin frenini patlatır ve onların durmaksızın tümöre saldırmasını sağlar."
+  },
+  {
+    "id": 796,
+    "ders": "Mikrobiyoloji",
+    "konu": "İmmünoloji",
+    "diff": 4,
+    "q": "Tekrarlayan piyojenik (cerahatli) stafilokok ve pnömokok enfeksiyonları nedeniyle araştırılan bir çocukta, immünglobulin düzeyleri (IgG, IgA, IgM) ve T hücre fonksiyonları tamamen normal saptanıyor. Ancak laboratuvarda, hastanın serumu bakterilerle inkübe edildiğinde, bakterilerin yüzeyine opsonin moleküllerinin yapışmadığı ve nötrofillerin fagositoz hızının sıfıra yaklaştığı görülüyor. Klasik ve alternatif yolağın ortak kesişim noktasında yer alan ve eksikliğinde bu ölümcül opsonizasyon defektinin ortaya çıkması kaçınılmaz olan kompleman proteini aşağıdakilerden hangisidir?",
+    "options": [
+      "C1q",
+      "C3",
+      "C5",
+      "C8",
+      "Faktör D"
+    ],
+    "correct": 1,
+    "exp": "Kompleman sisteminin en kritik, en çok bulunan ve üç yolağın (Klasik, Alternatif, Lektin) da birleştiği ana kavşak proteini 'C3'tür. C3 molekülü parçalandığında ortaya çıkan C3b, insan vücudundaki en güçlü 'Opsonin'dir (Bakteriyi makrofajların yutması için işaretleyen sos). C3 eksikliği olan hastalar, bakterileri işaretleyemedikleri için özellikle kapsüllü bakterilere (S. pneumoniae, H. influenzae) karşı ölümcül piyojenik enfeksiyonlar geçirirler. C5-C9 (MAC) eksikliği olanlar ise opsonizasyon yapabildikleri için genel bakterilere dirençlidirler, sadece Neisseria'ya karşı hassasiyet gösterirler."
+  },
+  {
+    "id": 797,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Afrika'ya seyahat öyküsü olan hasta, günde 10 litreye varan, ağrısız, 'pirinç suyu' görünümünde masif ishal ve derin dehidratasyon ile acile getiriliyor. Vibrio cholerae tanısı konan bu hastaya uygulanan agresif intravenöz sıvı desteğine rağmen bağırsak epitel hücrelerinin lümene klor (Cl-) ve su pompalamaya devam ettiği görülüyor. Epitel hücrelerinin bu kontrolsüz sekretuvar aktivitesi, bakteri toksininin hücre içindeki hangi spesifik hedefi kalıcı olarak aktive etmesinin doğrudan bir sonucudur?",
+    "options": [
+      "Ribozomal 60S alt birimini",
+      "G proteininin inhibitör alt birimini (Gi-alfa)",
+      "G proteininin stimülatör alt birimini (Gs-alfa)",
+      "SNARE protein kompleksini",
+      "Aktin filamentlerini"
+    ],
+    "correct": 2,
+    "exp": "Kolera toksini (A-B ekzotoksin), bağırsak epitel (enterosit) hücrelerinin içine girdikten sonra, hücre zarında bulunan 'Gs-alfa (Stimülatör G proteini)' alt birimine bir ADP-ribozil grubu takar. Bu işlem Gs-alfa'yı 'sürekli açık (aktif)' konumda kilitler. Kilitlenen G proteini, Adenilat Siklaz enzimini çılgınca çalıştırarak hücre içi cAMP düzeyini devasa boyutlara çıkarır. Artan cAMP, apikal zardaki Klor (CFTR) kanallarını sonuna kadar açar. Klor lümene akar, sodyum ve su da osmozla onu takip eder ve sonuçta hücre yapısı bozulmadan (kansız) masif, ölümcül pirinç suyu ishal ortaya çıkar."
+  },
+  {
+    "id": 798,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Kronik öksürük ve gece terlemesi olan hastanın balgamından izole edilen aside dirençli basiller (Mycobacterium tuberculosis), sıvı besiyerinde üretildiğinde mikroskop altında birbirine paralel, yılan gibi kıvrımlı ve kalın halatlar (kordonlar) oluşturarak büyüdükleri saptanıyor. Basilin bu karakteristik büyüme paternini sergilemesini sağlayan ve aynı zamanda makrofajlar içinde fagozom-lizozom birleşmesini engelleyerek bakterinin sağkalımını garantileyen yüzey molekülü aşağıdakilerden hangisidir?",
+    "options": [
+      "Mikolik asit",
+      "Kord faktör (Trehaloz dimikolat)",
+      "Sülfatid",
+      "Lipoarabinomannan (LAM)",
+      "Tüberkülin yüzey proteini"
+    ],
+    "correct": 1,
+    "exp": "Mycobacterium tuberculosis'in sıvı ortamda mikroskop altında paralel zincirler (kordonlar / serpentine cords) oluşturarak üremesi, onun 'Virülan (hastalık yapıcı)' bir suş olduğunun kesin göstergesidir. Bu şekli almasını sağlayan ve adını da buradan alan virülans faktörü 'Kord Faktör (Trehaloz dimikolat)'dür. Kord faktör sadece şekil vermekle kalmaz, bakteriyi yutan makrofajın içinde ölümcül bir silah gibi çalışır; fagozom kesesinin lizozomla (sindirim enzimiyle) birleşmesini BLOKE EDER. Böylece basil, makrofajın içinde sindirilmeden aylar/yıllarca güvenle yaşar ve çoğalır."
+  },
+  {
+    "id": 799,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 5,
+    "q": "Genç bir kadın hasta, ateş, ciltte yaygın makülopapüler döküntü, avuç içlerinde ve ayak tabanlarında lezyonlar ile polikliniğe başvuruyor. Öyküsünden aylar önce ağrısız bir genital ülser (şankr) geçirdiği ve kendiliğinden iyileştiği öğreniliyor. İkinci evre Sifiliz (Sekonder Sifiliz) şüphesiyle yapılan VDRL testi kuvvetli pozitif (1/64) geliyor. VDRL gibi non-treponemal testlerin, hastanın kanındaki antikorları tespit edebilmesi için reaksiyona sokulduğu (kullanıldığı) temel antijenik hedef aşağıdakilerden hangisidir?",
+    "options": [
+      "Treponema pallidum'un dış zar proteinleri",
+      "Kardiyolipin (Sığır kalbinden elde edilen difosfatidilgliserol)",
+      "Bakterinin hareketini sağlayan endoflagella (aksiyal flaman)",
+      "Fibrokonektin bağlayıcı proteinler",
+      "Treponemal hiyalüronidaz enzimi"
+    ],
+    "correct": 1,
+    "exp": "Sifiliz (Treponema pallidum) tanısında kullanılan testler ikiye ayrılır: Non-treponemal (Tarama) ve Treponemal (Doğrulama). VDRL ve RPR gibi tarama testlerinde kullanılan antijen, virüsün veya bakterinin bizzat KENDİSİ DEĞİLDİR. Sifiliz bakterisi hücreleri parçaladığında, hücre zarımızdan 'Kardiyolipin' adlı bir lipid açığa çıkar. Vücudumuz bu lipide karşı (reaginik) antikorlar üretir. Laboratuvarda biz hastanın kanına sığır kalbinden elde edilmiş hazır 'Kardiyolipin' damlatırız. Eğer kanda antikor varsa kümeleşir (pozitif sonuç verir). Bu yüzden VDRL testi özgül değildir; SLE, sıtma, gebelik ve lepra gibi hücre yıkımı olan diğer durumlarda da (Treponema olmamasına rağmen) yalancı pozitiflik verebilir."
+  },
+  {
+    "id": 800,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Yaşlı bir hastaya pnömoni tedavisi için 10 gün boyunca oral Klindamisin kullanıldıktan sonra, hastada şiddetli, kötü kokulu ve kanlı olabilen sulu ishal gelişiyor. Kolonoskopide kolon mukozasında sarı-beyaz renkli plaklar (pseudomembran) saptanıyor. Clostridioides difficile enfeksiyonu tanısı alan bu hastada, bağırsak epitel hücrelerinin iskelet yapısının (sitoiskelet) çökmesine ve hücreler arası sıkı bağlantıların (tight junctions) kopmasına yol açarak bu tabloyu yaratan spesifik toksik mekanizma aşağıdakilerden hangisidir?",
+    "options": [
+      "Aktin filamentlerinin polimerizasyonunu sağlayan Rho GTPaz enzimlerinin glikozillenerek inaktive edilmesi",
+      "Adenilat siklaz enziminin sürekli aktivasyonu",
+      "RNA polimeraz enziminin bloke edilmesi",
+      "Ribozomal 60S alt biriminin parçalanması",
+      "Hücre zarındaki lesitinin (fosfolipidlerin) eritilmesi"
+    ],
+    "correct": 0,
+    "exp": "Clostridioides (eski adıyla Clostridium) difficile, antibiyotik kullanımına sekonder (flora bozulmasıyla) fırsatçı olarak üreyen ve Pseudomembranöz Kolit yapan bir anaerobtur. Etkisini iki toksinle yapar: Toksin A (Enterotoksin) ve Toksin B (Sitotoksin). Her iki toksin de hücre içine girer ve çok spesifik bir iş yapar: Hücrenin ayakta kalmasını sağlayan aktin iskeletinin yöneticisi olan 'Rho GTPaz' enzim ailesini 'Glikoziller' (şeker ekleyerek bozar). Rho GTPaz çalışmayınca hücrenin aktin iskeleti anında çöker, bağırsak hücreleri birbirinden kopar (sıvı sızar) ve hücreler apoptosize giderek o meşhur sarı-beyaz pseudomembranları (ölü doku ve nötrofil yığınlarını) oluşturur."
+  },
+  {
+    "id": 801,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Hepatit B (HBV) taşıyıcısı olduğu bilinen 45 yaşındaki erkek hasta, aniden gelişen şiddetli sarılık, koagülopati ve hepatik ensefalopati tablosuyla (Fulminan Hepatit) acile getiriliyor. Serolojik testlerde hastanın aynı zamanda farklı bir virüsle 'süperenfeksiyon' geçirdiği saptanıyor. RNA genomuna sahip olan bu yeni virüsün, karaciğer hücrelerinin içinde çoğalabilmesine rağmen hücreden dışarı çıkıp diğer hücreleri enfekte edebilmesi için HBV'nin HANGİ spesifik yapısal bileşenini gasp etmesi (kullanması) ZORUNLUDUR?",
+    "options": [
+      "Hepatit B Kor Antijeni (HBcAg)",
+      "DNA Bağımlı DNA Polimeraz enzimi",
+      "Hepatit B Yüzey Antijeni (HBsAg) kılıfı",
+      "HBeAg (e antijeni)",
+      "HBx protein kompleksi"
+    ],
+    "correct": 2,
+    "exp": "Süperenfeksiyon yapan bu ajan Hepatit D Virüsü (HDV)'dür (Delta ajanı). HDV, doğada kendi başına enfeksiyon yapamayan 'Kusurlu (Defektif)' bir RNA virüsüdür. HDV kendi RNA'sını ve kor proteinini (Delta antijeni) sentezleyebilir. ANCAK, hücreden çıkıp yeni bir hücreye girebilmesi için etrafını saracak bir zarına (zarf/kılıf) ihtiyacı vardır ve bunu üretemez. Bu yüzden HDV, yalnızca ortamda 'Hepatit B Virüsü (HBV)' varsa yaşayabilir; çünkü tomurcuklanıp hücreden çıkarken HBV'nin ürettiği 'Hepatit B Yüzey Antijenini (HBsAg)' çalarak kendine kılıf (manto) yapar. HBsAg olmadan HDV var olamaz."
+  },
+  {
+    "id": 802,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Herpes Simplex Virüs-1 (HSV-1) ensefaliti tanısıyla yoğun bakıma alınan hastaya derhal intravenöz Asiklovir tedavisi başlanıyor. İlaç, beyinde sadece virüsle enfekte olmuş nöronların içinde DNA sentezini (replikasyonu) durdururken, hemen yanındaki sağlıklı nöronlara ve glia hücrelerine HİÇBİR toksik etki göstermez. Asiklovir'in bu muazzam hücresel seçiciliği (selektivitesi), ilacın aktifleşebilmesi için SADECE virüs tarafından üretilen hangi enzime mutlak surette ihtiyaç duymasından kaynaklanır?",
+    "options": [
+      "RNA bağımlı RNA polimeraz",
+      "Viral Proteaz",
+      "Timidin Kinaz (Viral TK)",
+      "Revers Transkriptaz",
+      "Nöraminidaz"
+    ],
+    "correct": 2,
+    "exp": "Asiklovir, HSV ve VZV enfeksiyonlarında kullanılan bir guanozin derivesidir (ön ilactır). İlacın sağlıklı hücreye zarar vermemesinin sırrı şudur: Asiklovir hücreye girdiğinde inaktif (fosfatsız) haldedir. Aktifleşip DNA zincirine girebilmesi için 3 fosfat alması gerekir. Bu fosforilasyonun **İLK** ve en zor adımını insan hücrelerindeki enzimler YAPAMAZ. Bu ilk fosfatı ilaca SADECE herpes virüsünün kendi ürettiği spesifik bir enzim olan 'Viral Timidin Kinaz (TK)' takabilir. Yani ilaç sadece virüsün olduğu hücrede uyanır ve aktif silaha dönüşür. Virüs yoksa, ilaç sessizce hücreden atılır."
+  },
+  {
+    "id": 803,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 4,
+    "q": "Ayak tırnaklarında şiddetli sararma, kalınlaşma ve kırılma (Onikomikoz) olan hastaya dermatolog tarafından oral Terbinafin tedavisi başlanıyor. Aylar süren tedavi sonrası mantar tamamen eradike ediliyor. Terbinafinin mantar hücresini öldürmesi; hücre içinde toksik düzeyde 'Skualen' birikimine ve hücre zarının esnekliğini sağlayan 'Ergosterol' sentezinin durmasına bağlıdır. Bu durum, ilacın mantardaki HANGİ spesifik enzimi bloke etmesinin doğrudan bir sonucudur?",
+    "options": [
+      "14-alfa demetilaz",
+      "Skualen epoksidaz",
+      "Beta-1,3-glukan sentaz",
+      "Timidilat sentaz",
+      "Kitin sentaz"
+    ],
+    "correct": 1,
+    "exp": "Mantarların hücre zarı, insanlardaki kolesterol yerine 'Ergosterol'den oluşur. Antifungal ilaçlar bu sentez yolağını farklı yerlerden vurur. Ergosterol sentezi 'Skualen' molekülüyle başlar. Skualen, 'Skualen Epoksidaz' enzimiyle bir sonraki basamağa geçer. Terbinafin (Allilamin grubu), işte bu 'Skualen Epoksidaz' enzimini geri dönüşümsüz bloke eder. Sonuç olarak mantarın içinde parçalanamayan Skualen molekülleri birikerek toksisite (ölüm) yaratır ve ergosterol yapılamadığı için zar çöker. (Not: 14-alfa demetilazı bloke edenler Azol grubudur - Flukonazol vb. Beta-glukan sentazı bloke edenler ekinokandinlerdir)."
+  },
+  {
+    "id": 804,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 4,
+    "q": "Gül yetiştiriciliği yapan 45 yaşındaki hastanın sağ el işaret parmağında, bir diken batmasından 2 hafta sonra ağrısız, küçük, ülserleşen bir nodül ortaya çıkıyor. İlerleyen günlerde, bu nodülden başlayarak ön kola ve dirseğe doğru, lenfatik drenaj hattı boyunca tespih tanesi gibi dizilmiş yeni nodüller gelişiyor. Biyopside puro (cigar) şekilli mayalar ve etrafında eozinofilik ışınsal çıkıntılar olan 'Asteroid Cisimcikler' saptanıyor. Etkenin Sporothrix schenckii olduğu bu tabloda, enfeksiyonun kanda (viremi/fungemi) yayılmak yerine bu spesifik kol/bacak anatomik paterni izlemesi, patojenin hangi sistemi kullanarak ilerlediğini kanıtlar?",
+    "options": [
+      "Arteryel damarlar",
+      "Yüzeyel venöz pleksus",
+      "Deri altı lenfatik kanallar (Lenfo-kütanöz yayılım)",
+      "Periferik sinir kılıfları",
+      "Kas fasyaları (Fasiyal planlar)"
+    ],
+    "correct": 2,
+    "exp": "Sporothrix schenckii (Gül bahçıvanı hastalığı), doğada toprak ve bitki dikenlerinde bulunan dimorfik bir mantardır. Diken batmasıyla cilt altına (subkütan) girer. Sporothrix'in en klasik ve patognomonik klinik tablosu 'Lenfokütanöz (Lenfotrofik)' yayılımıdır. Mantar, kan dolaşımına girmek yerine, girdiği yerin yüzeyel lenfatik kanallarını takip ederek yukarı doğru (drenaj yönünde) yavaş yavaş ilerler ve o hat boyunca ardışık apseler/nodüller bırakır. Bu tespih dizisi görünümü ve mikroskopta puro şekilli mayalar ile asteroid cisimcikler görülmesi tanıyı kesinleştirir."
+  },
+  {
+    "id": 805,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 5,
+    "q": "Mısır'dan göç eden 30 yaşındaki erkek hasta, aylardır süren ağrısız terminal hematüri (idrarın sonunda kanama) şikayetiyle başvuruyor. Sistoskopi yapıldığında mesane duvarında fibrotik, kireçlenmiş plaklar (sandy patches) ve polipoid lezyonlar görülüyor. Alınan biyopside, lezyonların zemininde Skuamöz Hücreli Karsinom geliştiği saptanıyor. Mesanedeki bu kronik inflamasyonun ve sonrasındaki malign dönüşümün (kanserleşmenin) asıl tetikleyicisi, parazitin dokuya bıraktığı hangi spesifik yapının yarattığı mekanik ve immünolojik hasardır?",
+    "options": [
+      "Erişkin Schistosoma haematobium kurtlarının venöz pleksusta salgıladığı nörotoksinler",
+      "Schistosoma haematobium'un 'terminal (uçta) dikeni' olan devasa yumurtalarının mesane duvarına saplanması ve kalsifiye olması",
+      "Serkaryaların deriden girerken bıraktığı proteaz enzimleri",
+      "Schistosoma mansoni'nin 'lateral (yanda) dikeni' olan yumurtalarının damarları tıkaması",
+      "Parazitin karaciğerde portal fibrozis (pipestem fibrozis) yapması"
+    ],
+    "correct": 1,
+    "exp": "Schistosoma haematobium, Afrika ve Orta Doğu'da (Özellikle Nil Nehri/Mısır) tatlı sulardan cildi delerek giren bir trematoddur (kan kelebeği). Erişkinleri mesanenin etrafındaki venöz ağlara yerleşir. Dişi parazit, idrarla atılması için mesane duvarına binlerce yumurta bırakır. S. haematobium yumurtalarının patognomonik özelliği, bir ucunda iğne gibi keskin 'Terminal Diken (Spine)' barındırmasıdır. Bu dikenli yumurtalar mesane mukozasına saplanır, kanama (terminal hematüri) yapar ve etraflarında şiddetli bir granülomatöz inflamasyon başlar. Yıllar süren bu diken batması ve irritasyon, mesane epitelinde metaplaziye ve sonunda 'Mesane Skuamöz Hücreli Karsinomu'na (Yassı hücreli kanser) yol açar. (Not: S. mansoni'nin yumurtası lateral/yanda dikenlidir ve bağırsağı/karaciğeri tutar)."
+  },
+  {
+    "id": 806,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Orta Doğu'da askeri görevden dönen bir askerin sağ yanağında, kenarları kabarık (krater gibi), ortası ülserleşmiş ve kabuklu, ağrısız bir yara (Şark çıbanı) gelişiyor. Lezyon kenarından alınan biyopsi örneği Giemsa ile boyandığında, dermisteki devasa MAKROFAJLARIN İÇİNDE, çekirdekleri ve yanlarında minik çubuksu kinetoplastları bulunan, kamçısız (amastigot) formda çok sayıda parazit saptanıyor. Leishmania tropica enfeksiyonu olan bu tabloda, parazitin makrofajın ölümcül fagolizozomundan sağ çıkabilmesinin ve orada çoğalabilmesinin temel nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Makrofajın lizozomal enzim salınımını ve oksijen radikali (respiratory burst) patlamasını bloke eden yüzey glikokonjugatları sentezlemesi",
+      "Lizozom ile fagozomun birleşmesini (füzyonunu) tamamen engellemesi",
+      "Fagozomdan hızla sitoplazmaya kaçıp orada çoğalması",
+      "Eritrositlerin içine girerek makrofajlardan tamamen saklanması",
+      "Makrofajı anında apoptoza sürükleyip hücre dışına çıkması"
+    ],
+    "correct": 0,
+    "exp": "Leishmania türleri (Tatarcık/Kum sineği ile bulaşır), hücre içi parazitliğin ustalarıdır. Makrofajlar onları yuttuğunda, diğer parazitlerin (örn: T. cruzi) aksine fagozomdan kaçmazlar veya (M. tuberculosis gibi) lizozom birleşmesini engellemezler. Leishmania bilerek fagolizozomun (asit ve enzim dolu ölüm odasının) içinde KALIR. Çünkü parazitin yüzeyinde yoğun miktarda 'Lipofosfoglikan (LPG)' bulunur. Bu koruyucu zırh, hem lizozomal enzimleri inaktive eder hem de makrofajın en büyük silahı olan oksidatif patlamayı (oksijen radikallerini) durdurur. Parazit bu asidik odayı bir kuluçka makinesi gibi kullanır, çoğalır (amastigot formu) ve sonunda makrofajı patlatarak diğer hücrelere yayılır."
+  },
+  {
+    "id": 807,
+    "ders": "Mikrobiyoloji",
+    "konu": "Klinik Mikrobiyoloji",
+    "diff": 4,
+    "q": "Sık tekrarlayan idrar yolu enfeksiyonu (Sistit) ve Pyelonefrit öyküsü olan genç kadın hastadan izole edilen Uropatojenik Escherichia coli (UPEC) suşu laboratuvarda inceleniyor. Bakterinin, mesaneye ulaştığında hastanın idrar akışının (sifolama) yarattığı yüksek fiziksel yıkama gücüne rağmen üroepitel hücrelerine tutunduğu ve atılamadığı görülüyor. İdrar akımına karşı direnç sağlayan ve bakteriyi böbrek havuzcuğuna (pelvis) kadar tırmandıran bu sarsılmaz yapışma eylemi, bakterinin dış yüzeyindeki HANGİ spesifik organel aracılığıyla sağlanmaktadır?",
+    "options": [
+      "Peritriköz kamçılar (Flagella)",
+      "Tip 1 (P) Fimbria / P Pili",
+      "O-Polisakkarit zinciri",
+      "Lipid A endotoksini",
+      "K1 Kapsül antijeni"
+    ],
+    "correct": 1,
+    "exp": "E. coli, normal bağırsak florasında masumken, üriner sisteme girdiğinde bir kabusa dönüşür. İdrar yollarında (üretradan yukarı doğru) sürekli sıvı akışı vardır ve bu normalde bakterileri dışarı atar. Ancak Uropatojenik E. coli (UPEC) suşları, 'P Fimbria (P Pili / Tip 1 Fimbria)' adı verilen özel saç/kanca benzeri uzantılara sahiptir. Bu pililer, mesane ve böbrek epiteli yüzeyindeki 'Galaktoz-Galaktoz (Gal-Gal)' reseptörlerine o kadar güçlü bir şekilde kilitlenir ki, şelale gibi idrar aksa bile bakteri yerinden kopmaz. Bu tutunma (adezyon), bakterinin idrarı tersine tırmanarak böbreğe (Pyelonefrit) ulaşmasındaki ilk ve en hayati virülans adımıdır."
+  },
+  {
+    "id": 765,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "Tip 2 Diabetes Mellitus tanısı olan ve obezite nedeniyle birinci basamak tedavi başlanan 55 yaşındaki hastada, aylar sonra şiddetli halsizlik, kas ağrıları ve hızlı soluk alıp verme (Kussmaul solunumu) tablosu gelişiyor. Kan gazında artmış anyon açıklı metabolik asidoz saptanıyor. Hastanın böbrek fonksiyonlarının (eGFR) sınırda olduğu öğreniliyor. Hastanın kullandığı antidiyabetik ilacın, mitokondriyal solunum zinciri Kompleks 1'i bloke ederek hücreleri anaerobik glikolize zorlaması ve bu ölümcül tabloya (Laktik Asidoz) yol açması en olasıdır. Bu ilaç aşağıdakilerden hangisidir?",
+    "options": [
+      "Gliklazid",
+      "Pioglitazon",
+      "Metformin",
+      "Akarboz",
+      "Sitagliptin"
+    ],
+    "correct": 2,
+    "exp": "Metformin, Tip 2 DM'nin altın standart ilk ilacıdır. İnsülin direncini kırar, karaciğerde glukoneogenezi baskılar ve kilo verdirir (Hipoglisemi yapmaz). Ancak hücresel düzeyde AMPK'yı aktive ederken mitokondride Kompleks 1'i hafifçe inhibe eder. Bu durum hücreleri bir miktar anaerobik solunuma ve laktik asit üretimine iter. Sağlıklı böbrekler bu laktik asidi kolayca temizler; ancak böbrek yetmezliği olanlarda (eGFR düşükse) laktat kanda birikerek ölümcül 'Laktik Asidoz' komasına neden olabilir. Bu nedenle böbrek yetmezliğinde Metformin kontrendikedir."
+  },
+  {
+    "id": 766,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "Altı aydır oral antidiyabetik kullanan 45 yaşındaki kadın hasta, sık tekrarlayan idrar yolu enfeksiyonları ve genital kandidiyazis (mantar enfeksiyonu) şikayetiyle başvuruyor. İdrar tahlilinde kan şekeri 130 mg/dL olmasına rağmen masif glukozüri (idrarda şeker) saptanıyor. Hastanın kullandığı ilacın böbrek proksimal tübüllerindeki sodyum-glukoz ko-transporter'larını (SGLT2) bloke ettiği ve glukozun idrarla atılımını artırdığı bilindiğine göre, bu ilaç aşağıdakilerden hangisidir?",
+    "options": [
+      "Empagliflozin",
+      "Liraglutid",
+      "Repaglinid",
+      "Vildagliptin",
+      "Nateglinid"
+    ],
+    "correct": 0,
+    "exp": "SGLT2 inhibitörleri (-gliflozin ile bitenler; Empagliflozin, Dapagliflozin vb.), böbrek proksimal tübüllerinde glukozun geri emilimini sağlayan pompaları bloke ederler. Kanda şeker normal olsa bile fazla glukozu idrarla dışarı atarlar (Glukozüri). Bu durum kilo verdirir, kan basıncını düşürür ve kalp yetmezliği hastalarında sağkalımı artırır. ANCAK idrar yollarının sürekli glukoz (şeker) ile yıkanması, o bölgede bakteri ve mantarlar için mükemmel bir ziyafet ortamı yaratır. Bu nedenle SGLT2 inhibitörlerinin en sık yan etkileri tekrarlayan İdrar Yolu Enfeksiyonları ve Genital Mikotik enfeksiyonlardır (Kandidiyazis)."
+  },
+  {
+    "id": 767,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "Graves Hastalığı (Hipertiroidi) nedeniyle ilaç tedavisi alan bir hasta, aniden gelişen yüksek ateş, şiddetli boğaz ağrısı ve ağız içi ülserlerle acile başvuruyor. Kan sayımında nötrofil sayısının 100/mm3'ün altına (Agranülositoz) düştüğü görülüyor. Tiroid peroksidaz (TPO) enzimini inhibe ederek tiroid hormonu sentezini durduran bu ilaç grubunda, TPO inhibisyonuna ek olarak 'periferik dokularda T4'ün aktif T3'e dönüşümünü (5-deiyodinaz enzimini) bloke etme' avantajı da sunan ajan aşağıdakilerden hangisidir?",
+    "options": [
+      "Metimazol",
+      "Levotiroksin",
+      "Radyoaktif İyot",
+      "Propiltiyourasil (PTU)",
+      "Propranolol"
+    ],
+    "correct": 3,
+    "exp": "Tiyoüre grubu anti-tiroid ilaçlar (Propiltiyourasil ve Metimazol), tiroid bezindeki Tiroid Peroksidaz (TPO) enzimini bloke ederek iyodun organifikasyonunu durdururlar. En korkulan yan etkileri aniden gelişen ve ölümcül olabilen Agranülositozdur (Ateş ve boğaz ağrısı ilk bulgudur). Bu iki ilaç arasında ince bir farmakodinamik fark vardır: PTU (Propiltiyourasil), TPO'yu inhibe etmenin YANI SIRA, periferik dokularda (karaciğer vb.) inaktif T4'ün aktif T3'e çevrilmesini sağlayan '5-deiyodinaz' enzimini de inhibe eder. Bu çift koldan etki, PTU'yu hayatı tehdit eden 'Tiroid Fırtınası (Krizi)' tedavisinde ilk tercih yapar. (Ayrıca gebeliğin ilk trimesterinde Metimazol teratojenik olduğu için PTU tercih edilir)."
+  },
+  {
+    "id": 768,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "Tip 2 Diyabet tedavisine yeni bir oral ajan eklenen hasta, ilacı kullanmaya başladıktan sonra aşırı gaz (flatulans), karın şişkinliği ve kramp tarzı ağrılardan şikayet etmeye başlıyor. Bu yan etkilerin, hastanın kullandığı ilacın ince bağırsak fırçamsı kenarında bulunan alfa-glukozidaz enzimlerini bloke etmesi ve parçalanamayan kompleks karbonhidratların kalın bağırsağa geçerek bakteriler tarafından fermente edilmesi sonucu oluştuğu saptanıyor. Tokluk kan şekerini düşürmede etkili olan bu ilaç aşağıdakilerden hangisidir?",
+    "options": [
+      "Akarboz",
+      "Rosiglitazon",
+      "Glimepirid",
+      "Pramlintid",
+      "Eksenatid"
+    ],
+    "correct": 0,
+    "exp": "Akarboz ve Miglitol, Alfa-Glukozidaz İnhibitörleridir. İnce bağırsaktaki karbonhidrat sindirim enzimlerini bloke ederler. Hasta yemek yediğinde, karbonhidratlar (nişasta vb.) parçalanıp emilemez ve doğrudan kalın bağırsağa geçer. Emilim geciktiği için 'Tokluk Kan Şekeri' fırlamaz. Ancak kalın bağırsağa inen bu bol miktardaki şekeri oradaki flora bakterileri anında fermente eder ve devasa miktarda gaz (CO2, metan) üretirler. Bu nedenle hastaların neredeyse tamamı aşırı gaz, şişkinlik ve ishal şikayetiyle ilacı bırakma eğilimindedir."
+  },
+  {
+    "id": 769,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "Postmenopozal osteoporoz tedavisi için oral olarak Alendronat (Bifosfonat) kullanan 65 yaşındaki hastanın kemik mineral yoğunluğunda belirgin artış saptanıyor. Bifosfonatların kemik erimesini durdurmadaki inanılmaz başarısı, osteoklastların (kemik yiyici hücreler) içine girerek mevalonat yolağındaki 'Farnesil Pirofosfat Sentaz' enzimini bloke etmelerine dayanır. Bu enzimatik inhibisyonun osteoklastlar üzerindeki NİHAİ (öldürücü) hücresel etkisi aşağıdakilerden hangisidir?",
+    "options": [
+      "Osteoklastların RANK reseptörlerini kaybetmesi",
+      "Hücre zarında kalsiyum kanallarının kalıcı olarak kapanması",
+      "Hücrenin iskeletini ve fırfırlı kenarını (ruffled border) koruyamayarak şiddetli bir 'Apoptozis (programlı hücre ölümü)' sürecine girmesi",
+      "Osteoblastlara dönüşerek kemik yapmaya başlaması",
+      "Lizozomal enzimlerinin sitoplazmaya sızarak koagülatif nekroz yapması"
+    ],
+    "correct": 2,
+    "exp": "Bifosfonatlar (-dronat ile bitenler), osteoporozun temel taşlarıdır. Kemik yüzeyine (hidroksiapatit kristallere) çok güçlü bağlanırlar. Osteoklastlar kemiği eritmeye başladıklarında, bu bifosfonatları da yutarlar. Hücre içine giren ilaç, kolesterol sentezindeki mevalonat yolağını (farnesil pirofosfat sentaz) tıkar. Bu yolak, hücre zarı proteinlerinin (özellikle GTPaz'ların) lipid zarlara tutunması (prenilasyon) için şarttır. Prenilasyon durunca osteoklast hücresinin iskeleti ve kemiğe tutunduğu fırfırlı kenarı çöker. Hücre fonksiyonunu kaybeder ve sonunda sessizce Apoptoza (intihara) sürüklenir. (Yan etki olarak dik pozisyonda içilmezse ciddi özofajit yaparlar)."
+  },
+  {
+    "id": 770,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "Obezitesi olan bir Tip 2 Diyabet hastasına subkütan yolla uygulanan yeni bir ilaç başlanıyor. Hastanın kan şekeri regüle olurken aynı zamanda iştahında azalma ve belirgin kilo kaybı gözleniyor. Bu ilacın, bağırsaklardan salgılanan doğal 'İnkretin' hormonlarını taklit ettiği, mide boşalmasını yavaşlattığı ve sadece kanda glukoz yüksekken insülin salınımını uyardığı biliniyor. Bu özelliklere sahip olan antidiyabetik ajan aşağıdakilerden hangisidir?",
+    "options": [
+      "Sitagliptin",
+      "Glibenklamid",
+      "Liraglutid",
+      "Dapagliflozin",
+      "Pioglitazon"
+    ],
+    "correct": 2,
+    "exp": "İnkretinler (GLP-1), yemek yediğimizde bağırsaklardan salınan ve pankreası 'şeker geliyor, insülin hazırla' diye önceden uyaran hormonlardır. GLP-1 Agonistleri (-glutid ile bitenler; Liraglutid, Semaglutid, Eksenatid), bu hormonun güçlü ve uzun etkili yapay halleridir. Sadece kan şekeri yüksekken insülin salgılatırlar (Hipoglisemi riskleri düşüktür). Mide boşalmasını durdurarak ve beyindeki tokluk merkezini uyararak ciddi KİLO VERDİRİRLER (Günümüzde sadece obezite tedavisi için bile kullanılırlar). En korkulan nadir yan etkileri Akut Pankreatit ve Medüller Tiroid Kanseridir. (Not: Sitagliptin bir DPP-4 inhibitörüdür, inkretinleri yıkan enzimi durdurur ama kilo verdirmez, nötrdür)."
+  },
+  {
+    "id": 771,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "Yaşlı bir diyabet hastası, öğün atladıktan sonra aniden soğuk terleme, çarpıntı, titreme ve bilinç bulanıklığı ile acile getiriliyor. Kan şekeri 40 mg/dL (Şiddetli Hipoglisemi) olarak ölçülüyor. Hastanın kullandığı ilacın, pankreas beta hücrelerinin zarında bulunan 'ATP'ye duyarlı Potasyum (K+) kanallarını' kapatarak (bloke ederek) hücreyi depolarize ettiği ve kanda glukoz olmasa bile zorla insülin salgılattığı öğreniliyor. Hipoglisemi riski en yüksek olan bu insülin sekretagogu (salgılatıcı) ilaç grubu aşağıdakilerden hangisidir?",
+    "options": [
+      "Tiyazolidindionlar (Glitazonlar)",
+      "Sülfonilüreler (Örn: Glimepirid, Gliklazid)",
+      "Alfa-glukozidaz inhibitörleri",
+      "Biguanidler (Metformin)",
+      "DPP-4 İnhibitörleri (Gliptinler)"
+    ],
+    "correct": 1,
+    "exp": "Sülfonilüreler (Glimepirid, Gliklazid, Glibenklamid), pankreası kamçılayarak zorla insülin salgılatan (sekretagog) eski ve ucuz ilaçlardır. Pankreas beta hücrelerinde normalde kan şekeri yükselince ATP artar ve K+ kanalları kapanarak hücreyi depolarize edip insülin salgılatır. Sülfonilüreler gider, bu K+ kanalına dışarıdan tıkaç gibi yapışır. Kan şekeri ister 300 olsun, ister 40 olsun fark etmez; kanal kapandığı an hücre depolarize olur, kalsiyum içeri girer ve depolanmış tüm insülin kana boşalır. Bu 'körü körüne' salgılatma özelliği nedeniyle, hasta yemek yemeyi unutursa veya dozu fazla kaçırırsa ölümcül (ve çok uzun süren) Hipoglisemi komasına girer."
+  },
+  {
+    "id": 772,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "Polikistik Over Sendromu (PKOS) nedeniyle anovulasyon (yumurtlayamama) ve infertilite şikayeti olan bir kadına, ovulasyonu (yumurtlamayı) tetiklemek amacıyla bir ilaç başlanıyor. Tedavi sonrasında hasta ikiz (veya üçüz) gebelik yaşıyor. Bu ilacın etki mekanizması, hipotalamus ve hipofizdeki östrojen reseptörlerini bloke ederek, beynin 'kanda östrojen yok' sanmasını sağlamak ve bu sayede negatif geribildirimi (feedback) kırarak devasa miktarda GnRH, FSH ve LH salınımını tetiklemektir. Çoğul gebelik riski yüksek olan bu ajan aşağıdakilerden hangisidir?",
+    "options": [
+      "Letrozol",
+      "Danazol",
+      "Klomifen (Clomiphene) sitrat",
+      "Mifepriston",
+      "Tamoksifen"
+    ],
+    "correct": 2,
+    "exp": "Klomifen sitrat (Clomiphene), hipotalamus seviyesinde çalışan bir Selektif Östrojen Reseptör Modülatörüdür (SERM). Normalde yumurtalıklardan salınan östrojen, beyni (hipotalamusu) frenler (negatif feedback). Klomifen beynin östrojen reseptörlerine bir tıkaç gibi oturur. Hipotalamus ortamda hiç östrojen kalmadığını sanarak paniğe kapılır ve hipofize 'Hemen FSH ve LH salgıla' emri verir. Kana pompalanan aşırı FSH ve LH, yumurtalıkları o kadar şiddetli uyarır ki, bazen aynı anda 2, 3 veya 4 yumurta birden olgunlaşıp çatlar. Bu yüzden infertilite tedavisinde çok başarılıdır ancak istenmeyen 'Çoğul Gebelik (ikiz/üçüz)' riski çok yüksektir."
+  },
+  {
+    "id": 773,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "İleri evre Prostat Kanseri olan bir hastada, tümör hücrelerinin büyümesini sağlayan testosteron etkisini sıfırlamak (medikal kastrasyon) amacıyla sürekli olarak uzun etkili bir GnRH (Gonadotropin Salgılatıcı Hormon) analogu (Örn: Löprolid) veriliyor. Tedavinin başlangıcında (ilk 1-2 haftada) testosteron düzeylerinde aniden geçici bir YÜKSELME ve tümör ağrılarında artış (Flare-up) görülüyor, ancak haftalar sonra testosteron üretimi tamamen DURUYOR. İlacın kalıcı kastrasyon sağlaması, hipofiz bezindeki GnRH reseptörlerinde hangi farmakodinamik olayın gerçekleşmesiyle doğrudan ilişkilidir?",
+    "options": [
+      "Reseptörlerin geri dönüşümsüz kovalent bağ ile tıkanması",
+      "GnRH reseptörlerinin hücre içine çekilip yıkılması (Sürekli uyarılmaya bağlı Down-regülasyon / Desensitizasyon)",
+      "Reseptörlerin konformasyon değiştirip antagonist gibi davranması",
+      "FSH ve LH moleküllerinin kanda hızla parçalanması",
+      "Leydig hücrelerinde apoptozis başlaması"
+    ],
+    "correct": 1,
+    "exp": "GnRH analogları (Löprolid, Goserelin), endokrin farmakolojinin en ilginç ilaçlarıdır. Fizyolojik GnRH beyinden dalgalar halinde (pulsatil) salgılanır ve FSH/LH ürettirir. Eğer siz dışarıdan sürekli (sürekli infüzyon veya depo iğne) GnRH analogu verirseniz, hipofiz bezindeki reseptörler önce coşkuyla çalışır (İlk hafta testosteron tavan yapar, buna 'Flare-up' denir ve önlemek için başlarda Flutamid gibi bir blokör eklenir). Ancak 2-3 hafta sonra, hiç susmayan bu uyarıdan yorulan hipofiz, yüzeyindeki tüm GnRH reseptörlerini kapatır ve hücre içine çeker (Down-regülasyon / Desensitizasyon). Reseptör kalmadığı için FSH/LH üretimi SIFIRA iner, testisler çalışmayı durdurur (Medikal Kastrasyon). Prostat kanseri, puberte prekoks ve şiddetli endometriozis tedavisinin temelidir."
+  },
+  {
+    "id": 774,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "Kronik böbrek yetmezliğine sekonder olarak gelişen Şiddetli Hiperparatiroidi tablosunda, hastanın kan kalsiyum ve fosfor dengesi tamamen bozulmuştur. Hastaya paratiroid bezinden Paratiroid Hormon (PTH) salınımını baskılamak amacıyla bir ilaç başlanıyor. Bu ilacın etki mekanizması; paratiroid hücrelerinin yüzeyindeki Kalsiyuma Duyarlı Reseptörlerin (CaSR) hassasiyetini (allosterik olarak) artırarak, beze kanda sanki kalsiyum çok 'YÜKSEKMİŞ' gibi sahte bir tokluk sinyali göndermesi ve PTH salınımını durdurmasıdır. Bu Kalsimimetik ajan aşağıdakilerden hangisidir?",
+    "options": [
+      "Teriparatid",
+      "Kalsitonin",
+      "Sinakalcet (Cinacalcet)",
+      "Denosumab",
+      "Kalsitriol"
+    ],
+    "correct": 2,
+    "exp": "Sinakalcet (Cinacalcet), 'Kalsimimetik' bir ilaçtır. Paratiroid bezinin üzerinde kan kalsiyumunu ölçen termostat benzeri reseptörler (CaSR) vardır. Sinakalcet bu reseptöre allosterik olarak bağlanır ve reseptörün kalsiyuma olan duyarlılığını abartılı şekilde artırır. Bez, kandaki normal veya düşük kalsiyumu bile sanki dehşet verici düzeyde bir Hiperkalsemi varmış gibi algılar. Bu sahte tokluk sinyali karşısında paratiroid bezi anında Paratiroid Hormon (PTH) üretimini frenler. Özellikle kronik böbrek yetmezliğine bağlı sekonder hiperparatiroidi ve paratiroid karsinomlarının tedavisinde PTH'yı (ve dolayısıyla kalsiyumu) düşürmek için hayat kurtarıcıdır."
+  },
+  {
+    "id": 775,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "Parkinson hastasına, eksik olan dopamini yerine koymak için doğrudan Dopamin vermek yerine öncül molekülü olan Levodopa (L-DOPA) reçete edilmiştir. Bunun nedeni dopaminin Kan-Beyin Bariyerini (KBB) geçememesidir. Ancak Levodopa tek başına verildiğinde, bulantı, kusma ve taşikardi gibi çok şiddetli periferik yan etkiler oluşmakta ve ilacın sadece %1'i beyne ulaşabilmektedir. Bu periferik toksisiteyi engellemek ve Levodopa'nın beyne geçişini maksimize etmek için KESİNLİKLE birlikte (kombine) verilmesi gereken ve KBB'yi geçmeyen 'periferik dekarboksilaz inhibitörü' aşağıdakilerden hangisidir?",
+    "options": [
+      "Entakapon",
+      "Karbidopa",
+      "Selegilin",
+      "Ropinirol",
+      "Amantadin"
+    ],
+    "correct": 1,
+    "exp": "Levodopa, beyne girdikten sonra Dopa Dekarboksilaz enzimiyle Dopamine dönüşür ve Parkinsonu tedavi eder. Ancak bu dekarboksilaz enzimi sadece beyinde değil, kan dolaşımında ve GİS'te de çok boldur. Levodopa tek başına yutulursa, daha beyne ulaşamadan kanda/periferde hızla Dopamine çevrilir. Kanda biriken Dopamin; Area Postrema'yı uyararak feci kusma, kalbi uyararak taşikardi yapar ve beyne geçemediği için ziyan olur. 'Karbidopa', kan-beyin bariyerini GEÇEMEYEN bir dekarboksilaz inhibitörüdür. Kanda Levodopa'yı koruyan bir kalkan görevi görür, periferde dopamine dönüşmesini durdurur. Böylece bulantı/taşikardi önlenir ve Levodopa güvenle beyne ulaşarak orada Dopamine dönüşür."
+  },
+  {
+    "id": 776,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 5,
+    "q": "Anksiyete bozukluğu (panik atak) nedeniyle Benzodiazepin (Örn: Diazepam) kullanan bir hasta, aşırı doz alımı sonrası derin bir sedasyon ve solunum depresyonu riski ile acile getiriliyor. Benzodiazepinlerin santral sinir sistemini baskılaması (sedasyon, uyku, antikonvülzan etki); GABA-A reseptör kompleksine bağlanarak, Klor (Cl-) iyon kanallarının açılma paterninde HANGİ spesifik modifikasyonu yapmasının doğrudan sonucudur?",
+    "options": [
+      "Klor kanalının 'açık kalma süresini (duration)' uzatması",
+      "Klor kanalının 'açılma frekansını (sıklığını)' artırması",
+      "Klor kanalını tamamen bloke ederek Sodyum kanallarını açması",
+      "Doğrudan GABA reseptörüne bağlanıp kanalın kendiliğinden açılmasını (GABA olmadan) sağlaması",
+      "Klor iyonlarının hücre dışına çıkışını hızlandırması"
+    ],
+    "correct": 1,
+    "exp": "GABA-A reseptörü, beynin ana fren (inhibitör) pedalıdır. Ortasından eksi yüklü Klor (Cl-) iyonu geçirerek hücreyi hiperpolarize eder (uyutur). Farmakolojinin en klasik ayrımı Benzodiazepinler ile Barbitüratlar arasındadır. İkisi de bu kanalı kullanır ama çalışma şekilleri farklıdır. Benzodiazepinler (Frenkansı artırır - Fre-Benz), kanalın 'AÇILMA SIKLIĞINI (Frekans)' artırırlar; etki edebilmeleri için ortamda kesinlikle doğal GABA'nın bulunması şarttır (Bu yüzden güvenlik marjları geniştir). Barbitüratlar ise kanalın 'AÇIK KALMA SÜRESİNİ (Duration)' uzatırlar; yüksek dozda GABA'ya bile ihtiyaç duymadan kanalı açık kilitlerler (Bu yüzden çok kolay koma ve ölüm yaparlar, güvenlik marjları çok dardır)."
+  },
+  {
+    "id": 777,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "Status epileptikus tedavisinde intravenöz yükleme dozuyla kullanılan ve voltaj kapılı Sodyum (Na+) kanallarının inaktif durumunu uzatarak nöbet yayılımını durduran Fenitoin, çok dar bir terapötik indekse sahiptir. Hastada doz hafifçe artırıldığında bile aniden nistagmus (göz titremesi), ataksi ve koma gelişebilir. Fenitoin'in kanda aniden toksik dozlara fırlamasının (plazma seviyesinin öngörülemez olmasının) ASIL farmakokinetik nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Plazma proteinlerine hiç bağlanmaması",
+      "Karaciğer mikrozomal enzimlerini (CYP450) indüklemesi",
+      "Terapötik doz aralığında (kan seviyesi yükseldiğinde) eliminasyon kinetiğinin Birinci dereceden (First-order) aniden Sıfırıncı dereceye (Zero-order) kayarak enzimlerin doygunluğa ulaşması",
+      "Kan-beyin bariyerini aktif transportla geçmesi",
+      "Mide asidiyle reaksiyona girerek toksik metabolitler oluşturması"
+    ],
+    "correct": 2,
+    "exp": "Fenitoin, farmakokinetiği en tehlikeli ilaçlardan biridir (Klinikte seviye takibi / TDM şarttır). Düşük dozlarda normal ilaçlar gibi Birinci Derece (First-order / konsantrasyona oranlı) atılır. ANCAK, terapötik (tedavi edici) kan seviyesine yaklaştığı anda, onu yıkan karaciğer enzimleri anında DOYAR (Saturasyon). Bu noktadan sonra atılım 'Sıfırıncı Derece Kinetik (Zero-order / Sabit miktar)' rejimine geçer. Enzimler doyduğu için, siz hastaya fazladan sadece 10 mg ilaç bile verseniz, karaciğer onu atamaz ve kan seviyesi roket gibi fırlayarak hastayı zehirler (Nistagmus, ataksi). Kronik yan etkileri ise diş eti hiperplazisi (gingival hiperplazi) ve hirsutizmdir."
+  },
+  {
+    "id": 778,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "Bipolar Bozukluk (Manik-Depresif İllness) nedeniyle yıllardır düzenli olarak Lityum (Li+) kullanan bir hastada, günde 6 litreye varan aşırı su içme (Polidipsi) ve aşırı idrara çıkma (Poliüri) şikayetleri başlıyor. Hastada Lityum toksisitesine bağlı Nefrojenik Diabetes İnsipidus geliştiği saptanıyor. Lityumun böbreklerde bu tabloya yol açmasının hücresel nedeni, böbrek toplayıcı kanallarındaki HANGİ spesifik hormonun hücre içi (cAMP bağımlı) sinyal yolağını bloke etmesidir?",
+    "options": [
+      "Aldosteron",
+      "Antidiüretik Hormon (ADH / Vazopressin)",
+      "Atriyal Natriüretik Peptid (ANP)",
+      "Paratiroid Hormon (PTH)",
+      "Anjiyotensin II"
+    ],
+    "correct": 1,
+    "exp": "Lityum, Bipolar bozuklukta duygu durum düzenleyicisi olarak altındır, ancak Sodyum (Na) iyonunu taklit ettiği için vücutta sodyumun girdiği her yere sızar. Lityumun en sık görülen renal yan etkisi 'Nefrojenik Diabetes İnsipidus'tur. Lityum, böbrek toplayıcı kanallarında ENaC kanallarından hücreye girer. Hücre içinde, vücudun su tutucu hormonu olan 'Antidiüretik Hormonun (ADH / Vazopressin)' çalışmasını sağlayan V2 reseptörü-cAMP yolağını zehirler. Beyin kana bolca ADH salgılasa bile böbrek bunu 'DUYAMAZ' (Direnç/Nefrojenik). Su tutacak olan Akuaporin-2 kanalları zara yerleşemediği için hasta litrelerce suyu idrarla kaybeder (Poliüri). Tedavide Lityum'un hücreye girişini bloke eden Amilorid diüretiği kullanılır."
+  },
+  {
+    "id": 779,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "Şizofreni tedavisi için uzun yıllardır yüksek doz tipik (klasik) antipsikotik bir ajan olan Haloperidol kullanan hastada, ağız çevresinde şapırdatma, dudak yalama, dili dışarı çıkarma ve yüz kaslarında istemsiz, istemsiz kıvrılma hareketleri başlıyor. Tardiv Diskinezi (Geç Diskinezi) adı verilen ve genellikle geri dönüşümsüz olan bu dramatik yan etkinin gelişmesi, bazal ganglionlarda yer alan dopaminerjik reseptörlerde HANGİ hücresel adaptasyonun (değişimin) ortaya çıkmasının doğrudan bir sonucudur?",
+    "options": [
+      "Dopamin D2 reseptörlerinin sürekli blokajı nedeniyle oluşan aşırı duyarlılık ve reseptör sayısında artış (Up-regülasyon / Süpersensitivite)",
+      "Dopamin D1 reseptörlerinin kalıcı olarak bloke edilmesi",
+      "Serotonin 5-HT2A reseptörlerinin yıkılması",
+      "Asetilkolin reseptörlerinin aşırı uyarılmasına bağlı kolinerjik kriz",
+      "Substantia Nigra'daki nöronların apoptozis ile tamamen ölmesi"
+    ],
+    "correct": 0,
+    "exp": "Tipik (Klasik) antipsikotikler (Haloperidol, Klorpromazin vb.), şizofrenideki halüsinasyonları durdurmak için beyindeki Dopamin D2 reseptörlerini sertçe bloke ederler. Ancak bu ilaçlar seçici değildir; beynin hareket merkezi olan bazal ganglionlardaki (Nigrostriatal yolak) D2 reseptörlerini de tıkarlar (Parkinson benzeri bulgular/Ekstrapiramidal yan etkiler yapar). Eğer hasta bu ilacı yıllarca kullanırsa, reseptörleri kapanan bazal ganglion hücreleri duruma isyan eder. 'Dopamin alamıyorum' paniğiyle, yüzeylerindeki D2 reseptör sayısını çılgınca artırırlar ve var olan reseptörleri aşırı hassaslaştırırlar (Up-regülasyon / Süpersensitivite). Artık ortamdaki ufacık bir dopamin bile, bu devasa reseptör ordusunu uyararak yüzde/dilde engellenemeyen o meşhur istemsiz hareket fırtınasını (Tardiv Diskinezi) patlatır. İlacı kesmek durumu genellikle daha da kötüleştirir."
+  },
+  {
+    "id": 780,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 5,
+    "q": "Majör depresyon tanısıyla Selektif Serotonin Gerialım İnhibitörü (SSRI - Örn: Fluoksetin) kullanmakta olan bir hasta, ilacı bırakıp sadece 2 gün sonra eski bir antidepresan grubu olan Monoamin Oksidaz İnhibitörü (MAOİ - Örn: Tranilsipromin) kullanmaya başlıyor. Saatler sonra hastada 41°C ateş, kaslarda şiddetli seyirmeler, klonus, ajitasyon ve hipertansif kriz gelişiyor. Serotonin Sendromu tablosundaki bu ölümcül ilaç etkileşiminin nedeni, sinaptik aralıktaki serotonin birikiminin hangi İKİ zıt mekanizmanın aynı anda çalışması (çakışması) ile kontrol edilemez boyutlara ulaşmasıdır?",
+    "options": [
+      "Serotonin sentezinin durması ve reseptörlerin bloke olması",
+      "Serotoninin presinaptik nörona geri alınmasının engellenmesi (SSRI) VE hücre içinde serotonini parçalayan enzimin durdurulması (MAOİ)",
+      "Serotoninin asetilkolin ile yer değiştirmesi ve vagal uyarı yapması",
+      "Her iki ilacın da post-sinaptik 5-HT2 reseptörlerini doğrudan uyarması",
+      "Karaciğerde serotonini yıkan CYP3A4 enziminin inhibe edilmesi"
+    ],
+    "correct": 1,
+    "exp": "Serotonin Sendromu, beyinde aşırı serotonin birikmesine bağlı otonomik (ateş, terleme), nöromüsküler (klonus, hiperrefleksi) ve mental (ajitasyon) fırtınadır. Fluoksetin (SSRI) gibi ilaçlar, serotoninin sinapstan geri emilmesini (Re-uptake) bloke ederek sinapsta serotonin bırakır. Bu ilaçların kan yarı ömrü çok uzundur (vücuttan atılmaları haftalar sürer). Eğer hasta bu ilacın etkisi geçmeden, üstüne MAOİ (Serotonini yıkan yegane enzim olan Monoamin Oksidazı durduran ilaç) alırsa kıyamet kopar. Hem geri emilemeyen hem de MAO ile yıkılamayan Serotonin, beyni adeta zehirler. Bu yüzden SSRI'dan MAOİ'ye (veya tersi) geçerken en az 2 ila 5 hafta 'Arınma (Wash-out)' süresi bırakılmak zorundadır."
+  },
+  {
+    "id": 781,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "Epilepsi nedeniyle geniş spektrumlu bir antikonvülzan olan Valproik Asit (Sodyum Valproat) kullanan gebe kadının bebeğinde, doğumda nöral tüp defekti (Spina Bifida) saptanıyor. Valproik asidin güçlü bir teratojen olmasına ve embriyolojik gelişimde nöral tüpün kapanmasını (kapanma kusurunu) engellemesine yol açan temel farmakolojik / biyokimyasal yan etkisi aşağıdakilerden hangisidir?",
+    "options": [
+      "K vitamini emilimini bozarak fetal kanamaya neden olması",
+      "Folik Asit (Folat) metabolizmasını (ve muhtemelen histon deasetilaz enzimini) inhibe ederek hücre bölünmesi ve gen ekspresyonunu bozması",
+      "Fetal sodyum kanallarını bloke ederek sinir gelişimini durdurması",
+      "Plasentadan geçerek fetal tiroid bezini yıkması",
+      "Kolesterol sentezini durdurarak nöronal miyelin kılıf oluşumunu engellemesi"
+    ],
+    "correct": 1,
+    "exp": "Valproik Asit, hemen her tür nöbette (absans, jeneralize, miyoklonik) etkili olan mükemmel bir ilaçtır ancak GEBELİKTE KESİNLİKLE KONTRENDİKEDİR (Kategori D/X). Valproatın en korkulan teratojenik etkisi Nöral Tüp Defektleridir (Spina bifida, anensefali). Bunun biyokimyasal nedeni çift koldur: 1) Valproat bir folat antagonistidir, folik asit metabolizmasını bozar (Nöral tüp kapanması folat bağımlıdır). 2) Çok güçlü bir 'Histon Deasetilaz (HDAC)' inhibitörüdür; embriyonik dönemde çok hassas olan gen okunmasını (ekspresyonunu) bozarak organ gelişimine onarılamaz zararlar verir. Gebelerde nöbet için Lamotrijin veya Levetirasetam daha güvenli alternatiflerdir."
+  },
+  {
+    "id": 782,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "Akut migren atağı geçiren 40 yaşındaki hastaya spesifik atak tedavisi için Sumatriptan reçete ediliyor. Hastanın baş ağrısı dakikalar içinde tamamen geçiyor. Triptanların migren krizini mucizevi bir şekilde sonlandırması; kafatası içindeki genişlemiş ve ağrı üreten pial/meningeal kan damarlarını spesifik olarak BÜZMESİNE (vazokonstriksiyon) ve Trigeminal sinirden ağrı peptitlerinin (CGRP) salınımını durdurmasına dayanır. Triptanların bu vazokonstriktör etkiyi sağladığı hedef reseptörler aşağıdakilerden hangisidir?",
+    "options": [
+      "Dopamin D2 reseptörleri",
+      "Alfa-1 adrenerjik reseptörleri",
+      "Serotonin (5-HT) 1B ve 1D reseptörleri",
+      "Histamin H1 reseptörleri",
+      "GABA-A reseptörleri"
+    ],
+    "correct": 2,
+    "exp": "Migren atağının fizyopatolojisinde beyin zarlarındaki (meninkslerdeki) kan damarlarının aşırı genişlemesi (vazodilatasyon) ve Trigeminal sinir ucundan 'CGRP' gibi inflamatuar ağrı peptitlerinin salınması yatar. Triptanlar (Sumatriptan vb.), spesifik olarak 'Serotonin (5-HT) 1B ve 1D' reseptörlerinin Agonistleridir. 5-HT 1B reseptörü kan damarlarında bulunur, uyarılınca o genişlemiş damarları büzerek normale döndürür. 5-HT 1D ise Trigeminal sinir ucundadır, uyarılınca ağrı peptitlerinin salınımını anında keser. ANCAK, bu ilaçlar vazokonstriktör (damar büzücü) oldukları için, Koroner Arter Hastalığı (Kalp krizi) veya inme riski olan hastalarda KULLANILAMAZLAR (Kalp damarlarını da büzüp krize neden olabilirler)."
+  },
+  {
+    "id": 783,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "Diş çekimi yapılacak olan hastanın alt çenesinde şiddetli ve cerahatli (pürülan) bir apse mevcuttur. Hekim, diş çevresine lokal anestezik madde (Lidokain) enjekte etmesine rağmen, hastanın ağrısı geçmiyor ve doku tam uyuşmuyor. Lokal anesteziklerin enfekte (iltihaplı) dokularda etkisini kaybetmesinin (işe yaramamasının) farmakolojik/kimyasal nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Enfeksiyonun lokal kan akımını artırarak ilacı bölgeden hızla uzaklaştırması",
+      "Bakterilerin ürettiği enzimlerin lokal anesteziği anında parçalaması",
+      "İltihaplı dokunun 'ASİDİK (Düşük pH)' olması nedeniyle, zayıf baz yapısındaki ilacın iyonize (yüklü) hale geçerek sinir zarına nüfuz edememesi",
+      "Apsenin sinir lifleri etrafında kalın bir fibröz kapsül oluşturması",
+      "Lokal anesteziklerin apse varlığında kalsiyum kanallarına bağlanması"
+    ],
+    "correct": 2,
+    "exp": "Lokal anesteziklerin (Lidokain, Bupivakain) siniri uyuşturabilmesi için, sinir zarını (lipit tabakayı) aşıp İÇERİ GİRMESİ ve sodyum kanalını 'İÇERİDEN' tıkaması gerekir. Bunu yapabilmeleri için zardan geçerken Non-iyonize (Yüksüz/Lipofilik) formda olmaları şarttır. Bütün lokal anestezikler 'Zayıf Baz'dır. Enfekte/iltihaplı bir apse dokusunun ortamı ise laktik asit birikiminden dolayı 'Çok ASİDİK'tir (pH çok düşüktür). Asidik ortama giren zayıf baz yapılı ilaç, anında hidrojenleri üstüne çeker ve 'İyonize (Yüklü)' hale gelir. Yüklü hale gelen ilaç yağlı sinir zarını geçemez, sinirin dışında hapsolur ve uyuşma sağlanamaz. Çözüm, o bölgeye lokal anestezikle birlikte sodyum bikarbonat (baz) enjekte etmektir."
+  },
+  {
+    "id": 784,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "Sekiz yaşında kız çocuğu, okulda dersteyken aniden donakalma, boş bakma ve 10-15 saniye sonra hiçbir şey hatırlamadan derse devam etme (Dalma / Absans Nöbeti) ataklarıyla getiriliyor. EEG'de klasik 3 Hz diken-dalga deşarjı saptanıyor. Absans epilepsisinin yegane ilk tercih ilacı olan ve Talamustaki 'T-Tipi (Geçici) Kalsiyum (Ca+2)' kanallarını bloke ederek nöbet kaskadını kıran spesifik antiepileptik ilaç aşağıdakilerden hangisidir?",
+    "options": [
+      "Karbamazepin",
+      "Fenobarbital",
+      "Levetirasetam",
+      "Etosüksimid",
+      "Gabapentin"
+    ],
+    "correct": 3,
+    "exp": "Epilepside nöbet türüne göre ilaç seçimi altın kuraldır. Absans (Dalma / Petit Mal) nöbetleri, çocuklarda saniyeler süren bilincin kopmasıdır. Bu nöbetlerin kaynağı beynin röle merkezi olan 'Talamus'taki T-Tipi (Transient) Kalsiyum kanallarının ritmik olarak anormal çalışmasıdır. 'Etosüksimid', sadece ve sadece bu T-Tipi Kalsiyum kanallarını bloke etmek üzere yaratılmış, çok spesifik bir ilaçtır (Absans dışında hiçbir nöbette işe yaramaz). Alternatif olarak hem sodyum hem T-tipi kalsiyum kanallarını bloke eden geniş spektrumlu 'Valproik Asit' de absans tedavisinde kullanılabilir. (Karbamazepin ve Fenitoin gibi sodyum kanal blokörleri absans nöbetini DAHA DA KÖTÜLEŞTİRİR)."
+  },
+  {
+    "id": 785,
+    "ders": "Farmakoloji",
+    "konu": "Otokoidler ve NSAİİ",
+    "diff": 4,
+    "q": "Kalp krizi profilaksisi için düşük doz (100 mg) Aspirin (Asetilsalisilik Asit) kullanan bir hastanın kanı laboratuvarda incelendiğinde, trombositlerin birbirine yapışma (agregasyon) yeteneğinin tamamen kaybolduğu ve bu etkinin ilacı bıraktıktan sonra bile 7-10 gün boyunca geri dönmediği saptanıyor. Aspirin'in diğer tüm NSAİİ'lerden (İbuprofen, Naproksen vb.) FARKLI OLARAK trombositleri ilacın yarı ömründen bağımsız olarak ömür boyu (irreversibl) felç etmesinin kimyasal/enzimatik mekanizması aşağıdakilerden hangisidir?",
+    "options": [
+      "Siklooksijenaz (COX) enziminin aktif bölgesindeki 'Serin' aminoasidine bir asetil grubu takarak enzimi geri dönüşümsüz olarak kovalent bağla (asetilasyon) kilitlemesi",
+      "Trombosit hücre zarındaki Glikoprotein IIb/IIIa reseptörlerini doğrudan parçalaması",
+      "Trombosit içindeki kalsiyum depolarını kalıcı olarak boşaltması",
+      "Fosfolipaz A2 enzimini bloke ederek araşidonik asit sentezini tamamen durdurması",
+      "Tromboksan sentaz enziminin gen ekspresyonunu kalıcı olarak susturması"
+    ],
+    "correct": 0,
+    "exp": "Aspirin, Non-Steroid Anti-İnflamatuar İlaçlar (NSAİİ) ailesinin babasıdır. Diğer tüm NSAİİ'ler (İbuprofen vb.) Siklooksijenaz (COX) enzimini 'Yarışmalı ve Geri Dönüşümlü (Reversibl)' olarak tutarken; ASPİRİN, enzimin katalitik merkezindeki Serin kalıntısına kendi üzerindeki Asetil grubunu takar (Asetilasyon). Bu bir kovalent (geri dönüşümsüz) bağdır, enzim tamamen ölür. Trombositler çekirdeksiz (DNA'sız) hücreler oldukları için yeni enzim (protein) ÜRETEMEZLER. Bu nedenle, aspirinin kanda kalma süresi (yarı ömrü) 15 dakika olsa bile, etkilenen o trombosit 7-10 günlük ömrü bitip ölene kadar felçli kalır. Günde 100 mg gibi minik bir doz, kanı sulandırmak (Tromboksan A2'yi durdurmak) için bu yüzden yeterlidir."
+  },
+  {
+    "id": 786,
+    "ders": "Farmakoloji",
+    "konu": "Otokoidler ve NSAİİ",
+    "diff": 4,
+    "q": "Ağır mide ülseri öyküsü olan 60 yaşındaki Romatoid Artrit hastasına, midesini korumak (GİS yan etkilerinden kaçınmak) amacıyla sadece inflamasyon bölgesinde çalışan spesifik bir 'Seçici COX-2 İnhibitörü' (Örn: Selekoksib) reçete ediliyor. Hastanın mide şikayetleri olmuyor ancak aylar sonra hasta aniden Kalp Krizi (Miyokard Enfarktüsü) geçirerek vefat ediyor. Seçici COX-2 inhibitörlerinin kardiyovasküler olay (Tromboz/MI) riskini dramatik şekilde ARTIRMASININ patofizyolojik nedeni, kan damarlarındaki hangi koruyucu molekülün üretimini durdururken trombositlerdeki pıhtılaştırıcı güce (TXA2) dokunmamalarıdır?",
+    "options": [
+      "Bradikinin",
+      "Nitrik Oksit (NO)",
+      "Prostasiklin (Prostaglandin I2 - PGI2)",
+      "Lökotrien B4 (LTB4)",
+      "Tromboksan B2"
+    ],
+    "correct": 2,
+    "exp": "Seçici COX-2 inhibitörleri (Koksibler), 'Sadece ağrıyı/iltihabı keselim, midedeki iyi kalpli COX-1'e dokunmayalım da ülser olmasın' mantığıyla üretilmiştir (Mide için mükemmeldirler). ANCAK ölümcül bir kusurları vardır. Kan damarlarının iç yüzeyi (endotel) COX-2 enzimi aracılığıyla 'Prostasiklin (PGI2)' üretir. PGI2 damarları genişletir ve pıhtılaşmayı ENGELLER. Kanda pıhtılaşmayı sağlayan Tromboksan A2 (TXA2) ise trombositlerde SADECE COX-1 üzerinden üretilir. Siz bir hastaya seçici COX-2 blokörü verirseniz; damardaki koruyucu PGI2 üretimi (COX-2) durur, fakat trombositteki pıhtı yapıcı TXA2 (COX-1) tıkır tıkır çalışmaya devam eder. Denge pıhtılaşma (tromboz) lehine korkunç bir şekilde bozulur ve hasta kalp krizi / inme geçirir."
+  },
+  {
+    "id": 787,
+    "ders": "Farmakoloji",
+    "konu": "Otokoidler ve NSAİİ",
+    "diff": 4,
+    "q": "Yirmi yaşında genç kız, intihar amacıyla yüksek doz Parasetamol (Asetaminofen) yutuyor. Acil serviste bilinci bulanık ve karaciğer enzimleri (AST/ALT) binli rakamlara fırlamış (Akut Karaciğer Yetmezliği) olarak değerlendiriliyor. Parasetamolün normalde zararsız olan yıkım yolağının yüksek dozda doygunluğa ulaşmasıyla (CYP2E1 yolağına kaymasıyla) ortaya çıkan ölümcül ve toksik ara metabolit (NAPQI), karaciğerdeki HANGİ doğal antioksidan deponun tükenmesi sonucu hücreleri patlatarak masif karaciğer nekrozuna neden olur?",
+    "options": [
+      "Süperoksit Dismutaz",
+      "Glutatyon (GSH)",
+      "Katalaz",
+      "N-Asetilsistein",
+      "Askorbik Asit (C vitamini)"
+    ],
+    "correct": 1,
+    "exp": "Parasetamol (Asetaminofen), düşük dozlarda karaciğerde (glukuronidasyonla) güvenle atılır. Doz aşımında bu yol doyar ve ilaç Sitokrom P450 (CYP2E1) yolağına girer. Bu yolda çok tehlikeli, zehirli bir ara madde olan 'NAPQI (N-Asetil-p-benzokinon imin)' üretilir. Sağlıklı bir karaciğer, elindeki 'GLUTATYON' deposunu kullanarak bu NAPQI'yi anında bağlar ve zararsızlaştırır. Ancak intihar dozunda o kadar çok NAPQI üretilir ki, karaciğerin Glutatyon depoları sıfırlanır (tükenir). Boşta kalan serbest NAPQI, hepatosit proteinlerine ve nükleik asitlerine yapışarak hücreyi parçalar (Fulminan hepatit). Hayat kurtarıcı antidot olarak hastaya 'N-Asetilsistein (NAC)' verilir; NAC karaciğerin glutatyon depolarını tekrar doldurarak NAPQI'yi temizler."
+  },
+  {
+    "id": 788,
+    "ders": "Farmakoloji",
+    "konu": "Otokoidler ve NSAİİ",
+    "diff": 4,
+    "q": "Akut Gut Krizi ile başvuran hastanın ayak başparmağında (podagra) kızarıklık, şişlik ve şiddetli ağrı mevcuttur. Hastaya atak tedavisi için spesifik bir ilaç olan 'Kolşisin' reçete ediliyor. Kolşisin, ağrıyı kesmesine rağmen ürik asit seviyesini düşürmez. Bu ilacın gut atağını dramatik şekilde sonlandırması; olay yerine gelen lökositlerin (nötrofillerin) iskelet proteinlerine bağlanarak hücrenin fagositoz ve hareket (göç) yeteneğini felç etmesine dayanır. Kolşisinin bağlandığı ve polimerizasyonunu durdurduğu bu hücre iskeleti proteini aşağıdakilerden hangisidir?",
+    "options": [
+      "Aktin",
+      "Miyozin",
+      "Tübülin (Mikrotübül dimerleri)",
+      "Vimentin",
+      "Kollajen"
+    ],
+    "correct": 2,
+    "exp": "Gut krizindeki asıl ağrı nedeni, ekleme çöken ürik asit kristallerinin (iğne gibi) kendisi değil, onları yemeye gelen Nötrofillerin yarattığı devasa inflamasyondur. 'Kolşisin'in yaptığı iş çok spesifiktir: Hücre bölünmesinde ve hareketinde görevli olan hücre iskeleti elemanı 'Mikrotübül'lerin yapıtaşı olan 'Tübülin' dimerlerine sıkıca bağlanır. Mikrotübüllerin uzamasını (polimerizasyonunu) durdurur. İskeleti felç olan nötrofiller eklem boşluğuna gidemez (kemotaksis durur) ve kristalleri yutamazlar (fagositoz biter). Savaş bitince ağrı ve iltihap kaybolur. Ancak hücre bölünmesini (mitotik iği) de durdurduğu için saç dökülmesi, ishal (GİS hücre yıkımı) ve kemik iliği baskılanması gibi toksik yan etkileri vardır."
+  },
+  {
+    "id": 824,
+    "ders": "Patoloji",
+    "konu": "Hemodinamik Bozukluklar",
+    "diff": 4,
+    "q": "Yirmi beş yaşında, obezitesi veya sigara kullanımı olmayan kadın hasta, uzun bir uçak yolculuğu sonrası sol bacağında şişlik ve ağrı (Derin Ven Trombozu - DVT) şikayetiyle acile başvuruyor. Hastanın özgeçmişinde daha önce de açıklanamayan bir pulmoner emboli atağı olduğu öğreniliyor. Genetik incelemede beyaz ırkta en sık görülen kalıtsal trombofili saptanıyor. Bu hastada pıhtılaşma kaskadının kendi kendini frenleyememesine ve tromboza yatkınlığa neden olan asıl moleküler direnç, hangi spesifik antikoagülan enzimin hedef proteinini (Faktör V) kesememesinden kaynaklanmaktadır?",
+    "options": [
+      "Antitrombin III",
+      "Plazmin",
+      "Aktif Protein C (APC)",
+      "Doku Faktörü Yolağı İnhibitörü (TFPI)",
+      "Prostasiklin (PGI2)"
+    ],
+    "correct": 2,
+    "exp": "Açıklanamayan ve tekrarlayan DVT/Emboli atakları olan genç hastalarda kalıtsal trombofililer akla gelmelidir. Bunların en sık görüleni 'Faktör V Leiden' mutasyonudur. Normal (sağlıklı) bir pıhtılaşma sürecinde, pıhtı yeterli büyüklüğe ulaştığında vücudun doğal kan sulandırıcısı olan 'Aktif Protein C (APC)', gidip Faktör V ve Faktör VIII'i keserek (inaktive ederek) pıhtılaşmayı durdurur. Ancak Faktör V Leiden mutasyonunda, Faktör V molekülünün şekli değiştiği için APC onu kesemez. Buna 'Aktif Protein C Rezistansı (Direnci)' denir. Freni patlayan pıhtılaşma sistemi sürekli tromboz üretir."
+  },
+  {
+    "id": 825,
+    "ders": "Patoloji",
+    "konu": "Hemodinamik Bozukluklar",
+    "diff": 4,
+    "q": "Altmış beş yaşında, uzun yıllardır şiddetli KOAH ve sekonder Kor Pulmonale (Sağ Kalp Yetmezliği) öyküsü olan hastanın karaciğer biyopsisinde, makroskobik olarak 'Hindistan Cevizi (Nutmeg)' manzarası saptanıyor. Mikroskobik incelemede karaciğer lobüllerinin merkezindeki hepatositlerin nekroza uğradığı, portal alan çevresindeki hepatositlerin ise nispeten korunduğu (yağlandığı) görülüyor. Bu hastada karaciğerin sadece 'sentrilobüler (merkezi)' bölgesindeki hücrelerin ölümüne yol açan patofizyolojik mekanizma aşağıdakilerden hangisidir?",
+    "options": [
+      "Portal ven trombozuna bağlı karaciğere giren kan akımının tamamen kesilmesi",
+      "Sağ kalp yetmezliğine bağlı artan santral venöz basıncın, karaciğer lobülünün tam ortasındaki (Zon 3) venüllerde şiddetli konjesyon ve hipoksi yaratması",
+      "Karaciğer safra yollarının tıkanmasıyla biriken safra asitlerinin toksik etkisi",
+      "Kupffer hücrelerinin aşırı TNF-alfa salgılayarak merkezi hücreleri apoptoza sürüklemesi",
+      "Hepatik arterdeki aterosklerotik daralmaya bağlı iskemi"
+    ],
+    "correct": 1,
+    "exp": "Kronik sağ kalp yetmezliğinde, kalbe dönemeyen kan geriye doğru (karaciğer ve bacaklara) birikir. Karaciğerde kanın biriktiği (göllendiği) bu duruma 'Kronik Pasif Konjesyon' denir. Karaciğer lobülünün kanlanması dıştan (portal alandan) içe (santral vene) doğrudur. En içteki bölge (Zon 3 / Sentrilobüler alan) oksijeni en son ve en az alan yerdir. Sağ kalpten geriye tepen yüksek venöz basınç, santral veni ve etrafındaki sinüzoidleri kanla şişirir. Zon 3 hepatositleri hem artan basınçla ezilir hem de zaten az olan oksijenleri tamamen tükendiği için (hipoksi) nekroza uğrar ve kanar. Dıştaki hücreler ise oksijeni ilk aldıkları için ölmez ama yağlanırlar. Bu kırmızı (kanamalı merkez) ve sarı (yağlı çevre) görünüm 'Hindistan cevizi (Nutmeg) karaciğeri' olarak adlandırılır."
+  },
+  {
+    "id": 826,
+    "ders": "Patoloji",
+    "konu": "Hemodinamik Bozukluklar",
+    "diff": 5,
+    "q": "Yoğun bakımda Gram-negatif bakteri sepsisi nedeniyle takip edilen hastada aniden her yerinden (damar yolları, diş etleri) kanama başlıyor ve laboratuvarda D-Dimer yüksekliği, Trombosit düşüklüğü, Fibrinojen düşüklüğü (DIC tablosu) saptanıyor. Bakteriyel endotoksinlerin (LPS) kanda başlattığı bu Yaygın Damar İçi Pıhtılaşma (DIC) kaskadında, endotel hücrelerinin aktive olarak kan dolaşımına salgıladığı ve 'Ekstrinsik Pıhtılaşma Yolağını' devasa boyutlarda ateşleyen anahtar prokoagülan molekül aşağıdakilerden hangisidir?",
+    "options": [
+      "Faktör XII (Hageman Faktörü)",
+      "von Willebrand Faktör (vWF)",
+      "Doku Faktörü (Tissue Factor / Tromboplastin)",
+      "Tromboksan A2",
+      "Plazminojen Aktivatör İnhibitörü (PAI-1)"
+    ],
+    "correct": 2,
+    "exp": "Yaygın Damar İçi Pıhtılaşma (DIC), vücuttaki tüm pıhtılaşma faktörlerinin ve trombositlerin mikroskobik pıhtılar yapılarak tüketilmesi, ardından da hastanın kanayarak ölmesi tablosudur. Sepsiste DIC'i başlatan en büyük tetikleyici, endotoksinler (LPS) ve makrofajlardan salınan TNF/IL-1 fırtınasıdır. Bu sitokinler, normalde kanın pıhtılaşmasını engelleyen endotel hücrelerini çıldırtır. Endotel hücreleri yüzeylerine devasa miktarda 'Doku Faktörü (Tissue Factor - Faktör III)' çıkarırlar. Doku Faktörü, Faktör VII ile birleşerek Ekstrinsik pıhtılaşma yolağını durdurulamaz bir şekilde ateşler ve kanda milyarlarca mikro-pıhtı (trombin) oluşur."
+  },
+  {
+    "id": 827,
+    "ders": "Patoloji",
+    "konu": "Hemodinamik Bozukluklar",
+    "diff": 4,
+    "q": "Trafik kazasında her iki uyluk kemiği (femur) kırılan 20 yaşındaki erkek hasta, kazadan iki gün sonra aniden gelişen nefes darlığı, bilinç bulanıklığı ve boyun/göğüs üst kısmında peteşiyel (noktasal) döküntülerle komaya giriyor. Yağ Embolisi Sendromu tanısı alan bu hastada, bu spesifik peteşiyel döküntülerin ortaya çıkmasına neden olan hücresel olaylar dizisi aşağıdakilerden hangisinde en doğru şekilde tanımlanmıştır?",
+    "options": [
+      "Kırık kemiklerden sızan kemik iliği kök hücrelerinin doğrudan cilt altı kapillerleri yırtması",
+      "Kan dolaşımına karışan yağ globüllerinin cilt kılcallarını tıkaması, endoteli zedelemesi ve bu bölgelere hücum eden trombositlerin hızla tükenerek lokal kanamalara (trombositopenik peteşilere) yol açması",
+      "Yağ asitlerinin mast hücrelerini doğrudan patlatarak histamin aracılı alerjik purpura yaratması",
+      "Aşırı yağ asidi yükünün karaciğerde pıhtılaşma faktörü sentezini anında durdurması",
+      "Yağ globüllerinin kalsiyumu bağlayarak pıhtılaşma kaskadını (Faktör IV eksikliği) durdurması"
+    ],
+    "correct": 1,
+    "exp": "Yağ Embolisi Sendromu'nun klasik triadı; Hipoksemi (akciğer), Nörolojik bulgular (beyin) ve Peteşiyel Döküntüdür (cilt). Uzun kemik kırıklarından kana karışan kemik iliği yağ globülleri, akciğer, beyin ve ciltteki küçük kılcal damarlara (kapillerlere) sıkışır. Tıkalı bölgedeki yağ globülleri hem damar duvarını zedeler (toksik etki) hem de etraflarına trombositleri çekerler. Milyonlarca kılcal damarda aynı anda oluşan bu mikro-tıkaçlar yüzünden kandaki trombositler aniden tükenir (Lokalize DIC / Trombositopeni). Trombosit kalmadığı için de ciltteki zedelenmiş kılcallardan dışarı kan sızar (Peteşi)."
+  },
+  {
+    "id": 828,
+    "ders": "Patoloji",
+    "konu": "Neoplazi",
+    "diff": 4,
+    "q": "Boyun lenf bezi biyopsisinde Foliküler Lenfoma saptanan hastanın tümör dokusunda t(14;18) kromozomal translokasyonu tespit ediliyor. Bu mutasyon sonucu aşırı miktarda sentezlenen BCL-2 proteini, tümör hücrelerini apoptozdan koruyarak onları ölümsüzleştirmektedir. BCL-2 proteininin, hücrenin intihar etmesini (apoptoza gitmesini) engellemek için doğrudan BASTIRDIĞI (kanal açmasını engellediği) iki pro-apoptotik protein aşağıdakilerden hangisidir?",
+    "options": [
+      "p53 ve p21",
+      "BAX ve BAK",
+      "Kaspaz-8 ve FADD",
+      "Siklin D ve CDK4",
+      "Sitokrom C ve Apaf-1"
+    ],
+    "correct": 1,
+    "exp": "Apoptozun (hücre intiharının) intrinsik (mitokondriyal) yolağında, hücrenin yaşayıp öleceğine karar veren iki zıt güç vardır: İyiler (Anti-apoptotikler: BCL-2, BCL-XL) ve Kötüler (Pro-apoptotikler: BAX, BAK). Hücre hasar gördüğünde BAX ve BAK birleşerek mitokondri zarında delikler açar ve ölümcül Sitokrom C'yi sitoplazmaya sızdırır. BCL-2'nin yegane görevi ise BAX ve BAK'ı sıkıca tutarak bu delikleri açmalarını ENGELLEMEKTİR. Foliküler lenfomada BCL-2 genetik olarak o kadar çok üretilir ki, BAX ve BAK tamamen felç olur. Mitokondri asla delinemez, hücre hasarlı olsa bile asla ölemez ve kanserleşir."
+  },
+  {
+    "id": 829,
+    "ders": "Patoloji",
+    "konu": "Neoplazi",
+    "diff": 4,
+    "q": "Gelişmiş bir kanser hücresinin (Örn: Kolon adenokarsinomu), orijinal bulunduğu epitel dokusundan koparak altındaki bazal membranı eritmesi ve kan damarlarına doğru göç etmesi (İnvazyon Kaskadı) gerekir. Bu sürecin ilk adımında, kanser hücrelerinin birbirleriyle olan sıkı bağlantılarını (adhezyonu) kopararak serbest kalmalarını sağlayan asıl patolojik olay, aşağıdakilerden hangisinin genetik olarak susturulmasıdır (down-regülasyonu)?",
+    "options": [
+      "E-Kaderin (CDH1) proteini",
+      "Matriks Metalloproteinaz (MMP) enzimleri",
+      "Fibronektin reseptörleri",
+      "Vasküler Endotelyal Büyüme Faktörü (VEGF)",
+      "P-Glikoprotein pompası"
+    ],
+    "correct": 0,
+    "exp": "Bir tümörün metastaz (invazyon) yapabilmesi için 4 temel adımı aşması gerekir: 1) Birbirinden kopma, 2) Ekstraselüler matriksi parçalama, 3) Yeni matrikse tutunma, 4) Göç etme (Lokomosyon). Bir grup tümör hücresinin birbirinden ayrılıp bağımsız hareket edebilmesi için, onları yan yana sımsıkı tutan hücresel tutkalın yok olması gerekir. Bu tutkal 'E-Kaderin' proteinidir. Kanser hücreleri metastaz yapmaya karar verdiklerinde, E-Kaderin üretimini sustururlar. Birbirinden kopan hücreler daha sonra MMP (Metalloproteinaz) salgılayarak bazal membranı deler ve kana karışırlar."
+  },
+  {
+    "id": 830,
+    "ders": "Patoloji",
+    "konu": "Neoplazi",
+    "diff": 5,
+    "q": "Oksijenin bol olduğu aerobik ortamlarda bile, kanser hücrelerinin enerji üretmek için oksidatif fosforilasyon (mitokondri) yerine ağırlıklı olarak verimsiz 'Glikoliz' yolağını kullanmasına 'Warburg Etkisi (Aerobik Glikoliz)' denir. Tümör hücrelerinin 36 ATP yerine sadece 2 ATP üreten bu verimsiz yolu ısrarla seçmelerinin (ve PET taramalarında parlamalarının) kanser hücresine sağladığı ASIL hayati/metabolik avantaj aşağıdakilerden hangisidir?",
+    "options": [
+      "Mitokondriyal apoptozis yolağının kapatılması",
+      "Laktik asit birikiminin bağışıklık hücrelerini (T lenfositlerini) tümörden uzak tutması",
+      "Glikoliz ara ürünlerinin (metabolitlerin), hızla bölünen kanser hücresi için gerekli olan yeni DNA, RNA, protein ve lipid sentezinde yapıtaşı (karbon iskeleti) olarak kullanılması",
+      "Hücre içi pH'ın düşürülerek invazyon enzimlerinin (MMP) aktive edilmesi",
+      "Oksijen radikallerinin (ROS) üretiminin sıfırlanması"
+    ],
+    "correct": 2,
+    "exp": "Warburg Etkisi, onkolojinin en büyük paradokslarından biridir. Neden bir kanser hücresi oksijen varken 36 ATP üretmek yerine glikolizle 2 ATP üretmekle yetinir? Çünkü kanser hücresinin derdi sadece 'enerji (ATP)' değildir; onun derdi hızla yeni hücreler (yavru kanserler) üretmektir. Yeni hücre yapmak için nükleotid (DNA/RNA), aminoasit ve lipide devasa bir ihtiyaç vardır. Kanser hücresi, glikoz moleküllerini mitokondride sonuna kadar yakıp CO2'ye çevirmek yerine, glikoliz yolağının ortasında durdurur ve bu ara karbon moleküllerini alıp doğrudan yapıtaşı (biyokütle) sentezlemekte kullanır. Tıpkı bir ağacı yakıp ısınmak yerine, o ağaçtan mobilya yapmak gibidir. Bu yüzden kanser hücreleri devasa miktarda glikoz emer (PET taramalarında bu yüzden parlarlar)."
+  },
+  {
+    "id": 831,
+    "ders": "Patoloji",
+    "konu": "Neoplazi",
+    "diff": 4,
+    "q": "Ailesinde genç yaşta meme, sarkom, beyin ve adrenal korteks kanserleri öyküsü olan 25 yaşındaki hastaya Li-Fraumeni Sendromu tanısı konuyor. Genetik testte p53 (TP53) tümör süpresör geninin bir alelinde kalıtsal mutasyon saptanıyor. Sağlıklı bir hücrede DNA hasarı oluştuğunda, p53 proteini aktive olarak hücre döngüsünü G1 evresinde durdurur ve tamir için zaman kazandırır. p53'ün hücre döngüsünü durdurmak için transkripsiyonunu (üretimini) doğrudan tetiklediği spesifik 'Siklin-Bağımlı Kinaz İnhibitörü (CDKI)' aşağıdakilerden hangisidir?",
+    "options": [
+      "Retinoblastom (Rb) proteini",
+      "p21 (CDKN1A)",
+      "p16 (INK4a)",
+      "Siklin D1",
+      "c-MYC"
+    ],
+    "correct": 1,
+    "exp": "Genomun koruyucusu p53, DNA'da bir kırık algıladığında derhal uyanır. Hücrenin bu bozuk DNA ile bölünmesini engellemek için acil freni çeker. Bu freni bizzat kendi yapmaz; çekirdekte 'p21 (CDKN1A)' geninin üretim emrini verir. Üretilen p21 proteini, hücre bölünmesinin motoru olan Siklin-CDK komplekslerine (Örn: Siklin D/CDK4) yapışarak onları kilitler. Motor durunca hücre G1 evresinde donup kalır (G1/S arresti). Tamir başarılı olursa p53 döngüyü açar, hasar çok büyükse BAX genini aktifleştirerek hücreyi ölüme (apoptoza) yollar. p53 bozuksa (Li-Fraumeni veya sporadik kanserler), bu fren yapılamaz ve hücre bozuk DNA ile çoğalarak kansere dönüşür."
+  },
+  {
+    "id": 832,
+    "ders": "Patoloji",
+    "konu": "Pediatrik Hastalıklar",
+    "diff": 4,
+    "q": "Doğumdan hemen sonra mekonyum ileusu (bağırsak tıkanıklığı) gelişen ve ter testinde klor düzeyi çok yüksek (90 mEq/L) saptanan bir bebekte Kistik Fibrozis tanısı konuyor. Genetik incelemede CFTR geninde klasik ΔF508 mutasyonu tespit ediliyor. Bu spesifik mutasyon tipinde (Sınıf II), klor kanalının epitel hücre zarında çalışmamasının ASIL hücresel nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Hücre zarındaki kanalın ATP'ye bağlanamaması",
+      "Kanal proteininin hatalı katlanması (misfolding) nedeniyle Endoplazmik Retikulum'dan dışarı çıkamaması ve hücre zarına hiç ulaşamadan proteazomlarda yıkılması",
+      "Kanalın sentezlenip zarına ulaşması ancak klor yerine sodyum geçirmesi",
+      "Mutant kanalın lizozomlar tarafından sürekli olarak hücre içine çekilmesi",
+      "Kanalın lümendeki mukus tarafından tıkanması"
+    ],
+    "correct": 1,
+    "exp": "Kistik Fibrozis (KF), CFTR klor kanalı genindeki mutasyonlara bağlıdır ve 6 farklı mutasyon sınıfı vardır. Dünyada EN SIK görülen mutasyon olan 'ΔF508 (Fenilalanin 508 delesyonu)' bir Sınıf II mutasyonudur. Bu mutasyonda hücre kanalı üretir, ancak protein 3 boyutlu şeklini tam olarak alamaz (hatalı katlanır / misfolded). Endoplazmik Retikulumun kalite kontrol sistemi bu hafif bozuk şekli fark eder ve proteinin hücre zarına gitmesine İZİN VERMEZ. Protein ER'de hapsolur ve proteazomlar tarafından parçalanarak çöpe atılır. Yani hücre zarına ulaşan hiçbir kanal yoktur. Kanal olmayınca klor dışarı atılamaz, su da kloru takip edemez ve mukus susuz kalarak balçık gibi koyulaşır (Akciğer enfeksiyonu ve pankreas tıkanıklığı yapar)."
+  },
+  {
+    "id": 833,
+    "ders": "Patoloji",
+    "konu": "Pediatrik Hastalıklar",
+    "diff": 4,
+    "q": "İki yaşında erkek çocuk, karında orta hattı geçen büyük bir kitle, gözlerde istemsiz sıçrayıcı hareketler (opsoklonus-miyoklonus sendromu) ve yüksek idrar VMA (Vanilmandelik asit) düzeyleri ile değerlendiriliyor. Nöroblastom tanısı konan hastanın tümör biyopsisinde Homer-Wright rozetleri saptanıyor. Nöroblastomda tümörün çok agresif seyredeceğini (kötü prognozu) ve kemoterapiye dirençli olacağını gösteren, tümör hücrelerinde 'double minutes' veya 'homojen boyanan bölgeler (HSR)' şeklinde kendini belli eden genetik anomali aşağıdakilerden hangisidir?",
+    "options": [
+      "N-MYC (MYCN) gen amplifikasyonu",
+      "WT1 tümör süpresör gen delesyonu",
+      "ALK gen mutasyonu",
+      "1p kromozom kolu delesyonu",
+      "RB1 gen inaktivasyonu"
+    ],
+    "correct": 0,
+    "exp": "Nöroblastom, çocukluk çağının en sık ekstrakraniyal solid tümörüdür (Adrenal medulla veya sempatik zincir kökenli). Orta hattı geçmesi (Wilms'ten farkı) ve kanda/idrarda katekolamin yıkım ürünleri (VMA/HVA) artışı tipiktir. Bu kanserin evresinden ve hastanın yaşından bile daha önemli olan YEGANE prognostik faktör 'N-MYC (MYCN) onkogen amplifikasyonu'dur. N-MYC geni normalde 2 kopya iken, bu kanserde yüzlerce kez kopyalanır (amplifiye olur). Kopyalanmış bu gen parçaları mikroskopta 'Double minutes (ikili minik noktalar)' veya kromozomda kalın bir bant olan 'HSR (Homogeneously staining regions)' olarak görülür. N-MYC ne kadar çok kopyalanmışsa tümör o kadar ölümcüldür."
+  },
+  {
+    "id": 834,
+    "ders": "Patoloji",
+    "konu": "Pediatrik Hastalıklar",
+    "diff": 4,
+    "q": "Üç yaşında kız çocuk, annesinin banyo yaptırırken karnında tesadüfen fark ettiği ağrısız, orta hattı geçmeyen kitle nedeniyle getiriliyor. Ultrasonografide sol böbrek yerleşimli devasa bir tümör saptanıyor. Wilms Tümörü (Nefroblastoma) tanısıyla çıkarılan böbreğin patolojik incelemesinde; tümörün Blastemal (mavi küçük hücreler), Stromal (iğsi hücreler) ve Epitelyal (ilkel tübül yapıları) olmak üzere 'Trifazik (Üç fazlı)' bir gelişim gösterdiği saptanıyor. Bu tümörün köken aldığı ve embriyolojik hayatta böbreğin fonksiyonel süzme ünitelerini (nefronları) oluşturması gereken İLKEL doku aşağıdakilerden hangisidir?",
+    "options": [
+      "Üreterik tomurcuk (Ureteric bud)",
+      "Metanefrik blastem (Metanephric mesenchyme)",
+      "Mezonefrik (Wolff) kanalı",
+      "Müllerian kanal",
+      "Ürogenital sinüs"
+    ],
+    "correct": 1,
+    "exp": "Wilms Tümörü, çocukluk çağının en sık görülen böbrek kanseridir. Genellikle WT1 veya WT2 gen mutasyonlarıyla ilişkilidir (WAGR veya Beckwith-Wiedemann sendromları). Tümörün o meşhur 'Trifazik' (3 farklı doku tipini aynı anda barındırma) patolojik görüntüsünün sebebi, köken aldığı dokudur. Tümör, embriyolojik böbreği oluşturan 'Metanefrik Blastem' (ilkel böbrek mezenşimi) hücrelerinden köken alır. Normalde bu blastem hücreleri farklılaşarak böbreğin glomerül ve tübüllerini yapmalıdır. Ancak kanserleştiğinde farklılaşması bozulur ve hem ilkel stroma, hem blastem hem de başarısız epitel (tübül) taslakları üreterek o karakteristik 3 fazlı devasa kitleyi oluşturur. (Not: Toplayıcı kanallar ve üreter ise Üreterik Tomurcuktan gelişir)."
+  },
+  {
+    "id": 835,
+    "ders": "Patoloji",
+    "konu": "Pediatrik Hastalıklar",
+    "diff": 4,
+    "q": "Yenidoğan taramasında fenilketonüri (PKU) şüphesiyle tetkik edilen bebekte, kan fenilalanin düzeyleri çok yüksek saptanıyor. Sıkı bir fenilalaninden kısıtlı diyet başlanmasına rağmen, aylar içinde bebekte şiddetli nörolojik gerileme, hipotoni ve ilerleyici mental retardasyon gelişiyor. Diyet tedavisine (Klasik PKU tedavisine) rağmen beyin hasarının durdurulamadığı bu atipik (malign) fenilketonüri vakalarında, fenilalanin hidroksilaz enziminin KENDİSİ sağlam olmasına rağmen çalışmamasını sağlayan asıl kofaktör eksikliği aşağıdakilerden hangisidir?",
+    "options": [
+      "B12 Vitamini (Kobalamin)",
+      "Tetrahidrobiyopterin (BH4)",
+      "Piridoksal Fosfat (B6 Vitamini)",
+      "S-Adenozilmetiyonin (SAM)",
+      "Tetrahidrofolat (THF)"
+    ],
+    "correct": 1,
+    "exp": "Fenilketonüri (PKU), fenilalanin aminoasidinin tirozine çevrilememesi ve kanda birikerek beyin hasarı yapmasıdır. Hastaların %98'inde sorun 'Fenilalanin Hidroksilaz' enziminin doğuştan yokluğudur (Klasik PKU). Tedavisi diyetten fenilalanini çıkarmaktır ve hastalar normal yaşar. Ancak %2'lik atipik (malign) bir grupta, enzim SAĞLAMDIR fakat enzimin motorunu çalıştıran benzin, yani kofaktör olan 'Tetrahidrobiyopterin (BH4)' vücutta sentezlenemez (veya yenilenemez). BH4 sadece fenilalanin yıkımında değil; tirozin, dopamin ve serotonin sentezinde de şarttır. Siz diyetle fenilalanini düşürseniz bile, BH4 olmadığı için beyin dopamin ve serotonin üretemez. Bu nörotransmitter eksikliği nedeniyle diyet yapsalar bile nörolojik yıkım ve ölüm kaçınılmazdır (Tedavide dışarıdan BH4 / Sapropterin ve L-DOPA verilmelidir)."
+  },
+  {
+    "id": 836,
+    "ders": "Patoloji",
+    "konu": "Çevresel ve Enfeksiyoz Hastalıklar",
+    "diff": 4,
+    "q": "Eski binalarda boya sökümü işinde çalışan 40 yaşındaki hasta; son aylarda şiddetli kramp tarzı karın ağrısı (kolik), unutkanlık ve el bileklerinde güçsüzlük (düşük el) şikayetleriyle başvuruyor. Diş etlerinde mavi-siyah bir çizgi saptanıyor. Periferik yaymada eritrositlerde mavi noktalanmalar (Bazofilik Stippling) izleniyor. Kurşun Zehirlenmesi (Plumbizm) tanısı alan bu hastada, kurşunun eritrositlerin içinde RNA birikimine (stippling) ve mikrositer anemiye yol açmasına neden olan, Heme (Hem) sentez yolağındaki spesifik çift enzim inhibisyonu aşağıdakilerden hangisidir?",
+    "options": [
+      "ALA Sentaz ve Uroporfirinojen Dekarboksilaz",
+      "ALA Dehidrataz ve Ferroşelataz",
+      "Heme Oksijenaz ve Biliverdin Redüktaz",
+      "Koproporfirinojen Oksidaz ve Katalaz",
+      "Timidilat Sentaz ve Dihidrofolat Redüktaz"
+    ],
+    "correct": 1,
+    "exp": "Kurşun, vücutta multisistemik bir zehirdir (Beyin, sinir, GİS ve Kan). Kan tablosunda yaptığı şey Hem (Heme) üretimini durdurarak mikrositer bir anemi yaratmaktır. Kurşun bunu, Hem sentez yolağındaki iki enzime sıkıca bağlanarak (bloke ederek) yapar: 1) Sitoplazmadaki 'ALA (Delta-aminolevülinik asit) Dehidrataz', 2) Mitokondride demiri porfirin halkasına takan 'Ferroşelataz'. Ferroşelataz çalışmayınca, demir eritrositin mitokondrisine girer ama kullanılamaz; çekirdek etrafında birikerek 'Ringed Sideroblast (Yüzüklü Sideroblast)' oluşturur. Kurşun aynı zamanda rRNA yıkımını sağlayan enzimleri de bozduğu için, kana çıkan alyuvarların içinde mavi RNA kalıntıları (Bazofilik Stippling) görülür."
+  },
+  {
+    "id": 837,
+    "ders": "Patoloji",
+    "konu": "Çevresel ve Enfeksiyoz Hastalıklar",
+    "diff": 4,
+    "q": "Kronik alkol bağımlısı olan bir hastanın karaciğer biyopsisinde, hepatositlerin neredeyse tamamının devasa tek bir yağ damlacığı (makroveziküler steatoz) ile dolduğu saptanıyor. Alkol tüketiminin karaciğerde bu masif lipid sentezini ve yağ birikimini (Yağlı Karaciğer) tetiklemesinin BİRİNCİL biyokimyasal/metabolik nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Alkolün doğrudan VLDL salgılanmasını bloke etmesi",
+      "Alkol metabolizması (Alkol ve Asetaldehit dehidrogenaz) sırasında aşırı miktarda 'NADH' üretilmesi ve hücrede artan NADH/NAD+ oranının lipid yıkımını durdurup sentezi başlatması",
+      "Alkolün insülin reseptörlerini bozarak glukozun yağa dönüşmesini zorlaması",
+      "Asetaldehitin apolipoproteinlerin yapısını bozarak yağların hücre içinde hapsolması",
+      "Alkolün safra tuzlarını eriterek karaciğerde kolesterol çökmesine neden olması"
+    ],
+    "correct": 1,
+    "exp": "Alkol (Etanol) karaciğerde iki enzimin yardımıyla (Alkol Dehidrogenaz ve Asetaldehit Dehidrogenaz) asetat formuna yıkılır. Ancak bu yıkım bedelsiz değildir. Her iki enzim de çalışırken ko-enzim olarak NAD+ kullanır ve onu 'NADH' molekülüne çevirir. Sürekli alkol alan birinde karaciğerdeki NADH seviyesi roket gibi fırlar (NADH/NAD+ oranı artar). Yüksek NADH, hücre için bir 'tokluk ve enerji fazlası' sinyalidir. Bu sinyali alan karaciğer derhal yağ yıkımını (beta-oksidasyon) DURDURUR ve elindeki tüm karbon kaynaklarını yeni yağ (trigliserid) YAPIMINA yönlendirir. Yapılan bu devasa yağlar karaciğer hücrelerinin içine sığmayacak kadar büyür ve Makroveziküler Steatoz (Alkolik Yağlı Karaciğer) tablosunu yaratır."
+  },
+  {
+    "id": 838,
+    "ders": "Patoloji",
+    "konu": "Çevresel ve Enfeksiyoz Hastalıklar",
+    "diff": 4,
+    "q": "Kışın soba yanan kapalı bir odada bilinci kapalı (koma) bulunan hastanın cildinde siyanöz (morarma) OLMADIĞI, tam tersine dudaklarının ve cildinin 'Kiraz Kırmızısı (Cherry-red)' renginde olduğu gözleniyor. Karbonmonoksit (CO) zehirlenmesine bağlı gelişen bu doku hipoksisinin (oksijensizliğinin) ASIL patofizyolojik nedeni, CO'in sadece hemoglobine yüksek afiniteyle bağlanması değil, AYNI ZAMANDA oksihemoglobin dissosiyasyon eğrisini HANGİ yöne kaydırarak oksijen sunumunu (delivery) felç etmesidir?",
+    "options": [
+      "Eğriyi SAĞA kaydırarak oksijenin dokulara çok hızlı bırakılmasını sağlaması, ancak kanda oksijen kalmaması",
+      "Eğriyi SOLA kaydırarak, hemoglobine tutunan diğer oksijen moleküllerinin dokulara bırakılmasını (salınımını) engellemesi",
+      "Eğriyi aşağı doğru düzleştirerek hemoglobinin kooperatif bağlanma yeteneğini yok etmesi",
+      "Eğrinin Bohr etkisine olan duyarlılığını artırarak asidik ortamda oksijen salınımını durdurması",
+      "Hemoglobindeki demiri +2 (ferröz) halden +3 (ferrik / methemoglobin) haline oksitlemesi"
+    ],
+    "correct": 1,
+    "exp": "Karbonmonoksit (CO) renksiz, kokusuz bir ölüm makinesidir. Hemoglobine oksijenden 200-250 kat daha güçlü bağlanarak Karboksihemoglobin (Kiraz kırmızısı renk) oluşturur. CO'nun toksisitesi ÇİFT VURUŞLUDUR: 1) Oksijenin oturacağı koltukları (Hem bölgelerini) işgal eder, oksijen kapasitesi düşer. 2) Çok daha kötüsü; CO bir koltuğa oturduğunda, aynı hemoglobin molekülündeki diğer 3 koltukta oturan OKSİJEN moleküllerinin hemoglobine ÇOK DAHA SIKI yapışmasına neden olur. Yani oksihemoglobin dissosiyasyon eğrisini 'SOLA KAYDIRIR'. Sola kayan hemoglobin oksijeni bırakmak istemez. Kan dokulara gittiğinde hemoglobin elindeki oksijeni dokulara SERBEST BIRAKAMAZ. Dokular kıpkırmızı kanın içinde oksijensizlikten boğularak ölür."
+  },
+  {
+    "id": 839,
+    "ders": "Patoloji",
+    "konu": "Çevresel ve Enfeksiyoz Hastalıklar",
+    "diff": 4,
+    "q": "Kemik iliği nakli hazırlığı (kondisyonlama) için tüm vücut ışınlaması (Total Body Irradiation - TBI) uygulanan lösemi hastasında, radyasyonun hücreleri öldürücü etkisinin en çok mitotik (bölünen) hücrelerde (kemik iliği, GİS epiteli) ortaya çıktığı görülüyor. Yüksek doz iyonize radyasyonun (Gama ve X ışınları), hücre çekirdeğindeki DNA molekülünü onarılamaz şekilde parçalarken kullandığı EN SIK (dominant) ve dolaylı patolojik mekanizma aşağıdakilerden hangisidir?",
+    "options": [
+      "Radyasyon enerjisinin doğrudan DNA sarmalına çarparak timin dimerleri oluşturması",
+      "Hücre içindeki SU moleküllerini (H2O) iyonize edip parçalayarak (radyoliz), DNA'yı saniyeler içinde paramparça eden devasa bir 'Hidroksil (OH-)' serbest radikali fırtınası başlatması",
+      "Ribozomların yapısını iyonize ederek apoptoz kaskadını doğrudan tetiklemesi",
+      "Mitokondri zarlarını eriterek kalsiyum fırtınasıyla hücreyi nekroza sokması",
+      "P53 proteinini anında denatüre ederek DNA onarımını durdurması"
+    ],
+    "correct": 1,
+    "exp": "İyonize radyasyon (X ve Gama ışınları), canlı dokularda muazzam bir tahribat yapar. Radyasyonun DNA'yı kırma yolları iki tanedir: 1) Direkt (Doğrudan) etki: Işın gelir bizzat DNA zincirine çarpar ve çift zincir kırığı (Double strand break) yapar (Bu daha az sıklıkla olur). 2) İndirekt (Dolaylı) etki: Bu, doku hasarının EN SIK ve asıl nedenidir. Hücrenin %70'i sudur. Radyasyon hücreye girdiğinde bu su (H2O) moleküllerine çarpar ve onları iyonlarına ayırır (Suyun Radyolizi). Ortaya çıkan şey 'Hidroksil (OH-)' serbest radikalidir. İnanılmaz toksik olan bu OH- radikalleri, çekirdeğe saldırıp DNA'yı paramparça ederler. (Not: Timin dimerleri iyonize radyasyonla değil, güneşin UV ışınlarıyla oluşur)."
+  },
+  {
+    "id": 856,
+    "ders": "Patoloji",
+    "konu": "Üriner Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Altı yaşında erkek çocuk, tüm vücudunda yaygın ödem (anazarka) ve idrarda aşırı köpüklenme ile başvuruyor. Laboratuvarda masif proteinüri ve hipoalbüminemi saptanıyor. Böbrek biyopsisinin ışık mikroskobisinde glomerüller tamamen normal görünürken, elektron mikroskobunda podosit ayakçıklarında yaygın silinme (effacement) saptanıyor. Minimal Değişiklik Hastalığı tanısı alan bu çocukta, glomerüler filtrasyon bariyerinden kan hücrelerinin veya büyük proteinlerin değil de SADECE albüminin (seçici proteinüri) kaçmasını sağlayan temel patoloji, T-hücre kaynaklı sitokinlerin bariyerdeki HANGİ spesifik moleküler bileşeni yıkarak elektriksel itme gücünü sıfırlamasıdır?",
+    "options": [
+      "Tip IV Kollajen Alfa-5 zinciri",
+      "Podositlerdeki nefrin proteini",
+      "Glomerüler bazal membrandaki Heparan Sülfat Proteoglikan (Polianyonik yük)",
+      "Kapiller endoteldeki fenestralar",
+      "Parietal epitel hücreleri arasındaki sıkı bağlantılar"
+    ],
+    "correct": 2,
+    "exp": "Minimal Değişiklik Hastalığı (MCD), çocukluk çağının en sık Nefrotik Sendrom nedenidir. Adı üzerinde, ışık mikroskobunda böbrek sapasağlam (minimal/hiç değişiklik yok) görünür. Ancak kanda T lenfositlerin ürettiği anlaşılan bazı sitokinler ('permeabilite faktörleri'), böbreğe giderek podositleri zedeler ve ayakçıkları siler. MCD'nin en büyük özelliği 'Seçici (Selektif)' proteinüri yapmasıdır (Sadece eksi yüklü Albümin idrara kaçar, büyük immünglobulinler kaçmaz). Albüminin (kendisi eksi yüklüdür) normalde idrara geçememesinin sebebi, bazal membranda bulunan ve ona negatif elektrik yükü veren 'Heparan Sülfat Proteoglikan'larıdır. Sitokinler bu heparan sülfatı (eksi yükü) yok edince, albümin hiçbir itici güçle karşılaşmadan idrara akar."
+  },
+  {
+    "id": 857,
+    "ders": "Patoloji",
+    "konu": "Üriner Sistem Hastalıkları",
+    "diff": 5,
+    "q": "Kırk beş yaşında erkek hasta, kanlı balgam (hemoptizi) ve idrarda kanama (hematüri) şikayetiyle acile başvuruyor. Kan kreatinini günler içinde hızla yükselerek (Hızlı İlerleyen Glomerülonefrit / RPGN) hasta diyalize giriyor. Böbrek biyopsisinde glomerüllerin çoğunda Bowman boşluğunu dolduran 'Kresent (Hilal)' yapıları saptanıyor. Bu yıkıcı kresentlerin oluşumu; Bowman kapsülünü döşeyen parietal epitel hücrelerinin ve makrofajların, rüptüre olan (patlayan) kapillerlerden boşluğa sızan HANGİ spesifik plazma proteininin kimyasal uyarısıyla şiddetle çoğalması sonucu başlar?",
+    "options": [
+      "Albumin",
+      "Fibrin (Fibrinojen)",
+      "Tamm-Horsfall Proteini (Uromodulin)",
+      "Kompleman C3b parçası",
+      "İmmünglobulin G (IgG)"
+    ],
+    "correct": 1,
+    "exp": "Hızlı İlerleyen Glomerülonefrit (RPGN / Kresentik GN), haftalar içinde böbrek yetmezliği yapan agresif bir sendromdur (Goodpasture, Wegener vb. neden olabilir). RPGN'nin mikroskobik damgası olan 'Kresent (Hilal)'ler, Bowman boşluğunu (idrarın süzüldüğü alanı) tamamen tıkayan hücre yığınlarıdır. Kapiller yumak o kadar şiddetli iltihaplanır ve yırtılır ki, normalde asla oradan geçmemesi gereken 'Fibrinojen' (ve diğer pıhtı faktörleri) kanla birlikte Bowman boşluğuna sızar. Boşluğa giren fibrinojen 'Fibrin'e dönüşür. Ortamdaki FİBRİN iplikleri, Bowman kapsülünü döşeyen 'Parietal Epitel Hücrelerini' ve kandan gelen 'Makrofajları' çıldırtır. Bu hücreler fibrin etrafında çılgınca çoğalarak yarım ay/hilal şeklinde bir skar dokusu (kresent) oluşturup glomerülü boğarlar."
+  },
+  {
+    "id": 858,
+    "ders": "Patoloji",
+    "konu": "Üriner Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Yirmi yıldır Tip 2 Diabetes Mellitus hastası olan bireyde, mikroalbüminüri ile başlayan böbrek yetmezliği tablosu gelişiyor. Böbrek biyopsisinde glomerüllerin mezangial bölgelerinde aselüler, pembe (PAS pozitif) nodüler skleroz alanları (Kimmelstiel-Wilson nodülleri) izleniyor. Diyabetik nefropatide bu nodüler yıkımı ve mezangial genişlemeyi başlatan hücresel stres ('Glomerüler Hiperfiltrasyon'), damar duvarlarında HANGİ spesifik biyokimyasal atıkların birikmesi sonucu efferent arteriyolün (çıkış damarının) daralmasıyla ortaya çıkar?",
+    "options": [
+      "Amiloid (IAPP) birikimi",
+      "İleri Glikasyon Son Ürünlerinin (AGE) birikimine bağlı hiyalin arteriyoloskleroz",
+      "Oksitlenmiş LDL kolesterol (Aterom plağı) birikimi",
+      "IgA immün kompleks birikimi",
+      "Monoklonal hafif zincir birikimi"
+    ],
+    "correct": 1,
+    "exp": "Diyabetik Nefropatinin erken evresinde böbrek çok idrar süzer (Hiperfiltrasyon). Patofizyolojinin temeli kronik hiperglisemiye dayanır. Yüksek şeker, proteinlere enzimsiz olarak yapışır ve onları 'İleri Glikasyon Son Ürünleri (AGEs)'ne çevirir. AGE'ler damar duvarına yapışır, endoteli zedeler ve plazma proteinlerinin damar duvarına sızarak orayı kalın, pembe, sert bir cama çevirmesine neden olur (Hiyalin Arteriyoloskleroz). Diyabette bu hiyalinleşme EN ÇOK VE EN ERKEN 'Efferent (Çıkış)' arteriyolünü tutar. Çıkış damarı daralıp sertleşince, glomerülün içinde basınç artar (Hiperfiltrasyon/Yüksek tansiyon). Bu basınçlı balon (glomerül), zamanla basınca dayanamaz, mezangial hücreler TGF-beta üretip matriks yığarak kendilerini korumaya çalışır ve ortaya Kimmelstiel-Wilson nodülleri (Nodüler Glomerüloskleroz) çıkar."
+  },
+  {
+    "id": 859,
+    "ders": "Patoloji",
+    "konu": "Üriner Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Elli beş yaşında erkek hasta, sağ böğür ağrısı ve idrarda kanama ile başvuruyor. Görüntülemede sağ böbrek korteksinde çok odaklı (multisentrik) tümöral kitleler saptanıyor. Nefrektomi materyalinin histolojik incelemesinde; tümör hücrelerinin fibrovasküler saplar etrafında 'papiller (parmaksı)' yapılar oluşturduğu, stroma içinde bol miktarda köpüklü (foamy) makrofaj ve kalsifiye 'Psammoma cisimcikleri' barındırdığı saptanıyor. Papiller Renal Hücreli Karsinom tanısı alan bu hastada, tümör hücrelerinin kontrolsüz çoğalmasını sağlayan (ve ailesel formlarda da sık izlenen) onkojenik mutasyon HANGİ reseptör tirozin kinaz geninde gerçekleşmiştir?",
+    "options": [
+      "VHL (von Hippel-Lindau) geni",
+      "MET proto-onkogeni",
+      "RET proto-onkogeni",
+      "FLCN (Folikulin) geni",
+      "WT1 geni"
+    ],
+    "correct": 1,
+    "exp": "Böbreğin Renal Hücreli Karsinomları (RCC) alt tiplere ayrılır. En sık görülen 'Berrak Hücreli (Clear Cell) RCC', lipid/glikojen dolu şeffaf hücrelerden oluşur ve 'VHL' geni mutasyonu ile (%100) ilişkilidir. Ancak sorudaki tümör 'Papiller RCC'dir. Papiller RCC, mikroskopta parmaksı (papiller) yapılar, köpüklü makrofajlar ve psammoma cisimcikleri ile tanınır. Çoğunlukla multifokaldir (böbrekte birçok yerde aynı anda çıkar). Papiller RCC'nin (özellikle Tip 1) genetik imzası, 7. kromozomda bulunan 'MET proto-onkogeni'ndeki aktive edici mutasyonlardır. MET, bir hepatosit büyüme faktörü (HGF) reseptörü (tirozin kinaz) olup, sürekli aktif kalarak hücreyi kanserleştirir."
+  },
+  {
+    "id": 860,
+    "ders": "Patoloji",
+    "konu": "Erkek Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Yirmi beş yaşında erkek hasta, testis boyutlarında büyüme (ağrısız kitle) ve son 1 aydır belirginleşen memelerde büyüme (Jinekomasti), çarpıntı, kilo kaybı, sıcağa tahammülsüzlük (Hipertiroidi) şikayetleriyle başvuruyor. Testis tümörü şüphesiyle yapılan tetkiklerde kanda tümör belirteci olan Beta-hCG (İnsan Koryonik Gonadotropini) seviyesi >200.000 mIU/mL bulunuyor. Koryokarsinom veya mikst germ hücreli tümör düşünülen bu hastada, tümörün tiroid bezini aşırı çalıştırarak 'Hipertiroidi' tablosu yaratması, Beta-hCG hormonunun moleküler olarak HANGİ fizyolojik hormonla aynı alfa alt-birimini paylaşmasına bağlı olarak onun reseptörlerini (çapraz) uyarmasıyla gelişir?",
+    "options": [
+      "Tiroid Uyarıcı Hormon (TSH)",
+      "Tiroksin (T4)",
+      "Luteinleştirici Hormon (LH)",
+      "Adrenokortikotropik Hormon (ACTH)",
+      "Prolaktin"
+    ],
+    "correct": 0,
+    "exp": "Koryokarsinom, sinsityotrofoblast ve sitotrofoblastlardan oluşan, inanılmaz kanamalı/nekrotik ve agresif bir testis (veya over/plasenta) tümörüdür. Devasa miktarda 'Beta-hCG' üretir. hCG, FSH, LH ve TSH hormonları biyokimyasal olarak 'Glikoprotein' ailesindendir. Bu 4 hormonun çok kritik bir özelliği vardır: Hepsinde 'ALFA alt birimi' birebir AYNIDIR (kopya). Onları birbirlerinden ayıran şey 'BETA alt birimi'dir. Koryokarsinomlu hastanın kanında milyonlarca hCG molekülü dolaşırken, bunların alfa kısımları, tiroid bezindeki 'TSH Reseptörlerine' oturarak onları sanki gerçek TSH gelmiş gibi şiddetle uyarır (Çapraz Reaksiyon). Tiroid bezi durmaksızın T3/T4 üretir ve hasta Paraneoplastik Hipertiroidi'ye girer."
+  },
+  {
+    "id": 861,
+    "ders": "Patoloji",
+    "konu": "Erkek Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Altmış beş yaşında erkek hasta, idrar yapmada zorluk (obstrüksiyon) olmaksızın, tesadüfen yapılan kanda PSA (Prostat Spesifik Antijen) yüksekliği ve rektal tuşede prostatın periferik zonunda sert bir nodül saptanması üzerine biyopsi ediliyor. Prostat Adenokarsinomu tanısı alan tümör dokusu patolog tarafından incelenerek prognostik önemi en yüksek olan 'Gleason Skoru (Örn: 4+3=7)' veriliyor. Gleason skorlama sistemi, tümörün biyolojik agresifliğini ve grade'ini belirlerken YEGANE (sadece) hangi morfolojik (hücresel) parametreyi dikkate almaktadır?",
+    "options": [
+      "Tümör hücrelerindeki nükleer atipi ve pleomorfizmin derecesini",
+      "Bezlerin (glandların) doku içindeki yapısal (mimari) dizilimini ve infiltrasyon paternini",
+      "Kromozomal anöploidi ve mitoz sayısını",
+      "Tümörün kapsülü aşıp aşmadığını (Ekstrakapsüler yayılım)",
+      "Prostatik intraepitelyal neoplazi (PIN) varlığını"
+    ],
+    "correct": 1,
+    "exp": "Tüm kanserlerin derecelendirmesi (Grading) genellikle nükleer atipi (hücrenin ne kadar çirkin olduğu) ve mitoz hızına bakılarak yapılır. ANCAK Prostat Kanseri'ndeki 'Gleason Skorlama Sistemi' dünyadaki EN BÜYÜK İSTİSNADIR. Gleason sistemi hücrenin çekirdeğine (nükleer atipiye) veya mitoza HİÇ BAKMAZ. Sadece ve sadece 'Mimarisine (Glandüler Architecture)' bakar. Yani kanser hücreleri düzgün, yuvarlak, birbiriyle kaynaşmayan güzel bezler (glandlar) yapabiliyor mu? Yoksa bez yapmayı unutup doku içine darmadağınık kordonlar/yapraklar halinde mi sızıyor? Düzenli bezler 1 puan (En iyi), bez yapısı tamamen kaybolmuş hücre kitleleri 5 puan (En kötü) alır. En yaygın iki patern toplanarak skor (Örn: 3+4=7) oluşturulur."
+  },
+  {
+    "id": 862,
+    "ders": "Patoloji",
+    "konu": "Erkek Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Otuz beş yaşında erkek hasta, infertilite (kısırlık) şikayetiyle araştırılırken, fizik muayenede sağ testisin skrotumda (kese) olmadığı, kasık kanalında (inguinal kanal) palpe edildiği saptanıyor (Kriptorşidizm). Hastanın serum Testosteron düzeyi normal bulunuyor ancak semen analizinde hiç sperm saptanmıyor (Azoospermi). Testisin vücut içi sıcaklığa (37°C) uzun süre maruz kalmasının yarattığı bu spesifik atrofi sürecinde, ısı stresi nedeniyle apoptoza uğrayarak testisten tamamen SİLİNEN (yok olan) asıl hücre popülasyonu aşağıdakilerden hangisidir?",
+    "options": [
+      "Leydig hücreleri",
+      "Sertoli hücreleri",
+      "Germ hücreleri (Spermatogonyumlar)",
+      "Peritübüler miyoid hücreler",
+      "Tunika albuginea fibroblastları"
+    ],
+    "correct": 2,
+    "exp": "Testislerin skrotuma (torbaya) inmesinin tek bir fizyolojik nedeni vardır: Sperm üretimi (Spermatogenez), vücut ısısından (37°C) yaklaşık 2-3 derece daha soğuk bir ortama (34°C) ihtiyaç duyar. İnmemiş testis (Kriptorşidizm), batın içinde veya kasıkta sıcaklığa maruz kalır. Bu ısı artışı testisteki hücreleri farklı etkiler. Testosteron üreten 'Leydig hücreleri' ve onlara destek olan 'Sertoli hücreleri' ısıya oldukça dirençlidir; bu yüzden hastanın testosteron hormonu NORMAL kalır (sesi kalınlaşır, kasları gelişir). ANCAK sperm üreten kök hücreler olan 'Germ Hücreleri (Spermatogonyumlar)', sıcaklığa dayanamaz ve şiddetli bir apoptozisle tamamen ölürler (Testis atrofisi). Germ hücresi kalmadığı için kısırlık kesindir. Ayrıca bu bozulan (ısı stresi gören) hücreler ileride çok yüksek oranda (%10-40) Testis Kanseri (Seminom) geliştirir."
+  },
+  {
+    "id": 863,
+    "ders": "Patoloji",
+    "konu": "Erkek Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "On altı yaşında erkek çocuk, uykudan uyandıran ani ve çok şiddetli tek taraflı skrotal ağrı ile acile getiriliyor. Muayenede sol testisin yukarı çekildiği ve aşırı hassas olduğu saptanıyor. Doppler ultrasonografide testise giden kan akımının tamamen kesildiği izleniyor (Testis Torsiyonu). 12 saat sonra yapılan ameliyatta testisin kurtarılamayacak kadar nekroza uğradığı görülerek orşiektomi yapılıyor. Çıkarılan testis makroskobik olarak bembeyaz (soluk) değil, koyu mor-siyah renkli ve kanla dolu (Hemorajik/Kırmızı İnfarktüs) olarak izleniyor. Torsiyon infarktüsünün 'soluk' yerine 'kanamalı (kırmızı)' olmasının asıl fiziksel/hemodinamik nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Testisin çift (kollateral) arteriyel kanlanmaya sahip bir organ olması",
+      "Spazmın arteriyollerde vazodilatasyona yol açması",
+      "Testis pedikülü burkulduğunda, kalın duvarlı (basınca dirençli) arterden kan girmeye devam ederken, ince duvarlı venöz sistemin anında tıkanması ve testisin kandan şişip patlaması",
+      "Nekroza uğrayan Leydig hücrelerinden lokal histamin deşarjı olması",
+      "Torsiyonun her zaman reperfüzyon (kendiliğinden açılma) ile sonlanması"
+    ],
+    "correct": 2,
+    "exp": "İnfarktüsler (kanlanma bozukluğuna bağlı doku ölümü) Beyaz/Soluk (Kalp, böbrek) ve Kırmızı/Hemorajik (Akciğer, bağırsak) olarak ikiye ayrılır. Testis Torsiyonu (kordonun kendi etrafında dönmesi/burkulması), kırmızı infarktüsün en klasik 'Venöz Oklüzyon (Tıkanma)' örneğidir. Testisin sapı burkulduğunda, atardamarların (arterlerin) duvarları kalın ve içlerindeki basınç yüksek olduğu için kan testise GİRMEYE devam eder. Ancak toplardamarların (venlerin) duvarları ince ve basıncı düşük olduğu için, burkulmada anında ezilip tıkanırlar (Kan çıkamaz). Testise giren kan içeride hapsolur, testis bir balon gibi şişer, kılcal damarlar basınca dayanamayıp patlar. Sonuçta doku oksijensizlikten ölürken, içi sızan kanla dolduğu için koyu kırmızı/siyah (Hemorajik) bir infarktüs ortaya çıkar."
+  },
+  {
+    "id": 864,
+    "ders": "Patoloji",
+    "konu": "Kadın Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Yetmiş yaşında, zayıf (hiperestrojenemi öyküsü olmayan) ve daha önce hiç çocuk doğurmamış kadın hasta, menopozdan yıllar sonra başlayan vajinal kanama ile başvuruyor. Endometrial biyopside, glandların papiller (parmaksı) çıkıntılar oluşturduğu, hücrelerin ileri derecede atipik (kötü görünümlü) olduğu ve psammoma cisimcikleri içerdiği Seröz Endometrial Karsinom (Tip II) saptanıyor. Tümör hücrelerinde şiddetli p53 mutasyonu izleniyor. Bu agresif kanser tipinin, östrojen fazlalığına bağlı gelişen Endometrial Hiperplazi zemininde DEĞİL, ince/zayıf (atrofik) bir endometrium üzerinde geliştiği bilinmektedir. Bu tümörün mikroskobik olarak doğrudan köken aldığı (fırladığı) prekürsör/in situ lezyon aşağıdakilerden hangisidir?",
+    "options": [
+      "Atipili Kompleks Endometrial Hiperplazi",
+      "Endometrial İntraepitelyal Karsinom (EIC)",
+      "Skuamöz metaplazi",
+      "Adenomiyozis",
+      "Müllerian adenofibrom"
+    ],
+    "correct": 1,
+    "exp": "Endometrium Kanseri (Rahim Kanseri) iki farklı dünyaya ayrılır. Tip 1 (Endometrioid tip): Obez, genç-orta yaş, östrojeni fazla olanlarda görülür. Zemini kalındır (Endometrial Hiperplaziden çıkar), PTEN gen mutasyonu vardır, prognozu iyidir. Tip 2 (Seröz tip - Sorudaki vaka): Yaşlı, zayıf, östrojenle alakası olmayan hastalarda görülür. Tümör, incelmiş/yaprak gibi olmuş (Atrofik) bir endometriumun üzerinde birden bire patlak verir. Bu tümörün öncül (prekürsör) lezyonu hiperplazi DEĞİLDİR; 'Endometrial İntraepitelyal Karsinom (EIC)' adı verilen, yüzey epitelindeki hücresel p53 mutasyonu alanlarıdır. İnanılmaz agresiftir ve intraperitoneal yayılımı çok sever."
+  },
+  {
+    "id": 865,
+    "ders": "Patoloji",
+    "konu": "Kadın Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Servikal smear (Pap-test) taramasında Yüksek Dereceli Skuamöz İntraepitelyal Lezyon (HSIL) saptanan 35 yaşındaki hastanın biyopsisinde, epitelin tam kat atipi gösterdiği (Karsinoma İn Situ) izleniyor. Dokuda Yüksek Riskli HPV-16 DNA'sı saptanıyor. Yüksek riskli HPV virüsleri, uzun yıllar episomal (halkasal/serbest) olarak yaşadıktan sonra insan kromozomlarına entegre olur (birleşir). Bu fiziksel 'entegrasyon' işlemi sırasında, virüsün kendi halkasal DNA'sının parçalanıp açıldığı noktada tesadüfen HANGİ viral genin koparak 'kaybolması (inaktivasyonu)', hücrenin kanserleşme sürecinde E6 ve E7 onkoproteinlerinin frensizce (çılgınca) üretilmesine olanak tanır?",
+    "options": [
+      "L1 (Majör kapsid) geni",
+      "L2 (Minör kapsid) geni",
+      "E2 geni",
+      "E4 geni",
+      "E1 geni"
+    ],
+    "correct": 2,
+    "exp": "Serviks karsinogenezinin moleküler biyolojisi büyüleyicidir. Yüksek riskli HPV (16, 18) hücreye ilk girdiğinde sitoplazmada/çekirdekte bir yüzük (halka) şeklinde kendi halinde yaşar (Epizomal evre - LSIL evresi). Bu aşamada virüsün ürettiği E6 ve E7 kanser yapıcı (onkoprotein) miktarı çok düşüktür. Neden? Çünkü virüsün kendi içindeki 'E2 Geni', bir kilit/fren gibi çalışarak E6 ve E7'nin fazla üretilmesini BASTIRIR. Ancak yıllar geçerse, virüsün o halkası bir yerden KOPAR ve insan DNA'sına düz bir ip gibi yerleşir (Entegrasyon evresi - HSIL/Kanser evresi). Bu halkanın koptuğu yer tam da 'E2 Geni'nin ortasıdır. E2 geni parçalanır ve yok olur. Fren (E2) ortadan kalktığı an, E6 (p53'ü yıkan) ve E7 (Rb'yi yıkan) genleri milyonlarca kez üretilmeye başlar ve epitel hücresi anında kanserleşir."
+  },
+  {
+    "id": 866,
+    "ders": "Patoloji",
+    "konu": "Kadın Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Yirmi beş yaşında obez kadın hasta; adet düzensizliği (oligomenore), infertilite, sivilcelenme ve yüz/çene bölgesinde artmış kıllanma (hirsutizm) şikayetleriyle başvuruyor. Pelvik ultrasonografide her iki yumurtalığın (overin) kalın bir kapsülle çevrili olduğu ve korteksin hemen altında inci kolyesi gibi dizilmiş çok sayıda küçük folikül kisti (Polikistik Over) barındırdığı görülüyor. Polikistik Over Sendromu (PKOS) tanısı alan bu hastada, anovulasyona ve overlerdeki 'Teka' hücrelerinin devasa miktarda androjen (erkeklik hormonu) üretmesine yol açan ASIL endokrinolojik/hipofizer kusur aşağıdakilerden hangisidir?",
+    "options": [
+      "Prolaktin hormonunun aşırı salgılanması",
+      "Hipofizden salınan FSH hormonunun LH'ye göre orantısız şekilde çok yüksek olması (FSH/LH > 2)",
+      "Tiroid Uyarıcı Hormon (TSH) eksikliği",
+      "Hipofizden salınan LH (Luteinleştirici Hormon) düzeyinin FSH'ye göre orantısız şekilde çok yüksek olması (LH/FSH > 2)",
+      "Adrenal bezden DHEA-S sentezinin idiyopatik artışı"
+    ],
+    "correct": 3,
+    "exp": "Polikistik Over Sendromu (PKOS), doğurganlık çağındaki kadınlarda infertilitenin en sık nedenlerinden biridir. Obezite, insülin direnci ve Hiperandrojenizm (kıllanma/sivilce) klasiktir. Overlerde asıl problem, foliküllerin büyüyüp de çatlayamamasıdır (yumurtlama/ovulasyon olamaz). Bu kısırdöngüyü başlatan şey, beynin (hipofizin) ritminin bozulmasıdır. PKOS'lu hastalarda hipofiz sürekli ve kontrolsüzce 'LH (Luteinleştirici Hormon)' pompalar (Kanda LH/FSH oranı 2'nin hatta 3'ün üzerine çıkar). LH'nin overdeki hedefi 'Teka Hücreleri'dir. Aşırı LH, Teka hücrelerini çılgına çevirir ve overden devasa 'Androjen (Testosteron vb.)' üretilir. Bu androjenler yumurtanın olgunlaşmasını durdurur, yumurta kist olarak kalır ve hastada erkek tipi kıllanma yapar. (İnsülin direnci de bu androjen üretimini ekstra körükler)."
+  },
+  {
+    "id": 867,
+    "ders": "Patoloji",
+    "konu": "Kadın Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Otuz beş yaşında kadın hasta, pelvik kitle ve son zamanlarda gelişen çarpıntı, terleme, sıcağa tahammülsüzlük, kilo kaybı (Aşikar Hipertiroidi) şikayetleriyle araştırılıyor. Tiroid bezinin USG'sinde ve fonksiyonunda primer bir bozukluk bulunamıyor. Ameliyatla çıkarılan 8 cm'lik sol over (yumurtalık) kitlesinin patolojik incelemesinde; tümörün tamamen kolloid dolu tiroid foliküllerinden ibaret olduğu, kitle içinde kıkırdak, saç, diş veya sinir dokusu gibi başka hiçbir elementin BULUNMADIĞI saptanıyor. Overin bu son derece nadir ve hormon aktif (tirotoksikoz yapan) tümörü (Struma Ovarii), patolojik sınıflamada HANGİ ana tümör grubunun aşırı (tek yönlü) farklılaşmış (Monodermal) bir alt tipidir?",
+    "options": [
+      "Seks kord-stromal tümör (Granüloza hücreli tümör)",
+      "Epitelyal tümör (Müsinöz Kistadenom)",
+      "Germ Hücreli Tümör (Olgun Kistik Teratom / Dermoid Kist)",
+      "Metastatik tiroid karsinomu (Krukenberg benzeri)",
+      "Brenner tümörü"
+    ],
+    "correct": 2,
+    "exp": "Over kanserleri/tümörleri Epitelyal (%70), Germ Hücreli (%20) ve Seks-Kord Stromal (%10) olarak 3'e ayrılır. Germ hücreli tümörlerin en sık görüleni 'Matür (Olgun) Kistik Teratom'dur (Dermoid Kist). Teratomlar, ektoderm (saç/diş), mezoderm (kıkırdak/kemik) ve endoderm (bağırsak/tiroid) olmak üzere 3 yaprağı da aynı kitle içinde barındıran tuhaf tümörlerdir. ANCAK bazen teratom içindeki hücreler karar değiştirir ve SADECE TEK BİR DOKU YÖNÜNDE (Monodermal) gelişirler. Tüm over kitlesi sadece saf 'Tiroid Dokusu' haline gelir. Buna 'Struma Ovarii' denir. Bu tümör gerçek tiroid bezi gibi çalışır, kana tiroid hormonu pompalar ve hastada gizemli (tiroid bezi sağlam olan) bir Hipertiroidi (Tirotoksikoz) tablosu yaratır."
+  },
+  {
+    "id": 868,
+    "ders": "Patoloji",
+    "konu": "Gastrointestinal Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Kırk yaşında kadın hasta, son yıllarda giderek artan, hem katı hem de sıvı gıdalara karşı yutma güçlüğü (Disfaji) şikayetiyle başvuruyor. Baryumlu özofagus grafisinde yemek borusunun gövdesinin devasa genişlediği (dilatasyon), alt ucunun ise kuş gagası (bird's beak) şeklinde daraldığı izleniyor. Manometride yutkunma sırasında Alt Özofagus Sfinkterinin (AÖS) gevşemediği saptanıyor. Akalazya tanısı konan bu hastada, yutkunma anında sfinkterin gevşemesi için gerekli olan 'Gevşetici/İnhibitör' nörotransmitterleri salgılayan ve hastalığın patogenezinde T-hücreleri tarafından otoimmün olarak yok edilen (yıkılan) nöral ağ hücreleri aşağıdakilerden hangisidir?",
+    "options": [
+      "Submukozal (Meissner) pleksustaki kolinerjik ganglion hücreleri",
+      "Miyenterik (Auerbach) pleksustaki Nitrik Oksit (NO) ve Vazoaktif İntestinal Peptid (VIP) sentezleyen inhibitör ganglion hücreleri",
+      "Vagus sinirinin doğrudan beyin sapındaki dorsal motor nükleusu",
+      "Sempatik zincir ganglionlarındaki adrenerjik nöronlar",
+      "Özofagus duvarındaki Cajal İnterstisyel Hücreleri"
+    ],
+    "correct": 1,
+    "exp": "Akalazya ('Gevşememe' anlamına gelir), özofagus motilite (hareket) bozukluklarının şahıdır. İki büyük sorunu vardır: Özofagus gövdesinde peristaltizm yoktur ve Alt Özofagus Sfinkteri (AÖS) yemek geldiğinde gevşemeyip kilitli kalır. Yemekler yukarıda birikir ve özofagusu devasa bir torbaya çevirir (Kuş gagası görünümü). Yemek borusunda kasılmayı Asetilkolin (ACh), GEVŞEMEYİ ise 'Nitrik Oksit (NO) ve VIP' sağlar. Akalazya'nın birincil patofizyolojisi, kas katmanları arasında yer alan ve kası gevşetmekle görevli olan Miyenterik (Auerbach) pleksustaki 'NO ve VIP üreten inhibitör ganglion hücrelerinin' otoimmün inflamasyonla tamamen ölüp yok olmasıdır. Fren patladığı için sfinkter (kolinerjik baskınlık nedeniyle) sürekli kasılı (spazmda) kalır."
+  },
+  {
+    "id": 869,
+    "ders": "Patoloji",
+    "konu": "Gastrointestinal Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Elli yaşında erkek hasta, açlıkta artan ve yemek yemekle (veya antiasitlerle) hafifleyen epigastrik ağrı ile başvuruyor. Endoskopide duodenum bulbunda 1.5 cm çapında temiz sınırlı bir Peptik Ülser saptanıyor. Mide antrumunda ise yoğun Helicobacter pylori kolonizasyonu ve gastrit izleniyor. H. pylori'nin mide antrumunda yaşamasına rağmen duodenumda (ince bağırsakta) ülser yaratması ve asit salgısını devasa boyutlara ulaştırması, antrum mukozasındaki HANGİ spesifik hücre grubunu yıkarak midedeki 'asit frenini (negatif geribildirimi)' ortadan kaldırmasının sonucudur?",
+    "options": [
+      "Gastrin salgılayan G hücreleri",
+      "Histamin salgılayan Enterokromafin-benzeri (ECL) hücreler",
+      "Pepsinojen salgılayan Şef (Esas) hücreler",
+      "Asit (HCl) salgılayan Paryetal hücreler",
+      "Somatostatin salgılayan D hücreleri"
+    ],
+    "correct": 4,
+    "exp": "Helicobacter pylori, GİS ülserlerinin (Duodenal %90, Gastrik %70) baş sorumlusudur. Ancak H. pylori asidi sevmez, asidin az olduğu Mide Antrumuna yerleşir. Peki antrumdaki bir bakteri nasıl oluyor da duodenumu yakıp kavuruyor? Mide antrumunda 'G hücreleri (Gastrin üretir - asidi artırır)' ve 'D hücreleri (Somatostatin üretir - asidi FRENLER)' yan yana yaşar. H. pylori antruma yerleştiğinde yarattığı iltihap, çok narin olan 'Somatostatin üreten D hücrelerini' öldürür. Freni (Somatostatini) kaybolan G hücreleri çılgına döner, kana sürekli Gastrin pompalar. Mide gövdesindeki paryetal hücreler bu gastrin bombardımanıyla devasa miktarda ASİT (HCl) üretir. Mideden duodenum'a dökülen bu şelale gibi asit, duodenumu asit yanığına (Duodenal Peptik Ülser) çevirir."
+  },
+  {
+    "id": 870,
+    "ders": "Patoloji",
+    "konu": "Gastrointestinal Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Çocukluk çağından beri kronik ishal, büyüme geriliği ve açıklanamayan anemi öyküsü olan 25 yaşındaki hastaya Çölyak Hastalığı tanısı konuyor. Hastanın duodenal biyopsisinde villus atrofisi, kript hiperplazisi ve intraepitelyal lenfositoz izleniyor. Çölyak hastalığının genetik zemininde HLA-DQ2 veya DQ8 pozitifliği şarttır. Buğıdaydaki zararsız gluten (gliadin) proteinlerinin, hastanın T hücreleri tarafından ölümcül bir düşman (otoantijen) gibi algılanmasını sağlayan ve gliadini HLA-DQ2/8 reseptörlerine mükemmel bir şekilde 'uyduran' enzimatik deamidasyon (glutamin aminoasidinin glutamik aside çevrilmesi) işlemi, bağırsaktaki HANGİ spesifik enzim tarafından gerçekleştirilir?",
+    "options": [
+      "Doku Transglutaminazı (tTG)",
+      "Alfa-gliadin proteaz",
+      "Dipeptidil Peptidaz-4 (DPP-4)",
+      "Pepsin",
+      "Enterokinaz"
+    ],
+    "correct": 0,
+    "exp": "Çölyak Hastalığı, genetik (HLA-DQ2/DQ8) yatkınlığı olanlarda gluten (gliadin) proteinine karşı gelişen T hücre aracılı otoimmün bir bağırsak katliamıdır. Normalde yediğimiz gluten (gliadin) molekülü, bağırsak makrofajlarındaki HLA reseptörlerine tam oturmaz (kavramaz) ve bağışıklık sistemi onu görmezden gelir. Ancak Çölyak hastalarının bağırsak astarında (lamina propria) bulunan 'Doku Transglutaminaz (tTG)' enzimi çok kritik bir hata yapar. Bağırsak zarına sızan gliadin proteinlerini yakalar ve molekülün içindeki yüksüz 'Glutamin' aminoasitlerini eksi yüklü 'Glutamik Asit'e çevirir (Deamidasyon işlemi). Eksi yüklenen bu yeni ve mutasyona uğramış gliadin, hastanın HLA-DQ2/8 reseptörlerine bir anahtar-kilit gibi MÜKEMMEL oturur. Antijeni sunan hücre, CD4 T lenfositlerini çağırır ve bağırsak epitelinde bir savaş (villus atrofisi) patlak verir. (Tanıda bakılan Anti-tTG antikorları da bizzat bu enzime karşı üretilen antikorlardır)."
+  },
+  {
+    "id": 871,
+    "ders": "Patoloji",
+    "konu": "Gastrointestinal Sistem Hastalıkları",
+    "diff": 5,
+    "q": "Elli beş yaşında, anemisi (demir eksikliği) olan hastanın tarama kolonoskopisinde, Çekum'da (sağ kolon) geniş tabanlı, 2 cm çapında bir polip saptanıyor. Biyopsi raporu 'Sessiz (Sapsız) Serrated Adenom (SSA)' olarak geliyor. Bu polipler, klasik FAP (APC gen mutasyonu) adenom-karsinom diziliminden TAMAMEN FARKLI bir karsinogenez yolağı izlerler ve sağ kolon kanserlerinin %15-20'sinin nedenidirler. Bu serrated poliplerin hızla kansere dönüşmesini sağlayan (ve Mikrosatellit İnstabilitesine - MSI yol açan) ASIL epigenetik susturma mekanizması aşağıdakilerden hangisidir?",
+    "options": [
+      "p53 geninin heterozigot delesyonu",
+      "KRAS onkogeninin delesyonu",
+      "MLH1 (Mismatch Repair) gen promotorunun 'Hipermetilasyon' ile genetik olarak kilitlenmesi (CIMP yolağı)",
+      "E-Kaderin geninin amplifikasyonu",
+      "Beta-katenin proteininin fosforilasyonu"
+    ],
+    "correct": 2,
+    "exp": "Kolon karsinogenezinde iki büyük yol vardır: 1) Klasik APC Yolağı (%80): Sol kolonda sıktır. Tübüler adenom -> APC mutasyonu -> KRAS -> p53 mutasyonu sırasıyla ilerler. 2) Serrated (Tırtıklı) Yolak / Mikrosatellit İnstabilitesi (MSI) Yolağı (%15-20): Sağ kolonda sıktır. Polip, mikroskopta testere dişi (tırtıklı) gibi görünür (Sessile Serrated Adenom). Bu tümörlerin kanserleşme sebebi genlerin kopması (delesyon) DEĞİLDİR; genlerin üzerine bir 'Metil (CH3)' grubu eklenerek genin okunmasının kapatılmasıdır (Epigenetik susturma / CIMP yolağı). En çok susturulan gen, DNA'daki hataları tamir eden 'MLH1' genidir. MLH1 geni hipermetilasyonla susturulunca, hücre DNA kırıklarını tamir edemez (Mikrosatellit İnstabilitesi patlak verir), saniyeler içinde binlerce mutasyon birikir ve polip agresif bir sağ kolon kanserine dönüşür. Bu tümörlerin tamamına yakınında 'BRAF' mutasyonu da eşlik eder."
+  },
+  {
+"id": 872,
+"ders": "Patoloji",
+"konu": "Karaciğer Hastalıkları",
+"diff": 4,
+"q": "Hiç sigara içmemiş olan 45 yaşındaki erkek hasta, amfizem (akciğer kapasitesinde azalma) ve ilerleyici Karaciğer Sirozu tablosuyla değerlendiriliyor. Karaciğer biyopsisinde periportal hepatositlerin sitoplazmasında; Periodik Asit-Schiff (PAS) boyası ile koyu pembe boyanan ve diastaz enzimine dirençli (sindirilemeyen) küresel eozinofilik globüller saptanıyor. Alfa-1 Antitripsin Eksikliği (PiZZ genotipi) tanısı alan bu hastada, karaciğer parankiminin harabiyeti ve siroz gelişimi, söz konusu mutant proteinin HANGİ spesifik hücresel kompartmanda hapsolup kalarak apoptozisi tetiklemesinin doğrudan bir sonucudur?",
+"options": [
+"Mitokondriyal matriks",
+"Lizozomal veziküller",
+"Granüllü Endoplazmik Retikulum (RER) lümeni",
+"Golgi aygıtı sisternaları",
+"Çekirdek (Nükleus) zarı"
+],
+"correct": 2,
+"exp": "Alfa-1 Antitripsin (A1AT) Eksikliği her ne kadar 'eksiklik' olarak adlandırılsa da, karaciğerdeki hasarın nedeni proteinin yokluğu değil, 'toksik birikimi'dir. PiZZ genotipine sahip bireylerde hepatositler A1AT proteinini üretir, ancak protein 3 boyutlu yapısını kazanamaz (hatalı katlanır / misfolded). Hücrenin kalite kontrol sistemi, hatalı katlanmış bu proteinin 'Granüllü Endoplazmik Retikulumdan (RER)' çıkıp Golgi'ye gitmesine izin vermez. Kan dolaşımına çıkamayan bu devasa polimerler RER içinde birikir (PAS+, diastaza dirençli globüller), ER stresi yaratır ve hücreyi sessizce apoptoza (Siroza) sürükler. (Akciğerdeki amfizemin nedeni ise kan yoluyla koruyucu A1AT gelmediği için nötrofil elastazının akciğeri eritmesidir)."
+},
+{
+"id": 873,
+"ders": "Patoloji",
+"konu": "Karaciğer Hastalıkları",
+"diff": 4,
+"q": "Elli yaşında erkek hasta; ciltte giderek artan bronzlaşma, yeni başlayan insülin bağımlı Tip 1 Diyabet ve karaciğer büyümesi şikayetleriyle başvuruyor. Genetik incelemede C282Y mutasyonu (Herediter Hemokromatozis) saptanıyor. Vücutta devasa boyutlarda demir birikimi (50 grama kadar) olmasına rağmen, hastanın ince bağırsak enterositleri diyetle alınan demiri kana pompalamaya devam etmektedir. Bu kontrolsüz ve frensiz demir emilimi, karaciğerin demir deposu doluluğunu algılayamayarak HANGİ spesifik inhibitör peptidi kana salgılayamamasının doğrudan bir sonucudur?",
+"options": [
+"Seruloplazmin",
+"Transferrin",
+"Hepsidin (Hepcidin)",
+"Ferritin",
+"Hemosiderin"
+],
+"correct": 2,
+"exp": "Herediter Hemokromatozis, HFE genindeki mutasyona bağlı bir demir zehirlenmesidir (Bronz Diyabet). İnsan vücudunun fazla demiri dışarı atacak aktif bir boşaltım sistemi YOKTUR; tek kontrol mekanizması 'emilimi' durdurmaktır. Vücutta demir seviyesi yeterliyse, karaciğer kana 'Hepsidin' adlı bir hormon salgılar. Hepsidin bağırsaklara gider ve demiri kana geçiren 'Ferroportin' kapılarını yıkarak emilimi FRENLER. HFE geni mutasyona uğradığında, karaciğer kandaki yüksek demiri 'göremez' (körleşir) ve Hepsidin SENTEZLEYEMEZ. Hepsidin (fren) olmayınca bağırsaklar vücudun ihtiyacı olmamasına rağmen yıllarca aralıksız demir emer. Karaciğer, kalp ve pankreasta biriken demir, Fenton reaksiyonuyla serbest radikal hasarı yaratarak organları iflas ettirir."
+},
+{
+"id": 874,
+"ders": "Patoloji",
+"konu": "Karaciğer Hastalıkları",
+"diff": 4,
+"q": "Yirmi yaşında üniversite öğrencisi, ellerinde ince titreme (tremor), davranış değişiklikleri, okul başarısında düşme ve açıklanamayan karaciğer yetmezliği tablosuyla araştırılıyor. Göz muayenesinde korneanın periferinde yeşil-kahverengi Kayser-Fleischer halkası saptanıyor. Kanda seruloplazmin düzeyi çok düşük olan ve Wilson Hastalığı tanısı alan bu hastada; karaciğerdeki fazla bakırın safraya atılamayarak vücutta toksik düzeylerde birikmesi, HANGİ spesifik hücresel taşıyıcı pompanın kalıtsal olarak çalışmamasının doğrudan bir eseridir?",
+"options": [
+"ATP7A pompası",
+"ATP7B pompası",
+"Çöpçü (Scavenger) reseptör tip B",
+"Organik anyon taşıyıcı polipeptid (OATP)",
+"Çoklu ilaç direnci (MDR) pompası"
+],
+"correct": 1,
+"exp": "Wilson Hastalığı, 13. kromozomda yer alan 'ATP7B' genindeki otozomal resesif mutasyondur. ATP7B proteini karaciğerde (hepatositlerde) iki hayati iş yapar: 1) Karaciğere gelen bakırı Seruloplazmin enziminin içine yerleştirir, 2) Çok daha önemlisi, karaciğerdeki fazla bakırı safra kanaliküllerine pompalayarak (atılım) vücuttan dışkıyla uzaklaştırır. ATP7B çalışmayınca bakır safraya atılamaz, karaciğerin içinde birikerek siroz yapar. Parçalanan karaciğer hücrelerinden kana saçılan serbest bakır; gidip beyne (bazal ganglionlar / tremor) ve göze (Kayser-Fleischer halkası) çökerek ağır nörolojik hasar yaratır. (Not: ATP7A mutasyonu bağırsaktan bakır emilememesi olan Menkes Hastalığıdır)."
+},
+{
+"id": 875,
+"ders": "Patoloji",
+"konu": "Karaciğer Hastalıkları",
+"diff": 4,
+"q": "Elli yaşında kadın hasta; inatçı kaşıntı (pruritus), yorgunluk ve ciltte ksantomalar (kolesterol birikintileri) şikayetiyle başvuruyor. Laboratuvarında Alkalen Fosfataz (ALP) çok yüksek saptanıyor ve serumda Anti-Mitokondriyal Antikor (AMA) pozitif bulunuyor. Primer Biliyer Kolanjit (PBC) tanısı alan bu hastanın karaciğer biyopsisinde izlenen ve safra akışını durdurarak kolestaza yol açan patolojik olay, HANGİ mikroskobik yapının T-lenfositleri tarafından oluşturulan granülomatöz inflamasyon (Florid duktus lezyonu) ile acımasızca yok edilmesidir?",
+"options": [
+"Ekstrahepatik büyük safra yolları (Koledok)",
+"Safra kesesi mukozası",
+"İntrahepatik küçük ve orta çaplı safra kanalları",
+"Santral ven çevresindeki hepatosit kordonları",
+"Disse mesafesindeki Kupffer hücreleri"
+],
+"correct": 2,
+"exp": "Primer Biliyer Kolanjit (Eski adıyla Primer Biliyer Siroz / PBC), orta yaşlı kadınlarda sık görülen ve AMA (+)'liği ile seyreden otoimmün bir hastalıktır. Hedef dokusu SADECE karaciğerin İÇİNDEKİ (intrahepatik) küçük ve orta boy safra kanallarıdır. T hücreleri ve makrofajlar bu narin safra kanallarının etrafını sararak 'Non-kazeifiye Granülomlar (Florid Duktus Lezyonları)' oluşturur ve kanalı eriterek yok ederler. Kanallar yok olunca karaciğer ürettiği safrayı dışarı atamaz. Kana geri kaçan safra tuzları şiddetli kaşıntı (pruritus), kana karışan kolesterol ise ciltte ksantomlar yapar. (Not: Ekstrahepatik ve büyük safra yollarını soğan zarı gibi daraltan hastalık ise p-ANCA pozitif Primer Sklerozan Kolanjit'tir)."
+},
+{
+"id": 876,
+"ders": "Patoloji",
+"konu": "Pankreas Hastalıkları",
+"diff": 4,
+"q": "Alkol alma öyküsü olan 45 yaşındaki erkek hasta, sırta vuran kuşak tarzı şiddetli epigastrik ağrı ve kusma ile acile başvuruyor. Kan amilaz ve lipaz seviyeleri normalin 10 katı yüksek saptanıyor. Akut Pankreatit tablosundaki bu hastada; pankreas parankiminin kanamalı ve eriyik bir püre haline gelmesi (otodigesyon), aslında duodenum lümeninde aktifleşmesi gereken pro-enzimlerin pankreas hücresi İÇİNDE (asiner hücrede) zamansız uyanmasıyla başlar. Bu yıkıcı kaskadı asiner hücrenin kendi lizozomları içindeki katepsin B enzimi yardımıyla ateşleyen İLK spesifik pro-enzim aktivasyonu aşağıdakilerden hangisidir?",
+"options": [
+"Fosfolipaz A2'nin aktifleşmesi",
+"Proelastazın elastaza dönüşmesi",
+"Tripsinojenin aktif Tripsin formuna çevrilmesi",
+"Amilazın glikojenolizi başlatması",
+"Prokarboksipeptidazın parçalanması"
+],
+"correct": 2,
+"exp": "Akut Pankreatit, pankreasın kendi ürettiği enzimlerle kendini sindirmesi (intihar etmesi) olayıdır. Normalde pankreas enzimleri zymogen (inaktif) granüller halinde depolanır ve ancak bağırsağa ulaştıklarında 'Enterokinaz' tarafından aktifleştirilirler. Ancak alkol toksisitesi veya safra taşı tıkanıklığında, hücre içi kalsiyum fırlar. Asiner hücrenin kendi içindeki lizozomlar ile bu inaktif zymogen granülleri birbirine kaynaşır. Lizozomun içindeki 'Katepsin B', tıpkı enterokinaz gibi davranarak 'TRİPSİNOJENİ' anında aktif 'TRİPSİN'e çevirir. Tripsin, pankreasın başkomutanıdır; uyanır uyanmaz diğer tüm enzimleri (elastaz, fosfolipaz, kininler) pankreasın kendi içinde ateşler ve organ saniyeler içinde kanayarak/sabunlaşarak (yağ nekrozu) erimeye başlar."
+},
+{
+"id": 877,
+"ders": "Patoloji",
+"konu": "Pankreas Hastalıkları",
+"diff": 4,
+"q": "Altmış beş yaşında erkek hasta, ağrısız sarılık, kilo kaybı ve sağ üst kadranda ele gelen ağrısız, şiş bir safra kesesi (Courvoisier bulgusu) ile değerlendiriliyor. Batın BT'de pankreas başında 3 cm'lik düzensiz kitle saptanıyor. Pankreatik Duktal Adenokarsinom tanısı alan bu hastada, normal duktal epitelin kansere giden yolculuğunda (PanIN lezyonlarında) gözlenen İLK ve EN SIK (%90) onkojenik mutasyon; büyüme faktörü reseptörlerinden gelen sinyalleri çekirdeğe ileten HANGİ G-proteini yolağının GTP'ye bağlı ve sürekli 'açık' durumda kilitlenmesiyle gerçekleşir?",
+"options": [
+"SMAD4 (DPC4)",
+"TP53",
+"BRCA2",
+"KRAS",
+"CDKN2A (p16)"
+],
+"correct": 3,
+"exp": "Pankreas Kanseri (Duktal Adenokarsinom), çok hızlı ilerleyen ve prognozu en kötü kanserlerden biridir. Pankreasın kanallarını döşeyen epitel hücreleri birden bire kanserleşmez; yıllar süren bir PanIN (Pancreatic Intraepithelial Neoplasia) evresi geçirirler. Bu karsinogenez zincirini başlatan İLK domino taşı, vakaların %90-95'inde görülen 'KRAS' onkogen mutasyonudur. KRAS bir G-proteinidir, GTP bağlandığında çalışır, GDP bağlandığında kapanır. Mutasyonlu KRAS, GTPaz aktivitesini kaybeder; yani kendini kapatamaz. Hücre dışarıdan hiçbir büyüme faktörü almasa bile, KRAS sürekli 'bölün ve çoğal' sinyali gönderir. İlerleyen evrelerde bu mutasyona p16, p53 ve pankreasa çok spesifik olan SMAD4 (DPC4) inaktivasyonları da eklenerek ölümcül kanser profili tamamlanır."
+},
+{
+"id": 878,
+"ders": "Patoloji",
+"konu": "Pankreas Hastalıkları",
+"diff": 4,
+"q": "Kırk yaşında kadın hasta, sabahları uyanmakta zorlanma, soğuk terleme, çarpıntı ve konfüzyon ataklarıyla (hipoglisemi) başvuruyor. Atak anında kan şekeri 35 mg/dL iken, serum İnsülin ve C-Peptid seviyeleri uygunsuz şekilde yüksek saptanıyor. Şekerli meyve suyu içtiğinde bilinci anında açılıyor (Whipple triadı). İnsülinoma (Pankreatik Nöroendokrin Tümör) tanısıyla çıkarılan tümörün histopatolojik incelemesinde; nöroendokrin hücre adacıkları ve bu hücrelerin arasına (stromaya) yaygın olarak çöken, Kongo kırmızısı ile boyanan 'Amiloid' plakları izleniyor. Tümör dokusundaki bu karakteristik amiloid birikimi, insülinle birlikte aynı granülden eş-salgılanan (co-secretion) HANGİ peptid hormonun hatalı katlanıp çökmesinin doğrudan bir sonucudur?",
+"options": [
+"Glukagon",
+"Somatostatin",
+"Amilin (IAPP - Islet Amyloid Polypeptide)",
+"Pankreatik Polipeptid (PP)",
+"Vazoaktif İntestinal Peptid (VIP)"
+],
+"correct": 2,
+"exp": "İnsülinoma, en sık görülen pankreas nöroendokrin tümörüdür (PanNET) ve beta hücrelerinden köken alır. Kanda dışarıdan alınmış (iğne/faktisyoz) bir insülin olmadığını kanıtlamak için mutlaka C-Peptid düzeyinin de yüksek (endojen üretim) olduğunu görmek gerekir. İnsülinoma tümörünün patologlar için en çarpıcı mikroskobik bulgusu, tümör hücrelerinin arasına çöken 'Amiloid' materyalidir. Bu amiloidin kaynağı, beta hücrelerinin insülin üretirken zorunlu olarak yanında sentezlediği ve salgıladığı 'Amilin (IAPP)' adlı bir diğer hormondur. Tümör hücreleri aşırı insülin üretirken, aşırı Amilin de üretir. Bu fazla Amilin parçaları dokuda birikerek amiloid fibrillerine dönüşür. (Bu aynı amiloid tipi, Tip 2 Diyabet hastalarının yorulan pankreas adacıklarında da görülür)."
+},
+{
+"id": 879,
+"ders": "Patoloji",
+"konu": "Pankreas Hastalıkları",
+"diff": 4,
+"q": "Altmış yaşında, uzun yıllardır kronik alkol tüketimi olan hasta; kronikleşen karın ağrısı, kilo kaybı ve son haftalarda tuvalet fırçasıyla bile zor temizlenen yağlı, kötü kokulu dışkılama (Steatore) şikayetiyle başvuruyor. Çekilen batın grafisinde pankreas trasesinde yaygın kalsifikasyonlar (kireçlenmeler) izleniyor. Kronik Pankreatit tanısı alan bu hastada, pankreasın asiner dokusunun tamamen yok olup yerini kaskatı bir fibrozise (bağ dokusuna) bırakması; lümen içinde oluşan HANGİ patolojik yapının kanalları tıkayarak asiner hücreleri tahrip etmesinin birincil sonucudur?",
+"options": [
+"Kalsiyum oksalat taşlarının ana kanalı tıkaması",
+"Alkolün pankreas sıvısındaki bikarbonatı artırarak lümeni bazikleştirmesi",
+"Sıvıdaki su/bikarbonat oranının azalıp protein konsantrasyonunun artmasıyla kanalları tıkayan kalsifiye 'Protein Tıkaçlarının (Plugs)' oluşması",
+"Bakteriyel biyofilmlerin Wirsung kanalını tıkaması",
+"Pankreatik psödokistlerin dışarıdan kanallara bası yapması"
+],
+"correct": 2,
+"exp": "Kronik Pankreatit, genellikle erişkinlerde yıllar süren alkol kullanımına, çocuklarda ise Kistik Fibrozise bağlı gelişir. Alkol toksisitesinin pankreastaki en büyük zararı, pankreas sıvısının kimyasını bozmasıdır. Alkol, asiner hücrelerden 'Su ve Bikarbonat' salınımını DÜŞÜRÜR, sıvının içindeki 'Protein' miktarını ARTIRIR. Susuz kalan bu yoğun proteinler pankreasın mikroskobik kanallarına çöker ve sert 'Protein Tıkaçları (Plugs)' oluşturur. Zamanla bu tıkaçların üzerine kalsiyum çöker (Kalsifikasyon). Tıkanan kanalların gerisindeki asiner hücreler (sindirim enzimi üreten fabrikalar) kendi enzimleriyle harap olur, atrofiye gider. Olay yerine gelen makrofajlar (TGF-beta ile) pankreatik stellat hücreleri aktive ederek tüm pankreası fibrozise (skar dokusuna) çevirir. Sindirim enzimleri tamamen bittiği için hasta yağları sindiremez ve Steatore başlar."
+},
+{
+"id": 880,
+"ders": "Patoloji",
+"konu": "Meme Hastalıkları",
+"diff": 4,
+"q": "Elli beş yaşında kadın hasta, rutin mamografisinde saptanan yoğun mikrokalsifikasyon kümeleri nedeniyle stereotaktik biyopsi yaptırıyor. Patoloji raporunda, meme kanallarının (duktusların) yüksek dereceli (high-grade) atipik hücrelerle tamamen dolduğu, kanalın tam merkezindeki tümör hücrelerinin nekroza uğradığı ve bu nekrotik alanların üzerinde kireçlenme (kalsifikasyon) saptandığı belirtiliyor. Bazal membranın sağlam olduğu vurgulanıyor. 'Komedo tip Duktal Karsinoma İn Situ (DCIS)' tanısı alan bu agresif in situ lezyonda, kanalın tam ortasındaki (santral) hücrelerin nekroza gitmesinin (ölmesinin) fiziksel nedeni aşağıdakilerden hangisidir?",
+"options": [
+"Hücrelerin apoptoz sinyallerine (FasL) aşırı duyarlı olması",
+"Kanal lümenindeki makrofajların tümör hücrelerine saldırması",
+"Kanalın içindeki tümör hücrelerinin hızla çoğalarak, kanal duvarındaki kan damarlarından difüzyonla gelen oksijen ve besine çok uzak kalmaları (İskemik Hipoksi)",
+"Miyoepeitelyal hücrelerin tümörü yok etmek için sitotoksik granüller salgılaması",
+"Süt kanallarında biriken kalsiyumun toksik etkisi"
+],
+"correct": 2,
+"exp": "Duktal Karsinoma İn Situ (DCIS), bazal membranı henüz aşmamış (invaze olmamış) erken evre meme kanseridir. 'Komedo Tip' DCIS, bu grubun en tehlikeli, en hızlı bölünen ve en agresif (sıklıkla HER2+) alt tipidir. Kanser hücreleri kanalın içinde o kadar hızlı ve kontrolsüz çoğalırlar ki, kanal genişler ve ağzına kadar dolar. Kan damarları sadece kanalın dışındaki bağ dokusunda (stromada) vardır. Kanalın duvarına yapışık olan hücreler beslenirken, tam 'Ortada (Merkezde)' kalan hücreler damarlardan çok uzaklaştıkları için oksijen ve besin alamazlar. Hipokside kalan bu santral hücreler kitlesel olarak ölür (Santral Nekroz). Ölen hücre döküntülerinin (debris) üzerine kalsiyum çöker (Distrofik Kalsifikasyon). Mamografide parlayan mikrokalsifikasyonlar işte bu hücre mezarlıklarıdır."
+},
+{
+"id": 881,
+"ders": "Patoloji",
+"konu": "Meme Hastalıkları",
+"diff": 4,
+"q": "Kırk beş yaşında kadın hasta, sol memesinde sınırları düzensiz, sert bir kitle ile başvuruyor. Tru-cut biyopside tümör hücrelerinin kanallar (duktuslar) oluşturmadığı, stromanın içine 'tek sıra halinde (indian file)' dizilerek sızdığı ve bazı hücrelerin intrastoplazmik müsin vakuolleri nedeniyle 'taşlı yüzük' görünümü aldığı saptanıyor. İnvaziv Lobüler Karsinom tanısı konan bu tümörde; kanser hücrelerinin bir araya gelip bez/kanal oluşturamaması ve tek tek sızması, hücre zarında bulunan HANGİ spesifik adezyon (tutkal) molekülünün mutasyonla tamamen kaybedilmesinin doğrudan bir sonucudur?",
+"options": [
+"Fibronektin",
+"E-Kaderin (CDH1)",
+"Beta-katenin",
+"İntegrin alfa-v beta-3",
+"Müsin (MUC1)"
+],
+"correct": 1,
+"exp": "İnvaziv Lobüler Karsinom (ILC), memenin ikinci en sık görülen invaziv kanseridir. Duktal kanserlere göre bilateral (iki memede birden) ve multisentrik (çok odaklı) olma ihtimali çok daha yüksektir. Patolojik görüntüsü eşsizdir: Hücreler bir bez veya kanal oluşturmak yerine, stromada ince bir ip gibi 'tek sıra (indian file / katar)' halinde dizilerek sızarlar. Bunun yegane hücresel nedeni, epitel hücrelerini birbirine sımsıkı bağlayan hücreler arası tutkal olan 'E-KADERİN (CDH1)' molekülünün biallelik mutasyonla tamamen kaybolmasıdır. E-kaderin olmayınca hücreler birbirine tutunamaz, bağımsız kalır ve bağ dokusu içinde ip gibi sıralanmak zorunda kalırlar. (Aynı E-Kaderin kaybı, midede difüz tip taşlı yüzük hücreli karsinomda da görülür)."
+},
+{
+"id": 882,
+"ders": "Patoloji",
+"konu": "Meme Hastalıkları",
+"diff": 5,
+"q": "Elli yaşında kadın hasta, sağ meme başında son 3 aydır devam eden, topikal steroid kremlerine yanıt vermeyen kızarıklık, kabuklanma, sızıntı ve kaşıntılı bir lezyonla (egzama görünümü) başvuruyor. Lezyondan alınan punch biyopside; epidermisin bazal tabakasına yakın, geniş berrak sitoplazmalı, soluk boyanan ve PAS (müsin) pozitif atipik hücrelerin (Paget hücreleri) tek tek veya kümeler halinde sızdığı görülüyor. Memenin Paget Hastalığı tanısı alan bu hastada, derideki bu kanser hücrelerinin ASIL kaynağı ve oraya ulaşma yolu aşağıdakilerden hangisinde en doğru şekilde tanımlanmıştır?",
+"options": [
+"Meme başındaki melanositlerin malignleşerek epidermiste yayıldığı bir in situ melanom tablosudur.",
+"Areoladaki yağ bezlerinden köken alan primer bir epidermal karsinomdur.",
+"Derin meme parankiminde bulunan bir Duktal Karsinoma İn Situ (DCIS) veya İnvaziv Karsinom hücrelerinin, laktiferöz kanallar (süt kanalları) boyunca yukarıya tırmanarak meme başı derisine (epidermise) sızmasıdır.",
+"Langerhans hücrelerinin epidermiste oluşturduğu otoimmün bir histiyositoz reaksiyonudur.",
+"Meme derisinin yassı (skuamöz) epitelinden köken alan bir Bowen Hastalığı (SCC in situ) varyantıdır."
+],
+"correct": 2,
+"exp": "Memenin Paget Hastalığı, klinisyeni yanıltabilen sinsi bir tablodur. Hasta dermatoloğa 'meme başımda geçmeyen egzama/mantar var' diye gelir. Ancak bu bir deri hastalığı DEĞİLDİR. Altta yatan, derinden gelen bir 'Meme Kanseri'nin (Neredeyse her zaman Duktal Karsinoma İn Situ - DCIS veya İnvaziv Karsinom) buzdağının görünen kısmıdır. Kanser hücreleri (Paget hücreleri), memenin derinliklerinden süt kanallarının (laktiferöz duktusların) iç yüzeyini kullanarak yukarı doğru sürünür, meme başı derisinin (epidermisin) içine sızar ve orada çoğalarak deriyi bozar (kabuklanma, kızarıklık). Bu nedenle meme başında tedaviye dirençli her egzama lezyonu, altta yatan bir meme kanserini dışlamak için mutlaka biyopsi edilmelidir."
+},
+{
+"id": 883,
+"ders": "Patoloji",
+"konu": "Meme Hastalıkları",
+"diff": 4,
+"q": "Kırk beş yaşında kadın hasta, sol memesinde son 3 ayda 2 cm'den 10 cm'ye ulaşan, sınırları düzgün, ağrısız ve çok hızlı büyüyen kitle nedeniyle opere ediliyor. Tümörün kesit yüzeyinde kistik boşluklar ve yaprak şeklinde etsi çıkıntılar (leaf-like projections) saptanıyor. Mikroskobik incelemede; selim (benign) görünümlü epitel bezlerinin etrafını saran stromal hücrelerin aşırı derecede (hiper-sellüler) çoğaldığı ve bezleri iterek o devasa yapraksı yapıları oluşturduğu izleniyor. Fillodes (Phyllodes) Tümörü tanısı alan bu 'bifazik' tümörde, kitlenin agresif büyümesini (ve nadiren sarkoma dönüşmesini) sağlayan asıl neoplastik (kanserleşen) komponent aşağıdakilerden hangisidir?",
+"options": [
+"Kanalları döşeyen duktal epitel hücreleri",
+"Lobüllerdeki sekretuvar asinus hücreleri",
+"Kanalları saran miyoepeitelyal hücreler",
+"Lobül içi (İntralobüler) stroma fibroblastları",
+"Cooper asıcı bağlarındaki yağ hücreleri"
+],
+"correct": 3,
+"exp": "Memenin Fibroadenomu (gençlerde) ve Fillodes Tümörü (ileri yaşlarda) 'Bifazik' tümörlerdir; yani kitle içinde hem epitel (bez) hem de bağ dokusu (stroma) barındırırlar. Her iki tümörün de köken aldığı yer 'İntralobüler (Lobül içi) Stroma'dır. Fibroadenomda epitel ve stroma dengeli ve yavaş büyür. Ancak Fillodes tümöründe (Yunanca yaprak anlamına gelir), stroma hücreleri (fibroblastlar) çıldırır ve neoplastik olarak kontrolsüz çoğalırlar (Stromal overgrowth). Epitel hücreleri masum kalırken, çılgınca çoğalan stroma epitel kanallarını sıkıştırıp ezerek yarık benzeri yaprak şekilli kistik alanlar oluşturur. Fillodes tümörünün boyutunu, hızını ve habisleşme (sarkoma dönüşme) riskini belirleyen YEGANE unsur, bu stromal hücrelerin mitoz sayısı ve atipisidir."
+},
+{
+"id": 884,
+"ders": "Patoloji",
+"konu": "Sinir Sistem Hastalıkları",
+"diff": 4,
+"q": "Yetmiş sekiz yaşında, 8 yıldır ilerleyici hafıza kaybı, konuşma bozukluğu ve apraksi tablosuyla (Demans) takip edilen kadın hasta pnömoniden vefat ediyor. Beyin otopsisinde temporal ve parietal loblarda şiddetli kortikal atrofi (sulkuslarda genişleme, giruslarda incelme) saptanıyor. Nöropatolojik mikroskobik incelemede iki klasik lezyon izleniyor: Hücre Dışında 'Amiloid Plaklar' ve nöronların İÇİNDE alev şeklinde 'Nörofibriler Yumaklar (Tangles)'. Alzheimer Hastalığı tanısını kesinleştiren bu hücre İÇİ (intraselüler) yumakların oluşumu, HANGİ mikrotübül destek proteininin anormal (hiper) fosforilasyonla çökelmesinin doğrudan bir sonucudur?",
+"options": [
+"Amiloid Prekürsör Protein (APP)",
+"Alfa-Sinüklein (α-Synuclein)",
+"Tau Proteini",
+"TDP-43",
+"Huntingtin Proteini"
+],
+"correct": 2,
+"exp": "Alzheimer Hastalığının tanısı beyin otopsisindeki ÇİFT LEZYON ile konur. 1) Hücre Dışı Plaklar (Senil Plaklar): Bunlar APP proteininin hatalı kesilmesiyle (Beta ve Gama sekretaz) oluşan Amiloid-Beta (Aβ) peptitlerinin dışarıya çökmesidir. 2) Hücre İçi Yumaklar (Nörofibriler Tangles - NFT): Bu çok daha yıkıcıdır. Nöronların içindeki kargo taşıma sistemi olan mikrotübülleri ayakta tutan çivilere 'Tau Proteini' denir. Alzheimer'da Tau proteini anormal şekilde ve aşırı fosforillenir (Hiperfosforile Tau). Fosforillenen Tau mikrotübülden kopar, kendi aralarında yapışıp hücre içinde alev gibi düğümlenir (Yumaklar). Mikrotübül iskeleti çöken nöron, kargo taşıyamadığı için ölür."
+},
+{
+"id": 885,
+"ders": "Patoloji",
+"konu": "Sinir Sistem Hastalıkları",
+"diff": 4,
+"q": "Elli sekiz yaşında erkek hasta; son 2 ayda gelişen kişilik değişiklikleri, kusma ve yeni başlayan fokal nöbetlerle getiriliyor. Kranial MRG'de sağ serebral hemisferde beyaz cevherden kortekse yayılan, korpus kallozumu geçerek sol hemisfere uzanan (Kelebek manzarası), etrafı düzensiz kontrast tutan ve merkezi nekrotik devasa bir kitle saptanıyor. Biyopside tümör hücrelerinin GFAP pozitif olduğu ve nekroz alanlarının etrafında çit şeklinde dizildiği (Pseudopalisading) görülüyor. Glioblastoma (Grade IV Astrositom) olan bu en agresif tümörün çılgınca büyümesini destekleyen masif 'Mikrovasküler (Endotelyal) Proliferasyon', hücrelerin hipoksiye yanıt olarak HANGİ faktörü salgılamasıyla tetiklenir?",
+"options": [
+"Epidermal Büyüme Faktörü (EGF)",
+"Transforming Growth Factor-beta (TGF-β)",
+"Trombosit Kaynaklı Büyüme Faktörü (PDGF)",
+"Vasküler Endotelyal Büyüme Faktörü (VEGF)",
+"Sinir Büyüme Faktörü (NGF)"
+],
+"correct": 3,
+"exp": "Glioblastoma (eski adıyla Glioblastoma Multiforme / GBM), erişkinlerdeki en malign primer beyin tümörüdür. Patolojik tanısında iki OLMAZSA OLMAZ kriteri vardır: 1) Psödopalizadik Nekroz (Hücrelerin ölü dokuyu çit gibi sarması), 2) Mikrovasküler Proliferasyon. Tümör o kadar hızlı büyür ki, merkezdeki hücreler oksijensiz (hipoksik) kalıp ölür. Oksijensizlik çeken hücreler ölmeden önce paniğe kapılarak 'HIF-1 alfa' üzerinden devasa miktarda 'VEGF (Vasküler Endotelyal Büyüme Faktörü)' salgılarlar. VEGF, beynin sağlam damarlarını uyararak tümörün içine doğru yüzlerce yeni, şekilsiz ve sızdıran kılcal damar (glomerüloit yapılar) çekilmesini sağlar. Tümör bu yeni damarların getirdiği kanla ölümcül bir hızla büyümeye devam eder."
+},
+{
+"id": 886,
+"ders": "Patoloji",
+"konu": "Sinir Sistem Hastalıkları",
+"diff": 4,
+"q": "Altmış beş yaşında erkek hasta; maske yüz, ellerde istirahat tremoru (para sayma), hareketlerde yavaşlama (bradikinezi) ve dişli çark rijiditesi tablosuyla uzun yıllar takip ediliyor. Vefat sonrası otopsisinde, beynin orta beyin (mezensefalon) kesitlerinde 'Substantia Nigra Pars Compacta' bölgesindeki siyah (melaninli) nöronların büyük oranda yok olduğu (depigmente olduğu) izleniyor. Kalan nöronların sitoplazmasında etrafı şeffaf halolu, yuvarlak eozinofilik 'Lewy Cisimcikleri' saptanıyor. Parkinson Hastalığı patolojisi olan bu dopaminerjik nöron ölümünün temelinde, HANGİ sinaptik vezikül proteininin hatalı katlanıp (misfolding) hücre içinde toksik olarak çökelmesi yatmaktadır?",
+"options": [
+"Beta-Amiloid",
+"Tau Proteini",
+"Huntingtin Proteini",
+"Alfa-Sinüklein (α-Synuclein)",
+"TDP-43"
+],
+"correct": 3,
+"exp": "Parkinson Hastalığı, Substantia Nigra'daki dopamin üreten nöronların kaybıyla karakterize bir hareket bozukluğudur. Hastalığın patolojik imzası 'Lewy Cisimcikleri'dir. Bu cisimcikler, hücre çekirdeğinde DEĞİL, hücrenin SİTOPLAZMASINDA biriken eozinofilik yuvarlak protein yumaklarıdır. Bu yumakları oluşturan ana protein 'Alfa-Sinüklein'dir. Alfa-sinüklein normalde sinir uçlarında vezikül taşıyan faydalı bir proteindir; ancak genetik yatkınlık veya toksinler nedeniyle hatalı katlanır (beta-pleated sheet formuna girer), kümeleşerek oligomerler yapar. Bu oligomerler proteazomlar tarafından parçalanamaz, hücre içinde birikir, organelleri zehirler ve dopaminerjik nöronu apoptoza zorlayarak hastalığı başlatır."
+},
+{
+"id": 887,
+"ders": "Patoloji",
+"konu": "Sinir Sistem Hastalıkları",
+"diff": 4,
+"q": "Otuz yaşında kadın hasta; sağ gözde ağrılı görme kaybı (Optik Nörit), çift görme ve bacaklarında uyuşma atakları (relaps-remisyon paterni) ile başvuruyor. BOS incelemesinde yüksek IgG indeksi ve Oligoklonal Bantlar saptanıyor. Multipl Skleroz (MS) tanısı alan bu hastanın beyin MRG'sinde periventriküler plaklar saptanıyor. Santral sinir sistemini (MSS) vuran bu otoimmün hastalıkta, plaktaki sinir iletiminin (sıçrayıcı iletimin) durmasına ve nörolojik defisitlerin ortaya çıkmasına neden olan ASIL patolojik olay, HANGİ hücre grubunun bağışıklık sistemi tarafından spesifik olarak parçalanmasıdır?",
+"options": [
+"Periferik Schwann hücreleri",
+"Astrositler",
+"Mikroglialar",
+"Ependim hücreleri",
+"Oligodendrositler"
+],
+"correct": 4,
+"exp": "Multipl Skleroz (MS), en sık genç kadınlarda görülen, merkezi sinir sisteminin (Beyin, omurilik ve optik sinir) otoimmün bir hastalığıdır. Bağışıklık sistemi (Th1, Th17 ve Makrofajlar), merkezi sinir sisteminde miyelin kılıfı üreten 'OLİGODENDROSİTLERE' düşman olur. T hücreleri kan-beyin bariyerini geçer, makrofajları aktive eder ve oligodendrositleri miyelinleriyle birlikte parçalarlar (Demiyelinizan Plak). Miyelin kılıf soyulunca akson (kablo) çıplak kalır ve sinyalin hızlı (sıçrayıcı) iletimi durur (felç, körlük başlar). Hastalığın temel kuralı şudur: Plaklarda miyelin ve oligodendrosit tamamen yok olurken, içinden geçen AKSONLAR nispeten sağlam kalır (en azından erken evrede). (Not: MS asla periferik sinirleri ve oradaki miyelini üreten Schwann hücrelerini tutmaz)."
+},
+{
+"id": 888,
+"ders": "Patoloji",
+"konu": "Endokrin Sistem Hastalıkları",
+"diff": 4,
+"q": "Otuz beş yaşında kadın hasta, boynunda ağrısız bir modül saptanması üzerine İnce İğne Aspirasyon Biyopsisi (İİAB) yaptırıyor. Sitolojik incelemede; üst üste binen, şeffaf/berrak nükleuslu ('Orphan Annie' gözü) ve uzunlamasına nükleer yarıkları (grooves) olan epitel hücreleri saptanıyor. Papiller Tiroid Karsinomu tanısı alan bu hastada, tümör hücrelerinin hücre içi sinyal yolağını dışarıdan bir uyarı gelmeksizin sürekli açık tutarak kanserleşmeyi tetikleyen spesifik nokta mutasyonu, HANGİ protein kinaz ailesine ait bir enzimde gerçekleşmiştir?",
+"options": [
+"Serin/Treonin Kinaz (Örn: BRAF V600E)",
+"Transmembran Reseptör Tirozin Kinaz (Örn: EGFR)",
+"Sitoplazmik Non-reseptör Tirozin Kinaz (Örn: BCR-ABL)",
+"Siklin Bağımlı Kinaz (Örn: CDK4)",
+"Fosfoinozitid 3-kinaz (PI3K)"
+],
+"correct": 0,
+"exp": "Papiller Tiroid Karsinomu, tiroidin en sık görülen kanseridir ve tanısı tamamen 'nükleer özelliklere' (Orphan Annie gözü, nükleer yarıklar/grooves, psödöinklüzyonlar ve psammoma cisimcikleri) dayanır. Bu kanserin patogenezinde en sık (%40-50) saptanan genetik kusur, 'BRAF' genindeki (özellikle V600E) nokta mutasyonudur. BRAF proteini, hücre içi MAPK (Mitojenle Aktive Olan Protein Kinaz) sinyal kaskadında görevli bir 'Serin/Treonin Kinaz'dır. Bu mutasyon enzimi sürekli açık konumda kilitler ve hücreye durmaksızın çoğalma emri vererek kanserleşmeyi başlatır."
+},
+{
+"id": 889,
+"ders": "Patoloji",
+"konu": "Endokrin Sistem Hastalıkları",
+"diff": 4,
+"q": "Kırk beş yaşında kadın hasta, kilo artışı, soğuğa tahammülsüzlük ve boynunda diffüz büyüme (Guatr) şikayetiyle başvuruyor. Anti-TPO antikorları çok yüksek saptanan hastanın tiroid biyopsisinde; tiroid foliküllerini yıkan yoğun lenfositik infiltrasyon, belirgin germinal merkezler içeren lenfoid foliküller ve sitoplazmaları mitokondri ile dolu pembe Hürthle (Oksifilik) hücreleri saptanıyor. Hashimoto Tiroiditi tanısı alan bu hastanın tiroid bezinde, yıllarca süren bu kronik antijen uyarımı ve germinal merkez aktivitesi, ilerleyen dönemde HANGİ spesifik hücre popülasyonunun monoklonal bir maligniteye (kansere) dönüşmesine zemin hazırlamaktadır?",
+"options": [
+"Parafoliküler C hücreleri (Medüller Karsinom)",
+"Tiroid folikül epitel hücreleri (Anaplastik Karsinom)",
+"Marjinal zon B lenfositleri (Ekstranodal MALT Lenfoması)",
+"CD8+ Sitotoksik T hücreleri (T-Hücreli Lenfoma)",
+"Tiroid stromasındaki fibroblastlar (Tiroid Sarkomu)"
+],
+"correct": 2,
+"exp": "Hashimoto Tiroiditi, tiroid bezinin otoimmün yıkımıdır ve hipotiroidinin en sık nedenidir. Tiroid bezi adeta bir lenf düğümüne dönüşür (Lenfoid foliküller ve germinal merkezler oluşur). Yıllar boyunca süren bu otoimmün inflamasyon ve B lenfositlerinin sürekli uyarılması, zamanla bir B hücresinin kontrolden çıkıp (monoklonalite kazanıp) kanserleşmesine yol açabilir. Bu nedenle Hashimoto hastalarının en çok korkulan spesifik komplikasyonu, tiroid bezi içinde gelişen 'Ekstranodal Marjinal Zon B-Hücreli Lenfoması (MALT Lenfoma)'dır. Yıllardır stabil olan bir guatr aniden ve hızla büyümeye başlarsa akla ilk bu lenfoma gelmelidir."
+},
+{
+"id": 890,
+"ders": "Patoloji",
+"konu": "Endokrin Sistem Hastalıkları",
+"diff": 5,
+"q": "Kırk yaşında erkek hasta, ataklar halinde gelen baş ağrısı, aşırı terleme, çarpıntı ve 190/110 mmHg tansiyon ile araştırılıyor. Batın BT'de adrenal (böbrek üstü) bezde 5 cm'lik kitle saptanıyor ve 24 saatlik idrarda metanefrin düzeyi yüksek bulunuyor. Feokromositoma tanısıyla çıkarılan tümörün elektron mikroskobunda, içinde Adrenalin (Epinefrin) barındıran elektron-yoğun granüller saptanıyor. Tümör hücrelerinin (kromaffin hücrelerin), Noradrenalini Adrenaline dönüştürebilmesi için gereken PNMT (Feniletanolamin N-metiltransferaz) enzimini bu kadar yüksek düzeyde sentezleyebilmesi, adrenal beze özgü HANGİ anatomik/fizyolojik avantajın doğrudan bir sonucudur?",
+"options": [
+"Medulladaki nöral krest hücrelerinin ACTH reseptörlerine sahip olması",
+"Adrenal korteksten salgılanan yüksek konsantrasyondaki 'Kortizol'ün portal damarlarla doğrudan medullaya inerek PNMT gen ekspresyonunu şiddetle indüklemesi",
+"Sempatik ganglionlardan gelen sürekli Asetilkolin deşarjının tirozin hidroksilazı inhibe etmesi",
+"Tümör hücrelerindeki VHL gen mutasyonunun katekolamin yıkımını durdurması",
+"Kromaffin hücrelerdeki Monoamin Oksidaz (MAO) enziminin genetik olarak eksik olması"
+],
+"correct": 1,
+"exp": "Feokromositoma, adrenal medullanın katekolamin üreten tümörüdür. Adrenal medullanın, vücuttaki diğer sempatik ganglionlardan (paragangliomlardan) çok önemli bir farkı vardır: Sadece adrenal medulla anlamlı miktarda 'Adrenalin (Epinefrin)' üretebilir (Diğerleri sadece Noradrenalin üretir). Bunun muazzam bir fizyolojik nedeni vardır: Noradrenalini Adrenaline çeviren enzim 'PNMT'dir. PNMT enziminin üretilebilmesi için çok yüksek dozda 'Kortizol' hormonuna ihtiyaç vardır. Adrenal korteks (kabuk) kortizol üretir ve bu kortizol, korteksten medullaya inen zengin portal kan akımıyla doğrudan kromaffin hücreleri yıkar. Bu yüksek kortizol banyosu, PNMT üretimini tavan yaptırır ve tümörün devasa Adrenalin üretmesini sağlar."
+},
+{
+"id": 891,
+"ders": "Patoloji",
+"konu": "Endokrin Sistem Hastalıkları",
+"diff": 4,
+"q": "Otuz yaşında erkek hasta, tedaviye dirençli tekrarlayan peptik ülserler (Zollinger-Ellison Sendromu), yorgunluk ve böbrek taşı öyküsüyle başvuruyor. Laboratuvarında kanda Gastrin, Kalsiyum ve Paratiroid Hormon (PTH) düzeyleri yüksek bulunuyor. Hipofiz MRG'de makroadenom saptanan bu hastaya MEN-1 (Multipl Endokrin Neoplazi Tip 1) sendromu tanısı konuyor. Hastanın genetik testinde saptanan MEN1 tümör süpresör gen mutasyonu (Menin proteini eksikliği), hücrenin kanserleşmesini engellemek için normalde HANGİ hücresel kompartmanda görev yapan bir mekanizmayı bozmuştur?",
+"options": [
+"Hücre zarında tirozin kinaz reseptör inaktivasyonunu",
+"Sitoplazmada Wnt/Beta-katenin yolağının yıkımını",
+"Mitokondride sitokrom c salınımının engellenmesini",
+"Hücre çekirdeğinde (nükleus) kromatin yeniden modellenmesi ve transkripsiyonel regülasyonu",
+"Lizozomlarda otofaji kaskadının aktivasyonunu"
+],
+"correct": 3,
+"exp": "MEN-1 (Wermer Sendromu), 3P kuralıyla hatırlanır: Paratiroid, Pankreas (PanNET) ve Pituitary (Hipofiz). Hastalığın temelinde 11. kromozomdaki MEN1 geninin mutasyonu yatar. Bu genin ürettiği proteinin adı 'Menin'dir. Menin proteini, hücre zarı veya sitoplazmada DEĞİL, doğrudan 'Hücre Çekirdeğinde (Nükleus)' görev yapar. Histon metiltransferaz kompleksleriyle etkileşime girerek kromatin yapısını düzenler (epigenetik regülasyon) ve hücre büyümesini durduran (CDK inhibitörleri gibi) genlerin transkripsiyonunu (okunmasını) sağlar. Menin bozulduğunda çekirdekteki bu genetik fren sistemi çöker ve hasta 3 farklı endokrin organda aynı anda tümör geliştirir."
+},
+{
+"id": 892,
+"ders": "Patoloji",
+"konu": "Deri Hastalıkları",
+"diff": 4,
+"q": "Elli yaşında erkek hasta, ağız içinde başlayan ve daha sonra tüm vücuduna yayılan, içi gevşek sıvı dolu ve kolayca patlayıp ağrılı yaralar (erezyonlar) bırakan büllerle başvuruyor. Lezyonların kenarındaki sağlam deriye parmakla basıldığında derinin üst tabakasının kolayca sıyrıldığı (Nikolsky pozitif) saptanıyor. Biyopsinin immünfloresan incelemesinde epidermis hücreleri arasında bal peteği (ağsı) görünümünde IgG birikimi izleniyor. Pemfigus Vulgaris tanısı alan bu hastada, bazal hücrelerin zemin membranda 'mezar taşı (tombstone)' gibi dizili kalmasına rağmen, üstteki epidermisin onlardan koparak ayrılmasının (akantoliz) doğrudan hücresel nedeni aşağıdakilerden hangisidir?",
+"options": [
+"Bazal membrana bağlanan Hemidesmozom proteinlerinin otoantikorlarla yıkılması",
+"Keratinositleri birbirine sıkıca perçinleyen Desmozomların (Desmoglein-1 ve 3) otoantikorlarla nötralize edilmesi",
+"Tip IV Kollajenin makrofajlar tarafından eritilmesi",
+"Hücreler arası boşluğa sızan amiloid proteinlerinin mekanik ayrışma yapması",
+"Bakteriyel eksfolyatif toksinlerin stratum korneumu eritmesi"
+],
+"correct": 1,
+"exp": "Pemfigus Vulgaris, derinin intraepidermal büllöz (kabarcıklı) ve ölümcül olabilen otoimmün hastalığıdır. Bağışıklık sistemi (IgG antikorları), epidermis hücrelerini yan yana sımsıkı tutan perçinlere, yani 'Desmozomlara' (Özellikle Desmoglein-1 ve 3 proteinlerine) saldırır. Desmozomlar yıkılınca epidermis hücreleri birbirinden kopar (Akantoliz) ve aralarına sıvı dolarak gevşek büller oluşturur. Deri çok kırılgandır, sürtünmeyle soyulur (Nikolsky bulgusu). Ancak otoantikorlar 'Hemidesmozomlara' saldırmadığı için, en alttaki bazal tabaka hücreleri bazal membrana sağlam bir şekilde tutunmaya devam eder ve mikroskopta bir mezarlıktaki 'Mezar Taşları (Tombstones)' gibi dizili görünürler. (Not: Hemidesmozomlara saldırı, gergin ve Nikolsky negatif büller yapan Büllöz Pemfigoid'de görülür)."
+},
+{
+"id": 893,
+"ders": "Patoloji",
+"konu": "Deri Hastalıkları",
+"diff": 4,
+"q": "Altmış yaşında erkek hasta, sırtında asimetrik, kenarları düzensiz ve farklı renk tonları (siyah, kahverengi) içeren 1.5 cm çapında bir pigmente lezyon (ben) ile başvuruyor. Biyopside Malign Melanom tanısı kesinleşiyor ve tümörün dikey (vertikal) büyüme fazına geçtiği belirtiliyor. Patoloğun bu lezyonun cerrahi eksizyon sınırlarını belirlemesi ve hastanın metastaz riskini (sağkalımını) en doğru şekilde öngörebilmesi için raporda mutlak surette belirtmesi gereken EN KRİTİK ölçüm parametresi aşağıdakilerden hangisine dayanır?",
+"options": [
+"Tümör hücresindeki BRAF V600E mutasyonunun allel fraksiyonuna",
+"Tümörün dikey eksende stratum granülozumdan inebildiği en derin noktanın 'milimetre' cinsinden ölçümüne (Breslow kalınlığı)",
+"Melanin pigmentinin hücre içindeki yoğunluğuna",
+"Tümörün derideki hangi anatomik katmanı (papiller veya retiküler dermis) işgal ettiğine (Clark seviyesi)",
+"Lezyonun yatay (radial) büyüme çapına"
+],
+"correct": 1,
+"exp": "Malign Melanom, cilt kanserlerinin en ölümcülüdür. Prognozunu (hastanın yaşayıp yaşamayacağını) ve cerrahın ne kadar geniş bir doku keseceğini belirleyen tartışmasız en önemli prognostik faktör 'Breslow Kalınlığı'dır. Breslow kalınlığı, melanomun epidermisteki granüler tabakadan (veya ülser tabanından), dermise/subkutise doğru dikey olarak (vertikal) indiği EN DERİN noktanın mikroskop altında 'milimetre (mm)' olarak ölçülmesidir. Tümör ne kadar derine inmişse (örn: >4 mm), lenf damarlarına ve kana ulaşma riski o kadar artar ve prognoz o kadar kötüleşir. (Eski bir sistem olan Clark seviyesi anatomik katmanlara bakar ama Breslow kadar güvenilir değildir)."
+},
+{
+"id": 894,
+"ders": "Patoloji",
+"konu": "Deri Hastalıkları",
+"diff": 4,
+"q": "Yirmi beş yaşında kadın hasta, diz ve dirseklerin ekstansör (dış) yüzeylerinde, üzeri sedefi (gümüşi) beyaz pullarla kaplı somon rengi plaklarla polikliniğe başvuruyor. Hekim, lezyonun üzerindeki kepeksi pulları kazıdığında deride minik, noktasal kanamalar (Auspitz bulgusu) meydana geliyor. Psoriazis (Sedef Hastalığı) kliniğindeki bu hastada, pulların kazınmasıyla kanamanın aniden ortaya çıkması, HANGİ spesifik histopatolojik dermal-epidermal mimari değişikliğin doğrudan bir fiziksel sonucudur?",
+"options": [
+"Epidermis içindeki Munro mikroapselerinin (nötrofil kümelerinin) patlayarak kanaması",
+"Dermal papillaların yukarı doğru aşırı uzaması, içlerindeki kılcal damarların çok genişlemesi ve onları örten epidermal plağın (suprapapiller plate) çok incelmiş olması",
+"Dermisteki amiloid birikimlerinin damar duvarını zayıflatarak rüptüre neden olması",
+"Granüler tabakanın kalınlaşarak damar yataklarını yüzeye itmesi",
+"Langerhans hücrelerinin damar endoteline saldırması"
+],
+"correct": 1,
+"exp": "Psoriazis (Sedef Hastalığı), derideki hücrelerin normalden çok daha hızlı bölündüğü (hücre döngüsü 28 gün yerine 3-5 gün) T-hücre aracılı otoimmün bir hastalıktır. Hücreler çekirdeklerini atamadan yüzeye yığılır ve o meşhur gümüşi-beyaz pulları (Parakeratoz) oluşturur. Auspitz bulgusu (kazıyınca kanama) patognomoniktir ve nedeni tamamen mekaniktir: Sedefte, dermisteki damarlı papillalar (parmaksı çıkıntılar) epidermisin içine doğru ip gibi upuzun uzar ve içlerindeki damarlar devasa genişler (dilate olur). Bu uzun papillaların üzerini örten epidermis tabakası (suprapapiller plak) ise sadece birkaç hücre kalınlığında kalıp kağıt gibi incelir. Siz o beyaz pulu kazıdığınızda, kağıt gibi olan epidermis anında yırtılır ve altındaki genişlemiş damarlar yüzeye açılarak nokta nokta kanar."
+},
+{
+"id": 895,
+"ders": "Patoloji",
+"konu": "Deri Hastalıkları",
+"diff": 4,
+"q": "Yetmiş beş yaşında kadın hasta, karın ve iç uyluk bölgesinde şiddetli kaşıntılı, gergin ve kolay patlamayan büyük sıvı dolu kabarcıklarla (Büller) başvuruyor. Nikolsky bulgusu negatiftir. Deri biyopsisinin immünfloresan incelemesinde, dermo-epidermal bileşke boyunca dümdüz, çizgisel (lineer) bir bant şeklinde IgG ve C3 birikimi saptanıyor. Büllöz Pemfigoid tanısı alan bu hastada, büllerin epidermal ayrışma (akantoliz) yapmadan, tüm epidermisi bir bütün olarak dipten ayırıp kaldırması, otoantikorların HANGİ hücresel bağlantı kompleksini yıkmasının sonucudur?",
+"options": [
+"Keratinositleri birbirine bağlayan Desmozomları",
+"Bazal hücreleri dermisteki zemin membranına sabitleyen Hemidesmozomları (BPAG1 ve BPAG2 antijenleri)",
+"Epidermisin granüler tabakasındaki sıkı bağlantıları (Tight junctions)",
+"Melanositlerin dendritik uzantılarını",
+"Dermisteki elastik lif ağını"
+],
+"correct": 1,
+"exp": "Büllöz Pemfigoid, Pemfigus Vulgaris'in aksine genellikle yaşlılarda görülen ve prognozu çok daha iyi olan otoimmün büllöz bir hastalıktır. Sorunun temeli 'Hemidesmozomlar'dır. Hemidesmozomlar (BPAG1 ve BPAG2 proteinlerini içerir), en alttaki bazal hücreleri bir çivi gibi alttaki bazal membrana (dermo-epidermal bileşkeye) çakar. Otoantikorlar (IgG) gelip tam bu bileşkeye, dümdüz bir hat (lineer) şeklinde çöker. Kompleman aktivasyonu ve eozinofil/nötrofil saldırısıyla hemidesmozomlar parçalanır. Epidermis hücreleri kendi aralarında sımsıkı (desmozomları sağlam) kalmaya devam eder, ancak dipten koptukları için TÜM EPİDERMİS bir çadır gibi tek parça halinde havaya kalkar. Bu yüzden büller kalındır, gergindir ve kolay patlamaz (Nikolsky negatiftir)."
+},
+{
+"id": 896,
+"ders": "Patoloji",
+"konu": "Kalp ve İskelet Sistemi Hastalıkları",
+"diff": 4,
+"q": "On beş yaşında erkek çocuk, sol dizinin hemen üstünde (femur distali) özellikle geceleri uykudan uyandıran şiddetli ağrı ve şişlik ile başvuruyor. Çekilen röntgende, metafiz bölgesinden kaynaklanan, kemik zarını (periostu) yırtıp havaya kaldırarak bir 'Codman Üçgeni' oluşturan ve kemik dışına doğru 'güneş ışını (sunburst)' tarzında yayılan destrüktif bir kitle saptanıyor. Osteosarkom tanısını mikroskobik olarak KESİNLEŞTİREN ve bu tümörün agresif bir şekilde kemik dokusu ürettiğini kanıtlayan olmazsa olmaz histolojik bulgu aşağıdakilerden hangisidir?",
+"options": [
+"Küçük, yuvarlak, mavi hücrelerin PAS pozitif glikojen depolaması",
+"Tümör hücrelerinin etrafında yoğun kondroid (kıkırdak) matriks bulunması",
+"Kötü huylu (malign ve pleomorfik) tümör hücrelerinin bizzat kendi elleriyle dantel (lace-like) tarzında 'Osteoid Matriks (kireçlenmemiş kemik)' üretmesi",
+"Çok çekirdekli dev hücrelerin (osteoklast benzeri) tümör stromasını kaplaması",
+"Tümörün soğan zarı (onion-skin) şeklinde periostal reaksiyon yapması"
+],
+"correct": 2,
+"exp": "Osteosarkom, çocuk/ergenlerde en sık görülen primer malign kemik tümörüdür. En sık diz çevresi 'Metafiz' bölgesinden çıkar. RB1 ve p53 (Li-Fraumeni) mutasyonları ile ilişkilidir. Radyolojik olarak Codman Üçgeni ve Sunburst görüntüsü tipiktir. ANCAK radyoloji tanıyı kesinleştirmez. Bir kemik tümörüne patolog tarafından 'Osteosarkom' denebilmesi için GEREKEN TEK ŞART: Mikroskop altında o çirkin, atipik, kötü huylu kanser hücrelerinin (malign osteoblastların), aralarında dantel gibi ördükleri 'Osteoid Matriksi' (Kemiğin ilkel, kireçlenmemiş hali) ürettiğinin bizzat görülmesidir. Eğer tümör hücreleri osteoid üretmiyorsa, o tümör osteosarkom değildir."
+},
+{
+"id": 897,
+"ders": "Patoloji",
+"konu": "Kalp ve İskelet Sistemi Hastalıkları",
+"diff": 4,
+"q": "On bir yaşında erkek çocuk, uyluk ortasında (femur diyafizi) ağrı, lokal ısı artışı, ateş (38.5°C) ve yüksek sedimantasyon hızıyla (osteomiyeliti taklit ederek) getiriliyor. Röntgen filminde kemiği saran periostun kat kat yeni kemik üreterek 'soğan zarı (onion-skin)' görünümü aldığı saptanıyor. Biyopside, sitoplazması glikojen dolu, küçük yuvarlak mavi hücre kitleleri (CD99 pozitif) izleniyor. Ewing Sarkomu tanısı alan bu hastada, tamamen farklılaşmamış (undiferansiye) mezenkimal hücrelerin çılgınca çoğalmasını tetikleyen onkojenik mekanizma, HANGİ iki kromozom arasında gerçekleşen spesifik bir resiprok translokasyonun eseridir?",
+"options": [
+"t(9;22) BCR-ABL füzyonu",
+"t(8;14) c-MYC aktivasyonu",
+"t(11;22) EWS-FLI1 gen füzyonu",
+"t(14;18) BCL-2 aktivasyonu",
+"t(15;17) PML-RARA füzyonu"
+],
+"correct": 2,
+"exp": "Ewing Sarkomu, çocukluk çağının en agresif ikinci kemik tümörüdür. Uzun kemiklerin 'Diyafizinden (şaft)' çıkar. Klinik tablosu enfeksiyonu (osteomiyelit) taklit eder. Röntgendeki 'Soğan zarı' reaksiyonu ve mikroskoptaki 'Küçük Yuvarlak Mavi Hücreler (PNET ailesi)' klasiktir. Bu tümörün genetik imzası, vakaların %95'inde saptanan 't(11;22)' kromozomal translokasyonudur. 22. kromozomdaki EWS geni ile 11. kromozomdaki FLI1 (veya ERG) geni birleşir. Ortaya çıkan bu yeni (şimerik) EWS-FLI1 proteini, güçlü bir transkripsiyon faktörü olarak çalışır ve hücreyi durmaksızın bölünmeye zorlayan genleri aktifleştirerek kanseri başlatır."
+},
+{
+"id": 898,
+"ders": "Patoloji",
+"konu": "Kalp ve İskelet Sistemi Hastalıkları",
+"diff": 4,
+"q": "Elli yaşında kadın hasta, sabahları ellerinde 1 saatten uzun süren eklem tutukluğu, simetrik metakarpofalangeal (MCP) ve el bileği şişlikleriyle başvuruyor. Kanda Anti-CCP (Siklik Sitrüline Peptid) antikorları pozitif bulunuyor. Romatoid Artrit (RA) tanısı alan hastanın ilerleyen yıllardaki eklem grafilerinde kıkırdak aralığının tamamen kaybolduğu ve kemiklerin aşındığı (erozyon) izleniyor. Eklemi kaplayan sinovyumun iltihaplanıp 'Pannus' adı verilen devasa bir doku kitlesine dönüşerek altındaki kıkırdağı ve kemiği asit gibi eritmesi, ortamdaki fibroblast ve makrofajların HANGİ spesifik doku yıkıcı enzimleri masif olarak salgılamasının doğrudan bir sonucudur?",
+"options": [
+"Miyeloperoksidaz (MPO)",
+"Ürikaz",
+"Matriks Metalloproteinazları (MMP'ler)",
+"Kaspaz-3",
+"Hyalüronik asit sentaz"
+],
+"correct": 2,
+"exp": "Romatoid Artrit (RA), eklemlerin sinovyal zarlarını tutan T-hücre (CD4+) aracılı otoimmün bir hastalıktır. İltihaplanan sinovya zarı kalınlaşır, damarlanır ve makrofaj/fibroblast ordusuyla dolar. Tümör gibi büyüyen bu agresif dokuya 'Pannus' denir. Pannus, eklem boşluğunu işgal eder ve bir kanser gibi altındaki kıkırdağı ve kemiği oymaya başlar. Bu oymayı/eritmeyi sağlayan silahlar, pannus içindeki hücrelerin ve nötrofillerin ortama kustuğu 'Matriks Metalloproteinazları (MMP'ler)' ve sitokinlerdir (TNF, IL-1). MMP'ler kıkırdağın kollajen iskeletini tamamen eritir, iki kemik birbirine sürtünür ve zamanla kaynar (Ankiloz/Sakatlık)."
+},
+{
+"id": 899,
+"ders": "Patoloji",
+"konu": "Kalp ve İskelet Sistemi Hastalıkları",
+"diff": 4,
+"q": "Yetmiş üç yaşında erkek hasta; başının büyümesi (şapkalarının dar gelmesi), giderek artan işitme kaybı ve bacaklarında (tibialarda) öne doğru eğilme şikayetleriyle başvuruyor. Kan kalsiyum ve fosfor düzeyleri NORMAL iken, Alkalen Fosfataz (ALP) çok yüksek saptanıyor. Kemik biyopsisinde, kalınlaşmış trabeküllerin düzensiz sement (çimento) çizgileriyle birbirine tutunduğu ve yapboz (jigsaw puzzle) / mozaik deseni oluşturduğu izleniyor. Paget Hastalığı (Osteitis Deformans) tanısı alan bu tabloda, süreci başlatan İLK patolojik (litik) evrede, kemiği agresif ve kontrolsüz bir şekilde oyan çılgın hücrelerin (100 çekirdekli olabilen), osteoblastların salgıladığı HANGİ spesifik sinyal molekülüne karşı aşırı (hipersensitif) yanıt vermesi söz konusudur?",
+"options": [
+"Paratiroid Hormon (PTH)",
+"RANK Ligandı (RANKL)",
+"Osteoprotegerin (OPG)",
+"Kalsitonin",
+"FGF-23 (Fibroblast Büyüme Faktörü-23)"
+],
+"correct": 1,
+"exp": "Paget Hastalığı, ileri yaşta görülen, kemik yapım ve yıkımının delirdiği (kaotik) lokalize bir hastalıktır. Genellikle 3 evreden oluşur. Her şeyi başlatan (kibriti çakan) evre 'Osteolitik (Yıkım)' evredir. Bu evrede, genetik olarak (SQSTM1 mutasyonu) veya paramiksovirüs enfeksiyonu nedeniyle bozulmuş, devasa (100 çekirdekli) çılgın 'Osteoklastlar' kemiğe saldırır. Bu osteoklastların en büyük özelliği, ortamdaki 'RANK Ligandına (RANKL)' karşı inanılmaz derecede HASSAS olmalarıdır. Osteoblastlardan gelen ufak bir RANKL sinyali bile, bu osteoklastları çıldırtır ve kemiği matkap gibi oymalarına neden olur. Daha sonra gelen osteoblastlar (Miks evre ve Sklerotik evre), o çukurları panikle kalın ama kalitesiz bir kemikle (Mozaik patern) doldururlar. Sonuç: Kalın, kaba ama çok kolay kırılan ve işitme sinirini ezen kemikler."
+},
+{
+    "id": 900,
+    "ders": "Farmakoloji",
+    "konu": "Genel Farmakoloji",
+    "diff": 4,
+    "q": "İntihar amacıyla yüksek doz Fenobarbital (zayıf asit yapılı bir barbitürat) yutan ve komaya giren hastaya, acil serviste intravenöz Sodyum Bikarbonat infüzyonu başlanıyor. Hastanın bilinci saatler içinde açılıyor ve kan ilaç düzeyi hızla düşüyor. Sodyum bikarbonatın idrarı alkalileştirerek sağladığı bu terapötik fayda, toksik ajanın renal tübüllerde HANGİ fizikokimyasal değişime uğramasının doğrudan bir sonucudur?",
+    "options": [
+      "Plazma proteinlerinden ayrılarak serbest fraksiyonunun artması",
+      "Karaciğer mikrozomal enzimlerinin (CYP450) indüklenmesiyle yıkımının hızlanması",
+      "Zayıf asit yapısındaki molekülün bazik idrarda iyonize (yüklü) forma geçerek lipofilik özelliğini kaybetmesi ve kana geri emilememesi (İyon tuzağı)",
+      "Böbrek tübüllerindeki aktif sekresyon pompalarının (OAT) yarışmalı olarak uyarılması",
+      "İlacın molekül ağırlığının parçalanarak glomerüler filtrasyon hızının artması"
+    ],
+    "correct": 2,
+    "exp": "Zayıf asit (Örn: Aspirin, Fenobarbital) veya zayıf baz (Örn: Amfetamin) yapılı ilaçların atılımı idrar pH'sından çok etkilenir. Kural şudur: İlaçlar kendi zıttı olan ortamlarda 'İyonize (Yüklü)' hale geçerler. İyonize moleküller yağdan zengin hücre zarını (renal tübül epitelini) aşıp kana geri dönemezler, idrarın içinde hapsolurlar (İyon Tuzağı / Ion Trapping). Zayıf bir asit olan Fenobarbital zehirlenmesinde idrara 'Bikarbonat (Baz)' verilirse, asit ilaç bazik ortamda iyonize olur, geri emilemez ve idrarla hızla vücuttan atılır. (Zayıf baz zehirlenmelerinde ise idrarı asitleştirmek için Amonyum Klorür veya C vitamini kullanılır)."
+  },
+  {
+    "id": 901,
+    "ders": "Farmakoloji",
+    "konu": "Genel Farmakoloji",
+    "diff": 4,
+    "q": "Çarpıntı şikayeti olan bir hastaya kalp hızını kontrol etmek için Propranolol reçete ediliyor. İlacın prospektüsü incelendiğinde, ilacın etkili olabilmesi için oral (ağızdan) yolla 40 mg verilmesi gerekirken, aynı etkiyi elde etmek için intravenöz (damar içi) yolla sadece 1-2 mg verilmesinin yeterli olduğu görülüyor. Bu iki farklı uygulama yolunda ortaya çıkan devasa doz gereksinimi farkı, oral alınan ilacın kanda sistemik dolaşıma katılmadan önce HANGİ farmakokinetik bariyere yüksek oranda takılmasının bir sonucudur?",
+    "options": [
+      "Mide asidi tarafından büyük oranda hidrolize edilmesi",
+      "Kan-beyin bariyerini (KBB) aşmakta zorlanması",
+      "Bağırsaklardan emilen ilacın portal venle ulaştığı karaciğerde, sitokrom enzimleri tarafından sistemik dolaşıma geçmeden büyük oranda parçalanması (İlk geçiş etkisi)",
+      "Bağırsak lümenindeki P-glikoprotein pompaları tarafından sürekli lümene geri atılması",
+      "Plazma albüminine çok yüksek oranda (%99) bağlanarak inaktif kalması"
+    ],
+    "correct": 2,
+    "exp": "Ağızdan (oral) alınan her ilaç, mideden/bağırsaktan emildikten sonra doğrudan kalbe gitmez; önce Portal Ven aracılığıyla karaciğere uğramak ZORUNDADIR. Karaciğer vücudun gümrük kapısıdır. Bazı ilaçlar (Propranolol, Lidokain, Morfin, Nitrogliserin) karaciğerden ilk kez geçerken o kadar acımasızca metabolize edilir (parçalanır) ki, ilacın sadece %10-20'si sağ salim kalbe ve sistemik dolaşıma ulaşabilir. Buna 'Karaciğerde İlk Geçiş Etkisi (First-Pass Metabolism)' denir. Bu nedenle bu ilaçların oral dozları, damardan (IV) verilen (gümrüğü atlayan) dozlarına göre çok daha YÜKSEK olmak zorundadır."
+  },
+  {
+    "id": 902,
+    "ders": "Farmakoloji",
+    "konu": "Genel Farmakoloji",
+    "diff": 5,
+    "q": "Epilepsi tedavisi için Fenitoin kullanan hastanın kan ilaç seviyesi 12 mg/L (terapötik aralıkta) olarak ölçülüyor. Hastanın nöbetleri devam ettiği için hekim günlük dozu sadece %10 oranında (çok hafif) artırıyor. Ancak bir hafta sonra hasta şiddetli nistagmus (göz titremesi), ataksi ve konfüzyon ile acile getiriliyor. Kan düzeyi 35 mg/L (toksik seviye) saptanıyor. Ufacık bir doz artışının aniden devasa bir kan birikimine (toksisiteye) yol açması, ilacın karaciğerdeki metabolizmasında HANGİ kinetik kırılmanın yaşandığını kanıtlamaktadır?",
+    "options": [
+      "Hepatik sitokrom enzimlerinin oto-indüksiyonla aşırı çalışması",
+      "Böbrek tübüllerinde ilacın aktif reabsorbsiyonunun aniden artması",
+      "Hepatik yıkım enzimlerinin saturasyona (doygunluğa) ulaşarak, eliminasyonun birinci derece (first-order) kinetikten sıfırıncı derece (zero-order) kinetiğe kayması",
+      "İlacın plazma proteinlerinden koparak serbest fraksiyonunun fırlaması",
+      "İlacın sanal dağılım hacminin (Vd) aniden daralması"
+    ],
+    "correct": 2,
+    "exp": "Fenitoin (ve yüksek doz Aspirin, Etanol) doz ayarlaması en zor olan ilaçlardandır. Normal (düşük) dozlarda bu ilaçlar 'Birinci Derece (First-order)' kinetikle atılırlar (Kanda ne kadar çoksa o kadar çok atılır, denge korunur). ANCAK, tedavi edici doza yaklaşıldığında, karaciğerdeki yıkım enzimleri anında DOYAR (Saturasyon). Enzimler doyduktan sonra atılım hızı sabitlenir (Sıfırıncı Derece / Zero-order kinetik). Yani karaciğer saatte en fazla 10 birim yıkabilir hale gelir. Siz dozu 10 birim artırırsanız, bu fazlalık asla atılamaz, kanda roket gibi birikerek hastayı günler içinde komaya/ataksiye sokar. Bu non-lineer (doğrusal olmayan) kinetik nedeniyle Fenitoin dozu artırılırken miligram miligram çok dikkatli olunmalıdır."
+  },
+  {
+    "id": 903,
+    "ders": "Farmakoloji",
+    "konu": "Genel Farmakoloji",
+    "diff": 4,
+    "q": "Laboratuvarda bir doku banyosunda İzoproterenol (Agonist) kullanılarak maksimal kalp kasılması (Emax) elde ediliyor. Daha sonra ortama 'İlaç X' ekleniyor. İzoproterenol dozu ne kadar artırılırsa artırılsın (binlerce katına çıkarılsa bile), kalp kasılmasının eski maksimum etki seviyesine (Emax) bir daha ASLA ulaşamadığı ve doz-yanıt eğrisinin tepe noktasının kalıcı olarak aşağı çöktüğü saptanıyor. Bu durum, 'İlaç X'in reseptör üzerinde HANGİ tarzda bir farmakodinamik etkileşim gösterdiğini kanıtlar?",
+    "options": [
+      "Kompetitif (Yarışmalı) Antagonizma",
+      "Kimyasal Antagonizma",
+      "Fizyolojik Antagonizma",
+      "Non-kompetitif (Yarışmasız) Antagonizma",
+      "Kısmi (Parsiyel) Agonizma"
+    ],
+    "correct": 3,
+    "exp": "Doz-Yanıt eğrisinin zirvesi (Emax), ilacın yapabileceği en büyük etkidir. Eğer ortama bir blokör koyarsanız ve siz agonist dozunu artırdığınızda etki ESKİ ZİRVEYE ulaşabiliyorsa, bu blokör 'Kompetitif (Yarışmalı)'dir (Emax değişmez, eğri sağa kayar). ANCAK sorudaki gibi, agonist dozunu ne kadar artırırsanız artırın eski zirveye (Emax) ULAŞILAMIYORSA, bu blokör 'Non-Kompetitif (Yarışmasız)'dir. Neden? Çünkü non-kompetitif antagonistler reseptöre 'Kovalent' (koparılamaz) bağla yapışır veya reseptörün yapısını geri dönüşümsüz bozar. Agonist gelse bile oturacak sağlam koltuk kalmadığı için maksimum kapasite (Emax) mecburen ve kalıcı olarak düşer."
+  },
+  {
+    "id": 904,
+    "ders": "Farmakoloji",
+    "konu": "Otonom Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "Uzun yıllardır atipik depresyon tedavisi gören ve bu amaçla Monoamin Oksidaz İnhibitörü (MAOİ - Örn: Moklobemid) kullanan hasta, bir restoranda şarap eşliğinde eski (yıllanmış) peynir yedikten 1 saat sonra zonklayıcı baş ağrısı, çarpıntı ve 220/120 mmHg tansiyon (Hipertansif Kriz) ile acile getiriliyor. Peynir etkisi (Cheese Effect) denilen bu ölümcül tablo, besinle alınan 'Tiramin'in sinir uçlarında HANGİ spesifik hücresel olayı kontrolsüzce tetiklemesinin doğrudan bir sonucudur?",
+    "options": [
+      "Asetilkolinesteraz enziminin bloke edilmesi",
+      "Post-sinaptik Alfa-1 reseptörlerinin doğrudan (direkt agonist etkiyle) uyarılması",
+      "Presinaptik veziküllerde depolanmış olan Noradrenalin ve Dopaminin sitoplazmaya ve sinaptik aralığa doğrudan yer değiştirmesi (deşarjı)",
+      "Presinaptik sempatik nöronlarda aksiyon potansiyeli frekansının baskılanması",
+      "Nitrik oksit sentezinin tamamen durdurulması"
+    ],
+    "correct": 2,
+    "exp": "Yıllanmış peynir, şarap, fermente gıdalar bol miktarda 'Tiramin' içerir. Tiramin bir 'İndirekt Etkili Sempatomimetik'tir; yani sempatik sinir ucuna girip içerdeki Noradrenalini zorla dışarı kovar (deşarj yapar). Normal (sağlıklı) bir insanda yenen tiramin kana bile geçemeden bağırsak ve karaciğerdeki Monoamin Oksidaz (MAO) enzimleri tarafından anında parçalanır (Zararı yoktur). Ancak hasta MAO İnhibitörü (MAOİ) bir antidepresan kullanıyorsa, bağırsaktaki MAO enzimleri felçtir. Tiramin parçalanamadan kana karışır, sempatik sinir uçlarına gider ve devasa boyuttaki Noradrenalini kana boşaltarak hastanın beyin kanaması (hipertansif kriz) geçirmesine neden olur."
+  },
+  {
+    "id": 905,
+    "ders": "Farmakoloji",
+    "konu": "Otonom Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "Tarlada ilaçlama yapan çiftçi; aşırı terleme, gözyaşı, ishal, idrar kaçırma, solunum zorluğu ve kaslarda yaygın seğirmeler (fasikülasyon) tablosuyla acile getiriliyor. Organofosfat zehirlenmesi tanısıyla hemen yüksek doz Atropin veriliyor. Atropin, hastanın sekresyonlarını kurutuyor ve nabzını düzeltiyor ancak hastanın kas güçsüzlüğü ve solunum felci DAHA DA KÖTÜLEŞİYOR. Bu tabloda kas gücünü hızla geri getirebilecek olan ikinci ilacın (Pralidoksim / 2-PAM), nöromüsküler kavşakta HANGİ enzimatik kurtarma işlemini yapması hayat kurtarıcıdır?",
+    "options": [
+      "Presinaptik zardaki kalsiyum kanallarını bloke etmesi",
+      "GABA reseptörlerini uyararak konvülsiyonları durdurması",
+      "Nikotinik reseptörleri kompetitif olarak bloke etmesi",
+      "Fosforillenmiş (kilitlenmiş) Asetilkolinesteraz enziminin aktif bölgesindeki toksin molekülünü (fosfat grubunu) kopararak enzimi reaktive etmesi",
+      "Asetilkolin üretimini (Kolin asetiltransferaz enzimini) durdurması"
+    ],
+    "correct": 3,
+    "exp": "Organofosfatlar (tarım ilaçları), sinapslardaki Asetilkolinesteraz (AChE) enzimine kovalent (fosforilasyon) olarak bağlanıp onu öldürürler. Asetilkolin (ACh) birikir ve iki reseptörü çıldırtır: Muskarinik (salgı/bradikardi) ve Nikotinik (kas seğirmesi ve felç). Atropin harika bir Muskarinik blokördür, sıvıları kurutur ama kaslara HİÇBİR ETKİSİ YOKTUR (Çünkü kaslardaki reseptör nikotiniktir). Kas felcini (solunum durmasını) çözmek için 'Pralidoksim (2-PAM)' verilmesi ŞARTTIR. Pralidoksim bir 'Enzim Reaktivatörü'dür. Gidip enzime yapışmış olan tarım ilacını (fosfat bağını) makas gibi koparıp atar ve AChE enzimini yeniden çalışır hale getirir. Enzim çalışınca ACh parçalanır ve kas felci anında çözülür. (Ancak enzim yaşlanmadan/aging olmadan erken verilmelidir)."
+  },
+  {
+    "id": 906,
+    "ders": "Farmakoloji",
+    "konu": "Otonom Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "Kronik migren, aşırı terleme (hiperhidroz) veya yutma güçlüğü (akalazya) tedavisi için lokal olarak enjekte edilen Botulinum Toksini (Botoks), uygulandığı kasta aylarca süren gevşek bir felç (flask paralizi) oluşturur. Toksinin, sinir ucundan kas hücresine iletimi sıfırlayarak bu uzun süreli paraliziyi yaratması; presinaptik motor nöron terminalinin İÇİNDE HANGİ spesifik protein kompleksinin proteolitik yıkıma uğratılmasının doğrudan bir sonucudur?",
+    "options": [
+      "Post-sinaptik zardaki Nikotinik (Nm) Asetilkolin reseptörlerinin",
+      "Voltaj kapılı Sodyum (Na+) kanallarının",
+      "Asetilkolin veziküllerinin hücre zarına tutunmasını ve ekzositozla salınmasını sağlayan SNARE (Örn: SNAP-25, Sinaptobrevin) protein kompleksinin",
+      "Asetilkolinesteraz (AChE) enziminin",
+      "Kas hücresi içindeki Ryanodin (RYR1) reseptörlerinin"
+    ],
+    "correct": 2,
+    "exp": "Botulinum toksini, bilinen en güçlü biyolojik zehirdir ve kasları felç eder. İlginç olan şudur ki; Botoks'un kasın kendisiyle veya reseptörüyle HİÇBİR işi yoktur. Toksin, sinir ucunun (presinaptik terminalin) içine girer. Sinir ucunda, Asetilkolin (ACh) dolu baloncukları hücre zarına zımbalayan ve dışarı patlamalarını sağlayan ipler vardır (SNARE proteinleri: SNAP-25, Sinaptobrevin, Sintaksin). Botulinum toksini bir proteaz (makas) olarak çalışır ve bu SNARE iplerini keser. İpler kesilince veziküller zardan dışarı çıkamaz. Sinir ucundan Asetilkolin salınımı tamamen SIFIRLANIR ve kas, uyarı alamadığı için felç (gevşek/flask paralizi) olur. Etkisi, sinir yeni SNARE proteinleri üretene kadar (3-6 ay) sürer."
+  },
+  {
+    "id": 907,
+    "ders": "Farmakoloji",
+    "konu": "Otonom Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "Ellerinde titreme (Esansiyel Tremor) şikayeti olan 60 yaşındaki erkek hastaya 'Propranolol' reçete ediliyor. İlacı aldıktan 1 saat sonra hasta aniden nefes alamama, morarma ve hırıltılı solunum (bronkospazm) ile acile getiriliyor. Hastanın özgeçmişinde hafif dereceli Astım olduğu öğreniliyor. Titremeyi tedavi etmek için verilen bu ilacın, akciğerlerde aniden ölümcül bir astım krizini tetiklemesi, solunum yollarında HANGİ otonomik denge değişiminin yaşanmasına neden olmuştur?",
+    "options": [
+      "Bronşlardaki Alfa-1 reseptörlerin doğrudan uyarılmasına",
+      "Histamin H1 reseptörlerinin degranülasyona uğramasına",
+      "Bronş düz kaslarındaki Beta-2 aracılı gevşeme (vazodilatasyon) sinyalinin kesilerek, vagal (parasempatik) kasıcı tonusun karşılanıksız (unopposed) kalmasına",
+      "Mast hücrelerinden lökotrien (LTC4) sentezinin artmasına",
+      "Diyafram kasındaki nikotinik reseptörlerin bloke edilmesine"
+    ],
+    "correct": 2,
+    "exp": "Propranolol, hem Beta-1 (kalp) hem de Beta-2 (akciğer) reseptörlerini tıkayan 'Non-selektif' bir beta blokördür. Tremoru engellemesi iskelet kasındaki Beta-2'leri bloke etmesi sayesindedir. Ancak bu kör blokajın ölümcül bir bedeli vardır. Akciğerlerdeki bronş düz kaslarını açık (geniş) tutan yegane sistem Beta-2 reseptörleridir. Astım hastaları zaten havayolu daralmasına yatkındır. Siz Propranolol vererek akciğerdeki bu Beta-2 (gevşetici) reseptörleri tıkarsanız; Parasempatik (vagus) sistemin M3 üzerinden yaptığı 'bronkokonstriksiyon (kasılma)' etkisi karşısında duracak güç kalmaz (unopposed parasympathetic tone). Bronşlar anında kilitlenir ve hasta boğulur. Bu nedenle Astım/KOAH hastalarında Propranolol ve diğer non-selektif beta blokörler (Nadolol, Pindolol, Timolol) KESİNLİKLE KONTRENDİKEDİR."
+  },
+  {
+    "id": 908,
+    "ders": "Farmakoloji",
+    "konu": "Kardiyovasküler Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "Eforla gelen göğüs ağrısı (Stabil Anjina) olan hastaya dilaltı kullanması için İzosorbid Dinitrat (Organik Nitrat) reçete ediliyor. Kriz anında ilacı alan hastanın ağrısı saniyeler içinde geçiyor. Nitratların kalbin oksijen ihtiyacını düşürerek anjina krizini sonlandırması; hücre içinde cGMP artışı sağladıktan sonra, HANGİ spesifik hücresel ve hemodinamik değişikliği yaratmasının doğrudan bir sonucudur?",
+    "options": [
+      "Kalp hızını (SA düğümünü) doğrudan yavaşlatarak diyastol süresini uzatması",
+      "Öncelikle arteriyolleri (atardamarları) gevşeterek kalbin ard yükünü (afterload) düşürmesi",
+      "Miyozin hafif zincirlerinin defosforile olmasıyla özellikle VENÖZ sistemin (toplardamarların) gevşemesi ve kalbe dönen kanın (preload / ön yük) dramatik şekilde azalması",
+      "Sadece iskemik (tıkalı) koroner damarları %100 açarak kan akımını artırması",
+      "Kalp kasının oksijen çıkarma (ekstraksiyon) oranını yükseltmesi"
+    ],
+    "correct": 2,
+    "exp": "Organik Nitratların (Nitrogliserin vb.) anjinayı geçirme mekanizması genellikle yanlış anlaşılır; asıl amaçları tıkalı damarı açmak değil, kalbin İŞ YÜKÜNÜ HAFİFLETMEK'tir. Nitratlar damar düz kasına girip Nitrik Oksit (NO) salar, cGMP artar, miyozin hafif zincirleri defosforile olur ve düz kas gevşer. Kritik nokta şudur: Nitratlar arterlerden ZİYADE, sistemik VENLERİ (toplardamarları) çok daha güçlü gevşetirler (Venodilatasyon). Venler gevşeyince, vücuttaki kan bacaklarda/kollarda göllenir ve kalbe geri dönen kan miktarı (Venöz Dönüş / Preload) aniden bıçak gibi kesilir. İçi boşalan ve gerilmeyen kalp kasılırken hiç yorulmaz, oksijen ihtiyacı dibe vurur ve göğüs ağrısı geçer. (Yan etki olarak baş ağrısı ve postural hipotansiyon yaparlar)."
+  },
+  {
+    "id": 909,
+    "ders": "Farmakoloji",
+    "konu": "Kardiyovasküler Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "Hipertansiyon nedeniyle tedavi başlanan 55 yaşındaki hastada, 3 hafta sonra inatçı, kuru, gıcık tarzında bir öksürük ve dudaklarında tehlikeli bir şişlik (anjiyoödem) gelişiyor. Hastanın kullandığı Anjiyotensin Dönüştürücü Enzim (ACE) inhibitörünün (Örn: Enalapril) bu karakteristik yan etkilere yol açması; enzimin bloke edilmesi sonucu, akciğer ve sistemik endotel dokularında HANGİ spesifik vazoaktif peptidin parçalanamayıp birikmesinin doğrudan bir eseridir?",
+    "options": [
+      "Angiotensin I",
+      "Renin",
+      "Aldosteron",
+      "Bradikinin",
+      "Nitrik Oksit (NO)"
+    ],
+    "correct": 3,
+    "exp": "ACE İnhibitörleri (-pril grubu), tansiyon tedavisinde altın standarttır. Angiotensin I'i, vazokonstriktör olan Angiotensin II'ye çeviren ACE (Angiotensin-Converting Enzyme) enzimini bloke ederler. Ancak bu enzimin vücutta ikinci bir adı ve görevi daha vardır: 'Kininaz II'. Kininaz II, akciğerlerde ve dokularda sürekli üretilen, damar genişletici ve inflamatuar bir peptid olan 'Bradikinin'i parçalayarak yok eder. Siz ilacı verip ACE'yi (Kininaz II'yi) bloke ettiğinizde, Bradikinin PAMPARÇALANAMAZ ve dokularda birikir. Akciğerde biriken bradikinin inatçı ve kuru bir ÖKSÜRÜK (%10-20) yapar. Ciltte/mukozada birikirse damarları çok genişletip sıvı sızdırarak hayatı tehdit eden 'Anjiyoödem' yapar. Tedavi: İlacı kesip ARB (-sartan) grubuna geçmektir."
+  },
+  {
+    "id": 910,
+    "ders": "Farmakoloji",
+    "konu": "Kardiyovasküler Sistem Farmakolojisi",
+    "diff": 5,
+    "q": "Atriyal fibrilasyon ve şiddetli kalp yetmezliği nedeniyle kronik Digoksin kullanan hastaya, bacaklarındaki ödemi çözmek için Furosemid (Kıvrım diüretiği) ekleniyor. Birkaç gün sonra hasta bulantı, kusma, etrafı sarı-yeşil görme ve EKG'de ventriküler aritmiler (Digoksin zehirlenmesi) tablosuyla acile başvuruyor. Digoksin dozunda hiçbir artış yapılmamasına rağmen aniden toksisite gelişmesi, Furosemid'in yarattığı HANGİ spesifik elektrolit değişiminin, digoksinin hedef pompadaki (Na+/K+ ATPaz) bağlanma afinitesini devasa boyutlarda artırmasının sonucudur?",
+    "options": [
+      "Hiperkalseminin miyokard uyarılabilirliğini artırması",
+      "Hiponatreminin hücre içi su birikimi yapması",
+      "Hipokaleminin (kanda azalan potasyumun), miyokardiyal Na+/K+ ATPaz pompasındaki bağlanma bölgesi için digoksin ile girdiği rekabeti (yarışı) kaybetmesi",
+      "Hiperkaleminin hücre zarını kalıcı depolarize etmesi",
+      "Hipomagnezeminin kalsiyum kanallarını bloke etmesi"
+    ],
+    "correct": 2,
+    "exp": "Digoksin, kalp kasındaki 'Sodyum-Potasyum (Na+/K+) ATPaz' pompasını bloke ederek hücre içi kalsiyumu artırır ve kalbi güçlendirir. Çok dar bir güvenlik aralığı vardır. Digoksin ile kandaki Potasyum (K+), bu pompanın üzerindeki aynı koltuğa (bağlanma bölgesine) oturmak için SÜREKLİ YARIŞ (rekabet) halindedir. Furosemid veya Tiazid gibi idrar söktürücüler verildiğinde idrarla bolca Potasyum atılır ve hastada 'Hipokalemi' gelişir. Kanda potasyum azalınca, Digoksinin rakibi ortadan kalkmış olur. Digoksin, boş kalan tüm pompalara hücum eder, bağlanma gücü (afinitesi) patlar ve hasta normal doz alsa bile 'Ölümcül Digoksin Toksisitesi'ne (sarı görme, V.Tach vb.) girer. Bu yüzden Digoksin kullanan hastanın potasyum düzeyi daima normalin üst sınırına yakın tutulmalıdır."
+  },
+  {
+    "id": 911,
+    "ders": "Farmakoloji",
+    "konu": "Kardiyovasküler Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "Ailesel Hiperkolesterolemi hastasına, kandaki yüksek LDL seviyelerini düşürmek amacıyla HMG-CoA Redüktaz İnhibitörü (Örn: Rosuvastatin) başlanıyor. İlaç karaciğerdeki kolesterol üretimini durdurmasına rağmen, asıl terapötik hedefi olan kandaki (plazmadaki) LDL seviyelerinin %50 oranında düşmesini sağlayan olay kolesterol sentezinin durması değildir. Statinlerin kandaki LDL'yi asıl temizleme mekanizması, karaciğer hücrelerinin (hepatositlerin) hücre içi kolesterol açlığına HANGİ adaptif genetik/hücresel yanıtı vermesiyle gerçekleşir?",
+    "options": [
+      "Karaciğerin safra asidi sentezini durdurması",
+      "Makrofajlardaki çöpçü (scavenger) reseptörlerin aktivasyonuyla kandan LDL çekilmesi",
+      "SREBP yolağının aktivasyonuyla, hepatositlerin hücre zarlarına yerleştirdiği 'LDL Reseptörlerinin' sentezini ve sayısını devasa boyutlarda artırması (Upregülasyon)",
+      "Lipoprotein lipaz enziminin uyarılarak VLDL'nin hızlıca parçalanması",
+      "PCSK9 proteininin genetik olarak aşırı sentezlenmesi"
+    ],
+    "correct": 2,
+    "exp": "Statinlerin kan kolesterolünü düşürme mekanizması mükemmel bir adaptasyon örneğidir. İlaç, hepatositin içindeki kolesterol fabrikasını (HMG-CoA Redüktaz) kapatır. Hücrenin içi kolesterolsüz kalır. Hücre (hepatosit) yaşamına devam etmek için kolesterole muhtaçtır. İçeride üretemediğini fark edince, SREBP (Sterol Regulatory Element-Binding Protein) adı verilen transkripsiyon faktörü uyanır. SREBP çekirdeğe gider ve 'LDL Reseptörü' genlerini okutur. Hepatosit, yüzeyine normalin yüzlerce katı 'LDL Reseptörü' yerleştirir (Upregülasyon). Zarı reseptörle kaplanan karaciğer, kanda dolaşan tüm LDL moleküllerini devasa bir elektrik süpürgesi gibi yakalayıp içine çeker. İşte kanda LDL'nin düşmesinin (ve hastanın hayatının kurtulmasının) ASIL sırrı, yaratılan bu reseptör upregülasyonudur."
+  },
+  {
+    "id": 912,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "Tip 2 Diyabet tedavisi gören 65 yaşındaki obez hastanın eGFR (böbrek fonksiyon) değeri 30 mL/dk'nın altına düşmüştür. Hastaya birinci basamak tedavisi olarak verilen Metformin kullanılmaya devam edilirse, hastada şiddetli kas ağrıları, derin/hızlı solunum (Kussmaul) ve şok tablosuyla seyreden ölümcül bir metabolik kriz gelişme riski çok yüksektir. Metforminin böbrek yetmezliğinde kontrendike olmasına yol açan bu asidoz tablosu (Laktik Asidoz), ilacın hücresel düzeyde HANGİ metabolik durağı hafifçe bloke ederek dokuları anaerobik faza (laktat üretimine) zorlamasının sonucudur?",
+    "options": [
+      "Sitrik Asit (Krebs) döngüsündeki İzositrat Dehidrogenaz enzimi",
+      "Mitokondriyal elektron transport zincirindeki (Solunum zinciri) Kompleks I'in inhibisyonu",
+      "Glikoliz yolağındaki Fosfofruktokinaz-1 (PFK-1) enzimi",
+      "Pankreas beta hücrelerindeki ATP-bağımlı potasyum kanalları",
+      "Karaciğerdeki glikojen fosforilaz enzimi"
+    ],
+    "correct": 1,
+    "exp": "Metformin, diyabetin ilk ilacıdır; insülin duyarlılığını artırır, karaciğerde glukoz yapımını (glukoneogenez) engeller ve hipoglisemi yapmaz. Çok güvenlidir. Ancak etki mekanizmasının bir parçası olarak, mitokondrinin 'Solunum Zincirindeki Kompleks 1'i' hafifçe bloke eder (AMPK'yı da aktive eder). Kompleks 1 yavaşlayınca, hücrelerin ATP üretimi hafif aksar ve hücreler oksijensiz solunuma (anaerobik glikoliz) kayarak bir miktar 'Laktik Asit' üretirler. Sağlıklı böbrekler bu laktik asidi anında temizler ve sorun çıkmaz. ANCAK hastanın Böbrek Yetmezliği varsa (eGFR <30), hem Metformin vücuttan atılamaz (birikir) hem de Laktik asit atılamaz. Kanda biriken laktat, hastayı ölümcül 'Laktik Asidoz' komasına sokar."
+  },
+  {
+    "id": 913,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "Kan şekeri kontrolü iyi olmasına rağmen, oral antidiyabetik tedavi alan 55 yaşındaki kadın hasta inatçı ve tekrarlayan vulvovajinal kandidiyazis (mantar enfeksiyonu) ve sık idrara çıkma şikayetiyle başvuruyor. Bu yan etkilere yol açan ilacın farmakodinamik etkisi, kan şekeri düzeyinden bağımsız olarak böbreklerden devasa miktarda glukoz atılımına (glukozüri) neden olmasıdır. Bu durum, ilacın böbrek proksimal tübüllerinde HANGİ spesifik taşıyıcı sistemi kompetitif olarak bloke etmesinin doğrudan bir sonucudur?",
+    "options": [
+      "GLUT-4 (Glukoz Taşıyıcı 4) reseptörleri",
+      "Sodyum-Glukoz Ko-transporter 2 (SGLT-2) pompası",
+      "Na+/K+ ATPaz pompası",
+      "Karbonik Anhidraz enzimi",
+      "Sodyum-Klor (Na+/Cl-) simporter"
+    ],
+    "correct": 1,
+    "exp": "SGLT-2 İnhibitörleri (Empagliflozin, Dapagliflozin vb. / -gliflozinler), diyabet tedavisinde (ve kalp/böbrek yetmezliğinde) devrim yaratan ilaçlardır. Etkilerini insülin üzerinden DEĞİL, doğrudan böbrekler üzerinden gösterirler. Böbreklerin proksimal tübüllerinde glukozu geri emen ana pompa 'SGLT-2'dir. Bu pompa bloke edildiğinde, süzülen şeker kana geri dönemez ve doğrudan idrarla atılır (Glukozüri). Kan şekeri düşer, hasta kalori kaybettiği için kilo verir. ANCAK idrar yollarının sürekli bol şekerli bir sıvı ile yıkanması, idrar yollarında üremeyi bekleyen bakteri ve mayalar (Candida) için mükemmel bir ziyafet sofrası yaratır. Bu nedenle bu ilaçların en sık (ve en can sıkıcı) yan etkileri tekrarlayan genital mantar ve idrar yolu enfeksiyonlarıdır."
+  },
+  {
+    "id": 914,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "Graves Hastalığına bağlı hayatı tehdit eden Tiroid Fırtınası (Tiroid Krizi) geçiren bir hastaya acil serviste, tiroid hormon sentezini durdurmak için Metimazol yerine özellikle 'Propiltiyourasil (PTU)' tercih edilerek yüksek dozda başlanıyor. Her iki ilaç da tiroid bezindeki Tiroid Peroksidaz (TPO) enzimini inhibe etmesine rağmen, PTU'nun kriz anında çok daha hızlı ve dramatik bir klinik iyileşme (sistemik semptom kontrolü) sağlamasının sırrı; TPO blokajına EK OLARAK periferik dokularda HANGİ kritik enzimi durdurmasına dayanmaktadır?",
+    "options": [
+      "Tirozin hidroksilaz enzimi",
+      "5'-deiyodinaz (Tip 1 deiyodinaz) enzimini inhibe ederek, kanda inaktif T4'ün çok daha güçlü olan aktif T3 formuna dönüşmesini engellemesi",
+      "Tiroid hormon reseptörlerini (TR) çekirdekte kompetitif olarak bloke etmesi",
+      "Sodyum-İyot Simporter (NIS) pompasını kapatarak iyot girişini kesmesi",
+      "Tiroglobulin molekülünün proteolitik yıkımını hızlandırması"
+    ],
+    "correct": 1,
+    "exp": "Tiroid Fırtınası, kanda aşırı T3/T4 bulunmasına bağlı gelişen ölümcül hipermetabolik bir krizdir. Tiyoüre grubu ilaçlar (Metimazol ve PTU), tiroid bezine gidip Tiroid Peroksidaz (TPO) enzimini kapatırlar (Yeni hormon yapılamaz). ANCAK bu ilaçlar bezin içindeki HAZIR (depo edilmiş) hormonun kana salınmasına engel olamazlar. Bu yüzden etkileri haftalar sonra başlar. Tiroid fırtınasında acil bir çözüm gerekir. Tiroid bezi kana %90 oranında inaktif T4 salgılar. Bu T4, periferik dokularda (karaciğer/kas) '5'-deiyodinaz' enzimiyle aktif, çıldırtıcı hormon olan 'T3'e çevrilir. Propiltiyourasil (PTU), Metimazol'den farklı olarak, sadece bezi durdurmakla kalmaz; AYNI ZAMANDA gidip periferdeki bu '5'-deiyodinaz' enzimini de bloke eder. Kanda T4, T3'e dönüşemediği için hastanın kalp çarpıntısı ve krizi hızla (saatler içinde) yatışır."
+  },
+  {
+    "id": 915,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "Postmenopozal kemik erimesi (Osteoporoz) tedavisi için uzun süredir oral yolla haftalık Alendronat (Bifosfonat) kullanan hastanın DEXA taramasında kemik mineral yoğunluğunun belirgin şekilde arttığı ve kırık riskinin düştüğü saptanıyor. Bifosfonatların kemik yıkımını (rezorpsiyonunu) bu derece muazzam bir şekilde durdurabilmesi; kemik yüzeyinden ilacı yutan osteoklastların (kemik yiyici hücrelerin) içinde mevalonat yolağının tıkanması ve bunun sonucunda hücrede HANGİ kaçınılmaz fizyolojik kaderin tetiklenmesine dayanır?",
+    "options": [
+      "Hücrenin iskelet yapısının ve kemiğe tutunduğu fırfırlı kenarın (ruffled border) çökmesiyle osteoklastın apoptoza (programlı hücre ölümüne) sürüklenmesi",
+      "Osteoklastların şekil değiştirerek kemik yapan osteoblastlara dönüşmesi",
+      "Hücre içi kalsiyum depolarının boşalmasıyla hücrenin nekroza gitmesi",
+      "RANKL reseptörlerinin hücre içine çekilerek tamamen kaybolması",
+      "Osteoklastların kemik iliğine geri dönerek makrofaj formuna geçmesi"
+    ],
+    "correct": 0,
+    "exp": "Bifosfonatlar (-dronat ilaçları), kalsiyum kristallerine (hidroksiapatit) çok güçlü bağlanırlar. Osteoporozdaki asıl sorun olan 'Osteoklastlar' kemiği eritmeye başladıklarında, kemik yüzeyindeki bu ilacı da yutarlar. Hücre (osteoklast) içine giren bifosfonat, kolesterol sentezi olan 'Mevalonat' yolağındaki Farnesil Pirofosfat Sentaz enzimini bloke eder. Bu yolak, hücre iskeleti proteinlerinin (Ras, Rho) lipid zarlara tutunabilmesi (prenilasyon) için şarttır. Prenilasyon durduğunda osteoklastın hücre iskeleti bir çadır gibi çöker. Kemik yüzeyine asit salgıladığı o tırtıklı yapı (Fırfırlı kenar / Ruffled border) dümdüz olur. İşlevini ve tutunma yeteneğini kaybeden osteoklast sonunda Apoptoza (intihara) uğrayarak yok olur ve kemik yıkımı mucizevi bir şekilde durur."
+  },
+  {
+"id": 916,
+"ders": "Farmakoloji",
+"konu": "Santral Sinir Sistemi Farmakolojisi",
+"diff": 5,
+"q": "Majör depresyon tanısıyla Fluoksetin (SSRI) kullanmakta olan bir hasta, ilacı aniden bırakıp sadece 2 gün sonra Tranilsipromin (MAOİ) kullanmaya başlıyor. Saatler sonra hastada 41°C ateş, kaslarda şiddetli seyirmeler, klonus, ajitasyon ve hipertansif kriz gelişiyor. Serotonin Sendromu tablosundaki bu ölümcül ilaç etkileşiminin ortaya çıkması, sinaptik aralıktaki serotonin birikiminin HANGİ iki zıt mekanizmanın aynı anda çalışması (çakışması) ile kontrol edilemez boyutlara ulaşmasının doğrudan sonucudur?",
+"options": [
+"Serotonin sentezinin durması ve post-sinaptik reseptörlerin bloke olması",
+"Serotoninin presinaptik nörona geri alınmasının (re-uptake) engellenmesi VE aynı anda hücre içinde serotonini parçalayan enzimin (MAO) durdurulması",
+"Serotoninin asetilkolin ile yer değiştirmesi ve masif vagal uyarı yapması",
+"Her iki ilacın da post-sinaptik 5-HT2 reseptörlerini doğrudan uyarması",
+"Karaciğerde serotonini yıkan CYP3A4 enziminin tam inhibisyona uğraması"
+],
+"correct": 1,
+"exp": "Serotonin Sendromu, beyinde aşırı serotonin birikmesine bağlı gelişen otonomik, nöromüsküler ve mental bir fırtınadır. Fluoksetin (SSRI), serotoninin sinapstan geri emilmesini (Re-uptake) bloke ederek aralıkta serotonin bırakır. Bu ilacın kan yarı ömrü çok uzundur (vücuttan atılması haftalar sürer). Eğer hasta bu ilacın etkisi geçmeden, üstüne MAOİ (Serotonini yıkan yegane enzim olan Monoamin Oksidazı durduran ilaç) alırsa kıyamet kopar. Hem geri emilemeyen (SSRI yüzünden) hem de enzimle yıkılamayan (MAOİ yüzünden) Serotonin, beyni adeta zehirler. Bu yüzden SSRI'dan MAOİ'ye geçerken en az 2 ila 5 hafta 'Arınma (Wash-out)' süresi bırakılmak zorundadır."
+},
+{
+"id": 917,
+"ders": "Farmakoloji",
+"konu": "Santral Sinir Sistemi Farmakolojisi",
+"diff": 4,
+"q": "Diş çekimi yapılacak olan hastanın alt çenesinde şiddetli ve pürülan (cerahatli) bir apse mevcuttur. Hekim, diş çevresine lokal anestezik madde (Lidokain) enjekte etmesine rağmen, hastanın ağrısı geçmiyor ve doku tam uyuşmuyor. Lokal anesteziklerin enfekte (iltihaplı) dokularda sinir iletimini bloke edememesinin (işe yaramamasının) farmakolojik nedeni, zayıf baz yapısındaki ilacın HANGİ fizikokimyasal değişime uğrayarak sinir zarına nüfuz edememesidir?",
+"options": [
+"Enfeksiyonun lokal kan akımını artırarak ilacı bölgeden hızla uzaklaştırması",
+"Bakterilerin ürettiği hidrolitik enzimlerin lokal anesteziği anında parçalaması",
+"İltihaplı dokunun 'ASİDİK (Düşük pH)' olması nedeniyle, zayıf baz yapısındaki ilacın iyonize (yüklü) hale geçerek lipofilik özelliğini kaybetmesi",
+"Apsenin sinir lifleri etrafında kalın bir fibröz kapsül oluşturarak difüzyonu engellemesi",
+"Lokal anesteziklerin apse varlığında sodyum yerine kalsiyum kanallarına bağlanması"
+],
+"correct": 2,
+"exp": "Lokal anesteziklerin (Lidokain, Bupivakain) siniri uyuşturabilmesi için, sinir zarını (lipit tabakayı) aşıp İÇERİ GİRMESİ ve sodyum kanalını 'İÇERİDEN' tıkaması gerekir. Bunu yapabilmeleri için zardan geçerken Non-iyonize (Yüksüz/Lipofilik) formda olmaları şarttır. Bütün lokal anestezikler 'Zayıf Baz'dır. Enfekte/iltihaplı bir apse dokusunun ortamı ise laktik asit birikiminden dolayı 'Çok ASİDİK'tir (pH oldukça düşüktür). Asidik ortama giren zayıf baz yapılı ilaç, anında ortamdaki hidrojenleri üstüne çeker ve 'İyonize (Yüklü)' hale gelir. Yüklü hale gelen ilaç, yağlı sinir zarını geçemez, sinirin dışında hapsolur ve uyuşma sağlanamaz. Çözüm, o bölgeye lokal anestezikle birlikte sodyum bikarbonat (baz) enjekte etmektir."
+},
+{
+"id": 918,
+"ders": "Farmakoloji",
+"konu": "Santral Sinir Sistemi Farmakolojisi",
+"diff": 4,
+"q": "Şizofreni tedavisi için uzun yıllardır yüksek doz tipik antipsikotik bir ajan olan Haloperidol kullanan hastada; dudak yalama, dili dışarı çıkarma ve yüz kaslarında istemsiz, kıvrılma hareketleri başlıyor. Tardiv Diskinezi (Geç Diskinezi) adı verilen ve ilacın kesilmesine rağmen genellikle düzelmeyen bu dramatik tablonun gelişmesi, bazal ganglionlarda yer alan dopaminerjik reseptörlerde HANGİ hücresel adaptasyonun (kompansatuar yanıtın) ortaya çıkmasının doğrudan bir sonucudur?",
+"options": [
+"Dopamin D2 reseptörlerinin sürekli blokajı nedeniyle hücrenin 'reseptör sayısını artırması ve aşırı duyarlı hale getirmesi' (Up-regülasyon / Süpersensitivite)",
+"Dopamin D1 reseptörlerinin kalıcı olarak kovalent bağla bloke edilmesi",
+"Serotonin 5-HT2A reseptörlerinin yıkılarak ortamdan silinmesi",
+"Asetilkolin reseptörlerinin aşırı uyarılmasına bağlı kolinerjik kriz",
+"Substantia Nigra'daki nöronların apoptozis ile tamamen ölmesi"
+],
+"correct": 0,
+"exp": "Tipik (Klasik) antipsikotikler, halüsinasyonları durdurmak için beyindeki Dopamin D2 reseptörlerini sertçe bloke ederler. Ancak bu ilaçlar seçici değildir; beynin hareket merkezi olan bazal ganglionlardaki D2 reseptörlerini de tıkarlar (Parkinson benzeri bulgular yapar). Eğer hasta bu ilacı yıllarca kullanırsa, reseptörleri kapanan bazal ganglion hücreleri duruma isyan eder. 'Dopamin alamıyorum' paniğiyle, yüzeylerindeki D2 reseptör sayısını çılgınca artırırlar ve var olanları aşırı hassaslaştırırlar (Up-regülasyon / Süpersensitivite). Artık ortamdaki ufacık bir dopamin bile, bu devasa reseptör ordusunu uyararak yüzde/dilde engellenemeyen o meşhur istemsiz hareket fırtınasını (Tardiv Diskinezi) patlatır."
+},
+{
+"id": 919,
+"ders": "Farmakoloji",
+"konu": "Santral Sinir Sistemi Farmakolojisi",
+"diff": 4,
+"q": "Bipolar Bozukluk nedeniyle uzun yıllardır Lityum (Li+) kullanan bir hastada, günde 6 litreye varan aşırı su içme (Polidipsi) ve idrara çıkma (Poliüri) şikayetleri başlıyor. Hastada Lityum toksisitesine bağlı 'Nefrojenik Diabetes İnsipidus' geliştiği saptanıyor. Beyinden yeterli hormon salgılanmasına rağmen Lityumun böbreklerde bu sıvı kaybı tablosuna yol açması, böbrek toplayıcı kanallarındaki HANGİ spesifik hormonun hücre içi (cAMP bağımlı) sinyal yolağını bloke etmesinin sonucudur?",
+"options": [
+"Aldosteron",
+"Antidiüretik Hormon (ADH / Vazopressin)",
+"Atriyal Natriüretik Peptid (ANP)",
+"Paratiroid Hormon (PTH)",
+"Anjiyotensin II"
+],
+"correct": 1,
+"exp": "Lityum, Sodyum (Na) iyonunu taklit ettiği için vücutta sodyumun girdiği her yere ENaC kanalları üzerinden sızar. Lityumun en sık görülen renal yan etkisi Nefrojenik Diabetes İnsipidus'tur. Toplayıcı kanallara giren lityum, hücre içinde vücudun asıl su tutucu hormonu olan 'Antidiüretik Hormonun (ADH / Vazopressin)' çalışmasını sağlayan V2 reseptörü-cAMP yolağını zehirler. Beyin kana bolca ADH salgılasa bile böbrek bunu 'DUYAMAZ' (Direnç/Nefrojenik). Su tutacak olan Akuaporin-2 kanalları zara yerleşemediği için hasta litrelerce suyu idrarla kaybeder. Tedavide Lityum'un hücreye girişini bloke eden Amilorid diüretiği kullanılır."
+},
+{
+"id": 920,
+"ders": "Farmakoloji",
+"konu": "Otokoidler ve NSAİİ",
+"diff": 4,
+"q": "Kalp krizi profilaksisi için düşük doz (100 mg) Aspirin (Asetilsalisilik Asit) kullanan bir hastanın kanı incelendiğinde, trombositlerin pıhtılaşma (agregasyon) yeteneğinin tamamen kaybolduğu ve bu etkinin ilacı bıraktıktan sonra bile 7-10 gün boyunca geri dönmediği saptanıyor. Aspirin'in diğer tüm NSAİİ'lerden (İbuprofen, Naproksen vb.) FARKLI OLARAK trombositleri hücre ömrü boyunca felç etmesi, siklooksijenaz (COX) enzimi üzerinde HANGİ spesifik yapısal modifikasyonu yapmasının sonucudur?",
+"options": [
+"Enzimin aktif bölgesindeki 'Serin' aminoasidine bir asetil grubu takarak enzimi kovalent bağla (irreversibl) kilitlemesi",
+"Trombosit hücre zarındaki Glikoprotein IIb/IIIa reseptörlerini doğrudan parçalaması",
+"Trombosit içindeki kalsiyum depolarını kalıcı olarak boşaltması",
+"Fosfolipaz A2 enzimini bloke ederek araşidonik asit sentezini durdurması",
+"Tromboksan sentaz enziminin gen ekspresyonunu susturması"
+],
+"correct": 0,
+"exp": "Aspirin dışındaki tüm NSAİİ'ler (İbuprofen vb.) Siklooksijenaz (COX) enzimini 'Yarışmalı ve Geri Dönüşümlü' olarak tutarlar. İlaç kandan temizlenince enzim tekrar çalışır. ASPİRİN ise, enzimin katalitik merkezindeki Serin kalıntısına kendi üzerindeki Asetil grubunu takar. Bu kovalent (geri dönüşümsüz) bir bağdır, enzim tamamen ölür. Trombositler çekirdeksiz (DNA'sız) hücreler oldukları için yeni enzim ÜRETEMEZLER. Bu nedenle, aspirinin kanda kalma süresi sadece 15 dakika olsa bile, o an kanda olan trombositler 7-10 günlük ömürleri bitip ölene kadar felçli (Tromboksan A2 üretemez) kalır."
+},
+{
+"id": 921,
+"ders": "Farmakoloji",
+"konu": "Otokoidler ve NSAİİ",
+"diff": 4,
+"q": "Mide ülseri öyküsü olan 60 yaşındaki Romatoid Artrit hastasına, GİS yan etkilerinden kaçınmak amacıyla sadece inflamasyon bölgesinde çalışan spesifik bir 'Seçici COX-2 İnhibitörü' (Örn: Selekoksib) reçete ediliyor. Aylar sonra hasta aniden Kalp Krizi (Miyokard Enfarktüsü) geçirerek vefat ediyor. Seçici COX-2 inhibitörlerinin ölümcül tromboz riskini bu derece artırması, kan damarlarındaki HANGİ koruyucu molekülün üretimini durdururken, trombositlerdeki pıhtılaştırıcı güce (TXA2) dokunmamalarının doğrudan sonucudur?",
+"options": [
+"Bradikinin",
+"Nitrik Oksit (NO)",
+"Prostasiklin (Prostaglandin I2 - PGI2)",
+"Lökotrien B4 (LTB4)",
+"Tromboksan B2"
+],
+"correct": 2,
+"exp": "Seçici COX-2 inhibitörleri, 'midedeki koruyucu COX-1 enzimine dokunmayalım da ülser olmasın' mantığıyla üretilmiştir (Mide için harikadırlar). ANCAK kan damarlarının iç yüzeyi (endotel), COX-2 enzimi aracılığıyla 'Prostasiklin (PGI2)' üretir. PGI2 damarları genişletir ve pıhtılaşmayı ENGELLER. Kanda pıhtılaşmayı sağlayan Tromboksan A2 (TXA2) ise trombositlerde SADECE COX-1 üzerinden üretilir. Hastaya seçici COX-2 blokörü verildiğinde; damardaki koruyucu PGI2 üretimi durur, fakat trombositteki pıhtı yapıcı TXA2 (COX-1) çalışmaya devam eder. Denge pıhtılaşma (tromboz) lehine feci şekilde bozulur ve hasta kalp krizi / inme geçirir."
+},
+{
+"id": 922,
+"ders": "Farmakoloji",
+"konu": "Otokoidler ve NSAİİ",
+"diff": 4,
+"q": "İntihar amacıyla yüksek doz Parasetamol (Asetaminofen) yutan 20 yaşındaki genç hasta, bilinci bulanık ve karaciğer enzimleri binli rakamlara fırlamış (Akut Karaciğer Yetmezliği) olarak acile getiriliyor. Parasetamolün normal yıkım yolağının yüksek dozda doygunluğa ulaşmasıyla (CYP2E1 yolağına kaymasıyla) ortaya çıkan toksik ara metabolitin (NAPQI), hücreleri parçalayarak masif hepatik nekroza yol açması karaciğerdeki HANGİ doğal antioksidan deponun tamamen tükenmesinin bir sonucudur?",
+"options": [
+"Süperoksit Dismutaz",
+"Glutatyon (GSH)",
+"Katalaz",
+"Ürik Asit",
+"Melatonin"
+],
+"correct": 1,
+"exp": "Parasetamol düşük dozlarda karaciğerde (glukuronidasyonla) güvenle atılır. Doz aşımında bu yol doyar ve ilaç Sitokrom P450 yolağına girer. Bu yolda çok tehlikeli, zehirli bir ara madde olan 'NAPQI' üretilir. Sağlıklı bir karaciğer, elindeki 'GLUTATYON' deposunu kullanarak bu NAPQI'yi anında bağlar ve zararsızlaştırır. Ancak intihar dozunda o kadar çok NAPQI üretilir ki, karaciğerin Glutatyon depoları sıfırlanır. Boşta kalan serbest NAPQI, hepatosit proteinlerine yapışarak hücreyi parçalar (Fulminan hepatit). Antidot olarak hastaya 'N-Asetilsistein (NAC)' verilir; NAC karaciğerin glutatyon depolarını tekrar doldurarak zehri temizler."
+},
+{
+"id": 923,
+"ders": "Farmakoloji",
+"konu": "Otokoidler ve NSAİİ",
+"diff": 4,
+"q": "Akut Gut Krizi ile başvuran hastanın ayak başparmağında kızarıklık, şişlik ve şiddetli ağrı mevcuttur. Hastaya atak tedavisi için spesifik bir ilaç olan 'Kolşisin' reçete ediliyor. Ağrı hızla gerilemesine rağmen hastanın kan ürik asit seviyesi düşmüyor. Kolşisinin ürik asidi düşürmeden gut atağını dramatik şekilde sonlandırması; inflamasyon bölgesine gelen nötrofillerin içindeki HANGİ spesifik hücre iskeleti proteinine bağlanarak onların fagositoz ve göç (kemotaksis) yeteneklerini felç etmesine dayanır?",
+"options": [
+"Aktin filamentleri",
+"Miyozin ağır zinciri",
+"Tübülin (Mikrotübül dimerleri)",
+"Vimentin",
+"Kollajen Tip II"
+],
+"correct": 2,
+"exp": "Gut krizindeki asıl ağrı nedeni, ekleme çöken ürik asit kristallerinin kendisi değil, onları yemeye gelen Nötrofillerin yarattığı devasa inflamasyondur. 'Kolşisin', hücre bölünmesinde ve hareketinde görevli olan hücre iskeleti elemanı 'Mikrotübül'lerin yapıtaşı olan 'Tübülin' dimerlerine sıkıca bağlanır. Mikrotübüllerin uzamasını (polimerizasyonunu) durdurur. İskeleti felç olan nötrofiller eklem boşluğuna gidemez ve kristalleri yutamazlar. Savaş bitince ağrı kaybolur. Ancak hücre bölünmesini de (mitotik iği) durdurduğu için, hızlı bölünen GİS epiteli ve kemik iliğinde toksik etki yaparak ishal ve kemik iliği baskılanmasına neden olabilir."
+},
+{
+"id": 924,
+"ders": "Farmakoloji",
+"konu": "Kemoterapotikler ve İmmunmodülatörler",
+"diff": 4,
+"q": "Cilt apsesinden izole edilen Staphylococcus aureus suşunun Metisilin ve diğer tüm beta-laktam antibiyotiklere (Sefalosporinler dahil) dirençli olduğu (MRSA) saptanıyor. MRSA'nın beta-laktamaz enzimlerine son derece dayanıklı olan sentetik penisilinlere bile direnç gösterebilmesi, hücre duvarı sentezinde görev alan HANGİ hedef molekülde kalıtsal ve yapısal bir değişim (mecA geni aracılığıyla) yapmasının doğrudan bir sonucudur?",
+"options": [
+"Porin kanallarının tamamen kapatılması",
+"Beta-laktam halkasını parçalayan yeni bir enzim üretmesi",
+"Penisilin Bağlayan Proteinlerin (PBP2a) ilaca olan afinitesini (bağlanma gücünü) dramatik şekilde düşürmesi",
+"Hücre zarına aktif dışa-atım (efflux) pompaları yerleştirmesi",
+"D-Alanin-D-Alanin dizilimini D-Alanin-D-Laktat olarak değiştirmesi"
+],
+"correct": 2,
+"exp": "MRSA (Metisiline Dirençli S. aureus), hastane enfeksiyonlarının en büyük kabuslarındandır. Klasik penisilin direnci, bakterinin 'Beta-laktamaz' enzimi üretip ilacı parçalamasıyla olur. İlaç firmaları buna karşı enzimden etkilenmeyen Metisilin/Nafsilin ürettiler. Ancak S. aureus çok daha zekice bir yol buldu. 'mecA' adı verilen bir gen kazandı. Bu gen, bakterinin hücre duvarını ören enzim olan PBP'nin (Penisilin Bağlayan Protein) şeklini değiştirdi (PBP2a yaptı). Şekli değişen bu yeni PBP, beta-laktam antibiyotikleri KABUL ETMEZ (afinitesi çok düşüktür). İlaç bakteriyi parçalayamaz ama hedef reseptöre de bağlanamadığı için hiçbir işe yaramaz. (Not: D-Ala-D-Lac değişimi ise Vankomisin direncidir / VRE)."
+},
+{
+"id": 925,
+"ders": "Farmakoloji",
+"konu": "Kemoterapotikler ve İmmunmodülatörler",
+"diff": 4,
+"q": "Perfore apandisit sonrası karın içinde gelişen pürülan (oksijensiz/anaerobik) apse tedavisinde, hastaya yanlışlıkla Gentamisin (Aminoglikozit) tek başına veriliyor. Enfeksiyon hiçbir şekilde gerilemiyor ve hasta septik şoka giriyor. Aminoglikozitlerin Bacteroides fragilis gibi zorunlu anaeroblara ve apse gibi hipoksik ortamlara karşı TAMAMEN ETKİSİZ olmasının hücresel nedeni, ilacın bakterinin içine girebilmesi için HANGİ mekanizmaya mutlak surette ihtiyaç duymasıdır?",
+"options": [
+"Bakteri zarındaki aktif transport pompasının Oksijen (O2) bağımlı çalışması",
+"İlacın sadece asidik pH'da aktif hale geçmesi",
+"Aminoglikozitlerin hücre duvarını delmek için beta-laktam varlığına ihtiyaç duyması",
+"Bakterinin hücre zarında kolesterol bulunması",
+"Ribozomal bağlanma için anaerobik fermentasyon ürünlerine ihtiyaç duyulması"
+],
+"correct": 0,
+"exp": "Aminoglikozitler (Gentamisin, Amikasin vb.), Gram-negatif bakterilerin 30S ribozom alt birimine bağlanarak protein sentezini bozan çok güçlü bakterisidal ilaçlardır. Ancak bu ilaçların bakterinin içine (sitoplazmaya) girebilmesi için, hücre zarında bulunan 'Aktif Transport' pompalarına ihtiyaçları vardır. Bu pompalar SADECE ve SADECE Oksijen (O2) varlığında (Oksidatif fosforilasyon ile) çalışırlar. Zorunlu anaerobik bakterilerde (Oksijensiz yaşayanlarda) veya apse gibi oksijenin hiç olmadığı dokularda bu pompa çalışmaz. İlaç bakterinin içine giremediği için anaeroblara karşı doğal (doğuştan) olarak tamamen etkisizdir."
+},
+{
+"id": 926,
+"ders": "Farmakoloji",
+"konu": "Kemoterapotikler ve İmmunmodülatörler",
+"diff": 4,
+"q": "Toplum kökenli pnömoni tedavisi için 10 gündür oral Levofloksasin (Florokinolon) kullanan 65 yaşındaki hasta, merdiven çıkarken aniden topuğunda şiddetli bir ağrı, şişlik ve kopma hissi yaşıyor (Aşil Tendon Rüptürü). Florokinolonların (özellikle yaşlılarda ve kortikosteroid kullananlarda) bu karakteristik ve yıkıcı yan etkiye yol açması, bağ dokusundaki HANGİ yapısal matriks bileşeninin sentezini bozması ve hücre dışı yıkımını (MMP aktivitesini) artırmasının sonucudur?",
+"options": [
+"Fibronektin",
+"Elastik lifler",
+"Tip I Kollajen",
+"Hyalüronik asit",
+"Kondroitin sülfat"
+],
+"correct": 2,
+"exp": "Florokinolonlar (-floksasin ilaçları), bakteriyel DNA Giraz ve Topoizomeraz IV enzimlerini inhibe ederek DNA sentezini durduran mükemmel antibiyotiklerdir. Ancak kas-iskelet sistemi üzerinde çok spesifik ve korkutucu bir yan etkileri vardır. İnsan bağ dokusunda, özellikle tendonlarda 'Tip I Kollajen' bulunur. Florokinolonlar, hem Tip I kollajen üretimini doğrudan baskılar hem de ortamdaki Matriks Metalloproteinaz (MMP) enzimlerinin aktivitesini artırarak var olan kollajenin erimesine (yıkılmasına) neden olurlar. Tendon zayıflar ve ufak bir zorlamada (merdiven çıkarken) aniden kopar (Aşil tendonu rüptürü). Aynı nedenle kıkırdak gelişimini bozduğu için 18 yaş altı çocuklarda ve gebelerde kontrendikedir."
+},
+{
+"id": 927,
+"ders": "Farmakoloji",
+"konu": "Kemoterapotikler ve İmmunmodülatörler",
+"diff": 4,
+"q": "Hiperlipidemi nedeniyle uzun süredir Atorvastatin kullanan bir hastaya, üst solunum yolu enfeksiyonu için Klaritromisin (Makrolid) başlanıyor. Sadece birkaç gün sonra hastada şiddetli kas ağrıları, idrarda koyulaşma (Miyoglobinüri) ve kanda Kreatin Kinaz (CK) yüksekliği (Rabdomiyoliz) gelişiyor. Bu ölümcül ilaç etkileşiminin nedeni, antibiyotiğin (Klaritromisin) karaciğerde HANGİ spesifik detoksifikasyon yolağını bloke ederek statinlerin kanda toksik dozlara ulaşmasına yol açmasıdır?",
+"options": [
+"Glukuronil transferaz enzimi",
+"Sitokrom P450 3A4 (CYP3A4) enzimi",
+"Monoamin Oksidaz (MAO) enzimi",
+"N-Asetiltransferaz enzimi",
+"P-glikoprotein dışa atım pompası"
+],
+"correct": 1,
+"exp": "Sitokrom P450 3A4 (CYP3A4), karaciğerin en büyük çöp öğütücüsüdür ve Atorvastatin/Simvastatin gibi ilaçları parçalayarak kandan temizler. Makrolid grubu antibiyotikler (Eritromisin ve Klaritromisin; Azitromisin hariç) çok güçlü birer 'CYP3A4 İnhibitörüdür'. Hasta statin alırken Klaritromisin içerse, karaciğerdeki yıkım enzimi felç olur. Statin parçalanamaz, kan seviyesi normalin onlarca katına çıkar ve iskelet kaslarını eriterek (Rabdomiyoliz) hastayı akut böbrek yetmezliğine sokar. Statin kullanan hastalara bu yüzden Makrolid veya Azol grubu antifungaller (ketokonazol) verilirken çok dikkat edilmelidir."
+},
+{
+"id": 928,
+"ders": "Farmakoloji",
+"konu": "Diğer Sistem İlaçları",
+"diff": 4,
+"q": "Şiddetli peptik ülseri olan hastaya asit baskılayıcı tedavi olarak Omeprazol (Proton Pompa İnhibitörü - PPI) başlanıyor. Omeprazolün, H2 reseptör blokörlerine (Famotidin) kıyasla çok daha güçlü ve uzun süreli asit baskılaması yapması, mide paryetal hücresinin lümene bakan (apikal) zarında HANGİ spesifik iyon taşıyıcısını kovalent (irreversibl) bağla kilitlemesinin doğrudan sonucudur?",
+"options": [
+"Na+/K+ ATPaz pompası",
+"H+/K+ ATPaz pompası",
+"Gastrin CCK-B reseptörleri",
+"Cl-/HCO3- anyon değiştirici",
+"Muskarinik M3 reseptörleri"
+],
+"correct": 1,
+"exp": "Midede asit (HCl) salgılanmasının üç uyarısı vardır: Histamin, Gastrin ve Asetilkolin. H2 blokörleri (Famotidin) sadece histamin yolunu kapatır, diğer yollar asit üretmeye devam eder. Ancak Proton Pompa İnhibitörleri (Omeprazol, Lansoprazol), bu üç uyarının da birleştiği SON NOKTA olan 'H+/K+ ATPaz (Proton Pompası)'nı hedef alır. Bu pompa asidi mide lümenine atan yegane motordur. PPI'lar bu pompaya 'kovalent (geri dönüşümsüz)' olarak bağlanır ve onu öldürür. Paryetal hücre yeni bir pompa üretene kadar (24-48 saat) mide asit salgılayamaz. Bu yüzden en güçlü ve en etkili asit baskılayıcılardır."
+},
+{
+"id": 929,
+"ders": "Farmakoloji",
+"konu": "Diğer Sistem İlaçları",
+"diff": 4,
+"q": "İnhale kortikosteroidlere ve uzun etkili beta-2 agonistlere dirençli, ağır alerjik astımı olan 25 yaşındaki hastaya subkütan yolla Omalizumab tedavisi başlanıyor ve atak sıklığı dramatik şekilde düşüyor. Bu monoklonal antikorun, alerjenle karşılaşıldığında mast hücrelerinin patlamasını (degranülasyonunu) önlemesi; kanda dolaşan HANGİ spesifik immün molekülün, mast hücresi yüzeyindeki Fc reseptörlerine bağlanmasını (ve köprüleşmesini) fiziksel olarak engellemesiyle gerçekleşir?",
+"options": [
+"Lökotrien B4",
+"Serbest İmmünglobulin E (IgE)",
+"İnterlökin-5 (IL-5)",
+"Histamin",
+"İmmünglobulin G (IgG)"
+],
+"correct": 1,
+"exp": "Alerjik Astım patofizyolojisinde, vücuda giren alerjenlere karşı B hücreleri 'IgE' antikorları üretir. Bu IgE'ler gidip solunum yollarındaki mast hücrelerinin yüzeyine (Fc reseptörlerine) yapışarak onları birer pimi çekilmiş bombaya çevirir. Alerjen tekrar geldiğinde bu IgE'leri çapraz bağlar ve mast hücresi patlayarak (histamin/lökotrien salarak) astım krizini başlatır. 'Omalizumab', kanda dolaşan 'SERBEST IgE' moleküllerine yapışıp onları hapseden (nötralize eden) bir monoklonal antikordur. IgE'ler mast hücresine yapışamadan kandan temizlenir, mast hücresi çıplak kalır ve alerjen gelse bile patlayamaz. Ağır alerjik astımın en etkili biyolojik tedavisidir."
+},
+{
+"id": 930,
+"ders": "Farmakoloji",
+"konu": "Diğer Sistem İlaçları",
+"diff": 5,
+"q": "Derin ven trombozu tedavisi için hastanede intravenöz 'Standart (Anfraksiyone) Heparin' alan hastada, tedavinin 6. gününde trombosit sayısı aniden 40.000/mm³'e düşüyor ve paradoksal olarak hastada yeni ve yaygın trombozlar (beyin, bacak damarlarında) gelişiyor. Heparin İndüklü Trombositopeni (HİT Tip 2) adı verilen bu ölümcül tabloda, heparinin kanı sulandırması gerekirken pıhtılaşma fırtınasına yol açması; hastanın HANGİ moleküler komplekse karşı IgG yapısında otoantikorlar üreterek trombositleri çılgınca aktive etmesinin doğrudan bir sonucudur?",
+"options": [
+"Heparin - Antitrombin III kompleksi",
+"Heparin - Trombosit Faktör 4 (PF4) kompleksi",
+"Heparin - Glikoprotein IIb/IIIa kompleksi",
+"Heparin - Von Willebrand Faktör kompleksi",
+"Heparin - Faktör Xa kompleksi"
+],
+"correct": 1,
+"exp": "Heparin İndüklü Trombositopeni (HİT), farmakolojinin en korkutucu paradokslarından biridir. Heparin alan hastaların küçük bir kısmında (genellikle 5-10. günlerde), heparin molekülü trombositlerden salınan 'Trombosit Faktör 4 (PF4)' proteiniyle birleşerek yeni bir yapı (neoantijen) oluşturur. Bağışıklık sistemi bu 'Heparin-PF4' kompleksini yabancı sanarak ona karşı IgG antikorları üretir. Bu antikorlar komplekse bağlanır ve bu dev yapı gidip trombositlerin üzerindeki Fc reseptörlerine vurarak trombositleri ŞİDDETLE AKTİVE eder. Aktive olan trombositler vücudun her yerinde devasa pıhtılar (tromboz) yapar ve pıhtılaşırken tükendikleri için sayıları hızla düşer (Trombositopeni). Derhal heparin kesilmeli ve Direk Trombin İnhibitörlerine (Argatroban/Bivalirudin) geçilmelidir."
+},
+{
+"id": 931,
+"ders": "Farmakoloji",
+"konu": "Diğer Sistem İlaçları",
+"diff": 4,
+"q": "Tekrarlayan gut atakları olan 50 yaşındaki hastaya, yeni krizleri önlemek (profilaksi) amacıyla Allopurinol başlanıyor. Aylar içinde hastanın kan ürik asit seviyesi normale dönüyor ve eklemlerdeki tofüsleri küçülüyor. Allopurinolün pürin metabolizmasındaki ürik asit üretimini temelden durdurması; hipoksantin ve ksantin moleküllerinin ürik aside dönüşümünü sağlayan HANGİ spesifik enzimi kompetitif (ve intihar/suicide) inhibitör olarak bloke etmesine dayanır?",
+"options": [
+"Hipoksantin-Guanin Fosforiboziltransferaz (HGPRT)",
+"Adenozin Deaminaz (ADA)",
+"Ksantin Oksidaz",
+"Ürikozürik asit taşıyıcı-1 (URAT1)",
+"Ribonükleotid Redüktaz"
+],
+"correct": 2,
+"exp": "Gut hastalığı, kanda ürik asit yüksekliği (Hiperürisemi) sonucu eklemlere ürik asit kristallerinin çökmesidir. Ürik asit, pürin (DNA/RNA) metabolizmasının son atık ürünüdür. Pürinler yıkılırken önce Hipoksantin'e, sonra Ksantin'e ve en son Ürik Aside dönüşürler. Bu son iki dönüşüm adımını da aynı enzim, yani 'Ksantin Oksidaz' gerçekleştirir. Allopurinol, yapısal olarak hipoksantine çok benzer. Ksantin oksidaz enzimi, allopurinolü hipoksantin sanıp yutar ancak onu parçalayamaz; aksine enzim kalıcı olarak bloke olur (İntihar inhibisyonu). Enzim çalışmayınca ürik asit üretimi bıçak gibi kesilir, daha suda çözünür olan hipoksantin ve ksantin idrarla kolayca atılır."
+},
+{
+"id": 932,
+"ders": "Mikrobiyoloji",
+"konu": "Genel Mikrobiyoloji",
+"diff": 4,
+"q": "Dirençli bir E. coli suşu laboratuvarda duyarlı bir E. coli suşu ile aynı sıvı ortama konuluyor. Bir süre sonra duyarlı suşun sadece plazmid kaynaklı antibiyotik direncini değil, aynı zamanda kromozomal genleri de (örn: laktoz fermentasyonu genleri) kazandığı saptanıyor. Ortama DNAaz enzimi eklendiğinde bu gen transferinin durmadığı gözleniyor. Bu geniş çaplı genetik aktarım, verici (donör) bakterinin kromozomuna entegre olmuş HANGİ spesifik genetik yapının transferi kendi üzerinden başlatmasıyla gerçekleşmiştir?",
+"options": [
+"F- (Fertilite eksi) plazmidinin serbestleşmesi",
+"Hfr (High Frequency of Recombination) hücresindeki F plazmidinin kromozomdan koparak seks pilusu üzerinden aktarılması",
+"Lizojenik bakteriyofajların litik döngüye geçmesi",
+"Çıplak DNA parçalarının kompetan hücreye girmesi",
+"Transpozonların doğrudan diğer hücre zarına zıplaması"
+],
+"correct": 1,
+"exp": "Bakterilerde gen transferi DNAaz'a dirençliyse bu ya Konjugasyon (pilus ile) ya da Transdüksiyon (virüs ile)'dur. Soruda plazmid ile birlikte 'Kromozomal' genlerin de (laktoz vb.) aktarıldığı belirtiliyor. Normal bir konjugasyonda (F+ -> F-) sadece plazmid aktarılır. ANCAK verici bakterideki F plazmidi, bakterinin ana kromozomunun İÇİNE ENTEGRE olmuşsa, bu hücreye 'Hfr (Yüksek frekanslı rekombinasyon)' hücresi denir. Hfr hücresi konjugasyon köprüsü (pilus) kurduğunda, sadece plazmidi değil, plazmidin takılı olduğu tüm ana kromozomu yavaş yavaş karşı tarafa aktarmaya başlar. Kromozomal gen transferinin en klasik yoludur."
+},
+{
+"id": 933,
+"ders": "Mikrobiyoloji",
+"konu": "Genel Mikrobiyoloji",
+"diff": 4,
+"q": "Kan kültüründe Enterococcus faecium üreyen hastaya intravenöz Vankomisin başlanıyor ancak tedavinin 5. gününde bakteriyemi devam ediyor (VRE tablosu). Laboratuvar analizinde, Vankomisinin bağlanması gereken hücre duvarı öncüllerindeki peptid zincirine tutunamadığı saptanıyor. Bakterinin bu ilaca karşı geliştirdiği mutlak direnç, peptidoglikan zincirinin ucundaki normal dizilimi (D-Alanin-D-Alanin) HANGİ yeni ve ilaç tarafından tanınamayan terminal diziye dönüştürmesinin doğrudan bir sonucudur?",
+"options": [
+"D-Alanin-D-Serin",
+"L-Lizin-D-Alanin",
+"D-Alanin-D-Laktat",
+"N-Asetilmuramik asit-L-Alanin",
+"D-Glutamat-D-Laktat"
+],
+"correct": 2,
+"exp": "Vankomisin, hücre duvarı (peptidoglikan) sentezini durduran devasa bir glikopeptid antibiyotiktir. Etkisini, peptidoglikan zincirlerinin en ucunda bulunan 'D-Alanin-D-Alanin' terminaline bir şapka gibi sıkıca bağlanarak (ve çapraz bağ kurulmasını engelleyerek) gösterir. Vankomisine Dirençli Enterokok (VRE) ve VRSA suşları, genetik bir mutasyonla (vanA geni) bu terminaldeki son D-Alanin molekülünü atar ve yerine 'D-Laktat' molekülünü koyar. (D-Ala-D-Ala, D-Ala-D-Laktat'a dönüşür). Vankomisin bu yeni yapıyı tanıyamaz, bağlanma afinitesi 1000 kat düşer ve bakteri duvarını örmeye devam eder."
+},
+{
+"id": 934,
+"ders": "Mikrobiyoloji",
+"konu": "Genel Mikrobiyoloji",
+"diff": 4,
+"q": "Derin, nekrotik ve kötü kokulu bir yara enfeksiyonundan alınan kültür örneği standart oksijenli etüvde inkübe edildiğinde hiçbir üreme saptanmıyor; ancak tiyoglikolatlı (oksijensiz) buyyonda gaz oluşturarak hızla ürediği görülüyor. Bu zorunlu (obligat) anaerobik bakterilerin oksijenli ortamda saniyeler içinde ölmesine neden olan asıl metabolik eksiklik, oksijenli solunum yan ürünleri olan süperoksit ve hidrojen peroksit radikallerini zararsız hale getiren HANGİ iki enzimin bakteride genetik olarak bulunmamasıdır?",
+"options": [
+"Katalaz ve Süperoksit Dismutaz (SOD)",
+"Glutatyon Redüktaz ve Peroksidaz",
+"Sitokrom C Oksidaz ve NADH Dehidrogenaz",
+"Katalaz ve Miyeloperoksidaz",
+"Oksijenaz ve Hidroksilaz"
+],
+"correct": 0,
+"exp": "Bakterilerin oksijenle olan ilişkisi, sahip oldukları enzimlere bağlıdır. Oksijenli ortamda (aerobik solunumda) doğal olarak ölümcül serbest radikaller (Süperoksit [O2-] ve Hidrojen peroksit [H2O2]) oluşur. Aerobik ve fakültatif bakteriler, bu radikalleri suya ve oksijene çevirip kendilerini korumak için 'Süperoksit Dismutaz (SOD)' ve 'Katalaz' enzimlerine sahiptir. Zorunlu anaeroblar (Bacteroides, Clostridium, Actinomyces) ise bu iki hayati enzimden genetik olarak yoksundurlar. Bu yüzden oksijenle temas ettikleri an, kendi içlerinde oluşan radikaller hücre zarlarını ve DNA'larını parçalayarak onları öldürür."
+},
+{
+"id": 935,
+"ders": "Mikrobiyoloji",
+"konu": "Genel Mikrobiyoloji",
+"diff": 4,
+"q": "Toksijenik olmayan, tamamen zararsız bir Corynebacterium diphtheriae suşu laboratuvar ortamında Beta-korinefaj virüsü ile enfekte ediliyor. Virüs, bakteriyi parçalamak yerine genetik materyalini bakterinin DNA'sına entegre ediyor (Profaj evresi). Bu olayın ardından, bakterinin aniden ölümcül Difteri Toksini üretmeye başladığı saptanıyor. Bakteriyofajın kendi DNA'sını bakteriye entegre ederek ona yeni ve kalıcı bir toksin üretme yeteneği kazandırdığı bu genetik fenomene ne ad verilir?",
+"options": [
+"Jeneralize transdüksiyon",
+"Lizojenik konversiyon (Faz dönüşümü)",
+"Litik döngü aktivasyonu",
+"Kompetan transformasyon",
+"Plazmid mobilizasyonu"
+],
+"correct": 1,
+"exp": "Bakteriler bazı ölümcül toksinleri kendi orijinal DNA'larında taşımazlar; bu toksin genleri onlara 'Bakteriyofajlar (Bakteri virüsleri)' tarafından getirilir. Virüs bakteriye girer, onu öldürmek (litik döngü) yerine DNA'sını bakterinin kromozomuna saklar (Lizojenik döngü / Profaj). Virüsün DNA'sında bulunan toksin geni, bakteri bölündükçe nesilden nesile aktarılır ve bakteri artık o toksini üretmeye başlar. Masum bir bakterinin virüs DNA'sı ile tehlikeli bir form kazanmasına 'Lizojenik Konversiyon' denir. En meşhur 5 örneği (COBED): Cholera, O-antigen of Salmonella, Botulinum, Erythrogenic toxin (S. pyogenes) ve Diphtheria toksinleridir."
+},
+{
+"id": 936,
+"ders": "Mikrobiyoloji",
+"konu": "Genel Mikrobiyoloji",
+"diff": 4,
+"q": "Kanda demir bağlayıcı proteinlerin (Transferrin, Ferritin) çok yüksek olduğu insan vücudu gibi ortamlarda, bakterilerin hayatta kalabilmek ve çoğalabilmek için demire şiddetle ihtiyacı vardır. Escherichia coli ve Salmonella gibi patojenlerin, konak proteinlerine sımsıkı bağlı olan bu demiri koparıp kendi hücrelerinin içine taşıyabilmek için ortama salgıladıkları, demire afinitesi insan proteinlerinden bile daha yüksek olan spesifik şelatör (bağlayıcı) moleküllere ne ad verilir?",
+"options": [
+"Porinler",
+"Bakteriyosinler",
+"Sideroforlar",
+"Hemolizinler",
+"Opsoninler"
+],
+"correct": 2,
+"exp": "Demir, tüm canlılar (özellikle bakteriler) için enzimlerin çalışmasında (sitokromlar vb.) mutlak gerekli bir elementtir. İnsan vücudunda serbest demir yoktur; hepsi Transferrin ve Ferritin gibi proteinlere sıkıca bağlıdır. Patojen bakteriler, vücuda girdiklerinde demir açlığı yaşarlar. Bu açlığı yenmek için dışarıya 'Siderofor (Örn: Enterobaktin, Aerobaktin)' adı verilen düşük molekül ağırlıklı demir bağlayıcı bileşikler salgılarlar. Sideroforların demire olan afinitesi (çekim gücü), insan transferrininden çok daha yüksektir. Giderler, demiri insan proteininden koparır ve bakterinin hücre zarındaki spesifik reseptörlere geri getirerek bakteriyi beslerler."
+},
+{
+"id": 937,
+"ders": "Mikrobiyoloji",
+"konu": "Genel Mikrobiyoloji",
+"diff": 4,
+"q": "Yeni bir kemoterapötik ajanın etki mekanizması incelenirken, bakterinin içindeki mRNA'nın ribozoma tutunduğu, ancak aminoasit taşıyan tRNA'ların ribozomun 'A (Akseptör)' bölgesine girmesinin (bağlanmasının) sterik olarak tamamen engellendiği saptanıyor. Aminoasit zinciri uzayamadığı için protein sentezi duruyor. İnsan hücrelerine zarar vermeden sadece bakteri 30S ribozom alt birimini hedef alarak bu spesifik inhibisyonu (tRNA'nın A bölgesine girişini bloke etme) gerçekleştiren klasik antibiyotik grubu aşağıdakilerden hangisidir?",
+"options": [
+"Makrolidler (Örn: Eritromisin)",
+"Aminoglikozitler (Örn: Gentamisin)",
+"Tetrasiklinler (Örn: Doksisiklin)",
+"Linkozamidler (Örn: Klindamisin)",
+"Oksazolidinonlar (Örn: Linezolid)"
+],
+"correct": 2,
+"exp": "Bakteriyel protein sentezi inhibitörleri ribozomun 30S veya 50S alt birimlerine bağlanır. Tetrasiklinlerin (Doksisiklin vb.) etki mekanizması çok nettir ve eşsizdir: 30S alt birimine bağlanırlar ve ribozomun 'A (Aminoasil)' bölgesinin kapısını kapatırlar. Yeni bir aminoasit taşıyan tRNA (aminoasil-tRNA), bu kapı kapalı olduğu için ribozoma giremez. Peptit zincirine yeni aminoasit eklenemediği için sentez durur (Bakteriyostatik etki). (Not: Makrolidler 50S'e bağlanıp translokasyonu (ilerlemeyi) durdurur, Aminoglikozitler 30S'e bağlanıp mRNA'nın yanlış okunmasını sağlar)."
+},
+{
+"id": 938,
+"ders": "Mikrobiyoloji",
+"konu": "İmmünoloji",
+"diff": 5,
+"q": "Tekrarlayan sinüs ve akciğer enfeksiyonları geçiren 5 yaşındaki erkek çocuğun laboratuvar testlerinde; serum IgM düzeyi normalin çok üzerinde saptanırken, IgG, IgA ve IgE düzeylerinin neredeyse sıfıra yakın olduğu görülüyor (Hiper IgM Sendromu). B lenfositleri normal sayıdadır ancak izotip değişimi (class switching) yapamadıkları saptanıyor. B hücrelerinin IgM'den diğer antikor sınıflarına geçiş yapabilmesi için, T yardımcı (CD4+) hücrelerinin yüzeyinde bulunması gereken ve B hücresindeki CD40 molekülüne bağlanarak bu genetik dönüşümü tetikleyen HANGİ spesifik ligandın kalıtsal eksikliği bu tabloya yol açar?",
+"options": [
+"CD28",
+"CTLA-4",
+"CD40L (CD154)",
+"B7-1 (CD80)",
+"Fas Ligandı (FasL)"
+],
+"correct": 2,
+"exp": "Hiper IgM Sendromu, X'e bağlı resesif geçen (erkek çocuklarda görülen) nadir bir immün yetmezliktir. B lenfositleri kemik iliğinden ilk çıktıklarında sadece IgM (ve az miktarda IgD) üretebilirler. Enfeksiyonla karşılaştıklarında IgG, IgA veya IgE üretebilmeleri için (İzotip Değişimi / Class Switching) mutlaka bir T hücresinden 'Onay Sinyali' almaları gerekir. Bu sinyal, T hücresinin yüzeyindeki 'CD40 Ligandı (CD40L)'nın, B hücresinin yüzeyindeki CD40 reseptörüne bağlanmasıyla verilir. Bu mutasyonda T hücreleri CD40L üretemez. Onay alamayan B hücresi, ömrü boyunca sadece IgM üretmeye mahkum kalır; diğer tüm hayati antikorlar (IgG, IgA) sıfırlanır."
+},
+{
+"id": 939,
+"ders": "Mikrobiyoloji",
+"konu": "İmmünoloji",
+"diff": 4,
+"q": "Otuz beş yaşında erkek hasta, sabahları ilk idrarının koyu çay renginde olması (gece gelişen intravasküler hemoliz) ve karın ağrısı şikayetiyle başvuruyor. Flow sitometri analizinde, hastanın eritrosit yüzeyinde CD55 (DAF) ve CD59 (MIRL) moleküllerinin tamamen eksik olduğu saptanıyor. Paroksismal Nokturnal Hemoglobinüri (PNH) tanısı alan bu hastada, eritrositlerin gece boyunca kendi kompleman sistemimiz tarafından parçalanması, eksik olan bu moleküllerin normalde HANGİ kompleman yıkıcı kompleksin oluşumunu engelleme görevini yerine getirememesinden kaynaklanır?",
+"options": [
+"Antijen-Antikor (C1q) kompleksi",
+"C3 Konvertaz ve Membran Atak Kompleksi (MAC)",
+"Mannoz Bağlayıcı Lektin (MBL) kompleksi",
+"Faktör H ve Faktör I inaktivatörleri",
+"C4b2a3b (C5 Konvertaz) kompleksi"
+],
+"correct": 1,
+"exp": "Kompleman sistemi, kanımızda sürekli devriye gezen ve bakterileri delerek öldüren bir savunma silahıdır. Ancak bu silah kördür, kendi hücrelerimizi de delebilir. Kendi hücrelerimizin (Örn: eritrositlerin) kompleman tarafından delinmesini engelleyen iki büyük koruyucu kalkan vardır: CD55 (Decay Accelerating Factor - DAF), hücre zarına C3 konvertazın yerleşmesini yıkar; CD59 (MAC İnhibitörü) ise zarı delecek olan MAC (C5b-9) tünelinin oluşmasını engeller. Paroksismal Nokturnal Hemoglobinüri (PNH) hastalarında bu iki proteini hücre zarına bağlayan GPI çapası (PIGA geni) mutasyonla bozulur. Geceleri kan pH'sı hafif düştüğünde kompleman sistemi hafifçe aktive olur. Kalkanı (CD55/CD59) olmayan eritrositler, kendi komplemanımız (MAC) tarafından acımasızca delinerek patlatılır (Hemoliz)."
+},
+{
+"id": 940,
+"ders": "Mikrobiyoloji",
+"konu": "İmmünoloji",
+"diff": 4,
+"q": "Bir laboratuvar deneyinde, saflaştırılmış T lenfositleri (CD4+), sadece spesifik bir peptid antijeni taşıyan MHC Sınıf II molekülleriyle (başka hiçbir yüzey proteini olmayan yapay zarlarla) karşı karşıya bırakılıyor. T hücresi reseptörleri (TCR) antijeni mükemmel bir şekilde tanımasına ve bağlanmasına rağmen, T hücrelerinin aktive olup çoğalmadığı, tam tersine kalıcı bir tepkisizlik ve uyku durumuna (Anerji) girdikleri gözleniyor. T hücresinin aktivasyon yerine bu derin uykuya geçmesinin nedeni, antijen sunumu sırasında HANGİ kritik ko-stimülatör sinyalin eksik bırakılmasıdır?",
+"options": [
+"CD4'ün MHC-II'nin beta-2 zincirine bağlanması",
+"CD8'in MHC-I'in alfa-3 zincirine bağlanması",
+"T hücresindeki CD28'in, antijen sunan hücredeki B7 (CD80/86) molekülüne bağlanması",
+"T hücresindeki CTLA-4'ün B7'ye bağlanması",
+"İnterlökin-2 (IL-2) reseptörlerinin down-regülasyonu"
+],
+"correct": 2,
+"exp": "T hücrelerinin aktivasyonu nükleer bir bombanın ateşlenmesi gibidir, bu yüzden vücut 'Çift Anahtar (İki Sinyal)' kuralı koymuştur. 1. Sinyal: TCR'nin antijeni (MHC ile) tanımasıdır. Ancak bu tek başına YETMEZ. Eğer sadece 1. sinyal gelirse, T hücresi 'Bu bir hata veya kendi dokum olabilir' diyerek kendini kalıcı olarak kapatır (Anerji/Uyku). 2. Sinyal (Ko-stimülasyon): Ateşlemeyi başlatan asıl onay sinyalidir. Antijen sunan hücre (Makrofaj, Dendritik hücre) eğer gerçekten bir tehlike sezerse yüzeyine 'B7 (CD80/86)' molekülünü çıkarır. Bu B7, T hücresindeki 'CD28' reseptörüne bağlandığı an 2. sinyal tamamlanır ve T hücresi klonal olarak çoğalmaya başlar."
+},
+{
+"id": 941,
+"ders": "Mikrobiyoloji",
+"konu": "İmmünoloji",
+"diff": 4,
+"q": "Timus bezinde olgunlaşmakta olan genç T lenfositleri (timositler), vücudun kendi dokularına saldırıp saldırmayacaklarını test etmek için zorlu bir eğitimden (Negatif Seçilim) geçerler. Bu eğitim sırasında, timustaki epitel hücreleri beyin, göz, pankreas gibi vücudun ücra köşelerine ait (periferik) proteinleri T hücrelerine sunarak onları test ederler. Timustaki hücrelere tüm vücut genlerini okuma (eksprese etme) yeteneği veren ve mutasyonunda şiddetli otoimmün sendromlara (APECED) yol açan bu transkripsiyon faktörü aşağıdakilerden hangisidir?",
+"options": [
+"FOXP3",
+"AIRE (Otoimmün Regülatör)",
+"RAG-1 / RAG-2",
+"TdT (Terminal deoksinükleotidil transferaz)",
+"STAT3"
+],
+"correct": 1,
+"exp": "Timus bezi, T hücrelerinin okuludur. 'Negatif Seçilim' evresinde amaç, kendi vücut hücrelerimize (öz antijenlere) saldırma potansiyeli olan otoreaktif T hücrelerini tespit edip öldürmektir. Peki timus bezi sadece göğüste yer alırken, tiroiddeki, pankreastaki veya gözdeki proteinleri T hücresine nasıl gösterir? Bunun sırrı timus medullasındaki 'AIRE (Autoimmune Regulator)' genidir. AIRE geni, timus epitel hücrelerine 'Vücuttaki tüm dokulara ait proteinleri (Örn: insülin, tiroglobulin) burada üret' emri veren bir maestrodur. T hücresi bu proteinlere saldırırsa anında apoptozla öldürülür. AIRE geni bozuk olan hastalarda (APECED Sendromu), T hücreleri vücudu tanıyamadan mezun olur ve dışarı çıkıp tüm endokrin organları yok eden ölümcül otoimmüniteler başlatırlar."
+},
+{
+"id": 942,
+"ders": "Mikrobiyoloji",
+"konu": "İmmünoloji",
+"diff": 5,
+"q": "Antijen Sunan Hücrelerin (Dendritik hücre, Makrofaj, B hücresi) Endoplazmik Retikulumunda yeni sentezlenen MHC Sınıf II moleküllerinin antijen bağlama olukları (groove), sentez anında spesifik bir protein tarafından sıkıca kapatılır (tıkanır). Bu tıkaç protein, MHC-II molekülü ER'den çıkıp endozoma (fagozoma) ulaşana kadar, hücrenin kendi içindeki proteinlerin yanlışlıkla bu oluğa yerleşmesini engeller. MHC Sınıf II'nin saflığını koruyan bu spesifik kılavuz/tıkaç molekül aşağıdakilerden hangisidir?",
+"options": [
+"TAP (Transporter associated with Antigen Processing)",
+"Beta-2 Mikroglobulin",
+"İnvariant Zincir (Invariant chain - Ii / CD74)",
+"Kalneksin",
+"HLA-DM"
+],
+"correct": 2,
+"exp": "MHC Sınıf I ve Sınıf II'nin antijen yüklenme yolları farklıdır ve TUS/USMLE bunu çok sever. MHC-I hücre içindeki (virüs) antijenleri ER'de yüklenir (TAP pompasıyla). MHC-II ise DIŞARIDAN yutulmuş (bakteri) antijenleri fagozomda (lizozomda) yüklenir. ER'de sentezlenen yepyeni bir MHC-II molekülü, fagozoma doğru yola çıkarken, ER'nin içindeki endojen proteinlerin yanlışlıkla MHC-II'nin cebine (oluğuna) oturmasını engellemek ŞARTTIR. Bunu sağlamak için, MHC-II sentezlendiği an oluğunun içi 'İnvariant Zincir (Değişmez zincir)' adı verilen bir tıkaç proteiniyle sıkıca kapatılır. Bu zincir, MHC-II asidik endozoma ulaşana kadar onu korur. Endozomda asit ve enzimlerle (HLA-DM yardımıyla) bu zincir koparılır ve yerine dışarıdan yutulmuş olan gerçek bakteri peptidi yerleştirilir."
+},
+{
+"id": 943,
+"ders": "Mikrobiyoloji",
+"konu": "İmmünoloji",
+"diff": 4,
+"q": "Bebeklikten itibaren vücudunda şiddetli Stafilokok apseleri (soğuk apseler) çıkan, kaba yüz görünümüne sahip olan ve dişleri geç çıkan bir hastada (Job Sendromu / Hiper IgE Sendromu) hücresel immün yetmezlik saptanıyor. Hastanın T lenfositlerinin, özellikle mukozal yüzeylerde ekstraselüler bakterilere ve mantarlara (Candida) karşı nötrofilleri olay yerine çağıran en kritik savunma hattını (sitokinleri) oluşturamadığı görülüyor. Bu hastada STAT3 gen mutasyonuna bağlı olarak farklılaşamayan (oluşamayan) ve temel olarak IL-17 salgılayarak nötrofil kemotaksisini yöneten T hücresi alt grubu aşağıdakilerden hangisidir?",
+"options": [
+"Th1 hücreleri",
+"Th2 hücreleri",
+"Th17 hücreleri",
+"Treg (Düzenleyici T) hücreleri",
+"Sitotoksik T hücreleri (CD8+)"
+],
+"correct": 2,
+"exp": "CD4+ T Yardımcı (Th) hücreleri düşmana göre farklı ordulara dönüşür. Th1'ler makrofajları çağırır (Hücre içi bakteri/TB), Th2'ler eozinofilleri çağırır (Parazit/Alerji). 'Th17' hücreleri ise bağışıklık sisteminin Nötrofil çobanlarıdır. Özellikle deri ve mukozalarda (bağırsak/akciğer) dışarıdan saldıran ekstraselüler bakterilere (Stafilokok) ve mantarlara (Candida) karşı nötrofilleri olay yerine toplayan IL-17'yi salgılarlar. Job Sendromunda (Hiper IgE), STAT3 gen mutasyonu nedeniyle bu 'Th17 hücreleri hiç oluşamaz'. Th17 olmayınca deriye nötrofil çağrılamaz, enflamasyon/ısı yaratılamaz ve hastada hiç ağrı/ısı vermeyen ama içi stafilokok kaynayan meşhur 'Soğuk Apseler' ortaya çıkar."
+},
+{
+"id": 944,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Kırsal alanda eski ve paslı bir çiviye basan 45 yaşındaki hasta, bir hafta sonra çenesinde kilitlenme (trismus), yutma güçlüğü ve sırt kaslarında şiddetli, yay gibi kasılmalar (opistotonus) tablosuyla acile getiriliyor. Clostridium tetani enfeksiyonu tanısı alan bu hastada, toksinin (Tetanospasmin) medulla spinalise ulaşarak sürekli kasılmaya (spastik felç) yol açması, inhibitör ara nöronlarda (Renshaw hücreleri) HANGİ nörotransmitterlerin veziküler salınımını kalıcı olarak bloke etmesinin doğrudan sonucudur?",
+"options": [
+"Asetilkolin ve Noradrenalin",
+"GABA ve Glisin",
+"Glutamat ve Aspartat",
+"Dopamin ve Serotonin",
+"SubP ve Nörokinin A"
+],
+"correct": 1,
+"exp": "Tetanoz toksini (Tetanospasmin), Botulinum toksini ile aynı mantıkta çalışır (SNARE proteinlerini / sinaptobrevini keser) ancak hedefi ve sonucu TAMAMEN ZITTIR. Botulinum perifere gider ve uyarıcı Asetilkolin'i keserek gevşek felç (flask paralizi) yapar. Tetanoz toksini ise retrograd yolla (sinirin içinden geriye doğru) omuriliğe (medulla spinalis) ulaşır. Orada, motor nöronları frenleyen (sürekli kasılmasını engelleyen) 'Renshaw hücreleri' adı verilen inhibitör ara nöronların içine girer. Renshaw hücrelerinin frenleyici nörotransmitterleri olan 'GABA ve Glisin'in veziküllerden salınımını bloke eder. Frenleri patlayan motor nöronlar sürekli ateşleme yapar ve tüm vücut kasları aynı anda, kırılasıya kasılır (Spastik felç / Opistotonus)."
+},
+{
+"id": 945,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 5,
+"q": "Biyoterörizm şüphesiyle getirilen bir zarfın içindeki beyaz tozu soluyan hastada, hızla ilerleyen hemorajik mediastinit, mediastinal genişleme ve ölümcül akciğer ödemi gelişiyor. Kültürde D-glutamik asit kapsüllü, Gram-pozitif, zincir yapan basiller (Bacillus anthracis) saptanıyor. Şarbon (Antraks) toksininin iki ana silahından biri olan ve akciğerdeki makrofajları/hücreleri devasa boyutta şişirerek ödem yaratan 'Ödem Faktörü (Edema Factor)', hücre içinde doğrudan HANGİ enzimatik aktiviteyi (kendisi bizzat bir enzim gibi davranarak) taklit eder ve cAMP'yi fırlatır?",
+"options": [
+"G proteininin stimülatör (Gs) alt birimini ADP-ribozile etme",
+"Doğrudan Adenilat Siklaz enzimi olarak çalışarak ATP'yi cAMP'ye çevirme",
+"Fosfodiesteraz enzimini inhibe ederek cAMP yıkımını durdurma",
+"Hücre zarı kalsiyum kanallarını açık kilitler",
+"Ribozomal 60S alt birimini inaktive etme"
+],
+"correct": 1,
+"exp": "Bacillus anthracis'in (Şarbon) ölümcül toksini üç parçadan oluşur: Koruyucu Antijen (PA), Letal Faktör (LF) ve Ödem Faktörü (EF). Koruyucu antijen, diğer ikisinin hücreye girmesini sağlayan kapıdır. Ödem Faktörünün (EF) çalışma mekanizması çok sinsi ve eşsizdir. Kolera veya Boğmaca toksini gibi gidip hücrenin G proteinlerini (Gs veya Gi) bozmaz. Ödem Faktörünün bizzat KENDİSİ bağımsız bir 'Adenilat Siklaz' enzimidir. Hücre içine girdiği an, konağın mekanizmalarına ihtiyaç duymadan, doğrudan ATP'yi parçalayarak devasa miktarda cAMP üretir. Kontrolden çıkan cAMP, iyonları ve suyu hücre dışına (veya makrofajların içine) çekerek o meşhur ölümcül akciğer ödemini yaratır. (Letal Faktör ise MAP kinaz kinazı parçalayarak doku nekrozu/eskar yapar)."
+},
+{
+"id": 946,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Orta kulak iltihabı (Otitis media) ve sinüzit şikayetiyle getirilen 3 yaşındaki çocuğun kültüründe; Gram-pozitif, mum alevi (lanset) şeklinde diplokoklar ve alfa-hemoliz yapan, optokine duyarlı koloniler (Streptococcus pneumoniae) saptanıyor. Pnömokokların, çocukların üst solunum yolu mukozasında opsonizasyona (fagositoza) karşı koyabilmesi kalın polisakkarit kapsülüne bağlıdır. Ancak bakterinin mukozal yüzeylere (epitele) İLK TUTUNMASINI ve mukus bariyerini aşmasını sağlayan, lokal mukoza antikorlarını parçalayan spesifik enzimatik virülans faktörü aşağıdakilerden hangisidir?",
+"options": [
+"Hiyalüronidaz",
+"Pnömolisin (Oksijene duyarlı hemolizin)",
+"IgA Proteaz",
+"Koagülaz",
+"Katalaz"
+],
+"correct": 2,
+"exp": "Mukozal yüzeyleri (solunum yolu, bağırsak, genital) enfekte etmeyi seven ve menenjit/otit yapan 3 büyük bakteri vardır: S. pneumoniae, H. influenzae ve Neisseria türleri. Mukozalarımız, bakterilerin epitele tutunmasını engellemek için sürekli olarak sekretuvar 'IgA' antikorları salgılar (Boya atar gibi bakteriyi kaplar). İşte bu üç tehlikeli bakteri, evrimsel olarak bir makas olan 'IgA Proteaz' enzimini geliştirmiştir. Bu enzim, mukozaya geldikleri an üzerlerine yapışan IgA antikorlarını menteşe bölgelerinden (hinge region) keserek etkisiz hale getirir. Antikordan kurtulan bakteri rahatça epitele tutunur ve hastalığı başlatır."
+},
+{
+"id": 947,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Üçüncü derece yanık ünitesinde yatan hastanın yarasında, mavi-yeşil renkli (piyosiyanin) bir cerahat ve tatlımsı (üzüm benzeri) bir koku ortaya çıkıyor. Pseudomonas aeruginosa enfeksiyonu gelişen hastada enfeksiyon hızla kana karışarak (sepsis) ektima gangrenozum lezyonlarına neden oluyor. Pseudomonas'ın en ölümcül silahı olan Ekzotoksin A'nın, insan hücrelerine girerek hücre ölümüne (nekroza) neden olmasını sağlayan moleküler (enzimatik) etki mekanizması, HANGİ protein sentezi basamağını bloke etmesine dayanır?",
+"options": [
+"Ribozomal 30S alt ünitesinde mRNA'nın okunmasını engellemek",
+"Aminoasil-tRNA'nın ribozoma girişini durdurmak",
+"Elongasyon Faktör 2'yi (EF-2) ADP-ribozilasyon yoluyla inaktive edip aminoasit zincirinin uzamasını durdurmak",
+"RNA polimerazı bloke ederek transkripsiyonu kesmek",
+"DNA girazı parçalamak"
+],
+"correct": 2,
+"exp": "Pseudomonas aeruginosa'nın Ekzotoksin A'sı ve Corynebacterium diphtheriae'nın Difteri Toksini, farmakoloji ve mikrobiyolojinin en meşhur ikizleridir. Her ikisinin de etki mekanizması BİREBİR AYNIDIR. Hücre içine giren toksin (A alt birimi), hücrenin ribozomlarında aminoasit zincirini bir adım ileri taşımakla (uzatmakla) görevli olan 'Elongasyon Faktör 2 (EF-2)' adlı enzime NAD üzerinden bir ADP-ribozil grubu takar. Bu işlem EF-2'yi kalıcı olarak felç eder. Protein sentezi (translasyon) duran insan hücresi saniyeler içinde ölür ve Pseudomonas'ın yaptığı o ağır nekrotik doku yıkımları (Ektima gangrenozum) ortaya çıkar."
+},
+{
+"id": 948,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 5,
+"q": "Elli beş yaşında erkek hasta, son 2 haftadır giderek artan nefes darlığı, ödem ve yatarken boğulma hissi (kalp yetmezliği bulguları) ile başvuruyor. Hikayesinden aylar önce ağır bir boğaz enfeksiyonu (Farenjit) geçirdiği ve tedavi almadığı öğreniliyor. Akut Romatizmal Ateş (ARA) sekeli olarak gelişen kapak harabiyeti saptanıyor. Streptococcus pyogenes (A Grubu Beta-hemolitik Streptokok) enfeksiyonlarında, bakteriyi fagositozdan koruyan yüzey yapısının, insan kalp kası (miyozin) proteinlerine inanılmaz derecede benzemesi sonucu (Moleküler Mimikri) otoimmünitenin tetiklendiği bilinmektedir. Bu çapraz reaksiyona neden olan ve bakterinin 'tiplendirmesinde' kullanılan asıl virülans faktörü aşağıdakilerden hangisidir?",
+"options": [
+"Hiyalüronik Asit Kapsül",
+"Streptolizin O",
+"M Proteini",
+"Eritrojenik (Pirojenik) Toksin",
+"C5a Peptidaz"
+],
+"correct": 2,
+"exp": "Streptococcus pyogenes'in (A Grubu) en tehlikeli, en antijenik ve fagositozu engelleyen temel virülans faktörü hücre duvarındaki 'M Proteini'dir. S. pyogenes'in 80'den fazla farklı tipi vardır ve bu tiplendirme M proteinine göre yapılır. Vücudumuz bu M proteinini yok etmek için bolca antikor üretir. Ancak bazı M proteini tipleri (Özellikle Tip 1, 3, 5, 18 gibi romatojenik tipler), aminoasit dizilimi olarak insan kalbindeki 'Miyozin' proteinlerine ve kapaklara çok benzer (Moleküler Mimikri). Bakteriyi yok ettiğini sanan antikorlar, dönüp kendi kalbimize saldırır ve o meşhur Akut Romatizmal Ateş (ARA) kapak lezyonlarını yaratırlar. (Not: Streptolizin O, kanda ASO titresini yükselten ve hücre delen toksindir, ancak otoimmünite yapmaz)."
+},
+{
+"id": 949,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Epigastrik ağrı ve yanma şikayeti olan hastaya endoskopi yapılıyor ve midede Helicobacter pylori'ye bağlı antral gastrit ile duodenal ülser saptanıyor. Bakterinin midedeki varlığını cerrahi (endoskopi) olmadan kanıtlamak için hastaya radyoaktif karbon (13C veya 14C) ile işaretlenmiş 'Üre' içiriliyor. On beş dakika sonra hastanın nefesinde (nefes testinde) radyoaktif işaretli Karbondioksit (CO2) ölçülüyor. H. pylori'nin midedeki asit banyosunda hayatta kalmasını sağlayan ve bu nefes testinin pozitif çıkmasının tek nedeni olan spesifik enzimatik aktivitesi aşağıdakilerden hangisidir?",
+"options": [
+"Katalaz enzimiyle H2O2'yi parçalaması",
+"Asit direncini sağlayan proton pompaları",
+"Üreaz enzimiyle üreyi amonyak (NH3) ve CO2'ye parçalayarak etrafında alkali (bazik) bir bulut oluşturması",
+"Mukini eriten musinaz enzimi",
+"Vakuolize edici sitotoksin (VacA) salgılaması"
+],
+"correct": 2,
+"exp": "Midenin pH'sı 1.5-2.0 arasıdır; normalde hiçbir bakteri bu asit havuzunda yaşayamaz. Helicobacter pylori bunu muazzam bir kimyasal kalkanla başarır: 'Üreaz' enzimi. Bakteri midedeki üreyi anında 'Amonyak (NH3)' ve Karbondioksite (CO2) parçalar. Amonyak güçlü bir bazdır. Bakterinin etrafında oluşan bu amonyak bulutu, mide asidini nötralize eder ve bakteriye güvenli bir yaşama alanı sağlar. Üre Nefes Testi de bu hileyi kullanır: Hastaya işaretli üre içirilir. Eğer midede bakteri (ve onun Üreaz enzimi) varsa, üre hemen amonyak ve işaretli CO2'ye parçalanır. CO2 kana karışıp akciğerlerden nefesle atılır ve makine bunu ölçer. Test pozitifse, bakteri kesin oradadır."
+},
+{
+"id": 950,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 5,
+"q": "Kombine antiretroviral tedavi (HAART) alan bir HIV hastasında, kandaki viral yük (viral load) aylarca 'saptanamaz' düzeyde kalmasına rağmen, ilaçlar kesildikten sadece birkaç hafta sonra virüsün kanda tekrar hızla çoğaldığı (rebound) saptanıyor. Virüsün vücuttan tamamen silinmesini imkansız kılan ve istirahat halindeki bellek (memory) CD4+ T hücrelerinde kalıcı bir 'rezervuar' oluşturmasını sağlayan bu durum; virüsün çift sarmallı DNA formunun insan kromozomuna kovalent olarak bağlanmasını (yapışmasını) sağlayan HANGİ spesifik enzimin eseridir?",
+"options": [
+"Revers Transkriptaz",
+"Viral Proteaz",
+"İntegraz",
+"RNA Polimeraz II",
+"Ribonükleaz H (RNase H)"
+],
+"correct": 2,
+"exp": "HIV'in kür (tam şifa) edilememesinin yegane nedeni, hücrenin genetiğine saklanmasıdır. Virüs RNA'sını DNA'ya çevirdikten (Revers Transkriptaz) sonra, bu viral DNA çekirdeğe girer. 'İntegraz' adlı viral enzim, insan kromozomunu makas gibi keser ve viral DNA'yı insan genetiğinin tam ortasına yapıştırır (Provirüs evresi). Eğer o T hücresi uykuya (bellek hücresi formuna) geçerse, virüs de yıllarca o hücrenin DNA'sında sessizce uyur. İlaçlar sadece 'aktif çoğalan' virüsleri vurabildiği için, bu uyuyan genetik rezervuarlara dokunamazlar. İlaç kesildiği an, uyanan hücreyle birlikte virüs de uyanır ve kana karışır. (Raltegravir, Dolutegravir gibi ilaçlar işte bu İntegraz enzimini bloke ederek virüsün kromozoma yerleşmesini engeller)."
+},
+{
+"id": 951,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "Dünya çapında milyonlarca insanın ölümüne neden olan yeni bir pandemik İnfluenza A suşu (Örn: H1N1 Domuz Gribi) izole ediliyor. Genetik analizde, bu yeni suşun hem insan hem de domuz influenza virüslerine ait gen dizilerini aynı anda barındırdığı görülüyor. Bir konak hücresinde iki farklı virüsün karşılaşarak ortaya bağışıklık sisteminin hiç tanımadığı 'yepyeni' bir alt tip (Antijenik Şift) çıkarmasına olanak tanıyan, Orthomyxoviridae ailesine özgü HANGİ yapısal genom özelliğidir?",
+"options": [
+"Genomun çift sarmallı (ds) RNA yapısında olması",
+"Viral RNA polimerazın proofreading (hata düzeltme) yeteneğinin olmaması",
+"Genomun tek parça yerine 8 ayrı 'Segment'ten oluşması",
+"Virüsün çekirdek zarı yerine plazma zarından tomurcuklanması",
+"Viral kılıfta (zarfta) nöraminidaz sivriliklerinin bulunması"
+],
+"correct": 2,
+"exp": "İnfluenza virüsünün (Grip) dünyayı kasıp kavuran pandemiler (Antijenik Şift) yapabilmesinin sırrı genetik yapısında gizlidir. Genomu uzun, tek bir iplik (parça) DEĞİLDİR; 8 ayrı RNA parçasından (Segment) oluşur. Eğer bir domuz hücresine aynı anda hem insan gribi hem kuş gribi virüsü girerse, hücrenin içinde bu 8'er parça iskambil kağıdı gibi karıştırılır (Reassortment / Yeniden dizilim). Ortaya çıkan yeni virüs, insan bağışıklığının o güne kadar hiç görmediği yepyeni bir Hemaglutinin/Nöraminidaz kombinasyonuna sahip olur. İnsanların bu yeni virüse karşı antikorları olmadığı için virüs tüm dünyayı dolaşarak pandemi yaratır."
+},
+{
+"id": 952,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "Sık tekrarlayan dudak uçukları (Herpes labialis) olan hastada, lezyonlar iyileştikten sonra virüsün (HSV-1) vücuttan atılmadığı ve Trigeminal gangliondaki nöronların içinde sessiz (latent) bir evreye geçtiği bilinmektedir. Yıllarca süren bu uyku evresinde, virüsün bağışıklık sistemi (CD8+ T hücreleri) tarafından fark edilip yok edilmesini engelleyen temel hayatta kalma stratejisi aşağıdakilerden hangisidir?",
+"options": [
+"Nöronların MHC Sınıf I moleküllerini eksprese etmemesi",
+"Virüsün nöron sitoplazmasında viral proteazları sürekli aktif tutması",
+"Virüsün litik (çoğalma) proteinlerinin sentezini tamamen durdurarak, sadece apoptozu engelleyen ve sessizliği koruyan spesifik bir RNA (LATs) üretmesi",
+"Virüsün nöron DNA'sına entegre olarak (provirüs) yapısını gizlemesi",
+"Viral kılıfın etrafını insan miyelin kılıfıyla kaplaması"
+],
+"correct": 2,
+"exp": "Herpes Simplex Virüsü (HSV-1) nöronlarda ömür boyu kalıcıdır (Latent enfeksiyon). Latent evrenin kuralı 'Görünmezlik'tir. Virüs eğer protein (kılıf, enzim) üretirse, hücre bu proteinleri MHC-I ile dışarı sunar ve CD8 T hücreleri nöronu anında öldürür. Bunu bilen HSV-1, nöronun çekirdeğinde (epizomal/halkasal olarak) uykuya yattığında neredeyse tüm genlerinin şalterini kapatır. Hiçbir viral protein (antijen) üretilmez. Bu sessiz dönemde üretilen TEK ŞEY, 'LATs (Latency-Associated Transcripts)' adı verilen bir RNA'dır. LATs protein kodlamaz; görevi hücrenin kendi kendini öldürmesini (apoptozu) engellemek ve virüsün çoğalma genlerini baskılamaktır. Stres, ateş veya UV ışını bağışıklığı zayıflattığında bu sessizlik bozulur ve virüs tekrar dudağa inerek uçuk yapar."
+},
+{
+"id": 953,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "Yarasa ısırığı öyküsü olan hasta, haftalar sonra yutkunma güçlüğü, sudan korkma (hidrofobi) ve ajitasyon tablosuyla komaya giriyor. Kuduz (Rabies) virüsünün kas dokusundan (ısırık yerinden) Santral Sinir Sistemine (beyne) ulaşarak ölümcül ensefalit yapmasını sağlayan, viremi (kan yolu) KULLANMADAN gerçekleştirdiği spesifik transport mekanizması aşağıdakilerden hangisidir?",
+"options": [
+"Makrofajların içinde lenfatik sistem üzerinden taşınma",
+"Periferik sinirlerin (aksonların) içinde, mikrotübüller üzerinde 'Dynein' motor proteini aracılığıyla geriye doğru (retrograd) taşınma",
+"Kan-beyin bariyerini (KBB) endotel hücrelerini eriterek geçme",
+"Koku alma (Olfaktör) sinirleri üzerinden doğrudan subaraknoid mesafeye sızma",
+"Periferik sinirlerin içinde 'Kinezin' motor proteini ile anterograd (ileriye doğru) taşınma"
+],
+"correct": 1,
+"exp": "Kuduz (Rabies) virüsü kan dolaşımını sevmez. Kasa girdiğinde nöromüsküler kavşaktaki Asetilkolin (ACh) reseptörlerine tutunur ve motor sinirin İÇİNE dalar. Virüs, aksonun içindeki mikrotübül yollarını kullanarak beyne tırmanır. Uçtan (aksondan) merkeze (hücre gövdesine/beyne) doğru yapılan bu taşımaya 'Retrograd (Geriye) Taşıma' denir. Mikrotübüller üzerinde bu geriye taşımayı yapan kargo motorunun adı 'Dynein (Dinein)'dir. (İleriye taşıyan ise Kinezin'dir). Virüs günde 1-2 cm hızla sessizce ilerler. Isırık beyne ne kadar yakınsa kuluçka süresi o kadar kısadır. Virüs beyne ulaştıktan sonra kurtuluş (kür) yoktur, Negri cisimcikleri oluşturarak hastayı öldürür."
+},
+{
+"id": 954,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 5,
+"q": "Servikal Pap smear taramasında Yüksek Dereceli Skuamöz İntraepitelyal Lezyon (HSIL) saptanan hastada, yüksek riskli HPV-16 virüsünün epitel hücre DNA'sına entegre olduğu belirleniyor. Virüsün ürettiği E6 onkoproteini, konak hücrenin kanserleşmesini engellemekle görevli olan p53 tümör süpresör proteinini etkisiz hale getirir. E6 onkoproteininin p53'ü ortadan kaldırırken kullandığı ASIL hücresel (biyokimyasal) mekanizma aşağıdakilerden hangisidir?",
+"options": [
+"p53 geninin promotor bölgesini metilleyerek transkripsiyonunu durdurması",
+"p53 proteinini doğrudan fosforile ederek çekirdekten dışarı atması",
+"Hücresel bir ubikuitin ligazı (E6-AP) p53'e yönlendirerek, p53'ün proteazomlarda parçalanmasını (yıkımını) sağlaması",
+"p53'ün DNA üzerindeki bağlanma bölgelerini kompetitif olarak işgal etmesi",
+"p53 proteinini kaspaz-3 aracılığıyla apoptoza yönlendirmesi"
+],
+"correct": 2,
+"exp": "Yüksek riskli HPV (16, 18), kanser yapmak için hücrenin iki büyük frenini kırmak zorundadır: p53 ve Rb (Retinoblastom). HPV'nin E6 proteini p53'ü yok eder. Bunu yapma şekli oldukça sinsidir. E6, doğrudan p53'ü parçalamaz; hücrenin kendi çöp işaretleme sistemi olan 'Ubikuitin Ligaz (E6-AP)' enzimini kandırır ve onu p53'ün üzerine yönlendirir. Ubikuitin ile işaretlenen (çöp etiketi yapıştırılan) p53 proteini, hücrenin kendi öğütücüsü olan 'Proteazomlar' tarafından parçalanarak yok edilir. p53 (Genomun koruyucusu) ortadan kalkınca, hücre mutasyonlu DNA ile frensizce bölünmeye başlar ve serviks kanserine dönüşür. (Not: E7 proteini ise Rb'ye bağlanıp onu inaktive eder, böylece E2F serbest kalır)."
+},
+{
+"id": 955,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "Bir yaşındaki bebekte, kış aylarında başlayan ve dışkıda kan veya lökosit (hücre) İÇERMEYEN, şiddetli sulu ishal tablosu gelişiyor. Rotavirüs enfeksiyonu tanısı konan bu hastada, ishalin sadece epitel hücre yıkımıyla değil, AYNI ZAMANDA virüsün ürettiği 'NSP4' adlı proteinin doğrudan bir 'enterotoksin' gibi davranmasıyla oluştuğu bilinmektedir. NSP4 proteininin bağırsak lümenine masif klor ve su salgılanmasını tetiklemesi, enterosit içinde HANGİ spesifik ikincil haberci (sinyal) molekülünün seviyesini aniden fırlatmasının bir sonucudur?",
+"options": [
+"Siklik AMP (cAMP)",
+"Siklik GMP (cGMP)",
+"İntraselüler Kalsiyum (Ca+2)",
+"Nitrik Oksit (NO)",
+"Protein Kinaz A (PKA)"
+],
+"correct": 2,
+"exp": "Rotavirüs (Reoviridae ailesinden, dsRNA yapılı), aşısız bebeklerde kış ishallerinin en sık nedenidir. İshal yapma mekanizması iki yönlüdür: 1) Villusların ucundaki emici hücreleri öldürerek laktaz eksikliği (osmotik ishal) yapar. 2) Çok daha ilginci, virüsün ürettiği 'NSP4 (Non-Structural Protein 4)' molekülü, bir virüs tarafından üretilen BİLİNEN İLK ENTEROTOKSİNDİR (Sanki bakteri toksini gibi çalışır). NSP4, bağırsak hücrelerine bağlandığında, Endoplazmik Retikulumdan sitoplazmaya devasa miktarda 'Kalsiyum (Ca+2)' boşalmasına neden olur. Hücre içi kalsiyum fırtınası, apikal zardaki klor kanallarını açar, lümene klor ve su fışkırır (Sekretuvar ishal). Bu yüzden ishal çok şiddetli ve suludur."
+},
+{
+"id": 956,
+"ders": "Mikrobiyoloji",
+"konu": "Mikoloji",
+"diff": 4,
+"q": "CD4+ hücre sayısı 50/mm³ olan AIDS hastası, şiddetli baş ağrısı ve ense sertliği ile getiriliyor. BOS (Beyin Omurilik Sıvısı) örneğinden yapılan Çini Mürekkebi (India Ink) boyamasında, tomurcuklanan maya hücrelerinin etrafında çok geniş ve şeffaf bir hale (boşluk) izleniyor. Cryptococcus neoformans'ın BOS gibi bağışıklık hücrelerinin zayıf olduğu bir ortamda makrofajlar tarafından fagosite edilmekten (yutulmaktan) kurtulmasını sağlayan ve bu şeffaf haleyi oluşturan yapının EN TEMEL biyokimyasal bileşeni aşağıdakilerden hangisidir?",
+"options": [
+"Ergosterol ve Sfingolipid",
+"Glukuronoksilomannan (Polisakkarit)",
+"Peptidoglikan ve Teikoik asit",
+"Kitin ve Beta-1,3-Glukan",
+"Miykolik asit"
+],
+"correct": 1,
+"exp": "Cryptococcus neoformans, AIDS hastalarında ölümcül menenjitin bir numaralı mantar etkenidir. Güvercin dışkısıyla solunarak bulaşır. Onu diğer tüm mantarlardan ayıran ve bağışıklıktan koruyan yegane silahı, etrafını saran DEVASA KALINLIKTAKİ 'Polisakkarit Kapsül'üdür. Çini mürekkebi (karanlık zemin) boyamasında, boya bu kapsülden içeri giremediği için maya hücresinin etrafında parlayan bir hale (boşluk) olarak görünür. Bu kapsülün yapıtaşı 'Glukuronoksilomannan' adlı bir polisakkarittir. Hastalığın kesin tanısı da (Lateks aglütinasyon testi ile) BOS'ta yüzen bu 'Kriptokokal Kapsül Antijenlerinin' tespit edilmesine dayanır."
+},
+{
+"id": 957,
+"ders": "Mikrobiyoloji",
+"konu": "Mikoloji",
+"diff": 4,
+"q": "Kemik iliği nakli sonrası uzun süredir derin nötropenisi olan hastada; inatçı ateş, öksürük ve kanlı balgam (hemoptizi) gelişiyor. Akciğer tomografisinde 'Halo bulgusu (etrafı kanamalı nodül)' saptanıyor. Biyopsi örneğinde; damar duvarlarını (endoteli) delerek kanın içine doğru büyüyen (anjiyoinvazyon), 45 derecelik dar açılarla dallanan, ince ve septalı (bölmeli) V harfi şeklinde hifler izleniyor. Fırsatçı mantarlar içinde özellikle kan damarlarına saldırmayı (tromboz ve infarktüs yapmayı) seven ve bu morfolojik özelliklerle tanınan küf mantarı aşağıdakilerden hangisidir?",
+"options": [
+"Mucor türleri",
+"Candida albicans",
+"Aspergillus fumigatus",
+"Histoplasma capsulatum",
+"Coccidioides immitis"
+],
+"correct": 2,
+"exp": "İnvaziv Pulmoner Aspergilloz, nötropenik (bağışıklığı sıfırlanmış) hastaların en ölümcül küf enfeksiyonudur. Aspergillus fumigatus'un en yıkıcı özelliği 'Anjiyoinvaziv' olmasıdır. Yani damarları deler, damarın içine girer, orada pıhtı (tromboz) yapar ve beslediği dokuyu çürüterek (infarktüs) kanatır (Hemoptizinin nedeni budur). Biyopside Aspergillus'u (tedavisi tamamen farklı olan) Mucor'dan ayırmak hayatidir. Aspergillus mikroskopta: 'İnce (dar), Septalı (boğumlu/bölmeli) ve 45 DERECE DAR AÇIYLA (V şeklinde)' dallanan hifler olarak görünür. (Not: Mucor ise diyabetik ketoasidozda çıkar, Geniş, Septasız ve 90 DERECE DİK AÇIYLA dallanır)."
+},
+{
+"id": 958,
+"ders": "Mikrobiyoloji",
+"konu": "Mikoloji",
+"diff": 4,
+"q": "Ağır astım atağı nedeniyle 2 haftadır yüksek doz sistemik kortikosteroid kullanan hastanın dilinde ve yanak mukozasında beyaz, kazınabilen plaklar (pamukçuk) gelişiyor. Flora elemanı olan bu mayanın (Candida albicans) zararsız komensal formdan çıkarak epitel hücreleri arasına sızan (invaziv) patojenik bir forma dönüşmesi; vücut sıcaklığı (37°C) ve serum temasıyla tetiklenen HANGİ spesifik morfolojik değişimi (switch) geçirmesine bağlıdır?",
+"options": [
+"Sporangiospor üretimine",
+"Mayadan (Yeast) gerçek hif ve 'Germ Tüp (Çimlenme Borusu)' formuna geçmesine",
+"Hücre zarında kalın bir polisakkarit kapsül örmesine",
+"Klamidosporlarını patlatarak toksin salgılamasına",
+"Dimorfik özellik göstererek oda ısısında küfe dönüşmesine"
+],
+"correct": 1,
+"exp": "Candida albicans, gastrointestinal ve vajinal floramızın zararsız bir üyesidir. Normalde yuvarlak/oval 'Maya (Yeast)' formunda durur. ANCAK bağışıklık düştüğünde (Kortizon, nötropeni) veya flora bozulduğunda (antibiyotik), Candida agresifleşir. Bu agresifliğin (invazyonun) sırrı 'Şekil Değiştirmesinde (Fenotipik Switch)' yatar. Maya formu uzayarak iplikçiğe (Gerçek Hif ve Pseudohif) dönüşür. Laboratuvarda serum içine konup 37 derecede bekletildiğinde, hücreden dışarı doğru dümdüz uzayan 'Germ Tüp (Çimlenme Borusu)' çıkarması bu patojenik geçişin en net kanıtıdır. Bu uzun tüpler/hifler, bir mızrak gibi epitel hücrelerinin arasına (tight junctionlara) saplanarak dokuyu işgal ederler."
+},
+{
+"id": 959,
+"ders": "Mikrobiyoloji",
+"konu": "Mikoloji",
+"diff": 4,
+"q": "Amerika'nın Orta Batı bölgesinde (Ohio nehir vadisi) yaşayan ve hobi olarak mağaracılıkla ilgilenen hastada tüberkülozu taklit eden akciğer lezyonları ve hepatosplenomegali gelişiyor. Kemik iliği biyopsisinde; Retiküloendotelyal sistem hücrelerinin (MAKROFAJLARIN) sitoplazmasını tamamen dolduran, etrafı soluk küçük maya hücreleri saptanıyor. Dimorfik (iki formlu) olan bu mantarın (Histoplasma capsulatum), fagozom enzimleri tarafından parçalanmaktan kurtulup makrofajın tam kalbinde çoğalabilmesi, hücre içindeki HANGİ biyokimyasal parametreyi kendi lehine değiştirmesine dayanır?",
+"options": [
+"Fagozom içindeki asidik pH'ı yükselterek (alkalileştirerek) lizozomal enzimlerin çalışmasını engellemesine",
+"Fagozom zarına delikler (porlar) açarak sitoplazmaya kaçmasına",
+"Makrofajın çekirdeğine girerek apoptozu durdurmasına",
+"Oksidatif patlama (respiratory burst) sırasında üretilen tüm oksijeni tüketmesine",
+"Demir (Fe) pompalarını bloke ederek enzimleri susturmasına"
+],
+"correct": 0,
+"exp": "Histoplasma capsulatum, doğada (mağara/yarasa dışkısı) küf, insan vücudunda maya olan dimorfik bir mantardır. Mikroskop altındaki en eşsiz özelliği, diğer mantarların aksine serbest dolaşmayı değil, bilerek 'MAKROFAJLARIN İÇİNE (intraselüler)' girmeyi seçmesidir. Makrofajlar onu yutunca oluşan o ölüm odasının (fagolizozomun) içindeki sindirici enzimler sadece ASİDİK (düşük) pH'da çalışır. Histoplasma çok zekice bir hamleyle fagozomun içindeki pH'ı YÜKSELTİR (asiditeyi bozar). pH yükselince makrofajın ölümcül enzimleri felç olur. Mantar, makrofajın bu sıcak ve güvenli odasında rahatça çoğalır, onu bir taksi gibi kullanarak dalak ve karaciğere yayılır."
+},
+{
+"id": 960,
+"ders": "Mikrobiyoloji",
+"konu": "Mikoloji",
+"diff": 4,
+"q": "Lise güreş takımındaki bir öğrencide, kasık bölgesinde ve gövdesinde kaşıntılı, kenarları kabarık ve kırmızı, ortası soluk halka şeklinde (Ringworm) lezyonlar (Tinea corporis) gelişiyor. Deri kazıntısının KOH (Potasyum Hidroksit) incelemesinde dallanan septalı hifler saptanıyor. Trichophyton rubrum gibi dermatofit mantarlarının enfeksiyon oluşturmasına rağmen derinin 'canlı (hücresel)' alt katmanlarına, kana veya iç organlara ASLA yayılamamasının asıl fizyolojik (ve beslenme) nedeni aşağıdakilerden hangisidir?",
+"options": [
+"Kan dolaşımındaki yüksek oksijen basıncına dayanamamaları",
+"Sadece 30°C'nin altındaki cilt yüzeyi sıcaklıklarında çoğalabilmeleri",
+"Mantarın hayatta kalabilmesi için 'SADECE ÖLÜ DOKUDA (stratum korneum, tırnak, saç)' bulunan 'Keratin' proteinini parçalamaya (Keratinofilik) muhtaç olması",
+"Dermisteki makrofajlar tarafından anında yok edilmeleri",
+"Deri altı lenfatik kanalların mantarın boyutundan daha dar olması"
+],
+"correct": 2,
+"exp": "Dermatofitler (Microsporum, Trichophyton, Epidermophyton), saç, deri ve tırnakta 'Tinea (Mantar)' enfeksiyonu yapan küf mantarlarıdır. Bu mantarların (ve enfeksiyonlarının) en büyük özelliği 'Yüzeyel' olmalarıdır. Asla kan dolaşımına, akciğere veya karaciğere gitmezler. Neden? Çünkü dermatofitler 'Keratinofilik'tir; yani menülerinde yiyebildikleri TEK ŞEY, derinin en üstündeki ölü tabakada (stratum corneum), saçta ve tırnakta bulunan 'KERATİN' proteinidir. Mantar bu proteini parçalayan (keratinaz) enzimler üretir. Canlı alt dokulara (dermise) veya kana indiği an, etrafta yiyebileceği bir keratin kalmaz ve mantar açlıktan ilerleyemez. O kaşıntı ve kızarıklık, mantarın kana karışmasından değil, mantarın ölü derideki yıkım ürünlerine karşı vücudun verdiği alerjik tepkiden (inflamasyondan) kaynaklanır."
+},
+{
+"id": 961,
+"ders": "Mikrobiyoloji",
+"konu": "Mikoloji",
+"diff": 4,
+"q": "Kemoterapi nedeniyle ağır lenfopeni (T hücre eksikliği) gelişen hastada ilerleyici nefes darlığı ve kuru öksürük başlıyor. Akciğer grafisinde bilateral (iki taraflı) diffüz, buzlu cam infiltrasyonu saptanıyor. Bronkoalveoler lavaj (BAL) sıvısının Gümüş Boyası (Gümüş Metenamin) ile incelenmesinde ezilmiş pinpon topuna (fincan) benzeyen siyah kistler görülüyor. Pneumocystis jirovecii tanısı alan bu hastada, etken filogenetik olarak bir 'MANTAR' olmasına rağmen, klasik mantar ilaçları olan Amfoterisin B ve Azollerin (Örn: Flukonazol) tedavide TAMAMEN ETKİSİZ kalmasının hücresel nedeni aşağıdakilerden hangisidir?",
+"options": [
+"Hücre duvarında peptidoglikan bulunması",
+"Hücre zarında (hedef molekül olan) 'Ergosterol' yerine memeli benzeri 'Kolesterol' bulunması",
+"Mantarın sadece hücre içi (intraselüler) yaşam formunda olması",
+"İlaçları hücre dışına atan devasa efflux pompalarına sahip olması",
+"Beta-glukan sentezinin tamamen durmuş olması"
+],
+"correct": 1,
+"exp": "Pneumocystis jirovecii (PCP), AIDS hastalarında (CD4 < 200) ve ağır immünsüpresiflerde en sık görülen, ölümcül interstisyel pnömoni etkenidir. Gümüş boyasında fincan/pinpon topu kistleri klasiktir. Genetik testler (rRNA) onun kesinlikle bir 'MANTAR' olduğunu kanıtlamıştır. Ancak, mikrobiyolojinin en garip istisnalarından biridir: P. jirovecii'nin hücre zarında diğer tüm mantarlarda bulunan (ve tüm mantar ilaçlarının hedefi olan) 'ERGOSTEROL' YOKTUR. Zarı, bizim hücrelerimize benzeyen 'Kolesterol' içerir. Bu yüzden Ergosterole bağlanan Amfoterisin B veya Ergosterol üretimini durduran Flukonazol bu mantara KIL PAYI BİLE zarar veremez. Tedavide mecburen antibakteriyel/antiproliferatif bir kombinasyon olan 'Trimetoprim-Sülfametoksazol (Bactrim/TMP-SMX)' kullanılır."
+},
+{
+"id": 962,
+"ders": "Mikrobiyoloji",
+"konu": "Parazitoloji",
+"diff": 5,
+"q": "Afrika seyahatinden dönen hastada 48 saatte bir gelen ateş, koma ve böbrek yetmezliği tablosu gelişiyor. Periferik yaymada eritrositlerin içinde çok sayıda tektaş yüzük (ring form) saptanarak 'Plasmodium falciparum' (Ağır Sıtma) tanısı konuyor. P. falciparum'un, diğer sıtma türlerinden (P. vivax, P. malariae) çok daha ölümcül olmasını sağlayan ve enfekte eritrositlerin beyin/böbrek kılcal damarlarına yapışarak (Sitoadezyon) kan akımını tamamen durdurmasına neden olan yapışkan protein kompleksi aşağıdakilerden hangisidir?",
+"options": [
+"Eritrosit yüzeyine yerleşen 'PfEMP1' (Plasmodium falciparum Erythrocyte Membrane Protein 1) ve neden olduğu yumrular (Knobs)",
+"Parazitin salgıladığı Hemozoin (Sıtma pigmenti)",
+"Merozoit yüzey proteini (MSP-1)",
+"Apikal Membran Antijeni-1 (AMA-1)",
+"Duffy kan grubu antijen kompleksi"
+],
+"correct": 0,
+"exp": "Plasmodium falciparum, Sıtmanın (Malarya) en ölümcül formudur (Serebral malarya). Bu ölümcüllüğün sırrı sadece hızlı çoğalması değil, eritrositlerin zarına yaptığı fiziksel müdahaledir. P. falciparum, enfekte ettiği eritrositin yüzeyine kendi ürettiği 'PfEMP-1' proteinini yerleştirir. Bu proteinler eritrositin yüzeyinde çıkıntılar (Yumrular / Knobs) oluşturur. Bu yumrular aşırı yapışkandır; enfekte eritrositler dalaktan (yıkımdan) kaçmak için beyin, böbrek ve akciğerlerdeki ince kılcal damarların endoteline (ICAM-1, VCAM-1) tutunarak park ederler (Sitoadezyon). Bu yapışan eritrositler damarı tamamen tıkar (Mikrovasküler oklüzyon) ve dokuları oksijensiz bırakarak komaya/ölüme neden olur. (Not: Duffy antijeni P. vivax'ın eritrosite giriş kapısıdır)."
+},
+{
+"id": 963,
+"ders": "Mikrobiyoloji",
+"konu": "Parazitoloji",
+"diff": 4,
+"q": "Kemoterapi alan immünsüpresif bir hastada konfüzyon, sağ hemiparezi ve nöbet gelişiyor. Kranial MRG'de bazal ganglionlarda 'halka şeklinde kontrast tutan (ring-enhancing)' çoklu apseler saptanıyor. Toxoplasma gondii tanısı konuyor. T. gondii (Apicomplexa şubesi), makrofajlar tarafından yutulmayı (fagositozu) beklemez; kendi özel motor proteinlerini kullanarak konağın hücre zarını yarar ve içeri zorla girer (Aktif invazyon). Parazitin hücre içine girerken oluşturduğu kılıfın (parazitofor vakuol) lizozomlarla BİRLEŞMESİNİ engelleyerek hücre içinde güvenle yaşamasını sağlayan enzim/protein karışımını HANGİ apikal organellerden salgılar?",
+"options": [
+"Kinetoplast",
+"Roptri (Rhoptry) ve Mikronemler",
+"Kist duvarı vezikülleri",
+"Glikozomlar",
+"Kontraktil kofullar"
+],
+"correct": 1,
+"exp": "Toxoplasma gondii ve Plasmodium (Sıtma) türleri 'Apicomplexa' (Uç kompleksliler) adı verilen çok özel bir şubedendir. Bu parazitlerin en büyük özelliği, hücreye girmek için makrofajları beklememeleri, aktif olarak hücreyi delmeleridir. Parazitin sivri ucunda (apikal kısmında) 'Roptri (Rhoptry)' ve 'Mikronem' adı verilen mızrak ucu gibi organeller bulunur. Parazit hücreye temas ettiğinde bu organellerden içeriye özel proteinler kusar. Bu proteinler hücre zarını içe doğru çöktürerek bir balon (Parazitofor Vakuol) yaratır ve parazit bu balonun içine girer. Roptri proteinlerinin en büyük sihri, bu balonun hücrenin asit dolu lizozomlarıyla kaynaşmasını (füzyonunu) ENGELLER. Vakuol, parazit için güvenli bir kaleye dönüşür ve içinde rahatça çoğalır."
+},
+{
+"id": 964,
+"ders": "Mikrobiyoloji",
+"konu": "Parazitoloji",
+"diff": 4,
+"q": "Hafta sonu dağlık alanda arıtılmamış dere suyu içen hastada, 2 hafta sonra başlayan, kan ve lökosit İÇERMEYEN, aşırı gazlı, kötü kokulu ve yağlı ishal (Steatore) tablosu gelişiyor. Dışkı incelemesinde, iki çekirdekli (baykuş yüzü görünümü) ve flagellalı (kamçılı) trofozoitler saptanıyor. Giardia lamblia enfeksiyonunda, parazitin bağırsak duvarını (epitelini) DELMEMESİNE ve kanama YAPMAMASINA rağmen yağ emilimini bozmasının fizyolojik (mekanik) nedeni aşağıdakilerden hangisidir?",
+"options": [
+"Pankreasın lipaz üretimini durduran bir nörotoksin salgılaması",
+"Safra asitlerini dekonjuge ederek miçel oluşumunu bozması",
+"Trofozoitlerin karın (ventral) kısımlarında bulunan devasa 'Emici Disk (Sucking Disk)'leri ile duodenum/jejunum yüzeyindeki villuslara bir halı gibi yapışarak emilim bariyeri (tıkanıklık) oluşturması",
+"İnce bağırsak lenfatik (lakteal) kanallarının içine girip tıkaması",
+"Aktif olarak yağ asitlerini yiyerek (fagosite ederek) çoğalması"
+],
+"correct": 2,
+"exp": "Giardia lamblia (duodenalis), kistlerin yutulmasıyla (özellikle vahşi doğa sularından) bulaşan yaygın bir protozoondur. İshal asla KANLI DEĞİLDİR çünkü dokuyu (epiteli) işgal edip eritmez. Hastalığı yapma şekli tamamen 'Mekanik Bariyer' oluşturmaya dayanır. Duodenuma ulaşan parazit (trofozoit formu), karın kısmında bulunan devasa vantuz benzeri 'Emici Diski' ile bağırsak fırçamsı kenarlarına (villuslara) sımsıkı yapışır. Milyonlarca parazit bağırsak yüzeyini bir asfalt gibi kaplar. Besinler (özellikle sindirimi zor olan yağlar) bağırsak epitel hücrelerine (enterositlere) temas edemediği için emilemez. Emilmeden kalın bağırsağa geçen yağ, doğrudan dışkıyla atılarak o meşhur kötü kokulu, suda yüzen 'Yağlı İshali (Steatore)' yapar."
+},
+{
+"id": 965,
+"ders": "Mikrobiyoloji",
+"konu": "Parazitoloji",
+"diff": 4,
+"q": "Mısır göçmeni bir hastada, yıllar içinde gelişen portal hipertansiyon, karında asit, özofagus varisleri ve karaciğerde şiddetli periportal ('Pipestem' - Pipo sapı) fibrozis saptanıyor. Karaciğerde siroza neden olan bu patolojik tablo, erişkin Schistosoma mansoni kurtlarının mezenterik venlerde yaşamasından ziyade; portal ven akımıyla sürüklenip karaciğere takılan HANGİ paraziter formun dokuda 'Gecikmiş Tip (Tip IV) Aşırı Duyarlılık / Granülomatöz Reaksiyon' tetiklemesinin doğrudan sonucudur?",
+"options": [
+"Serkaryalar (Cercariae)",
+"Mirasidyumlar (Miracidia)",
+"Yumurtalar (Ova)",
+"Sporokistler",
+"Amastigotlar"
+],
+"correct": 2,
+"exp": "Schistosoma mansoni (Kan kelebeği), Afrika'da tatlı suda yüzerken cildi delerek giren (serkarya formu) bir trematoddur. Erişkin kurtlar bağırsağın etrafındaki venöz ağda (mezenterik venlerde) yaşar. Erişkinlerin kendisi büyük bir bağışıklık tepkisi doğurmaz. Ancak dişi kurtlar dışkıyla atılması için binlerce 'Yumurta' üretir. Bu yumurtaların bir kısmı bağırsağı delip dışkıya düşmek yerine, portal ven kan akımına kapılarak ters yöne, yani KARACİĞERE sürüklenir. Yumurtalar karaciğerin portal alanlarındaki küçük venüllere takılıp kalır. Yumurtaların içindeki 'Lateral (Yanda) Diken' ve salgıladıkları antijenler, bağışıklık sistemini çıldırtarak devasa 'Granülomlar' oluşturur. Yıllar süren bu granülomatöz inflamasyon, portal alanları beton gibi (Pipestem Fibrozis) sertleştirerek kan akımını bloke eder ve portal hipertansiyon yapar."
+},
+{
+"id": 966,
+"ders": "Mikrobiyoloji",
+"konu": "Parazitoloji",
+"diff": 4,
+"q": "Beş yaşında kız çocuğu, geceleri artan şiddetli perianal (makat çevresi) kaşıntı ve uykusuzluk şikayetiyle getiriliyor. Annesi, çocuğun sürekli poposunu kaşıdığını söylüyor. Selofan (şeffaf) bant yöntemiyle yapılan perianal incelemede, bir tarafı düz bir tarafı dışbükey (D harfi şeklinde) sayısız yumurta saptanıyor. Enterobius vermicularis (Kıl kurdu) enfeksiyonu olan bu çocukta, parazitin yumurtalarını kalın bağırsağın lümenine dökmek yerine, geceleri aktif olarak anüsün dışına çıkıp perianal deriye bırakmasının (ovipozisyon) parazit için sağladığı ASIL evrimsel / bulaş avantajı aşağıdakilerden hangisidir?",
+"options": [
+"Yumurtaların oksijenli ortamda daha hızlı olgunlaşması",
+"Çocuğun kaşınmasını sağlayarak yumurtaların tırnak aralarına dolmasını ve ağız yoluyla tekrar yutulmasını (Fekal-oral OTOİNFEKSİYON) garantilemesi",
+"Yumurtaların bağırsaktaki safra asitlerinden korunması",
+"Kan dolaşımına deriden girerek akciğere (Löeffler sendromu) göç edebilmesi",
+"Dışkı ile atılmadan toprağa doğrudan düşerek serbest yaşam evresine geçmesi"
+],
+"correct": 1,
+"exp": "Enterobius vermicularis (Kıl kurdu), kreş ve ilkokul çocuklarında en sık görülen parazittir (Eozinofili YAPMAZ). Hastalığın semptomu (kaşıntı), parazitin muazzam bir bulaştırma taktiğidir. Dişi kurt geceleyin hasta uyurken kalın bağırsaktan yola çıkar, anüsün dışına (perianal bölgeye) süzülür ve binlerce yapışkan yumurtayı derinin üzerine bırakır. Bu yumurtaların üzerindeki salgı, deride tahammül edilemez bir kaşıntı (Pruritus ani) yaratır. Uykusunda kaşınan çocuğun tırnaklarının arasına binlerce yumurta dolar. Çocuk sabah elini ağzına götürdüğünde veya çarşafı silkelediğinde bu yumurtaları tekrar yutar. Kendini sürekli yeniden enfekte etme (Otoinfeksiyon) döngüsü başlar ve kurt tüm aileye/sınıfa el temasıyla yayılır."
+},
+{
+"id": 967,
+"ders": "Mikrobiyoloji",
+"konu": "Parazitoloji",
+"diff": 4,
+"q": "Brezilya'da kırsal bir bölgede yaşayan 40 yaşındaki erkek hasta, yutma güçlüğü (Akalazya/Megaözofagus), kronik kabızlık (Megakolon) ve kalp yetmezliği (kardiyomiyopati) tablosuyla takip ediliyor. Yıllar önce göz çevresinde tek taraflı ağrısız şişlik (Romaña bulgusu) geçirdiği öğreniliyor. Chagas Hastalığı tanısı konan bu vakada, Trypanosoma cruzi parazitinin GİS'te devasa genişlemelere (Megaorganlara) yol açması, enfeksiyonun akut döneminde HANGİ spesifik anatomik/histolojik yapıyı kalıcı olarak yok etmesinin (infiltre etmesinin) bir sonucudur?",
+"options": [
+"Özofagus ve kolonun mukoza epitel hücreleri",
+"GİS düz kas hücrelerinin aktin-miyozin kompleksleri",
+"Özofagus ve kolon duvarı (kas tabakaları) arasında yer alan, peristaltizmi sağlayan 'Miyenterik (Auerbach) Pleksus' ganglion hücreleri",
+"Bağırsak villuslarının merkezindeki lenfatik lakteal damarlar",
+"Karaciğer portal venöz endotel hücreleri"
+],
+"correct": 2,
+"exp": "Chagas Hastalığı (T. cruzi), öpücük böceği (Reduviid bug) dışkısının göze/ısırık yerine sürülmesiyle bulaşır. Akut evrede kana karışan parazit, özellikle iki organa (Kalp ve Sindirim Sistemi) bayılır. Kasta/sinirde 'Amastigot' formunda hücre içi çoğalır. Parazitin GİS'teki en büyük yıkımı 'Sinir Ağlarını (Pleksusları)' hedef almasıdır. Özofagus ve kolonun kas tabakaları arasında yer alan, kasların uyumlu kasılıp gevşemesini (peristaltizm) yöneten 'Miyenterik (Auerbach) Pleksus' ganglionlarına yerleşir ve onları kalıcı olarak ÖLDÜRÜR. Sinirleri (frenleri) ölen özofagus ve kolon, kasılma/gevşeme yeteneğini kaybeder, yemekler/dışkı biriktikçe bir balon gibi devasa boyutlara (Megaözofagus ve Megakolon) ulaşır."
+},
+{
+"id": 968,
+"ders": "Mikrobiyoloji",
+"konu": "Klinik Mikrobiyoloji",
+"diff": 4,
+"q": "Altmış beş yaşında erkek hasta, bir aydır süren subfebril ateş, halsizlik ve yeni duyulan sistolik üfürüm (Subakut İnfektif Endokardit) şikayetiyle yatırılıyor. Kan kültüründe; Gram-pozitif, zincir şeklinde dizilen, gama-hemolitik (hemolizsiz) ve %6.5 NaCl içeren ortamda üreyemeyen, ancak safralı ortamda üreyip eskülini hidrolize edebilen (siyah renk oluşturan) koklar saptanıyor. Streptococcus gallolyticus (eski adıyla S. bovis) izole edilen bu hastada, bakterinin kan dolaşımına girip kalp kapağına yerleşmesi, HANGİ spesifik altta yatan sistemik hastalığın bağırsak mukoza bariyerini yıkmasının en güçlü habercisidir?",
+"options": [
+"Karaciğer Hepatoselüler Karsinomu",
+"Kolorektal Adenokarsinom",
+"Pankreas Duktal Adenokarsinomu",
+"Mide MALT Lenfoması",
+"İnce Bağırsak Karsinoid Tümörü"
+],
+"correct": 1,
+"exp": "Streptococcus gallolyticus (S. bovis biotip 1), D grubu bir streptokoktur ve normal bağırsak florasında bulunur. Enterokoklardan en önemli farkı %6.5 NaCl'de ÜREYEMEMESİDİR (Enterokoklar ürer). S. bovis'in kanda görülmesi (bakteriyemi) veya endokardit yapması klinikte muazzam bir 'Alarm' bulgusudur. Bu bakteri, bağırsak duvarında oluşan 'Kolorektal Kanserler (Polipler/Adenokarsinomlar)' ile çok güçlü bir ilişkiye sahiptir. Kanser, bağırsak mukozasını bozduğunda bu bakteri kana kaçar. Bu nedenle kan kültüründe S. gallolyticus (bovis) üreyen her hastaya (endokarditi tedavi edilse bile) kolon kanserini dışlamak için ACİLEN kolonoskopi yapılmak zorundadır."
+},
+{
+"id": 969,
+"ders": "Mikrobiyoloji",
+"konu": "Klinik Mikrobiyoloji",
+"diff": 4,
+"q": "Yirmi iki yaşında, yeni evli kadın hasta; ani başlayan sık idrara çıkma, idrar yaparken yanma (dizüri) ve suprapubik ağrı şikayetiyle başvuruyor. İdrar kültüründe Gram-pozitif, üzüm salkımı şeklinde dizilen, katalaz pozitif ve koagülaz negatif koklar ürüyor (Honeymoon sistiti). Genç, cinsel olarak aktif kadınlarda idrar yolu enfeksiyonunun sık görülen bu etkenini (Staphylococcus saprophyticus), hastane florasında bulunan diğer koagülaz negatif stafilokoklardan (Örn: S. epidermidis) kesin olarak ayırt etmek için laboratuvarda HANGİ spesifik antibiyotik diski kullanılır ve bakteri bu diske dirençlidir?",
+"options": [
+"Basetrasin",
+"Optokin",
+"Novobiyosin",
+"Polimiksin B",
+"Oksasilin"
+],
+"correct": 2,
+"exp": "Genç kadınlarda Sistit (İdrar Yolu Enfeksiyonu) denilince akla önce E. coli, sonra Staphylococcus saprophyticus gelir. S. saprophyticus, koagülaz negatif bir stafilokoktur (KNS). Mikrobiyoloji laboratuvarında büyüyen bir KNS'nin, kateter enfeksiyonu yapan S. epidermidis mi yoksa sistit yapan S. saprophyticus mu olduğunu anlamanın altın standart ve en basit yolu 'Novobiyosin Testi'dir. S. epidermidis Novobiyosine 'Duyarlıdır' (etrafında zon oluşur); ancak S. saprophyticus Novobiyosine doğuştan 'DİRENÇLİDİR' (hapşırsa bile umurunda olmaz, diskin dibine kadar ürer). (Not: Optokin Pnömokokları, Basitrasin ise S. pyogenes'i ayırmak için kullanılır)."
+},
+{
+"id": 970,
+"ders": "Mikrobiyoloji",
+"konu": "Klinik Mikrobiyoloji",
+"diff": 5,
+"q": "Kırk yaşında pet-shop sahibi bir erkek, son 1 haftadır süren inatçı kuru öksürük, 39°C ateş, şiddetli baş ağrısı ve hepatosplenomegali ile acile getiriliyor. Akciğer grafisinde yamalı atipik pnömoni infiltrasyonları saptanıyor. Papağan ve kuş teması öyküsü olan hastaya Chlamydia psittaci (Psittakoz) tanısı konuyor. Hücre içi zorunlu bir bakteri olan Chlamydia'nın, enfeksiyöz formu (Elementer Cisimcik) ile hücreye girdikten sonra bölünen/metabolik olarak aktif forma (Retiküler Cisimcik) dönüşebilmesi, konak hücreden 'ATP' çalabilmek için hücrenin HANGİ spesifik savunma mekanizmasını kalıcı olarak bloke etmesine dayanır?",
+"options": [
+"Fagozomun lizozom ile birleşmesini (Fagolizozom füzyonunu) engellemesine",
+"Hücrenin MHC-II ekspresyonunu durdurmasına",
+"Sitoplazmadaki Toll-Like reseptörleri parçalamasına",
+"Oksidatif patlama (respiratory burst) enzimlerini denatüre etmesine",
+"Hücrenin apoptoz sinyallerini (kaspazları) aşırı uyarmasına"
+],
+"correct": 0,
+"exp": "Chlamydia türleri, kendi ATP'lerini üretemeyen (Enerji parazitleri) zorunlu hücre içi bakterilerdir. Hayat döngüleri iki evrelidir: Dışarıda dayanıklı ama uykuda olan 'Elementer Cisimcik (EB)' hücreye girer; içeride çoğalan 'Retiküler Cisimcik (RB)' halini alır. EB, hücreye bir kese (fagozom) içinde girer. Eğer bu kese hücrenin sindirim enzimi dolu lizozomuyla birleşirse bakteri anında ölür. Chlamydia'nın hücre içinde hayatta kalıp ATP çalabilmesinin yegane sırrı, bu Fagozom-Lizozom birleşmesini (füzyonunu) BLOKE ETMESİDİR. Bakteri, lizozomların giremediği bu özel 'inklüzyon cisimciği' (fagozom) içinde güvenle yaşar, çoğalır ve hücreyi patlatıp dışarı tekrar EB olarak saçılır."
+},
+{
+"id": 971,
+"ders": "Mikrobiyoloji",
+"konu": "Klinik Mikrobiyoloji",
+"diff": 4,
+"q": "Bir haftalık yenidoğan bebek, emmeme, ateş ve fontanelde kabarıklık şikayetiyle getiriliyor. BOS (Beyin Omurilik Sıvısı) örneğinin Gram boyamasında Gram-negatif, laktoz fermente eden ve indol pozitif basiller (Escherichia coli) saptanıyor. Yenidoğan menenjitinin en sık ikinci etkeni olan bu spesifik E. coli suşunun (K1 suşu), bebeğin kan-beyin bariyerini aşabilmesini ve makrofajlardan gizlenmesini sağlayan ana virülans faktörü, HANGİ biyokimyasal molekülden oluşan özel bir kapsüle sahip olmasıdır?",
+"options": [
+"Poli-D-Glutamik Asit",
+"Hiyalüronik Asit",
+"Polisialik Asit (Polysialic acid)",
+"Glukuronoksilomannan",
+"Aljinat (Alginate)"
+],
+"correct": 2,
+"exp": "Yenidoğan menenjitinin en sık 3 etkeni: S. agalactiae (Grup B Streptokok), E. coli (K1) ve Listeria'dır. Bağırsaktaki milyarlarca E. coli suşu menenjit YAPAMAZ; menenjit yapabilenler çok özel bir zırha sahip olan 'K1' suşlarıdır. E. coli K1 suşunun kapsülü 'Polisialik Asit' adı verilen bir şekerden oluşur. Bu kapsülün çok sinsi bir özelliği vardır: İnsan beynindeki fetal nöron hücrelerinin yüzeyindeki moleküller de (NCAM) polisialik asitten oluşur. Yani bakteri beynimizi ve bağışıklık sistemimizi taklit eder (Moleküler Mimikri). Makrofajlar bu kapsülü görünce 'bu bizden biri' sanıp yutmazlar. (Birebir aynı polisialik asit kapsülü, Neisseria meningitidis Grup B'de de vardır ve bu yüzden Grup B menenjite karşı aşı üretmek çok zordur)."
+},
+{
+"id": 972,
+"ders": "Mikrobiyoloji",
+"konu": "Klinik Mikrobiyoloji",
+"diff": 4,
+"q": "Yirmi beş yaşında erkek hasta, bacaklarda başlayıp yukarı doğru hızla ilerleyen simetrik, gevşek kas felci (Guillain-Barré Sendromu) ile yoğun bakıma alınıyor. Hastanın öyküsünden 2 hafta önce az pişmiş tavuk eti tüketimine bağlı kanlı, ateşli bir ishal atağı geçirdiği öğreniliyor. İshal etkeni olan Campylobacter jejuni'nin, bağırsak enfeksiyonundan haftalar sonra bu nörolojik yıkıma yol açması; bakterinin hücre duvarındaki lipooligosakkaritlerin (LOS) insan periferik sinirlerindeki HANGİ moleküler yapıyı taklit ederek otoimmün bir çapraz reaksiyona (Moleküler Mimikri) neden olmasıyla açıklanır?",
+"options": [
+"Miyelin Kılıf Temel Proteini (MBP)",
+"Asetilkolin reseptörleri",
+"Gangliyozitler (Örn: GM1 ve GD1a)",
+"Voltaj kapılı sodyum kanalları",
+"Schwann hücrelerindeki E-Kaderin proteinleri"
+],
+"correct": 2,
+"exp": "Campylobacter jejuni (martı kanadı şeklinde, 42°C'de üreyen basil), az pişmiş kümes hayvanlarından bulaşan ve kanlı ishal yapan en sık etkenlerden biridir. Hastalığın en korkutucu komplikasyonu, enfeksiyondan 2-3 hafta sonra patlak veren 'Guillain-Barré Sendromu (GBS)'dur. Olayın temeli Moleküler Mimikridir. C. jejuni'nin duvarındaki Lipooligosakkaritler (LOS), insan periferik sinirlerinin miyelin kılıfında bulunan 'Gangliyozitlere (Özellikle GM1 ve GQ1b)' şekil olarak inanılmaz benzer. Vücut, bakteriyi öldürmek için ürettiği anti-LOS antikorlarıyla, yanlışlıkla kendi sinir kılıfındaki gangliyozitlere saldırır. Sinir kılıfı soyulunca (demiyelinizasyon) bacaklardan yukarı çıkan asendan felç başlar."
+},
+{
+"id": 973,
+"ders": "Mikrobiyoloji",
+"konu": "Klinik Mikrobiyoloji",
+"diff": 4,
+"q": "Otuz yaşında erkek hasta, avuç içlerinde ve ayak tabanlarında görülen bakır renkli makülopapüler döküntüler ve genital bölgede kondiloma lata lezyonlarıyla (Sekonder Sifiliz) başvuruyor. Hastaya intramüsküler tek doz Benzatin Penisilin G yapılıyor. Ancak enjeksiyondan 4 saat sonra hastada aniden 39.5°C ateş, titreme, taşikardi, hipotansiyon ve ciltteki döküntülerde alevlenme gelişiyor. Penisilin alerjisi olmayan bu hastada ortaya çıkan ve 24 saat içinde kendiliğinden geçen bu akut inflamatuar tablonun (Jarisch-Herxheimer Reaksiyonu), antibiyotiğin öldürdüğü spiroketlerden (Treponema pallidum) kana saçılan HANGİ spesifik moleküler paternlerin (PAMPs) makrofajları şiddetle uyarmasının bir sonucudur?",
+"options": [
+"Kalin peptidoglikan parçaları",
+"Endotoksin (Lipid A) kompleksleri",
+"Yüksek derecede immünojenik Lipoproteinler ve Glikolipidler",
+"Ekzotoksin süperantijenleri",
+"Serbest çift sarmallı DNA iplikçikleri"
+],
+"correct": 2,
+"exp": "Jarisch-Herxheimer Reaksiyonu, Sifiliz (veya Lyme gibi diğer spiroket) tedavisine penisilinle başlandığında ilk 24 saat içinde görülen çok klasik bir tablodur. Bu bir penisilin ALERJİSİ DEĞİLDİR (Tedavi kesilmez, sadece ateş düşürücü verilir). Spiroketler (Treponema pallidum) çok sinsi bakterilerdir; dış zarlarında klasik Gram-negatifler gibi LPS (Endotoksin / Lipid A) BULUNMAZ. Ancak iç zarlarında ve periplazmik aralıklarında çok güçlü bağışıklık uyarıcı olan 'Lipoproteinler' taşırlar. Siz hastaya Penisilin vurduğunuzda, kanındaki milyonlarca spiroket aynı anda patlayarak ölür. İçlerindeki bu immünojenik 'Lipoproteinler' bir anda kana saçılır, makrofajları çıldırtarak masif bir TNF-alfa ve IL-1 fırtınası (Sepsis benzeri ateşli bir şok tablosu) yaratırlar."
+},
+{
+"id": 974,
+"ders": "Mikrobiyoloji",
+"konu": "Genel Mikrobiyoloji",
+"diff": 4,
+"q": "Dirençli bir cilt enfeksiyonu (S. pyogenes) vakasında hastaya topikal basitrasin merhemi uygulanıyor ancak tedaviden hiçbir yanıt alınamıyor. Yapılan moleküler analizde, bakterinin hücre zarında bulunan ve sitoplazmada sentezlenen peptidoglikan öncüllerini (NAM-NAG komplekslerini) hücrenin dışına (duvar sentez alanına) taşıyan spesifik lipid taşıyıcı molekülün yapısını değiştirdiği saptanıyor. Basitrasinin normalde defosforile olmasını (yenilenmesini) engelleyerek bloke ettiği ve bakterinin mutasyonla koruduğu bu taşıyıcı lipid aşağıdakilerden hangisidir?",
+"options": [
+"Kardiyolipin",
+"Baptoprenol (Undekaprenol pirofosfat)",
+"Sfingomiyelin",
+"Ergosterol",
+"Fosfatidilkolin"
+],
+"correct": 1,
+"exp": "Bakteri hücre duvarı (peptidoglikan) sentezi 3 aşamalıdır. 1) Sitoplazmada NAM ve NAG üretilir. 2) Bu öncüller hücre zarından dışarı taşınır. 3) Dışarıda çapraz bağlarla (PBP enzimiyle) örülür. Penisilinler 3. aşamayı vurur. Ancak 'Basitrasin', 2. aşamayı vuran çok özel bir topikal antibiyotiktir. NAM-NAG kompleksini sırtına alıp hücre zarının içinden dışına taşıyan bir hamal (lipid taşıyıcı) vardır; bunun adı 'Baktoprenol'dür. Baktoprenol yükünü dışarı bıraktıktan sonra tekrar içeri dönmek için bir fosfatını kaybetmek (defosforile olmak) zorundadır. Basitrasin işte bu defosforilasyonu bloke eder. Taşıyıcı lipid dışarıda kilitli kalır, içeri dönemez ve duvar sentezi durur."
+},
+{
+"id": 975,
+"ders": "Mikrobiyoloji",
+"konu": "Genel Mikrobiyoloji",
+"diff": 4,
+"q": "Cerrahi aletlerin sterilizasyonunda standart otoklav prosedürü (121°C, 15 dakika basınçlı buhar) uygulanmasına rağmen, aletlerle temas eden hastalarda post-operatif Clostridium perfringens enfeksiyonları gelişiyor. Otoklavın arızalı olduğu ve sıcaklığın sadece 100°C'ye ulaştığı saptanıyor. Bakteri sporlarının 100°C kaynar suda bile saatlerce canlı kalabilmesini ve DNA'sını ısıyla denatüre olmaktan koruyan asıl fizikokimyasal savunma hattı, sporun çekirdeğinde HANGİ molekülün kalsiyum ile şelat oluşturarak ortamdaki serbest suyu tamamen emmesine (dehidratasyon) dayanır?",
+"options": [
+"Dipikolinik asit",
+"Teikoik asit",
+"Miykolik asit",
+"Poli-D-glutamik asit",
+"Hiyalüronik asit"
+],
+"correct": 0,
+"exp": "Bakteri sporları (Bacillus ve Clostridium), bilinen en dayanıklı biyolojik yapılardır. Standart kaynatma (100 derece) sporları ÖLDÜREMEZ. Sporların bu muazzam ısı direncinin temelinde 'Dehidratasyon (susuzluk)' yatar. Proteinler ve DNA, ancak ortamda su varken ısı ile pıhtılaşır (denatüre olur). Susuz bir protein 100 derecede bile bozulmaz. Sporlar, çekirdek (kor) kısımlarında devasa miktarda 'Dipikolinik Asit' üretirler. Dipikolinik asit, kalsiyum iyonlarıyla birleşerek (Kalsiyum-Dipikolinat) bir sünger gibi spordaki tüm suyu emer ve onu kaskatı, susuz bir tohuma çevirir. Bu yapıyı eritebilmek için otoklavda 121°C ve yüksek basınç şarttır."
+},
+{
+"id": 976,
+"ders": "Mikrobiyoloji",
+"konu": "Genel Mikrobiyoloji",
+"diff": 5,
+"q": "Gram-negatif bir bağırsak patojeni (Örn: Shigella flexneri), bağırsak lümenindeyken konağın epitel hücrelerine uzattığı iğne benzeri bir yapı sayesinde, ürettiği toksinleri ve efektör proteinleri dış ortama (ekstraselüler alana) hiç sızdırmadan doğrudan insan hücresinin sitoplazmasına enjekte etmektedir. Bakterinin antikorlar tarafından nötralize edilmekten kurtulmasını sağlayan ve evrimsel olarak 'kamçı (flagella) bazal cisminden' köken aldığı bilinen bu kusursuz moleküler şırınga sistemi aşağıdakilerden hangisidir?",
+"options": [
+"Tip I Salgı Sistemi",
+"Tip II Salgı Sistemi",
+"Tip III Salgı Sistemi",
+"Tip IV Salgı Sistemi",
+"Tip V Salgı Sistemi"
+],
+"correct": 2,
+"exp": "Gram-negatif bakterilerin çok sinsi bir silahı vardır: Salgı Sistemleri (Secretion Systems). Çoğu bakteri toksinini dışarı (suya/kana) salar, ancak o zaman antikorlar bu toksini yakalayabilir. Shigella, Salmonella, E. coli ve Pseudomonas gibi akıllı patojenler 'Tip III Salgı Sistemi (T3SS)' kullanırlar. Bu sistem mikroskobik bir 'Şırınga' veya 'İğne' gibidir. Bakteri bu iğneyi doğrudan insan hücresinin (makrofaj veya enterosit) zarına batırır ve toksinleri dış ortamla hiç temas ettirmeden doğrudan sitoplazmanın İÇİNE sıkar. Antikorlar dışarıda beklerken, toksin çoktan hedef hücreyi içeriden ele geçirmiş olur."
+},
+{
+"id": 977,
+"ders": "Mikrobiyoloji",
+"konu": "Genel Mikrobiyoloji",
+"diff": 4,
+"q": "Yoğun bakımda mekanik ventilatöre bağlı hastanın endotrakeal tüpünde kolonize olan Pseudomonas aeruginosa, hastaya yüksek doz intravenöz antibiyotik verilmesine rağmen akciğerden temizlenemiyor. Bakterilerin tüpün yüzeyinde hücre dışı polimerik bir matriks (EPS) içine gömülerek antibiyotiklerin difüzyonunu fiziksel olarak imkansız kıldığı saptanıyor. Bakterilerin bu aşılmaz 'Biyofilm' kalesini örmeye başlaması, ortamdaki bakteri popülasyonunun belirli bir kritik eşiğe ulaştığını HANGİ sinyal molekülleri aracılığıyla algılamasıyla (Quorum Sensing) tetiklenir?",
+"options": [
+"Siklik AMP (cAMP)",
+"Açil-homoserin laktonlar (AHL)",
+"Lipoteikoik asit fragmanları",
+"Porin protein kanalları",
+"Bakteriyofaj DNA'sı"
+],
+"correct": 1,
+"exp": "Biyofilm, bakterilerin yüzeylere (kateter, kalp kapağı, diş) tutunup kendilerini sümüksü bir polisakkarit kalkanla (Pseudomonas için Aljinat) kaplamasıdır. Biyofilm içindeki bakteriler antibiyotiklere 1000 kat daha dirençlidir. Ancak tek bir bakteri biyofilm öremez; bunun için bir orduya ihtiyaç vardır. Bakteriler 'Quorum Sensing (Çoğunluk Algılaması)' denen bir sistemle etraflarında kaç arkadaşları olduğunu sayarlar. Gram-negatif bakteriler (Örn: Pseudomonas) bu sayımı çevreye 'Açil-Homoserin Lakton (AHL)' adı verilen sinyal molekülleri salgılayarak yaparlar. Ortamdaki AHL konsantrasyonu kritik bir seviyeye ulaştığında, bakteriler hep bir ağızdan 'Yeterince kalabalığız, biyofilmi örmeye başlayın' komutunu çalıştırırlar."
+},
+{
+"id": 978,
+"ders": "Mikrobiyoloji",
+"konu": "Genel Mikrobiyoloji",
+"diff": 4,
+"q": "Atipik pnömoni nedeniyle hastaneye yatırılan ve balgamında hücre duvarı olmayan, zarı sterollerle desteklenmiş bakteriler (Mycoplasma pneumoniae) saptanan hastaya penisilin tedavisi başlanmış ancak hasta fayda görmemiştir. Mycoplasma'nın doğada serbest yaşayabilmesine rağmen hücre duvarı örememesinin genetik nedeni, evrimsel süreçte HANGİ yapıtaşını sentezleme yeteneğini tamamen kaybetmiş ve bunu konak hücreden (insandan) çalmak zorunda kalmış olmasıdır?",
+"options": [
+"Ergosterol",
+"N-Asetilmuramik Asit (NAM)",
+"Kolesterol",
+"Sfingomiyelin",
+"Fosfolipid çift katmanı"
+],
+"correct": 2,
+"exp": "Mycoplasma türleri, doğada serbest yaşayan bakteriler arasında 'Hücre Duvarı OLMAYAN' tek istisnadır. Duvar (peptidoglikan) olmadığı için Gram boyası tutmazlar ve Penisilin/Sefalosporin gibi duvar sentez inhibitörlerine doğal olarak DİRENÇLİDİRLER (Tedavide makrolid veya tetrasiklin gerekir). Duvarı olmayan bir bakteri normalde osmotik basınçtan patlayarak ölür. Ancak Mycoplasma, hücre zarını inanılmaz derecede sağlamlaştırarak bu sorunu çözer. Bunu da insan hücre zarına benzer şekilde zarına 'Sterol (KOLESTEROL)' yerleştirerek yapar. Kendi kolesterolünü sentezleyemediği için, enfekte ettiği insan hücresinden kolesterol çalarak kendi zarını güçlendirir. (Mantar zarında ergosterol varken, Mycoplasma'da insan kaynaklı kolesterol bulunur)."
+},
+{
+"id": 979,
+"ders": "Mikrobiyoloji",
+"konu": "Genel Mikrobiyoloji",
+"diff": 4,
+"q": "Bağırsak florasındaki komensal (zararsız) bir E. coli suşu ile toksin üreten patojenik bir Shigella suşu aynı bağırsak lümeninde bir araya geliyor. Bakteriler arasında hiçbir seks pilusu (konjugasyon) olmamasına ve ortamda DNAaz enzimi bulunmasına rağmen, zararsız E. coli'nin aniden Şiga toksini üretmeye başladığı saptanıyor. Ortamdaki DNAaz enzimi nedeniyle çıplak DNA transferinin de (transformasyon) imkansız olduğu bu senaryoda, toksin geninin E. coli'ye geçişini HANGİ taşıyıcı (vektör) yapı sağlamıştır?",
+"options": [
+"F plazmidi",
+"Transpozon (Sıçrayan gen)",
+"Bakteriyofaj (Virüs)",
+"Otozomal kromozom kırıkları",
+"Dış zar vezikülleri (OMV)"
+],
+"correct": 2,
+"exp": "Bakteriler arası gen transferi USMLE ve TUS'un altın konularındandır. Üç yol vardır: Konjugasyon, Transformasyon ve Transdüksiyon. Sorudaki ipuçları çok nettir: Seks pilusu YOK (Konjugasyon elendi). Ortamda DNAaz var ve transfer engellenememiş (Çıplak DNA parçalandığı için Transformasyon da elendi). Geriye sadece tek bir ihtimal kalır: 'Transdüksiyon'. Transdüksiyonda genetik materyali taşıyan kurye bir 'Bakteriyofaj (Bakteri Virüsü)'dır. Virüsün protein kılıfı DNA'yı dışarıdaki DNAaz enziminden mükemmel bir şekilde korur. Virüs Shigella'yı enfekte edip toksin genini alır ve ardından gidip zararsız E. coli'yi enfekte ederek (Lizojenik konversiyon) onu ölümcül bir patojene çevirir."
+},
+{
+"id": 980,
+"ders": "Mikrobiyoloji",
+"konu": "Genel Mikrobiyoloji",
+"diff": 5,
+"q": "Neisseria gonorrhoeae (Gonokok) enfeksiyonu olan bir hastada, bakterinin üretral epitele sıkıca tutunmasını sağlayan 'Pili (Fimbria)' proteinlerine karşı bağışıklık sistemi başarılı bir şekilde antikor üretir. Ancak sadece birkaç gün sonra, aynı bakteri popülasyonunun tamamen FARKLI bir aminoasit dizilimine sahip yeni pili proteinleri üreterek (Antijenik Varyasyon) antikorlardan kaçtığı görülür. Bakterinin genetik kütüphanesindeki sessiz (eksprese edilmeyen) pili gen kasetlerini alıp, aktif ifade edilen promotor bölgesine kopyalayarak bu muazzam değişimi yaratmasına ne ad verilir?",
+"options": [
+"Nokta mutasyonu (Drift)",
+"Genetik Rekombinasyon (Gen dönüşümü)",
+"Faz varyasyonu",
+"Alternatif splicing (RNA kırpılması)",
+"Plazmid amplifikasyonu"
+],
+"correct": 1,
+"exp": "Gonorenin (bel soğukluğunun) neden aşısı yoktur ve neden tekrar tekrar enfeksiyon yapar? Çünkü bakteri 'Antijenik Varyasyon' ustasıdır. N. gonorrhoeae'nin genomunda sadece 1 tane çalışan (aktif) pili geni, ama onlarca çalışmayan (sessiz) pili geni kaseti vardır. Siz aktif piliye karşı antikor ürettiğinizde, bakteri 'Genetik Rekombinasyon (Gen Dönüşümü / Gene Conversion)' yapar. Gider, o sessiz kasetlerden birini kopyalar ve aktif promotorun önüne yapıştırır. Bir anda bakterinin üzerindeki tüm tüyler (pililer) şekil değiştirir. Antikorlarınız eski tüyü ararken, bakteri yeni tüyleriyle mukozaya çoktan tutunmuş olur. (Not: Faz varyasyonu ise antijeni değiştirmek değil, geni tamamen açıp-kapatmak, yani piliyi var edip yok etmektir)."
+},
+{
+"id": 981,
+"ders": "Mikrobiyoloji",
+"konu": "Genel Mikrobiyoloji",
+"diff": 4,
+"q": "Otoimmün hastalık nedeniyle dalağı tamamen alınan (Splenektomi) 40 yaşındaki hasta, ani başlayan ateş ve ense sertliği ile komaya giriyor. Kan ve BOS kültüründe Streptococcus pneumoniae ürüyor. Dalağı olmayan hastaların özellikle kapsüllü bakterilere karşı bu kadar ölümcül septik tablolara girmesinin hücresel nedeni; dalağın beyaz pulpasında (marjinal zonda) yer alan ve T-hücresinden BAĞIMSIZ olarak polisakkarit kapsüllere karşı hızla IgM üreten HANGİ spesifik hücre grubunun kaybıdır?",
+"options": [
+"CD8+ Sitotoksik T hücreleri",
+"Doğal Katil (NK) hücreleri",
+"Marjinal Zon B Hücreleri",
+"Tingible body makrofajları",
+"Langerhans hücreleri"
+],
+"correct": 2,
+"exp": "Kapsüllü bakteriler (S. pneumoniae, H. influenzae, N. meningitidis - 'SHiN'), fagositozdan mükemmel kaçarlar. Onları yutabilmek için üzerlerini opsonize etmek (antikor veya C3b ile boyamak) ŞARTTIR. Bu kapsüller protein değil, 'Polisakkarit (şeker)' yapısındadır. T hücreleri polisakkaritleri TANIYAMAZ (sadece protein tanır). Bu yüzden normal B hücreleri T hücresinden onay alıp antikor üretemez. İŞTE BURADA DALAK DEVREYE GİRER. Dalağın marjinal zonunda özel bir 'Marjinal Zon B Hücre' popülasyonu vardır. Bu hücreler T hücresine ihtiyaç duymadan (T-independent) doğrudan polisakkarit kapsülü tanır ve anında 'IgM' fırlatırlar. Dalak alındığında (Aspleni) bu hayati B hücresi ordusu yok olur. Kapsüllü bakteriler kana girdiğinde IgM üretilemez, bakteri opsonize edilemez ve saniyeler içinde ölümcül sepsise neden olur."
+},
+{
+"id": 982,
+"ders": "Mikrobiyoloji",
+"konu": "Genel Mikrobiyoloji",
+"diff": 4,
+"q": "Kanlı ishal ve hemolitik üremik sendrom (HÜS) ile başvuran çocuk hastanın dışkı kültüründe E. coli O157:H7 (Enterohemorajik E. coli - EHEC) saptanıyor. Laboratuvarda bu patojenik suşu, bağırsak florasında bulunan diğer normal E. coli suşlarından hızlıca ayırt edebilmek için, HANGİ spesifik karbonhidratın (şekerin) EHEC tarafından FERMENTE EDİLEMEMESİ özelliğinden faydalanılarak Sorbitol-MacConkey agar kullanılır?",
+"options": [
+"Laktoz",
+"Glukoz",
+"Sukroz",
+"Sorbitol",
+"Mannitol"
+],
+"correct": 3,
+"exp": "Escherichia coli, normalde Laktozu çok hızlı fermente eden (MacConkey agarda pembe koloni yapan) Gram-negatif bir basildir. Ancak EHEC (O157:H7), sığır etinden/az pişmiş hamburgerden bulaşan ve Şiga-benzeri toksiniyle böbrekleri iflas ettiren (HÜS) çok tehlikeli bir mutanttır. EHEC de tıpkı diğer E. coli'ler gibi laktozu fermente eder. Onu diğer masum E. coli kardeşlerinden ayırmanın TEK YOLU 'Sorbitol' şekeridir. Normal E. coli'ler Sorbitolü hızla fermente ederken, ölümcül EHEC (O157:H7) Sorbitolü FERMENTE EDEMEZ. Bu yüzden dışkı örneği 'Sorbitol-MacConkey' agarına ekilir; renksiz (soluk) kalan koloniler EHEC şüphesiyle derhal karantinaya alınır."
+},
+{
+"id": 983,
+"ders": "Mikrobiyoloji",
+"konu": "Genel Mikrobiyoloji",
+"diff": 4,
+"q": "Yoğun bakımda Gram-pozitif septik şok tablosunda olan bir hastanın kan kültüründe Staphylococcus aureus ürüyor. Bakteri ölüm döşeğinde parçalandıkça, hücre duvarında bulunan ve insan makrofajlarındaki Toll-Like Reseptör 2'ye (TLR-2) bağlanarak tıpkı Gram-negatiflerdeki endotoksin (LPS) gibi masif bir TNF-alfa sitokin fırtınası yaratan spesifik yapı taşı aşağıdakilerden hangisidir?",
+"options": [
+"Lipid A",
+"Teikoik ve Lipoteikoik asit",
+"Porin proteinleri",
+"Lipooligosakkarit (LOS)",
+"O-spesifik polisakkarit"
+],
+"correct": 1,
+"exp": "Şok ve sepsis sadece Gram-negatiflere (Endotoksin/Lipid A) özgü DEĞİLDİR. Gram-pozitif bakteriler (S. aureus, S. pyogenes) de kana karıştıklarında ölümcül septik şok yapabilirler. Ancak Gram-pozitiflerde Lipid A veya LPS YOKTUR. Onların hücre duvarında peptidoglikan tabakasına gömülü olan ve bir anten gibi dışarı uzanan 'Teikoik Asit ve Lipoteikoik Asit' bulunur. Bakteri parçalandığında kana saçılan bu Teikoik asitler, makrofajların yüzeyindeki TLR-2 (Toll-Like Receptor 2) reseptörüne bağlanarak makrofajı çıldırtır. Salınan TNF-alfa ve IL-1, hastada ateş, masif vazodilatasyon, hipotansiyon ve Gram-pozitif septik şok tablosunu yaratır."
+},
+{
+"id": 984,
+"ders": "Mikrobiyoloji",
+"konu": "İmmünoloji",
+"diff": 5,
+"q": "Malign melanom hücreleri, kendilerine saldıran Sitotoksik T hücrelerinden (CD8+) korunmak için yüzeylerinde yoğun miktarda 'PD-L1 (Programlanmış Ölüm Ligandı 1)' eksprese ederler. T hücresi tümöre yaklaşıp onu tam öldüreceği sırada, tümördeki PD-L1 molekülü, T hücresinin yüzeyindeki PD-1 reseptörüne bağlanır. Tümörün bu kurnaz bağlanma stratejisinin, T hücresinin HANGİ kaderi (biyokimyasal durumu) yaşamasına neden olarak bağışıklık yanıtını susturduğu bilinmektedir?",
+"options": [
+"T hücresinin klonal ekspansiyonunu (çoğalmasını) binlerce kat artırması",
+"T hücresinin anında hafıza (memory) B hücresine dönüşmesi",
+"T hücresinde 'Tükenmişlik (Exhaustion)' ve apoptozis sinyallerini aktive ederek hücrenin savaşma yeteneğini felç etmesi",
+"T hücresinin MHC Sınıf I molekülünü parçalaması",
+"T hücresindeki CD28 reseptörünün sayısını artırması"
+],
+"correct": 2,
+"exp": "Kanser immünolojisinin en büyük devrimi PD-1 / PD-L1 yolağıdır. PD-1 (Programmed Death-1), aktif T hücrelerinin yüzeyinde bulunan bir 'Fren/İntihar' reseptörüdür. Vücut bu reseptörü, enfeksiyon bittiğinde T hücrelerini susturup doku hasarını engellemek için kullanır. Kanser hücreleri bu durumu keşfetmiş ve yüzeylerine sahte bir anahtar olan 'PD-L1' takmışlardır. T hücresi tümörü tam öldürecekken, tümör PD-L1 ile T hücresinin PD-1 reseptörüne basar. T hücresi anında yorulur, silahlarını bırakır (T cell Exhaustion/Tükenmişlik) ve uykuya/apoptoza geçer. Modern immünoterapi ilaçları (Nivolumab, Pembrolizumab) işte bu PD-1/PD-L1 el sıkışmasını araya girip bloke eder. Freni kalkan T hücreleri uyanır ve tümörü yok eder."
+},
+{
+"id": 985,
+"ders": "Mikrobiyoloji",
+"konu": "İmmünoloji",
+"diff": 4,
+"q": "Genetik bir hastalık nedeniyle dalak ve lenf düğümlerindeki B lenfositleri sadece zayıf afiniteli IgM antikorları üretebilen, ancak hedef antijene çok daha sıkı bağlanan (yüksek afiniteli) IgG antikorlarını üretemeyen (Afine Matürasyonu yapamayan) bir hasta inceleniyor. B hücrelerinin germinal merkezlerde antikor genlerinin değişken bölgelerinde bilerek küçük mutasyonlar yaratarak (Somatik Hipermutasyon) en iyi antikoru seçmesini sağlayan bu kritik mekanizmada görev alan ASIL enzim aşağıdakilerden hangisidir?",
+"options": [
+"RAG-1 ve RAG-2 rekombinazları",
+"Aktivasyona Bağlı Sitidin Deaminaz (AID)",
+"Terminal Deoksinükleotidil Transferaz (TdT)",
+"DNA Ligaz IV",
+"Bruton Tirozin Kinaz (BTK)"
+],
+"correct": 1,
+"exp": "Antikorların mükemmelleşme süreci 'Somatik Hipermutasyon' ve 'İzotip Değişimi' ile olur. B hücresi antijenle ilk karşılaştığında zayıf bir IgM üretir. Sonra lenf düğümünün kalbine (Germinal Merkez) gider. Orada 'Aktivasyona Bağlı Sitidin Deaminaz (AID)' adlı mucizevi bir enzim devreye girer. Bu enzim, B hücresinin antikor üreten gen (DNA) bölgesindeki Sitidin bazlarını bilerek ve kasten Urasil'e çevirir (Mutasyon yaratır). Hücre bu hataları onarırken rastgele yeni gen dizilimleri ortaya çıkar. Milyonlarca farklı mutasyonlu B hücresi içinden, antijene 'EN SIKICA' yapışan (en yüksek afiniteli) B hücresi seçilir ve yaşatılır (Afinite Matürasyonu). AID enzimi bozuksa, ne afinite matürasyonu ne de sınıf değişimi (IgG'ye geçiş) yapılabilir; hasta sadece kalitesiz IgM üretir (Hiper IgM Sendromu Tip 2)."
+},
+{
+"id": 986,
+"ders": "Mikrobiyoloji",
+"konu": "İmmünoloji",
+"diff": 4,
+"q": "Atipik Hemolitik Üremik Sendrom (aHÜS) tanısıyla takip edilen hastada, kanda E. coli (EHEC) enfeksiyonu veya Şiga toksini bulunmamasına rağmen şiddetli eritrosit yıkımı ve akut böbrek yetmezliği gelişiyor. Genetik analizde, hastanın hücre zarlarında Alternatif Kompleman Yolağı'nın kontrolsüz bir şekilde sürekli aktif kaldığı saptanıyor. Kan dolaşımında bulunan ve C3b'nin kendi sağlıklı hücrelerimize (endotele) tutunmasını parçalayarak kompleman sisteminin 'kendi kendini yok etmesini' ENGELLEYEN spesifik plazma inhibitör proteininin kalıtsal eksikliği aşağıdakilerden hangisidir?",
+"options": [
+"C1 İnhibitörü (C1-INH)",
+"C4 Bağlayıcı Protein (C4BP)",
+"Faktör H",
+"Properdin",
+"Mannoz Bağlayıcı Lektin (MBL)"
+],
+"correct": 2,
+"exp": "Alternatif kompleman yolağı çok tehlikelidir çünkü kanda sürekli, spontan olarak yavaş yavaş aktive olur (C3'ün suyla birleşmesi). Ortaya çıkan C3b molekülü, önüne gelen her yüzeye yapışmak ister. Bakteriye yapışırsa harikadır; ancak kendi hücrelerimize (endotele) yapışırsa bizi delip öldürür. Bunu engelleyen en büyük kalkanımız kanımızda yüzen 'Faktör H' proteinidir. Faktör H, kendi hücrelerimizin zarındaki sialik asitleri tanır ve o zarlara yapışan C3b'leri anında koparıp parçalar (Faktör I ile birlikte). Eğer hastada Faktör H mutasyonu (eksikliği) varsa, kendi kompleman sistemimiz kendi böbrek damarlarımızı delik deşik eder. Sonuç: Kanama, pıhtılaşma, alyuvar yıkımı (aHÜS) veya yaşa bağlı makula dejenerasyonudur. (Not: C1-INH eksikliği Herediter Anjiyoödem yapar)."
+},
+{
+"id": 987,
+"ders": "Mikrobiyoloji",
+"konu": "İmmünoloji",
+"diff": 4,
+"q": "Otoimmün hastalıkları araştıran bir çalışmada, IPEX Sendromu (Immune dysregulation, Polyendocrinopathy, Enteropathy, X-linked) olan bir erkek çocuğun bağırsaklarında ve endokrin organlarında masif lenfosit saldırısı saptanıyor. Hastada otoreaktif (saldırgan) T hücrelerini periferde durdurması ve bağışıklığı frenlemesi gereken Düzenleyici T Hücrelerinin (Treg - CD4+ CD25+) hiç oluşmadığı belirleniyor. Treg hücrelerinin gelişimini ve immünsüpresif fonksiyonlarını (IL-10 ve TGF-beta salınımını) yöneten temel transkripsiyon faktörü aşağıdakilerden hangisidir?",
+"options": [
+"T-bet",
+"GATA-3",
+"FOXP3",
+"RORγT",
+"AIRE"
+],
+"correct": 2,
+"exp": "Düzenleyici T Hücreleri (Treg), bağışıklık sisteminin polisleridir. Timustan kaçmayı başaran saldırgan T hücrelerini periferde yakalar ve 'IL-10 ve TGF-beta' salgılayarak onları uyutur/frenlerler (Periferik Tolerans). Bir T hücresinin Treg polisine dönüşebilmesi için genetiğinde 'FOXP3' transkripsiyon faktörünün aktifleşmesi ŞARTTIR. FOXP3 geni X kromozomundadır. Eğer bu gen mutasyona uğrarsa, vücutta hiç Treg hücresi oluşamaz. Freni (polisi) olmayan bağışıklık sistemi kendi vücuduna dehşet verici bir savaş açar. Erkek çocuklarda görülen bu ölümcül otoimmün fırtınaya 'IPEX Sendromu' denir (Şiddetli ishal, tip 1 diyabet, egzama ile seyreder)."
+},
+{
+"id": 988,
+"ders": "Mikrobiyoloji",
+"konu": "İmmünoloji",
+"diff": 5,
+"q": "Gribal bir enfeksiyon geçiren hastanın solunum yollarındaki epitel hücreleri virüs tarafından işgal ediliyor. Hücre içine giren viral nükleik asitler, sitoplazmadaki sensörler (RIG-I ve MDA5) tarafından algılandığında, epitel hücreleri derhal çevrelerindeki sağlıklı hücreleri uyarmak için spesifik sitokinler salgılar. Bu sitokinler komşu hücrelere bağlandığında, o hücrelerin içinde viral mRNA'yı parçalayan ve viral protein sentezini durduran antiviral enzimleri (Oligoadenilat sentetaz ve PKR) aktifleştirir. Hücreleri bu 'antiviral savunma (karantina)' durumuna sokan birincil sitokin grubu aşağıdakilerden hangisidir?",
+"options": [
+"İnterlökin-2 (IL-2)",
+"Tip 1 İnterferonlar (IFN-alfa ve IFN-beta)",
+"İnterferon-gama (IFN-γ)",
+"Tümör Nekrozis Faktör-alfa (TNF-α)",
+"İnterlökin-10 (IL-10)"
+],
+"correct": 1,
+"exp": "Tip 1 İnterferonlar (IFN-alfa ve IFN-beta), vücudun virüslere karşı ilk ve en hızlı alarm (karantina) sistemidir. Virüsle enfekte olan bir hücre öleceğini anlar; ancak ölmeden önce etrafındaki henüz enfekte OLMAMIŞ sağlıklı hücrelere bağırarak 'Tip 1 İnterferon' salgılar. İnterferonu duyan komşu sağlıklı hücreler anında bir 'Antiviral Durum'a geçerler. Sitoplazmalarında RNAaz L (viral RNA'yı kesen) ve PKR (protein sentezini durduran) enzimlerini üretip hazır beklerler. Virüs bu hücreye girdiğinde ne çoğalabilir ne de protein üretebilir. Böylece enfeksiyonun komşu hücrelere yayılması bir duvar (karantina) gibi engellenmiş olur. (Not: IFN-gama, Tip 2 interferondur ve asıl görevi makrofajları aktive etmektir)."
+},
+{
+"id": 989,
+"ders": "Mikrobiyoloji",
+"konu": "İmmünoloji",
+"diff": 4,
+"q": "Laboratuvar farelerinde yapılan bir gen nakart (knockout) deneyinde, RAG-1 ve RAG-2 genleri tamamen silinmiş mutant fareler üretiliyor. Bu farelerin lenfoid organları incelendiğinde, kanda dolaşan veya lenf düğümlerine yerleşen HİÇBİR B lenfositi veya T lenfositi bulunmadığı, hayvanların Ağır Kombine İmmün Yetmezlik (SCID) tablosunda öldüğü görülüyor. RAG-1/RAG-2 enzim kompleksinin yokluğunun bu masif lenfosit eksikliğine yol açmasının hücresel nedeni, kemik iliği ve timusta HANGİ spesifik DNA düzenleme (kes-yapıştır) işleminin yapılamamasıdır?",
+"options": [
+"MHC Sınıf I ve II moleküllerinin antijen bağlama oluklarının sentezlenememesi",
+"V(D)J Rekombinasyonunun yapılamaması nedeniyle fonksiyonel T Hücre Reseptörü (TCR) ve B Hücre Reseptörü (BCR / Antikor) genlerinin oluşturulamaması",
+"İzotip değişimini sağlayan somatik hipermutasyonların gerçekleşememesi",
+"Lenfositlerin hücre zarındaki apoptoz sinyallerini (Fas/FasL) kapatamaması",
+"Kök hücrelerin interlökin-7'ye (IL-7) yanıt verememesi"
+],
+"correct": 1,
+"exp": "B ve T lenfositlerinin vücuttaki milyonlarca farklı antijeni (virüsü/bakteriyi) tanıyabilmesinin sırrı, her bir lenfositin ucunda FARKLI bir reseptör (TCR veya Antikor) taşımasıdır. Bu devasa çeşitlilik, lenfositler kemik iliği ve timusta gelişirken 'V, D ve J' gen segmentlerinin rastgele kesilip yapıştırılmasıyla (V(D)J Rekombinasyonu) sağlanır. Bu kes-yapıştır işlemini yapan yegane makas 'RAG-1 ve RAG-2 (Recombination Activating Gene)' enzim kompleksidir. Eğer RAG genleri mutasyonla bozuksa, lenfositler kendilerine bir reseptör üretemezler. Reseptör üretemeyen lenfosit gelişemez ve anında apoptozla intihar eder. Sonuç: Kanda sıfır T ve sıfır B hücresi, yani ölümcül SCID (Ağır Kombine İmmün Yetmezlik)."
+},
+{
+"id": 990,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Yoğun bakımda mekanik ventilatör tedavisi gören hastanın endotrakeal aspirat kültüründe Pseudomonas aeruginosa ürüyor. Bakteri, akciğer dokusuna zarar vermek ve bağışıklık sistemini atlatmak için ürettiği çok sayıdaki toksini (örn: Ekzotoksin A, Elastaz) dış ortama salgılar. Ancak Pseudomonas'ın asıl ölümcül silahı, dış ortama (kana/suya) hiç dokunmadan, ürettiği toksinleri doğrudan konağın makrofaj veya epitel hücresinin SİTOPLAZMASINA enjekte etmesidir. Antikorların toksini nötralize etmesini imkansız kılan bu 'moleküler şırınga' sistemi aşağıdakilerden hangisidir?",
+"options": [
+"Sideroforlar",
+"Tip I Salgı Sistemi",
+"Tip III Salgı Sistemi",
+"Quorum Sensing molekülleri (AHL)",
+"Pili (Fimbria) kompleksleri"
+],
+"correct": 2,
+"exp": "Gram-negatif bakterilerin (Pseudomonas, Salmonella, Shigella, Yersinia) bağışıklık sistemini atlatmak için kullandıkları en sinsi mekanizmalardan biri 'Tip III Salgı Sistemi (T3SS)'dir. Bu sistem, bakterinin dış zarından dışarı uzanan mikroskobik bir iğne (şırınga) gibidir. Bakteri konağın hücresine (örn: makrofaja) temas ettiği an, bu iğneyi makrofajın zarına batırır ve toksinlerini (efektör proteinleri) doğrudan makrofajın İÇİNE sıkar. Toksinler hücreler arası boşluğa hiç çıkmadığı için, kanda dolaşan antikorlar onları görüp nötralize edemez. Bu sistem evrimsel olarak bakterinin kamçısının (flagella) bazal gövdesinden köken almıştır."
+},
+{
+"id": 991,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Boynunda şişlik ('boğa boynu') ve bademciklerinde kanamaya eğilimli, kirli gri renkte pseudomembran saptanan aşısız çocuk hastada Corynebacterium diphtheriae saptanıyor. Difteri toksininin hücre içine girip protein sentezini (EF-2'yi bloke ederek) durdurduğu bilinmektedir. Ancak laboratuvarda, toksijenik olduğu bilinen bu C. diphtheriae suşu, demir konsantrasyonu ÇOK YÜKSEK olan bir besiyerinde üretildiğinde HİÇ TOKSİN ÜRETMEDİĞİ görülüyor. Bu fenotipik değişikliğin (toksin üretiminin durmasının) asıl hücresel/genetik nedeni aşağıdakilerden hangisidir?",
+"options": [
+"Yüksek demirin bakteriyofaj DNA'sını bakteriden silmesi (Eksizyon)",
+"Demirin, bakterideki 'DtxR (Difteri Toksin Represörü)' proteini ile birleşerek aktifleşmesi ve toksin geninin (tox geni) okunmasını bloke etmesi (Negatif regülasyon)",
+"Demirin difteri toksinini doğrudan kimyasal olarak denatüre etmesi",
+"Demir varlığında bakterinin kapsül üreterek toksin salınımını fiziksel olarak engellemesi",
+"Yüksek demirin ribozomal aktiviteyi artırarak toksinin bakteri içinde parçalanmasına neden olması"
+],
+"correct": 1,
+"exp": "Difteri toksini (tox geni), bakteriye bir virüs (beta-faj) tarafından lizojenik konversiyonla kazandırılır. ANCAK bakterinin bu toksini üretip üretmemesi, ortamdaki 'DEMİR' miktarına bağlıdır. Bakterinin kromozomunda 'DtxR (Diphtheria Toxin Repressor)' adı verilen bir baskılayıcı protein vardır. Eğer ortamda DEMİR ÇOKSA, demir gidip bu DtxR proteinine bağlanır ve onu 'aktifleştirir'. Aktif DtxR, gidip toksin geninin (tox) üzerine oturur ve genin okunmasını KAPATIR. Eğer ortamda demir yoksa (insan boğaz mukozasında olduğu gibi), DtxR çalışamaz, fren kalkar ve bakteri çılgınca Difteri Toksini üretmeye başlar. Bu yüzden difteri aşısı üretirken, bakteriler laboratuvarda KASTEN 'demirsiz' besiyerlerinde çoğaltılır ki bolca toksin üretsinler."
+},
+{
+"id": 992,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 5,
+"q": "Sağlıklı bir erişkinde, aniden başlayan ve günde 10 litreyi bulabilen 'pirinç suyu' görünümünde, kan ve lökosit İÇERMEYEN şiddetli sulu ishal (Kolera) gelişiyor. Vibrio cholerae'nin salgıladığı Kolera Toksini (A-B ekzotoksin), bağırsak epitel hücrelerine (enterositlere) girerek adenilat siklazı aktifleştirir ve cAMP'yi fırlatır. Toksinin adenilat siklazı 'sürekli açık' kalacak şekilde kilitlemesi, hücre zarındaki HANGİ spesifik sinyal molekülü üzerinde gerçekleştirdiği enzimatik modifikasyonun (ADP-ribozilasyon) doğrudan bir sonucudur?",
+"options": [
+"G proteininin inhibitör alt biriminin (Gi-alfa) inaktive edilmesi",
+"G proteininin stimülatör alt biriminin (Gs-alfa) GTPaz aktivitesinin bozulmasıyla 'sürekli aktif' durumda bırakılması",
+"Fosfodiesteraz enziminin parçalanarak cAMP yıkımının durdurulması",
+"Klor (CFTR) kanallarının doğrudan fosforile edilmesi",
+"Kalsiyum/Kalmodulin kompleksinin aktive edilmesi"
+],
+"correct": 1,
+"exp": "Kolera toksininin etki mekanizması farmakoloji/mikrobiyoloji ortak sorusudur. Toksinin A (Aktif) alt birimi enterositin içine girer ve hedefi hücre zarındaki 'Gs-alfa (Stimülatör G proteini)' alt birimidir. Toksin, NAD molekülündeki ADP-ribozil grubunu koparıp Gs-alfa'ya takar (ADP-ribozilasyon). Normalde Gs-alfa, işi bitince GTP'yi GDP'ye çevirip kendini kapatmalıdır. Ancak bu modifikasyon Gs-alfa'nın GTPaz yeteneğini BOZAR. Gs-alfa kendini kapatamaz ve 'Sürekli Açık (Aktif)' konumda takılı kalır. Hiç susmayan bu Gs-alfa, adenilat siklazı durmaksızın çalıştırır, cAMP tavan yapar ve apikal zardaki klor (CFTR) kanalları açılarak lümene devasa miktarda klor, sodyum ve su fışkırır."
+},
+{
+"id": 993,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Yirmi beş yaşında erkek hasta, cinsel yolla bulaşan akıntılı (pürülan) üretrit şikayetiyle başvuruyor. Üretral sürüntüde, nötrofillerin İÇİNDE yer alan Gram-negatif, kahve çekirdeği şeklinde diplokoklar (Neisseria gonorrhoeae) görülüyor. Gonokok enfeksiyonu (Bel soğukluğu) geçiren bir kişinin, tamamen iyileştikten aylar sonra AYNI BAKTERİ ile tekrar tekrar (defalarca) enfekte olabilmesinin ve hastalığa karşı koruyucu bir aşı geliştirilememesinin temelinde yatan genetik kaçış mekanizması aşağıdakilerden hangisidir?",
+"options": [
+"Bakterinin IgA proteaz enzimiyle mukozal antikorları anında parçalaması",
+"Bakterinin kapsülünün sürekli farklı polisakkarit tipleri üretmesi",
+"Bakterinin mukozaya tutunmasını sağlayan 'Pili (Fimbria)' proteinlerini kodlayan genlerde sürekli 'Genetik Rekombinasyon (Antijenik Varyasyon)' yapması",
+"Hücre içi yaşamı sayesinde antikorların ulaşamadığı bölgelerde (nötrofil içinde) saklanması",
+"Konak hücre MHC moleküllerini bloke ederek T hücresi sunumunu durdurması"
+],
+"correct": 2,
+"exp": "Neisseria gonorrhoeae (Gonokok), kapsülsüzdür. Bu bakterinin en büyük hayatta kalma (ve bizi delirtme) stratejisi 'Antijenik Varyasyon'dur. Bakterinin mukozaya tutunmak için kullandığı 'Pili'leri vardır. İnsan bağışıklık sistemi bu piliye karşı IgA/IgG üretir. Ancak Gonokok, genomunda 1 adet çalışan pili geni ve onlarca 'çalışmayan (sessiz)' pili geni kaseti barındırır. Antikor geldiğinde, bakteri hızla o sessiz kasetlerden birini kopyalar ve çalışan genin üzerine yapıştırır (Genetik rekombinasyon / Gen dönüşümü). Bir anda bakterinin üzerindeki tüm tüylerin (pililerin) yapısı ve şekli değişir. Antikorlar eski tüyü ararken, bakteri yeni tüyleriyle mukozada yaşamaya devam eder. Bu yüzden gonore asla kalıcı bağışıklık bırakmaz ve aşısı yapılamaz."
+},
+{
+"id": 994,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Kirli bir metal parçasıyla yaralanan ve aşı geçmişi bilinmeyen 40 yaşındaki hastada, 1 hafta sonra çenede kilitlenme (trismus) ve sırt kaslarında şiddetli yay gibi kasılmalar (opistotonus) tablosu (Tetanoz) gelişiyor. Clostridium tetani'nin ürettiği Tetanospasmin toksininin, tüm vücut kaslarını aynı anda şiddetle kasan bu spastik felci yaratması; toksinin omuriliğe (medulla spinalis) ulaşarak HANGİ spesifik nöron grubunda, HANGİ nörotransmitterlerin salınımını kalıcı olarak durdurmasının sonucudur?",
+"options": [
+"Üst motor nöronlarda (Korteks) Glutamat ve Aspartat salınımını durdurması",
+"İnhibitör ara nöronlarda (Renshaw hücreleri) GABA ve Glisin salınımını durdurması",
+"Periferik motor nöronlarda (Nöromüsküler kavşak) Asetilkolin salınımını durdurması",
+"Otonomik ganglionlarda Asetilkolin ve Noradrenalin salınımını durdurması",
+"Arka kök ganglionlarında P Maddesi (Substance P) salınımını durdurması"
+],
+"correct": 1,
+"exp": "Tetanospasmin (Tetanoz toksini) ve Botulinum toksini, her ikisi de nöronların içindeki SNARE (sinaptobrevin vb.) proteinlerini keserek vezikül salınımını durduran makaslardır (proteaz). Ancak hedefleri zıttır. Botulinum perifere (kasa) gider, uyarıcı Asetilkolin'i keser ve gevşek felç (flask paralizi) yapar. Tetanoz toksini ise periferde durmaz; motor sinirin içinden geriye (retrograd) doğru tırmanarak omuriliğe (medulla spinalise) girer. Orada, asıl hedefi olan 'Renshaw Hücreleri'ne (İnhibitör ara nöronlar) sızar. Bu hücrelerin görevi, motor nöronların sürekli kasılmasını engellemek (frenlemek) için 'GABA ve Glisin' salgılamaktır. Toksin bu frenleyici (inhibitör) nörotransmitterlerin salınımını durdurur. Frenleri patlayan motor nöronlar sürekli ateşleme yapar ve kaslar kırılasıya kasılır (Spastik felç)."
+},
+{
+"id": 995,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 5,
+"q": "Yaşlı bir hastaya pnömoni tedavisi için 10 gün boyunca oral Klindamisin kullanıldıktan sonra, şiddetli, kötü kokulu ve sulu ishal gelişiyor. Kolonoskopide kolon mukozasında sarı-beyaz renkli plaklar (pseudomembran) saptanıyor. Clostridioides difficile enfeksiyonu tanısı alan bu hastada, bağırsak epitel hücrelerinin iskelet yapısının (sitoiskelet) çökmesine, hücreler arası sıkı bağlantıların kopmasına ve hücre ölümüne yol açarak bu tabloyu yaratan spesifik toksik mekanizma (Toksin A ve B) aşağıdakilerden hangisidir?",
+"options": [
+"Aktin filamentlerinin polimerizasyonunu sağlayan Rho GTPaz enzim ailesinin toksin tarafından 'glikozillenerek' inaktive edilmesi",
+"Hücre zarındaki lesitinin (fosfolipidlerin) fosfolipaz C tarafından eritilmesi",
+"Adenilat siklaz enziminin sürekli aktivasyonuyla cAMP'nin artırılması",
+"Ribozomal 60S alt biriminin RNA'sının (rRNA) parçalanması",
+"Elongasyon Faktör 2'nin (EF-2) ADP-ribozilasyon ile bloke edilmesi"
+],
+"correct": 0,
+"exp": "Clostridioides (eski adıyla Clostridium) difficile, antibiyotik kullanımıyla (flora bozulması) fırsatçı olarak üreyen ve Pseudomembranöz Kolit yapan bir anaerobtur. Etkisini iki toksinle yapar: Toksin A (Enterotoksin) ve Toksin B (Sitotoksin). Bu toksinler hücre içine girer ve hücresel iskeletin (aktin filamentlerinin) orkestra şefi olan 'Rho GTPaz' enzim ailesini hedefler. Toksinler bu enzimlere UDP-glukozdan aldıkları bir glikoz molekülünü takarlar (Glikozilasyon). Glikozillenen Rho GTPaz felç olur. İskeleti ayakta tutamayan bağırsak hücresi çöker, yuvarlaklaşır, yanındaki hücreden kopar (sıvı sızar/ishal) ve sonunda apoptosize giderek o meşhur sarı-beyaz pseudomembranları (ölü doku ve nötrofil yığınlarını) oluşturur."
+},
+{
+"id": 996,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Kırsal alanda koyun ve keçi besiciliği yapan bir çiftçide; önce deride kaşıntılı bir papül, ardından içi sıvı dolu bir vezikül ve son olarak etrafı yoğun ödemli, ortası siyah renkli ve ağrısız, nekrotik bir yara (Kara Çıban / Kara Kabuk) gelişiyor. Deri Şarbonu (Bacillus anthracis) tanısı konan bu hastada; makrofajları öldürerek, doku nekrozunu başlatarak ve yaranın ortasındaki o karakteristik SİYAH ESKAR'ı (kabuğu) yaratan 'Letal Faktör (LF)' toksini, hücre içinde HANGİ enzimi parçalayarak (proteaz aktivitesiyle) bu yıkıma neden olur?",
+"options": [
+"Adenilat Siklaz enzimi",
+"Mitojenle Aktive Olan Protein Kinaz Kinaz (MAPKK)",
+"Elongasyon Faktör 2 (EF-2)",
+"SNARE protein kompleksi",
+"DNA Giraz"
+],
+"correct": 1,
+"exp": "Bacillus anthracis'in (Şarbon) toksini 3 parçalıdır: Koruyucu Antijen (PA), Ödem Faktörü (EF) ve Letal Faktör (LF). PA sadece bir kapıdır. EF, bizzat Adenilat Siklaz gibi çalışıp cAMP'yi fırlatarak ödem yapar. O korkutucu siyah kabuğu (eskar) ve doku ölümünü (nekrozu) yapan ise Letal Faktör (LF)'dür. LF, hücre içine girdiğinde bir Çinko-bağımlı Proteaz (makas) olarak çalışır. Gider, hücrenin büyüme ve hayatta kalma sinyallerini taşıyan en önemli yolaklardan biri olan 'MAPKK (Mitojenle Aktive Olan Protein Kinaz Kinaz)' enzimlerini parçalar. Sinyal alamayan makrofajlar ve doku hücreleri hızla apoptoza/nekroza giderek o simsiyah, ağrısız ölü doku (eskar) yığınını oluştururlar."
+},
+{
+"id": 997,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Çocukluk çağında geçirdiği akut otitis media sonrası yüz felci (fasiyal paralizi) gelişen ve aşı takvimi eksik olan bir hastada, etken olarak Haemophilus influenzae Tip b (Hib) saptanıyor. H. influenzae'nin bu ölümcül invaziv enfeksiyonları (Menenjit, Epiglottit vb.) yapabilmesinden sorumlu olan ve aşısının (Hib aşısı) da hedefini oluşturan 'Poliribitol Fosfat (PRP)' yapısındaki virülans faktörü aşağıdakilerden hangisidir?",
+"options": [
+"IgA Proteaz",
+"Pili (Fimbria)",
+"Dış zar lipooligosakkaridi (LOS)",
+"Tip b Polisakkarit Kapsül",
+"O-spesifik antijen zinciri"
+],
+"correct": 3,
+"exp": "Haemophilus influenzae'nin iki formu vardır: Kapsüllü (Tiplendirilebilen) ve Kapsülsüz (Tiplendirilemeyen - NTHi). Kapsülsüz olanlar sadece lokal mukozal enfeksiyonlar (Otit, sinüzit, KOAH alevlenmesi) yapar; kana karışmazlar. Ancak 'Kapsüllü' olanlar, özellikle de 'Tip b' (Hib), fagositozdan mükemmel kaçarak kana karışır ve menenjit, epiglottit, septik artrit gibi invaziv hastalıklar yapar. Tip b'nin bu korkutucu gücünü veren kapsülü, diğer bakterilerden farklı olarak 'Poliribitol Fosfat (PRP)' adı verilen özel bir polisakkaritten oluşur. Günümüzde uygulanan (ve Hib menenjitini neredeyse bitiren) konjuge aşı, bizzat bu PRP kapsül antijeninin bir protein taşıyıcıya (örn: difteri toksoidi) bağlanmasıyla üretilir."
+},
+{
+"id": 998,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Kronik öksürük, kilo kaybı ve gece terlemesi olan bir hastanın akciğer grafisinde sağ üst lobda kaviteli (boşluklu) bir lezyon saptanıyor. Balgam yaymasında Ziehl-Neelsen boyası ile kırmızı (aside dirençli) basiller (Mycobacterium tuberculosis) görülüyor. Tüberküloz basilinin asit ve alkolle yıkandıktan sonra bile boyayı bırakmamasını (Aside Dirençli Boyanma / ARB) ve makrofajların fagozomlarında zorlu kimyasal saldırılara (oksidatif stres vb.) dayanabilmesini sağlayan hücre duvarındaki EN TEMEL ve benzersiz lipid yapıtaşı aşağıdakilerden hangisidir?",
+"options": [
+"Ergosterol",
+"Peptidoglikan",
+"Mikolik Asit",
+"Lipopolisakkarit (LPS)",
+"Teikoik Asit"
+],
+"correct": 2,
+"exp": "Mikobakteriler (M. tuberculosis, M. leprae) teknik olarak Gram-pozitif olsalar da, Gram boyası ile boyanamazlar. Çünkü hücre duvarlarının %60'ı inanılmaz derecede mumsu (waxy) ve kalın bir lipid tabakası ile kaplıdır. Bu mumsu kalkanın ana maddesi 'Mikolik Asit'lerdir. Mikolik asit, bakteriye muazzam özellikler kazandırır: 1) Gram boyasının içeri girmesini engeller. 2) Ziehl-Neelsen (Karbofuksin) boyası ısıtılıp zorla içeri sokulduğunda, mikolik asit kapıyı öyle bir kapatır ki, üzerine asit-alkol dökülse bile boya dışarı çıkamaz (Aside Dirençli Basil / ARB). 3) Makrofajın içindeki ölümcül oksijen radikallerine ve enzimlere karşı bakteriyi zırh gibi korur. İzoniyazid ilacı işte bu mikolik asit sentezini bloke ederek etki eder."
+},
+{
+"id": 999,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Mide ülseri (Peptik ülser) şikayeti olan hastaya yapılan endoskopik biyopside, mide antrumunda yoğun Helicobacter pylori kolonizasyonu saptanıyor. Midenin pH 1.5-2.0 olan ölümcül asit banyosunda diğer tüm bakteriler ölürken, H. pylori'nin bu ortamda hayatta kalmasını ve kendine yaşanabilir bazik bir mikro-ortam yaratmasını sağlayan; aynı zamanda klinikte 'Nefes Testi' ile teşhis edilmesini olanaklı kılan spesifik enzimatik aktivitesi aşağıdakilerden hangisidir?",
+"options": [
+"Katalaz enzimiyle H2O2'yi parçalaması",
+"Mukini eriten musinaz enzimi",
+"Üreaz enzimiyle midedeki üreyi amonyak (NH3) ve Karbondioksite (CO2) parçalaması",
+"Proton pompalarını bloke etmesi",
+"Hücre zarına asit-dirençli mikolik asit örmesi"
+],
+"correct": 2,
+"exp": "Helicobacter pylori asidi SEVMEZ. Mideye girdiğinde asitten korunmak için muazzam bir kimyasal kalkan olan 'Üreaz' enzimini kullanır. Bakteri midedeki üreyi anında 'Amonyak (NH3)' ve Karbondioksite (CO2) parçalar. Amonyak güçlü bir bazdır. Bakterinin etrafında oluşan bu amonyak bulutu, mide asidini nötralize eder ve bakteriye güvenli bir yaşama alanı sağlar. Üre Nefes Testi (UBT) de bu hileyi kullanır: Hastaya radyoaktif (veya 13C izotoplu) işaretli üre içirilir. Eğer midede bakteri (ve onun Üreaz enzimi) varsa, üre hemen amonyak ve işaretli CO2'ye parçalanır. CO2 kana karışıp akciğerlerden nefesle atılır ve cihaz bunu ölçer. Test pozitifse, midede aktif H. pylori olduğu kesindir."
+},
+{
+"id": 1000,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "Küçük bir çocukta yüksek ateş ve ardından tüm vücutta (ağız mukozası dahil) içi su dolu veziküllerle karakterize Suçiçeği (Varicella) enfeksiyonu gelişiyor. Hastalık iyileştikten on yıllar sonra, aynı hasta 60 yaşında, sadece sağ gövdesinde tek bir dermatom (sinir trasesi) boyunca yayılan çok ağrılı, kuşak tarzında (Zona Zoster) döküntülerle başvuruyor. VZV'nin (Varicella-Zoster Virüsü) ilk enfeksiyondan sonra on yıllarca bağışıklık sisteminden gizlenerek 'Latent (Sessiz)' kaldığı ve yıllar sonra bağışıklık zayıfladığında reaktive olarak Zona'ya neden olduğu anatomik bölge (hücresel rezervuar) neresidir?",
+"options": [
+"Trigeminal (Gasser) Ganglionu",
+"Sakral (S2-S4) otonomik ganglionlar",
+"Arka Kök (Dorsal Root) Ganglionları ve Kranial Sinir Ganglionları",
+"B Lenfositleri",
+"Monositler ve Makrofajlar"
+],
+"correct": 2,
+"exp": "Tüm Herpesvirüs ailesi vücuda bir kez girdiğinde ASLA atılmaz, ömür boyu uykuya yatar (Latent enfeksiyon). Ancak uyudukları hücre tipleri farklıdır. Herpes Simplex Virüs Tip 1 (Uçuk) 'Trigeminal Ganglion'da; HSV Tip 2 (Genital uçuk) 'Sakral Ganglion'da uyur. Suçiçeği (Varicella) ve Zona etkeni olan VZV (Varicella-Zoster Virüsü) ise viremi (kanda yayılma) yaptıktan sonra tüm vücuttaki duyusal sinir uçlarından içeri girer ve omurilikteki 'Arka Kök (Dorsal Root) Ganglionlarında' (veya kranial sinir ganglionlarında) uykuya yatar. Yıllar sonra stres, yaşlılık veya kanser nedeniyle bağışıklık düşünce, virüs uyandığı tek bir sinir (dermatom) boyunca deriye doğru iner ve o bölgede (genelde gövdede) inanılmaz ağrılı Zona (Gece yanığı) döküntüsünü yapar."
+},
+{
+"id": 1001,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "Soğuk algınlığı semptomları olan 5 yaşındaki çocuğun boğaz kültüründe Rinovirüs (Pikornavirüs ailesi) izole ediliyor. Rinovirüslerin, aynı aileden (Pikornavirüs) olan ve dışkı-ağız yoluyla bulaşan Poliovirüs, Koksakivirüs (Enterovirüsler) veya Hepatit A virüsünden farklı olarak; gastrointestinal sistemde enfeksiyon YAPAMAMASININ (sadece üst solunum yolunda kalmasının) asıl virolojik/fizikokimyasal nedeni aşağıdakilerden hangisidir?",
+"options": [
+"Zarflı (kılıflı) bir virüs olması nedeniyle safrada erimesi",
+"Asidik ortama (Mide asidine / pH < 3) dayanıksız olması (aside duyarlı olması) ve midede anında parçalanması",
+"Sadece 37°C ve üzeri sıcaklıklarda çoğalabilmesi",
+"Bağırsak epitel hücrelerinde ICAM-1 reseptörünün bulunmaması",
+"Tek sarmallı negatif polariteli RNA'ya sahip olması"
+],
+"correct": 1,
+"exp": "Pikornavirüs (Pico-RNA = Küçük RNA) ailesi çok meşhurdur. İçinde iki büyük grup vardır: Enterovirüsler (Poliovirüs, Koksaki, Eko) ve Rinovirüsler (Nezle etkeni). Hepatit A da bu ailedendir. Hepsi zarfsızdır (kılıfsızdır) ve dış ortama çok dayanıklıdırlar. ANCAK, aralarında hayati bir fark vardır. Enterovirüsler ve Hepatit A, dışkı-ağız yoluyla bulaşır; yani midenin o korkunç asit banyosundan (pH 1.5) sağ salim geçip bağırsağa ulaşabilirler (Aside DİRENÇLİDİRLER). Rinovirüs ise asidi gördüğü an eriyip parçalanır (Aside DUYARLIDIR). Bu yüzden Rinovirüs mideden sağ çıkıp bağırsağı enfekte edemez; mecburen burnumuzda ve boğazımızda kalıp (ayrıca 33°C serinliği sevdiği için) sadece soğuk algınlığı (Nezle) yapar."
+},
+{
+"id": 1002,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 5,
+"q": "Hepatit B (HBV) enfeksiyonu açısından riskli bir grup hastaya uygulanan profilaktik Hepatit B rekombinant aşısı (Sadece HBsAg içerir), hastaların büyük çoğunluğunda koruyucu anti-HBs antikorları oluşturarak bağışıklık sağlamaktadır. Ancak hastaların küçük bir yüzdesinde (non-responder), aşıya rağmen hiçbir anti-HBs antikoru üretilemediği görülmektedir. Bu aşıya yanıtsızlığın hücresel düzeydeki ASIL immünolojik nedeni, aşının içindeki HBsAg antijenini T Yardımcı (CD4+) hücrelerine sunmakla görevli olan HANGİ sistemdeki genetik çeşitliliğin (polimorfizmin) yetersizliğidir?",
+"options": [
+"B lenfositlerindeki yüzey IgM reseptörlerinin eksikliği",
+"MHC Sınıf I moleküllerinin antijeni CD8+ hücrelerine sunamaması",
+"Antijen Sunan Hücrelerdeki (APC) HLA (MHC Sınıf II) moleküllerinin, HBsAg peptidini yeterli afiniteyle bağlayıp T hücresine sunacak uygun yapısal cebe (oluğa) sahip olmaması",
+"T hücrelerindeki CD28 ko-stimülatör molekülünün mutasyonu",
+"Makrofajlardaki fagozom-lizozom füzyonunun bozuk olması"
+],
+"correct": 2,
+"exp": "Aşılara yanıt vermeme (Non-responder) durumu, immünolojinin en güzel genetik bulmacalarından biridir. Hepatit B aşısı sadece HBsAg (protein) içerir. Bu proteini kanınıza verdiğimizde, B hücrelerinizin antikor (anti-HBs) üretebilmesi için T hücrelerinden onay (yardım) alması ŞARTTIR. T hücresinin uyanabilmesi için ise, Antijen Sunan Hücrelerin (Makrofaj, Dendritik) bu HBsAg'yi parçalayıp 'MHC Sınıf II (İnsanda HLA-D serisi)' molekülünün oluğuna (cebine) koyarak T hücresine göstermesi gerekir. Her insanın HLA genetiği (MHC tipleri) parmak izi gibi farklıdır. Non-responder kişilerin doğuştan gelen HLA Sınıf II molekülleri, HBsAg peptidini o cebe tam oturtacak/sıkıştıracak şekilde tasarlanmamıştır. Antijen cepten kayıp düşer, T hücresine sunulamaz, T hücresi onay veremez ve B hücresi asla koruyucu antikor üretemez."
+},
+{
+"id": 1003,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "Ağır İmmün Yetmezlik (AIDS) hastası olan 35 yaşındaki bireyde, aylar içinde gelişen ve sadece sağ gözde ilerleyici görme kaybı (Koryoretinit) saptanıyor. Göz dibi muayenesinde 'kanamalı peynir ve ketçap (pizza pie)' görünümü izleniyor. Aynı zamanda hastada şiddetli yutma güçlüğü (Özofajit) saptanıyor. Sitomegalovirüs (CMV) enfeksiyonu tanısı alan bu hastada, virüsün hücre içinde (ışık mikroskobunda) yarattığı ve tanıyı kesinleştiren patognomonik inklüzyon cisimcikleri aşağıdakilerden hangisidir?",
+"options": [
+"Sitoplazmik Negri cisimcikleri",
+"Çekirdek içinde 'Baykuş Gözü (Owl's Eye)' görünümünde dev intranükleer inklüzyonlar",
+"Cowdry Tip A inklüzyonları (Multinükleer dev hücrelerde)",
+"Guarnieri cisimcikleri",
+"Warthin-Finkeldey dev hücreleri"
+],
+"correct": 1,
+"exp": "Sitomegalovirüs (CMV / HHV-5), sağlıklı insanlarda genellikle asemptomatiktir (veya atipik mononükleoz yapar). Ancak bağışıklığı baskılanmış kişilerde (AIDS hastaları, organ nakli alıcıları) korkunç tablolar yaratır. AIDS'te (CD4 < 50) körlüğün en sık nedeni CMV Retinitidir (Pizza pie görünümü). Kanlı/derin ülserli özofajit ve organ naklinde pnömoni de çok sıktır. Hastalığın patolojik tanısı çok nettir: CMV enfekte ettiği hücreyi devasa boyutlara ulaştırır (Sito-Megalo = Dev Hücre). Hücrenin ÇEKİRDEĞİNİN (nükleusunun) tam ortasında, etrafı şeffaf bir haloyla çevrili devasa, mor-kırmızı bir 'Baykuş Gözü (Owl's Eye)' inklüzyonu oluşturur. Biyopside bu gözü gören patolog anında CMV tanısını koyar."
+},
+{
+"id": 1004,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "Afrika kıtasında görülen ve Aedes cinsi sivrisineklerle bulaşan, ani başlayan yüksek ateş, şiddetli baş-sırt ağrısı, bradikardi, karaciğer yetmezliği ve sarılık ile karakterize ölümcül viral bir hemorajik ateş (Sarı Humma / Yellow Fever) tablosu izleniyor. Hastalarda kusmuğun sindirilmiş kan nedeniyle siyah renkte (black vomit) olması tipiktir. Flaviviridae ailesinden olan bu virüsün karaciğerde (hepatositlerde) yarattığı karakteristik eozinofilik apoptotik cisimciklere ne ad verilir?",
+"options": [
+"Mallory cisimcikleri",
+"Councilman cisimcikleri",
+"Negri cisimcikleri",
+"Döhle cisimcikleri",
+"Howell-Jolly cisimcikleri"
+],
+"correct": 1,
+"exp": "Sarı Humma (Yellow Fever), Flavivirüs (Zarflı, pozitif ssRNA) ailesindendir ve sivrisinekle (Aedes) bulaşır. Hastalığın 'Sarı' denmesinin nedeni şiddetli karaciğer harabiyeti ve 'Sarılık (İkter)' yapmasıdır. Virüs hepatositlere saldırır ve hücreleri şiddetli bir şekilde apoptoza (hücre intiharına) sürükler. Apoptoz geçiren ve büzüşüp pespembe (eozinofilik) bir damla haline gelen bu ölü karaciğer hücrelerine 'Councilman Cisimcikleri' adı verilir. (Aslında Councilman cisimcikleri tüm viral hepatitlerde, örneğin Hepatit B ve C'de de görülen apoptotik cisimciklerdir, ancak ilk kez Sarı Humma'da tanımlandıkları için bu hastalıkla özdeşleşmişlerdir. Mallory cisimcikleri ise alkolik hepatitteki keratin yumaklarıdır)."
+},
+{
+"id": 1005,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "Yirmi yaşında genç hasta; 1 haftadır süren şiddetli yorgunluk, ateş, yaygın lenfadenopati (özellikle arka servikal) ve eksüdatif farenjit şikayetiyle başvuruyor. Dalak muayenesinde splenomegali saptanıyor. İnfeksiyöz Mononükleoz (Öpücük Hastalığı) şüphesiyle alınan kan örneğinde 'Monospot (Heterofil Antikor)' testi pozitif bulunuyor. Epstein-Barr Virüs (EBV) enfeksiyonu olan bu hastada, periferik yaymada görülen o devasa, atipik ve sitoplazması komşu hücreleri saran 'Atipik Lenfositlerin (Downey hücreleri)' asıl hücresel kimliği (kökeni) aşağıdakilerden hangisidir?",
+"options": [
+"Virüsle enfekte olmuş ve kanserleşmiş B lenfositler",
+"Virüsle enfekte olmuş makrofajlar",
+"Virüsle enfekte B lenfositlerini yok etmek için uyarılmış ve klonal olarak çoğalmış (Reaktif) CD8+ Sitotoksik T Lenfositler",
+"Hafıza (memory) CD4+ T hücreleri",
+"Doğal Katil (NK) hücreleri"
+],
+"correct": 2,
+"exp": "Epstein-Barr Virüs (EBV / HHV-4), İnfeksiyöz Mononükleoz'un etkenidir. Tükürükle (Öpücük hastalığı) bulaşır. Virüsün hedefi boğaz epiteli ve 'B Lenfositleri'dir (CD21 reseptöründen girer). ANCAK klinisyeni ve patoloğu yanıltan en büyük tuzak kan yaymasındaki 'Atipik Lenfositler'dir. Yaymada görülen o devasa, çirkin, atipik (Downey) hücreler virüsle enfekte olan B hücreleri DEĞİLDİR. Vücudun bağışıklık sistemi, enfekte olmuş B hücrelerini yok etmek için devasa bir ordu kurar. Bu ordu 'CD8+ Sitotoksik T Hücreleri'dir. Yaymada gördüğümüz o atipik lenfositler, enfekte B hücrelerini öldürmek için çıldırmış, uyarılmış (reaktif) ve büyümüş olan bizim kendi CD8+ T Lenfositlerimizdir. (Bu aşırı T hücre çoğalması dalak ve lenf bezlerini şişirir)."
+},
+{
+"id": 1006,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "Kronik ishal ve kilo kaybı nedeniyle araştırılan hastaya ELİSA ile anti-HIV antikor testi yapılıyor ve pozitif bulunuyor. Tanıyı doğrulamak için yapılan Western Blot (veya doğrulama PCR) testi de pozitif geliyor. HIV virüsünün yapısındaki proteinler çok spesifiktir. Virüsün RNA'sını sarmalayan, mermi (koni) şeklindeki kapsidi (kor) oluşturan ve kanda seviyesi ölçülerek enfeksiyonun erken evresinde (henüz antikor bile oluşmadan) tanıyı koydurabilen temel yapısal protein (antijen) aşağıdakilerden hangisidir?",
+"options": [
+"p24 (Kapsid proteini)",
+"gp120 (Yüzey tutunma proteini)",
+"gp41 (Transmembran füzyon proteini)",
+"p17 (Matriks proteini)",
+"Revers Transkriptaz enzimi"
+],
+"correct": 0,
+"exp": "HIV virüsünün yapısı (gag, pol, env genleri) sınavlarda vazgeçilmezdir. Virüsün etrafındaki lipid kılıfta tutunmayı sağlayan gp120 ve gp41 (env geni) bulunur. Kılıfın altında p17 matriksi vardır. Ancak asıl hazine, RNA'yı ve enzimleri (Revers transkriptaz, integraz, proteaz) içinde barındıran, mermi/koni şeklindeki 'KAPSİD'dir. Bu kapsid 'p24' proteininden (gag geni) oluşur. HIV vücuda girdiğinde bağışıklık sisteminin antikor üretmesi (Pencere dönemi) haftalar sürer. Bu pencere döneminde hastayı yakalamanın (ve kan bağışlarında virüsü tespit etmenin) en hızlı yolu kanda bizzat bu 'p24 Antijeni'ni aramaktır. 4. nesil HIV testleri hem antikor hem de p24 antijenine aynı anda bakarak pencere dönemini günlere kadar indirmiştir."
+},
+{
+"id": 1007,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "Altı aylık bebek; kış aylarında burun akıntısı, düşük dereceli ateş, hızlı nefes alıp verme (taşipne), ekspiryumda hırıltı (wheezing) ve kaburga altı çekilmelerle (respiratuar distres) acile getiriliyor. Akciğer grafisinde her iki akciğerde havalanma artışı (hiperinflasyon) saptanıyor. Bebeklerde akut Bronşiolit'in en sık nedeni olan ve adını solunum yolu epitel hücrelerini birleştirerek devasa çok çekirdekli (multinükleer) sinsityal hücreler yaratmasından alan, RNA yapılı bu zarflı paramiksovirüs aşağıdakilerden hangisidir?",
+"options": [
+"Parainfluenza virüs",
+"Respiratuar Sinsityal Virüs (RSV)",
+"Adenovirüs",
+"Metapnömovirüs",
+"Rinovirus"
+],
+"correct": 1,
+"exp": "Bebeklik (0-2 yaş) dönemindeki kış aylarının en korkutucu hastalığı 'Bronşiolit'tir. Bu hastalığın AÇIK ARA EN SIK nedeni 'Respiratuar Sinsityal Virüs (RSV)'tür. RSV bir Paramiksovirüstür (Kızamık, Kabakulak gibi). Virüs solunum yolunun en uç ve narin dallarına (bronşiyollere) iner. Adını aldığı en büyük özelliği şudur: Virüsün yüzeyinde hücreleri birbirine yapıştıran bir 'Füzyon (F)' proteini vardır (Ancak Hemaglutinin/Nöraminidazı YOKTUR). Virüs epitel hücrelerine girdiğinde onları patlatmak yerine birbirlerine yapıştırıp eritir ve devasa, çok çekirdekli 'Sinsityum (Sinsityal hücre)' kitleleri oluşturur. Bu ölü hücre yığınları ve artan mukus, bebeğin incecik bronşiyollerini tıkar. Havayı içeri alabilen ama dışarı atamayan bebekte akciğerler şişer (hiperinflasyon) ve hırıltılı solunum (wheezing) başlar. Prematüre bebekleri korumak için bu 'F' proteinine karşı üretilen 'Palivizumab' antikoru kullanılır."
+},
+{
+"id": 990,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Trafik kazası sonucu açık tibia kırığı olan hasta, 2 gün sonra bacağında şiddetli ağrı, kahverengi-kötü kokulu akıntı ve cilt altında dokunmakla çıtırtı (krepistasyon / gaz) alınması şikayetiyle acile getiriliyor. Gazlı Gangren tablosundaki bu hastada kas dokusunun hızla eriyerek nekroza gitmesi; etken olan Clostridium perfringens'in salgıladığı 'Alfa Toksin'in hücre zarındaki HANGİ temel yapıtaşını parçalayarak hücreleri kelimenin tam anlamıyla eritmesinin (lizis) doğrudan bir sonucudur?",
+"options": [
+"Sodyum-Potasyum pompası",
+"Lesitin (Fosfatidilkolin)",
+"Kolesterol",
+"Glikozaminoglikanlar",
+"Sfingomiyelin"
+],
+"correct": 1,
+"exp": "Clostridium perfringens, kirli ve oksijensiz (anaerobik) derin yaralarda hızla üreyen ve Gazlı Gangren (Miyonekroz) yapan ölümcül bir bakteridir. Bakterinin en büyük silahı olan 'Alfa Toksin', aslında bir 'Lesitinaz (Fosfolipaz C)' enzimidir. İnsan hücre zarlarının (özellikle kas ve eritrosit zarlarının) temel yapıtaşı olan fosfolipidleri (Lesitini) bir makas gibi keser. Zarı eriyen kas hücreleri ve alyuvarlar anında patlar (masif nekroz ve hemoliz). Dokudaki bu erime ve bakterinin fermantasyonu sonucu ortaya çıkan gaz (krepistasyon), hastalığın patognomonik bulgusudur."
+},
+{
+"id": 991,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 5,
+"q": "Aşı takvimi eksik olan 2 yaşındaki çocuk, haftalardır süren, boğulur tarzda ve sonunda derin bir iç çekme ('whoop') sesinin duyulduğu inatçı öksürük krizleriyle (Boğmaca) getiriliyor. Kan sayımında lökosit sayısı 40.000/mm³ (Masif Lenfositoz) bulunuyor. Bordetella pertussis'in salgıladığı Pertussis Toksini (PTx), solunum epitel hücrelerinde ve lenfositlerde cAMP düzeylerini devasa boyutlara ulaştırır. Toksinin hücre içindeki adenilat siklaz aktivitesini fırlatması, hücre zarındaki HANGİ düzenleyici protein kompleksini ADP-ribozilasyon ile 'KAPALI (felçli)' durumda bırakmasının sonucudur?",
+"options": [
+"G proteininin stimülatör (Gs) alt birimini",
+"G proteininin inhibitör (Gi) alt birimini",
+"Fosfodiesteraz enzimini",
+"Kalsiyum/Kalmodulin kompleksini",
+"Protein Kinaz A (PKA)"
+],
+"correct": 1,
+"exp": "Boğmaca (Pertussis) toksini (A-B ekzotoksin) ve Kolera toksininin etki mekanizmaları çok karıştırılır. Kolera toksini, cAMP'yi artıran 'Gs (Stimülatör)' proteinini SÜREKLİ AÇIK bırakır. Pertussis toksini ise, normalde cAMP üretimini frenlemekle görevli olan 'Gi (İnhibitör)' proteinini HEDEFLER. Toksin, Gi proteinine ADP-ribozil grubu takarak onu felç eder. Freni (Gi) bozulan hücre, adenilat siklazı durduramaz ve cAMP roket gibi fırlar. Solunum yollarında artan cAMP ödem ve mukus yaparken; kanda dolaşan lenfositlerde artan cAMP, lenfositlerin dokulara girmesini (kemotaksisi) engeller. Kan damarında hapsolan lenfositler yüzünden hastada lösemiyi taklit eden o meşhur 'Masif Lenfositoz' görülür."
+},
+{
+"id": 992,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Üniversite yurdunda kalan 20 yaşındaki öğrenci; ani başlayan 40°C ateş, şiddetli baş ağrısı, ense sertliği ve gövdesinde hızla yayılan peteşiyel/purpurik (kanamalı) döküntüler ile acile getiriliyor. Birkaç saat içinde hastada bilateral adrenal kanama (Waterhouse-Friderichsen Sendromu) ve ölümcül septik şok gelişiyor. Neisseria meningitidis'in kan dolaşımında yarattığı bu masif damar içi pıhtılaşma (DIC) ve endotel harabiyeti, bakterinin dış zarına ait HANGİ spesifik moleküler yapının sürekli olarak kana dökülmesinin (blebbing) doğrudan bir eseridir?",
+"options": [
+"Lipooligosakkarit (LOS)",
+"Polisakkarit Kapsül",
+"IgA Proteaz",
+"Porin (PorA) proteinleri",
+"Opa proteinleri"
+],
+"correct": 0,
+"exp": "Meningokoksik menenjit ve sepsis (Meningokoksemi), tıptaki en hızlı öldüren enfeksiyonlardan biridir. Neisseria meningitidis'in bu kadar yıkıcı olmasının nedeni, dış zarında klasik Gram-negatiflerden farklı olarak LPS (Lipopolisakkarit) yerine 'LOS (Lipooligosakkarit)' taşımasıdır. Daha da korkuncu, bakteri kanda çoğalırken dış zarından sürekli olarak bu LOS keseciklerini kana fırlatır (Blebbing/Tomurcuklanma). Kana saçılan devasa miktardaki LOS (endotoksin), makrofajlardaki TLR-4'e bağlanarak tarihin en şiddetli TNF-alfa fırtınalarından birini başlatır. Endotel parçalanır, hasta DIC'e (yaygın pıhtılaşma/kanama) girer ve böbrek üstü bezleri (adrenal bezler) kanayarak hastayı şoktan öldürür (Waterhouse-Friderichsen Sendromu)."
+},
+{
+"id": 993,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Dışarıda beklemiş ve iyi soğutulmamış patates salatası tüketen bir grup insanda, sadece 2 saat sonra başlayan şiddetli bulantı, kusma ve karın krampları tablosu gelişiyor. Staphylococcus aureus'a bağlı gelişen bu akut besin zehirlenmesinde; bakterinin bağırsakta çoğalmasına (veya mukozayı delmesine) gerek kalmadan hastayı saniyeler içinde kusturabilmesi, toksinin midedeki HANGİ spesifik reseptörleri ve sinir ağını doğrudan uyararak kusma merkezini (Area Postrema) tetiklemesiyle gerçekleşir?",
+"options": [
+"Bağırsak epitelindeki adenilat siklaz enzimi",
+"Mide ve ince bağırsaktaki Vagus siniri afferentlerinde bulunan 5-HT3 (Serotonin) reseptörleri",
+"Enterositlerdeki klor (CFTR) kanalları",
+"Auerbach pleksusundaki D2 (Dopamin) reseptörleri",
+"Mide mukozasındaki H2 (Histamin) reseptörleri"
+],
+"correct": 1,
+"exp": "Staphylococcus aureus (ve Bacillus cereus) besin zehirlenmelerinin kuralı şudur: İshalden çok 'KUSMA' ön plandadır ve kuluçka süresi inanılmaz kısadır (1-6 saat). Çünkü sorun bakterinin bağırsağa inip orada enfeksiyon yapması DEĞİLDİR. Bakteri gıdanın içinde dışarıda beklerken 'Enterotoksin' üretmiştir. Hasta bu 'Önceden Sentezlenmiş (Preformed)' toksini yutar. Toksin mideye ve üst bağırsağa ulaştığı an, oradaki Vagus sinirinin ucunda bulunan '5-HT3 (Serotonin)' reseptörlerini şiddetle uyarır. Vagus siniri bu uyarıyı anında beyindeki kusma merkezine iletir ve hasta daha yemeği sindiremeden şiddetli bir şekilde kusmaya başlar."
+},
+{
+"id": 994,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 5,
+"q": "Mycobacterium leprae (Cüzzam) enfeksiyonu olan iki farklı hasta inceleniyor. Birinci hastada (Tüberküloid Lepra), deride az sayıda soluk lezyon ve sinir kalınlaşması varken basil sayısı çok düşüktür ve hastalık kontrol altındadır. İkinci hastada ise (Lepromatöz Lepra), yüzde aslan yüzü (leonine facies) deformitesi, yaygın nodüller ve dokularda milyarlarca basil saptanır. Aynı bakteriyle enfekte olunmasına rağmen bu iki zıt uçtaki kliniğin oluşması; konağın makrofajları aktive eden koruyucu T hücre yanıtı yerine, HANGİ sitokinleri üreten baskılayıcı bir T hücresi (Th2) yanıtına kaymasının doğrudan bir sonucudur?",
+"options": [
+"İnterferon-gama (IFN-γ) ve İnterlökin-2 (IL-2)",
+"İnterlökin-4 (IL-4), İnterlökin-5 (IL-5) ve İnterlökin-10 (IL-10)",
+"Tümör Nekrozis Faktör-alfa (TNF-α) ve IL-1",
+"İnterlökin-17 (IL-17) ve IL-22",
+"İnterlökin-12 (IL-12) ve İnterferon-alfa"
+],
+"correct": 1,
+"exp": "Lepra (Cüzzam), bağışıklık sisteminin (T hücrelerinin) tercihine göre şekillenen muazzam bir hastalıktır. Eğer hastanın T hücreleri 'Th1' yolağına kayarsa (IFN-gama üretirse), makrofajlar uyanır, basili hapseder (granülom) ve hastalık hafif seyreder (Tüberküloid Lepra). ANCAK hastanın genetiği veya bağışıklığı zayıfsa, T hücreleri yanlışlıkla 'Th2' yolağına kayar. Th2 hücreleri IL-4, IL-5 ve özellikle 'IL-10 (Baskılayıcı/Frenleyici Sitokin)' üretir. IL-10, makrofajların çalışmasını tamamen İNHİBE EDER. Makrofajlar felç olduğu için M. leprae vücudun her yerinde (özellikle soğuk bölgelerde/yüzde) frensizce çoğalır ve o meşhur Aslan Yüzü (Lepromatöz Lepra) deformitesini yaratır."
+},
+{
+"id": 995,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Afrika'da endemik bir bölgede yaşayan ve orak hücreli anemisi (Sickle Cell) olan bir çocuk, kemik ağrısı ve yüksek ateş tablosuyla (Osteomiyelit) hastaneye yatırılıyor. Kan kültüründe Salmonella türleri üremektedir. Orak hücreli anemi hastalarında Staphylococcus aureus yerine Salmonella'nın kemik enfeksiyonlarında bu kadar baskın ve ölümcül olmasının asıl nedeni; dalağın otoinfarkta uğraması (aspleni) sonucu, Salmonella'nın fagositozdan korunmasını sağlayan HANGİ spesifik yüzey antijenine (kapsüle) karşı antikor (opsonin) üretilememesidir?",
+"options": [
+"O-antijeni",
+"H-antijeni (Flagella)",
+"Vi-antijeni (Kapsüler polisakkarit)",
+"Tip III Salgı Sistemi (T3SS)",
+"Lipid A"
+],
+"correct": 2,
+"exp": "Orak hücreli anemi (Sickle Cell) hastalarında en meşhur klinik korelasyonlardan biri, kemik iltihabında (Osteomiyelit) normal popülasyondan farklı olarak 'Salmonella'nın çok sık etken olmasıdır. Bunun iki nedeni vardır: 1) Oraklaşan alyuvarlar bağırsak damarlarını tıkar, bağırsak epitelinde iskemik yırtıklar oluşur ve floradaki Salmonella kana sızar. 2) Çok daha önemlisi, bu hastaların dalakları tekrarlayan tıkanıklıklar yüzünden çürümüş ve erimiştir (Otoinfarkt / Aspleni). Salmonella'nın etrafında onu fagositozdan koruyan çok özel bir kapsül olan 'Vi (Virülans) Antijeni' vardır. Dalak olmayınca bu polisakkarit Vi antijenine karşı antikor üretilemez ve bakteri kandan rahatça kemiğe yerleşip osteomiyelit yapar."
+},
+{
+"id": 996,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Karaciğer sirozu ve herediter hemokromatozis (demir birikimi) olan 50 yaşındaki hasta, tatilde çiğ istiridye (midye) yedikten sadece 12 saat sonra şiddetli ateş, bacaklarda devasa büllerle seyreden nekrotizan fasiit ve fulminan septik şok tablosuyla acile getiriliyor. Kanda 'Virgül (comma)' şeklinde, tek polar kamçılı, oksidaz pozitif Gram-negatif basiller saptanıyor. Vibrio vulnificus tanısı alan bu hastada, enfeksiyonun diğer insanlara göre bu kadar yıldırım hızında (fulminan) ölümcül seyretmesi, bakterinin hiper-virülan hale gelmek için kanda HANGİ serbest elementi 'büyüme faktörü' olarak doğrudan kullanmasına dayanır?",
+"options": [
+"Kalsiyum (Ca+2)",
+"Bakır (Cu+2)",
+"Demir (Fe+2 / Fe+3)",
+"Magnezyum (Mg+2)",
+"Çinko (Zn+2)"
+],
+"correct": 2,
+"exp": "Vibrio vulnificus, deniz ürünlerinden (özellikle çiğ istiridye) veya deniz suyundaki açık yaralardan bulaşan, tıptaki en agresif ve hızlı öldüren bakterilerden biridir. Normal insanlarda sadece ishal veya yara enfeksiyonu yaparken; 'Karaciğer Sirozu' ve özellikle 'Hemokromatozis (Demir yüklenmesi)' olan hastalarda kanda saniyeler içinde çoğalarak ölümcül sepsise neden olur. V. vulnificus, insan kanındaki serbest 'DEMİR'e bayılır. Demir bu bakteri için bir katalizör ve inanılmaz bir büyüme faktörüdür. Siroz/hemokromatozis hastalarının kanında bolca serbest demir dolaştığı için, bakteri bu ortamı bulunca bir biyolojik bomba gibi patlayarak hastayı 24-48 saat içinde öldürür."
+},
+{
+"id": 997,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Mide yanması şikayetiyle endoskopi yapılan hastanın mide biyopsisinde Helicobacter pylori saptanıyor. Bakterinin midede sadece basit bir gastrit yapmakla kalmayıp, mide epitel hücrelerinin iskeletini (sitoiskelet) bozarak hücreleri birbirinden ayırdığı ve mide kanserine (Adenokarsinom) zemin hazırladığı görülüyor. H. pylori'nin insan hücresine Tip IV Salgı Sistemi ile enjekte ettiği ve hücre içi sinyal yolaklarını (SHP-2 vb.) karıştırarak kanserleşmeyi tetikleyen bu onkojenik (ve agresif) efektör protein aşağıdakilerden hangisidir?",
+"options": [
+"VacA (Vakuolize edici sitotoksin)",
+"CagA (Sitotoksin-ilişkili gen A proteini)",
+"Üreaz enzimi",
+"Katalaz enzimi",
+"Mukina (Müsinaz)"
+],
+"correct": 1,
+"exp": "Helicobacter pylori suşları ikiye ayrılır: Kanser yapanlar ve yapmayanlar. Bakterinin mide kanserine (ve ağır ülsere) yol açmasındaki en büyük belirteci 'CagA (Cytotoxin-associated gene A)' proteinidir. Bakteri mide epiteline tutunduğunda, 'Tip IV Salgı Sistemi (T4SS)' adı verilen bir şırıngayla bu CagA proteinini doğrudan mide hücresinin SİTOPLAZMASINA enjekte eder. İçeri giren CagA, insan proteinleri tarafından fosforile edilir ve hücrenin tüm iletişimini bozar. Hücrelerin arasındaki sıkı bağlantıları (tight junctions) koparır, hücre iskeletini felç eder ve hücreyi kontrolsüz çoğalmaya (kanserleşmeye) zorlar. (Not: VacA ise hücre içine vakuoller/delikler açan farklı bir toksindir)."
+},
+{
+"id": 998,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Geçirdiği şiddetli boğaz enfeksiyonundan (Streptokoksik Farenjit) 2 hafta sonra idrarda kanama (hematüri / kola rengi idrar), yüzde ödem ve yüksek tansiyon ile getirilen 8 yaşındaki çocukta Akut Post-Streptokoksik Glomerülonefrit (PSGN) tanısı konuyor. Nefritojenik Streptococcus pyogenes suşlarının neden olduğu bu böbrek hasarı, bakterinin BİZZAT böbreğe giderek enfeksiyon yapmasıyla DEĞİL, kanda oluşan HANGİ moleküler yapıların böbrek glomerüllerine çökerek (Tip III Aşırı Duyarlılık) komplemanı ve nötrofilleri olay yerine çekmesinin doğrudan bir sonucudur?",
+"options": [
+"Dolaşan Antijen-Antikor İmmün Komplekslerinin",
+"Sadece serbest Streptolizin O (ASO) moleküllerinin",
+"Sadece Streptokokal M Proteinlerinin",
+"IgE-Mast hücresi komplekslerinin",
+"Bakterinin kapsül polisakkaritlerinin"
+],
+"correct": 0,
+"exp": "Akut Post-Streptokoksik Glomerülonefrit (PSGN), Streptokok farenjiti veya cilt enfeksiyonundan 2-3 hafta sonra ortaya çıkan bir immünolojik hastalıktır. Böbrekte canlı bakteri YOKTUR (Kültür negatiftir). Olayın temeli 'Tip III Aşırı Duyarlılık' reaksiyonudur. Hasta, bakterinin antijenlerine karşı bolca IgG antikoru üretir. Kanda birleşen bu 'Antijen-Antikor İmmün Kompleksleri', kan akımıyla böbreğe gelir ve glomerülün süzgecine (özellikle subepitelyal alana) takılıp çökerler (Lumpy-bumpy görünümü). Bu kompleksler orada kompleman sistemini (C3'ü) şiddetle aktive eder. Olay yerine gelen nötrofiller, kompleksleri yok edeyim derken kendi böbrek glomerüllerimizi eriterek hematüri ve nefrit tablosunu yaratır. (Bu nedenle hastanın kanında C3 düzeyi DÜŞÜK bulunur)."
+},
+{
+"id": 999,
+"ders": "Mikrobiyoloji",
+"konu": "Bakteriyoloji",
+"diff": 4,
+"q": "Uzun süredir yoğun bakımda yatan ve geniş spektrumlu karbapenem (antibiyotik) tedavisi alan hastada; idrar yolu enfeksiyonu gelişiyor ve kültürde Gram-negatif, laktoz fermente EDEMEYEN, oksidaz NEGATİF ve oldukça dirençli kokobasiller (Acinetobacter baumannii) ürüyor. Bu fırsatçı hastane patojeninin, piyasadaki neredeyse tüm beta-laktam antibiyotiklere (karbapenemler dahil) bu kadar hızlı direnç geliştirebilmesi, hücre zarındaki HANGİ ilacı-dışarı-atan savunma sistemini (veya enzim genini) diğer bakterilerden plazmid aracılığıyla hızla bünyesine katmasına bağlanır?",
+"options": [
+"Efflux (Dışa-atım) Pompalarının (Örn: AdeABC) ve Metallo-beta-laktamaz genlerinin (Örn: NDM-1, OXA) aşırı ekspresyonu",
+"Ribozom 50S alt birimindeki metilasyon değişimi",
+"Ergosterol sentezinin durdurulması",
+"Siderofor üretiminin durdurulması",
+"Miykolik asit sentez genlerinin kromozoma entegrasyonu"
+],
+"correct": 0,
+"exp": "Acinetobacter baumannii ('Iraqibacter'), yoğun bakımların en belalı ve çoklu ilaca dirençli (MDR) patojenlerinden biridir. Toprak ve su kaynaklıdır. Onu bu kadar korkutucu yapan şey, genetik bir 'çöp tenekesi' gibi etraftaki tüm direnç genlerini (plazmidleri) hızla toplayabilmesidir. Karbapenem (en güçlü antibiyotik) direnci genellikle iki yolla olur: 1) İlacı hücre içine girdiği an bir tulumba gibi geri dışarı atan devasa 'Efflux (Dışa-atım) Pompaları'. 2) İlacın beta-laktam halkasını parçalayan 'Karbapenemaz (Örn: OXA serisi) ve Metallo-beta-laktamaz (NDM, VIM)' enzimleri. Bu bakteri her iki silaha da mükemmel bir şekilde sahiptir ve tedavisi bazen sadece toksik olan Kolistin ile yapılabilir."
+},
+{
+"id": 1000,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "Herpes Simplex Virüs (HSV-1) enfeksiyonlarında altın standart tedavi olarak kullanılan Asiklovir, viral DNA sentezini (zincir uzamasını) durduran bir nükleozid analoğudur. Ancak laboratuvarda izole edilen bazı HSV suşlarında, Asiklovir'in hücre içine girmesine rağmen ilacın aktif (üç fosfatlı) forma dönüşemediği ve virüsün çoğalmaya devam ettiği (Asiklovir Direnci) saptanıyor. Virüsün bu ölümcül ilacı etkisiz kılmak için genetik olarak sildiği (veya mutasyona uğrattığı) ve ilacın İLK fosforilasyon adımını yapan viral enzim aşağıdakilerden hangisidir?",
+"options": [
+"Viral DNA Polimeraz",
+"Viral Proteaz",
+"Viral Timidin Kinaz (TK)",
+"Revers Transkriptaz",
+"İntegraz"
+],
+"correct": 2,
+"exp": "Asiklovir, inaktif bir ön ilaçtır (prodrug). İnsan hücresine zarar vermemesinin sırrı; aktifleşebilmesi için mutlaka herpes virüsüne ait spesifik bir enzime ihtiyaç duymasıdır. Bu enzim 'Viral Timidin Kinaz (TK)'dır. Asiklovir hücreye girdiğinde, sadece virüs varsa viral TK gelir ve ilaca ilk fosfatı takar (Monofosfat). Sonraki iki fosfatı insan hücre enzimleri takar ve aktifleşen Asiklovir Trifosfat gidip viral DNA'yı kilitler. Virüsler de zekidir; Asiklovir'e direnç geliştirmek istediklerinde, kendi genetiklerindeki bu 'Timidin Kinaz' enzimini silerler (TK-negatif mutantlar). TK enzimi olmayınca Asiklovir asla fosforile olamaz (aktifleşemez) ve virüs rahatça çoğalır. (Bu dirençli suşlarda, fosforilasyona ihtiyaç duymayan Foskarnet kullanılır)."
+},
+{
+"id": 1001,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 5,
+"q": "Kronik Hepatit C Virüsü (HCV) enfeksiyonu olan hastada, virüsün bağışıklık sistemi tarafından tamamen temizlenememesinin ve etkili bir aşı geliştirilememesinin temel nedeni, virüsün dış kılıf glikoproteinlerinde (E1 ve E2) sürekli olarak antijenik varyasyon (mutasyon) yapmasıdır. HCV'nin zarf genlerindeki bu yüksek mutasyon hızının (Hiperdeğişken bölgeler) ASIL moleküler nedeni, virüsün genetik materyalini çoğaltırken kullandığı HANGİ enzimin hataları düzeltebilme (3'-5' eksonükleaz / proofreading) yeteneğinden tamamen yoksun olmasıdır?",
+"options": [
+"DNA-bağımlı DNA polimeraz",
+"RNA-bağımlı RNA polimeraz",
+"Revers Transkriptaz (RNA-bağımlı DNA polimeraz)",
+"Viral Proteaz",
+"Viral Helikaz"
+],
+"correct": 1,
+"exp": "Hepatit C Virüsü (HCV), Flaviviridae ailesinden pozitif sarmallı bir RNA virüsüdür. Genomunu çoğaltmak için kendi 'RNA-bağımlı RNA Polimeraz' enzimini kullanır. Bu enzimin en büyük (ve virüs için en avantajlı) kusuru; yazı yazarken yaptığı harf hatalarını dönüp silme ve düzeltme (Proofreading / 3'-5' eksonükleaz) yeteneğinin OLMAMASIDIR. Polimeraz durmaksızın hata yapar. Bu hatalar özellikle virüsün zarf proteinlerini (E1, E2) kodlayan 'Hiperdeğişken Bölgelerde (HVR)' birikir. Hastanın vücudunda aynı gün içinde binlerce farklı kılıfa sahip HCV mutantı (Quasispecies) oluşur. Bağışıklık sistemi (veya aşı) bir kılıfı tanıyıp yok edene kadar, virüs çoktan yeni bir kılıfa bürünmüş olur ve enfeksiyon kronikleşir."
+},
+{
+"id": 1002,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "On iki yaşında erkek çocuk, okul başarısında aylar içinde gelişen dramatik düşüş, kişilik değişiklikleri, ataksi ve miyoklonik sıçramalar tablosuyla (Subakut Sklerozan Panensefalit - SSPE) komaya giriyor. Hastanın bebekliğinde (aşısız döneminde) şiddetli bir Kızamık (Measles) enfeksiyonu geçirdiği öğreniliyor. Kızamık virüsünün yıllar sonra beyni yok eden bu yavaş virüs enfeksiyonunu yaratması; virüsün beyin hücreleri içinde hücre zarına çıkıp (tomurcuklanıp) kana karışmasını (ve antikorlarca yok edilmesini) engelleyen HANGİ spesifik viral proteinin genetik olarak mutasyona uğrayıp (bozulup) virüsü hücre içine hapsetmesine dayanır?",
+"options": [
+"Hemaglutinin (H) proteini",
+"Füzyon (F) proteini",
+"Matriks (M) proteini",
+"RNA polimeraz (L) proteini",
+"Nükleokapsid (N) proteini"
+],
+"correct": 2,
+"exp": "SSPE, geçirilmiş Kızamık (Paramiksovirüs) enfeksiyonundan 7-10 yıl sonra ortaya çıkan, beyni yavaş yavaş eriten %100 ölümcül bir geç komplikasyondur. Normalde kızamık virüsü hücreye girer, çoğalır, etrafına kılıf sarıp dışarı fırlar. Ancak SSPE vakalarında, virüsün iç iskeletini kılıfa bağlayan ve virüsün hücreden 'Tomurcuklanarak Çıkmasını' sağlayan 'Matriks (M) Proteini' mutasyona uğrar (üretilemez). Virüs, hücre dışına ÇIKAMAZ. Dışarı çıkamadığı için kandaki antikorlar onu bulup yok edemez. İçeride hapsolan bu mutant (defektif) virüs, sadece komşu beyin hücrelerinin zarlarını kaynaştırarak (hücreden hücreye) yavaş yavaş tüm beyni kaplar ve yıllar içinde SSPE tablosunu yaratır."
+},
+{
+"id": 1003,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "Kronik Hepatit B (HBV) taşıyıcısı olan bir hastanın takiplerinde, karaciğer sağ lobunda alfa-fetoprotein (AFP) üreten büyük bir kitle (Hepatoselüler Karsinom - HCC) saptanıyor. HBV'nin siroz (kronik inflamasyon) yapmadan bile doğrudan karaciğer hücresini kanserleştirebilmesi, virüsün kendi genomunda kodladığı ve insan p53 tümör süpresör proteinine bağlanarak onu inaktive eden (ve apoptozu bloke eden) HANGİ onkojenik viral proteinin eseridir?",
+"options": [
+"Hepatit B Yüzey Antijeni (HBsAg)",
+"Hepatit B Kor Antijeni (HBcAg)",
+"Hepatit B e Antijeni (HBeAg)",
+"Hepatit B x Proteini (HBx)",
+"Viral Revers Transkriptaz"
+],
+"correct": 3,
+"exp": "Hepatit B Virüsü (HBV), DNA virüsleri arasında karaciğer kanseri (HCC) yapan en güçlü etkendir. Kanserleşmenin iki yolu vardır: 1) Yıllar süren siroz/hücre yenilenmesi (Dolaylı). 2) Çok daha tehlikelisi, HBV'nin DOĞRUDAN (siroz olmadan da) kanser yapabilmesidir. Bunun nedeni virüsün genomunda bulunan 'HBx (Hepatit B x geni)' proteinidir. HBx proteini bir transkripsiyonel aktivatördür. Sitoplazmada ve çekirdekte gezinerek, hücrenin en büyük freni ve genomun koruyucusu olan 'p53' proteinine bağlanır ve onu inaktive eder. p53 çalışmayınca, hücre hasarlı DNA'sını tamir etmeden frensizce bölünmeye başlar ve kansere dönüşür."
+},
+{
+"id": 1004,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "AIDS hastasında gelişen Sitomegalovirüs (CMV) retiniti tedavisinde intravenöz Gansiklovir başlanıyor. Asiklovir'e çok benzemesine rağmen Gansiklovir'in CMV'ye karşı çok daha güçlü olmasının ve sadece enfekte hücrede aktifleşmesinin nedeni, virüsün ürettiği HANGİ spesifik protein kinaz enzimi tarafından ilk fosforilasyon işleminin (aktivasyonun) gerçekleştirilmesidir?",
+"options": [
+"Timidin Kinaz (TK)",
+"UL97 Kinaz",
+"Revers Transkriptaz",
+"Viral Proteaz",
+"RNA polimeraz"
+],
+"correct": 1,
+"exp": "CMV (HHV-5), herpes ailesinden bir virüstür. Herpes simpleks'te (HSV) kullanılan Asiklovir, CMV'de pek işe yaramaz. Çünkü CMV'nin genetiğinde Asiklovir'i aktifleyen 'Viral Timidin Kinaz (TK)' enzimi YOKTUR. Bu yüzden bilim insanları CMV için 'Gansiklovir'i geliştirmiştir. Gansiklovir de inaktif bir ön ilaçtır, ancak onu aktifleyen (ilk fosfatı takan) enzim farklıdır. CMV virüsü, kendi içinde 'UL97 Kinaz' adı verilen çok spesifik bir enzim üretir. Gansiklovir hücreye girdiğinde bu UL97 Kinaz tarafından fosforile edilir ve viral DNA polimerazı durduracak ölümcül bir silaha dönüşür. Virüs bu ilaca direnç geliştirmek isterse, UL97 genini mutasyona uğratır (UL97 mutantları)."
+},
+{
+"id": 1005,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "Orak Hücreli Anemisi (Sickle Cell) olan bir çocukta, geçirdiği hafif bir ateşli döküntü hastalığının ardından aniden kan hemoglobin değeri 4 g/dL'ye (Aplastik Kriz) düşüyor. Kemik iliğinde eritrosit öncüllerinin tamamen kaybolduğu görülüyor. Parvovirüs B19 enfeksiyonu tanısı alan bu hastada, virüsün vücuttaki diğer dokuları bırakıp sadece kemik iliğindeki eritrosit öncüllerini (eritroblastları) yok etmesi, bu hücrelerin yüzeyinde bulunan HANGİ kan grubu antijenini 'Viral Reseptör' olarak kullanmasının doğrudan bir sonucudur?",
+"options": [
+"Rh Antijeni",
+"Duffy Antijeni",
+"P Antijeni (Globosid)",
+"Kell Antijeni",
+"ABO Antijenleri"
+],
+"correct": 2,
+"exp": "Parvovirüs B19, çocuklarda Beşinci Hastalık (Tokatlanmış yanak) yapan tek sarmallı DNA virüsüdür. Virüsün en büyük hobisi, kemik iliğinde yeni alyuvarlar üreten 'Eritroblast (Eritroid Progenitör)' hücrelerine girmektir. Virüs bu hücrelere girmek için, hücre yüzeyindeki 'P Antijeni (Globosid)'ni kendisine reseptör olarak seçmiştir. P antijeni sadece eritroid seride bulunur, bu yüzden virüs sadece kemik iliğini vurur. Sağlıklı bir çocukta kemik iliği birkaç gün durur ve sonra toparlar (anlaşılmaz). ANCAK Orak Hücreli Anemi gibi alyuvarların sadece 10-20 gün yaşayabildiği kronik hemolitik anemili bir hastada, kemik iliğinin (üretimin) virüs yüzünden 1 hafta durması bile kandaki tüm alyuvarların sıfırlanmasına ve ölümcül 'Aplastik Kriz' tablosuna yol açar."
+},
+{
+"id": 1006,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 5,
+"q": "Dışkı-ağız yoluyla bulaşan Poliovirüs (Pikornavirüs ailesi), insan bağırsak ve sinir hücrelerine girdiğinde, kendi viral RNA'sını ribozomlara okutabilmek (kendi proteinlerini ürettirebilmek) için çok acımasız bir taktik kullanır. Virüs, hücresel eIF-4G proteinini parçalayarak konağın (insanın) kendi 'Cap-bağımlı (şapka bağımlı)' protein sentezini tamamen durdurur. İnsan mRNA'ları okunamazken, Poliovirüs kendi RNA'sının ribozom tarafından okunmasını (Cap/şapka olmadan) HANGİ spesifik viral RNA dizilimi sayesinde başarır?",
+"options": [
+"Poli-A kuyruğu (Poly-A tail)",
+"Lokalize TATA kutusu",
+"IRES (Internal Ribosome Entry Site - Dahili Ribozoma Giriş Bölgesi)",
+"Viral Helikaz sinyali",
+"LTR (Long Terminal Repeat)"
+],
+"correct": 2,
+"exp": "Poliovirüs, moleküler biyolojinin korsanıdır. İnsan hücrelerindeki mRNA'ların bir ucunda (5' ucunda) 'Cap (Şapka)' bulunur. Ribozom bu şapkayı (eIF-4G yardımıyla) tutarak protein üretir. Poliovirüs hücreye girer girmez, eIF-4G'yi keser atar. İnsan hücresi kendi proteinlerini üretemez hale gelir (Host shut-off). Peki Poliovirüs'ün RNA'sı şapkasız (Cap'siz) olmasına rağmen ribozoma nasıl tutunur? Viral RNA'nın ucunda şapka yerine üç boyutlu bir saç örgüsü gibi katlanmış 'IRES (Internal Ribosome Entry Site)' bölgesi vardır. Ribozomlar şapka aramak yerine doğrudan bu IRES bölgesine kilitlenirler. Böylece virüs, hücrenin tüm protein üretim fabrikasını tek başına ve frensizce sadece kendi virüslerini üretmek için gasp etmiş olur."
+},
+{
+"id": 1007,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "Endemik bir bölgede Dengue Virüsü (Flaviviridae) enfeksiyonu (Kemik kıran humması) geçiren ve iyileşen hasta, 2 yıl sonra virüsün farklı bir serotipiyle tekrar enfekte oluyor. İkinci enfeksiyonda hastalık basit bir ateş yerine, masif kanama, damar sızıntısı ve ölümcül Dengue Şok Sendromu'na (Dengue Hemorrhagic Fever) dönüşüyor. Bu paradoksal kötüleşmenin (ikinci enfeksiyonun daha ağır geçmesinin) asıl nedeni, ilk enfeksiyonda üretilen ve virüsü NÖTRALİZE EDEMEYEN antikorların, virüsü Fc reseptörleri aracılığıyla HANGİ hücrenin İÇİNE sokarak bir Truva atı gibi çoğalmasını kolaylaştırmasıdır?",
+"options": [
+"B Lenfositler",
+"Nötrofiller",
+"Eozinofiller",
+"Makrofajlar ve Monositler",
+"Eritrositler"
+],
+"correct": 3,
+"exp": "Dengue virüsünün 4 farklı serotipi (Tipi) vardır. Bir tipi geçirdiğinizde o tipe karşı ömür boyu, diğer tiplere karşı ise kısa süreli (çapraz) antikor üretirsiniz. Yıllar sonra FARKLI bir Dengue tipi vücuda girdiğinde bağışıklık sistemi korkunç bir hata yapar: 'Antikora Bağımlı Güçlenme (Antibody-Dependent Enhancement - ADE)'. Eski enfeksiyondan kalan antikorlar yeni virüse yapışır ama onu 'Etkisiz Hale Getiremez (Nötralize edemez)'. Üzeri bu zayıf antikorlarla kaplanmış virüsü gören koca 'Makrofajlar', virüsü (Fc reseptörleri aracılığıyla) afiyetle yutarlar. Virüs tam da bunu istemektedir! Makrofajın içinde ölmeyen virüs, orayı devasa bir üretim fabrikası olarak kullanır. Makrofajlar parçalanırken kana devasa sitokin (şok) ve damar patlatan enzimler yayılır. Bu yüzden Dengue aşısı üretmek (ADE riski yüzünden) çok zordur."
+},
+{
+"id": 1008,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "Afrika'da endemik Burkitt Lenfoma vakalarında tümör hücrelerinin çekirdeğinde Epstein-Barr Virüs (EBV) genomu (epizomal formda) saptanmaktadır. EBV, enfekte ettiği B lenfositlerini lize edip öldürmek yerine, onları 'Ölümsüzleştirerek (İmmortalizasyon)' sürekli çoğalmaya zorlar. Virüsün B lenfositlerinde sanki sürekli bir T hücresi (CD40) yardımı varmış gibi sahte bir hayatta kalma sinyali yaratmasını sağlayan ve doğrudan tümörleşmeyi tetikleyen spesifik viral latent membran proteini aşağıdakilerden hangisidir?",
+"options": [
+"VCA (Viral Kapsid Antijeni)",
+"EA (Erken Antijen)",
+"LMP-1 (Latent Membrane Protein 1)",
+"EBNA-1 (Epstein-Barr Nuclear Antigen 1)",
+"EBER (Epstein-Barr Encoded RNA)"
+],
+"correct": 2,
+"exp": "Epstein-Barr Virüs (EBV), B lenfositlerini (CD21 üzerinden) enfekte eder ve onları bir kanser fabrikasına (ölümsüz hücrelere) çevirme yeteneğine sahip en güçlü onkojenik virüslerden biridir (Burkitt lenfoma, Hodgkin lenfoma yapar). Virüs uykuya yattığı (latent) B hücresinde 'LMP-1' adlı bir protein üretir. Bu LMP-1 proteini, B hücresinin zarındaki 'CD40' reseptörünü birebir taklit eden bir sahtekardır. Normalde B hücresinin yaşamak için T hücresinden (CD40L ile) onay alması gerekir. LMP-1, hücrenin içine sanki sürekli bir T hücresi onayı geliyormuş gibi (sürekli aktif bir CD40 gibi) sinyal yollar. Bu sahte sinyalle B hücresinin NF-kB yolağı açılır, apoptozdan (Bcl-2 ile) kurtulur ve hücre durmaksızın çoğalarak lenfomaya dönüşür."
+},
+{
+"id": 1009,
+"ders": "Mikrobiyoloji",
+"konu": "Viroloji",
+"diff": 4,
+"q": "İnsan İmmünyetmezlik Virüsü (HIV) ile yeni enfekte olan bir hastanın kanında, hastalığı ilk bulaştıran suşun genellikle Makrofajları hedef alan (M-tropik) ve CCR5 ko-reseptörünü kullanan bir virüs olduğu görülür. Ancak hastalık ilerledikçe ve AIDS evresine (CD4 yıkımına) yaklaşıldıkça, virüsün zarf geninde (env) bir mutasyon (Tropizm Değişikliği / Tropism Switch) meydana gelir. Virüsün artık makrofajları bırakıp sadece ve acımasızca Naif T hücrelerini enfekte edip onları hızla öldürmeye başlaması, virüsün HANGİ yeni ko-reseptöre bağlanma yeteneği kazanmasının sonucudur?",
+"options": [
+"CXCR4",
+"CD8",
+"CCR5",
+"TLR-4",
+"CD20"
+],
+"correct": 0,
+"exp": "HIV enfeksiyonunun kliniğini belirleyen en kritik olaylardan biri 'Tropizm Değişikliğidir (Ko-reseptör Switch)'. Hastalığın başlarında (bulaş evresinde) virüs R5 (M-tropik) karakterdedir; CD4 ve 'CCR5' ko-reseptörüne bağlanır. Makrofajlara girer ve yavaş çoğalır (Kuluçka dönemi). Yıllar sonra, virüsün gp120 (env) proteininde bir mutasyon gelişir. Virüs artık X4 (T-tropik) karakter kazanır. Hedefi değişmiştir: Artık CD4 ve 'CXCR4' ko-reseptörüne bağlanır. CXCR4, sadece naif (genç) T hücrelerinde bulunur. Virüs bu yeni kapıyı bulduğunda, kandaki tüm T hücrelerine aynı anda saldırarak onları lize eder (patlatır) ve CD4 sayısı aylar içinde dibe vurarak (AIDS evresi) hastanın tüm bağışıklığını çökertir."
+},
+  {
+    "id": 1010,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 4,
+    "q": "Lise güreş takımındaki bir öğrencide, gövdesinde kaşıntılı, kenarları kabarık ve kırmızı, ortası soluk halka şeklinde (Ringworm) lezyonlar (Tinea corporis) gelişiyor. Deri kazıntısının KOH incelemesinde dallanan septalı hifler saptanıyor. Trichophyton rubrum gibi dermatofit mantarlarının enfeksiyon oluşturmasına rağmen derinin 'canlı (hücresel)' alt katmanlarına, kana veya iç organlara ASLA yayılamamasının asıl fizyolojik (ve beslenme) nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Kan dolaşımındaki yüksek oksijen basıncına dayanamamaları",
+      "Sadece 30°C'nin altındaki cilt yüzeyi sıcaklıklarında çoğalabilmeleri",
+      "Mantarın hayatta kalabilmesi için 'SADECE ÖLÜ DOKUDA (stratum korneum, tırnak, saç)' bulunan spesifik bir yapısal proteini parçalamaya (Keratinofilik) muhtaç olması",
+      "Dermisteki makrofajlar tarafından anında yok edilmeleri",
+      "Deri altı lenfatik kanalların mantarın hif boyutundan daha dar olması"
+    ],
+    "correct": 2,
+    "exp": "Dermatofitler (Microsporum, Trichophyton, Epidermophyton), saç, deri ve tırnakta 'Tinea (Mantar)' enfeksiyonu yapan küf mantarlarıdır. Bu mantarların en büyük özelliği 'Yüzeyel' olmalarıdır. Asla kan dolaşımına veya canlı dokulara (dermise) inmezler. Neden? Çünkü dermatofitler 'Keratinofilik'tir; yani menülerinde sindirebildikleri TEK ŞEY, derinin en üstündeki ölü tabakada (stratum corneum) bulunan 'KERATİN' proteinidir. Mantar bu proteini parçalayan (keratinaz) enzimler üretir. Canlı alt dokulara indiği an etrafta keratin kalmaz ve mantar açlıktan ilerleyemez. O kaşıntı ve kızarıklık, mantarın kana karışmasından değil, yıkım ürünlerine karşı vücudun verdiği alerjik tepkiden kaynaklanır."
+  },
+  {
+    "id": 1011,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 4,
+    "q": "Yaz aylarında denize giren 20 yaşındaki erkek hastanın sırtında ve göğsünde, güneşte bronzlaşmayan (etrafına göre açık renkli kalan) hipopigmente maküler lezyonlar ortaya çıkıyor. Lezyonlardan alınan kazıntının KOH damlatılarak incelenmesinde 'köfte-spagetti' görünümünde kısa hifler ve maya hücreleri (Malassezia furfur) saptanıyor. Pityriasis (Tinea) versicolor tanısı alan bu hastada, lezyon bölgelerindeki derinin rengini kaybetmesi (hipopigmentasyon), mantarın lipid metabolizması sonucu ürettiği 'Azelaik Asit'in, melanositlerdeki HANGİ kritik enzimi inhibe etmesinin doğrudan sonucudur?",
+    "options": [
+      "Katalaz",
+      "Tirozinaz",
+      "Fenilalanin Hidroksilaz",
+      "Dopa Dekarboksilaz",
+      "Siklooksijenaz"
+    ],
+    "correct": 1,
+    "exp": "Malassezia furfur, normal cilt floramızda bulunan lipofilik (yağı seven) bir mayadır. Sıcak ve nemli havalarda aşırı çoğalarak Tinea Versicolor (Sırt/göğüste renk değişikliği) yapar. Mantar, derideki yağları (sebumu) sindirirken yan ürün olarak 'Azelaik Asit' (ve diğer dikarboksilik asitleri) üretir. Azelaik asit, deriye rengini veren melanini üreten melanositlerin içine sızar ve melanin sentezinin hız kısıtlayıcı enzimi olan 'Tirozinaz'ı inhibe eder. Tirozinaz çalışmayınca melanin üretilemez ve mantarın olduğu bölgeler güneşte bronzlaşamayarak beyaz/açık renkli (hipopigmente) kalır."
+  },
+  {
+    "id": 1012,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 4,
+    "q": "Yoğun bakımda geniş spektrumlu antibiyotik alan hastada kandidemi (kan dolaşımında Candida albicans) gelişiyor. Hastaya, mantar hücre duvarındaki Beta-(1,3)-D-glukan sentezini spesifik olarak bloke eden ekinokandin grubundan 'Kaspofungin' başlanıyor. İlacın mantar hücresinde yarattığı ölümcül (fungisidal) etkinin altında yatan ASIL fiziksel mekanizma aşağıdakilerden hangisidir?",
+    "options": [
+      "Hücre zarında toksik düzeyde skualen birikerek organelleri zehirlemesi",
+      "Ergosterol sentezinin durmasıyla hücre zarının akışkanlığının (fluidity) kaybolması",
+      "Hücre duvarı (kalkanı) zayıflayan mantarın, konağın (insanın) vücut sıvılarındaki osmotik basınca dayanamayarak şişip patlaması (Osmotik Lizis)",
+      "Mantar ribozomlarının parçalanmasıyla protein sentezinin anında durması",
+      "Mantarın DNA zincirine sahte nükleotid takılarak replikasyonun kilitlenmesi"
+    ],
+    "correct": 2,
+    "exp": "Ekinokandinler (Kaspofungin, Mikafungin), 'Mantarların Penisilinleri' olarak bilinirler. Azoller ve Amfoterisin B gibi 'hücre zarı'nı (ergosterolü) hedef ALMAZLAR. Hedefleri, mantarı dışarıdan bir beton gibi saran 'Hücre Duvarı'dır. Mantar hücre duvarının en sağlam iskelesi Beta-(1,3)-D-glukan polimerleridir. Kaspofungin bu glukanın sentezini durdurur. Duvarı (beton kalkanı) örülemeyen mantar hücresi çıplak bir zarla kalır. İnsan kanı ve doku sıvıları, mantarın içinden daha hipotonik/basınçlı bir ortam yarattığı için, su hızla mantarın içine dolar ve duvarı olmayan mantar hücresi bir balon gibi şişip patlar (Osmotik Lizis). Bu nedenle ekinokandinler çok güçlü fungisidal etkilidir."
+  },
+  {
+    "id": 1013,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 4,
+    "q": "Güneydoğu Amerika'da endemik olan ve doğada küf, insanda 'geniş tabanlı tomurcuklanan (broad-based budding)' mayalar şeklinde görülen Blastomyces dermatitidis enfeksiyonunda, hastada akciğer pnömonisi ve deride skuamöz hücreli karsinomu taklit eden verrüköz lezyonlar saptanıyor. Bu dimorfik mantarın, akciğerdeki alveoler makrofajların fagositozundan kurtulabilmesi ve bağışıklık sistemini susturabilmesi, hücre yüzeyinden HANGİ spesifik glikoproteini (tuzak/decoy olarak) ortama saçarak TNF-alfa salınımını baskılamasına dayanır?",
+    "options": [
+      "Galaktomannan",
+      "Glukuronoksilomannan",
+      "BAD-1 (WI-1) Glikoproteini",
+      "Kord Faktörü",
+      "Ergosterol peroksit"
+    ],
+    "correct": 2,
+    "exp": "Blastomyces dermatitidis, mikroskopta 'Geniş Tabanlı Tomurcuklanan' ve oldukça büyük (8-15 mikrometre) mayalar halinde görülür. Akciğer, kemik ve cilt tutulumu (kanser benzeri ülserler) yapar. B. dermatitidis'in bağışıklıktan kaçışındaki en büyük silahı yüzeyindeki 'BAD-1 (Blastomyces Adhesin-1 / eski adıyla WI-1)' glikoproteinidir. Mantar, makrofajların yaklaşmasını engellemek için bu BAD-1 proteinlerini vücudundan koparıp etrafa (kana/dokuya) bir sis bombası gibi saçar. Makrofajlar mantara gitmek yerine bu serbest BAD-1 proteinlerine bağlanırlar. Bu bağlanma makrofajı uyarmak yerine felç eder ve TNF-alfa üretimini baskılayarak mantarın güvenle dokuları istila etmesine olanak tanır."
+  },
+  {
+    "id": 1014,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 4,
+    "q": "AIDS hastasında (CD4 < 100) gelişen şiddetli menenjit tablosunda, BOS örneğinde Çini Mürekkebi ile etrafında geniş şeffaf bir kapsül bulunan mayalar (Cryptococcus neoformans) saptanıyor. Bu mantarın akciğerden girdikten sonra vücuttaki diğer organlar yerine SADECE 'Santral Sinir Sistemine (Beyne)' yerleşmeyi tercih etmesinin (nörotropizm) ASIL fizyolojik nedeni, beyin omurilik sıvısında bolca bulunan HANGİ molekülü kullanarak kendini koruyucu bir 'Melanin' zırhıyla kaplayabilmesidir?",
+    "options": [
+      "Glukoz",
+      "Katekolaminler (Dopamin, Epinefrin vb.)",
+      "Serotonin",
+      "Miyelin kılıf lipidleri",
+      "GABA (Gama aminobütirik asit)"
+    ],
+    "correct": 1,
+    "exp": "Cryptococcus neoformans, doğada güvercin dışkısında bulunur ve akciğerden solunur. Ancak bağışıklığı düşen hastalarda %90 oranında 'Menenjit' (Beyin) yapar. Bu nörotropizmin (beyni sevmesinin) çok ilginç bir biyokimyasal nedeni vardır. C. neoformans'ın sahip olduğu 'Fenoloksidaz (Lakkaz)' enzimi, ortamdaki 'Katekolaminleri (Dopamin, Epinefrin)' alıp simsiyah bir zırh olan 'Melanin'e çevirir. İnsan vücudunda dopamin ve katekolaminlerin en yoğun olduğu yer Santral Sinir Sistemidir. Mantar beyne ulaştığında bu bol hammaddeyi kullanarak kendini anında melaninle kaplar. Melanin, makrofajların ürettiği oksijen radikallerini emerek mantarı ölümden koruyan mükemmel bir çelik yelek görevi görür. (Bu yüzden C. neoformans, kuş yemi agarında kahverengi/siyah koloniler yapar)."
+  },
+  {
+    "id": 1015,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 5,
+    "q": "Kontrolsüz Tip 1 Diyabeti olan ve Diyabetik Ketoasidoz (DKA) komasıyla getirilen hastanın damağında ve burun boşluğunda hızla ilerleyen, simsiyah nekrotik bir yara (eskar) saptanıyor. Biyopside; kan damarlarını işgal eden, septasız (bölmesiz) ve 90 derece dik açıyla dallanan geniş hifler (Rhizopus / Mucor) görülüyor. Mukormikozis etkenlerinin özellikle 'Ketoasidoz' komasındaki hastaları ışık hızıyla enfekte edebilmesinin asıl nedeni, kanda düşen pH'ın (asidozun) Transferrin molekülünden HANGİ esansiyel büyüme faktörünü serbest bırakarak mantarı beslemesidir?",
+    "options": [
+      "Bakır (Cu+2)",
+      "Çinko (Zn+2)",
+      "Magnezyum (Mg+2)",
+      "Serbest Demir (Fe+3)",
+      "Kalsiyum (Ca+2)"
+    ],
+    "correct": 3,
+    "exp": "Mukormikoz (Zygomycosis), immünsüpresif veya Ketoasidotik Diyabetik hastalarda görülen, damarları delerek (anjiyoinvazyon) dokuyu çürüten, ölümcül bir mantar enfeksiyonudur. Rhizopus ve Mucor türleri (septasız, 90 derece dik açıyla dallanan hifler) yaşamak ve çoğalmak için devasa miktarda 'DEMİR'e ihtiyaç duyar. Normalde kanımızdaki demir Transferrine sıkıca bağlıdır. ANCAK Ketoasidoz (DKA) komasında kan pH'sı tehlikeli boyutlarda düşer (Asidoz). Asidik ortam, Transferrin'in yapısını gevşetir ve demiri zorla serbest bıraktırır. Kanda aniden serbest demir (Fe+3) fırtınası oluşur. Mantar bu serbest demiri ve ortamdaki bol glukozu/ketonu kullanarak saatler içinde hastanın yüzünü, damağını ve beynini eriterek (Rinoserebral mukormikoz) simsiyah bir ölü doku (eskar) bırakır."
+  },
+  {
+    "id": 1016,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 4,
+    "q": "Amerika'nın güneybatısındaki çöllerden (San Joaquin Vadisi) kalkan toz bulutunu soluyan bir gezginde; ateş, öksürük, eklem ağrısı ve bacaklarda eritema nodosum gelişiyor. Vadi Humması (Coccidioidomycosis) tanısı alan hastanın akciğer biyopsisinde, Coccidioides immitis'in insanda oluşturduğu 'içi yüzlerce endospor dolu devasa Sferüller (kese)' saptanıyor. Bu dimorfik mantarın, akciğerdeki alveoler makrofajların saldırısından tamamen kurtulmasını (fagosite edilememesini) sağlayan en büyük fiziksel avantajı aşağıdakilerden hangisidir?",
+    "options": [
+      "Sferüllerin makrofajları öldüren bir hemolizin salgılaması",
+      "Sferül boyutunun (20-60 mikrometre) bir makrofajın içine sığmayacak kadar devasa olması",
+      "Sferül zarının makrofaj Fc reseptörlerini bloke etmesi",
+      "Endosporların lizozom enzimlerini alkalileştirmesi",
+      "Mantarın sadece miyelinsiz sinir kılıfları içinde saklanması"
+    ],
+    "correct": 1,
+    "exp": "Coccidioides immitis, ABD çölleri/Meksika bölgesine özgü, dimorfik bir mantardır. Doğada (toprakta) artrosporları rüzgarla uçuşur. İnsan bunu soluduğunda, akciğerin ısısıyla (37 derece) mantar şekil değiştirir ve 'Sferül (İçi endospor dolu kese)' adını alır. Coccidioides'in makrofajlardan kaçış mekanizması çok basittir: BOYUT. Bir sferül o kadar büyür ki (20-60 mikrometre), zavallı bir makrofajın (15-20 mikrometre) onu tek parça halinde yutabilmesi fiziksel olarak İMKANSIZDIR. Makrofaj onu yutmaya çalışırken, dev sferül patlar ve içinden çıkan yüzlerce yeni endospor etrafa yayılarak akciğerde yeni sferüller oluşturur. Hastalık genellikle kendini sınırlar, ancak immünsüprese bireylerde beyne ve kemiklere yayılabilir."
+  },
+  {
+    "id": 1017,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 4,
+    "q": "Kötü koşullarda depolanmış ve küflenmiş fıstık/mısır yiyen bir grup insanda, ilerleyen yıllarda Hepatoselüler Karsinom (Karaciğer Kanseri) insidansında dramatik bir artış saptanıyor. Küflü gıdalarda üreyen Aspergillus flavus'un ürettiği 'Aflatoksin B1'in karaciğeri kanserleştirmesi, hepatosit çekirdeğindeki HANGİ tümör süpresör genin 249. kodonunda geri dönüşümsüz bir G->T (Guanin'den Timin'e) transversiyon mutasyonu yaratmasına dayanır?",
+    "options": [
+      "Retinoblastom (Rb) geni",
+      "p53 (TP53) geni",
+      "APC geni",
+      "BRCA1 geni",
+      "WT1 geni"
+    ],
+    "correct": 1,
+    "exp": "Aspergillus flavus, nemli/sıcak depolarda tahıl ve fıstıkların üzerinde üreyen bir küf mantarıdır. Ürettiği toksin olan 'Aflatoksin B1', bilinen en güçlü biyolojik karsinojenlerden biridir. Hasta bu küflü gıdayı yediğinde, aflatoksin karaciğere gider ve sitokrom enzimleri tarafından çok daha toksik bir epokside çevrilir. Bu toksik molekül, doğrudan hücre çekirdeğine dalarak 'Genomun Koruyucusu' olan 'p53 (TP53)' genini hedefler. Tam olarak 249. kodonda Guanin nükleotidini Timin'e çevirir. p53 freni patlayan hepatositler (özellikle hastada aynı zamanda Hepatit B enfeksiyonu da varsa) hızla bölünüp ölümsüzleşerek Hepatoselüler Karsinom'a (HCC) dönüşür."
+  },
+  {
+    "id": 1018,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Sıtma (Malarya) endemik bir bölgeden dönen hastada, 48 saatte bir tekrarlayan şiddetli ateş atakları saptanıyor. Kan yaymasında eritrositlerin içinde Plasmodium vivax izole ediliyor ve hastaya kan şizontosidi olan 'Klorokin' tedavisi başlanıyor. Hastanın ateşi düşüyor ve kandan parazit temizleniyor. Ancak Klorokin, parazitin eritrosit içinde hemoglobin sindirirken oluşturduğu HANGİ toksik yan ürünün 'Hemozoin' kristallerine (sıtma pigmenti) dönüşerek zararsızlaşmasını engelleyerek paraziti kendi zehriyle öldürür?",
+    "options": [
+      "Serbest Globin zincirleri",
+      "Ferriprotoporfirin IX (Serbest Hem / Heme)",
+      "Bilirubin glukuronid",
+      "Methemoglobin",
+      "Biliverdin"
+    ],
+    "correct": 1,
+    "exp": "Klorokin'in sıtma parazitini (Plasmodium) öldürme mekanizması çok zarif bir biyokimyasal tuzaktır. Parazit alyuvarın (eritrositin) içine girdiğinde, yaşamak için hemoglobini afiyetle yer. Hemoglobini parçaladığında aminoasitleri kullanır, ancak geriye 'Serbest Hem (Ferriprotoporfirin IX)' kalır. Bu serbest Hem molekülü parazit için ölümcül bir zehirdir. Parazit zehirlenmemek için kendi ürettiği bir enzimle bu serbest Hem moleküllerini birbirine yapıştırarak zararsız, kristal yapılı 'Hemozoin'e (sıtma pigmenti) çevirir. Klorokin ilacı işte bu 'kristalleşme/polimerizasyon' işlemini BLOKE EDER. Parazit hemozoini üretemez, kendi yediği hemoglobinin zehri olan 'Serbest Hem' içinde boğularak kendi kendini öldürür. (Dirençli P. falciparum ise Klorokini bir pompayla dışarı atarak bundan kurtulur)."
+  },
+  {
+    "id": 1019,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Bağışıklığı baskılanmış (ciddi kortikosteroid kullanan) 50 yaşındaki astım hastasında; karın ağrısı, Gram-negatif bakteri sepsisi, pnömoni ve beyin tutulumuyla seyreden devasa bir paraziter 'Hiperenfeksiyon Sendromu' gelişiyor. Dışkıda yumurta yerine 'rhabditiform larvalar' saptanıyor. Strongyloides stercoralis tanısı alan bu hastada, enfeksiyonun topraktan tekrar bulaşmasına gerek kalmadan hastanın kendi vücudunda milyonlarca parazit üreterek onu öldürmesi (Otoinfeksiyon); bağırsak lümenindeki (veya perianal derideki) rhabditiform larvaların HANGİ enfeksiyöz forma dönüşüp bağırsak duvarını delerek kana karışmasıyla gerçekleşir?",
+    "options": [
+      "Filariform (ipliksi) larva",
+      "Metaserker (Metacercariae)",
+      "Proglottid",
+      "Kist hidatik skoleksi",
+      "Mikrofilaria"
+    ],
+    "correct": 0,
+    "exp": "Strongyloides stercoralis, insan bağırsağına deriden (çıplak ayakla) delerek giren bir nematodtur (yuvarlak solucan). En büyük özelliği, hayat döngüsünü tamamlamak için toprağa DÜŞMEK ZORUNDA OLMAMASIDIR. Diğer kurtlar (Ascaris, Kancalı kurt) yumurtalarını dışkıyla atar; Strongyloides ise yumurtasını bağırsağın içine bırakır ve yumurta bağırsağın içindeyken çatlar ('Rhabditiform larva' çıkar). Sağlıklı insanda bu larvalar dışkıyla atılır. Ancak Kortizon kullananlarda (HTLV-1 hastalarında vb.) bağışıklık çökünce, bu larvalar dışarı çıkmaya üşenir. Bağırsak içindeyken veya tam anüsten çıkarken şekil değiştirip iğne gibi delici olan 'Filariform Larva'ya dönüşürler. Filariform larvalar bağırsak duvarını (veya makat derisini) delip anında kana geçer, tüm organları istila eder (Otoinfeksiyon / Hiperenfeksiyon). Bağırsak duvarını deldikleri için bağırsaktaki E. coli'leri de kana karıştırarak Gram-negatif Sepsise neden olurlar."
+  },
+  {
+    "id": 1020,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 5,
+    "q": "Afrika Uyku Hastalığı (African Trypanosomiasis) nedeniyle Çeçe sineği tarafından ısırılan hastada, aylar süren döngüsel (dalgalı) ateş atakları ve sonunda santral sinir sistemi tutulumu (somnolans/koma) saptanıyor. Hastanın kanında bolca Trypanosoma brucei izole ediliyor. Hastanın bağışıklık sistemi her ateş atağında parazite karşı antikor üretmesine rağmen, parazitin bir hafta sonra kanda tekrar milyonlarca sayıya ulaşması (Dalgalı Ateş / Undulant fever); parazitin kanda yüzerken kendi yüzeyindeki HANGİ antijenik yapının genetik ifadesini (kasetini) sürekli değiştirerek antikorlardan sıyrılmasının sonucudur?",
+    "options": [
+      "Varyant Yüzey Glikoproteinleri (Variant Surface Glycoproteins - VSG)",
+      "Apikal Membran Antijenleri (AMA-1)",
+      "Lipofosfoglikan (LPG)",
+      "Glikozilfosfatidilinositol (GPI) çapaları",
+      "O-Polisakkarit zincirleri"
+    ],
+    "correct": 0,
+    "exp": "Trypanosoma brucei (Afrika Uyku Hastalığı), ekstraselüler (kanın içinde serbest yüzen) bir kamçılı parazittir. Kanda antikorların gözü önünde serbest yüzmesine rağmen yok edilememesinin sırrı muazzam bir 'Antijenik Varyasyon' yeteneğidir. Parazitin tüm dış yüzeyi tek tip bir 'Varyant Yüzey Glikoproteini (VSG)' kalkanı ile kaplıdır. Bağışıklık sistemi bu VSG-1'i tanır, antikor üretir, parazitlerin %99'unu öldürür (Ateş düşer). ANCAK geriye kalan %1 parazit, genetiğindeki yüzlerce VSG kasetinden birini kopyalar ve yüzeyini yepyeni bir 'VSG-2' kalkanı ile kaplar. Antikorlar VSG-2'yi tanıyamaz. Parazit tekrar kanda çoğalır (Ateş tekrar fırlar). Bu kedi-fare oyunu hasta komaya girip ölene kadar her hafta dalgalar halinde devam eder."
+  },
+  {
+    "id": 1021,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Göçmen bir hastada aylar içinde gelişen hepatosplenomegali, inatçı ateş, kilo kaybı ve ağır pansitopeni (kanda tüm hücrelerin düşmesi) tablosu (Kala-Azar / Viseral Leishmaniasis) saptanıyor. Kan testinde poliklonal hipergammaglobulinemi mevcuttur. Kemik iliği aspirasyon biyopsisinde, hücrelerin sitoplazmasını tamamen dolduran ve içinde minik bir çekirdek ile çubuksu kinetoplast barındıran kamçısız (amastigot) formda 'Leishman-Donovan (LD) cisimcikleri' izleniyor. Leishmania donovani'nin kemik iliğinde bu ağır pansitopeniye yol açması, parazitin kandan ziyade SADECE HANGİ spesifik konak hücresinin (ve organların) içine yerleşip onları patlatmasına dayanır?",
+    "options": [
+      "Eritrositler",
+      "Retiküloendotelyal sistem makrofajları (Karaciğer, dalak ve kemik iliğinde)",
+      "Nötrofiller",
+      "Megakaryositler",
+      "CD4+ T Lenfositler"
+    ],
+    "correct": 1,
+    "exp": "Leishmania donovani, kum sineği (Tatarcık/Phlebotomus) ile bulaşan ve 'Kala-Azar (Kara hastalık)' yapan, dünyanın en ölümcül ikinci paraziter hastalığıdır. Parazit kanda (veya alyuvarda) gezmez; doğrudan Retiküloendotelyal Sistemin (RES) yani karaciğer, dalak ve kemik iliğinin 'Makrofajlarının' İÇİNE girer (Amastigot form / LD cisimciği). Makrofajın asidik lizozomu onu öldüremez; aksine parazit bu asidik odayı kuluçka gibi kullanıp makrofajı patlatana kadar çoğalır. Karaciğer ve dalak makrofajlarla dolup taştığı için devasa büyür (Hepatosplenomegali). Kemik iliğindeki makrofajlar da ilik boşluğunu tamamen işgal ettiği için, kan hücrelerinin (alyuvar, akyuvar, trombosit) üretimine yer kalmaz ve hasta ağır bir 'Pansitopeni (ve enfeksiyon)' ile hayatını kaybeder."
+  },
+  {
+    "id": 1022,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Mısır'dan gelen ve mesanesinde Skuamöz Hücreli Karsinom saptanan 40 yaşındaki erkek hastada, mesane duvarı biyopsisinde Schistosoma haematobium yumurtalarına ait kalsifiye kalıntılar görülüyor. Geçmişte bu enfeksiyonun tedavisinde kullanılan ve trematod/sestod (yassı solucan) enfeksiyonlarının tedavisinde altın standart olan Prazikuantel ilacı, erişkin paraziti saniyeler içinde spastik (kasılı) bir felce sokarak bağırsak veya ven duvarından kopartır. Prazikuantel'in paraziti anında felç eden bu gücü, parazit hücresinin zarından HANGİ iyonun devasa miktarda HÜCRE İÇİNE girmesini (permeabilite artışı) sağlamasından kaynaklanır?",
+    "options": [
+      "Sodyum (Na+)",
+      "Potasyum (K+)",
+      "Kalsiyum (Ca+2)",
+      "Klor (Cl-)",
+      "Magnezyum (Mg+2)"
+    ],
+    "correct": 2,
+    "exp": "Prazikuantel, şeritler (Taenia, Echinococcus) ve kan kelebekleri (Schistosoma) gibi tüm yassı solucanların tedavisinde mucizevi bir ilaçtır. İlacın etki mekanizması çok spesifiktir. Parazitin dış örtüsündeki (tegument) iyon kanallarını hedefler ve zarın 'KALSİYUM (Ca+2)' iyonuna olan geçirgenliğini (permeabilitesini) aniden binlerce kat artırır. Dışarıdaki kalsiyum hızla parazitin içine fışkırır. Hücre içi kalsiyumu fırlayan parazitin tüm kasları saniyeler içinde şiddetle kasılır (Spastik felç / Tetanik kasılma). Tutunduğu mesane veninden veya bağırsak duvarından kramp girmiş bir şekilde kopan parazit, bağışıklık sistemi tarafından veya dışkıyla anında temizlenir."
+  },
+  {
+    "id": 965,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Yeni başlangıçlı fokal epilepsi (nöbet) şikayetiyle getirilen Göçmen hastanın beyin MRG'sinde; beynin her yerinde, bazılarının ortasında nokta şeklinde parazit başının (skoleks) seçilebildiği, küçük kistik ve kalsifiye lezyonlar saptanıyor. Nörosistiserkozis (Taenia solium enfeksiyonu) tanısı alan bu hastada, bu beyin kistlerinin (larvaların) hastanın beynine yerleşmesi, hastanın HANGİ formu dışkı-ağız (fekal-oral) yoluyla yanlışlıkla yutmasının DOĞRUDAN sonucudur?",
+    "options": [
+      "İyi pişmemiş domuz etindeki doku kistlerini (Cysticercus cellulosae)",
+      "Hasta bir insandan (veya kendi dışkısından) yayılan enfektif 'Yumurtaları'",
+      "Tatlı suda yüzen serkaryaları",
+      "Az pişmiş sığır etindeki sistiserkusları",
+      "Sivrisinek (Anofel) tükürüğündeki sporozoitleri"
+    ],
+    "correct": 1,
+    "exp": "Taenia solium (Domuz tenyası) enfeksiyonu mikrobiyolojinin en çok karıştırılan konusudur. İki farklı hastalık yapar. 1) Bağırsak enfeksiyonu (Erişkin şerit): Eğer insan, içinde kist (larva) bulunan az pişmiş 'Domuz Eti' yerse, o larva insanın bağırsağında 5 metrelik devasa bir şeride dönüşür. Beyne GİTMEZ. 2) Nörosistiserkozis (Beyin kisti - Sorudaki hastalık): Bu hastalık domuz eti yemekle BULAŞMAZ. Bu hastalık, şerit hastası olan bir insanın (ya da bizzat kendisinin) tuvaletten sonra elini yıkamadan yemeğe dokunması ve kendi dışkısındaki 'YUMURTALARI (Ova)' bir başkasına (veya kendine) fekal-oral yolla yedirmesiyle bulaşır. Yumurtayı domuz yerine yutan 'insan', ara konak durumuna düşer. Yumurta midede çatlar, içinden çıkan larva kana karışır ve gidip beynin her yerine (sanki domuz kasıymış gibi) kist şeklinde oturur. Tedaviyle bu kist öldürüldüğünde, ölü parazitten yayılan toksinler şiddetli ödem ve epileptik nöbetler başlatır."
+  },
+{
+"id": 1023,
+"ders": "Mikrobiyoloji",
+"konu": "Klinik Mikrobiyoloji",
+"diff": 4,
+"q": "Kontrolsüz diyabeti ve alkolizm öyküsü olan 55 yaşındaki erkek hasta, yüksek ateş, sağ üst kadran ağrısı ve sarılık şikayetiyle başvuruyor. Batın tomografisinde karaciğer sağ lobunda devasa bir apse saptanıyor. Apse drenajından yapılan kültürde, Gram-negatif, hareketsiz ve laktoz fermente eden basiller ürüyor. Koloniye öze dokundurulup çekildiğinde 5 cm'den uzun yapışkan bir iplik (Pozitif String Testi) oluşuyor. Hipermukovisköz Klebsiella pneumoniae (K1 serotipi) izole edilen bu vakada, bakterinin fagositozdan kaçıp karaciğer gibi uzak organlara apse yapabilmesi (İnvaziv Sendrom), sahip olduğu o devasa mukoid yapının konak bağışıklık sistemindeki HANGİ molekülün bakteri yüzeyine tutunmasını (birikmesini) fiziksel olarak engellemesine dayanır?",
+"options": [
+"İmmünglobulin M (IgM) pentamerleri",
+"Kompleman C3b parçası (Opsonin)",
+"Mannoz Bağlayıcı Lektin (MBL)",
+"CD8+ T hücre reseptörü (TCR)",
+"Membran Atak Kompleksi (MAC)"
+],
+"correct": 1,
+"exp": "Klebsiella pneumoniae normalde lober pnömoni ve İYE etkenidir. Ancak Asya kökenli 'Hipermukovisköz K1/K2' serotipleri, inanılmaz kalın ve yapışkan bir polisakkarit kapsüle sahiptir (String/İplik testi pozitifliği bunu gösterir). Bu kalın kapsül, bakteriyi bağışıklık sisteminden adeta görünmez kılar. Makrofajların bakteriyi yutabilmesi için bakterinin üzerine 'C3b' (opsonin) dökülmesi şarttır. Ancak bu devasa kapsül, C3b'nin bakteri duvarına çökmesini (birikmesini) FİZİKSEL OLARAK ENGELLER. Opsonize edilemeyen bakteri kanda serbestçe dolaşarak karaciğer apsesi, endoftalmit ve menenjit gibi yıkıcı metastatik enfeksiyonlar yapar."
+},
+{
+"id": 1024,
+"ders": "Mikrobiyoloji",
+"konu": "Klinik Mikrobiyoloji",
+"diff": 5,
+"q": "CD4+ T hücre sayısı 40/mm³ olan bir AIDS hastasında, cildinde ve iç organlarında mor-kırmızı renkli, kabarık vasküler (damarsal) lezyonlar saptanıyor. Lezyonlar Kaposi Sarkomu'nu taklit etmesine rağmen, biyopside Kaposi'den farklı olarak yoğun nötrofil infiltrasyonu ve Warthin-Starry gümüş boyası ile boyanan kümeler halinde basiller görülüyor. Basiller Angiyomatozis tanısı alan ve etkeni Bartonella henselae olan bu tabloda, bakterinin endotel hücrelerini çılgınca çoğalmaya (vasküler proliferasyona) zorlaması, hücre içine enjekte ettiği BepA proteininin HANGİ anjiyojenik transkripsiyon faktörünü stabilize etmesinin doğrudan sonucudur?",
+"options": [
+"Hipoksi İndüklenebilir Faktör 1-alfa (HIF-1α)",
+"NF-kB (Nükleer Faktör kappa B)",
+"p53 Tümör Süpresör Proteini",
+"STAT3",
+"SMAD4"
+],
+"correct": 0,
+"exp": "Bartonella henselae, sağlıklı insanlarda Kedi Tırmığı Hastalığı (bölgesel lenfadenopati) yaparken, AIDS hastalarında deride ve karaciğerde (Peliozis Hepatis) kanayan damar yumakları olan 'Basiller Angiyomatozis' yapar. Bu bakteri bir kanser virüsü (HHV-8) gibi davranarak damar (endotel) proliferasyonu yaratır. Sırrı şudur: Bakteri 'Tip IV Salgı Sistemi' ile endotel hücresinin içine 'BepA' adlı bir protein enjekte eder. BepA, hücrenin içindeki 'HIF-1α' proteininin yıkılmasını engeller (onu stabilize eder). HIF-1α birikince, hücre sanki oksijensiz (hipoksik) kalmış gibi paniğe kapılıp devasa miktarda 'VEGF (Vasküler Büyüme Faktörü)' üretir ve salgılar. Bu VEGF, endotel hücrelerini çoğaltarak o mor/kırmızı tümör benzeri damar yumaklarını oluşturur."
+},
+{
+"id": 1025,
+"ders": "Mikrobiyoloji",
+"konu": "Klinik Mikrobiyoloji",
+"diff": 4,
+"q": "Koyun ve keçi besiciliği yapılan bir köyde yaşayan 40 yaşındaki hastada, 3 haftadır süren inatçı ateş, baş ağrısı ve atipik pnömoni tablosu gelişiyor. Hastada deri döküntüsü YOKTUR. Weil-Felix testi negatif saptanıyor ve karaciğer transaminazları (AST/ALT) yüksek bulunuyor. Q Humması (Coxiella burnetii) tanısı alan bu hastada, etkenin zorunlu hücre içi (intraselüler) bir patojen olmasına rağmen diğerlerinden (örn: Chlamydia, Listeria) ÇOK FARKLI olarak makrofajın ölümcül silahlarından kaçmak yerine, tam tersine HANGİ spesifik hücre içi kompartmanda çoğalmayı ve yaşamayı tercih ettiği bilinmektedir?",
+"options": [
+"Hücrenin sitoplazmasında serbest halde",
+"Endoplazmik retikulum lümeninde",
+"Çekirdek (Nükleus) içinde",
+"Asidik pH'a sahip ve enzimlerle dolu Fagolizozom (Phagolysosome) içinde",
+"Mitokondri matriksinde"
+],
+"correct": 3,
+"exp": "Coxiella burnetii (Q Humması etkeni), riketsiya benzeri obligat hücre içi bir bakteridir. Ancak döküntü yapmaması ve Weil-Felix negatifliği ile diğerlerinden ayrılır. Çiftlik hayvanlarının (koyun/keçi) plasentasından veya tozundan solunarak bulaşır. Hücre içi bakteriler makrofaj tarafından yutulduğunda genellikle o ölüm odasından (fagozomdan) kaçarlar veya fagozomun lizozomla birleşmesini engellerler (Örn: M. tuberculosis). ANCAK Coxiella burnetii bir mazoşist gibi davranır. Fagozomun lizozomla birleşmesine İZİN VERİR. Oluşan o asit dolu ve enzim kaynayan 'Fagolizozom'un içi, Coxiella'nın metabolizmasını başlatması için gereken TEK ORTAMDIR. Bakteri bu ölümcül asidik odada hayatta kalacak donanıma sahiptir ve tam da orada çoğalır."
+},
+{
+"id": 1026,
+"ders": "Mikrobiyoloji",
+"konu": "Klinik Mikrobiyoloji",
+"diff": 4,
+"q": "Korunmasız cinsel ilişki öyküsü olan genç erkek hastada, önce penisinde ağrısız, küçük ve kendiliğinden kaybolan bir ülser gelişiyor. Haftalar sonra kasıklarında (inguinal bölgede) birbirine yapışık, çok ağrılı, cilde fistülize olup cerahat akıtan devasa lenf nodları (Bubonlar) ortaya çıkıyor. Lenfogranüloma Venereum (LGV) tanısı alan bu tabloda, etken olan Chlamydia trachomatis'in L1, L2, L3 serovarlarının; sadece mukozada kalan ve üretrit/servisit yapan D-K serovarlarından çok daha agresif ve invaziv seyretmesinin (lenf bezlerini eritmesinin) ASIL hücresel nedeni aşağıdakilerden hangisidir?",
+"options": [
+"L serovarlarının epitel hücreleri yerine doğrudan Mononükleer Fagositoz Sistemi (Makrofajlar) içinde yaşayabilme ve lenf akımıyla taşınma yeteneği",
+"D-K serovarlarının hücre duvarında peptidoglikan bulunmaması",
+"L serovarlarının IgA proteaz üreterek mukozayı anında delmesi",
+"L serovarlarının doğrudan nötrofilleri apoptoza sürüklemesi",
+"D-K serovarlarının sadece silyalı epitel hücrelerini enfekte edebilmesi"
+],
+"correct": 0,
+"exp": "Chlamydia trachomatis'in serovarları (tipleri) farklı hastalıklar yapar. A, B, C tipleri gözde Trahom yapar. D'den K'ya kadar olan tipler, epitel hücrelerine (silendirik/transizyonel) affinite duyar ve lokal kalır (Üretrit, servisit, ektopik gebelik). ANCAK L1, L2, L3 serovarları çok daha tehlikelidir (LGV etkenleri). Bunlar epitelde durmazlar; doğrudan 'Makrofajların (Mononükleer Fagositler)' içine girip orada yaşamaya adapte olmuşlardır. Makrofajlar lenf yollarıyla lenf düğümlerine (kasık/inguinal) gittikleri için, bakteri de onlarla birlikte taşınır. Lenf bezinde çoğalan bakteri, orada devasa bir nekrotik ve pürülan inflamasyon yaratarak lenf bezlerini (Bubonları) patlatır."
+},
+{
+"id": 1027,
+"ders": "Mikrobiyoloji",
+"konu": "Klinik Mikrobiyoloji",
+"diff": 4,
+"q": "Beş yaşındaki çocuk; ateş, sağ alt kadranda şiddetli karın ağrısı (apandisiti taklit eden pseudoapandisit tablosu) ve kanlı ishal ile getiriliyor. Ailenin son günlerde çiğ domuz eti (veya pastörize edilmemiş süt) tükettiği öğreniliyor. Dışkı kültüründe soğukta (4°C) zenginleşen Gram-negatif basiller saptanıyor. Yersinia enterocolitica tanısı alan bu hastada, bakterinin bağırsaktaki Peyer plaklarında makrofajlar tarafından yutulup yok edilmesini engelleyen ve makrofajları apoptoza sürükleyen toksik efektör proteinlerin (Yop'lar) makrofaj sitoplazmasına aktarılması HANGİ taşıyıcı sistemle gerçekleştirilir?",
+"options": [
+"Tip I Salgı Sistemi",
+"Tip II Salgı Sistemi",
+"Tip III Salgı Sistemi",
+"Dış zar vezikülleri (OMV)",
+"Bakteriyofajlar (Transdüksiyon)"
+],
+"correct": 2,
+"exp": "Yersinia enterocolitica (ve Y. pestis), bağırsak lenfoid dokusunu (Peyer plakları, mezenterik lenf nodları) işgal ederek akut apandisiti birebir taklit eden (Pseudoapandisit) bir tablo yapar. Patojenezin kalbinde bağışıklıktan kaçış yatar. Yersinia, bağırsak makrofajlarıyla karşılaştığında 'Tip III Salgı Sistemi (T3SS)' adı verilen mikroskobik iğnesini kullanır. Bu iğneyi makrofajın zarına batırarak, içeriye 'Yop (Yersinia outer proteins)' adı verilen toksinleri enjekte eder. Yop proteinleri makrofajın aktin iskeletini felç ederek bakteriyi yutmasını (fagositozu) anında durdurur ve ardından makrofajı intihara (apoptoza) sürükleyerek bakterinin lenf bezlerinde frensizce çoğalmasını sağlar."
+},
+{
+"id": 1028,
+"ders": "Mikrobiyoloji",
+"konu": "Klinik Mikrobiyoloji",
+"diff": 4,
+"q": "Köpeği tarafından elinden derince ısırılan hastada, sadece 12-24 saat içinde yara çevresinde çok hızlı yayılan ödem, kızarıklık ve şiddetli ağrı (Akut Selülit) tablosu gelişiyor. Yara kültüründe Gram-negatif, hareketsiz ve bipolar boyanma (iki ucu koyu) gösteren kokobasiller ürüyor. Pasteurella multocida tanısı alan bu enfeksiyonun dokularda bu kadar şiddetli ve agresif bir inflamasyon (ve kemiğe ilerlerse litik hasar) yaratması, bakterinin salgıladığı PMT (Pasteurella multocida toxin) toksininin hücre içi sinyal yolağındaki HANGİ G-proteinini 'sürekli aktif' durumda kilitlemesinin sonucudur?",
+"options": [
+"Gi (İnhibitör) proteini",
+"Gs (Stimülatör) proteini",
+"Gq (G-alfa-q) proteini",
+"Ras GTPaz proteini",
+"Rho GTPaz proteini"
+],
+"correct": 2,
+"exp": "Pasteurella multocida, kedi ve köpek ısırıklarından (veya tırmalamalarından) sonra saatler içinde (çok hızlı kuluçka) parlayan şiddetli selülit ve osteomiyelitin 1 numaralı etkenidir. Bu bakterinin ana silahı 'PMT (Pasteurella multocida toxin)' dir. Toksin hücre içine girer ve hücresel sinyal yolağında 'Gq (G-alfa-q)' proteinini hedefler. Gq proteini normalde Fosfolipaz C'yi aktive ederek İntraselüler Kalsiyumu (IP3/DAG üzerinden) artırır. Toksin Gq proteinini defosforile olamayacak şekilde bozarak SÜREKLİ AÇIK konumda kilitler. Hücre içindeki kalsiyum ve sinyal fırtınası, doku hücrelerinin iskeletini bozar, aşırı sitokin salınımı yapar ve kemiğe ulaşırsa osteoklastları uyararak şiddetli kemik erimesine (osteolize) neden olur."
+},
+{
+"id": 1029,
+"ders": "Mikrobiyoloji",
+"konu": "Klinik Mikrobiyoloji",
+"diff": 4,
+"q": "İleri yaşta ve uzun süredir kontrolsüz Diyabetes Mellitus hastası olan erkek, sol kulağında dış kulak yolu girişinden başlayan, kemiğe ve kafa tabanına doğru ilerleyen şiddetli ağrı, pürülan akıntı ve yüz felci (Fasiyal sinir paralizisi) ile başvuruyor. Malign Otitis Externa tablosundaki bu hastada, etken olan Pseudomonas aeruginosa'nın sadece yumuşak dokuda kalmayıp, kıkırdağı, kemiği ve kraniyal sinirleri eritecek (destrükte edecek) kadar derine inebilmesi, bakterinin salgıladığı HANGİ doku yıkıcı enzimin aşırı aktivasyonunun eseridir?",
+"options": [
+"Koagülaz",
+"Elastaz (LasA ve LasB)",
+"Hiyalüronidaz",
+"Eksfolyatif Toksin",
+"Üreaz"
+],
+"correct": 1,
+"exp": "Malign Otitis Externa (Nekrotizan Otitis Externa), yaşlı diyabetiklerde P. aeruginosa'nın neden olduğu ölümcül bir kafa tabanı osteomiyelitidir. Diyabetiklerin ince damarları zaten tıkalı olduğu için (mikroanjiyopati) bağışıklık hücreleri kulağa yeterince ulaşamaz. Bağışıklığın zayıf olduğu bu ortamda Pseudomonas, ortama devasa miktarda 'Elastaz (Özellikle LasB)' enzimi salgılar. Elastaz, bağ dokusunun, kıkırdağın, damar duvarlarının ve sinir kılıflarının ana iskeleti olan elastin ve kollajeni acımasızca eritir. Doku adeta sıvılaşır; bakteri kıkırdağı delip kafatası kemiğine (Temporal kemik) ve oradan geçen Fasiyal sinire (7. sinir) ulaşarak felç yaratır."
+},
+{
+"id": 1030,
+"ders": "Mikrobiyoloji",
+"konu": "Klinik Mikrobiyoloji",
+"diff": 4,
+"q": "Böbrek nakli yapılmış ve immünsüpresif tedavi alan 50 yaşındaki hastada; ateş, öksürük ve akciğer grafisinde kaviteli nodüller saptanıyor. Bir hafta sonra hastada epileptik nöbet ve beyin apsesi (nörolojik tutulum) gelişiyor. Balgam ve beyin apsesi materyalinin Gram boyamasında Gram-pozitif, dallanan, flaman (iplik) şeklinde yapılar görülüyor. Modifiye (Zayıf) aside-dirençli boyamada pembe-kırmızı boyanan Nocardia asteroides izole ediliyor. Bu fırsatçı bakterinin makrofajların içinde fagozomda ölmemesi ve kronik cerahatli apseler yaratması, makrofajların oksidatif patlamasını (serbest radikalleri) nötralize eden HANGİ iki enzimi çok yüksek düzeyde üretmesine dayanır?",
+"options": [
+"Katalaz ve Süperoksit Dismutaz (SOD)",
+"Üreaz ve IgA proteaz",
+"Penisilinaz ve Beta-laktamaz",
+"Listeriyolizin O ve Fosfolipaz",
+"Miyeloperoksidaz ve NADPH oksidaz"
+],
+"correct": 0,
+"exp": "Nocardia (Özellikle N. asteroides), toprakta yaşayan ve bağışıklığı zayıf (T hücre defekti, organ nakli) insanlarda Akciğer (Kaviteli pnömoni) ve Beyin (Apseler) tutulumu yapan Gram-pozitif, dallanan bir bakteridir. Hücre duvarında kısa mikolik asitler taşıdığı için (Tüberküloz gibi) 'Zayıf Aside-Dirençli (Weakly acid-fast)' boyanır. En büyük virülans sırrı; makrofaj onu yuttuğunda onu öldürmek için üzerine sıktığı ölümcül oksijen radikallerine (Süperoksit ve H2O2) karşı 'Katalaz' ve 'Süperoksit Dismutaz (SOD)' enzimlerini inanılmaz yüksek miktarlarda üreterek kendini korumasıdır. Makrofaj onu sindiremediği için apse büyür ve beyne (kan yoluyla) yayılır. Tedavisinde Trimethoprim-Sülfametoksazol (TMP-SMX) hayat kurtarıcıdır."
+},
+{
+"id": 1031,
+"ders": "Mikrobiyoloji",
+"konu": "Klinik Mikrobiyoloji",
+"diff": 4,
+"q": "Bahar aylarında doğa yürüyüşü yapan hastada; aniden başlayan yüksek ateş, baş ağrısı ve 3. günde el bilekleri ile ayak bileklerinden başlayıp merkeze (gövdeye) doğru hızla yayılan makülopapüler/peteşiyel döküntüler ortaya çıkıyor. Kayalık Dağlar Benekli Ateşi (Rocky Mountain Spotted Fever) tablosundaki bu hastada, etken olan Rickettsia rickettsii'nin hedef organı olan ince kan damarlarında (kapillerlerde) bu yaygın peteşileri ve vasküliti yaratması, bakterinin damar epitel (endotel) hücrelerinde çoğaldıktan sonra HANGİ konak proteinini kullanarak bir hücreden diğerine (kana çıkmadan) geçmesiyle açıklanır?",
+"options": [
+"Tubulin dimerlerini polimerize ederek",
+"Miyozin motorlarını kullanarak",
+"Konağın 'Aktin' filamentlerini polimerize edip arkasında itici bir kuyruk (Actin tail) oluşturarak komşu hücreye girmesiyle",
+"Gap junction (oluklu bağlantı) kanallarını genişleterek",
+"Dynein proteinleriyle retrograd taşınarak"
+],
+"correct": 2,
+"exp": "Rickettsia rickettsii, kene ısırığıyla bulaşan obligat hücre içi bir bakteridir (Döküntünün avuç içi ve ayak tabanından başlaması tipiktir). Bakterinin HEDEF HÜCRESİ ince kan damarlarını döşeyen 'Endotel Hücreleri'dir. Endotel hücresinin içine girer, çoğalır. Bağışıklık sistemine (kandaki antikorlara) hiç yakalanmamak için kana çıkmaz. Bunun yerine (tıpkı Listeria monocytogenes ve Shigella gibi) konak hücresinin 'Aktin' iskeletini kullanır. Bakteri, kendi arkasında aktin filamentlerini polimerize ederek bir 'Aktin Roketi (Kuyruğu)' yaratır. Bu kuyruk onu hızla iter ve bakteri kendi hücresinin zarını esnetip yanındaki komşu endotel hücresinin İÇİNE girer. Endotel hücreleri bu işgal yüzünden parçalanıp ölünce, damar duvarı delinir ve kan dokuya sızarak o meşhur peteşiyel/purpurik döküntüleri (vaskülit) oluşturur."
+},
+{
+"id": 1032,
+"ders": "Mikrobiyoloji",
+"konu": "Klinik Mikrobiyoloji",
+"diff": 4,
+"q": "Kistik Fibrozis (KF) olan 18 yaşındaki hasta, yıllardır kontrol altında olan akciğer tablosunda aniden hızlı bir kötüleşme (nefrotizan pnömoni ve bakteriyemi) yaşayarak 'Cepacia Sendromu'na giriyor. Balgam kültüründe çoklu ilaca dirençli (MDR), Gram-negatif, oksidaz pozitif ve glukozu okside etmeyen basiller saptanıyor. Burkholderia cepacia kompleksinin (BCC), Kistik Fibrozis hastalarında kolonize olduktan sonra bu derece ölümcül, durdurulamaz bir inflamatuar şok (Cepacia sendromu) yaratması, bakterinin HANGİ dış zar bileşeninde diğer patojenlere göre anormal bir yapıya sahip olması ve bunun sonucunda Toll-Like Reseptörleri (TLR-4) devasa boyutta uyarmasından kaynaklanır?",
+"options": [
+"Polisakkarit kapsülünde polisialik asit bulunması",
+"Lipopolisakkarit (LPS) yapısındaki Lipid A molekülünün yüksek oranda modifiye ve aşırı pro-inflamatuar olması",
+"Tip III salgı sistemi iğnesinin ekstra uzun olması",
+"Dış zarında teikoik asit barındırması",
+"O-antijen zincirinin tamamen eksik olması (Pürüzlü fenotip)"
+],
+"correct": 1,
+"exp": "Kistik Fibrozis hastalarının akciğerleri Pseudomonas, S. aureus ve H. influenzae tarafından kolonize edilir. Ancak bu hastaların en korktuğu ölümcül senaryo 'Burkholderia cepacia' ile enfekte olmaktır (Cepacia Sendromu). Hastalar aylarca stabil kalırken aniden hızlı bir pnömoni, sepsis ve şokla haftalar içinde kaybedilir. B. cepacia'nın bu kadar yıkıcı olmasının nedeni (çoklu ilaç direncinin yanı sıra), hücre duvarındaki 'Lipopolisakkarit (LPS / Endotoksin)' yapısının eşsizliğidir. Onun Lipid A kısmı, diğer Gram-negatiflerden çok farklı modifikasyonlara (örn: 4-amino-4-deoksi-L-arabinoz eklenmesi) sahiptir. Bu modifiye Lipid A, konak makrofajlarındaki TLR-4 reseptörüne bağlandığında tarihte görülmemiş devasa bir inflamatuar sitokin fırtınası (sitokin bombası) başlatır. Bu fırtına hastanın kendi akciğerlerini ve damarlarını saniyeler içinde eriterek ölüme neden olur."
+},
+{
+    "id": 1040,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Yirmi dört yaşında kadın hasta; 3 gündür süren ateş, sağ üst kadran ağrısı ve pürülan vajinal akıntı şikayetiyle acile başvuruyor. Karaciğer fonksiyon testleri (AST, ALT, Bilirubin) tamamen normal saptanıyor. Laparoskopik incelemede karaciğer kapsülü ile anterior karın duvarı arasında 'keman yayı (violin string)' şeklinde ince fibröz yapışıklıklar izleniyor. Fitz-Hugh-Curtis sendromu tanısı alan bu hastada, karaciğer parankimi sağlam kalmasına rağmen karaciğer kapsülünde (Glisson kapsülü) bu inflamasyonun gelişmesi, pelvik patojenlerin (Örn: Chlamydia trachomatis) HANGİ anatomik yolu kullanarak yukarıya göç etmesinin doğrudan bir sonucudur?",
+    "options": [
+      "Portal venöz sistem",
+      "Hepatik arter",
+      "Sağ parakolik oluk (Paracolic gutter) boyunca peritoneal sıvı akımı",
+      "Retroperitoneal lenfatik zincirler",
+      "Utero-ovaryan ligament içi lenfatikler"
+    ],
+    "correct": 2,
+    "exp": "Fitz-Hugh-Curtis Sendromu (Perihepatit), Pelvik İnflamatuar Hastalığın (PID) nadir ama klasik bir komplikasyonudur. Etken genellikle Chlamydia veya Neisseria gonorrhoeae'dir. Bu bakteriler kan yoluyla (viremi/bakteriyemi) karaciğere GİTMEZLER (Bu yüzden karaciğerin içi/parankimi sağlamdır ve AST/ALT normaldir). Bakteriler, enfekte olmuş fallop tüplerinin ucundan karın boşluğuna (peritona) dökülürler. Karın içindeki fizyolojik sıvı akımı, diyaframın emme kuvvetiyle aşağıdan yukarıya, özellikle 'Sağ Parakolik Oluk (Paracolic gutter)' boyunca hareket eder. Bakteriler bu sıvı akıntısına kapılarak sörf yapar gibi karaciğerin dış kapsülüne (Glisson kapsülü) ulaşır ve orada lokalize bir iltihap, ardından da o meşhur 'keman yayı' yapışıklıklarını oluştururlar."
+  },
+  {
+    "id": 1041,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Otuz beş yaşında kadın hasta, aylar içinde giderek şiddetlenen ve kansızlığa (anemi) yol açan aşırı adet kanaması (menoraji) şikayetiyle başvuruyor. Ultrasonografide uterusun asimetrik büyüdüğü ve rahim boşluğuna (kaviteye) doğru belirgin şekilde çıkıntı yapan 4 cm'lik solid bir kitle (Submüköz Miyom) saptanıyor. Uterus düz kasından köken alan bu selim (benign) tümörün, kanser olmamasına rağmen bu kadar şiddetli ve durdurulamayan uterin kanamalara yol açmasının ASIL fiziksel ve histolojik nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Miyomun doğrudan rahim içi damarları yırtarak arteriyel kanama yapması",
+      "Miyomun salgıladığı aşırı östrojenin endometriumu hiperplaziye sokması",
+      "Miyomun üzerini örten endometriumun gerilerek incelmesi (ülserleşmesi) ve miyomun komşu olduğu bölgelerdeki venöz pleksuslarda tıkanıklık/genişleme (ektazi) yaratması",
+      "Tümörün miyometriumdaki oksitosin reseptörlerini bloke ederek rahim kasılmasını durdurması",
+      "Miyom dokusunun yüksek miktarda t-PA (Doku plazminojen aktivatörü) salgılayarak pıhtıları eritmesi"
+    ],
+    "correct": 2,
+    "exp": "Uterin Leiomyomlar (Miyomlar), kadın pelvisinin en sık görülen benign tümörleridir. Miyomun kanama yapıp yapmayacağını belirleyen en önemli faktör 'Yerleşimi'dir. Submüköz (rahim içine doğru büyüyen) miyomlar en çok kanayanlardır. Miyomun kendisi kanamaz; kanayan yer, miyomun üzerini örten ve etrafında bulunan normal endometriumdur. Submüköz miyom büyüdükçe üzerindeki endometriumu gerer, inceltir ve ülserleştirir. Ayrıca miyom kitlesi, endometriumun altından geçen toplardamarlara (venöz drenaja) bası yapar. Bası altında kalan venöz pleksuslar devasa boyutlarda genişler (ektazi). Adet döneminde bu genişlemiş venöz göllenmeler açıldığında, rahim kasılması (kramp) bu damarları kapatmaya yetmez ve hasta musluk açılmış gibi masif kanar."
+  },
+  {
+    "id": 1042,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "On altı yaşında kadın hasta, yaşıtları gibi adet görmediği (Primer Amenore) şikayetiyle getiriliyor. Fizik muayenede boy, kilo, meme gelişimi (Tanner Evre 4) ve pubik/aksiller kıllanma tamamen NORMAL bulunuyor. Yapılan pelvik ultrasonografide her iki yumurtalık (over) normal görünümde izlenirken, uterusun (rahim) ve vajinanın üst 2/3'lük kısmının tamamen YERİNDE OLMADIĞI saptanıyor. Karyotip analizi 46,XX gelen Mayer-Rokitansky-Küster-Hauser (MRKH) sendromlu bu hastada; overlerin tamamen normal gelişmesine rağmen uterus ve vajina üst kısmının gelişememesinin embriyolojik temeli HANGİ kanalın izole agenezisidir (gelişim kusurudur)?",
+    "options": [
+      "Mezonefrik (Wolff) kanalı",
+      "Ürogenital sinüs",
+      "Paramezonefrik (Müllerian) kanal",
+      "Gubernakulum",
+      "Kloakal membran"
+    ],
+    "correct": 2,
+    "exp": "Mayer-Rokitansky-Küster-Hauser (MRKH) Sendromu / Müllerian Agenezi, primer amenorenin en ilginç nedenlerindendir. Hasta genetik olarak (46,XX) ve hormonal olarak KESİNLİKLE normal bir kadındır. Overler (yumurtalıklar) sağlamdır, bu yüzden östrojen üretirler; memeler büyür ve kadınsı vücut hatları normal gelişir. Pubik kıllanma normaldir (çünkü adrenal androjenler sağlamdır ve androjen reseptörü çalışıyordur - bu durum Androjen İnsensitivite Sendromu'ndan ayırt edici en önemli bulgudur). Tek sorun embriyolojiktir: Anne karnında rahmi, fallop tüplerini ve vajinanın üst 2/3'ünü oluşturacak olan 'Paramezonefrik (Müllerian) Kanallar' gelişemez veya birleşemez. Uterus olmadığı için adet kanaması yaşanmaz."
+  },
+  {
+    "id": 1043,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "On yedi yaşında bir ergen, primer amenore (hiç adet görmeme) nedeniyle değerlendiriliyor. Fizik muayenede meme gelişiminin yaşına uygun (Tanner Evre 4) olduğu, ancak koltuk altı ve pubik bölgede HİÇ KIL OLMADIĞI saptanıyor. Pelvik muayenede vajinanın kısa ve kör bir kese şeklinde sonlandığı, uterusun olmadığı saptanıyor. Karyotip analizi 46,XY olarak gelen Androjen İnsensitivite Sendromu (AIS) vakasında, genetik bir erkek olmasına ve devasa miktarda testosteron üretmesine rağmen hastanın mükemmel bir 'kadınsı meme gelişimine' sahip olmasının patofizyolojik nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Testislerin doğrudan yüksek dozda östrojen sentezleyip kana vermesi",
+      "Böbrek üstü bezlerinden salınan progesteronun meme dokusunu uyarması",
+      "Kandaki yüksek seviyeli testosteronun, periferik yağ dokusunda bulunan 'Aromataz' enzimi tarafından östrojene (estradiol) dönüştürülmesi ve bu östrojenin meme dokusundaki sağlam reseptörleri uyarması",
+      "Yüksek LH seviyesinin doğrudan meme bezi hücrelerinde mitozu tetiklemesi",
+      "Androjen reseptörlerinin mutasyona uğrayarak östrojen reseptörü gibi davranmaya başlaması"
+    ],
+    "correct": 2,
+    "exp": "Androjen İnsensitivite Sendromu (Testiküler Feminizasyon), genetik bir erkeğin (46,XY) dış görünüş olarak tamamen güzel bir kadın olması durumudur. Karın içinde (veya kasıkta) testisleri vardır ve bolca Testosteron üretirler. ANCAK vücuttaki 'Androjen Reseptörleri' tamamen bozuktur. Testosteron hiçbir hücreye etki edemediği için erkek dış genitalyası ve vücut kılları (pubik/aksiller kıl) ASLA gelişemez. Peki memeler nasıl büyür? Kanda biriken ve işe yaramayan o devasa testosteron boş durmaz; periferik yağ dokusundaki 'Aromataz' enzimi tarafından hızla 'Östrojene' çevrilir. Hastanın östrojen reseptörleri SAĞLAM olduğu için, bu östrojen gider ve memeleri mükemmel bir şekilde geliştirir."
+  },
+  {
+    "id": 1044,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "On sekiz yaşında kadın hasta, hiç adet görmeme (primer amenore) ve meme gelişiminin olmaması (Tanner Evre 1) şikayetiyle getiriliyor. Karyotipi 46,XX ve overleri ultrasonografide küçük ama normal yapıda izleniyor. Hormon profilinde FSH ve LH düzeyleri çok düşük, östrojen düzeyi saptanamayacak kadar az bulunuyor. Hastanın anosmi (koku alamama) şikayeti olduğu da öğreniliyor. Kallmann Sendromu tanısı alan bu hastada; hipotalamo-hipofizer-gonadal (HPG) aksın hiç çalışmamasının ve pubertenin başlamamasının hücresel/embriyolojik nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Hipofiz ön lobunun kanlanmasının doğuştan bozuk olması",
+      "GnRH (Gonadotropin Salgılatıcı Hormon) üreten nöronların, embriyolojik hayatta olfaktör plakoddan (koku soğancığından) hipotalamusa 'göç etmeyi (migrasyonu)' başaramaması",
+      "Overlerdeki FSH ve LH reseptörlerinin genetik olarak defektif olması",
+      "Koku sinirlerinden salınan inhibitör nörotransmitterlerin GnRH salınımını kalıcı olarak bloke etmesi",
+      "Hipotalamusta GnRH reseptörlerinin down-regüle olması"
+    ],
+    "correct": 1,
+    "exp": "Kallmann Sendromu, primer amenore ve puberte gecikmesinin nöro-endokrinolojik bir nedenidir (Hipogonadotropik Hipogonadizm). En belirgin klinik ipucu 'Koku alamama (Anosmi)'dır. Bu ikilinin (ürememe ve koku alamama) birleşmesinin muazzam bir embriyolojik sebebi vardır: Beynimizde GnRH üreterek ergenliği (puberteyi) başlatan nöronlar, embriyolojik hayatta burun kökündeki koku alma bölgesinde (Olfaktör plakod) doğarlar. Daha sonra buradan yola çıkıp beyne (hipotalamusa) GÖÇ EDERLER. Kallmann sendromunda (KAL geni mutasyonu), bu göç yolu bozuktur. Nöronlar hipotalamusa ulaşamaz. Hipotalamusta GnRH olmayınca hipofiz (FSH/LH) uyanmaz, yumurtalıklar uyanmaz, östrojen sıfır kalır ve hasta ergenliğe giremez."
+  },
+  {
+    "id": 1045,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Yirmi iki yaşında sağlıklı kadın hasta, gebelikten korunmak amacıyla Kombine Oral Kontraseptif (Östrojen + Progestin içeren OKS) hap kullanmaya başlıyor. Bu hapların gebeliği önlemedeki ASIL (birincil) mekanizması, servikal mukusu kalınlaştırmak veya endometriumu inceltmekten ziyade, 'Ovulasyonu (Yumurtlamayı)' tamamen durdurmaktır. Kombine hapların içindeki sentetik hormonların ovulasyonu kalıcı olarak baskılaması, HANGİ spesifik endokrinolojik zirvenin (surge) beyin düzeyinde engellenmesinin doğrudan bir sonucudur?",
+    "options": [
+      "Östrojenin hipofizdeki FSH salınımını uyarmasının engellenmesi",
+      "Progestin bileşeninin, döngü ortasında (mid-cycle) gerçekleşmesi gereken 'Luteinleştirici Hormon (LH) Zirvesini (Surge)' negatif geribildirimle güçlü bir şekilde bloke etmesi",
+      "Sentetik hormonların overlerdeki östrojen reseptörlerini kompetitif olarak kapatması",
+      "Progestinin hipotalamustan GnRH salınımını pozitif geribildirimle artırması",
+      "İlacın doğrudan korpus luteumu eriterek progesteron üretimini kesmesi"
+    ],
+    "correct": 1,
+    "exp": "Kombine Oral Kontraseptiflerin (KOK) içinde Östrojen ve Progestin vardır. Östrojenin asıl amacı kanama kontrolünü sağlamak ve FSH'ı baskılayarak folikül büyümesini engellemektir. Ancak KOK'ların gebeliği önleyen ASIL SİLAHI 'Progestin' bileşenidir. Doğal bir adet döngüsünde, yumurtanın çatlaması (ovulasyon) için hipofizden devasa bir 'LH Zirvesi (Surge)' yaşanması ŞARTTIR. Hapın içindeki sabit ve yüksek dozdaki sentetik Progestin, hipotalamus ve hipofize çok güçlü bir 'Negatif Geribildirim (Fren)' yollar. Bu fren nedeniyle hipofiz asla o meşhur LH Zirvesini yapamaz. LH zirvesi olmayınca folikül çatlayamaz ve yumurtlama (ovulasyon) sıfırlanmış olur."
+  },
+  {
+    "id": 1046,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Yirmi dokuz yaşında kadın hasta, bol miktarda, köpüklü, sarı-yeşil renkli ve kötü kokulu vajinal akıntı ile şiddetli vulvar kaşıntı şikayetiyle başvuruyor. Spekulum muayenesinde vajina pH'sının 6.0 olduğu ve serviks (rahim ağzı) üzerinde noktasal, küçük kırmızı kanama alanları ('Çilek Serviks' / Colpitis macularis) saptanıyor. Trichomonas vaginalis tanısı alan bu hastada, servikste bu karakteristik çilek görünümünün oluşması; mikroskobik parazitin mukozaya tutunduktan sonra HANGİ spesifik vasküler ve hücresel reaksiyonu tetiklemesinin doğrudan bir sonucudur?",
+    "options": [
+      "Parazitin salgıladığı nörotoksinlerin damar büzüşmesi (vazospazm) yapması",
+      "Parazitin yassı epitel hücrelerine yapışarak (adezyon) dokuyu tahrip etmesi, lokal kılcal damarların aşırı genişlemesi (vazodilatasyon), mikro-kanamalar yaratması ve bölgeye devasa bir nötrofil ordusu yığması",
+      "Parazitin servikal mukozada derin, kazeifiye granülomatöz apseler oluşturması",
+      "Vajinal laktobasillerin ölerek asit üretimini durdurması",
+      "Parazitin doğrudan eritrositlerin içine girerek hemoliz yapması"
+    ],
+    "correct": 1,
+    "exp": "Trichomonas vaginalis, cinsel yolla bulaşan ve vajinada 'köpüklü, sarı-yeşil' akıntı yapan kamçılı bir parazittir (Sadece trofozoit formu vardır, kist formu yoktur). Klinikteki en patognomonik (ama vakaların sadece %10-20'sinde görülen) bulgusu 'Çilek Serviks (Strawberry Cervix)'tir. Parazit, kendi yüzeyindeki adezyon proteinleri ile serviksin ve vajinanın yassı (skuamöz) epiteline sımsıkı yapışır. Bu yapışma ve parazitin beslenme çabası, epitelde mikroskobik yırtıklara neden olur. Vücut bu saldırıya, o bölgedeki kılcal damarları (kapillerleri) devasa boyutlarda genişleterek ve bölgeye şiddetli bir nötrofil akını başlatarak yanıt verir. Genişleyen ve çatlayan bu mikroskobik damarlar, çıplak gözle serviks üzerinde kırmızı kırmızı noktalar (çilek tohumları gibi) şeklinde görünür."
+  },
+  {
+    "id": 1047,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 5,
+    "q": "Otuz iki yaşında kadın hasta; aşırı yorgunluk, soğuğa tahammülsüzlük, kilo kaybı ve amenore (adet görememe) şikayetleriyle başvuruyor. Hastanın öyküsünde 1 yıl önce zorlu bir evde doğum yaptığı, doğum sonrası durdurulamayan masif bir kanama (postpartum kanama) geçirdiği ve kan transfüzyonları aldığı, sonrasında bebeğini hiç emziremediği (agalaksi) öğreniliyor. Sheehan Sendromu tanısı konan bu hastada, hipofiz bezinin ön lobunun (adenohipofiz) bu kanama sırasındaki tansiyon düşüklüğüne (hipotansiyona) karşı diğer organlardan çok daha hassas olup 'iskemik nekroza' gitmesinin ASIL fizyolojik/anatomik nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Ön hipofizin sadece internal karotis arterin dallarından tek yönlü beslenmesi",
+      "Gebelikte artan östrojenin etkisiyle laktotrop hücrelerin (hipofizin) hacimce 2-3 kat büyümesi (hipertrofisi), ancak bu büyümeye eşdeğer bir damar (kan akımı) artışının olmaması nedeniyle bezin oksijen açlığının sınırda olması",
+      "Doğum sırasındaki ağrının hipofiz sapında (infundibulum) vazospazm yaratması",
+      "Oksitosin deşarjının hipofiz içi kapillerleri yırtması",
+      "Gebelikte hipofiz bezinin portal venöz sistemden gelen kanla değil, doğrudan arteryel kanla beslenmeye başlaması"
+    ],
+    "correct": 1,
+    "exp": "Sheehan Sendromu, doğum sonu masif kanamaya (şok/hipotansiyon) bağlı gelişen 'Ön Hipofiz İnfarktüsü' (Panhipopituitarizm) tablosudur. İlk bulgusu genellikle prolaktin eksikliğine bağlı sütün gelmemesidir (Agalaksi). Peki neden kanama olunca sadece hipofiz bezi ölüyor? Gebelik boyunca östrojen hormonu, süt üretecek olan hipofiz bezindeki 'Laktotrop' hücreleri uyarır. Hipofiz bezi hacim olarak 2-3 kat BÜYÜR (Fizyolojik hipertrofi). ANCAK bezin boyutları devasa artarken, onu besleyen portal kan damarlarının sayısı ve taşıdığı kan miktarı AYNI KALIR. Kendi kan desteğine ucu ucuna yeten (sınırda yaşayan) bu şişkin hipofiz bezi, doğumda ufak bir tansiyon düşüklüğü (kanama/şok) yaşadığında anında oksijensiz kalır ve iskemik nekrozla ölür."
+  },
+  {
+    "id": 1048,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Elli beş yaşında postmenopozal kadın hasta, ateş basmaları, vajinal kuruluk ve son çekilen DEXA taramasında saptanan T-skoru: -2.8 (Osteoporoz) nedeniyle başvuruyor. Menopozda overlerin (yumurtalıkların) östrojen üretimini kesmesiyle birlikte kemik yıkımının aniden hızlanması ve kemik erimesi (osteoporoz) tablosunun patlak vermesi; östrojen eksikliğinin kemik mikroçevresinde HANGİ spesifik molekülün (kalkanın) üretimini düşürüp, osteoklast aktivatörünün (RANKL) frensizce çalışmasına izin vermesiyle doğrudan ilişkilidir?",
+    "options": [
+      "Paratiroid Hormon (PTH)",
+      "Osteoprotegerin (OPG)",
+      "Alkalen Fosfataz (ALP)",
+      "Transforming Growth Factor-beta (TGF-β)",
+      "Kalsitonin"
+    ],
+    "correct": 1,
+    "exp": "Menopozal Osteoporozun (Tip 1 Osteoporoz) temel mekanizması östrojen çekilmesidir. Sağlıklı bir kadında östrojen, kemik yapan hücreler olan Osteoblastlara 'Osteoprotegerin (OPG)' adı verilen bir protein ürettirir. OPG, kemik yiyen hücreleri (Osteoklastları) çıldırtan 'RANKL' molekülünü havada yakalayan bir KALKANDIR (Decoy receptor). Östrojen varsa, OPG boldur, RANKL bağlanamaz ve kemik erimez. Menopozda östrojen bittiği an OPG üretimi bıçak gibi kesilir. Kalkanı kalkan RANKL, osteoklastların yüzeyindeki RANK reseptörlerine frensizce bağlanır. Osteoklastlar çıldırır, kemiği agresifçe oymaya başlar ve kemik kütlesi (özellikle trabeküler kemik) hızla eriyerek osteoporoz gelişir."
+  },
+  {
+    "id": 1049,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Yirmi altı yaşında obez kadın hasta, Polikistik Over Sendromu (PKOS) tanısıyla takip ediliyor. Hastanın şikayetlerinin başında hiç adet görememe (veya yılda 2-3 kez görme) ve infertilite gelmektedir. PKOS'taki bu 'Kronik Anovulasyon (Yumurtlayamama)' döngüsünün kırılamamasının temel endokrinolojik nedeni; yüksek androjenlerin periferik yağ dokusunda HANGİ östrojene (zayıf östrojen) dönüştürülerek, hipofizden FSH salınımını sürekli baskılaması ve folikülün büyümesini (çatlamasını) engellemesidir?",
+    "options": [
+      "Östradiol (E2)",
+      "Östriol (E3)",
+      "Östron (E1)",
+      "Testosteron",
+      "Dihidrotestosteron (DHT)"
+    ],
+    "correct": 2,
+    "exp": "PKOS'taki anovulasyon bir kısır döngüdür. Hipofizden sürekli ve yüksek salınan LH, overlerdeki Teka hücrelerini çalıştırarak bolca 'Androjen (Androstenedion)' ürettirir. Bu androjenler kana karışır ve hastanın periferik yağ dokusunda bulunan Aromataz enzimi tarafından, nispeten zayıf bir östrojen olan 'Östron (E1)'a çevrilir (Obezite bu yüzden hastalığı çok şiddetlendirir). Kanda sürekli yüksek ve sabit duran bu Östron (E1), beyne (hipofize) gidip negatif geribildirimle (frenle) 'FSH (Folikül Uyarıcı Hormon)' üretimini baskılar. FSH düşük kaldığı için, overlerdeki yumurtalar büyüyüp olgunlaşamaz, çatlayamaz (anovulasyon) ve overin kenarında minik kistler halinde hapsolur."
+  },
+  {
+    "id": 1050,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Otuz yaşında, son adet tarihi 7 hafta önce olan kadın hasta; aniden başlayan şiddetli sağ alt kadran ağrısı, vajinal lekelenme ve baygınlık (hipotansiyon) tablosuyla acile getiriliyor. Ultrasonografide rahim içi boş, sağ adneksiyel bölgede rüptüre olmuş (patlamış) bir kitle ve batın içinde serbest kan (hemoperitoneum) saptanıyor. Ektopik (Dış) Gebelik tanısı alan bu hastanın özgeçmişinde geçirilmiş bir Pelvik İnflamatuar Hastalık (PID) öyküsü vardır. Geçirilmiş PID'nin ektopik gebelik riskini 6-10 kat artırmasının ASIL mikroskobik/hücresel nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Enfeksiyonun overlerden salınan progesteron miktarını azaltması",
+      "İnflamasyonun fallop tüplerinin iç yüzeyini döşeyen 'Silyalı (titrek tüylü) Kolumnar Epitel' hücrelerini tahrip etmesi ve tüp içindeki mekanik taşıma (süpürme) fonksiyonunu felç etmesi",
+      "Bakteriyel toksinlerin doğrudan zigotun bölünmesini hızlandırması",
+      "Rahim iç zarının (endometrium) kalınlaşmasını kalıcı olarak durdurması",
+      "Enfeksiyonun embriyoda trofoblastik invazyon gücünü artırması"
+    ],
+    "correct": 1,
+    "exp": "Ektopik (Dış) Gebelik, döllenmiş yumurtanın rahim boşluğu dışında bir yere (en sık fallop tüplerinin ampulla kısmına) yerleşmesidir. En büyük risk faktörü geçirilmiş PID (Örn: Chlamydia veya Gonore) ve sigara içimidir. Yumurta spermle tüpte döllendikten sonra, rahme doğru yaklaşık 4-5 günlük bir yolculuğa çıkar. Bu yolculuk, tüplerin içini döşeyen milyonlarca 'Silyalı (titrek tüylü) hücre'nin süpürme hareketi ve tüpün kasılmalarıyla (peristaltizm) sağlanır. Geçirilmiş PID, bu narin silyalı hücreleri paramparça eder, tüpün içinde yara (skar) dokusu ve yapışıklıklar bırakır. Silyaları (motoru) bozulan tüp, döllenmiş ağır yumurtayı (zigotu) rahme kadar süremez. Yumurta yolda kalır, büyür ve daracık tüp duvarını yırtarak anneyi ölümcül bir iç kanamaya (Rüptüre ektopik gebelik) sokar."
+  },
+  {
+    "id": 1051,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Otuz beş yaşında, daha önce 2 doğum yapmış ve emziren bir kadın, uzun süreli ve hormonsuz bir gebelikten korunma yöntemi tercih ederek 'Bakırlı Rahim İçi Araç (RİA)' taktırıyor. Bakırlı RİA'ların, yumurtlamayı (ovulasyonu) veya adet döngüsünü BOZMAMASINA rağmen, %99'un üzerinde bir koruma sağlayarak gebeliği engellemesindeki (kontrasepsiyon) temel mekanizma aşağıdakilerden hangisidir?",
+    "options": [
+      "Bakır iyonlarının hipofizden LH salınımını doğrudan bloke etmesi",
+      "RİA'nın rahim ağzı (servikal) mukusunu progesteron gibi kalınlaştırması",
+      "Bakır iyonlarının ve yabancı cismin, rahim (endometrium) boşluğunda çok güçlü ve mikropsuz (steril) bir inflamatuar reaksiyon başlatarak, spermlerin hareketliliğini ve kapasitasyonunu yok eden toksik bir ortam (sitokin, makrofaj fırtınası) yaratması",
+      "Bakırın fallop tüplerinin kasılmasını tamamen felç etmesi",
+      "RİA'nın sadece endometriumu incelterek implantasyonu (tutunmayı) önlemesi"
+    ],
+    "correct": 2,
+    "exp": "RİA'lar (Spiraller) ikiye ayrılır: Hormonlu (Levonorgestrel salgılayan) ve Bakırlı (Hormonsuz). Hormonlu olanlar servikal mukusu kalınlaştırıp endometriumu incelterek korur. Bakırlı RİA'nın sırrı ise bambaşkadır. Yumurtlamayı durdurmaz. Rahim boşluğuna konan bakır tel ve plastik gövde, vücut tarafından bir 'Yabancı Cisim' olarak algılanır. Rahim içi boşluğunda devasa, mikropsuz (steril) bir inflamasyon başlar. Ortam makrofajlar, prostaglandinler ve lökositlerle dolar. Bakır iyonlarının kendisi de hücreler için toksiktir. Vajinadan rahme giren spermler, bu toksik ve inflamatuar cehennemin içine düşerler. Spermlerin kuyruk hareketleri (motilitesi) bozulur, döllenme yeteneği (kapasitasyon) yok olur ve yumurtaya ulaşamadan parçalanırlar. (Çok nadiren döllenme olsa bile bu toksik ortam yumurtanın tutunmasına da izin vermez)."
+  },
+  {
+    "id": 1052,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Yirmi sekiz yaşında kadın hasta, şiddetli pelvik ağrı (dismenore) ve 2 yıldır korunmamalarına rağmen çocuk sahibi olamama (İnferilite) nedeniyle başvuruyor. Histerosalpingografi (HSG / Rahim Filmi) çekiminde her iki fallop tüpünün de AÇIK (patent) olduğu, rahim içinin normal olduğu saptanıyor. Laparoskopide ise yaygın peritoneal Endometriozis odakları izleniyor. Fallop tüpleri tamamen açık (tıkanıklık yok) ve erkeğin sperm sayımı normal olmasına rağmen, endometriozisin bu hastada infertiliteye (kısırlığa) yol açmasının ASIL patofizyolojik nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Endometriotik odakların overlerden yumurtlamayı (LH zirvesini) tamamen durdurması",
+      "Ektopik odakların yarattığı kronik pelvik inflamatuar ortamın (yüksek makrofaj, prostaglandin ve sitokin düzeyi) hem spermler için toksik bir fırtına yaratması hem de oosit (yumurta) kalitesini düşürmesi",
+      "Endometriozisin vajinal pH'yı alkali yaparak spermleri vajinada öldürmesi",
+      "Odakların salgıladığı aşırı progesteronun servikal mukusu geçilmez yapması",
+      "Rahim iç zarında (endometriumda) gelişen eşzamanlı karsinomun implantasyonu engellemesi"
+    ],
+    "correct": 1,
+    "exp": "Endometriozis, infertilitenin (kısırlığın) en sinsi ve sık nedenlerinden biridir. Eğer tüpler yapışıklıklar nedeniyle tıkanmışsa (anatomik bozulma), kısırlığın nedeni bellidir (Sperm ve yumurta buluşamaz). ANCAK endometrioziste tüpler (HSG'de) tamamen AÇIK olsa bile hasta gebe kalamayabilir. Bunun nedeni 'Toksik Mikroçevre'dir. Karın zarındaki (peritondaki) ektopik endometriozis odakları sürekli kanar ve karın içini bir savaş alanına (kronik inflamasyona) çevirir. Pelvik boşluk makrofajlarla, TNF-alfa ile, İnterlökinlerle ve Prostaglandinlerle dolar. Tüpten geçmeye çalışan spermler veya yumurtalıktan atılan narin oosit (yumurta), bu zehirli çorbanın içine düşer. Spermlerin hareketliliği bozulur, yumurta hasar görür veya embriyo kalitesi düşerek gebelik imkansız hale gelir."
+  },
+  {
+    "id": 1053,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "On beş yaşında kız çocuğu, yaşıtlarına göre kısa boy, kalın ve yeleli boyun (webbed neck), geniş göğüs kafesi ve hiç adet görmeme (Primer Amenore) şikayetleriyle getiriliyor. Karyotip analizi 45,X0 (Turner Sendromu) olarak saptanıyor. Hormon profilinde östrojenin çok düşük, FSH ve LH düzeylerinin ise (menopozdaki gibi) çok yüksek olduğu görülüyor (Hipergonadotropik Hipogonadizm). Turner sendromunda östrojen üretiminin sıfırlanmasına ve adet görülememesine neden olan asıl patolojik süreç, overlerdeki (yumurtalıklardaki) HANGİ hücresel popülasyonun anne karnında ve erken çocuklukta hızla tükenerek yumurtalığı bağ dokusuna (çizgi over) dönüştürmesidir?",
+    "options": [
+      "Stromal fibroblastların tümörleşmesi",
+      "Mezonefrik kanal kalıntılarının kistleşmesi",
+      "Primordiyal foliküllerin (oositlerin) genetik destek eksikliği nedeniyle hızlandırılmış (hızla artan) atreziye (apoptoza) uğrayarak tamamen yok olması",
+      "Teka hücrelerinin sadece androjen üretmeye programlanması",
+      "Granüloza hücrelerinin aromataz enzimini tamamen kaybetmesi"
+    ],
+    "correct": 2,
+    "exp": "Turner Sendromu (45,X0), kız çocuklarında primer amenorenin en sık nedenidir (ve boy kısalığı eşlik eder). İki X kromozomundan birinin tam veya kısmi eksikliği vardır. Turner sendromlu bir kız çocuğu anne karnındayken aslında overleri (yumurtalıkları) ve içindeki milyonlarca yumurtası (oosit/primordiyal folikül) vardır. Ancak foliküllerin hayatta kalabilmesi ve büyüyebilmesi için iki X kromozomunun da tam çalışmasına ihtiyaçları vardır. İkinci X kromozomu olmayınca, bu foliküller hızla yaşlanır ve intihar ederler (Hızlandırılmış Atrezi / Accelerated atresia). Kız çocuğu ergenliğe ulaştığında, yumurtalıkların içinde tek bir yumurta hücresi bile kalmamıştır. Overler içi boş, fibrotik, beyaz bir ip parçasına (Streak/Çizgi Over) dönüşür. Yumurta (folikül) kalmadığı için östrojen üretilemez; östrojen olmadığı için de beyin (hipofiz) sürekli FSH pompalar ama yanıt alamaz."
+  },
+  {
+    "id": 1054,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "On dokuz yaşında profesyonel bir ritmik jimnastikçi, 8 aydır adet görmediği (Sekonder Amenore) şikayetiyle takım doktoruna başvuruyor. Vücut kitle indeksi (VKİ) 17 kg/m² (çok düşük) saptanıyor. Hastanın hormon analizinde FSH, LH ve östrojen düzeyleri çok düşük bulunuyor (Hipogonadotropik Hipogonadizm). Fonksiyonel Hipotalamik Amenore tablosundaki bu genç sporcuda, üreme fonksiyonlarının tamamen kapatılması (GnRH salınımının durması); beyne 'vücutta hamileliği kaldıracak yeterli enerji ve yağ deposu yok' sinyalini gönderen HANGİ yağ dokusu (adiposit) kaynaklı hormonun kandaki seviyesinin dibe vurmasının doğrudan bir sonucudur?",
+    "options": [
+      "Adiponektin",
+      "İnsülin",
+      "Leptin",
+      "Kortizol",
+      "Ghrelin"
+    ],
+    "correct": 2,
+    "exp": "Fonksiyonel Hipotalamik Amenore, tıbbın en mükemmel koruma mekanizmalarından biridir. Aşırı zayıf, ağır diyet yapan (Anoreksiya Nervoza) veya ağır egzersiz yapan elit sporcularda görülür. Vücut (beyin) şunu hesaplar: 'Benim şu an hayatta kalacak kadar bile enerjim yok, eğer hamile kalırsam bir bebeği büyütemem, ikimiz de ölürüz.' Bu yüzden üreme sisteminin şalterini kapatır. Peki beyin vücutta yağ/enerji olmadığını nasıl anlar? Vücudumuzdaki yağ hücreleri (adipositler) kana 'Leptin' adı verilen bir tokluk hormonu salgılar. Yağ kütlesi çok düştüğünde, kandaki Leptin seviyesi de dibe vurur. Leptinin düşmesi ve stres hormonu Kortizolün artması, hipotalamustaki 'GnRH' salınımını bıçak gibi keser. GnRH durunca hipofiz (FSH/LH) uyur, yumurtalık uyur ve kadın adet göremez (kemikleri de erimeye başlar)."
+  },
+  {
+    "id": 1055,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Kırk beş yaşında kadın hasta, cinsel ilişki sonrası kanama (postkoital kanama) şikayetiyle başvuruyor. Spekulum muayenesinde servikste (rahim ağzında) 3 cm çapında ülsere ve frajil (kolay kanayan) bir kitle saptanıyor. Biyopside invaziv Skuamöz Hücreli Karsinom (SCC) ve yüksek riskli HPV-16 entegrasyonu izleniyor. HPV'nin hücreyi kanserleştiren iki büyük onkoproteininden (E6 ve E7) biri olan 'E7' proteininin, hücreyi durmaksızın bölünmeye (S fazına) zorlarken HANGİ tümör süpresör proteini bağlayıp inaktive ederek, E2F transkripsiyon faktörünün frensizce serbest kalmasına neden olduğu bilinmektedir?",
+    "options": [
+      "p53 (TP53)",
+      "Retinoblastom (Rb)",
+      "BRCA1",
+      "PTEN",
+      "WT1"
+    ],
+    "correct": 1,
+    "exp": "Serviks kanserinin %99'undan sorumlu olan Yüksek Riskli HPV (16, 18) virüsleri, hücrenin iki büyük frenini (p53 ve Rb) kırarak kanser yapar. Bunu iki farklı viral onkoproteinle başarır: 'E6' proteini p53'ü yıkarak hücrenin apoptoza (intihara) gitmesini ve DNA'sını tamir etmesini engeller. 'E7' proteini ise hücre döngüsünün (G1'den S fazına geçişin) asıl bekçisi olan 'Retinoblastom (Rb)' proteinine bağlanır. Rb normalde 'E2F' transkripsiyon faktörünü sıkıca tutarak hücrenin bölünmesini engeller. E7, Rb'ye yapışıp onu felç edince, E2F serbest kalır, çekirdeğe gider ve hücreye 'durmaksızın DNA sentezle ve bölün' (S fazı) emrini vererek kanserleşmeyi başlatır."
+  },
+  {
+    "id": 1056,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Altmış yaşında, obez (VKİ: 38), Tip 2 Diyabeti olan ve hiç doğum yapmamış (nullipar) postmenopozal kadın hasta, kanama şikayetiyle başvuruyor. Endometrial biyopside Tip 1 Endometrioid Adenokarsinom saptanıyor. Bu östrojene bağımlı ve nispeten iyi huylu endometrium kanserinin patogenezinde ERKEN evrede izlenen (ve kompleks atipili hiperplazilerde de saptanan) EN SIK genetik anomali, hücre içi PI3K/AKT büyüme yolağının sürekli açık kalmasına neden olan HANGİ tümör süpresör genin inaktivasyonudur (mutasyonudur)?",
+    "options": [
+      "p53 (TP53)",
+      "HER2/neu (ERBB2)",
+      "PTEN",
+      "E-Kaderin (CDH1)",
+      "BRAF"
+    ],
+    "correct": 2,
+    "exp": "Endometrium kanseri iki tipe ayrılır. Tip 1 (Endometrioid): Obez, hiperöstrojenik, diyabetik, genç-orta yaşlı hastalarda 'Endometrial Hiperplazi' zemininden gelişir. Bu kanserin (ve öncülü olan atipili hiperplazinin) genetik imzası '%50-80 oranında görülen PTEN mutasyonu'dur. PTEN, hücreyi büyüten PI3K/AKT yolağını durduran bir frendir. PTEN bozulduğunda hücre östrojenin de etkisiyle durmaksızın çoğalır. (Not: Tip 2 Endometrium Kanseri ise yaşlı, zayıf, östrojenle alakası olmayan atrofik bir endometrium zemininde aniden çıkan, çok agresif, seröz/pappiller tiptir ve onun genetik imzası ise p53 mutasyonudur)."
+  },
+  {
+    "id": 1057,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Altmış beş yaşında kadın hasta, son aylarda artan karın şişliği (asit), hazımsızlık ve kilo kaybı ile başvuruyor. Ultrasonografide her iki overde (yumurtalıkta) kompleks, solid-kistik kitleler saptanıyor. Kanda CA-125 düzeyi çok yüksek (1200 U/mL) bulunuyor. Yüksek Dereceli Seröz Over Karsinomu (HGSOC) tanısı alan bu en ölümcül ve en sık görülen over kanserinin, aslında overin kendi yüzey epitelinden DEĞİL, embriyolojik/anatomik komşuluğundaki HANGİ dokunun (fimbriyalarının) ucunda gelişen 'Karsinoma in situ (STIC)' lezyonlarından dökülen hücrelerle overe ekildiği (implantasyon) modern onkolojide kanıtlanmıştır?",
+    "options": [
+      "Endometrium",
+      "Periton mezoteli",
+      "Fallop Tüpü (Tuba uterina)",
+      "Servikal glandüler epitel",
+      "Mezonefrik kanal artıkları"
+    ],
+    "correct": 2,
+    "exp": "Yıllarca 'Over (Yumurtalık) Kanseri' olarak bilinen Yüksek Dereceli Seröz Karsinom'un (HGSOC) patogenezinde son yıllarda devrim niteliğinde bir paradigma değişikliği yaşanmıştır. Bu tümörlerin büyük çoğunluğunun (özellikle BRCA mutasyonlu hastalarda) aslında overden değil, hemen yanındaki 'Fallop Tüplerinin' saçaklı uçlarından (Fimbriya) köken aldığı kanıtlanmıştır. Fallop tüpünün ucunda gelişen 'Seröz Tubal İntraepitelyal Karsinom (STIC)', bir tohum gibi overin yüzeyine dökülür ve orada büyüyerek over kanseri kılığında karşımıza çıkar (Her iki odakta da birebir aynı p53 mutasyonları saptanır). Bu nedenle günümüzde BRCA mutasyonlu kadınlarda profilaktik olarak sadece overler değil, mutlaka fallop tüpleri de (Salpingoooferektomi) alınır."
+  },
+  {
+    "id": 1058,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Kırk yaşında, ailesinde genç yaşta meme ve over kanseri öyküsü bulunan hastaya yapılan genetik taramada BRCA1 mutasyonu saptanıyor. BRCA1/2 genlerinin ürettiği proteinler, hücre bölünmesi sırasında DNA'da meydana gelen 'Çift Sarmal Kırıklarını (Double-Strand Breaks)' hatasız bir şekilde onaran HANGİ spesifik tamir mekanizmasının (yolağının) baş aktörleridir?",
+    "options": [
+      "Nükleotid Eksizyon Tamiri (NER)",
+      "Homolog Rekombinasyon Tamiri (HRR)",
+      "Mismatch (Yanlış Eşleşme) Tamiri (MMR)",
+      "Baz Eksizyon Tamiri (BER)",
+      "Non-Homolog Uç Birleştirme (NHEJ)"
+    ],
+    "correct": 1,
+    "exp": "BRCA1 ve BRCA2 genleri, genomumuzun en önemli koruyucularıdır. Hücre bölünürken DNA bazen iki iplikten birden kopar (Çift Sarmal Kırığı). Bu en ölümcül hasardır. BRCA proteinleri, sağlam olan kardeş kromatidi bir 'şablon' olarak kullanarak kopan yeri hatasız (birebir aynı şekilde) kopyalar ve diker. Bu kusursuz tamir sistemine 'Homolog Rekombinasyon (HRR)' denir. Eğer BRCA mutasyona uğrarsa (çalışmazsa), hücre bu kırıkları mecburen şablon kullanmadan, körü körüne uç uca ekleyerek (Non-Homolog Uç Birleştirme / NHEJ ile) tamir etmeye çalışır. Bu körü körüne tamir, DNA'da binlerce hataya (mutasyona) neden olur ve hücre çok hızlı bir şekilde meme/over kanserine dönüşür. (Not: Mismatch tamiri bozukluğu ise Lynch sendromu / Kolon kanseri yapar)."
+  },
+  {
+    "id": 1059,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Elli beş yaşında postmenopozal kadın hasta, menopozdan yıllar sonra başlayan kanama, meme hassasiyeti ve tek taraflı 8 cm'lik over (yumurtalık) kitlesiyle başvuruyor. Endometrial biyopside 'Endometrial Hiperplazi' saptanıyor. Ameliyatla çıkarılan over tümörünün mikroskobik incelemesinde; hücrelerin kahve çekirdeği (groove) şeklinde çekirdeklere sahip olduğu ve ortasında pembe eozinofilik bir materyal birikimi olan gületa/papatya benzeri yapılar (Call-Exner cisimcikleri) oluşturduğu görülüyor. Seks Kord-Stromal tümör ailesinden olan ve hastanın kanamasının asıl nedeni olan 'Östrojen' ile 'İnhibin' hormonlarını salgılayan bu tümör aşağıdakilerden hangisidir?",
+    "options": [
+      "Granüloza Hücreli Tümör",
+      "Sertoli-Leydig Hücreli Tümör",
+      "Brenner Tümörü",
+      "Krukenberg Tümörü",
+      "Disgerminom"
+    ],
+    "correct": 0,
+    "exp": "Granüloza Hücreli Tümör (Erişkin tip), overin Seks Kord-Stromal (Hormon üreten) tümörlerinin en sık görülenidir ve vakaların büyük kısmında spesifik 'FOXL2' gen mutasyonu bulunur. Bu tümörün hücreleri normal granüloza hücreleri gibi davranarak kana devasa miktarda 'Östrojen' ve 'İnhibin' salgılarlar. Postmenopozal (veya prepubertal) bir kadında artan bu östrojen, rahmin iç zarını kalınlaştırır (Endometrial hiperplazi) ve hastayı doktora 'Kanama' şikayetiyle getirir. Mikroskopta görülen, hücrelerin bir sıvı birikintisi etrafında rozet gibi dizildiği o patognomonik yapılara 'Call-Exner cisimcikleri' denir. İnhibin B seviyesi, tümörün nüksünü takip etmek için mükemmel bir tümör belirtecidir."
+  },
+  {
+    "id": 1060,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Yirmi yaşında genç kadın hasta, sağ overde hızla büyüyen 10 cm'lik solid kitle ile başvuruyor. Tümör belirteçleri incelendiğinde; Serum AFP (Alfa-fetoprotein) ve hCG (İnsan Koryonik Gonadotropini) düzeyleri TAMAMEN NORMAL bulunurken, LDH (Laktat Dehidrogenaz) ve PLAP (Plasental Alkalen Fosfataz) düzeyleri çok yüksek saptanıyor. Tümörün histolojisinde lenfositlerle infiltre olmuş fibröz septalar ve 'sahanda yumurta (fried egg)' görünümünde şeffaf sitoplazmalı büyük hücreler izleniyor. Kemoterapi ve radyoterapiye son derece duyarlı olan, overin bu en sık görülen malign 'Germ Hücreli' tümörü (erkeklerdeki Seminom'un birebir kadın versiyonu) aşağıdakilerden hangisidir?",
+    "options": [
+      "Endodermal Sinüs (Yolk Sac) Tümörü",
+      "Embriyonal Karsinom",
+      "Koryokarsinom",
+      "Olgunlaşmamış (İmmatür) Teratom",
+      "Disgerminom"
+    ],
+    "correct": 4,
+    "exp": "Disgerminom (Dysgerminoma), genç kadınlarda görülen, overin malign germ hücreli tümörlerinin en sık rastlananıdır. Erkeklerdeki testis tümörü olan 'Seminom' ile histolojik, genetik ve klinik olarak BİREBİR AYNIDIR (İkisi de radyoterapiye çok duyarlıdır, ikisinde de lenfosit infiltrasyonu ve sahanda yumurta görünümü vardır). Germ hücreli tümörleri birbirinden ayırmanın en kolay yolu tümör belirteçleridir: Yolk Sac Tümörü AFP salgılar; Koryokarsinom hCG salgılar; Embriyonal Karsinom hem AFP hem hCG salgılayabilir. Disgerminom ise AFP ve hCG ÜRETMEZ (veya çok nadir sinsityotrofoblast içerirse hafif hCG üretir). Disgerminomun klasik belirteçleri 'LDH (Laktat Dehidrogenaz)' ve 'PLAP'tır."
+  },
+  {
+    "id": 1061,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "On iki yaşında kız çocuğu, akut batın tablosunu taklit eden şiddetli pelvik ağrı ve hızla büyüyen over kitlesiyle acile getiriliyor. Kanda Alfa-fetoprotein (AFP) düzeyi >10.000 ng/mL saptanıyor. Ameliyatla çıkarılan kitlenin mikroskobik incelemesinde; ortasında tek bir kan damarı bulunan ve etrafı küboidal tümör hücreleriyle sarılmış olan, glomerüle benzeyen (glomeruloid) yapılar saptanıyor. Bu karakteristik 'Schiller-Duval Cisimciklerini' barındıran ve embriyolojik olarak ekstraembriyonik endoderm hücrelerinden farklılaşan yüksek dereceli (high-grade) malign tümör aşağıdakilerden hangisidir?",
+    "options": [
+      "Disgerminom",
+      "Endodermal Sinüs (Yolk Sac) Tümörü",
+      "Olgun Kistik Teratom",
+      "Sertoli-Leydig Hücreli Tümör",
+      "Embriyonal Karsinom"
+    ],
+    "correct": 1,
+    "exp": "Endodermal Sinüs Tümörü (Yolk Sac Tümörü / Vitellüs Kesesi Tümörü), çocuklarda ve genç kızlarda görülen, inanılmaz hızlı büyüyen çok agresif bir germ hücreli over tümörüdür. Adı üzerinde, embriyodaki 'Yolk Sac (Vitellüs kesesi)' hücrelerinden köken alır. Fetüste vitellüs kesesinin ve fetal karaciğerin en önemli görevi kana 'AFP (Alfa-fetoprotein)' üretmektir. Bu yüzden bu tümör kanda devasa AFP yüksekliği yapar. Patoloğun mikroskopta gördüğü o ortasında damar olan, böbrek glomerülünü andıran papiller/kistik yapılara 'Schiller-Duval Cisimcikleri' denir ve Yolk Sac tümörü için patognomoniktir. (Hem overde hem testiste aynı özelliklerle görülür)."
+  },
+  {
+    "id": 1062,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 5,
+    "q": "İki ay önce sağlıklı ve miadında bir bebek (normal doğum) dünyaya getiren 28 yaşındaki kadın hasta, aniden başlayan masif vajinal kanama, nefes darlığı ve kanlı balgam (hemoptizi) şikayetiyle acile başvuruyor. Kanda Beta-hCG düzeyi 150.000 mIU/mL saptanıyor. Akciğer grafisinde 'top güllesi (cannonball)' şeklinde multipl metastazlar izleniyor. Gestasyonel Koryokarsinom tanısı alan bu hastanın rahim içinden alınan tümör dokusunun patolojik incelemesinde; çılgınca bölünen Sinsityotrofoblast ve Sitotrofoblast hücre kümeleri saptanırken, HANGİ anatomik yapının (plasentaya ait) KESİNLİKLE BULUNMAMASI bu tümörü 'Mol Hidatiform'dan (Üzüm gebeliğinden) ayırır?",
+    "options": [
+      "Fetal kan damarları",
+      "Amniyon zarı kalıntıları",
+      "Koryon villusları (Chorionic villi)",
+      "Desidua bazalis hücreleri",
+      "Müllerian kanal artıkları"
+    ],
+    "correct": 2,
+    "exp": "Koryokarsinom, trofoblastik hücrelerin (Sinsityotrofoblast ve Sitotrofoblast) oluşturduğu, inanılmaz invaziv, kanamalı ve akciğere çok erken hematojen metastaz yapan bir kanserdir (Kanda devasa hCG yapar). Normal bir Mol Hidatiform'da (üzüm gebeliği) üzüm tanesine benzeyen, içi su dolu, ödemli 'Koryon Villusları' vardır ve bu hücreler villusun etrafında çoğalır. ANCAK Koryokarsinom tamamen vahşileşmiş bir kanserdir, doku (mimari) oluşturma yeteneğini kaybetmiştir. Koryokarsinomda trofoblastlar vardır ama ASLA 'Koryon Villus (villi)' yapıları YOKTUR. Patolog villus görürse Mol der, villus göremez de sadece atipik trofoblast hücresi yığını (ve nekroz/kanama) görürse Koryokarsinom tanısını koyar. (Bu tümör kemoterapiye -Metotreksat- inanılmaz duyarlıdır ve %100'e yakın kür sağlanır)."
+  },
+  {
+    "id": 1063,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "On altı haftalık gebe olan 20 yaşındaki hasta; rahim boyutunun gebelik haftasına göre çok büyük olması, şiddetli bulantı-kusma (Hiperemezis) ve erken başlangıçlı preeklampsi bulgularıyla başvuruyor. Ultrasonografide fetüs (bebek) saptanamıyor, rahim içi boşluğunda 'kar fırtınası' görünümünde veziküler (kistik) yapılar izleniyor. Komplet (Tam) Mol Hidatiform tanısı alan bu hastanın tahliye edilen materyaline immünhistokimyasal olarak 'p57 (p57KIP2)' boyası uygulandığında, trofoblast hücrelerinde HİÇ BOYANMA OLMADIĞI (p57 Negatif) saptanıyor. Komplet molde bu proteinin üretilememesinin nedeni, p57 geninin sadece (imprinting mekanizmasıyla) HANGİ ebeveynden gelen kromozom üzerinden okunabilmesiyle (eksprese edilmesiyle) doğrudan ilişkilidir?",
+    "options": [
+      "Sadece babadan (paternal) gelen allelden okunabilmesi",
+      "Sadece anneden (maternal) gelen allelden okunabilmesi",
+      "Hem anne hem babadan (biallelik) okunabilmesi",
+      "Mitokondriyal DNA'dan kodlanması",
+      "Sadece Y kromozomunda bulunması"
+    ],
+    "correct": 1,
+    "exp": "Mol Hidatiform (Üzüm gebeliği), Komplet (Tam) ve Parsiyel (Kısmi) olarak ikiye ayrılır. Komplet molde, çekirdeği (DNA'sı) BOŞ olan bir yumurta, bir (veya iki) SPERM tarafından döllenir. Sperm kendi DNA'sını ikiye katlar (46,XX veya 46,XY). Yani Komplet Mol'ün içindeki genetiğin (kromozomların) %100'ü SADECE BABAYA aittir; ANNEDEN GELEN HİÇBİR GEN YOKTUR. Babadan gelen genler plasentayı (trofoblastları) çılgınca büyütürken (kar fırtınası), bebek hiç gelişmez. Patologlar Komplet Mol ile Parsiyel Molü ayırmak için 'p57' boyası kullanır. p57 geni, genetik mühürlenme (imprinting) kuralı gereği SADECE ANNEDEN gelen kromozomdan okunur (babınki susturulur). Komplet molde anne kromozomu HİÇ OLMADIĞI İÇİN, doku p57 üretemez ve boyanma 'NEGATİF' gelir. (Parsiyel molde ise anne kromozomu vardır -69,XXY- ve p57 pozitiftir)."
+  },
+  {
+    "id": 1064,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Yetmiş yaşında postmenopozal kadın hasta, labia majora üzerinde aylardır geçmeyen, kaşıntılı, kızarık ve üzerinde beyazımsı kabuklar (krutlar) olan ekzematöz bir lezyonla dermatoloğa başvuruyor. Topikal tedavilere yanıt alınamıyor. Biyopside; epidermisin içinde tek tek veya küçük gruplar halinde sızmış, geniş ve berrak sitoplazmalı, 'PAS pozitif / Diastaz dirençli' (Müsin içeren) ve Sitokeratin-7 (CK7) pozitif atipik hücreler saptanıyor. Vulvanın Ekstramammar Paget Hastalığı tanısı alan bu hastada, meme başındaki Paget Hastalığı'ndan ÇOK FARKLI olarak, bu kanser hücrelerinin genellikle alttaki bir invaziv kanserden sızmak yerine, DOĞRUDAN derideki HANGİ bezlerin kök hücrelerinden birincil (primer) olarak geliştiği (Karsinoma in situ) kabul edilir?",
+    "options": [
+      "Bartholin bezleri",
+      "Ekrin ter bezleri",
+      "Apokrin ter bezleri",
+      "Skene bezleri",
+      "Sebase (yağ) bezleri"
+    ],
+    "correct": 2,
+    "exp": "Paget Hastalığı (büyük, berrak, müsinli hücrelerin epidermise sızması) iki yerde görülür: Memede ve Vulvada. Memedeki Paget hastalığı %100'e yakın oranda altta yatan (derinlerdeki) bir 'Duktal Karsinom'un meme başına tırmanmasıdır (Sekonderdir). ANCAK Vulvadaki Ekstramammar Paget Hastalığı'nda durum farklıdır. Hastaların büyük çoğunluğunda (%70-80) altta yatan bir invaziv kanser YOKTUR. Hastalık doğrudan vulva derisindeki (epidermisteki) 'Apokrin Ter Bezi' kök hücrelerinden kendi kendine başlar ve intraepitelyal bir kanser (Karsinoma in situ) olarak orada yayılır. (Çok nadiren rektum veya mesane kanserleri de vulvaya sızıp pagetoid görünüm yapabilir ama primer form apokrin kökenlidir). Tanı, müsin boyası (PAS) ile konur (Malign melanom PAS negatiftir)."
+  },
+  {
+    "id": 1065,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Yirmi yaşında genç kadın hasta, vajinal kanama şikayetiyle başvuruyor. Muayenede vajina ön duvarında (üst 1/3) polipoid, kırmızı bir kitle saptanıyor. Biyopside 'Berrak Hücreli Adenokarsinom (Clear Cell Carcinoma)' saptanıyor. Hastanın özgeçmişi sorgulandığında, annesinin ona hamileyken düşük tehlikesine karşı 'Dietilstilbestrol (DES)' adlı sentetik bir östrojen kullandığı öğreniliyor. Gebelikte DES kullanımının (teratojenite), embriyoda Müllerian kanalların vajinaya inerken skuamöz epitele dönüşmesini (metaplazi) engelleyerek vajinada HANGİ bez yapılarının kalıcı olarak kalmasına (Vajinal Adenozis) ve yıllar sonra kanserleşmesine yol açtığı bilinmektedir?",
+    "options": [
+      "Mezonefrik (Gartner) kanalı artıkları",
+      "Kloakal endoderm kalıntıları",
+      "Müllerian kökenli glandüler (bezsel) prizmatik epitel",
+      "Bartholin bezi lobülleri",
+      "Silyalı tubal epitel hücreleri"
+    ],
+    "correct": 2,
+    "exp": "Vajina kanserleri genellikle Skuamöz Hücreli (SCC) ve yaşlılarda olur. Genç bir kadında vajinada 'Berrak Hücreli Adenokarsinom' varsa, hikayede mutlaka anne karnında 'DES (Dietilstilbestrol)' maruziyeti aranır (Eskiden düşüğü önlesin diye verilirdi). Normal embriyolojide, vajinanın üst 1/3'ünü oluşturan Müllerian kanallar başlangıçta 'Glandüler (bezsel)' prizmatik epitelle kaplıdır. Sonra aşağıdan ürogenital sinüs gelir ve bu bezsel epiteli silerek yerine sağlam, yassı 'Skuamöz Epitel' döşer. DES ilacı bir endokrin bozucudur; bu değişimi durdurur. Müllerian kanaldan gelen o 'Glandüler (bez)' epitel, vajinada silinemez ve adacıklar halinde kalır. Buna 'Vajinal Adenozis' denir. Kız çocuğu 15-20 yaşına geldiğinde, vajinadaki bu anormal bezler kanserleşerek o meşhur Berrak Hücreli Adenokarsinomu yaratır."
+  },
+  {
+    "id": 1066,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Kırk beş yaşında kadın hasta, bilateral (iki taraflı) over (yumurtalık) kitlesi, asit ve kilo kaybı ile opere ediliyor. Patolojik incelemede over dokusunun büyük oranda müsin (sümüksü sıvı) üreten, sitoplazması müsin dolu olduğu için çekirdeği kenara itilmiş olan 'Taşlı Yüzük Hücreleri (Signet Ring Cells)' ile infiltre edildiği saptanıyor. Krukenberg Tümörü tanısı alan bu hastada, asıl (primer) tümör odağının Mide (veya kolon/meme) olduğu belirleniyor. Mide kanserinin hücre hücre koparak kan/lenf yoluyla overe kadar ulaşabilmesi (metastaz yapabilmesi), tümör hücrelerinin birbirine tutunmasını sağlayan HANGİ spesifik hücre zarı proteininin genetik olarak mutasyonla KAYBEDİLMESİNİN doğrudan bir eseridir?",
+    "options": [
+      "Fibronektin",
+      "Müsin 1 (MUC1)",
+      "E-Kaderin (CDH1)",
+      "Beta-katenin",
+      "Desmoglein-3"
+    ],
+    "correct": 2,
+    "exp": "Krukenberg Tümörü, overin primer kanseri DEĞİL, gastrointestinal sistemden (en sık Mideden) gelen metastatik bir tümörüdür. Genellikle bilateraldir (iki overde de olur) ve mikroskopta 'Taşlı Yüzük Hücresi (Signet Ring Cell)' görünümüyle (müsin dolu hücre) tanınır. Bir mide kanserinin yerinden kopup ta overe kadar gidebilmesi için, hücreleri birbirine sıkıca bağlayan tutkalı (adezyon molekülünü) kaybetmesi gerekir. Bu tutkal 'E-KADERİN (CDH1)' proteinidir. Midenin diffüz tip kanserlerinde (Krukenberg yapan tip) CDH1 geni mutasyonla SUSAR. Hücreler birbirine tutunamaz, bağımsız (tekil) hücreler halinde koparlar ve periton boşluğuna (veya kan/lenfe) dökülerek bilateral overleri bir salkım gibi işgal ederler."
+  },
+  {
+    "id": 1067,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Altmış yaşında postmenopozal kadın hasta, nefes darlığı, sağ tarafında plevral efüzyon (akciğerde sıvı) ve karında belirgin şişlik (Masif Asit) şikayetiyle başvuruyor. Jinekolojik muayenesinde sağ overde 15 cm'lik sert, solid bir kitle palpe ediliyor. Hastada ileri evre over kanseri düşünülerek kitle cerrahi olarak tamamen çıkarılıyor. Ameliyattan sadece haftalar sonra, hastanın ne kemoterapi ne de başka bir ilaç almasına GEREK KALMADAN akciğerindeki sıvının ve karındaki asidin kendiliğinden ve tamamen KURALARAK iyileştiği saptanıyor. Histolojik incelemesinde sadece iğsi (spindle) şekilli benign fibroblastların oluşturduğu girdaplar (fascicles) saptanan ve bu sendroma (Meigs Sendromu) neden olan selim (benign) over tümörü aşağıdakilerden hangisidir?",
+    "options": [
+      "Fibrom (Fibroma)",
+      "Brenner Tümörü",
+      "Müsinöz Kistadenom",
+      "Granüloza Hücreli Tümör",
+      "Tekom (Thecoma)"
+    ],
+    "correct": 0,
+    "exp": "Meigs Sendromu (Meigs' Syndrome), klinik tıbbın en yanıltıcı ve yüz güldürücü tablolarından biridir. Hasta karşınıza akciğerde su (plevral efüzyon - genelde sağda), karında masif asit ve overde büyük bir kitleyle (Solid tümör) gelir. Herkes bunun terminal evre (Metastatik) bir over kanseri olduğunu sanır. OYSA kitle tamamen selim (benign) bir 'Over Fibromu (Fibroma)'dur. Fibromlar stromal tümörlerdir, kanserleşmezler. ANCAK bu büyük fibrom kütlesi (bazen burkulma veya damar basısıyla) etrafa çok fazla VEGF (Vasküler Büyüme Faktörü) ve sıvı sızdırır. Karında asit birikir; bu asit diyaframdaki deliklerden göğüs boşluğuna çekilerek akciğeri doldurur. Sihir şuradadır: Siz sadece o iyi huylu miyom benzeri 'Fibrom'u ameliyatla aldığınızda, sızdırma bıçak gibi kesilir ve akciğer/karın sıvısı hiçbir ek tedaviye gerek kalmadan BÜYÜLEYİCİ bir şekilde kaybolur."
+  },
+  {
+    "id": 1068,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 5,
+    "q": "Otuz yaşında kadın hasta, bir haftadır giderek artan psikiyatrik semptomlar (hezeyanlar, halüsinasyonlar), hafıza kaybı, yüzde istemsiz hareketler (diskinezi) ve ardından gelişen nöbet/koma tablosuyla acile getiriliyor. BOS incelemesinde lenfositik pleositoz ve Spesifik Antikorlar (Anti-NMDA reseptör antikorları) saptanıyor. Anti-NMDA Reseptör Ensefaliti (otoimmün ensefalit) tanısı alan hastanın tüm vücut taramasında overde (yumurtalıkta) bir kitle tespit ediliyor. Tümörün ameliyatla çıkarılması hastanın nörolojik tablosunu hızla iyileştiriyor. Bağışıklık sisteminin beyni 'yanlışlıkla' düşman sanıp saldırmasına (Paraneoplastik Sendrom) neden olan şey, bu over tümörünün İÇİNDE saç ve yağ ile birlikte HANGİ olgun (matür) embriyolojik dokuyu barındırmasıdır?",
+    "options": [
+      "Tiroglobulin sentezleyen tiroid folikülleri",
+      "NMDA reseptörleri barındıran olgun sinir (nöral/glial) dokusu",
+      "Trofoblastik koryon villusları",
+      "Adrenal korteks hücreleri",
+      "Yassı (skuamöz) epitel adacıkları"
+    ],
+    "correct": 1,
+    "exp": "Anti-NMDA Reseptör Ensefaliti, özellikle genç kadınlarda görülen, psikiyatriyi ve nörolojiyi şaşkına çeviren (şizofreni sanılarak akıl hastanesine yatırılan) ölümcül bir otoimmün fırtınadır. Vakaların yaklaşık %50'sinde altta yatan (karnın içinde saklı) bir over tümörü, yani 'Matür Kistik Teratom (Dermoid Kist)' bulunur. Teratom, 3 germ yaprağını (ektoderm, mezoderm, endoderm) da içeren, içinde saç, diş, yağ ve SİNİR DOKUSU (beyin hücreleri) barındıran bir canavardır. Yumurtalıktaki bu teratomun içinde oluşan 'olgun nöral doku' üzerinde doğal olarak 'NMDA Reseptörleri' bulunur. Bağışıklık sistemi overdeki bu yabancı beyin hücrelerini fark eder ve onlara karşı (Anti-NMDA) antikor üretir. Bu antikorlar kana karışır, Kan-Beyin Bariyerini geçer ve hastanın GERÇEK BEYNİNDEKİ NMDA reseptörlerine saldırarak onu komaya sokar. Tümör (teratom) kesilip alındığında hedef/antijen kaynağı yok olur ve hasta mucizevi bir şekilde uyanır."
+  },
+  {
+    "id": 1069,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "İki yaşında kız çocuğu, annesinin bezini değiştirirken vajinadan dışarı doğru sarkan, üzüm salkımına benzeyen (botryoid) kanamalı, polipoid, şeffaf-pembe renkli bir kitle fark etmesi üzerine getiriliyor. Biyopside; vajinal epitelin hemen altında yoğun olarak kümeleşmiş hücrelerden oluşan 'Kambiyum Tabakası (Cambium layer)' ve sitoplazmasında enine çizgilenmeler gösteren iğsi/raket şeklinde hücreler (rhabdomyoblastlar) saptanıyor. İmmünhistokimyasal olarak 'Desmin' ve 'Myogenin' pozitif boyanan bu embriyolojik malign tümör aşağıdakilerden hangisidir?",
+    "options": [
+      "Embriyonal Rhabdomyosarkom (Sarkoma Botryoides)",
+      "Berrak Hücreli Adenokarsinom",
+      "Endodermal Sinüs (Yolk Sac) Tümörü",
+      "Müllerian Adenosarkom",
+      "Skuamöz Hücreli Karsinom"
+    ],
+    "correct": 0,
+    "exp": "Sarcoma Botryoides (Embriyonal Rhabdomyosarkom'un bir alt tipidir), özellikle 5 yaş altı kız çocuklarında vajinada (erkek çocuklarda mesane/prostatta) görülen çok nadir ama çok tipik bir kanserdir. 'Botryoid', Yunancada 'Üzüm Salkımı' demektir; kitle gerçekten vajinadan dışarı sarkan bir salkım gibi görünür. Kökeni epitel DEĞİL, ilkel 'Çizgili Kas (İskelet Kası)' kök hücreleri olan 'Rhabdomyoblastlar'dır. Bu hücreler çılgınca çoğalarak epitelin hemen altında birikir (Buna Kambiyum tabakası denir). Hücreler kas hücresi olmaya çalıştıkları için sitoplazmalarında kasılma iplikçikleri (enine çizgilenmeler) görülür. Kas dokusunun belirteçleri olan 'Desmin', 'MyoD1' ve 'Myogenin' boyalarıyla kızıla boyanması tanıyı kesinleştirir."
+  },
+  {
+    "id": 1070,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 5,
+    "q": "Otuz iki haftalık primigravid hasta; baş ağrısı, 160/110 mmHg kan basıncı, masif ödem ve idrarda +3 proteinüri ile acile başvuruyor. Şiddetli Preeklampsi tanısı alan bu hastada, trofoblastların miyometrial spiral arterleri yeterince işgal edememesi (yetersiz invazyon) sonucu plasentada iskemi geliştiği bilinmektedir. Plasental iskeminin anne kanında (sistemik olarak) bu yaygın endotel hasarını ve hipertansiyonu yaratması; iskemik plasentadan kana salınan HANGİ spesifik 'tuzak (decoy) reseptörün', annenin damar koruyucu büyüme faktörlerini (VEGF ve PlGF) bağlayarak felç etmesinin doğrudan sonucudur?",
+    "options": [
+      "sFlt-1 (Çözünür fms-benzeri tirozin kinaz-1)",
+      "Endotelin-1",
+      "Tromboksan A2",
+      "Anjiyotensin Dönüştürücü Enzim (ACE)",
+      "Plasental Büyüme Faktörü (PlGF)"
+    ],
+    "correct": 0,
+    "exp": "Preeklampsinin patofizyolojisinde son yıllardaki en büyük devrim 'sFlt-1' molekülünün keşfidir. Normal gebelikte trofoblastlar annenin spiral arterlerini genişleterek plasentaya bol kan gelmesini sağlar. Preeklampside bu genişleme olmaz, plasenta oksijensiz (iskemik) kalır. İskemik plasenta paniğe kapılarak kana devasa miktarda 'sFlt-1' adı verilen bir tuzak reseptör salgılar. Annede damar sağlığını ve sızıntı direncini sağlayan VEGF (Vasküler Endotelyal Büyüme Faktörü) ve PlGF molekülleri vardır. Kana karışan sFlt-1, bu koruyucu faktörleri havada yakalayıp hapseder. VEGF'siz kalan anne endoteli büzüşür (hipertansiyon), böbrek süzgeci bozulur (proteinüri) ve damarlar sıvı sızdırır (ödem)."
+  },
+  {
+    "id": 1071,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Yirmi sekiz haftalık gebe, erken membran rüptürü ve başlayan uterin kontraksiyonlar (Erken Doğum Tehdidi) nedeniyle hastaneye yatırılıyor. Uterin kasılmaları durdurmak (Tokoliz) amacıyla hastaya oral bir ajan başlanıyor. İki gün sonra yapılan fetal ekokardiyografide fetüste sağ ventrikül hipertrofisi, triküspit yetmezliği ve 'Duktus Arteriozus'un erken (intrauterin) kapanmaya başladığı' saptanıyor. Aynı zamanda amniyon sıvısı da azalmıştır (Oligohidramnios). Fetüste bu ölümcül kardiyovasküler komplikasyonu yaratan tokolitik ajan ve inhibe ettiği hedef enzim aşağıdakilerden hangisidir?",
+    "options": [
+      "Magnezyum Sülfat / Kalsiyum kanalları",
+      "Nifedipin / L-tipi Kalsiyum kanalları",
+      "İndometazin / Siklooksijenaz (COX) enzimi",
+      "Terbutalin / Fosfodiesteraz enzimi",
+      "Atosiban / Oksitosin reseptörü"
+    ],
+    "correct": 2,
+    "exp": "Tokolitik ilaçlar erken doğumu durdurmak için kullanılır ancak her birinin spesifik yan etkileri vardır. İndometazin, bir NSAİİ (Non-Steroid Anti-İnflamatuar İlaç) olup COX enzimini bloke eder. Prostaglandin üretimini keserek rahmi gevşetir. ANCAK, anne karnındaki bebeğin yaşamasını sağlayan en önemli şant olan 'Duktus Arteriozus'un AÇIK KALMASINI sağlayan yegane molekül de 'Prostaglandin E2 (PGE2)'dir. İndometazin plasentadan geçer, fetüste PGE2 üretimini durdurur ve duktus anne karnındayken kapanmaya başlar. Duktus kapanınca sağ kalpten akciğere gidemeyen kan geri teper (Sağ kalp yetmezliği / Triküspit yetmezliği). Ek olarak böbrek kan akımını da azalttığı için bebek idrar yapamaz ve oligohidramnios gelişir. (Bu yüzden 32. haftadan sonra İndometazin KESİNLİKLE KULLANILMAZ)."
+  },
+  {
+    "id": 1072,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Otozomal resesif bir genetik hastalık taşıyıcısı olan kadın, gebeliğinin 16. haftasında plasentanın yerleşimi nedeniyle ciddi kanama geçiriyor. Fetüs canlı ancak anne acil sezaryenle (veya küretajla) tahliye edilmek zorunda kalınıyor. Patolojik incelemede, koryon villuslarının annenin miyometriumuna (rahim kas tabakasına) doğrudan temas ettiği ve sıkıca yapıştığı saptanıyor (Plasenta Akkreta). Plasentanın bu anormal ve ölümcül yapışmasına (doğum sonu ayrılmamasına) neden olan ASIL histolojik / embriyolojik kusur, uterusta HANGİ fizyolojik bariyerin (desidual tabakanın) gelişememiş olmasıdır?",
+    "options": [
+      "Koryon frondozum",
+      "Amniyon zarı",
+      "Desidua bazalis'in (Nitabuch fibrinoid tabakası)",
+      "Stratum fonksiyonalis",
+      "Desidua kapsülaris"
+    ],
+    "correct": 2,
+    "exp": "Plasenta Akkreta (ve varyantları İnkreta, Perkreta), plasentanın rahim duvarına anormal derecede sıkı yapışmasıdır. Doğumdan sonra plasenta ayrılmaz ve hasta masif kanamadan (postpartum kanama) ölebilir. Normal bir gebelikte, trofoblastik hücrelerin rahim kasına (miyometriuma) ulaşmasını engelleyen kalın bir yastık/bariyer vardır. Buna 'Desidua Bazalis' (ve onun oluşturduğu Nitabuch fibrinoid tabakası) denir. Önceden geçirilmiş sezaryenler, küretajlar veya rahim içi cerrahiler bu desidual yastığı KAZIYIP YOK EDER. Sonraki gebelikte plasenta bu yara izinin (skarın) üzerine yerleşirse, önünde desidual bir fren olmadığı için doğrudan miyometrium kaslarına yapışır (Akkreta) veya kasın içine doğru büyür (İnkreta/Perkreta)."
+  },
+  {
+    "id": 1073,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Yirmi sekiz haftalık gebe, rutin şeker taraması (OGTT) yaptırıyor. Açlık kan şekeri 85 mg/dL iken, yemekten sonraki (postprandial) şekerleri sürekli yüksek çıkıyor ve Gestasyonel Diyabet (GDM) tanısı alıyor. Gebelikte annenin kas ve yağ dokularında (özellikle 2. trimesterden sonra) fizyolojik bir 'İnsülin Direnci' oluşur. Plasenta tarafından üretilen ve annenin hücrelerindeki insülin reseptör sinyallerini zayıflatarak (GLUT-4 translokasyonunu azaltarak) glukozun fetüse kalmasını (sparing) sağlayan ASIL diyabetojenik hormon aşağıdakilerden hangisidir?",
+    "options": [
+      "İnsan Koryonik Gonadotropini (hCG)",
+      "Progesteron",
+      "İnsan Plasental Laktojeni (hPL / hCS)",
+      "Kortikotropin Salgılatıcı Hormon (CRH)",
+      "Östriol (E3)"
+    ],
+    "correct": 2,
+    "exp": "Gebelikte (özellikle 24. haftadan sonra) annenin vücudunda muazzam bir metabolik hırsızlık yaşanır. Fetüs büyümek için çok fazla glukoza ihtiyaç duyar. Plasenta, annenin kanındaki glukozun annenin kendi kaslarına/yağlarına girmesini engellemek için kana devasa miktarda 'İnsan Plasental Laktojeni (hPL - Human Placental Lactogen)' pompalar. hPL, annenin hücrelerinde şiddetli bir 'İnsülin Direnci' yaratır. Anne insülin üretir ama hücreleri şekeri içeri alamaz. Kanda biriken bol miktardaki glukoz, plasentadan geçerek doğruca bebeğe (fetüse) gider. Eğer annenin pankreası bu direnci kırmak için yeterince ekstra insülin üretemezse, annenin kan şekeri patlar ve 'Gestasyonel Diyabet (GDM)' ortaya çıkar."
+  },
+  {
+    "id": 1074,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Rh(D) negatif bir anne, Rh(D) pozitif bir bebeğe hamiledir. İlk gebeliğinde duyarlılaşmış (alloimmünizasyon) olan annenin kanındaki Anti-D antikorları, bu ikinci gebelikte plasentayı geçerek fetüsün alyuvarlarını parçalamakta (Hemolitik Yenidoğan Hastalığı / Fetal Hidrops) ve bebeği kalp yetmezliğine sokmaktadır. Annenin ürettiği bu IgG yapısındaki antikorların, plasentadaki sinsityotrofoblast hücrelerinden 'Aktif Transportla (Transsitoz)' geçip fetüs kanına ulaşabilmesini sağlayan ve sadece IgG'ye özgü olan bu moleküler kargo kapısı (reseptör) aşağıdakilerden hangisidir?",
+    "options": [
+      "Megalinosin reseptörü",
+      "Neonatal Fc Reseptörü (FcRn / Brambell reseptörü)",
+      "P-Glikoprotein pompası",
+      "Toll-like reseptör 4 (TLR-4)",
+      "Poli-Ig reseptörü"
+    ],
+    "correct": 1,
+    "exp": "Plasenta seçici bir filtredir. IgM, IgA veya IgE gibi dev antikorlar plasentadan GEÇEMEZ. Sadece ve sadece 'IgG' sınıfı antikorlar anneden bebeğe geçer. Bu geçiş pasif bir sızma (difüzyon) DEĞİLDİR; tamamen aktif ve spesifik bir taşıma (transsitoz) işlemidir. Plasentanın (sinsityotrofoblastların) yüzeyinde 'Neonatal Fc Reseptörü (FcRn / eski adıyla Brambell reseptörü)' bulunur. Bu reseptör annenin kanındaki IgG moleküllerini Fc (kuyruk) kısımlarından yakalar, bir vezikül içine alır ve hücrenin içinden geçirerek bebeğin kanına salar. Amaç bebeği doğduktan sonra 6 ay boyunca annenin antikorlarıyla enfeksiyonlardan korumaktır. ANCAK anne Rh uyuşmazlığında Anti-D (IgG) üretmişse, bu mükemmel kargo sistemi o ölümcül antikorları da bebeğe taşıyarak fetal alyuvarların katledilmesine (Hidrops Fetalis) neden olur."
+  },
+  {
+    "id": 1075,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 5,
+    "q": "Normal bir vajinal doğum eyleminin hemen ardından (veya amniyotomi sırasında), annede aniden başlayan şiddetli nefes darlığı, siyanoz, ani kan basıncı düşüşü (şok) ve açılan damar yollarından durdurulamayan masif kanama tablosu gelişiyor. Anne saatler içinde kaybediliyor. Amniyotik Sıvı Embolisi (Anafilaktoid Gebelik Sendromu) tanısı alan bu hastada; akciğer kılcallarına kaçan amniyon sıvısındaki fetal döküntülerin (skuamöz hücreler/kıllar) anneyi sadece tıkamakla kalmayıp, saniyeler içinde kanın pıhtılaşma faktörlerini tüketerek (Yaygın Damar İçi Pıhtılaşma - DIC) kanatarak öldürmesi, bu fetal kalıntıların yüzeyinde yüksek oranda bulunan HANGİ prokoagülan molekülden kaynaklanır?",
+    "options": [
+      "Doku Faktörü (Tissue Factor / Tromboplastin)",
+      "von Willebrand Faktörü (vWF)",
+      "Faktör VIII (Antihemofilik Faktör)",
+      "Fibrinojen",
+      "Plazminojen Aktivatör İnhibitörü (PAI-1)"
+    ],
+    "correct": 0,
+    "exp": "Amniyotik Sıvı Embolisi, kadın doğumun en korkutucu ve en hızlı öldüren tablosudur. Doğumda basınçla yırtılan rahim venlerinden annenin kanına 'Amniyon Sıvısı' kaçar. Sıvının içindeki bebek kılları, mekonyum ve dökülmüş fetal deri hücreleri akciğere gidip damarları tıkar (Mekanik şok). ANCAK hastayı asıl öldüren şey, bu fetal döküntülerin inanılmaz derecede zengin 'Doku Faktörü (Tissue Factor / Faktör III)' içermesidir. Annenin kanına karışan bu devasa Doku Faktörü bombası, annenin pıhtılaşma kaskadının 'Ekstrinsik Yolağını' bir anda ateşler. Vücuttaki tüm pıhtılaşma faktörleri ve trombositler saniyeler içinde tükenir (DIC). Pıhtılaşma faktörü kalmayan anne, her iğne deliğinden ve rahimden şelale gibi kanayarak hayatını kaybeder."
+  },
+  {
+    "id": 1076,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Mekanik kalp kapağı (mitral kapak) olan kadın hasta, kullandığı kan sulandırıcı ilacı gebeliğinin ilk trimesterinde (ilk 3 ay) kesmeyip kullanmaya devam etmiştir. Doğumda bebekte belirgin burun hipoplazisi (basık burun kökü) ve uzun kemik grafilerinde kıkırdak/epifiz noktalarında yaygın kireçlenmeler (Noktalı Kondrodisplazi / Chondrodysplasia punctata) saptanıyor. Fetal kemik gelişimini bu şekilde bozan 'Warfarin (Coumadin)' teratojenitesinin moleküler nedeni, ilacın kemik matriksinde kalsiyumu bağlamakla görevli olan HANGİ spesifik proteinin (Osteokalsin) post-translasyonel modifikasyonunu (gama-karboksilasyonunu) durdurmasıdır?",
+    "options": [
+      "Kollajen Tip II",
+      "Kondroitin Sülfat",
+      "Osteokalsin ve Matriks Gla Proteinleri (MGP)",
+      "Alkalen Fosfataz (ALP)",
+      "Fibronektin"
+    ],
+    "correct": 2,
+    "exp": "Warfarin (Coumadin) plasentayı geçer ve ilk trimesterde kesinlikle KONTRENDİKEDİR. Warfarinin asıl işi karaciğerde pıhtılaşma faktörlerinin (2, 7, 9, 10) 'Gama-karboksilasyonunu' (K vitamini döngüsünü) bloke etmektir. ANCAK vücutta Gama-karboksilasyona (K vitaminine) ihtiyaç duyan tek protein pıhtılaşma faktörleri değildir. Fetal kemiklerde kalsiyumu matrikse çöktüren (bağlayan) ve kemik oluşumunu yöneten 'Osteokalsin' ve 'Matriks Gla Proteinleri (MGP)' de çalışmak için Warfarinin bloke ettiği bu enzime (Epoksit redüktaz) muhtaçtır. Warfarin fetüse geçtiğinde kemik/kıkırdaktaki bu proteinler karboksillenemez, kalsiyum yanlış yerlere (epifizlere nokta nokta) çöker (Chondrodysplasia punctata) ve kemikler/burun gelişemez (Burun hipoplazisi / Fetal Warfarin Sendromu). (Gebelerde Warfarin yerine plasentayı geçmeyen Heparin/LMWH kullanılır)."
+  },
+  {
+    "id": 1077,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Şiddetli Preeklampsi tanısıyla hastaneye yatırılan 34 haftalık gebeye, nöbet geçirmesini (Eklampsi) önlemek amacıyla profilaktik 'Magnezyum Sülfat (MgSO4)' infüzyonu başlanıyor. Doz aşımı yaşayan hastada derin tendon reflekslerinin (patella refleksi) kaybolduğu ve solunum hızının (bradipne) tehlikeli boyutta düştüğü saptanıyor. Magnezyumun kaslarda bu gevşek (flask) felci ve nöbetleri engelleme etkisini yaratması; presinaptik nöromüsküler kavşakta HANGİ iyonla 'yarışarak (kompetisyon)' nörotransmitter salınımını bloke etmesine dayanır?",
+    "options": [
+      "Sodyum (Na+)",
+      "Potasyum (K+)",
+      "Kalsiyum (Ca+2)",
+      "Klor (Cl-)",
+      "Fosfat (PO4-3)"
+    ],
+    "correct": 2,
+    "exp": "Magnezyum Sülfat (MgSO4), kadın doğumda preeklamptik nöbetleri (eklampsiyi) durdurmak için kullanılan mucizevi ama dar marjlı bir ilaçtır. Magnezyum, 'KALSİYUM (Ca+2)' iyonunun doğadaki en büyük rakibidir. Nöromüsküler kavşakta (veya beyin sinapslarında) bir sinirin kası (veya diğer siniri) uyarabilmesi için, sinir ucuna kalsiyum girmesi ve Asetilkolin (ACh) veziküllerini patlatması gerekir. Hasta magnezyum zehirlenmesine girdiğinde, kanda bolca dolaşan Mg+2, sinir ucundaki voltaj kapılı Kalsiyum kanallarının ağzına tıkaç gibi oturur. Kalsiyum içeri GİREMEZ. Kalsiyum giremeyince ACh salgılanamaz. Kas uyarılmaz ve gevşer (Patella refleksi kaybolur, solunum kasları durur). Magnezyum zehirlenmesinin antidotu da tam bu rekabeti yenmek için hastaya damardan tekrar 'Kalsiyum Glukonat' vermektir."
+  },
+  {
+    "id": 1078,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Bir gebenin erken dönem ultrasonografi taramasında 'Monokoryonik-Diamniyotik (Tek plasenta, iki kese)' ikiz gebelik saptanıyor. Gebeliğin ilerleyen haftalarında İkizden İkize Transfüzyon Sendromu (TTTS) riski taşıyan bu spesifik koryonisite/amniyosite tipinin oluşabilmesi için; tek bir spermin tek bir yumurtayı döllediği o orijinal zigotun embriyolojik bölünme (yarılma) işleminin gebeliğin HANGİ spesifik günleri (evresi) arasında gerçekleşmiş olması gerekir?",
+    "options": [
+      "Döllenmeden sonraki ilk 0-3 gün içinde (Morula evresinden önce)",
+      "Döllenmeden sonraki 4-8. günler arasında (Blastokist evresinde, trofoblast oluştuktan sonra ama amniyon boşluğu oluşmadan önce)",
+      "Döllenmeden sonraki 8-13. günler arasında (İmplante olmuş blastokist evresinde, amniyon boşluğu oluştuktan sonra)",
+      "Döllenmeden sonraki 13. günden sonra (Primitif çizgi oluştuktan sonra)",
+      "Spermin yumurtaya girdiği ilk saatler içinde"
+    ],
+    "correct": 1,
+    "exp": "Tek yumurta (Monozigotik) ikizlerinde koryon (plasenta) ve amniyon (kese) sayısı, zigotun NE ZAMAN ikiye bölündüğüne (ayrıldığına) bağlıdır. \n1) İlk 0-3 gün bölünürse (çok erken): İki ayrı koryon, iki ayrı kese olur (DiDi ikizler, %30).\n2) **4-8. günler arası bölünürse (En sık, %70)**: Dıştaki zar (Koryon / Plasenta) çoktan oluşmuştur, artık bölünemez (Monokoryonik). Ama içteki kese (Amniyon) henüz oluşmamıştır, bu yüzden iki bebek kendilerine iki ayrı kese (Diamniyotik) yaparlar (MoDi ikizler). Tek plasentayı paylaştıkları için TTTS (İkizden ikize transfüzyon) sadece bunlarda görülür.\n3) 8-13. günler bölünürse: Koryon da amniyon da oluşmuştur, ikisi de bölünemez (Tek plasenta, tek kese - MoMo ikizler, kordon dolanması riski).\n4) 13. günden sonra bölünürse: Vücut ekseni oluşmuştur, tam kopamazlar (Yapışık/Siyam ikizleri)."
+  },
+  {
+    "id": 1079,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Otuz dört haftalık gebe, vücudunda belirgin bir kızarıklık veya döküntü OLMADAN, özellikle avuç içleri ve ayak tabanlarında geceleri uykudan uyandıran şiddetli kaşıntı şikayetiyle başvuruyor. Gebeliğin İntrahepatik Kolestazı (ICP) tanısı alan bu hastada, kanda biriken safra asitlerinin plasentayı geçerek fetüste aniden kardiyak ritim bozukluğuna (aritmi) ve açıklanamayan fetal ölüme yol açması; safra asitlerinin fetal miyokard hücre zarında HANGİ kritik iyonun iletimini bozarak (elektriksel kararsızlık yaratarak) kalbi durdurmasına dayanır?",
+    "options": [
+      "Klor (Cl-)",
+      "Kalsiyum (Ca+2)",
+      "Sodyum (Na+)",
+      "Fosfat (PO4-3)",
+      "Bikarbonat (HCO3-)"
+    ],
+    "correct": 1,
+    "exp": "Gebeliğin İntrahepatik Kolestazı (ICP), 3. trimesterde başlayan, avuç içi/ayak tabanında izsiz kaşıntıyla karakterize sinsi bir hastalıktır. Anne için sadece kaşıntı (ve hafif K vitamini eksikliği) yapar; ANCAK fetüs için tam bir saatli bombadır. Kanda biriken 'Safra Asitleri (Safra tuzları)' plasentayı geçerek bebeğin kanına karışır. Safra asitleri, fetal kalpteki kardiyomiyositlerin zarına yapışır ve hücre zarındaki 'KALSİYUM (Ca+2)' kanallarının fonksiyonunu bozar (Kalsiyum transientlerini uzatır). Fetal kalbin elektriksel kararlılığı çöker. Bebekte hiçbir NST veya doppler bulgusu (fetal distres) olmadan, kalp aniden ritim bozukluğuna (VF/Asistoli) girer ve bebek anne karnında ölür (Ani fetal ölüm). Tedavide safra asidini düşürmek için 'Ursodeoksikolik Asit (UDCA)' kullanılır ve bebek 37-38. haftalarda doğurtulur."
+  },
+  {
+    "id": 1080,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Gebeliğinin 16. haftasında olan ve anaokulu öğretmeni olarak çalışan anne, eklem ağrıları ve hafif döküntü geçirdikten haftalar sonra yapılan fetal ultrasonografisinde; fetüste masif cilt ödemi, asit, plevral efüzyon ve kardiyomegali (Non-İmmün Hidrops Fetalis) saptanıyor. Anne karnındaki bebeği kalp yetmezliğine sokan bu tabloya 'Parvovirüs B19' enfeksiyonunun neden olduğu doğrulanıyor. Virüsün fetüste bu ağır kalp yetmezliğini (Hidrops) yaratması, fetal kemik iliği ve karaciğerdeki HANGİ spesifik hücre popülasyonunu lize edip öldürmesinin (ve derin anemi yaratmasının) doğrudan bir sonucudur?",
+    "options": [
+      "Miyokard hücreleri",
+      "Kupffer hücreleri",
+      "Megakaryositler",
+      "Eritroid progenitör hücreleri (Eritroblastlar)",
+      "Trofoblast hücreleri"
+    ],
+    "correct": 3,
+    "exp": "Parvovirüs B19 (Beşinci hastalık etkeni), çocuklarda hafif tokatlanmış yanak yaparken, gebelikte fetüse geçerse tam bir yıkım yapar (TORCH enfeksiyonlarına benzer). Virüsün tek bir hedefi vardır: Kırmızı kan hücresi üreten 'Eritroid Progenitörler (Eritroblastlar)'. Virüs, bu hücrelerin yüzeyindeki P antijenine (Globosid) bağlanarak içeri girer ve onları öldürür. Fetüs kan (alyuvar) üretemez hale gelir ve 'Derin (Şiddetli) Fetal Anemi' başlar. Kansız kalan fetüsün kalbi, dokulara oksijen yetiştirebilmek için çılgınca çarpmaya başlar (Yüksek debili / High-output kalp yetmezliği). Fazla çalışmaktan yorulan fetal kalp iflas eder, kanı pompalayamaz, damarlardan dışarı su sızar ve bebeğin tüm vücut boşlukları sıvı dolar (Hidrops Fetalis). Tedavi anne karnında kordosentez ile bebeğe kan vermektir (İntrauterin Transfüzyon)."
+  },
+  {
+    "id": 1081,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 5,
+    "q": "Otuz altı haftalık gebe; sağ üst kadran ağrısı, bulantı ve 170/110 mmHg tansiyon ile başvuruyor. Laboratuvarında Trombosit: 45.000/mm³, AST: 600 U/L, ALT: 550 U/L ve LDH: 1200 U/L (Çok yüksek) saptanıyor. Periferik kan yaymasında 'Şistositler (Parçalanmış eritrositler)' izleniyor. HELLP Sendromu (Hemolysis, Elevated Liver enzymes, Low Platelets) tanısı alan bu hastada, eritrositlerin kan dolaşımında mekanik olarak parçalanıp (Mikroanjiyopatik Hemolitik Anemi - MAHA) şistositlere dönüşmesi, karaciğer sinüzoidlerinde HANGİ prokoagülan proteinin çapraz ağlar (ağ/mesh) oluşturarak alyuvarları jilet gibi kesmesinin sonucudur?",
+    "options": [
+      "Kollajen Tip IV",
+      "Fibrin (Fibrin polimerleri)",
+      "Amiloid birikimi",
+      "Heparan Sülfat",
+      "Kompleman C5b-9 (MAC)"
+    ],
+    "correct": 1,
+    "exp": "HELLP Sendromu, şiddetli preeklampsinin karaciğeri vuran, hayatı tehdit eden formudur. Sendromun temelinde yaygın 'Endotel Hasarı' yatar. Annede hasar gören endotel (özellikle karaciğer sinüzoidlerinde) çıplak kalır. Bu çıplak zemin üzerine trombositler yapışır (Trombositopeni başlar). Yapışan trombositlerin üzerine pıhtılaşma kaskadı eklenir ve damarların içine balık ağı gibi 'FİBRİN' iplikleri gerilir. Annede kalpten pompalanan hızla akan kırmızı kan hücreleri (Eritrositler), karaciğerdeki bu daralmış ve içine fibrin ağı gerilmiş damarlardan geçmeye çalışırken, fibrin iplikleri onları bir jilet (veya peynir teli) gibi keserek parçalar. Buna 'Mikroanjiyopatik Hemolitik Anemi (MAHA)' denir ve kanda kırpık kırpık olmuş alyuvar kalıntıları (Şistosit/Miğfer hücresi) ve hücre içinden çıkan yüksek LDH saptanır."
+  },
+  {
+    "id": 1082,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Sağlıklı bir yenidoğan dünyaya geldikten hemen sonra ilk nefesini (ağlamasını) alır ve akciğerleri havayla dolar. Akciğerlerin açılmasıyla pulmoner vasküler direnç (akciğer damarlarındaki direnç) aniden dibe vurur ve akciğerlere giden/gelen kan miktarı devasa oranda artar. Doğum anındaki bu muazzam hemodinamik (basınç) değişikliği, fetal kalpteki 'Foramen Ovale' şantının mekanik olarak kapanmasını sağlarken, kalpteki atriyumlar (kulakçıklar) arasında HANGİ spesifik basınç farkının tersine dönmesi bu kapağı (septum primumu) bir kapı gibi çarparak kapatır?",
+    "options": [
+      "Sağ atriyum basıncının sol atriyum basıncını geçmesi",
+      "Sol atriyum basıncının aniden sağ atriyum basıncını geçmesi",
+      "Sağ ventrikül basıncının pulmoner arter basıncını geçmesi",
+      "Aort basıncının pulmoner arter basıncının altına düşmesi",
+      "Sol ventrikül basıncının sol atriyum basıncının altına düşmesi"
+    ],
+    "correct": 1,
+    "exp": "Fetal dolaşım mucizevi bir bypass sistemidir. Anne karnında bebeğin akciğerleri su doludur, direnci çok yüksektir, kan akciğere gitmek istemez. Sağ kalbe gelen kan, doğrudan Foramen Ovale deliklerinden Sol kalbe (Sistemik dolaşıma) geçer (Çünkü anne karnında Sağ Atriyum basıncı > Sol Atriyum basıncıdır). Ancak bebek doğup İLK NEFESİ aldığında akciğerler şişer. Akciğer damarları açılır (Direnç düşer). Sağ kalp tüm kanı rahatça akciğere pompalar. Akciğerden temizlenip (oksijenlenip) Sol Atriyuma dönen kan miktarı bir anda şelale gibi artar. Bu artışla 'SOL ATRİYUM BASINCI, SAĞ ATRİYUM BASINCINI GEÇER'. Yüksek basınçlı sol atriyumdaki kan, Foramen Ovale'nin kapağını (Septum Primumu) sağa doğru ittirerek Septum Sekunduma yapıştırır ve deliği mekanik olarak (bir kapıyı kapatır gibi) anında kapatır."
+  },
+  {
+    "id": 1083,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Doğum sırasında, amniyon kesesinin patlatılmasını (amniyotomi / suların açılması) takiben, annenin vajinasından aniden ağrısız, parlak kırmızı renkli, az miktarda bir kanama başlıyor. Kanamanın hemen ardından fetal kalp atışları NST'de aniden 140'tan 60 atım/dakikaya (şiddetli fetal bradikardi/distres) düşüyor. Annenin tansiyonu ve nabzı tamamen NORMAL seyrediyor. Vasa Previa tanısı alan ve acil sezaryen gerektiren bu dramatik tabloda; kanayan (ve yırtılan) damarlar anneye ait DEĞİL, bebeğe ait damarlardır. Bebek damarlarının bu kadar korunmasız olup yırtılmasına neden olan, göbek kordonunun plasentaya merkezden değil de 'zarların (membranların) üzerinden' girmesi anomalisi aşağıdakilerden hangisidir?",
+    "options": [
+      "Süksentüriat plasenta (Aksesuar lob)",
+      "Plasenta sirkumvallata",
+      "Velamentöz Kordon İnsersiyonu",
+      "Marjinal kordon insersiyonu (Battledore plasenta)",
+      "Plasenta membranasea"
+    ],
+    "correct": 2,
+    "exp": "Vasa Previa, nadir ama fetüs için en ölümcül doğumsal acillerden biridir (Ağrısız kanama + anında fetal ölüm/distres + annenin sapasağlam kalması). Sorunun kaynağı 'Velamentöz Kordon İnsersiyonu'dur. Normalde bebeğin göbek kordonu (ve içindeki 2 arter 1 ven), doğrudan etli/kalın plasentanın merkezine saplanır ve Wharton jeli ile korunur. Velamentöz insersiyonda ise, göbek kordonu plasentaya ulaşamadan, su kesesinin zarlarına (membranlara) saplanır. Damarlar Wharton jeli olmadan, incecik zarların içinde çıplak bir şekilde plasentaya doğru yol alırlar. Eğer bu çıplak damarlar rahim ağzının (serviksin) tam üzerinde duruyorsa (Vasa previa), su kesesi patladığında zarlarla birlikte bu FETAL DAMARLAR da yırtılır. Bebeğin kan hacmi zaten 250-300 ml kadardır; vajinadan sızan 100 cc'lik bir kanama anneyi etkilemez ama bebeğin kanını tamamen boşaltarak onu saniyeler içinde şoka ve ölüme sürükler."
+  },
+  {
+    "id": 1084,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Yirmi sekiz haftalık erken doğum eylemi olan gebeye, bebek doğmadan önce akciğer gelişimini hızlandırmak için iki doz Deksametazon (Kortikosteroid) yapılıyor. Steroidlerin, preterm bebeğin akciğerlerinde 'Sürfaktan' üretimini genetik olarak tetikleyerek Yenidoğan Respiratuar Distres Sendromunu (RDS) önlediği bilinmektedir. Sürfaktanın asıl yüzey gerilimini düşürücü (alveollerin çökmesini engelleyen) biyokimyasal bileşeni olan ve amniyon sıvısındaki oranı (L/S oranı) akciğer matüritesini gösteren molekül aşağıdakilerden hangisidir?",
+    "options": [
+      "Sfingomiyelin",
+      "Dipalmitoilfosfatidilkolin (DPPC / Lesitin)",
+      "Fosfatidilgliserol (PG)",
+      "Sürfaktan Protein A (SP-A)",
+      "Kardiyolipin"
+    ],
+    "correct": 1,
+    "exp": "Yenidoğan RDS'si (Hiyalin Membran Hastalığı), prematüre bebeklerin en büyük ölüm nedenidir. Sorun, alveollerin (hava keseciklerinin) içindeki suyun yüzey gerilimi nedeniyle her nefes verişte balon gibi sönmesi/yapışmasıdır. Bunu engelleyen madde Tip 2 Pnömositlerin ürettiği 'Sürfaktan'dır. Sürfaktanın %90'ı lipid, %10'u proteindir. Bu lipidlerin içindeki YILDIZ oyuncu, yüzey gerilimini asıl sıfırlayan molekül olan 'Dipalmitoilfosfatidilkolin (DPPC)' veya diğer adıyla 'LESİTİN'dir. Gebeliğin 34. haftasına kadar amniyon sıvısında Lesitin ve Sfingomiyelin eşittir (L/S = 1). Kortizol fırtınasıyla (veya iğnesiyle) 34. haftadan sonra Lesitin (DPPC) üretimi patlar. L/S oranı 2'nin üzerine çıkar. L/S > 2 olması, bebeğin akciğerinin artık kendi başına nefes alabilecek (sönmeyecek) kadar Lesitin (Sürfaktan) ürettiğinin laboratuvar kanıtıdır."
+  },
+  {
+    "id": 1085,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Polikistik Over Sendromu (PKOS) olan ve 2 yıldır anovulasyon (yumurtlayamama) nedeniyle infertilite tedavisi gören hastaya, ovulasyon indüksiyonu için birinci basamak ajan olan Letrozol başlanıyor. İlaç kullanımından sonraki takiplerde dominant bir folikülün büyüdüğü ve çatladığı saptanıyor. Letrozolün bu hastada 'frensiz bir FSH salınımı' yaratıp folikülü büyütmesi, HANGİ enzimatik reaksiyonu bloke ederek kanda ve beyinde östrojen seviyesini (ve dolayısıyla negatif geribildirimi) sıfırlamasına dayanır?",
+    "options": [
+      "Kolesterolün Pregnenolona dönüşümünü sağlayan Desmolaz enzimini",
+      "Androjenlerin (Testosteron/Androstenedion) Östrojene (Estradiol/Östron) dönüşümünü sağlayan Aromataz (CYP19A1) enzimini",
+      "Progesteronun Androjenlere dönüşümünü sağlayan 17-alfa hidroksilaz enzimini",
+      "Hipotalamustaki östrojen reseptörlerini kompetitif olarak bloke etmesi (SERM etkisi)",
+      "Overlerdeki 5-alfa redüktaz enzimini"
+    ],
+    "correct": 1,
+    "exp": "Ovulasyon indüksiyonunda iki büyük silah vardır: Klomifen ve Letrozol. Klomifen bir 'SERM'dir; gidip beynin östrojen reseptörlerine tıkaç gibi oturur ve beyni 'ortamda östrojen yok' diye kandırır. Ancak günümüzde PKOS hastalarında Letrozol (Aromataz İnhibitörü) ilk tercih olmuştur. Letrozol beyni kandırmaz; GERÇEKTEN östrojen üretimini durdurur. Bunu, androjenleri östrojene çeviren yegane fabrika olan 'Aromataz' enzimini bloke ederek yapar. Kanda östrojen (estradiol) düşünce, hipofizin üzerindeki negatif fren kalkar. Hipofiz, yumurtalıkları uyarmak için devasa miktarda FSH pompalar ve PKOS'lu overlerde uyuyan o inatçı foliküllerden biri büyüyüp çatlayarak (ovulasyon) gebeliğe olanak tanır."
+  },
+  {
+    "id": 1086,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Otuz yaşında kadın hasta; 1 yıldır adet görememe (sekonder amenore), göğüslerinden süt gelmesi (galaktore) ve infertilite şikayetiyle başvuruyor. Kanda Prolaktin seviyesi 150 ng/mL (Yüksek) saptanıyor ve hipofiz MRG'de 6 mm'lik mikroadenom izleniyor. Hiperprolaktinemi tablosundaki bu hastada, yüksek prolaktinin yumurtlamayı (ovulasyonu) tamamen durdurmasının ASIL nöroendokrinolojik mekanizması, hipotalamusta GnRH salınımını tetikleyen HANGİ spesifik nöropeptidin/nöronun salınımını baskılamasıdır?",
+    "options": [
+      "Dopamin",
+      "Oksitosin",
+      "Kisspeptin",
+      "Somatostatin",
+      "Nöropeptid Y (NPY)"
+    ],
+    "correct": 2,
+    "exp": "Prolaktin yüksekliği (Prolaktinoma, emzirme, ilaçlar), kadında adetten kesilmenin ve infertilitenin klasik nedenidir. Prolaktin, yumurtalıklara doğrudan etki etmez; asıl darbeyi BEYİNDE (Hipotalamusta) vurur. Modern üreme endokrinolojisinde GnRH'ı (dolayısıyla FSH/LH ve ovulasyonu) başlatan ana şalterin 'Kisspeptin (KISS1)' nöronları olduğu keşfedilmiştir. Prolaktin, hipotalamustaki bu Kisspeptin nöronlarını şiddetle BASKILAR. Kisspeptin salgılanamayınca GnRH nöronları uyanamaz (pulsatil salınım durur). GnRH olmayınca FSH ve LH üretilemez, yumurtalıklar folikül büyütemez ve hasta menopoza girmiş gibi (Hipogonadotropik Hipogonadizm) adet göremez."
+  },
+  {
+    "id": 1087,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Yirmi sekiz yaşında erkek hasta, çocuk sahibi olamama (erkek faktörü) nedeniyle inceleniyor. Fizik muayenede testislerin her iki tarafta yerinde olduğu ancak hacimlerinin çok küçük ve kıvamlarının sert (fibrotik) olduğu saptanıyor. Hastanın boyu uzun, jinekomastisi mevcut ve sakal gelişimi seyrektir. Semen analizinde hiç sperm saptanmıyor (Azoospermi). Laboratuvarda FSH: 35 mIU/mL (Çok yüksek), Testosteron: Düşük saptanıyor. Klinefelter Sendromu (47,XXY) olan bu hastada, FSH'ın bu kadar yıkıcı seviyelere fırlamasının (Hipergonadotropik Hipogonadizm) nedeni, testisteki HANGİ hücrelerin dejenere olarak hipofize gönderdiği negatif geribildirimi (İnhibin B) sıfırlamasıdır?",
+    "options": [
+      "Leydig hücreleri",
+      "Peritübüler miyoid hücreler",
+      "Sertoli hücreleri",
+      "Spermatogonyal kök hücreler",
+      "Rete testis epitel hücreleri"
+    ],
+    "correct": 2,
+    "exp": "Klinefelter Sendromu (47,XXY), erkek infertilitesinin en sık genetik nedenidir (Klasik bulguları: Uzun boy, jinekomasti, küçük/sert testisler, azoospermi). Fazladan bulunan X kromozomu, testislerdeki seminifer tübüllerin erimesine ve kaskatı bir bağ dokusuna (hyalinizasyon) dönüşmesine neden olur. Testiste iki ana hücre vardır: LH'ın uyardığı Leydig (Testosteron üretir) ve FSH'ın uyardığı 'Sertoli' (Sperm üretimine destek olur ve İnhibin B üretir). Tübüller eridiğinde asıl yok olanlar 'Sertoli' hücreleridir. Sertoli hücresi ölünce kanda 'İnhibin B' seviyesi SIFIRA iner. İnhibin B, beyindeki (hipofizdeki) FSH'ı durduran yegane Frendir. Fren (İnhibin B) ortadan kalktığı için, hastanın kanında FSH seviyesi roket gibi fırlar (Hipergonadotropik Hipogonadizm)."
+  },
+  {
+    "id": 1088,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Kistik Fibrozis hastası olan 25 yaşındaki erkek, evlilik sonrası çocuk sahibi olamama şikayetiyle başvuruyor. Semen analizinde Azoospermi (hiç sperm yok), semen hacminin çok düşük (<1 mL) ve semen pH'sının asidik saptanıyor. Testis biyopsisinde spermatogenezin (sperm üretiminin) TAMAMEN NORMAL olduğu görülüyor. Kistik Fibrozis Gen (CFTR) mutasyonu taşıyan erkeklerde, testislerde üretilen sağlıklı spermlerin dışarı çıkamamasına neden olan embriyolojik/anatomik defekt aşağıdakilerden hangisidir?",
+    "options": [
+      "Müllerian kanalların aşırı gelişerek kanalları tıkaması",
+      "Doğuştan Bilateral Vaz Deferens Yokluğu (CBAVD)",
+      "Prostat bezinin agenezisi",
+      "Epididimde silyalı epitelin hareketsizliği (Kartagener sendromu)",
+      "Ejakülatör kanalın mesaneye açılması (Retrograd ejakülasyon)"
+    ],
+    "correct": 1,
+    "exp": "Erkek infertilitesinde çok dramatik ve klasik bir tablodur: Kistik Fibrozis (CFTR mutasyonu) olan (veya bazen sadece taşıyıcı olan) erkeklerin neredeyse %95'inde kısırlık görülür. Sorun üretimde (testiste) DEĞİLDİR; sorun yollardadır (Obstrüktif Azoospermi). CFTR mutasyonu vücuttaki tüm salgıları (akciğer, pankreas) koyulaştırdığı gibi, anne karnında fetüs gelişirken üreme yollarındaki salgıları da koyulaştırır. Mezonefrik (Wolff) kanalı, bu koyu tıkaçlar yüzünden gelişemez ve çürür. Bu kanalın çürümesiyle hastada 'Bilateral Vaz Deferens Yokluğu (CBAVD)' ve 'Seminal Vezikül Yokluğu' gelişir. Seminal veziküller semenin bazik olmasını ve hacmini sağlar; onlar olmayınca semen asidik olur, miktarı çok düşer ve yollar kapalı olduğu için sıfır sperm (Azoospermi) çıkar. Çözüm, iğneyle doğrudan testisten sperm alıp (TESE) tüp bebek (ICSI) yapmaktır."
+  },
+  {
+    "id": 1089,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 5,
+    "q": "Tüp bebek (IVF) tedavisi gören hastaya, overleri uyarmak için yüksek doz gonadotropinler (FSH/LH) veriliyor. Ultrasonografide 20'den fazla folikül geliştiği görülüyor. Yumurta toplama işlemi öncesi folikülleri son olarak olgunlaştırmak ve çatlatmak (trigger) için hastaya hCG (Ovitrelle) iğnesi yapılıyor. İğneden 5 gün sonra hasta masif asit (karnı davul gibi şiş), nefes darlığı, idrar çıkışında azalma (oligüri) ve kanın koyulaşması (hemokonsantrasyon) ile acile yatırılıyor. Ovarian Hiperstimülasyon Sendromu (OHSS) tablosunu başlatan ve yumurtalıklardaki çok sayıdaki korpus luteumdan salgılanarak tüm vücutta devasa 'kapiller sızıntı (damar kaçakları)' yaratan ASIL vasoaktif molekül aşağıdakilerden hangisidir?",
+    "options": [
+      "Prostaglandin E2 (PGE2)",
+      "Vasküler Endotelyal Büyüme Faktörü (VEGF)",
+      "İnterlökin-6 (IL-6)",
+      "Tümör Nekrozis Faktör-alfa (TNF-α)",
+      "Nitrik Oksit (NO)"
+    ],
+    "correct": 1,
+    "exp": "Ovarian Hiperstimülasyon Sendromu (OHSS), Tüp Bebek (IVF) tedavisinin en korkulan, hayatı tehdit eden iyatrojenik (doktor kaynaklı) komplikasyonudur. Sadece çok folikül büyümesi OHSS yapmaz; OHSS'yi patlatan (tetiği çeken) şey, çatlatma iğnesi olarak verilen 'hCG' hormonudur. hCG, overlerdeki o devasa folikül ordusunu (korpus luteumları) uyarır. Bu hücreler çılgına dönerek kana devasa miktarda 'VEGF (Vasküler Endotelyal Büyüme Faktörü)' pompalar. VEGF, damarların endotel hücrelerini aralayarak (vasküler permeabiliteyi artırarak) tüm damarları delik deşik bir süzgece çevirir. Hastanın damarlarındaki plazma (su), karın boşluğuna (asit) ve akciğer zarına sızar. Damarda sadece kan hücreleri kalır (Hemokonsantrasyon/Pıhtılaşma), böbreklere kan gitmez (Oligüri/Böbrek yetmezliği)."
+  },
+  {
+    "id": 1090,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Otuz beş yaşında kadın, tekrarlayan birinci trimester düşükleri (Rekürren abortus) ve infertilite nedeniyle araştırılıyor. Çekilen 3 boyutlu ultrasonografide, rahim (uterus) dış hatlarının fundusta (tepede) tamamen normal ve düz (konveks) olduğu, ancak rahim İÇİ (kavite) boşluğunun ortadan kalın bir bağ dokusu perdesiyle ikiye ayrıldığı saptanıyor. Septat Uterus (Rahim perdesi) tanısı alan bu hastada, bu Müllerian anomalinin oluşmasına neden olan embriyolojik kusur aşağıdakilerden hangisidir?",
+    "options": [
+      "Müllerian kanalların (Paramezonefrik kanalların) tek taraflı hiç gelişememesi",
+      "Her iki Müllerian kanalın orta hatta birbiriyle birleşmeyi (füzyonu) başaramaması",
+      "Müllerian kanallar birleştikten sonra, ortada kalan duvarın (septumun) apoptozla (eriyerek) ortadan kalkamaması",
+      "Ürogenital sinüsün yukarıya doğru çıkamaması",
+      "Mezonefrik kanalların gerilemeyip rahim içinde kalması"
+    ],
+    "correct": 2,
+    "exp": "Septat Uterus (Rahim Perdesi), tekrarlayan gebelik kayıplarının (düşüklerin) en sık görülen yapısal (anatomik) nedenidir (Çünkü embriyo bu kanlanması zayıf perdeye tutunursa beslenemez ve ölür). Embriyolojide rahmin (uterusun) oluşumu 3 aşamalıdır: 1) İki Müllerian kanal sağdan soldan aşağı iner. 2) Ortada birleşirler (Füzyon). Bu birleşmeme olursa Çift Rahim (Uterus Didelfis) veya Bicornuate (Çift boynuzlu) rahim olur (Dış hatlar girintili/çataldır). 3) Kanallar birleşince ortada çift katlı bir duvar (septum) oluşur. Normalde bu duvar apoptozla aşağıdan yukarıya doğru ERİR ve tek, geniş bir rahim boşluğu oluşur. İşte Septat Uterusta kanallar birleşmiştir (Rahmin dışı dümdüzdür), ancak ortadaki bu duvar 'ERİYEMEMİŞ (Rezorpsiyon defekti)' ve rahim içini ikiye bölmüştür. Tedavisi histeroskopik olarak o perdenin kesilmesidir (Septum rezeksiyonu)."
+  },
+  {
+    "id": 1091,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Kadın infertilitesi tedavisinde (IVF sürecinde), overleri dışarıdan verilen iğnelerle (FSH/LH) uyarmadan ÖNCE, hastanın kendi (endojen) hipofizinden vakitsizce LH salgılanıp yumurtaların erken çatlamasını önlemek ŞARTTIR. Bu amaçla hastaya sürekli infüzyon/depo formda bir 'GnRH Agonisti' (Örn: Löprolid) başlanıyor. İlacın ilk günlerinde kanda FSH/LH aniden fırlıyor (Flare-up), ancak 2 hafta sonra hastanın hipofizi tamamen susuyor ve FSH/LH sıfırlanıyor (Down-regülasyon). GnRH reseptörlerinin bu şekilde kapanarak sistemi kilitlemesinin (desensitizasyon) ASIL farmakodinamik nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Sürekli uyarılan reseptörlerin hücre zarı üzerinde kalıcı kovalent bağla kilitlenmesi",
+      "Hipofiz hücrelerinin, hiç susmayan (sürekli/pulsatil olmayan) bu güçlü agoniste karşı kendilerini korumak için yüzeylerindeki GnRH reseptörlerini hücre içine çekerek yok etmesi (İnternalizasyon)",
+      "İlacın doğrudan FSH/LH genlerinin transkripsiyonunu durdurması",
+      "GnRH agonistlerinin hipotalamusta dopamin salınımını artırması",
+      "Oluşan flare-up'ın yumurtalıklardan devasa inhibin B salgılatarak hipofizi kalıcı felç etmesi"
+    ],
+    "correct": 1,
+    "exp": "GnRH (Gonadotropin Salgılatıcı Hormon), normalde beynimizden her 90 dakikada bir 'dalgalar halinde (pulsatil)' salgılanır. Hipofiz sadece bu dalgalı atışları sever. Siz dışarıdan bir hastaya sürekli (durmaksızın) etki eden bir GnRH Agonisti (Örn: Löprolid, Goserelin) verirseniz, hipofiz önce çok sevinir, coşkuyla FSH/LH salgılar (Flare-up). Ancak bu uyarı hiç susmayınca hipofiz yorulur. Hücre, sürekli gelen bu uyarıdan kurtulmak için yüzeyindeki 'GnRH Reseptörlerini' kapatır, hücre içine çeker ve lizozomlarda yok eder (Down-regülasyon / İnternalizasyon / Desensitizasyon). Reseptör kalmayınca, ilaç kanda olsa bile hipofiz hiçbir şey duymaz ve FSH/LH üretimi SIFIRA iner. Bu sayede hastanın kendi hormonları (erken çatlama riski) tamamen susturulmuş olur ve tüp bebek uzmanı dışarıdan verdiği iğnelerle yumurtaları rahatça kontrol eder."
+  },
+  {
+    "id": 1092,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Otuz beş yaşında kadın hasta, aşırı halsizlik, saç dökülmesi, kilo artışı, kabızlık ve bebek sahibi olamama (İnfertilite) şikayetleriyle başvuruyor. Hastanın adet döngülerinin anovulatuar (yumurtlamasız) olduğu ve göğüslerinden süt geldiği (Galaktore) saptanıyor. Tiroid fonksiyon testlerinde TSH: 45 mIU/L (Çok yüksek) ve Serbest T4 düşük (Primer Hipotiroidi) bulunuyor. Primer hipotiroidinin bu hastada 'Galaktore ve Anovulasyona' (infertilitiye) neden olan patofizyolojik zinciri, hipotalamustan salgılanan HANGİ spesifik hormonun (TSH'ı artırmaya çalışırken) yanlışlıkla laktotrop hücreleri de uyararak Prolaktini fırlatmasıyla başlar?",
+    "options": [
+      "Tiroid Uyarıcı İmmünglobulin (TSI)",
+      "Tirotropin Salgılatıcı Hormon (TRH)",
+      "Gonadotropin Salgılatıcı Hormon (GnRH)",
+      "Kortikotropin Salgılatıcı Hormon (CRH)",
+      "Dopamin"
+    ],
+    "correct": 1,
+    "exp": "Hipotiroidi (Tiroid bezinin tembelliği), infertilitenin ve hiperprolaktineminin çok klasik ve gözden kaçabilen bir nedenidir. Tiroid bezi T3/T4 üretemediğinde kanda tiroid hormonları düşer. Beyin (Hipotalamus) bu düşüklüğü fark eder ve tiroidi kamçılamak için devasa miktarda 'TRH (Tirotropin Salgılatıcı Hormon)' üretir. TRH, hipofize inip TSH salgılatır. ANCAK, TRH'ın hipofizde ikinci ve çok güçlü bir etkisi daha vardır: 'Laktotrop' hücreleri de uyararak 'PROLAKTİN' salgılatır. Yani Primer Hipotiroidide yüksek TRH yüzünden kanda Prolaktin de fırlar. Yüksek Prolaktin göğüsten süt (galaktore) getirir ve hipotalamustaki GnRH (Kisspeptin) nöronlarını baskılayarak yumurtlamayı (ovulasyonu) durdurur. Hastaya sadece Levotiroksin (Tiroid ilacı) vermek, hem sütü keser hem de gebeliği sağlar."
+  },
+  {
+    "id": 1093,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Obezitesi ve hirsutizmi olan 24 yaşındaki hastada adet düzensizliği ve infertilite mevcuttur. Polikistik Over Sendromu (PKOS) şüphesiyle yapılan laboratuvar testlerinde, hastanın serum '17-Hidroksiprogesteron (17-OHP)' düzeyinin sabah bazal ölçümünde çok yüksek (10 ng/mL) olduğu saptanıyor. Bu laboratuvar bulgusu, hastadaki klinik tablonun klasik bir PKOS DEĞİL, adrenal kortekste kortizol sentez yolunu bloke eden ve biriken öncüllerin androjen (testosteron) yolağına kaymasına neden olan (Non-klasik KAH) HANGİ enzimin kısmi eksikliği olduğunu kanıtlar?",
+    "options": [
+      "11-beta hidroksilaz",
+      "17-alfa hidroksilaz",
+      "21-hidroksilaz",
+      "Aromataz",
+      "5-alfa redüktaz"
+    ],
+    "correct": 2,
+    "exp": "Kadında tüylenme, obezite ve adet görememe (İnfertilite) denilince akla ilk PKOS gelir. Ancak her PKOS gibi görünen hasta PKOS değildir. Bunların bir kısmı 'Non-klasik (Geç Başlangıçlı) Konjenital Adrenal Hiperplazi (KAH)' hastasıdır. Klasik KAH (tuz kaybı/ambigus genitale) bebeklikte çıkar, ama Non-klasik KAH çok hafif bir enzim eksikliğidir ve ergenlikte sivilce, tüylenme ve adet düzensizliği ile (birebir PKOS'u taklit ederek) ortaya çıkar. Sorunun kaynağı böbrek üstü bezindeki '21-Hidroksilaz' enzimidir. Bu enzim çalışmayınca, '17-Hidroksiprogesteron (17-OHP)' kortizole dönemez ve kanda fırlar. Biriken bu 17-OHP mecburen açık olan tek yolağa, yani 'Androjen (Testosteron/DHEA)' üretimine kayar. Kadını erkekleştiren ve yumurtlamasını durduran şey bu aşırı androjenlerdir. Teşhis her zaman kanda yüksek '17-OHP' ölçümü ile konur."
+  },
+  {
+    "id": 1094,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 5,
+    "q": "Tüp bebek (IVF) laboratuvarında (Oocyte Pick-Up - OPU) işlemiyle toplanan kadın yumurtaları (oositler) mikroskop altında inceleniyor. İşleme alınacak olan 'Olgun' bir oositin (MII), döllenmeye (spermi kabul etmeye) hazır olduğunu gösteren en belirgin mikroskobik özellik, perivitellin aralıkta 'Birinci Kutup Cisimciğinin (Polar Body)' dışarı atılmış olmasıdır. Spermin yumurtanın içine girerek kalsiyum fırtınası yaratmasına kadar, bu olgun oositin (MII) hücre bölünmesini (Mayoz II'yi) dondurarak beklediği (arrest olduğu) evre aşağıdakilerden hangisidir?",
+    "options": [
+      "Mayoz I - Profaz (Diktiyoten evresi)",
+      "Mayoz I - Metafaz",
+      "Mayoz II - Profaz",
+      "Mayoz II - Metafaz",
+      "Mayoz II - Telofaz"
+    ],
+    "correct": 3,
+    "exp": "Kadın oogenezi (yumurta gelişimi) duraklamalarla dolu muazzam bir yolculuktur ve USMLE/TUS bu evreleri çok sorar. \n1. Duraklama: Kız çocuğu anne karnındayken yumurtalar 'Mayoz I - Profaz'da (Diktiyoten evresinde) donar ve kız ergenliğe girene kadar (hatta 40 yaşına kadar) yıllarca o şekilde uyur. \n2. Duraklama: Ergenlikte her ay gelen 'LH Zirvesi (Surge)' ile bir yumurta uyanır, Mayoz I'i bitirir (İlk kutup cisimciğini atar) ve yumurtalıktan çatlar (Ovulasyon). Çatlayan bu yumurta, tüpün içine düştüğünde BİR KEZ DAHA donar. Bu ikinci donma noktası 'MAYOZ II - METAFAZ'dır. Olgun bir yumurta, sperm gelene kadar bu evrede bekler. Eğer sperm gelip yumurtanın zarını delerse, hücre içinde Kalsiyum dalgası oluşur. Bu kalsiyum, yumurtayı uykudan (Metafaz II'den) uyandırır, yumurta Mayoz II'yi bitirip 2. kutup cisimciğini de atarak bebek (zigot) oluşumunu başlatır."
+  },
+  {
+    "id": 1095,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Otuz üç yaşında kadın hasta, bir yıldır korunmamasına rağmen gebe kalamama (İnfertilite) nedeniyle araştırılıyor. Adetleri çok düzenlidir (28 günde bir). Adetin 21. gününde (luteal fazda) bakılan serum Progesteron düzeyi sadece 2 ng/mL (Çok düşük) saptanıyor. Hastaya 'Luteal Faz Defekti' tanısı konuyor. Hastanın yumurtası çatlamasına (ovulasyon) rağmen endometriumun embriyonun tutunması (implantasyon) için yeterince kalınlaşıp salgı (sekresyon) yapamamasının nedeni, çatlayan folikülden geriye kalan HANGİ hücresel yapının fonksiyonunu çok erken yitirerek (yetersiz çalışarak) endometriumu desteksiz bırakmasıdır?",
+    "options": [
+      "Graaf folikülü",
+      "Primordiyal folikül",
+      "Korpus Albikans",
+      "Korpus Luteum",
+      "Teka eksterna hücreleri"
+    ],
+    "correct": 3,
+    "exp": "Luteal Faz Defekti, embriyonun (döllenmiş yumurtanın) rahme tutunamayıp düşmesine veya gebeliğin hiç oluşmamasına yol açan sinsi bir kısırlık nedenidir. Normal bir döngüde, yumurta çatladıktan (ovulasyon) sonra, geride kalan o boş folikül kabuğu çöpe atılmaz. Devasa bir endokrin fabrikasına, yani 'Korpus Luteum'a (Sarı Cisim) dönüşür. Korpus Luteumun tek bir görevi vardır: Kana bolca 'PROGESTERON' salgılamak. Progesteron, rahim iç zarını (endometriumu) yumuşatır, besinle doldurur ve embriyonun rahatça gömülebileceği (implantasyon) bir yatağa (sekretuvar faza) çevirir. Luteal Faz Defektinde, bu Korpus Luteum ya çok az progesteron üretir ya da ömrü çok kısa olur. Yatak (endometrium) hazır olmadığı için, gelen embriyo tutunamaz ve adet kanamasıyla atılır."
+  },
+  {
+    "id": 1096,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "İnfertilite tedavisi gören bir erkeğin semen analizi normal bulunuyor. Eşinin tüpleri açık ve ovulasyonu normal. Tüp bebek (IVF) tedavisine geçildiğinde, klasik yöntemle spermler yumurtanın yanına bırakıldığında (İn vitro fertilizasyon), hareketli spermlerin yumurtaya ulaşmasına rağmen yumurtanın dışındaki o sert, kalın glikoprotein kabuğunu eritemediği ve içeri giremediği görülüyor (Fertilizasyon başarısızlığı). Spermin baş kısmından proteolitik enzimler (hiyalüronidaz ve akrozin) fışkırtarak bu kabuğu delmesi gereken enzimatik reaksiyonun (Akrozom Reaksiyonu) gerçekleştiği, yumurtanın etrafındaki bu kalın glikoprotein bariyer aşağıdakilerden hangisidir?",
+    "options": [
+      "Korona Radiyata",
+      "Zona Pellusida",
+      "Kümülüs Ooforus",
+      "Perivitellin aralık",
+      "Teka İnterna"
+    ],
+    "correct": 1,
+    "exp": "Döllenme (Fertilizasyon), spermin yumurtanın zırhlarını bir bir delmesi gereken inanılmaz zorlu bir süreçtir. Yumurtayı saran en dıştaki hücre tabakası 'Korona Radiyata'dır; spermler kuyruklarıyla bunu aşar. Ancak asıl büyük ve aşılmaz duvar, yumurtanın kendi hücresi etrafına ördüğü kaskatı bir glikoprotein zırh olan 'Zona Pellusida'dır. Sperm Zona Pellusida'ya (özellikle ZP3 reseptörüne) çarptığı an, başındaki şapka (akrozom) patlar (Akrozom Reaksiyonu). Bu şapkadan fışkıran 'Akrozin ve Hiyalüronidaz' gibi asidik enzimler, Zona Pellusida'yı eriterek spermin içeriye gireceği bir tünel açarlar. Eğer spermin akrozomunda bu enzimler yoksa (Örn: Globozoospermi/Yuvarlak başlı sperm), sperm ne kadar hızlı olursa olsun o zırhı (Zona Pellusida'yı) geçemez. Çözüm: Mikroenjeksiyon (ICSI) ile spermi iğneyle doğrudan yumurtanın içine sokmaktır."
+  },
+  {
+    "id": 1097,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 5,
+    "q": "Otuz beş yaşında erkek hasta, evlendikten sonra çocuk sahibi olamaması üzerine inceleniyor. Hastanın boyu, kilosu, ikincil cinsiyet karakterleri (sakal vs.) tamamen normal ve testisleri skrotumda, normal hacimdedir. Semen analizinde Azoospermi (sıfır sperm) saptanıyor. Hormon profilinde Testosteron, LH ve Prolaktin tamamen normal iken, FSH düzeyi normalin hafif üzerinde veya üst sınırda (izole FSH yüksekliği) saptanıyor. Testis biyopsisinde seminifer tübüllerde 'Sertoli-Cell-Only' sendromu (Germ hücresi yokluğu) veya ciddi maturasyon arresti saptanan bu sağlıklı görünümlü azoospermik erkeğin, spermlerini genetik olarak kaybetmesine yol açan EN SIK görülen kalıtsal (kromozomal) neden aşağıdakilerden hangisidir?",
+    "options": [
+      "Kistik Fibrozis Transmembran Regülatör (CFTR) gen mutasyonu",
+      "Klinefelter Sendromu (47,XXY)",
+      "Kallmann Sendromu",
+      "Y kromozomu uzun kolundaki (Yq11) mikrodelesyonlar (AZF bölgesi delesyonları)",
+      "Androjen Reseptör (AR) geni trinükleotid tekrar uzaması (Kennedy Hastalığı)"
+    ],
+    "correct": 3,
+    "exp": "Erkek infertilitesinde çok kritik bir ayırıcı tanıdır. Fiziksel ve hormonal olarak TURP GİBİ SAĞLIKLI bir erkekte Azoospermi (hiç sperm olmaması) saptanıyorsa, akla 'Y Kromozomu Mikrodelesyonları' gelmelidir. Y kromozomunun uzun kolunda (Yq) sperm üretimini yöneten genlerin bulunduğu 'AZF (Azoospermia Factor)' bölgeleri vardır (AZFa, AZFb, AZFc). Bu genler küçük parçalar halinde silindiğinde (mikrodelesyon), erkeğin testis gelişimi veya testosteronu bozulmaz (Sakal, ses, kas normaldir). Sadece sperm fabrikası (germ hücreleri) ölür. En sık AZFc delesyonu görülür (Az da olsa sperm çıkabilir, TESE ile bulunup tüp bebek yapılabilir). Ancak AZFa ve AZFb silinmişse testiste sperm bulma ihtimali SIFIRDIR. (Not: Klinefelter sendromunda ise erkek fenotipi feminizedir, uzun boylu/jinekomastilidir ve testisler bezelye gibi küçüktür)."
+  },
+  {
+    "id": 1098,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Otuz iki yaşında kadın hasta, bir yıl önce gerçekleşen şiddetli postpartum kanama (doğum sonu kanama) öyküsüne sahiptir. O günden beri adet görememekte (sekonder amenore), kilo vermekte ve aşırı halsizlik hissetmektedir. İnfertilite (ikinci çocuk isteği) nedeniyle başvuran hastanın hormon profilinde FSH: 1 mIU/mL (Çok düşük), LH: 0.5 mIU/mL (Çok düşük) ve Östradiol: 10 pg/mL (Çok düşük) bulunuyor. Hipofizer yetmezlik (Sheehan Sendromu) düşünülen bu hastada, anovulasyonun (yumurtlayamamanın) doğrudan nedeni; overlerdeki hedef foliküllerin büyümek için ihtiyaç duyduğu HANGİ dış (ekstrensek) protein hormonu sinyalinden tamamen yoksun bırakılmış olmalarıdır?",
+    "options": [
+      "Kortizol",
+      "Folikül Uyarıcı Hormon (FSH)",
+      "Progesteron",
+      "İnsülin",
+      "Adrenokortikotropik Hormon (ACTH)"
+    ],
+    "correct": 1,
+    "exp": "İnfertilite sadece yumurtalıkların veya tüplerin bozukluğundan kaynaklanmaz, 'Motoru çalıştıran ana şalter' bozuksa da gebelik olmaz. Sheehan Sendromu (Postpartum kanamaya bağlı hipofiz nekrozu), hipofiz bezinin çalışmasını durdurur. Kadının yumurtalıklarının (overlerinin) içindeki binlerce folikül sapasağlam durmaktadır, ancak onları her ay 'Hadi büyüyün, uyanın' diye dürtükleyecek (uyaracak) olan hormon, yani hipofizden salınan 'FSH (Folikül Uyarıcı Hormon)' ortada YOKTUR (Hipogonadotropik Hipogonadizm). FSH gelmeyince foliküller uykuda kalır, östrojen üretemez ve çatlayamaz (Anovulasyon / Amenore). Bu hastanın gebe kalabilmesi için tüp bebek tedavisinde eksik olan bu 'FSH' iğnelerinin dışarıdan karından (subkütan) verilmesi (Gonadotropin tedavisi) yeterlidir; çünkü yumurtalıklar sağlamdır, sadece gaz pedalına basan yoktur."
+  },
+  {
+    "id": 1099,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Kırk iki yaşında kadın hasta, son 1 yıldır adetlerinin seyrekleştiğini (oligomenore), sıcak basmaları (hot flushes) yaşadığını ve korunmamasına rağmen gebe kalamadığını belirtiyor. Hormon profilinde adetin 3. günü FSH düzeyi 45 mIU/mL (Menopozal düzey / Çok yüksek) ve Antimüllerian Hormon (AMH) düzeyi 0.1 ng/mL (Çok düşük) saptanıyor. Prematür Overyan Yetmezlik (Erken Menopoz / POI) tanısı alan bu hastada, FSH hormonunun kanda bu kadar devasa boyutlara fırlamasının ASIL fizyolojik (ve histolojik) nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Hipotalamustan sürekli yüksek dozda GnRH salgılanmasına bağlı otonom hiperaktivite",
+      "Overlerde bulunan 'Folikül (Yumurta) Havuzunun' tükenmesi sonucu, büyüyen granüloza hücrelerinden salgılanarak beyne (FSH'a) 'dur' diyen negatif geribildirim hormonlarının (Östrojen ve İnhibin B) tamamen ortadan kalkması",
+      "Tirotoksikozun hipofizer laktotrop hücreleri uyarması",
+      "Böbrek üstü bezlerinden salınan DHEA-S'in hipofizi zehirlemesi",
+      "Rahim (endometrium) duvarının incelmesine bağlı geri besleme mekanizmasının çökmesi"
+    ],
+    "correct": 1,
+    "exp": "Prematür Overyan Yetmezlik (Erken Menopoz), 40 yaşından önce yumurtalıkların fonksiyonunu kaybetmesidir. Menopoza giren (veya rezervi biten) bir kadında en erken ve en net laboratuvar bulgusu kanda 'FSH Yüksekliği'dir. Peki neden fırlar? Çünkü FSH'ın (beyindeki o gaz pedalının) çalışmasını frenleyen iki molekül vardır: Östrojen ve İnhibin B. Bu iki molekülü de overlerin içindeki büyüyen 'Yumurtalar (Foliküllerin içindeki Granüloza hücreleri)' üretir. Kadının yumurtalıklarındaki yumurta rezervi (havuzu) tükendiğinde, bu fren hormonları (Östrojen ve İnhibin B) üretilemez. Frenin ortadan kalktığını gören hipofiz bezi panikler, 'Yumurtalık çalışmıyor, onu daha çok uyarmalıyım' diyerek kana durmaksızın ve devasa miktarda FSH pompalar. (Günümüzde yumurtalık rezervinin en erken ve hassas göstergesi olarak, doğrudan o küçük foliküllerden salınan 'AMH - Antimüllerian Hormon' ölçülmektedir. AMH'nin düşmesi rezervin bittiğinin kesin kanıtıdır)."
+  }
 ];
-
-
- 
-
 
 
 
