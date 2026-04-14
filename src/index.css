@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /* Mobil uyumluluk için ekstra dokunuşlar */
 body {
   overscroll-behavior-y: none;

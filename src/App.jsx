@@ -1,4 +1,9 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
+import './index.css';
+import { auth, loginWithGoogle, logout } from "./firebase";
+import { onAuthStateChanged } from "firebase/auth";
+
+// Veri ve Yardımcı Araçlar
 import { QUESTIONS } from "./data/questions";
 import {
   buildFullExam,
@@ -6,7 +11,7 @@ import {
   getEstimatedTusResult,
 } from "./utils/examUtils";
 
-// Tüm sayfalarımızı dışarıdan tertemiz içeri alıyoruz
+// Bileşenler (Screens)
 import Dashboard from "./components/Dashboard";
 import Suggestions from "./components/Suggestions";
 import Summary from "./components/Summary";
@@ -17,6 +22,7 @@ import QuestionSetupScreen from "./components/QuestionSetupScreen";
 import ExamSetSelectScreen from "./components/ExamSetSelectScreen";
 import TopicTracker from "./components/TopicTracker";
 
+// TUS Deneme Dağılımı (Blueprint)
 const FULL_EXAM_BLUEPRINT = {
   Anatomi: 13, Fizyoloji: 15, Biyokimya: 18, Mikrobiyoloji: 18, 
   Patoloji: 18, Farmakoloji: 18, Dahiliye: 23, Pediatri: 25, 
@@ -24,22 +30,30 @@ const FULL_EXAM_BLUEPRINT = {
 };
 
 export default function App() {
+  // --- 1. KULLANICI VE NAVİGASYON ---
+  const [user, setUser] = useState(null);
   const [view, setView] = useState("dashboard");
+
+  // --- 2. ÇALIŞMA MODU (STUDY) STATE ---
   const [currentSubject, setCurrentSubject] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selected, setSelected] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
-  const [selectedLesson, setSelectedLesson] = useState("");
-  const [selectedTopic, setSelectedTopic] = useState("");
   const [activeQuestions, setActiveQuestions] = useState([]);
+
+  // --- 3. DENEME MODU (EXAM) STATE ---
   const [examQuestions, setExamQuestions] = useState([]);
   const [examIndex, setExamIndex] = useState(0);
   const [examAnswers, setExamAnswers] = useState([]);
   const [examSelected, setExamSelected] = useState(null);
 
-  const questions = activeQuestions;
-  const q = questions[currentIndex];
+  // --- 4. KONU SEÇİM STATE ---
+  const [selectedLesson, setSelectedLesson] = useState("");
+  const [selectedTopic, setSelectedTopic] = useState("");
+
+  // --- 5. HESAPLANAN VERİLER (MEMO) ---
+  const q = activeQuestions[currentIndex];
   const examQ = examQuestions[examIndex];
 
   const examAnalysis = useMemo(() => {
@@ -57,10 +71,18 @@ export default function App() {
     ? [...new Set(QUESTIONS.filter((item) => item.ders === selectedLesson).map((item) => item.konu))]
     : [];
 
+  // --- 6. FIREBASE AUTH TAKİBİ ---
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  // --- 7. YARDIMCI FONKSİYONLAR ---
   const resetStudyState = () => {
     setCurrentSubject(null); setCurrentIndex(0); setSelected(null);
-    setShowResult(false); setScore(0); setSelectedLesson("");
-    setSelectedTopic(""); setActiveQuestions([]);
+    setShowResult(false); setScore(0); setActiveQuestions([]);
   };
 
   const goDashboard = () => { resetStudyState(); setView("dashboard"); };
@@ -93,13 +115,14 @@ export default function App() {
     setView("exam");
   };
 
+  // --- 8. EVENT HANDLERS ---
   const handleReveal = () => {
     setShowResult(true);
     if (selected !== null && selected === q?.correct) setScore(prev => prev + 1);
   };
 
   const handleNext = () => {
-    if (currentIndex < questions.length - 1) {
+    if (currentIndex < activeQuestions.length - 1) {
       setCurrentIndex(prev => prev + 1); setSelected(null); setShowResult(false);
     } else setView("summary");
   };
@@ -109,42 +132,43 @@ export default function App() {
       setCurrentIndex(prev => prev - 1); setSelected(null); setShowResult(false);
     }
   };
-  const handleExamSelect = (index) => {
-    setExamSelected(index);
-  };
 
   const handleExamNext = () => {
-    const updatedAnswers = [...examAnswers];
-    updatedAnswers[examIndex] = examSelected;
-    setExamAnswers(updatedAnswers);
+    const updated = [...examAnswers];
+    updated[examIndex] = examSelected;
+    setExamAnswers(updated);
 
     if (examIndex < examQuestions.length - 1) {
-      const nextIndex = examIndex + 1;
-      setExamIndex(nextIndex);
-      setExamSelected(updatedAnswers[nextIndex] ?? null);
-    } else {
-      setView("examAnalysis");
-    }
+      setExamIndex(prev => prev + 1);
+      setExamSelected(updated[examIndex + 1] ?? null);
+    } else setView("examAnalysis");
   };
 
-  const handleExamBlank = () => {
-    const updatedAnswers = [...examAnswers];
-    updatedAnswers[examIndex] = null;
-    setExamAnswers(updatedAnswers);
+  // --- 9. GİRİŞ EKRANI (LOGIN) ---
+  if (!user) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-slate-950 text-white p-6">
+        <div className="text-6xl mb-6">🩺</div>
+        <h1 className="text-5xl font-black mb-2 text-emerald-400 tracking-tighter">TUSOSKOP</h1>
+        <p className="text-slate-400 mb-10 text-center max-w-sm">
+          TUS hazırlık sürecini dijital asistanınla yönet. Verilerini bulutta sakla.
+        </p>
+       <button 
+          type="button" // SAYFA YENİLENMESİNİ ENGELLER
+          onClick={loginWithGoogle}
+          className="flex items-center gap-4 px-8 py-4 bg-white text-slate-900 rounded-3xl font-black shadow-2xl hover:scale-105 transition-transform"
+        >
+          <img src="https://www.google.com/favicon.ico" className="w-5 h-5" alt="" />
+          Google ile Giriş Yap
+        </button>
+      </div>
+    );
+  }
 
-    if (examIndex < examQuestions.length - 1) {
-      const nextIndex = examIndex + 1;
-      setExamIndex(nextIndex);
-      setExamSelected(updatedAnswers[nextIndex] ?? null);
-    } else {
-      setView("examAnalysis");
-    }
-  };
-
-  // --- SAYFA YÖNLENDİRME (ROUTING) ---
+  // --- 10. ANA YÖNLENDİRME (ROUTING) ---
   switch (view) {
     case "dashboard":
-      return <Dashboard setView={setView} startSubject={startSubject} />;
+      return <Dashboard setView={setView} startSubject={startSubject} user={user} onLogout={logout} />;
     
     case "questionSetup":
       return (
@@ -156,62 +180,37 @@ export default function App() {
         />
       );
 
-    case "tracker": 
-      return <TopicTracker onBack={goDashboard} />;
-      
-    case "suggestions": 
-      return <Suggestions goDashboard={goDashboard} />;
-      
-    case "summary": 
-      return (
-        <Summary 
-          currentSubject={currentSubject} 
-          score={score} 
-          total={questions.length} 
-          onRetry={() => {setCurrentIndex(0); setView("study");}} 
-          goDashboard={goDashboard} 
-        />
-      );
-      
-    case "examSetSelect": 
-      return <ExamSetSelectScreen onSelectSet={startFullExam} goDashboard={goDashboard} />;
-      
+    case "tracker": return <TopicTracker onBack={goDashboard} />;
+    case "suggestions": return <Suggestions goDashboard={goDashboard} />;
+    case "summary": return <Summary currentSubject={currentSubject} score={score} total={activeQuestions.length} onRetry={() => {setCurrentIndex(0); setView("study");}} goDashboard={goDashboard} />;
+    case "examSetSelect": return <ExamSetSelectScreen onSelectSet={startFullExam} goDashboard={goDashboard} />;
+    
     case "exam": 
       return (
         <ExamScreen 
-          examQ={examQ} 
-          examIndex={examIndex} 
-          examQuestions={examQuestions} 
-          examAnswers={examAnswers} // Tüm cevapları optiğe gönderiyoruz
-          examSelected={examSelected}
-          // Soru atlama fonksiyonu
-          onJump={(targetIndex) => {
-            const updated = [...examAnswers];
-            updated[examIndex] = examSelected;
-            setExamAnswers(updated);
-            setExamIndex(targetIndex);
-            setExamSelected(updated[targetIndex] ?? null);
+          examQ={examQ} examIndex={examIndex} examQuestions={examQuestions} 
+          examAnswers={examAnswers} examSelected={examSelected}
+          onJump={(idx) => {
+            const updated = [...examAnswers]; updated[examIndex] = examSelected;
+            setExamAnswers(updated); setExamIndex(idx); setExamSelected(updated[idx] ?? null);
           }}
-          handleExamSelect={handleExamSelect} 
-          handleExamBlank={handleExamBlank} 
+          handleExamSelect={setExamSelected} 
+          handleExamBlank={() => {
+            const updated = [...examAnswers]; updated[examIndex] = null;
+            setExamAnswers(updated); handleExamNext();
+          }} 
           handleExamNext={handleExamNext} 
           goDashboard={goDashboard} 
         />
-      
       );
       
     case "examAnalysis": 
-      return (
-        <ExamAnalysisScreen 
-          examAnalysis={examAnalysis} estimatedTus={estimatedTus} 
-          startFullExam={startFullExam} goDashboard={goDashboard} 
-        />
-      );
+      return <ExamAnalysisScreen examAnalysis={examAnalysis} estimatedTus={estimatedTus} startFullExam={startFullExam} goDashboard={goDashboard} />;
       
     case "study": 
       return (
         <StudyScreen 
-          q={q} index={currentIndex} total={questions.length} 
+          q={q} index={currentIndex} total={activeQuestions.length} 
           selected={selected} setSelected={setSelected} 
           showAnswer={showResult} revealAnswer={handleReveal} 
           nextQuestion={handleNext} prevQuestion={handleStudyPrev} 
@@ -219,7 +218,6 @@ export default function App() {
         />
       );
       
-    default: 
-      return <Dashboard setView={setView} startSubject={startSubject} />;
+    default: return <Dashboard setView={setView} startSubject={startSubject} user={user} onLogout={logout} />;
   }
 }
