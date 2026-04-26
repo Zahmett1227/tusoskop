@@ -7,9 +7,18 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+node_modules/
+dist/
+(dist)/
+dist-ssr/
+.vite/
+.vite-cache/
+.firebase/
+.firebase/*
+.env
+.env.local
+.env.*.local
+.agents/
 *.local
 
 # Editor directories and files
