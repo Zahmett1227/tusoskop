@@ -17918,13 +17918,13605 @@ exp: "Spironolakton (ve Eplerenon), bir Potasyum Tutucu DiÃ¼retik (Aldosteron 
     ],
     "correct": 1,
     "exp": "PrematÃ¼r Overyan Yetmezlik (Erken Menopoz), 40 yaÅŸÄ±ndan Ã¶nce yumurtalÄ±klarÄ±n fonksiyonunu kaybetmesidir. Menopoza giren (veya rezervi biten) bir kadÄ±nda en erken ve en net laboratuvar bulgusu kanda 'FSH YÃ¼ksekliÄŸi'dir. Peki neden fÄ±rlar? Ã‡Ã¼nkÃ¼ FSH'Ä±n (beyindeki o gaz pedalÄ±nÄ±n) Ã§alÄ±ÅŸmasÄ±nÄ± frenleyen iki molekÃ¼l vardÄ±r: Ã–strojen ve Ä°nhibin B. Bu iki molekÃ¼lÃ¼ de overlerin iÃ§indeki bÃ¼yÃ¼yen 'Yumurtalar (FolikÃ¼llerin iÃ§indeki GranÃ¼loza hÃ¼creleri)' Ã¼retir. KadÄ±nÄ±n yumurtalÄ±klarÄ±ndaki yumurta rezervi (havuzu) tÃ¼kendiÄŸinde, bu fren hormonlarÄ± (Ã–strojen ve Ä°nhibin B) Ã¼retilemez. Frenin ortadan kalktÄ±ÄŸÄ±nÄ± gÃ¶ren hipofiz bezi panikler, 'YumurtalÄ±k Ã§alÄ±ÅŸmÄ±yor, onu daha Ã§ok uyarmalÄ±yÄ±m' diyerek kana durmaksÄ±zÄ±n ve devasa miktarda FSH pompalar. (GÃ¼nÃ¼mÃ¼zde yumurtalÄ±k rezervinin en erken ve hassas gÃ¶stergesi olarak, doÄŸrudan o kÃ¼Ã§Ã¼k folikÃ¼llerden salÄ±nan 'AMH - AntimÃ¼llerian Hormon' Ã¶lÃ§Ã¼lmektedir. AMH'nin dÃ¼ÅŸmesi rezervin bittiÄŸinin kesin kanÄ±tÄ±dÄ±r)."
+  },
+  {
+    "id": 1121,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 5,
+    "q": "Toraks BT raporunda lezyon sternuma yakın, vertebradan uzak ve hastanın sol hemitoraksında tarifleniyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Bu tarifin doğru yön terimleri hangisidir?",
+    "options": [
+      "Posterior, superficialis, median",
+      "Superior, profundus, sinister",
+      "Posterior, medial, dexter",
+      "Inferior, median, dexter",
+      "Anterior, lateral, sinister"
+    ],
+    "correct": 4,
+    "exp": "Sternuma yakınlık anterior, orta hattan uzaklık lateral, sol taraf sinisterdir. Kesit yorumunda ekran tarafı değil hasta anatomisi esas alınır.\n\nAyırt ettirici nokta: Doğru seçenek 'Anterior, lateral, sinister'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1122,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "Omuz MR'ında yapıların ön ve arka kompartmanlara göre ayrımı yapılıyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Bu değerlendirmede kullanılan ana anatomik düzlem hangisidir?",
+    "options": [
+      "Oblik düzlem",
+      "Transvers/aksiyel düzlem",
+      "Median düzlem",
+      "Koronal/frontal düzlem",
+      "Sagittal düzlem"
+    ],
+    "correct": 3,
+    "exp": "Koronal düzlem vücudu anterior ve posterior bölümlere ayırır. Sagittal sağ-sol, transvers üst-alt ayrımı yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'Koronal/frontal düzlem'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1123,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "Hasta anatomik pozisyondan avuç içi yere bakacak şekilde ön kolunu çeviriyor. Bu bulgular birlikte değerlendirildiğinde: Bu hareketin adı nedir?",
+    "options": [
+      "Pronasyon",
+      "Retraksiyon",
+      "İnversiyon",
+      "Eversiyon",
+      "Supinasyon"
+    ],
+    "correct": 0,
+    "exp": "Avuç içinin aşağı/posteriora dönmesi pronasyondur. Supinasyonda avuç içi yukarı/anteriora döner.\n\nAyırt ettirici nokta: Doğru seçenek 'Pronasyon'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1124,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 5,
+    "q": "Diz artroskopisinde menisküsün ayak bileğine göre gövdeye daha yakın olduğu belirtiliyor. Bu bulgular birlikte değerlendirildiğinde: Ayak bileğine göre menisküsün konumu hangi terimle ifade edilir?",
+    "options": [
+      "Superficialis",
+      "Kaudal",
+      "Proksimal",
+      "Ventral",
+      "Distal"
+    ],
+    "correct": 2,
+    "exp": "Ekstremitede gövdeye yakın olan yapı proksimal, uzak olan distal olarak adlandırılır.\n\nAyırt ettirici nokta: Doğru seçenek 'Proksimal'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1125,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "Ayak bileği burkulması sonrası tabanın içe döndüğü ve lateral bağlarda hassasiyet olduğu görülüyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Bu ayak hareketi hangisidir?",
+    "options": [
+      "Dorsifleksiyon",
+      "Eversiyon",
+      "Plantar fleksiyon",
+      "Protraksiyon",
+      "İnversiyon"
+    ],
+    "correct": 4,
+    "exp": "Ayak tabanının mediale dönmesi inversiyondur; lateral ayak bileği burkulması çoğunlukla bu mekanizmayla olur.\n\nAyırt ettirici nokta: Doğru seçenek 'İnversiyon'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1126,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "Postür analizinde omuzların öne yuvarlandığı, skapulanın toraks duvarı üzerinde öne-laterale kaydığı görülüyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Skapulanın bu hareketi hangisidir?",
+    "options": [
+      "Depresyon",
+      "Retraksiyon",
+      "İnternal rotasyon",
+      "Elevasyon",
+      "Protraksiyon"
+    ],
+    "correct": 4,
+    "exp": "Skapulanın toraks üzerinde öne-laterale kayması protraksiyondur. Retraksiyon skapulaları orta hatta yaklaştırır.\n\nAyırt ettirici nokta: Doğru seçenek 'Protraksiyon'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1127,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "Cerrah cilt, fasya, kas ve kapsül katlarını sırayla geçerek ekleme ulaşıyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Bu ilerleme yönü hangi terimlerle anlatılır?",
+    "options": [
+      "Anterior'dan posterior'a",
+      "Cranialis'ten caudalis'e",
+      "Medialis'ten lateralis'e",
+      "Superficialis'ten profundus'a",
+      "Distalis'ten proximalis'e"
+    ],
+    "correct": 3,
+    "exp": "Yüzeyden derine ilerleme superficialis-profundus eksenidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Superficialis'ten profundus'a'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1128,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 5,
+    "q": "Abdominal BT'de görüntü vücudu üst ve alt bölümlere ayıran kesitler halinde inceleniyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Bu düzlem hangisidir?",
+    "options": [
+      "Paramedian düzlem",
+      "Transvers/aksiyel düzlem",
+      "Koronal düzlem",
+      "Sagittal düzlem",
+      "Median düzlem"
+    ],
+    "correct": 1,
+    "exp": "Transvers/aksiyel düzlem vücudu superior ve inferior bölümlere ayırır.\n\nAyırt ettirici nokta: Doğru seçenek 'Transvers/aksiyel düzlem'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1129,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "Dirsekte eklem açısı azalacak biçimde ön kol kola yaklaştırılıyor. Tanısal tuzaklar dışlandığında: Bu hareket hangisidir?",
+    "options": [
+      "Abduksiyon",
+      "Adduksiyon",
+      "Ekstansiyon",
+      "Rotasyon",
+      "Fleksiyon"
+    ],
+    "correct": 4,
+    "exp": "Fleksiyon çoğu eklemde eklem açısını azaltır. Dirsek fleksiyonu ön kolun kola yaklaşmasıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'Fleksiyon'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1130,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "Anatomik pozisyonda ön kol kemiklerinin taraf ilişkisi değerlendiriliyor. Doğru ifade hangisidir?",
+    "options": [
+      "Ulna lateraldedir",
+      "Radius posterior yerleşir",
+      "Radius ve ulna üst üste bulunur",
+      "Radius medialdedir",
+      "Radius lateraldedir"
+    ],
+    "correct": 4,
+    "exp": "Anatomik pozisyonda radius başparmak tarafında, yani lateraldedir; ulna medialdedir.\n\nSpot ayrım: Doğru cevap 'Radius lateraldedir'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1131,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "Vücudu sağ ve sol olarak eşit iki yarıya bölen düzlem değerlendiriliyor. Bu düzlem hangisidir?",
+    "options": [
+      "Median düzlem",
+      "Koronal düzlem",
+      "Horizontal düzlem",
+      "Transvers düzlem",
+      "Oblik düzlem"
+    ],
+    "correct": 0,
+    "exp": "Median düzlem sagittal düzlemin tam orta hattan geçen özel halidir.\n\nSpot ayrım: Doğru cevap 'Median düzlem'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1132,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "Hasta kolunu gövdesinden uzaklaştırarak yana doğru kaldırıyor. Bu hareket hangisidir?",
+    "options": [
+      "Fleksiyon",
+      "Abduksiyon",
+      "İnversiyon",
+      "Adduksiyon",
+      "Pronasyon"
+    ],
+    "correct": 1,
+    "exp": "Ekstremitenin orta hattan uzaklaşması abduksiyondur; orta hatta yaklaşması adduksiyondur.\n\nSpot ayrım: Doğru cevap 'Abduksiyon'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1133,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 4,
+    "q": "El bileği üzerine düşme sonrası anatomik enfiye çukurunda hassasiyet var, ilk grafi normal. Klinik/laboratuvar ipuçları birleştirildiğinde: En olası kırık hangi kemiktedir?",
+    "options": [
+      "Os pisiforme",
+      "Os hamatum",
+      "Os capitatum",
+      "Os lunatum",
+      "Os scaphoideum"
+    ],
+    "correct": 4,
+    "exp": "Snuffbox hassasiyeti skafoid kırığı için klasiktir. İlk grafi normal olabilir ve avasküler nekroz riski önemlidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Os scaphoideum'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1134,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 4,
+    "q": "Yaşlı hasta açık el üzerine düşüyor; distal radius kırığı ve distal parçanın dorsale deplasmanı izleniyor. Tanısal tuzaklar dışlandığında: Bu kırık hangisidir?",
+    "options": [
+      "Smith kırığı",
+      "Bennett kırığı",
+      "Monteggia kırığı",
+      "Colles kırığı",
+      "Galeazzi kırığı"
+    ],
+    "correct": 3,
+    "exp": "Colles kırığı distal radiusun dorsale deplase FOOSH kırığıdır. Smith kırığında distal fragman volare gider.\n\nAyırt ettirici nokta: Doğru seçenek 'Colles kırığı'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1135,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 5,
+    "q": "Omuz çıkığı sonrası deltoid güçsüzlüğü ve lateral omuzda rozet alanı duyu kaybı gelişiyor. Tanısal tuzaklar dışlandığında: Hasarlanan sinirin yakın seyrettiği kemik bölgesi hangisidir?",
+    "options": [
+      "Olecranon",
+      "Klavikula orta 1/3",
+      "Humerus cerrahi boynu",
+      "Radius boynu",
+      "Humerus medial epikondili"
+    ],
+    "correct": 2,
+    "exp": "Aksiller sinir humerus cerrahi boynu çevresinde seyreder; deltoid ve lateral omuz duyusu etkilenir.\n\nAyırt ettirici nokta: Doğru seçenek 'Humerus cerrahi boynu'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1136,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 4,
+    "q": "Çocukta suprakondiler humerus kırığı sonrası elde soğukluk ve nabız zayıflığı var. Tanısal tuzaklar dışlandığında: En çok risk altındaki damar hangisidir?",
+    "options": [
+      "A. radialis",
+      "A. brachialis",
+      "A. axillaris",
+      "A. profunda brachii",
+      "A. ulnaris"
+    ],
+    "correct": 1,
+    "exp": "Suprakondiler kırık brakial arteri ve median/anterior interosseöz siniri tehdit eder.\n\nAyırt ettirici nokta: Doğru seçenek 'A. brachialis'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1137,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 4,
+    "q": "Humerus şaft kırığı sonrası düşük el gelişiyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Lezyonla ilişkili sinirin humerustaki oluğu hangisidir?",
+    "options": [
+      "Sulcus nervi ulnaris",
+      "Sulcus nervi radialis",
+      "Sulcus bicipitalis medialis",
+      "Sulcus intertubercularis",
+      "Fossa olecrani"
+    ],
+    "correct": 1,
+    "exp": "Radial sinir humerus şaftındaki radial olukta seyreder; şaft kırığında düşük el yapabilir.\n\nAyırt ettirici nokta: Doğru seçenek 'Sulcus nervi radialis'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1138,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 5,
+    "q": "Pelvis kırığında pubik ark ve iskiopubik ramus hattı etkileniyor. Bu bulgular birlikte değerlendirildiğinde: Bu yapıların ait olduğu ana kemik hangisidir?",
+    "options": [
+      "Os ilium",
+      "Sakrum",
+      "Koksiks",
+      "Os ischii",
+      "Os pubis"
+    ],
+    "correct": 4,
+    "exp": "Pubik ark ve pubis ramusları os pubis ile ilişkilidir; pelvis kırıklarında üretra yaralanması açısından önemlidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Os pubis'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1139,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 4,
+    "q": "Dashboard travması sonrası kalça fleksiyon, adduksiyon ve iç rotasyonda kilitleniyor. Bu bulgular birlikte değerlendirildiğinde: En olası çıkık tipi hangisidir?",
+    "options": [
+      "Femur boyun kırığı",
+      "Santral asetabulum kırığı",
+      "Posterior kalça çıkığı",
+      "Trokanterik kırık",
+      "Anterior kalça çıkığı"
+    ],
+    "correct": 2,
+    "exp": "Posterior kalça çıkığında ekstremite fleksiyon, adduksiyon, iç rotasyondadır; siyatik sinir riski vardır.\n\nAyırt ettirici nokta: Doğru seçenek 'Posterior kalça çıkığı'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1140,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 4,
+    "q": "Medial malleol arkasındaki keside plantar duyu kaybı ve parmak fleksiyonunda zayıflık gelişiyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Bu bölgede en çok hangi sinir düşünülür?",
+    "options": [
+      "N. suralis",
+      "N. tibialis",
+      "N. obturatorius",
+      "N. saphenus",
+      "N. fibularis superficialis"
+    ],
+    "correct": 1,
+    "exp": "Tarsal tünel medial malleol arkasındadır ve tibial sinir buradan geçer.\n\nAyırt ettirici nokta: Doğru seçenek 'N. tibialis'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1141,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 4,
+    "q": "Foramen magnumun bulunduğu kemik değerlendiriliyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Doğru seçenek hangisidir?",
+    "options": [
+      "Os occipitale",
+      "Os ethmoidale",
+      "Os temporale",
+      "Os parietale",
+      "Os sphenoidale"
+    ],
+    "correct": 0,
+    "exp": "Foramen magnum oksipital kemikte yer alır ve medulla-spinal kord geçişi buradan olur.\n\nAyırt ettirici nokta: Doğru seçenek 'Os occipitale'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1142,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 4,
+    "q": "Humerus medial epikondili arkasındaki olukta seyreden sinir hangisidir?. Hangi sinir dirsek çarpınca elektriklenme hissiyle ilişkilidir?",
+    "options": [
+      "N. ulnaris",
+      "N. medianus",
+      "N. musculocutaneus",
+      "N. axillaris",
+      "N. radialis"
+    ],
+    "correct": 0,
+    "exp": "Ulnar sinir medial epikondil arkasındaki sulkusta yüzeyel seyreder.\n\nSpot ayrım: Doğru cevap 'N. ulnaris'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1143,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 4,
+    "q": "Aşağıdaki kemiklerden hangisi aksiyel iskelete aittir?. Doğru seçenek hangisidir?",
+    "options": [
+      "Sternum",
+      "Femur",
+      "Scapula",
+      "Clavicula",
+      "Humerus"
+    ],
+    "correct": 0,
+    "exp": "Sternum aksiyel iskeletin parçasıdır; ekstremite ve kuşak kemikleri apendiküler iskelete girer.\n\nSpot ayrım: Doğru cevap 'Sternum'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1144,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 4,
+    "q": "Kafa iskeletinde hareketli eklem yapan tek kemik değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Os palatinum",
+      "Os zygomaticum",
+      "Os lacrimale",
+      "Mandibula",
+      "Maxilla"
+    ],
+    "correct": 3,
+    "exp": "Mandibula temporomandibular eklem aracılığıyla hareket eden kafatası kemiğidir.\n\nSpot ayrım: Doğru cevap 'Mandibula'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1145,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 5,
+    "q": "Romatoid artritli hastada atlantoaksiyel instabilite nedeniyle entübasyonda boyun ekstansiyonundan kaçınılıyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Esas riskli eklem-bağ ilişkisi hangisidir?",
+    "options": [
+      "Sternoklavikular eklem - lig. costoclaviculare",
+      "Atlanto-oksipital eklem - lig. flavum",
+      "Unkovertebral eklem - lig. nuchae",
+      "Sakroiliak eklem - lig. inguinale",
+      "Median atlantoaksiyel eklem - lig. transversum atlantis"
+    ],
+    "correct": 4,
+    "exp": "Dens axis atlasın anterior arkı ile median atlantoaksiyel eklemi yapar; transvers ligament stabilite sağlar.\n\nAyırt ettirici nokta: Doğru seçenek 'Median atlantoaksiyel eklem - lig. transversum atlantis'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1146,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 4,
+    "q": "Lachman testi pozitif futbolcuda ACL rüptürü düşünülüyor. Bu bulgular birlikte değerlendirildiğinde: ACL'nin temel fonksiyonu hangisidir?",
+    "options": [
+      "Tibianın posterior translasyonunu engellemek",
+      "Menisküsü beslemek",
+      "Patellayı laterale çekmek",
+      "Kalçayı ekstansiyona getirmek",
+      "Tibianın anterior translasyonunu engellemek"
+    ],
+    "correct": 4,
+    "exp": "ACL tibianın femura göre öne kaymasını ve aşırı rotasyonu sınırlar.\n\nAyırt ettirici nokta: Doğru seçenek 'Tibianın anterior translasyonunu engellemek'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1147,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 4,
+    "q": "Dashboard travması sonrası PCL yaralanması ve posterior drawer testi pozitif. Bu bulgular birlikte değerlendirildiğinde: PCL'nin primer fonksiyonu hangisidir?",
+    "options": [
+      "Anterior translasyonu engellemek",
+      "Ayak inversiyonunu sınırlamak",
+      "Tibianın posterior translasyonunu engellemek",
+      "Patella stabilizasyonu",
+      "Diz ekstansiyonunu başlatmak"
+    ],
+    "correct": 2,
+    "exp": "PCL tibianın posteriora kaymasını engeller; dashboard mekanizması klasiktir.\n\nAyırt ettirici nokta: Doğru seçenek 'Tibianın posterior translasyonunu engellemek'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1148,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 4,
+    "q": "Başparmak kökünde osteoartrit olan hastada opozisyon ağrılı. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Birinci karpometakarpal eklem tipi hangisidir?",
+    "options": [
+      "Pivot",
+      "Sferoid",
+      "Eyer eklem",
+      "Menteşe",
+      "Plane"
+    ],
+    "correct": 2,
+    "exp": "Başparmak CMC eklemi eyer tipidir ve opozisyona izin verir.\n\nAyırt ettirici nokta: Doğru seçenek 'Eyer eklem'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1149,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 5,
+    "q": "Radius başı annular ligament içinde dönerek pronasyon-supinasyon yapıyor. Bu bulgular birlikte değerlendirildiğinde: Proksimal radioulnar eklem tipi hangisidir?",
+    "options": [
+      "Kondiler",
+      "Eyer",
+      "Sferoid",
+      "Menteşe",
+      "Pivot eklem"
+    ],
+    "correct": 4,
+    "exp": "Proksimal radioulnar eklem pivot/trokoid sinovyal eklemdir.\n\nAyırt ettirici nokta: Doğru seçenek 'Pivot eklem'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1150,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 4,
+    "q": "İnversiyon burkulması sonrası lateral malleol ön-altında hassasiyet var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: En sık zedelenen bağ hangisidir?",
+    "options": [
+      "Lig. deltoideum",
+      "Lig. talofibulare anterius",
+      "Lig. talofibulare posterius",
+      "Lig. calcaneofibulare",
+      "Lig. plantare longum"
+    ],
+    "correct": 1,
+    "exp": "Ayak bileği inversiyon yaralanmalarında en sık ATFL zedelenir.\n\nAyırt ettirici nokta: Doğru seçenek 'Lig. talofibulare anterius'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1151,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 4,
+    "q": "Tekrarlayan anterior omuz çıkığı olan hastada anteroinferior labrum ayrılmış. Bu bulgular birlikte değerlendirildiğinde: Bu lezyon hangisidir?",
+    "options": [
+      "Segond",
+      "Hill-Sachs",
+      "Stener",
+      "Bankart lezyonu",
+      "SLAP sadece posterior"
+    ],
+    "correct": 3,
+    "exp": "Bankart anterior-inferior labrum lezyonudur; tekrarlayan anterior çıkıkla ilişkilidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Bankart lezyonu'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1152,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 5,
+    "q": "Valgus-rotasyon travması sonrası ACL, MCL ve medial menisküs yaralanıyor. Bu bulgular birlikte değerlendirildiğinde: Bu klasik kombinasyon hangisidir?",
+    "options": [
+      "Galeazzi triadı",
+      "Monteggia triadı",
+      "Lisfranc triadı",
+      "Terrible triad",
+      "Unhappy triad"
+    ],
+    "correct": 4,
+    "exp": "Unhappy triad ACL, MCL ve medial menisküs kombinasyonudur.\n\nAyırt ettirici nokta: Doğru seçenek 'Unhappy triad'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1153,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 4,
+    "q": "Aşağıdaki eklemlerden hangisi menteşe tipi sinovyal ekleme iyi örnektir?. Bu bulgular birlikte değerlendirildiğinde: Doğru seçenek hangisidir?",
+    "options": [
+      "Humeroulnar eklem",
+      "Omuz",
+      "Proksimal radioulnar",
+      "Kalça",
+      "Başparmak CMC"
+    ],
+    "correct": 0,
+    "exp": "Humeroulnar eklem fleksiyon-ekstansiyon yapan menteşe eklemidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Humeroulnar eklem'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1154,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 4,
+    "q": "Menisküslerin dizdeki temel görevi değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Patellayı yukarı çekmek",
+      "Yük dağılımı ve eklem uyumunu artırmak",
+      "Kan üretmek",
+      "Tibianın posteriora kaymasını sağlamak",
+      "Sinir iletimini sağlamak"
+    ],
+    "correct": 1,
+    "exp": "Menisküsler eklem uyumunu artırır ve yük dağılımını sağlar.\n\nSpot ayrım: Doğru cevap 'Yük dağılımı ve eklem uyumunu artırmak'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1155,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 4,
+    "q": "Ligamentum capitis femoris erişkinde klinik olarak neden hatırlanır?. Doğru seçenek hangisidir?",
+    "options": [
+      "Femur boynunu posteriora çekmesi",
+      "Siyatik siniri koruması",
+      "Obturator arterin küçük dalını içerebilmesi",
+      "Ana femur başı kanlanmasını taşıması",
+      "Kalça abdüksiyonunu başlatması"
+    ],
+    "correct": 2,
+    "exp": "Ligamentum capitis femoris obturator arterin asetabular dalını taşıyabilir; ana kanlanma erişkinde medial femoral circumflex arterdir.\n\nSpot ayrım: Doğru cevap 'Obturator arterin küçük dalını içerebilmesi'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1156,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 4,
+    "q": "Temporomandibular eklem için doğru ifade değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Fibröz eklemdir",
+      "Sinovyal sıvı içermez",
+      "Yalnız depresyon yapar",
+      "Sadece çocukta vardır",
+      "Eklem diski içerir, rotasyon ve translasyon yapar"
+    ],
+    "correct": 4,
+    "exp": "TMJ sinovyal eklemdir; disk içerir ve ağız açmada rotasyon + translasyon olur.\n\nSpot ayrım: Doğru cevap 'Eklem diski içerir, rotasyon ve translasyon yapar'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1157,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 4,
+    "q": "Mastektomi/aksiller girişim sonrası kanadımsı skapula ve kolu baş üstüne kaldırmada güçlük. Klinik/laboratuvar ipuçları birleştirildiğinde: Kanat skapula en çok hangi kas-sinir hasarıdır?",
+    "options": [
+      "Serratus anterior - n. thoracicus longus",
+      "Latissimus dorsi - n. thoracodorsalis",
+      "Deltoideus - n. axillaris",
+      "Rhomboideus - n. dorsalis scapulae",
+      "Trapezius - n. accessorius"
+    ],
+    "correct": 0,
+    "exp": "Serratus anterior skapulayı toraksa sabitler; uzun torasik sinir hasarı winged scapula yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'Serratus anterior - n. thoracicus longus'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1158,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 4,
+    "q": "Posterior servikal üçgende lenf nodu biyopsisi sonrası omuz silkmede güçsüzlük. Klinik/laboratuvar ipuçları birleştirildiğinde: Yaralanan sinirin motor etkilediği kaslar hangileridir?",
+    "options": [
+      "Scalenus anterior",
+      "Rhomboideus minor",
+      "Subclavius",
+      "Levator scapulae",
+      "Sternocleidomastoideus ve trapezius"
+    ],
+    "correct": 4,
+    "exp": "N. accessorius SCM ve trapeziusu innerve eder.\n\nAyırt ettirici nokta: Doğru seçenek 'Sternocleidomastoideus ve trapezius'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1159,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 5,
+    "q": "Omuz abdüksiyonunda 15-90 derece arası belirgin güçsüzlük. Tanısal tuzaklar dışlandığında: Bu aralığın ana kas-sinir çifti hangisidir?",
+    "options": [
+      "Pectoralis major - nn. pectorales",
+      "Trapezius - n. accessorius",
+      "Deltoideus - n. axillaris",
+      "Supraspinatus - n. suprascapularis",
+      "Serratus anterior - n. thoracicus longus"
+    ],
+    "correct": 2,
+    "exp": "İlk 15 derece supraspinatus, 15-90 derece deltoid/aksiller sinirdir.\n\nAyırt ettirici nokta: Doğru seçenek 'Deltoideus - n. axillaris'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1160,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 4,
+    "q": "Ön kol supinasyonunda ve supinasyonda dirsek fleksiyonunda belirgin zayıflık. Bu bulgular birlikte değerlendirildiğinde: En ilişkili kas hangisidir?",
+    "options": [
+      "Biceps brachii",
+      "Pronator teres",
+      "Brachioradialis",
+      "Flexor carpi ulnaris",
+      "Triceps"
+    ],
+    "correct": 0,
+    "exp": "Biceps güçlü supinatör ve dirsek fleksörüdür.\n\nAyırt ettirici nokta: Doğru seçenek 'Biceps brachii'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1161,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 4,
+    "q": "Femoral sinir blokajından sonra diz ekstansiyonu ve patella refleksi azalıyor. Tanısal tuzaklar dışlandığında: Etkilenen ana kas grubu hangisidir?",
+    "options": [
+      "Gastrocnemius",
+      "Gluteus maximus",
+      "Hamstring",
+      "Quadriceps femoris",
+      "Adductor magnus"
+    ],
+    "correct": 3,
+    "exp": "Quadriceps diz ekstansiyonunu sağlar ve femoral sinirle innerve edilir.\n\nAyırt ettirici nokta: Doğru seçenek 'Quadriceps femoris'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1162,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 4,
+    "q": "Hasta sandalyeden kalkarken ve merdiven çıkarken kalça ekstansiyonunda zorlanıyor. Tanısal tuzaklar dışlandığında: En ilişkili kas hangisidir?",
+    "options": [
+      "Gluteus medius",
+      "Gluteus maximus",
+      "Piriformis",
+      "Iliopsoas",
+      "Tensor fascia lata"
+    ],
+    "correct": 1,
+    "exp": "Gluteus maximus güçlü kalça ekstansörüdür.\n\nAyırt ettirici nokta: Doğru seçenek 'Gluteus maximus'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1163,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 5,
+    "q": "Superior gluteal sinir hasarında tek ayakta durunca karşı pelvis düşüyor. Bu bulgular birlikte değerlendirildiğinde: Trendelenburg bulgusu hangi kas yetmezliğidir?",
+    "options": [
+      "Gluteus maximus",
+      "Adductor longus",
+      "Iliopsoas",
+      "Hamstring",
+      "Gluteus medius/minimus"
+    ],
+    "correct": 4,
+    "exp": "Gluteus medius/minimus pelvis stabilizasyonunu sağlar.\n\nAyırt ettirici nokta: Doğru seçenek 'Gluteus medius/minimus'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1164,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 4,
+    "q": "Aşil rüptürü sonrası plantar fleksiyon zayıf, Thompson testi pozitif. Bu bulgular birlikte değerlendirildiğinde: Aşil tendonuna ana katılan kaslar hangileridir?",
+    "options": [
+      "Tibialis posterior ve FDL",
+      "Fibularis longus/brevis",
+      "Tibialis anterior ve EHL",
+      "Gastrocnemius ve soleus",
+      "Popliteus ve plantaris"
+    ],
+    "correct": 3,
+    "exp": "Aşil tendonu gastrocnemius ve soleus ortak tendonudur.\n\nAyırt ettirici nokta: Doğru seçenek 'Gastrocnemius ve soleus'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1165,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 4,
+    "q": "Karın duvarında lifleri 'eller cepte' yönünde inferomediale uzanan kas değerlendiriliyor. Bu bulgular birlikte değerlendirildiğinde: Doğru seçenek hangisidir?",
+    "options": [
+      "M. pyramidalis",
+      "M. obliquus externus abdominis",
+      "M. rectus abdominis",
+      "M. obliquus internus",
+      "M. transversus"
+    ],
+    "correct": 1,
+    "exp": "External oblique lifleri inferomediale uzanır.\n\nAyırt ettirici nokta: Doğru seçenek 'M. obliquus externus abdominis'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1166,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 4,
+    "q": "Rotator cuff içinde omuz abdüksiyonunu başlatan kas değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Teres minor",
+      "Teres major",
+      "Infraspinatus",
+      "Subscapularis",
+      "Supraspinatus"
+    ],
+    "correct": 4,
+    "exp": "Supraspinatus ilk 15 derece abdüksiyonu başlatır.\n\nSpot ayrım: Doğru cevap 'Supraspinatus'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1167,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 4,
+    "q": "Pes anserinus'u oluşturan tendonlar değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Rectus femoris, vastus medialis, sartorius",
+      "Semitendinosus, semimembranosus, biceps",
+      "Sartorius, gracilis, semimembranosus",
+      "Sartorius, gracilis, semitendinosus",
+      "Biceps femoris, gracilis, sartorius"
+    ],
+    "correct": 3,
+    "exp": "Pes anserinus sartorius, gracilis ve semitendinosustur.\n\nSpot ayrım: Doğru cevap 'Sartorius, gracilis, semitendinosus'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1168,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 4,
+    "q": "Psoas majorun innervasyonu değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Lomber pleksusun anterior dalları",
+      "Sakral pleksus",
+      "N. obturatorius tek başına",
+      "N. gluteus superior",
+      "N. pudendus"
+    ],
+    "correct": 0,
+    "exp": "Psoas major L1-L3 düzeyinde lomber pleksus dallarıyla innerve edilir.\n\nSpot ayrım: Doğru cevap 'Lomber pleksusun anterior dalları'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1169,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 4,
+    "q": "Aortopulmoner pencere kitlesinde sol vokal kord paralizisi gelişiyor. Bu bulgular birlikte değerlendirildiğinde: Sol rekürren laringeal sinir hangi yapının altından döner?",
+    "options": [
+      "Lig. venosum",
+      "Arcus aortae",
+      "Sağ subklavyen arter",
+      "V. cava superior",
+      "Truncus pulmonalis"
+    ],
+    "correct": 1,
+    "exp": "Sol rekürren laringeal sinir arkus aorta altında, ligamentum arteriosum yakınında döner.\n\nAyırt ettirici nokta: Doğru seçenek 'Arcus aortae'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1170,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 5,
+    "q": "PDA ligasyonu sırasında ses kısıklığı komplikasyonundan kaçınılıyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Korunması gereken sinir hangisidir?",
+    "options": [
+      "N. phrenicus dexter",
+      "N. vagus dexter",
+      "N. splanchnicus major",
+      "N. intercostobrachialis",
+      "N. laryngeus recurrens sinister"
+    ],
+    "correct": 4,
+    "exp": "PDA/ligamentum arteriosum sol rekürren laringeal sinire komşudur.\n\nAyırt ettirici nokta: Doğru seçenek 'N. laryngeus recurrens sinister'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1171,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 4,
+    "q": "Femoral DVT'nin pulmoner emboliye gidiş yolu değerlendiriliyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Femoral venden sonra doğru ana yol hangisidir?",
+    "options": [
+      "V. iliaca interna - V. porta",
+      "V. azygos - VCS",
+      "V. saphena - VCS",
+      "V. renalis - V. porta",
+      "V. iliaca externa - V. iliaca communis - VCI"
+    ],
+    "correct": 4,
+    "exp": "Femoral ven eksternal iliak, common iliak ve VCI yoluyla sağ kalbe ulaşır.\n\nAyırt ettirici nokta: Doğru seçenek 'V. iliaca externa - V. iliaca communis - VCI'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1172,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 4,
+    "q": "Meme üst dış kadran tümöründe sentinel lenf nodu aranıyor. Tanısal tuzaklar dışlandığında: İlk drenaj en sık nereye olur?",
+    "options": [
+      "Parasternal nodlar",
+      "Aksiller pektoral nodlar",
+      "Posterior mediastinal nodlar",
+      "Supraklavikular nodlar",
+      "İnguinal nodlar"
+    ],
+    "correct": 1,
+    "exp": "Memenin lateral kadranları çoğunlukla aksiller özellikle pektoral nodlara drene olur.\n\nAyırt ettirici nokta: Doğru seçenek 'Aksiller pektoral nodlar'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1173,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 5,
+    "q": "Testis tümöründe inguinal nodlar normal, retroperitoneal nodlar büyümüş. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Bu drenajın nedeni nedir?",
+    "options": [
+      "Tunica vaginalisin olmaması",
+      "Paraaortik/lomber nodlar",
+      "Skrotumdan gelişmesi",
+      "Ductus deferens komşuluğu",
+      "Embriyolojik posterior abdominal duvar kökeni"
+    ],
+    "correct": 1,
+    "exp": "Testis embriyolojik olarak posterior abdominal duvarda gelişir; lenfi paraaortik nodlara gider.\n\nAyırt ettirici nokta: Doğru seçenek 'Paraaortik/lomber nodlar'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1174,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 4,
+    "q": "Sirozlu hastada caput medusae gelişiyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Hangi portokaval anastomoz açılmıştır?",
+    "options": [
+      "Rektal venler",
+      "Splenik-renal",
+      "Retroperitoneal kolik-lomber",
+      "Sol gastrik-azygos",
+      "Vv. paraumbilicales - yüzeyel epigastrik venler"
+    ],
+    "correct": 4,
+    "exp": "Paraumbilikal venler portal, epigastrik venler sistemik dolaşımla ilişkilidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Vv. paraumbilicales - yüzeyel epigastrik venler'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1175,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 4,
+    "q": "Portal hipertansiyonda distal özofagus varis kanaması var. Tanısal tuzaklar dışlandığında: Anatomik temel hangi anastomozdur?",
+    "options": [
+      "Rektal venler",
+      "SMV-femoral",
+      "Paraumbilikal-epigastrik",
+      "Splenik-renal",
+      "V. gastrica sinistra - azygos sistemi"
+    ],
+    "correct": 4,
+    "exp": "Sol gastrik ven portal sisteme, özofageal venler azygos sistemine drene olur.\n\nAyırt ettirici nokta: Doğru seçenek 'V. gastrica sinistra - azygos sistemi'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1176,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 4,
+    "q": "Aort koarktasyonunda kaburga alt kenarında çentiklenme izleniyor. Bu bulgular birlikte değerlendirildiğinde: Bu bulgu hangi damarların genişlemesiyle olur?",
+    "options": [
+      "Internal thoracic venler",
+      "Anterior interkostal arterler",
+      "Pulmoner venler",
+      "Bronşial venler",
+      "Posterior interkostal arterler"
+    ],
+    "correct": 4,
+    "exp": "Koarktasyonda posterior interkostal arter kollateralleri kaburga notching yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'Posterior interkostal arterler'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1177,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 4,
+    "q": "Posterior interventriküler arterin en sık çıktığı koroner arter değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "RCA",
+      "Internal thoracic",
+      "LCX",
+      "Ramus intermedius",
+      "LAD"
+    ],
+    "correct": 0,
+    "exp": "Çoğu insanda sağ dominant dolaşım vardır ve PDA RCA'dan çıkar.\n\nSpot ayrım: Doğru cevap 'RCA'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1178,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 4,
+    "q": "Doğru arter-sinir komşuluğu değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "A. femoralis - n. obturatorius",
+      "A. carotis externa - n. medianus",
+      "A. profunda brachii - n. radialis",
+      "A. dorsalis pedis - n. tibialis posterior",
+      "A. mesenterica superior - n. phrenicus"
+    ],
+    "correct": 2,
+    "exp": "Profunda brachii radial sinirle radial olukta seyreder.\n\nSpot ayrım: Doğru cevap 'A. profunda brachii - n. radialis'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1179,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 4,
+    "q": "V. saphena magna'nın drene olduğu ven değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "V. tibialis posterior",
+      "V. poplitea",
+      "V. profunda femoris",
+      "V. iliaca interna",
+      "V. femoralis"
+    ],
+    "correct": 4,
+    "exp": "Saphena magna saphenofemoral bileşkede femoral vene dökülür.\n\nSpot ayrım: Doğru cevap 'V. femoralis'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1180,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 4,
+    "q": "AV nodun çoğunlukla kanlanması değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "A. pulmonalis",
+      "Internal thoracic",
+      "RCA'nın AV nodal dalı",
+      "LAD septal dalı",
+      "LCX obtus marginal"
+    ],
+    "correct": 2,
+    "exp": "AV nod arteri çoğunlukla RCA kökenlidir; inferior MI'da AV blok görülebilir.\n\nSpot ayrım: Doğru cevap 'RCA'nın AV nodal dalı'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1181,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 4,
+    "q": "Bilinci kapalı supin hastada aspirasyon pnömonisi gelişiyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: En sık tutulması beklenen segment hangisidir?",
+    "options": [
+      "Sağ üst lob anterior",
+      "Sağ alt lob superior segment",
+      "Sol lingula",
+      "Sağ orta lob medial",
+      "Sol üst lob apikoposterior"
+    ],
+    "correct": 1,
+    "exp": "Supin aspirasyonda özellikle sağ alt lob superior segment sık etkilenir.\n\nAyırt ettirici nokta: Doğru seçenek 'Sağ alt lob superior segment'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1182,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 4,
+    "q": "Torasentezde interkostal damar-sinir paketinden kaçınılıyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: İğne nereye yakın ilerletilmelidir?",
+    "options": [
+      "Üst kaburganın alt kenarı",
+      "İki kaburganın tam ortası",
+      "Üst kaburga gövdesi",
+      "Sternuma en yakın nokta",
+      "Alttaki kaburganın üst kenarı"
+    ],
+    "correct": 4,
+    "exp": "VAN paketi kaburga alt kenarında seyreder; iğne alttaki kaburganın üstünden girilir.\n\nAyırt ettirici nokta: Doğru seçenek 'Alttaki kaburganın üst kenarı'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1183,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 4,
+    "q": "Tiroid cerrahisi sonrası hemidiyafram paralizisi gelişiyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Hasarlanan frenik sinirin kökleri hangileridir?",
+    "options": [
+      "T6-T12",
+      "C5-C7",
+      "T1-T4",
+      "C1-C3",
+      "C3-C5"
+    ],
+    "correct": 4,
+    "exp": "Frenik sinir C3-C5 kökenlidir ve diyaframı innerve eder.\n\nAyırt ettirici nokta: Doğru seçenek 'C3-C5'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1184,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 5,
+    "q": "Pancoast tümöründe Horner sendromu ve ulnar dağılımlı kol ağrısı var. Bu bulgular birlikte değerlendirildiğinde: Tümör en çok hangi yapıları tutmuştur?",
+    "options": [
+      "Sol rekürren sinir",
+      "N. phrenicus",
+      "N. vagus dexter",
+      "N. intercostobrachialis",
+      "Truncus sympathicus ve alt brakiyal pleksus"
+    ],
+    "correct": 4,
+    "exp": "Pancoast tümörü sempatik zincir ve alt brakiyal pleksusu tutabilir.\n\nAyırt ettirici nokta: Doğru seçenek 'Truncus sympathicus ve alt brakiyal pleksus'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1185,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 4,
+    "q": "Tansiyon pnömotoraksta klasik iğne dekompresyon yeri değerlendiriliyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Doğru seçenek hangisidir?",
+    "options": [
+      "Subkostal giriş",
+      "Juguler üstü",
+      "5. İKA paravertebral",
+      "2. interkostal aralık midklavikular hat",
+      "7. İKA midaksiller"
+    ],
+    "correct": 3,
+    "exp": "Klasik TUS bilgisi 2. İKA midklavikular hattır.\n\nAyırt ettirici nokta: Doğru seçenek '2. interkostal aralık midklavikular hat'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1186,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 4,
+    "q": "Sağ akciğer hilusunda üstten alta klasik dizilim değerlendiriliyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Doğru sıra hangisidir?",
+    "options": [
+      "Arter-ven-bronş",
+      "Ven-arter-bronş",
+      "Bronş-arter-ven",
+      "Arter-bronş-ven",
+      "Bronş-ven-arter"
+    ],
+    "correct": 2,
+    "exp": "Sağ hilusta üstten alta BAV dizilimi öğretilir.\n\nAyırt ettirici nokta: Doğru seçenek 'Bronş-arter-ven'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1187,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 5,
+    "q": "Frenik sinir mediastende perikardla ilişkili seyrediyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Doğru ilişki hangisidir?",
+    "options": [
+      "Perikardın ön-lateral yüzü",
+      "Trakea içi",
+      "Azygos arkı altı",
+      "Özofagus arkası",
+      "Akciğer kökünün posterioru"
+    ],
+    "correct": 0,
+    "exp": "Frenik sinir perikard lateralinde ve akciğer kökünün anteriorundan geçer.\n\nAyırt ettirici nokta: Doğru seçenek 'Perikardın ön-lateral yüzü'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1188,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 4,
+    "q": "Çocukta aspire edilen fıstık sağ ana bronşa kaçıyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Bu eğilimin nedeni nedir?",
+    "options": [
+      "Sağ ana bronşun kısa, geniş ve vertikal olması",
+      "Karina açısının solda geniş olması",
+      "Sol bronşun daha vertikal olması",
+      "Sağ bronşun uzun-dar olması",
+      "Sağ üst lob bronşunun horizontal olması"
+    ],
+    "correct": 0,
+    "exp": "Sağ ana bronş daha kısa, geniş ve vertikaldir.\n\nAyırt ettirici nokta: Doğru seçenek 'Sağ ana bronşun kısa, geniş ve vertikal olması'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1189,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 4,
+    "q": "Lingula hangi akciğer lobuna aittir?. Doğru seçenek hangisidir?",
+    "options": [
+      "Azygos lobu",
+      "Sağ üst lob",
+      "Sol üst lob",
+      "Sol alt lob",
+      "Sağ orta lob"
+    ],
+    "correct": 2,
+    "exp": "Lingula sol üst lob parçasıdır.\n\nSpot ayrım: Doğru cevap 'Sol üst lob'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1190,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 4,
+    "q": "Visseral plevra ağrı duyusu değerlendiriliyor. Doğru ifade hangisidir?",
+    "options": [
+      "Visseral plevra ağrıya duyarsızdır",
+      "Yalnız frenik sinir taşır",
+      "İnterkostal sinirle ağrılıdır",
+      "Sadece T1'e yansır",
+      "Keskin somatik ağrı taşır"
+    ],
+    "correct": 0,
+    "exp": "Visseral plevra otonom innervasyonludur ve ağrıya duyarsızdır; parietal plevra ağrılıdır.\n\nSpot ayrım: Doğru cevap 'Visseral plevra ağrıya duyarsızdır'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1191,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 4,
+    "q": "Trakea bifurkasyonu/karina yaklaşık vertebra düzeyi değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "T2",
+      "T4-T5",
+      "T8",
+      "C7",
+      "T12"
+    ],
+    "correct": 1,
+    "exp": "Karina sternal açı ile ilişkili yaklaşık T4-T5 düzeyindedir.\n\nSpot ayrım: Doğru cevap 'T4-T5'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1192,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 4,
+    "q": "Sağ akciğer lob ve fissür sayısı değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "3 lob, 2 fissür",
+      "4 lob, 3 fissür",
+      "2 lob, 2 fissür",
+      "3 lob, 1 fissür",
+      "2 lob, 1 fissür"
+    ],
+    "correct": 0,
+    "exp": "Sağ akciğer 3 loblu, horizontal ve oblik fissürlüdür.\n\nSpot ayrım: Doğru cevap '3 lob, 2 fissür'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1193,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 4,
+    "q": "Sağ alt kadran ağrısı olan hastada apandisit muayenesi yapılıyor. Bu bulgular birlikte değerlendirildiğinde: Appendix tabanı için klasik yüzeyel işaret hangisidir?",
+    "options": [
+      "Murphy noktası",
+      "Traube alanı",
+      "Courvoisier bulgusu",
+      "McBurney noktası",
+      "Lanz noktası her zaman"
+    ],
+    "correct": 3,
+    "exp": "McBurney noktası umblikus-ASIS hattının lateral 1/3-medial 2/3 birleşimidir.\n\nAyırt ettirici nokta: Doğru seçenek 'McBurney noktası'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1194,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 5,
+    "q": "Kolesistektomide ductus cysticus ve a. cystica güvenli ayrılmak isteniyor. Tanısal tuzaklar dışlandığında: Bu diseksiyon alanı hangisidir?",
+    "options": [
+      "Koch üçgeni",
+      "Petit üçgeni",
+      "Femoral üçgen",
+      "Hesselbach üçgeni",
+      "Calot üçgeni"
+    ],
+    "correct": 4,
+    "exp": "Calot üçgeni cystic duct, common hepatic duct ve karaciğer alt yüzüyle ilişkilidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Calot üçgeni'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1195,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 4,
+    "q": "Posterior mide ülseri sırta vuran ağrı ve amilaz yüksekliği yapıyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Penetre olan komşu organ hangisidir?",
+    "options": [
+      "Dalak",
+      "Transvers kolon",
+      "Duodenum 4. kısım",
+      "Pankreas",
+      "Sol böbrek"
+    ],
+    "correct": 3,
+    "exp": "Midenin posterior komşuluğunda pankreas vardır.\n\nAyırt ettirici nokta: Doğru seçenek 'Pankreas'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1196,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 4,
+    "q": "Çocukta ağrısız alt GİS kanaması ve Meckel divertikülü var. Klinik/laboratuvar ipuçları birleştirildiğinde: Embriyolojik kalıntı hangisidir?",
+    "options": [
+      "Nöral tüp",
+      "Omfalomezenterik/vitellin kanal",
+      "Allantois",
+      "Urachus",
+      "Müller kanalı"
+    ],
+    "correct": 1,
+    "exp": "Meckel divertikülü vitellin kanal kalıntısıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'Omfalomezenterik/vitellin kanal'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1197,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 4,
+    "q": "Yenidoğanda malrotasyon-volvulus değerlendiriliyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Normal midgut rotasyonu nasıldır?",
+    "options": [
+      "360 derece saat yönünde",
+      "270 derece saat yönünde",
+      "180 derece saat yönünde",
+      "90 derece saat yönünde",
+      "270 derece saat yönünün tersine"
+    ],
+    "correct": 4,
+    "exp": "Midgut SMA çevresinde 270 derece saat yönünün tersine döner.\n\nAyırt ettirici nokta: Doğru seçenek '270 derece saat yönünün tersine'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1198,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 5,
+    "q": "Portal hipertansiyonlu hastada rektal varis gelişiyor. Tanısal tuzaklar dışlandığında: Buradaki portokaval anastomoz hangisidir?",
+    "options": [
+      "Sol gastrik-azygos",
+      "V. rectalis superior - media/inferior",
+      "Paraumbilikal-epigastrik",
+      "Splenik-renal",
+      "SMV-femoral"
+    ],
+    "correct": 1,
+    "exp": "Superior rektal portal, orta/inferior rektal sistemik drenaja gider.\n\nAyırt ettirici nokta: Doğru seçenek 'V. rectalis superior - media/inferior'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1199,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 4,
+    "q": "Özofagus cerrahisi sonrası şilotoraks gelişiyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Torasik duktus karında hangi yapıdan başlar?",
+    "options": [
+      "Ductus venosus",
+      "Hiatus semilunaris",
+      "Cisterna chyli",
+      "Peyer plağı",
+      "Ampulla Vateri"
+    ],
+    "correct": 2,
+    "exp": "Torasik duktus cisterna chyli'den başlar ve sol venöz açıya dökülür.\n\nAyırt ettirici nokta: Doğru seçenek 'Cisterna chyli'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1200,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 4,
+    "q": "Pankreas başı tümörü obstrüktif sarılık yapıyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Koledok ve ana pankreatik kanal çoğunlukla nerede birleşir?",
+    "options": [
+      "Treitz ligamanı",
+      "Ampulla Vateri",
+      "Papilla minor",
+      "Foramen epiploicum",
+      "Ductus Santorini"
+    ],
+    "correct": 1,
+    "exp": "Koledok ve ana pankreatik kanal ampulla Vateri üzerinden major papillaya açılır.\n\nAyırt ettirici nokta: Doğru seçenek 'Ampulla Vateri'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1201,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 4,
+    "q": "Foregut organlarının ana arteriyel beslenmesi değerlendiriliyor. Doğru arter hangisidir?",
+    "options": [
+      "A. sacralis mediana",
+      "SMA",
+      "A. iliaca interna",
+      "Truncus coeliacus",
+      "IMA"
+    ],
+    "correct": 3,
+    "exp": "Foregut truncus coeliacus, midgut SMA, hindgut IMA ile beslenir.\n\nSpot ayrım: Doğru cevap 'Truncus coeliacus'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1202,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 4,
+    "q": "Treitz ligamanının askıya aldığı yapı değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Duodenojejunal bileşke",
+      "Pilor kanalı",
+      "Safra kesesi boynu",
+      "Appendix ucu",
+      "İleoçekal valv"
+    ],
+    "correct": 0,
+    "exp": "Treitz ligamanı duodenojejunal fleksurayı askılar.\n\nSpot ayrım: Doğru cevap 'Duodenojejunal bileşke'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1203,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 4,
+    "q": "Hepatoduodenal ligament içeriği değerlendiriliyor. Hangisi portal triad içindedir?",
+    "options": [
+      "Ductus pancreaticus",
+      "A. mesenterica inferior",
+      "A. gastrica sinistra",
+      "A. hepatica propria",
+      "V. lienalis"
+    ],
+    "correct": 3,
+    "exp": "Portal triad: portal ven, proper hepatic artery, bile duct.\n\nSpot ayrım: Doğru cevap 'A. hepatica propria'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1204,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 4,
+    "q": "Appendiks lenf drenajı değerlendiriliyor. Öncelikli nod grubu hangisidir?",
+    "options": [
+      "İnferior mezenterik",
+      "Yüzeyel inguinal",
+      "Çölyak",
+      "Parasternal",
+      "Superior mezenterik nodlar"
+    ],
+    "correct": 4,
+    "exp": "Appendix midgut kökenlidir ve ileokolik/SMA nodlarına drene olur.\n\nSpot ayrım: Doğru cevap 'Superior mezenterik nodlar'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1205,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 5,
+    "q": "Histerektomide üreter yaralanması riski tartışılıyor. Bu bulgular birlikte değerlendirildiğinde: 'Water under the bridge' ilişkisi hangisidir?",
+    "options": [
+      "Uterin arter üreterin üstünden geçer",
+      "Üreter arterin üstünden geçer",
+      "Uterin arter infundibulopelvik ligamandadır",
+      "Üreter round ligament içinden geçer",
+      "İkisi komşu değildir"
+    ],
+    "correct": 0,
+    "exp": "Üreter su, uterin arter köprü gibi üstünden geçer.\n\nAyırt ettirici nokta: Doğru seçenek 'Uterin arter üreterin üstünden geçer'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1206,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 4,
+    "q": "Renal kolikte taşın fizyolojik darlığa takılması bekleniyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Klasik darlık noktalarından biri hangisidir?",
+    "options": [
+      "Renal hilus ven çaprazı",
+      "Mesane kubbesi",
+      "Prostatik üretra",
+      "Psoas laterali",
+      "Pelviüreterik bileşke"
+    ],
+    "correct": 4,
+    "exp": "UPJ, iliak damar çaprazı ve UVJ klasik darlıklardır.\n\nAyırt ettirici nokta: Doğru seçenek 'Pelviüreterik bileşke'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1207,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 4,
+    "q": "Varikoselin solda daha sık olmasının nedeni değerlendiriliyor. Tanısal tuzaklar dışlandığında: Sol testiküler ven için doğru ifade hangisidir?",
+    "options": [
+      "Portal vene dökülür",
+      "Sol renal vene dik açıya yakın dökülür",
+      "Doğrudan VCI'ya dökülür",
+      "İnternal iliak vene dökülür",
+      "Azygos vene dökülür"
+    ],
+    "correct": 1,
+    "exp": "Sol testiküler ven sol renal vene dökülür; drenaj daha dezavantajlıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'Sol renal vene dik açıya yakın dökülür'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1208,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 5,
+    "q": "BPH'nin en sık kaynaklandığı prostat zonu değerlendiriliyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Doğru seçenek hangisidir?",
+    "options": [
+      "Transizyonel zon",
+      "Periferal zon",
+      "Santral zon",
+      "Anterior stroma",
+      "Ejakülatör kanal çevresi"
+    ],
+    "correct": 0,
+    "exp": "BPH transizyonel/periüretral zondan, kanser çoğunlukla periferal zondan çıkar.\n\nAyırt ettirici nokta: Doğru seçenek 'Transizyonel zon'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1209,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 4,
+    "q": "Pudendal sinir bloğu yapılacak doğum hastasında kılavuz kemik çıkıntı değerlendiriliyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Hedef komşuluk hangisidir?",
+    "options": [
+      "Tuberculum pubicum",
+      "Spina ischiadica",
+      "ASIS",
+      "Trochanter major",
+      "Promontorium"
+    ],
+    "correct": 1,
+    "exp": "Pudendal sinir spina ischiadica/sakrospinal ligaman komşuluğunda bloke edilir.\n\nAyırt ettirici nokta: Doğru seçenek 'Spina ischiadica'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1210,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 4,
+    "q": "Over damarlarını içeren bağ değerlendiriliyor. Tanısal tuzaklar dışlandığında: Doğru seçenek hangisidir?",
+    "options": [
+      "Lig. sacrouterinum",
+      "Lig. teres uteri",
+      "Lig. ovarii proprium",
+      "Lig. suspensorium ovarii",
+      "Mesosalpinx"
+    ],
+    "correct": 3,
+    "exp": "Ovarian damarlar infundibulopelvik/suspensory ligament içindedir.\n\nAyırt ettirici nokta: Doğru seçenek 'Lig. suspensorium ovarii'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1211,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 4,
+    "q": "Skrotum derisi enfeksiyonunda büyümesi beklenen nodlar değerlendiriliyor. Bu bulgular birlikte değerlendirildiğinde: Doğru seçenek hangisidir?",
+    "options": [
+      "Yüzeyel inguinal nodlar",
+      "Mediastinal",
+      "Paraaortik nodlar",
+      "İnternal iliak",
+      "Presakral"
+    ],
+    "correct": 0,
+    "exp": "Skrotum derisi yüzeyel inguinal nodlara, testis paraaortik nodlara drene olur.\n\nAyırt ettirici nokta: Doğru seçenek 'Yüzeyel inguinal nodlar'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1212,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 5,
+    "q": "Spongioz üretra rüptüründe idrar yayılımı değerlendiriliyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: İlk yayılım alanı hangisidir?",
+    "options": [
+      "Yüzeyel perineal aralık",
+      "Periton boşluğu",
+      "Derin perineal aralık",
+      "İskiorektal fossa",
+      "Retzius aralığı"
+    ],
+    "correct": 0,
+    "exp": "Anterior üretra rüptüründe idrar yüzeyel perineal aralığa yayılır.\n\nAyırt ettirici nokta: Doğru seçenek 'Yüzeyel perineal aralık'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1213,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 4,
+    "q": "Böbrek hilusunda önden arkaya dizilim değerlendiriliyor. Doğru sıra hangisidir?",
+    "options": [
+      "Arter-pelvis-ven",
+      "Arter-ven-pelvis",
+      "Ven-pelvis-arter",
+      "Ven-arter-pelvis",
+      "Pelvis-arter-ven"
+    ],
+    "correct": 3,
+    "exp": "Renal hilusta anterior-posterior dizilim V-A-P'tır.\n\nSpot ayrım: Doğru cevap 'Ven-arter-pelvis'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1214,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 4,
+    "q": "Erektil fonksiyonun parasempatik segmentleri değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "L1-L3",
+      "T5-T9",
+      "S2-S4",
+      "T11-L2",
+      "C8-T1"
+    ],
+    "correct": 2,
+    "exp": "Ereksiyon parasempatik S2-S4; ejakülasyon ağırlıklı sempatik T11-L2 ilişkilidir.\n\nSpot ayrım: Doğru cevap 'S2-S4'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1215,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 4,
+    "q": "Round ligamentin labium majusa gittiği kanal değerlendiriliyor. Doğru kanal hangisidir?",
+    "options": [
+      "Femoral kanal",
+      "Pudendal kanal",
+      "İnguinal kanal",
+      "Obturator kanal",
+      "Adduktor kanal"
+    ],
+    "correct": 2,
+    "exp": "Ligamentum teres uteri inguinal kanaldan geçer.\n\nSpot ayrım: Doğru cevap 'İnguinal kanal'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1216,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 4,
+    "q": "Patent urachuslu bebekte umblikustan idrar geliyor. Mesane kubbesi hangi embriyolojik kalıntıyla ilişkilidir?",
+    "options": [
+      "Ductus venosus",
+      "Vitellin kanal",
+      "Notochord",
+      "Urachus/allantois kalıntısı",
+      "Müller kanalı"
+    ],
+    "correct": 3,
+    "exp": "Urachus allantois kalıntısıdır; median umbilical ligament haline gelir.\n\nSpot ayrım: Doğru cevap 'Urachus/allantois kalıntısı'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1217,
+    "ders": "Anatomi",
+    "konu": "Sinir",
+    "diff": 4,
+    "q": "Internal kapsül infarktında yüz-kol-bacak saf motor hemiparezi gelişiyor. Bu bulgular birlikte değerlendirildiğinde: Etkilenen lifler hangileridir?",
+    "options": [
+      "Kortikospinal ve kortikobulber lifler",
+      "Optik radyasyon",
+      "Papez devresi",
+      "Dorsal kolon",
+      "Spinotalamik"
+    ],
+    "correct": 0,
+    "exp": "Internal kapsül motor projeksiyon liflerini yoğun taşır.\n\nAyırt ettirici nokta: Doğru seçenek 'Kortikospinal ve kortikobulber lifler'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1218,
+    "ders": "Anatomi",
+    "konu": "Sinir",
+    "diff": 4,
+    "q": "Dominant hemisfer üst divizyon infarktında Broca afazisi ve yüz-kol güçsüzlüğü var. Klinik/laboratuvar ipuçları birleştirildiğinde: Bu dağılım hangi damar alanıdır?",
+    "options": [
+      "ACA",
+      "PICA",
+      "MCA lateral frontal-parietal alan",
+      "PCA",
+      "AICA"
+    ],
+    "correct": 2,
+    "exp": "MCA lateral korteksi ve yüz-kol motor alanını besler.\n\nAyırt ettirici nokta: Doğru seçenek 'MCA lateral frontal-parietal alan'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1219,
+    "ders": "Anatomi",
+    "konu": "Sinir",
+    "diff": 5,
+    "q": "Disfaji, ses kısıklığı, ipsilateral yüz ve kontralateral vücut ağrı-ısı kaybı var. Tanısal tuzaklar dışlandığında: En olası sendrom-damar hangisidir?",
+    "options": [
+      "Medial medulla-ASA",
+      "Locked-in-basiller",
+      "Lateral medüller sendrom - PICA",
+      "Weber-PCA",
+      "Lateral pontin-ASA"
+    ],
+    "correct": 2,
+    "exp": "Wallenberg/PICA nucleus ambiguus, spinal trigeminal ve spinotalamik tutulum yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'Lateral medüller sendrom - PICA'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1220,
+    "ders": "Anatomi",
+    "konu": "Sinir",
+    "diff": 4,
+    "q": "Travma sonrası ipsilateral motor/propriosepsiyon kaybı ve kontralateral ağrı-ısı kaybı var. Klinik/laboratuvar ipuçları birleştirildiğinde: Bu tablo hangisidir?",
+    "options": [
+      "Konus",
+      "Brown-Sequard sendromu",
+      "Kauda ekuina",
+      "Santral kord",
+      "Anterior kord"
+    ],
+    "correct": 1,
+    "exp": "Hemikord lezyonu ipsilateral kortikospinal/dorsal kolon ve karşı spinotalamik kayıp yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'Brown-Sequard sendromu'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1221,
+    "ders": "Anatomi",
+    "konu": "Sinir",
+    "diff": 4,
+    "q": "Kavernöz sinüs trombozunda erken lateral bakış felci gelişiyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Sinüs içinde ICA yanında serbest seyreden sinir hangisidir?",
+    "options": [
+      "N. ophthalmicus",
+      "N. trochlearis",
+      "N. oculomotorius",
+      "N. abducens",
+      "N. maxillaris"
+    ],
+    "correct": 3,
+    "exp": "CN VI kavernöz sinüs içinde serbest seyreder.\n\nAyırt ettirici nokta: Doğru seçenek 'N. abducens'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1222,
+    "ders": "Anatomi",
+    "konu": "Sinir",
+    "diff": 5,
+    "q": "Parkinson bulguları olan hastada substantia nigra pars compacta dejenerasyonu var. Tanısal tuzaklar dışlandığında: Azalan nörotransmitter hangisidir?",
+    "options": [
+      "GABA",
+      "Dopamin",
+      "Glutamat",
+      "Serotonin",
+      "Asetilkolin"
+    ],
+    "correct": 1,
+    "exp": "Nigrostriatal dopamin kaybı parkinsonizme yol açar.\n\nAyırt ettirici nokta: Doğru seçenek 'Dopamin'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1223,
+    "ders": "Anatomi",
+    "konu": "Sinir",
+    "diff": 4,
+    "q": "Hipokampal lezyonda yeni bellek oluşturma bozukluğu var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Hipokampus hangi devreyle ilişkilidir?",
+    "options": [
+      "Nigrostriatal yol",
+      "Papez devresi",
+      "VOR yayı",
+      "Dorsal kolon",
+      "Kortikospinal yol"
+    ],
+    "correct": 1,
+    "exp": "Hipokampus deklaratif bellek ve Papez devresi için kritiktir.\n\nAyırt ettirici nokta: Doğru seçenek 'Papez devresi'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1224,
+    "ders": "Anatomi",
+    "konu": "Sinir",
+    "diff": 4,
+    "q": "Syringomyelide pelerin tarzı ağrı-ısı kaybı ve korunmuş pozisyon duyusu var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Lezyon hangi lifleri etkiler?",
+    "options": [
+      "Anterior beyaz komissür",
+      "Lateral kortikospinal",
+      "Medial lemniscus",
+      "Dorsal kolon",
+      "Nucleus gracilis"
+    ],
+    "correct": 0,
+    "exp": "Santral kanal genişlemesi anterior beyaz komissürde çaprazlayan spinotalamik lifleri bozar.\n\nAyırt ettirici nokta: Doğru seçenek 'Anterior beyaz komissür'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1225,
+    "ders": "Anatomi",
+    "konu": "Sinir",
+    "diff": 4,
+    "q": "Dorsal kolon-medial lemniskus sistemi hangi duyuları taşır?. Doğru seçenek hangisidir?",
+    "options": [
+      "Ağrı-ısı",
+      "Vibrasyon, propriosepsiyon ve ince dokunma",
+      "Bilinçsiz propriosepsiyon",
+      "Koku",
+      "Kaşıntı"
+    ],
+    "correct": 1,
+    "exp": "Dorsal kolon bilinçli propriosepsiyon, vibrasyon ve ince dokunma taşır.\n\nSpot ayrım: Doğru cevap 'Vibrasyon, propriosepsiyon ve ince dokunma'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1226,
+    "ders": "Anatomi",
+    "konu": "Sinir",
+    "diff": 4,
+    "q": "Broca alanı baskın hemisferde nerede yer alır?. Doğru seçenek hangisidir?",
+    "options": [
+      "Oksipital kutup",
+      "Angular gyrus",
+      "Inferior frontal gyrus",
+      "Superior temporal posterior",
+      "Precentral medial"
+    ],
+    "correct": 2,
+    "exp": "Broca alanı dominant inferior frontal gyrustadır.\n\nSpot ayrım: Doğru cevap 'Inferior frontal gyrus'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1227,
+    "ders": "Anatomi",
+    "konu": "Sinir",
+    "diff": 4,
+    "q": "Wernicke afazisi kliniği değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Saf motor hemiparezi",
+      "Vertigo-nistagmus",
+      "Anosmi",
+      "Akıcı fakat anlamsız konuşma ve anlama bozukluğu",
+      "Eforlu konuşma, anlama korunur"
+    ],
+    "correct": 3,
+    "exp": "Wernicke afazisinde akıcı ama anlamsız konuşma ve bozulmuş anlama vardır.\n\nSpot ayrım: Doğru cevap 'Akıcı fakat anlamsız konuşma ve anlama bozukluğu'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1228,
+    "ders": "Anatomi",
+    "konu": "Sinir",
+    "diff": 4,
+    "q": "Serebellar vermis lezyonu beklenen bulgusu değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Kontralateral hemiparezi",
+      "Afazi",
+      "İpsilateral ekstremite dismetrisi",
+      "Gövde ataksisi ve geniş tabanlı yürüme",
+      "Ağrı-ısı kaybı"
+    ],
+    "correct": 3,
+    "exp": "Vermis aksiyal denge ve postürle ilişkilidir.\n\nSpot ayrım: Doğru cevap 'Gövde ataksisi ve geniş tabanlı yürüme'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1229,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 5,
+    "q": "Hipofiz makroadenomunda bitemporal hemianopsi gelişiyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Basının etkilediği yapı hangisidir?",
+    "options": [
+      "LGN",
+      "Optik traktus",
+      "Optik kiazma orta kısmı",
+      "Optik sinir",
+      "Parietal radyasyon"
+    ],
+    "correct": 2,
+    "exp": "Kiazmanın orta kısmında nazal retinal lifler çaprazlar; temporal alanlar kaybolur.\n\nAyırt ettirici nokta: Doğru seçenek 'Optik kiazma orta kısmı'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1230,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 4,
+    "q": "Temporal lob cerrahisi sonrası karşı üst kadran görme alanı kaybı gelişiyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Hangi lifler etkilenmiştir?",
+    "options": [
+      "Optik sinir",
+      "Meyer loop temporal lifleri",
+      "Kiazma lateral lifleri",
+      "Parietal lifler",
+      "Pretektal lifler"
+    ],
+    "correct": 1,
+    "exp": "Meyer loop lezyonu contralateral superior quadrantanopia yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'Meyer loop temporal lifleri'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1231,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 4,
+    "q": "Hasta merdiven inerken diplopi, aşağı-içe bakışta zorlanma tarifliyor. Tanısal tuzaklar dışlandığında: Hasarlı sinir hangisidir?",
+    "options": [
+      "N. trochlearis",
+      "CN II",
+      "CN VI",
+      "CN VII",
+      "CN III"
+    ],
+    "correct": 0,
+    "exp": "Trochlear sinir superior oblique kasını innerve eder.\n\nAyırt ettirici nokta: Doğru seçenek 'N. trochlearis'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1232,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 4,
+    "q": "Diyabetik hastada pupilla korunmuş, göz dışa-aşağı deviye ve pitoz var. Klinik/laboratuvar ipuçları birleştirildiğinde: Bu tablo en çok neye uyar?",
+    "options": [
+      "CN III iskemik mononöropati",
+      "CN IV felci",
+      "Horner",
+      "CN VI felci",
+      "Optik nörit"
+    ],
+    "correct": 0,
+    "exp": "Diyabetik III sinir felcinde pupilla sıklıkla korunur; kompresyonda pupilla etkilenir.\n\nAyırt ettirici nokta: Doğru seçenek 'CN III iskemik mononöropati'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1233,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 5,
+    "q": "Epizodik vertigo, tinnitus, kulakta dolgunluk ve dalgalanan SNİK var. Bu bulgular birlikte değerlendirildiğinde: En olası tanı hangisidir?",
+    "options": [
+      "Akustik nörinom",
+      "BPPV",
+      "Vestibüler nörinit",
+      "Otoskleroz",
+      "Meniere hastalığı"
+    ],
+    "correct": 4,
+    "exp": "Meniere endolenfatik hidropsla ilişkilidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Meniere hastalığı'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1234,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 4,
+    "q": "Dix-Hallpike pozitif, saniyeler süren pozisyonel vertigo var. Bu bulgular birlikte değerlendirildiğinde: En sık etkilenen kanal hangisidir?",
+    "options": [
+      "Anterior kanal",
+      "Koklear kanal",
+      "Lateral kanal",
+      "Posterior semisirküler kanal",
+      "Endolenfatik kese"
+    ],
+    "correct": 3,
+    "exp": "BPPV en sık posterior kanal kanalolitiazisidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Posterior semisirküler kanal'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1235,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 4,
+    "q": "Fasiyal paralizide hiperakuzi gelişiyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Hangi kas felci neden olur?",
+    "options": [
+      "Tensor veli palatini",
+      "Tensor tympani",
+      "Levator veli palatini",
+      "Stylopharyngeus",
+      "Stapedius"
+    ],
+    "correct": 4,
+    "exp": "Stapedius fasiyal sinirle innerve edilir; felci hiperakuzi yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'Stapedius'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1236,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 5,
+    "q": "Frontal kafa travması sonrası anosmi gelişiyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Koku lifleri hangi yapıdan geçer?",
+    "options": [
+      "Foramen ovale",
+      "Meatus acusticus internus",
+      "Canalis opticus",
+      "Lamina cribrosa ossis ethmoidalis",
+      "Foramen rotundum"
+    ],
+    "correct": 3,
+    "exp": "Olfaktor lifler ethmoid cribriform plate'ten geçer.\n\nAyırt ettirici nokta: Doğru seçenek 'Lamina cribrosa ossis ethmoidalis'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1237,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 4,
+    "q": "Yakına bakışta lensin kalınlaşmasını sağlayan kas değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Obliquus inferior",
+      "Sphincter pupillae",
+      "Dilator pupillae",
+      "Rectus medialis",
+      "M. ciliaris"
+    ],
+    "correct": 4,
+    "exp": "Ciliar kas kasılınca zonüller gevşer ve lens kalınlaşır.\n\nSpot ayrım: Doğru cevap 'M. ciliaris'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1238,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 4,
+    "q": "Dil ön 2/3 tat duyusu değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "N. hypoglossus",
+      "N. glossopharyngeus",
+      "Chorda tympani ile n. facialis",
+      "N. lingualis tek başına",
+      "N. vagus"
+    ],
+    "correct": 2,
+    "exp": "Genel duyu lingual sinir, tat chorda tympani/fasiyal sinirle taşınır.\n\nSpot ayrım: Doğru cevap 'Chorda tympani ile n. facialis'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1239,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 4,
+    "q": "Rinne testinde hava yolu kemik yolundan iyi. Sonuç nasıl yorumlanır?",
+    "options": [
+      "Mutlaka otoskleroz",
+      "Rinne pozitif",
+      "Dış kulak tıkanıklığı kesin",
+      "Vestibüler nörinit",
+      "İletim tipi kayıp lehine negatif"
+    ],
+    "correct": 1,
+    "exp": "Normal ve sensörinöral kayıpta Rinne pozitiftir; iletim kaybında negatifleşir.\n\nSpot ayrım: Doğru cevap 'Rinne pozitif'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1240,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 4,
+    "q": "Pupilla ışık refleksinin afferent ve efferent yolları değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "CN IX-CN X",
+      "CN III-CN II",
+      "CN II - CN III",
+      "CN V-CN VII",
+      "CN VIII-CN III"
+    ],
+    "correct": 2,
+    "exp": "Afferent optik, efferent parasempatik okülomotor sinirdir.\n\nSpot ayrım: Doğru cevap 'CN II - CN III'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1241,
+    "ders": "Biyokimya",
+    "konu": "Karbonhidratlar",
+    "diff": 4,
+    "q": "Bakla sonrası hemoliz, Heinz cisimcikleri ve koyu idrar gelişiyor. Tanısal tuzaklar dışlandığında: Eksik enzim-yol hangisidir?",
+    "options": [
+      "Aldolaz B-fruktoz",
+      "Piruvat kinaz-glikoliz",
+      "Glukoz-6-fosfataz-glikojen",
+      "GALT-galaktoz",
+      "Glukoz-6-fosfat dehidrogenaz - pentoz fosfat yolu"
+    ],
+    "correct": 4,
+    "exp": "G6PD eksikliği NADPH azalmasıyla oksidatif hemoliz yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'Glukoz-6-fosfat dehidrogenaz - pentoz fosfat yolu'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1242,
+    "ders": "Biyokimya",
+    "konu": "Karbonhidratlar",
+    "diff": 4,
+    "q": "Süt sonrası kusma, sarılık, hepatomegali ve E. coli sepsisi olan yenidoğan. Klinik/laboratuvar ipuçları birleştirildiğinde: Enzim eksikliği hangisidir?",
+    "options": [
+      "Galaktokinaz",
+      "Aldolaz B",
+      "Glukokinaz",
+      "Laktaz",
+      "Galaktoz-1-fosfat üridiltransferaz"
+    ],
+    "correct": 4,
+    "exp": "Klasik galaktozemi GALT eksikliğidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Galaktoz-1-fosfat üridiltransferaz'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1243,
+    "ders": "Biyokimya",
+    "konu": "Karbonhidratlar",
+    "diff": 5,
+    "q": "Meyve suyu sonrası terleme, kusma, hipoglisemi ve hepatomegali gelişen çocuk. Bu bulgular birlikte değerlendirildiğinde: Eksik enzim hangisidir?",
+    "options": [
+      "Fruktokinaz",
+      "Sorbitol dehidrogenaz",
+      "G6PD",
+      "Galaktokinaz",
+      "Aldolaz B"
+    ],
+    "correct": 4,
+    "exp": "Herediter fruktoz intoleransı aldolaz B eksikliğidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Aldolaz B'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1244,
+    "ders": "Biyokimya",
+    "konu": "Karbonhidratlar",
+    "diff": 4,
+    "q": "Açlık hipoglisemisi, laktik asidoz, hiperürisemi ve hepatomegali var. Bu bulgular birlikte değerlendirildiğinde: En olası eksik enzim hangisidir?",
+    "options": [
+      "Branching enzim",
+      "Glukoz-6-fosfataz",
+      "Debranching enzim",
+      "Kas fosforilaz",
+      "Asit maltaz"
+    ],
+    "correct": 1,
+    "exp": "Von Gierke hastalığı glukoz-6-fosfataz eksikliğidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Glukoz-6-fosfataz'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1245,
+    "ders": "Biyokimya",
+    "konu": "Karbonhidratlar",
+    "diff": 4,
+    "q": "Egzersizle kramp, miyoglobinüri ve egzersiz sonrası laktat artmaması var. Bu bulgular birlikte değerlendirildiğinde: Eksik enzim hangisidir?",
+    "options": [
+      "Kas glikojen fosforilaz",
+      "Debranching enzim",
+      "Laktaz",
+      "G6Paz",
+      "Karaciğer fosforilaz"
+    ],
+    "correct": 0,
+    "exp": "McArdle kas glikojen fosforilaz eksikliğidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Kas glikojen fosforilaz'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1246,
+    "ders": "Biyokimya",
+    "konu": "Karbonhidratlar",
+    "diff": 4,
+    "q": "İnfantta hipertrofik kardiyomiyopati, hipotoni ve lizozomal glikojen birikimi var. Tanısal tuzaklar dışlandığında: Eksik enzim hangisidir?",
+    "options": [
+      "Fruktokinaz",
+      "Asit alfa-glukozidaz",
+      "Kas fosforilaz",
+      "Branching enzim",
+      "G6Paz"
+    ],
+    "correct": 1,
+    "exp": "Pompe lizozomal asit alfa-glukozidaz eksikliğidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Asit alfa-glukozidaz'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1247,
+    "ders": "Biyokimya",
+    "konu": "Karbonhidratlar",
+    "diff": 5,
+    "q": "Toklukta PFK-1 aktivasyonu artıyor. Klinik/laboratuvar ipuçları birleştirildiğinde: PFK-1'in güçlü aktivatörü hangisidir?",
+    "options": [
+      "ATP",
+      "Sitrat",
+      "Glukagon",
+      "Asetil-KoA",
+      "Fruktoz-2,6-bisfosfat"
+    ],
+    "correct": 4,
+    "exp": "F-2,6-BP PFK-1'i aktive eder; ATP/sitrat inhibe eder.\n\nAyırt ettirici nokta: Doğru seçenek 'Fruktoz-2,6-bisfosfat'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1248,
+    "ders": "Biyokimya",
+    "konu": "Karbonhidratlar",
+    "diff": 4,
+    "q": "Kas/eritrosit laktatı karaciğerde glukoza çevriliyor. Bu bulgular birlikte değerlendirildiğinde: Bu döngü hangisidir?",
+    "options": [
+      "Üre döngüsü",
+      "PPP",
+      "Karnitin şantı",
+      "Krebs",
+      "Cori döngüsü"
+    ],
+    "correct": 4,
+    "exp": "Cori döngüsü laktat-glukoz döngüsüdür.\n\nAyırt ettirici nokta: Doğru seçenek 'Cori döngüsü'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1249,
+    "ders": "Biyokimya",
+    "konu": "Karbonhidratlar",
+    "diff": 4,
+    "q": "Pentoz fosfat yolunun ana ürünleri değerlendiriliyor. Bu bulgular birlikte değerlendirildiğinde: Doğru seçenek hangisidir?",
+    "options": [
+      "Laktat ve CO2",
+      "GTP ve oksaloasetat",
+      "FADH2 ve asetil-KoA",
+      "NADPH ve riboz-5-fosfat",
+      "ATP ve piruvat"
+    ],
+    "correct": 3,
+    "exp": "PPP NADPH ve riboz-5-fosfat üretir.\n\nAyırt ettirici nokta: Doğru seçenek 'NADPH ve riboz-5-fosfat'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1250,
+    "ders": "Biyokimya",
+    "konu": "Karbonhidratlar",
+    "diff": 5,
+    "q": "Glikolizde bir glukozdan net ATP kazancı değerlendiriliyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Doğru seçenek hangisidir?",
+    "options": [
+      "1",
+      "2 ATP",
+      "6",
+      "4",
+      "0"
+    ],
+    "correct": 1,
+    "exp": "Glikolizde net 2 ATP oluşur.\n\nAyırt ettirici nokta: Doğru seçenek '2 ATP'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1251,
+    "ders": "Biyokimya",
+    "konu": "Karbonhidratlar",
+    "diff": 4,
+    "q": "Piruvat karboksilazın kofaktörü değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Folat",
+      "B12",
+      "Biotin",
+      "TPP",
+      "PLP"
+    ],
+    "correct": 2,
+    "exp": "Piruvat karboksilaz biotin bağımlıdır.\n\nSpot ayrım: Doğru cevap 'Biotin'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1252,
+    "ders": "Biyokimya",
+    "konu": "Karbonhidratlar",
+    "diff": 4,
+    "q": "Laktoz intoleransında eksik enzim değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Alfa-amilaz",
+      "Sükraz",
+      "Maltaz",
+      "Trehalaz",
+      "Laktaz"
+    ],
+    "correct": 4,
+    "exp": "Laktaz eksikliği laktoz intoleransı yapar.\n\nSpot ayrım: Doğru cevap 'Laktaz'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1253,
+    "ders": "Biyokimya",
+    "konu": "Karbonhidratlar",
+    "diff": 4,
+    "q": "Bakla sonrası hemoliz, Heinz cisimcikleri ve koyu idrar gelişiyor. Eksik enzim-yol hangisidir?",
+    "options": [
+      "Piruvat kinaz-glikoliz",
+      "Glukoz-6-fosfataz-glikojen",
+      "Aldolaz B-fruktoz",
+      "GALT-galaktoz",
+      "Glukoz-6-fosfat dehidrogenaz - pentoz fosfat yolu"
+    ],
+    "correct": 4,
+    "exp": "G6PD eksikliği NADPH azalmasıyla oksidatif hemoliz yapar.\n\nSpot ayrım: Doğru cevap 'Glukoz-6-fosfat dehidrogenaz - pentoz fosfat yolu'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1254,
+    "ders": "Biyokimya",
+    "konu": "Karbonhidratlar",
+    "diff": 4,
+    "q": "Süt sonrası kusma, sarılık, hepatomegali ve E. coli sepsisi olan yenidoğan. Enzim eksikliği hangisidir?",
+    "options": [
+      "Galaktokinaz",
+      "Glukokinaz",
+      "Galaktoz-1-fosfat üridiltransferaz",
+      "Laktaz",
+      "Aldolaz B"
+    ],
+    "correct": 2,
+    "exp": "Klasik galaktozemi GALT eksikliğidir.\n\nSpot ayrım: Doğru cevap 'Galaktoz-1-fosfat üridiltransferaz'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1255,
+    "ders": "Biyokimya",
+    "konu": "Lipidler",
+    "diff": 4,
+    "q": "Açlıkta hipoketotik hipoglisemi ve orta zincirli açilkarnitin artışı var. Bu bulgular birlikte değerlendirildiğinde: En olası bozukluk hangisidir?",
+    "options": [
+      "ApoE2 homozigot",
+      "CPT-II",
+      "MCAD eksikliği",
+      "LPL eksikliği",
+      "LDL reseptör kusuru"
+    ],
+    "correct": 2,
+    "exp": "MCAD eksikliği açlıkta keton üretememe ve ani ölüm riski yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'MCAD eksikliği'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1256,
+    "ders": "Biyokimya",
+    "konu": "Lipidler",
+    "diff": 4,
+    "q": "Süt gibi serum, TG çok yüksek, pankreatit ve eruptif ksantom var. Bu bulgular birlikte değerlendirildiğinde: En olası eksiklik hangisidir?",
+    "options": [
+      "Lipoprotein lipaz veya ApoC-II eksikliği",
+      "ApoA-I",
+      "MTP",
+      "LCAT",
+      "LDL reseptörü"
+    ],
+    "correct": 0,
+    "exp": "Şilomikronemi LPL/ApoC-II kusurudur.\n\nAyırt ettirici nokta: Doğru seçenek 'Lipoprotein lipaz veya ApoC-II eksikliği'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1257,
+    "ders": "Biyokimya",
+    "konu": "Lipidler",
+    "diff": 5,
+    "q": "Tendon ksantomları ve erken koroner hastalıkla yüksek LDL var. Tanısal tuzaklar dışlandığında: Moleküler bozukluk hangisidir?",
+    "options": [
+      "LCAT",
+      "ApoC-II",
+      "ABCA1",
+      "LDL reseptör fonksiyon kaybı",
+      "CETP"
+    ],
+    "correct": 3,
+    "exp": "Ailesel hiperkolesterolemi çoğunlukla LDL reseptör kusurudur.\n\nAyırt ettirici nokta: Doğru seçenek 'LDL reseptör fonksiyon kaybı'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1258,
+    "ders": "Biyokimya",
+    "konu": "Lipidler",
+    "diff": 4,
+    "q": "DKA'da keton cisimleri artıyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Başlıca keton cisimlerinden biri hangisidir?",
+    "options": [
+      "Süksinil-KoA",
+      "Malonil-KoA",
+      "Fumarat",
+      "Asetoasetat",
+      "Sitrat"
+    ],
+    "correct": 3,
+    "exp": "Asetoasetat ve beta-hidroksibutirat ana keton cisimleridir.\n\nAyırt ettirici nokta: Doğru seçenek 'Asetoasetat'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1259,
+    "ders": "Biyokimya",
+    "konu": "Lipidler",
+    "diff": 4,
+    "q": "Statin verilen hastada kolesterol sentezi baskılanıyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Hedef enzim hangisidir?",
+    "options": [
+      "ACC",
+      "LCAT",
+      "HMG-CoA redüktaz",
+      "Yağ asidi sentaz",
+      "HMG-CoA sentaz"
+    ],
+    "correct": 2,
+    "exp": "Statinler HMG-CoA redüktazı inhibe eder.\n\nAyırt ettirici nokta: Doğru seçenek 'HMG-CoA redüktaz'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1260,
+    "ders": "Biyokimya",
+    "konu": "Lipidler",
+    "diff": 4,
+    "q": "Yağ asidi sentezi sırasında CPT-I inhibe edilerek beta oksidasyon engelleniyor. Klinik/laboratuvar ipuçları birleştirildiğinde: CPT-I inhibitörü hangisidir?",
+    "options": [
+      "Gliserol-3-P",
+      "ApoB100",
+      "Karnitin",
+      "Asetil-KoA",
+      "Malonil-KoA"
+    ],
+    "correct": 4,
+    "exp": "Malonil-KoA CPT-I'i inhibe eder.\n\nAyırt ettirici nokta: Doğru seçenek 'Malonil-KoA'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1261,
+    "ders": "Biyokimya",
+    "konu": "Lipidler",
+    "diff": 5,
+    "q": "Zellweger'de hipotoni, nöbet ve VLCFA artışı var. Bu bulgular birlikte değerlendirildiğinde: Temel organel kusuru hangisidir?",
+    "options": [
+      "Lizozom",
+      "Mitokondri DNA",
+      "Peroksizom biyogenezi",
+      "Proteazom",
+      "Golgi"
+    ],
+    "correct": 2,
+    "exp": "Zellweger peroksizom biyogenez bozukluğudur.\n\nAyırt ettirici nokta: Doğru seçenek 'Peroksizom biyogenezi'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1262,
+    "ders": "Biyokimya",
+    "konu": "Lipidler",
+    "diff": 4,
+    "q": "Adrenolökodistrofide adrenal yetmezlik ve beyaz cevher tutulumu var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Birikmesi beklenen metabolit hangisidir?",
+    "options": [
+      "Galaktoz-1-P",
+      "Fenilalanin",
+      "Çok uzun zincirli yağ asitleri",
+      "Ornitin",
+      "Homogentisat"
+    ],
+    "correct": 2,
+    "exp": "X'e bağlı ALD'de VLCFA birikir.\n\nAyırt ettirici nokta: Doğru seçenek 'Çok uzun zincirli yağ asitleri'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1263,
+    "ders": "Biyokimya",
+    "konu": "Lipidler",
+    "diff": 4,
+    "q": "Safra asitlerinin temel görevi değerlendiriliyor. Bu bulgular birlikte değerlendirildiğinde: Doğru seçenek hangisidir?",
+    "options": [
+      "DNA sentezi",
+      "Glikojen yıkmak",
+      "Üre yapmak",
+      "Yağları emülsifiye etmek",
+      "Proteinleri parçalamak"
+    ],
+    "correct": 3,
+    "exp": "Safra asitleri yağ emülsifikasyonu ve misel oluşumunda görev alır.\n\nAyırt ettirici nokta: Doğru seçenek 'Yağları emülsifiye etmek'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1264,
+    "ders": "Biyokimya",
+    "konu": "Lipidler",
+    "diff": 5,
+    "q": "Yağ asidi sentezinin hız kısıtlayıcı enzimi değerlendiriliyor. Tanısal tuzaklar dışlandığında: Doğru seçenek hangisidir?",
+    "options": [
+      "CPT-I",
+      "HMG-CoA redüktaz",
+      "Asetil-KoA karboksilaz",
+      "Hormona duyarlı lipaz",
+      "LPL"
+    ],
+    "correct": 2,
+    "exp": "ACC asetil-KoA'dan malonil-KoA üretir.\n\nAyırt ettirici nokta: Doğru seçenek 'Asetil-KoA karboksilaz'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1265,
+    "ders": "Biyokimya",
+    "konu": "Lipidler",
+    "diff": 4,
+    "q": "HDL üzerinde kolesterol esterleşmesini sağlayan enzim değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "LPL",
+      "LCAT",
+      "CETP",
+      "ACAT",
+      "HMG-CoA sentaz"
+    ],
+    "correct": 1,
+    "exp": "LCAT ApoA-I ile aktive olur ve HDL'de kolesterol esterleştirir.\n\nSpot ayrım: Doğru cevap 'LCAT'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1266,
+    "ders": "Biyokimya",
+    "konu": "Lipidler",
+    "diff": 4,
+    "q": "LDL'nin reseptöre bağlanmasını sağlayan apolipoprotein değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "ApoC-II",
+      "ApoE",
+      "ApoB100",
+      "ApoB48",
+      "ApoA-I"
+    ],
+    "correct": 2,
+    "exp": "LDL'nin ana apolipoproteini ApoB100'dür.\n\nSpot ayrım: Doğru cevap 'ApoB100'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1267,
+    "ders": "Biyokimya",
+    "konu": "Lipidler",
+    "diff": 4,
+    "q": "Açlıkta hipoketotik hipoglisemi ve orta zincirli açilkarnitin artışı var. En olası bozukluk hangisidir?",
+    "options": [
+      "LPL eksikliği",
+      "ApoE2 homozigot",
+      "MCAD eksikliği",
+      "LDL reseptör kusuru",
+      "CPT-II"
+    ],
+    "correct": 2,
+    "exp": "MCAD eksikliği açlıkta keton üretememe ve ani ölüm riski yapar.\n\nSpot ayrım: Doğru cevap 'MCAD eksikliği'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1268,
+    "ders": "Biyokimya",
+    "konu": "Lipidler",
+    "diff": 4,
+    "q": "Süt gibi serum, TG çok yüksek, pankreatit ve eruptif ksantom var. En olası eksiklik hangisidir?",
+    "options": [
+      "LDL reseptörü",
+      "ApoA-I",
+      "Lipoprotein lipaz veya ApoC-II eksikliği",
+      "LCAT",
+      "MTP"
+    ],
+    "correct": 2,
+    "exp": "Şilomikronemi LPL/ApoC-II kusurudur.\n\nSpot ayrım: Doğru cevap 'Lipoprotein lipaz veya ApoC-II eksikliği'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1269,
+    "ders": "Biyokimya",
+    "konu": "Organizasyon",
+    "diff": 4,
+    "q": "I-cell hastalığında lizozomal enzimler lizozoma gidemeyip dışarı salgılanıyor. Tanısal tuzaklar dışlandığında: Eksik hedefleme etiketi hangisidir?",
+    "options": [
+      "Farnesil",
+      "Ubiquitin",
+      "Mannoz-6-fosfat",
+      "KDEL",
+      "Sialik asit"
+    ],
+    "correct": 2,
+    "exp": "Lizozomal enzimler Golgi'de M6P etiketi alır.\n\nAyırt ettirici nokta: Doğru seçenek 'Mannoz-6-fosfat'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1270,
+    "ders": "Biyokimya",
+    "konu": "Organizasyon",
+    "diff": 4,
+    "q": "Mitokondriyal hastalıkta maternal aile öyküsü var. Tanısal tuzaklar dışlandığında: Mitokondriyal DNA kalıtımı nasıldır?",
+    "options": [
+      "X'e bağlı",
+      "Mendel oranlarıyla",
+      "Sadece anneden geçer",
+      "Sadece babadan",
+      "Otozomal dominant"
+    ],
+    "correct": 2,
+    "exp": "Mitokondriler oosit kaynaklıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'Sadece anneden geçer'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1271,
+    "ders": "Biyokimya",
+    "konu": "Organizasyon",
+    "diff": 5,
+    "q": "Kompleks IV inhibisyonuyla hızlı laktik asidoz ve doku hipoksisi oluşuyor. Tanısal tuzaklar dışlandığında: Toksin hangisidir?",
+    "options": [
+      "Siyanür",
+      "Metanol",
+      "Arsenik",
+      "Kurşun",
+      "Etilen glikol"
+    ],
+    "correct": 0,
+    "exp": "Siyanür sitokrom c oksidazı inhibe eder.\n\nAyırt ettirici nokta: Doğru seçenek 'Siyanür'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1272,
+    "ders": "Biyokimya",
+    "konu": "Organizasyon",
+    "diff": 4,
+    "q": "Yanlış katlanan protein proteazoma gönderiliyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Yıkım için işaretleyen küçük protein hangisidir?",
+    "options": [
+      "Kollajen",
+      "Elastin",
+      "Ubiquitin",
+      "Ferritin",
+      "Albumin"
+    ],
+    "correct": 2,
+    "exp": "Ubiquitin proteazomal yıkım etiketidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Ubiquitin'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1273,
+    "ders": "Biyokimya",
+    "konu": "Organizasyon",
+    "diff": 4,
+    "q": "Skorbütte kollajen hidroksilasyonu bozuluyor. Bu bulgular birlikte değerlendirildiğinde: Bu basamak nerede ve hangi vitaminle olur?",
+    "options": [
+      "Golgi-K",
+      "Mitokondri-B1",
+      "Peroksizom-E",
+      "Lizozom-B12",
+      "RER - C vitamini"
+    ],
+    "correct": 4,
+    "exp": "Prolin/lizin hidroksilasyonu RER'de C vitaminiyle olur.\n\nAyırt ettirici nokta: Doğru seçenek 'RER - C vitamini'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1274,
+    "ders": "Biyokimya",
+    "konu": "Organizasyon",
+    "diff": 4,
+    "q": "Salgı proteini sinyal peptidi ile ribozomu membrana yönlendiriyor. Tanısal tuzaklar dışlandığında: İlk yönlendirilen organel hangisidir?",
+    "options": [
+      "Peroksizom",
+      "Lizozom",
+      "Serbest ribozom",
+      "Çekirdekçik",
+      "Granüllü endoplazmik retikulum"
+    ],
+    "correct": 4,
+    "exp": "Salgı/membran proteinleri RER'de sentezlenir.\n\nAyırt ettirici nokta: Doğru seçenek 'Granüllü endoplazmik retikulum'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1275,
+    "ders": "Biyokimya",
+    "konu": "Organizasyon",
+    "diff": 5,
+    "q": "Makrofaj fagosite ettiği bakteriyi asidik hidrolazlarla parçalıyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Ana organel hangisidir?",
+    "options": [
+      "Lizozom",
+      "Peroksizom",
+      "Mitokondri",
+      "Sentrozom",
+      "Nükleolus"
+    ],
+    "correct": 0,
+    "exp": "Lizozom asidik hidrolaz içerir.\n\nAyırt ettirici nokta: Doğru seçenek 'Lizozom'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1276,
+    "ders": "Biyokimya",
+    "konu": "Organizasyon",
+    "diff": 4,
+    "q": "Uzun zincirli yağ asidi mitokondri matriksine alınacak. Klinik/laboratuvar ipuçları birleştirildiğinde: Kullanılan taşıyıcı sistem hangisidir?",
+    "options": [
+      "Clathrin vezikül",
+      "M6P reseptörü",
+      "SRP sistemi",
+      "Karnitin şantı",
+      "Nükleer por"
+    ],
+    "correct": 3,
+    "exp": "LCFA mitokondriye karnitin şantıyla girer.\n\nAyırt ettirici nokta: Doğru seçenek 'Karnitin şantı'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1277,
+    "ders": "Biyokimya",
+    "konu": "Organizasyon",
+    "diff": 4,
+    "q": "Nükleolus görevi değerlendiriliyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Doğru seçenek hangisidir?",
+    "options": [
+      "Glikojen depolama",
+      "Beta oksidasyon",
+      "ATP üretimi",
+      "Protein yıkımı",
+      "rRNA sentezi ve ribozom montajı"
+    ],
+    "correct": 4,
+    "exp": "Nükleolus ribozom biyogeneziyle ilişkilidir.\n\nAyırt ettirici nokta: Doğru seçenek 'rRNA sentezi ve ribozom montajı'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1278,
+    "ders": "Biyokimya",
+    "konu": "Organizasyon",
+    "diff": 5,
+    "q": "Peroksizomun temel işlevlerinden biri değerlendiriliyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Doğru seçenek hangisidir?",
+    "options": [
+      "Kollajen glikozilasyonu",
+      "mRNA splicing",
+      "Glikoliz",
+      "Çok uzun zincirli yağ asidi oksidasyonu",
+      "M6P ekleme"
+    ],
+    "correct": 3,
+    "exp": "Peroksizom VLCFA oksidasyonunda görevlidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Çok uzun zincirli yağ asidi oksidasyonu'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1279,
+    "ders": "Biyokimya",
+    "konu": "Organizasyon",
+    "diff": 4,
+    "q": "Golgi aygıtı görevi değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Protein modifikasyonu ve paketlenmesi",
+      "mRNA transkripsiyonu",
+      "Oksidatif fosforilasyon",
+      "Beta oksidasyon",
+      "DNA replikasyonu"
+    ],
+    "correct": 0,
+    "exp": "Golgi proteinleri modifiye eder ve hedeflere yollar.\n\nSpot ayrım: Doğru cevap 'Protein modifikasyonu ve paketlenmesi'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1280,
+    "ders": "Biyokimya",
+    "konu": "Organizasyon",
+    "diff": 4,
+    "q": "Mitokondri iç membranının temel içeriği değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Elektron transport zinciri",
+      "Porinlerle serbest geçirgenlik",
+      "Lizozomal hidrolaz",
+      "Krebs enzimlerinin tamamı",
+      "DNA polimeraz alfa"
+    ],
+    "correct": 0,
+    "exp": "ETC kompleksleri ve ATP sentaz iç membrandadır.\n\nSpot ayrım: Doğru cevap 'Elektron transport zinciri'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1281,
+    "ders": "Biyokimya",
+    "konu": "Organizasyon",
+    "diff": 4,
+    "q": "I-cell hastalığında lizozomal enzimler lizozoma gidemeyip dışarı salgılanıyor. Eksik hedefleme etiketi hangisidir?",
+    "options": [
+      "Ubiquitin",
+      "Mannoz-6-fosfat",
+      "Sialik asit",
+      "Farnesil",
+      "KDEL"
+    ],
+    "correct": 1,
+    "exp": "Lizozomal enzimler Golgi'de M6P etiketi alır.\n\nSpot ayrım: Doğru cevap 'Mannoz-6-fosfat'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1282,
+    "ders": "Biyokimya",
+    "konu": "Organizasyon",
+    "diff": 4,
+    "q": "Mitokondriyal hastalıkta maternal aile öyküsü var. Mitokondriyal DNA kalıtımı nasıldır?",
+    "options": [
+      "Sadece anneden geçer",
+      "Otozomal dominant",
+      "X'e bağlı",
+      "Mendel oranlarıyla",
+      "Sadece babadan"
+    ],
+    "correct": 0,
+    "exp": "Mitokondriler oosit kaynaklıdır.\n\nSpot ayrım: Doğru cevap 'Sadece anneden geçer'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1283,
+    "ders": "Biyokimya",
+    "konu": "Nükleik Asit ve Genom",
+    "diff": 4,
+    "q": "ADA eksikliğinde SCID gelişiyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Temel bozulan yol hangisidir?",
+    "options": [
+      "DNA onarımı",
+      "Pürin katabolizması",
+      "Pirimidin sentezi",
+      "Üre döngüsü",
+      "Heme sentezi"
+    ],
+    "correct": 1,
+    "exp": "ADA pürin katabolizmasında görev alır; dATP lenfosit toksisitesi yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'Pürin katabolizması'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1284,
+    "ders": "Biyokimya",
+    "konu": "Nükleik Asit ve Genom",
+    "diff": 4,
+    "q": "Kendini ısırma, koreoatetoz ve hiperürisemi olan çocuk. Klinik/laboratuvar ipuçları birleştirildiğinde: Eksik enzim hangisidir?",
+    "options": [
+      "RNR",
+      "Xantin oksidaz",
+      "ADA",
+      "OMP dekarboksilaz",
+      "HGPRT"
+    ],
+    "correct": 4,
+    "exp": "Lesch-Nyhan HGPRT eksikliğidir.\n\nAyırt ettirici nokta: Doğru seçenek 'HGPRT'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1285,
+    "ders": "Biyokimya",
+    "konu": "Nükleik Asit ve Genom",
+    "diff": 5,
+    "q": "Orotik asidüri ve megaloblastik anemi var, amonyak normal. Tanısal tuzaklar dışlandığında: En olası bozukluk hangisidir?",
+    "options": [
+      "CPS-I eksikliği",
+      "UMP sentaz eksikliği",
+      "HGPRT eksikliği",
+      "ADA eksikliği",
+      "OTC eksikliği"
+    ],
+    "correct": 1,
+    "exp": "UMP sentaz eksikliğinde orotik asit artar, hiperamonyemi olmaz.\n\nAyırt ettirici nokta: Doğru seçenek 'UMP sentaz eksikliği'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1286,
+    "ders": "Biyokimya",
+    "konu": "Nükleik Asit ve Genom",
+    "diff": 4,
+    "q": "UV duyarlılığı ve erken deri kanserleri olan çocuk. Klinik/laboratuvar ipuçları birleştirildiğinde: DNA onarım hastalığı hangisidir?",
+    "options": [
+      "Ataksi-telenjiektazi",
+      "Bloom",
+      "Xeroderma pigmentosum",
+      "Fanconi",
+      "Lynch"
+    ],
+    "correct": 2,
+    "exp": "XP nükleotid eksizyon onarım kusurudur.\n\nAyırt ettirici nokta: Doğru seçenek 'Xeroderma pigmentosum'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1287,
+    "ders": "Biyokimya",
+    "konu": "Nükleik Asit ve Genom",
+    "diff": 4,
+    "q": "Mikrosatellit instabilitesi ve mismatch repair gen mutasyonu var. Bu bulgular birlikte değerlendirildiğinde: Bu sendrom hangisidir?",
+    "options": [
+      "MEN2",
+      "FAP",
+      "Li-Fraumeni",
+      "Peutz-Jeghers",
+      "Lynch sendromu"
+    ],
+    "correct": 4,
+    "exp": "Lynch MMR kusurudur; kolon/endometrium riski artar.\n\nAyırt ettirici nokta: Doğru seçenek 'Lynch sendromu'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1288,
+    "ders": "Biyokimya",
+    "konu": "Nükleik Asit ve Genom",
+    "diff": 4,
+    "q": "Bakteriyel DNA giraz inhibisyonunun insan hücresindeki karşılığı değerlendiriliyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Temel enzim ailesi hangisidir?",
+    "options": [
+      "Helikaz tek başına",
+      "DNA topoizomeraz",
+      "Telomeraz",
+      "RNA pol I",
+      "Primaz"
+    ],
+    "correct": 1,
+    "exp": "DNA giraz bakteriyel topoizomerazdır.\n\nAyırt ettirici nokta: Doğru seçenek 'DNA topoizomeraz'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1289,
+    "ders": "Biyokimya",
+    "konu": "Nükleik Asit ve Genom",
+    "diff": 5,
+    "q": "Telomeraz kromozom uçlarını uzatıyor. Bu bulgular birlikte değerlendirildiğinde: Telomerazın taşıdığı kritik molekül hangisidir?",
+    "options": [
+      "Kendi RNA kalıbı",
+      "tRNA",
+      "DNA pol delta",
+      "Histon asetilaz",
+      "rRNA"
+    ],
+    "correct": 0,
+    "exp": "Telomeraz kendi RNA kalıbını kullanır.\n\nAyırt ettirici nokta: Doğru seçenek 'Kendi RNA kalıbı'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1290,
+    "ders": "Biyokimya",
+    "konu": "Nükleik Asit ve Genom",
+    "diff": 4,
+    "q": "Timidilat sentaz inhibisyonu hedefleniyor. Tanısal tuzaklar dışlandığında: Klasik ilaç hangisidir?",
+    "options": [
+      "Rifampisin",
+      "Metronidazol",
+      "5-fluorourasil",
+      "Aminoglikozid",
+      "Siprofloksasin"
+    ],
+    "correct": 2,
+    "exp": "5-FU timidilat sentazı inhibe eder.\n\nAyırt ettirici nokta: Doğru seçenek '5-fluorourasil'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1291,
+    "ders": "Biyokimya",
+    "konu": "Nükleik Asit ve Genom",
+    "diff": 4,
+    "q": "DNA polimeraz yeni zinciri hangi yönde sentezler?. Tanısal tuzaklar dışlandığında: Doğru seçenek hangisidir?",
+    "options": [
+      "N-C",
+      "Her iki yön",
+      "C-N",
+      "3→5",
+      "5→3"
+    ],
+    "correct": 4,
+    "exp": "DNA polimeraz sentezi 5→3 yönündedir.\n\nAyırt ettirici nokta: Doğru seçenek '5→3'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1292,
+    "ders": "Biyokimya",
+    "konu": "Nükleik Asit ve Genom",
+    "diff": 4,
+    "q": "Ökaryotik mRNA 5 ucuna eklenen yapı değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Timin dimeri",
+      "İntron lariatı",
+      "7-metilguanozin kapağı",
+      "CCA",
+      "Poli-A kuyruğu"
+    ],
+    "correct": 2,
+    "exp": "5' cap 7-metilguanozindir.\n\nSpot ayrım: Doğru cevap '7-metilguanozin kapağı'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1293,
+    "ders": "Biyokimya",
+    "konu": "Nükleik Asit ve Genom",
+    "diff": 4,
+    "q": "Okazaki parçaları hangi zincirde oluşur?. Doğru seçenek hangisidir?",
+    "options": [
+      "Lagging strand",
+      "Sadece mtDNA",
+      "Leading strand",
+      "Her ikisi",
+      "Sadece RNA"
+    ],
+    "correct": 0,
+    "exp": "Lagging strand kesintili sentezlenir.\n\nSpot ayrım: Doğru cevap 'Lagging strand'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1294,
+    "ders": "Biyokimya",
+    "konu": "Nükleik Asit ve Genom",
+    "diff": 4,
+    "q": "RNA polimeraz II'nin temel ürünü değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "mRNA öncülü hnRNA",
+      "5S rRNA",
+      "28S rRNA",
+      "tRNA",
+      "U6 snRNA"
+    ],
+    "correct": 0,
+    "exp": "RNA pol II pre-mRNA sentezler.\n\nSpot ayrım: Doğru cevap 'mRNA öncülü hnRNA'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1295,
+    "ders": "Biyokimya",
+    "konu": "Nükleik Asit ve Genom",
+    "diff": 4,
+    "q": "ADA eksikliğinde SCID gelişiyor. Temel bozulan yol hangisidir?",
+    "options": [
+      "Heme sentezi",
+      "Üre döngüsü",
+      "DNA onarımı",
+      "Pürin katabolizması",
+      "Pirimidin sentezi"
+    ],
+    "correct": 3,
+    "exp": "ADA pürin katabolizmasında görev alır; dATP lenfosit toksisitesi yapar.\n\nSpot ayrım: Doğru cevap 'Pürin katabolizması'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1296,
+    "ders": "Biyokimya",
+    "konu": "Aminoasitler",
+    "diff": 5,
+    "q": "Yenidoğanda hiperamonyemi ve orotik asit yüksekliği var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Eksik enzim hangisidir?",
+    "options": [
+      "OTC",
+      "PAH",
+      "Arginaz",
+      "CPS-I",
+      "BCKD"
+    ],
+    "correct": 0,
+    "exp": "OTC eksikliğinde orotik asit artar ve hiperamonyemi olur.\n\nAyırt ettirici nokta: Doğru seçenek 'OTC'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1297,
+    "ders": "Biyokimya",
+    "konu": "Aminoasitler",
+    "diff": 4,
+    "q": "Yanık şeker kokulu idrar, nöbet ve beslenme güçlüğü var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Eksik kompleks hangisidir?",
+    "options": [
+      "Propionil-KoA karboksilaz",
+      "CBS",
+      "PAH",
+      "Homogentisat oksidaz",
+      "Dallı zincirli alfa-ketoasit dehidrogenaz"
+    ],
+    "correct": 4,
+    "exp": "MSUD BCKD eksikliğidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Dallı zincirli alfa-ketoasit dehidrogenaz'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1298,
+    "ders": "Biyokimya",
+    "konu": "Aminoasitler",
+    "diff": 4,
+    "q": "PKU taraması pozitif bebekte diyet planlanıyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Kısıtlanacak aminoasit hangisidir?",
+    "options": [
+      "Fenilalanin",
+      "Valin",
+      "Tirozin",
+      "Metiyonin",
+      "Triptofan"
+    ],
+    "correct": 0,
+    "exp": "PKU'da fenilalanin kısıtlanır, tirozin esansiyel hale gelir.\n\nAyırt ettirici nokta: Doğru seçenek 'Fenilalanin'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1299,
+    "ders": "Biyokimya",
+    "konu": "Aminoasitler",
+    "diff": 5,
+    "q": "Marfanoid görünüm, tromboz ve lens subluksasyonu var. Bu bulgular birlikte değerlendirildiğinde: En olası kusur hangisidir?",
+    "options": [
+      "Tirozinaz",
+      "Sistationin beta sentaz eksikliği",
+      "OTC",
+      "Homogentisat oksidaz",
+      "Fibrillin-1"
+    ],
+    "correct": 1,
+    "exp": "Homosistinüri CBS eksikliğidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Sistationin beta sentaz eksikliği'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1300,
+    "ders": "Biyokimya",
+    "konu": "Aminoasitler",
+    "diff": 4,
+    "q": "İdrar bekleyince koyulaşıyor, ochronosis ve artrit var. Klinik/laboratuvar ipuçları birleştirildiğinde: Eksik enzim hangisidir?",
+    "options": [
+      "Homogentisat oksidaz",
+      "Arginaz",
+      "PAH",
+      "DOPA dekarboksilaz",
+      "Tirozinaz"
+    ],
+    "correct": 0,
+    "exp": "Alkaptonüri homogentisat oksidaz eksikliğidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Homogentisat oksidaz'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1301,
+    "ders": "Biyokimya",
+    "konu": "Aminoasitler",
+    "diff": 4,
+    "q": "Okülokutanöz albinizmde melanin sentezi bozuk. Tanısal tuzaklar dışlandığında: Klasik eksik enzim hangisidir?",
+    "options": [
+      "Histidaz",
+      "DHPR",
+      "Triptofan hidroksilaz",
+      "Tirozinaz",
+      "PAH"
+    ],
+    "correct": 3,
+    "exp": "Tirozinaz melanin sentezinde kritiktir.\n\nAyırt ettirici nokta: Doğru seçenek 'Tirozinaz'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1302,
+    "ders": "Biyokimya",
+    "konu": "Aminoasitler",
+    "diff": 4,
+    "q": "Serotonin sentezinin öncül aminoasidi değerlendiriliyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Doğru seçenek hangisidir?",
+    "options": [
+      "Glutamat",
+      "Histidin",
+      "Tirozin",
+      "Triptofan",
+      "Arjinin"
+    ],
+    "correct": 3,
+    "exp": "Serotonin triptofandan sentezlenir.\n\nAyırt ettirici nokta: Doğru seçenek 'Triptofan'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1303,
+    "ders": "Biyokimya",
+    "konu": "Aminoasitler",
+    "diff": 5,
+    "q": "Karsinoid sendromda triptofan serotonine kaydığı için pellagra gelişiyor. Bu bulgular birlikte değerlendirildiğinde: Eksikliği belirginleşen vitamin hangisidir?",
+    "options": [
+      "B6",
+      "C",
+      "B3 niasin",
+      "B12",
+      "B1"
+    ],
+    "correct": 2,
+    "exp": "Triptofan niasin sentezine katkı verir.\n\nAyırt ettirici nokta: Doğru seçenek 'B3 niasin'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1304,
+    "ders": "Biyokimya",
+    "konu": "Aminoasitler",
+    "diff": 4,
+    "q": "Katekolaminlerin öncül aminoasidi değerlendiriliyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Doğru seçenek hangisidir?",
+    "options": [
+      "Triptofan",
+      "Lizin",
+      "Arjinin",
+      "Tirozin",
+      "Glisin"
+    ],
+    "correct": 3,
+    "exp": "Katekolaminler tirozin kaynaklıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'Tirozin'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1305,
+    "ders": "Biyokimya",
+    "konu": "Aminoasitler",
+    "diff": 4,
+    "q": "Nitrik oksit sentezinde substrat aminoasit değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Histidin",
+      "Sitrülin",
+      "Ornitin",
+      "Glutamin",
+      "Arjinin"
+    ],
+    "correct": 4,
+    "exp": "NO sentaz arjininden NO üretir.\n\nSpot ayrım: Doğru cevap 'Arjinin'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1306,
+    "ders": "Biyokimya",
+    "konu": "Aminoasitler",
+    "diff": 4,
+    "q": "Üre döngüsünde CPS-I'in kullandığı ilk azot kaynağı değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Alanin",
+      "Glutamat direkt",
+      "Serbest amonyak",
+      "Aspartat",
+      "Ürik asit"
+    ],
+    "correct": 2,
+    "exp": "İlk azot serbest amonyaktan, ikinci azot aspartattan gelir.\n\nSpot ayrım: Doğru cevap 'Serbest amonyak'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1307,
+    "ders": "Biyokimya",
+    "konu": "Aminoasitler",
+    "diff": 4,
+    "q": "Histidinden sentezlenen biyojen amin değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Melatonin",
+      "GABA",
+      "Histamin",
+      "Serotonin",
+      "Dopamin"
+    ],
+    "correct": 2,
+    "exp": "Histidin dekarboksilasyonu histamin oluşturur.\n\nSpot ayrım: Doğru cevap 'Histamin'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1308,
+    "ders": "Biyokimya",
+    "konu": "Aminoasitler",
+    "diff": 4,
+    "q": "Yenidoğanda hiperamonyemi ve orotik asit yüksekliği var. Eksik enzim hangisidir?",
+    "options": [
+      "BCKD",
+      "Arginaz",
+      "CPS-I",
+      "OTC",
+      "PAH"
+    ],
+    "correct": 3,
+    "exp": "OTC eksikliğinde orotik asit artar ve hiperamonyemi olur.\n\nSpot ayrım: Doğru cevap 'OTC'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1309,
+    "ders": "Biyokimya",
+    "konu": "Proteinler",
+    "diff": 4,
+    "q": "Skorbütte diş eti kanaması ve kötü yara iyileşmesi var. Klinik/laboratuvar ipuçları birleştirildiğinde: Kollajen sentezinde bozulan basamak hangisidir?",
+    "options": [
+      "Tropokollajen ekzositozu",
+      "Albumin glikozilasyonu",
+      "Disülfit kırılması",
+      "Prolin ve lizin hidroksilasyonu",
+      "Elastin yıkımı"
+    ],
+    "correct": 3,
+    "exp": "C vitamini prolin/lizin hidroksilasyonu için gerekir.\n\nAyırt ettirici nokta: Doğru seçenek 'Prolin ve lizin hidroksilasyonu'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1310,
+    "ders": "Biyokimya",
+    "konu": "Proteinler",
+    "diff": 5,
+    "q": "Ehlers-Danlos'ta hipermobilite ve cilt hiperelastisitesi var. Bu bulgular birlikte değerlendirildiğinde: Temel protein ailesi hangisidir?",
+    "options": [
+      "Fibrinojen",
+      "Distrofin",
+      "Kollajen",
+      "Keratin",
+      "Spektrin"
+    ],
+    "correct": 2,
+    "exp": "EDS kollajen sentezi/işlenmesi bozukluklarıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'Kollajen'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1311,
+    "ders": "Biyokimya",
+    "konu": "Proteinler",
+    "diff": 4,
+    "q": "Osteogenesis imperfecta, mavi sklera ve sık kırıklar var. Bu bulgular birlikte değerlendirildiğinde: Etkilenen kollajen tipi hangisidir?",
+    "options": [
+      "Tip IV",
+      "Tip I",
+      "Tip III",
+      "Tip II",
+      "Tip VII"
+    ],
+    "correct": 1,
+    "exp": "OI tip I kollajen hastalığıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'Tip I'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1312,
+    "ders": "Biyokimya",
+    "konu": "Proteinler",
+    "diff": 4,
+    "q": "Goodpasture'da akciğer hemorajisi ve RPGN var. Tanısal tuzaklar dışlandığında: Hedef kollajen hangisidir?",
+    "options": [
+      "Tip I",
+      "Tip IV",
+      "Tip III",
+      "Tip II",
+      "Tip X"
+    ],
+    "correct": 1,
+    "exp": "Goodpasture tip IV kollajen alfa-3 zincirine karşı antikorla olur.\n\nAyırt ettirici nokta: Doğru seçenek 'Tip IV'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1313,
+    "ders": "Biyokimya",
+    "konu": "Proteinler",
+    "diff": 5,
+    "q": "Gowers bulgusu ve baldır psödohipertrofisi olan çocuk. Tanısal tuzaklar dışlandığında: Eksik protein hangisidir?",
+    "options": [
+      "Dinein",
+      "Laminin",
+      "Distrofin",
+      "Spektrin",
+      "Desmin"
+    ],
+    "correct": 2,
+    "exp": "Duchenne distrofin yokluğu/azlığıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'Distrofin'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1314,
+    "ders": "Biyokimya",
+    "konu": "Proteinler",
+    "diff": 4,
+    "q": "Herediter sferositozda MCHC artışı ve splenomegali var. Klinik/laboratuvar ipuçları birleştirildiğinde: Etkilenen membran proteinleri hangileridir?",
+    "options": [
+      "Fibrillin",
+      "Miyozin",
+      "Kollajen IV",
+      "Distrofin",
+      "Spektrin/ankirin"
+    ],
+    "correct": 4,
+    "exp": "Sferositozda spektrin/ankirin/band 3 kusurları olabilir.\n\nAyırt ettirici nokta: Doğru seçenek 'Spektrin/ankirin'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1315,
+    "ders": "Biyokimya",
+    "konu": "Proteinler",
+    "diff": 4,
+    "q": "Marfan sendromunda ektopia lentis ve aort kökü dilatasyonu var. Klinik/laboratuvar ipuçları birleştirildiğinde: Etkilenen protein hangisidir?",
+    "options": [
+      "Elastaz",
+      "Laminin",
+      "FGFR3",
+      "Fibrillin-1",
+      "Tip II kollajen"
+    ],
+    "correct": 3,
+    "exp": "Marfan FBN1 kusurudur.\n\nAyırt ettirici nokta: Doğru seçenek 'Fibrillin-1'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1316,
+    "ders": "Biyokimya",
+    "konu": "Proteinler",
+    "diff": 4,
+    "q": "A1 antitripsin normalde hangi enzimi inhibe eder?. Tanısal tuzaklar dışlandığında: Doğru seçenek hangisidir?",
+    "options": [
+      "HMG-CoA redüktaz",
+      "ACE",
+      "Tripsinojen",
+      "Kollajenaz IV",
+      "Nötrofil elastaz"
+    ],
+    "correct": 4,
+    "exp": "A1AT nötrofil elastazı inhibe eder.\n\nAyırt ettirici nokta: Doğru seçenek 'Nötrofil elastaz'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1317,
+    "ders": "Biyokimya",
+    "konu": "Proteinler",
+    "diff": 5,
+    "q": "Kollajen üçlü heliksinde sık tekrarlayan aminoasit değerlendiriliyor. Bu bulgular birlikte değerlendirildiğinde: Doğru seçenek hangisidir?",
+    "options": [
+      "Triptofan",
+      "Sistein",
+      "Histidin",
+      "Glisin",
+      "Metiyonin"
+    ],
+    "correct": 3,
+    "exp": "Kollajen Gly-X-Y tekrarları içerir.\n\nAyırt ettirici nokta: Doğru seçenek 'Glisin'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1318,
+    "ders": "Biyokimya",
+    "konu": "Proteinler",
+    "diff": 4,
+    "q": "Proteinin primer yapısı neyi ifade eder?. Doğru seçenek hangisidir?",
+    "options": [
+      "Membrana gömülme",
+      "Alt birim birleşimi",
+      "Aminoasit dizilimi",
+      "Alfa heliks",
+      "Glikozilasyon"
+    ],
+    "correct": 2,
+    "exp": "Primer yapı aminoasit dizisidir.\n\nSpot ayrım: Doğru cevap 'Aminoasit dizilimi'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1319,
+    "ders": "Biyokimya",
+    "konu": "Proteinler",
+    "diff": 4,
+    "q": "Albuminin temel işlevlerinden biri değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Trombin üretme",
+      "Safra asidi sentezi",
+      "Oksijen taşıma",
+      "DNA sentezi",
+      "Onkotik basınca katkı"
+    ],
+    "correct": 4,
+    "exp": "Albumin plazma onkotik basıncına en çok katkı veren proteindir.\n\nSpot ayrım: Doğru cevap 'Onkotik basınca katkı'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1320,
+    "ders": "Biyokimya",
+    "konu": "Proteinler",
+    "diff": 4,
+    "q": "Hemoglobinde kooperatif oksijen bağlanması hangi düzeyle ilişkilidir?. Doğru seçenek hangisidir?",
+    "options": [
+      "Kuaterner yapı",
+      "Primer",
+      "Disülfit bağları",
+      "Glikozilasyon",
+      "Tek alfa heliks"
+    ],
+    "correct": 0,
+    "exp": "Hemoglobin tetramerdir; kooperativite kuaterner yapı ile ilişkilidir.\n\nSpot ayrım: Doğru cevap 'Kuaterner yapı'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1321,
+    "ders": "Biyokimya",
+    "konu": "Proteinler",
+    "diff": 4,
+    "q": "Skorbütte diş eti kanaması ve kötü yara iyileşmesi var. Kollajen sentezinde bozulan basamak hangisidir?",
+    "options": [
+      "Prolin ve lizin hidroksilasyonu",
+      "Disülfit kırılması",
+      "Tropokollajen ekzositozu",
+      "Elastin yıkımı",
+      "Albumin glikozilasyonu"
+    ],
+    "correct": 0,
+    "exp": "C vitamini prolin/lizin hidroksilasyonu için gerekir.\n\nSpot ayrım: Doğru cevap 'Prolin ve lizin hidroksilasyonu'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1322,
+    "ders": "Biyokimya",
+    "konu": "Enzim",
+    "diff": 4,
+    "q": "Metanol zehirlenmesinde formik asit oluşumunu azaltmak için fomepizol veriliyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: İnhibe edilen enzim hangisidir?",
+    "options": [
+      "Aldehit DH",
+      "LDH",
+      "Ksantin oksidaz",
+      "Piruvat DH",
+      "Alkol dehidrogenaz"
+    ],
+    "correct": 4,
+    "exp": "Fomepizol alkol dehidrogenazı inhibe eder.\n\nAyırt ettirici nokta: Doğru seçenek 'Alkol dehidrogenaz'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1323,
+    "ders": "Biyokimya",
+    "konu": "Enzim",
+    "diff": 4,
+    "q": "Aspirin trombosit COX'unu trombosit ömrü boyunca baskılıyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Bu inhibisyon tipi hangisidir?",
+    "options": [
+      "Allosterik aktivasyon",
+      "İrreversibl kovalent inhibisyon",
+      "Reversibl kompetitif",
+      "Nonkompetitif reversibl",
+      "Zimojen aktivasyonu"
+    ],
+    "correct": 1,
+    "exp": "Aspirin COX'u irreversibl asetiller.\n\nAyırt ettirici nokta: Doğru seçenek 'İrreversibl kovalent inhibisyon'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1324,
+    "ders": "Biyokimya",
+    "konu": "Enzim",
+    "diff": 5,
+    "q": "Kompetitif inhibitör varlığında yüksek substratla Vmax'a ulaşılabiliyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Parametre değişimi hangisidir?",
+    "options": [
+      "Km değişmez Vmax azalır",
+      "Km artar Vmax artar",
+      "Km artar, Vmax değişmez",
+      "Km azalır Vmax azalır",
+      "İkisi değişmez"
+    ],
+    "correct": 2,
+    "exp": "Kompetitif inhibisyonda Km artar, Vmax korunur.\n\nAyırt ettirici nokta: Doğru seçenek 'Km artar, Vmax değişmez'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1325,
+    "ders": "Biyokimya",
+    "konu": "Enzim",
+    "diff": 4,
+    "q": "Saf nonkompetitif inhibitör enzime aktif bölge dışı bağlanıyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Parametre değişimi hangisidir?",
+    "options": [
+      "Km değişmez, Vmax azalır",
+      "Km azalır Vmax artar",
+      "İkisi artar",
+      "Sadece Km azalır",
+      "Km artar Vmax değişmez"
+    ],
+    "correct": 0,
+    "exp": "Saf nonkompetitif inhibisyonda Vmax azalır, Km değişmez.\n\nAyırt ettirici nokta: Doğru seçenek 'Km değişmez, Vmax azalır'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1326,
+    "ders": "Biyokimya",
+    "konu": "Enzim",
+    "diff": 4,
+    "q": "CYP2D6 ile aktifleşen ilaçta hastada beklenen yanıt oluşmuyor. Tanısal tuzaklar dışlandığında: En uygun kavram hangisidir?",
+    "options": [
+      "Zimojen aktivasyonu",
+      "Farmakogenetik enzim polimorfizmi",
+      "İyon kanal blokajı",
+      "Antijenik drift",
+      "Reseptör antagonizması"
+    ],
+    "correct": 1,
+    "exp": "CYP polimorfizmleri ilaç metabolizmasını değiştirir.\n\nAyırt ettirici nokta: Doğru seçenek 'Farmakogenetik enzim polimorfizmi'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1327,
+    "ders": "Biyokimya",
+    "konu": "Enzim",
+    "diff": 5,
+    "q": "Akut pankreatitte zimojen aktivasyonu tartışılıyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Duodenumda tripsinojeni tripsine çeviren enzim hangisidir?",
+    "options": [
+      "Pepsin",
+      "Enteropeptidaz",
+      "Karboksipeptidaz",
+      "Amilaz",
+      "Lipaz"
+    ],
+    "correct": 1,
+    "exp": "Enteropeptidaz tripsinojeni aktive eder.\n\nAyırt ettirici nokta: Doğru seçenek 'Enteropeptidaz'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1328,
+    "ders": "Biyokimya",
+    "konu": "Enzim",
+    "diff": 4,
+    "q": "Allosterik enzimin hız-substrat eğrisi değerlendiriliyor. Bu bulgular birlikte değerlendirildiğinde: Genellikle hangi eğri beklenir?",
+    "options": [
+      "Hiperbolik",
+      "Doğrusal",
+      "Substrattan bağımsız",
+      "Sigmoidal",
+      "U şekilli"
+    ],
+    "correct": 3,
+    "exp": "Allosterik enzimler kooperativite ile sigmoidal eğri gösterebilir.\n\nAyırt ettirici nokta: Doğru seçenek 'Sigmoidal'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1329,
+    "ders": "Biyokimya",
+    "konu": "Enzim",
+    "diff": 4,
+    "q": "Kurşun zehirlenmesinde hem sentezi bozuluyor. Bu bulgular birlikte değerlendirildiğinde: İnhibe edilen enzimlerden biri hangisidir?",
+    "options": [
+      "Glukokinaz",
+      "HMG-CoA redüktaz",
+      "ALA dehidrataz",
+      "Tirozinaz",
+      "PAH"
+    ],
+    "correct": 2,
+    "exp": "Kurşun ALA dehidrataz ve ferrokelatazı inhibe eder.\n\nAyırt ettirici nokta: Doğru seçenek 'ALA dehidrataz'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1330,
+    "ders": "Biyokimya",
+    "konu": "Enzim",
+    "diff": 4,
+    "q": "Km tanımı değerlendiriliyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Doğru seçenek hangisidir?",
+    "options": [
+      "Molekül ağırlığı",
+      "Sıcaklık optimumu",
+      "İnhibitör dozu",
+      "Vmax/2 hızına ulaştıran substrat konsantrasyonu",
+      "Ürün yıkım hızı"
+    ],
+    "correct": 3,
+    "exp": "Km hızın Vmax/2 olduğu substrat konsantrasyonudur.\n\nAyırt ettirici nokta: Doğru seçenek 'Vmax/2 hızına ulaştıran substrat konsantrasyonu'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1331,
+    "ders": "Biyokimya",
+    "konu": "Enzim",
+    "diff": 4,
+    "q": "Zimojen kavramı değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Aktif enzim",
+      "İnhibitör",
+      "RNA katalizörü",
+      "Kofaktör",
+      "İnaktif öncü enzim"
+    ],
+    "correct": 4,
+    "exp": "Zimojen inaktif proenzimdir.\n\nSpot ayrım: Doğru cevap 'İnaktif öncü enzim'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1332,
+    "ders": "Biyokimya",
+    "konu": "Enzim",
+    "diff": 4,
+    "q": "Koenzimlerin önemli bir bölümü hangi kaynakla ilişkilidir?. Doğru seçenek hangisidir?",
+    "options": [
+      "DNA intronları",
+      "Glikojen",
+      "Kolesterol esterleri",
+      "Safra tuzları",
+      "Vitaminler"
+    ],
+    "correct": 4,
+    "exp": "Birçok koenzim vitamin türevidir.\n\nSpot ayrım: Doğru cevap 'Vitaminler'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1333,
+    "ders": "Biyokimya",
+    "konu": "Enzim",
+    "diff": 4,
+    "q": "Lineweaver-Burk grafiğinde y ekseni kesişimi değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "1/Vmax",
+      "-Km",
+      "Ki",
+      "Vmax",
+      "Km"
+    ],
+    "correct": 0,
+    "exp": "Y kesişimi 1/Vmax'tır.\n\nSpot ayrım: Doğru cevap '1/Vmax'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1334,
+    "ders": "Biyokimya",
+    "konu": "Enzim",
+    "diff": 4,
+    "q": "Metanol zehirlenmesinde formik asit oluşumunu azaltmak için fomepizol veriliyor. İnhibe edilen enzim hangisidir?",
+    "options": [
+      "Piruvat DH",
+      "Aldehit DH",
+      "Ksantin oksidaz",
+      "LDH",
+      "Alkol dehidrogenaz"
+    ],
+    "correct": 4,
+    "exp": "Fomepizol alkol dehidrogenazı inhibe eder.\n\nSpot ayrım: Doğru cevap 'Alkol dehidrogenaz'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1335,
+    "ders": "Biyokimya",
+    "konu": "Vitaminler",
+    "diff": 4,
+    "q": "Alkol kullanımında konfüzyon, ataksi, oftalmopleji gelişiyor. Bu bulgular birlikte değerlendirildiğinde: Eksik vitamin ve aktif form hangisidir?",
+    "options": [
+      "C-askorbat",
+      "B3-NAD",
+      "B6-PLP",
+      "B12-metilkobalamin",
+      "B1 - TPP"
+    ],
+    "correct": 4,
+    "exp": "Wernicke tiamin eksikliğidir.\n\nAyırt ettirici nokta: Doğru seçenek 'B1 - TPP'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1336,
+    "ders": "Biyokimya",
+    "konu": "Vitaminler",
+    "diff": 4,
+    "q": "İzoniazid kullanan hastada nöropati gelişmesini önlemek gerekiyor. Tanısal tuzaklar dışlandığında: Hangi vitamin verilir?",
+    "options": [
+      "B12",
+      "B2",
+      "B3",
+      "B6",
+      "B1"
+    ],
+    "correct": 3,
+    "exp": "INH piridoksin eksikliği yapabilir.\n\nAyırt ettirici nokta: Doğru seçenek 'B6'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1337,
+    "ders": "Biyokimya",
+    "konu": "Vitaminler",
+    "diff": 4,
+    "q": "Vegan hastada makrositik anemi, parestezi ve metilmalonik asit yüksekliği var. Tanısal tuzaklar dışlandığında: Eksik vitamin hangisidir?",
+    "options": [
+      "K",
+      "B6",
+      "B2",
+      "Folat",
+      "B12"
+    ],
+    "correct": 4,
+    "exp": "B12 eksikliğinde MMA artar ve nörolojik bulgular olur.\n\nAyırt ettirici nokta: Doğru seçenek 'B12'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1338,
+    "ders": "Biyokimya",
+    "konu": "Vitaminler",
+    "diff": 5,
+    "q": "Gebede nöral tüp defekti riskini azaltmak için takviye öneriliyor. Tanısal tuzaklar dışlandığında: Vitamin hangisidir?",
+    "options": [
+      "A",
+      "Folat",
+      "K",
+      "B12",
+      "E"
+    ],
+    "correct": 1,
+    "exp": "Folat nöral tüp defekti riskini azaltır.\n\nAyırt ettirici nokta: Doğru seçenek 'Folat'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1339,
+    "ders": "Biyokimya",
+    "konu": "Vitaminler",
+    "diff": 4,
+    "q": "Kolestazlı çocukta gece körlüğü ve kseroftalmi var. Klinik/laboratuvar ipuçları birleştirildiğinde: Eksik vitamin hangisidir?",
+    "options": [
+      "E",
+      "B1",
+      "K",
+      "D",
+      "A vitamini"
+    ],
+    "correct": 4,
+    "exp": "A vitamini retinal döngüde gereklidir.\n\nAyırt ettirici nokta: Doğru seçenek 'A vitamini'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1340,
+    "ders": "Biyokimya",
+    "konu": "Vitaminler",
+    "diff": 4,
+    "q": "Kistik fibrozisli çocukta INR uzaması ve kanama var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Eksik vitamin hangisidir?",
+    "options": [
+      "E",
+      "B12",
+      "D",
+      "A",
+      "K vitamini"
+    ],
+    "correct": 4,
+    "exp": "K vitamini pıhtılaşma faktörleri karboksilasyonu için gerekir.\n\nAyırt ettirici nokta: Doğru seçenek 'K vitamini'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1341,
+    "ders": "Biyokimya",
+    "konu": "Vitaminler",
+    "diff": 5,
+    "q": "Raşitizm tartışılırken D vitamininin aktif formu değerlendiriliyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Doğru seçenek hangisidir?",
+    "options": [
+      "Tokoferol",
+      "25-OH D",
+      "7-dehidrokolesterol",
+      "1,25-(OH)2 kolekalsiferol",
+      "Retinoik asit"
+    ],
+    "correct": 3,
+    "exp": "Aktif D vitamini kalsitrioldür.\n\nAyırt ettirici nokta: Doğru seçenek '1,25-(OH)2 kolekalsiferol'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1342,
+    "ders": "Biyokimya",
+    "konu": "Vitaminler",
+    "diff": 4,
+    "q": "E vitamini temel görevi değerlendiriliyor. Tanısal tuzaklar dışlandığında: Doğru seçenek hangisidir?",
+    "options": [
+      "Pıhtılaşma karboksilasyonu",
+      "Kalsiyum emilimi",
+      "Kollajen hidroksilasyonu",
+      "Membran lipidlerini antioksidan olarak korumak",
+      "Metil transferi"
+    ],
+    "correct": 3,
+    "exp": "E vitamini lipid faz antioksidanıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'Membran lipidlerini antioksidan olarak korumak'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1343,
+    "ders": "Biyokimya",
+    "konu": "Vitaminler",
+    "diff": 4,
+    "q": "Niasin eksikliği üçlüsü değerlendiriliyor. Tanısal tuzaklar dışlandığında: Doğru seçenek hangisidir?",
+    "options": [
+      "Gece körlüğü",
+      "Ataksi-oftalmopleji",
+      "Kanama",
+      "Glossit-nöropati",
+      "Dermatit, diyare, demans"
+    ],
+    "correct": 4,
+    "exp": "Pellagra 3D ile hatırlanır.\n\nAyırt ettirici nokta: Doğru seçenek 'Dermatit, diyare, demans'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1344,
+    "ders": "Biyokimya",
+    "konu": "Vitaminler",
+    "diff": 4,
+    "q": "Biotin koenzim olarak hangi reaksiyonda görev alır?. Doğru seçenek hangisidir?",
+    "options": [
+      "Karboksilasyon",
+      "Hidroksilasyon",
+      "Transaminasyon",
+      "Metilasyon",
+      "Dekarboksilasyon"
+    ],
+    "correct": 0,
+    "exp": "Biotin karboksilaz koenzimidir.\n\nSpot ayrım: Doğru cevap 'Karboksilasyon'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1345,
+    "ders": "Biyokimya",
+    "konu": "Vitaminler",
+    "diff": 4,
+    "q": "C vitamini eksikliğinde bozulan basamak değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Glikojen dallanması",
+      "Pürin salvage",
+      "Üre döngüsü",
+      "Beta oksidasyon",
+      "Kollajen prolin/lizin hidroksilasyonu"
+    ],
+    "correct": 4,
+    "exp": "C vitamini kollajen hidroksilasyonu için gerekir.\n\nSpot ayrım: Doğru cevap 'Kollajen prolin/lizin hidroksilasyonu'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1346,
+    "ders": "Biyokimya",
+    "konu": "Vitaminler",
+    "diff": 4,
+    "q": "Riboflavin öncülü olduğu koenzimler değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "NAD/NADP",
+      "FAD/FMN",
+      "PLP",
+      "THF",
+      "TPP"
+    ],
+    "correct": 1,
+    "exp": "B2, FAD ve FMN öncülüdür.\n\nSpot ayrım: Doğru cevap 'FAD/FMN'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1347,
+    "ders": "Biyokimya",
+    "konu": "Vitaminler",
+    "diff": 4,
+    "q": "Alkol kullanımında konfüzyon, ataksi, oftalmopleji gelişiyor. Eksik vitamin ve aktif form hangisidir?",
+    "options": [
+      "B6-PLP",
+      "B3-NAD",
+      "B12-metilkobalamin",
+      "C-askorbat",
+      "B1 - TPP"
+    ],
+    "correct": 4,
+    "exp": "Wernicke tiamin eksikliğidir.\n\nSpot ayrım: Doğru cevap 'B1 - TPP'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1348,
+    "ders": "Biyokimya",
+    "konu": "Hormonlar",
+    "diff": 5,
+    "q": "Tip 1 diyabette insülin eksikliği sonrası katabolizma artıyor. Tanısal tuzaklar dışlandığında: İnsülin reseptör sınıfı hangisidir?",
+    "options": [
+      "Nükleer reseptör",
+      "İyon kanalı",
+      "GPCR",
+      "Tirozin kinaz reseptörü",
+      "JAK-STAT"
+    ],
+    "correct": 3,
+    "exp": "İnsülin reseptörü tirozin kinazdır.\n\nAyırt ettirici nokta: Doğru seçenek 'Tirozin kinaz reseptörü'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1349,
+    "ders": "Biyokimya",
+    "konu": "Hormonlar",
+    "diff": 4,
+    "q": "Graves hastalığında TSH reseptörü uyarılıyor. Bu bulgular birlikte değerlendirildiğinde: TSH reseptörü hangi yolla çalışır?",
+    "options": [
+      "Gq",
+      "Nükleer",
+      "Gs - cAMP",
+      "Gi",
+      "Tirozin kinaz"
+    ],
+    "correct": 2,
+    "exp": "TSH reseptörü Gs-cAMP yolunu kullanır.\n\nAyırt ettirici nokta: Doğru seçenek 'Gs - cAMP'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1350,
+    "ders": "Biyokimya",
+    "konu": "Hormonlar",
+    "diff": 4,
+    "q": "Primer hiperparatiroidide hipofosfatemi var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: PTH böbrekte fosfatı nasıl etkiler?",
+    "options": [
+      "Proksimal tübülde fosfat geri emilimini azaltır",
+      "Distalde artırır",
+      "Artırır",
+      "Albümine bağlar",
+      "Etkilemez"
+    ],
+    "correct": 0,
+    "exp": "PTH fosfatüri yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'Proksimal tübülde fosfat geri emilimini azaltır'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1351,
+    "ders": "Biyokimya",
+    "konu": "Hormonlar",
+    "diff": 4,
+    "q": "Feokromositomada alfa1 aracılı vazokonstriksiyon var. Bu bulgular birlikte değerlendirildiğinde: Alfa1 reseptörü hangi yolla çalışır?",
+    "options": [
+      "Gi",
+      "Gs",
+      "Gq-IP3/DAG",
+      "cGMP",
+      "JAK-STAT"
+    ],
+    "correct": 2,
+    "exp": "Alfa1 Gq yoludur.\n\nAyırt ettirici nokta: Doğru seçenek 'Gq-IP3/DAG'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1352,
+    "ders": "Biyokimya",
+    "konu": "Hormonlar",
+    "diff": 5,
+    "q": "Desmopressin toplayıcı kanalda AQP2 artırıyor. Tanısal tuzaklar dışlandığında: ADH V2 reseptörü hangi yolla çalışır?",
+    "options": [
+      "Nükleer",
+      "Gi",
+      "Tirozin kinaz",
+      "Gq",
+      "Gs-cAMP"
+    ],
+    "correct": 4,
+    "exp": "V2 reseptörü Gs-cAMP ile çalışır.\n\nAyırt ettirici nokta: Doğru seçenek 'Gs-cAMP'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1353,
+    "ders": "Biyokimya",
+    "konu": "Hormonlar",
+    "diff": 4,
+    "q": "GH reseptörü sinyal yolu değerlendiriliyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Doğru seçenek hangisidir?",
+    "options": [
+      "Tirozin kinaz intrinsic",
+      "Gq",
+      "Nükleer",
+      "Gs",
+      "JAK-STAT"
+    ],
+    "correct": 4,
+    "exp": "GH reseptörü JAK-STAT kullanır.\n\nAyırt ettirici nokta: Doğru seçenek 'JAK-STAT'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1354,
+    "ders": "Biyokimya",
+    "konu": "Hormonlar",
+    "diff": 4,
+    "q": "Kortizol gen transkripsiyonu üzerinden etki ediyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Reseptör grubu hangisidir?",
+    "options": [
+      "JAK",
+      "Membran GPCR",
+      "Nükleer/sitoplazmik steroid reseptörü",
+      "Tirozin kinaz",
+      "İyon kanalı"
+    ],
+    "correct": 2,
+    "exp": "Steroidler hücre içi/nükleer reseptör kullanır.\n\nAyırt ettirici nokta: Doğru seçenek 'Nükleer/sitoplazmik steroid reseptörü'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1355,
+    "ders": "Biyokimya",
+    "konu": "Hormonlar",
+    "diff": 5,
+    "q": "Tiroid hormonları bazal metabolizmayı artırıyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: T3/T4 için doğru ifade hangisidir?",
+    "options": [
+      "Sadece kalsiyum kanalı",
+      "Peptid gibi cAMP",
+      "Sadece yüzey reseptörü",
+      "IP3 kullanır",
+      "Nükleer reseptörle gen ekspresyonu"
+    ],
+    "correct": 4,
+    "exp": "Tiroid hormonları nükleer reseptöre bağlanır.\n\nAyırt ettirici nokta: Doğru seçenek 'Nükleer reseptörle gen ekspresyonu'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1356,
+    "ders": "Biyokimya",
+    "konu": "Hormonlar",
+    "diff": 4,
+    "q": "Hangi hormon JAK-STAT yolunu kullanır?. Klinik/laboratuvar ipuçları birleştirildiğinde: Doğru seçenek hangisidir?",
+    "options": [
+      "TSH",
+      "Büyüme hormonu",
+      "İnsülin",
+      "Kortizol",
+      "Adrenalin beta1"
+    ],
+    "correct": 1,
+    "exp": "GH, prolaktin, EPO JAK-STAT kullanır.\n\nAyırt ettirici nokta: Doğru seçenek 'Büyüme hormonu'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1357,
+    "ders": "Biyokimya",
+    "konu": "Hormonlar",
+    "diff": 4,
+    "q": "Beta1 adrenerjik reseptör hangi G proteiniyle eşleşir?. Doğru seçenek hangisidir?",
+    "options": [
+      "Gi",
+      "Gq",
+      "Gs",
+      "G12",
+      "RTK"
+    ],
+    "correct": 2,
+    "exp": "Beta1 Gs-cAMP ile çalışır.\n\nSpot ayrım: Doğru cevap 'Gs'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1358,
+    "ders": "Biyokimya",
+    "konu": "Hormonlar",
+    "diff": 4,
+    "q": "Steroid hormon sentezinin ortak öncülü değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Kolesterol",
+      "Triptofan",
+      "Glutamat",
+      "Tirozin",
+      "Hem"
+    ],
+    "correct": 0,
+    "exp": "Steroid hormonlar kolesterolden sentezlenir.\n\nSpot ayrım: Doğru cevap 'Kolesterol'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1359,
+    "ders": "Biyokimya",
+    "konu": "Hormonlar",
+    "diff": 4,
+    "q": "Glukagonun karaciğerde temel etkisi değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Yağ asidi sentezi",
+      "GLUT4 translokasyonu",
+      "Glikojenoliz ve glukoneogenezi artırmak",
+      "Glikojen sentezi",
+      "Protein sentezi"
+    ],
+    "correct": 2,
+    "exp": "Glukagon kan glukozunu artırır.\n\nSpot ayrım: Doğru cevap 'Glikojenoliz ve glukoneogenezi artırmak'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1360,
+    "ders": "Biyokimya",
+    "konu": "Hormonlar",
+    "diff": 4,
+    "q": "Tip 1 diyabette insülin eksikliği sonrası katabolizma artıyor. İnsülin reseptör sınıfı hangisidir?",
+    "options": [
+      "Nükleer reseptör",
+      "JAK-STAT",
+      "GPCR",
+      "Tirozin kinaz reseptörü",
+      "İyon kanalı"
+    ],
+    "correct": 3,
+    "exp": "İnsülin reseptörü tirozin kinazdır.\n\nSpot ayrım: Doğru cevap 'Tirozin kinaz reseptörü'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1361,
+    "ders": "Küçük Stajlar",
+    "konu": "Beyin Cerrahisi",
+    "diff": 4,
+    "q": "Temporal kırık sonrası lucid interval ve BT'de bikonveks kanama var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: En olası kanama-damar hangisidir?",
+    "options": [
+      "Kronik subdural-kortikal arter",
+      "İntraserebral-lentikülostriat",
+      "Epidural hematom - a. meningea media",
+      "Subdural-köprü ven",
+      "SAK-berry anevrizma"
+    ],
+    "correct": 2,
+    "exp": "Epidural hematom lens şeklinde ve orta meningeal arter kaynaklıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'Epidural hematom - a. meningea media'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1362,
+    "ders": "Küçük Stajlar",
+    "konu": "Beyin Cerrahisi",
+    "diff": 5,
+    "q": "Yaşlı antikoagülan hastada düşmeden günler sonra hilal şeklinde koleksiyon var. Klinik/laboratuvar ipuçları birleştirildiğinde: En olası patoloji hangisidir?",
+    "options": [
+      "Epidural",
+      "Diffüz aksonal",
+      "SAK",
+      "Subdural hematom",
+      "AVM"
+    ],
+    "correct": 3,
+    "exp": "Subdural hematom köprü ven yırtılmasıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'Subdural hematom'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1363,
+    "ders": "Küçük Stajlar",
+    "konu": "Beyin Cerrahisi",
+    "diff": 4,
+    "q": "Hayatının en şiddetli baş ağrısı, ense sertliği; BT negatif ama SAK şüphesi sürüyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: LP'de beklenen bulgu hangisidir?",
+    "options": [
+      "Eozinofili",
+      "Düşük basınç",
+      "Albuminositolojik disosiasyon",
+      "Oligoklonal band",
+      "Ksantokromi"
+    ],
+    "correct": 4,
+    "exp": "SAK'ta BOS ksantokromisi görülebilir.\n\nAyırt ettirici nokta: Doğru seçenek 'Ksantokromi'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1364,
+    "ders": "Küçük Stajlar",
+    "konu": "Beyin Cerrahisi",
+    "diff": 4,
+    "q": "Bel ağrısı, idrar retansiyonu, saddle anestezi ve bilateral siyatik var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: En olası sendrom hangisidir?",
+    "options": [
+      "Brown-Sequard",
+      "Santral kord",
+      "Anterior kord",
+      "Kauda ekuina sendromu",
+      "Konus"
+    ],
+    "correct": 3,
+    "exp": "Kauda ekuina cerrahi acildir.\n\nAyırt ettirici nokta: Doğru seçenek 'Kauda ekuina sendromu'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1365,
+    "ders": "Küçük Stajlar",
+    "konu": "Beyin Cerrahisi",
+    "diff": 4,
+    "q": "Ateş, sırt ağrısı ve nörolojik defisitli IV ilaç kullanıcısında epidural apse şüphesi var. Tanısal tuzaklar dışlandığında: En uygun görüntüleme hangisidir?",
+    "options": [
+      "Kemik sintigrafisi",
+      "LP",
+      "Kontrastlı spinal MR",
+      "EMG",
+      "Direkt grafi"
+    ],
+    "correct": 2,
+    "exp": "Spinal epidural apse için kontrastlı MR seçilir.\n\nAyırt ettirici nokta: Doğru seçenek 'Kontrastlı spinal MR'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1366,
+    "ders": "Küçük Stajlar",
+    "konu": "Beyin Cerrahisi",
+    "diff": 5,
+    "q": "Yürüme apraksisi, idrar inkontinansı ve bilişsel yavaşlama; normal basınçlı hidrosefali. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Tedavide uygun yaklaşım hangisidir?",
+    "options": [
+      "Levodopa",
+      "Antiepileptik",
+      "VP şant değerlendirmesi",
+      "Steroid",
+      "Tromboliz"
+    ],
+    "correct": 2,
+    "exp": "NPH seçilmiş hastada VP şanttan yarar görür.\n\nAyırt ettirici nokta: Doğru seçenek 'VP şant değerlendirmesi'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1367,
+    "ders": "Küçük Stajlar",
+    "konu": "Beyin Cerrahisi",
+    "diff": 4,
+    "q": "Göz ağrıya açılıyor, anlamsız ses, ağrıya fleksiyon yanıtı var. Klinik/laboratuvar ipuçları birleştirildiğinde: GKS kaçtır?",
+    "options": [
+      "7",
+      "6",
+      "8",
+      "10",
+      "9"
+    ],
+    "correct": 2,
+    "exp": "E2 V2 M4 toplam 8.\n\nAyırt ettirici nokta: Doğru seçenek '8'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1368,
+    "ders": "Küçük Stajlar",
+    "konu": "Beyin Cerrahisi",
+    "diff": 4,
+    "q": "Unkal herniasyonda ipsilateral midriazis gelişiyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Erken basıya uğrayan yapı hangisidir?",
+    "options": [
+      "CN III parasempatik lifleri",
+      "CN VI",
+      "Piramidal çapraz",
+      "Nucleus ambiguus",
+      "Optik traktus"
+    ],
+    "correct": 0,
+    "exp": "CN III yüzeyel parasempatik lifleri basıya duyarlıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'CN III parasempatik lifleri'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1369,
+    "ders": "Küçük Stajlar",
+    "konu": "Beyin Cerrahisi",
+    "diff": 5,
+    "q": "Epidural hematomun BT görünümü değerlendiriliyor. Bu bulgular birlikte değerlendirildiğinde: Doğru seçenek hangisidir?",
+    "options": [
+      "Hipodens halka",
+      "Ventrikül içi kan",
+      "Lens/bikonveks, sütürleri aşmaz",
+      "Hilal, sütür aşar",
+      "Sulkal kan"
+    ],
+    "correct": 2,
+    "exp": "Epidural kanama sütürlerle sınırlı lens görünümü yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'Lens/bikonveks, sütürleri aşmaz'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1370,
+    "ders": "Küçük Stajlar",
+    "konu": "Beyin Cerrahisi",
+    "diff": 4,
+    "q": "Kronik subdural hematom için risk faktörü değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Hipertiroidi",
+      "Beyin atrofisi/yaşlılık",
+      "Astım",
+      "Genç yaş",
+      "Hiperkalsemi"
+    ],
+    "correct": 1,
+    "exp": "Atrofi köprü venleri gerer.\n\nSpot ayrım: Doğru cevap 'Beyin atrofisi/yaşlılık'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1371,
+    "ders": "Küçük Stajlar",
+    "konu": "Beyin Cerrahisi",
+    "diff": 4,
+    "q": "Pupilla ışık refleksinin efferent yolu değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "CN IV",
+      "CN III",
+      "CN II",
+      "CN VII",
+      "CN V"
+    ],
+    "correct": 1,
+    "exp": "Afferent CN II, efferent CN III'tür.\n\nSpot ayrım: Doğru cevap 'CN III'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1372,
+    "ders": "Küçük Stajlar",
+    "konu": "Beyin Cerrahisi",
+    "diff": 4,
+    "q": "Beyin apsesinde başlangıç görüntüleme değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Direkt grafi",
+      "Kontrastlı MR/BT",
+      "Doppler",
+      "DEXA",
+      "EEG tek başına"
+    ],
+    "correct": 1,
+    "exp": "Kontrastlı MR daha duyarlıdır; kitle varsa LP risklidir.\n\nSpot ayrım: Doğru cevap 'Kontrastlı MR/BT'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1373,
+    "ders": "Küçük Stajlar",
+    "konu": "Anestezi",
+    "diff": 5,
+    "q": "Volatil anestezik+süksinilkolin sonrası rijidite, hipertermi, asidoz, CK yüksekliği. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Özgül tedavi hangisidir?",
+    "options": [
+      "Flumazenil",
+      "Atropin",
+      "Dantrolen",
+      "Protamin",
+      "Nalokson"
+    ],
+    "correct": 2,
+    "exp": "Malign hipertermi tedavisi dantrolendir.\n\nAyırt ettirici nokta: Doğru seçenek 'Dantrolen'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1374,
+    "ders": "Küçük Stajlar",
+    "konu": "Anestezi",
+    "diff": 4,
+    "q": "Lokal anestezik sonrası metalik tat, nöbet ve geniş QRS aritmi gelişiyor. Bu bulgular birlikte değerlendirildiğinde: Tedavi hangisidir?",
+    "options": [
+      "Metilen mavisi",
+      "Protamin",
+      "Kalsiyum",
+      "K vitamini",
+      "Lipid emülsiyon"
+    ],
+    "correct": 4,
+    "exp": "LAST'ta IV lipid emülsiyon kullanılır.\n\nAyırt ettirici nokta: Doğru seçenek 'Lipid emülsiyon'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1375,
+    "ders": "Küçük Stajlar",
+    "konu": "Anestezi",
+    "diff": 4,
+    "q": "Tok hastada aspirasyon riskini azaltarak entübasyon planlanıyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Yaklaşım hangisidir?",
+    "options": [
+      "Trendelenburg",
+      "Hızlı seri indüksiyon",
+      "Entübasyon sonrası indüksiyon",
+      "Uzun yüksek basınç maske",
+      "Sadece nazal airway"
+    ],
+    "correct": 1,
+    "exp": "RSI tok hastada aspirasyon riskini azaltır.\n\nAyırt ettirici nokta: Doğru seçenek 'Hızlı seri indüksiyon'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1376,
+    "ders": "Küçük Stajlar",
+    "konu": "Anestezi",
+    "diff": 5,
+    "q": "Yanık hastasına süksinilkolin verilirse hiperkalemi riski tartışılıyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Risk ne zaman belirginleşir?",
+    "options": [
+      "İlk 6 saat",
+      "İyileştikten 1 gün sonra",
+      "Hiçbir zaman",
+      "Sadece 1 yıl sonra",
+      "24-48 saatten sonra ve haftalarca"
+    ],
+    "correct": 4,
+    "exp": "Yanık sonrası reseptör artışı 24-48 saatten sonra risk yaratır.\n\nAyırt ettirici nokta: Doğru seçenek '24-48 saatten sonra ve haftalarca'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1377,
+    "ders": "Küçük Stajlar",
+    "konu": "Anestezi",
+    "diff": 4,
+    "q": "Spinal anestezi sonrası hipotansiyon ve bradikardi gelişiyor. Bu bulgular birlikte değerlendirildiğinde: Mekanizma hangisidir?",
+    "options": [
+      "Katekolamin artışı",
+      "Malign hipertermi",
+      "Histamin bronkospazmı",
+      "Sempatik blok ve venöz dönüş azalması",
+      "Böbrek yetmezliği"
+    ],
+    "correct": 3,
+    "exp": "Spinal blok sempatik blokla vazodilatasyon yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'Sempatik blok ve venöz dönüş azalması'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1378,
+    "ders": "Küçük Stajlar",
+    "konu": "Anestezi",
+    "diff": 4,
+    "q": "Opioid sonrası miyozis ve solunum depresyonu var. Bu bulgular birlikte değerlendirildiğinde: Antidot hangisidir?",
+    "options": [
+      "Dantrolen",
+      "Flumazenil",
+      "Nalokson",
+      "Pralidoksim",
+      "Fomepizol"
+    ],
+    "correct": 2,
+    "exp": "Nalokson opioid antagonistidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Nalokson'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1379,
+    "ders": "Küçük Stajlar",
+    "konu": "Anestezi",
+    "diff": 4,
+    "q": "Benzodiazepin toksisitesinde uygun hastada antidot değerlendiriliyor. Bu bulgular birlikte değerlendirildiğinde: Hangisidir?",
+    "options": [
+      "Deferoksamin",
+      "Flumazenil",
+      "Nalokson",
+      "NAC",
+      "Atropin"
+    ],
+    "correct": 1,
+    "exp": "Flumazenil benzodiazepin antagonistidir; nöbet riski nedeniyle dikkat edilir.\n\nAyırt ettirici nokta: Doğru seçenek 'Flumazenil'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1380,
+    "ders": "Küçük Stajlar",
+    "konu": "Anestezi",
+    "diff": 5,
+    "q": "Entübasyon sonrası tüp yerini doğrulamak için en güvenilir bedside yöntem değerlendiriliyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Doğru seçenek hangisidir?",
+    "options": [
+      "Pulse oksimetre tek başına",
+      "Sadece oskültasyon",
+      "Akciğer grafisi beklemek",
+      "Kan basıncı",
+      "Dalga form kapnografi"
+    ],
+    "correct": 4,
+    "exp": "Sürekli ETCO2 dalga formu trakeal yerleşimi destekler.\n\nAyırt ettirici nokta: Doğru seçenek 'Dalga form kapnografi'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1381,
+    "ders": "Küçük Stajlar",
+    "konu": "Anestezi",
+    "diff": 4,
+    "q": "Malign hipertermi tetikleyicisi değerlendiriliyor. Tanısal tuzaklar dışlandığında: Doğru seçenek hangisidir?",
+    "options": [
+      "Midazolam",
+      "Sevofluran",
+      "Lidokain",
+      "Ketamin",
+      "Propofol"
+    ],
+    "correct": 1,
+    "exp": "Volatil ajanlar ve süksinilkolin tetikler.\n\nAyırt ettirici nokta: Doğru seçenek 'Sevofluran'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1382,
+    "ders": "Küçük Stajlar",
+    "konu": "Anestezi",
+    "diff": 4,
+    "q": "Yüksek spinal blokta korkulan komplikasyon değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Hiperglisemi",
+      "Sağırlık",
+      "Solunum yetmezliği ve ağır hipotansiyon",
+      "Hipertansiyon",
+      "Hipertiroidi"
+    ],
+    "correct": 2,
+    "exp": "Yüksek spinal sempatik/solunum blokajı yapabilir.\n\nSpot ayrım: Doğru cevap 'Solunum yetmezliği ve ağır hipotansiyon'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1383,
+    "ders": "Küçük Stajlar",
+    "konu": "Anestezi",
+    "diff": 4,
+    "q": "Opioid toksisitesinde yaşamı tehdit eden ana sorun değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Geniş QRS her zaman",
+      "Hipertansiyon",
+      "Hemoliz",
+      "Hipokalsemi",
+      "Solunum depresyonu"
+    ],
+    "correct": 4,
+    "exp": "Opioid ölüm nedeni solunum depresyonudur.\n\nSpot ayrım: Doğru cevap 'Solunum depresyonu'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1384,
+    "ders": "Küçük Stajlar",
+    "konu": "Anestezi",
+    "diff": 4,
+    "q": "ASA sınıflaması neyi belirtir?. Doğru seçenek hangisidir?",
+    "options": [
+      "Ağrı skoru",
+      "Cerrahi süresi",
+      "Gaz dozu",
+      "Kanama miktarı",
+      "Preoperatif sistemik hastalık yükü"
+    ],
+    "correct": 4,
+    "exp": "ASA fizik durum sınıflamasıdır.\n\nSpot ayrım: Doğru cevap 'Preoperatif sistemik hastalık yükü'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1385,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 4,
+    "q": "En az 2 haftadır anhedoni, erken uyanma, suçluluk ve intihar düşüncesi var. Klinik/laboratuvar ipuçları birleştirildiğinde: En olası tanı hangisidir?",
+    "options": [
+      "Majör depresif bozukluk",
+      "Şizofreni",
+      "Mani",
+      "Uyum bozukluğu",
+      "Distimi"
+    ],
+    "correct": 0,
+    "exp": "Majör depresyon için süre ve belirti kümesi uyumludur.\n\nAyırt ettirici nokta: Doğru seçenek 'Majör depresif bozukluk'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1386,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 4,
+    "q": "Bir haftadır uyku ihtiyacı az, taşkın, para harcama ve büyüklük sanrısı var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: En olası epizod hangisidir?",
+    "options": [
+      "Akut stres",
+      "OKB",
+      "Hipomani",
+      "Mani",
+      "Panik"
+    ],
+    "correct": 3,
+    "exp": "Psikotik özellik/işlev kaybı mani lehinedir.\n\nAyırt ettirici nokta: Doğru seçenek 'Mani'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1387,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 5,
+    "q": "Antipsikotik sonrası ateş, kurşun boru rijiditesi, bilinç değişikliği, CK yüksekliği var. Bu bulgular birlikte değerlendirildiğinde: En olası tanı hangisidir?",
+    "options": [
+      "NMS",
+      "Serotonin sendromu",
+      "Katatonik stupor",
+      "Malign hipertermi",
+      "Akut distoni"
+    ],
+    "correct": 0,
+    "exp": "NMS dopamin blokajıyla gelişir.\n\nAyırt ettirici nokta: Doğru seçenek 'NMS'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1388,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 4,
+    "q": "SSRI+MAOI sonrası ajitasyon, klonus, hiperrefleksi ve ateş var. Klinik/laboratuvar ipuçları birleştirildiğinde: Tanı hangisidir?",
+    "options": [
+      "Serotonin sendromu",
+      "Malign hipertermi",
+      "NMS",
+      "Opioid yoksunluğu",
+      "Antikolinerjik toksisite"
+    ],
+    "correct": 0,
+    "exp": "Klonus ve hiperrefleksi serotonin sendromunu düşündürür.\n\nAyırt ettirici nokta: Doğru seçenek 'Serotonin sendromu'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1389,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 4,
+    "q": "Kirlenme düşüncesinin saçma olduğunu bilen hasta saatlerce el yıkıyor. Tanısal tuzaklar dışlandığında: Tanı hangisidir?",
+    "options": [
+      "Beden dismorfik",
+      "OKB",
+      "Psikotik bozukluk",
+      "YAB",
+      "Somatizasyon"
+    ],
+    "correct": 1,
+    "exp": "Obsesyon ve kompulsiyon işlevselliği bozar.\n\nAyırt ettirici nokta: Doğru seçenek 'OKB'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1390,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 5,
+    "q": "Dakikalar içinde zirve yapan ölüm korkulu çarpıntı atakları ve yeni atak beklentisi var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Tanı hangisidir?",
+    "options": [
+      "Sosyal anksiyete",
+      "Hipokondriyazis",
+      "Somatik belirti",
+      "Panik bozukluk",
+      "Fobi"
+    ],
+    "correct": 3,
+    "exp": "Tekrarlayan beklenmedik panik atak ve beklenti anksiyetesi panik bozukluktur.\n\nAyırt ettirici nokta: Doğru seçenek 'Panik bozukluk'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1391,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 4,
+    "q": "Hastanede yatan yaşlıda dalgalı bilinç, dikkat bozukluğu ve gece artan halüsinasyon var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Tanı hangisidir?",
+    "options": [
+      "Demans",
+      "Deliryum",
+      "Dissosiyatif amnezi",
+      "Şizofreni",
+      "Depresyon"
+    ],
+    "correct": 1,
+    "exp": "Deliryum akut ve dalgalıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'Deliryum'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1392,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 4,
+    "q": "7 aydır varsanı, sanrı, sosyal çekilme ve işlev kaybı var. Tanısal tuzaklar dışlandığında: Süre kriterine göre tanı hangisidir?",
+    "options": [
+      "Bipolar zorunlu",
+      "Şizofreni",
+      "Şizofreniform",
+      "Kısa psikotik",
+      "Sanrısal bozukluk"
+    ],
+    "correct": 1,
+    "exp": "Şizofreni için toplam süre en az 6 aydır.\n\nAyırt ettirici nokta: Doğru seçenek 'Şizofreni'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1393,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 4,
+    "q": "Bipolarda antidepresan monoterapisinin temel riski değerlendiriliyor. Bu bulgular birlikte değerlendirildiğinde: Doğru seçenek hangisidir?",
+    "options": [
+      "Hiperkalsemi",
+      "Hemoliz",
+      "İşitme kaybı",
+      "Apandisit",
+      "Manik kayma"
+    ],
+    "correct": 4,
+    "exp": "Antidepresan monoterapisi maniyi tetikleyebilir.\n\nAyırt ettirici nokta: Doğru seçenek 'Manik kayma'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1394,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 4,
+    "q": "Lityum tedavisinde izlenmesi gereken organlar değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Safra-kemik iliği",
+      "Böbrek ve tiroid",
+      "Akciğer-pankreas",
+      "Dalak-timus",
+      "Kornea-lens"
+    ],
+    "correct": 1,
+    "exp": "Lityum böbrek ve tiroid sorunları yapabilir.\n\nSpot ayrım: Doğru cevap 'Böbrek ve tiroid'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1395,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 4,
+    "q": "Anoreksiya nervozada ciddi akut risk değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Hiperkalsemi her zaman",
+      "Akut otit",
+      "Hipertansif kriz",
+      "Polisitemi",
+      "Bradikardi/aritmi ve elektrolit bozukluğu"
+    ],
+    "correct": 4,
+    "exp": "Malnütrisyon ve elektrolit bozukluğu ölümcül aritmi yapabilir.\n\nSpot ayrım: Doğru cevap 'Bradikardi/aritmi ve elektrolit bozukluğu'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1396,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 4,
+    "q": "Antipsikotik sonrası akut distoni gelişiyor. İlk semptomatik tedavi hangisidir?",
+    "options": [
+      "Fluoksetin",
+      "Lityum",
+      "Biperiden veya difenhidramin",
+      "Metformin",
+      "Disülfiram"
+    ],
+    "correct": 2,
+    "exp": "Akut distoni antikolinerjik/antihistaminikle düzelir.\n\nSpot ayrım: Doğru cevap 'Biperiden veya difenhidramin'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1397,
+    "ders": "Küçük Stajlar",
+    "konu": "Çocuk Cerrahisi",
+    "diff": 5,
+    "q": "6 haftalık bebekte fışkırır safrasız kusma ve zeytin bulgusu var. Bu bulgular birlikte değerlendirildiğinde: Beklenen kan gazı-elektrolit bozukluğu hangisidir?",
+    "options": [
+      "NAGMA",
+      "Respiratuvar asidoz",
+      "Hipokloremik hipokalemik metabolik alkaloz",
+      "Laktik asidoz",
+      "Hiperkloremik asidoz"
+    ],
+    "correct": 2,
+    "exp": "Pilor stenozunda HCl kaybı metabolik alkaloz yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'Hipokloremik hipokalemik metabolik alkaloz'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1398,
+    "ders": "Küçük Stajlar",
+    "konu": "Çocuk Cerrahisi",
+    "diff": 4,
+    "q": "8 aylık bebekte aralıklı kolik ağrı ve çilek jölesi dışkı var. Tanısal tuzaklar dışlandığında: USG bulgusu hangisidir?",
+    "options": [
+      "Corkscrew",
+      "Double bubble",
+      "String sign",
+      "Target/bull's-eye",
+      "Coffee bean"
+    ],
+    "correct": 3,
+    "exp": "İnvajinasyonda target sign tipiktir.\n\nAyırt ettirici nokta: Doğru seçenek 'Target/bull's-eye'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1399,
+    "ders": "Küçük Stajlar",
+    "konu": "Çocuk Cerrahisi",
+    "diff": 4,
+    "q": "İlk 48 saatte mekonyum yok, tuşe sonrası patlayıcı dışkı var. Bu bulgular birlikte değerlendirildiğinde: Altın standart tanı testi hangisidir?",
+    "options": [
+      "Direkt grafi",
+      "BT",
+      "Rektal emiş biyopsisi",
+      "Gaita kültürü",
+      "Kolonoskopi her zaman"
+    ],
+    "correct": 2,
+    "exp": "Hirschsprung tanısı aganglionozisin biyopsiyle gösterilmesidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Rektal emiş biyopsisi'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1400,
+    "ders": "Küçük Stajlar",
+    "konu": "Çocuk Cerrahisi",
+    "diff": 4,
+    "q": "Yenidoğanda safralı kusma ve üst GİS'te tirbuşon görünümü var. Tanısal tuzaklar dışlandığında: En olası tanı hangisidir?",
+    "options": [
+      "Pilor stenozu",
+      "Anal fissür",
+      "Meckel",
+      "GÖR",
+      "Malrotasyon-volvulus"
+    ],
+    "correct": 4,
+    "exp": "Safralı kusma + corkscrew volvulus düşündürür.\n\nAyırt ettirici nokta: Doğru seçenek 'Malrotasyon-volvulus'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1401,
+    "ders": "Küçük Stajlar",
+    "konu": "Çocuk Cerrahisi",
+    "diff": 5,
+    "q": "Yenidoğanda sonda mideye ilerlemiyor, ağızdan köpük, batında gaz var. Bu bulgular birlikte değerlendirildiğinde: En olası tip hangisidir?",
+    "options": [
+      "H tipi fistül",
+      "Özofagus atrezisi + distal TEF",
+      "İzole atrezi",
+      "Duodenal web",
+      "Pilor atrezisi"
+    ],
+    "correct": 1,
+    "exp": "Batında gaz distal fistülü düşündürür; en sık tip distal TEF'lidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Özofagus atrezisi + distal TEF'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1402,
+    "ders": "Küçük Stajlar",
+    "konu": "Çocuk Cerrahisi",
+    "diff": 4,
+    "q": "Yenidoğanda skafod abdomen, solunum sıkıntısı ve toraksta barsak ansları var. Bu bulgular birlikte değerlendirildiğinde: Tanı hangisidir?",
+    "options": [
+      "Pilor stenozu",
+      "Mekonyum ileusu",
+      "Konjenital diyafragma hernisi",
+      "Normal varyant",
+      "Pnömotoraks"
+    ],
+    "correct": 2,
+    "exp": "Diyafragma hernisi akciğer hipoplazisi yapabilir.\n\nAyırt ettirici nokta: Doğru seçenek 'Konjenital diyafragma hernisi'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1403,
+    "ders": "Küçük Stajlar",
+    "konu": "Çocuk Cerrahisi",
+    "diff": 4,
+    "q": "İnguinal kanalda palpe edilen inmemiş testis var. Bu bulgular birlikte değerlendirildiğinde: Uygun yaklaşım hangisidir?",
+    "options": [
+      "Orşiopeksi",
+      "Sadece kozmetik izlem",
+      "Acil apendektomi",
+      "Testosteronla bekleme her zaman",
+      "Antibiyotik"
+    ],
+    "correct": 0,
+    "exp": "İnmemiş testiste infertilite/kanser riski için orşiopeksi yapılır.\n\nAyırt ettirici nokta: Doğru seçenek 'Orşiopeksi'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1404,
+    "ders": "Küçük Stajlar",
+    "konu": "Çocuk Cerrahisi",
+    "diff": 5,
+    "q": "Apandisit perforasyonunda ağrı yaygınlaşıyor. Bu bulgular birlikte değerlendirildiğinde: Mekanizma hangisidir?",
+    "options": [
+      "Diyafram paralizisi",
+      "Pankreatik enzim",
+      "Parietal periton irritasyonu",
+      "Üreter obstrüksiyonu",
+      "Visseral periton ağrısızlığı"
+    ],
+    "correct": 2,
+    "exp": "Perforasyon yaygın peritonit ve parietal ağrı yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'Parietal periton irritasyonu'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1405,
+    "ders": "Küçük Stajlar",
+    "konu": "Çocuk Cerrahisi",
+    "diff": 4,
+    "q": "Çocukta ağrısız masif alt GİS kanamasının klasik nedeni değerlendiriliyor. Tanısal tuzaklar dışlandığında: Doğru seçenek hangisidir?",
+    "options": [
+      "Meckel divertikülü",
+      "Malrotasyon",
+      "Pilor stenozu",
+      "Hirschsprung",
+      "İnvajinasyon her zaman ağrısız"
+    ],
+    "correct": 0,
+    "exp": "Meckel ektopik mide mukozasıyla ağrısız kanar.\n\nAyırt ettirici nokta: Doğru seçenek 'Meckel divertikülü'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1406,
+    "ders": "Küçük Stajlar",
+    "konu": "Çocuk Cerrahisi",
+    "diff": 4,
+    "q": "Duodenal atrezi grafi bulgusu değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Target",
+      "Double bubble",
+      "Bird beak",
+      "Corkscrew",
+      "Lead pipe"
+    ],
+    "correct": 1,
+    "exp": "Duodenal atrezi double bubble yapar.\n\nSpot ayrım: Doğru cevap 'Double bubble'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1407,
+    "ders": "Küçük Stajlar",
+    "konu": "Çocuk Cerrahisi",
+    "diff": 4,
+    "q": "NEK grafisinde karakteristik bulgu değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Kerley B",
+      "Bamboo spine",
+      "Pnömatozis intestinalis",
+      "Kafatası çift kontur",
+      "Aort notching"
+    ],
+    "correct": 2,
+    "exp": "NEK'te bağırsak duvarında gaz görülür.\n\nSpot ayrım: Doğru cevap 'Pnömatozis intestinalis'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1408,
+    "ders": "Küçük Stajlar",
+    "konu": "Çocuk Cerrahisi",
+    "diff": 4,
+    "q": "Pilor stenozu kusması için doğru ifade değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Safralıdır",
+      "Daima kanlı",
+      "Sadece ishal",
+      "Safrasızdır",
+      "Doğumun ilk saati"
+    ],
+    "correct": 3,
+    "exp": "Tıkanıklık safra girişinin proksimalindedir.\n\nSpot ayrım: Doğru cevap 'Safrasızdır'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1409,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 4,
+    "q": "Aşısız çocuk ateş, salya, tripod pozisyonu ve boğuk sesle geliyor. Tanısal tuzaklar dışlandığında: Tanı-yaklaşım hangisidir?",
+    "options": [
+      "Krup-ev izlem",
+      "Alerjik rinit",
+      "Tonsillit-test yeter",
+      "Epiglottit - kontrollü havayolu",
+      "Yabancı cisim-Heimlich her zaman"
+    ],
+    "correct": 3,
+    "exp": "Epiglottit havayolu acilidir; ajite etmeden kontrollü havayolu gerekir.\n\nAyırt ettirici nokta: Doğru seçenek 'Epiglottit - kontrollü havayolu'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1410,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 4,
+    "q": "Havlar öksürük ve stridorlu krup olgusunda orta-ağır tablo var. Klinik/laboratuvar ipuçları birleştirildiğinde: Akut tedavi hangisidir?",
+    "options": [
+      "Antikoagülan",
+      "Sadece antibiyotik",
+      "Diüretik",
+      "Tonsillektomi",
+      "Nebül adrenalin + steroid"
+    ],
+    "correct": 4,
+    "exp": "Krupta steroid ve gerekirse nebül adrenalin kullanılır.\n\nAyırt ettirici nokta: Doğru seçenek 'Nebül adrenalin + steroid'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1411,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 5,
+    "q": "AOM düşünülen çocukta pnömatik otoskopi yapılıyor. Tanısal tuzaklar dışlandığında: Tanıyı en çok destekleyen bulgu hangisidir?",
+    "options": [
+      "Normal hareket",
+      "Timpan zarında bombeleşme",
+      "Dış kulak kaşıntısı",
+      "Weber sağlam kulağa",
+      "Kepçe hematomu"
+    ],
+    "correct": 1,
+    "exp": "AOM'da bombeleşmiş, hareketi azalmış zar önemlidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Timpan zarında bombeleşme'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1412,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 4,
+    "q": "Kötü kokulu kronik otore, pars flaccida retraksiyonu ve iletim tipi kayıp var. Tanısal tuzaklar dışlandığında: Tanı hangisidir?",
+    "options": [
+      "Seröz otit",
+      "Vestibüler nörinit",
+      "Otoskleroz",
+      "Kolesteatom",
+      "Meniere"
+    ],
+    "correct": 3,
+    "exp": "Kolesteatom keratin birikimi ve kemik erozyonu yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'Kolesteatom'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1413,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 4,
+    "q": "Dix-Hallpike pozitif BPPV hastasında tedavi değerlendiriliyor. Tanısal tuzaklar dışlandığında: Doğru seçenek hangisidir?",
+    "options": [
+      "Tüp",
+      "Antibiyotik",
+      "Epley manevrası",
+      "Mastoidektomi",
+      "Tiroidektomi"
+    ],
+    "correct": 2,
+    "exp": "Posterior kanal BPPV'de Epley kullanılır.\n\nAyırt ettirici nokta: Doğru seçenek 'Epley manevrası'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1414,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 4,
+    "q": "Tek taraflı SNİK, tinnitus ve internal akustik kanalda kitle var. Bu bulgular birlikte değerlendirildiğinde: Tanı hangisidir?",
+    "options": [
+      "Nazofarenks Ca",
+      "Kolesteatom",
+      "Vestibüler schwannom",
+      "Osteom",
+      "Glomus"
+    ],
+    "correct": 2,
+    "exp": "Vestibüler schwannom CN VIII kaynaklıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'Vestibüler schwannom'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1415,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 5,
+    "q": "Tonsillit sonrası uvula deviasyonu, trismus ve hot potato voice var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Tanı hangisidir?",
+    "options": [
+      "Alerjik farenjit",
+      "Epiglottit",
+      "Retrofaringeal apse",
+      "Peritonsiller apse",
+      "Krup"
+    ],
+    "correct": 3,
+    "exp": "Peritonsiller apse drenaj gerektirir.\n\nAyırt ettirici nokta: Doğru seçenek 'Peritonsiller apse'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1416,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 4,
+    "q": "Burunda düğme pil ve tek taraflı kötü kokulu akıntı var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Yaklaşım hangisidir?",
+    "options": [
+      "Bekle-antibiyotik",
+      "Acil çıkarma",
+      "Evde SF",
+      "Steroid",
+      "Hiçbir şey"
+    ],
+    "correct": 1,
+    "exp": "Düğme pil septal nekroz yapabilir, acil çıkarılır.\n\nAyırt ettirici nokta: Doğru seçenek 'Acil çıkarma'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1417,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 4,
+    "q": "Otosklerozda tipik işitme kaybı değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Ani SNİK",
+      "Normal",
+      "Psikojenik",
+      "İletim tipi",
+      "Santral"
+    ],
+    "correct": 3,
+    "exp": "Stapes fiksasyonu iletim tipi kayıp yapar.\n\nSpot ayrım: Doğru cevap 'İletim tipi'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1418,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 4,
+    "q": "Weber testi iletim tipi kayıpta nereye lateralize olur?. Doğru seçenek hangisidir?",
+    "options": [
+      "Lateralize olmaz",
+      "Hasta kulağa",
+      "Sağlam kulağa",
+      "Daima sola",
+      "Daima sağa"
+    ],
+    "correct": 1,
+    "exp": "İletim tipi kayıpta Weber hasta kulağa gider.\n\nSpot ayrım: Doğru cevap 'Hasta kulağa'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1419,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 4,
+    "q": "Krupun en sık viral etkeni değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "CMV",
+      "Parainfluenza",
+      "EBV",
+      "HSV-2",
+      "Rhinovirus sadece"
+    ],
+    "correct": 1,
+    "exp": "Krup en sık parainfluenza ile ilişkilidir.\n\nSpot ayrım: Doğru cevap 'Parainfluenza'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1420,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 4,
+    "q": "Ani sensörinöral işitme kaybında erken yaklaşım değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Kulak lavajı",
+      "Tüp",
+      "Sistemik/intratimpanik steroid",
+      "Adenoidektomi",
+      "Antikoagülan zorunlu"
+    ],
+    "correct": 2,
+    "exp": "Ani SNİK'te erken steroid tedavisi kullanılır.\n\nSpot ayrım: Doğru cevap 'Sistemik/intratimpanik steroid'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1421,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 4,
+    "q": "Sağ üst kadran ağrısı, taş, duvar kalınlığı ve perikolesistik sıvı var. Klinik/laboratuvar ipuçları birleştirildiğinde: Akut kolesistitte ilk tercih görüntüleme hangisidir?",
+    "options": [
+      "BT beyin",
+      "Sintigrafi",
+      "USG",
+      "MR anjiyo",
+      "Direkt grafi"
+    ],
+    "correct": 2,
+    "exp": "Kolesistit için ilk görüntüleme USG'dir.\n\nAyırt ettirici nokta: Doğru seçenek 'USG'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1422,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 5,
+    "q": "Travmada yatak başı serbest sıvı aranıyor. Tanısal tuzaklar dışlandığında: Yöntem hangisidir?",
+    "options": [
+      "PET",
+      "FAST USG",
+      "Mamografi",
+      "DEXA",
+      "Baryum grafi"
+    ],
+    "correct": 1,
+    "exp": "FAST hızlı travma ultrasonudur.\n\nAyırt ettirici nokta: Doğru seçenek 'FAST USG'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1423,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 4,
+    "q": "Akut inmede ilk kontrastsız BT çekiliyor. Bu bulgular birlikte değerlendirildiğinde: Temel amaç nedir?",
+    "options": [
+      "Karotis tedavisi",
+      "Anevrizma kapatma",
+      "Kanamayı dışlamak",
+      "EEG yerine geçmek",
+      "Penumbrayı kesin ölçmek"
+    ],
+    "correct": 2,
+    "exp": "BT öncelikle kanamayı dışlar.\n\nAyırt ettirici nokta: Doğru seçenek 'Kanamayı dışlamak'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1424,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 4,
+    "q": "Gebede apandisit şüphesi sürüyor, USG yetersiz. Klinik/laboratuvar ipuçları birleştirildiğinde: Radyasyonsuz ileri yöntem hangisidir?",
+    "options": [
+      "MR",
+      "Kontrastlı BT ilk",
+      "Seri grafi",
+      "Floroskopi",
+      "PET"
+    ],
+    "correct": 0,
+    "exp": "Gebelikte USG sonrası MR tercih edilebilir.\n\nAyırt ettirici nokta: Doğru seçenek 'MR'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1425,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 5,
+    "q": "Kanser hastasında spinal kord basısı şüphesi var. Bu bulgular birlikte değerlendirildiğinde: En uygun görüntüleme hangisidir?",
+    "options": [
+      "Kemik yaşı",
+      "USG",
+      "Direkt grafi",
+      "Baryum",
+      "Kontrastlı spinal MR"
+    ],
+    "correct": 4,
+    "exp": "Kord basısında MR seçilir.\n\nAyırt ettirici nokta: Doğru seçenek 'Kontrastlı spinal MR'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1426,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 4,
+    "q": "Stabil PE şüphesinde kontrendikasyon yok. Bu bulgular birlikte değerlendirildiğinde: En sık tercih edilen görüntüleme hangisidir?",
+    "options": [
+      "DEXA",
+      "Batın USG",
+      "Ayak grafisi",
+      "BT pulmoner anjiyografi",
+      "Beyin MR"
+    ],
+    "correct": 3,
+    "exp": "CTPA PE tanısında yaygın ilk tercihtir.\n\nAyırt ettirici nokta: Doğru seçenek 'BT pulmoner anjiyografi'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1427,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 4,
+    "q": "Posterior fossa tümörü şüphesinde BT'ye göre üstün yöntem değerlendiriliyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Doğru seçenek hangisidir?",
+    "options": [
+      "Floroskopi",
+      "Direkt grafi",
+      "Mamografi",
+      "USG",
+      "MR"
+    ],
+    "correct": 4,
+    "exp": "MR posterior fossada daha iyi kontrast sağlar.\n\nAyırt ettirici nokta: Doğru seçenek 'MR'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1428,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 4,
+    "q": "Akciğer grafisinde plevral çizgi ve periferde damar izi kaybı var. Tanısal tuzaklar dışlandığında: Tanı hangisidir?",
+    "options": [
+      "Hiler LAP",
+      "Atelektazi kesin",
+      "Efüzyon",
+      "Ödem",
+      "Pnömotoraks"
+    ],
+    "correct": 4,
+    "exp": "Pnömotoraksta plevral çizgi dışı avasküler görünür.\n\nAyırt ettirici nokta: Doğru seçenek 'Pnömotoraks'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1429,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 4,
+    "q": "Radyasyon içermeyen kesitsel görüntüleme değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Sintigrafi",
+      "Floroskopi",
+      "MR",
+      "BT",
+      "Direkt grafi"
+    ],
+    "correct": 2,
+    "exp": "MR iyonizan radyasyon içermez.\n\nSpot ayrım: Doğru cevap 'MR'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1430,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 4,
+    "q": "İyotlu kontrast nefropatisi risk faktörü değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Kronik böbrek hastalığı",
+      "Normal kreatinin",
+      "Dermatit",
+      "Genç yaş",
+      "Miyopi"
+    ],
+    "correct": 0,
+    "exp": "KBY kontrast ilişkili AKI riskini artırır.\n\nSpot ayrım: Doğru cevap 'Kronik böbrek hastalığı'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1431,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 4,
+    "q": "Kemik mineral yoğunluğu ölçümü değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "SPECT",
+      "MRCP",
+      "EKO",
+      "DEXA",
+      "ERCP"
+    ],
+    "correct": 3,
+    "exp": "DEXA osteoporoz değerlendirmesinde kullanılır.\n\nSpot ayrım: Doğru cevap 'DEXA'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1432,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 4,
+    "q": "MR'da metal yabancı cisim açısından dikkat nedeni değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Kontrastın radyoaktif olması",
+      "Sadece kemik göstermesi",
+      "Güçlü manyetik alan ve güvenlik riski",
+      "Ses dalgası kullanması",
+      "Radyasyon vermesi"
+    ],
+    "correct": 2,
+    "exp": "MR güçlü manyetik alan kullanır.\n\nSpot ayrım: Doğru cevap 'Güçlü manyetik alan ve güvenlik riski'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1433,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 4,
+    "q": "Hasta olanların %95'inde test pozitif çıkıyor. Tanısal tuzaklar dışlandığında: Bu oran hangisidir?",
+    "options": [
+      "NPV",
+      "Özgüllük",
+      "Atfedilebilir risk",
+      "Duyarlılık",
+      "PPV"
+    ],
+    "correct": 3,
+    "exp": "Duyarlılık hasta kişilerde pozitiflik oranıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'Duyarlılık'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1434,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 4,
+    "q": "Nadir hastalık taramasında pozitiflerin çoğu yalancı pozitif çıkıyor. Bu bulgular birlikte değerlendirildiğinde: En iyi açıklama hangisidir?",
+    "options": [
+      "RR hesaplanamaz",
+      "Özgüllük artar",
+      "Düşük prevalansta PPV azalır",
+      "İnsidans sıfır",
+      "Duyarlılık azalır"
+    ],
+    "correct": 2,
+    "exp": "PPV prevalanstan çok etkilenir.\n\nAyırt ettirici nokta: Doğru seçenek 'Düşük prevalansta PPV azalır'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1435,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 4,
+    "q": "Kohortta sigara içenlerde risk 100/100000, içmeyenlerde 10/100000. Tanısal tuzaklar dışlandığında: RR kaçtır?",
+    "options": [
+      "90",
+      "110",
+      "1",
+      "10",
+      "5"
+    ],
+    "correct": 3,
+    "exp": "RR=100/10=10.\n\nAyırt ettirici nokta: Doğru seçenek '10'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1436,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 5,
+    "q": "Olgu-kontrol çalışmasında maruziyet geriye dönük değerlendiriliyor. Klinik/laboratuvar ipuçları birleştirildiğinde: Temel ilişki ölçütü hangisidir?",
+    "options": [
+      "RR doğrudan",
+      "NNT",
+      "Atak hızı",
+      "Odds ratio",
+      "Prevalans"
+    ],
+    "correct": 3,
+    "exp": "Olgu-kontrol çalışmalarında OR kullanılır.\n\nAyırt ettirici nokta: Doğru seçenek 'Odds ratio'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1437,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 4,
+    "q": "Kontrolde risk %20, tedavide %10. Bu bulgular birlikte değerlendirildiğinde: NNT kaçtır?",
+    "options": [
+      "10",
+      "20",
+      "100",
+      "2",
+      "5"
+    ],
+    "correct": 0,
+    "exp": "ARR=0.10, NNT=10.\n\nAyırt ettirici nokta: Doğru seçenek '10'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1438,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 4,
+    "q": "Hastalar geçmiş maruziyeti daha fazla hatırlıyor. Bu bulgular birlikte değerlendirildiğinde: Bu bias hangisidir?",
+    "options": [
+      "Lead-time",
+      "Publication",
+      "Hawthorne",
+      "Recall bias",
+      "Selection"
+    ],
+    "correct": 3,
+    "exp": "Hatırlama yanlılığı özellikle olgu-kontrolde olur.\n\nAyırt ettirici nokta: Doğru seçenek 'Recall bias'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1439,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 5,
+    "q": "Tarama sağkalımı uzamış gösteriyor ama ölüm zamanı değişmiyor. Tanısal tuzaklar dışlandığında: Bu yanlılık hangisidir?",
+    "options": [
+      "Attrition",
+      "Length-time",
+      "Observer",
+      "Confounding",
+      "Lead-time bias"
+    ],
+    "correct": 4,
+    "exp": "Tanı öne çekildiği için sağkalım uzamış görünür.\n\nAyırt ettirici nokta: Doğru seçenek 'Lead-time bias'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1440,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 4,
+    "q": "Aşılı oranı artınca duyarlı bireyler de dolaylı korunuyor. Tanısal tuzaklar dışlandığında: Kavram hangisidir?",
+    "options": [
+      "Berkson",
+      "Sürü bağışıklığı",
+      "Sekonder atak",
+      "Konfounding",
+      "Duyarlılık"
+    ],
+    "correct": 1,
+    "exp": "Toplum bağışıklığı bulaş zincirini azaltır.\n\nAyırt ettirici nokta: Doğru seçenek 'Sürü bağışıklığı'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1441,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 4,
+    "q": "Özgüllük tanımı değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Hastalarda pozitiflik",
+      "Pozitiflerin hasta olması",
+      "Sağlıklılarda testin negatif çıkma oranı",
+      "Negatiflerin sağlam olması",
+      "Hastalık sıklığı"
+    ],
+    "correct": 2,
+    "exp": "Özgüllük hastalığı olmayanlarda negatifliktir.\n\nSpot ayrım: Doğru cevap 'Sağlıklılarda testin negatif çıkma oranı'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1442,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 4,
+    "q": "Prevalans tanımı değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Maruziyet oranı",
+      "Duyarlılık",
+      "Mevcut hastalık yükü",
+      "Yeni vaka hızı",
+      "Ölüm hızı"
+    ],
+    "correct": 2,
+    "exp": "Prevalans mevcut olguların oranıdır.\n\nSpot ayrım: Doğru cevap 'Mevcut hastalık yükü'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1443,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 4,
+    "q": "Randomizasyonun temel amacı değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Karıştırıcıları dengeli dağıtmak",
+      "Yan etkileri gizlemek",
+      "Takip kaybını artırmak",
+      "Örneklemi azaltmak",
+      "Plaseboyu yok etmek"
+    ],
+    "correct": 0,
+    "exp": "Randomizasyon bilinen/bilinmeyen karıştırıcıları dengelemeyi amaçlar.\n\nSpot ayrım: Doğru cevap 'Karıştırıcıları dengeli dağıtmak'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1444,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 4,
+    "q": "Duyarlılığı çok yüksek test negatifse kullanım değeri nedir?. Doğru seçenek hangisidir?",
+    "options": [
+      "Hastalığı dışlamada",
+      "Prevalansı artırma",
+      "Bias yok etme",
+      "Kesin doğrulama",
+      "Tedavi kanıtı"
+    ],
+    "correct": 0,
+    "exp": "SnNout: yüksek duyarlılık negatifse dışlamaya yarar.\n\nSpot ayrım: Doğru cevap 'Hastalığı dışlamada'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1445,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 4,
+    "q": "Obez ergen erkek diz ağrısı ve kalça iç rotasyon kısıtlılığıyla geliyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: En olası tanı hangisidir?",
+    "options": [
+      "GKD",
+      "Perthes",
+      "Septik artrit",
+      "SCFE",
+      "Osgood-Schlatter"
+    ],
+    "correct": 3,
+    "exp": "SCFE ergen obezlerde kalça/diz ağrısı yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'SCFE'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1446,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 5,
+    "q": "5 yaş çocukta topallama ve femur başı avasküler nekrozu var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Tanı hangisidir?",
+    "options": [
+      "Osteosarkom",
+      "Legg-Calve-Perthes",
+      "SCFE",
+      "Ewing",
+      "Toksik sinovit zorunlu"
+    ],
+    "correct": 1,
+    "exp": "Perthes femur başı idiopatik AVN'dir.\n\nAyırt ettirici nokta: Doğru seçenek 'Legg-Calve-Perthes'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1447,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 4,
+    "q": "Suprakondiler kırık sonrası pasif parmak ekstansiyonuyla şiddetli ağrı var. Klinik/laboratuvar ipuçları birleştirildiğinde: Korkulan komplikasyon hangisidir?",
+    "options": [
+      "Karpal tünel",
+      "Osteoporoz",
+      "Skolyoz",
+      "Kompartman sendromu",
+      "Dupuytren"
+    ],
+    "correct": 3,
+    "exp": "Pasif germe ağrısı kompartman sendromu erken bulgusudur.\n\nAyırt ettirici nokta: Doğru seçenek 'Kompartman sendromu'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1448,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 4,
+    "q": "ACL yaralanmasıyla lateral tibial plato avulsiyonu görülüyor. Bu bulgular birlikte değerlendirildiğinde: Bu kırık hangisidir?",
+    "options": [
+      "Segond kırığı",
+      "Colles",
+      "Boxer",
+      "Jones",
+      "Bennett"
+    ],
+    "correct": 0,
+    "exp": "Segond kırığı ACL yaralanmasıyla ilişkilidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Segond kırığı'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1449,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 4,
+    "q": "Yumruk atma sonrası 5. metakarp boyun kırığı var. Bu bulgular birlikte değerlendirildiğinde: Bu kırık hangisidir?",
+    "options": [
+      "Smith",
+      "Monteggia",
+      "Boxer kırığı",
+      "Rolando",
+      "Bennett"
+    ],
+    "correct": 2,
+    "exp": "Boxer kırığı 5. metakarp boyun kırığıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'Boxer kırığı'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1450,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 5,
+    "q": "Ulna proksimal kırığı ve radius başı çıkığı birlikte. Bu bulgular birlikte değerlendirildiğinde: Yaralanma hangisidir?",
+    "options": [
+      "Colles",
+      "Galeazzi",
+      "Smith",
+      "Monteggia",
+      "Lisfranc"
+    ],
+    "correct": 3,
+    "exp": "Monteggia: ulna kırığı + radius başı çıkığı.\n\nAyırt ettirici nokta: Doğru seçenek 'Monteggia'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1451,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 4,
+    "q": "5. metatars baz metafiz-diafiz bileşkesinde kırık var. Tanısal tuzaklar dışlandığında: Kaynamama riskiyle bilinen kırık hangisidir?",
+    "options": [
+      "Lisfranc",
+      "Jones kırığı",
+      "Pilon",
+      "Bimalleolar",
+      "Calcaneus stres"
+    ],
+    "correct": 1,
+    "exp": "Jones kırığı watershed bölgededir.\n\nAyırt ettirici nokta: Doğru seçenek 'Jones kırığı'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1452,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 4,
+    "q": "Diz ekstansiyonu kaybı ve patella refleksi yok. Klinik/laboratuvar ipuçları birleştirildiğinde: En çok hangi sinir etkilenmiştir?",
+    "options": [
+      "Femoral sinir",
+      "Siyatik",
+      "Sural",
+      "Obturator",
+      "Tibial"
+    ],
+    "correct": 0,
+    "exp": "Femoral sinir quadriceps ve patella refleksiyle ilişkilidir.\n\nAyırt ettirici nokta: Doğru seçenek 'Femoral sinir'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1453,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 4,
+    "q": "Osteosarkom radyolojik periost reaksiyonu değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Soap-bubble",
+      "Punched-out",
+      "Bamboo spine",
+      "Onion-skin",
+      "Sunburst ve Codman üçgeni"
+    ],
+    "correct": 4,
+    "exp": "Osteosarkomda agresif periost reaksiyonu görülebilir.\n\nSpot ayrım: Doğru cevap 'Sunburst ve Codman üçgeni'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1454,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 4,
+    "q": "Ewing sarkomu translokasyonu değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "t(9;22)",
+      "t(14;18)",
+      "t(11;22)",
+      "t(8;14)",
+      "t(15;17)"
+    ],
+    "correct": 2,
+    "exp": "Ewing EWSR1-FLI1 t(11;22) ile ilişkilidir.\n\nSpot ayrım: Doğru cevap 't(11;22)'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1455,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 4,
+    "q": "Kompartman sendromunun erken bulgusu değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Nabız kaybı ilk",
+      "Kaşıntı",
+      "Ateş her zaman",
+      "Krepitasyon",
+      "Pasif germe ile orantısız ağrı"
+    ],
+    "correct": 4,
+    "exp": "Pasif germe ağrısı erken ve kritiktir.\n\nSpot ayrım: Doğru cevap 'Pasif germe ile orantısız ağrı'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1456,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 4,
+    "q": "Gelişimsel kalça displazisi yenidoğan muayene testleri değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Lachman-McMurray",
+      "Rovsing-psoas",
+      "Tinel-Phalen",
+      "Barlow ve Ortolani",
+      "Weber-Rinne"
+    ],
+    "correct": 3,
+    "exp": "Barlow ve Ortolani GKD taramasında kullanılır.\n\nSpot ayrım: Doğru cevap 'Barlow ve Ortolani'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1457,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 5,
+    "q": "İnme sonrası hız bağımlı tonus artışı ve klonus var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Bu bulgu hangi lezyonu düşündürür?",
+    "options": [
+      "Alt motor nöron",
+      "Duyusal nöropati",
+      "NM kavşak",
+      "Üst motor nöron",
+      "Miyopati"
+    ],
+    "correct": 3,
+    "exp": "Spastisite ÜMN lezyonudur.\n\nAyırt ettirici nokta: Doğru seçenek 'Üst motor nöron'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1458,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 4,
+    "q": "Bel fıtığı sonrası düşük ayak ve dorsifleksiyon zayıflığı var. Tanısal tuzaklar dışlandığında: En çok hangi kök etkilenir?",
+    "options": [
+      "L3",
+      "L2",
+      "S2",
+      "L5",
+      "L4"
+    ],
+    "correct": 3,
+    "exp": "L5 dorsifleksiyon ve EHL güçsüzlüğü yapabilir.\n\nAyırt ettirici nokta: Doğru seçenek 'L5'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1459,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 4,
+    "q": "Gece uyuşması, thenar atrofi ve Phalen pozitif. Klinik/laboratuvar ipuçları birleştirildiğinde: Sıkışan sinir hangisidir?",
+    "options": [
+      "N. axillaris",
+      "N. ulnaris",
+      "N. medianus",
+      "N. radialis",
+      "N. musculocutaneus"
+    ],
+    "correct": 2,
+    "exp": "Karpal tünel median sinir sıkışmasıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'N. medianus'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1460,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 5,
+    "q": "60-120 derece ağrılı ark ve Neer pozitif. Bu bulgular birlikte değerlendirildiğinde: En olası durum hangisidir?",
+    "options": [
+      "Adheziv kapsülit kesin",
+      "Ulnar nöropati",
+      "Çıkık",
+      "Subakromiyal sıkışma",
+      "Biceps kopması"
+    ],
+    "correct": 3,
+    "exp": "Painful arc subakromiyal sıkışma/rotator cuff ile uyumludur.\n\nAyırt ettirici nokta: Doğru seçenek 'Subakromiyal sıkışma'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1461,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 4,
+    "q": "T6 üstü spinal yaralanmada mesane distansiyonuyla hipertansiyon, baş ağrısı ve terleme var. Klinik/laboratuvar ipuçları birleştirildiğinde: Tanı hangisidir?",
+    "options": [
+      "NMS",
+      "Otonom disrefleksi",
+      "Spinal şok",
+      "Ortostatik hipotansiyon",
+      "Serotonin"
+    ],
+    "correct": 1,
+    "exp": "Otonom disrefleksi hipertansif acildir.\n\nAyırt ettirici nokta: Doğru seçenek 'Otonom disrefleksi'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1462,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 4,
+    "q": "İmmobil hastada bası yarası önleme değerlendiriliyor. Bu bulgular birlikte değerlendirildiğinde: Temel yaklaşım hangisidir?",
+    "options": [
+      "Kızarık alanı ezmek",
+      "Protein kısıtlama",
+      "Pozisyon değiştirme ve basınç azaltma",
+      "Antibiyotik profilaksisi",
+      "Tam istirahat"
+    ],
+    "correct": 2,
+    "exp": "Basınç azaltma ve pozisyonlama temel korumadır.\n\nAyırt ettirici nokta: Doğru seçenek 'Pozisyon değiştirme ve basınç azaltma'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1463,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 4,
+    "q": "Aşil tendinopatisinde eksantrik egzersiz öneriliyor. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Temel hedef nedir?",
+    "options": [
+      "Tendon yüklenme kapasitesini artırmak",
+      "Sadece analjezi",
+      "Tam immobilizasyon",
+      "Hareketi sıfırlamak",
+      "Atrofiyi artırmak"
+    ],
+    "correct": 0,
+    "exp": "Eksantrik egzersiz tendon adaptasyonunu artırır.\n\nAyırt ettirici nokta: Doğru seçenek 'Tendon yüklenme kapasitesini artırmak'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1464,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 5,
+    "q": "Diz OA'da egzersiz reçetesi değerlendiriliyor. Tanısal tuzaklar dışlandığında: En uygun yaklaşım hangisidir?",
+    "options": [
+      "Tüm aktiviteyi yasaklama",
+      "Düşük etkili aerobik + kuvvetlendirme",
+      "Yüksek zıplama",
+      "Tam istirahat",
+      "Hareket kısıtlama"
+    ],
+    "correct": 1,
+    "exp": "OA'da kuvvetlendirme ve düşük etkili aerobik egzersiz faydalıdır.\n\nAyırt ettirici nokta: Doğru seçenek 'Düşük etkili aerobik + kuvvetlendirme'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1465,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 4,
+    "q": "Alt motor nöron lezyon bulgusu değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Fasikülasyon ve atrofi",
+      "Babinski",
+      "Hiperrefleksi",
+      "Spastisite",
+      "Klonus"
+    ],
+    "correct": 0,
+    "exp": "AMN lezyonu atrofi/fasikülasyon yapar.\n\nSpot ayrım: Doğru cevap 'Fasikülasyon ve atrofi'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1466,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 4,
+    "q": "Modifiye Ashworth skalası neyi değerlendirir?. Doğru seçenek hangisidir?",
+    "options": [
+      "Denge",
+      "Spastisite/tonus",
+      "Ağrı",
+      "Depresyon",
+      "Kognisyon"
+    ],
+    "correct": 1,
+    "exp": "Ashworth spastisite derecesini değerlendirir.\n\nSpot ayrım: Doğru cevap 'Spastisite/tonus'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1467,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 4,
+    "q": "Romberg pozitifliği en çok hangi sistem bozukluğunu düşündürür?. Doğru seçenek hangisidir?",
+    "options": [
+      "Motor korteks",
+      "Proprioseptif duyu/dorsal kolon",
+      "Koklea",
+      "Broca",
+      "Piramidal çapraz"
+    ],
+    "correct": 1,
+    "exp": "Göz kapatınca denge bozulması proprioseptif kaybı gösterir.\n\nSpot ayrım: Doğru cevap 'Proprioseptif duyu/dorsal kolon'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1468,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 4,
+    "q": "Fantom ağrı en çok hangi durumda görülür?. Doğru seçenek hangisidir?",
+    "options": [
+      "Otit",
+      "Katarakt",
+      "Hipotiroidi",
+      "Amputasyon sonrası",
+      "Migren"
+    ],
+    "correct": 3,
+    "exp": "Fantom ağrı amputasyon sonrası kaybedilen ekstremitede hissedilir.\n\nSpot ayrım: Doğru cevap 'Amputasyon sonrası'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1469,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermatoloji",
+    "diff": 4,
+    "q": "Ekstansör yüzlerde gümüş skuamlı plak ve tırnak pittingi var. Bu bulgular birlikte değerlendirildiğinde: En olası tanı hangisidir?",
+    "options": [
+      "Atopik dermatit",
+      "Tinea corporis",
+      "Liken planus",
+      "Pitriazis rosea",
+      "Psoriasis"
+    ],
+    "correct": 4,
+    "exp": "Psoriasis keskin sınırlı gümüş skuamlı plak yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'Psoriasis'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1470,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermatoloji",
+    "diff": 4,
+    "q": "Bilekte mor, poligonal kaşıntılı papüller ve ağızda Wickham çizgileri var. Tanısal tuzaklar dışlandığında: Tanı hangisidir?",
+    "options": [
+      "Pemfigus",
+      "Liken planus",
+      "Skabies",
+      "Seboreik dermatit",
+      "Bullöz pemfigoid"
+    ],
+    "correct": 1,
+    "exp": "Liken planus 6P ile hatırlanır.\n\nAyırt ettirici nokta: Doğru seçenek 'Liken planus'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1471,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermatoloji",
+    "diff": 5,
+    "q": "Ağız erozyonu, gevşek bül ve Nikolsky pozitifliği var. Tanısal tuzaklar dışlandığında: Hedef antijen hangisidir?",
+    "options": [
+      "Desmoglein 3",
+      "Filaggrin",
+      "BP180",
+      "Keratin 5",
+      "Tip VII kollajen"
+    ],
+    "correct": 0,
+    "exp": "Pemfigus vulgaris desmoglein antikorlarıyla olur.\n\nAyırt ettirici nokta: Doğru seçenek 'Desmoglein 3'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1472,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermatoloji",
+    "diff": 4,
+    "q": "Yaşlıda gergin büller, kaşıntı, mukozanın korunması ve Nikolsky negatif. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Tanı hangisidir?",
+    "options": [
+      "Bullöz pemfigoid",
+      "Impetigo",
+      "Pemfigus",
+      "SJS",
+      "Dermatitis herpetiformis"
+    ],
+    "correct": 0,
+    "exp": "Bullöz pemfigoid subepidermal gergin bül yapar.\n\nAyırt ettirici nokta: Doğru seçenek 'Bullöz pemfigoid'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1473,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermatoloji",
+    "diff": 4,
+    "q": "Gluten duyarlılığı ve dirsek-dizde çok kaşıntılı grouped veziküller var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Tanı-immün bulgu hangisidir?",
+    "options": [
+      "Pemfigoid-anti-desmoglein",
+      "Psoriasis-anti-CCP",
+      "Pemfigus-lineer IgG",
+      "Skabies-ANA",
+      "Dermatitis herpetiformis - granüler IgA"
+    ],
+    "correct": 4,
+    "exp": "DH'de dermal papillalarda granüler IgA birikir.\n\nAyırt ettirici nokta: Doğru seçenek 'Dermatitis herpetiformis - granüler IgA'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1474,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermatoloji",
+    "diff": 5,
+    "q": "Yeni ilaç sonrası ateş, mukozal erozyon ve epidermal ayrışma <%10. Tanısal tuzaklar dışlandığında: Tanı hangisidir?",
+    "options": [
+      "Eritema nodozum",
+      "Stevens-Johnson sendromu",
+      "TEN",
+      "Ürtiker",
+      "Pitriazis alba"
+    ],
+    "correct": 1,
+    "exp": "SJS/TEN spektrumunda <%10 SJS kabul edilir.\n\nAyırt ettirici nokta: Doğru seçenek 'Stevens-Johnson sendromu'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1475,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermatoloji",
+    "diff": 4,
+    "q": "Parmak arası gece kaşıntı, ailede benzer yakınma ve tüneller var. Bu bulgular birlikte değerlendirildiğinde: Tedavi hangisidir?",
+    "options": [
+      "Asiklovir",
+      "Flukonazol",
+      "Steroid monoterapi",
+      "Permetrin ve temaslı tedavisi",
+      "Sadece antihistaminik"
+    ],
+    "correct": 3,
+    "exp": "Skabiyeste temaslılarla birlikte permetrin tedavisi gerekir.\n\nAyırt ettirici nokta: Doğru seçenek 'Permetrin ve temaslı tedavisi'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1476,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermatoloji",
+    "diff": 4,
+    "q": "Herald patch sonrası gövdede çam ağacı dağılımlı oval lezyonlar var. Sınavın asıl ayırt ettirici ipucu dikkate alındığında: Tanı hangisidir?",
+    "options": [
+      "Liken planus",
+      "Psoriasis guttata",
+      "Tinea versicolor",
+      "Sekonder sifiliz",
+      "Pitriazis rosea"
+    ],
+    "correct": 4,
+    "exp": "Pitriazis rosea kendini sınırlayan döküntüdür.\n\nAyırt ettirici nokta: Doğru seçenek 'Pitriazis rosea'tir. Vaka, benzer şıklarla karışabilecek ipuçları içerdiği için karar verirken tek bir kelimeye değil, bulguların birlikte oluşturduğu paterne bakmak gerekir."
+  },
+  {
+    "id": 1477,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermatoloji",
+    "diff": 4,
+    "q": "Melanom ABCDE kriterinde E neyi ifade eder?. Doğru seçenek hangisidir?",
+    "options": [
+      "Evrim/değişim",
+      "Elastisite",
+      "Eozinofili",
+      "Eksizyon",
+      "Eritem"
+    ],
+    "correct": 0,
+    "exp": "Evolution/değişim alarm bulgusudur.\n\nSpot ayrım: Doğru cevap 'Evrim/değişim'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1478,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermatoloji",
+    "diff": 4,
+    "q": "Tinea capitis neden topikal tedaviyle çoğu zaman düzelmez?. Doğru seçenek hangisidir?",
+    "options": [
+      "Bulaşıcı değildir",
+      "Steroid kür sağlar",
+      "Sadece antibiyotik",
+      "Sistemik antifungal gerekir",
+      "Viraldir"
+    ],
+    "correct": 3,
+    "exp": "Kıl folikülü tutulduğu için sistemik tedavi gerekir.\n\nSpot ayrım: Doğru cevap 'Sistemik antifungal gerekir'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1479,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermatoloji",
+    "diff": 4,
+    "q": "Akne komedon patogenezi değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Foliküler hiperkeratinizasyon ve sebum artışı",
+      "Vaskülit",
+      "IgA birikimi",
+      "Melanosit kaybı",
+      "Tip IV kollajen antikoru"
+    ],
+    "correct": 0,
+    "exp": "Akne komedon, sebum ve C. acnes/inflamasyonla gelişir.\n\nSpot ayrım: Doğru cevap 'Foliküler hiperkeratinizasyon ve sebum artışı'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1480,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermatoloji",
+    "diff": 4,
+    "q": "Vitiligo temel patolojisi değerlendiriliyor. Doğru seçenek hangisidir?",
+    "options": [
+      "Subepidermal bül",
+      "Mast hücre artışı",
+      "Sebase enfeksiyon",
+      "Melanosit kaybı/otoimmün yıkım",
+      "Keratin artışı"
+    ],
+    "correct": 3,
+    "exp": "Vitiligoda melanositler kaybolur.\n\nSpot ayrım: Doğru cevap 'Melanosit kaybı/otoimmün yıkım'tir. Diğer seçenekler aynı konu çevresinde sık karıştırılan, ancak verilen ipucunu doğrudan açıklamayan yapılardır."
+  },
+  {
+    "id": 1481,
+    "ders": "Genel Cerrahi",
+    "konu": "Temel Cerrahi İlkeler",
+    "diff": 4,
+    "q": "Yetmiş iki yaşında, diyabetik ve hafif böbrek yetmezliği olan bir hasta elektif sağ hemikolektomiye alınacaktır. Ameliyat sabahı ateşi yoktur, lökosit normaldir. Cerrah profilaksi amacıyla antibiyotik planlıyor. Cerrahi alan enfeksiyonunu azaltmak için antibiyotiğin en uygun uygulanma zamanı aşağıdakilerden hangisidir?",
+    "options": [
+      "İnsizyon kapatıldıktan hemen sonra tek doz",
+      "İnsizyondan 30-60 dakika önce intravenöz uygulama",
+      "Ameliyattan 24 saat önce oral başlanıp 5 gün sürdürme",
+      "İlk ateş yükselmesi olduğunda başlama",
+      "Dren çekilene kadar günlük devam etme"
+    ],
+    "correct": 1,
+    "exp": "Temiz-kontamine abdominal cerrahide profilaktik antibiyotik, doku düzeyinin insizyon anında yeterli olması için genellikle insizyondan 30-60 dakika önce IV verilir. Gereksiz uzatma direnç ve yan etkiyi artırır; profilaksi tedavi değildir."
+  },
+  {
+    "id": 1482,
+    "ders": "Genel Cerrahi",
+    "konu": "Temel Cerrahi İlkeler",
+    "diff": 4,
+    "q": "Perfore divertikülit nedeniyle acil operasyona alınan hastada ameliyat sonrası yoğun bakımda hipotansiyon, laktat yüksekliği ve soğuk ekstremiteler gelişiyor. Uygun kristalloid resüsitasyona rağmen ortalama arter basıncı 58 mmHg kalıyor. Bu aşamada ilk tercih edilmesi gereken vazopressör aşağıdakilerden hangisidir?",
+    "options": [
+      "Dopamin",
+      "Norepinefrin",
+      "Dobutamin",
+      "Nitrogliserin",
+      "Fenilefrin tek başına"
+    ],
+    "correct": 1,
+    "exp": "Septik şokta yeterli sıvı resüsitasyonuna rağmen hipotansiyon sürüyorsa ilk tercih vazopressör norepinefrindir. Dobutamin daha çok kardiyak debi düşükse eklenir; dopamin aritmi riski nedeniyle rutin ilk seçenek değildir."
+  },
+  {
+    "id": 1483,
+    "ders": "Genel Cerrahi",
+    "konu": "Temel Cerrahi İlkeler",
+    "diff": 4,
+    "q": "Uzun süren laparotomi sonrası hasta derlenme ünitesinde hipotermik, koagülopatik ve metabolik asidozludur. Devam eden kanama nedeniyle cerrah 'ölümcül triad' geliştiğini söylüyor. Bu tablonun temel bileşenleri aşağıdakilerden hangisidir?",
+    "options": [
+      "Hipotermi, asidoz, koagülopati",
+      "Hiperglisemi, hiponatremi, lökositoz",
+      "Hipokalsemi, hipofosfatemi, hipomagnezemi",
+      "Hipertansiyon, bradikardi, solunum depresyonu",
+      "Alkaloz, trombositoz, hipertermi"
+    ],
+    "correct": 0,
+    "exp": "Travma ve büyük cerrahide ölümcül triad hipotermi, asidoz ve koagülopatidir. Birbirini besler: soğuk koagülasyonu bozar, kanama perfüzyonu düşürür, asidoz pıhtılaşmayı daha da kötüleştirir."
+  },
+  {
+    "id": 1484,
+    "ders": "Genel Cerrahi",
+    "konu": "Temel Cerrahi İlkeler",
+    "diff": 4,
+    "q": "Spot bilgi: Elektif cerrahide yara sınıflaması yapılırken, steril teknikle açılan ve solunum, gastrointestinal, genitoüriner sistem lümenine girilmeyen cerrahi yara sınıfı aşağıdakilerden hangisidir?",
+    "options": [
+      "Temiz yara",
+      "Temiz-kontamine yara",
+      "Kontamine yara",
+      "Kirli-enfekte yara",
+      "Nekrotizan yara"
+    ],
+    "correct": 0,
+    "exp": "Temiz yara; inflamasyon olmayan, teknik kırılma yaşanmayan ve aerodigestif/genitoüriner lümene girilmeyen yaradır. Kolon cerrahisi temiz-kontamine, perforasyon veya enfeksiyon varlığı kirli-enfekte sınıfa yaklaştırır."
+  },
+  {
+    "id": 1485,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz",
+    "diff": 4,
+    "q": "Genç kadın hasta diş çekimi sonrası beklenenden uzun süren kanama, sık burun kanaması ve menoraji tarifliyor. Trombosit sayısı normal, PT normal, aPTT hafif uzamış bulunuyor. Ailede benzer mukokutanöz kanama öyküsü var. En olası bozukluk ve ilk tedavi yaklaşımı hangisidir?",
+    "options": [
+      "Hemofili A; faktör IX konsantresi",
+      "von Willebrand hastalığı; desmopressin",
+      "DIC; kriyopresipitat ve heparin",
+      "K vitamini eksikliği; trombosit süspansiyonu",
+      "Trombositopenik purpura; splenektomi"
+    ],
+    "correct": 1,
+    "exp": "Mukokutanöz kanama, normal trombosit sayısı ve hafif uzamış aPTT von Willebrand hastalığını düşündürür. vWF hem trombosit adezyonu hem de faktör VIII stabilizasyonunda rol alır. Tip 1 hastalarda desmopressin vWF salınımını artırabilir."
+  },
+  {
+    "id": 1486,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz",
+    "diff": 4,
+    "q": "Sepsis nedeniyle yatan hastada yaygın ekimozlar, kateter yerlerinden sızıntı tarzı kanama ve mental durum bozukluğu gelişiyor. PT/aPTT uzamış, trombosit düşük, fibrinojen düşük ve D-dimer belirgin yüksek. Bu laboratuvar paterni en çok hangi tanıyla uyumludur?",
+    "options": [
+      "İmmün trombositopeni",
+      "Dissemine intravasküler koagülasyon",
+      "Faktör XII eksikliği",
+      "von Willebrand hastalığı",
+      "Primer fibrinolizsiz tromboz"
+    ],
+    "correct": 1,
+    "exp": "DIC'de sistemik koagülasyon aktivasyonu pıhtılaşma faktörlerini ve trombositleri tüketir. PT/aPTT uzar, fibrinojen düşer, D-dimer artar. Tedavinin temeli altta yatan nedeni kontrol etmektir."
+  },
+  {
+    "id": 1487,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz",
+    "diff": 4,
+    "q": "On sekiz yaşında erkek hasta sünnet sonrası ciddi kanama ve diz içine tekrarlayan kanama öyküsüyle geliyor. Trombosit sayısı ve PT normal, aPTT belirgin uzamış. Ailede erkek akrabalarda benzer öykü var. En olası tanı aşağıdakilerden hangisidir?",
+    "options": [
+      "Faktör VIII eksikliği",
+      "Faktör VII eksikliği",
+      "Trombosit fonksiyon bozukluğu",
+      "K vitamini eksikliği",
+      "DIC"
+    ],
+    "correct": 0,
+    "exp": "Hemartroz, X'e bağlı geçiş ve izole aPTT uzaması hemofili A'yı, yani faktör VIII eksikliğini düşündürür. Faktör VII eksikliğinde PT uzar; trombosit bozukluklarında mukokutanöz kanama daha ön plandadır."
+  },
+  {
+    "id": 1488,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz",
+    "diff": 4,
+    "q": "Spot bilgi: K vitaminine bağımlı pıhtılaşma faktörleri aşağıdaki seçeneklerin hangisinde doğru verilmiştir?",
+    "options": [
+      "I, V, VIII, XIII",
+      "II, VII, IX, X",
+      "III, IV, V, VI",
+      "VII, VIII, XI, XII",
+      "Fibrinojen ve von Willebrand faktör"
+    ],
+    "correct": 1,
+    "exp": "K vitaminine bağımlı faktörler II, VII, IX ve X ile antikoagülan protein C ve S'dir. Faktör VII'nin yarı ömrü kısa olduğu için K vitamini eksikliğinde PT genellikle erken uzar."
+  },
+  {
+    "id": 1489,
+    "ders": "Genel Cerrahi",
+    "konu": "Kan Transfüzyonu",
+    "diff": 4,
+    "q": "Masif transfüzyon yapılan travma hastasında transfüzyon başladıktan kısa süre sonra ateş, bel ağrısı, hipotansiyon ve kırmızı-kahverengi idrar gelişiyor. Direkt antiglobulin testi pozitif. Bu tablo en çok hangi transfüzyon reaksiyonunu düşündürür?",
+    "options": [
+      "Febril non-hemolitik reaksiyon",
+      "Akut hemolitik transfüzyon reaksiyonu",
+      "Transfüzyona bağlı dolaşım yüklenmesi",
+      "Transfüzyon ilişkili akut akciğer hasarı",
+      "Gecikmiş hemolitik reaksiyon"
+    ],
+    "correct": 1,
+    "exp": "ABO uyumsuzluğuna bağlı akut hemolitik reaksiyon; ateş, bel ağrısı, hipotansiyon, hemoglobinüri ve DIC ile seyredebilir. Transfüzyon hemen durdurulmalı, damar yolu korunmalı ve destek tedavisi verilmelidir."
+  },
+  {
+    "id": 1490,
+    "ders": "Genel Cerrahi",
+    "konu": "Kan Transfüzyonu",
+    "diff": 4,
+    "q": "Altmış beş yaşında hasta eritrosit süspansiyonu sonrası 2 saat içinde dispne ve bilateral infiltrasyon geliştiriyor. Ateş var, hipotansif, juguler venöz dolgunluk yok, BNP normal ve sıvı yüklenmesi bulgusu saptanmıyor. En olası tanı hangisidir?",
+    "options": [
+      "TRALI",
+      "TACO",
+      "Anafilaktik reaksiyon",
+      "Sitrat toksisitesi",
+      "Gecikmiş serolojik reaksiyon"
+    ],
+    "correct": 0,
+    "exp": "Transfüzyon ilişkili akut akciğer hasarı (TRALI), transfüzyondan sonraki 6 saat içinde non-kardiyojenik pulmoner ödemle gelir. TACO'da hipertansiyon, JVD, yüksek BNP ve sıvı yüklenmesi beklenir."
+  },
+  {
+    "id": 1491,
+    "ders": "Genel Cerrahi",
+    "konu": "Kan Transfüzyonu",
+    "diff": 4,
+    "q": "Kalp yetmezliği olan yaşlı hastaya hızlı eritrosit transfüzyonu sonrası nefes darlığı, hipertansiyon, juguler venöz dolgunluk ve akciğerde raller gelişiyor. BNP yüksek bulunuyor. Bu tablo için en uygun yaklaşım hangisidir?",
+    "options": [
+      "Transfüzyonu sürdürüp antihistaminik vermek",
+      "Diüretik, oksijen ve transfüzyon hızını kesme/yavaşlatma",
+      "Acil plazmaferez",
+      "Geniş spektrumlu antibiyotik",
+      "Epinefrin otoenjektör"
+    ],
+    "correct": 1,
+    "exp": "Bu tablo transfüzyona bağlı dolaşım yüklenmesi (TACO) ile uyumludur. Kardiyojenik pulmoner ödem gibi tedavi edilir: transfüzyonu durdur/yavaşlat, oksijen ve diüretik ver."
+  },
+  {
+    "id": 1492,
+    "ders": "Genel Cerrahi",
+    "konu": "Kan Transfüzyonu",
+    "diff": 4,
+    "q": "Spot bilgi: Taze donmuş plazmanın en uygun endikasyonu aşağıdakilerden hangisidir?",
+    "options": [
+      "Sadece hemoglobin düşüklüğü",
+      "Warfarin ilişkili ciddi kanama veya çoklu faktör eksikliği",
+      "Trombosit sayısını hızla yükseltmek",
+      "Demir eksikliği anemisini düzeltmek",
+      "Albumin replasmanı yapmak"
+    ],
+    "correct": 1,
+    "exp": "FFP, koagülasyon faktörlerini yerine koymak için kullanılır. Kanama ile birlikte çoklu faktör eksikliği veya acil warfarin reversalı gibi durumlarda anlamlıdır; anemi veya trombositopeni tedavisi değildir."
+  },
+  {
+    "id": 1493,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Metabolik Yanıt",
+    "diff": 4,
+    "q": "Ağır travma sonrası yoğun bakımda izlenen hastada hiperglisemi, artmış protein yıkımı, negatif azot dengesi ve insülin direnci gelişiyor. Bu metabolik cevabın temel hormonal yönelimi aşağıdakilerden hangisidir?",
+    "options": [
+      "İnsülin artışı ve kortizol baskılanması",
+      "Katekolamin, kortizol, glukagon artışı ve insülin direnci",
+      "Aldosteron baskılanması ve ADH azalması",
+      "Tiroid hormonlarının aşırı artışı ve glukagon azalması",
+      "Parathormon azalması ve kalsitonin artışı"
+    ],
+    "correct": 1,
+    "exp": "Travma sonrası stres yanıtında katekolamin, kortizol ve glukagon artar; periferde insülin direnci ve hiperkatabolizma gelişir. Amaç akut dönemde enerji substratı sağlamak olsa da uzamış yanıt kas kaybına yol açar."
+  },
+  {
+    "id": 1494,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Metabolik Yanıt",
+    "diff": 4,
+    "q": "Motorlu araç kazası sonrası laparotomi yapılan hastada cerrah, uzun rekonstrüktif işlem yerine kanamayı tamponlayıp kontaminasyonu sınırlayarak yoğun bakıma çıkarıyor. Hipotermi, asidoz ve koagülopati düzeltilince ikinci bakı planlanıyor. Bu strateji aşağıdakilerden hangisidir?",
+    "options": [
+      "Onkolojik en-blok rezeksiyon",
+      "Damage control cerrahisi",
+      "Interval cerrahi",
+      "Sentinel girişim",
+      "Profilaktik eksplorasyon"
+    ],
+    "correct": 1,
+    "exp": "Damage control cerrahisi fizyolojik rezervi tükenen travma hastasında hayat kurtarıcı kısa cerrahidir. Öncelik kanama ve kontaminasyon kontrolüdür; kesin onarım hasta ısı, pH ve koagülasyon açısından toparladıktan sonra yapılır."
+  },
+  {
+    "id": 1495,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Metabolik Yanıt",
+    "diff": 4,
+    "q": "Multitravmalı hastada yoğun kanama sonrası iyonize kalsiyum düşüklüğü, hipotansiyon ve kasılabilirlikte azalma saptanıyor. Masif transfüzyon sırasında bu tablo en çok hangi mekanizmayla açıklanır?",
+    "options": [
+      "Eritrositlerin potasyumu bağlaması",
+      "Sitratın kalsiyumu şelatlaması",
+      "Albuminin magnezyumu artırması",
+      "Trombositlerin laktatı tüketmesi",
+      "Plazmanın bikarbonatı azaltması"
+    ],
+    "correct": 1,
+    "exp": "Kan ürünlerindeki sitrat antikoagülanı kalsiyumu bağlar. Masif transfüzyonda sitrat yükü artınca hipokalsemi, miyokardiyal depresyon ve koagülasyon bozukluğu gelişebilir."
+  },
+  {
+    "id": 1496,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Metabolik Yanıt",
+    "diff": 4,
+    "q": "Spot bilgi: Cerrahi travmaya metabolik yanıtta erken dönemde en belirgin beklenen durum aşağıdakilerden hangisidir?",
+    "options": [
+      "Pozitif azot dengesi",
+      "Hipometabolizma ve protein sentezinde artış",
+      "Katabolizma ve glukoneogenezde artış",
+      "Tam insülin duyarlılığı",
+      "Lipolizin tamamen baskılanması"
+    ],
+    "correct": 2,
+    "exp": "Erken stres yanıtı kataboliktir. Glukoneogenez, lipoliz ve proteoliz artar; azot dengesi negatife döner. Uzun dönemde beslenme desteği ve erken mobilizasyon bu yıkımı azaltmaya çalışır."
+  },
+  {
+    "id": 1497,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 4,
+    "q": "Yetmiş kilogram ağırlığında erişkin hasta, gövde ön yüzü ve her iki üst ekstremiteyi içeren alev yanığıyla getiriliyor. Toplam yanık alanı yaklaşık %36 hesaplanıyor. Parkland formülüne göre ilk 24 saatte verilmesi gereken Ringer laktat miktarı ve ilk 8 saatte verilecek kısmı hangisidir?",
+    "options": [
+      "5 L; tamamı ilk 8 saatte",
+      "10 L; ilk 8 saatte 2.5 L",
+      "Yaklaşık 10 L; ilk 8 saatte yarısı",
+      "20 L; ilk 8 saatte tamamı",
+      "Sadece idrar çıkışına göre sıvı verilmez"
+    ],
+    "correct": 2,
+    "exp": "Parkland formülü 4 mL x kg x %yanık alanıdır. 4 x 70 x 36 = 10080 mL. Bunun yarısı yanık anından itibaren ilk 8 saatte, kalanı sonraki 16 saatte verilir. Hedef idrar çıkışıyla titrasyon yapılır."
+  },
+  {
+    "id": 1498,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 4,
+    "q": "Kapalı alanda yangından çıkarılan hastada yüz yanığı, burun kıllarında islenme, ses kısıklığı ve orofarenkste kurum görülüyor. Oksijen satürasyonu şu an kabul edilebilir düzeyde. En uygun yaklaşım hangisidir?",
+    "options": [
+      "Sadece nebul tedavi ve taburculuk",
+      "Erken endotrakeal entübasyon düşünmek",
+      "Sıvı kısıtlaması yapmak",
+      "Profilaktik trakeostomi açmak",
+      "Sadece göğüs grafisi normalse izlem gerekmez"
+    ],
+    "correct": 1,
+    "exp": "İnhalasyon hasarında üst hava yolu ödemi hızla ilerleyebilir; satürasyon başlangıçta yanıltıcı olabilir. Ses kısıklığı, kurum ve yüz yanığı varsa erken entübasyon gecikmiş zor hava yolundan daha güvenlidir."
+  },
+  {
+    "id": 1499,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 4,
+    "q": "Elektrik yanığı sonrası ön kolu çevreleyen derin yanığı olan hastada giderek artan ağrı, pasif parmak ekstansiyonuyla şiddetli ağrı ve distal nabızlarda zayıflama gelişiyor. En uygun işlem aşağıdakilerden hangisidir?",
+    "options": [
+      "Soğuk uygulama ve oral analjezi",
+      "Escharotomi/fasyotomi değerlendirmesi",
+      "Steroid başlanması",
+      "Yanık pansumanını sıkılaştırma",
+      "24 saat bekleyip ödemin azalmasını izleme"
+    ],
+    "correct": 1,
+    "exp": "Çevresel derin yanıklar eskar nedeniyle ödemi içeride hapseder ve kompartman basıncını artırır. Damar-sinir tehdidi varsa eskarotomi, elektrik yanığında derin kas hasarı varsa fasyotomi gerekebilir."
+  },
+  {
+    "id": 1500,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 4,
+    "q": "Spot bilgi: Erişkinde 'dokuzlar kuralı'na göre bir alt ekstremitenin yaklaşık yanık yüzdesi kaçtır?",
+    "options": [
+      "%4.5",
+      "%9",
+      "%18",
+      "%27",
+      "%36"
+    ],
+    "correct": 2,
+    "exp": "Erişkinde her alt ekstremite yaklaşık %18, her üst ekstremite %9, baş-boyun %9, ön gövde %18, arka gövde %18 kabul edilir. Çocuklarda baş oranı daha büyüktür."
+  },
+  {
+    "id": 1501,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 4,
+    "q": "Canlı vericiden böbrek nakli yapılan hastada greft reperfüzyonundan dakikalar sonra böbrek morarır, idrar çıkışı olmaz ve damar trombozu gelişir. Alıcıda daha önceden donöre karşı antikor bulunduğu anlaşılır. Bu rejeksiyon tipi hangisidir?",
+    "options": [
+      "Hiperakut rejeksiyon",
+      "Akut hücresel rejeksiyon",
+      "Kronik rejeksiyon",
+      "Graft-versus-host hastalığı",
+      "İskemik akut tübüler nekroz"
+    ],
+    "correct": 0,
+    "exp": "Hiperakut rejeksiyon önceden var olan anti-HLA veya ABO antikorlarıyla dakikalar-saatler içinde gelişir. Kompleman aktivasyonu ve damar trombozu grefti hemen kaybettirebilir."
+  },
+  {
+    "id": 1502,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 4,
+    "q": "Böbrek naklinden 3 hafta sonra kreatinin yükselen hastada biyopside interstisyel lenfosit infiltrasyonu ve tübülit saptanıyor. Donöre özgü antikor belirgin değil. En olası mekanizma hangisidir?",
+    "options": [
+      "T hücre aracılı akut rejeksiyon",
+      "Önceden var olan ABO antikoru",
+      "Kalsiyum oksalat kristal birikimi",
+      "CMV koliti",
+      "Kronik allogreft vaskülopatisi"
+    ],
+    "correct": 0,
+    "exp": "Akut hücresel rejeksiyon genellikle günler-haftalar içinde T lenfosit aracılı gelişir ve biyopside tübülit/interstisyel infiltrasyon görülebilir. Tedavide steroid pulse ve immünsüpresyon düzenlemesi düşünülür."
+  },
+  {
+    "id": 1503,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 4,
+    "q": "Karaciğer nakli sonrası takrolimus kullanan hastada tremor, hipertansiyon ve kreatinin artışı gelişiyor. Bu ilacın en önemli doz kısıtlayıcı toksisitesi aşağıdakilerden hangisidir?",
+    "options": [
+      "Kemik iliği aplazisi",
+      "Nefrotoksisite",
+      "İrreversibl işitme kaybı",
+      "Pankreas nekrozu",
+      "Hiperkalsemi"
+    ],
+    "correct": 1,
+    "exp": "Kalsinörin inhibitörleri olan takrolimus ve siklosporinin en önemli toksisitelerinden biri nefrotoksisitedir. Ayrıca hipertansiyon, nörotoksisite ve elektrolit bozuklukları görülebilir."
+  },
+  {
+    "id": 1504,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 4,
+    "q": "Spot bilgi: Transplantasyonda graft-versus-host hastalığı en klasik olarak hangi nakil tipinden sonra beklenir?",
+    "options": [
+      "Kadavradan böbrek nakli",
+      "Kornea nakli",
+      "Allojenik hematopoietik kök hücre nakli",
+      "Kalça protezi",
+      "Otolog deri grefti"
+    ],
+    "correct": 2,
+    "exp": "GVHH, donör immün hücrelerinin alıcı dokularına saldırmasıdır ve en klasik allojenik hematopoietik kök hücre naklinden sonra görülür. Deri, karaciğer ve gastrointestinal sistem sık hedeflerdir."
+  },
+  {
+    "id": 1505,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid",
+    "diff": 4,
+    "q": "Otuz iki yaşında kadın hastada tiroid nodülü nedeniyle yapılan İİAB'de nükleer yarıklar, psödoinklüzyonlar ve 'Orphan Annie eye' nükleusları tarifleniyor. Servikal lenf nodu metastazı da saptanıyor. En olası tümör aşağıdakilerden hangisidir?",
+    "options": [
+      "Folliküler tiroid karsinomu",
+      "Papiller tiroid karsinomu",
+      "Medüller tiroid karsinomu",
+      "Anaplastik karsinom",
+      "Hürthle hücreli adenom"
+    ],
+    "correct": 1,
+    "exp": "Papiller tiroid karsinomu en sık tiroid kanseridir; nükleer yarık, psödoinklüzyon, Orphan Annie nükleusu ve psammom cisimcikleri tipiktir. Lenfatik yayılım sık olabilir."
+  },
+  {
+    "id": 1506,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid",
+    "diff": 4,
+    "q": "Ailesinde MEN2 öyküsü olan hastada tiroid nodülü ve serum kalsitonin yüksekliği saptanıyor. Patolojide parafolliküler C hücre kökenli tümör ve amiloid stroma görülüyor. Bu hastada araştırılması gereken genetik bozukluk hangisidir?",
+    "options": [
+      "APC mutasyonu",
+      "RET protoonkogen mutasyonu",
+      "BRCA1 mutasyonu",
+      "VHL delesyonu",
+      "TP53 germline mutasyonu"
+    ],
+    "correct": 1,
+    "exp": "Medüller tiroid karsinomu C hücre kökenlidir, kalsitonin salgılar ve amiloid stroma yapabilir. MEN2 ile ilişkili formda RET protoonkogen mutasyonu araştırılır."
+  },
+  {
+    "id": 1507,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid",
+    "diff": 4,
+    "q": "Toksik multinodüler guatr nedeniyle opere edilen hastada postoperatif dönemde stridor, perioral uyuşma ve el kasılmaları gelişiyor. Chvostek bulgusu pozitif. En olası neden aşağıdakilerden hangisidir?",
+    "options": [
+      "Rekürren laringeal sinir bilateral kesisi",
+      "Hipokalsemiye bağlı tetani",
+      "Tiroid fırtınası",
+      "Boyun hematomu olmadan trakeomalazi",
+      "Hiperkalemi"
+    ],
+    "correct": 1,
+    "exp": "Tiroidektomi sonrası hipokalsemi paratiroid bezlerin hasarı veya devaskülarizasyonuyla gelişebilir. Perioral uyuşma, tetani, Chvostek/Trousseau bulguları tipiktir; kalsiyum replasmanı gerekebilir."
+  },
+  {
+    "id": 1508,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid",
+    "diff": 4,
+    "q": "Spot bilgi: Tiroidektomi sonrası tek taraflı rekürren laringeal sinir hasarında en beklenen klinik bulgu aşağıdakilerden hangisidir?",
+    "options": [
+      "Kalıcı hipokalsemi",
+      "Ses kısıklığı",
+      "Dil deviasyonu",
+      "Omuz düşüklüğü",
+      "Tat duyusu kaybı"
+    ],
+    "correct": 1,
+    "exp": "Rekürren laringeal sinir vokal kord motor innervasyonunu sağlar. Tek taraflı hasarda ses kısıklığı, bilateral hasarda hava yolu obstrüksiyonu ve stridor gelişebilir."
+  },
+  {
+    "id": 1509,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal",
+    "diff": 4,
+    "q": "Baş ağrısı, terleme ve çarpıntı atakları olan hastada adrenal kitle saptanıyor. Kan basıncı ataklar sırasında 230/120 mmHg'ye çıkıyor. Cerrahi öncesi hazırlıkta en doğru ilaç sıralaması aşağıdakilerden hangisidir?",
+    "options": [
+      "Önce beta bloker, sonra alfa bloker",
+      "Önce alfa bloker, gerekirse sonra beta bloker",
+      "Sadece ACE inhibitörü",
+      "Sadece diüretik",
+      "Kalsiyum kanal blokerinden sonra tiroksin"
+    ],
+    "correct": 1,
+    "exp": "Feokromositomada beta blokajı alfa blokajdan önce verilirse karşılıksız alfa uyarısıyla hipertansif kriz gelişebilir. Önce alfa blokajı, hacim replasmanı ve gerekirse sonrasında beta blokaj yapılır."
+  },
+  {
+    "id": 1510,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal",
+    "diff": 4,
+    "q": "Dirençli hipertansiyonu olan hastada hipokalemi ve metabolik alkaloz saptanıyor. Aldosteron yüksek, renin baskılı. BT'de tek taraflı adrenal adenom var. En olası tanı hangisidir?",
+    "options": [
+      "Addison hastalığı",
+      "Primer hiperaldosteronizm",
+      "Sekonder hiperaldosteronizm",
+      "Konjenital adrenal hiperplazi",
+      "Adrenal medüller hiperplazi"
+    ],
+    "correct": 1,
+    "exp": "Primer hiperaldosteronizmde otonom aldosteron salınımı hipertansiyon, hipokalemi ve metabolik alkaloz yapar. Renin baskılıdır. Tek taraflı adenomda uygun hastada adrenalektomi düşünülebilir."
+  },
+  {
+    "id": 1511,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal",
+    "diff": 4,
+    "q": "Adrenal insidentaloma saptanan 58 yaşındaki hastada kitle 5.2 cm, düzensiz sınırlı ve kontrast washout'u şüpheli. Hasta asemptomatiktir. İlk değerlendirmede aşağıdakilerden hangisi en doğrudur?",
+    "options": [
+      "Sadece 10 yıl sonra kontrol",
+      "Fonksiyonel hormon taraması ve malignite riski açısından cerrahi değerlendirme",
+      "Biyopsi ile kesin tanı, hormon bakmaya gerek yok",
+      "Sadece antibiyotik tedavisi",
+      "Acil bilateral adrenalektomi"
+    ],
+    "correct": 1,
+    "exp": "Adrenal insidentalomada hem fonksiyonellik hem malignite riski değerlendirilir. Kortizol otonomisi, feokromositoma ve hiperaldosteronizm uygun hastada taranır. Büyük ve görüntüleme olarak şüpheli lezyonlar cerrahi açıdan değerlendirilir."
+  },
+  {
+    "id": 1512,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal",
+    "diff": 4,
+    "q": "Spot bilgi: Adrenal korteksin zona glomeruloza tabakasından başlıca hangi hormon sentezlenir?",
+    "options": [
+      "Kortizol",
+      "Aldosteron",
+      "Adrenalin",
+      "DHEA-S",
+      "Dopamin"
+    ],
+    "correct": 1,
+    "exp": "Zona glomeruloza mineralokortikoid, yani aldosteron üretir. Zona fasciculata kortizol, zona reticularis androjen üretir; katekolaminler adrenal medulladan salgılanır."
+  },
+  {
+    "id": 1513,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak",
+    "diff": 4,
+    "q": "Daha önce açık apendektomi ve sezaryen geçirmiş hastada kramp tarzı karın ağrısı, kusma ve gaz-gaita çıkaramama gelişiyor. Grafide santral dilate ince barsak ansları ve hava-sıvı seviyeleri var. Peritonit ve strangülasyon bulgusu yok. En olası neden ve ilk yaklaşım hangisidir?",
+    "options": [
+      "Kolon kanseri; acil sağ hemikolektomi",
+      "Adezyona bağlı ince barsak obstrüksiyonu; nazogastrik dekompresyon ve sıvı ile yakın izlem",
+      "Meckel divertikülü; elektif divertikülektomi",
+      "Akut pankreatit; oral beslenme",
+      "Ülseratif kolit; steroid"
+    ],
+    "correct": 1,
+    "exp": "Geçirilmiş laparotomi sonrası ince barsak obstrüksiyonunun en sık nedeni adezyondur. Peritonit, strangülasyon veya kapalı loop yoksa başlangıçta sıvı, elektrolit düzeltme, NG dekompresyon ve yakın izlem uygundur."
+  },
+  {
+    "id": 1514,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak",
+    "diff": 4,
+    "q": "İnce barsak obstrüksiyonu ile izlenen hastada sürekli ağrı, ateş, taşikardi, lökositoz ve metabolik asidoz gelişiyor. Karında hassasiyet artmış, BT'de barsak duvarında azalmış kontrastlanma var. En uygun yaklaşım hangisidir?",
+    "options": [
+      "Oral laksatif vermek",
+      "Konservatif izleme devam etmek",
+      "Acil cerrahi eksplorasyon",
+      "Kolonoskopik dekompresyon",
+      "Yalnızca antispazmodik"
+    ],
+    "correct": 2,
+    "exp": "Sürekli ağrı, sistemik toksisite, asidoz ve duvar kontrastlanmasının azalması strangülasyon/iskemiyi düşündürür. Bu durumda konservatif izlem tehlikelidir; acil cerrahi gerekir."
+  },
+  {
+    "id": 1515,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak",
+    "diff": 4,
+    "q": "Terminal ileum rezeksiyonu sonrası hastada kronik sulu ishal gelişiyor. Kolonoskopi normal, enfeksiyon yok. Bu ishalin en olası mekanizması hangisidir?",
+    "options": [
+      "Safra asitlerinin kolona geçerek sekresyonu artırması",
+      "Mide asidinin tamamen kaybolması",
+      "Pankreas enzimlerinin aşırı üretimi",
+      "Kolonda villus atrofisi",
+      "Aldosteron eksikliği"
+    ],
+    "correct": 0,
+    "exp": "Terminal ileum safra asidi emilim yeridir. Rezeksiyon sonrası safra asitleri kolona ulaşır ve sekretuar ishal yapar. Daha geniş rezeksiyonlarda yağ malabsorpsiyonu da eklenir."
+  },
+  {
+    "id": 1516,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak",
+    "diff": 4,
+    "q": "Spot bilgi: İnce barsak obstrüksiyonunda düz karın grafisinde en tipik bulgu aşağıdakilerden hangisidir?",
+    "options": [
+      "Periferik haustralı kolon gazı",
+      "Santral dilate anslar ve çoklu hava-sıvı seviyeleri",
+      "Safra kesesinde porselen görünüm",
+      "Karaciğer içinde hava olmadan kalsifikasyon",
+      "Sol diyafram altında tek hava kabarcığı"
+    ],
+    "correct": 1,
+    "exp": "İnce barsak obstrüksiyonunda santral yerleşimli dilate ince barsak ansları ve hava-sıvı seviyeleri beklenir. Kesin karar çoğu zaman klinik ve BT ile verilir."
+  },
+  {
+    "id": 1517,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenter",
+    "diff": 5,
+    "q": "Yetmiş sekiz yaşında atriyal fibrilasyonu olan hasta, fizik muayene bulgularına göre çok daha şiddetli karın ağrısıyla acile geliyor. Laktat yüksek, erken dönemde karın yumuşak. BT anjiyografide superior mezenter arter tıkanıklığı izleniyor. En olası tanı hangisidir?",
+    "options": [
+      "Akut apandisit",
+      "Akut mezenter iskemi",
+      "Perfore divertikülit",
+      "İrritabl barsak sendromu",
+      "Basit gastroenterit"
+    ],
+    "correct": 1,
+    "exp": "Muayene bulgularıyla orantısız şiddetli karın ağrısı ve atriyal fibrilasyon akut embolik mezenter iskeminin klasik ipuçlarıdır. Erken tanı ve revaskülarizasyon hayat kurtarır."
+  },
+  {
+    "id": 1518,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenter",
+    "diff": 5,
+    "q": "Yoğun bakımda yüksek doz vazopressör alan septik hastada beslenme sonrası karın distansiyonu, laktat artışı ve kanlı dışkılama gelişiyor. BT'de belirgin büyük damar oklüzyonu yok. En olası mekanizma hangisidir?",
+    "options": [
+      "Non-oklüziv mezenter iskemi",
+      "İleal Crohn aktivasyonu",
+      "Alerjik proktokolit",
+      "Kolon polipozisi",
+      "Splenik arter anevrizması"
+    ],
+    "correct": 0,
+    "exp": "Non-oklüziv mezenter iskemi düşük akım ve vazokonstriksiyonla gelişir; özellikle şok, vazopressör ve ağır kardiyak yetmezlikte görülür. Büyük damar tıkalı olmayabilir ama barsak hipoperfüzyondadır."
+  },
+  {
+    "id": 1519,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenter",
+    "diff": 4,
+    "q": "Altmış beş yaşında sigara içen hastada yemeklerden 20-30 dakika sonra başlayan karın ağrısı nedeniyle yemekten kaçınma ve belirgin kilo kaybı var. Doppler/BT'de çölyak ve SMA'da ciddi aterosklerotik darlık saptanıyor. Bu tablo hangisidir?",
+    "options": [
+      "Akut pankreatit",
+      "Kronik mezenter iskemi",
+      "Safra koliği",
+      "Ülseratif kolit",
+      "Fonksiyonel dispepsi"
+    ],
+    "correct": 1,
+    "exp": "Kronik mezenter iskemi 'abdominal angina' yapar: postprandiyal ağrı, yemekten korkma ve kilo kaybı. Genellikle çok damar aterosklerotik hastalık söz konusudur."
+  },
+  {
+    "id": 1520,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenter",
+    "diff": 4,
+    "q": "Spot bilgi: Mezenter ven trombozunda arteriyel emboliye göre daha sık beklenen klinik özellik aşağıdakilerden hangisidir?",
+    "options": [
+      "Aniden saniyeler içinde gelen ağrı",
+      "Daha sinsi başlayan karın ağrısı ve hiperkoagülabilite öyküsü",
+      "Daima normal laktat ve normal BT",
+      "Her zaman ağrısız rektal kanama",
+      "Kesin tanı için sadece direkt grafi yeterlidir"
+    ],
+    "correct": 1,
+    "exp": "Mezenter ven trombozu sıklıkla daha sinsi seyreder ve trombofili, malignite, portal hipertansiyon veya inflamatuvar hastalıklarla ilişkili olabilir. BT venöz faz tanıda değerlidir."
+  },
+  {
+    "id": 1521,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon ve Rektum",
+    "diff": 4,
+    "q": "Altmış yaşındaki hastada sol alt kadran ağrısı, ateş ve lökositoz var. BT'de sigmoid kolon çevresinde yağlı doku dansitesinde artış ve divertiküller görülüyor, serbest perforasyon yok. En olası tanı ve yaklaşım hangisidir?",
+    "options": [
+      "Akut divertikülit; klinik duruma göre antibiyotik ve izlem",
+      "Kolon volvulusu; acil total kolektomi",
+      "Crohn hastalığı; anti-TNF hemen başlama",
+      "İskemik kolit; sağ hemikolektomi şart",
+      "Rektal prolapsus; manuel redüksiyon"
+    ],
+    "correct": 0,
+    "exp": "Sol alt kadran ağrısı, ateş ve BT'de sigmoid divertikülit bulguları akut divertiküliti düşündürür. Komplike olmayan olguda antibiyotik/izlem, komplike apse-perforasyonda drenaj veya cerrahi gündeme gelir."
+  },
+  {
+    "id": 1522,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon ve Rektum",
+    "diff": 4,
+    "q": "Demir eksikliği anemisi ve dışkıda gizli kan pozitifliği olan 68 yaşındaki hastanın kolonoskopisinde sağ kolonda ülserovejetan kitle saptanıyor. Evreleme için en uygun sonraki yaklaşım hangisidir?",
+    "options": [
+      "Sadece tümör belirteciyle takip",
+      "Toraks-abdomen-pelvis görüntüleme ve cerrahi rezeksiyon planlama",
+      "Önce 6 ay demir tedavisi",
+      "Acil radyoterapi tek başına",
+      "Kolon temizliği yapmadan kapsül endoskopi"
+    ],
+    "correct": 1,
+    "exp": "Kolon kanserinde tanı kolonoskopik biyopsiyle konur; evreleme için kesitsel görüntüleme yapılır. Rezektabl kolon kanserinde temel tedavi onkolojik cerrahi rezeksiyondur."
+  },
+  {
+    "id": 1523,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon ve Rektum",
+    "diff": 4,
+    "q": "Kırk iki yaşındaki hastada sağ kolon kanseri saptanıyor. Ailesinde endometrium ve kolon kanseri öyküsü var. Kolonoskopide yüzlerce polip yok. Tümörde mikrosatellit instabilitesi düşünülüyor. En olası sendrom hangisidir?",
+    "options": [
+      "FAP",
+      "Lynch sendromu",
+      "Peutz-Jeghers sendromu",
+      "Cowden sendromu",
+      "MEN1"
+    ],
+    "correct": 1,
+    "exp": "Lynch sendromu DNA mismatch repair gen kusurlarıyla ilişkilidir; sağ kolon kanseri ve endometrium kanseri riski artar. FAP'ta yüzlerce adenomatöz polip beklenir."
+  },
+  {
+    "id": 1524,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon ve Rektum",
+    "diff": 4,
+    "q": "Spot bilgi: Rektum kanserinde kolon kanserinden farklı olarak lokal evrelemede özellikle kullanılan görüntüleme yöntemi aşağıdakilerden hangisidir?",
+    "options": [
+      "Beyin MR",
+      "Pelvik MR",
+      "Direkt akciğer grafisi",
+      "Tiroid sintigrafisi",
+      "Kemik mineral dansitometrisi"
+    ],
+    "correct": 1,
+    "exp": "Rektum kanserinde mezorektal fasya, sfinkter ilişkisi ve lokal evre için pelvik MR kritik önemdedir. Bu bilgi neoadjuvan tedavi ve cerrahi planı belirler."
+  },
+  {
+    "id": 1525,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix",
+    "diff": 4,
+    "q": "Yirmi yaşında hastada iştahsızlık, periumblikal başlayıp sağ alt kadrana yerleşen ağrı ve hafif ateş var. Muayenede McBurney noktasında hassasiyet ve rebound saptanıyor. En olası tanı hangisidir?",
+    "options": [
+      "Akut apandisit",
+      "Akut kolesistit",
+      "Üreter taşı",
+      "Peptik ülser perforasyonu",
+      "Akut pankreatit"
+    ],
+    "correct": 0,
+    "exp": "Klasik apandisit ağrısı visseral olarak periumblikal başlar, parietal periton tutulunca sağ alt kadrana lokalize olur. İştahsızlık ve hafif ateş tanıyı destekler."
+  },
+  {
+    "id": 1526,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix",
+    "diff": 4,
+    "q": "Sağ alt kadran ağrısı olan hastada kalça ekstansiyonu ile ağrı artıyor. Cerrah retroçekal yerleşimli apandisiti düşündüren manevranın pozitif olduğunu söylüyor. Bu bulgu aşağıdakilerden hangisidir?",
+    "options": [
+      "Psoas bulgusu",
+      "Murphy bulgusu",
+      "Courvoisier bulgusu",
+      "Grey Turner bulgusu",
+      "Trousseau bulgusu"
+    ],
+    "correct": 0,
+    "exp": "Retroçekal apandisit psoas kasını irrite edebilir. Kalçanın ekstansiyonu ile ağrının artması psoas bulgusudur. Obturator bulgusu pelvik apandisitte görülebilir."
+  },
+  {
+    "id": 1527,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix",
+    "diff": 4,
+    "q": "Apandisit semptomları 7 gündür süren hastada sağ alt kadranda kitle palpe ediliyor. BT'de sınırlı apendiküler apse var, yaygın peritonit yok. Hemodinamik olarak stabil. En uygun yaklaşım hangisidir?",
+    "options": [
+      "Acil geniş sağ hemikolektomi",
+      "Antibiyotik ve uygun apsede perkütan drenaj, daha sonra seçilmiş olguda interval apendektomi",
+      "Sadece oral analjezi ve taburculuk",
+      "Kolonoskopi ile apendiks çıkarılması",
+      "Yüksek doz steroid"
+    ],
+    "correct": 1,
+    "exp": "Sınırlı apendiküler apse/flegmon stabil hastada antibiyotik ve uygun ise perkütan drenajla yönetilebilir. Yaygın peritonit veya sepsis varsa cerrahi gerekir."
+  },
+  {
+    "id": 1528,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix",
+    "diff": 4,
+    "q": "Spot bilgi: Gebelik ilerledikçe apendiksin anatomik yerleşimi genellikle hangi yöne doğru yer değiştirir?",
+    "options": [
+      "Aşağı ve mediale",
+      "Yukarı ve laterale",
+      "Tamamen sol alt kadrana",
+      "Pelvis tabanına",
+      "Hiç yer değiştirmez"
+    ],
+    "correct": 1,
+    "exp": "Büyüyen uterus apendiksi yukarı ve laterale doğru iter. Bu nedenle gebelikte apandisit ağrısı klasik sağ alt kadran dışında daha üst kadranlarda hissedilebilir."
+  },
+  {
+    "id": 1529,
+    "ders": "Genel Cerrahi",
+    "konu": "Anal Kanal ve Fistül",
+    "diff": 4,
+    "q": "Otuz yaşında erkek hasta şiddetli anal ağrı, ateş ve perianal bölgede fluktuasyon veren kızarıklıkla geliyor. Rektal tuşe çok ağrılı. En uygun tedavi aşağıdakilerden hangisidir?",
+    "options": [
+      "Sadece oral antibiyotik ve bekleme",
+      "Acil insizyon ve drenaj",
+      "Elektif kolonoskopi sonrası karar",
+      "Topikal steroid",
+      "Hemoroid band ligasyonu"
+    ],
+    "correct": 1,
+    "exp": "Perianal apse tedavisi drenajdır. Antibiyotik tek başına yeterli değildir; diyabet, immünsüpresyon, selülit veya sistemik bulguda drenaja eklenebilir."
+  },
+  {
+    "id": 1530,
+    "ders": "Genel Cerrahi",
+    "konu": "Anal Kanal ve Fistül",
+    "diff": 4,
+    "q": "Perianal apse drenajı yapılan hastada aylar sonra aynı bölgede aralıklı pürülan akıntı gelişiyor. Muayenede dış açıklık ve anal kanala uzanan trakt düşünülüyor. En olası patogenez hangisidir?",
+    "options": [
+      "Kriptoglandüler enfeksiyona bağlı fistül gelişimi",
+      "HPV'nin direkt damar invazyonu",
+      "Üreter taşının anal kanala açılması",
+      "Safra asitlerinin anal kanalı yakması",
+      "İskemik kolitin perianal yayılımı"
+    ],
+    "correct": 0,
+    "exp": "Anal fistüllerin çoğu kriptoglandüler enfeksiyon ve apse sonrası gelişir. Traktın sfinkterle ilişkisi tedaviyi belirler; gereksiz geniş fistülotomi inkontinans yapabilir."
+  },
+  {
+    "id": 1531,
+    "ders": "Genel Cerrahi",
+    "konu": "Anal Kanal ve Fistül",
+    "diff": 4,
+    "q": "Genç hastada dışkılama sırasında cam kesiği gibi ağrı ve sonrasında saatlerce süren spazm tarifleniyor. Tuvalet kağıdında parlak kırmızı kan var. Muayenede posterior orta hatta fissür görülüyor. İlk tedavide en uygun yaklaşım hangisidir?",
+    "options": [
+      "Acil abdominoperineal rezeksiyon",
+      "Lif, dışkı yumuşatıcı, sıcak oturma banyosu ve topikal sfinkter gevşetici",
+      "Yüksek doz sistemik kemoterapi",
+      "Sadece antibiyotik",
+      "Total kolektomi"
+    ],
+    "correct": 1,
+    "exp": "Anal fissür genellikle posterior orta hatta ağrılı lineer yırtıktır. İlk tedavi dışkının yumuşatılması ve internal sfinkter spazmının azaltılmasıdır; dirençli kronik fissürde lateral internal sfinkterotomi düşünülebilir."
+  },
+  {
+    "id": 1532,
+    "ders": "Genel Cerrahi",
+    "konu": "Anal Kanal ve Fistül",
+    "diff": 4,
+    "q": "Spot bilgi: İç hemoroidlerin en tipik yakınması aşağıdakilerden hangisidir?",
+    "options": [
+      "Ağrısız parlak kırmızı rektal kanama",
+      "Şiddetli ateş ve sepsis",
+      "Safralı kusma",
+      "Siyah katran renkli dışkı ve hematemez",
+      "Belirgin sağ üst kadran ağrısı"
+    ],
+    "correct": 0,
+    "exp": "İç hemoroidler dentat çizgi üzerinde yerleşir ve visseral innervasyon nedeniyle çoğunlukla ağrısız parlak kırmızı kanama yapar. Tromboze dış hemoroid ise ağrılıdır."
+  },
+  {
+    "id": 1533,
+    "ders": "Genel Cerrahi",
+    "konu": "Portal Hipertansiyon",
+    "diff": 5,
+    "q": "Sirozu olan hasta bol hematemezle acile geliyor. Hipotansif, Hb düşmüş. İlk resüsitasyon başlatılıyor. Varis kanaması düşünülüyor. Farmakolojik ve endoskopik yaklaşım açısından en uygun seçenek hangisidir?",
+    "options": [
+      "Sadece proton pompa inhibitörü ve taburculuk",
+      "Vazoaktif tedavi (ör. oktreotid/terlipressin), antibiyotik profilaksisi ve acil endoskopik bant ligasyonu",
+      "Acil kolesistektomi",
+      "Kolonoskopik polipektomi",
+      "Heparin infüzyonu"
+    ],
+    "correct": 1,
+    "exp": "Özofagus varis kanamasında resüsitasyonla birlikte vazoaktif ajan, antibiyotik profilaksisi ve erken endoskopik bant ligasyonu uygulanır. Kontrol edilemeyen kanamada balon tamponad köprü olabilir; TIPS düşünülür."
+  },
+  {
+    "id": 1534,
+    "ders": "Genel Cerrahi",
+    "konu": "Portal Hipertansiyon",
+    "diff": 4,
+    "q": "Tekrarlayan varis kanamaları olan siroz hastasında optimal medikal ve endoskopik tedaviye rağmen kanama kontrol edilemiyor. Karaciğer nakline köprü olarak portal basıncı düşürmek için en uygun girişim hangisidir?",
+    "options": [
+      "TIPS",
+      "Splenektomi tek başına",
+      "Total gastrektomi",
+      "Acil appendektomi",
+      "Perkütan nefrostomi"
+    ],
+    "correct": 0,
+    "exp": "TIPS, portal sistem ile hepatik ven arasında şant oluşturarak portal basıncı düşürür. Refrakter varis kanaması veya refrakter asitte kullanılabilir; hepatik ensefalopati riskini artırabilir."
+  },
+  {
+    "id": 1535,
+    "ders": "Genel Cerrahi",
+    "konu": "Portal Hipertansiyon",
+    "diff": 4,
+    "q": "Karaciğer sirozu olan hastada masif splenomegali, trombositopeni ve lökopeni saptanıyor. Kemik iliği normal. Bu sitopenilerin en olası nedeni hangisidir?",
+    "options": [
+      "Hiposplenizm",
+      "Hipersplenizm",
+      "Faktör V Leiden",
+      "Akut lösemi",
+      "Vitamin B12 fazlalığı"
+    ],
+    "correct": 1,
+    "exp": "Portal hipertansiyona bağlı splenomegali hipersplenizm yaparak trombosit ve lökositlerin sekestrasyonuna neden olabilir. Kemik iliği normal veya kompansatuvar aktif olabilir."
+  },
+  {
+    "id": 1536,
+    "ders": "Genel Cerrahi",
+    "konu": "Portal Hipertansiyon",
+    "diff": 4,
+    "q": "Spot bilgi: Portal hipertansiyonun en sık nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Siroz",
+      "Akut apandisit",
+      "Medüller tiroid kanseri",
+      "Pankreas divisum",
+      "İnguinal herni"
+    ],
+    "correct": 0,
+    "exp": "Dünya genelinde portal hipertansiyonun en sık nedeni sirozdur. Artmış intrahepatik direnç portal ven basıncını yükseltir; varis, asit ve hipersplenizm gelişebilir."
+  },
+  {
+    "id": 1537,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra Yolları",
+    "diff": 5,
+    "q": "Yetmiş yaşındaki hastada ateş, sarılık ve sağ üst kadran ağrısı var. Hipotansiyon ve konfüzyon ekleniyor. Laboratuvarda kolestaz belirgin, USG'de koledok dilate. En uygun acil yaklaşım hangisidir?",
+    "options": [
+      "Elektif poliklinik kontrolü",
+      "Geniş spektrumlu antibiyotik ve acil ERCP ile biliyer drenaj",
+      "Sadece oral ursodeoksikolik asit",
+      "Acil total gastrektomi",
+      "Steroid pulse tedavisi"
+    ],
+    "correct": 1,
+    "exp": "Charcot triadı kolanjiti düşündürür; hipotansiyon ve konfüzyon Reynolds pentadıdır ve ağır kolanjiti gösterir. Antibiyotik ve acil biliyer dekompresyon gerekir; ERCP genellikle ilk tercihtir."
+  },
+  {
+    "id": 1538,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra Yolları",
+    "diff": 4,
+    "q": "Sağ üst kadran ağrısı, ateş ve lökositozu olan hastada ultrasonografide safra kesesi duvar kalınlığı artmış, taş ve sonografik Murphy bulgusu mevcut. En olası tanı hangisidir?",
+    "options": [
+      "Akut kolesistit",
+      "Akut apandisit",
+      "Mezenter iskemi",
+      "Ülseratif kolit",
+      "Pilor stenozu"
+    ],
+    "correct": 0,
+    "exp": "Akut kolesistit genellikle sistik kanal obstrüksiyonu sonrası gelişir. Sağ üst kadran ağrısı, ateş, lökositoz ve USG'de taş, duvar kalınlaşması, perikolesistik sıvı tanıyı destekler."
+  },
+  {
+    "id": 1539,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra Yolları",
+    "diff": 4,
+    "q": "Safra taşı öyküsü olan hastada epigastrik ağrı sırta vuruyor; amilaz/lipaz yüksek. Total bilirubin yükselmiş ve koledokta taş şüphesi var. Bu hastada akut pankreatite eşlik eden kolanjit veya persistan obstrüksiyon varsa en uygun girişim hangisidir?",
+    "options": [
+      "Erken ERCP",
+      "Acil splenektomi",
+      "Kolonoskopik dekompresyon",
+      "Sadece oral beslenme",
+      "Acil tiroidektomi"
+    ],
+    "correct": 0,
+    "exp": "Safra taşı pankreatitinde kolanjit veya süren biliyer obstrüksiyon varsa erken ERCP endikedir. Her pankreatit olgusuna rutin ERCP yapılmaz; stabil olguda destek tedavisi ve sonrasında kolesistektomi planlanır."
+  },
+  {
+    "id": 1540,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra Yolları",
+    "diff": 4,
+    "q": "Spot bilgi: Primer sklerozan kolanjit en güçlü olarak hangi hastalıkla ilişkilidir?",
+    "options": [
+      "Ülseratif kolit",
+      "Graves hastalığı",
+      "Akut apandisit",
+      "Feokromositoma",
+      "Hemofili A"
+    ],
+    "correct": 0,
+    "exp": "PSC intra ve ekstrahepatik safra yollarında multifokal darlıklar yapar ve ülseratif kolitle güçlü ilişkilidir. Kolanjiyokarsinom riski artar."
+  },
+  {
+    "id": 1541,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Karına Yaklaşım",
+    "diff": 5,
+    "q": "NSAİİ kullanan yaşlı hastada ani başlayan şiddetli epigastrik ağrı ve yaygın peritonit bulguları gelişiyor. Ayakta akciğer grafisinde diyafram altında serbest hava görülüyor. En olası tanı hangisidir?",
+    "options": [
+      "Perfore peptik ülser",
+      "Basit gastrit",
+      "Akut hepatit",
+      "İrritabl barsak sendromu",
+      "Renal kolik"
+    ],
+    "correct": 0,
+    "exp": "Peritonit ve diyafram altı serbest hava içi boş organ perforasyonunu düşündürür. NSAİİ öyküsü ve epigastrik başlangıç perfore peptik ülseri destekler; cerrahi acildir."
+  },
+  {
+    "id": 1542,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Karına Yaklaşım",
+    "diff": 5,
+    "q": "Yetmiş yaşında erkek hasta ani karın ve bel ağrısı, senkop ve hipotansiyonla getiriliyor. Fizik muayenede pulsatil abdominal kitle hissediliyor. En olası tanı ve yaklaşım hangisidir?",
+    "options": [
+      "Rüptüre abdominal aort anevrizması; acil vasküler cerrahi",
+      "Akut sistit; oral antibiyotik",
+      "Renal kolik; evde izlem",
+      "Gastrit; antasit",
+      "Kas spazmı; fizik tedavi"
+    ],
+    "correct": 0,
+    "exp": "Hipotansiyon, bel/karın ağrısı ve pulsatil kitle rüptüre AAA için klasik ama her zaman tam olmayan triaddır. Hemodinamik instabil hastada gecikmeden acil müdahale gerekir."
+  },
+  {
+    "id": 1543,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Karına Yaklaşım",
+    "diff": 4,
+    "q": "Akut karınla gelen hastada cerrah 'periton irritasyonu var' diyor. Aşağıdaki bulgulardan hangisi parietal periton irritasyonunu en iyi destekler?",
+    "options": [
+      "Yaygın kaşıntı",
+      "Rebound hassasiyet ve defans",
+      "Sadece sulu burun akıntısı",
+      "Pupilla miyozisi",
+      "Tek taraflı işitme kaybı"
+    ],
+    "correct": 1,
+    "exp": "Defans, rijidite ve rebound hassasiyet parietal periton irritasyonunu gösterir. Visseral ağrı daha künt ve lokalize olmayan karakterdedir; parietal tutulumla ağrı keskin ve lokalize hale gelir."
+  },
+  {
+    "id": 1544,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Karına Yaklaşım",
+    "diff": 4,
+    "q": "Spot bilgi: Mekanik barsak obstrüksiyonunu paralitik ileustan ayırmada en çok yardımcı ipucu aşağıdakilerden hangisidir?",
+    "options": [
+      "Mekanik obstrüksiyonda kolik ağrı ve başlangıçta artmış barsak sesleri",
+      "Paralitik ileusta her zaman hematemez olması",
+      "Mekanik obstrüksiyonda hiçbir zaman kusma olmaması",
+      "İleusta sadece sağ üst kadran ağrısı olması",
+      "Mekanik obstrüksiyonda direkt grafilerin daima normal olması"
+    ],
+    "correct": 0,
+    "exp": "Mekanik obstrüksiyonda kolik ağrı ve erken dönemde hiperaktif barsak sesleri görülebilir; paralitik ileusta yaygın distansiyon ve azalmış barsak sesleri daha tipiktir."
+  },
+  {
+    "id": 1545,
+    "ders": "Genel Cerrahi",
+    "konu": "Komplikasyon",
+    "diff": 5,
+    "q": "Kolon anastomozu yapılan hastada postoperatif 5. günde ateş, taşikardi, karın ağrısı ve lökositoz gelişiyor. Drenajdan kötü kokulu enterik içerik geliyor. En olası komplikasyon hangisidir?",
+    "options": [
+      "Atelektazi",
+      "Anastomoz kaçağı",
+      "Basit idrar retansiyonu",
+      "İlaç döküntüsü",
+      "Hipotiroidi"
+    ],
+    "correct": 1,
+    "exp": "Kolorektal cerrahi sonrası günler içinde ateş, taşikardi, karın ağrısı ve enterik drenaj anastomoz kaçağını düşündürür. BT, drenaj, antibiyotik ve gerekirse cerrahi kontrol gerekir."
+  },
+  {
+    "id": 1546,
+    "ders": "Genel Cerrahi",
+    "konu": "Komplikasyon",
+    "diff": 4,
+    "q": "Laparotomi sonrası 1. günde düşük dereceli ateşi olan hastanın akciğer bazallerinde hafif raller var. Öksürük zayıf, mobilizasyon az. En olası erken postoperatif ateş nedeni hangisidir?",
+    "options": [
+      "Atelektazi",
+      "Anastomoz kaçağı",
+      "Derin yara enfeksiyonu",
+      "Geç greft rejeksiyonu",
+      "Kolanjiyokarsinom"
+    ],
+    "correct": 0,
+    "exp": "İlk 24-48 saatte düşük dereceli ateşin sık nedenlerinden biri atelektazi/hipoventilasyon ve sekresyon retansiyonudur. Erken mobilizasyon, ağrı kontrolü ve solunum egzersizleri önemlidir."
+  },
+  {
+    "id": 1547,
+    "ders": "Genel Cerrahi",
+    "konu": "Komplikasyon",
+    "diff": 4,
+    "q": "Obez, malnütrisyonu olan ve steroid kullanan hastada laparotomi sonrası 7. günde öksürükle birlikte yaradan pembe seröz sıvı gelmeye başlıyor. Fasya ayrılması düşünülüyor. En olası komplikasyon hangisidir?",
+    "options": [
+      "Wound dehiscence",
+      "Seroma olmadan normal iyileşme",
+      "Akut pankreatit",
+      "Tromboze dış hemoroid",
+      "Rekürren laringeal sinir hasarı"
+    ],
+    "correct": 0,
+    "exp": "Fasyal ayrılma genellikle postoperatif ilk hafta civarında serosanginöz akıntıyla kendini gösterebilir. Risk faktörleri malnütrisyon, obezite, steroid, enfeksiyon ve artmış intraabdominal basınçtır."
+  },
+  {
+    "id": 1548,
+    "ders": "Genel Cerrahi",
+    "konu": "Komplikasyon",
+    "diff": 4,
+    "q": "Spot bilgi: Cerrahi alan enfeksiyonu riskini azaltmak için aşağıdakilerden hangisi en anlamlı önlemlerden biridir?",
+    "options": [
+      "Perioperatif normotermi ve uygun glisemik kontrol",
+      "Profilaktik antibiyotiği 10 gün sürdürmek",
+      "Tüm hastalara rutin dren koymak",
+      "Eldiven kullanmamak",
+      "Hipovolemi oluşturmak"
+    ],
+    "correct": 0,
+    "exp": "Normotermi, oksijenasyon, glisemik kontrol ve uygun zamanlı antibiyotik profilaksisi cerrahi alan enfeksiyonunu azaltır. Gereksiz antibiyotik uzatmak koruyucu değildir."
+  },
+  {
+    "id": 1549,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı Hernileri",
+    "diff": 4,
+    "q": "Yetmiş yaşında kadın hasta kasık altında ağrılı kitle ve kusma ile geliyor. Kitle inguinal ligamentin altında ve femoral venin medialinde palpe ediliyor. En olası herni tipi hangisidir?",
+    "options": [
+      "Direkt inguinal herni",
+      "İndirekt inguinal herni",
+      "Femoral herni",
+      "Spigelian herni",
+      "Umbilikal herni"
+    ],
+    "correct": 2,
+    "exp": "Femoral herni inguinal ligamentin altında, femoral kanal içinde ve femoral venin medialinde yerleşir. Kadınlarda ve yaşlılarda daha sık görülür; inkarsere/strangüle olma riski yüksektir."
+  },
+  {
+    "id": 1550,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı Hernileri",
+    "diff": 4,
+    "q": "Genç erkek hastada skrotuma kadar uzanan kasık fıtığı saptanıyor. Herni kesesi inferior epigastrik damarların lateralinden geçiyor ve processus vaginalis açıklığı düşünülüyor. Bu herni tipi hangisidir?",
+    "options": [
+      "Direkt inguinal herni",
+      "İndirekt inguinal herni",
+      "Femoral herni",
+      "Obturator herni",
+      "Richter herni"
+    ],
+    "correct": 1,
+    "exp": "İndirekt inguinal herni inferior epigastrik damarların lateralinden, internal inguinal halkadan geçer ve skrotuma inebilir. Patent processus vaginalis ile ilişkilidir."
+  },
+  {
+    "id": 1551,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı Hernileri",
+    "diff": 5,
+    "q": "Kasıkta belirgin şişliği olmayan yaşlı zayıf kadın hastada aralıklı barsak obstrüksiyonu ve uyluk medialine yayılan ağrı var. Kalça hareketleriyle ağrı artıyor. En olası herni tipi hangisidir?",
+    "options": [
+      "Obturator herni",
+      "Epigastrik herni",
+      "Direkt inguinal herni",
+      "Parastomal herni",
+      "Lumbar herni"
+    ],
+    "correct": 0,
+    "exp": "Obturator herni yaşlı zayıf kadınlarda görülebilir ve obturator sinir irritasyonu nedeniyle medial uyluk ağrısı yapar. Dışarıdan belirgin şişlik olmayabilir; tanı gecikebilir."
+  },
+  {
+    "id": 1552,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı Hernileri",
+    "diff": 4,
+    "q": "Spot bilgi: Richter hernisinin klinik olarak tehlikeli özelliği aşağıdakilerden hangisidir?",
+    "options": [
+      "Barsak duvarının sadece bir kısmı sıkıştığı için strangülasyon belirgin obstrüksiyon olmadan gelişebilir",
+      "Daima ağrısızdır ve asla boğulmaz",
+      "Sadece çocuklarda görülür",
+      "Sadece karaciğeri içerir",
+      "Tedavisi her zaman antibiyotiktir"
+    ],
+    "correct": 0,
+    "exp": "Richter hernisinde barsak lümeninin tüm çevresi değil, antimesenterik duvarın bir kısmı sıkışır. Bu nedenle tam obstrüksiyon bulgusu olmadan iskemi ve perforasyon gelişebilir."
+  },
+  {
+    "id": 1553,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus",
+    "diff": 4,
+    "q": "Yıllardır yutma güçlüğü olan hastada hem katı hem sıvı gıdalarla disfaji, regürjitasyon ve kilo kaybı var. Baryum grafide kuş gagası görünümü, manometride alt özefagus sfinkterinde gevşeme kusuru saptanıyor. En olası tanı hangisidir?",
+    "options": [
+      "Akalazya",
+      "Zenker divertikülü",
+      "Özofagus varisi",
+      "Mallory-Weiss yırtığı",
+      "Eozinofilik özofajit"
+    ],
+    "correct": 0,
+    "exp": "Akalazyada LES gevşeyemez ve özefagus aperistaltizmi vardır. Hem katı hem sıvı disfajisi erken dönemde birlikte olur; baryumda kuş gagası tipiktir."
+  },
+  {
+    "id": 1554,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus",
+    "diff": 5,
+    "q": "Alkol alımı sonrası şiddetli kusan hastada ani göğüs ağrısı, dispne ve subkutan amfizem gelişiyor. Grafide mediastinal hava izleniyor. En olası tanı hangisidir?",
+    "options": [
+      "Boerhaave sendromu",
+      "Mallory-Weiss yırtığı",
+      "Akut kolesistit",
+      "Pilor stenozu",
+      "Achalasia cardia"
+    ],
+    "correct": 0,
+    "exp": "Boerhaave sendromu transmural özefagus rüptürüdür; kusma sonrası ani göğüs ağrısı ve mediastinit bulguları gelişir. Acil cerrahi/endoskopik yönetim ve antibiyotik gerekir."
+  },
+  {
+    "id": 1555,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus",
+    "diff": 4,
+    "q": "Uzun süredir reflüsü olan obez erkek hastada distal özefagusta intestinal metaplazi saptanıyor. Bu durum en çok hangi kanser riskini artırır?",
+    "options": [
+      "Distal özefagus adenokarsinomu",
+      "Proksimal özefagus skuamöz hücreli karsinomu",
+      "Medüller tiroid karsinomu",
+      "Pankreas nöroendokrin tümörü",
+      "Gastrik lenfoma"
+    ],
+    "correct": 0,
+    "exp": "Barrett özefagusu kronik reflüye bağlı intestinal metaplazidir ve distal özefagus adenokarsinomu riskini artırır. Displazi derecesi izlem ve tedaviyi belirler."
+  },
+  {
+    "id": 1556,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus",
+    "diff": 4,
+    "q": "Spot bilgi: Zenker divertikülü anatomik olarak en sık hangi zayıf alandan gelişir?",
+    "options": [
+      "Killian üçgeni",
+      "Hesselbach üçgeni",
+      "Calot üçgeni",
+      "Femoral kanal",
+      "Foramen Winslow"
+    ],
+    "correct": 0,
+    "exp": "Zenker divertikülü farengoözefageal bileşkede Killian üçgeninden gelişen pulsiyon divertikülüdür. Disfaji, regürjitasyon, aspirasyon ve ağız kokusu yapabilir."
+  },
+  {
+    "id": 1557,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide",
+    "diff": 5,
+    "q": "Peptik ülser öyküsü olan hastada ani epigastrik ağrı, tahta karın ve diyafram altında serbest hava görülüyor. Stabil olmayan hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "Sadece PPI verip taburcu etmek",
+      "Acil cerrahi onarım ve peritoneal temizlik",
+      "Elektif endoskopiyi 3 ay sonraya planlamak",
+      "Laksatif vermek",
+      "Yalnızca H. pylori testi beklemek"
+    ],
+    "correct": 1,
+    "exp": "Perfore peptik ülser yaygın peritonit yapabilir ve acil cerrahi durumdur. Stabil küçük kapalı perforasyonlarda seçilmiş konservatif yaklaşım tartışılabilir ama peritonit varlığında cerrahi gerekir."
+  },
+  {
+    "id": 1558,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide",
+    "diff": 4,
+    "q": "Uzun süredir kilo kaybı ve erken doyma tarifleyen hastada epigastrik kitle, sol supraklaviküler lenf nodu ve overde metastatik kitle saptanıyor. Bu over metastazına verilen klasik ad hangisidir?",
+    "options": [
+      "Krukenberg tümörü",
+      "Sister Mary Joseph nodülü",
+      "Virchow nodu",
+      "Blumer rafı",
+      "Klatskin tümörü"
+    ],
+    "correct": 0,
+    "exp": "Diffüz tip mide kanseri over metastazı yapabilir; buna Krukenberg tümörü denir ve sıklıkla taşlı yüzük hücreleriyle ilişkilidir. Sol supraklaviküler nod Virchow nodudur."
+  },
+  {
+    "id": 1559,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide",
+    "diff": 4,
+    "q": "BT'de mide duvarından kaynaklanan submukozal kitle saptanan hastanın patolojisinde iğsi hücreli tümör, immünohistokimyada CD117/c-KIT pozitifliği var. En olası tanı hangisidir?",
+    "options": [
+      "Gastrointestinal stromal tümör",
+      "MALT lenfoma",
+      "Adenokarsinom",
+      "Leiomyom dışı fibrom",
+      "Nöroblastom"
+    ],
+    "correct": 0,
+    "exp": "GIST interstisyel Cajal hücrelerinden köken alır ve sıklıkla c-KIT/CD117 pozitiftir. Tedavide rezeksiyon ve risk durumuna göre imatinib gibi tirozin kinaz inhibitörleri kullanılabilir."
+  },
+  {
+    "id": 1560,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide",
+    "diff": 4,
+    "q": "Spot bilgi: Gastrik çıkış obstrüksiyonunda uzun süren kusmaya bağlı klasik asit-baz bozukluğu hangisidir?",
+    "options": [
+      "Hipokloremik hipokalemik metabolik alkaloz",
+      "Hiperkloremik metabolik asidoz",
+      "Solunumsal asidoz",
+      "Laktik asidoz",
+      "Normal anyon açıklı ketoasidoz"
+    ],
+    "correct": 0,
+    "exp": "Mide asidi kaybı hidrojen ve klor kaybı demektir. Uzamış kusma hipokloremik, hipokalemik metabolik alkaloz yapar; benzer mekanizma pilor stenozunda da görülür."
+  },
+  {
+    "id": 1561,
+    "ders": "Genel Cerrahi",
+    "konu": "Morbid Obezite",
+    "diff": 4,
+    "q": "Kırk iki yaşında, BMI 44 kg/m² olan hastada tip 2 diyabet ve ciddi gastroözofageal reflü var. Bariatrik cerrahi seçenekleri tartışılıyor. Reflüyü kötüleştirme riski nedeniyle sleeve gastrektomi yerine daha uygun olabilecek yöntem hangisidir?",
+    "options": [
+      "Roux-en-Y gastrik bypass",
+      "Ayarlanabilir mide bandı her zaman ilk seçenek",
+      "Sadece liposuction",
+      "Endoskopik polipektomi",
+      "Total kolektomi"
+    ],
+    "correct": 0,
+    "exp": "Roux-en-Y gastrik bypass hem kilo kaybı hem metabolik düzelme sağlar ve reflü yakınmalarında sleeve'e göre daha avantajlı olabilir. Sleeve gastrektomi bazı hastalarda reflüyü artırabilir."
+  },
+  {
+    "id": 1562,
+    "ders": "Genel Cerrahi",
+    "konu": "Morbid Obezite",
+    "diff": 4,
+    "q": "Bariatrik cerrahi sonrası hasta tatlı gıda alımından 20 dakika sonra çarpıntı, terleme, karın krampları ve ishal yaşıyor. Bu erken dönem tablo en çok neyle açıklanır?",
+    "options": [
+      "Dumping sendromu",
+      "Akut apandisit",
+      "Safra taşı ile ileus",
+      "Hipotiroid koma",
+      "Feokromositoma krizi"
+    ],
+    "correct": 0,
+    "exp": "Erken dumping sendromunda hiperozmolar gıda hızla ince barsağa geçer; sıvı kayması ve vazomotor semptomlar gelişir. Diyet düzenlemesi temel yaklaşımdır."
+  },
+  {
+    "id": 1563,
+    "ders": "Genel Cerrahi",
+    "konu": "Morbid Obezite",
+    "diff": 4,
+    "q": "Roux-en-Y gastrik bypass sonrası yıllar içinde yorgunluk, parestezi ve makrositik anemi gelişen hastada B12 eksikliği saptanıyor. Bu eksikliğin temel nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Mide hacmi ve intrinsik faktör/asit ilişkili emilim sürecinin bozulması",
+      "Kolonda aşırı B12 üretimi",
+      "Safra kesesinin fazla çalışması",
+      "Trombosit tüketimi",
+      "Aşırı D vitamini emilimi"
+    ],
+    "correct": 0,
+    "exp": "Bariatrik cerrahi sonrası B12, demir, folat, kalsiyum ve yağda eriyen vitamin eksiklikleri görülebilir. Bypass ve mide asidi/intrinsik faktör ilişkili emilim bozulması B12 eksikliğine katkı verir."
+  },
+  {
+    "id": 1564,
+    "ders": "Genel Cerrahi",
+    "konu": "Morbid Obezite",
+    "diff": 4,
+    "q": "Spot bilgi: Komorbiditesi olan hastada bariatrik cerrahi için klasik BMI eşiği aşağıdakilerden hangisidir?",
+    "options": [
+      "BMI ≥25",
+      "BMI ≥30",
+      "BMI ≥35",
+      "BMI ≥20",
+      "BMI ≥18"
+    ],
+    "correct": 2,
+    "exp": "Klasik endikasyonlar BMI ≥40 veya BMI ≥35 ve obezite ilişkili ciddi komorbidite varlığıdır. Güncel kılavuzlarda bazı metabolik endikasyonlar genişleyebilse de sınavlarda bu eşikler sık kullanılır."
+  },
+  {
+    "id": 1565,
+    "ders": "Genel Cerrahi",
+    "konu": "GİS Kanama",
+    "diff": 4,
+    "q": "Hematemez ve melena ile gelen hipotansif hastada iki geniş damar yolu açılıyor, kan hazırlanıyor. Stabilizasyon başlatıldıktan sonra üst GİS kanama odağını saptamak ve tedavi etmek için en uygun yaklaşım hangisidir?",
+    "options": [
+      "Acil üst endoskopi",
+      "Rutin apendektomi",
+      "Sadece rektoskopi",
+      "Baryumlu grafi",
+      "Hemen taburculuk"
+    ],
+    "correct": 0,
+    "exp": "Üst GİS kanamada ilk adım ABC ve hemodinamik resüsitasyondur. Sonrasında tanı ve tedavi için üst endoskopi temel yöntemdir; aktif kanamada endoskopik hemostaz uygulanabilir."
+  },
+  {
+    "id": 1566,
+    "ders": "Genel Cerrahi",
+    "konu": "GİS Kanama",
+    "diff": 4,
+    "q": "Yetmiş beş yaşındaki hastada ağrısız, tekrarlayan parlak kırmızı rektal kanama var. Kolonoskopide çekum ve çıkan kolonda düz, kırmızı vasküler lezyonlar görülüyor. En olası neden hangisidir?",
+    "options": [
+      "Anjiyodisplazi",
+      "Anal fissür",
+      "Crohn fistülü",
+      "Özofagus varisi",
+      "Meckel divertikülü"
+    ],
+    "correct": 0,
+    "exp": "Yaşlı hastada sağ kolon kaynaklı ağrısız tekrarlayan kanama anjiyodisplaziyi düşündürür. Aort stenozu ve von Willebrand faktör ilişkili kanama eğilimiyle birlikte olabilir."
+  },
+  {
+    "id": 1567,
+    "ders": "Genel Cerrahi",
+    "konu": "GİS Kanama",
+    "diff": 4,
+    "q": "Yoğun üst GİS kanaması olan hastada nazogastrik aspiratta kan gelmiyor ama hasta hematokezya ile başvuruyor. Hemodinamik olarak instabil. Aşağıdakilerden hangisi doğrudur?",
+    "options": [
+      "Hematokezya her zaman alt GİS kaynaklıdır",
+      "Masif üst GİS kanaması hızlı transit ile hematokezya yapabilir",
+      "Üst endoskopi hiçbir zaman gerekmez",
+      "Kanama kesin hemoroiddendir",
+      "Kolonoskopi sedasyonsuz hemen yapılmalıdır"
+    ],
+    "correct": 1,
+    "exp": "Masif üst GİS kanaması barsak transitini hızlandırarak parlak kırmızı rektal kanama şeklinde de gelebilir. İnstabil hastada üst kaynak dışlanmadan sadece alt GİS'e odaklanmak hata olur."
+  },
+  {
+    "id": 1568,
+    "ders": "Genel Cerrahi",
+    "konu": "GİS Kanama",
+    "diff": 4,
+    "q": "Spot bilgi: Melena oluşması için kanamanın en klasik kaynak bölgesi aşağıdakilerden hangisidir?",
+    "options": [
+      "Üst gastrointestinal sistem",
+      "Sadece anal kanal",
+      "Sadece over",
+      "Sadece böbrek parankimi",
+      "Sadece kas dokusu"
+    ],
+    "correct": 0,
+    "exp": "Melena sindirilmiş kanı düşündürür ve en klasik olarak üst GİS kanamalarında görülür. Ancak yavaş ince barsak/sağ kolon kanamaları da koyu dışkı yapabilir."
+  },
+  {
+    "id": 1569,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak",
+    "diff": 5,
+    "q": "Sol alt torakoabdominal travma sonrası hipotansif hastada FAST incelemede sol üst kadranda serbest sıvı görülüyor. Sol omuza vuran ağrı tarifliyor. En olası yaralanma hangisidir?",
+    "options": [
+      "Dalak yaralanması",
+      "Apendiks perforasyonu",
+      "Tiroid rüptürü",
+      "Mesane taşı",
+      "Femoral herni"
+    ],
+    "correct": 0,
+    "exp": "Sol üst kadran travması, intraperitoneal sıvı ve Kehr bulgusu dalak yaralanmasını düşündürür. Hemodinamik instabilite varsa cerrahi eksplorasyon gerekebilir; stabil hastada nonoperatif yönetim seçilebilir."
+  },
+  {
+    "id": 1570,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak",
+    "diff": 4,
+    "q": "Splenektomi planlanan hastaya ameliyat öncesi aşılar anlatılıyor. Aspleni sonrası özellikle hangi mikroorganizma grubuna karşı ağır enfeksiyon riski artar?",
+    "options": [
+      "Kapsüllü bakteriler",
+      "Sadece anaerob mantarlar",
+      "Sadece helmintler",
+      "Sadece dermatofitler",
+      "Sadece prionlar"
+    ],
+    "correct": 0,
+    "exp": "Dalak kapsüllü bakterilerin temizlenmesinde önemlidir. Aspleni sonrası S. pneumoniae, H. influenzae tip b ve N. meningitidis'e karşı ciddi enfeksiyon riski artar; aşılanma önemlidir."
+  },
+  {
+    "id": 1571,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak",
+    "diff": 4,
+    "q": "ITP nedeniyle splenektomi yapılan hastada başlangıçta trombositler yükseliyor, ancak aylar sonra trombositopeni nüks ediyor. Görüntülemede küçük aksesuar dalak dokusu saptanıyor. Bu durumun önemi nedir?",
+    "options": [
+      "Nüks trombosit yıkımına katkı verebilir",
+      "Her zaman karaciğer kanseridir",
+      "Hiçbir klinik anlamı yoktur",
+      "Sadece hiperkalsemi yapar",
+      "Acil tiroid cerrahisi gerektirir"
+    ],
+    "correct": 0,
+    "exp": "Aksesuar dalak dokusu immün trombosit yıkımını sürdürebilir ve splenektomi sonrası ITP nüksüne katkı sağlayabilir. Cerrahi sırasında araştırılması önemlidir."
+  },
+  {
+    "id": 1572,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak",
+    "diff": 4,
+    "q": "Spot bilgi: Sol omuza yansıyan ağrı ile bilinen ve diyafram irritasyonunu düşündüren klasik bulgu aşağıdakilerden hangisidir?",
+    "options": [
+      "Kehr bulgusu",
+      "Murphy bulgusu",
+      "Psoas bulgusu",
+      "Rovsing bulgusu",
+      "Cullen bulgusu"
+    ],
+    "correct": 0,
+    "exp": "Kehr bulgusu diyafram irritasyonuna bağlı sol omuz ağrısıdır ve splenik yaralanma/hemoperitoneum gibi durumlarda görülebilir. Frenik sinir aracılı yansıyan ağrıdır."
+  },
+  {
+    "id": 1573,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas",
+    "diff": 4,
+    "q": "Şiddetli epigastrik ağrısı sırta vuran hastada lipaz normalin 5 katı. İlk 24 saatte çekilen BT'de nekroz net seçilemiyor. Akut pankreatitte erken dönemde tedavinin ana unsuru hangisidir?",
+    "options": [
+      "Agresif destek tedavisi: sıvı, analjezi, erken enteral beslenme değerlendirmesi",
+      "Acil total pankreatektomi",
+      "Rutin profilaktik antibiyotik",
+      "Yüksek doz steroid",
+      "Sadece oral antasit"
+    ],
+    "correct": 0,
+    "exp": "Akut pankreatitte temel tedavi destek tedavisidir. Erken BT nekrozu göstermeyebilir; antibiyotik profilaksisi rutin değildir. Enteral beslenme mümkünse tercih edilir."
+  },
+  {
+    "id": 1574,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas",
+    "diff": 4,
+    "q": "Kronik alkol öyküsü olan hastada tekrarlayan epigastrik ağrı, steatore ve kilo kaybı var. Direkt grafi/BT'de pankreas kalsifikasyonları görülüyor. En olası tanı hangisidir?",
+    "options": [
+      "Kronik pankreatit",
+      "Akut apandisit",
+      "Ülseratif kolit",
+      "Feokromositoma",
+      "Medüller tiroid karsinomu"
+    ],
+    "correct": 0,
+    "exp": "Kronik pankreatit tekrarlayan inflamasyon sonucu fibrozis, kalsifikasyon, ekzokrin ve endokrin yetmezlik yapar. Steatore ekzokrin pankreas yetmezliğini düşündürür."
+  },
+  {
+    "id": 1575,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas",
+    "diff": 5,
+    "q": "Yaşlı hastada ağrısız sarılık, kilo kaybı ve kaşıntı var. Muayenede ağrısız palpe edilebilen safra kesesi saptanıyor. En olası tanı hangisidir?",
+    "options": [
+      "Pankreas başı kanseri",
+      "Akut taşlı kolesistit",
+      "Pilor stenozu",
+      "Dalak rüptürü",
+      "Anal fissür"
+    ],
+    "correct": 0,
+    "exp": "Pankreas başı kanseri distal koledok obstrüksiyonu yaparak ağrısız sarılık ve Courvoisier bulgusu oluşturabilir. Kilo kaybı ve kaşıntı malign obstrüksiyonu destekler."
+  },
+  {
+    "id": 1576,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas",
+    "diff": 4,
+    "q": "Spot bilgi: Akut pankreatit sonrası sıvı koleksiyonunun olgun duvar kazanmasıyla oluşan psödokist için tipik zaman eşiği aşağıdakilerden hangisidir?",
+    "options": [
+      "İlk 6 saat",
+      "İlk 24 saat",
+      "Yaklaşık 4 hafta sonrası",
+      "İlk 2 gün",
+      "Sadece 1 yıl sonrası"
+    ],
+    "correct": 2,
+    "exp": "Pankreatik psödokist genellikle akut pankreatit sonrası yaklaşık 4 haftadan sonra olgun duvarlı sıvı koleksiyonu olarak tanımlanır. Erken koleksiyonlar henüz psödokist sayılmaz."
+  },
+  {
+    "id": 1577,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme",
+    "diff": 4,
+    "q": "Kırk sekiz yaşında kadında mamografide spiküle kitle saptanıyor. Fizik muayene, görüntüleme ve tru-cut biyopsi planlanıyor. Meme kitlesinde tanısal yaklaşımın klasik üçlü değerlendirmesi hangisidir?",
+    "options": [
+      "Muayene, görüntüleme, doku tanısı",
+      "Sadece tümör belirteci",
+      "Sadece PET-BT",
+      "Sadece antibiyotik yanıtı",
+      "Sadece aile öyküsü"
+    ],
+    "correct": 0,
+    "exp": "Meme kitlesinde triple assessment; klinik muayene, uygun görüntüleme ve doku tanısından oluşur. Sadece görüntüleme ile malignite kesinleştirilmez."
+  },
+  {
+    "id": 1578,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme",
+    "diff": 4,
+    "q": "Mamografide pleomorfik mikrokalsifikasyonlar saptanan hastanın biyopsisinde bazal membranı aşmayan duktal malign hücre proliferasyonu görülüyor. En olası tanı hangisidir?",
+    "options": [
+      "Duktal karsinoma in situ",
+      "İnvaziv lobüler karsinom",
+      "Fibroadenom",
+      "Mastit",
+      "Yağ nekrozu"
+    ],
+    "correct": 0,
+    "exp": "DCIS duktus içinde sınırlı malign proliferasyondur; bazal membranı aşmaz. Mamografide mikrokalsifikasyonlarla yakalanabilir. Tedavi lokal kontrol ve risk azaltmaya yöneliktir."
+  },
+  {
+    "id": 1579,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme",
+    "diff": 5,
+    "q": "Emzirmeyen 55 yaşındaki kadında memede hızlı büyüyen kızarıklık, ödem, portakal kabuğu görünümü ve yaygın deri kalınlaşması var. Antibiyotiğe yanıt yok. En olası tanı hangisidir?",
+    "options": [
+      "İnflamatuvar meme kanseri",
+      "Basit laktasyon mastiti",
+      "Fibrokistik değişiklik",
+      "Galaktosel",
+      "Mondor hastalığı"
+    ],
+    "correct": 0,
+    "exp": "İnflamatuvar meme kanseri dermal lenfatik invazyonla hızlı gelişen eritem, ödem ve peau d'orange görünümü yapar. Mastit gibi başlayabilir ama antibiyotiğe yanıtsızlık ve risk profili uyarıcıdır."
+  },
+  {
+    "id": 1580,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme",
+    "diff": 4,
+    "q": "Spot bilgi: Erken evre klinik olarak aksilla negatif meme kanserinde aksiller evreleme için standart yaklaşım aşağıdakilerden hangisidir?",
+    "options": [
+      "Sentinel lenf nodu biyopsisi",
+      "Rutin bilateral aksiller diseksiyon",
+      "Aksillaya hiç bakmamak",
+      "Sadece CA-125 ölçümü",
+      "Splenektomi"
+    ],
+    "correct": 0,
+    "exp": "Sentinel lenf nodu biyopsisi klinik aksilla negatif erken evre meme kanserinde aksiller evreleme sağlar ve gereksiz aksiller diseksiyona bağlı morbiditeyi azaltır."
+  },
+  {
+    "id": 1581,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekolojiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "Pelvik cerrahi sırasında uterusu destekleyen ana bağların kesilmesi planlanıyor. Cerrah, uterin arterin üreterle çok yakın komşuluğu nedeniyle özellikle dikkatli olunmasını söylüyor. Klasik anatomik ilişki aşağıdakilerden hangisidir?",
+    "options": [
+      "Üreter uterin arterin üzerinden geçer",
+      "Uterin arter üreterin üzerinden geçer",
+      "Üreter over veninin içinden geçer",
+      "Round ligament uterin arteri çevreler",
+      "Fallop tüpü üreterin altından geçer"
+    ],
+    "correct": 1,
+    "exp": "Pelvik cerrahide unutulmaması gereken ilişki 'water under the bridge'dir: üreter alttan, uterin arter üstten geçer. Histerektomide üreter yaralanması bu nedenle önemli risktir."
+  },
+  {
+    "id": 1582,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekolojiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "Total histerektomi sırasında uterusun serviks hizasında lateral desteğini sağlayan, içinde uterin arterin seyrettiği yapı bağlanacaktır. Bu yapı aşağıdakilerden hangisidir?",
+    "options": [
+      "Ligamentum teres uteri",
+      "Kardinal ligament",
+      "İnfundibulopelvik ligament",
+      "Uterosakral ligament",
+      "Broad ligamentin avasküler penceresi"
+    ],
+    "correct": 1,
+    "exp": "Kardinal ligament serviks ve üst vajenin önemli lateral desteğidir; uterin damarları içerir. İnfundibulopelvik ligament ise over damarlarını taşır."
+  },
+  {
+    "id": 1583,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekolojiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "Adneksiyal kitle nedeniyle salpingo-ooforektomi yapılan hastada over damarlarının güvenli bağlanması gerekiyor. Over damarlarını taşıyan ligament aşağıdakilerden hangisidir?",
+    "options": [
+      "İnfundibulopelvik ligament",
+      "Ligamentum teres uteri",
+      "Kardinal ligament",
+      "Uterosakral ligament",
+      "Puboservikal fasya"
+    ],
+    "correct": 0,
+    "exp": "Over damarları suspensory ligament olarak da bilinen infundibulopelvik ligament içinde seyreder. Bu yapı bağlanırken üreter komşuluğu nedeniyle dikkat gerekir."
+  },
+  {
+    "id": 1584,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekolojiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "Spot bilgi: Uterusu anteversiyonda tutmaya katkı sağlayan ve inguinal kanaldan geçerek labium majusa uzanan yapı hangisidir?",
+    "options": [
+      "Round ligament",
+      "Uterosakral ligament",
+      "Kardinal ligament",
+      "İnfundibulopelvik ligament",
+      "Transvers servikal fasya"
+    ],
+    "correct": 0,
+    "exp": "Round ligament uterus fundusundan çıkar, inguinal kanaldan geçerek labium majusa uzanır. Uterusun anteversiyonuna katkı verir ama ana uterin destek yapısı değildir."
+  },
+  {
+    "id": 1585,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekolojiye Giriş ve Terminoloji",
+    "diff": 5,
+    "q": "Radikal pelvik cerrahi sonrası hastada mesane doluluğunu hissetmede azalma ve işeme disfonksiyonu gelişiyor. Bu komplikasyon en çok hangi sinir/pleksus hasarıyla ilişkilidir?",
+    "options": [
+      "Hipogastrik pleksus ve pelvik otonom sinirler",
+      "Femoral sinir motor dalı",
+      "Obturator sinirin sadece kutanöz dalı",
+      "N. phrenicus",
+      "N. vagus'un torasik dalları"
+    ],
+    "correct": 0,
+    "exp": "Pelvik otonom sinirlerin hasarı mesane, rektum ve cinsel fonksiyon bozukluklarına yol açabilir. Radikal histerektomi gibi işlemlerde sinir koruyucu yaklaşım bu nedenle önemlidir."
+  },
+  {
+    "id": 1586,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Puberte ve Gelişim",
+    "diff": 4,
+    "q": "Yedi yaşında kız çocuğunda meme gelişimi ve büyüme hızında artış var. Pubik kıllanma hafif, kemik yaşı ileri. GnRH uyarı testinde LH pubertal yanıt veriyor. En olası tanı hangisidir?",
+    "options": [
+      "Santral puberte prekoks",
+      "Periferik puberte prekoks",
+      "İzole prematür adrenarş",
+      "Konstitüsyonel gecikme",
+      "Turner sendromu"
+    ],
+    "correct": 0,
+    "exp": "8 yaşından önce kızda pubertal gelişim erken puberte kabul edilir. LH'nin GnRH ile pubertal yanıt vermesi hipotalamo-hipofizer-gonadal aksın santral aktivasyonunu gösterir."
+  },
+  {
+    "id": 1587,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Puberte ve Gelişim",
+    "diff": 4,
+    "q": "Altı yaşında kızda pubik kıllanma ve vücut kokusu var, meme gelişimi yok. Büyüme hızı normal, kemik yaşı hafif ileri, DHEA-S yaşa göre yüksek. En olası durum hangisidir?",
+    "options": [
+      "İzole prematür adrenarş",
+      "Santral puberte prekoks",
+      "Over granüloza hücreli tümörü",
+      "Turner sendromu",
+      "Gebelik"
+    ],
+    "correct": 0,
+    "exp": "Prematür adrenarş adrenal androjen artışına bağlı pubik/aksiller kıllanma ve vücut kokusudur. Meme gelişimi olmaması östrojenik pubertenin başlamadığını düşündürür."
+  },
+  {
+    "id": 1588,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Puberte ve Gelişim",
+    "diff": 4,
+    "q": "On beş yaşındaki kızda meme gelişimi Tanner 1, primer amenore ve kısa boy var. Boyun yelelenmesi ve geniş taşıma açısı dikkat çekiyor. En olası karyotip hangisidir?",
+    "options": [
+      "45,X",
+      "46,XX",
+      "47,XXY",
+      "46,XY komplet androjen duyarsızlığı",
+      "Trizomi 21"
+    ],
+    "correct": 0,
+    "exp": "Kısa boy, gonadal disgenezi, primer amenore ve klasik fenotip Turner sendromunu düşündürür. Karyotip sıklıkla 45,X veya mozaik varyantlardır."
+  },
+  {
+    "id": 1589,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Puberte ve Gelişim",
+    "diff": 4,
+    "q": "Spot bilgi: Sağlıklı kız çocuklarında pubertenin genellikle ilk fiziksel bulgusu aşağıdakilerden hangisidir?",
+    "options": [
+      "Menarş",
+      "Telarş",
+      "Pubarş",
+      "Ovulasyonun başlaması",
+      "Ses kalınlaşması"
+    ],
+    "correct": 1,
+    "exp": "Kızlarda pubertenin ilk bulgusu çoğunlukla meme tomurcuklanmasıdır (telarş). Menarş genellikle telarştan yaklaşık 2-2.5 yıl sonra gerçekleşir."
+  },
+  {
+    "id": 1590,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Puberte ve Gelişim",
+    "diff": 5,
+    "q": "On altı yaşında, normal boy ve meme gelişimi olan kız hiç adet görmemiştir. Muayenede vajen kısa kör sonlanıyor, uterus USG'de izlenmiyor, overler normal. En olası tanı hangisidir?",
+    "options": [
+      "Müllerian agenezi",
+      "Turner sendromu",
+      "Santral hipogonadizm",
+      "Asherman sendromu",
+      "Gebelik"
+    ],
+    "correct": 0,
+    "exp": "Normal sekonder seks karakterleri ve overlerin varlığı östrojen üretiminin normal olduğunu gösterir. Uterus ve üst vajen yokluğu Mayer-Rokitansky-Küster-Hauser (Müllerian agenezi) ile uyumludur."
+  },
+  {
+    "id": 1591,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Menstrual Siklus ve Fizyoloji",
+    "diff": 4,
+    "q": "Yirmi sekiz günde bir düzenli adet gören kadında ovulasyon zamanını belirlemek için hormon paterni yorumlanıyor. Ovulasyonu doğrudan tetikleyen ana hormonal olay hangisidir?",
+    "options": [
+      "FSH'nin tamamen baskılanması",
+      "LH piki",
+      "Progesteronun sıfırlanması",
+      "Prolaktinin akut düşmesi",
+      "hCG yükselmesi"
+    ],
+    "correct": 1,
+    "exp": "Dominant folikülün yüksek estradiol üretimi pozitif feedback oluşturarak LH pikini tetikler. LH piki ovulasyon ve lüteinizasyon için temel olaydır."
+  },
+  {
+    "id": 1592,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Menstrual Siklus ve Fizyoloji",
+    "diff": 4,
+    "q": "İnfertilite değerlendirmesinde hastanın ovulasyon yapıp yapmadığı araştırılıyor. Düzenli siklusu olan hastada luteal faz ortasında serum progesteronu yüksek saptanıyor. Bu bulgu neyi gösterir?",
+    "options": [
+      "Ovulasyon gerçekleşmiş olma olasılığını",
+      "Menopozu",
+      "Kesin tubal tıkanıklığı",
+      "Servikal kanseri",
+      "Hiperprolaktinemi dışlanamaz ama ovulasyon yoktur"
+    ],
+    "correct": 0,
+    "exp": "Ovulasyon sonrası korpus luteum progesteron üretir. Luteal faz ortasında progesteron yüksekliği ovulasyonu destekler; tubal açıklık veya semen faktörü hakkında bilgi vermez."
+  },
+  {
+    "id": 1593,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Menstrual Siklus ve Fizyoloji",
+    "diff": 4,
+    "q": "Adetin ilk günlerinde endometrium dökülürken spiral arter vazokonstriksiyonu ve prostaglandin artışı belirginleşir. Primer dismenore ağrısının ana mekanizması aşağıdakilerden hangisidir?",
+    "options": [
+      "Prostaglandin aracılı uterin kontraksiyon ve iskemi",
+      "Over ven trombozu",
+      "Serviks kanseri invazyonu",
+      "Estradiolün tamamen yokluğu",
+      "hCG artışı"
+    ],
+    "correct": 0,
+    "exp": "Primer dismenorede artmış prostaglandinler uterin kontraksiyon ve iskemiye yol açar. NSAİİ'lerin etkili olması prostaglandin sentezini azaltmalarına bağlıdır."
+  },
+  {
+    "id": 1594,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Menstrual Siklus ve Fizyoloji",
+    "diff": 4,
+    "q": "Spot bilgi: Siklusun luteal fazında dominant hormon aşağıdakilerden hangisidir?",
+    "options": [
+      "Progesteron",
+      "FSH",
+      "GnRH",
+      "Prolaktin",
+      "Testosteron"
+    ],
+    "correct": 0,
+    "exp": "Luteal fazda korpus luteum progesteron salgılar. Progesteron endometriumu sekretuar faza geçirir ve bazal vücut ısısını hafif artırır."
+  },
+  {
+    "id": 1595,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Menstrual Siklus ve Fizyoloji",
+    "diff": 4,
+    "q": "Otuz yaşında düzenli sikluslu kadında endometrium biyopsisi siklusun 23. gününde alınmıştır. Glandlarda kıvrımlanma ve sekresyon, stromada ödem izleniyor. Bu görünüm hangi hormonal etkinin sonucudur?",
+    "options": [
+      "Progesteron etkisi",
+      "Androjen eksikliği",
+      "FSH yokluğu",
+      "Prolaktin etkisi",
+      "Kortizol fazlalığı"
+    ],
+    "correct": 0,
+    "exp": "Sekretuar endometrium ovulasyon sonrası progesteron etkisiyle oluşur. Proliferatif fazda estradiol etkisiyle gland/stroma çoğalması ön plandadır."
+  },
+  {
+    "id": 1596,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Amenore",
+    "diff": 4,
+    "q": "Yirmi üç yaşında kadın 8 aydır adet görmüyor. Gebelik testi negatif. Galaktore var, baş ağrısı tarifliyor. Prolaktin belirgin yüksek, TSH normal. En olası neden hangisidir?",
+    "options": [
+      "Prolaktinoma",
+      "Prematür over yetmezliği",
+      "Asherman sendromu",
+      "Komplet androjen duyarsızlığı",
+      "Müllerian agenezi"
+    ],
+    "correct": 0,
+    "exp": "Hiperprolaktinemi GnRH pulsatilitesini baskılayarak amenore ve infertilite yapabilir; galaktore eşlik edebilir. Belirgin yüksek prolaktinde hipofiz adenomu düşünülür."
+  },
+  {
+    "id": 1597,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Amenore",
+    "diff": 4,
+    "q": "Doğum sonrası ağır kanama ve hipotansiyon geçiren kadın, aylar sonra emziremediğini ve adet görmediğini söylüyor. Halsizlik ve hipotansiyon da var. En olası tanı hangisidir?",
+    "options": [
+      "Sheehan sendromu",
+      "PCOS",
+      "Müllerian agenezi",
+      "Endometriozis",
+      "Gestasyonel trofoblastik hastalık"
+    ],
+    "correct": 0,
+    "exp": "Postpartum hipofiz nekrozu Sheehan sendromudur. Laktasyon başarısızlığı, amenore, sekonder adrenal/tiroid yetmezlik bulguları görülebilir."
+  },
+  {
+    "id": 1598,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Amenore",
+    "diff": 5,
+    "q": "Primer amenore nedeniyle değerlendirilen 17 yaşındaki hastada meme gelişimi normal, pubik kıllanma az, uterus yok ve karyotip 46,XY. Testosteron erkek düzeyinde yüksek. En olası tanı hangisidir?",
+    "options": [
+      "Komplet androjen duyarsızlığı",
+      "Turner sendromu",
+      "Müllerian agenezi",
+      "Santral hipogonadizm",
+      "Kallmann sendromu"
+    ],
+    "correct": 0,
+    "exp": "Komplet androjen duyarsızlığında 46,XY gonadlar AMH ürettiği için uterus yoktur, testosteron aromatizasyonuyla meme gelişir, androjen etkisi olmadığı için pubik kıllanma azdır."
+  },
+  {
+    "id": 1599,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Amenore",
+    "diff": 4,
+    "q": "Spot bilgi: Sekonder amenore değerlendirmesinde ilk dışlanması gereken durum aşağıdakilerden hangisidir?",
+    "options": [
+      "Gebelik",
+      "Turner sendromu",
+      "Over kanseri",
+      "Endometriozis",
+      "Servikal polip"
+    ],
+    "correct": 0,
+    "exp": "Üreme çağındaki amenorede ilk test gebelik testidir. İnsanlık bunu hâlâ bazen atlıyor; tıp öğrencisine değil evrene kızmak lazım."
+  },
+  {
+    "id": 1600,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Amenore",
+    "diff": 5,
+    "q": "Kürtaj sonrası adetleri tamamen kesilen hastada hormonal testler normal, progesteron çekilme testi negatif, östrojen-progesteron testi de kanama oluşturmuyor. Histeroskopide intrauterin sineşiler görülüyor. Tanı hangisidir?",
+    "options": [
+      "Asherman sendromu",
+      "PCOS",
+      "Hipotalamik amenore",
+      "Prolaktinoma",
+      "Prematür over yetmezliği"
+    ],
+    "correct": 0,
+    "exp": "Asherman sendromu intrauterin adezyonlara bağlı amenore/hipomenore yapar. Endometrium mekanik olarak hasarlı olduğu için hormonal uyarıya rağmen çekilme kanaması olmayabilir."
+  },
+  {
+    "id": 1601,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Anormal Uterin Kanama",
+    "diff": 5,
+    "q": "Kırk beş yaşında obez, nullipar kadın düzensiz ve uzun süren kanamalarla başvuruyor. PCOS öyküsü var. Transvajinal USG'de endometrium kalın. İlk dışlanması gereken önemli patoloji hangisidir?",
+    "options": [
+      "Endometrial hiperplazi veya kanser",
+      "Fizyolojik ovulatuvar kanama",
+      "Vajinal kandidiyazis",
+      "Over torsiyonu",
+      "Mastit"
+    ],
+    "correct": 0,
+    "exp": "Obezite, kronik anovulasyon ve nulliparite karşılanmamış östrojen etkisini artırır; endometrial hiperplazi/kanser riski yükselir. Bu yaş ve riskte endometrial örnekleme düşünülmelidir."
+  },
+  {
+    "id": 1602,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Anormal Uterin Kanama",
+    "diff": 4,
+    "q": "On altı yaşındaki kızda menarştan beri düzensiz, bol kanamalar var. Trombosit normal ama diş çekimi sonrası uzamış kanama ve sık epistaksis öyküsü mevcut. İlk akla gelmesi gereken sistemik neden hangisidir?",
+    "options": [
+      "von Willebrand hastalığı",
+      "Over kanseri",
+      "Endometriozis",
+      "Miyom dejenerasyonu",
+      "Gebelik dışı her şey"
+    ],
+    "correct": 0,
+    "exp": "Adolesanda ağır menstrual kanama ve mukokutanöz kanama öyküsü varsa koagülopati, özellikle von Willebrand hastalığı akla gelmelidir. Sadece 'ergenlik düzensizliği' deyip geçmek sınavda da klinikte de tokatlatır."
+  },
+  {
+    "id": 1603,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Anormal Uterin Kanama",
+    "diff": 4,
+    "q": "Üreme çağındaki kadında bol kanama ve pelvik bası hissi var. USG'de uterin kaviteyi bozan submuköz leiomyom saptanıyor. Kanamanın mekanizması en çok neyle ilişkilidir?",
+    "options": [
+      "Endometrial yüzey alanı artışı ve kavite bozulması",
+      "hCG'nin aşırı azalması",
+      "Serviksin doğuştan yokluğu",
+      "Overlerin tamamen inaktif olması",
+      "Tuba uterinanın kapanması"
+    ],
+    "correct": 0,
+    "exp": "Submuköz miyomlar uterin kaviteyi bozarak endometrial yüzeyi ve lokal vasküler kırılganlığı artırır; anormal uterin kanamanın en güçlü miyom alt tiplerinden biridir."
+  },
+  {
+    "id": 1604,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Anormal Uterin Kanama",
+    "diff": 4,
+    "q": "Spot bilgi: PALM-COEIN sınıflamasında 'P' harfi aşağıdakilerden hangisini temsil eder?",
+    "options": [
+      "Polip",
+      "Pıhtılaşma bozukluğu",
+      "Progesteron eksikliği",
+      "Pelvik inflamatuvar hastalık",
+      "Prematür over yetmezliği"
+    ],
+    "correct": 0,
+    "exp": "PALM yapısal nedenleri; Polip, Adenomyozis, Leiomyom ve Malignite/hiperplaziyi içerir. COEIN ise koagülopati, ovulatuvar disfonksiyon gibi yapısal olmayan nedenleri içerir."
+  },
+  {
+    "id": 1605,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Anormal Uterin Kanama",
+    "diff": 5,
+    "q": "Akut ağır uterin kanamayla gelen hemodinamik olarak instabil hastada gebelik testi negatif. Hb düşüyor, taşikardi var. İlk yaklaşım açısından en doğru ifade hangisidir?",
+    "options": [
+      "Önce hemodinamik stabilizasyon, damar yolu, sıvı/kan ve eş zamanlı kanama kontrolü",
+      "Önce 6 ay bitkisel tedavi",
+      "Sadece poliklinik randevusu",
+      "Kan grubu bakmadan yüksek doz aspirin",
+      "Stabilizasyon yapılmadan histeroskopi şart"
+    ],
+    "correct": 0,
+    "exp": "Akut ağır kanamada önce ABC, damar yolu, sıvı/kan ürünleri ve stabilizasyon gelir. Etiyoloji araştırması önemlidir ama şokta önce fizyoloji kurtarılır; dramatik ama gerçek."
+  },
+  {
+    "id": 1606,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Pelvik Ağrı ve Endometriozis",
+    "diff": 5,
+    "q": "Yirmi dokuz yaşında kadın giderek artan dismenore, derin disparoni ve infertilite şikayetiyle geliyor. Muayenede uterosakral ligamentlerde nodülarite, USG'de overde homojen düşük eko içerikli kist var. En olası tanı hangisidir?",
+    "options": [
+      "Endometriozis ve endometrioma",
+      "Akut apandisit",
+      "Servikal polip",
+      "Komplet mol",
+      "Meme kanseri"
+    ],
+    "correct": 0,
+    "exp": "Endometriozis ektopik endometrial dokuya bağlı siklik inflamasyon yapar. Dismenore, disparoni, infertilite, uterosakral nodülarite ve overde 'çikolata kisti' tipiktir."
+  },
+  {
+    "id": 1607,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Pelvik Ağrı ve Endometriozis",
+    "diff": 4,
+    "q": "Endometriozis tanısı olan hastada ağrı kontrolü isteniyor, gebelik planı yok. İlk basamak medikal tedavide en uygun seçeneklerden biri hangisidir?",
+    "options": [
+      "NSAİİ ve kombine hormonal kontraseptif/progestin tedavisi",
+      "Yüksek doz hCG",
+      "Acil bilateral ooforektomi her hastaya",
+      "Sadece geniş spektrumlu antibiyotik",
+      "Kemoterapi"
+    ],
+    "correct": 0,
+    "exp": "Endometriozis ağrısında NSAİİ ve ovulasyonu/siklik endometrium aktivitesini baskılayan hormonal tedaviler ilk basamakta kullanılır. Cerrahi, infertilite, büyük endometrioma veya dirençli ağrıda gündeme gelir."
+  },
+  {
+    "id": 1608,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Pelvik Ağrı ve Endometriozis",
+    "diff": 4,
+    "q": "Kronik pelvik ağrısı olan hastada laparoskopide over, tuba ve bağırsaklar arasında yoğun yapışıklıklar izleniyor. Hastanın PID öyküsü var. Kronik ağrı ve infertiliteye katkı sağlayan ana mekanizma hangisidir?",
+    "options": [
+      "Tubal-peritoneal adezyonlar",
+      "LH pikinin tamamen artması",
+      "Sadece vajinal pH düşüklüğü",
+      "Hafif demir eksikliği",
+      "Hipotiroidiye bağlı bradikardi"
+    ],
+    "correct": 0,
+    "exp": "PID veya endometriozis sonrası gelişen adezyonlar pelvik organ hareketini kısıtlar, ağrı ve tubal faktör infertilite yapabilir. Kronik pelvik ağrıda tek bir sebep aramak çoğu zaman fazla iyimserdir."
+  },
+  {
+    "id": 1609,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Pelvik Ağrı ve Endometriozis",
+    "diff": 4,
+    "q": "Spot bilgi: Endometriozisin kesin tanısı klasik olarak hangi yöntemle konur?",
+    "options": [
+      "Laparoskopik görme ve histolojik doğrulama",
+      "Sadece CA-125 yüksekliği",
+      "Direkt grafi",
+      "Gebelik testi",
+      "İdrar kültürü"
+    ],
+    "correct": 0,
+    "exp": "Endometriozis klinik ve görüntüleme ile güçlü şekilde düşünülebilir; klasik kesin tanı laparoskopik lezyonların görülmesi ve histolojik doğrulamadır. CA-125 yardımcı olabilir ama özgül değildir."
+  },
+  {
+    "id": 1610,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Pelvik Ağrı ve Endometriozis",
+    "diff": 5,
+    "q": "Akut başlayan tek taraflı şiddetli pelvik ağrı, bulantı-kusma ve adneksiyal kitle ile gelen hastada Doppler akımı normal görünüyor. Klinik olarak over torsiyonu düşünülüyor. En doğru yaklaşım hangisidir?",
+    "options": [
+      "Normal Doppler torsiyonu kesin dışlar, taburcu et",
+      "Klinik şüphe yüksekse acil cerrahi değerlendirme gerekir",
+      "Sadece oral antibiyotik ver",
+      "Bir yıl sonra USG tekrarla",
+      "Östrojen-progesteron testi yap"
+    ],
+    "correct": 1,
+    "exp": "Over torsiyonunda Doppler akımının görülmesi torsiyonu dışlamaz; dual kanlanma ve intermittan torsiyon yanıltabilir. Şiddetli ağrı, kusma ve kitle varsa zaman over dokusudur."
+  },
+  {
+    "id": 1611,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Benign Jinekolojik Hastalıklar",
+    "diff": 4,
+    "q": "Otuz sekiz yaşında kadında menorrhaji ve bası hissi var. USG'de uterus içinde çok sayıda iyi sınırlı hipoekoik solid kitle görülüyor. Gebelik istemi var. En olası tanı hangisidir?",
+    "options": [
+      "Leiomyom",
+      "Endometrium kanseri",
+      "Over torsiyonu",
+      "Komplet mol",
+      "Vajinal agenezi"
+    ],
+    "correct": 0,
+    "exp": "Leiomyomlar düz kas kökenli benign uterin tümörlerdir. Kanama, bası ve infertiliteye neden olabilir; tedavi semptom, yerleşim ve fertilite isteğine göre seçilir."
+  },
+  {
+    "id": 1612,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Benign Jinekolojik Hastalıklar",
+    "diff": 4,
+    "q": "Kırk iki yaşında multipar kadında giderek artan dismenore, menoraji ve difüz büyümüş hassas uterus var. USG'de myometrium heterojen, belirgin kapsüllü kitle yok. En olası tanı hangisidir?",
+    "options": [
+      "Adenomyozis",
+      "Subseröz miyom",
+      "Servikal kanser",
+      "Over disgerminomu",
+      "PID akut atağı"
+    ],
+    "correct": 0,
+    "exp": "Adenomyozis endometrial bez/stromanın myometrium içinde bulunmasıdır. Multipar perimenopozal kadında difüz büyümüş hassas uterus, menoraji ve dismenore tipiktir."
+  },
+  {
+    "id": 1613,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Benign Jinekolojik Hastalıklar",
+    "diff": 4,
+    "q": "Yirmi dört yaşında hastada hareketli, düzgün sınırlı, lastik kıvamlı meme kitlesi saptanıyor. USG benign solid lezyonla uyumlu. En olası tanı hangisidir?",
+    "options": [
+      "Fibroadenom",
+      "İnflamatuvar meme kanseri",
+      "Paget hastalığı",
+      "Meme apsesi",
+      "İnvaziv duktal karsinom"
+    ],
+    "correct": 0,
+    "exp": "Genç kadında iyi sınırlı, hareketli, lastik kıvamlı meme kitlesi fibroadenomu düşündürür. Yine de yaş, görüntüleme ve şüphe durumuna göre doku tanısı gerekebilir."
+  },
+  {
+    "id": 1614,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Benign Jinekolojik Hastalıklar",
+    "diff": 4,
+    "q": "Spot bilgi: Bartholin bezi apsesi için semptomatik, fluktuasyon veren ve ağrılı olguda temel tedavi aşağıdakilerden hangisidir?",
+    "options": [
+      "Drenaj ve uygun olguda Word kateter",
+      "Sadece vajinal duş",
+      "Total histerektomi",
+      "Rutin kemoterapi",
+      "Oral kontraseptif kesilmesi"
+    ],
+    "correct": 0,
+    "exp": "Bartholin apsesi ağrılı şişlik yapar; drenaj ve Word kateter marsupializasyon benzeri kalıcı açıklık sağlayabilir. Sadece antibiyotik çoğu olguda yeterli değildir."
+  },
+  {
+    "id": 1615,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Benign Jinekolojik Hastalıklar",
+    "diff": 4,
+    "q": "Kırk sekiz yaşındaki kadında serviksten dışarı uzanan, temasla kanayan saplı kırmızı lezyon görülüyor. Smear güncel ve normal. En olası benign lezyon hangisidir?",
+    "options": [
+      "Servikal polip",
+      "İnvaziv over kanseri",
+      "Endometrioma",
+      "Vajinal septum",
+      "Mol gebelik"
+    ],
+    "correct": 0,
+    "exp": "Servikal polipler intermenstrüel veya postkoital kanama yapabilir. Çoğu benigndir; semptomatikse polipektomi ve patoloji uygundur."
+  },
+  {
+    "id": 1616,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekolojik Enfeksiyonlar ve PID",
+    "diff": 4,
+    "q": "Yirmi iki yaşında kadın alt karın ağrısı, ateş ve kötü kokulu akıntı ile geliyor. Servikal hareket hassasiyeti, uterin ve adneksiyal hassasiyet var. Gebelik testi negatif. En olası tanı hangisidir?",
+    "options": [
+      "Pelvik inflamatuvar hastalık",
+      "Endometrioma",
+      "Turner sendromu",
+      "Vajinismus",
+      "Komplet mol"
+    ],
+    "correct": 0,
+    "exp": "PID tanısı kliniktir; alt karın ağrısı ile servikal hareket/uterin/adneksiyal hassasiyetten biri varsa düşük eşikle tedavi başlanır. Gecikme infertilite ve ektopik gebelik riskini artırır."
+  },
+  {
+    "id": 1617,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekolojik Enfeksiyonlar ve PID",
+    "diff": 5,
+    "q": "PID tedavisi alan hastada 72 saate rağmen ateş ve ağrı sürüyor. USG'de kompleks multiloküle adneksiyal kitle ve sıvı koleksiyonu var. En olası komplikasyon hangisidir?",
+    "options": [
+      "Tubo-ovaryan apse",
+      "Müllerian agenezi",
+      "Endometrial polip",
+      "Fizyolojik korpus luteum",
+      "Vulvar kondilom"
+    ],
+    "correct": 0,
+    "exp": "Tubo-ovaryan apse PID'nin ciddi komplikasyonudur. Parenteral geniş spektrumlu antibiyotik gerekir; büyük, rüptür şüphesi olan veya yanıtsız olguda drenaj/cerrahi düşünülür."
+  },
+  {
+    "id": 1618,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekolojik Enfeksiyonlar ve PID",
+    "diff": 4,
+    "q": "Köpüklü, kötü kokulu sarı-yeşil akıntı ve kaşıntı ile gelen hastada servikste çilek görünümü var. Vajinal pH yüksek. Etken ve tedavi hangisidir?",
+    "options": [
+      "Candida; flukonazol tek doz",
+      "Trichomonas vaginalis; metronidazol ve partner tedavisi",
+      "Gardnerella; sadece probiyotik",
+      "HSV; penisilin",
+      "HPV; seftriakson"
+    ],
+    "correct": 1,
+    "exp": "Trikomoniyaz köpüklü kötü kokulu akıntı, yüksek pH ve çilek serviks yapabilir. Metronidazol/tinidazol ile hasta ve partner tedavisi gerekir."
+  },
+  {
+    "id": 1619,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekolojik Enfeksiyonlar ve PID",
+    "diff": 4,
+    "q": "Spot bilgi: Bakteriyel vajinozda beklenen klasik mikroskopi bulgusu aşağıdakilerden hangisidir?",
+    "options": [
+      "Clue cell",
+      "Pseudohif",
+      "Motil trofozoit",
+      "Multinükleer dev hücre",
+      "Asit-fast basil"
+    ],
+    "correct": 0,
+    "exp": "Bakteriyel vajinozda Gardnerella ilişkili clue cell, balık kokusu ve yüksek pH tipiktir. Pseudohif kandida, motil trofozoit trikomonas lehinedir."
+  },
+  {
+    "id": 1620,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekolojik Enfeksiyonlar ve PID",
+    "diff": 4,
+    "q": "Gebede asemptomatik bakteriüri saptanıyor. Hastanın yakınması yok. En doğru yaklaşım hangisidir?",
+    "options": [
+      "Tedavi etmemek, çünkü asemptomatik",
+      "Gebelikte piyelonefrit riskini azaltmak için uygun antibiyotikle tedavi etmek",
+      "Florokinolon profilaksisi vermek",
+      "Sadece vajinal kültür almak",
+      "Doğuma kadar beklemek"
+    ],
+    "correct": 1,
+    "exp": "Gebelikte asemptomatik bakteriüri piyelonefrit ve obstetrik komplikasyon riskini artırır; tarama ve güvenli antibiyotikle tedavi önerilir. Her sessizlik masum değil, özellikle gebelikte."
+  },
+  {
+    "id": 1621,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Bir yıldır korunmasız düzenli ilişkiye rağmen gebelik oluşmayan çift değerlendiriliyor. Kadının siklusları düzenli, erkeğin semen analizinde sperm sayısı ve motilite düşük. İlk temel yaklaşım açısından en doğru ifade hangisidir?",
+    "options": [
+      "İnfertilitede sadece kadın değerlendirilir",
+      "Erkek faktörü de eş zamanlı değerlendirilmelidir",
+      "Önce kadına histerektomi yapılır",
+      "Semen analizi gereksizdir",
+      "Gebelik testi pozitif sayılır"
+    ],
+    "correct": 1,
+    "exp": "İnfertilite çiftin problemidir; erkek faktörü sık görülür ve semen analizi temel, ucuz ve erken yapılması gereken testlerdendir. Sadece kadına yüklenmek hem tıbben hem insanca kötü bir strateji."
+  },
+  {
+    "id": 1622,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Düzensiz adet, hirsutizm ve infertilite ile gelen kadında USG'de polikistik over morfolojisi var. TSH ve prolaktin normal. Kilo fazlalığı mevcut. Ovulasyon indüksiyonunda ilk seçeneklerden biri hangisidir?",
+    "options": [
+      "Letrozol",
+      "Sisplatin",
+      "Tamoksifen meme kanseri dozu",
+      "Yüksek doz prednizon herkese",
+      "GnRH antagonisti tek başına süresiz"
+    ],
+    "correct": 0,
+    "exp": "PCOS'a bağlı anovulatuvar infertilitede yaşam tarzı düzenlemesi ve letrozol ovulasyon indüksiyonunda sık ilk tercihtir. Klomifen de kullanılır; letrozol birçok kılavuzda öne çıkmıştır."
+  },
+  {
+    "id": 1623,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Geçirilmiş PID öyküsü olan infertil hastada tubal açıklığı değerlendirmek isteniyor. Uterin kavite ve tubal geçiş hakkında bilgi veren klasik test hangisidir?",
+    "options": [
+      "Histerosalpingografi",
+      "Meme USG",
+      "Doppler ekokardiyografi",
+      "Direkt batın grafisi",
+      "Serum CA-125 tek başına"
+    ],
+    "correct": 0,
+    "exp": "HSG uterin kavite anomalilerini ve tubal açıklığı değerlendirmede kullanılır. PID öyküsü tubal faktör infertilite riskini artırır."
+  },
+  {
+    "id": 1624,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Spot bilgi: İnfertilite, 35 yaş altı çiftlerde düzenli korunmasız ilişkiye rağmen ne kadar süre gebelik olmaması olarak tanımlanır?",
+    "options": [
+      "3 ay",
+      "6 ay",
+      "12 ay",
+      "24 ay",
+      "5 yıl"
+    ],
+    "correct": 2,
+    "exp": "35 yaş altı çiftlerde infertilite genellikle 12 ay düzenli korunmasız ilişkiye rağmen gebelik olmamasıdır. 35 yaş ve üstünde değerlendirme daha erken, genellikle 6 ay sonra başlatılır."
+  },
+  {
+    "id": 1625,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 5,
+    "q": "Otuz dokuz yaşında kadın 7 aydır gebelik elde edemiyor. Siklusları kısalmış, AMH düşük, antral folikül sayısı az. En olası infertilite nedeni hangisidir?",
+    "options": [
+      "Azalmış over rezervi",
+      "Komplet androjen duyarsızlığı",
+      "Akut PID kesinliği",
+      "Gebelik",
+      "Endometrium kanseri kesinliği"
+    ],
+    "correct": 0,
+    "exp": "İleri üreme yaşı, düşük AMH ve azalmış antral folikül sayısı over rezerv azalmasını düşündürür. Bu hastalarda zaman kritik olduğu için değerlendirme ve yönlendirme geciktirilmemelidir."
+  },
+  {
+    "id": 1626,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Kontrasepsiyon",
+    "diff": 5,
+    "q": "Otuz beş yaş üstü, günde bir paket sigara içen kadın kombine oral kontraseptif istiyor. Migren aurası da tarifliyor. Bu hasta için en doğru yaklaşım hangisidir?",
+    "options": [
+      "Kombine östrojen-progestin rahatlıkla başlanır",
+      "Östrojen içeren yöntemlerden kaçınmak ve alternatif yöntem önermek",
+      "Doz iki katına çıkarılır",
+      "Sadece acil kontrasepsiyon sürekli kullanılır",
+      "Hiçbir kontrasepsiyon yöntemi kullanılamaz"
+    ],
+    "correct": 1,
+    "exp": "35 yaş üstü yoğun sigara kullanımı ve auralı migren östrojen içeren kontraseptiflerde tromboembolik/inme riskini artırır. Progestin-only veya rahim içi yöntemler gibi alternatifler düşünülür."
+  },
+  {
+    "id": 1627,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Kontrasepsiyon",
+    "diff": 4,
+    "q": "Doğumdan 6 hafta sonra emziren kadın uzun etkili geri dönüşümlü kontrasepsiyon istiyor. En uygun seçeneklerden biri hangisidir?",
+    "options": [
+      "Bakırlı veya levonorgestrelli rahim içi araç",
+      "Yüksek doz östrojen tek başına",
+      "Talidomid",
+      "Sürekli acil kontrasepsiyon",
+      "Methotrexate"
+    ],
+    "correct": 0,
+    "exp": "RİA'lar uzun etkili ve geri dönüşümlü yöntemlerdir. Postpartum dönemde zamanlama ve enfeksiyon/perforasyon riski dikkate alınarak güvenle uygulanabilir; emzirme için uygun seçenekler vardır."
+  },
+  {
+    "id": 1628,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Kontrasepsiyon",
+    "diff": 4,
+    "q": "Korunmasız ilişkiden 3 gün sonra başvuran kadın acil kontrasepsiyon istiyor. En etkili acil kontrasepsiyon yöntemi aşağıdakilerden hangisidir?",
+    "options": [
+      "Bakırlı RİA",
+      "Düşük doz aspirin",
+      "Vajinal duş",
+      "Sadece antibiyotik",
+      "Progesteron testi"
+    ],
+    "correct": 0,
+    "exp": "Bakırlı RİA korunmasız ilişkiden sonra acil kontrasepsiyonda en etkili yöntemlerden biridir ve uzun süreli kontrasepsiyon da sağlar. Uygunluk ve enfeksiyon riski değerlendirilir."
+  },
+  {
+    "id": 1629,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Kontrasepsiyon",
+    "diff": 4,
+    "q": "Spot bilgi: Kombine oral kontraseptiflerin ovulasyonu baskılamadaki ana mekanizması nedir?",
+    "options": [
+      "GnRH-FSH/LH aksını baskılayarak LH pikini engellemek",
+      "Tuba uterinayı anatomik olarak kapatmak",
+      "Endometriumu tamamen yok etmek",
+      "hCG salgılamak",
+      "Prolaktini daima sıfırlamak"
+    ],
+    "correct": 0,
+    "exp": "Kombine hormonal kontraseptifler negatif feedback ile FSH/LH salınımını baskılar ve LH pikini engeller. Ayrıca servikal mukusu kalınlaştırır ve endometriumu değiştirir."
+  },
+  {
+    "id": 1630,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Kontrasepsiyon",
+    "diff": 4,
+    "q": "Bakırlı RİA takıldıktan sonra hastada adet kanamasında artış ve dismenore belirginleşiyor. Hormonal yan etki istemeyen ama kanaması artan hastaya danışmanlık veriliyor. Bakırlı RİA'nın sık yan etkisi hangisidir?",
+    "options": [
+      "Adet kanaması ve kramp artışı",
+      "Amenore ve sıcak basması daima",
+      "Kalıcı infertilite",
+      "Serviks kanseri",
+      "Süt üretiminin tamamen kesilmesi"
+    ],
+    "correct": 0,
+    "exp": "Bakırlı RİA kanama miktarı ve dismenoreyi artırabilir. Levonorgestrelli RİA ise genellikle kanamayı azaltır ve bazı hastalarda amenore yapabilir."
+  },
+  {
+    "id": 1631,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Menopoz",
+    "diff": 4,
+    "q": "Elli iki yaşında kadın 13 aydır adet görmüyor, sıcak basması ve gece terlemesi var. Gebelik yok. Menopoz tanımı açısından en doğru ifade hangisidir?",
+    "options": [
+      "Menopoz 12 ay spontan amenore sonrası klinik olarak konur",
+      "Her kadında FSH ölçmeden tanı konamaz",
+      "Menopoz ilk sıcak basmasıdır",
+      "Menopoz 3 ay amenoredir",
+      "Menopoz sadece cerrahiyle olur"
+    ],
+    "correct": 0,
+    "exp": "Menopoz, başka neden olmaksızın 12 ay spontan amenore sonrası klinik tanıdır. Tipik yaş ve semptomlarda her zaman hormon ölçümü gerekmez."
+  },
+  {
+    "id": 1632,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Menopoz",
+    "diff": 4,
+    "q": "Menopoz sonrası uteruslu kadında şiddetli vazomotor semptomlar için hormon tedavisi düşünülüyor. Endometriumu korumak için östrojene ne eklenmelidir?",
+    "options": [
+      "Progestin",
+      "Yüksek doz testosteron",
+      "hCG",
+      "Sadece antibiyotik",
+      "Metotreksat"
+    ],
+    "correct": 0,
+    "exp": "Uterusu olan kadında sistemik östrojen tek başına verilirse endometrial hiperplazi/kanser riski artar. Bu nedenle progestin eklenir. Uterusu olmayanlarda progestin gerekmez."
+  },
+  {
+    "id": 1633,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Menopoz",
+    "diff": 4,
+    "q": "Altmış yaşında postmenopozal kadın vajinal kuruluk, disparoni ve tekrarlayan irritasyon tarifliyor. Sistemik semptomu yok. Muayene atrofik vajinit ile uyumlu. En uygun lokal tedavi seçeneklerinden biri hangisidir?",
+    "options": [
+      "Vajinal düşük doz östrojen",
+      "Yüksek doz kemoterapi",
+      "Acil histerektomi",
+      "Sürekli sistemik antibiyotik",
+      "GnRH agonisti"
+    ],
+    "correct": 0,
+    "exp": "Genitoüriner menopoz sendromunda lokal östrojen, nemlendirici ve lubrikanlar yararlı olabilir. Sadece lokal yakınmada lokal tedavi sistemik tedaviye göre daha hedeflidir."
+  },
+  {
+    "id": 1634,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Menopoz",
+    "diff": 4,
+    "q": "Spot bilgi: Menopozda beklenen tipik hormonal patern hangisidir?",
+    "options": [
+      "FSH yüksek, estradiol düşük",
+      "FSH düşük, estradiol yüksek",
+      "hCG yüksek, progesteron yüksek",
+      "Prolaktin sıfır, TSH sıfır",
+      "LH ve FSH tamamen baskılı"
+    ],
+    "correct": 0,
+    "exp": "Over folikül rezervi tükenince estradiol ve inhibin azalır, hipofizden FSH artar. FSH artışı genellikle LH artışından daha belirgindir."
+  },
+  {
+    "id": 1635,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Menopoz",
+    "diff": 5,
+    "q": "Postmenopozal kanama ile gelen 61 yaşındaki kadında transvajinal USG'de endometrium kalınlığı artmış bulunuyor. En doğru sonraki adım hangisidir?",
+    "options": [
+      "Endometrial örnekleme",
+      "Rutin olarak 1 yıl bekleme",
+      "Sadece vajinal duş",
+      "Gebelik haftası hesaplama",
+      "Acil apendektomi"
+    ],
+    "correct": 0,
+    "exp": "Postmenopozal kanama endometrium kanseri açısından aksi kanıtlanana kadar önemlidir. Endometrium kalınsa veya risk varsa endometrial örnekleme gerekir."
+  },
+  {
+    "id": 1636,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Pelvik Organ Prolapsusu ve Üriner İnkontinans",
+    "diff": 4,
+    "q": "Çok doğum yapmış kadında öksürme ve hapşırmayla idrar kaçırma var. Ani sıkışma hissi belirgin değil. Muayenede üretral hipermobilite saptanıyor. En olası inkontinans tipi hangisidir?",
+    "options": [
+      "Stres üriner inkontinans",
+      "Urge inkontinans",
+      "Taşma inkontinansı",
+      "Fistül",
+      "Diabetes insipidus"
+    ],
+    "correct": 0,
+    "exp": "Stres inkontinans intraabdominal basınç artışıyla idrar kaçırmadır. Üretral destek zayıflığı veya sfinkter yetmezliği rol oynar; ilk basamakta pelvik taban egzersizleri değerlidir."
+  },
+  {
+    "id": 1637,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Pelvik Organ Prolapsusu ve Üriner İnkontinans",
+    "diff": 4,
+    "q": "Altmış yaşında kadında ani idrar sıkışması, tuvalete yetişemeden kaçırma ve sık idrara çıkma var. Öksürükle kaçırma belirgin değil. En olası tanı hangisidir?",
+    "options": [
+      "Aşırı aktif mesane/urge inkontinans",
+      "Stres inkontinans",
+      "Vezikovajinal fistül",
+      "Amenore",
+      "Endometriozis"
+    ],
+    "correct": 0,
+    "exp": "Urge inkontinans ani sıkışma hissiyle idrar kaçırmadır; detrusor aşırı aktivitesiyle ilişkilidir. Davranış tedavileri ve antimuskarinik/beta-3 agonist seçenekleri kullanılabilir."
+  },
+  {
+    "id": 1638,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Pelvik Organ Prolapsusu ve Üriner İnkontinans",
+    "diff": 4,
+    "q": "Histerektomi sonrası sürekli sulu vajinal akıntı ve idrar kaçırma başlayan hastada ped testi pozitiftir. Vajenden sürekli idrar gelişi izleniyor. En olası komplikasyon hangisidir?",
+    "options": [
+      "Vezikovajinal fistül",
+      "Stres inkontinans",
+      "Trikomonas vajiniti",
+      "Endometrioma",
+      "Bartholin kisti"
+    ],
+    "correct": 0,
+    "exp": "Vezikovajinal fistül mesane ile vajen arasında bağlantıdır ve sürekli idrar kaçağı yapar. Pelvik cerrahi sonrası gelişebilir; tanı boya testleri ve sistoskopiyle desteklenir."
+  },
+  {
+    "id": 1639,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Pelvik Organ Prolapsusu ve Üriner İnkontinans",
+    "diff": 4,
+    "q": "Spot bilgi: Sistosel hangi pelvik organın vajen ön duvarından aşağı doğru bombeleşmesidir?",
+    "options": [
+      "Mesane",
+      "Rektum",
+      "Uterus fundusu",
+      "Over",
+      "Appendiks"
+    ],
+    "correct": 0,
+    "exp": "Sistosel mesanenin vajen ön duvarından prolabe olmasıdır. Rektosel arka duvar, uterin prolapsus ise uterus desteğinin kaybıyla ilişkilidir."
+  },
+  {
+    "id": 1640,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Pelvik Organ Prolapsusu ve Üriner İnkontinans",
+    "diff": 4,
+    "q": "Pelvik organ prolapsusu olan yaşlı, cerrahi istemeyen kadında semptomları azaltmak için vajinal destek cihazı planlanıyor. Bu cihaz aşağıdakilerden hangisidir?",
+    "options": [
+      "Pesser",
+      "Bakırlı RİA",
+      "Kolonoskop",
+      "Foley yerine nefrostomi",
+      "Sentinel klips"
+    ],
+    "correct": 0,
+    "exp": "Pesser, cerrahi istemeyen veya cerrahi riski yüksek prolapsus hastalarında semptomatik destek sağlayabilir. Düzenli kontrol, vajinal irritasyon ve ülser açısından takip gerekir."
+  },
+  {
+    "id": 1641,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Serviks Patolojileri ve HPV",
+    "diff": 5,
+    "q": "Otuz iki yaşındaki kadında HPV 16 pozitifliği ve sitolojide HSIL saptanıyor. Kolposkopik biyopside CIN3 doğrulanıyor. Fertilite isteği olan hastada uygun tedavi yaklaşımı hangisidir?",
+    "options": [
+      "Eksizyonel işlem (LEEP/konizasyon)",
+      "Sadece antibiyotik",
+      "Acil radikal histerektomi her hastaya",
+      "Bir daha tarama yapmamak",
+      "Sadece vajinal duş"
+    ],
+    "correct": 0,
+    "exp": "CIN3 yüksek dereceli preinvaziv lezyondur ve genellikle eksizyonel tedavi gerekir. LEEP/konizasyon hem tedavi hem de invazyonu dışlama açısından değerlidir."
+  },
+  {
+    "id": 1642,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Serviks Patolojileri ve HPV",
+    "diff": 4,
+    "q": "Serviks kanseri taramasında anormal sitoloji sonrası kolposkopi yapılıyor. Transformasyon zonu tam görülemiyor ve yüksek dereceli lezyon şüphesi var. Bu durumda eksizyonel tanısal işlem neden önemlidir?",
+    "options": [
+      "Gizli invaziv hastalığı dışlamak için",
+      "HPV'yi antibiyotikle öldürmek için",
+      "Over rezervini artırmak için",
+      "Dismenoreyi kalıcı düzeltmek için",
+      "Gebelik oluşturmak için"
+    ],
+    "correct": 0,
+    "exp": "Yüksek dereceli lezyonda ve transformasyon zonu değerlendirilemiyorsa eksizyonel işlem invazyonu dışlamak ve lezyonu tedavi etmek açısından önemlidir."
+  },
+  {
+    "id": 1643,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Serviks Patolojileri ve HPV",
+    "diff": 4,
+    "q": "Postkoital kanama ile gelen kadında servikste frajil, kolay kanayan lezyon görülüyor. Biyopsi skuamöz hücreli karsinom gösteriyor. En önemli etyolojik faktör hangisidir?",
+    "options": [
+      "Yüksek riskli HPV persistan enfeksiyonu",
+      "Tekrarlayan hipoglisemi",
+      "Kısa boy",
+      "Hiperkalsemi",
+      "Aşırı D vitamini"
+    ],
+    "correct": 0,
+    "exp": "Serviks kanserinin ana nedeni yüksek riskli HPV enfeksiyonunun persiste etmesidir; özellikle HPV 16 ve 18 önemlidir. Tarama programları preinvaziv dönemde yakalamayı hedefler."
+  },
+  {
+    "id": 1644,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Serviks Patolojileri ve HPV",
+    "diff": 4,
+    "q": "Spot bilgi: HPV aşısı için temel hedef aşağıdakilerden hangisidir?",
+    "options": [
+      "Yüksek riskli HPV ilişkili serviks ve diğer anogenital/orofaringeal kanserleri önlemek",
+      "Mevcut invaziv serviks kanserini tek başına tedavi etmek",
+      "Gebeliği sonlandırmak",
+      "PID tedavisi yapmak",
+      "Menopoz semptomlarını gidermek"
+    ],
+    "correct": 0,
+    "exp": "HPV aşısı profilaktiktir; mevcut invaziv kanseri tedavi etmez. En yüksek yarar cinsel aktivite başlamadan önce uygulanmasıyla sağlanır, ancak daha geniş yaşlarda da fayda görülebilir."
+  },
+  {
+    "id": 1645,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Serviks Patolojileri ve HPV",
+    "diff": 5,
+    "q": "LEEP sonrası patoloji raporunda cerrahi sınırda yüksek dereceli lezyon devam ettiği yazıyor. Hastaya yaklaşım belirlenirken en önemli noktalardan biri hangisidir?",
+    "options": [
+      "Rezidüel hastalık riski nedeniyle yakın takip veya yeniden eksizyon değerlendirmesi",
+      "Artık hiçbir takip gerekmez",
+      "Sınır pozitifliği daima normaldir",
+      "Sadece demir tedavisi yeterlidir",
+      "Sadece meme USG yapılır"
+    ],
+    "correct": 0,
+    "exp": "Pozitif cerrahi sınır rezidüel veya rekürren CIN riskini artırır. Yaş, fertilite isteği, kolposkopi bulgusu ve uyum dikkate alınarak yakın takip veya yeniden eksizyon planlanabilir."
+  },
+  {
+    "id": 1646,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Endometrium Patolojileri",
+    "diff": 5,
+    "q": "Postmenopozal kanama ile gelen obez, diyabetik kadında endometrial biyopsi endometrioid adenokarsinom gösteriyor. Bu hastalık için en klasik risk faktörü aşağıdakilerden hangisidir?",
+    "options": [
+      "Karşılanmamış östrojen etkisi",
+      "HPV 16 enfeksiyonu",
+      "Sigara ile skuamöz metaplazi",
+      "BRCA2 olmadan testosteron eksikliği",
+      "Geçirilmiş apandisit"
+    ],
+    "correct": 0,
+    "exp": "Tip 1 endometrium kanseri karşılanmamış östrojenle ilişkilidir. Obezite, anovulasyon, PCOS, nulliparite ve geç menopoz riski artırır."
+  },
+  {
+    "id": 1647,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Endometrium Patolojileri",
+    "diff": 5,
+    "q": "Otuz beş yaşında PCOS'lu, gebelik isteyen kadında atipili endometrial hiperplazi saptanıyor. Uterusu koruma isteği var. Uygun seçilmiş hastada konservatif yaklaşım seçeneklerinden biri hangisidir?",
+    "options": [
+      "Yüksek doz progestin tedavisi ve yakın biyopsi takibi",
+      "Östrojen monoterapisi",
+      "Hiç takip etmemek",
+      "Antibiyotikle kür",
+      "Acil ooforektomi tek başına"
+    ],
+    "correct": 0,
+    "exp": "Atipili hiperplazi endometrium kanseri öncülüdür. Standart kesin tedavi çoğu zaman histerektomi olsa da fertilite isteyen uygun hastada progestin tedavisi ve sıkı takip düşünülebilir."
+  },
+  {
+    "id": 1648,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Endometrium Patolojileri",
+    "diff": 4,
+    "q": "Tamoksifen kullanan postmenopozal meme kanseri hastasında vajinal kanama gelişiyor. Endometrium açısından hangi risk artışı özellikle akılda tutulmalıdır?",
+    "options": [
+      "Endometrial hiperplazi ve kanser",
+      "Over torsiyonu",
+      "Turner sendromu",
+      "Komplet androjen duyarsızlığı",
+      "Akut PID kesinliği"
+    ],
+    "correct": 0,
+    "exp": "Tamoksifen meme dokusunda antiöstrojenik, endometriumda parsiyel agonistik etki gösterebilir. Postmenopozal kanama varsa endometrium değerlendirilmelidir."
+  },
+  {
+    "id": 1649,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Endometrium Patolojileri",
+    "diff": 4,
+    "q": "Spot bilgi: Endometrium kanserinin en sık histolojik tipi hangisidir?",
+    "options": [
+      "Endometrioid adenokarsinom",
+      "Disgerminom",
+      "Seröz over kistadenomu",
+      "Skuamöz vulva kanseri",
+      "Koryokarsinom"
+    ],
+    "correct": 0,
+    "exp": "Endometrium kanserinin en sık tipi endometrioid adenokarsinomdur. Genellikle östrojen ilişkili Tip 1 grupta yer alır."
+  },
+  {
+    "id": 1650,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Endometrium Patolojileri",
+    "diff": 4,
+    "q": "Endometrium kanseri nedeniyle opere edilen hastada cerrahi evreleme planlanıyor. Endometrium kanserinde evreleme için en doğru genel ifade hangisidir?",
+    "options": [
+      "Temel evreleme cerrahidir",
+      "Sadece Pap smear ile evrelenir",
+      "Evreleme sadece CA-125 ile yapılır",
+      "Evreleme için gebelik haftası gerekir",
+      "Tüm hastalarda sadece kemoterapiyle evre belirlenir"
+    ],
+    "correct": 0,
+    "exp": "Endometrium kanserinde evreleme cerrahidir; histerektomi, bilateral salpingo-ooforektomi ve risk durumuna göre lenf nodu değerlendirmesi yapılır."
+  },
+  {
+    "id": 1651,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Over Tümörleri",
+    "diff": 5,
+    "q": "Altmış iki yaşında kadında şişkinlik, erken doyma ve kilo kaybı var. USG'de bilateral solid-kistik adneksiyal kitle, asit ve peritoneal implantlar görülüyor. En olası malignite tipi hangisidir?",
+    "options": [
+      "Epitelyal over kanseri",
+      "Fonksiyonel folikül kisti",
+      "Dermoid kist",
+      "Korpus luteum kisti",
+      "Tubo-ovaryan apse"
+    ],
+    "correct": 0,
+    "exp": "Postmenopozal kadında bilateral kompleks kitle, asit ve peritoneal yayılım epitelyal over kanserini düşündürür. Over kanseri genellikle geç evrede nonspesifik abdominal semptomlarla gelir."
+  },
+  {
+    "id": 1652,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Over Tümörleri",
+    "diff": 4,
+    "q": "Yirmi yaşında kadında over kitlesi çıkarılıyor. Patolojide saç, yağ, kıkırdak ve diş benzeri yapılar içeren matür kistik teratom saptanıyor. Bu tümörün kökeni nedir?",
+    "options": [
+      "Germ hücreli tümör",
+      "Seks kord stromal tümör",
+      "Epitelyal seröz tümör",
+      "Metastatik mide kanseri",
+      "Lenfoma"
+    ],
+    "correct": 0,
+    "exp": "Matür kistik teratom germ hücreli benign over tümörüdür ve üç germ yaprağına ait dokular içerebilir. Torsiyon riski önemlidir."
+  },
+  {
+    "id": 1653,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Over Tümörleri",
+    "diff": 5,
+    "q": "Ergen kızda hızlı büyüyen unilateral solid over kitlesi var. LDH yüksek. Patoloji disgerminom ile uyumlu. Bu tümör için en doğru ifade hangisidir?",
+    "options": [
+      "Radyokemosensitif germ hücreli malignitedir",
+      "Daima benign fonksiyonel kisttir",
+      "Sadece menopozda görülür",
+      "CA-125 kesin tanı koydurur",
+      "Tedavisi daima antibiyotiktir"
+    ],
+    "correct": 0,
+    "exp": "Disgerminom gençlerde görülen malign germ hücreli over tümörüdür. LDH yükselebilir ve tedaviye duyarlılığı iyidir."
+  },
+  {
+    "id": 1654,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Over Tümörleri",
+    "diff": 4,
+    "q": "Spot bilgi: Granüloza hücreli tümörlerin salgıladığı hormon nedeniyle hangi klinik tablo görülebilir?",
+    "options": [
+      "Östrojen fazlalığına bağlı anormal uterin kanama/endometrial hiperplazi",
+      "Aldosteron eksikliğine bağlı şok",
+      "İnsülin yokluğu",
+      "Tiroid fırtınası",
+      "Kortizol eksikliğine bağlı hiperpigmentasyon"
+    ],
+    "correct": 0,
+    "exp": "Granüloza hücreli tümörler östrojen üretebilir. Prepubertal kızda erken puberte, erişkinde anormal uterin kanama ve endometrial hiperplazi/kanser riski oluşturabilir."
+  },
+  {
+    "id": 1655,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Over Tümörleri",
+    "diff": 5,
+    "q": "Otuz beş yaşında kadında akut tek taraflı pelvik ağrı ve 8 cm dermoid kist var. Bulantı-kusma eşlik ediyor. Doppler kesin dışlayıcı değil. En önemli acil komplikasyon hangisidir?",
+    "options": [
+      "Over torsiyonu",
+      "Endometrium hiperplazisi",
+      "Servikal polip",
+      "Asherman sendromu",
+      "Vajinal kandidiyazis"
+    ],
+    "correct": 0,
+    "exp": "Büyük ve hareketli over kitlelerinde torsiyon riski artar. Dermoid kistler torsiyona yatkındır; klinik şüphede cerrahi gecikmemelidir."
+  },
+  {
+    "id": 1656,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Gestasyonel Trofoblastik Hastalık",
+    "diff": 5,
+    "q": "On haftalık gebelikte şiddetli bulantı-kusma, vajinal kanama ve uterusun haftasına göre büyük olması var. β-hCG beklenenden çok yüksek. USG'de embriyo izlenmeden kar fırtınası görünümü saptanıyor. En olası tanı hangisidir?",
+    "options": [
+      "Komplet mol hidatiform",
+      "Ektopik gebelik",
+      "Missed abortus",
+      "Normal ikiz gebelik",
+      "Endometrioma"
+    ],
+    "correct": 0,
+    "exp": "Komplet molde fetal doku yoktur, diffüz trofoblastik proliferasyon ve çok yüksek β-hCG görülür. Uterus büyük, hiperemezis ve erken preeklampsi gibi bulgular olabilir."
+  },
+  {
+    "id": 1657,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Gestasyonel Trofoblastik Hastalık",
+    "diff": 5,
+    "q": "Mol gebelik boşaltıldıktan sonra β-hCG başlangıçta düşüyor, sonra plato yapıp tekrar yükseliyor. Akciğer grafisinde nodüler lezyonlar var. En olası durum hangisidir?",
+    "options": [
+      "Gestasyonel trofoblastik neoplazi",
+      "Normal iyileşme",
+      "Asherman sendromu kesinliği",
+      "PCOS",
+      "Endometriozis"
+    ],
+    "correct": 0,
+    "exp": "Mol sonrası β-hCG'nin düşmemesi, plato yapması veya yükselmesi persistan gestasyonel trofoblastik neoplaziyi düşündürür. Akciğer metastazı sık görülebilir; kemosensitivitesi yüksektir."
+  },
+  {
+    "id": 1658,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Gestasyonel Trofoblastik Hastalık",
+    "diff": 4,
+    "q": "Komplet mol tanısı alan hastaya uterin boşaltma yapılacaktır. Fertilite korumak isteyen stabil hastada tercih edilen işlem hangisidir?",
+    "options": [
+      "Suction küretaj/vakum aspirasyon",
+      "Methotrexate tek başına ve boşaltma yapmamak",
+      "Acil bilateral ooforektomi",
+      "LEEP",
+      "Servikal serklaj"
+    ],
+    "correct": 0,
+    "exp": "Mol hidatiformda fertilite isteyen stabil hastada vakum aspirasyon ile uterin boşaltma tercih edilir. Sonrasında β-hCG takibi ve gebelikten korunma önemlidir."
+  },
+  {
+    "id": 1659,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Gestasyonel Trofoblastik Hastalık",
+    "diff": 4,
+    "q": "Spot bilgi: Komplet molün tipik genetik yapısı için en doğru ifade hangisidir?",
+    "options": [
+      "Genellikle paternal kökenli diploid yapı",
+      "Daima maternal triploid yapı",
+      "46,XY olmak zorundadır",
+      "Sadece 45,X olur",
+      "Mitokondriyal DNA yoktur"
+    ],
+    "correct": 0,
+    "exp": "Komplet mol çoğunlukla boş ovumun sperm tarafından döllenmesi ve paternal genomun duplikasyonu ile diploid androgenetik yapıdadır. Parsiyel mol daha çok triploid yapıdadır ve fetal doku bulunabilir."
+  },
+  {
+    "id": 1660,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Gestasyonel Trofoblastik Hastalık",
+    "diff": 4,
+    "q": "Mol gebelikte boşaltma sonrası hastaya takip anlatılıyor. Takipte en kritik laboratuvar parametresi hangisidir?",
+    "options": [
+      "Seri β-hCG ölçümü",
+      "Serum troponin",
+      "D-dimer tek başına",
+      "HbA1c",
+      "Serum amilaz"
+    ],
+    "correct": 0,
+    "exp": "Gestasyonel trofoblastik hastalıkta tedavi sonrası seri β-hCG takibi persistan hastalığı yakalamak için esastır. β-hCG normalize olana kadar ve sonrasında belirli süre izlem yapılır."
+  },
+  {
+    "id": 1661,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Gebeliğin Fizyolojisi ve Prenatal Bakım",
+    "diff": 4,
+    "q": "Gebeliğin 10. haftasında ilk kontrole gelen hastada hemoglobin hafif düşük, plazma hacmi artışına bağlı fizyolojik hemodilüsyon anlatılıyor. Normal gebelikte kardiyovasküler fizyoloji için en doğru ifade hangisidir?",
+    "options": [
+      "Plazma hacmi ve kardiyak output artar",
+      "Plazma hacmi azalır",
+      "Kardiyak output sıfıra yaklaşır",
+      "Sistemik vasküler direnç artarak hipertansiyon yapar",
+      "Renal kan akımı azalır"
+    ],
+    "correct": 0,
+    "exp": "Gebelikte plazma hacmi, kan hacmi ve kardiyak output artar; sistemik vasküler direnç genellikle azalır. Hemodilüsyon fizyolojik anemi görünümü oluşturabilir."
+  },
+  {
+    "id": 1662,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Gebeliğin Fizyolojisi ve Prenatal Bakım",
+    "diff": 4,
+    "q": "On iki haftalık gebede kombine tarama planlanıyor. Trizomi 21 risk değerlendirmesinde kullanılan parametrelerden biri aşağıdakilerden hangisidir?",
+    "options": [
+      "Nukal translusensi",
+      "Serum PSA",
+      "CA 19-9",
+      "Semen analizi",
+      "Kolonoskopi"
+    ],
+    "correct": 0,
+    "exp": "İlk trimester kombine taramada nukal translusensi, maternal serum belirteçleri ve yaş kullanılır. Artmış NT anöploidi ve bazı yapısal anomalilerle ilişkilidir."
+  },
+  {
+    "id": 1663,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Gebeliğin Fizyolojisi ve Prenatal Bakım",
+    "diff": 4,
+    "q": "Rh negatif gebe, Rh pozitif bebek doğuruyor. Anne daha önce duyarlanmamış. Postpartum alloimmünizasyonu önlemek için uygulanması gereken profilaksi hangisidir?",
+    "options": [
+      "Anti-D immün globulin",
+      "Canlı kızamık aşısı doğumda fetüse",
+      "Yüksek doz warfarin",
+      "Metotreksat",
+      "Androjen tedavisi"
+    ],
+    "correct": 0,
+    "exp": "Rh negatif duyarlanmamış anne Rh pozitif fetüsle karşılaşırsa anti-D immün globulin alloimmünizasyonu önler. Antenatal ve postpartum uygun zamanda uygulanır."
+  },
+  {
+    "id": 1664,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Gebeliğin Fizyolojisi ve Prenatal Bakım",
+    "diff": 4,
+    "q": "Spot bilgi: Gebelikte nöral tüp defekti riskini azaltmak için prekonsepsiyonel dönemde önerilen temel destek hangisidir?",
+    "options": [
+      "Folik asit",
+      "Retinoik asit yüksek doz",
+      "Warfarin",
+      "Tetrasiklin",
+      "Metotreksat"
+    ],
+    "correct": 0,
+    "exp": "Folik asit nöral tüp defekti riskini azaltır ve ideal olarak gebelikten önce başlanır. Önceden etkilenmiş gebelik öyküsünde daha yüksek doz gerekir."
+  },
+  {
+    "id": 1665,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Gebeliğin Fizyolojisi ve Prenatal Bakım",
+    "diff": 4,
+    "q": "Gebede oral glukoz taraması yüksek, tanısal testle gestasyonel diyabet doğrulanıyor. Tedavide ilk basamak yaklaşım genellikle hangisidir?",
+    "options": [
+      "Diyet, egzersiz ve glukoz izlemi; hedef sağlanmazsa farmakoterapi",
+      "Gebeliği hemen sonlandırmak",
+      "Sınırsız karbonhidrat önerisi",
+      "Sadece antibiyotik",
+      "Fetal USG'yi tamamen bırakmak"
+    ],
+    "correct": 0,
+    "exp": "Gestasyonel diyabette ilk yaklaşım tıbbi beslenme tedavisi, uygun egzersiz ve glukoz izlemdir. Hedefler sağlanamazsa insülin veya seçilmiş oral ajanlar gündeme gelir."
+  },
+  {
+    "id": 1666,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Obstetrik Kanamalar",
+    "diff": 5,
+    "q": "Otuz iki haftalık gebede ağrısız parlak kırmızı vajinal kanama gelişiyor. Uterus yumuşak, fetal kalp atımı var. Daha önce sezaryen öyküsü mevcut. İlk akla gelen tanı hangisidir?",
+    "options": [
+      "Plasenta previa",
+      "Ablasyo plasenta",
+      "Uterin rüptür",
+      "Vasa previa",
+      "Ektopik gebelik"
+    ],
+    "correct": 0,
+    "exp": "Ağrısız üçüncü trimester kanaması plasenta previa için klasiktir. Önce ultrason ile plasenta yeri değerlendirilmeden dijital vajinal muayene yapılmamalıdır."
+  },
+  {
+    "id": 1667,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Obstetrik Kanamalar",
+    "diff": 5,
+    "q": "Otuz beş haftalık gebede ani başlayan şiddetli karın ağrısı, vajinal kanama, uterin hassasiyet ve taş gibi uterus var. Hipertansiyon öyküsü mevcut. En olası tanı hangisidir?",
+    "options": [
+      "Ablasyo plasenta",
+      "Plasenta previa",
+      "Mol gebelik",
+      "Servikal polip",
+      "Vajinal kandidiyazis"
+    ],
+    "correct": 0,
+    "exp": "Ablasyo plasenta ağrılı kanama, uterin hassasiyet/hipertonisite ve fetal distresle gelebilir. Hipertansiyon önemli risk faktörüdür."
+  },
+  {
+    "id": 1668,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Obstetrik Kanamalar",
+    "diff": 5,
+    "q": "Doğum sırasında membran rüptürüyle birlikte aniden fetal bradikardi ve ağrısız vajinal kanama gelişiyor. Plasenta previa yok. Velamentöz kord insersiyonu öyküsü var. En olası tanı hangisidir?",
+    "options": [
+      "Vasa previa rüptürü",
+      "Ablasyo plasenta",
+      "Uterin atoni",
+      "Endometrit",
+      "HELLP"
+    ],
+    "correct": 0,
+    "exp": "Vasa previa fetal damarların membranlar içinde servikal os üzerinden geçmesidir. Membran rüptürüyle fetal kanama ve ani fetal bradikardi gelişir; acil sezaryen gerekir."
+  },
+  {
+    "id": 1669,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Obstetrik Kanamalar",
+    "diff": 4,
+    "q": "Spot bilgi: Postpartum kanamanın en sık nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Uterin atoni",
+      "Vasa previa",
+      "Molar gebelik",
+      "Over torsiyonu",
+      "Servikal displazi"
+    ],
+    "correct": 0,
+    "exp": "Postpartum kanamanın en sık nedeni uterin atonidir. Tone, tissue, trauma, thrombin yaklaşımı nedenleri sistematik hatırlatır."
+  },
+  {
+    "id": 1670,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Obstetrik Kanamalar",
+    "diff": 5,
+    "q": "Vajinal doğum sonrası yoğun kanama var. Uterus fundusu yumuşak ve gevşek palpe ediliyor. İlk yaklaşımda en uygun müdahale hangisidir?",
+    "options": [
+      "Uterin masaj ve uterotonik tedavi",
+      "Hemen taburculuk",
+      "Antihipertansif kesmek",
+      "Yalnızca Pap smear",
+      "Histerosalpingografi"
+    ],
+    "correct": 0,
+    "exp": "Yumuşak, gevşek uterus atoniyi gösterir. İlk müdahaleler uterin masaj, oksitosin gibi uterotonikler, damar yolu ve kanama resüsitasyonudur."
+  },
+  {
+    "id": 1671,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Hipertansif Gebelik Hastalıkları",
+    "diff": 5,
+    "q": "Otuz dört haftalık gebede kan basıncı 165/110 mmHg, baş ağrısı ve görme bulanıklığı var. Proteinüri mevcut. Trombosit 85.000, AST/ALT yüksek. En olası tanı hangisidir?",
+    "options": [
+      "Ağır özellikli preeklampsi/HELLP spektrumu",
+      "Basit gestasyonel hipertansiyon",
+      "Kronik hipertansiyon dışı normal gebelik",
+      "Akut sistit",
+      "Molar gebelik olmadan normal bulgu"
+    ],
+    "correct": 0,
+    "exp": "Ağır hipertansiyon, nörolojik semptom, trombositopeni ve transaminaz yüksekliği ağır özellikli preeklampsi ve HELLP spektrumunu düşündürür. Maternal stabilizasyon ve doğum planı gerekir."
+  },
+  {
+    "id": 1672,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Hipertansif Gebelik Hastalıkları",
+    "diff": 5,
+    "q": "Preeklamptik gebede jeneralize tonik-klonik nöbet gelişiyor. Havayolu güvenliği sağlanıyor. Nöbet profilaksisi ve tedavisinde tercih edilen ilaç hangisidir?",
+    "options": [
+      "Magnezyum sülfat",
+      "Fenitoin rutin ilk tercih",
+      "Diazoksit",
+      "Warfarin",
+      "Metotreksat"
+    ],
+    "correct": 0,
+    "exp": "Eklampsi, preeklampsi zemininde nöbet gelişmesidir. Magnezyum sülfat nöbet tedavisi ve profilaksisinde ilk tercih ajandır; toksisite açısından refleks, solunum ve idrar çıkışı izlenir."
+  },
+  {
+    "id": 1673,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Hipertansif Gebelik Hastalıkları",
+    "diff": 4,
+    "q": "Yirmi sekiz haftalık gebede kan basıncı 150/95 mmHg ölçülüyor, proteinüri yok, trombosit ve karaciğer enzimleri normal, semptom yok. Gebelik öncesi hipertansiyon öyküsü yok. En olası tanı hangisidir?",
+    "options": [
+      "Gestasyonel hipertansiyon",
+      "Eklampsi",
+      "HELLP sendromu",
+      "Kronik hipertansiyon",
+      "Feokromositoma kesinliği"
+    ],
+    "correct": 0,
+    "exp": "20. gebelik haftasından sonra proteinüri veya ağır özellikler olmadan gelişen hipertansiyon gestasyonel hipertansiyondur. Preeklampsiye ilerleyebileceği için takip gerekir."
+  },
+  {
+    "id": 1674,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Hipertansif Gebelik Hastalıkları",
+    "diff": 4,
+    "q": "Spot bilgi: HELLP sendromunun açılımındaki temel bileşenler hangisidir?",
+    "options": [
+      "Hemoliz, yükselmiş karaciğer enzimleri, düşük trombosit",
+      "Hiperglisemi, eozinofili, lökositoz",
+      "Hematemez, epilepsi, lenfoma",
+      "Hipokalsemi, emboli, laktasyon",
+      "Hidrosefali, erken doğum, lupus"
+    ],
+    "correct": 0,
+    "exp": "HELLP; hemolysis, elevated liver enzymes, low platelets demektir. Sağ üst kadran ağrısı, bulantı-kusma ve ciddi maternal komplikasyonlarla gelebilir."
+  },
+  {
+    "id": 1675,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Hipertansif Gebelik Hastalıkları",
+    "diff": 5,
+    "q": "Otuz yedi haftalık ağır preeklampsili gebede anne stabilize ediliyor. Fetal durum izleniyor. Definitif tedavi açısından en doğru ifade hangisidir?",
+    "options": [
+      "Definitif tedavi doğumdur",
+      "Definitif tedavi sadece tuzsuz diyetle 3 ay beklemektir",
+      "Definitif tedavi HPV aşısıdır",
+      "Definitif tedavi folik asidi kesmektir",
+      "Doğum hiçbir zaman düşünülmez"
+    ],
+    "correct": 0,
+    "exp": "Preeklampsinin kesin tedavisi plasentanın çıkarılması, yani doğumdur. Zamanlama gebelik haftası, maternal-fetal durum ve ağır özelliklere göre belirlenir."
+  },
+  {
+    "id": 1676,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Doğum Eylemi ve Komplikasyonları",
+    "diff": 5,
+    "q": "Term gebede düzenli kontraksiyonlar var. Serviks 6 cm açıklıkta ve aktif faza girmiş. Saatlerdir yeterli kontraksiyona rağmen açıklık ilerlemiyor. Fetal baş uygun pozisyonda değil ve pelvis uyumsuzluğu düşünülüyor. Bu durum en çok hangi doğum distosisi kategorisine girer?",
+    "options": [
+      "Power, passenger veya passage sorunlarından biriyle ilişkili distosi",
+      "Normal latent faz",
+      "Menopoz",
+      "Ektopik gebelik",
+      "Endometrial hiperplazi"
+    ],
+    "correct": 0,
+    "exp": "Doğum distosisi klasik olarak güç (power), yol (passage) ve yolcu (passenger) problemleriyle değerlendirilir. İlerlemeyen eylemde kontraksiyon yeterliliği, fetal pozisyon/boyut ve pelvis birlikte düşünülür."
+  },
+  {
+    "id": 1677,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Doğum Eylemi ve Komplikasyonları",
+    "diff": 5,
+    "q": "Vajinal doğumda baş çıktıktan sonra omuzlar gelmiyor, hafif traksiyonla ilerleme yok. Turtle sign izleniyor. İlk uygulanacak manevralardan biri hangisidir?",
+    "options": [
+      "McRoberts manevrası ve suprapubik bası",
+      "Fundal bası",
+      "Vakumla güçlü traksiyon",
+      "Hemen histerektomi",
+      "Anneye su içirmek"
+    ],
+    "correct": 0,
+    "exp": "Omuz distosisinde ilk basamak McRoberts manevrası ve suprapubik basıdır. Fundal bası önerilmez; impaksiyonu kötüleştirebilir. Ekip çağırmak ve zamanı kaydetmek önemlidir."
+  },
+  {
+    "id": 1678,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Doğum Eylemi ve Komplikasyonları",
+    "diff": 5,
+    "q": "Doğum sonrası plasenta çıktıktan sonra uterus sert olmasına rağmen kanama sürüyor. Vajinal muayenede servikal yırtık saptanıyor. Postpartum kanama nedenleri içinde bu hangi gruba girer?",
+    "options": [
+      "Trauma",
+      "Tone",
+      "Tissue",
+      "Thrombin",
+      "Trophoblast"
+    ],
+    "correct": 0,
+    "exp": "Sert uterus atoniyi daha az düşündürür; devam eden kanamada genital trakt laserasyonları akla gelmelidir. 4T yaklaşımında yırtıklar 'Trauma' grubundadır."
+  },
+  {
+    "id": 1679,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Doğum Eylemi ve Komplikasyonları",
+    "diff": 4,
+    "q": "Spot bilgi: Doğum eyleminin aktif fazı güncel pratikte genellikle yaklaşık hangi servikal açıklıktan itibaren kabul edilir?",
+    "options": [
+      "1 cm",
+      "3 cm",
+      "6 cm",
+      "10 cm sonrası",
+      "Doğumdan 24 saat sonra"
+    ],
+    "correct": 2,
+    "exp": "Güncel yaklaşımda aktif faz çoğunlukla 6 cm civarından itibaren kabul edilir. Daha erken açıklıklarda yavaş ilerleme tek başına gereksiz müdahaleye yol açmamalıdır."
+  },
+  {
+    "id": 1680,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Doğum Eylemi ve Komplikasyonları",
+    "diff": 5,
+    "q": "Önceki sezaryen skarı olan gebede TOLAC sırasında ani karın ağrısı, fetal bradikardi, kontraksiyonların kaybolması ve vajinal kanama gelişiyor. En olası tanı hangisidir?",
+    "options": [
+      "Uterin rüptür",
+      "Normal doğum ilerlemesi",
+      "Vajinal kandidiyazis",
+      "Servikal polip",
+      "Hiperemezis gravidarum"
+    ],
+    "correct": 0,
+    "exp": "Önceki uterin skar varlığında ani ağrı, fetal distres, kontraksiyon kaybı ve kanama uterin rüptürü düşündürür. Acil laparotomi/sezaryen gerektiren obstetrik felakettir."
+  },
+  {
+    "id": 1681,
+    "ders": "Genel Cerrahi",
+    "konu": "Asit Baz Bozuklukları",
+    "diff": 3,
+    "q": "Pilor stenozu olan ve fışkırır tarzda kusan bebekte beklenen asit-baz bozukluğu hangisidir?",
+    "options": [
+      "Ketoasidoz",
+      "Respiratuar Asidoz",
+      "Hiponatremi",
+      "Metabolik Alkaloz",
+      "Hipokalsemi"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Metabolik Alkaloz' şıkkıdır."
+  },
+  {
+    "id": 1682,
+    "ders": "Genel Cerrahi",
+    "konu": "Asit Baz Bozuklukları",
+    "diff": 3,
+    "q": "İleostomisi olan ve yüksek debili sıvı kaybeden hastada gelişme riski en yüksek olan tablo?",
+    "options": [
+      "Laktik Asidoz",
+      "Hiponatremi",
+      "Hipokalsemi",
+      "Ketoasidoz",
+      "Metabolik Asidoz"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Metabolik Asidoz' şıkkıdır."
+  },
+  {
+    "id": 1683,
+    "ders": "Genel Cerrahi",
+    "konu": "Asit Baz Bozuklukları",
+    "diff": 3,
+    "q": "Postoperatif dönemde ağrı nedeniyle yüzeyel soluyan hastada kan gazında beklenen durum?",
+    "options": [
+      "Hipokalsemi",
+      "Respiratuar Asidoz",
+      "Hiponatremi",
+      "Miks Asit-Baz Bozukluğu",
+      "Respiratuar Alkaloz"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Respiratuar Asidoz' şıkkıdır."
+  },
+  {
+    "id": 1684,
+    "ders": "Genel Cerrahi",
+    "konu": "Asit Baz Bozuklukları",
+    "diff": 3,
+    "q": "Ağır sepsis ve doku hipoperfüzyonu tablosundaki hastada gelişen asit-baz bozukluğu?",
+    "options": [
+      "Laktik Asidoz",
+      "Hipokalsemi",
+      "Metabolik Alkaloz",
+      "Miks Asit-Baz Bozukluğu",
+      "Ketoasidoz"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Laktik Asidoz' şıkkıdır."
+  },
+  {
+    "id": 1685,
+    "ders": "Genel Cerrahi",
+    "konu": "Asit Baz Bozuklukları",
+    "diff": 4,
+    "q": "Aşırı anksiyete ve takipne ile acile başvuran hastada gelişen fizyolojik bozukluk?",
+    "options": [
+      "Respiratuar Alkaloz",
+      "Metabolik Alkaloz",
+      "Metabolik Asidoz",
+      "Ketoasidoz",
+      "Miks Asit-Baz Bozukluğu"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Respiratuar Alkaloz' şıkkıdır."
+  },
+  {
+    "id": 1686,
+    "ders": "Genel Cerrahi",
+    "konu": "Asit Baz Bozuklukları",
+    "diff": 3,
+    "q": "Masif kan transfüzyonu yapılan hastada sitrat metabolizmasına ikincil gelişen tablo?",
+    "options": [
+      "Metabolik Alkaloz",
+      "Metabolik Asidoz",
+      "Respiratuar Asidoz",
+      "Hiponatremi",
+      "Laktik Asidoz"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Metabolik Alkaloz' şıkkıdır."
+  },
+  {
+    "id": 1687,
+    "ders": "Genel Cerrahi",
+    "konu": "Asit Baz Bozuklukları",
+    "diff": 3,
+    "q": "Kusma sonrası hipokloremi, hipokalemi saptanan hastada beklenen asit-baz durumu?",
+    "options": [
+      "Hipokalsemi",
+      "Respiratuar Asidoz",
+      "Metabolik Asidoz",
+      "Metabolik Alkaloz",
+      "Hiperkalemi"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Metabolik Alkaloz' şıkkıdır."
+  },
+  {
+    "id": 1688,
+    "ders": "Genel Cerrahi",
+    "konu": "Asit Baz Bozuklukları",
+    "diff": 3,
+    "q": "Diyabetik hastada karın ağrısı ve Kussmaul solunumu saptandığında akla gelmesi gereken bozukluk?",
+    "options": [
+      "Ketoasidoz",
+      "Miks Asit-Baz Bozukluğu",
+      "Respiratuar Asidoz",
+      "Hiperkalemi",
+      "Metabolik Asidoz"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Ketoasidoz' şıkkıdır."
+  },
+  {
+    "id": 1689,
+    "ders": "Genel Cerrahi",
+    "konu": "Asit Baz Bozuklukları",
+    "diff": 4,
+    "q": "KOAH hastasında kronik kompanzasyon sonucu böbreklerin HCO3 tutmasıyla seyreden primer bozukluk?",
+    "options": [
+      "Hiperkalemi",
+      "Miks Asit-Baz Bozukluğu",
+      "Metabolik Asidoz",
+      "Respiratuar Alkaloz",
+      "Respiratuar Asidoz"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Respiratuar Asidoz' şıkkıdır."
+  },
+  {
+    "id": 1690,
+    "ders": "Genel Cerrahi",
+    "konu": "Asit Baz Bozuklukları",
+    "diff": 3,
+    "q": "Kardiyak arrest sonrası resüsite edilen hastada en sık görülen asit-baz bozukluğu?",
+    "options": [
+      "Metabolik Asidoz",
+      "Hiponatremi",
+      "Laktik Asidoz",
+      "Respiratuar Asidoz",
+      "Miks Asit-Baz Bozukluğu"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Miks Asit-Baz Bozukluğu' şıkkıdır."
+  },
+  {
+    "id": 1691,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz ve Kan Transfüzyonu",
+    "diff": 3,
+    "q": "Warfarin kullanan ve acil cerrahiye alınması gereken hastada antikoagülasyonu hızla geri çevirmek için ilk tercih?",
+    "options": [
+      "K Vitamini",
+      "Eritrosit Süspansiyonu",
+      "Kriyopresipitat",
+      "Taze Donmuş Plazma (TDP)",
+      "Traneksamik Asit"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Taze Donmuş Plazma (TDP)' şıkkıdır."
+  },
+  {
+    "id": 1692,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz ve Kan Transfüzyonu",
+    "diff": 3,
+    "q": "Hemofili A hastasında kanama kontrolü veya cerrahi hazırlık için en spesifik ürün?",
+    "options": [
+      "Kriyopresipitat",
+      "Faktör VIII Konsantresi",
+      "Traneksamik Asit",
+      "Desmopressin (DDAVP)",
+      "Protamin Sülfat"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Faktör VIII Konsantresi' şıkkıdır."
+  },
+  {
+    "id": 1693,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz ve Kan Transfüzyonu",
+    "diff": 4,
+    "q": "Masif transfüzyon yapılan hastada dilüsyonel koagülopatiyi önlemek için sıklıkla replase edilen pıhtılaşma ürünü?",
+    "options": [
+      "K Vitamini",
+      "Faktör VIII Konsantresi",
+      "Taze Donmuş Plazma (TDP)",
+      "Trombosit Süspansiyonu",
+      "Eritrosit Süspansiyonu"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Taze Donmuş Plazma (TDP)' şıkkıdır."
+  },
+  {
+    "id": 1694,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz ve Kan Transfüzyonu",
+    "diff": 4,
+    "q": "Fibrinojen eksikliği olan ve volüm yüklenmesinden kaçınılması gereken hastada en uygun kan ürünü?",
+    "options": [
+      "Desmopressin (DDAVP)",
+      "Kriyopresipitat",
+      "K Vitamini",
+      "Protamin Sülfat",
+      "Tam Kan"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kriyopresipitat' şıkkıdır."
+  },
+  {
+    "id": 1695,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz ve Kan Transfüzyonu",
+    "diff": 3,
+    "q": "İdiyopatik Trombositopenik Purpura (ITP) hastasında aktif kanama yoksa splenektomi öncesi verilmesi GEREKMEYEN kan ürünü?",
+    "options": [
+      "Kriyopresipitat",
+      "Trombosit Süspansiyonu",
+      "Desmopressin (DDAVP)",
+      "Eritrosit Süspansiyonu",
+      "K Vitamini"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Trombosit Süspansiyonu' şıkkıdır."
+  },
+  {
+    "id": 1696,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz ve Kan Transfüzyonu",
+    "diff": 3,
+    "q": "Otoimmün hemolitik anemisi olan hastada kan transfüzyonu gerektiğinde dikkat edilmesi gereken reaksiyon?",
+    "options": [
+      "Hemolitik Transfüzyon Reaksiyonu",
+      "Tam Kan",
+      "Protamin Sülfat",
+      "Traneksamik Asit",
+      "Kriyopresipitat"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Hemolitik Transfüzyon Reaksiyonu' şıkkıdır."
+  },
+  {
+    "id": 1697,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz ve Kan Transfüzyonu",
+    "diff": 4,
+    "q": "Akut kan kaybı olan ve hemodinamisi stabil olmayan travma hastasında oksijen taşıma kapasitesini artırmak için?",
+    "options": [
+      "Traneksamik Asit",
+      "Protamin Sülfat",
+      "Eritrosit Süspansiyonu",
+      "Faktör VIII Konsantresi",
+      "Kriyopresipitat"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Eritrosit Süspansiyonu' şıkkıdır."
+  },
+  {
+    "id": 1698,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz ve Kan Transfüzyonu",
+    "diff": 4,
+    "q": "Von Willebrand hastalığı olan bir vakada kanamayı durdurmak için verilebilecek faktör zengini ürün?",
+    "options": [
+      "K Vitamini",
+      "Eritrosit Süspansiyonu",
+      "Desmopressin (DDAVP)",
+      "Tam Kan",
+      "Kriyopresipitat"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kriyopresipitat' şıkkıdır."
+  },
+  {
+    "id": 1699,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz ve Kan Transfüzyonu",
+    "diff": 4,
+    "q": "Heparin aşırı dozuna bağlı kanamada kullanılması gereken spesifik antidot?",
+    "options": [
+      "Faktör VIII Konsantresi",
+      "K Vitamini",
+      "Kriyopresipitat",
+      "Protamin Sülfat",
+      "Taze Donmuş Plazma (TDP)"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Protamin Sülfat' şıkkıdır."
+  },
+  {
+    "id": 1700,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz ve Kan Transfüzyonu",
+    "diff": 3,
+    "q": "Trombosit fonksiyon bozukluğu olan üremik hastada kanama zamanını düzeltmek için kullanılabilecek ajan?",
+    "options": [
+      "Kriyopresipitat",
+      "K Vitamini",
+      "Desmopressin (DDAVP)",
+      "Protamin Sülfat",
+      "Eritrosit Süspansiyonu"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Desmopressin (DDAVP)' şıkkıdır."
+  },
+  {
+    "id": 1701,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 4,
+    "q": "Ağır trafik kazası sonrası hipotansiyon, taşikardi ve soğuk/soluk cildi olan hastada en olası şok tablosu?",
+    "options": [
+      "Norepinefrin",
+      "Hipovolemik Şok",
+      "Adrenalin",
+      "Dobutamin",
+      "Obstrüktif Şok"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Hipovolemik Şok' şıkkıdır."
+  },
+  {
+    "id": 1702,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 3,
+    "q": "Masif miyokard enfarktüsü sonrası juguler venöz dolgunluk ve hipotansiyonla seyreden şok tipi?",
+    "options": [
+      "Septik Şok",
+      "Norepinefrin",
+      "Obstrüktif Şok",
+      "Kardiyojenik Şok",
+      "Kortikosteroid"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kardiyojenik Şok' şıkkıdır."
+  },
+  {
+    "id": 1703,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 4,
+    "q": "Yüksek ateş, lökositoz ve sıcak ekstremitelerle (sıcak şok) prezente olan hipotansif hastadaki durum?",
+    "options": [
+      "Dobutamin",
+      "Kortikosteroid",
+      "Hipovolemik Şok",
+      "Nörojenik Şok",
+      "Septik Şok"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Septik Şok' şıkkıdır."
+  },
+  {
+    "id": 1704,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 4,
+    "q": "Spinal kord yaralanması sonrası bradikardi ve sıcak/kuru ekstremitelerle karakterize şok tablosu?",
+    "options": [
+      "Nörojenik Şok",
+      "Anafilaktik Şok",
+      "Dobutamin",
+      "Septik Şok",
+      "Kortikosteroid"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Nörojenik Şok' şıkkıdır."
+  },
+  {
+    "id": 1705,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 3,
+    "q": "Arı sokması sonrası ani gelişen dispne, stridor ve hipotansiyon durumunda tanı?",
+    "options": [
+      "Dobutamin",
+      "Adrenalin",
+      "Anafilaktik Şok",
+      "Kortikosteroid",
+      "Septik Şok"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Anafilaktik Şok' şıkkıdır."
+  },
+  {
+    "id": 1706,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 3,
+    "q": "Tansiyon pnömotoraks gelişen travma hastasında kalbe venöz dönüşün azalmasıyla ortaya çıkan şok?",
+    "options": [
+      "Norepinefrin",
+      "Obstrüktif Şok",
+      "Kardiyojenik Şok",
+      "Adrenalin",
+      "Kortikosteroid"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Obstrüktif Şok' şıkkıdır."
+  },
+  {
+    "id": 1707,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 4,
+    "q": "Sıvı resüsitasyonuna dirençli hipotansiyonu olan septik şok hastasında ilk tercih edilecek vazopressör?",
+    "options": [
+      "Kortikosteroid",
+      "Norepinefrin",
+      "Septik Şok",
+      "Hipovolemik Şok",
+      "Obstrüktif Şok"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Norepinefrin' şıkkıdır."
+  },
+  {
+    "id": 1708,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 3,
+    "q": "Yanık hastasında plazma kaybına bağlı olarak gelişen şokun temel fizyopatolojik mekanizması?",
+    "options": [
+      "Septik Şok",
+      "Adrenalin",
+      "Obstrüktif Şok",
+      "Dobutamin",
+      "Hipovolemik Şok"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Hipovolemik Şok' şıkkıdır."
+  },
+  {
+    "id": 1709,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 3,
+    "q": "Kardiyojenik şokta doku perfüzyonunu artırmak için inotropik destek olarak sıklıkla tercih edilen ajan?",
+    "options": [
+      "Anafilaktik Şok",
+      "Dobutamin",
+      "Obstrüktif Şok",
+      "Septik Şok",
+      "Nörojenik Şok"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Dobutamin' şıkkıdır."
+  },
+  {
+    "id": 1710,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 3,
+    "q": "Akut adrenal yetmezlik (Addison krizi) tablosunda gelişen dirençli şokun tedavisinde hayat kurtarıcı ajan?",
+    "options": [
+      "Nörojenik Şok",
+      "Kardiyojenik Şok",
+      "Dobutamin",
+      "Kortikosteroid",
+      "Adrenalin"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kortikosteroid' şıkkıdır."
+  },
+  {
+    "id": 1711,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Sistemik Cevap",
+    "diff": 3,
+    "q": "Travma ve cerrahi strese yanıt olarak hipofizden salgılanıp ACTH üzerinden adrenal korteksi uyaran hormon?",
+    "options": [
+      "Kortizol",
+      "Ebb (Şok) Fazı",
+      "Antidiüretik Hormon (ADH)",
+      "İnterlökin-6 (IL-6)",
+      "Katekolaminler"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kortizol' şıkkıdır."
+  },
+  {
+    "id": 1712,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Sistemik Cevap",
+    "diff": 3,
+    "q": "Cerrahi travma sonrası böbreklerden su tutulumunu doğrudan artıran arka hipofiz hormonu?",
+    "options": [
+      "Katekolaminler",
+      "Ebb (Şok) Fazı",
+      "İnsülin",
+      "Antidiüretik Hormon (ADH)",
+      "Glukagon"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Antidiüretik Hormon (ADH)' şıkkıdır."
+  },
+  {
+    "id": 1713,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Sistemik Cevap",
+    "diff": 4,
+    "q": "Stres yanıtında glukoneogenezi ve glikojenolizi artırarak hiperglisemiye yol açan pankreatik hormon?",
+    "options": [
+      "Antidiüretik Hormon (ADH)",
+      "TNF-alfa",
+      "İnterlökin-6 (IL-6)",
+      "Katekolaminler",
+      "Glukagon"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Glukagon' şıkkıdır."
+  },
+  {
+    "id": 1714,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Sistemik Cevap",
+    "diff": 3,
+    "q": "Travma sonrasında renin-anjiyotensin sisteminin aktivasyonuyla sodyum tutulumunu sağlayan hormon?",
+    "options": [
+      "Glukagon",
+      "Aldosteron",
+      "İnsülin",
+      "Katekolaminler",
+      "İnterlökin-6 (IL-6)"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Aldosteron' şıkkıdır."
+  },
+  {
+    "id": 1715,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Sistemik Cevap",
+    "diff": 3,
+    "q": "Erken post-travmatik (ebb) fazda vazokonstriksiyon ve taşikardiye neden olan temel medyatörler?",
+    "options": [
+      "İnsülin",
+      "İnterlökin-6 (IL-6)",
+      "Ebb (Şok) Fazı",
+      "Flow (Akış) Fazı",
+      "Katekolaminler"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Katekolaminler' şıkkıdır."
+  },
+  {
+    "id": 1716,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Sistemik Cevap",
+    "diff": 3,
+    "q": "Sistemik inflamatuar yanıt sendromunda (SIRS) makrofajlardan salınan en önemli pro-inflamatuar sitokin?",
+    "options": [
+      "İnterlökin-6 (IL-6)",
+      "Flow (Akış) Fazı",
+      "TNF-alfa",
+      "Glukagon",
+      "Ebb (Şok) Fazı"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'TNF-alfa' şıkkıdır."
+  },
+  {
+    "id": 1717,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Sistemik Cevap",
+    "diff": 4,
+    "q": "Cerrahi sonrası dönemde bazal metabolizma hızının arttığı ve protein yıkımının hızlandığı faz?",
+    "options": [
+      "Kortizol",
+      "Katekolaminler",
+      "Glukagon",
+      "Flow (Akış) Fazı",
+      "İnsülin"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Flow (Akış) Fazı' şıkkıdır."
+  },
+  {
+    "id": 1718,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Sistemik Cevap",
+    "diff": 3,
+    "q": "Travmaya yanıtta, insülin direncine yol açarak hücrelerin glukoz kullanımını bozan temel hormonlar?",
+    "options": [
+      "TNF-alfa",
+      "Glukagon",
+      "Kortizol ve Epinefrin",
+      "Kortizol",
+      "İnsülin"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kortizol ve Epinefrin' şıkkıdır."
+  },
+  {
+    "id": 1719,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Sistemik Cevap",
+    "diff": 4,
+    "q": "Stres anında akut faz reaktanlarının karaciğerden sentezini uyaran başlıca interlökin?",
+    "options": [
+      "İnsülin",
+      "TNF-alfa",
+      "Flow (Akış) Fazı",
+      "Katekolaminler",
+      "İnterlökin-6 (IL-6)"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'İnterlökin-6 (IL-6)' şıkkıdır."
+  },
+  {
+    "id": 1720,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Sistemik Cevap",
+    "diff": 3,
+    "q": "Büyük cerrahi sonrası idrar miktarında azalma (oligüri) görülmesinin en güçlü hormonal nedeni?",
+    "options": [
+      "İnterlökin-6 (IL-6)",
+      "TNF-alfa",
+      "Katekolaminler",
+      "Antidiüretik Hormon (ADH)",
+      "Ebb (Şok) Fazı"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Antidiüretik Hormon (ADH)' şıkkıdır."
+  },
+  {
+    "id": 1721,
+    "ders": "Genel Cerrahi",
+    "konu": "Beslenme",
+    "diff": 3,
+    "q": "Oral alımı mümkün olmayan ancak GİS fonksiyonları normal olan hastada en uygun beslenme yöntemi?",
+    "options": [
+      "Yağlar",
+      "Sıvı Kısıtlaması",
+      "Tromboflebit Riski",
+      "Glutamin",
+      "Enteral Nütrisyon"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Enteral Nütrisyon' şıkkıdır."
+  },
+  {
+    "id": 1722,
+    "ders": "Genel Cerrahi",
+    "konu": "Beslenme",
+    "diff": 3,
+    "q": "Kısa barsak sendromu olan ve uzun süre GİS'i kullanamayacak hastada altın standart beslenme yolu?",
+    "options": [
+      "Yağlar",
+      "Sıvı Kısıtlaması",
+      "Total Parenteral Nütrisyon (TPN)",
+      "Taşsız Kolesistit (Akalikülöz Kolesistit)",
+      "Glutamin"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Total Parenteral Nütrisyon (TPN)' şıkkıdır."
+  },
+  {
+    "id": 1723,
+    "ders": "Genel Cerrahi",
+    "konu": "Beslenme",
+    "diff": 4,
+    "q": "Beslenme yetersizliği olan hastada TPN verilirken, santral ven yerine periferik venin tercih edilmemesinin nedeni?",
+    "options": [
+      "Taşsız Kolesistit (Akalikülöz Kolesistit)",
+      "İshal",
+      "Tromboflebit Riski",
+      "Total Parenteral Nütrisyon (TPN)",
+      "Megestrol Asetat"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Tromboflebit Riski' şıkkıdır."
+  },
+  {
+    "id": 1724,
+    "ders": "Genel Cerrahi",
+    "konu": "Beslenme",
+    "diff": 3,
+    "q": "Ağır malnütrisyonlu bir hastada TPN başlandıktan sonra gelişen hipofosfatemi, hipokalemi ve hipomagnezemi tablosu?",
+    "options": [
+      "Refeeding (Yeniden Beslenme) Sendromu",
+      "Enteral Nütrisyon",
+      "Megestrol Asetat",
+      "Periferik Parenteral Nütrisyon",
+      "İshal"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Refeeding (Yeniden Beslenme) Sendromu' şıkkıdır."
+  },
+  {
+    "id": 1725,
+    "ders": "Genel Cerrahi",
+    "konu": "Beslenme",
+    "diff": 3,
+    "q": "Enteral beslenme sırasında en sık karşılaşılan gastrointestinal komplikasyon hangisidir?",
+    "options": [
+      "İshal",
+      "Enteral Nütrisyon",
+      "Sıvı Kısıtlaması",
+      "Periferik Parenteral Nütrisyon",
+      "Megestrol Asetat"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'İshal' şıkkıdır."
+  },
+  {
+    "id": 1726,
+    "ders": "Genel Cerrahi",
+    "konu": "Beslenme",
+    "diff": 4,
+    "q": "Uzun süre sadece TPN alan hastada safra kesesi stazına bağlı olarak en sık gelişen komplikasyon?",
+    "options": [
+      "Enteral Nütrisyon",
+      "Tromboflebit Riski",
+      "Periferik Parenteral Nütrisyon",
+      "Taşsız Kolesistit (Akalikülöz Kolesistit)",
+      "Glutamin"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Taşsız Kolesistit (Akalikülöz Kolesistit)' şıkkıdır."
+  },
+  {
+    "id": 1727,
+    "ders": "Genel Cerrahi",
+    "konu": "Beslenme",
+    "diff": 4,
+    "q": "Travma hastalarında immün sistemi desteklemek ve barsak bariyerini korumak için eklenen spesifik aminoasit?",
+    "options": [
+      "Refeeding (Yeniden Beslenme) Sendromu",
+      "Enteral Nütrisyon",
+      "Glutamin",
+      "Taşsız Kolesistit (Akalikülöz Kolesistit)",
+      "Jejunostomi"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Glutamin' şıkkıdır."
+  },
+  {
+    "id": 1728,
+    "ders": "Genel Cerrahi",
+    "konu": "Beslenme",
+    "diff": 3,
+    "q": "Enteral beslenme formüllerinde solunum katsayısını (RQ) düşürmek için oranı artırılan makrobesin öğesi?",
+    "options": [
+      "Total Parenteral Nütrisyon (TPN)",
+      "Yağlar",
+      "Enteral Nütrisyon",
+      "Sıvı Kısıtlaması",
+      "Jejunostomi"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Yağlar' şıkkıdır."
+  },
+  {
+    "id": 1729,
+    "ders": "Genel Cerrahi",
+    "konu": "Beslenme",
+    "diff": 3,
+    "q": "Kanser kaşeksisi olan hastada iştahı artırmak ve kilo kaybını yavaşlatmak için kullanılabilecek ajan?",
+    "options": [
+      "Taşsız Kolesistit (Akalikülöz Kolesistit)",
+      "Glutamin",
+      "Megestrol Asetat",
+      "Tromboflebit Riski",
+      "Periferik Parenteral Nütrisyon"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Megestrol Asetat' şıkkıdır."
+  },
+  {
+    "id": 1730,
+    "ders": "Genel Cerrahi",
+    "konu": "Beslenme",
+    "diff": 4,
+    "q": "Mide rezeksiyonu sonrası uzun dönem enteral beslenme gereken hastada cerrahi olarak açılan yol?",
+    "options": [
+      "Yağlar",
+      "Jejunostomi",
+      "Periferik Parenteral Nütrisyon",
+      "Enteral Nütrisyon",
+      "Tromboflebit Riski"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Jejunostomi' şıkkıdır."
+  },
+  {
+    "id": 1731,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 4,
+    "q": "Alev yanığı olan 70 kg bir hastada ilk 24 saatlik sıvı ihtiyacını belirlemede en sık kullanılan formül?",
+    "options": [
+      "Dokuzlar Kuralı",
+      "Parkland Formülü",
+      "Mafenid Asetat",
+      "Lökopeni (Geçici)",
+      "Karbonmonoksit Zehirlenmesi"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Parkland Formülü' şıkkıdır."
+  },
+  {
+    "id": 1732,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 3,
+    "q": "Kapalı alanda yangına maruz kalan hastada kiraz kırmızısı cilt rengi ve konfüzyon varlığında ilk şüphelenilmesi gereken?",
+    "options": [
+      "Mafenid Asetat",
+      "Eskarotomi",
+      "Parkland Formülü",
+      "Karbonmonoksit Zehirlenmesi",
+      "Pseudomonas aeruginosa"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Karbonmonoksit Zehirlenmesi' şıkkıdır."
+  },
+  {
+    "id": 1733,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 4,
+    "q": "Yüksek voltajlı elektrik yanıklarında kas hasarına bağlı gelişen ve böbrek yetmezliği yapan komplikasyon?",
+    "options": [
+      "Mafenid Asetat",
+      "Erken Eksizyon ve Greftleme",
+      "Eskarotomi",
+      "Karbonmonoksit Zehirlenmesi",
+      "Rhabdomyoliz (Miyoglobinüri)"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Rhabdomyoliz (Miyoglobinüri)' şıkkıdır."
+  },
+  {
+    "id": 1734,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 4,
+    "q": "Çevresel (sirkümferansiyel) tam kat yanığı olan ekstremitede dolaşım bozulduğunda yapılması gereken acil müdahale?",
+    "options": [
+      "Karbonmonoksit Zehirlenmesi",
+      "Eskarotomi",
+      "Dokuzlar Kuralı",
+      "Pseudomonas aeruginosa",
+      "Parkland Formülü"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Eskarotomi' şıkkıdır."
+  },
+  {
+    "id": 1735,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 3,
+    "q": "Yanık yarasına uygulanan ve kıkırdak dokuya penetrasyonu çok iyi olan topikal antimikrobiyal ajan?",
+    "options": [
+      "Parkland Formülü",
+      "Mafenid Asetat",
+      "Pseudomonas aeruginosa",
+      "Erken Eksizyon ve Greftleme",
+      "Dokuzlar Kuralı"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Mafenid Asetat' şıkkıdır."
+  },
+  {
+    "id": 1736,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 3,
+    "q": "Geniş yanıklı hastada hipermetabolik fazda (flow fazı) metabolizma hızını düşürmek için kullanılabilen beta-blokör?",
+    "options": [
+      "Pseudomonas aeruginosa",
+      "Mafenid Asetat",
+      "Parkland Formülü",
+      "Propranolol",
+      "Erken Eksizyon ve Greftleme"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Propranolol' şıkkıdır."
+  },
+  {
+    "id": 1737,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 3,
+    "q": "Yanık yaralarında en sık sepsis nedeni olan ve yeşilimsi akıntı yapan Gram-negatif mikroorganizma?",
+    "options": [
+      "Parkland Formülü",
+      "Erken Eksizyon ve Greftleme",
+      "Lökopeni (Geçici)",
+      "Mafenid Asetat",
+      "Pseudomonas aeruginosa"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Pseudomonas aeruginosa' şıkkıdır."
+  },
+  {
+    "id": 1738,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 3,
+    "q": "Yanık alanının genişliğini pratik olarak hesaplamak için erişkinlerde kullanılan kural?",
+    "options": [
+      "Eskarotomi",
+      "Parkland Formülü",
+      "Mafenid Asetat",
+      "Dokuzlar Kuralı",
+      "Propranolol"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Dokuzlar Kuralı' şıkkıdır."
+  },
+  {
+    "id": 1739,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 4,
+    "q": "Topikal gümüş sülfadiazin uygulanan yanık hastasında en sık görülen sistemik yan etki?",
+    "options": [
+      "Lökopeni (Geçici)",
+      "Karbonmonoksit Zehirlenmesi",
+      "Pseudomonas aeruginosa",
+      "Dokuzlar Kuralı",
+      "Mafenid Asetat"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Lökopeni (Geçici)' şıkkıdır."
+  },
+  {
+    "id": 1740,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 4,
+    "q": "Derin ikinci derece yanıklarda skarı önlemek ve iyileşmeyi hızlandırmak için erken dönemde yapılan cerrahi işlem?",
+    "options": [
+      "Dokuzlar Kuralı",
+      "Erken Eksizyon ve Greftleme",
+      "Mafenid Asetat",
+      "Parkland Formülü",
+      "Karbonmonoksit Zehirlenmesi"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Erken Eksizyon ve Greftleme' şıkkıdır."
+  },
+  {
+    "id": 1741,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 3,
+    "q": "ABO kan grubu uyumsuzluğuna bağlı olarak böbrek naklinden dakikalar sonra ameliyat masasında gelişen red tipi?",
+    "options": [
+      "Graft Versus Host Hastalığı (GVHD)",
+      "Akut Rejeksiyon",
+      "Sitomegalovirüs (CMV) Enfeksiyonu",
+      "Hiperakut Rejeksiyon",
+      "Yüksek Doz İntravenöz Kortikosteroid (Pulse Steroid)"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Hiperakut Rejeksiyon' şıkkıdır."
+  },
+  {
+    "id": 1742,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 3,
+    "q": "Nakil sonrası ilk aylarda ortaya çıkan, T hücre aracılı hücresel immün yanıtın baskın olduğu red tipi?",
+    "options": [
+      "Hepatik Arter Trombozu",
+      "Yüksek Doz İntravenöz Kortikosteroid (Pulse Steroid)",
+      "Akut Rejeksiyon",
+      "Nefrotoksisite",
+      "Kronik Rejeksiyon"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Akut Rejeksiyon' şıkkıdır."
+  },
+  {
+    "id": 1743,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 4,
+    "q": "Böbrek nakli sonrası yıllar içinde yavaş yavaş gelişen interstisyel fibrozis ve tübüler atrofi ile giden tablo?",
+    "options": [
+      "Hepatik Arter Trombozu",
+      "Graft Versus Host Hastalığı (GVHD)",
+      "Kronik Rejeksiyon",
+      "Nefrotoksisite",
+      "Takrolimus"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kronik Rejeksiyon' şıkkıdır."
+  },
+  {
+    "id": 1744,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 4,
+    "q": "Kemik iliği nakli sonrası döküntü, ishal ve karaciğer fonksiyon bozukluğu ile karakterize sendrom?",
+    "options": [
+      "Kronik Rejeksiyon",
+      "Sitomegalovirüs (CMV) Enfeksiyonu",
+      "Hepatik Arter Trombozu",
+      "Graft Versus Host Hastalığı (GVHD)",
+      "Nefrotoksisite"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Graft Versus Host Hastalığı (GVHD)' şıkkıdır."
+  },
+  {
+    "id": 1745,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 4,
+    "q": "Organ reddini önlemek için kullanılan, kalsinörin inhibisyonu yaparak IL-2 üretimini baskılayan temel ilaç?",
+    "options": [
+      "Akut Rejeksiyon",
+      "Hepatik Arter Trombozu",
+      "Sitomegalovirüs (CMV) Enfeksiyonu",
+      "Kronik Rejeksiyon",
+      "Takrolimus"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Takrolimus' şıkkıdır."
+  },
+  {
+    "id": 1746,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 4,
+    "q": "Kalsinörin inhibitörlerinin (Siklosporin/Takrolimus) en sık görülen ve doza bağımlı olan ciddi yan etkisi?",
+    "options": [
+      "Yüksek Doz İntravenöz Kortikosteroid (Pulse Steroid)",
+      "Nefrotoksisite",
+      "Takrolimus",
+      "HLA-A, HLA-B, HLA-DR",
+      "Akut Rejeksiyon"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Nefrotoksisite' şıkkıdır."
+  },
+  {
+    "id": 1747,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 3,
+    "q": "Canlı donörden böbrek nakli hazırlığında donör ve alıcı arasındaki HLA uyumunu belirleyen en önemli antijenler?",
+    "options": [
+      "HLA-A, HLA-B, HLA-DR",
+      "Yüksek Doz İntravenöz Kortikosteroid (Pulse Steroid)",
+      "Takrolimus",
+      "Hepatik Arter Trombozu",
+      "Kronik Rejeksiyon"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'HLA-A, HLA-B, HLA-DR' şıkkıdır."
+  },
+  {
+    "id": 1748,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 3,
+    "q": "Karaciğer nakli sonrası erken dönemde greft kaybının en sık rastlanan teknik (vasküler) nedeni?",
+    "options": [
+      "Akut Rejeksiyon",
+      "Sitomegalovirüs (CMV) Enfeksiyonu",
+      "HLA-A, HLA-B, HLA-DR",
+      "Yüksek Doz İntravenöz Kortikosteroid (Pulse Steroid)",
+      "Hepatik Arter Trombozu"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Hepatik Arter Trombozu' şıkkıdır."
+  },
+  {
+    "id": 1749,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 3,
+    "q": "İmmünsüpresif tedavi alan transplant hastalarında en sık görülen fırsatçı viral enfeksiyon?",
+    "options": [
+      "HLA-A, HLA-B, HLA-DR",
+      "Yüksek Doz İntravenöz Kortikosteroid (Pulse Steroid)",
+      "Sitomegalovirüs (CMV) Enfeksiyonu",
+      "Hiperakut Rejeksiyon",
+      "Graft Versus Host Hastalığı (GVHD)"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Sitomegalovirüs (CMV) Enfeksiyonu' şıkkıdır."
+  },
+  {
+    "id": 1750,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 4,
+    "q": "Akut hücresel rejeksiyon ataklarının tedavisinde birinci basamakta uygulanan tıbbi yaklaşım?",
+    "options": [
+      "Yüksek Doz İntravenöz Kortikosteroid (Pulse Steroid)",
+      "Sitomegalovirüs (CMV) Enfeksiyonu",
+      "Kronik Rejeksiyon",
+      "Graft Versus Host Hastalığı (GVHD)",
+      "Akut Rejeksiyon"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Yüksek Doz İntravenöz Kortikosteroid (Pulse Steroid)' şıkkıdır."
+  },
+  {
+    "id": 1751,
+    "ders": "Genel Cerrahi",
+    "konu": "Deri Hastalıkları",
+    "diff": 4,
+    "q": "Güneş gören bölgelerde inci tanesi gibi parlak kenarlı ve ortası ülsere cilt lezyonu?",
+    "options": [
+      "Aktinik Keratoz",
+      "Kaposi Sarkomu",
+      "Bazal Hücreli Karsinom",
+      "Malign Melanom",
+      "Tümörün İnvazyon Derinliği"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Bazal Hücreli Karsinom' şıkkıdır."
+  },
+  {
+    "id": 1752,
+    "ders": "Genel Cerrahi",
+    "konu": "Deri Hastalıkları",
+    "diff": 3,
+    "q": "Mevcut bir nevüste asimetri, sınır düzensizliği, renk değişikliği ve çap artışı (ABCD) gözlenmesi neyi düşündürür?",
+    "options": [
+      "Gastrointestinal Sistem Malignitesi",
+      "Malign Melanom",
+      "Seboreik Keratoz",
+      "Kaposi Sarkomu",
+      "Bazal Hücreli Karsinom"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Malign Melanom' şıkkıdır."
+  },
+  {
+    "id": 1753,
+    "ders": "Genel Cerrahi",
+    "konu": "Deri Hastalıkları",
+    "diff": 4,
+    "q": "Kronik iyileşmeyen yara (Marjolin ülseri) veya yanık skarı zemininde gelişen cilt kanseri türü?",
+    "options": [
+      "Skuamöz Hücreli Karsinom",
+      "Merkel Hücreli Karsinom",
+      "Seboreik Keratoz",
+      "Tümörün İnvazyon Derinliği",
+      "Bazal Hücreli Karsinom"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Skuamöz Hücreli Karsinom' şıkkıdır."
+  },
+  {
+    "id": 1754,
+    "ders": "Genel Cerrahi",
+    "konu": "Deri Hastalıkları",
+    "diff": 4,
+    "q": "Malign melanomda prognozu (sağkalımı) belirleyen en önemli histopatolojik faktör (Breslow kalınlığı)?",
+    "options": [
+      "Seboreik Keratoz",
+      "Malign Melanom",
+      "Skuamöz Hücreli Karsinom",
+      "Kaposi Sarkomu",
+      "Tümörün İnvazyon Derinliği"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Tümörün İnvazyon Derinliği' şıkkıdır."
+  },
+  {
+    "id": 1755,
+    "ders": "Genel Cerrahi",
+    "konu": "Deri Hastalıkları",
+    "diff": 4,
+    "q": "İleri yaşta, güneşe maruz kalan bölgelerde ortaya çıkan ve Skuamöz Hücreli Karsinoma dönüşebilen prekanseröz lezyon?",
+    "options": [
+      "Aktinik Keratoz",
+      "Merkel Hücreli Karsinom",
+      "Bazal Hücreli Karsinom",
+      "Tümörün İnvazyon Derinliği",
+      "Skuamöz Hücreli Karsinom"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Aktinik Keratoz' şıkkıdır."
+  },
+  {
+    "id": 1756,
+    "ders": "Genel Cerrahi",
+    "konu": "Deri Hastalıkları",
+    "diff": 4,
+    "q": "HIV pozitif veya immünsüpresif hastalarda HHV-8 ile ilişkili, mor-kırmızı renkli vasküler cilt lezyonları?",
+    "options": [
+      "Gastrointestinal Sistem Malignitesi",
+      "Seboreik Keratoz",
+      "Kaposi Sarkomu",
+      "Hidradenitis Suppurativa",
+      "Skuamöz Hücreli Karsinom"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kaposi Sarkomu' şıkkıdır."
+  },
+  {
+    "id": 1757,
+    "ders": "Genel Cerrahi",
+    "konu": "Deri Hastalıkları",
+    "diff": 4,
+    "q": "Yaşlılarda sık görülen, 'üzerine yapıştırılmış gibi' duran, kahverengi-siyah, iyi huylu epidermal tümör?",
+    "options": [
+      "Seboreik Keratoz",
+      "Bazal Hücreli Karsinom",
+      "Skuamöz Hücreli Karsinom",
+      "Malign Melanom",
+      "Tümörün İnvazyon Derinliği"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Seboreik Keratoz' şıkkıdır."
+  },
+  {
+    "id": 1758,
+    "ders": "Genel Cerrahi",
+    "konu": "Deri Hastalıkları",
+    "diff": 4,
+    "q": "Gövdede aniden çok sayıda seboreik keratoz çıkması (Leser-Trélat bulgusu) hangi durumu akla getirir?",
+    "options": [
+      "Gastrointestinal Sistem Malignitesi",
+      "Bazal Hücreli Karsinom",
+      "Kaposi Sarkomu",
+      "Skuamöz Hücreli Karsinom",
+      "Seboreik Keratoz"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Gastrointestinal Sistem Malignitesi' şıkkıdır."
+  },
+  {
+    "id": 1759,
+    "ders": "Genel Cerrahi",
+    "konu": "Deri Hastalıkları",
+    "diff": 4,
+    "q": "Koltuk altı, kasık gibi apokrin ter bezlerinin bulunduğu bölgelerde kronik, pürülan inflamasyonla seyreden hastalık?",
+    "options": [
+      "Tümörün İnvazyon Derinliği",
+      "Malign Melanom",
+      "Hidradenitis Suppurativa",
+      "Bazal Hücreli Karsinom",
+      "Skuamöz Hücreli Karsinom"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Hidradenitis Suppurativa' şıkkıdır."
+  },
+  {
+    "id": 1760,
+    "ders": "Genel Cerrahi",
+    "konu": "Deri Hastalıkları",
+    "diff": 4,
+    "q": "Derinin nöroendokrin hücrelerinden köken alan, yaşlılarda hızlı büyüyen ve oldukça agresif seyreden nadir kanser?",
+    "options": [
+      "Merkel Hücreli Karsinom",
+      "Aktinik Keratoz",
+      "Gastrointestinal Sistem Malignitesi",
+      "Malign Melanom",
+      "Seboreik Keratoz"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Merkel Hücreli Karsinom' şıkkıdır."
+  },
+  {
+    "id": 1761,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 4,
+    "q": "Tiroid ince iğne aspirasyon biyopsisinde (İİAB) 'Psammoma cisimcikleri' ve 'Yetim Annie gözü' çekirdekler görülmesi?",
+    "options": [
+      "Anaplastik Tiroid Kanseri",
+      "Feokromositoma ve Paratiroid Adenomu",
+      "Sekonder Hiperparatiroidi",
+      "Primer Hiperparatiroidi",
+      "Papiller Tiroid Kanseri"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Papiller Tiroid Kanseri' şıkkıdır."
+  },
+  {
+    "id": 1762,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 3,
+    "q": "İİAB ile tanısı konulamayan, sadece cerrahi sonrası kapsül veya damar invazyonu görülerek teşhis edilebilen tiroid kanseri?",
+    "options": [
+      "Gebelik",
+      "Medüller Tiroid Kanseri",
+      "Folliküler Tiroid Kanseri",
+      "Anaplastik Tiroid Kanseri",
+      "Nervus Laryngeus Recurrens"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Folliküler Tiroid Kanseri' şıkkıdır."
+  },
+  {
+    "id": 1763,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 4,
+    "q": "Tiroidin parafoliküler C hücrelerinden köken alan ve kalsitonin salgılayan malignite?",
+    "options": [
+      "Folliküler Tiroid Kanseri",
+      "Medüller Tiroid Kanseri",
+      "Gebelik",
+      "Sekonder Hiperparatiroidi",
+      "Feokromositoma ve Paratiroid Adenomu"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Medüller Tiroid Kanseri' şıkkıdır."
+  },
+  {
+    "id": 1764,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 3,
+    "q": "İleri yaşta aniden büyüyen, sert, çevre dokulara invaze tiroid kitlesi ve solunum sıkıntısı tablosu?",
+    "options": [
+      "Medüller Tiroid Kanseri",
+      "Tersiyer Hiperparatiroidi",
+      "Feokromositoma ve Paratiroid Adenomu",
+      "Gebelik",
+      "Anaplastik Tiroid Kanseri"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Anaplastik Tiroid Kanseri' şıkkıdır."
+  },
+  {
+    "id": 1765,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 3,
+    "q": "Semptomatik hiperkalsemi, böbrek taşı ve kemik ağrıları ile prezente olan hastada en olası endokrin bozukluk?",
+    "options": [
+      "Folliküler Tiroid Kanseri",
+      "Papiller Tiroid Kanseri",
+      "Feokromositoma ve Paratiroid Adenomu",
+      "Tersiyer Hiperparatiroidi",
+      "Primer Hiperparatiroidi"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Primer Hiperparatiroidi' şıkkıdır."
+  },
+  {
+    "id": 1766,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 4,
+    "q": "Kronik böbrek yetmezliği hastasında hipokalsemi ve hiperfosfatemiye sekonder gelişen paratiroid hiperplazisi?",
+    "options": [
+      "Folliküler Tiroid Kanseri",
+      "Sekonder Hiperparatiroidi",
+      "Papiller Tiroid Kanseri",
+      "Anaplastik Tiroid Kanseri",
+      "Tersiyer Hiperparatiroidi"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Sekonder Hiperparatiroidi' şıkkıdır."
+  },
+  {
+    "id": 1767,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 4,
+    "q": "Sekonder hiperparatiroidi tedavisinde böbrek nakli sonrasında dahi kalsiyumun yüksek kalmaya devam ettiği otonom tablo?",
+    "options": [
+      "Tersiyer Hiperparatiroidi",
+      "Feokromositoma ve Paratiroid Adenomu",
+      "Medüller Tiroid Kanseri",
+      "Gebelik",
+      "Papiller Tiroid Kanseri"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Tersiyer Hiperparatiroidi' şıkkıdır."
+  },
+  {
+    "id": 1768,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 4,
+    "q": "Bilateral total tiroidektomi ameliyatı sırasında en sık zedelenme riski olan sinir?",
+    "options": [
+      "Primer Hiperparatiroidi",
+      "Feokromositoma ve Paratiroid Adenomu",
+      "Nervus Laryngeus Recurrens",
+      "Medüller Tiroid Kanseri",
+      "Gebelik"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Nervus Laryngeus Recurrens' şıkkıdır."
+  },
+  {
+    "id": 1769,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 4,
+    "q": "MEN 2A sendromu olan bir hastada medüller tiroid kanserine eşlik etmesi en muhtemel iki bulgu?",
+    "options": [
+      "Sekonder Hiperparatiroidi",
+      "Nervus Laryngeus Recurrens",
+      "Feokromositoma ve Paratiroid Adenomu",
+      "Anaplastik Tiroid Kanseri",
+      "Gebelik"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Feokromositoma ve Paratiroid Adenomu' şıkkıdır."
+  },
+  {
+    "id": 1770,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 3,
+    "q": "Radyoaktif iyot (I-131) tedavisinin absolut kontrendike olduğu durum?",
+    "options": [
+      "Anaplastik Tiroid Kanseri",
+      "Folliküler Tiroid Kanseri",
+      "Tersiyer Hiperparatiroidi",
+      "Gebelik",
+      "Sekonder Hiperparatiroidi"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Gebelik' şıkkıdır."
+  },
+  {
+    "id": 1771,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal Bez Hastalıkları",
+    "diff": 4,
+    "q": "Ataklar halinde gelen hipertansiyon, çarpıntı, baş ağrısı ve terleme triadı olan hastada en olası tanı?",
+    "options": [
+      "Adrenal Adenom",
+      "Feokromasitoma",
+      "Cushing Sendromu",
+      "Nöroblastom",
+      "Conn Sendromu"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Feokromasitoma' şıkkıdır."
+  },
+  {
+    "id": 1772,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal Bez Hastalıkları",
+    "diff": 3,
+    "q": "Hipertansiyon ve hipokalemisi olan genç hastada, plazma renin aktivitesi düşük, aldosteron yüksek saptanırsa?",
+    "options": [
+      "Nöroblastom",
+      "Alfa-Blokörler",
+      "Conn Sendromu",
+      "Boyutun >4-6 cm olması ve düzensiz sınırlar",
+      "ACTH Stimülasyon Testi"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Conn Sendromu' şıkkıdır."
+  },
+  {
+    "id": 1773,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal Bez Hastalıkları",
+    "diff": 4,
+    "q": "Aydede yüzü, bufalo hörgücü, santral obezite ve mor striaları olan hastada saptanan sendrom?",
+    "options": [
+      "Feokromasitoma",
+      "ACTH Stimülasyon Testi",
+      "Cushing Sendromu",
+      "Nöroblastom",
+      "Alfa-Blokörler"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Cushing Sendromu' şıkkıdır."
+  },
+  {
+    "id": 1774,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal Bez Hastalıkları",
+    "diff": 3,
+    "q": "Adrenal yetmezlik (Addison hastalığı) şüphesinde tanıyı doğrulamak için yapılan altın standart test?",
+    "options": [
+      "Conn Sendromu",
+      "Boyutun >4-6 cm olması ve düzensiz sınırlar",
+      "Nöroblastom",
+      "Cushing Sendromu",
+      "ACTH Stimülasyon Testi"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'ACTH Stimülasyon Testi' şıkkıdır."
+  },
+  {
+    "id": 1775,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal Bez Hastalıkları",
+    "diff": 4,
+    "q": "Feokromasitoma cerrahisi öncesinde hipertansif krizi önlemek için operasyondan önce başlanması gereken ilaç grubu?",
+    "options": [
+      "Ketokonazol",
+      "Alfa-Blokörler",
+      "ACTH Stimülasyon Testi",
+      "Nöroblastom",
+      "Feokromasitoma"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Alfa-Blokörler' şıkkıdır."
+  },
+  {
+    "id": 1776,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal Bez Hastalıkları",
+    "diff": 4,
+    "q": "Çocukluk çağında adrenal medulladan köken alan, batında kitle yapan ve idrarda VMA/HVA atılımını artıran tümör?",
+    "options": [
+      "Nöroblastom",
+      "Feokromasitoma",
+      "ACTH Stimülasyon Testi",
+      "Ketokonazol",
+      "Conn Sendromu"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Nöroblastom' şıkkıdır."
+  },
+  {
+    "id": 1777,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal Bez Hastalıkları",
+    "diff": 4,
+    "q": "İnsidental olarak saptanan adrenal kitlede (insidentaloma), malignite şüphesini en çok artıran görüntüleme bulgusu?",
+    "options": [
+      "Feokromasitoma",
+      "Nöroblastom",
+      "Conn Sendromu",
+      "Boyutun >4-6 cm olması ve düzensiz sınırlar",
+      "ACTH Stimülasyon Testi"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Boyutun >4-6 cm olması ve düzensiz sınırlar' şıkkıdır."
+  },
+  {
+    "id": 1778,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal Bez Hastalıkları",
+    "diff": 4,
+    "q": "Primer hiperaldosteronizmde en sık görülen altta yatan patoloji hangisidir?",
+    "options": [
+      "Akut Adrenal Kriz",
+      "Alfa-Blokörler",
+      "Cushing Sendromu",
+      "ACTH Stimülasyon Testi",
+      "Adrenal Adenom"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Adrenal Adenom' şıkkıdır."
+  },
+  {
+    "id": 1779,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal Bez Hastalıkları",
+    "diff": 3,
+    "q": "Bilateral adrenal hiperplaziye bağlı Cushing sendromunun medikal tedavisinde kullanılabilen steroid sentez inhibitörü?",
+    "options": [
+      "Nöroblastom",
+      "Akut Adrenal Kriz",
+      "Conn Sendromu",
+      "Alfa-Blokörler",
+      "Ketokonazol"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Ketokonazol' şıkkıdır."
+  },
+  {
+    "id": 1780,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal Bez Hastalıkları",
+    "diff": 4,
+    "q": "Adrenalektomi sonrası hastada ani gelişen hipotansiyon, hipoglisemi ve şok tablosu neyi düşündürür?",
+    "options": [
+      "Adrenal Adenom",
+      "Ketokonazol",
+      "ACTH Stimülasyon Testi",
+      "Akut Adrenal Kriz",
+      "Conn Sendromu"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Akut Adrenal Kriz' şıkkıdır."
+  },
+  {
+    "id": 1781,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak Hastalıkları",
+    "diff": 4,
+    "q": "Özellikle terminal ileumu tutan, transmural inflamasyon, 'kaldırım taşı' manzarası ve non-kazeifiye granülomlarla karakterize hastalık?",
+    "options": [
+      "5-HIAA",
+      "Crohn Hastalığı",
+      "Yaklaşık 100 cm",
+      "Meckel Divertikülü",
+      "Adenomatöz Polip"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Crohn Hastalığı' şıkkıdır."
+  },
+  {
+    "id": 1782,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak Hastalıkları",
+    "diff": 4,
+    "q": "İnce barsakların en sık görülen benign (iyi huylu) tümörü hangisidir?",
+    "options": [
+      "Karsinoid Tümör",
+      "5-HIAA",
+      "Adenomatöz Polip",
+      "Enteropati İlişkili T Hücreli Lenfoma",
+      "Crohn Hastalığı"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Adenomatöz Polip' şıkkıdır."
+  },
+  {
+    "id": 1783,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak Hastalıkları",
+    "diff": 4,
+    "q": "Ağrısız alt GİS kanaması ile gelen çocukta sintigrafi ile saptanan ve omfalomezenterik kanal artığı olan anomali?",
+    "options": [
+      "Adenomatöz Polip",
+      "Yaklaşık 100 cm",
+      "Barsak Nekrozu",
+      "Crohn Hastalığı",
+      "Meckel Divertikülü"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Meckel Divertikülü' şıkkıdır."
+  },
+  {
+    "id": 1784,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak Hastalıkları",
+    "diff": 3,
+    "q": "Flushing, ishal ve sağ kalp kapak tutulumu ile seyreden sendroma neden olan ince barsak tümörü?",
+    "options": [
+      "Barsak Nekrozu",
+      "Yaklaşık 100 cm",
+      "Karsinoid Tümör",
+      "İntraabdominal Yapışıklıklar",
+      "Crohn Hastalığı"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Karsinoid Tümör' şıkkıdır."
+  },
+  {
+    "id": 1785,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak Hastalıkları",
+    "diff": 4,
+    "q": "Karsinoid sendrom tanısında idrarda bakılan ve serotonin metaboliti olan biyokimyasal belirteç?",
+    "options": [
+      "Karsinoid Tümör",
+      "CD117 (c-kit)",
+      "5-HIAA",
+      "Crohn Hastalığı",
+      "Barsak Nekrozu"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım '5-HIAA' şıkkıdır."
+  },
+  {
+    "id": 1786,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak Hastalıkları",
+    "diff": 3,
+    "q": "Gastrointestinal Stromal Tümörlerde (GİST) spesifik tanı koydurucu immünhistokimyasal belirteç?",
+    "options": [
+      "Adenomatöz Polip",
+      "Barsak Nekrozu",
+      "CD117 (c-kit)",
+      "İntraabdominal Yapışıklıklar",
+      "Meckel Divertikülü"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'CD117 (c-kit)' şıkkıdır."
+  },
+  {
+    "id": 1787,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak Hastalıkları",
+    "diff": 3,
+    "q": "Karın ameliyatı geçirmiş hastada yıllar sonra gelişen ince barsak tıkanıklığının (mekanik ileus) en sık nedeni?",
+    "options": [
+      "Meckel Divertikülü",
+      "İntraabdominal Yapışıklıklar",
+      "Crohn Hastalığı",
+      "Enteropati İlişkili T Hücreli Lenfoma",
+      "Adenomatöz Polip"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'İntraabdominal Yapışıklıklar' şıkkıdır."
+  },
+  {
+    "id": 1788,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak Hastalıkları",
+    "diff": 3,
+    "q": "Çölyak hastalığı olanlarda uzun dönemde ince barsakta gelişme riski en yüksek olan malignite?",
+    "options": [
+      "Barsak Nekrozu",
+      "CD117 (c-kit)",
+      "Yaklaşık 100 cm",
+      "Enteropati İlişkili T Hücreli Lenfoma",
+      "Meckel Divertikülü"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Enteropati İlişkili T Hücreli Lenfoma' şıkkıdır."
+  },
+  {
+    "id": 1789,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak Hastalıkları",
+    "diff": 3,
+    "q": "Kısa barsak sendromunun önlenmesi için erişkinde bırakılması gereken minimum ince barsak uzunluğu (intakt kolon varsa)?",
+    "options": [
+      "Yaklaşık 100 cm",
+      "Adenomatöz Polip",
+      "Meckel Divertikülü",
+      "Crohn Hastalığı",
+      "5-HIAA"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Yaklaşık 100 cm' şıkkıdır."
+  },
+  {
+    "id": 1790,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak Hastalıkları",
+    "diff": 4,
+    "q": "İnce barsak volvulusunda barsağın kendi etrafında dönmesine bağlı gelişen en acil ve ölümcül komplikasyon?",
+    "options": [
+      "Meckel Divertikülü",
+      "CD117 (c-kit)",
+      "İntraabdominal Yapışıklıklar",
+      "Yaklaşık 100 cm",
+      "Barsak Nekrozu"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Barsak Nekrozu' şıkkıdır."
+  },
+  {
+    "id": 1791,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenterik Hastalıklar",
+    "diff": 3,
+    "q": "Atriyal fibrilasyonu olan yaşlı hastada ani başlayan, 'muayene bulgularıyla orantısız' şiddetli karın ağrısı?",
+    "options": [
+      "Akut Mezenterik İskemi",
+      "Akut Mezenterik Lenfadenit",
+      "Skleroze Mezenterit",
+      "Mezenterik Ven Trombozu",
+      "Mezenterik Kist"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Akut Mezenterik İskemi' şıkkıdır."
+  },
+  {
+    "id": 1792,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenterik Hastalıklar",
+    "diff": 4,
+    "q": "Yemeklerden sonra (postprandiyal) başlayan şiddetli karın ağrısı ve buna bağlı 'yemek yeme korkusu' ve kilo kaybı olan hastada tanı?",
+    "options": [
+      "Akut Mezenterik İskemi",
+      "Mezenterik Kist",
+      "Kronik Mezenterik İskemi",
+      "Omental İnfarkt",
+      "Mezenterik Ven Trombozu"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kronik Mezenterik İskemi' şıkkıdır."
+  },
+  {
+    "id": 1793,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenterik Hastalıklar",
+    "diff": 3,
+    "q": "Portal hipertansiyon, siroz veya hiperkoagülabilite durumlarında ortaya çıkan ve GİS iskemisi yapan tablo?",
+    "options": [
+      "Nekrotik Segmentin Rezeksiyonu",
+      "Skleroze Mezenterit",
+      "Kronik Mezenterik İskemi",
+      "Akut Mezenterik İskemi",
+      "Mezenterik Ven Trombozu"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Mezenterik Ven Trombozu' şıkkıdır."
+  },
+  {
+    "id": 1794,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenterik Hastalıklar",
+    "diff": 3,
+    "q": "Akut mezenterik iskemi şüphesinde erken tanıda en yüksek duyarlılığa sahip görüntüleme yöntemi?",
+    "options": [
+      "BT Anjiyografi",
+      "Akut Mezenterik İskemi",
+      "Kardiyak Kaynaklı Emboli",
+      "Mezenterik Ven Trombozu",
+      "Kronik Mezenterik İskemi"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'BT Anjiyografi' şıkkıdır."
+  },
+  {
+    "id": 1795,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenterik Hastalıklar",
+    "diff": 3,
+    "q": "Mezenterik iskemiye bağlı barsak nekrozu gelişen hastada cerrahi eksplorasyonda yapılan altın standart işlem?",
+    "options": [
+      "Omental İnfarkt",
+      "Akut Mezenterik İskemi",
+      "Skleroze Mezenterit",
+      "Nekrotik Segmentin Rezeksiyonu",
+      "Kronik Mezenterik İskemi"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Nekrotik Segmentin Rezeksiyonu' şıkkıdır."
+  },
+  {
+    "id": 1796,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenterik Hastalıklar",
+    "diff": 3,
+    "q": "Çocuk ve gençlerde viral enfeksiyonlar sonrası apandisiti taklit eden, sağ alt kadranda büyümüş lenf nodlarıyla seyreden durum?",
+    "options": [
+      "Skleroze Mezenterit",
+      "Nekrotik Segmentin Rezeksiyonu",
+      "Mezenterik Ven Trombozu",
+      "Kardiyak Kaynaklı Emboli",
+      "Akut Mezenterik Lenfadenit"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Akut Mezenterik Lenfadenit' şıkkıdır."
+  },
+  {
+    "id": 1797,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenterik Hastalıklar",
+    "diff": 3,
+    "q": "Karın içi organların kanlanmasını sağlayan Süperior Mezenterik Arterin (SMA) en sık tıkanma nedeni?",
+    "options": [
+      "BT Anjiyografi",
+      "Omental İnfarkt",
+      "Mezenterik Ven Trombozu",
+      "Kardiyak Kaynaklı Emboli",
+      "Akut Mezenterik İskemi"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kardiyak Kaynaklı Emboli' şıkkıdır."
+  },
+  {
+    "id": 1798,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenterik Hastalıklar",
+    "diff": 3,
+    "q": "Mezenter dokusu içinde sıvı dolu, genellikle asemptomatik ancak büyüdüğünde bası yapan benign lezyon?",
+    "options": [
+      "Kardiyak Kaynaklı Emboli",
+      "BT Anjiyografi",
+      "Mezenterik Kist",
+      "Akut Mezenterik Lenfadenit",
+      "Skleroze Mezenterit"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Mezenterik Kist' şıkkıdır."
+  },
+  {
+    "id": 1799,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenterik Hastalıklar",
+    "diff": 3,
+    "q": "Büyük omentumun kendi etrafında dönmesi (torsiyonu) sonucu gelişen akut batın tablosu?",
+    "options": [
+      "Mezenterik Ven Trombozu",
+      "Omental İnfarkt",
+      "Kardiyak Kaynaklı Emboli",
+      "BT Anjiyografi",
+      "Mezenterik Kist"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Omental İnfarkt' şıkkıdır."
+  },
+  {
+    "id": 1800,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenterik Hastalıklar",
+    "diff": 3,
+    "q": "Mezenterik yağ dokusunun nedeni bilinmeyen, kronik inflamatuar ve fibrotik hastalığı?",
+    "options": [
+      "Skleroze Mezenterit",
+      "Mezenterik Kist",
+      "Omental İnfarkt",
+      "BT Anjiyografi",
+      "Akut Mezenterik Lenfadenit"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Skleroze Mezenterit' şıkkıdır."
+  },
+  {
+    "id": 1801,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 3,
+    "q": "Ağrısız rektal kanama, demir eksikliği anemisi ve dışkılama alışkanlığında değişiklik olan yaşlı hastada dışlanması gereken tanı?",
+    "options": [
+      "Ailesel Adenomatöz Polipozis (FAP)",
+      "Sigmoid Volvulus",
+      "Gizli Kanama ve Demir Eksikliği Anemisi",
+      "Kolon Adenokarsinomu",
+      "Ülseratif Kolit"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kolon Adenokarsinomu' şıkkıdır."
+  },
+  {
+    "id": 1802,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 4,
+    "q": "Sadece mukozayı tutan, rektumdan başlayıp proksimale kesintisiz ilerleyen ve kanlı ishalle seyreden inflamatuar barsak hastalığı?",
+    "options": [
+      "Kolon Adenokarsinomu",
+      "Akut Divertikülit",
+      "10 Yılda Bir Kolonoskopi",
+      "Ülseratif Kolit",
+      "Ailesel Adenomatöz Polipozis (FAP)"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Ülseratif Kolit' şıkkıdır."
+  },
+  {
+    "id": 1803,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 4,
+    "q": "İleri yaşta sol alt kadran ağrısı, ateş, lökositoz ve 'sol tarafın apandisiti' kliniği ile prezente olan durum?",
+    "options": [
+      "Ailesel Adenomatöz Polipozis (FAP)",
+      "10 Yılda Bir Kolonoskopi",
+      "Sigmoid Volvulus",
+      "Lynch Sendromu",
+      "Akut Divertikülit"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Akut Divertikülit' şıkkıdır."
+  },
+  {
+    "id": 1804,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 4,
+    "q": "Genişlemiş ve içi dışkı/gaz dolu kolon segmentinin kendi mezosu etrafında dönmesiyle (kahve çekirdeği manzarası) oluşan tıkanıklık?",
+    "options": [
+      "Ailesel Adenomatöz Polipozis (FAP)",
+      "Kolon Adenokarsinomu",
+      "Sigmoid Volvulus",
+      "Gizli Kanama ve Demir Eksikliği Anemisi",
+      "Akut Divertikülit"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Sigmoid Volvulus' şıkkıdır."
+  },
+  {
+    "id": 1805,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 4,
+    "q": "Yüzlerce adenomatöz polip ile karakterize, APC gen mutasyonuna bağlı ve %100 kolon kanserine dönüşen sendrom?",
+    "options": [
+      "Sigmoid Volvulus",
+      "Ailesel Adenomatöz Polipozis (FAP)",
+      "Ülseratif Kolit",
+      "Lynch Sendromu",
+      "Kolon Adenokarsinomu"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Ailesel Adenomatöz Polipozis (FAP)' şıkkıdır."
+  },
+  {
+    "id": 1806,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 3,
+    "q": "Kolorektal kanserin en sık metastaz yaptığı organ hangisidir?",
+    "options": [
+      "Karaciğer",
+      "10 Yılda Bir Kolonoskopi",
+      "Ülseratif Kolit",
+      "Ailesel Adenomatöz Polipozis (FAP)",
+      "Gizli Kanama ve Demir Eksikliği Anemisi"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Karaciğer' şıkkıdır."
+  },
+  {
+    "id": 1807,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 3,
+    "q": "Ailesel geçişli (HNPCC), polipozis olmadan kolon kanseri, endometrium ve over kanseri riskini artıran genetik sendrom?",
+    "options": [
+      "10 Yılda Bir Kolonoskopi",
+      "Hartmann Prosedürü",
+      "Gizli Kanama ve Demir Eksikliği Anemisi",
+      "Lynch Sendromu",
+      "Ülseratif Kolit"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Lynch Sendromu' şıkkıdır."
+  },
+  {
+    "id": 1808,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 4,
+    "q": "Kolon kanseri taramasında 50 yaş üzeri risk taşımayan bireylerde altın standart tarama testi?",
+    "options": [
+      "Gizli Kanama ve Demir Eksikliği Anemisi",
+      "10 Yılda Bir Kolonoskopi",
+      "Lynch Sendromu",
+      "Ailesel Adenomatöz Polipozis (FAP)",
+      "Ülseratif Kolit"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım '10 Yılda Bir Kolonoskopi' şıkkıdır."
+  },
+  {
+    "id": 1809,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 4,
+    "q": "Sağ kolon (çekum) kanserleri sıklıkla hangi klinik tablo ile prezente olur?",
+    "options": [
+      "Ailesel Adenomatöz Polipozis (FAP)",
+      "Gizli Kanama ve Demir Eksikliği Anemisi",
+      "10 Yılda Bir Kolonoskopi",
+      "Sigmoid Volvulus",
+      "Hartmann Prosedürü"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Gizli Kanama ve Demir Eksikliği Anemisi' şıkkıdır."
+  },
+  {
+    "id": 1810,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 3,
+    "q": "Divertikülite bağlı perforasyon ve peritonit (Hinchey Evre 3-4) durumunda acil cerrahi tercih nedir?",
+    "options": [
+      "Kolon Adenokarsinomu",
+      "Hartmann Prosedürü",
+      "10 Yılda Bir Kolonoskopi",
+      "Ülseratif Kolit",
+      "Sigmoid Volvulus"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Hartmann Prosedürü' şıkkıdır."
+  },
+  {
+    "id": 1811,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 3,
+    "q": "Periumbilikal başlayıp sağ alt kadrana yerleşen ağrı, iştahsızlık, bulantı ve sağ alt kadranda rebound hassasiyet?",
+    "options": [
+      "Konservatif Takip ve Antibiyotik",
+      "Akut Apandisit",
+      "Sağ Alt Kadran Hassasiyeti ve Lökositoz",
+      "Mezenterik Lenfadenit",
+      "Psoas Bulgusu"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Akut Apandisit' şıkkıdır."
+  },
+  {
+    "id": 1812,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 3,
+    "q": "Akut apandisit tanısında gebelerde ve çocuklarda radyasyon riskinden kaçınmak için ilk tercih edilecek görüntüleme?",
+    "options": [
+      "Sağ Hemikolektomi",
+      "Konservatif Takip ve Antibiyotik",
+      "Ultrasonografi (USG)",
+      "Psoas Bulgusu",
+      "Akut Apandisit"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Ultrasonografi (USG)' şıkkıdır."
+  },
+  {
+    "id": 1813,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 3,
+    "q": "Apandisitin en sık görülen primer nedeni (patofizyolojisi) nedir?",
+    "options": [
+      "Psödomiksoma Peritonei",
+      "Psoas Bulgusu",
+      "Apandiks Lümeninin Tıkanması",
+      "Sağ Hemikolektomi",
+      "Konservatif Takip ve Antibiyotik"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Apandiks Lümeninin Tıkanması' şıkkıdır."
+  },
+  {
+    "id": 1814,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 3,
+    "q": "Apandektomi materyalinde patolojik olarak en sık rastlanan benign tümör hangisidir?",
+    "options": [
+      "Psoas Bulgusu",
+      "Mezenterik Lenfadenit",
+      "Ultrasonografi (USG)",
+      "Sağ Hemikolektomi",
+      "Karsinoid Tümör"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Karsinoid Tümör' şıkkıdır."
+  },
+  {
+    "id": 1815,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 3,
+    "q": "Apandisitten sızan mukusun periton boşluğuna yayılarak jelatinöz asit birikimine yol açtığı klinik tablo?",
+    "options": [
+      "Konservatif Takip ve Antibiyotik",
+      "Psödomiksoma Peritonei",
+      "Psoas Bulgusu",
+      "Sağ Hemikolektomi",
+      "Apandiks Lümeninin Tıkanması"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Psödomiksoma Peritonei' şıkkıdır."
+  },
+  {
+    "id": 1816,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 4,
+    "q": "Apandiks karsinoid tümöründe çapı 2 cm'den büyükse veya mezoapendiks invazyonu varsa uygulanması gereken cerrahi?",
+    "options": [
+      "Sağ Hemikolektomi",
+      "Akut Apandisit",
+      "Psoas Bulgusu",
+      "Mezenterik Lenfadenit",
+      "Apandiks Lümeninin Tıkanması"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Sağ Hemikolektomi' şıkkıdır."
+  },
+  {
+    "id": 1817,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 3,
+    "q": "Gecikmiş başvuru (>72 saat) nedeniyle sağ alt kadranda ele gelen enflamatuar kitle varlığında ilk yaklaşım?",
+    "options": [
+      "Mezenterik Lenfadenit",
+      "Karsinoid Tümör",
+      "Psoas Bulgusu",
+      "Ultrasonografi (USG)",
+      "Konservatif Takip ve Antibiyotik"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Konservatif Takip ve Antibiyotik' şıkkıdır."
+  },
+  {
+    "id": 1818,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 4,
+    "q": "Akut apandisit skorlamasında (Alvarado Skoru) en yüksek puanı alan iki bulgu?",
+    "options": [
+      "Konservatif Takip ve Antibiyotik",
+      "Akut Apandisit",
+      "Sağ Alt Kadran Hassasiyeti ve Lökositoz",
+      "Psödomiksoma Peritonei",
+      "Apandiks Lümeninin Tıkanması"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Sağ Alt Kadran Hassasiyeti ve Lökositoz' şıkkıdır."
+  },
+  {
+    "id": 1819,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 4,
+    "q": "Çekum duvarına yakın yerleşimli apandisitte (retroçekal), ağrının uyluk ekstansiyonu ile artmasına ne ad verilir?",
+    "options": [
+      "Konservatif Takip ve Antibiyotik",
+      "Sağ Alt Kadran Hassasiyeti ve Lökositoz",
+      "Mezenterik Lenfadenit",
+      "Psödomiksoma Peritonei",
+      "Psoas Bulgusu"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Psoas Bulgusu' şıkkıdır."
+  },
+  {
+    "id": 1820,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 3,
+    "q": "Apandiks mukoselinin rüptürü veya kistadenokarsinom durumunda peritonda biriken mukoid sıvı sendromu?",
+    "options": [
+      "Karsinoid Tümör",
+      "Sağ Alt Kadran Hassasiyeti ve Lökositoz",
+      "Apandiks Lümeninin Tıkanması",
+      "Psödomiksoma Peritonei",
+      "Konservatif Takip ve Antibiyotik"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Psödomiksoma Peritonei' şıkkıdır."
+  },
+  {
+    "id": 1821,
+    "ders": "Genel Cerrahi",
+    "konu": "Perianal Hastalıklar",
+    "diff": 3,
+    "q": "Dışkılama sırasında cam kesiği şeklinde ağrı ve tuvalet kağıdında açık kırmızı taze kan saptanması?",
+    "options": [
+      "Seton Uygulaması",
+      "Anal Fissür",
+      "İnternal Hemoroidal Hastalık",
+      "Perianal Abse",
+      "Cerrahi Hemoroidektomi"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Anal Fissür' şıkkıdır."
+  },
+  {
+    "id": 1822,
+    "ders": "Genel Cerrahi",
+    "konu": "Perianal Hastalıklar",
+    "diff": 3,
+    "q": "Kronik anal fissürün medikal tedaviye dirençli olduğu durumda altın standart cerrahi?",
+    "options": [
+      "Acil Cerrahi Drenaj",
+      "Anal Skuamöz Hücreli Karsinom",
+      "Lateral İnternal Sfinkterotomi (LİS)",
+      "Seton Uygulaması",
+      "Pilonidal Sinüs (Kıl Dönmesi)"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Lateral İnternal Sfinkterotomi (LİS)' şıkkıdır."
+  },
+  {
+    "id": 1823,
+    "ders": "Genel Cerrahi",
+    "konu": "Perianal Hastalıklar",
+    "diff": 4,
+    "q": "Anüs çevresinde şiddetli, zonklayıcı, uykudan uyandıran ağrı, şişlik ve ateş tablosu ile gelen hastada tanı?",
+    "options": [
+      "Cerrahi Hemoroidektomi",
+      "İnternal Hemoroidal Hastalık",
+      "Pilonidal Sinüs (Kıl Dönmesi)",
+      "Acil Cerrahi Drenaj",
+      "Perianal Abse"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Perianal Abse' şıkkıdır."
+  },
+  {
+    "id": 1824,
+    "ders": "Genel Cerrahi",
+    "konu": "Perianal Hastalıklar",
+    "diff": 3,
+    "q": "Perianal absenin temel tedavisi nedir?",
+    "options": [
+      "Acil Cerrahi Drenaj",
+      "Anal Fissür",
+      "Lateral İnternal Sfinkterotomi (LİS)",
+      "Anal Skuamöz Hücreli Karsinom",
+      "Perianal Abse"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Acil Cerrahi Drenaj' şıkkıdır."
+  },
+  {
+    "id": 1825,
+    "ders": "Genel Cerrahi",
+    "konu": "Perianal Hastalıklar",
+    "diff": 4,
+    "q": "Dışkılama ile anüsten dışarı sarkan, ağrısız ve taze kanamalı memeler ile karakterize hastalık?",
+    "options": [
+      "Pilonidal Sinüs (Kıl Dönmesi)",
+      "İnternal Hemoroidal Hastalık",
+      "Cerrahi Hemoroidektomi",
+      "Acil Cerrahi Drenaj",
+      "Perianal Abse"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'İnternal Hemoroidal Hastalık' şıkkıdır."
+  },
+  {
+    "id": 1826,
+    "ders": "Genel Cerrahi",
+    "konu": "Perianal Hastalıklar",
+    "diff": 4,
+    "q": "Hemoroid pakelerinin anal kanaldan dışarı sarkıp elle dahi geri itilemediği (Evre 4) ve ağrılı tromboz yaptığı durumda tedavi?",
+    "options": [
+      "Perianal Fistül",
+      "Acil Cerrahi Drenaj",
+      "Lateral İnternal Sfinkterotomi (LİS)",
+      "Cerrahi Hemoroidektomi",
+      "Perianal Abse"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Cerrahi Hemoroidektomi' şıkkıdır."
+  },
+  {
+    "id": 1827,
+    "ders": "Genel Cerrahi",
+    "konu": "Perianal Hastalıklar",
+    "diff": 3,
+    "q": "Anal bezlerin enfeksiyonu sonucu oluşan, perianal cilt ile anal kanal arasında anormal yol oluşumu?",
+    "options": [
+      "Cerrahi Hemoroidektomi",
+      "Acil Cerrahi Drenaj",
+      "Perianal Fistül",
+      "İnternal Hemoroidal Hastalık",
+      "Seton Uygulaması"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Perianal Fistül' şıkkıdır."
+  },
+  {
+    "id": 1828,
+    "ders": "Genel Cerrahi",
+    "konu": "Perianal Hastalıklar",
+    "diff": 3,
+    "q": "Genç, kıllı erkeklerde sakrokoksigeal (kuyruk sokumu) bölgede akıntı, şişlik ve sinüs ağızlarıyla seyreden kronik hastalık?",
+    "options": [
+      "Anal Fissür",
+      "Pilonidal Sinüs (Kıl Dönmesi)",
+      "Acil Cerrahi Drenaj",
+      "Seton Uygulaması",
+      "Cerrahi Hemoroidektomi"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Pilonidal Sinüs (Kıl Dönmesi)' şıkkıdır."
+  },
+  {
+    "id": 1829,
+    "ders": "Genel Cerrahi",
+    "konu": "Perianal Hastalıklar",
+    "diff": 4,
+    "q": "Perianal fistül cerrahisinde internal sfinkteri korumak ve inkontinansı önlemek için kullanılan ipe benzeyen drenaj yöntemi?",
+    "options": [
+      "Anal Fissür",
+      "Acil Cerrahi Drenaj",
+      "Pilonidal Sinüs (Kıl Dönmesi)",
+      "Seton Uygulaması",
+      "Perianal Fistül"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Seton Uygulaması' şıkkıdır."
+  },
+  {
+    "id": 1830,
+    "ders": "Genel Cerrahi",
+    "konu": "Perianal Hastalıklar",
+    "diff": 3,
+    "q": "Anal kanalın dentat çizgi altında (deriden) gelişen, HPV ile ilişkili olabilen ve kemokemoradyoterapiye çok iyi yanıt veren kanser?",
+    "options": [
+      "Perianal Abse",
+      "Seton Uygulaması",
+      "Anal Skuamöz Hücreli Karsinom",
+      "Lateral İnternal Sfinkterotomi (LİS)",
+      "Cerrahi Hemoroidektomi"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Anal Skuamöz Hücreli Karsinom' şıkkıdır."
+  },
+  {
+    "id": 1831,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 3,
+    "q": "Karın ağrısı, distansiyon, kusma ve gaz-gaita çıkaramama triadı olan, röntgende 'hava-sıvı seviyeleri' görülen tablo?",
+    "options": [
+      "Geçirilmiş Karın Cerrahilerine Bağlı Yapışıklıklar",
+      "Nazogastrik (NG) Dekompresyon",
+      "Rektovajinal Fistül",
+      "Mekanik Barsak Tıkanıklığı (İleus)",
+      "Paralitik İleus"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Mekanik Barsak Tıkanıklığı (İleus)' şıkkıdır."
+  },
+  {
+    "id": 1832,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 4,
+    "q": "Erişkinlerde ince barsak tıkanıklığının en sık nedeni nedir?",
+    "options": [
+      "Geçirilmiş Karın Cerrahilerine Bağlı Yapışıklıklar",
+      "Terminal İleum (İleoçekal Valv)",
+      "Enterokütan Fistül",
+      "Kolovezikal Fistül",
+      "Paralitik İleus"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Geçirilmiş Karın Cerrahilerine Bağlı Yapışıklıklar' şıkkıdır."
+  },
+  {
+    "id": 1833,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 4,
+    "q": "Barsak seslerinin kaybolduğu, ağrının sürekli ve distansiyonun yaygın olduğu, mekanik tıkanıklık olmayan durum?",
+    "options": [
+      "Paralitik İleus",
+      "Oktreotid",
+      "Ateş, Taşikardi, Lökositoz ve Defans",
+      "Nazogastrik (NG) Dekompresyon",
+      "Kolovezikal Fistül"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Paralitik İleus' şıkkıdır."
+  },
+  {
+    "id": 1834,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 4,
+    "q": "GİS cerrahisi sonrası cilt kesisisinden safra/gaita içerikli akıntı gelmesi ile karakterize komplikasyon?",
+    "options": [
+      "Oktreotid",
+      "Ateş, Taşikardi, Lökositoz ve Defans",
+      "Enterokütan Fistül",
+      "Mekanik Barsak Tıkanıklığı (İleus)",
+      "Terminal İleum (İleoçekal Valv)"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Enterokütan Fistül' şıkkıdır."
+  },
+  {
+    "id": 1835,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 3,
+    "q": "Mekanik ileusta barsak dolaşımının bozulduğuna (strangülasyon) işaret eden alarm bulguları?",
+    "options": [
+      "Rektovajinal Fistül",
+      "Kolovezikal Fistül",
+      "Ateş, Taşikardi, Lökositoz ve Defans",
+      "Geçirilmiş Karın Cerrahilerine Bağlı Yapışıklıklar",
+      "Mekanik Barsak Tıkanıklığı (İleus)"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Ateş, Taşikardi, Lökositoz ve Defans' şıkkıdır."
+  },
+  {
+    "id": 1836,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 4,
+    "q": "Pankreatik fistüllerin tıbbi tedavisinde salgıyı azaltmak için kullanılan somatostatin analoğu ilaç?",
+    "options": [
+      "Terminal İleum (İleoçekal Valv)",
+      "Ateş, Taşikardi, Lökositoz ve Defans",
+      "Enterokütan Fistül",
+      "Oktreotid",
+      "Geçirilmiş Karın Cerrahilerine Bağlı Yapışıklıklar"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Oktreotid' şıkkıdır."
+  },
+  {
+    "id": 1837,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 4,
+    "q": "Divertikülite bağlı gelişen, dışkıdan gaz veya gaita gelmesi ile karakterize fistül?",
+    "options": [
+      "Kolovezikal Fistül",
+      "Ateş, Taşikardi, Lökositoz ve Defans",
+      "Geçirilmiş Karın Cerrahilerine Bağlı Yapışıklıklar",
+      "Nazogastrik (NG) Dekompresyon",
+      "Mekanik Barsak Tıkanıklığı (İleus)"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kolovezikal Fistül' şıkkıdır."
+  },
+  {
+    "id": 1838,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 4,
+    "q": "Radyoterapi veya obstetrik travma sonrası kadınlarda vajinadan gaita gelmesi ile kendini gösteren durum?",
+    "options": [
+      "Paralitik İleus",
+      "Oktreotid",
+      "Enterokütan Fistül",
+      "Rektovajinal Fistül",
+      "Terminal İleum (İleoçekal Valv)"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Rektovajinal Fistül' şıkkıdır."
+  },
+  {
+    "id": 1839,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 3,
+    "q": "İnce barsak tıkanıklığında (ileus) ilk yapılması gereken acil medikal yaklaşım?",
+    "options": [
+      "Oktreotid",
+      "Rektovajinal Fistül",
+      "Kolovezikal Fistül",
+      "Nazogastrik (NG) Dekompresyon",
+      "Geçirilmiş Karın Cerrahilerine Bağlı Yapışıklıklar"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Nazogastrik (NG) Dekompresyon' şıkkıdır."
+  },
+  {
+    "id": 1840,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 4,
+    "q": "Gallstone ileusunda (safra taşı ileusu) taşın ince barsağı tıkadığı en dar anatomik bölge?",
+    "options": [
+      "Rektovajinal Fistül",
+      "Kolovezikal Fistül",
+      "Terminal İleum (İleoçekal Valv)",
+      "Oktreotid",
+      "Nazogastrik (NG) Dekompresyon"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Terminal İleum (İleoçekal Valv)' şıkkıdır."
+  },
+  {
+    "id": 1841,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 4,
+    "q": "Sirozlu hastada AFP (Alfa-fetoprotein) yüksekliği ve karaciğerde arteriyel fazda kontrastlanan kitle görülmesi?",
+    "options": [
+      "Hepatoselüler Karsinom (HCC)",
+      "Hemanjiom",
+      "Fokal Nodüler Hiperplazi",
+      "TIPS",
+      "Portal Triad"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Hepatoselüler Karsinom (HCC)' şıkkıdır."
+  },
+  {
+    "id": 1842,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 4,
+    "q": "Karaciğerin en sık görülen iyi huylu (benign) katı tümörü hangisidir?",
+    "options": [
+      "Özofagus Varis Kanaması",
+      "Portal Triad",
+      "Hemanjiom",
+      "Fokal Nodüler Hiperplazi",
+      "Metastazektomi"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Hemanjiom' şıkkıdır."
+  },
+  {
+    "id": 1843,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 4,
+    "q": "Genç kadınlarda oral kontraseptif kullanımı ile ilişkili olan, kanama ve rüptür riski taşıyan karaciğer tümörü?",
+    "options": [
+      "Hepatoselüler Karsinom (HCC)",
+      "Hepatik Adenom",
+      "Portal Triad",
+      "Fokal Nodüler Hiperplazi",
+      "Kist Hidatik"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Hepatik Adenom' şıkkıdır."
+  },
+  {
+    "id": 1844,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 4,
+    "q": "Koyun-köpek teması öyküsü olan hastada karaciğerde kistik kitle ve eozinofili; rüptüründe anafilaksi riski olan hastalık?",
+    "options": [
+      "TIPS",
+      "Kist Hidatik",
+      "Hemanjiom",
+      "Portal Triad",
+      "Oktreotid (veya Terlipressin)"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kist Hidatik' şıkkıdır."
+  },
+  {
+    "id": 1845,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 4,
+    "q": "Siroza bağlı portal hipertansiyonun en ölümcül gastrointestinal komplikasyonu nedir?",
+    "options": [
+      "Oktreotid (veya Terlipressin)",
+      "Kist Hidatik",
+      "Portal Triad",
+      "Hemanjiom",
+      "Özofagus Varis Kanaması"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Özofagus Varis Kanaması' şıkkıdır."
+  },
+  {
+    "id": 1846,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 4,
+    "q": "Özofagus varis kanamasının akut tedavisinde endoskopik bant ligasyonu yapılamıyorsa kullanılan acil medikal ajan?",
+    "options": [
+      "Hemanjiom",
+      "Oktreotid (veya Terlipressin)",
+      "Hepatik Adenom",
+      "Kist Hidatik",
+      "TIPS"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Oktreotid (veya Terlipressin)' şıkkıdır."
+  },
+  {
+    "id": 1847,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 4,
+    "q": "Dirençli asit veya varis kanaması olan siroz hastalarında portal basıncı düşürmek için uygulanan radyolojik şant işlemi?",
+    "options": [
+      "Hemanjiom",
+      "Fokal Nodüler Hiperplazi",
+      "TIPS",
+      "Kist Hidatik",
+      "Özofagus Varis Kanaması"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'TIPS' şıkkıdır."
+  },
+  {
+    "id": 1848,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 4,
+    "q": "Karaciğerde 'santral skar' (merkezi yıldızsı skar) görünümü ile tipik olan, cerrahi gerektirmeyen benign lezyon?",
+    "options": [
+      "Portal Triad",
+      "Hepatoselüler Karsinom (HCC)",
+      "Özofagus Varis Kanaması",
+      "Fokal Nodüler Hiperplazi",
+      "Hemanjiom"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Fokal Nodüler Hiperplazi' şıkkıdır."
+  },
+  {
+    "id": 1849,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 4,
+    "q": "Kolorektal kanserlerin karaciğere yaptığı metastazlarda, primer tümör rezeke edildikten sonra karaciğer için tedavi yaklaşımı?",
+    "options": [
+      "Kist Hidatik",
+      "Özofagus Varis Kanaması",
+      "Portal Triad",
+      "Metastazektomi",
+      "Oktreotid (veya Terlipressin)"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Metastazektomi' şıkkıdır."
+  },
+  {
+    "id": 1850,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 4,
+    "q": "Portal ven, hepatik arter ve safra kanalının birlikte oluşturduğu anatomik yapıya ne ad verilir?",
+    "options": [
+      "Özofagus Varis Kanaması",
+      "Kist Hidatik",
+      "TIPS",
+      "Portal Triad",
+      "Oktreotid (veya Terlipressin)"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Portal Triad' şıkkıdır."
+  },
+  {
+    "id": 1851,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 3,
+    "q": "Sağ üst kadranda yemeklerden (özellikle yağlı) sonra başlayan, sırta veya sağ kürek kemiğine yayılan aralıklı ağrı?",
+    "options": [
+      "Profilaktik Kolesistektomi",
+      "Kolelitiazis (Safra Kesesi Taşı)",
+      "Akut Kolanjit",
+      "Kolanjiyokarsinom",
+      "Koledokolitiazis"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kolelitiazis (Safra Kesesi Taşı)' şıkkıdır."
+  },
+  {
+    "id": 1852,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 3,
+    "q": "Safra kesesi taşına bağlı safra kesesi kanalının tıkanması sonucu gelişen ateş, lökositoz ve pozitif Murphy bulgusu?",
+    "options": [
+      "Periampüller Bölge Tümörü",
+      "Koledokolitiazis",
+      "Profilaktik Kolesistektomi",
+      "Akut Kolesistit",
+      "Kistin Eksizyonu ve Roux-en-Y"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Akut Kolesistit' şıkkıdır."
+  },
+  {
+    "id": 1853,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 4,
+    "q": "Safra taşının ana safra kanalına (koledoğa) düşerek tıkanma sarılığı yapması durumuna ne ad verilir?",
+    "options": [
+      "HIDA Sintigrafisi",
+      "Kolelitiazis (Safra Kesesi Taşı)",
+      "Koledokolitiazis",
+      "Profilaktik Kolesistektomi",
+      "Acil ERCP ile Safra Yolu Drenajı"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Koledokolitiazis' şıkkıdır."
+  },
+  {
+    "id": 1854,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 3,
+    "q": "Ateş, sarılık ve sağ üst kadran ağrısı (Charcot Triadı) ile prezente olan, koledok tıkanıklığına bağlı safra yolu enfeksiyonu?",
+    "options": [
+      "Akut Kolesistit",
+      "Akut Kolanjit",
+      "Profilaktik Kolesistektomi",
+      "Kistin Eksizyonu ve Roux-en-Y",
+      "Periampüller Bölge Tümörü"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Akut Kolanjit' şıkkıdır."
+  },
+  {
+    "id": 1855,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 4,
+    "q": "Akut süpüratif kolanjitte acil olarak yapılması gereken hayat kurtarıcı müdahale?",
+    "options": [
+      "Periampüller Bölge Tümörü",
+      "Kolanjiyokarsinom",
+      "Kolelitiazis (Safra Kesesi Taşı)",
+      "Acil ERCP ile Safra Yolu Drenajı",
+      "Akut Kolesistit"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Acil ERCP ile Safra Yolu Drenajı' şıkkıdır."
+  },
+  {
+    "id": 1856,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 4,
+    "q": "Porselen safra kesesi saptanan hastada yüksek risk taşıdığı için yapılması gereken cerrahi?",
+    "options": [
+      "Profilaktik Kolesistektomi",
+      "Acil ERCP ile Safra Yolu Drenajı",
+      "Kolanjiyokarsinom",
+      "Akut Kolanjit",
+      "Koledokolitiazis"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Profilaktik Kolesistektomi' şıkkıdır."
+  },
+  {
+    "id": 1857,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 4,
+    "q": "İleri yaşta, ağrısız sarılık, kilo kaybı ve sağ üst kadranda ele gelen palpabl, ağrısız safra kesesi?",
+    "options": [
+      "Koledokolitiazis",
+      "Periampüller Bölge Tümörü",
+      "Acil ERCP ile Safra Yolu Drenajı",
+      "Akut Kolanjit",
+      "Akut Kolesistit"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Periampüller Bölge Tümörü' şıkkıdır."
+  },
+  {
+    "id": 1858,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 3,
+    "q": "Primer Sklerozan Kolanjit (PSK) hastalarında gelişme riski çok yüksek olan safra yolu malignitesi?",
+    "options": [
+      "Profilaktik Kolesistektomi",
+      "Acil ERCP ile Safra Yolu Drenajı",
+      "Periampüller Bölge Tümörü",
+      "HIDA Sintigrafisi",
+      "Kolanjiyokarsinom"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kolanjiyokarsinom' şıkkıdır."
+  },
+  {
+    "id": 1859,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 4,
+    "q": "Akut kolesistit tanısında en yüksek duyarlılık ve özgüllüğe sahip, kese disfonksiyonunu gösteren nükleer tıp testi?",
+    "options": [
+      "Profilaktik Kolesistektomi",
+      "Akut Kolanjit",
+      "Acil ERCP ile Safra Yolu Drenajı",
+      "Kistin Eksizyonu ve Roux-en-Y",
+      "HIDA Sintigrafisi"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'HIDA Sintigrafisi' şıkkıdır."
+  },
+  {
+    "id": 1860,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 4,
+    "q": "Koledok kisti saptanan çocuk veya genç hastada kanser riskini önlemek için standart tedavi?",
+    "options": [
+      "Kistin Eksizyonu ve Roux-en-Y",
+      "HIDA Sintigrafisi",
+      "Periampüller Bölge Tümörü",
+      "Acil ERCP ile Safra Yolu Drenajı",
+      "Koledokolitiazis"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kistin Eksizyonu ve Roux-en-Y' şıkkıdır."
+  },
+  {
+    "id": 1861,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 4,
+    "q": "Künt batın travması sonrası hemodinamik instabilite ve sol üst kadran ağrısı olan hastada en sık yaralanan organ?",
+    "options": [
+      "Kardiyak Tamponad",
+      "Tansiyon Pnömotoraks",
+      "Dalak",
+      "Pelvik Binder",
+      "İğne Torakostomi"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Dalak' şıkkıdır."
+  },
+  {
+    "id": 1862,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 3,
+    "q": "Delici veya künt travma sonrası boyun venlerinde dolgunluk, hipotansiyon ve kalp seslerinde derinden gelme?",
+    "options": [
+      "Acil Laparotomi",
+      "Dalak",
+      "İğne Torakostomi",
+      "Yelken Göğüs",
+      "Kardiyak Tamponad"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kardiyak Tamponad' şıkkıdır."
+  },
+  {
+    "id": 1863,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 3,
+    "q": "Travma hastasında solunum sıkıntısı, trakeanın karşı tarafa kayması, tek taraflı solunum seslerinin kaybı ve hiperrezonans?",
+    "options": [
+      "Acil Laparotomi",
+      "Pelvik Binder",
+      "Entübasyon",
+      "Kontrastlı Batın BT",
+      "Tansiyon Pnömotoraks"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Tansiyon Pnömotoraks' şıkkıdır."
+  },
+  {
+    "id": 1864,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 4,
+    "q": "Tansiyon pnömotoraks tanısı konan hastada ilk yapılması gereken acil müdahale?",
+    "options": [
+      "Kardiyak Tamponad",
+      "Kontrastlı Batın BT",
+      "Karın İçi Serbest Sıvı/Kan Tespiti",
+      "Pelvik Binder",
+      "İğne Torakostomi"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'İğne Torakostomi' şıkkıdır."
+  },
+  {
+    "id": 1865,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 3,
+    "q": "Ardışık 3 veya daha fazla kaburganın en az iki yerinden kırılması sonucu solunumla paradoksal hareket eden göğüs duvarı?",
+    "options": [
+      "Yelken Göğüs",
+      "Dalak",
+      "Acil Laparotomi",
+      "Kardiyak Tamponad",
+      "Entübasyon"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Yelken Göğüs' şıkkıdır."
+  },
+  {
+    "id": 1866,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 4,
+    "q": "Ağır pelvis kırığı olan ve hipotansif şoktaki hastada pelvis hacmini küçültüp kanamayı durdurmak için ilk adım?",
+    "options": [
+      "Pelvik Binder",
+      "Entübasyon",
+      "Tansiyon Pnömotoraks",
+      "Karın İçi Serbest Sıvı/Kan Tespiti",
+      "İğne Torakostomi"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Pelvik Binder' şıkkıdır."
+  },
+  {
+    "id": 1867,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 4,
+    "q": "Künt batın travmasında FAST (Focused Assessment with Sonography for Trauma) ultrasonunun temel kullanım amacı?",
+    "options": [
+      "Pelvik Binder",
+      "Karın İçi Serbest Sıvı/Kan Tespiti",
+      "Acil Laparotomi",
+      "Dalak",
+      "Yelken Göğüs"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Karın İçi Serbest Sıvı/Kan Tespiti' şıkkıdır."
+  },
+  {
+    "id": 1868,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 3,
+    "q": "Hemodinamisi stabil olmayan ve FAST pozitif olan künt batın travmalı hastada bir sonraki adım?",
+    "options": [
+      "Entübasyon",
+      "Pelvik Binder",
+      "Acil Laparotomi",
+      "İğne Torakostomi",
+      "Tansiyon Pnömotoraks"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Acil Laparotomi' şıkkıdır."
+  },
+  {
+    "id": 1869,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 4,
+    "q": "Hemodinamisi stabil olan karın travmalı hastada organ yaralanmasının detayını görmek için en iyi radyolojik tetkik?",
+    "options": [
+      "Dalak",
+      "Yelken Göğüs",
+      "Kontrastlı Batın BT",
+      "İğne Torakostomi",
+      "Pelvik Binder"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kontrastlı Batın BT' şıkkıdır."
+  },
+  {
+    "id": 1870,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 4,
+    "q": "Şiddetli kafa travması olan (GKS < 8) hastada hava yolunu korumak için ilk yapılması gereken işlem?",
+    "options": [
+      "Acil Laparotomi",
+      "Dalak",
+      "Entübasyon",
+      "İğne Torakostomi",
+      "Pelvik Binder"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Entübasyon' şıkkıdır."
+  },
+  {
+    "id": 1871,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 3,
+    "q": "Ani başlayan, bıçak saplanır tarzda şiddetli karın ağrısı, tahta gibi sert karın ve akciğer grafisinde diyafram altı hava?",
+    "options": [
+      "Safra Yolu Yaralanması",
+      "Peptik Ülser Perforasyonu",
+      "Primer Sütür ve Omental Yama",
+      "Akut Pankreatit",
+      "Over Kisti Torsiyonu"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Peptik Ülser Perforasyonu' şıkkıdır."
+  },
+  {
+    "id": 1872,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 4,
+    "q": "Atriyal fibrilasyon öyküsü olan yaşlı hastada ani başlayan, fizik muayene bulgularıyla orantısız şiddetli karın ağrısı?",
+    "options": [
+      "Over Kisti Torsiyonu",
+      "Akut Pankreatit",
+      "Primer Sütür ve Omental Yama",
+      "Üreteral Kolik",
+      "Akut Mezenterik İskemi"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Akut Mezenterik İskemi' şıkkıdır."
+  },
+  {
+    "id": 1873,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 4,
+    "q": "Safra taşı olan hastada ağır yemek sonrası başlayan, kuşağa yayılır tarzda karın ağrısı, bulantı ve yüksek amilaz/lipaz?",
+    "options": [
+      "Over Kisti Torsiyonu",
+      "Primer Sütür ve Omental Yama",
+      "Hayır (Erken analjezi önerilir)",
+      "Akut Pankreatit",
+      "Peptik Ülser Perforasyonu"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Akut Pankreatit' şıkkıdır."
+  },
+  {
+    "id": 1874,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 4,
+    "q": "Adet gecikmesi, ani başlayan alt batın ağrısı, vajinal kanama ve hemodinamik instabilite ile gelen kadın hasta?",
+    "options": [
+      "Peptik Ülser Perforasyonu",
+      "Ektopik Gebelik Rüptürü",
+      "Akut Divertikülit",
+      "Over Kisti Torsiyonu",
+      "Safra Yolu Yaralanması"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Ektopik Gebelik Rüptürü' şıkkıdır."
+  },
+  {
+    "id": 1875,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 3,
+    "q": "Böbrek taşı öyküsü olan hastada yan (flank) bölgesinden kasığa vuran, kıvrandırıcı tarzda kolik ağrı ve hematüri?",
+    "options": [
+      "Akut Divertikülit",
+      "Üreteral Kolik",
+      "Akut Pankreatit",
+      "Ektopik Gebelik Rüptürü",
+      "Peptik Ülser Perforasyonu"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Üreteral Kolik' şıkkıdır."
+  },
+  {
+    "id": 1876,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 3,
+    "q": "Sağ alt kadranda ağrı ile gelen genç kadında, over kistinin kendi etrafında dönmesi sonucu gelişen ve acil ameliyat gerektiren durum?",
+    "options": [
+      "Akut Mezenterik İskemi",
+      "Over Kisti Torsiyonu",
+      "Safra Yolu Yaralanması",
+      "Peptik Ülser Perforasyonu",
+      "Hayır (Erken analjezi önerilir)"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Over Kisti Torsiyonu' şıkkıdır."
+  },
+  {
+    "id": 1877,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 3,
+    "q": "Orta yaşlı hastada sol alt kadranda ağrı, ateş, lökositoz ve lokalize defans saptanması durumunda ilk düşünülecek tanı?",
+    "options": [
+      "Üreteral Kolik",
+      "Akut Divertikülit",
+      "Primer Sütür ve Omental Yama",
+      "Safra Yolu Yaralanması",
+      "Over Kisti Torsiyonu"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Akut Divertikülit' şıkkıdır."
+  },
+  {
+    "id": 1878,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 3,
+    "q": "Safra yolu cerrahisi veya ERCP sonrası gelişen karın ağrısı ve sarılık tablosunda dışlanması gereken iyatrojenik akut batın nedeni?",
+    "options": [
+      "Hayır (Erken analjezi önerilir)",
+      "Primer Sütür ve Omental Yama",
+      "Akut Pankreatit",
+      "Over Kisti Torsiyonu",
+      "Safra Yolu Yaralanması"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Safra Yolu Yaralanması' şıkkıdır."
+  },
+  {
+    "id": 1879,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 4,
+    "q": "Peptik ülser perforasyonu tanısıyla ameliyata alınan hastada yapılan klasik acil onarım ameliyatı?",
+    "options": [
+      "Akut Mezenterik İskemi",
+      "Primer Sütür ve Omental Yama",
+      "Safra Yolu Yaralanması",
+      "Peptik Ülser Perforasyonu",
+      "Akut Divertikülit"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Primer Sütür ve Omental Yama' şıkkıdır."
+  },
+  {
+    "id": 1880,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 3,
+    "q": "Akut batın tablosunda ağrı kesici (analjezik) verilmesinin muayene bulgularını maskeleyeceği düşüncesi güncel olarak doğru mudur?",
+    "options": [
+      "Hayır (Erken analjezi önerilir)",
+      "Ektopik Gebelik Rüptürü",
+      "Akut Pankreatit",
+      "Akut Divertikülit",
+      "Over Kisti Torsiyonu"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Hayır (Erken analjezi önerilir)' şıkkıdır."
+  },
+  {
+    "id": 1881,
+    "ders": "Genel Cerrahi",
+    "konu": "Yara İyileşmesi",
+    "diff": 3,
+    "q": "Yara iyileşmesinin ilk fazı olan ve trombositlerin/nötrofillerin ortama hakim olduğu inflamasyon fazının ana amacı?",
+    "options": [
+      "Hipertrofik Skar",
+      "Fibroblast",
+      "Miyofibroblast",
+      "Yara Enfeksiyonu ve İskemi",
+      "Kanamanın Durdurulması ve Bakterilerin Temizlenmesi"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kanamanın Durdurulması ve Bakterilerin Temizlenmesi' şıkkıdır."
+  },
+  {
+    "id": 1882,
+    "ders": "Genel Cerrahi",
+    "konu": "Yara İyileşmesi",
+    "diff": 3,
+    "q": "Yara iyileşmesinde kolajen sentezinden sorumlu olan ve proliferasyon fazına hakim olan hücre tipi?",
+    "options": [
+      "Fibroblast",
+      "Kanamanın Durdurulması ve Bakterilerin Temizlenmesi",
+      "Yara Enfeksiyonu ve İskemi",
+      "Sekonder İyileşme",
+      "Miyofibroblast"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Fibroblast' şıkkıdır."
+  },
+  {
+    "id": 1883,
+    "ders": "Genel Cerrahi",
+    "konu": "Yara İyileşmesi",
+    "diff": 3,
+    "q": "Kesi yapılıp primer sütürle kapatılan temiz cerrahi yaraların iyileşme şekli ne olarak adlandırılır?",
+    "options": [
+      "Sekonder İyileşme",
+      "C Vitamini",
+      "İnflamasyonun Baskılanması",
+      "Primer İyileşme",
+      "Yara Enfeksiyonu ve İskemi"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Primer İyileşme' şıkkıdır."
+  },
+  {
+    "id": 1884,
+    "ders": "Genel Cerrahi",
+    "konu": "Yara İyileşmesi",
+    "diff": 4,
+    "q": "Açık bırakılan, granülasyon dokusu oluşturarak dipten yüzeye doğru kendi kendine kapanan yara iyileşmesi tipi?",
+    "options": [
+      "Sekonder İyileşme",
+      "Miyofibroblast",
+      "İnflamasyonun Baskılanması",
+      "Primer İyileşme",
+      "Keloid"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Sekonder İyileşme' şıkkıdır."
+  },
+  {
+    "id": 1885,
+    "ders": "Genel Cerrahi",
+    "konu": "Yara İyileşmesi",
+    "diff": 3,
+    "q": "Yara sınırlarını aşarak kontrolsüzce büyüyen, omuz/sternum gibi bölgelerde sık görülen aşırı yara iyileşmesi yanıtı?",
+    "options": [
+      "Yara Enfeksiyonu ve İskemi",
+      "Kanamanın Durdurulması ve Bakterilerin Temizlenmesi",
+      "Keloid",
+      "Fibroblast",
+      "İnflamasyonun Baskılanması"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Keloid' şıkkıdır."
+  },
+  {
+    "id": 1886,
+    "ders": "Genel Cerrahi",
+    "konu": "Yara İyileşmesi",
+    "diff": 4,
+    "q": "Yara sınırları içinde kalan, zamanla gerileyebilen ancak kabarık ve kırmızı olan skar dokusu?",
+    "options": [
+      "C Vitamini",
+      "Kanamanın Durdurulması ve Bakterilerin Temizlenmesi",
+      "Hipertrofik Skar",
+      "İnflamasyonun Baskılanması",
+      "Sekonder İyileşme"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Hipertrofik Skar' şıkkıdır."
+  },
+  {
+    "id": 1887,
+    "ders": "Genel Cerrahi",
+    "konu": "Yara İyileşmesi",
+    "diff": 3,
+    "q": "Kolajen sentezi için elzem olan, eksikliğinde yara iyileşmesinin geciktiği ve skorbüt hastalığına neden olan vitamin?",
+    "options": [
+      "Yara Enfeksiyonu ve İskemi",
+      "Keloid",
+      "Miyofibroblast",
+      "Kanamanın Durdurulması ve Bakterilerin Temizlenmesi",
+      "C Vitamini"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'C Vitamini' şıkkıdır."
+  },
+  {
+    "id": 1888,
+    "ders": "Genel Cerrahi",
+    "konu": "Yara İyileşmesi",
+    "diff": 4,
+    "q": "Yara iyileşmesini geciktiren en önemli lokal faktör nedir?",
+    "options": [
+      "Kanamanın Durdurulması ve Bakterilerin Temizlenmesi",
+      "Yara Enfeksiyonu ve İskemi",
+      "İnflamasyonun Baskılanması",
+      "Keloid",
+      "Primer İyileşme"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Yara Enfeksiyonu ve İskemi' şıkkıdır."
+  },
+  {
+    "id": 1889,
+    "ders": "Genel Cerrahi",
+    "konu": "Yara İyileşmesi",
+    "diff": 3,
+    "q": "Yara kontraktürünü (büzülmesini) sağlayarak yara kenarlarını birbirine yaklaştıran spesifik hücre tipi?",
+    "options": [
+      "Yara Enfeksiyonu ve İskemi",
+      "Miyofibroblast",
+      "Fibroblast",
+      "Sekonder İyileşme",
+      "C Vitamini"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Miyofibroblast' şıkkıdır."
+  },
+  {
+    "id": 1890,
+    "ders": "Genel Cerrahi",
+    "konu": "Yara İyileşmesi",
+    "diff": 3,
+    "q": "Kortikosteroid kullanan hastalarda yara iyileşmesinin bozulmasının ana nedeni nedir?",
+    "options": [
+      "Yara Enfeksiyonu ve İskemi",
+      "Hipertrofik Skar",
+      "İnflamasyonun Baskılanması",
+      "Fibroblast",
+      "Miyofibroblast"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'İnflamasyonun Baskılanması' şıkkıdır."
+  },
+  {
+    "id": 1891,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 3,
+    "q": "Postoperatif 1-2. günlerde gelişen ateşin en sık nedeni nedir?",
+    "options": [
+      "Pulmoner Emboli",
+      "Üriner Sistem Enfeksiyonu",
+      "Atelektazi",
+      "Cerrahi Alan Enfeksiyonu",
+      "Kateter Enfeksiyonu"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Atelektazi' şıkkıdır."
+  },
+  {
+    "id": 1892,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 3,
+    "q": "Postoperatif 5-7. günlerde cerrahi kesi yerinde kızarıklık, şişlik, ağrı ve pürülan akıntı saptanması?",
+    "options": [
+      "Cilt kesisinden 30-60 dakika önce",
+      "Yaranın Açılması ve Drenaj",
+      "Atelektazi",
+      "Anastomoz Kaçağı",
+      "Cerrahi Alan Enfeksiyonu"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Cerrahi Alan Enfeksiyonu' şıkkıdır."
+  },
+  {
+    "id": 1893,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 3,
+    "q": "Büyük karın veya pelvik cerrahi sonrası baldırda ağrı, şişlik ve Homan bulgusu pozitifliği ile gelişen komplikasyon?",
+    "options": [
+      "Anastomoz Kaçağı",
+      "Derin Ven Trombozu (DVT)",
+      "Üriner Sistem Enfeksiyonu",
+      "Clostridioides difficile",
+      "Yaranın Açılması ve Drenaj"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Derin Ven Trombozu (DVT)' şıkkıdır."
+  },
+  {
+    "id": 1894,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 3,
+    "q": "DVT tablosu olan postoperatif hastada ani başlayan nefes darlığı, göğüs ağrısı ve hipoksi gelişmesi?",
+    "options": [
+      "Yaranın Açılması ve Drenaj",
+      "Pulmoner Emboli",
+      "Kateter Enfeksiyonu",
+      "Derin Ven Trombozu (DVT)",
+      "Anastomoz Kaçağı"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Pulmoner Emboli' şıkkıdır."
+  },
+  {
+    "id": 1895,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 4,
+    "q": "Cerrahi alan enfeksiyonu gelişen ve apsesi olan hastada ilk yapılması gereken müdahale?",
+    "options": [
+      "Atelektazi",
+      "Cilt kesisinden 30-60 dakika önce",
+      "Üriner Sistem Enfeksiyonu",
+      "Yaranın Açılması ve Drenaj",
+      "Clostridioides difficile"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Yaranın Açılması ve Drenaj' şıkkıdır."
+  },
+  {
+    "id": 1896,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 3,
+    "q": "Kolorektal cerrahi sonrası 5-7. günlerde karın ağrısı, ateş ve drenden gaita/pürülan vasıflı içerik gelmesi neyi düşündürür?",
+    "options": [
+      "Clostridioides difficile",
+      "Anastomoz Kaçağı",
+      "Kateter Enfeksiyonu",
+      "Üriner Sistem Enfeksiyonu",
+      "Pulmoner Emboli"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Anastomoz Kaçağı' şıkkıdır."
+  },
+  {
+    "id": 1897,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 4,
+    "q": "Cerrahi profilakside (temiz-kontamine vakalarda) antibiyotiğin verilmesi gereken en uygun zaman dilimi?",
+    "options": [
+      "Cerrahi Alan Enfeksiyonu",
+      "Anastomoz Kaçağı",
+      "Kateter Enfeksiyonu",
+      "Üriner Sistem Enfeksiyonu",
+      "Cilt kesisinden 30-60 dakika önce"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Cilt kesisinden 30-60 dakika önce' şıkkıdır."
+  },
+  {
+    "id": 1898,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 3,
+    "q": "Santral venöz kateteri olan yoğun bakım hastasında aniden gelişen ateş ve titreme atağında ilk şüphelenilmesi gereken?",
+    "options": [
+      "Cerrahi Alan Enfeksiyonu",
+      "Üriner Sistem Enfeksiyonu",
+      "Atelektazi",
+      "Anastomoz Kaçağı",
+      "Kateter Enfeksiyonu"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kateter Enfeksiyonu' şıkkıdır."
+  },
+  {
+    "id": 1899,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 3,
+    "q": "Geniş spektrumlu antibiyotik kullanan cerrahi hastada gelişen şiddetli, sulu ve kötü kokulu ishal tablosunun etkeni?",
+    "options": [
+      "Yaranın Açılması ve Drenaj",
+      "Üriner Sistem Enfeksiyonu",
+      "Clostridioides difficile",
+      "Kateter Enfeksiyonu",
+      "Anastomoz Kaçağı"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Clostridioides difficile' şıkkıdır."
+  },
+  {
+    "id": 1900,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 4,
+    "q": "Postoperatif idrar retansiyonu olan ve sonda takılan hastada 3. günde başlayan dizüri ve ateşin en olası nedeni?",
+    "options": [
+      "Cilt kesisinden 30-60 dakika önce",
+      "Clostridioides difficile",
+      "Atelektazi",
+      "Üriner Sistem Enfeksiyonu",
+      "Yaranın Açılması ve Drenaj"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Üriner Sistem Enfeksiyonu' şıkkıdır."
+  },
+  {
+    "id": 1901,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 4,
+    "q": "Kasık bölgesinde inguinal kanaldan geçip skrotuma inebilen, internal ringden (derin halka) köken alan herni tipi?",
+    "options": [
+      "Lichtenstein Onarımı",
+      "Direkt İnguinal Herni",
+      "2-4 yaşına kadar izlem",
+      "İndirekt İnguinal Herni",
+      "Spigelian Herni"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'İndirekt İnguinal Herni' şıkkıdır."
+  },
+  {
+    "id": 1902,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 3,
+    "q": "Hesselbach üçgeninden (fasya transversalis zayıflığı) direkt olarak dışarı çıkan, skrotuma inmeyen fıtık tipi?",
+    "options": [
+      "Direkt İnguinal Herni",
+      "İndirekt İnguinal Herni",
+      "Spigelian Herni",
+      "Femoral Herni",
+      "Strangüle Herni"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Direkt İnguinal Herni' şıkkıdır."
+  },
+  {
+    "id": 1903,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 4,
+    "q": "Özellikle yaşlı ve çok doğum yapmış kadınlarda sık görülen, inguinal ligamanın altından femoral kanala giren ve boğulma riski en yüksek herni?",
+    "options": [
+      "Lichtenstein Onarımı",
+      "Femoral Herni",
+      "Kayma (Sliding) Herni",
+      "2-4 yaşına kadar izlem",
+      "Strangüle Herni"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Femoral Herni' şıkkıdır."
+  },
+  {
+    "id": 1904,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 4,
+    "q": "Geçirilmiş karın ameliyatı kesisinin altından gelişen ve obezite/enfeksiyonun kolaylaştırdığı fıtık türü?",
+    "options": [
+      "Direkt İnguinal Herni",
+      "İnsizyonel Herni",
+      "Strangüle Herni",
+      "2-4 yaşına kadar izlem",
+      "Richter Hernisi"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'İnsizyonel Herni' şıkkıdır."
+  },
+  {
+    "id": 1905,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 3,
+    "q": "Fıtık kesesi içine barsak anslarının girdiği ve kanlanmasının bozularak nekroza (iskemiye) gittiği acil tablo?",
+    "options": [
+      "İndirekt İnguinal Herni",
+      "Strangüle Herni",
+      "2-4 yaşına kadar izlem",
+      "Richter Hernisi",
+      "Femoral Herni"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Strangüle Herni' şıkkıdır."
+  },
+  {
+    "id": 1906,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 3,
+    "q": "Fıtık kesesi duvarının bir kısmını mesane veya çekum gibi bir iç organın kendisinin oluşturduğu fıtık tipi?",
+    "options": [
+      "Femoral Herni",
+      "Kayma (Sliding) Herni",
+      "Direkt İnguinal Herni",
+      "Lichtenstein Onarımı",
+      "Spigelian Herni"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kayma (Sliding) Herni' şıkkıdır."
+  },
+  {
+    "id": 1907,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 4,
+    "q": "Çocuklarda (özellikle yenidoğanlarda) görülen umbilikal hernilerde ilk yaklaşım ne olmalıdır?",
+    "options": [
+      "Richter Hernisi",
+      "Strangüle Herni",
+      "Femoral Herni",
+      "Spigelian Herni",
+      "2-4 yaşına kadar izlem"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım '2-4 yaşına kadar izlem' şıkkıdır."
+  },
+  {
+    "id": 1908,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 4,
+    "q": "Semilunar çizgi hizasında, rektus kasının dış kenarından çıkan nadir karın duvarı fıtığı?",
+    "options": [
+      "Lichtenstein Onarımı",
+      "Spigelian Herni",
+      "Richter Hernisi",
+      "İnsizyonel Herni",
+      "Strangüle Herni"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Spigelian Herni' şıkkıdır."
+  },
+  {
+    "id": 1909,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 4,
+    "q": "Fıtık kesesi içinde sadece barsak anksının bir duvarının sıkıştığı, lümenin tam tıkanmadığı ama delinebildiği fıtık?",
+    "options": [
+      "Femoral Herni",
+      "İndirekt İnguinal Herni",
+      "Richter Hernisi",
+      "Direkt İnguinal Herni",
+      "Spigelian Herni"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Richter Hernisi' şıkkıdır."
+  },
+  {
+    "id": 1910,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 3,
+    "q": "İnguinal herni cerrahisinde günümüzde en sık tercih edilen, gerilimsiz yama (mesh) onarımı tekniği?",
+    "options": [
+      "Direkt İnguinal Herni",
+      "Richter Hernisi",
+      "2-4 yaşına kadar izlem",
+      "Lichtenstein Onarımı",
+      "İndirekt İnguinal Herni"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Lichtenstein Onarımı' şıkkıdır."
+  },
+  {
+    "id": 1911,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 3,
+    "q": "Meme kanserinin en sık görülen histopatolojik tipi hangisidir?",
+    "options": [
+      "Neoadjuvan Kemoterapi",
+      "Trastuzumab",
+      "Mastit",
+      "Mamografi",
+      "İnvaziv Duktal Karsinom"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'İnvaziv Duktal Karsinom' şıkkıdır."
+  },
+  {
+    "id": 1912,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 3,
+    "q": "Meme muayenesinde saptanan sert, ağrısız kitle ile birlikte ciltte portakal kabuğu görünümü ve retraksiyon varsa?",
+    "options": [
+      "Trastuzumab",
+      "Mamografi",
+      "İleri Evre Meme Kanseri",
+      "Meme Paget Hastalığı",
+      "İnvaziv Duktal Karsinom"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'İleri Evre Meme Kanseri' şıkkıdır."
+  },
+  {
+    "id": 1913,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 4,
+    "q": "Tarama mamografisinde asimetrik, spiküle (yıldızsı) kitle ve mikrokalsifikasyon kümeleri görülmesi neyi işaret eder?",
+    "options": [
+      "Mamografi",
+      "Malignite Şüphesi",
+      "Trastuzumab",
+      "İnvaziv Duktal Karsinom",
+      "İleri Evre Meme Kanseri"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Malignite Şüphesi' şıkkıdır."
+  },
+  {
+    "id": 1914,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 3,
+    "q": "Gebelik ve laktasyon döneminde memede kızarıklık, ısı artışı ve ağrı ile seyreden tablo?",
+    "options": [
+      "İnvaziv Duktal Karsinom",
+      "Mastit",
+      "Mamografi",
+      "İleri Evre Meme Kanseri",
+      "Trastuzumab"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Mastit' şıkkıdır."
+  },
+  {
+    "id": 1915,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 3,
+    "q": "Meme ucunda kaşıntılı, iyileşmeyen, egzama benzeri kabuklu lezyon varlığında dışlanması gereken kanser?",
+    "options": [
+      "Mastit",
+      "Meme Paget Hastalığı",
+      "Mamografi",
+      "İleri Evre Meme Kanseri",
+      "Neoadjuvan Kemoterapi"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Meme Paget Hastalığı' şıkkıdır."
+  },
+  {
+    "id": 1916,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 3,
+    "q": "İleri yaşta memede kitle saptanan kadında ilk tercih edilecek radyolojik görüntüleme yöntemi?",
+    "options": [
+      "Neoadjuvan Kemoterapi",
+      "Fibrokistik Değişiklikler",
+      "Meme Paget Hastalığı",
+      "Mamografi",
+      "İnflamatuar Meme Kanseri"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Mamografi' şıkkıdır."
+  },
+  {
+    "id": 1917,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 3,
+    "q": "Meme kanserinde lokal ileri evre (Evre 3) saptandığında cerrahi öncesi uygulanan tedavi yaklaşımı?",
+    "options": [
+      "Fibrokistik Değişiklikler",
+      "Neoadjuvan Kemoterapi",
+      "Trastuzumab",
+      "Mastit",
+      "Mamografi"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Neoadjuvan Kemoterapi' şıkkıdır."
+  },
+  {
+    "id": 1918,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 3,
+    "q": "Her2/neu (cerbB2) reseptör pozitifliği olan meme kanserli hastalarda kullanılan hedefe yönelik akıllı ilaç?",
+    "options": [
+      "Meme Paget Hastalığı",
+      "Mamografi",
+      "Malignite Şüphesi",
+      "Trastuzumab",
+      "Fibrokistik Değişiklikler"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Trastuzumab' şıkkıdır."
+  },
+  {
+    "id": 1919,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 3,
+    "q": "Memede kitle, ateş ve memenin tamamını kaplayan eritem/ödem tablosu ile gelen, hızlı seyirli ve agresif kanser tipi?",
+    "options": [
+      "İnvaziv Duktal Karsinom",
+      "İleri Evre Meme Kanseri",
+      "Mastit",
+      "Mamografi",
+      "İnflamatuar Meme Kanseri"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'İnflamatuar Meme Kanseri' şıkkıdır."
+  },
+  {
+    "id": 1920,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 4,
+    "q": "Genç kadınlarda menstrüel siklus ile ilişkili meme ağrısı (mastalji) ve gerginliğin en sık nedeni?",
+    "options": [
+      "Neoadjuvan Kemoterapi",
+      "Meme Paget Hastalığı",
+      "Trastuzumab",
+      "Fibrokistik Değişiklikler",
+      "Malignite Şüphesi"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Fibrokistik Değişiklikler' şıkkıdır."
+  },
+  {
+    "id": 1921,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 4,
+    "q": "Katı ve sıvılara karşı yutma güçlüğü (disfaji), regürjitasyon ve baryumlu grafide 'kuş gagası' görünümü?",
+    "options": [
+      "Özofagus Darlığı",
+      "Özofagus Adenokarsinomu",
+      "Özofageal Manometri",
+      "Mallory-Weiss Sendromu",
+      "Akalazya"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Akalazya' şıkkıdır."
+  },
+  {
+    "id": 1922,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 3,
+    "q": "Mide asidinin yemek borusuna kaçmasına bağlı retrosternal yanma ve regürjitasyon ile seyreden hastalık?",
+    "options": [
+      "Özofagus Adenokarsinomu",
+      "Özofageal Manometri",
+      "Gastroözofageal Reflü Hastalığı",
+      "Akalazya",
+      "Skuamöz Hücreli Karsinom"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Gastroözofageal Reflü Hastalığı' şıkkıdır."
+  },
+  {
+    "id": 1923,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 4,
+    "q": "Kronik GÖRH zemininde distal özofagus skuamöz epitelinin intestinal metaplaziye uğraması?",
+    "options": [
+      "Boerhaave Sendromu",
+      "Özofageal Manometri",
+      "Skuamöz Hücreli Karsinom",
+      "Mallory-Weiss Sendromu",
+      "Barrett Özofagusu"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Barrett Özofagusu' şıkkıdır."
+  },
+  {
+    "id": 1924,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 3,
+    "q": "Barrett özofagusu zemininde en sık gelişen özofagus kanseri histolojik tipi?",
+    "options": [
+      "Zenker Divertikülü",
+      "Özofagus Adenokarsinomu",
+      "Gastroözofageal Reflü Hastalığı",
+      "Boerhaave Sendromu",
+      "Mallory-Weiss Sendromu"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Özofagus Adenokarsinomu' şıkkıdır."
+  },
+  {
+    "id": 1925,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 3,
+    "q": "Sigara, alkol ve sıcak içecek tüketimi ile ilişkili olan, üst ve orta özofagusta sık görülen kanser tipi?",
+    "options": [
+      "Boerhaave Sendromu",
+      "Özofageal Manometri",
+      "Gastroözofageal Reflü Hastalığı",
+      "Özofagus Darlığı",
+      "Skuamöz Hücreli Karsinom"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Skuamöz Hücreli Karsinom' şıkkıdır."
+  },
+  {
+    "id": 1926,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 3,
+    "q": "Boyunda şişlik, yutma güçlüğü, ağız kokusu ve regürjitasyon ile gelen yaşlı hastada faringoözofageal divertikül?",
+    "options": [
+      "Boerhaave Sendromu",
+      "Özofagus Darlığı",
+      "Mallory-Weiss Sendromu",
+      "Özofageal Manometri",
+      "Zenker Divertikülü"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Zenker Divertikülü' şıkkıdır."
+  },
+  {
+    "id": 1927,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 4,
+    "q": "Şiddetli kusma krizleri sonrası özofagogastrik bileşkede gelişen mukozal yırtıklara bağlı üst GİS kanaması?",
+    "options": [
+      "Barrett Özofagusu",
+      "Akalazya",
+      "Özofageal Manometri",
+      "Skuamöz Hücreli Karsinom",
+      "Mallory-Weiss Sendromu"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Mallory-Weiss Sendromu' şıkkıdır."
+  },
+  {
+    "id": 1928,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 4,
+    "q": "Şiddetli kusma sonrası özofagusun tam kat yırtılması (perforasyonu) ve mediastenite yol açan ölümcül tablo?",
+    "options": [
+      "Zenker Divertikülü",
+      "Boerhaave Sendromu",
+      "Özofagus Adenokarsinomu",
+      "Gastroözofageal Reflü Hastalığı",
+      "Akalazya"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Boerhaave Sendromu' şıkkıdır."
+  },
+  {
+    "id": 1929,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 4,
+    "q": "Akalazya tanısında yemek borusunun alt isfinkter basıncının yüksek olduğunu gösteren altın standart test?",
+    "options": [
+      "Özofageal Manometri",
+      "Skuamöz Hücreli Karsinom",
+      "Barrett Özofagusu",
+      "Akalazya",
+      "Boerhaave Sendromu"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Özofageal Manometri' şıkkıdır."
+  },
+  {
+    "id": 1930,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 3,
+    "q": "Korozif madde yutulması sonrası uzun dönemde özofagusta gelişmesi en muhtemel komplikasyon?",
+    "options": [
+      "Özofageal Manometri",
+      "Özofagus Adenokarsinomu",
+      "Özofagus Darlığı",
+      "Barrett Özofagusu",
+      "Akalazya"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Özofagus Darlığı' şıkkıdır."
+  },
+  {
+    "id": 1931,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 4,
+    "q": "Mide asidi ve H. pylori enfeksiyonu ile ilişkili, yemeklerden sonra ağrısı artan üst GİS hastalığı?",
+    "options": [
+      "Virchow Nodülü",
+      "Mide Ülseri",
+      "Mide Adenokarsinomu",
+      "MALT Lenfoma",
+      "Dumping Sendromu"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Mide Ülseri' şıkkıdır."
+  },
+  {
+    "id": 1932,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 4,
+    "q": "Mide kanserleri arasında en sık görülen ve kötü prognozlu histopatolojik tip?",
+    "options": [
+      "B12 Vitamini Eksikliği",
+      "Mide Ülseri",
+      "Mide Adenokarsinomu",
+      "Gastrointestinal Stromal Tümör (GİST)",
+      "İmatinib"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Mide Adenokarsinomu' şıkkıdır."
+  },
+  {
+    "id": 1933,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 4,
+    "q": "H. pylori enfeksiyonu ile ilişkili olan ve erken evrede antibiyotik eradikasyonuyla iyileşebilen mide lenfoması?",
+    "options": [
+      "Mide Adenokarsinomu",
+      "Gastrointestinal Stromal Tümör (GİST)",
+      "Virchow Nodülü",
+      "MALT Lenfoma",
+      "İmatinib"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'MALT Lenfoma' şıkkıdır."
+  },
+  {
+    "id": 1934,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 3,
+    "q": "Mideden köken alan, CD117 (c-kit) pozitif olan mezenkimal kaynaklı tümör?",
+    "options": [
+      "Gastrointestinal Stromal Tümör (GİST)",
+      "Sleeve Gastrektomi",
+      "Mide Adenokarsinomu",
+      "Mide Ülseri",
+      "Roux-en-Y Gastrik Bypass"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Gastrointestinal Stromal Tümör (GİST)' şıkkıdır."
+  },
+  {
+    "id": 1935,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 4,
+    "q": "GİST tedavisinde kullanılan ve c-kit tirozin kinaz inhibitörü olan akıllı ilaç?",
+    "options": [
+      "MALT Lenfoma",
+      "B12 Vitamini Eksikliği",
+      "İmatinib",
+      "Gastrointestinal Stromal Tümör (GİST)",
+      "Roux-en-Y Gastrik Bypass"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'İmatinib' şıkkıdır."
+  },
+  {
+    "id": 1936,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 3,
+    "q": "İleri evre mide kanserinde sol köprücük kemiği üstünde ele gelen metastatik lenf nodu?",
+    "options": [
+      "Mide Ülseri",
+      "MALT Lenfoma",
+      "Virchow Nodülü",
+      "Dumping Sendromu",
+      "Sleeve Gastrektomi"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Virchow Nodülü' şıkkıdır."
+  },
+  {
+    "id": 1937,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 3,
+    "q": "Obezite cerrahisinde midenin büyük kurvaturu boyunca kesilerek tüp haline getirildiği restriktif ameliyat?",
+    "options": [
+      "Mide Adenokarsinomu",
+      "Roux-en-Y Gastrik Bypass",
+      "Sleeve Gastrektomi",
+      "Dumping Sendromu",
+      "Gastrointestinal Stromal Tümör (GİST)"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Sleeve Gastrektomi' şıkkıdır."
+  },
+  {
+    "id": 1938,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 3,
+    "q": "Hem mide hacmini küçülten hem de emilimi bozan altın standart obezite cerrahisi yöntemi?",
+    "options": [
+      "Roux-en-Y Gastrik Bypass",
+      "B12 Vitamini Eksikliği",
+      "Sleeve Gastrektomi",
+      "Dumping Sendromu",
+      "Mide Adenokarsinomu"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Roux-en-Y Gastrik Bypass' şıkkıdır."
+  },
+  {
+    "id": 1939,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 4,
+    "q": "Gastrik bypass ameliyatı sonrası şekerli gıda tüketimini takiben ani çarpıntı, terleme ve ishal ile gelişen tablo?",
+    "options": [
+      "Roux-en-Y Gastrik Bypass",
+      "Dumping Sendromu",
+      "B12 Vitamini Eksikliği",
+      "İmatinib",
+      "Virchow Nodülü"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Dumping Sendromu' şıkkıdır."
+  },
+  {
+    "id": 1940,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 3,
+    "q": "Mide rezeksiyonu (Billroth II veya Bypass) geçiren hastalarda uzun dönemde en sık beklenen vitamin eksikliği?",
+    "options": [
+      "Roux-en-Y Gastrik Bypass",
+      "Virchow Nodülü",
+      "Gastrointestinal Stromal Tümör (GİST)",
+      "B12 Vitamini Eksikliği",
+      "MALT Lenfoma"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'B12 Vitamini Eksikliği' şıkkıdır."
+  },
+  {
+    "id": 1941,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 4,
+    "q": "Kanlı kusma (hematemez) veya kahve telvesi görünümünde kusma ile karakterize kanama nereden kaynaklanır?",
+    "options": [
+      "İki Geniş Damar Yolu ve IV Sıvı/Kan",
+      "Hemoroidal Hastalık",
+      "Divertiküler Kanama",
+      "Üst GİS Kanaması",
+      "Kolonoskopi"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Üst GİS Kanaması' şıkkıdır."
+  },
+  {
+    "id": 1942,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 3,
+    "q": "Ağrısız, bol miktarda taze kırmızı kanlı dışkılama ile gelen erişkin hastada en sık alt GİS kanama nedeni?",
+    "options": [
+      "Anjiyodisplazi",
+      "Divertiküler Kanama",
+      "Üst GİS Kanaması",
+      "BT Anjiyografi",
+      "İki Geniş Damar Yolu ve IV Sıvı/Kan"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Divertiküler Kanama' şıkkıdır."
+  },
+  {
+    "id": 1943,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 4,
+    "q": "Sirozlu hastada masif, fışkırır tarzda hematemez tablosuyla prezente olan mortal kanama nedeni?",
+    "options": [
+      "Üst GİS Kanaması",
+      "Kolonoskopi",
+      "Anjiyodisplazi",
+      "Özofagus Varis Kanaması",
+      "İki Geniş Damar Yolu ve IV Sıvı/Kan"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Özofagus Varis Kanaması' şıkkıdır."
+  },
+  {
+    "id": 1944,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 4,
+    "q": "Peptik ülser kanaması olan hastada endoskopik olarak aktif fışkıran kanama görüldüğünde ilk yapılacak işlem?",
+    "options": [
+      "Kolonoskopi",
+      "Üst GİS Kanaması",
+      "Divertiküler Kanama",
+      "Endoskopik Hemostaz",
+      "BT Anjiyografi"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Endoskopik Hemostaz' şıkkıdır."
+  },
+  {
+    "id": 1945,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 4,
+    "q": "İleri yaşta sağ kolonda sık görülen, ağrısız sızıntı şeklinde kanamaya ve anemiye yol açan vasküler ektazi?",
+    "options": [
+      "BT Anjiyografi",
+      "Üst GİS Kanaması",
+      "Anjiyodisplazi",
+      "Kolonoskopi",
+      "Özofagus Varis Kanaması"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Anjiyodisplazi' şıkkıdır."
+  },
+  {
+    "id": 1946,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 3,
+    "q": "Siyah, katran renginde, kötü kokulu ve cıvık dışkılama (Melena) tablosu kanamanın nerede olduğunu düşündürür?",
+    "options": [
+      "Üst GİS Kanaması",
+      "BT Anjiyografi",
+      "Kolonoskopi",
+      "Divertiküler Kanama",
+      "Hemoroidal Hastalık"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Üst GİS Kanaması' şıkkıdır."
+  },
+  {
+    "id": 1947,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 3,
+    "q": "Genç hastada, dışkı ile karışık olmayan, tuvalet kağıdına bulaşan damla damla taze kanamanın en sık nedeni?",
+    "options": [
+      "Divertiküler Kanama",
+      "Özofagus Varis Kanaması",
+      "Üst GİS Kanaması",
+      "Hemoroidal Hastalık",
+      "BT Anjiyografi"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Hemoroidal Hastalık' şıkkıdır."
+  },
+  {
+    "id": 1948,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 3,
+    "q": "Alt GİS kanaması ile gelen hemodinamisi stabil hastada kanama odağını bulmak için yapılacak altın standart tetkik?",
+    "options": [
+      "Endoskopik Hemostaz",
+      "Özofagus Varis Kanaması",
+      "Kolonoskopi",
+      "İki Geniş Damar Yolu ve IV Sıvı/Kan",
+      "Üst GİS Kanaması"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Kolonoskopi' şıkkıdır."
+  },
+  {
+    "id": 1949,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 4,
+    "q": "Masif alt GİS kanaması olan ve kolonoskopi yapılamayan instabil hastada tanıda kullanılan görüntüleme?",
+    "options": [
+      "Üst GİS Kanaması",
+      "Divertiküler Kanama",
+      "Hemoroidal Hastalık",
+      "Anjiyodisplazi",
+      "BT Anjiyografi"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'BT Anjiyografi' şıkkıdır."
+  },
+  {
+    "id": 1950,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 3,
+    "q": "Üst GİS kanaması şüphesi olan hastada acil serviste ilk uygulanması gereken medikal destek tedavi?",
+    "options": [
+      "Kolonoskopi",
+      "İki Geniş Damar Yolu ve IV Sıvı/Kan",
+      "Endoskopik Hemostaz",
+      "BT Anjiyografi",
+      "Üst GİS Kanaması"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'İki Geniş Damar Yolu ve IV Sıvı/Kan' şıkkıdır."
+  },
+  {
+    "id": 1951,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 4,
+    "q": "Şiddetli epigastrik ağrısı olan, ağrısı sırta vuran, serum amilaz ve lipazı yüksek olan hastada tanı?",
+    "options": [
+      "Glukagonoma",
+      "Akut Pankreatit",
+      "CA 19-9",
+      "Pankreatik Psödokist",
+      "Safra Taşları ve Alkol"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Akut Pankreatit' şıkkıdır."
+  },
+  {
+    "id": 1952,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 4,
+    "q": "Akut pankreatitin dünyada en sık görülen iki temel nedeni nedir?",
+    "options": [
+      "Safra Taşları ve Alkol",
+      "Akut Pankreatit",
+      "Whipple Ameliyatı",
+      "CA 19-9",
+      "İnsülinoma"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Safra Taşları ve Alkol' şıkkıdır."
+  },
+  {
+    "id": 1953,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 4,
+    "q": "Ağır nekrotizan pankreatit vakalarında retroperitoneal kanamanın cilt altına sızmasıyla göbek çevresinde oluşan ekimoz?",
+    "options": [
+      "Cullen Bulgusu",
+      "Pankreas Enzim Replasman Tedavisi",
+      "Safra Taşları ve Alkol",
+      "Pankreatik Psödokist",
+      "Whipple Ameliyatı"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Cullen Bulgusu' şıkkıdır."
+  },
+  {
+    "id": 1954,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 3,
+    "q": "Akut pankreatit atağından haftalar sonra gelişen, epitel döşemesi olmayan ve sıvı dolu kistik koleksiyon?",
+    "options": [
+      "Cullen Bulgusu",
+      "Ağrısız Tıkanma Sarılığı",
+      "Safra Taşları ve Alkol",
+      "CA 19-9",
+      "Pankreatik Psödokist"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Pankreatik Psödokist' şıkkıdır."
+  },
+  {
+    "id": 1955,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 4,
+    "q": "Kronik pankreatit hastalarında ağrı, steatore ve diyabet geliştiğinde barsak emilimini düzeltmek için tedavi?",
+    "options": [
+      "Akut Pankreatit",
+      "Pankreas Enzim Replasman Tedavisi",
+      "CA 19-9",
+      "İnsülinoma",
+      "Pankreatik Psödokist"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Pankreas Enzim Replasman Tedavisi' şıkkıdır."
+  },
+  {
+    "id": 1956,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 3,
+    "q": "Pankreas başı adenokarsinomunda en sık görülen ve hastayı doktora getiren ilk klinik bulgu?",
+    "options": [
+      "Ağrısız Tıkanma Sarılığı",
+      "Pankreatik Psödokist",
+      "Akut Pankreatit",
+      "Glukagonoma",
+      "Whipple Ameliyatı"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Ağrısız Tıkanma Sarılığı' şıkkıdır."
+  },
+  {
+    "id": 1957,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 3,
+    "q": "Küratif rezeksiyon şansı olan pankreas başı tümörleri için uygulanan standart cerrahi prosedür?",
+    "options": [
+      "CA 19-9",
+      "İnsülinoma",
+      "Safra Taşları ve Alkol",
+      "Akut Pankreatit",
+      "Whipple Ameliyatı"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Whipple Ameliyatı' şıkkıdır."
+  },
+  {
+    "id": 1958,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 4,
+    "q": "Pankreas kanserlerinde prognoz takibinde ve nüks saptamada en sık kullanılan tümör belirteci?",
+    "options": [
+      "Ağrısız Tıkanma Sarılığı",
+      "CA 19-9",
+      "Whipple Ameliyatı",
+      "Pankreas Enzim Replasman Tedavisi",
+      "Safra Taşları ve Alkol"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'CA 19-9' şıkkıdır."
+  },
+  {
+    "id": 1959,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 3,
+    "q": "Açlık veya egzersizle gelişen hipoglisemi atakları, hipoglisemi anında ölçülen insülinin yüksek olması tablosu?",
+    "options": [
+      "Safra Taşları ve Alkol",
+      "Akut Pankreatit",
+      "Pankreas Enzim Replasman Tedavisi",
+      "İnsülinoma",
+      "Cullen Bulgusu"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'İnsülinoma' şıkkıdır."
+  },
+  {
+    "id": 1960,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 3,
+    "q": "Ciltte nekrolitik migratuar eritem, diyabet ve derin ven trombozları ile seyreden pankreas nöroendokrin tümörü?",
+    "options": [
+      "CA 19-9",
+      "Safra Taşları ve Alkol",
+      "Glukagonoma",
+      "İnsülinoma",
+      "Pankreatik Psödokist"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Glukagonoma' şıkkıdır."
+  },
+  {
+    "id": 1961,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak Hastalıkları",
+    "diff": 4,
+    "q": "Sol alt kaburga kırığı olan travma hastasında karın içi kanama ve sol omuza vuran ağrı (Kehr bulgusu) neyi işaret eder?",
+    "options": [
+      "En-blok Rezeksiyon",
+      "Splenik Ven Trombozu",
+      "Splenik Arter Anevrizması",
+      "Dalak Rüptürü",
+      "Post-splenektomi Sepsis (OPSI)"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Dalak Rüptürü' şıkkıdır."
+  },
+  {
+    "id": 1962,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak Hastalıkları",
+    "diff": 3,
+    "q": "Dalak yırtılması nedeniyle dalağı alınan (splenektomize) hastada kanda (periferik yaymada) görülen inklüzyonlar?",
+    "options": [
+      "Medikal tedaviye direnç",
+      "Howell-Jolly Cisimcikleri",
+      "Splenektomi",
+      "Post-splenektomi Sepsis (OPSI)",
+      "Elektif cerrahiden 2 hafta ÖNCE"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Howell-Jolly Cisimcikleri' şıkkıdır."
+  },
+  {
+    "id": 1963,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak Hastalıkları",
+    "diff": 3,
+    "q": "Splenektomi sonrası hastaları bekleyen en büyük risk olan kapsüllü bakterilere bağlı ölümcül komplikasyon?",
+    "options": [
+      "Elektif cerrahiden 2 hafta ÖNCE",
+      "Post-splenektomi Sepsis (OPSI)",
+      "En-blok Rezeksiyon",
+      "Dalak Rüptürü",
+      "Howell-Jolly Cisimcikleri"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Post-splenektomi Sepsis (OPSI)' şıkkıdır."
+  },
+  {
+    "id": 1964,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak Hastalıkları",
+    "diff": 3,
+    "q": "Herediter Sferositoz hastalarında hemolizi durdurmak ve safra taşı/anemi krizlerini önlemek için kesin tedavi?",
+    "options": [
+      "Dalak Rüptürü",
+      "Splenektomi",
+      "Elektif cerrahiden 2 hafta ÖNCE",
+      "En-blok Rezeksiyon",
+      "Howell-Jolly Cisimcikleri"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Splenektomi' şıkkıdır."
+  },
+  {
+    "id": 1965,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak Hastalıkları",
+    "diff": 4,
+    "q": "Trombositlerin antikorlar tarafından dalakta yıkıldığı (ITP) hastalığında splenektomi endikasyonu?",
+    "options": [
+      "Medikal tedaviye direnç",
+      "Elektif cerrahiden 2 hafta ÖNCE",
+      "Howell-Jolly Cisimcikleri",
+      "Dalak Rüptürü",
+      "Hipersplenizm"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Medikal tedaviye direnç' şıkkıdır."
+  },
+  {
+    "id": 1966,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak Hastalıkları",
+    "diff": 4,
+    "q": "Splenektomi planlanan hastada, pnömokok, meningokok ve H. influenzae aşıları ideal olarak ne zaman yapılmalıdır?",
+    "options": [
+      "Splenik Arter Anevrizması",
+      "Post-splenektomi Sepsis (OPSI)",
+      "Elektif cerrahiden 2 hafta ÖNCE",
+      "Howell-Jolly Cisimcikleri",
+      "Splenektomi"
+    ],
+    "correct": 2,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Elektif cerrahiden 2 hafta ÖNCE' şıkkıdır."
+  },
+  {
+    "id": 1967,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak Hastalıkları",
+    "diff": 4,
+    "q": "Mide fundusunda veya pankreas kuyruğunda yer alan bir tümörün lenf nodu temizliği amacıyla dalağın da alındığı cerrahiler?",
+    "options": [
+      "Splenik Arter Anevrizması",
+      "En-blok Rezeksiyon",
+      "Elektif cerrahiden 2 hafta ÖNCE",
+      "Splenik Ven Trombozu",
+      "Howell-Jolly Cisimcikleri"
+    ],
+    "correct": 1,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'En-blok Rezeksiyon' şıkkıdır."
+  },
+  {
+    "id": 1968,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak Hastalıkları",
+    "diff": 3,
+    "q": "Sol portal hipertansiyona sekonder gelişen venöz trombozun sık vurduğu damar?",
+    "options": [
+      "En-blok Rezeksiyon",
+      "Splenektomi",
+      "Howell-Jolly Cisimcikleri",
+      "Splenik Ven Trombozu",
+      "Post-splenektomi Sepsis (OPSI)"
+    ],
+    "correct": 3,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Splenik Ven Trombozu' şıkkıdır."
+  },
+  {
+    "id": 1969,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak Hastalıkları",
+    "diff": 4,
+    "q": "Gebelerde rüptür riski en yüksek olan ve tesadüfen saptandığında cerrahi önerilen splanknik anevrizma?",
+    "options": [
+      "Splenik Arter Anevrizması",
+      "En-blok Rezeksiyon",
+      "Splenik Ven Trombozu",
+      "Post-splenektomi Sepsis (OPSI)",
+      "Howell-Jolly Cisimcikleri"
+    ],
+    "correct": 0,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Splenik Arter Anevrizması' şıkkıdır."
+  },
+  {
+    "id": 1970,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak Hastalıkları",
+    "diff": 3,
+    "q": "Masif splenomegaliye bağlı olarak dalakta tüm kan hücrelerinin aşırı yıkılmasıyla oluşan tablo?",
+    "options": [
+      "Dalak Rüptürü",
+      "Splenik Arter Anevrizması",
+      "En-blok Rezeksiyon",
+      "Splenektomi",
+      "Hipersplenizm"
+    ],
+    "correct": 4,
+    "exp": "Soru içeriğinde tarif edilen klinik tablo ve mekanizmalar göz önüne alındığında, TUS/USMLE standartlarına göre kabul edilen altın standart tanı veya yaklaşım 'Hipersplenizm' şıkkıdır."
   }
 ];
-
-
-
-
- 
-
-
-
