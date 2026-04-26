@@ -70,6 +70,35 @@ export const buildFullExam = (QUESTIONS, blueprint) => {
   return shuffleArray(exam);
 };
 
+export const scaleBlueprintToTotal = (blueprint, totalQuestions) => {
+  const entries = Object.entries(blueprint);
+  const baseTotal = entries.reduce((sum, [, quota]) => sum + quota, 0);
+  if (!baseTotal || totalQuestions <= 0) return {};
+
+  const scaled = entries.map(([lesson, quota]) => {
+    const raw = (quota / baseTotal) * totalQuestions;
+    return { lesson, base: Math.floor(raw), fraction: raw - Math.floor(raw) };
+  });
+
+  let assigned = scaled.reduce((sum, item) => sum + item.base, 0);
+  let remaining = totalQuestions - assigned;
+
+  // Distribute remaining questions by largest fractional parts first.
+  scaled
+    .sort((a, b) => b.fraction - a.fraction)
+    .forEach((item) => {
+      if (remaining > 0) {
+        item.base += 1;
+        remaining -= 1;
+      }
+    });
+
+  return scaled.reduce((acc, item) => {
+    acc[item.lesson] = item.base;
+    return acc;
+  }, {});
+};
+
 export const analyzeExamResults = (examQuestions, examAnswers) => {
   const summary = {
     total: examQuestions.length,
@@ -82,6 +111,7 @@ export const analyzeExamResults = (examQuestions, examAnswers) => {
 
   const byLesson = {};
   const wrongTopicsByLesson = {};
+  const wrongQuestions = [];
 
   examQuestions.forEach((q, index) => {
     const answer = examAnswers[index];
@@ -89,22 +119,15 @@ export const analyzeExamResults = (examQuestions, examAnswers) => {
     const topic = q.konu || "Diğer";
 
     if (!byLesson[lesson]) {
-      byLesson[lesson] = {
-        total: 0,
-        correct: 0,
-        wrong: 0,
-        blank: 0,
-        successRate: 0,
-      };
+      byLesson[lesson] = { total: 0, correct: 0, wrong: 0, blank: 0, successRate: 0 };
     }
-
     if (!wrongTopicsByLesson[lesson]) {
       wrongTopicsByLesson[lesson] = {};
     }
 
     byLesson[lesson].total += 1;
 
-    if (answer === null) {
+    if (answer === null || answer === undefined) {
       summary.blank += 1;
       byLesson[lesson].blank += 1;
     } else if (answer === q.correct) {
@@ -113,22 +136,27 @@ export const analyzeExamResults = (examQuestions, examAnswers) => {
     } else {
       summary.wrong += 1;
       byLesson[lesson].wrong += 1;
+      wrongTopicsByLesson[lesson][topic] = (wrongTopicsByLesson[lesson][topic] || 0) + 1;
 
-      wrongTopicsByLesson[lesson][topic] =
-        (wrongTopicsByLesson[lesson][topic] || 0) + 1;
+      wrongQuestions.push({
+        ders: lesson,
+        konu: topic,
+        q: q.q,
+        options: q.options,
+        userAnswer: answer,
+        correct: q.correct,
+        exp: q.exp || null,
+      });
     }
   });
 
   summary.net = summary.correct - summary.wrong * 0.25;
   summary.successRate =
-    summary.total > 0
-      ? Math.round((summary.correct / summary.total) * 100)
-      : 0;
+    summary.total > 0 ? Math.round((summary.correct / summary.total) * 100) : 0;
 
   Object.keys(byLesson).forEach((lesson) => {
     const l = byLesson[lesson];
-    l.successRate =
-      l.total > 0 ? Math.round((l.correct / l.total) * 100) : 0;
+    l.successRate = l.total > 0 ? Math.round((l.correct / l.total) * 100) : 0;
   });
 
   const weakestLessons = Object.entries(byLesson)
@@ -142,10 +170,20 @@ export const analyzeExamResults = (examQuestions, examAnswers) => {
         .map(([topic]) => topic),
     }));
 
+  // Yanlış soruları ders → konu hiyerarşisinde grupla
+  const wrongByLessonTopic = wrongQuestions.reduce((acc, wq) => {
+    if (!acc[wq.ders]) acc[wq.ders] = {};
+    if (!acc[wq.ders][wq.konu]) acc[wq.ders][wq.konu] = [];
+    acc[wq.ders][wq.konu].push(wq);
+    return acc;
+  }, {});
+
   return {
     summary,
     byLesson,
     weakestLessons,
+    wrongQuestions,
+    wrongByLessonTopic,
   };
 };
 

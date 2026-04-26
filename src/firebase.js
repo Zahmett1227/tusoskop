@@ -6,6 +6,7 @@ import {
   signOut
 } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBF8gh8mOeCpPgbfX_0jP_Fg47wyUXs278",
@@ -20,7 +21,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
-export const db = getFirestore(app);
 export const googleProvider = new GoogleAuthProvider();
 
 export const loginWithGoogle = async () => {
@@ -35,3 +35,8 @@ export const loginWithGoogle = async () => {
 };
 
 export const logout = () => signOut(auth);
+
+export const db = getFirestore(app);
+
+export const analytics = getAnalytics(app);
+logEvent(analytics, 'page_view');

@@ -1,3 +1,5 @@
+import { accentThemes } from "../theme/accentThemes";
+
 export default function StudyScreen({
   q,
   index,
@@ -9,15 +11,56 @@ export default function StudyScreen({
   nextQuestion,
   prevQuestion,
   goDashboard,
+  flowMode,
+  setFlowMode,
+  streak,
+  bestStreak,
+  feedback,
+  isAutoAdvancing,
+  socialProof,
+  mastery,
+  topicProgress,
+  accentTheme,
 }) {
+  const theme = accentTheme || accentThemes.emerald;
+  if (!q && total > 0) {
+    return (
+      <div
+        className="min-h-dvh bg-slate-950 text-white overflow-x-hidden flex flex-col"
+        style={{
+          paddingTop: "calc(0.75rem + env(safe-area-inset-top))",
+          paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))",
+          paddingLeft: "max(0.75rem, env(safe-area-inset-left))",
+          paddingRight: "max(0.75rem, env(safe-area-inset-right))",
+        }}
+      >
+        <div className="max-w-4xl w-full mx-auto space-y-3 md:space-y-5 md:px-2 flex-1">
+          <div className="rounded-3xl p-4 md:p-6 border border-slate-800 bg-gradient-to-br from-slate-950 to-slate-900/80">
+            <div className="skeleton-shimmer h-3 w-36 rounded mb-4" />
+            <div className="space-y-2">
+              <div className="skeleton-shimmer h-4 w-full rounded" />
+              <div className="skeleton-shimmer h-4 w-11/12 rounded" />
+              <div className="skeleton-shimmer h-4 w-4/5 rounded" />
+            </div>
+          </div>
+          <div className="space-y-2">
+            {[...Array(5)].map((_, i) => (
+              <div key={i} className="skeleton-shimmer h-14 rounded-2xl border border-slate-800" />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (!q) {
     return (
-      <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center px-4">
+      <div className="min-h-dvh bg-slate-950 text-white flex items-center justify-center px-4">
         <div className="text-center">
           <p className="text-xl font-bold mb-4">Soru bulunamadı</p>
           <button
             onClick={goDashboard}
-            className="px-4 py-2.5 rounded-2xl bg-emerald-500 text-white font-bold"
+            className={`px-4 py-3 rounded-2xl ${theme.primary} text-slate-950 font-bold active:scale-95`}
           >
             Panele dön
           </button>
@@ -27,101 +70,253 @@ export default function StudyScreen({
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white px-3 py-3 md:px-8 md:py-8 overflow-x-hidden">
-      <button
-        onClick={goDashboard}
-        className="mb-3 text-xs md:text-sm text-emerald-400"
-      >
-        ← Panele dön
-      </button>
+    <div
+      className="min-h-screen bg-[#020617] text-white overflow-x-hidden flex flex-col px-4 py-8 md:py-12"
+      style={{
+        paddingTop: "calc(0.75rem + env(safe-area-inset-top))",
+        paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))",
+        paddingLeft: "max(1rem, env(safe-area-inset-left))",
+        paddingRight: "max(1rem, env(safe-area-inset-right))",
+      }}
+    >
+      {/* Üst bar */}
+      <div className="mx-auto mb-6 flex max-w-4xl flex-wrap items-center justify-between gap-3 w-full">
+        <button
+          onClick={goDashboard}
+          className={`inline-flex items-center gap-2 rounded-xl border ${theme.border} ${theme.softBg} px-4 py-2 text-sm font-extrabold ${theme.text} transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98]`}
+        >
+          <span>←</span> Panele dön
+        </button>
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setFlowMode?.(!flowMode)}
+            className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-extrabold transition-all ${
+              flowMode
+                ? `${theme.border} ${theme.softBg} ${theme.text} shadow-lg ${theme.glow}`
+                : "border-slate-700 bg-slate-900/70 text-slate-400"
+            }`}
+          >
+            Akış modu
+            <span className={`w-2 h-2 rounded-full ${flowMode ? theme.primary : "bg-slate-600"}`} />
+          </button>
+          <span
+            className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-extrabold ${
+              streak >= 3
+                ? "border-orange-400/20 bg-orange-400/10 text-orange-200 shadow-[0_0_25px_rgba(251,146,60,0.12)]"
+                : "border-slate-700 bg-slate-900/70 text-slate-400"
+            }`}
+          >
+            {streak >= 10 ? `🔥 Seri: ${streak} | Klinik soğukkanlılık` : streak >= 5 ? `🔥 Seri: ${streak} | Isındın` : `🔥 Seri: ${streak}`}
+            <span className="text-slate-400">Rekor: {bestStreak}</span>
+          </span>
+          <span className="rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1 text-xs font-bold text-slate-400 tabular-nums">
+            {index + 1} / {total}
+          </span>
+        </div>
+      </div>
 
-      <div className="max-w-4xl mx-auto space-y-4 md:space-y-6">
-        <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-3.5 md:p-6">
-          <p className="text-[11px] md:text-sm text-slate-400 mb-1">
-            Soru {index + 1} / {total}
-          </p>
+      <div className="mx-auto max-w-4xl w-full space-y-6 flex-1">
+        {topicProgress && (
+          <div className="rounded-2xl border border-slate-700/70 bg-slate-950/70 px-4 py-3 shadow-lg">
+            <div className="mb-2 flex items-center justify-between gap-3">
+              <div>
+                <div className="text-xs font-extrabold tracking-wide text-yellow-300">
+                  {topicProgress.ders} • {topicProgress.konu}
+                </div>
+                <div className="mt-1 text-xs text-slate-400">
+                  {topicProgress.current} / {topicProgress.total} soru
+                </div>
+              </div>
+              <div className="text-xs font-bold text-slate-300">
+                %{Math.round((topicProgress.current / Math.max(1, topicProgress.total)) * 100)}
+              </div>
+            </div>
+            <div className="h-2 overflow-hidden rounded-full bg-slate-800">
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 shadow-[0_0_20px_rgba(250,204,21,0.25)] transition-all duration-500"
+                style={{
+                  width: `${Math.round((topicProgress.current / Math.max(1, topicProgress.total)) * 100)}%`,
+                }}
+              />
+            </div>
+          </div>
+        )}
 
-          <p className="text-xs md:text-sm text-cyan-400 break-words whitespace-normal">
+        {/* Soru kartı */}
+        <div className={`rounded-3xl border ${theme.border} bg-gradient-to-br from-slate-950/95 via-slate-900/95 to-slate-950/95 shadow-2xl ${theme.glow} backdrop-blur-xl p-5 md:p-8`}>
+          <div className={`mb-4 text-xs md:text-sm font-extrabold tracking-wide ${theme.text} uppercase`}>
             {q.ders} • {q.konu}
-          </p>
-
-          <h2 className="mt-3 text-[15px] md:text-2xl font-bold leading-6 md:leading-relaxed break-words whitespace-normal [overflow-wrap:anywhere]">
-            {q.q}
-          </h2>
+          </div>
+          <div className="max-h-[42vh] overflow-y-auto pr-1">
+            <h2 className="font-['Plus_Jakarta_Sans'] text-xl sm:text-2xl md:text-3xl leading-relaxed tracking-[-0.02em] font-extrabold text-slate-50 break-words whitespace-normal [overflow-wrap:anywhere]">
+              {q.q}
+            </h2>
+          </div>
         </div>
 
-        <div className="space-y-2.5">
-          {q.options.map((opt, i) => (
-            <button
-              key={i}
-              onClick={() => setSelected(i)}
-              className={`w-full min-w-0 text-left rounded-2xl border-2 p-3 md:p-5 flex items-start gap-3 transition-all ${
-                selected === i
-                  ? "border-fuchsia-500 bg-fuchsia-500/10"
-                  : "border-slate-800 bg-slate-900/50"
-              }`}
-            >
-              <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-800 text-xs font-bold">
-                {String.fromCharCode(65 + i)}
-              </span>
+        {/* Mobil: kompakt premium çipler */}
+        <div className="md:hidden flex flex-wrap gap-2">
+          <div className={`inline-flex items-center gap-2 rounded-full border ${theme.border} ${theme.softBg} px-3 py-1.5 shadow ${theme.glow}`}>
+            <span className="text-[10px] uppercase tracking-wider font-black text-slate-400">Sosyal</span>
+            <span className={`text-xs font-black ${theme.text}`}>%{socialProof?.wrongRate ?? 52}</span>
+            <span className="text-[11px] text-slate-300">{socialProof?.label || "Dengeli"}</span>
+          </div>
+          <div className="inline-flex items-center gap-2 rounded-full border border-slate-700/70 bg-slate-950/80 px-3 py-1.5 shadow">
+            <span className="text-[10px] uppercase tracking-wider font-black text-slate-400">Mastery</span>
+            <span className="text-xs font-bold text-slate-200">{mastery?.level || "Başlangıç"}</span>
+            <span className={`text-xs font-black ${theme.text}`}>%{mastery?.accuracy ?? 0}</span>
+          </div>
+          <div className="w-full mt-1 h-1.5 rounded-full bg-slate-800 overflow-hidden border border-slate-700/70">
+            <div
+              className={`h-full bg-gradient-to-r ${theme.gradient} transition-all duration-500`}
+              style={{ width: `${mastery?.progress ?? 8}%` }}
+            />
+          </div>
+        </div>
 
-              <span className="min-w-0 flex-1 break-words whitespace-normal [overflow-wrap:anywhere] text-sm md:text-base leading-5 md:leading-6">
-                {opt}
-              </span>
-            </button>
+        {/* Desktop/tablet: geniş premium kartlar */}
+        <div className="hidden md:grid grid-cols-2 gap-3">
+          <div className={`rounded-2xl border ${theme.border} ${theme.softBg} px-4 py-3 shadow-lg ${theme.glow}`}>
+            <p className="text-[11px] uppercase tracking-widest font-black text-slate-400 mb-1">Sosyal Kanıt</p>
+            <p className={`text-sm font-bold ${theme.text}`}>
+              Bu soru kullanıcıların %{socialProof?.wrongRate ?? 52}’si tarafından yanlış yanıtlanmış.
+            </p>
+            <p className="text-xs text-slate-400 mt-1">{socialProof?.label || "Dengeli zorluk"}</p>
+          </div>
+          <div className="rounded-2xl border border-slate-700/70 bg-slate-950/80 px-4 py-3 shadow-xl">
+            <p className="text-[11px] uppercase tracking-widest font-black text-slate-400 mb-1">Konu Mastery</p>
+            <div className="flex items-center justify-between text-sm mb-2">
+              <span className="text-slate-300 font-bold">{mastery?.level || "Başlangıç"}</span>
+              <span className={`${theme.text} font-black`}>%{mastery?.accuracy ?? 0}</span>
+            </div>
+            <div className="h-2 rounded-full bg-slate-800 overflow-hidden border border-slate-700/70">
+              <div
+                className={`h-full bg-gradient-to-r ${theme.gradient} transition-all duration-500`}
+                style={{ width: `${mastery?.progress ?? 8}%` }}
+              />
+            </div>
+            <p className="text-[11px] text-slate-500 mt-1">
+              {mastery?.seen || 0} soru • {mastery?.correct || 0} doğru
+            </p>
+          </div>
+        </div>
+
+        {/* Seçenekler */}
+        <div className="space-y-3">
+          {q.options.map((opt, i) => (
+            (() => {
+              const isSelected = selected === i;
+              const isCorrectOption = i === q.correct;
+              const selectedIsWrong = showAnswer && isSelected && !isCorrectOption;
+              const selectedIsCorrect = showAnswer && isSelected && isCorrectOption;
+              const showCorrectHighlight = showAnswer && isCorrectOption;
+
+              return (
+                <button
+                  key={i}
+                  onClick={() => setSelected(i)}
+                  className={`group w-full min-w-0 text-left flex items-center gap-4 rounded-2xl border px-6 py-5 text-slate-100 shadow-sm transition-all duration-200 active:scale-[0.99]
+                    ${isSelected ? `${theme.border} ${theme.softBg} shadow-lg ${theme.glow}` : "border-slate-700/80 bg-slate-950/70 hover:-translate-y-0.5 hover:bg-slate-900/90 hover:border-slate-500"}
+                    ${showCorrectHighlight ? `${theme.border} ${theme.softBg}` : ""}
+                    ${selectedIsWrong ? "border-amber-400/70 bg-amber-500/10 shadow-[0_0_35px_rgba(250,204,21,0.15)]" : ""}
+                    ${selectedIsCorrect ? "correct-pop" : ""}
+                  `}
+                >
+                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border text-sm font-extrabold transition-all
+                    ${showCorrectHighlight
+                      ? `${theme.primary} text-slate-950 ${theme.border}`
+                      : isSelected
+                      ? `${theme.primary} text-slate-950 ${theme.border}`
+                      : "border-slate-600/70 bg-gradient-to-br from-slate-700 to-slate-900 text-slate-300"}
+                  `}>
+                    {String.fromCharCode(65 + i)}
+                  </span>
+                  <span className="min-w-0 flex-1 break-words whitespace-normal [overflow-wrap:anywhere] text-sm md:text-base leading-[1.55]">
+                    {opt}
+                  </span>
+                  {showCorrectHighlight && (
+                    <span className={`${theme.text} font-black text-sm`}>✔</span>
+                  )}
+                </button>
+              );
+            })()
           ))}
         </div>
 
+        {feedback && (
+          <div
+            className={`rounded-2xl px-4 py-3 text-sm font-semibold ${
+              feedback.type === "correct"
+                ? "border border-emerald-400/20 bg-emerald-400/10 text-emerald-100 shadow-[0_0_30px_rgba(52,211,153,0.10)]"
+                : feedback.type === "wrong"
+                ? "border border-red-400/20 bg-red-400/10 text-red-100 shadow-[0_0_30px_rgba(248,113,113,0.10)]"
+                : "border border-slate-500/30 bg-slate-800/70 text-slate-300"
+            }`}
+          >
+            {feedback.text}
+          </div>
+        )}
+
+        {/* Aksiyon butonları */}
         {!showAnswer ? (
-          <div className="grid grid-cols-2 gap-2.5">
+          <div className="grid grid-cols-2 gap-3 mobile-action-bar sticky bottom-0 bg-slate-950/95 backdrop-blur-sm rounded-2xl p-1">
             <button
               onClick={revealAnswer}
-              className="px-4 py-3 rounded-2xl bg-emerald-500 text-white text-sm md:text-base font-bold"
+              disabled={isAutoAdvancing}
+              className={`rounded-2xl bg-gradient-to-r ${theme.gradient} px-6 py-4 font-extrabold text-slate-950 shadow-lg ${theme.glow} transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98]`}
             >
-              Cevabı göster
+              {isAutoAdvancing ? "Geçiliyor..." : "Cevabı göster"}
             </button>
-
             <button
               onClick={goDashboard}
-              className="px-4 py-3 rounded-2xl bg-slate-800 text-sm md:text-base font-bold"
+              className="rounded-2xl border border-slate-700/80 bg-slate-800/80 px-6 py-4 font-extrabold text-slate-100 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-700/90 active:scale-[0.98]"
             >
               Bitir
             </button>
           </div>
         ) : (
-          <div className="space-y-3">
-            <div className="rounded-3xl border border-slate-800 bg-slate-900 p-4 md:p-5">
-              <p className="text-[11px] md:text-sm text-slate-400 mb-1">
+          <div className="space-y-4">
+            {/* Cevap & açıklama */}
+            <div className="rounded-3xl border border-slate-700/60 bg-gradient-to-br from-slate-900 to-slate-900/70 p-5 md:p-6">
+              <p className="text-[11px] text-slate-500 font-black uppercase tracking-widest mb-1">
                 Doğru cevap
               </p>
-              <p className="text-sm md:text-lg font-bold text-emerald-400 break-words">
-                {String.fromCharCode(65 + q.correct)} - {q.options[q.correct]}
+              <p className={`text-sm md:text-base font-bold ${theme.text} break-words`}>
+                {String.fromCharCode(65 + q.correct)} — {q.options[q.correct]}
               </p>
+              {selected !== null && selected !== q.correct && (
+                <p className="mt-2 text-xs text-amber-300/90 font-medium">
+                  Bu soru çoğu kişinin zorlandığı yerlerden.
+                </p>
+              )}
 
-              <div className="mt-3">
-                <p className="text-[11px] md:text-sm text-slate-400 mb-1">
-                  Açıklama
-                </p>
-                <p className="text-sm md:text-base text-slate-200 leading-6 break-words whitespace-normal [overflow-wrap:anywhere]">
-                  {q.exp}
-                </p>
-              </div>
+              {q.exp && (
+                <div className="mt-3 pt-3 border-t border-slate-800">
+                  <p className="text-[11px] text-slate-500 font-black uppercase tracking-widest mb-1.5">
+                    Açıklama
+                  </p>
+                  <p className="text-sm md:text-base text-slate-300 leading-[1.65] break-words whitespace-normal [overflow-wrap:anywhere]">
+                    {q.exp}
+                  </p>
+                </div>
+              )}
             </div>
 
-            <div className="grid grid-cols-2 gap-2.5">
+            {/* İleri/geri butonlar */}
+            <div className="grid grid-cols-2 gap-3 mobile-action-bar sticky bottom-0 bg-slate-950/95 backdrop-blur-sm rounded-2xl p-1">
               <button
-                className="px-4 py-3 rounded-2xl border border-slate-700 bg-slate-900 text-sm md:text-base font-bold disabled:opacity-50"
+                className="rounded-2xl border border-slate-700/80 bg-slate-800/80 px-6 py-4 font-extrabold text-slate-100 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-700/90 disabled:opacity-40 active:scale-[0.98]"
                 onClick={prevQuestion}
                 disabled={index === 0}
               >
-                Önceki soru
+                ← Önceki
               </button>
-
               <button
                 onClick={nextQuestion}
-                className="px-4 py-3 rounded-2xl bg-emerald-500 text-white text-sm md:text-base font-bold"
+                className={`rounded-2xl bg-gradient-to-r ${theme.gradient} px-6 py-4 font-extrabold text-slate-950 shadow-lg ${theme.glow} transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98]`}
               >
-                {index < total - 1 ? "Sonraki" : "Özete git"}
+                {index < total - 1 ? "Sonraki →" : "Özete git"}
               </button>
             </div>
           </div>

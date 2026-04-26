@@ -546,6 +546,15 @@ function validateIndexedDBOpenable() {
 	});
 }
 /**
+*
+* This method checks whether cookie is enabled within current browser
+* @return true if cookie is enabled within current browser
+*/
+function areCookiesEnabled() {
+	if (typeof navigator === "undefined" || !navigator.cookieEnabled) return false;
+	return true;
+}
+/**
 * @license
 * Copyright 2017 Google LLC
 *
@@ -833,6 +842,56 @@ function implementsAnyMethods(obj, methods) {
 	return false;
 }
 function noop() {}
+/**
+* @license
+* Copyright 2019 Google LLC
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*   http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+/**
+* The amount of milliseconds to exponentially increase.
+*/
+var DEFAULT_INTERVAL_MILLIS = 1e3;
+/**
+* The factor to backoff by.
+* Should be a number greater than 1.
+*/
+var DEFAULT_BACKOFF_FACTOR = 2;
+/**
+* The maximum milliseconds to increase to.
+*
+* <p>Visible for testing
+*/
+var MAX_VALUE_MILLIS = 14400 * 1e3;
+/**
+* The percentage of backoff time to randomize by.
+* See
+* http://go/safe-client-behavior#step-1-determine-the-appropriate-retry-interval-to-handle-spike-traffic
+* for context.
+*
+* <p>Visible for testing
+*/
+var RANDOM_FACTOR = .5;
+/**
+* Based on the backoff method from
+* https://github.com/google/closure-library/blob/master/closure/goog/math/exponentialbackoff.js.
+* Extracted here so we don't need to pass metadata and a stateful ExponentialBackoff object around.
+*/
+function calculateBackoffMillis(backoffCount, intervalMillis = DEFAULT_INTERVAL_MILLIS, backoffFactor = DEFAULT_BACKOFF_FACTOR) {
+	const currBaseValue = intervalMillis * Math.pow(backoffFactor, backoffCount);
+	const randomWait = Math.round(RANDOM_FACTOR * currBaseValue * (Math.random() - .5) * 2);
+	return Math.min(MAX_VALUE_MILLIS, currBaseValue + randomWait);
+}
 /**
 * @license
 * Copyright 2021 Google LLC
@@ -2474,6 +2533,6 @@ function registerCoreComponents(variant) {
 */
 registerCoreComponents("");
 //#endregion
-export { createSubscribe as A, isCloudWorkstation as B, LogLevel as C, FirebaseError as D, ErrorFactory as E, getExperimentalSetting as F, isMobileCordova as G, isEmpty as H, getGlobal as I, isSafariOrWebkit as J, isReactNative as K, getModularInstance as L, extractQuerystring as M, getDefaultEmulatorHost as N, base64Decode as O, getDefaultEmulatorHostnameAndPort as P, getUA as R, setLogLevel as S, Component as T, isIE as U, isCloudflareWorker as V, isIndexedDBAvailable as W, querystring as X, pingServer as Y, querystringDecode as Z, getApps as _, _apps as a, onLog as b, _getProvider as c, _isFirebaseServerAppSettings as d, _registerComponent as f, getApp as g, deleteApp as h, _addOrOverwriteComponent as i, deepEqual as j, createMockUserToken as k, _isFirebaseApp as l, _serverApps as m, SDK_VERSION as n, _clearComponents as o, _removeServiceInstance as p, isSafari as q, _addComponent as r, _components as s, DEFAULT_ENTRY_NAME as t, _isFirebaseServerApp as u, initializeApp as v, Logger as w, registerVersion as x, initializeServerApp as y, isBrowserExtension as z };
+export { querystring as $, base64Decode as A, getModularInstance as B, openDB as C, ErrorFactory as D, Component as E, extractQuerystring as F, isEmpty as G, isBrowserExtension as H, getDefaultEmulatorHost as I, isMobileCordova as J, isIE as K, getDefaultEmulatorHostnameAndPort as L, createMockUserToken as M, createSubscribe as N, FirebaseError as O, deepEqual as P, pingServer as Q, getExperimentalSetting as R, setLogLevel as S, Logger as T, isCloudWorkstation as U, getUA as V, isCloudflareWorker as W, isSafari as X, isReactNative as Y, isSafariOrWebkit as Z, getApps as _, _apps as a, onLog as b, _getProvider as c, _isFirebaseServerAppSettings as d, querystringDecode as et, _registerComponent as f, getApp as g, deleteApp as h, _addOrOverwriteComponent as i, calculateBackoffMillis as j, areCookiesEnabled as k, _isFirebaseApp as l, _serverApps as m, SDK_VERSION as n, _clearComponents as o, _removeServiceInstance as p, isIndexedDBAvailable as q, _addComponent as r, _components as s, DEFAULT_ENTRY_NAME as t, validateIndexedDBOpenable as tt, _isFirebaseServerApp as u, initializeApp as v, LogLevel as w, registerVersion as x, initializeServerApp as y, getGlobal as z };
 
-//# sourceMappingURL=index.esm-CZLmQmUT.js.map
+//# sourceMappingURL=index.esm-UCwk2jh9.js.map

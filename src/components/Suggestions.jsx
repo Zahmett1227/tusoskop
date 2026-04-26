@@ -2,7 +2,10 @@ import React from "react";
 
 export default function Suggestions({ goDashboard }) {
   return (
-    <div className="min-h-screen bg-slate-950 text-white p-6 md:p-10">
+    <div
+      className="min-h-dvh bg-slate-950 text-white p-6 md:p-10"
+      style={{ paddingTop: "calc(1.5rem + env(safe-area-inset-top))", paddingBottom: "calc(5rem + env(safe-area-inset-bottom))" }}
+    >
       <div className="max-w-3xl mx-auto bg-slate-900 border border-slate-800 rounded-[2rem] p-8 md:p-10">
         <h2 className="text-3xl font-black mb-6 text-emerald-400">
           2027/1 TUS birincisinden tavsiyeler

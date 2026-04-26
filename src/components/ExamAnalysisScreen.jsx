@@ -1,174 +1,409 @@
-import React from "react";
+import React, { useState } from "react";
+import { accentThemes } from "../theme/accentThemes";
+
+const LETTERS = ['A', 'B', 'C', 'D', 'E'];
+
+function WrongQuestionsModal({ wrongByLessonTopic, totalWrong, onClose }) {
+  const [openLesson, setOpenLesson] = useState(null);
+  const [openTopic, setOpenTopic] = useState(null);
+  const [expandedQ, setExpandedQ] = useState(null);
+
+  const lessons = Object.keys(wrongByLessonTopic);
+
+  const toggleLesson = (lesson) => {
+    setOpenLesson(prev => prev === lesson ? null : lesson);
+    setOpenTopic(null);
+    setExpandedQ(null);
+  };
+
+  const toggleTopic = (topic) => {
+    setOpenTopic(prev => prev === topic ? null : topic);
+    setExpandedQ(null);
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex flex-col bg-slate-950 overflow-hidden">
+
+      {/* Başlık çubuğu */}
+      <div className="flex items-center justify-between px-4 md:px-8 py-5 border-b border-slate-800 bg-slate-950/90 backdrop-blur-md shrink-0">
+        <div>
+          <h2 className="text-xl md:text-2xl font-black text-white tracking-tight">Yanlış Soru Analizi</h2>
+          <p className="text-slate-500 text-xs font-medium mt-0.5">
+            {totalWrong} yanlış soru • ders ve konuya göre gruplandırıldı
+          </p>
+        </div>
+        <button
+          onClick={onClose}
+          className="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-400 font-bold transition-all"
+        >
+          ✕
+        </button>
+      </div>
+
+      {/* İçerik */}
+      <div className="flex-1 overflow-y-auto px-4 md:px-8 py-6 space-y-3">
+        {lessons.length === 0 && (
+          <div className="flex flex-col items-center justify-center h-64 text-slate-600 gap-3">
+            <span className="text-5xl">🎉</span>
+            <p className="font-bold">Hiç yanlış soru yok!</p>
+          </div>
+        )}
+
+        {lessons.map((lesson) => {
+          const topics = wrongByLessonTopic[lesson];
+          const lessonWrongCount = Object.values(topics).reduce((s, qs) => s + qs.length, 0);
+          const isLessonOpen = openLesson === lesson;
+
+          return (
+            <div key={lesson} className="rounded-[1.75rem] border border-slate-800 overflow-hidden">
+
+              {/* Ders başlığı */}
+              <button
+                onClick={() => toggleLesson(lesson)}
+                className="w-full flex items-center justify-between px-6 py-4 bg-slate-900/60 hover:bg-slate-900 transition-colors text-left"
+              >
+                <div className="flex items-center gap-3">
+                  <span className={`w-2.5 h-2.5 rounded-full shrink-0 ${isLessonOpen ? 'bg-rose-400' : 'bg-slate-700'}`} />
+                  <span className="font-black text-white text-sm md:text-base">{lesson}</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="px-2.5 py-1 rounded-full bg-rose-500/15 border border-rose-500/20 text-rose-400 text-xs font-black">
+                    {lessonWrongCount} yanlış
+                  </span>
+                  <span className={`text-slate-500 transition-transform duration-300 ${isLessonOpen ? 'rotate-180' : ''}`}>▼</span>
+                </div>
+              </button>
+
+              {/* Konular */}
+              {isLessonOpen && (
+                <div className="divide-y divide-slate-800/60 bg-slate-950/40">
+                  {Object.keys(topics).map((topic) => {
+                    const questions = topics[topic];
+                    const isTopicOpen = openTopic === `${lesson}__${topic}`;
+                    const topicKey = `${lesson}__${topic}`;
+
+                    return (
+                      <div key={topic}>
+
+                        {/* Konu başlığı */}
+                        <button
+                          onClick={() => toggleTopic(topicKey)}
+                          className="w-full flex items-center justify-between px-6 py-3.5 hover:bg-slate-900/50 transition-colors text-left"
+                        >
+                          <div className="flex items-center gap-3">
+                            <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0" />
+                            <span className="text-slate-300 text-sm font-semibold">{topic}</span>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <span className="text-amber-400 text-xs font-black">{questions.length} soru</span>
+                            <span className={`text-slate-600 text-xs transition-transform duration-200 ${isTopicOpen ? 'rotate-180' : ''}`}>▼</span>
+                          </div>
+                        </button>
+
+                        {/* Sorular */}
+                        {isTopicOpen && (
+                          <div className="px-4 pb-4 space-y-3">
+                            {questions.map((wq, qi) => {
+                              const qKey = `${topicKey}__${qi}`;
+                              const isExpanded = expandedQ === qKey;
+
+                              return (
+                                <div
+                                  key={qi}
+                                  className="rounded-2xl border border-slate-800 bg-slate-900/50 overflow-hidden"
+                                >
+                                  {/* Soru metni + genişlet butonu */}
+                                  <button
+                                    onClick={() => setExpandedQ(prev => prev === qKey ? null : qKey)}
+                                    className="w-full text-left px-5 py-4 flex items-start gap-3 hover:bg-slate-800/30 transition-colors"
+                                  >
+                                    <span className="mt-0.5 w-5 h-5 rounded-full bg-slate-800 text-slate-500 text-[10px] font-black flex items-center justify-center shrink-0">
+                                      {qi + 1}
+                                    </span>
+                                    <p className="text-slate-300 text-sm leading-relaxed flex-1 text-left line-clamp-2">
+                                      {wq.q}
+                                    </p>
+                                    <span className={`text-slate-600 text-xs shrink-0 mt-0.5 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}>▼</span>
+                                  </button>
+
+                                  {/* Cevap satırı (her zaman görünür) */}
+                                  <div className="px-5 pb-4 flex flex-wrap gap-2">
+                                    <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-bold">
+                                      <span className="opacity-60">Senin cevabın:</span>
+                                      <span>{wq.userAnswer !== null ? LETTERS[wq.userAnswer] : '—'}</span>
+                                    </span>
+                                    <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold">
+                                      <span className="opacity-60">Doğru cevap:</span>
+                                      <span>{LETTERS[wq.correct]}</span>
+                                    </span>
+                                  </div>
+
+                                  {/* Genişletilmiş detay */}
+                                  {isExpanded && (
+                                    <div className="border-t border-slate-800 px-5 py-4 space-y-3">
+                                      {/* Tüm şıklar */}
+                                      <div className="space-y-1.5">
+                                        {wq.options.map((opt, oi) => {
+                                          const isCorrect = oi === wq.correct;
+                                          const isUserWrong = oi === wq.userAnswer && oi !== wq.correct;
+                                          return (
+                                            <div
+                                              key={oi}
+                                              className={`flex items-start gap-3 px-4 py-2.5 rounded-xl text-sm ${
+                                                isCorrect
+                                                  ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-300'
+                                                  : isUserWrong
+                                                  ? 'bg-rose-500/10 border border-rose-500/20 text-rose-300'
+                                                  : 'text-slate-500'
+                                              }`}
+                                            >
+                                              <span className={`font-black shrink-0 ${isCorrect ? 'text-emerald-400' : isUserWrong ? 'text-rose-400' : 'text-slate-600'}`}>
+                                                {LETTERS[oi]}
+                                              </span>
+                                              <span className="leading-relaxed">{opt}</span>
+                                              {isCorrect && <span className="ml-auto shrink-0 text-emerald-400">✓</span>}
+                                              {isUserWrong && <span className="ml-auto shrink-0 text-rose-400">✗</span>}
+                                            </div>
+                                          );
+                                        })}
+                                      </div>
+
+                                      {/* Açıklama */}
+                                      {wq.exp && (
+                                        <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-4">
+                                          <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-2">Açıklama</p>
+                                          <p className="text-slate-300 text-sm leading-relaxed">{wq.exp}</p>
+                                        </div>
+                                      )}
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            })}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
 export default function ExamAnalysisScreen({
   examAnalysis,
   estimatedTus,
   startFullExam,
   goDashboard,
+  accentTheme,
 }) {
-  if (!examAnalysis) {
-    return null;
-  }
+  const theme = accentTheme || accentThemes.emerald;
+  const [showWrongModal, setShowWrongModal] = useState(false);
+
+  if (!examAnalysis) return null;
 
   const lessonRows = Object.entries(examAnalysis.byLesson || {});
 
-  // Başarı yüzdesine göre bar rengi belirleme
   const getProgressColor = (rate) => {
-    if (rate >= 65) return "bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]";
+    if (rate >= 65) return `${theme.primary} ${theme.glow}`;
     if (rate >= 45) return "bg-cyan-400";
     return "bg-rose-500";
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white p-4 md:p-8">
-      <div className="max-w-6xl mx-auto space-y-10">
-        
-        {/* Üst Başlık Alanı */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-slate-800/60 pb-6">
-          <div>
-            <div className="flex items-center gap-3 mb-2">
-              <span className="text-3xl">📊</span>
-              <h1 className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
-                Deneme Analizi
-              </h1>
-            </div>
-            <p className="text-slate-400 text-sm md:text-base">
-              Sonuçların hazır. Hangi derste ne kadar ilerlediğini buradan takip edebilirsin.
-            </p>
-          </div>
+    <>
+      {showWrongModal && (
+        <WrongQuestionsModal
+          wrongByLessonTopic={examAnalysis.wrongByLessonTopic || {}}
+          totalWrong={examAnalysis.summary.wrong}
+          onClose={() => setShowWrongModal(false)}
+        />
+      )}
 
-          <button
-            onClick={goDashboard}
-            className="px-6 py-3 rounded-2xl bg-slate-900 border border-slate-700 hover:bg-slate-800 hover:border-slate-600 transition-all text-sm font-bold shadow-lg"
-          >
-            ← Panele Dön
-          </button>
-        </div>
+      <div className="min-h-screen bg-slate-950 text-white p-4 md:p-8">
+        <div className="max-w-6xl mx-auto space-y-10">
 
-        {/* Özet İstatistik Kartları */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          <div className="relative overflow-hidden rounded-[2rem] bg-slate-900 border border-slate-800 p-5 flex flex-col justify-center items-center text-center group hover:border-slate-600 transition-colors">
-            <span className="text-slate-500 mb-1 text-xl">📝</span>
-            <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Toplam</p>
-            <p className="text-3xl font-black mt-1 text-slate-200">{examAnalysis.summary.total}</p>
-          </div>
-
-          <div className="relative overflow-hidden rounded-[2rem] bg-slate-900 border border-emerald-900/50 p-5 flex flex-col justify-center items-center text-center group hover:border-emerald-700/50 transition-colors">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/10 transition-all"></div>
-            <span className="text-emerald-500 mb-1 text-xl">✅</span>
-            <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Doğru</p>
-            <p className="text-3xl font-black mt-1 text-emerald-400">{examAnalysis.summary.correct}</p>
-          </div>
-
-          <div className="relative overflow-hidden rounded-[2rem] bg-slate-900 border border-rose-900/50 p-5 flex flex-col justify-center items-center text-center group hover:border-rose-700/50 transition-colors">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/5 rounded-full blur-2xl group-hover:bg-rose-500/10 transition-all"></div>
-            <span className="text-rose-500 mb-1 text-xl">❌</span>
-            <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Yanlış</p>
-            <p className="text-3xl font-black mt-1 text-rose-400">{examAnalysis.summary.wrong}</p>
-          </div>
-
-          <div className="relative overflow-hidden rounded-[2rem] bg-slate-900 border border-slate-800 p-5 flex flex-col justify-center items-center text-center group hover:border-slate-600 transition-colors">
-            <span className="text-slate-500 mb-1 text-xl">⚪</span>
-            <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Boş</p>
-            <p className="text-3xl font-black mt-1 text-slate-300">{examAnalysis.summary.blank}</p>
-          </div>
-
-          <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-b from-slate-800 to-slate-900 border border-cyan-900/50 p-5 flex flex-col justify-center items-center text-center shadow-[0_0_20px_rgba(34,211,238,0.05)]">
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl"></div>
-            <span className="text-cyan-400 mb-1 text-xl">🎯</span>
-            <p className="text-cyan-200/70 text-xs uppercase tracking-wider font-semibold">Net Skor</p>
-            <p className="text-4xl font-black mt-1 text-cyan-400">{examAnalysis.summary.net}</p>
-          </div>
-        </div>
-
-        {/* İkili Grid: Tablo ve Tahmini Puan */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          
-          {/* Ders Bazlı Performans Tablosu */}
-          <div className="lg:col-span-2 rounded-[2rem] bg-slate-900 border border-slate-800 overflow-hidden shadow-xl">
-            <div className="bg-slate-950/50 px-6 py-5 border-b border-slate-800">
-              <h2 className="text-xl font-bold flex items-center gap-2">
-                <span className="text-fuchsia-400">🔬</span> Ders Bazlı Performans
-              </h2>
-            </div>
-            <div className="p-1 overflow-x-auto">
-              <table className="w-full text-sm md:text-base border-collapse">
-                <thead>
-                  <tr className="text-left text-slate-400 border-b border-slate-800/50 bg-slate-900/30">
-                    <th className="py-4 pl-5 font-medium">Ders</th>
-                    <th className="py-4 px-2 font-medium text-center">Soru</th>
-                    <th className="py-4 px-2 font-medium text-emerald-400/80 text-center">D</th>
-                    <th className="py-4 px-2 font-medium text-rose-400/80 text-center">Y</th>
-                    <th className="py-4 px-2 font-medium text-slate-500 text-center">B</th>
-                    <th className="py-4 pr-5 font-medium text-right">Başarı Oranı</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {lessonRows.map(([lesson, stats]) => (
-                    <tr key={lesson} className="border-b border-slate-800/30 hover:bg-slate-800/20 transition-colors group">
-                      <td className="py-3 pl-5 font-semibold text-slate-200">{lesson}</td>
-                      <td className="py-3 px-2 text-center text-slate-400">{stats.total}</td>
-                      <td className="py-3 px-2 text-center text-emerald-400">{stats.correct}</td>
-                      <td className="py-3 px-2 text-center text-rose-400">{stats.wrong}</td>
-                      <td className="py-3 px-2 text-center text-slate-500">{stats.blank}</td>
-                      <td className="py-3 pr-5">
-                        <div className="flex items-center justify-end gap-3">
-                          <span className="font-bold text-slate-200 min-w-[3rem] text-right">
-                            %{stats.successRate}
-                          </span>
-                          <div className="h-2 w-20 md:w-28 bg-slate-950 rounded-full overflow-hidden border border-slate-800">
-                            <div
-                              className={`h-full rounded-full transition-all duration-1000 ${getProgressColor(stats.successRate)}`}
-                              style={{ width: `${stats.successRate}%` }}
-                            ></div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* Tahmini Puan Kutusu ve Aksiyonlar */}
-          <div className="space-y-6">
-            {estimatedTus && (
-              <div className="relative rounded-[2rem] bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 border border-slate-700 p-8 overflow-hidden shadow-2xl group hover:border-emerald-500/30 transition-all duration-500">
-                <div className="absolute -right-10 -top-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-all duration-500"></div>
-                <div className="absolute right-4 top-4 text-6xl opacity-5">🏆</div>
-                
-                <h2 className="text-lg font-semibold text-slate-400 mb-1 uppercase tracking-widest">Tahmini Puan</h2>
-                <div className="flex items-baseline gap-2 mb-4">
-                  <span className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 drop-shadow-sm">
-                    {estimatedTus.score}
-                  </span>
-                  <span className="text-xl text-slate-500 font-bold">Puan</span>
-                </div>
-                
-                <div className="bg-slate-950/50 rounded-2xl p-4 border border-slate-800/80">
-                  <p className="text-lg font-bold text-slate-200 mb-1 flex items-center gap-2">
-                    <span>💡</span> {estimatedTus.label}
-                  </p>
-                  <p className="text-sm text-slate-400 leading-relaxed">
-                    {estimatedTus.advice}
-                  </p>
-                </div>
+          {/* Üst Başlık */}
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-slate-800/60 pb-6">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-3xl">📊</span>
+                <h1 className={`text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r ${theme.gradient}`}>
+                  Deneme Analizi
+                </h1>
               </div>
-            )}
+              <p className="text-slate-400 text-sm md:text-base">
+                Sonuçların hazır. Hangi derste ne kadar ilerlediğini buradan takip edebilirsin.
+              </p>
+            </div>
+            <button
+              onClick={goDashboard}
+              className="px-6 py-3 rounded-2xl bg-slate-900 border border-slate-700 hover:bg-slate-800 hover:border-slate-600 transition-all text-sm font-bold shadow-lg"
+            >
+              ← Panele Dön
+            </button>
+          </div>
 
-            <div className="flex flex-col gap-3">
-              <button
-                onClick={startFullExam}
-                className="w-full px-6 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 text-lg font-black shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
-              >
-                <span>🔄</span> Yeni Deneme Çöz
-              </button>
+          {/* Özet İstatistik Kartları */}
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div className="rounded-[2rem] bg-slate-900 border border-slate-800 p-5 flex flex-col justify-center items-center text-center hover:border-slate-600 transition-colors">
+              <span className="text-slate-500 mb-1 text-xl">📝</span>
+              <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Toplam</p>
+              <p className="text-3xl font-black mt-1 text-slate-200">{examAnalysis.summary.total}</p>
+            </div>
+
+            <div className={`rounded-[2rem] bg-slate-900 border ${theme.softBorder} p-5 flex flex-col justify-center items-center text-center transition-colors relative overflow-hidden`}>
+              <div className={`absolute top-0 right-0 w-24 h-24 ${theme.softBg} rounded-full blur-2xl`} />
+              <span className={`${theme.text} mb-1 text-xl`}>✅</span>
+              <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Doğru</p>
+              <p className={`text-3xl font-black mt-1 ${theme.text}`}>{examAnalysis.summary.correct}</p>
+            </div>
+
+            {/* Yanlış — tıklanabilir, detaylı analiz açar */}
+            <button
+              onClick={() => setShowWrongModal(true)}
+              className="rounded-[2rem] bg-slate-900 border border-rose-900/50 p-5 flex flex-col justify-center items-center text-center hover:border-rose-500/50 hover:bg-rose-950/20 transition-all relative overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/5 rounded-full blur-2xl group-hover:bg-rose-500/10 transition-all" />
+              <span className="text-rose-500 mb-1 text-xl">❌</span>
+              <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Yanlış</p>
+              <p className="text-3xl font-black mt-1 text-rose-400">{examAnalysis.summary.wrong}</p>
+              <span className="text-[9px] text-rose-500/60 font-bold uppercase tracking-wider mt-1 group-hover:text-rose-400 transition-colors">
+                detay →
+              </span>
+            </button>
+
+            <div className="rounded-[2rem] bg-slate-900 border border-slate-800 p-5 flex flex-col justify-center items-center text-center hover:border-slate-600 transition-colors">
+              <span className="text-slate-500 mb-1 text-xl">⚪</span>
+              <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Boş</p>
+              <p className="text-3xl font-black mt-1 text-slate-300">{examAnalysis.summary.blank}</p>
+            </div>
+
+            <div className={`rounded-[2rem] bg-gradient-to-b from-slate-800 to-slate-900 border ${theme.softBorder} p-5 flex flex-col justify-center items-center text-center shadow-[0_0_20px_rgba(34,211,238,0.05)]`}>
+              <div className={`absolute -top-10 -right-10 w-32 h-32 ${theme.softBg} rounded-full blur-3xl`} />
+              <span className={`${theme.text} mb-1 text-xl`}>🎯</span>
+              <p className={`${theme.text}/70 text-xs uppercase tracking-wider font-semibold`}>Net Skor</p>
+              <p className={`text-4xl font-black mt-1 ${theme.text}`}>{examAnalysis.summary.net.toFixed(2)}</p>
+            </div>
+          </div>
+
+          {/* Detaylı Analiz Butonu — belirgin */}
+          <button
+            onClick={() => setShowWrongModal(true)}
+            className="w-full flex items-center justify-between px-8 py-5 rounded-[2rem] bg-rose-950/30 border border-rose-500/25 hover:border-rose-500/50 hover:bg-rose-950/50 transition-all group"
+          >
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-rose-500/15 border border-rose-500/20 flex items-center justify-center text-xl shrink-0">
+                🔍
+              </div>
+              <div className="text-left">
+                <p className="font-black text-white text-base">Yanlış Soruların Detaylı Analizi</p>
+                <p className="text-slate-400 text-xs mt-0.5">
+                  {examAnalysis.summary.wrong} yanlış soru • ders ve konuya göre gruplandırılmış
+                </p>
+              </div>
+            </div>
+            <span className="text-rose-400 font-bold text-sm group-hover:translate-x-1 transition-transform">→</span>
+          </button>
+
+          {/* Tablo + Tahmini Puan */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            {/* Ders Bazlı Performans Tablosu */}
+            <div className="lg:col-span-2 rounded-[2rem] bg-slate-900 border border-slate-800 overflow-hidden shadow-xl">
+              <div className="bg-slate-950/50 px-6 py-5 border-b border-slate-800">
+                <h2 className="text-xl font-bold flex items-center gap-2">
+                  <span className="text-fuchsia-400">🔬</span> Ders Bazlı Performans
+                </h2>
+              </div>
+              <div className="p-1 overflow-x-auto">
+                <table className="w-full text-sm md:text-base border-collapse">
+                  <thead>
+                    <tr className="text-left text-slate-400 border-b border-slate-800/50 bg-slate-900/30">
+                      <th className="py-4 pl-5 font-medium">Ders</th>
+                      <th className="py-4 px-2 font-medium text-center">Soru</th>
+                      <th className={`py-4 px-2 font-medium ${theme.text}/80 text-center`}>D</th>
+                      <th className="py-4 px-2 font-medium text-rose-400/80 text-center">Y</th>
+                      <th className="py-4 px-2 font-medium text-slate-500 text-center">B</th>
+                      <th className="py-4 pr-5 font-medium text-right">Başarı</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {lessonRows.map(([lesson, stats]) => (
+                      <tr key={lesson} className="border-b border-slate-800/30 hover:bg-slate-800/20 transition-colors">
+                        <td className="py-3 pl-5 font-semibold text-slate-200">{lesson}</td>
+                        <td className="py-3 px-2 text-center text-slate-400">{stats.total}</td>
+                        <td className={`py-3 px-2 text-center ${theme.text}`}>{stats.correct}</td>
+                        <td className="py-3 px-2 text-center text-rose-400">{stats.wrong}</td>
+                        <td className="py-3 px-2 text-center text-slate-500">{stats.blank}</td>
+                        <td className="py-3 pr-5">
+                          <div className="flex items-center justify-end gap-3">
+                            <span className="font-bold text-slate-200 min-w-[3rem] text-right">
+                              %{stats.successRate}
+                            </span>
+                            <div className="h-2 w-20 md:w-28 bg-slate-950 rounded-full overflow-hidden border border-slate-800">
+                              <div
+                                className={`h-full rounded-full transition-all duration-1000 ${getProgressColor(stats.successRate)}`}
+                                style={{ width: `${stats.successRate}%` }}
+                              />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Tahmini Puan + Aksiyonlar */}
+            <div className="space-y-6">
+              {estimatedTus && (
+                <div className={`relative rounded-[2rem] bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 border border-slate-700 p-8 overflow-hidden shadow-2xl group ${theme.softBorder} transition-all duration-500`}>
+                  <div className={`absolute -right-10 -top-10 w-40 h-40 ${theme.softBg} rounded-full blur-3xl transition-all duration-500`} />
+                  <div className="absolute right-4 top-4 text-6xl opacity-5">🏆</div>
+
+                  <h2 className="text-lg font-semibold text-slate-400 mb-1 uppercase tracking-widest">Tahmini Puan</h2>
+                  <div className="flex items-baseline gap-2 mb-4">
+                    <span className={`text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r ${theme.gradient}`}>
+                      {estimatedTus.score}
+                    </span>
+                    <span className="text-xl text-slate-500 font-bold">Puan</span>
+                  </div>
+
+                  <div className="bg-slate-950/50 rounded-2xl p-4 border border-slate-800/80">
+                    <p className="text-lg font-bold text-slate-200 mb-1 flex items-center gap-2">
+                      <span>💡</span> {estimatedTus.label}
+                    </p>
+                    <p className="text-sm text-slate-400 leading-relaxed">{estimatedTus.advice}</p>
+                  </div>
+                </div>
+              )}
+
+              <div className="flex flex-col gap-3">
+                <button
+                  onClick={() => setShowWrongModal(true)}
+                  className="w-full px-6 py-4 rounded-2xl bg-rose-500/10 border border-rose-500/20 hover:bg-rose-500/20 hover:border-rose-500/40 text-rose-300 font-black transition-all flex items-center justify-center gap-2"
+                >
+                  🔍 Yanlışlarımı İncele
+                </button>
+                <button
+                  onClick={startFullExam}
+                  className={`w-full px-6 py-4 rounded-2xl bg-gradient-to-r ${theme.gradient} text-slate-950 text-lg font-black shadow-lg ${theme.glow} hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2`}
+                >
+                  🔄 Yeni Deneme Çöz
+                </button>
+              </div>
             </div>
           </div>
 
         </div>
       </div>
-    </div>
+    </>
   );
 }
