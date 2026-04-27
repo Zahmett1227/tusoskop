@@ -37390,5 +37390,4805 @@ exp: "Spironolakton (ve Eplerenon), bir Potasyum Tutucu Diüretik (Aldosteron An
     ],
     "correct": 0,
     "exp": "Pierre Robin sekansı mikrognati, glossoptozis ve yarık damak birlikteliğidir; hava yolu ve beslenme sorunları ön plandadır."
+  },
+  {
+    "id": 2338,
+    "ders": "Fizyoloji",
+    "konu": "Hücre Histolojisi ve Fizyolojisi",
+    "diff": 4,
+    "q": "Yoğun bakımda hiperkalemi gelişen bir hastanın EKG'sinde QRS genişlemesi ve iletim yavaşlaması izleniyor. Bu tablonun hücre düzeyinde en iyi açıklaması aşağıdakilerden hangisidir?",
+    "options": [
+      "Hücre dışı potasyum artışı istirahat membran potansiyelini daha negatif hale getirir",
+      "Hücre dışı potasyum artışı membranı kısmen depolarize ederek voltaj kapılı sodyum kanallarının bir kısmını inaktive eder",
+      "Potasyum artışı sodyum-potasyum pompasını tamamen durdurur ve tüm hücreler hiperpolarize olur",
+      "Potasyum artışı kalsiyum kanallarını kapatarak aksiyon potansiyeli süresini uzatır",
+      "Potasyum artışı klor girişini artırarak membranı stabilize eder"
+    ],
+    "correct": 1,
+    "exp": "Ekstrasellüler K+ artışı istirahat membran potansiyelini daha az negatif yapar. Sürekli kısmi depolarizasyon hızlı Na+ kanallarını inaktive eder; özellikle kalpte iletim yavaşlar ve QRS genişleyebilir."
+  },
+  {
+    "id": 2339,
+    "ders": "Fizyoloji",
+    "konu": "Hücre Histolojisi ve Fizyolojisi",
+    "diff": 3,
+    "q": "Hipotonik sıvı verilen bir eritrosit süspansiyonunda eritrositlerin şişerek hemolize olduğu görülüyor. Bu olayda suyun hücre içine geçişini belirleyen temel fiziksel güç hangisidir?",
+    "options": [
+      "Proteinlerin aktif olarak su pompalaması",
+      "Hücre içi ve dışı partikül yoğunluğu farkına bağlı ozmotik gradyan",
+      "Eritrosit membranındaki hemoglobinin suyu bağlaması",
+      "Sodyumun hemoglobine kovalent bağlanması",
+      "Plazma pH'sının eritrosit membranını eritmesi"
+    ],
+    "correct": 1,
+    "exp": "Su, yarı geçirgen membran boyunca ozmotik olarak daha yoğun partikül içeren tarafa hareket eder. Hipotonik ortamda hücre dışı ozmolalite düşük olduğu için su eritrosite girer ve hemoliz oluşabilir."
+  },
+  {
+    "id": 2340,
+    "ders": "Fizyoloji",
+    "konu": "Hücre Histolojisi ve Fizyolojisi",
+    "diff": 4,
+    "q": "Tip 1 diyabetli bir hastada insülin eksikliği nedeniyle kas ve yağ dokusuna glukoz girişi azalıyor. Aynı glukoz düzeyinde nöronların glukoz kullanımı ise belirgin şekilde korunuyor. Bu fark en iyi hangi taşıyıcı özelliğiyle açıklanır?",
+    "options": [
+      "Kas hücresinde GLUT1'in sadece hipoglisemide çalışması",
+      "Adipoz ve iskelet kasında GLUT4 translokasyonunun insüline bağımlı olması",
+      "Nöronlarda glukozun yalnızca sodyumla birlikte taşınması",
+      "Karaciğerde GLUT4'ün insülin olmadan aktive olması",
+      "Eritrositte glukoz girişinin ATP gerektirmesi"
+    ],
+    "correct": 1,
+    "exp": "GLUT4 iskelet kası ve yağ dokusunda insülinle membrana taşınır. Beyin gibi bazı dokularda glukoz alımı insülinden büyük ölçüde bağımsız GLUT taşıyıcılarıyla sürer."
+  },
+  {
+    "id": 2341,
+    "ders": "Fizyoloji",
+    "konu": "Hücre Histolojisi ve Fizyolojisi",
+    "diff": 4,
+    "q": "Primer siliyer diskinezi düşünülen çocukta kronik sinüzit, bronşiektazi ve infertilite öyküsü dikkat çekiyor. Bu hastada solunum yollarındaki mukus temizliğinin bozulmasına en doğrudan yol açan defekt hangisidir?",
+    "options": [
+      "Aktin filamentlerinin Z çizgisine tutunamaması",
+      "Mikrotübül çiftlerinde dinein kol fonksiyonunun bozulması",
+      "Keratinin bazal membrana bağlanamaması",
+      "Kollajen tip IV sentezinin azalması",
+      "Elastinin fibrillin üzerinden düzenlenememesi"
+    ],
+    "correct": 1,
+    "exp": "Hareketli silyaların vuru hareketi mikrotübül-dinein sistemiyle sağlanır. Dinein kol defekti mukosiliyer klirensi ve sperm motilitesini bozar; Kartagener fenotipi görülebilir."
+  },
+  {
+    "id": 2342,
+    "ders": "Fizyoloji",
+    "konu": "Hücre Histolojisi ve Fizyolojisi",
+    "diff": 4,
+    "q": "Hipoglisemi sonrası glukagon düzeyi artan hastada hepatositlerde kısa sürede glikojen yıkımı başlıyor. Aynı reseptör ailesi üzerinden kalp hızını artıran katekolamin etkisi de oluşabiliyor. Bu yanıtta baskın ikinci haberci hangisidir?",
+    "options": [
+      "cGMP",
+      "cAMP",
+      "IP3 olmadan doğrudan nükleer reseptör aktivasyonu",
+      "Tirozin kinaz otofosforilasyonu",
+      "JAK-STAT aktivasyonu"
+    ],
+    "correct": 1,
+    "exp": "Glukagon ve beta-adrenerjik uyarı Gs üzerinden adenilat siklazı aktive eder; cAMP artar ve PKA aracılığıyla glikojenoliz gibi yanıtlar gelişir."
+  },
+  {
+    "id": 2343,
+    "ders": "Fizyoloji",
+    "konu": "Hücre Histolojisi ve Fizyolojisi",
+    "diff": 4,
+    "q": "Parathormon etkisiyle hedef hücre içinde kalsiyum sinyalinin arttığı ve protein kinaz C yolunun aktive olduğu bir yanıt izleniyor. Bu hücre içi olaylar en çok hangi sinyal yolu ile uyumludur?",
+    "options": [
+      "Gi aracılı adenilat siklaz inhibisyonu",
+      "Gq aracılı fosfolipaz C aktivasyonu ve IP3-DAG oluşumu",
+      "Ligand kapılı klor kanalı açılması",
+      "Steroid hormon reseptörünün DNA'ya bağlanması",
+      "Reseptör tirozin kinazın GLUT4'ü membrana taşıması"
+    ],
+    "correct": 1,
+    "exp": "Gq proteinleri fosfolipaz C'yi aktive eder. PIP2'den IP3 ve DAG oluşur; IP3 hücre içi Ca2+ artışını, DAG ise PKC aktivasyonunu sağlar."
+  },
+  {
+    "id": 2344,
+    "ders": "Fizyoloji",
+    "konu": "Hücre Histolojisi ve Fizyolojisi",
+    "diff": 3,
+    "q": "Viral enfeksiyon sonrası gereksiz inflamasyon gelişmeden, tek tek hücrelerin küçülerek parçalandığı ve makrofajlarca temizlendiği görülüyor. Bu hücresel ölüm şekli için en tipik özellik hangisidir?",
+    "options": [
+      "Membran bütünlüğünün erken kaybı ve yaygın nötrofil yanıtı",
+      "Kaspaz aktivasyonu ile programlı hücre ölümü",
+      "Lizozomal enzimlerin tüm dokuya yayılması",
+      "Sadece ATP tamamen bittikten sonra başlaması",
+      "Kompleman aktivasyonu olmadan gerçekleşememesi"
+    ],
+    "correct": 1,
+    "exp": "Apoptoz programlı hücre ölümüdür; kaspaz aktivasyonu, hücre büzüşmesi ve apoptotik cisimcikler görülür. Membran bütünlüğü korunduğu için inflamasyon belirgin değildir."
+  },
+  {
+    "id": 2345,
+    "ders": "Fizyoloji",
+    "konu": "Hücre Histolojisi ve Fizyolojisi",
+    "diff": 5,
+    "q": "Kalp kasında komşu hücrelerin senkron kasılmasını sağlayan elektriksel bağlantı bozulduğunda iletim yavaşlıyor. Bu işlevi sağlayan hücre bağlantısı aşağıdakilerden hangisidir?",
+    "options": [
+      "Desmozom",
+      "Hemidesmozom",
+      "Gap junction",
+      "Tight junction",
+      "Fokal adezyon"
+    ],
+    "correct": 2,
+    "exp": "Gap junctionlar iyonların hücreler arasında doğrudan geçişine izin verir. Kalp kasında interkale disklerdeki gap junctionlar elektriksel eşleşmeyi sağlar."
+  },
+  {
+    "id": 2346,
+    "ders": "Fizyoloji",
+    "konu": "Doku Histolojisi ve Fizyolojisi",
+    "diff": 3,
+    "q": "İnce bağırsak epitelinde lümen içeriğinin hücreler arasından serbest geçişi engelleniyor. Bu bariyerin bozulması durumunda paracellular geçirgenliğin artması beklenir. İlgili bağlantı kompleksi hangisidir?",
+    "options": [
+      "Desmozom",
+      "Zonula occludens",
+      "Hemidesmozom",
+      "Gap junction",
+      "Fokal adezyon"
+    ],
+    "correct": 1,
+    "exp": "Zonula occludens, yani tight junction, epitel hücreleri arasında paracellular geçişi sınırlar ve hücre polaritesinin korunmasına katkı verir."
+  },
+  {
+    "id": 2347,
+    "ders": "Fizyoloji",
+    "konu": "Doku Histolojisi ve Fizyolojisi",
+    "diff": 4,
+    "q": "Osteogenezis imperfekta tanılı çocukta tekrarlayan kırıklar ve mavi sklera var. Bu hastada en çok etkilenen bağ dokusu proteini hangisidir?",
+    "options": [
+      "Tip I kollajen",
+      "Tip II kollajen",
+      "Tip IV kollajen",
+      "Elastin",
+      "Fibronektin"
+    ],
+    "correct": 0,
+    "exp": "Kemik, tendon, dermis ve sklerada başlıca tip I kollajen bulunur. Osteogenezis imperfektada tip I kollajen kusuru kırık eğilimi ve mavi skleraya yol açar."
+  },
+  {
+    "id": 2348,
+    "ders": "Fizyoloji",
+    "konu": "Doku Histolojisi ve Fizyolojisi",
+    "diff": 3,
+    "q": "Eklem kıkırdağı hasarı olan hastada iyileşmenin oldukça sınırlı olduğu belirtiliyor. Bu dokunun yavaş iyileşmesini en iyi açıklayan özellik hangisidir?",
+    "options": [
+      "Kıkırdak dokunun yüksek damar yoğunluğuna sahip olması",
+      "Kondrositlerin kanla doğrudan temas etmesi",
+      "Kıkırdak dokunun avasküler olması ve beslenmenin difüzyonla sağlanması",
+      "Kıkırdakta tip I kollajenin hiç bulunmaması",
+      "Sinovyal sıvının mitozu tamamen durdurması"
+    ],
+    "correct": 2,
+    "exp": "Kıkırdak avasküler bir dokudur. Kondrositler matriks içinde difüzyonla beslenir; bu nedenle rejenerasyon kapasitesi sınırlıdır."
+  },
+  {
+    "id": 2349,
+    "ders": "Fizyoloji",
+    "konu": "Doku Histolojisi ve Fizyolojisi",
+    "diff": 4,
+    "q": "Yanık sonrası iyileşen dokuda başlangıçta zayıf granülasyon dokusu oluşuyor, zamanla skar dokusunun dayanıklılığı artıyor. Bu süreçte erken dönemde daha fazla olup sonradan yerini daha güçlü kollajene bırakan tip hangisidir?",
+    "options": [
+      "Tip I kollajen",
+      "Tip II kollajen",
+      "Tip III kollajen",
+      "Tip IV kollajen",
+      "Tip VII kollajen"
+    ],
+    "correct": 2,
+    "exp": "Yara iyileşmesinin erken döneminde granülasyon dokusunda tip III kollajen artar. Zamanla tip I kollajen birikimi artar ve skar dayanıklılığı yükselir."
+  },
+  {
+    "id": 2350,
+    "ders": "Fizyoloji",
+    "konu": "Kas Dokusu HistoFizyolojisi",
+    "diff": 4,
+    "q": "Yoğun egzersizde iskelet kası lifinde aksiyon potansiyeli T-tübül boyunca ilerliyor ve kasılma başlıyor. Aktin-miyozin etkileşimini doğrudan başlatan olay hangisidir?",
+    "options": [
+      "Kalsiyumun troponin C'ye bağlanarak tropomiyozin blokajını kaldırması",
+      "Asetilkolinin doğrudan miyozin başını fosforile etmesi",
+      "Sodyumun sarkoplazmik retikuluma bağlanması",
+      "ATP'nin aktine kalıcı bağlanması",
+      "Klorun T-tübülden hücre dışına çıkması"
+    ],
+    "correct": 0,
+    "exp": "İskelet kasında SR'den salınan Ca2+ troponin C'ye bağlanır. Tropomiyozin aktin üzerindeki miyozin bağlanma bölgelerinden çekilir ve çapraz köprü döngüsü başlar."
+  },
+  {
+    "id": 2351,
+    "ders": "Fizyoloji",
+    "konu": "Kas Dokusu HistoFizyolojisi",
+    "diff": 4,
+    "q": "Bağırsak düz kasında parasempatik uyarı sonrası tonus artıyor. Bu kasılmada kalsiyumun bağlandığı ve miyozin hafif zincir kinazını aktive eden protein hangisidir?",
+    "options": [
+      "Troponin C",
+      "Kalmodulin",
+      "Distrofin",
+      "Nebulin",
+      "Titin"
+    ],
+    "correct": 1,
+    "exp": "Düz kasta troponin yoktur. Ca2+ kalmoduline bağlanır; Ca-kalmodulin kompleksi MLCK'yi aktive eder ve miyozin hafif zinciri fosforile edilerek kasılma başlar."
+  },
+  {
+    "id": 2352,
+    "ders": "Fizyoloji",
+    "konu": "Kas Dokusu HistoFizyolojisi",
+    "diff": 5,
+    "q": "Malign hipertermi yatkınlığı olan hastada halotan sonrası hızla kas rijiditesi, hipertermi ve metabolik asidoz gelişiyor. Bu tabloda iskelet kası içinde kontrolsüz artan iyon hangisidir?",
+    "options": [
+      "Sodyum",
+      "Potasyum",
+      "Kalsiyum",
+      "Klor",
+      "Magnezyum"
+    ],
+    "correct": 2,
+    "exp": "Malign hipertermide ryanodin reseptörüyle ilişkili kontrolsüz SR kalsiyum salınımı olur. Sürekli kas kontraksiyonu, ATP tüketimi, ısı artışı ve asidoz gelişir."
+  },
+  {
+    "id": 2353,
+    "ders": "Fizyoloji",
+    "konu": "Kas Dokusu HistoFizyolojisi",
+    "diff": 4,
+    "q": "Ölümden birkaç saat sonra kaslarda rijidite gelişiyor. ATP üretiminin durmasıyla çapraz köprü döngüsünde hangi basamak aksar?",
+    "options": [
+      "Miyozinin aktinden ayrılması",
+      "Kalsiyumun troponine bağlanması",
+      "Aksiyon potansiyelinin T-tübüle ulaşması",
+      "Asetilkolinin sinaptik aralığa salınması",
+      "Tropomiyozinin aktini örtmesi"
+    ],
+    "correct": 0,
+    "exp": "ATP, miyozin başının aktinden ayrılması için gereklidir. ATP yokluğunda aktin-miyozin köprüleri ayrılamaz ve rigor mortis gelişir."
+  },
+  {
+    "id": 2354,
+    "ders": "Fizyoloji",
+    "konu": "Kas Dokusu HistoFizyolojisi",
+    "diff": 4,
+    "q": "Myastenia gravisli bir hastada tekrarlayan bakış yukarı testinde pitoz belirginleşiyor. Bu bulgunun temel nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Motor nöronların tamamen kaybı",
+      "Nöromüsküler kavşakta güvenlik faktörünün azalması",
+      "Kas hücresinde distrofın sentezinin artması",
+      "Presinaptik asetilkolin sentezinin kalıcı olarak durması",
+      "Kas iğciğinde Ia afferent aktivitesinin artması"
+    ],
+    "correct": 1,
+    "exp": "Myastenia graviste postsinaptik nikotinik ACh reseptörleri azalır. Tekrarlayan kullanımda uç plak potansiyeli eşik altına düşer ve fatigabilite ortaya çıkar."
+  },
+  {
+    "id": 2355,
+    "ders": "Fizyoloji",
+    "konu": "Kas Dokusu HistoFizyolojisi",
+    "diff": 3,
+    "q": "Botulinum toksini maruziyeti sonrası diplopi, disfaji ve simetrik güçsüzlük gelişen hastada refleksler azalıyor. Nöromüsküler kavşakta beklenen temel bozukluk hangisidir?",
+    "options": [
+      "Asetilkolin reseptörlerinin aşırı uyarılması",
+      "Presinaptik veziküllerden asetilkolin salınımının engellenmesi",
+      "Asetilkolinesterazın geri dönüşsüz inhibisyonu",
+      "Miyozin ATPaz aktivitesinin artması",
+      "Kas sarkolemmasında potasyum kanallarının kapanması"
+    ],
+    "correct": 1,
+    "exp": "Botulinum toksini SNARE proteinlerini etkileyerek presinaptik ACh salınımını engeller. Sonuçta flask paralizi gelişir."
+  },
+  {
+    "id": 2356,
+    "ders": "Fizyoloji",
+    "konu": "Kas Dokusu HistoFizyolojisi",
+    "diff": 4,
+    "q": "Bir kas lifinde ardışık uyarılar gevşeme tamamlanmadan verildiğinde kasılma kuvveti giderek artıyor ve sürekli kasılmaya yaklaşıyor. Bu durum iskelet kasında hangi özellikle açıklanır?",
+    "options": [
+      "Aksiyon potansiyelinin çok uzun plato fazına sahip olması",
+      "Sarkoplazmada kalsiyumun tam uzaklaştırılamadan yeniden artması",
+      "Troponinin yalnızca tek uyarıda çalışması",
+      "Kas lifinin refrakter döneminin tüm kasılma süresinden uzun olması",
+      "Miyozin başlarının ATP'den bağımsız çalışması"
+    ],
+    "correct": 1,
+    "exp": "İskelet kasında aksiyon potansiyeli kısa, kasılma süresi daha uzundur. Ardışık uyarılarda Ca2+ birikimi olur, summasyon ve tetanus gelişebilir."
+  },
+  {
+    "id": 2357,
+    "ders": "Fizyoloji",
+    "konu": "Kas Dokusu HistoFizyolojisi",
+    "diff": 4,
+    "q": "Kalp kasında kasılma kuvveti hücre dışı kalsiyum değişikliklerinden iskelet kasına göre daha fazla etkileniyor. Bu farkın en önemli nedeni hangisidir?",
+    "options": [
+      "Kalp kasında troponin bulunmaması",
+      "Kalp kasında kalsiyumun önemli bölümünün L tipi kanallardan hücre içine girmesi ve SR salınımını tetiklemesi",
+      "Kalp kasında T-tübüllerin hiç bulunmaması",
+      "Kalp kasında aktin-miyozin etkileşiminin ATP gerektirmemesi",
+      "Kalp kasında sarkoplazmik retikulumun aşırı geniş olması"
+    ],
+    "correct": 1,
+    "exp": "Kalp kasında L tipi Ca2+ kanallarından hücre içine giren kalsiyum, ryanodin reseptörleri üzerinden SR'den kalsiyum salınımını tetikler. Bu nedenle ekstrasellüler Ca2+ önemlidir."
+  },
+  {
+    "id": 2358,
+    "ders": "Fizyoloji",
+    "konu": "Kas Dokusu HistoFizyolojisi",
+    "diff": 3,
+    "q": "Ağır bir yük kaldırılırken önce küçük motor üniteler, ihtiyaç arttıkça daha büyük motor üniteler devreye giriyor. Bu düzenlenmenin temel sonucu hangisidir?",
+    "options": [
+      "Kas gücünün kademeli ve kontrollü artırılması",
+      "Tüm liflerin aynı anda tetanik kasılması",
+      "Kasın oksijen kullanımının tamamen durması",
+      "Düz kasın iskelet kasına dönüşmesi",
+      "Motor nöron aksiyon potansiyelinin kaybolması"
+    ],
+    "correct": 0,
+    "exp": "Motor ünite recruitment sayesinde kas kuvveti ihtiyaca göre kademeli artırılır. Küçük, dayanıklı ünitelerden büyük ve güçlü ünitelere doğru katılım olur."
+  },
+  {
+    "id": 2359,
+    "ders": "Fizyoloji",
+    "konu": "Kas Dokusu HistoFizyolojisi",
+    "diff": 5,
+    "q": "İzole kas deneyinde kas çok kısa veya aşırı gerilmiş durumdayken maksimal uyarıya rağmen gerilim düşük ölçülüyor. Orta uzunlukta ise kuvvet en yüksek. Bu gözlem hangi ilişkiyle açıklanır?",
+    "options": [
+      "Uzunluk-gerilim ilişkisi",
+      "Frank-Starling yasasının yalnızca böbrekte görülmesi",
+      "Fick difüzyon kanunu",
+      "Laplace yasası",
+      "Henderson-Hasselbalch ilişkisi"
+    ],
+    "correct": 0,
+    "exp": "İskelet kasında optimal sarkomer uzunluğunda aktin-miyozin örtüşmesi en uygun olur ve maksimum aktif gerilim gelişir. Çok kısa veya çok uzun sarkomerde kuvvet azalır."
+  },
+  {
+    "id": 2360,
+    "ders": "Fizyoloji",
+    "konu": "Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "İnfertilite değerlendirmesinde sperm sayısı düşük olan erkekte FSH yüksek, testosteron ise normal sınıra yakın bulunuyor. FSH'nin spermatogenezi destekleyen başlıca hedef hücresi hangisidir?",
+    "options": [
+      "Leydig hücresi",
+      "Sertoli hücresi",
+      "Epididim epitel hücresi",
+      "Prostat stromal hücresi",
+      "Miyoid hücre"
+    ],
+    "correct": 1,
+    "exp": "FSH Sertoli hücrelerini uyarır; ABP üretimi ve spermatogenezin desteklenmesi bu hücreler üzerinden gerçekleşir. LH ise Leydig hücrelerinden testosteron sentezini artırır."
+  },
+  {
+    "id": 2361,
+    "ders": "Fizyoloji",
+    "konu": "Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Puberte sonrası testiste gelişen germ hücrelerini immün sistemden koruyan bariyer bozulursa antisperm antikor gelişebiliyor. Bu bariyeri oluşturan temel hücre bağlantıları hangi hücreler arasındadır?",
+    "options": [
+      "Leydig hücreleri arasında gap junctionlar",
+      "Sertoli hücreleri arasında tight junctionlar",
+      "Spermatidler arasında desmozomlar",
+      "Epididim hücreleri arasında hemidesmozomlar",
+      "Miyoid hücreler arasında zonula adherens"
+    ],
+    "correct": 1,
+    "exp": "Kan-testis bariyeri Sertoli hücreleri arasındaki tight junctionlarla oluşur. Gelişen germ hücrelerini immün sistemden ayırır."
+  },
+  {
+    "id": 2362,
+    "ders": "Fizyoloji",
+    "konu": "Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Ovulasyona yakın dönemde servikal mukus daha bol, berrak ve geçirgen hale geliyor. Aynı dönemde sperm geçişinin kolaylaşması en çok hangi hormonal ortamla uyumludur?",
+    "options": [
+      "Progesteron baskınlığı",
+      "Östrojen baskınlığı",
+      "Prolaktin baskınlığı",
+      "Kortizol baskınlığı",
+      "Aldosteron baskınlığı"
+    ],
+    "correct": 1,
+    "exp": "Östrojen ovulasyon öncesi servikal mukusu ince ve geçirgen hale getirir. Progesteron baskın olduğunda mukus daha koyu ve geçirgenliği düşük olur."
+  },
+  {
+    "id": 2363,
+    "ders": "Fizyoloji",
+    "konu": "Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Düzenli siklusu olan kadında ovulasyon sonrası endometrium bezleri kıvrımlı, sekresyonu artmış ve stromada ödem belirgin görülüyor. Bu histolojik görünüm en çok hangi hormonun etkisini gösterir?",
+    "options": [
+      "FSH",
+      "LH",
+      "Progesteron",
+      "İnhibin B",
+      "GnRH"
+    ],
+    "correct": 2,
+    "exp": "Ovulasyon sonrası korpus luteumdan salgılanan progesteron endometriumda sekretuar fazı oluşturur. Bezler kıvrımlanır, sekresyon ve stromal ödem artar."
+  },
+  {
+    "id": 2364,
+    "ders": "Fizyoloji",
+    "konu": "Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Sperm kadın genital kanalında bir süre kaldıktan sonra zona pellucidaya bağlanma ve akrozomal reaksiyon kapasitesi kazanıyor. Bu işlevsel olgunlaşma en iyi hangi süreçle tanımlanır?",
+    "options": [
+      "Kapazitasyon",
+      "Gastrulasyon",
+      "Kortikal reaksiyon",
+      "Dekidualizasyon",
+      "Segmentasyon"
+    ],
+    "correct": 0,
+    "exp": "Kapazitasyon, spermin kadın genital kanalında fertilizasyon yeteneğini kazanmasıdır. Membran özellikleri değişir ve akrozomal reaksiyon için uygun hale gelir."
+  },
+  {
+    "id": 2365,
+    "ders": "Fizyoloji",
+    "konu": "Genital Sistem HistoFizyolojisi",
+    "diff": 3,
+    "q": "Doğum sonrası emzirme sırasında bebek memeyi emdiğinde süt kanallara doğru itiliyor. Süt üretimi normal olsa da bu refleks bozulursa süt boşalması azalır. Bu refleksi başlatan hormon hangisidir?",
+    "options": [
+      "Prolaktin",
+      "Oksitosin",
+      "FSH",
+      "Kortizol",
+      "Tiroksin"
+    ],
+    "correct": 1,
+    "exp": "Prolaktin süt üretimini artırır; oksitosin ise meme mioepitelyal hücrelerini kasarak süt ejeksiyonunu sağlar."
+  },
+  {
+    "id": 2366,
+    "ders": "Fizyoloji",
+    "konu": "Genital Sistem HistoFizyolojisi",
+    "diff": 5,
+    "q": "Uzun süreli düşük kalorili diyet yapan genç kadında amenore gelişiyor, gonadotropinler düşük bulunuyor. Bu tablo hangi fizyolojik düzenlenmenin baskılanmasıyla en iyi açıklanır?",
+    "options": [
+      "Sürekli yüksek frekanslı GnRH salınımı",
+      "Hipotalamik pulsatil GnRH salınımının azalması",
+      "Ovaryan aromataz aktivitesinin aşırı artması",
+      "Korpus luteumun kalıcı olarak büyümesi",
+      "Endometriumun progesterondan bağımsız sekresyona geçmesi"
+    ],
+    "correct": 1,
+    "exp": "Enerji yetersizliği ve stres hipotalamik pulsatil GnRH salınımını baskılayabilir. LH/FSH düşer, ovulasyon bozulur ve hipotalamik amenore gelişir."
+  },
+  {
+    "id": 2367,
+    "ders": "Fizyoloji",
+    "konu": "Genel Embriyoloji",
+    "diff": 4,
+    "q": "Gebeliğin 5. haftasında yüksek doz teratojen maruziyeti olan gebeye organ gelişimi açısından riskin yüksek olduğu söyleniyor. Bu dönemin özellikle riskli olmasının nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "İmplantasyonun henüz hiç başlamamış olması",
+      "Organogenez döneminde doku ve organ taslaklarının oluşması",
+      "Fetal büyümenin tamamlanmış olması",
+      "Plasentanın artık hiçbir maddeyi geçirmemesi",
+      "Tüm embriyonik hücrelerin totipotent kalması"
+    ],
+    "correct": 1,
+    "exp": "Gebeliğin 3-8. haftaları organogenez açısından kritik dönemdir. Teratojen maruziyeti major yapısal anomalilere yol açabilir."
+  },
+  {
+    "id": 2368,
+    "ders": "Fizyoloji",
+    "konu": "Genel Embriyoloji",
+    "diff": 4,
+    "q": "Gastrulasyon kusuru olan embriyoda üç germ yaprağının düzenli oluşamadığı belirtiliyor. Bu süreçte embriyo epiblast hücrelerinden hangi temel tabakaları oluşturur?",
+    "options": [
+      "Sadece ektoderm ve trofoblast",
+      "Ektoderm, mezoderm ve endoderm",
+      "Amniyon, koryon ve desidua",
+      "Sinsityotrofoblast ve sitotrofoblast",
+      "Nöral krest ve notokord olmadan yalnız mezoderm"
+    ],
+    "correct": 1,
+    "exp": "Gastrulasyon epiblast hücrelerinden ektoderm, mezoderm ve endodermin oluştuğu temel süreçtir. Vücut planının ana eksenleri bu dönemde kurulur."
+  },
+  {
+    "id": 2369,
+    "ders": "Fizyoloji",
+    "konu": "Genel Embriyoloji",
+    "diff": 4,
+    "q": "Perikonsepsiyonel folat kullanmayan gebede fetüste nöral tüp defekti saptanıyor. Bu tip defektlerin önlenmesi için folatın en kritik olduğu olay hangisidir?",
+    "options": [
+      "Nöral tüp kapanması",
+      "Akciğer surfaktan sentezi",
+      "Böbreklerin idrar üretmeye başlaması",
+      "Testislerin skrotuma inişi",
+      "Süt dişlerinin mineralizasyonu"
+    ],
+    "correct": 0,
+    "exp": "Folat nöral tüp kapanması döneminde kritik önemdedir. Eksiklik spina bifida ve anensefali gibi nöral tüp defektleri riskini artırır."
+  },
+  {
+    "id": 2370,
+    "ders": "Fizyoloji",
+    "konu": "Genel Embriyoloji",
+    "diff": 3,
+    "q": "Ultrasonda aynı plasentayı paylaşan, fakat iki ayrı amniyon kesesi bulunan ikiz gebelik izleniyor. Bu durum en çok hangi ayrılma zamanı ile uyumludur?",
+    "options": [
+      "Fertilizasyondan önce iki ayrı oositin ovulasyonu",
+      "Blastokist döneminde iç hücre kitlesinin ayrılması",
+      "Amniyon oluştuktan sonra embriyonik diskin ayrılması",
+      "Gastrulasyon tamamlandıktan sonra ayrılma",
+      "Plasenta oluşmadan önce iki ayrı spermle tek oosit döllenmesi"
+    ],
+    "correct": 1,
+    "exp": "Monokoryonik-diamniyotik ikizlik genellikle blastokist döneminde, koryon oluştuktan sonra fakat amniyon oluşmadan önce iç hücre kitlesinin ayrılmasıyla gelişir."
+  },
+  {
+    "id": 2371,
+    "ders": "Fizyoloji",
+    "konu": "Genel Embriyoloji",
+    "diff": 4,
+    "q": "Erken gebelik testinin pozitifleşmesini sağlayan hormon implantasyondan sonra trofoblast tarafından salgılanır ve korpus luteumu destekler. Bu hormon hangisidir?",
+    "options": [
+      "Progesteron",
+      "hCG",
+      "FSH",
+      "Oksitosin",
+      "Prolaktin"
+    ],
+    "correct": 1,
+    "exp": "hCG sinsityotrofoblast tarafından salgılanır. LH benzeri etkiyle korpus luteumu sürdürür ve erken gebelikte progesteron üretiminin devamını sağlar."
+  },
+  {
+    "id": 2372,
+    "ders": "Fizyoloji",
+    "konu": "Hematopoetik Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Kronik akciğer hastalığı olan hastada hematokrit yüksek, eritropoietin düzeyi artmış bulunuyor. Eritropoietin salgısını en çok uyaran değişiklik hangisidir?",
+    "options": [
+      "Arteriyel oksijen içeriğinin azalmasına bağlı renal hipoksi sinyali",
+      "Serum sodyumunun yükselmesi",
+      "Portal ven basıncının artması",
+      "Plazma albümininin yükselmesi",
+      "Trombosit sayısının azalması"
+    ],
+    "correct": 0,
+    "exp": "EPO esas olarak böbrekte hipoksiye yanıt olarak artar. Doku oksijenlenmesi azaldığında eritropoez uyarılır ve retikülosit/eritrosit üretimi artar."
+  },
+  {
+    "id": 2373,
+    "ders": "Fizyoloji",
+    "konu": "Hematopoetik Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Ağır anemisi olan hastanın pulse oksimetresi %98 ölçülüyor; buna rağmen egzersizde çabuk yoruluyor. Bu bulgular birlikte nasıl açıklanır?",
+    "options": [
+      "Oksijen satürasyonu normal olsa da toplam oksijen içeriği hemoglobin azlığı nedeniyle düşüktür",
+      "Pulse oksimetre yalnız karbondioksiti ölçer",
+      "Anemide arteriyel PO2 daima sıfıra yaklaşır",
+      "Hemoglobin azaldığında oksijen dokulara daha fazla taşınır",
+      "Oksijen satürasyonu eritrosit sayısından bağımsız olarak klinik önem taşımaz"
+    ],
+    "correct": 0,
+    "exp": "Satürasyon mevcut hemoglobinin ne kadarının oksijenle dolu olduğunu gösterir. Anemide Hb miktarı azaldığı için arteriyel oksijen içeriği azalır; satürasyon normal görünebilir."
+  },
+  {
+    "id": 2374,
+    "ders": "Fizyoloji",
+    "konu": "Hematopoetik Sistem HistoFizyolojisi",
+    "diff": 5,
+    "q": "Yüksek irtifada birkaç gün kalan kişide hemoglobin-oksijen eğrisinin sağa kaydığı ve dokulara oksijen bırakılmasının kolaylaştığı görülüyor. Eritrositte artan hangi madde bu uyuma katkı verir?",
+    "options": [
+      "2,3-BPG",
+      "Ferritin",
+      "Haptoglobin",
+      "Transferrin",
+      "Hepsidin"
+    ],
+    "correct": 0,
+    "exp": "2,3-BPG deoksihemoglobine bağlanır ve Hb'nin oksijene afinitesini azaltır. Eğri sağa kayar, dokulara oksijen bırakılması kolaylaşır."
+  },
+  {
+    "id": 2375,
+    "ders": "Fizyoloji",
+    "konu": "Hematopoetik Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Von Willebrand hastalığı olan çocukta mukozal kanama ve uzamış kanama zamanı saptanıyor. Primer hemostazdaki temel kusur hangisidir?",
+    "options": [
+      "Trombositlerin subendotelyal kollajene adezyonunun azalması",
+      "Protrombinin trombine dönüşememesi",
+      "Fibrinojenin karaciğerde sentezlenememesi",
+      "Antitrombinin aşırı çalışması",
+      "Plazminojenin aktive olamaması"
+    ],
+    "correct": 0,
+    "exp": "vWF trombosit GpIb ile subendotelyal kollajen arasında köprü kurar. Eksikliğinde trombosit adezyonu bozulur ve mukokutanöz kanama eğilimi artar."
+  },
+  {
+    "id": 2376,
+    "ders": "Fizyoloji",
+    "konu": "Hematopoetik Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Akut inflamasyonu olan hastada eritrosit sedimantasyon hızı artıyor. Bu artışı en iyi açıklayan plazma değişikliği hangisidir?",
+    "options": [
+      "Fibrinojen artışıyla eritrositlerde rulo formasyonu gelişmesi",
+      "Albumin artışıyla eritrositlerin birbirinden uzaklaşması",
+      "Sodyum azalmasıyla eritrositlerin parçalanması",
+      "Trombosit azalmasıyla eritrositlerin ağırlaşması",
+      "Bilirubin artışıyla eritrositlerin yüzeye çıkması"
+    ],
+    "correct": 0,
+    "exp": "Fibrinojen ve bazı akut faz proteinleri eritrositlerin negatif yüzey yükünü azaltarak rouleaux oluşumunu artırır. Bu durum ESR artışına katkı verir."
+  },
+  {
+    "id": 2377,
+    "ders": "Fizyoloji",
+    "konu": "Hematopoetik Sistem HistoFizyolojisi",
+    "diff": 3,
+    "q": "Kemik iliği baskılanan hastada nötrofil sayısı hızla düşerken eritrosit sayısındaki azalma daha geç belirginleşiyor. Bu farkı en iyi açıklayan özellik hangisidir?",
+    "options": [
+      "Nötrofillerin dolaşımdaki yaşam süresinin eritrositlere göre kısa olması",
+      "Eritrositlerin çekirdekli olması",
+      "Nötrofillerin böbrekte üretilmesi",
+      "Eritrositlerin kemik iliğinde üretilmemesi",
+      "Nötrofillerin hemoglobin taşıması"
+    ],
+    "correct": 0,
+    "exp": "Nötrofillerin dolaşımdaki ömrü kısadır; üretim baskılanınca sayı hızlı düşer. Eritrositlerin yaşam süresi yaklaşık 120 gündür, azalma daha geç ortaya çıkar."
+  },
+  {
+    "id": 2378,
+    "ders": "Fizyoloji",
+    "konu": "Hematopoetik Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Yenidoğan döneminde hematopoez karaciğer ve dalaktan kemik iliğine kaymıştır. Fetal yaşamda hematopoezin ana sıra değişimi en doğru hangisidir?",
+    "options": [
+      "Kemik iliği → yolk sac → karaciğer",
+      "Yolk sac → karaciğer/dalak → kemik iliği",
+      "Dalak → böbrek → timus",
+      "Akciğer → karaciğer → kemik iliği",
+      "Timus → yolk sac → böbrek"
+    ],
+    "correct": 1,
+    "exp": "Embriyoda hematopoez önce yolk sac'ta başlar, sonra karaciğer ve dalakta devam eder, geç fetal dönemde kemik iliği ana hematopoetik organ haline gelir."
+  },
+  {
+    "id": 2379,
+    "ders": "Fizyoloji",
+    "konu": "Hematopoetik Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Demir eksikliğinde hem sentezi azalmasına rağmen eritropoietin artışı devam ediyor. Hem sentezi için demirin doğrudan yer aldığı son basamakta demir hangi yapıya eklenir?",
+    "options": [
+      "Protoporfirin IX",
+      "Globin zincirinin amino ucuna",
+      "Transferrin reseptörüne",
+      "Ferritinin ağır zincirine",
+      "Haptoglobinin bağlanma bölgesine"
+    ],
+    "correct": 0,
+    "exp": "Hemin son basamağında Fe2+ protoporfirin IX'a yerleştirilir. Demir eksikliğinde hem sentezi azalır ve mikrositer hipokromik eritrositler gelişir."
+  },
+  {
+    "id": 2380,
+    "ders": "Fizyoloji",
+    "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Peptik ülser nedeniyle asit sekresyonu artmış hastada gastrin yüksek saptanıyor. Gastrinin parietal hücre asit salgısını artırmasında en önemli ara hücrelerden biri hangisidir?",
+    "options": [
+      "D hücresi",
+      "ECL hücresi",
+      "Goblet hücresi",
+      "Paneth hücresi",
+      "I hücresi"
+    ],
+    "correct": 1,
+    "exp": "Gastrin doğrudan parietal hücreyi uyarabilir; ayrıca ECL hücrelerinden histamin salınımını artırır. Histamin H2 reseptörleri üzerinden asit sekresyonunu güçlendirir."
+  },
+  {
+    "id": 2381,
+    "ders": "Fizyoloji",
+    "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Yağlı yemek sonrası duodenuma geçen içerik safra kesesi kasılmasını ve pankreatik enzim salgısını artırıyor. Bu yanıtın başlıca hormonu hangisidir?",
+    "options": [
+      "Sekretin",
+      "Kolesistokinin",
+      "Motilin",
+      "Ghrelin",
+      "Somatostatin"
+    ],
+    "correct": 1,
+    "exp": "CCK duodenum ve jejunumdaki I hücrelerinden salgılanır; yağ ve aminoasitlerle artar. Safra kesesini kasar, Oddi sfinkterini gevşetir ve pankreatik enzim salgısını artırır."
+  },
+  {
+    "id": 2382,
+    "ders": "Fizyoloji",
+    "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Asidik kimus duodenuma geçtiğinde pankreastan bikarbonattan zengin sıvı salgısı artıyor. Bu yanıtı en çok uyaran hormon hangisidir?",
+    "options": [
+      "Sekretin",
+      "Gastrin",
+      "Motilin",
+      "GIP",
+      "VIP"
+    ],
+    "correct": 0,
+    "exp": "Duodenal S hücrelerinden salgılanan sekretin asidik içeriğe yanıt verir. Pankreas kanal hücrelerinden bikarbonattan zengin sıvı salgısını artırır."
+  },
+  {
+    "id": 2383,
+    "ders": "Fizyoloji",
+    "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Kısa barsak cerrahisi sonrası terminal ileumu çıkarılan hastada yağlı dışkılama ve safra tuzu kaybı gelişiyor. Safra tuzlarının fizyolojik geri emiliminin ana bölgesi neresidir?",
+    "options": [
+      "Mide fundusu",
+      "Duodenum",
+      "Terminal ileum",
+      "Çıkan kolon",
+      "Rektum"
+    ],
+    "correct": 2,
+    "exp": "Safra tuzları enterohepatik dolaşım içinde ağırlıklı olarak terminal ileumdan aktif şekilde geri emilir. İleum rezeksiyonunda safra tuzu kaybı ve steatore gelişebilir."
+  },
+  {
+    "id": 2384,
+    "ders": "Fizyoloji",
+    "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+    "diff": 5,
+    "q": "Kolera benzeri sulu ishalde oral rehidratasyon sıvısı verilince bağırsak su emilimi belirgin artıyor. Toksin sekresyonu sürse de bu tedavinin işe yaramasını sağlayan taşıma sistemi hangisidir?",
+    "options": [
+      "Na+-glukoz kotransportu",
+      "H+/K+ ATPaz",
+      "Na+/Ca2+ değiştirici",
+      "Cl-/HCO3- değişimi olmadan pasif klor geçişi",
+      "Sadece akvaporinlerden aktif su pompası"
+    ],
+    "correct": 0,
+    "exp": "SGLT1 aracılı Na+-glukoz kotransportu kolerada korunur. Sodyum ve glukoz emilimi suyun da emilmesini sağlar; oral rehidratasyonun temeli budur."
+  },
+  {
+    "id": 2385,
+    "ders": "Fizyoloji",
+    "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Pankreas ekzokrin yetmezliği olan hastada kilo kaybı, kötü kokulu yağlı dışkı ve yağda eriyen vitamin eksikliği gelişiyor. Bu tabloda eksikliği en belirleyici olan salgı hangisidir?",
+    "options": [
+      "Pepsinojen",
+      "Pankreatik lipaz",
+      "Tükürük amilazı",
+      "Gastrik mukus",
+      "Enterokinaz olmadan salgılanan histamin"
+    ],
+    "correct": 1,
+    "exp": "Yağ sindirimi pankreatik lipaz ve safra tuzlarına bağımlıdır. Ekzokrin pankreas yetmezliğinde lipaz eksikliği steatoreye ve ADEK vitamini eksikliklerine yol açar."
+  },
+  {
+    "id": 2386,
+    "ders": "Fizyoloji",
+    "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Pernisiyöz anemide gastrik parietal hücre hasarı olan hastada B12 eksikliği gelişiyor. B12'nin ileumdan emilebilmesi için gerekli mide kaynaklı protein hangisidir?",
+    "options": [
+      "Pepsin",
+      "İntrinsik faktör",
+      "Gastrin",
+      "Tripsinojen",
+      "Haptokorrin olmadan parietal lipaz"
+    ],
+    "correct": 1,
+    "exp": "İntrinsik faktör parietal hücrelerden salgılanır ve B12'nin terminal ileumdan emilimi için gereklidir. Eksikliğinde megaloblastik anemi ve nörolojik bulgular gelişebilir."
+  },
+  {
+    "id": 2387,
+    "ders": "Fizyoloji",
+    "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Açlık döneminde bağırsakta aralıklı güçlü peristaltik dalgalarla lümen temizliği sağlanıyor. Yemek yenince bu dalgalar baskılanıyor. Bu hareket paterni en çok hangi hormonla ilişkilidir?",
+    "options": [
+      "Motilin",
+      "Sekretin",
+      "Kolesistokinin",
+      "Gastrin",
+      "İnsülin"
+    ],
+    "correct": 0,
+    "exp": "Motilin açlıkta migrating motor complex'i uyarır. Bu kompleks mide ve ince bağırsak içeriğinin temizlenmesine katkı sağlar."
+  },
+  {
+    "id": 2388,
+    "ders": "Fizyoloji",
+    "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Yağlı yemek sonrası midenin boşalması belirgin yavaşlıyor. Bu gecikme duodenuma aşırı asit ve yağ geçişini sınırlayan hangi yanıtla en iyi açıklanır?",
+    "options": [
+      "Enterogastrik inhibisyon",
+      "Gastroileal refleksin tamamen durması",
+      "Rektosigmoid refleks",
+      "Mass hareketlerin artması",
+      "Yutma refleksinin kapanması"
+    ],
+    "correct": 0,
+    "exp": "Duodenumdaki yağ, asit ve hipertonik içerik enterogastrik refleksler ve hormonlar aracılığıyla gastrik boşalmayı yavaşlatır. Böylece duodenum korunur ve sindirim dengelenir."
+  },
+  {
+    "id": 2389,
+    "ders": "Fizyoloji",
+    "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+    "diff": 3,
+    "q": "Süt içtikten sonra şişkinlik, kramp ve sulu ishal gelişen hastanın dışkısında pH düşük bulunuyor. Bu tablo en çok hangi fizyolojik sonuçla uyumludur?",
+    "options": [
+      "Laktaz eksikliğine bağlı emilemeyen karbonhidratların osmotik yük oluşturması",
+      "Safra tuzlarının mide içinde aşırı emilmesi",
+      "Parietal hücrelerden lipaz salgısının artması",
+      "İnce bağırsakta protein emiliminin tamamen durması",
+      "Kolonda suyun aktif olarak lümene pompalanması olmadan hiperozmolalite oluşmaması"
+    ],
+    "correct": 0,
+    "exp": "Laktaz eksikliğinde laktoz emilemez; lümende osmotik yük oluşturur ve bakteriyel fermantasyonla asidik dışkı, gaz ve ishal gelişir."
+  },
+  {
+    "id": 2390,
+    "ders": "Fizyoloji",
+    "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Demir eksikliği anemisi olan hastada emilim bozukluğu araştırılıyor. Diyet demirinin en yoğun emildiği gastrointestinal bölge hangisidir?",
+    "options": [
+      "Mide antrumu",
+      "Duodenum ve proksimal jejunum",
+      "Terminal ileum",
+      "Transvers kolon",
+      "Rektum"
+    ],
+    "correct": 1,
+    "exp": "Demir emilimi ağırlıklı olarak duodenum ve proksimal jejunumda olur. Asidik ortam ve C vitamini non-hem demir emilimini kolaylaştırır."
+  },
+  {
+    "id": 2391,
+    "ders": "Fizyoloji",
+    "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Uzun zincirli yağ asitlerinden zengin öğün sonrası enterosit içinde trigliserid paketleniyor ve başlangıçta portal ven yerine lenfatik yolla taşınıyor. Bu taşıyıcı parçacık hangisidir?",
+    "options": [
+      "Şilomikron",
+      "VLDL",
+      "HDL",
+      "Albumine bağlı serbest yağ asidi",
+      "IDL"
+    ],
+    "correct": 0,
+    "exp": "Enterositlerde uzun zincirli yağ asitleri trigliseride çevrilir ve şilomikronlarla paketlenir. Şilomikronlar laktealler üzerinden lenfe geçer."
+  },
+  {
+    "id": 2392,
+    "ders": "Fizyoloji",
+    "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+    "diff": 5,
+    "q": "VIP salgılayan tümörü olan hastada bol sulu ishal, hipokalemi ve aklorhidri gelişiyor. Bu hastada bağırsak lümenine artan ana sekresyon hangisidir?",
+    "options": [
+      "Klor ve su sekresyonu",
+      "Demir emilimi",
+      "Safra asidi emilimi",
+      "Pepsinojen aktivasyonu",
+      "Kolesterol esterifikasyonu"
+    ],
+    "correct": 0,
+    "exp": "VIP intestinal klor ve su sekresyonunu artırır, gastrik asit sekresyonunu azaltır. VIPoma WDHA sendromuna yol açabilir."
+  },
+  {
+    "id": 2393,
+    "ders": "Fizyoloji",
+    "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Tükürük bezi kanallarından geçen salgının son hali plazmaya göre hipotonik hale geliyor. Bunun nedeni en iyi nasıl açıklanır?",
+    "options": [
+      "Duktus hücrelerinin NaCl reabsorbe edip suya görece geçirgen olmaması",
+      "Asinus hücrelerinin yalnız saf su salgılaması",
+      "Tükürükte potasyumun hiç bulunmaması",
+      "Duktusların suyu aktif olarak lümene pompalaması",
+      "Amilazın sodyumu bağlayıp lümende tutması"
+    ],
+    "correct": 0,
+    "exp": "Tükürük primer olarak izotonik salgılanır. Duktuslarda Na+ ve Cl- geri emilir, su geçirgenliği sınırlı olduğu için son salgı hipotonik olur."
+  },
+  {
+    "id": 2394,
+    "ders": "Fizyoloji",
+    "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Rektuma dışkı dolmasıyla iç anal sfinkter gevşiyor, kişi uygun ortam yoksa dış anal sfinkteri istemli kasılı tutabiliyor. Dış anal sfinkterin kontrolü hangi sinir sistemi bileşenine bağlıdır?",
+    "options": [
+      "Otonom parasempatik sistem",
+      "Somatik pudendal sinir kontrolü",
+      "Sadece enterik pleksus",
+      "Vagal efferentler",
+      "Sempatik splanknik lifler"
+    ],
+    "correct": 1,
+    "exp": "Dış anal sfinkter çizgili kastır ve pudendal sinir aracılığıyla somatik istemli kontrol altındadır. İç anal sfinkter otonom kontrolle gevşer/kasılır."
+  },
+  {
+    "id": 2395,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Septik olmayan kan kaybı sonrası venöz dönüşü artırmak için sıvı verilen hastada sol ventrikül diyastol sonu hacmi artıyor ve atım hacmi yükseliyor. Bu yanıt en iyi hangi ilkeyle açıklanır?",
+    "options": [
+      "Frank-Starling ilişkisi",
+      "Laplace yasasının alveoldeki etkisi",
+      "Bohr etkisi",
+      "Gibbs-Donnan dengesi",
+      "Hering-Breuer refleksi"
+    ],
+    "correct": 0,
+    "exp": "Venöz dönüş ve preload arttığında sarkomer uzunluğu optimal aralığa yaklaşır; kasılma kuvveti ve atım hacmi artar. Bu Frank-Starling mekanizmasıdır."
+  },
+  {
+    "id": 2396,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Ayağa kalkınca kısa süreli baş dönmesi olan sağlıklı kişide birkaç saniye içinde kalp hızı ve periferik direnç artıyor. Bu hızlı kompansasyonu başlatan reseptörler nerede bulunur?",
+    "options": [
+      "Karotis sinüsü ve aort kavsi",
+      "Renal medulla",
+      "Adrenal korteks",
+      "Hipofiz arka lobu",
+      "Pulmoner alveol duvarı"
+    ],
+    "correct": 0,
+    "exp": "Arteriyel baroreseptörler karotis sinüsü ve aort kavsindedir. Basınç düşünce afferent ateşleme azalır; sempatik tonus artar, parasempatik tonus azalır."
+  },
+  {
+    "id": 2397,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 5,
+    "q": "Aort darlığı olan hastada sol ventrikül basıncı artmış, atım hacmi azalmış ve sistol süresi uzamış bulunuyor. Basınç-hacim eğrisinde beklenen temel değişiklik hangisidir?",
+    "options": [
+      "Afterload artışıyla end-sistolik hacmin artması",
+      "Preload sıfıra indiği için diyastolik dolumun tamamen durması",
+      "İzovolümetrik kontraksiyon fazının kaybolması",
+      "Sol ventrikül basıncının hiç yükselmemesi",
+      "Atım hacminin afterload artışından bağımsız kalması"
+    ],
+    "correct": 0,
+    "exp": "Aort darlığında afterload artar. Ventrikül kanı atmakta zorlanır, end-sistolik hacim artar ve atım hacmi azalır."
+  },
+  {
+    "id": 2398,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 5,
+    "q": "Mitral yetmezliği olan hastanın basınç-hacim döngüsünde izovolümetrik kontraksiyon ve gevşeme fazlarının belirgin olmadığı görülüyor. Bu durumun nedeni hangisidir?",
+    "options": [
+      "Sistol ve diyastolde ventrikül hacminin hiç değişmemesi",
+      "Sol ventrikülün sistolde atriyuma, diyastolde atriyumdan ventriküle açık kaçak yolu bulması",
+      "Aort kapağının hiç açılmaması",
+      "Mitral kapağın tüm siklus boyunca kusursuz kapanması",
+      "Ventrikülün elektriksel aktivitesinin durması"
+    ],
+    "correct": 1,
+    "exp": "Mitral yetmezlikte ventrikül sistol sırasında atriyuma kan kaçırır. Hacim sabit kalmadığı için izovolümetrik fazlar kaybolur ya da belirgin azalır."
+  },
+  {
+    "id": 2399,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Derin inspirasyon sırasında sağ kalbe venöz dönüş artıyor ve ikinci kalp sesinde fizyolojik çiftleşme belirginleşiyor. Geciken bileşen hangisidir?",
+    "options": [
+      "Aort kapağı kapanması",
+      "Pulmoner kapak kapanması",
+      "Mitral kapak açılması",
+      "Triküspit kapak açılması",
+      "S1'in mitral bileşeni"
+    ],
+    "correct": 1,
+    "exp": "İnspirasyonda sağ ventrikül dolumu artar, sağ ventrikül ejeksiyonu uzar ve pulmoner kapak kapanması gecikir. S2 fizyolojik olarak geniş çiftleşir."
+  },
+  {
+    "id": 2400,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Sağlıklı kişide yoğun egzersiz sırasında sistolik basınç artarken diyastolik basınç aynı kalıyor veya hafif düşüyor. Bu tabloyu en iyi açıklayan periferik değişiklik hangisidir?",
+    "options": [
+      "Çalışan iskelet kasında arterioler vazodilatasyon",
+      "Böbrekte tüm arteriollerin tam kapanması",
+      "Serebral kan akımının tamamen durması",
+      "Koroner arterlerde vazokonstriksiyon",
+      "Toplam periferik direncin belirgin artması"
+    ],
+    "correct": 0,
+    "exp": "Egzersizde çalışan kaslarda metabolik vazodilatasyon olur; toplam periferik direnç azalabilir. Kardiyak debi arttığı için sistolik basınç yükselir, diyastolik basınç genelde belirgin yükselmez."
+  },
+  {
+    "id": 2401,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Kalp yetmezliği olan hastada ventrikül kompliyansı azalmış ve aynı dolum hacminde diyastol sonu basıncı daha yüksek ölçülüyor. Bu durum hangi ilişkiyi yansıtır?",
+    "options": [
+      "Azalmış ventrikül kompliyansı",
+      "Artmış venöz kapasitans",
+      "Azalmış afterload",
+      "Artmış kapiller onkotik basınç",
+      "Tamamen normal diyastolik fonksiyon"
+    ],
+    "correct": 0,
+    "exp": "Kompliyans, hacim değişiminin basınç değişimine oranıdır. Ventrikül sertleşirse aynı hacimde daha yüksek basınç oluşur; diyastolik dolum bozulur."
+  },
+  {
+    "id": 2402,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Nefrotik sendromlu hastada yaygın ödem var. Kapiller düzeyde interstisyuma sıvı geçişini artıran temel değişiklik hangisidir?",
+    "options": [
+      "Plazma onkotik basıncının azalması",
+      "Kapiller hidrostatik basıncın sıfıra inmesi",
+      "Lenf akımının aşırı artması",
+      "Eritrosit sayısının artması",
+      "Albumin artışına bağlı suyun damar içine çekilmesi"
+    ],
+    "correct": 0,
+    "exp": "Plazma albumini azalınca kapiller onkotik basınç düşer. Suyun damar içinde tutulması azalır ve ödem eğilimi artar."
+  },
+  {
+    "id": 2403,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 5,
+    "q": "Şiddetli kanama geçiren hastada ilk dakikalarda taşikardi, soğuk cilt ve dar nabız basıncı gelişiyor. Bu erken yanıtta baskın otonom değişiklik hangisidir?",
+    "options": [
+      "Sempatik aktivitenin artması ve venokonstriksiyon",
+      "Parasempatik aktivitenin artması ve periferik vazodilatasyon",
+      "Sempatik aktivitenin azalması ve bradikardi",
+      "Baroreseptör ateşlemesinin artmasıyla vazodilatasyon",
+      "Asetilkolin salınımının periferik damarları kasması"
+    ],
+    "correct": 0,
+    "exp": "Kan kaybında arteriyel basınç ve baroreseptör ateşlemesi azalır. Sempatik aktivite artar; taşikardi, kontraktilite artışı, venokonstriksiyon ve arterioler vazokonstriksiyon gelişir."
+  },
+  {
+    "id": 2404,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Koroner kan akımı özellikle sol ventrikülde sistolde azalır, diyastolde artar. Bunun nedeni en iyi nasıl açıklanır?",
+    "options": [
+      "Sistolde intramiyokardiyal damarların kasılan miyokard tarafından sıkıştırılması",
+      "Diyastolde aort basıncının sıfıra düşmesi",
+      "Koroner arterlerin sadece inspirasyonda açık kalması",
+      "Sistolde oksijen ihtiyacının tamamen kaybolması",
+      "Aort kapağı kapalıyken koroner ostiumların kapanması"
+    ],
+    "correct": 0,
+    "exp": "Sol ventrikül sistolünde yüksek intramiyokardiyal basınç koroner damarları sıkıştırır. Bu nedenle sol koroner perfüzyonun büyük kısmı diyastolde gerçekleşir."
+  },
+  {
+    "id": 2405,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "SA nod hücrelerinde eşik değere doğru kendiliğinden yavaş depolarizasyon gelişmesi kalp otomatisitesini sağlar. Bu fazın en karakteristik akımı hangisidir?",
+    "options": [
+      "Funny Na+ akımı",
+      "Hızlı voltaj kapılı Na+ akımı",
+      "Klorun ani hücre içine girişi",
+      "Miyozin hafif zincir fosforilasyonu",
+      "Sadece potasyum çıkışı"
+    ],
+    "correct": 0,
+    "exp": "SA nod faz 4 depolarizasyonunda If, yani funny akımı önemlidir. Ayrıca Ca2+ akımları ve K+ iletkenliğinin azalması da pacemaker aktivitesine katkı verir."
+  },
+  {
+    "id": 2406,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Ventrikül kası aksiyon potansiyelinde plato fazı sayesinde kasılma süresi uzar ve tetani gelişmez. Plato fazında baskın olan iyon hareketi hangisidir?",
+    "options": [
+      "L tipi kalsiyum kanallarından Ca2+ girişi",
+      "Hızlı sodyum kanallarından sürekli Na+ girişi",
+      "Klorun hücre dışına çıkışı",
+      "Magnezyumun aktif pompalanması",
+      "Sodyum-potasyum pompasının tek başına durması"
+    ],
+    "correct": 0,
+    "exp": "Ventrikül kasında faz 2 plato L tipi Ca2+ girişi ve K+ çıkışı arasındaki dengeyle oluşur. Uzun refrakter dönem tetaniyi engeller."
+  },
+  {
+    "id": 2407,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Ağır anemide kardiyak debi artmış, sistemik damar direnci azalmış bulunuyor. Bu yüksek debili dolaşım yanıtına katkı veren temel faktör hangisidir?",
+    "options": [
+      "Doku hipoksisine bağlı lokal vazodilatasyon ve kan viskozitesinde azalma",
+      "Hemoglobin artışına bağlı kan viskozitesinde yükselme",
+      "Baroreseptörlerin kalıcı olarak kapanması",
+      "Koroner kan akımının sıfırlanması",
+      "Venöz dönüşün tamamen durması"
+    ],
+    "correct": 0,
+    "exp": "Anemide oksijen taşıma kapasitesi azalır; dokularda metabolik vazodilatasyon gelişir. Kan viskozitesi de azalır, kardiyak debi kompansatuvar olarak artabilir."
+  },
+  {
+    "id": 2408,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Fick prensibiyle kardiyak debi hesaplanan hastada oksijen tüketimi biliniyor. Arteriyovenöz oksijen farkı artarsa, oksijen tüketimi sabitken hesaplanan kardiyak debi nasıl değişir?",
+    "options": [
+      "Azalır",
+      "Artar",
+      "Değişmez",
+      "Sıfır olur",
+      "Sadece nabız basıncıyla belirlenir"
+    ],
+    "correct": 0,
+    "exp": "Fick prensibine göre kardiyak debi = O2 tüketimi / arteriyovenöz O2 farkıdır. O2 tüketimi sabitken A-V fark artarsa hesaplanan debi azalır."
+  },
+  {
+    "id": 2409,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 5,
+    "q": "Valsalva manevrasının zorlu ekspirasyon fazında venöz dönüş azalır ve kısa süre sonra arter basıncı düşer. Sağlıklı kişide bu fazda beklenen refleks yanıt hangisidir?",
+    "options": [
+      "Taşikardi ve sempatik tonus artışı",
+      "Bradikardi ve vazodilatasyon",
+      "Atrial natriüretik peptid salınımının tek başına artması",
+      "Koroner akımın tamamen durması",
+      "Baroreseptör ateşlemesinin artması"
+    ],
+    "correct": 0,
+    "exp": "Valsalva sırasında intratorasik basınç artar, venöz dönüş ve atım hacmi azalır. Arter basıncı düşünce baroreseptör ateşlemesi azalır; refleks taşikardi ve sempatik aktivite artışı olur."
+  },
+  {
+    "id": 2410,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Tam AV blok gelişen hastada atriyum ve ventrikül birbirinden bağımsız hızlarda çalışıyor. Ventrikül kaçış ritminin daha yavaş olmasının nedeni hangisidir?",
+    "options": [
+      "Distal pacemaker hücrelerinin spontan depolarizasyon hızının SA noddan düşük olması",
+      "Purkinje liflerinde hiç otomatisite bulunmaması",
+      "AV nodun asetilkolin salgılaması",
+      "Atriyal kasın aksiyon potansiyeli üretememesi",
+      "Ventrikül kasının kalsiyum kullanmaması"
+    ],
+    "correct": 0,
+    "exp": "Kalbin pacemaker hiyerarşisinde SA nod en hızlı spontan depolarizasyon hızına sahiptir. Daha distal odakların intrinsik hızı daha düşüktür."
+  },
+  {
+    "id": 2411,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Hipertansiyonu olan hastada uzun süreli basınç yüküne bağlı sol ventrikül konsantrik hipertrofisi gelişiyor. Duvar gerilimini azaltmaya çalışan bu adaptasyon hangi fiziksel ilişkiyle açıklanabilir?",
+    "options": [
+      "Laplace yasası",
+      "Fick difüzyon yasası",
+      "Boyle yasası",
+      "Gibbs-Donnan dengesi",
+      "Michaelis-Menten kinetiği"
+    ],
+    "correct": 0,
+    "exp": "Laplace ilişkisine göre duvar gerilimi basınç ve yarıçapla artar, duvar kalınlığıyla azalır. Basınç yükünde konsantrik hipertrofi duvar gerilimini azaltmaya yönelik adaptasyondur."
+  },
+  {
+    "id": 2412,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Atrial gerilimi artan hastada sodyum atılımını artıran ve renin-anjiyotensin-aldosteron sistemini baskılayan hormon salınıyor. Bu hormon hangisidir?",
+    "options": [
+      "ANP",
+      "ADH",
+      "Eritropoietin",
+      "Kortizol",
+      "Glukagon"
+    ],
+    "correct": 0,
+    "exp": "Atriyal natriüretik peptid atriyal gerilmeyle salınır. Natriürez ve diürez yapar, renin ve aldosteron etkilerini baskılar."
+  },
+  {
+    "id": 2413,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 5,
+    "q": "Pulmoner kapiller kama basıncı yüksek olan hastada akciğer ödemi gelişiyor. Bu ölçüm klinikte hangi basınca yaklaşık bilgi verir?",
+    "options": [
+      "Sol atriyum basıncı",
+      "Sağ atriyum basıncı",
+      "Aort sistolik basıncı",
+      "İntrakraniyal basınç",
+      "Portal ven basıncı"
+    ],
+    "correct": 0,
+    "exp": "Pulmoner kapiller wedge basıncı, mitral kapak darlığı gibi engel yoksa sol atriyum basıncını ve sol ventrikül dolum basıncını yaklaşık yansıtır."
+  },
+  {
+    "id": 2414,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Sıcak ortamda uzun süre ayakta kalan kişide cilt damarlarında genişleme ve venöz göllenme sonrası senkop gelişiyor. İlk hemodinamik bozulma en iyi hangisidir?",
+    "options": [
+      "Venöz dönüş ve preload azalması",
+      "Sol ventrikül afterloadının aşırı artması",
+      "Pulmoner vasküler direncin sıfırlanması",
+      "Koroner perfüzyonun yalnız sistolde artması",
+      "Eritrosit oksijen afinitesinin kaybolması"
+    ],
+    "correct": 0,
+    "exp": "Ayakta durma ve sıcaklık venöz göllenmeyi artırır. Venöz dönüş azalınca preload, atım hacmi ve serebral perfüzyon düşebilir."
+  },
+  {
+    "id": 2415,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Kılcal damarların arteriyel ucunda filtrasyon, venöz ucunda ise geri emilim eğilimi daha fazladır. Arteriyel uçta filtrasyonu artıran ana kuvvet hangisidir?",
+    "options": [
+      "Kapiller hidrostatik basınç",
+      "Plazma onkotik basıncı",
+      "İnterstisyel proteinlerin tamamen yokluğu",
+      "Lenfatik pompa basıncı",
+      "Eritrosit içi ozmotik basınç"
+    ],
+    "correct": 0,
+    "exp": "Kapiller hidrostatik basınç sıvıyı damar dışına iter. Plazma onkotik basıncı ise sıvıyı damar içine çekme yönünde etkilidir."
+  },
+  {
+    "id": 2416,
+    "ders": "Fizyoloji",
+    "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Hipertrofik kardiyomiyopatili hastada sol ventrikül diyastolik dolumu zorlaşıyor. Atriyal katkının kaybı sonrası semptomların artması en çok hangi nedenle beklenir?",
+    "options": [
+      "Sert ventrikülde geç diyastolik atriyal dolumun önem kazanması",
+      "Atriyum kasının kan oksijenlemesini sağlaması",
+      "Ventrikülün sadece sistolde dolması",
+      "Mitral kapağın atriyum kasılmadan hiç açılamaması",
+      "Koroner akımın atriyum kasılmasına bağımlı olması"
+    ],
+    "correct": 0,
+    "exp": "Kompliyansı azalmış ventrikülde atriyal sistol diyastolik doluma önemli katkı sağlar. Atriyal fibrilasyon gibi durumlarda bu katkı kaybolunca semptomlar artabilir."
+  },
+  {
+    "id": 2417,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Uzun açlık sonrası hastada glukagon artmış, insülin baskılanmış bulunuyor. Karaciğerde kan glukozunu korumaya en erken katkı veren süreç hangisidir?",
+    "options": [
+      "Glikojenoliz",
+      "Yağ dokusunda GLUT4 translokasyonu",
+      "Kas glikojeninin kana doğrudan glukoz vermesi",
+      "İnce bağırsakta laktaz aktivasyonunun artması",
+      "Böbrekten glukoz atılımının artması"
+    ],
+    "correct": 0,
+    "exp": "Kısa süreli açlıkta karaciğer glikojenolizi kan glukozunu korur. Daha uzun açlıkta glukoneogenez ve ketogenez önem kazanır."
+  },
+  {
+    "id": 2418,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "İnsülin verildikten sonra iskelet kasında glukoz alımı artıyor. Bu etkinin hızlı başlamasını sağlayan temel hücresel olay hangisidir?",
+    "options": [
+      "GLUT4 veziküllerinin hücre membranına taşınması",
+      "GLUT2'nin kas hücresine yerleşmesi",
+      "Sodyum-glukoz kotransportunun böbrekte durması",
+      "Glukagon reseptörlerinin artması",
+      "Kortizol reseptörünün nükleustan çıkması"
+    ],
+    "correct": 0,
+    "exp": "İnsülin kas ve yağ dokusunda GLUT4 taşıyıcılarının membrana translokasyonunu sağlar. Böylece glukoz alımı hızlı artar."
+  },
+  {
+    "id": 2419,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Primer hiperparatiroidisi olan hastada serum kalsiyumu yüksek, fosforu düşük bulunuyor. PTH'nin böbrekte fosfor üzerindeki etkisi hangisidir?",
+    "options": [
+      "Proksimal tübülde fosfat geri emilimini azaltmak",
+      "Distal tübülde fosfat geri emilimini artırmak",
+      "Glomerülde fosfat filtrasyonunu tamamen durdurmak",
+      "Fosfatı albumine bağlamak",
+      "İnce bağırsakta fosfat salgısını artırmak"
+    ],
+    "correct": 0,
+    "exp": "PTH proksimal tübülde fosfat reabsorpsiyonunu azaltır; fosfatüri yapar. Kalsiyumu artırırken fosforu düşürebilir."
+  },
+  {
+    "id": 2420,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "D vitamini eksikliği olan çocukta hipokalsemi ve kemik mineralizasyon bozukluğu gelişiyor. Aktif D vitamininin bağırsaktaki temel etkisi hangisidir?",
+    "options": [
+      "Kalsiyum ve fosfat emilimini artırmak",
+      "Demir emilimini tamamen durdurmak",
+      "Safra asidi sentezini azaltmak",
+      "İnsülin reseptörünü bloke etmek",
+      "Kalsiyumu idrarla atmak"
+    ],
+    "correct": 0,
+    "exp": "Kalsitriol bağırsaktan kalsiyum ve fosfat emilimini artırır. Kemik mineralizasyonu için gerekli mineral dengesine katkı verir."
+  },
+  {
+    "id": 2421,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Gece uykusundan sonra sabah saatlerinde kortizol düzeyi fizyolojik olarak yükseliyor. Bu ritmi düzenleyen temel eksen hangisidir?",
+    "options": [
+      "Hipotalamus-hipofiz-adrenal eksen",
+      "Renin-anjiyotensin-aldosteron ekseni olmadan adrenal medulla",
+      "Hipotalamus-hipofiz-tiroid ekseninin doğrudan kortizol üretmesi",
+      "Ovaryum-korpus luteum ekseni",
+      "Pankreas adacıklarının ACTH salgılaması"
+    ],
+    "correct": 0,
+    "exp": "Kortizol CRH-ACTH-adrenal korteks ekseniyle düzenlenir ve sirkadiyen ritim gösterir. Sabah saatlerinde fizyolojik pik yapar."
+  },
+  {
+    "id": 2422,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Primer hipotiroidili hastada TSH yüksek, serbest T4 düşük bulunuyor. TSH yüksekliğini açıklayan geri bildirim değişikliği hangisidir?",
+    "options": [
+      "Tiroid hormonlarının hipofiz ve hipotalamus üzerindeki negatif geri bildiriminin azalması",
+      "T4'ün TSH reseptörünü doğrudan aktive etmesi",
+      "TRH'nin sadece tiroidden salgılanması",
+      "TSH'nin böbrekten atılımının artması",
+      "İyotun hipofizde depolanması"
+    ],
+    "correct": 0,
+    "exp": "Tiroid hormonları hipotalamus ve hipofiz üzerinde negatif geri bildirim yapar. Primer hipotiroidide T4 düşük olduğu için TSH artar."
+  },
+  {
+    "id": 2423,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Doğum sonrası süt üretimi yetersiz olan hastada hipofiz yetmezliği düşünülüyor. Süt üretimini başlatan ve sürdüren başlıca ön hipofiz hormonu hangisidir?",
+    "options": [
+      "Prolaktin",
+      "Oksitosin",
+      "ADH",
+      "Aldosteron",
+      "Kalsitonin"
+    ],
+    "correct": 0,
+    "exp": "Prolaktin ön hipofizden salgılanır ve süt üretimini uyarır. Oksitosin ise süt ejeksiyonundan sorumludur."
+  },
+  {
+    "id": 2424,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 5,
+    "q": "Normal siklusta ovulasyondan hemen önce LH pikinin oluşmasını sağlayan hormonal ortam hangisidir?",
+    "options": [
+      "Uzun süre yüksek seyreden östradiolün hipotalamus-hipofiz üzerine pozitif geri bildirimi",
+      "Progesteronun foliküler faz başında sürekli yüksek kalması",
+      "FSH'nin hipofizi tamamen baskılaması",
+      "Kortizolün GnRH reseptörünü uyarması",
+      "Prolaktinin dopamini artırması"
+    ],
+    "correct": 0,
+    "exp": "Foliküler fazın sonlarında yüksek ve sürekli östradiol pozitif geri bildirim yapar. Bu durum LH pikini ve ovulasyonu tetikler."
+  },
+  {
+    "id": 2425,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Granüloza hücrelerinde aromataz aktivitesi artınca östradiol sentezi yükseliyor. Bu hücrelerde aromatazı uyaran başlıca gonadotropin hangisidir?",
+    "options": [
+      "FSH",
+      "LH",
+      "hCG",
+      "ACTH",
+      "TSH"
+    ],
+    "correct": 0,
+    "exp": "İki hücre-iki gonadotropin modelinde LH teka hücrelerinde androjen üretimini artırır; FSH granüloza hücrelerinde aromatazı uyararak androjenlerden östradiol üretimini sağlar."
+  },
+  {
+    "id": 2426,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Erken gebelikte korpus luteumun devam etmesi progesteron düzeyini korur. Bu desteği sağlayan hormon hangisidir?",
+    "options": [
+      "hCG",
+      "FSH",
+      "Prolaktin",
+      "Kalsitonin",
+      "ADH"
+    ],
+    "correct": 0,
+    "exp": "hCG trofoblast kaynaklıdır ve LH benzeri etkiyle korpus luteumu sürdürür. Böylece erken gebelikte progesteron üretimi devam eder."
+  },
+  {
+    "id": 2427,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Primer adrenal yetmezlikte hiperkalemi ve hipotansiyon gelişen hastada eksik olan hormonun böbrekteki temel etkisi hangisidir?",
+    "options": [
+      "Distal nefronda sodyum geri emilimini ve potasyum sekresyonunu artırmak",
+      "Proksimal tübülde glukoz geri emilimini durdurmak",
+      "Glomerül filtrasyonunu tamamen kapatmak",
+      "Henle kulpunun inen kolunu suya geçirimsiz yapmak",
+      "Kalsiyumun bağırsaktan emilimini azaltmak"
+    ],
+    "correct": 0,
+    "exp": "Aldosteron distal nefron principal hücrelerinde Na+ geri emilimini ve K+ sekresyonunu artırır. Eksikliğinde hiperkalemi, tuz kaybı ve hipotansiyon gelişebilir."
+  },
+  {
+    "id": 2428,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Santral diabetes insipiduslu hastada çok su içme ve bol seyrek idrar var. Desmopressin sonrası idrar ozmolalitesi artıyor. Bu yanıt hangi reseptör etkisiyle oluşur?",
+    "options": [
+      "V2 reseptörü üzerinden toplayıcı kanalda aquaporin-2 yerleşimi",
+      "V1 reseptörü üzerinden glomerülde glukoz emilimi",
+      "Alfa-1 reseptörü üzerinden proksimal tübülde fosfat atılımı",
+      "Beta-2 reseptörü üzerinden Henle inen kolunda sodyum atılımı",
+      "Mineralokortikoid reseptörü üzerinden suyun aktif pompalanması"
+    ],
+    "correct": 0,
+    "exp": "ADH V2 reseptörleri üzerinden toplayıcı kanal principal hücrelerinde aquaporin-2 kanallarını apikal membrana taşır. Su geri emilimi artar, idrar konsantre olur."
+  },
+  {
+    "id": 2429,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "SIADH olan hastada hiponatremi, düşük serum ozmolalitesi ve uygunsuz yoğun idrar saptanıyor. Bu hastada su dengesindeki temel bozukluk hangisidir?",
+    "options": [
+      "Serbest su tutulumu",
+      "Zorunlu sodyum tutulumu",
+      "Glukozun idrarla aşırı atılması",
+      "Albumin sentezinin artması",
+      "Aldosteronun tamamen yokluğu"
+    ],
+    "correct": 0,
+    "exp": "SIADH'da ADH uygunsuz yüksek kalır; toplayıcı kanalda su geri emilimi artar. Serbest su tutulumu hiponatremiye ve yoğun idrara yol açar."
+  },
+  {
+    "id": 2430,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Menopozdaki kadında sıcak basmaları ve amenoreye eşlik eden laboratuvar değişikliği soruluyor. Primer ovaryan follikül tükenmesine bağlı beklenen gonadotropin paterni hangisidir?",
+    "options": [
+      "FSH yüksek, östradiol düşük",
+      "FSH düşük, östradiol yüksek",
+      "LH ve FSH tamamen baskılı, prolaktin düşük",
+      "TSH yüksek, FSH değişmez",
+      "hCG yüksek, progesteron yüksek"
+    ],
+    "correct": 0,
+    "exp": "Menopozda ovaryan folikül rezervi azalır, östradiol ve inhibin azalır. Negatif geri bildirim azalınca özellikle FSH yükselir."
+  },
+  {
+    "id": 2431,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Akromegali şüphesi olan hastada IGF-1 yüksek bulunuyor. Büyüme hormonunun uzun dönem büyüme etkilerinin önemli bölümü hangi organ kaynaklı mediyatörle oluşur?",
+    "options": [
+      "Karaciğer kaynaklı IGF-1",
+      "Böbrek kaynaklı renin",
+      "Tiroid kaynaklı kalsitonin",
+      "Pankreas kaynaklı somatostatin",
+      "Adrenal medulla kaynaklı aldosteron"
+    ],
+    "correct": 0,
+    "exp": "GH karaciğerde IGF-1 üretimini artırır. IGF-1 kemik ve yumuşak doku büyümesi gibi uzun dönem etkilerin önemli aracısıdır."
+  },
+  {
+    "id": 2432,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 5,
+    "q": "Tip 2 diyabette insülin direnci olan hastada beta hücreleri başlangıçta daha fazla insülin salgılayarak glisemiyi dengelemeye çalışıyor. İnsülin reseptörünün hücre içi sinyali hangi reseptör sınıfına aittir?",
+    "options": [
+      "Reseptör tirozin kinaz",
+      "G protein bağlı reseptör",
+      "Ligand kapılı klor kanalı",
+      "Nükleer steroid reseptörü",
+      "Guanylat siklaz reseptörü"
+    ],
+    "correct": 0,
+    "exp": "İnsülin reseptörü intrinsik tirozin kinaz aktivitesine sahip reseptördür. Otofosforilasyon ve IRS yollarıyla metabolik etkiler başlar."
+  },
+  {
+    "id": 2433,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Gebelikte artan plasental hormonlar nedeniyle periferik insülin direnci gelişebiliyor. Bu durumun anne metabolizmasındaki fizyolojik amacı en iyi hangisidir?",
+    "options": [
+      "Glukozun fetüse yönlendirilmesine katkı sağlamak",
+      "Anne beyninin glukoz kullanımını tamamen durdurmak",
+      "Fetal böbrekten insülin salgısını kesmek",
+      "Plasentanın oksijen geçirgenliğini kapatmak",
+      "Maternal keton üretimini imkansız hale getirmek"
+    ],
+    "correct": 0,
+    "exp": "Gebelikte plasental hormonlar anne dokularında insülin direncini artırabilir. Böylece glukoz ve enerji substratlarının fetüse ulaşması desteklenir."
+  },
+  {
+    "id": 2434,
+    "ders": "Fizyoloji",
+    "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Tiroid hormonları yüksek olan hastada istirahatte oksijen tüketimi, ısı üretimi ve kalp hızı artıyor. Bu bulgular tiroid hormonlarının hangi genel etkisiyle uyumludur?",
+    "options": [
+      "Bazal metabolizma hızını artırması",
+      "Mitokondriyal aktiviteyi tamamen kapatması",
+      "Beta adrenerjik duyarlılığı azaltması",
+      "Sodyum-potasyum pompasını baskılaması",
+      "Tüm dokularda protein sentezini durdurması"
+    ],
+    "correct": 0,
+    "exp": "Tiroid hormonları bazal metabolizma hızını ve ısı üretimini artırır. Ayrıca beta adrenerjik yanıtları güçlendirerek taşikardi gibi bulgulara katkı verir."
+  },
+  {
+    "id": 2435,
+    "ders": "Fizyoloji",
+    "konu": "Solunum Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Yüksek irtifaya çıkan kişide arteriyel oksijen basıncı düşünce ventilasyon hızla artıyor. Bu akut ventilatuvar yanıtı başlatan temel reseptörler hangileridir?",
+    "options": [
+      "Karotis ve aort cisimciklerindeki periferik kemoreseptörler",
+      "Sadece medüller santral kemoreseptörler",
+      "Pulmoner ven baroreseptörleri",
+      "Kas iğcikleri",
+      "Böbrek jukstaglomerüler hücreleri"
+    ],
+    "correct": 0,
+    "exp": "Hipoksemiye hızlı ventilatuvar yanıt esas olarak karotis ve aort cisimciklerindeki periferik kemoreseptörlerle oluşur. Santral kemoreseptörler CO2/pH değişimine daha duyarlıdır."
+  },
+  {
+    "id": 2436,
+    "ders": "Fizyoloji",
+    "konu": "Solunum Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Opioid alan hastada hipoventilasyon ve PaCO2 artışı gelişiyor. Normalde CO2 artışına ventilasyon yanıtını en güçlü uyaran değişiklik hangisidir?",
+    "options": [
+      "Beyin omurilik sıvısında H+ artışı",
+      "Arteriyel oksijen satürasyonunun %100 olması",
+      "Plazma sodyumunun yükselmesi",
+      "Karaciğerde glikojenolizin artması",
+      "Alveolde surfaktan artışı"
+    ],
+    "correct": 0,
+    "exp": "CO2 kan-beyin bariyerini geçer ve BOS'ta H+ artışına yol açar. Santral kemoreseptörler bu pH değişimine yanıt vererek ventilasyonu artırır."
+  },
+  {
+    "id": 2437,
+    "ders": "Fizyoloji",
+    "konu": "Solunum Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Dokulardan akciğere taşınan karbondioksitin büyük kısmı kanda hangi formda taşınır?",
+    "options": [
+      "Bikarbonat olarak",
+      "Çözünmüş CO2 olarak",
+      "Karbaminohemoglobin olarak",
+      "Karbonik asit olarak serbest",
+      "Albumine kovalent bağlı oksijenle birlikte"
+    ],
+    "correct": 0,
+    "exp": "CO2'nin büyük kısmı eritrositlerde karbonik anhidraz aracılığıyla bikarbonata çevrilir ve plazmada bikarbonat olarak taşınır."
+  },
+  {
+    "id": 2438,
+    "ders": "Fizyoloji",
+    "konu": "Solunum Sistemi HistoFizyolojisi",
+    "diff": 5,
+    "q": "Pulmoner emboli sonrası bazı alveoller havalanmaya devam ettiği halde perfüzyon alamıyor. Bu bölgeler fizyolojik olarak neye dönüşür?",
+    "options": [
+      "Ölü boşluk",
+      "Sağ-sol şant",
+      "Tam difüzyon bariyeri olmadan normal V/Q alanı",
+      "Restriktif volüm kaybı",
+      "Bronşiyal sekresyon odağı"
+    ],
+    "correct": 0,
+    "exp": "Pulmoner embolide ventilasyon korunup perfüzyon azaldığında V/Q oranı yükselir ve alveoler ölü boşluk artar."
+  },
+  {
+    "id": 2439,
+    "ders": "Fizyoloji",
+    "konu": "Solunum Sistemi HistoFizyolojisi",
+    "diff": 5,
+    "q": "Ağır pnömonide oksijen verilmesine rağmen hipoksemi yeterince düzelmiyor. Alveoller perfüze olduğu halde havalanmadığında bu durum hangi fizyolojik bozuklukla uyumludur?",
+    "options": [
+      "Sağ-sol şant",
+      "Saf ölü boşluk artışı",
+      "Diffüzyon kapasitesinin artması",
+      "Hiperventilasyona bağlı respiratuvar alkaloz",
+      "Fizyolojik olarak normal V/Q"
+    ],
+    "correct": 0,
+    "exp": "Şantta kan havalanmayan alveollerden geçer. Oksijen tedavisine yanıt V/Q mismatch'e göre daha sınırlıdır çünkü şantlanan kan alveoler gazla temas etmez."
+  },
+  {
+    "id": 2440,
+    "ders": "Fizyoloji",
+    "konu": "Solunum Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "KOAH'lı hastanın spirometrisinde FEV1 belirgin düşmüş, FEV1/FVC oranı azalmış bulunuyor. Bu patern hangi solunum bozukluğuna uyar?",
+    "options": [
+      "Obstrüktif ventilatuvar bozukluk",
+      "Restriktif ventilatuvar bozukluk",
+      "Normal spirometri",
+      "Nöromüsküler saf hiperventilasyon",
+      "Santral apne"
+    ],
+    "correct": 0,
+    "exp": "Obstrüktif hastalıklarda hava akımı kısıtlanır; FEV1 belirgin azalır ve FEV1/FVC oranı düşer."
+  },
+  {
+    "id": 2441,
+    "ders": "Fizyoloji",
+    "konu": "Solunum Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Pulmoner fibrozisi olan hastada vital kapasite ve total akciğer kapasitesi azalmış, FEV1/FVC oranı normal-yüksek bulunuyor. Bu tablo hangi fizyolojik paternle uyumludur?",
+    "options": [
+      "Restriktif ventilatuvar bozukluk",
+      "Obstrüktif ventilatuvar bozukluk",
+      "Saf üst hava yolu obstrüksiyonu",
+      "Artmış akciğer kompliyansı",
+      "Artmış rezidüel hacimle normal TLC"
+    ],
+    "correct": 0,
+    "exp": "Restriktif hastalıklarda akciğer volümleri azalır. FEV1 ve FVC birlikte düşer; oran genellikle normal veya yüksek kalır."
+  },
+  {
+    "id": 2442,
+    "ders": "Fizyoloji",
+    "konu": "Solunum Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Prematüre bebekte surfaktan eksikliğine bağlı solunum sıkıntısı gelişiyor. Surfaktanın temel fizyolojik etkisi hangisidir?",
+    "options": [
+      "Alveol yüzey gerilimini azaltarak kollapsı önlemek",
+      "Alveol duvarını kalınlaştırarak difüzyonu yavaşlatmak",
+      "Bronş düz kasını sürekli kasmak",
+      "Pulmoner damar direncini artırmak",
+      "Hemoglobinin oksijene afinitesini düşürmek"
+    ],
+    "correct": 0,
+    "exp": "Surfaktan alveol yüzey gerilimini azaltır, özellikle küçük alveollerin kollapsını önler ve akciğer kompliyansını artırır."
+  },
+  {
+    "id": 2443,
+    "ders": "Fizyoloji",
+    "konu": "Solunum Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Amfizemli hastada DLCO düşük bulunuyor. Bu azalmanın temel nedeni hangisidir?",
+    "options": [
+      "Alveol-kapiller yüzey alanının azalması",
+      "Hemoglobin miktarının aşırı artması",
+      "Pulmoner kapiller kan hacminin artması",
+      "Alveol membranının incelmesiyle difüzyonun artması",
+      "Karbonmonoksitin hiç bağlanamaması"
+    ],
+    "correct": 0,
+    "exp": "Amfizemde alveoler septalar yıkılır ve difüzyon yüzey alanı azalır. Bu nedenle DLCO düşer."
+  },
+  {
+    "id": 2444,
+    "ders": "Fizyoloji",
+    "konu": "Solunum Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Ateşli ve egzersiz yapan hastada dokulara oksijen bırakılması kolaylaşıyor. Bu durumda hemoglobin-oksijen disosiasyon eğrisinde beklenen değişiklik hangisidir?",
+    "options": [
+      "Sağa kayma",
+      "Sola kayma",
+      "P50'nin azalması",
+      "Oksijen afinitesinin artması",
+      "Hemoglobinin oksijen taşıma kapasitesinin sıfırlanması"
+    ],
+    "correct": 0,
+    "exp": "Isı artışı, CO2 artışı, H+ artışı ve 2,3-BPG artışı eğriyi sağa kaydırır. Hb'nin oksijen afinitesi azalır ve dokulara oksijen bırakılması kolaylaşır."
+  },
+  {
+    "id": 2445,
+    "ders": "Fizyoloji",
+    "konu": "Solunum Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Yüksek irtifaya yeni çıkan kişide hiperventilasyon sonrası respiratuvar alkaloz gelişiyor. Birkaç gün içinde böbreğin kompansatuvar yanıtı hangisidir?",
+    "options": [
+      "Bikarbonat atılımını artırmak",
+      "Hidrojen atılımını artırmak",
+      "Amonyum üretimini artırmak",
+      "Bikarbonat geri emilimini maksimuma çıkarmak",
+      "ADH salınımını tamamen durdurmak"
+    ],
+    "correct": 0,
+    "exp": "Yüksek irtifada hipoksemi ventilasyonu artırır, CO2 düşer ve respiratuvar alkaloz gelişir. Böbrek bikarbonat atılımını artırarak pH'ı dengelemeye çalışır."
+  },
+  {
+    "id": 2446,
+    "ders": "Fizyoloji",
+    "konu": "Solunum Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Fetal hemoglobin erişkin hemoglobine göre oksijeni plasentadan daha kolay alır. Bu fark disosiasyon eğrisinde nasıl görünür?",
+    "options": [
+      "Fetal hemoglobinin sola kayması",
+      "Fetal hemoglobinin sağa kayması",
+      "Fetal hemoglobinin P50 değerinin artması",
+      "Fetal hemoglobinin oksijene hiç bağlanmaması",
+      "Fetal hemoglobinin 2,3-BPG'ye daha güçlü bağlanması"
+    ],
+    "correct": 0,
+    "exp": "HbF 2,3-BPG'ye daha zayıf bağlanır ve oksijen afinitesi daha yüksektir. Eğrisi sola kaymıştır; plasentadan oksijen almayı kolaylaştırır."
+  },
+  {
+    "id": 2447,
+    "ders": "Fizyoloji",
+    "konu": "Solunum Sistemi HistoFizyolojisi",
+    "diff": 5,
+    "q": "Kronik CO2 retansiyonu olan KOAH hastasında solunum merkezi yüksek CO2'ye kısmen adapte olmuştur. Bu hastada ventilasyonu sürdürmede göreceli olarak daha önemli hale gelen uyaran hangisidir?",
+    "options": [
+      "Hipoksemiye periferik kemoreseptör yanıtı",
+      "Hiperkalsemiye santral yanıt",
+      "Hipernatremiye akciğer gerilme yanıtı",
+      "Aldosteron artışı",
+      "Mide pH'sındaki düşme"
+    ],
+    "correct": 0,
+    "exp": "Kronik hiperkapnide santral kemoreseptör yanıtı kısmen adapte olabilir. Hipoksemiye periferik kemoreseptör yanıtı ventilasyon sürdürülmesinde daha önemli hale gelir."
+  },
+  {
+    "id": 2448,
+    "ders": "Fizyoloji",
+    "konu": "Solunum Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Pulmoner ödem gelişen hastada akciğerler sertleşmiş, solunum işi artmış bulunuyor. Bu tabloda azalan temel mekanik özellik hangisidir?",
+    "options": [
+      "Akciğer kompliyansı",
+      "Hava yolu direnci olmadan tüm volümler",
+      "Hemoglobin afinitesi",
+      "Anatomik ölü boşluk",
+      "Surfaktan üretimi artışına bağlı elastans"
+    ],
+    "correct": 0,
+    "exp": "Pulmoner ödemde interstisyel/alveoler sıvı artışı akciğer kompliyansını azaltır. Daha fazla basınçla daha az hacim değişimi olur."
+  },
+  {
+    "id": 2449,
+    "ders": "Fizyoloji",
+    "konu": "Solunum Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Travma sonrası pnömotoraks gelişen hastada etkilenen akciğer kollabe oluyor. Normalde akciğeri açık tutmaya yardım eden plevral basınç özelliği hangisidir?",
+    "options": [
+      "Negatif intraplevral basınç",
+      "Pozitif intraplevral basınç",
+      "Alveol basıncının sürekli sıfırın altında olması",
+      "Pulmoner arter basıncının atmosferden düşük olması",
+      "Bronş içi basıncın daima negatif olması"
+    ],
+    "correct": 0,
+    "exp": "Normalde intraplevral basınç negatiftir ve akciğerin göğüs duvarına tutunmasına yardım eder. Pnömotoraksta plevral boşluğa hava girer, negatif basınç kaybolur ve akciğer kollabe olabilir."
+  },
+  {
+    "id": 2450,
+    "ders": "Fizyoloji",
+    "konu": "Solunum Sistemi HistoFizyolojisi",
+    "diff": 3,
+    "q": "Aşırı derin inspirasyon sırasında akciğer gerilimi artınca inspirasyonun baskılanmasına katkı veren refleks aktive olur. Bu refleks hangisidir?",
+    "options": [
+      "Hering-Breuer inflasyon refleksi",
+      "Baroreseptör refleksi",
+      "Bezold-Jarisch refleksi",
+      "Okülo-kardiyak refleks",
+      "Miksiyon refleksi"
+    ],
+    "correct": 0,
+    "exp": "Hering-Breuer inflasyon refleksi akciğer gerilme reseptörleriyle ilişkilidir. Özellikle aşırı gerilmeyi sınırlayarak inspirasyonu baskılayabilir."
+  },
+  {
+    "id": 2451,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Diz kapağı tendonuna vurulduğunda kuadriseps hızla kasılıyor. Bu refleksin afferent lifi ve sinaptik özelliği için en doğru ifade hangisidir?",
+    "options": [
+      "Ia afferent ile monosnaptik gerilme refleksi",
+      "C lifi ile polisinaptik ağrı refleksi",
+      "Ib afferent ile parasempatik refleks",
+      "A delta lifi ile otonom sekresyon refleksi",
+      "Sadece üst motor nöronla gerçekleşen refleks"
+    ],
+    "correct": 0,
+    "exp": "Kas iğciğinden gelen Ia afferent lifler spinal kordda alfa motor nöronla monosnaptik bağlantı kurar. Patellar refleks klasik gerilme refleksidir."
+  },
+  {
+    "id": 2452,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Üst motor nöron lezyonu olan hastada spastisite ve derin tendon reflekslerinde artış görülüyor. Bu artışı en iyi açıklayan fizyolojik değişiklik hangisidir?",
+    "options": [
+      "Spinal refleks devreleri üzerindeki inen inhibitör kontrolün azalması",
+      "Alfa motor nöronların tamamen ölmesi",
+      "Kas iğciklerinin tümünün kaybolması",
+      "Nöromüsküler kavşakta asetilkolin salınımının durması",
+      "Dorsal kök ganglionlarının çıkarılması"
+    ],
+    "correct": 0,
+    "exp": "Üst motor nöron lezyonlarında inen inhibitör kontrol azalır. Spinal refleksler kolaylaşır, hiperrefleksi ve spastisite gelişir."
+  },
+  {
+    "id": 2453,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Alt motor nöron lezyonu olan hastada flask paralizi, fasikülasyon ve atrofi gelişiyor. Bu bulgulardan atrofi en çok hangi kayıpla ilişkilidir?",
+    "options": [
+      "Kasın nöral trofik desteğinin kaybı ve denervasyon",
+      "Serebellar Purkinje hücrelerinin aşırı çalışması",
+      "Kortikal inhibitör tonusun artması",
+      "Kas iğciği afferentlerinin aşırı uyarılması",
+      "Bazal ganglion dopamininin artması"
+    ],
+    "correct": 0,
+    "exp": "Alt motor nöron hasarında kas doğrudan denervasyona uğrar. Trofik destek kaybı, kullanılmama ve denervasyon atrofisi gelişir."
+  },
+  {
+    "id": 2454,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Keskin ağrı ve ısı duyusu omurilikte karşı tarafa geçtikten sonra talamusa yükselir. Bu duyuları taşıyan ana yol hangisidir?",
+    "options": [
+      "Spinotalamik trakt",
+      "Dorsal kolon-medial lemniskus",
+      "Kortikospinal trakt",
+      "Spinocerebellar trakt",
+      "Fasikulus longitudinalis medialis"
+    ],
+    "correct": 0,
+    "exp": "Ağrı ve ısı duyusu periferden girer, birkaç segment içinde karşıya geçerek anterolateral/spinotalamik sistemle talamusa taşınır."
+  },
+  {
+    "id": 2455,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Vibrasyon ve propriosepsiyon kaybı olan hastada lezyonun dorsal kolon sisteminde olduğu düşünülüyor. Bu lifler karşı tarafa nerede geçer?",
+    "options": [
+      "Medulla düzeyinde",
+      "Giriş yaptıkları spinal segmentte hemen",
+      "Talamusta",
+      "Serebellumda",
+      "Periferik sinirde"
+    ],
+    "correct": 0,
+    "exp": "Dorsal kolon lifleri ipsilateral olarak medullaya yükselir; nucleus gracilis/cuneatus sonrası iç arkuat lifler olarak çapraz yapar ve medial lemniskusu oluşturur."
+  },
+  {
+    "id": 2456,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Lokal anestezik verilen bölgede ağrı iletimi kesiliyor. Aksiyon potansiyelinin hızlı yükselme fazını engelleyen temel kanal hangisidir?",
+    "options": [
+      "Voltaj kapılı sodyum kanalı",
+      "L tipi kalsiyum kanalı",
+      "Ligand kapılı klor kanalı",
+      "Aquaporin-2",
+      "ATP duyarlı potasyum kanalı"
+    ],
+    "correct": 0,
+    "exp": "Nöron aksiyon potansiyelinin depolarizasyon fazı voltaj kapılı Na+ kanallarından Na+ girişiyle oluşur. Lokal anestezikler bu kanalları bloke eder."
+  },
+  {
+    "id": 2457,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Multipl skleroz atağında miyelin kaybı olan liflerde iletim yavaşlıyor. Miyelinin normalde sağladığı temel avantaj hangisidir?",
+    "options": [
+      "Saltatuvar iletimle aksiyon potansiyelinin Ranvier düğümleri arasında hızlı ilerlemesi",
+      "Akson çapını sıfıra indirmesi",
+      "Sinaptik aralıkta asetilkolini parçalaması",
+      "Nöron gövdesinde protein sentezini durdurması",
+      "Dendritlerde oksijen taşınmasını sağlaması"
+    ],
+    "correct": 0,
+    "exp": "Miyelin internodlarda membran direncini artırır ve kapasitansı azaltır. Aksiyon potansiyeli Ranvier düğümleri arasında sıçrayarak hızlı iletilir."
+  },
+  {
+    "id": 2458,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Presinaptik uçta aksiyon potansiyeli geldikten sonra nörotransmitter vezikülleri membranla kaynaşıyor. Bu salınımı doğrudan başlatan iyon hareketi hangisidir?",
+    "options": [
+      "Voltaj kapılı kalsiyum kanallarından Ca2+ girişi",
+      "Klorun hücre içine pasif girişi",
+      "Sodyum-potasyum pompasının durması",
+      "Magnezyumun vezikül içine girmesi",
+      "Bikarbonatın aksondan çıkması"
+    ],
+    "correct": 0,
+    "exp": "Presinaptik depolarizasyon voltaj kapılı Ca2+ kanallarını açar. Ca2+ girişi vezikül füzyonunu ve nörotransmitter salınımını tetikler."
+  },
+  {
+    "id": 2459,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "İnhibitör postsinaptik potansiyel oluşturan bir sinapsta postsinaptik membranın eşikten uzaklaştığı görülüyor. Bu etki en çok hangi iyon hareketiyle uyumludur?",
+    "options": [
+      "Klor girişinin veya potasyum çıkışının artması",
+      "Sodyum girişinin artması",
+      "Kalsiyum girişinin artması",
+      "Glukoz girişinin artması",
+      "Demir çıkışının artması"
+    ],
+    "correct": 0,
+    "exp": "IPSP genellikle Cl- girişi veya K+ çıkışıyla membranı hiperpolarize eder ya da eşikten uzaklaştırır. Böylece aksiyon potansiyeli oluşma olasılığı azalır."
+  },
+  {
+    "id": 2460,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Baş hızla sağa çevrildiğinde gözlerin hedefte kalmak için sola doğru hareket ettiği izleniyor. Bu yanıt hangi sistemin görevidir?",
+    "options": [
+      "Vestibülo-oküler refleks",
+      "Pupiller ışık refleksi",
+      "Gerilme refleksi",
+      "Golgi tendon refleksi",
+      "Miksiyon refleksi"
+    ],
+    "correct": 0,
+    "exp": "Vestibülo-oküler refleks baş hareketi sırasında görüntüyü retinada sabit tutmak için gözleri karşı yönde hareket ettirir."
+  },
+  {
+    "id": 2461,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "İç kulaktaki saçlı hücrelerde stereosilyalar kinosilyuma doğru eğildiğinde hücre depolarize olur. Bu depolarizasyonun başlıca nedeni hangisidir?",
+    "options": [
+      "Endolenften K+ girişi",
+      "Perilenften Na+ çıkışı",
+      "Sodyum-potasyum pompasının aniden durması",
+      "Klorun stereosilyadan dışarı çıkması",
+      "Kalsiyumun çekirdeğe bağlanması"
+    ],
+    "correct": 0,
+    "exp": "Endolenf potasyumdan zengindir ve pozitif elektriksel potansiyele sahiptir. Stereosilya kanalları açıldığında K+ saçlı hücreye girer ve depolarizasyon olur."
+  },
+  {
+    "id": 2462,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Karanlıktan parlak ışığa çıkan kişide fotoreseptörlerde glutamat salınımı azalıyor. Işıkta fotoreseptör membran potansiyeli nasıl değişir?",
+    "options": [
+      "Hiperpolarize olur",
+      "Depolarize olur",
+      "Aksiyon potansiyeli üretmeye başlar",
+      "Sodyum-potasyum pompası durur",
+      "Klor kanalları kalıcı açılır"
+    ],
+    "correct": 0,
+    "exp": "Fotoreseptörler karanlıkta depolarizedir ve glutamat salar. Işık cGMP'yi azaltır, Na+ kanalları kapanır ve fotoreseptör hiperpolarize olur."
+  },
+  {
+    "id": 2463,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Yakına bakış sırasında pupilla küçülür, lens kalınlaşır ve gözler konverjans yapar. Lens kalınlaşmasını sağlayan kas hangi otonom etkiyle kasılır?",
+    "options": [
+      "Parasempatik uyarıyla siliyer kas kasılması",
+      "Sempatik uyarıyla iris dilatatör kas kasılması",
+      "Somatik uyarıyla lateral rektus kasılması",
+      "Parasempatik uyarıyla trabeküler ağın kapanması",
+      "Sempatik uyarıyla sfinkter pupilla gevşemesi"
+    ],
+    "correct": 0,
+    "exp": "Yakına uyumda parasempatik aktivite siliyer kası kasar. Zonüler lif gerilimi azalır, lens daha konveks hale gelir."
+  },
+  {
+    "id": 2464,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 5,
+    "q": "Parkinson hastalığında hareket başlatmada güçlük ve rijidite gelişiyor. Bazal ganglion devrelerinde dopamin azalması en çok hangi bölgedeki nöron kaybıyla ilişkilidir?",
+    "options": [
+      "Substantia nigra pars compacta",
+      "Hipokampus CA1",
+      "Nucleus ruber",
+      "Locus coeruleus",
+      "Dorsal kök ganglionu"
+    ],
+    "correct": 0,
+    "exp": "Parkinson hastalığında substantia nigra pars compacta dopaminerjik nöronları kaybolur. Dopamin azalması bazal ganglion motor devrelerinde hareketi azaltıcı etki oluşturur."
+  },
+  {
+    "id": 2465,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Serebellar lezyonu olan hastada hedefe uzanırken tremor belirginleşiyor, dismetri ve geniş tabanlı yürüyüş var. Bu bulgular serebellumun hangi rolüyle uyumludur?",
+    "options": [
+      "Hareketin koordinasyonu ve hata düzeltmesi",
+      "Primer kas gücünün doğrudan oluşturulması",
+      "Ağrı duyusunun kortekse taşınması",
+      "Otonom ter bezlerinin kontrolü",
+      "Sadece bilinç düzeyinin korunması"
+    ],
+    "correct": 0,
+    "exp": "Serebellum hareketlerin zamanlaması, koordinasyonu ve hata düzeltmesinde rol alır. Lezyonunda ataksi, dismetri ve intansiyon tremoru görülür."
+  },
+  {
+    "id": 2466,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "REM uykusunda EEG uyanıklığa benzerken iskelet kas tonusu belirgin azalır. Bu fizyolojik atoni neden önemlidir?",
+    "options": [
+      "Rüya içeriğine uygun motor hareketlerin gerçekleştirilmesini engeller",
+      "Solunumu tamamen durdurur",
+      "Kalp kasını gevşetir",
+      "Retinanın ışığa yanıtını kapatır",
+      "Beyin sapı reflekslerini kalıcı olarak siler"
+    ],
+    "correct": 0,
+    "exp": "REM uykusunda kas atonisi rüya sırasında motor davranışların ortaya çıkmasını engeller. Bu mekanizma bozulursa REM davranış bozukluğu görülebilir."
+  },
+  {
+    "id": 2467,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Ağrılı uyaran sonrası aynı ekstremitede fleksör kaslar kasılırken ekstansörler inhibe oluyor. Bu spinal refleks düzenlenmesi hangisidir?",
+    "options": [
+      "Resiprokal inhibisyon",
+      "Uzun süreli potansiyasyon",
+      "Presinaptik fasilitasyon olmadan nöromodülasyon",
+      "Kortikal kolon organizasyonu",
+      "Gamma döngüsünün kapanması"
+    ],
+    "correct": 0,
+    "exp": "Refleks hareketlerde agonist kas aktivasyonu ile antagonist kas inhibisyonu birlikte olur. Bu resiprokal inhibisyon koordineli hareket sağlar."
+  },
+  {
+    "id": 2468,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Kas iğciğinin duyarlılığı, kas kısaldığında bile korunabiliyor. Bu ayarı yapan motor nöron tipi hangisidir?",
+    "options": [
+      "Gamma motor nöron",
+      "Alfa motor nöron",
+      "Preganglionik sempatik nöron",
+      "Purkinje hücresi",
+      "Betz hücresi"
+    ],
+    "correct": 0,
+    "exp": "Gamma motor nöronlar intrafüzal kas liflerinin uçlarını kasar ve kas iğciği duyarlılığını ayarlar. Böylece gerilme bilgisi hareket sırasında korunur."
+  },
+  {
+    "id": 2469,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 5,
+    "q": "Golgi tendon organı aşırı kas gerilimini algıladığında aynı kasın motor nöron aktivitesini azaltan bir refleks başlatır. Bu refleksin afferent lifi hangisidir?",
+    "options": [
+      "Ib afferent",
+      "Ia afferent",
+      "C lifi",
+      "A delta lifi",
+      "Preganglionik parasempatik lif"
+    ],
+    "correct": 0,
+    "exp": "Golgi tendon organı kas-tendon gerilimini Ib afferentlerle taşır. Aşırı gerilimde inhibitör internöronlar üzerinden aynı kasın aktivitesi azaltılabilir."
+  },
+  {
+    "id": 2470,
+    "ders": "Fizyoloji",
+    "konu": "Sinir Sistemi HistoFizyolojisi",
+    "diff": 4,
+    "q": "Organofosfat zehirlenmesinde miyozis, bronkore ve kas fasikülasyonları gelişiyor. Sinaptik aralıkta biriken nörotransmitter hangisidir?",
+    "options": [
+      "Asetilkolin",
+      "Dopamin",
+      "GABA",
+      "Glutamat",
+      "Serotonin"
+    ],
+    "correct": 0,
+    "exp": "Organofosfatlar asetilkolinesterazı inhibe eder. Asetilkolin sinaptik aralıkta birikir; muskarinik, nikotinik ve santral bulgular oluşur."
+  },
+  {
+    "id": 2471,
+    "ders": "Fizyoloji",
+    "konu": "Üriner Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "NSAİİ kullanan dehidrate hastada kreatinin yükseliyor. Prostaglandin sentezinin baskılanması böbrekte en çok hangi hemodinamik etkiyle GFR'yi azaltır?",
+    "options": [
+      "Afferent arteriol vazokonstriksiyonu",
+      "Efferent arteriol vazodilatasyonu",
+      "Glomerüler kapsül basıncının sıfırlanması",
+      "Renal ven dilatasyonu",
+      "Toplayıcı kanalda su geçirgenliğinin artması"
+    ],
+    "correct": 0,
+    "exp": "Renal prostaglandinler özellikle düşük efektif dolaşımda afferent arteriolü dilate ederek GFR'yi korur. NSAİİ bu desteği azaltır ve afferent vazokonstriksiyonla GFR düşebilir."
+  },
+  {
+    "id": 2472,
+    "ders": "Fizyoloji",
+    "konu": "Üriner Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "ACE inhibitörü başlanan bilateral renal arter stenozlu hastada kreatinin hızla artıyor. Bu artış en çok hangi değişiklikle açıklanır?",
+    "options": [
+      "Efferent arteriol dilatasyonu ile glomerüler kapiller basıncın düşmesi",
+      "Afferent arteriol dilatasyonu ile filtrasyonun artması",
+      "Proksimal tübülde glukoz emiliminin artması",
+      "Toplayıcı kanalda ADH etkisinin artması",
+      "Bowman kapsül basıncının azalması"
+    ],
+    "correct": 0,
+    "exp": "Anjiyotensin II efferent arteriolü daraltarak glomerüler basıncı ve GFR'yi korur. ACE inhibitörü efferent dilatasyon yapar; renal arter stenozunda GFR düşebilir."
+  },
+  {
+    "id": 2473,
+    "ders": "Fizyoloji",
+    "konu": "Üriner Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Düşük sodyum alımı ve düşük renal perfüzyon olan hastada renin salınımı artıyor. Renin salınımını uyaran makula densa sinyali hangisidir?",
+    "options": [
+      "Distal tübüle ulaşan NaCl'nin azalması",
+      "Distal tübüle ulaşan NaCl'nin artması",
+      "İdrarda glukozun artması",
+      "Toplayıcı kanalda üre geçirgenliğinin azalması",
+      "Bowman boşluğunda protein artışı"
+    ],
+    "correct": 0,
+    "exp": "Makula densa distal tübüldeki NaCl teslimini algılar. NaCl azalması renin salınımını artırır ve tubuloglomerüler geri bildirimle GFR korunmaya çalışılır."
+  },
+  {
+    "id": 2474,
+    "ders": "Fizyoloji",
+    "konu": "Üriner Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Araştırmada bir maddenin serbestçe filtre edildiği, geri emilmediği ve sekrete edilmediği gösteriliyor. Bu maddenin klirensi hangi böbrek fonksiyonunu verir?",
+    "options": [
+      "GFR",
+      "Renal plazma akımı",
+      "Serbest su klirensi",
+      "Filtrasyon fraksiyonu olmadan idrar akımı",
+      "Tübüler maksimum"
+    ],
+    "correct": 0,
+    "exp": "İnülin gibi serbestçe filtrelenen, geri emilmeyen ve sekrete edilmeyen maddelerin klirensi GFR'yi verir."
+  },
+  {
+    "id": 2475,
+    "ders": "Fizyoloji",
+    "konu": "Üriner Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "PAH klirensi renal fizyoloji deneyinde renal plazma akımını tahmin etmek için kullanılıyor. Bunun nedeni hangisidir?",
+    "options": [
+      "PAH'ın filtre edilip büyük ölçüde sekrete edilerek plazmadan neredeyse tamamen temizlenmesi",
+      "PAH'ın hiç filtre edilmemesi",
+      "PAH'ın sadece toplayıcı kanalda suyla birlikte emilmesi",
+      "PAH'ın eritrosit içine hapsolması",
+      "PAH'ın glomerülde albumine dönüşmesi"
+    ],
+    "correct": 0,
+    "exp": "PAH düşük konsantrasyonlarda böbreğe gelen plazmadan filtrasyon ve sekresyonla büyük ölçüde temizlenir. Bu nedenle efektif renal plazma akımını tahmin eder."
+  },
+  {
+    "id": 2476,
+    "ders": "Fizyoloji",
+    "konu": "Üriner Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Kontrolsüz diyabette plazma glukozu arttıkça bir noktadan sonra idrarda glukoz görülüyor. Bu durumun nedeni hangisidir?",
+    "options": [
+      "Proksimal tübüldeki glukoz taşıyıcılarının taşıma maksimumuna ulaşması",
+      "Glukozun glomerülden filtre edilememesi",
+      "Toplayıcı kanalda glukozun aktif salgılanması",
+      "ADH'nin glukozu idrara atması",
+      "Glukozun albumine bağlanarak idrara geçmesi"
+    ],
+    "correct": 0,
+    "exp": "Glukoz proksimal tübülde SGLT taşıyıcılarıyla geri emilir. Plazma glukozu çok artınca filtre edilen yük Tm'yi aşar ve glukozüri oluşur."
+  },
+  {
+    "id": 2477,
+    "ders": "Fizyoloji",
+    "konu": "Üriner Sistem HistoFizyolojisi",
+    "diff": 5,
+    "q": "Henle kulpunun çıkan kalın kolunu etkileyen bir ilaç sonrası medüller hipertonisite azalıyor ve idrarı yoğunlaştırma kapasitesi düşüyor. Bu segmentin temel özelliği hangisidir?",
+    "options": [
+      "Na-K-2Cl taşırken suya geçirimsiz olması",
+      "Suya çok geçirgen olup sodyuma geçirimsiz olması",
+      "Sadece glukoz geri emmesi",
+      "ADH olmadan üre salgılaması",
+      "Bikarbonatı hiç taşımaması"
+    ],
+    "correct": 0,
+    "exp": "Çıkan kalın kol Na-K-2Cl kotransportuyla tuz geri emer, suya geçirimsizdir. Bu countercurrent multiplier ve medüller gradyan için kritiktir."
+  },
+  {
+    "id": 2478,
+    "ders": "Fizyoloji",
+    "konu": "Üriner Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Susuz kalan kişide ADH artışıyla idrar konsantre hale geliyor. ADH'nin iç medüller toplayıcı kanalda üre üzerinden de katkı sağlaması hangi etkiyle olur?",
+    "options": [
+      "Üre geçirgenliğini artırarak medüller ozmotik gradyanı güçlendirmesi",
+      "Üre sentezini böbrekte tamamen durdurması",
+      "Üreyi glukoza çevirmesi",
+      "Üreyi proksimal tübülde tamamen sekrete etmesi",
+      "Üreyi albumine bağlayıp filtrasyonu engellemesi"
+    ],
+    "correct": 0,
+    "exp": "ADH iç medüller toplayıcı kanalda su geçirgenliğini artırır; ayrıca üre geçirgenliğini artırarak medüller hipertonisiteye katkı sağlar."
+  },
+  {
+    "id": 2479,
+    "ders": "Fizyoloji",
+    "konu": "Üriner Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Proksimal tübül hasarında bikarbonat, fosfat, aminoasit ve glukoz kaybı gelişiyor. Bu segmentin normalde geri emilim açısından genel özelliği hangisidir?",
+    "options": [
+      "Filtre edilen solüt ve suyun büyük kısmını izoozmotik olarak geri emmesi",
+      "Sadece su geri emmesi ve solütleri hiç taşımaması",
+      "Sadece aldosterona yanıt vermesi",
+      "İdrarın son yoğunluğunu tek başına belirlemesi",
+      "Sodyumu yalnız pasif olarak salgılaması"
+    ],
+    "correct": 0,
+    "exp": "Proksimal tübül filtre edilen Na+, su, bikarbonat, glukoz ve aminoasitlerin büyük kısmını geri emer. Geri emilim çoğunlukla izoozmotiktir."
+  },
+  {
+    "id": 2480,
+    "ders": "Fizyoloji",
+    "konu": "Üriner Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Primer hiperaldosteronizmli hastada hipertansiyon, hipokalemi ve metabolik alkaloz var. Aldosteronun principal hücrede potasyumu düşüren etkisi hangisidir?",
+    "options": [
+      "ENaC üzerinden sodyum geri emilimini artırıp lümen negatifliğini güçlendirmesi",
+      "Na-K-2Cl kotransporterini tamamen kapatması",
+      "Glomerülde potasyum filtrasyonunu durdurması",
+      "ADH reseptörünü bloke etmesi",
+      "Proksimal tübülde glukoz geri emilimini artırması"
+    ],
+    "correct": 0,
+    "exp": "Aldosteron principal hücrelerde ENaC ve Na/K ATPaz aktivitesini artırır. Lümen daha negatif hale gelir, K+ sekresyonu artar; hipokalemi gelişebilir."
+  },
+  {
+    "id": 2481,
+    "ders": "Fizyoloji",
+    "konu": "Üriner Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Kronik metabolik asidozu olan hastada böbreğin asit atılımını artırması beklenir. Tübül hücrelerinde amonyak üretimi hangi aminositten artar?",
+    "options": [
+      "Glutamin",
+      "Fenilalanin",
+      "Triptofan",
+      "Metiyonin",
+      "Lizin"
+    ],
+    "correct": 0,
+    "exp": "Böbrek asidozda glutaminden amonyak/amonyum üretimini artırır. NH4+ olarak asit atılımı ve yeni bikarbonat üretimi sağlanır."
+  },
+  {
+    "id": 2482,
+    "ders": "Fizyoloji",
+    "konu": "Üriner Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Aspirin intoksikasyonunun erken döneminde hiperventilasyona bağlı respiratuvar alkaloz gelişen hastada böbrek kompansasyonu bekleniyor. Uygun renal yanıt hangisidir?",
+    "options": [
+      "Bikarbonat geri emilimini azaltmak ve bikarbonat atılımını artırmak",
+      "Amonyum atılımını artırmak",
+      "Hidrojen sekresyonunu artırmak",
+      "Yeni bikarbonat üretimini artırmak",
+      "İdrarı maksimum asidik yapmak"
+    ],
+    "correct": 0,
+    "exp": "Respiratuvar alkalozda pH yükselir. Böbrek bikarbonat geri emilimini azaltır ve bikarbonat atılımını artırarak kompansasyon sağlar."
+  },
+  {
+    "id": 2483,
+    "ders": "Fizyoloji",
+    "konu": "Üriner Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Yüksek potasyum alımı sonrası sağlıklı kişide idrarla potasyum atılımı artıyor. Bu adaptasyona en çok katkı veren hormon hangisidir?",
+    "options": [
+      "Aldosteron",
+      "Kalsitonin",
+      "Prolaktin",
+      "Glukagon",
+      "Eritropoietin"
+    ],
+    "correct": 0,
+    "exp": "Hiperkalemi aldosteron salınımını doğrudan uyarabilir. Aldosteron distal nefronda K+ sekresyonunu artırarak potasyum atılımını sağlar."
+  },
+  {
+    "id": 2484,
+    "ders": "Fizyoloji",
+    "konu": "Üriner Sistem HistoFizyolojisi",
+    "diff": 5,
+    "q": "Su yüklemesi sonrası sağlıklı kişide idrar seyreliyor ve serbest su atılımı artıyor. Bu durumda ADH düzeyi ve toplayıcı kanal su geçirgenliği için en doğru ifade hangisidir?",
+    "options": [
+      "ADH azalır, toplayıcı kanal su geçirgenliği düşer",
+      "ADH artar, toplayıcı kanal su geçirgenliği düşer",
+      "ADH azalır, aquaporin-2 membrana daha fazla yerleşir",
+      "ADH değişmez, idrar sadece glomerülde seyrelir",
+      "ADH artar, idrar zorunlu olarak seyreltik çıkar"
+    ],
+    "correct": 0,
+    "exp": "Su yüklemesinde plazma ozmolalitesi düşer, ADH baskılanır. Toplayıcı kanal suya daha az geçirgen olur ve seyreltik idrar atılır."
+  },
+  {
+    "id": 2485,
+    "ders": "Fizyoloji",
+    "konu": "Üriner Sistem HistoFizyolojisi",
+    "diff": 4,
+    "q": "Kreatinin klirensi ölçülen hastada gerçek GFR'ye göre hafif yüksek sonuç elde ediliyor. Bunun nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Kreatininin az miktarda tübüler sekresyona uğraması",
+      "Kreatininin glomerülden filtre edilmemesi",
+      "Kreatininin tamamen geri emilmesi",
+      "Kreatininin sadece albumine bağlı taşınması",
+      "Kreatininin böbrekte üreye dönüşmesi"
+    ],
+    "correct": 0,
+    "exp": "Kreatinin serbestçe filtre edilir ve az miktarda proksimal tübüler sekresyona uğrar. Bu nedenle kreatinin klirensi GFR'yi hafif fazla tahmin eder."
+  },
+  {
+    "id": 2486,
+    "ders": "Fizyoloji",
+    "konu": "Baş Boyun Embriyolojisi",
+    "diff": 4,
+    "q": "Doğumdan sonra orta hatta, dil kökü ile tiroid arasında hareketli kistik kitle saptanan çocukta tiroglossal kanal kisti düşünülüyor. Bu kistin kökeni en iyi hangi embriyolojik olayla ilişkilidir?",
+    "options": [
+      "Tiroid bezinin foramen çekumdan aşağı doğru göç yolunun kalıntısı",
+      "Birinci brankiyal yarığın dış kulak yoluna dönüşememesi",
+      "Nöral tüpün posterior nöroporunun kapanmaması",
+      "Paratiroidlerin böbrekten göç etmesi",
+      "Timusun adrenal kortekse dönüşmesi"
+    ],
+    "correct": 0,
+    "exp": "Tiroid bezi dil kökündeki foramen çekum bölgesinden aşağı göç eder. Tiroglossal kanal kalıntısı orta hat kisti olarak ortaya çıkabilir."
+  },
+  {
+    "id": 2487,
+    "ders": "Fizyoloji",
+    "konu": "Baş Boyun Embriyolojisi",
+    "diff": 5,
+    "q": "Mandibula hipoplazisi ve dış kulak anomalileri olan bebekte birinci faringeal ark gelişim kusuru düşünülüyor. Bu arktan gelişen yapı aşağıdakilerden hangisidir?",
+    "options": [
+      "Malleus ve incus",
+      "Stapes ve hyoid üst boynuzu",
+      "Paratiroid alt bezleri",
+      "Tiroid parafoliküler hücreleri",
+      "Krikotiroid kas"
+    ],
+    "correct": 0,
+    "exp": "Birinci faringeal ark Meckel kıkırdağı ilişkili yapılara, malleus ve incusa, çiğneme kaslarına ve trigeminal sinirin mandibular dalıyla ilişkili yapılara katkı verir."
+  },
+  {
+    "id": 2488,
+    "ders": "Genel Cerrahi",
+    "konu": "Asit Baz Bozuklukları",
+    "diff": 4,
+    "q": "Üç gündür inatçı kusması olan pilor stenozlu hastada ameliyat öncesi kan gazında pH 7,52, HCO3 yüksek, klor düşük ve potasyum düşük saptanıyor. Bu hastada operasyon öncesi öncelikli düzeltme hangi bozukluğa yönelik olmalıdır?",
+    "options": [
+      "Hipokloremik metabolik alkaloz ve hipokalemi",
+      "Yüksek anyon açıklı metabolik asidoz",
+      "Respiratuvar alkaloz",
+      "Hiperkloremik metabolik asidoz",
+      "Laktat yüksekliğine bağlı mikst asidoz"
+    ],
+    "correct": 0,
+    "exp": "Uzamış gastrik sıvı kaybı hidrojen ve klor kaybına bağlı hipokloremik metabolik alkaloz yapar. Volüm ve klor replasmanı böbreğin bikarbonat atılımını düzeltir; hipokalemi de mutlaka düzeltilmelidir."
+  },
+  {
+    "id": 2489,
+    "ders": "Genel Cerrahi",
+    "konu": "Asit Baz Bozuklukları",
+    "diff": 3,
+    "q": "Subtotal kolektomi sonrası yüksek debili ileostomisi olan hastada halsizlik ve takipne gelişiyor. Kan gazında pH 7,28, HCO3 düşük, anyon açıklığı normal ve serum kloru yüksek bulunuyor. Bu tablo en çok hangi kayıpla uyumludur?",
+    "options": [
+      "Gastrik hidrojen kaybı",
+      "Barsaktan bikarbonat kaybı",
+      "Laktat birikimi",
+      "Ketojenik substrat kullanımı",
+      "Hiperventilasyona bağlı CO2 düşüklüğü"
+    ],
+    "correct": 1,
+    "exp": "İnce barsak ve pankreatik sekresyonlar bikarbonattan zengindir. Yüksek debili stoma veya diyare normal anyon açıklıklı, hiperkloremik metabolik asidoza neden olabilir."
+  },
+  {
+    "id": 2490,
+    "ders": "Genel Cerrahi",
+    "konu": "Asit Baz Bozuklukları",
+    "diff": 4,
+    "q": "Perfore kolon tümörü nedeniyle sepsis tablosunda olan hastada hipotansiyon, soğuk ekstremite ve oligüri gelişiyor. Kan gazında pH 7,21, laktat 7 mmol/L ve anyon açıklığı artmış saptanıyor. Bu bozukluğun temel nedeni aşağıdakilerden hangisidir?",
+    "options": [
+      "Renal hidrojen atılımının aşırı artması",
+      "Doku hipoperfüzyonuna bağlı anaerobik glikolizin artması",
+      "Kusmaya bağlı klor kaybı",
+      "Alveoler hiperventilasyonun baskılanması",
+      "İnsülin fazlalığına bağlı glukoz tüketimi"
+    ],
+    "correct": 1,
+    "exp": "Şokta doku perfüzyonu bozulunca pirüvat laktata yönelir. Laktik asidoz artmış anyon açıklıklı metabolik asidozun cerrahi hastadaki en önemli nedenlerinden biridir."
+  },
+  {
+    "id": 2491,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz ve Kan Transfüzyonu",
+    "diff": 4,
+    "q": "Travma laparotomisi sırasında masif eritrosit süspansiyonu verilen hastada QT uzaması, hipotansiyon ve kasılmalar başlıyor. Kan gazında iyonize kalsiyum düşük bulunuyor. Bu tablo en olası hangi duruma bağlıdır?",
+    "options": [
+      "Sitratın kalsiyumu bağlaması",
+      "Eritrositlerde 2,3-DPG artışı",
+      "Heparin kontaminasyonu",
+      "Akut hemolitik reaksiyonda potasyum düşmesi",
+      "Albümin yüküne bağlı hiperkalsemi"
+    ],
+    "correct": 0,
+    "exp": "Masif transfüzyonda sitrat yükü iyonize kalsiyumu bağlayarak hipokalsemi yapabilir. Hipotansiyon, QT uzaması ve tetani özellikle hızlı transfüzyonda belirginleşir."
+  },
+  {
+    "id": 2492,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz ve Kan Transfüzyonu",
+    "diff": 3,
+    "q": "Üst gastrointestinal kanama nedeniyle eritrosit verilen hastada transfüzyondan birkaç saat sonra ateş, hipoksemi ve bilateral akciğer infiltratları gelişiyor; juguler venöz dolgunluk yok. En olası transfüzyon komplikasyonu hangisidir?",
+    "options": [
+      "TACO",
+      "TRALI",
+      "Geç hemolitik reaksiyon",
+      "Demir yüklenmesi",
+      "Hipotermi"
+    ],
+    "correct": 1,
+    "exp": "TRALI, donör plazmasındaki antikorlarla ilişkili akut nonkardiyojenik akciğer hasarıdır. Hipoksemi ve bilateral infiltrat vardır; volüm yüklenmesi bulguları beklenmez."
+  },
+  {
+    "id": 2493,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz ve Kan Transfüzyonu",
+    "diff": 4,
+    "q": "Karaciğer rezeksiyonu planlanan hastada INR yüksek, aktif kanama yok ve trombosit sayısı normal. Ameliyata alınmadan hemen önce koagülasyon faktörlerini kısa sürede yerine koymak için en uygun ürün hangisidir?",
+    "options": [
+      "Trombosit süspansiyonu",
+      "Taze donmuş plazma",
+      "Kriyopresipitat",
+      "Eritrosit süspansiyonu",
+      "Albümin"
+    ],
+    "correct": 1,
+    "exp": "Taze donmuş plazma çoklu koagülasyon faktörlerini içerir ve kısa sürede faktör replasmanı gerektiğinde kullanılır. Trombosit sayısı normal olan izole faktör eksikliğinde trombosit verilmez."
+  },
+  {
+    "id": 2494,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz ve Kan Transfüzyonu",
+    "diff": 4,
+    "q": "Postoperatif kanaması olan hastada trombosit sayısı normal, PT normal, aPTT uzamış ve fibrinojen düzeyi belirgin düşük bulunuyor. Hızlı fibrinojen replasmanı için en uygun kan ürünü hangisidir?",
+    "options": [
+      "Eritrosit süspansiyonu",
+      "Kriyopresipitat",
+      "Yıkanmış eritrosit",
+      "Random trombosit",
+      "Lökosit filtresi"
+    ],
+    "correct": 1,
+    "exp": "Kriyopresipitat fibrinojen, faktör VIII, faktör XIII ve vWF içerir. Hipofibrinojenemiye bağlı cerrahi kanamada hedef ürünlerden biridir."
+  },
+  {
+    "id": 2495,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz ve Kan Transfüzyonu",
+    "diff": 3,
+    "q": "AB kan grubu olan hastaya acil cerrahi sırasında plazma verilmesi gerekiyor. Kan grubu uygunluğu açısından en güvenli plazma seçeneği hangisidir?",
+    "options": [
+      "0 grubu plazma",
+      "A grubu plazma",
+      "B grubu plazma",
+      "AB grubu plazma",
+      "Rh negatif eritrosit"
+    ],
+    "correct": 3,
+    "exp": "Plazmada alıcı eritrositlerine karşı antikor bulunmaması gerekir. AB plazma anti-A ve anti-B içermez; bu nedenle plazma için genel verici kabul edilir."
+  },
+  {
+    "id": 2496,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 4,
+    "q": "Motor kazası sonrası hipotansif, taşikardik ve soğuk terli hastada FAST pozitif saptanıyor. Periferik nabızlar zayıf, juguler venöz dolgunluk yok. Bu hastada şokun en olası tipi hangisidir?",
+    "options": [
+      "Kardiyojenik şok",
+      "Nörojenik şok",
+      "Hemorajik hipovolemik şok",
+      "Anafilaktik şok",
+      "Obstrüktif şok"
+    ],
+    "correct": 2,
+    "exp": "Travma sonrası soğuk ekstremite, taşikardi, zayıf nabız ve FAST pozitifliği hemorajik hipovolemik şoku düşündürür. Öncelik kanama kontrolü ve dengeli resüsitasyondur."
+  },
+  {
+    "id": 2497,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 4,
+    "q": "Ateş, karın ağrısı ve perforasyon bulguları olan hastada hipotansiyon gelişiyor. İlk değerlendirmede ekstremiteler sıcak, nabız geniş basınçlı ve laktat yüksek. Bu erken faz tablo en çok hangi şoka uyar?",
+    "options": [
+      "Septik distributif şok",
+      "Kardiyojenik şok",
+      "Saf hipovolemik şok",
+      "Nörojenik şok",
+      "Tansiyon pnömotoraksı"
+    ],
+    "correct": 0,
+    "exp": "Erken septik şokta periferik vazodilatasyon nedeniyle sıcak ekstremite ve geniş nabız basıncı görülebilir. İlerledikçe miyokard depresyonu ve soğuk faz tabloya eklenebilir."
+  },
+  {
+    "id": 2498,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 3,
+    "q": "Yüksek servikal omurilik yaralanması olan hastada hipotansiyon ve bradikardi birlikte izleniyor. Cilt sıcak, belirgin kanama bulgusu yok. Bu bulgu kombinasyonu hangi durumu destekler?",
+    "options": [
+      "Nörojenik şok",
+      "Hipovolemik şok",
+      "Septik şok",
+      "Anafilaksi",
+      "Kardiyak tamponad"
+    ],
+    "correct": 0,
+    "exp": "Nörojenik şokta sempatik tonus kaybı vazodilatasyon ve bradikardi yapar. Hipovolemik şokta beklenen yanıt genellikle taşikardidir."
+  },
+  {
+    "id": 2499,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 5,
+    "q": "Penetran toraks travması sonrası hastada hipotansiyon, boyun venlerinde dolgunluk ve kalp seslerinde derinden gelme saptanıyor. Akciğer sesleri iki tarafta eşit. En olası tanı hangisidir?",
+    "options": [
+      "Tansiyon pnömotoraks",
+      "Kardiyak tamponad",
+      "Masif hemotoraks",
+      "Septik şok",
+      "Pulmoner emboli"
+    ],
+    "correct": 1,
+    "exp": "Beck triadı kardiyak tamponadı düşündürür. Penetran travmada obstrüktif şok nedeni olabilir ve acil perikardiyal dekompresyon/torakotomi gerekebilir."
+  },
+  {
+    "id": 2500,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 4,
+    "q": "Akut pankreatitli hastada üçüncü boşluk kaybı nedeniyle hipotansiyon ve oligüri gelişiyor. Hematokrit yüksek, BUN artmış ve ekstremiteler soğuk. İlk yaklaşımda en kritik tedavi hangisidir?",
+    "options": [
+      "Erken geniş spektrum antifungal",
+      "Agresif izotonik kristalloid resüsitasyonu",
+      "Acil total parenteral beslenme",
+      "Yüksek doz diüretik",
+      "Profilaktik pankreatik cerrahi"
+    ],
+    "correct": 1,
+    "exp": "Akut pankreatitte intravasküler volüm kaybı belirgin olabilir. Erken dönemde yeterli kristalloid resüsitasyonu organ perfüzyonu açısından temel yaklaşımdır."
+  },
+  {
+    "id": 2501,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 5,
+    "q": "Karın içi sepsis nedeniyle sıvı resüsitasyonuna rağmen MAP 55 mmHg kalan hastada laktat yüksekliği devam ediyor. En uygun sonraki adım hangisidir?",
+    "options": [
+      "Sadece kolloid infüzyonuna geçmek",
+      "Norepinefrin başlamak ve kaynak kontrolünü sağlamak",
+      "Diürez artana kadar sıvıyı tamamen kesmek",
+      "Hipotansiyonu ateş düşene kadar izlemek",
+      "Eritrosit transfüzyonunu rutin olarak Hb 12 üzerine çıkarmak"
+    ],
+    "correct": 1,
+    "exp": "Septik şokta yeterli sıvıya rağmen hipotansiyon sürerse ilk tercih vazopressör norepinefrindir. Cerrahi sepsiste antibiyotik kadar kaynak kontrolü de mortaliteyi belirler."
+  },
+  {
+    "id": 2502,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Sistemik Cevap",
+    "diff": 4,
+    "q": "Büyük travma sonrası ilk 24 saatte hiperglisemi, taşikardi ve protein yıkımı belirginleşen hastada bu yanıtı en çok hangi hormonal değişiklik açıklar?",
+    "options": [
+      "İnsülin artışı ve kortizol azalması",
+      "Katekolamin, kortizol ve glukagon artışı",
+      "Aldosteron baskılanması",
+      "Parathormon azalması",
+      "ADH baskılanması"
+    ],
+    "correct": 1,
+    "exp": "Travma sonrası stres yanıtında katekolaminler, kortizol ve glukagon artar. Bu yanıt glukoneogenez, lipoliz, proteoliz ve insülin direncini artırır."
+  },
+  {
+    "id": 2503,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Sistemik Cevap",
+    "diff": 3,
+    "q": "Majör travmadan sonra ateş, taşikardi, takipne ve lökositoz gelişen hastada kültürler henüz negatif. Bu tablo enfeksiyon olmadan da hangi yanıtın parçası olabilir?",
+    "options": [
+      "SIRS",
+      "Cushing refleksi",
+      "Addison krizi",
+      "Hepatorenal sendrom",
+      "Dumping sendromu"
+    ],
+    "correct": 0,
+    "exp": "SIRS enfeksiyon dışı tetikleyicilerle de gelişebilir. Travma, yanık, pankreatit ve majör cerrahi sistemik inflamatuvar yanıt oluşturabilir."
+  },
+  {
+    "id": 2504,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Sistemik Cevap",
+    "diff": 5,
+    "q": "Çoklu travma sonrası yoğun bakımda izlenen hastada ilk günlerde yüksek inflamasyon bulguları varken ilerleyen günlerde lenfopeni ve fırsatçı enfeksiyon eğilimi belirginleşiyor. Bu geç dönem yanıt en çok hangisiyle ilişkilidir?",
+    "options": [
+      "Kompansatuvar antiinflamatuvar yanıt",
+      "Primer hiperparatiroidi",
+      "Akut hemolitik reaksiyon",
+      "Saf respiratuvar alkaloz",
+      "Transfüzyonla demir eksikliği"
+    ],
+    "correct": 0,
+    "exp": "CARS, erken inflamatuvar yanıtı dengeleyen antiinflamatuvar ve immünsüpresif fazdır. Uzarsa nozokomiyal ve fırsatçı enfeksiyon riski artabilir."
+  },
+  {
+    "id": 2505,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Sistemik Cevap",
+    "diff": 4,
+    "q": "Büyük yanık sonrası hastada enerji ihtiyacı ve oksijen tüketimi belirgin artıyor. Bu hipermetabolik fazda beklenen klinik bulgu hangisidir?",
+    "options": [
+      "Bradikardi ve hipotermi",
+      "Negatif azot dengesi ve kas kaybı",
+      "Hipoglisemi ve ketoz baskılanması",
+      "Renal sodyum kaybında azalma olmaması",
+      "Tiroksin düzeyinin tamamen baskılanması"
+    ],
+    "correct": 1,
+    "exp": "Majör travma ve yanıkta proteoliz artar, negatif azot dengesi gelişir. Yeterli kalori ve özellikle protein desteği iyileşme için önemlidir."
+  },
+  {
+    "id": 2506,
+    "ders": "Genel Cerrahi",
+    "konu": "Beslenme",
+    "diff": 4,
+    "q": "Uzun süre aç kalmış, alkol kullanım öyküsü olan hastaya yüksek kalorili beslenme başlanmasından sonra solunum yetmezliği, kas güçsüzlüğü ve aritmi gelişiyor. En olası elektrolit bozukluğu hangisidir?",
+    "options": [
+      "Hipofosfatemi",
+      "Hiperkalsemi",
+      "Hipernatremi",
+      "Hipermagnezemi",
+      "Hiperkloremi"
+    ],
+    "correct": 0,
+    "exp": "Refeeding sendromunda insülin artışı fosfat, potasyum ve magnezyumun hücre içine geçişini artırır. Hipofosfatemi solunum kas güçsüzlüğü ve aritmi yapabilir."
+  },
+  {
+    "id": 2507,
+    "ders": "Genel Cerrahi",
+    "konu": "Beslenme",
+    "diff": 3,
+    "q": "Postoperatif dönemde barsak peristaltizmi dönen ancak oral alamayan hastada beslenme yolu seçilecektir. Mukozal bütünlük ve enfeksiyon riski açısından öncelikli tercih hangisidir?",
+    "options": [
+      "Total parenteral beslenme",
+      "Enteral beslenme",
+      "Sadece dekstrozlu sıvı",
+      "Uzun süreli aç bırakma",
+      "Sadece albumin infüzyonu"
+    ],
+    "correct": 1,
+    "exp": "Gastrointestinal sistem çalışıyorsa enteral beslenme tercih edilir. Barsak mukozasını korur, bakteriyel translokasyonu ve kateter ilişkili komplikasyonları azaltır."
+  },
+  {
+    "id": 2508,
+    "ders": "Genel Cerrahi",
+    "konu": "Beslenme",
+    "diff": 4,
+    "q": "Yüksek debili proksimal enterokütan fistülü olan hastada kilo kaybı ve hipoproteinemi gelişiyor. Fistül kontrol altına alınana kadar beslenme planında en uygun yaklaşım hangisidir?",
+    "options": [
+      "Sadece berrak sıvı diyet",
+      "Enerji-protein ihtiyacını karşılayacak enteral/parenteral destek ve sıvı-elektrolit replasmanı",
+      "Yağ içeriğini tamamen sıfırlamak",
+      "Hiperglisemi oluşmaması için kalori vermemek",
+      "Rutin steroid başlamak"
+    ],
+    "correct": 1,
+    "exp": "Yüksek debili fistüllerde sıvı-elektrolit kaybı ve malnütrisyon hızla gelişir. Debi, fistül yeri ve distal barsak geçişine göre enteral veya parenteral destek planlanır."
+  },
+  {
+    "id": 2509,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 4,
+    "q": "Yetmiş kilogram ağırlığında erişkin hastada ön gövde ve her iki üst ekstremiteyi tutan ikinci derece yanık var. İlk 24 saat için Parkland formülüne göre yaklaşık sıvı ihtiyacı hangisidir?",
+    "options": [
+      "5 litre Ringer laktat",
+      "7 litre Ringer laktat",
+      "10 litre Ringer laktat",
+      "14 litre Ringer laktat",
+      "20 litre Ringer laktat"
+    ],
+    "correct": 2,
+    "exp": "Ön gövde %18, iki üst ekstremite toplam %18 kabul edilir; toplam %36 yanık vardır. Parkland formülü 4 mL x kg x %yanık şeklindedir: 4 x 70 x 36 = 10.080 mL. İlk yarısı ilk 8 saatte verilir."
+  },
+  {
+    "id": 2510,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 4,
+    "q": "Kapalı alanda yangına maruz kalan hastada yüzde yanığı, burun kıllarında yanma, ses kısıklığı ve stridor gelişiyor. Oksijen saturasyonu başlangıçta kabul edilebilir olsa bile en doğru yaklaşım hangisidir?",
+    "options": [
+      "Sadece soğuk uygulama yapmak",
+      "Erken endotrakeal entübasyon",
+      "Geç dönemde trakeostomiyi beklemek",
+      "Nazal oksijenle taburcu etmek",
+      "Profilaktik diüretik vermek"
+    ],
+    "correct": 1,
+    "exp": "İnhalasyon hasarında hava yolu ödemi hızla ilerleyebilir. Stridor ve ses kısıklığı varsa saturasyon yanıltıcı olabilir; erken entübasyon gecikmiş hava yolundan daha güvenlidir."
+  },
+  {
+    "id": 2511,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 3,
+    "q": "Sirkumferensiyel tam kat önkol yanığı olan hastada parmaklarda soğukluk, parestezi ve kapiller dolumda uzama gelişiyor. En uygun işlem hangisidir?",
+    "options": [
+      "Sıkı pansumanla kompresyon artırmak",
+      "Escharotomi",
+      "Primer deri grefti",
+      "Elektif fasya biyopsisi",
+      "Sadece oral analjezikle izlem"
+    ],
+    "correct": 1,
+    "exp": "Sirkumferensiyel yanıkta eskar dokusu ödemle birlikte kompartman benzeri dolaşım bozukluğu yapabilir. Nabız/perfüzyon bozuluyorsa eskarotomi gerekir."
+  },
+  {
+    "id": 2512,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 4,
+    "q": "Elektrik yanığı sonrası giriş ve çıkış lezyonları küçük görünen hastada kas ağrısı, koyu renkli idrar ve kreatin kinaz yüksekliği saptanıyor. Öncelikli izlem ve tedavi hedefi hangisidir?",
+    "options": [
+      "Hipokalsemiyi düzeltmek",
+      "Rabdomiyolize bağlı akut böbrek hasarını önlemek",
+      "Yanık yüzdesi küçük olduğu için taburcu etmek",
+      "Sadece topikal antibiyotik kullanmak",
+      "Protein alımını kesmek"
+    ],
+    "correct": 1,
+    "exp": "Elektrik yanıklarında yüzey lezyonu küçük olsa da derin kas hasarı ciddi olabilir. Miyoglobinüri böbrek hasarı yapar; agresif sıvı ve idrar çıkışı takibi önemlidir."
+  },
+  {
+    "id": 2513,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 3,
+    "q": "Sıcak su dökülmesi sonrası ciltte ağrılı, nemli, eritemli ve büllü lezyonlar oluşan hastada kapiller dolum korunuyor. Bu yanık derinliği en çok hangisine uyar?",
+    "options": [
+      "Birinci derece yanık",
+      "Yüzeyel parsiyel kalınlık yanık",
+      "Tam kat yanık",
+      "Dördüncü derece yanık",
+      "Kuru gangren"
+    ],
+    "correct": 1,
+    "exp": "Yüzeyel parsiyel kalınlık yanıklar ağrılı, nemli ve büllüdür; dermisin yüzeyel kısmı etkilenir. Tam kat yanıklar genellikle kuru, derimsi ve ağrısız olabilir."
+  },
+  {
+    "id": 2514,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 5,
+    "q": "Böbrek transplantasyonu sonrası daha ameliyat masasında greftin rengi bozuluyor ve anüri gelişiyor. Damar yatağında yaygın tromboz saptanıyor. En olası reddetme tipi hangisidir?",
+    "options": [
+      "Hiperakut rejeksiyon",
+      "Akut hücresel rejeksiyon",
+      "Kronik rejeksiyon",
+      "Graft-versus-host hastalığı",
+      "İlaç toksisitesi"
+    ],
+    "correct": 0,
+    "exp": "Hiperakut rejeksiyon önceden var olan donör özgül antikorlarla gelişir. Kompleman aktivasyonu ve damar trombozu nedeniyle greft dakikalar-saatler içinde kaybedilebilir."
+  },
+  {
+    "id": 2515,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 4,
+    "q": "Karaciğer transplantasyonu sonrası takrolimus kullanan hastada kreatinin yükseliyor, tremor ve hipertansiyon gelişiyor. Bu bulgular en çok hangi ilaç etkisiyle uyumludur?",
+    "options": [
+      "Kalsinörin inhibitörü toksisitesi",
+      "mTOR inhibitörüyle hipoglisemi",
+      "Azatiyoprinle hiperkalsemi",
+      "Mikofenolatla lökositoz",
+      "Prednizolonla Addison krizi"
+    ],
+    "correct": 0,
+    "exp": "Takrolimus kalsinörin inhibitörüdür; nefrotoksisite, nörotoksisite, hipertansiyon ve hiperglisemi yapabilir. Düzey takibi ve doz ayarı gerekir."
+  },
+  {
+    "id": 2516,
+    "ders": "Genel Cerrahi",
+    "konu": "Deri Hastalıkları",
+    "diff": 4,
+    "q": "Sırtında yıllardır olan pigmentli lezyonun son aylarda asimetrikleştiğini, renginin düzensizleştiğini ve kanadığını söyleyen hastada eksizyonel biyopsi melanoma gösteriyor. Prognozu belirlemede en önemli histolojik ölçüt hangisidir?",
+    "options": [
+      "Breslow kalınlığı",
+      "Lezyonun saçlı deride olması",
+      "Hastanın kan grubu",
+      "Epidermal kist varlığı",
+      "Serum amilaz düzeyi"
+    ],
+    "correct": 0,
+    "exp": "Melanomada en önemli prognostik histolojik parametre Breslow kalınlığıdır. Cerrahi sınır genişliği ve sentinel nod yaklaşımı da kalınlığa göre planlanır."
+  },
+  {
+    "id": 2517,
+    "ders": "Genel Cerrahi",
+    "konu": "Deri Hastalıkları",
+    "diff": 3,
+    "q": "Perinede hızla yayılan ağrı, ödem, krepitasyon ve kötü kokulu akıntı gelişen diyabetik hastada ateş ve hipotansiyon vardır. En uygun ilk yaklaşım hangisidir?",
+    "options": [
+      "Sadece oral antibiyotik ve poliklinik kontrolü",
+      "Acil geniş debridman ve geniş spektrumlu antibiyotik",
+      "Lezyon olgunlaşana kadar beklemek",
+      "Steroid enjeksiyonu",
+      "Soğuk uygulama"
+    ],
+    "correct": 1,
+    "exp": "Fournier gangreni nekrotizan yumuşak doku enfeksiyonudur. Tedavi gecikmeden geniş cerrahi debridman, geniş spektrumlu antibiyotik ve resüsitasyondur."
+  },
+  {
+    "id": 2518,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 4,
+    "q": "Genç kadında tiroid USG'de mikrokalsifikasyon içeren hipoekoik nodül ve servikal lenf nodu saptanıyor. İnce iğne aspirasyonu nükleer yarıklanma ve psödoinklüzyon gösteriyor. En olası tanı hangisidir?",
+    "options": [
+      "Folliküler adenom",
+      "Papiller tiroid karsinomu",
+      "Medüller tiroid karsinomu",
+      "Anaplastik karsinom",
+      "Subakut tiroidit"
+    ],
+    "correct": 1,
+    "exp": "Papiller tiroid karsinomu mikrokalsifikasyon, lenfatik yayılım ve tipik nükleer özelliklerle ilişkilidir. En sık tiroid malignitesidir."
+  },
+  {
+    "id": 2519,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 5,
+    "q": "Tiroid nodülü olan hastada serum kalsitonin yüksek, ailede feokromositoma öyküsü var. Cerrahi planlanmadan önce özellikle hangi durum dışlanmalıdır?",
+    "options": [
+      "Primer aldosteronizm",
+      "Feokromositoma",
+      "Hashimoto tiroiditi",
+      "Pankreatik psödokist",
+      "Hiperprolaktinemi"
+    ],
+    "correct": 1,
+    "exp": "Medüller tiroid kanseri MEN2 ile ilişkili olabilir. Feokromositoma varsa tiroid cerrahisinden önce tanınmalı ve tedavi edilmelidir; aksi halde kriz gelişebilir."
+  },
+  {
+    "id": 2520,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 4,
+    "q": "Total tiroidektomi sonrası hastada birkaç saat içinde perioral uyuşma, karpopedal spazm ve Chvostek bulgusu gelişiyor. En olası neden hangisidir?",
+    "options": [
+      "Rekürren laringeal sinir hasarı",
+      "Hipokalsemi",
+      "Tiroid fırtınası",
+      "Horner sendromu",
+      "Hipernatremi"
+    ],
+    "correct": 1,
+    "exp": "Total tiroidektomi sonrası paratiroid bezlerin hasarı veya devaskülarizasyonu hipokalsemi yapabilir. Perioral uyuşma, tetani ve Chvostek/Trousseau bulguları beklenir."
+  },
+  {
+    "id": 2521,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 3,
+    "q": "Tiroidektomi sonrası hastada ses kısıklığı ve vokal kord paralizisi gelişiyor. En olası hasarlanan yapı hangisidir?",
+    "options": [
+      "Eksternal laringeal sinir",
+      "Rekürren laringeal sinir",
+      "Hipoglossal sinir",
+      "Frenik sinir",
+      "Aksesuar sinir"
+    ],
+    "correct": 1,
+    "exp": "Rekürren laringeal sinir vokal kord motor innervasyonunda ana yapıdır. Hasarı ses kısıklığı ve aspirasyon riskine neden olabilir."
+  },
+  {
+    "id": 2522,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 4,
+    "q": "Primer hiperparatiroidi nedeniyle böbrek taşı ve kemik ağrısı olan hastada tek paratiroid adenomu görüntüleniyor. Beklenen laboratuvar kombinasyonu hangisidir?",
+    "options": [
+      "Kalsiyum düşük, PTH düşük",
+      "Kalsiyum yüksek, PTH yüksek",
+      "Fosfor yüksek, PTH düşük",
+      "Kalsiyum düşük, fosfor yüksek",
+      "ALP tamamen baskılı"
+    ],
+    "correct": 1,
+    "exp": "Primer hiperparatiroidide PTH otonom artar; hiperkalsemi, hipofosfatemi ve kemik dönüşümünde artış görülebilir."
+  },
+  {
+    "id": 2523,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 5,
+    "q": "Tiroidektomi sırasında üst tiroid arter bağlanırken ameliyat sonrası yüksek seslere çıkamama ve çabuk yorulan ses gelişiyor. Hasar en çok hangi sinire uyar?",
+    "options": [
+      "Rekürren laringeal sinir",
+      "Eksternal dal superior laringeal sinir",
+      "Vagusun auriküler dalı",
+      "Ansa servikalis",
+      "Glossofaringeal sinir"
+    ],
+    "correct": 1,
+    "exp": "Superior laringeal sinirin eksternal dalı krikotiroid kası innerve eder. Hasarı özellikle yüksek perde ses çıkarma güçlüğü yapar."
+  },
+  {
+    "id": 2524,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 4,
+    "q": "Graves hastalığı olan hastada ateş, taşikardi, ajitasyon ve kalp yetmezliği bulguları gelişiyor. Acil tedavide antitiroid ilaçtan sonra iyot verilmesinin nedeni hangisidir?",
+    "options": [
+      "T4'ün T3'e dönüşümünü artırmak",
+      "Tiroid hormon salınımını azaltmak",
+      "TSH salınımını artırmak",
+      "Paratiroid hormonunu baskılamak",
+      "Radyoiyot uptake'ini artırmak"
+    ],
+    "correct": 1,
+    "exp": "Tiroid fırtınasında önce antitiroid ilaç verilir; ardından iyot verilerek organifikasyon ve hormon salınımı azaltılır. İyotun antitiroid ilaçtan önce verilmesi yeni hormon sentezini artırabilir."
+  },
+  {
+    "id": 2525,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 3,
+    "q": "Sert, hızla büyüyen tiroid kitlesi olan yaşlı hastada disfaji, dispne ve vokal kord paralizisi gelişiyor. En olası tanı hangisidir?",
+    "options": [
+      "Anaplastik tiroid karsinomu",
+      "Papiller mikrokarsinom",
+      "Basit kolloid nodül",
+      "De Quervain tiroiditi",
+      "Toksik adenom"
+    ],
+    "correct": 0,
+    "exp": "Anaplastik tiroid karsinomu yaşlılarda hızlı büyüyen, invaziv ve kötü prognozlu tiroid malignitesidir. Bası bulguları sık görülür."
+  },
+  {
+    "id": 2526,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal Bez Hastalıkları",
+    "diff": 5,
+    "q": "Ataklar halinde baş ağrısı, terleme ve çarpıntısı olan hastada adrenal kitle saptanıyor. Cerrahi öncesi kan basıncı kontrolü için en doğru sıra hangisidir?",
+    "options": [
+      "Önce beta bloker, sonra alfa bloker",
+      "Önce alfa bloker, gerekirse sonra beta bloker",
+      "Sadece diüretik",
+      "Acil cerrahi, ilaç gerekmez",
+      "ACE inhibitörüyle tek başına hazırlık"
+    ],
+    "correct": 1,
+    "exp": "Feokromositomada önce alfa blokaj yapılır. Beta bloker önce verilirse alfa aracılı vazokonstriksiyon baskısız kalır ve hipertansif kriz gelişebilir."
+  },
+  {
+    "id": 2527,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal Bez Hastalıkları",
+    "diff": 4,
+    "q": "Dirençli hipertansiyon ve hipokalemisi olan hastada aldosteron yüksek, renin baskılı ve tek taraflı adrenal adenom saptanıyor. En uygun tedavi hangisidir?",
+    "options": [
+      "Bilateral adrenalektomi",
+      "Tek taraflı adrenalektomi",
+      "Sadece yüksek doz beta bloker",
+      "Acil kemoterapi",
+      "Radyoiyot tedavisi"
+    ],
+    "correct": 1,
+    "exp": "Primer hiperaldosteronizmde tek taraflı aldosteron üreten adenom varsa laparoskopik adrenalektomi tedavi seçeneğidir. Bilateral hiperplazide mineralokortikoid antagonisti tercih edilir."
+  },
+  {
+    "id": 2528,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal Bez Hastalıkları",
+    "diff": 4,
+    "q": "Cushing sendromu bulguları olan hastada adrenal kaynaklı kortizol fazlalığı düşünülüyor. Cerrahi öncesi hazırlıkta dikkat edilmesi gereken en önemli nokta hangisidir?",
+    "options": [
+      "Postoperatif adrenal yetmezlik riskine karşı steroid planlamak",
+      "Hiperkalsemi için paratiroidektomi yapmak",
+      "Beta blokeri mutlak kesmek",
+      "Tüm hastalarda splenektomi eklemek",
+      "Sadece tuzsuz diyet vermek"
+    ],
+    "correct": 0,
+    "exp": "Kortizol üreten adrenal lezyon çıkarıldığında karşı adrenal aks baskılanmış olabilir. Postoperatif glukokortikoid replasmanı ve adrenal yetmezlik izlemi önemlidir."
+  },
+  {
+    "id": 2529,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak Hastalıkları",
+    "diff": 4,
+    "q": "Genç erişkinde tekrarlayan karın ağrısı, kilo kaybı ve terminal ileumda striktürle birlikte enteroenterik fistül saptanıyor. Cerrahi kararı verilirken en olası altta yatan hastalık hangisidir?",
+    "options": [
+      "Ülseratif kolit",
+      "Crohn hastalığı",
+      "İskemik kolit",
+      "Apendiks mukoseli",
+      "Rektal prolapsus"
+    ],
+    "correct": 1,
+    "exp": "Crohn hastalığı transmural inflamasyon yaptığı için striktür, fistül ve absesle seyredebilir. Cerrahi komplikasyon tedavisidir; hastalığı tamamen kür etmez."
+  },
+  {
+    "id": 2530,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak Hastalıkları",
+    "diff": 4,
+    "q": "Çocukluk çağından beri aralıklı ağrısız alt gastrointestinal kanaması olan genç hastada sintigrafide sağ alt kadranda ektopik mide mukozası tutulumu görülüyor. En olası tanı hangisidir?",
+    "options": [
+      "Meckel divertikülü",
+      "Zenker divertikülü",
+      "Sigmoid volvulus",
+      "İntussusepsiyon sonrası polip",
+      "Anal fissür"
+    ],
+    "correct": 0,
+    "exp": "Meckel divertikülü omfalomezenterik kanal artığıdır ve ektopik gastrik mukoza içerebilir. Asit sekresyonu ülser ve kanamaya yol açabilir."
+  },
+  {
+    "id": 2531,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak Hastalıkları",
+    "diff": 3,
+    "q": "Kısa barsak sendromu gelişen hastada safra tuzu emilimi ve B12 emiliminin en çok bozulduğu segment hangisidir?",
+    "options": [
+      "Duodenum",
+      "Jejunum proksimali",
+      "Terminal ileum",
+      "Çekum",
+      "Transvers kolon"
+    ],
+    "correct": 2,
+    "exp": "Terminal ileum B12-intrensek faktör kompleksinin ve safra tuzlarının emildiği ana bölgedir. İleal rezeksiyon steatore ve B12 eksikliği yapabilir."
+  },
+  {
+    "id": 2532,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak Hastalıkları",
+    "diff": 4,
+    "q": "Geçirilmiş karın ameliyatları olan hastada kramp tarzı karın ağrısı, kusma ve distansiyon gelişiyor. Grafide santral yerleşimli ince barsak hava-sıvı seviyeleri izleniyor. En olası etiyoloji hangisidir?",
+    "options": [
+      "Adheziv ince barsak obstrüksiyonu",
+      "Akut pankreatit",
+      "Primer hipertiroidi",
+      "Kolanjit",
+      "Rektal prolapsus"
+    ],
+    "correct": 0,
+    "exp": "Gelişmiş ülkelerde ince barsak obstrüksiyonunun en sık nedeni postoperatif adezyonlardır. Kusma, kolik ağrı, distansiyon ve hava-sıvı seviyeleri tipiktir."
+  },
+  {
+    "id": 2533,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenterik Hastalıklar",
+    "diff": 5,
+    "q": "Atriyal fibrilasyonu olan yaşlı hastada ani başlayan çok şiddetli karın ağrısı var; muayene bulguları ağrıya göre hafif kalıyor. Laktat yüksekliği gelişiyor. En olası tanı hangisidir?",
+    "options": [
+      "Akut mezenterik arter embolisi",
+      "Akut apandisit",
+      "Biliyer kolik",
+      "Üreter taşı",
+      "Viral gastroenterit"
+    ],
+    "correct": 0,
+    "exp": "Akut mezenterik iskemi klasik olarak muayene bulgularıyla orantısız şiddetli ağrı yapar. Atriyal fibrilasyon SMA embolisi için önemli risk faktörüdür."
+  },
+  {
+    "id": 2534,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenterik Hastalıklar",
+    "diff": 4,
+    "q": "Yoğun bakımda vazopressör alan, ciddi kalp yetmezliği olan hastada yaygın karın ağrısı ve laktat yüksekliği gelişiyor; BT anjiyografide belirgin arter tıkanıklığı gösterilemiyor. En olası mekanizma hangisidir?",
+    "options": [
+      "Nonoklüzif mezenterik iskemi",
+      "Meckel divertikülü",
+      "Kolon polipi",
+      "Splenik kist",
+      "Safra taşı migrasyonu"
+    ],
+    "correct": 0,
+    "exp": "Nonoklüzif mezenterik iskemi düşük debi ve vazokonstriksiyonla gelişir. Yoğun bakım, şok, kalp yetmezliği ve vazopressör kullanımı risk oluşturur."
+  },
+  {
+    "id": 2535,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenterik Hastalıklar",
+    "diff": 4,
+    "q": "Genç hastada trombofili öyküsü, karın ağrısı ve barsak duvarında ödem ile mezenterik ven trombozu saptanıyor. İlk tedavi yaklaşımında hangisi öne çıkar?",
+    "options": [
+      "Antikoagülasyon ve barsak canlılığı izlemi",
+      "Acil total kolektomi",
+      "Rutin splenektomi",
+      "Radyoiyot tedavisi",
+      "Sadece antiasit tedavi"
+    ],
+    "correct": 0,
+    "exp": "Mezenterik ven trombozunda peritonit veya nekroz yoksa antikoagülasyon temel tedavidir. Barsak canlılığı bozulursa cerrahi gerekir."
+  },
+  {
+    "id": 2536,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 4,
+    "q": "Yaşlı hastada dışkı çapında incelme, kabızlık ve demir eksikliği anemisi var. Kolonoskopide sol kolon lümenini daraltan halka tarzı tümör saptanıyor. Bu bulgu en çok hangi kolon kanseri yerleşimine uyar?",
+    "options": [
+      "Sağ kolon ekzofitik tümörü",
+      "Sol kolon annüler tümörü",
+      "Apendiks mukoseli",
+      "Rektal varis",
+      "İleal lenfoma"
+    ],
+    "correct": 1,
+    "exp": "Sol kolon kanserleri lümen dar olduğu için annüler, obstrüktif lezyonlarla daha sık belirti verir. Sağ kolon kanserlerinde anemi ve kitle daha ön plandadır."
+  },
+  {
+    "id": 2537,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 5,
+    "q": "Rektum kanseri tanısı alan hastada tümör mezorektal fasiyaya yakın ve lokal ileri olarak değerlendiriliyor. Sfinkter koruyucu cerrahi öncesi standart yaklaşım hangisidir?",
+    "options": [
+      "Sadece acil abdominoperineal rezeksiyon",
+      "Neoadjuvan kemoradyoterapi/total neoadjuvan tedavi değerlendirmesi",
+      "Tedavisiz izlem",
+      "Primer antibiyotik tedavisi",
+      "Radyoiyot ablasyonu"
+    ],
+    "correct": 1,
+    "exp": "Lokal ileri rektum kanserinde neoadjuvan tedavi lokal kontrolü artırır ve cerrahi sınır/sfinkter korunması açısından avantaj sağlayabilir."
+  },
+  {
+    "id": 2538,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 4,
+    "q": "Yirmili yaşlarda yüzlerce kolorektal polip saptanan hastada APC mutasyonu doğrulanıyor. Kanser gelişimini önlemek için en uygun yaklaşım hangisidir?",
+    "options": [
+      "Sadece yıllık gaitada gizli kan",
+      "Profilaktik kolektomi planlamak",
+      "H. pylori eradikasyonu",
+      "Appendektomi",
+      "Sadece liften fakir diyet"
+    ],
+    "correct": 1,
+    "exp": "FAP'de kolorektal kanser gelişme riski çok yüksektir. Polip yükü ve rektal tutulum durumuna göre profilaktik kolektomi planlanır."
+  },
+  {
+    "id": 2539,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 3,
+    "q": "Sol alt kadran ağrısı, ateş ve lökositozu olan hastada BT'de perikolik yağlı doku inflamasyonu ve sınırlı divertikülit saptanıyor; peritonit yok. İlk tedavi yaklaşımı hangisidir?",
+    "options": [
+      "Acil total proktokolektomi",
+      "Antibiyotik ve destek tedavisi",
+      "Kolonoskopi ile perforasyonu kapatmak",
+      "Yüksek doz steroid",
+      "Rutin splenektomi"
+    ],
+    "correct": 1,
+    "exp": "Komplike olmayan akut divertikülitte destek tedavisi ve seçilmiş hastada antibiyotik uygulanır. Peritonit, serbest perforasyon veya kontrolsüz sepsis cerrahi gerektirir."
+  },
+  {
+    "id": 2540,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 5,
+    "q": "Yaşlı ve bakım ihtiyacı olan hastada belirgin abdominal distansiyon gelişiyor. Grafide kahve çekirdeği görünümü ile sigmoid volvulus düşünülüyor; peritonit bulgusu yok. İlk uygun yaklaşım hangisidir?",
+    "options": [
+      "Endoskopik detorsiyon",
+      "Acil Whipple ameliyatı",
+      "Sadece oral laksatif",
+      "Total gastrektomi",
+      "Perkütan kolesistostomi"
+    ],
+    "correct": 0,
+    "exp": "Sigmoid volvulusta peritonit veya iskemi yoksa ilk yaklaşım endoskopik detorsiyondur. Nüks riski nedeniyle uygun hastada elektif rezeksiyon planlanabilir."
+  },
+  {
+    "id": 2541,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 4,
+    "q": "Uzun süreli ülseratif koliti olan hastada kolonoskopide yüksek dereceli displazi saptanıyor. En uygun yaklaşım hangisidir?",
+    "options": [
+      "Sadece antispazmodik başlamak",
+      "Proktokolektomi değerlendirmek",
+      "Appendektomi yapmak",
+      "Sadece 10 yıl sonra kontrol",
+      "Safra kesesi alınması"
+    ],
+    "correct": 1,
+    "exp": "Uzun süreli ülseratif kolitte displazi kolorektal kanser riskini gösterir. Yüksek dereceli displazide proktokolektomi genellikle önerilir."
+  },
+  {
+    "id": 2542,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 3,
+    "q": "Sağ kolon kanseri olan hastada halsizlik ve demir eksikliği anemisi belirgin, obstrüksiyon bulgusu yok. Bu klinik tabloyu açıklayan en uygun ifade hangisidir?",
+    "options": [
+      "Sağ kolon lümeni geniş olduğu için kanama ve anemi ön planda olabilir",
+      "Sağ kolon tümörleri asla kanamaz",
+      "Sol kolon tümörleri sadece ishal yapar",
+      "Kolon kanseri hiperkalsemiyle başlar",
+      "Apendiks çıkarılınca kolon kanseri riski sıfırlanır"
+    ],
+    "correct": 0,
+    "exp": "Sağ kolon lümeni geniştir ve dışkı sıvıdır; bu nedenle obstrüksiyon geç gelişir. Gizli kanama ve demir eksikliği anemisi sık olabilir."
+  },
+  {
+    "id": 2543,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 4,
+    "q": "Kolorektal kanserde karaciğerde sınırlı sayıda rezektabl metastaz saptanan hastada ekstrahepatik yayılım yok. Uygun hastada tedavi yaklaşımını belirleyen en önemli nokta hangisidir?",
+    "options": [
+      "Karaciğer metastazının hiçbir zaman çıkarılamaması",
+      "R0 rezeksiyon ve yeterli fonksiyonel karaciğer kalıntısı olasılığı",
+      "Sadece yaşın 40 altında olması",
+      "Primer tümörün mutlaka apendikste olması",
+      "Serum amilaz düzeyi"
+    ],
+    "correct": 1,
+    "exp": "Kolorektal kanser karaciğer metastazlarında uygun seçilmiş hastalarda rezeksiyon küratif potansiyel taşıyabilir. R0 rezeksiyon ve yeterli karaciğer rezervi temel kriterlerdir."
+  },
+  {
+    "id": 2544,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 3,
+    "q": "Genç hastada iştahsızlık ve periumblikal ağrı birkaç saat içinde sağ alt kadrana lokalize oluyor. Muayenede McBurney noktasında hassasiyet var. Ağrının yer değiştirmesi en iyi nasıl açıklanır?",
+    "options": [
+      "Somatik periton irritasyonunun parietal peritona ulaşması",
+      "Pankreatik enzimlerin retroperitona kaçması",
+      "Safra yollarında basınç azalması",
+      "Diafragmatik sinirin uyarılması",
+      "Rektal varis kanaması"
+    ],
+    "correct": 0,
+    "exp": "Apandisitte başlangıç ağrısı visseral ve periumblikaldir. İnflamasyon parietal peritona ulaşınca somatik ağrı sağ alt kadrana lokalize olur."
+  },
+  {
+    "id": 2545,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 4,
+    "q": "Apandisit şüphesi olan gebe hastada ağrı sağ alt kadrandan daha yukarıda tarifleniyor. Bu değişiklik en çok hangi duruma bağlıdır?",
+    "options": [
+      "Gebelikte appendiksin uterus tarafından yer değiştirmesi",
+      "Gebelikte apandiksin kaybolması",
+      "Gebelikte ağrı liflerinin tamamen bloke olması",
+      "Her gebede safra taşı olması",
+      "Plasentanın kolon içine invaze olması"
+    ],
+    "correct": 0,
+    "exp": "Büyüyen uterus appendiksi yukarı ve laterale itebilir. Gebelikte apandisit tanısı bu nedenle klinik olarak daha zor olabilir."
+  },
+  {
+    "id": 2546,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 4,
+    "q": "Beş gündür sağ alt kadran ağrısı olan hastada BT'de çevresi sınırlı apendiküler apse saptanıyor; yaygın peritonit yok. İlk yaklaşım hangisidir?",
+    "options": [
+      "Acil geniş rezeksiyon zorunludur",
+      "Antibiyotik ve uygun ise perkütan drenaj",
+      "Sadece laksatif",
+      "Kolonoskopik polipektomi",
+      "Rutin splenektomi"
+    ],
+    "correct": 1,
+    "exp": "Sınırlı apendiküler apsede stabil hastada antibiyotik ve perkütan drenaj tercih edilebilir. Yaygın peritonit veya kontrolsüz sepsis varsa cerrahi gerekir."
+  },
+  {
+    "id": 2547,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 5,
+    "q": "Appendektomi materyalinde uç kısımda 0,8 cm nöroendokrin tümör saptanıyor; mezoappendiks invazyonu yok ve sınırlar temiz. En uygun yaklaşım hangisidir?",
+    "options": [
+      "Sağ hemikolektomi zorunludur",
+      "Appendektomi yeterlidir",
+      "Total kolektomi",
+      "Kemoterapi olmadan izlem yapılamaz",
+      "Pankreatektomi"
+    ],
+    "correct": 1,
+    "exp": "Appendiks nöroendokrin tümörlerinde küçük, uç yerleşimli, sınırları temiz lezyonlarda appendektomi genellikle yeterlidir. Büyük boyut veya risk faktörlerinde sağ hemikolektomi düşünülebilir."
+  },
+  {
+    "id": 2548,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 3,
+    "q": "Yaşlı hastada apandisit nedeniyle ameliyat sonrası patolojide mukosel düşündüren bulgular raporlanıyor. Bu hastada özellikle hangi durum açısından dikkatli olunmalıdır?",
+    "options": [
+      "Kolorektal neoplazi birlikteliği",
+      "Primer hipertiroidi",
+      "B12 fazlalığı",
+      "Akut otit",
+      "Hemofili A"
+    ],
+    "correct": 0,
+    "exp": "Appendiks mukoseli ve müsinöz neoplaziler kolorektal neoplazilerle birlikte olabilir. Uygun hastada kolonoskopik değerlendirme gerekir."
+  },
+  {
+    "id": 2549,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 4,
+    "q": "Apandisitli hastada yüksek ateş, taşikardi, yaygın defans ve rebound gelişiyor. Bu klinik değişiklik en çok hangi komplikasyonu düşündürür?",
+    "options": [
+      "Perforasyon ve yaygın peritonit",
+      "Basit konstipasyon",
+      "Saf hipoglisemi",
+      "Akut pankreatit olmadan amilaz yüksekliği",
+      "Primer lenfödem"
+    ],
+    "correct": 0,
+    "exp": "Apandisitte perforasyon sonrası lokal veya yaygın peritonit gelişebilir. Yaygın defans, rebound ve sistemik toksisite cerrahi aciliyeti artırır."
+  },
+  {
+    "id": 2550,
+    "ders": "Genel Cerrahi",
+    "konu": "Perianal Hastalıklar",
+    "diff": 4,
+    "q": "Şiddetli anal ağrı ve ateşi olan hastada rektal muayenede fluktuasyon alınamıyor ancak derin pelvik ağrı ve lökositoz var. Derin perirektal apse şüphesinde en uygun yaklaşım hangisidir?",
+    "options": [
+      "Ağrı kesici verip beklemek",
+      "Görüntüleme ve cerrahi drenaj planlamak",
+      "Sadece topikal steroid",
+      "Kolonoskopi hazırlığıyla taburcu etmek",
+      "Rutin heparin kesmek"
+    ],
+    "correct": 1,
+    "exp": "Derin anorektal apseler fizik muayenede belirgin fluktuasyon vermeyebilir. Ateş, derin ağrı ve lökositoz varsa görüntüleme ve drenaj gerekir."
+  },
+  {
+    "id": 2551,
+    "ders": "Genel Cerrahi",
+    "konu": "Perianal Hastalıklar",
+    "diff": 3,
+    "q": "Dışkılama sırasında cam kesiği gibi ağrı ve parlak kırmızı kanama tarifleyen hastada posterior orta hatta lineer ülser görülüyor. İlk basamak tedavide hangisi uygundur?",
+    "options": [
+      "Sfinkter basıncını azaltan medikal tedavi ve dışkı yumuşatma",
+      "Acil abdominoperineal rezeksiyon",
+      "Rutin antibiyotikle tek başına tedavi",
+      "Total kolektomi",
+      "Perkütan kolesistostomi"
+    ],
+    "correct": 0,
+    "exp": "Anal fissürde internal sfinkter spazmı iskemi ve ağrıyı sürdürür. Lif, dışkı yumuşatıcı, topikal vazodilatörler veya botulinum toksini kullanılabilir."
+  },
+  {
+    "id": 2552,
+    "ders": "Genel Cerrahi",
+    "konu": "Perianal Hastalıklar",
+    "diff": 4,
+    "q": "Tekrarlayan perianal fistül ve apse öyküsü olan genç hastada kronik ishal ve kilo kaybı da bulunuyor. Bu tablo en çok hangi hastalıkla ilişkilidir?",
+    "options": [
+      "Crohn hastalığı",
+      "Çölyak hastalığında saf mukozal tutulum",
+      "Akut apandisit",
+      "Medüller tiroid kanseri",
+      "Safra taşı ileusu"
+    ],
+    "correct": 0,
+    "exp": "Crohn hastalığı transmural inflamasyon ve perianal fistül/apse ile seyredebilir. Tekrarlayan kompleks fistüllerde altta yatan inflamatuvar barsak hastalığı araştırılmalıdır."
+  },
+  {
+    "id": 2553,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 4,
+    "q": "Geçirilmiş laparotomi öyküsü olan hastada mekanik ince barsak obstrüksiyonu izleniyor. Ateş, lökositoz, sürekli ağrı ve metabolik asidoz gelişmesi en çok neyi düşündürür?",
+    "options": [
+      "Basit paralitik ileus",
+      "Strangülasyon ve iskemi",
+      "Psikojenik karın ağrısı",
+      "Saf hiperventilasyon",
+      "Dumping sendromu"
+    ],
+    "correct": 1,
+    "exp": "Obstrüksiyonda sürekli ağrı, ateş, lökositoz, taşikardi ve asidoz strangülasyon/iskemi bulgularıdır. Gecikmiş cerrahi barsak nekrozuna yol açabilir."
+  },
+  {
+    "id": 2554,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 5,
+    "q": "Sigmoid tümöre bağlı kolon obstrüksiyonunda ileoçekal valv kompetan ise çekum belirgin dilate oluyor. Bu durumun en ciddi sonucu hangisidir?",
+    "options": [
+      "Kapalı ans obstrüksiyon ve çekum perforasyonu",
+      "Safra taşı erimesi",
+      "Mide asidinin azalması",
+      "Portal ven trombozunun düzelmesi",
+      "Akciğer ödeminin kendiliğinden geçmesi"
+    ],
+    "correct": 0,
+    "exp": "Kompetan ileoçekal valv varlığında kolon obstrüksiyonu kapalı ans haline gelebilir. En geniş segment olan çekumda perforasyon riski artar."
+  },
+  {
+    "id": 2555,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 4,
+    "q": "Postoperatif enterokütan fistülü olan hastada ateş yok, drenaj kontrol altında ve sepsis bulgusu bulunmuyor. İlk tedavi prensibi hangisidir?",
+    "options": [
+      "Sepsis kontrolü, sıvı-elektrolit desteği, beslenme ve cilt koruması",
+      "Her fistülde ilk gün acil rezeksiyon",
+      "Oral alımı tamamen kesip sıvı vermemek",
+      "Yalnızca analjezikle izlem",
+      "Rutin kemoterapi"
+    ],
+    "correct": 0,
+    "exp": "Enterokütan fistülde öncelik sepsis kontrolü, sıvı-elektrolit replasmanı, beslenme desteği ve cilt bakımını sağlamaktır. Cerrahi genellikle stabilizasyon sonrası planlanır."
+  },
+  {
+    "id": 2556,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 3,
+    "q": "Ameliyat sonrası üçüncü günde karında distansiyon, barsak seslerinde azalma ve gaz-gaita çıkaramama gelişiyor; belirgin kolik ağrı yok. En olası tanı hangisidir?",
+    "options": [
+      "Postoperatif paralitik ileus",
+      "Strangüle femoral herni",
+      "Mezenter arter embolisi",
+      "Anal fissür",
+      "Tiroid fırtınası"
+    ],
+    "correct": 0,
+    "exp": "Postoperatif paralitik ileus cerrahi sonrası barsak motilitesinin geçici azalmasıdır. Mekanik obstrüksiyondan farklı olarak kolik tarzda belirgin ağrı ve geçiş noktası olmayabilir."
+  },
+  {
+    "id": 2557,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 4,
+    "q": "İnce barsak obstrüksiyonunda nazogastrik sondadan yüksek miktarda içerik geliyor, hasta hipokloremik ve hipokalemik hale geliyor. Bu kayıpların klinik sonucu en çok hangisidir?",
+    "options": [
+      "Metabolik alkaloz eğilimi",
+      "İzole respiratuvar asidoz",
+      "Hiperkalsemi",
+      "Saf proteinüri",
+      "Hipertiroksinemi"
+    ],
+    "correct": 0,
+    "exp": "Proksimal gastrointestinal kayıplarda hidrojen, klor ve potasyum kaybı metabolik alkaloza yol açabilir. Volüm kaybı böbrekte bikarbonat atılımını daha da azaltır."
+  },
+  {
+    "id": 2558,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 5,
+    "q": "Femoral herni nedeniyle ameliyat edilen hastada barsak duvarının sadece antimezenterik kısmı sıkışmış, lümen tam tıkanmamıştır. Nekroz riski olan bu herni tipi hangisidir?",
+    "options": [
+      "Richter hernisi",
+      "Littre hernisi",
+      "Sliding herni",
+      "Direkt inguinal herni",
+      "Spigelian herni"
+    ],
+    "correct": 0,
+    "exp": "Richter hernisinde barsak duvarının bir kısmı sıkışır; tam obstrüksiyon olmayabilir. Bu yüzden tanı gecikebilir ve strangülasyon gelişebilir."
+  },
+  {
+    "id": 2559,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 4,
+    "q": "Sirozlu hastada ultrasonografide arteriyel fazda kontrastlanan ve portal fazda yıkanma gösteren 3 cm karaciğer lezyonu saptanıyor. En olası tanı hangisidir?",
+    "options": [
+      "Hepatoselüler karsinom",
+      "Basit karaciğer kisti",
+      "Hemanjiyomun tipik bulgusu",
+      "Fokal nodüler hiperplazide skar",
+      "Safra kesesi polipi"
+    ],
+    "correct": 0,
+    "exp": "Siroz zemininde arteriyel hipervaskülarite ve venöz/delayed washout HCC için tipiktir. Tanıda görüntüleme dinamiği önemlidir."
+  },
+  {
+    "id": 2560,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 4,
+    "q": "Portal hipertansiyonu olan hastada masif üst gastrointestinal kanama, splenomegali ve asit var. Endoskopide özofagus varisi kanaması saptanıyor. İlk tedavi paketinde hangisi yer alır?",
+    "options": [
+      "Vazoaktif tedavi, antibiyotik ve endoskopik bant ligasyonu",
+      "Sadece oral demir",
+      "Acil total gastrektomi",
+      "Steroid enjeksiyonu",
+      "Rutin splenektomi"
+    ],
+    "correct": 0,
+    "exp": "Varis kanamasında resüsitasyonla birlikte vazoaktif ajan, antibiyotik profilaksisi ve endoskopik bant ligasyonu temel yaklaşımdır. Kontrolsüz kanamada balon/TIPS seçenekleri düşünülür."
+  },
+  {
+    "id": 2561,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 5,
+    "q": "Sirozlu hastada elektif cerrahi öncesi bilirubin yüksek, albümin düşük, INR uzamış, asit ve ensefalopati mevcut. Bu bulgular cerrahi risk açısından ne ifade eder?",
+    "options": [
+      "Karaciğer rezervinin kötü ve mortalite riskinin yüksek olduğunu",
+      "Cerrahi riskin sadece yaşla ilişkili olduğunu",
+      "INR'nin karaciğer hastalarında önemsiz olduğunu",
+      "Asitin cerrahi riskle ilişkili olmadığını",
+      "Albüminden bağımsız tam iyilik halini"
+    ],
+    "correct": 0,
+    "exp": "Child-Pugh/MELD parametreleri karaciğer rezervini ve cerrahi riski değerlendirmede kullanılır. Dekompansasyon bulguları elektif cerrahi mortalitesini artırır."
+  },
+  {
+    "id": 2562,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 4,
+    "q": "Karaciğer kisti nedeniyle değerlendirilen hastada görüntülemede kız veziküller ve kalsifiye duvar izleniyor. Cerrahi sırasında anafilaksi riskini azaltmak için en olası tanı hangisidir?",
+    "options": [
+      "Hidatik kist",
+      "Basit safra kisti",
+      "Hepatik adenom",
+      "Fokal nodüler hiperplazi",
+      "Splenik hamartom"
+    ],
+    "correct": 0,
+    "exp": "Hidatik kistte kız veziküller görülebilir. Rüptür anafilaksi ve yayılıma yol açabileceğinden cerrahi plan dikkatli yapılır; skolisidal önlem ve uygun teknik önemlidir."
+  },
+  {
+    "id": 2563,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 3,
+    "q": "Oral kontraseptif kullanan genç kadında karaciğerde kanama riski taşıyan soliter lezyon saptanıyor. Bu klinik bağlamda en olası benign tümör hangisidir?",
+    "options": [
+      "Hepatik adenom",
+      "Kolanjiyokarsinom",
+      "Hepatoblastom",
+      "Metastatik melanom",
+      "Kist hidatikte kız vezikül"
+    ],
+    "correct": 0,
+    "exp": "Hepatik adenom oral kontraseptif kullanımıyla ilişkilidir ve kanama/malign dönüşüm riski nedeniyle boyut ve semptoma göre tedavi planlanır."
+  },
+  {
+    "id": 2564,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 3,
+    "q": "Yağlı yemekten sonra sağ üst kadranda başlayan, birkaç saat süren ve kendiliğinden geçen ağrı tarifleyen hastada ateş ve lökositoz yok. En olası tanı hangisidir?",
+    "options": [
+      "Biliyer kolik",
+      "Akut kolanjit",
+      "Akut apandisit",
+      "Perfore ülser",
+      "Mezenterik iskemi"
+    ],
+    "correct": 0,
+    "exp": "Biliyer kolik sistik kanalın geçici tıkanmasıyla oluşur. Ateş, sürekli ağrı ve inflamasyon bulguları gelişirse akut kolesistit düşünülür."
+  },
+  {
+    "id": 2565,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 4,
+    "q": "Sağ üst kadran ağrısı, ateş ve Murphy pozitifliği olan hastada USG'de safra kesesi duvar kalınlığı ve taş izleniyor. En olası tanı hangisidir?",
+    "options": [
+      "Akut kolesistit",
+      "Basit renal kolik",
+      "Pilor stenozu",
+      "Zenker divertikülü",
+      "Rektal prolapsus"
+    ],
+    "correct": 0,
+    "exp": "Akut kolesistit genellikle sistik kanalın taşla tıkanması sonrası gelişir. Murphy pozitifliği ve duvar kalınlaşması tanıyı destekler."
+  },
+  {
+    "id": 2566,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 4,
+    "q": "Ateş, sarılık ve sağ üst kadran ağrısı olan hastada hipotansiyon ve konfüzyon da gelişiyor. Bu hastada en önemli acil yaklaşım hangisidir?",
+    "options": [
+      "Acil biliyer drenaj ve antibiyotik",
+      "Elektif kolonoskopi",
+      "Sadece analjezik",
+      "Oral safra asidiyle beklemek",
+      "Rutin tiroidektomi"
+    ],
+    "correct": 0,
+    "exp": "Charcot triadı kolanjiti düşündürür; hipotansiyon ve konfüzyon Reynolds pentadını oluşturur. Sepsis tablosunda antibiyotik ve acil biliyer drenaj gerekir."
+  },
+  {
+    "id": 2567,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 5,
+    "q": "Kolesistektomi sonrası devam eden sarılık ve kolestatik enzim yüksekliği olan hastada koledok taşı düşünülüyor. Tanısal ve tedavi edici olarak en uygun işlem hangisidir?",
+    "options": [
+      "ERCP",
+      "Sadece düz karın grafisi",
+      "Total gastrektomi",
+      "Splenektomi",
+      "Tiroidektomi"
+    ],
+    "correct": 0,
+    "exp": "Koledok taşında ERCP hem tanısal hem tedavi edici olabilir. Sfinkterotomi ve taş çıkarma ile obstrüksiyon giderilebilir."
+  },
+  {
+    "id": 2568,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 4,
+    "q": "İleri yaş hastada mekanik barsak obstrüksiyonu bulguları, pnömobili ve ektopik safra taşı saptanıyor. En olası tanı hangisidir?",
+    "options": [
+      "Safra taşı ileusu",
+      "Sigmoid volvulus",
+      "Meckel kanaması",
+      "Anal fissür",
+      "Akut pankreatit olmadan psödokist"
+    ],
+    "correct": 0,
+    "exp": "Safra taşı ileusunda büyük taş kolesistoenterik fistül yoluyla barsağa geçer. Rigler triadı: obstrüksiyon, pnömobili ve ektopik safra taşıdır."
+  },
+  {
+    "id": 2569,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 4,
+    "q": "Safra kesesi taşı olan hastada akut pankreatit gelişiyor. Klinik düzeldikten sonra aynı yatışta kolesistektomi planlanmasının temel amacı hangisidir?",
+    "options": [
+      "Tekrarlayan biliyer olayları önlemek",
+      "Pankreas enzim üretimini artırmak",
+      "Portal hipertansiyonu tedavi etmek",
+      "Paratiroid hormonunu düşürmek",
+      "Dalak fonksiyonunu artırmak"
+    ],
+    "correct": 0,
+    "exp": "Hafif biliyer pankreatitte aynı yatışta kolesistektomi tekrarlayan pankreatit ve biliyer komplikasyon riskini azaltır."
+  },
+  {
+    "id": 2570,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 5,
+    "q": "Kolesistektomi sırasında Calot üçgeninde sistik kanal, ortak hepatik kanal ve sistik arter ilişkisi net seçilemiyor. Güvenli cerrahi açısından en doğru davranış hangisidir?",
+    "options": [
+      "Anatomiyi zorlayarak klipslemek",
+      "Güvenli görüş sağlanana kadar diseksiyonu sürdürmek, gerekirse subtotal kolesistektomi veya açık cerrahiye dönmek",
+      "Koledoku rutin kesmek",
+      "Safra kesesini hiç değerlendirmeden kapatmak",
+      "Hepatik arteri bağlamak"
+    ],
+    "correct": 1,
+    "exp": "Safra yolu yaralanmasını önlemek için kritik güvenlik görüşü sağlanmalıdır. Anatomi net değilse bailout stratejileri, subtotal kolesistektomi veya açık cerrahi düşünülür."
+  },
+  {
+    "id": 2571,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 4,
+    "q": "Sarılık, kilo kaybı ve ağrısız safra kesesi distansiyonu olan hastada distal koledok/pankreas başı düzeyinde obstrüksiyon düşünülüyor. Palpe edilen ağrısız safra kesesi bulgusu hangisidir?",
+    "options": [
+      "Courvoisier bulgusu",
+      "Murphy bulgusu",
+      "Rovsing bulgusu",
+      "Cullen bulgusu",
+      "Trousseau bulgusu"
+    ],
+    "correct": 0,
+    "exp": "Courvoisier bulgusu ağrısız hidropik safra kesesi ve sarılığı ifade eder. Malign distal biliyer obstrüksiyon lehine değerlendirilir."
+  },
+  {
+    "id": 2572,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 3,
+    "q": "Safra taşı hastalığında siyah pigment taşlarının en çok ilişkili olduğu durum hangisidir?",
+    "options": [
+      "Kronik hemoliz",
+      "Aşırı kolesterol alımı olmadan hipotiroidi",
+      "Saf izole hiperkalsemi",
+      "Akut apandisit",
+      "Primer hiperaldosteronizm"
+    ],
+    "correct": 0,
+    "exp": "Siyah pigment taşları kalsiyum bilirubinat içerir ve kronik hemoliz veya siroz gibi durumlarla ilişkilidir."
+  },
+  {
+    "id": 2573,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 4,
+    "q": "Mirizzi sendromu düşünülen hastada sarılık gelişmesinin en uygun açıklaması hangisidir?",
+    "options": [
+      "Safra kesesi boynu veya sistik kanaldaki taşın ortak hepatik kanala dıştan bası yapması",
+      "Pankreasın insülin salgısını artırması",
+      "Apendiksin perforasyonu",
+      "Dalak kapsülünün yırtılması",
+      "Özofagus alt sfinkterinin gevşememesi"
+    ],
+    "correct": 0,
+    "exp": "Mirizzi sendromunda impakte taş ortak hepatik kanal/koledok üzerinde bası veya fistül oluşturabilir. Koledok taşıyla karışabilir ve cerrahide yaralanma riski artar."
+  },
+  {
+    "id": 2574,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 3,
+    "q": "Çoklu travmalı hasta acile getiriliyor. İlk değerlendirmede konuşamıyor, stridoru var ve servikal yaralanma ihtimali mevcut. ATLS yaklaşımında öncelik hangisidir?",
+    "options": [
+      "Hava yolunu servikal stabilizasyonla güvenceye almak",
+      "Ayrıntılı nörolojik muayeneye geçmek",
+      "Tüm laboratuvar sonuçlarını beklemek",
+      "Oral sıvı vermek",
+      "Elektif BT randevusu almak"
+    ],
+    "correct": 0,
+    "exp": "ATLS'de ilk basamak airway with cervical spine protectiontır. Hava yolu tehdidi varsa servikal stabilizasyon korunarak hızla güvenceye alınır."
+  },
+  {
+    "id": 2575,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 5,
+    "q": "Künt toraks travması sonrası hipotansif hastada tek taraflı solunum sesleri azalmış, trakea karşı tarafa deviye ve boyun venleri dolgun. İlk işlem hangisidir?",
+    "options": [
+      "Toraks BT beklemek",
+      "İğne dekompresyon/tüp torakostomi",
+      "Ekokardiyografi sonucunu beklemek",
+      "Sadece oksijen verip izlemek",
+      "Bronkoskopi ile lavaj"
+    ],
+    "correct": 1,
+    "exp": "Tansiyon pnömotoraks klinik tanıdır ve görüntüleme beklenmez. Acil dekompresyon hayat kurtarıcıdır."
+  },
+  {
+    "id": 2576,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 4,
+    "q": "Hemodinamik olarak stabil künt karın travmalı hastada FAST pozitif saptanıyor. Organ yaralanmasının derecesini ve tedavi planını netleştirmek için en uygun görüntüleme hangisidir?",
+    "options": [
+      "Kontrastlı abdominal BT",
+      "Direkt ayakta karın grafisi",
+      "Acil kolonoskopi",
+      "Mide pasaj grafisi",
+      "Tiroid sintigrafisi"
+    ],
+    "correct": 0,
+    "exp": "Stabil künt karın travmasında kontrastlı BT organ yaralanması derecesini ve nonoperatif izlem/anjiyoembolizasyon kararını belirlemede kullanılır."
+  },
+  {
+    "id": 2577,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 4,
+    "q": "Pelvik kırıklı hipotansif hastada eksternal kanama yok, abdomen yumuşak ve pelvis instabil. İlk resüsitatif yaklaşımda hangisi uygundur?",
+    "options": [
+      "Pelvik binder ile hacmi azaltmak ve kanama kontrol stratejisi planlamak",
+      "Hastayı yürütmeyi denemek",
+      "Sadece oral analjezik vermek",
+      "Acil kolonoskopi",
+      "İzole furosemid"
+    ],
+    "correct": 0,
+    "exp": "Pelvik kırıkta venöz ve kemik yüzey kanaması ciddi olabilir. Pelvik binder pelvis hacmini azaltarak tamponada yardımcı olur; kanama kontrolü için embolizasyon/cerrahi planlanır."
+  },
+  {
+    "id": 2578,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 5,
+    "q": "Penetran abdominal travmalı hastada hipotansiyon, yaygın peritonit ve eviserasyon vardır. En uygun yaklaşım hangisidir?",
+    "options": [
+      "Acil laparotomi",
+      "Önce 24 saat gözlem",
+      "Sadece ultrason kontrolü",
+      "Oral antibiyotikle taburculuk",
+      "Elektif endoskopi"
+    ],
+    "correct": 0,
+    "exp": "Hemodinamik instabilite, peritonit veya eviserasyon penetran abdominal travmada acil eksplorasyon endikasyonlarıdır."
+  },
+  {
+    "id": 2579,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 4,
+    "q": "Dalak yaralanması olan hemodinamik stabil hastada aktif kontrast ekstravazasyonu izleniyor. Uygun merkezde organ koruyucu yaklaşım olarak hangisi düşünülebilir?",
+    "options": [
+      "Anjiyoembolizasyon",
+      "Acil pankreatektomi",
+      "Total gastrektomi",
+      "Tiroidektomi",
+      "Kolonoskopik polipektomi"
+    ],
+    "correct": 0,
+    "exp": "Stabil dalak yaralanmalarında nonoperatif yaklaşım mümkündür. Aktif kanama bulgusunda anjiyoembolizasyon splenik korumaya katkı sağlayabilir."
+  },
+  {
+    "id": 2580,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 3,
+    "q": "Travma hastasında GKS 7, kusma ve yüz travması var. Aspirasyon riski yüksek olan bu hastada en uygun hava yolu yaklaşımı hangisidir?",
+    "options": [
+      "Kesin hava yolu sağlamak",
+      "Sadece nazal kanül",
+      "Oral sıvı vermek",
+      "Taburcu etmek",
+      "Derin sedasyonsuz beklemek"
+    ],
+    "correct": 0,
+    "exp": "GKS 8 ve altında hava yolu koruyucu refleksler yetersiz kabul edilir. Travma hastasında aspirasyonu önlemek ve oksijenasyonu sürdürmek için kesin hava yolu gerekir."
+  },
+  {
+    "id": 2581,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 4,
+    "q": "Karın travması sonrası stabil hastada retroperitoneal duodenum yaralanması şüphesi var. Geç dönemde açıklanamayan epigastrik ağrı ve retroperitoneal hava saptanıyor. Bu yaralanmanın gecikmesinin nedeni hangisidir?",
+    "options": [
+      "Retroperitoneal yerleşim nedeniyle peritonit bulgularının geç gelişmesi",
+      "Duodenumun hiç enzim içermemesi",
+      "Duodenumun kanlanmasının olmaması",
+      "Safra kesesinin olmaması",
+      "Midenin tamamen steril olması"
+    ],
+    "correct": 0,
+    "exp": "Duodenumun büyük kısmı retroperitonealdir. Yaralanmalar başlangıçta belirgin peritoneal irritasyon vermeyebilir ve tanı gecikebilir."
+  },
+  {
+    "id": 2582,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 4,
+    "q": "Ani başlayan epigastrik ağrı sonrası yaygın karın ağrısı gelişen hastada ayakta grafide diyafram altında serbest hava görülüyor. En olası tanı hangisidir?",
+    "options": [
+      "Perfore peptik ülser",
+      "Basit gastroenterit",
+      "Anal fissür",
+      "Tiroid fırtınası",
+      "Primer hiperparatiroidi"
+    ],
+    "correct": 0,
+    "exp": "Diyafram altı serbest hava perforasyon lehinedir. Epigastrik başlangıç ve yaygın peritonit perforasyonlu peptik ülseri düşündürür."
+  },
+  {
+    "id": 2583,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 5,
+    "q": "Yaşlı hipertansif erkek hastada ani başlayan sırt ve karın ağrısı, hipotansiyon ve pulsatif abdominal kitle saptanıyor. En olası tanı hangisidir?",
+    "options": [
+      "Rüptüre abdominal aort anevrizması",
+      "Akut kolesistit",
+      "Sigmoid divertikülit",
+      "Pilor stenozu",
+      "Anal apse"
+    ],
+    "correct": 0,
+    "exp": "Hipotansiyon, ani sırt/karın ağrısı ve pulsatif kitle rüptüre AAA için klasik ama her zaman tam olmayan triaddır. Hızlı vasküler cerrahi değerlendirme gerekir."
+  },
+  {
+    "id": 2584,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 4,
+    "q": "Genç kadında ani sağ alt kadran ağrısı var; gebelik testi pozitif ve transvajinal USG'de intrauterin gebelik izlenmiyor. Hemodinamik olarak kötüleşiyor. En olası acil tanı hangisidir?",
+    "options": [
+      "Rüptüre ektopik gebelik",
+      "Basit sistit",
+      "Safra taşı ileusu",
+      "Zenker divertikülü",
+      "Kronik anal fissür"
+    ],
+    "correct": 0,
+    "exp": "Üreme çağındaki akut batın hastasında gebelik testi mutlaka değerlendirilir. Pozitif test, intrauterin gebelik yokluğu ve instabilite ektopik gebelik rüptürünü düşündürür."
+  },
+  {
+    "id": 2585,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 4,
+    "q": "Antikoagülan kullanan yaşlı hastada karın ağrısı ve distansiyon var. BT'de intramural barsak hematomu ve parsiyel obstrüksiyon saptanıyor. En olası neden hangisidir?",
+    "options": [
+      "Antikoagülasyona bağlı barsak duvarı kanaması",
+      "Kolera toksini",
+      "Primer tiroid nodülü",
+      "Appendiks nöroendokrin tümörü",
+      "Sadece laktoz intoleransı"
+    ],
+    "correct": 0,
+    "exp": "Antikoagülan kullanımı intramural hematoma neden olabilir. Klinik obstrüksiyon veya iskemi bulgularına göre konservatif ya da cerrahi yaklaşım planlanır."
+  },
+  {
+    "id": 2586,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 5,
+    "q": "Şiddetli karın ağrısı olan hastada muayene bulguları başlangıçta hafif, laktat yüksek ve metabolik asidoz gelişiyor. BT anjiyografi planlanıyor. Bu akut batın tablosunda en kritik tanı hangisidir?",
+    "options": [
+      "Mezenterik iskemi",
+      "Basit dispepsi",
+      "Hemoroid",
+      "Kronik kolesistolitiazis",
+      "Fibroadenom"
+    ],
+    "correct": 0,
+    "exp": "Mezenterik iskemi ağrı-muayene uyumsuzluğu ve laktat yüksekliğiyle akla gelmelidir. Gecikme barsak nekrozu ve mortaliteyi artırır."
+  },
+  {
+    "id": 2587,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 3,
+    "q": "Akut batınla gelen hastada istemsiz defans ve rebound saptanıyor. Bu muayene bulguları en çok hangi durumu gösterir?",
+    "options": [
+      "Parietal periton irritasyonu",
+      "Saf visseral gaz distansiyonu",
+      "Hipotiroidi",
+      "İzole hipoglisemi",
+      "Fizyolojik açlık"
+    ],
+    "correct": 0,
+    "exp": "Defans ve rebound parietal peritonun inflamasyonunu gösterir. Cerrahi akut batın kararında önemli fizik muayene bulgularıdır."
+  },
+  {
+    "id": 2588,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 4,
+    "q": "Akut pankreatit düşündüren epigastrik ağrı sırta yayılıyor ve lipaz yüksek. İlk 24 saatte şiddeti ve organ perfüzyonunu izlemek için hangi bulgu özellikle önemlidir?",
+    "options": [
+      "BUN ve hematokrit trendi",
+      "Serum TSH",
+      "Retikülosit sayısı",
+      "Anti-TPO düzeyi",
+      "Serum prolaktin"
+    ],
+    "correct": 0,
+    "exp": "Akut pankreatitte hemokonsantrasyon ve BUN artışı yetersiz volüm resüsitasyonu ve ağır seyirle ilişkilidir. Erken sıvı tedavisi ve organ fonksiyonu takibi önemlidir."
+  },
+  {
+    "id": 2589,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 4,
+    "q": "Sol alt kadran ağrısı olan hastada BT'de yaygın serbest hava ve pürülan peritonit düşündüren bulgular var. Divertikülit komplikasyonu olarak en uygun yaklaşım hangisidir?",
+    "options": [
+      "Cerrahi kaynak kontrolü",
+      "Sadece oral antibiyotikle taburcu etmek",
+      "Kolonoskopiyi hemen perforasyon bölgesinden geçirmek",
+      "Bekle-gör yöntemiyle aylarca izlemek",
+      "Rutin tiroidektomi"
+    ],
+    "correct": 0,
+    "exp": "Divertikülitte serbest perforasyon ve yaygın peritonit cerrahi kaynak kontrolü gerektirir. Stabil sınırlı hastalıkta konservatif yaklaşım mümkün olabilir."
+  },
+  {
+    "id": 2590,
+    "ders": "Genel Cerrahi",
+    "konu": "Yara İyileşmesi",
+    "diff": 4,
+    "q": "Skorbüt bulguları olan hastada ameliyat sonrası yara ayrışması gelişiyor. Kollajen sentezindeki hangi basamak bozulduğu için iyileşme zayıflar?",
+    "options": [
+      "Prolin ve lizin hidroksilasyonu",
+      "DNA metilasyonu",
+      "Safra tuzu emilimi",
+      "Trombosit yıkımı",
+      "Hemoglobin oksijen bağlanması"
+    ],
+    "correct": 0,
+    "exp": "Vitamin C kollajen sentezinde prolin ve lizin hidroksilasyonu için gereklidir. Eksikliğinde kollajen çapraz bağları zayıflar, yara iyileşmesi ve kapiller bütünlük bozulur."
+  },
+  {
+    "id": 2591,
+    "ders": "Genel Cerrahi",
+    "konu": "Yara İyileşmesi",
+    "diff": 3,
+    "q": "Temiz cerrahi insizyonda ilk günlerde yara dayanıklılığını en çok sağlayan yapı hangisidir?",
+    "options": [
+      "Sütür materyali",
+      "Tam olgun tip I kollajen",
+      "Kalsifiye skar",
+      "Epidermal melanin",
+      "Lenf nodu kapsülü"
+    ],
+    "correct": 0,
+    "exp": "Erken dönemde yaranın mekanik dayanıklılığı büyük ölçüde sütürlerden gelir. Kollajen birikimi ve yeniden yapılanma haftalar içinde dayanıklılığı artırır."
+  },
+  {
+    "id": 2592,
+    "ders": "Genel Cerrahi",
+    "konu": "Yara İyileşmesi",
+    "diff": 4,
+    "q": "Diyabetik hastada temiz cerrahi yara geç iyileşiyor ve enfeksiyon eğilimi artıyor. Bu durum en çok hangi hücresel fonksiyon bozukluğuyla ilişkilidir?",
+    "options": [
+      "Nötrofil kemotaksis ve fagositozunda azalma",
+      "Eritrosit çekirdeğinin artması",
+      "Trombositlerin oksijen taşıması",
+      "B lenfositlerin kollajen üretmesi",
+      "Safra asidi sentezinin artması"
+    ],
+    "correct": 0,
+    "exp": "Hiperglisemi nötrofil kemotaksisi, fagositozu ve mikrovasküler perfüzyonu bozar. Bu nedenle diyabette enfeksiyon ve yara ayrışması riski artar."
+  },
+  {
+    "id": 2593,
+    "ders": "Genel Cerrahi",
+    "konu": "Yara İyileşmesi",
+    "diff": 4,
+    "q": "Omuz bölgesindeki insizyon skarı sınırları aşarak kabarık ve kaşıntılı hale geliyor. Ailede benzer skar öyküsü var. En olası tanı hangisidir?",
+    "options": [
+      "Keloid",
+      "Seroma",
+      "Hematoma",
+      "Dekübit ülseri",
+      "Piyoderma gangrenozum"
+    ],
+    "correct": 0,
+    "exp": "Keloid skar orijinal yara sınırlarını aşar ve genetik yatkınlık gösterebilir. Hipertrofik skar genellikle yara sınırları içinde kalır."
+  },
+  {
+    "id": 2594,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 3,
+    "q": "Kolon cerrahisi sonrası beşinci günde insizyon yerinde eritem, ısı artışı ve pürülan akıntı gelişiyor. En olası komplikasyon hangisidir?",
+    "options": [
+      "Cerrahi alan enfeksiyonu",
+      "Dumping sendromu",
+      "Medüller tiroid kanseri",
+      "Primer hiperaldosteronizm",
+      "Barrett özofagusu"
+    ],
+    "correct": 0,
+    "exp": "Yüzeyel cerrahi alan enfeksiyonu insizyon çevresinde eritem, hassasiyet ve pürülan akıntıyla ortaya çıkabilir. Drenaj ve uygun antibiyotik gerekir."
+  },
+  {
+    "id": 2595,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 5,
+    "q": "Kolorektal anastomoz yapılan hastada postoperatif beşinci günde ateş, taşikardi, karın ağrısı ve pürülan drenaj gelişiyor. En çok hangi komplikasyon düşünülmelidir?",
+    "options": [
+      "Anastomoz kaçağı",
+      "Tiroid fırtınası",
+      "Primer hiperparatiroidi",
+      "Safra taşı ileusu",
+      "Anal fissür"
+    ],
+    "correct": 0,
+    "exp": "Anastomoz kaçağı ateş, taşikardi, karın ağrısı, ileus veya drenajdan fekaloid/pürülan içerikle ortaya çıkabilir. Erken tanı ve kaynak kontrolü kritiktir."
+  },
+  {
+    "id": 2596,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 4,
+    "q": "Geniş spektrum antibiyotik sonrası postoperatif hastada sulu ishal, karın ağrısı ve lökositoz gelişiyor. En olası etken hangisidir?",
+    "options": [
+      "Clostridioides difficile",
+      "Streptococcus pyogenes ile farenjit",
+      "Candida albicans ile oral pamukçuk dışında kolit yapmayan tablo",
+      "Ascaris lumbricoides",
+      "Treponema pallidum"
+    ],
+    "correct": 0,
+    "exp": "Antibiyotik ilişkili psödomembranöz kolitin en önemli etkeni C. difficile'dir. Toksin aracılı kolit yapar; ağır olguda toksik megakolon gelişebilir."
+  },
+  {
+    "id": 2597,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 4,
+    "q": "Ameliyat sonrası ilk 24 saatte hafif ateşi olan hastada akciğer bazallerinde solunum sesleri azalmış ve derin nefes almakla ağrı tarifliyor. En olası neden hangisidir?",
+    "options": [
+      "Atelektazi",
+      "Anastomoz kaçağı",
+      "Pankreas kanseri",
+      "Hiperparatiroidi",
+      "Koledok taşı"
+    ],
+    "correct": 0,
+    "exp": "Postoperatif erken ateşin sık nedenlerinden biri atelektazidir. Ağrı kontrolü, mobilizasyon ve solunum egzersizleri önemlidir."
+  },
+  {
+    "id": 2598,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 5,
+    "q": "Karın cerrahisi sonrası yara yerinden seröz pembe sıvı gelmeye başlıyor ve hasta öksürünce fasya aralığından barsak ansı görülüyor. En uygun yaklaşım hangisidir?",
+    "options": [
+      "Acil cerrahi değerlendirme ve eviserasyonun steril nemli örtüyle korunması",
+      "Sadece kuru pansumanla taburculuk",
+      "Yüksek doz laksatif",
+      "Kolonoskopi",
+      "Topikal antifungal"
+    ],
+    "correct": 0,
+    "exp": "Fasya dehisansı/eviserasyon cerrahi acildir. Barsaklar steril nemli örtüyle korunur, resüsitasyon ve acil operasyon planlanır."
+  },
+  {
+    "id": 2599,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 4,
+    "q": "Genç erkekte kasığa inen şişlik skrotuma uzanıyor ve inferior epigastrik damarların lateralinden derin inguinal halkadan geçiyor. Herni tipi hangisidir?",
+    "options": [
+      "İndirekt inguinal herni",
+      "Direkt inguinal herni",
+      "Femoral herni",
+      "Epigastrik herni",
+      "Obturator herni"
+    ],
+    "correct": 0,
+    "exp": "İndirekt inguinal herni derin inguinal halkadan geçer ve inferior epigastrik damarların lateralindedir. Skrotuma inme eğilimi daha fazladır."
+  },
+  {
+    "id": 2600,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 3,
+    "q": "Yaşlı erkekte kasıkta Hesselbach üçgeninden çıkan, inferior epigastrik damarların medialinde yerleşen herni saptanıyor. Bu herni tipi hangisidir?",
+    "options": [
+      "Direkt inguinal herni",
+      "İndirekt inguinal herni",
+      "Femoral herni",
+      "Umbilikal herni",
+      "Littre hernisi"
+    ],
+    "correct": 0,
+    "exp": "Direkt inguinal herni transversalis fasya zayıflığıyla Hesselbach üçgeninden çıkar ve inferior epigastrik damarların medialindedir."
+  },
+  {
+    "id": 2601,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 4,
+    "q": "Kadın hastada inguinal ligamentin altında ağrılı şişlik ve barsak obstrüksiyonu bulguları gelişiyor. Strangülasyon riski yüksek olan herni tipi hangisidir?",
+    "options": [
+      "Femoral herni",
+      "Direkt inguinal herni",
+      "Epigastrik herni",
+      "Spigelian herni",
+      "İnsizyonel herni"
+    ],
+    "correct": 0,
+    "exp": "Femoral herni kadınlarda daha sık görülür ve femoral kanalın dar olması nedeniyle strangülasyon riski yüksektir."
+  },
+  {
+    "id": 2602,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 5,
+    "q": "Karın duvarı fıtığında kese içinde Meckel divertikülü saptanıyor. Bu özel herni tipi hangisidir?",
+    "options": [
+      "Littre hernisi",
+      "Richter hernisi",
+      "Sliding herni",
+      "Amyand hernisi",
+      "Pantaloon herni"
+    ],
+    "correct": 0,
+    "exp": "Littre hernisi herni kesesinde Meckel divertikülü bulunmasıdır. Amyand hernisinde herni kesesinde appendiks yer alır."
+  },
+  {
+    "id": 2603,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 4,
+    "q": "Obezite, sigara kullanımı ve geçirilmiş orta hat laparotomisi olan hastada insizyon hattında fıtık gelişiyor. En önemli patofizyolojik temel hangisidir?",
+    "options": [
+      "Fasya iyileşmesinin ve mekanik dayanıklılığın bozulması",
+      "Tiroid hormon sentezinin artması",
+      "Safra taşı migrasyonu",
+      "Dalakta kapsül kalınlaşması",
+      "Vokal kord paralizisi"
+    ],
+    "correct": 0,
+    "exp": "İnsizyonel herni fasya kapanmasının başarısızlığı veya sonradan zayıflamasıyla gelişir. Obezite, enfeksiyon, sigara, malnütrisyon ve artmış intraabdominal basınç riski artırır."
+  },
+  {
+    "id": 2604,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 3,
+    "q": "Yirmi yaşında kadında düzgün sınırlı, hareketli, lastik kıvamlı meme kitlesi saptanıyor. USG solid benign lezyonla uyumlu. En olası tanı hangisidir?",
+    "options": [
+      "Fibroadenom",
+      "İnflamatuvar meme kanseri",
+      "Paget hastalığı",
+      "Yağ nekrozu",
+      "Mastit dışında apse"
+    ],
+    "correct": 0,
+    "exp": "Fibroadenom genç kadınlarda sık görülen, hareketli ve iyi sınırlı benign meme kitlesidir. Görüntüleme ve gerekirse biyopsi ile doğrulanır."
+  },
+  {
+    "id": 2605,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 4,
+    "q": "Emziren kadında ağrılı, kızarık meme alanı ve ateş var. Antibiyotiğe rağmen fluktuasyon gelişiyor. En uygun yaklaşım hangisidir?",
+    "options": [
+      "Apse drenajı ve emzirmeyi uygun şekilde sürdürme",
+      "Acil mastektomi",
+      "Sadece soğuk kompresle izlem",
+      "Kemoterapi",
+      "Radyoiyot"
+    ],
+    "correct": 0,
+    "exp": "Laktasyonel mastit apseleşirse drenaj gerekir. Uygun antibiyotik ve süt boşaltımının sürdürülmesi tedavinin parçasıdır."
+  },
+  {
+    "id": 2606,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 4,
+    "q": "Mamografide kümelenmiş mikrokalsifikasyonlar nedeniyle biyopsi yapılan hastada bazal membranı aşmayan duktal epitel proliferasyonu saptanıyor. Tanı hangisidir?",
+    "options": [
+      "Duktal karsinoma in situ",
+      "İnvaziv duktal karsinom",
+      "Fibrokistik değişiklik",
+      "Medüller tiroid karsinomu",
+      "Meme absesi"
+    ],
+    "correct": 0,
+    "exp": "DCIS bazal membranı aşmayan malign duktal proliferasyondur. Mamografide mikrokalsifikasyonlarla saptanabilir."
+  },
+  {
+    "id": 2607,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 4,
+    "q": "Meme kanseri nedeniyle cerrahi planlanan klinik olarak aksillası negatif hastada aksiller evreleme için en uygun yaklaşım hangisidir?",
+    "options": [
+      "Sentinel lenf nodu biyopsisi",
+      "Rutin bilateral aksiller diseksiyon",
+      "Aksillayı hiç değerlendirmemek",
+      "Sadece serum kalsitonin",
+      "Splenektomi"
+    ],
+    "correct": 0,
+    "exp": "Sentinel lenf nodu biyopsisi klinik nod negatif meme kanserinde aksiller evreleme için morbiditesi daha düşük standart yaklaşımdır."
+  },
+  {
+    "id": 2608,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 5,
+    "q": "Meme başında ekzematöz, kabuklu lezyon ve altta duktal karsinom saptanan hastada tanı hangisidir?",
+    "options": [
+      "Paget hastalığı",
+      "Fibroadenom",
+      "Galaktosel",
+      "Mondor hastalığı",
+      "Yağ nekrozu"
+    ],
+    "correct": 0,
+    "exp": "Memede Paget hastalığı meme başı-areola kompleksinde ekzematöz değişikliklerle seyreder ve sıklıkla altta DCIS veya invaziv karsinomla ilişkilidir."
+  },
+  {
+    "id": 2609,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 4,
+    "q": "Travma sonrası memede ele gelen sert kitle, cilt retraksiyonuna benzeyen bulgu ve mamografide yağlı kalsifikasyonlar saptanıyor. En olası benign durum hangisidir?",
+    "options": [
+      "Yağ nekrozu",
+      "İnflamatuvar karsinom",
+      "Lobüler karsinoma in situ",
+      "Mast hücreli lösemi",
+      "Tiroid nodülü"
+    ],
+    "correct": 0,
+    "exp": "Yağ nekrozu travma veya cerrahi sonrası sert kitle ve cilt değişikliğiyle maligniteyi taklit edebilir. Görüntüleme/biyopsi gerekebilir."
+  },
+  {
+    "id": 2610,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 5,
+    "q": "Genç kadında hızlı büyüyen büyük meme kitlesi, yaprak benzeri stromal yapı ve sınırda malign potansiyel saptanıyor. En olası tanı hangisidir?",
+    "options": [
+      "Filloides tümör",
+      "Basit kist",
+      "Meme başı adenomu",
+      "Duktal ektazi",
+      "Granülomatöz mastit"
+    ],
+    "correct": 0,
+    "exp": "Filloides tümör fibroepitelyal bir tümördür; hızlı büyüyebilir. Tedavide yeterli cerrahi sınırla eksizyon önemlidir."
+  },
+  {
+    "id": 2611,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 4,
+    "q": "İnvaziv lobüler meme kanserinde histolojide hücrelerin tek sıra halinde dizildiği ve E-kadherin kaybı olduğu bildiriliyor. Bu bilgi hangi özelliği destekler?",
+    "options": [
+      "Diskohesif büyüme paterni",
+      "Yoğun kalsitonin sekresyonu",
+      "Gastrin üretimi",
+      "Safra yolu obstrüksiyonu",
+      "Mezenterik ven trombozu"
+    ],
+    "correct": 0,
+    "exp": "İnvaziv lobüler karsinomda E-kadherin kaybı hücre adezyonunu bozar ve tek sıra dizilim gibi diskohesif büyüme paternine yol açar."
+  },
+  {
+    "id": 2612,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 4,
+    "q": "Kızarık, ödemli, portakal kabuğu görünümü olan memede kitle net seçilemiyor ve biyopside dermal lenfatik invazyon saptanıyor. En olası tanı hangisidir?",
+    "options": [
+      "İnflamatuvar meme kanseri",
+      "Basit mastalji",
+      "Fibroadenom",
+      "Galaktosel",
+      "Yağ kisti"
+    ],
+    "correct": 0,
+    "exp": "İnflamatuvar meme kanseri dermal lenfatik invazyon nedeniyle eritem, ödem ve peau d'orange görünümüyle seyreder. Agresif biyolojiye sahiptir."
+  },
+  {
+    "id": 2613,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 4,
+    "q": "Disfaji, regürjitasyon ve kilo kaybı olan hastada baryum grafide kuş gagası görünümü izleniyor. Manometride alt özofagus sfinkteri gevşemiyor. En olası tanı hangisidir?",
+    "options": [
+      "Akalazya",
+      "Zenker divertikülü",
+      "Barrett özofagusu",
+      "Mallory-Weiss yırtığı",
+      "Boerhaave sendromu"
+    ],
+    "correct": 0,
+    "exp": "Akalazyada LES gevşemesi bozulur ve peristaltizm kaybı gelişir. Baryum grafide kuş gagası görünümü tipiktir."
+  },
+  {
+    "id": 2614,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 4,
+    "q": "Uzun süreli reflü öyküsü olan obez erkekte endoskopide distal özofagusta intestinal metaplazi saptanıyor. Bu durum hangi kanser riskini artırır?",
+    "options": [
+      "Adenokarsinom",
+      "Skuamöz hücreli cilt kanseri",
+      "Medüller tiroid karsinomu",
+      "Hepatoselüler karsinom",
+      "Seminom"
+    ],
+    "correct": 0,
+    "exp": "Barrett özofagusu distal özofagusta intestinal metaplazidir ve özofagus adenokarsinomu riskini artırır."
+  },
+  {
+    "id": 2615,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 5,
+    "q": "Şiddetli kusma sonrası ani göğüs ağrısı, dispne ve subkutan amfizem gelişen hastada özofagus rüptürü düşünülüyor. En olası tanı hangisidir?",
+    "options": [
+      "Boerhaave sendromu",
+      "Mallory-Weiss yırtığı",
+      "Akalazya",
+      "Zenker divertikülü",
+      "Pilor stenozu"
+    ],
+    "correct": 0,
+    "exp": "Boerhaave sendromu transmural özofagus rüptürüdür. Kusma sonrası göğüs ağrısı, sepsis ve mediastinal hava ile seyreder; cerrahi acildir."
+  },
+  {
+    "id": 2616,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 4,
+    "q": "Yaşlı hastada yutma sonrası öksürük, halitozis ve boyunda gurultulu şişlik var. Baryum grafide posterior hipofarengeal divertikül görülüyor. En olası tanı hangisidir?",
+    "options": [
+      "Zenker divertikülü",
+      "Epifrenik divertikül",
+      "Özofagus varisi",
+      "Barrett özofagusu",
+      "Reflü özofajit"
+    ],
+    "correct": 0,
+    "exp": "Zenker divertikülü Killian üçgeninden gelişen pulsiyon divertikülüdür. Disfaji, regürjitasyon, halitozis ve aspirasyon yapabilir."
+  },
+  {
+    "id": 2617,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 4,
+    "q": "Kostik madde içen hastada ağız içinde lezyon az, ancak ciddi retrosternal ağrı ve disfaji mevcut. İlk değerlendirmede en uygun yaklaşım hangisidir?",
+    "options": [
+      "Erken dönemde endoskopik değerlendirme planlamak",
+      "Kusmayı zorla uyarmak",
+      "Nötralizan asit-baz içirmek",
+      "Kör nazogastrik sonda takmak",
+      "Semptom yok sayıp taburcu etmek"
+    ],
+    "correct": 0,
+    "exp": "Kostik alımda ağız lezyonu özofagus hasarını güvenilir dışlamaz. Kusma ve nötralizasyon önerilmez; uygun zamanlamayla endoskopi hasarı değerlendirir."
+  },
+  {
+    "id": 2618,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 4,
+    "q": "Posterior duodenum ülseri olan hastada ani masif hematemez gelişiyor. En olası kanayan damar hangisidir?",
+    "options": [
+      "Gastroduodenal arter",
+      "Splenik ven",
+      "İnferior mezenterik arter",
+      "Sistik arter",
+      "Superior tiroid arter"
+    ],
+    "correct": 0,
+    "exp": "Posterior duodenal ülserler gastroduodenal arteri erode ederek masif üst gastrointestinal kanamaya neden olabilir."
+  },
+  {
+    "id": 2619,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 4,
+    "q": "Kilo kaybı ve erken doyma şikayeti olan hastada mide kanseri saptanıyor. Sol supraklaviküler lenf nodu büyümesi hangi bulgu olarak bilinir?",
+    "options": [
+      "Virchow nodu",
+      "Sister Mary Joseph nodülü",
+      "Blumer shelf",
+      "Courvoisier bulgusu",
+      "Murphy bulgusu"
+    ],
+    "correct": 0,
+    "exp": "Sol supraklaviküler lenf nodu metastazı Virchow nodu olarak bilinir. Mide ve diğer abdominal malignitelerde görülebilir."
+  },
+  {
+    "id": 2620,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 4,
+    "q": "Roux-en-Y gastrik bypass sonrası hasta yemeklerden kısa süre sonra çarpıntı, terleme, karın krampları ve ishal yaşıyor. En olası durum hangisidir?",
+    "options": [
+      "Erken dumping sendromu",
+      "Akalazya",
+      "Addison krizi",
+      "Hipertrofik pilor stenozu",
+      "FAP"
+    ],
+    "correct": 0,
+    "exp": "Erken dumping hiperosmolar içeriğin hızla ince barsağa geçmesiyle vazomotor ve gastrointestinal semptomlara neden olur."
+  },
+  {
+    "id": 2621,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 5,
+    "q": "Mide submukozal kitlesinde iğsi hücreler ve c-KIT pozitifliği saptanıyor. En olası tanı hangisidir?",
+    "options": [
+      "Gastrointestinal stromal tümör",
+      "MALT lenfoma",
+      "Adenokarsinom",
+      "Nöroendokrin apendiks tümörü",
+      "Leiomyom dışı saf kist"
+    ],
+    "correct": 0,
+    "exp": "GIST çoğunlukla c-KIT/CD117 pozitif mezenkimal tümördür. Risk değerlendirmesinde boyut ve mitotik indeks önemlidir."
+  },
+  {
+    "id": 2622,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 4,
+    "q": "Morbid obez ve tip 2 diyabetli hastada bariatrik cerrahi sonrası glisemik kontrol hızla düzeliyor. Bu erken düzelme yalnızca kilo kaybından önce hangi etkiyle açıklanabilir?",
+    "options": [
+      "İnkretin yanıtındaki değişiklikler",
+      "Kalsitonin artışı",
+      "Safra kesesi kasılmasının kaybolması",
+      "Dalak filtrasyonunun artması",
+      "PTH baskılanması"
+    ],
+    "correct": 0,
+    "exp": "Bariatrik cerrahi sonrası diyabet düzelmesinde kilo kaybı dışında GLP-1 gibi inkretin yanıtları ve barsak hormonlarındaki değişiklikler rol oynar."
+  },
+  {
+    "id": 2623,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 3,
+    "q": "H. pylori ilişkili peptik ülser hastalığında eradikasyon tedavisinin cerrahi açıdan en önemli sonucu hangisidir?",
+    "options": [
+      "Ülser nüksünü ve komplikasyon riskini azaltması",
+      "Mide asidini kalıcı olarak tamamen sıfırlaması",
+      "Tiroid kanseri riskini artırması",
+      "Dalak büyümesini düzeltmesi",
+      "Apendiksi küçültmesi"
+    ],
+    "correct": 0,
+    "exp": "H. pylori eradikasyonu peptik ülser nüksünü belirgin azaltır. Kanama/perforasyon gibi komplikasyonların tekrarını önlemede önemlidir."
+  },
+  {
+    "id": 2624,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 4,
+    "q": "Hematemez ve melena ile gelen hastada nazogastrik aspiratta kan görülüyor. Hemodinamik instabilite var. İlk yaklaşımda en önemli basamak hangisidir?",
+    "options": [
+      "Hava yolu ve dolaşım stabilizasyonu, damar yolu ve kan hazırlığı",
+      "Önce kolonoskopi hazırlığı",
+      "Sadece oral PPI ile taburculuk",
+      "Elektif meme USG",
+      "Rutin splenektomi"
+    ],
+    "correct": 0,
+    "exp": "Üst GİS kanamasında ilk yaklaşım ABC, iki geniş damar yolu, resüsitasyon ve gerekirse kan transfüzyonudur. Endoskopi stabilizasyon sonrası yapılır."
+  },
+  {
+    "id": 2625,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 4,
+    "q": "Ağrısız masif hematokezya ile gelen yaşlı hastada kolonoskopide divertiküler kanama düşünülüyor. Bu kanamanın tipik özelliği hangisidir?",
+    "options": [
+      "Ağrısız ve ani başlayabilmesi",
+      "Daima melena yapması",
+      "Sadece çocuklarda görülmesi",
+      "Mutlaka peritonitle başlaması",
+      "Her zaman üst GİS kaynaklı olması"
+    ],
+    "correct": 0,
+    "exp": "Divertiküler kanama alt GİS kanamasının sık nedenlerindendir ve genellikle ağrısız, ani hematokezya yapabilir."
+  },
+  {
+    "id": 2626,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 5,
+    "q": "Masif hematokezya ile gelen hastada başlangıçta alt GİS kanaması düşünülüyor, ancak hipotansiyon ve BUN/kreatinin oranında artış var. Özellikle hangi kaynak dışlanmalıdır?",
+    "options": [
+      "Brisk üst GİS kanaması",
+      "Anal fissür",
+      "Basit hemoroid",
+      "Kronik konstipasyon",
+      "İnguinal herni"
+    ],
+    "correct": 0,
+    "exp": "Çok hızlı üst GİS kanaması melena yerine hematokezya ile gelebilir. Hemodinamik instabilite ve BUN artışı üst kaynak ihtimalini artırır."
+  },
+  {
+    "id": 2627,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 4,
+    "q": "Sirotik hastada hematemez gelişiyor. Endoskopide özofagus varisi kanaması var. Endoskopiyle birlikte başlanması gereken ilaç yaklaşımı hangisidir?",
+    "options": [
+      "Vazoaktif ajan ve antibiyotik profilaksisi",
+      "Sadece laksatif",
+      "Yüksek doz aspirin",
+      "Rutin antikoagülan",
+      "Sadece demir"
+    ],
+    "correct": 0,
+    "exp": "Varis kanamasında oktreotid/terlipressin gibi vazoaktif tedavi ve antibiyotik profilaksisi mortaliteyi azaltır. Endoskopik bant ligasyonu kanama kontrolünde kullanılır."
+  },
+  {
+    "id": 2628,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 3,
+    "q": "Kronik böbrek hastalığı olan yaşlı hastada tekrarlayan, ağrısız alt GİS kanaması oluyor. Kolonoskopide çekumda vasküler ektaziler izleniyor. En olası neden hangisidir?",
+    "options": [
+      "Anjiyodisplazi",
+      "Anal fissür",
+      "Apendisit",
+      "Pilor stenozu",
+      "Meme absesi"
+    ],
+    "correct": 0,
+    "exp": "Anjiyodisplazi yaşlılarda ve kronik böbrek hastalığında tekrarlayan ağrısız alt GİS kanaması yapabilir. Çekum/sağ kolon sık yerleşimdir."
+  },
+  {
+    "id": 2629,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 4,
+    "q": "NSAİİ kullanan hastada melena ve epigastrik ağrı gelişiyor. Endoskopide kanayan duodenal ülser görülüyor. Endoskopik hemostaz sonrası nüksü azaltmada hangi tedavi önemlidir?",
+    "options": [
+      "Yüksek doz proton pompa inhibitörü",
+      "Safra asidi bağlayıcı",
+      "Alfa bloker",
+      "Kalsitonin",
+      "Antitiroid ilaç"
+    ],
+    "correct": 0,
+    "exp": "Kanayan peptik ülserde endoskopik hemostaz sonrası yüksek doz PPI pıhtı stabilitesini artırır ve yeniden kanama riskini azaltır."
+  },
+  {
+    "id": 2630,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 4,
+    "q": "Epigastrik ağrısı sırta yayılan hastada lipaz yüksek ve USG'de safra taşı saptanıyor. Akut pankreatitin en olası nedeni hangisidir?",
+    "options": [
+      "Biliyer taş hastalığı",
+      "Medüller tiroid kanseri",
+      "Anal fissür",
+      "Primer hiperaldosteronizm",
+      "Zenker divertikülü"
+    ],
+    "correct": 0,
+    "exp": "Akut pankreatitin en sık nedenleri safra taşları ve alkoldür. Taş ampulla düzeyinde geçici obstrüksiyon yaparak pankreatiti tetikleyebilir."
+  },
+  {
+    "id": 2631,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 4,
+    "q": "Akut pankreatit geçiren hastada dört hafta sonra devam eden erken doyma ve epigastrik kitle hissi var. BT'de duvarı olgun, sıvı içerikli koleksiyon görülüyor. En olası tanı hangisidir?",
+    "options": [
+      "Pankreatik psödokist",
+      "Akut apandisit",
+      "Splenik rüptür",
+      "Tiroid adenomu",
+      "Anal apse"
+    ],
+    "correct": 0,
+    "exp": "Psödokist genellikle pankreatitten haftalar sonra gelişen, epitel duvarı olmayan, fibröz duvarlı sıvı koleksiyonudur. Semptomatik veya komplike ise drenaj gerekebilir."
+  },
+  {
+    "id": 2632,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 5,
+    "q": "Ağrısız sarılık, kilo kaybı ve kaşıntısı olan hastada pankreas başında kitle saptanıyor. Tümörün bu yerleşimde sarılık yapması en iyi neyle açıklanır?",
+    "options": [
+      "Distal koledoka bası/obstrüksiyon yapması",
+      "Mide asidini azaltması",
+      "Splenik arterden kan çalması",
+      "İleal B12 emilimini artırması",
+      "Rekürren laringeal siniri sıkıştırması"
+    ],
+    "correct": 0,
+    "exp": "Pankreas başı tümörleri distal koledoku tıkayarak ağrısız obstrüktif sarılık yapabilir. Courvoisier bulgusu eşlik edebilir."
+  },
+  {
+    "id": 2633,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 4,
+    "q": "Akut pankreatitte profilaktik antibiyotik başlanması ile ilgili en doğru yaklaşım hangisidir?",
+    "options": [
+      "Steril nekrozda rutin profilaktik antibiyotik verilmez",
+      "Her hafif pankreatitte karbapenem zorunludur",
+      "Lipaz yüksekse antibiyotik şarttır",
+      "Antibiyotik sıvı tedavisinin yerini alır",
+      "Antifungal ilk basamaktır"
+    ],
+    "correct": 0,
+    "exp": "Steril pankreatik nekrozda rutin profilaktik antibiyotik önerilmez. Enfekte nekroz, kolanjit veya başka enfeksiyon odağı varsa antibiyotik gerekir."
+  },
+  {
+    "id": 2634,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 5,
+    "q": "Uzamış açlık ataklarında terleme, bilinç bulanıklığı ve glukoz düşüklüğü olan hastada pankreatik nöroendokrin tümör düşünülüyor. Semptomların glukoz verilince düzelmesi hangi tanıyı destekler?",
+    "options": [
+      "İnsülinoma",
+      "Glukagonoma",
+      "VIPoma",
+      "Somatostatinoma",
+      "Gastrinoma"
+    ],
+    "correct": 0,
+    "exp": "İnsülinoma Whipple triadıyla düşünülür: hipoglisemi semptomları, düşük plazma glukozu ve glukoz verilince düzelme."
+  },
+  {
+    "id": 2635,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 4,
+    "q": "Tekrarlayan peptik ülser, diyare ve belirgin gastrin yüksekliği olan hastada pankreatik/duodenal nöroendokrin tümör düşünülüyor. En olası sendrom hangisidir?",
+    "options": [
+      "Zollinger-Ellison sendromu",
+      "Dumping sendromu",
+      "Carcinoid sendrom",
+      "Conn sendromu",
+      "Cushing refleksi"
+    ],
+    "correct": 0,
+    "exp": "Gastrinoma aşırı gastrin üretimiyle asit sekresyonunu artırır; tekrarlayan/refrakter ülser ve diyare yapar. MEN1 ile ilişkili olabilir."
+  },
+  {
+    "id": 2636,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak Hastalıkları",
+    "diff": 4,
+    "q": "İmmün trombositopeni nedeniyle medikal tedaviye dirençli hastada splenektomi planlanıyor. Dalak çıkarılmasının trombosit sayısını artırmasının temel nedeni hangisidir?",
+    "options": [
+      "Antikor kaplı trombositlerin yıkım yerinin azaltılması",
+      "Trombositlerin akciğerde üretilmesi",
+      "Kemik iliğinin tamamen devre dışı kalması",
+      "Pankreas enzimlerinin azalması",
+      "Safra yollarının genişlemesi"
+    ],
+    "correct": 0,
+    "exp": "ITP'de antikor kaplı trombositlerin yıkımında dalak önemli rol oynar. Dirençli seçilmiş olgularda splenektomi trombosit yıkımını azaltabilir."
+  },
+  {
+    "id": 2637,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak Hastalıkları",
+    "diff": 3,
+    "q": "Elektif splenektomi planlanan hastada kapsüllü bakterilere karşı korunma amacıyla ameliyat öncesi hangi yaklaşım gereklidir?",
+    "options": [
+      "Pnömokok, meningokok ve Hib aşılarının planlanması",
+      "Sadece tetanoz aşısı yeterlidir",
+      "Aşıların tümünü ameliyat sonrası hiç yapmamak",
+      "Rutin radyoiyot",
+      "Canlı polio aşısı zorunlu tek aşıdır"
+    ],
+    "correct": 0,
+    "exp": "Splenektomi sonrası kapsüllü bakterilere bağlı ağır enfeksiyon riski artar. Pnömokok, meningokok ve Hib aşıları elektif splenektomi öncesi planlanmalıdır."
   }
 ];
