@@ -44270,5 +44270,1605 @@ exp: "Spironolakton (ve Eplerenon), bir Potasyum Tutucu Diüretik (Aldosteron An
     ],
     "correct": 4,
     "exp": "Erken foliküler faz estradiol yüksekliği FSH’yi baskılayabilir ve over rezervinin olduğundan daha iyi görünmesine yol açabilir. AMH ve antral folikül sayısı ek bilgi sağlar."
+  },
+  {
+    "id": 2768,
+    "ders": "Mikrobiyoloji",
+    "konu": "Genel Mikrobiyoloji",
+    "diff": 4,
+    "q": "Yoğun bakımda ventilatör ilişkili pnömoni düşünülen bir hastanın Gram boyamasında pembe boyanan basiller görülüyor. Aynı örnekte lipopolisakkarit yapının septik şok kliniğine katkı verdiği düşünülüyor. Bu bakterilerin Gram boyamada pembe görülmesini ve endotoksin taşımasını en iyi açıklayan yapı hangisidir?",
+    "options": [
+      "Kalın peptidoglikan tabaka ve teikoik asit",
+      "Dış membran içeren ince peptidoglikan tabakası",
+      "Sterol içeren sitoplazmik membran",
+      "Mum asidi içeren hücre duvarı",
+      "Peptidoglikan içermeyen üç katlı membran"
+    ],
+    "correct": 1,
+    "exp": "Gram negatif bakterilerde ince peptidoglikan tabakasının dışında dış membran bulunur. Dış membrandaki lipopolisakkaritin lipid A bölümü endotoksik etkiyle ateş, hipotansiyon ve septik şok tablosuna katkı verir. Gram boyamada pembe görünmeleri kalın peptidoglikan tutulumunun olmamasıyla ilişkilidir."
+  },
+  {
+    "id": 2769,
+    "ders": "Mikrobiyoloji",
+    "konu": "Genel Mikrobiyoloji",
+    "diff": 4,
+    "q": "Kronik öksürük, gece terlemesi ve kilo kaybı olan hastanın balgam örneğinde rutin Gram boyamada belirgin bakteri görülmüyor. Ancak aside dirençli boyamada kırmızı basiller saptanıyor. Bu boyama özelliği en çok hangi hücre duvarı bileşeniyle ilişkilidir?",
+    "options": [
+      "Kapsül polisakkaridi",
+      "Teikoik asit",
+      "Mikolik asit",
+      "Lipid A",
+      "Ergosterol"
+    ],
+    "correct": 2,
+    "exp": "Mycobacterium türlerinde hücre duvarındaki mikolik asit lipid açısından zengin bir yapı oluşturur. Bu nedenle Ziehl-Neelsen veya benzeri aside dirençli boyalarla gösterilir; sıradan Gram boyama ile kolay seçilemeyebilir."
+  },
+  {
+    "id": 2770,
+    "ders": "Mikrobiyoloji",
+    "konu": "Genel Mikrobiyoloji",
+    "diff": 4,
+    "q": "Cerrahi alet sterilizasyonunda kuru ısı yerine otoklav tercih edilen bir merkezde amaç özellikle spor formlarını da ortadan kaldırmaktır. Otoklavın etkinliğini en iyi açıklayan özellik hangisidir?",
+    "options": [
+      "DNA sentezini geri dönüşümlü inhibe etmesi",
+      "Nemli ısıyla protein denatürasyonu sağlaması",
+      "Sadece vejetatif bakterilerin metabolizmasını durdurması",
+      "Virüslerde kapsid sentezini engellemesi",
+      "Hücre membranında sterol sentezini baskılaması"
+    ],
+    "correct": 1,
+    "exp": "Otoklav basınç altında nemli ısı kullanarak protein denatürasyonu yapar ve bakteriyel sporlar dahil birçok mikroorganizmayı öldürür. Dezenfeksiyondan farklı olarak sterilizasyon hedefi canlı mikroorganizma kalmamasıdır."
+  },
+  {
+    "id": 2771,
+    "ders": "Mikrobiyoloji",
+    "konu": "Genel Mikrobiyoloji",
+    "diff": 4,
+    "q": "Pnömoni etkeni olan bir bakteride kapsül sentezini kodlayan genlerin çevredeki parçalanmış bakterilerden alınması sonrası daha invaziv bir fenotip gelişiyor. Bu yatay gen aktarımı en çok hangi mekanizmaya uyar?",
+    "options": [
+      "Konjugasyon",
+      "Transdüksiyon",
+      "Transformasyon",
+      "Transpozisyon",
+      "Lizojenik dönüşüm"
+    ],
+    "correct": 2,
+    "exp": "Transformasyon, bakterinin çevredeki serbest DNA parçalarını alarak genetik özellik kazanmasıdır. Streptococcus pneumoniae klasik örneklerden biridir; kapsül yapısı virülansı belirgin artırabilir."
+  },
+  {
+    "id": 2772,
+    "ders": "Mikrobiyoloji",
+    "konu": "Genel Mikrobiyoloji",
+    "diff": 4,
+    "q": "Hastanede aynı yoğun bakım ünitesinde karbapenem dirençli enterik basil kümelenmesi saptanıyor. Direnç geninin plazmid aracılığıyla farklı bakterilere aktarıldığı düşünülüyor. Bu aktarım biçiminde temel temas yapısı hangisidir?",
+    "options": [
+      "Flagella",
+      "Pilus",
+      "Kapsül",
+      "Endospor",
+      "Fimbria dışı glikokaliks"
+    ],
+    "correct": 1,
+    "exp": "Konjugasyonda plazmid DNA'sı bakteriler arasında seks pilusu aracılığıyla aktarılır. Antibiyotik direnç genlerinin hastane ortamında yayılımında bu mekanizma klinik olarak çok önemlidir."
+  },
+  {
+    "id": 2773,
+    "ders": "Mikrobiyoloji",
+    "konu": "Genel Mikrobiyoloji",
+    "diff": 4,
+    "q": "Protez kapak takılan bir hastada düşük dereceli ateş ve tekrarlayan kan kültürü pozitifliği gelişiyor. Etkenin yabancı cisim yüzeyinde matriks oluşturarak antibiyotik ve immün yanıttan kaçtığı düşünülüyor. Bu tablo en çok hangi özellik ile açıklanır?",
+    "options": [
+      "Endospor oluşumu",
+      "Biofilm oluşumu",
+      "Lizojenik faj taşınması",
+      "Zorunlu hücre içi yaşam",
+      "Asit-fast boyanma"
+    ],
+    "correct": 1,
+    "exp": "Biofilm, mikroorganizmaların yüzeye tutunup ekstraselüler matriks içinde organize olmasıdır. Protez kapak, kateter ve ortopedik implant enfeksiyonlarında tedavi güçlüğünün önemli nedenlerinden biridir."
+  },
+  {
+    "id": 2774,
+    "ders": "Mikrobiyoloji",
+    "konu": "Genel Mikrobiyoloji",
+    "diff": 4,
+    "q": "Sepsis tanılı hastada Gram negatif bakteriyemi sonrası ateş, hipotansiyon ve yaygın damar içi pıhtılaşma gelişiyor. Bu klinik tablonun bakteriyel yapılar içinde en güçlü tetikleyicisi hangisidir?",
+    "options": [
+      "Peptidoglikan çapraz bağları",
+      "Lipopolisakkaritin lipid A bölümü",
+      "Kapsülün hiyalüronik asit yapısı",
+      "Flagellin kaybı",
+      "Sitoplazmik ribozomlar"
+    ],
+    "correct": 1,
+    "exp": "Gram negatif endotoksinin toksik bölümü lipid A'dır. Makrofaj sitokin yanıtını, kompleman aktivasyonunu ve koagülasyon sistemini tetikleyerek septik şok ve DİK tablosuna yol açabilir."
+  },
+  {
+    "id": 2775,
+    "ders": "Mikrobiyoloji",
+    "konu": "İmmünoloji",
+    "diff": 4,
+    "q": "Penisilin tedavisinden birkaç dakika sonra ürtiker, bronkospazm ve hipotansiyon gelişen hastada serum triptaz düzeyi yüksek bulunuyor. Bu yanıtta erken dönemde en kritik antikor sınıfı hangisidir?",
+    "options": [
+      "IgA",
+      "IgD",
+      "IgE",
+      "IgG4",
+      "IgM"
+    ],
+    "correct": 2,
+    "exp": "Anafilaksi tip I aşırı duyarlılık reaksiyonudur. Antijen, mast hücresi yüzeyindeki IgE'leri çapraz bağlayarak degranülasyon ve histamin salınımı oluşturur; bronkospazm ve hipotansiyon hızla gelişir."
+  },
+  {
+    "id": 2776,
+    "ders": "Mikrobiyoloji",
+    "konu": "İmmünoloji",
+    "diff": 4,
+    "q": "Kan transfüzyonu sonrası ateş, bel ağrısı, hemoglobinüri ve hipotansiyon gelişen hastada direkt Coombs testi pozitif saptanıyor. Bu tablo hangi aşırı duyarlılık tipine en uygundur?",
+    "options": [
+      "Tip I",
+      "Tip II",
+      "Tip III",
+      "Tip IV",
+      "Tip V gecikmiş T hücre yanıtı"
+    ],
+    "correct": 1,
+    "exp": "Transfüzyon reaksiyonu antikor aracılı hücre yıkımıyla seyreder ve tip II aşırı duyarlılıktır. IgG veya IgM, eritrosit yüzey antijenlerine bağlanarak kompleman aracılı lizis oluşturabilir."
+  },
+  {
+    "id": 2777,
+    "ders": "Mikrobiyoloji",
+    "konu": "İmmünoloji",
+    "diff": 4,
+    "q": "Streptokok farenjitinden haftalar sonra hematüri ve hipertansiyon gelişen çocukta böbrek biyopsisinde granüler immün kompleks birikimi izleniyor. Bu hasar modeli hangi aşırı duyarlılık grubuna girer?",
+    "options": [
+      "Tip I",
+      "Tip II",
+      "Tip III",
+      "Tip IV",
+      "Doğal immün tolerans"
+    ],
+    "correct": 2,
+    "exp": "Poststreptokoksik glomerülonefrit immün kompleks birikimi ile gelişen tip III aşırı duyarlılık örneğidir. Kompleman aktivasyonu ve nötrofil çekilimi glomerüler hasara yol açar."
+  },
+  {
+    "id": 2778,
+    "ders": "Mikrobiyoloji",
+    "konu": "İmmünoloji",
+    "diff": 4,
+    "q": "Tüberkülin deri testi yapılan kişide 48 saat sonra endürasyon gelişiyor. Erken dakikalarda ürtiker olmaması, geç dönemde hücresel infiltrasyon gelişmesi hangi hücre grubunun baskın rolünü düşündürür?",
+    "options": [
+      "Mast hücresi ve IgE",
+      "CD4+ Th1 hücresi ve makrofaj",
+      "B hücresi ve IgM",
+      "Eozinofil ve IgA",
+      "Trombosit ve kompleman C5b-9"
+    ],
+    "correct": 1,
+    "exp": "Tüberkülin testi tip IV gecikmiş aşırı duyarlılık reaksiyonudur. Th1 hücrelerinden salınan IFN-γ makrofaj aktivasyonunu artırır ve 48-72 saatte endürasyon oluşur."
+  },
+  {
+    "id": 2779,
+    "ders": "Mikrobiyoloji",
+    "konu": "İmmünoloji",
+    "diff": 4,
+    "q": "Tekrarlayan Neisseria meningitidis enfeksiyonu geçiren genç hastada diğer enfeksiyonlara yatkınlık belirgin değildir. Kompleman sisteminde hangi bölümün eksikliği en olasıdır?",
+    "options": [
+      "C1 inhibitörü",
+      "C3",
+      "C5-C9 terminal komponentleri",
+      "Faktör B",
+      "Mannoz bağlayıcı lektin"
+    ],
+    "correct": 2,
+    "exp": "C5-C9 terminal kompleman komponentleri membran atak kompleksini oluşturur. Eksikliklerinde özellikle Neisseria türlerine karşı duyarlılık artar."
+  },
+  {
+    "id": 2780,
+    "ders": "Mikrobiyoloji",
+    "konu": "İmmünoloji",
+    "diff": 4,
+    "q": "Bebeklikten itibaren tekrarlayan sinopulmoner enfeksiyonları olan erkek çocukta tonsiller küçük, B hücre sayısı çok düşük, serum immünoglobulinleri belirgin azalmıştır. En olası tanı hangisidir?",
+    "options": [
+      "Bruton agammaglobulinemisi",
+      "DiGeorge sendromu",
+      "Kronik granülomatöz hastalık",
+      "Wiskott-Aldrich sendromu",
+      "Selektif IgA eksikliği"
+    ],
+    "correct": 0,
+    "exp": "Bruton agammaglobulinemisi BTK mutasyonuna bağlı B hücre olgunlaşma kusurudur. Erkek çocuklarda 6. aydan sonra sinopulmoner bakteriyel enfeksiyonlar ve düşük immünoglobulin düzeyleri tipiktir."
+  },
+  {
+    "id": 2781,
+    "ders": "Mikrobiyoloji",
+    "konu": "İmmünoloji",
+    "diff": 4,
+    "q": "Canlı aşı sonrası ağır enfeksiyon gelişen, kandidiyazisi ve fırsatçı enfeksiyonları olan bebekte hem T hem B hücre fonksiyonları bozuk saptanıyor. Bu tablo en çok hangi immün yetmezlikle uyumludur?",
+    "options": [
+      "Selektif IgA eksikliği",
+      "Ağır kombine immün yetmezlik",
+      "Chediak-Higashi sendromu",
+      "Kompleman C2 eksikliği",
+      "Herediter anjiyoödem"
+    ],
+    "correct": 1,
+    "exp": "Ağır kombine immün yetmezlikte hücresel ve humoral immünite birlikte bozulur. Canlı aşılar ağır enfeksiyon oluşturabilir; erken tanı ve kök hücre nakli yaşamsaldır."
+  },
+  {
+    "id": 2782,
+    "ders": "Mikrobiyoloji",
+    "konu": "İmmünoloji",
+    "diff": 4,
+    "q": "Tekrarlayan piyojenik enfeksiyonları ve oral kandidiyazisi olan erkek çocukta IgM yüksek, IgG ve IgA düşük bulunuyor. Lenf nodu germinal merkezleri gelişmemiştir. Bu tablo en çok hangi bozukluğa bağlıdır?",
+    "options": [
+      "CD40 ligand kusuru",
+      "IL-12 reseptör eksikliği",
+      "NADPH oksidaz kusuru",
+      "Fagolizozom füzyon kusuru",
+      "C1 esteraz inhibitör eksikliği"
+    ],
+    "correct": 0,
+    "exp": "Hiper-IgM sendromunda CD40L kusuru nedeniyle B hücrelerinde sınıf değişimi yapılamaz. IgM yüksek kalırken IgG, IgA ve IgE düşüktür; fırsatçı enfeksiyonlar görülebilir."
+  },
+  {
+    "id": 2783,
+    "ders": "Mikrobiyoloji",
+    "konu": "İmmünoloji",
+    "diff": 4,
+    "q": "Tekrarlayan stafilokok apseleri, pnömatosel gelişimi ve çok yüksek IgE düzeyi olan çocukta kaba yüz görünümü ve süt dişlerinin geç düşmesi de vardır. Hangi immün yanıt basamağı bozulmuştur?",
+    "options": [
+      "Th17 farklılaşması",
+      "C5 konvertaz oluşumu",
+      "IgA transsitozu",
+      "MHC sınıf I ekspresyonu",
+      "Nötrofil oksidatif patlaması"
+    ],
+    "correct": 0,
+    "exp": "Hiper-IgE sendromunda STAT3 ilişkili Th17 yanıtı bozulur. Mukokutanöz savunma zayıflar; soğuk stafilokok apseleri, pnömoni sonrası pnömatosel ve yüksek IgE beklenir."
+  },
+  {
+    "id": 2784,
+    "ders": "Mikrobiyoloji",
+    "konu": "İmmünoloji",
+    "diff": 4,
+    "q": "Katalaz pozitif mikroorganizmalarla tekrarlayan derin doku apseleri gelişen çocukta dihidrorodamin testi bozuktur. Bu testin bozuk çıkması hangi hücresel işlemin yetersiz olduğunu gösterir?",
+    "options": [
+      "Kemotaksis",
+      "Opsonizasyon",
+      "Oksidatif patlama",
+      "Antijen sunumu",
+      "Sınıf değişimi"
+    ],
+    "correct": 2,
+    "exp": "Kronik granülomatöz hastalıkta NADPH oksidaz kusuru vardır. Nötrofil oksidatif patlaması bozulur ve özellikle katalaz pozitif mikroorganizmalarla enfeksiyonlar gelişir."
+  },
+  {
+    "id": 2785,
+    "ders": "Mikrobiyoloji",
+    "konu": "İmmünoloji",
+    "diff": 4,
+    "q": "Yenidoğan döneminde hipokalsemik tetani, konotrunkal kalp anomalisi ve tekrarlayan viral/fungal enfeksiyonlar görülen hastada timik hipoplazi saptanıyor. Bu tablo hangi embriyolojik yapı gelişim kusuruyla ilişkilidir?",
+    "options": [
+      "Birinci faringeal ark",
+      "Üçüncü ve dördüncü faringeal poş",
+      "Nöral tüp ön nöroporu",
+      "Ürogenital sinüs",
+      "Mezonefrik kanal"
+    ],
+    "correct": 1,
+    "exp": "DiGeorge sendromunda 22q11 delesyonu ile üçüncü-dördüncü faringeal poş gelişimi bozulur. Timus ve paratiroid hipoplazisi sonucu T hücre yetmezliği ve hipokalsemi görülür."
+  },
+  {
+    "id": 2786,
+    "ders": "Mikrobiyoloji",
+    "konu": "İmmünoloji",
+    "diff": 4,
+    "q": "Mukozal yüzeylerde tekrarlayan sinopulmoner enfeksiyon ve kronik ishal öyküsü olan erişkinde serum IgA çok düşük, diğer immünoglobulinler normaldir. Transfüzyon gerektiğinde hangi risk özellikle akılda tutulmalıdır?",
+    "options": [
+      "Masif hemoliz için ABO uyumsuzluğu zorunludur",
+      "Anti-IgA aracılı anafilaksi gelişebilir",
+      "Canlı aşılar her zaman kontrendikedir",
+      "Nötrofil sayısı hızla düşer",
+      "Terminal kompleman kompleksi aktive olmaz"
+    ],
+    "correct": 1,
+    "exp": "Selektif IgA eksikliği en sık primer immün yetmezliklerden biridir. Bazı hastalarda anti-IgA antikorları gelişebilir ve kan ürünü transfüzyonunda anafilaksi riski doğurabilir."
+  },
+  {
+    "id": 2787,
+    "ders": "Mikrobiyoloji",
+    "konu": "İmmünoloji",
+    "diff": 4,
+    "q": "Viral enfeksiyon geçiren hücreler sitotoksik T lenfositler tarafından tanınıp öldürülüyor. Bu tanıma için viral peptidin hangi molekül üzerinde sunulması beklenir?",
+    "options": [
+      "MHC sınıf I",
+      "MHC sınıf II",
+      "CD40",
+      "IgM",
+      "Toll-like reseptör 4"
+    ],
+    "correct": 0,
+    "exp": "Hücre içi antijenler MHC sınıf I üzerinde CD8+ sitotoksik T hücrelerine sunulur. Virüsle enfekte hücrelerin tanınması bu yol üzerinden olur."
+  },
+  {
+    "id": 2788,
+    "ders": "Mikrobiyoloji",
+    "konu": "İmmünoloji",
+    "diff": 4,
+    "q": "Ekstraselüler bir bakteriye ait protein antijen, dendritik hücre tarafından yardımcı T hücresine sunuluyor. Bu sunumda görevli temel molekül hangisidir?",
+    "options": [
+      "MHC sınıf I",
+      "MHC sınıf II",
+      "C5b-9",
+      "FcεRI",
+      "CD21"
+    ],
+    "correct": 1,
+    "exp": "Ekstraselüler antijenler profesyonel antijen sunucu hücrelerde işlenerek MHC sınıf II üzerinde CD4+ T hücrelerine sunulur. Bu yanıt antikor üretimi ve makrofaj aktivasyonu için önemlidir."
+  },
+  {
+    "id": 2789,
+    "ders": "Mikrobiyoloji",
+    "konu": "İmmünoloji",
+    "diff": 4,
+    "q": "Böbrek nakli yapılan hastada aylar içinde kreatinin yavaş yükseliyor, biyopside damar intimal kalınlaşması ve fibrozis izleniyor. Bu süreç en çok hangi tabloya uyar?",
+    "options": [
+      "Hiperakut rejeksiyon",
+      "Akut humoral rejeksiyon",
+      "Kronik rejeksiyon",
+      "Graft-versus-host hastalığı",
+      "Primer immün yetmezlik"
+    ],
+    "correct": 2,
+    "exp": "Kronik rejeksiyon aylar-yıllar içinde gelişen damar intimal proliferasyonu ve fibrozisle seyreder. Hiperakut rejeksiyon dakikalar-saatler içinde önceden var olan antikorlarla gelişir."
+  },
+  {
+    "id": 2790,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Diyabetik hastada ağrılı, fluktuasyon veren deri apsesinden altın sarısı koloniler üreyen katalaz ve koagülaz pozitif Gram pozitif kok izole ediliyor. Bu etkenin apse yapma eğilimini en iyi destekleyen virülans faktörü hangisidir?",
+    "options": [
+      "Protein A ve koagülaz aktivitesi",
+      "Poliribozil ribitol fosfat kapsül",
+      "M proteini",
+      "Pili aracılı antijenik varyasyon",
+      "Üreaz aktivitesi"
+    ],
+    "correct": 0,
+    "exp": "Staphylococcus aureus katalaz ve koagülaz pozitiftir. Protein A, IgG'nin Fc kısmına bağlanarak opsonizasyonu azaltır; koagülaz fibrin pıhtısı oluşturarak bakterinin immün yanıttan kaçmasına katkı sağlar."
+  },
+  {
+    "id": 2791,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Protez diz ameliyatından aylar sonra düşük dereceli ateş ve protez çevresinde gevşeme gelişen hastada novobiyosine duyarlı, koagülaz negatif stafilokok üremesi oluyor. En olası etken hangisidir?",
+    "options": [
+      "Staphylococcus aureus",
+      "Staphylococcus epidermidis",
+      "Staphylococcus saprophyticus",
+      "Streptococcus pyogenes",
+      "Enterococcus faecalis"
+    ],
+    "correct": 1,
+    "exp": "Staphylococcus epidermidis koagülaz negatif, novobiyosine duyarlı bir deri florası üyesidir. Biofilm oluşturarak protez ve kateter enfeksiyonlarına yol açar."
+  },
+  {
+    "id": 2792,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Splenektomi öyküsü olan hastada hızla gelişen ateş, ense sertliği ve bilinç değişikliği vardır. BOS kültüründe optokine duyarlı, safra ile lizise uğrayan alfa hemolitik diplokok saptanıyor. En olası etken hangisidir?",
+    "options": [
+      "Streptococcus pyogenes",
+      "Streptococcus pneumoniae",
+      "Viridans streptokok",
+      "Neisseria meningitidis",
+      "Haemophilus influenzae"
+    ],
+    "correct": 1,
+    "exp": "Streptococcus pneumoniae alfa hemolitik, optokine duyarlı ve safra ile lizise duyarlı diplokoktur. Kapsüllü yapısı nedeniyle asplenik hastalarda invaziv enfeksiyon riski artar."
+  },
+  {
+    "id": 2793,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Boğaz ağrısı sonrası haftalar içinde gezici artrit ve yeni üfürüm gelişen çocukta geçirilmiş enfeksiyona bağlı immün yanıt düşünülüyor. Bu komplikasyonla en çok ilişkili bakteriyel yapı hangisidir?",
+    "options": [
+      "M proteini",
+      "Kapsül polisakkaridi",
+      "Lipid A",
+      "Üreaz",
+      "Protein A"
+    ],
+    "correct": 0,
+    "exp": "Streptococcus pyogenes'in M proteini antijenik taklit yoluyla akut romatizmal ateş gelişimine katkı verir. Kardit ve gezici poliartrit tipik bulgulardandır."
+  },
+  {
+    "id": 2794,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Doğumdan birkaç saat sonra solunum sıkıntısı ve sepsis bulguları gelişen yenidoğanın kan kültüründe beta hemolitik, basitrasine dirençli Gram pozitif kok ürüyor. Gebelikte tarama ve intrapartum profilaksinin hedeflediği etken hangisidir?",
+    "options": [
+      "Streptococcus pyogenes",
+      "Streptococcus agalactiae",
+      "Enterococcus faecalis",
+      "Staphylococcus aureus",
+      "Listeria monocytogenes"
+    ],
+    "correct": 1,
+    "exp": "Streptococcus agalactiae grup B streptokoktur ve yenidoğanda erken başlangıçlı sepsis, pnömoni ve menenjite yol açabilir. Gebelikte tarama ve intrapartum penisilin profilaksisi önemlidir."
+  },
+  {
+    "id": 2795,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Pastörize edilmemiş süt tüketen gebede ateş ve grip benzeri tablo sonrası fetal kayıp gelişiyor. Kültürde soğukta üreyebilen, tumbling motilite gösteren Gram pozitif basil saptanıyor. En olası etken hangisidir?",
+    "options": [
+      "Corynebacterium diphtheriae",
+      "Listeria monocytogenes",
+      "Bacillus cereus",
+      "Clostridium perfringens",
+      "Erysipelothrix rhusiopathiae"
+    ],
+    "correct": 1,
+    "exp": "Listeria monocytogenes pastörize edilmemiş süt ürünleriyle bulaşabilir, soğukta üreyebilir ve tumbling motilite gösterir. Gebelerde fetal enfeksiyon ve kayıp riski taşır."
+  },
+  {
+    "id": 2796,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Aşısız çocukta boğaz ağrısı, gri-beyaz psödomembran ve boyunda şişlik gelişiyor. Etkenin toksin üretimi için bakteriyofajla taşınan genin varlığı gerekiyor. En olası etken hangisidir?",
+    "options": [
+      "Bordetella pertussis",
+      "Corynebacterium diphtheriae",
+      "Streptococcus pyogenes",
+      "Haemophilus influenzae",
+      "Fusobacterium necrophorum"
+    ],
+    "correct": 1,
+    "exp": "Corynebacterium diphtheriae toksini beta faj aracılığıyla kodlanır. Toksin EF-2'yi inhibe ederek protein sentezini durdurur; psödomembran ve miyokardit yapabilir."
+  },
+  {
+    "id": 2797,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Toprakla kirlenmiş delici yaralanmadan günler sonra trismus, risus sardonicus ve ağrılı kas spazmları gelişen hastada bilinç açıktır. Bu tablo hangi toksin etkisiyle açıklanır?",
+    "options": [
+      "Asetilkolin salınımının inhibisyonu",
+      "Glisin ve GABA salınımının inhibisyonu",
+      "Adenilat siklaz aktivasyonu",
+      "EF-2 inhibisyonu",
+      "Shiga benzeri toksin üretimi"
+    ],
+    "correct": 1,
+    "exp": "Clostridium tetani tetanospazmin toksini ile inhibitör nörotransmitterler olan GABA ve glisin salınımını engeller. Sonuçta spastik paralizi ve kas spazmları gelişir."
+  },
+  {
+    "id": 2798,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Ev yapımı konserve tüketiminden sonra diplopi, disfaji ve inen simetrik gevşek paralizi gelişen hastada ateş yoktur. Bu klinik tabloyu oluşturan toksin hangi sinaptik olayı engeller?",
+    "options": [
+      "GABA salınımını",
+      "Asetilkolin salınımını",
+      "Dopamin geri alımını",
+      "Glutamat reseptörünü",
+      "Noradrenalin sentezini"
+    ],
+    "correct": 1,
+    "exp": "Botulinum toksini presinaptik uçtan asetilkolin salınımını engeller ve inen gevşek paralizi yapar. Gıda kaynaklı botulizmde konserve öyküsü tipiktir."
+  },
+  {
+    "id": 2799,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Antibiyotik kullanımı sonrası sulu ishal ve karın ağrısı gelişen hastada kolonoskopide psödomembranlar görülüyor. Tedavide etkenin toksin üretimini hedefleyen tanısal yaklaşım hangisidir?",
+    "options": [
+      "Dışkıda toksin veya toksin geni araştırılması",
+      "Kan kültüründe spor aranması",
+      "Serumda antistreptolizin O bakılması",
+      "İdrarda nitrit testi",
+      "Balgamda aside dirençli boyama"
+    ],
+    "correct": 0,
+    "exp": "Clostridioides difficile antibiyotik ilişkili psödomembranöz kolite yol açar. Tanıda dışkıda toksin A/B veya toksin genlerinin gösterilmesi kullanılır."
+  },
+  {
+    "id": 2800,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Kirli travma sonrası hızla ilerleyen ağrı, krepitasyon ve kötü kokulu akıntı gelişen hastada Gram pozitif sporlu basil saptanıyor. Doku yıkımı ve gaz oluşumu en çok hangi etkeni düşündürür?",
+    "options": [
+      "Clostridium perfringens",
+      "Bacillus anthracis",
+      "Listeria monocytogenes",
+      "Actinomyces israelii",
+      "Nocardia asteroides"
+    ],
+    "correct": 0,
+    "exp": "Clostridium perfringens alfa toksin üreterek miyonekroz, hemoliz ve gazlı gangrene neden olabilir. Travma sonrası krepitasyon ve hızla ilerleyen toksisite tipiktir."
+  },
+  {
+    "id": 2801,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Yün işleyen bir kişide ağrısız siyah eskar ve belirgin çevresel ödem gelişiyor. Kültürde kapsüllü Gram pozitif sporlu basil ürüyor. Bu etkenin kapsülü hangi yapısıyla tipiktir?",
+    "options": [
+      "Hiyalüronik asit",
+      "Poli-D-glutamat",
+      "N-asetilglukozamin",
+      "Sialik asit",
+      "Mikolik asit"
+    ],
+    "correct": 1,
+    "exp": "Bacillus anthracis kapsülü poli-D-glutamattan oluşur. Deri şarbonunda ağrısız siyah eskar ve belirgin ödem tipiktir."
+  },
+  {
+    "id": 2802,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Üniversite yurdunda ateş, baş ağrısı, ense sertliği ve peteşiyal döküntü ile başvuran öğrencinin BOS Gram boyasında böbrek şekilli Gram negatif diplokoklar görülüyor. Bu etkenin invazyonunda en önemli koruyucu aşı hedefi hangisidir?",
+    "options": [
+      "Protein A",
+      "Polisakkarit kapsül",
+      "M proteini",
+      "Teikoik asit",
+      "Üreaz"
+    ],
+    "correct": 1,
+    "exp": "Neisseria meningitidis kapsüllü Gram negatif diplokoktur. Polisakkarit kapsül virülans ve aşı geliştirme açısından ana hedeftir; terminal kompleman eksikliğinde risk artar."
+  },
+  {
+    "id": 2803,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Üretrit şikayeti olan erkekte Gram boyamada nötrofiller içinde Gram negatif diplokoklar görülüyor. Etkenin tekrarlayan enfeksiyonlara yol açabilmesinde hangi özellik özellikle önemlidir?",
+    "options": [
+      "Spor oluşturması",
+      "Pili antijenik varyasyonu",
+      "Mikolik asit üretimi",
+      "Kapsülsüz olması",
+      "Safra eskülin pozitifliği"
+    ],
+    "correct": 1,
+    "exp": "Neisseria gonorrhoeae pili ve yüzey proteinlerinde antijenik varyasyon yapabilir. Bu özellik bağışıklıktan kaçışı ve tekrarlayan enfeksiyonları kolaylaştırır."
+  },
+  {
+    "id": 2804,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Epiglottit nedeniyle stridorla başvuran aşısız çocukta küçük pleomorfik Gram negatif kokobasil saptanıyor. Etkenin invaziv hastalık yapmasında en önemli faktör hangisidir?",
+    "options": [
+      "M proteini",
+      "Poliribozil ribitol fosfat kapsül",
+      "Lipoteikoik asit",
+      "Tumbling motilite",
+      "Protein A"
+    ],
+    "correct": 1,
+    "exp": "Haemophilus influenzae tip b'nin PRP kapsülü invaziv hastalık riskini artırır. Hib aşısı kapsül polisakkaridine karşı koruyuculuk sağlar."
+  },
+  {
+    "id": 2805,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Aşısız bebekte haftalar süren paroksismal öksürük, inspiratuvar whoop ve kusma atakları gelişiyor. Lökositozda lenfosit baskınlığı vardır. Etkenin toksini hücre içinde hangi sinyal yolunu artırır?",
+    "options": [
+      "cAMP",
+      "cGMP",
+      "IP3",
+      "Tirozin kinaz aktivitesi",
+      "GABA salınımı"
+    ],
+    "correct": 0,
+    "exp": "Bordetella pertussis toksini Gi proteinini ADP-ribozile ederek adenilat siklaz aktivitesini artırır ve cAMP yükselir. Paroksismal öksürük ve lenfositoz tipiktir."
+  },
+  {
+    "id": 2806,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Otelde konaklama sonrası yaşlı sigara içicisinde yüksek ateş, kuru öksürük, ishal ve hiponatremi gelişiyor. Balgam Gram boyasında etken görülmezken idrar antijen testi pozitif saptanıyor. En olası etken hangisidir?",
+    "options": [
+      "Mycoplasma pneumoniae",
+      "Legionella pneumophila",
+      "Klebsiella pneumoniae",
+      "Chlamydia trachomatis",
+      "Pseudomonas aeruginosa"
+    ],
+    "correct": 1,
+    "exp": "Legionella pneumophila su sistemlerinden bulaşır; ağır atipik pnömoni, ishal, hiponatremi yapabilir. Sıradan Gram boyamada zor görülür, idrar antijen testi klinikte kullanılır."
+  },
+  {
+    "id": 2807,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Yanık ünitesindeki hastada mavi-yeşil akıntılı yara enfeksiyonu ve meyvemsi koku gelişiyor. Kültürde oksidaz pozitif, nonfermenter Gram negatif basil ürüyor. En olası etken hangisidir?",
+    "options": [
+      "Escherichia coli",
+      "Pseudomonas aeruginosa",
+      "Acinetobacter baumannii",
+      "Proteus mirabilis",
+      "Klebsiella pneumoniae"
+    ],
+    "correct": 1,
+    "exp": "Pseudomonas aeruginosa yanık, ventilatör ve kateter ilişkili enfeksiyonlarda önemlidir. Oksidaz pozitif, nonfermenter yapıda olup pyosiyanin gibi pigmentlerle mavi-yeşil renk oluşturabilir."
+  },
+  {
+    "id": 2808,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Pirinç suyu görünümünde bol sulu ishal ile gelen hastada ciddi dehidratasyon vardır, dışkıda belirgin inflamasyon bulgusu yoktur. Toksin enterositlerde hangi ikinci haberciyi artırarak sekresyonu artırır?",
+    "options": [
+      "cAMP",
+      "cGMP",
+      "Ca2+ influx",
+      "Tirozin kinaz",
+      "Fosfodiesteraz aktivitesi"
+    ],
+    "correct": 0,
+    "exp": "Vibrio cholerae toksini Gs proteinini ADP-ribozile ederek adenilat siklazı aktif tutar ve cAMP artar. Klor ve su sekresyonu artar; pirinç suyu görünümünde ishal oluşur."
+  },
+  {
+    "id": 2809,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Az pişmiş tavuk tüketiminden sonra ateş, karın ağrısı ve kanlı ishal gelişen hastanın dışkı kültüründe martı kanadı şeklinde kıvrık Gram negatif basil saptanıyor. Bu enfeksiyon sonrası hangi nörolojik komplikasyon akılda tutulmalıdır?",
+    "options": [
+      "Subakut sklerozan panensefalit",
+      "Guillain-Barré sendromu",
+      "Nörosifiliz",
+      "Transvers miyelit",
+      "Ramsay Hunt sendromu"
+    ],
+    "correct": 1,
+    "exp": "Campylobacter jejuni az pişmiş tavukla bulaşan invaziv gastroenterit etkenidir. Moleküler taklit yoluyla Guillain-Barré sendromu gelişimiyle ilişkilidir."
+  },
+  {
+    "id": 2810,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Peptik ülser nedeniyle endoskopi yapılan hastada antrum biyopsisinde spiral Gram negatif basil ve üreaz testi pozitifliği saptanıyor. Bu etkenin mide asidinde yaşayabilmesini sağlayan ana özellik hangisidir?",
+    "options": [
+      "Kapsül polisakkaridi",
+      "Üreaz ile amonyak üretimi",
+      "Spor oluşturması",
+      "Endotoksin lipid A kaybı",
+      "Mikolik asit tabakası"
+    ],
+    "correct": 1,
+    "exp": "Helicobacter pylori güçlü üreaz aktivitesiyle üreyi amonyağa çevirir ve lokal asit ortamını tamponlar. Gastrit, peptik ülser ve mide maligniteleriyle ilişkilidir."
+  },
+  {
+    "id": 2811,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Hamburger tüketimi sonrası kanlı ishal gelişen çocukta ateş belirgin değildir. Birkaç gün sonra hemolitik anemi, trombositopeni ve akut böbrek hasarı ortaya çıkıyor. Antibiyotik verilmemesi gereken etken hangisidir?",
+    "options": [
+      "Enterotoksijenik E. coli",
+      "Enterohemorajik E. coli",
+      "Shigella sonnei",
+      "Salmonella enteritidis",
+      "Vibrio parahaemolyticus"
+    ],
+    "correct": 1,
+    "exp": "EHEC, Shiga benzeri toksin ile hemorajik kolit ve HÜS yapabilir. Antibiyotikler toksin salınımını artırabileceği için genellikle kaçınılır."
+  },
+  {
+    "id": 2812,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Pastörize edilmemiş yumurta ve tavuk tüketimi sonrası ateşli gastroenterit gelişen hastada hareketli Gram negatif basil ürüyor. Etken laktoz negatif, H2S pozitif saptanıyor. En olası etken hangisidir?",
+    "options": [
+      "Shigella dysenteriae",
+      "Salmonella enterica",
+      "Yersinia enterocolitica",
+      "Vibrio cholerae",
+      "Campylobacter jejuni"
+    ],
+    "correct": 1,
+    "exp": "Nontifoidal Salmonella genellikle kontamine yumurta ve tavukla bulaşır, laktoz negatif ve H2S pozitiftir. Ateşli gastroenterit yapabilir."
+  },
+  {
+    "id": 2813,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Kreş salgınında az miktarda inokulumla bulaşan, ateşli kanlı ishal ve tenesmus yapan etken izole ediliyor. Laktoz negatif olup H2S oluşturmaz. En olası bakteri hangisidir?",
+    "options": [
+      "Salmonella typhi",
+      "Shigella species",
+      "Vibrio cholerae",
+      "Escherichia coli ETEC",
+      "Helicobacter pylori"
+    ],
+    "correct": 1,
+    "exp": "Shigella düşük inokulumla kişiden kişiye bulaşabilir, invaziv dizanteri ve tenesmus yapar. Laktoz negatif ve H2S negatiftir."
+  },
+  {
+    "id": 2814,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Ağrısız genital ülser ve bölgesel lenfadenopati ile gelen hastada karanlık alan mikroskopisinde ince spiral bakteri görülüyor. Tedavi edilmezse yıllar sonra aortit ve nörolojik bulgular gelişebilir. En olası etken hangisidir?",
+    "options": [
+      "Treponema pallidum",
+      "Borrelia burgdorferi",
+      "Leptospira interrogans",
+      "Chlamydia trachomatis",
+      "Haemophilus ducreyi"
+    ],
+    "correct": 0,
+    "exp": "Treponema pallidum primer sifiliste ağrısız şankr yapar. Geç dönemde nörosifiliz ve vasa vasorum tutulumu üzerinden aortit gelişebilir."
+  },
+  {
+    "id": 2815,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Kene ısırığı sonrası eritema migrans gelişen hastada haftalar içinde fasiyal paralizi ve artralji ortaya çıkıyor. En olası etken hangisidir?",
+    "options": [
+      "Borrelia burgdorferi",
+      "Rickettsia rickettsii",
+      "Ehrlichia chaffeensis",
+      "Francisella tularensis",
+      "Yersinia pestis"
+    ],
+    "correct": 0,
+    "exp": "Borrelia burgdorferi Lyme hastalığı etkenidir. Ixodes kenesiyle bulaşır; eritema migrans, fasiyal paralizi, kardit ve artrit yapabilir."
+  },
+  {
+    "id": 2816,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Sel sonrası kirli suya maruz kalan hastada ateş, baldır ağrısı, konjonktival suffüzyon, sarılık ve böbrek yetmezliği gelişiyor. En olası etken hangisidir?",
+    "options": [
+      "Leptospira interrogans",
+      "Treponema pallidum",
+      "Borrelia recurrentis",
+      "Brucella abortus",
+      "Coxiella burnetii"
+    ],
+    "correct": 0,
+    "exp": "Leptospira interrogans kontamine su ve hayvan idrarıyla bulaşır. Weil hastalığında sarılık, böbrek yetmezliği ve hemorajik bulgular görülebilir."
+  },
+  {
+    "id": 2817,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Üç haftadır öksürük, kilo kaybı ve gece terlemesi olan hastanın akciğer grafisinde üst lob kavitasyonu görülüyor. Balgamda aside dirençli basil saptanıyor. Bu enfeksiyonda konağın kontrolünde en kritik immün yanıt hangisidir?",
+    "options": [
+      "Th1 aracılı makrofaj aktivasyonu",
+      "IgE aracılı mast hücre degranülasyonu",
+      "Nötrofil elastaz salınımı",
+      "Kompleman C5-C9 kompleksi",
+      "Eozinofil major basic protein salınımı"
+    ],
+    "correct": 0,
+    "exp": "Mycobacterium tuberculosis kontrolünde Th1 yanıtı ve IFN-γ ile makrofaj aktivasyonu belirleyicidir. Granülom oluşumu hücresel immün yanıtın sonucudur."
+  },
+  {
+    "id": 2818,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Genç erkekte dizüri ve mukopürülan akıntı vardır, Gram boyamada bakteri görülmez. Nükleik asit amplifikasyon testi Chlamydia trachomatis için pozitiftir. Bu etkenin kültürde zor üremesinin temel nedeni hangisidir?",
+    "options": [
+      "Zorunlu hücre içi yaşam",
+      "Spor oluşturması",
+      "Mikolik asit taşıması",
+      "Ergosterol içermesi",
+      "Kapsül sentezleyememesi"
+    ],
+    "correct": 0,
+    "exp": "Chlamydia trachomatis ATP üretimi için konağa bağımlı zorunlu hücre içi bakteridir. Üretrit, servisit, PID ve trahom gibi tablolar yapabilir."
+  },
+  {
+    "id": 2819,
+    "ders": "Mikrobiyoloji",
+    "konu": "Bakteriyoloji",
+    "diff": 4,
+    "q": "Üniversite öğrencisinde yavaş başlangıçlı kuru öksürük ve düşük ateş vardır. Akciğer grafisinde beklenenden daha yaygın infiltrasyon görülür, beta-laktam tedavisine yanıt alınamaz. Hücre duvarı olmayan etken hangisidir?",
+    "options": [
+      "Mycoplasma pneumoniae",
+      "Streptococcus pneumoniae",
+      "Haemophilus influenzae",
+      "Legionella pneumophila",
+      "Klebsiella pneumoniae"
+    ],
+    "correct": 0,
+    "exp": "Mycoplasma pneumoniae hücre duvarı içermez; bu nedenle beta-laktamlara dirençlidir. Atipik pnömoni ve soğuk aglutininlerle ilişkilidir."
+  },
+  {
+    "id": 2820,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Ateş ve bilinç değişikliği ile gelen hastanın BOS incelemesinde lenfositik pleositoz vardır. MR'da temporal lob tutulumu görülüyor. Tedavi gecikirse ağır nekrotizan ensefalit gelişebilen etken hangisidir?",
+    "options": [
+      "HSV-1",
+      "VZV",
+      "CMV",
+      "JC virüsü",
+      "Rabies virüsü"
+    ],
+    "correct": 0,
+    "exp": "HSV-1 erişkinde temporal lob ensefalitinin klasik etkenidir. Klinik şüphede asiklovir geciktirilmemelidir; BOS PCR tanıda değerlidir."
+  },
+  {
+    "id": 2821,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Çocuklukta suçiçeği geçiren yaşlı hastada tek dermatomda ağrılı veziküler döküntü gelişiyor. Bu tablo virüsün hangi anatomik bölgede latent kalmasıyla açıklanır?",
+    "options": [
+      "Dorsal kök ganglionu",
+      "Karaciğer sinüzoidleri",
+      "B lenfosit çekirdeği",
+      "Nazofarenks epitel bazal membranı",
+      "Kemik iliği stroması"
+    ],
+    "correct": 0,
+    "exp": "Varicella-zoster virüsü primer enfeksiyondan sonra dorsal kök veya kraniyal sinir ganglionlarında latent kalır. Reaktivasyon zona tablosuna yol açar."
+  },
+  {
+    "id": 2822,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Ateş, boğaz ağrısı ve posterior servikal lenfadenopatisi olan gençte periferik yaymada atipik lenfositler görülüyor. Heterofil antikor testi pozitiftir. Etken hangi reseptör üzerinden B hücrelerine girer?",
+    "options": [
+      "CD4",
+      "CD21",
+      "CCR5",
+      "ICAM-1",
+      "ACE2"
+    ],
+    "correct": 1,
+    "exp": "EBV, B hücrelerine CD21 reseptörü üzerinden girer. Enfeksiyöz mononükleozda atipik lenfositler reaktif CD8+ T hücreleridir."
+  },
+  {
+    "id": 2823,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Böbrek nakli sonrası ateş, lökopeni ve retinit gelişen hastada büyük hücrelerde intranükleer inklüzyonlar görülüyor. En olası viral etken hangisidir?",
+    "options": [
+      "CMV",
+      "HSV-2",
+      "HHV-6",
+      "Parvovirüs B19",
+      "Adenovirüs"
+    ],
+    "correct": 0,
+    "exp": "CMV immünsüprese hastalarda retinit, kolit, pnömoni ve lökopeni yapabilir. Histolojide baykuş gözü benzeri intranükleer inklüzyonlar tipiktir."
+  },
+  {
+    "id": 2824,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Akut HIV enfeksiyonu düşünülen hastada ateş, döküntü ve farenjit vardır; antikor testi henüz negatif olabilir. Bu erken dönemde tanı için en uygun test hangisidir?",
+    "options": [
+      "p24 antijeni veya HIV RNA",
+      "Western blot ile IgG aviditesi",
+      "Viral kültürde sitopatik etki",
+      "CD4/CD8 oranı tek başına",
+      "Heterofil antikor testi"
+    ],
+    "correct": 0,
+    "exp": "Akut HIV enfeksiyonunda antikorlar henüz oluşmadan p24 antijeni ve HIV RNA pozitifleşebilir. Bu nedenle erken tanıda antijen/RNA testleri değerlidir."
+  },
+  {
+    "id": 2825,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Hepatit B serolojisinde HBsAg pozitif, anti-HBc IgM pozitif, anti-HBs negatiftir. Bu sonuç en çok hangi klinik durumu gösterir?",
+    "options": [
+      "Geçirilmiş bağışıklık",
+      "Aşıya bağlı bağışıklık",
+      "Akut HBV enfeksiyonu",
+      "Pencere dönemi",
+      "Kronik geçirilmiş enfeksiyon sonrası iyileşme"
+    ],
+    "correct": 2,
+    "exp": "HBsAg pozitifliği aktif enfeksiyonu, anti-HBc IgM pozitifliği akut dönemi gösterir. Anti-HBs iyileşme veya aşı sonrası beklenir."
+  },
+  {
+    "id": 2826,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Anti-HCV pozitifliği olan hastada karaciğer enzimleri dalgalı seyrediyor. Kronikleşme eğiliminin yüksek olması en çok hangi viral özellik ve konak yanıtıyla ilişkilidir?",
+    "options": [
+      "DNA polimeraz proof-reading aktivitesi",
+      "Yüksek genetik değişkenlik ve zayıf sterilizan immünite",
+      "Zorunlu latent ganglion tutulumu",
+      "Sadece fekal-oral bulaşması",
+      "Kapsidsiz olması"
+    ],
+    "correct": 1,
+    "exp": "HCV yüksek genetik değişkenlik gösteren RNA virüsüdür ve kronikleşme eğilimi yüksektir. Bu durum kronik hepatit, siroz ve hepatoselüler karsinom riskini artırır."
+  },
+  {
+    "id": 2827,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Kreşe giden çocukta sarılık, halsizlik ve karaciğer enzim yüksekliği gelişiyor. Ailede temaslılarda benzer tablo vardır ve enfeksiyon kronikleşmiyor. En olası etken hangisidir?",
+    "options": [
+      "HAV",
+      "HBV",
+      "HCV",
+      "HDV",
+      "HEV"
+    ],
+    "correct": 0,
+    "exp": "HAV fekal-oral bulaşır ve genellikle akut, kendini sınırlayan hepatit yapar. Kronikleşmez; kalabalık ortam ve hijyen koşulları bulaşta önemlidir."
+  },
+  {
+    "id": 2828,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Servikal displazi saptanan hastada yüksek riskli HPV pozitif bulunuyor. Viral onkoproteinlerin konak hücre döngüsünü bozduğu bu süreçte hangi iki tümör baskılayıcı hedeflenir?",
+    "options": [
+      "APC ve beta-katenin",
+      "p53 ve Rb",
+      "BRCA1 ve BRCA2",
+      "PTEN ve SMAD4",
+      "MLH1 ve MSH2"
+    ],
+    "correct": 1,
+    "exp": "Yüksek riskli HPV tiplerinde E6 p53'ü, E7 Rb'yi inhibe eder. Bu mekanizma servikal intraepitelyal neoplazi ve serviks kanseri gelişiminde önemlidir."
+  },
+  {
+    "id": 2829,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Aynı yıl içinde toplumda beklenenin çok üzerinde ağır influenza salgını ortaya çıkıyor. Virüsün genom segmentlerinin farklı suşlar arasında yeniden karışmasıyla yeni hemaglutinin-nöraminidaz kombinasyonu oluşuyor. Bu olay hangisidir?",
+    "options": [
+      "Antijenik drift",
+      "Antijenik shift",
+      "Latent reaktivasyon",
+      "Lizojenik dönüşüm",
+      "Transdüksiyon"
+    ],
+    "correct": 1,
+    "exp": "İnfluenza A segmentli RNA genomu taşır. Farklı suşların reassortment ile yeni yüzey antijen kombinasyonu oluşturması antijenik shift olarak adlandırılır ve pandemilere yol açabilir."
+  },
+  {
+    "id": 2830,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Aşısız çocukta öksürük, konjonktivit, ateş ve yanak mukozasında beyaz lezyonlar görülüyor. Döküntü kulak arkasından başlayıp gövdeye yayılıyor. Bu enfeksiyonun geç komplikasyonu hangisidir?",
+    "options": [
+      "Subakut sklerozan panensefalit",
+      "Reye sendromu",
+      "Postherpetik nevralji",
+      "Progressif multifokal lökoensefalopati",
+      "Burkitt lenfoma"
+    ],
+    "correct": 0,
+    "exp": "Kızamıkta Koplik lekeleri ve baştan gövdeye yayılan döküntü tipiktir. Yıllar sonra nadir ama ağır bir komplikasyon olarak subakut sklerozan panensefalit gelişebilir."
+  },
+  {
+    "id": 2831,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Ergen hastada parotit sonrası testis ağrısı ve şişlik gelişiyor. Bu tabloyu yapan virüs hangi aile ve genom özelliğiyle uyumludur?",
+    "options": [
+      "Paramyxoviridae, zarflı negatif RNA",
+      "Picornaviridae, çıplak pozitif RNA",
+      "Herpesviridae, zarflı DNA",
+      "Adenoviridae, çıplak DNA",
+      "Flaviviridae, zarflı pozitif RNA"
+    ],
+    "correct": 0,
+    "exp": "Kabakulak virüsü Paramyxoviridae ailesinden zarflı negatif polariteli RNA virüsüdür. Parotit, orşit ve aseptik menenjit yapabilir."
+  },
+  {
+    "id": 2832,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Gebeliğin erken döneminde döküntülü hastalık geçiren anneden doğan bebekte katarakt, PDA ve sensörinöral işitme kaybı saptanıyor. En olası etken hangisidir?",
+    "options": [
+      "Rubella virüsü",
+      "CMV",
+      "Parvovirüs B19",
+      "HSV-2",
+      "Varicella-zoster virüsü"
+    ],
+    "correct": 0,
+    "exp": "Konjenital rubella sendromunda katarakt, PDA ve sensörinöral sağırlık klasik triaddır. Gebelik öncesi bağışıklık durumu önemlidir."
+  },
+  {
+    "id": 2833,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Orak hücre hastalığı olan çocukta ani gelişen ağır anemi ve retikülositopeni saptanıyor. Kemik iliğinde eritroid prekürsörleri hedefleyen virüs hangisidir?",
+    "options": [
+      "Parvovirüs B19",
+      "EBV",
+      "CMV",
+      "Adenovirüs",
+      "HHV-8"
+    ],
+    "correct": 0,
+    "exp": "Parvovirüs B19 eritroid prekürsörleri enfekte ederek geçici aplastik kriz yapabilir. Orak hücre hastalığı gibi hemolitik anemilerde klinik ağırlaşır."
+  },
+  {
+    "id": 2834,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Kış aylarında 8 aylık bebekte sulu ishal ve kusma nedeniyle dehidratasyon gelişiyor. Dışkıda segmentli çift sarmallı RNA virüsü saptanıyor. En olası etken hangisidir?",
+    "options": [
+      "Rotavirüs",
+      "Norovirüs",
+      "Adenovirüs 40/41",
+      "Astrovirüs",
+      "Enterovirüs"
+    ],
+    "correct": 0,
+    "exp": "Rotavirüs segmentli çift sarmallı RNA virüsüdür ve bebeklerde ağır gastroenterit ile dehidratasyona yol açabilir. Aşı koruyucudur."
+  },
+  {
+    "id": 2835,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Köpek ısırığı sonrası profilaksi almayan hastada haftalar sonra hidrofobi, ajitasyon ve yutma güçlüğü gelişiyor. Beyin dokusunda Negri cisimcikleri saptanıyor. En olası etken hangisidir?",
+    "options": [
+      "Rabies virüsü",
+      "HSV-1",
+      "Poliovirüs",
+      "Japon ensefaliti virüsü",
+      "Batı Nil virüsü"
+    ],
+    "correct": 0,
+    "exp": "Rabies virüsü ısırık sonrası periferik sinirler üzerinden santral sinir sistemine ilerler. Klinik belirtiler başladıktan sonra mortalite çok yüksektir; temas sonrası profilaksi kritiktir."
+  },
+  {
+    "id": 2836,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Aşısız çocukta ateşli hastalık sonrası asimetrik gevşek paralizi gelişiyor. Duyu muayenesi korunmuştur. Ön boynuz motor nöronlarını tutan etken hangisidir?",
+    "options": [
+      "Poliovirüs",
+      "Rabies virüsü",
+      "JC virüsü",
+      "HSV-2",
+      "HTLV-1"
+    ],
+    "correct": 0,
+    "exp": "Poliovirüs ön boynuz motor nöronlarını tutarak asimetrik gevşek paralizi yapabilir. Duyu yolları genellikle korunur."
+  },
+  {
+    "id": 2837,
+    "ders": "Mikrobiyoloji",
+    "konu": "Viroloji",
+    "diff": 4,
+    "q": "Prematüre bebekte kış döneminde hışıltı, takipne ve beslenme bozulması gelişiyor. Nazofarenks örneğinde füzyon proteiniyle ilişkili sinsityum oluşturan virüs saptanıyor. En olası etken hangisidir?",
+    "options": [
+      "RSV",
+      "İnfluenza A",
+      "Parainfluenza",
+      "Adenovirüs",
+      "Metapnömovirüs"
+    ],
+    "correct": 0,
+    "exp": "RSV bebeklerde bronşiolitin önemli etkenidir. F proteini hücreler arasında füzyon ve sinsityum oluşumuna yol açar; prematürelerde ağır seyredebilir."
+  },
+  {
+    "id": 2838,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 4,
+    "q": "Geniş spektrumlu antibiyotik kullanan diyabetik hastada ağız içinde silinebilen beyaz plaklar ve yanma gelişiyor. KOH incelemesinde maya ve psödohif yapıları görülüyor. En olası etken hangisidir?",
+    "options": [
+      "Candida albicans",
+      "Cryptococcus neoformans",
+      "Aspergillus fumigatus",
+      "Mucor species",
+      "Histoplasma capsulatum"
+    ],
+    "correct": 0,
+    "exp": "Candida albicans normal flora üyesi olabilir; antibiyotik, diyabet ve immünsüpresyonla mukokutanöz enfeksiyon yapar. KOH'da maya ve psödohif yapıları tipiktir."
+  },
+  {
+    "id": 2839,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 4,
+    "q": "HIV enfeksiyonlu hastada baş ağrısı ve subakut menenjit gelişiyor. BOS'ta mürekkep boyasıyla kapsüllü maya görülüyor, kapsül antijeni pozitif bulunuyor. En olası etken hangisidir?",
+    "options": [
+      "Candida glabrata",
+      "Cryptococcus neoformans",
+      "Aspergillus fumigatus",
+      "Pneumocystis jirovecii",
+      "Blastomyces dermatitidis"
+    ],
+    "correct": 1,
+    "exp": "Cryptococcus neoformans polisakkarit kapsüllü mayadır. Özellikle hücresel immün yetmezlikte menenjit yapar; mürekkep boyası ve kriptokok antijen testi tanıda kullanılır."
+  },
+  {
+    "id": 2840,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 4,
+    "q": "Nötropenik hastada ateş ve hemoptizi gelişiyor. BT'de halo işareti görülüyor, biyopside dar açılı septalı hiflerin damar invazyonu yaptığı izleniyor. En olası etken hangisidir?",
+    "options": [
+      "Aspergillus fumigatus",
+      "Mucor species",
+      "Candida albicans",
+      "Histoplasma capsulatum",
+      "Sporothrix schenckii"
+    ],
+    "correct": 0,
+    "exp": "Aspergillus septalı, dar açılı dallanan hifler oluşturur ve nötropenik hastalarda invaziv pulmoner enfeksiyon yapabilir. Damar invazyonu hemoptizi ve infarktla ilişkili olabilir."
+  },
+  {
+    "id": 2841,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 4,
+    "q": "Diyabetik ketoasidozla izlenen hastada sinüzit sonrası orbital ağrı, siyah nekrotik nazal lezyon ve kraniyal sinir bulguları gelişiyor. Biyopside geniş, septasız, dik açılı hifler görülüyor. En olası etken hangisidir?",
+    "options": [
+      "Aspergillus fumigatus",
+      "Mucor/Rhizopus türleri",
+      "Cryptococcus neoformans",
+      "Coccidioides immitis",
+      "Candida albicans"
+    ],
+    "correct": 1,
+    "exp": "Mukormikoz özellikle diyabetik ketoasidoz ve ağır immünsüpresyonda rinoserebral enfeksiyon yapar. Geniş, septasız, dik açılı hifler tipiktir."
+  },
+  {
+    "id": 2842,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 4,
+    "q": "Mağara gezisi sonrası ateş, öksürük ve mediastinal lenfadenopati gelişen hastada makrofaj içinde küçük maya formları görülüyor. En olası etken hangisidir?",
+    "options": [
+      "Histoplasma capsulatum",
+      "Blastomyces dermatitidis",
+      "Coccidioides immitis",
+      "Paracoccidioides brasiliensis",
+      "Sporothrix schenckii"
+    ],
+    "correct": 0,
+    "exp": "Histoplasma capsulatum kuş veya yarasa dışkısıyla kontamine ortamlardan bulaşabilir. Makrofaj içinde yaşayan küçük maya formları ile karakterizedir."
+  },
+  {
+    "id": 2843,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 4,
+    "q": "Akciğer lezyonu ve verrüköz deri lezyonları olan hastanın biyopsisinde geniş tabanlı tomurcuklanan maya görülüyor. En olası etken hangisidir?",
+    "options": [
+      "Blastomyces dermatitidis",
+      "Histoplasma capsulatum",
+      "Candida albicans",
+      "Cryptococcus neoformans",
+      "Pneumocystis jirovecii"
+    ],
+    "correct": 0,
+    "exp": "Blastomyces dermatitidis geniş tabanlı tomurcuklanan maya formuyla tanınır. Pulmoner ve deri tutulumu yapabilir."
+  },
+  {
+    "id": 2844,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 4,
+    "q": "Ayak parmak aralarında kaşıntılı, pullu lezyonları olan sporcunun deri kazıntısında KOH ile septalı hifler görülüyor. En olası enfeksiyon grubu hangisidir?",
+    "options": [
+      "Dermatofit enfeksiyonu",
+      "Sistemik dimorfik mikoz",
+      "Kapsüllü maya menenjiti",
+      "Zorunlu hücre içi mantar enfeksiyonu",
+      "Pneumocystis pnömonisi"
+    ],
+    "correct": 0,
+    "exp": "Dermatofitler keratinize dokuları tutar; tinea pedis gibi yüzeyel enfeksiyonlar yapar. KOH incelemesi tanıda pratik ve hızlıdır."
+  },
+  {
+    "id": 2845,
+    "ders": "Mikrobiyoloji",
+    "konu": "Mikoloji",
+    "diff": 4,
+    "q": "CD4 sayısı düşük HIV hastasında efor dispnesi, kuru öksürük ve hipoksemi gelişiyor. Akciğer grafisinde bilateral interstisyel infiltrasyon vardır. Gümüş boyamada kist yapıları görülen etken hangisidir?",
+    "options": [
+      "Pneumocystis jirovecii",
+      "Cryptococcus neoformans",
+      "Candida albicans",
+      "Aspergillus fumigatus",
+      "Mucor species"
+    ],
+    "correct": 0,
+    "exp": "Pneumocystis jirovecii özellikle CD4 düşüklüğünde interstisyel pnömoni yapar. Kuru öksürük, hipoksemi ve bilateral infiltrasyon tipiktir; TMP-SMX tedavi ve profilakside kullanılır."
+  },
+  {
+    "id": 2846,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Kötü hijyen koşullarında yaşayan hastada kanlı ishal ve sağ üst kadran ağrısı gelişiyor. Karaciğerde ançüez ezmesi görünümünde apse saptanıyor. En olası etken hangisidir?",
+    "options": [
+      "Entamoeba histolytica",
+      "Giardia lamblia",
+      "Cryptosporidium parvum",
+      "Balantidium coli",
+      "Cyclospora cayetanensis"
+    ],
+    "correct": 0,
+    "exp": "Entamoeba histolytica invaziv amipli dizanteri ve karaciğer apsesi yapabilir. Trofozoitlerde eritrosit fagositozu tanısal ipucudur."
+  },
+  {
+    "id": 2847,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Kamp sonrası kötü kokulu yağlı dışkılama, şişkinlik ve kilo kaybı gelişen hastada ateş belirgin değildir. Duodenal içerikte armut şekilli trofozoitler saptanıyor. En olası etken hangisidir?",
+    "options": [
+      "Giardia lamblia",
+      "Entamoeba histolytica",
+      "Trichomonas vaginalis",
+      "Leishmania donovani",
+      "Toxoplasma gondii"
+    ],
+    "correct": 0,
+    "exp": "Giardia lamblia kontamine suyla bulaşır ve malabsorpsiyon, steatore, şişkinlik yapar. IgA eksikliğinde daha sık ve ağır seyredebilir."
+  },
+  {
+    "id": 2848,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Sıtma atağı geçiren hastada periferik yaymada eritrosit içinde halka formları görülüyor. En ağır seyir, serebral tutulum ve yüksek parazitemi riski hangi türde beklenir?",
+    "options": [
+      "Plasmodium vivax",
+      "Plasmodium ovale",
+      "Plasmodium falciparum",
+      "Plasmodium malariae",
+      "Babesia microti"
+    ],
+    "correct": 2,
+    "exp": "Plasmodium falciparum tüm yaş eritrositleri enfekte edebilir; yüksek parazitemi, serebral sıtma ve ağır hemoliz riski fazladır."
+  },
+  {
+    "id": 2849,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Gebelikte çiğ et tüketimi ve kedi dışkısı teması olan anneden doğan bebekte koryoretinit, hidrosefali ve intrakraniyal kalsifikasyonlar saptanıyor. En olası etken hangisidir?",
+    "options": [
+      "Toxoplasma gondii",
+      "Rubella virüsü",
+      "CMV",
+      "Trypanosoma cruzi",
+      "Listeria monocytogenes"
+    ],
+    "correct": 0,
+    "exp": "Konjenital toksoplazmozda koryoretinit, hidrosefali ve intrakraniyal kalsifikasyonlar görülebilir. Bulaş çiğ et veya kedi dışkısındaki ookistlerle olabilir."
+  },
+  {
+    "id": 2850,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Koyun yetiştiriciliği yapılan bölgede yaşayan hastada karaciğerde kistik lezyon saptanıyor. Cerrahi sırasında kistin rüptüre edilmemesi gerektiği vurgulanıyor. En olası etken hangisidir?",
+    "options": [
+      "Echinococcus granulosus",
+      "Taenia saginata",
+      "Enterobius vermicularis",
+      "Ascaris lumbricoides",
+      "Strongyloides stercoralis"
+    ],
+    "correct": 0,
+    "exp": "Echinococcus granulosus hidatik kist yapar. Kist rüptürü anafilaksi ve yayılım riski taşıdığı için cerrahi yaklaşım dikkat gerektirir."
+  },
+  {
+    "id": 2851,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Az pişmiş domuz eti tüketen hastada nöbet gelişiyor. Beyin görüntülemesinde çok sayıda kistik lezyon saptanıyor. Bu tablo hangi parazitin larva formuyla ilişkilidir?",
+    "options": [
+      "Taenia saginata",
+      "Taenia solium",
+      "Diphyllobothrium latum",
+      "Echinococcus multilocularis",
+      "Trichinella spiralis"
+    ],
+    "correct": 1,
+    "exp": "Taenia solium yumurtalarının alınması sistiserkozise, santral sinir sistemi tutulursa nörosistiserkozise yol açar. Nöbet sık başvuru nedenidir."
+  },
+  {
+    "id": 2852,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Tatlı su teması sonrası hematüri gelişen hastada mesane duvarında inflamasyon ve ilerleyen dönemde skuamöz hücreli kanser riski konuşuluyor. En olası etken hangisidir?",
+    "options": [
+      "Schistosoma haematobium",
+      "Schistosoma mansoni",
+      "Fasciola hepatica",
+      "Clonorchis sinensis",
+      "Paragonimus westermani"
+    ],
+    "correct": 0,
+    "exp": "Schistosoma haematobium üriner sistem tutulumu, terminal hematüri ve mesane skuamöz hücreli kanseri riskinde artışla ilişkilidir."
+  },
+  {
+    "id": 2853,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Uzun süren ateş, kilo kaybı, hepatosplenomegali ve pansitopeni olan hastanın kemik iliği aspirasyonunda makrofaj içinde amastigotlar görülüyor. En olası etken hangisidir?",
+    "options": [
+      "Leishmania donovani",
+      "Trypanosoma brucei",
+      "Toxoplasma gondii",
+      "Plasmodium falciparum",
+      "Naegleria fowleri"
+    ],
+    "correct": 0,
+    "exp": "Visseral leishmaniasis Leishmania donovani kompleksiyle gelişir. Makrofaj içinde amastigotlar, hepatosplenomegali ve pansitopeni tipiktir."
+  },
+  {
+    "id": 2854,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Kötü kokulu sarı-yeşil vajinal akıntı ve çilek serviks bulgusu olan hastada hareketli kamçılı protozoon görülüyor. En olası etken hangisidir?",
+    "options": [
+      "Trichomonas vaginalis",
+      "Candida albicans",
+      "Gardnerella vaginalis",
+      "Chlamydia trachomatis",
+      "Neisseria gonorrhoeae"
+    ],
+    "correct": 0,
+    "exp": "Trichomonas vaginalis cinsel yolla bulaşan kamçılı protozoondur. Köpüklü kötü kokulu akıntı ve çilek serviks bulgusu görülebilir."
+  },
+  {
+    "id": 2855,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Çocukta karın ağrısı ve bağırsak tıkanıklığı tablosu gelişiyor. Dışkıda kalın kabuklu yumurtalar saptanıyor, parazitin akciğerden geçerek bağırsakta erişkinleştiği biliniyor. En olası etken hangisidir?",
+    "options": [
+      "Ascaris lumbricoides",
+      "Enterobius vermicularis",
+      "Trichuris trichiura",
+      "Ancylostoma duodenale",
+      "Strongyloides stercoralis"
+    ],
+    "correct": 0,
+    "exp": "Ascaris lumbricoides larval dönemde akciğer geçişi yapar ve erişkin solucanlar bağırsakta tıkanıklığa neden olabilir."
+  },
+  {
+    "id": 2856,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Kortikosteroid başlanmasından sonra ağır pnömoni, sepsis benzeri tablo ve yaygın larva göçü gelişen hastanın daha önce tropikal bölgede yaşadığı öğreniliyor. Otoenfeksiyon kapasitesiyle ağırlaşabilen parazit hangisidir?",
+    "options": [
+      "Strongyloides stercoralis",
+      "Enterobius vermicularis",
+      "Taenia saginata",
+      "Giardia lamblia",
+      "Trichomonas vaginalis"
+    ],
+    "correct": 0,
+    "exp": "Strongyloides stercoralis otoenfeksiyon yapabilir. İmmünsüpresyon, özellikle kortikosteroid kullanımı, hiperinfeksiyon ve dissemine hastalık riskini artırır."
+  },
+  {
+    "id": 2857,
+    "ders": "Mikrobiyoloji",
+    "konu": "Parazitoloji",
+    "diff": 4,
+    "q": "Toprakla temas öyküsü olan çocukta öksürük, wheezing, eozinofili ve migratuvar akciğer infiltrasyonları görülüyor. Larvaların akciğerden geçişiyle açıklanan bu tablo hangi klinik adla bilinir?",
+    "options": [
+      "Löffler sendromu",
+      "Weil hastalığı",
+      "Katayama ateşi",
+      "Kala-azar",
+      "Tinea corporis"
+    ],
+    "correct": 0,
+    "exp": "Ascaris veya kancalı kurt gibi helmintlerin larval akciğer göçü eozinofili ve geçici pulmoner infiltrasyonlarla Löffler sendromuna yol açabilir."
+  },
+  {
+    "id": 2858,
+    "ders": "Mikrobiyoloji",
+    "konu": "Klinik Mikrobiyoloji",
+    "diff": 4,
+    "q": "Sepsis şüphesiyle acile getirilen hastada hipotansiyon ve laktat yüksekliği vardır. Antibiyotik hemen başlanacaktır. Etken izolasyon şansını artırmak için antibiyotik öncesi en uygun yaklaşım hangisidir?",
+    "options": [
+      "Tek şişe kan kültürü alıp antibiyotiği bekletmek",
+      "Farklı venlerden en az iki set kan kültürü alıp gecikmeden antibiyotik başlamak",
+      "Sadece ateş yükseldiğinde kültür almak",
+      "Önce prokalsitonin sonucunu beklemek",
+      "Antibiyotik sonrası kültür almak"
+    ],
+    "correct": 1,
+    "exp": "Sepsiste antibiyotik geciktirilmemelidir; ancak mümkünse antibiyotik öncesi farklı venlerden uygun hacimde kan kültürü alınır. Kültür tedaviyi daraltmak ve etkeni göstermek için önemlidir."
+  },
+  {
+    "id": 2859,
+    "ders": "Mikrobiyoloji",
+    "konu": "Klinik Mikrobiyoloji",
+    "diff": 4,
+    "q": "Bakteriyel menenjit düşünülen hastada bilinç bulanıklığı ve fokal nörolojik bulgu vardır. Beyin görüntülemesi planlanıyor. Bu süreçte en doğru yaklaşım hangisidir?",
+    "options": [
+      "Görüntüleme bitene kadar antibiyotik vermemek",
+      "Kan kültürü alıp ampirik antibiyotik ve deksametazonu geciktirmeden başlamak",
+      "Sadece BOS kültürü sonucunu beklemek",
+      "Antiviral tedavi dışında antibiyotik vermemek",
+      "LP yapılamıyorsa tedaviyi ertelemek"
+    ],
+    "correct": 1,
+    "exp": "Bakteriyel menenjit acil tedavi gerektirir. LP gecikecekse kan kültürü alınıp ampirik antibiyotik ve uygun hastada deksametazon başlanmalıdır."
+  },
+  {
+    "id": 2860,
+    "ders": "Mikrobiyoloji",
+    "konu": "Klinik Mikrobiyoloji",
+    "diff": 4,
+    "q": "İdrar yolu enfeksiyonu düşünülen hastadan kültür isteniyor. Kontaminasyonu azaltmak için erişkin kooperatif hastada en uygun örnek alma yöntemi hangisidir?",
+    "options": [
+      "İlk idrar akımının tamamını steril kaba almak",
+      "Orta akım temiz idrar örneği almak",
+      "Torba idrar örneği almak",
+      "24 saatlik idrar toplamak",
+      "Antibiyotik başladıktan 48 saat sonra örnek almak"
+    ],
+    "correct": 1,
+    "exp": "Erişkinlerde temiz orta akım idrar kültürü kontaminasyonu azaltır. Torba örnek özellikle çocuklarda kültür için kontaminasyon riski nedeniyle sınırlıdır."
+  },
+  {
+    "id": 2861,
+    "ders": "Mikrobiyoloji",
+    "konu": "Klinik Mikrobiyoloji",
+    "diff": 4,
+    "q": "Kateter ilişkili kan dolaşımı enfeksiyonu düşünülen hastada hem periferik venden hem kateterden kan kültürü alınıyor. Kateterden alınan kültürün belirgin daha erken pozitifleşmesi neyi destekler?",
+    "options": [
+      "Kontaminasyonun kesin olmadığını",
+      "Kateter kaynaklı enfeksiyonu",
+      "Viral sepsisi",
+      "Anaerob enfeksiyon dışlandığını",
+      "Kültür hacminin önemsiz olduğunu"
+    ],
+    "correct": 1,
+    "exp": "Kateterden alınan kültürün periferik kültüre göre belirgin daha erken pozitifleşmesi kateter ilişkili enfeksiyonu destekler. Klinik durum ve etkenle birlikte değerlendirilir."
+  },
+  {
+    "id": 2862,
+    "ders": "Mikrobiyoloji",
+    "konu": "Klinik Mikrobiyoloji",
+    "diff": 4,
+    "q": "Antibiyotik sonrası ishal gelişen hastada C. difficile enfeksiyonu araştırılacak. En uygun örnek ve test yaklaşımı hangisidir?",
+    "options": [
+      "Şekilli dışkıda rutin kültür",
+      "Sulu dışkıda toksin A/B veya NAAT değerlendirmesi",
+      "Serumda IgG avidite testi",
+      "Boğaz sürüntüsünde hızlı antijen",
+      "İdrarda nitrit ve lökosit esteraz"
+    ],
+    "correct": 1,
+    "exp": "C. difficile testi semptomatik hastada sulu dışkı örneğinde yapılmalıdır. Toksin testi ve NAAT algoritmaları klinik bağlama göre kullanılır."
+  },
+  {
+    "id": 2863,
+    "ders": "Mikrobiyoloji",
+    "konu": "Klinik Mikrobiyoloji",
+    "diff": 4,
+    "q": "Yoğun bakımda karbapenem dirençli Klebsiella izole edilen hastada tedavi planlanıyor. Laboratuvardaki antibiyogramın klinik açıdan temel amacı hangisidir?",
+    "options": [
+      "Etkenin Gram boyasını değiştirmek",
+      "Duyarlılık paternine göre tedaviyi daraltmak veya uygun ajana yönelmek",
+      "Kültür kontaminasyonunu her zaman kanıtlamak",
+      "Virülans faktörlerini doğrudan ölçmek",
+      "Aşılama gerekliliğini belirlemek"
+    ],
+    "correct": 1,
+    "exp": "Antibiyogram etkenin antibiyotiklere duyarlılığını gösterir. Ampirik tedavinin hedefe yönelik daraltılması, dirençli etkenlerde uygun ajan seçimi ve antimikrobiyal yönetim için kritiktir."
+  },
+  {
+    "id": 2864,
+    "ders": "Mikrobiyoloji",
+    "konu": "Klinik Mikrobiyoloji",
+    "diff": 4,
+    "q": "Akciğer tüberkülozu düşünülen hastada balgam örneği gönderiliyor. Yayma pozitifliği ile kültür ve moleküler test sonuçları birlikte değerlendiriliyor. Moleküler testin kültüre göre önemli avantajı hangisidir?",
+    "options": [
+      "Hiç yalancı negatif vermemesi",
+      "Direnç dahil bazı bilgileri daha hızlı verebilmesi",
+      "Canlı bakteri gerektirdiği için geç sonuçlanması",
+      "Sadece tedavi bitiminde kullanılabilmesi",
+      "Asit-fast boyamayı gereksiz kılması"
+    ],
+    "correct": 1,
+    "exp": "Tüberkülozda kültür duyarlı olmakla birlikte yavaştır. Moleküler testler M. tuberculosis kompleksini ve bazı direnç belirteçlerini daha hızlı gösterebilir; sonuçlar klinik ve kültürle birlikte yorumlanır."
+  },
+  {
+    "id": 2865,
+    "ders": "Mikrobiyoloji",
+    "konu": "Klinik Mikrobiyoloji",
+    "diff": 4,
+    "q": "Boğaz ağrısı olan çocukta viral bulgular belirgin değil ve grup A streptokok düşünülüyor. Hızlı antijen testi negatif çıkan ama klinik olasılığı yüksek çocukta en uygun yaklaşım hangisidir?",
+    "options": [
+      "Sonucu kesin negatif kabul etmek",
+      "Boğaz kültürü ile doğrulamak",
+      "Kan kültürü almak",
+      "ASO sonucunu bekleyip akut tanı koymak",
+      "İdrar antijen testi istemek"
+    ],
+    "correct": 1,
+    "exp": "Çocuklarda hızlı antijen testi negatifse ve klinik şüphe sürüyorsa boğaz kültürüyle doğrulama önerilir. ASO akut farenjit tanısı için değil geçirilmiş enfeksiyon kanıtı için kullanılır."
+  },
+  {
+    "id": 2866,
+    "ders": "Mikrobiyoloji",
+    "konu": "Klinik Mikrobiyoloji",
+    "diff": 4,
+    "q": "Anaerob enfeksiyon düşünülen derin doku apsesinden örnek alınacak. Etken izolasyonu için en uygun uygulama hangisidir?",
+    "options": [
+      "Yüzey sürüntüsünü kuru pamuklu çubukla göndermek",
+      "Aspirasyon veya doku örneğini anaerob taşıma koşullarında göndermek",
+      "Örneği oda havasında uzun süre bekletmek",
+      "Sadece kanlı agara ekim istemek",
+      "Antiseptik sürülen yüzeyden sürüntü almak"
+    ],
+    "correct": 1,
+    "exp": "Anaerob kültürde yüzey sürüntüsü yerine aspirat veya doku örneği tercih edilir. Örneğin oksijenle teması azaltılmalı ve uygun anaerob taşıma koşullarında laboratuvara ulaştırılmalıdır."
+  },
+  {
+    "id": 2867,
+    "ders": "Mikrobiyoloji",
+    "konu": "Klinik Mikrobiyoloji",
+    "diff": 4,
+    "q": "Hastanede MRSA taraması yapılan serviste nazal sürüntü örnekleri alınıyor. Bu taramanın enfeksiyon kontrolündeki temel amacı hangisidir?",
+    "options": [
+      "Her taşıyıcıya mutlaka intravenöz vankomisin vermek",
+      "Kolonize hastaları belirleyip temas önlemleri ve gerekirse dekolonizasyon stratejisi uygulamak",
+      "Gram negatif direnç mekanizmasını göstermek",
+      "Aşı yanıtını ölçmek",
+      "Anaerob enfeksiyonu dışlamak"
+    ],
+    "correct": 1,
+    "exp": "MRSA nazal kolonizasyonu hastane yayılımı ve enfeksiyon riski açısından önemlidir. Tarama sonuçları izolasyon, temas önlemleri ve seçilmiş durumlarda dekolonizasyon kararlarını destekler."
   }
 ];
