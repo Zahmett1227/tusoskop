@@ -130,7 +130,7 @@ function WrongQuestionsModal({ wrongByLessonTopic, totalWrong, onClose }) {
                                   <div className="px-5 pb-4 flex flex-wrap gap-2">
                                     <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-bold">
                                       <span className="opacity-60">Senin cevabın:</span>
-                                      <span>{wq.userAnswer !== null ? LETTERS[wq.userAnswer] : '—'}</span>
+                                      <span>{wq.userAnswer !== null && wq.userAnswer !== undefined ? LETTERS[wq.userAnswer] : '—'}</span>
                                     </span>
                                     <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold">
                                       <span className="opacity-60">Doğru cevap:</span>

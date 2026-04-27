@@ -114,7 +114,8 @@ export const analyzeExamResults = (examQuestions, examAnswers) => {
   const wrongQuestions = [];
 
   examQuestions.forEach((q, index) => {
-    const answer = examAnswers[index];
+    const hasIdAnswer = q?.id !== undefined && q?.id !== null && Object.prototype.hasOwnProperty.call(examAnswers || {}, q.id);
+    const answer = hasIdAnswer ? examAnswers[q.id] : examAnswers?.[index];
     const lesson = q.ders;
     const topic = q.konu || "Diğer";
 

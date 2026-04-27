@@ -104,7 +104,7 @@ export default function App() {
   // --- 3. DENEME MODU (EXAM) STATE ---
   const [examQuestions, setExamQuestions] = useState([]);
   const [examIndex, setExamIndex] = useState(0);
-  const [examAnswers, setExamAnswers] = useState([]);
+  const [examAnswers, setExamAnswers] = useState({});
   const [examSelected, setExamSelected] = useState(null);
   const [selectedExamSet, setSelectedExamSet] = useState(null);
 
@@ -203,7 +203,7 @@ export default function App() {
     if (!exam.length) return;
     setSelectedExamSet(activeSet);
     setExamQuestions(exam);
-    setExamAnswers(Array(exam.length).fill(null));
+    setExamAnswers({});
     setExamIndex(0);
     setExamSelected(null);
     setView("exam");
@@ -477,18 +477,20 @@ export default function App() {
   };
 
   const handleExamNext = (selectedOverride = examSelected) => {
-    const updated = [...examAnswers];
-    updated[examIndex] = selectedOverride;
+    const currentQuestion = examQuestions[examIndex];
+    if (!currentQuestion?.id) return;
+    const updated = { ...examAnswers, [currentQuestion.id]: selectedOverride };
     setExamAnswers(updated);
     recordHistoryForQuestion({
-      question: examQuestions[examIndex],
-      selectedOption: updated[examIndex],
+      question: currentQuestion,
+      selectedOption: updated[currentQuestion.id],
       mode: "exam",
     });
 
     if (examIndex < examQuestions.length - 1) {
       setExamIndex(prev => prev + 1);
-      setExamSelected(updated[examIndex + 1] ?? null);
+      const nextQuestion = examQuestions[examIndex + 1];
+      setExamSelected(nextQuestion?.id ? (updated[nextQuestion.id] ?? null) : null);
     } else setView("examAnalysis");
   };
 
@@ -592,17 +594,23 @@ export default function App() {
           accentTheme={accentTheme}
           userId={user?.uid}
           onJump={(idx) => {
-            const updated = [...examAnswers]; updated[examIndex] = examSelected;
+            const currentQuestion = examQuestions[examIndex];
+            const updated = currentQuestion?.id
+              ? { ...examAnswers, [currentQuestion.id]: examSelected }
+              : { ...examAnswers };
             recordHistoryForQuestion({
-              question: examQuestions[examIndex],
-              selectedOption: updated[examIndex],
+              question: currentQuestion,
+              selectedOption: currentQuestion?.id ? updated[currentQuestion.id] : null,
               mode: "exam",
             });
-            setExamAnswers(updated); setExamIndex(idx); setExamSelected(updated[idx] ?? null);
+            const nextQuestion = examQuestions[idx];
+            setExamAnswers(updated); setExamIndex(idx); setExamSelected(nextQuestion?.id ? (updated[nextQuestion.id] ?? null) : null);
           }}
           handleExamSelect={setExamSelected}
           handleExamBlank={() => {
-            const updated = [...examAnswers]; updated[examIndex] = null;
+            const currentQuestion = examQuestions[examIndex];
+            if (!currentQuestion?.id) return;
+            const updated = { ...examAnswers, [currentQuestion.id]: null };
             setExamAnswers(updated); handleExamNext(null);
           }}
           handleExamNext={handleExamNext}

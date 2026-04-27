@@ -246,15 +246,18 @@ export default function ExamScreen({
     setIsSaving(true);
     try {
       // Son sorunun cevabını da dahil et (examSelected henüz examAnswers'a eklenmemiş olabilir)
-      const finalAnswers = [...examAnswers];
-      finalAnswers[examIndex] = examSelected;
+      const currentQuestion = examQuestions[examIndex];
+      const finalAnswers = {
+        ...examAnswers,
+        ...(currentQuestion?.id ? { [currentQuestion.id]: examSelected } : {}),
+      };
 
       let correct = 0, wrong = 0, empty = 0;
       const breakdown = {};
       const wByLT = {}; // wrongByLessonTopic
 
-      examQuestions.forEach((q, idx) => {
-        const userAnswer = finalAnswers[idx];
+      examQuestions.forEach((q) => {
+        const userAnswer = q?.id ? finalAnswers[q.id] : null;
         const ders = q.ders || "Genel";
         const konu = q.konu || "Diğer";
 
@@ -580,7 +583,10 @@ export default function ExamScreen({
 
         <div className="flex-1 overflow-y-auto p-2 space-y-0.5">
           {examQuestions.map((_, idx) => {
-            const currentAnswer = idx === examIndex ? examSelected : examAnswers[idx];
+            const currentQuestion = examQuestions[idx];
+            const currentAnswer = idx === examIndex
+              ? examSelected
+              : (currentQuestion?.id ? examAnswers[currentQuestion.id] : null);
             const rowBg = idx % 2 === 0 ? "bg-white" : "bg-[#f9efe2]";
             const activeStyle = idx === examIndex ? "bg-cyan-100 ring-1 ring-cyan-300 z-10" : rowBg;
 
