@@ -3,6 +3,7 @@ import { db, auth } from "../firebase";
 import { collection, addDoc, serverTimestamp, doc, getDoc } from "firebase/firestore";
 import { updateStreak } from "../services/streakService";
 import { accentThemes } from "../theme/accentThemes";
+import { getSelectedAnswerIndex } from "../utils/examUtils";
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -131,7 +132,7 @@ function WrongQuestionsModal({ wrongByLessonTopic, totalWrong, onClose }) {
                                   <div className="px-5 pb-4 flex flex-wrap gap-2">
                                     <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-bold">
                                       <span className="opacity-60">Senin cevabın:</span>
-                                      <span>{wq.userAnswer !== null ? LETTERS[wq.userAnswer] : '—'}</span>
+                                      <span>{wq.userAnswer !== null && wq.userAnswer !== undefined ? LETTERS[wq.userAnswer] : '—'}</span>
                                     </span>
                                     <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold">
                                       <span className="opacity-60">Doğru cevap:</span>
@@ -204,8 +205,10 @@ export default function ExamScreen({
   examTitle,
   onJump,
   handleExamSelect,
+  handleExamSelectForQuestion,
   handleExamBlank,
   handleExamNext,
+  getExamAnswersSnapshot,
   goDashboard,
   userId,
   accentTheme,
@@ -245,19 +248,23 @@ export default function ExamScreen({
     if (userId) updateStreak(userId);
     setIsSaving(true);
     try {
+      const latestAnswers = getExamAnswersSnapshot ? getExamAnswersSnapshot() : examAnswers;
       // Son sorunun cevabını da dahil et (examSelected henüz examAnswers'a eklenmemiş olabilir)
       const currentQuestion = examQuestions[examIndex];
+      const persistedAnswer = getSelectedAnswerIndex(latestAnswers, currentQuestion, examIndex);
       const finalAnswers = {
-        ...examAnswers,
-        ...(currentQuestion?.id ? { [currentQuestion.id]: examSelected } : {}),
+        ...latestAnswers,
+        ...(currentQuestion?.id
+          ? { [currentQuestion.id]: persistedAnswer ?? examSelected ?? null }
+          : {}),
       };
 
       let correct = 0, wrong = 0, empty = 0;
       const breakdown = {};
       const wByLT = {}; // wrongByLessonTopic
 
-      examQuestions.forEach((q) => {
-        const userAnswer = q?.id ? finalAnswers[q.id] : null;
+      examQuestions.forEach((q, idx) => {
+        const userAnswer = getSelectedAnswerIndex(finalAnswers, q, idx);
         const ders = q.ders || "Genel";
         const konu = q.konu || "Diğer";
 
@@ -586,7 +593,7 @@ export default function ExamScreen({
             const currentQuestion = examQuestions[idx];
             const currentAnswer = idx === examIndex
               ? examSelected
-              : (currentQuestion?.id ? examAnswers[currentQuestion.id] : null);
+              : getSelectedAnswerIndex(examAnswers, currentQuestion, idx);
             const rowBg = idx % 2 === 0 ? "bg-white" : "bg-[#f9efe2]";
             const activeStyle = idx === examIndex ? "bg-cyan-100 ring-1 ring-cyan-300 z-10" : rowBg;
 
@@ -603,10 +610,15 @@ export default function ExamScreen({
                   {LETTERS.map((letter, letterIdx) => (
                     <div
                       key={letter}
-                      className={`w-6 h-6 rounded-full border border-slate-400 flex items-center justify-center text-[10px] font-bold ${
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleExamSelectForQuestion(idx, letterIdx);
+                        if (window.innerWidth < 1024) setIsOpticalOpen(false);
+                      }}
+                      className={`w-6 h-6 rounded-full border border-slate-400 flex items-center justify-center text-[10px] font-bold cursor-pointer active:scale-90 transition-transform ${
                         currentAnswer === letterIdx
                           ? "bg-[#2d2d2d] text-white border-[#2d2d2d] scale-105"
-                          : "bg-white text-slate-400"
+                          : "bg-white text-slate-400 hover:bg-slate-200"
                       }`}
                     >
                       {currentAnswer === letterIdx ? "" : letter}

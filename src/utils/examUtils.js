@@ -99,6 +99,17 @@ export const scaleBlueprintToTotal = (blueprint, totalQuestions) => {
   }, {});
 };
 
+export const getSelectedAnswerIndex = (answers, question, index) => {
+  if (!answers || !question) return undefined;
+  const questionId = question.id;
+  if (questionId !== undefined && questionId !== null) {
+    if (Object.prototype.hasOwnProperty.call(answers, questionId)) return answers[questionId];
+    const stringId = String(questionId);
+    if (Object.prototype.hasOwnProperty.call(answers, stringId)) return answers[stringId];
+  }
+  return answers[index];
+};
+
 export const analyzeExamResults = (examQuestions, examAnswers) => {
   const summary = {
     total: examQuestions.length,
@@ -114,8 +125,7 @@ export const analyzeExamResults = (examQuestions, examAnswers) => {
   const wrongQuestions = [];
 
   examQuestions.forEach((q, index) => {
-    const hasIdAnswer = q?.id !== undefined && q?.id !== null && Object.prototype.hasOwnProperty.call(examAnswers || {}, q.id);
-    const answer = hasIdAnswer ? examAnswers[q.id] : examAnswers?.[index];
+    const answer = getSelectedAnswerIndex(examAnswers, q, index);
     const lesson = q.ders;
     const topic = q.konu || "Diğer";
 

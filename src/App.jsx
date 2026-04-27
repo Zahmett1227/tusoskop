@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect, useRef } from "react";
 import './index.css';
 import { auth, db, loginWithGoogle, logout } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
@@ -12,6 +12,7 @@ import {
   scaleBlueprintToTotal,
   analyzeExamResults,
   getEstimatedTusResult,
+  getSelectedAnswerIndex,
 } from "./utils/examUtils";
 import { updateStreak } from "./services/streakService";
 import { isIOS } from "./utils/device";
@@ -107,6 +108,7 @@ export default function App() {
   const [examAnswers, setExamAnswers] = useState({});
   const [examSelected, setExamSelected] = useState(null);
   const [selectedExamSet, setSelectedExamSet] = useState(null);
+  const examAnswersRef = useRef({});
 
   // --- 4. KONU SEÇİM STATE ---
   const [selectedLesson, setSelectedLesson] = useState("");
@@ -203,6 +205,7 @@ export default function App() {
     if (!exam.length) return;
     setSelectedExamSet(activeSet);
     setExamQuestions(exam);
+    examAnswersRef.current = {};
     setExamAnswers({});
     setExamIndex(0);
     setExamSelected(null);
@@ -476,22 +479,52 @@ export default function App() {
     }
   };
 
-  const handleExamNext = (selectedOverride = examSelected) => {
+  const saveExamAnswer = (questionId, selectedIndex) => {
+    if (questionId === undefined || questionId === null) return;
+    examAnswersRef.current = { ...examAnswersRef.current, [questionId]: selectedIndex };
+    setExamAnswers(examAnswersRef.current);
+  };
+
+  const saveExamBlank = (questionId) => {
+    saveExamAnswer(questionId, null);
+  };
+
+  const handleExamNext = (selectedOverride) => {
     const currentQuestion = examQuestions[examIndex];
     if (!currentQuestion?.id) return;
-    const updated = { ...examAnswers, [currentQuestion.id]: selectedOverride };
-    setExamAnswers(updated);
+    const persistedAnswer = getSelectedAnswerIndex(examAnswersRef.current, currentQuestion, examIndex);
+    const currentAnswer =
+      selectedOverride !== undefined
+        ? selectedOverride
+        : (persistedAnswer ?? examSelected ?? null);
+    saveExamAnswer(currentQuestion.id, currentAnswer);
+    const latestAnswers = examAnswersRef.current;
     recordHistoryForQuestion({
       question: currentQuestion,
-      selectedOption: updated[currentQuestion.id],
+      selectedOption: latestAnswers[currentQuestion.id],
       mode: "exam",
     });
 
     if (examIndex < examQuestions.length - 1) {
       setExamIndex(prev => prev + 1);
       const nextQuestion = examQuestions[examIndex + 1];
-      setExamSelected(nextQuestion?.id ? (updated[nextQuestion.id] ?? null) : null);
+      setExamSelected(nextQuestion?.id ? (getSelectedAnswerIndex(latestAnswers, nextQuestion, examIndex + 1) ?? null) : null);
     } else setView("examAnalysis");
+  };
+
+  const handleExamSelect = (optionIndex) => {
+    const currentQuestion = examQuestions[examIndex];
+    if (!currentQuestion?.id) return;
+    saveExamAnswer(currentQuestion.id, optionIndex);
+    setExamSelected(optionIndex);
+  };
+
+  const handleExamSelectForQuestion = (questionIdx, letterIdx) => {
+    const question = examQuestions[questionIdx];
+    if (!question?.id) return;
+    saveExamAnswer(question.id, letterIdx);
+    setExamIndex(questionIdx);
+    setExamSelected(letterIdx);
   };
 
   const topicProgress = useMemo(() => {
@@ -593,25 +626,26 @@ export default function App() {
           examTitle={selectedExamSet?.title || "TUS Genel Deneme"}
           accentTheme={accentTheme}
           userId={user?.uid}
+          getExamAnswersSnapshot={() => examAnswersRef.current}
           onJump={(idx) => {
             const currentQuestion = examQuestions[examIndex];
-            const updated = currentQuestion?.id
-              ? { ...examAnswers, [currentQuestion.id]: examSelected }
-              : { ...examAnswers };
+            const latestAnswers = examAnswersRef.current;
             recordHistoryForQuestion({
               question: currentQuestion,
-              selectedOption: currentQuestion?.id ? updated[currentQuestion.id] : null,
+              selectedOption: currentQuestion?.id ? (getSelectedAnswerIndex(latestAnswers, currentQuestion, examIndex) ?? null) : null,
               mode: "exam",
             });
             const nextQuestion = examQuestions[idx];
-            setExamAnswers(updated); setExamIndex(idx); setExamSelected(nextQuestion?.id ? (updated[nextQuestion.id] ?? null) : null);
+            setExamAnswers(latestAnswers); setExamIndex(idx); setExamSelected(nextQuestion?.id ? (getSelectedAnswerIndex(latestAnswers, nextQuestion, idx) ?? null) : null);
           }}
-          handleExamSelect={setExamSelected}
+          handleExamSelect={handleExamSelect}
+          handleExamSelectForQuestion={handleExamSelectForQuestion}
           handleExamBlank={() => {
             const currentQuestion = examQuestions[examIndex];
             if (!currentQuestion?.id) return;
-            const updated = { ...examAnswers, [currentQuestion.id]: null };
-            setExamAnswers(updated); handleExamNext(null);
+            saveExamBlank(currentQuestion.id);
+            setExamSelected(null);
+            handleExamNext(null);
           }}
           handleExamNext={handleExamNext}
           goDashboard={goDashboard}
