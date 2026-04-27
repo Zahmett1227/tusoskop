@@ -541,13 +541,13 @@ export default function ExamScreen({
             style={{ paddingBottom: "calc(1rem + env(safe-area-inset-bottom))" }}
           >
             <button
-              onClick={handleExamBlank}
+              onClick={() => handleExamBlank()}
               className="rounded-2xl px-6 py-4 lg:py-5 font-bold bg-slate-900/70 border border-slate-700 hover:bg-slate-800 transition-all active:scale-[0.98]"
             >
               Boş Bırak
             </button>
             <button
-              onClick={examIndex < examQuestions.length - 1 ? handleExamNext : handleFinish}
+              onClick={examIndex < examQuestions.length - 1 ? () => handleExamNext() : () => handleFinish()}
               disabled={isSaving}
               className={`px-6 py-4 lg:py-5 rounded-2xl font-black shadow-lg transition-all ${
                 isSaving ? "bg-slate-700 text-slate-500" : `rounded-2xl px-6 py-4 lg:py-5 font-bold bg-gradient-to-r ${theme.gradient} text-slate-950 shadow-lg ${theme.glow} active:scale-[0.98] transition-all`

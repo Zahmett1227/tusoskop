@@ -47,6 +47,23 @@ const BOTTOM_NAV_VIEWS = new Set([
   "suggestions",
 ]);
 const QUESTION_HISTORY_KEY = "tusoskop-question-history";
+const isReactEventOrDomNode = (value) =>
+  Boolean(
+    value &&
+      typeof value === "object" &&
+      (value.nativeEvent ||
+        value.currentTarget ||
+        value.target ||
+        value.nodeType ||
+        value.__reactFiber)
+  );
+
+const normalizeAnswerValue = (value) => {
+  if (value === null || value === undefined) return null;
+  if (isReactEventOrDomNode(value)) return null;
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : null;
+};
 
 export default function App() {
   // iOS tespiti — ilk render'da hesapla, değişmez
@@ -428,9 +445,23 @@ export default function App() {
   const saveQuestionHistory = (entry) => {
     if (typeof window === "undefined" || !entry?.questionId) return;
     try {
+      const safeEntry = {
+        questionId: Number(entry.questionId),
+        ders: String(entry.ders || ""),
+        konu: String(entry.konu || ""),
+        selected: normalizeAnswerValue(entry.selected),
+        correct: Number(entry.correct),
+        isCorrect: Boolean(entry.isCorrect),
+        mode: String(entry.mode || "exam"),
+        answeredAt: String(entry.answeredAt || new Date().toISOString()),
+      };
+      if (!Number.isFinite(safeEntry.questionId) || !Number.isFinite(safeEntry.correct)) {
+        console.error("Question history save skipped: invalid numeric fields", entry);
+        return;
+      }
       const raw = localStorage.getItem(QUESTION_HISTORY_KEY);
       const list = raw ? JSON.parse(raw) : [];
-      const next = [...list.filter((item) => item.questionId !== entry.questionId), entry];
+      const next = [...list.filter((item) => item.questionId !== safeEntry.questionId), safeEntry];
       localStorage.setItem(QUESTION_HISTORY_KEY, JSON.stringify(next));
     } catch (error) {
       console.error("Question history save error:", error);
@@ -439,14 +470,22 @@ export default function App() {
 
   const recordHistoryForQuestion = ({ question, selectedOption, mode }) => {
     if (!question?.id) return;
+    if (isReactEventOrDomNode(selectedOption)) {
+      console.error("Invalid selected answer: React event/DOM node received", selectedOption);
+    }
+    const normalizedSelected = normalizeAnswerValue(selectedOption);
+    const normalizedCorrect = Number(question.correct);
     saveQuestionHistory({
-      questionId: question.id,
-      ders: question.ders,
-      konu: question.konu,
-      selected: selectedOption ?? null,
-      correct: question.correct,
-      isCorrect: selectedOption !== null && selectedOption !== undefined && selectedOption === question.correct,
-      mode: mode || "study",
+      questionId: Number(question.id),
+      ders: String(question.ders || ""),
+      konu: String(question.konu || ""),
+      selected: normalizedSelected,
+      correct: normalizedCorrect,
+      isCorrect:
+        normalizedSelected !== null &&
+        Number.isFinite(normalizedCorrect) &&
+        normalizedSelected === normalizedCorrect,
+      mode: mode || "exam",
       answeredAt: new Date().toISOString(),
     });
   };
@@ -490,12 +529,13 @@ export default function App() {
   };
 
   const handleExamNext = (selectedOverride) => {
+    const safeOverride = isReactEventOrDomNode(selectedOverride) ? undefined : selectedOverride;
     const currentQuestion = examQuestions[examIndex];
     if (!currentQuestion?.id) return;
     const persistedAnswer = getSelectedAnswerIndex(examAnswersRef.current, currentQuestion, examIndex);
     const currentAnswer =
-      selectedOverride !== undefined
-        ? selectedOverride
+      safeOverride !== undefined
+        ? safeOverride
         : (persistedAnswer ?? examSelected ?? null);
     saveExamAnswer(currentQuestion.id, currentAnswer);
     const latestAnswers = examAnswersRef.current;
