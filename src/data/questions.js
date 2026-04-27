@@ -42190,5 +42190,2085 @@ exp: "Spironolakton (ve Eplerenon), bir Potasyum Tutucu Diüretik (Aldosteron An
     ],
     "correct": 0,
     "exp": "Splenektomi sonrası kapsüllü bakterilere bağlı ağır enfeksiyon riski artar. Pnömokok, meningokok ve Hib aşıları elektif splenektomi öncesi planlanmalıdır."
+  },
+  {
+    "id": 2638,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "32 haftalık gebe baş ağrısı, görme bulanıklığı ve epigastrik ağrı ile başvuruyor. Kan basıncı 168/112 mmHg, trombosit 82.000/mm³, AST/ALT yüksek ve idrarda proteinüri var. Fetal kalp atımı mevcut. Bu hastada doğum planına geçmeden önce ilk yapılması gereken yaklaşım hangisidir?",
+    "options": [
+      "Sadece yatak istirahati ve tuzsuz diyet önermek",
+      "Magnezyum sülfat ve antihipertansif tedaviyle maternal stabilizasyon sağlamak",
+      "Proteinüri düzeyini 24 saat daha izlemek",
+      "Tokoliz başlanıp gebeliği 37. haftaya kadar sürdürmek",
+      "Acil sezaryen için doğrudan ameliyathaneye almak"
+    ],
+    "correct": 1,
+    "exp": "Şiddetli preeklampsi/HELLP bulgularında kesin tedavi doğumdur; ancak anne stabil edilmeden doğuma geçmek doğru değildir. Öncelik nöbet profilaksisi için magnezyum sülfat, ciddi hipertansiyon için antihipertansif tedavi ve maternal değerlendirmedir."
+  },
+  {
+    "id": 2639,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "İlk gebeliği olan 29 yaşındaki hastada 35. haftada ani başlayan şiddetli karın ağrısı, vajinal kanama, uterusta tahta sertliği ve fetal distres izleniyor. Plasenta previa öyküsü yok. Bu tablo için en olası tanı hangisidir?",
+    "options": [
+      "Uterin rüptür",
+      "Abruptio plasenta",
+      "Servikal polip kanaması",
+      "Vasa previa",
+      "Nişan gelmesi"
+    ],
+    "correct": 1,
+    "exp": "Ağrılı vajinal kanama, hipertonik uterus ve fetal distres abruptio plasentayı düşündürür. Plasenta previa tipik olarak ağrısız kanama ile seyreder; uterus genellikle yumuşaktır."
+  },
+  {
+    "id": 2640,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "38 haftalık gebede parlak kırmızı vajinal kanama oluyor. Ağrı yok, uterus yumuşak, fetal kalp atımı normal. Daha önce sezaryen öyküsü mevcut. Vajinal muayene yapılmadan önce en uygun değerlendirme hangisidir?",
+    "options": [
+      "Servikal açıklığı manuel değerlendirmek",
+      "Oksitosin infüzyonu başlamak",
+      "Transvajinal veya transabdominal ultrason ile plasenta yerleşimini değerlendirmek",
+      "Acil küretaj hazırlığı yapmak",
+      "Amniyotomi yapmak"
+    ],
+    "correct": 2,
+    "exp": "Ağrısız üçüncü trimester kanaması plasenta previa açısından uyarıcıdır. Plasenta yerleşimi görüntüleme ile dışlanmadan dijital vajinal muayene masif kanamayı tetikleyebilir."
+  },
+  {
+    "id": 2641,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Önceki gebeliğinde sezaryen olan 36 haftalık hastada ultrasonografide plasentanın eski skar hattına yerleştiği, retroplasental hipoekoik alanın kaybolduğu ve mesane sınırında düzensizlik olduğu görülüyor. Bu bulgular en çok hangi durumla uyumludur?",
+    "options": [
+      "Velamentöz kord insersiyonu",
+      "Vasa previa",
+      "Plasenta akreta spektrumu",
+      "Plasenta sirkumvallata",
+      "Koryoanjiom"
+    ],
+    "correct": 2,
+    "exp": "Geçirilmiş sezaryen ve plasenta previa/ön duvar yerleşimi akreta spektrumu için en önemli risk kombinasyonudur. Retroplasental berrak alanın kaybı ve mesane arayüz düzensizliği invazyonu destekler."
+  },
+  {
+    "id": 2642,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "28 haftalık Rh negatif gebede indirekt Coombs testi negatif bulunuyor. Eş Rh pozitif. Bu hastada standart yaklaşım hangisidir?",
+    "options": [
+      "Gebeliği sonlandırmak",
+      "Sadece doğumdan sonra anti-D vermek",
+      "Anneye Rh pozitif eritrosit transfüzyonu yapmak",
+      "28. haftada anti-D immünoglobulin uygulamak",
+      "Doğuma kadar takip, profilaksi gerekmez"
+    ],
+    "correct": 3,
+    "exp": "Rh negatif ve duyarlanmamış gebelerde 28. haftada anti-D profilaksisi yapılır. Doğum sonrası bebek Rh pozitifse tekrar anti-D uygulanır."
+  },
+  {
+    "id": 2643,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Rh izoimmünizasyonu olan gebede takipte fetal orta serebral arter pik sistolik hızında belirgin artış saptanıyor. Bu bulgu öncelikle hangi fetal sorunu düşündürür?",
+    "options": [
+      "Fetal anemi",
+      "Nöral tüp defekti",
+      "Fetal polisitemi",
+      "Konjenital kalp bloğu",
+      "Fetal hipoglisemi"
+    ],
+    "correct": 0,
+    "exp": "Fetal anemide kan viskozitesi azalır ve kardiyak debi artar; bu nedenle MCA pik sistolik hızı yükselir. Bu ölçüm alloimmün hemolitik hastalıkta invaziv olmayan anemi taramasında kullanılır."
+  },
+  {
+    "id": 2644,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "24 haftalık gebede erken membran rüptürü var. Ateş yok, uterus hassas değil, fetal iyilik hali korunmuş. Akciğer maturasyonu için steroid planlanırken enfeksiyon bulgusu yoksa genel yaklaşım hangisidir?",
+    "options": [
+      "Amniyosentezle her gün kültür almak",
+      "Acil histerotomi",
+      "Hemen doğum indüksiyonu",
+      "Tokolizle gebeliği 41. haftaya uzatmak",
+      "Beklemeli yaklaşım, antibiyotik ve yakın izlem"
+    ],
+    "correct": 4,
+    "exp": "PPROM’da gebelik haftası ve enfeksiyon bulguları yaklaşımı belirler. 34 hafta altında koryoamniyonit yoksa antibiyotik, antenatal steroid ve yakın izlemle beklemeli yaklaşım uygundur."
+  },
+  {
+    "id": 2645,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "30 haftalık gebede düzenli uterin kontraksiyonlar ve servikal kısalma saptanıyor. Ateş yok, membranlar intakt, fetal durum iyi. Doğumun kısa süre geciktirilmesinin temel amacı aşağıdakilerden hangisidir?",
+    "options": [
+      "Fetal cinsiyetin netleşmesi",
+      "Gebelik hipertansiyonunun tamamen düzelmesi",
+      "Plasenta yerleşiminin değişmesi",
+      "Serviksin kalıcı olarak kapanması",
+      "Antenatal kortikosteroid etkisinin tamamlanması"
+    ],
+    "correct": 4,
+    "exp": "Preterm eylemde tokolizin ana amacı gebeliği uzun süre sürdürmek değil, steroidin etki etmesi ve gerekiyorsa uygun merkeze transfer için zaman kazanmaktır."
+  },
+  {
+    "id": 2646,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "20 haftalık gebede ağrısız servikal açıklık ve membranların vajene bombeleşmesi saptanıyor. Önceki gebeliğinde benzer haftalarda ağrısız kayıp öyküsü var. En olası tanı hangisidir?",
+    "options": [
+      "Ablasyo plasenta",
+      "Fetal büyüme kısıtlılığı",
+      "Akut koryoamniyonit",
+      "Plasenta previa",
+      "Servikal yetmezlik"
+    ],
+    "correct": 4,
+    "exp": "İkinci trimesterde ağrısız servikal açılma ve tekrarlayan gebelik kaybı servikal yetmezlik için tipiktir. Uygun seçilmiş hastalarda serklaj düşünülür."
+  },
+  {
+    "id": 2647,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "26 haftalık gebede fundus yüksekliği haftasına göre küçük. Doppler incelemede umbilikal arterde diyastol sonu akım kaybı saptanıyor. Bu bulgu en çok hangi süreci gösterir?",
+    "options": [
+      "Fetal böbrek agenezisi",
+      "Fetal pankreas hiperplazisi",
+      "Amniyotik sıvı fazla üretimi",
+      "Plasental vasküler direnç artışı",
+      "Maternal hipertiroidi"
+    ],
+    "correct": 3,
+    "exp": "Fetal büyüme kısıtlılığında anormal umbilikal arter Doppler bulguları plasental yetmezliği ve artmış vasküler direnci gösterir. Diyastol sonu akım kaybı ileri bir bulgudur."
+  },
+  {
+    "id": 2648,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "41+2 haftalık gebede nonstres test reaktif, serviks olgun değil. Postterm gebelik nedeniyle doğum indüksiyonu planlanıyor. Bishop skoru düşük olan hastada ilk basamak yaklaşım hangisidir?",
+    "options": [
+      "Amniyotomi yapıp beklemek",
+      "Servikal olgunlaştırma için prostaglandin veya balon kateter kullanmak",
+      "Tokolitik başlamak",
+      "Sadece yüksek doz oksitosin başlamak",
+      "Hemen sezaryen yapmak"
+    ],
+    "correct": 1,
+    "exp": "Bishop skoru düşükse indüksiyon başarısı için önce servikal olgunlaştırma gerekir. Prostaglandinler veya mekanik yöntemler kullanılabilir."
+  },
+  {
+    "id": 2649,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Gebelikte diyabet taramasında 75 g OGTT sonrası açlık, 1. saat ve 2. saat değerlerinden biri eşik değerin üzerinde bulunan hastada tanı konuyor. Tedavide diyet ve egzersize rağmen açlık glukozu yüksek seyrediyor. Bir sonraki uygun yaklaşım hangisidir?",
+    "options": [
+      "Sadece meyve tüketimini artırmak",
+      "İnsülin tedavisi başlamak",
+      "ACE inhibitörü başlamak",
+      "Gebeliği hemen sonlandırmak",
+      "Oral kontraseptif vermek"
+    ],
+    "correct": 1,
+    "exp": "Gestasyonel diyabette ilk basamak beslenme düzenlemesi ve egzersizdir. Hedef glisemik değerlere ulaşılamazsa gebelikte güvenilir ve etkili tedavi olarak insülin tercih edilir."
+  },
+  {
+    "id": 2650,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "Gestasyonel diyabetli annenin bebeğinde doğumdan kısa süre sonra jitteriness ve beslenme güçlüğü gelişiyor. Kan şekeri düşük. Bu durumun nedeni en iyi hangi seçenekle açıklanır?",
+    "options": [
+      "Fetal tiroid bezinin baskılanması",
+      "Doğum kanalında mekanik travma",
+      "Kord kanında Rh antikoru bulunması",
+      "Annenin oksitosin kullanması",
+      "Fetal pankreasın intrauterin hiperglisemiye yanıt olarak insülin salgısını artırması"
+    ],
+    "correct": 4,
+    "exp": "Annedeki hiperglisemi fetüste hiperinsülinemiye yol açar. Doğumdan sonra maternal glukoz akışı kesilince yüksek insülin etkisi hipoglisemiye neden olur."
+  },
+  {
+    "id": 2651,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Gebeliğin ilk trimesterinde TSH baskılı, serbest T4 yüksek olan hastada çarpıntı ve kilo kaybı var. TSH reseptör antikoru pozitif. Tedavide ilk trimester için en uygun ilaç hangisidir?",
+    "options": [
+      "Lityum",
+      "Radyoaktif iyot",
+      "Metimazol",
+      "Propiltiyourasil",
+      "Levotiroksin"
+    ],
+    "correct": 3,
+    "exp": "Graves hipertiroidisinde ilk trimesterde propiltiyourasil tercih edilir. Metimazol embriyopati riski nedeniyle ilk trimesterde genellikle kaçınılır; radyoaktif iyot gebelikte kontrendikedir."
+  },
+  {
+    "id": 2652,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "Gebede simetrik olmayan, plasental yetmezlik düşündüren fetal büyüme kısıtlılığı saptanıyor. Bu tabloda fetal baş çevresinin görece korunması hangi adaptasyonu yansıtır?",
+    "options": [
+      "Böbrek kan akımının artmasını",
+      "Maternal kan volümünün azalmasını",
+      "Amniyon sıvısının aşırı üretimini",
+      "Fetal insulin artışını",
+      "Beyin koruyucu dolaşım yanıtını"
+    ],
+    "correct": 4,
+    "exp": "Plasental yetmezlikte fetüs sınırlı oksijeni beyin ve kalp gibi yaşamsal organlara yönlendirir. Bu nedenle asimetrik büyüme kısıtlılığında baş çevresi görece korunabilir."
+  },
+  {
+    "id": 2653,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "Ultrasonda amniyon sıvı indeksinin belirgin düşük olduğu 33 haftalık gebede fetal böbrek anomalisi dışlanıyor. Plasental yetmezlik düşünülüyor. Oligohidramniyosun en olası nedeni hangisidir?",
+    "options": [
+      "Anne sütü üretiminin başlaması",
+      "Plasental progesteron artışı",
+      "Fetal idrar üretiminin azalması",
+      "Fetal yutmanın azalması",
+      "Maternal safra asidi yüksekliği"
+    ],
+    "correct": 2,
+    "exp": "İkinci yarı gebelikte amniyon sıvısının ana kaynağı fetal idrardır. Plasental yetmezlikte böbrek perfüzyonu azalır ve oligohidramniyos gelişebilir."
+  },
+  {
+    "id": 2654,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "31 haftalık gebede polihidramniyos saptanıyor. Fetal mide baloncuğu izlenmiyor ve doğum sonrası bebekte aşırı salya ile beslenememe bekleniyor. En olası fetal anomali hangisidir?",
+    "options": [
+      "Duodenal atrezi",
+      "Bilateral renal agenezi",
+      "Özofagus atrezisi",
+      "Posterior üretral valv",
+      "Anensefali olmadan spina bifida"
+    ],
+    "correct": 2,
+    "exp": "Fetal yutma bozulduğunda amniyon sıvısı artabilir. Özofagus atrezisinde fetal mide küçük veya izlenmeyebilir; doğum sonrası salya, öksürük ve beslenememe tipiktir."
+  },
+  {
+    "id": 2655,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Doğum eyleminde fetal kalp trasesinde kontraksiyonlardan sonra başlayan ve kontraksiyon bittikten sonra düzelen geç deselerasyonlar izleniyor. Bu patern en çok hangi durumu düşündürür?",
+    "options": [
+      "Uteroplasental yetmezlik",
+      "Maternal hiperventilasyon",
+      "Kord basısı",
+      "Fetal uyku siklusu",
+      "Baş basısına bağlı vagal yanıt"
+    ],
+    "correct": 0,
+    "exp": "Geç deselerasyonlar uteroplasental yetmezliği ve fetal hipoksiyi düşündürür. Erken deselerasyon baş basısı, değişken deselerasyon ise kord basısı ile ilişkilidir."
+  },
+  {
+    "id": 2656,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Doğum eyleminde ani değişken deselerasyonlar ve omuz distosisi riski olan makrozomik bebek bekleniyor. Baş doğduktan sonra omuzlar takılıyor. İlk manevra hangisidir?",
+    "options": [
+      "Zavanelli manevrası",
+      "Acil klasik sezaryen",
+      "Fetal başı traksiyonla güçlü çekmek",
+      "Fundal bası uygulamak",
+      "McRoberts manevrası ve suprapubik bası"
+    ],
+    "correct": 4,
+    "exp": "Omuz distosisinde ilk yaklaşım McRoberts manevrası ve suprapubik basıdır. Fundal bası omuzun daha fazla sıkışmasına ve fetal travmaya yol açabilir."
+  },
+  {
+    "id": 2657,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "Doğumdan sonra uterus atonik, masajla gevşek ve kanama devam ediyor. Plasenta tam çıkarılmış. İlk farmakolojik yaklaşım hangisidir?",
+    "options": [
+      "Mifepriston",
+      "Oksitosin",
+      "Varfarin",
+      "Terbutalin",
+      "Dopamin"
+    ],
+    "correct": 1,
+    "exp": "Postpartum kanamanın en sık nedeni uterin atonidir. Uterus masajı ve oksitosin ilk basamak yaklaşımdır; yanıt yoksa diğer uterotonikler ve girişimsel yöntemler düşünülür."
+  },
+  {
+    "id": 2658,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Astımı olan lohusada postpartum atoni nedeniyle kanama sürüyor. Oksitosine ek ilaç düşünülüyor. Bronkospazm riskinden dolayı kaçınılması gereken uterotonik hangisidir?",
+    "options": [
+      "Traneksamik asit",
+      "Kalsiyum glukonat",
+      "Metilergonovin",
+      "Karboprost",
+      "Misoprostol"
+    ],
+    "correct": 3,
+    "exp": "Karboprost prostaglandin F2 alfa analoğudur ve bronkospazm yapabilir. Astımlı hastada postpartum atoni tedavisinde dikkatli olunmalı veya alternatifler seçilmelidir."
+  },
+  {
+    "id": 2659,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Şiddetli preeklampsi nedeniyle magnezyum sülfat alan gebede solunum sayısı azalıyor, derin tendon refleksleri kayboluyor. Antidot olarak ne verilmelidir?",
+    "options": [
+      "Flumazenil",
+      "Protamin sülfat",
+      "Atropin",
+      "Nalokson",
+      "Kalsiyum glukonat"
+    ],
+    "correct": 4,
+    "exp": "Magnezyum toksisitesinde refleks kaybı, solunum depresyonu ve kardiyak etkiler gelişebilir. Antidot kalsiyum glukonattır."
+  },
+  {
+    "id": 2660,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "Gebeliğin 12. haftasında yoğun bulantı-kusma, ketonüri, kilo kaybı ve hafif transaminaz yüksekliği olan hastada çoğul gebelik ve molar gebelik dışlanıyor. En olası tanı hangisidir?",
+    "options": [
+      "Akut apandisit",
+      "Hiperemezis gravidarum",
+      "Akut yağlı karaciğer",
+      "HELLP sendromu",
+      "İntrahepatik kolestaz"
+    ],
+    "correct": 1,
+    "exp": "Hiperemezis gravidarum erken gebelikte şiddetli bulantı-kusma, kilo kaybı, dehidratasyon ve ketonüri ile seyreder. hCG düzeyi yüksek durumlarda daha sık görülebilir."
+  },
+  {
+    "id": 2661,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Gebeliğin üçüncü trimesterinde yaygın kaşıntı olan hastada döküntü yok, safra asitleri yüksek. Bu tabloda fetal açıdan en önemli risk hangisidir?",
+    "options": [
+      "Omfalosel",
+      "Fetal makrozomi",
+      "Konjenital rubella",
+      "Ani intrauterin fetal kayıp",
+      "Neonatal hipertiroidi"
+    ],
+    "correct": 3,
+    "exp": "Gebeliğin intrahepatik kolestazında kaşıntı ve safra asidi yüksekliği tipiktir. Yüksek safra asitleri fetal aritmi ve ani fetal kayıp riskiyle ilişkilidir."
+  },
+  {
+    "id": 2662,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Gebeliğin son trimesterinde halsizlik, bulantı, sağ üst kadran ağrısı, hipoglisemi, koagülopati ve karaciğer enzimlerinde yükselme saptanıyor. Trombositler belirgin düşük değil. En olası tanı hangisidir?",
+    "options": [
+      "Basit hiperemezis gravidarum",
+      "Gilbert sendromu",
+      "Budd-Chiari dışı fizyolojik gebelik sarılığı",
+      "Akut yağlı karaciğer",
+      "Gebelikte migren"
+    ],
+    "correct": 3,
+    "exp": "Akut yağlı karaciğer üçüncü trimesterde hipoglisemi, koagülopati, karaciğer yetmezliği bulguları ve sistemik hastalık haliyle seyreder. Anne ve fetus açısından acildir."
+  },
+  {
+    "id": 2663,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "17 haftalık gebede tarama testinde maternal serum alfa-fetoprotein yüksek bulunuyor. Ultrasonografide açık spinal defekt araştırılıyor. Bu markerin yükselmesi en çok hangi durumla ilişkilidir?",
+    "options": [
+      "Trizomi 21",
+      "Turner sendromu",
+      "Konjenital adrenal hiperplazi",
+      "Fetal hipotiroidi",
+      "Açık nöral tüp defekti"
+    ],
+    "correct": 4,
+    "exp": "Maternal serum AFP açık nöral tüp defektlerinde ve bazı karın duvarı defektlerinde artar. Down sendromunda ise tipik olarak AFP düşük olabilir."
+  },
+  {
+    "id": 2664,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "İlk trimester kombine testinde ense kalınlığı artmış, serbest beta-hCG yüksek ve PAPP-A düşük saptanıyor. Bu profil en çok hangi kromozomal durumla uyumludur?",
+    "options": [
+      "Klinefelter sendromu",
+      "Trizomi 21",
+      "47,XXX",
+      "Trizomi 13 olmadan triploidi",
+      "Cri-du-chat sendromu"
+    ],
+    "correct": 1,
+    "exp": "Trizomi 21 taramasında ense saydamlığı artışı, beta-hCG yüksekliği ve PAPP-A düşüklüğü tipik kombinasyondur. Kesin tanı için invaziv test veya uygun genetik doğrulama gerekir."
+  },
+  {
+    "id": 2665,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Doğum eyleminde epidural analjezi sonrası maternal hipotansiyon gelişiyor ve fetal kalp trasesinde geç deselerasyonlar başlıyor. İlk yaklaşım hangisidir?",
+    "options": [
+      "Magnezyum sülfat başlamak",
+      "Oksitosin dozunu artırmak",
+      "Amniyotomi yapmak",
+      "Anneyi sol lateral pozisyona almak, sıvı ve gerekirse vazopressör vermek",
+      "Fetal skalp elektrodu takıp beklemek"
+    ],
+    "correct": 3,
+    "exp": "Epidural sonrası hipotansiyon uteroplasental perfüzyonu azaltabilir. Maternal pozisyon, intravenöz sıvı, oksitosinin kesilmesi ve gerekirse vazopressör fetal oksijenasyonu düzeltmeye yöneliktir."
+  },
+  {
+    "id": 2666,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "36 haftalık gebede ani membran rüptürü sonrası vajende nabız veren kord palpe ediliyor ve fetal bradikardi başlıyor. İlk yapılması gereken hangisidir?",
+    "options": [
+      "Serviksi prostaglandinle olgunlaştırmak",
+      "Fetal prezentan kısmı elle yukarı kaldırıp acil doğum hazırlamak",
+      "Kordu yerine itip hastayı yürütmek",
+      "Oksitosin başlamak",
+      "24 saat antibiyotik sonrası karar vermek"
+    ],
+    "correct": 1,
+    "exp": "Umbilikal kord prolapsusu fetal hipoksi açısından acildir. Prezentan kısmın kord üzerindeki basısı azaltılır, anne uygun pozisyona alınır ve genellikle acil sezaryen ile doğum sağlanır."
+  },
+  {
+    "id": 2667,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Term gebede eylem sırasında maternal ateş, uterin hassasiyet, kötü kokulu amniyon sıvısı ve fetal taşikardi gelişiyor. En uygun yaklaşım hangisidir?",
+    "options": [
+      "Antibiyotik başlayıp doğumu hızlandırmak",
+      "Tokolizle kontraksiyonları durdurmak",
+      "Sadece parasetamol verip taburcu etmek",
+      "Amniyon sıvısı normale dönene kadar beklemek",
+      "Serklaj uygulamak"
+    ],
+    "correct": 0,
+    "exp": "Koryoamniyonitte geniş spektrumlu antibiyotik ve doğumun gerçekleştirilmesi gerekir. Enfeksiyon varken tokoliz ve gebeliği uzatma yaklaşımı uygun değildir."
+  },
+  {
+    "id": 2668,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "Gebeliğin 10. haftasında canlı intrauterin gebelik ile birlikte adneksiyel kitle ve batında serbest sıvı saptanan hastada senkop gelişiyor. En olası durum hangisidir?",
+    "options": [
+      "Molar gebelik",
+      "Plasenta previa",
+      "Servikal yetmezlik",
+      "Heterotopik gebelik",
+      "Normal korpus luteum kisti"
+    ],
+    "correct": 3,
+    "exp": "İntrauterin gebelik görülmesi ektopik gebeliği tamamen dışlamaz. Özellikle yardımcı üreme teknikleri sonrası heterotopik gebelik riski artar; serbest sıvı ve instabilite acil durumu düşündürür."
+  },
+  {
+    "id": 2669,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Önceki sezaryen skarı olan gebede vajinal doğum denemesi sırasında ani karın ağrısı, fetal bradikardi ve kontraksiyonların kaybolması gelişiyor. En olası tanı hangisidir?",
+    "options": [
+      "Plasenta previa",
+      "Uterin rüptür",
+      "Amniyotik sıvı embolisi olmadan normal eylem",
+      "Kordon dolanması",
+      "Servikal laserasyon"
+    ],
+    "correct": 1,
+    "exp": "VBAC denemesinde ani ağrı, fetal distres, kontraksiyon kaybı ve maternal instabilite uterin rüptür açısından tipiktir. Acil laparotomi/sezaryen gerekir."
+  },
+  {
+    "id": 2670,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Doğum sonrası dakikalar içinde ani dispne, hipotansiyon, siyanoz ve yaygın kanama eğilimi gelişen hastada DIC bulguları var. En olası tanı hangisidir?",
+    "options": [
+      "Pulmoner emboli olmadan basit anksiyete",
+      "Sheehan sendromu",
+      "Meme absesi",
+      "Postpartum tiroidit",
+      "Amniyotik sıvı embolisi"
+    ],
+    "correct": 4,
+    "exp": "Amniyotik sıvı embolisi ani hipoksi, hipotansiyon ve koagülopati ile seyreden nadir fakat dramatik bir obstetrik acildir."
+  },
+  {
+    "id": 2671,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "34 haftalık gebede kaşıntı dışında yakınma yok. Safra asitleri belirgin yüksek. Viral hepatit markerları negatif. Tedavide semptom ve biyokimyasal düzelme için en sık kullanılan ilaç hangisidir?",
+    "options": [
+      "Spironolakton",
+      "Ursodeoksikolik asit",
+      "Doksisiklin",
+      "Propiltiyourasil",
+      "Metotreksat"
+    ],
+    "correct": 1,
+    "exp": "Gebeliğin intrahepatik kolestazında ursodeoksikolik asit kaşıntıyı ve safra asitlerini azaltmak için kullanılır. Fetal risk nedeniyle izlem ve doğum zamanlaması önemlidir."
+  },
+  {
+    "id": 2672,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "35 haftalık gebede baş ağrısı ve kan basıncı 170/110 mmHg saptanıyor. Platelet normal, proteinüri var. Ciddi hipertansiyonun akut kontrolünde gebelikte uygun seçenek hangisidir?",
+    "options": [
+      "Warfarin",
+      "Labetalol veya hidralazin",
+      "Enalapril",
+      "Nitroprussid rutin ilk seçenek",
+      "Spironolakton"
+    ],
+    "correct": 1,
+    "exp": "Gebelikte ciddi hipertansiyonun akut tedavisinde labetalol, hidralazin veya nifedipin kullanılabilir. ACE inhibitörleri gebelikte kontrendikedir."
+  },
+  {
+    "id": 2673,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Gebede 32. haftada üst karın ağrısı, hipertansiyon, trombositopeni ve LDH yüksekliği var. Periferik yaymada şistositler görülüyor. Bu bulgular hangi tabloyu destekler?",
+    "options": [
+      "Akut sistit",
+      "Fizyolojik gebelik anemisi",
+      "HELLP sendromu",
+      "Hiperemezis gravidarum",
+      "İdiopatik trombositopenik purpura"
+    ],
+    "correct": 2,
+    "exp": "HELLP sendromunda hemoliz, karaciğer enzim yüksekliği ve düşük trombosit sayısı vardır. Şistosit ve LDH yüksekliği mikroanjiyopatik hemolizi destekler."
+  },
+  {
+    "id": 2674,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "Gebelikte tarama amaçlı yapılan idrar kültüründe semptomu olmayan hastada anlamlı bakteriüri saptanıyor. En uygun yaklaşım hangisidir?",
+    "options": [
+      "Doğuma kadar her gün kültür almak",
+      "Tedavi etmeden beklemek",
+      "Sadece bol sıvı önermek",
+      "Gebeliğe uygun antibiyotikle tedavi etmek",
+      "Kinolon başlamak"
+    ],
+    "correct": 3,
+    "exp": "Asemptomatik bakteriüri gebelikte piyelonefrit ve obstetrik komplikasyon riskini artırır. Bu nedenle uygun antibiyotikle tedavi edilmelidir."
+  },
+  {
+    "id": 2675,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "Gebeliğin 8. haftasında ACE inhibitörü kullandığı fark edilen kronik hipertansif hastada tedavi değiştirilecektir. Gebelikte daha uygun antihipertansif seçenek hangisidir?",
+    "options": [
+      "Enalapril",
+      "Spironolakton",
+      "Aliskiren",
+      "Losartan",
+      "Metildopa"
+    ],
+    "correct": 4,
+    "exp": "ACE inhibitörleri ve ARB’ler gebelikte fetal renal hasar ve oligohidramniyos gibi riskler nedeniyle kullanılmaz. Metildopa, labetalol ve nifedipin gebelikte kullanılan seçeneklerdir."
+  },
+  {
+    "id": 2676,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "NST’de bazal fetal kalp hızı 170/dk, variabilite azalmış ve maternal ateş var. Bu patern en çok hangi maternal-fetal durumu destekler?",
+    "options": [
+      "Baş basısına bağlı erken deselerasyon",
+      "Rh negatifliğinin profilaktik etkisi",
+      "Normal postprandiyal değişiklik",
+      "Koryoamniyonit ile ilişkili fetal taşikardi",
+      "Fetal uyku dönemi"
+    ],
+    "correct": 3,
+    "exp": "Maternal ateş ve intraamniyotik enfeksiyon fetal taşikardiye yol açabilir. Azalmış variabilite eşlik ediyorsa fetal durum daha dikkatli değerlendirilmelidir."
+  },
+  {
+    "id": 2677,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "Gestasyonel hipertansiyonu olan gebede proteinüri yok, platelet ve karaciğer testleri normal. Kan basıncı 142/92 mmHg ve gebelik 37+1 haftalık. Uygun yaklaşım hangisidir?",
+    "options": [
+      "Doğum planlamak",
+      "Magnezyum sülfatı rutin başlamak",
+      "Gebeliği 42. haftaya kadar izlemek",
+      "ACE inhibitörü başlamak",
+      "Tokoliz uygulamak"
+    ],
+    "correct": 0,
+    "exp": "Gestasyonel hipertansiyon 37 hafta ve üzerinde genellikle doğumla yönetilir. Şiddetli özellik yoksa magnezyum rutin değildir; doğum zamanlaması maternal riskleri azaltır."
+  },
+  {
+    "id": 2678,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Gebeliğin erken döneminde primer CMV enfeksiyonu geçiren annede fetus açısından en sık kaygı duyulan bulgu hangisidir?",
+    "options": [
+      "Omuz distosisi",
+      "Sensorinöral işitme kaybı",
+      "Renal agenezi",
+      "Konjenital hipertiroidi",
+      "Fetal makrozomi"
+    ],
+    "correct": 1,
+    "exp": "Konjenital CMV enfeksiyonu intrauterin gelişme geriliği, intrakraniyal kalsifikasyon ve sensorinöral işitme kaybı ile ilişkilidir. İşitme kaybı geç dönemde de ortaya çıkabilir."
+  },
+  {
+    "id": 2679,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Gebede toksoplazma IgM pozitif, IgG aviditesi düşük saptanıyor. Fetal enfeksiyon riskini azaltmak için erken dönemde en uygun tedavi yaklaşımı hangisidir?",
+    "options": [
+      "Spiramisin",
+      "Valasiklovir",
+      "Rifampisin monoterapisi",
+      "Flukonazol yüksek doz",
+      "Metotreksat"
+    ],
+    "correct": 0,
+    "exp": "Gebelikte akut toksoplazma enfeksiyonunda fetal geçişi azaltmak için spiramisin kullanılabilir. Fetal enfeksiyon kanıtlanırsa pirimetamin-sülfadiazin-folinik asit rejimi gündeme gelir."
+  },
+  {
+    "id": 2680,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 3,
+    "q": "Gebeliğin 36. haftasında aktif genital herpes lezyonları olan hastada doğum başlamış. En uygun doğum şekli hangisidir?",
+    "options": [
+      "Sadece lezyon üzerine antiseptik uygulama",
+      "Amniyotomi sonrası bekleme",
+      "Forsepsle vajinal doğum",
+      "Sezaryen",
+      "Vakumla vajinal doğum"
+    ],
+    "correct": 3,
+    "exp": "Aktif genital herpes lezyonu veya prodromal semptom varlığında neonatal herpes riskini azaltmak için sezaryen önerilir."
+  },
+  {
+    "id": 2681,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Tip 1 diyabetli gebede ilk trimester HbA1c yüksek seyrediyor. Fetus açısından özellikle artan risk hangisidir?",
+    "options": [
+      "Fetal Turner sendromu",
+      "Servikal yetmezlik",
+      "Konjenital malformasyon",
+      "Maternal Rh izoimmünizasyonu",
+      "Doğum sonrası sadece geçici sarılık"
+    ],
+    "correct": 2,
+    "exp": "Pregestasyonel diyabette organogenez dönemindeki kötü glisemik kontrol konjenital malformasyon riskini artırır. Gestasyonel diyabet ise daha çok makrozomi ve neonatal metabolik sorunlarla ilişkilidir."
+  },
+  {
+    "id": 2682,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Perinatoloji",
+    "diff": 4,
+    "q": "Gebede epilepsi nedeniyle valproat kullanımı öyküsü var. Fetus açısından özellikle hangi anomali riski artar?",
+    "options": [
+      "Konjenital glokom",
+      "Omfalit",
+      "Trakeoözofageal fistül zorunlu birlikteliği",
+      "Nöral tüp defekti",
+      "Bilateral renal agenezi"
+    ],
+    "correct": 3,
+    "exp": "Valproat nöral tüp defekti ve nörogelişimsel sorun riskini artırır. Gebelik planlayan epilepsi hastalarında ilaç seçimi ve folat desteği önemlidir."
+  },
+  {
+    "id": 2683,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 3,
+    "q": "24 yaşındaki hastada adet gecikmesi, tek taraflı kasık ağrısı ve vajinal lekelenme var. Beta-hCG 1800 IU/L, transvajinal ultrasonda intrauterin gebelik kesesi izlenmiyor. Hemodinamik olarak stabil. En uygun sonraki yaklaşım hangisidir?",
+    "options": [
+      "Laparotomi ile over eksizyonu",
+      "Oral kontraseptif başlamak",
+      "Acil total abdominal histerektomi",
+      "Servikal smear almak",
+      "Seri beta-hCG ve transvajinal ultrason ile yakın izlem"
+    ],
+    "correct": 4,
+    "exp": "Diskriminatuvar zon sınırında veya altında intrauterin kese görülmemesi tek başına kesin ektopik tanısı koydurmaz. Stabil hastada seri beta-hCG ve ultrason ile gebeliğin yeri netleştirilir."
+  },
+  {
+    "id": 2684,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Beta-hCG 4200 IU/L olan stabil hastada uterus içinde gebelik kesesi yok, adneksiyel kitle ve az miktarda serbest sıvı var. Karaciğer ve böbrek fonksiyonları normal, fetal kardiyak aktivite yok. Uygun tedavi seçeneği hangisidir?",
+    "options": [
+      "Metotreksat",
+      "Oksitosin",
+      "Tamoksifen",
+      "Leuprolid",
+      "Karboprost"
+    ],
+    "correct": 0,
+    "exp": "Stabil, rüptür bulgusu olmayan seçilmiş ektopik gebeliklerde metotreksat kullanılabilir. Yüksek hCG, fetal kardiyak aktivite veya instabilite cerrahi gereksinimi artırır."
+  },
+  {
+    "id": 2685,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 3,
+    "q": "16 yaşındaki kızda primer amenore var. Meme gelişimi mevcut, aksiller ve pubik kıllanma normal. Döngüsel pelvik ağrı tarifliyor; muayenede vajen girişinde bombeleşen mavimsi membran görülüyor. En olası tanı hangisidir?",
+    "options": [
+      "Androjen duyarsızlığı",
+      "Hipotalamik amenore",
+      "İmperfore hymen",
+      "Asherman sendromu",
+      "Turner sendromu"
+    ],
+    "correct": 2,
+    "exp": "Normal sekonder seks karakterleri ve siklik ağrı, çıkış yolu obstrüksiyonunu düşündürür. Mavimsi bombeleşen membran hematokolposla giden imperfore hymen için tipiktir."
+  },
+  {
+    "id": 2686,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "17 yaşında primer amenoreli hastada meme gelişimi var, pubik ve aksiller kıllanma belirgin az. Karyotip 46,XY. Testosteron erkek aralığında, uterus yok. En olası tanı hangisidir?",
+    "options": [
+      "Müllerian agenezi",
+      "Turner sendromu",
+      "Hipogonadotropik hipogonadizm",
+      "Tam androjen duyarsızlığı",
+      "Konjenital adrenal hiperplazi"
+    ],
+    "correct": 3,
+    "exp": "Tam androjen duyarsızlığında 46,XY bireyde testis kaynaklı AMH nedeniyle uterus yoktur; aromatizasyonla meme gelişir, androjen yanıtı olmadığı için kıllanma azdır."
+  },
+  {
+    "id": 2687,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 3,
+    "q": "28 yaşında oligomenore, hirsutizm ve akne yakınması olan hastada ultrasonografide çok sayıda küçük folikül izleniyor. Gebelik istemiyor. İlk basamak tedavi hangisidir?",
+    "options": [
+      "Kombine oral kontraseptif",
+      "Tamoksifen",
+      "Metotreksat",
+      "GnRH agonisti uzun süreli monoterapi",
+      "Danazol"
+    ],
+    "correct": 0,
+    "exp": "PCOS’ta gebelik istemeyen hastada siklus kontrolü ve hiperandrojenizm için kombine oral kontraseptifler ilk seçeneklerden biridir. Yaşam tarzı düzenlemesi de önemlidir."
+  },
+  {
+    "id": 2688,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "PCOS tanılı obez hastada infertilite nedeniyle ovulasyon indüksiyonu planlanıyor. Güncel pratikte ilk basamak ovulasyon indüksiyon ajanı olarak en uygun seçenek hangisidir?",
+    "options": [
+      "Bromokriptin her hastada ilk seçenek",
+      "Danazol",
+      "Mifepriston",
+      "Siklofosfamid",
+      "Letrozol"
+    ],
+    "correct": 4,
+    "exp": "PCOS’a bağlı anovulatuvar infertilitede letrozol ovulasyon indüksiyonunda sık tercih edilen ilk basamak ajandır. Kilo kaybı ve metabolik risk yönetimi de tedavinin parçasıdır."
+  },
+  {
+    "id": 2689,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "32 yaşındaki hastada kronik pelvik ağrı, derin disparoni ve adet döneminde artan ağrı var. Laparoskopide overde koyu kahverengi içerikli kist saptanıyor. En olası tanı hangisidir?",
+    "options": [
+      "Paraovaryan kist",
+      "Teka lutein kisti",
+      "Endometrioma",
+      "Dermoid kist",
+      "Seröz kistadenom"
+    ],
+    "correct": 2,
+    "exp": "Endometriozis kronik pelvik ağrı, dismenore ve disparoni ile seyreder. Overde eski kan içeren çikolata kisti endometrioma olarak adlandırılır."
+  },
+  {
+    "id": 2690,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "45 yaşında multipar hastada giderek artan menoraji ve bası hissi var. Muayenede uterus düzensiz konturlu ve büyümüş. En olası tanı hangisidir?",
+    "options": [
+      "Leiomyom",
+      "Vajinal kandidiyazis",
+      "Ovarian torsiyon",
+      "Servikal ektropion",
+      "Endometrit"
+    ],
+    "correct": 0,
+    "exp": "Leiomyomlar östrojen duyarlı benign düz kas tümörleridir. Menoraji, bası semptomları ve düzensiz büyümüş uterus tipiktir."
+  },
+  {
+    "id": 2691,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 3,
+    "q": "41 yaşındaki hastada şiddetli dismenore ve menoraji var. Uterus globüler büyümüş, hassas; ultrasonografide myometrium heterojen izleniyor. En olası tanı hangisidir?",
+    "options": [
+      "Bartholin absesi",
+      "Adenomyozis",
+      "Molar gebelik",
+      "Servisit",
+      "Vulvar liken skleroz"
+    ],
+    "correct": 1,
+    "exp": "Adenomyozis endometrial bezlerin myometrium içinde bulunmasıdır. Multipar orta yaş hastada ağrılı, yoğun kanama ve globüler büyümüş uterus tipiktir."
+  },
+  {
+    "id": 2692,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 3,
+    "q": "19 yaşındaki hastada ateş, alt karın ağrısı, servikal hareket hassasiyeti ve mukopürülan akıntı var. Gebelik testi negatif. Tedavide temel yaklaşım hangisidir?",
+    "options": [
+      "Antikoagülasyon",
+      "Östrojen replasmanı",
+      "Gonore ve klamidya dahil geniş spektrumlu antibiyotik tedavisi",
+      "Acil histerektomi",
+      "Sadece tek doz flukonazol"
+    ],
+    "correct": 2,
+    "exp": "PID tanısı klinik olarak konabilir. Gonore, klamidya ve anaerobları kapsayan antibiyotik tedavisi infertilite ve kronik pelvik ağrı riskini azaltmak için geciktirilmemelidir."
+  },
+  {
+    "id": 2693,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 3,
+    "q": "Vajinal akıntı nedeniyle başvuran hastada pH 5,5, balık kokusu, clue cell ve ince gri akıntı saptanıyor. En olası tanı hangisidir?",
+    "options": [
+      "Bakteriyel vajinozis",
+      "Herpes simpleks",
+      "Trikomoniyazis olmadan atrofik vajinit",
+      "Vulvovajinal kandidiyazis",
+      "Liken planus"
+    ],
+    "correct": 0,
+    "exp": "Bakteriyel vajinoziste pH yükselir, balık kokusu ve clue cell görülür. Tedavide metronidazol veya klindamisin kullanılabilir."
+  },
+  {
+    "id": 2694,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 3,
+    "q": "Köpüklü sarı-yeşil akıntı, kaşıntı ve çilek serviks bulgusu olan hastada vajinal pH yüksek. Tedavi planlanırken hangi yaklaşım unutulmamalıdır?",
+    "options": [
+      "Histeroskopi",
+      "Partner tedavisi",
+      "Sadece probiyotik",
+      "Sadece lokal östrojen",
+      "Servikal konizasyon"
+    ],
+    "correct": 1,
+    "exp": "Trikomoniyazis cinsel yolla bulaşır; metronidazol/tinidazol tedavisi yanında partner tedavisi ve cinsel yolla bulaşan enfeksiyon taraması önemlidir."
+  },
+  {
+    "id": 2695,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 3,
+    "q": "Kaşıntı ve yoğun beyaz peynirimsi akıntısı olan hastada vajinal pH normal, mikroskopide psödohifler görülüyor. En olası tanı hangisidir?",
+    "options": [
+      "Vulvovajinal kandidiyazis",
+      "Gonore",
+      "Trikomoniyazis",
+      "Atrofik vajinit",
+      "Bakteriyel vajinozis"
+    ],
+    "correct": 0,
+    "exp": "Kandidiyaziste yoğun kaşıntı, peynirimsi akıntı ve normal vajinal pH tipiktir. Mikroskopide maya veya psödohif görülebilir."
+  },
+  {
+    "id": 2696,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Akut başlayan tek taraflı pelvik ağrı, bulantı-kusma ve hassas adneksiyel kitle olan 23 yaşındaki hastada Doppler akımının izlenmesi torsiyonu dışlamıyor. En uygun yaklaşım hangisidir?",
+    "options": [
+      "Rahim içi araç çıkarmak",
+      "Oral kontraseptif başlamak",
+      "Ağrı kesici verip 1 ay sonra kontrol",
+      "Endometrial biyopsi",
+      "Acil laparoskopik değerlendirme ve detorsiyon"
+    ],
+    "correct": 4,
+    "exp": "Ovaryan torsiyonda Doppler akımının varlığı tanıyı dışlamaz. Klinik şüphe yüksekse over dokusunu korumak için acil cerrahi değerlendirme gerekir."
+  },
+  {
+    "id": 2697,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Menopoz sonrası vajinal kanaması olan 62 yaşındaki hastada ilk değerlendirme için en uygun yaklaşım hangisidir?",
+    "options": [
+      "Sadece kombine oral kontraseptif başlamak",
+      "Transvajinal ultrason ile endometrium kalınlığı değerlendirmek veya endometrial örnekleme yapmak",
+      "Gebelik testi pozitif kabul etmek",
+      "HPV aşısı yapmak",
+      "Laparoskopik apendektomi"
+    ],
+    "correct": 1,
+    "exp": "Postmenopozal kanama endometrium kanseri dışlanana kadar önemlidir. Transvajinal ultrason ile endometrium kalınlığı ve/veya endometrial örnekleme temel değerlendirmedir."
+  },
+  {
+    "id": 2698,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "35 yaşındaki hastada adet düzensizliği ve intermenstrüel kanama var. Ultrasonografide endometrial polip düşünülüyor. Tanı ve eş zamanlı tedavi için en uygun yöntem hangisidir?",
+    "options": [
+      "Sistoskopi",
+      "Laparotomi ile bilateral ooforektomi",
+      "Servikal smear",
+      "Histeroskopi",
+      "Kolposkopi"
+    ],
+    "correct": 3,
+    "exp": "Histeroskopi uterin kavite lezyonlarını doğrudan görme ve polipektomi yapma olanağı sağlar. Endometrial poliplerde tanı-tedavi açısından değerlidir."
+  },
+  {
+    "id": 2699,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 3,
+    "q": "Üreme çağında anormal uterin kanama ile gelen hastada ilk dışlanması gereken durum hangisidir?",
+    "options": [
+      "Endometrial polip",
+      "Koagülopati",
+      "Gebelik",
+      "Hipotiroidi",
+      "Leiomyom"
+    ],
+    "correct": 2,
+    "exp": "Üreme çağındaki anormal kanamada gebelik ve gebelik komplikasyonları ilk dışlanması gereken durumlardır. Sonrasında PALM-COEIN sınıflamasıyla değerlendirme yapılır."
+  },
+  {
+    "id": 2700,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "13 yaşında menarştan beri çok yoğun adet kanaması olan hastada burun kanaması öyküsü de var. Hemoglobin düşük. Altta yatan hangi durum özellikle araştırılmalıdır?",
+    "options": [
+      "Von Willebrand hastalığı",
+      "Endometriyal atrofi",
+      "Servikal kanser",
+      "Ektopik gebelik",
+      "Over torsiyonu"
+    ],
+    "correct": 0,
+    "exp": "Adolesanda menarştan itibaren ağır kanama ve mukozal kanama öyküsü koagülopatiyi düşündürür. En sık kalıtsal kanama bozukluklarından biri von Willebrand hastalığıdır."
+  },
+  {
+    "id": 2701,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 3,
+    "q": "Öksürmekle idrar kaçıran, sıkışma hissi tariflemeyen multipar hastada en olası inkontinans tipi hangisidir?",
+    "options": [
+      "Urge inkontinans",
+      "Stres inkontinans",
+      "Nörojenik retansiyon",
+      "Taşma inkontinansı",
+      "Fistül ilişkili sürekli kaçak"
+    ],
+    "correct": 1,
+    "exp": "Karın içi basınç artışıyla idrar kaçırma stres inkontinans için tipiktir. Pelvik taban desteğinin azalması ve üretral hipermobilite önemli rol oynar."
+  },
+  {
+    "id": 2702,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 3,
+    "q": "Ani sıkışma hissiyle tuvalete yetişemeden idrar kaçıran hastada öksürme ile kaçırma yok. İlk basamak konservatif tedavi hangisidir?",
+    "options": [
+      "Endometrial ablasyon",
+      "Sadece antibiyotik",
+      "Acil histerektomi",
+      "Mesane eğitimi ve davranışsal tedavi",
+      "Yüksek doz östrojen"
+    ],
+    "correct": 3,
+    "exp": "Urge inkontinansta mesane eğitimi, sıvı-kafein düzenlemesi ve davranışsal tedaviler ilk basamakta yer alır. Gerekirse antimuskarinik veya beta-3 agonist tedaviler düşünülür."
+  },
+  {
+    "id": 2703,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Menopoz sonrası vajinal kuruluk, disparoni ve tekrarlayan irritasyon yakınması olan hastada pH yüksek, epitel soluk ve ince. En olası tanı hangisidir?",
+    "options": [
+      "Akut PID",
+      "Genitoüriner menopoz sendromu",
+      "Ovaryan torsiyon",
+      "Trikomoniyazis",
+      "Molar gebelik"
+    ],
+    "correct": 1,
+    "exp": "Östrojen azalması vajinal epitelde incelme, pH artışı, kuruluk ve disparoniye yol açar. Lokal östrojen uygun hastalarda etkili olabilir."
+  },
+  {
+    "id": 2704,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "52 yaşındaki hastada sıcak basması nedeniyle tedavi düşünülüyor. Uterusu olan hastada sistemik östrojen verilecekse endometriumu korumak için ne eklenmelidir?",
+    "options": [
+      "Metotreksat",
+      "Danazol",
+      "GnRH agonisti",
+      "Progestin",
+      "Tamoksifen zorunlu olarak"
+    ],
+    "correct": 3,
+    "exp": "Uterusu olan hastada karşılanmamış östrojen endometrial hiperplazi ve kanser riskini artırır. Bu nedenle sistemik hormon tedavisinde progestin eklenir."
+  },
+  {
+    "id": 2705,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 3,
+    "q": "Bakırlı rahim içi araç takılmasından sonraki aylarda adet kanaması ve dismenoresi artan hastada enfeksiyon bulgusu yok. Bu yan etki hangi yöntemle daha tipiktir?",
+    "options": [
+      "Kombine oral kontraseptif",
+      "Depo medroksiprogesteron",
+      "Levonorgestrel salan RİA",
+      "Subdermal implant",
+      "Bakırlı RİA"
+    ],
+    "correct": 4,
+    "exp": "Bakırlı RİA kanama miktarı ve krampı artırabilir. Levonorgestrel salan RİA ise genellikle kanama miktarını azaltır."
+  },
+  {
+    "id": 2706,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 3,
+    "q": "Sigara içen 38 yaşındaki kadında kontrasepsiyon isteniyor. Migren aurası da var. Kombine hormonal kontraseptif yerine daha uygun seçenek hangisidir?",
+    "options": [
+      "Kombine vajinal halka",
+      "Yüksek doz etinil östradiol",
+      "Levonorgestrel salan rahim içi sistem",
+      "Kombine transdermal yama",
+      "Östrojen-progestin hapı"
+    ],
+    "correct": 2,
+    "exp": "35 yaş üstü sigara kullanımı ve auralı migren kombine östrojen içeren yöntemler için tromboemboli/inme riski nedeniyle uygun değildir. Progestin içeren veya nonhormonal yöntemler tercih edilir."
+  },
+  {
+    "id": 2707,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Doğumdan 3 hafta sonra emziren hastada güvenilir kontrasepsiyon isteniyor. Tromboemboli riskini artırmayan ve emzirmeyi baskılamayan uygun seçenek hangisidir?",
+    "options": [
+      "Kombine östrojen-progestin hap",
+      "Tamoksifen",
+      "Danazol",
+      "Sadece progestin içeren yöntem",
+      "Acil kontrasepsiyon amacıyla sürekli yüksek doz östrojen"
+    ],
+    "correct": 3,
+    "exp": "Erken postpartum dönemde östrojen içeren yöntemler tromboemboli riski ve süt üzerine etkiler nedeniyle uygun olmayabilir. Sadece progestin içeren yöntemler emzirenlerde tercih edilebilir."
+  },
+  {
+    "id": 2708,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Cinsel saldırı sonrası 48 saat içinde başvuran hastada gebelik istenmiyor. Uygun acil kontrasepsiyon seçeneklerinden biri hangisidir?",
+    "options": [
+      "Ulipristal asetat veya levonorgestrel",
+      "Mifepriston olmadan bekleme",
+      "Progesteron testi",
+      "Metotreksat rutin tek seçenek",
+      "Oksitosin"
+    ],
+    "correct": 0,
+    "exp": "Acil kontrasepsiyonda levonorgestrel, ulipristal asetat veya bakırlı RİA seçenekleri kullanılabilir. Zamanlama yöntemin etkinliği için önemlidir."
+  },
+  {
+    "id": 2709,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Adet kanaması başlamadan önce tekrarlayan duygu durum değişikliği, irritabilite ve fiziksel yakınmaları olan; adetle belirgin rahatlayan hastada ağır işlev kaybı var. İlk basamak farmakolojik seçenek hangisidir?",
+    "options": [
+      "SSRI",
+      "Metotreksat",
+      "GnRH agonisti herkes için ilk seçenek",
+      "Antibiyotik",
+      "Tamoksifen"
+    ],
+    "correct": 0,
+    "exp": "Premenstrüel disforik bozuklukta SSRI’lar etkili ilk basamak farmakolojik tedavilerdendir. Semptomların luteal fazla ilişkisi tanıda önemlidir."
+  },
+  {
+    "id": 2710,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 3,
+    "q": "Bartholin bezinde ağrılı, fluktuasyon veren apse gelişen 28 yaşındaki hastada uygun yaklaşım hangisidir?",
+    "options": [
+      "Sadece servikal smear almak",
+      "Total vulvektomi",
+      "Drenaj ve Word kateter yerleştirilmesi",
+      "Endometrial biyopsi",
+      "Yüksek doz östrojen"
+    ],
+    "correct": 2,
+    "exp": "Bartholin apsesinde drenaj gerekir; Word kateter rekürrensi azaltmak için kullanılır. Basit iğne aspirasyonu daha yüksek nüks riski taşır."
+  },
+  {
+    "id": 2711,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "65 yaşındaki kadında vulvada uzun süredir kaşıntılı beyaz plaklar ve ciltte incelme var. Muayenede labial anatomide silinme izleniyor. En olası tanı hangisidir?",
+    "options": [
+      "Akut kandidiyazis",
+      "Herpes zoster",
+      "Trikomoniyazis",
+      "Bartholin kisti",
+      "Liken skleroz"
+    ],
+    "correct": 4,
+    "exp": "Liken skleroz postmenopozal dönemde kaşıntılı beyaz plaklar, atrofi ve skarlaşma ile seyreder. Vulvar skuamöz hücreli kanser riski nedeniyle izlem ve biyopsi gerekliliği değerlendirilir."
+  },
+  {
+    "id": 2712,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Üreme çağındaki hastada hirsutizm hızla ilerliyor, ses kalınlaşması ve klitoromegali gelişiyor. Total testosteron belirgin yüksek. Öncelikle hangi durum düşünülmelidir?",
+    "options": [
+      "Basit fizyolojik kıllanma",
+      "Androjen salgılayan tümör",
+      "Normal PCOS seyri kabul edilip izlem",
+      "Bakteriyel vajinozis",
+      "Atrofik vajinit"
+    ],
+    "correct": 1,
+    "exp": "Hızlı başlayan virilizasyon ve çok yüksek androjen düzeyleri PCOS’tan çok over veya adrenal kaynaklı androjen salgılayan tümörü düşündürür."
+  },
+  {
+    "id": 2713,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Primer dismenoresi olan genç hastada pelvik muayene normal, ağrı adetle başlayıp 1-2 gün içinde azalıyor. Ağrının azalmasında ilk seçenek ilaç grubu hangisidir?",
+    "options": [
+      "Antibiyotik",
+      "Opioid kronik kullanım",
+      "Metotreksat",
+      "NSAİİ",
+      "Aromataz inhibitörü"
+    ],
+    "correct": 3,
+    "exp": "Primer dismenorede prostaglandin artışı uterin kontraksiyon ve ağrıya yol açar. NSAİİ’ler prostaglandin sentezini azaltarak etkilidir."
+  },
+  {
+    "id": 2714,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 3,
+    "q": "35 yaşındaki hastada adet sonrası kahverengi lekelenme, infertilite ve submuköz myom düşünülüyor. Kaviteyi değerlendirmede en yararlı yöntemlerden biri hangisidir?",
+    "options": [
+      "Akciğer grafisi",
+      "Mammografi",
+      "Kolonoskopi",
+      "Direkt üriner sistem grafisi",
+      "Salin infüzyon sonografi"
+    ],
+    "correct": 4,
+    "exp": "Salin infüzyon sonografi endometrial kaviteyi açarak polip ve submuköz myom gibi intrakaviter lezyonları göstermede yararlıdır."
+  },
+  {
+    "id": 2715,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 3,
+    "q": "Rahim içi araç kullanıcısında gebelik testi pozitif. İlk yapılması gereken değerlendirme hangisidir?",
+    "options": [
+      "Hemen histerektomi yapmak",
+      "Sadece doğumu beklemek",
+      "RİA’yı görmeden metotreksat vermek",
+      "Kanser taraması yapmak",
+      "Gebeliğin intrauterin mi ektopik mi olduğunu belirlemek"
+    ],
+    "correct": 4,
+    "exp": "RİA gebelik riskini düşürür; ancak gebelik oluşursa ektopik gebelik olasılığı mutlaka değerlendirilmelidir. Gebeliğin yeri ilk basamakta belirlenir."
+  },
+  {
+    "id": 2716,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Postpartum dönemde yoğun kanama geçiren hastada aylar sonra amenore, halsizlik ve laktasyonun başlamaması gelişiyor. En olası tanı hangisidir?",
+    "options": [
+      "Sheehan sendromu",
+      "PCOS",
+      "Asherman sendromu olmadan normal lohusalık",
+      "Androjen duyarsızlığı",
+      "Turner sendromu"
+    ],
+    "correct": 0,
+    "exp": "Postpartum hipofiz nekrozu Sheehan sendromuna yol açabilir. Laktasyonun olmaması ve hipopituitarizm bulguları tipiktir."
+  },
+  {
+    "id": 2717,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Jinekoloji",
+    "diff": 4,
+    "q": "Tekrarlayan küretaj öyküsü olan hastada sekonder amenore ve infertilite gelişiyor. Histeroskopide intrauterin adezyonlar görülüyor. En olası tanı hangisidir?",
+    "options": [
+      "Liken skleroz",
+      "Endometrioma",
+      "Asherman sendromu",
+      "Servikal ektropion",
+      "Müllerian agenezi"
+    ],
+    "correct": 2,
+    "exp": "Intrauterin adezyonlar özellikle küretaj veya uterin enfeksiyon sonrası gelişebilir. Sekonder amenore, hipomenore ve infertilite ile seyreder; tanı ve tedavide histeroskopi önemlidir."
+  },
+  {
+    "id": 2718,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 3,
+    "q": "29 yaşındaki hastanın servikal taramasında yüksek dereceli skuamöz intraepitelyal lezyon saptanıyor. HPV 16 pozitif. Bu kanserleşme sürecinde viral proteinlerin hedeflediği tümör baskılayıcılar hangi seçenekte doğru verilmiştir?",
+    "options": [
+      "E6-p53 ve E7-Rb",
+      "E1-BRCA1 ve E2-PTEN",
+      "E6-VHL ve E7-WT1",
+      "L1-APC ve L2-KRAS",
+      "E5-MSH2 ve E4-MLH1"
+    ],
+    "correct": 0,
+    "exp": "Yüksek riskli HPV tiplerinde E6 p53 yıkımını, E7 ise Rb fonksiyon kaybını artırır. Bu durum hücre siklusu kontrolünün bozulmasına ve servikal neoplaziye zemin hazırlar."
+  },
+  {
+    "id": 2719,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Pap smear sonucu ASC-US gelen 32 yaşındaki hastada yüksek riskli HPV testi pozitif. Bir sonraki uygun yaklaşım hangisidir?",
+    "options": [
+      "Sadece antibiyotik",
+      "Acil radikal histerektomi",
+      "Kolposkopi",
+      "5 yıl sonra rutin tarama",
+      "Endometrial ablasyon"
+    ],
+    "correct": 2,
+    "exp": "ASC-US sonucunda yüksek riskli HPV pozitifliği varsa kolposkopik değerlendirme gerekir. HPV negatif olsaydı izlem aralığı farklı planlanabilirdi."
+  },
+  {
+    "id": 2720,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Kolposkopik biyopside CIN 3 saptanan ve çocuk istemi devam eden 31 yaşındaki hastada uygun tedavi hangisidir?",
+    "options": [
+      "Metotreksat",
+      "Ooforektomi",
+      "Eksizyonel işlem, örneğin LEEP/konizasyon",
+      "Sadece vajinal ovül",
+      "Total pelvik ekzenterasyon"
+    ],
+    "correct": 2,
+    "exp": "CIN 3 yüksek dereceli preinvaziv lezyondur ve eksizyonel tedavi gerekir. Fertilite koruyucu yaklaşımda LEEP veya konizasyon uygulanabilir."
+  },
+  {
+    "id": 2721,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 3,
+    "q": "Postmenopozal obez, hipertansif ve diyabetik hastada vajinal kanama gelişiyor. Endometrial biyopside endometrioid adenokarsinom saptanıyor. Bu tümör için en önemli hormonal zemin hangisidir?",
+    "options": [
+      "FSH baskılanması",
+      "Androjen yokluğu",
+      "Karşılanmamış östrojen etkisi",
+      "Kronik progesteron fazlalığı",
+      "Prolaktin eksikliği"
+    ],
+    "correct": 2,
+    "exp": "Tip 1 endometrium kanseri obezite, anovulasyon ve karşılanmamış östrojen ile ilişkilidir. Endometrioid histoloji genellikle bu gruptadır."
+  },
+  {
+    "id": 2722,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "65 yaşında zayıf hastada postmenopozal kanama var. Biyopside seröz endometrium karsinomu saptanıyor. Bu tümör için hangisi daha doğrudur?",
+    "options": [
+      "Progesteronla tamamen geriler",
+      "Sadece myom zemininden gelişir",
+      "HPV 6 ile ilişkilidir",
+      "Östrojen bağımlı olmadan agresif seyredebilir",
+      "Genellikle genç PCOS hastalarında görülür"
+    ],
+    "correct": 3,
+    "exp": "Tip 2 endometrium kanserleri, özellikle seröz histoloji, östrojen bağımlı olmayan ve daha agresif seyreden tümörlerdir."
+  },
+  {
+    "id": 2723,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Adneksiyel kitle nedeniyle opere edilen postmenopozal hastada bilateral solid over kitleleri ve patolojide müsin içeren taşlı yüzük hücreleri saptanıyor. Primer odak açısından öncelikle hangi bölge düşünülür?",
+    "options": [
+      "Hipofiz",
+      "Mide",
+      "Tiroid",
+      "Böbrek korteksi",
+      "Paratiroid"
+    ],
+    "correct": 1,
+    "exp": "Krukenberg tümörü sıklıkla gastrointestinal sistem, özellikle mide kaynaklı metastatik over tümörüdür. Bilateral solid kitle ve taşlı yüzük hücreleri tipiktir."
+  },
+  {
+    "id": 2724,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Genç hastada karın ağrısı ve over kitlesi var. Tümör markerlarında AFP yüksekliği belirgin. Hangi over tümörü ön planda düşünülür?",
+    "options": [
+      "Disgerminom",
+      "Granüloza hücreli tümör",
+      "Seröz kistadenom",
+      "Fibrom",
+      "Yolk sac tümörü"
+    ],
+    "correct": 4,
+    "exp": "Yolk sac tümörü alfa-fetoprotein yüksekliği ile ilişkilidir. Genç yaşta görülen malign germ hücreli over tümörlerinden biridir."
+  },
+  {
+    "id": 2725,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Over kitlesi olan genç hastada LDH yüksekliği ön planda, histolojide büyük veziküler hücreler ve lenfositik infiltrasyon izleniyor. En olası tanı hangisidir?",
+    "options": [
+      "Brenner tümörü",
+      "Müsinöz kistadenom",
+      "Granüloza hücreli tümör",
+      "Disgerminom",
+      "Yolk sac tümörü"
+    ],
+    "correct": 3,
+    "exp": "Disgerminom overin seminom karşılığıdır; gençlerde görülür ve LDH yüksekliği ile ilişkilidir. Radyoterapi ve kemoterapiye duyarlıdır."
+  },
+  {
+    "id": 2726,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Postmenopozal hastada endometrial hiperplazi ve kanama var. Overde granüloza hücreli tümör saptanıyor. Bu ilişki en iyi hangi bulgu ile açıklanır?",
+    "options": [
+      "Tümörün TSH salgılaması",
+      "Tümörün östrojen salgılaması",
+      "Tümörün kalsitonin salgılaması",
+      "Tümörün aldosteron salgılaması",
+      "Tümörün hCG salgılaması"
+    ],
+    "correct": 1,
+    "exp": "Granüloza hücreli tümörler östrojen üretebilir. Bu nedenle erken puberte, endometrial hiperplazi veya postmenopozal kanama ile ilişkili olabilir."
+  },
+  {
+    "id": 2727,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 3,
+    "q": "BRCA1 mutasyonu taşıyan hastada over kanseri risk azaltımı için çocuk istemi tamamlandıktan sonra önerilebilecek yaklaşım hangisidir?",
+    "options": [
+      "Risk azaltıcı bilateral salpingo-ooforektomi",
+      "Endometrial ablasyon",
+      "HPV aşısı",
+      "Sadece yıllık CA-125 ile riskin tamamen ortadan kalkması",
+      "Servikal konizasyon"
+    ],
+    "correct": 0,
+    "exp": "BRCA mutasyon taşıyıcılarında tüp-over kaynaklı yüksek dereceli seröz kanser riski artar. Çocuk istemi tamamlandıktan sonra risk azaltıcı salpingo-ooforektomi düşünülebilir."
+  },
+  {
+    "id": 2728,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 3,
+    "q": "Over kanseri için kullanılan CA-125 hakkında hangisi daha doğrudur?",
+    "options": [
+      "Sadece gebelikte yükselir",
+      "Takipte yararlı olabilir ancak tarama testi olarak özgüllüğü sınırlıdır",
+      "Her genç kadında kesin tarama testidir",
+      "Serviks kanserine özgüdür",
+      "Yolk sac tümöründe ana markerdır"
+    ],
+    "correct": 1,
+    "exp": "CA-125 epitelyal over kanserinde tedavi yanıtı ve nüks izlemi için yararlı olabilir. Endometriozis, PID ve gebelik gibi benign durumlarda da yükselebilir."
+  },
+  {
+    "id": 2729,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Adneksiyel kitle, asit ve plevral efüzyonu olan hastada over fibromu saptanıyor. Tümör çıkarıldıktan sonra asit ve efüzyonun düzelmesi beklenen sendrom hangisidir?",
+    "options": [
+      "Sheehan sendromu",
+      "Lynch sendromu",
+      "Mayer-Rokitansky sendromu",
+      "Meigs sendromu",
+      "Asherman sendromu"
+    ],
+    "correct": 3,
+    "exp": "Meigs sendromu over fibromu, asit ve plevral efüzyon triadıdır. Tümörün çıkarılmasıyla sıvı birikimleri geriler."
+  },
+  {
+    "id": 2730,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Üreme çağındaki hastada komplet mol hidatiform sonrası beta-hCG düşmek yerine plato yapıyor ve akciğerde nodüller izleniyor. En uygun tanı hangisidir?",
+    "options": [
+      "Servikal ektropion",
+      "Gestasyonel trofoblastik neoplazi",
+      "Normal mol sonrası iyileşme",
+      "Bartholin kisti",
+      "Endometrioma"
+    ],
+    "correct": 1,
+    "exp": "Mol gebelik sonrası beta-hCG’nin düşmemesi, plato yapması veya yükselmesi gestasyonel trofoblastik neoplaziyi düşündürür. Akciğer metastazı görülebilir ve kemoterapiye genellikle duyarlıdır."
+  },
+  {
+    "id": 2731,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 3,
+    "q": "Komplet mol hidatiformda beklenen kromozomal yapı en sık hangisidir?",
+    "options": [
+      "45,X maternal kaynaklı",
+      "46,XY tamamen maternal kaynaklı",
+      "46,XX tamamen paternal kaynaklı",
+      "Triploid 69,XXY",
+      "47,XXY maternal kaynaklı"
+    ],
+    "correct": 2,
+    "exp": "Komplet molde genetik materyal çoğunlukla paternal kaynaklı diploiddir ve fetal doku yoktur. Parsiyel molde ise genellikle triploidi ve fetal yapı izlenebilir."
+  },
+  {
+    "id": 2732,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Parsiyel mol hidatiformu komplet molden ayıran bulgulardan biri hangisidir?",
+    "options": [
+      "Uterusun hiç büyümemesi",
+      "Paternal diploidi olmadan hiç plasental değişiklik olmaması",
+      "Fetal doku bulunabilmesi ve triploidi eğilimi",
+      "Beta-hCG’nin asla yükselmemesi",
+      "Her zaman daha yüksek malignite riski"
+    ],
+    "correct": 2,
+    "exp": "Parsiyel mol genellikle triploid yapıdadır ve fetal doku bulunabilir. Komplet molde fetal doku yoktur ve trofoblastik neoplazi riski daha yüksektir."
+  },
+  {
+    "id": 2733,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 3,
+    "q": "Vulvada kaşıntılı lezyondan alınan biyopside invaziv skuamöz hücreli karsinom saptanıyor. Yaşlı hastada HPV negatif, liken skleroz öyküsü var. Bu kanser için hangi zemin önemlidir?",
+    "options": [
+      "Adenomyozis",
+      "Hiperprolaktinemi",
+      "Kronik vulvar dermatoz ve diferansiye VIN",
+      "Sadece akut kandidiyazis",
+      "Endometrioma"
+    ],
+    "correct": 2,
+    "exp": "Vulvar skuamöz hücreli kanser HPV ilişkili veya HPV’den bağımsız gelişebilir. Yaşlılarda liken skleroz ve diferansiye VIN zemininde gelişen tip önemlidir."
+  },
+  {
+    "id": 2734,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Serviks kanseri tanılı hastada parametrial invazyon var ancak pelvik duvar tutulumu yok. Bu evreleme bilgisinde özellikle hangi muayene/bulgu belirleyicidir?",
+    "options": [
+      "Parametriyum tutulumu",
+      "Endometrial kalınlık",
+      "Over folikül sayısı",
+      "Serum prolaktin düzeyi",
+      "Meme yoğunluğu"
+    ],
+    "correct": 0,
+    "exp": "Serviks kanserinde parametrial tutulum lokal evrelemeyi belirgin değiştirir ve tedavi seçimini etkiler. Erken evre cerrahi, daha ileri lokal hastalıkta kemoradyoterapi gündeme gelir."
+  },
+  {
+    "id": 2735,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Servikal kanser taramasında 24 yaşındaki hastada LSIL saptanıyor. Bu yaş grubunda HPV enfeksiyonlarının çoğu gerileyebildiği için yaklaşımda hangi özellik önemlidir?",
+    "options": [
+      "Endometrium biyopsisi zorunluluğu",
+      "Her LSIL’de kemoterapi",
+      "Taramanın tamamen bırakılması",
+      "Yaşa göre izlem/kolposkopi kararının farklılaşması",
+      "Her LSIL’de radikal histerektomi"
+    ],
+    "correct": 3,
+    "exp": "Genç yaşta düşük dereceli lezyonların önemli kısmı geriler. Yönetim yaşa, sitoloji sonucuna ve HPV durumuna göre değişir; gereksiz invaziv işlemden kaçınılır."
+  },
+  {
+    "id": 2736,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Endometrial biyopside atipili endometrial hiperplazi saptanan, çocuk istemi olmayan 48 yaşındaki hastada en uygun kesin tedavi hangisidir?",
+    "options": [
+      "Sadece demir tedavisi",
+      "Servikal kriyoterapi",
+      "Antibiyotik",
+      "Histerektomi",
+      "Ovaryan drilling"
+    ],
+    "correct": 3,
+    "exp": "Atipili endometrial hiperplazi endometrium kanseri öncülü kabul edilir ve eş zamanlı kanser bulunabilir. Çocuk istemi olmayan hastada histerektomi kesin tedavidir."
+  },
+  {
+    "id": 2737,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Genç ve fertilitesini korumak isteyen, iyi diferansiye erken evre endometrioid endometrium kanseri olan seçilmiş hastada konservatif yaklaşım için hangi tedavi düşünülebilir?",
+    "options": [
+      "Radyoterapiyi erteleyip sadece NSAİİ",
+      "Tamoksifen monoterapisi",
+      "Yüksek doz progestin ve sık endometrial takip",
+      "Metotreksat",
+      "Antibiyotik"
+    ],
+    "correct": 2,
+    "exp": "Seçilmiş erken evre, düşük dereceli endometrioid kanserde fertilite koruma amacıyla progestin tedavisi ve yakın histolojik takip uygulanabilir. Standart tedavi çoğu hastada cerrahidir."
+  },
+  {
+    "id": 2738,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Overde papiller yapılar içeren bilateral kistik-solid kitle, psammoma cisimcikleri ve CA-125 yüksekliği olan postmenopozal hastada en olası tümör hangisidir?",
+    "options": [
+      "Seröz epitelyal over karsinomu",
+      "Sertoli-Leydig tümörü",
+      "Fibrom",
+      "Matür kistik teratom",
+      "Yolk sac tümörü"
+    ],
+    "correct": 0,
+    "exp": "Yüksek dereceli seröz over karsinomu ileri yaşta, bilateral tutulum ve psammoma cisimcikleriyle ilişkili olabilir. CA-125 sıklıkla yüksektir."
+  },
+  {
+    "id": 2739,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Adolesan kızda karında kitle ve virilizasyon bulguları var. Over tümörü androjen salgılıyor. En olası tanı hangisidir?",
+    "options": [
+      "Disgerminom",
+      "Seröz kistadenom",
+      "Fibrom",
+      "Granüloza hücreli tümör",
+      "Sertoli-Leydig hücreli tümör"
+    ],
+    "correct": 4,
+    "exp": "Sertoli-Leydig hücreli tümör androjen salgılayarak virilizasyon bulgularına yol açabilir. Hızlı virilizasyon over/adrenal tümör açısından uyarıcıdır."
+  },
+  {
+    "id": 2740,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 3,
+    "q": "Matür kistik teratom nedeniyle izlenen genç hastada akut tek taraflı ağrı ve kusma gelişiyor. Bu tümörle en sık ilişkili akut komplikasyon hangisidir?",
+    "options": [
+      "Torsiyon",
+      "DIC",
+      "Endometrial hiperplazi",
+      "Hipoglisemi",
+      "Servikal stenoz"
+    ],
+    "correct": 0,
+    "exp": "Matür kistik teratom gençlerde sık görülen benign germ hücreli tümördür. Over torsiyonu açısından risk oluşturabilir."
+  },
+  {
+    "id": 2741,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Serviks kanserinden korunmada HPV aşısı için en doğru ifade hangisidir?",
+    "options": [
+      "Pap smear gereksinimini tamamen ortadan kaldırır",
+      "Sadece HPV enfeksiyonu geçirdikten sonra etkilidir",
+      "Sadece erkeklere yapılır",
+      "Cinsel aktivite başlamadan önce en yüksek yararı sağlar ancak taramanın yerini almaz",
+      "Sadece HPV 6’ya karşı etkilidir"
+    ],
+    "correct": 3,
+    "exp": "HPV aşısı yüksek riskli HPV tiplerine karşı koruma sağlar ve cinsel aktivite öncesinde en yüksek etki beklenir. Aşı yapılmış bireylerde de tarama programı sürer."
+  },
+  {
+    "id": 2742,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Lynch sendromu taşıyan kadında kolorektal kanser dışında hangi jinekolojik kanser riski belirgin artar?",
+    "options": [
+      "Bartholin bezi kisti",
+      "Vulvar melanoma",
+      "Servikal skuamöz kanser",
+      "Endometrium kanseri",
+      "Yolk sac tümörü"
+    ],
+    "correct": 3,
+    "exp": "Lynch sendromu DNA mismatch repair genleriyle ilişkilidir ve endometrium kanseri riskini belirgin artırır. Over kanseri riski de artabilir."
+  },
+  {
+    "id": 2743,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 3,
+    "q": "Bir yıldır korunmasız ilişkiye rağmen gebelik oluşmayan 29 yaşındaki çift değerlendirmeye geliyor. Düzenli adetleri olan kadında ilk basamak temel değerlendirmelerden biri hangisidir?",
+    "options": [
+      "Semen analizi",
+      "Servikal konizasyon",
+      "Hemen histerektomi",
+      "Bilateral ooforektomi",
+      "Rutin kemoterapi"
+    ],
+    "correct": 0,
+    "exp": "İnfertilite değerlendirmesinde erkek faktörü sık ve kolay değerlendirilebilir olduğu için semen analizi temel ilk basamaklardan biridir. Kadın ovulasyon ve tubal faktör açısından da değerlendirilir."
+  },
+  {
+    "id": 2744,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 3,
+    "q": "35 yaşındaki kadında 6 aydır korunmasız ilişkiye rağmen gebelik yok. Bu yaş grubunda infertilite değerlendirmesine ne zaman başlanmalıdır?",
+    "options": [
+      "Sadece menopozdan sonra",
+      "3 yıl sonunda",
+      "6 ay sonunda",
+      "İlk ilişkiden 5 yıl sonra",
+      "Hiç başlanmaz"
+    ],
+    "correct": 2,
+    "exp": "35 yaş ve üzerinde over rezervi hızla azaldığı için 6 ay korunmasız ilişkiye rağmen gebelik yoksa değerlendirmeye başlanır. Daha gençlerde genellikle 12 ay beklenir."
+  },
+  {
+    "id": 2745,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Düzenli 28 günlük siklusları olan infertil hastada ovulasyon olup olmadığını değerlendirmek için serum progesteronu ne zaman bakmak en uygundur?",
+    "options": [
+      "Menstrüasyon bittikten 1 saat sonra",
+      "Adetin 2. günü sabah",
+      "Adetin ilk kanama saatinde",
+      "Beklenen adetten yaklaşık 7 gün önce",
+      "Her gün açlıkta hCG ile birlikte"
+    ],
+    "correct": 3,
+    "exp": "Mid-luteal progesteron ovulasyonu destekler. 28 günlük siklusta yaklaşık 21. gün, daha genel ifadeyle beklenen adetten 7 gün önce bakılması uygundur."
+  },
+  {
+    "id": 2746,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "İnfertilite değerlendirmesinde histerosalpingografide bilateral tubal tıkanıklık saptanıyor. Öyküde geçirilmiş PID var. Gebelik için en uygun seçeneklerden biri hangisidir?",
+    "options": [
+      "Vajinal antifungal tedavi",
+      "İn vitro fertilizasyon",
+      "Endometrial ablasyon",
+      "Servikal smear tekrarı",
+      "Sadece folik asit ile bekleme"
+    ],
+    "correct": 1,
+    "exp": "Tubal faktör infertilitesinde özellikle bilateral ciddi tıkanıklık varsa IVF etkili bir seçenektir. PID tubal hasarın önemli nedenlerindendir."
+  },
+  {
+    "id": 2747,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 3,
+    "q": "Semen analizinde azoospermi saptanan erkekte FSH yüksek, testis hacmi küçük. Bu tablo en çok hangi durumu düşündürür?",
+    "options": [
+      "Retrograd ejakülasyon olmadan normal durum",
+      "Hipotalamik hipogonadizm",
+      "Ejakülatuvar kanal tıkanıklığına bağlı normal spermatogenez",
+      "Primer testiküler yetmezlik",
+      "Varikosel dışı fizyolojik varyant"
+    ],
+    "correct": 3,
+    "exp": "Yüksek FSH ve küçük testis hacmi spermatogenez bozukluğu ve primer testiküler yetmezliği düşündürür. Obstrüktif azoospermide testis hacmi ve FSH daha normal olabilir."
+  },
+  {
+    "id": 2748,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Oligomenore ve infertilitesi olan PCOS hastasında kilo fazlalığı var. Tedavi planında gebelik şansını ve metabolik durumu iyileştiren temel yaklaşım hangisidir?",
+    "options": [
+      "Pelvik radyoterapi",
+      "Rutin bilateral ooforektomi",
+      "Uzun süreli danazol",
+      "Kilo kaybı ve yaşam tarzı düzenlemesi",
+      "Yüksek doz östrojenle sürekli tedavi"
+    ],
+    "correct": 3,
+    "exp": "PCOS’ta kilo kaybı ovulasyonu ve insülin direncini iyileştirebilir. Yaşam tarzı düzenlemesi ovulasyon indüksiyonu öncesi veya birlikte önem taşır."
+  },
+  {
+    "id": 2749,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "İnfertilite nedeniyle başvuran kadında adetler seyrek, galaktore var. Prolaktin yüksek, TSH normal. Bu hastada ovulasyon bozukluğuna katkı yapan süreç hangisidir?",
+    "options": [
+      "GnRH pulslarının baskılanması",
+      "Servikal mukusun incelmesi",
+      "Endometriumun mekanik tıkanması",
+      "Tubal fimbriaların aşırı hareketi",
+      "FSH’nin sürekli artması"
+    ],
+    "correct": 0,
+    "exp": "Hiperprolaktinemi GnRH pulslarını baskılayarak LH/FSH salınımını ve ovulasyonu bozar. Galaktore ve oligomenore ipucu verir."
+  },
+  {
+    "id": 2750,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "40 yaşındaki infertil hastada AMH düşük, antral folikül sayısı az ve FSH yüksek bulunuyor. Bu bulgular en çok neyi gösterir?",
+    "options": [
+      "Androjen duyarsızlığı",
+      "Aktif PID",
+      "Servikal yetmezlik",
+      "Gebelik kesinliği",
+      "Azalmış over rezervi"
+    ],
+    "correct": 4,
+    "exp": "AMH düşüklüğü, antral folikül sayısının azalması ve FSH yüksekliği azalmış over rezervini destekler. Yaşla birlikte oosit sayısı ve kalitesi azalır."
+  },
+  {
+    "id": 2751,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 3,
+    "q": "Endometriozisli hastada infertilite ve kronik pelvik ağrı var. Tubo-ovaryan anatomiyi bozan ileri evre hastalık saptanıyor. Gebelik isteyen hastada tedavi planı hangi faktöre göre belirlenir?",
+    "options": [
+      "Sadece saç rengi",
+      "Sadece kan grubu",
+      "Yaş, over rezervi, hastalık evresi ve eşlik eden erkek/tubal faktörler",
+      "Sadece vajinal pH",
+      "Sadece meme yoğunluğu"
+    ],
+    "correct": 2,
+    "exp": "Endometriozis ilişkili infertilitede yönetim bireyseldir. Yaş, over rezervi, ağrı, anatomik bozukluk, önceki cerrahi ve eşlik eden faktörler karar verir."
+  },
+  {
+    "id": 2752,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "IVF sonrası karın şişliği, overlerde belirgin büyüme, asit ve hemokonsantrasyon gelişen hastada en olası komplikasyon hangisidir?",
+    "options": [
+      "Molar gebelik",
+      "Sheehan sendromu",
+      "Ovaryan hiperstimülasyon sendromu",
+      "Asherman sendromu",
+      "Servikal yetmezlik"
+    ],
+    "correct": 2,
+    "exp": "Ovaryan hiperstimülasyon sendromu kontrollü over stimülasyonu sonrası vasküler geçirgenlik artışı, asit, hemokonsantrasyon ve tromboz riskiyle seyreder."
+  },
+  {
+    "id": 2753,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "İnfertilite tedavisi alan hastada OHSS riskini artıran özellik hangisidir?",
+    "options": [
+      "Normal düşük AMH",
+      "Tek taraflı salpenjektomi öyküsü tek başına",
+      "Hipogonadotropik hipogonadizmde hiç folikül gelişmemesi",
+      "PCOS ve yüksek folikül yanıtı",
+      "Menopoz sonrası over yetmezliği"
+    ],
+    "correct": 3,
+    "exp": "PCOS, genç yaş, yüksek AMH, çok sayıda folikül gelişimi ve yüksek estradiol OHSS riskini artırır. Riskli hastalarda protokol düzenlenir."
+  },
+  {
+    "id": 2754,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 3,
+    "q": "HSG’de uterin kavitede dolma defekti izlenen infertil hastada submuköz myom veya polip düşünülüyor. Doğrudan tanı ve tedavi sağlayan yöntem hangisidir?",
+    "options": [
+      "Mammografi",
+      "Histeroskopi",
+      "Sistoskopi",
+      "Amniyosentez",
+      "Kolposkopi"
+    ],
+    "correct": 1,
+    "exp": "Histeroskopi uterin kavite içi patolojileri doğrudan gösterir ve aynı seansta polip veya submuköz myom tedavisi yapılabilir."
+  },
+  {
+    "id": 2755,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Tekrarlayan gebelik kayıpları olan hastada uterin septum saptanıyor. Bu anomalinin düşük riskini artırmasının temel nedeni hangi durumla ilişkilidir?",
+    "options": [
+      "HPV enfeksiyonunu artırması",
+      "Serviks kanserine dönüşmesi",
+      "Over rezervini doğrudan bitirmesi",
+      "Yüksek prolaktinin her zaman eşlik etmesi",
+      "Septum üzerindeki zayıf vaskülarizasyon ve implantasyon ortamı"
+    ],
+    "correct": 4,
+    "exp": "Uterin septumda implantasyon alanı uygun olmayabilir ve vaskülarizasyon zayıftır. Histeroskopik septum rezeksiyonu seçilmiş hastalarda gebelik sonuçlarını iyileştirebilir."
+  },
+  {
+    "id": 2756,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 3,
+    "q": "Primer amenore ve infertilite değerlendirmesinde uterus yok, overler mevcut ve karyotip 46,XX. En olası tanı hangisidir?",
+    "options": [
+      "Turner sendromu",
+      "Kallmann sendromu",
+      "Asherman sendromu",
+      "Müllerian agenezi",
+      "Tam androjen duyarsızlığı"
+    ],
+    "correct": 3,
+    "exp": "Müllerian agenezide uterus ve üst vajen gelişmez; over fonksiyonu ve sekonder seks karakterleri genellikle normaldir. Karyotip 46,XX’tir."
+  },
+  {
+    "id": 2757,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Hipogonadotropik hipogonadizm nedeniyle anovulasyonu olan hastada gebelik isteniyor. Ovulasyon sağlamak için hangi tedavi mantıklıdır?",
+    "options": [
+      "Metotreksat",
+      "Sürekli yüksek doz progestin",
+      "Gonadotropin tedavisi veya pulsatile GnRH",
+      "Servikal konizasyon",
+      "Aromataz inhibitörü yerine histerektomi"
+    ],
+    "correct": 2,
+    "exp": "Hipogonadotropik hipogonadizmde problem hipotalamus/hipofiz düzeyindedir. Pulsatile GnRH veya gonadotropinlerle folikül gelişimi ve ovulasyon sağlanabilir."
+  },
+  {
+    "id": 2758,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Klomifen kullanılan hastada endometriumun ince kalması ve servikal mukusun olumsuz etkilenmesi beklenebilir. Bu durum ilacın hangi özelliğiyle ilişkilidir?",
+    "options": [
+      "Direkt antibakteriyel etkisi",
+      "hCG reseptörünü yıkması",
+      "Tubaları mekanik açması",
+      "Antiöstrojenik etkisi",
+      "Progesteron reseptörünü kalıcı aktive etmesi"
+    ],
+    "correct": 3,
+    "exp": "Klomifen hipotalamusta östrojen geri bildirimini bloke ederek FSH artışı sağlar; ancak periferik antiöstrojenik etkiler endometrium ve servikal mukusu olumsuz etkileyebilir."
+  },
+  {
+    "id": 2759,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Letrozol ile ovulasyon indüksiyonu yapılan hastada folikül gelişimi sağlanıyor. İlacın ovulasyonu kolaylaştıran temel etkisi hangi hormonal değişiklik üzerinden beklenir?",
+    "options": [
+      "Prolaktinin yükselmesi",
+      "Östrojen sentezinin azalmasıyla FSH salınımının artması",
+      "Androjenlerin sıfırlanmasıyla LH’nin kaybolması",
+      "hCG’nin reseptörünü bloke etmesi",
+      "Progesteron yıkımının tamamen durması"
+    ],
+    "correct": 1,
+    "exp": "Letrozol aromataz inhibitörüdür. Östrojen sentezini azaltarak negatif geri bildirimi azaltır ve FSH artışıyla folikül gelişimini destekler."
+  },
+  {
+    "id": 2760,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 3,
+    "q": "İnfertilite değerlendirmesinde tubal açıklığı göstermek için kullanılan, uterin kaviteye kontrast verilerek çekilen yöntem hangisidir?",
+    "options": [
+      "Doppler ekokardiyografi",
+      "Sistoskopi",
+      "Kardiyotokografi",
+      "Kolposkopi",
+      "Histerosalpingografi"
+    ],
+    "correct": 4,
+    "exp": "Histerosalpingografi uterin kavite konturunu ve tubal açıklığı değerlendirmede kullanılır. Tubal faktör infertilitesinde temel testlerden biridir."
+  },
+  {
+    "id": 2761,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Şiddetli erkek faktörü infertilitesinde sperm sayısı çok düşük ve IVF planlanıyor. Tek spermin oosit içine verilmesini sağlayan yöntem hangisidir?",
+    "options": [
+      "Endometrial ablasyon",
+      "İntrasitoplazmik sperm enjeksiyonu",
+      "Konizasyon",
+      "Histeroskopik septum rezeksiyonu",
+      "Tubal ligasyon"
+    ],
+    "correct": 1,
+    "exp": "ICSI özellikle ağır erkek faktörü infertilitesinde kullanılır. Tek sperm doğrudan oosit sitoplazmasına enjekte edilir."
+  },
+  {
+    "id": 2762,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "IVF sonrası beta-hCG pozitif olan hastada erken haftada karın ağrısı gelişiyor. Uterus içinde gebelik kesesi görülse bile hangi durum akılda tutulmalıdır?",
+    "options": [
+      "Postmenopozal atrofi",
+      "Servikal kanser",
+      "Liken skleroz",
+      "Heterotopik gebelik",
+      "Bartholin apsesi"
+    ],
+    "correct": 3,
+    "exp": "Yardımcı üreme teknikleri heterotopik gebelik riskini artırır. İntrauterin gebelik görülmesi eş zamanlı ektopik gebeliği tamamen dışlamaz."
+  },
+  {
+    "id": 2763,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 3,
+    "q": "İnfertil çiftte kadının değerlendirmesi normal, semen analizinde konsantrasyon ve motilite belirgin düşük. Tanımlama açısından bu durum hangi faktöre girer?",
+    "options": [
+      "Servikal faktör dışında normal varyant",
+      "Erkek faktörü infertilitesi",
+      "Tubal faktör",
+      "Uterin septum",
+      "Endometriyal polip"
+    ],
+    "correct": 1,
+    "exp": "Sperm konsantrasyonu, motilite veya morfoloji bozuklukları erkek faktörü infertilitesi kapsamında değerlendirilir. Semen analizi tekrarlanarak doğrulanır."
+  },
+  {
+    "id": 2764,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Geçirilmiş klamidya enfeksiyonu sonrası infertilite gelişen hastada HSG’de distal tubal tıkanıklık ve hidrosalpinks izleniyor. IVF başarısını azaltabilen bu durumda ne düşünülebilir?",
+    "options": [
+      "Hidrosalpinksin cerrahi tedavisi veya salpenjektomi",
+      "Sadece servikal smear",
+      "Yüksek doz östrojenle bekleme",
+      "Acil vulvektomi",
+      "Rutin antibiyotikle tubanın tamamen açılması"
+    ],
+    "correct": 0,
+    "exp": "Hidrosalpinks sıvısı endometriyal implantasyonu olumsuz etkileyebilir ve IVF başarısını azaltır. IVF öncesi salpenjektomi veya tubal oklüzyon düşünülebilir."
+  },
+  {
+    "id": 2765,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "Adetleri düzenli olan ancak infertilitesi bulunan hastada luteal fazda progesteron yeterli yükselmiyor. Bu bulgu en çok hangi durumla ilişkilidir?",
+    "options": [
+      "Over torsiyonu",
+      "Tubal fimbriaların aşırı açık olması",
+      "Vulvar dermatoz",
+      "Ovulasyon veya korpus luteum fonksiyonunun yetersizliği",
+      "Serviks kanseri kesinliği"
+    ],
+    "correct": 3,
+    "exp": "Luteal progesteron ovulasyon sonrası korpus luteum fonksiyonunu yansıtır. Düşük değer ovulasyon olmadığını veya luteal fonksiyonun yetersizliğini düşündürebilir."
+  },
+  {
+    "id": 2766,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 3,
+    "q": "46,XX primer over yetmezliği olan genç hastada FSH yüksek, estradiol düşük ve amenore var. Gebelik isteyen hastada en etkili seçeneklerden biri hangisidir?",
+    "options": [
+      "Tek başına antibiyotik",
+      "Servikal serklaj",
+      "Klomifenle her zaman yüksek başarı",
+      "Donör oosit ile IVF",
+      "Endometrial ablasyon"
+    ],
+    "correct": 3,
+    "exp": "Primer over yetmezliğinde over rezervi belirgin azalmıştır. Kendi oositiyle gebelik şansı düşük olabilir; donör oosit ile IVF etkili seçeneklerden biridir."
+  },
+  {
+    "id": 2767,
+    "ders": "Kadın Hastalıkları ve Doğum",
+    "konu": "İnfertilite",
+    "diff": 4,
+    "q": "İnfertilite nedeniyle değerlendirilen hastada siklusun 3. günü FSH yüksek, estradiol de beklenenden yüksek. Bu kombinasyon over rezervi açısından neden yanıltıcı olabilir?",
+    "options": [
+      "Bu testler menstrüel siklustan bağımsızdır",
+      "Estradiol yüksekliği her zaman gebelik göstergesidir",
+      "Over rezervi sadece prolaktinle ölçülür",
+      "FSH sadece erkeklerde anlamlıdır",
+      "Yüksek estradiol FSH’yi baskılayarak rezervi olduğundan iyi gösterebilir"
+    ],
+    "correct": 4,
+    "exp": "Erken foliküler faz estradiol yüksekliği FSH’yi baskılayabilir ve over rezervinin olduğundan daha iyi görünmesine yol açabilir. AMH ve antral folikül sayısı ek bilgi sağlar."
   }
 ];
