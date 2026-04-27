@@ -1,0 +1,117 @@
+{
+  "stats": {
+    "extracted": 105,
+    "valid": 105,
+    "exactDuplicate": 0,
+    "fuzzyDuplicate": 0,
+    "internalFuzzyDuplicate": 84,
+    "invalid": 0,
+    "appendable": 21
+  },
+  "maxIdBefore": 1459,
+  "addedCount": 21,
+  "firstNewId": 1460,
+  "lastNewId": 1480,
+  "suspiciousTop20": [
+    {
+      "sourceId": 2368,
+      "bestMatchId": 2365,
+      "score": 0.9667
+    },
+    {
+      "sourceId": 2369,
+      "bestMatchId": 2366,
+      "score": 0.9676
+    },
+    {
+      "sourceId": 2370,
+      "bestMatchId": 2367,
+      "score": 0.9683
+    },
+    {
+      "sourceId": 2371,
+      "bestMatchId": 2365,
+      "score": 0.9667
+    },
+    {
+      "sourceId": 2372,
+      "bestMatchId": 2366,
+      "score": 0.9676
+    },
+    {
+      "sourceId": 2373,
+      "bestMatchId": 2367,
+      "score": 0.9683
+    },
+    {
+      "sourceId": 2374,
+      "bestMatchId": 2365,
+      "score": 0.9722
+    },
+    {
+      "sourceId": 2375,
+      "bestMatchId": 2366,
+      "score": 0.9624
+    },
+    {
+      "sourceId": 2376,
+      "bestMatchId": 2367,
+      "score": 0.9734
+    },
+    {
+      "sourceId": 2377,
+      "bestMatchId": 2365,
+      "score": 0.9722
+    },
+    {
+      "sourceId": 2378,
+      "bestMatchId": 2366,
+      "score": 0.9624
+    },
+    {
+      "sourceId": 2379,
+      "bestMatchId": 2367,
+      "score": 0.9683
+    },
+    {
+      "sourceId": 2383,
+      "bestMatchId": 2380,
+      "score": 0.9692
+    },
+    {
+      "sourceId": 2384,
+      "bestMatchId": 2381,
+      "score": 0.9725
+    },
+    {
+      "sourceId": 2385,
+      "bestMatchId": 2382,
+      "score": 0.9783
+    },
+    {
+      "sourceId": 2386,
+      "bestMatchId": 2380,
+      "score": 0.9692
+    },
+    {
+      "sourceId": 2387,
+      "bestMatchId": 2381,
+      "score": 0.9725
+    },
+    {
+      "sourceId": 2388,
+      "bestMatchId": 2382,
+      "score": 0.974
+    },
+    {
+      "sourceId": 2389,
+      "bestMatchId": 2380,
+      "score": 0.9744
+    },
+    {
+      "sourceId": 2390,
+      "bestMatchId": 2381,
+      "score": 0.968
+    }
+  ]
+}

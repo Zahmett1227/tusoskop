@@ -1,0 +1,26 @@
+{
+  "sourceFile": "pediatriSoruları_tusoskop.pdf",
+  "extractorUsed": "merged.json",
+  "extractedFromMerged": 17,
+  "extractedFromContent": 5,
+  "stats": {
+    "extracted": 17,
+    "valid": 16,
+    "invalid": 1,
+    "exactDuplicate": 16,
+    "fuzzyDuplicate": 0,
+    "internalFuzzyDuplicate": 0,
+    "appendable": 0
+  },
+  "maxIdBefore": 1496,
+  "firstNewId": null,
+  "lastNewId": null,
+  "invalidSample": [
+    {
+      "oldId": 4262,
+      "ders": "P ediatri",
+      "reason": "format_or_field_validation_failed"
+    }
+  ],
+  "suspiciousSample": []
+}

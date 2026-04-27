@@ -24014,5 +24014,261 @@ exp: "Spironolakton (ve Eplerenon), bir Potasyum Tutucu Diüretik (Aldosteron An
     ],
     "correct": 1,
     "exp": "Helicobacter pylori, güçlü üreaz aktivitesi sayesinde mide asidini nötralize  ederek mukozada yaşar ve kronik gastrit, ülser, MALT lenfoma yapar."
+  },
+  {
+    "id": 1481,
+    "ders": "Pediatri",
+    "konu": "Pediatrik Gastroenteroloji",
+    "diff": 4,
+    "q": "Yenidoğan bir bebek, yaşamının ilk 48 saati içinde ilk kakasını (Mekonyum) YAPAMIYOR ve karnı giderek şişiyor  (Distansiyon). Kusmaları safralı (yeşil) olmaya başlıyor. Rektal tuşe (parmakla muayene) yapıldığında, parmağın çekilmesiyle  birlikte anüsten aniden 'patlama tarzında (Squirt sign / patlayıcı kaka)' kötü kokulu gaz ve dışkı fışkırıyor. Çekilen kontrastlı kolon  grafisinde (Lavman), bağırsağın bir kısmının dar (spastik) kaldığı, üst kısmının ise devasa genişlediği (Geçiş Zonu) görülüyor.  Hirschsprung Hastalığı tanısı alan bu bebekte, ALTIN STANDART tanı koydurucu test olan Rektal Biyopside HANGİ hücrelerin  KESİNLİKLE  YOKLUĞU (Agangliyozis) hastalığın patolojisidir?",
+    "options": [
+      "Kupffer hücreleri",
+      "Parietal hücreler",
+      "Goblet hücreleri",
+      "Auerbach (Miyenterik) ve Meissner (Submukozal) Pleksus Gangliyon hücreleri",
+      "Paneth  hücreleri"
+    ],
+    "correct": 3,
+    "exp": "Hirschsprung Hastalığı (Konjenital Agangliyonik Megakolon), bağırsak sinir sisteminin doğuştan felcidir.  \nMekanizma:  Embriyolojik dönemde Nöral Krest hücreleri (sinir kökleri) ağızdan başlar ve makata doğru  yola çıkarlar. Bu hücreler, bağırsağın  hareket etmesini (kasılıp gevşemesini) sağlayan Auerbach ve Meissner pleksuslarını oluştururlar. Eğer bu göç erken durursa  (RET gen mutasyonu / Down sendromunda sıktır), rektum ve sigmoid kolona SİNİR HÜCRESİ GİDEMEZ.  \nSinirsiz kalan  bağırsak (Agangliyonik segment) felçli bir boru gibi kaskatı (spastik) kalır, GEVŞEYEMEZ. Kaka oradan geçemez (İlk 48 saatte  mekonyum çıkmaz). Kaka geçemediği için yukarısında birikir ve üstteki sağlam bağırsağı devasa şişirir (Megakolon).  \nTanı  (TUS/USMLE Kuralı): Kontrastlı grafideki 'Geçiş Zonu (Transition zone)' tipiktir AMA Altın Standart Tanı 'Rektal Emiş Biyopsisi  (Suction Biopsy)'dir. Biyopside KESİNLİKLE Gangliyon hücrelerinin GÖRÜLMEMESİ (Yokluğu) ve asetilkolinesteraz  boyamasının aşırı pozitif çıkması tanıyı koydurur."
+  },
+  {
+    "id": 1482,
+    "ders": "Pediatri",
+    "konu": "Pediatrik Gastroenteroloji",
+    "diff": 4,
+    "q": "Sağlıklı görünen ancak anne sütü alerjisi sanılan 4 aylık bir bebekte; tamamen normal büyüme ve gelişmeye  rağmen,  dışkısında ara sıra kan şeritleri ve mukus saptanıyor (Kanlı- mukuslu kaka). Bebeğin huzursuzluğu veya ateşi YOKTUR, kilo  alımı mükemmeldir. Annesi inek sütü ve süt ürünleri tüketmektedir. İnek sütü proteinine (özellikle kazein ve peynir altı suyuna )  karşı gelişen, ancak IgE aracılı OLMAYAN (Hücresel immünite aracılı) ve bebeğin kalın bağırsağında alerjik iltihap (eozinofili)  yaratan bu selim (iyi huylu) alerjik bağırsak sendromu aşağıdakilerden hangisidir?",
+    "options": [
+      "Gıda Proteini İli şkili Enterokolit Sendromu (FPIES)",
+      "Çölyak Hastalığı",
+      "Eozinofilik Özofajit",
+      "Alerjik (Besin Proteini İlişkili) Proktokolit",
+      "Hirschsprung Hastalığı"
+    ],
+    "correct": 3,
+    "exp": "Besin Proteini İlişkili Proktokolit  (Alerjik Proktokolit), süt çocukluğu çağının (ilk 6 ay) en sık 'Kanlı Kaka' nedenidir.  \nVİZİT ŞİFRESİ: Anne panik içinde bebeğin kanlı bezini getirir. Bebek muayene edilir, bebeğin keyfi YERİNDEDİR (Happy  Spitter/Happy Pooper). Boyu kilosu şahanedir, ateşi yoktur. Anafilaksi/Ürtiker gibi alerji bulguları HİÇ YOKTUR.  \nSorun şudur:  Anne inek sütü (peynir/yoğurt) yer, bu inek sütü proteinleri anne sütünden bebeğe geçer. Bebeğin kalın bağırsağı  (Rektum/Kolon) bu inek sütü proteinine 'Hücresel (T- lenfosit)' alerji reaksiyonu verir ve kılcallar kanar. Tedavi ÇOK BASİTTİR:  Annenin diyetinden inek sütü ve süt ürünleri KESİLİR (Eğer formül mama yiyorsa hidrolize mamaya geçilir). Kanama 72 saat  içinde bıçak gibi kesilir. Bebek 1 yaşına gelince bağırsak olgunlaşır ve hastalık kendiliğinden tamamen biter."
+  },
+  {
+    "id": 1483,
+    "ders": "Pediatri",
+    "konu": "Büyüme ve Gelişme",
+    "diff": 4,
+    "q": "Ondört (14) yaşında bir erkek çocuk, yaşıtlarına göre boyunun çok kısa olması şikayetiyle getiriliyor. Çocuğun boyu 3.  persentilin altındadır (Kısa boy). Muayenede çocuğun ergenliğe henüz GİRMEDİĞİ (Tanner Evre 1) saptanıyor. Anne ve  babasının boyları ise toplum ortalamasındadır (Normal hedef boy). Sol el- bilek röntgeni çekilerek 'Kemik Yaşı' hesaplandığında,  çocuğun kemik yaşının 11 yaş ile uyumlu olduğu (Takvim yaşından 3 yıl GERİDE olduğu) saptanıyor. Büyüme hormonu ve tiroid  testleri normal olan bu çocukta en olası boy kısalığı tanısı aşağıdakilerden hangisidir?",
+    "options": [
+      "Ailesel Boy Kısalığı (Familial Short Stature)",
+      "Yapısal (Konstitüsyonel) Büyüme ve Puberte Gecikmesi",
+      "Büyüme Hormonu (GH) Eksikliği",
+      "Turner Sendromu",
+      "İdiyopatik Kısa Boy"
+    ],
+    "correct": 1,
+    "exp": "Boy Kısalığının (Short Stature) ayırıcı tanısında ALTIN ANAHTAR 'Kemik Yaşı' ve 'Hedef Boy'dur.  \n1) AİLESEL BOY  KISALIĞI: Anne kısadır, baba kısadır. Çocuğun Kemik Yaşı = Takvim Yaşıdır! (Yani kemikleri geriden gelmez, zamanında  kapanır). Ergenliğe vaktinde girer. Sonuç: Erişkin boyu KISA kalır. \n2) YAPISAL (KONSTİTÜSYONEL) GECİKME (Sorudaki  Vaka): 'Geç Açan Çiçek (Late Bloomer)'. Anne baba normaldir. Ancak çocuğun büyümesi ve kemikleri GERİDEN GELİR.  Çocuğun takvim yaşı 14'tür ama kemik yaşı 11'dir. Kemikler 11 yaşında olduğu için çocuk 14 yaşında olmasına rağmen  ergenliğe GİREMEZ (Puberte gecikmesi KESİNDİR). Bu iyi bir şeydir! Çünkü kemik plakları kapanmamıştır. Bu çocuk yaşıtları  lisede uzamayı bıraktığında, 17- 18 yaşında aniden boy atmaya başlar ve ERİŞKİN BOYU TAMAMEN NORMAL (uzun) olur.  Tedaviye gerek yoktur, sadece sabır istenir."
+  },
+  {
+    "id": 1484,
+    "ders": "Pediatri",
+    "konu": "Büyüme ve Gelişme",
+    "diff": 4,
+    "q": "Yeni doğmuş bir bebeğin baş çevresi (Oksipito- frontal çevre / OFC) ölçülüyor. Bebeğin baş çevresi 3. persentilin çok  ALTINDA (Mikrosefali) olarak saptanıyor. Bebeğin alnı dar,  kafatası ise küçücük ve gergindir. Mikrosefali vakalarında olayın  Primer (beynin doğuştan hiç gelişmemesi / Genetik/Enfeksiyon) mi yoksa Sekonder (beyin gelişecekken kafatasının dışarıdan  sıkıştırarak beyni ezmesi / Kraniosinostoz) mi olduğunu anlamak tedavi için hayati önem taşır. Bu bebeğin mikrosefalisinin  KAFATASI DİKİŞLERİNİN (Sütürlerinin) anne karnında ERKEN KAPANMASINA (Kraniosinostoz) bağlı olarak (Sekonder)  geliştiğini kanıtlayan en belirgin FİZİK MUAYENE bulgusu aşağıdakilerden hangisidir?",
+    "options": [
+      "Bıngıldakların (Fontanellerin) AŞIRI GENİŞ ve açık olması",
+      "Kafatası dikişlerinin (Sütürlerin) üst üste binmesi (Overlapping) ve bıngıldakların ÇOK KÜÇÜK olması veya tamamen  KAPANMIŞ olması",
+      "Kafatasında ping- pong topu gibi çökme hissi (Kraniotabes) alınması",
+      "Bebeğin gözlerinde 'Batan Güneş Manzarası (Setting sun sign)' görülmesi",
+      "Başın arka kısmının (Oksipital bölge) tamamen düz olması"
+    ],
+    "correct": 1,
+    "exp": "Mikrosefali (Küçük Kafa), pediatride nörolojik gelişimin en büyük göstergesidir. İki nedeni vardır:  \n1) Primer Mikrosefali  (Beyin Büyümez): Zika virüsü, CMV, genetik mutasyonlar (Fetal Alkol). Beyin ufak kaldığı için kafatası da ona uyup ufak kalır.  Ancak kafatasındaki dikişler ve bıngıldaklar hala AÇIKTIR, sadece kafa ufaktır.  \n2) SEKONDER MİKROSEFALİ (Kraniosinostoz  /  Sorudaki Vaka): Beynin maşallahı vardır, büyümek ister! ANCAK kafatasının dikişleri (sütürler) ve bıngıldakları doğuştan  HIZLICA KAPANIP BETONLAŞMIŞTIR! Beyin taş bir kaskın içine sıkışır. Kafatası kemikleri üst üste biner (Sütürlerde  Overlapping / Sert bir çıkıntı palpe edilir) ve Bıngıldak (Fontanel) YOKTUR (Kapanmıştır). Eğer bu beton kask (kafataşı)  ameliyatla hemen kesilip açılmazsa, beyin basıdan ölür ve çocuk zihinsel engelli kalır. (Not: Batan Güneş manzarası  Hidrosefalide / Koca kafada görülür)."
+  },
+  {
+    "id": 1485,
+    "ders": "Pediatri",
+    "konu": "Pediatrik  İmmünoloji/Alerji",
+    "diff": 4,
+    "q": "İki yaşında erkek çocuk; ciltte stafilokokkal 'SOĞUK APSELER' (kızarıklık, ısı artışı veya irin ağrısı OLMAYAN apseler) ,  çok şiddetli Egzama ve iki sıra halinde dökülmemiş süt dişleri şikayetiyle getiriliyor. Çocuğun alnı belirgin, burnu geniş ve kaba  yüz hatlarına (coarse facies) sahip olduğu görülüyor. Kan tahlilinde IgE seviyesi çok yüksek (>2000 IU/mL) saptanıyor. Job  Sendromu olarak da bilinen Hiper IgE Sendromu tanısı konulan bu hastada, Th17 lenfositlerinin farklılaşmasını engelleyerek  'Nötrofillerin enfeksiyon bölgesine göç etmesini (Kemotaksisi)' SIFIRLAYAN gen mutasyonu aşağıdakilerden hangisidir?",
+    "options": [
+      "STAT3 geni mutasyonu",
+      "LYST geni mutasyonu",
+      "CD18 (Integrin) mutasy onu",
+      "IL -12 reseptör mutasyonu",
+      "WASP geni mutasyonu"
+    ],
+    "correct": 0,
+    "exp": "Hiper IgE Sendromu (Job Sendromu), bağışıklık sisteminin en 'soğuk' hastalığıdır. (FATED akronimi: kaba Yüz/Facies,  Soğuk Apseler/Abscess, Diş dökülmemesi/Teeth, IgE yüksekliği, Dermatolojik egzama).  \nOlayın Mantığı: Çocuktaki STAT3 geni  mutasyonludur. Bu gen, T- Helper 17 (Th17) hücrelerinin üretilmesini sağlar. Th17'nin en büyük görevi, bir enfeksiyon olunca  NÖTROFİLLERİ ORAYA ÇAĞIRMAKTIR (Kemotaksis/İltihap sinyali).  \nTh17 üretilemeyince ne olur? Çocuğun bacağında koca  bir S. aureus apsesi çıkar. Normalde apse ateş gibi yanar, kırmızıdır ve acır. Ancak nötrofiller o bölgeye gidemedikleri için  apse  'Buz gibidir, kızarmaz ve ağrımaz (SOĞUK APSE)'. En spesifik belirtisi de süt dişlerinin dökülmeyip, alttan kalıcı dişlerin gelerek  köpekbalığı gibi çift sıra diş oluşturmasıdır."
+  },
+  {
+    "id": 1486,
+    "ders": "Pediatri",
+    "konu": "Pediatrik İmmünoloji/Alerji",
+    "diff": 5,
+    "q": "Otoimmün Lenfoproliferatif Sendrom (ALPS) tanısı konulan 5 yaşındaki hastada devasa lenf bezi büyümeleri (LAP),  dalak büyümesi ve otoimmün kan hücre yıkımı (AİHA, ITP) mevcuttur. T lenfositlerin görevlerini yaptıktan sonra kendilerini imha  etmesini (apoptoz) sağlayan 'Fas (CD95) veya Fas Ligand' ölüm reseptörü yolağında mutasyon vardır. ALPS hastalığını teşhis  etmek için Kanda (Flow Sitometride) aranan ve bu hastalığa ÖZGÜ (patognomonik) olan, hem CD4 hem de CD8 moleküllerinin  İKİSİNİ BİRDEN taşımayan o anormal T hücresi popülasyonu aşağıdakilerden hangisidir?",
+    "options": [
+      "Çifte Pozitif (CD4+ CD8+) T Hücreleri",
+      "Çifte Negatif (CD4-  CD8 -) T Hücreleri (DNT)",
+      "Doğal Katil (NK) Hücreleri",
+      "Gama Delta T Hücreleri",
+      "Regülatör T Hücreleri (Treg  -  FoxP3+)"
+    ],
+    "correct": 1,
+    "exp": "ALPS (Otoimmün Lenfoproliferatif  Sendrom), bağışıklık sisteminin 'Ölmeyi Unutması' hastalığıdır.  \nMekanizma: Bir  enfeksiyon olduğunda T lenfositleri çoğalıp devasa bir ordu olur. Savaş bitince bu ordunun 'Apoptoz' ile intihar edip sayısının  normale dönmesi gerekir. Ölüm emrini veren düğme 'Fas (CD95) reseptör yolağı'dır. ALPS hastalarında bu düğme bozuktur.  Ölemeyen lenfositler lenf bezlerinde ve dalakta yığılıp onları devasa boyuta getirir (Lenfoproliferasyon). Ölmedikleri için de can  sıkıntısından kendi vücutlarına (Alyuvarlara ve trombositlere) saldırırlar (Otoimmünite).  \nFLOW SİTOMETRİ ŞİFRESİ:  Normalde kanda T hücreleri ya CD4+ (Yardımcı) ya da CD8+ (Katil) olmak zorundadır. Ancak bu ölemeyen mutant hücreler  kimliklerini kaybederler ve ne CD4 ne de CD8 taşıyan 'ÇİFTE NEGATİF (Double  Negative T cells -  CD4 -/ CD8-  CD3+) T  hücreleri' olarak kanda fışkırırlar. Kanda >%1 oranında DNT hücresi görmek tanıyı kesinleştirir."
+  },
+  {
+    "id": 1487,
+    "ders": "Pediatri",
+    "konu": "Pediatrik Kardiyoloji",
+    "diff": 4,
+    "q": "Doğumdan birkaç gün sonra şiddetli solunum sıkıntısı ve siyanozla gelen bebeğin Akciğer Grafisinde, kalbin ve üst  mediastenin birleşerek kardan adama benzediği 'Kardan Adam (Snowman)  Manzarası' veya sekiz rakamı (Figure of 8)  görünümü saptanıyor. Ekokardiyografide, akciğerlerden temiz kanı getiren dört adet Pulmoner Venin (Toplardamarın) sol  atriyuma girmesi gerekirken, yanlışlıkla SAĞ ATRİYUMA (İnnominat ven veya SVC aracılığıyla) bağlandığı görülüyor. Total  Anormal Pulmoner Venöz Dönüş (TAPVD) tanısı alan bu hastada, bebeğin HAYATTA KALABİLMESİ için kalbin içinde  KESİNLİKLE açık kalması gereken (ve temiz kanı sola geçiren) ZORUNLU DELİK aşağıdakilerden hangisidir?",
+    "options": [
+      "Ventriküler Septal Defekt (VSD)",
+      "Duktus Venozus",
+      "Atriyal Septal Defekt (ASD) veya Patent Foramen Ovale (PFO)",
+      "Duktus Arteriozus",
+      "Aortikopulmoner Pencere"
+    ],
+    "correct": 2,
+    "exp": "Total Anormal Pulmoner Ven öz Dönüş (TAPVD / TAPVC), kalbin devasa bir tesisat hatasıdır. Akciğerlerde  oksijenlenen tertemiz kan, sol kalbe dökülmesi gerekirken YANLIŞLIKLA dönüp dolaşıp kirli kanın olduğu SAĞ KULAKÇIĞA  (Sağ Atriyuma) dökülür. Kalbin sağ tarafı kirli ve temiz kanın karışımıyla tıka basa dolar, sol tarafı ise BOMBOŞ kalır.  \nHAYAT  KURTARAN ŞART: Eğer sağ tarafta göllenen bu kan bir şekilde Sol Kalbe geçemezse, vücuda ve beyne kan gidemez, bebek  anında ölür. Bu kanı sağdan sola geçirecek YEGANE (Zorunlu) kapı Kulakçıklar arasındaki deliktir! Yani 'ASD veya PFO (Patent  Foramen Ovale)' açık olmak ZORUNDADIR. (Eğer delik küçükse balonla derhal yırtılıp genişletilir -  Rashkind Atriyal  Septostomi). Bu aşırı kan akımı röntgende genişlemiş damarlarla o efsanevi 'Kardan Adam (Snowman)' silüetini yaratır."
+  },
+  {
+    "id": 1488,
+    "ders": "Pediatri",
+    "konu": "Pediatrik Nefroloji",
+    "diff": 4,
+    "q": "Fetal ultrasonografisinde (Gebelik takibinde) şiddetli oligohidramnios (amniyon sıvısı azlığı), her iki böbrekte hidron efroz  ve devasa genişlemiş bir mesane (Megamesane) saptanan bir erkek bebek dünyaya geliyor. Ultrasonda mesane ve genişlemiş  arka üretra 'Anahtar Deliği (Keyhole)' görünümü oluşturmaktadır. Doğumdan hemen sonra solunum sıkıntısı (Pulmoner  Hipoplazi) yaşayan ve idrarını damla damla zayıf bir akımla yapan bu  erkek bebekte en olası tanı aşağıdakilerden hangisidir?",
+    "options": [
+      "Üreteropelvik Bileşke (UPJ) Darlığı",
+      "Posterior Üretral Valv (PUV)",
+      "Multikistik Displastik Böbrek",
+      "Otozomal Resesif Polikistik Böbrek Hastalığı",
+      "Vezikoüreteral Reflü (VUR)"
+    ],
+    "correct": 1,
+    "exp": "Posterior Üretral Valv (PUV), SADECE ERKEK bebeklerde görülen ve mesanenin çıkışını tıkayan doğumsal bir zardır  (valvdir). İdrar mesaneden dışarı çıkamaz. Çıkamayan idrar geriye vurur, her  iki böbreği de şişirir (Bilateral Hidronefroz).  Mesane kası idrarı atmak için zorlandığından kalınlaşır ve devasa bir hal alır (Megamesane). En ölümcül komplikasyonu: Bebek  anne karnındayken idrarını suya (amniyona) yapamadığı için sıvı kurur (Oligohidramnios). Su bitince rahim bebeğin üzerine  çöker, akciğerler gelişemez (Pulmoner Hipoplazi) ve bebek doğduğunda böbrek yetmezliğinden ziyade nefessizlikten ölür. Fetal  ultrasondaki 'Anahtar Deliği (Keyhole)' görünümü PUV için patognomoniktir. Kesin tedavisi valvin endoskopik ablasyonudur  (yakılmasıdır)."
+  },
+  {
+    "id": 1489,
+    "ders": "Pediatri",
+    "konu": "Pediatrik Nefroloji",
+    "diff": 4,
+    "q": "On yaşında erkek çocuk; göz muayenesinde lensin öne fırl aması (Anterior Lentikonus) ve Odyometride sensörinöral  işitme kaybı (Sağırlık) saptanması üzerine nefrolojiye sevk ediliyor. Çocuğun idrarında mikroskobik hematüri ve proteinüri  mevcuttur. Aile öyküsünde dayısının genç yaşta diyalize girdiği ve öldüğü öğreniliyor. Çocuğa yapılan böbrek biyopsisinin  Elektron Mikroskobunda, Glomerül Bazal Membranının (GBM) tel tel ayrılarak 'Sepet Örgüsü (Basket- Weave)' görünümü aldığı  saptanıyor. X'e bağlı resesif geçen ve Tip 4 Kollajen (COL4A5) gen mutasyonuyla oluşan bu sendrom aşağıdakilerden  hangisidir?",
+    "options": [
+      "Fabry Hastalığı",
+      "Goodpasture Sendromu",
+      "Alport Sendromu",
+      "İnce Bazal Membran Hastalığı",
+      "Nail -Patella Sendromu"
+    ],
+    "correct": 2,
+    "exp": "Alport  Sendromu, Pediatrik Nefrolojinin 'Göz + Kulak + Böbrek' üçlemesidir.  \nMekanizma: Vücudumuzun süzgeçlerini  (Böbrek Glomerülü, Kulak Corti organı, Göz Lens Kapsülü) bir arada tutan tuğla 'TİP 4 KOLLAJEN'dir. Genellikle X'e bağlı  geçen COL4A5 mutasyonuyla bu tuğlalar defolu üretilir (Bu yüzden kızlar taşıyıcı, erkekler hastadır).  \nBöbreğin zarı defolu  olduğu için tel tel ayrılır. Patolog elektron mikroskobuna baktığında tek bir kalın zar yerine, parçalanmış ve örülmüş bir hasır  (Sepet Örgüsü / Basket- weave)  görür. Zar yırtıldığı için idrara kan kaçar (Hematüri), kulaktaki zar koptuğu için çocuk SAĞIR  kalır, gözündeki zar koptuğu için lens fırlayıp konikleşir (Anterior Lentikonus). Hastalar 20- 30'lu yaşlarında KESİNLİKLE Diyalize  (Son Dönem Böbrek Yetmezliğine) giderler."
+  },
+  {
+    "id": 1490,
+    "ders": "Pediatri",
+    "konu": "Pediatrik Nefroloji",
+    "diff": 4,
+    "q": "Onyedi yaşında genç, göz kapaklarında şişlik, idrarında kan (Hematüri) ve +3 protein (Nefritik -Nefrotik Sendrom  birlikteliği) ile başvuruyor. Hastanın kan tahlilinde C3 kompleman düzeyi DİBE VURMUŞ (Çok Düşük), ancak C4 düzeyi  TAMAMEN NORMAL saptanıyor. Böbrek biyopsisi elektron mikroskobunda, Glomerül Bazal Membranının (GBM) tam ortasında  şerit şeklinde, simsiyah ve kesintisiz (yoğun) bir madde çöküntüsü izleniyor. İmmünfloresanda sadece C3 birikimi vardır (IgG  yoktur). Kanda 'C3 Nefritik Faktör (C3NeF)' adı verilen otoantikorun pozitif olduğu Dense Deposit Disease (Eski adıyla  Membranoproliferatif Glomerülonefrit Tip 2 -  MPGN Tip 2) hastalığının patofizyolojisi aşağıdakilerden hangisidir?",
+    "options": [
+      "Hepatit C virüsünün immün kompleksler oluşturarak böbreği tıkaması",
+      "Vücudun kendi Tip 4 kollajenine karşı antikor üretip zarı yırtması",
+      "C3  Nefritik Faktör (IgG) otoantikorunun, kompleman alternatif yolağındaki 'C3 Konvertaz' enzimine yapışarak onu  ölümsüzleştirmesi (stabilize etmesi) ve frensizce çalışarak kanda ve böbrekteki tüm C3'ü tüketip parçalaması",
+      "Podosit ayakçıklarının T hücr eleri tarafından eritilmesi",
+      "Kemik iliğinin anormal IgA üretmesi"
+    ],
+    "correct": 2,
+    "exp": "Membranoproliferatif Glomerülonefrit (MPGN) Tip 2, yani yeni ve daha doğru adıyla 'Dense Deposit Disease (Yoğun  Birikim Hastalığı)', çok ilginç bir otoimmün hastalıktır.  \nMekanizma: İnsan vücudu yanlışlıkla 'C3 Nefritik Faktör (C3NeF)' adında  bir IgG antikoru üretir. Bu antikor gidip alternatif kompleman yolağının motoru olan 'C3 Konvertaz' enzimine sımsıkı sarılır.  Enzimin ömrünü (normalde 5 dakikayken) sonsuza kadar uzatır. Motor hiç durmadan çalışır ve kandaki tüm C3 proteinlerini  parçalar (Kanda C3 dibe vurur). Parçalanan bu devasa C3 atıkları gidip Böbreğin (Glomerülün) BAZAL MEMBRANININ TAM  İÇİNE/ORTASINA gömülür. Elektron mikroskobunda zarı ikiye bölen kapkara bir şerit gibi (Dense Deposit) görünürler. Bu  hastalıkta İmmünglobulin (Antikor) çökmesi YOKTUR, sadece saf C3 çökmesi vardır. Hastalar çok yüksek oranda (P) Böbrek  Yetmezliğine giderler."
+  },
+  {
+    "id": 1491,
+    "ders": "Pediatri",
+    "konu": "Pediatrik Hematoloji ve Onkoloji",
+    "diff": 4,
+    "q": "Bebeklik fotoğraflarında flaş patladığında sağ gözünde normal kırmızı yansıma yerine 'Beyaz Parlama (Lökokori / Kedi  Gözü Refleksi)' saptanan 1 yaşındaki çocuğa Retinoblastom teşhisi konuluyor. Hastalık her iki gözü de tutmuştur (Bilateral) ve  genetik testte Rb1 geninin her iki kopyasının da mutasyonlu olduğu görülüyor (Ailesel geçiş). Erken teşhis ve tedavi ile göz  kanserinden kurtulan bu çocuğun, ergenlik (adolesan) dönemine geldiğinde genetik yatkınlığı nedeniyle HANGİ İKİNCİL kansere  yakalanma riski (özellikle bacaklarda/uzun kemiklerde) normal popülasyona göre yüzlerce kat fazladır?",
+    "options": [
+      "Ewing Sarkomu",
+      "Osteosarkom",
+      "Kondro sarkom",
+      "Malign Melanom",
+      "Akut Myeloid Lösemi (AML)"
+    ],
+    "correct": 1,
+    "exp": "Retinoblastom, çocukluk çağının en meşhur göz kanseridir. İlk bulgusu fotoğraflardaki 'Lökokori (Beyaz pupil/Kedi  gözü)'dür. Patolojisinde 'Flexner- Wintersteiner Rozetleri' görülür.  \nGenetiği çok keskindir: 13. kromozomdaki 'Rb1' tümör  süpresör geninin iki kopyası da bozulmalıdır (Knudson'ın İki Vuruş Hipotezi). Eğer çocuk hastalığı ailesinden miras almışsa  (Bilateral / Her iki gözde de çıkmışsa), bu çocuğun vücudundaki TÜM HÜCRELERDE Rb geni zaten yarı bozuk demektir.  \nRb  geni sadece gözü değil, kemikleri de korur. Bu yüzden ailesel Retinoblastomdan kurtulan çocuklar 15- 20 yaşlarına geldiklerinde,  bacak (femur/tibia) kemiklerinde 'OSTEOSARKOM' çıkma riskiyle karşı karşıya kalırlar. Kemiklerinde ağrı/şişlik olan bu  hastalarda derhal Osteosarkom (Güneş ışını manzaralı tümör) aranmalıdır."
+  },
+  {
+    "id": 1492,
+    "ders": "Pediatri",
+    "konu": "Pediatrik Hematoloji ve Onkoloji",
+    "diff": 4,
+    "q": "Sekiz yaşında erkek çocuk; sık enfeksiyon geçirme, burun kanamaları ve solukl uk şikayetiyle getiriliyor. Çocuğun boyu  çok kısa, her iki başparmağı gelişmemiş (HİPOPLASTİK) veya YOK, ve cildinde yaygın Cafe- au- lait (sütlü kahve) lekeleri  mevcuttur. Tam kan sayımında PANSİTOPENİ (Eritrosit, Lökosit, Trombosit düşüklüğü) saptanıyor. Çocuğun kanına  'Diepoksibütan (DEB)' kimyasalı damlatıldığında, hücrelerin kromozomlarının paramparça olduğu (Kromozom kırıklarında artış)  görülüyor. DNA çapraz- bağ onarım kusuru olan bu kalıtsal kemik iliği yetmezliği (ve lösemiye dönüşme riski çok yüksek olan)  hastalık aşağıdakilerden hangisidir?",
+    "options": [
+      "Diamond -Blackfan Anemisi",
+      "Aplastik Anemi (İdiyopatik)",
+      "Wiskott -Aldrich Sendromu",
+      "Fanconi Anemisi",
+      "Ataksi Telenjiektazi"
+    ],
+    "correct": 3,
+    "exp": "Fanconi Anemisi, kalıtsal kemik iliği yetmezliğinin (Pansitopeninin) en meşhur nedenidir. (Otozomal resesif geçer).  \nMekanizma: Hücrelerimizin DNA'sı hasar gördüğünde (çapraz bağlar koptuğunda) bunu onaran enzimler bozuktur (DNA  Repair Defect). Onarılamayan DNA nedeniyle kemik iliği hücreleri sürekli intihar eder (Apoptoz) ve ilik boşalır (PANSİTOPENİ  başlar -  Diamond Blackfan'dan en büyük farkı budur).  \nFiziksel Bulguları: Çocuğun Başparmakları YOKTUR (veya ufacıktır),  cildinde Cafe- au- Lait lekeleri vardır, böbrekleri atnalı olabilir ve kısa boyludurlar.  \nTanı Testi: Kan numunesine DNA'yı kıran bir  zehir olan 'Diepoksibütan (DEB)' veya 'Mitomisin C' damlatılır. Normal hücreler hasarı onarır, ancak Fanconi hücresi onaramaz  ve mikroskopta kromozomların paramparça olduğu (Kromozomal Kırıklar) görülür. Bu çocukların ileride Akut Myeloid Lösemi  (AML) veya Yassı Hücreli Kanser olma riskleri dehşet derecede yüksektir."
+  },
+  {
+    "id": 1493,
+    "ders": "Pediatri",
+    "konu": "Pediatrik Endokrinoloji ve Metabolizma",
+    "diff": 4,
+    "q": "On beş günlük kız bebek; fışkırır tarzda kusma, emmeme ve kilo kaybı şikayetiyle acile getiriliyor. Fizik muayenede  klitoromegali ve labial füzyon (Ambiguus genitale / Cinsiyet belirsizliği) saptanıyor. Laboratuvar tetkiklerinde Sodyum: 118 mEq/L  (Derin Hiponatremi), Potasyum: 6.8 mEq/L (Hiperkalemi) ve Metabolik Asidoz görülüyor. Kanda 17- Hidroksiprogesteron (17- OHP) seviyesi aşırı yüksek bulunuyor. Konjenital Adrenal Hiperplazi'nin (KAH) en sık görülen tuz kaybettiren tipini geçiren bu  bebekte eksik olan asıl enzim aşağıdakilerden hangisidir?",
+    "options": [
+      "11- beta- hidroksilaz",
+      "21- hidroksilaz",
+      "17- alfa- hidroksilaz",
+      "3- beta- hidroksisteroid dehidrogenaz",
+      "Kolesterol desmolaz"
+    ],
+    "correct": 1,
+    "exp": "Konjenital Adrenal Hiperplazi'nin (KAH) %90 -95'inden sorumlu olan enzim '21 -Hidroksilaz' eksikliğidir. Bu enzim  çalışmadığında böbrek üstü bezi Kortizol ve Aldosteron üretemez. Aldosteron eksikliği şiddetli tuz kaybına (Hiponatremi) ve  potasyum birikimine (Hiperkalemi) yol açar (Tuz kaybettiren form). Üretilemeyen hormonların hammaddesi olan '17 - Hidroksiprogesteron (17- OHP)' kanda devasa boyutlara ulaşır ve bu birikim Androjen (erkeklik hormonu) üretim yolağına kayar.  Fırlayan androjenler, anne karnındaki kız bebeğin dış cinsel organlarını erkekleştirir (Klitoromegali/Virilizasyon). KAH  şüphesinde kanda 17- OHP ölçümü altın standart tarama testidir."
+  },
+  {
+    "id": 1494,
+    "ders": "Pediatri",
+    "konu": "Pediatrik Endokrinoloji ve Metabolizma",
+    "diff": 4,
+    "q": "Üç yaşındaki erkek çocuk, bacaklarında şiddetli eğilme (O- bacak / Genu varum) ve boy kısalığı şikayetiyle getiriliyor.  Hastaya yüksek doz D vitamini verilmesine rağmen kemik bulgularında hiçbir düzelme (Diyete Direnç) olmamıştır. Kan tahlilinde  Kalsiyum: Normal, Parathormon (PTH): Normal, D vitamini düzeyleri: Normal saptanıyor. ANCAK kan Fosfor (Fosfat) düzeyi 1.5  mg/dL (ÇOK DÜŞÜK) ve idrarda fosfat atılımı aşırı yüksektir. Böbreklerden frensizce fosfat atılımına neden olan 'FGF- 23'  hormonunun yıkılamayarak kanda fırlamasına (PHEX gen mutasyonuna) bağlı gelişen bu D vitaminine dirençli raşitizm türü  aşağıdakilerden hangisidir?",
+    "options": [
+      "Vitamin D Bağımlı Raşitizm Tip 1 (1- alfa hidroksilaz eksikliği)",
+      "Vitamin D Bağımlı Raşitizm Tip 2 (D vitamini reseptör defekti)",
+      "X'e Bağlı Hipofosfatemik Raşitizm (Fosfat Diyabeti)",
+      "Böbrek Yetmezliğine bağlı Renal Osteodistrofi",
+      "Hipofosfatazya (Alkalen Fosfataz eksikliği)"
+    ],
+    "correct": 2,
+    "exp": "X'e Bağlı Hipofosfatemik Raşitizm (Eski adıyla D Vitaminine Dirençli Raşitizm), çocuklarda fosfor eksikliğinin en meşhur  genetik formudur (PHEX gen mutasyonu).  \nMekanizma: Kemiklerin ürettiği 'FGF -23' adlı bir hormon vardır. FGF -23'ün görevi  böbreğe gidip fosforu idrara atmaktır (Fosfotonin). Normalde işi bitince PHEX enzimi bu hormonu yıkar. Ancak bu çocuklarda  PHEX mutasyonludur. FGF- 23 yıkılamaz, kanda devasa birikip böbreğe yapışır. Böbrek kandaki tüm Fosforu frensizce idrara  (tuvalete) atar. Kemiklerin kireçlenmesi için fosfor kalmaz ve bacaklar eğilir (O- Bacak). Bu hastalarda Kalsiyum, PTH ve D  vitamini değerleri TAMAMEN NORMALDİR. Çocuğa  tonlarca D vitamini verseniz de İŞE YARAMAZ, çünkü sorun D vitamini  değil, Böbrekten delinmiş kova gibi akan Fosfordur. Tedavide ağızdan Fosfat damlası ve FGF23'ü bağlayan 'Burosumab'  antikoru kullanılır."
+  },
+  {
+    "id": 1495,
+    "ders": "Pediatri",
+    "konu": "Pediatrik Endokrinoloji ve Metabolizma",
+    "diff": 4,
+    "q": "Onaltı (16) yaşında erkek çocuk, boyunun uzamaması ve cinsel gelişiminin olmaması (mikropenis, testis volümü 2 ml)  şikayetiyle başvuruyor. Çocuğun KOKU ALMA DUYUSUNUN OLMADIĞI (Anosmi) saptanıyor. Kan testlerinde Testosteron, FSH  ve LH seviyeleri çok DÜŞÜK bulunuyor (Hipogonadotropik Hipogonadizm). Ancak dışarıdan GnRH iğnesi (LHRH testi)  yapıldığında hipofizin normal şekilde FSH ve LH salgıladığı görülüyor. X'e bağlı KAL1 gen mutasyonu sonucu, anne  karnındayken GnRH nöronlarının burun bölgesinden (Olfaktör plakoddan) Hipotalamusa göç edememesine bağlı gelişen bu  sendrom aşağıdakilerden hangisidir?",
+    "options": [
+      "Klinefelter Sendromu (47, XXY)",
+      "Kallmann Sendromu",
+      "Prader- Willi Sendromu",
+      "Androjen Duyarsızlık Sendromu",
+      "Noonan Sendromu"
+    ],
+    "correct": 1,
+    "exp": "Kallmann  Sendromu, nöro- endokrinolojinin en spesifik göç (migrasyon) kusurudur. Embriyolojide, beyne ergenlik emrini  veren 'GnRH nöronları' beyinde doğmaz! Burnun üstündeki koku merkezinde (Olfaktör Plakod) doğarlar ve koku sinirine  tutunarak yukarıya (Hipotalamusa) göç ederler. KAL1 gen mutasyonunda bu yol çöker. Koku siniri oluşmaz, çocuk KOKU  ALAMAZ (Anosmi). Koku siniri olmayınca GnRH nöronları hipotalamusa gidemez. Hipotalamus GnRH salgılayamaz, Hipofiz  FSH/LH basamaz. Testisler uyarılamadığı için çocuk asla ergenliğe giremez. (Not: Klinefelter sendromunda koku alma  NORMALDİR, testisler küçüktür ama çalışmadıkları için kanda FSH ve LH tavan yapmıştır / Hipergonadotropik hipogonadizm)."
+  },
+  {
+    "id": 1496,
+    "ders": "Pediatri",
+    "konu": "Pediatrik Endokrinoloji ve Metabolizma",
+    "diff": 4,
+    "q": "Obezite, ensede kalınlaşma ve renk koyulaşması (Akantozis Nigrikans) olan 12 yaşındaki kız çocuğu polikliniğe getiriliyor.  Kanda Açlık Kan Şekeri 110 mg/dL (Bozulmuş açlık glukozu) ve Açlık İnsülini çok yüksektir (İnsülin Direnci). Hastada ileride Tip  2 Diyabet gelişmesini engellemek ve insülin direncini kırmak için Birinci Basamak (İlk tercih) oral antidiyabetik olan 'Metformin'  başlanıyor. Metforminin pediatrik hastalarda (ve erişkinlerde) kan şekerini düşürürken kullandığı ASIL ve EN GÜÇLÜ moleküler  etki mekanizması aşağıdakilerden hangisidir?",
+    "options": [
+      "Pankreasın beta hücrelerini doğrudan uyararak insülin salgısını artırmak",
+      "İdrar yollarından (SGLT- 2 pompası) şeker atılımını hızlandırmak",
+      "Bağırsaklarda karbonhidrat (şeker) emilimini bloke etmek",
+      "Karaciğerde AMPK (AMP- bağımlı protein kinaz) enzimini aktive ederek karaciğerin kana yeni glukoz üretmesini (Hepatik  Glukoneogenezi) DURDURMAK",
+      "Hücre yüzeyindeki insülin reseptör sayısını 10 katına çıkarmak"
+    ],
+    "correct": 3,
+    "exp": "Metformin (Biguanid), çocukluk çağı (ve erişkin) Tip 2 diyabet ve insülin direncinin ALTIN STANDART ilk ilacıdır. İnsülin  direnci olan hastalarda karaciğer (şeker dolu olmasına rağmen) körleşmiştir ve kana sürekli yeni şeker üretip pompalar  (Glukoneogenez). Metformin bir insülin salgılatıcısı (Sülfonilüre gibi) DEĞİLDİR! Bu yüzden hastayı ASLA HİPOGLİSEMİYE  sokmaz. Metforminin asıl işi KARACİĞERE gidip AMPK enzimini aktive etmektir. AMPK uyanınca,  karaciğerin glukoneogenez  (yeni şeker üretme) fabrikası şalteri indirir. Kana şeker akışı kesilir. Kaslar da var olan insüline daha duyarlı hale gelip şekeri  yutar. Sonuçta hasta kilo verir ve şekeri normale döner."
   }
 ];

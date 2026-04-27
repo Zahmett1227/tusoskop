@@ -1,0 +1,2019 @@
+    "ders": "Mikrobiyoloji",
+    "id": 2368,
+  {
+  },
+stearothermophilus kullanılır."
+    "exp": "Otoklav (nemli ısı) sterilizasyon kontrolünde en dayanıklı spor olan Geobacillus 
+    "correct": 1,
+    ],
+      "Clostridium perfringens"
+      "Bacillus cereus",
+      "Clostridium tetani",
+      "Geobacillus stearothermophilus",
+      "Bacillus anthracis",
+    "options": [
+dayanıklı bakteri sporu aşağıdakilerden hangisidir?",
+etkinliğini (121 derecede 15 dakika) biyolojik olarak test etmek için en sık kullanılan 
+    "q": "[Vaka 3/15] Cerrahi aletlerin sterilizasyonunda kullanılan Otoklav cihazının 
+    "diff": 3,
+    "konu": "Genel Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2367,
+  {
+  },
+denir."
+    "exp": "Bakteriyofaj (virüs) aracılığıyla bakteri genetiğinin taşınmasına Transdüksiyon 
+    "correct": 2,
+    ],
+      "Translasyon"
+      "Transfeksiyon",
+      "Transdüksiyon",
+      "Konjugasyon",
+      "Transformasyon",
+    "options": [
+aracılığıyla başka bir bakteriye taşınması olayına ne ad verilir?",
+bakterilerin geliştirdiği Beta-Laktamaz enziminin genetik kodunun, bir bakteriyofaj 
+    "q": "[Vaka 2/15] Bakteri hücre duvarı sentezini inhibe eden penisilinlere karşı 
+    "diff": 3,
+    "konu": "Genel Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2366,
+  {
+  },
+    "exp": "Transformasyon, çıplak DNA'nın ortamdan alınmasıdır. DNaz çıplak DNA'yı yıkar."
+    "correct": 2,
+    ],
+      "HFR rekombinasyonu"
+      "Transpozisyon",
+      "Transformasyon",
+      "Transdüksiyon",
+      "Konjugasyon",
+    "options": [
+mekanizmayla aktarıldığı söylenebilir?",
+eklendiğinde direnç geninin aktarımının tamamen durduğu gözlemleniyor. Bu direnç geninin hangi 
+    "q": "[Vaka 1/15] Bakteriler arası gen transferini inceleyen bir çalışmada, ortama DNaz 
+    "diff": 3,
+    "konu": "Genel Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2365,
+  {
+[
+Toplam Soru: 105 | Başlangıç ID: 2365 | Format: JSON
+Mikrobiyoloji Dev Arşivi
+----------------Page (0) Break----------------
+    ],
+      "HFR rekombinasyonu"
+      "Transpozisyon",
+      "Transformasyon",
+      "Transdüksiyon",
+      "Konjugasyon",
+    "options": [
+mekanizmayla aktarıldığı söylenebilir?",
+eklendiğinde direnç geninin aktarımının tamamen durduğu gözlemleniyor. Bu direnç geninin hangi 
+    "q": "[Vaka 7/15] Bakteriler arası gen transferini inceleyen bir çalışmada, ortama DNaz 
+    "diff": 3,
+    "konu": "Genel Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2371,
+  {
+  },
+stearothermophilus kullanılır."
+    "exp": "Otoklav (nemli ısı) sterilizasyon kontrolünde en dayanıklı spor olan Geobacillus 
+    "correct": 1,
+    ],
+      "Clostridium perfringens"
+      "Bacillus cereus",
+      "Clostridium tetani",
+      "Geobacillus stearothermophilus",
+      "Bacillus anthracis",
+    "options": [
+dayanıklı bakteri sporu aşağıdakilerden hangisidir?",
+etkinliğini (121 derecede 15 dakika) biyolojik olarak test etmek için en sık kullanılan 
+    "q": "[Vaka 6/15] Cerrahi aletlerin sterilizasyonunda kullanılan Otoklav cihazının 
+    "diff": 3,
+    "konu": "Genel Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2370,
+  {
+  },
+denir."
+    "exp": "Bakteriyofaj (virüs) aracılığıyla bakteri genetiğinin taşınmasına Transdüksiyon 
+    "correct": 2,
+    ],
+      "Translasyon"
+      "Transfeksiyon",
+      "Transdüksiyon",
+      "Konjugasyon",
+      "Transformasyon",
+    "options": [
+aracılığıyla başka bir bakteriye taşınması olayına ne ad verilir?",
+bakterilerin geliştirdiği Beta-Laktamaz enziminin genetik kodunun, bir bakteriyofaj 
+    "q": "[Vaka 5/15] Bakteri hücre duvarı sentezini inhibe eden penisilinlere karşı 
+    "diff": 3,
+    "konu": "Genel Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2369,
+  {
+  },
+    "exp": "Transformasyon, çıplak DNA'nın ortamdan alınmasıdır. DNaz çıplak DNA'yı yıkar."
+    "correct": 2,
+    ],
+      "HFR rekombinasyonu"
+      "Transpozisyon",
+      "Transformasyon",
+      "Transdüksiyon",
+      "Konjugasyon",
+    "options": [
+mekanizmayla aktarıldığı söylenebilir?",
+eklendiğinde direnç geninin aktarımının tamamen durduğu gözlemleniyor. Bu direnç geninin hangi 
+    "q": "[Vaka 4/15] Bakteriler arası gen transferini inceleyen bir çalışmada, ortama DNaz 
+    "diff": 3,
+    "konu": "Genel Mikrobiyoloji",
+----------------Page (1) Break----------------
+    "options": [
+aracılığıyla başka bir bakteriye taşınması olayına ne ad verilir?",
+bakterilerin geliştirdiği Beta-Laktamaz enziminin genetik kodunun, bir bakteriyofaj 
+    "q": "[Vaka 11/15] Bakteri hücre duvarı sentezini inhibe eden penisilinlere karşı 
+    "diff": 4,
+    "konu": "Genel Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2375,
+  {
+  },
+    "exp": "Transformasyon, çıplak DNA'nın ortamdan alınmasıdır. DNaz çıplak DNA'yı yıkar."
+    "correct": 2,
+    ],
+      "HFR rekombinasyonu"
+      "Transpozisyon",
+      "Transformasyon",
+      "Transdüksiyon",
+      "Konjugasyon",
+    "options": [
+mekanizmayla aktarıldığı söylenebilir?",
+eklendiğinde direnç geninin aktarımının tamamen durduğu gözlemleniyor. Bu direnç geninin hangi 
+    "q": "[Vaka 10/15] Bakteriler arası gen transferini inceleyen bir çalışmada, ortama DNaz 
+    "diff": 4,
+    "konu": "Genel Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2374,
+  {
+  },
+stearothermophilus kullanılır."
+    "exp": "Otoklav (nemli ısı) sterilizasyon kontrolünde en dayanıklı spor olan Geobacillus 
+    "correct": 1,
+    ],
+      "Clostridium perfringens"
+      "Bacillus cereus",
+      "Clostridium tetani",
+      "Geobacillus stearothermophilus",
+      "Bacillus anthracis",
+    "options": [
+dayanıklı bakteri sporu aşağıdakilerden hangisidir?",
+etkinliğini (121 derecede 15 dakika) biyolojik olarak test etmek için en sık kullanılan 
+    "q": "[Vaka 9/15] Cerrahi aletlerin sterilizasyonunda kullanılan Otoklav cihazının 
+    "diff": 4,
+    "konu": "Genel Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2373,
+  {
+  },
+denir."
+    "exp": "Bakteriyofaj (virüs) aracılığıyla bakteri genetiğinin taşınmasına Transdüksiyon 
+    "correct": 2,
+    ],
+      "Translasyon"
+      "Transfeksiyon",
+      "Transdüksiyon",
+      "Konjugasyon",
+      "Transformasyon",
+    "options": [
+aracılığıyla başka bir bakteriye taşınması olayına ne ad verilir?",
+bakterilerin geliştirdiği Beta-Laktamaz enziminin genetik kodunun, bir bakteriyofaj 
+    "q": "[Vaka 8/15] Bakteri hücre duvarı sentezini inhibe eden penisilinlere karşı 
+    "diff": 3,
+    "konu": "Genel Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2372,
+  {
+  },
+    "exp": "Transformasyon, çıplak DNA'nın ortamdan alınmasıdır. DNaz çıplak DNA'yı yıkar."
+    "correct": 2,
+----------------Page (2) Break----------------
+    "id": 2379,
+  {
+  },
+denir."
+    "exp": "Bakteriyofaj (virüs) aracılığıyla bakteri genetiğinin taşınmasına Transdüksiyon 
+    "correct": 2,
+    ],
+      "Translasyon"
+      "Transfeksiyon",
+      "Transdüksiyon",
+      "Konjugasyon",
+      "Transformasyon",
+    "options": [
+aracılığıyla başka bir bakteriye taşınması olayına ne ad verilir?",
+bakterilerin geliştirdiği Beta-Laktamaz enziminin genetik kodunun, bir bakteriyofaj 
+    "q": "[Vaka 14/15] Bakteri hücre duvarı sentezini inhibe eden penisilinlere karşı 
+    "diff": 4,
+    "konu": "Genel Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2378,
+  {
+  },
+    "exp": "Transformasyon, çıplak DNA'nın ortamdan alınmasıdır. DNaz çıplak DNA'yı yıkar."
+    "correct": 2,
+    ],
+      "HFR rekombinasyonu"
+      "Transpozisyon",
+      "Transformasyon",
+      "Transdüksiyon",
+      "Konjugasyon",
+    "options": [
+mekanizmayla aktarıldığı söylenebilir?",
+eklendiğinde direnç geninin aktarımının tamamen durduğu gözlemleniyor. Bu direnç geninin hangi 
+    "q": "[Vaka 13/15] Bakteriler arası gen transferini inceleyen bir çalışmada, ortama DNaz 
+    "diff": 4,
+    "konu": "Genel Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2377,
+  {
+  },
+stearothermophilus kullanılır."
+    "exp": "Otoklav (nemli ısı) sterilizasyon kontrolünde en dayanıklı spor olan Geobacillus 
+    "correct": 1,
+    ],
+      "Clostridium perfringens"
+      "Bacillus cereus",
+      "Clostridium tetani",
+      "Geobacillus stearothermophilus",
+      "Bacillus anthracis",
+    "options": [
+dayanıklı bakteri sporu aşağıdakilerden hangisidir?",
+etkinliğini (121 derecede 15 dakika) biyolojik olarak test etmek için en sık kullanılan 
+    "q": "[Vaka 12/15] Cerrahi aletlerin sterilizasyonunda kullanılan Otoklav cihazının 
+    "diff": 4,
+    "konu": "Genel Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2376,
+  {
+  },
+denir."
+    "exp": "Bakteriyofaj (virüs) aracılığıyla bakteri genetiğinin taşınmasına Transdüksiyon 
+    "correct": 2,
+    ],
+      "Translasyon"
+      "Transfeksiyon",
+      "Transdüksiyon",
+      "Konjugasyon",
+      "Transformasyon",
+----------------Page (3) Break----------------
+      "CD4",
+      "MHC Sınıf I",
+      "MHC Sınıf II",
+    "options": [
+hangisidir?",
+tanımasını ve öldürmesini sağlayan, tüm çekirdekli hücrelerde bulunan MHC molekülü sınıfı 
+organ reddi (Kronik Rejeksiyon) saptanıyor. T lenfositlerinin hedef hücreyi doğrudan 
+    "q": "[Vaka 3/15] Bir hastaya yapılan böbrek nakli sonrasında 6. ayda yavaş gelişen bir 
+    "diff": 3,
+    "konu": "İmmünoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2382,
+  {
+  },
+antikorlarının mast hücrelerindeki Fc reseptörlerine çapraz bağlanmasıyla oluşur."
+    "exp": "Tip 1 aşırı duyarlılık reaksiyonları (Anafilaksi/Alerji), antijene özgü IgE 
+    "correct": 3,
+    ],
+      "IgD"
+      "IgE",
+      "IgM",
+      "IgG",
+      "IgA",
+    "options": [
+Aşırı Duyarlılık reaksiyonunu tetikleyen asıl immünglobulin hangisidir?",
+darlığı, hipotansiyon) gelişiyor. Mast hücrelerinin degranülasyonu ile karakterize bu Tip 1 
+    "q": "[Vaka 2/15] Penisilin enjeksiyonundan dakikalar sonra hastada anafilaktik şok (nefes 
+    "diff": 3,
+    "konu": "İmmünoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2381,
+  {
+  },
+bölgesine ilk bağlanan bileşen C1q'dur."
+    "exp": "Klasik kompleman yolağı antijen-antikor kompleksi ile başlar. Antikorun Fc 
+    "correct": 1,
+    ],
+      "MAC kompleksi"
+      "C4b",
+      "C5a",
+      "C1q",
+      "C3b",
+    "options": [
+etkileşime girdiği kompleman bileşeni hangisidir?",
+klasik yolağını aktive eden immünglobulinlerin (IgG ve IgM) antijene bağlandıktan sonra ilk 
+    "q": "[Vaka 1/15] Ağır bir bakteriyel enfeksiyon geçiren hastada, kompleman sisteminin 
+    "diff": 3,
+    "konu": "İmmünoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2380,
+  {
+  },
+stearothermophilus kullanılır."
+    "exp": "Otoklav (nemli ısı) sterilizasyon kontrolünde en dayanıklı spor olan Geobacillus 
+    "correct": 1,
+    ],
+      "Clostridium perfringens"
+      "Bacillus cereus",
+      "Clostridium tetani",
+      "Geobacillus stearothermophilus",
+      "Bacillus anthracis",
+    "options": [
+dayanıklı bakteri sporu aşağıdakilerden hangisidir?",
+etkinliğini (121 derecede 15 dakika) biyolojik olarak test etmek için en sık kullanılan 
+    "q": "[Vaka 15/15] Cerrahi aletlerin sterilizasyonunda kullanılan Otoklav cihazının 
+    "diff": 4,
+    "konu": "Genel Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+----------------Page (4) Break----------------
+    "ders": "Mikrobiyoloji",
+    "id": 2386,
+  {
+  },
+CD8+ Sitotoksik T hücrelerine sunar."
+    "exp": "MHC Sınıf I, vücuttaki tüm çekirdekli hücrelerde bulunur ve hücre içi antijenleri 
+    "correct": 1,
+    ],
+      "B7"
+      "CD28",
+      "CD4",
+      "MHC Sınıf I",
+      "MHC Sınıf II",
+    "options": [
+hangisidir?",
+tanımasını ve öldürmesini sağlayan, tüm çekirdekli hücrelerde bulunan MHC molekülü sınıfı 
+organ reddi (Kronik Rejeksiyon) saptanıyor. T lenfositlerinin hedef hücreyi doğrudan 
+    "q": "[Vaka 6/15] Bir hastaya yapılan böbrek nakli sonrasında 6. ayda yavaş gelişen bir 
+    "diff": 3,
+    "konu": "İmmünoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2385,
+  {
+  },
+antikorlarının mast hücrelerindeki Fc reseptörlerine çapraz bağlanmasıyla oluşur."
+    "exp": "Tip 1 aşırı duyarlılık reaksiyonları (Anafilaksi/Alerji), antijene özgü IgE 
+    "correct": 3,
+    ],
+      "IgD"
+      "IgE",
+      "IgM",
+      "IgG",
+      "IgA",
+    "options": [
+Aşırı Duyarlılık reaksiyonunu tetikleyen asıl immünglobulin hangisidir?",
+darlığı, hipotansiyon) gelişiyor. Mast hücrelerinin degranülasyonu ile karakterize bu Tip 1 
+    "q": "[Vaka 5/15] Penisilin enjeksiyonundan dakikalar sonra hastada anafilaktik şok (nefes 
+    "diff": 3,
+    "konu": "İmmünoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2384,
+  {
+  },
+bölgesine ilk bağlanan bileşen C1q'dur."
+    "exp": "Klasik kompleman yolağı antijen-antikor kompleksi ile başlar. Antikorun Fc 
+    "correct": 1,
+    ],
+      "MAC kompleksi"
+      "C4b",
+      "C5a",
+      "C1q",
+      "C3b",
+    "options": [
+etkileşime girdiği kompleman bileşeni hangisidir?",
+klasik yolağını aktive eden immünglobulinlerin (IgG ve IgM) antijene bağlandıktan sonra ilk 
+    "q": "[Vaka 4/15] Ağır bir bakteriyel enfeksiyon geçiren hastada, kompleman sisteminin 
+    "diff": 3,
+    "konu": "İmmünoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2383,
+  {
+  },
+CD8+ Sitotoksik T hücrelerine sunar."
+    "exp": "MHC Sınıf I, vücuttaki tüm çekirdekli hücrelerde bulunur ve hücre içi antijenleri 
+    "correct": 1,
+    ],
+      "B7"
+      "CD28",
+----------------Page (5) Break----------------
+      "C4b",
+      "C5a",
+      "C1q",
+      "C3b",
+    "options": [
+etkileşime girdiği kompleman bileşeni hangisidir?",
+klasik yolağını aktive eden immünglobulinlerin (IgG ve IgM) antijene bağlandıktan sonra ilk 
+    "q": "[Vaka 10/15] Ağır bir bakteriyel enfeksiyon geçiren hastada, kompleman sisteminin 
+    "diff": 4,
+    "konu": "İmmünoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2389,
+  {
+  },
+CD8+ Sitotoksik T hücrelerine sunar."
+    "exp": "MHC Sınıf I, vücuttaki tüm çekirdekli hücrelerde bulunur ve hücre içi antijenleri 
+    "correct": 1,
+    ],
+      "B7"
+      "CD28",
+      "CD4",
+      "MHC Sınıf I",
+      "MHC Sınıf II",
+    "options": [
+hangisidir?",
+tanımasını ve öldürmesini sağlayan, tüm çekirdekli hücrelerde bulunan MHC molekülü sınıfı 
+organ reddi (Kronik Rejeksiyon) saptanıyor. T lenfositlerinin hedef hücreyi doğrudan 
+    "q": "[Vaka 9/15] Bir hastaya yapılan böbrek nakli sonrasında 6. ayda yavaş gelişen bir 
+    "diff": 4,
+    "konu": "İmmünoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2388,
+  {
+  },
+antikorlarının mast hücrelerindeki Fc reseptörlerine çapraz bağlanmasıyla oluşur."
+    "exp": "Tip 1 aşırı duyarlılık reaksiyonları (Anafilaksi/Alerji), antijene özgü IgE 
+    "correct": 3,
+    ],
+      "IgD"
+      "IgE",
+      "IgM",
+      "IgG",
+      "IgA",
+    "options": [
+Aşırı Duyarlılık reaksiyonunu tetikleyen asıl immünglobulin hangisidir?",
+darlığı, hipotansiyon) gelişiyor. Mast hücrelerinin degranülasyonu ile karakterize bu Tip 1 
+    "q": "[Vaka 8/15] Penisilin enjeksiyonundan dakikalar sonra hastada anafilaktik şok (nefes 
+    "diff": 3,
+    "konu": "İmmünoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2387,
+  {
+  },
+bölgesine ilk bağlanan bileşen C1q'dur."
+    "exp": "Klasik kompleman yolağı antijen-antikor kompleksi ile başlar. Antikorun Fc 
+    "correct": 1,
+    ],
+      "MAC kompleksi"
+      "C4b",
+      "C5a",
+      "C1q",
+      "C3b",
+    "options": [
+etkileşime girdiği kompleman bileşeni hangisidir?",
+klasik yolağını aktive eden immünglobulinlerin (IgG ve IgM) antijene bağlandıktan sonra ilk 
+    "q": "[Vaka 7/15] Ağır bir bakteriyel enfeksiyon geçiren hastada, kompleman sisteminin 
+    "diff": 3,
+    "konu": "İmmünoloji",
+----------------Page (6) Break----------------
+    "konu": "İmmünoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2393,
+  {
+  },
+bölgesine ilk bağlanan bileşen C1q'dur."
+    "exp": "Klasik kompleman yolağı antijen-antikor kompleksi ile başlar. Antikorun Fc 
+    "correct": 1,
+    ],
+      "MAC kompleksi"
+      "C4b",
+      "C5a",
+      "C1q",
+      "C3b",
+    "options": [
+etkileşime girdiği kompleman bileşeni hangisidir?",
+klasik yolağını aktive eden immünglobulinlerin (IgG ve IgM) antijene bağlandıktan sonra ilk 
+    "q": "[Vaka 13/15] Ağır bir bakteriyel enfeksiyon geçiren hastada, kompleman sisteminin 
+    "diff": 4,
+    "konu": "İmmünoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2392,
+  {
+  },
+CD8+ Sitotoksik T hücrelerine sunar."
+    "exp": "MHC Sınıf I, vücuttaki tüm çekirdekli hücrelerde bulunur ve hücre içi antijenleri 
+    "correct": 1,
+    ],
+      "B7"
+      "CD28",
+      "CD4",
+      "MHC Sınıf I",
+      "MHC Sınıf II",
+    "options": [
+hangisidir?",
+tanımasını ve öldürmesini sağlayan, tüm çekirdekli hücrelerde bulunan MHC molekülü sınıfı 
+organ reddi (Kronik Rejeksiyon) saptanıyor. T lenfositlerinin hedef hücreyi doğrudan 
+    "q": "[Vaka 12/15] Bir hastaya yapılan böbrek nakli sonrasında 6. ayda yavaş gelişen bir 
+    "diff": 4,
+    "konu": "İmmünoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2391,
+  {
+  },
+antikorlarının mast hücrelerindeki Fc reseptörlerine çapraz bağlanmasıyla oluşur."
+    "exp": "Tip 1 aşırı duyarlılık reaksiyonları (Anafilaksi/Alerji), antijene özgü IgE 
+    "correct": 3,
+    ],
+      "IgD"
+      "IgE",
+      "IgM",
+      "IgG",
+      "IgA",
+    "options": [
+Tip 1 Aşırı Duyarlılık reaksiyonunu tetikleyen asıl immünglobulin hangisidir?",
+(nefes darlığı, hipotansiyon) gelişiyor. Mast hücrelerinin degranülasyonu ile karakterize bu 
+    "q": "[Vaka 11/15] Penisilin enjeksiyonundan dakikalar sonra hastada anafilaktik şok 
+    "diff": 4,
+    "konu": "İmmünoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2390,
+  {
+  },
+bölgesine ilk bağlanan bileşen C1q'dur."
+    "exp": "Klasik kompleman yolağı antijen-antikor kompleksi ile başlar. Antikorun Fc 
+    "correct": 1,
+    ],
+      "MAC kompleksi"
+----------------Page (7) Break----------------
+      "Neisseria meningitidis"
+      "Escherichia coli",
+      "Streptococcus agalactiae (Grup B Strep)",
+      "Streptococcus pneumoniae",
+      "Listeria monocytogenes",
+    "options": [
+olası etken hangisidir?",
+kültüründe CAMP testi pozitif, hippurat hidrolizi pozitif olan Gram pozitif kok ürüyor. En 
+    "q": "[Vaka 2/15] Yeni doğan bir bebekte pürülan menenjit tablosu gelişiyor. BOS 
+    "diff": 3,
+    "konu": "Bakteriyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2396,
+  {
+  },
+düzeyini fırlatır ve klor sekresyonuyla sekretuvar ishal yapar."
+    "exp": "Koleratoksini, Gs proteinini aktif tutarak Adenilat Siklazı uyarır, hücre içi cAMP 
+    "correct": 1,
+    ],
+      "Fosfolipaz C"
+      "IP3",
+      "Kalsiyum",
+      "cAMP",
+      "cGMP",
+    "options": [
+haberciyi artırarak masif sıvı kaybına neden olur?",
+gelen hastada Vibrio cholerae saptanıyor. Koleratoksini bağırsak hücrelerinde hangi ikincil 
+    "q": "[Vaka 1/15] Acil servise şiddetli ishal ve pirinç suyu görünümünde dışkılama ile 
+    "diff": 3,
+    "konu": "Bakteriyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2395,
+  {
+  },
+CD8+ Sitotoksik T hücrelerine sunar."
+    "exp": "MHC Sınıf I, vücuttaki tüm çekirdekli hücrelerde bulunur ve hücre içi antijenleri 
+    "correct": 1,
+    ],
+      "B7"
+      "CD28",
+      "CD4",
+      "MHC Sınıf I",
+      "MHC Sınıf II",
+    "options": [
+hangisidir?",
+tanımasını ve öldürmesini sağlayan, tüm çekirdekli hücrelerde bulunan MHC molekülü sınıfı 
+organ reddi (Kronik Rejeksiyon) saptanıyor. T lenfositlerinin hedef hücreyi doğrudan 
+    "q": "[Vaka 15/15] Bir hastaya yapılan böbrek nakli sonrasında 6. ayda yavaş gelişen bir 
+    "diff": 4,
+    "konu": "İmmünoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2394,
+  {
+  },
+antikorlarının mast hücrelerindeki Fc reseptörlerine çapraz bağlanmasıyla oluşur."
+    "exp": "Tip 1 aşırı duyarlılık reaksiyonları (Anafilaksi/Alerji), antijene özgü IgE 
+    "correct": 3,
+    ],
+      "IgD"
+      "IgE",
+      "IgM",
+      "IgG",
+      "IgA",
+    "options": [
+Tip 1 Aşırı Duyarlılık reaksiyonunu tetikleyen asıl immünglobulin hangisidir?",
+(nefes darlığı, hipotansiyon) gelişiyor. Mast hücrelerinin degranülasyonu ile karakterize bu 
+    "q": "[Vaka 14/15] Penisilin enjeksiyonundan dakikalar sonra hastada anafilaktik şok 
+    "diff": 4,
+----------------Page (8) Break----------------
+    "q": "[Vaka 6/15] Kene ısırığı sonrası ateşi, baş ağrısı ve avuç içi/ayak tabanlarından 
+    "diff": 3,
+    "konu": "Bakteriyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2400,
+  {
+  },
+testleri pozitiftir."
+    "exp": "Yenidoğan menenjitinin en sık nedeni S. agalactiae (GBS)'dır. CAMP ve Hippurat 
+    "correct": 2,
+    ],
+      "Neisseria meningitidis"
+      "Escherichia coli",
+      "Streptococcus agalactiae (Grup B Strep)",
+      "Streptococcus pneumoniae",
+      "Listeria monocytogenes",
+    "options": [
+olası etken hangisidir?",
+kültüründe CAMP testi pozitif, hippurat hidrolizi pozitif olan Gram pozitif kok ürüyor. En 
+    "q": "[Vaka 5/15] Yeni doğan bir bebekte pürülan menenjit tablosu gelişiyor. BOS 
+    "diff": 3,
+    "konu": "Bakteriyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2399,
+  {
+  },
+düzeyini fırlatır ve klor sekresyonuyla sekretuvar ishal yapar."
+    "exp": "Koleratoksini, Gs proteinini aktif tutarak Adenilat Siklazı uyarır, hücre içi cAMP 
+    "correct": 1,
+    ],
+      "Fosfolipaz C"
+      "IP3",
+      "Kalsiyum",
+      "cAMP",
+      "cGMP",
+    "options": [
+haberciyi artırarak masif sıvı kaybına neden olur?",
+gelen hastada Vibrio cholerae saptanıyor. Koleratoksini bağırsak hücrelerinde hangi ikincil 
+    "q": "[Vaka 4/15] Acil servise şiddetli ishal ve pirinç suyu görünümünde dışkılama ile 
+    "diff": 3,
+    "konu": "Bakteriyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2398,
+  {
+  },
+taban) merkeze yayılması tipiktir."
+    "exp": "Kayalık Dağlar Benekli Ateşi etkeni R. rickettsii'dir. Döküntünün uçlardan (avuç/
+    "correct": 1,
+    ],
+      "Ehrlichia chaffeensis"
+      "Coxiella burnetii",
+      "Treponema pallidum",
+      "Rickettsia rickettsii",
+      "Borrelia burgdorferi",
+    "options": [
+hangisidir?",
+başlayıp gövdeye yayılan makülopapüler döküntüleri olan hastada etken bakteri aşağıdakilerden 
+    "q": "[Vaka 3/15] Kene ısırığı sonrası ateşi, baş ağrısı ve avuç içi/ayak tabanlarından 
+    "diff": 3,
+    "konu": "Bakteriyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2397,
+  {
+  },
+testleri pozitiftir."
+    "exp": "Yenidoğan menenjitinin en sık nedeni S. agalactiae (GBS)'dır. CAMP ve Hippurat 
+    "correct": 2,
+    ],
+----------------Page (9) Break----------------
+    "exp": "Kayalık Dağlar Benekli Ateşi etkeni R. rickettsii'dir. Döküntünün uçlardan (avuç/
+    "correct": 1,
+    ],
+      "Ehrlichia chaffeensis"
+      "Coxiella burnetii",
+      "Treponema pallidum",
+      "Rickettsia rickettsii",
+      "Borrelia burgdorferi",
+    "options": [
+hangisidir?",
+başlayıp gövdeye yayılan makülopapüler döküntüleri olan hastada etken bakteri aşağıdakilerden 
+    "q": "[Vaka 9/15] Kene ısırığı sonrası ateşi, baş ağrısı ve avuç içi/ayak tabanlarından 
+    "diff": 4,
+    "konu": "Bakteriyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2403,
+  {
+  },
+testleri pozitiftir."
+    "exp": "Yenidoğan menenjitinin en sık nedeni S. agalactiae (GBS)'dır. CAMP ve Hippurat 
+    "correct": 2,
+    ],
+      "Neisseria meningitidis"
+      "Escherichia coli",
+      "Streptococcus agalactiae (Grup B Strep)",
+      "Streptococcus pneumoniae",
+      "Listeria monocytogenes",
+    "options": [
+olası etken hangisidir?",
+kültüründe CAMP testi pozitif, hippurat hidrolizi pozitif olan Gram pozitif kok ürüyor. En 
+    "q": "[Vaka 8/15] Yeni doğan bir bebekte pürülan menenjit tablosu gelişiyor. BOS 
+    "diff": 3,
+    "konu": "Bakteriyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2402,
+  {
+  },
+düzeyini fırlatır ve klor sekresyonuyla sekretuvar ishal yapar."
+    "exp": "Koleratoksini, Gs proteinini aktif tutarak Adenilat Siklazı uyarır, hücre içi cAMP 
+    "correct": 1,
+    ],
+      "Fosfolipaz C"
+      "IP3",
+      "Kalsiyum",
+      "cAMP",
+      "cGMP",
+    "options": [
+haberciyi artırarak masif sıvı kaybına neden olur?",
+gelen hastada Vibrio cholerae saptanıyor. Koleratoksini bağırsak hücrelerinde hangi ikincil 
+    "q": "[Vaka 7/15] Acil servise şiddetli ishal ve pirinç suyu görünümünde dışkılama ile 
+    "diff": 3,
+    "konu": "Bakteriyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2401,
+  {
+  },
+taban) merkeze yayılması tipiktir."
+    "exp": "Kayalık Dağlar Benekli Ateşi etkeni R. rickettsii'dir. Döküntünün uçlardan (avuç/
+    "correct": 1,
+    ],
+      "Ehrlichia chaffeensis"
+      "Coxiella burnetii",
+      "Treponema pallidum",
+      "Rickettsia rickettsii",
+      "Borrelia burgdorferi",
+    "options": [
+hangisidir?",
+başlayıp gövdeye yayılan makülopapüler döküntüleri olan hastada etken bakteri aşağıdakilerden 
+----------------Page (10) Break----------------
+    "options": [
+haberciyi artırarak masif sıvı kaybına neden olur?",
+gelen hastada Vibrio cholerae saptanıyor. Koleratoksini bağırsak hücrelerinde hangi ikincil 
+    "q": "[Vaka 13/15] Acil servise şiddetli ishal ve pirinç suyu görünümünde dışkılama ile 
+    "diff": 4,
+    "konu": "Bakteriyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2407,
+  {
+  },
+taban) merkeze yayılması tipiktir."
+    "exp": "Kayalık Dağlar Benekli Ateşi etkeni R. rickettsii'dir. Döküntünün uçlardan (avuç/
+    "correct": 1,
+    ],
+      "Ehrlichia chaffeensis"
+      "Coxiella burnetii",
+      "Treponema pallidum",
+      "Rickettsia rickettsii",
+      "Borrelia burgdorferi",
+    "options": [
+hangisidir?",
+başlayıp gövdeye yayılan makülopapüler döküntüleri olan hastada etken bakteri aşağıdakilerden 
+    "q": "[Vaka 12/15] Kene ısırığı sonrası ateşi, baş ağrısı ve avuç içi/ayak tabanlarından 
+    "diff": 4,
+    "konu": "Bakteriyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2406,
+  {
+  },
+testleri pozitiftir."
+    "exp": "Yenidoğan menenjitinin en sık nedeni S. agalactiae (GBS)'dır. CAMP ve Hippurat 
+    "correct": 2,
+    ],
+      "Neisseria meningitidis"
+      "Escherichia coli",
+      "Streptococcus agalactiae (Grup B Strep)",
+      "Streptococcus pneumoniae",
+      "Listeria monocytogenes",
+    "options": [
+olası etken hangisidir?",
+kültüründe CAMP testi pozitif, hippurat hidrolizi pozitif olan Gram pozitif kok ürüyor. En 
+    "q": "[Vaka 11/15] Yeni doğan bir bebekte pürülan menenjit tablosu gelişiyor. BOS 
+    "diff": 4,
+    "konu": "Bakteriyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2405,
+  {
+  },
+düzeyini fırlatır ve klor sekresyonuyla sekretuvar ishal yapar."
+    "exp": "Koleratoksini, Gs proteinini aktif tutarak Adenilat Siklazı uyarır, hücre içi cAMP 
+    "correct": 1,
+    ],
+      "Fosfolipaz C"
+      "IP3",
+      "Kalsiyum",
+      "cAMP",
+      "cGMP",
+    "options": [
+haberciyi artırarak masif sıvı kaybına neden olur?",
+gelen hastada Vibrio cholerae saptanıyor. Koleratoksini bağırsak hücrelerinde hangi ikincil 
+    "q": "[Vaka 10/15] Acil servise şiddetli ishal ve pirinç suyu görünümünde dışkılama ile 
+    "diff": 4,
+    "konu": "Bakteriyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2404,
+  {
+  },
+taban) merkeze yayılması tipiktir."
+----------------Page (11) Break----------------
+  {
+  },
+sistit yapan çıplak dsDNA virüsleridir."
+    "exp": "Adenovirüsler (özellikle serotip 11, 21) nakil hastalarında şiddetli hemorajik 
+    "correct": 1,
+    ],
+      "HPV"
+      "JC Virüs",
+      "CMV",
+      "Adenovirüs",
+      "BK Virüs",
+    "options": [
+etken hangisidir?",
+İdrar EM'sinde çıplak, ikozahedral yapılı çift sarmallı bir DNA virüsü saptanıyor. En olası 
+    "q": "[Vaka 1/15] Kemik iliği nakli yapılmış hastada idrarda hemorajik sistit gelişiyor. 
+    "diff": 3,
+    "konu": "Viroloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2410,
+  {
+  },
+taban) merkeze yayılması tipiktir."
+    "exp": "Kayalık Dağlar Benekli Ateşi etkeni R. rickettsii'dir. Döküntünün uçlardan (avuç/
+    "correct": 1,
+    ],
+      "Ehrlichia chaffeensis"
+      "Coxiella burnetii",
+      "Treponema pallidum",
+      "Rickettsia rickettsii",
+      "Borrelia burgdorferi",
+    "options": [
+hangisidir?",
+başlayıp gövdeye yayılan makülopapüler döküntüleri olan hastada etken bakteri aşağıdakilerden 
+    "q": "[Vaka 15/15] Kene ısırığı sonrası ateşi, baş ağrısı ve avuç içi/ayak tabanlarından 
+    "diff": 4,
+    "konu": "Bakteriyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2409,
+  {
+  },
+testleri pozitiftir."
+    "exp": "Yenidoğan menenjitinin en sık nedeni S. agalactiae (GBS)'dır. CAMP ve Hippurat 
+    "correct": 2,
+    ],
+      "Neisseria meningitidis"
+      "Escherichia coli",
+      "Streptococcus agalactiae (Grup B Strep)",
+      "Streptococcus pneumoniae",
+      "Listeria monocytogenes",
+    "options": [
+olası etken hangisidir?",
+kültüründe CAMP testi pozitif, hippurat hidrolizi pozitif olan Gram pozitif kok ürüyor. En 
+    "q": "[Vaka 14/15] Yeni doğan bir bebekte pürülan menenjit tablosu gelişiyor. BOS 
+    "diff": 4,
+    "konu": "Bakteriyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2408,
+  {
+  },
+düzeyini fırlatır ve klor sekresyonuyla sekretuvar ishal yapar."
+    "exp": "Koleratoksini, Gs proteinini aktif tutarak Adenilat Siklazı uyarır, hücre içi cAMP 
+    "correct": 1,
+    ],
+      "Fosfolipaz C"
+      "IP3",
+      "Kalsiyum",
+      "cAMP",
+      "cGMP",
+----------------Page (12) Break----------------
+      "Pencere dönemi"
+      "Doğal enfeksiyonu geçirip iyileşmiş tam bağışıklık",
+      "Aşı ile kazanılmış bağışıklık",
+      "Kronik Hepatit B taşıyıcılığı",
+      "Akut Hepatit B enfeksiyonu",
+    "options": [
+pozitif, Anti-HBc IgG pozitif bulunuyor. Bu serolojik profil neyi ifade eder?",
+    "q": "[Vaka 5/15] Kan transfüzyonu sonrası sarılık gelişen hastada HBsAg negatif, Anti-HBs 
+    "diff": 3,
+    "konu": "Viroloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2414,
+  {
+  },
+sistit yapan çıplak dsDNA virüsleridir."
+    "exp": "Adenovirüsler (özellikle serotip 11, 21) nakil hastalarında şiddetli hemorajik 
+    "correct": 1,
+    ],
+      "HPV"
+      "JC Virüs",
+      "CMV",
+      "Adenovirüs",
+      "BK Virüs",
+    "options": [
+etken hangisidir?",
+İdrar EM'sinde çıplak, ikozahedral yapılı çift sarmallı bir DNA virüsü saptanıyor. En olası 
+    "q": "[Vaka 4/15] Kemik iliği nakli yapılmış hastada idrarda hemorajik sistit gelişiyor. 
+    "diff": 3,
+    "konu": "Viroloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2413,
+  {
+  },
+ishallerin en sık viral etkenidir."
+    "exp": "Rotavirüs (Reoviridae ailesi), segmentli dsRNA yapısındadır ve çocuklarda 
+    "correct": 2,
+    ],
+      "Kalsivirüs"
+      "Adenovirüs",
+      "Rotavirüs",
+      "Astrovirüs",
+      "Norovirüs",
+    "options": [
+aşağıdakilerden hangisidir?",
+nedeni olan ve dışkı mikroskobisinde tekerlek şeklinde görülen çift sarmallı RNA virüsü 
+    "q": "[Vaka 3/15] Bebeklik çağında şiddetli ishal (gastroenterit) ataklarının en sık viral 
+    "diff": 3,
+    "konu": "Viroloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2412,
+  {
+  },
+enfeksiyon) iyileştiğini ve bağışık olduğunu gösterir. Aşıda sadece Anti-HBs pozitif olur."
+    "exp": "Anti-HBs ve Anti-HBc IgG pozitifliği, hastanın virüsle karşılaşıp (doğal 
+    "correct": 3,
+    ],
+      "Pencere dönemi"
+      "Doğal enfeksiyonu geçirip iyileşmiş tam bağışıklık",
+      "Aşı ile kazanılmış bağışıklık",
+      "Kronik Hepatit B taşıyıcılığı",
+      "Akut Hepatit B enfeksiyonu",
+    "options": [
+pozitif, Anti-HBc IgG pozitif bulunuyor. Bu serolojik profil neyi ifade eder?",
+    "q": "[Vaka 2/15] Kan transfüzyonu sonrası sarılık gelişen hastada HBsAg negatif, Anti-HBs 
+    "diff": 3,
+    "konu": "Viroloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2411,
+----------------Page (13) Break----------------
+nedeni olan ve dışkı mikroskobisinde tekerlek şeklinde görülen çift sarmallı RNA virüsü 
+    "q": "[Vaka 9/15] Bebeklik çağında şiddetli ishal (gastroenterit) ataklarının en sık viral 
+    "diff": 4,
+    "konu": "Viroloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2418,
+  {
+  },
+enfeksiyon) iyileştiğini ve bağışık olduğunu gösterir. Aşıda sadece Anti-HBs pozitif olur."
+    "exp": "Anti-HBs ve Anti-HBc IgG pozitifliği, hastanın virüsle karşılaşıp (doğal 
+    "correct": 3,
+    ],
+      "Pencere dönemi"
+      "Doğal enfeksiyonu geçirip iyileşmiş tam bağışıklık",
+      "Aşı ile kazanılmış bağışıklık",
+      "Kronik Hepatit B taşıyıcılığı",
+      "Akut Hepatit B enfeksiyonu",
+    "options": [
+pozitif, Anti-HBc IgG pozitif bulunuyor. Bu serolojik profil neyi ifade eder?",
+    "q": "[Vaka 8/15] Kan transfüzyonu sonrası sarılık gelişen hastada HBsAg negatif, Anti-HBs 
+    "diff": 3,
+    "konu": "Viroloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2417,
+  {
+  },
+sistit yapan çıplak dsDNA virüsleridir."
+    "exp": "Adenovirüsler (özellikle serotip 11, 21) nakil hastalarında şiddetli hemorajik 
+    "correct": 1,
+    ],
+      "HPV"
+      "JC Virüs",
+      "CMV",
+      "Adenovirüs",
+      "BK Virüs",
+    "options": [
+etken hangisidir?",
+İdrar EM'sinde çıplak, ikozahedral yapılı çift sarmallı bir DNA virüsü saptanıyor. En olası 
+    "q": "[Vaka 7/15] Kemik iliği nakli yapılmış hastada idrarda hemorajik sistit gelişiyor. 
+    "diff": 3,
+    "konu": "Viroloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2416,
+  {
+  },
+ishallerin en sık viral etkenidir."
+    "exp": "Rotavirüs (Reoviridae ailesi), segmentli dsRNA yapısındadır ve çocuklarda 
+    "correct": 2,
+    ],
+      "Kalsivirüs"
+      "Adenovirüs",
+      "Rotavirüs",
+      "Astrovirüs",
+      "Norovirüs",
+    "options": [
+aşağıdakilerden hangisidir?",
+nedeni olan ve dışkı mikroskobisinde tekerlek şeklinde görülen çift sarmallı RNA virüsü 
+    "q": "[Vaka 6/15] Bebeklik çağında şiddetli ishal (gastroenterit) ataklarının en sık viral 
+    "diff": 3,
+    "konu": "Viroloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2415,
+  {
+  },
+enfeksiyon) iyileştiğini ve bağışık olduğunu gösterir. Aşıda sadece Anti-HBs pozitif olur."
+    "exp": "Anti-HBs ve Anti-HBc IgG pozitifliği, hastanın virüsle karşılaşıp (doğal 
+    "correct": 3,
+    ],
+----------------Page (14) Break----------------
+  },
+ishallerin en sık viral etkenidir."
+    "exp": "Rotavirüs (Reoviridae ailesi), segmentli dsRNA yapısındadır ve çocuklarda 
+    "correct": 2,
+    ],
+      "Kalsivirüs"
+      "Adenovirüs",
+      "Rotavirüs",
+      "Astrovirüs",
+      "Norovirüs",
+    "options": [
+aşağıdakilerden hangisidir?",
+viral nedeni olan ve dışkı mikroskobisinde tekerlek şeklinde görülen çift sarmallı RNA virüsü 
+    "q": "[Vaka 12/15] Bebeklik çağında şiddetli ishal (gastroenterit) ataklarının en sık 
+    "diff": 4,
+    "konu": "Viroloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2421,
+  {
+  },
+enfeksiyon) iyileştiğini ve bağışık olduğunu gösterir. Aşıda sadece Anti-HBs pozitif olur."
+    "exp": "Anti-HBs ve Anti-HBc IgG pozitifliği, hastanın virüsle karşılaşıp (doğal 
+    "correct": 3,
+    ],
+      "Pencere dönemi"
+      "Doğal enfeksiyonu geçirip iyileşmiş tam bağışıklık",
+      "Aşı ile kazanılmış bağışıklık",
+      "Kronik Hepatit B taşıyıcılığı",
+      "Akut Hepatit B enfeksiyonu",
+    "options": [
+HBs pozitif, Anti-HBc IgG pozitif bulunuyor. Bu serolojik profil neyi ifade eder?",
+    "q": "[Vaka 11/15] Kan transfüzyonu sonrası sarılık gelişen hastada HBsAg negatif, Anti-
+    "diff": 4,
+    "konu": "Viroloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2420,
+  {
+  },
+sistit yapan çıplak dsDNA virüsleridir."
+    "exp": "Adenovirüsler (özellikle serotip 11, 21) nakil hastalarında şiddetli hemorajik 
+    "correct": 1,
+    ],
+      "HPV"
+      "JC Virüs",
+      "CMV",
+      "Adenovirüs",
+      "BK Virüs",
+    "options": [
+etken hangisidir?",
+İdrar EM'sinde çıplak, ikozahedral yapılı çift sarmallı bir DNA virüsü saptanıyor. En olası 
+    "q": "[Vaka 10/15] Kemik iliği nakli yapılmış hastada idrarda hemorajik sistit gelişiyor. 
+    "diff": 4,
+    "konu": "Viroloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2419,
+  {
+  },
+ishallerin en sık viral etkenidir."
+    "exp": "Rotavirüs (Reoviridae ailesi), segmentli dsRNA yapısındadır ve çocuklarda 
+    "correct": 2,
+    ],
+      "Kalsivirüs"
+      "Adenovirüs",
+      "Rotavirüs",
+      "Astrovirüs",
+      "Norovirüs",
+    "options": [
+aşağıdakilerden hangisidir?",
+----------------Page (15) Break----------------
+      "Mucor/Rhizopus",
+      "Candida",
+      "Aspergillus",
+    "options": [
+görülüyor. Etken organizma grubu hangisidir?",
+nekrotik eskar saptanıyor. Biyopside geniş açıyla (90 derece) dallanan, septasız hifler 
+    "q": "[Vaka 1/15] Ketoasidoz tablosundaki diyabetik hastada, burun çevresinde siyah 
+    "diff": 3,
+    "konu": "Mikoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2425,
+  {
+  },
+ishallerin en sık viral etkenidir."
+    "exp": "Rotavirüs (Reoviridae ailesi), segmentli dsRNA yapısındadır ve çocuklarda 
+    "correct": 2,
+    ],
+      "Kalsivirüs"
+      "Adenovirüs",
+      "Rotavirüs",
+      "Astrovirüs",
+      "Norovirüs",
+    "options": [
+aşağıdakilerden hangisidir?",
+viral nedeni olan ve dışkı mikroskobisinde tekerlek şeklinde görülen çift sarmallı RNA virüsü 
+    "q": "[Vaka 15/15] Bebeklik çağında şiddetli ishal (gastroenterit) ataklarının en sık 
+    "diff": 4,
+    "konu": "Viroloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2424,
+  {
+  },
+enfeksiyon) iyileştiğini ve bağışık olduğunu gösterir. Aşıda sadece Anti-HBs pozitif olur."
+    "exp": "Anti-HBs ve Anti-HBc IgG pozitifliği, hastanın virüsle karşılaşıp (doğal 
+    "correct": 3,
+    ],
+      "Pencere dönemi"
+      "Doğal enfeksiyonu geçirip iyileşmiş tam bağışıklık",
+      "Aşı ile kazanılmış bağışıklık",
+      "Kronik Hepatit B taşıyıcılığı",
+      "Akut Hepatit B enfeksiyonu",
+    "options": [
+HBs pozitif, Anti-HBc IgG pozitif bulunuyor. Bu serolojik profil neyi ifade eder?",
+    "q": "[Vaka 14/15] Kan transfüzyonu sonrası sarılık gelişen hastada HBsAg negatif, Anti-
+    "diff": 4,
+    "konu": "Viroloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2423,
+  {
+  },
+sistit yapan çıplak dsDNA virüsleridir."
+    "exp": "Adenovirüsler (özellikle serotip 11, 21) nakil hastalarında şiddetli hemorajik 
+    "correct": 1,
+    ],
+      "HPV"
+      "JC Virüs",
+      "CMV",
+      "Adenovirüs",
+      "BK Virüs",
+    "options": [
+etken hangisidir?",
+İdrar EM'sinde çıplak, ikozahedral yapılı çift sarmallı bir DNA virüsü saptanıyor. En olası 
+    "q": "[Vaka 13/15] Kemik iliği nakli yapılmış hastada idrarda hemorajik sistit gelişiyor. 
+    "diff": 4,
+    "konu": "Viroloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2422,
+  {
+----------------Page (16) Break----------------
+    "konu": "Mikoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2429,
+  {
+  },
+kanıtıdır. DKA hastalarında agresiftir."
+    "exp": "Geniş açılı dallanan septasız hifler Mukormikozis (Mucor/Rhizopus) enfeksiyonunun 
+    "correct": 2,
+    ],
+      "Histoplasma"
+      "Cryptococcus",
+      "Mucor/Rhizopus",
+      "Candida",
+      "Aspergillus",
+    "options": [
+görülüyor. Etken organizma grubu hangisidir?",
+nekrotik eskar saptanıyor. Biyopside geniş açıyla (90 derece) dallanan, septasız hifler 
+    "q": "[Vaka 4/15] Ketoasidoz tablosundaki diyabetik hastada, burun çevresinde siyah 
+    "diff": 3,
+    "konu": "Mikoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2428,
+  {
+  },
+schenckii'dir."
+    "exp": "Gül dikeninden bulaşan ve lenfatik yayılım gösteren (Sporotrikoz) etken Sporothrix 
+    "correct": 0,
+    ],
+      "Paracoccidioides brasiliensis"
+      "Coccidioides immitis",
+      "Blastomyces dermatitidis",
+      "Histoplasma capsulatum",
+      "Sporothrix schenckii",
+    "options": [
+hangisidir?",
+boyunca dizilmiş ülseratif lezyonlar gelişen bahçıvanda etken olan dimorfik mantar 
+    "q": "[Vaka 3/15] Gül dikeni batması sonucu elinde nodül ve ardından lenfatik damarlar 
+    "diff": 3,
+    "konu": "Mikoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2427,
+  {
+  },
+hastalarda ölümcül menenjit yapar. Çini mürekkebinde kapsül parlak bir hale olarak görünür."
+    "exp": "Cryptococcus neoformans, kalın polisakkarit kapsüle sahiptir ve HIV pozitif 
+    "correct": 2,
+    ],
+      "Coccidioides immitis"
+      "Pneumocystis jirovecii",
+      "Cryptococcus neoformans",
+      "Aspergillus fumigatus",
+      "Candida albicans",
+    "options": [
+mayalar görülüyor. En olası etken hangisidir?",
+saptanıyor. BOS'un çini mürekkebi (India ink) boyamasında kalın kapsüllü, tomurcuklanan 
+    "q": "[Vaka 2/15] AIDS hastasında şiddetli baş ağrısı ve ense sertliği ile menenjit 
+    "diff": 3,
+    "konu": "Mikoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2426,
+  {
+  },
+kanıtıdır. DKA hastalarında agresiftir."
+    "exp": "Geniş açılı dallanan septasız hifler Mukormikozis (Mucor/Rhizopus) enfeksiyonunun 
+    "correct": 2,
+    ],
+      "Histoplasma"
+      "Cryptococcus",
+----------------Page (17) Break----------------
+    ],
+      "Coccidioides immitis"
+      "Pneumocystis jirovecii",
+      "Cryptococcus neoformans",
+      "Aspergillus fumigatus",
+      "Candida albicans",
+    "options": [
+mayalar görülüyor. En olası etken hangisidir?",
+saptanıyor. BOS'un çini mürekkebi (India ink) boyamasında kalın kapsüllü, tomurcuklanan 
+    "q": "[Vaka 8/15] AIDS hastasında şiddetli baş ağrısı ve ense sertliği ile menenjit 
+    "diff": 3,
+    "konu": "Mikoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2432,
+  {
+  },
+kanıtıdır. DKA hastalarında agresiftir."
+    "exp": "Geniş açılı dallanan septasız hifler Mukormikozis (Mucor/Rhizopus) enfeksiyonunun 
+    "correct": 2,
+    ],
+      "Histoplasma"
+      "Cryptococcus",
+      "Mucor/Rhizopus",
+      "Candida",
+      "Aspergillus",
+    "options": [
+görülüyor. Etken organizma grubu hangisidir?",
+nekrotik eskar saptanıyor. Biyopside geniş açıyla (90 derece) dallanan, septasız hifler 
+    "q": "[Vaka 7/15] Ketoasidoz tablosundaki diyabetik hastada, burun çevresinde siyah 
+    "diff": 3,
+    "konu": "Mikoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2431,
+  {
+  },
+schenckii'dir."
+    "exp": "Gül dikeninden bulaşan ve lenfatik yayılım gösteren (Sporotrikoz) etken Sporothrix 
+    "correct": 0,
+    ],
+      "Paracoccidioides brasiliensis"
+      "Coccidioides immitis",
+      "Blastomyces dermatitidis",
+      "Histoplasma capsulatum",
+      "Sporothrix schenckii",
+    "options": [
+hangisidir?",
+boyunca dizilmiş ülseratif lezyonlar gelişen bahçıvanda etken olan dimorfik mantar 
+    "q": "[Vaka 6/15] Gül dikeni batması sonucu elinde nodül ve ardından lenfatik damarlar 
+    "diff": 3,
+    "konu": "Mikoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2430,
+  {
+  },
+hastalarda ölümcül menenjit yapar. Çini mürekkebinde kapsül parlak bir hale olarak görünür."
+    "exp": "Cryptococcus neoformans, kalın polisakkarit kapsüle sahiptir ve HIV pozitif 
+    "correct": 2,
+    ],
+      "Coccidioides immitis"
+      "Pneumocystis jirovecii",
+      "Cryptococcus neoformans",
+      "Aspergillus fumigatus",
+      "Candida albicans",
+    "options": [
+mayalar görülüyor. En olası etken hangisidir?",
+saptanıyor. BOS'un çini mürekkebi (India ink) boyamasında kalın kapsüllü, tomurcuklanan 
+    "q": "[Vaka 5/15] AIDS hastasında şiddetli baş ağrısı ve ense sertliği ile menenjit 
+    "diff": 3,
+----------------Page (18) Break----------------
+boyunca dizilmiş ülseratif lezyonlar gelişen bahçıvanda etken olan dimorfik mantar 
+    "q": "[Vaka 12/15] Gül dikeni batması sonucu elinde nodül ve ardından lenfatik damarlar 
+    "diff": 4,
+    "konu": "Mikoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2436,
+  {
+  },
+hastalarda ölümcül menenjit yapar. Çini mürekkebinde kapsül parlak bir hale olarak görünür."
+    "exp": "Cryptococcus neoformans, kalın polisakkarit kapsüle sahiptir ve HIV pozitif 
+    "correct": 2,
+    ],
+      "Coccidioides immitis"
+      "Pneumocystis jirovecii",
+      "Cryptococcus neoformans",
+      "Aspergillus fumigatus",
+      "Candida albicans",
+    "options": [
+mayalar görülüyor. En olası etken hangisidir?",
+saptanıyor. BOS'un çini mürekkebi (India ink) boyamasında kalın kapsüllü, tomurcuklanan 
+    "q": "[Vaka 11/15] AIDS hastasında şiddetli baş ağrısı ve ense sertliği ile menenjit 
+    "diff": 4,
+    "konu": "Mikoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2435,
+  {
+  },
+kanıtıdır. DKA hastalarında agresiftir."
+    "exp": "Geniş açılı dallanan septasız hifler Mukormikozis (Mucor/Rhizopus) enfeksiyonunun 
+    "correct": 2,
+    ],
+      "Histoplasma"
+      "Cryptococcus",
+      "Mucor/Rhizopus",
+      "Candida",
+      "Aspergillus",
+    "options": [
+görülüyor. Etken organizma grubu hangisidir?",
+nekrotik eskar saptanıyor. Biyopside geniş açıyla (90 derece) dallanan, septasız hifler 
+    "q": "[Vaka 10/15] Ketoasidoz tablosundaki diyabetik hastada, burun çevresinde siyah 
+    "diff": 4,
+    "konu": "Mikoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2434,
+  {
+  },
+schenckii'dir."
+    "exp": "Gül dikeninden bulaşan ve lenfatik yayılım gösteren (Sporotrikoz) etken Sporothrix 
+    "correct": 0,
+    ],
+      "Paracoccidioides brasiliensis"
+      "Coccidioides immitis",
+      "Blastomyces dermatitidis",
+      "Histoplasma capsulatum",
+      "Sporothrix schenckii",
+    "options": [
+hangisidir?",
+boyunca dizilmiş ülseratif lezyonlar gelişen bahçıvanda etken olan dimorfik mantar 
+    "q": "[Vaka 9/15] Gül dikeni batması sonucu elinde nodül ve ardından lenfatik damarlar 
+    "diff": 4,
+    "konu": "Mikoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2433,
+  {
+  },
+hastalarda ölümcül menenjit yapar. Çini mürekkebinde kapsül parlak bir hale olarak görünür."
+    "exp": "Cryptococcus neoformans, kalın polisakkarit kapsüle sahiptir ve HIV pozitif 
+    "correct": 2,
+----------------Page (19) Break----------------
+schenckii'dir."
+    "exp": "Gül dikeninden bulaşan ve lenfatik yayılım gösteren (Sporotrikoz) etken Sporothrix 
+    "correct": 0,
+    ],
+      "Paracoccidioides brasiliensis"
+      "Coccidioides immitis",
+      "Blastomyces dermatitidis",
+      "Histoplasma capsulatum",
+      "Sporothrix schenckii",
+    "options": [
+hangisidir?",
+boyunca dizilmiş ülseratif lezyonlar gelişen bahçıvanda etken olan dimorfik mantar 
+    "q": "[Vaka 15/15] Gül dikeni batması sonucu elinde nodül ve ardından lenfatik damarlar 
+    "diff": 4,
+    "konu": "Mikoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2439,
+  {
+  },
+hastalarda ölümcül menenjit yapar. Çini mürekkebinde kapsül parlak bir hale olarak görünür."
+    "exp": "Cryptococcus neoformans, kalın polisakkarit kapsüle sahiptir ve HIV pozitif 
+    "correct": 2,
+    ],
+      "Coccidioides immitis"
+      "Pneumocystis jirovecii",
+      "Cryptococcus neoformans",
+      "Aspergillus fumigatus",
+      "Candida albicans",
+    "options": [
+mayalar görülüyor. En olası etken hangisidir?",
+saptanıyor. BOS'un çini mürekkebi (India ink) boyamasında kalın kapsüllü, tomurcuklanan 
+    "q": "[Vaka 14/15] AIDS hastasında şiddetli baş ağrısı ve ense sertliği ile menenjit 
+    "diff": 4,
+    "konu": "Mikoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2438,
+  {
+  },
+kanıtıdır. DKA hastalarında agresiftir."
+    "exp": "Geniş açılı dallanan septasız hifler Mukormikozis (Mucor/Rhizopus) enfeksiyonunun 
+    "correct": 2,
+    ],
+      "Histoplasma"
+      "Cryptococcus",
+      "Mucor/Rhizopus",
+      "Candida",
+      "Aspergillus",
+    "options": [
+görülüyor. Etken organizma grubu hangisidir?",
+nekrotik eskar saptanıyor. Biyopside geniş açıyla (90 derece) dallanan, septasız hifler 
+    "q": "[Vaka 13/15] Ketoasidoz tablosundaki diyabetik hastada, burun çevresinde siyah 
+    "diff": 4,
+    "konu": "Mikoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2437,
+  {
+  },
+schenckii'dir."
+    "exp": "Gül dikeninden bulaşan ve lenfatik yayılım gösteren (Sporotrikoz) etken Sporothrix 
+    "correct": 0,
+    ],
+      "Paracoccidioides brasiliensis"
+      "Coccidioides immitis",
+      "Blastomyces dermatitidis",
+      "Histoplasma capsulatum",
+      "Sporothrix schenckii",
+    "options": [
+hangisidir?",
+----------------Page (20) Break----------------
+      "Plasmodium ovale",
+      "Plasmodium vivax",
+    "options": [
+agresif etken hangisidir?",
+eritrositlerde 'taşlı yüzük' formları ve çoklu enfeksiyon görülüyor. Serebral sıtma yapan en 
+    "q": "[Vaka 4/15] Sıtma (Malaria) şüphesiyle incelenen hastanın kan yaymasında, 
+    "diff": 3,
+    "konu": "Parazitoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2443,
+  {
+  },
+kaşıntı yapar. Selofan bant testi ile D şekilli yumurtalar görülür."
+    "exp": "Enterobius vermicularis (kıl kurdu), gece perianal bölgeye yumurta bırakarak 
+    "correct": 2,
+    ],
+      "Strongyloides stercoralis"
+      "Necator americanus",
+      "Enterobius vermicularis",
+      "Trichuris trichiura",
+      "Ascaris lumbricoides",
+    "options": [
+şeklinde yumurtalar saptanıyor. Bu helmint enfeksiyonunun etkeni aşağıdakilerden hangisidir?",
+    "q": "[Vaka 3/15] Perianal kaşıntı şikayeti olan bir çocukta selofan bant yöntemiyle D 
+    "diff": 3,
+    "konu": "Parazitoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2442,
+  {
+  },
+Trofozoitleri baykuş yüzü / gülümseyen yüz görünümündedir."
+    "exp": "Giardia lamblia (intestinalis), ince bağırsağa yapışarak yağ emilimini bozar. 
+    "correct": 1,
+    ],
+      "Trichomonas vaginalis"
+      "Balantidium coli",
+      "Cryptosporidium parvum",
+      "Giardia lamblia",
+      "Entamoeba histolytica",
+    "options": [
+saptanıyor. En olası etken hangisidir?",
+başvuran hastanın dışkısında 'gülümseyen yüz' (iki nükleuslu) görünümünde kamçılı trofozoitler 
+    "q": "[Vaka 2/15] Kamp sonrası şiddetli kötü kokulu, yağlı ishal (steatore) şikayetiyle 
+    "diff": 3,
+    "konu": "Parazitoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2441,
+  {
+  },
+tüm yaşlardaki eritrositleri enfekte edebilen en tehlikeli sıtma türüdür."
+    "exp": "Plasmodium falciparum, mikrosirkülasyonu tıkayarak serebral sıtmaya yol açan ve 
+    "correct": 3,
+    ],
+      "Babesia microti"
+      "Plasmodium falciparum",
+      "Plasmodium malariae",
+      "Plasmodium ovale",
+      "Plasmodium vivax",
+    "options": [
+agresif etken hangisidir?",
+eritrositlerde 'taşlı yüzük' formları ve çoklu enfeksiyon görülüyor. Serebral sıtma yapan en 
+    "q": "[Vaka 1/15] Sıtma (Malaria) şüphesiyle incelenen hastanın kan yaymasında, 
+    "diff": 3,
+    "konu": "Parazitoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2440,
+  {
+  },
+----------------Page (21) Break----------------
+    "konu": "Parazitoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2447,
+  {
+  },
+tüm yaşlardaki eritrositleri enfekte edebilen en tehlikeli sıtma türüdür."
+    "exp": "Plasmodium falciparum, mikrosirkülasyonu tıkayarak serebral sıtmaya yol açan ve 
+    "correct": 3,
+    ],
+      "Babesia microti"
+      "Plasmodium falciparum",
+      "Plasmodium malariae",
+      "Plasmodium ovale",
+      "Plasmodium vivax",
+    "options": [
+agresif etken hangisidir?",
+eritrositlerde 'taşlı yüzük' formları ve çoklu enfeksiyon görülüyor. Serebral sıtma yapan en 
+    "q": "[Vaka 7/15] Sıtma (Malaria) şüphesiyle incelenen hastanın kan yaymasında, 
+    "diff": 3,
+    "konu": "Parazitoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2446,
+  {
+  },
+kaşıntı yapar. Selofan bant testi ile D şekilli yumurtalar görülür."
+    "exp": "Enterobius vermicularis (kıl kurdu), gece perianal bölgeye yumurta bırakarak 
+    "correct": 2,
+    ],
+      "Strongyloides stercoralis"
+      "Necator americanus",
+      "Enterobius vermicularis",
+      "Trichuris trichiura",
+      "Ascaris lumbricoides",
+    "options": [
+şeklinde yumurtalar saptanıyor. Bu helmint enfeksiyonunun etkeni aşağıdakilerden hangisidir?",
+    "q": "[Vaka 6/15] Perianal kaşıntı şikayeti olan bir çocukta selofan bant yöntemiyle D 
+    "diff": 3,
+    "konu": "Parazitoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2445,
+  {
+  },
+Trofozoitleri baykuş yüzü / gülümseyen yüz görünümündedir."
+    "exp": "Giardia lamblia (intestinalis), ince bağırsağa yapışarak yağ emilimini bozar. 
+    "correct": 1,
+    ],
+      "Trichomonas vaginalis"
+      "Balantidium coli",
+      "Cryptosporidium parvum",
+      "Giardia lamblia",
+      "Entamoeba histolytica",
+    "options": [
+saptanıyor. En olası etken hangisidir?",
+başvuran hastanın dışkısında 'gülümseyen yüz' (iki nükleuslu) görünümünde kamçılı trofozoitler 
+    "q": "[Vaka 5/15] Kamp sonrası şiddetli kötü kokulu, yağlı ishal (steatore) şikayetiyle 
+    "diff": 3,
+    "konu": "Parazitoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2444,
+  {
+  },
+tüm yaşlardaki eritrositleri enfekte edebilen en tehlikeli sıtma türüdür."
+    "exp": "Plasmodium falciparum, mikrosirkülasyonu tıkayarak serebral sıtmaya yol açan ve 
+    "correct": 3,
+    ],
+      "Babesia microti"
+      "Plasmodium falciparum",
+      "Plasmodium malariae",
+----------------Page (22) Break----------------
+    "correct": 1,
+    ],
+      "Trichomonas vaginalis"
+      "Balantidium coli",
+      "Cryptosporidium parvum",
+      "Giardia lamblia",
+      "Entamoeba histolytica",
+    "options": [
+saptanıyor. En olası etken hangisidir?",
+başvuran hastanın dışkısında 'gülümseyen yüz' (iki nükleuslu) görünümünde kamçılı trofozoitler 
+    "q": "[Vaka 11/15] Kamp sonrası şiddetli kötü kokulu, yağlı ishal (steatore) şikayetiyle 
+    "diff": 4,
+    "konu": "Parazitoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2450,
+  {
+  },
+tüm yaşlardaki eritrositleri enfekte edebilen en tehlikeli sıtma türüdür."
+    "exp": "Plasmodium falciparum, mikrosirkülasyonu tıkayarak serebral sıtmaya yol açan ve 
+    "correct": 3,
+    ],
+      "Babesia microti"
+      "Plasmodium falciparum",
+      "Plasmodium malariae",
+      "Plasmodium ovale",
+      "Plasmodium vivax",
+    "options": [
+agresif etken hangisidir?",
+eritrositlerde 'taşlı yüzük' formları ve çoklu enfeksiyon görülüyor. Serebral sıtma yapan en 
+    "q": "[Vaka 10/15] Sıtma (Malaria) şüphesiyle incelenen hastanın kan yaymasında, 
+    "diff": 4,
+    "konu": "Parazitoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2449,
+  {
+  },
+kaşıntı yapar. Selofan bant testi ile D şekilli yumurtalar görülür."
+    "exp": "Enterobius vermicularis (kıl kurdu), gece perianal bölgeye yumurta bırakarak 
+    "correct": 2,
+    ],
+      "Strongyloides stercoralis"
+      "Necator americanus",
+      "Enterobius vermicularis",
+      "Trichuris trichiura",
+      "Ascaris lumbricoides",
+    "options": [
+şeklinde yumurtalar saptanıyor. Bu helmint enfeksiyonunun etkeni aşağıdakilerden hangisidir?",
+    "q": "[Vaka 9/15] Perianal kaşıntı şikayeti olan bir çocukta selofan bant yöntemiyle D 
+    "diff": 4,
+    "konu": "Parazitoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2448,
+  {
+  },
+Trofozoitleri baykuş yüzü / gülümseyen yüz görünümündedir."
+    "exp": "Giardia lamblia (intestinalis), ince bağırsağa yapışarak yağ emilimini bozar. 
+    "correct": 1,
+    ],
+      "Trichomonas vaginalis"
+      "Balantidium coli",
+      "Cryptosporidium parvum",
+      "Giardia lamblia",
+      "Entamoeba histolytica",
+    "options": [
+saptanıyor. En olası etken hangisidir?",
+başvuran hastanın dışkısında 'gülümseyen yüz' (iki nükleuslu) görünümünde kamçılı trofozoitler 
+    "q": "[Vaka 8/15] Kamp sonrası şiddetli kötü kokulu, yağlı ishal (steatore) şikayetiyle 
+    "diff": 3,
+----------------Page (23) Break----------------
+      "Ascaris lumbricoides",
+    "options": [
+şeklinde yumurtalar saptanıyor. Bu helmint enfeksiyonunun etkeni aşağıdakilerden hangisidir?",
+    "q": "[Vaka 15/15] Perianal kaşıntı şikayeti olan bir çocukta selofan bant yöntemiyle D 
+    "diff": 4,
+    "konu": "Parazitoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2454,
+  {
+  },
+Trofozoitleri baykuş yüzü / gülümseyen yüz görünümündedir."
+    "exp": "Giardia lamblia (intestinalis), ince bağırsağa yapışarak yağ emilimini bozar. 
+    "correct": 1,
+    ],
+      "Trichomonas vaginalis"
+      "Balantidium coli",
+      "Cryptosporidium parvum",
+      "Giardia lamblia",
+      "Entamoeba histolytica",
+    "options": [
+saptanıyor. En olası etken hangisidir?",
+başvuran hastanın dışkısında 'gülümseyen yüz' (iki nükleuslu) görünümünde kamçılı trofozoitler 
+    "q": "[Vaka 14/15] Kamp sonrası şiddetli kötü kokulu, yağlı ishal (steatore) şikayetiyle 
+    "diff": 4,
+    "konu": "Parazitoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2453,
+  {
+  },
+tüm yaşlardaki eritrositleri enfekte edebilen en tehlikeli sıtma türüdür."
+    "exp": "Plasmodium falciparum, mikrosirkülasyonu tıkayarak serebral sıtmaya yol açan ve 
+    "correct": 3,
+    ],
+      "Babesia microti"
+      "Plasmodium falciparum",
+      "Plasmodium malariae",
+      "Plasmodium ovale",
+      "Plasmodium vivax",
+    "options": [
+agresif etken hangisidir?",
+eritrositlerde 'taşlı yüzük' formları ve çoklu enfeksiyon görülüyor. Serebral sıtma yapan en 
+    "q": "[Vaka 13/15] Sıtma (Malaria) şüphesiyle incelenen hastanın kan yaymasında, 
+    "diff": 4,
+    "konu": "Parazitoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2452,
+  {
+  },
+kaşıntı yapar. Selofan bant testi ile D şekilli yumurtalar görülür."
+    "exp": "Enterobius vermicularis (kıl kurdu), gece perianal bölgeye yumurta bırakarak 
+    "correct": 2,
+    ],
+      "Strongyloides stercoralis"
+      "Necator americanus",
+      "Enterobius vermicularis",
+      "Trichuris trichiura",
+      "Ascaris lumbricoides",
+    "options": [
+şeklinde yumurtalar saptanıyor. Bu helmint enfeksiyonunun etkeni aşağıdakilerden hangisidir?",
+    "q": "[Vaka 12/15] Perianal kaşıntı şikayeti olan bir çocukta selofan bant yöntemiyle D 
+    "diff": 4,
+    "konu": "Parazitoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2451,
+  {
+  },
+Trofozoitleri baykuş yüzü / gülümseyen yüz görünümündedir."
+    "exp": "Giardia lamblia (intestinalis), ince bağırsağa yapışarak yağ emilimini bozar. 
+----------------Page (24) Break----------------
+    "id": 2458,
+  {
+  },
+ederek mukozada yaşar ve kronik gastrit, ülser, MALT lenfoma yapar."
+    "exp": "Helicobacter pylori, güçlü üreaz aktivitesi sayesinde mide asidini nötralize 
+    "correct": 1,
+    ],
+      "Shigella flexneri"
+      "Vibrio parahaemolyticus",
+      "Salmonella typhi",
+      "Helicobacter pylori",
+      "Campylobacter jejuni",
+    "options": [
+kanseri riskini artıran bu etken hangisidir?",
+testi pozitif çıkan, spiral şekilli, Gram negatif ve mikroaerofilik bakteri saptanıyor. Mide 
+    "q": "[Vaka 3/15] Mide ülseri tanısıyla endoskopi yapılan hastanın biyopsisinde üreaz 
+    "diff": 3,
+    "konu": "Klinik Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2457,
+  {
+  },
+Pasteurella multocida'dır."
+    "exp": "Kedi/köpek ısırıklarından sonra ilk 24 saatte hızla selülit yapan en sık etken 
+    "correct": 1,
+    ],
+      "Streptobacillus moniliformis"
+      "Eikenella corrodens",
+      "Capnocytophaga canimorsus",
+      "Pasteurella multocida",
+      "Bartonella henselae",
+    "options": [
+hangisidir?",
+nedeniyle başvuran hastanın yara kültüründe Gram negatif kokobasil ürüyor. En olası etken 
+    "q": "[Vaka 2/15] Kedi ısırığı sonrası elde hızla gelişen şişlik ve selülit tablosu 
+    "diff": 3,
+    "konu": "Klinik Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2456,
+  {
+  },
+ve meyvemsi/ıhlamur kokulu nozokomiyal pnömoni etkenidir."
+    "exp": "Pseudomonas aeruginosa; piyosiyanin (mavi-yeşil) pigmenti üreten, oksidaz pozitif 
+    "correct": 2,
+    ],
+      "Stenotrophomonas maltophilia"
+      "Burkholderia cepacia",
+      "Pseudomonas aeruginosa",
+      "Klebsiella pneumoniae",
+      "Acinetobacter baumannii",
+    "options": [
+basiller ürüyor. Etken hangisidir?",
+kültüründe mavi-yeşil pigment üreten ve üzüm/ıhlamur kokulu Gram negatif non-fermenter 
+    "q": "[Vaka 1/15] Yoğun bakımda ventilatöre bağlı hastada gelişen pnömonide, balgam 
+    "diff": 3,
+    "konu": "Klinik Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2455,
+  {
+  },
+kaşıntı yapar. Selofan bant testi ile D şekilli yumurtalar görülür."
+    "exp": "Enterobius vermicularis (kıl kurdu), gece perianal bölgeye yumurta bırakarak 
+    "correct": 2,
+    ],
+      "Strongyloides stercoralis"
+      "Necator americanus",
+      "Enterobius vermicularis",
+      "Trichuris trichiura",
+----------------Page (25) Break----------------
+      "Burkholderia cepacia",
+      "Pseudomonas aeruginosa",
+      "Klebsiella pneumoniae",
+      "Acinetobacter baumannii",
+    "options": [
+basiller ürüyor. Etken hangisidir?",
+kültüründe mavi-yeşil pigment üreten ve üzüm/ıhlamur kokulu Gram negatif non-fermenter 
+    "q": "[Vaka 7/15] Yoğun bakımda ventilatöre bağlı hastada gelişen pnömonide, balgam 
+    "diff": 3,
+    "konu": "Klinik Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2461,
+  {
+  },
+ederek mukozada yaşar ve kronik gastrit, ülser, MALT lenfoma yapar."
+    "exp": "Helicobacter pylori, güçlü üreaz aktivitesi sayesinde mide asidini nötralize 
+    "correct": 1,
+    ],
+      "Shigella flexneri"
+      "Vibrio parahaemolyticus",
+      "Salmonella typhi",
+      "Helicobacter pylori",
+      "Campylobacter jejuni",
+    "options": [
+kanseri riskini artıran bu etken hangisidir?",
+testi pozitif çıkan, spiral şekilli, Gram negatif ve mikroaerofilik bakteri saptanıyor. Mide 
+    "q": "[Vaka 6/15] Mide ülseri tanısıyla endoskopi yapılan hastanın biyopsisinde üreaz 
+    "diff": 3,
+    "konu": "Klinik Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2460,
+  {
+  },
+Pasteurella multocida'dır."
+    "exp": "Kedi/köpek ısırıklarından sonra ilk 24 saatte hızla selülit yapan en sık etken 
+    "correct": 1,
+    ],
+      "Streptobacillus moniliformis"
+      "Eikenella corrodens",
+      "Capnocytophaga canimorsus",
+      "Pasteurella multocida",
+      "Bartonella henselae",
+    "options": [
+hangisidir?",
+nedeniyle başvuran hastanın yara kültüründe Gram negatif kokobasil ürüyor. En olası etken 
+    "q": "[Vaka 5/15] Kedi ısırığı sonrası elde hızla gelişen şişlik ve selülit tablosu 
+    "diff": 3,
+    "konu": "Klinik Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2459,
+  {
+  },
+ve meyvemsi/ıhlamur kokulu nozokomiyal pnömoni etkenidir."
+    "exp": "Pseudomonas aeruginosa; piyosiyanin (mavi-yeşil) pigmenti üreten, oksidaz pozitif 
+    "correct": 2,
+    ],
+      "Stenotrophomonas maltophilia"
+      "Burkholderia cepacia",
+      "Pseudomonas aeruginosa",
+      "Klebsiella pneumoniae",
+      "Acinetobacter baumannii",
+    "options": [
+basiller ürüyor. Etken hangisidir?",
+kültüründe mavi-yeşil pigment üreten ve üzüm/ıhlamur kokulu Gram negatif non-fermenter 
+    "q": "[Vaka 4/15] Yoğun bakımda ventilatöre bağlı hastada gelişen pnömonide, balgam 
+    "diff": 3,
+    "konu": "Klinik Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+----------------Page (26) Break----------------
+    "diff": 4,
+    "konu": "Klinik Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2465,
+  {
+  },
+ve meyvemsi/ıhlamur kokulu nozokomiyal pnömoni etkenidir."
+    "exp": "Pseudomonas aeruginosa; piyosiyanin (mavi-yeşil) pigmenti üreten, oksidaz pozitif 
+    "correct": 2,
+    ],
+      "Stenotrophomonas maltophilia"
+      "Burkholderia cepacia",
+      "Pseudomonas aeruginosa",
+      "Klebsiella pneumoniae",
+      "Acinetobacter baumannii",
+    "options": [
+basiller ürüyor. Etken hangisidir?",
+kültüründe mavi-yeşil pigment üreten ve üzüm/ıhlamur kokulu Gram negatif non-fermenter 
+    "q": "[Vaka 10/15] Yoğun bakımda ventilatöre bağlı hastada gelişen pnömonide, balgam 
+    "diff": 4,
+    "konu": "Klinik Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2464,
+  {
+  },
+ederek mukozada yaşar ve kronik gastrit, ülser, MALT lenfoma yapar."
+    "exp": "Helicobacter pylori, güçlü üreaz aktivitesi sayesinde mide asidini nötralize 
+    "correct": 1,
+    ],
+      "Shigella flexneri"
+      "Vibrio parahaemolyticus",
+      "Salmonella typhi",
+      "Helicobacter pylori",
+      "Campylobacter jejuni",
+    "options": [
+kanseri riskini artıran bu etken hangisidir?",
+testi pozitif çıkan, spiral şekilli, Gram negatif ve mikroaerofilik bakteri saptanıyor. Mide 
+    "q": "[Vaka 9/15] Mide ülseri tanısıyla endoskopi yapılan hastanın biyopsisinde üreaz 
+    "diff": 4,
+    "konu": "Klinik Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2463,
+  {
+  },
+Pasteurella multocida'dır."
+    "exp": "Kedi/köpek ısırıklarından sonra ilk 24 saatte hızla selülit yapan en sık etken 
+    "correct": 1,
+    ],
+      "Streptobacillus moniliformis"
+      "Eikenella corrodens",
+      "Capnocytophaga canimorsus",
+      "Pasteurella multocida",
+      "Bartonella henselae",
+    "options": [
+hangisidir?",
+nedeniyle başvuran hastanın yara kültüründe Gram negatif kokobasil ürüyor. En olası etken 
+    "q": "[Vaka 8/15] Kedi ısırığı sonrası elde hızla gelişen şişlik ve selülit tablosu 
+    "diff": 3,
+    "konu": "Klinik Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2462,
+  {
+  },
+ve meyvemsi/ıhlamur kokulu nozokomiyal pnömoni etkenidir."
+    "exp": "Pseudomonas aeruginosa; piyosiyanin (mavi-yeşil) pigmenti üreten, oksidaz pozitif 
+    "correct": 2,
+    ],
+      "Stenotrophomonas maltophilia"
+----------------Page (27) Break----------------
+    "correct": 1,
+    ],
+      "Streptobacillus moniliformis"
+      "Eikenella corrodens",
+      "Capnocytophaga canimorsus",
+      "Pasteurella multocida",
+      "Bartonella henselae",
+    "options": [
+hangisidir?",
+nedeniyle başvuran hastanın yara kültüründe Gram negatif kokobasil ürüyor. En olası etken 
+    "q": "[Vaka 14/15] Kedi ısırığı sonrası elde hızla gelişen şişlik ve selülit tablosu 
+    "diff": 4,
+    "konu": "Klinik Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2468,
+  {
+  },
+ve meyvemsi/ıhlamur kokulu nozokomiyal pnömoni etkenidir."
+    "exp": "Pseudomonas aeruginosa; piyosiyanin (mavi-yeşil) pigmenti üreten, oksidaz pozitif 
+    "correct": 2,
+    ],
+      "Stenotrophomonas maltophilia"
+      "Burkholderia cepacia",
+      "Pseudomonas aeruginosa",
+      "Klebsiella pneumoniae",
+      "Acinetobacter baumannii",
+    "options": [
+basiller ürüyor. Etken hangisidir?",
+kültüründe mavi-yeşil pigment üreten ve üzüm/ıhlamur kokulu Gram negatif non-fermenter 
+    "q": "[Vaka 13/15] Yoğun bakımda ventilatöre bağlı hastada gelişen pnömonide, balgam 
+    "diff": 4,
+    "konu": "Klinik Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2467,
+  {
+  },
+ederek mukozada yaşar ve kronik gastrit, ülser, MALT lenfoma yapar."
+    "exp": "Helicobacter pylori, güçlü üreaz aktivitesi sayesinde mide asidini nötralize 
+    "correct": 1,
+    ],
+      "Shigella flexneri"
+      "Vibrio parahaemolyticus",
+      "Salmonella typhi",
+      "Helicobacter pylori",
+      "Campylobacter jejuni",
+    "options": [
+kanseri riskini artıran bu etken hangisidir?",
+testi pozitif çıkan, spiral şekilli, Gram negatif ve mikroaerofilik bakteri saptanıyor. Mide 
+    "q": "[Vaka 12/15] Mide ülseri tanısıyla endoskopi yapılan hastanın biyopsisinde üreaz 
+    "diff": 4,
+    "konu": "Klinik Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2466,
+  {
+  },
+Pasteurella multocida'dır."
+    "exp": "Kedi/köpek ısırıklarından sonra ilk 24 saatte hızla selülit yapan en sık etken 
+    "correct": 1,
+    ],
+      "Streptobacillus moniliformis"
+      "Eikenella corrodens",
+      "Capnocytophaga canimorsus",
+      "Pasteurella multocida",
+      "Bartonella henselae",
+    "options": [
+hangisidir?",
+nedeniyle başvuran hastanın yara kültüründe Gram negatif kokobasil ürüyor. En olası etken 
+    "q": "[Vaka 11/15] Kedi ısırığı sonrası elde hızla gelişen şişlik ve selülit tablosu 
+----------------Page (28) Break----------------
+]
+  }
+ederek mukozada yaşar ve kronik gastrit, ülser, MALT lenfoma yapar."
+    "exp": "Helicobacter pylori, güçlü üreaz aktivitesi sayesinde mide asidini nötralize 
+    "correct": 1,
+    ],
+      "Shigella flexneri"
+      "Vibrio parahaemolyticus",
+      "Salmonella typhi",
+      "Helicobacter pylori",
+      "Campylobacter jejuni",
+    "options": [
+kanseri riskini artıran bu etken hangisidir?",
+testi pozitif çıkan, spiral şekilli, Gram negatif ve mikroaerofilik bakteri saptanıyor. Mide 
+    "q": "[Vaka 15/15] Mide ülseri tanısıyla endoskopi yapılan hastanın biyopsisinde üreaz 
+    "diff": 4,
+    "konu": "Klinik Mikrobiyoloji",
+    "ders": "Mikrobiyoloji",
+    "id": 2469,
+  {
+  },
+Pasteurella multocida'dır."
+    "exp": "Kedi/köpek ısırıklarından sonra ilk 24 saatte hızla selülit yapan en sık etken 
+----------------Page (29) Break----------------
