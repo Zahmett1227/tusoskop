@@ -5,6 +5,7 @@ const TABS = [
   {
     key: "dashboard",
     label: "Anasayfa",
+    activeTone: "emerald",
     icon: (active) => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.5 : 2}
         strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -14,19 +15,9 @@ const TABS = [
     ),
   },
   {
-    key: "examSetSelect",
-    label: "Deneme",
-    icon: (active) => (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.5 : 2}
-        strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-        <rect x="3" y="3" width="18" height="18" rx="3" />
-        <path d="M9 9h6M9 12h6M9 15h4" />
-      </svg>
-    ),
-  },
-  {
     key: "questionSetup",
     label: "Sorular",
+    activeTone: "cyan",
     icon: (active) => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.5 : 2}
         strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -36,8 +27,33 @@ const TABS = [
     ),
   },
   {
+    key: "studyCollection",
+    label: "Çalışma Alanım",
+    activeTone: "violet",
+    icon: (active) => (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.5 : 2}
+        strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+        <path d="M4 6h16v12H4z" />
+        <path d="M8 10h8M8 14h5" />
+      </svg>
+    ),
+  },
+  {
+    key: "examSetSelect",
+    label: "Deneme",
+    activeTone: "amber",
+    icon: (active) => (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.5 : 2}
+        strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+        <rect x="3" y="3" width="18" height="18" rx="3" />
+        <path d="M9 9h6M9 12h6M9 15h4" />
+      </svg>
+    ),
+  },
+  {
     key: "tracker",
     label: "Konular",
+    activeTone: "cyan",
     icon: (active) => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.5 : 2}
         strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -46,28 +62,17 @@ const TABS = [
       </svg>
     ),
   },
-  {
-    key: "suggestions",
-    label: "Öneriler",
-    icon: (active) => (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.5 : 2}
-        strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-        <line x1="12" y1="2" x2="12" y2="6" />
-        <line x1="12" y1="18" x2="12" y2="22" />
-        <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />
-        <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />
-        <line x1="2" y1="12" x2="6" y2="12" />
-        <line x1="18" y1="12" x2="22" y2="12" />
-        <line x1="4.93" y1="19.07" x2="7.76" y2="16.24" />
-        <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" />
-        <circle cx="12" cy="12" r="4" />
-      </svg>
-    ),
-  },
 ];
 
 export default function MobileBottomNav({ currentView, setView, accentTheme }) {
   const theme = accentTheme || accentThemes.emerald;
+  const toneClass = (tone) => {
+    if (tone === "violet") return "text-violet-300 bg-violet-400/15 border-violet-300/30";
+    if (tone === "amber") return "text-amber-300 bg-amber-400/15 border-amber-300/30";
+    if (tone === "cyan") return "text-cyan-300 bg-cyan-400/15 border-cyan-300/30";
+    return `${theme.text} ${theme.softBg} ${theme.softBorder}`;
+  };
+
   return (
     <nav
       className="fixed bottom-0 left-0 right-0 z-40 md:hidden
@@ -85,7 +90,7 @@ export default function MobileBottomNav({ currentView, setView, accentTheme }) {
               className={`
                 flex-1 flex flex-col items-center justify-center pt-2.5 pb-2 gap-1
                 transition-all duration-150 active:scale-90
-                ${active ? theme.text : "text-slate-500"}
+                ${active ? "text-white" : "text-slate-500"}
               `}
             >
               {/* Active indicator bar */}
@@ -94,7 +99,9 @@ export default function MobileBottomNav({ currentView, setView, accentTheme }) {
                   ${active ? `${theme.primary} opacity-100` : "opacity-0"}`}
               />
               <span
-                className={`transition-transform duration-200 ${active ? "scale-110" : "scale-100"}`}
+                className={`transition-all duration-200 w-9 h-9 rounded-full border flex items-center justify-center ${
+                  active ? `${toneClass(tab.activeTone)} scale-110 shadow-lg` : "border-transparent"
+                }`}
               >
                 {tab.icon(active)}
               </span>

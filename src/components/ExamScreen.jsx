@@ -9,6 +9,7 @@ import {
   estimatedTusNumericFromNet,
 } from "../utils/examHistoryUtils";
 import { trackClarityEvent } from "../lib/clarity";
+import { addWrongQuestion } from "../services/studyCollectionService";
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -298,6 +299,19 @@ export default function ExamScreen({
           });
         }
       });
+
+      const wrongSaveTasks = examQuestions
+        .map((q, idx) => {
+          const userAnswer = getSelectedAnswerIndex(finalAnswers, q, idx);
+          if (userAnswer === undefined || userAnswer === null || userAnswer === q.correct) {
+            return null;
+          }
+          return addWrongQuestion(user, q, userAnswer);
+        })
+        .filter(Boolean);
+      if (wrongSaveTasks.length) {
+        await Promise.allSettled(wrongSaveTasks);
+      }
 
       const tusNet = Number((correct - wrong / 4).toFixed(2));
       const totalNet = tusNet;

@@ -1,15 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { db, auth } from "../firebase";
 import {
-  doc, getDoc, setDoc, collection, query,
-  where, limit, getDocs,
+  doc, getDoc, setDoc,
 } from "firebase/firestore";
-
-import { Line } from "react-chartjs-2";
-import {
-  Chart as ChartJS, CategoryScale, LinearScale, PointElement,
-  LineElement, Title, Tooltip, Legend, Filler
-} from 'chart.js';
 
 import SubjectCard from "./SubjectCard";
 import TusCountDown from "./TusCountDown";
@@ -18,33 +11,10 @@ import { SUBJECTS } from "../data/subjects";
 import { QUESTIONS } from "../data/questions";
 import { accentThemes } from "../theme/accentThemes";
 import {
-  mergeExamHistories,
-  normalizeFirestoreResultDoc,
-  normalizeLocalExamEntry,
-  buildChartRows,
-  summarizeNetStats,
-  loadLocalExamHistory,
-} from "../utils/examHistoryUtils";
-
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
-
-function useIsSmallScreen() {
-  const [isSmall, setIsSmall] = useState(false);
-  useEffect(() => {
-    const update = () => setIsSmall(window.innerWidth < 640);
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
-  return isSmall;
-}
-
-function chartStrokeForTheme(key) {
-  if (key === "cyan") return "#22d3ee";
-  if (key === "violet") return "#a78bfa";
-  if (key === "amber") return "#fbbf24";
-  return "#34d399";
-}
+  buildTodayReviewQueue,
+  getStudyCollectionSummary,
+} from "../services/studyCollectionService";
+import { trackClarityEvent } from "../lib/clarity";
 
 export default function Dashboard({
   setView,
@@ -58,11 +28,14 @@ export default function Dashboard({
   currentView = "dashboard",
 }) {
   const theme = accentTheme || accentThemes.emerald;
-  const isSmallScreen = useIsSmallScreen();
   const [myTarget, setMyTarget] = useState(65.00);
   const [tempTarget, setTempTarget] = useState(65.00);
   const [isEditingTarget, setIsEditingTarget] = useState(false);
-  const [examHistoryMerged, setExamHistoryMerged] = useState([]);
+  const [studySummary, setStudySummary] = useState({
+    wrongCount: 0,
+    favoriteCount: 0,
+    reviewQueueCount: 0,
+  });
   const subjectCounts = useMemo(() => {
     const counts = {};
     QUESTIONS.forEach((item) => {
@@ -73,11 +46,9 @@ export default function Dashboard({
 
   useEffect(() => {
     if (!user?.uid) return;
-
-    async function loadExamHistory() {
+    const loadTarget = async () => {
       const authed = auth.currentUser;
       if (!authed?.uid) return;
-
       try {
         const userDoc = await getDoc(doc(db, "users", authed.uid));
         if (userDoc.exists() && userDoc.data().targetScore) {
@@ -85,174 +56,37 @@ export default function Dashboard({
           setMyTarget(target);
           setTempTarget(target);
         }
-
-        const resultsQuery = query(
-          collection(db, "results"),
-          where("userId", "==", authed.uid),
-          limit(120)
-        );
-
-        const querySnapshot = await getDocs(resultsQuery);
-        const firestoreRows = querySnapshot.docs.map(normalizeFirestoreResultDoc);
-        const localRaw = loadLocalExamHistory();
-        const localRows = localRaw.map((row, i) => normalizeLocalExamEntry(row, i));
-        const merged = mergeExamHistories(firestoreRows, localRows);
-
-        merged.sort((a, b) => {
-          const ta = a.rawDate ? new Date(a.rawDate).getTime() : Number.MAX_SAFE_INTEGER;
-          const tb = b.rawDate ? new Date(b.rawDate).getTime() : Number.MAX_SAFE_INTEGER;
-          if (ta !== tb) return ta - tb;
-          return String(a.id ?? "").localeCompare(String(b.id ?? ""));
-        });
-
-        setExamHistoryMerged(merged);
       } catch (err) {
-        console.error("Dashboard veri hatası:", err);
+        console.error("Hedef net verisi alınamadı:", err);
       }
-    }
-
-    loadExamHistory();
-
-    const refresh = () => loadExamHistory();
-    window.addEventListener("tusoskop-exam-saved", refresh);
-    const onVis = () => {
-      if (document.visibilityState === "visible") loadExamHistory();
     };
-    document.addEventListener("visibilitychange", onVis);
+    loadTarget();
+  }, [user?.uid]);
 
+  useEffect(() => {
+    let active = true;
+    const loadStudySummary = async () => {
+      try {
+        const [summary, queue] = await Promise.all([
+          getStudyCollectionSummary(user),
+          buildTodayReviewQueue(user, QUESTIONS),
+        ]);
+        if (!active) return;
+        setStudySummary({
+          wrongCount: summary?.wrongCount || 0,
+          favoriteCount: summary?.favoriteCount || 0,
+          reviewQueueCount: queue.length,
+        });
+      } catch {
+        if (!active) return;
+        setStudySummary({ wrongCount: 0, favoriteCount: 0, reviewQueueCount: 0 });
+      }
+    };
+    loadStudySummary();
     return () => {
-      window.removeEventListener("tusoskop-exam-saved", refresh);
-      document.removeEventListener("visibilitychange", onVis);
+      active = false;
     };
   }, [user?.uid, currentView]);
-
-  const sortedExamHistory = useMemo(() => {
-    return [...examHistoryMerged].sort((a, b) => {
-      const ta = a.rawDate ? new Date(a.rawDate).getTime() : Number.MAX_SAFE_INTEGER;
-      const tb = b.rawDate ? new Date(b.rawDate).getTime() : Number.MAX_SAFE_INTEGER;
-      if (ta !== tb) return ta - tb;
-      return String(a.id ?? "").localeCompare(String(b.id ?? ""));
-    });
-  }, [examHistoryMerged]);
-
-  const performanceChart = useMemo(() => {
-    const chartRows = buildChartRows(sortedExamHistory, { chartPointLimit: 20 });
-    const summaryStats = summarizeNetStats(sortedExamHistory);
-    const stroke = chartStrokeForTheme(accentThemeKey);
-
-    if (chartRows.length === 0) {
-      return { chartRows: [], summaryStats, chartData: null, lineOptions: null };
-    }
-
-    const labels = chartRows.map((r) => r.shortDate);
-    const nets = chartRows.map((r) => r.tusNet);
-    const targetLine = chartRows.map(() => myTarget);
-    const pad = 14;
-    const dataMin = Math.min(...nets, myTarget);
-    const dataMax = Math.max(...nets, myTarget);
-    const minY = Math.max(-55, dataMin - pad);
-    const maxY = Math.min(210, dataMax + pad);
-
-    const chartData = {
-      labels,
-      datasets: [
-        {
-          label: "TUS neti",
-          data: nets,
-          fill: true,
-          borderColor: stroke,
-          backgroundColor: `${stroke}22`,
-          tension: 0.35,
-          pointBackgroundColor: stroke,
-          pointBorderColor: "#0f172a",
-          pointBorderWidth: 2,
-          pointRadius: isSmallScreen ? 3 : 4,
-          pointHoverRadius: isSmallScreen ? 5 : 6,
-        },
-        {
-          label: `Hedef net ${myTarget % 1 === 0 ? myTarget.toFixed(0) : myTarget.toFixed(2)}`,
-          data: targetLine,
-          borderColor: "rgba(248, 113, 113, 0.65)",
-          backgroundColor: "transparent",
-          borderDash: [6, 5],
-          pointRadius: 0,
-          fill: false,
-          tension: 0,
-        },
-      ],
-    };
-
-    const lineOptions = {
-      responsive: true,
-      maintainAspectRatio: false,
-      interaction: { mode: "index", intersect: false },
-      plugins: {
-        legend: {
-          display: true,
-          position: "bottom",
-          labels: {
-            color: "#94a3b8",
-            boxWidth: 10,
-            font: { size: isSmallScreen ? 9 : 11 },
-          },
-        },
-        tooltip: {
-          filter: (tooltipItem) => tooltipItem.datasetIndex === 0,
-          backgroundColor: "rgba(15, 23, 42, 0.96)",
-          titleColor: "#f1f5f9",
-          bodyColor: "#cbd5e1",
-          borderColor: "rgba(148, 163, 184, 0.25)",
-          borderWidth: 1,
-          padding: 12,
-          titleFont: { size: 13, weight: "600" },
-          bodyFont: { size: 12 },
-          callbacks: {
-            title: (items) => {
-              const i = items[0]?.dataIndex ?? 0;
-              return chartRows[i]?.fullDate ?? "";
-            },
-            label: (item) => {
-              if (item.datasetIndex !== 0) return null;
-              const i = item.dataIndex;
-              const row = chartRows[i];
-              if (!row) return "";
-              return `TUS neti: ${row.tusNet}`;
-            },
-            afterLabel: (item) => {
-              if (item.datasetIndex !== 0) return "";
-              const row = chartRows[item.dataIndex];
-              if (!row) return "";
-              return `Doğru: ${row.correct}  Yanlış: ${row.wrong}  Boş: ${row.blank}`;
-            },
-          },
-        },
-      },
-      scales: {
-        x: {
-          grid: { display: false },
-          ticks: {
-            color: "#64748b",
-            maxRotation: isSmallScreen ? 50 : 35,
-            minRotation: 0,
-            autoSkip: true,
-            maxTicksLimit: isSmallScreen ? 5 : 12,
-            font: { size: isSmallScreen ? 9 : 10, weight: "600" },
-          },
-        },
-        y: {
-          min: minY,
-          max: maxY,
-          grid: { color: "rgba(255,255,255,0.06)" },
-          ticks: {
-            color: "#64748b",
-            font: { size: 10, weight: "600" },
-          },
-        },
-      },
-    };
-
-    return { chartRows, summaryStats, chartData, lineOptions };
-  }, [sortedExamHistory, myTarget, accentThemeKey, isSmallScreen]);
 
   const adjustTarget = (amount) => {
     setTempTarget(prev => {
@@ -470,85 +304,57 @@ export default function Dashboard({
           </div>
         </div>
 
-        {/* Deneme performans grafiği */}
-        <div className="bg-slate-900/50 border border-slate-800 rounded-[3rem] p-6 md:p-8 mb-6 relative overflow-hidden min-w-0">
-          <div className="absolute top-0 right-0 p-6 opacity-[0.04] text-6xl font-black tracking-tighter select-none pointer-events-none">
-            CHART
-          </div>
-
-          <div className="relative z-10 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-6 min-w-0">
+        <div className="mb-6 rounded-[2.25rem] border border-emerald-300/20 bg-gradient-to-br from-slate-900 via-[#0b1326] to-emerald-950/20 p-5 md:p-7 shadow-[0_0_0_1px_rgba(16,185,129,0.08),0_28px_60px_-30px_rgba(16,185,129,0.35)]">
+          <div className="min-w-0 space-y-4 md:space-y-5">
             <div className="min-w-0">
-              <h3 className="text-lg md:text-xl font-black text-white tracking-tight mb-1">
-                Deneme Performansı
+              <p className={`text-[10px] md:text-xs font-black uppercase tracking-[0.28em] ${theme.text}`}>
+                Çalışma Alanım
+              </p>
+              <h3 className="mt-1 text-xl md:text-2xl font-black tracking-tight text-white">
+                Tekrarlarını tek yerden yönet
               </h3>
-              <p className="text-slate-500 text-xs md:text-sm font-medium">
-                Son denemelerde TUS neti değişimi (grafikte son 20 deneme)
+              <p className="mt-2 text-sm text-slate-300 line-clamp-2">
+                Yanlışların, favorilerin ve bugünkü tekrar kuyruğun tek ekranda.
+              </p>
+              <p className="mt-1 text-xs md:text-sm text-slate-400 line-clamp-2">
+                Deneme net grafiğin de burada; eksik kaldığın yerleri daha net gör.
               </p>
             </div>
-            <div className="flex flex-wrap gap-3 lg:justify-end shrink-0">
-              <div className="rounded-2xl bg-slate-950/70 border border-slate-800 px-4 py-3 min-w-[88px]">
-                <p className="text-[10px] font-black text-slate-500 uppercase tracking-wider mb-1">
-                  Son net
-                </p>
-                <p className={`text-xl font-black tabular-nums ${theme.text}`}>
-                  {performanceChart.summaryStats.last != null
-                    ? performanceChart.summaryStats.last
-                    : "—"}
-                </p>
+
+            <div className="grid grid-cols-3 gap-2.5 md:gap-3 min-w-0">
+              <div className="rounded-2xl border border-slate-700/70 bg-slate-950/55 px-3 py-3 md:px-4 md:py-3.5 min-w-0">
+                <p className="text-[10px] uppercase tracking-wider text-slate-500 font-black">Yanlışlarım</p>
+                <p className="mt-1 text-lg md:text-xl font-black text-rose-300 tabular-nums">{studySummary.wrongCount || 0}</p>
               </div>
-              <div className="rounded-2xl bg-slate-950/70 border border-slate-800 px-4 py-3 min-w-[88px]">
-                <p className="text-[10px] font-black text-slate-500 uppercase tracking-wider mb-1">
-                  En iyi net
-                </p>
-                <p className="text-xl font-black tabular-nums text-emerald-400">
-                  {performanceChart.summaryStats.best != null
-                    ? performanceChart.summaryStats.best
-                    : "—"}
-                </p>
+              <div className="rounded-2xl border border-slate-700/70 bg-slate-950/55 px-3 py-3 md:px-4 md:py-3.5 min-w-0">
+                <p className="text-[10px] uppercase tracking-wider text-slate-500 font-black">Favorilerim</p>
+                <p className="mt-1 text-lg md:text-xl font-black text-amber-300 tabular-nums">{studySummary.favoriteCount || 0}</p>
               </div>
-              <div className="rounded-2xl bg-slate-950/70 border border-slate-800 px-4 py-3 min-w-[88px]">
-                <p className="text-[10px] font-black text-slate-500 uppercase tracking-wider mb-1">
-                  Ortalama net
-                </p>
-                <p className="text-xl font-black tabular-nums text-slate-200">
-                  {performanceChart.summaryStats.avg != null
-                    ? performanceChart.summaryStats.avg
-                    : "—"}
-                </p>
+              <div className="rounded-2xl border border-slate-700/70 bg-slate-950/55 px-3 py-3 md:px-4 md:py-3.5 min-w-0">
+                <p className="text-[10px] uppercase tracking-wider text-slate-500 font-black">Tekrar Kuyruğu</p>
+                <p className={`mt-1 text-lg md:text-xl font-black tabular-nums ${theme.text}`}>{studySummary.reviewQueueCount || 0}</p>
               </div>
             </div>
-          </div>
 
-          <div className="relative z-10 min-w-0 w-full overflow-x-auto">
-            {sortedExamHistory.length === 0 ? (
-              <div className="flex flex-col items-center justify-center py-12 px-4 text-center rounded-2xl border border-dashed border-slate-800 bg-slate-950/40">
-                <span className="text-4xl mb-3" aria-hidden="true">
-                  📈
-                </span>
-                <p className="text-white font-black text-base mb-1">
-                  Henüz deneme verisi yok
-                </p>
-                <p className="text-slate-500 text-sm max-w-sm mb-6">
-                  Deneme çözdükçe TUS netin burada görünecek.
+            <div className="rounded-2xl border border-slate-800/80 bg-slate-950/45 px-3.5 py-3 md:px-4 md:py-3.5">
+              <div className="flex flex-col gap-3 md:gap-3.5">
+                <p className="text-xs md:text-sm text-slate-300 leading-relaxed">
+                  {studySummary.reviewQueueCount > 0
+                    ? `Bugünkü tekrarın hazır: ${studySummary.reviewQueueCount} soru`
+                    : "Tekrar kuyruğun, yanlışların ve favorilerin biriktikçe oluşacak."}
                 </p>
                 <button
                   type="button"
-                  onClick={() => setView("examSetSelect")}
-                  className={`px-8 py-3 rounded-2xl font-black text-sm ${theme.primary} ${theme.primaryHover} text-slate-950 shadow-lg ${theme.glow}`}
+                  onClick={() => {
+                    trackClarityEvent("study_area_card_clicked");
+                    setView("studyCollection");
+                  }}
+                  className="w-full md:w-auto md:self-start min-h-11 px-5 md:px-6 rounded-2xl text-sm font-black text-white bg-gradient-to-r from-emerald-500/90 via-teal-500/85 to-violet-500/85 hover:from-emerald-400 hover:via-teal-400 hover:to-violet-400 shadow-[0_10px_30px_-16px_rgba(45,212,191,0.9)] transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
                 >
-                  Deneme çöz
+                  Çalışma Alanını Aç
                 </button>
               </div>
-            ) : (
-              <div className="h-[260px] md:h-[340px] w-full min-w-0 mx-auto">
-                {performanceChart.chartData && performanceChart.lineOptions ? (
-                  <Line
-                    data={performanceChart.chartData}
-                    options={performanceChart.lineOptions}
-                  />
-                ) : null}
-              </div>
-            )}
+            </div>
           </div>
         </div>
 
@@ -566,12 +372,13 @@ export default function Dashboard({
           </button>
           <button
             onClick={() => setView("tracker")}
-            className="group flex items-center gap-4 px-6 py-5 rounded-[2rem] bg-slate-900 border border-slate-800 hover:border-slate-600 transition-all text-left"
+            className="group relative flex items-center gap-4 px-7 py-6 rounded-[2rem] bg-gradient-to-br from-violet-500/20 via-fuchsia-500/10 to-cyan-400/20 border border-violet-300/35 hover:border-violet-200/70 transition-all text-left shadow-[0_0_0_1px_rgba(167,139,250,0.15),0_24px_45px_-24px_rgba(167,139,250,0.65)] sm:scale-[1.03] hover:scale-[1.05]"
           >
-            <span className="text-2xl">📚</span>
-            <div>
-              <p className="font-black text-sm text-white">Konu Haritam</p>
-              <p className="text-[10px] text-slate-500 font-medium">İlerlemeyi takip et</p>
+            <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.2),transparent_45%)] opacity-90 pointer-events-none" />
+            <span className="relative z-10 text-3xl drop-shadow-[0_0_12px_rgba(167,139,250,0.85)]">🗺️</span>
+            <div className="relative z-10">
+              <p className="font-black text-base text-white tracking-tight">Konu Yeterlilik Düzeyim</p>
+              <p className="text-[11px] text-violet-100/80 font-semibold">Konu bazında ustalık, tekrar ve güç alanların</p>
             </div>
           </button>
           <button

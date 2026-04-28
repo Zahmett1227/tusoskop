@@ -21,6 +21,9 @@ export default function StudyScreen({
   mastery,
   topicProgress,
   accentTheme,
+  isFavorite,
+  onToggleFavorite,
+  favoriteFeedback,
 }) {
   const theme = accentTheme || accentThemes.emerald;
   if (!q && total > 0) {
@@ -144,7 +147,27 @@ export default function StudyScreen({
         )}
 
         {/* Soru kartı */}
-        <div className={`rounded-3xl border ${theme.border} bg-gradient-to-br from-slate-950/95 via-slate-900/95 to-slate-950/95 shadow-2xl ${theme.glow} backdrop-blur-xl p-5 md:p-8`}>
+        <div className={`relative rounded-3xl border ${theme.border} bg-gradient-to-br from-slate-950/95 via-slate-900/95 to-slate-950/95 shadow-2xl ${theme.glow} backdrop-blur-xl p-5 md:p-8`}>
+          <button
+            type="button"
+            onClick={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              console.log("FAVORITE BUTTON CLICKED", {
+                questionId: q?.id,
+                isFavorite,
+              });
+              onToggleFavorite?.(q);
+            }}
+            title={isFavorite ? "Favorilerden çıkar" : "Favorilere ekle"}
+            className={`absolute z-20 top-3 right-3 min-h-10 min-w-10 px-2 rounded-full border text-lg font-black pointer-events-auto transition-all ${
+              isFavorite
+                ? "border-amber-300/60 bg-amber-400/15 text-amber-200"
+                : "border-slate-700 bg-slate-900/80 text-slate-400 hover:text-amber-200"
+            }`}
+          >
+            {isFavorite ? "★" : "☆"}
+          </button>
           <div className={`mb-4 text-xs md:text-sm font-extrabold tracking-wide ${theme.text} uppercase`}>
             {q.ders} • {q.konu}
           </div>
@@ -255,6 +278,11 @@ export default function StudyScreen({
             }`}
           >
             {feedback.text}
+          </div>
+        )}
+        {favoriteFeedback && (
+          <div className="rounded-2xl px-4 py-3 text-sm font-semibold border border-amber-300/25 bg-amber-400/10 text-amber-100">
+            {favoriteFeedback}
           </div>
         )}
 

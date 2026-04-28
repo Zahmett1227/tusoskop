@@ -22,6 +22,13 @@ import {
   setClarityTag,
   trackClarityEvent,
 } from "./lib/clarity";
+import {
+  addWrongQuestion,
+  getFavoriteQuestions,
+  getWrongQuestions,
+  toggleFavoriteQuestion,
+  updateWrongQuestionAfterReview,
+} from "./services/studyCollectionService";
 
 // Bileşenler (Screens)
 import Dashboard from "./components/Dashboard";
@@ -30,6 +37,8 @@ import Summary from "./components/Summary";
 import ExamScreen from "./components/ExamScreen";
 import ExamAnalysisScreen from "./components/ExamAnalysisScreen";
 import StudyScreen from "./components/StudyScreen";
+import StudyCollectionScreen from "./components/StudyCollectionScreen";
+import ReviewSummaryScreen from "./components/ReviewSummaryScreen";
 import QuestionSetupScreen from "./components/QuestionSetupScreen";
 import ExamSetSelectScreen from "./components/ExamSetSelectScreen";
 import TopicTracker from "./components/TopicTracker";
@@ -48,8 +57,8 @@ const BOTTOM_NAV_VIEWS = new Set([
   "dashboard",
   "examSetSelect",
   "questionSetup",
+  "studyCollection",
   "tracker",
-  "suggestions",
 ]);
 const QUESTION_HISTORY_KEY = "tusoskop-question-history";
 const isReactEventOrDomNode = (value) =>
@@ -123,6 +132,9 @@ export default function App() {
   const [studyFeedback, setStudyFeedback] = useState(null);
   const [topicMastery, setTopicMastery] = useState({});
   const [feedbackMeta, setFeedbackMeta] = useState({ count: 0, lastText: "", lastType: "", lastTopic: "" });
+  const [favoriteQuestionIds, setFavoriteQuestionIds] = useState(new Set());
+  const [favoriteFeedback, setFavoriteFeedback] = useState("");
+  const [reviewSummary, setReviewSummary] = useState(null);
 
   // --- 3. DENEME MODU (EXAM) STATE ---
   const [examQuestions, setExamQuestions] = useState([]);
@@ -181,6 +193,19 @@ export default function App() {
     }
   }, [user?.uid]);
 
+  useEffect(() => {
+    let active = true;
+    const loadFavorites = async () => {
+      const list = await getFavoriteQuestions(user);
+      if (!active) return;
+      setFavoriteQuestionIds(new Set(list.map((item) => Number(item.questionId))));
+    };
+    loadFavorites();
+    return () => {
+      active = false;
+    };
+  }, [user?.uid]);
+
   // --- 7. YARDIMCI FONKSİYONLAR ---
   const resetStudyState = () => {
     setCurrentSubject(null); setCurrentIndex(0); setSelected(null);
@@ -197,6 +222,47 @@ export default function App() {
   };
 
   const goDashboard = () => { resetStudyState(); setView("dashboard"); };
+
+  const showFavoriteToast = (text) => {
+    setFavoriteFeedback(text);
+    setTimeout(() => setFavoriteFeedback(""), 1400);
+  };
+
+  const handleToggleFavorite = async (question) => {
+    if (!question?.id) return;
+    console.log("FAVORITE BUTTON CLICKED", {
+      questionId: question?.id,
+      userUid: user?.uid,
+      isFavorite: favoriteQuestionIds.has(Number(question?.id)),
+    });
+    const result = await toggleFavoriteQuestion(user, question);
+    console.log("FAVORITE TOGGLE RESULT", {
+      questionId: question?.id,
+      userUid: user?.uid,
+      result,
+    });
+    setFavoriteQuestionIds((prev) => {
+      const next = new Set(prev);
+      if (result?.isFavorite) next.add(Number(question.id));
+      else next.delete(Number(question.id));
+      return next;
+    });
+    showFavoriteToast(result?.isFavorite ? "Favorilere eklendi" : "Favorilerden çıkarıldı");
+  };
+
+  const startReviewWithQuestions = (questionList, source = "custom") => {
+    const list = Array.isArray(questionList) ? questionList.filter(Boolean) : [];
+    if (!list.length) return;
+    resetStudyState();
+    setStudyMode("review");
+    setCurrentSubject("Çalışma Alanım Tekrarı");
+    setActiveTopicSubject("Çalışma Alanım");
+    setActiveTopicName(source);
+    setActiveQuestions(list);
+    setView("study");
+    setClarityTag("son_mod", "review");
+    trackClarityEvent("bugunku_tekrar_baslatildi");
+  };
 
   const startSubject = (subjectName) => {
     const filtered = QUESTIONS.filter((item) => item.ders === subjectName);
@@ -249,8 +315,8 @@ export default function App() {
   };
 
   // --- 8. EVENT HANDLERS ---
-  const handleReveal = () => {
-    revealCurrentAnswer(selected);
+  const handleReveal = async () => {
+    await revealCurrentAnswer(selected);
   };
 
   const getTimeMetrics = () => {
@@ -410,10 +476,22 @@ export default function App() {
     });
   };
 
-  const revealCurrentAnswer = (answerOverride = selected) => {
+  const revealCurrentAnswer = async (answerOverride = selected) => {
     setShowResult(true);
     const answer = answerOverride;
     const isCorrect = answer !== null && answer !== undefined && answer === q?.correct;
+    const isWrong =
+      answer !== null &&
+      answer !== undefined &&
+      Number(answer) !== Number(q?.correct);
+    console.log("STUDY ANSWER CHECK", {
+      questionId: q?.id,
+      selectedAnswer: answer,
+      correctAnswer: q?.correct,
+      isCorrect,
+      isWrong,
+      studyMode,
+    });
     if (isCorrect) setScore((prev) => prev + 1);
     updateStreakForQuestion(isCorrect, q?.id);
     recordQuestionTime(q?.id);
@@ -440,9 +518,16 @@ export default function App() {
     recordHistoryForQuestion({
       question: q,
       selectedOption: answer,
-      mode: studyMode === "topic" ? "topic" : "study",
+      mode: studyMode === "topic" ? "topic" : studyMode === "review" ? "review" : "study",
     });
     if (user) updateStreak(user.uid);
+    if (studyMode === "review") {
+      if (answer !== null && answer !== undefined && q?.id) {
+        await updateWrongQuestionAfterReview(user, q, isCorrect, answer);
+      }
+    } else if (isWrong && q?.id) {
+      await addWrongQuestion(user, q, answer);
+    }
   };
 
   const getSocialProof = (question) => {
@@ -521,11 +606,28 @@ export default function App() {
     }, 700);
   };
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (currentIndex < activeQuestions.length - 1) {
       setCurrentIndex(prev => prev + 1); setSelected(null); setShowResult(false);
       setStudyFeedback(null);
     } else {
+      if (studyMode === "review") {
+        const wrongRecords = await getWrongQuestions(user);
+        const activeIds = new Set(activeQuestions.map((item) => Number(item.id)));
+        const stillNeedsReview = wrongRecords.filter(
+          (item) => activeIds.has(Number(item.questionId)) && !item.isResolved
+        ).length;
+        setReviewSummary({
+          total: activeQuestions.length,
+          correct: score,
+          wrong: Math.max(0, activeQuestions.length - score),
+          stillNeedsReview,
+        });
+        trackClarityEvent("tekrar_tamamlandi");
+        resetStudyState();
+        setView("reviewSummary");
+        return;
+      }
       persistStudySessionMetrics();
       setView("summary");
     }
@@ -740,7 +842,34 @@ export default function App() {
           mastery={getMasteryLevel(q?.konu)}
           topicProgress={topicProgress}
           accentTheme={accentTheme}
+          isFavorite={favoriteQuestionIds.has(Number(q?.id))}
+          onToggleFavorite={handleToggleFavorite}
+          favoriteFeedback={favoriteFeedback}
           goDashboard={goDashboard}
+        />
+      );
+      break;
+
+    case "studyCollection":
+      screenContent = (
+        <StudyCollectionScreen
+          user={user}
+          questions={QUESTIONS}
+          accentTheme={accentTheme}
+          accentThemeKey={accentThemeKey}
+          goDashboard={goDashboard}
+          openExamSetSelect={() => setView("examSetSelect")}
+          startReviewWithQuestions={startReviewWithQuestions}
+        />
+      );
+      break;
+
+    case "reviewSummary":
+      screenContent = (
+        <ReviewSummaryScreen
+          summary={reviewSummary}
+          accentTheme={accentTheme}
+          goStudyCollection={() => setView("studyCollection")}
         />
       );
       break;
