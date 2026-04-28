@@ -24,18 +24,34 @@ export const saveTusResult = async (user, questions, answers) => {
       }
     });
 
-    const totalNet = correct - (wrong * 0.25);
+    const tusNet = Number((correct - wrong / 4).toFixed(2));
+    const totalNet = tusNet;
+
+    const completedAt = new Date().toISOString();
 
     // Firestore'a gönderilecek paket
     const resultData = {
       userId: user.uid,
       examTitle: "TUS Genel Deneme",
+      completedAt,
       date: serverTimestamp(),
+      tusNet,
       stats: {
         correct: correct,
         wrong: wrong,
-        net: totalNet
+        net: totalNet,
+        totalNet,
       },
+      estimatedTusScore:
+        totalNet >= 140
+          ? 72
+          : totalNet >= 120
+            ? 68
+            : totalNet >= 95
+              ? 62
+              : totalNet >= 75
+                ? 56
+                : 50,
       breakdown: branchStats // Ders ders başarı oranları
     };
 

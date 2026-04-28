@@ -620,6 +620,7 @@ export default function App() {
           accentTheme={accentTheme}
           accentThemeKey={accentThemeKey}
           onAccentThemeChange={handleAccentThemeChange}
+          currentView={view}
         />
       );
       break;
@@ -735,6 +736,7 @@ export default function App() {
           accentTheme={accentTheme}
           accentThemeKey={accentThemeKey}
           onAccentThemeChange={handleAccentThemeChange}
+          currentView={view}
         />
       );
   }

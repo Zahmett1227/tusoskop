@@ -4,6 +4,10 @@ import { collection, addDoc, serverTimestamp, doc, getDoc } from "firebase/fires
 import { updateStreak } from "../services/streakService";
 import { accentThemes } from "../theme/accentThemes";
 import { getSelectedAnswerIndex } from "../utils/examUtils";
+import {
+  appendLocalExamHistory,
+  estimatedTusNumericFromNet,
+} from "../utils/examHistoryUtils";
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -294,15 +298,39 @@ export default function ExamScreen({
         }
       });
 
-      const totalNet = parseFloat((correct - wrong * 0.25).toFixed(2));
+      const tusNet = Number((correct - wrong / 4).toFixed(2));
+      const totalNet = tusNet;
+      const completedAt = new Date().toISOString();
+      const estimatedTusScore = estimatedTusNumericFromNet(totalNet);
 
-      await addDoc(collection(db, "results"), {
+      const docRef = await addDoc(collection(db, "results"), {
         userId: user.uid,
         examTitle: examTitle || "TUS Genel Deneme",
+        completedAt,
         date: serverTimestamp(),
+        tusNet,
         stats: { correct, wrong, empty, totalNet },
+        estimatedTusScore,
         breakdown,
       });
+
+      appendLocalExamHistory({
+        id: docRef.id,
+        completedAt,
+        tusNet,
+        estimatedTusScore,
+        totalCorrect: correct,
+        totalWrong: wrong,
+        totalBlank: empty,
+        totalNet,
+        examTitle: examTitle || "TUS Genel Deneme",
+      });
+
+      try {
+        window.dispatchEvent(new CustomEvent("tusoskop-exam-saved"));
+      } catch {
+        /* ignore */
+      }
 
       setResults({ correct, wrong, empty, totalNet, breakdown });
       setWrongByLessonTopic(wByLT);
