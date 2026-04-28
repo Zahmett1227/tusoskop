@@ -308,16 +308,16 @@ export default function Dashboard({
           <div className="min-w-0 space-y-4 md:space-y-5">
             <div className="min-w-0">
               <p className={`text-[10px] md:text-xs font-black uppercase tracking-[0.28em] ${theme.text}`}>
-                Çalışma Alanım
+                ÇALIŞMA ALANIM
               </p>
               <h3 className="mt-1 text-xl md:text-2xl font-black tracking-tight text-white">
                 Tekrarlarını tek yerden yönet
               </h3>
-              <p className="mt-2 text-sm text-slate-300 line-clamp-2">
-                Yanlışların, favorilerin ve bugünkü tekrar kuyruğun tek ekranda.
+              <p className="mt-2 text-[13px] md:text-sm text-slate-300 leading-snug line-clamp-2">
+                Yanlışların, favorilerin ve bugünkü tekrar kuyruğun burada.
               </p>
-              <p className="mt-1 text-xs md:text-sm text-slate-400 line-clamp-2">
-                Deneme net grafiğin de burada; eksik kaldığın yerleri daha net gör.
+              <p className="mt-1.5 text-[11px] md:text-sm text-slate-400 leading-snug line-clamp-2 md:line-clamp-none">
+                Deneme net grafiğinle birlikte neyi tekrar etmen gerektiğini daha net gör.
               </p>
             </div>
 
