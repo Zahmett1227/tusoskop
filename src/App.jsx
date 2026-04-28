@@ -1,4 +1,5 @@
 import React, { useMemo, useState, useEffect, useRef } from "react";
+import { Analytics } from '@vercel/analytics/react';
 import './index.css';
 import { auth, db, loginWithGoogle, logout } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
@@ -748,6 +749,7 @@ export default function App() {
         <MobileBottomNav currentView={view} setView={setView} accentTheme={accentTheme} />
       )}
       <IOSInstallBanner />
+      <Analytics />
     </div>
   );
 }
