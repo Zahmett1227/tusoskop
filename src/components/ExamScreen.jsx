@@ -8,6 +8,7 @@ import {
   appendLocalExamHistory,
   estimatedTusNumericFromNet,
 } from "../utils/examHistoryUtils";
+import { trackClarityEvent } from "../lib/clarity";
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -331,6 +332,8 @@ export default function ExamScreen({
       } catch {
         /* ignore */
       }
+
+      trackClarityEvent("deneme_tamamlandi");
 
       setResults({ correct, wrong, empty, totalNet, breakdown });
       setWrongByLessonTopic(wByLT);

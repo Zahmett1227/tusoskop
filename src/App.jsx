@@ -17,6 +17,11 @@ import {
 import { updateStreak } from "./services/streakService";
 import { isIOS } from "./utils/device";
 import { accentThemes, getRandomAccentTheme } from "./theme/accentThemes";
+import {
+  identifyClarityUser,
+  setClarityTag,
+  trackClarityEvent,
+} from "./lib/clarity";
 
 // Bileşenler (Screens)
 import Dashboard from "./components/Dashboard";
@@ -170,6 +175,12 @@ export default function App() {
     return () => unsubscribe();
   }, []);
 
+  useEffect(() => {
+    if (user?.uid) {
+      identifyClarityUser(user.uid);
+    }
+  }, [user?.uid]);
+
   // --- 7. YARDIMCI FONKSİYONLAR ---
   const resetStudyState = () => {
     setCurrentSubject(null); setCurrentIndex(0); setSelected(null);
@@ -190,6 +201,8 @@ export default function App() {
   const startSubject = (subjectName) => {
     const filtered = QUESTIONS.filter((item) => item.ders === subjectName);
     if (filtered.length === 0) return;
+    trackClarityEvent("ders_karti_tiklandi");
+    setClarityTag("son_ders", subjectName);
     resetStudyState();
     setStudyMode("study");
     setCurrentSubject(subjectName);
@@ -200,6 +213,10 @@ export default function App() {
   const startTopicTest = () => {
     const filtered = QUESTIONS.filter(item => item.ders === selectedLesson && item.konu === selectedTopic);
     if (filtered.length === 0) { alert("Soru bulunamadı."); return; }
+    trackClarityEvent("konu_testi_baslatildi");
+    setClarityTag("son_ders", selectedLesson);
+    setClarityTag("son_konu", selectedTopic);
+    setClarityTag("son_mod", "konu_testi");
     resetStudyState();
     setStudyMode("topic");
     setActiveTopicSubject(selectedLesson);
@@ -220,6 +237,8 @@ export default function App() {
     const scaledBlueprint = scaleBlueprintToTotal(FULL_EXAM_BLUEPRINT, totalQuestions);
     const exam = buildFullExam(QUESTIONS, scaledBlueprint);
     if (!exam.length) return;
+    trackClarityEvent("deneme_baslatildi");
+    setClarityTag("son_mod", "deneme");
     setSelectedExamSet(activeSet);
     setExamQuestions(exam);
     examAnswersRef.current = {};

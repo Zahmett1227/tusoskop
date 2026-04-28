@@ -7,6 +7,7 @@ import {
 } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getAnalytics, logEvent } from "firebase/analytics";
+import { trackClarityEvent } from "./lib/clarity";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBF8gh8mOeCpPgbfX_0jP_Fg47wyUXs278",
@@ -27,8 +28,10 @@ export const loginWithGoogle = async () => {
   try {
     const result = await signInWithPopup(auth, googleProvider);
     console.log("Giriş başarılı:", result.user);
+    trackClarityEvent("login_basarili");
     return result.user;
   } catch (error) {
+    trackClarityEvent("login_hatasi");
     console.error("Google giriş hatası:", error);
     alert("Google giriş hatası: " + error.message);
   }

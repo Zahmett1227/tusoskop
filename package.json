@@ -10,6 +10,7 @@
     "preview": "vite preview --configLoader native"
   },
   "dependencies": {
+    "@microsoft/clarity": "^1.0.2",
     "@tailwindcss/postcss": "^4.2.2",
     "@tailwindcss/vite": "^4.2.2",
     "chart.js": "^4.5.1",
