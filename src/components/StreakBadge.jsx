@@ -9,7 +9,7 @@ const MILESTONES = [
 
 const NEXT_MILESTONE = [7, 30, 100];
 
-export default function StreakBadge({ userId }) {
+export default function StreakBadge({ userId, isLightTheme = false }) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [hovered, setHovered] = useState(false);
@@ -21,7 +21,7 @@ export default function StreakBadge({ userId }) {
 
   if (loading) {
     return (
-      <div className="rounded-[2rem] border border-slate-800 bg-slate-900/60 p-5 animate-pulse h-28" />
+      <div className={`rounded-[2rem] border p-5 animate-pulse h-28 ${isLightTheme ? "border-slate-200 bg-white" : "border-slate-800 bg-slate-900/60"}`} />
     );
   }
 
@@ -40,9 +40,9 @@ export default function StreakBadge({ userId }) {
         relative overflow-hidden rounded-[2rem] border p-5 flex flex-col gap-3
         transition-all duration-500 cursor-default select-none
         ${isActive
-          ? `border-orange-500/30 bg-gradient-to-br from-slate-900 via-slate-900 to-orange-950/30
+          ? `${isLightTheme ? "border-orange-200 bg-gradient-to-br from-white via-orange-50 to-amber-50" : "border-orange-500/30 bg-gradient-to-br from-slate-900 via-slate-900 to-orange-950/30"}
              ${hovered ? 'shadow-[0_0_40px_rgba(249,115,22,0.18)] border-orange-500/50 -translate-y-0.5' : 'shadow-[0_0_20px_rgba(249,115,22,0.07)]'}`
-          : `border-slate-800 bg-slate-900/60
+          : `${isLightTheme ? "border-slate-200 bg-white shadow-sm" : "border-slate-800 bg-slate-900/60"}
              ${hovered ? 'border-slate-700 -translate-y-0.5' : ''}`
         }
       `}
@@ -61,7 +61,7 @@ export default function StreakBadge({ userId }) {
           ${isActive
             ? `bg-gradient-to-br from-orange-500/20 to-rose-500/10 border border-orange-500/30
                ${hovered ? 'scale-110 shadow-lg shadow-orange-500/30' : ''}`
-            : 'bg-slate-800/60 border border-slate-700'
+            : isLightTheme ? 'bg-slate-100 border border-slate-200' : 'bg-slate-800/60 border border-slate-700'
           }
         `}>
           <span className={`text-2xl transition-all duration-300 ${hovered && isActive ? 'scale-125' : ''} ${isActive ? '' : 'grayscale opacity-30'}`}>
@@ -76,14 +76,14 @@ export default function StreakBadge({ userId }) {
         {/* Sayı ve başlık */}
         <div className="flex-1 min-w-0">
           <div className="flex items-baseline gap-1.5">
-            <span className={`text-3xl font-black tabular-nums leading-none transition-colors duration-300 ${isActive ? 'text-white' : 'text-slate-600'}`}>
+            <span className={`text-3xl font-black tabular-nums leading-none transition-colors duration-300 ${isActive ? (isLightTheme ? 'text-slate-900' : 'text-white') : 'text-slate-600'}`}>
               {streak}
             </span>
             {isActive && (
-              <span className="text-orange-400 text-sm font-bold leading-none">günlük seri</span>
+              <span className={`text-sm font-bold leading-none ${isLightTheme ? "text-orange-600" : "text-orange-400"}`}>günlük seri</span>
             )}
           </div>
-          <p className={`text-xs mt-0.5 font-medium transition-colors duration-300 ${isActive ? 'text-slate-400' : 'text-slate-600'}`}>
+          <p className={`text-xs mt-0.5 font-medium transition-colors duration-300 ${isActive ? (isLightTheme ? 'text-slate-600' : 'text-slate-400') : 'text-slate-600'}`}>
             {isActive ? `En uzun: ${longest} gün` : 'Bugün bir soru çöz, serin başlasın!'}
           </p>
         </div>
@@ -114,12 +114,12 @@ export default function StreakBadge({ userId }) {
             {streak}/{milestone ? NEXT_MILESTONE.find(d => d > streak) ?? '✓' : nextMilestone}
           </span>
         </div>
-        <div className="h-2 bg-slate-800 rounded-full overflow-hidden border border-slate-700/50">
+        <div className={`h-2 rounded-full overflow-hidden border ${isLightTheme ? "bg-slate-200 border-slate-300/70" : "bg-slate-800 border-slate-700/50"}`}>
           <div
             className={`h-full rounded-full transition-all duration-700 ease-out ${
               isActive
                 ? 'bg-gradient-to-r from-orange-500 to-rose-400'
-                : 'bg-slate-700'
+                : isLightTheme ? 'bg-slate-400' : 'bg-slate-700'
             }`}
             style={{ width: `${isActive ? progress : 0}%` }}
           />

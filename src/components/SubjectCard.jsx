@@ -1,7 +1,7 @@
 import React from "react";
 import { accentThemes } from "../theme/accentThemes";
 
-const SubjectCard = ({ subject, count, onClick, accentTheme }) => {
+const SubjectCard = ({ subject, count, onClick, accentTheme, isLightTheme = false }) => {
   const theme = accentTheme || accentThemes.emerald;
   const hoverBorderClass = {
     Emerald: "hover:border-emerald-400/40",
@@ -43,8 +43,8 @@ const SubjectCard = ({ subject, count, onClick, accentTheme }) => {
       onClick={onClick}
       className={`
         group relative w-full h-full overflow-hidden
-        rounded-3xl border border-slate-800
-        bg-gradient-to-br from-slate-900 via-slate-900/80 to-slate-950
+        rounded-3xl border
+        ${isLightTheme ? "border-slate-200 bg-gradient-to-br from-white via-slate-50 to-slate-100" : "border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900/80 to-slate-950"}
         p-6 text-left
         transition-all duration-300
         hover:-translate-y-2
@@ -61,16 +61,16 @@ const SubjectCard = ({ subject, count, onClick, accentTheme }) => {
       <div className="relative z-10 flex h-full flex-col justify-between">
         {/* ÜST */}
         <div>
-          <div className={`mb-3 inline-flex items-center gap-2 rounded-xl bg-slate-800/80 px-3 py-1 text-xs font-bold ${theme.text} backdrop-blur`}>
+          <div className={`mb-3 inline-flex items-center gap-2 rounded-xl px-3 py-1 text-xs font-bold ${theme.text} backdrop-blur ${isLightTheme ? "bg-slate-100" : "bg-slate-800/80"}`}>
             <span className={`w-2 h-2 rounded-full ${dotClass} animate-pulse`} />
             {subject.type}
           </div>
 
-          <h3 className={`text-xl md:text-2xl font-black leading-tight text-white ${theme.text} transition`}>
+          <h3 className={`text-xl md:text-2xl font-black leading-tight ${isLightTheme ? "text-slate-900" : "text-white"} ${theme.text} transition`}>
             {subject.name}
           </h3>
 
-          <p className="mt-3 text-sm text-slate-400 leading-relaxed">
+          <p className={`mt-3 text-sm leading-relaxed ${isLightTheme ? "text-slate-600" : "text-slate-400"}`}>
             Mini test çöz, açıklamaları gör, tekrarını güçlendir.
           </p>
         </div>
@@ -81,7 +81,7 @@ const SubjectCard = ({ subject, count, onClick, accentTheme }) => {
             <p className={`text-3xl font-black ${theme.text}`}>
               {count}
             </p>
-            <p className="text-sm text-slate-500">hazır soru</p>
+            <p className={`text-sm ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>hazır soru</p>
           </div>
 
           <div className={`flex items-center gap-2 text-sm font-bold ${theme.text} transition group-hover:translate-x-1`}>

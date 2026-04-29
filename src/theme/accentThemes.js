@@ -1,6 +1,22 @@
 export const accentThemes = {
+  light: {
+    name: "Beyaz",
+    mode: "light",
+    previewClass: "bg-white",
+    primary: "bg-emerald-500",
+    primaryHover: "hover:bg-emerald-400",
+    text: "text-emerald-500",
+    border: "border-emerald-400/40",
+    ring: "ring-emerald-400/30",
+    glow: "shadow-emerald-500/20",
+    gradient: "from-emerald-500 to-teal-500",
+    softBg: "bg-emerald-500/10",
+    softBorder: "border-emerald-500/30",
+  },
   emerald: {
     name: "Emerald",
+    mode: "dark",
+    previewClass: "bg-emerald-500",
     primary: "bg-emerald-500",
     primaryHover: "hover:bg-emerald-400",
     text: "text-emerald-400",
@@ -13,6 +29,8 @@ export const accentThemes = {
   },
   cyan: {
     name: "Cyan",
+    mode: "dark",
+    previewClass: "bg-cyan-500",
     primary: "bg-cyan-500",
     primaryHover: "hover:bg-cyan-400",
     text: "text-cyan-400",
@@ -25,6 +43,8 @@ export const accentThemes = {
   },
   violet: {
     name: "Violet",
+    mode: "dark",
+    previewClass: "bg-violet-500",
     primary: "bg-violet-500",
     primaryHover: "hover:bg-violet-400",
     text: "text-violet-400",
@@ -37,6 +57,8 @@ export const accentThemes = {
   },
   amber: {
     name: "Amber",
+    mode: "dark",
+    previewClass: "bg-amber-400",
     primary: "bg-amber-400",
     primaryHover: "hover:bg-amber-300",
     text: "text-amber-300",
@@ -50,6 +72,6 @@ export const accentThemes = {
 };
 
 export function getRandomAccentTheme() {
-  const keys = Object.keys(accentThemes);
+  const keys = Object.keys(accentThemes).filter((key) => accentThemes[key]?.mode !== "light");
   return keys[Math.floor(Math.random() * keys.length)];
 }
