@@ -34,16 +34,16 @@ export function formatPremiumUntil(value) {
 
 export function getPremiumStatusLabel(userData) {
   if (!userData) return "Free plan";
-  if (userData.lifetimePremium) return "Omur boyu erisim";
+  if (userData.lifetimePremium) return "Ömür boyu erişim";
   if (isUserPremium(userData)) return `${formatPremiumUntil(userData.premiumUntil)} tarihine kadar aktif`;
-  if (userData.plan === "plus" && userData.premiumStatus === "active") return "Premium suresi gecersiz";
-  return "Plus ile sinirsiz tekrar, deneme ve gelismis analiz acilir.";
+  if (userData.plan === "plus" && userData.premiumStatus === "active") return "Premium süresi geçersiz";
+  return "Plus ile sınırsız tekrar, deneme ve gelişmiş analiz açılır.";
 }
 
 export function getPremiumLabel(userData) {
-  if (!userData) return "Ucretsiz";
-  if (userData.lifetimePremium) return "Omur Boyu Plus";
-  if (!isUserPremium(userData)) return "Ucretsiz";
+  if (!userData) return "Ücretsiz";
+  if (userData.lifetimePremium) return "Ömür Boyu Plus";
+  if (!isUserPremium(userData)) return "Ücretsiz";
 
   const until = toSafeDate(userData.premiumUntil);
   if (!until) return "Plus";

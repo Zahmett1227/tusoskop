@@ -161,6 +161,10 @@ export default function App() {
     title: "",
     description: "",
     remainingInfo: "",
+    ctaLabel: "",
+    secondaryLabel: "",
+    premiumMessage: "",
+    premiumDescription: "",
   });
   const answeredQuestionIdsRef = useRef(new Set());
   const answeredReviewIdsRef = useRef(new Set());
@@ -296,6 +300,39 @@ export default function App() {
 
   const goDashboard = () => { resetStudyState(); setView("dashboard"); };
 
+  const openSubjectTopicPlusGate = () => {
+    trackClarityEvent("subject_topic_plus_gate_shown");
+    setLimitModal({
+      open: true,
+      title: "Ders ve konu seçerek çözme Plus’a özel",
+      description:
+        "Free planda günlük ücretsiz soru hakkınızla çalışmaya devam edebilirsiniz. Ders ve konu seçerek sınırsız çalışma Plus üyelikte açılır.",
+      remainingInfo: "",
+      ctaLabel: "Plus'ı İncele",
+      secondaryLabel: "Free ile Devam Et",
+      premiumMessage: "Aylık bir kahve ücretine Plus üyelik almak ister misiniz?",
+      premiumDescription:
+        "Plus ile istediğiniz ders ve konudan sınırsız soru çözebilir, tekrar kuyruğunuzu ve analizlerinizi daha geniş kullanabilirsiniz.",
+    });
+  };
+
+  const openTopicSetup = () => {
+    if (!isUserPremium(userData)) {
+      openSubjectTopicPlusGate();
+      return;
+    }
+    trackClarityEvent("subject_topic_started");
+    setView("questionSetup");
+  };
+
+  const guardedSetView = (nextView) => {
+    if (nextView === "questionSetup") {
+      openTopicSetup();
+      return;
+    }
+    setView(nextView);
+  };
+
   const showFavoriteToast = (text) => {
     setFavoriteFeedback(text);
     setTimeout(() => setFavoriteFeedback(""), 1400);
@@ -307,8 +344,8 @@ export default function App() {
     if (!isFavoriteNow && !isUserPremium(userData) && favoriteQuestionIds.size >= FREE_LIMITS.maxFavorites) {
       setLimitModal({
         open: true,
-        title: "Favori sinirina ulastin",
-        description: "Free planda en fazla 20 soruyu favoriye ekleyebilirsin. Plus ile favorilerin sinirsiz olur.",
+        title: "Favori sınırına ulaştın",
+        description: "Free planda en fazla 20 soruyu favoriye ekleyebilirsin. Plus ile favorilerin sınırsız olur.",
         remainingInfo: "",
       });
       return;
@@ -330,8 +367,8 @@ export default function App() {
       if (!gate.allowed) {
         setLimitModal({
           open: true,
-          title: "Bugunku ucretsiz tekrar hakkin doldu",
-          description: "Free planda gunde 10 tekrar sorusu cozebilirsin. Plus ile tekrar kuyrugun sinirsiz acilir.",
+          title: "Bugünkü ücretsiz tekrar hakkın doldu",
+          description: "Free planda günde 10 tekrar sorusu çözebilirsin. Plus ile tekrar kuyruğun sınırsız açılır.",
           remainingInfo: "",
         });
         return;
@@ -364,14 +401,18 @@ export default function App() {
   };
 
   const startTopicTest = async () => {
+    if (!isUserPremium(userData)) {
+      openSubjectTopicPlusGate();
+      return;
+    }
     const filtered = QUESTIONS.filter(item => item.ders === selectedLesson && item.konu === selectedTopic);
     if (filtered.length === 0) { alert("Soru bulunamadı."); return; }
     const gate = await canStartTopicTest(user, userData);
     if (!gate.allowed) {
       setLimitModal({
         open: true,
-        title: "Gunluk konu testi limitine ulastin",
-        description: "Free planda gunde en fazla 2 konu testi baslatabilirsin. Plus ile sinirsiz konu testi acilir.",
+        title: "Günlük konu testi limitine ulaştın",
+        description: "Free planda günde en fazla 2 konu testi başlatabilirsin. Plus ile sınırsız konu testi açılır.",
         remainingInfo: "",
       });
       return;
@@ -395,8 +436,8 @@ export default function App() {
     if (!gate.allowed) {
       setLimitModal({
         open: true,
-        title: "Bu ayki ucretsiz deneme hakkinı kullandin",
-        description: "Free planda ayda 1 tam deneme cozebilirsin. Plus ile sinirsiz deneme ve gelismis analiz acilir.",
+        title: "Bu ayki ücretsiz deneme hakkını kullandın",
+        description: "Free planda ayda 1 tam deneme çözebilirsin. Plus ile sınırsız deneme ve gelişmiş analiz açılır.",
         remainingInfo: "",
       });
       return;
@@ -594,8 +635,8 @@ export default function App() {
         if (!gate.allowed) {
           setLimitModal({
             open: true,
-            title: "Bugunku ucretsiz soru hakkin doldu",
-            description: "Free planda gunde 30 soru cozebilirsin. Plus ile sinirsiz soru, deneme ve tekrar acilir.",
+            title: "Bugünkü ücretsiz soru hakkın doldu",
+            description: "Free planda günde 30 soru çözebilirsin. Plus ile sınırsız soru, deneme ve tekrar açılır.",
             remainingInfo: "",
           });
           return;
@@ -609,8 +650,8 @@ export default function App() {
         if (!reviewGate.allowed) {
           setLimitModal({
             open: true,
-            title: "Bugunku ucretsiz tekrar hakkin doldu",
-            description: "Free planda gunde 10 tekrar sorusu cozebilirsin. Plus ile tekrar kuyrugun sinirsiz acilir.",
+            title: "Bugünkü ücretsiz tekrar hakkın doldu",
+            description: "Free planda günde 10 tekrar sorusu çözebilirsin. Plus ile tekrar kuyruğun sınırsız açılır.",
             remainingInfo: "",
           });
           return;
@@ -869,7 +910,8 @@ export default function App() {
     case "dashboard":
       screenContent = (
         <Dashboard
-          setView={setView}
+          setView={guardedSetView}
+          openTopicSetup={openTopicSetup}
           startSubject={startSubject}
           user={user}
           userData={userData}
@@ -885,6 +927,26 @@ export default function App() {
       break;
 
     case "questionSetup":
+      if (!isUserPremium(userData)) {
+        openSubjectTopicPlusGate();
+        screenContent = (
+          <Dashboard
+            setView={guardedSetView}
+            openTopicSetup={openTopicSetup}
+            startSubject={startSubject}
+            user={user}
+            userData={userData}
+            remainingUsage={remainingUsage}
+            onLogout={logout}
+            isAdmin={isAdmin}
+            accentTheme={accentTheme}
+            accentThemeKey={accentThemeKey}
+            onAccentThemeChange={handleAccentThemeChange}
+            currentView={view}
+          />
+        );
+        break;
+      }
       screenContent = (
         <QuestionSetupScreen
           selectedLesson={selectedLesson} setSelectedLesson={setSelectedLesson}
@@ -1023,14 +1085,14 @@ export default function App() {
           <div className="max-w-md w-full rounded-3xl border border-slate-800 bg-slate-900/60 p-6 text-center">
             <h2 className="text-xl font-black mb-2">Bu alan icin yetkin yok</h2>
             <p className="text-slate-400 text-sm mb-5">
-              Admin paneline erisim sadece yetkili hesaplara aciktir.
+              Admin paneline erişim sadece yetkili hesaplara açıktır.
             </p>
             <button
               type="button"
               onClick={() => setView("dashboard")}
               className={`px-5 py-2.5 rounded-2xl font-black text-slate-950 ${accentTheme.primary} ${accentTheme.primaryHover}`}
             >
-              Dashboard'a don
+              Dashboard&apos;a dön
             </button>
           </div>
         </div>
@@ -1044,7 +1106,8 @@ export default function App() {
     default:
       screenContent = (
         <Dashboard
-          setView={setView}
+          setView={guardedSetView}
+          openTopicSetup={openTopicSetup}
           startSubject={startSubject}
           user={user}
           userData={userData}
@@ -1066,6 +1129,10 @@ export default function App() {
         title={limitModal.title}
         description={limitModal.description}
         remainingInfo={limitModal.remainingInfo}
+        ctaLabel={limitModal.ctaLabel || "Plus'ı İncele"}
+        secondaryLabel={limitModal.secondaryLabel || "Şimdilik Vazgeç"}
+        premiumMessage={limitModal.premiumMessage || "Aylık bir kahve ücretine Plus üyelik almak ister misiniz?"}
+        premiumDescription={limitModal.premiumDescription || "Plus ile soru çözme sınırları kalkar; denemeler, tekrarlar ve gelişmiş analizler tamamen açılır."}
         onClose={() => setLimitModal((prev) => ({ ...prev, open: false }))}
         onUpgradeClick={() => {
           setLimitModal((prev) => ({ ...prev, open: false }));
@@ -1073,7 +1140,7 @@ export default function App() {
         }}
       />
       {showBottomNav && (
-        <MobileBottomNav currentView={view} setView={setView} accentTheme={accentTheme} />
+        <MobileBottomNav currentView={view} setView={guardedSetView} accentTheme={accentTheme} />
       )}
       <IOSInstallBanner />
     </div>

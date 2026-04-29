@@ -24,6 +24,7 @@ import { trackClarityEvent } from "../lib/clarity";
 
 export default function Dashboard({
   setView,
+  openTopicSetup,
   startSubject,
   user,
   userData,
@@ -39,14 +40,17 @@ export default function Dashboard({
   const theme = accentTheme || accentThemes.emerald;
   const premiumActive = isUserPremium(userData);
   const planTitle = premiumActive ? "Plus aktif" : "Free plan";
-  const planSubText = userData?.lifetimePremium
-    ? "Omur boyu erisim"
+  const planSubText = premiumActive
+    ? "Tüm Plus özellikleri açık. Çalışma akışın sınırsız devam eder."
+    : "Plus ile sınırsız soru, deneme, tekrar ve gelişmiş analiz açılır.";
+  const premiumMeta = userData?.lifetimePremium
+    ? "Ömür boyu erişim aktif"
     : premiumActive
     ? `${formatPremiumUntil(userData?.premiumUntil)} tarihine kadar aktif`
-    : getPremiumStatusLabel(userData);
-  const usageLine = premiumActive
-    ? "Sinirsiz kullanim aktif"
-    : `Bugun ${Math.max(0, 30 - (remainingUsage?.questionRemaining ?? 30))}/30 soru • Bu ay ${Math.max(0, 1 - (remainingUsage?.fullExamRemaining ?? 1))}/1 deneme`;
+    : "Bugünkü kullanımını buradan takip edebilirsin.";
+  const freeQuestionUsed = Math.max(0, 30 - (remainingUsage?.questionRemaining ?? 30));
+  const freeExamUsed = Math.max(0, 1 - (remainingUsage?.fullExamRemaining ?? 1));
+  const freeReviewUsed = Math.max(0, 10 - (remainingUsage?.reviewRemaining ?? 10));
   const [myTarget, setMyTarget] = useState(65.00);
   const [tempTarget, setTempTarget] = useState(65.00);
   const [isEditingTarget, setIsEditingTarget] = useState(false);
@@ -189,29 +193,75 @@ export default function Dashboard({
         </div>
 
         <div
-          className={`mb-6 rounded-2xl border p-4 ${
+          className={`mb-6 rounded-[2rem] border p-4 md:p-5 ${
             premiumActive
-              ? "border-emerald-300/40 bg-gradient-to-r from-emerald-500/15 via-cyan-500/10 to-violet-500/15"
-              : "border-slate-700 bg-slate-900/50"
+              ? "border-emerald-300/35 bg-gradient-to-br from-slate-900/95 via-emerald-950/20 to-violet-950/20"
+              : "border-slate-700 bg-gradient-to-br from-slate-900/95 via-slate-900 to-slate-950"
           }`}
         >
-          <div className="flex items-start justify-between gap-3">
-            <div>
-              <p className={`text-sm font-black ${premiumActive ? theme.text : "text-slate-200"}`}>
-                {planTitle}
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 md:gap-6 items-start">
+            <div className="min-w-0">
+              <p className={`text-[10px] uppercase tracking-[0.22em] font-black ${premiumActive ? "text-emerald-300" : "text-slate-500"}`}>
+                PLANIN
               </p>
-              <p className="text-xs text-slate-300 mt-1">{planSubText}</p>
-              <p className="text-[11px] text-slate-400 mt-1">{usageLine}</p>
+              <h3 className={`text-xl md:text-2xl font-black mt-1 ${premiumActive ? theme.text : "text-white"}`}>
+                {planTitle}
+              </h3>
+              <p className="text-sm text-slate-300 mt-1.5 leading-snug">{planSubText}</p>
+              <p className={`text-xs mt-2 ${premiumActive ? "text-emerald-200/90" : "text-slate-400"}`}>{premiumMeta}</p>
+
+              <div className="mt-3 flex flex-wrap gap-2">
+                {premiumActive ? (
+                  <>
+                    <span className="px-3 py-1.5 rounded-full border border-emerald-300/25 bg-emerald-500/10 text-emerald-200 text-xs font-bold">
+                      Sınırsız soru
+                    </span>
+                    <span className="px-3 py-1.5 rounded-full border border-violet-300/25 bg-violet-500/10 text-violet-200 text-xs font-bold">
+                      Sınırsız deneme
+                    </span>
+                    <span className="px-3 py-1.5 rounded-full border border-cyan-300/25 bg-cyan-500/10 text-cyan-200 text-xs font-bold">
+                      Sınırsız tekrar
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span className="px-3 py-1.5 rounded-full border border-slate-700 bg-slate-950/60 text-slate-200 text-xs font-bold">
+                      Bugün: {freeQuestionUsed}/30 soru
+                    </span>
+                    <span className="px-3 py-1.5 rounded-full border border-slate-700 bg-slate-950/60 text-slate-200 text-xs font-bold">
+                      Deneme: {freeExamUsed}/1
+                    </span>
+                    <span className="px-3 py-1.5 rounded-full border border-slate-700 bg-slate-950/60 text-slate-200 text-xs font-bold">
+                      Tekrar: {freeReviewUsed}/10
+                    </span>
+                  </>
+                )}
+              </div>
             </div>
-            <span
-              className={`shrink-0 text-[11px] px-2.5 py-1 rounded-full border ${
+
+            <div className="w-full md:w-48 shrink-0">
+              <div className={`rounded-2xl border px-4 py-3 ${
                 premiumActive
-                  ? "border-emerald-300/30 text-emerald-200 bg-emerald-500/10"
-                  : "border-slate-700 text-slate-300 bg-slate-900/70"
-              }`}
-            >
-              {PRICING.PLUS_MONTHLY_LABEL}
-            </span>
+                  ? "border-emerald-300/25 bg-emerald-500/10"
+                  : "border-slate-700 bg-slate-950/70"
+              }`}>
+                <p className="text-[11px] text-slate-400 font-bold">Plus fiyatı</p>
+                <p className={`text-lg font-black mt-0.5 ${premiumActive ? "text-emerald-200" : "text-white"}`}>
+                  {PRICING.PLUS_MONTHLY_LABEL} / ay
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setView("premiumInfo")}
+                className={`mt-2 w-full min-h-11 px-4 rounded-2xl text-sm font-black transition ${
+                  premiumActive
+                    ? "bg-slate-100 text-slate-950 hover:bg-white"
+                    : `${theme.primary} ${theme.primaryHover} text-slate-950`
+                }`}
+              >
+                {premiumActive ? "Plan Detayı" : "Plus'ı İncele"}
+              </button>
+            </div>
           </div>
         </div>
 
@@ -407,13 +457,24 @@ export default function Dashboard({
         {/* İKİNCİL AKSİYONLAR */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
           <button
-            onClick={() => setView("questionSetup")}
+            onClick={() => openTopicSetup?.()}
             className="group flex items-center gap-4 px-6 py-5 rounded-[2rem] bg-slate-900 border border-slate-800 hover:border-slate-600 transition-all text-left"
           >
             <span className="text-2xl">⚡</span>
             <div>
-              <p className="font-black text-sm text-white">Hızlı Soru Çöz</p>
-              <p className="text-[10px] text-slate-500 font-medium">Konu & branş seç</p>
+              <div className="flex items-center gap-2">
+                <p className="font-black text-sm text-white">Ders/Konu seçerek çöz</p>
+                <span className={`px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider ${
+                  premiumActive
+                    ? "bg-emerald-500/15 text-emerald-300 border border-emerald-400/30"
+                    : "bg-amber-500/15 text-amber-300 border border-amber-400/30"
+                }`}>
+                  {premiumActive ? "Plus" : "Plus'a özel"}
+                </span>
+              </div>
+              <p className="text-[10px] text-slate-500 font-medium">
+                {premiumActive ? "Ders ve konuya göre sınırsız çöz" : "Free kullanıcılar için kilitli"}
+              </p>
             </div>
           </button>
           <button
@@ -452,6 +513,11 @@ export default function Dashboard({
         )}
 
         {/* BRANŞLAR */}
+        {!premiumActive && (
+          <p className="text-xs text-slate-400 mb-5">
+            Free planda günlük 30 soruya kadar aşağıdaki ders kartlarından çözebilirsiniz.
+          </p>
+        )}
         {["Temel", "Klinik"].map((type) => (
           <section key={type} className="mb-12">
             <div className="flex items-center gap-4 mb-8">
