@@ -217,6 +217,7 @@ export default function ExamScreen({
   getExamAnswersSnapshot,
   goDashboard,
   userId,
+  userData,
   accentTheme,
 }) {
   const theme = accentTheme || accentThemes.emerald;
@@ -306,7 +307,7 @@ export default function ExamScreen({
           if (userAnswer === undefined || userAnswer === null || userAnswer === q.correct) {
             return null;
           }
-          return addWrongQuestion(user, q, userAnswer);
+          return addWrongQuestion(user, q, userAnswer, userData);
         })
         .filter(Boolean);
       if (wrongSaveTasks.length) {

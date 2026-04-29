@@ -29,6 +29,7 @@ const safePreview = (text) => {
 
 export default function StudyCollectionScreen({
   user,
+  userData,
   questions,
   accentTheme,
   accentThemeKey,
@@ -52,9 +53,9 @@ export default function StudyCollectionScreen({
     setLoading(true);
     try {
       const [wrong, favorites, queue] = await Promise.all([
-        getWrongQuestions(user),
+        getWrongQuestions(user, userData),
         getFavoriteQuestions(user),
-        buildTodayReviewQueue(user, questions),
+        buildTodayReviewQueue(user, questions, userData),
       ]);
       setWrongItems(wrong);
       setFavoriteItems(favorites);
@@ -68,7 +69,7 @@ export default function StudyCollectionScreen({
     hydrate();
     trackClarityEvent("tekrar_kuyrugu_acildi");
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user?.uid, questions?.length]);
+  }, [user?.uid, questions?.length, userData]);
 
   const unresolvedWrong = useMemo(
     () => wrongItems.filter((item) => !item.isResolved),
@@ -168,6 +169,7 @@ export default function StudyCollectionScreen({
 
         <PerformanceChartCard
           user={user}
+          userData={userData}
           accentTheme={theme}
           accentThemeKey={accentThemeKey}
           onStartExam={openExamSetSelect}

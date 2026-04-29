@@ -10,6 +10,12 @@ import StreakBadge from "./StreakBadge";
 import { SUBJECTS } from "../data/subjects";
 import { QUESTIONS } from "../data/questions";
 import { accentThemes } from "../theme/accentThemes";
+import { PRICING } from "../constants/pricing";
+import {
+  formatPremiumUntil,
+  getPremiumStatusLabel,
+  isUserPremium,
+} from "../utils/premiumUtils";
 import {
   buildTodayReviewQueue,
   getStudyCollectionSummary,
@@ -20,14 +26,27 @@ export default function Dashboard({
   setView,
   startSubject,
   user,
+  userData,
+  remainingUsage,
   onLogout,
   accentTheme,
   accentThemeKey,
   onAccentThemeChange,
+  isAdmin = false,
   /** App içinden gelen görünüm — dashboard’a her dönüşte geçmiş yenilenebilir */
   currentView = "dashboard",
 }) {
   const theme = accentTheme || accentThemes.emerald;
+  const premiumActive = isUserPremium(userData);
+  const planTitle = premiumActive ? "Plus aktif" : "Free plan";
+  const planSubText = userData?.lifetimePremium
+    ? "Omur boyu erisim"
+    : premiumActive
+    ? `${formatPremiumUntil(userData?.premiumUntil)} tarihine kadar aktif`
+    : getPremiumStatusLabel(userData);
+  const usageLine = premiumActive
+    ? "Sinirsiz kullanim aktif"
+    : `Bugun ${Math.max(0, 30 - (remainingUsage?.questionRemaining ?? 30))}/30 soru • Bu ay ${Math.max(0, 1 - (remainingUsage?.fullExamRemaining ?? 1))}/1 deneme`;
   const [myTarget, setMyTarget] = useState(65.00);
   const [tempTarget, setTempTarget] = useState(65.00);
   const [isEditingTarget, setIsEditingTarget] = useState(false);
@@ -68,8 +87,8 @@ export default function Dashboard({
     const loadStudySummary = async () => {
       try {
         const [summary, queue] = await Promise.all([
-          getStudyCollectionSummary(user),
-          buildTodayReviewQueue(user, QUESTIONS),
+          getStudyCollectionSummary(user, userData),
+          buildTodayReviewQueue(user, QUESTIONS, userData),
         ]);
         if (!active) return;
         setStudySummary({
@@ -86,7 +105,7 @@ export default function Dashboard({
     return () => {
       active = false;
     };
-  }, [user?.uid, currentView]);
+  }, [user?.uid, currentView, userData]);
 
   const adjustTarget = (amount) => {
     setTempTarget(prev => {
@@ -167,6 +186,33 @@ export default function Dashboard({
               />
             );
           })}
+        </div>
+
+        <div
+          className={`mb-6 rounded-2xl border p-4 ${
+            premiumActive
+              ? "border-emerald-300/40 bg-gradient-to-r from-emerald-500/15 via-cyan-500/10 to-violet-500/15"
+              : "border-slate-700 bg-slate-900/50"
+          }`}
+        >
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <p className={`text-sm font-black ${premiumActive ? theme.text : "text-slate-200"}`}>
+                {planTitle}
+              </p>
+              <p className="text-xs text-slate-300 mt-1">{planSubText}</p>
+              <p className="text-[11px] text-slate-400 mt-1">{usageLine}</p>
+            </div>
+            <span
+              className={`shrink-0 text-[11px] px-2.5 py-1 rounded-full border ${
+                premiumActive
+                  ? "border-emerald-300/30 text-emerald-200 bg-emerald-500/10"
+                  : "border-slate-700 text-slate-300 bg-slate-900/70"
+              }`}
+            >
+              {PRICING.PLUS_MONTHLY_LABEL}
+            </span>
+          </div>
         </div>
 
         {/* ÜST SATIR: GERİ SAYIM + HEDEF + SERİ */}
@@ -392,6 +438,18 @@ export default function Dashboard({
             </div>
           </button>
         </div>
+
+        {isAdmin && (
+          <div className="mb-10">
+            <button
+              type="button"
+              onClick={() => setView("admin")}
+              className="px-5 py-3 rounded-2xl bg-amber-300 text-slate-950 font-black text-sm hover:brightness-95 transition"
+            >
+              Admin Panel
+            </button>
+          </div>
+        )}
 
         {/* BRANŞLAR */}
         {["Temel", "Klinik"].map((type) => (

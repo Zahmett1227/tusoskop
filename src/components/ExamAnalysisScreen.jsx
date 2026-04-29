@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { accentThemes } from "../theme/accentThemes";
+import { isUserPremium } from "../utils/premiumUtils";
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -201,8 +202,10 @@ export default function ExamAnalysisScreen({
   startFullExam,
   goDashboard,
   accentTheme,
+  userData,
 }) {
   const theme = accentTheme || accentThemes.emerald;
+  const premium = isUserPremium(userData);
   const [showWrongModal, setShowWrongModal] = useState(false);
 
   if (!examAnalysis) return null;
@@ -293,6 +296,11 @@ export default function ExamAnalysisScreen({
           </div>
 
           {/* Detaylı Analiz Butonu — belirgin */}
+          {!premium && (
+            <div className="w-full px-5 py-3 rounded-2xl border border-amber-300/20 bg-amber-500/10 text-amber-200 text-xs">
+              Free planda temel analiz gorunur. Plus ile detayli zayif konu analizi sinirsiz acilir.
+            </div>
+          )}
           <button
             onClick={() => setShowWrongModal(true)}
             className="w-full flex items-center justify-between px-8 py-5 rounded-[2rem] bg-rose-950/30 border border-rose-500/25 hover:border-rose-500/50 hover:bg-rose-950/50 transition-all group"

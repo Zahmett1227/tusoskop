@@ -44,6 +44,24 @@ import ExamSetSelectScreen from "./components/ExamSetSelectScreen";
 import TopicTracker from "./components/TopicTracker";
 import MobileBottomNav from "./components/MobileBottomNav";
 import IOSInstallBanner from "./components/IOSInstallBanner";
+import AdminPanel from "./components/admin/AdminPanel";
+import { isCurrentUserAdmin } from "./services/adminService";
+import { ensureUserDocument } from "./services/userService";
+import LimitReachedModal from "./components/premium/LimitReachedModal";
+import PremiumInfoScreen from "./components/premium/PremiumInfoScreen";
+import { FREE_LIMITS } from "./config/limits";
+import { isUserPremium } from "./utils/premiumUtils";
+import {
+  canAnswerQuestion,
+  canStartFullExam,
+  canStartReview,
+  canStartTopicTest,
+  getRemainingFreeUsage,
+  incrementFullExamUsage,
+  incrementQuestionUsage,
+  incrementReviewUsage,
+  incrementTopicTestUsage,
+} from "./services/usageLimitService";
 
 // TUS Deneme Dağılımı (Blueprint)
 const FULL_EXAM_BLUEPRINT = {
@@ -85,6 +103,8 @@ export default function App() {
 
   // --- 1. KULLANICI VE NAVİGASYON ---
   const [user, setUser] = useState(null);
+  const [userData, setUserData] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [view, setView] = useState("dashboard");
   const [accentThemeKey, setAccentThemeKey] = useState(() => {
     if (typeof window === "undefined") return "emerald";
@@ -135,6 +155,15 @@ export default function App() {
   const [favoriteQuestionIds, setFavoriteQuestionIds] = useState(new Set());
   const [favoriteFeedback, setFavoriteFeedback] = useState("");
   const [reviewSummary, setReviewSummary] = useState(null);
+  const [remainingUsage, setRemainingUsage] = useState(null);
+  const [limitModal, setLimitModal] = useState({
+    open: false,
+    title: "",
+    description: "",
+    remainingInfo: "",
+  });
+  const answeredQuestionIdsRef = useRef(new Set());
+  const answeredReviewIdsRef = useRef(new Set());
 
   // --- 3. DENEME MODU (EXAM) STATE ---
   const [examQuestions, setExamQuestions] = useState([]);
@@ -181,11 +210,53 @@ export default function App() {
 
   // --- 6. FIREBASE AUTH TAKİBİ ---
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      try {
+        if (currentUser?.uid) {
+          const ensured = await ensureUserDocument(currentUser);
+          setUserData(ensured);
+        }
+      } catch (error) {
+        console.error("User profile sync error:", error);
+      } finally {
+        setUser(currentUser);
+        if (!currentUser) {
+          setIsAdmin(false);
+          setUserData(null);
+          setView("dashboard");
+        }
+      }
     });
     return () => unsubscribe();
   }, []);
+
+  useEffect(() => {
+    let active = true;
+    const loadAdmin = async () => {
+      if (!user?.uid) {
+        setIsAdmin(false);
+        return;
+      }
+      const admin = await isCurrentUserAdmin(user.uid);
+      if (active) setIsAdmin(admin);
+    };
+    loadAdmin();
+    return () => {
+      active = false;
+    };
+  }, [user?.uid]);
+
+  useEffect(() => {
+    let active = true;
+    const loadUsage = async () => {
+      const usage = await getRemainingFreeUsage(user, userData);
+      if (active) setRemainingUsage(usage);
+    };
+    loadUsage();
+    return () => {
+      active = false;
+    };
+  }, [user?.uid, userData?.plan, userData?.premiumStatus, userData?.premiumUntil, userData?.lifetimePremium]);
 
   useEffect(() => {
     if (user?.uid) {
@@ -219,6 +290,8 @@ export default function App() {
     setStudyFeedback(null);
     setTopicMastery({});
     setFeedbackMeta({ count: 0, lastText: "", lastType: "", lastTopic: "" });
+    answeredQuestionIdsRef.current = new Set();
+    answeredReviewIdsRef.current = new Set();
   };
 
   const goDashboard = () => { resetStudyState(); setView("dashboard"); };
@@ -230,17 +303,17 @@ export default function App() {
 
   const handleToggleFavorite = async (question) => {
     if (!question?.id) return;
-    console.log("FAVORITE BUTTON CLICKED", {
-      questionId: question?.id,
-      userUid: user?.uid,
-      isFavorite: favoriteQuestionIds.has(Number(question?.id)),
-    });
+    const isFavoriteNow = favoriteQuestionIds.has(Number(question?.id));
+    if (!isFavoriteNow && !isUserPremium(userData) && favoriteQuestionIds.size >= FREE_LIMITS.maxFavorites) {
+      setLimitModal({
+        open: true,
+        title: "Favori sinirina ulastin",
+        description: "Free planda en fazla 20 soruyu favoriye ekleyebilirsin. Plus ile favorilerin sinirsiz olur.",
+        remainingInfo: "",
+      });
+      return;
+    }
     const result = await toggleFavoriteQuestion(user, question);
-    console.log("FAVORITE TOGGLE RESULT", {
-      questionId: question?.id,
-      userUid: user?.uid,
-      result,
-    });
     setFavoriteQuestionIds((prev) => {
       const next = new Set(prev);
       if (result?.isFavorite) next.add(Number(question.id));
@@ -253,15 +326,29 @@ export default function App() {
   const startReviewWithQuestions = (questionList, source = "custom") => {
     const list = Array.isArray(questionList) ? questionList.filter(Boolean) : [];
     if (!list.length) return;
-    resetStudyState();
-    setStudyMode("review");
-    setCurrentSubject("Çalışma Alanım Tekrarı");
-    setActiveTopicSubject("Çalışma Alanım");
-    setActiveTopicName(source);
-    setActiveQuestions(list);
-    setView("study");
-    setClarityTag("son_mod", "review");
-    trackClarityEvent("bugunku_tekrar_baslatildi");
+    canStartReview(user, userData, list.length).then((gate) => {
+      if (!gate.allowed) {
+        setLimitModal({
+          open: true,
+          title: "Bugunku ucretsiz tekrar hakkin doldu",
+          description: "Free planda gunde 10 tekrar sorusu cozebilirsin. Plus ile tekrar kuyrugun sinirsiz acilir.",
+          remainingInfo: "",
+        });
+        return;
+      }
+      const safeList = isUserPremium(userData)
+        ? list
+        : list.slice(0, Math.min(FREE_LIMITS.dailyReviewQuestions, gate.allowedCount || FREE_LIMITS.dailyReviewQuestions));
+      resetStudyState();
+      setStudyMode("review");
+      setCurrentSubject("Çalışma Alanım Tekrarı");
+      setActiveTopicSubject("Çalışma Alanım");
+      setActiveTopicName(source);
+      setActiveQuestions(safeList);
+      setView("study");
+      setClarityTag("son_mod", "review");
+      trackClarityEvent("bugunku_tekrar_baslatildi");
+    });
   };
 
   const startSubject = (subjectName) => {
@@ -276,9 +363,20 @@ export default function App() {
     setView("study");
   };
 
-  const startTopicTest = () => {
+  const startTopicTest = async () => {
     const filtered = QUESTIONS.filter(item => item.ders === selectedLesson && item.konu === selectedTopic);
     if (filtered.length === 0) { alert("Soru bulunamadı."); return; }
+    const gate = await canStartTopicTest(user, userData);
+    if (!gate.allowed) {
+      setLimitModal({
+        open: true,
+        title: "Gunluk konu testi limitine ulastin",
+        description: "Free planda gunde en fazla 2 konu testi baslatabilirsin. Plus ile sinirsiz konu testi acilir.",
+        remainingInfo: "",
+      });
+      return;
+    }
+    await incrementTopicTestUsage(user, userData);
     trackClarityEvent("konu_testi_baslatildi");
     setClarityTag("son_ders", selectedLesson);
     setClarityTag("son_konu", selectedTopic);
@@ -292,7 +390,17 @@ export default function App() {
     setView("study");
   };
 
-  const startFullExam = (setId) => {
+  const startFullExam = async (setId) => {
+    const gate = await canStartFullExam(user, userData);
+    if (!gate.allowed) {
+      setLimitModal({
+        open: true,
+        title: "Bu ayki ucretsiz deneme hakkinı kullandin",
+        description: "Free planda ayda 1 tam deneme cozebilirsin. Plus ile sinirsiz deneme ve gelismis analiz acilir.",
+        remainingInfo: "",
+      });
+      return;
+    }
     const fallbackSet = EXAM_SETS[0] || null;
     const activeSet =
       EXAM_SETS.find((item) => item.id === setId) ||
@@ -303,6 +411,7 @@ export default function App() {
     const scaledBlueprint = scaleBlueprintToTotal(FULL_EXAM_BLUEPRINT, totalQuestions);
     const exam = buildFullExam(QUESTIONS, scaledBlueprint);
     if (!exam.length) return;
+    await incrementFullExamUsage(user, userData);
     trackClarityEvent("deneme_baslatildi");
     setClarityTag("son_mod", "deneme");
     setSelectedExamSet(activeSet);
@@ -477,6 +586,40 @@ export default function App() {
   };
 
   const revealCurrentAnswer = async (answerOverride = selected) => {
+    const isReview = studyMode === "review";
+    const questionId = q?.id ? Number(q.id) : null;
+    if (questionId) {
+      if (!isReview && !answeredQuestionIdsRef.current.has(questionId)) {
+        const gate = await canAnswerQuestion(user, userData);
+        if (!gate.allowed) {
+          setLimitModal({
+            open: true,
+            title: "Bugunku ucretsiz soru hakkin doldu",
+            description: "Free planda gunde 30 soru cozebilirsin. Plus ile sinirsiz soru, deneme ve tekrar acilir.",
+            remainingInfo: "",
+          });
+          return;
+        }
+        await incrementQuestionUsage(user, userData, 1);
+        answeredQuestionIdsRef.current.add(questionId);
+      }
+
+      if (isReview && !answeredReviewIdsRef.current.has(questionId)) {
+        const reviewGate = await canStartReview(user, userData, 1);
+        if (!reviewGate.allowed) {
+          setLimitModal({
+            open: true,
+            title: "Bugunku ucretsiz tekrar hakkin doldu",
+            description: "Free planda gunde 10 tekrar sorusu cozebilirsin. Plus ile tekrar kuyrugun sinirsiz acilir.",
+            remainingInfo: "",
+          });
+          return;
+        }
+        await incrementReviewUsage(user, userData, 1);
+        answeredReviewIdsRef.current.add(questionId);
+      }
+    }
+
     setShowResult(true);
     const answer = answerOverride;
     const isCorrect = answer !== null && answer !== undefined && answer === q?.correct;
@@ -484,14 +627,6 @@ export default function App() {
       answer !== null &&
       answer !== undefined &&
       Number(answer) !== Number(q?.correct);
-    console.log("STUDY ANSWER CHECK", {
-      questionId: q?.id,
-      selectedAnswer: answer,
-      correctAnswer: q?.correct,
-      isCorrect,
-      isWrong,
-      studyMode,
-    });
     if (isCorrect) setScore((prev) => prev + 1);
     updateStreakForQuestion(isCorrect, q?.id);
     recordQuestionTime(q?.id);
@@ -526,7 +661,7 @@ export default function App() {
         await updateWrongQuestionAfterReview(user, q, isCorrect, answer);
       }
     } else if (isWrong && q?.id) {
-      await addWrongQuestion(user, q, answer);
+      await addWrongQuestion(user, q, answer, userData);
     }
   };
 
@@ -612,7 +747,7 @@ export default function App() {
       setStudyFeedback(null);
     } else {
       if (studyMode === "review") {
-        const wrongRecords = await getWrongQuestions(user);
+        const wrongRecords = await getWrongQuestions(user, userData);
         const activeIds = new Set(activeQuestions.map((item) => Number(item.id)));
         const stillNeedsReview = wrongRecords.filter(
           (item) => activeIds.has(Number(item.questionId)) && !item.isResolved
@@ -737,7 +872,10 @@ export default function App() {
           setView={setView}
           startSubject={startSubject}
           user={user}
+          userData={userData}
+          remainingUsage={remainingUsage}
           onLogout={logout}
+          isAdmin={isAdmin}
           accentTheme={accentTheme}
           accentThemeKey={accentThemeKey}
           onAccentThemeChange={handleAccentThemeChange}
@@ -788,6 +926,7 @@ export default function App() {
           examTitle={selectedExamSet?.title || "TUS Genel Deneme"}
           accentTheme={accentTheme}
           userId={user?.uid}
+          userData={userData}
           getExamAnswersSnapshot={() => examAnswersRef.current}
           onJump={(idx) => {
             const currentQuestion = examQuestions[examIndex];
@@ -819,6 +958,7 @@ export default function App() {
       screenContent = (
         <ExamAnalysisScreen
           examAnalysis={examAnalysis} estimatedTus={estimatedTus}
+          userData={userData}
           accentTheme={accentTheme}
           startFullExam={startFullExam} goDashboard={goDashboard}
         />
@@ -854,6 +994,7 @@ export default function App() {
       screenContent = (
         <StudyCollectionScreen
           user={user}
+          userData={userData}
           questions={QUESTIONS}
           accentTheme={accentTheme}
           accentThemeKey={accentThemeKey}
@@ -874,13 +1015,41 @@ export default function App() {
       );
       break;
 
+    case "admin":
+      screenContent = isAdmin ? (
+        <AdminPanel currentUser={user} />
+      ) : (
+        <div className="min-h-dvh bg-slate-950 text-white p-6 flex items-center justify-center">
+          <div className="max-w-md w-full rounded-3xl border border-slate-800 bg-slate-900/60 p-6 text-center">
+            <h2 className="text-xl font-black mb-2">Bu alan icin yetkin yok</h2>
+            <p className="text-slate-400 text-sm mb-5">
+              Admin paneline erisim sadece yetkili hesaplara aciktir.
+            </p>
+            <button
+              type="button"
+              onClick={() => setView("dashboard")}
+              className={`px-5 py-2.5 rounded-2xl font-black text-slate-950 ${accentTheme.primary} ${accentTheme.primaryHover}`}
+            >
+              Dashboard'a don
+            </button>
+          </div>
+        </div>
+      );
+      break;
+
+    case "premiumInfo":
+      screenContent = <PremiumInfoScreen onBack={() => setView("dashboard")} />;
+      break;
+
     default:
       screenContent = (
         <Dashboard
           setView={setView}
           startSubject={startSubject}
           user={user}
+          userData={userData}
           onLogout={logout}
+          isAdmin={isAdmin}
           accentTheme={accentTheme}
           accentThemeKey={accentThemeKey}
           onAccentThemeChange={handleAccentThemeChange}
@@ -892,6 +1061,17 @@ export default function App() {
   return (
     <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
       {screenContent}
+      <LimitReachedModal
+        open={limitModal.open}
+        title={limitModal.title}
+        description={limitModal.description}
+        remainingInfo={limitModal.remainingInfo}
+        onClose={() => setLimitModal((prev) => ({ ...prev, open: false }))}
+        onUpgradeClick={() => {
+          setLimitModal((prev) => ({ ...prev, open: false }));
+          setView("premiumInfo");
+        }}
+      />
       {showBottomNav && (
         <MobileBottomNav currentView={view} setView={setView} accentTheme={accentTheme} />
       )}

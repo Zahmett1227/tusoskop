@@ -8,16 +8,12 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebase";
 import { trackClarityEvent } from "../lib/clarity";
+import { FREE_LIMITS } from "../config/limits";
+import { isUserPremium } from "../utils/premiumUtils";
 
 const WRONG_KEY = "tusoskopWrongQuestions";
 const FAVORITE_KEY = "tusoskopFavoriteQuestions";
 const MAX_TODAY_QUEUE = 20;
-
-const FREE_PREMIUM_LIMITS = {
-  wrongQuestionsSoftLimit: 1000,
-  favoriteQuestionsSoftLimit: 1000,
-  dailyReviewLimit: MAX_TODAY_QUEUE,
-};
 
 const safeNowIso = () => new Date().toISOString();
 
@@ -84,14 +80,15 @@ const sortWrongItems = (items = []) =>
     return bt - at;
   });
 
-async function readWrongFromFirestore(user) {
+async function readWrongFromFirestore(user, userData) {
   const ref = collection(db, "users", user.uid, "wrongQuestions");
   const snap = await getDocs(ref);
-  return sortWrongItems(
+  const list = sortWrongItems(
     snap.docs
       .map((d) => normalizeWrongItem(d.data()))
       .filter((item) => Number.isFinite(item.questionId))
   );
+  return isUserPremium(userData) ? list : list.slice(0, FREE_LIMITS.maxWrongQuestions);
 }
 
 async function readFavoritesFromFirestore(user) {
@@ -103,12 +100,13 @@ async function readFavoritesFromFirestore(user) {
     .sort((a, b) => new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime());
 }
 
-function readWrongFromLocal() {
-  return sortWrongItems(
+function readWrongFromLocal(userData) {
+  const list = sortWrongItems(
     getLocalArray(WRONG_KEY)
       .map(normalizeWrongItem)
       .filter((item) => Number.isFinite(item.questionId))
   );
+  return isUserPremium(userData) ? list : list.slice(0, FREE_LIMITS.maxWrongQuestions);
 }
 
 function readFavoritesFromLocal() {
@@ -118,12 +116,12 @@ function readFavoritesFromLocal() {
     .sort((a, b) => new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime());
 }
 
-export async function getWrongQuestions(user) {
+export async function getWrongQuestions(user, userData = null) {
   try {
-    if (user?.uid) return await readWrongFromFirestore(user);
-    return readWrongFromLocal();
+    if (user?.uid) return await readWrongFromFirestore(user, userData);
+    return readWrongFromLocal(userData);
   } catch {
-    return readWrongFromLocal();
+    return readWrongFromLocal(userData);
   }
 }
 
@@ -136,7 +134,7 @@ export async function getFavoriteQuestions(user) {
   }
 }
 
-export async function addWrongQuestion(user, question, selectedAnswer) {
+export async function addWrongQuestion(user, question, selectedAnswer, userData = null) {
   try {
     if (!question?.id) return null;
     const now = safeNowIso();
@@ -178,7 +176,10 @@ export async function addWrongQuestion(user, question, selectedAnswer) {
           isResolved: false,
         });
       }
-      const trimmed = current.slice(0, FREE_PREMIUM_LIMITS.wrongQuestionsSoftLimit);
+      const capped = isUserPremium(userData)
+        ? current
+        : sortWrongItems(current).slice(0, FREE_LIMITS.maxWrongQuestions);
+      const trimmed = capped.slice(0, 1000);
       setLocalArray(WRONG_KEY, sortWrongItems(trimmed));
       trackClarityEvent("yanlis_soru_kaydedildi");
       return current[existingIdx >= 0 ? existingIdx : current.length - 1];
@@ -199,6 +200,15 @@ export async function addWrongQuestion(user, question, selectedAnswer) {
           isResolved: false,
         };
         await setDoc(docRef, next, { merge: true });
+        if (!isUserPremium(userData)) {
+          const all = await readWrongFromFirestore(user, userData);
+          const allIds = new Set(all.map((item) => String(item.questionId)));
+          const allSnap = await getDocs(collection(db, "users", user.uid, "wrongQuestions"));
+          const deleteTasks = allSnap.docs
+            .filter((d) => !allIds.has(d.id))
+            .map((d) => deleteDoc(d.ref));
+          if (deleteTasks.length) await Promise.allSettled(deleteTasks);
+        }
         trackClarityEvent("yanlis_soru_kaydedildi");
         return next;
       } catch (firestoreError) {
@@ -280,7 +290,9 @@ export async function updateWrongQuestionAfterReview(
     } else {
       current.push(next);
     }
-    setLocalArray(WRONG_KEY, sortWrongItems(current));
+    const sorted = sortWrongItems(current);
+    const limited = isUserPremium(userData) ? sorted : sorted.slice(0, FREE_LIMITS.maxWrongQuestions);
+    setLocalArray(WRONG_KEY, limited);
     return next;
   } catch {
     return null;
@@ -307,7 +319,7 @@ export async function toggleFavoriteQuestion(user, question) {
         trackClarityEvent("favori_cikarildi");
         return { isFavorite: false };
       }
-      const next = [payload, ...current].slice(0, FREE_PREMIUM_LIMITS.favoriteQuestionsSoftLimit);
+      const next = [payload, ...current].slice(0, 1000);
       setLocalArray(FAVORITE_KEY, next);
       trackClarityEvent("favori_eklendi");
       return { isFavorite: true, item: payload };
@@ -346,10 +358,10 @@ export async function isFavoriteQuestion(user, questionId) {
   }
 }
 
-export async function getStudyCollectionSummary(user) {
+export async function getStudyCollectionSummary(user, userData = null) {
   try {
     const [wrongQuestions, favoriteQuestions] = await Promise.all([
-      getWrongQuestions(user),
+      getWrongQuestions(user, userData),
       getFavoriteQuestions(user),
     ]);
     const unresolvedWrongCount = wrongQuestions.filter((item) => !item.isResolved).length;
@@ -358,10 +370,10 @@ export async function getStudyCollectionSummary(user) {
       favoriteCount: favoriteQuestions.length,
       unresolvedWrongCount,
       reviewQueueCount: Math.min(
-        FREE_PREMIUM_LIMITS.dailyReviewLimit,
+        MAX_TODAY_QUEUE,
         unresolvedWrongCount + favoriteQuestions.length
       ),
-      limits: FREE_PREMIUM_LIMITS,
+      limits: { dailyReviewLimit: MAX_TODAY_QUEUE },
     };
   } catch {
     return {
@@ -369,17 +381,17 @@ export async function getStudyCollectionSummary(user) {
       favoriteCount: 0,
       unresolvedWrongCount: 0,
       reviewQueueCount: 0,
-      limits: FREE_PREMIUM_LIMITS,
+      limits: { dailyReviewLimit: MAX_TODAY_QUEUE },
     };
   }
 }
 
-export async function buildTodayReviewQueue(user, questions) {
+export async function buildTodayReviewQueue(user, questions, userData = null) {
   try {
     const list = Array.isArray(questions) ? questions : [];
     const mapById = new Map(list.map((q) => [Number(q.id), q]));
     const [wrongQuestions, favoriteQuestions] = await Promise.all([
-      getWrongQuestions(user),
+      getWrongQuestions(user, userData),
       getFavoriteQuestions(user),
     ]);
 
@@ -408,14 +420,16 @@ export async function buildTodayReviewQueue(user, questions) {
     const seen = new Set();
 
     scoredWrong.forEach((item) => {
-      if (queue.length >= MAX_TODAY_QUEUE) return;
+      const maxQueue = isUserPremium(userData) ? MAX_TODAY_QUEUE : FREE_LIMITS.dailyReviewQuestions;
+      if (queue.length >= maxQueue) return;
       if (seen.has(item.questionId)) return;
       seen.add(item.questionId);
       queue.push(item.question);
     });
 
     for (const fav of favoriteQuestions) {
-      if (queue.length >= MAX_TODAY_QUEUE) break;
+      const maxQueue = isUserPremium(userData) ? MAX_TODAY_QUEUE : FREE_LIMITS.dailyReviewQuestions;
+      if (queue.length >= maxQueue) break;
       if (seen.has(fav.questionId)) continue;
       const q = mapById.get(fav.questionId);
       if (!q) continue;
@@ -423,18 +437,19 @@ export async function buildTodayReviewQueue(user, questions) {
       queue.push(q);
     }
 
-    if (queue.length < MAX_TODAY_QUEUE) {
+    const maxQueue = isUserPremium(userData) ? MAX_TODAY_QUEUE : FREE_LIMITS.dailyReviewQuestions;
+    if (queue.length < maxQueue) {
       scoredWrong
         .filter((item) => favoriteSet.has(item.questionId))
         .forEach((item) => {
-          if (queue.length >= MAX_TODAY_QUEUE) return;
+          if (queue.length >= maxQueue) return;
           if (seen.has(item.questionId)) return;
           seen.add(item.questionId);
           queue.push(item.question);
         });
     }
 
-    return queue.slice(0, MAX_TODAY_QUEUE);
+    return queue.slice(0, maxQueue);
   } catch {
     return [];
   }

@@ -14,6 +14,8 @@ import {
 import { auth, db } from "../firebase";
 import { collection, doc, getDoc, getDocs, limit, query, where } from "firebase/firestore";
 import { accentThemes } from "../theme/accentThemes";
+import { FREE_LIMITS, PLUS_LIMITS } from "../config/limits";
+import { isUserPremium } from "../utils/premiumUtils";
 import {
   buildChartRows,
   loadLocalExamHistory,
@@ -45,6 +47,7 @@ function chartStrokeForTheme(key) {
 
 export default function PerformanceChartCard({
   user,
+  userData,
   accentTheme,
   accentThemeKey,
   onStartExam,
@@ -53,6 +56,7 @@ export default function PerformanceChartCard({
   const isSmallScreen = useIsSmallScreen();
   const [myTarget, setMyTarget] = useState(65);
   const [examHistoryMerged, setExamHistoryMerged] = useState([]);
+  const premium = isUserPremium(userData);
 
   useEffect(() => {
     if (!user?.uid) return;
@@ -114,7 +118,9 @@ export default function PerformanceChartCard({
   }, [examHistoryMerged]);
 
   const performanceChart = useMemo(() => {
-    const chartRows = buildChartRows(sortedExamHistory, { chartPointLimit: 20 });
+    const chartRows = buildChartRows(sortedExamHistory, {
+      chartPointLimit: premium ? PLUS_LIMITS.visibleExamHistory : FREE_LIMITS.visibleExamHistory,
+    });
     const summaryStats = summarizeNetStats(sortedExamHistory);
     const stroke = chartStrokeForTheme(accentThemeKey);
 
@@ -229,7 +235,7 @@ export default function PerformanceChartCard({
     };
 
     return { chartRows, summaryStats, chartData, lineOptions };
-  }, [sortedExamHistory, myTarget, accentThemeKey, isSmallScreen]);
+  }, [sortedExamHistory, myTarget, accentThemeKey, isSmallScreen, premium]);
 
   return (
     <div className="bg-slate-900/50 border border-slate-800 rounded-[3rem] p-6 md:p-8 relative overflow-hidden min-w-0">
@@ -261,6 +267,11 @@ export default function PerformanceChartCard({
       </div>
 
       <div className="relative z-10 min-w-0 w-full overflow-x-auto">
+        {!premium && sortedExamHistory.length > FREE_LIMITS.visibleExamHistory && (
+          <p className="text-xs text-slate-400 mb-3">
+            Free planda son {FREE_LIMITS.visibleExamHistory} deneme gorunur. Plus ile tum gelisimini takip edebilirsin.
+          </p>
+        )}
         {sortedExamHistory.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-12 px-4 text-center rounded-2xl border border-dashed border-slate-800 bg-slate-950/40">
             <span className="text-4xl mb-3" aria-hidden="true">📈</span>
