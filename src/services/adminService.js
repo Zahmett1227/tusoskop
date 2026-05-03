@@ -11,6 +11,7 @@ import {
   serverTimestamp,
   updateDoc,
 } from "firebase/firestore";
+import { PLAN_ID_TO_GRANT_DAYS } from "../config/plusPlans";
 
 export async function isCurrentUserAdmin(uid) {
   if (!uid) return false;
@@ -127,6 +128,45 @@ export async function revokePremium({ adminUid, adminEmail = null, targetUid, re
     },
     reason,
     createdAt: serverTimestamp(),
+  });
+}
+
+export async function getPremiumPurchaseIntents(maxItems = 50) {
+  const intentsQuery = query(
+    collection(db, "premiumPurchaseIntents"),
+    orderBy("createdAt", "desc"),
+    limit(maxItems)
+  );
+  const snap = await getDocs(intentsQuery);
+  return snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+}
+
+export async function activateIntentAndGrantPremium({
+  intentId,
+  intent,
+  adminUid,
+  adminEmail = null,
+}) {
+  const targetUid = intent?.uid;
+  if (!targetUid) {
+    throw new Error("Kayıtta kullanıcı UID yok; manuel aktivasyon yapılamaz.");
+  }
+  const days = PLAN_ID_TO_GRANT_DAYS[intent.planId];
+  if (!days) {
+    throw new Error("Bu plan için süre tanımı yok.");
+  }
+  await grantPremium({
+    adminUid,
+    adminEmail,
+    targetUid,
+    days,
+    reason: `Ödeme talebi / ${intent.planSku || intent.planId}`,
+  });
+  await updateDoc(doc(db, "premiumPurchaseIntents", intentId), {
+    status: "manually_activated",
+    activatedAt: new Date().toISOString(),
+    activatedByUid: adminUid,
+    updatedAt: serverTimestamp(),
   });
 }
 

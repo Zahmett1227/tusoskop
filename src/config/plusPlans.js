@@ -1,0 +1,58 @@
+export const PLUS_PLANS = [
+  {
+    id: "plus_1m",
+    label: "1 Aylık Plus",
+    durationLabel: "30 gün erişim",
+    durationDays: 30,
+    monthlyPrice: 89.9,
+    monthlyPriceLabel: "89,90 TL",
+    totalPrice: 89.9,
+    totalPriceLabel: "89,90 TL",
+    sku: "TUSOSKOP_PLUS_1M",
+    description:
+      "Plus'ı denemek ve çalışma akışını kesintisiz sürdürmek için ideal.",
+    highlight: false,
+    badge: null,
+    ctaLabel: "1 Aylık Başlat",
+    shopifyUrl: import.meta.env.VITE_SHOPIFY_PLUS_1M_URL || "",
+  },
+  {
+    id: "plus_3m",
+    label: "3 Aylık Plus",
+    durationLabel: "90 gün erişim",
+    durationDays: 90,
+    monthlyPrice: 69.9,
+    monthlyPriceLabel: "69,90 TL",
+    totalPrice: 209.7,
+    totalPriceLabel: "209,70 TL",
+    sku: "TUSOSKOP_PLUS_3M",
+    description: "Düzenli çalışma dönemi için daha avantajlı seçenek.",
+    highlight: true,
+    badge: "Önerilen",
+    ctaLabel: "3 Aylık Başlat",
+    shopifyUrl: import.meta.env.VITE_SHOPIFY_PLUS_3M_URL || "",
+  },
+  {
+    id: "plus_6m",
+    label: "6 Aylık Plus",
+    durationLabel: "180 gün erişim",
+    durationDays: 180,
+    monthlyPrice: 59.9,
+    monthlyPriceLabel: "59,90 TL",
+    totalPrice: 359.4,
+    totalPriceLabel: "359,40 TL",
+    sku: "TUSOSKOP_PLUS_6M",
+    description:
+      "Uzun vadeli hazırlık için en avantajlı aylık fiyatla 6 aylık kesintisiz Plus erişimi.",
+    highlight: false,
+    badge: "En avantajlı aylık fiyat",
+    ctaLabel: "6 Aylık Başlat",
+    shopifyUrl: import.meta.env.VITE_SHOPIFY_PLUS_6M_URL || "",
+  },
+];
+
+export const PLAN_ID_TO_GRANT_DAYS = {
+  plus_1m: 30,
+  plus_3m: 90,
+  plus_6m: 180,
+};

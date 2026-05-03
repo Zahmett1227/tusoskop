@@ -112,5 +112,12 @@ service cloud.firestore {
         || (isSignedIn() && resource.data.userId == request.auth.uid);
       allow update, delete: if false;
     }
+
+    match /premiumPurchaseIntents/{intentId} {
+      allow create: if isSignedIn()
+        && request.resource.data.uid == request.auth.uid;
+      allow read, update: if isAdmin();
+      allow delete: if false;
+    }
   }
 }

@@ -44,7 +44,7 @@ const SubjectCard = ({ subject, count, onClick, accentTheme, isLightTheme = fals
       className={`
         group relative w-full h-full overflow-hidden
         rounded-3xl border
-        ${isLightTheme ? "border-slate-200 bg-gradient-to-br from-white via-slate-50 to-slate-100" : "border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900/80 to-slate-950"}
+        ${isLightTheme ? "border-slate-300 shadow-md bg-gradient-to-br from-[#fffefb] via-[#faf8f4] to-[#ebe8e3]" : "border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900/80 to-slate-950"}
         p-6 text-left
         transition-all duration-300
         hover:-translate-y-2

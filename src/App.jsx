@@ -1100,7 +1100,9 @@ export default function App() {
       break;
 
     case "premiumInfo":
-      screenContent = <PremiumInfoScreen onBack={() => setView("dashboard")} />;
+      screenContent = (
+        <PremiumInfoScreen user={user} onBack={() => setView("dashboard")} />
+      );
       break;
 
     default:

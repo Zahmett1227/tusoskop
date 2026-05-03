@@ -9,8 +9,10 @@ import {
 import AdminUserTable from "./AdminUserTable";
 import AdminGrantModal from "./AdminGrantModal";
 import AdminNoteModal from "./AdminNoteModal";
+import AdminPurchaseIntentsTab from "./AdminPurchaseIntentsTab";
 
 export default function AdminPanel({ currentUser }) {
+  const [adminTab, setAdminTab] = useState("users");
   const [activeFilter, setActiveFilter] = useState("all");
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -130,6 +132,32 @@ export default function AdminPanel({ currentUser }) {
           </p>
         </div>
 
+        <div className="mb-6 flex flex-wrap gap-2">
+          {[
+            { id: "users", label: "Kullanıcılar" },
+            { id: "payments", label: "Ödeme Talepleri" },
+          ].map((t) => (
+            <button
+              key={t.id}
+              type="button"
+              onClick={() => setAdminTab(t.id)}
+              className={`px-4 py-2 rounded-2xl text-sm font-black border transition ${
+                adminTab === t.id
+                  ? "bg-cyan-300 text-slate-950 border-cyan-200"
+                  : "bg-slate-900 text-slate-300 border-slate-700"
+              }`}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+
+        {adminTab === "payments" ? (
+          <AdminPurchaseIntentsTab currentUser={currentUser} />
+        ) : null}
+
+        {adminTab === "users" ? (
+          <>
         <div className="mb-4">
           <input
             value={query}
@@ -176,6 +204,8 @@ export default function AdminPanel({ currentUser }) {
             setNoteModalOpen(true);
           }}
         />
+          </>
+        ) : null}
       </div>
 
       <AdminGrantModal

@@ -21,7 +21,7 @@ export default function StreakBadge({ userId, isLightTheme = false }) {
 
   if (loading) {
     return (
-      <div className={`rounded-[2rem] border p-5 animate-pulse h-28 ${isLightTheme ? "border-slate-200 bg-white" : "border-slate-800 bg-slate-900/60"}`} />
+      <div className={`rounded-[2rem] border p-5 animate-pulse h-28 ${isLightTheme ? "border-slate-300 bg-[#fffefb]" : "border-slate-800 bg-slate-900/60"}`} />
     );
   }
 
@@ -40,9 +40,9 @@ export default function StreakBadge({ userId, isLightTheme = false }) {
         relative overflow-hidden rounded-[2rem] border p-5 flex flex-col gap-3
         transition-all duration-500 cursor-default select-none
         ${isActive
-          ? `${isLightTheme ? "border-orange-200 bg-gradient-to-br from-white via-orange-50 to-amber-50" : "border-orange-500/30 bg-gradient-to-br from-slate-900 via-slate-900 to-orange-950/30"}
+          ? `${isLightTheme ? "border-orange-300 shadow-md bg-gradient-to-br from-[#fffefb] via-orange-50 to-amber-50" : "border-orange-500/30 bg-gradient-to-br from-slate-900 via-slate-900 to-orange-950/30"}
              ${hovered ? 'shadow-[0_0_40px_rgba(249,115,22,0.18)] border-orange-500/50 -translate-y-0.5' : 'shadow-[0_0_20px_rgba(249,115,22,0.07)]'}`
-          : `${isLightTheme ? "border-slate-200 bg-white shadow-sm" : "border-slate-800 bg-slate-900/60"}
+          : `${isLightTheme ? "border-slate-300 bg-[#fffefb] shadow-md" : "border-slate-800 bg-slate-900/60"}
              ${hovered ? 'border-slate-700 -translate-y-0.5' : ''}`
         }
       `}

@@ -47,7 +47,7 @@ export default function TusCountdown({ isLightTheme = false }) {
   }, []);
 
   return (
-    <div className={`mb-10 rounded-[2rem] border p-5 md:p-7 ${isLightTheme ? "border-emerald-200 bg-white shadow-sm" : "border-emerald-500/20 bg-slate-900/90 shadow-[0_0_30px_rgba(16,185,129,0.08)]"}`}>
+    <div className={`mb-10 rounded-[2rem] border p-5 md:p-7 ${isLightTheme ? "border-emerald-300 bg-[#fffefb] shadow-md" : "border-emerald-500/20 bg-slate-900/90 shadow-[0_0_30px_rgba(16,185,129,0.08)]"}`}>
       <div className="flex items-center justify-between gap-4">
         <div>
           <p className={`text-sm uppercase tracking-[0.2em] font-bold mb-2 ${isLightTheme ? "text-emerald-600" : "text-emerald-400"}`}>

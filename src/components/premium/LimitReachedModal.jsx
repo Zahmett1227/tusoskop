@@ -1,5 +1,5 @@
 import React from "react";
-import { PLUS_MONTHLY_PRICE_LABEL } from "../../constants/pricing";
+import { PRICING } from "../../constants/pricing";
 import CoffeeAnimation from "./CoffeeAnimation";
 
 export default function LimitReachedModal({
@@ -42,8 +42,10 @@ export default function LimitReachedModal({
         ) : null}
 
         <div className="rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-3 mb-5">
-          <p className="text-xs text-neutral-600">Plus fiyatı</p>
-          <p className="text-base font-black text-black">{PLUS_MONTHLY_PRICE_LABEL} / ay</p>
+          <p className="text-xs text-neutral-600">Plus paketleri</p>
+          <p className="text-sm font-black text-black leading-snug">
+            {PRICING.PLUS_STARTS_AT_LABEL}
+          </p>
         </div>
 
         <div className="mb-5 space-y-1.5">
