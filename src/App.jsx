@@ -304,7 +304,7 @@ export default function App() {
     trackClarityEvent("subject_topic_plus_gate_shown");
     setLimitModal({
       open: true,
-      title: "Ders ve konu seçerek çözme Plus’a özel",
+      title: "Ders ve konu seçerek çözme Plus'a özel",
       description:
         "Free planda günlük ücretsiz soru hakkınızla çalışmaya devam edebilirsiniz. Ders ve konu seçerek sınırsız çalışma Plus üyelikte açılır.",
       remainingInfo: "",

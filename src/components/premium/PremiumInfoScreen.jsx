@@ -10,6 +10,12 @@ function shortAccountId(uid) {
   return `${uid.slice(0, 4)}...${uid.slice(-3)}`;
 }
 
+const PLAN_CARD_PERKS = [
+  "Sınırsız soru, deneme ve tekrar",
+  "Favori ve yanlış geçmişi",
+  "Gelişmiş deneme net grafiği",
+];
+
 export default function PremiumInfoScreen({ onBack, user }) {
   const [copyDone, setCopyDone] = useState(false);
   const [banner, setBanner] = useState("");
@@ -62,168 +68,213 @@ export default function PremiumInfoScreen({ onBack, user }) {
     [user]
   );
 
-  const emailDisplay = user?.email?.trim() ? user.email : "Email bilgisi yok";
+  const emailDisplay = user?.email?.trim()
+    ? user.email
+    : "E-posta bilgisi yok";
   const uidShort = user?.uid ? shortAccountId(user.uid) : "";
   const uidLine =
     user?.uid && uidShort ? uidShort : "Hesap bilgisi bulunamadı";
 
   return (
-    <div className="min-h-dvh bg-[#fcfbf9] text-black px-3 py-4 pb-10 sm:px-4 md:p-8">
-      <div className="max-w-5xl mx-auto space-y-5 md:space-y-7">
+    <div className="min-h-dvh bg-gradient-to-b from-[#fdfcfa] via-[#fcfbf9] to-[#f5f0ea] text-black px-3 py-5 pb-12 sm:px-4 md:px-8 md:py-10">
+      <div className="max-w-5xl mx-auto space-y-8 md:space-y-10">
         {banner ? (
-          <div className="rounded-2xl border border-amber-200 bg-[#fff8ef] px-4 py-3 text-sm text-[#3d2a18]">
+          <div
+            role="status"
+            className="rounded-3xl border border-amber-200/80 bg-[#fff8ef] px-4 py-3.5 text-sm font-medium text-[#3d2a18] shadow-sm"
+          >
             {banner}
           </div>
         ) : null}
 
         {/* Hero */}
-        <section className="rounded-3xl border border-neutral-200 bg-white p-4 sm:p-6 md:p-8 shadow-[0_18px_50px_-30px_rgba(0,0,0,0.28)]">
-          <p className="text-[10px] sm:text-xs uppercase tracking-[0.16em] text-neutral-600 font-black mb-2">
+        <section className="relative overflow-hidden rounded-[1.75rem] border border-neutral-200/90 bg-white/95 p-5 sm:p-8 md:p-10 shadow-[0_24px_70px_-32px_rgba(45,35,25,0.22)]">
+          <div
+            className="pointer-events-none absolute -right-16 -top-24 h-56 w-56 rounded-full bg-gradient-to-br from-[#f0e0d0]/90 to-transparent blur-2xl"
+            aria-hidden
+          />
+          <p className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-neutral-500 font-black mb-3">
             Tusoskop Plus
           </p>
-          <h1 className="text-xl sm:text-2xl md:text-4xl font-black leading-tight mb-2">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-[1.08] tracking-tight text-neutral-950 mb-4">
             Çalışma akışınızı kesintiye uğratmadan devam edin
           </h1>
-          <p className="text-sm md:text-base text-neutral-700 mb-4">
+          <p className="text-base md:text-lg font-medium text-slate-700 max-w-2xl leading-relaxed mb-8">
             Soru, deneme ve tekrar sınırlarına takılmadan çalışmak isteyenler için
             Plus erişim paketleri.
           </p>
 
-          <div className="rounded-2xl border border-[#ead9c1] bg-[#fff8ef] px-3 py-4 sm:px-5 sm:py-5 flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
-            <div className="flex justify-center sm:justify-start w-full sm:w-auto">
-              <div className="scale-90 sm:scale-100 origin-top">
-                <CoffeeAnimation />
+          <div className="rounded-3xl border border-[#e8d5c4] bg-gradient-to-br from-[#fffbf7] via-[#fff8ef] to-[#faf3eb] px-4 py-5 sm:px-6 sm:py-6 shadow-inner">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6">
+              <div className="flex shrink-0 justify-center sm:justify-start w-full sm:w-auto">
+                <div className="scale-[0.88] sm:scale-100 origin-center sm:origin-top -mt-1">
+                  <CoffeeAnimation />
+                </div>
               </div>
-            </div>
-            <div className="min-w-0 flex-1">
-              <p className="text-base md:text-lg font-black text-[#2f1f11] leading-snug">
-                Aylık bir kahve ücretine Plus üyelik almak ister misiniz?
-              </p>
-              <p className="text-xs md:text-sm text-[#5c4736] mt-1.5 leading-relaxed">
-                Kısa bir kahve molası fiyatına, çalışma düzeninizi sınırsız hale
-                getirin.
-              </p>
+              <div className="min-w-0 flex-1 text-center sm:text-left">
+                <p className="text-xl sm:text-2xl md:text-2xl font-extrabold text-[#2a1a0f] leading-snug">
+                  Aylık bir kahve ücretine Plus üyelik almak ister misiniz?
+                </p>
+                <p className="text-sm md:text-base font-medium text-[#5c4736] mt-2 leading-relaxed max-w-xl mx-auto sm:mx-0">
+                  Kısa bir kahve molası fiyatına çalışma düzeninizi sınırsız hale
+                  getirin.
+                </p>
+              </div>
             </div>
           </div>
 
-          <p className="mt-4 text-xs sm:text-sm text-neutral-600 leading-snug">
-            {PRICING.PLUS_STARTS_AT_LABEL}{" "}
-            <span className="text-neutral-500 hidden sm:inline">
+          <div className="mt-6 space-y-1.5 text-sm md:text-base">
+            <p className="font-semibold text-neutral-800">
+              {PRICING.PLUS_STARTS_AT_LABEL}
+            </p>
+            <p className="font-medium text-neutral-600 leading-snug">
               {PRICING.PLUS_PLANS_DETAIL_LABEL}
-            </span>
-          </p>
+            </p>
+          </div>
         </section>
 
         {/* Hesap */}
-        <section className="rounded-3xl border border-[#e8dfd4] bg-white p-4 sm:p-5 shadow-[0_12px_40px_-28px_rgba(60,40,20,0.35)]">
-          <h2 className="text-sm font-black text-black mb-1">
+        <section className="rounded-3xl border border-[#e6dfd6] bg-white/95 p-5 sm:p-7 shadow-[0_18px_50px_-30px_rgba(60,40,20,0.12)]">
+          <h2 className="text-2xl md:text-3xl font-black text-neutral-950 mb-2">
             Plus erişimi bu hesaba tanımlanacak
           </h2>
-          <p className="text-xs text-neutral-600 mb-4 leading-relaxed">
+          <p className="text-sm font-medium text-neutral-600 mb-5 leading-relaxed max-w-2xl">
             Ödeme yapmadan önce doğru hesapla giriş yaptığınızdan emin olun.
           </p>
-          <div className="grid gap-2 text-sm">
-            <p className="text-neutral-800 break-all">
-              <span className="text-neutral-500 font-semibold">Email: </span>
+          <div className="grid gap-3 text-sm rounded-2xl border border-neutral-100 bg-[#fafaf9] p-4">
+            <p className="text-neutral-900 break-all font-medium">
+              <span className="text-neutral-500 font-bold text-xs uppercase tracking-wide">
+                E-posta{" "}
+              </span>
               {emailDisplay}
             </p>
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-              <p className="text-neutral-800 break-all min-w-0">
-                <span className="text-neutral-500 font-semibold">Hesap ID: </span>
-                <span className="font-mono text-[13px] tabular-nums">{uidLine}</span>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <p className="text-neutral-900 break-all min-w-0 font-medium">
+                <span className="text-neutral-500 font-bold text-xs uppercase tracking-wide">
+                  Hesap ID{" "}
+                </span>
+                <span className="font-mono text-[13px] tabular-nums text-neutral-800">
+                  {uidLine}
+                </span>
               </p>
               <button
                 type="button"
                 disabled={!user?.uid}
                 onClick={handleCopyUid}
-                className="shrink-0 min-h-10 px-4 rounded-2xl border border-[#c4a882] bg-[#faf6f0] text-[#2f1f11] text-xs font-bold disabled:opacity-40"
+                className="shrink-0 min-h-11 px-5 rounded-2xl border border-[#c4a882] bg-white text-[#2f1f11] text-xs font-extrabold shadow-sm hover:bg-[#faf6f0] transition disabled:opacity-40 disabled:cursor-not-allowed"
               >
-                {copyDone ? "Hesap ID kopyalandı" : "Hesap ID'yi Kopyala"}
+                {copyDone ? "Hesap ID kopyalandı" : "Hesap ID'yi kopyala"}
               </button>
             </div>
           </div>
         </section>
 
         {/* Paketler */}
-        <section>
-          <h2 className="text-lg font-black mb-3 px-0.5">Paketler</h2>
-          <ul className="text-xs text-neutral-700 mb-4 px-0.5 space-y-1 list-none">
-            {[
-              "Sınırsız soru çözme",
-              "Sınırsız deneme",
-              "Sınırsız tekrar kuyruğu",
-              "Sınırsız favori ve yanlış geçmişi",
-              "Gelişmiş deneme net grafiği",
-            ].map((line) => (
-              <li key={line} className="flex gap-2">
-                <span className="text-[#8b6914] shrink-0">✓</span>
-                <span>{line}</span>
-              </li>
-            ))}
-          </ul>
+        <section className="space-y-5">
+          <div className="px-0.5">
+            <h2 className="text-2xl md:text-3xl font-black text-neutral-950 tracking-tight">
+              Paketler
+            </h2>
+            <ul className="mt-3 text-sm md:text-base font-medium text-neutral-700 space-y-2 list-none max-w-2xl">
+              {[
+                "Sınırsız soru çözme",
+                "Sınırsız deneme",
+                "Sınırsız tekrar kuyruğu",
+                "Sınırsız favori ve yanlış geçmişi",
+                "Gelişmiş deneme net grafiği",
+              ].map((line) => (
+                <li key={line} className="flex gap-2.5 items-start">
+                  <span
+                    className="mt-0.5 text-[#8b6914] font-black shrink-0"
+                    aria-hidden
+                  >
+                    ✓
+                  </span>
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 items-stretch">
             {PLUS_PLANS.map((plan) => {
               const is1m = plan.id === "plus_1m";
               const hasUrl = Boolean(plan.shopifyUrl?.trim());
-              const ring =
-                plan.highlight &&
-                "ring-2 ring-[#b08968] ring-offset-2 ring-offset-[#fcfbf9] shadow-[0_20px_55px_-30px_rgba(90,60,40,0.45)] scale-[1.01]";
+              const highlight = plan.highlight;
+              const cardBase =
+                "relative flex flex-col rounded-3xl border p-5 sm:p-6 min-h-0 min-w-0 transition duration-300 ease-out";
+              const cardVisual = highlight
+                ? "md:-translate-y-1 z-[1] border-[#c9a88a] bg-gradient-to-b from-[#fffefb] to-white shadow-[0_28px_64px_-28px_rgba(110,75,45,0.38)] ring-1 ring-[#dfc7ae]/70 hover:shadow-[0_32px_70px_-26px_rgba(110,75,45,0.45)] hover:-translate-y-1 md:hover:-translate-y-1.5"
+                : "border-neutral-200/95 bg-white shadow-[0_18px_48px_-32px_rgba(0,0,0,0.16)] hover:shadow-[0_24px_56px_-28px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 md:hover:-translate-y-1";
+
               return (
                 <article
                   key={plan.id}
-                  className={`relative flex flex-col rounded-3xl border bg-white p-4 sm:p-5 min-h-0 min-w-0 ${
-                    plan.highlight
-                      ? "border-[#c9a88a] bg-[#fffefb]"
-                      : "border-neutral-200"
-                  } ${ring || "shadow-[0_14px_40px_-28px_rgba(0,0,0,0.12)]"}`}
+                  className={`${cardBase} ${cardVisual}`}
                 >
                   {plan.badge ? (
-                    <span className="absolute -top-2.5 right-3 max-w-[calc(100%-1.5rem)] rounded-full bg-[#3d2918] px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wide text-white whitespace-normal text-center leading-tight">
+                    <span className="absolute -top-3 right-4 max-w-[min(100%,14rem)] rounded-full bg-gradient-to-r from-[#2d1f14] to-[#3d2918] px-3 py-1 text-[10px] sm:text-[11px] font-black uppercase tracking-wide text-white text-center leading-tight shadow-md">
                       {plan.badge}
                     </span>
                   ) : null}
-                  <h3 className="text-base font-black pr-2">{plan.label}</h3>
-                  <p className="text-[11px] font-semibold text-neutral-500 mt-1">
-                    {plan.durationLabel}
-                  </p>
 
-                  <div className="mt-3 space-y-1 min-w-0">
+                  <div className="pr-2">
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-neutral-950 leading-tight">
+                      {plan.label}
+                    </h3>
+                    <p className="text-sm font-semibold text-neutral-500 mt-1.5">
+                      {plan.durationLabel}
+                    </p>
+                  </div>
+
+                  <div className="mt-5 space-y-1 min-w-0">
                     {is1m ? (
-                      <p className="text-2xl font-black tabular-nums tracking-tight break-words">
+                      <p className="text-3xl sm:text-4xl font-black tabular-nums tracking-tight text-neutral-950 break-words">
                         {plan.totalPriceLabel}
                       </p>
                     ) : (
                       <>
-                        <p className="text-sm font-bold text-neutral-800 tabular-nums break-words">
+                        <p className="text-3xl sm:text-4xl font-black tabular-nums tracking-tight text-neutral-950 break-words">
                           {plan.monthlyPriceLabel}
-                          <span className="font-semibold text-neutral-600"> / ay</span>
+                          <span className="text-lg sm:text-xl font-extrabold text-neutral-500">
+                            {" "}
+                            / ay
+                          </span>
                         </p>
-                        <p className="text-xs text-neutral-600 tabular-nums break-words">
+                        <p className="text-sm font-semibold text-neutral-600 tabular-nums break-words">
                           Toplam {plan.totalPriceLabel}
                         </p>
                       </>
                     )}
                   </div>
 
-                  <p className="mt-3 text-xs text-neutral-700 leading-relaxed flex-1">
+                  <p className="mt-4 text-sm font-medium text-neutral-700 leading-relaxed flex-1">
                     {plan.description}
                   </p>
+
+                  <ul className="mt-4 space-y-1.5 text-xs sm:text-sm font-semibold text-neutral-600">
+                    {PLAN_CARD_PERKS.map((perk) => (
+                      <li key={perk} className="flex gap-2">
+                        <span className="text-[#a67c52] shrink-0">•</span>
+                        <span>{perk}</span>
+                      </li>
+                    ))}
+                  </ul>
 
                   <button
                     type="button"
                     onClick={(e) => handlePlanClick(e, plan)}
                     disabled={!hasUrl}
-                    className={`mt-4 w-full min-h-11 rounded-2xl font-black text-sm px-3 py-2.5 transition ${
+                    className={`mt-5 w-full min-h-12 rounded-2xl text-sm font-extrabold px-3 py-3 transition ${
                       hasUrl
-                        ? "bg-[#2f1f11] text-white active:scale-[0.99] hover:bg-black"
-                        : "bg-neutral-200 text-neutral-500 cursor-not-allowed"
+                        ? "bg-[#1a120c] text-white shadow-lg shadow-neutral-900/15 hover:bg-black hover:shadow-xl active:scale-[0.98]"
+                        : "bg-neutral-100 text-neutral-500 border border-neutral-200 cursor-not-allowed"
                     }`}
                   >
                     {hasUrl ? plan.ctaLabel : "Bağlantı hazırlanıyor"}
                   </button>
                   {!hasUrl ? (
-                    <p className="mt-2 text-[10px] text-neutral-500 text-center">
+                    <p className="mt-2 text-center text-xs font-medium text-neutral-500">
                       Bu paket için satın alma bağlantısı hazırlanıyor.
                     </p>
                   ) : null}
@@ -234,22 +285,26 @@ export default function PremiumInfoScreen({ onBack, user }) {
         </section>
 
         {/* Ödeme sonrası */}
-        <section className="rounded-3xl border border-neutral-200 bg-white p-4 sm:p-6 shadow-sm">
-          <h2 className="text-base font-black mb-2">Ödeme sonrası nasıl aktifleşir?</h2>
-          <p className="text-sm text-neutral-700 leading-relaxed">
+        <section className="rounded-3xl border border-neutral-200/90 bg-white p-5 sm:p-8 shadow-[0_14px_40px_-28px_rgba(0,0,0,0.1)]">
+          <h2 className="text-2xl md:text-3xl font-black text-neutral-950 mb-3">
+            Ödeme sonrası nasıl aktifleşir?
+          </h2>
+          <p className="text-sm md:text-base font-medium text-neutral-700 leading-relaxed">
             Satın alma sonrası Plus erişimi bu hesaba tanımlanır. Erken erişim
             döneminde işlemler manuel kontrol edilebilir; bu yüzden ödeme yapmadan
             önce doğru hesapla giriş yaptığınızdan emin olun.
           </p>
-          <p className="text-sm text-neutral-600 mt-2 leading-relaxed">
+          <p className="text-sm md:text-base font-medium text-neutral-600 mt-3 leading-relaxed">
             Ödeme kontrolünden sonra seçtiğiniz süre hesabınıza eklenir.
           </p>
         </section>
 
         {/* Plus ile açılanlar */}
-        <section className="rounded-3xl border border-neutral-200 bg-[#fffefb] p-4 sm:p-6">
-          <h2 className="text-lg font-black mb-4">Plus ile açılanlar</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <section className="rounded-3xl border border-neutral-200/90 bg-white/90 p-5 sm:p-8 shadow-inner">
+          <h2 className="text-2xl md:text-3xl font-black text-neutral-950 mb-6">
+            Plus ile açılanlar
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               [
                 "Sınırsız soru çözme",
@@ -274,10 +329,14 @@ export default function PremiumInfoScreen({ onBack, user }) {
             ].map(([title, desc]) => (
               <article
                 key={title}
-                className="rounded-2xl border border-neutral-200 bg-white p-3.5 sm:p-4 min-w-0"
+                className="rounded-2xl border border-neutral-200/90 bg-[#fdfcfa] p-4 sm:p-5 min-w-0 shadow-sm"
               >
-                <h3 className="text-sm font-black mb-1 leading-snug">{title}</h3>
-                <p className="text-xs text-neutral-700 leading-relaxed">{desc}</p>
+                <h3 className="text-base font-extrabold text-neutral-950 mb-1.5 leading-snug">
+                  {title}
+                </h3>
+                <p className="text-xs sm:text-sm font-medium text-neutral-700 leading-relaxed">
+                  {desc}
+                </p>
               </article>
             ))}
           </div>
@@ -287,9 +346,9 @@ export default function PremiumInfoScreen({ onBack, user }) {
           <button
             type="button"
             onClick={onBack}
-            className="min-h-11 px-6 rounded-2xl border border-neutral-300 bg-white text-black font-bold text-sm w-full sm:w-auto max-w-md"
+            className="min-h-12 px-8 rounded-2xl border-2 border-neutral-300 bg-white text-neutral-900 font-extrabold text-sm w-full sm:w-auto max-w-md shadow-sm hover:bg-neutral-50 transition"
           >
-            Şimdilik Free ile Devam Et
+            Şimdilik ücretsiz devam et
           </button>
         </div>
       </div>

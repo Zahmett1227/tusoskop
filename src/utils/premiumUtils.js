@@ -42,11 +42,15 @@ export function getPremiumStatusLabel(userData) {
 
 export function getPremiumLabel(userData) {
   if (!userData) return "Ücretsiz";
-  if (userData.lifetimePremium) return "Ömür Boyu Plus";
-  if (!isUserPremium(userData)) return "Ücretsiz";
-
-  const until = toSafeDate(userData.premiumUntil);
-  if (!until) return "Plus";
-
-  return `Plus - ${until.toLocaleDateString("tr-TR")} tarihine kadar`;
+  if (userData.lifetimePremium) return "Ömür boyu Plus";
+  if (isUserPremium(userData)) return "Plus aktif";
+  if (
+    userData.plan === "plus" &&
+    userData.premiumStatus === "active" &&
+    userData.premiumUntil
+  ) {
+    const until = toSafeDate(userData.premiumUntil);
+    if (until && until.getTime() <= Date.now()) return "Süresi dolmuş";
+  }
+  return "Ücretsiz";
 }

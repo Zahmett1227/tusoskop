@@ -114,8 +114,8 @@ export default function AdminPanel({ currentUser }) {
 
   if (loading) {
     return (
-      <div className="min-h-dvh bg-slate-950 text-slate-300 p-8">
-        Admin paneli yukleniyor...
+      <div className="min-h-dvh bg-slate-950 text-slate-300 p-8 font-medium">
+        Admin paneli yükleniyor…
       </div>
     );
   }
@@ -123,16 +123,23 @@ export default function AdminPanel({ currentUser }) {
   if (!isAdmin) return null;
 
   return (
-    <div className="min-h-dvh bg-slate-950 text-white p-4 md:p-8">
+    <div className="min-h-dvh bg-slate-950 text-white p-4 md:p-8 pb-12">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-6">
-          <h2 className="text-3xl font-black">Admin Panel</h2>
-          <p className="text-slate-400 text-sm mt-1">
-            Premium ve kullanici yonetimi
+        <header className="mb-8 md:mb-10">
+          <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
+            Admin Panel
+          </h1>
+          <p className="text-slate-400 text-sm md:text-base font-medium mt-2 max-w-xl leading-relaxed">
+            Plus abonelikleri, kullanıcı kayıtları ve ödeme taleplerini buradan
+            yönetin.
           </p>
-        </div>
+        </header>
 
-        <div className="mb-6 flex flex-wrap gap-2">
+        <div
+          className="mb-8 inline-flex w-full sm:w-auto rounded-2xl border border-slate-700/90 bg-slate-900/80 p-1 shadow-inner"
+          role="tablist"
+          aria-label="Admin bölümleri"
+        >
           {[
             { id: "users", label: "Kullanıcılar" },
             { id: "payments", label: "Ödeme Talepleri" },
@@ -140,11 +147,13 @@ export default function AdminPanel({ currentUser }) {
             <button
               key={t.id}
               type="button"
+              role="tab"
+              aria-selected={adminTab === t.id}
               onClick={() => setAdminTab(t.id)}
-              className={`px-4 py-2 rounded-2xl text-sm font-black border transition ${
+              className={`flex-1 sm:flex-none min-h-11 px-5 rounded-xl text-sm font-extrabold transition ${
                 adminTab === t.id
-                  ? "bg-cyan-300 text-slate-950 border-cyan-200"
-                  : "bg-slate-900 text-slate-300 border-slate-700"
+                  ? "bg-slate-800 text-white shadow-md border border-slate-600/80"
+                  : "text-slate-400 hover:text-slate-200 border border-transparent"
               }`}
             >
               {t.label}
@@ -153,57 +162,62 @@ export default function AdminPanel({ currentUser }) {
         </div>
 
         {adminTab === "payments" ? (
-          <AdminPurchaseIntentsTab currentUser={currentUser} />
+          <AdminPurchaseIntentsTab
+            currentUser={currentUser}
+            onPremiumActivated={refreshUsers}
+          />
         ) : null}
 
         {adminTab === "users" ? (
           <>
-        <div className="mb-4">
-          <input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Ad, email veya uid ile ara"
-            className="w-full md:w-96 px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white"
-          />
-        </div>
+            <div className="mb-5 flex flex-col sm:flex-row sm:items-center gap-3">
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Ad, e-posta veya UID ile ara"
+                className="w-full sm:max-w-md min-h-11 px-4 rounded-2xl bg-slate-900/90 border border-slate-700 text-white text-sm font-medium placeholder:text-slate-500 shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500/40 focus:border-cyan-500/50"
+              />
+            </div>
 
-        <div className="mb-4 flex flex-wrap gap-2">
-          {[
-            { id: "all", label: "Tumu" },
-            { id: "plus", label: "Plus" },
-            { id: "free", label: "Free" },
-            { id: "no-email", label: "Email yok" },
-          ].map((filter) => (
-            <button
-              key={filter.id}
-              type="button"
-              onClick={() => setActiveFilter(filter.id)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition ${
-                activeFilter === filter.id
-                  ? "bg-cyan-300 text-slate-950 border-cyan-200"
-                  : "bg-slate-900 text-slate-300 border-slate-700"
-              }`}
-            >
-              {filter.label}
-            </button>
-          ))}
-        </div>
+            <div className="mb-4 flex flex-wrap gap-2">
+              {[
+                { id: "all", label: "Tümü" },
+                { id: "plus", label: "Plus" },
+                { id: "free", label: "Ücretsiz" },
+                { id: "no-email", label: "E-posta yok" },
+              ].map((filter) => (
+                <button
+                  key={filter.id}
+                  type="button"
+                  onClick={() => setActiveFilter(filter.id)}
+                  className={`min-h-9 px-3.5 rounded-xl text-xs font-extrabold border transition ${
+                    activeFilter === filter.id
+                      ? "bg-cyan-400 text-slate-950 border-cyan-300 shadow-sm"
+                      : "bg-slate-900 text-slate-300 border-slate-700 hover:border-slate-600"
+                  }`}
+                >
+                  {filter.label}
+                </button>
+              ))}
+            </div>
 
-        <p className="text-xs text-slate-500 mb-4">
-          Email bilgisi olmayan eski kayitlar, kullanici tekrar giris yaptiginda guncellenir.
-        </p>
+            <p className="text-xs text-slate-500 mb-5 font-medium leading-relaxed max-w-2xl">
+              E-postası eksik görünen kayıtlar, kullanıcı tekrar giriş yaptığında
+              güncellenebilir. Ödeme talebinden Plus verildiğinde niyet kaydındaki
+              e-posta kullanıcıya aktarılır.
+            </p>
 
-        <AdminUserTable
-          users={filteredUsers}
-          onOpenGrant={(user) => {
-            setSelectedUser(user);
-            setGrantModalOpen(true);
-          }}
-          onOpenNote={(user) => {
-            setSelectedUser(user);
-            setNoteModalOpen(true);
-          }}
-        />
+            <AdminUserTable
+              users={filteredUsers}
+              onOpenGrant={(user) => {
+                setSelectedUser(user);
+                setGrantModalOpen(true);
+              }}
+              onOpenNote={(user) => {
+                setSelectedUser(user);
+                setNoteModalOpen(true);
+              }}
+            />
           </>
         ) : null}
       </div>

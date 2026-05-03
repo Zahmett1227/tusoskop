@@ -4,7 +4,7 @@ export const PRICING = {
   /** Genel metinler — plan kartları her zaman `PLUS_PLANS` üzerinden */
   PLUS_STARTS_AT_LABEL: "Plus paketleri 89,90 TL'den başlar.",
   PLUS_PLANS_DETAIL_LABEL:
-    "1 aylık Plus 89,90 TL. 3 aylık planda aylık 69,90 TL, 6 aylık planda aylık 59,90 TL.",
+    "Uzun dönem planlarda aylık fiyat düşer. 6 aylık planda aylık 59,90 TL.",
   CURRENCY: "TRY",
 };
 

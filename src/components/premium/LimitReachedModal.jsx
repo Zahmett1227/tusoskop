@@ -6,8 +6,8 @@ export default function LimitReachedModal({
   open,
   title,
   description,
-  ctaLabel = "Plus’ı İncele",
-  secondaryLabel = "Şimdilik Vazgeç",
+  ctaLabel = "Plus'ı incele",
+  secondaryLabel = "Şimdilik vazgeç",
   premiumMessage = "Aylık bir kahve ücretine Plus üyelik almak ister misiniz?",
   premiumDescription = "Plus ile soru çözme sınırları kalkar; denemeler, tekrarlar ve gelişmiş analizler tamamen açılır.",
   onClose,
@@ -18,56 +18,75 @@ export default function LimitReachedModal({
 
   return (
     <div className="fixed inset-0 z-[120] bg-black/45 backdrop-blur-sm p-4 flex items-center justify-center">
-      <div className="w-full max-w-md rounded-3xl border border-neutral-200 bg-white p-5 md:p-6 shadow-[0_28px_80px_-28px_rgba(0,0,0,0.35)]">
-        <p className="text-[11px] uppercase tracking-[0.14em] text-neutral-600 font-black mb-2">
+      <div className="w-full max-w-md rounded-3xl border border-neutral-200 bg-white p-5 md:p-7 shadow-[0_28px_80px_-28px_rgba(0,0,0,0.35)]">
+        <p className="text-[11px] uppercase tracking-[0.16em] text-neutral-500 font-black mb-2">
           Tusoskop Plus
         </p>
-        <h3 className="text-lg md:text-xl font-black text-black mb-2">{title}</h3>
-        <p className="text-sm text-neutral-700 mb-3">{description}</p>
+        <h3 className="text-xl md:text-2xl font-black text-neutral-950 mb-2 leading-tight">
+          {title}
+        </h3>
+        <p className="text-sm md:text-base font-medium text-neutral-700 mb-4 leading-relaxed">
+          {description}
+        </p>
 
-        <div className="mb-4 rounded-2xl border border-[#ead9c1] bg-[#fff8ef] p-4 flex items-start gap-3">
-          <CoffeeAnimation />
-          <div>
-            <p className="text-sm md:text-base font-black text-[#2f1f11] leading-tight">
+        <div className="mb-4 rounded-3xl border border-[#ead9c1] bg-gradient-to-br from-[#fffbf7] to-[#fff8ef] p-4 flex items-start gap-3">
+          <div className="shrink-0 scale-90 origin-top">
+            <CoffeeAnimation />
+          </div>
+          <div className="min-w-0">
+            <p className="text-lg md:text-xl font-extrabold text-[#2f1f11] leading-snug">
               {premiumMessage}
             </p>
-            <p className="text-xs text-[#5c4736] mt-1">
+            <p className="text-xs md:text-sm font-medium text-[#5c4736] mt-1.5 leading-relaxed">
               {premiumDescription}
             </p>
           </div>
         </div>
 
         {remainingInfo ? (
-          <p className="text-xs text-neutral-600 mb-4">{remainingInfo}</p>
+          <p className="text-xs font-medium text-neutral-600 mb-4 leading-relaxed">
+            {remainingInfo}
+          </p>
         ) : null}
 
-        <div className="rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-3 mb-5">
-          <p className="text-xs text-neutral-600">Plus paketleri</p>
-          <p className="text-sm font-black text-black leading-snug">
+        <div className="rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-3.5 mb-5">
+          <p className="text-[11px] font-bold uppercase tracking-wide text-neutral-500">
+            Plus paketleri
+          </p>
+          <p className="text-sm md:text-base font-black text-neutral-950 leading-snug mt-0.5">
             {PRICING.PLUS_STARTS_AT_LABEL}
+          </p>
+          <p className="text-xs font-medium text-neutral-600 mt-1 leading-snug">
+            {PRICING.PLUS_PLANS_DETAIL_LABEL}
           </p>
         </div>
 
-        <div className="mb-5 space-y-1.5">
-          <p className="text-xs text-neutral-700">• Sınırsız soru çözme</p>
-          <p className="text-xs text-neutral-700">• Sınırsız deneme ve tekrar kuyruğu</p>
-          <p className="text-xs text-neutral-700">• Sınırsız favori ve yanlış geçmişi</p>
+        <div className="mb-5 space-y-2">
+          <p className="text-xs md:text-sm font-semibold text-neutral-700">
+            • Sınırsız soru çözme
+          </p>
+          <p className="text-xs md:text-sm font-semibold text-neutral-700">
+            • Sınırsız deneme ve tekrar kuyruğu
+          </p>
+          <p className="text-xs md:text-sm font-semibold text-neutral-700">
+            • Sınırsız favori ve yanlış geçmişi
+          </p>
         </div>
 
-        <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={onUpgradeClick}
-            className="flex-1 min-h-11 px-4 rounded-2xl bg-black text-white font-black"
-          >
-            {ctaLabel}
-          </button>
+        <div className="flex flex-col-reverse sm:flex-row gap-2">
           <button
             type="button"
             onClick={onClose}
-            className="min-h-11 px-4 rounded-2xl border border-neutral-300 bg-white text-black font-bold"
+            className="min-h-11 px-4 rounded-2xl border border-neutral-300 bg-white text-neutral-900 font-bold text-sm hover:bg-neutral-50 transition sm:flex-1"
           >
             {secondaryLabel}
+          </button>
+          <button
+            type="button"
+            onClick={onUpgradeClick}
+            className="min-h-11 px-4 rounded-2xl bg-neutral-950 text-white font-extrabold text-sm shadow-lg hover:bg-black transition sm:flex-1"
+          >
+            {ctaLabel}
           </button>
         </div>
       </div>

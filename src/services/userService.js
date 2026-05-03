@@ -34,10 +34,17 @@ export async function ensureUserDocument(firebaseUser) {
     }
 
     const existing = snap.data() || {};
+    const strOrEmpty = (v) => (v && String(v).trim()) || "";
     const safeUpdate = {
       uid: existing.uid || firebaseUser.uid,
-      email: firebaseUser.email ?? existing.email ?? null,
-      displayName: firebaseUser.displayName ?? existing.displayName ?? null,
+      email:
+        strOrEmpty(firebaseUser.email) ||
+        strOrEmpty(existing.email) ||
+        null,
+      displayName:
+        strOrEmpty(firebaseUser.displayName) ||
+        strOrEmpty(existing.displayName) ||
+        null,
       photoURL: firebaseUser.photoURL ?? existing.photoURL ?? null,
       plan: existing.plan ?? "free",
       premiumStatus: existing.premiumStatus ?? "inactive",
@@ -54,9 +61,9 @@ export async function ensureUserDocument(firebaseUser) {
       ...existing,
       ...safeUpdate,
       uid: existing.uid || firebaseUser.uid,
-      email: firebaseUser.email ?? existing.email ?? null,
-      displayName: firebaseUser.displayName ?? existing.displayName ?? null,
-      photoURL: firebaseUser.photoURL ?? existing.photoURL ?? null,
+      email: safeUpdate.email,
+      displayName: safeUpdate.displayName,
+      photoURL: safeUpdate.photoURL,
     };
   } catch (error) {
     console.error("ensureUserDocument error:", error);
