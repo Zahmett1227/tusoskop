@@ -10,17 +10,14 @@ import StreakBadge from "./StreakBadge";
 import { SUBJECTS } from "../data/subjects";
 import { QUESTIONS } from "../data/questions";
 import { accentThemes } from "../theme/accentThemes";
-import { PRICING } from "../constants/pricing";
-import {
-  formatPremiumUntil,
-  getPremiumStatusLabel,
-  isUserPremium,
-} from "../utils/premiumUtils";
+import { isUserPremium } from "../utils/premiumUtils";
 import {
   buildTodayReviewQueue,
   getStudyCollectionSummary,
 } from "../services/studyCollectionService";
-import { trackClarityEvent } from "../lib/clarity";
+import { setClarityTag, trackClarityEvent } from "../lib/clarity";
+import DashboardMembershipHero from "./DashboardMembershipHero";
+import { getMailtoFeedback, getMailtoPaymentIssue } from "../config/support";
 
 export default function Dashboard({
   setView,
@@ -46,15 +43,6 @@ export default function Dashboard({
     ? "bg-[#fffefb] border border-slate-300 shadow-md"
     : "bg-slate-900/40 border border-slate-800";
   const premiumActive = isUserPremium(userData);
-  const planTitle = premiumActive ? "Plus aktif" : "Free plan";
-  const planSubText = premiumActive
-    ? "Tüm Plus özellikleri açık. Çalışma akışın sınırsız devam eder."
-    : "Plus ile sınırsız soru, deneme, tekrar ve gelişmiş analiz açılır.";
-  const premiumMeta = userData?.lifetimePremium
-    ? "Ömür boyu erişim aktif"
-    : premiumActive
-    ? `${formatPremiumUntil(userData?.premiumUntil)} tarihine kadar aktif`
-    : "Bugünkü kullanımını buradan takip edebilirsin.";
   const freeQuestionUsed = Math.max(0, 30 - (remainingUsage?.questionRemaining ?? 30));
   const freeExamUsed = Math.max(0, 1 - (remainingUsage?.fullExamRemaining ?? 1));
   const freeReviewUsed = Math.max(0, 10 - (remainingUsage?.reviewRemaining ?? 10));
@@ -169,13 +157,43 @@ export default function Dashboard({
             })}
           </div>
           {user && (
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-end max-w-[min(100%,22rem)] sm:max-w-none">
+              <a
+                href={getMailtoPaymentIssue(user)}
+                onClick={() => {
+                  try {
+                    setClarityTag("support_email_provider", "gmail");
+                    setClarityTag("support_email_address_type", "gmail");
+                    trackClarityEvent("support_payment_issue_click");
+                  } catch {
+                    /* sessiz */
+                  }
+                }}
+                className={`shrink-0 text-[10px] sm:text-xs font-extrabold underline-offset-2 hover:underline ${isLightTheme ? "text-slate-600 hover:text-slate-900" : "text-slate-400 hover:text-white"}`}
+              >
+                Destek
+              </a>
+              <a
+                href={getMailtoFeedback(user)}
+                onClick={() => {
+                  try {
+                    setClarityTag("support_email_provider", "gmail");
+                    setClarityTag("support_email_address_type", "gmail");
+                    trackClarityEvent("feedback_email_click");
+                  } catch {
+                    /* sessiz */
+                  }
+                }}
+                className={`shrink-0 text-[10px] sm:text-xs font-extrabold underline-offset-2 hover:underline ${isLightTheme ? "text-slate-600 hover:text-slate-900" : "text-slate-400 hover:text-white"}`}
+              >
+                Geri bildirim
+              </a>
               <span className={`text-xs font-bold hidden sm:block truncate max-w-[160px] ${isLightTheme ? "text-slate-600" : "text-slate-500"}`}>
                 {user.displayName || user.email}
               </span>
               <button
                 onClick={onLogout}
-                className={`px-4 py-2 rounded-2xl text-xs font-bold transition-all ${isLightTheme ? "bg-white border border-slate-300 hover:bg-slate-100 text-slate-700" : "bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-400"}`}
+                className={`shrink-0 px-4 py-2 rounded-2xl text-xs font-bold transition-all ${isLightTheme ? "bg-white border border-slate-300 hover:bg-slate-100 text-slate-700" : "bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-400"}`}
               >
                 Çıkış
               </button>
@@ -199,88 +217,15 @@ export default function Dashboard({
           })}
         </div>
 
-        <div
-          className={`mb-6 rounded-[2rem] border p-4 md:p-5 ${
-            isLightTheme
-              ? "border-slate-300 bg-[#fffefb] shadow-md"
-              : 
-            premiumActive
-              ? "border-emerald-300/35 bg-gradient-to-br from-slate-900/95 via-emerald-950/20 to-violet-950/20"
-              : "border-slate-700 bg-gradient-to-br from-slate-900/95 via-slate-900 to-slate-950"
-          }`}
-        >
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 md:gap-6 items-start">
-            <div className="min-w-0">
-              <p className={`text-[10px] uppercase tracking-[0.22em] font-black ${premiumActive ? (isLightTheme ? "text-emerald-600" : "text-emerald-300") : (isLightTheme ? "text-slate-500" : "text-slate-500")}`}>
-                PLANIN
-              </p>
-              <h3 className={`text-xl md:text-2xl font-black mt-1 ${premiumActive ? (isLightTheme ? "text-slate-900" : theme.text) : (isLightTheme ? "text-slate-900" : "text-white")}`}>
-                {planTitle}
-              </h3>
-              <p className={`text-sm mt-1.5 leading-snug ${isLightTheme ? "text-slate-600" : "text-slate-300"}`}>{planSubText}</p>
-              <p className={`text-xs mt-2 ${premiumActive ? (isLightTheme ? "text-emerald-700" : "text-emerald-200/90") : (isLightTheme ? "text-slate-500" : "text-slate-400")}`}>{premiumMeta}</p>
-
-              <div className="mt-3 flex flex-wrap gap-2">
-                {premiumActive ? (
-                  <>
-                    <span className="px-3 py-1.5 rounded-full border border-emerald-300/25 bg-emerald-500/10 text-emerald-200 text-xs font-bold">
-                      Sınırsız soru
-                    </span>
-                    <span className="px-3 py-1.5 rounded-full border border-violet-300/25 bg-violet-500/10 text-violet-200 text-xs font-bold">
-                      Sınırsız deneme
-                    </span>
-                    <span className="px-3 py-1.5 rounded-full border border-cyan-300/25 bg-cyan-500/10 text-cyan-200 text-xs font-bold">
-                      Sınırsız tekrar
-                    </span>
-                  </>
-                ) : (
-                  <>
-                    <span className={`px-3 py-1.5 rounded-full text-xs font-bold ${isLightTheme ? "border border-slate-300 bg-slate-100 text-slate-700" : "border border-slate-700 bg-slate-950/60 text-slate-200"}`}>
-                      Bugün: {freeQuestionUsed}/30 soru
-                    </span>
-                    <span className={`px-3 py-1.5 rounded-full text-xs font-bold ${isLightTheme ? "border border-slate-300 bg-slate-100 text-slate-700" : "border border-slate-700 bg-slate-950/60 text-slate-200"}`}>
-                      Deneme: {freeExamUsed}/1
-                    </span>
-                    <span className={`px-3 py-1.5 rounded-full text-xs font-bold ${isLightTheme ? "border border-slate-300 bg-slate-100 text-slate-700" : "border border-slate-700 bg-slate-950/60 text-slate-200"}`}>
-                      Tekrar: {freeReviewUsed}/10
-                    </span>
-                  </>
-                )}
-              </div>
-            </div>
-
-            <div className="w-full md:w-48 shrink-0">
-              <div className={`rounded-2xl border px-4 py-3 ${
-                isLightTheme
-                  ? "border-slate-300 bg-[#f5f2ec]"
-                  :
-                premiumActive
-                  ? "border-emerald-300/25 bg-emerald-500/10"
-                  : "border-slate-700 bg-slate-950/70"
-              }`}>
-                <p className={`text-[11px] font-bold ${isLightTheme ? "text-slate-500" : "text-slate-400"}`}>
-                  {premiumActive ? "Durum" : "Plus"}
-                </p>
-                <p className={`text-sm sm:text-base font-black mt-0.5 leading-snug ${premiumActive ? (isLightTheme ? "text-emerald-700" : "text-emerald-200") : (isLightTheme ? "text-slate-900" : "text-white")}`}>
-                  {premiumActive
-                    ? "Sınırsız kullanım aktif"
-                    : PRICING.PLUS_STARTS_AT_LABEL}
-                </p>
-              </div>
-              <button
-                type="button"
-                onClick={() => setView("premiumInfo")}
-                className={`mt-2 w-full min-h-11 px-4 rounded-2xl text-sm font-black transition ${
-                  premiumActive
-                    ? (isLightTheme ? "bg-slate-900 text-white hover:bg-slate-800" : "bg-slate-100 text-slate-950 hover:bg-white")
-                    : `${theme.primary} ${theme.primaryHover} text-slate-950`
-                }`}
-              >
-                {premiumActive ? "Plan Detayı" : "Plus'ı İncele"}
-              </button>
-            </div>
-          </div>
-        </div>
+        <DashboardMembershipHero
+          isLightTheme={isLightTheme}
+          premiumActive={premiumActive}
+          userData={userData}
+          freeQuestionUsed={freeQuestionUsed}
+          freeExamUsed={freeExamUsed}
+          freeReviewUsed={freeReviewUsed}
+          onOpenPremium={() => setView("premiumInfo")}
+        />
 
         {/* ÜST SATIR: GERİ SAYIM + HEDEF + SERİ */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">

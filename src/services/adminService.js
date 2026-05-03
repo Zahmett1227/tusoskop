@@ -13,6 +13,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { PLAN_ID_TO_GRANT_DAYS } from "../config/plusPlans";
+import { setClarityTag, trackClarityEvent } from "../lib/clarity";
 
 export async function isCurrentUserAdmin(uid) {
   if (!uid) return false;
@@ -125,6 +126,13 @@ export async function grantPremium({ adminUid, adminEmail = null, targetUid, day
     reason,
     createdAt: serverTimestamp(),
   });
+
+  try {
+    setClarityTag("admin_grant_days", String(days));
+    trackClarityEvent("admin_grant_premium");
+  } catch {
+    /* sessiz */
+  }
 }
 
 export async function revokePremium({ adminUid, adminEmail = null, targetUid, reason = "" }) {
@@ -175,6 +183,61 @@ export async function getPremiumPurchaseIntents(maxItems = 50) {
   );
   const snap = await getDocs(intentsQuery);
   return snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+}
+
+/** Shopify sipariş adı: tek # ile normalize (#1001). */
+export function normalizeShopifyOrderNameInput(raw) {
+  const t = String(raw ?? "").trim();
+  if (!t) return "";
+  const core = t.replace(/^#+\s*/, "").trim();
+  if (!core) return "";
+  return `#${core}`;
+}
+
+/**
+ * Ödeme talebine Shopify sipariş numarası yazar. Admin panelden çağrılır.
+ * status "started" ise "payment_checked" yapılır; diğer durumlarda status değişmez.
+ */
+export async function updatePremiumPurchaseIntentOrder({
+  intentId,
+  shopifyOrderName,
+  adminUid,
+}) {
+  if (!intentId) throw new Error("Kayıt ID eksik.");
+  if (!adminUid) throw new Error("Oturum bulunamadı.");
+
+  const normalized = normalizeShopifyOrderNameInput(shopifyOrderName);
+  if (!normalized) {
+    throw new Error("Sipariş numarası boş olamaz.");
+  }
+
+  const intentRef = doc(db, "premiumPurchaseIntents", intentId);
+  const snap = await getDoc(intentRef);
+  if (!snap.exists()) {
+    throw new Error("Ödeme talebi bulunamadı.");
+  }
+
+  const prev = snap.data() || {};
+  const nowIso = new Date().toISOString();
+
+  const patch = {
+    shopifyOrderName: normalized,
+    paymentCheckedAt: nowIso,
+    paymentCheckedBy: adminUid,
+    updatedAt: nowIso,
+  };
+
+  if (prev.status === "started") {
+    patch.status = "payment_checked";
+  }
+
+  await updateDoc(intentRef, patch);
+
+  try {
+    trackClarityEvent("admin_shopify_order_saved");
+  } catch {
+    /* sessiz */
+  }
 }
 
 export async function activateIntentAndGrantPremium({
@@ -255,6 +318,14 @@ export async function activateIntentAndGrantPremium({
     activatedForUid: targetUid,
     updatedAt: serverTimestamp(),
   });
+
+  try {
+    setClarityTag("activated_plan", intent?.planId || intent?.planSku || "");
+    setClarityTag("activated_duration_days", String(days));
+    trackClarityEvent("premium_manually_activated");
+  } catch {
+    /* sessiz */
+  }
 }
 
 export async function addAdminNote({ adminUid, adminEmail = null, targetUid, note }) {

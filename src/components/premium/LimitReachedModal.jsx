@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { PRICING } from "../../constants/pricing";
+import { getMailtoQuickSupport } from "../../config/support";
+import { setClarityTag, trackClarityEvent } from "../../lib/clarity";
 import CoffeeAnimation from "./CoffeeAnimation";
 
 export default function LimitReachedModal({
@@ -13,7 +15,26 @@ export default function LimitReachedModal({
   onClose,
   onUpgradeClick,
   remainingInfo = "",
+  user = null,
+  limitReason = "",
 }) {
+  const limitModalOpened = useRef(false);
+
+  useEffect(() => {
+    if (!open) {
+      limitModalOpened.current = false;
+      return;
+    }
+    if (limitModalOpened.current) return;
+    limitModalOpened.current = true;
+    try {
+      if (limitReason) setClarityTag("limit_reason", limitReason);
+      trackClarityEvent("limit_modal_shown");
+    } catch {
+      /* sessiz */
+    }
+  }, [open, limitReason]);
+
   if (!open) return null;
 
   return (
@@ -83,12 +104,37 @@ export default function LimitReachedModal({
           </button>
           <button
             type="button"
-            onClick={onUpgradeClick}
+            onClick={() => {
+              try {
+                trackClarityEvent("upgrade_cta_click");
+              } catch {
+                /* sessiz */
+              }
+              onUpgradeClick();
+            }}
             className="min-h-11 px-4 rounded-2xl bg-neutral-950 text-white font-extrabold text-sm shadow-lg hover:bg-black transition sm:flex-1"
           >
             {ctaLabel}
           </button>
         </div>
+
+        <p className="mt-4 text-center">
+          <a
+            href={getMailtoQuickSupport(user)}
+            onClick={() => {
+              try {
+                setClarityTag("support_email_provider", "gmail");
+                setClarityTag("support_email_address_type", "gmail");
+                trackClarityEvent("support_email_click");
+              } catch {
+                /* sessiz */
+              }
+            }}
+            className="text-[11px] sm:text-xs font-semibold text-neutral-600 underline underline-offset-2 decoration-neutral-400 hover:text-neutral-900"
+          >
+            Ödeme veya Plus erişimiyle ilgili sorun mu yaşıyorsunuz? Destek alın.
+          </a>
+        </p>
       </div>
     </div>
   );

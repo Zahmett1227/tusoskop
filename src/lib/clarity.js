@@ -2,14 +2,18 @@ import Clarity from "@microsoft/clarity";
 
 let tagsApplied = false;
 
+function inBrowser() {
+  return typeof window !== "undefined";
+}
+
 /**
- * Varsayılan etiketler. Clarity script’i index.html / clarity-head.js ile yüklenir;
+ * Varsayılan etiketler. Clarity script'i index.html ile yüklenir;
  * Clarity.init çağrılmaz (snippet ile çift tag yüklemesini önlemek için).
  */
 export function initClarity() {
   const projectId = import.meta.env.VITE_CLARITY_PROJECT_ID;
 
-  if (!projectId) {
+  if (!projectId || !inBrowser()) {
     return;
   }
 
@@ -21,35 +25,35 @@ export function initClarity() {
     Clarity.setTag("project", "tusoskop");
     Clarity.setTag("platform", "web");
     tagsApplied = true;
-  } catch {
-    /* Clarity hatası uygulamayı bozmasın */
+  } catch (err) {
+    console.warn("Clarity init tags failed:", err);
   }
 }
 
 export function trackClarityEvent(eventName) {
   try {
-    if (!eventName) return;
+    if (!inBrowser() || !eventName) return;
     Clarity.event(eventName);
-  } catch {
-    /* Clarity hatası uygulamayı bozmasın */
+  } catch (err) {
+    console.warn("Clarity event failed:", eventName, err);
   }
 }
 
 export function setClarityTag(key, value) {
   try {
-    if (!key || value === undefined || value === null) return;
+    if (!inBrowser() || !key || value === undefined || value === null) return;
     Clarity.setTag(key, String(value));
-  } catch {
-    /* Clarity hatası uygulamayı bozmasın */
+  } catch (err) {
+    console.warn("Clarity tag failed:", key, err);
   }
 }
 
 export function identifyClarityUser(userId) {
   try {
-    if (!userId) return;
+    if (!inBrowser() || !userId) return;
     Clarity.identify(String(userId));
-  } catch {
-    /* Clarity hatası uygulamayı bozmasın */
+  } catch (err) {
+    console.warn("Clarity identify failed:", err);
   }
 }
 

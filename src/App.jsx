@@ -165,6 +165,7 @@ export default function App() {
     secondaryLabel: "",
     premiumMessage: "",
     premiumDescription: "",
+    limitReason: "",
   });
   const answeredQuestionIdsRef = useRef(new Set());
   const answeredReviewIdsRef = useRef(new Set());
@@ -313,6 +314,7 @@ export default function App() {
       premiumMessage: "Aylık bir kahve ücretine Plus üyelik almak ister misiniz?",
       premiumDescription:
         "Plus ile istediğiniz ders ve konudan sınırsız soru çözebilir, tekrar kuyruğunuzu ve analizlerinizi daha geniş kullanabilirsiniz.",
+      limitReason: "subject_topic_gate",
     });
   };
 
@@ -347,6 +349,7 @@ export default function App() {
         title: "Favori sınırına ulaştın",
         description: "Free planda en fazla 20 soruyu favoriye ekleyebilirsin. Plus ile favorilerin sınırsız olur.",
         remainingInfo: "",
+        limitReason: "favorite_limit",
       });
       return;
     }
@@ -370,6 +373,7 @@ export default function App() {
           title: "Bugünkü ücretsiz tekrar hakkın doldu",
           description: "Free planda günde 10 tekrar sorusu çözebilirsin. Plus ile tekrar kuyruğun sınırsız açılır.",
           remainingInfo: "",
+          limitReason: "daily_review_limit",
         });
         return;
       }
@@ -414,6 +418,7 @@ export default function App() {
         title: "Günlük konu testi limitine ulaştın",
         description: "Free planda günde en fazla 2 konu testi başlatabilirsin. Plus ile sınırsız konu testi açılır.",
         remainingInfo: "",
+        limitReason: "daily_topic_test_limit",
       });
       return;
     }
@@ -439,6 +444,7 @@ export default function App() {
         title: "Bu ayki ücretsiz deneme hakkını kullandın",
         description: "Free planda ayda 1 tam deneme çözebilirsin. Plus ile sınırsız deneme ve gelişmiş analiz açılır.",
         remainingInfo: "",
+        limitReason: "monthly_exam_limit",
       });
       return;
     }
@@ -638,6 +644,7 @@ export default function App() {
             title: "Bugünkü ücretsiz soru hakkın doldu",
             description: "Free planda günde 30 soru çözebilirsin. Plus ile sınırsız soru, deneme ve tekrar açılır.",
             remainingInfo: "",
+            limitReason: "daily_question_limit",
           });
           return;
         }
@@ -653,6 +660,7 @@ export default function App() {
             title: "Bugünkü ücretsiz tekrar hakkın doldu",
             description: "Free planda günde 10 tekrar sorusu çözebilirsin. Plus ile tekrar kuyruğun sınırsız açılır.",
             remainingInfo: "",
+            limitReason: "daily_review_limit_study",
           });
           return;
         }
@@ -1101,7 +1109,11 @@ export default function App() {
 
     case "premiumInfo":
       screenContent = (
-        <PremiumInfoScreen user={user} onBack={() => setView("dashboard")} />
+        <PremiumInfoScreen
+          user={user}
+          userData={userData}
+          onBack={() => setView("dashboard")}
+        />
       );
       break;
 
@@ -1135,6 +1147,8 @@ export default function App() {
         secondaryLabel={limitModal.secondaryLabel || "Şimdilik Vazgeç"}
         premiumMessage={limitModal.premiumMessage || "Aylık bir kahve ücretine Plus üyelik almak ister misiniz?"}
         premiumDescription={limitModal.premiumDescription || "Plus ile soru çözme sınırları kalkar; denemeler, tekrarlar ve gelişmiş analizler tamamen açılır."}
+        user={user}
+        limitReason={limitModal.limitReason || ""}
         onClose={() => setLimitModal((prev) => ({ ...prev, open: false }))}
         onUpgradeClick={() => {
           setLimitModal((prev) => ({ ...prev, open: false }));

@@ -1,8 +1,31 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { PRICING } from "../../constants/pricing";
 import { PLUS_PLANS } from "../../config/plusPlans";
 import { createPremiumPurchaseIntent } from "../../services/purchaseIntentService";
+import {
+  SUPPORT_EMAIL,
+  getMailtoFeedback,
+  getMailtoPaymentIssue,
+} from "../../config/support";
+import { setClarityTag, trackClarityEvent } from "../../lib/clarity";
+import { isUserPremium } from "../../utils/premiumUtils";
 import CoffeeAnimation from "./CoffeeAnimation";
+
+const PLUS_PLAN_CLICK_EVENT = {
+  plus_1m: "plus_plan_click_1m",
+  plus_3m: "plus_plan_click_3m",
+  plus_6m: "plus_plan_click_6m",
+};
+
+function trackSupportMail(kind) {
+  try {
+    setClarityTag("support_email_provider", "gmail");
+    setClarityTag("support_email_address_type", "gmail");
+    trackClarityEvent(kind);
+  } catch {
+    /* sessiz */
+  }
+}
 
 function shortAccountId(uid) {
   if (!uid || typeof uid !== "string") return "";
@@ -16,9 +39,23 @@ const PLAN_CARD_PERKS = [
   "Gelişmiş deneme net grafiği",
 ];
 
-export default function PremiumInfoScreen({ onBack, user }) {
+export default function PremiumInfoScreen({ onBack, user, userData }) {
   const [copyDone, setCopyDone] = useState(false);
   const [banner, setBanner] = useState("");
+  const plusPageViewSent = useRef(false);
+
+  useEffect(() => {
+    try {
+      setClarityTag("plan_status", isUserPremium(userData) ? "plus" : "free");
+      setClarityTag("user_logged_in", user?.uid ? "true" : "false");
+      if (!plusPageViewSent.current) {
+        plusPageViewSent.current = true;
+        trackClarityEvent("plus_page_view");
+      }
+    } catch {
+      /* sessiz */
+    }
+  }, [userData, user?.uid]);
 
   const handleCopyUid = useCallback(async () => {
     if (!user?.uid || typeof navigator?.clipboard?.writeText !== "function") return;
@@ -37,7 +74,24 @@ export default function PremiumInfoScreen({ onBack, user }) {
       event?.stopPropagation?.();
       setBanner("");
 
+      if (plan?.id) {
+        try {
+          setClarityTag("selected_plus_plan", plan.id);
+          setClarityTag("selected_plus_sku", plan.sku || "");
+          const clickEv = PLUS_PLAN_CLICK_EVENT[plan.id];
+          if (clickEv) trackClarityEvent(clickEv);
+        } catch {
+          /* sessiz */
+        }
+      }
+
       if (!plan?.shopifyUrl?.trim()) {
+        try {
+          setClarityTag("checkout_missing_plan", plan?.id || "");
+          trackClarityEvent("checkout_link_missing");
+        } catch {
+          /* sessiz */
+        }
         setBanner("Bu paket için satın alma bağlantısı hazırlanıyor.");
         return;
       }
@@ -45,6 +99,12 @@ export default function PremiumInfoScreen({ onBack, user }) {
       const url = plan.shopifyUrl.trim();
 
       if (!url.startsWith("https://")) {
+        try {
+          setClarityTag("checkout_missing_plan", plan?.id || "");
+          trackClarityEvent("checkout_link_missing");
+        } catch {
+          /* sessiz */
+        }
         console.error("Geçersiz Shopify URL:", url);
         setBanner(
           "Satın alma bağlantısı hatalı görünüyor. Lütfen daha sonra tekrar deneyin."
@@ -61,6 +121,14 @@ export default function PremiumInfoScreen({ onBack, user }) {
         await createPremiumPurchaseIntent(user, plan);
       } catch (error) {
         console.error("Purchase intent oluşturulamadı:", error);
+      }
+
+      try {
+        setClarityTag("checkout_plan", plan.id);
+        setClarityTag("checkout_sku", plan.sku || "");
+        trackClarityEvent("checkout_redirect");
+      } catch {
+        /* sessiz */
       }
 
       window.location.assign(url);
@@ -284,19 +352,52 @@ export default function PremiumInfoScreen({ onBack, user }) {
           </div>
         </section>
 
-        {/* Ödeme sonrası */}
+        {/* Ödeme sonrası + destek */}
         <section className="rounded-3xl border border-neutral-200/90 bg-white p-5 sm:p-8 shadow-[0_14px_40px_-28px_rgba(0,0,0,0.1)]">
           <h2 className="text-2xl md:text-3xl font-black text-neutral-950 mb-3">
             Ödeme sonrası nasıl aktifleşir?
           </h2>
-          <p className="text-sm md:text-base font-medium text-neutral-700 leading-relaxed">
-            Satın alma sonrası Plus erişimi bu hesaba tanımlanır. Erken erişim
-            döneminde işlemler manuel kontrol edilebilir; bu yüzden ödeme yapmadan
-            önce doğru hesapla giriş yaptığınızdan emin olun.
+          <p className="text-sm md:text-base font-medium text-neutral-800 leading-relaxed">
+            Satın alma tamamlandıktan sonra Plus erişiminiz manuel olarak kontrol
+            edilir ve en geç 24 saat içinde hesabınıza tanımlanır.
           </p>
-          <p className="text-sm md:text-base font-medium text-neutral-600 mt-3 leading-relaxed">
-            Ödeme kontrolünden sonra seçtiğiniz süre hesabınıza eklenir.
+          <p className="text-sm md:text-base font-medium text-neutral-700 mt-3 leading-relaxed">
+            Erişimin doğru tanımlanabilmesi için ödeme yapmadan önce doğru Tusoskop
+            hesabıyla giriş yaptığınızdan emin olun. Gerekirse Hesap ID'nizi
+            destek mesajında paylaşabilirsiniz.
           </p>
+          <p className="text-xs sm:text-sm font-medium text-neutral-600 mt-3 leading-relaxed">
+            Ödeme sırasında sorun yaşarsanız veya Plus erişiminiz 24 saat içinde
+            açılmazsa{" "}
+            <span className="font-bold text-neutral-800">{SUPPORT_EMAIL}</span>{" "}
+            üzerinden bize ulaşabilirsiniz.
+          </p>
+          <div className="mt-5 flex flex-col sm:flex-row sm:flex-wrap gap-3">
+            <a
+              href={getMailtoPaymentIssue(user)}
+              onClick={() => trackSupportMail("support_payment_issue_click")}
+              className="inline-flex min-h-12 w-full sm:w-auto items-center justify-center rounded-2xl bg-[#1a120c] px-5 text-sm font-extrabold text-white shadow-lg shadow-neutral-900/15 transition hover:bg-black active:scale-[0.99]"
+            >
+              Ödeme sorunu bildir
+            </a>
+          </div>
+        </section>
+
+        <section className="rounded-3xl border border-neutral-200/90 bg-[#fdfcfa] p-5 sm:p-8 shadow-inner">
+          <h2 className="text-xl md:text-2xl font-black text-neutral-950 mb-2">
+            Fikrini paylaş
+          </h2>
+          <p className="text-sm md:text-base font-medium text-neutral-700 leading-relaxed max-w-2xl">
+            Tusoskop'u geliştirmek için olumlu ya da olumsuz tüm geri bildirimler
+            değerlidir.
+          </p>
+          <a
+            href={getMailtoFeedback(user)}
+            onClick={() => trackSupportMail("feedback_email_click")}
+            className="mt-4 inline-flex min-h-11 w-full sm:w-auto items-center justify-center rounded-2xl border-2 border-neutral-800 bg-white px-5 text-sm font-extrabold text-neutral-900 transition hover:bg-neutral-50 active:scale-[0.99]"
+          >
+            Geri bildirim gönder
+          </a>
         </section>
 
         {/* Plus ile açılanlar */}

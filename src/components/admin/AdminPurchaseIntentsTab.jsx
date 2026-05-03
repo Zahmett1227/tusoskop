@@ -2,7 +2,9 @@ import React, { useCallback, useEffect, useState } from "react";
 import {
   activateIntentAndGrantPremium,
   getPremiumPurchaseIntents,
+  updatePremiumPurchaseIntentOrder,
 } from "../../services/adminService";
+import { trackClarityEvent } from "../../lib/clarity";
 
 function shortUid(uid) {
   if (!uid || typeof uid !== "string") return "—";
@@ -14,6 +16,8 @@ function intentStatusLabel(status) {
   switch (status) {
     case "started":
       return "Bekliyor";
+    case "payment_checked":
+      return "Ödeme kontrol edildi";
     case "manually_activated":
       return "Aktive edildi";
     case "cancelled":
@@ -28,13 +32,15 @@ function intentStatusLabel(status) {
 function intentStatusPillClass(status) {
   switch (status) {
     case "started":
-      return "bg-amber-500/15 text-amber-200 border-amber-400/30";
+      return "bg-amber-500/12 text-amber-200 border-amber-400/28";
+    case "payment_checked":
+      return "bg-sky-500/12 text-sky-200 border-sky-400/30";
     case "manually_activated":
       return "bg-emerald-500/15 text-emerald-200 border-emerald-400/30";
     case "cancelled":
-      return "bg-slate-600/40 text-slate-300 border-slate-500/30";
+      return "bg-rose-500/12 text-rose-200 border-rose-400/28";
     case "needs_review":
-      return "bg-violet-500/15 text-violet-200 border-violet-400/25";
+      return "bg-violet-500/12 text-violet-200 border-violet-400/25";
     default:
       return "bg-slate-700/50 text-slate-300 border-slate-600/40";
   }
@@ -47,6 +53,22 @@ function grantButtonLabel(days) {
   return `${days} gün Plus ver`;
 }
 
+function canGrantPlus(row) {
+  return Boolean(
+    row.uid &&
+      row.durationDays &&
+      (row.status === "started" || row.status === "payment_checked")
+  );
+}
+
+function shopifyOrderDisplay(row) {
+  const name = row.shopifyOrderName;
+  if (name && String(name).trim()) {
+    return `Shopify Order: ${String(name).trim()}`;
+  }
+  return "Sipariş no yok";
+}
+
 function IntentStatusBadge({ status }) {
   return (
     <span
@@ -54,6 +76,105 @@ function IntentStatusBadge({ status }) {
     >
       {intentStatusLabel(status)}
     </span>
+  );
+}
+
+function IntentOrderModal({ intent, adminUid, onClose, onSaved }) {
+  const [value, setValue] = useState("");
+  const [saving, setSaving] = useState(false);
+  const [localError, setLocalError] = useState("");
+
+  useEffect(() => {
+    setValue(
+      intent?.shopifyOrderName
+        ? String(intent.shopifyOrderName).replace(/^#+/, "")
+        : ""
+    );
+    setLocalError("");
+  }, [intent?.id, intent?.shopifyOrderName]);
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
+  const handleSave = async () => {
+    if (!adminUid || !intent?.id) return;
+    setLocalError("");
+    setSaving(true);
+    try {
+      const input = value.trim().startsWith("#") ? value.trim() : `#${value.trim()}`;
+      await updatePremiumPurchaseIntentOrder({
+        intentId: intent.id,
+        shopifyOrderName: input,
+        adminUid,
+      });
+      onSaved();
+      onClose();
+    } catch (e) {
+      console.error(e);
+      setLocalError(e?.message || "Kaydedilemedi.");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60"
+      onClick={onClose}
+      role="presentation"
+    >
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="intent-order-title"
+        className="w-full max-w-md rounded-3xl border border-slate-700 bg-slate-900 p-5 shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <h3 id="intent-order-title" className="text-lg font-black text-white mb-1">
+          Shopify sipariş no
+        </h3>
+        <p className="text-xs text-slate-400 mb-4 leading-relaxed">
+          Örnek: 1001, #1001 veya #1042. Kayıt tek # ile saklanır.
+        </p>
+        <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wide mb-1.5">
+          Sipariş numarası
+        </label>
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          placeholder="#1001"
+          className="w-full min-h-11 px-3 rounded-xl bg-slate-950 border border-slate-600 text-white text-sm font-mono mb-3"
+          autoComplete="off"
+        />
+        {localError ? (
+          <p className="text-rose-300 text-xs font-medium mb-3">{localError}</p>
+        ) : null}
+        <div className="flex flex-col-reverse sm:flex-row gap-2 justify-end">
+          <button
+            type="button"
+            disabled={saving}
+            onClick={onClose}
+            className="min-h-10 px-4 rounded-xl border border-slate-600 text-slate-200 text-sm font-bold hover:bg-slate-800 disabled:opacity-50"
+          >
+            Vazgeç
+          </button>
+          <button
+            type="button"
+            disabled={saving || !value.trim()}
+            onClick={handleSave}
+            className="min-h-10 px-4 rounded-xl bg-cyan-500 text-slate-950 text-sm font-extrabold disabled:opacity-50"
+          >
+            {saving ? "Kaydediliyor…" : "Kaydet"}
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -65,6 +186,7 @@ export default function AdminPurchaseIntentsTab({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [busyId, setBusyId] = useState(null);
+  const [orderModalIntent, setOrderModalIntent] = useState(null);
 
   const refresh = useCallback(async () => {
     setLoading(true);
@@ -84,6 +206,14 @@ export default function AdminPurchaseIntentsTab({
   useEffect(() => {
     refresh();
   }, [refresh]);
+
+  useEffect(() => {
+    try {
+      trackClarityEvent("admin_purchase_intents_view");
+    } catch {
+      /* sessiz */
+    }
+  }, []);
 
   const handleActivate = async (intent) => {
     if (!currentUser?.uid || !intent?.id) return;
@@ -116,9 +246,20 @@ export default function AdminPurchaseIntentsTab({
 
   return (
     <div className="space-y-5">
+      {orderModalIntent ? (
+        <IntentOrderModal
+          key={orderModalIntent.id}
+          intent={orderModalIntent}
+          adminUid={currentUser?.uid}
+          onClose={() => setOrderModalIntent(null)}
+          onSaved={refresh}
+        />
+      ) : null}
+
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-slate-400 text-sm font-medium max-w-xl leading-relaxed">
-          Son 50 kayıt — Shopify ödeme öncesi niyet bildirimleri
+          Son 50 kayıt — Shopify ödeme öncesi niyet bildirimleri. Sipariş numarasını
+          Orders ekranından alıp kaydederek taleple eşleştirin.
         </p>
         <button
           type="button"
@@ -140,10 +281,7 @@ export default function AdminPurchaseIntentsTab({
           {/* Mobil kartlar */}
           <div className="md:hidden space-y-3">
             {items.map((row) => {
-              const canActivate =
-                row.uid &&
-                row.status === "started" &&
-                row.durationDays;
+              const canPlus = canGrantPlus(row);
               const isBusy = busyId === row.id;
               const amount = row.totalPriceLabel || "—";
               return (
@@ -162,6 +300,9 @@ export default function AdminPurchaseIntentsTab({
                     </div>
                     <IntentStatusBadge status={row.status} />
                   </div>
+                  <p className="text-[11px] text-slate-400 font-medium mb-3 break-words">
+                    {shopifyOrderDisplay(row)}
+                  </p>
                   <div className="grid grid-cols-2 gap-3 text-xs">
                     <div>
                       <p className="text-slate-500 font-bold uppercase tracking-wide">
@@ -197,18 +338,25 @@ export default function AdminPurchaseIntentsTab({
                       <p className="text-slate-300 mt-0.5">{row.createdAt || "—"}</p>
                     </div>
                   </div>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {canActivate ? (
+                  <div className="mt-4 flex flex-col gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setOrderModalIntent(row)}
+                      className="min-h-10 w-full rounded-xl border border-slate-600 bg-slate-800/50 text-slate-100 text-xs font-extrabold hover:bg-slate-800"
+                    >
+                      Sipariş no ekle
+                    </button>
+                    {canPlus ? (
                       <button
                         type="button"
                         disabled={isBusy}
                         onClick={() => handleActivate(row)}
-                        className="flex-1 min-h-11 px-3 rounded-xl bg-emerald-500 text-slate-950 font-extrabold text-xs disabled:opacity-50 shadow-md"
+                        className="min-h-11 w-full rounded-xl bg-emerald-500 text-slate-950 font-extrabold text-xs disabled:opacity-50 shadow-md"
                       >
                         {isBusy ? "İşleniyor…" : grantButtonLabel(row.durationDays)}
                       </button>
                     ) : row.status === "manually_activated" ? (
-                      <span className="text-xs font-semibold text-emerald-300/90 py-2">
+                      <span className="text-xs font-semibold text-emerald-300/90 py-1">
                         Aktive edildi
                       </span>
                     ) : !row.uid ? (
@@ -224,52 +372,55 @@ export default function AdminPurchaseIntentsTab({
 
           {/* Masaüstü tablo */}
           <div className="hidden md:block overflow-x-auto rounded-3xl border border-slate-800 bg-slate-900/40 shadow-xl shadow-black/25">
-            <table className="w-full min-w-[860px] text-left text-sm">
+            <table className="w-full min-w-[960px] text-left text-sm">
               <thead>
                 <tr className="border-b border-slate-800 bg-slate-900/90">
-                  <th className="px-4 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400">
+                  <th className="px-3 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400">
                     E-posta
                   </th>
-                  <th className="px-4 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400">
+                  <th className="px-3 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400">
                     UID
                   </th>
-                  <th className="px-4 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400">
+                  <th className="px-3 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400">
                     Plan
                   </th>
-                  <th className="px-4 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400 whitespace-nowrap">
+                  <th className="px-3 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400 whitespace-nowrap">
                     Tutar
                   </th>
-                  <th className="px-4 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400">
+                  <th className="px-3 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400 min-w-[7.5rem]">
+                    Shopify
+                  </th>
+                  <th className="px-3 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400">
                     Durum
                   </th>
-                  <th className="px-4 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400">
+                  <th className="px-3 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400">
                     Tarih
                   </th>
-                  <th className="px-4 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400 text-right">
+                  <th className="px-3 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400 text-right min-w-[10rem]">
                     Aksiyon
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800/90">
                 {items.map((row) => {
-                  const canActivate =
-                    row.uid &&
-                    row.status === "started" &&
-                    row.durationDays;
+                  const canPlus = canGrantPlus(row);
                   const isBusy = busyId === row.id;
                   const amount = row.totalPriceLabel || "—";
+                  const orderShort = row.shopifyOrderName
+                    ? String(row.shopifyOrderName).trim()
+                    : null;
                   return (
                     <tr
                       key={row.id}
                       className="bg-slate-950/20 hover:bg-slate-900/50 transition-colors"
                     >
-                      <td className="px-4 py-3.5 text-slate-100 font-medium align-top max-w-[200px]">
+                      <td className="px-3 py-3.5 text-slate-100 font-medium align-top max-w-[180px]">
                         <span className="break-all">{row.email || "—"}</span>
                       </td>
-                      <td className="px-4 py-3.5 font-mono text-xs text-slate-300 align-top whitespace-nowrap">
+                      <td className="px-3 py-3.5 font-mono text-xs text-slate-300 align-top whitespace-nowrap">
                         {shortUid(row.uid)}
                       </td>
-                      <td className="px-4 py-3.5 text-slate-100 align-top min-w-[140px]">
+                      <td className="px-3 py-3.5 text-slate-100 align-top min-w-[120px]">
                         <div className="font-semibold">
                           {row.planLabel || row.planId}
                         </div>
@@ -279,36 +430,55 @@ export default function AdminPurchaseIntentsTab({
                           </div>
                         ) : null}
                       </td>
-                      <td className="px-4 py-3.5 font-bold text-slate-100 tabular-nums align-top whitespace-nowrap">
+                      <td className="px-3 py-3.5 font-bold text-slate-100 tabular-nums align-top whitespace-nowrap">
                         {amount}
                       </td>
-                      <td className="px-4 py-3.5 align-top">
+                      <td className="px-3 py-3.5 align-top max-w-[140px]">
+                        <span
+                          className="text-[11px] font-medium text-slate-400 leading-snug line-clamp-2 break-all"
+                          title={orderShort || undefined}
+                        >
+                          {orderShort || (
+                            <span className="text-slate-500 italic">Sipariş no yok</span>
+                          )}
+                        </span>
+                      </td>
+                      <td className="px-3 py-3.5 align-top">
                         <IntentStatusBadge status={row.status} />
                       </td>
-                      <td className="px-4 py-3.5 text-slate-400 text-xs align-top whitespace-nowrap">
+                      <td className="px-3 py-3.5 text-slate-400 text-xs align-top whitespace-nowrap">
                         {row.createdAt || "—"}
                       </td>
-                      <td className="px-4 py-3.5 text-right align-top">
-                        {canActivate ? (
+                      <td className="px-3 py-3.5 text-right align-top">
+                        <div className="inline-flex flex-col items-end gap-2">
                           <button
                             type="button"
-                            disabled={isBusy}
-                            onClick={() => handleActivate(row)}
-                            className="inline-flex min-h-9 items-center justify-center px-3 rounded-xl bg-emerald-500 text-slate-950 font-extrabold text-[11px] disabled:opacity-50 shadow-md hover:bg-emerald-400 transition"
+                            onClick={() => setOrderModalIntent(row)}
+                            className="min-h-8 px-2.5 rounded-lg border border-slate-600 bg-slate-800/60 text-[11px] font-extrabold text-slate-100 hover:bg-slate-800"
                           >
-                            {isBusy ? "…" : grantButtonLabel(row.durationDays)}
+                            Sipariş no
                           </button>
-                        ) : row.status === "manually_activated" ? (
-                          <span className="text-xs font-semibold text-emerald-300">
-                            Aktive edildi
-                          </span>
-                        ) : !row.uid ? (
-                          <span className="text-[11px] text-amber-200/90 font-medium">
-                            UID yok
-                          </span>
-                        ) : (
-                          <span className="text-slate-500 text-xs">—</span>
-                        )}
+                          {canPlus ? (
+                            <button
+                              type="button"
+                              disabled={isBusy}
+                              onClick={() => handleActivate(row)}
+                              className="inline-flex min-h-9 items-center justify-center px-3 rounded-xl bg-emerald-500 text-slate-950 font-extrabold text-[11px] disabled:opacity-50 shadow-md hover:bg-emerald-400 transition"
+                            >
+                              {isBusy ? "…" : grantButtonLabel(row.durationDays)}
+                            </button>
+                          ) : row.status === "manually_activated" ? (
+                            <span className="text-xs font-semibold text-emerald-300">
+                              Aktive edildi
+                            </span>
+                          ) : !row.uid ? (
+                            <span className="text-[11px] text-amber-200/90 font-medium">
+                              UID yok
+                            </span>
+                          ) : (
+                            <span className="text-slate-500 text-xs">—</span>
+                          )}
+                        </div>
                       </td>
                     </tr>
                   );
