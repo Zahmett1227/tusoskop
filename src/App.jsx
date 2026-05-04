@@ -907,7 +907,17 @@ export default function App() {
           className="flex flex-col items-center justify-center bg-slate-950 text-white p-6 min-h-dvh"
           style={{ paddingTop: "calc(2rem + env(safe-area-inset-top))" }}
         >
-          <div className="text-6xl mb-6">🩺</div>
+          <div className="mb-6 flex justify-center">
+            <img
+              src="/tusoskop-mark.png"
+              alt=""
+              width={96}
+              height={96}
+              decoding="async"
+              className="h-20 w-20 md:h-24 md:w-24 rounded-2xl object-contain shadow-lg shadow-black/20"
+              aria-hidden
+            />
+          </div>
           <h1 className={`text-5xl font-black mb-2 ${accentTheme.text} tracking-tighter`}>TUSOSKOP</h1>
           <p className="text-slate-400 mb-10 text-center max-w-sm">
             TUS hazırlık sürecini dijital asistanınla yönet. Verilerini bulutta sakla.

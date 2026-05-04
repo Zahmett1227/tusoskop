@@ -139,7 +139,15 @@ export default function Dashboard({
         {/* HEADER */}
         <header className="flex items-center justify-between mb-10 gap-3">
           <div className="flex items-center gap-3">
-            <span className="text-3xl">🩺</span>
+            <img
+              src="/tusoskop-mark.png"
+              alt=""
+              width={40}
+              height={40}
+              decoding="async"
+              className="h-9 w-9 md:h-10 md:w-10 shrink-0 rounded-lg object-contain"
+              aria-hidden
+            />
             <h1 className={`text-2xl md:text-3xl font-black tracking-tight ${isLightTheme ? "text-slate-950" : theme.text}`}>TUSOSKOP</h1>
           </div>
           <div className="hidden md:flex items-center gap-2">
