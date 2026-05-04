@@ -53262,5 +53262,2885 @@ exp: "Spironolakton (ve Eplerenon), bir Potasyum Tutucu Diüretik (Aldosteron An
     ],
     "correct": 0,
     "exp": "Deliryum akut başlangıçlı, dalgalı seyirli ve dikkat bozukluğunun belirgin olduğu bir sendromdur. Demans genellikle daha sinsi ve kronik seyreder."
+  },
+  {
+    "id": 3410,
+    "ders": "Küçük Stajlar",
+    "konu": "Nöroloji",
+    "diff": 4,
+    "q": "72 yaşındaki kadın hasta 90 dakikadır süren sağ hemiparezi ve afazi nedeniyle getiriliyor. Hipertansiyon ve atriyal fibrilasyon öyküsü var, apiksabanı 3 gündür almıyor. BT'de kanama yok, NIHSS 14 ve BT anjiyografide sol M1 tıkanıklığı saptanıyor. Bu hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "Uygunsa intravenöz tromboliz değerlendirilip büyük damar tıkanıklığı için mekanik trombektomi planlanması",
+      "Kanama olmadığı için yalnızca aspirin başlanması ve serviste izlem",
+      "Semptom süresi 3 saati geçtiği için reperfüzyon tedavisinden vazgeçilmesi",
+      "Antikoagülan yükleme dozu verilerek ilk 24 saatte taburculuk",
+      "Karotis endarterektomi için elektif randevu verilmesi"
+    ],
+    "correct": 0,
+    "exp": "Akut iskemik inmede kanama dışlandıktan sonra zaman penceresi ve kontrendikasyonlar uygunsa intravenöz tromboliz değerlendirilir. M1 gibi büyük damar tıkanıklığında mekanik trombektomi, özellikle klinik-radyolojik uyum varsa morbiditeyi azaltır."
+  },
+  {
+    "id": 3411,
+    "ders": "Küçük Stajlar",
+    "konu": "Nöroloji",
+    "diff": 4,
+    "q": "31 yaşındaki kadın hasta 3 aydır ataklar halinde bulanık görme ve bacaklarda uyuşma yakınmasıyla başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Muayenede sağda internükleer oftalmopleji var, beyin MRG'de periventriküler ve juxtakortikal lezyonlar izleniyor. Bu tabloyu en iyi destekleyen BOS bulgusu hangisidir?",
+    "options": [
+      "Oligoklonal IgG bant pozitifliği",
+      "Belirgin nötrofilik pleositoz ve düşük glukoz",
+      "Albuminositolojik dissosiyasyon",
+      "Malign hücre pozitifliği",
+      "Ksantokromi varlığı"
+    ],
+    "correct": 0,
+    "exp": "Multipl sklerozda santral sinir sisteminde intratekal immün aktivasyon olur ve BOS'ta oligoklonal IgG bantları tipiktir. Lezyonların zaman ve mekânda yayılımı ile birlikte tanıyı güçlendirir."
+  },
+  {
+    "id": 3412,
+    "ders": "Küçük Stajlar",
+    "konu": "Nöroloji",
+    "diff": 3,
+    "q": "24 yaşındaki erkek hasta 2 gündür süren çift görme ve yutma güçlüğü ile geliyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Yakınmalarının gün içinde arttığını, dinlenince azaldığını söylüyor; muayenede pitoz ve proksimal kas güçsüzlüğü var. Bu hastada tedavide hedeflenen temel mekanizma hangisidir?",
+    "options": [
+      "Nöromüsküler kavşakta asetilkolin etkisinin artırılması",
+      "Presinaptik dopamin salınımının baskılanması",
+      "Santral GABA-A reseptörlerinin blokajı",
+      "Kas lifinde distrofini stabilize etmek",
+      "Periferik sinirde miyelin yıkımını hızlandırmak"
+    ],
+    "correct": 0,
+    "exp": "Miyastenia graviste postsinaptik asetilkolin reseptörlerine karşı antikorlar nedeniyle nöromüsküler iletim bozulur. Asetilkolinesteraz inhibitörleri sinaptik asetilkolini artırarak semptomatik düzelme sağlar."
+  },
+  {
+    "id": 3413,
+    "ders": "Küçük Stajlar",
+    "konu": "Nöroloji",
+    "diff": 4,
+    "q": "58 yaşındaki erkek hasta 6 aydır artan istirahat tremoru, hareketlerde yavaşlama ve küçük adımlarla yürüme nedeniyle başvuruyor. Tip 2 diyabeti var, metformin kullanıyor. Muayenede dişli çark rijiditesi ve bradikinezi belirgin. Bu hastanın semptomlarını açıklayan temel nörokimyasal değişiklik hangisidir?",
+    "options": [
+      "Substantia nigra pars compacta dopaminerjik nöron kaybı",
+      "Kaudat çekirdekte GABAerjik nöron kaybı",
+      "Ön boynuz motor nöronlarında dejenerasyon",
+      "Temporal kortekste beta-amiloid birikimi",
+      "Locus coeruleusta noradrenerjik hiperaktivite"
+    ],
+    "correct": 0,
+    "exp": "Parkinson hastalığında substantia nigra pars compacta dopaminerjik nöronları azalır. Striatal dopamin eksikliği bradikinezi, rijidite ve istirahat tremorunun temel mekanizmasıdır."
+  },
+  {
+    "id": 3414,
+    "ders": "Küçük Stajlar",
+    "konu": "Nöroloji",
+    "diff": 4,
+    "q": "46 yaşındaki kadın hasta 8 aydır ayda 12 gün tek taraflı zonklayıcı baş ağrısı, bulantı ve fotofobi yaşıyor. Hipertansiyonu var, amlodipin kullanıyor; nörolojik muayenesi normal. Atak tedavisi sıklaştığı için koruyucu tedavi düşünülüyor. Bu hastada migren profilaksisi için nörovasküler mekanizmayı hedefleyen seçenek hangisidir?",
+    "options": [
+      "CGRP yolunu hedefleyen monoklonal antikor veya gepant tedavisi",
+      "Her atakta profilaktik antibiyotik verilmesi",
+      "Uzun süreli opioid tedavisi başlanması",
+      "Her gün yüksek doz triptan kullanılması",
+      "Tek başına proton pompa inhibitörü verilmesi"
+    ],
+    "correct": 0,
+    "exp": "CGRP migren patofizyolojisinde trigeminovasküler aktivasyon ve nörojenik inflamasyonda rol oynar. CGRP yolunu hedefleyen ajanlar sık migren ataklarında profilakside güncel seçenekler arasındadır."
+  },
+  {
+    "id": 3415,
+    "ders": "Küçük Stajlar",
+    "konu": "Nöroloji",
+    "diff": 4,
+    "q": "66 yaşındaki erkek hasta 3 aydır giderek artan ayaklarda yanma, dengesizlik ve uyuşma yakınmasıyla geliyor. Tip 2 diyabeti ve kronik böbrek hastalığı var, insülin kullanıyor. Muayenede vibrasyon duyusu azalmış, aşil refleksleri kaybolmuş. Bu klinik tabloyu en iyi açıklayan sinir hasarı paterni hangisidir?",
+    "options": [
+      "Uzunluğa bağımlı distal simetrik polinöropati",
+      "Tek sinir kökü basısına bağlı radikülopati",
+      "Akut demiyelinizan poliradikülonöropati",
+      "Üst motor nöron tutulumuna bağlı spastik paraparezi",
+      "Motor nöron hastalığına bağlı saf motor kayıp"
+    ],
+    "correct": 0,
+    "exp": "Diyabetik polinöropati tipik olarak uzunluğa bağımlı, distal simetrik ve duyusal baskın seyreder. Vibrasyon kaybı ve refleks azalması büyük lif tutulumunu düşündürür."
+  },
+  {
+    "id": 3416,
+    "ders": "Küçük Stajlar",
+    "konu": "Nöroloji",
+    "diff": 5,
+    "q": "39 yaşındaki erkek hasta 10 gündür ilerleyen bacak güçsüzlüğü ve el uyuşmasıyla başvuruyor. İki hafta önce ishal geçirmiş, bilinen kronik hastalığı yok ve ilaç kullanmıyor. Muayenede arefleksi var, BOS'ta protein yüksekliği belirgin ancak hücre sayısı normal. Bu hastalıkta temel patolojik süreç hangisidir?",
+    "options": [
+      "Periferik sinir köklerinde immün aracılı demiyelinizasyon",
+      "Ön boynuz motor nöronlarının viral lizisi",
+      "Kas liflerinde otoimmün nekroz",
+      "Bazal ganglionlarda dopamin azalması",
+      "Temporal lobda glutamat eksitotoksisitesi"
+    ],
+    "correct": 0,
+    "exp": "Guillain-Barré sendromunda sıklıkla enfeksiyon sonrası periferik sinir ve köklerde immün aracılı demiyelinizasyon gelişir. Albuminositolojik dissosiyasyon destekleyici BOS bulgusudur."
+  },
+  {
+    "id": 3417,
+    "ders": "Küçük Stajlar",
+    "konu": "Nöroloji",
+    "diff": 4,
+    "q": "29 yaşındaki kadın hasta 6 aydır saniyeler süren elektrik çarpması tarzında yüz ağrısı atakları tarifliyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Ağrı diş fırçalama ve konuşmayla tetikleniyor, nörolojik muayenesi normal. Bu hastada ilk basamak tedavi için hangi mekanizmayı hedeflemek en uygundur?",
+    "options": [
+      "Voltaj bağımlı sodyum kanallarının stabilize edilmesi",
+      "NMDA reseptörlerinin güçlü uyarılması",
+      "Serotonin geri alımının tamamen bloke edilmesi",
+      "Periferik opioid reseptörlerinin seçici aktivasyonu",
+      "Histamin H1 reseptörlerinin baskılanması"
+    ],
+    "correct": 0,
+    "exp": "Trigeminal nevraljide ektopik deşarjlar ve sinir irritabilitesi ağrı ataklarını oluşturur. Karbamazepin/okskarbazepin gibi sodyum kanalını stabilize eden ajanlar ilk basamakta kullanılır."
+  },
+  {
+    "id": 3418,
+    "ders": "Küçük Stajlar",
+    "konu": "Nöroloji",
+    "diff": 4,
+    "q": "Atriyal fibrilasyonda inme riskini azaltmak için kullanılan CHA2DS2-VASc skorunda hangi değişken puanlamaya dahildir?",
+    "options": [
+      "Yaş, hipertansiyon, diyabet ve geçirilmiş inme öyküsü",
+      "Serum kreatinin, CRP ve lökosit sayısı",
+      "Karaciğer enzim yüksekliği ve albumin düşüklüğü",
+      "Tiroid volümü ve tiroid antikor pozitifliği",
+      "Akciğer grafisinde kardiyotorasik oran"
+    ],
+    "correct": 0,
+    "exp": "CHA2DS2-VASc skoru kalp yetersizliği, hipertansiyon, yaş, diyabet, inme/TİA, vasküler hastalık ve cinsiyet gibi tromboembolik risk faktörlerini içerir."
+  },
+  {
+    "id": 3419,
+    "ders": "Küçük Stajlar",
+    "konu": "Nöroloji",
+    "diff": 4,
+    "q": "Temporal lob epilepsisinde aura olarak en sık beklenen özellik hangisidir?",
+    "options": [
+      "Epigastrik yükselme hissi ve deja vu",
+      "Ani bilateral görme kaybı",
+      "Saf motor parapleji",
+      "Şiddetli oksipital baş ağrısı",
+      "Tek taraflı işitme kaybı"
+    ],
+    "correct": 0,
+    "exp": "Temporal lob nöbetlerinde limbik yapılar etkilenir. Epigastrik yükselme hissi, deja vu, korku hissi ve otomotizmalar tipiktir."
+  },
+  {
+    "id": 3420,
+    "ders": "Küçük Stajlar",
+    "konu": "Nöroloji",
+    "diff": 4,
+    "q": "Myastenik kriz ile kolinerjik kriz ayrımında hangi klinik bilgi en yararlıdır?",
+    "options": [
+      "Asetilkolinesteraz inhibitörü fazlalığında muskarinik bulguların eşlik etmesi",
+      "Her iki tabloda da pupillerin daima fikse dilate olması",
+      "Myastenik krizde bronkore ve diyarenin baskın olması",
+      "Kolinerjik krizde reflekslerin tamamen korunması",
+      "Her iki tabloda da edrofonyum testinin aynı yönde yanıt vermesi"
+    ],
+    "correct": 0,
+    "exp": "Kolinerjik kriz asetilkolin fazlalığıyla salivasyon, diyare, bradikardi, miyozis ve bronkore gibi muskarinik bulgularla seyreder. Myastenik kriz ise yetersiz nöromüsküler iletim nedeniyle güçsüzlük ve solunum yetmezliği yapar."
+  },
+  {
+    "id": 3421,
+    "ders": "Küçük Stajlar",
+    "konu": "Nöroloji",
+    "diff": 5,
+    "q": "Alzheimer hastalığında erken dönemde klinik bulgularla en uyumlu nöroanatomik tutulum hangisidir?",
+    "options": [
+      "Hipokampus ve medial temporal lob yapıları",
+      "Primer motor korteks ve kortikospinal trakt",
+      "Serebellar vermis ve dentat çekirdek",
+      "Substantia nigra pars compacta",
+      "Medulla anterior boynuz motor nöronları"
+    ],
+    "correct": 0,
+    "exp": "Alzheimer hastalığında erken epizodik bellek bozukluğu medial temporal lob ve hipokampal devrelerin etkilenmesiyle ilişkilidir."
+  },
+  {
+    "id": 3422,
+    "ders": "Küçük Stajlar",
+    "konu": "Beyin Cerrahi",
+    "diff": 4,
+    "q": "22 yaşındaki erkek hasta motosiklet kazasından 2 saat sonra baş ağrısı ve kusma nedeniyle getiriliyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. İlk değerlendirmede kısa süre bilinç kaybı olmuş, ardından açılmış; şimdi giderek uykuya meyilli ve sağ pupili dilate. BT'de bikonveks hiperdens koleksiyon izleniyor. Bu tabloda kanamanın en olası kaynağı hangisidir?",
+    "options": [
+      "Orta meningeal arter yırtılması",
+      "Köprü venlerinin kopması",
+      "Berry anevrizma rüptürü",
+      "Arteriovenöz malformasyon kanaması",
+      "Kavernöz sinüs trombozu"
+    ],
+    "correct": 0,
+    "exp": "Epidural hematom tipik olarak temporal kemik kırığı sonrası orta meningeal arter yırtılmasıyla gelişir. Lucid interval ve bikonveks görünüm klasik ipuçlarıdır."
+  },
+  {
+    "id": 3423,
+    "ders": "Küçük Stajlar",
+    "konu": "Beyin Cerrahi",
+    "diff": 4,
+    "q": "78 yaşındaki kadın hasta 3 haftadır artan baş ağrısı, unutkanlık ve sağ kolda güçsüzlük nedeniyle getiriliyor. Hipertansiyon ve atriyal fibrilasyonu var, varfarin kullanıyor. Bir ay önce hafif kafa travması geçirdiği öğreniliyor. BT'de hilal şeklinde hipodens koleksiyon görülüyor. Bu lezyonun temel mekanizması hangisidir?",
+    "options": [
+      "Yaşlılık ve antikoagülasyon zemininde köprü venlerinin yırtılması",
+      "Temporal kemik kırığına bağlı arteriyel kanama",
+      "Subaraknoid aralıkta sakküler anevrizma rüptürü",
+      "Bazal ganglionlarda hipertansif arteriol rüptürü",
+      "Venöz sinüs enfeksiyonuna bağlı tromboz"
+    ],
+    "correct": 0,
+    "exp": "Kronik subdural hematom yaşlılarda beyin atrofisi nedeniyle gerilen köprü venlerinin yırtılmasıyla gelişir. Antikoagülasyon riski artırır ve hilal şeklinde koleksiyon beklenir."
+  },
+  {
+    "id": 3424,
+    "ders": "Küçük Stajlar",
+    "konu": "Beyin Cerrahi",
+    "diff": 5,
+    "q": "43 yaşındaki kadın hasta 4 saattir hayatının en şiddetli baş ağrısı ve ensede sertlik yakınmasıyla başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. BT'de bazal sisternalarda kan görülüyor. Bu hastada erken dönemde mortaliteyi azaltmak için hangi komplikasyon aktif olarak önlenmelidir?",
+    "options": [
+      "Vazospazma bağlı gecikmiş serebral iskemi",
+      "Periferik fasiyal paralizi",
+      "Normal basınçlı hidrosefaliye bağlı yavaş yürüme",
+      "Benign paroksismal pozisyonel vertigo",
+      "Primer hipotiroidiye bağlı bilinç bulanıklığı"
+    ],
+    "correct": 0,
+    "exp": "Anevrizmal subaraknoid kanamada erken güvenli anevrizma tedavisi ve nimodipin gibi yaklaşımlar vazospazm ve gecikmiş serebral iskemi riskini azaltmayı hedefler."
+  },
+  {
+    "id": 3425,
+    "ders": "Küçük Stajlar",
+    "konu": "Beyin Cerrahi",
+    "diff": 4,
+    "q": "Kauda ekuina sendromunda acil cerrahi değerlendirmeyi gerektiren bulgu hangisidir?",
+    "options": [
+      "İdrar retansiyonu ve eyer tarzı duyu kaybı",
+      "Yalnızca mekanik bel ağrısı",
+      "Öksürükle artan servikal ağrı",
+      "Tek taraflı migren atağı",
+      "Geçici tinnitus"
+    ],
+    "correct": 0,
+    "exp": "Kauda ekuina sendromu mesane disfonksiyonu, eyer anestezisi ve alt ekstremite nörolojik defisitleriyle acil dekompresyon gerektiren bir tablodur."
+  },
+  {
+    "id": 3426,
+    "ders": "Küçük Stajlar",
+    "konu": "Anestezi",
+    "diff": 5,
+    "q": "19 yaşındaki erkek hasta 12 saattir karın ağrısı ve bulantı yakınmasıyla apendektomiye alınıyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Genel anestezi indüksiyonundan 20 dakika sonra ani taşikardi, hızla yükselen end-tidal CO2, kas rijiditesi ve hipertermi gelişiyor. Bu durumda en uygun tedavi yaklaşımı hangisidir?",
+    "options": [
+      "Volatil ajan ve süksinilkolini kesip dantrolen uygulamak",
+      "Anestezi derinliğini artırıp operasyonu sürdürmek",
+      "Yalnızca parasetamol verip izlemek",
+      "Beta bloker monoterapisi başlamak",
+      "Kas rijiditesi için neostigmin uygulamak"
+    ],
+    "correct": 0,
+    "exp": "Malign hipertermi ryanodin reseptörü üzerinden kontrolsüz kalsiyum salınımıyla gelişir. Tetikleyici ajanların kesilmesi, aktif soğutma ve dantrolen yaşam kurtarıcıdır."
+  },
+  {
+    "id": 3427,
+    "ders": "Küçük Stajlar",
+    "konu": "Anestezi",
+    "diff": 4,
+    "q": "54 yaşındaki kadın hasta 1 yıldır bacaklarda ağrı ve varis yakınması nedeniyle operasyona alınıyor. Hipertansiyonu var, losartan kullanıyor. Periferik sinir bloğundan birkaç dakika sonra ağız çevresinde uyuşma, metalik tat, ajitasyon ve ardından geniş kompleks taşikardi gelişiyor. Bu hastada en uygun antidotal tedavi hangisidir?",
+    "options": [
+      "İntravenöz lipid emülsiyonu",
+      "Flumazenil",
+      "Nalokson",
+      "Protamin sülfat",
+      "Vitamin K"
+    ],
+    "correct": 0,
+    "exp": "Lokal anestezik sistemik toksisitesi santral sinir sistemi belirtileri ve kardiyotoksisite ile seyreder. Lipid emülsiyonu lipofilik lokal anesteziği bağlayarak dolaşımdaki aktif fraksiyonu azaltır."
+  },
+  {
+    "id": 3428,
+    "ders": "Küçük Stajlar",
+    "konu": "Anestezi",
+    "diff": 4,
+    "q": "62 yaşındaki erkek hasta acil laparotomi öncesi değerlendiriliyor. Diyabetik gastroparezisi var, insülin kullanıyor; 6 saattir devam eden kusma ve karın ağrısı mevcut. Aspirasyon riski yüksek olduğu için indüksiyonda hangi yaklaşım en uygundur?",
+    "options": [
+      "Hızlı ardışık indüksiyon ve krikoid bası düşünülerek entübasyon",
+      "Derin sedasyon altında hava yolunu tamamen korumasız bırakmak",
+      "Operasyonu yalnızca nazal oksijenle sürdürmek",
+      "Aspirasyon riski nedeniyle hiçbir anestezi uygulamamak",
+      "Entübasyonu ameliyatın sonuna ertelemek"
+    ],
+    "correct": 0,
+    "exp": "Dolu mide, ileus, gebelik veya gastroparezi gibi durumlarda aspirasyon riski artar. Hızlı ardışık indüksiyon hava yolunu kısa sürede güvenceye almayı hedefler."
+  },
+  {
+    "id": 3429,
+    "ders": "Küçük Stajlar",
+    "konu": "Anestezi",
+    "diff": 4,
+    "q": "69 yaşındaki erkek hasta kalça kırığı ameliyatı sonrası derlenme odasında solunum sayısı 6/dk, pin-point pupiller ve bilinç bulanıklığı ile izleniyor. KOAH'ı var, inhaler bronkodilatör kullanıyor; postoperatif ağrı için opioid verilmiş. Bu hastada öncelikli tedavi hangisidir?",
+    "options": [
+      "Havayolu desteğiyle birlikte nalokson uygulanması",
+      "Yüksek doz benzodiazepin verilmesi",
+      "Opioid dozunun artırılması",
+      "Beta bloker başlanması",
+      "Kas gevşetici yapılması"
+    ],
+    "correct": 0,
+    "exp": "Opioid toksisitesi solunum depresyonu, miyozis ve bilinç değişikliğiyle seyreder. Havayolu ve ventilasyon desteği önceliklidir; nalokson opioid reseptör antagonisti olarak kullanılır."
+  },
+  {
+    "id": 3430,
+    "ders": "Küçük Stajlar",
+    "konu": "Anestezi",
+    "diff": 4,
+    "q": "Zor hava yolu öngörüsünde Mallampati sınıflaması hangi anatomik özelliği değerlendirmek için kullanılır?",
+    "options": [
+      "Orofaringeal görünürlüğü ve dil-yumuşak damak ilişkisini",
+      "Akciğer kompliyansını",
+      "Karaciğer metabolizma kapasitesini",
+      "Renal glomerüler filtrasyon hızını",
+      "Periferik damar çapını"
+    ],
+    "correct": 0,
+    "exp": "Mallampati sınıflaması ağız açıklığında orofaringeal yapıların görünürlüğünü değerlendirir. Dil hacmi ve yumuşak damak ilişkisi entübasyon güçlüğü hakkında ipucu sağlar."
+  },
+  {
+    "id": 3431,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 4,
+    "q": "27 yaşındaki kadın hasta 5 gündür uyumama, aşırı konuşma, para harcama ve büyüklük düşünceleri nedeniyle getiriliyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Ailesi daha önce 2 ay süren depresif dönem tarifliyor. Bu hastada akut dönemde en uygun yaklaşım hangisidir?",
+    "options": [
+      "Duygudurum düzenleyici ve/veya antipsikotik tedavi başlanması",
+      "Tek başına antidepresan başlanması",
+      "Tanı netleşene kadar hiçbir tedavi verilmemesi",
+      "Yalnızca uyku hijyeni önerilmesi",
+      "Uzun süreli benzodiazepin monoterapisi"
+    ],
+    "correct": 0,
+    "exp": "Manik epizodda antidepresan monoterapisi tabloyu kötüleştirebilir. Akut mani tedavisinde duygudurum düzenleyiciler ve antipsikotikler temel seçeneklerdir."
+  },
+  {
+    "id": 3432,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 5,
+    "q": "35 yaşındaki erkek hasta 2 gündür kaslarda katılık, ateş, ajitasyon ve bilinç dalgalanması ile acile getiriliyor. Majör depresyonu var, sertralin kullanıyor; son 4 gündür linezolid de alıyor. Muayenede klonus ve hiperrefleksi belirgin. Bu hastada en olası mekanizma hangisidir?",
+    "options": [
+      "Santral serotonerjik aktivitenin aşırı artması",
+      "Dopamin D2 reseptör blokajına bağlı nigrostriatal yetmezlik",
+      "GABA-A reseptörlerinin ani kesilmesi",
+      "Kolinerjik reseptörlerde aşırı blokaj",
+      "NMDA reseptörlerinde otoimmün antikor gelişimi"
+    ],
+    "correct": 0,
+    "exp": "SSRI ile MAO inhibitör etkili ilaçların birlikte kullanımı serotonin sendromuna yol açabilir. Klonus ve hiperrefleksi nöroleptik malign sendromdan ayrımda önemlidir."
+  },
+  {
+    "id": 3433,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 4,
+    "q": "44 yaşındaki kadın hasta 3 aydır çökkünlük, sabah erken uyanma, kilo kaybı ve değersizlik yakınmasıyla başvuruyor. Hipotiroidisi var, levotiroksin kullanıyor. Son hafta intihar planı yaptığını söylüyor. Bu hastada ilk değerlendirmede hangi yaklaşım önceliklidir?",
+    "options": [
+      "İntihar riskini ayrıntılı değerlendirip güvenliği sağlayacak acil plan yapmak",
+      "Antidepresan reçete edip 3 ay sonra kontrol önermek",
+      "Yakınmaların tamamını hipotiroidiye bağlayıp psikiyatrik değerlendirmeyi ertelemek",
+      "Yalnızca egzersiz önerisiyle taburcu etmek",
+      "Tanı için yalnızca kişilik testi yapmak"
+    ],
+    "correct": 0,
+    "exp": "Majör depresyonda intihar düşüncesi ve planı acil güvenlik değerlendirmesi gerektirir. Klinik stabilizasyon, gözetim ve gerekirse yatış tedaviden önce güvenliğin sağlanmasını gerektirir."
+  },
+  {
+    "id": 3434,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 4,
+    "q": "23 yaşındaki erkek hasta 8 aydır işitsel varsanılar, kötülük görme sanrıları ve sosyal çekilme nedeniyle getiriliyor. Bilinen kronik hastalığı yok, madde kullanımı saptanmıyor. Tedavide başlanacak ilacın en sık hedeflediği temel reseptör etkisi hangisidir?",
+    "options": [
+      "Mezolimbik dopamin D2 reseptör blokajı",
+      "Periferik beta-2 reseptör agonizması",
+      "Nikotinik asetilkolin reseptör aktivasyonu",
+      "Renal V2 reseptör blokajı",
+      "H1 reseptörlerinin seçici uyarılması"
+    ],
+    "correct": 0,
+    "exp": "Şizofrenide pozitif belirtiler mezolimbik dopaminerjik aktivite artışıyla ilişkilidir. Antipsikotiklerin temel etkilerinden biri D2 reseptör blokajıdır."
+  },
+  {
+    "id": 3435,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 5,
+    "q": "41 yaşındaki erkek hasta 1 aydır ateş, boğaz ağrısı ve halsizlik sonrası lökosit düşüklüğü nedeniyle değerlendiriliyor. Tedaviye dirençli şizofrenisi var, 5 aydır klozapin kullanıyor. Bu hastada izlemde özellikle hangi komplikasyon hedeflenmelidir?",
+    "options": [
+      "Agranülositoz gelişimi",
+      "Akut pankreatit gelişimi",
+      "İnterstisyel nefrit gelişimi",
+      "Retinal toksisite gelişimi",
+      "Otolit disfonksiyonu gelişimi"
+    ],
+    "correct": 0,
+    "exp": "Klozapin tedaviye dirençli şizofrenide etkilidir ancak agranülositoz riski nedeniyle düzenli nötrofil izlemi gerektirir. Ateş ve boğaz ağrısı bu açıdan uyarıcıdır."
+  },
+  {
+    "id": 3436,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 4,
+    "q": "32 yaşındaki kadın hasta 1 yıldır tekrarlayan panik ataklar ve atak gelecek korkusuyla kalabalık yerlere gidememe yakınmasıyla başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Ataklar 10 dakika içinde doruğa ulaşıyor. Uzun dönem tedavide en uygun yaklaşım hangisidir?",
+    "options": [
+      "Bilişsel davranışçı terapi ve SSRI temelli tedavi",
+      "Uzun süreli opioid tedavisi",
+      "Tek başına antipsikotik depo tedavisi",
+      "Elektif cerrahi vagotomi",
+      "Yalnızca antikolinerjik tedavi"
+    ],
+    "correct": 0,
+    "exp": "Panik bozuklukta bilişsel davranışçı terapi ve SSRI/SNRI grubu ilaçlar uzun dönem tedavide etkilidir. Benzodiazepinler kısa süreli destek için düşünülebilir ancak uzun dönem monoterapi uygun değildir."
+  },
+  {
+    "id": 3437,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 5,
+    "q": "68 yaşındaki erkek hasta 2 gündür dalgalanan bilinç, görsel varsanılar ve gece artan ajitasyonla izleniyor. Diyabeti ve hipertansiyonu var, metformin ve ramipril kullanıyor; idrar yolu enfeksiyonu nedeniyle hastaneye yatırılmış. Bu tabloyu demanstan ayırmada en önemli özellik hangisidir?",
+    "options": [
+      "Akut başlangıç ve gün içinde dalgalanan dikkat bozukluğu",
+      "Yıllar içinde yavaş ilerleyen unutkanlık",
+      "Saf afazi ile başlaması",
+      "Motor nöron bulgularının baskın olması",
+      "Erken dönemde kişilik değişikliğinin tek bulgu olması"
+    ],
+    "correct": 0,
+    "exp": "Deliryum akut başlangıçlı, dalgalı seyirli dikkat ve bilinç bozukluğudur. Enfeksiyon, metabolik bozukluk ve ilaçlar sık tetikleyicilerdir."
+  },
+  {
+    "id": 3438,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 4,
+    "q": "Katatonide ilk basamakta tanısal ve tedavi edici olarak kullanılan yaklaşım hangisidir?",
+    "options": [
+      "Lorazepam denemesi",
+      "Uzun süreli stimulant tedavisi",
+      "Tek başına beta bloker tedavisi",
+      "Yüksek doz antikolinerjik tedavi",
+      "Yalnızca psikodinamik görüşme"
+    ],
+    "correct": 0,
+    "exp": "Katatonide benzodiazepin yanıtı hem tanısal hem tedavi edici değer taşır. Yaşamı tehdit eden veya dirençli olgularda EKT güçlü bir seçenektir."
+  },
+  {
+    "id": 3439,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 4,
+    "q": "Lityum kullanan hastada hangi ilaç etkileşimi toksisite riskini artırır?",
+    "options": [
+      "NSAİİ veya ACE inhibitörü eklenmesi",
+      "Topikal nemlendirici kullanılması",
+      "İnhale salbutamol başlanması",
+      "Oral demir preparatı verilmesi",
+      "Topikal antifungal uygulanması"
+    ],
+    "correct": 0,
+    "exp": "NSAİİ, ACE inhibitörleri ve tiazid diüretikler renal lityum klirensini azaltarak serum lityum düzeyini yükseltebilir."
+  },
+  {
+    "id": 3440,
+    "ders": "Küçük Stajlar",
+    "konu": "Psikiyatri",
+    "diff": 4,
+    "q": "Travma sonrası stres bozukluğunda çekirdek belirti kümesi hangisidir?",
+    "options": [
+      "Yeniden yaşantılama, kaçınma, olumsuz biliş-duygudurum değişiklikleri ve artmış uyarılmışlık",
+      "Yalnızca hızlı döngülü mani atakları",
+      "Saf bellek kaybı ve motor afazi",
+      "Sadece obsesyon ve kompulsiyon varlığı",
+      "Yalnızca görsel varsanılar"
+    ],
+    "correct": 0,
+    "exp": "TSSB travmatik olay sonrası intrüzyonlar, kaçınma, negatif biliş-duygudurum değişiklikleri ve hiperarousal ile karakterizedir."
+  },
+  {
+    "id": 3441,
+    "ders": "Küçük Stajlar",
+    "konu": "Üroloji",
+    "diff": 5,
+    "q": "63 yaşındaki erkek hasta 2 gündür ateş, yan ağrısı ve idrar yaparken yanma yakınmasıyla başvuruyor. Diyabeti var, metformin kullanıyor. BT'de 9 mm proksimal üreter taşı ve hidronefroz saptanıyor. Bu hastada en uygun ilk yaklaşım hangisidir?",
+    "options": [
+      "Antibiyotikle birlikte acil üriner drenaj sağlanması",
+      "Taş düşürücü tedaviyle evde izlem",
+      "Elektif ESWL için 1 ay sonrasına randevu verilmesi",
+      "Yalnızca analjezik verilip taburcu edilmesi",
+      "İdrar kültürü beklenene kadar hiçbir işlem yapılmaması"
+    ],
+    "correct": 0,
+    "exp": "Obstrüksiyonla birlikte enfeksiyon ürosepsis riski taşır. Antibiyotik başlanmalı ve double-J stent veya nefrostomi ile acil drenaj sağlanmalıdır."
+  },
+  {
+    "id": 3442,
+    "ders": "Küçük Stajlar",
+    "konu": "Üroloji",
+    "diff": 4,
+    "q": "16 yaşındaki erkek hasta 3 saattir başlayan ani sağ testis ağrısı ve bulantıyla acile geliyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Muayenede testis yukarı yerleşimli, kremaster refleksi alınmıyor. Bu hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "Testis torsiyonu düşünülerek acil cerrahi eksplorasyon",
+      "Antibiyotik başlanıp 48 saat sonra kontrol",
+      "Elektif skrotal MRG randevusu",
+      "Yalnızca NSAİİ ve istirahat",
+      "Tanı için önce tümör belirteçleri beklenmesi"
+    ],
+    "correct": 0,
+    "exp": "Ani başlayan skrotal ağrı, yüksek yerleşimli testis ve kremaster refleksi kaybı torsiyon lehinedir. Testis canlılığını korumak için gecikmeden cerrahi eksplorasyon gerekir."
+  },
+  {
+    "id": 3443,
+    "ders": "Küçük Stajlar",
+    "konu": "Üroloji",
+    "diff": 4,
+    "q": "69 yaşındaki erkek hasta 8 aydır gece sık idrara kalkma, zayıf idrar akımı ve tam boşaltamama yakınmasıyla başvuruyor. Hipertansiyonu var, amlodipin kullanıyor. Prostat muayenesi simetrik büyümüş, PSA yaşına göre düşük. Semptomların temel mekanizmasını hedefleyen ilk tedavi seçeneği hangisidir?",
+    "options": [
+      "Alfa-1 reseptör blokajı ile prostat ve mesane boynu düz kas tonusunu azaltmak",
+      "Beta-1 blokajı ile detrusor kasını tamamen gevşetmek",
+      "Dopamin agonizması ile üretral sfinkteri uyarmak",
+      "V2 reseptör aktivasyonu ile idrar hacmini artırmak",
+      "Histamin H1 blokajı ile prostat hacmini küçültmek"
+    ],
+    "correct": 0,
+    "exp": "BPH'de dinamik komponent prostat ve mesane boynu düz kas tonusudur. Alfa-1 blokerler akım semptomlarını hızlı azaltır; 5-alfa redüktaz inhibitörleri büyük prostatta hacmi zamanla küçültür."
+  },
+  {
+    "id": 3444,
+    "ders": "Küçük Stajlar",
+    "konu": "Üroloji",
+    "diff": 4,
+    "q": "58 yaşındaki erkek hasta 1 aydır aralıklı makroskopik hematüri yakınmasıyla başvuruyor. 35 paket-yıl sigara öyküsü var, hipertansiyon için losartan kullanıyor. Ağrısı yok ve idrar kültürü negatif. Bu hastada öncelikle hangi tanısal yaklaşım gerekir?",
+    "options": [
+      "Ürotelyal malignite açısından sistoskopi ve üst üriner sistem görüntülemesi",
+      "Basit sistit kabul edilip tek doz antibiyotik",
+      "Hematüri geçene kadar yalnızca sıvı alımını artırmak",
+      "Yalnızca prostat masajı yapmak",
+      "Tanı için serum amilaz düzeyine bakmak"
+    ],
+    "correct": 0,
+    "exp": "Ağrısız makroskopik hematüri özellikle sigara öyküsü olan erişkinde mesane kanseri açısından uyarıcıdır. Sistoskopi ve üst sistem değerlendirmesi gerekir."
+  },
+  {
+    "id": 3445,
+    "ders": "Küçük Stajlar",
+    "konu": "Üroloji",
+    "diff": 4,
+    "q": "71 yaşındaki erkek hasta bel ağrısı ve kilo kaybı nedeniyle değerlendiriliyor. Prostat kanseri öyküsü var, androjen deprivasyon tedavisi alıyor. Alkalen fosfataz yüksek, kemik sintigrafisinde çoklu osteoblastik lezyonlar var. Bu yayılım paterni hangi mekanizmayla en iyi açıklanır?",
+    "options": [
+      "Prostat kanserinin vertebral venöz pleksus üzerinden kemiğe metastaz eğilimi",
+      "Saf lenfatik yayılımla akciğere sınırlı tutulum",
+      "Periton yüzeyine implantasyonla asit gelişimi",
+      "Portal ven yoluyla karaciğere zorunlu yayılım",
+      "Direkt mukozal invazyonla kolon tutulumu"
+    ],
+    "correct": 0,
+    "exp": "Prostat kanseri kemik metastazı yapmaya eğilimlidir ve Batson vertebral venöz pleksusu bu yayılımda önemlidir. Lezyonlar sıklıkla osteoblastik karakterdedir."
+  },
+  {
+    "id": 3446,
+    "ders": "Küçük Stajlar",
+    "konu": "Üroloji",
+    "diff": 4,
+    "q": "34 yaşındaki erkek hasta 4 gündür ateş, perineal ağrı ve dizüri yakınmasıyla başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Rektal muayenede prostat hassas ve ağrılı. Bu hastada hangi yaklaşım daha uygundur?",
+    "options": [
+      "Akut bakteriyel prostatit düşünülerek antibiyotik başlanması ve prostat masajından kaçınılması",
+      "Prostat masajıyla yoğun drenaj yapılıp antibiyotik verilmemesi",
+      "Semptomlar viral kabul edilip yalnızca antihistaminik başlanması",
+      "PSA normal çıkarsa enfeksiyonun dışlanması",
+      "İdrar kültürü alınmadan uzun süreli steroid verilmesi"
+    ],
+    "correct": 0,
+    "exp": "Akut bakteriyel prostatitte ateş, dizüri ve hassas prostat tipiktir. Prostat masajı bakteriyemi riskini artırabileceği için kaçınılmalıdır."
+  },
+  {
+    "id": 3447,
+    "ders": "Küçük Stajlar",
+    "konu": "Üroloji",
+    "diff": 4,
+    "q": "Fosfodiesteraz-5 inhibitörü kullanan hastada hangi ilaç kombinasyonu ağır hipotansiyon riski nedeniyle kontrendikedir?",
+    "options": [
+      "Nitrat tedavisi",
+      "Topikal antifungal tedavi",
+      "İnhale kortikosteroid tedavisi",
+      "Oral demir tedavisi",
+      "Proton pompa inhibitörü tedavisi"
+    ],
+    "correct": 0,
+    "exp": "PDE-5 inhibitörleri cGMP yıkımını azaltır. Nitratlarla birlikte cGMP aşırı artar ve ciddi hipotansiyon gelişebilir."
+  },
+  {
+    "id": 3448,
+    "ders": "Küçük Stajlar",
+    "konu": "Üroloji",
+    "diff": 4,
+    "q": "Mikrohematüri değerlendirmesinde risk sınıflamasını belirleyen değişkenlerden biri hangisidir?",
+    "options": [
+      "Yaş, sigara öyküsü ve eritrosit sayısı",
+      "Saç rengi ve göz rengi",
+      "Serum amilaz ve lipaz",
+      "Deri fototipi ve tırnak yapısı",
+      "Kulak zarı mobilitesi"
+    ],
+    "correct": 0,
+    "exp": "Mikrohematüride malignite riski yaş, cinsiyet, sigara öyküsü, hematüri derecesi ve ek risk faktörlerine göre değerlendirilir. Risk temelli sistoskopi ve görüntüleme yaklaşımı seçilir."
+  },
+  {
+    "id": 3449,
+    "ders": "Küçük Stajlar",
+    "konu": "Çocuk Cerrahisi",
+    "diff": 4,
+    "q": "7 haftalık erkek bebek 10 gündür giderek artan fışkırır tarzda kusma ve kilo alamama nedeniyle getiriliyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Muayenede dehidratasyon bulguları ve epigastrik zeytin benzeri kitle var. Bu hastada beklenen metabolik bozukluk hangisidir?",
+    "options": [
+      "Hipokloremik hipokalemik metabolik alkaloz",
+      "Hiperkloremik metabolik asidoz",
+      "Respiratuvar alkaloz",
+      "Hiperkalemik metabolik asidoz",
+      "Laktik asidoz"
+    ],
+    "correct": 0,
+    "exp": "Hipertrofik pilor stenozunda mide çıkış obstrüksiyonu nedeniyle HCl kaybı olur. Bu durum hipokloremik, hipokalemik metabolik alkaloza yol açar."
+  },
+  {
+    "id": 3450,
+    "ders": "Küçük Stajlar",
+    "konu": "Çocuk Cerrahisi",
+    "diff": 4,
+    "q": "9 aylık erkek bebek 12 saattir aralıklı şiddetli karın ağrısı, bacaklarını karnına çekme ve kusma nedeniyle getiriliyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Bezinde jöle kıvamında kanlı mukus görülmüş, ultrasonda target bulgusu var. Bu hastada ilk tedavi yaklaşımı hangisidir?",
+    "options": [
+      "Peritonit yoksa pnömatik veya hidrostatik redüksiyon",
+      "Doğrudan total kolektomi",
+      "Yalnızca oral rehidrasyon ve taburculuk",
+      "Uzun süreli antiasit tedavisi",
+      "Elektif apendektomi randevusu"
+    ],
+    "correct": 0,
+    "exp": "İnvajinasyonda aralıklı kolik ağrı, kusma, kanlı mukus ve ultrasonda target bulgusu tipiktir. Perforasyon veya peritonit yoksa radyolojik redüksiyon ilk yaklaşımdır."
+  },
+  {
+    "id": 3451,
+    "ders": "Küçük Stajlar",
+    "konu": "Çocuk Cerrahisi",
+    "diff": 4,
+    "q": "Hirschsprung hastalığında tanıyı kesinleştiren histopatolojik bulgu hangisidir?",
+    "options": [
+      "Rektal biyopside ganglion hücrelerinin yokluğu",
+      "Villöz atrofi ve kript hiperplazisi",
+      "Peyer plaklarında lenfoid hiperplazi",
+      "Appendikste fekalit varlığı",
+      "Pankreas adacıklarında amiloid birikimi"
+    ],
+    "correct": 0,
+    "exp": "Hirschsprung hastalığı distal bağırsakta enterik ganglion hücrelerinin yokluğu ile karakterizedir. Tanı rektal biyopside aganglionozisin gösterilmesiyle kesinleşir."
+  },
+  {
+    "id": 3452,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 4,
+    "q": "64 yaşındaki erkek hasta 5 gündür şiddetli kulak ağrısı ve akıntı nedeniyle başvuruyor. Diyabeti var, insülin kullanıyor. Otoskopide dış kulak yolunda granülasyon dokusu ve kötü kokulu akıntı izleniyor; ağrı muayene bulgusundan daha şiddetli. Bu hastada en olası etken hangisidir?",
+    "options": [
+      "Pseudomonas aeruginosa",
+      "Streptococcus pyogenes",
+      "Moraxella catarrhalis",
+      "Epstein-Barr virüsü",
+      "Candida albicans"
+    ],
+    "correct": 0,
+    "exp": "Malign eksternal otit özellikle diyabetik yaşlılarda görülür ve sıklıkla Pseudomonas aeruginosa ile ilişkilidir. Granülasyon dokusu ve şiddetli otalji tipiktir."
+  },
+  {
+    "id": 3453,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 4,
+    "q": "38 yaşındaki kadın hasta 18 saattir süren ani işitme kaybı ve kulakta dolgunluk hissi ile başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Otoskopi normal, Weber testi sağlam kulağa lateralize oluyor. Bu hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "Ani sensörinöral işitme kaybı düşünülerek acil steroid tedavisi ve odyolojik değerlendirme",
+      "Kulak kiri kabul edilip lavaj yapmak",
+      "Yalnızca oral antihistaminikle 1 ay izlemek",
+      "Orta kulak efüzyonu için miringotomi yapmak",
+      "Antibiyotik başlanıp odyometriyi gereksiz görmek"
+    ],
+    "correct": 0,
+    "exp": "Ani sensörinöral işitme kaybında otoskopi normal olabilir ve Weber sağlam kulağa lateralize olur. Erken steroid tedavisi ve odyolojik doğrulama önemlidir."
+  },
+  {
+    "id": 3454,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 4,
+    "q": "6 yaşındaki erkek çocuk 2 gündür ateş, kulak ağrısı ve huzursuzluk nedeniyle getiriliyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Otoskopide timpan membran bombeli, hiperemik ve hareketi azalmış. Bu hastada en olası mekanizma hangisidir?",
+    "options": [
+      "Östaki tüpü disfonksiyonu sonrası orta kulakta bakteriyel çoğalma",
+      "İç kulakta otolitlerin yarım daire kanalına kaçması",
+      "Dış kulak yolunda mantar kolonizasyonu",
+      "Kokleada otoimmün demiyelinizasyon",
+      "Vestibüler sinirde tümöral bası"
+    ],
+    "correct": 0,
+    "exp": "Akut otitis mediada üst solunum yolu enfeksiyonu sonrası östaki tüpü fonksiyonu bozulur. Orta kulakta sıvı birikimi ve bakteriyel çoğalma ağrı, ateş ve bombelik yapar."
+  },
+  {
+    "id": 3455,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 4,
+    "q": "29 yaşındaki erkek hasta 3 gündür boğaz ağrısı, ateş ve ağzını açmada güçlük yakınmasıyla başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Muayenede uvula karşı tarafa deviye, tek taraflı tonsil çevresinde şişlik ve trismus var. Bu hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "Peritonsiller apse düşünülerek drenaj ve antibiyotik tedavisi",
+      "Yalnızca pastil verip eve gönderme",
+      "Alerjik rinit kabul edilerek intranazal steroid",
+      "Akut viral farenjit olarak antibiyotiksiz izlem",
+      "Elektif tiroidektomi planlama"
+    ],
+    "correct": 0,
+    "exp": "Peritonsiller apse tek taraflı boğaz ağrısı, uvula deviasyonu, trismus ve muffled voice ile seyreder. Tedavide drenaj ve antibiyotik gerekir."
+  },
+  {
+    "id": 3456,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 3,
+    "q": "47 yaşındaki kadın hasta 1 gündür başını sağa çevirince saniyeler süren dönme hissiyle başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. İşitme kaybı veya nörolojik defisit yok, Dix-Hallpike testinde kısa süreli torsiyonel nistagmus oluşuyor. Bu hastada en uygun tedavi hangisidir?",
+    "options": [
+      "Kanalit repozisyon manevrası",
+      "Uzun süreli antibiyotik tedavisi",
+      "Acil timpanoplasti",
+      "İntravenöz tromboliz",
+      "Yüksek doz antipsikotik tedavi"
+    ],
+    "correct": 0,
+    "exp": "BPPV otokoniaların posterior semisirküler kanala yer değiştirmesiyle oluşur. Kısa süreli pozisyonel vertigo ve Dix-Hallpike pozitifliği tipiktir; Epley gibi repozisyon manevraları etkilidir."
+  },
+  {
+    "id": 3457,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 4,
+    "q": "71 yaşındaki erkek hasta 2 saattir devam eden burun kanaması nedeniyle başvuruyor. Hipertansiyonu ve atriyal fibrilasyonu var, apiksaban kullanıyor. Kanama posterior farenkse akıyor ve anterior bası ile durmuyor. Bu hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "Posterior epistaksis düşünülerek havayolu ve hemodinami değerlendirilip uygun tamponaj/uzman müdahalesi planlamak",
+      "Yalnızca başı geriye yatırıp beklemek",
+      "Antikoagülan kullandığı için hiçbir girişim yapmamak",
+      "Kanama durmadan nazal steroid başlamak",
+      "Kronik sinüzit kabul edip ayaktan antibiyotik vermek"
+    ],
+    "correct": 0,
+    "exp": "Posterior epistaksis yaşlı ve antikoagülan kullanan hastalarda daha ciddi olabilir. Havayolu, hemodinami ve antikoagülasyon durumu değerlendirilerek posterior tamponaj veya endoskopik kontrol gerekebilir."
+  },
+  {
+    "id": 3458,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 4,
+    "q": "Kronik otitis media zemininde kolesteatom gelişiminin en önemli klinik riski hangisidir?",
+    "options": [
+      "Kemik erozyonu ve intrakraniyal komplikasyon gelişimi",
+      "Tiroid fırtınası gelişimi",
+      "Akut pankreatit gelişimi",
+      "Primer hiperaldosteronizm gelişimi",
+      "Retinal dekolman gelişimi"
+    ],
+    "correct": 0,
+    "exp": "Kolesteatom keratinize skuamöz epitel birikimiyle kemik erozyonu yapabilir. Ossiküler hasar, mastoidit, fasiyal paralizi ve intrakraniyal komplikasyon riski taşır."
+  },
+  {
+    "id": 3459,
+    "ders": "Küçük Stajlar",
+    "konu": "Kulak Burun Boğaz",
+    "diff": 4,
+    "q": "Nazofarenks karsinomu ile en güçlü ilişkili viral etken hangisidir?",
+    "options": [
+      "Epstein-Barr virüsü",
+      "Respiratuvar sinsityal virüs",
+      "Rinovirüs",
+      "Parvovirüs B19",
+      "Hepatit A virüsü"
+    ],
+    "correct": 0,
+    "exp": "Nazofarenks karsinomu özellikle nonkeratinize tipte Epstein-Barr virüsü ile ilişkilidir. Boyunda lenfadenopati ve nazal semptomlarla başvurabilir."
+  },
+  {
+    "id": 3460,
+    "ders": "Küçük Stajlar",
+    "konu": "Göz Hastalıkları",
+    "diff": 5,
+    "q": "67 yaşındaki kadın hasta 6 saattir sağ gözde şiddetli ağrı, bulanık görme, baş ağrısı ve bulantı ile başvuruyor. Hipermetropisi ve hipertansiyonu var, hidroklorotiyazid kullanıyor. Göz kızarık, kornea bulanık ve pupil orta dilate fikse. Bu hastada en uygun acil yaklaşım hangisidir?",
+    "options": [
+      "Göz içi basıncını hızla düşürmeye yönelik medikal tedavi ve acil oftalmoloji değerlendirmesi",
+      "Yalnızca suni gözyaşı verip kontrol önermek",
+      "Antibiyotik pomadla 1 hafta izlemek",
+      "Retina dekolmanı için elektif kontrol",
+      "Kontakt lens kullanımını artırmak"
+    ],
+    "correct": 0,
+    "exp": "Akut açı kapanması glokomunda ani göz ağrısı, bulanık kornea, orta dilate fikse pupil ve yüksek göz içi basıncı olur. Görmeyi korumak için hızlı basınç düşürme ve kalıcı tedavi gerekir."
+  },
+  {
+    "id": 3461,
+    "ders": "Küçük Stajlar",
+    "konu": "Göz Hastalıkları",
+    "diff": 5,
+    "q": "74 yaşındaki erkek hasta 1 saattir sol gözde ani, ağrısız görme kaybı nedeniyle geliyor. Atriyal fibrilasyonu var, antikoagülanını düzensiz kullanıyor. Fundusta soluk retina ve kiraz kırmızısı makula görünümü var. Bu bulgunun temel nedeni hangisidir?",
+    "options": [
+      "Retinal arter oklüzyonuna bağlı iç retina iskemi ve foveal koroidal dolaşımın görece korunması",
+      "Optik sinirde demiyelinizan inflamasyon",
+      "Vitreusta yaşa bağlı dejeneratif opasite",
+      "Korneada epitel defekti",
+      "Konjonktivada alerjik ödem"
+    ],
+    "correct": 0,
+    "exp": "Santral retinal arter oklüzyonu iç retinada iskemi ve solukluk yapar. Fovea koroidden beslendiği için kiraz kırmızısı görünüm oluşur."
+  },
+  {
+    "id": 3462,
+    "ders": "Küçük Stajlar",
+    "konu": "Göz Hastalıkları",
+    "diff": 4,
+    "q": "56 yaşındaki erkek hasta 2 gündür uçuşan cisimler ve ışık çakmaları sonrası sağ gözde perde inmesi yakınmasıyla başvuruyor. Yüksek miyopisi var, ilaç kullanmıyor. Ağrı yok. Bu hastada en olası tanı hangisidir?",
+    "options": [
+      "Yırtıklı retina dekolmanı",
+      "Akut konjonktivit",
+      "Arpacık",
+      "Üveite bağlı hipopiyon",
+      "Optik nörit"
+    ],
+    "correct": 0,
+    "exp": "Fotopsi, floaters ve perde inmesi yırtıklı retina dekolmanı için tipiktir. Yüksek miyopi vitreoretinal traksiyon ve yırtık riskini artırır."
+  },
+  {
+    "id": 3463,
+    "ders": "Küçük Stajlar",
+    "konu": "Göz Hastalıkları",
+    "diff": 4,
+    "q": "33 yaşındaki erkek hasta 4 gündür sağ gözde ağrı, kızarıklık, fotofobi ve bulanık görme ile geliyor. Ankilozan spondilit öyküsü var, NSAİİ kullanıyor. Muayenede siliyer enjeksiyon ve ön kamarada hücre izleniyor. Bu hastada en olası mekanizma hangisidir?",
+    "options": [
+      "HLA-B27 ilişkili ön üveal inflamasyon",
+      "Retinal arterde embolik tıkanma",
+      "Korneada fungal ülser",
+      "Lens proteinlerine karşı yaşa bağlı opasifikasyon",
+      "Konjonktivada IgE aracılı alerjik yanıt"
+    ],
+    "correct": 0,
+    "exp": "HLA-B27 ilişkili spondiloartritlerde akut anterior üveit görülebilir. Ağrı, fotofobi, siliyer enjeksiyon ve ön kamarada hücre tipiktir."
+  },
+  {
+    "id": 3464,
+    "ders": "Küçük Stajlar",
+    "konu": "Göz Hastalıkları",
+    "diff": 4,
+    "q": "9 yaşındaki erkek çocuk 2 gündür ateş, göz kapağında şişlik ve göz hareketleriyle ağrı nedeniyle getiriliyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Muayenede proptozis ve abduksiyon kısıtlılığı var. Bu hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "Orbital selülit düşünülerek acil görüntüleme ve intravenöz antibiyotik",
+      "Preseptal selülit kabul edilip yalnızca topikal damla",
+      "Alerjik konjonktivit için antihistaminik",
+      "Elektif gözlük muayenesi",
+      "Katarakt cerrahisi planlanması"
+    ],
+    "correct": 0,
+    "exp": "Proptozis, oftalmopleji ve göz hareketleriyle ağrı orbital selüliti düşündürür. Sinüzit komplikasyonu olabilir ve acil görüntüleme ile intravenöz antibiyotik gerekir."
+  },
+  {
+    "id": 3465,
+    "ders": "Küçük Stajlar",
+    "konu": "Göz Hastalıkları",
+    "diff": 4,
+    "q": "45 yaşındaki kadın hasta temizlik sırasında sol gözüne lavabo açıcı sıçramasından 20 dakika sonra acile geliyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Şiddetli ağrı ve blefarospazm var. Bu hastada ilk yapılması gereken işlem hangisidir?",
+    "options": [
+      "Gözün hemen bol sıvıyla irrigasyonu ve pH takibi",
+      "Önce ayrıntılı görme alanı testi yapmak",
+      "Steril kapama yapıp irrigasyonu ertelemek",
+      "Yalnızca oral analjezik verip taburcu etmek",
+      "Antibiyotik kültürü beklemek"
+    ],
+    "correct": 0,
+    "exp": "Kimyasal göz yaralanmalarında ilk ve en önemli basamak gecikmeden bol irrigasyondur. Alkali maddeler derin penetrasyon yapabildiği için pH normale dönene kadar irrigasyon sürdürülür."
+  },
+  {
+    "id": 3466,
+    "ders": "Küçük Stajlar",
+    "konu": "Göz Hastalıkları",
+    "diff": 4,
+    "q": "Diyabetik retinopatide görme kaybının en sık nedenlerinden biri hangisidir?",
+    "options": [
+      "Diabetik makula ödemi",
+      "Akut dış kulak yolu enfeksiyonu",
+      "Santral pontin miyelinolizis",
+      "Subdural hematom",
+      "Peritonsiller apse"
+    ],
+    "correct": 0,
+    "exp": "Diyabetik makula ödemi kan-retina bariyer bozulması ve vasküler geçirgenlik artışıyla gelişir. Görme keskinliğini belirgin azaltabilir."
+  },
+  {
+    "id": 3467,
+    "ders": "Küçük Stajlar",
+    "konu": "Göz Hastalıkları",
+    "diff": 4,
+    "q": "Primer açık açılı glokomda optik sinir hasarını açıklayan temel risk faktörü hangisidir?",
+    "options": [
+      "Göz içi basıncı yüksekliği ve retinal ganglion hücre hasarı",
+      "Orta kulakta efüzyon",
+      "Üreter taşı obstrüksiyonu",
+      "Serotonin fazlalığı",
+      "Safra kanalı tıkanıklığı"
+    ],
+    "correct": 0,
+    "exp": "Açık açılı glokomda trabeküler dışa akım direnci ve göz içi basıncı ilişkili optik sinir hasarı gelişir. Progresif görme alanı kaybı beklenir."
+  },
+  {
+    "id": 3468,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 4,
+    "q": "29 yaşındaki gebe kadın 8 saattir sağ alt kadran ağrısı, bulantı ve iştahsızlık ile başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Fizik muayenede rebound şüpheli, lökosit yüksek. Bu hastada ilk görüntüleme yöntemi olarak hangisi daha uygundur?",
+    "options": [
+      "Abdominal ultrasonografi",
+      "Kontrastlı tüm batın BT",
+      "Direkt batın grafisi",
+      "PET-BT",
+      "Floroskopik kolon pasaj grafisi"
+    ],
+    "correct": 0,
+    "exp": "Gebelikte radyasyon maruziyetini azaltmak için akut apandisit şüphesinde ilk basamak ultrasonografidir. Gerekirse MRG ikinci basamak olarak değerlendirilebilir."
+  },
+  {
+    "id": 3469,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 4,
+    "q": "57 yaşındaki erkek hasta 4 gündür nefes darlığı ve plöritik göğüs ağrısıyla başvuruyor. Kolon kanseri öyküsü var, kemoterapi alıyor. D-dimer yüksek ve böbrek fonksiyonları normal. Pulmoner emboli şüphesinde en uygun görüntüleme hangisidir?",
+    "options": [
+      "BT pulmoner anjiyografi",
+      "Direkt karın grafisi",
+      "Kranial MRG",
+      "Tiroid sintigrafisi",
+      "Doppler olmadan düz akciğer grafisiyle tanıyı kesinleştirmek"
+    ],
+    "correct": 0,
+    "exp": "Pulmoner emboli şüphesinde uygun hastada BT pulmoner anjiyografi ana tanısal yöntemdir. Malignite tromboz riskini artırır."
+  },
+  {
+    "id": 3470,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 4,
+    "q": "70 yaşındaki erkek hasta 45 dakikadır süren sağ kol güçsüzlüğü ve konuşma bozukluğu ile acile getiriliyor. Hipertansiyonu var, asetilsalisilik asit kullanıyor. Akut inme değerlendirmesinde ilk görüntüleme amacı hangisidir?",
+    "options": [
+      "Kanamayı dışlamak için kontrastsız beyin BT çekilmesi",
+      "Primer tümör taraması için PET-BT yapılması",
+      "Safra kesesi ultrasonografisi yapılması",
+      "Kemik sintigrafisi yapılması",
+      "Kontrastlı mamografi çekilmesi"
+    ],
+    "correct": 0,
+    "exp": "Akut inmede reperfüzyon tedavisini değerlendirmeden önce intrakraniyal kanama dışlanmalıdır. Kontrastsız beyin BT hızlı ve erişilebilir ilk basamak yöntemdir."
+  },
+  {
+    "id": 3471,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 5,
+    "q": "61 yaşındaki kadın hasta 3 aydır kilo kaybı ve epigastrik ağrı nedeniyle çekilen BT'de 3 cm adrenal insidentaloma ile değerlendiriliyor. Hipertansiyonu var, amlodipin kullanıyor. Lezyon heterojen ve kontrast yıkanması düşük. Bu hastada görüntüleme bulgusu en çok hangi riski düşündürür?",
+    "options": [
+      "Malignite olasılığı nedeniyle hormonal ve onkolojik değerlendirme gerekliliği",
+      "Kesin benign miyelolipom olduğu için hiçbir izlem gerekmemesi",
+      "Akut apandisit tanısı",
+      "Primer otoskleroz tanısı",
+      "Saf BPPV tanısı"
+    ],
+    "correct": 0,
+    "exp": "Adrenal insidentalomada boyut, heterojenite, yoğunluk ve kontrast yıkanma özellikleri malignite riskini etkiler. Ayrıca her lezyonda fonksiyonel hormon üretimi açısından değerlendirme gerekir."
+  },
+  {
+    "id": 3472,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 4,
+    "q": "74 yaşındaki erkek hasta düşme sonrası baş ağrısı ve kusma ile başvuruyor. Atriyal fibrilasyonu var, rivaroksaban kullanıyor. Bilinci açık ancak olaydan sonra kısa süre konfüzyon olmuş. Bu hastada görüntüleme açısından en uygun yaklaşım hangisidir?",
+    "options": [
+      "Antikoagülan kullanımı nedeniyle düşük eşikle acil kraniyal BT değerlendirmesi",
+      "Semptomları hafif olduğu için görüntüleme yapmadan eve gönderme",
+      "Yalnızca servikal grafi ile intrakraniyal kanamayı dışlama",
+      "Bir ay sonra elektif MRG planlama",
+      "PET-BT ile metabolik tarama"
+    ],
+    "correct": 0,
+    "exp": "Yaşlı ve antikoagülan kullanan hastada kafa travması sonrası intrakraniyal kanama riski artar. Klinik bulgular hafif olsa bile acil BT değerlendirmesi çoğu algoritmada düşük eşikle yapılır."
+  },
+  {
+    "id": 3473,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 4,
+    "q": "Safra kesesi taşına bağlı akut kolesistit şüphesinde ilk tercih edilen görüntüleme yöntemi hangisidir?",
+    "options": [
+      "Sağ üst kadran ultrasonografisi",
+      "PET-BT",
+      "Direkt kafa grafisi",
+      "Elektif mamografi",
+      "Floroskopik özofagus pasajı"
+    ],
+    "correct": 0,
+    "exp": "Akut kolesistitte ultrasonografi taş, duvar kalınlaşması, perikolesistik sıvı ve sonografik Murphy bulgusunu değerlendirmede ilk basamak yöntemdir."
+  },
+  {
+    "id": 3474,
+    "ders": "Küçük Stajlar",
+    "konu": "Radyoloji",
+    "diff": 4,
+    "q": "İyonizan radyasyon içermemesi nedeniyle çocuk ve gebede sık tercih edilen kesitsel görüntüleme yöntemi hangisidir?",
+    "options": [
+      "Manyetik rezonans görüntüleme",
+      "Kontrastlı bilgisayarlı tomografi",
+      "Floroskopi",
+      "Direkt grafi",
+      "PET-BT"
+    ],
+    "correct": 0,
+    "exp": "MRG iyonizan radyasyon içermez ve uygun klinik durumlarda çocuklar ile gebelerde radyasyon maruziyetini azaltmak için tercih edilebilir."
+  },
+  {
+    "id": 3475,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 4,
+    "q": "52 yaşındaki erkek hasta aile hekimliğine tarama danışmanlığı için başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor; şikayeti yok ve ailesinde kolorektal kanser öyküsü bulunmuyor. Bu hastada kolorektal kanser taraması için hangi yaklaşım uygundur?",
+    "options": [
+      "Yaşına uygun olarak dışkı temelli test veya kolonoskopi seçeneklerinden biriyle tarama başlamak",
+      "Şikayeti olmadığı için hiçbir yaşta tarama yapmamak",
+      "Yalnızca karın ultrasonografisiyle taramayı tamamlamak",
+      "Her yıl PET-BT yapmak",
+      "Tarama için önce serum amilazına bakmak"
+    ],
+    "correct": 0,
+    "exp": "Ortalama riskli erişkinlerde kolorektal kanser taraması önerilen yaş aralığında başlar. Dışkı temelli testler veya kolonoskopi gibi seçenekler hasta tercihi ve erişime göre seçilebilir."
+  },
+  {
+    "id": 3476,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 4,
+    "q": "68 yaşındaki kadın hasta aşı danışmanlığı için başvuruyor. KOAH ve hipertansiyonu var, inhaler bronkodilatör ve amlodipin kullanıyor. Son 10 yılda tetanoz rapeli yok, pnömokok aşı durumu bilinmiyor. Bu hastada en doğru halk sağlığı yaklaşımı hangisidir?",
+    "options": [
+      "Yaş ve risk durumuna göre erişkin bağışıklama şemasını tamamlamak",
+      "Aşı geçmişi bilinmiyorsa tüm aşıları kontrendike kabul etmek",
+      "KOAH olduğu için hiçbir inaktive aşı yapmamak",
+      "Yalnızca çocukluk aşılarıyla ilgilenmek",
+      "Aşıları sadece enfeksiyon geçirdikten sonra yapmak"
+    ],
+    "correct": 0,
+    "exp": "Erişkin bağışıklamada yaş, kronik hastalık, bağışıklık durumu ve eksik aşı öyküsü dikkate alınır. İnfluenza, pnömokok, zoster, Td/Tdap ve diğer aşılar endikasyona göre tamamlanır."
+  },
+  {
+    "id": 3477,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 4,
+    "q": "34 yaşındaki erkek hasta cinsel sağlık danışmanlığı için başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor; son 6 ayda iki kez bakteriyel CYBE tedavisi almış ve korunmasız ilişkileri olduğunu belirtiyor. Bu hastada güncel koruyucu danışmanlıkta hangi seçenek tartışılabilir?",
+    "options": [
+      "Uygun risk grubundaysa cinsel temastan sonraki 72 saat içinde doksisiklin PEP kullanımı",
+      "Her ilişkiden önce tek doz vankomisin kullanımı",
+      "HIV korunması için yalnızca HPV aşısı yapılması",
+      "Gonoreden korunmak için kronik makrolid profilaksisi",
+      "CYBE taramalarının tamamen bırakılması"
+    ],
+    "correct": 0,
+    "exp": "Doxy-PEP bazı yüksek riskli gruplarda bakteriyel CYBE riskini azaltmak için güncel rehberlerde tartışılan bir stratejidir. Düzenli CYBE ve HIV taraması, aşılama ve PrEP değerlendirmesiyle birlikte ele alınmalıdır."
+  },
+  {
+    "id": 3478,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 4,
+    "q": "45 yaşındaki kadın hasta serviks kanseri taraması için başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor; son taramasını 7 yıl önce yaptırmış. Bu hastada tarama programının temel hedefi hangisidir?",
+    "options": [
+      "HPV ilişkili prekanseröz lezyonları invaziv kansere ilerlemeden saptamak",
+      "Over kistlerini serum glukozla taramak",
+      "Meme kanserini akciğer grafisiyle erken yakalamak",
+      "Kolon poliplerini servikal sitolojiyle saptamak",
+      "Tiroid nodüllerini HPV testiyle değerlendirmek"
+    ],
+    "correct": 0,
+    "exp": "Serviks kanseri taramasının amacı yüksek riskli HPV ilişkili prekanseröz lezyonları saptayıp tedavi ederek invaziv kanseri önlemektir."
+  },
+  {
+    "id": 3479,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 4,
+    "q": "28 yaşındaki erkek sağlık çalışanı iğne batması sonrası 1 saat içinde başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Kaynak hastanın HIV pozitif olduğu öğreniliyor. Bu olayda en uygun yaklaşım hangisidir?",
+    "options": [
+      "Risk değerlendirmesi yapıp mümkün olan en kısa sürede HIV temas sonrası profilaksi başlamak",
+      "Profilaksiyi 7 gün sonra viral yük sonucuna kadar ertelemek",
+      "Yalnızca yara üzerine alkol döküp takip yapmamak",
+      "HIV aşısı yapmak",
+      "Temas sonrası hiçbir laboratuvar izlemi yapmamak"
+    ],
+    "correct": 0,
+    "exp": "Mesleki HIV temasında risk değerlendirmesi yapılır ve uygun olguda PEP mümkün olan en kısa sürede başlanır. Kaynak ve temas eden kişinin serolojileriyle takip planlanır."
+  },
+  {
+    "id": 3480,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 4,
+    "q": "Bir tarama testinde duyarlılığın yüksek olması hangi sonucu azaltmak için önemlidir?",
+    "options": [
+      "Yanlış negatif sonuç",
+      "Yanlış pozitif sonuç",
+      "Örneklem büyüklüğü",
+      "Prevalans",
+      "Mutlak risk artışı"
+    ],
+    "correct": 0,
+    "exp": "Duyarlılığı yüksek test hastalığı olanları yakalamada iyidir ve yanlış negatifleri azaltır. Tarama testlerinde hastalığı atlamamak için yüksek duyarlılık önemlidir."
+  },
+  {
+    "id": 3481,
+    "ders": "Küçük Stajlar",
+    "konu": "Halk Sağlığı",
+    "diff": 4,
+    "q": "Atfedilebilir risk hangi soruya yanıt vermek için kullanılır?",
+    "options": [
+      "Maruziyet ortadan kaldırılırsa hastalık yükünün ne kadarı önlenebilir?",
+      "Testin yanlış pozitif oranı nedir?",
+      "Dağılımın ortalaması kaçtır?",
+      "Bir ilacın plazma yarı ömrü nedir?",
+      "Bir değişkenin standart sapması kaçtır?"
+    ],
+    "correct": 0,
+    "exp": "Atfedilebilir risk, maruziyete bağlı ek hastalık yükünü gösterir. Halk sağlığında önlenebilir yükü tahmin etmek için kullanılır."
+  },
+  {
+    "id": 3482,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 5,
+    "q": "12 yaşındaki obez erkek çocuk 3 haftadır sol kalça ve diz ağrısı, aksama nedeniyle getiriliyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Muayenede kalça iç rotasyonu kısıtlı, grafide femur başı epifizi metafize göre kaymış görünüyor. Bu hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "Stabilizasyon için acil ortopedik değerlendirme ve in situ vida tespiti",
+      "Yalnızca diz ağrısı için elastik bandaj",
+      "Uzun süreli antibiyotik tedavisi",
+      "Elektif fizik tedaviye yönlendirme",
+      "Kalça hareketlerini zorlayıcı egzersiz başlanması"
+    ],
+    "correct": 0,
+    "exp": "SCFE obez adölesan erkeklerde kalça veya diz ağrısı ve aksama ile gelebilir. Epifiz kaymasının ilerlemesini önlemek için acil yük vermeme ve cerrahi stabilizasyon gerekir."
+  },
+  {
+    "id": 3483,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 5,
+    "q": "31 yaşındaki erkek hasta tibia kırığı sonrası alçı uygulandıktan 6 saat sonra giderek artan bacak ağrısı ve paresteziyle başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Pasif parmak ekstansiyonu ağrılı, distal nabızlar alınabiliyor. Bu hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "Kompartman sendromu düşünülerek acil fasyotomi değerlendirmesi",
+      "Nabızlar alındığı için taburculuk",
+      "Yalnızca opioid dozunu artırmak",
+      "Bir hafta sonra kontrol grafisi",
+      "Alçının üzerine sıkı bandaj eklemek"
+    ],
+    "correct": 0,
+    "exp": "Kompartman sendromunda erken bulgu pasif germe ile artan şiddetli ağrıdır. Nabızların korunması tanıyı dışlamaz; gecikme kalıcı kas ve sinir hasarı yapar."
+  },
+  {
+    "id": 3484,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 4,
+    "q": "7 yaşındaki kız çocuk 1 gündür ateş ve sağ dizde şiddetli ağrı nedeniyle getiriliyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Diz şiş, sıcak ve hareketle çok ağrılı; CRP yüksek. Bu hastada en uygun ilk tanısal işlem hangisidir?",
+    "options": [
+      "Septik artrit şüphesiyle acil eklem aspirasyonu",
+      "Yalnızca istirahat ve parasetamol",
+      "Elektif MRG için 3 ay sonrasına randevu",
+      "Önce uzun süreli fizik tedavi",
+      "Tanı için yalnızca romatoid faktör bakılması"
+    ],
+    "correct": 0,
+    "exp": "Ateş, şiş eklem ve hareketle şiddetli ağrı septik artriti düşündürür. Eklem aspirasyonu tanı ve kültür için kritiktir; tedavi gecikmemelidir."
+  },
+  {
+    "id": 3485,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 4,
+    "q": "78 yaşındaki kadın hasta 1 saattir sağ kalça ağrısı ve yürüyememe yakınmasıyla getiriliyor. Osteoporozu var, kalsiyum-D vitamini kullanıyor. Sağ bacak kısalmış ve dış rotasyonda. Bu hastada en olası tanı hangisidir?",
+    "options": [
+      "Proksimal femur kırığı",
+      "Patellar tendinit",
+      "Basit ayak bileği burkulması",
+      "Omuz çıkığı",
+      "Plantar fasiit"
+    ],
+    "correct": 0,
+    "exp": "Yaşlı osteoporotik hastada düşük enerjili düşme sonrası bacağın kısalık ve dış rotasyonda olması kalça kırığı için tipiktir. Erken cerrahi ve mobilizasyon morbiditeyi azaltır."
+  },
+  {
+    "id": 3486,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 4,
+    "q": "24 yaşındaki erkek futbolcu 2 saattir ayak bileği ağrısı ve üzerine basamama yakınmasıyla başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Lateral malleol posterior kenarında kemik hassasiyeti var. Bu hastada hangi yaklaşım uygundur?",
+    "options": [
+      "Ottawa ayak bileği kriterleri pozitif olduğu için grafi çekilmesi",
+      "Kriterler ne olursa olsun görüntüleme yapılmaması",
+      "Direkt artroskopi yapılması",
+      "Uzun süreli antibiyotik başlanması",
+      "Yalnızca serum ürik asit bakılması"
+    ],
+    "correct": 0,
+    "exp": "Ottawa kriterlerinde malleol bölgesinde kemik hassasiyeti veya dört adım atamama grafi endikasyonudur. Gereksiz radyografiyi azaltırken kırıkları atlamamayı hedefler."
+  },
+  {
+    "id": 3487,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 4,
+    "q": "15 yaşındaki erkek hasta 2 aydır gece artan diz çevresi ağrısı ve şişlik nedeniyle başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Grafide distal femur metafizinde agresif periost reaksiyonu ve kemik yapım paterni görülüyor. Bu hastada en olası tanı hangisidir?",
+    "options": [
+      "Osteosarkom",
+      "Basit kas zorlanması",
+      "Akut gut artriti",
+      "De Quervain tenosinoviti",
+      "Morton nöroması"
+    ],
+    "correct": 0,
+    "exp": "Osteosarkom adölesanlarda sıklıkla diz çevresi metafizlerinde görülür. Ağrı, şişlik ve agresif periost reaksiyonu uyarıcıdır."
+  },
+  {
+    "id": 3488,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 4,
+    "q": "Gelişimsel kalça displazisi taramasında yenidoğanda kullanılan muayene manevraları hangisidir?",
+    "options": [
+      "Barlow ve Ortolani testleri",
+      "Phalen ve Tinel testleri",
+      "Romberg ve Unterberger testleri",
+      "Dix-Hallpike ve Epley testleri",
+      "Rinne ve Weber testleri"
+    ],
+    "correct": 0,
+    "exp": "Barlow ve Ortolani testleri yenidoğanda kalça instabilitesini değerlendirmek için kullanılır. Erken tanı kalıcı displazi ve yürüme sorunlarını azaltır."
+  },
+  {
+    "id": 3489,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 4,
+    "q": "Açık kırık tedavisinde enfeksiyon riskini azaltmak için ilk saatlerde hangi yaklaşım önemlidir?",
+    "options": [
+      "Erken antibiyotik, tetanoz değerlendirmesi ve cerrahi debridman planı",
+      "Yalnızca kapalı alçı uygulaması",
+      "Antibiyotiği kültür sonucu çıkana kadar kesin ertelemek",
+      "Yarayı kasıtlı olarak açık ve kirli bırakmak",
+      "Oral antihistaminik monoterapisi"
+    ],
+    "correct": 0,
+    "exp": "Açık kırıklarda erken antibiyotik, tetanoz profilaksisi değerlendirmesi ve uygun cerrahi debridman enfeksiyon ve osteomiyelit riskini azaltır."
+  },
+  {
+    "id": 3490,
+    "ders": "Küçük Stajlar",
+    "konu": "Ortopedi",
+    "diff": 4,
+    "q": "Ön çapraz bağ yaralanmasında akut dönemde en tipik muayene testi hangisidir?",
+    "options": [
+      "Lachman testi",
+      "Finkelstein testi",
+      "Trendelenburg testi",
+      "Tinel testi",
+      "Schober testi"
+    ],
+    "correct": 0,
+    "exp": "Lachman testi ön çapraz bağ bütünlüğünü değerlendirmede duyarlıdır. Akut diz travması sonrası instabilite ve hemartrozla birlikte ACL yaralanmasını düşündürür."
+  },
+  {
+    "id": 3491,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 4,
+    "q": "61 yaşındaki erkek hasta iskemik inmeden 2 ay sonra sağ kolda kasılma ve el açmada güçlük nedeniyle başvuruyor. Hipertansiyonu var, ramipril kullanıyor. Muayenede fleksör tonus artışı ve pasif germe ile direnç var. Bu hastada spastisite tedavisinde hangi yaklaşım uygundur?",
+    "options": [
+      "Hedef kasa botulinum toksin enjeksiyonu ve rehabilitasyon programı",
+      "Kas kuvveti artsın diye tonusu artırıcı egzersiz",
+      "Uzun süreli immobilizasyon",
+      "Yalnızca opioid tedavisi",
+      "Eklem hareket açıklığı egzersizlerini tamamen kesmek"
+    ],
+    "correct": 0,
+    "exp": "İnme sonrası fokal spastisitede botulinum toksin aşırı kas aktivitesini azaltabilir. Etkinlik rehabilitasyon, germe ve fonksiyonel eğitimle desteklenir."
+  },
+  {
+    "id": 3492,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 4,
+    "q": "49 yaşındaki kadın hasta 4 aydır gece artan el uyuşması ve ilk üç parmakta karıncalanma ile geliyor. Hipotiroidisi var, levotiroksin kullanıyor. Phalen testi pozitif, tenar güç hafif azalmış. Bu tabloda sıkışan yapı hangisidir?",
+    "options": [
+      "Median sinir",
+      "Ulnar sinir",
+      "Radial sinir",
+      "Siyatik sinir",
+      "Femoral sinir"
+    ],
+    "correct": 0,
+    "exp": "Karpal tünel sendromunda median sinir fleksör retinakulum altında sıkışır. Gece parestezisi, ilk üç parmakta yakınma ve Phalen pozitifliği tipiktir."
+  },
+  {
+    "id": 3493,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 4,
+    "q": "56 yaşındaki erkek hasta 6 haftadır omuz ağrısı ve kolunu yukarı kaldırırken zorlanma ile başvuruyor. Diyabeti var, metformin kullanıyor. Ağrı özellikle 60-120 derece abduksiyonda artıyor, pasif hareket açıklığı büyük ölçüde korunmuş. Bu hastada en olası mekanizma hangisidir?",
+    "options": [
+      "Subakromiyal sıkışma ve rotator manşet tendinopatisi",
+      "Glenohumeral eklemde enfeksiyöz artrit",
+      "Median sinirin karpal tünelde sıkışması",
+      "Femur başı epifiz kayması",
+      "Üreter taşına bağlı yansıyan ağrı"
+    ],
+    "correct": 0,
+    "exp": "Painful arc, aktif abduksiyonda ağrı ve pasif hareketlerin görece korunması subakromiyal sıkışma/rotator manşet tendinopatisini düşündürür."
+  },
+  {
+    "id": 3494,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 4,
+    "q": "67 yaşındaki kadın hasta 1 yıldır diz ağrısı ve merdiven inerken zorlanma ile başvuruyor. Obezite ve hipertansiyonu var, amlodipin kullanıyor. Diz grafisinde medial eklem aralığında daralma ve osteofitler görülüyor. Bu hastada ilk basamak uzun dönem yaklaşım hangisidir?",
+    "options": [
+      "Kilo verme, egzersiz ve semptom kontrolünü içeren konservatif tedavi",
+      "Hiçbir egzersize izin vermeden sürekli yatak istirahati",
+      "İlk basamak olarak uzun süreli sistemik steroid",
+      "Enfeksiyon kabul edilip geniş spektrum antibiyotik",
+      "Her hastaya acil total diz protezi"
+    ],
+    "correct": 0,
+    "exp": "Diz osteoartritinde kilo verme, kas güçlendirme, aerobik egzersiz ve ağrı kontrolü temel yaklaşımdır. Cerrahi ileri ve dirençli olgularda düşünülür."
+  },
+  {
+    "id": 3495,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 4,
+    "q": "Bel ağrısında acil görüntüleme gerektiren kırmızı bayrak bulgusu hangisidir?",
+    "options": [
+      "İdrar retansiyonu ve eyer anestezisi",
+      "Egzersizle azalan hafif mekanik ağrı",
+      "Sabah kısa süren tutukluk",
+      "Yalnızca kas spazmı",
+      "Uzun oturunca artan hafif ağrı"
+    ],
+    "correct": 0,
+    "exp": "İdrar retansiyonu ve eyer anestezisi kauda ekuina sendromunu düşündürür ve acil MRG ile cerrahi değerlendirme gerektirir."
+  },
+  {
+    "id": 3496,
+    "ders": "Küçük Stajlar",
+    "konu": "Fizik Tedavi ve Rehabilitasyon",
+    "diff": 4,
+    "q": "İnme rehabilitasyonunda erken mobilizasyonun temel amacı hangisidir?",
+    "options": [
+      "Fonksiyonel bağımsızlığı artırmak ve immobilizasyon komplikasyonlarını azaltmak",
+      "Spastisiteyi kasıtlı olarak artırmak",
+      "Basınç yarası riskini artırmak",
+      "Derin ven trombozunu kolaylaştırmak",
+      "Yutma değerlendirmesini gereksiz kılmak"
+    ],
+    "correct": 0,
+    "exp": "Uygun zamanda ve güvenli şekilde başlayan rehabilitasyon fonksiyonel iyileşmeyi destekler, kontraktür, dekübit, DVT ve kondisyon kaybı riskini azaltır."
+  },
+  {
+    "id": 3497,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermotoloji",
+    "diff": 5,
+    "q": "42 yaşındaki kadın hasta 3 gündür ateş, yaygın ağrılı döküntü ve ağız içinde erozyonlarla başvuruyor. Epilepsi nedeniyle lamotrijin başlanmasının üzerinden 3 hafta geçmiş, başka kronik hastalığı yok. Deride hedef benzeri lezyonlar ve epidermal ayrılma alanları var. Bu hastada en olası tanı hangisidir?",
+    "options": [
+      "Stevens-Johnson sendromu/toksik epidermal nekroliz spektrumu",
+      "Kronik plak psoriasis",
+      "Seboreik dermatit",
+      "Rosacea",
+      "Verruka vulgaris"
+    ],
+    "correct": 0,
+    "exp": "SJS/TEN genellikle ilaç ilişkili, mukozal tutulum ve epidermal nekrozla seyreden ağır kutanöz advers reaksiyondur. Lamotrijin önemli tetikleyicilerden biridir."
+  },
+  {
+    "id": 3498,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermotoloji",
+    "diff": 4,
+    "q": "21 yaşındaki erkek hasta 2 haftadır geceleri artan kaşıntı ve el parmak aralarında döküntüyle başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Evde iki kişide daha benzer kaşıntı başlamış. Bu hastada en uygun tedavi yaklaşımı hangisidir?",
+    "options": [
+      "Hasta ve yakın temaslılara eş zamanlı skabis tedavisi verilmesi",
+      "Yalnızca hastaya topikal antibiyotik verilmesi",
+      "Kaşıntı geçtiğinde tedaviyi tamamen gereksiz saymak",
+      "Tek başına sistemik steroidle uzun süreli tedavi",
+      "Temaslıların değerlendirilmemesi"
+    ],
+    "correct": 0,
+    "exp": "Skabiyeste gece kaşıntısı, parmak arası tutulum ve ev içi bulaş tipiktir. Reinfenstasyonu önlemek için yakın temaslılar eş zamanlı tedavi edilmelidir."
+  },
+  {
+    "id": 3499,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermotoloji",
+    "diff": 4,
+    "q": "63 yaşındaki erkek hasta 1 yıldır büyüyen, düzensiz sınırlı ve renk değişiklikleri gösteren sırt lezyonu nedeniyle başvuruyor. Hipertansiyonu var, losartan kullanıyor. Dermoskopide asimetri ve düzensiz pigment ağı izleniyor. Prognozu en güçlü belirleyen histolojik ölçüt hangisidir?",
+    "options": [
+      "Breslow kalınlığı",
+      "Eritrosit sedimentasyon hızı",
+      "Serum sodyum düzeyi",
+      "Lezyonun kaşıntı yapıp yapmaması",
+      "Total IgE düzeyi"
+    ],
+    "correct": 0,
+    "exp": "Melanomda Breslow kalınlığı invazyon derinliğini gösterir ve prognoz ile evrelemede en önemli histopatolojik parametrelerden biridir."
+  },
+  {
+    "id": 3500,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermotoloji",
+    "diff": 4,
+    "q": "37 yaşındaki kadın hasta 6 aydır diz ve dirseklerde kalın skuamlı plaklar ve tırnaklarda çukurcuklanma ile başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Eklem ağrısı da tarifliyor. Bu hastalıkta hedeflenen inflamatuvar yolaklardan biri hangisidir?",
+    "options": [
+      "IL-23/Th17/IL-17 aksı",
+      "IgE aracılı mast hücre degranülasyonu",
+      "Tip 2 alveol hücre hasarı",
+      "Renin-anjiyotensin-aldosteron aksı",
+      "Kompleman C1 inhibitör eksikliği"
+    ],
+    "correct": 0,
+    "exp": "Psoriasiste IL-23/Th17/IL-17 aksı keratinosit proliferasyonu ve inflamasyonda merkezi rol oynar. Modern biyolojik tedaviler bu yolakları hedefleyebilir."
+  },
+  {
+    "id": 3501,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermotoloji",
+    "diff": 4,
+    "q": "29 yaşındaki kadın hasta 5 haftadır yüz ve göz kapaklarında şişlik, ateş ve yaygın kaşıntılı döküntü ile başvuruyor. Epilepsi için karbamazepin başlanmış, bilinen başka kronik hastalığı yok. Laboratuvarda eozinofili ve karaciğer enzim yüksekliği var. Bu hastada en olası tanı hangisidir?",
+    "options": [
+      "DRESS sendromu",
+      "Basit ürtiker",
+      "Akne vulgaris",
+      "Tinea pedis",
+      "Kontakt dermatit"
+    ],
+    "correct": 0,
+    "exp": "DRESS ilaç başlanmasından haftalar sonra ateş, yüz ödemi, döküntü, eozinofili ve organ tutulumu ile gelişir. Aromatik antiepileptikler sık tetikleyicilerdir."
+  },
+  {
+    "id": 3502,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermotoloji",
+    "diff": 4,
+    "q": "Büllöz pemfigoidde direkt immünofloresan incelemede beklenen bulgu hangisidir?",
+    "options": [
+      "Bazal membran boyunca lineer IgG ve C3 birikimi",
+      "Keratin adaları içinde fungal hifler",
+      "Papiller dermiste amiloid birikimi",
+      "Epidermiste koilositoz",
+      "Granüler tabakada melanin kaybı"
+    ],
+    "correct": 0,
+    "exp": "Büllöz pemfigoidde hemidesmozomal proteinlere karşı otoantikorlar gelişir. Direkt immünofloresanda bazal membran boyunca lineer IgG ve C3 birikimi beklenir."
+  },
+  {
+    "id": 3503,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermotoloji",
+    "diff": 4,
+    "q": "Atopik dermatitte temel deri bariyeri bozukluğuyla ilişkili protein hangisidir?",
+    "options": [
+      "Filaggrin",
+      "Distrofin",
+      "Spektrin",
+      "Kollajen tip II",
+      "Elastaz"
+    ],
+    "correct": 0,
+    "exp": "Atopik dermatitte filaggrin kaybı deri bariyerini bozar, transepidermal su kaybını artırır ve irritanlara duyarlılığı yükseltir."
+  },
+  {
+    "id": 3504,
+    "ders": "Küçük Stajlar",
+    "konu": "Dermotoloji",
+    "diff": 4,
+    "q": "Kronik spontan ürtikerde mast hücre aktivasyonunun temel sonucu hangisidir?",
+    "options": [
+      "Histamin salınımına bağlı geçici kaşıntılı ürtiker plakları",
+      "Kalıcı dermal skar oluşumu",
+      "Melanositlerin malign transformasyonu",
+      "Epidermiste tam kat nekroz",
+      "Kıl folikülünde keratin tıkaçları"
+    ],
+    "correct": 0,
+    "exp": "Ürtikerde mast hücrelerinden histamin ve diğer mediyatörlerin salınması vazodilatasyon, damar geçirgenliği artışı ve kaşıntılı geçici plaklara yol açar."
+  },
+  {
+    "id": 3505,
+    "ders": "Genel Cerrahi",
+    "konu": "Asit Baz Bozuklukları",
+    "diff": 4,
+    "q": "68 yaşındaki erkek hasta, 2 gündür safralı kusma ve karında şişlik yakınmasıyla acile geliyor. Kronik böbrek hastalığı yok, düzenli ilaç kullanmıyor. Nazogastrik sondadan bol mide içeriği gelen hastada pH 7,52, HCO3 38 mmol/L, Cl 84 mmol/L ve idrar kloru düşük saptanıyor. Bu hastada sıvı-elektrolit tedavisinde öncelikli yaklaşım hangisidir?",
+    "options": [
+      "İzotonik salin ve potasyum klorür replasmanı",
+      "Sodyum bikarbonat infüzyonu",
+      "Hipotonik dekstroz solüsyonu ve asetazolamid",
+      "Laktüloz ve oral fosfat bağlayıcı",
+      "Hipertonik salin ve furosemid"
+    ],
+    "correct": 0,
+    "exp": "Uzamış kusma ve nazogastrik drenaj, hidrojen ve klor kaybına bağlı klor duyarlı metabolik alkaloz yapar. Düşük idrar kloru volüm ve klor eksikliğini gösterir; tedavide izotonik salin ve potasyum klorür verilmesi alkalozu düzeltir."
+  },
+  {
+    "id": 3506,
+    "ders": "Genel Cerrahi",
+    "konu": "Asit Baz Bozuklukları",
+    "diff": 4,
+    "q": "59 yaşındaki erkek hasta, 3 saattir süren karın ağrısı ve soğuk terleme yakınmasıyla acile getiriliyor. Kronik hastalığı yok, ilaç kullanmıyor. Mezenter iskemi nedeniyle hipotansif, laktat 7,2 mmol/L ve pH 7,18 saptanıyor. Bu hastada pH düşüklüğünü kalıcı olarak düzelten asıl müdahale hangisidir?",
+    "options": [
+      "Doku perfüzyonunu ve oksijen sunumunu düzeltmek",
+      "Rutin sodyum bikarbonat infüzyonu başlamak",
+      "Karbonik anhidraz inhibitörü vermek",
+      "Hastayı hiperventile ederek PaCO2'yi sıfıra yaklaştırmak",
+      "Serum laktatına bakmadan yüksek doz diüretik vermek"
+    ],
+    "correct": 0,
+    "exp": "Bu hastada laktik asidozun nedeni doku hipoperfüzyonudur. Kalıcı düzelme, dolaşım ve oksijen sunumunun düzeltilmesiyle olur; bikarbonat seçilmiş ağır asidemi durumlarında destekleyici olabilir ama altta yatan hipoperfüzyonu çözmez."
+  },
+  {
+    "id": 3507,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz ve Kan Transfüzyonu",
+    "diff": 4,
+    "q": "74 yaşındaki kadın hasta, 6 saattir süren melena ve halsizlik yakınmasıyla başvuruyor. Hipertansiyon için amlodipin kullanıyor, kronik böbrek hastalığı yok. Hemodinamik olarak stabil, Hb 7,4 g/dL, aktif iskemi bulgusu yok. Bu hastada eritrosit transfüzyonu açısından en uygun yaklaşım hangisidir?",
+    "options": [
+      "Yakın izlem ve stabil erişkinde genellikle Hb 7 g/dL altını eşik almak",
+      "Hb 10 g/dL altında tüm hastalara eritrosit transfüzyonu yapmak",
+      "Taze donmuş plazmayı eritrositten önce vermek",
+      "Trombosit sayısı normal olsa da profilaktik trombosit vermek",
+      "Eritrosit transfüzyonunu sadece INR yüksekse düşünmek"
+    ],
+    "correct": 0,
+    "exp": "Hemodinamik olarak stabil erişkinlerde kısıtlayıcı transfüzyon stratejisi tercih edilir ve çoğu hasta için Hb eşiği yaklaşık 7 g/dL'dir. Klinik bağlam, aktif kanama ve kardiyovasküler hastalık varlığı ayrıca değerlendirilir."
+  },
+  {
+    "id": 3508,
+    "ders": "Genel Cerrahi",
+    "konu": "Hemostaz ve Kan Transfüzyonu",
+    "diff": 4,
+    "q": "34 yaşındaki erkek hasta, ateşli silah yaralanmasından 50 dakika sonra getiriliyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Masif kanaması olan hastada hipotermi, pH 7,12 ve uzamış pıhtılaşma testleri saptanıyor. Bu erken koagülopatiyi en iyi açıklayan mekanizma hangisidir?",
+    "options": [
+      "Doku hasarı, hipoperfüzyon, asidoz, hipotermi ve dilüsyonun birlikte pıhtı oluşumunu bozması",
+      "Sadece trombosit sayısının artması",
+      "K vitamini sentezinin akut olarak artması",
+      "Fibrinojen düzeyinin travmadan hemen sonra yükselmesi",
+      "Antitrombinin tamamen kaybolması"
+    ],
+    "correct": 0,
+    "exp": "Travma ilişkili koagülopati tek bir faktör eksikliği değildir. Doku hasarı, hipoperfüzyon, endotel aktivasyonu, asidoz, hipotermi ve resüsitasyonla gelişen dilüsyon pıhtı oluşumunu ve stabilitesini bozar."
+  },
+  {
+    "id": 3509,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 4,
+    "q": "29 yaşındaki erkek hasta, motosiklet kazasından 40 dakika sonra karın ağrısı ve baş dönmesiyle getiriliyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. TA 78/45 mmHg, nabız 136/dk, cildi soğuk, FAST pozitif ve pelvis stabil. Bu hastada öncelikli yaklaşım hangisidir?",
+    "options": [
+      "Masif transfüzyon protokolüyle eş zamanlı acil kanama kontrolü sağlamak",
+      "Önce abdominal BT çekip kesin organ yaralanmasını göstermek",
+      "Sadece kristalloid ile 3 litre hızlı yükleme yapmak",
+      "Vazopressör başlayıp normotansiyonu beklemek",
+      "Oral kontrast vererek seri grafilerle izlemek"
+    ],
+    "correct": 0,
+    "exp": "Hemodinamik instabil ve FAST pozitif travma hastasında sorun kanama kontrolüdür. Masif transfüzyon protokolü ve hızlı cerrahi veya girişimsel kanama kontrolü önceliklidir; BT stabil hastalar içindir."
+  },
+  {
+    "id": 3510,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 5,
+    "q": "62 yaşındaki erkek hasta, 1 gündür artan sağ üst kadran ağrısı ve ateş nedeniyle başvuruyor. Tip 2 diyabet için metformin kullanıyor. TA 82/48 mmHg, laktat 5,1 mmol/L, kreatinin yükselmiş, ultrasonografide taşlı akut kolesistit bulguları var. Uygun antibiyotik ve sıvı resüsitasyonuna rağmen hipotansiyonu sürüyor. Bu tablonun tedavisinde hangi hedef en doğrudur?",
+    "options": [
+      "Kaynak kontrolünü geciktirmeden sağlamak ve vazopressörü resüsitasyona eklemek",
+      "Sadece ateş düşene kadar antibiyotikle beklemek",
+      "Hipotansiyon düzelmeden hiçbir girişim yapmamak",
+      "İlk 24 saatte parenteral beslenmeyi ana tedavi yapmak",
+      "Laktatı antibiyotik seçiminde tek belirleyici kabul etmek"
+    ],
+    "correct": 0,
+    "exp": "Septik şokta sıvı, antibiyotik ve vazopressör önemlidir; ancak cerrahi odak varsa kaynak kontrolü geciktirilmemelidir. Akut kolesistit kaynaklı sepsiste kolesistektomi ya da uygun hastada safra kesesi drenajı gündeme gelir."
+  },
+  {
+    "id": 3511,
+    "ders": "Genel Cerrahi",
+    "konu": "Şok",
+    "diff": 4,
+    "q": "Hemorajik şokta sadece kristalloid yüklenmesinin koagülopatiyi artırmasının en uygun açıklaması hangisidir?",
+    "options": [
+      "Pıhtılaşma faktörleri ve trombositlerin dilüe olması, hipotermi ve asidozun derinleşmesi",
+      "Fibrinojen sentezinin dakikalar içinde aşırı artması",
+      "Trombosit fonksiyonunun kristalloid ile tamamen düzelmesi",
+      "Doku perfüzyonunun kan ürünü gerektirmeden kalıcı düzelmesi",
+      "Fibrinolizin tümüyle baskılanması"
+    ],
+    "correct": 0,
+    "exp": "Büyük hacimli kristalloid, koagülasyon faktörlerini ve trombositleri dilüe eder; hipotermi ve asidozu derinleştirerek ölümcül triadı besler. Bu nedenle kanamalı travmada dengeli kan ürünü resüsitasyonu önemlidir."
+  },
+  {
+    "id": 3512,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Sistemik Cevap",
+    "diff": 4,
+    "q": "41 yaşındaki erkek hasta, 12 saat önce geçirdiği çoklu travma sonrası yoğun bakımda izleniyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. İlk resüsitasyondan sonra ateşi 38,4°C, lökositozu ve taşikardisi var; kültürlerde üreme yok ve belirgin enfeksiyon odağı saptanmıyor. Bu erken tablonun en olası açıklaması hangisidir?",
+    "options": [
+      "Doku hasarına bağlı sistemik inflamatuvar yanıtın sitokin aracılı gelişmesi",
+      "Mutlaka kanıtlanmış bakteriyemi olması",
+      "Primer adrenal yetmezliğin tek başına açıklayıcı olması",
+      "Alerjik reaksiyonun tüm travma hastalarında beklenmesi",
+      "Tüm bulguların yalnızca opioid yoksunluğuna bağlı olması"
+    ],
+    "correct": 0,
+    "exp": "Travma sonrası erken dönemde enfeksiyon olmadan SIRS gelişebilir. Doku hasarı, hasar ilişkili moleküler paternler ve sitokin yanıtı ateş, taşikardi ve lökositoza yol açar."
+  },
+  {
+    "id": 3513,
+    "ders": "Genel Cerrahi",
+    "konu": "Travmaya Sistemik Cevap",
+    "diff": 4,
+    "q": "38 yaşındaki erkek hasta, ezilme tarzı çoklu travmadan 24 saat sonra yoğun bakımda izleniyor. Kronik hastalığı yok, ilaç kullanmıyor. Ateşi yok ancak belirgin hiperglisemi, yüksek enerji gereksinimi ve negatif azot dengesi gelişiyor. Bu hipermetabolik dönemde kas kaybını en iyi açıklayan mekanizma hangisidir?",
+    "options": [
+      "Katekolamin, kortizol ve inflamatuvar mediyatörlerin proteolizi artırması",
+      "İnsülin duyarlılığının belirgin artması",
+      "Kas protein sentezinin sürekli baskılanmadan artması",
+      "Yağ oksidasyonunun tamamen durması",
+      "Glukagon düzeyinin sıfıra yaklaşması"
+    ],
+    "correct": 0,
+    "exp": "Ağır travma hiperkatabolik yanıt oluşturur. Katekolamin, kortizol ve inflamatuvar sitokinler proteolizi artırır; aminoasitler glukoneogenez ve akut faz protein sentezi için kullanılır."
+  },
+  {
+    "id": 3514,
+    "ders": "Genel Cerrahi",
+    "konu": "Beslenme",
+    "diff": 4,
+    "q": "57 yaşındaki erkek hasta, 5 gündür süren kusma ve beslenememe yakınmasıyla mide çıkış obstrüksiyonu nedeniyle yatırılıyor. Tip 2 diyabet için metformin kullanıyor, kronik böbrek hastalığı yok. Cerrahi öncesi ciddi kilo kaybı, albümin düşüklüğü ve kas kaybı saptanıyor; bağırsak distalden çalışıyor. Bu hastada beslenme desteği için en uygun yaklaşım hangisidir?",
+    "options": [
+      "Mümkünse enteral yolu kullanmak ve refeeding riskine karşı elektrolitleri yakından izlemek",
+      "Bağırsak çalışsa da doğrudan total parenteral beslenmeye geçmek",
+      "İlk hafta protein vermeden yalnız dekstroz infüzyonu yapmak",
+      "Hipofosfatemi gelişmesini engellemek için kalori hedefini ilk gün tamamen karşılamak",
+      "Beslenme desteğini cerrahi sonrasına kadar mutlaka ertelemek"
+    ],
+    "correct": 0,
+    "exp": "Çalışan gastrointestinal sistem varsa enteral beslenme tercih edilir. Ciddi malnütrisyon ve uzun açlıkta refeeding sendromu riski vardır; fosfor, potasyum ve magnezyum izlenerek kalori kademeli artırılır."
+  },
+  {
+    "id": 3515,
+    "ders": "Genel Cerrahi",
+    "konu": "Beslenme",
+    "diff": 4,
+    "q": "72 yaşındaki kadın hasta, 4 gündür beslenememe ve halsizlik yakınmasıyla kolon kanseri ameliyatı sonrası yoğun bakımda izleniyor. Tip 2 diyabet için insülin kullanıyor. Barsak sesleri mevcut, vazopressör ihtiyacı yok ve nazogastrik drenajı azalmış. Bu hastada enteral beslenmenin parenteral beslenmeye göre en önemli fizyolojik üstünlüğü hangisidir?",
+    "options": [
+      "Barsak mukozal bütünlüğünü ve enterik immün bariyeri desteklemesi",
+      "Kateter ilişkili enfeksiyon riskini artırması",
+      "Safra akımını tamamen durdurması",
+      "İnsülin ihtiyacını her zaman sıfırlaması",
+      "Protein gereksinimini ortadan kaldırması"
+    ],
+    "correct": 0,
+    "exp": "Enteral beslenme barsak mukozasını, peristaltizmi ve mukozal immüniteyi destekler. Bu nedenle çalışan barsak varsa genellikle parenteral beslenmeye tercih edilir."
+  },
+  {
+    "id": 3516,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 4,
+    "q": "35 yaşındaki erkek hasta, 1 saat önce ev yangınından çıkarıldıktan sonra yanık ağrısı ve nefes darlığı yakınmasıyla getiriliyor. Kronik hastalığı yok, ilaç kullanmıyor. Yüzde is, burun kıllarında yanma, ses kısıklığı ve %28 yüzey alanı parsiyel kalınlıkta yanık var. Bu hastada ilk saatlerde en kritik yaklaşım hangisidir?",
+    "options": [
+      "İnhalasyon hasarı açısından erken hava yolu güvenliğini sağlamak",
+      "Önce yanık alanına topikal antibiyotik sürüp taburculuk planlamak",
+      "Sıvı resüsitasyonunu sadece oral alımla yapmak",
+      "Profilaktik sistemik antibiyotiği tüm yanık hastalarına rutin başlamak",
+      "Yanık yüzdesini kesinleştirmeden ağrı tedavisini ertelemek"
+    ],
+    "correct": 0,
+    "exp": "Yüz yanığı, is, ses kısıklığı ve kapalı alan yangını inhalasyon hasarı riskini gösterir. Ödem ilerlemeden erken entübasyon hayat kurtarıcı olabilir; sıvı ve yara bakımı hava yolu güvenliğinden sonra gelir."
+  },
+  {
+    "id": 3517,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 4,
+    "q": "44 yaşındaki kadın hasta, 2 saat önce sıcak yağ dökülmesi sonrası her iki bacakta yanık ağrısıyla başvuruyor. Hipertansiyon için losartan kullanıyor. Parsiyel kalınlıkta yanık alanı yaklaşık %20 hesaplanıyor. İlk 24 saat sıvı resüsitasyonunda en uygun izlem hedefi hangisidir?",
+    "options": [
+      "Saatlik idrar çıkışı ve hemodinamik yanıta göre kristalloid hızını titrasyonlamak",
+      "Parkland formülünü hesaplayıp sonraki 24 saat boyunca hiç değiştirmemek",
+      "Sıvı gereksinimini sadece yanık ağrısının şiddetine göre belirlemek",
+      "Tüm hastalarda kolloid ile başlamak",
+      "İdrar çıkışını azaltacak şekilde sıvıyı kısıtlamak"
+    ],
+    "correct": 0,
+    "exp": "Yanıkta formüller başlangıç tahmini sağlar; gerçek hedef dinamik değerlendirmedir. Erişkinde yeterli idrar çıkışı ve hemodinamik stabiliteye göre sıvı hızı ayarlanır, aşırı ve yetersiz resüsitasyondan kaçınılır."
+  },
+  {
+    "id": 3518,
+    "ders": "Genel Cerrahi",
+    "konu": "Yanık",
+    "diff": 4,
+    "q": "Elektrik yanıklarında cilt lezyonunun küçük görünmesine rağmen rabdomiyoliz ve kompartman sendromu riskinin yüksek olmasının nedeni hangisidir?",
+    "options": [
+      "Akımın derin dokularda direnç ve ısıya bağlı yaygın kas hasarı oluşturabilmesi",
+      "Elektrik akımının yalnız epidermiste kalması",
+      "Miyoglobinin böbreğe hiç ulaşmaması",
+      "Kas dokusunun elektrikten korunmuş olması",
+      "Deri bulgusunun her zaman hasar derinliğini tam göstermesi"
+    ],
+    "correct": 0,
+    "exp": "Elektrik akımı derin dokulardan geçerken kas ve damar yapılarında ciddi termal hasar oluşturabilir. Cilt giriş-çıkış alanı küçük görünse de rabdomiyoliz, aritmi ve kompartman sendromu riski vardır."
+  },
+  {
+    "id": 3519,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 5,
+    "q": "49 yaşındaki erkek hasta, 3 hafta önce böbrek nakli olduktan sonra 2 gündür idrar azalması ve greft lojunda hassasiyet yakınmasıyla başvuruyor. Hipertansiyon için amlodipin, immünsüpresyon için takrolimus, mikofenolat ve prednizolon kullanıyor. Kreatinin hızla yükselmiş, biyopside endotelyal hasar ve C4d pozitifliği saptanıyor. Bu tabloyu en iyi açıklayan mekanizma hangisidir?",
+    "options": [
+      "Donör antijenlerine karşı gelişen antikor aracılı kompleman aktivasyonu",
+      "Sadece takrolimusun benign ve geçici vazodilatasyon yapması",
+      "T hücre yanıtı olmadan mutlak tolerans gelişmesi",
+      "Greftte iskemi olmadan primer hiperfiltrasyon olması",
+      "Mikofenolatın eritrosit yıkımını artırması"
+    ],
+    "correct": 0,
+    "exp": "C4d pozitifliği antikor aracılı rejeksiyonda kompleman aktivasyonunu düşündürür. Donöre özgü antikorlar endotelyal hasar ve greft fonksiyon bozukluğu yapar."
+  },
+  {
+    "id": 3520,
+    "ders": "Genel Cerrahi",
+    "konu": "Transplantasyon",
+    "diff": 4,
+    "q": "Kalsinörin inhibitörlerinin transplant hastasında nefrotoksisite yapmasının temel mekanizması hangisidir?",
+    "options": [
+      "Afferent arterioler vazokonstriksiyon ve renal kan akımında azalma",
+      "Glomerüler bazal membranı enzimatik olarak eritmesi",
+      "Renal tübüllerde bikarbonat üretimini artırması",
+      "Eritropoietin salınımını akut olarak çoğaltması",
+      "Kompleman C5'i doğrudan bloke etmesi"
+    ],
+    "correct": 0,
+    "exp": "Siklosporin ve takrolimus renal vazokonstriksiyon yaparak afferent arteriol tonusunu artırır ve GFR'yi düşürebilir. Bu mekanizma akut ve kronik nefrotoksisitenin temelidir."
+  },
+  {
+    "id": 3521,
+    "ders": "Genel Cerrahi",
+    "konu": "Deri Hastalıkları",
+    "diff": 4,
+    "q": "63 yaşındaki erkek hasta, 8 aydır büyüyen ve ara ara kanayan kulak kenarı lezyonu nedeniyle başvuruyor. Çiftçilik yapıyor, kronik hastalığı yok, ilaç kullanmıyor. Lezyon sert, hiperkeratotik ve düzensiz sınırlı; palpasyonda çevre dokuya fikse değil. Bu hastada en uygun tanısal yaklaşım hangisidir?",
+    "options": [
+      "Yeterli derinlikte biyopsi ile skuamöz hücreli karsinom açısından histolojik doğrulama yapmak",
+      "Lezyonu travmatik kabul edip 6 ay yalnız nemlendiriciyle izlemek",
+      "Tanı koymadan kriyoterapi uygulamak",
+      "Sadece serum tümör belirteci istemek",
+      "Antibiyotik tedavisiyle malignite olasılığını dışlamak"
+    ],
+    "correct": 0,
+    "exp": "Kronik güneş maruziyeti olan bölgede büyüyen, kanayan hiperkeratotik lezyon skuamöz hücreli karsinomu düşündürür. Tedavi planı öncesi uygun biyopsiyle histolojik tanı gerekir."
+  },
+  {
+    "id": 3522,
+    "ders": "Genel Cerrahi",
+    "konu": "Deri Hastalıkları",
+    "diff": 4,
+    "q": "Melanomda Breslow kalınlığının cerrahi planlamada önemli olmasının nedeni hangisidir?",
+    "options": [
+      "Eksizyon sınırı ve sentinel lenf nodu değerlendirme kararını etkilemesi",
+      "Lezyonun bakteri türünü göstermesi",
+      "Tüm melanomlarda kemoterapi dozunu tek başına belirlemesi",
+      "Sadece kozmetik kapama yöntemini göstermesi",
+      "Melanomu bazal hücreli karsinomdan boyayla ayırması"
+    ],
+    "correct": 0,
+    "exp": "Breslow kalınlığı melanomda prognoz, cerrahi eksizyon sınırı ve sentinel lenf nodu biyopsisi gerekliliği açısından temel parametredir."
+  },
+  {
+    "id": 3523,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 4,
+    "q": "42 yaşındaki kadın hasta, 3 aydır fark ettiği boyunda şişlik yakınmasıyla başvuruyor. Hashimoto tiroiditi öyküsü var, levotiroksin kullanıyor. TSH normal, ultrasonografide 1,8 cm solid hipoekoik, mikrokalsifikasyonlu ve düzensiz sınırlı nodül saptanıyor. Bu hastada en uygun sonraki adım hangisidir?",
+    "options": [
+      "Ultrason eşliğinde ince iğne aspirasyon biyopsisi yapmak",
+      "TSH normal olduğu için sintigrafiyle başlamak",
+      "Nodülü benign kabul edip 5 yıl sonra kontrol etmek",
+      "Ampirik antibiyotik tedavisi vermek",
+      "Serum tiroglobulin düzeyiyle kesin tanı koymak"
+    ],
+    "correct": 0,
+    "exp": "Normal TSH ve yüksek şüpheli ultrason bulguları olan 1 cm üzeri nodülde ince iğne aspirasyon biyopsisi gerekir. Sintigrafi genellikle TSH düşükse nodülün fonksiyonunu değerlendirmek için kullanılır."
+  },
+  {
+    "id": 3524,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 5,
+    "q": "59 yaşındaki kadın hasta, 6 aydır halsizlik ve tekrarlayan böbrek taşı yakınmasıyla başvuruyor. Hipertansiyon için hidroklorotiyazid kullanıyor. Kalsiyum 11,8 mg/dL, PTH yüksek, D vitamini yeterli; ultrasonografide tek paratiroid adenomu ile uyumlu lezyon var. Bu hastada cerrahi endikasyonu açısından en uygun ifade hangisidir?",
+    "options": [
+      "Semptomatik primer hiperparatiroidide paratiroidektomi düşünülmelidir",
+      "PTH yüksekliği varsa kalsiyumdan bağımsız tüm hastalar izlenmelidir",
+      "Taş öyküsü cerrahi kararını etkilemez",
+      "Tiyazid kullanımı primer hiperparatiroidiyi kesin dışlar",
+      "Adenom görüntülenirse biyopsi ile tanı zorunludur"
+    ],
+    "correct": 0,
+    "exp": "Semptomatik primer hiperparatiroidide, özellikle nefrolitiazis ve belirgin hiperkalsemi varlığında cerrahi tedavi endikedir. Lokalizasyon görüntülemeleri tanı için değil ameliyat planı için kullanılır."
+  },
+  {
+    "id": 3525,
+    "ders": "Genel Cerrahi",
+    "konu": "Tiroid ve Paratiroid Hastalıkları",
+    "diff": 4,
+    "q": "Medüller tiroid karsinomunda ameliyat öncesi mutlaka dışlanması gereken eşlikçi durum hangisidir?",
+    "options": [
+      "Feokromositoma",
+      "Graves oftalmopatisi",
+      "Subakut tiroidit",
+      "Toksik adenom",
+      "Riedel tiroiditi"
+    ],
+    "correct": 0,
+    "exp": "Medüller tiroid karsinomu MEN2 ile ilişkili olabilir. Feokromositoma varlığı ameliyat öncesi dışlanmalı ve varsa önce adrenerjik blokajla yönetilmelidir; aksi halde perioperatif hipertansif kriz gelişebilir."
+  },
+  {
+    "id": 3526,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal Bez Hastalıkları",
+    "diff": 5,
+    "q": "46 yaşındaki kadın hasta, 4 aydır ataklar halinde çarpıntı, baş ağrısı ve terleme yakınmasıyla başvuruyor. Hipertansiyon için üç ilaç kullanmasına rağmen tansiyonu kontrolsüz. Abdomen BT'de 4 cm adrenal kitle saptanıyor, plazma metanefrinleri yüksek. Bu hastada cerrahi öncesi en uygun hazırlık hangisidir?",
+    "options": [
+      "Önce alfa blokaj sağlamak, ardından gerekirse beta blokaj eklemek",
+      "Doğrudan beta blokajla taşikardiyi baskılamak",
+      "İlk seçenek olarak diüretik yüklemesi yapmak",
+      "Kitleyi biyopsiyle doğruladıktan sonra ameliyat etmek",
+      "Kortizol baskılama testi sonucunu beklemeden acil rezeksiyon yapmak"
+    ],
+    "correct": 0,
+    "exp": "Feokromositomada cerrahi öncesi alfa adrenerjik blokaj ve volüm optimizasyonu gerekir. Beta blokaj alfa blokajdan önce verilirse vazokonstriksiyon baskınlaşarak hipertansif krizi ağırlaştırabilir."
+  },
+  {
+    "id": 3527,
+    "ders": "Genel Cerrahi",
+    "konu": "Adrenal Bez Hastalıkları",
+    "diff": 4,
+    "q": "Adrenal insidentalomada cerrahi kararı verilirken hangi değerlendirme zorunlu kabul edilir?",
+    "options": [
+      "Lezyonun hormonal aktif olup olmadığını ve malignite riskini değerlendirmek",
+      "Her lezyona doğrudan ince iğne aspirasyonu yapmak",
+      "Boyuttan bağımsız tüm kitleleri sadece izlemek",
+      "Önce antibiyotik yanıtını görmek",
+      "Sadece serum potasyumuna göre karar vermek"
+    ],
+    "correct": 0,
+    "exp": "Adrenal insidentalomada hormonal aktivite, feokromositoma olasılığı, kortizol otonomisi, aldosteron fazlalığı ve görüntüleme ile malignite riski değerlendirilir. Biyopsi sınırlı endikasyonludur ve feokromositoma dışlanmadan yapılmamalıdır."
+  },
+  {
+    "id": 3528,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak Hastalıkları",
+    "diff": 4,
+    "q": "71 yaşındaki kadın hasta, 18 saattir süren karın ağrısı, kusma ve gaz-gaita çıkaramama yakınmasıyla başvuruyor. Daha önce histerektomi geçirmiş, hipertansiyon için amlodipin kullanıyor. BT'de ince barsak dilatasyonu, geçiş noktası ve kapalı ans şüphesi var; laktat yükselmeye başlamış. Bu hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "Strangülasyon olasılığı nedeniyle gecikmeden cerrahi değerlendirme yapmak",
+      "Tüm olguları en az 72 saat sadece nazogastrik dekompresyonla izlemek",
+      "Oral laksatif verip taburcu etmek",
+      "Kolonoskopiyle obstrüksiyonu açmaya çalışmak",
+      "Ağrı kesici sonrası laktat normale dönene kadar beklemek"
+    ],
+    "correct": 0,
+    "exp": "Kapalı ans, geçiş noktası, laktat artışı ve peritonit/iskemi şüphesi strangülasyonu düşündürür. Bu durumda konservatif izlem yerine erken cerrahi değerlendirme gerekir."
+  },
+  {
+    "id": 3529,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak Hastalıkları",
+    "diff": 4,
+    "q": "33 yaşındaki erkek hasta, 4 haftadır sağ alt kadran ağrısı, kilo kaybı ve aralıklı ishal yakınmasıyla başvuruyor. Crohn hastalığı öyküsü var, azatioprin kullanıyor. BT enterografide terminal ileumda kısa fibrotik striktür ve prestenotik dilatasyon görülüyor; apse yok. Bu hastada cerrahinin temel amacı hangisidir?",
+    "options": [
+      "Semptom yapan fibrotik darlığı sınırlı rezeksiyon veya striktüroplastiyle gidermek",
+      "Crohn hastalığını tüm barsağı çıkararak kesin tedavi etmek",
+      "İmmünsüpresyon kullandığı için hiçbir cerrahi işlem düşünmemek",
+      "Antibiyotikle fibrotik darlığı eritmek",
+      "Sadece kolonu çıkararak ileal hastalığı düzeltmek"
+    ],
+    "correct": 0,
+    "exp": "Crohn hastalığında cerrahi küratif değildir; komplikasyonlara yöneliktir. Kısa fibrotik darlıkta sınırlı rezeksiyon veya striktüroplasti, barsak koruyucu yaklaşım açısından önemlidir."
+  },
+  {
+    "id": 3530,
+    "ders": "Genel Cerrahi",
+    "konu": "İnce Barsak Hastalıkları",
+    "diff": 4,
+    "q": "Meckel divertikülünde erişkinde kanama gelişmesinin en tipik nedeni hangisidir?",
+    "options": [
+      "Ektopik gastrik mukozanın asit salgısıyla komşu ileal mukozada ülser oluşturması",
+      "Divertikülün her zaman malign transformasyon göstermesi",
+      "Pankreatik enzimlerin duodenumda aktive olması",
+      "Safra taşının divertikül içine düşmesi",
+      "Kolonik divertiküllerle aynı damarın yırtılması"
+    ],
+    "correct": 0,
+    "exp": "Meckel divertikülünde ektopik gastrik mukoza asit salgılayabilir. Bu asit komşu ileal mukozada ülser ve kanamaya yol açar."
+  },
+  {
+    "id": 3531,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenterik Hastalıklar",
+    "diff": 5,
+    "q": "76 yaşındaki kadın hasta, 6 saattir şiddetli karın ağrısı ve bulantı yakınmasıyla başvuruyor. Atriyal fibrilasyon öyküsü var, varfarini düzensiz kullanıyor. Muayenede hassasiyet ağrıya göre hafif, laktat yüksek ve BT anjiyografide superior mezenter arterde emboli görülüyor. Bu hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "Acil revaskülarizasyon ve barsak canlılığının değerlendirilmesi",
+      "Sadece oral antispazmodikle izlem",
+      "Kolonoskopiyle emboliyi çıkarma",
+      "Elektif poliklinik kontrolü",
+      "Geniş spektrumlu antibiyotikle üç gün bekleme"
+    ],
+    "correct": 0,
+    "exp": "Akut mezenter iskemi, özellikle atriyal fibrilasyonlu hastada emboliyle gelişebilir. Ağrı fizik muayeneye göre belirgin olabilir. Tedavide hızlı tanı, antikoagülasyon, revaskülarizasyon ve nekrotik barsağın değerlendirilmesi esastır."
+  },
+  {
+    "id": 3532,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenterik Hastalıklar",
+    "diff": 4,
+    "q": "69 yaşındaki erkek hasta, 3 aydır yemeklerden 30 dakika sonra başlayan karın ağrısı ve kilo kaybı yakınmasıyla başvuruyor. Sigara ve periferik arter hastalığı öyküsü var, asetilsalisilik asit kullanıyor. Fizik muayenede akut peritonit yok, BT anjiyografide çölyak ve superior mezenter arterde ciddi darlık saptanıyor. Bu hastada en olası tanı hangisidir?",
+    "options": [
+      "Kronik mezenterik iskemi",
+      "Akut apandisit",
+      "Ülseratif kolit alevlenmesi",
+      "Primer biliyer kolanjit",
+      "Fonksiyonel dispepsi"
+    ],
+    "correct": 0,
+    "exp": "Postprandiyal ağrı, kilo kaybı ve yaygın ateroskleroz kronik mezenterik iskemiyi düşündürür. Yemekten sonra artan metabolik ihtiyaç, daralmış mezenterik arterler nedeniyle karşılanamaz."
+  },
+  {
+    "id": 3533,
+    "ders": "Genel Cerrahi",
+    "konu": "Mezenterik Hastalıklar",
+    "diff": 4,
+    "q": "Mezenter ven trombozunda arteriyel emboliye göre klinik başlangıcın daha sinsi olmasının temel nedeni hangisidir?",
+    "options": [
+      "Venöz drenaj bozulmasının önce konjesyon ve ödemle ilerlemesi",
+      "Arteriyel akımın ilk dakikada tamamen durması",
+      "Tüm olguların ağrısız seyretmesi",
+      "Portal basıncın her zaman düşük kalması",
+      "Barsak duvarında hiç ödem gelişmemesi"
+    ],
+    "correct": 0,
+    "exp": "Mezenter ven trombozunda venöz dönüş bozulur; konjesyon, barsak duvarı ödemi ve zamanla iskemi gelişir. Bu nedenle arteriyel tıkanmaya göre başlangıç daha sinsi olabilir."
+  },
+  {
+    "id": 3534,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 4,
+    "q": "58 yaşındaki erkek hasta, 2 gündür sol alt kadran ağrısı ve hafif ateş yakınmasıyla başvuruyor. Diyabeti yok, immünsüpresif ilaç kullanmıyor. BT'de sigmoid divertikülit, duvar kalınlaşması ve perikolik yağlı dokuda inflamasyon var; apse, perforasyon ve yaygın peritonit yok. Bu hastada uygun yaklaşım hangisidir?",
+    "options": [
+      "Yakın izlem ve destek tedavisiyle seçilmiş immünkompetan hastada antibiyotiksiz yönetimi düşünmek",
+      "Tüm olgularda acil Hartmann prosedürü yapmak",
+      "Her hastaya rutin perkütan drenaj uygulamak",
+      "Kolonoskopiyi akut dönemde perforasyon riskine rağmen hemen yapmak",
+      "Sadece loperamid verip tanıyı kapatmak"
+    ],
+    "correct": 0,
+    "exp": "İmmünkompetan, sistemik inflamasyonu belirgin olmayan, BT ile doğrulanmış komplike olmayan divertikülitte seçilmiş hastalarda antibiyotik verilmeyebilir. Apse, perforasyon veya sepsis varsa yaklaşım değişir."
+  },
+  {
+    "id": 3535,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 4,
+    "q": "64 yaşındaki kadın hasta, 3 aydır dışkılama alışkanlığında değişiklik ve demir eksikliği anemisi yakınmasıyla değerlendiriliyor. Hipertansiyon için perindopril kullanıyor. Kolonoskopide çekumda kitle saptanıyor, biyopsi adenokarsinom. Toraks-abdomen görüntülemede uzak metastaz yok. Bu hastada cerrahinin lenfatik prensibi açısından en uygun yaklaşım hangisidir?",
+    "options": [
+      "Tümörün lenfovasküler drenajını içeren onkolojik sağ hemikolektomi yapmak",
+      "Sadece lümendeki kitleyi lokal eksize etmek",
+      "Lenf nodu diseksiyonu yapmadan appendektomi eklemek",
+      "Tanı konduğu için cerrahiyi kemoterapi sonrasına mutlaka ertelemek",
+      "Kolonu korumak için yalnız endoskopik biyopsiyle yetinmek"
+    ],
+    "correct": 0,
+    "exp": "Kolon kanserinde cerrahi, tümörle birlikte ilgili vasküler pedikül ve lenfatik drenaj alanının onkolojik rezeksiyonunu içerir. Çekum tümöründe sağ hemikolektomi uygun prensiptir."
+  },
+  {
+    "id": 3536,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 5,
+    "q": "55 yaşındaki erkek hasta, 2 aydır rektal kanama ve tenesmus yakınmasıyla başvuruyor. Kronik hastalığı yok, ilaç kullanmıyor. Rektal MR'da orta rektum yerleşimli T3 tümör ve mezorektal fasya yakınlığı saptanıyor, uzak metastaz yok. Bu hastada tedavi planında hangi yaklaşım daha uygundur?",
+    "options": [
+      "Lokal evreye göre neoadjuvan tedavi sonrası total mezorektal eksizyon planlamak",
+      "Her rektum kanserinde doğrudan lokal eksizyon yapmak",
+      "Neoadjuvan tedaviyi yalnız T1 poliplerde kullanmak",
+      "Mezorektal fasya ilişkisini tedavi kararında önemsememek",
+      "Sadece kolonoskopik snare rezeksiyonla kür sağlamak"
+    ],
+    "correct": 0,
+    "exp": "Lokal ileri rektum kanserinde pelvik MR ile evreleme, mezorektal fasya ve nodal durum önemlidir. Neoadjuvan tedavi sonrası total mezorektal eksizyon lokal kontrolü artırır."
+  },
+  {
+    "id": 3537,
+    "ders": "Genel Cerrahi",
+    "konu": "Kolon Rektum Hastalıkları",
+    "diff": 4,
+    "q": "Kolon kanserinde mikrosatellit instabilite veya mismatch repair eksikliğinin saptanması hangi açıdan önemlidir?",
+    "options": [
+      "Lynch sendromu taraması ve ileri evrede immünoterapi duyarlılığı açısından yol gösterir",
+      "Tüm hastalarda apandisit riskini gösterir",
+      "Ameliyat sırasında kanama miktarını tek başına belirler",
+      "Sadece anestezi ilaç seçimini değiştirir",
+      "Tümörün benign olduğunu kanıtlar"
+    ],
+    "correct": 0,
+    "exp": "MMR eksikliği veya MSI yüksekliği Lynch sendromu açısından tarama, prognoz ve metastatik hastalıkta immün kontrol noktası inhibitörlerine yanıt olasılığı için önemlidir."
+  },
+  {
+    "id": 3538,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 4,
+    "q": "24 yaşındaki erkek hasta, 18 saattir iştahsızlık, periumbilikal başlayıp sağ alt kadrana yerleşen ağrı ve bulantı yakınmasıyla başvuruyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. Ateşi 38°C, sağ alt kadranda defans var, BT'de apendiks çapı 11 mm ve periappendiküler yağlı dokuda inflamasyon görülüyor. Bu hastada en uygun tedavi hangisidir?",
+    "options": [
+      "Akut apandisit için apendektomi planlamak",
+      "Kolonoskopiyle apendiksi değerlendirmek",
+      "Sadece proton pompa inhibitörü vermek",
+      "Ağrı geçene kadar antibiyotik vermeden izlemek",
+      "Laksatif verip evde takip etmek"
+    ],
+    "correct": 0,
+    "exp": "Klasik klinik, lokal peritoneal bulgular ve BT bulguları akut apandisiti destekler. Cerrahi tedavi standart yaklaşımdır; seçilmiş komplike olmayan olgularda antibiyotik seçenek olsa da peritoneal bulgular cerrahiyi öne çıkarır."
+  },
+  {
+    "id": 3539,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 5,
+    "q": "67 yaşındaki kadın hasta, 5 gündür sağ alt kadran ağrısı ve ateş yakınmasıyla başvuruyor. Tip 2 diyabet için metformin kullanıyor. BT'de 5 cm periappendiküler apse ve çevresel inflamasyon var, yaygın peritonit yok. Bu hastada başlangıç için en uygun yaklaşım hangisidir?",
+    "options": [
+      "Antibiyotik ve uygun olguda perkütan apse drenajı ile kontrol sağlamak",
+      "Yaygın peritonit olmasa da tüm hastalarda acil sağ hemikolektomi yapmak",
+      "Apseli apandisitte antibiyotik kullanılmaz",
+      "Kolonoskopiyle apsenin boşalmasını sağlamak",
+      "Sadece oral analjezikle taburcu etmek"
+    ],
+    "correct": 0,
+    "exp": "Apendiküler apse veya flegmon varlığında, stabil ve yaygın peritoniti olmayan hastada antibiyotik ve uygun anatomide perkütan drenaj başlangıç yaklaşımı olabilir. Acil cerrahi teknik olarak zor ve morbid olabilir."
+  },
+  {
+    "id": 3540,
+    "ders": "Genel Cerrahi",
+    "konu": "Appendix Hastalıkları",
+    "diff": 4,
+    "q": "Apendiks mukoselinde cerrahi sırasında dikkat edilmesi gereken temel onkolojik prensip hangisidir?",
+    "options": [
+      "Rüptürü önleyerek psödomiksoma peritonei riskini azaltmak",
+      "Mukoseli mutlaka iğneyle aspire etmek",
+      "Lezyonu parçalayarak çıkarmak",
+      "Tüm olgularda dren bırakmadan biyopsi almak",
+      "Histolojiye bakmadan kemoterapi başlamak"
+    ],
+    "correct": 0,
+    "exp": "Apendiks mukoselinde rüptür, mukinöz materyalin peritoneal yayılımına ve psödomiksoma peritoneiye yol açabilir. Cerrahide atraumatik çıkarım ve uygun onkolojik yaklaşım önemlidir."
+  },
+  {
+    "id": 3541,
+    "ders": "Genel Cerrahi",
+    "konu": "Perianal Hastalıklar",
+    "diff": 4,
+    "q": "36 yaşındaki erkek hasta, 2 gündür giderek artan makat ağrısı ve ateş yakınmasıyla başvuruyor. Crohn hastalığı öyküsü yok, düzenli ilaç kullanmıyor. Muayenede anal kenarda fluktuasyon veren hassas şişlik var. Bu hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "Gecikmeden insizyon ve drenaj yapmak",
+      "Sadece oral antibiyotikle apsenin boşalmasını beklemek",
+      "Kolonoskopi randevusuna kadar analjezik vermek",
+      "Steroid başlayarak inflamasyonu baskılamak",
+      "Hemoroid kabul edip lastik bant ligasyonu yapmak"
+    ],
+    "correct": 0,
+    "exp": "Perianal apsede temel tedavi drenajdır. Antibiyotikler seçilmiş durumlarda eklenir ancak apsenin mekanik olarak boşaltılmasının yerini tutmaz."
+  },
+  {
+    "id": 3542,
+    "ders": "Genel Cerrahi",
+    "konu": "Perianal Hastalıklar",
+    "diff": 4,
+    "q": "28 yaşındaki kadın hasta, 6 haftadır dışkılama sırasında cam kesiği gibi ağrı ve sonrasında saatler süren spazm yakınmasıyla başvuruyor. Kronik hastalığı yok, ilaç kullanmıyor. Muayenede posterior orta hatta kronik anal fissür ve sentinel pili görülüyor. Bu hastada medikal tedavinin temel hedefi hangisidir?",
+    "options": [
+      "İç anal sfinkter basıncını azaltarak anoderm kanlanmasını artırmak",
+      "Dışkıyı sertleştirerek fissür kenarını kapatmak",
+      "Anal kanalı tamamen kuru tutmak",
+      "Antikoagülasyonla fissürü tromboze etmek",
+      "Sfinkter tonusunu artırarak ağrıyı azaltmak"
+    ],
+    "correct": 0,
+    "exp": "Kronik anal fissürde iç sfinkter hipertonisi anoderm iskemisini sürdürür. Topikal nitrat, kalsiyum kanal blokeri veya botulinum toksini gibi tedavilerin amacı sfinkter basıncını azaltıp iyileşmeyi desteklemektir."
+  },
+  {
+    "id": 3543,
+    "ders": "Genel Cerrahi",
+    "konu": "Perianal Hastalıklar",
+    "diff": 4,
+    "q": "Kompleks anal fistül tedavisinde sfinkter koruyucu yaklaşımın temel amacı hangisidir?",
+    "options": [
+      "Fistül kontrolünü sağlarken fekal inkontinans riskini azaltmak",
+      "Tüm sfinkter kasını keserek nüksü sıfırlamak",
+      "Anal kanal basıncını kalıcı olarak maksimuma çıkarmak",
+      "Fistül traktını tanı koymadan kapatmak",
+      "Her olguda kolostomi açmak"
+    ],
+    "correct": 0,
+    "exp": "Kompleks fistüllerde sfinkter kasının fazla kesilmesi inkontinans riskini artırır. Seton, advancement flep veya LIFT gibi yaklaşımlar sfinkter korunmasını hedefler."
+  },
+  {
+    "id": 3544,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 4,
+    "q": "64 yaşındaki kadın hasta, 24 saattir karında şişlik, kusma ve gaz-gaita çıkaramama yakınmasıyla başvuruyor. Daha önce kolesistektomi ve histerektomi geçirmiş, hipertansiyon için ramipril kullanıyor. BT'de yapışıklığa bağlı ince barsak obstrüksiyonu, iskemi bulgusu yok. Bu hastada başlangıç yaklaşımı hangisidir?",
+    "options": [
+      "Nazogastrik dekompresyon, sıvı-elektrolit düzeltme ve yakın cerrahi izlem",
+      "Acil total kolektomi",
+      "Oral laksatif ve evde takip",
+      "Rutin kolonoskopik dekompresyon",
+      "Sıvı vermeden yalnız antibiyotik"
+    ],
+    "correct": 0,
+    "exp": "Adhezyona bağlı ince barsak obstrüksiyonunda iskemi, kapalı ans veya peritonit yoksa başlangıçta konservatif yaklaşım uygulanabilir. Dekompresyon, sıvı-elektrolit düzeltme ve yakın izlem esastır."
+  },
+  {
+    "id": 3545,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 5,
+    "q": "70 yaşındaki erkek hasta, 3 gündür karında şişlik ve dışkı çıkaramama yakınmasıyla başvuruyor. Parkinson hastalığı için levodopa kullanıyor. Grafide kahve çekirdeği görünümü, BT'de sigmoid volvulus ve iskemi bulgusu yok. Bu hastada ilk uygun girişim hangisidir?",
+    "options": [
+      "Endoskopik detorsiyon ve rektal tüp yerleştirme",
+      "Doğrudan pankreatikoduodenektomi",
+      "Oral kontrast verip taburcu etmek",
+      "Sadece lavmanla 1 hafta izlemek",
+      "Primer antibiyotikle volvulusu çözmek"
+    ],
+    "correct": 0,
+    "exp": "Sigmoid volvulusta peritonit veya iskemi yoksa endoskopik detorsiyon ilk yaklaşımdır. Başarılı dekompresyondan sonra nüks riski nedeniyle elektif definitif cerrahi planlanır."
+  },
+  {
+    "id": 3546,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 5,
+    "q": "59 yaşındaki kadın hasta, sağ hemikolektomi sonrası 6. günde yara yerinden enterik içerik gelmesi ve halsizlik yakınmasıyla değerlendiriliyor. Diyabet için insülin kullanıyor. Ateşi yok, BT'de yaygın peritonit yok, fistül debisi yüksek ve albümini düşük. Bu hastada başlangıç yönetiminde hangi prensip önceliklidir?",
+    "options": [
+      "Sepsis kontrolü, sıvı-elektrolit replasmanı, cilt koruma ve beslenme desteği sağlamak",
+      "Hemen fistül traktını körlemesine bağlamak",
+      "Debiyi artırmak için oral hipertonik sıvı vermek",
+      "Beslenmeyi tamamen kesip haftalarca sıvı vermemek",
+      "Drenajı kapatarak fistül ağzını tıkamak"
+    ],
+    "correct": 0,
+    "exp": "Enterokutan fistülde ilk yaklaşım sepsis kontrolü, sıvı-elektrolit kayıplarının yerine konması, cilt bakımı ve uygun beslenme desteğidir. Stabilizasyon sağlanmadan erken cerrahi morbiditeyi artırır."
+  },
+  {
+    "id": 3547,
+    "ders": "Genel Cerrahi",
+    "konu": "İntestinal Tıkanıklıklar ve GİS Fistülleri",
+    "diff": 4,
+    "q": "Enterokutan fistülde spontan kapanmayı azaltan faktörlerden hangisi daha tipiktir?",
+    "options": [
+      "Distal obstrüksiyonun bulunması",
+      "Düşük debili olması",
+      "Kısa süreli postoperatif dönemde ortaya çıkması",
+      "Sepsisin kontrol edilmiş olması",
+      "Yeterli beslenme desteği sağlanması"
+    ],
+    "correct": 0,
+    "exp": "Distal obstrüksiyon, yabancı cisim, radyasyon, inflamatuvar barsak hastalığı, epitelize trakt, yüksek debi ve kontrolsüz sepsis fistül kapanmasını zorlaştırır."
+  },
+  {
+    "id": 3548,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 4,
+    "q": "54 yaşındaki erkek hasta, 8 saattir hematemez ve baş dönmesi yakınmasıyla başvuruyor. Alkol ilişkili siroz öyküsü var, propranololü düzensiz kullanıyor. TA 92/58 mmHg, melena var, trombosit 58.000/mm3. Bu hastada ilk yaklaşımda hangi tedavi kombinasyonu en uygundur?",
+    "options": [
+      "Hemodinamik resüsitasyon, vazoaktif tedavi, antibiyotik profilaksisi ve erken endoskopik bant ligasyonu",
+      "Sadece yüksek doz proton pompa inhibitörüyle 72 saat beklemek",
+      "Antikoagülasyon başlamak",
+      "Acil elektif kolesistektomi planlamak",
+      "Kolonoskopiyle varisleri bağlamak"
+    ],
+    "correct": 0,
+    "exp": "Sirozlu hastada hematemez varis kanamasını düşündürür. Tedavide resüsitasyon, somatostatin analoğu gibi vazoaktif ilaç, enfeksiyon profilaksisi ve erken endoskopik bant ligasyonu birlikte uygulanır."
+  },
+  {
+    "id": 3549,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 5,
+    "q": "61 yaşındaki kadın hasta, kronik hepatit C sirozu nedeniyle izlenirken 2 aydır kilo kaybı ve sağ üst kadran dolgunluğu yakınması bildiriyor. Direkt etkili antiviral tedavi sonrası viral yük negatif, diüretik kullanıyor. Dinamik MR'da arteriyel fazda kontrastlanan ve portal fazda washout gösteren 3 cm karaciğer nodülü saptanıyor. Bu görüntüleme paterni hangi tanı lehinedir?",
+    "options": [
+      "Hepatoselüler karsinom",
+      "Basit karaciğer kisti",
+      "Fokal nodüler hiperplazi",
+      "Akut hepatit",
+      "Karaciğer apsesi"
+    ],
+    "correct": 0,
+    "exp": "Sirotik karaciğerde arteriyel hipervaskülarite ve portal/delayed faz washout paterni hepatoselüler karsinom için tipiktir. Riskli hastalarda görüntüleme tanısal olabilir."
+  },
+  {
+    "id": 3550,
+    "ders": "Genel Cerrahi",
+    "konu": "Karaciğer Hastalıkları ve Portal HT",
+    "diff": 4,
+    "q": "Portal hipertansiyonda splenomegaliye bağlı trombositopeninin temel mekanizması hangisidir?",
+    "options": [
+      "Trombositlerin büyümüş dalakta sekestrasyonu",
+      "Kemik iliğinde trombosit üretiminin her zaman tamamen durması",
+      "Trombositlerin akciğerde yıkılması",
+      "Pıhtılaşma faktörü VIII'in aşırı artması",
+      "Portal ven basıncının trombositleri eritmesi"
+    ],
+    "correct": 0,
+    "exp": "Portal hipertansiyon splenomegaliye yol açar. Büyümüş dalakta trombosit sekestrasyonu ve yıkımı artar; bu durum hipersplenizme bağlı trombositopeninin temelidir."
+  },
+  {
+    "id": 3551,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 4,
+    "q": "47 yaşındaki kadın hasta, 16 saattir sağ üst kadran ağrısı, ateş ve bulantı yakınmasıyla başvuruyor. Kronik hastalığı yok, ilaç kullanmıyor. Murphy bulgusu pozitif, lökosit yüksek, ultrasonografide taş, safra kesesi duvar kalınlaşması ve perikolesistik sıvı var. Bu hastada uygun yaklaşım hangisidir?",
+    "options": [
+      "Risk uygunsa erken laparoskopik kolesistektomi planlamak",
+      "Ağrı geçince taşların kendiliğinden erimesini beklemek",
+      "Sadece ursodeoksikolik asit verip taburcu etmek",
+      "Tanı için önce ERCP yapmak",
+      "Kolesistektomiyi tüm hastalarda en az 6 ay ertelemek"
+    ],
+    "correct": 0,
+    "exp": "Akut taşlı kolesistitte uygun riskli hastada erken laparoskopik kolesistektomi tercih edilir. ERCP, koledok taşı veya kolanjit şüphesi varsa gündeme gelir."
+  },
+  {
+    "id": 3552,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 5,
+    "q": "72 yaşındaki erkek hasta, 1 gündür ateş, sarılık ve sağ üst kadran ağrısı yakınmasıyla başvuruyor. Koroner arter hastalığı için asetilsalisilik asit kullanıyor. TA 88/52 mmHg, bilinç bulanıklığı var, bilirubin ve ALP yüksek, koledok dilate. Bu hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "Resüsitasyon ve antibiyotikle birlikte acil biliyer drenaj sağlamak",
+      "Sadece elektif kolesistektomi randevusu vermek",
+      "Sarılık düzelene kadar hiçbir girişim yapmamak",
+      "Oral safra asidi tedavisi başlamak",
+      "Kolonoskopi ile ampullayı değerlendirmek"
+    ],
+    "correct": 0,
+    "exp": "Ateş, sarılık, sağ üst kadran ağrısına hipotansiyon ve bilinç değişikliği eklenmesi ağır akut kolanjiti düşündürür. Antibiyotik ve resüsitasyon yanında acil ERCP ile biliyer drenaj gerekir."
+  },
+  {
+    "id": 3553,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 4,
+    "q": "38 yaşındaki kadın hasta, yağlı yemeklerden sonra 2 aydır tekrarlayan sağ üst kadran ağrısı yakınmasıyla başvuruyor. Kronik hastalığı yok, ilaç kullanmıyor. Ataklar birkaç saat sürüyor, ateş ve sarılık yok; ultrasonografide safra kesesinde taşlar var, duvar kalınlığı normal. Bu hastada en uygun tedavi hangisidir?",
+    "options": [
+      "Semptomatik kolelitiazis nedeniyle elektif laparoskopik kolesistektomi",
+      "Asemptomatik kabul edip hiçbir tedavi önermemek",
+      "Her atakta ERCP yapmak",
+      "Sadece geniş spektrumlu antibiyotik vermek",
+      "Safra kesesi perforasyonu varmış gibi acil laparotomi"
+    ],
+    "correct": 0,
+    "exp": "Yağlı yemek sonrası tekrarlayan biliyer kolik ve ultrasonografide taş varlığı semptomatik kolelitiazistir. Standart tedavi elektif laparoskopik kolesistektomidir."
+  },
+  {
+    "id": 3554,
+    "ders": "Genel Cerrahi",
+    "konu": "Safra yolları Hastalıkları",
+    "diff": 4,
+    "q": "Kolesistektomi sırasında güvenli kritik görüşün sağlanmasının temel amacı hangisidir?",
+    "options": [
+      "Sistik kanal ve sistik arter dışındaki yapıların yanlışlıkla kesilmesini önlemek",
+      "Safra kesesini mutlaka fundustan ilk olarak ayırmak",
+      "Koledoku rutin olarak bağlamak",
+      "Tüm hastalarda açık cerrahiye geçmeyi zorunlu kılmak",
+      "Karaciğer biyopsisini kolaylaştırmak"
+    ],
+    "correct": 0,
+    "exp": "Güvenli kritik görüş, hepatosistik üçgende doğru anatomik tanımlamayı sağlar. Amaç özellikle ana safra yolu yaralanmasını önlemektir."
+  },
+  {
+    "id": 3555,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 4,
+    "q": "32 yaşındaki erkek hasta, yüksekten düşme sonrası 30 dakika içinde acile getiriliyor. Kronik hastalığı yok, ilaç kullanmıyor. Konuşamıyor, stridoru var, yüz travması ve ağız içinde kan görülüyor. Travma değerlendirmesinde öncelikli adım hangisidir?",
+    "options": [
+      "Servikal omurga korunarak hava yolunu güvence altına almak",
+      "Önce karın BT çekmek",
+      "Ağrı tedavisi sonrası vital bulguları beklemek",
+      "İdrar sondası takılana kadar müdahaleyi ertelemek",
+      "Laboratuvar sonuçları çıkana kadar oksijen vermemek"
+    ],
+    "correct": 0,
+    "exp": "Travma değerlendirmesinde ilk basamak hava yolu ve servikal omurga güvenliğidir. Stridor, kanama ve yüz travması hava yolu kaybı riskini gösterir."
+  },
+  {
+    "id": 3556,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 5,
+    "q": "27 yaşındaki kadın hasta, araç içi trafik kazasından 45 dakika sonra getiriliyor. Bilinen kronik hastalığı yok, ilaç kullanmıyor. TA 90/55 mmHg, nabız 128/dk, pelviste instabilite ve perinede ekimoz var; FAST negatif. Bu hastada erken yönetimde hangi yaklaşım daha uygundur?",
+    "options": [
+      "Pelvik stabilizasyon, kan ürünü resüsitasyonu ve kanama kontrolü için girişimsel veya cerrahi planlama",
+      "FAST negatif olduğu için taburcu etmek",
+      "Kristalloidle normotansiyon sağlanana kadar pelvis bandajını ertelemek",
+      "Öncelikle oral kontrastlı kolon grafisi çekmek",
+      "Analjezi sonrası yürütme testi yapmak"
+    ],
+    "correct": 0,
+    "exp": "İnstabil pelvis kırığında retroperitoneal kanama ciddi olabilir ve FAST negatif olabilir. Pelvik binder/stabilizasyon, dengeli transfüzyon ve embolizasyon veya cerrahi kanama kontrolü planlanır."
+  },
+  {
+    "id": 3557,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 4,
+    "q": "40 yaşındaki erkek hasta, bıçaklanma sonrası 20 dakika içinde getiriliyor. Kronik hastalığı yok, ilaç kullanmıyor. Sol hemitoraksta giriş deliği, dispne, hipotansiyon, boyun venlerinde dolgunluk ve tek taraflı solunum seslerinde azalma var. Bu hastada ilk tedavi edici işlem hangisidir?",
+    "options": [
+      "Tansiyon pnömotoraks düşünülerek acil toraks dekompresyonu yapmak",
+      "Akciğer grafisi çekilene kadar beklemek",
+      "Sadece oksijen verip gözlemek",
+      "Önce BT anjiyografi istemek",
+      "Antibiyotik sonrası taburcu etmek"
+    ],
+    "correct": 0,
+    "exp": "Hipotansiyon, tek taraflı solunum ses azalması ve venöz dolgunluk tansiyon pnömotoraksı düşündürür. Tanı kliniktir ve görüntüleme beklenmeden acil dekompresyon gerekir."
+  },
+  {
+    "id": 3558,
+    "ders": "Genel Cerrahi",
+    "konu": "Travma ve Travma Hastasına Yaklaşım",
+    "diff": 4,
+    "q": "Hasar kontrol cerrahisinin temel amacı hangisidir?",
+    "options": [
+      "Kanama ve kontaminasyonu hızlı kontrol edip fizyolojik düzelme sonrası definitif onarımı tamamlamak",
+      "Tüm rekonstrüksiyonları ilk ameliyatta mükemmel şekilde bitirmek",
+      "Hipotermi ve asidoz düzelmeden uzun cerrahi yapmak",
+      "Sadece kozmetik skar oluşumunu önlemek",
+      "Kan ürünlerini tamamen dışlamak"
+    ],
+    "correct": 0,
+    "exp": "Hasar kontrol cerrahisi, ağır travmada ölümcül triadı derinleştirmemek için kanama ve kontaminasyonu hızla kontrol eder; hasta yoğun bakımda düzeltilir ve definitif cerrahi sonra yapılır."
+  },
+  {
+    "id": 3559,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 4,
+    "q": "45 yaşındaki erkek hasta, 6 saattir ani başlayan yaygın karın ağrısı yakınmasıyla başvuruyor. Peptik ülser öyküsü var, aralıklı NSAİİ kullanıyor. Tahta karın, omuz ağrısı ve ayakta akciğer grafisinde diyafram altında serbest hava saptanıyor. Bu hastada en olası tanı hangisidir?",
+    "options": [
+      "Perfore peptik ülser",
+      "Akut viral gastroenterit",
+      "Renal kolik",
+      "Basit konstipasyon",
+      "Fonksiyonel karın ağrısı"
+    ],
+    "correct": 0,
+    "exp": "Ani yaygın ağrı, peritonit bulguları ve serbest hava gastrointestinal perforasyonu düşündürür. NSAİİ ve ülser öyküsü perforasyonlu peptik ülser lehinedir."
+  },
+  {
+    "id": 3560,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 5,
+    "q": "52 yaşındaki kadın hasta, 10 saattir giderek artan epigastrik ağrı ve kusma yakınmasıyla başvuruyor. Safra taşı öyküsü var, düzenli ilaç kullanmıyor. Lipaz yüksek, karın ağrısı sırta vuruyor, bilirubin hafif yüksek; ateş ve kolanjit bulgusu yok. Bu hastada ilk 48 saatte en uygun yaklaşım hangisidir?",
+    "options": [
+      "Destek tedavisi, sıvı resüsitasyonu, erken oral beslenme ve biliyer neden açısından ultrasonografi",
+      "Tüm hastalara ilk 24 saatte ERCP yapmak",
+      "Profilaktik antibiyotiği rutin başlamak",
+      "Hemen pankreas nekrozektomisi yapmak",
+      "Beslenmeyi 1 hafta tamamen kesmek"
+    ],
+    "correct": 0,
+    "exp": "Akut pankreatitte tanı klinik ve enzimlerle konur; ilk yaklaşım destek tedavisi ve uygun sıvıdır. Kolanjit yoksa erken ERCP gerekmez. Hafif hastalıkta erken oral beslenme önerilir ve biliyer etiyoloji araştırılır."
+  },
+  {
+    "id": 3561,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 4,
+    "q": "81 yaşındaki erkek hasta, 12 saattir karın ağrısı ve kusma yakınmasıyla başvuruyor. Atriyal fibrilasyon için apiksaban kullanıyor. Muayenede yaygın hassasiyet var, ağrı muayene bulgularına göre belirgin, laktat yüksek. Bu hastada tanıda hangi görüntüleme en uygundur?",
+    "options": [
+      "BT anjiyografi",
+      "Direkt batın grafisiyle yetinmek",
+      "Elektif kolonoskopi",
+      "Sadece ultrasonografi",
+      "Oral baryumlu pasaj grafisi"
+    ],
+    "correct": 0,
+    "exp": "Ağrının muayene bulgusuna göre fazla olması ve atriyal fibrilasyon mezenter iskemi için uyarıcıdır. Tanıda BT anjiyografi hızlı ve yüksek değerli bir yöntemdir."
+  },
+  {
+    "id": 3562,
+    "ders": "Genel Cerrahi",
+    "konu": "Akut Batın",
+    "diff": 4,
+    "q": "Akut batında peritonit bulgularının cerrahi karar açısından güçlü olmasının nedeni hangisidir?",
+    "options": [
+      "Parietal periton irritasyonunun perforasyon, iskemi veya yaygın inflamasyon gibi acil patolojileri düşündürmesi",
+      "Visseral ağrının her zaman benign olması",
+      "Peritonitin yalnız psikojenik ağrıda görülmesi",
+      "Laboratuvar testlerini gereksiz kılması",
+      "Tüm hastalarda laparoskopiyi yasaklaması"
+    ],
+    "correct": 0,
+    "exp": "Defans, rebound ve rijidite parietal periton irritasyonunu gösterir. Bu bulgular perforasyon, iskemi veya yaygın inflamasyon gibi acil cerrahi patolojiler için önemlidir."
+  },
+  {
+    "id": 3563,
+    "ders": "Genel Cerrahi",
+    "konu": "Yara İyileşmesi",
+    "diff": 4,
+    "q": "66 yaşındaki erkek hasta, kolon rezeksiyonu sonrası 7. günde yara yerinde açılma ve seröz akıntı yakınmasıyla değerlendiriliyor. Diyabet için insülin kullanıyor, sigara içiyor. Muayenede fasya hattında ayrılma şüphesi var. Bu hastada yara iyileşmesini bozan en önemli ortak mekanizmalardan biri hangisidir?",
+    "options": [
+      "Kollajen sentezi ve doku oksijenlenmesinin bozulması",
+      "Fibroblast aktivitesinin aşırı artması",
+      "Anjiyogenezin erken dönemde sınırsız artması",
+      "Nötrofil fonksiyonunun her durumda güçlenmesi",
+      "Doku geriliminin tamamen ortadan kalkması"
+    ],
+    "correct": 0,
+    "exp": "Diyabet, sigara, enfeksiyon, malnütrisyon ve hipoksi yara iyileşmesini kollajen sentezi, anjiyogenez ve doku oksijenlenmesini bozarak geciktirir. Fasya ayrılması ciddi komplikasyondur."
+  },
+  {
+    "id": 3564,
+    "ders": "Genel Cerrahi",
+    "konu": "Yara İyileşmesi",
+    "diff": 4,
+    "q": "Yara iyileşmesinde gerilme kuvvetinin zamanla artmasında en önemli yapısal değişiklik hangisidir?",
+    "options": [
+      "Tip III kollajenin yerini daha organize tip I kollajenin alması ve çapraz bağlanmanın artması",
+      "Epitelyal hücrelerin tamamen kaybolması",
+      "Fibrin pıhtısının kalıcı ana dokuya dönüşmesi",
+      "Nötrofillerin aylarca baskın kalması",
+      "Anjiyogenezin tamamen durması"
+    ],
+    "correct": 0,
+    "exp": "Yara iyileşmesinde erken matriks tip III kollajenden zengindir. Remodeling fazında tip I kollajen ve çapraz bağlanma artar; böylece gerilme kuvveti yükselir."
+  },
+  {
+    "id": 3565,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 4,
+    "q": "58 yaşındaki kadın hasta, elektif kolon cerrahisi sonrası 5. günde ateş ve yara yerinde kızarıklık yakınmasıyla değerlendiriliyor. Tip 2 diyabet için metformin kullanıyor. İnsizyon çevresinde hassasiyet, pürülan akıntı ve lokal ısı artışı var; sistemik instabilite yok. Bu hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "Yara açılıp drenaj sağlanması ve gereğinde kültüre göre antibiyotik verilmesi",
+      "Sadece ateş düşürücüyle taburcu etmek",
+      "Drenaj yapmadan geniş spektrumlu antibiyotikle beklemek",
+      "Hemen total parenteral beslenme başlamak",
+      "Yara enfeksiyonunu histolojiyle dışlamak"
+    ],
+    "correct": 0,
+    "exp": "Cerrahi alan enfeksiyonunda pürülan koleksiyon varsa temel yaklaşım drenajdır. Antibiyotik, sistemik bulgu veya selülit varlığında ve kültür sonucuna göre düzenlenir."
+  },
+  {
+    "id": 3566,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 5,
+    "q": "49 yaşındaki erkek hasta, kasık fıtığı ameliyatından 3 gün sonra skrotum ve perinede şiddetli ağrı, kötü kokulu akıntı ve ateş yakınmasıyla başvuruyor. Diyabet için insülin kullanıyor. Muayenede krepitasyon ve ciltte morarma var. Bu hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "Geniş spektrumlu antibiyotikle birlikte acil ve geniş cerrahi debridman yapmak",
+      "Sadece oral antibiyotikle 48 saat gözlemek",
+      "Soğuk uygulama ve analjezikle taburcu etmek",
+      "Kültür sonucunu bekleyip sonra debridman planlamak",
+      "Steroid vererek inflamasyonu azaltmak"
+    ],
+    "correct": 0,
+    "exp": "Şiddetli ağrı, krepitasyon, kötü koku ve cilt nekrozu nekrotizan yumuşak doku enfeksiyonunu düşündürür. Tedavi antibiyotikle birlikte gecikmeden geniş cerrahi debridmandır."
+  },
+  {
+    "id": 3567,
+    "ders": "Genel Cerrahi",
+    "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+    "diff": 4,
+    "q": "Temiz-kontamine cerrahide profilaktik antibiyotiğin zamanlamasında en doğru ilke hangisidir?",
+    "options": [
+      "İnsizyon sırasında yeterli doku düzeyi olacak şekilde ameliyattan hemen önce verilmesi",
+      "Ameliyat bittikten 24 saat sonra başlanması",
+      "Yara enfekte olana kadar hiç verilmemesi",
+      "Taburculuk sonrası ilk kontrolde başlanması",
+      "Sadece dren çekilirken verilmesi"
+    ],
+    "correct": 0,
+    "exp": "Profilaktik antibiyotik, insizyon anında etkin doku konsantrasyonu sağlayacak zamanlamayla uygulanır. Gereksiz uzatılması direnç ve komplikasyon riskini artırır."
+  },
+  {
+    "id": 3568,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 4,
+    "q": "56 yaşındaki erkek hasta, 5 saattir sağ kasıkta ağrılı şişlik ve bulantı yakınmasıyla başvuruyor. Kronik hastalığı yok, ilaç kullanmıyor. Şişlik redükte olmuyor, üzeri hassas ve hasta kusmaya başlamış. Bu hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "İnkarsere veya strangüle herni olasılığı nedeniyle acil cerrahi değerlendirme yapmak",
+      "Elektif poliklinik randevusu verip taburcu etmek",
+      "Truss önerip 1 ay izlemek",
+      "Kolonoskopiyle tanıyı doğrulamak",
+      "Sadece antibiyotik başlamak"
+    ],
+    "correct": 0,
+    "exp": "Redükte olmayan ağrılı kasık şişliği, kusma ve hassasiyet inkarsere veya strangüle herniyi düşündürür. Barsak iskemisi riski nedeniyle acil değerlendirme gerekir."
+  },
+  {
+    "id": 3569,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 4,
+    "q": "68 yaşındaki kadın hasta, 1 yıldır sağ kasıkta giderek büyüyen şişlik ve son 1 gündür ağrı yakınmasıyla başvuruyor. KOAH için inhaler kullanıyor. Şişlik inguinal ligamanın altında ve lateralinde, öksürükle belirginleşiyor. Bu hastada hangi herni tipi daha olasıdır?",
+    "options": [
+      "Femoral herni",
+      "Direkt inguinal herni",
+      "İnsizyonel herni",
+      "Umbilikal herni",
+      "Spigelian herni"
+    ],
+    "correct": 0,
+    "exp": "Femoral herni inguinal ligamanın altında çıkar ve kadınlarda daha sık görülür. Boynu dar olduğu için inkarsere olma riski yüksektir."
+  },
+  {
+    "id": 3570,
+    "ders": "Genel Cerrahi",
+    "konu": "Karın Duvarı ve Herniler",
+    "diff": 4,
+    "q": "Direkt inguinal herninin indirekt inguinal herniden temel anatomik farkı hangisidir?",
+    "options": [
+      "Hesselbach üçgeninden çıkması ve inferior epigastrik damarların medialinde yer alması",
+      "Derin inguinal halkadan başlaması",
+      "Skrotuma her zaman inmesi",
+      "Femoral kanal içinden geçmesi",
+      "Obturator kanaldan ilerlemesi"
+    ],
+    "correct": 0,
+    "exp": "Direkt inguinal herni, karın duvarı zayıflığıyla Hesselbach üçgeninden çıkar ve inferior epigastrik damarların medialindedir. İndirekt herni derin halkadan girer ve damarların lateralindedir."
+  },
+  {
+    "id": 3571,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 4,
+    "q": "46 yaşındaki kadın hasta, 1 aydır sol memede ele gelen kitle yakınmasıyla başvuruyor. Hipotiroidi için levotiroksin kullanıyor. Muayenede üst dış kadranda 2,2 cm sert kitle var, aksilla klinik olarak negatif; mamografi ve ultrasonografide şüpheli solid lezyon görülüyor. Bu hastada en uygun tanısal yaklaşım hangisidir?",
+    "options": [
+      "Görüntüleme eşliğinde kor biyopsi yapmak",
+      "Kitleyi fibroadenom kabul edip 1 yıl beklemek",
+      "Serum CA 15-3 ile tanı koymak",
+      "Önce kemoterapi başlayıp sonra biyopsi yapmak",
+      "Sadece ince iğneyle kisti boşaltmak"
+    ],
+    "correct": 0,
+    "exp": "Şüpheli solid meme kitlesinde histolojik tanı için kor biyopsi standarttır. Tümör biyolojisi ve reseptör durumu tedavi planını belirler."
+  },
+  {
+    "id": 3572,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 5,
+    "q": "52 yaşındaki kadın hasta, tarama mamografisinde saptanan 1,4 cm invaziv duktal karsinom nedeniyle değerlendiriliyor. Kronik hastalığı yok, ilaç kullanmıyor. Aksilla muayenesi ve ultrasonografisi negatif, uzak metastaz yok. Meme koruyucu cerrahi planlanan bu hastada aksiller evreleme için en uygun yaklaşım hangisidir?",
+    "options": [
+      "Sentinel lenf nodu biyopsisi yapmak",
+      "Klinik negatif aksillada rutin tam aksiller diseksiyon yapmak",
+      "Aksillayı hiç değerlendirmemek",
+      "Sadece serum tümör belirteciyle nodal durumu belirlemek",
+      "Radyoterapi sonrası tanısız izlemek"
+    ],
+    "correct": 0,
+    "exp": "Erken evre, klinik nod negatif meme kanserinde sentinel lenf nodu biyopsisi aksiller evreleme için standarttır ve gereksiz aksiller diseksiyona bağlı morbiditeyi azaltır."
+  },
+  {
+    "id": 3573,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 4,
+    "q": "39 yaşındaki emziren kadın hasta, 4 gündür sağ memede ağrı, kızarıklık ve ateş yakınmasıyla başvuruyor. Kronik hastalığı yok, ilaç kullanmıyor. Muayenede fluktuasyon veren hassas alan var; ultrasonografide loküle koleksiyon saptanıyor. Bu hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "Antibiyotikle birlikte görüntüleme eşliğinde drenaj veya insizyon-drenaj yapmak",
+      "Emzirmeyi kesin olarak kalıcı kesmek",
+      "Sadece sıcak uygulamayla apseyi izlemek",
+      "Mastektomi planlamak",
+      "Steroid tedavisi başlamak"
+    ],
+    "correct": 0,
+    "exp": "Laktasyonel mastitte apse gelişmişse antibiyotik tek başına yeterli değildir; koleksiyon drenajı gerekir. Uygun koşullarda emzirme veya süt boşaltımı sürdürülür."
+  },
+  {
+    "id": 3574,
+    "ders": "Genel Cerrahi",
+    "konu": "Meme Hastalıkları",
+    "diff": 4,
+    "q": "Meme koruyucu cerrahinin mastektomiye onkolojik olarak alternatif olabilmesi için hangi tamamlayıcı yaklaşım çoğu hastada gerekir?",
+    "options": [
+      "Kalan memeye radyoterapi uygulanması",
+      "Aksiller diseksiyonun tüm hastalarda yapılması",
+      "Karşı memenin profilaktik çıkarılması",
+      "Kemoterapinin tüm evrelerde tek başına yeterli kabul edilmesi",
+      "Sentinel nodun her zaman pozitif olması"
+    ],
+    "correct": 0,
+    "exp": "Meme koruyucu cerrahi sonrası radyoterapi lokal nüks riskini azaltır ve uygun hastalarda mastektomiye eşdeğer sağkalım sağlar."
+  },
+  {
+    "id": 3575,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 4,
+    "q": "61 yaşındaki erkek hasta, 3 aydır giderek artan katı gıdaları yutma güçlüğü ve 8 kg kilo kaybı yakınmasıyla başvuruyor. Sigara kullanıyor, kronik hastalığı yok, ilaç kullanmıyor. Endoskopide distal özefagusta darlık yapan kitle görülüyor. Bu hastada tedavi planı öncesi en uygun yaklaşım hangisidir?",
+    "options": [
+      "Biyopsiyle tanı koyup evreleme için endosonografi ve kesitsel görüntüleme yapmak",
+      "Darlığı benign kabul edip sadece proton pompa inhibitörü vermek",
+      "Biyopsi almadan acil özefajektomi yapmak",
+      "Oral demir tedavisiyle disfajiyi izlemek",
+      "Sadece baryumlu grafiyle küratif tedavi seçmek"
+    ],
+    "correct": 0,
+    "exp": "Progresif disfaji ve kilo kaybı özefagus kanserini düşündürür. Histolojik tanı sonrası lokal derinlik, nodal durum ve uzak metastaz evrelemesi tedavi planı için zorunludur."
+  },
+  {
+    "id": 3576,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 4,
+    "q": "34 yaşındaki kadın hasta, 1 yıldır katı ve sıvı gıdalara karşı disfaji, regürjitasyon ve gece öksürüğü yakınmasıyla başvuruyor. Kronik hastalığı yok, ilaç kullanmıyor. Manometride alt özefagus sfinkter gevşemesinde yetersizlik ve aperistaltizm saptanıyor. Bu hastalıkta semptomların temel mekanizması hangisidir?",
+    "options": [
+      "Miyenterik pleksus disfonksiyonuna bağlı alt sfinkter gevşeme kusuru",
+      "Mide asidinin aşırı üretimiyle sfinkterin sürekli açık kalması",
+      "Özefagus mukozasında eozinofil sayısının azalması",
+      "Üst özefagus sfinkterinin tamamen yokluğu",
+      "Duodenum obstrüksiyonu"
+    ],
+    "correct": 0,
+    "exp": "Akalazyada inhibitör nöron kaybı ve miyenterik pleksus disfonksiyonu nedeniyle alt özefagus sfinkteri yeterli gevşemez, özefagus peristaltizmi bozulur."
+  },
+  {
+    "id": 3577,
+    "ders": "Genel Cerrahi",
+    "konu": "Özefagus Hastalıkları",
+    "diff": 4,
+    "q": "Barrett özefagusun klinik önemini belirleyen temel özellik hangisidir?",
+    "options": [
+      "İntestinal metaplazi üzerinden özefagus adenokarsinomu riskini artırması",
+      "Skuamöz epitelin tümüyle normale dönmesi",
+      "Mide kanseri riskini sıfırlaması",
+      "Reflüyü her zaman semptomsuz yapması",
+      "Sadece üst özefagusta görülmesi"
+    ],
+    "correct": 0,
+    "exp": "Barrett özefagusta distal özefagusta intestinal metaplazi gelişir. Bu durum adenokarsinom için premalign zemin oluşturur."
+  },
+  {
+    "id": 3578,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 4,
+    "q": "66 yaşındaki erkek hasta, 4 aydır erken doyma, kilo kaybı ve epigastrik ağrı yakınmasıyla başvuruyor. Kronik hastalığı yok, NSAİİ kullanmıyor. Endoskopide antrumda ülserovejetan kitle, biyopside adenokarsinom saptanıyor; evrelemede uzak metastaz yok. Bu hastada küratif cerrahi prensip açısından en uygun yaklaşım hangisidir?",
+    "options": [
+      "Uygun mide rezeksiyonu ile bölgesel lenf nodu diseksiyonu yapmak",
+      "Sadece ülser kenarını lokal koterize etmek",
+      "Biyopsi tanı koyduğu için cerrahiyi gereksiz kabul etmek",
+      "Tüm hastalarda yalnız endoskopik mukozal rezeksiyon yapmak",
+      "Mide kanserinde lenf nodlarını önemsememek"
+    ],
+    "correct": 0,
+    "exp": "Rezektabl mide kanserinde küratif cerrahinin temel prensibi yeterli mide rezeksiyonu ve bölgesel lenfadenektomidir. Tedavi planı evreye göre perioperatif sistemik tedaviyi de içerebilir."
+  },
+  {
+    "id": 3579,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 4,
+    "q": "43 yaşındaki kadın hasta, 8 yıldır süren obezite ve kontrolsüz tip 2 diyabet nedeniyle başvuruyor. Metformin ve GLP-1 reseptör agonisti kullanıyor, VKİ 36 kg/m2. Yaşam tarzı ve medikal tedaviye rağmen HbA1c yüksek seyrediyor. Güncel yaklaşıma göre metabolik cerrahi açısından en uygun ifade hangisidir?",
+    "options": [
+      "VKİ 35 kg/m2 üzerinde obezite varlığında komorbidite olmasa bile cerrahi uygun hastada önerilebilir",
+      "VKİ 40 altında cerrahi hiçbir zaman düşünülmez",
+      "Tip 2 diyabet cerrahi kararında önemsizdir",
+      "Cerrahi sadece kozmetik amaçla yapılır",
+      "GLP-1 kullanımı cerrahiyi mutlak kontrendike yapar"
+    ],
+    "correct": 0,
+    "exp": "Güncel metabolik ve bariatrik cerrahi kılavuzları, VKİ 35 kg/m2 üzerindeki uygun hastalarda cerrahiyi güçlü bir tedavi seçeneği kabul eder; VKİ 30-34,9 aralığında metabolik hastalık varlığında da seçilmiş hastalarda düşünülebilir."
+  },
+  {
+    "id": 3580,
+    "ders": "Genel Cerrahi",
+    "konu": "Mide Hastalıkları ve Morbid Obezite",
+    "diff": 4,
+    "q": "Roux-en-Y gastrik bypass sonrası dumping sendromunda erken semptomların temel nedeni hangisidir?",
+    "options": [
+      "Hiperozmolar içeriğin hızla ince barsağa geçmesiyle intraluminal sıvı kayması ve vazomotor yanıt oluşması",
+      "Pankreasın tamamen insülin salgılamayı bırakması",
+      "Safra kesesinin akut perforasyonu",
+      "Midenin asit üretimini sınırsız artırması",
+      "Kolonda mekanik tıkanıklık gelişmesi"
+    ],
+    "correct": 0,
+    "exp": "Erken dumpingde hiperozmolar gıda mide rezervuarını hızla geçerek ince barsakta sıvı kaymasına ve vazomotor semptomlara yol açar. Geç dumpingde ise reaktif hipoglisemi daha ön plandadır."
+  },
+  {
+    "id": 3581,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 4,
+    "q": "70 yaşındaki erkek hasta, 5 saattir hematemez ve melena yakınmasıyla acile geliyor. Atriyal fibrilasyon için apiksaban, osteoartrit için sık NSAİİ kullanıyor. TA 96/60 mmHg, nabız 118/dk, üre yüksek. Bu hastada ilk yaklaşımda hangisi en uygundur?",
+    "options": [
+      "Hava yolu ve hemodinamik stabilizasyon sonrası erken üst GİS endoskopisi planlamak",
+      "Kolonoskopiyi ilk ve tek test olarak yapmak",
+      "Hastayı oral demirle taburcu etmek",
+      "Antikoagülanı kesmeden biyopsi yapmak",
+      "Kanama durana kadar damar yolu açmamak"
+    ],
+    "correct": 0,
+    "exp": "Hematemez üst GİS kanamasını gösterir. İlk yaklaşım resüsitasyon, risk değerlendirmesi, antikoagülan yönetimi ve uygun zamanda erken endoskopidir."
+  },
+  {
+    "id": 3582,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 5,
+    "q": "63 yaşındaki kadın hasta, 1 gündür parlak kırmızı rektal kanama ve halsizlik yakınmasıyla başvuruyor. Hipertansiyon için amlodipin kullanıyor, antikoagülan kullanmıyor. Hemodinamik olarak stabil, nazogastrik aspiratta kan yok, Hb 9,8 g/dL. Bu hastada tanı ve tedavi planında hangi yaklaşım daha uygundur?",
+    "options": [
+      "Kolonoskopi için hazırlık yapıp alt GİS kanama odağını değerlendirmek",
+      "Hematemez olmadığı için kanamayı önemsiz kabul etmek",
+      "Tüm stabil hastalara acil laparotomi yapmak",
+      "Sadece üst endoskopiyle yetinmek",
+      "Kanamayı anal fissür kabul edip hiç inceleme yapmamak"
+    ],
+    "correct": 0,
+    "exp": "Stabil hematokezya çoğunlukla alt GİS kaynaklıdır. Uygun hazırlık sonrası kolonoskopi tanı ve gerektiğinde endoskopik tedavi sağlar; masif hematokezyada üst kaynak da dışlanmalıdır."
+  },
+  {
+    "id": 3583,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 5,
+    "q": "55 yaşındaki erkek hasta, siroz nedeniyle izlenirken 2 saattir hematemez yakınmasıyla geliyor. Spironolakton ve furosemid kullanıyor. TA 88/54 mmHg, nabız 126/dk, karında asit var. Bu hastada endoskopi öncesi hangi tedavi bileşeni atlanmamalıdır?",
+    "options": [
+      "Vazoaktif ilaç ve antibiyotik profilaksisi başlamak",
+      "Sadece yüksek doz H2 reseptör blokeri vermek",
+      "Antibiyotiği ancak kültür pozitifse vermek",
+      "Beta bloker dozunu hemen artırmak",
+      "Trombosit sayısı normal diye resüsitasyonu ertelemek"
+    ],
+    "correct": 0,
+    "exp": "Sirozda varis kanamasında vazoaktif tedavi erken başlanmalı ve bakteriyel enfeksiyon profilaksisi verilmelidir. Endoskopik bant ligasyonu resüsitasyon sonrası yapılır."
+  },
+  {
+    "id": 3584,
+    "ders": "Genel Cerrahi",
+    "konu": "Gis Kanamaları",
+    "diff": 4,
+    "q": "Üst GİS kanamasında Forrest Ia ülser bulgusunun klinik anlamı hangisidir?",
+    "options": [
+      "Aktif fışkırır arteriyel kanama nedeniyle yüksek yeniden kanama riski taşıması",
+      "Tamamen iyileşmiş ülseri göstermesi",
+      "Sadece malignite varlığında görülmesi",
+      "Endoskopik tedavi gerektirmeyen düşük riskli lezyon olması",
+      "Alt GİS kanamasını kanıtlaması"
+    ],
+    "correct": 0,
+    "exp": "Forrest Ia aktif arteriyel kanamadır ve yüksek risklidir. Endoskopik hemostaz ve uygun medikal tedavi gerekir."
+  },
+  {
+    "id": 3585,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 4,
+    "q": "48 yaşındaki erkek hasta, 12 saattir epigastrik ağrı ve kusma yakınmasıyla başvuruyor. Alkol kullanım öyküsü var, kronik hastalığı yok, ilaç kullanmıyor. Lipaz yüksek, BT çekilmeden klinik olarak akut pankreatit düşünülüyor; vital bulguları stabil. Bu hastada ilk yönetimde en uygun yaklaşım hangisidir?",
+    "options": [
+      "Laktatlı Ringer ile kontrollü sıvı resüsitasyonu, analjezi ve tolere ederse erken oral beslenme",
+      "Tüm hastalara profilaktik karbapenem başlamak",
+      "İlk saat içinde rutin kontrastlı BT çekmek",
+      "Beslenmeyi en az 7 gün tamamen kesmek",
+      "Stabil hastada acil nekrozektomi yapmak"
+    ],
+    "correct": 0,
+    "exp": "Akut pankreatitte ilk tedavi destekleyicidir. Kontrollü sıvı resüsitasyonu, ağrı kontrolü ve hafif olgularda erken oral beslenme önerilir. Rutin erken BT ve profilaktik antibiyotik uygun değildir."
+  },
+  {
+    "id": 3586,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 5,
+    "q": "62 yaşındaki kadın hasta, safra taşına bağlı hafif akut pankreatit nedeniyle yatırılıyor. Hipertansiyon için losartan kullanıyor. Ateş ve kolanjit yok, klinik 48 saatte düzeliyor. Bu hastada nüksü azaltmak için en uygun yaklaşım hangisidir?",
+    "options": [
+      "Aynı yatış sırasında kolesistektomi planlamak",
+      "Kolesistektomiyi en az 1 yıl ertelemek",
+      "Kolanjit yokken rutin acil ERCP yapmak",
+      "Sadece diyet önerisiyle taburcu etmek",
+      "Profilaktik pankreas nekrozektomisi yapmak"
+    ],
+    "correct": 0,
+    "exp": "Hafif akut biliyer pankreatitte aynı yatışta kolesistektomi tekrarlayan biliyer olayları azaltır. Kolanjit veya kalıcı obstrüksiyon yoksa acil ERCP gerekmez."
+  },
+  {
+    "id": 3587,
+    "ders": "Genel Cerrahi",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 4,
+    "q": "Pankreas başı adenokarsinomunda Courvoisier bulgusunun gelişmesini en iyi açıklayan mekanizma hangisidir?",
+    "options": [
+      "Ağrısız distal koledok obstrüksiyonuna bağlı safra kesesinin gerilmesi",
+      "Safra kesesinin taşla kronik skleroze olması",
+      "Portal ven trombozunun safra kesesini küçültmesi",
+      "Pankreatik enzimlerin safra kesesini eritmesi",
+      "Duodenum lümeninin tamamen açık kalması"
+    ],
+    "correct": 0,
+    "exp": "Pankreas başı tümörü distal koledoku tıkayarak ağrısız sarılık ve palpabl safra kesesi yapabilir. Taşa bağlı kronik kolesistitli safra kesesi genellikle fibrotik olduğundan bu kadar distandü olmaz."
+  },
+  {
+    "id": 3588,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak Hastalıkları",
+    "diff": 4,
+    "q": "26 yaşındaki erkek hasta, trafik kazasından 1 saat sonra sol üst kadran ağrısı ve omuz ağrısıyla başvuruyor. Kronik hastalığı yok, ilaç kullanmıyor. Hemodinamik olarak stabil; BT'de düşük dereceli dalak laserasyonu ve aktif kontrast ekstravazasyonu yok. Bu hastada en uygun yaklaşım hangisidir?",
+    "options": [
+      "Yakın izlemle nonoperatif yönetim",
+      "Stabil olsa da tüm dalak yaralanmalarında acil splenektomi",
+      "Oral antibiyotikle taburcu etmek",
+      "Kolonoskopiyle kanama odağını aramak",
+      "Antikoagülasyon başlamak"
+    ],
+    "correct": 0,
+    "exp": "Hemodinamik stabil, düşük dereceli ve aktif kanaması olmayan dalak yaralanmalarında nonoperatif yönetim uygundur. Amaç dalak fonksiyonunu korurken kanama açısından yakın izlem yapmaktır."
+  },
+  {
+    "id": 3589,
+    "ders": "Genel Cerrahi",
+    "konu": "Dalak Hastalıkları",
+    "diff": 4,
+    "q": "Splenektomi sonrası ağır enfeksiyon riskinin özellikle kapsüllü bakterilerle artmasının nedeni hangisidir?",
+    "options": [
+      "Opsonize bakterilerin dalakta filtrelenmesi ve antikor yanıtının azalması",
+      "Nötrofillerin kemik iliğinde hiç üretilmemesi",
+      "Mide asidinin tamamen kaybolması",
+      "Kompleman sisteminin tüm bileşenlerinin genetik olarak silinmesi",
+      "T hücrelerinin timusta olgunlaşmaması"
+    ],
+    "correct": 0,
+    "exp": "Dalak, opsonize kapsüllü bakterilerin temizlenmesinde ve humoral yanıtta önemlidir. Splenektomi sonrası pnömokok, meningokok ve Hib gibi kapsüllü mikroorganizmalara karşı ağır enfeksiyon riski artar."
   }
 ];
