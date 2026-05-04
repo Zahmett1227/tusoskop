@@ -16,6 +16,82 @@ const SUBJECT_ORDER = [
   "Küçük Stajlar",
 ];
 
+const SUBJECT_THEME_MAP = {
+  Fizyoloji: {
+    subject: "border-emerald-300/35 bg-gradient-to-br from-emerald-900/40 via-slate-950 to-slate-900/80",
+    topic: "border-emerald-300/35 bg-gradient-to-br from-emerald-900/45 via-slate-900/90 to-slate-900/70",
+    heading: "text-emerald-100",
+    percent: "text-emerald-200",
+  },
+  Patoloji: {
+    subject: "border-rose-300/35 bg-gradient-to-br from-rose-900/40 via-slate-950 to-slate-900/80",
+    topic: "border-rose-300/35 bg-gradient-to-br from-rose-900/45 via-slate-900/90 to-slate-900/70",
+    heading: "text-rose-100",
+    percent: "text-rose-200",
+  },
+  Farmakoloji: {
+    subject: "border-indigo-300/35 bg-gradient-to-br from-indigo-900/45 via-slate-950 to-slate-900/80",
+    topic: "border-indigo-300/35 bg-gradient-to-br from-indigo-900/50 via-slate-900/90 to-slate-900/70",
+    heading: "text-indigo-100",
+    percent: "text-indigo-200",
+  },
+  Mikrobiyoloji: {
+    subject: "border-cyan-300/35 bg-gradient-to-br from-cyan-900/40 via-slate-950 to-slate-900/80",
+    topic: "border-cyan-300/35 bg-gradient-to-br from-cyan-900/45 via-slate-900/90 to-slate-900/70",
+    heading: "text-cyan-100",
+    percent: "text-cyan-200",
+  },
+  Anatomi: {
+    subject: "border-sky-300/35 bg-gradient-to-br from-sky-900/40 via-slate-950 to-slate-900/80",
+    topic: "border-sky-300/35 bg-gradient-to-br from-sky-900/45 via-slate-900/90 to-slate-900/70",
+    heading: "text-sky-100",
+    percent: "text-sky-200",
+  },
+  Biyokimya: {
+    subject: "border-amber-300/35 bg-gradient-to-br from-amber-900/35 via-slate-950 to-slate-900/80",
+    topic: "border-amber-300/35 bg-gradient-to-br from-amber-900/40 via-slate-900/90 to-slate-900/70",
+    heading: "text-amber-100",
+    percent: "text-amber-200",
+  },
+  Dahiliye: {
+    subject: "border-violet-300/35 bg-gradient-to-br from-violet-900/40 via-slate-950 to-slate-900/80",
+    topic: "border-violet-300/35 bg-gradient-to-br from-violet-900/45 via-slate-900/90 to-slate-900/70",
+    heading: "text-violet-100",
+    percent: "text-violet-200",
+  },
+  Pediatri: {
+    subject: "border-pink-300/35 bg-gradient-to-br from-pink-900/40 via-slate-950 to-slate-900/80",
+    topic: "border-pink-300/35 bg-gradient-to-br from-pink-900/45 via-slate-900/90 to-slate-900/70",
+    heading: "text-pink-100",
+    percent: "text-pink-200",
+  },
+  "Genel Cerrahi": {
+    subject: "border-red-300/35 bg-gradient-to-br from-red-900/40 via-slate-950 to-slate-900/80",
+    topic: "border-red-300/35 bg-gradient-to-br from-red-900/45 via-slate-900/90 to-slate-900/70",
+    heading: "text-red-100",
+    percent: "text-red-200",
+  },
+  "Kadın Hastalıkları ve Doğum": {
+    subject: "border-fuchsia-300/35 bg-gradient-to-br from-fuchsia-900/40 via-slate-950 to-slate-900/80",
+    topic: "border-fuchsia-300/35 bg-gradient-to-br from-fuchsia-900/45 via-slate-900/90 to-slate-900/70",
+    heading: "text-fuchsia-100",
+    percent: "text-fuchsia-200",
+  },
+  "Küçük Stajlar": {
+    subject: "border-teal-300/35 bg-gradient-to-br from-teal-900/40 via-slate-950 to-slate-900/80",
+    topic: "border-teal-300/35 bg-gradient-to-br from-teal-900/45 via-slate-900/90 to-slate-900/70",
+    heading: "text-teal-100",
+    percent: "text-teal-200",
+  },
+};
+
+const DEFAULT_SUBJECT_THEME = {
+  subject: "border-slate-600/70 bg-gradient-to-br from-slate-900/70 via-slate-950 to-slate-900/80",
+  topic: "border-slate-600/70 bg-gradient-to-br from-slate-900/85 to-slate-900/60",
+  heading: "text-slate-100",
+  percent: "text-violet-100",
+};
+
 function getQuestionHistoryMap() {
   if (typeof window === "undefined") return {};
   try {
@@ -133,31 +209,39 @@ export default function TopicTracker({ onBack }) {
           </div>
         </div>
 
-        {topicsBySubject.map(({ ders, konular }) => (
-          <div key={ders} className="overflow-hidden rounded-3xl border border-slate-700/70 bg-slate-950/80 shadow-xl">
+        {topicsBySubject.map(({ ders, konular }) => {
+          const subjectTheme = SUBJECT_THEME_MAP[ders] || DEFAULT_SUBJECT_THEME;
+          return (
+          <div
+            key={ders}
+            className={`overflow-hidden rounded-3xl border shadow-xl ${subjectTheme.subject}`}
+          >
             <button
               onClick={() => toggleSubject(ders)}
-              className="flex w-full cursor-pointer items-center justify-between px-5 py-4 transition hover:bg-slate-900/80"
+              className="flex w-full cursor-pointer items-center justify-between px-5 py-4 transition hover:bg-black/20"
             >
               <div className="text-left">
-                <p className="text-base font-extrabold text-slate-100">{ders}</p>
-                <p className="text-xs text-slate-400">{konular.length} konu başlığı</p>
+                <p className={`text-base font-extrabold ${subjectTheme.heading}`}>{ders}</p>
+                <p className="text-xs text-slate-300/80">{konular.length} konu başlığı</p>
               </div>
               <span className="text-lg text-slate-300">{openSubjects[ders] ? "▴" : "▾"}</span>
             </button>
 
             {openSubjects[ders] && (
-              <div className="space-y-3 border-t border-slate-800 px-4 py-4 md:px-5">
+              <div className="space-y-3 border-t border-white/10 px-4 py-4 pl-6 md:px-5 md:pl-10">
                 {konular.map((konu) => {
                   const stats = getTopicStats(ders, konu, QUESTIONS, historyMap);
                   const solvedPercent = stats.total > 0 ? Math.round((stats.solvedCount / stats.total) * 100) : 0;
                   const warning = stats.solvedCount > 0 && (stats.percent ?? 0) < 20;
 
                   return (
-                    <div key={`${ders}-${konu}`} className="rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/90 to-slate-900/50 px-4 py-4">
+                    <div
+                      key={`${ders}-${konu}`}
+                      className={`rounded-2xl border px-4 py-4 backdrop-blur-[1px] transition-transform duration-200 ease-out will-change-transform active:scale-[0.995] md:hover:scale-[1.02] md:hover:-translate-x-1 ${subjectTheme.topic}`}
+                    >
                       <div className="flex flex-wrap items-start justify-between gap-2">
-                        <p className="font-bold text-slate-100">{konu}</p>
-                        <p className="text-sm font-bold text-violet-100">{stats.percent === null ? "-" : `%${stats.percent} doğru`}</p>
+                        <p className={`font-bold ${subjectTheme.heading}`}>{konu}</p>
+                        <p className={`text-sm font-bold ${subjectTheme.percent}`}>{stats.percent === null ? "-" : `%${stats.percent} doğru`}</p>
                       </div>
                       <p className="mt-1 text-sm text-slate-400">
                         {stats.solvedCount > 0
@@ -183,7 +267,7 @@ export default function TopicTracker({ onBack }) {
               </div>
             )}
           </div>
-        ))}
+        )})}
       </div>
     </div>
   );
