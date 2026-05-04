@@ -2,6 +2,8 @@
  * Tusoskop destek iletişimi — tek e-posta adresi.
  * Kodda e-posta string'i tekrarlanmamalı; buradan import edin.
  */
+import { encodeMailtoParamForOutlook } from "../utils/mailtoOutlookEncoding";
+
 export const SUPPORT_EMAIL = "tusoskop.destek@gmail.com";
 
 function accountBlock(user) {
@@ -10,11 +12,16 @@ function accountBlock(user) {
   return { email, uid };
 }
 
+/**
+ * mailto: konu ve gövde — Outlook Windows, UTF-8 %XX çözümünü yanlış yorumlayıp
+ * mojibake üretir; Windows-1254 baytına çevirip yüzde kodluyoruz.
+ */
 function mailtoUrl(subject, body) {
-  const params = new URLSearchParams();
-  params.set("subject", subject);
-  params.set("body", body);
-  return `mailto:${SUPPORT_EMAIL}?${params.toString()}`;
+  const q = [
+    `subject=${encodeMailtoParamForOutlook(subject)}`,
+    `body=${encodeMailtoParamForOutlook(body)}`,
+  ].join("&");
+  return `mailto:${SUPPORT_EMAIL}?${q}`;
 }
 
 /** Plus ödemesi / checkout sorunları için hazır şablon. */
