@@ -2,6 +2,8 @@ export const accentThemes = {
   light: {
     name: "Beyaz",
     mode: "light",
+    shellBg: "min-h-dvh bg-[#faf8f4] text-slate-950",
+    usesLightChrome: true,
     previewClass: "bg-white",
     primary: "bg-emerald-500",
     primaryHover: "hover:bg-emerald-400",
@@ -16,6 +18,8 @@ export const accentThemes = {
   emerald: {
     name: "Emerald",
     mode: "dark",
+    shellBg: "min-h-dvh bg-[#E29C53] text-slate-950",
+    usesLightChrome: true,
     previewClass: "bg-emerald-500",
     primary: "bg-emerald-500",
     primaryHover: "hover:bg-emerald-400",
@@ -30,6 +34,9 @@ export const accentThemes = {
   cyan: {
     name: "Cyan",
     mode: "dark",
+    shellBg:
+      "min-h-dvh text-white bg-[radial-gradient(120%_80%_at_50%_-20%,rgba(34,211,238,0.16),transparent_55%),#051018]",
+    usesLightChrome: false,
     previewClass: "bg-cyan-500",
     primary: "bg-cyan-500",
     primaryHover: "hover:bg-cyan-400",
@@ -44,6 +51,8 @@ export const accentThemes = {
   violet: {
     name: "Violet",
     mode: "dark",
+    shellBg: "min-h-dvh bg-[#5C3C2A] text-white",
+    usesLightChrome: false,
     previewClass: "bg-violet-500",
     primary: "bg-violet-500",
     primaryHover: "hover:bg-violet-400",
@@ -58,6 +67,9 @@ export const accentThemes = {
   amber: {
     name: "Amber",
     mode: "dark",
+    shellBg:
+      "min-h-dvh text-white bg-[radial-gradient(110%_75%_at_15%_-15%,rgba(251,191,36,0.14),transparent_55%),#12100c]",
+    usesLightChrome: false,
     previewClass: "bg-amber-400",
     primary: "bg-amber-400",
     primaryHover: "hover:bg-amber-300",

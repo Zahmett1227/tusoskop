@@ -37,10 +37,14 @@ export default function Dashboard({
   onOpenLegalPage,
 }) {
   const theme = accentTheme || accentThemes.emerald;
-  const isLightTheme = theme.mode === "light" || accentThemeKey === "light";
-  const pageClasses = isLightTheme
-    ? "min-h-dvh bg-[#faf8f4] text-slate-950"
-    : "min-h-dvh bg-slate-950 text-white";
+  const isLightTheme =
+    theme.usesLightChrome ??
+    (theme.mode === "light" || accentThemeKey === "light");
+  const pageClasses =
+    theme.shellBg ??
+    (isLightTheme
+      ? "min-h-dvh bg-[#faf8f4] text-slate-950"
+      : "min-h-dvh bg-slate-950 text-white");
   const cardBaseClasses = isLightTheme
     ? "bg-[#fffefb] border border-slate-300 shadow-md"
     : "bg-slate-900/40 border border-slate-800";
@@ -131,7 +135,7 @@ export default function Dashboard({
 
   return (
     <div
-      className={`${pageClasses} px-4 py-6 md:px-8 md:py-10 font-sans ${isLightTheme ? "" : theme.softBg}`}
+      className={`${pageClasses} px-4 py-6 md:px-8 md:py-10 font-sans`}
       style={{ paddingTop: "calc(1.5rem + env(safe-area-inset-top))" }}
     >
       <div className="max-w-6xl mx-auto">
