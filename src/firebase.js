@@ -6,6 +6,7 @@ import {
   signOut
 } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getFunctions } from "firebase/functions";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { trackClarityEvent } from "./lib/clarity";
 
@@ -27,7 +28,6 @@ export const googleProvider = new GoogleAuthProvider();
 export const loginWithGoogle = async () => {
   try {
     const result = await signInWithPopup(auth, googleProvider);
-    console.log("Giriş başarılı:", result.user);
     trackClarityEvent("login_basarili");
     return result.user;
   } catch (error) {
@@ -40,6 +40,7 @@ export const loginWithGoogle = async () => {
 export const logout = () => signOut(auth);
 
 export const db = getFirestore(app);
+export const functions = getFunctions(app);
 
 export const analytics = getAnalytics(app);
 logEvent(analytics, 'page_view');

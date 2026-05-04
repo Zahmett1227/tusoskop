@@ -1,0 +1,28 @@
+{
+  "subjects": [
+    "Fizyoloji",
+    "Patoloji",
+    "Farmakoloji",
+    "Mikrobiyoloji",
+    "Dahiliye",
+    "Pediatri",
+    "Kadın Hastalıkları ve Doğum",
+    "Küçük Stajlar",
+    "Biyokimya",
+    "Genel Cerrahi",
+    "Anatomi"
+  ],
+  "subjectBySlug": {
+    "fizyoloji": "Fizyoloji",
+    "patoloji": "Patoloji",
+    "farmakoloji": "Farmakoloji",
+    "mikrobiyoloji": "Mikrobiyoloji",
+    "dahiliye": "Dahiliye",
+    "pediatri": "Pediatri",
+    "kad_n_hastal_klar_ve_dogum": "Kadın Hastalıkları ve Doğum",
+    "kucuk_stajlar": "Küçük Stajlar",
+    "biyokimya": "Biyokimya",
+    "genel_cerrahi": "Genel Cerrahi",
+    "anatomi": "Anatomi"
+  }
+}

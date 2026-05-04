@@ -74,7 +74,7 @@ export default function PremiumInfoScreen({
     } catch (e) {
       console.error(e);
     }
-  }, [user?.uid]);
+  }, [user]);
 
   const handlePlanClick = useCallback(
     async (event, plan) => {

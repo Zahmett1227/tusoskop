@@ -8,7 +8,7 @@ import SubjectCard from "./SubjectCard";
 import TusCountDown from "./TusCountDown";
 import StreakBadge from "./StreakBadge";
 import { SUBJECTS } from "../data/subjects";
-import { QUESTIONS } from "../data/questions";
+import { useQuestions } from "../hooks/useQuestions";
 import { accentThemes } from "../theme/accentThemes";
 import { isUserPremium } from "../utils/premiumUtils";
 import {
@@ -36,6 +36,7 @@ export default function Dashboard({
   currentView = "dashboard",
   onOpenLegalPage,
 }) {
+  const { questions: QUESTIONS } = useQuestions();
   const theme = accentTheme || accentThemes.emerald;
   const isLightTheme =
     theme.usesLightChrome ??
@@ -62,11 +63,11 @@ export default function Dashboard({
   });
   const subjectCounts = useMemo(() => {
     const counts = {};
-    QUESTIONS.forEach((item) => {
+    (QUESTIONS || []).forEach((item) => {
       counts[item.ders] = (counts[item.ders] || 0) + 1;
     });
     return counts;
-  }, []);
+  }, [QUESTIONS]);
 
   useEffect(() => {
     if (!user?.uid) return;
@@ -93,7 +94,7 @@ export default function Dashboard({
       try {
         const [summary, queue] = await Promise.all([
           getStudyCollectionSummary(user, userData),
-          buildTodayReviewQueue(user, QUESTIONS, userData),
+          buildTodayReviewQueue(user, QUESTIONS || [], userData),
         ]);
         if (!active) return;
         setStudySummary({
@@ -110,7 +111,7 @@ export default function Dashboard({
     return () => {
       active = false;
     };
-  }, [user?.uid, currentView, userData]);
+  }, [user?.uid, currentView, userData, QUESTIONS]);
 
   const adjustTarget = (amount) => {
     setTempTarget(prev => {

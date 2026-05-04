@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { QUESTIONS } from "../data/questions";
+import { useQuestions } from "../hooks/useQuestions";
 
 const HISTORY_KEY = "tusoskop-question-history";
 const SUBJECT_ORDER = [
@@ -130,24 +130,27 @@ function getProgressColor(percent) {
 }
 
 export default function TopicTracker({ onBack }) {
+  const { questions: QUESTIONS } = useQuestions();
   const [openSubjects, setOpenSubjects] = useState({});
   const historyMap = useMemo(() => getQuestionHistoryMap(), []);
 
   const subjects = useMemo(() => {
-    const available = [...new Set(QUESTIONS.map((q) => q.ders))];
+    const list = QUESTIONS || [];
+    const available = [...new Set(list.map((q) => q.ders))];
     const sortedKnown = SUBJECT_ORDER.filter((name) => available.includes(name));
     const extras = available.filter((name) => !SUBJECT_ORDER.includes(name)).sort((a, b) => a.localeCompare(b, "tr"));
     return [...sortedKnown, ...extras];
-  }, []);
+  }, [QUESTIONS]);
 
   const topicsBySubject = useMemo(() => {
+    const list = QUESTIONS || [];
     return subjects.map((ders) => ({
       ders,
-      konular: [...new Set(QUESTIONS.filter((q) => q.ders === ders).map((q) => q.konu))].sort((a, b) =>
+      konular: [...new Set(list.filter((q) => q.ders === ders).map((q) => q.konu))].sort((a, b) =>
         a.localeCompare(b, "tr")
       ),
     }));
-  }, [subjects]);
+  }, [subjects, QUESTIONS]);
 
   const toggleSubject = (ders) => {
     setOpenSubjects((prev) => ({
@@ -157,13 +160,14 @@ export default function TopicTracker({ onBack }) {
   };
 
   const overallStats = useMemo(() => {
-    const totalQuestions = QUESTIONS.length;
+    const list = QUESTIONS || [];
+    const totalQuestions = list.length;
     const solvedCount = Object.keys(historyMap).length;
     const correctCount = Object.values(historyMap).filter((item) => item?.isCorrect).length;
     const accuracy = solvedCount > 0 ? Math.round((correctCount / solvedCount) * 100) : 0;
     const completion = totalQuestions > 0 ? Math.round((solvedCount / totalQuestions) * 100) : 0;
     return { totalQuestions, solvedCount, correctCount, accuracy, completion };
-  }, [historyMap]);
+  }, [historyMap, QUESTIONS]);
 
   return (
     <div className="min-h-screen bg-slate-950 px-4 py-6 text-slate-100">

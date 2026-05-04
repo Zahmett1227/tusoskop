@@ -87,8 +87,10 @@ service cloud.firestore {
       allow read, write: if isOwner(uid);
     }
 
+    // Usage sayaçları yalnızca Cloud Functions (Admin SDK) ile yazar; istemci manipülasyonu engellenir.
     match /users/{uid}/usage/{usageId} {
-      allow read, write: if isOwner(uid) || isAdmin();
+      allow read: if isOwner(uid) || isAdmin();
+      allow create, update, delete: if false;
     }
 
     match /users/{uid}/wrongQuestions/{questionId} {

@@ -239,8 +239,8 @@ export default function ExamScreen({
           if (userDoc.exists() && userDoc.data().targetScore) {
             setUserTarget(userDoc.data().targetScore);
           }
-        } catch (err) {
-          console.error("Hedef puan çekilemedi.");
+        } catch (e) {
+          console.error("Hedef puan çekilemedi.", e);
         }
       }
     };

@@ -1,11 +1,12 @@
 import React, { useMemo, useState, useEffect, useRef } from "react";
 import './index.css';
 import { auth, db, loginWithGoogle, logout } from "./firebase";
-import { onAuthStateChanged } from "firebase/auth";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 // Veri ve Yardımcı Araçlar
-import { QUESTIONS } from "./data/questions";
+import { useQuestions } from "./hooks/useQuestions";
+import { useAppAccentTheme } from "./hooks/useAppAccentTheme";
+import { useAppAuthBootstrap } from "./hooks/useAppAuthBootstrap";
 import { EXAM_SETS } from "./data/exams";
 import {
   buildFullExam,
@@ -16,15 +17,9 @@ import {
 } from "./utils/examUtils";
 import { updateStreak } from "./services/streakService";
 import { isIOS } from "./utils/device";
-import { accentThemes, getRandomAccentTheme } from "./theme/accentThemes";
-import {
-  identifyClarityUser,
-  setClarityTag,
-  trackClarityEvent,
-} from "./lib/clarity";
+import { setClarityTag, trackClarityEvent } from "./lib/clarity";
 import {
   addWrongQuestion,
-  getFavoriteQuestions,
   getWrongQuestions,
   toggleFavoriteQuestion,
   updateWrongQuestionAfterReview,
@@ -45,8 +40,6 @@ import TopicTracker from "./components/TopicTracker";
 import MobileBottomNav from "./components/MobileBottomNav";
 import IOSInstallBanner from "./components/IOSInstallBanner";
 import AdminPanel from "./components/admin/AdminPanel";
-import { isCurrentUserAdmin } from "./services/adminService";
-import { ensureUserDocument } from "./services/userService";
 import LimitReachedModal from "./components/premium/LimitReachedModal";
 import PremiumInfoScreen from "./components/premium/PremiumInfoScreen";
 import LegalPage from "./components/legal/LegalPage";
@@ -58,11 +51,12 @@ import {
   canStartFullExam,
   canStartReview,
   canStartTopicTest,
-  getRemainingFreeUsage,
   incrementFullExamUsage,
   incrementQuestionUsage,
   incrementReviewUsage,
   incrementTopicTestUsage,
+  UsageLimitError,
+  limitModalFromUsageError,
 } from "./services/usageLimitService";
 
 // TUS Deneme Dağılımı (Blueprint)
@@ -81,6 +75,7 @@ const BOTTOM_NAV_VIEWS = new Set([
   "tracker",
 ]);
 const QUESTION_HISTORY_KEY = "tusoskop-question-history";
+
 const isReactEventOrDomNode = (value) =>
   Boolean(
     value &&
@@ -100,36 +95,25 @@ const normalizeAnswerValue = (value) => {
 };
 
 export default function App() {
+  const { questions, loading: questionBankLoading, error: questionBankError } = useQuestions();
+  const QUESTIONS = questions ?? [];
+
   // iOS tespiti — ilk render'da hesapla, değişmez
   const [iosDevice] = useState(() => isIOS());
 
   // --- 1. KULLANICI VE NAVİGASYON ---
-  const [user, setUser] = useState(null);
-  const [userData, setUserData] = useState(null);
-  const [isAdmin, setIsAdmin] = useState(false);
   const [view, setView] = useState("dashboard");
   const legalReturnViewRef = useRef("dashboard");
   const [legalPageId, setLegalPageId] = useState(LEGAL_PAGES[0].id);
-  const [accentThemeKey, setAccentThemeKey] = useState(() => {
-    if (typeof window === "undefined") return "emerald";
-    const localKey = localStorage.getItem("tusoskop-accent-theme-preference");
-    if (localKey && accentThemes[localKey]) return localKey;
-    const sessionKey = sessionStorage.getItem("tusoskop-accent-theme");
-    if (sessionKey && accentThemes[sessionKey]) return sessionKey;
-    const randomKey = getRandomAccentTheme();
-    sessionStorage.setItem("tusoskop-accent-theme", randomKey);
-    return randomKey;
-  });
-  const accentTheme = accentThemes[accentThemeKey] || accentThemes.emerald;
-
-  const handleAccentThemeChange = (themeKey) => {
-    if (!accentThemes[themeKey]) return;
-    setAccentThemeKey(themeKey);
-    if (typeof window !== "undefined") {
-      sessionStorage.setItem("tusoskop-accent-theme", themeKey);
-      localStorage.setItem("tusoskop-accent-theme-preference", themeKey);
-    }
-  };
+  const { accentThemeKey, accentTheme, handleAccentThemeChange } = useAppAccentTheme();
+  const {
+    user,
+    userData,
+    isAdmin,
+    remainingUsage,
+    favoriteQuestionIds,
+    setFavoriteQuestionIds,
+  } = useAppAuthBootstrap(setView);
 
   // --- 2. ÇALIŞMA MODU (STUDY) STATE ---
   const [currentSubject, setCurrentSubject] = useState(null);
@@ -151,15 +135,13 @@ export default function App() {
     if (typeof window === "undefined") return 0;
     return Number(localStorage.getItem("tusoskop-best-streak") || 0);
   });
-  const [questionStartTime, setQuestionStartTime] = useState(Date.now());
+  const [questionStartTime, setQuestionStartTime] = useState(() => Date.now());
   const [questionTimes, setQuestionTimes] = useState({});
   const [studyFeedback, setStudyFeedback] = useState(null);
   const [topicMastery, setTopicMastery] = useState({});
   const [feedbackMeta, setFeedbackMeta] = useState({ count: 0, lastText: "", lastType: "", lastTopic: "" });
-  const [favoriteQuestionIds, setFavoriteQuestionIds] = useState(new Set());
   const [favoriteFeedback, setFavoriteFeedback] = useState("");
   const [reviewSummary, setReviewSummary] = useState(null);
-  const [remainingUsage, setRemainingUsage] = useState(null);
   const [limitModal, setLimitModal] = useState({
     open: false,
     title: "",
@@ -171,6 +153,25 @@ export default function App() {
     premiumDescription: "",
     limitReason: "",
   });
+
+  const openLimitFromUsageError = (error) => {
+    if (!(error instanceof UsageLimitError)) return false;
+    const base = limitModalFromUsageError(error.code);
+    setLimitModal({
+      open: true,
+      title: base.title,
+      description: base.description,
+      remainingInfo: "",
+      ctaLabel: "Plus'ı İncele",
+      secondaryLabel: "Şimdilik Vazgeç",
+      premiumMessage: "Aylık bir kahve ücretine Plus üyelik almak ister misiniz?",
+      premiumDescription:
+        "Plus ile soru çözme sınırları kalkar; denemeler, tekrarlar ve gelişmiş analizler tamamen açılır.",
+      limitReason: base.limitReason || "",
+    });
+    return true;
+  };
+
   const answeredQuestionIdsRef = useRef(new Set());
   const answeredReviewIdsRef = useRef(new Set());
 
@@ -216,75 +217,6 @@ export default function App() {
   const availableTopics = selectedLesson
     ? [...new Set(QUESTIONS.filter((item) => item.ders === selectedLesson).map((item) => item.konu))]
     : [];
-
-  // --- 6. FIREBASE AUTH TAKİBİ ---
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-      try {
-        if (currentUser?.uid) {
-          const ensured = await ensureUserDocument(currentUser);
-          setUserData(ensured);
-        }
-      } catch (error) {
-        console.error("User profile sync error:", error);
-      } finally {
-        setUser(currentUser);
-        if (!currentUser) {
-          setIsAdmin(false);
-          setUserData(null);
-          setView("dashboard");
-        }
-      }
-    });
-    return () => unsubscribe();
-  }, []);
-
-  useEffect(() => {
-    let active = true;
-    const loadAdmin = async () => {
-      if (!user?.uid) {
-        setIsAdmin(false);
-        return;
-      }
-      const admin = await isCurrentUserAdmin(user.uid);
-      if (active) setIsAdmin(admin);
-    };
-    loadAdmin();
-    return () => {
-      active = false;
-    };
-  }, [user?.uid]);
-
-  useEffect(() => {
-    let active = true;
-    const loadUsage = async () => {
-      const usage = await getRemainingFreeUsage(user, userData);
-      if (active) setRemainingUsage(usage);
-    };
-    loadUsage();
-    return () => {
-      active = false;
-    };
-  }, [user?.uid, userData?.plan, userData?.premiumStatus, userData?.premiumUntil, userData?.lifetimePremium]);
-
-  useEffect(() => {
-    if (user?.uid) {
-      identifyClarityUser(user.uid);
-    }
-  }, [user?.uid]);
-
-  useEffect(() => {
-    let active = true;
-    const loadFavorites = async () => {
-      const list = await getFavoriteQuestions(user);
-      if (!active) return;
-      setFavoriteQuestionIds(new Set(list.map((item) => Number(item.questionId))));
-    };
-    loadFavorites();
-    return () => {
-      active = false;
-    };
-  }, [user?.uid]);
 
   // --- 7. YARDIMCI FONKSİYONLAR ---
   const resetStudyState = () => {
@@ -338,6 +270,19 @@ export default function App() {
     }
     setView(nextView);
   };
+
+  const questionSetupNonPremiumHandledRef = useRef(false);
+  useEffect(() => {
+    if (view !== "questionSetup") {
+      questionSetupNonPremiumHandledRef.current = false;
+      return;
+    }
+    if (isUserPremium(userData)) return;
+    if (questionSetupNonPremiumHandledRef.current) return;
+    questionSetupNonPremiumHandledRef.current = true;
+    openSubjectTopicPlusGate();
+    setView("dashboard");
+  }, [view, userData]);
 
   const openLegalPage = (id) => {
     const valid = LEGAL_PAGES.some((p) => p.id === id) ? id : LEGAL_PAGES[0].id;
@@ -437,7 +382,12 @@ export default function App() {
       });
       return;
     }
-    await incrementTopicTestUsage(user, userData);
+    try {
+      await incrementTopicTestUsage(user, userData);
+    } catch (err) {
+      if (openLimitFromUsageError(err)) return;
+      throw err;
+    }
     trackClarityEvent("konu_testi_baslatildi");
     setClarityTag("son_ders", selectedLesson);
     setClarityTag("son_konu", selectedTopic);
@@ -473,7 +423,12 @@ export default function App() {
     const scaledBlueprint = scaleBlueprintToTotal(FULL_EXAM_BLUEPRINT, totalQuestions);
     const exam = buildFullExam(QUESTIONS, scaledBlueprint);
     if (!exam.length) return;
-    await incrementFullExamUsage(user, userData);
+    try {
+      await incrementFullExamUsage(user, userData);
+    } catch (err) {
+      if (openLimitFromUsageError(err)) return;
+      throw err;
+    }
     trackClarityEvent("deneme_baslatildi");
     setClarityTag("son_mod", "deneme");
     setSelectedExamSet(activeSet);
@@ -663,7 +618,12 @@ export default function App() {
           });
           return;
         }
-        await incrementQuestionUsage(user, userData, 1);
+        try {
+          await incrementQuestionUsage(user, userData, 1);
+        } catch (err) {
+          if (openLimitFromUsageError(err)) return;
+          throw err;
+        }
         answeredQuestionIdsRef.current.add(questionId);
       }
 
@@ -679,7 +639,12 @@ export default function App() {
           });
           return;
         }
-        await incrementReviewUsage(user, userData, 1);
+        try {
+          await incrementReviewUsage(user, userData, 1);
+        } catch (err) {
+          if (openLimitFromUsageError(err)) return;
+          throw err;
+        }
         answeredReviewIdsRef.current.add(questionId);
       }
     }
@@ -722,7 +687,7 @@ export default function App() {
     if (user) updateStreak(user.uid);
     if (studyMode === "review") {
       if (answer !== null && answer !== undefined && q?.id) {
-        await updateWrongQuestionAfterReview(user, q, isCorrect, answer);
+        await updateWrongQuestionAfterReview(user, q, isCorrect, answer, userData);
       }
     } else if (isWrong && q?.id) {
       await addWrongQuestion(user, q, answer, userData);
@@ -936,6 +901,70 @@ export default function App() {
     );
   }
 
+  if (questionBankLoading && QUESTIONS.length === 0) {
+    return (
+      <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
+        <div
+          className="flex flex-col items-center justify-center bg-slate-950 text-white p-6 min-h-dvh gap-6"
+          style={{ paddingTop: "calc(2rem + env(safe-area-inset-top))" }}
+        >
+          <div className="h-20 w-20 md:h-24 md:w-24 rounded-2xl overflow-hidden shadow-lg shadow-black/20">
+            <img
+              src="/tusoskop-mark.png"
+              alt=""
+              width={96}
+              height={96}
+              decoding="async"
+              className="h-full w-full object-contain"
+              aria-hidden
+            />
+          </div>
+          <div
+            className="h-10 w-10 rounded-full border-2 border-slate-600 border-t-emerald-400 animate-spin"
+            aria-hidden
+          />
+          <p className="text-slate-400 text-sm">Soru bankası yükleniyor…</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!questionBankLoading && QUESTIONS.length === 0 && questionBankError) {
+    return (
+      <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
+        <div className="flex flex-col items-center justify-center bg-slate-950 text-white p-6 min-h-dvh gap-4 text-center max-w-sm">
+          <p className="text-slate-300">Soru bankası yüklenemedi. Bağlantınızı kontrol edip tekrar deneyin.</p>
+          <button
+            type="button"
+            onClick={() => window.location.reload()}
+            className="px-5 py-2.5 rounded-2xl bg-white/10 font-semibold hover:bg-white/15"
+          >
+            Yenile
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (!questionBankLoading && QUESTIONS.length === 0) {
+    return (
+      <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
+        <div className="flex flex-col items-center justify-center bg-slate-950 text-white p-6 min-h-dvh gap-4 text-center max-w-md">
+          <p className="text-slate-300">
+            Soru verisi bulunamadı. Uygulama yapılandırmasını veya ağ erişimini kontrol edin.
+          </p>
+          <button
+            type="button"
+            onClick={() => window.location.reload()}
+            className="px-5 py-2.5 rounded-2xl bg-white/10 font-semibold hover:bg-white/15"
+          >
+            Yenile
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   // --- 10. ANA YÖNLENDİRME (ROUTING) ---
   const showBottomNav = BOTTOM_NAV_VIEWS.has(view);
   let screenContent;
@@ -962,7 +991,6 @@ export default function App() {
 
     case "questionSetup":
       if (!isUserPremium(userData)) {
-        openSubjectTopicPlusGate();
         screenContent = (
           <Dashboard
             setView={guardedSetView}
@@ -1118,7 +1146,7 @@ export default function App() {
       ) : (
         <div className="min-h-dvh bg-slate-950 text-white p-6 flex items-center justify-center">
           <div className="max-w-md w-full rounded-3xl border border-slate-800 bg-slate-900/60 p-6 text-center">
-            <h2 className="text-xl font-black mb-2">Bu alan icin yetkin yok</h2>
+            <h2 className="text-xl font-black mb-2">Bu alan için yetkin yok</h2>
             <p className="text-slate-400 text-sm mb-5">
               Admin paneline erişim sadece yetkili hesaplara açıktır.
             </p>
@@ -1166,6 +1194,7 @@ export default function App() {
           startSubject={startSubject}
           user={user}
           userData={userData}
+          remainingUsage={remainingUsage}
           onLogout={logout}
           isAdmin={isAdmin}
           accentTheme={accentTheme}

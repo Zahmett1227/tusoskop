@@ -1,9 +1,22 @@
-import { db } from "../firebase";
-import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
+import { httpsCallable } from "firebase/functions";
+import { db, functions } from "../firebase";
 import { FREE_LIMITS } from "../config/limits";
 import { isUserPremium } from "../utils/premiumUtils";
 
 const USAGE_KEY = "tusoskopUsage";
+
+export class UsageLimitError extends Error {
+  /**
+   * @param {string} code - Server or logical limit code
+   * @param {string} [message]
+   */
+  constructor(code, message) {
+    super(message || code);
+    this.name = "UsageLimitError";
+    this.code = code;
+  }
+}
 
 export const getTodayKey = () => new Date().toISOString().slice(0, 10);
 export const getMonthKey = () => new Date().toISOString().slice(0, 7);
@@ -55,6 +68,20 @@ const getLocalMonthlyUsage = () => {
   };
 };
 
+let incrementUsageCallable = null;
+function getIncrementUsageCallable() {
+  if (!incrementUsageCallable) {
+    incrementUsageCallable = httpsCallable(functions, "incrementUsage");
+  }
+  return incrementUsageCallable;
+}
+
+async function invokeIncrementUsage(payload) {
+  const callable = getIncrementUsageCallable();
+  const result = await callable(payload);
+  return result.data;
+}
+
 export async function getUserUsage(user) {
   const todayKey = getTodayKey();
   const monthKey = getMonthKey();
@@ -67,22 +94,19 @@ export async function getUserUsage(user) {
   const ref = doc(db, "users", user.uid, "usage", `usage_${todayKey}`);
   try {
     const snap = await getDoc(ref);
-    const usage = snap.exists() ? safeUsage(snap.data()) : safeUsage({ dateKey: todayKey, monthKey });
+    if (!snap.exists()) {
+      return safeUsage({ dateKey: todayKey, monthKey });
+    }
+    const usage = safeUsage(snap.data());
     if (usage.dateKey !== todayKey || usage.monthKey !== monthKey) {
-      usage.dateKey = todayKey;
-      usage.monthKey = monthKey;
-      usage.questionCount = 0;
-      usage.topicTestCount = 0;
-      usage.reviewQuestionCount = 0;
-      usage.fullExamCount = 0;
-      await setDoc(
-        ref,
-        {
-          ...usage,
-          updatedAt: serverTimestamp(),
-        },
-        { merge: true }
-      );
+      return safeUsage({
+        dateKey: todayKey,
+        monthKey,
+        questionCount: 0,
+        topicTestCount: 0,
+        reviewQuestionCount: 0,
+        fullExamCount: 0,
+      });
     }
     return usage;
   } catch (error) {
@@ -90,30 +114,6 @@ export async function getUserUsage(user) {
     const localUsage = getLocalUsage();
     setLocalUsage(localUsage);
     return localUsage;
-  }
-}
-
-async function saveUserUsage(user, usage) {
-  const normalized = safeUsage(usage);
-  if (!user?.uid) {
-    setLocalUsage(normalized);
-    return normalized;
-  }
-  const ref = doc(db, "users", user.uid, "usage", `usage_${normalized.dateKey}`);
-  try {
-    await setDoc(
-      ref,
-      {
-        ...normalized,
-        updatedAt: serverTimestamp(),
-      },
-      { merge: true }
-    );
-    return normalized;
-  } catch (error) {
-    console.error("saveUserUsage fallback to localStorage:", error);
-    setLocalUsage(normalized);
-    return normalized;
   }
 }
 
@@ -148,33 +148,7 @@ async function getMonthlyFullExamUsage(user) {
   }
 }
 
-async function saveMonthlyFullExamUsage(user, fullExamCount) {
-  const monthKey = getMonthKey();
-  if (!user?.uid) {
-    const local = getLocalUsage();
-    setLocalUsage({ ...local, monthKey, fullExamCount: Number(fullExamCount || 0) });
-    return;
-  }
-
-  const ref = doc(db, "users", user.uid, "usage", `usage_month_${monthKey}`);
-  try {
-    await setDoc(
-      ref,
-      {
-        monthKey,
-        fullExamCount: Number(fullExamCount || 0),
-        updatedAt: serverTimestamp(),
-      },
-      { merge: true }
-    );
-  } catch (error) {
-    console.error("saveMonthlyFullExamUsage fallback to localStorage:", error);
-    const local = getLocalUsage();
-    setLocalUsage({ ...local, monthKey, fullExamCount: Number(fullExamCount || 0) });
-  }
-}
-
-const passIfPremium = (userData) => isUserPremium(userData) ? { allowed: true } : null;
+const passIfPremium = (userData) => (isUserPremium(userData) ? { allowed: true } : null);
 
 export async function canAnswerQuestion(user, userData) {
   if (passIfPremium(userData)) return { allowed: true };
@@ -189,9 +163,14 @@ export async function canAnswerQuestion(user, userData) {
 
 export async function incrementQuestionUsage(user, userData, count = 1) {
   if (passIfPremium(userData)) return null;
-  const usage = await getUserUsage(user);
-  usage.questionCount += Number(count || 0);
-  return saveUserUsage(user, usage);
+  const data = await invokeIncrementUsage({
+    type: "question",
+    delta: Number(count || 0) || 1,
+  });
+  if (!data.success) {
+    throw new UsageLimitError(data.code || "daily_question_limit", data.message);
+  }
+  return data.usage ? safeUsage(data.usage) : null;
 }
 
 export async function canStartTopicTest(user, userData) {
@@ -207,9 +186,11 @@ export async function canStartTopicTest(user, userData) {
 
 export async function incrementTopicTestUsage(user, userData) {
   if (passIfPremium(userData)) return null;
-  const usage = await getUserUsage(user);
-  usage.topicTestCount += 1;
-  return saveUserUsage(user, usage);
+  const data = await invokeIncrementUsage({ type: "topicTest" });
+  if (!data.success) {
+    throw new UsageLimitError(data.code || "daily_topic_test_limit", data.message);
+  }
+  return data.usage ? safeUsage(data.usage) : null;
 }
 
 export async function canStartFullExam(user, userData) {
@@ -225,10 +206,11 @@ export async function canStartFullExam(user, userData) {
 
 export async function incrementFullExamUsage(user, userData) {
   if (passIfPremium(userData)) return null;
-  const usage = await getMonthlyFullExamUsage(user);
-  const next = Number(usage.fullExamCount || 0) + 1;
-  await saveMonthlyFullExamUsage(user, next);
-  return { monthKey: usage.monthKey, fullExamCount: next };
+  const data = await invokeIncrementUsage({ type: "fullExam" });
+  if (!data.success) {
+    throw new UsageLimitError(data.code || "monthly_exam_limit", data.message);
+  }
+  return { monthKey: getMonthKey(), fullExamCount: data.fullExamCount };
 }
 
 export async function canStartReview(user, userData, requestedCount = 1) {
@@ -246,9 +228,14 @@ export async function canStartReview(user, userData, requestedCount = 1) {
 
 export async function incrementReviewUsage(user, userData, count = 1) {
   if (passIfPremium(userData)) return null;
-  const usage = await getUserUsage(user);
-  usage.reviewQuestionCount += Number(count || 0);
-  return saveUserUsage(user, usage);
+  const data = await invokeIncrementUsage({
+    type: "review",
+    delta: Number(count || 0) || 1,
+  });
+  if (!data.success) {
+    throw new UsageLimitError(data.code || "daily_review_limit", data.message);
+  }
+  return data.usage ? safeUsage(data.usage) : null;
 }
 
 export async function getRemainingFreeUsage(user, userData) {
@@ -262,4 +249,44 @@ export async function getRemainingFreeUsage(user, userData) {
     reviewRemaining: Math.max(0, FREE_LIMITS.dailyReviewQuestions - usage.reviewQuestionCount),
     fullExamRemaining: Math.max(0, FREE_LIMITS.monthlyFullExams - monthlyUsage.fullExamCount),
   };
+}
+
+/** UI metinleri — App.jsx limit modal ile uyumlu */
+export function limitModalFromUsageError(code) {
+  switch (code) {
+    case "daily_question_limit":
+      return {
+        title: "Bugünkü ücretsiz soru hakkın doldu",
+        description:
+          "Free planda günde 30 soru çözebilirsin. Plus ile sınırsız soru, deneme ve tekrar açılır.",
+        limitReason: "daily_question_limit",
+      };
+    case "daily_topic_test_limit":
+      return {
+        title: "Günlük konu testi limitine ulaştın",
+        description:
+          "Free planda günde en fazla 2 konu testi başlatabilirsin. Plus ile sınırsız konu testi açılır.",
+        limitReason: "daily_topic_test_limit",
+      };
+    case "monthly_exam_limit":
+      return {
+        title: "Bu ayki ücretsiz deneme hakkını kullandın",
+        description:
+          "Free planda ayda 1 tam deneme çözebilirsin. Plus ile sınırsız deneme ve gelişmiş analiz açılır.",
+        limitReason: "monthly_exam_limit",
+      };
+    case "daily_review_limit":
+      return {
+        title: "Bugünkü ücretsiz tekrar hakkın doldu",
+        description:
+          "Free planda günde 10 tekrar sorusu çözebilirsin. Plus ile tekrar kuyruğun sınırsız açılır.",
+        limitReason: "daily_review_limit_study",
+      };
+    default:
+      return {
+        title: "Limit aşıldı",
+        description: "Bugünkü kullanım limitine ulaştın.",
+        limitReason: "unknown_limit",
+      };
+  }
 }
