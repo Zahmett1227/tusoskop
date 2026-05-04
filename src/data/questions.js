@@ -50670,5 +50670,2597 @@ exp: "Spironolakton (ve Eplerenon), bir Potasyum Tutucu Diüretik (Aldosteron An
     ],
     "correct": 2,
     "exp": "Gutta monosodyum ürat kristalleri iğne şeklinde ve negatif çift kırılımlıdır. Psödogutta kalsiyum pirofosfat kristalleri romboid ve pozitif çift kırılımlıdır."
+  },
+  {
+    "id": 3168,
+    "ders": "Farmakoloji",
+    "konu": "Genel Farmakoloji",
+    "diff": 4,
+    "q": "72 yaşında erkek hasta, bilinen siroz ve hipoalbüminemisi nedeniyle takip edilirken 2 gündür artan uyku hali ve dengesizlik şikayetiyle getiriliyor. Düşük doz başlanmasına rağmen yeni verilen yüksek protein bağlanmalı antiepileptikten sonra belirgin toksisite gelişiyor. Bu hastada toksisiteyi en iyi açıklayan farmakokinetik değişiklik hangisidir?",
+    "options": [
+      "İlacın serbest fraksiyonunun artması",
+      "İlacın renal tübüler sekresyonunun artması",
+      "İlacın presistemik eliminasyonunun azalması",
+      "İlacın reseptöre intrinsik aktivitesinin artması",
+      "İlacın enterohepatik dolaşımının kesilmesi"
+    ],
+    "correct": 0,
+    "exp": "Hipoalbüminemide yüksek oranda albümine bağlanan ilaçların serbest fraksiyonu artar. Total plazma düzeyi normal görünse bile farmakolojik etki ve toksisite belirginleşebilir."
+  },
+  {
+    "id": 3169,
+    "ders": "Farmakoloji",
+    "konu": "Genel Farmakoloji",
+    "diff": 4,
+    "q": "58 yaşında kadın hasta, bilinen aterosklerotik koroner arter hastalığı nedeniyle stent takıldıktan sonra 10 gündür klopidogrel kullanıyor. Son 2 gündür göğüs ağrısı şikayeti tekrarlayan hastada ilaç uyumu tam olmasına rağmen trombosit inhibisyonu beklenenden düşük bulunuyor. Bu durumda en olası neden hangisidir?",
+    "options": [
+      "CYP2C19 aktivitesinin azalması",
+      "P-glikoprotein inhibisyonu",
+      "Asetilkolinesteraz aktivitesinin artması",
+      "Glukuronidasyon hızının artması",
+      "Renal geri emilimin azalması"
+    ],
+    "correct": 0,
+    "exp": "Klopidogrel bir ön ilaçtır ve aktif metabolite dönüşmesi için özellikle CYP2C19 gerekir. CYP2C19 fonksiyon kaybı, beklenen antitrombosit etkinin azalmasına yol açabilir."
+  },
+  {
+    "id": 3170,
+    "ders": "Farmakoloji",
+    "konu": "Genel Farmakoloji",
+    "diff": 4,
+    "q": "66 yaşında erkek hasta, bilinen atriyal fibrilasyon nedeniyle warfarin kullanırken tüberküloz tedavisi başlanmasından 3 hafta sonra bacakta şişlik ve nefes darlığı şikayetiyle başvuruyor. INR değeri belirgin düşmüş saptanıyor. Bu etkileşim en çok hangi süreçle açıklanır?",
+    "options": [
+      "Karaciğer mikrozomal enzim indüksiyonu",
+      "Plazma proteinlerine bağlanmanın tamamen engellenmesi",
+      "Vitamin K epoksit redüktazın direkt aktivasyonu",
+      "Glomerüler filtrasyonun akut azalması",
+      "Safra ile atılımın blokajı"
+    ],
+    "correct": 0,
+    "exp": "Rifampisin güçlü bir CYP indükleyicisidir. Warfarinin metabolizmasını artırarak INR'yi düşürebilir ve tromboembolik risk oluşturabilir."
+  },
+  {
+    "id": 3171,
+    "ders": "Farmakoloji",
+    "konu": "Genel Farmakoloji",
+    "diff": 3,
+    "q": "45 yaşında kadın hasta, bilinen bipolar bozukluk nedeniyle lityum kullanırken 5 gündür kusma ve ishal sonrası ellerde titreme, konuşmada yavaşlama ve bilinç bulanıklığı şikayeti gelişiyor. Serum düzeyi toksik aralıkta bulunan bu ilaç için dağılım özelliği açısından en doğru ifade hangisidir?",
+    "options": [
+      "Toplam vücut suyuna benzer dağılım gösterir",
+      "Yağ dokusunda belirgin depolanır",
+      "Plazma proteinlerine çok yüksek oranda bağlanır",
+      "Sadece intravasküler alanda kalır",
+      "Kemik matriksinde irreversibl birikir"
+    ],
+    "correct": 0,
+    "exp": "Lityum küçük bir katyondur, proteinlere anlamlı bağlanmaz ve total vücut suyuna benzer dağılır. Dehidratasyon renal geri emilimi artırarak toksisiteyi kolaylaştırır."
+  },
+  {
+    "id": 3172,
+    "ders": "Farmakoloji",
+    "konu": "Genel Farmakoloji",
+    "diff": 4,
+    "q": "37 yaşında erkek hasta, bilinen epilepsi nedeniyle fenitoin kullanırken 1 haftadır çift görme ve ataksi şikayeti yaşıyor. Dozda küçük bir artış yapılmasına rağmen serum düzeyi beklenenden çok yükselmiş. Bu tablo en iyi hangi kinetik özellik ile açıklanır?",
+    "options": [
+      "Doygunluğa yaklaşınca sıfır derece eliminasyona geçmesi",
+      "İlacın yalnızca pasif difüzyonla atılması",
+      "Reseptör rezervinin tamamen tükenmesi",
+      "Bağırsakta iyon tuzağına uğraması",
+      "İlacın aktif metabolitinin olmaması"
+    ],
+    "correct": 0,
+    "exp": "Fenitoin terapötik aralığa yakın dozlarda metabolizma enzimlerini doyurabilir. Bu nedenle küçük doz artışları serum düzeyinde orantısız yükselme ve toksisite yapabilir."
+  },
+  {
+    "id": 3173,
+    "ders": "Farmakoloji",
+    "konu": "Genel Farmakoloji",
+    "diff": 4,
+    "q": "29 yaşında kadın hasta, bilinen depresyon öyküsü nedeniyle izlenirken 6 saattir kulak çınlaması, takipne ve bulantı şikayetiyle acile geliyor. Salisilat alımı düşündüren tabloda idrar alkalinizasyonu planlanıyor. Bu yaklaşım ilacın atılımını hangi ilkeye dayanarak artırır?",
+    "options": [
+      "Zayıf asit formun idrarda iyonize edilmesi",
+      "Zayıf baz formun mideye hapsedilmesi",
+      "Plazma protein bağının artırılması",
+      "Hepatik ilk geçişin hızlandırılması",
+      "Dağılım hacminin büyütülmesi"
+    ],
+    "correct": 0,
+    "exp": "Salisilat zayıf asittir. İdrarın alkalileştirilmesi iyonize formu artırır; iyonize molekül tübülden geri emilemez ve atılımı artar."
+  },
+  {
+    "id": 3174,
+    "ders": "Farmakoloji",
+    "konu": "Genel Farmakoloji",
+    "diff": 3,
+    "q": "Kompetitif antagonistin doz-cevap eğrisinde beklenen temel değişiklik hangisidir?",
+    "options": [
+      "Eğri sağa kayar, maksimum etki korunur",
+      "Eğri sola kayar, maksimum etki artar",
+      "Maksimum etki azalır, EC50 değişmez",
+      "Ters agonist etki ortaya çıkar",
+      "Terapötik indeks sıfıra yaklaşır"
+    ],
+    "correct": 0,
+    "exp": "Reversibl kompetitif antagonizmada agonist dozu artırılarak blokaj aşılabilir. Bu yüzden potensi azalır, eğri sağa kayar; Emax genellikle korunur."
+  },
+  {
+    "id": 3175,
+    "ders": "Farmakoloji",
+    "konu": "Genel Farmakoloji",
+    "diff": 4,
+    "q": "Parsiyel agonist, tam agonist varlığında klinik olarak nasıl davranabilir?",
+    "options": [
+      "Fonksiyonel antagonist gibi davranabilir",
+      "Emax değerini her durumda artırır",
+      "Reseptöre bağlanmaz",
+      "Sadece enzim indüksiyonu yapar",
+      "Agonistin yarı ömrünü uzatır"
+    ],
+    "correct": 0,
+    "exp": "Parsiyel agonist reseptöre bağlanır ancak intrinsik aktivitesi düşüktür. Tam agonistle aynı reseptör için yarıştığında toplam yanıtı azaltabilir."
+  },
+  {
+    "id": 3176,
+    "ders": "Farmakoloji",
+    "konu": "Genel Farmakoloji",
+    "diff": 3,
+    "q": "Bir ilacın terapötik indeksinin dar olması neyi ifade eder?",
+    "options": [
+      "Etkili doz ile toksik doz aralığının küçük olduğunu",
+      "İlacın sadece reseptör dışı etki yaptığını",
+      "Biyoyararlanımının sıfıra yakın olduğunu",
+      "Dağılım hacminin plazma hacmine eşit olduğunu",
+      "İlacın yalnızca idrarla atıldığını"
+    ],
+    "correct": 0,
+    "exp": "Dar terapötik indeks, etkili konsantrasyon ile toksik konsantrasyon arasında küçük güvenlik aralığı olduğunu gösterir. Warfarin, lityum, digoksin gibi ilaçlarda izlem önemlidir."
+  },
+  {
+    "id": 3177,
+    "ders": "Farmakoloji",
+    "konu": "Otonom Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "34 yaşında erkek hasta, bilinen kronik hastalığı yokken tarım ilacı maruziyetinden 1 saat sonra aşırı terleme, ishal, bronkore ve nefes darlığı şikayetiyle getiriliyor. Pupiller miyotik, kalp hızı 42/dk. Atropine eklenen pralidoksimin erken verilmesinin temel gerekçesi hangisidir?",
+    "options": [
+      "Fosforile asetilkolinesterazı yaşlanmadan önce reaktive etmesi",
+      "Muskarinik reseptörleri irreversibl bloke etmesi",
+      "Nikotinik reseptörleri sürekli uyararak depolarizasyon yapması",
+      "Asetilkolin sentezini vezikülde durdurması",
+      "Kolinin presinaptik geri alımını artırması"
+    ],
+    "correct": 0,
+    "exp": "Organofosfatlar asetilkolinesterazı fosforile eder. Pralidoksim yaşlanma gelişmeden önce enzimi reaktive edebilir; atropin ise muskarinik bulguları antagonize eder."
+  },
+  {
+    "id": 3178,
+    "ders": "Farmakoloji",
+    "konu": "Otonom Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "51 yaşında kadın hasta, bilinen hipertansiyonu varken 6 aydır ataklar halinde baş ağrısı, çarpıntı ve terleme şikayeti yaşıyor. Feokromositoma nedeniyle cerrahi planlanıyor. Tedavi hazırlığında beta blokerden önce başlanması gereken ilaç grubunun öncelikli amacı hangisidir?",
+    "options": [
+      "Alfa reseptör aracılı vazokonstriksiyonu kontrol altına almak",
+      "Renin salınımını doğrudan artırmak",
+      "Beta-2 reseptörleri uyararak bronkodilatasyon yapmak",
+      "Katekolamin sentezini tirozin düzeyinde artırmak",
+      "Ganglionik nikotinik reseptörleri aktive etmek"
+    ],
+    "correct": 0,
+    "exp": "Feokromositomada önce alfa blokaj yapılır. Önce beta blokaj verilirse beta-2 vazodilatasyon da engellenir ve karşılıksız alfa etkisiyle hipertansif kriz gelişebilir."
+  },
+  {
+    "id": 3179,
+    "ders": "Farmakoloji",
+    "konu": "Otonom Sinir Sistemi Farmakolojisi",
+    "diff": 3,
+    "q": "67 yaşında erkek hasta, bilinen KOAH ve açık açılı glokom nedeniyle takip edilirken 4 gündür artan hışıltı ve nefes darlığı şikayeti yaşıyor. Göz damlası olarak timolol başlandığı öğreniliyor. Bu yan etki en çok hangi reseptör blokajıyla ilişkilidir?",
+    "options": [
+      "Beta-2 reseptör blokajı",
+      "Alfa-1 reseptör blokajı",
+      "Muskarinik M1 blokajı",
+      "Dopamin D2 blokajı",
+      "Nikotinik Nm blokajı"
+    ],
+    "correct": 0,
+    "exp": "Timolol nonselektif beta blokerdir. Topikal kullanılsa bile sistemik emilip beta-2 blokajı ile bronkospazmı kötüleştirebilir."
+  },
+  {
+    "id": 3180,
+    "ders": "Farmakoloji",
+    "konu": "Otonom Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "42 yaşında kadın hasta, bilinen myastenia gravis nedeniyle piridostigmin kullanırken 1 gündür ishal, kramp tarzı karın ağrısı, tükürük artışı ve kas güçsüzlüğünde belirginleşme şikayetiyle başvuruyor. Bu tabloyu en iyi açıklayan durum hangisidir?",
+    "options": [
+      "Asetilkolin fazlalığına bağlı kolinerjik kriz",
+      "Postsinaptik dopamin reseptör aşırı duyarlılığı",
+      "Alfa-1 reseptör blokajına bağlı ortostaz",
+      "Beta-1 reseptör aşırı uyarımı",
+      "GABA-A reseptör negatif modülasyonu"
+    ],
+    "correct": 0,
+    "exp": "Asetilkolinesteraz inhibitörlerinin fazlalığı muskarinik bulgular ve nikotinik kavşakta güçsüzlükle kolinerjik kriz yapabilir. Klinik olarak myastenik krizden ayrılması gerekir."
+  },
+  {
+    "id": 3181,
+    "ders": "Farmakoloji",
+    "konu": "Otonom Sinir Sistemi Farmakolojisi",
+    "diff": 3,
+    "q": "70 yaşında erkek hasta, bilinen benign prostat hiperplazisi varken 2 gündür soğuk algınlığı için aldığı burun açıcı ilaçtan sonra idrar yapamama ve suprapubik ağrı şikayetiyle geliyor. Yakınmayı en olası artıran etki hangisidir?",
+    "options": [
+      "Alfa-1 reseptör uyarımı",
+      "M3 reseptör uyarımı",
+      "Beta-2 reseptör blokajı",
+      "D2 reseptör agonizmi",
+      "Nikotinik ganglion blokajı"
+    ],
+    "correct": 0,
+    "exp": "Psödoefedrin gibi sempatomimetikler alfa-1 reseptörleri uyararak mesane boynu ve prostat düz kas tonusunu artırır; BPH'de idrar retansiyonu gelişebilir."
+  },
+  {
+    "id": 3182,
+    "ders": "Farmakoloji",
+    "konu": "Otonom Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "56 yaşında kadın hasta, bilinen dirençli hipertansiyon nedeniyle klonidin kullanırken ilacını 3 gündür alamıyor. Şiddetli baş ağrısı, çarpıntı ve 220/120 mmHg tansiyon şikayetiyle acile geliyor. Bu tablonun temel nedeni hangisidir?",
+    "options": [
+      "Santral sempatik çıkışın rebound artması",
+      "Postsinaptik alfa-1 reseptörlerin irreversibl blokajı",
+      "Parasempatik ganglionların kalıcı aktivasyonu",
+      "Renal prostaglandin sentezinin artması",
+      "Beta-2 reseptörlerin seçici baskılanması"
+    ],
+    "correct": 0,
+    "exp": "Klonidin santral alfa-2 agonisttir ve sempatik tonusu azaltır. Ani kesilmesi rebound sempatik aktivite ve hipertansif kriz yapabilir."
+  },
+  {
+    "id": 3183,
+    "ders": "Farmakoloji",
+    "konu": "Otonom Sinir Sistemi Farmakolojisi",
+    "diff": 5,
+    "q": "48 yaşında erkek hasta, bilinen depresyon nedeniyle izlenirken 4 saattir hipotansiyon ve uyku hali şikayetiyle getiriliyor. Acilde vazopressör olarak adrenalin verildikten sonra tansiyonu daha da düşüyor; öyküde fenoksibenzamin kullanımı öğreniliyor. Bu beklenmeyen yanıtın nedeni hangisidir?",
+    "options": [
+      "Beta-2 vazodilatasyonun alfa etkisine baskın kalması",
+      "Beta-1 reseptörlerin irreversibl blokajı",
+      "Muskarinik M2 reseptörlerinin aşırı uyarılması",
+      "Nikotinik ganglionların reaktivasyonu",
+      "Dopamin D1 reseptörlerinin inhibisyonu"
+    ],
+    "correct": 0,
+    "exp": "Alfa reseptörler bloke edilince adrenalinin alfa-1 vazokonstriktör etkisi kaybolur; beta-2 aracılı vazodilatasyon belirginleşir. Buna epinefrin reversalı denir."
+  },
+  {
+    "id": 3184,
+    "ders": "Farmakoloji",
+    "konu": "Otonom Sinir Sistemi Farmakolojisi",
+    "diff": 3,
+    "q": "Muskarinik M3 reseptör aktivasyonunda beklenen hücre içi yolak hangisidir?",
+    "options": [
+      "Gq aracılığıyla IP3/DAG artışı",
+      "Gi aracılığıyla cAMP artışı",
+      "Gs aracılığıyla potasyum kanalı açılması",
+      "Tirozin kinaz aktivasyonu",
+      "Nükleer reseptör üzerinden transkripsiyon baskılanması"
+    ],
+    "correct": 0,
+    "exp": "M1, M3 ve M5 reseptörleri Gq ile çalışır; fosfolipaz C aktivasyonu, IP3/DAG artışı ve hücre içi kalsiyum yükselmesi olur."
+  },
+  {
+    "id": 3185,
+    "ders": "Farmakoloji",
+    "konu": "Otonom Sinir Sistemi Farmakolojisi",
+    "diff": 3,
+    "q": "Otonom ganglionlardaki nikotinik reseptörler hangi reseptör sınıfındadır?",
+    "options": [
+      "Ligand kapılı iyon kanalı",
+      "G protein bağlı reseptör",
+      "Nükleer hormon reseptörü",
+      "Reseptör tirozin kinaz",
+      "JAK-STAT ilişkili sitokin reseptörü"
+    ],
+    "correct": 0,
+    "exp": "Nikotinik asetilkolin reseptörleri ligand kapılı katyon kanallarıdır. Aktivasyon hızlı depolarizasyon oluşturur."
+  },
+  {
+    "id": 3186,
+    "ders": "Farmakoloji",
+    "konu": "Kardiyovasküler Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "74 yaşında erkek hasta, bilinen bilateral renal arter stenozu ve hipertansiyonu varken yeni başlanan antihipertansiften 5 gün sonra halsizlik ve idrar miktarında azalma şikayetiyle geliyor. Kreatinin belirgin yükselmiş. Bu tablo en çok hangi ilaç etkisiyle uyumludur?",
+    "options": [
+      "Efferent arteriol dilatasyonu",
+      "Afferent arteriol vazodilatasyonu",
+      "Toplayıcı kanalda su geçirgenliğinin artması",
+      "Proksimal tübülde glukoz geri emiliminin artması",
+      "Renal beta-1 reseptör aktivasyonu"
+    ],
+    "correct": 0,
+    "exp": "ACE inhibitörleri ve ARB'ler efferent arteriolü dilate eder. Bilateral renal arter stenozunda glomerüler basınç buna bağımlı olduğundan akut kreatinin artışı gelişebilir."
+  },
+  {
+    "id": 3187,
+    "ders": "Farmakoloji",
+    "konu": "Kardiyovasküler Sistem Farmakolojisi",
+    "diff": 3,
+    "q": "62 yaşında kadın hasta, bilinen hipertansiyon nedeniyle amlodipin kullanırken 3 haftadır ayak bileklerinde şişlik şikayeti yaşıyor. Efor kapasitesi normal, akciğer muayenesi temiz. Bu ödemin en olası nedeni hangisidir?",
+    "options": [
+      "Prekapiller arteriol dilatasyonu ile kapiller hidrostatik basınç artışı",
+      "Aldosteron sentezinin aşırı artması",
+      "Plazma onkotik basıncının hızla yükselmesi",
+      "Venöz kapasitansın tamamen kaybolması",
+      "Lenfatik drenajın immün baskılanması"
+    ],
+    "correct": 0,
+    "exp": "Dihidropiridin kalsiyum kanal blokerleri prekapiller arteriolleri belirgin dilate eder. Kapiller hidrostatik basınç artışı periferik ödeme yol açabilir; her zaman sıvı yükü anlamına gelmez."
+  },
+  {
+    "id": 3188,
+    "ders": "Farmakoloji",
+    "konu": "Kardiyovasküler Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "69 yaşında erkek hasta, bilinen atriyal fibrilasyon ve hipertansiyon nedeniyle metoprolol kullanırken 2 gündür baş dönmesi ve bayılacak gibi olma şikayetiyle başvuruyor. Yeni başlanan verapamil sonrası EKG'de belirgin AV blok saptanıyor. Bu kombinasyonda sorun yaratan ortak etki hangisidir?",
+    "options": [
+      "AV nod iletiminin baskılanması",
+      "Purkinje liflerinde sodyum kanal aktivasyonu",
+      "Renin salınımının uyarılması",
+      "Periferik alfa-1 reseptör uyarımı",
+      "Platelet ADP reseptör blokajı"
+    ],
+    "correct": 0,
+    "exp": "Beta blokerler ve non-dihidropiridin kalsiyum kanal blokerleri AV nod iletimini yavaşlatır. Birlikte kullanım bradikardi ve AV blok riskini artırır."
+  },
+  {
+    "id": 3189,
+    "ders": "Farmakoloji",
+    "konu": "Kardiyovasküler Sistem Farmakolojisi",
+    "diff": 3,
+    "q": "60 yaşında erkek hasta, bilinen HFrEF ve hipertansiyon nedeniyle spironolakton kullanırken 2 aydır memede hassasiyet ve libido azalması şikayeti yaşıyor. Bu yan etki en çok hangi özellik ile ilişkilidir?",
+    "options": [
+      "Androjen reseptör antagonizması",
+      "Beta-1 reseptör agonizmi",
+      "CYP2D6 güçlü indüksiyonu",
+      "Nitrik oksit sentaz inhibisyonu",
+      "Fosfodiesteraz-5 aktivasyonu"
+    ],
+    "correct": 0,
+    "exp": "Spironolakton mineralokortikoid reseptör antagonisti olmasının yanında antiandrojenik etki gösterebilir; jinekomasti ve libido azalması yapabilir."
+  },
+  {
+    "id": 3190,
+    "ders": "Farmakoloji",
+    "konu": "Kardiyovasküler Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "57 yaşında erkek hasta, bilinen stabil anjina nedeniyle nitrat kullanırken 6 saat önce aldığı erektil disfonksiyon ilacından sonra şiddetli baş dönmesi ve senkop şikayetiyle getiriliyor. Bu etkileşimde aşırı hipotansiyonu açıklayan ortak yol hangisidir?",
+    "options": [
+      "cGMP birikiminin artması",
+      "cAMP yıkımının hızlanması",
+      "Alfa-1 reseptörlerin uyarılması",
+      "Tromboksan A2 sentezinin artması",
+      "Kalsiyum kanallarının açılması"
+    ],
+    "correct": 0,
+    "exp": "Nitratlar NO-cGMP yolunu artırır. PDE-5 inhibitörleri cGMP yıkımını azaltır. Birlikte belirgin vazodilatasyon ve hipotansiyon yapabilirler."
+  },
+  {
+    "id": 3191,
+    "ders": "Farmakoloji",
+    "konu": "Kardiyovasküler Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "71 yaşında kadın hasta, bilinen ventriküler aritmi nedeniyle amiodaron kullanırken 4 aydır ilerleyici kuru öksürük ve efor dispnesi şikayeti yaşıyor. Akciğer grafisinde interstisyel tutulum izleniyor. Bu ilaçla ilişkili en olası toksisite hangisidir?",
+    "options": [
+      "Pulmoner fibrozis",
+      "Bronkodilatör toleransı",
+      "Akut hemolitik anemi",
+      "Proksimal tübüler asidoz",
+      "Optik sinir demiyelinizasyonu"
+    ],
+    "correct": 0,
+    "exp": "Amiodaron iyot içerikli ve dokuda biriken bir antiaritmiktir. Pulmoner toksisite, tiroid bozuklukları, karaciğer enzim yüksekliği ve korneal depozit yapabilir."
+  },
+  {
+    "id": 3192,
+    "ders": "Farmakoloji",
+    "konu": "Kardiyovasküler Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "78 yaşında erkek hasta, bilinen atriyal fibrilasyon nedeniyle apiksaban kullanırken 5 gündür mantar enfeksiyonu için verilen ketokonazolden sonra burun kanaması ve melena şikayetiyle geliyor. Bu etkileşim en çok hangi mekanizmayla açıklanır?",
+    "options": [
+      "CYP3A4 ve P-glikoprotein inhibisyonu",
+      "K vitamini sentezinin artması",
+      "Antitrombin III tüketimi",
+      "Asetilkolinesteraz inhibisyonu",
+      "Trombosit COX-1 aktivasyonu"
+    ],
+    "correct": 0,
+    "exp": "Apiksaban CYP3A4 ve P-glikoprotein üzerinden etkilenir. Güçlü inhibitörler maruziyeti artırarak kanama riskini yükseltebilir."
+  },
+  {
+    "id": 3193,
+    "ders": "Farmakoloji",
+    "konu": "Kardiyovasküler Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "Adenozinin paroksismal supraventriküler taşikardide kısa etkili olmasını en iyi açıklayan özellik hangisidir?",
+    "options": [
+      "Eritrosit ve endotelde çok hızlı hücresel geri alım ve metabolizma",
+      "Hepatik CYP2C9 ile yavaş metabolizma",
+      "Safra ile değişmeden atılım",
+      "Plazma proteinlerine irreversibl bağlanma",
+      "Kemikte uzun süreli depolanma"
+    ],
+    "correct": 0,
+    "exp": "Adenozin çok kısa yarı ömürlüdür; hücresel geri alım ve metabolizma hızlıdır. AV nod iletimini geçici baskılayarak PSVT'yi sonlandırabilir."
+  },
+  {
+    "id": 3194,
+    "ders": "Farmakoloji",
+    "konu": "Kardiyovasküler Sistem Farmakolojisi",
+    "diff": 3,
+    "q": "Digoksinin kalp yetmezliğinde pozitif inotrop etkisinin temel hücresel sonucu hangisidir?",
+    "options": [
+      "Hücre içi kalsiyumun artması",
+      "cGMP'nin azalması",
+      "Potasyum kanallarının irreversibl kapanması",
+      "Beta-1 reseptör sayısının artması",
+      "Sarkoplazmik retikulumdan kalsiyum salınımının tamamen durması"
+    ],
+    "correct": 0,
+    "exp": "Digoksin Na/K-ATPazı inhibe eder; hücre içi sodyum artar, Na/Ca değiştirici üzerinden kalsiyum dışarı atılımı azalır ve inotropi artar."
+  },
+  {
+    "id": 3195,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "49 yaşında kadın hasta, bilinen obezite ve tip 2 diyabet nedeniyle tirzepatid kullanırken 6 haftadır erken doyma, bulantı ve aralıklı kusma şikayeti yaşıyor. Ailesinde medüller tiroid kanseri olduğu öğreniliyor. Bu ilaçla ilgili hangi ifade en doğrudur?",
+    "options": [
+      "GIP ve GLP-1 reseptörlerini uyarır; MEN2 veya medüller tiroid kanseri öyküsünde kaçınılır",
+      "Sadece pankreatik alfa hücrelerinde glukagonu artırır",
+      "İnsülin reseptörünü tirozin kinazdan bağımsız bloke eder",
+      "DPP-4 enzimini irreversibl inhibe eder",
+      "SGLT2 üzerinden glukoz geri emilimini artırır"
+    ],
+    "correct": 0,
+    "exp": "Tirzepatid GIP/GLP-1 reseptör agonistidir. Gastrik boşalmayı yavaşlatabilir ve ciddi gastrointestinal yan etkiler yapabilir; MTC/MEN2 öyküsünde kontrendikasyon uyarısı vardır."
+  },
+  {
+    "id": 3196,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "63 yaşında erkek hasta, bilinen tip 2 diyabet ve kronik kalp yetmezliği nedeniyle empagliflozin kullanırken 2 gündür oral alımı azalmış, bulantı ve karın ağrısı şikayetiyle geliyor. Glukozu 165 mg/dL, ketonu pozitif ve anyon açıklı metabolik asidozu var. Bu tablo en olası hangi ilaç etkisiyle ilişkilidir?",
+    "options": [
+      "SGLT2 inhibisyonuna bağlı öglisemik ketoasidoz",
+      "DPP-4 inhibisyonuna bağlı laktat birikimi",
+      "GLP-1 reseptör blokajına bağlı hiperglisemi",
+      "Alfa-glukozidaz aktivasyonuna bağlı malabsorpsiyon",
+      "KATP kanal açılmasına bağlı insülin salınımı"
+    ],
+    "correct": 0,
+    "exp": "SGLT2 inhibitörleri glukozürik etki yapar ve özellikle açlık, cerrahi, enfeksiyon gibi streslerde öglisemik ketoasidozla ilişkili olabilir."
+  },
+  {
+    "id": 3197,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 3,
+    "q": "70 yaşında kadın hasta, bilinen tip 2 diyabet ve evre 4 kronik böbrek hastalığı nedeniyle metformin kullanırken 3 gündür halsizlik, kas ağrısı ve takipne şikayetiyle başvuruyor. Laktat yüksek ve pH düşük bulunuyor. Bu yan etki açısından en önemli risk faktörü hangisidir?",
+    "options": [
+      "Renal klirensin azalması",
+      "Pankreatik beta hücre hiperplazisi",
+      "Tiroid hormon sentezinin artması",
+      "Safra asidi bağlanmasının azalması",
+      "Alfa-1 reseptör blokajı"
+    ],
+    "correct": 0,
+    "exp": "Metformin genelde güvenlidir ancak ileri böbrek yetmezliği, hipoksi ve ağır akut hastalıkta laktik asidoz riski artar. Renal fonksiyon değerlendirilmeden sürdürülmemelidir."
+  },
+  {
+    "id": 3198,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 3,
+    "q": "66 yaşında erkek hasta, bilinen tip 2 diyabet ve sistolik kalp yetmezliği varken pioglitazon başlandıktan 1 ay sonra bacaklarda şişlik ve eforla nefes darlığı şikayeti geliştiriyor. Bu ilacın hangi etkisi tabloyu açıklamada en önemlidir?",
+    "options": [
+      "PPAR-gamma aktivasyonu ile sıvı retansiyonu",
+      "SGLT2 inhibisyonu ile natriürez",
+      "DPP-4 inhibisyonu ile glukagon artışı",
+      "Pankreatik alfa hücre apoptozu",
+      "İnsülin reseptör blokajı"
+    ],
+    "correct": 0,
+    "exp": "Tiyazolidindionlar PPAR-gamma agonistleridir, insülin duyarlılığını artırırlar fakat sıvı retansiyonu yapıp kalp yetmezliğini kötüleştirebilirler."
+  },
+  {
+    "id": 3199,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 3,
+    "q": "55 yaşında kadın hasta, bilinen Hashimoto hipotiroidisi nedeniyle levotiroksin kullanırken 2 aydır yorgunluk ve kilo alma şikayeti yaşıyor. İlacını sabah demir ve kalsiyum tabletleriyle birlikte aldığı öğreniliyor. Tedavi yanıtının azalmasının en olası nedeni hangisidir?",
+    "options": [
+      "Bağırsakta şelasyon ve emilimin azalması",
+      "T4'ün T3'e dönüşümünün artması",
+      "TSH reseptörlerinin uyarılması",
+      "Renal tübüler sekresyonun artması",
+      "Karaciğerden safra atılımının azalması"
+    ],
+    "correct": 0,
+    "exp": "Demir, kalsiyum ve bazı antasitler levotiroksinin gastrointestinal emilimini azaltabilir. Levotiroksin aç karnına ve etkileşen ilaçlardan ayrı alınmalıdır."
+  },
+  {
+    "id": 3200,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "38 yaşında kadın hasta, bilinen Graves hastalığı nedeniyle metimazol kullanırken 5 gündür boğaz ağrısı ve ateş şikayetiyle başvuruyor. Tam kan sayımında nötropeni saptanıyor. Bu durumda en uygun yaklaşım hangisidir?",
+    "options": [
+      "İlacı kesip agranülositoz açısından değerlendirmek",
+      "Dozu iki katına çıkarıp TSH beklemek",
+      "Beta blokeri kesmeden metimazole devam etmek",
+      "Aynı gün radyoaktif iyot vermek",
+      "Levotiroksin ekleyip tedaviyi sürdürmek"
+    ],
+    "correct": 0,
+    "exp": "Tiyonamidler nadiren agranülositoz yapabilir. Ateş ve boğaz ağrısı gelişirse ilaç kesilmeli ve nötrofil sayısı değerlendirilmelidir."
+  },
+  {
+    "id": 3201,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 4,
+    "q": "44 yaşında erkek hasta, bilinen romatolojik hastalığı nedeniyle 8 aydır yüksek doz prednizolon kullanırken ilacı 2 gün önce aniden bırakıyor. Halsizlik, bulantı ve hipotansiyon şikayetiyle geliyor. Bu tablonun en olası nedeni hangisidir?",
+    "options": [
+      "Hipotalamus-hipofiz-adrenal aks baskılanması",
+      "Aldosteron reseptörlerinin kalıcı aktivasyonu",
+      "Katekolamin sentezinin artması",
+      "Tiroid hormon reseptör blokajı",
+      "İnsülin reseptörlerinin fosforilasyonu"
+    ],
+    "correct": 0,
+    "exp": "Uzun süreli sistemik glukokortikoid kullanımı HPA aksını baskılar. Ani kesilme adrenal yetmezlik tablosuna yol açabilir; doz kademeli azaltılmalıdır."
+  },
+  {
+    "id": 3202,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 3,
+    "q": "Sülfonilürelerin insülin salgısını artırmasında doğrudan hedef hangisidir?",
+    "options": [
+      "ATP duyarlı potasyum kanalının kapanması",
+      "SGLT2 taşıyıcısının inhibisyonu",
+      "DPP-4 enziminin aktivasyonu",
+      "PPAR-alfa reseptör aktivasyonu",
+      "Glukagon reseptör blokajı"
+    ],
+    "correct": 0,
+    "exp": "Sülfonilüreler beta hücrelerinde ATP duyarlı K kanallarını kapatır. Depolarizasyon kalsiyum girişini ve insülin salınımını artırır."
+  },
+  {
+    "id": 3203,
+    "ders": "Farmakoloji",
+    "konu": "Endokrin Sistem Farmakolojisi",
+    "diff": 3,
+    "q": "DPP-4 inhibitörleri glisemiyi hangi temel yolla düşürür?",
+    "options": [
+      "Endojen inkretinlerin yıkımını azaltarak",
+      "İdrarla glukoz atılımını tamamen durdurarak",
+      "İnsülin reseptörünü bloke ederek",
+      "Kortizol sentezini artırarak",
+      "Glukagon reseptörünü doğrudan uyararak"
+    ],
+    "correct": 0,
+    "exp": "DPP-4 inhibitörleri GLP-1 ve GIP gibi inkretinlerin yıkımını azaltır. Glukoz bağımlı insülin yanıtı artar, glukagon baskılanır."
+  },
+  {
+    "id": 3204,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "32 yaşında kadın hasta, bilinen depresyon nedeniyle sertralin kullanırken 2 gündür pnömoni için linezolid aldıktan sonra ajitasyon, terleme, ishal ve kaslarda sıçrama şikayetiyle geliyor. Ateşi 38.8 °C, klonus mevcut. Bu tablo en çok hangi ilaç etkileşimiyle açıklanır?",
+    "options": [
+      "Serotonerjik etkinin artması",
+      "Dopamin D2 blokajının azalması",
+      "GABA-A aktivasyonunun kaybolması",
+      "Asetilkolin sentezinin baskılanması",
+      "NMDA reseptörlerinin aşırı blokajı"
+    ],
+    "correct": 0,
+    "exp": "SSRI ile linezolid gibi MAO inhibisyonu gösterebilen ilaçların birlikte kullanımı serotonin sendromu riskini artırır. Klonus, hipertermi ve otonom bulgular uyarıcıdır."
+  },
+  {
+    "id": 3205,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 3,
+    "q": "26 yaşında erkek hasta, bilinen majör depresyon ve bulimia nervoza öyküsü varken 1 haftadır sigara bırakma amacıyla başladığı ilaç sonrası nöbet şikayetiyle getiriliyor. Bu hastada kaçınılması gereken ilaç hangisidir?",
+    "options": [
+      "Bupropion",
+      "Mirtazapin",
+      "Sertralin",
+      "Buspiron",
+      "Duloksetin"
+    ],
+    "correct": 0,
+    "exp": "Bupropion noradrenalin-dopamin geri alım inhibitörüdür ve sigara bırakmada da kullanılır; nöbet eşiğini düşürür. Bulimia/anoreksiya ve nöbet öyküsünde kaçınılır."
+  },
+  {
+    "id": 3206,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "41 yaşında erkek hasta, bilinen tedaviye dirençli şizofreni nedeniyle klozapin kullanırken 10 gündür ateş, boğaz ağrısı ve halsizlik şikayetiyle başvuruyor. Nötrofil sayısı çok düşük saptanıyor. Bu ilacın kullanımı sırasında zorunlu izlem neden gereklidir?",
+    "options": [
+      "Agranülositoz riski nedeniyle",
+      "Irreversibl hepatik nekroz yaptığı için",
+      "SGLT2 inhibisyonu yaptığı için",
+      "Alfa-1 agonist olduğu için",
+      "Nikotinik reseptörü aktive ettiği için"
+    ],
+    "correct": 0,
+    "exp": "Klozapin agranülositoz riski nedeniyle düzenli lökosit/nötrofil izlemi gerektirir. Ayrıca nöbet, miyokardit, metabolik yan etkiler ve sialore yapabilir."
+  },
+  {
+    "id": 3207,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "24 yaşında kadın hasta, bilinen bipolar bozukluk nedeniyle valproat kullanırken 12 gündür lamotrijin eklendikten sonra yaygın döküntü ve ağız içinde ağrılı erozyon şikayetiyle geliyor. Bu ciddi reaksiyon riskini artıran etkileşim hangisidir?",
+    "options": [
+      "Lamotrijin glukuronidasyonunun inhibisyonu",
+      "Lamotrijinin renal atılımının hızlanması",
+      "Valproatın dopamin reseptörlerini uyarması",
+      "GABA sentezinin tamamen durması",
+      "Sodyum kanal blokajının kaybolması"
+    ],
+    "correct": 0,
+    "exp": "Valproat lamotrijin metabolizmasını inhibe ederek düzeyini artırabilir. Lamotrijin hızlı titrasyon veya yüksek düzeyde Stevens-Johnson sendromu gibi ciddi döküntülerle ilişkilidir."
+  },
+  {
+    "id": 3208,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 3,
+    "q": "46 yaşında erkek hasta, bilinen opioid kullanım bozukluğu nedeniyle yüksek doz opioid alımından 2 saat sonra bilinç kapanması ve solunum depresyonu şikayetiyle getiriliyor. Nalokson sonrası hızla ajitasyon, terleme ve yaygın ağrı gelişiyor. Bu yanıt en iyi nasıl açıklanır?",
+    "options": [
+      "Opioid reseptör antagonizmiyle yoksunluğun tetiklenmesi",
+      "Dopamin sentezinin artması",
+      "GABA-A kanalının kalıcı açılması",
+      "NMDA reseptörlerinin uyarılması",
+      "Serotonin geri alımının engellenmesi"
+    ],
+    "correct": 0,
+    "exp": "Nalokson opioid reseptör antagonistidir. Opioid bağımlılığı olan hastada reseptör blokajı akut yoksunluk bulgularını tetikleyebilir."
+  },
+  {
+    "id": 3209,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "59 yaşında kadın hasta, bilinen Parkinson hastalığı nedeniyle levodopa/karbidopa kullanırken 3 aydır kontrolsüz koreiform hareketler ve ilaç etkisinin gün içinde dalgalanması şikayeti yaşıyor. Bu durum levodopa tedavisinin hangi özelliğiyle en çok ilişkilidir?",
+    "options": [
+      "Kısa yarı ömür ve pulsatif dopaminerjik uyarı",
+      "Asetilkolinesterazı irreversibl inhibe etmesi",
+      "D2 reseptörlerini kalıcı bloke etmesi",
+      "Sadece periferde dopamine dönüşmesi",
+      "Serotonin reseptörlerini uyarması"
+    ],
+    "correct": 0,
+    "exp": "Uzun süre levodopa kullanımında motor dalgalanmalar ve diskineziler gelişebilir. Kısa yarı ömür ve striatal dopaminerjik uyarının dalgalanması önemli rol oynar."
+  },
+  {
+    "id": 3210,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 3,
+    "q": "Benzodiazepinlerin GABA-A reseptörü üzerindeki temel etkisi hangisidir?",
+    "options": [
+      "Klor kanalının açılma sıklığını artırmak",
+      "Klor kanalının açık kalma süresini uzatmak",
+      "NMDA reseptörünü aktive etmek",
+      "Dopamin geri alımını azaltmak",
+      "MAO-A enzimini irreversibl inhibe etmek"
+    ],
+    "correct": 0,
+    "exp": "Benzodiazepinler GABA-A reseptöründe allosterik modülatördür; GABA varlığında klor kanalının açılma sıklığını artırır."
+  },
+  {
+    "id": 3211,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 3,
+    "q": "Barbitüratların benzodiazepinlerden ayrılan temel GABA-A etkisi hangisidir?",
+    "options": [
+      "Klor kanalının açık kalma süresini artırmaları",
+      "Sadece serotonin geri alımını engellemeleri",
+      "Dopamin D2 reseptörünü seçici uyarmaları",
+      "Kalsiyum kanalını bloke etmeleri",
+      "P-glikoproteini inhibe etmeleri"
+    ],
+    "correct": 0,
+    "exp": "Barbitüratlar GABA-A reseptöründe klor kanalının açık kalma süresini artırır; daha dar güvenlik aralığı nedeniyle toksisite riski yüksektir."
+  },
+  {
+    "id": 3212,
+    "ders": "Farmakoloji",
+    "konu": "Santral Sinir Sistemi Farmakolojisi",
+    "diff": 4,
+    "q": "Lityum tedavisinde diabetes insipidus benzeri poliüri gelişmesinin temel renal açıklaması hangisidir?",
+    "options": [
+      "Toplayıcı kanalda ADH yanıtının azalması",
+      "Proksimal tübülde glukoz geri emiliminin durması",
+      "Henle kulpunda NKCC2 aktivasyonunun artması",
+      "Aldosteron reseptör blokajı",
+      "Karbonik anhidraz aktivasyonu"
+    ],
+    "correct": 0,
+    "exp": "Lityum toplayıcı kanalda ADH yanıtını bozarak nefrojenik diabetes insipidus ve poliüri yapabilir. TSH ve renal fonksiyon izlemi de gerekir."
+  },
+  {
+    "id": 3213,
+    "ders": "Farmakoloji",
+    "konu": "Otokoidler ve NSAİİ",
+    "diff": 4,
+    "q": "43 yaşında erkek hasta, bilinen nazal polip ve astım öyküsü varken 2 saat önce ağrı için ibuprofen aldıktan sonra hışıltı, burun akıntısı ve göğüste sıkışma şikayetiyle geliyor. Bu tablonun en olası açıklaması hangisidir?",
+    "options": [
+      "COX inhibisyonu sonrası lökotrien yoluna kayma",
+      "Beta-2 reseptörlerin seçici uyarılması",
+      "Histamin H1 reseptör blokajı",
+      "Tromboksan sentezinin artması",
+      "Lökotrien reseptörlerinin irreversibl inhibisyonu"
+    ],
+    "correct": 0,
+    "exp": "Aspirin/NSAİİ duyarlı solunum hastalığında COX inhibisyonu araşidonik asit metabolizmasını lökotrien yoluna kaydırır; bronkospazm ve rinit alevlenebilir."
+  },
+  {
+    "id": 3214,
+    "ders": "Farmakoloji",
+    "konu": "Otokoidler ve NSAİİ",
+    "diff": 4,
+    "q": "76 yaşında kadın hasta, bilinen kronik böbrek hastalığı ve osteoartriti varken 5 gündür diz ağrısı için naproksen kullanıyor. Halsizlik ve idrar azalması şikayetiyle geliyor; kreatinin yükselmiş. NSAİİ'ye bağlı bu tabloyu en iyi açıklayan etki hangisidir?",
+    "options": [
+      "Afferent arteriolde prostaglandin aracılı dilatasyonun azalması",
+      "Efferent arteriolde bradikinin artışı",
+      "Toplayıcı kanalda aquaporin blokajı",
+      "Henle kulpunda NKCC2 inhibisyonu",
+      "Glomerül bazal membranında immün kompleks birikimi"
+    ],
+    "correct": 0,
+    "exp": "Böbrekte prostaglandinler özellikle riskli hastalarda afferent arteriol dilatasyonunu destekler. NSAİİ bu koruyucu yanıtı azaltarak AKI yapabilir."
+  },
+  {
+    "id": 3215,
+    "ders": "Farmakoloji",
+    "konu": "Otokoidler ve NSAİİ",
+    "diff": 4,
+    "q": "64 yaşında erkek hasta, bilinen koroner arter hastalığı ve artrit nedeniyle selekoksib kullanırken 3 haftadır tansiyon yüksekliği ve göğüste baskı şikayeti yaşıyor. COX-2 seçiciliğiyle ilişkili kardiyovasküler risk hangi denge bozukluğuna bağlanır?",
+    "options": [
+      "Prostasiklin azalırken tromboksan etkisinin görece korunması",
+      "Histamin sentezinin tamamen durması",
+      "Lökotrien reseptörlerinin aşırı blokajı",
+      "NO sentezinin irreversibl artması",
+      "Bradikinin yıkımının engellenmesi"
+    ],
+    "correct": 0,
+    "exp": "COX-2 inhibitörleri endotelyal prostasiklin üretimini azaltabilirken trombosit COX-1 kaynaklı tromboksan daha fazla korunur. Bu dengesizlik trombotik riski artırabilir."
+  },
+  {
+    "id": 3216,
+    "ders": "Farmakoloji",
+    "konu": "Otokoidler ve NSAİİ",
+    "diff": 4,
+    "q": "22 yaşında kadın hasta, bilinen kronik hastalığı yokken 10 saattir bulantı ve sağ üst kadran ağrısı şikayetiyle geliyor. Çok sayıda parasetamol tableti aldığı öğreniliyor. Karaciğer hasarını azaltmak için verilen N-asetilsisteinin temel yararı hangisidir?",
+    "options": [
+      "Glutatyon rezervini yenilemesi",
+      "COX-2'yi seçici inhibe etmesi",
+      "Opioid reseptörlerini antagonize etmesi",
+      "Tromboksan sentezini artırması",
+      "Renal prostaglandin üretimini durdurması"
+    ],
+    "correct": 0,
+    "exp": "Parasetamol toksisitesinde NAPQI glutatyonla detoksifiye edilir. N-asetilsistein glutatyon öncülü sağlayarak toksik metabolitin bağlanmasını azaltır."
+  },
+  {
+    "id": 3217,
+    "ders": "Farmakoloji",
+    "konu": "Otokoidler ve NSAİİ",
+    "diff": 3,
+    "q": "35 yaşında kadın hasta, bilinen romatoid artrit nedeniyle NSAİİ kullanırken 6 haftalık gebeliği olduğunu öğrendikten sonra 2 gündür kramp tarzı pelvik ağrı şikayetiyle başvuruyor. Peptik ülser profilaksisi için verilen misoprostolün gebelikte sorun oluşturmasının nedeni hangisidir?",
+    "options": [
+      "Uterin kontraksiyonları artırabilmesi",
+      "Fetal tiroid hormon sentezini kalıcı artırması",
+      "Plasental beta reseptörleri bloke etmesi",
+      "Duktus venozusu kapatması",
+      "Folik asit emilimini engellemesi"
+    ],
+    "correct": 0,
+    "exp": "Misoprostol PGE1 analogudur; mide mukozasını koruyabilir ancak uterotonik etkisi nedeniyle gebelikte abortus ve kramp riski oluşturur."
+  },
+  {
+    "id": 3218,
+    "ders": "Farmakoloji",
+    "konu": "Otokoidler ve NSAİİ",
+    "diff": 4,
+    "q": "52 yaşında erkek hasta, bilinen koroner arter hastalığı varken 6 aydır tekrarlayan migren atakları nedeniyle sumatriptan almak istiyor. Son 1 saattir olan migren ağrısı şikayeti için bu ilacın sakıncalı olmasının nedeni hangisidir?",
+    "options": [
+      "5-HT1B aracılı kraniyal ve koroner vazokonstriksiyon riski",
+      "COX-1 inhibisyonuyla kanama riski",
+      "H1 reseptör antagonizmasıyla sedasyon",
+      "Beta-2 agonizmiyle taşikardi",
+      "NMDA antagonizmasıyla dissosiyasyon"
+    ],
+    "correct": 0,
+    "exp": "Triptanlar 5-HT1B/1D agonistleridir. Kraniyal damar vazokonstriksiyonu ve nöropeptid salınımının azalmasıyla etkilidir; koroner hastalıkta vazospazm riski nedeniyle kaçınılır."
+  },
+  {
+    "id": 3219,
+    "ders": "Farmakoloji",
+    "konu": "Otokoidler ve NSAİİ",
+    "diff": 3,
+    "q": "Montelukastın astım ve alerjik rinitte hedeflediği reseptör hangisidir?",
+    "options": [
+      "Sisteinil lökotrien CysLT1 reseptörü",
+      "Histamin H2 reseptörü",
+      "Prostaglandin E2 reseptörü",
+      "Bradikinin B2 reseptörü",
+      "Serotonin 5-HT3 reseptörü"
+    ],
+    "correct": 0,
+    "exp": "Montelukast CysLT1 reseptör antagonistidir. Lökotrien aracılı bronkokonstriksiyon, mukus üretimi ve inflamasyonu azaltır."
+  },
+  {
+    "id": 3220,
+    "ders": "Farmakoloji",
+    "konu": "Otokoidler ve NSAİİ",
+    "diff": 4,
+    "q": "Omalizumabın alerjik astımda hedef aldığı temel molekül hangisidir?",
+    "options": [
+      "Serbest IgE",
+      "IL-6 reseptörü",
+      "TNF-alfa",
+      "C5 kompleman bileşeni",
+      "CysLT1 reseptörü"
+    ],
+    "correct": 0,
+    "exp": "Omalizumab anti-IgE monoklonal antikorudur. Serbest IgE'ye bağlanarak mast hücresi/bazofil Fc-epsilon reseptör aktivasyonunu azaltır."
+  },
+  {
+    "id": 3221,
+    "ders": "Farmakoloji",
+    "konu": "Otokoidler ve NSAİİ",
+    "diff": 3,
+    "q": "Glukokortikoidlerin eikozanoid sentezini azaltmasında erken basamakta baskıladığı yapı hangisidir?",
+    "options": [
+      "Fosfolipaz A2 aktivitesi",
+      "Tromboksan reseptörü",
+      "Sisteinil lökotrien reseptörü",
+      "Histamin H1 reseptörü",
+      "Serotonin taşıyıcısı"
+    ],
+    "correct": 0,
+    "exp": "Glukokortikoidler lipokortin aracılığıyla fosfolipaz A2 aktivitesini azaltır; araşidonik asit salınımı düşer ve prostaglandin/lökotrien sentezi azalır."
+  },
+  {
+    "id": 3222,
+    "ders": "Farmakoloji",
+    "konu": "Kemoterapotikler ve İmmunmodülatörler",
+    "diff": 4,
+    "q": "68 yaşında erkek hasta, bilinen kronik böbrek hastalığı ve MRSA bakteriyemisi nedeniyle vankomisin infüzyonu alırken 20 dakika içinde yüz-boyunda kızarma, kaşıntı ve hipotansiyon şikayeti geliştiriyor. Daha önce ilaç alerjisi yok. Bu reaksiyonu azaltmak için en uygun yaklaşım hangisidir?",
+    "options": [
+      "İnfüzyon hızını yavaşlatmak ve gerekirse antihistaminik vermek",
+      "İlacı her koşulda ömür boyu kontrendike kabul etmek",
+      "Beta bloker başlamak",
+      "Pralidoksim vermek",
+      "İdrarı alkalileştirmek"
+    ],
+    "correct": 0,
+    "exp": "Vankomisin hızlı infüzyonda histamin salınımına bağlı infüzyon reaksiyonu yapabilir. Gerçek IgE alerjisi olmak zorunda değildir; yavaş infüzyon ve antihistaminik yararlı olabilir."
+  },
+  {
+    "id": 3223,
+    "ders": "Farmakoloji",
+    "konu": "Kemoterapotikler ve İmmunmodülatörler",
+    "diff": 4,
+    "q": "73 yaşında kadın hasta, bilinen hipertansiyon ve piyelonefrit nedeniyle gentamisin başlanmasından 5 gün sonra kulakta çınlama ve dengesizlik şikayeti yaşıyor. Aynı dönemde furosemid aldığı öğreniliyor. Bu toksisiteyi artıran ortak risk hangisidir?",
+    "options": [
+      "Ototoksisite potansiyelinin artması",
+      "CYP3A4 indüksiyonu",
+      "Folat sentezinin blokajı",
+      "Beta-laktamaz üretiminin artması",
+      "Miyelin sentezinin hızlanması"
+    ],
+    "correct": 0,
+    "exp": "Aminoglikozidler nefrotoksisite ve ototoksisite yapabilir. Loop diüretikleri de ototoksiktir; birlikte risk artar."
+  },
+  {
+    "id": 3224,
+    "ders": "Farmakoloji",
+    "konu": "Kemoterapotikler ve İmmunmodülatörler",
+    "diff": 4,
+    "q": "59 yaşında erkek hasta, bilinen diyabeti varken MRSA pnömonisi için daptomisin başlanmasından 3 gündür ateş ve balgam şikayeti devam ediyor. Kan kültüründeki aynı suş daptomisine duyarlı görünmesine rağmen klinik yanıt yok. Akciğer enfeksiyonunda bu başarısızlığı açıklayan özellik hangisidir?",
+    "options": [
+      "Pulmoner surfaktan tarafından inaktive edilmesi",
+      "Bakteriyel ribozomda 30S'ye bağlanması",
+      "Sadece anaeroblarda etki göstermesi",
+      "Beta-laktamazla parçalanması",
+      "Mide asidinde yıkılması"
+    ],
+    "correct": 0,
+    "exp": "Daptomisin hücre membranını depolarize eden bakterisidal bir lipopeptiddir; pulmoner surfaktan tarafından inaktive edildiği için pnömonide kullanılmaz."
+  },
+  {
+    "id": 3225,
+    "ders": "Farmakoloji",
+    "konu": "Kemoterapotikler ve İmmunmodülatörler",
+    "diff": 4,
+    "q": "28 yaşında kadın hasta, bilinen kronik hastalığı yokken rifampisin içeren tüberküloz tedavisinin 2. ayında adet gecikmesi ve gebelik şüphesiyle geliyor. 6 haftadır oral kontraseptifini düzenli kullandığını söylüyor. Bu ilaç etkileşimi en çok hangi etkiyle açıklanır?",
+    "options": [
+      "Hepatik ilaç metabolizmasının indüklenmesi",
+      "Östrojen reseptörünün doğrudan blokajı",
+      "Enterohepatik dolaşımın tamamen artması",
+      "Prolaktin salınımının baskılanması",
+      "Renal glukoz atılımının artması"
+    ],
+    "correct": 0,
+    "exp": "Rifampisin güçlü CYP indükleyicisidir; oral kontraseptiflerin etkinliğini azaltabilir. Ek kontrasepsiyon önerilmelidir."
+  },
+  {
+    "id": 3226,
+    "ders": "Farmakoloji",
+    "konu": "Kemoterapotikler ve İmmunmodülatörler",
+    "diff": 4,
+    "q": "31 yaşında erkek hasta, bilinen HIV açısından yüksek riskli cinsel temas öyküsü ve son 1 yılda bakteriyel CYBE geçirme öyküsü varken 24 saat önce korunmasız temas sonrası profilaksi danışmanlığına geliyor. 2 gündür herhangi bir şikayeti yok. Doksisiklin PEP verilecekse en doğru kullanım ilkesi hangisidir?",
+    "options": [
+      "Temastan sonra mümkün olduğunca erken ve en geç 72 saat içinde 200 mg alınması",
+      "Her cinsel temastan 7 gün önce 2 g tek doz alınması",
+      "Süt ve antasitle birlikte alınarak emilimin artırılması",
+      "Günde 600 mg'ı aşacak şekilde tekrarlanması",
+      "Gonore tedavisi yerine tek başına kullanılması"
+    ],
+    "correct": 0,
+    "exp": "CDC'nin güncel doksi-PEP yaklaşımında seçilmiş yüksek riskli gruplarda temas sonrası 200 mg doksisiklin en geç 72 saat içinde kullanılır; günlük 200 mg sınırı aşılmamalıdır ve kapsamlı CYBE izlemi gerekir."
+  },
+  {
+    "id": 3227,
+    "ders": "Farmakoloji",
+    "konu": "Kemoterapotikler ve İmmunmodülatörler",
+    "diff": 5,
+    "q": "62 yaşında erkek hasta, bilinen diffüz büyük B hücreli lenfoma nedeniyle CD19 hedefli CAR-T tedavisi aldıktan 2 gün sonra ateş, hipotansiyon ve hipoksi şikayeti geliştiriyor. Enfeksiyon dışlandıktan sonra sitokin salınım sendromu düşünülüyor. Bu tabloda hedefe yönelik kullanılan ilaç hangisidir?",
+    "options": [
+      "Tosilizumab",
+      "Omalizumab",
+      "İmatinib",
+      "Rituksimab",
+      "Asetilsistein"
+    ],
+    "correct": 0,
+    "exp": "CAR-T tedavisi sonrası sitokin salınım sendromunda IL-6 yolu önemlidir. Tosilizumab IL-6 reseptör antagonisti monoklonal antikordur ve CRS tedavisinde kullanılır."
+  },
+  {
+    "id": 3228,
+    "ders": "Farmakoloji",
+    "konu": "Kemoterapotikler ve İmmunmodülatörler",
+    "diff": 3,
+    "q": "Beta-laktam antibiyotiklerin temel bakterisidal etkisi hangi hedef üzerinden olur?",
+    "options": [
+      "Penisilin bağlayıcı proteinlerin inhibisyonu",
+      "30S ribozomda yanlış okuma",
+      "DNA girazın allosterik aktivasyonu",
+      "Folat redüktazın uyarılması",
+      "Ergosterol sentezinin artırılması"
+    ],
+    "correct": 0,
+    "exp": "Beta-laktamlar PBP/transpeptidazları inhibe ederek peptidoglikan çapraz bağlanmasını bozar. Hücre duvarı sentezi baskılanır ve bakterisidal etki oluşur."
+  },
+  {
+    "id": 3229,
+    "ders": "Farmakoloji",
+    "konu": "Kemoterapotikler ve İmmunmodülatörler",
+    "diff": 4,
+    "q": "Uzun etkili HIV PrEP seçeneklerinden lenakapavirin hedeflediği viral yapı hangisidir?",
+    "options": [
+      "HIV-1 kapsid proteini",
+      "HIV integraz aktif bölgesi",
+      "CCR5 koreseptörü",
+      "HIV proteaz enzimi",
+      "Viral nöraminidaz"
+    ],
+    "correct": 0,
+    "exp": "Lenakapavir uzun etkili bir HIV-1 kapsid inhibitörüdür. Kapsid işlevini birden fazla viral yaşam döngüsü basamağında bozarak etki gösterir; uzun aralıklı PrEP seçeneği olarak güncel başlıklardandır."
+  },
+  {
+    "id": 3230,
+    "ders": "Farmakoloji",
+    "konu": "Kemoterapotikler ve İmmunmodülatörler",
+    "diff": 4,
+    "q": "Ekinokandinlerin antifungal hedefi hangisidir?",
+    "options": [
+      "Beta-1,3-glukan sentezi",
+      "Ergosterol sentezinde 14-alfa-demetilaz",
+      "Mikrotübül polimerizasyonu",
+      "Fungal DNA giraz",
+      "Kitosan fosforilasyonu"
+    ],
+    "correct": 0,
+    "exp": "Kaspofungin gibi ekinokandinler fungal hücre duvarındaki beta-1,3-glukan sentezini inhibe eder. Candida'da güçlü, Aspergillus'ta fungistatik etki gösterir."
+  },
+  {
+    "id": 3231,
+    "ders": "Farmakoloji",
+    "konu": "Diğer Sistem İlaçları",
+    "diff": 4,
+    "q": "50 yaşında erkek hasta, bilinen böbrek nakli nedeniyle azatioprin kullanırken 1 haftadır gut atağı profilaksisi için allopurinol başlanmasından sonra halsizlik, ağız ülserleri ve nötropeni şikayetiyle geliyor. Bu kombinasyonda azatioprin dozunun azaltılma nedeni hangisidir?",
+    "options": [
+      "Ksantin oksidaz inhibisyonu ile toksik metabolit maruziyetinin artması",
+      "CYP3A4 indüksiyonu ile etkinin kaybolması",
+      "Renal glukoz atılımının artması",
+      "Dopamin reseptör blokajı",
+      "Mide pH'ının azalması"
+    ],
+    "correct": 0,
+    "exp": "Allopurinol ksantin oksidazı inhibe eder. Azatioprin metabolizması bu yoldan etkilendiği için birlikte kullanımda miyelosupresyon riski artar; doz azaltımı gerekir."
+  },
+  {
+    "id": 3232,
+    "ders": "Farmakoloji",
+    "konu": "Diğer Sistem İlaçları",
+    "diff": 4,
+    "q": "69 yaşında kadın hasta, bilinen kronik böbrek hastalığı ve gut nedeniyle kolşisin kullanırken 4 gündür pnömoni için klaritromisin aldıktan sonra ishal, kas güçsüzlüğü ve lökopeni şikayetiyle başvuruyor. Bu etkileşim en çok hangi yolla açıklanır?",
+    "options": [
+      "CYP3A4 ve P-glikoprotein inhibisyonu ile kolşisin düzeyinin artması",
+      "Ksantin oksidaz aktivasyonuyla ürik asidin azalması",
+      "COX-2 inhibisyonuyla tromboz artışı",
+      "Beta-2 reseptör blokajıyla bronkospazm",
+      "DPP-4 inhibisyonuyla hipoglisemi"
+    ],
+    "correct": 0,
+    "exp": "Kolşisin dar terapötik aralıklı bir ilaçtır ve CYP3A4/P-gp inhibitörleriyle toksisite riski artar. Böbrek yetmezliği riski daha da yükseltir."
+  },
+  {
+    "id": 3233,
+    "ders": "Farmakoloji",
+    "konu": "Diğer Sistem İlaçları",
+    "diff": 3,
+    "q": "47 yaşında erkek hasta, bilinen reflü hastalığı nedeniyle omeprazol kullanırken 2 haftadır epigastrik yanma şikayetinin gece arttığını söylüyor. İlacını yemeklerden sonra aldığını belirtiyor. Proton pompa inhibitörlerinden en iyi yanıt için zamanlama neden önemlidir?",
+    "options": [
+      "Aktif proton pompalarına irreversibl bağlanmaları için yemekten önce alınmaları gerekir",
+      "Sadece tok karnına bağırsakta aktifleşirler",
+      "Histamin H2 reseptörlerini yemek sonrası bloke ederler",
+      "Mide asidinde tamamen parçalanmaları gerekir",
+      "Gastrin reseptörlerini geçici uyarırlar"
+    ],
+    "correct": 0,
+    "exp": "PPI'lar paryetal hücre H/K-ATPazına irreversibl bağlanır. En fazla pompa aktivasyonu yemekle olduğundan genellikle yemekten önce alınmaları etkinliği artırır."
+  },
+  {
+    "id": 3234,
+    "ders": "Farmakoloji",
+    "konu": "Diğer Sistem İlaçları",
+    "diff": 4,
+    "q": "24 yaşında kadın hasta, bilinen şiddetli akne nedeniyle izotretinoin başlanması planlanırken 1 haftadır bulantı ve adet gecikmesi şikayeti olduğunu söylüyor. Tedavi öncesi en kritik güvenlik basamağı hangisidir?",
+    "options": [
+      "Gebeliğin dışlanması ve etkili kontrasepsiyonun sağlanması",
+      "Serum potasyumunu düşürmek",
+      "Acil yüksek doz folat vermek",
+      "Trombolitik tedavi başlamak",
+      "Kalsiyum kanal blokeri eklemek"
+    ],
+    "correct": 0,
+    "exp": "İzotretinoin güçlü teratojendir. Tedavi öncesi gebelik dışlanmalı, etkili kontrasepsiyon ve gebelik önleme programı ilkeleri uygulanmalıdır."
+  },
+  {
+    "id": 3235,
+    "ders": "Farmakoloji",
+    "konu": "Diğer Sistem İlaçları",
+    "diff": 3,
+    "q": "72 yaşında kadın hasta, bilinen osteoporoz nedeniyle alendronat kullanırken 3 haftadır yutma sırasında yanma ve retrosternal ağrı şikayetiyle başvuruyor. İlacı yatmadan hemen önce az suyla aldığı öğreniliyor. Bu yan etkiyi azaltmak için en uygun öneri hangisidir?",
+    "options": [
+      "Bol suyla alıp en az 30 dakika dik kalmak",
+      "Sütle birlikte almak",
+      "Tableti çiğneyerek kullanmak",
+      "Aynı anda demir ve kalsiyum almak",
+      "Yatmadan hemen önce almak"
+    ],
+    "correct": 0,
+    "exp": "Oral bisfosfonatlar özofajit yapabilir. Sabah aç karnına bol suyla alınmalı ve en az 30 dakika dik kalınmalıdır."
+  },
+  {
+    "id": 3236,
+    "ders": "Farmakoloji",
+    "konu": "Diğer Sistem İlaçları",
+    "diff": 4,
+    "q": "65 yaşında erkek hasta, bilinen osteoporoz ve evre 3 kronik böbrek hastalığı nedeniyle denosumab aldıktan 5 gün sonra perioral uyuşma ve kas krampları şikayetiyle geliyor. Kalsiyum düşük bulunuyor. Bu yan etki hangi hedefin baskılanmasıyla ilişkilidir?",
+    "options": [
+      "RANKL",
+      "TNF-alfa",
+      "IL-5",
+      "VEGF",
+      "C5"
+    ],
+    "correct": 0,
+    "exp": "Denosumab RANKL'ı inhibe ederek osteoklast oluşum ve aktivitesini azaltır. Özellikle böbrek hastalığında hipokalsemi riski artabilir; kalsiyum/D vitamini durumu izlenmelidir."
+  },
+  {
+    "id": 3237,
+    "ders": "Farmakoloji",
+    "konu": "Diğer Sistem İlaçları",
+    "diff": 3,
+    "q": "Ondansetronun antiemetik etkisinde temel hedef hangisidir?",
+    "options": [
+      "5-HT3 reseptör antagonizması",
+      "D2 reseptör agonizmi",
+      "H1 reseptör agonizmi",
+      "NK1 reseptör agonizmi",
+      "M3 reseptör aktivasyonu"
+    ],
+    "correct": 0,
+    "exp": "Ondansetron 5-HT3 reseptör antagonistidir. Kemoterapi, postoperatif dönem ve gastroenterit ilişkili bulantıda kullanılabilir; QT uzaması riski hatırlanmalıdır."
+  },
+  {
+    "id": 3238,
+    "ders": "Farmakoloji",
+    "konu": "Diğer Sistem İlaçları",
+    "diff": 3,
+    "q": "Vareniklinin sigara bırakmadaki farmakolojik özelliği hangisidir?",
+    "options": [
+      "Alfa4beta2 nikotinik reseptörde parsiyel agonist olması",
+      "Dopamin D2 reseptörünü irreversibl bloke etmesi",
+      "GABA-A kanalını açması",
+      "Nikotin metabolizmasını hızlandırması",
+      "Serotonin 5-HT3 reseptörünü uyarması"
+    ],
+    "correct": 0,
+    "exp": "Vareniklin alfa4beta2 nikotinik asetilkolin reseptöründe parsiyel agonisttir. Yoksunluk semptomlarını azaltırken nikotinin ödüllendirici etkisini de düşürür."
+  },
+  {
+    "id": 3239,
+    "ders": "Farmakoloji",
+    "konu": "Diğer Sistem İlaçları",
+    "diff": 3,
+    "q": "Sildenafilin erektil disfonksiyonda hedeflediği enzim hangisidir?",
+    "options": [
+      "Fosfodiesteraz-5",
+      "Fosfodiesteraz-3",
+      "Guanylat siklaz",
+      "Adenilat siklaz",
+      "Monoamin oksidaz-B"
+    ],
+    "correct": 0,
+    "exp": "Sildenafil PDE-5 inhibitörüdür; cGMP yıkımını azaltır ve kavernöz düz kasta vazodilatasyonu artırır. Nitratlarla birlikte ciddi hipotansiyon yapabilir."
+  },
+  {
+    "id": 3240,
+    "ders": "Dahiliye",
+    "konu": "Gastroenteroloji",
+    "diff": 4,
+    "q": "46 yaşındaki kadın hasta 3 aydır katı gıdalarla belirginleşen disfaji ve haftada birkaç kez göğüs arkasında takılma hissi tarifliyor. Bilinen astımı var, inhale kortikosteroid kullanıyor; başka kronik hastalığı yok. Endoskopide halkalaşma ve longitudinal çizgilenme, biyopside özofagus mukozasında yoğun eozinofil infiltrasyonu saptanıyor. Bu hastada semptomları kontrol altına almak için en uygun tedavi yaklaşımı hangisidir?",
+    "options": [
+      "Yutulan topikal budesonid veya flutikazon başlanması",
+      "Uzun süreli sistemik siklofosfamid verilmesi",
+      "Empirik klaritromisin temelli üçlü tedavi uygulanması",
+      "Alt özofagus sfinkterine botulinum toksini yapılması",
+      "Sadece prokinetik tedaviyle izlenmesi"
+    ],
+    "correct": 0,
+    "exp": "Klinik ve histoloji eozinofilik özofajiti düşündürür. Eozinofilik inflamasyonun lokal baskılanması için yutulan topikal steroidler ve/veya PPI tedavisi kullanılır; sistemik immünsüpresyon ilk tercih değildir."
+  },
+  {
+    "id": 3241,
+    "ders": "Dahiliye",
+    "konu": "Gastroenteroloji",
+    "diff": 4,
+    "q": "29 yaşındaki erkek hasta 6 haftadır kanlı-mukuslu ishal, tenesmus ve sol alt kadran ağrısı tarifliyor. Bilinen kronik hastalığı yok, düzenli ilaç kullanmıyor. Kolonoskopide rektumdan başlayıp proksimale kesintisiz uzanan yüzeyel ülserasyonlar ve granüler mukoza görülüyor. Bu hastalığın tutulum paternini en iyi açıklayan tanı hangisidir?",
+    "options": [
+      "Ülseratif kolit",
+      "Crohn hastalığı",
+      "İskemik kolit",
+      "Mikroskopik kolit",
+      "Bağırsak tüberkülozu"
+    ],
+    "correct": 0,
+    "exp": "Rektumdan başlayan, kesintisiz ve mukozal ağırlıklı inflamasyon ülseratif kolit lehinedir. Crohn hastalığında atlamalı tutulum ve transmural inflamasyon beklenir."
+  },
+  {
+    "id": 3242,
+    "ders": "Dahiliye",
+    "konu": "Gastroenteroloji",
+    "diff": 3,
+    "q": "37 yaşındaki kadın hasta 8 aydır yağlı, kötü kokulu dışkılama ve kilo kaybı tarifliyor. Tip 1 diyabeti var, bazal-bolus insülin kullanıyor. Demir eksikliği anemisi ve anti-doku transglutaminaz IgA pozitifliği saptanıyor. İnce bağırsak biyopsisinde hangi bulgunun görülmesi beklenir?",
+    "options": [
+      "Villöz atrofi ve kript hiperplazisi",
+      "Transmural granülomatöz inflamasyon",
+      "Submukozal amiloid birikimi",
+      "Kolonik kript apseleri",
+      "Lenfatik obstrüksiyona bağlı lakteal dilatasyon"
+    ],
+    "correct": 0,
+    "exp": "Çölyak hastalığında glutenle tetiklenen immün yanıt villöz atrofi, kript hiperplazisi ve intraepitelyal lenfosit artışı oluşturur."
+  },
+  {
+    "id": 3243,
+    "ders": "Dahiliye",
+    "konu": "Gastroenteroloji",
+    "diff": 4,
+    "q": "58 yaşındaki erkek hasta 10 gündür epigastrik yanma ve gece uykudan uyandıran ağrı tarifliyor. Koroner arter hastalığı nedeniyle düşük doz aspirin kullanıyor; kronik böbrek hastalığı yok. Üre nefes testi pozitif geliyor. Bu hastada ülser nüksünü azaltan temel tedavi stratejisi hangisidir?",
+    "options": [
+      "Helicobacter pylori eradikasyonu ve asit baskılama",
+      "Sadece sukralfat ile semptomatik tedavi",
+      "Aspirinin kesilmeden yüksek doz steroid eklenmesi",
+      "Uzun süreli geniş spektrumlu kinolon monoterapisi",
+      "Prokinetik tedaviyle mide boşalmasının hızlandırılması"
+    ],
+    "correct": 0,
+    "exp": "H. pylori ilişkili peptik ülserde eradikasyon, asit baskılama ile birlikte ülser iyileşmesini ve nüks riskini azaltır. Aspirin kullanımı ayrıca kanama riskini artırır."
+  },
+  {
+    "id": 3244,
+    "ders": "Dahiliye",
+    "konu": "Gastroenteroloji",
+    "diff": 4,
+    "q": "64 yaşındaki kadın hasta 4 aydır yemeklerden sonra erken doyma, şişkinlik ve kusma tarifliyor. Yirmi yıllık tip 2 diyabeti var, metformin ve bazal insülin kullanıyor. Endoskopide obstrüksiyon saptanmıyor, mide boşalma sintigrafisinde gecikme görülüyor. Bu tabloda temel patofizyolojik mekanizma hangisidir?",
+    "options": [
+      "Otonom nöropatiye bağlı mide motilitesinde azalma",
+      "Vagal hiperaktiviteye bağlı asit sekresyonunda artış",
+      "Parietal hücre otoimmün yıkımına bağlı aklorhidri",
+      "Oddi sfinkter spazmına bağlı safra reflüsü",
+      "İnce bağırsakta laktaz eksikliğine bağlı ozmotik yük"
+    ],
+    "correct": 0,
+    "exp": "Diyabetik gastroparezide otonom nöropati ve enterik sinir sistemi disfonksiyonu mide boşalmasını geciktirir; obstrüksiyon olmadan postprandiyal dolgunluk ve kusma gelişir."
+  },
+  {
+    "id": 3245,
+    "ders": "Dahiliye",
+    "konu": "Gastroenteroloji",
+    "diff": 5,
+    "q": "23 yaşındaki erkek hasta 5 aydır aralıklı sağ alt kadran ağrısı, kilo kaybı ve kansız ishal tarifliyor. Bilinen kronik hastalığı yok, düzenli ilaç kullanmıyor. Kolonoskopide terminal ileumda atlamalı ülserler, biyopside nonkazeifiye granülomlar görülüyor. Bu hastalıkta fistül gelişimini en iyi açıklayan inflamasyon tipi hangisidir?",
+    "options": [
+      "Transmural inflamasyon",
+      "Sadece mukozal inflamasyon",
+      "Subepitelyal kollajen bant birikimi",
+      "Eozinofilik kript infiltrasyonu",
+      "Serozada mezotelyal hiperplazi"
+    ],
+    "correct": 0,
+    "exp": "Crohn hastalığında transmural inflamasyon fissür, striktür ve fistül gelişimine yol açar. Ülseratif kolitte inflamasyon çoğunlukla mukozal sınırlıdır."
+  },
+  {
+    "id": 3246,
+    "ders": "Dahiliye",
+    "konu": "Gastroenteroloji",
+    "diff": 3,
+    "q": "71 yaşındaki erkek hasta 2 aydır kabızlık, dışkı çapında incelme ve istemsiz kilo kaybı tarifliyor. Hipertansiyonu var, amlodipin kullanıyor. Dışkıda gizli kan pozitif ve demir eksikliği anemisi saptanıyor. Bu hastada ilk yapılması gereken tanısal işlem hangisidir?",
+    "options": [
+      "Kolonoskopi",
+      "Karın grafisi ile izlem",
+      "Ampirik demir tedavisi sonrası kontrol",
+      "Laktuloz tedavisi başlanması",
+      "Serum karsinoembriyonik antijen ile tarama"
+    ],
+    "correct": 0,
+    "exp": "İleri yaş, alarm semptomları, demir eksikliği anemisi ve dışkıda gizli kan kolorektal kanser açısından kolonoskopi gerektirir. CEA tarama testi değildir."
+  },
+  {
+    "id": 3247,
+    "ders": "Dahiliye",
+    "konu": "Gastroenteroloji",
+    "diff": 4,
+    "q": "İrritabl bağırsak sendromunda organik hastalık lehine kabul edilen alarm bulgusu hangisidir?",
+    "options": [
+      "Gece uyandıran ishal ve kilo kaybı",
+      "Stresle artan karın ağrısı",
+      "Defekasyonla rahatlayan ağrı",
+      "Şişkinliğin gün içinde artması",
+      "Dışkılama sıklığında dalgalanma"
+    ],
+    "correct": 0,
+    "exp": "Gece semptomları, kilo kaybı, kanama, anemi ve ileri yaşta başlangıç organik hastalığı düşündürür. Fonksiyonel bağırsak hastalıklarında semptomlar genellikle uykudan uyandırmaz."
+  },
+  {
+    "id": 3248,
+    "ders": "Dahiliye",
+    "konu": "Gastroenteroloji",
+    "diff": 4,
+    "q": "Pankreatik ekzokrin yetmezlikte steatoreyi açıklayan temel mekanizma hangisidir?",
+    "options": [
+      "Lumene yeterli lipaz ve bikarbonat verilememesi",
+      "Safra asidi sentezinin kolesterol fazlalığıyla artması",
+      "Kolonik su emiliminin aldosteronla azalması",
+      "İnce bağırsakta glukoz taşıyıcılarının artması",
+      "Mide asidinin parietal hücrelerden fazla salınması"
+    ],
+    "correct": 0,
+    "exp": "Pankreatik ekzokrin yetmezlikte lipaz eksikliği ve duodenal pH'nın yeterince alkali hale getirilememesi yağ sindirimini bozar, steatore gelişir."
+  },
+  {
+    "id": 3249,
+    "ders": "Dahiliye",
+    "konu": "Hepatoloji",
+    "diff": 4,
+    "q": "52 yaşındaki erkek hasta 1 yıldır yorgunluk ve sağ üst kadranda dolgunluk tarifliyor. Tip 2 diyabeti ve obezitesi var, metformin ve atorvastatin kullanıyor; alkol kullanımı minimal. ALT hafif yüksek, trombosit 170.000/mm3 ve ultrasonografide steatoz saptanıyor. Bu hastada ileri fibrozis riskini ilk basamakta değerlendirmek için en uygun yaklaşım hangisidir?",
+    "options": [
+      "Yaş, AST, ALT ve trombosit ile FIB-4 hesaplamak",
+      "Her hastaya doğrudan karaciğer biyopsisi yapmak",
+      "Sadece alfa-fetoprotein düzeyiyle izlemek",
+      "Ampirik prednizolon tedavisi başlamak",
+      "Serum amilaz düzeyiyle fibrozis sınıflamak"
+    ],
+    "correct": 0,
+    "exp": "MASLD'de ileri fibrozis risk sınıflaması için FIB-4 pratik ilk basamak testtir. Yüksek riskte elastografi veya hepatoloji değerlendirmesi gerekir."
+  },
+  {
+    "id": 3250,
+    "ders": "Dahiliye",
+    "konu": "Hepatoloji",
+    "diff": 5,
+    "q": "61 yaşındaki kadın hasta 2 gündür ateş, karın ağrısı ve bilinç bulanıklığı nedeniyle getiriliyor. Bilinen HBV sirozu var, entekavir ve spironolakton kullanıyor. Asit sıvısında nötrofil 640/mm3, kreatinin 1,6 mg/dL saptanıyor. Bu hastada böbrek yetmezliği ve mortalite riskini azaltmak için antibiyotiğe ek olarak hangi tedavi verilmelidir?",
+    "options": [
+      "İntravenöz albumin",
+      "Yüksek doz furosemid",
+      "Terlipressinin tek başına verilmesi",
+      "Profilaktik beta bloker yüklemesi",
+      "Laktulozun kesilmesi"
+    ],
+    "correct": 0,
+    "exp": "Spontan bakteriyel peritonitte sefotaksim/uygun antibiyotiğe eklenen albumin, efektif arteriyel hacmi destekleyerek hepatorenal sendrom ve mortalite riskini azaltır."
+  },
+  {
+    "id": 3251,
+    "ders": "Dahiliye",
+    "konu": "Hepatoloji",
+    "diff": 4,
+    "q": "44 yaşındaki erkek hasta 3 haftadır halsizlik ve sarılık tarifliyor. Lenfoma nedeniyle rituksimab içeren kemoterapi alıyor; daha önce kronik karaciğer hastalığı bilinmiyor. HBsAg negatif, anti-HBc pozitif, HBV DNA pozitifleşmiş bulunuyor. Bu tabloda en olası mekanizma hangisidir?",
+    "options": [
+      "B hücre baskılanmasına bağlı latent HBV reaktivasyonu",
+      "Hepatositlerde bakır birikimine bağlı oksidatif hasar",
+      "Hepatit A'nın kronikleşmesi",
+      "Safra kanallarında IgG4 aracılı fibrozis",
+      "Alkolün asetaldehit aracılı akut toksisitesi"
+    ],
+    "correct": 0,
+    "exp": "Rituksimab B hücrelerini baskılar ve geçirilmiş HBV enfeksiyonunda reaktivasyona neden olabilir. Bu nedenle riskli hastalarda tarama ve antiviral profilaksi önemlidir."
+  },
+  {
+    "id": 3252,
+    "ders": "Dahiliye",
+    "konu": "Hepatoloji",
+    "diff": 4,
+    "q": "67 yaşındaki erkek hasta son 1 haftadır uyku-uyanıklık döngüsünde bozulma ve unutkanlık nedeniyle başvuruyor. Alkol ilişkili sirozu var, propranolol ve spironolakton kullanıyor. Ailesi kabızlığının arttığını söylüyor. Muayenede asteriksis var. Bu hastada ilk basamak tedavinin etkili olmasını sağlayan temel mekanizma hangisidir?",
+    "options": [
+      "Kolonda amonyağın emilimini azaltıp dışkıyla atılımını artırmak",
+      "Üre döngüsünde karbamoil fosfat sentetazı inhibe etmek",
+      "Portal ven basıncını doğrudan artırmak",
+      "Beyinde GABA reseptörlerini geri dönüşsüz bloke etmek",
+      "Hepatik sitokrom P450 aktivitesini indüklemek"
+    ],
+    "correct": 0,
+    "exp": "Hepatik ensefalopatide laktuloz kolon pH'sını düşürür, amonyağı amonyum formunda tutar ve katartik etkiyle atılımını artırır."
+  },
+  {
+    "id": 3253,
+    "ders": "Dahiliye",
+    "konu": "Hepatoloji",
+    "diff": 5,
+    "q": "58 yaşındaki kadın hasta 10 gündür artan sarılık, kaşıntı ve koyu renkli idrar tarifliyor. Ülseratif koliti var, mesalazin kullanıyor. MR kolanjiyografide intrahepatik ve ekstrahepatik safra yollarında multifokal darlık-genişleme alanları görülüyor. Bu hastada uzun dönemde en çok artan malignite riski hangisidir?",
+    "options": [
+      "Kolanjiyokarsinom",
+      "Hepatoblastom",
+      "Pankreatik nöroendokrin tümör",
+      "Gastrik MALT lenfoma",
+      "Safra kesesi adenomiyomatozisi"
+    ],
+    "correct": 0,
+    "exp": "Primer sklerozan kolanjit ülseratif kolitle ilişkilidir ve kolanjiyokarsinom riskini belirgin artırır. Kolanjiyografide boncuk dizisi görünümü tipiktir."
+  },
+  {
+    "id": 3254,
+    "ders": "Dahiliye",
+    "konu": "Hepatoloji",
+    "diff": 4,
+    "q": "63 yaşındaki erkek hasta 6 aydır halsizlik ve karında şişlik tarifliyor. Kronik HCV'ye bağlı kompanse sirozu var, direkt etkili antiviral tedavi sonrası viral yanıt gelişmiş; düzenli ilaç olarak carvedilol kullanıyor. HCC taraması için en uygun izlem yaklaşımı hangisidir?",
+    "options": [
+      "Altı ayda bir karaciğer ultrasonografisi, uygun ise AFP ile birlikte izlem",
+      "Yılda bir direkt karın grafisi",
+      "Sadece ALT normal kaldıkça tarama yapmamak",
+      "Üç yılda bir kolonoskopi",
+      "Her ay tanısal laparotomi"
+    ],
+    "correct": 0,
+    "exp": "Sirozda viral eradikasyon sonrası HCC riski tamamen kaybolmaz. Düzenli sürveyans genellikle 6 ayda bir ultrasonografi, uygun merkezlerde AFP eklenerek yapılır."
+  },
+  {
+    "id": 3255,
+    "ders": "Dahiliye",
+    "konu": "Hepatoloji",
+    "diff": 4,
+    "q": "Aşırı doz parasetamol alımında erken dönemde N-asetilsistein verilmesinin temel amacı hangisidir?",
+    "options": [
+      "Glutatyon depolarını yenileyerek NAPQI detoksifikasyonunu artırmak",
+      "Hepatik yağ asidi beta oksidasyonunu tamamen durdurmak",
+      "Safra asidi enterohepatik dolaşımını artırmak",
+      "Kupffer hücrelerinde IgE salınımını azaltmak",
+      "Portal ven trombozunu çözmek"
+    ],
+    "correct": 0,
+    "exp": "Parasetamol toksisitesinde NAPQI glutatyonla detoksifiye edilir. N-asetilsistein glutatyon öncülü sağlayarak hepatoselüler nekrozu azaltır."
+  },
+  {
+    "id": 3256,
+    "ders": "Dahiliye",
+    "konu": "Hepatoloji",
+    "diff": 3,
+    "q": "Wilson hastalığında nörolojik bulgularla birlikte beklenen karakteristik göz bulgusu hangisidir?",
+    "options": [
+      "Kayser-Fleischer halkası",
+      "Roth lekesi",
+      "Bitot lekesi",
+      "Korneal arkus senilis",
+      "Cherry-red spot"
+    ],
+    "correct": 0,
+    "exp": "Wilson hastalığında bakır birikimi Descemet membranında Kayser-Fleischer halkasına yol açabilir; özellikle nörolojik tutulumda sık görülür."
+  },
+  {
+    "id": 3257,
+    "ders": "Dahiliye",
+    "konu": "Hepatoloji",
+    "diff": 5,
+    "q": "Hepatorenal sendromda böbrek parankimi yapısal olarak korunmasına rağmen GFR azalmasını en iyi açıklayan mekanizma hangisidir?",
+    "options": [
+      "Splanchnik vazodilatasyonla efektif arteriyel hacmin azalması ve renal vazokonstriksiyon",
+      "Glomerüler bazal membranda immün kompleks birikimi",
+      "Distal tübülde aldosteron reseptör blokajı",
+      "Afferent arteriolde prostaglandin aracılı vazodilatasyonun artması",
+      "Renal medullada ürik asit kristal birikimi"
+    ],
+    "correct": 0,
+    "exp": "İleri sirozda splanchnik vazodilatasyon efektif arteriyel dolaşımı azaltır; nörohormonal aktivasyon renal vazokonstriksiyona ve GFR düşüşüne yol açar."
+  },
+  {
+    "id": 3258,
+    "ders": "Dahiliye",
+    "konu": "Nefroloji",
+    "diff": 4,
+    "q": "59 yaşındaki erkek hasta 6 aydır halsizlik ve ayak bileklerinde şişlik tarifliyor. Tip 2 diyabeti ve hipertansiyonu var, metformin ve losartan kullanıyor. eGFR 34 mL/dk/1,73 m2, idrar albümin/kreatinin oranı 520 mg/g saptanıyor. Kan şekeri orta düzeyde kontrollü olmasına rağmen böbrek ve kalp koruması için hangi tedavi eklenmelidir?",
+    "options": [
+      "SGLT2 inhibitörü",
+      "Kısa etkili sulfonilüre",
+      "NSAİİ ile analjezi",
+      "Potasyum sitrat monoterapisi",
+      "Yüksek proteinli diyet"
+    ],
+    "correct": 0,
+    "exp": "Albuminürik CKD ve tip 2 diyabette eGFR uygun aralıktayken SGLT2 inhibitörleri glisemik etkiden bağımsız böbrek ve kardiyovasküler koruma sağlar."
+  },
+  {
+    "id": 3259,
+    "ders": "Dahiliye",
+    "konu": "Nefroloji",
+    "diff": 5,
+    "q": "46 yaşındaki kadın hasta 5 gündür koyu renkli idrar, ödem ve nefes darlığı tarifliyor. Bilinen kronik hastalığı yok, düzenli ilaç kullanmıyor. Kreatinin 3,4 mg/dL, idrarda dismorfik eritrosit ve eritrosit silendirleri var; anti-GBM antikoru pozitif geliyor. Bu hastada böbrek hasarını belirleyen temel süreç hangisidir?",
+    "options": [
+      "Glomerüler kapiller duvara antikor bağlanmasıyla hızlı kresent oluşumu",
+      "Distal tübülde ADH direnciyle serbest su kaybı",
+      "Ürat kristallerinin toplayıcı kanalda çökelmesi",
+      "Mezangial IgA birikiminin sadece epizodik makroskopik hematüri yapması",
+      "Proksimal tübülde glukoz taşıyıcı blokajı"
+    ],
+    "correct": 0,
+    "exp": "Anti-GBM hastalığında glomerüler bazal membrana karşı antikorlar lineer birikim gösterir ve hızlı ilerleyen kresentik glomerülonefrite neden olur."
+  },
+  {
+    "id": 3260,
+    "ders": "Dahiliye",
+    "konu": "Nefroloji",
+    "diff": 4,
+    "q": "72 yaşındaki erkek hasta 2 haftadır halsizlik, kemik ağrısı ve idrar miktarında azalma tarifliyor. Hipertansiyonu var, amlodipin kullanıyor. Kreatinin 4,1 mg/dL, kalsiyum yüksek, total protein-albümin farkı artmış ve idrarda hafif zincir saptanıyor. Bu hastada akut böbrek hasarının en olası mekanizması hangisidir?",
+    "options": [
+      "Tübüllerde hafif zincir silendirleriyle obstrüksiyon ve inflamasyon",
+      "Glomerüler podositlerde diyabetik nodüler skleroz",
+      "Renal arterde fibromüsküler displazi",
+      "Toplayıcı kanalda aldosteron eksikliği",
+      "Böbrek papillasında oraklaşma"
+    ],
+    "correct": 0,
+    "exp": "Multipl miyelomda serbest hafif zincirler Tamm-Horsfall proteiniyle silendir oluşturup tübüler obstrüksiyon ve inflamasyon yapar; cast nefropatisi gelişir."
+  },
+  {
+    "id": 3261,
+    "ders": "Dahiliye",
+    "konu": "Nefroloji",
+    "diff": 4,
+    "q": "34 yaşındaki kadın hasta 3 gündür baş ağrısı, bulantı ve halsizlik tarifliyor. Epilepsi nedeniyle karbamazepin kullanıyor; başka kronik hastalığı yok. Sodyum 119 mEq/L, serum osmolalitesi düşük, idrar osmolalitesi yüksek ve idrar sodyumu 48 mEq/L bulunuyor. Bu hiponatreminin en olası mekanizması hangisidir?",
+    "options": [
+      "Uygunsuz ADH etkisiyle serbest su atılımının azalması",
+      "Primer aldosteron eksikliğiyle izotonik sıvı kaybı",
+      "Glukozüriye bağlı ozmotik diürez",
+      "Protein kaybına bağlı psödohiponatremi",
+      "Aşırı terlemeye bağlı hipertonik dehidratasyon"
+    ],
+    "correct": 0,
+    "exp": "Karbamazepin SIADH yapabilir. Düşük serum osmolalitesi, konsantre idrar ve yüksek idrar sodyumu uygunsuz ADH etkisini destekler."
+  },
+  {
+    "id": 3262,
+    "ders": "Dahiliye",
+    "konu": "Nefroloji",
+    "diff": 5,
+    "q": "28 yaşındaki erkek hasta 1 yıldır tekrarlayan kas güçsüzlüğü ve kramp atakları tarifliyor. Bilinen kronik hastalığı yok, düzenli ilaç kullanmıyor. Kan basıncı normal, potasyum düşük, metabolik alkaloz var; idrarda kalsiyum düşük, magnezyum düşük saptanıyor. Bu tabloyu en iyi açıklayan tübüler bozukluk hangisidir?",
+    "options": [
+      "Distal tübülde Na-Cl kotransporter işlev kaybı",
+      "Henle çıkan kolunda NKCC2 aşırı aktivasyonu",
+      "Toplayıcı kanalda ENaC blokajı",
+      "Proksimal tübülde karbonik anhidraz fazlalığı",
+      "Afferent arteriolde renin baskılanması"
+    ],
+    "correct": 0,
+    "exp": "Hipokalemik metabolik alkaloz, normotansiyon, hipomagnezemi ve hipokalsiüri Gitelman sendromunu düşündürür; distal tübüldeki Na-Cl kotransporter etkilenir."
+  },
+  {
+    "id": 3263,
+    "ders": "Dahiliye",
+    "konu": "Nefroloji",
+    "diff": 4,
+    "q": "65 yaşındaki kadın hasta 1 aydır bacaklarda şişlik ve köpüklü idrar tarifliyor. Romatoid artriti var, uzun süredir kontrolsüz inflamasyon nedeniyle düzensiz tedavi alıyor. Albümin düşük, proteinüri 7 g/gün ve böbrek biyopsisinde Kongo kırmızısı pozitif birikimler saptanıyor. Bu hastada proteinürinin nedeni en olası olarak hangisidir?",
+    "options": [
+      "AA amiloid birikimine bağlı glomerüler filtrasyon bariyeri bozulması",
+      "IgA'nın mezangiumda sınırlı birikimi",
+      "Anti-fosfolipid antikorla renal ven trombozu",
+      "Ürat kristallerinin distal tübülde birikmesi",
+      "ADH eksikliğine bağlı su diürezi"
+    ],
+    "correct": 0,
+    "exp": "Kronik inflamasyon AA amiloidoza yol açabilir. Glomerüler amiloid birikimi nefrotik düzeyde proteinüri ve hipoalbüminemi yapar."
+  },
+  {
+    "id": 3264,
+    "ders": "Dahiliye",
+    "konu": "Nefroloji",
+    "diff": 4,
+    "q": "53 yaşındaki erkek hasta 2 haftadır bel ağrısı için yoğun NSAİİ kullandıktan sonra halsizlik ve idrar azalmasıyla başvuruyor. Hipertansiyonu var, ramipril ve hidroklorotiyazid kullanıyor. Kreatinin yükselmiş, idrar sedimenti bland. Bu hastada böbrek perfüzyonunu bozan mekanizma hangisidir?",
+    "options": [
+      "Afferent arteriolde prostaglandin aracılı vazodilatasyonun inhibisyonu",
+      "Efferent arteriolde anjiyotensin II aracılı konstriksiyonun artması",
+      "Glomerüler bazal membranda lineer IgG birikimi",
+      "ADH reseptörlerinin genetik kaybı",
+      "Renal medullada oksalat kristalizasyonu"
+    ],
+    "correct": 0,
+    "exp": "NSAİİ'ler renal prostaglandin sentezini azaltır ve özellikle ACE inhibitörü-diüretik kullanan hastada afferent vazokonstriksiyonla prerenal/iskemik AKI riskini artırır."
+  },
+  {
+    "id": 3265,
+    "ders": "Dahiliye",
+    "konu": "Nefroloji",
+    "diff": 3,
+    "q": "ACE inhibitörü başlanan kronik böbrek hastasında kreatinin artışının hangi düzeye kadar olması genellikle tedaviyi hemen kesmeyi gerektirmez?",
+    "options": [
+      "Başlangıca göre yüzde 30'dan az artış",
+      "Başlangıca göre yüzde 80 artış",
+      "Herhangi bir kreatinin artışı",
+      "Kreatinin normal aralıkta kalsa bile potasyum 3,5 mEq/L olması",
+      "Albuminürinin azalması"
+    ],
+    "correct": 0,
+    "exp": "RAS blokajı sonrası efferent arteriyol dilatasyonu nedeniyle hafif kreatinin artışı beklenebilir. Yaklaşık yüzde 30'u aşmayan artış çoğu hastada yakın izlemle kabul edilebilir."
+  },
+  {
+    "id": 3266,
+    "ders": "Dahiliye",
+    "konu": "Nefroloji",
+    "diff": 4,
+    "q": "Nefrotik sendromda tromboz riskinin artmasını en iyi açıklayan mekanizma hangisidir?",
+    "options": [
+      "Antitrombin III gibi antikoagülan proteinlerin idrarla kaybı",
+      "Trombositlerin tamamen aplastik hale gelmesi",
+      "Fibrinojen sentezinin karaciğerde durması",
+      "Protein C aktivitesinin aşırı artması",
+      "Von Willebrand faktörünün genetik yokluğu"
+    ],
+    "correct": 0,
+    "exp": "Nefrotik sendromda antitrombin III kaybı, fibrinojen artışı ve hemokonsantrasyon hiperkoagülabiliteye katkı sağlar."
+  },
+  {
+    "id": 3267,
+    "ders": "Dahiliye",
+    "konu": "Endokrinoloji",
+    "diff": 4,
+    "q": "42 yaşındaki kadın hasta 2 gündür bulantı, karın ağrısı ve halsizlik tarifliyor. Tip 2 diyabeti var, metformin ve empagliflozin kullanıyor; son 3 gündür düşük karbonhidrat diyeti yapmış. Glukoz 178 mg/dL, anyon açıklı metabolik asidoz ve ketonemi saptanıyor. Bu tabloda sorumlu mekanizma hangisidir?",
+    "options": [
+      "SGLT2 inhibisyonuyla glukozüri, insülin/glukagon oranında azalma ve ketogenez artışı",
+      "DPP-4 inhibisyonuyla ağır hipoglisemi ve laktat birikimi",
+      "Sulfonilüreye bağlı insülin salınımının tamamen durması",
+      "Metforminin pankreas beta hücresini otoimmün yıkması",
+      "GLP-1 reseptör blokajıyla kortizol fazlalığı"
+    ],
+    "correct": 0,
+    "exp": "SGLT2 inhibitörleri glukozu idrarla attırırken insülin düzeyini düşürüp glukagonu artırabilir; açlık veya düşük karbonhidratla euglisemik ketoasidoz gelişebilir."
+  },
+  {
+    "id": 3268,
+    "ders": "Dahiliye",
+    "konu": "Endokrinoloji",
+    "diff": 4,
+    "q": "49 yaşındaki erkek hasta 6 aydır dirençli hipertansiyon ve kas güçsüzlüğü tarifliyor. Hipertansiyonu için amlodipin kullanıyor, diüretik kullanmıyor. Potasyum 2,9 mEq/L, bikarbonat yüksek, renin düşük ve aldosteron yüksek bulunuyor. Bu hastada ilk tarama testinin pozitifliğini açıklayan mekanizma hangisidir?",
+    "options": [
+      "Otonom aldosteron salınımıyla sodyum tutulumu ve potasyum atılımı",
+      "Kortizol eksikliğiyle ACTH artışı",
+      "ADH fazlalığıyla serbest su tutulumu",
+      "Katekolamin eksikliğiyle vazodilatasyon",
+      "Parathormon fazlalığıyla kalsiyum atılımı"
+    ],
+    "correct": 0,
+    "exp": "Primer aldosteronizmde aldosteron reninden bağımsız artar; sodyum retansiyonu, hipertansiyon, potasyum kaybı ve metabolik alkaloz gelişir."
+  },
+  {
+    "id": 3269,
+    "ders": "Dahiliye",
+    "konu": "Endokrinoloji",
+    "diff": 5,
+    "q": "31 yaşındaki kadın hasta 4 haftadır çarpıntı, kilo kaybı ve ısı intoleransı tarifliyor. Bilinen kronik hastalığı yok, düzenli ilaç kullanmıyor. Ateş, ajitasyon ve atriyal fibrilasyon gelişiyor; TSH baskılı, serbest T4 yüksek. Bu hastada antitiroid tedaviye ek olarak iyot verilmesinin zamanlaması hangi nedenle önemlidir?",
+    "options": [
+      "Önce hormon sentezi bloke edilmezse iyot yeni hormon yapımına substrat sağlayabilir",
+      "İyot beta reseptörlerini doğrudan aktive eder",
+      "İyot periferik T4-T3 dönüşümünü tek başına artırır",
+      "İyot adrenal kortizol sentezini durdurur",
+      "İyot tiroid reseptörünü geri dönüşsüz bloke eder"
+    ],
+    "correct": 0,
+    "exp": "Tiroid fırtınasında thionamid önce verilir; ardından iyot verilerek hormon salınımı azaltılır. Önce iyot verilmesi hormon sentezi için substrat sağlayabilir."
+  },
+  {
+    "id": 3270,
+    "ders": "Dahiliye",
+    "konu": "Endokrinoloji",
+    "diff": 4,
+    "q": "57 yaşındaki kadın hasta 3 aydır yüzde yuvarlaklaşma, proksimal kas güçsüzlüğü ve kolay morarma tarifliyor. Tip 2 diyabeti var, metformin kullanıyor. Gece 1 mg deksametazon sonrası kortizol baskılanmıyor, ACTH düşük. Bu tabloyu en iyi açıklayan kaynak hangisidir?",
+    "options": [
+      "ACTH'den bağımsız adrenal kortizol üretimi",
+      "Hipofizden aşırı TSH salınımı",
+      "Paratiroid adenomundan PTH salınımı",
+      "Pankreas beta hücrelerinden insülin eksikliği",
+      "Renal jukstaglomerüler hücrelerden renin baskılanması"
+    ],
+    "correct": 0,
+    "exp": "Cushing sendromunda düşük ACTH, adrenal kaynaklı otonom kortizol üretimini düşündürür. Deksametazonla baskılanmama hiperkortizolizmi destekler."
+  },
+  {
+    "id": 3271,
+    "ders": "Dahiliye",
+    "konu": "Endokrinoloji",
+    "diff": 4,
+    "q": "36 yaşındaki erkek hasta 1 yıldır ataklar halinde baş ağrısı, terleme ve çarpıntı tarifliyor. Bilinen kronik hastalığı yok, düzenli ilaç kullanmıyor. Atak sırasında kan basıncı 220/120 mmHg, plazma serbest metanefrinleri yüksek bulunuyor. Cerrahi öncesi ilk farmakolojik yaklaşım hangisidir?",
+    "options": [
+      "Alfa adrenerjik blokaj başlamak",
+      "Tek başına beta bloker başlamak",
+      "Yüksek doz tiazid başlamak",
+      "ACE inhibitörünü kesip NSAİİ başlamak",
+      "Dopamin agonisti başlamak"
+    ],
+    "correct": 0,
+    "exp": "Feokromositomada önce alfa blokaj yapılır. Önce beta blokaj verilirse vazokonstriksiyonun alfa etkisi karşılıksız kalır ve hipertansif kriz ağırlaşabilir."
+  },
+  {
+    "id": 3272,
+    "ders": "Dahiliye",
+    "konu": "Endokrinoloji",
+    "diff": 5,
+    "q": "74 yaşındaki kadın hasta 2 haftadır kalça ağrısı ve düşme sonrası hareket kısıtlılığı nedeniyle değerlendiriliyor. Osteoporozu var, iki yıldır denosumab kullanmış ancak 8 ay önce tedaviyi bırakmış; kalsiyum-D vitamini dışında ilaç kullanmıyor. Vertebral kompresyon kırığı saptanıyor. Bu kırık riskini artıran mekanizma hangisidir?",
+    "options": [
+      "Denosumab kesilince osteoklast aktivitesinde rebound artış",
+      "Bisfosfonatların kemikte kalıcı depolanmasıyla turnoverın yıllarca baskılanması",
+      "Kalsitoninin osteoblast aktivitesini artırması",
+      "D vitamini eksikliğinin PTH'yi tamamen baskılaması",
+      "Raloksifenin kortikal kemiği hızla eritmesi"
+    ],
+    "correct": 0,
+    "exp": "Denosumab kesildiğinde RANKL inhibisyonu ortadan kalkar ve kemik yıkımı rebound artabilir; ardışık antiresorptif tedavi planlanmazsa vertebral kırık riski yükselir."
+  },
+  {
+    "id": 3273,
+    "ders": "Dahiliye",
+    "konu": "Endokrinoloji",
+    "diff": 3,
+    "q": "Santral diabetes insipidusta su kısıtlama ve desmopressin sonrası beklenen idrar yanıtı hangisidir?",
+    "options": [
+      "Desmopressin sonrası idrar osmolalitesinde belirgin artış",
+      "Su kısıtlamasıyla idrarın hiç değişmemesi ve desmopressine yanıtsızlık",
+      "Desmopressin sonrası idrar osmolalitesinde azalma",
+      "Serum sodyumunun belirgin düşmesiyle poliürinin artması",
+      "İdrar sodyumunun 100 mEq/L üzerine çıkması"
+    ],
+    "correct": 0,
+    "exp": "Santral diabetes insipidusta ADH eksiktir; desmopressin verilince toplayıcı kanalda su geri emilimi artar ve idrar konsantre olur."
+  },
+  {
+    "id": 3274,
+    "ders": "Dahiliye",
+    "konu": "Endokrinoloji",
+    "diff": 4,
+    "q": "Primer adrenal yetmezlikte hiperpigmentasyonu açıklayan mekanizma hangisidir?",
+    "options": [
+      "POMC türevi ACTH ve MSH artışı",
+      "Aldosteron fazlalığına bağlı melanosit aktivasyonu",
+      "TSH reseptör antikorlarının melanositleri uyarması",
+      "Kortizol fazlalığıyla keratinosit proliferasyonu",
+      "Dopamin eksikliğiyle melanin yıkımının azalması"
+    ],
+    "correct": 0,
+    "exp": "Primer adrenal yetmezlikte kortizol düşer, ACTH yükselir. ACTH ve MSH aynı POMC öncülünden kaynaklandığı için hiperpigmentasyon görülebilir."
+  },
+  {
+    "id": 3275,
+    "ders": "Dahiliye",
+    "konu": "Endokrinoloji",
+    "diff": 4,
+    "q": "Medüller tiroid karsinomunun biyokimyasal takibinde en yararlı belirteç hangisidir?",
+    "options": [
+      "Kalsitonin",
+      "Tiroglobulin",
+      "Anti-TPO antikoru",
+      "Parathormon",
+      "IGF-1"
+    ],
+    "correct": 0,
+    "exp": "Medüller tiroid karsinomu parafolliküler C hücrelerinden köken alır ve kalsitonin salgılar. Tiroglobulin diferansiye foliküler kökenli kanserlerde daha kullanışlıdır."
+  },
+  {
+    "id": 3276,
+    "ders": "Dahiliye",
+    "konu": "Hematoloji",
+    "diff": 5,
+    "q": "38 yaşındaki kadın hasta 2 gündür baş ağrısı, konfüzyon ve burun kanaması tarifliyor. Bilinen kronik hastalığı yok, düzenli ilaç kullanmıyor. Trombosit 18.000/mm3, hemoglobin düşük, kreatinin yüksek, periferik yaymada şistositler görülüyor. Bu hastada mortaliteyi azaltmak için gecikmeden başlanması gereken tedavi hangisidir?",
+    "options": [
+      "Plazma değişimi ve kortikosteroid",
+      "Trombosit transfüzyonu ile tek başına izlem",
+      "Oral demir tedavisi",
+      "Warfarin başlanması",
+      "Yalnızca folik asit replasmanı"
+    ],
+    "correct": 0,
+    "exp": "TTP mikroanjiyopatik hemolitik anemi, trombositopeni ve organ bulgularıyla seyreder. ADAMTS13 eksikliğine bağlı vWF multimerleri plazma değişimiyle uzaklaştırılır; tedavi gecikmemelidir."
+  },
+  {
+    "id": 3277,
+    "ders": "Dahiliye",
+    "konu": "Hematoloji",
+    "diff": 4,
+    "q": "68 yaşındaki erkek hasta 3 aydır halsizlik ve efor dispnesi tarifliyor. Kronik hastalığı olarak hipertansiyonu var, losartan kullanıyor. Hemoglobin 8,9 g/dL, MCV düşük, ferritin 8 ng/mL ve gaitada gizli kan pozitif. Bu hastada etiyoloji açısından en uygun sonraki yaklaşım hangisidir?",
+    "options": [
+      "Gastrointestinal kanama odağı için endoskopik değerlendirme",
+      "Sadece oral demir verip başka inceleme yapmamak",
+      "Kemik iliği nakli planlamak",
+      "Hemoliz paneli olmadan steroid başlamak",
+      "Eritropoietin düzeyine göre tanıyı kesinleştirmek"
+    ],
+    "correct": 0,
+    "exp": "Yaşlı erkekte demir eksikliği anemisi aksi kanıtlanana kadar gastrointestinal kan kaybı veya malignite açısından araştırılmalıdır."
+  },
+  {
+    "id": 3278,
+    "ders": "Dahiliye",
+    "konu": "Hematoloji",
+    "diff": 4,
+    "q": "55 yaşındaki erkek hasta 6 aydır gece terlemesi ve sol üst kadranda dolgunluk tarifliyor. Bilinen kronik hastalığı yok, düzenli ilaç kullanmıyor. Lökosit 125.000/mm3, bazofili ve splenomegali var; BCR-ABL1 pozitif bulunuyor. Bu hastalıkta hedefe yönelik tedavinin ana hedefi hangisidir?",
+    "options": [
+      "Konstitutif aktif tirozin kinaz sinyalini baskılamak",
+      "JAK2 mutasyonuna bağlı eritropoezi artırmak",
+      "DNA topoizomeraz II'yi irreversibl aktive etmek",
+      "CD20 pozitif B hücrelerini opsonize etmek",
+      "Folat metabolizmasını hızlandırmak"
+    ],
+    "correct": 0,
+    "exp": "KML'de Philadelphia kromozomu BCR-ABL tirozin kinaz aktivitesi oluşturur. İmatinib ve benzeri TKI'lar bu sinyali baskılar."
+  },
+  {
+    "id": 3279,
+    "ders": "Dahiliye",
+    "konu": "Hematoloji",
+    "diff": 5,
+    "q": "27 yaşındaki kadın hasta 1 haftadır diş eti kanaması, halsizlik ve morarma tarifliyor. Bilinen kronik hastalığı yok, düzenli ilaç kullanmıyor. Lökosit yüksek, trombosit düşük, fibrinojen düşük ve periferik yaymada Auer çubukları içeren promiyelositler görülüyor. Bu hastada tanı kesinleşmeden başlanması gereken tedavi hangisidir?",
+    "options": [
+      "All-trans retinoik asit",
+      "Yüksek doz warfarin",
+      "Tek başına G-CSF",
+      "Oral B12 replasmanı",
+      "Acil splenektomi"
+    ],
+    "correct": 0,
+    "exp": "Akut promiyelositik lösemi DIC ile ölümcül kanama yapabilir. PML-RARA şüphesinde ATRA hızla başlanarak promiyelosit farklılaşması sağlanır."
+  },
+  {
+    "id": 3280,
+    "ders": "Dahiliye",
+    "konu": "Hematoloji",
+    "diff": 4,
+    "q": "62 yaşındaki kadın hasta 4 gündür sol bacakta şişlik ve ağrı tarifliyor. Metastatik pankreas kanseri var, gemsitabin-nab-paklitaksel alıyor; böbrek fonksiyonu korunmuş. Doppler ultrasonografide proksimal derin ven trombozu saptanıyor. Bu hastadaki tromboz eğilimini en iyi açıklayan mekanizma hangisidir?",
+    "options": [
+      "Tümör kaynaklı doku faktörü ve inflamasyonla koagülasyon aktivasyonu",
+      "Trombosit üretiminin tamamen durması",
+      "Faktör VIII geninde konjenital yokluk",
+      "Protein C aktivitesinin aşırı artması",
+      "Plazminojen aktivatörlerinin kalıcı yükselmesi"
+    ],
+    "correct": 0,
+    "exp": "Pankreas kanseri gibi adenokarsinomlar doku faktörü ve inflamatuvar yollarla hiperkoagülabilite yapar; kanser ilişkili tromboz gelişir."
+  },
+  {
+    "id": 3281,
+    "ders": "Dahiliye",
+    "konu": "Hematoloji",
+    "diff": 5,
+    "q": "49 yaşındaki erkek hasta 6 gündür yoğun bakımda heparin profilaksisi alırken yeni gelişen bacak ağrısı ve trombosit düşüşüyle değerlendiriliyor. Diyabeti var, insülin kullanıyor. Trombosit sayısı başlangıca göre yüzde 55 azalmış, Doppler'de tromboz var. Bu tabloda en uygun yaklaşım hangisidir?",
+    "options": [
+      "Heparini kesip non-heparin antikoagülan başlamak",
+      "Heparin dozunu artırmak",
+      "Sadece trombosit transfüzyonu vermek",
+      "Warfarini tek başına hemen yüklemek",
+      "Antikoagülasyonu tamamen kesip izlemek"
+    ],
+    "correct": 0,
+    "exp": "HIT'te PF4-heparin kompleksine karşı antikorlar trombosit aktivasyonu ve tromboz yapar. Heparin kesilir ve argatroban/fondaparinuks gibi non-heparin antikoagülan başlanır."
+  },
+  {
+    "id": 3282,
+    "ders": "Dahiliye",
+    "konu": "Hematoloji",
+    "diff": 4,
+    "q": "Faktör VIII inhibitörü gelişen ağır hemofili A hastasında kanama kontrolünü sağlayabilen tedavi yaklaşımı hangisidir?",
+    "options": [
+      "Bypass edici ajan veya emicizumab stratejisi",
+      "Sadece aspirin başlanması",
+      "Faktör XII replasmanı",
+      "Demir şelasyonu",
+      "Warfarin ile protrombin baskılama"
+    ],
+    "correct": 0,
+    "exp": "İnhibitör gelişen hemofili A'da standart faktör VIII etkisizleşebilir. Akut kanamada bypass edici ajanlar, profilakside emicizumab gibi seçenekler kullanılabilir."
+  },
+  {
+    "id": 3283,
+    "ders": "Dahiliye",
+    "konu": "Hematoloji",
+    "diff": 4,
+    "q": "Herediter sferositozda splenektomi sonrası hemolizin azalmasını en iyi açıklayan mekanizma hangisidir?",
+    "options": [
+      "Dalakta şekil bozukluğu olan eritrositlerin yıkımının azalması",
+      "Kemik iliğinde globin zinciri sentezinin düzelmesi",
+      "G6PD aktivitesinin artması",
+      "Hemoglobinin oksijen afinitesinin azalması",
+      "Demir emiliminin tamamen durması"
+    ],
+    "correct": 0,
+    "exp": "Herediter sferositozda membran iskelet bozukluğu sferosit oluşumuna ve dalakta ekstravasküler hemolize neden olur. Splenektomi yıkımı azaltır."
+  },
+  {
+    "id": 3284,
+    "ders": "Dahiliye",
+    "konu": "Hematoloji",
+    "diff": 3,
+    "q": "Vitamin B12 eksikliğinde nörolojik bulguların folat eksikliğinden daha belirgin olmasını açıklayan yol hangisidir?",
+    "options": [
+      "Metilmalonil-KoA metabolizmasının bozulması",
+      "Heme sentezinde ferroşelataz inhibisyonu",
+      "G6PD yolunda NADPH üretiminin artması",
+      "Globin zinciri sentezinde alfa zincir fazlalığı",
+      "Trombopoietin reseptörünün aktive olması"
+    ],
+    "correct": 0,
+    "exp": "B12 eksikliğinde metilmalonik asit artışı miyelin metabolizmasını bozar ve nörolojik bulgulara katkı sağlar. Folat eksikliğinde bu yol etkilenmez."
+  },
+  {
+    "id": 3285,
+    "ders": "Dahiliye",
+    "konu": "Onkoloji",
+    "diff": 5,
+    "q": "64 yaşındaki erkek hasta metastatik akciğer adenokarsinomu nedeniyle pembrolizumab alırken 10 gündür günde 8 kez sulu ishal ve karın ağrısı tarifliyor. Hipertansiyonu var, ramipril kullanıyor. Dışkı kültürü negatif, kolonoskopide yaygın kolit bulguları var. Bu tabloda en uygun yaklaşım hangisidir?",
+    "options": [
+      "İmmün kontrol noktası inhibitörünü kesip sistemik kortikosteroid başlamak",
+      "Loperamid verip immünoterapiye aynen devam etmek",
+      "Acil total kolektomi yapmak",
+      "Yalnızca oral demir tedavisi vermek",
+      "Yüksek doz metotreksat başlamak"
+    ],
+    "correct": 0,
+    "exp": "İmmün kontrol noktası inhibitörleri T hücre aktivasyonunu artırarak immün ilişkili kolit yapabilir. Orta-ağır kolitte ilaç tutulur ve sistemik steroid başlanır."
+  },
+  {
+    "id": 3286,
+    "ders": "Dahiliye",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "57 yaşındaki kadın hasta 2 aydır öksürük ve kilo kaybı tarifliyor. Bilinen kronik hastalığı yok, sigara içmemiş, düzenli ilaç kullanmıyor. Metastatik akciğer adenokarsinomu tanısı konuyor ve EGFR ekzon 19 delesyonu saptanıyor. İlk basamak sistemik tedavide temel hedef hangisidir?",
+    "options": [
+      "EGFR tirozin kinaz aktivitesini baskılamak",
+      "PD-1 reseptörünü tek başına aktive etmek",
+      "VEGF üretimini kortikosteroidle artırmak",
+      "ALK füzyonunu radyoterapiyle yok etmek",
+      "DNA metilasyonunu folatla artırmak"
+    ],
+    "correct": 0,
+    "exp": "EGFR aktive edici mutasyonu olan metastatik NSCLC'de EGFR tirozin kinaz inhibitörleri ilk basamakta hedefe yönelik tedavi sağlar."
+  },
+  {
+    "id": 3287,
+    "ders": "Dahiliye",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "48 yaşındaki kadın hasta meme kanseri nedeniyle kemoterapinin 9. gününde 6 saattir ateş ve titreme tarifliyor. Hipotiroidisi var, levotiroksin kullanıyor. Nötrofil 300/mm3, kan basıncı stabil. Bu hastada ilk saatlerde en uygun yaklaşım hangisidir?",
+    "options": [
+      "Antipseudomonal etkili geniş spektrumlu beta-laktam başlamak",
+      "Ateş düşene kadar antibiyotiksiz izlemek",
+      "Sadece oral amoksisilin vermek",
+      "G-CSF verilene kadar antibiyotiği ertelemek",
+      "Ampirik antifungal monoterapi başlamak"
+    ],
+    "correct": 0,
+    "exp": "Febril nötropeni acildir. Pseudomonas dahil gram-negatifleri kapsayan ampirik antipseudomonal beta-laktam gecikmeden başlanmalıdır."
+  },
+  {
+    "id": 3288,
+    "ders": "Dahiliye",
+    "konu": "Onkoloji",
+    "diff": 5,
+    "q": "23 yaşındaki erkek hasta bulky Burkitt lenfoma için kemoterapi aldıktan 18 saat sonra bulantı, kas krampları ve oligüri tarifliyor. Bilinen kronik hastalığı yok, düzenli ilaç kullanmıyor. Potasyum, fosfor ve ürik asit yüksek; kalsiyum düşük saptanıyor. Bu tabloyu en iyi açıklayan mekanizma hangisidir?",
+    "options": [
+      "Hızlı tümör hücresi lizisiyle hücre içi iyon ve nükleik asit yükünün kana geçmesi",
+      "Kemoterapinin ADH salınımını tamamen durdurması",
+      "Kemik iliğinde eritrosit üretiminin artması",
+      "Pankreastan insülin salınımının yükselmesi",
+      "Safra asidi emiliminin azalması"
+    ],
+    "correct": 0,
+    "exp": "Tümör lizis sendromunda hızlı hücre yıkımı potasyum, fosfor ve nükleik asitleri artırır; ürik asit nefropatisi ve hipokalsemi gelişebilir."
+  },
+  {
+    "id": 3289,
+    "ders": "Dahiliye",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "69 yaşındaki erkek hasta 4 aydır bel ağrısı ve kilo kaybı tarifliyor. Prostat kanseri öyküsü var, leuprorelin kullanıyor. PSA yükselmiş, görüntülemede yaygın osteoblastik kemik metastazları görülüyor. Kemik ağrısının ve kırık riskinin azaltılmasında hedeflenen temel yol hangisidir?",
+    "options": [
+      "Osteoklast aktivitesini RANKL veya bisfosfonat yoluyla baskılamak",
+      "Parathormon salınımını artırmak",
+      "Kemik matriksinde kollajen yıkımını hızlandırmak",
+      "Androjen reseptörünü uyararak tümör apoptozunu azaltmak",
+      "Serum kalsiyumunu düşürmeden fosforu artırmak"
+    ],
+    "correct": 0,
+    "exp": "Kemik metastazlarında denosumab veya bisfosfonatlar osteoklast aktivitesini azaltarak iskelet ilişkili olayları ve ağrıyı azaltmaya yardımcı olur."
+  },
+  {
+    "id": 3290,
+    "ders": "Dahiliye",
+    "konu": "Onkoloji",
+    "diff": 5,
+    "q": "54 yaşındaki kadın hasta 6 haftadır karın ağrısı ve kilo kaybı tarifliyor. Bilinen kronik hastalığı yok, düzenli ilaç kullanmıyor. Metastatik kolorektal kanser tanısı konuyor; tümörde MSI-high ve mismatch repair eksikliği saptanıyor. Bu biyobelirteç hangi tedavi yanıtını öngörür?",
+    "options": [
+      "PD-1 ekseni hedefleyen immünoterapiye duyarlılık",
+      "EGFR antikorlarına mutlak direnç olmaması",
+      "HER2 blokajına zorunlu yanıt",
+      "ALK inhibitörlerine yüksek yanıt",
+      "BCR-ABL inhibitörlerine duyarlılık"
+    ],
+    "correct": 0,
+    "exp": "MSI-high/dMMR tümörlerde mutasyon yükü ve neoantijen sunumu artar; PD-1 temelli immünoterapiye yanıt olasılığı yüksektir."
+  },
+  {
+    "id": 3291,
+    "ders": "Dahiliye",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Paraneoplastik Lambert-Eaton miyastenik sendromunda kas güçsüzlüğünü açıklayan temel hedef hangisidir?",
+    "options": [
+      "Presinaptik voltaj kapılı kalsiyum kanalları",
+      "Postsinaptik asetilkolin reseptörleri",
+      "Kas distrofini",
+      "Miyelin bazik proteini",
+      "Dopamin D2 reseptörü"
+    ],
+    "correct": 0,
+    "exp": "Lambert-Eaton sendromunda presinaptik P/Q tipi kalsiyum kanallarına karşı antikorlar asetilkolin salınımını azaltır; küçük hücreli akciğer kanseriyle ilişkilidir."
+  },
+  {
+    "id": 3292,
+    "ders": "Dahiliye",
+    "konu": "Onkoloji",
+    "diff": 4,
+    "q": "Kanser kaşeksisinde kilo kaybının yalnızca açlıkla açıklanamamasının temel nedeni hangisidir?",
+    "options": [
+      "Sitokin aracılı katabolizma ve iskelet kası proteolizinin artması",
+      "İnsülin benzeri büyüme faktörünün aşırı artması",
+      "Leptin eksikliğine bağlı yağ depolanması",
+      "Safra asidi sentezinin tamamen durması",
+      "Albumin sentezinin artması"
+    ],
+    "correct": 0,
+    "exp": "Kaşekside TNF-alfa, IL-1 ve IL-6 gibi inflamatuvar mediyatörler kas yıkımını ve enerji tüketimini artırır; beslenme desteği tek başına tam düzeltmeyebilir."
+  },
+  {
+    "id": 3293,
+    "ders": "Dahiliye",
+    "konu": "Onkoloji",
+    "diff": 3,
+    "q": "Trastuzumab tedavisi öncesi ve sırasında kardiyak fonksiyon izlemi yapılmasının nedeni hangisidir?",
+    "options": [
+      "HER2 sinyalinin kardiyomiyosit sağkalımındaki rolü nedeniyle sol ventrikül disfonksiyonu gelişebilmesi",
+      "Trombositlerde COX-1 inhibisyonu yapması",
+      "Renin salınımını artırıp hipokalemi oluşturması",
+      "Tirozin kinazları yerine beta reseptörleri uyarması",
+      "Direkt pulmoner fibrozis yapması"
+    ],
+    "correct": 0,
+    "exp": "HER2 sinyali kardiyomiyosit stres yanıtında rol oynar. Trastuzumab geri dönüşümlü olabilen sol ventrikül disfonksiyonu yapabileceği için EF izlenir."
+  },
+  {
+    "id": 3294,
+    "ders": "Dahiliye",
+    "konu": "Kardiyoloji",
+    "diff": 4,
+    "q": "76 yaşındaki kadın hasta 3 gündür çarpıntı ve efor dispnesi tarifliyor. Hipertansiyonu ve tip 2 diyabeti var, valsartan ve metformin kullanıyor. EKG'de atriyal fibrilasyon saptanıyor, mekanik kapak veya orta-ağır mitral darlık yok. İnme riskini azaltmak için en uygun yaklaşım hangisidir?",
+    "options": [
+      "Uygun doz direkt oral antikoagülan başlamak",
+      "Tek başına aspirin başlamak",
+      "Antikoagülasyonu sinüs ritmine dönene kadar ertelemek",
+      "Klopidogrel ve aspirin kombinasyonu başlamak",
+      "Sadece beta blokerle izlemek"
+    ],
+    "correct": 0,
+    "exp": "AF'de inme riski yüksek hastada mekanik kapak veya orta-ağır mitral stenoz yoksa DOAC'lar genellikle VKA'ya tercih edilir; antiplatelet monoterapi yeterli değildir."
+  },
+  {
+    "id": 3295,
+    "ders": "Dahiliye",
+    "konu": "Kardiyoloji",
+    "diff": 5,
+    "q": "58 yaşındaki erkek hasta 90 dakikadır baskı tarzında göğüs ağrısı ve soğuk terleme tarifliyor. Hipertansiyonu var, amlodipin kullanıyor. EKG'de inferior ST elevasyonu var, hastane primer PCI yapabiliyor. Bu hastada mortaliteyi azaltan temel ilk tedavi stratejisi hangisidir?",
+    "options": [
+      "Acil koroner reperfüzyon için primer PCI",
+      "Troponin sonucunu bekleyip taburculuk planlamak",
+      "Sadece nitratla ağrıyı geçirmek",
+      "Bir hafta sonra elektif efor testi yapmak",
+      "Tek başına statin başlanması"
+    ],
+    "correct": 0,
+    "exp": "STEMI'de uygun zaman penceresinde primer PCI ile hızlı reperfüzyon mortaliteyi azaltır. Ağrı kontrolü reperfüzyonun yerine geçmez."
+  },
+  {
+    "id": 3296,
+    "ders": "Dahiliye",
+    "konu": "Kardiyoloji",
+    "diff": 4,
+    "q": "69 yaşındaki erkek hasta 3 aydır eforla nefes darlığı ve ayaklarda şişlik tarifliyor. Koroner arter hastalığı ve tip 2 diyabeti var; metoprolol, ramipril ve furosemid kullanıyor. EF yüzde 30 saptanıyor. Güncel mortalite ve hastane yatış riskini azaltan temel tedavi sınıflarından hangisi eksiktir?",
+    "options": [
+      "SGLT2 inhibitörü",
+      "Kısa etkili nifedipin",
+      "Digoksinin yüksek doz yüklemesi",
+      "NSAİİ ile kronik ağrı kontrolü",
+      "Tek başına nitrat monoterapisi"
+    ],
+    "correct": 0,
+    "exp": "HFrEF'de SGLT2 inhibitörleri diyabetten bağımsız olarak kalp yetersizliği yatışı ve kardiyovasküler olayları azaltır; modern temel tedavi bileşenlerindendir."
+  },
+  {
+    "id": 3297,
+    "ders": "Dahiliye",
+    "konu": "Kardiyoloji",
+    "diff": 5,
+    "q": "64 yaşındaki erkek hasta 2 saattir yırtılır tarzda sırt ağrısı tarifliyor. Hipertansiyonu var, tedaviyi düzensiz kullanıyor. Sağ ve sol kol kan basıncı arasında belirgin fark var; BT anjiyografide çıkan aort diseksiyonu saptanıyor. Medikal stabilizasyonda ilk hedef hangisidir?",
+    "options": [
+      "Beta blokerle kalp hızı ve dP/dt'yi azaltmak",
+      "Önce güçlü vazodilatör verip refleks taşikardi oluşturmak",
+      "Antikoagülasyonu rutin başlamak",
+      "Trombolitik vermek",
+      "Sıvı kısıtlamasıyla hipovolemi oluşturmak"
+    ],
+    "correct": 0,
+    "exp": "Aort diseksiyonunda ilk hedef shear stress'i azaltmaktır. Beta bloker kalp hızını ve kontraktiliteyi düşürür; vazodilatör gerekiyorsa beta blokajdan sonra eklenir."
+  },
+  {
+    "id": 3298,
+    "ders": "Dahiliye",
+    "konu": "Kardiyoloji",
+    "diff": 4,
+    "q": "82 yaşındaki kadın hasta 6 aydır eforla senkop, göğüs ağrısı ve nefes darlığı tarifliyor. Hipertansiyonu var, perindopril kullanıyor. Muayenede geç pik yapan sistolik ejeksiyon üfürümü ve zayıf karotis yükselmesi var. Semptomları açıklayan kapak lezyonu hangisidir?",
+    "options": [
+      "Ciddi aort stenozu",
+      "Mitral kapak prolapsusu",
+      "Akut triküspit yetersizliği",
+      "Pulmoner stenoz",
+      "Atrial septal defekt"
+    ],
+    "correct": 0,
+    "exp": "Efor senkopu, anjina ve dispne triadı; geç pik yapan sistolik üfürüm ve parvus-tardus nabız ciddi aort stenozunu düşündürür."
+  },
+  {
+    "id": 3299,
+    "ders": "Dahiliye",
+    "konu": "Kardiyoloji",
+    "diff": 5,
+    "q": "73 yaşındaki erkek hasta 2 gündür bulantı, görmede sarı-yeşil renklenme ve halsizlik tarifliyor. HFrEF ve atriyal fibrilasyonu var; digoksin, furosemid ve ramipril kullanıyor. Potasyum 2,8 mEq/L, EKG'de ventriküler ektopiler var. Bu toksisiteyi kolaylaştıran temel durum hangisidir?",
+    "options": [
+      "Hipokaleminin Na/K-ATPaz bağlanmasını artırması",
+      "Hiperkalseminin digoksini tamamen inaktive etmesi",
+      "Metabolik alkalozun reseptörleri ortadan kaldırması",
+      "Beta blokerin digoksin emilimini engellemesi",
+      "Hiponatreminin digoksini idrarla uzaklaştırması"
+    ],
+    "correct": 0,
+    "exp": "Hipokalemi digoksinin Na/K-ATPaz üzerindeki etkisini artırır ve aritmi riskini yükseltir. Diüretik kullanımı bu riski artırabilir."
+  },
+  {
+    "id": 3300,
+    "ders": "Dahiliye",
+    "konu": "Kardiyoloji",
+    "diff": 4,
+    "q": "45 yaşındaki erkek hasta 4 gündür viral enfeksiyon sonrası göğüs ağrısı tarifliyor. Bilinen kronik hastalığı yok, düzenli ilaç kullanmıyor. Ağrı öne eğilmekle azalıyor, yatınca artıyor; EKG'de yaygın konkav ST elevasyonu ve PR depresyonu var. Bu hastada en olası tanı hangisidir?",
+    "options": [
+      "Akut perikardit",
+      "Posterior miyokard enfarktüsü",
+      "Aort stenozu",
+      "Pulmoner emboli",
+      "Stabil angina"
+    ],
+    "correct": 0,
+    "exp": "Pozisyonla değişen plöritik göğüs ağrısı, yaygın ST elevasyonu ve PR depresyonu akut perikarditi düşündürür."
+  },
+  {
+    "id": 3301,
+    "ders": "Dahiliye",
+    "konu": "Kardiyoloji",
+    "diff": 4,
+    "q": "Atrial fibrilasyonda antiplatelet tedavinin tek başına oral antikoagülasyon yerine kullanılmamasının temel nedeni hangisidir?",
+    "options": [
+      "Kardiyoembolik trombüs oluşumunu yeterince önlememesi",
+      "Mide mukozasını tamamen koruması",
+      "Atriyal elektriksel yeniden şekillenmeyi geri çevirmesi",
+      "Sol atriyal appendiksi mekanik olarak kapatması",
+      "Mitral darlığı tedavi etmesi"
+    ],
+    "correct": 0,
+    "exp": "AF'de inme çoğunlukla sol atriyal appendikste pıhtı oluşumu ile ilişkilidir. Uygun riskte oral antikoagülasyon antiplateletlerden daha etkilidir."
+  },
+  {
+    "id": 3302,
+    "ders": "Dahiliye",
+    "konu": "Kardiyoloji",
+    "diff": 4,
+    "q": "Hipertrofik kardiyomiyopatide ani kardiyak ölüm riskini artıran temel aritmik zemin hangisidir?",
+    "options": [
+      "Miyokardiyal disarray ve fibrozise bağlı ventriküler taşiaritmi eğilimi",
+      "AV nodun tamamen yokluğu",
+      "Sinüs düğümünde parasempatik aşırı aktivite",
+      "Pulmoner venlerde trombüs birikimi",
+      "Koroner sinüste doğumsal daralma"
+    ],
+    "correct": 0,
+    "exp": "Hipertrofik kardiyomiyopatide miyosit disarrayi ve fibrozis ventriküler aritmi substratı oluşturur; aile öyküsü, senkop ve ciddi hipertrofi risk değerlendirmesinde önemlidir."
+  },
+  {
+    "id": 3303,
+    "ders": "Dahiliye",
+    "konu": "Göğüs Hastalıkları",
+    "diff": 4,
+    "q": "67 yaşındaki erkek hasta 2 yıldır giderek artan efor dispnesi ve kronik balgam tarifliyor. Kırk paket-yıl sigara öyküsü var; hipertansiyon için amlodipin kullanıyor. Spirometride bronkodilatör sonrası FEV1/FVC 0,58, son yılda iki alevlenme geçirmiş, kan eozinofili 360/µL. Bu hastada inhaler kortikosteroid eklenmesini destekleyen bulgu hangisidir?",
+    "options": [
+      "Sık alevlenme öyküsü ve yüksek kan eozinofil düzeyi",
+      "Normal FEV1/FVC oranı",
+      "Balgam kültüründe viral etken saptanması",
+      "Tek başına düşük sigara öyküsü",
+      "Periferik eozinofilin sıfıra yakın olması"
+    ],
+    "correct": 0,
+    "exp": "KOAH'ta ICS eklenmesi özellikle sık alevlenme ve yüksek kan eozinofili olan hastalarda alevlenme riskini azaltabilir; pnömoni riski de değerlendirilmelidir."
+  },
+  {
+    "id": 3304,
+    "ders": "Dahiliye",
+    "konu": "Göğüs Hastalıkları",
+    "diff": 4,
+    "q": "34 yaşındaki kadın hasta 1 gündür ani başlayan nefes darlığı ve sağ yan ağrısı tarifliyor. Oral kontraseptif kullanıyor, kronik hastalığı yok. Nabız 118/dk, oksijen satürasyonu yüzde 91; D-dimer yüksek ve BT pulmoner anjiyografide segmenter pulmoner emboli görülüyor. Bu hastada hipokseminin temel mekanizması hangisidir?",
+    "options": [
+      "Ventilasyon-perfüzyon uyumsuzluğu ve ölü boşluk artışı",
+      "Alveollerde surfaktan sentezinin kalıcı artması",
+      "Bronş düz kasında kolinerjik blokaj",
+      "Hemoglobinin oksijen afinitesinin artması",
+      "Plevral sıvıda trigliserid birikimi"
+    ],
+    "correct": 0,
+    "exp": "Pulmoner embolide perfüzyonun azalmasına rağmen ventilasyonun sürmesi ölü boşluğu ve V/Q uyumsuzluğunu artırır; hipoksemi gelişir."
+  },
+  {
+    "id": 3305,
+    "ders": "Dahiliye",
+    "konu": "Göğüs Hastalıkları",
+    "diff": 4,
+    "q": "52 yaşındaki kadın hasta 8 aydır kuru öksürük ve efor dispnesi tarifliyor. Romatoid artriti var, metotreksat kullanıyor. HRCT'de bazal-periferik retikülasyon ve bal peteği görünümü saptanıyor. Bu radyolojik patern hangi patolojiyi en çok düşündürür?",
+    "options": [
+      "Usual interstitial pneumonia paterni",
+      "Akut bronşiolit",
+      "Santral bronşektaziye bağlı ABPA",
+      "Pulmoner alveoler proteinozis",
+      "Basit plevral plak"
+    ],
+    "correct": 0,
+    "exp": "Bazal-subplevral retikülasyon ve bal peteği görünümü UIP paternini düşündürür. Romatoid artrit interstisyel akciğer hastalığı ile ilişkili olabilir."
+  },
+  {
+    "id": 3306,
+    "ders": "Dahiliye",
+    "konu": "Göğüs Hastalıkları",
+    "diff": 4,
+    "q": "41 yaşındaki erkek hasta 3 aydır horlama, tanıklı apne ve gündüz uyuklama tarifliyor. Obezitesi ve hipertansiyonu var, losartan kullanıyor. Polisomnografide apne-hipopne indeksi 36/saat bulunuyor. Bu hastada gündüz semptomlarını ve kardiyometabolik yükü azaltmak için en uygun tedavi hangisidir?",
+    "options": [
+      "Gece pozitif hava yolu basıncı tedavisi",
+      "Kısa etkili benzodiazepin başlanması",
+      "Yatmadan önce alkol alımının önerilmesi",
+      "Sadece gündüz oksijen verilmesi",
+      "Uzun süreli sistemik steroid"
+    ],
+    "correct": 0,
+    "exp": "Orta-ağır obstrüktif uyku apnesinde CPAP üst hava yolunu açık tutar, gündüz uykululuğunu ve ilişkili kardiyometabolik etkileri azaltır."
+  },
+  {
+    "id": 3307,
+    "ders": "Dahiliye",
+    "konu": "Göğüs Hastalıkları",
+    "diff": 5,
+    "q": "28 yaşındaki kadın hasta 5 yıldır epizodik hışıltı ve gece öksürüğü tarifliyor. Alerjik riniti var, antihistaminik kullanıyor. Son 1 ayda haftada birkaç kez semptomu olmuş ve kısa etkili beta agonist kullanım ihtiyacı artmış. Güncel astım yaklaşımında alevlenme riskini azaltmak için uygun kontrol stratejisi hangisidir?",
+    "options": [
+      "İnhale kortikosteroid içeren tedavi, uygun hastada ICS-formoterol temelli rahatlatıcı strateji",
+      "Sadece kısa etkili beta agonist ile izlem",
+      "Uzun süreli oral steroid monoterapisi",
+      "Beta bloker başlanması",
+      "Antibiyotik profilaksisi"
+    ],
+    "correct": 0,
+    "exp": "Astımda yalnız SABA kullanımı alevlenme riskini artırır. İnhale kortikosteroid içeren rejimler, uygun hastada ICS-formoterol tabanlı stratejilerle alevlenme riskini azaltır."
+  },
+  {
+    "id": 3308,
+    "ders": "Dahiliye",
+    "konu": "Göğüs Hastalıkları",
+    "diff": 5,
+    "q": "59 yaşındaki erkek hasta 6 aydır progresif efor dispnesi ve senkop tarifliyor. Sistemik sklerozu var, mikofenolat kullanıyor. Ekokardiyografide sağ ventrikül basınç yükü, sağ kalp kateterizasyonunda prekapiller pulmoner hipertansiyon saptanıyor. Bu tabloda temel vasküler mekanizma hangisidir?",
+    "options": [
+      "Pulmoner arteriollerde proliferatif remodeling ve direnç artışı",
+      "Sol ventrikül diyastolik basıncının tek başına yükselmesi",
+      "Alveollerde akut eksüda birikimi",
+      "Bronş düz kasında geçici spazm",
+      "Plevral boşlukta hava birikmesi"
+    ],
+    "correct": 0,
+    "exp": "Pulmoner arteriyel hipertansiyonda küçük pulmoner arterlerde vazokonstriksiyon, proliferasyon ve remodeling pulmoner vasküler direnci artırır; sağ kalp yüklenir."
+  },
+  {
+    "id": 3309,
+    "ders": "Dahiliye",
+    "konu": "Göğüs Hastalıkları",
+    "diff": 3,
+    "q": "Spirometride obstrüktif patern tanımı için en temel bulgu hangisidir?",
+    "options": [
+      "FEV1/FVC oranının düşük olması",
+      "Total akciğer kapasitesinin zorunlu olarak artması",
+      "DLCO'nun her zaman normal olması",
+      "Rezidüel volümün sıfıra yaklaşması",
+      "PaCO2'nin mutlaka düşük olması"
+    ],
+    "correct": 0,
+    "exp": "Obstrüksiyonda ekspiratuvar akım kısıtlanır ve FEV1/FVC oranı düşer. TLC ve DLCO hastalığa göre değişebilir."
+  },
+  {
+    "id": 3310,
+    "ders": "Dahiliye",
+    "konu": "Göğüs Hastalıkları",
+    "diff": 4,
+    "q": "Sarkoidozda hiperkalsemiyi açıklayan mekanizma hangisidir?",
+    "options": [
+      "Makrofajlarda 1-alfa hidroksilaz aktivitesiyle kalsitriol artışı",
+      "Paratiroid bezinde PTHrP üretimi",
+      "Böbrekte kalsitonin yıkımının azalması",
+      "Kemikte osteopetroz gelişmesi",
+      "D vitamini reseptörünün tamamen kaybı"
+    ],
+    "correct": 0,
+    "exp": "Sarkoidoz granülomlarında makrofajlar 1-alfa hidroksilaz aktivitesi gösterebilir; kalsitriol artar ve hiperkalsemi gelişebilir."
+  },
+  {
+    "id": 3311,
+    "ders": "Dahiliye",
+    "konu": "Göğüs Hastalıkları",
+    "diff": 4,
+    "q": "ARDS'de dirençli hipokseminin ana fizyolojik nedeni hangisidir?",
+    "options": [
+      "Alveoler kapiller hasar ve intrapulmoner şant artışı",
+      "Bronş mukozasında izole histamin salınımı",
+      "Pulmoner arterde tek taraflı trombüs olmadan ölü boşluğun sıfırlanması",
+      "Hemoglobinin oksijen afinitesinin aşırı artması",
+      "Plevra yaprakları arasında kalsifikasyon"
+    ],
+    "correct": 0,
+    "exp": "ARDS'de diffüz alveoler hasar, ödem ve alveoler kollaps intrapulmoner şantı artırır; oksijene dirençli hipoksemi gelişebilir."
+  },
+  {
+    "id": 3312,
+    "ders": "Dahiliye",
+    "konu": "Romatoloji",
+    "diff": 5,
+    "q": "72 yaşındaki kadın hasta 2 haftadır yeni başlayan temporal baş ağrısı, çene klodikasyonu ve sağ gözde bulanık görme tarifliyor. Hipertansiyonu var, hidroklorotiyazid kullanıyor. ESR belirgin yüksek, temporal arter hassas. Bu hastada kalıcı görme kaybını önlemek için en uygun yaklaşım hangisidir?",
+    "options": [
+      "Biyopsi beklenmeden yüksek doz glukokortikoid başlamak",
+      "Sadece NSAİİ ile izlemek",
+      "Metotreksat sonucunu beklemek",
+      "Antibiyotik başlanıp steroid ertelemek",
+      "Trombolitik tedavi vermek"
+    ],
+    "correct": 0,
+    "exp": "Dev hücreli arterit şüphesinde görme kaybı riski nedeniyle biyopsi beklenmeden yüksek doz steroid başlanır. Temporal arter biyopsisi tanıyı desteklemek için yapılabilir."
+  },
+  {
+    "id": 3313,
+    "ders": "Dahiliye",
+    "konu": "Romatoloji",
+    "diff": 4,
+    "q": "36 yaşındaki kadın hasta 3 aydır el bileklerinde ve MCP eklemlerinde sabah 90 dakika süren tutukluk ve simetrik ağrı tarifliyor. Bilinen kronik hastalığı yok, düzenli ilaç kullanmıyor. Anti-CCP pozitif, CRP yüksek. Kalıcı erozyonu azaltmak için ilk hastalık modifiye edici yaklaşım hangisidir?",
+    "options": [
+      "Metotreksat temelli erken DMARD tedavisi",
+      "Sadece parasetamol ile izlem",
+      "Uzun süreli yüksek doz opioid",
+      "Antibiyotik profilaksisi",
+      "Eklem içi steroidle tek başına yıllarca takip"
+    ],
+    "correct": 0,
+    "exp": "Romatoid artritte erken DMARD başlanması sinovyal inflamasyonu ve erozyon gelişimini azaltır. Metotreksat çoğu hastada temel başlangıç ilacıdır."
+  },
+  {
+    "id": 3314,
+    "ders": "Dahiliye",
+    "konu": "Romatoloji",
+    "diff": 5,
+    "q": "24 yaşındaki kadın hasta 1 aydır köpüklü idrar, bacaklarda şişlik ve eklem ağrısı tarifliyor. SLE tanısı var, hidroksiklorokin kullanıyor. Proteinüri 2,8 g/gün, anti-dsDNA yüksek, kompleman düşük. Böbrek biyopsisinde proliferatif lupus nefriti saptanıyor. Güncel tedavi yaklaşımının temel hedefi hangisidir?",
+    "options": [
+      "İmmün kompleks aracılı glomerüler inflamasyonu yoğun immünsüpresyonla baskılamak",
+      "Sadece NSAİİ ile proteinüriyi azaltmak",
+      "Hidroksiklorokini kesip tedavisiz izlemek",
+      "Antikoagülasyonla komplemanı yükseltmek",
+      "ACE inhibitörünü tek başına küratif tedavi kabul etmek"
+    ],
+    "correct": 0,
+    "exp": "Proliferatif lupus nefritinde immün kompleks ve kompleman aracılı glomerüler hasar vardır; glukokortikoid ve immünsüpresif ajanlarla remisyon hedeflenir."
+  },
+  {
+    "id": 3315,
+    "ders": "Dahiliye",
+    "konu": "Romatoloji",
+    "diff": 4,
+    "q": "58 yaşındaki erkek hasta 12 saattir sağ birinci metatarsofalangeal eklemde şiddetli ağrı, kızarıklık ve şişlik tarifliyor. Kronik böbrek hastalığı ve hipertansiyonu var, hidroklorotiyazid kullanıyor. Daha önce benzer atakları olmuş, ürik asit yüksek. Tanıyı en iyi destekleyen sinovyal sıvı bulgusu hangisidir?",
+    "options": [
+      "Negatif çift kırılmalı iğne şekilli kristaller",
+      "Pozitif çift kırılmalı romboid kristaller",
+      "Gram pozitif kok kümeleri",
+      "Eozinofilden zengin steril sıvı",
+      "Yağ damlacıkları"
+    ],
+    "correct": 0,
+    "exp": "Gut atağında monosodyum ürat kristalleri iğne şeklindedir ve negatif çift kırılma gösterir. Tiazidler hiperürisemi riskini artırabilir."
+  },
+  {
+    "id": 3316,
+    "ders": "Dahiliye",
+    "konu": "Romatoloji",
+    "diff": 5,
+    "q": "49 yaşındaki kadın hasta 3 gündür baş ağrısı ve bulanık görme tarifliyor. Difüz kutanöz sistemik sklerozu var, son haftalarda yüksek doz prednizolon kullanmış. Kan basıncı 210/120 mmHg, kreatinin hızla yükselmiş, idrarda hafif proteinüri var. Bu hastada ilk tercih edilmesi gereken tedavi hangisidir?",
+    "options": [
+      "ACE inhibitörü",
+      "Yüksek doz siklosporin",
+      "Tek başına beta bloker",
+      "Steroid dozunu artırmak",
+      "NSAİİ başlamak"
+    ],
+    "correct": 0,
+    "exp": "Skleroderma renal krizinde afferent renal vasküler hasar ve renin-anjiyotensin aktivasyonu belirgindir. ACE inhibitörleri böbrek sağkalımı açısından kritik tedavidir."
+  },
+  {
+    "id": 3317,
+    "ders": "Dahiliye",
+    "konu": "Romatoloji",
+    "diff": 5,
+    "q": "61 yaşındaki erkek hasta 3 haftadır sinüzit, hemoptizi ve koyu renkli idrar tarifliyor. Bilinen kronik hastalığı yok, düzenli ilaç kullanmıyor. Kreatinin yüksek, idrarda eritrosit silendirleri var; PR3-ANCA pozitif. Bu hastalıkta organ hasarını oluşturan mekanizma hangisidir?",
+    "options": [
+      "Nötrofil aktivasyonu ile küçük damar nekrotizan vasküliti",
+      "IgE aracılı mast hücre degranülasyonu",
+      "Tip II kollajen eksikliği",
+      "Ürat kristal birikimi",
+      "Trombosit adezyon reseptör yokluğu"
+    ],
+    "correct": 0,
+    "exp": "Granülomatoz poliangiit PR3-ANCA ile ilişkili küçük damar nekrotizan vaskülit yapar; üst-alt solunum yolu ve böbrek tutulumu tipiktir."
+  },
+  {
+    "id": 3318,
+    "ders": "Dahiliye",
+    "konu": "Romatoloji",
+    "diff": 4,
+    "q": "Polimiyalji romatikada dev hücreli arterit birlikteliği açısından özellikle sorgulanması gereken bulgu hangisidir?",
+    "options": [
+      "Yeni başlayan temporal baş ağrısı ve çene klodikasyonu",
+      "Akşamları artan mekanik bel ağrısı",
+      "El DIP eklemlerinde osteofit",
+      "Egzersizle azalan topuk ağrısı",
+      "Tekrarlayan oral aft"
+    ],
+    "correct": 0,
+    "exp": "Polimiyalji romatika dev hücreli arteritle birlikte olabilir. Yeni baş ağrısı, çene klodikasyonu ve görme semptomları acil steroid gerektirebilir."
+  },
+  {
+    "id": 3319,
+    "ders": "Dahiliye",
+    "konu": "Romatoloji",
+    "diff": 4,
+    "q": "Antifosfolipid sendromunda arteriyel ve venöz tromboz eğilimini açıklayan temel olay hangisidir?",
+    "options": [
+      "Fosfolipid bağlayıcı proteinlere karşı antikorların endotel ve koagülasyonu aktive etmesi",
+      "Faktör VIII'in kalıtsal eksikliği",
+      "Trombosit sayısının sıfıra inmesi",
+      "Plazmin aktivitesinin aşırı yükselmesi",
+      "D vitamini reseptörünün baskılanması"
+    ],
+    "correct": 0,
+    "exp": "Antifosfolipid antikorları beta-2 glikoprotein I gibi proteinlerle ilişkili olarak endotel, trombosit ve kompleman yolaklarını aktive eder; tromboz ve gebelik morbiditesi gelişebilir."
+  },
+  {
+    "id": 3320,
+    "ders": "Dahiliye",
+    "konu": "Romatoloji",
+    "diff": 3,
+    "q": "Sjögren sendromunda ağız ve göz kuruluğunu açıklayan temel patolojik süreç hangisidir?",
+    "options": [
+      "Ekzokrin bezlerin lenfositik infiltrasyonu ve yıkımı",
+      "Melanositlerin otoimmün yıkımı",
+      "Nöromüsküler kavşakta asetilkolin reseptör blokajı",
+      "Pankreas beta hücre hiperplazisi",
+      "Kıkırdak matriksinde ürat birikimi"
+    ],
+    "correct": 0,
+    "exp": "Sjögren sendromunda tükrük ve lakrimal bezlerde lenfositik infiltrasyon gelişir; glandüler fonksiyon bozulur ve sikka semptomları olur."
+  },
+  {
+    "id": 3321,
+    "ders": "Dahiliye",
+    "konu": "Geriartri",
+    "diff": 4,
+    "q": "82 yaşındaki kadın hasta 4 gündür dalgalanan bilinç bulanıklığı ve gece ajitasyonu nedeniyle getiriliyor. Alzheimer hastalığı ve hipertansiyonu var; donepezil, amlodipin ve son hafta uykusuzluk için diazepam kullanıyor. İdrar yolu enfeksiyonu bulguları da var. Bu hastada yeni başlayan konfüzyonu en iyi açıklayan durum hangisidir?",
+    "options": [
+      "Enfeksiyon ve benzodiazepinle tetiklenen deliryum",
+      "Alzheimer hastalığının yavaş doğal seyri",
+      "Primer psikotik bozukluk",
+      "Normal yaşlanma",
+      "Parkinson hastalığı"
+    ],
+    "correct": 0,
+    "exp": "Deliryum akut ve dalgalı dikkat-bilinç bozukluğudur. Enfeksiyon, benzodiazepinler ve antikolinerjik yük yaşlıda sık tetikleyicilerdir."
+  },
+  {
+    "id": 3322,
+    "ders": "Dahiliye",
+    "konu": "Geriartri",
+    "diff": 4,
+    "q": "79 yaşındaki erkek hasta 2 aydır ayağa kalkınca baş dönmesi ve iki kez düşme tarifliyor. Parkinson hastalığı var, levodopa ve tamsulosin kullanıyor; hipertansiyon için de diüretik alıyor. Yatar kan basıncı 138/78 mmHg, ayakta 102/64 mmHg ölçülüyor. Bu hastada düşmeleri azaltmak için öncelikli yaklaşım hangisidir?",
+    "options": [
+      "Ortostatik hipotansiyona katkı veren ilaçları gözden geçirmek ve düzenlemek",
+      "Düşmeleri normal yaşlanma kabul edip izlemek",
+      "Sıvı alımını belirgin kısıtlamak",
+      "Yüksek doz benzodiazepin başlamak",
+      "Tüm antihipertansifleri kalıcı olarak kesip takip etmemek"
+    ],
+    "correct": 0,
+    "exp": "Yaşlıda ortostatik hipotansiyon düşme nedenidir. Alfa blokerler, diüretikler ve dopaminerjik ilaçlar katkıda bulunabilir; ilaç gözden geçirme ve nonfarmakolojik önlemler önceliklidir."
+  },
+  {
+    "id": 3323,
+    "ders": "Dahiliye",
+    "konu": "Geriartri",
+    "diff": 4,
+    "q": "86 yaşındaki kadın hasta 3 aydır unutkanlık, kabızlık ve ağız kuruluğu artışıyla başvuruyor. Hipertansiyonu ve üriner inkontinansı var; amlodipin ve oksibutinin kullanıyor. Yakınları son haftalarda düşmelerinin arttığını söylüyor. Bu hastada en uygun ilaç yönetimi hangisidir?",
+    "options": [
+      "Antikolinerjik yükü azaltmak için oksibutinini kesmeyi değerlendirmek",
+      "Oksibutinin dozunu iki katına çıkarmak",
+      "Benzodiazepin eklemek",
+      "Aspirinle kognisyonu düzeltmek",
+      "Antipsikotik profilaksisi başlamak"
+    ],
+    "correct": 0,
+    "exp": "Oksibutinin güçlü antikolinerjik etkiye sahiptir; yaşlıda kognitif bozulma, konstipasyon, ağız kuruluğu ve düşme riskini artırabilir. Deprescribing düşünülmelidir."
+  },
+  {
+    "id": 3324,
+    "ders": "Dahiliye",
+    "konu": "Geriartri",
+    "diff": 5,
+    "q": "88 yaşındaki erkek hasta 6 aydır kilo kaybı, yürüme hızında azalma ve çabuk yorulma tarifliyor. KOAH ve kalp yetersizliği var; tiotropium, furosemid ve ramipril kullanıyor. Son bir yılda üç kez düşmüş. Bu hastada kötü sonuç riskini öngören sendrom hangisidir?",
+    "options": [
+      "Frailty",
+      "Akut koroner sendrom",
+      "Primer epilepsi",
+      "İrritabl bağırsak sendromu",
+      "Esansiyel tremor"
+    ],
+    "correct": 0,
+    "exp": "Frailty; kilo kaybı, güçsüzlük, yavaş yürüme, düşük aktivite ve tükenmişlikle karakterizedir. Düşme, hastaneye yatış ve mortalite riskini artırır."
+  },
+  {
+    "id": 3325,
+    "ders": "Dahiliye",
+    "konu": "Geriartri",
+    "diff": 4,
+    "q": "81 yaşındaki kadın hasta 1 aydır uykusuzluk nedeniyle komşusunun önerdiği difenhidramini kullandıktan sonra sersemlik ve düşme tarifliyor. Osteoporozu var, alendronat ve D vitamini kullanıyor. Bu ilacın yaşlıda sakıncalı olmasının temel nedeni hangisidir?",
+    "options": [
+      "Güçlü antikolinerjik ve sedatif etkiyle deliryum ve düşme riskini artırması",
+      "Kemik mineral yoğunluğunu hızla artırması",
+      "Renal kan akımını koruması",
+      "Trombosit agregasyonunu geri dönüşsüz baskılaması",
+      "Hiperkalsemiyi düzeltmesi"
+    ],
+    "correct": 0,
+    "exp": "Birinci kuşak antihistaminikler antikolinerjik ve sedatif etkilidir; yaşlıda deliryum, üriner retansiyon, kabızlık ve düşme riskini artırır."
+  },
+  {
+    "id": 3326,
+    "ders": "Dahiliye",
+    "konu": "Geriartri",
+    "diff": 5,
+    "q": "84 yaşındaki erkek hasta 5 gündür iştahsızlık, halsizlik ve dengesizlik tarifliyor. Hipertansiyonu var; hidroklorotiyazid, sertralin ve omeprazol kullanıyor. Sodyum 122 mEq/L, serum osmolalitesi düşük. Bu hastada ilaç ilişkili hiponatremi açısından en olası katkı hangisidir?",
+    "options": [
+      "Tiazid diüretik ve SSRI kullanımının serbest su dengesini bozması",
+      "Amlodipinin ADH reseptörünü tamamen bloke etmesi",
+      "PPI'ın aldosteron fazlalığı oluşturması",
+      "D vitamininin natriürezi artırması",
+      "Kalsiyum kanal blokajının izotonik dehidratasyon yapması"
+    ],
+    "correct": 0,
+    "exp": "Tiazidler ve SSRI'lar yaşlıda hiponatremi riskini artırır. Dengesizlik ve düşme gibi nonspesifik semptomlarla gelebilir."
+  },
+  {
+    "id": 3327,
+    "ders": "Dahiliye",
+    "konu": "Geriartri",
+    "diff": 4,
+    "q": "Beers kriterlerinde benzodiazepinlerin çoğu yaşlı erişkinde kaçınılması gereken ilaçlar arasında yer almasının ana nedeni hangisidir?",
+    "options": [
+      "Bilişsel bozulma, deliryum, düşme ve kırık riskini artırmaları",
+      "Böbrek fonksiyonunu her hastada iyileştirmeleri",
+      "Hipoglisemiyi önlemeleri",
+      "Aterosklerozu geriletmeleri",
+      "Osteoblast aktivitesini artırmaları"
+    ],
+    "correct": 0,
+    "exp": "Benzodiazepinler yaşlıda sedasyon, kognitif bozulma, deliryum, düşme ve kırık riskini artırır. Kısa etkili olanlar da tamamen güvenli değildir."
+  },
+  {
+    "id": 3328,
+    "ders": "Dahiliye",
+    "konu": "Geriartri",
+    "diff": 4,
+    "q": "Yaşlı hastada ilaç yükünü azaltırken en doğru deprescribing ilkesi hangisidir?",
+    "options": [
+      "Her ilacın güncel endikasyon, yarar-zarar ve hasta hedefleriyle yeniden değerlendirilmesi",
+      "Tüm ilaçların aynı gün kesilmesi",
+      "Sadece pahalı ilaçların kesilmesi",
+      "Laboratuvar normal ise kronik hastalık ilaçlarının otomatik kesilmesi",
+      "Hasta tercihini dikkate almadan protokol uygulanması"
+    ],
+    "correct": 0,
+    "exp": "Deprescribing yapılandırılmış bir süreçtir; endikasyon, beklenen yarar süresi, advers etki, etkileşim ve hastanın bakım hedefleri birlikte değerlendirilir."
+  },
+  {
+    "id": 3329,
+    "ders": "Dahiliye",
+    "konu": "Geriartri",
+    "diff": 3,
+    "q": "Yaşlıda deliryumu demanstan ayırmada en yararlı klinik özellik hangisidir?",
+    "options": [
+      "Akut başlangıç ve gün içinde dalgalanma",
+      "Yıllar içinde yavaş ilerleme",
+      "İlk bulgunun izole uzak bellek kaybı olması",
+      "Muayenede dikkatin tamamen korunması",
+      "Semptomların yalnızca aile öyküsüyle açıklanması"
+    ],
+    "correct": 0,
+    "exp": "Deliryum akut başlangıçlı, dalgalı seyirli ve dikkat bozukluğunun belirgin olduğu bir sendromdur. Demans genellikle daha sinsi ve kronik seyreder."
   }
 ];
