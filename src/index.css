@@ -60,6 +60,10 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+a {
+  touch-action: manipulation;
+}
+
 button {
   touch-action: manipulation; /* double-tap zoom'u engeller */
 }
@@ -96,6 +100,59 @@ button:active {
 
 .mobile-action-bar {
   padding-bottom: calc(12px + env(safe-area-inset-bottom));
+}
+
+/* Yapışkan çubuklar: Android/WebView’da daha hafif blur; iOS’ta daha güçlü */
+.sticky-bar-blur {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.ios-device .sticky-bar-blur {
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+@media (min-width: 1024px) {
+  .sticky-bar-blur {
+    -webkit-backdrop-filter: blur(22px);
+    backdrop-filter: blur(22px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .correct-pop,
+  .skeleton-shimmer {
+    animation: none !important;
+  }
+  button:active {
+    transform: none;
+  }
+}
+
+/* Soru kökü metni — mobilde okunabilir ölçü (yaklaşık 60–70 karakter) + rahat satır aralığı */
+@layer utilities {
+  .mobile-reading-stem {
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+  @media (min-width: 640px) {
+    .mobile-reading-stem {
+      font-size: 1.125rem;
+      line-height: 1.55;
+    }
+  }
+  @media (min-width: 768px) {
+    .mobile-reading-stem {
+      font-size: 1.5rem;
+      line-height: 1.55;
+    }
+  }
+  @media (min-width: 1024px) {
+    .mobile-reading-stem {
+      font-size: 1.875rem;
+      line-height: 1.58;
+    }
+  }
 }
 
 @keyframes popCorrect {

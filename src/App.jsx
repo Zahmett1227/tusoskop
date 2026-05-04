@@ -837,6 +837,28 @@ export default function App() {
     } else setView("examAnalysis");
   };
 
+  const handleExamPrev = () => {
+    if (examIndex <= 0) return;
+    const currentQuestion = examQuestions[examIndex];
+    if (currentQuestion?.id) {
+      const currentAnswer =
+        getSelectedAnswerIndex(examAnswersRef.current, currentQuestion, examIndex) ?? examSelected ?? null;
+      saveExamAnswer(currentQuestion.id, currentAnswer);
+    }
+    const latestAnswers = examAnswersRef.current;
+    recordHistoryForQuestion({
+      question: currentQuestion,
+      selectedOption: currentQuestion?.id ? (latestAnswers[currentQuestion.id] ?? null) : null,
+      mode: "exam",
+    });
+    const newIndex = examIndex - 1;
+    setExamIndex(newIndex);
+    const prevQuestion = examQuestions[newIndex];
+    setExamSelected(
+      prevQuestion?.id ? (getSelectedAnswerIndex(latestAnswers, prevQuestion, newIndex) ?? null) : null
+    );
+  };
+
   const handleExamSelect = (optionIndex) => {
     const currentQuestion = examQuestions[examIndex];
     if (!currentQuestion?.id) return;
@@ -892,7 +914,7 @@ export default function App() {
             onClick={loginWithGoogle}
             className={`flex items-center gap-4 px-8 py-4 ${accentTheme.primary} ${accentTheme.primaryHover} text-slate-950 rounded-3xl font-black shadow-2xl ${accentTheme.glow} hover:scale-105 transition-transform active:scale-95`}
           >
-            <img src="https://www.google.com/favicon.ico" className="w-5 h-5" alt="" />
+            <img src="https://www.google.com/favicon.ico" className="w-5 h-5" alt="" loading="lazy" decoding="async" />
             Google ile Giriş Yap
           </button>
         </div>
@@ -1074,6 +1096,7 @@ export default function App() {
             handleExamNext(null);
           }}
           handleExamNext={handleExamNext}
+          handleExamPrev={handleExamPrev}
           goDashboard={goDashboard}
         />
       );

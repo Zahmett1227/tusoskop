@@ -1,3 +1,4 @@
+import { usePrefersReducedMotion, useSwipeHandlers } from "../hooks/useSwipeHandlers";
 import { accentThemes } from "../theme/accentThemes";
 
 export default function StudyScreen({
@@ -26,6 +27,14 @@ export default function StudyScreen({
   favoriteFeedback,
 }) {
   const theme = accentTheme || accentThemes.emerald;
+  const reducedMotion = usePrefersReducedMotion();
+  const swipeStudy = useSwipeHandlers({
+    enabled: Boolean(q) && showAnswer && !reducedMotion,
+    onSwipeLeft: nextQuestion,
+    onSwipeRight: index > 0 ? prevQuestion : undefined,
+    reducedMotion,
+  });
+
   if (!q && total > 0) {
     return (
       <div
@@ -74,7 +83,7 @@ export default function StudyScreen({
 
   return (
     <div
-      className="min-h-screen bg-[#020617] text-white overflow-x-hidden flex flex-col px-4 py-8 md:py-12"
+      className="min-h-dvh bg-[#020617] text-white overflow-x-hidden flex flex-col px-4 py-6 sm:py-8 md:py-12"
       style={{
         paddingTop: "calc(0.75rem + env(safe-area-inset-top))",
         paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))",
@@ -119,7 +128,10 @@ export default function StudyScreen({
         </div>
       </div>
 
-      <div className="mx-auto max-w-4xl w-full space-y-6 flex-1">
+      <div
+        className="mx-auto max-w-4xl w-full space-y-6 flex-1 pb-[calc(6.75rem+env(safe-area-inset-bottom))] md:pb-10 overscroll-y-contain touch-pan-y"
+        {...swipeStudy}
+      >
         {topicProgress && (
           <div className="rounded-2xl border border-slate-700/70 bg-slate-950/70 px-4 py-3 shadow-lg">
             <div className="mb-2 flex items-center justify-between gap-3">
@@ -153,10 +165,6 @@ export default function StudyScreen({
             onClick={(event) => {
               event.preventDefault();
               event.stopPropagation();
-              console.log("FAVORITE BUTTON CLICKED", {
-                questionId: q?.id,
-                isFavorite,
-              });
               onToggleFavorite?.(q);
             }}
             title={isFavorite ? "Favorilerden çıkar" : "Favorilere ekle"}
@@ -171,10 +179,12 @@ export default function StudyScreen({
           <div className={`mb-4 text-xs md:text-sm font-extrabold tracking-wide ${theme.text} uppercase`}>
             {q.ders} • {q.konu}
           </div>
-          <div className="max-h-[42vh] overflow-y-auto pr-1">
-            <h2 className="font-['Plus_Jakarta_Sans'] text-xl sm:text-2xl md:text-3xl leading-relaxed tracking-[-0.02em] font-extrabold text-slate-50 break-words whitespace-normal [overflow-wrap:anywhere]">
-              {q.q}
-            </h2>
+          <div className="max-h-[min(52dvh,28rem)] md:max-h-[42vh] overflow-y-auto overscroll-y-contain pr-1 -mr-1">
+            <div className="max-w-prose">
+              <h2 className="font-['Plus_Jakarta_Sans'] mobile-reading-stem tracking-[-0.02em] font-extrabold text-slate-50 break-words whitespace-normal [overflow-wrap:anywhere]">
+                {q.q}
+              </h2>
+            </div>
           </div>
         </div>
 
@@ -239,14 +249,14 @@ export default function StudyScreen({
                 <button
                   key={i}
                   onClick={() => setSelected(i)}
-                  className={`group w-full min-w-0 text-left flex items-center gap-4 rounded-2xl border px-6 py-5 text-slate-100 shadow-sm transition-all duration-200 active:scale-[0.99]
+                  className={`group w-full min-w-0 text-left flex items-start sm:items-center gap-3 sm:gap-4 rounded-2xl border px-4 py-4 md:px-6 md:py-5 text-slate-100 shadow-sm transition-all duration-200 active:scale-[0.99]
                     ${isSelected ? `${theme.border} ${theme.softBg} shadow-lg ${theme.glow}` : "border-slate-700/80 bg-slate-950/70 hover:-translate-y-0.5 hover:bg-slate-900/90 hover:border-slate-500"}
                     ${showCorrectHighlight ? `${theme.border} ${theme.softBg}` : ""}
                     ${selectedIsWrong ? "border-amber-400/70 bg-amber-500/10 shadow-[0_0_35px_rgba(250,204,21,0.15)]" : ""}
                     ${selectedIsCorrect ? "correct-pop" : ""}
                   `}
                 >
-                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border text-sm font-extrabold transition-all
+                  <span className={`flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full border text-xs sm:text-sm font-extrabold transition-all mt-0.5 sm:mt-0
                     ${showCorrectHighlight
                       ? `${theme.primary} text-slate-950 ${theme.border}`
                       : isSelected
@@ -255,7 +265,7 @@ export default function StudyScreen({
                   `}>
                     {String.fromCharCode(65 + i)}
                   </span>
-                  <span className="min-w-0 flex-1 break-words whitespace-normal [overflow-wrap:anywhere] text-sm md:text-base leading-[1.55]">
+                  <span className="min-w-0 flex-1 break-words whitespace-normal [overflow-wrap:anywhere] text-base leading-[1.62] md:text-base md:leading-[1.55]">
                     {opt}
                   </span>
                   {showCorrectHighlight && (
@@ -288,7 +298,7 @@ export default function StudyScreen({
 
         {/* Aksiyon butonları */}
         {!showAnswer ? (
-          <div className="grid grid-cols-2 gap-3 mobile-action-bar sticky bottom-0 bg-slate-950/95 backdrop-blur-sm rounded-2xl p-1">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3 mobile-action-bar sticky bottom-0 z-30 bg-slate-950/95 sticky-bar-blur rounded-2xl p-1 border border-slate-800/60 shadow-[0_-8px_32px_rgba(0,0,0,0.35)]">
             <button
               onClick={revealAnswer}
               disabled={isAutoAdvancing}
@@ -324,7 +334,7 @@ export default function StudyScreen({
                   <p className="text-[11px] text-slate-500 font-black uppercase tracking-widest mb-1.5">
                     Açıklama
                   </p>
-                  <p className="text-sm md:text-base text-slate-300 leading-[1.65] break-words whitespace-normal [overflow-wrap:anywhere]">
+                  <p className="text-[0.9375rem] sm:text-sm md:text-base text-slate-300 leading-[1.68] md:leading-[1.65] break-words whitespace-normal [overflow-wrap:anywhere]">
                     {q.exp}
                   </p>
                 </div>
@@ -332,7 +342,7 @@ export default function StudyScreen({
             </div>
 
             {/* İleri/geri butonlar */}
-            <div className="grid grid-cols-2 gap-3 mobile-action-bar sticky bottom-0 bg-slate-950/95 backdrop-blur-sm rounded-2xl p-1">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 mobile-action-bar sticky bottom-0 z-30 bg-slate-950/95 sticky-bar-blur rounded-2xl p-1 border border-slate-800/60 shadow-[0_-8px_32px_rgba(0,0,0,0.35)]">
               <button
                 className="rounded-2xl border border-slate-700/80 bg-slate-800/80 px-6 py-4 font-extrabold text-slate-100 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-700/90 disabled:opacity-40 active:scale-[0.98]"
                 onClick={prevQuestion}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { usePrefersReducedMotion, useSwipeHandlers } from "../hooks/useSwipeHandlers";
 import { db, auth } from "../firebase";
 import { collection, addDoc, serverTimestamp, doc, getDoc } from "firebase/firestore";
 import { updateStreak } from "../services/streakService";
@@ -54,7 +55,7 @@ function WrongQuestionsModal({ wrongByLessonTopic, totalWrong, onClose }) {
       </div>
 
       {/* İçerik */}
-      <div className="flex-1 overflow-y-auto px-4 md:px-8 py-6 space-y-3">
+        <div className="flex-1 overflow-y-auto overscroll-y-contain px-4 md:px-8 py-6 space-y-3">
         {lessons.length === 0 && (
           <div className="flex flex-col items-center justify-center h-64 text-slate-600 gap-3">
             <span className="text-5xl">🎉</span>
@@ -214,6 +215,7 @@ export default function ExamScreen({
   handleExamSelectForQuestion,
   handleExamBlank,
   handleExamNext,
+  handleExamPrev,
   getExamAnswersSnapshot,
   goDashboard,
   userId,
@@ -359,6 +361,21 @@ export default function ExamScreen({
       setIsSaving(false);
     }
   };
+
+  const reducedMotion = usePrefersReducedMotion();
+  const examSwipe = useSwipeHandlers({
+    enabled: Boolean(examQ) && !isOpticalOpen && !reducedMotion,
+    onSwipeLeft: () => {
+      if (isSaving) return;
+      if (examIndex < examQuestions.length - 1) handleExamNext();
+      else void handleFinish();
+    },
+    onSwipeRight: () => {
+      if (isSaving) return;
+      handleExamPrev?.();
+    },
+    reducedMotion,
+  });
 
   // ── Analiz Ekranı (Sınav bittikten sonra) ────────────────────────────────
   if (isFinished && results) {
@@ -519,9 +536,12 @@ export default function ExamScreen({
     <div className="flex h-dvh bg-[#020617] text-white overflow-x-hidden relative">
 
       {/* SOL: Soru Alanı */}
-      <div className="flex-1 overflow-y-auto border-r border-slate-900">
+      <div
+        className="flex-1 overflow-y-auto border-r border-slate-900 overscroll-y-contain touch-pan-y"
+        {...examSwipe}
+      >
         <div
-          className="sticky top-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-slate-800/80 px-4 md:px-12 py-2.5"
+          className="sticky top-0 z-50 bg-slate-950/95 sticky-bar-blur border-b border-slate-800/80 px-4 md:px-12 py-2.5"
           style={{ paddingTop: "calc(env(safe-area-inset-top) + 0.5rem)" }}
         >
           <div className="max-w-4xl mx-auto w-full flex items-center">
@@ -535,8 +555,8 @@ export default function ExamScreen({
           </div>
         </div>
 
-        <div className="px-4 md:px-6 py-6 md:py-10">
-          <div className="max-w-4xl mx-auto w-full space-y-7 md:space-y-8">
+        <div className="px-4 md:px-6 py-5 md:py-10 pb-8 md:pb-10">
+          <div className="max-w-4xl mx-auto w-full space-y-6 md:space-y-8">
           {/* Soru Kartı */}
           <div className={`max-w-4xl mx-auto w-full rounded-3xl border ${theme.border} bg-gradient-to-br from-slate-950/95 via-slate-900/95 to-slate-950/95 backdrop-blur-xl p-5 md:p-8 shadow-2xl ${theme.glow}`}>
             <div className="flex items-center justify-between mb-5">
@@ -548,9 +568,11 @@ export default function ExamScreen({
             <div className="text-xs md:text-sm text-slate-400 mb-4">
               {examQ.konu || "Konu"}
             </div>
-            <h2 className="font-['Plus_Jakarta_Sans'] text-xl md:text-2xl leading-relaxed md:leading-loose tracking-tight font-bold text-slate-50 break-words whitespace-pre-wrap [overflow-wrap:anywhere]">
-              {examQ.q}
-            </h2>
+            <div className="max-w-prose">
+              <h2 className="font-['Plus_Jakarta_Sans'] mobile-reading-stem tracking-tight font-bold text-slate-50 break-words whitespace-pre-wrap [overflow-wrap:anywhere]">
+                {examQ.q}
+              </h2>
+            </div>
           </div>
 
           {/* Şıklar */}
@@ -559,20 +581,20 @@ export default function ExamScreen({
               <button
                 key={i}
                 onClick={() => handleExamSelect(i)}
-                className={`w-full text-left rounded-2xl border p-5 flex items-start gap-4 transition-all duration-200 shadow-sm group ${
+                className={`w-full text-left rounded-2xl border p-4 md:p-5 flex items-start gap-3 md:gap-4 transition-all duration-200 shadow-sm group min-h-[3.25rem] ${
                   examSelected === i
                     ? `${theme.border} ${theme.softBg} shadow-lg ${theme.glow}`
                     : "border-slate-700 bg-slate-900/70 hover:bg-slate-800/80 hover:border-slate-500"
                 }`}
               >
-                <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-black ${
+                <span className={`flex h-9 w-9 md:h-8 md:w-8 shrink-0 items-center justify-center rounded-full text-[11px] md:text-xs font-black mt-0.5 ${
                   examSelected === i
                     ? `${theme.primary} text-slate-950`
                     : "bg-slate-800 text-slate-500 group-hover:bg-slate-700"
                 }`}>
                   {LETTERS[i]}
                 </span>
-                <span className="flex-1 text-sm md:text-base text-slate-300">{opt}</span>
+                <span className="flex-1 text-base leading-[1.62] md:text-base md:leading-normal text-slate-200">{opt}</span>
               </button>
             ))}
           </div>
@@ -580,7 +602,7 @@ export default function ExamScreen({
           {/* Alt Kontrol Paneli */}
           <div
             className="fixed bottom-0 left-0 right-0 lg:static lg:p-0
-                       bg-slate-950/90 backdrop-blur-xl lg:bg-transparent
+                       bg-slate-950/90 sticky-bar-blur lg:bg-transparent lg:backdrop-blur-none
                        border-t border-slate-800 lg:border-none
                        grid grid-cols-2 gap-4
                        px-4 pt-4 lg:pt-0"
@@ -614,8 +636,11 @@ export default function ExamScreen({
         lg:flex
       `}>
         <button
+          type="button"
           onClick={() => setIsOpticalOpen(false)}
-          className="lg:hidden absolute top-4 right-4 w-10 h-10 rounded-full bg-slate-800 text-white flex items-center justify-center font-bold"
+          className="lg:hidden absolute right-4 w-10 h-10 rounded-full bg-slate-800 text-white flex items-center justify-center font-bold z-10"
+          style={{ top: "calc(1rem + env(safe-area-inset-top))" }}
+          aria-label="Optik formu kapat"
         >
           ✕
         </button>
