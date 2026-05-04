@@ -18,6 +18,7 @@ import {
 import { setClarityTag, trackClarityEvent } from "../lib/clarity";
 import DashboardMembershipHero from "./DashboardMembershipHero";
 import { getMailtoFeedback, getMailtoPaymentIssue } from "../config/support";
+import Footer from "./layout/Footer";
 
 export default function Dashboard({
   setView,
@@ -33,6 +34,7 @@ export default function Dashboard({
   isAdmin = false,
   /** App içinden gelen görünüm — dashboard’a her dönüşte geçmiş yenilenebilir */
   currentView = "dashboard",
+  onOpenLegalPage,
 }) {
   const theme = accentTheme || accentThemes.emerald;
   const isLightTheme = theme.mode === "light" || accentThemeKey === "light";
@@ -500,6 +502,14 @@ export default function Dashboard({
             </div>
           </section>
         ))}
+
+        {typeof onOpenLegalPage === "function" ? (
+          <Footer
+            onOpenLegal={onOpenLegalPage}
+            accentTheme={theme}
+            accentThemeKey={accentThemeKey}
+          />
+        ) : null}
 
         {/* Alt navigasyon bar için boşluk — sadece mobil */}
         <div

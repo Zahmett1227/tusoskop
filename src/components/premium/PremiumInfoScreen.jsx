@@ -10,6 +10,7 @@ import {
 import { setClarityTag, trackClarityEvent } from "../../lib/clarity";
 import { isUserPremium } from "../../utils/premiumUtils";
 import CoffeeAnimation from "./CoffeeAnimation";
+import Footer from "../layout/Footer";
 
 const PLUS_PLAN_CLICK_EVENT = {
   plus_1m: "plus_plan_click_1m",
@@ -39,7 +40,14 @@ const PLAN_CARD_PERKS = [
   "Gelişmiş deneme net grafiği",
 ];
 
-export default function PremiumInfoScreen({ onBack, user, userData }) {
+export default function PremiumInfoScreen({
+  onBack,
+  user,
+  userData,
+  accentTheme,
+  accentThemeKey,
+  onOpenLegalPage,
+}) {
   const [copyDone, setCopyDone] = useState(false);
   const [banner, setBanner] = useState("");
   const plusPageViewSent = useRef(false);
@@ -352,6 +360,36 @@ export default function PremiumInfoScreen({ onBack, user, userData }) {
           </div>
         </section>
 
+        {typeof onOpenLegalPage === "function" ? (
+          <p className="mx-auto mt-8 max-w-3xl text-center text-[11px] sm:text-xs leading-relaxed text-neutral-600 px-1">
+            Satın alma işlemine devam ederek{" "}
+            <button
+              type="button"
+              onClick={() => onOpenLegalPage("mesafeli-satis-sozlesmesi")}
+              className="font-semibold text-neutral-800 underline decoration-neutral-400/80 underline-offset-2 hover:text-neutral-950"
+            >
+              Mesafeli Satış Sözleşmesi
+            </button>
+            ,{" "}
+            <button
+              type="button"
+              onClick={() => onOpenLegalPage("iade-iptal-politikasi")}
+              className="font-semibold text-neutral-800 underline decoration-neutral-400/80 underline-offset-2 hover:text-neutral-950"
+            >
+              İade ve İptal Politikası
+            </button>
+            {" ve "}
+            <button
+              type="button"
+              onClick={() => onOpenLegalPage("gizlilik-sozlesmesi")}
+              className="font-semibold text-neutral-800 underline decoration-neutral-400/80 underline-offset-2 hover:text-neutral-950"
+            >
+              Gizlilik Sözleşmesi
+            </button>{" "}
+            metinlerini okuduğunuzu kabul etmiş olursunuz.
+          </p>
+        ) : null}
+
         {/* Ödeme sonrası + destek */}
         <section className="rounded-3xl border border-neutral-200/90 bg-white p-5 sm:p-8 shadow-[0_14px_40px_-28px_rgba(0,0,0,0.1)]">
           <h2 className="text-2xl md:text-3xl font-black text-neutral-950 mb-3">
@@ -442,6 +480,15 @@ export default function PremiumInfoScreen({ onBack, user, userData }) {
             ))}
           </div>
         </section>
+
+        {typeof onOpenLegalPage === "function" ? (
+          <Footer
+            variant="premium"
+            onOpenLegal={onOpenLegalPage}
+            accentTheme={accentTheme}
+            accentThemeKey={accentThemeKey}
+          />
+        ) : null}
 
         <div className="flex justify-center pt-2">
           <button

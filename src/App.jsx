@@ -49,6 +49,8 @@ import { isCurrentUserAdmin } from "./services/adminService";
 import { ensureUserDocument } from "./services/userService";
 import LimitReachedModal from "./components/premium/LimitReachedModal";
 import PremiumInfoScreen from "./components/premium/PremiumInfoScreen";
+import LegalPage from "./components/legal/LegalPage";
+import { LEGAL_PAGES } from "./content/legalPages";
 import { FREE_LIMITS } from "./config/limits";
 import { isUserPremium } from "./utils/premiumUtils";
 import {
@@ -106,6 +108,8 @@ export default function App() {
   const [userData, setUserData] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [view, setView] = useState("dashboard");
+  const legalReturnViewRef = useRef("dashboard");
+  const [legalPageId, setLegalPageId] = useState(LEGAL_PAGES[0].id);
   const [accentThemeKey, setAccentThemeKey] = useState(() => {
     if (typeof window === "undefined") return "emerald";
     const localKey = localStorage.getItem("tusoskop-accent-theme-preference");
@@ -333,6 +337,17 @@ export default function App() {
       return;
     }
     setView(nextView);
+  };
+
+  const openLegalPage = (id) => {
+    const valid = LEGAL_PAGES.some((p) => p.id === id) ? id : LEGAL_PAGES[0].id;
+    legalReturnViewRef.current = view;
+    setLegalPageId(valid);
+    setView("legal");
+  };
+
+  const closeLegalPage = () => {
+    setView(legalReturnViewRef.current || "dashboard");
   };
 
   const showFavoriteToast = (text) => {
@@ -930,6 +945,7 @@ export default function App() {
           accentThemeKey={accentThemeKey}
           onAccentThemeChange={handleAccentThemeChange}
           currentView={view}
+          onOpenLegalPage={openLegalPage}
         />
       );
       break;
@@ -951,6 +967,7 @@ export default function App() {
             accentThemeKey={accentThemeKey}
             onAccentThemeChange={handleAccentThemeChange}
             currentView={view}
+            onOpenLegalPage={openLegalPage}
           />
         );
         break;
@@ -1113,6 +1130,20 @@ export default function App() {
           user={user}
           userData={userData}
           onBack={() => setView("dashboard")}
+          accentTheme={accentTheme}
+          accentThemeKey={accentThemeKey}
+          onOpenLegalPage={openLegalPage}
+        />
+      );
+      break;
+
+    case "legal":
+      screenContent = (
+        <LegalPage
+          pageId={legalPageId}
+          onBack={closeLegalPage}
+          accentTheme={accentTheme}
+          accentThemeKey={accentThemeKey}
         />
       );
       break;
@@ -1131,6 +1162,7 @@ export default function App() {
           accentThemeKey={accentThemeKey}
           onAccentThemeChange={handleAccentThemeChange}
           currentView={view}
+          onOpenLegalPage={openLegalPage}
         />
       );
   }
