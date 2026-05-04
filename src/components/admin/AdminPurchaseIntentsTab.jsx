@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import {
   activateIntentAndGrantPremium,
   getPremiumPurchaseIntents,
@@ -67,6 +67,33 @@ function shopifyOrderDisplay(row) {
     return `Shopify Order: ${String(name).trim()}`;
   }
   return "Sipariş no yok";
+}
+
+const HIDDEN_INTENTS_STORAGE_KEY = "tusoskop-admin-purchase-intents-hidden-ids";
+
+function loadHiddenIntentIds() {
+  try {
+    if (typeof window === "undefined") return new Set();
+    const raw = window.localStorage.getItem(HIDDEN_INTENTS_STORAGE_KEY);
+    if (!raw) return new Set();
+    const arr = JSON.parse(raw);
+    if (!Array.isArray(arr)) return new Set();
+    return new Set(arr.filter(Boolean));
+  } catch {
+    return new Set();
+  }
+}
+
+function saveHiddenIntentIds(set) {
+  try {
+    if (typeof window === "undefined") return;
+    window.localStorage.setItem(
+      HIDDEN_INTENTS_STORAGE_KEY,
+      JSON.stringify([...set])
+    );
+  } catch {
+    /* sessiz */
+  }
 }
 
 function IntentStatusBadge({ status }) {
@@ -187,6 +214,8 @@ export default function AdminPurchaseIntentsTab({
   const [error, setError] = useState("");
   const [busyId, setBusyId] = useState(null);
   const [orderModalIntent, setOrderModalIntent] = useState(null);
+  const [hiddenIds, setHiddenIds] = useState(() => loadHiddenIntentIds());
+  const [showHidden, setShowHidden] = useState(false);
 
   const refresh = useCallback(async () => {
     setLoading(true);
@@ -214,6 +243,36 @@ export default function AdminPurchaseIntentsTab({
       /* sessiz */
     }
   }, []);
+
+  const hideIntentId = useCallback((id) => {
+    if (!id) return;
+    setHiddenIds((prev) => {
+      const next = new Set(prev);
+      next.add(id);
+      saveHiddenIntentIds(next);
+      return next;
+    });
+  }, []);
+
+  const unhideIntentId = useCallback((id) => {
+    if (!id) return;
+    setHiddenIds((prev) => {
+      const next = new Set(prev);
+      next.delete(id);
+      saveHiddenIntentIds(next);
+      return next;
+    });
+  }, []);
+
+  const visibleItems = useMemo(() => {
+    if (showHidden) return items;
+    return items.filter((row) => !hiddenIds.has(row.id));
+  }, [items, hiddenIds, showHidden]);
+
+  const hiddenCount = useMemo(
+    () => items.filter((row) => hiddenIds.has(row.id)).length,
+    [items, hiddenIds]
+  );
 
   const handleActivate = async (intent) => {
     if (!currentUser?.uid || !intent?.id) return;
@@ -256,18 +315,57 @@ export default function AdminPurchaseIntentsTab({
         />
       ) : null}
 
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-slate-400 text-sm font-medium max-w-xl leading-relaxed">
-          Son 50 kayıt — Shopify ödeme öncesi niyet bildirimleri. Sipariş numarasını
-          Orders ekranından alıp kaydederek taleple eşleştirin.
-        </p>
-        <button
-          type="button"
-          onClick={() => refresh()}
-          className="shrink-0 min-h-10 px-4 rounded-xl text-xs font-extrabold bg-slate-800/90 border border-slate-600 text-slate-100 hover:bg-slate-800 transition shadow-sm"
-        >
-          Yenile
-        </button>
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <p className="text-slate-400 text-sm font-medium max-w-xl leading-relaxed">
+            Son 50 kayıt — Shopify ödeme öncesi niyet bildirimleri. Sipariş numarasını
+            Orders ekranından alıp kaydederek taleple eşleştirin.
+          </p>
+          <button
+            type="button"
+            onClick={() => refresh()}
+            className="shrink-0 min-h-10 px-4 rounded-xl text-xs font-extrabold bg-slate-800/90 border border-slate-600 text-slate-100 hover:bg-slate-800 transition shadow-sm"
+          >
+            Yenile
+          </button>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-slate-700/80 bg-slate-900/50 px-4 py-3">
+          <div className="flex items-center gap-3 min-w-0">
+            <button
+              type="button"
+              role="switch"
+              aria-checked={showHidden}
+              onClick={() => setShowHidden((v) => !v)}
+              className={`relative inline-flex h-8 w-[3.25rem] shrink-0 items-center rounded-full border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500/60 ${
+                showHidden
+                  ? "border-cyan-500/50 bg-cyan-600/90"
+                  : "border-slate-600 bg-slate-800"
+              }`}
+            >
+              <span
+                className={`inline-block h-6 w-6 transform rounded-full bg-white shadow transition-transform ${
+                  showHidden ? "translate-x-[1.35rem]" : "translate-x-1"
+                }`}
+              />
+            </button>
+            <div className="min-w-0">
+              <p className="text-sm font-bold text-slate-100 leading-tight">
+                Gizlenenleri göster
+              </p>
+              <p className="text-[11px] text-slate-500 mt-0.5 leading-snug">
+                Listeden gizlediğin kayıtlar silinmez; bu cihazda saklanır.
+              </p>
+            </div>
+          </div>
+          {hiddenCount > 0 ? (
+            <span className="inline-flex items-center rounded-full border border-slate-600 bg-slate-800/80 px-2.5 py-0.5 text-[11px] font-bold text-slate-300">
+              {hiddenCount} gizli
+            </span>
+          ) : (
+            <span className="text-[11px] text-slate-600 font-medium">Gizli yok</span>
+          )}
+        </div>
       </div>
 
       {error ? (
@@ -276,18 +374,37 @@ export default function AdminPurchaseIntentsTab({
 
       {items.length === 0 ? (
         <p className="text-slate-500 text-sm font-medium">Henüz kayıt yok.</p>
+      ) : visibleItems.length === 0 ? (
+        <div className="rounded-2xl border border-amber-500/25 bg-amber-500/5 px-4 py-3 text-sm text-amber-100/90">
+          <p className="font-bold">Görünen kayıt yok</p>
+          <p className="text-amber-200/80 text-xs mt-1 leading-relaxed">
+            Tüm talepler listeden gizli. Üstteki &quot;Gizlenenleri göster&quot; anahtarını
+            açarak tekrar görebilir veya gizlemeyi tek tek kaldırabilirsin.
+          </p>
+        </div>
       ) : (
         <>
+          {hiddenCount > 0 && !showHidden ? (
+            <p className="text-[11px] text-slate-500 font-medium">
+              {items.length} kayıttan {visibleItems.length} görünüyor ·{" "}
+              {hiddenCount} gizli
+            </p>
+          ) : null}
           {/* Mobil kartlar */}
           <div className="md:hidden space-y-3">
-            {items.map((row) => {
+            {visibleItems.map((row) => {
               const canPlus = canGrantPlus(row);
               const isBusy = busyId === row.id;
               const amount = row.totalPriceLabel || "—";
+              const isRowHidden = hiddenIds.has(row.id);
               return (
                 <div
                   key={row.id}
-                  className="rounded-3xl border border-slate-700/80 bg-slate-900/60 p-4 shadow-lg shadow-black/20"
+                  className={`rounded-3xl border p-4 shadow-lg shadow-black/20 ${
+                    showHidden && isRowHidden
+                      ? "border-slate-600/80 bg-slate-950/50 ring-1 ring-slate-600/30"
+                      : "border-slate-700/80 bg-slate-900/60"
+                  }`}
                 >
                   <div className="flex items-start justify-between gap-2 mb-3">
                     <div className="min-w-0">
@@ -298,7 +415,14 @@ export default function AdminPurchaseIntentsTab({
                         {row.email || "—"}
                       </p>
                     </div>
-                    <IntentStatusBadge status={row.status} />
+                    <div className="flex flex-col items-end gap-1.5 shrink-0">
+                      {showHidden && isRowHidden ? (
+                        <span className="rounded-full border border-slate-500/60 bg-slate-800 px-2 py-0.5 text-[9px] font-black uppercase tracking-wide text-slate-300">
+                          Listede gizli
+                        </span>
+                      ) : null}
+                      <IntentStatusBadge status={row.status} />
+                    </div>
                   </div>
                   <p className="text-[11px] text-slate-400 font-medium mb-3 break-words">
                     {shopifyOrderDisplay(row)}
@@ -339,6 +463,23 @@ export default function AdminPurchaseIntentsTab({
                     </div>
                   </div>
                   <div className="mt-4 flex flex-col gap-2">
+                    {isRowHidden ? (
+                      <button
+                        type="button"
+                        onClick={() => unhideIntentId(row.id)}
+                        className="min-h-9 w-full rounded-xl border border-emerald-500/40 bg-emerald-500/10 text-emerald-200 text-xs font-extrabold hover:bg-emerald-500/15"
+                      >
+                        Listede tekrar göster
+                      </button>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => hideIntentId(row.id)}
+                        className="min-h-9 w-full rounded-xl border border-slate-600/80 bg-slate-950/40 text-slate-400 text-xs font-bold hover:text-slate-200 hover:border-slate-500"
+                      >
+                        Listeden gizle
+                      </button>
+                    )}
                     <button
                       type="button"
                       onClick={() => setOrderModalIntent(row)}
@@ -396,23 +537,28 @@ export default function AdminPurchaseIntentsTab({
                   <th className="px-3 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400">
                     Tarih
                   </th>
-                  <th className="px-3 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400 text-right min-w-[10rem]">
+                  <th className="px-3 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400 text-right min-w-[11rem]">
                     Aksiyon
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800/90">
-                {items.map((row) => {
+                {visibleItems.map((row) => {
                   const canPlus = canGrantPlus(row);
                   const isBusy = busyId === row.id;
                   const amount = row.totalPriceLabel || "—";
                   const orderShort = row.shopifyOrderName
                     ? String(row.shopifyOrderName).trim()
                     : null;
+                  const isRowHidden = hiddenIds.has(row.id);
                   return (
                     <tr
                       key={row.id}
-                      className="bg-slate-950/20 hover:bg-slate-900/50 transition-colors"
+                      className={`transition-colors ${
+                        showHidden && isRowHidden
+                          ? "bg-slate-950/45 hover:bg-slate-900/60 ring-1 ring-inset ring-slate-700/50"
+                          : "bg-slate-950/20 hover:bg-slate-900/50"
+                      }`}
                     >
                       <td className="px-3 py-3.5 text-slate-100 font-medium align-top max-w-[180px]">
                         <span className="break-all">{row.email || "—"}</span>
@@ -451,6 +597,23 @@ export default function AdminPurchaseIntentsTab({
                       </td>
                       <td className="px-3 py-3.5 text-right align-top">
                         <div className="inline-flex flex-col items-end gap-2">
+                          {isRowHidden ? (
+                            <button
+                              type="button"
+                              onClick={() => unhideIntentId(row.id)}
+                              className="min-h-8 px-2.5 rounded-lg border border-emerald-500/35 bg-emerald-500/10 text-[11px] font-extrabold text-emerald-200 hover:bg-emerald-500/15"
+                            >
+                              Göster
+                            </button>
+                          ) : (
+                            <button
+                              type="button"
+                              onClick={() => hideIntentId(row.id)}
+                              className="min-h-8 px-2.5 rounded-lg border border-slate-600/90 bg-slate-950/50 text-[11px] font-bold text-slate-500 hover:text-slate-300 hover:border-slate-500"
+                            >
+                              Gizle
+                            </button>
+                          )}
                           <button
                             type="button"
                             onClick={() => setOrderModalIntent(row)}
