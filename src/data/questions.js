@@ -47790,5 +47790,2885 @@ exp: "Spironolakton (ve Eplerenon), bir Potasyum Tutucu Diüretik (Aldosteron An
     ],
     "correct": 0,
     "exp": "Allopurinol ksantin oksidaz inhibitörüdür. Azatioprin metabolizmasında ksantin oksidaz rol aldığı için birlikte kullanımda azatioprin toksisitesi ve kemik iliği baskılanması artabilir; doz ayarı gerekir."
+  },
+  {
+    "id": 2988,
+    "ders": "Patoloji",
+    "konu": "Hücre Zedelenmesi",
+    "diff": 4,
+    "q": "58 yaşında erkek hasta, bilinen kronik hipertansiyon ve tip 2 diyabet öyküsü olup 6 saattir baskıcı göğüs ağrısı şikayetiyle acile getiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Koroner arter tıkanıklığı sonrası 6. saatte kaybedilen hastanın miyokard örneğinde hücre sınırları korunmuş, sitoplazma eozinofilik, nükleuslarda karyolizis izleniyor. Bu görünümün en olası nedeni hangi süreçtir?",
+    "options": [
+      "Lizozomal enzimlerin dokuyu tamamen sıvılaştırması",
+      "Apoptoz cisimciklerinin hızla fagosite edilmesi",
+      "Glikojen birikimine bağlı berrak sitoplazma oluşması",
+      "Protein denatürasyonunun enzimatik proteolize baskın gelmesi",
+      "Yağ asidi oksidasyonunun aşırı artması"
+    ],
+    "correct": 3,
+    "exp": "Miyokard infarktında tipik nekroz koagülasyon nekrozudur. Protein denatürasyonu proteolizi baskılar, bu yüzden hücre mimarisi bir süre korunur."
+  },
+  {
+    "id": 2989,
+    "ders": "Patoloji",
+    "konu": "Hücre Zedelenmesi",
+    "diff": 3,
+    "q": "54 yaşında kadın hasta, bilinen kronik tip 2 diyabet öyküsü olup 3 aydır poliüri ve halsizlik şikayetiyle nefrolojiye başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Diyabetik hastanın böbrek biyopsisinde proksimal tübül epitelinde berrak vakuoller görülüyor; özel boyamada glikojen birikimi saptanıyor. Benzer morfoloji hangi hücresel değişiklikle en iyi açıklanır?",
+    "options": [
+      "Kompleman aracılı membran atak kompleksi oluşumu",
+      "DNA'nın internükleozomal parçalanması",
+      "Nötrofil ekstravazasyonunun artması",
+      "Granülom formasyonunda epiteloid dönüşüm",
+      "Hücre içinde metabolik ürün birikimi"
+    ],
+    "correct": 4,
+    "exp": "Glikojen, lipid veya protein gibi maddelerin hücre içinde birikmesi hücresel zedelenme yanıtlarından biridir; diyabette tübül hücrelerinde glikojen birikebilir."
+  },
+  {
+    "id": 2990,
+    "ders": "Patoloji",
+    "konu": "Hücre Zedelenmesi",
+    "diff": 4,
+    "q": "67 yaşında erkek hasta, bilinen kronik safra taşı hastalığı öyküsü olup 8 aydır kaşıntı ve aralıklı sarılık şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Uzun süreli safra yolu tıkanıklığı olan hastanın karaciğerinde hepatositlerde kahverengi-sarı granüller izleniyor. Granüller Prusya mavisi ile boyanmıyor. Bu pigment en olası olarak hangi kaynaktan gelişmiştir?",
+    "options": [
+      "Porfirin sentez basamaklarının bloklanması",
+      "Melanositlerde tirozinaz aktivitesinin artması",
+      "Bakırın lizozomal depolanması",
+      "Serbest radikal hasarı sonrası lipid peroksidasyon ürünlerinin birikimi",
+      "Hemoglobinden ayrılan ferrik demirin depolanması"
+    ],
+    "correct": 3,
+    "exp": "Lipofuscin, lipid peroksidasyonuna bağlı gelişen sarı-kahverengi yıpranma pigmentidir. Demir içermez, bu yüzden Prusya mavisi ile boyanmaz."
+  },
+  {
+    "id": 2991,
+    "ders": "Patoloji",
+    "konu": "Hücre Zedelenmesi",
+    "diff": 4,
+    "q": "46 yaşında erkek hasta, bilinen kronik hiperlipidemi öyküsü olup 12 saattir kuşak tarzı epigastrik ağrı ve kusma şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Akut pankreatitli hastada peripankreatik yağ dokusunda tebeşirimsi beyaz alanlar ve kalsiyum sabunları izleniyor. Bu lezyonun oluşumunda temel olay hangisidir?",
+    "options": [
+      "Lipazların trigliseridleri parçalayarak yağ asitlerini kalsiyumla çöktürmesi",
+      "Kollajen çapraz bağlarının aşırı artması",
+      "DNAaz aktivasyonu ile apoptoz cisimcikleri oluşması",
+      "Makrofajların interferon-gamma etkisiyle epiteloid hücreye dönüşmesi",
+      "Hipoksiye bağlı protein denatürasyonunun baskın olması"
+    ],
+    "correct": 0,
+    "exp": "Akut pankreatitte enzimatik yağ nekrozu gelişir. Pankreatik lipazların açığa çıkardığı yağ asitleri kalsiyumla birleşip sabunlaşma oluşturur."
+  },
+  {
+    "id": 2992,
+    "ders": "Patoloji",
+    "konu": "Hücre Zedelenmesi",
+    "diff": 5,
+    "q": "71 yaşında kadın hasta, bilinen kronik KOAH öyküsü olup 2 gündür artan nefes darlığı şikayetiyle yoğun bakıma alınıyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Yoğun bakımda hipoksik kalan hastanın karaciğer hücrelerinde şişme, ribozom ayrılması ve membran blebleri görülüyor; nükleer parçalanma yok. Bu aşamada hücre hasarının geri dönüşebilir olmasını en iyi gösteren bulgu hangisidir?",
+    "options": [
+      "Plazma membran bütünlüğünün büyük ölçüde korunması",
+      "Lizozomal membranların yırtılması",
+      "Hücre içi enzimlerin dolaşıma yaygın salınması",
+      "Karyoreksis gelişmesi",
+      "Nükleusun piknotik hale gelmesi"
+    ],
+    "correct": 0,
+    "exp": "Hücresel şişme, ribozom ayrılması ve blebler geri dönüşebilir hasarda görülebilir. Membran bütünlüğünün kaybı ve nükleer değişiklikler geri dönüşümsüz hasarı düşündürür."
+  },
+  {
+    "id": 2993,
+    "ders": "Patoloji",
+    "konu": "Hücre Zedelenmesi",
+    "diff": 4,
+    "q": "29 yaşında erkek hasta, bilinen kronik hastalığı olmayan, 10 gündür sarılık, halsizlik ve iştahsızlık şikayetiyle enfeksiyon polikliniğine başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Viral hepatitli hastanın biyopsisinde tek tek küçülmüş, eozinofilik sitoplazmalı hepatositler ve çevrede minimal inflamasyon görülüyor. Bu ölüm biçiminde hangi biyokimyasal olay daha belirgindir?",
+    "options": [
+      "Kollajen tip III'ün hızla tip I'e dönüşmesi",
+      "Kompleman C5a etkisiyle nötrofil kemotaksisi",
+      "Hemosiderinin lizozomlarda depolanması",
+      "Hücre membranının erken lizisi ile yaygın inflamasyon",
+      "Kaspaz aktivasyonu ile kontrollü hücre parçalanması"
+    ],
+    "correct": 4,
+    "exp": "Viral hepatitte Councilman cisimcikleri apoptozu yansıtır. Apoptozda kaspazlar aktive olur ve inflamasyon minimaldir."
+  },
+  {
+    "id": 2994,
+    "ders": "Patoloji",
+    "konu": "Hücre Zedelenmesi",
+    "diff": 3,
+    "q": "İskemi-reperfüzyon hasarında dokunun yeniden oksijenlenmesiyle hasarın artmasında aşağıdakilerden hangisi en doğrudan rol oynar?",
+    "options": [
+      "TGF-beta üretiminin tamamen durması",
+      "Reaktif oksijen türlerinin hızla artması",
+      "Plazminojen aktivasyonunun baskılanması",
+      "Telomeraz aktivitesinin azalması",
+      "Tip IV kollajenin parçalanmadan birikmesi"
+    ],
+    "correct": 1,
+    "exp": "Reperfüzyonla oksijen gelirken reaktif oksijen türleri artar; mitokondri, nötrofil ve kompleman aktivasyonu hasarı büyütür."
+  },
+  {
+    "id": 2995,
+    "ders": "Patoloji",
+    "konu": "Hücre Zedelenmesi",
+    "diff": 4,
+    "q": "Geri dönüşümsüz hücre zedelenmesini morfolojik olarak en güvenilir gösteren değişiklik aşağıdakilerden hangisidir?",
+    "options": [
+      "Hücre içi sodyum ve su artışı",
+      "Ribozomların granüllü ER'den ayrılması",
+      "Nükleer piknoz, karyoreksis veya karyolizis gelişmesi",
+      "Endoplazmik retikulumda hafif şişme",
+      "Hücre yüzeyinde küçük bleb oluşması"
+    ],
+    "correct": 2,
+    "exp": "Geri dönüşümsüz hasarın morfolojik göstergeleri membran hasarı ve özellikle nükleer değişikliklerdir: piknoz, karyoreksis ve karyolizis."
+  },
+  {
+    "id": 2996,
+    "ders": "Patoloji",
+    "konu": "İnflamasyon",
+    "diff": 4,
+    "q": "24 yaşında erkek hasta, bilinen kronik hastalığı olmayan, 18 saattir göbek çevresinden sağ alt kadrana kayan karın ağrısı şikayetiyle acile geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Akut apandisitli hastada lümene yakın damar çevresinde nötrofillerin endotele tutunduğu, ardından damar dışına çıktığı görülüyor. Bu tutunmanın sıkı fazında en önemli molekül grubu hangisidir?",
+    "options": [
+      "Histaminin venül dilatasyonu yapması",
+      "IL-8'in kemotaktik gradyan oluşturması",
+      "C3b'nin bakteri yüzeyini opsonize etmesi",
+      "İntegrinlerin ICAM-1/VCAM-1 ile bağlanması",
+      "Selektinlerin sialyl-Lewis X ile gevşek bağlanması"
+    ],
+    "correct": 3,
+    "exp": "Lökosit ekstravazasyonunda yuvarlanma selektinlerle, sıkı adezyon ise lökosit integrinlerinin endotel ICAM-1/VCAM-1'e bağlanmasıyla olur."
+  },
+  {
+    "id": 2997,
+    "ders": "Patoloji",
+    "konu": "İnflamasyon",
+    "diff": 4,
+    "q": "5 yaşında erkek çocuk, bilinen kronik hastalığı olmayan, 2 yıldır tekrarlayan deri ve diş eti enfeksiyonu şikayetiyle immünolojiye getiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Tekrarlayan bakteriyel enfeksiyonları olan çocukta nötrofillerin damar dışına çıkamadığı, lökosit sayısının yüksek kaldığı saptanıyor. En olası kusur hangi basamaktadır?",
+    "options": [
+      "NADPH oksidaz aracılı solunum patlaması",
+      "Makrofajlarda epiteloid dönüşüm",
+      "CD18 içeren integrin aracılı adezyon",
+      "C1 inhibitörünün kallikreini baskılaması",
+      "Miyeloperoksidaz ile hipokloröz asit üretimi"
+    ],
+    "correct": 2,
+    "exp": "Lökosit adezyon defekti tip 1'de CD18 integrin kusuru vardır. Nötrofiller endotele sıkı tutunamaz ve dokuya geçemez."
+  },
+  {
+    "id": 2998,
+    "ders": "Patoloji",
+    "konu": "İnflamasyon",
+    "diff": 5,
+    "q": "7 yaşında erkek çocuk, bilinen kronik granülomatöz hastalık öyküsü olup 4 aydır tekrarlayan cilt apsesi ve ateş şikayetiyle izleniyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Kronik granülomatöz hastalığı olan çocukta katalaz pozitif bakterilerle tekrarlayan apseler gelişiyor. Nötrofiller bakteriyi fagosite ediyor fakat öldürmede yetersiz kalıyor. Eksik basamak hangisidir?",
+    "options": [
+      "C3b ile opsonizasyon",
+      "Fibronektin üzerinden yara kontraksiyonu",
+      "TGF-beta ile fibroblast aktivasyonu",
+      "NADPH oksidaz ile süperoksit üretimi",
+      "L-selektin ile endotel yuvarlanması"
+    ],
+    "correct": 3,
+    "exp": "Kronik granülomatöz hastalıkta NADPH oksidaz kusurludur. Süperoksit ve diğer ROS üretilemediği için fagosite edilen mikroorganizmalar öldürülemez."
+  },
+  {
+    "id": 2999,
+    "ders": "Patoloji",
+    "konu": "İnflamasyon",
+    "diff": 3,
+    "q": "32 yaşında kadın hasta, bilinen kronik alerjik rinit öyküsü olup 20 dakikadır yaygın kaşıntı ve kabarıklık şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Akut ürtiker atağında lezyonun dakikalar içinde kabarıp kaşınması, venüllerden protein açısından zengin sıvı kaçışıyla ilişkili bulunuyor. Bu erken yanıtı en iyi açıklayan mediyatör hangisidir?",
+    "options": [
+      "T lenfosit kaynaklı IL-2",
+      "Makrofaj kaynaklı interferon-gamma",
+      "Karaciğer kaynaklı fibrinojen",
+      "Fibroblast kaynaklı kollajen tip I",
+      "Mast hücresinden salınan histamin"
+    ],
+    "correct": 4,
+    "exp": "Histamin mast hücrelerinden hızla salınır; arteriol dilatasyonu ve venül permeabilite artışı yaparak ödem ve kabarıklık oluşturur."
+  },
+  {
+    "id": 3000,
+    "ders": "Patoloji",
+    "konu": "İnflamasyon",
+    "diff": 4,
+    "q": "48 yaşında kadın hasta, bilinen kronik romatoid artrit öyküsü olup 6 aydır el eklemlerinde ağrı ve sabah tutukluğu şikayetiyle takip ediliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Romatoid artritli hastada eklem sıvısında nötrofiller ve prostaglandin düzeyi yüksek bulunuyor. NSAİİ verilince ağrı ve ateş azalıyor. Bu etkinin temelinde hangi enzim inhibisyonu vardır?",
+    "options": [
+      "NADPH oksidaz aktivitesinin artması",
+      "Elastaz salınımının tamamen durması",
+      "C3 konvertaz oluşumunun hızlanması",
+      "Siklooksijenaz aracılı prostaglandin sentezinin azalması",
+      "Lipooksijenaz aracılı lökotrien sentezinin artması"
+    ],
+    "correct": 3,
+    "exp": "NSAİİ'ler COX enzimlerini inhibe ederek prostaglandin sentezini azaltır; prostaglandinler ağrı, ateş ve vazodilatasyonda rol alır."
+  },
+  {
+    "id": 3001,
+    "ders": "Patoloji",
+    "konu": "İnflamasyon",
+    "diff": 4,
+    "q": "34 yaşında erkek hasta, bilinen kronik Crohn hastalığı öyküsü olup 3 yıldır ataklar halinde karın ağrısı ve ishal şikayetiyle opere ediliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Crohn hastalığı nedeniyle opere edilen hastanın barsak duvarında epiteloid histiositler ve dev hücrelerden oluşan odaklar görülüyor. Bu yapının gelişiminde en önemli sitokin-hücre ilişkisi hangisidir?",
+    "options": [
+      "IL-10 ile nötrofil kemotaksisi",
+      "Th1 kaynaklı IFN-gamma ile makrofaj aktivasyonu",
+      "IL-5 ile eozinofil olgunlaşması",
+      "Th2 kaynaklı IL-4 ile IgE sınıf değişimi",
+      "TGF-beta ile epitel metaplazisi"
+    ],
+    "correct": 1,
+    "exp": "Granülom gelişiminde Th1 yanıtı ve IFN-gamma ile aktive olan makrofajların epiteloid hücrelere dönüşmesi temel mekanizmadır."
+  },
+  {
+    "id": 3002,
+    "ders": "Patoloji",
+    "konu": "İnflamasyon",
+    "diff": 3,
+    "q": "Akut inflamasyonun mikroskobik olarak en tipik hücresi aşağıdakilerden hangisidir?",
+    "options": [
+      "Nötrofil",
+      "Plazma hücresi",
+      "Epiteloid histiosit",
+      "Fibroblast",
+      "Mast hücresinden köken alan dev hücre"
+    ],
+    "correct": 0,
+    "exp": "Akut inflamasyonda ilk saatlerde baskın hücre nötrofildir. Kronik inflamasyonda makrofaj, lenfosit ve plazma hücresi belirginleşir."
+  },
+  {
+    "id": 3003,
+    "ders": "Patoloji",
+    "konu": "İnflamasyon",
+    "diff": 4,
+    "q": "Kompleman sisteminde C5a'nın inflamasyondaki en belirgin etkisi hangisidir?",
+    "options": [
+      "IgE sentezini başlatması",
+      "Bakteri yüzeyini doğrudan opsonize etmesi",
+      "Fibrini plazmine dönüştürmesi",
+      "Lökosit kemotaksisi ve aktivasyonunu artırması",
+      "Endotel hücresinde kollajen üretmesi"
+    ],
+    "correct": 3,
+    "exp": "C5a güçlü bir kemotaktik faktör ve lökosit aktivatörüdür. C3b opsonizasyonda, C5b-9 ise membran atak kompleksinde rol alır."
+  },
+  {
+    "id": 3004,
+    "ders": "Patoloji",
+    "konu": "Onarım ve Yara İyileşmesi",
+    "diff": 4,
+    "q": "61 yaşında erkek hasta, bilinen kronik hipertansiyon öyküsü olup 5 gündür ameliyat yerinde kızarıklık ve sızıntı şikayetiyle kontrol muayenesine geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Ameliyat sonrası 5. günde yara hattı pembe, kolay kanayan, ödemli ve mikroskobide yeni kapillerler ile fibroblastlardan zengin görünümdedir. Bu doku en iyi nasıl adlandırılır?",
+    "options": [
+      "Desmoplastik stromal reaksiyon",
+      "Kazeöz nekroz",
+      "Fibrinoid nekroz",
+      "Keloid skar",
+      "Granülasyon dokusu"
+    ],
+    "correct": 4,
+    "exp": "Yara iyileşmesinin erken döneminde anjiyogenez, fibroblast proliferasyonu ve gevşek ECM'den oluşan granülasyon dokusu gelişir."
+  },
+  {
+    "id": 3005,
+    "ders": "Patoloji",
+    "konu": "Onarım ve Yara İyileşmesi",
+    "diff": 4,
+    "q": "37 yaşında erkek hasta, bilinen kronik hastalığı olmayan, 2 gündür bacakta geniş ayrılmış kesi yarası ve ağrı şikayetiyle acile başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Derin kesi sonrası yara dudakları geniş ayrılmış hastada iyileşme uzun sürüyor ve belirgin skar kalıyor. Primer iyileşmeye göre bu durumda artmış olan süreç hangisidir?",
+    "options": [
+      "Kollajen sentezinin ilk 24 saatte tamamlanması",
+      "Granülasyon dokusu miktarı ve yara kontraksiyonu",
+      "Nötrofil göçünün hiç olmaması",
+      "Epidermal rejenerasyonun tamamen durması",
+      "Bazal membranın hiç hasar görmemesi"
+    ],
+    "correct": 1,
+    "exp": "Sekonder iyileşmede doku kaybı fazladır; daha fazla granülasyon dokusu, inflamasyon, kontraksiyon ve skar oluşur."
+  },
+  {
+    "id": 3006,
+    "ders": "Patoloji",
+    "konu": "Onarım ve Yara İyileşmesi",
+    "diff": 4,
+    "q": "49 yaşında kadın hasta, bilinen kronik alkol kullanım bozukluğu öyküsü olup 3 haftadır diş eti kanaması ve yara ayrılması şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: C vitamini eksikliği olan hastada yara ayrılması gelişiyor. Histolojide kollajen lifleri zayıf ve çapraz bağlanma yetersizdir. Bu kusur en çok hangi biyokimyasal basamakla ilişkilidir?",
+    "options": [
+      "Fibrinojenin fibrine dönüşmesi",
+      "Elastazın alfa-1 antitripsinle baskılanması",
+      "Prolin ve lizin hidroksilasyonunun bozulması",
+      "Glikojenin glikoza yıkılması",
+      "Tirozinin melanine çevrilmesi"
+    ],
+    "correct": 2,
+    "exp": "C vitamini, kollajen sentezinde prolin ve lizin hidroksilasyonu için gereklidir. Eksikliğinde kollajen stabilitesi ve yara dayanıklılığı azalır."
+  },
+  {
+    "id": 3007,
+    "ders": "Patoloji",
+    "konu": "Onarım ve Yara İyileşmesi",
+    "diff": 3,
+    "q": "63 yaşında erkek hasta, bilinen kronik tip 2 diyabet öyküsü olup 4 aydır kapanmayan ayak yarası şikayetiyle yara bakım polikliniğine geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Diyabetik hastada ayak ülseri aylarca kapanmıyor. Biyopside kronik inflamasyon, yetersiz anjiyogenez ve enfeksiyon bulguları var. Bu gecikmeyi en iyi açıklayan ortak sonuç hangisidir?",
+    "options": [
+      "Apoptozun tüm dokularda baskılanması",
+      "Eritrositlerin damar dışına çıkmasının tamamen engellenmesi",
+      "Keratin üretiminin aşırı hızlanması",
+      "Pıhtılaşma faktörlerinin karaciğerde artması",
+      "Matriks birikimi ve epitelizasyonun aksaması"
+    ],
+    "correct": 4,
+    "exp": "Diyabet, enfeksiyon ve iskemi yara iyileşmesini geciktirir. Sonuçta inflamasyon uzar, anjiyogenez ve ECM birikimi bozulur, epitelizasyon aksar."
+  },
+  {
+    "id": 3008,
+    "ders": "Patoloji",
+    "konu": "Onarım ve Yara İyileşmesi",
+    "diff": 5,
+    "q": "28 yaşında kadın hasta, bilinen kronik hastalığı olmayan, 2 aydır omuzdaki ameliyat izinde kabarıklık ve kaşıntı şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Ameliyat kesisi sonrası omuz bölgesinde sınırları aşan, kabarık ve kaşıntılı skar gelişiyor. Ailesinde benzer öykü var. Bu lezyonda temel patolojik özellik hangisidir?",
+    "options": [
+      "Endotel hücresinde fibrinoid nekroz",
+      "Bazal hücrelerde malign transformasyon",
+      "Subkutan yağda enzimatik nekroz",
+      "Granülom içinde kazeifikasyon nekrozu",
+      "Aşırı kollajen birikimiyle yara sınırlarını aşan skar oluşumu"
+    ],
+    "correct": 4,
+    "exp": "Keloid, yara sınırlarını aşan aşırı skar dokusudur. Kollajen sentez-yıkım dengesinin bozulması ile gelişir."
+  },
+  {
+    "id": 3009,
+    "ders": "Patoloji",
+    "konu": "Onarım ve Yara İyileşmesi",
+    "diff": 4,
+    "q": "55 yaşında erkek hasta, bilinen kronik hipertansiyon öyküsü olup 3 haftadır karaciğer rezeksiyonu sonrası sağ üst kadran dolgunluğu şikayetiyle izleniyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Karaciğer rezeksiyonu sonrası kalan lobda hepatositler çoğalıyor ve organ kitlesi kısmen geri kazanılıyor. Bu yanıtı sınırlı skar yerine rejenerasyon yönüne çeken temel özellik hangisidir?",
+    "options": [
+      "Stabil hücrelerin büyüme faktörleriyle yeniden hücre döngüsüne girebilmesi",
+      "Bazal membranın her zaman tamamen kaybolması",
+      "Kollajenin hiç sentezlenmemesi",
+      "Nöronların sürekli mitoz yapması",
+      "Kardiyomiyositlerin labile hücre olması"
+    ],
+    "correct": 0,
+    "exp": "Hepatositler stabil hücredir; normalde düşük proliferasyon gösterir, ancak uyarıyla hücre döngüsüne girip rejenerasyon yapabilir."
+  },
+  {
+    "id": 3010,
+    "ders": "Patoloji",
+    "konu": "Onarım ve Yara İyileşmesi",
+    "diff": 3,
+    "q": "Yara iyileşmesinde fibroblast aktivasyonu ve kollajen sentezini artıran en önemli sitokinlerden biri hangisidir?",
+    "options": [
+      "TNF'nin membran atak kompleksi",
+      "C5a",
+      "TGF-beta",
+      "Histamin",
+      "IL-8"
+    ],
+    "correct": 2,
+    "exp": "TGF-beta fibroblast migrasyonu, proliferasyonu, kollajen sentezi ve fibroziste merkezi rol oynar."
+  },
+  {
+    "id": 3011,
+    "ders": "Patoloji",
+    "konu": "Onarım ve Yara İyileşmesi",
+    "diff": 4,
+    "q": "Yara iyileşmesinde gerilme kuvveti en erken dönemde neden düşüktür?",
+    "options": [
+      "Nötrofiller kollajen sentezlediği için",
+      "Epidermis hiç çoğalamadığı için",
+      "Kollajen miktarı ve çapraz bağlanması henüz yetersiz olduğu için",
+      "Makrofajlar fibrini tamamen engellediği için",
+      "Anjiyogenez ilk ay hiç başlamadığı için"
+    ],
+    "correct": 2,
+    "exp": "Yaranın erken döneminde kollajen az ve organizasyonu zayıftır. Zamanla kollajen artar ve çapraz bağlar güçlenir, gerilme kuvveti yükselir."
+  },
+  {
+    "id": 3012,
+    "ders": "Patoloji",
+    "konu": "İmmunoloji",
+    "diff": 4,
+    "q": "42 yaşında kadın hasta, bilinen kronik astım öyküsü olup 15 dakikadır yeni antibiyotik sonrası başlayan nefes darlığı ve yaygın kaşıntı şikayetiyle acile getiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Yeni antibiyotik sonrası dakikalar içinde ürtiker, bronkospazm ve hipotansiyon gelişen hastada serum triptaz yüksek bulunuyor. Bu olayda temel efektör mekanizma hangisidir?",
+    "options": [
+      "T hücrelerinin makrofajları granülom için uyarması",
+      "IgG'nin hücre yüzey antijenine bağlanıp kompleman aktive etmesi",
+      "CD8 T hücrelerinin tümör hücresini perforinle öldürmesi",
+      "IgE ile duyarlı mast hücrelerinin çapraz bağlanarak degranüle olması",
+      "İmmün komplekslerin küçük damarlara çökmesi"
+    ],
+    "correct": 3,
+    "exp": "Tip I aşırı duyarlılıkta antijen, mast hücresine bağlı IgE'leri çapraz bağlar; histamin ve diğer mediyatörler anafilaksi bulgularını oluşturur."
+  },
+  {
+    "id": 3013,
+    "ders": "Patoloji",
+    "konu": "İmmunoloji",
+    "diff": 4,
+    "q": "36 yaşında erkek hasta, bilinen kronik hastalığı olmayan, 5 gündür antibiyotik kullanımı sonrası halsizlik ve koyu idrar şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Penisilin aldıktan sonra hemolitik anemi gelişen hastada eritrosit yüzeyine bağlanan ilaç-protein komplekslerine karşı antikor saptanıyor. Bu tablo hangi aşırı duyarlılık tipine uyar?",
+    "options": [
+      "Tip II aşırı duyarlılık",
+      "Santral toleransın fizyolojik sonucu",
+      "Tip I aşırı duyarlılık",
+      "Tip III aşırı duyarlılık",
+      "Tip IV aşırı duyarlılık"
+    ],
+    "correct": 0,
+    "exp": "İlaçlar hücre yüzeyine hapten gibi bağlanabilir. IgG/IgM aracılı hücre hasarı ve kompleman/fagositoz tip II aşırı duyarlılıktır."
+  },
+  {
+    "id": 3014,
+    "ders": "Patoloji",
+    "konu": "İmmunoloji",
+    "diff": 4,
+    "q": "27 yaşında kadın hasta, bilinen kronik inflamatuvar barsak hastalığı öyküsü olup 10 gündür ateş, eklem ağrısı ve döküntü şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Serum hastalığı benzeri tablo gelişen hastada ateş, artralji, proteinüri ve palpabl purpura vardır. Biyopside küçük damarlarda granüler immünoglobulin ve kompleman birikimi görülüyor. Hasarın temel nedeni hangisidir?",
+    "options": [
+      "CD8 T hücresinin hedef hücreyi doğrudan öldürmesi",
+      "Dolaşan immün komplekslerin damar duvarına çökmesi",
+      "Antikorların asetilkolin reseptörünü bloke etmesi",
+      "MHC sınıf I ekspresyonunun kaybolması",
+      "IgE aracılı mast hücre degranülasyonu"
+    ],
+    "correct": 1,
+    "exp": "Tip III aşırı duyarlılıkta dolaşan immün kompleksler dokulara çöker, komplemanı aktive eder ve nötrofil aracılı hasar oluşturur."
+  },
+  {
+    "id": 3015,
+    "ders": "Patoloji",
+    "konu": "İmmunoloji",
+    "diff": 5,
+    "q": "22 yaşında kadın hasta, bilinen kronik hastalığı olmayan, 48 saattir kulak memesindeki küpe bölgesinde kaşıntı ve vezikül şikayetiyle dermatolojiye geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Nikel temasından 48 saat sonra kulakta kaşıntılı veziküler dermatit gelişen hastada lezyonda lenfosit ve makrofaj infiltrasyonu baskındır. Bu yanıtın gecikmesinin nedeni hangisidir?",
+    "options": [
+      "IgM'nin eritrosit yüzeyine bağlanması",
+      "İmmün komplekslerin kanda hazır dolaşması",
+      "Kompleman C9'un membranı delmesi",
+      "Mast hücresinin saniyeler içinde histamin salması",
+      "Antijen özgül T hücre aktivasyonu ve sitokin aracılı inflamasyon gerektirmesi"
+    ],
+    "correct": 4,
+    "exp": "Kontakt dermatit tip IV aşırı duyarlılık örneğidir. T hücre aktivasyonu ve makrofajların sitokinlerle çekilmesi nedeniyle yanıt gecikmelidir."
+  },
+  {
+    "id": 3016,
+    "ders": "Patoloji",
+    "konu": "İmmunoloji",
+    "diff": 4,
+    "q": "31 yaşında kadın hasta, bilinen kronik SLE öyküsü olup 2 haftadır bacaklarda ödem ve köpüklü idrar şikayetiyle nefrolojiye başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: SLE'li hastada glomerül bazal membranı boyunca değil, granüler tarzda IgG ve C3 birikimi görülüyor. Bu patern hangi mekanizmayı destekler?",
+    "options": [
+      "IgE'nin mast hücresinde çapraz bağlanması",
+      "Çözünebilir antijen-antikor komplekslerinin dokuda birikmesi",
+      "Komplemanın hiç aktive olmaması",
+      "T hücresinin hapten taşıyan keratinositi öldürmesi",
+      "Antikorun tek bir lineer bazal membran antijenine bağlanması"
+    ],
+    "correct": 1,
+    "exp": "SLE nefritinde immün kompleks birikimi granüler immünofloresans verir. Lineer patern anti-GBM hastalığında beklenir."
+  },
+  {
+    "id": 3017,
+    "ders": "Patoloji",
+    "konu": "İmmunoloji",
+    "diff": 4,
+    "q": "39 yaşında kadın hasta, bilinen kronik otoimmün tiroid hastalığı öyküsü olup 4 aydır çarpıntı ve kilo kaybı şikayetiyle endokrinolojiye geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Graves hastalığında tirotoksikoz bulguları olan hastada tiroid bezinde diffüz büyüme ve hormon üretimi artışı vardır. Antikorun patolojik etkisi hangi tip reaksiyona örnektir?",
+    "options": [
+      "Kompleman eksikliğine bağlı inflamasyon azalması",
+      "IgE aracılı tip I reaksiyon",
+      "Reseptörü uyararak fonksiyon artışı yapan tip II reaksiyon",
+      "İmmün kompleks aracılı tip III reaksiyon",
+      "Granülomatöz tip IV reaksiyon"
+    ],
+    "correct": 2,
+    "exp": "Graves hastalığında TSH reseptörünü uyaran antikorlar vardır. Hücre yıkımı değil, reseptör aracılı fonksiyon artışı yapan tip II aşırı duyarlılıktır."
+  },
+  {
+    "id": 3018,
+    "ders": "Patoloji",
+    "konu": "İmmunoloji",
+    "diff": 4,
+    "q": "Merkezi toleransın temel amacı aşağıdakilerden hangisidir?",
+    "options": [
+      "Kendi antijenine güçlü yanıt veren immatür lenfositleri elimine etmek veya düzenlemek",
+      "Mast hücresinden histamin salmak",
+      "Nötrofillerin damar dışına çıkmasını sağlamak",
+      "Kollajen sentezini artırmak",
+      "Pıhtılaşma kaskadını başlatmak"
+    ],
+    "correct": 0,
+    "exp": "Merkezi tolerans timus ve kemik iliğinde gelişir; self antijenlere yüksek afiniteyle yanıt veren lenfositlerin silinmesi veya düzenlenmesi otoimmüniteyi önler."
+  },
+  {
+    "id": 3019,
+    "ders": "Patoloji",
+    "konu": "İmmunoloji",
+    "diff": 4,
+    "q": "MHC sınıf I molekülleri antijenleri en çok hangi hücre grubuna sunar?",
+    "options": [
+      "CD8 pozitif sitotoksik T lenfositlere",
+      "CD4 pozitif yardımcı T lenfositlere",
+      "Plazma hücresine dönüşmüş B hücrelerine",
+      "Nötrofil öncüllerine",
+      "Eozinofillere"
+    ],
+    "correct": 0,
+    "exp": "MHC sınıf I tüm çekirdekli hücrelerde bulunur ve endojen antijenleri CD8 T hücrelerine sunar. MHC sınıf II ise CD4 T hücreleriyle ilişkilidir."
+  },
+  {
+    "id": 3020,
+    "ders": "Patoloji",
+    "konu": "Hemodinamik Bozukluklar",
+    "diff": 4,
+    "q": "45 yaşında kadın hasta, bilinen kronik venöz yetmezlik öyküsü olup 6 aydır akşamları artan ayak bileği şişliği şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Uzun süre ayakta kalan hastanın ayak bileğinde ödem gelişiyor; serum albümini normal, kalp yetmezliği yok. Bu ödemi en iyi açıklayan değişiklik hangisidir?",
+    "options": [
+      "Venöz hidrostatik basınç artışı",
+      "Plazma onkotik basıncında belirgin artış",
+      "Lenfatik drenajın aşırı hızlanması",
+      "Endotel geçirgenliğinin tamamen kaybolması",
+      "Sodyum atılımının ani artışı"
+    ],
+    "correct": 0,
+    "exp": "Ayakta kalma venöz hidrostatik basıncı artırır ve sıvının interstisyuma geçmesine yol açar. Albümin normal olduğu için onkotik basınç azalması beklenmez."
+  },
+  {
+    "id": 3021,
+    "ders": "Patoloji",
+    "konu": "Hemodinamik Bozukluklar",
+    "diff": 4,
+    "q": "51 yaşında erkek hasta, bilinen kronik diyabetik nefropati öyküsü olup 3 haftadır yaygın şişlik ve karında dolgunluk şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Nefrotik sendromlu hastada yaygın ödem ve asit gelişiyor. Serum albümini düşüktür. Bu ödemin temel mekanizması hangisidir?",
+    "options": [
+      "Arteriollerde vazokonstriksiyonla hidrostatik basıncın düşmesi",
+      "Eritrositlerin damar dışına çıkması",
+      "Lenfatik akımın artması",
+      "Fibrinolizin aşırı aktivasyonu",
+      "Plazma kolloid ozmotik basıncının azalması"
+    ],
+    "correct": 4,
+    "exp": "Nefrotik sendromda protein kaybı hipoalbüminemiye yol açar. Plazma onkotik basıncı azalınca sıvı damar dışına kaçar."
+  },
+  {
+    "id": 3022,
+    "ders": "Patoloji",
+    "konu": "Hemodinamik Bozukluklar",
+    "diff": 5,
+    "q": "63 yaşında kadın hasta, bilinen kronik obezite öyküsü olup 9 saatlik uçuş sonrası 2 saattir ani nefes darlığı ve göğüs ağrısı şikayetiyle acile geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Uzun uçuş sonrası ani dispne ve göğüs ağrısıyla gelen hastada akciğer arter dalında emboli saptanıyor. Embolinin kaynağı en olası olarak neresidir?",
+    "options": [
+      "Aort kapak vejetasyonu",
+      "Koroner arter trombüsü",
+      "Karotis plak ülserasyonu",
+      "Alt ekstremite derin ven trombüsü",
+      "Sol atriyumdaki mural trombüs"
+    ],
+    "correct": 3,
+    "exp": "Pulmoner tromboembolilerin çoğu alt ekstremite derin ven trombüslerinden kaynaklanır; venöz sistemden sağ kalbe ve pulmoner arterlere gider."
+  },
+  {
+    "id": 3023,
+    "ders": "Patoloji",
+    "konu": "Hemodinamik Bozukluklar",
+    "diff": 4,
+    "q": "72 yaşında erkek hasta, bilinen kronik aterosklerotik kalp hastalığı öyküsü olup 1 gündür tansiyon düşüklüğü ve kanlı ishal şikayetiyle yoğun bakıma alınıyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Hipotansif şok sonrası barsak mukozasında kama şeklinde değil, sınırları daha belirsiz hemorajik nekroz alanları gelişiyor. Bu doku hasarının nedeni en çok neye bağlıdır?",
+    "options": [
+      "Tek bir uç arterin tıkanmasına bağlı beyaz infarkt",
+      "Lenfatik drenaj artışı",
+      "Sadece venöz konjesyon olmadan reperfüzyon",
+      "Onkotik basınç yükselmesi",
+      "Hipoperfüzyona duyarlı mukozada yaygın iskemik zedelenme"
+    ],
+    "correct": 4,
+    "exp": "Şokta sistemik hipoperfüzyon özellikle barsak mukozası ve böbrek tübülleri gibi hassas dokularda iskemik hasar oluşturur."
+  },
+  {
+    "id": 3024,
+    "ders": "Patoloji",
+    "konu": "Hemodinamik Bozukluklar",
+    "diff": 4,
+    "q": "60 yaşında kadın hasta, bilinen kronik romatizmal mitral stenoz öyküsü olup 8 aydır efor dispnesi ve öksürük şikayetiyle kardiyolojiye başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Mitral stenozlu hastanın akciğerinde kahverengi pigment yüklü makrofajlar görülüyor. Bu hücrelerin oluşumunda hangi süreç rol oynar?",
+    "options": [
+      "Kalsiyum sabunlarının fagositozu",
+      "Melanin sentezinin alveollerde artması",
+      "Kronik pulmoner konjesyonda eritrosit ekstravazasyonu ve hemosiderin birikimi",
+      "Lipofuscin pigmentinin eritrositte depolanması",
+      "Safra pigmentinin makrofajda birikmesi"
+    ],
+    "correct": 2,
+    "exp": "Kronik sol kalp yetmezliği/mitral stenoz pulmoner konjesyon yapar. Eritrositler alveole kaçar, makrofajlar hemosiderinle yüklenir; kalp yetmezliği hücreleri oluşur."
+  },
+  {
+    "id": 3025,
+    "ders": "Patoloji",
+    "konu": "Hemodinamik Bozukluklar",
+    "diff": 4,
+    "q": "66 yaşında erkek hasta, bilinen kronik sağ kalp yetmezliği öyküsü olup 1 yıldır karında şişlik ve çabuk yorulma şikayetiyle takip ediliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Karaciğerde kronik sağ kalp yetmezliğine bağlı santral ven çevresinde koyu kırmızı konjesyon, periferde yağlanma izleniyor. Bu görünüm en iyi hangi terimle ifade edilir?",
+    "options": [
+      "Muskat karaciğer",
+      "Granülasyon dokusu",
+      "Beyaz infarkt",
+      "Fibrinoid nekroz",
+      "Kazeöz nekroz"
+    ],
+    "correct": 0,
+    "exp": "Kronik pasif konjesyonda karaciğerde santral bölgeler koyu, perifer yağlı-soluk görünür. Bu tablo muskat karaciğer olarak adlandırılır."
+  },
+  {
+    "id": 3026,
+    "ders": "Patoloji",
+    "konu": "Hemodinamik Bozukluklar",
+    "diff": 3,
+    "q": "Virchow triadında tromboza eğilimi artıran üç ana faktörden biri değildir?",
+    "options": [
+      "Endotel hasarı",
+      "Hiperkoagülabilite",
+      "Staz veya türbülans",
+      "Kan akımında yavaşlama",
+      "Hipokrom mikrositer eritrosit morfolojisi"
+    ],
+    "correct": 4,
+    "exp": "Virchow triadı endotel hasarı, anormal kan akımı ve hiperkoagülabiliteden oluşur. Eritrosit indeksleri triadın parçası değildir."
+  },
+  {
+    "id": 3027,
+    "ders": "Patoloji",
+    "konu": "Hemodinamik Bozukluklar",
+    "diff": 4,
+    "q": "Kırmızı infarkt en çok hangi durumda beklenir?",
+    "options": [
+      "Kıkırdak dokusunda kapiller olmadığı için",
+      "Sadece böbrek korteksinde arter tıkanmasında",
+      "Skar dokusunda kanlanmanın az olduğu bölgede",
+      "Tek uç arterle beslenen solid organlarda",
+      "Venöz drenajı bozulmuş veya çift dolaşımlı dokularda"
+    ],
+    "correct": 4,
+    "exp": "Kırmızı infarkt venöz tıkanma, çift kanlanma veya gevşek dokularda görülür. Akciğer ve barsak tipik örneklerdir."
+  },
+  {
+    "id": 3028,
+    "ders": "Patoloji",
+    "konu": "Neoplazi",
+    "diff": 5,
+    "q": "38 yaşında erkek hasta, bilinen kronik hastalığı olmayan, 4 aydır dışkılama alışkanlığında değişiklik ve kilo kaybı şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Kolon kanseri gelişen genç hastada çok sayıda polip yoktur; tümörde mikrosatellit instabilitesi ve MLH1/MSH2 yolunda bozukluk gösteriliyor. Bu hasta grubunda temel karsinogenez mekanizması hangisidir?",
+    "options": [
+      "RB proteinini fosforile edememe",
+      "DNA mismatch repair kusuruna bağlı mutasyon birikimi",
+      "E-kaderin ekspresyonunun fizyolojik artışı",
+      "Telomeraz aktivitesinin tamamen kaybı",
+      "Apoptozun p53 aktivasyonu ile hızlanması"
+    ],
+    "correct": 1,
+    "exp": "Lynch sendromunda DNA mismatch repair genleri bozulur. Mikrosatellit instabilitesi ve mutasyon birikimi kolon kanseri riskini artırır."
+  },
+  {
+    "id": 3029,
+    "ders": "Patoloji",
+    "konu": "Neoplazi",
+    "diff": 4,
+    "q": "64 yaşında erkek hasta, bilinen kronik KOAH öyküsü olup 8 aydır öksürük ve kanlı balgam şikayetiyle göğüs hastalıklarına geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Sigara içen hastanın bronş epitelinde önce skuamöz metaplazi, sonra displazi ve karsinoma in situ gelişiyor. Bu süreçte invaziv kanser tanısı için en kritik bulgu hangisidir?",
+    "options": [
+      "Polarite kaybının epitel içinde kalması",
+      "Nükleer pleomorfizm görülmesi",
+      "Bazal membranın tümör hücreleri tarafından aşılması",
+      "Mitoz sayısının artması",
+      "Epitelde maturasyon bozukluğu olması"
+    ],
+    "correct": 2,
+    "exp": "Karsinoma in situ epitel boyunca displazi içerir ama bazal membran sağlamdır. İnvaziv kanser için bazal membranın aşılması gerekir."
+  },
+  {
+    "id": 3030,
+    "ders": "Patoloji",
+    "konu": "Neoplazi",
+    "diff": 4,
+    "q": "52 yaşında kadın hasta, bilinen kronik hipertansiyon öyküsü olup 2 aydır memede ele gelen sertlik şikayetiyle cerrahiye başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Meme kanserli hastada tümör hücrelerinde E-kaderin kaybı gösteriliyor. Bu değişiklik en çok hangi biyolojik davranışı kolaylaştırır?",
+    "options": [
+      "Tümör hücresinde oksidatif fosforilasyonun zorunlu hale gelmesi",
+      "Pıhtılaşma faktörlerinin sentezlenmesi",
+      "Hücreler arası adezyonun azalması ve invazyon",
+      "Antijen sunumunun tamamen artması",
+      "Hücrenin terminal diferansiyasyona zorlanması"
+    ],
+    "correct": 2,
+    "exp": "E-kaderin epitel hücreleri arasında adezyon sağlar. Kaybı hücrelerin ayrılmasını, invazyon ve metastazı kolaylaştırır."
+  },
+  {
+    "id": 3031,
+    "ders": "Patoloji",
+    "konu": "Neoplazi",
+    "diff": 5,
+    "q": "34 yaşında kadın hasta, bilinen kronik hastalığı olmayan, 6 aydır ilişki sonrası kanama ve kötü kokulu akıntı şikayetiyle jinekolojiye geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: HPV ile ilişkili serviks lezyonunda E6 ve E7 proteinleri yüksek bulunuyor. Bu viral proteinlerin tümör gelişimine katkısı en iyi hangi yol üzerinden olur?",
+    "options": [
+      "APC proteininin beta-katenini aşırı yıkması",
+      "BCL2'nin mitokondride tamamen kaybolması",
+      "Mismatch repair genlerinin bakteriyel toksinle aktive edilmesi",
+      "VEGF sentezinin fizyolojik düzeye inmesi",
+      "p53 ve RB tümör baskılayıcı yollarının baskılanması"
+    ],
+    "correct": 4,
+    "exp": "Yüksek riskli HPV tiplerinde E6 p53'ü, E7 RB'yi baskılar. Hücre döngüsü kontrolü ve apoptoz zayıflar."
+  },
+  {
+    "id": 3032,
+    "ders": "Patoloji",
+    "konu": "Neoplazi",
+    "diff": 4,
+    "q": "41 yaşında kadın hasta, bilinen kronik Hashimoto tiroiditi öyküsü olup 3 aydır boyunda şişlik ve bası hissi şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Tiroid nodülünde papiller yapıların yanında Orphan Annie-eye nükleuslar ve psammoma cisimcikleri görülüyor. Bu tümörün lenf nodu metastazına eğilimi hangi yayılım yolunu düşündürür?",
+    "options": [
+      "Damar dışına çıkmadan lokal büyüme",
+      "Perinöral yayılım olmadan retrograd venöz yayılım",
+      "Seröz boşluk implantasyonu",
+      "Sadece hematojen yayılım",
+      "Lenfatik yayılım"
+    ],
+    "correct": 4,
+    "exp": "Papiller tiroid karsinomu lenfatik yayılıma eğilimlidir. Histolojide berrak nükleuslar ve psammoma cisimcikleri tipiktir."
+  },
+  {
+    "id": 3033,
+    "ders": "Patoloji",
+    "konu": "Neoplazi",
+    "diff": 5,
+    "q": "57 yaşında erkek hasta, bilinen kronik lenfoma öyküsü olup 2 kür kemoterapi sonrası 1 aydır lenf nodlarında küçülmeme şikayetiyle onkolojide izleniyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Kemoterapi sonrası tümörde belirgin küçülme beklenirken bazı hücreler apoptoza dirençli kalıyor. BCL2 aşırı ekspresyonu saptanırsa bu direnç hangi basamağın baskılanmasıyla açıklanır?",
+    "options": [
+      "Mitokondriyal dış membran permeabilizasyonu ve sitokrom c salınımı",
+      "Fibrin pıhtısının stabilizasyonu",
+      "Kompleman C3b opsonizasyonu",
+      "Nötrofil rolling basamağı",
+      "Kollajen tip III sentezi"
+    ],
+    "correct": 0,
+    "exp": "BCL2 antiapoptotiktir; mitokondriden sitokrom c salınımını engelleyerek intrinsik apoptoz yolunu baskılar."
+  },
+  {
+    "id": 3034,
+    "ders": "Patoloji",
+    "konu": "Neoplazi",
+    "diff": 4,
+    "q": "Malign tümörlerde derecelendirme en çok hangi özelliğe dayanır?",
+    "options": [
+      "Hastanın serum sodyum düzeyi",
+      "Tümörün anatomik yaygınlığı",
+      "Metastazın olup olmaması",
+      "Tümörün lenf nodu sayısı",
+      "Tümör hücrelerinin diferansiyasyon düzeyi ve anaplazi derecesi"
+    ],
+    "correct": 4,
+    "exp": "Grade, tümörün mikroskobik diferansiyasyonu ve anaplazi derecesini ifade eder. Stage ise anatomik yaygınlığı ve metastazı değerlendirir."
+  },
+  {
+    "id": 3035,
+    "ders": "Patoloji",
+    "konu": "Neoplazi",
+    "diff": 4,
+    "q": "Warburg etkisi tümör hücrelerinde hangi metabolik tercihi ifade eder?",
+    "options": [
+      "Glikolizin tamamen kapanması",
+      "Oksijen varlığında bile glikolizin artması",
+      "Mitokondriyal DNA'nın hiç kullanılmaması",
+      "Yağ asidi oksidasyonunun zorunlu tek enerji yolu olması",
+      "ATP üretiminin sadece kreatin fosfattan sağlanması"
+    ],
+    "correct": 1,
+    "exp": "Tümör hücreleri oksijen varlığında bile glikolizi artırabilir. Bu Warburg etkisi olarak bilinir ve biyosentez ara ürünleri sağlar."
+  },
+  {
+    "id": 3036,
+    "ders": "Patoloji",
+    "konu": "Pediatrik Hastalıklar",
+    "diff": 4,
+    "q": "2 günlük erkek bebek, bilinen kronik hastalığı olmayan, doğumdan sonraki ilk saatlerden beri morarma ve solunum sıkıntısı şikayetiyle yenidoğan yoğun bakıma alınıyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Prematüre bebekte doğumdan kısa süre sonra solunum sıkıntısı gelişiyor. Akciğerde yaygın atelektazi ve alveollerde eozinofilik membranlar görülüyor. Temel eksiklik hangisidir?",
+    "options": [
+      "Tip II pnömosit kaynaklı surfaktan yetersizliği",
+      "Alveoler makrofajlarda hemosiderin birikimi",
+      "Bronş epitelinde skuamöz metaplazi",
+      "Elastaz inhibitörünün aşırı artması",
+      "Miyokardda koagülasyon nekrozu"
+    ],
+    "correct": 0,
+    "exp": "Neonatal respiratuvar distres sendromu surfaktan eksikliğine bağlıdır. Alveollerde kollaps ve hyalin membran oluşumu görülür."
+  },
+  {
+    "id": 3037,
+    "ders": "Patoloji",
+    "konu": "Pediatrik Hastalıklar",
+    "diff": 5,
+    "q": "3 günlük kız bebek, bilinen kronik hastalığı olmayan, doğumdan beri karında şişlik ve mekonyum çıkaramama şikayetiyle çocuk cerrahisine getiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Yenidoğanda abdominal distansiyon ve mekonyum çıkaramama vardır. Rektal biyopside submukozal ve myenterik pleksusta ganglion hücresi yoktur. Bu tablo hangi embriyolojik olayın bozukluğuna bağlıdır?",
+    "options": [
+      "Mezodermin somite ayrılması",
+      "Nöral krest hücrelerinin distal barsağa migrasyon kusuru",
+      "Üreter tomurcuğunun metanefrik blastemi uyarması",
+      "Vitellin kanalın açık kalması",
+      "Ön barsağın trakeadan ayrılmaması"
+    ],
+    "correct": 1,
+    "exp": "Hirschsprung hastalığında nöral krest kaynaklı ganglion hücreleri distal barsağa göç edemez. Aganglionik segment fonksiyonel obstrüksiyon yapar."
+  },
+  {
+    "id": 3038,
+    "ders": "Patoloji",
+    "konu": "Pediatrik Hastalıklar",
+    "diff": 4,
+    "q": "4 yaşında erkek çocuk, bilinen kronik hastalığı olmayan, 2 aydır karında şişlik ve hematüri şikayetiyle pediatriye başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Çocukta Wilms tümörü saptanıyor. Mikroskopide blastemal, epitelyal ve stromal komponentler birlikte izleniyor. Bu üçlü görünüm en iyi hangi kavramla ilişkilidir?",
+    "options": [
+      "Fibrinoid nekrozla seyreden vaskülit",
+      "Granülomatöz inflamasyonda epiteloid dönüşüm",
+      "Embriyonel böbrek dokusuna benzeyen tripazik tümör gelişimi",
+      "Skuamöz metaplazi sonrası displazi",
+      "Matür teratomda üç germ yaprağının benign dizilimi"
+    ],
+    "correct": 2,
+    "exp": "Wilms tümörü çocukluk çağı böbrek tümörüdür ve klasik olarak blastemal, epitelyal ve stromal bileşenlerden oluşan tripazik patern gösterebilir."
+  },
+  {
+    "id": 3039,
+    "ders": "Patoloji",
+    "konu": "Pediatrik Hastalıklar",
+    "diff": 4,
+    "q": "8 aylık kız bebek, bilinen kronik hastalığı olmayan, 5 aydır büyüme geriliği ve karında asimetri şikayetiyle genetik değerlendirmeye alınıyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Bebekte iri dil, omfalosel ve hemihipertrofi vardır. Bu bulgularla birlikte hangi tümör riski özellikle artmıştır?",
+    "options": [
+      "Bazal hücreli karsinom",
+      "Seminom",
+      "Wilms tümörü",
+      "Papiller tiroid karsinomu",
+      "Kondrosarkom"
+    ],
+    "correct": 2,
+    "exp": "Beckwith-Wiedemann sendromunda organomegali, makroglossi, omfalosel ve hemihipertrofi görülebilir; Wilms tümörü ve hepatoblastom riski artar."
+  },
+  {
+    "id": 3040,
+    "ders": "Patoloji",
+    "konu": "Pediatrik Hastalıklar",
+    "diff": 5,
+    "q": "2 yaşında erkek çocuk, bilinen kronik hastalığı olmayan, 3 haftadır karında kitle ve ateş benzeri huzursuzluk şikayetiyle getiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: İki yaşındaki çocukta adrenal medulladan kaynaklanan tümör, Homer-Wright rozetleri ve N-MYC amplifikasyonu ile tanı alıyor. Bu tümörün kökeni en olası hangisidir?",
+    "options": [
+      "Endodermal barsak epiteli",
+      "Mezonefrik kanal artıkları",
+      "Nöral krest kaynaklı sempatik sinir sistemi hücreleri",
+      "Meme duktus epiteli",
+      "Kıkırdak matriksi üreten kondrositler"
+    ],
+    "correct": 2,
+    "exp": "Nöroblastom nöral krest kökenli sempatik sinir sistemi tümörüdür. Adrenal medulla sık yerleşimdir; N-MYC amplifikasyonu kötü prognozla ilişkilidir."
+  },
+  {
+    "id": 3041,
+    "ders": "Patoloji",
+    "konu": "Pediatrik Hastalıklar",
+    "diff": 4,
+    "q": "9 yaşında kız çocuk, bilinen kronik kistik fibrozis öyküsü olup 6 yıldır tekrarlayan öksürük ve yağlı dışkılama şikayetiyle izleniyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Çocukta kistik fibrozis nedeniyle tekrarlayan akciğer enfeksiyonları ve pankreatik yetmezlik gelişiyor. Duktuslarda koyu sekresyon birikmesinin temel nedeni hangisidir?",
+    "options": [
+      "IgA'nın bazal membrana lineer bağlanması",
+      "Tip II pnömosit hiperplazisine bağlı surfaktan artışı",
+      "Hepatositte bakır taşıyıcı proteinin artması",
+      "CFTR klor kanal fonksiyon bozukluğu nedeniyle su içeriği azalmış sekresyon oluşması",
+      "Alfa-1 antitripsin fazlalığına bağlı elastaz baskılanması"
+    ],
+    "correct": 3,
+    "exp": "Kistik fibroziste CFTR klor kanal kusuru sekresyonların su içeriğini azaltır; koyu mukus duktus obstrüksiyonu ve enfeksiyonlara neden olur."
+  },
+  {
+    "id": 3042,
+    "ders": "Patoloji",
+    "konu": "Pediatrik Hastalıklar",
+    "diff": 3,
+    "q": "Prematürelerde intraventriküler kanamanın en sık kaynaklandığı hassas bölge hangisidir?",
+    "options": [
+      "Substantia nigra",
+      "Germinal matriks",
+      "Serebellar korteks",
+      "Hipokampus CA1 alanı",
+      "Koroid pleksusun kalsifiye stroması"
+    ],
+    "correct": 1,
+    "exp": "Prematürelerde germinal matriks damarları kırılgandır; hipoksi ve basınç değişiklikleri intraventriküler kanamaya yol açabilir."
+  },
+  {
+    "id": 3043,
+    "ders": "Patoloji",
+    "konu": "Pediatrik Hastalıklar",
+    "diff": 4,
+    "q": "Ani bebek ölümü sendromu için en önemli modifiye edilebilir risk azaltıcı yaklaşım hangisidir?",
+    "options": [
+      "Anne sigarasının artırılması",
+      "Bebeğin sırtüstü yatırılması",
+      "Yumuşak yatak ve yastık kullanılması",
+      "Aşırı sıcak ortamda uyutulması",
+      "Bebeğin yüzüstü yatırılması"
+    ],
+    "correct": 1,
+    "exp": "Ani bebek ölümü sendromu riskini azaltmada sırtüstü uyku pozisyonu önemlidir. Yüzüstü pozisyon, sigara maruziyeti ve yumuşak yatak riski artırır."
+  },
+  {
+    "id": 3044,
+    "ders": "Patoloji",
+    "konu": "Çevresel ve Enfeksiyoz Hastalıklar",
+    "diff": 4,
+    "q": "59 yaşında erkek hasta, bilinen kronik sigara kullanımı öyküsü olup 5 yıldır giderek artan efor dispnesi ve kuru öksürük şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Kömür işçisinde yıllar içinde dispne gelişiyor. Akciğerde siyah pigmentli makrofajlar ve üst loblarda fibrotik nodüller izleniyor. Fibrozu artıran temel hücresel olay hangisidir?",
+    "options": [
+      "Tip II pnömositlerin surfaktanı tamamen durdurması",
+      "Partikül yüklü makrofajların inflamatuvar ve fibrogenik mediyatör salması",
+      "Eozinofillerin IgE üretmesi",
+      "Nötrofillerin CD18 eksikliği göstermesi",
+      "Hepatositlerin safra pigmenti depolaması"
+    ],
+    "correct": 1,
+    "exp": "Pnömokonyozlarda inhalan partiküller makrofajlar tarafından alınır. Makrofaj mediyatörleri inflamasyon ve fibrozisi tetikler."
+  },
+  {
+    "id": 3045,
+    "ders": "Patoloji",
+    "konu": "Çevresel ve Enfeksiyoz Hastalıklar",
+    "diff": 4,
+    "q": "68 yaşında erkek hasta, bilinen kronik plevral plak öyküsü olup 4 aydır göğüs ağrısı ve kilo kaybı şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Eski tersane işçisinde plevral plaklar ve mezotelyoma gelişiyor. Bu maruziyetin akciğerde maligniteyi artıran özelliği hangisidir?",
+    "options": [
+      "DNA tamirini her zaman hızlandırması",
+      "Lenfatik yayılımı imkansız hale getirmesi",
+      "Sadece alveolde yağ nekrozu yapması",
+      "Asbest liflerinin özellikle sigarayla birlikte karsinojenik etkiyi artırması",
+      "Makrofaj aktivasyonunu tamamen engellemesi"
+    ],
+    "correct": 3,
+    "exp": "Asbest plevral plak, asbestozis, mezotelyoma ve bronkojenik karsinom riskini artırır. Sigara ile bronkojenik karsinom riski sinerjik artar."
+  },
+  {
+    "id": 3046,
+    "ders": "Patoloji",
+    "konu": "Çevresel ve Enfeksiyoz Hastalıklar",
+    "diff": 5,
+    "q": "52 yaşında erkek hasta, bilinen kronik alkol kullanım bozukluğu öyküsü olup 2 aydır sarılık ve sağ üst kadran ağrısı şikayetiyle geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Kronik alkol kullanımı olan hastada karaciğerde yağlanma, hepatosit balonlaşması, Mallory-Denk cisimcikleri ve nötrofil infiltrasyonu görülüyor. Bu tablo en iyi hangi mekanizma ile ilişkilidir?",
+    "options": [
+      "CFTR klor kanalının kalıtsal eksikliği",
+      "HBV yüzey antijenine karşı lineer GBM yanıtı",
+      "Elastazın alfa-1 antitripsinle aşırı baskılanması",
+      "Asetaldehit ve oksidatif stres aracılı hepatosit hasarı",
+      "IgA'nın mezangiumda birikmesi"
+    ],
+    "correct": 3,
+    "exp": "Alkolik hepatitte asetaldehit, ROS oluşumu ve sitoskeletal hasar hepatosit balonlaşması ve Mallory-Denk cisimciklerine yol açar."
+  },
+  {
+    "id": 3047,
+    "ders": "Patoloji",
+    "konu": "Çevresel ve Enfeksiyoz Hastalıklar",
+    "diff": 4,
+    "q": "41 yaşında kadın hasta, bilinen kronik hastalığı olmayan, 6 haftadır boyunda ağrısız şişlik ve gece terlemesi şikayetiyle enfeksiyon polikliniğine başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Tüberküloz lenfadenitinde merkezde amorf eozinofilik nekroz, çevresinde epiteloid histiositler ve Langhans tipi dev hücreler görülüyor. Bu görünüm hangi immün yanıtla ilişkilidir?",
+    "options": [
+      "Th1 aracılı makrofaj aktivasyonu",
+      "Komplemanın tamamen baskılanması",
+      "IgE aracılı mast hücre degranülasyonu",
+      "Sadece nötrofilik eksüda oluşumu",
+      "Tip II antikor aracılı eritrosit yıkımı"
+    ],
+    "correct": 0,
+    "exp": "Tüberkülozda granülomatöz inflamasyon Th1 yanıtı ve IFN-gamma ile aktive makrofajlar üzerinden gelişir; kazeöz nekroz tipiktir."
+  },
+  {
+    "id": 3048,
+    "ders": "Patoloji",
+    "konu": "Çevresel ve Enfeksiyoz Hastalıklar",
+    "diff": 4,
+    "q": "33 yaşında erkek hasta, bilinen kronik HIV enfeksiyonu öyküsü olup 1 aydır ağızda beyaz plak ve ateş şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: HIV pozitif hastada CD4 T hücre sayısı belirgin düşmüş, fırsatçı enfeksiyonlar başlamıştır. Bu yatkınlığın temel nedeni hangisidir?",
+    "options": [
+      "Fibroblastların kollajen sentezinin artması",
+      "Yardımcı T hücre fonksiyon kaybına bağlı hücresel immünitenin zayıflaması",
+      "Eritrositlerde hemoglobin sentezinin hızlanması",
+      "Nötrofillerin kemik iliğinde aşırı artması",
+      "Mast hücrelerinin sürekli degranülasyonu"
+    ],
+    "correct": 1,
+    "exp": "HIV başlıca CD4 T hücrelerini etkiler. Hücresel immünitenin zayıflaması fırsatçı enfeksiyon ve bazı tümör risklerini artırır."
+  },
+  {
+    "id": 3049,
+    "ders": "Patoloji",
+    "konu": "Çevresel ve Enfeksiyoz Hastalıklar",
+    "diff": 4,
+    "q": "8 yaşında erkek çocuk, bilinen kronik hastalığı olmayan, 3 haftadır okul başarısında düşme ve karın ağrısı şikayetiyle çevresel maruziyet açısından inceleniyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Civa maruziyeti olan çocukta nörolojik bulgular ve böbrek hasarı gelişiyor. Ağır metallerin patolojik etkisini en iyi açıklayan genel mekanizma hangisidir?",
+    "options": [
+      "DNA'yı her zaman tamir etmesi",
+      "Kompleman C5a'yı yok etmesi",
+      "Proteinlerde sülfhidril gruplarına bağlanarak enzim fonksiyonlarını bozması",
+      "Kollajen çapraz bağını artırarak yara iyileşmesini hızlandırması",
+      "Surfaktan sentezini artırması"
+    ],
+    "correct": 2,
+    "exp": "Birçok ağır metal proteinlerin sülfhidril gruplarına bağlanır, enzim fonksiyonlarını bozar ve hücre hasarına yol açar."
+  },
+  {
+    "id": 3050,
+    "ders": "Patoloji",
+    "konu": "Çevresel ve Enfeksiyoz Hastalıklar",
+    "diff": 3,
+    "q": "Karbonmonoksit zehirlenmesinde doku hipoksisinin temel nedeni hangisidir?",
+    "options": [
+      "Methemoglobini ferröz forma çevirmesi",
+      "Hemoglobine oksijenden yüksek afiniteyle bağlanması",
+      "Eritrosit üretimini akut olarak durdurması",
+      "Plazma albuminini parçalayarak ödem yapması",
+      "Alveollerde surfaktanı artırması"
+    ],
+    "correct": 1,
+    "exp": "Karbonmonoksit hemoglobine oksijenden çok daha yüksek afiniteyle bağlanır, oksijen taşınmasını ve dokulara salınımını bozar."
+  },
+  {
+    "id": 3051,
+    "ders": "Patoloji",
+    "konu": "Çevresel ve Enfeksiyoz Hastalıklar",
+    "diff": 4,
+    "q": "İyonizan radyasyonun hızlı çoğalan dokularda belirgin hasar yapmasının ana nedeni hangisidir?",
+    "options": [
+      "DNA kırıkları ve serbest radikal oluşumu",
+      "Glikojen depolanmasını artırması",
+      "Safra pigmentini makrofaja yüklemesi",
+      "Nötrofil adezyonunu tamamen engellemesi",
+      "Kollajeni anında tip I'e dönüştürmesi"
+    ],
+    "correct": 0,
+    "exp": "İyonizan radyasyon DNA zincir kırıkları ve su radyoliziyle serbest radikal oluşumu yapar. Hızlı çoğalan dokular daha duyarlıdır."
+  },
+  {
+    "id": 3052,
+    "ders": "Patoloji",
+    "konu": "Vasküler Hastalıklar",
+    "diff": 4,
+    "q": "56 yaşında erkek hasta, bilinen kronik hipertansiyon öyküsü olup 1 yıldır baş ağrısı ve görmede bulanıklık şikayetiyle takip ediliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Hipertansif hastanın küçük arterlerinde konsantrik, laminer tarzda duvar kalınlaşması ve lümen daralması izleniyor. Bu görünüm en iyi hangi süreçle açıklanır?",
+    "options": [
+      "Sadece lipid dolu köpük hücre birikimi",
+      "Fibrinoid nekrozla akut panarterit",
+      "Medial kistik dejenerasyon olmadan aneurizma",
+      "Kazeöz granülom oluşumu",
+      "Damar duvarında düz kas proliferasyonu ve bazal membran yinelenmesi"
+    ],
+    "correct": 4,
+    "exp": "Malign hipertansiyonda hiperplastik arterioloskleroz görülebilir. Soğan zarı görünümü düz kas proliferasyonu ve bazal membran duplikasyonu ile ilişkilidir."
+  },
+  {
+    "id": 3053,
+    "ders": "Patoloji",
+    "konu": "Vasküler Hastalıklar",
+    "diff": 5,
+    "q": "49 yaşında erkek hasta, bilinen kronik hiperlipidemi öyküsü olup 6 aydır eforla gelen bacak ağrısı ve tansiyon yüksekliği şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Orta yaşlı erkekte renal arter darlığı ve hipertansiyon var. Histolojide büyük elastik arter intimasında lipid çekirdeği, fibröz kapak ve köpük hücreler görülüyor. Plak komplikasyonunu en çok başlatan olay hangisidir?",
+    "options": [
+      "Endotelin antitrombotik yüzeyini artırması",
+      "Kalsifikasyonun her zaman plağı stabilize etmesi",
+      "Vasa vasorumun fizyolojik genişlemesi",
+      "Fibröz kapağın yırtılması ve trombojenik içeriğin kanla teması",
+      "Adventisyanın tamamen kaybolması"
+    ],
+    "correct": 3,
+    "exp": "Aterosklerotik plakta fibröz kapağın rüptürü trombojenik lipid çekirdeğin kanla temasına neden olur ve akut tromboz gelişebilir."
+  },
+  {
+    "id": 3054,
+    "ders": "Patoloji",
+    "konu": "Vasküler Hastalıklar",
+    "diff": 4,
+    "q": "74 yaşında erkek hasta, bilinen kronik aterosklerotik damar hastalığı öyküsü olup 3 aydır karında nabız atan kitle ve sırt ağrısı şikayetiyle geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Yaşlı hastada abdominal aort anevrizması saptanıyor. Aterosklerotik zeminde gelişen bu anevrizmada duvar zayıflamasını en iyi açıklayan mekanizma hangisidir?",
+    "options": [
+      "Endotelde IgE çapraz bağlanması",
+      "İntimada glikojen depolanması",
+      "Bazal membranda lineer IgA birikimi",
+      "Medial elastik doku ve düz kas kaybı",
+      "Trombositte surfaktan sentezi"
+    ],
+    "correct": 3,
+    "exp": "Anevrizma duvarın yapısal zayıflığıyla oluşur. Aterosklerozda medya beslenmesi bozulur, elastik doku ve düz kas kaybı gelişir."
+  },
+  {
+    "id": 3055,
+    "ders": "Patoloji",
+    "konu": "Vasküler Hastalıklar",
+    "diff": 4,
+    "q": "27 yaşında kadın hasta, bilinen kronik hastalığı olmayan, 2 aydır ateş, kilo kaybı ve kol çabuk yorulması şikayetiyle romatolojiye başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Genç kadında ateş, kilo kaybı ve üst ekstremite nabızlarında azalma vardır. Büyük damar biyopsisinde granülomatöz inflamasyon ve elastik lamina hasarı görülüyor. En olası tanı hangisidir?",
+    "options": [
+      "Kriyoglobulinemik vaskülit",
+      "Kawasaki hastalığı",
+      "Takayasu arteriti",
+      "Buerger hastalığı",
+      "Mikroskobik polianjiit"
+    ],
+    "correct": 2,
+    "exp": "Takayasu arteriti aort ve büyük dallarını tutan granülomatöz vaskülittir; genç kadınlarda nabız azalmasıyla ortaya çıkabilir."
+  },
+  {
+    "id": 3056,
+    "ders": "Patoloji",
+    "konu": "Vasküler Hastalıklar",
+    "diff": 4,
+    "q": "76 yaşında kadın hasta, bilinen kronik hipertansiyon öyküsü olup 4 haftadır yeni başlayan temporal baş ağrısı ve çene yorulması şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Yaşlı hastada yeni başlayan baş ağrısı, çene kladikasyonu ve görme bulanıklığı vardır. Temporal arter biyopsisinde internal elastik laminada yıkım ve dev hücreli inflamasyon görülüyor. Tedavinin gecikmesi en çok hangi sonuçtan dolayı kritiktir?",
+    "options": [
+      "Mezotelyoma riskinin artması",
+      "Oftalmik arter tutulumu ile kalıcı görme kaybı",
+      "Pulmoner embolinin kaçınılmaz olması",
+      "Akut pankreatit gelişmesi",
+      "Hirschsprung hastalığı gelişmesi"
+    ],
+    "correct": 1,
+    "exp": "Dev hücreli arterit temporal arter ve oftalmik arter dallarını tutabilir. Görme kaybı riski nedeniyle hızlı steroid tedavisi gerekir."
+  },
+  {
+    "id": 3057,
+    "ders": "Patoloji",
+    "konu": "Vasküler Hastalıklar",
+    "diff": 5,
+    "q": "44 yaşında erkek hasta, bilinen kronik sigara kullanım öyküsü olup 7 aydır parmaklarda ağrı ve soğukta renk değişikliği şikayetiyle damar cerrahisine geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Sigara içen genç erkekte ayak parmaklarında iskemi ve yüzeyel venlerde migratuvar tromboflebit gelişiyor. Damar kesitinde lümende mikroapse içeren trombüs, damar duvarında görece sınırlı inflamasyon izleniyor. En olası tanı hangisidir?",
+    "options": [
+      "Tromboanjitis obliterans",
+      "Monckeberg medial kalsifik skleroz",
+      "Takayasu arteriti",
+      "Klasik nodüler poliarterit",
+      "Temporal arterit"
+    ],
+    "correct": 0,
+    "exp": "Buerger hastalığı sigara ile güçlü ilişkili segmental trombozan vaskülittir. Küçük-orta arter ve venleri tutar; trombüs içinde mikroapseler tipiktir."
+  },
+  {
+    "id": 3058,
+    "ders": "Patoloji",
+    "konu": "Vasküler Hastalıklar",
+    "diff": 3,
+    "q": "Benign hipertansiyonda böbrekte en tipik küçük damar değişikliği hangisidir?",
+    "options": [
+      "Kazeöz arterit",
+      "Hiyalin arterioloskleroz",
+      "Granülomatöz flebit",
+      "Fibrinöz perikardit",
+      "Medial tabakada tümör embolisi"
+    ],
+    "correct": 1,
+    "exp": "Benign hipertansiyonda plazma protein sızıntısı ve düz kas ECM üretimiyle hiyalin arterioloskleroz gelişir."
+  },
+  {
+    "id": 3059,
+    "ders": "Patoloji",
+    "konu": "Vasküler Hastalıklar",
+    "diff": 4,
+    "q": "Monckeberg medial kalsifik skleroz için en doğru ifade hangisidir?",
+    "options": [
+      "Küçük damarları nekrotizan vaskülitle tıkar",
+      "İntimada lipid çekirdek ve fibröz kapak oluşturur",
+      "Sadece venlerde trombüs yapar",
+      "Her zaman malign hipertansiyon bulgusudur",
+      "Orta çaplı arter medyasında kalsifikasyon yapar, genellikle lümeni belirgin daraltmaz"
+    ],
+    "correct": 4,
+    "exp": "Monckeberg medial kalsifik skleroz medyada kalsifikasyonla karakterizedir. Genellikle lümeni önemli ölçüde daraltmaz ve çoğu kez klinik olarak sessizdir."
+  },
+  {
+    "id": 3060,
+    "ders": "Patoloji",
+    "konu": "Kalp Hastalıkları",
+    "diff": 5,
+    "q": "64 yaşında erkek hasta, bilinen kronik koroner arter hastalığı ve hipertansiyon öyküsü olup 24 saattir süren göğüs ağrısı şikayetiyle acile getiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Göğüs ağrısı sonrası 24 saat içinde ölen hastanın miyokardında dalgalı lifler ve erken koagülasyon nekrozu başlıyor; nötrofil infiltrasyonu belirginleşiyor. Bu bulgular hangi zaman aralığına en uygundur?",
+    "options": [
+      "İlk 30 dakika",
+      "İnfarkttan yaklaşık 12-24 saat sonrası",
+      "3-7 gün sonrası",
+      "2-8 hafta sonrası",
+      "Aylar sonra olgun skar dönemi"
+    ],
+    "correct": 1,
+    "exp": "Miyokard infarktında 12-24 saatte koagülasyon nekrozu ve erken nötrofil infiltrasyonu belirginleşir. 3-7 gün makrofaj ve rüptür riskinin arttığı dönemdir."
+  },
+  {
+    "id": 3061,
+    "ders": "Patoloji",
+    "konu": "Kalp Hastalıkları",
+    "diff": 4,
+    "q": "61 yaşında erkek hasta, bilinen kronik tip 2 diyabet ve koroner arter hastalığı öyküsü olup 5 gündür miyokard infarktüsü sonrası ani nefes darlığı şikayetiyle yoğun bakıma alınıyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Geçirilmiş miyokard infarktından 5 gün sonra ani tamponad gelişen hastada serbest duvar rüptürü saptanıyor. Rüptür riskini artıran histolojik süreç hangisidir?",
+    "options": [
+      "Makrofajların nekrotik dokuyu temizlediği dönemde duvarın zayıflaması",
+      "Kalsifik kapak stenozunun gerilemesi",
+      "Endokardda elastik liflerin artması",
+      "İlk dakikalarda ATP'nin artması",
+      "Kollajenin tamamen olgun skara dönüşmesi"
+    ],
+    "correct": 0,
+    "exp": "MI sonrası 3-7 gün makrofajların nekrotik dokuyu temizlediği, fakat kollajen desteğin henüz yeterli olmadığı dönemdir; rüptür riski yüksektir."
+  },
+  {
+    "id": 3062,
+    "ders": "Patoloji",
+    "konu": "Kalp Hastalıkları",
+    "diff": 4,
+    "q": "17 yaşında kadın hasta, bilinen kronik hastalığı olmayan, 3 haftadır boğaz ağrısı sonrası gelişen ateş ve eklem ağrısı şikayetiyle kardiyolojiye başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Genç hastada streptokok farenjitinden haftalar sonra ateş, migratuvar poliartrit ve yeni üfürüm gelişiyor. Kalpte Aschoff cisimcikleri görülüyor. Hasarın temel nedeni hangisidir?",
+    "options": [
+      "Streptokok antijenleriyle çapraz reaksiyon veren immün yanıt",
+      "Kalsiyum sabunlarının kapakta çökelmesi",
+      "İmmün komplekslerin sadece böbrekte birikmesi",
+      "Doğrudan bakteriyel miyokard invazyonu",
+      "IgE aracılı mast hücre degranülasyonu"
+    ],
+    "correct": 0,
+    "exp": "Akut romatizmal ateşte A grubu streptokoklara karşı gelişen immün yanıt kalp dokusuyla çapraz reaksiyon verir. Aschoff cisimcikleri tipiktir."
+  },
+  {
+    "id": 3063,
+    "ders": "Patoloji",
+    "konu": "Kalp Hastalıkları",
+    "diff": 4,
+    "q": "29 yaşında erkek hasta, bilinen kronik intravenöz opioid kullanım öyküsü olup 5 gündür ateş ve titreme şikayetiyle acile geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: İntravenöz ilaç kullanan hastada ateş ve triküspit kapakta büyük, frajil vejetasyonlar vardır. Bu vejetasyonların embolik komplikasyonu en çok hangi organda beklenir?",
+    "options": [
+      "Dalak",
+      "Beyin korteksi",
+      "Böbrek korteksi",
+      "Karaciğer hilusu",
+      "Akciğer"
+    ],
+    "correct": 4,
+    "exp": "Sağ kalp enfektif endokarditinde vejetasyon embolileri pulmoner dolaşıma gider. İntravenöz ilaç kullanımı triküspit kapak endokarditiyle ilişkilidir."
+  },
+  {
+    "id": 3064,
+    "ders": "Patoloji",
+    "konu": "Kalp Hastalıkları",
+    "diff": 5,
+    "q": "18 yaşında erkek hasta, bilinen kronik hastalığı olmayan, 6 aydır eforla bayılma ve çarpıntı şikayetiyle spor hekimliğine getiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Genç sporcuda ani ölüm sonrası kalpte asimetrik septal hipertrofi ve miyofiber disarray saptanıyor. Bu hastalıkta obstrüksiyonu artıran temel morfoloji hangisidir?",
+    "options": [
+      "Aort kapağında romatizmal komissür füzyonu",
+      "Septum kalınlaşması ve mitral kapağın sistolik anterior hareketi",
+      "Sağ ventrikülde yağlı değişim olmadan dilatasyon",
+      "Koroner arterde sadece hiyalin arterioloskleroz",
+      "Perikardda fibrin birikimi"
+    ],
+    "correct": 1,
+    "exp": "Hipertrofik kardiyomiyopatide asimetrik septal hipertrofi ve mitral kapağın sistolik anterior hareketi çıkış yolu obstrüksiyonu yapabilir; lif disarray tipiktir."
+  },
+  {
+    "id": 3065,
+    "ders": "Patoloji",
+    "konu": "Kalp Hastalıkları",
+    "diff": 4,
+    "q": "58 yaşında erkek hasta, bilinen kronik hipertansiyon öyküsü olup 2 yıldır efor dispnesi ve çabuk yorulma şikayetiyle kardiyolojiye başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Uzun süreli hipertansiyonu olan hastada sol ventrikül duvarı kalınlaşmış, kavite başlangıçta daralmıştır. Bu adaptasyonun ana tetikleyicisi hangisidir?",
+    "options": [
+      "Miyokardda enzimatik yağ nekrozu",
+      "Basınç yüküne bağlı konsantrik hipertrofi",
+      "Volüm yüküne bağlı eksantrik hipertrofi",
+      "Akut viral miyokardit sonrası granülom",
+      "Endokardda immün kompleks birikimi"
+    ],
+    "correct": 1,
+    "exp": "Basınç yükü, örneğin hipertansiyon veya aort stenozu, sarkomerlerin paralel eklenmesine ve konsantrik hipertrofiye yol açar."
+  },
+  {
+    "id": 3066,
+    "ders": "Patoloji",
+    "konu": "Kalp Hastalıkları",
+    "diff": 3,
+    "q": "Dilate kardiyomiyopatide kalpte en beklenen makroskobik değişiklik hangisidir?",
+    "options": [
+      "Kavitenin küçülmesiyle konsantrik hipertrofi",
+      "Kapak komissürlerinde romatizmal füzyon olmadan daralma",
+      "Sadece septumda nodüler kalsifikasyon",
+      "Ventrikül boşluklarında genişleme ve sistolik fonksiyon bozukluğu",
+      "Perikard yaprakları arasında kazeöz nekroz"
+    ],
+    "correct": 3,
+    "exp": "Dilate kardiyomiyopatide kalp boşlukları genişler, duvar kalınlığı değişken olabilir ve sistolik pompa fonksiyonu bozulur."
+  },
+  {
+    "id": 3067,
+    "ders": "Patoloji",
+    "konu": "Kalp Hastalıkları",
+    "diff": 4,
+    "q": "Konstriktif perikardit hangi mekanizmayla kalp yetmezliği bulgusu oluşturur?",
+    "options": [
+      "Kalbin diyastolde dolmasını mekanik olarak sınırlaması",
+      "Koroner arterde plak rüptürü yapması",
+      "İnterventriküler septumu eritmesi",
+      "Aort kapağında akut vejetasyon yapması",
+      "Miyositlerde surfaktan eksikliği oluşturması"
+    ],
+    "correct": 0,
+    "exp": "Konstriktif perikarditte fibrotik, kalın perikard kalbin diyastolik doluşunu kısıtlar; sistemik venöz konjesyon bulguları gelişebilir."
+  },
+  {
+    "id": 3068,
+    "ders": "Patoloji",
+    "konu": "Hematopoetik Sistem Hastalıkları",
+    "diff": 4,
+    "q": "24 yaşında erkek hasta, bilinen kronik hastalığı olmayan, 2 aydır boyunda ağrısız şişlik ve gece terlemesi şikayetiyle hematolojiye başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Ağrısız servikal lenfadenopatisi olan genç hastanın biyopsisinde iki çekirdekli, belirgin nükleollü Reed-Sternberg hücreleri ve mikst inflamatuvar zemin görülüyor. Tanıda kritik hücre hangi kökenden gelir?",
+    "options": [
+      "Nötrofil prekürsörü",
+      "Megakaryosit öncülü",
+      "Endotel hücresi",
+      "Germinal merkez B hücresi",
+      "Timik epitel hücresi"
+    ],
+    "correct": 3,
+    "exp": "Klasik Hodgkin lenfomada Reed-Sternberg hücreleri germinal merkez B hücre kökenlidir; tanıda az sayıda tümör hücresine zengin reaktif zemin eşlik eder."
+  },
+  {
+    "id": 3069,
+    "ders": "Patoloji",
+    "konu": "Hematopoetik Sistem Hastalıkları",
+    "diff": 4,
+    "q": "72 yaşında erkek hasta, bilinen kronik hipertansiyon öyküsü olup 6 aydır yaygın lenf bezi büyümesi ve halsizlik şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Yaşlı hastada yaygın lenfadenopati ve kanda çok sayıda küçük olgun görünümlü lenfosit vardır. Yaymada smudge hücreleri görülüyor. En olası tanı hangisidir?",
+    "options": [
+      "Multipl miyelom",
+      "Akut promiyelositik lösemi",
+      "Kronik lenfositik lösemi/küçük lenfositik lenfoma",
+      "Esansiyel trombositemi",
+      "Burkitt lenfoma"
+    ],
+    "correct": 2,
+    "exp": "CLL/SLL erişkinlerde sık görülür; küçük olgun B lenfositler ve smudge hücreleri tipiktir."
+  },
+  {
+    "id": 3070,
+    "ders": "Patoloji",
+    "konu": "Hematopoetik Sistem Hastalıkları",
+    "diff": 5,
+    "q": "8 yaşında erkek çocuk, bilinen kronik hastalığı olmayan, 3 haftadır çenede hızlı büyüyen kitle ve ateş şikayetiyle pediatrik hematolojiye getiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Çocukta çene kitlesiyle gelen tümörde yıldızlı gökyüzü görünümü vardır. Ki-67 neredeyse tüm hücrelerde pozitiftir ve MYC translokasyonu saptanır. Bu tümörün hızlı büyümesini en iyi açıklayan özellik hangisidir?",
+    "options": [
+      "EBV'nin her zaman tümör hücresini öldürmesi",
+      "Telomerazın tamamen kapanması",
+      "RB aktivasyonu ile G1 duraklaması",
+      "BCL2 aşırı ekspresyonu ile düşük proliferasyon",
+      "MYC aktivasyonu ile proliferasyonun belirgin artması"
+    ],
+    "correct": 4,
+    "exp": "Burkitt lenfomada MYC translokasyonu proliferasyonu artırır; çok yüksek Ki-67 ve yıldızlı gökyüzü görünümü tipiktir."
+  },
+  {
+    "id": 3071,
+    "ders": "Patoloji",
+    "konu": "Hematopoetik Sistem Hastalıkları",
+    "diff": 5,
+    "q": "69 yaşında erkek hasta, bilinen kronik hipertansiyon öyküsü olup 4 aydır sırt ağrısı ve halsizlik şikayetiyle hematolojiye başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Sırt ağrısı, hiperkalsemi ve böbrek yetmezliği olan hastada serumda monoklonal IgG artışı ve kemikte punched-out litik lezyonlar vardır. Kemik lezyonlarının temel nedeni hangisidir?",
+    "options": [
+      "Osteoblastların kontrolsüz kemik üretmesi",
+      "Kapillerde immün kompleksin lineer birikimi",
+      "Nötrofillerin kemik iliğinde kazeöz nekroz yapması",
+      "Kıkırdak matriksinde ürat kristali birikimi",
+      "Neoplastik plazma hücrelerinin osteoklast aktivitesini artırması"
+    ],
+    "correct": 4,
+    "exp": "Multipl miyelomda plazma hücreleri osteoklast aktivasyonunu artıran mediyatörler üretir; litik kemik lezyonları, hiperkalsemi ve böbrek hasarı gelişir."
+  },
+  {
+    "id": 3072,
+    "ders": "Patoloji",
+    "konu": "Hematopoetik Sistem Hastalıkları",
+    "diff": 4,
+    "q": "31 yaşında kadın hasta, bilinen kronik hastalığı olmayan, 2 haftadır kolay morarma ve diş eti kanaması şikayetiyle acile geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Genç erişkinde Auer rod içeren promiyelositler, kanama eğilimi ve DIC tablosu vardır. Genetik bozukluk hangi tedaviye duyarlılığı açıklar?",
+    "options": [
+      "BCL6'nın surfaktan sentezini artırması",
+      "MYC translokasyonunun rituksimab ile kapanması",
+      "BCR-ABL'nin imatinibe direnç oluşturması",
+      "JAK2 kaybının eritrositoz yapması",
+      "PML-RARA füzyonuna bağlı diferansiyasyon blokunun ATRA ile aşılması"
+    ],
+    "correct": 4,
+    "exp": "Akut promiyelositik lösemide t(15;17) PML-RARA füzyonu diferansiyasyon blokuna yol açar. ATRA bu bloğu aşabilir; DIC riski önemlidir."
+  },
+  {
+    "id": 3073,
+    "ders": "Patoloji",
+    "konu": "Hematopoetik Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Foliküler lenfomada sık görülen t(14;18) translokasyonunun temel sonucu hangisidir?",
+    "options": [
+      "BCR-ABL ile tirozin kinaz aktivasyonu",
+      "MYC aktivasyonu ile yıldızlı gökyüzü görünümü",
+      "PML-RARA ile promiyelosit blokajı",
+      "ALK aktivasyonu ile anaplastik büyük hücreli lenfoma",
+      "BCL2 aşırı ekspresyonu ile apoptozun azalması"
+    ],
+    "correct": 4,
+    "exp": "Foliküler lenfomada t(14;18) BCL2'yi immünoglobulin ağır zincir lokusu yanına getirir; apoptoz azalır."
+  },
+  {
+    "id": 3074,
+    "ders": "Patoloji",
+    "konu": "Hematopoetik Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Kronik miyeloid lösemide tanısal açıdan en önemli moleküler değişiklik hangisidir?",
+    "options": [
+      "SMN1 delesyonu",
+      "PML-RARA füzyonu",
+      "BCR-ABL füzyon tirozin kinazı",
+      "MYC-IgH translokasyonu",
+      "BCL2-IgH translokasyonu"
+    ],
+    "correct": 2,
+    "exp": "KML'de Philadelphia kromozomu t(9;22) sonucu BCR-ABL füzyon tirozin kinazı oluşur. Bu hedefe yönelik tirozin kinaz inhibitörleri kullanılabilir."
+  },
+  {
+    "id": 3075,
+    "ders": "Patoloji",
+    "konu": "Hematopoetik Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Waldenström makroglobulinemisinde hiperviskozite semptomlarının temel nedeni hangi immünoglobulinin artmasıdır?",
+    "options": [
+      "IgM",
+      "IgE",
+      "Serbest alfa zinciri",
+      "IgA",
+      "IgD"
+    ],
+    "correct": 0,
+    "exp": "Waldenström makroglobulinemisi lenfoplazmasitik lenfoma ile ilişkilidir ve monoklonal IgM artışı hiperviskoziteye yol açabilir."
+  },
+  {
+    "id": 3076,
+    "ders": "Patoloji",
+    "konu": "Solunum Sistem Hastallıkları",
+    "diff": 4,
+    "q": "64 yaşında erkek hasta, bilinen kronik sigara kullanımı ve KOAH öyküsü olup 2 yıldır artan nefes darlığı ve balgam şikayetiyle geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Uzun süre sigara içen hastada produktif öksürük ve bronş duvarında mukus bezlerinde belirgin büyüme vardır. Reid indeksinin artması hangi hastalıkla en uyumludur?",
+    "options": [
+      "Kronik bronşit",
+      "Bronşiektazi olmadan interstisyel fibrozis",
+      "Akut respiratuvar distres sendromu",
+      "Pulmoner emboli",
+      "Panlobüler amfizem"
+    ],
+    "correct": 0,
+    "exp": "Kronik bronşitte mukus bezleri büyür ve Reid indeksi artar. Klinik olarak en az iki ardışık yılda, yılın en az 3 ayı produktif öksürük beklenir."
+  },
+  {
+    "id": 3077,
+    "ders": "Patoloji",
+    "konu": "Solunum Sistem Hastallıkları",
+    "diff": 5,
+    "q": "27 yaşında erkek hasta, bilinen kronik hastalığı olmayan, 1 yıldır efor dispnesi ve karaciğer enzim yüksekliği şikayetiyle göğüs hastalıklarına başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Genç, sigara içmeyen hastada panlobüler amfizem ve karaciğer hastalığı gelişiyor. Akciğerde elastik doku yıkımını artıran mekanizma hangisidir?",
+    "options": [
+      "Mast hücresinde IgE artışıyla bronkokonstriksiyon",
+      "Tip II pnömositte surfaktan fazlalığı",
+      "Bronş mukozasında Reid indeksinin azalması",
+      "Alfa-1 antitripsin eksikliğiyle nötrofil elastazının baskılanamaması",
+      "Pulmoner venlerde trombüsün çözülmesi"
+    ],
+    "correct": 3,
+    "exp": "Alfa-1 antitripsin eksikliğinde elastaz aktivitesi kontrol edilemez; panlobüler amfizem gelişir. Karaciğerde mutant protein birikimi de hastalık yapabilir."
+  },
+  {
+    "id": 3078,
+    "ders": "Patoloji",
+    "konu": "Solunum Sistem Hastallıkları",
+    "diff": 4,
+    "q": "54 yaşında erkek hasta, bilinen kronik alkol kullanım bozukluğu öyküsü olup 1 haftadır ateş ve kötü kokulu balgam şikayetiyle acile geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Aspirasyon sonrası ateş, bol kötü kokulu balgam ve akciğerde kaviter lezyon gelişen hastada bronş duvarı ve parankim nekrozu vardır. En olası patolojik süreç hangisidir?",
+    "options": [
+      "Pulmoner hemosideroz",
+      "Hyalin membran hastalığı",
+      "Sarkoidoz",
+      "Primer pulmoner hipertansiyon",
+      "Akciğer absesi"
+    ],
+    "correct": 4,
+    "exp": "Aspirasyon özellikle anaeroblarla akciğer absesine yol açabilir. Süpüratif nekroz ve kavite oluşumu tipiktir."
+  },
+  {
+    "id": 3079,
+    "ders": "Patoloji",
+    "konu": "Solunum Sistem Hastallıkları",
+    "diff": 5,
+    "q": "47 yaşında kadın hasta, bilinen kronik kolelitiazis öyküsü olup 2 gündür akut pankreatit sonrası ağır nefes darlığı şikayetiyle yoğun bakıma alınıyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Akut pankreatit sonrası ağır dispne gelişen hastada akciğerde diffüz alveoler hasar ve hyalin membranlar görülüyor. Bu tabloda gaz değişimini bozan ana olay hangisidir?",
+    "options": [
+      "Granülom içinde kazeifikasyon",
+      "Plevrada mezotelyal tümör invazyonu",
+      "Pulmoner arterde aterosklerotik plak",
+      "Alveol-kapiller bariyer hasarı ve proteinli ödem",
+      "Bronş mukus bezlerinin kronik hipertrofisi"
+    ],
+    "correct": 3,
+    "exp": "ARDS'de diffüz alveoler hasar gelişir; alveol-kapiller bariyer geçirgenliği artar, proteinli ödem ve hyalin membranlar gaz değişimini bozar."
+  },
+  {
+    "id": 3080,
+    "ders": "Patoloji",
+    "konu": "Solunum Sistem Hastallıkları",
+    "diff": 4,
+    "q": "63 yaşında erkek hasta, bilinen kronik sigara kullanımı öyküsü olup 3 aydır öksürük ve kanlı balgam şikayetiyle göğüs hastalıklarına başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Santral yerleşimli akciğer tümöründe keratin incileri ve intersellüler köprüler görülüyor. Bu tümör sigara ile güçlü ilişkili olup sıklıkla hangi histolojik tiptir?",
+    "options": [
+      "Mezotelyoma",
+      "Skuamöz hücreli karsinom",
+      "Adenokarsinom",
+      "Karsinoid tümör",
+      "Küçük hücreli karsinom"
+    ],
+    "correct": 1,
+    "exp": "Akciğer skuamöz hücreli karsinomu genellikle santral yerleşir, sigara ile ilişkilidir ve keratinizasyon/intersellüler köprüler gösterebilir."
+  },
+  {
+    "id": 3081,
+    "ders": "Patoloji",
+    "konu": "Solunum Sistem Hastallıkları",
+    "diff": 3,
+    "q": "Adenokarsinom akciğer kanseri için en tipik özellik hangisidir?",
+    "options": [
+      "Akut bronşitte nötrofil eksikliği yapması",
+      "Sadece plevradan köken alması",
+      "Periferik yerleşim ve glandüler/müsinöz diferansiyasyon gösterebilmesi",
+      "Nöroendokrin granüllerle küçük hücreli görünüm zorunluluğu",
+      "Her zaman santral keratin incisi yapması"
+    ],
+    "correct": 2,
+    "exp": "Akciğer adenokarsinomu genellikle periferik yerleşir, sigara içmeyenlerde de görülebilir ve glandüler yapı/müsin üretimi gösterebilir."
+  },
+  {
+    "id": 3082,
+    "ders": "Patoloji",
+    "konu": "Solunum Sistem Hastallıkları",
+    "diff": 4,
+    "q": "Sarkoidozda tipik granülom özelliği hangisidir?",
+    "options": [
+      "Merkezinde yaygın püy içeren mikroapse",
+      "Sadece eozinofillerden oluşan infiltrat",
+      "Tamamen fibrinden oluşan trombüs",
+      "Kazeifikasyon göstermeyen sıkı epiteloid granülomlar",
+      "Keratin incisi içeren malign epitel adaları"
+    ],
+    "correct": 3,
+    "exp": "Sarkoidozda nonkazeifiye granülomlar görülür. Asteroid veya Schaumann cisimcikleri eşlik edebilir ancak tanı için zorunlu değildir."
+  },
+  {
+    "id": 3083,
+    "ders": "Patoloji",
+    "konu": "Solunum Sistem Hastallıkları",
+    "diff": 4,
+    "q": "Bronşiektazide kalıcı bronş dilatasyonunun temelinde en çok hangi süreç yatar?",
+    "options": [
+      "Tip II pnömosit surfaktan artışı",
+      "Eritrositlerin alveolde fizyolojik yıkımı",
+      "Kronik nekrotizan enfeksiyon ve inflamasyonla bronş duvarının yıkımı",
+      "MHC sınıf I antijen sunumu",
+      "Sadece akut vazodilatasyon"
+    ],
+    "correct": 2,
+    "exp": "Bronşiektazi, bronş duvarının kronik enfeksiyon ve inflamasyonla yıkılması sonucu kalıcı dilatasyonudur."
+  },
+  {
+    "id": 3084,
+    "ders": "Patoloji",
+    "konu": "Üriner Sistem Hastalıkları",
+    "diff": 5,
+    "q": "8 yaşında erkek çocuk, bilinen kronik hastalığı olmayan, 2 haftadır boğaz enfeksiyonu sonrası koyu idrar ve göz çevresinde şişlik şikayetiyle getiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Üst solunum yolu enfeksiyonundan 2 hafta sonra hematüri, ödem ve hipertansiyon gelişen çocukta glomerüllerde granüler IgG/C3 birikimi vardır. Bu tablo hangi mekanizmaya dayanır?",
+    "options": [
+      "Podosit ayak çıkıntılarında sadece minimal füzyon",
+      "İmmün kompleks aracılı glomerüler hasar",
+      "Mezangiumda amiloid dışı kalsiyum birikimi",
+      "Üreter taşıyla postrenal obstrüksiyon",
+      "Anti-GBM antikorlarının lineer bağlanması"
+    ],
+    "correct": 1,
+    "exp": "Poststreptokokal glomerülonefritte immün kompleksler glomerüllerde granüler tarzda birikir, kompleman aktivasyonu ve inflamasyon gelişir."
+  },
+  {
+    "id": 3085,
+    "ders": "Patoloji",
+    "konu": "Üriner Sistem Hastalıkları",
+    "diff": 4,
+    "q": "4 yaşında erkek çocuk, bilinen kronik hastalığı olmayan, 10 gündür göz kapaklarında şişlik ve köpüklü idrar şikayetiyle pediatriye getiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Çocukta ağır proteinüri vardır, ışık mikroskopisi normale yakındır; elektron mikroskopide podosit ayak çıkıntılarında yaygın silinme görülüyor. Steroide iyi yanıt veren bu hastalık hangisidir?",
+    "options": [
+      "Minimal değişiklik hastalığı",
+      "Diabetik nodüler glomerüloskleroz",
+      "IgA nefropatisi",
+      "Membranoproliferatif glomerülonefrit",
+      "Kresentik glomerülonefrit"
+    ],
+    "correct": 0,
+    "exp": "Minimal değişiklik hastalığında ışık mikroskopi çoğu kez normaldir; elektron mikroskopide podosit ayak çıkıntıları silinir. Çocuklarda steroid yanıtı iyidir."
+  },
+  {
+    "id": 3086,
+    "ders": "Patoloji",
+    "konu": "Üriner Sistem Hastalıkları",
+    "diff": 5,
+    "q": "19 yaşında erkek hasta, bilinen kronik hastalığı olmayan, 3 gündür hemoptizi ve koyu renkli idrar şikayetiyle acile başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Genç erkekte hemoptizi ve hızlı ilerleyen glomerülonefrit gelişiyor. Biyopside glomerül bazal membranı boyunca lineer IgG birikimi saptanıyor. En olası patogenez hangisidir?",
+    "options": [
+      "Tip IV kollajene karşı gelişen antikorlar",
+      "C3 konvertaz stabilizasyonu",
+      "Mezangial IgA birikimi",
+      "Ürat kristali ile tübül tıkanması",
+      "HIV ilişkili kollapsing FSGS"
+    ],
+    "correct": 0,
+    "exp": "Goodpasture sendromunda tip IV kollajenin alfa-3 zincirine karşı antikorlar oluşur. Akciğer hemorajisi ve RPGN yapar; IF lineer IgG gösterir."
+  },
+  {
+    "id": 3087,
+    "ders": "Patoloji",
+    "konu": "Üriner Sistem Hastalıkları",
+    "diff": 4,
+    "q": "54 yaşında erkek hasta, bilinen kronik tip 2 diyabet ve hipertansiyon öyküsü olup 6 aydır köpüklü idrar ve bacaklarda şişlik şikayetiyle nefrolojiye başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Diyabetik hastanın böbrek biyopsisinde mezangial matriks artışı ve nodüler glomerüloskleroz izleniyor. Kimmelstiel-Wilson nodüllerinin temelinde hangi süreç vardır?",
+    "options": [
+      "Nonenzimatik glikozilasyon ve mezangial matriks artışı",
+      "Anti-GBM antikorlarının lineer birikimi",
+      "Eozinofilik kazeöz nekroz",
+      "Podosit ayak çıkıntılarının tek başına füzyonu",
+      "Ürotelyal displazi"
+    ],
+    "correct": 0,
+    "exp": "Diabetik nefropatide ileri glikasyon ürünleri, bazal membran kalınlaşması ve mezangial matriks artışı olur; nodüler glomerüloskleroz gelişebilir."
+  },
+  {
+    "id": 3088,
+    "ders": "Patoloji",
+    "konu": "Üriner Sistem Hastalıkları",
+    "diff": 4,
+    "q": "62 yaşında kadın hasta, bilinen kronik osteoartrit ve uzun süreli analjezik kullanım öyküsü olup 3 aydır yan ağrısı ve gece idrara çıkma şikayetiyle nefrolojiye geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Uzun süreli analjezik kullanan hastada papiller nekroz ve kronik tübülointerstisyel nefrit gelişiyor. Papilla bölgesinin duyarlı olmasını en iyi açıklayan neden hangisidir?",
+    "options": [
+      "Mezangial hücrelerin surfaktan üretmesi",
+      "Korteksin venöz drenajının olmaması",
+      "Glomerül bazal membranında IgE birikimi",
+      "Medullanın düşük oksijen basıncı ve konsantre toksinlere maruziyeti",
+      "Üreterde nöral krest hücresi yokluğu"
+    ],
+    "correct": 3,
+    "exp": "Analjezik nefropatisinde papiller nekroz görülebilir. Renal medulla düşük oksijen basıncı ve yoğun toksin konsantrasyonu nedeniyle hasara duyarlıdır."
+  },
+  {
+    "id": 3089,
+    "ders": "Patoloji",
+    "konu": "Üriner Sistem Hastalıkları",
+    "diff": 3,
+    "q": "IgA nefropatisinde tipik klinik bulgu hangisidir?",
+    "options": [
+      "Üst solunum yolu enfeksiyonuyla eş zamanlı veya hemen sonrası tekrarlayan hematüri",
+      "Yenidoğanda surfaktan eksikliği",
+      "Mediastinal germ hücreli tümör",
+      "Hemoptizi olmadan lineer IgG birikimi",
+      "Doğumda mekonyum çıkaramama"
+    ],
+    "correct": 0,
+    "exp": "IgA nefropatisinde mukozal enfeksiyonlardan kısa süre sonra makroskopik hematüri atakları görülebilir; mezangial IgA birikimi tipiktir."
+  },
+  {
+    "id": 3090,
+    "ders": "Patoloji",
+    "konu": "Üriner Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Berrak hücreli renal hücreli karsinomda en sık ilişkili genetik yol hangisidir?",
+    "options": [
+      "PML-RARA füzyonu",
+      "VHL kaybı ve HIF aracılı VEGF artışı",
+      "CFTR klor kanal mutasyonu",
+      "APC kaybı ve beta-katenin azalması",
+      "SMN1 delesyonu"
+    ],
+    "correct": 1,
+    "exp": "Berrak hücreli RCC sıklıkla VHL kaybıyla ilişkilidir. HIF birikir, VEGF ve anjiyogenez artar."
+  },
+  {
+    "id": 3091,
+    "ders": "Patoloji",
+    "konu": "Üriner Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Ürotelyal karsinom için en önemli çevresel risklerden biri hangisidir?",
+    "options": [
+      "Nikel temas dermatiti",
+      "Sigara ve aromatik amin maruziyeti",
+      "Kronik hipokalsemi",
+      "C vitamini eksikliği",
+      "Alfa-1 antitripsin fazlalığı"
+    ],
+    "correct": 1,
+    "exp": "Ürotelyal karsinomda sigara, aromatik aminler, bazı endüstriyel boyalar ve kronik irritasyon önemli risk faktörleridir."
+  },
+  {
+    "id": 3092,
+    "ders": "Patoloji",
+    "konu": "Erkek Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "72 yaşında erkek hasta, bilinen kronik hipertansiyon öyküsü olup 8 aydır idrar yapmada zorlanma ve gece sık idrara çıkma şikayetiyle ürolojiye geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Yaşlı erkekte idrar yapmada zorlanma vardır. Prostatta periüretral nodüler büyüme saptanıyor. Bu büyümenin hormonal temeli en iyi hangisidir?",
+    "options": [
+      "Östrojenin tamamen kaybolması",
+      "Prolaktinin üretral epitelde kazeöz nekroz yapması",
+      "Testosteronun hiç üretilmemesi",
+      "FSH'nin Sertoli hücresini öldürmesi",
+      "Dihidrotestosteron aracılı stromal ve glandüler proliferasyon"
+    ],
+    "correct": 4,
+    "exp": "Benign prostat hiperplazisi periüretral/transizyonel zonda gelişir. DHT stromal ve glandüler proliferasyonu uyarır."
+  },
+  {
+    "id": 3093,
+    "ders": "Patoloji",
+    "konu": "Erkek Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "66 yaşında erkek hasta, bilinen kronik tip 2 diyabet öyküsü olup 4 aydır bel ağrısı ve idrar akımında zayıflama şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Prostat kanseri tanısı alan hastada tümör çoğunlukla hangi anatomik bölgede geliştiği için parmakla rektal muayenede sert nodül olarak fark edilebilir?",
+    "options": [
+      "Periferik zon",
+      "Verumontanum mukozası",
+      "Epididim başı",
+      "Santral zon",
+      "Transizyonel zon"
+    ],
+    "correct": 0,
+    "exp": "Prostat adenokarsinomu en sık periferik zondan gelişir; bu nedenle rektal muayenede sert nodül olarak saptanabilir. BPH daha çok transizyonel zondadır."
+  },
+  {
+    "id": 3094,
+    "ders": "Patoloji",
+    "konu": "Erkek Genital Sistem Hastalıkları",
+    "diff": 5,
+    "q": "24 yaşında erkek hasta, bilinen kronik hastalığı olmayan, 3 haftadır testiste ağrısız büyüme şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Testis kitlesi olan genç erkekte AFP yüksek, mikroskopide Schiller-Duval cisimcikleri görülüyor. En olası tümör hangisidir?",
+    "options": [
+      "Leydig hücreli tümör",
+      "Seminom",
+      "Embriyonal karsinom",
+      "Koryokarsinom",
+      "Yolk sac tümörü"
+    ],
+    "correct": 4,
+    "exp": "Yolk sac tümöründe AFP artışı ve Schiller-Duval cisimcikleri tipiktir. Çocuklarda sık germ hücreli tümörlerden biridir."
+  },
+  {
+    "id": 3095,
+    "ders": "Patoloji",
+    "konu": "Erkek Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "31 yaşında erkek hasta, bilinen kronik hastalığı olmayan, 2 aydır testiste ele gelen kitle ve dolgunluk şikayetiyle ürolojiye geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Testiste iyi sınırlı, homojen, gri-beyaz kitle; mikroskopide berrak sitoplazmalı hücreler ve lenfositik septalar görülüyor. Radyoterapiye duyarlı bu tümör hangisidir?",
+    "options": [
+      "Seminom",
+      "Teratom",
+      "Spermatositik tümör dışı Leydig tümörü",
+      "Koryokarsinom",
+      "Yolk sac tümörü"
+    ],
+    "correct": 0,
+    "exp": "Seminom homojen gri-beyaz kitle yapar; berrak sitoplazmalı hücreler, fibröz septalar ve lenfositler tipiktir. Radyoterapiye duyarlıdır."
+  },
+  {
+    "id": 3096,
+    "ders": "Patoloji",
+    "konu": "Erkek Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "42 yaşında erkek hasta, bilinen kronik hastalığı olmayan, 6 haftadır jinekomasti ve testiste küçük kitle şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Testiste küçük kitle ve jinekomasti olan hastada serum östrojen artışı saptanıyor. Reinke kristalleri görülebilen tümör hangisidir?",
+    "options": [
+      "Yolk sac tümörü",
+      "Sertoli hücreli tümör",
+      "Prostat adenokarsinomu",
+      "Seminom",
+      "Leydig hücreli tümör"
+    ],
+    "correct": 4,
+    "exp": "Leydig hücreli tümör androjen veya östrojen üretebilir; jinekomasti yapabilir. Reinke kristalleri görülebilir."
+  },
+  {
+    "id": 3097,
+    "ders": "Patoloji",
+    "konu": "Erkek Genital Sistem Hastalıkları",
+    "diff": 3,
+    "q": "BPH ile prostat adenokarsinomunu ayırmada en doğru ifade hangisidir?",
+    "options": [
+      "BPH genellikle transizyonel zonda, adenokarsinom genellikle periferik zonda gelişir",
+      "Adenokarsinom sadece periüretral nodül yapar",
+      "BPH her zaman metastaz yapar",
+      "Adenokarsinomda gland formasyonu görülmez",
+      "BPH PSA'yı hiçbir zaman yükseltmez"
+    ],
+    "correct": 0,
+    "exp": "BPH tipik olarak transizyonel/periüretral zondadır; prostat adenokarsinomu çoğunlukla periferik zonda gelişir. PSA her ikisinde de yükselebilir."
+  },
+  {
+    "id": 3098,
+    "ders": "Patoloji",
+    "konu": "Erkek Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Koryokarsinomda belirgin yükselmesi beklenen serum belirteci hangisidir?",
+    "options": [
+      "CA-125",
+      "PSA",
+      "AFP",
+      "Kalsitonin",
+      "Beta-hCG"
+    ],
+    "correct": 4,
+    "exp": "Testiküler koryokarsinom sinsityotrofoblastik hücreler içerir ve beta-hCG yüksekliği yapabilir; erken hematojen yayılım eğilimindedir."
+  },
+  {
+    "id": 3099,
+    "ders": "Patoloji",
+    "konu": "Erkek Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Kriptorşidizmde uzun dönem en önemli patolojik risk hangisidir?",
+    "options": [
+      "Tiroid papiller karsinomu",
+      "Prostat kanserinin tamamen kaybolması",
+      "Testiküler germ hücreli tümör riskinin artması",
+      "Mezotelyoma gelişmesi",
+      "BPH'nin kesin önlenmesi"
+    ],
+    "correct": 2,
+    "exp": "Kriptorşidizm infertilite ve testiküler germ hücreli tümör riskini artırır. Orşiopeksi riski azaltır ancak tamamen sıfırlamaz."
+  },
+  {
+    "id": 3100,
+    "ders": "Patoloji",
+    "konu": "Kadın Genital Sistem Hastalıkları",
+    "diff": 5,
+    "q": "32 yaşında kadın hasta, bilinen kronik hastalığı olmayan, 6 aydır ilişki sonrası kanama ve kötü kokulu akıntı şikayetiyle jinekolojiye başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Pap smear sonucunda yüksek dereceli skuamöz intraepitelyal lezyon saptanan hastada HPV 16 pozitiftir. Viral onkoproteinlerin en kritik etkisi hangisidir?",
+    "options": [
+      "Mismatch repair sisteminin tamir kapasitesini artırması",
+      "Kaspaz aktivasyonuyla tüm hücrelerin ölmesi",
+      "E-kaderinin aşırı artmasıyla invazyonun engellenmesi",
+      "p53 ve RB aracılı hücre döngüsü kontrolünün baskılanması",
+      "TGF-beta üretiminin tamamen durması"
+    ],
+    "correct": 3,
+    "exp": "Yüksek riskli HPV tiplerinde E6 p53'ü, E7 RB'yi baskılar. Bu durum servikal displazi ve karsinom gelişimini kolaylaştırır."
+  },
+  {
+    "id": 3101,
+    "ders": "Patoloji",
+    "konu": "Kadın Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "61 yaşında kadın hasta, bilinen kronik obezite ve tip 2 diyabet öyküsü olup 2 aydır postmenopozal kanama şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Postmenopozal kanama ile gelen obez hastada endometrioid tip endometrium karsinomu saptanıyor. Bu tümörün patogenezinde en olası zemin hangisidir?",
+    "options": [
+      "Granülomatöz salpenjit",
+      "HPV'nin skuamokolumnar bileşkede E6/E7 üretmesi",
+      "Karşılanmamış östrojen etkisiyle endometrial hiperplazi",
+      "BRCA1 kaybıyla seröz over kanseri gelişimi",
+      "Gestasyonel trofoblastik hastalık"
+    ],
+    "correct": 2,
+    "exp": "Tip I endometrium karsinomu östrojen ilişkili, endometrioid tiptir; obezite ve karşılanmamış östrojen endometrial hiperplazi üzerinden risk artırır."
+  },
+  {
+    "id": 3102,
+    "ders": "Patoloji",
+    "konu": "Kadın Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "54 yaşında kadın hasta, bilinen kronik mide kanseri öyküsü olup 1 aydır karında şişlik ve erken doyma şikayetiyle geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Overde bilateral, solid, multinodüler kitleler ve mide kanseri öyküsü olan hastada taşlı yüzük hücreleri görülüyor. Bu over lezyonu en iyi nasıl adlandırılır?",
+    "options": [
+      "Seröz kistadenom",
+      "Endometrioma",
+      "Krukenberg tümörü",
+      "Brenner tümörü",
+      "Disgerminom"
+    ],
+    "correct": 2,
+    "exp": "Krukenberg tümörü genellikle mide kaynaklı taşlı yüzük hücreli karsinomun over metastazıdır; sıklıkla bilateral ve solid olabilir."
+  },
+  {
+    "id": 3103,
+    "ders": "Patoloji",
+    "konu": "Kadın Genital Sistem Hastalıkları",
+    "diff": 5,
+    "q": "26 yaşında kadın hasta, bilinen kronik hastalığı olmayan, 8 haftalık gebelik sonrası 2 haftadır vajinal kanama ve aşırı bulantı şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Gebelik sonrası çok yüksek beta-hCG ve üzüm salkımı görünümünde villuslar vardır. Histolojide villöz hidropik şişme ve trofoblast proliferasyonu görülüyor; embriyo yoktur. En olası tanı hangisidir?",
+    "options": [
+      "Koryokarsinom",
+      "Parsiyel mol",
+      "Endometriozis",
+      "Komplet hidatidiform mol",
+      "Plasental site trofoblastik tümör"
+    ],
+    "correct": 3,
+    "exp": "Komplet molde paternal kökenli diploid genom, diffüz villöz ödem ve trofoblast proliferasyonu vardır; embriyo/fetal doku bulunmaz, beta-hCG yüksek olur."
+  },
+  {
+    "id": 3104,
+    "ders": "Patoloji",
+    "konu": "Kadın Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "34 yaşında kadın hasta, bilinen kronik hastalığı olmayan, 2 yıldır giderek artan dismenore ve infertilite şikayetiyle jinekolojiye geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Dismenore ve infertilite ile gelen hastada overde çikolata kisti ve pelviste hemosiderin yüklü makrofajlar görülüyor. Bu lezyonun temel özelliği hangisidir?",
+    "options": [
+      "Skuamöz epitelde HPV ilişkili displazi",
+      "Over yüzey epitelinde borderline proliferasyon",
+      "Myometriumda saf düz kas malignitesi",
+      "Trofoblastların villus olmadan malign proliferasyonu",
+      "Endometrium bez ve stromasının uterin kavite dışında bulunması"
+    ],
+    "correct": 4,
+    "exp": "Endometriozis, endometrial bez ve stromanın uterus dışında bulunmasıdır; siklik kanama, hemosiderin yüklü makrofaj ve çikolata kisti yapabilir."
+  },
+  {
+    "id": 3105,
+    "ders": "Patoloji",
+    "konu": "Kadın Genital Sistem Hastalıkları",
+    "diff": 3,
+    "q": "Uterus leiomyomu için en doğru ifade hangisidir?",
+    "options": [
+      "Beta-hCG üreten trofoblastik tümördür",
+      "Her zaman sarkoma dönüşür",
+      "Endometrium bezlerinden köken alır",
+      "Östrojen duyarlı benign düz kas tümörüdür",
+      "HPV 18 ile zorunlu ilişkilidir"
+    ],
+    "correct": 3,
+    "exp": "Leiomyom uterusun benign düz kas tümörüdür, östrojen/progesteron duyarlı olabilir ve düzgün sınırlı whorled kitleler yapar."
+  },
+  {
+    "id": 3106,
+    "ders": "Patoloji",
+    "konu": "Kadın Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Seröz over karsinomu ile en güçlü ilişkili kalıtsal mutasyonlardan biri hangisidir?",
+    "options": [
+      "SMN1 delesyonu",
+      "CFTR mutasyonu",
+      "PML-RARA füzyonu",
+      "BRCA1/BRCA2 mutasyonu",
+      "HFE mutasyonu"
+    ],
+    "correct": 3,
+    "exp": "Yüksek dereceli seröz over karsinomu BRCA1/BRCA2 mutasyonları ve homolog rekombinasyon tamir kusurlarıyla ilişkilidir."
+  },
+  {
+    "id": 3107,
+    "ders": "Patoloji",
+    "konu": "Kadın Genital Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Koryokarsinomun histolojik olarak ayırt edici özelliği hangisidir?",
+    "options": [
+      "Keratin incileri ve intersellüler köprüler",
+      "Villus yapısı olmadan sitotrofoblast ve sinsityotrofoblast proliferasyonu",
+      "Matür kıkırdak ve deri eklerinin birlikte bulunması",
+      "Yalnızca endometrial bez hiperplazisi",
+      "Granülomda kazeifikasyon nekrozu"
+    ],
+    "correct": 1,
+    "exp": "Koryokarsinom malign trofoblastik tümördür; villus yapısı yoktur, sitotrofoblast ve sinsityotrofoblast proliferasyonu ile beta-hCG yüksekliği görülür."
+  },
+  {
+    "id": 3108,
+    "ders": "Patoloji",
+    "konu": "Gastrointestinal Sistem Hastalıkları",
+    "diff": 4,
+    "q": "57 yaşında erkek hasta, bilinen kronik reflü hastalığı öyküsü olup 5 yıldır yanma ve son 3 aydır yutma güçlüğü şikayetiyle gastroenterolojiye başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Kronik reflü yakınması olan hastanın distal özofagus biyopsisinde intestinal metaplazi ve goblet hücreleri görülüyor. Bu değişiklik hangi kanser riskini artırır?",
+    "options": [
+      "Mide lenfoması olmadan MALT hiperplazisi",
+      "Skuamöz hücreli akciğer karsinomu",
+      "Pankreas nöroendokrin tümörü",
+      "Özofagus adenokarsinomu",
+      "Hepatoselüler karsinom"
+    ],
+    "correct": 3,
+    "exp": "Barrett özofagusu kronik GERD sonucu distal özofagusta intestinal metaplazidir ve özofagus adenokarsinomu riskini artırır."
+  },
+  {
+    "id": 3109,
+    "ders": "Patoloji",
+    "konu": "Gastrointestinal Sistem Hastalıkları",
+    "diff": 5,
+    "q": "46 yaşında kadın hasta, bilinen kronik dispepsi öyküsü olup 6 haftadır epigastrik ağrı ve gece uyanmaları şikayetiyle geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Gastrik ülser biyopsisinde H. pylori saptanıyor. Kronik enfeksiyonun ülser oluşturmasını en iyi açıklayan mekanizma hangisidir?",
+    "options": [
+      "Pankreatik lipazların yağ nekrozu yapması",
+      "Parietal hücrelerin surfaktan üretmesi",
+      "Mukozal savunmanın bozulması ve inflamatuvar hasarın artması",
+      "Tip IV kollajene karşı lineer antikor gelişimi",
+      "Goblet hücrelerinin tamamen kaybolmasıyla kolonda displazi"
+    ],
+    "correct": 2,
+    "exp": "H. pylori mukus bariyerini ve epitel savunmasını bozar, inflamasyon oluşturur ve asit-pepsin hasarına yatkınlık yaratır."
+  },
+  {
+    "id": 3110,
+    "ders": "Patoloji",
+    "konu": "Gastrointestinal Sistem Hastalıkları",
+    "diff": 5,
+    "q": "29 yaşında erkek hasta, bilinen kronik hastalığı olmayan, 1 yıldır aralıklı rektal kanama ve ailede kolon kanseri öyküsü şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Ailede erken yaş kolon kanseri öyküsü olan hastada yüzlerce adenomatöz polip saptanıyor. Bu sendromda erken olay hangi tümör baskılayıcı yolun kaybıdır?",
+    "options": [
+      "BCL2'nin t(14;18) ile artması",
+      "APC kaybı ile beta-katenin birikimi",
+      "VHL kaybıyla HIF birikimi",
+      "RB'nin HPV E7 ile inaktivasyonu",
+      "MLH1 kaybı ile yalnızca mikrosatellit instabilitesi"
+    ],
+    "correct": 1,
+    "exp": "FAP'ta APC mutasyonu vardır. APC kaybı beta-katenin birikimine ve Wnt sinyalinin artmasına yol açar; çok sayıda adenomatöz polip gelişir."
+  },
+  {
+    "id": 3111,
+    "ders": "Patoloji",
+    "konu": "Gastrointestinal Sistem Hastalıkları",
+    "diff": 4,
+    "q": "33 yaşında erkek hasta, bilinen kronik Crohn hastalığı öyküsü olup 8 aydır karın ağrısı ve perianal akıntı şikayetiyle cerrahiye başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Crohn hastalığı olan hastada terminal ileumda segmental tutulum, transmural inflamasyon ve fistül gelişimi vardır. Fistül eğilimini en iyi açıklayan morfolojik özellik hangisidir?",
+    "options": [
+      "Transmural inflamasyon",
+      "Sadece mukozayla sınırlı inflamasyon",
+      "Kript abseslerinin hiç olmaması",
+      "Psödopoliplerin yüzeyel kalması",
+      "Kolonun sürekli ve diffüz tutulması"
+    ],
+    "correct": 0,
+    "exp": "Crohn hastalığında inflamasyon tüm duvar katlarını tutar. Bu nedenle fissür, fistül, striktür ve yağ sarılması gelişebilir."
+  },
+  {
+    "id": 3112,
+    "ders": "Patoloji",
+    "konu": "Gastrointestinal Sistem Hastalıkları",
+    "diff": 4,
+    "q": "40 yaşında kadın hasta, bilinen kronik ülseratif kolit öyküsü olup 10 yıldır kanlı ishal atakları ve son 2 aydır kilo kaybı şikayetiyle izleniyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Ülseratif kolitli hastanın kolektomi materyalinde tutulum rektumdan başlayıp kesintisiz proksimale uzanıyor; inflamasyon mukozada sınırlı. Bu hastalıkta uzun dönemde en önemli risk hangisidir?",
+    "options": [
+      "Mezotelyoma",
+      "Kolorektal adenokarsinom gelişimi",
+      "Yolk sac tümörü",
+      "Prostat BPH",
+      "Kistik fibrozis"
+    ],
+    "correct": 1,
+    "exp": "Ülseratif kolit kronik inflamasyon-displazi-karsinom sekansı üzerinden kolorektal kanser riskini artırır. Risk süre ve yaygınlıkla ilişkilidir."
+  },
+  {
+    "id": 3113,
+    "ders": "Patoloji",
+    "konu": "Gastrointestinal Sistem Hastalıkları",
+    "diff": 3,
+    "q": "Çölyak hastalığında ince barsak biyopsisinde beklenen temel bulgu hangisidir?",
+    "options": [
+      "Glomerülde lineer IgG birikimi",
+      "Villöz atrofi, kript hiperplazisi ve intraepitelyal lenfosit artışı",
+      "Schiller-Duval cisimcikleri",
+      "Reed-Sternberg hücreleri",
+      "Hepatositte Mallory-Denk cisimciği"
+    ],
+    "correct": 1,
+    "exp": "Çölyak hastalığında gluten duyarlılığına bağlı villöz atrofi, kript hiperplazisi ve intraepitelyal lenfosit artışı görülür."
+  },
+  {
+    "id": 3114,
+    "ders": "Patoloji",
+    "konu": "Gastrointestinal Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Akut apandisitte tanı koydurucu histolojik bulgu hangisidir?",
+    "options": [
+      "Muskularis propria içinde nötrofil infiltrasyonu",
+      "Mukozada goblet hücre artışı",
+      "Kriptlerde plazma hücre yokluğu",
+      "Submukozada yalnızca lenfoid folikül olması",
+      "Serözada hemosiderin yüklü makrofaj"
+    ],
+    "correct": 0,
+    "exp": "Akut apandisit tanısı için nötrofillerin muscularis propria tabakasına ulaşması önemlidir; sadece mukozal nötrofil yeterli değildir."
+  },
+  {
+    "id": 3115,
+    "ders": "Patoloji",
+    "konu": "Gastrointestinal Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Gastrointestinal stromal tümörlerde sık görülen hedeflenebilir moleküler değişiklik hangisidir?",
+    "options": [
+      "PML-RARA füzyonu",
+      "HFE C282Y mutasyonu",
+      "SMN1 delesyonu",
+      "CFTR mutasyonu",
+      "KIT veya PDGFRA aktivasyonu"
+    ],
+    "correct": 4,
+    "exp": "GIST'ler interstisyel Cajal hücreleriyle ilişkili olup sıklıkla KIT veya PDGFRA aktivasyon mutasyonları taşır; tirozin kinaz inhibitörlerine yanıt verebilir."
+  },
+  {
+    "id": 3116,
+    "ders": "Patoloji",
+    "konu": "Karaciğer Hastalıkları",
+    "diff": 5,
+    "q": "49 yaşında erkek hasta, bilinen kronik hepatit B öyküsü olup 6 aydır kilo kaybı ve sağ üst kadran dolgunluğu şikayetiyle hepatolojiye geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Kronik hepatit B enfeksiyonu olan hastada siroz gelişmeden de hepatoselüler karsinom ortaya çıkabiliyor. HBV'nin bu etkisini en iyi açıklayan özellik hangisidir?",
+    "options": [
+      "Alveolde hyalin membran oluşturması",
+      "Sadece safra taşına yol açması",
+      "CFTR kanalını doğrudan kapatması",
+      "Viral DNA'nın konak genomuna entegre olabilmesi",
+      "Pankreatik lipazı aktive etmesi"
+    ],
+    "correct": 3,
+    "exp": "HBV DNA virüsüdür ve konak genomuna entegre olabilir; kronik inflamasyonla birlikte HCC riskini artırır. HCV ise daha çok kronik inflamasyon/siroz üzerinden risk oluşturur."
+  },
+  {
+    "id": 3117,
+    "ders": "Patoloji",
+    "konu": "Karaciğer Hastalıkları",
+    "diff": 4,
+    "q": "53 yaşında erkek hasta, bilinen kronik alkol kullanım bozukluğu öyküsü olup 3 haftadır sarılık ve karın ağrısı şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Kronik alkol kullanımında karaciğer biyopsisinde hepatosit balonlaşması, Mallory-Denk cisimcikleri ve nötrofiller görülüyor. Bu tablo hangi lezyona uyar?",
+    "options": [
+      "Hemokromatozis",
+      "Wilson hastalığı",
+      "Fokal nodüler hiperplazi",
+      "Alkolik hepatit",
+      "Primer biliyer kolanjit"
+    ],
+    "correct": 3,
+    "exp": "Alkolik hepatitte balonlaşma dejenerasyonu, Mallory-Denk cisimcikleri, nötrofiller ve steatoz görülebilir."
+  },
+  {
+    "id": 3118,
+    "ders": "Patoloji",
+    "konu": "Karaciğer Hastalıkları",
+    "diff": 5,
+    "q": "24 yaşında erkek hasta, bilinen kronik hastalığı olmayan, 1 yıldır tremor, davranış değişikliği ve sarılık şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Genç hastada nöropsikiyatrik bulgular, Kayser-Fleischer halkası ve kronik karaciğer hastalığı vardır. Hepatositte biriken metalin atılamamasının nedeni hangisidir?",
+    "options": [
+      "ATP7B aracılı safra bakır atılımının bozulması",
+      "CFTR kusuruyla klor atılımının artması",
+      "APC kaybıyla beta-katenin azalması",
+      "PML-RARA füzyonuyla diferansiyasyon blokajı",
+      "HFE mutasyonuyla demir emiliminin azalması"
+    ],
+    "correct": 0,
+    "exp": "Wilson hastalığında ATP7B kusuru bakırın safraya atılımını bozar. Karaciğer, beyin ve korneada bakır birikir."
+  },
+  {
+    "id": 3119,
+    "ders": "Patoloji",
+    "konu": "Karaciğer Hastalıkları",
+    "diff": 4,
+    "q": "56 yaşında erkek hasta, bilinen kronik diyabet öyküsü olup 2 yıldır halsizlik, ciltte koyulaşma ve karında şişlik şikayetiyle geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Bronz diyabet, kardiyomiyopati ve siroz bulguları olan hastada karaciğerde demir birikimi vardır. Temel genetik bozukluk hangi mekanizmayı artırır?",
+    "options": [
+      "Podosit ayak çıkıntılarının silinmesi",
+      "Hepatositte glikojenin parçalanması",
+      "Safra bakır atılımının artması",
+      "MHC sınıf I antijen sunumunun durması",
+      "Hepcidin düzeninin bozulmasıyla intestinal demir emiliminin artması"
+    ],
+    "correct": 4,
+    "exp": "Herediter hemokromatoziste çoğunlukla HFE mutasyonu hepcidin yolunu bozar; demir emilimi artar ve parankimal organlarda birikir."
+  },
+  {
+    "id": 3120,
+    "ders": "Patoloji",
+    "konu": "Karaciğer Hastalıkları",
+    "diff": 4,
+    "q": "47 yaşında kadın hasta, bilinen kronik otoimmün tiroidit öyküsü olup 8 aydır kaşıntı ve halsizlik şikayetiyle hepatolojiye başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Orta yaşlı kadında kaşıntı, kolestatik enzim yüksekliği ve antimitochondrial antikor pozitifliği vardır. Küçük intrahepatik safra kanallarında destrüktif granülomatöz inflamasyon görülüyor. Tanı hangisidir?",
+    "options": [
+      "Primer sklerozan kolanjit",
+      "Hepatik adenom",
+      "Budd-Chiari sendromu",
+      "Alkolik hepatit",
+      "Primer biliyer kolanjit"
+    ],
+    "correct": 4,
+    "exp": "Primer biliyer kolanjit otoimmün küçük intrahepatik safra kanalı yıkımıyla seyreder; antimitochondrial antikor ve kaşıntı tipiktir."
+  },
+  {
+    "id": 3121,
+    "ders": "Patoloji",
+    "konu": "Karaciğer Hastalıkları",
+    "diff": 3,
+    "q": "Sirozun temel histolojik iki bileşeni hangisidir?",
+    "options": [
+      "Sadece hepatosit yağlanması",
+      "Glomerüler kresentler",
+      "Yalnızca akut nötrofil infiltrasyonu",
+      "Köprüleşen fibrozis ve rejeneratif nodüller",
+      "Duktuslarda kalsiyum sabunları"
+    ],
+    "correct": 3,
+    "exp": "Siroz, diffüz köprüleşen fibrozis ve rejeneratif nodüllerle karakterizedir; vasküler mimari bozulur."
+  },
+  {
+    "id": 3122,
+    "ders": "Patoloji",
+    "konu": "Karaciğer Hastalıkları",
+    "diff": 4,
+    "q": "Primer sklerozan kolanjit en çok hangi hastalıkla birliktelik gösterir?",
+    "options": [
+      "Ülseratif kolit",
+      "Seminom",
+      "Minimal değişiklik hastalığı",
+      "Kistik fibrozis olmadan bronşit",
+      "Dev hücreli arterit"
+    ],
+    "correct": 0,
+    "exp": "Primer sklerozan kolanjit intra ve ekstrahepatik safra yollarında soğan zarı fibrozisi yapar ve ülseratif kolitle güçlü ilişkilidir."
+  },
+  {
+    "id": 3123,
+    "ders": "Patoloji",
+    "konu": "Karaciğer Hastalıkları",
+    "diff": 4,
+    "q": "Hepatik adenomu düşündüren önemli klinik ilişki hangisidir?",
+    "options": [
+      "Nöral krest migrasyon kusuru",
+      "Oral kontraseptif veya anabolik steroid kullanımı",
+      "HPV 16 enfeksiyonu",
+      "Asbest maruziyeti",
+      "Sigara ile santral akciğer tümörü"
+    ],
+    "correct": 1,
+    "exp": "Hepatik adenom benign hepatosit tümörüdür; oral kontraseptif ve anabolik steroid kullanımıyla ilişkilidir. Kanama ve nadiren malign dönüşüm riski vardır."
+  },
+  {
+    "id": 3124,
+    "ders": "Patoloji",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 5,
+    "q": "58 yaşında kadın hasta, bilinen kronik kolelitiazis öyküsü olup 10 saattir sırta vuran epigastrik ağrı ve kusma şikayetiyle acile geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Safra taşı sonrası ağır epigastrik ağrısı olan hastada serum lipaz yüksek, peripankreatik yağ dokusunda sabunlaşma görülüyor. Bu bulgu hangi patolojik olayla açıklanır?",
+    "options": [
+      "Pankreatik enzimlerin erken aktivasyonu ve yağ nekrozu",
+      "Duktus epitelinde HPV ilişkili displazi",
+      "Beta hücrelerinden insülin salınımı artışı",
+      "Kollajen tip I'in lineer IgG ile kaplanması",
+      "Hemosiderin yüklü makrofaj birikimi"
+    ],
+    "correct": 0,
+    "exp": "Akut pankreatitte pankreatik enzimlerin erken aktivasyonu parankim ve yağ dokusunda hasara yol açar; lipaz yağ nekrozu ve sabunlaşma yapar."
+  },
+  {
+    "id": 3125,
+    "ders": "Patoloji",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 4,
+    "q": "50 yaşında erkek hasta, bilinen kronik alkol kullanım bozukluğu öyküsü olup 2 yıldır yağlı dışkılama ve kilo kaybı şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Kronik alkol kullanıcısında malabsorpsiyon ve diyabet gelişiyor. Pankreasta fibrozis, duktal dilatasyon ve kalsifikasyonlar vardır. Bu tablo hangi süreci yansıtır?",
+    "options": [
+      "Kronik pankreatit ile ekzokrin ve endokrin parankim kaybı",
+      "Primer biliyer kolanjit",
+      "Akut respiratuvar distres sendromu",
+      "Minimal değişiklik hastalığı",
+      "Yolk sac tümörü"
+    ],
+    "correct": 0,
+    "exp": "Kronik pankreatitte tekrarlayan hasar fibrozis ve parankim kaybına neden olur; ekzokrin yetmezlik ve ileride diyabet gelişebilir."
+  },
+  {
+    "id": 3126,
+    "ders": "Patoloji",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 5,
+    "q": "71 yaşında erkek hasta, bilinen kronik sigara kullanımı öyküsü olup 2 aydır ağrısız sarılık ve kilo kaybı şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Kilo kaybı ve ağrısız sarılıkla gelen yaşlı hastada pankreas başında infiltratif kitle vardır. Perinöral invazyon belirgindir. Bu tümör için en olası öncül lezyon hangisidir?",
+    "options": [
+      "Barrett özofagusu",
+      "Endometrial hiperplazi",
+      "Pankreatik intraepitelyal neoplazi",
+      "Hidatidiform mol",
+      "Reed-Sternberg hücresi"
+    ],
+    "correct": 2,
+    "exp": "Pankreas duktal adenokarsinomu sıklıkla PanIN lezyonlarından gelişir; baş yerleşimli olduğunda ağrısız sarılık yapabilir ve perinöral invazyon tipiktir."
+  },
+  {
+    "id": 3127,
+    "ders": "Patoloji",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 4,
+    "q": "43 yaşında kadın hasta, bilinen kronik hastalığı olmayan, 6 aydır açlıkta bayılma ve terleme şikayetiyle endokrinolojiye geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Tekrarlayan hipoglisemi atakları olan hastada pankreasta küçük nöroendokrin tümör saptanıyor. Açlıkta bilinç bulanıklığı gelişip glukozla düzeliyor. En olası hormon fazlalığı hangisidir?",
+    "options": [
+      "İnsülin",
+      "Somatostatin",
+      "Gastrin",
+      "Glukagon",
+      "VIP"
+    ],
+    "correct": 0,
+    "exp": "İnsülinoma pankreatik nöroendokrin tümördür; açlık hipoglisemisi, nöroglikopenik belirtiler ve glukozla düzelme tipiktir."
+  },
+  {
+    "id": 3128,
+    "ders": "Patoloji",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 4,
+    "q": "39 yaşında erkek hasta, bilinen kronik peptik ülser hastalığı öyküsü olup 1 yıldır tekrarlayan ülser ve ishal şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Peptik ülserleri tekrarlayan ve ishal gelişen hastada serum gastrin düzeyi çok yüksektir. Pankreas/duodenum kaynaklı tümör düşünülüyor. Asit artışının nedeni hangisidir?",
+    "options": [
+      "Somatostatinin asidi artırması",
+      "VIP'in mide asidini artırması",
+      "Gastrinin parietal hücreleri ve ECL hücrelerini uyarması",
+      "Glukagonun pepsini nötralize etmesi",
+      "İnsülinin parietal hücrede HCl salgılatması"
+    ],
+    "correct": 2,
+    "exp": "Gastrinoma Zollinger-Ellison sendromuna yol açar. Gastrin asit sekresyonunu artırır; rekürren ülser ve ishal yapabilir."
+  },
+  {
+    "id": 3129,
+    "ders": "Patoloji",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 3,
+    "q": "Pankreas duktal adenokarsinomunda sık görülen erken genetik olaylardan biri hangisidir?",
+    "options": [
+      "SMN1 delesyonu",
+      "CFTR'nin zorunlu bialelik kaybı",
+      "PML-RARA füzyonu",
+      "BCR-ABL füzyonu",
+      "KRAS aktivasyonu"
+    ],
+    "correct": 4,
+    "exp": "Pankreas duktal adenokarsinomunda KRAS aktivasyonu sık ve erken olaylardan biridir; ilerleyen basamaklarda CDKN2A, TP53 ve SMAD4 bozuklukları görülebilir."
+  },
+  {
+    "id": 3130,
+    "ders": "Patoloji",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 4,
+    "q": "VIPoma için en tipik klinik sendrom hangisidir?",
+    "options": [
+      "Rekürren peptik ülser ve hipergastrinemi",
+      "Safra taşı ve Courvoisier bulgusu",
+      "Sulu ishal, hipokalemi ve aklorhidri",
+      "Hipoglisemi ve nöroglikopeni",
+      "Nekrolitik migratuvar eritem ve diyabet"
+    ],
+    "correct": 2,
+    "exp": "VIPoma WDHA sendromu yapar: watery diarrhea, hypokalemia, achlorhydria. Pankreatik nöroendokrin tümörlerden biridir."
+  },
+  {
+    "id": 3131,
+    "ders": "Patoloji",
+    "konu": "Pankreas Hastalıkları",
+    "diff": 4,
+    "q": "Glukagonoma ile ilişkili karakteristik deri bulgusu hangisidir?",
+    "options": [
+      "Eritema nodosum",
+      "Nekrolitik migratuvar eritem",
+      "Gottron papülleri",
+      "Palpabl purpura",
+      "Kafe-au-lait lekeleri"
+    ],
+    "correct": 1,
+    "exp": "Glukagonoma diyabet, kilo kaybı, anemi ve nekrolitik migratuvar eritem ile ilişkilidir."
+  },
+  {
+    "id": 3132,
+    "ders": "Patoloji",
+    "konu": "Meme Hastalıkları",
+    "diff": 5,
+    "q": "58 yaşında kadın hasta, bilinen kronik hipertansiyon öyküsü olup 3 aydır memede sertlik ve meme başında çekinti şikayetiyle cerrahiye geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Meme biyopsisinde diskoheziv hücreler tek sıra halinde stromaya ilerliyor; E-kaderin kaybı saptanıyor. En olası invaziv karsinom tipi hangisidir?",
+    "options": [
+      "Medüller karsinom",
+      "Paget hastalığı olmadan DCIS",
+      "İnvaziv duktal karsinom",
+      "Müsinöz karsinom",
+      "İnvaziv lobüler karsinom"
+    ],
+    "correct": 4,
+    "exp": "İnvaziv lobüler karsinomda E-kaderin kaybı hücrelerin diskoheziv olmasına ve tek sıra dizilimine yol açar."
+  },
+  {
+    "id": 3133,
+    "ders": "Patoloji",
+    "konu": "Meme Hastalıkları",
+    "diff": 4,
+    "q": "47 yaşında kadın hasta, bilinen kronik hastalığı olmayan, 2 aydır meme başında kaşıntılı ekzematöz lezyon ve akıntı şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Meme başında ekzematöz lezyon ve altta duktal karsinoma in situ saptanan hastada epidermiste büyük malign hücreler vardır. Bu tablo hangisidir?",
+    "options": [
+      "Fibroadenom",
+      "Filloid tümör",
+      "Yağ nekrozu",
+      "Meme başı Paget hastalığı",
+      "Akut mastit"
+    ],
+    "correct": 3,
+    "exp": "Paget hastalığında duktal karsinom hücreleri meme başı epidermisine yayılır; ekzematöz görünüm yapar ve sıklıkla altta DCIS/invaziv karsinom bulunur."
+  },
+  {
+    "id": 3134,
+    "ders": "Patoloji",
+    "konu": "Meme Hastalıkları",
+    "diff": 4,
+    "q": "24 yaşında kadın hasta, bilinen kronik hastalığı olmayan, 6 aydır memede hareketli kitle şikayetiyle genel cerrahiye geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Genç kadında hareketli, iyi sınırlı meme kitlesi çıkarılıyor. Histolojide fibroz stromanın duktusları sıkıştırdığı benign bifazik lezyon görülüyor. En olası tanı hangisidir?",
+    "options": [
+      "İntraduktal papillom",
+      "İnvaziv duktal karsinom",
+      "Anjiyosarkom",
+      "Yağ nekrozu",
+      "Fibroadenom"
+    ],
+    "correct": 4,
+    "exp": "Fibroadenom genç kadınlarda sık, iyi sınırlı ve hareketli benign meme tümörüdür; stromal ve epitelyal bileşenlerden oluşur."
+  },
+  {
+    "id": 3135,
+    "ders": "Patoloji",
+    "konu": "Meme Hastalıkları",
+    "diff": 4,
+    "q": "31 yaşında kadın hasta, bilinen kronik hastalığı olmayan, doğumdan 3 hafta sonra 4 gündür memede ağrı, kızarıklık ve ateş şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Emziren kadında ağrılı, eritemli meme ve ateş gelişiyor. Apse materyalinde nötrofiller ve bakteri görülüyor. En olası patolojik süreç hangisidir?",
+    "options": [
+      "Müsinöz karsinom",
+      "Radyal skar",
+      "Akut süpüratif mastit",
+      "Lobüler karsinoma in situ",
+      "Fibrokistik değişiklik"
+    ],
+    "correct": 2,
+    "exp": "Laktasyon döneminde meme başı çatlaklarından bakteriler girebilir. Akut mastit ve apse süpüratif inflamasyonla seyreder."
+  },
+  {
+    "id": 3136,
+    "ders": "Patoloji",
+    "konu": "Meme Hastalıkları",
+    "diff": 5,
+    "q": "55 yaşında kadın hasta, bilinen kronik tip 2 diyabet öyküsü olup 1 aydır memede fark edilen sertlik ve taramada saptanan mikrokalsifikasyon şikayetiyle meme polikliniğine geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Meme taramasında mikrokalsifikasyonla yakalanan lezyonda duktus içinde komedo nekroz ve malign epitel proliferasyonu vardır; bazal membran aşılmamıştır. Tanı hangisidir?",
+    "options": [
+      "İnvaziv lobüler karsinom",
+      "Filloid tümör",
+      "Duktal karsinoma in situ",
+      "Yağ nekrozu",
+      "Fibroadenom"
+    ],
+    "correct": 2,
+    "exp": "DCIS duktus içinde malign epitel proliferasyonudur; bazal membran aşılmamıştır. Komedo nekroz ve mikrokalsifikasyon görülebilir."
+  },
+  {
+    "id": 3137,
+    "ders": "Patoloji",
+    "konu": "Meme Hastalıkları",
+    "diff": 3,
+    "q": "Lobüler karsinoma in situ için en doğru ifade hangisidir?",
+    "options": [
+      "Genellikle tesadüfen saptanır ve iki memede invaziv karsinom riskini artırır",
+      "Sadece erkeklerde görülür",
+      "Daima palpabl kitle yapar",
+      "Meme başında ekzematöz lezyonla tanı alır",
+      "Her zaman komedo nekroz içerir"
+    ],
+    "correct": 0,
+    "exp": "LCIS sıklıkla insidental bulunur, mikrokalsifikasyon/palpabl kitle yapması tipik değildir. Her iki memede invaziv karsinom riskini artırır."
+  },
+  {
+    "id": 3138,
+    "ders": "Patoloji",
+    "konu": "Meme Hastalıkları",
+    "diff": 4,
+    "q": "Triple negatif meme kanseri tanımı hangi reseptör durumunu ifade eder?",
+    "options": [
+      "ER pozitif, PR pozitif, HER2 pozitiflik",
+      "ER, PR ve HER2 negatifliği",
+      "Sadece HER2 pozitifliği",
+      "Kalsitonin negatifliği",
+      "Beta-hCG negatifliği"
+    ],
+    "correct": 1,
+    "exp": "Triple negatif meme kanseri ER, PR ve HER2 ekspresyonunun olmamasıyla tanımlanır; hedefe yönelik seçenekler daha sınırlı olabilir."
+  },
+  {
+    "id": 3139,
+    "ders": "Patoloji",
+    "konu": "Meme Hastalıkları",
+    "diff": 4,
+    "q": "Filloid tümörün fibroadenomdan ayrımında öne çıkan özellik hangisidir?",
+    "options": [
+      "Hip hücresel stromal komponent ve yaprak benzeri büyüme paterni",
+      "Duktus içinde komedo nekroz",
+      "E-kaderin kaybıyla tek sıra invazyon",
+      "Sadece yağ dokusunda sabunlaşma",
+      "Meme başı epidermisine malign hücre yayılımı"
+    ],
+    "correct": 0,
+    "exp": "Filloid tümör yaprak benzeri mimari ve hücresel stroma ile karakterizedir. Benign, borderline veya malign davranış gösterebilir."
+  },
+  {
+    "id": 3140,
+    "ders": "Patoloji",
+    "konu": "Sinir Sistem Hastalıkları",
+    "diff": 5,
+    "q": "74 yaşında kadın hasta, bilinen kronik hipertansiyon öyküsü olup 2 yıldır unutkanlık ve günlük işlerde zorlanma şikayetiyle nörolojiye getiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Yaşlı hastada ilerleyici demans vardır. Beyinde senil plaklar ve nörofibriler yumaklar izleniyor. Nörofibriler yumakların temel bileşeni hangisidir?",
+    "options": [
+      "GFAP pozitif Rosenthal lifi",
+      "Prion proteini",
+      "Alfa-sinüklein",
+      "Huntingtin proteini",
+      "Hiperfosforile tau proteini"
+    ],
+    "correct": 4,
+    "exp": "Alzheimer hastalığında nörofibriler yumaklar hiperfosforile tau proteininden oluşur. Senil plaklarda beta-amiloid bulunur."
+  },
+  {
+    "id": 3141,
+    "ders": "Patoloji",
+    "konu": "Sinir Sistem Hastalıkları",
+    "diff": 4,
+    "q": "66 yaşında erkek hasta, bilinen kronik hastalığı olmayan, 1 yıldır istirahat tremoru ve hareketlerde yavaşlama şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Parkinson hastasında substantia nigra pars compacta nöronlarında kayıp ve sitoplazmik eozinofilik inklüzyonlar görülüyor. Bu inklüzyonların ana proteini hangisidir?",
+    "options": [
+      "Distrofin",
+      "Tip IV kollajen",
+      "Alfa-sinüklein",
+      "Huntingtin",
+      "Beta-amiloid"
+    ],
+    "correct": 2,
+    "exp": "Parkinson hastalığında Lewy cisimcikleri alfa-sinüklein içerir. Substantia nigra dopaminerjik nöron kaybı motor belirtilere yol açar."
+  },
+  {
+    "id": 3142,
+    "ders": "Patoloji",
+    "konu": "Sinir Sistem Hastalıkları",
+    "diff": 5,
+    "q": "28 yaşında kadın hasta, bilinen kronik hastalığı olmayan, 6 aydır ataklar halinde görme bulanıklığı ve bacakta uyuşma şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Genç erişkinde optik nörit ve ataklarla seyreden nörolojik bulgular vardır. Beyaz cevher plaklarında miyelin kaybı, aksonların görece korunması ve perivasküler lenfositler izleniyor. En olası tanı hangisidir?",
+    "options": [
+      "Amyotrofik lateral skleroz",
+      "Glioblastom",
+      "Multipl skleroz",
+      "Huntington hastalığı",
+      "Creutzfeldt-Jakob hastalığı"
+    ],
+    "correct": 2,
+    "exp": "Multipl skleroz santral sinir sisteminde demiyelinizan plaktır. Miyelin kaybı, aksonların nispeten korunması ve perivasküler inflamasyon tipiktir."
+  },
+  {
+    "id": 3143,
+    "ders": "Patoloji",
+    "konu": "Sinir Sistem Hastalıkları",
+    "diff": 4,
+    "q": "59 yaşında erkek hasta, bilinen kronik hipertansiyon öyküsü olup 2 aydır giderek artan baş ağrısı ve nöbet şikayetiyle beyin cerrahisine başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Erişkinde hızla büyüyen beyin tümöründe nekroz çevresinde psödopalisading dizilim ve belirgin mikrovasküler proliferasyon görülüyor. En olası tanı hangisidir?",
+    "options": [
+      "Medulloblastom",
+      "Schwannom",
+      "Glioblastom",
+      "Pilokitik astrositom",
+      "Menenjiom"
+    ],
+    "correct": 2,
+    "exp": "Glioblastom erişkinlerde agresif astrositik tümördür; nekroz çevresinde psödopalisading ve mikrovasküler proliferasyon tipiktir."
+  },
+  {
+    "id": 3144,
+    "ders": "Patoloji",
+    "konu": "Sinir Sistem Hastalıkları",
+    "diff": 4,
+    "q": "7 yaşında erkek çocuk, bilinen kronik hastalığı olmayan, 3 haftadır sabah kusması ve dengesizlik şikayetiyle pediatrik nörolojiye getiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Çocukta serebellar kitle ve hidrosefali vardır. Histolojide küçük mavi hücreli tümör ve Homer-Wright rozetleri görülüyor. En olası tümör hangisidir?",
+    "options": [
+      "Medulloblastom",
+      "Oligodendrogliom",
+      "Schwannom",
+      "Menenjiom",
+      "Glioblastom"
+    ],
+    "correct": 0,
+    "exp": "Medulloblastom çocuklarda serebellumda görülen küçük mavi hücreli embriyonel tümördür; BOS yoluyla yayılabilir ve Homer-Wright rozetleri gösterebilir."
+  },
+  {
+    "id": 3145,
+    "ders": "Patoloji",
+    "konu": "Sinir Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Prion hastalıklarında karakteristik mikroskobik değişiklik hangisidir?",
+    "options": [
+      "Schiller-Duval cisimciği",
+      "Komplemanla lineer IgG birikimi",
+      "Keratin incisi",
+      "Kazeöz granülom",
+      "Süngerimsi dejenerasyon"
+    ],
+    "correct": 4,
+    "exp": "Prion hastalıklarında anormal katlanmış prion proteini birikir; beyin dokusunda süngerimsi değişiklikler ve hızlı ilerleyen demans görülebilir."
+  },
+  {
+    "id": 3146,
+    "ders": "Patoloji",
+    "konu": "Sinir Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Menenjiomlar çoğunlukla hangi hücrelerden köken alır?",
+    "options": [
+      "Schwann hücreleri",
+      "Oligodendrositler",
+      "Mikroglialar",
+      "Araknoid kap hücreleri",
+      "Ependim hücreleri"
+    ],
+    "correct": 3,
+    "exp": "Menenjiomlar araknoid kap hücrelerinden köken alır; whorl formasyonu ve psammoma cisimcikleri görülebilir."
+  },
+  {
+    "id": 3147,
+    "ders": "Patoloji",
+    "konu": "Endokrin Sistem Hastalıkları",
+    "diff": 5,
+    "q": "39 yaşında kadın hasta, bilinen kronik hastalığı olmayan, 4 aydır boyunda şişlik ve yutkunma sırasında takılma şikayetiyle endokrinolojiye geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Tiroid nodülünde dallanan papiller yapılar, buzlu cam nükleuslar, nükleer oluklar ve psammoma cisimcikleri görülüyor. Bu tümörün tipik yayılım yolu hangisidir?",
+    "options": [
+      "Pankreatik duktus boyunca yayılım",
+      "Lenfatik yayılım",
+      "Erken hematojen yayılım",
+      "Sadece lokal kapsül içinde kalma",
+      "Peritoneal implantasyon"
+    ],
+    "correct": 1,
+    "exp": "Papiller tiroid karsinomu nükleer özellikleri ve psammoma cisimcikleriyle tanınır; servikal lenf nodlarına lenfatik yayılım sık görülür."
+  },
+  {
+    "id": 3148,
+    "ders": "Patoloji",
+    "konu": "Endokrin Sistem Hastalıkları",
+    "diff": 4,
+    "q": "46 yaşında kadın hasta, bilinen kronik vitiligo öyküsü olup 1 yıldır soğuğa tahammülsüzlük ve kilo alma şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Soğuğa tahammülsüzlük ve guatrı olan hastada anti-TPO pozitifliği vardır. Tiroidde germinal merkezli lenfoid infiltrasyon ve Hürthle hücre değişikliği görülüyor. Tanı hangisidir?",
+    "options": [
+      "Subakut granülomatöz tiroidit",
+      "Anaplastik tiroid karsinomu",
+      "Medüller tiroid karsinomu",
+      "Graves hastalığı",
+      "Hashimoto tiroiditi"
+    ],
+    "correct": 4,
+    "exp": "Hashimoto tiroiditi otoimmün tiroidittir; anti-TPO/anti-tiroglobulin pozitifliği, lenfoid infiltrasyon, germinal merkezler ve Hürthle hücreleri görülebilir."
+  },
+  {
+    "id": 3149,
+    "ders": "Patoloji",
+    "konu": "Endokrin Sistem Hastalıkları",
+    "diff": 4,
+    "q": "35 yaşında kadın hasta, bilinen kronik hastalığı olmayan, 5 aydır çarpıntı, kilo kaybı ve gözlerde belirginleşme şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Hipertiroidili hastada diffüz guatr, oftalmopati ve pretibial miksödem vardır. Folikül epitelinde uzun hücreler ve kolloidde scalloping izleniyor. Temel mekanizma hangisidir?",
+    "options": [
+      "Parafoliküler C hücrelerinden kalsitonin salınımı",
+      "Tiroglobuline karşı lineer immün kompleks çökmesi",
+      "Iodine eksikliğinde folikül yıkımı",
+      "TSH reseptörünü uyaran otoantikorlar",
+      "Bakteriyel enfeksiyonla apse"
+    ],
+    "correct": 3,
+    "exp": "Graves hastalığında TSH reseptörünü uyaran antikorlar hormon sentezini artırır. Diffüz hiperplazi, scalloped kolloid ve oftalmopati görülebilir."
+  },
+  {
+    "id": 3150,
+    "ders": "Patoloji",
+    "konu": "Endokrin Sistem Hastalıkları",
+    "diff": 5,
+    "q": "28 yaşında erkek hasta, bilinen kronik ailevi MEN öyküsü olup 3 aydır boyunda kitle ve ishal şikayetiyle endokrinolojiye geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Tiroid tümöründe amiloid stroması ve kalsitonin pozitifliği saptanıyor. Aile öyküsü olan hastada RET mutasyonu araştırılıyor. En olası tanı hangisidir?",
+    "options": [
+      "Foliküler adenom",
+      "Medüller tiroid karsinomu",
+      "Subakut tiroidit",
+      "Papiller tiroid karsinomu",
+      "Hashimoto tiroiditi"
+    ],
+    "correct": 1,
+    "exp": "Medüller tiroid karsinomu parafoliküler C hücrelerinden köken alır, kalsitonin salgılar ve amiloid stroması gösterebilir. MEN2 ile ilişkili olabilir."
+  },
+  {
+    "id": 3151,
+    "ders": "Patoloji",
+    "konu": "Endokrin Sistem Hastalıkları",
+    "diff": 4,
+    "q": "57 yaşında kadın hasta, bilinen kronik böbrek taşı öyküsü olup 6 aydır kemik ağrısı ve halsizlik şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Hiperkalsemi ve böbrek taşı olan hastada paratiroid bezinde tek adenom saptanıyor. Kemikte osteoklast aktivitesinin artmasını en iyi açıklayan yol hangisidir?",
+    "options": [
+      "İnsülinin hidroksiapatiti eritmesi",
+      "TSH'nin osteoklastta tiroglobulin üretmesi",
+      "ACTH'nin kemikte kolloid biriktirmesi",
+      "Kalsitoninin osteoklastı doğrudan uyarması",
+      "PTH'nin osteoblastlarda RANKL ekspresyonunu artırması"
+    ],
+    "correct": 4,
+    "exp": "PTH osteoblastlar üzerinden RANKL artırarak osteoklast aktivasyonunu uyarır. Primer hiperparatiroidide kemik rezorpsiyonu ve hiperkalsemi gelişebilir."
+  },
+  {
+    "id": 3152,
+    "ders": "Patoloji",
+    "konu": "Endokrin Sistem Hastalıkları",
+    "diff": 4,
+    "q": "Foliküler tiroid karsinomunu foliküler adenomdan ayırmada en önemli kriter hangisidir?",
+    "options": [
+      "Kapsül veya damar invazyonu",
+      "Tiroglobulin pozitifliği",
+      "Folikül yapısı içermesi",
+      "Kolloid bulunması",
+      "Tek nodül şeklinde olması"
+    ],
+    "correct": 0,
+    "exp": "Foliküler patern benign ve malign lezyonlarda görülebilir. Foliküler karsinom tanısı için kapsül ve/veya damar invazyonu gösterilmelidir."
+  },
+  {
+    "id": 3153,
+    "ders": "Patoloji",
+    "konu": "Endokrin Sistem Hastalıkları",
+    "diff": 4,
+    "q": "MEN2 sendromlarıyla en yakından ilişkili protoonkogen hangisidir?",
+    "options": [
+      "RET",
+      "RB1",
+      "VHL",
+      "APC",
+      "BRCA1"
+    ],
+    "correct": 0,
+    "exp": "MEN2A ve MEN2B RET protoonkogen mutasyonlarıyla ilişkilidir. Medüller tiroid karsinomu riski belirgindir."
+  },
+  {
+    "id": 3154,
+    "ders": "Patoloji",
+    "konu": "Deri Hastalıkları",
+    "diff": 4,
+    "q": "69 yaşında erkek hasta, bilinen kronik aktinik hasar öyküsü olup 8 aydır yüzde iyileşmeyen kabuklu yara şikayetiyle dermatolojiye başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Güneş gören yüzde inci gibi parlak, kenarı kabarık ve ortası ülserli lezyon vardır. Histolojide bazaloid hücre adaları ve periferik palisadlanma görülüyor. En olası tanı hangisidir?",
+    "options": [
+      "Bazal hücreli karsinom",
+      "Seboreik keratoz",
+      "Malign melanom",
+      "Skuamöz hücreli karsinom",
+      "Dermatofibrom"
+    ],
+    "correct": 0,
+    "exp": "Bazal hücreli karsinom güneş gören alanlarda inci gibi papül/ülser yapabilir. Bazaloid hücre adaları ve periferik palisadlanma tipiktir."
+  },
+  {
+    "id": 3155,
+    "ders": "Patoloji",
+    "konu": "Deri Hastalıkları",
+    "diff": 5,
+    "q": "72 yaşında kadın hasta, bilinen kronik güneş maruziyeti öyküsü olup 5 aydır el sırtında büyüyen hiperkeratotik lezyon şikayetiyle geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Kronik güneş hasarı olan hastada hiperkeratotik lezyonda invaziv atipik skuamöz hücre adaları ve keratin incileri görülüyor. En olası tanı hangisidir?",
+    "options": [
+      "Bazal hücreli karsinom",
+      "Psoriasis",
+      "Skuamöz hücreli karsinom",
+      "Melanositik nevüs",
+      "Langerhans hücreli histiositoz"
+    ],
+    "correct": 2,
+    "exp": "Deri skuamöz hücreli karsinomunda invaziv atipik skuamöz hücreler ve keratin incileri görülebilir; UV hasarı önemli risk faktörüdür."
+  },
+  {
+    "id": 3156,
+    "ders": "Patoloji",
+    "konu": "Deri Hastalıkları",
+    "diff": 5,
+    "q": "43 yaşında erkek hasta, bilinen kronik hastalığı olmayan, 4 aydır sırtında büyüyen düzensiz renkli ben şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Asimetrik, düzensiz sınırlı, renk değişkenliği gösteren pigmente lezyonda dermise invazyon vardır. Prognozu en iyi belirleyen histolojik ölçüt hangisidir?",
+    "options": [
+      "Kimmelstiel-Wilson nodülü",
+      "Breslow kalınlığı",
+      "Reid indeksi",
+      "Gleason skoru olmadan PSA",
+      "Schiller-Duval cisimciği sayısı"
+    ],
+    "correct": 1,
+    "exp": "Malign melanomda prognoz için en önemli parametrelerden biri Breslow tümör kalınlığıdır. Derin invazyon metastaz riskini artırır."
+  },
+  {
+    "id": 3157,
+    "ders": "Patoloji",
+    "konu": "Deri Hastalıkları",
+    "diff": 4,
+    "q": "26 yaşında kadın hasta, bilinen kronik psoriazis öyküsü olup 3 yıldır dirsek ve dizlerde tekrarlayan pullu plak şikayetiyle takip ediliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Dirsek ve dizlerde keskin sınırlı eritemli plaklar, gümüşi skuamlar ve Auspitz fenomeni olan hastanın biyopsisinde düzenli akantoz ve parakeratoz görülüyor. Patogenezde baskın bağışıklık ekseni hangisidir?",
+    "options": [
+      "Nötrofil CD18 eksikliği",
+      "IgE aracılı mast hücre degranülasyonu",
+      "Anti-GBM lineer IgG birikimi",
+      "Tip II pnömosit surfaktan kaybı",
+      "Th17/IL-23 aracılı keratinosit proliferasyonu"
+    ],
+    "correct": 4,
+    "exp": "Psoriasis Th17/IL-23 ekseniyle ilişkilidir; keratinosit proliferasyonu, parakeratoz ve Munro mikroapseleri görülebilir."
+  },
+  {
+    "id": 3158,
+    "ders": "Patoloji",
+    "konu": "Deri Hastalıkları",
+    "diff": 4,
+    "q": "51 yaşında kadın hasta, bilinen kronik hastalığı olmayan, 2 haftadır ağız içinde yara ve deride gevşek bül şikayetiyle dermatolojiye geliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Ağız mukozasında erozyonlar ve deride gevşek büller vardır. Nikolsky pozitif, immünofloresanda epidermis içinde ağsı IgG birikimi görülüyor. Hedef antijen en olası hangisidir?",
+    "options": [
+      "Hemidesmozom BP180",
+      "Tip VII kollajen",
+      "Elastin",
+      "Desmoglein",
+      "Tiroglobulin"
+    ],
+    "correct": 3,
+    "exp": "Pemfigus vulgariste desmogleinlere karşı IgG gelişir. İntraepidermal akantoliz ve ağsı immünofloresans tipiktir."
+  },
+  {
+    "id": 3159,
+    "ders": "Patoloji",
+    "konu": "Deri Hastalıkları",
+    "diff": 4,
+    "q": "Büllöz pemfigoidde immünofloresans paterni hangisidir?",
+    "options": [
+      "Dermiste Schiller-Duval cisimciği",
+      "Bazal membran boyunca lineer IgG ve C3 birikimi",
+      "Mezangiumda granüler IgA",
+      "Epidermis içinde ağsı IgG birikimi",
+      "Damar duvarında amiloid"
+    ],
+    "correct": 1,
+    "exp": "Büllöz pemfigoid hemidesmozom proteinlerine karşı antikorlarla gelişir; subepidermal bül ve bazal membran boyunca lineer IgG/C3 görülür."
+  },
+  {
+    "id": 3160,
+    "ders": "Patoloji",
+    "konu": "Deri Hastalıkları",
+    "diff": 4,
+    "q": "Seboreik keratoz için en doğru ifade hangisidir?",
+    "options": [
+      "Glomerülde kresent oluşturur",
+      "Daima invaziv melanom öncülüdür",
+      "Kazeöz granülomdan oluşur",
+      "Yaşlılarda sık görülen benign epidermal proliferasyondur, yüzeye yapıştırılmış gibi durur",
+      "Pankreatik lipazla yağ nekrozu yapar"
+    ],
+    "correct": 3,
+    "exp": "Seboreik keratoz benign epidermal lezyondur; yaşlılarda sık görülür ve 'yapıştırılmış' görünümü tipiktir."
+  },
+  {
+    "id": 3161,
+    "ders": "Patoloji",
+    "konu": "Kalp ve İskelet Sistemi Hastalıkları",
+    "diff": 5,
+    "q": "73 yaşında erkek hasta, bilinen kronik hipertansiyon öyküsü olup 1 yıldır kalça ve femurda derin kemik ağrısı şikayetiyle ortopediye başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Yaşlı hastada femur başında kronik ağrı vardır. Histolojide kalın, düzensiz mozaik paternli kemik trabekülleri ve artmış osteoklast/osteoblast aktivitesi görülüyor. En olası hastalık hangisidir?",
+    "options": [
+      "Osteosarkom",
+      "Osteopetrozis",
+      "Ewing sarkomu",
+      "Paget hastalığı",
+      "Osteomalazi"
+    ],
+    "correct": 3,
+    "exp": "Paget hastalığında artmış ve düzensiz kemik remodeling'i olur. Mozaik paternli lameller kemik tipiktir."
+  },
+  {
+    "id": 3162,
+    "ders": "Patoloji",
+    "konu": "Kalp ve İskelet Sistemi Hastalıkları",
+    "diff": 5,
+    "q": "16 yaşında erkek hasta, bilinen kronik hastalığı olmayan, 2 aydır diz çevresinde gece artan ağrı ve şişlik şikayetiyle getiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Ergen hastada diz çevresinde ağrılı kitle vardır. Radyolojide metafizer lezyon ve periost reaksiyonu, histolojide malign hücrelerin osteoid üretimi görülüyor. Tanı hangisidir?",
+    "options": [
+      "Ewing sarkomu",
+      "Osteosarkom",
+      "Kondrosarkom",
+      "Dev hücreli tümör",
+      "Osteoid osteom"
+    ],
+    "correct": 1,
+    "exp": "Osteosarkom malign osteoid üretimiyle tanımlanır. Genellikle adölesanlarda uzun kemik metafizlerinde, özellikle diz çevresinde görülür."
+  },
+  {
+    "id": 3163,
+    "ders": "Patoloji",
+    "konu": "Kalp ve İskelet Sistemi Hastalıkları",
+    "diff": 5,
+    "q": "12 yaşında erkek çocuk, bilinen kronik hastalığı olmayan, 6 haftadır bacakta ağrılı şişlik ve ateş benzeri yakınma şikayetiyle değerlendiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Çocukta diafizer kemik kitlesi, ateş benzeri bulgular ve küçük yuvarlak mavi hücreli tümör vardır. EWSR1-FLI1 füzyonu saptanıyor. En olası tanı hangisidir?",
+    "options": [
+      "Ewing sarkomu",
+      "Osteosarkom",
+      "Dev hücreli tümör",
+      "Osteokondrom",
+      "Kondrosarkom"
+    ],
+    "correct": 0,
+    "exp": "Ewing sarkomu çocuk ve gençlerde diafizde görülebilen küçük yuvarlak mavi hücreli tümördür; t(11;22) EWSR1-FLI1 füzyonu tipiktir."
+  },
+  {
+    "id": 3164,
+    "ders": "Patoloji",
+    "konu": "Kalp ve İskelet Sistemi Hastalıkları",
+    "diff": 4,
+    "q": "78 yaşında kadın hasta, bilinen kronik osteoporoz öyküsü olup 3 gündür düşme sonrası kalça ağrısı ve yürüyememe şikayetiyle acile getiriliyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Yaşlı kadında kalça kırığı sonrası kemik biyopsisinde trabekül sayısı ve kalınlığında azalma, mineralizasyonun korunması görülüyor. Bu bulgu hangi hastalığı destekler?",
+    "options": [
+      "Renal osteodistrofi olmadan osteitis fibrosa",
+      "Paget hastalığı",
+      "Osteopetrozis",
+      "Osteoporoz",
+      "Osteomalazi"
+    ],
+    "correct": 3,
+    "exp": "Osteoporozda kemik kitlesi azalır, fakat kalan kemikte mineralizasyon normaldir. Trabeküller incelir ve kırık riski artar."
+  },
+  {
+    "id": 3165,
+    "ders": "Patoloji",
+    "konu": "Kalp ve İskelet Sistemi Hastalıkları",
+    "diff": 4,
+    "q": "44 yaşında kadın hasta, bilinen kronik çölyak hastalığı öyküsü olup 8 aydır yaygın kemik ağrısı ve kas güçsüzlüğü şikayetiyle başvuruyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: D vitamini eksikliği olan erişkinde kemik ağrısı ve psödofraktürler vardır. Histolojide osteoid artmıştır ancak mineralizasyon yetersizdir. Bu tablo hangisidir?",
+    "options": [
+      "Osteosarkom",
+      "Osteomalazi",
+      "Osteoporoz",
+      "Ewing sarkomu",
+      "Kondrom"
+    ],
+    "correct": 1,
+    "exp": "Osteomalazide organik matriks/osteoid yapılır ancak mineralizasyon bozulur. Çocukta karşılığı raşitizmdir."
+  },
+  {
+    "id": 3166,
+    "ders": "Patoloji",
+    "konu": "Kalp ve İskelet Sistemi Hastalıkları",
+    "diff": 4,
+    "q": "52 yaşında kadın hasta, bilinen kronik romatoid artrit öyküsü olup 6 yıldır el bileği ağrısı ve hareket kısıtlılığı şikayetiyle izleniyor. Değerlendirme ve patoloji raporu birlikte incelendiğinde şu bulgular dikkat çekiyor: Romatoid artritli hastada sinovyumda villöz hiperplazi, lenfoplazmositer infiltrasyon ve pannus oluşumu vardır. Eklem yıkımını en iyi açıklayan yapı hangisidir?",
+    "options": [
+      "Kazeöz nekrozun eklemi doldurması",
+      "Tip II pnömositlerin surfaktan üretmemesi",
+      "Urat kristallerinin iğne şeklinde birikmesi",
+      "İnflame granülasyon dokusunun kıkırdak ve kemiği invaze etmesi",
+      "Bazal membranda lineer IgG birikmesi"
+    ],
+    "correct": 3,
+    "exp": "Romatoid artritte pannus, inflamatuvar granülasyon dokusudur; kıkırdak ve subkondral kemiği invaze ederek destrüksiyon yapar."
+  },
+  {
+    "id": 3167,
+    "ders": "Patoloji",
+    "konu": "Kalp ve İskelet Sistemi Hastalıkları",
+    "diff": 4,
+    "q": "Gut artritinde eklem sıvısında beklenen kristal özelliği hangisidir?",
+    "options": [
+      "Amiloid fibrilleri ve elma yeşili çift kırılım",
+      "Kalsiyum sabunları ve yağ nekrozu",
+      "İğne şekilli, negatif çift kırılım gösteren monosodyum ürat kristalleri",
+      "Kolesterol kristalleri olmadan kazeöz nekroz",
+      "Romboid, pozitif çift kırılımlı kalsiyum pirofosfat kristalleri"
+    ],
+    "correct": 2,
+    "exp": "Gutta monosodyum ürat kristalleri iğne şeklinde ve negatif çift kırılımlıdır. Psödogutta kalsiyum pirofosfat kristalleri romboid ve pozitif çift kırılımlıdır."
   }
 ];
