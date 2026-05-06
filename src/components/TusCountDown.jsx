@@ -1,40 +1,40 @@
 import React, { useEffect, useState } from 'react';
 
-export default function TusCountdown({ isLightTheme = false }) {
- 
-  const TARGET_DATE = new Date('2026-09-23T10:00:00');
+const TARGET_DATE = new Date('2026-09-23T10:00:00');
 
-  const calculateTimeLeft = () => {
-    const now = new Date();
-    const diff = TARGET_DATE - now;
+const calculateTimeLeft = () => {
+  const now = new Date();
+  const diff = TARGET_DATE - now;
 
-    if (diff <= 0) {
-      return {
-        finished: true,
-        months: 0,
-        days: 0,
-        hours: 0,
-        minutes: 0,
-      };
-    }
-
-    const totalMinutes = Math.floor(diff / (1000 * 60));
-    const totalHours = Math.floor(diff / (1000 * 60 * 60));
-    const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
-
-    const months = Math.floor(totalDays / 30);
-    const days = totalDays % 30;
-    const hours = totalHours % 24;
-    const minutes = totalMinutes % 60;
-
+  if (diff <= 0) {
     return {
-      finished: false,
-      months,
-      days,
-      hours,
-      minutes,
+      finished: true,
+      months: 0,
+      days: 0,
+      hours: 0,
+      minutes: 0,
     };
+  }
+
+  const totalMinutes = Math.floor(diff / (1000 * 60));
+  const totalHours = Math.floor(diff / (1000 * 60 * 60));
+  const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+  const months = Math.floor(totalDays / 30);
+  const days = totalDays % 30;
+  const hours = totalHours % 24;
+  const minutes = totalMinutes % 60;
+
+  return {
+    finished: false,
+    months,
+    days,
+    hours,
+    minutes,
   };
+};
+
+export default function TusCountdown({ isLightTheme = false }) {
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 

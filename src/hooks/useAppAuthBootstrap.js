@@ -52,7 +52,7 @@ export function useAppAuthBootstrap(setView) {
     return () => {
       active = false;
     };
-  }, [user?.uid]);
+  }, [user]);
 
   useEffect(() => {
     let active = true;
@@ -64,13 +64,13 @@ export function useAppAuthBootstrap(setView) {
     return () => {
       active = false;
     };
-  }, [user?.uid, userData?.plan, userData?.premiumStatus, userData?.premiumUntil, userData?.lifetimePremium]);
+  }, [user, userData]);
 
   useEffect(() => {
     if (user?.uid) {
       identifyClarityUser(user.uid);
     }
-  }, [user?.uid]);
+  }, [user]);
 
   useEffect(() => {
     let active = true;
@@ -83,7 +83,7 @@ export function useAppAuthBootstrap(setView) {
     return () => {
       active = false;
     };
-  }, [user?.uid]);
+  }, [user]);
 
   return {
     user,

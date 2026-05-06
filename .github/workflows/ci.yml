@@ -28,6 +28,9 @@ jobs:
       - name: Unit tests (Vitest)
         run: npm run test
 
+      - name: Question bank validation
+        run: npm run validate:questions
+
       - name: Production build
         run: npm run build
 

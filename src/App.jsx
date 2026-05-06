@@ -1,6 +1,6 @@
-import React, { useMemo, useState, useEffect, useRef } from "react";
+import React, { Suspense, lazy, useMemo, useState, useEffect, useRef } from "react";
 import './index.css';
-import { auth, db, loginWithGoogle, logout } from "./firebase";
+import { auth, db, initAnalytics, loginWithGoogle, logout } from "./firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 // Veri ve Yardımcı Araçlar
@@ -26,23 +26,8 @@ import {
 } from "./services/studyCollectionService";
 
 // Bileşenler (Screens)
-import Dashboard from "./components/Dashboard";
-import Suggestions from "./components/Suggestions";
-import Summary from "./components/Summary";
-import ExamScreen from "./components/ExamScreen";
-import ExamAnalysisScreen from "./components/ExamAnalysisScreen";
-import StudyScreen from "./components/StudyScreen";
-import StudyCollectionScreen from "./components/StudyCollectionScreen";
-import ReviewSummaryScreen from "./components/ReviewSummaryScreen";
-import QuestionSetupScreen from "./components/QuestionSetupScreen";
-import ExamSetSelectScreen from "./components/ExamSetSelectScreen";
-import TopicTracker from "./components/TopicTracker";
 import MobileBottomNav from "./components/MobileBottomNav";
 import IOSInstallBanner from "./components/IOSInstallBanner";
-import AdminPanel from "./components/admin/AdminPanel";
-import LimitReachedModal from "./components/premium/LimitReachedModal";
-import PremiumInfoScreen from "./components/premium/PremiumInfoScreen";
-import LegalPage from "./components/legal/LegalPage";
 import { LEGAL_PAGES } from "./content/legalPages";
 import { FREE_LIMITS } from "./config/limits";
 import { isUserPremium } from "./utils/premiumUtils";
@@ -62,6 +47,21 @@ import { SUBJECTS as SUBJECT_CATALOG } from "./data/subjects";
 import { SUBJECT_QUESTION_COUNTS } from "./data/questions";
 import { applyQuestionTextFilter } from "./utils/questionTextFilter";
 
+const Dashboard = lazy(() => import("./components/Dashboard"));
+const Suggestions = lazy(() => import("./components/Suggestions"));
+const Summary = lazy(() => import("./components/Summary"));
+const ExamScreen = lazy(() => import("./components/ExamScreen"));
+const ExamAnalysisScreen = lazy(() => import("./components/ExamAnalysisScreen"));
+const StudyScreen = lazy(() => import("./components/StudyScreen"));
+const StudyCollectionScreen = lazy(() => import("./components/StudyCollectionScreen"));
+const ReviewSummaryScreen = lazy(() => import("./components/ReviewSummaryScreen"));
+const QuestionSetupScreen = lazy(() => import("./components/QuestionSetupScreen"));
+const ExamSetSelectScreen = lazy(() => import("./components/ExamSetSelectScreen"));
+const TopicTracker = lazy(() => import("./components/TopicTracker"));
+const AdminPanel = lazy(() => import("./components/admin/AdminPanel"));
+const PremiumInfoScreen = lazy(() => import("./components/premium/PremiumInfoScreen"));
+const LimitReachedModal = lazy(() => import("./components/premium/LimitReachedModal"));
+const LegalPage = lazy(() => import("./components/legal/LegalPage"));
 // TUS Deneme Dağılımı (Blueprint)
 const FULL_EXAM_BLUEPRINT = {
   Anatomi: 13, Fizyoloji: 15, Biyokimya: 18, Mikrobiyoloji: 18, 
@@ -97,6 +97,17 @@ const normalizeAnswerValue = (value) => {
   return Number.isFinite(parsed) ? parsed : null;
 };
 
+function RouteFallback() {
+  return (
+    <div className="min-h-dvh bg-slate-950 text-white flex items-center justify-center px-6">
+      <div className="rounded-3xl border border-slate-800 bg-slate-900/70 px-6 py-5 text-center shadow-2xl">
+        <div className="mx-auto mb-3 h-9 w-9 rounded-full border-2 border-slate-700 border-t-emerald-400 animate-spin" />
+        <p className="text-sm font-bold text-slate-300">Yükleniyor...</p>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const {
     questions,
@@ -108,6 +119,16 @@ export default function App() {
 
   // iOS tespiti — ilk render'da hesapla, değişmez
   const [iosDevice] = useState(() => isIOS());
+
+  useEffect(() => {
+    const startAnalytics = () => initAnalytics();
+    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+      const id = window.requestIdleCallback(startAnalytics, { timeout: 3000 });
+      return () => window.cancelIdleCallback?.(id);
+    }
+    const id = setTimeout(startAnalytics, 1200);
+    return () => clearTimeout(id);
+  }, []);
 
   // --- 1. KULLANICI VE NAVİGASYON ---
   const [view, setView] = useState("dashboard");
@@ -1230,7 +1251,9 @@ export default function App() {
 
   return (
     <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
-      {screenContent}
+      <Suspense fallback={<RouteFallback />}>
+        {screenContent}
+      </Suspense>
       {questionActionLoading.active && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/70 backdrop-blur-sm px-6">
           <div className="rounded-3xl border border-slate-700 bg-slate-900/90 px-6 py-5 text-center shadow-2xl">
@@ -1246,23 +1269,27 @@ export default function App() {
           </div>
         </div>
       )}
-      <LimitReachedModal
-        open={limitModal.open}
-        title={limitModal.title}
-        description={limitModal.description}
-        remainingInfo={limitModal.remainingInfo}
-        ctaLabel={limitModal.ctaLabel || "Plus'ı İncele"}
-        secondaryLabel={limitModal.secondaryLabel || "Şimdilik Vazgeç"}
-        premiumMessage={limitModal.premiumMessage || "Aylık bir kahve ücretine Plus üyelik almak ister misiniz?"}
-        premiumDescription={limitModal.premiumDescription || "Plus ile soru çözme sınırları kalkar; denemeler, tekrarlar ve gelişmiş analizler tamamen açılır."}
-        user={user}
-        limitReason={limitModal.limitReason || ""}
-        onClose={() => setLimitModal((prev) => ({ ...prev, open: false }))}
-        onUpgradeClick={() => {
-          setLimitModal((prev) => ({ ...prev, open: false }));
-          setView("premiumInfo");
-        }}
-      />
+      {limitModal.open && (
+        <Suspense fallback={null}>
+          <LimitReachedModal
+            open={limitModal.open}
+            title={limitModal.title}
+            description={limitModal.description}
+            remainingInfo={limitModal.remainingInfo}
+            ctaLabel={limitModal.ctaLabel || "Plus'ı İncele"}
+            secondaryLabel={limitModal.secondaryLabel || "Şimdilik Vazgeç"}
+            premiumMessage={limitModal.premiumMessage || "Aylık bir kahve ücretine Plus üyelik almak ister misiniz?"}
+            premiumDescription={limitModal.premiumDescription || "Plus ile soru çözme sınırları kalkar; denemeler, tekrarlar ve gelişmiş analizler tamamen açılır."}
+            user={user}
+            limitReason={limitModal.limitReason || ""}
+            onClose={() => setLimitModal((prev) => ({ ...prev, open: false }))}
+            onUpgradeClick={() => {
+              setLimitModal((prev) => ({ ...prev, open: false }));
+              setView("premiumInfo");
+            }}
+          />
+        </Suspense>
+      )}
       {showBottomNav && (
         <MobileBottomNav currentView={view} setView={guardedSetView} accentTheme={accentTheme} />
       )}

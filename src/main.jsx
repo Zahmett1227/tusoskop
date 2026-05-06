@@ -1,3 +1,6 @@
+if (typeof window !== 'undefined' && window.location.hostname === '127.0.0.1') {
+  window.location.replace(`http://localhost:${window.location.port}${window.location.pathname}${window.location.search}${window.location.hash}`)
+}
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
@@ -6,9 +9,6 @@ import ErrorBoundary from './components/ErrorBoundary.jsx'
 import { QuestionsProvider } from './context/QuestionsContext.jsx'
 import { initClarity } from './lib/clarity'
 import { registerServiceWorker } from './registerServiceWorker'
-
-initClarity()
-registerServiceWorker()
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -19,3 +19,15 @@ createRoot(document.getElementById('root')).render(
     </ErrorBoundary>
   </React.StrictMode>
 )
+
+const runAfterFirstPaint = (task) => {
+  if (typeof window === 'undefined') return
+  window.requestAnimationFrame(() => {
+    window.setTimeout(task, 0)
+  })
+}
+
+runAfterFirstPaint(() => {
+  initClarity()
+  registerServiceWorker()
+})

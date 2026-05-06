@@ -3,11 +3,11 @@ import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
+  signInWithRedirect,
   signOut
 } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getFunctions } from "firebase/functions";
-import { getAnalytics, logEvent } from "firebase/analytics";
 import { trackClarityEvent } from "./lib/clarity";
 
 const firebaseConfig = {
@@ -33,7 +33,29 @@ export const loginWithGoogle = async () => {
   } catch (error) {
     trackClarityEvent("login_hatasi");
     console.error("Google giriş hatası:", error);
-    alert("Google giriş hatası: " + error.message);
+
+    const code = error?.code || "";
+    if (code === "auth/unauthorized-domain") {
+      alert("Google giriş hatası: Bu adres Firebase Auth için yetkili değil. Yerelde localhost adresine yönlendiriliyorsunuz; sayfa yenilenince tekrar deneyin.");
+      if (typeof window !== "undefined" && window.location.hostname === "127.0.0.1") {
+        window.location.replace(`http://localhost:${window.location.port}${window.location.pathname}${window.location.search}${window.location.hash}`);
+      }
+      return null;
+    }
+
+    const shouldRedirect = [
+      "auth/popup-blocked",
+      "auth/cancelled-popup-request",
+      "auth/operation-not-supported-in-this-environment",
+    ].includes(code);
+
+    if (shouldRedirect) {
+      await signInWithRedirect(auth, googleProvider);
+      return null;
+    }
+
+    alert("Google giriş hatası: " + (error?.message || "Bilinmeyen hata"));
+    return null;
   }
 };
 
@@ -42,5 +64,16 @@ export const logout = () => signOut(auth);
 export const db = getFirestore(app);
 export const functions = getFunctions(app);
 
-export const analytics = getAnalytics(app);
-logEvent(analytics, 'page_view');
+
+export async function initAnalytics() {
+  if (typeof window === "undefined") return null;
+  try {
+    const { getAnalytics, logEvent } = await import("firebase/analytics");
+    const analytics = getAnalytics(app);
+    logEvent(analytics, "page_view");
+    return analytics;
+  } catch (error) {
+    console.warn("Analytics init failed:", error);
+    return null;
+  }
+}

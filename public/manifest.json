@@ -28,6 +28,9 @@
       "purpose": "maskable"
     }
   ],
-  "categories": ["education", "medical"],
+  "categories": [
+    "education",
+    "medical"
+  ],
   "screenshots": []
 }

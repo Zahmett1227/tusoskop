@@ -118,7 +118,7 @@ export default function Dashboard({
     return () => {
       active = false;
     };
-  }, [user?.uid, currentView, userData, QUESTIONS]);
+  }, [user, currentView, userData, QUESTIONS]);
 
   const adjustTarget = (amount) => {
     setTempTarget(prev => {
