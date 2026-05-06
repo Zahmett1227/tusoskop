@@ -4,6 +4,7 @@ const chunkLoaders = import.meta.glob("./questionChunks/*.js", { eager: false })
 
 /** @type {typeof manifest.subjects} */
 export const SUBJECTS = [...new Set(manifest.subjects)];
+export const SUBJECT_QUESTION_COUNTS = { ...(manifest.subjectCounts || {}) };
 
 const allLoaders = Object.entries(chunkLoaders).filter(
   ([path]) => !path.includes("_manifest")

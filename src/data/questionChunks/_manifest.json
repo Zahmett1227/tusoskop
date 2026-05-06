@@ -24,5 +24,18 @@
     "biyokimya": "Biyokimya",
     "genel_cerrahi": "Genel Cerrahi",
     "anatomi": "Anatomi"
+  },
+  "subjectCounts": {
+    "Anatomi": 280,
+    "Biyokimya": 200,
+    "Dahiliye": 518,
+    "Farmakoloji": 374,
+    "Fizyoloji": 308,
+    "Genel Cerrahi": 280,
+    "Kadın Hastalıkları ve Doğum": 270,
+    "Küçük Stajlar": 400,
+    "Mikrobiyoloji": 270,
+    "Patoloji": 413,
+    "Pediatri": 566
   }
 }

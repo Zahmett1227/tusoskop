@@ -59,6 +59,8 @@ import {
   limitModalFromUsageError,
 } from "./services/usageLimitService";
 import { SUBJECTS as SUBJECT_CATALOG } from "./data/subjects";
+import { SUBJECT_QUESTION_COUNTS } from "./data/questions";
+import { applyQuestionTextFilter } from "./utils/questionTextFilter";
 
 // TUS Deneme Dağılımı (Blueprint)
 const FULL_EXAM_BLUEPRINT = {
@@ -236,7 +238,7 @@ export default function App() {
     : [];
 
   const subjectCountsByLoadedQuestions = useMemo(() => {
-    const counts = {};
+    const counts = { ...SUBJECT_QUESTION_COUNTS };
     for (const item of QUESTIONS) {
       if (!item?.ders) continue;
       counts[item.ders] = (counts[item.ders] || 0) + 1;
@@ -281,6 +283,11 @@ export default function App() {
 
   const ensureAllQuestionsLoaded = async (message = "Soru bankası hazırlanıyor…") =>
     withQuestionLoading(message, () => ensureAllQuestions());
+
+  const toDisplayQuestions = (list) => {
+    const safeList = Array.isArray(list) ? list : [];
+    return safeList.map((q) => applyQuestionTextFilter(q));
+  };
 
   const openSubjectTopicPlusGate = () => {
     trackClarityEvent("subject_topic_plus_gate_shown");
@@ -393,7 +400,7 @@ export default function App() {
       setCurrentSubject("Çalışma Alanım Tekrarı");
       setActiveTopicSubject("Çalışma Alanım");
       setActiveTopicName(source);
-      setActiveQuestions(safeList);
+      setActiveQuestions(toDisplayQuestions(safeList));
       setView("study");
       setClarityTag("son_mod", "review");
       trackClarityEvent("bugunku_tekrar_baslatildi");
@@ -410,7 +417,7 @@ export default function App() {
       resetStudyState();
       setStudyMode("study");
       setCurrentSubject(subjectName);
-      setActiveQuestions(filtered);
+      setActiveQuestions(toDisplayQuestions(filtered));
       setView("study");
     })();
   };
@@ -449,7 +456,7 @@ export default function App() {
     setActiveTopicSubject(selectedLesson);
     setActiveTopicName(selectedTopic);
     setCurrentSubject(`${selectedLesson} / ${selectedTopic}`);
-    setActiveQuestions(filtered);
+    setActiveQuestions(toDisplayQuestions(filtered));
     setView("study");
   };
 
@@ -474,7 +481,7 @@ export default function App() {
 
     const totalQuestions = activeSet?.questionCount || 200;
     const scaledBlueprint = scaleBlueprintToTotal(FULL_EXAM_BLUEPRINT, totalQuestions);
-    const exam = buildFullExam(allQuestions, scaledBlueprint);
+    const exam = toDisplayQuestions(buildFullExam(allQuestions, scaledBlueprint));
     if (!exam.length) return;
     try {
       await incrementFullExamUsage(user, userData);
