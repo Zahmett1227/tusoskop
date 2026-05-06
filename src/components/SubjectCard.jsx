@@ -1,8 +1,10 @@
 import React from "react";
 import { accentThemes } from "../theme/accentThemes";
+import { getSubjectVisual } from "../theme/subjectVisual";
 
 const SubjectCard = ({ subject, count, onClick, accentTheme, isLightTheme = false }) => {
   const theme = accentTheme || accentThemes.emerald;
+  const subjectVisual = getSubjectVisual(subject?.name);
   const hoverBorderClass = {
     Emerald: "hover:border-emerald-400/40",
     Cyan: "hover:border-cyan-400/40",
@@ -16,13 +18,6 @@ const SubjectCard = ({ subject, count, onClick, accentTheme, isLightTheme = fals
     Violet: "hover:shadow-[0_0_40px_rgba(168,85,247,0.15)]",
     Amber: "hover:shadow-[0_0_40px_rgba(251,191,36,0.15)]",
   }[theme.name] || "hover:shadow-[0_0_40px_rgba(16,185,129,0.15)]";
-
-  const dotClass = {
-    Emerald: "bg-emerald-400",
-    Cyan: "bg-cyan-400",
-    Violet: "bg-violet-400",
-    Amber: "bg-amber-300",
-  }[theme.name] || "bg-emerald-400";
 
   const radialClass = {
     Emerald: "bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.15),transparent_60%)]",
@@ -44,6 +39,7 @@ const SubjectCard = ({ subject, count, onClick, accentTheme, isLightTheme = fals
       className={`
         group relative w-full h-full overflow-hidden
         rounded-3xl border
+        ${subjectVisual.border}
         ${isLightTheme ? "border-slate-300 shadow-md bg-gradient-to-br from-[#fffefb] via-[#faf8f4] to-[#ebe8e3]" : "border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900/80 to-slate-950"}
         p-6 text-left
         transition-all duration-300
@@ -62,7 +58,7 @@ const SubjectCard = ({ subject, count, onClick, accentTheme, isLightTheme = fals
         {/* ÜST */}
         <div>
           <div className={`mb-3 inline-flex items-center gap-2 rounded-xl px-3 py-1 text-xs font-bold ${theme.text} backdrop-blur ${isLightTheme ? "bg-slate-100" : "bg-slate-800/80"}`}>
-            <span className={`w-2 h-2 rounded-full ${dotClass} animate-pulse`} />
+            <span className={`w-2 h-2 rounded-full ${subjectVisual.dot} shrink-0`} />
             {subject.type}
           </div>
 

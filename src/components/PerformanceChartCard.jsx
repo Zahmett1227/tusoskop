@@ -238,7 +238,7 @@ export default function PerformanceChartCard({
   }, [sortedExamHistory, myTarget, accentThemeKey, isSmallScreen, premium]);
 
   return (
-    <div className="bg-slate-900/50 border border-slate-800 rounded-[3rem] p-6 md:p-8 relative overflow-hidden min-w-0">
+    <div className="app-card relative min-w-0 overflow-hidden md:p-8">
       <div className="relative z-10 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-6 min-w-0">
         <div className="min-w-0">
           <h3 className="text-lg md:text-xl font-black text-white tracking-tight mb-1">Deneme Performansı</h3>

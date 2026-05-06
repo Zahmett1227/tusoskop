@@ -19,6 +19,7 @@ import { setClarityTag, trackClarityEvent } from "../lib/clarity";
 import DashboardMembershipHero from "./DashboardMembershipHero";
 import { getMailtoFeedback, getMailtoPaymentIssue } from "../config/support";
 import Footer from "./layout/Footer";
+import { getStreak } from "../services/streakService";
 
 export default function Dashboard({
   setView,
@@ -46,9 +47,7 @@ export default function Dashboard({
     (isLightTheme
       ? "min-h-dvh bg-[#faf8f4] text-slate-950"
       : "min-h-dvh bg-slate-950 text-white");
-  const cardBaseClasses = isLightTheme
-    ? "bg-[#fffefb] border border-slate-300 shadow-md"
-    : "bg-slate-900/40 border border-slate-800";
+  const appCardShell = isLightTheme ? "app-card app-card--light" : "app-card";
   const premiumActive = isUserPremium(userData);
   const freeQuestionUsed = Math.max(0, 30 - (remainingUsage?.questionRemaining ?? 30));
   const freeExamUsed = Math.max(0, 1 - (remainingUsage?.fullExamRemaining ?? 1));
@@ -61,6 +60,7 @@ export default function Dashboard({
     favoriteCount: 0,
     reviewQueueCount: 0,
   });
+  const [planStreak, setPlanStreak] = useState(0);
   const subjectCounts = useMemo(() => {
     const counts = {};
     (QUESTIONS || []).forEach((item) => {
@@ -92,9 +92,10 @@ export default function Dashboard({
     let active = true;
     const loadStudySummary = async () => {
       try {
-        const [summary, queue] = await Promise.all([
+        const [summary, queue, streakSnap] = await Promise.all([
           getStudyCollectionSummary(user, userData),
           buildTodayReviewQueue(user, QUESTIONS || [], userData),
+          user?.uid ? getStreak(user.uid) : Promise.resolve({ currentStreak: 0 }),
         ]);
         if (!active) return;
         setStudySummary({
@@ -102,9 +103,11 @@ export default function Dashboard({
           favoriteCount: summary?.favoriteCount || 0,
           reviewQueueCount: queue.length,
         });
+        setPlanStreak(streakSnap?.currentStreak ?? 0);
       } catch {
         if (!active) return;
         setStudySummary({ wrongCount: 0, favoriteCount: 0, reviewQueueCount: 0 });
+        setPlanStreak(0);
       }
     };
     loadStudySummary();
@@ -232,6 +235,78 @@ export default function Dashboard({
           })}
         </div>
 
+        {/* Bugünün planı — tek birincil CTA */}
+        <section
+          className={`${appCardShell} mb-6 md:mb-8`}
+          aria-labelledby="today-plan-heading"
+        >
+          <h2
+            id="today-plan-heading"
+            className={`app-card-title ${isLightTheme ? "!text-slate-600" : ""}`}
+          >
+            Bugünün planı
+          </h2>
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div className="grid grid-cols-3 gap-3 text-center sm:grid-cols-3 sm:text-left lg:flex lg:gap-10 lg:text-left">
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-wider text-slate-500">
+                  Seri
+                </p>
+                <p
+                  className={`mt-1 text-2xl font-black tabular-nums ${isLightTheme ? "text-slate-900" : "text-white"}`}
+                >
+                  {planStreak}
+                </p>
+                <p className="text-[10px] text-slate-500">gün</p>
+              </div>
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-wider text-slate-500">
+                  Hedef net
+                </p>
+                <p
+                  className={`mt-1 text-2xl font-black tabular-nums ${isLightTheme ? "text-slate-900" : "text-white"}`}
+                >
+                  {myTarget.toFixed(2)}
+                </p>
+                <p className="text-[10px] text-slate-500">kişisel</p>
+              </div>
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-wider text-slate-500">
+                  Tekrar kuyruğu
+                </p>
+                <p className={`mt-1 text-2xl font-black tabular-nums ${theme.text}`}>
+                  {studySummary.reviewQueueCount || 0}
+                </p>
+                <p className="text-[10px] text-slate-500">soru</p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center lg:justify-end">
+              <button
+                type="button"
+                onClick={() => {
+                  trackClarityEvent("today_plan_primary_cta");
+                  setView("studyCollection");
+                }}
+                className={`inline-flex min-h-12 w-full items-center justify-center rounded-2xl px-6 text-sm font-black transition-all active:scale-[0.98] sm:w-auto ${theme.primary} ${theme.primaryHover} text-slate-950 shadow-lg ${theme.glow}`}
+              >
+                {studySummary.reviewQueueCount > 0
+                  ? `Bugünkü tekrara başla (${studySummary.reviewQueueCount})`
+                  : "Çalışma alanını aç"}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  trackClarityEvent("today_plan_secondary_exam");
+                  setView("examSetSelect");
+                }}
+                className={`inline-flex min-h-12 w-full items-center justify-center rounded-2xl border px-5 text-sm font-bold transition-all active:scale-[0.98] sm:w-auto ${isLightTheme ? "border-slate-300 bg-white text-slate-800 hover:bg-slate-50" : "border-slate-700 bg-slate-950/50 text-slate-200 hover:bg-slate-900"}`}
+              >
+                TUS denemesi seç
+              </button>
+            </div>
+          </div>
+        </section>
+
         <DashboardMembershipHero
           isLightTheme={isLightTheme}
           premiumActive={premiumActive}
@@ -249,7 +324,7 @@ export default function Dashboard({
           <StreakBadge userId={user?.uid} isLightTheme={isLightTheme} />
 
           {/* Hedef Paneli */}
-          <div className={`${cardBaseClasses} rounded-[2.5rem] p-6 flex flex-col justify-center`}>
+          <div className={`${appCardShell} flex flex-col justify-center`}>
             {isEditingTarget ? (
               <div>
                 <div className="flex items-center justify-between mb-4">

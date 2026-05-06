@@ -119,26 +119,26 @@ export default function TopicTracker({ onBack }) {
 
         {/* İSTATİSTİK KARTLARI */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          <div className="rounded-[1.75rem] border border-slate-800 bg-slate-900 p-5">
-            <p className="text-slate-400 text-sm">Filtrelenen konu sayısı</p>
-            <p className="text-3xl font-black mt-2">{filteredTopics.length}</p>
+          <div className="app-card">
+            <p className="app-card-title !mb-1 !text-slate-500">Filtrelenen konu sayısı</p>
+            <p className="text-3xl font-black mt-1 text-white">{filteredTopics.length}</p>
           </div>
 
-          <div className="rounded-[1.75rem] border border-slate-800 bg-slate-900 p-5">
-            <p className="text-slate-400 text-sm">Tamamlanan kutucuk</p>
-            <p className="text-3xl font-black mt-2">
+          <div className="app-card">
+            <p className="app-card-title !mb-1 !text-slate-500">Tamamlanan kutucuk</p>
+            <p className="text-3xl font-black mt-1 text-white">
               {completedCells} / {totalCells}
             </p>
           </div>
 
-          <div className="rounded-[1.75rem] border border-emerald-500/20 bg-slate-900 p-5">
-            <p className="text-slate-400 text-sm">İlerleme</p>
-            <p className="text-3xl font-black mt-2 text-emerald-400">%{percent}</p>
+          <div className="app-card border-emerald-500/25">
+            <p className="app-card-title !mb-1 !text-slate-500">İlerleme</p>
+            <p className="text-3xl font-black mt-1 text-emerald-400">%{percent}</p>
           </div>
         </div>
 
         {/* FİLTRELER */}
-        <div className="rounded-[1.75rem] border border-slate-800 bg-slate-900 p-4 md:p-5 mb-6">
+        <div className="app-card mb-6 !p-4 md:!p-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm text-slate-400 mb-2">Ders filtresi</label>

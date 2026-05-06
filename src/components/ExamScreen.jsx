@@ -4,6 +4,7 @@ import { db, auth } from "../firebase";
 import { collection, addDoc, serverTimestamp, doc, getDoc } from "firebase/firestore";
 import { updateStreak } from "../services/streakService";
 import { accentThemes } from "../theme/accentThemes";
+import { getSubjectVisual } from "../theme/subjectVisual";
 import { getSelectedAnswerIndex } from "../utils/examUtils";
 import {
   appendLocalExamHistory,
@@ -215,7 +216,7 @@ export default function ExamScreen({
   handleExamSelectForQuestion,
   handleExamBlank,
   handleExamNext,
-  handleExamPrev,
+  handleExamPrev = () => {},
   getExamAnswersSnapshot,
   goDashboard,
   userId,
@@ -223,6 +224,11 @@ export default function ExamScreen({
   accentTheme,
 }) {
   const theme = accentTheme || accentThemes.emerald;
+  const subjectVisual = examQ ? getSubjectVisual(examQ.ders) : getSubjectVisual("");
+  const examProgressPct = Math.min(
+    100,
+    ((examIndex + 1) / Math.max(1, examQuestions?.length || 1)) * 100
+  );
   const [isOpticalOpen, setIsOpticalOpen] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
@@ -541,87 +547,147 @@ export default function ExamScreen({
         {...examSwipe}
       >
         <div
-          className="sticky top-0 z-50 bg-slate-950/95 sticky-bar-blur border-b border-slate-800/80 px-4 md:px-12 py-2.5"
+          className="sticky top-0 z-50 bg-slate-950/95 sticky-bar-blur border-b border-slate-800/80 px-3 md:px-8 py-2.5"
           style={{ paddingTop: "calc(env(safe-area-inset-top) + 0.5rem)" }}
         >
-          <div className="max-w-4xl mx-auto w-full flex items-center">
+          <div className="max-w-4xl mx-auto w-full flex items-center gap-3">
             <button
+              type="button"
               onClick={goDashboard}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-rose-500/10 text-rose-300 hover:bg-rose-500/20 active:scale-95 transition-all text-sm font-bold"
+              aria-label="Panele dön ve sınavdan çık"
+              className="shrink-0 flex h-11 w-11 items-center justify-center rounded-xl border border-rose-500/25 bg-rose-500/10 text-rose-200 hover:bg-rose-500/20 active:scale-95 transition-all text-lg font-bold"
             >
-              <span aria-hidden="true">←</span>
-              <span>Sınavdan Çık</span>
+              ←
             </button>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center justify-between gap-2 text-[11px] font-bold uppercase tracking-wide text-slate-400 mb-1.5">
+                <span className="tabular-nums text-slate-200">
+                  Soru {examIndex + 1} / {examQuestions.length}
+                </span>
+                <span className="flex min-w-0 items-center gap-1.5 truncate">
+                  <span
+                    className={`h-2 w-2 shrink-0 rounded-full ${subjectVisual.dot}`}
+                    aria-hidden
+                  />
+                  <span className="truncate text-slate-300 normal-case tracking-normal">
+                    {examQ.ders}
+                  </span>
+                </span>
+              </div>
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-800">
+                <div
+                  className={`h-full rounded-full transition-[width] duration-300 ease-out ${theme.primary}`}
+                  style={{ width: `${examProgressPct}%` }}
+                />
+              </div>
+            </div>
           </div>
         </div>
 
         <div className="px-4 md:px-6 py-5 md:py-10 pb-8 md:pb-10">
           <div className="max-w-4xl mx-auto w-full space-y-6 md:space-y-8">
           {/* Soru Kartı */}
-          <div className={`max-w-4xl mx-auto w-full rounded-3xl border ${theme.border} bg-gradient-to-br from-slate-950/95 via-slate-900/95 to-slate-950/95 backdrop-blur-xl p-5 md:p-8 shadow-2xl ${theme.glow}`}>
-            <div className="flex items-center justify-between mb-5">
-              <span className="px-4 py-2 rounded-full bg-slate-800/80 text-slate-300 text-xs font-black uppercase tracking-widest">
+          <div
+            className={`max-w-4xl mx-auto w-full rounded-3xl border ${theme.border} ${subjectVisual.border} bg-gradient-to-br from-slate-950/95 via-slate-900/95 to-slate-950/95 backdrop-blur-xl p-5 md:p-8 shadow-2xl ${theme.glow}`}
+          >
+            <div className="flex items-center justify-between gap-3 mb-5">
+              <span className="px-4 py-2 rounded-full bg-slate-800/80 text-slate-300 text-xs font-black uppercase tracking-widest tabular-nums">
                 SORU {examIndex + 1}
               </span>
-              <span className={`${theme.text} text-xs md:text-sm font-bold uppercase tracking-widest`}>{examQ.ders}</span>
+              <span
+                className={`flex max-w-[65%] items-center gap-2 truncate ${theme.text} text-xs md:text-sm font-bold uppercase tracking-widest`}
+              >
+                <span
+                  className={`h-2 w-2 shrink-0 rounded-full ${subjectVisual.dot}`}
+                  aria-hidden
+                />
+                <span className="truncate">{examQ.ders}</span>
+              </span>
             </div>
-            <div className="text-xs md:text-sm text-slate-400 mb-4">
+            <div className="text-xs md:text-sm text-slate-400 mb-4 leading-relaxed">
               {examQ.konu || "Konu"}
             </div>
-            <div className="max-w-prose">
-              <h2 className="font-['Plus_Jakarta_Sans'] mobile-reading-stem tracking-tight font-bold text-slate-50 break-words whitespace-pre-wrap [overflow-wrap:anywhere]">
+            <div className="mx-auto max-w-prose">
+              <h2 className="exam-question-body mobile-reading-stem leading-relaxed text-slate-50 break-words whitespace-pre-wrap [overflow-wrap:anywhere]">
                 {examQ.q}
               </h2>
             </div>
           </div>
 
           {/* Şıklar */}
-          <div className="space-y-3.5" style={{ paddingBottom: "calc(8rem + env(safe-area-inset-bottom))" }}>
+          <div
+            className="space-y-3"
+            style={{ paddingBottom: "calc(9.5rem + env(safe-area-inset-bottom))" }}
+          >
             {examQ.options.map((opt, i) => (
               <button
                 key={i}
+                type="button"
+                aria-pressed={examSelected === i}
                 onClick={() => handleExamSelect(i)}
-                className={`w-full text-left rounded-2xl border p-4 md:p-5 flex items-start gap-3 md:gap-4 transition-all duration-200 shadow-sm group min-h-[3.25rem] ${
+                className={`group flex min-h-[52px] w-full items-start gap-3 rounded-2xl border p-4 md:gap-4 md:p-5 text-left shadow-sm transition-[transform,box-shadow,background-color,border-color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617] ${theme.ring} ${
                   examSelected === i
                     ? `${theme.border} ${theme.softBg} shadow-lg ${theme.glow}`
                     : "border-slate-700 bg-slate-900/70 hover:bg-slate-800/80 hover:border-slate-500"
                 }`}
               >
-                <span className={`flex h-9 w-9 md:h-8 md:w-8 shrink-0 items-center justify-center rounded-full text-[11px] md:text-xs font-black mt-0.5 ${
-                  examSelected === i
-                    ? `${theme.primary} text-slate-950`
-                    : "bg-slate-800 text-slate-500 group-hover:bg-slate-700"
-                }`}>
+                <span
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-xs font-black mt-0.5 ${
+                    examSelected === i
+                      ? `${theme.primary} text-slate-950`
+                      : "bg-slate-800 text-slate-500 group-hover:bg-slate-700"
+                  }`}
+                >
                   {LETTERS[i]}
                 </span>
-                <span className="flex-1 text-base leading-[1.62] md:text-base md:leading-normal text-slate-200">{opt}</span>
+                <span className="flex-1 pt-0.5 text-base leading-relaxed text-slate-200 md:text-[1.05rem] md:leading-relaxed">
+                  {opt}
+                </span>
               </button>
             ))}
           </div>
 
-          {/* Alt Kontrol Paneli */}
+          {/* Alt kontrol — zen: Önceki | Boş | Sonraki */}
           <div
-            className="fixed bottom-0 left-0 right-0 lg:static lg:p-0
-                       bg-slate-950/90 sticky-bar-blur lg:bg-transparent lg:backdrop-blur-none
-                       border-t border-slate-800 lg:border-none
-                       grid grid-cols-2 gap-4
-                       px-4 pt-4 lg:pt-0"
+            className="fixed bottom-0 left-0 right-0 z-40 grid grid-cols-3 gap-2 border-t border-slate-800 bg-slate-950/95 px-3 pt-3 sticky-bar-blur lg:static lg:z-auto lg:border-t-0 lg:bg-transparent lg:px-0 lg:pt-0 lg:backdrop-blur-none"
             style={{ paddingBottom: "calc(1rem + env(safe-area-inset-bottom))" }}
           >
             <button
-              onClick={() => handleExamBlank()}
-              className="rounded-2xl px-6 py-4 lg:py-5 font-bold bg-slate-900/70 border border-slate-700 hover:bg-slate-800 transition-all active:scale-[0.98]"
-            >
-              Boş Bırak
-            </button>
-            <button
-              onClick={examIndex < examQuestions.length - 1 ? () => handleExamNext() : () => handleFinish()}
-              disabled={isSaving}
-              className={`px-6 py-4 lg:py-5 rounded-2xl font-black shadow-lg transition-all ${
-                isSaving ? "bg-slate-700 text-slate-500" : `rounded-2xl px-6 py-4 lg:py-5 font-bold bg-gradient-to-r ${theme.gradient} text-slate-950 shadow-lg ${theme.glow} active:scale-[0.98] transition-all`
+              type="button"
+              onClick={() => handleExamPrev()}
+              disabled={examIndex <= 0}
+              className={`min-h-[52px] rounded-2xl border px-2 py-3 text-sm font-bold transition-all active:scale-[0.98] ${
+                examIndex <= 0
+                  ? "cursor-not-allowed border-slate-800 bg-slate-900/40 text-slate-600"
+                  : "border-slate-700 bg-slate-900/70 text-slate-200 hover:bg-slate-800"
               }`}
             >
-              {isSaving ? "Kaydediliyor..." : examIndex < examQuestions.length - 1 ? "Sonraki Soru" : "Sınavı Bitir"}
+              Önceki
+            </button>
+            <button
+              type="button"
+              onClick={() => handleExamBlank()}
+              className="min-h-[52px] rounded-2xl border border-slate-700 bg-slate-900/70 px-2 py-3 text-sm font-bold text-slate-200 hover:bg-slate-800 transition-all active:scale-[0.98]"
+            >
+              Boş
+            </button>
+            <button
+              type="button"
+              onClick={
+                examIndex < examQuestions.length - 1 ? () => handleExamNext() : () => handleFinish()
+              }
+              disabled={isSaving}
+              className={`min-h-[52px] rounded-2xl px-2 py-3 text-sm font-black shadow-lg transition-all active:scale-[0.98] ${
+                isSaving
+                  ? "bg-slate-700 text-slate-500"
+                  : `bg-gradient-to-r ${theme.gradient} text-slate-950 ${theme.glow}`
+              }`}
+            >
+              {isSaving
+                ? "…"
+                : examIndex < examQuestions.length - 1
+                  ? "Sonraki"
+                  : "Bitir"}
             </button>
           </div>
         </div>
@@ -706,7 +772,7 @@ export default function ExamScreen({
       <button
         onClick={() => setIsOpticalOpen(true)}
         className={`lg:hidden fixed right-5 w-14 h-14 rounded-full ${theme.primary} text-slate-950 shadow-2xl ${theme.glow} flex items-center justify-center z-40 active:scale-90`}
-        style={{ bottom: "calc(5rem + env(safe-area-inset-bottom))" }}
+        style={{ bottom: "calc(6.75rem + env(safe-area-inset-bottom))" }}
       >
         <span className="text-[10px] font-black leading-tight text-center">OPTİK</span>
       </button>

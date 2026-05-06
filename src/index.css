@@ -153,6 +153,38 @@ button:active {
       line-height: 1.58;
     }
   }
+
+  /* Soru kökü — uzun metin okuması için nötr gövde fontu + rahat satır */
+  .exam-question-body {
+    font-family:
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    text-wrap: pretty;
+  }
+}
+
+/* ─── Ortak kart yüzeyi (dashboard / grafik / takip) ─────────────────────── */
+@layer components {
+  .app-card {
+    @apply rounded-2xl border border-slate-800 bg-slate-900/40 p-5 md:p-6;
+  }
+
+  .app-card--light {
+    @apply rounded-2xl border border-slate-300 bg-[#fffefb] shadow-md;
+  }
+
+  .app-card-title {
+    @apply text-[10px] font-black uppercase tracking-[0.28em] text-slate-500 mb-2;
+  }
+
 }
 
 @keyframes popCorrect {

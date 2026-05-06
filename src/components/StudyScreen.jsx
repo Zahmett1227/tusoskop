@@ -1,5 +1,6 @@
 import { usePrefersReducedMotion, useSwipeHandlers } from "../hooks/useSwipeHandlers";
 import { accentThemes } from "../theme/accentThemes";
+import { getSubjectVisual } from "../theme/subjectVisual";
 
 export default function StudyScreen({
   q,
@@ -27,6 +28,7 @@ export default function StudyScreen({
   favoriteFeedback,
 }) {
   const theme = accentTheme || accentThemes.emerald;
+  const subjectVisual = getSubjectVisual(q?.ders);
   const reducedMotion = usePrefersReducedMotion();
   const swipeStudy = useSwipeHandlers({
     enabled: Boolean(q) && showAnswer && !reducedMotion,
@@ -159,7 +161,7 @@ export default function StudyScreen({
         )}
 
         {/* Soru kartı */}
-        <div className={`relative rounded-3xl border ${theme.border} bg-gradient-to-br from-slate-950/95 via-slate-900/95 to-slate-950/95 shadow-2xl ${theme.glow} backdrop-blur-xl p-5 md:p-8`}>
+        <div className={`relative rounded-3xl border ${theme.border} ${subjectVisual.border} bg-gradient-to-br from-slate-950/95 via-slate-900/95 to-slate-950/95 shadow-2xl ${theme.glow} backdrop-blur-xl p-5 md:p-8`}>
           <button
             type="button"
             onClick={(event) => {
@@ -181,7 +183,7 @@ export default function StudyScreen({
           </div>
           <div className="max-h-[min(52dvh,28rem)] md:max-h-[42vh] overflow-y-auto overscroll-y-contain pr-1 -mr-1">
             <div className="max-w-prose">
-              <h2 className="font-['Plus_Jakarta_Sans'] mobile-reading-stem tracking-[-0.02em] font-extrabold text-slate-50 break-words whitespace-normal [overflow-wrap:anywhere]">
+              <h2 className="exam-question-body mobile-reading-stem leading-relaxed tracking-tight text-slate-50 break-words whitespace-normal [overflow-wrap:anywhere]">
                 {q.q}
               </h2>
             </div>
@@ -248,15 +250,17 @@ export default function StudyScreen({
               return (
                 <button
                   key={i}
+                  type="button"
+                  aria-pressed={isSelected}
                   onClick={() => setSelected(i)}
-                  className={`group w-full min-w-0 text-left flex items-start sm:items-center gap-3 sm:gap-4 rounded-2xl border px-4 py-4 md:px-6 md:py-5 text-slate-100 shadow-sm transition-all duration-200 active:scale-[0.99]
+                  className={`group flex min-h-[52px] w-full min-w-0 items-start gap-3 rounded-2xl border px-4 py-4 text-left text-slate-100 shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617] ${theme.ring} active:scale-[0.99] sm:items-center sm:gap-4 md:px-6 md:py-5
                     ${isSelected ? `${theme.border} ${theme.softBg} shadow-lg ${theme.glow}` : "border-slate-700/80 bg-slate-950/70 hover:-translate-y-0.5 hover:bg-slate-900/90 hover:border-slate-500"}
                     ${showCorrectHighlight ? `${theme.border} ${theme.softBg}` : ""}
                     ${selectedIsWrong ? "border-amber-400/70 bg-amber-500/10 shadow-[0_0_35px_rgba(250,204,21,0.15)]" : ""}
                     ${selectedIsCorrect ? "correct-pop" : ""}
                   `}
                 >
-                  <span className={`flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full border text-xs sm:text-sm font-extrabold transition-all mt-0.5 sm:mt-0
+                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border text-xs font-extrabold transition-all mt-0.5 sm:mt-0
                     ${showCorrectHighlight
                       ? `${theme.primary} text-slate-950 ${theme.border}`
                       : isSelected
@@ -265,7 +269,7 @@ export default function StudyScreen({
                   `}>
                     {String.fromCharCode(65 + i)}
                   </span>
-                  <span className="min-w-0 flex-1 break-words whitespace-normal [overflow-wrap:anywhere] text-base leading-[1.62] md:text-base md:leading-[1.55]">
+                  <span className="min-w-0 flex-1 break-words whitespace-normal [overflow-wrap:anywhere] text-base leading-relaxed md:text-[1.05rem] md:leading-relaxed">
                     {opt}
                   </span>
                   {showCorrectHighlight && (

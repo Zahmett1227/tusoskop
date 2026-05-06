@@ -254,23 +254,23 @@ export default function ExamAnalysisScreen({
 
           {/* Özet İstatistik Kartları */}
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            <div className="rounded-[2rem] bg-slate-900 border border-slate-800 p-5 flex flex-col justify-center items-center text-center hover:border-slate-600 transition-colors">
+            <div className="app-card flex flex-col justify-center items-center text-center hover:border-slate-600 transition-colors !py-6">
               <span className="text-slate-500 mb-1 text-xl">📝</span>
               <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Toplam</p>
               <p className="text-3xl font-black mt-1 text-slate-200">{examAnalysis.summary.total}</p>
             </div>
 
-            <div className={`rounded-[2rem] bg-slate-900 border ${theme.softBorder} p-5 flex flex-col justify-center items-center text-center transition-colors relative overflow-hidden`}>
+            <div className={`app-card flex flex-col justify-center items-center text-center transition-colors relative overflow-hidden !py-6 border ${theme.softBorder}`}>
               <div className={`absolute top-0 right-0 w-24 h-24 ${theme.softBg} rounded-full blur-2xl`} />
-              <span className={`${theme.text} mb-1 text-xl`}>✅</span>
-              <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Doğru</p>
-              <p className={`text-3xl font-black mt-1 ${theme.text}`}>{examAnalysis.summary.correct}</p>
+              <span className={`${theme.text} mb-1 text-xl relative z-10`}>✅</span>
+              <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold relative z-10">Doğru</p>
+              <p className={`text-3xl font-black mt-1 ${theme.text} relative z-10`}>{examAnalysis.summary.correct}</p>
             </div>
 
             {/* Yanlış — tıklanabilir, detaylı analiz açar */}
             <button
               onClick={() => setShowWrongModal(true)}
-              className="rounded-[2rem] bg-slate-900 border border-rose-900/50 p-5 flex flex-col justify-center items-center text-center hover:border-rose-500/50 hover:bg-rose-950/20 transition-all relative overflow-hidden group"
+              className="app-card flex flex-col justify-center items-center text-center border border-rose-900/50 hover:border-rose-500/50 hover:bg-rose-950/20 transition-all relative overflow-hidden group !py-6"
             >
               <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/5 rounded-full blur-2xl group-hover:bg-rose-500/10 transition-all" />
               <span className="text-rose-500 mb-1 text-xl">❌</span>
@@ -281,17 +281,17 @@ export default function ExamAnalysisScreen({
               </span>
             </button>
 
-            <div className="rounded-[2rem] bg-slate-900 border border-slate-800 p-5 flex flex-col justify-center items-center text-center hover:border-slate-600 transition-colors">
+            <div className="app-card flex flex-col justify-center items-center text-center hover:border-slate-600 transition-colors !py-6">
               <span className="text-slate-500 mb-1 text-xl">⚪</span>
               <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Boş</p>
               <p className="text-3xl font-black mt-1 text-slate-300">{examAnalysis.summary.blank}</p>
             </div>
 
-            <div className={`rounded-[2rem] bg-gradient-to-b from-slate-800 to-slate-900 border ${theme.softBorder} p-5 flex flex-col justify-center items-center text-center shadow-[0_0_20px_rgba(34,211,238,0.05)]`}>
+            <div className={`app-card relative flex flex-col justify-center items-center text-center bg-gradient-to-b from-slate-800 to-slate-900 border ${theme.softBorder} shadow-[0_0_20px_rgba(34,211,238,0.05)] !py-6`}>
               <div className={`absolute -top-10 -right-10 w-32 h-32 ${theme.softBg} rounded-full blur-3xl`} />
-              <span className={`${theme.text} mb-1 text-xl`}>🎯</span>
-              <p className={`${theme.text}/70 text-xs uppercase tracking-wider font-semibold`}>Net Skor</p>
-              <p className={`text-4xl font-black mt-1 ${theme.text}`}>{examAnalysis.summary.net.toFixed(2)}</p>
+              <span className={`relative z-10 ${theme.text} mb-1 text-xl`}>🎯</span>
+              <p className={`relative z-10 ${theme.text}/70 text-xs uppercase tracking-wider font-semibold`}>Net Skor</p>
+              <p className={`relative z-10 text-4xl font-black mt-1 ${theme.text}`}>{examAnalysis.summary.net.toFixed(2)}</p>
             </div>
           </div>
 
