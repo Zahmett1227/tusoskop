@@ -58,6 +58,7 @@ import {
   UsageLimitError,
   limitModalFromUsageError,
 } from "./services/usageLimitService";
+import { SUBJECTS as SUBJECT_CATALOG } from "./data/subjects";
 
 // TUS Deneme Dağılımı (Blueprint)
 const FULL_EXAM_BLUEPRINT = {
@@ -95,8 +96,13 @@ const normalizeAnswerValue = (value) => {
 };
 
 export default function App() {
-  const { questions, loading: questionBankLoading, error: questionBankError } = useQuestions();
-  const QUESTIONS = questions ?? [];
+  const {
+    questions,
+    error: questionBankError,
+    ensureAllQuestions,
+    ensureSubjectQuestions,
+  } = useQuestions();
+  const QUESTIONS = useMemo(() => questions ?? [], [questions]);
 
   // iOS tespiti — ilk render'da hesapla, değişmez
   const [iosDevice] = useState(() => isIOS());
@@ -153,6 +159,10 @@ export default function App() {
     premiumDescription: "",
     limitReason: "",
   });
+  const [questionActionLoading, setQuestionActionLoading] = useState({
+    active: false,
+    message: "",
+  });
 
   const openLimitFromUsageError = (error) => {
     if (!(error instanceof UsageLimitError)) return false;
@@ -201,6 +211,13 @@ export default function App() {
     }
   }, [view, currentIndex]);
 
+  useEffect(() => {
+    if (!selectedLesson) return;
+    ensureSubjectQuestions(selectedLesson).catch((error) => {
+      console.error("Konu listesi için ders soruları yüklenemedi:", error);
+    });
+  }, [selectedLesson, ensureSubjectQuestions]);
+
   const examQ = examQuestions[examIndex];
 
   const examAnalysis = useMemo(() => {
@@ -213,10 +230,19 @@ export default function App() {
     return getEstimatedTusResult(examAnalysis.summary.net);
   }, [examAnalysis]);
 
-  const availableLessons = [...new Set(QUESTIONS.map((item) => item.ders))];
+  const availableLessons = SUBJECT_CATALOG.map((item) => item.name);
   const availableTopics = selectedLesson
     ? [...new Set(QUESTIONS.filter((item) => item.ders === selectedLesson).map((item) => item.konu))]
     : [];
+
+  const subjectCountsByLoadedQuestions = useMemo(() => {
+    const counts = {};
+    for (const item of QUESTIONS) {
+      if (!item?.ders) continue;
+      counts[item.ders] = (counts[item.ders] || 0) + 1;
+    }
+    return counts;
+  }, [QUESTIONS]);
 
   // --- 7. YARDIMCI FONKSİYONLAR ---
   const resetStudyState = () => {
@@ -236,6 +262,25 @@ export default function App() {
   };
 
   const goDashboard = () => { resetStudyState(); setView("dashboard"); };
+
+  const withQuestionLoading = async (message, task) => {
+    setQuestionActionLoading({ active: true, message });
+    try {
+      return await task();
+    } finally {
+      setQuestionActionLoading({ active: false, message: "" });
+    }
+  };
+
+  const ensureQuestionsForSubject = async (subjectName) => {
+    if (!subjectName) return [];
+    return withQuestionLoading(`${subjectName} soruları hazırlanıyor…`, () =>
+      ensureSubjectQuestions(subjectName)
+    );
+  };
+
+  const ensureAllQuestionsLoaded = async (message = "Soru bankası hazırlanıyor…") =>
+    withQuestionLoading(message, () => ensureAllQuestions());
 
   const openSubjectTopicPlusGate = () => {
     trackClarityEvent("subject_topic_plus_gate_shown");
@@ -263,10 +308,13 @@ export default function App() {
     setView("questionSetup");
   };
 
-  const guardedSetView = (nextView) => {
+  const guardedSetView = async (nextView) => {
     if (nextView === "questionSetup") {
       openTopicSetup();
       return;
+    }
+    if (nextView === "studyCollection" || nextView === "tracker") {
+      await ensureAllQuestionsLoaded("Çalışma verileri hazırlanıyor…");
     }
     setView(nextView);
   };
@@ -353,15 +401,18 @@ export default function App() {
   };
 
   const startSubject = (subjectName) => {
-    const filtered = QUESTIONS.filter((item) => item.ders === subjectName);
-    if (filtered.length === 0) return;
-    trackClarityEvent("ders_karti_tiklandi");
-    setClarityTag("son_ders", subjectName);
-    resetStudyState();
-    setStudyMode("study");
-    setCurrentSubject(subjectName);
-    setActiveQuestions(filtered);
-    setView("study");
+    (async () => {
+      const loaded = await ensureQuestionsForSubject(subjectName);
+      const filtered = loaded.filter((item) => item.ders === subjectName);
+      if (filtered.length === 0) return;
+      trackClarityEvent("ders_karti_tiklandi");
+      setClarityTag("son_ders", subjectName);
+      resetStudyState();
+      setStudyMode("study");
+      setCurrentSubject(subjectName);
+      setActiveQuestions(filtered);
+      setView("study");
+    })();
   };
 
   const startTopicTest = async () => {
@@ -369,7 +420,8 @@ export default function App() {
       openSubjectTopicPlusGate();
       return;
     }
-    const filtered = QUESTIONS.filter(item => item.ders === selectedLesson && item.konu === selectedTopic);
+    const loaded = await ensureQuestionsForSubject(selectedLesson);
+    const filtered = loaded.filter(item => item.ders === selectedLesson && item.konu === selectedTopic);
     if (filtered.length === 0) { alert("Soru bulunamadı."); return; }
     const gate = await canStartTopicTest(user, userData);
     if (!gate.allowed) {
@@ -402,6 +454,7 @@ export default function App() {
   };
 
   const startFullExam = async (setId) => {
+    const allQuestions = await ensureAllQuestionsLoaded("Tam deneme hazırlanıyor…");
     const gate = await canStartFullExam(user, userData);
     if (!gate.allowed) {
       setLimitModal({
@@ -421,7 +474,7 @@ export default function App() {
 
     const totalQuestions = activeSet?.questionCount || 200;
     const scaledBlueprint = scaleBlueprintToTotal(FULL_EXAM_BLUEPRINT, totalQuestions);
-    const exam = buildFullExam(QUESTIONS, scaledBlueprint);
+    const exam = buildFullExam(allQuestions, scaledBlueprint);
     if (!exam.length) return;
     try {
       await incrementFullExamUsage(user, userData);
@@ -923,70 +976,6 @@ export default function App() {
     );
   }
 
-  if (questionBankLoading && QUESTIONS.length === 0) {
-    return (
-      <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
-        <div
-          className="flex flex-col items-center justify-center bg-slate-950 text-white p-6 min-h-dvh gap-6"
-          style={{ paddingTop: "calc(2rem + env(safe-area-inset-top))" }}
-        >
-          <div className="h-20 w-20 md:h-24 md:w-24 rounded-2xl overflow-hidden shadow-lg shadow-black/20">
-            <img
-              src="/tusoskop-mark.png"
-              alt=""
-              width={96}
-              height={96}
-              decoding="async"
-              className="h-full w-full object-contain"
-              aria-hidden
-            />
-          </div>
-          <div
-            className="h-10 w-10 rounded-full border-2 border-slate-600 border-t-emerald-400 animate-spin"
-            aria-hidden
-          />
-          <p className="text-slate-400 text-sm">Soru bankası yükleniyor…</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (!questionBankLoading && QUESTIONS.length === 0 && questionBankError) {
-    return (
-      <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
-        <div className="flex flex-col items-center justify-center bg-slate-950 text-white p-6 min-h-dvh gap-4 text-center max-w-sm">
-          <p className="text-slate-300">Soru bankası yüklenemedi. Bağlantınızı kontrol edip tekrar deneyin.</p>
-          <button
-            type="button"
-            onClick={() => window.location.reload()}
-            className="px-5 py-2.5 rounded-2xl bg-white/10 font-semibold hover:bg-white/15"
-          >
-            Yenile
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  if (!questionBankLoading && QUESTIONS.length === 0) {
-    return (
-      <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
-        <div className="flex flex-col items-center justify-center bg-slate-950 text-white p-6 min-h-dvh gap-4 text-center max-w-md">
-          <p className="text-slate-300">
-            Soru verisi bulunamadı. Uygulama yapılandırmasını veya ağ erişimini kontrol edin.
-          </p>
-          <button
-            type="button"
-            onClick={() => window.location.reload()}
-            className="px-5 py-2.5 rounded-2xl bg-white/10 font-semibold hover:bg-white/15"
-          >
-            Yenile
-          </button>
-        </div>
-      </div>
-    );
-  }
-
   // --- 10. ANA YÖNLENDİRME (ROUTING) ---
   const showBottomNav = BOTTOM_NAV_VIEWS.has(view);
   let screenContent;
@@ -1007,6 +996,7 @@ export default function App() {
           onAccentThemeChange={handleAccentThemeChange}
           currentView={view}
           onOpenLegalPage={openLegalPage}
+          subjectQuestionCounts={subjectCountsByLoadedQuestions}
         />
       );
       break;
@@ -1028,6 +1018,7 @@ export default function App() {
             onAccentThemeChange={handleAccentThemeChange}
             currentView={view}
             onOpenLegalPage={openLegalPage}
+            subjectQuestionCounts={subjectCountsByLoadedQuestions}
           />
         );
         break;
@@ -1225,6 +1216,7 @@ export default function App() {
           onAccentThemeChange={handleAccentThemeChange}
           currentView={view}
           onOpenLegalPage={openLegalPage}
+          subjectQuestionCounts={subjectCountsByLoadedQuestions}
         />
       );
   }
@@ -1232,6 +1224,21 @@ export default function App() {
   return (
     <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
       {screenContent}
+      {questionActionLoading.active && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/70 backdrop-blur-sm px-6">
+          <div className="rounded-3xl border border-slate-700 bg-slate-900/90 px-6 py-5 text-center shadow-2xl">
+            <div className="mx-auto mb-3 h-10 w-10 rounded-full border-2 border-slate-600 border-t-emerald-400 animate-spin" />
+            <p className="text-sm font-semibold text-slate-200">
+              {questionActionLoading.message || "Hazırlanıyor…"}
+            </p>
+            {questionBankError && (
+              <p className="mt-2 text-xs text-rose-300">
+                Son yüklemede bir hata algılandı; ağ bağlantınızı kontrol edin.
+              </p>
+            )}
+          </div>
+        </div>
+      )}
       <LimitReachedModal
         open={limitModal.open}
         title={limitModal.title}

@@ -36,6 +36,7 @@ export default function Dashboard({
   /** App içinden gelen görünüm — dashboard’a her dönüşte geçmiş yenilenebilir */
   currentView = "dashboard",
   onOpenLegalPage,
+  subjectQuestionCounts = {},
 }) {
   const { questions: QUESTIONS } = useQuestions();
   const theme = accentTheme || accentThemes.emerald;
@@ -61,13 +62,16 @@ export default function Dashboard({
     reviewQueueCount: 0,
   });
   const [planStreak, setPlanStreak] = useState(0);
-  const subjectCounts = useMemo(() => {
+  const fallbackCounts = useMemo(() => {
     const counts = {};
     (QUESTIONS || []).forEach((item) => {
       counts[item.ders] = (counts[item.ders] || 0) + 1;
     });
     return counts;
   }, [QUESTIONS]);
+  const subjectCounts = subjectQuestionCounts && Object.keys(subjectQuestionCounts).length
+    ? subjectQuestionCounts
+    : fallbackCounts;
 
   useEffect(() => {
     if (!user?.uid) return;
