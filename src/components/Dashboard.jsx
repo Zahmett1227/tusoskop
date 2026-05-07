@@ -146,10 +146,10 @@ export default function Dashboard({
       className={`${pageClasses} px-4 py-6 md:px-8 md:py-10 font-sans`}
       style={{ paddingTop: "calc(1.5rem + env(safe-area-inset-top))" }}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
 
         {/* HEADER */}
-        <header className="flex items-center justify-between mb-10 gap-3">
+        <header className="flex items-center justify-between mb-8 gap-3">
           <div className="flex items-center gap-3">
             <img
               src="/tusoskop-mark.png"
@@ -171,7 +171,7 @@ export default function Dashboard({
                   key={key}
                   type="button"
                   onClick={() => onAccentThemeChange?.(key)}
-                  className={`w-8 h-8 rounded-full ${t.previewClass || t.primary} border-2 transition-all ${key === "light" ? "border-slate-300" : ""} ${active ? (isLightTheme ? "ring-2 ring-slate-400 border-slate-600 scale-110" : "border-white scale-110") : (isLightTheme ? "border-slate-300 hover:border-slate-500" : "border-slate-700 hover:border-slate-500")}`}
+                  className={`w-8 h-8 rounded-full ${t.previewClass || t.primary} border-2 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-[#faf8f4]" : "focus-visible:ring-offset-slate-950"} focus-visible:ring-emerald-400/50 ${key === "light" ? "border-slate-300" : ""} ${active ? (isLightTheme ? "ring-2 ring-slate-400 border-slate-600 scale-110" : "border-white scale-110") : (isLightTheme ? "border-slate-300 hover:border-slate-500" : "border-slate-700 hover:border-slate-500")}`}
                   title={t.name}
                   aria-label={`${t.name} teması`}
                 />
@@ -214,8 +214,9 @@ export default function Dashboard({
                 {user.displayName || user.email}
               </span>
               <button
+                type="button"
                 onClick={onLogout}
-                className={`shrink-0 px-4 py-2 rounded-2xl text-xs font-bold transition-all ${isLightTheme ? "bg-white border border-slate-300 hover:bg-slate-100 text-slate-700" : "bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-400"}`}
+                className={`shrink-0 px-4 py-2 rounded-2xl text-xs font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 focus-visible:ring-offset-[#faf8f4] focus-visible:ring-slate-400/60" : "bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-400 focus-visible:ring-offset-slate-950 focus-visible:ring-slate-500/50"}`}
               >
                 Çıkış
               </button>
@@ -231,7 +232,7 @@ export default function Dashboard({
                 key={`mobile-${key}`}
                 type="button"
                 onClick={() => onAccentThemeChange?.(key)}
-                className={`w-7 h-7 rounded-full ${t.previewClass || t.primary} border transition-all ${key === "light" ? "border-slate-300" : ""} ${active ? (isLightTheme ? "ring-2 ring-slate-400 border-slate-600 scale-110" : "border-white scale-110") : (isLightTheme ? "border-slate-300" : "border-slate-700")}`}
+                className={`w-7 h-7 rounded-full ${t.previewClass || t.primary} border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-[#faf8f4]" : "focus-visible:ring-offset-slate-950"} focus-visible:ring-emerald-400/50 ${key === "light" ? "border-slate-300" : ""} ${active ? (isLightTheme ? "ring-2 ring-slate-400 border-slate-600 scale-110" : "border-white scale-110") : (isLightTheme ? "border-slate-300" : "border-slate-700")}`}
                 title={t.name}
                 aria-label={`${t.name} teması`}
               />
@@ -239,59 +240,72 @@ export default function Dashboard({
           })}
         </div>
 
-        {/* Bugünün planı — tek birincil CTA */}
+        {/* Bugünün planı — ilk ekranda tek güçlü karar alanı */}
         <section
-          className={`${appCardShell} mb-6 md:mb-8`}
+          className={`relative mb-6 md:mb-8 overflow-hidden rounded-[2rem] md:rounded-[3rem] border p-5 shadow-2xl md:p-8 ${
+            isLightTheme
+              ? "border-slate-200 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.18),transparent_35%),linear-gradient(135deg,#fffefb,#f4fbf7_45%,#ebe8e3)] text-slate-950 shadow-slate-200/80"
+              : `${theme.softBorder} bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.20),transparent_38%),linear-gradient(135deg,#020617,#0f172a_48%,#04140f)] text-white shadow-black/40`
+          }`}
           aria-labelledby="today-plan-heading"
         >
+          <div className={`pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full blur-3xl ${theme.softBg}`} />
+          <div className="pointer-events-none absolute -bottom-24 left-1/3 h-52 w-52 rounded-full bg-cyan-400/10 blur-3xl" />
           <h2
             id="today-plan-heading"
-            className={`app-card-title ${isLightTheme ? "!text-slate-600" : ""}`}
+            className={`relative z-10 mb-3 text-[10px] font-black uppercase tracking-[0.32em] ${isLightTheme ? "text-slate-500" : theme.text}`}
           >
             Bugünün planı
           </h2>
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-            <div className="grid grid-cols-3 gap-3 text-center sm:grid-cols-3 sm:text-left lg:flex lg:gap-10 lg:text-left">
-              <div>
-                <p className="text-[10px] font-black uppercase tracking-wider text-slate-500">
-                  Seri
-                </p>
-                <p
-                  className={`mt-1 text-2xl font-black tabular-nums ${isLightTheme ? "text-slate-900" : "text-white"}`}
-                >
-                  {planStreak}
-                </p>
-                <p className="text-[10px] text-slate-500">gün</p>
-              </div>
-              <div>
-                <p className="text-[10px] font-black uppercase tracking-wider text-slate-500">
-                  Hedef net
-                </p>
-                <p
-                  className={`mt-1 text-2xl font-black tabular-nums ${isLightTheme ? "text-slate-900" : "text-white"}`}
-                >
-                  {myTarget.toFixed(2)}
-                </p>
-                <p className="text-[10px] text-slate-500">kişisel</p>
-              </div>
-              <div>
-                <p className="text-[10px] font-black uppercase tracking-wider text-slate-500">
-                  Tekrar kuyruğu
-                </p>
-                <p className={`mt-1 text-2xl font-black tabular-nums ${theme.text}`}>
-                  {studySummary.reviewQueueCount || 0}
-                </p>
-                <p className="text-[10px] text-slate-500">soru</p>
+          <div className="relative z-10 grid gap-6 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-end">
+            <div>
+              <h3 className={`max-w-3xl text-3xl font-black tracking-tight md:text-5xl ${isLightTheme ? "text-slate-950" : "text-white"}`}>
+                Bugün ne çalışacağını tek bakışta gör.
+              </h3>
+              <p className={`mt-3 max-w-2xl text-sm font-semibold leading-relaxed md:text-base ${isLightTheme ? "text-slate-600" : "text-slate-300"}`}>
+                Seri, hedef net ve tekrar kuyruğunu bir araya getirdik. Kaldığın yerden devam et ya da gerçek TUS formatında denemeye geç.
+              </p>
+              <div className="mt-6 grid grid-cols-3 gap-2.5 sm:gap-3">
+                {[
+                  ["Seri", planStreak, "gün"],
+                  ["Hedef net", myTarget.toFixed(2), "kişisel"],
+                  ["Tekrar kuyruğu", studySummary.reviewQueueCount || 0, "soru"],
+                ].map(([label, value, suffix]) => (
+                  <div
+                    key={label}
+                    className={`rounded-2xl border px-3 py-3 text-center sm:px-4 sm:text-left ${
+                      isLightTheme
+                        ? "border-white/80 bg-white/80 shadow-sm"
+                        : "border-white/10 bg-white/[0.06] shadow-lg shadow-black/10"
+                    }`}
+                  >
+                    <p className="text-[9px] font-black uppercase tracking-wider text-slate-500 sm:text-[10px]">
+                      {label}
+                    </p>
+                    <p className={`mt-1 text-2xl font-black tabular-nums md:text-3xl ${label === "Tekrar kuyruğu" ? theme.text : isLightTheme ? "text-slate-950" : "text-white"}`}>
+                      {value}
+                    </p>
+                    <p className="text-[10px] font-semibold text-slate-500">{suffix}</p>
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center lg:justify-end">
+            <div className={`rounded-[1.75rem] border p-4 ${
+              isLightTheme
+                ? "border-slate-200 bg-white/85 shadow-sm"
+                : "border-white/10 bg-slate-950/55 shadow-xl shadow-black/20"
+            }`}>
+              <p className={`mb-3 text-xs font-extrabold uppercase tracking-[0.18em] ${isLightTheme ? "text-slate-500" : "text-slate-400"}`}>
+                Hızlı başlangıç
+              </p>
+              <div className="flex flex-col gap-2.5">
               <button
                 type="button"
                 onClick={() => {
                   trackClarityEvent("today_plan_primary_cta");
                   setView("studyCollection");
                 }}
-                className={`inline-flex min-h-12 w-full items-center justify-center rounded-2xl px-6 text-sm font-black transition-all active:scale-[0.98] sm:w-auto ${theme.primary} ${theme.primaryHover} text-slate-950 shadow-lg ${theme.glow}`}
+                className={`inline-flex min-h-12 w-full items-center justify-center rounded-2xl px-6 py-4 text-sm font-black transition-all hover:-translate-y-px active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-[#fffefb]" : "focus-visible:ring-offset-slate-950"} ${theme.primary} ${theme.primaryHover} text-slate-950 shadow-lg ${theme.glow} ${theme.ring}`}
               >
                 {studySummary.reviewQueueCount > 0
                   ? `Bugünkü tekrara başla (${studySummary.reviewQueueCount})`
@@ -303,10 +317,24 @@ export default function Dashboard({
                   trackClarityEvent("today_plan_secondary_exam");
                   setView("examSetSelect");
                 }}
-                className={`inline-flex min-h-12 w-full items-center justify-center rounded-2xl border px-5 text-sm font-bold transition-all active:scale-[0.98] sm:w-auto ${isLightTheme ? "border-slate-300 bg-white text-slate-800 hover:bg-slate-50" : "border-slate-700 bg-slate-950/50 text-slate-200 hover:bg-slate-900"}`}
+                className={`inline-flex min-h-12 w-full items-center justify-center rounded-2xl border px-5 text-sm font-bold transition-all hover:-translate-y-px active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "border-slate-300 bg-white text-slate-800 hover:bg-slate-50 focus-visible:ring-offset-[#fffefb] focus-visible:ring-emerald-500/50" : "border-slate-700 bg-slate-950/50 text-slate-200 hover:bg-slate-900 focus-visible:ring-offset-slate-950 focus-visible:ring-emerald-400/40"}`}
               >
                 TUS denemesi seç
               </button>
+              <button
+                type="button"
+                onClick={() => {
+                  trackClarityEvent("today_plan_tertiary_topic_setup");
+                  openTopicSetup?.();
+                }}
+                className={`w-full rounded-xl px-2 py-2 text-left text-sm font-extrabold underline-offset-2 transition hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "text-slate-700 focus-visible:ring-emerald-500/40 focus-visible:ring-offset-[#fffefb]" : "text-slate-300 focus-visible:ring-emerald-400/40 focus-visible:ring-offset-slate-950"}`}
+              >
+                Ders veya konu seçerek çöz →
+              </button>
+              </div>
+              <p className={`mt-3 text-xs font-medium leading-relaxed ${isLightTheme ? "text-slate-500" : "text-slate-400"}`}>
+                Bugünkü hedefin hazır; tekrarlarını, denemeni ve konu çalışmanı aynı akıştan yönet.
+              </p>
             </div>
           </div>
         </section>
@@ -321,8 +349,18 @@ export default function Dashboard({
           onOpenPremium={() => setView("premiumInfo")}
         />
 
-        {/* ÜST SATIR: GERİ SAYIM + HEDEF + SERİ */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        {/* İkincil katman: takvim, seri, hedef — ana hero ile rekabet etmez */}
+        <section
+          className="mb-5"
+          aria-labelledby="planning-strip-heading"
+        >
+          <h2
+            id="planning-strip-heading"
+            className={`mb-3 text-[10px] font-black uppercase tracking-[0.28em] ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}
+          >
+            Takvim ve hedef
+          </h2>
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-3 md:gap-4">
           <TusCountDown isLightTheme={isLightTheme} />
 
           <StreakBadge userId={user?.uid} isLightTheme={isLightTheme} />
@@ -340,8 +378,8 @@ export default function Dashboard({
                   <button onClick={() => adjustTarget(0.25)} className={`w-12 h-12 rounded-full ${theme.text} text-2xl font-bold transition-all ${isLightTheme ? "bg-emerald-50 hover:bg-emerald-100" : `bg-slate-800 ${theme.softBg}`}`}>+</button>
                 </div>
                 <div className="flex gap-2">
-                  <button onClick={saveTarget} className={`flex-1 ${theme.primary} ${theme.primaryHover} text-slate-950 py-3 rounded-2xl font-black text-sm hover:scale-105 transition-all shadow-lg ${theme.glow}`}>KAYDET</button>
-                  <button onClick={() => setIsEditingTarget(false)} className={`px-4 py-3 rounded-2xl font-bold text-sm ${isLightTheme ? "bg-slate-100 text-slate-600 border border-slate-300" : "bg-slate-800 text-slate-400"}`}>İPTAL</button>
+                  <button type="button" onClick={saveTarget} className={`flex-1 min-h-12 ${theme.primary} ${theme.primaryHover} text-slate-950 py-3 rounded-2xl font-black text-sm transition-all shadow-lg ${theme.glow} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-[#faf8f4]" : "focus-visible:ring-offset-slate-950"} ${theme.ring}`}>KAYDET</button>
+                  <button type="button" onClick={() => setIsEditingTarget(false)} className={`px-4 py-3 rounded-2xl font-bold text-sm focus-visible:outline-none focus-visible:ring-2 ${isLightTheme ? "bg-slate-100 text-slate-600 border border-slate-300 focus-visible:ring-slate-400/50" : "bg-slate-800 text-slate-400 focus-visible:ring-slate-500/40"}`}>İPTAL</button>
                 </div>
               </div>
             ) : (
@@ -355,20 +393,23 @@ export default function Dashboard({
               </div>
             )}
           </div>
-        </div>
+          </div>
+        </section>
 
+        {/* Ana iki yol: deneme + çalışma alanı */}
+        <div className="mb-6 grid grid-cols-1 gap-5 lg:grid-cols-2 lg:items-stretch">
         {/* ═══════════════════════════════════════════════════════
             HERO: DENEME KARTI — sitenin en değerli özelliği
         ═══════════════════════════════════════════════════════ */}
         <div
           onClick={() => setView("examSetSelect")}
-          className={`group relative overflow-hidden rounded-[3rem] border p-8 md:p-10 mb-6 cursor-pointer transition-all duration-500 ${isLightTheme ? "border-slate-300 bg-gradient-to-br from-[#fffefb] via-[#faf8f4] to-[#ebe8e3] hover:border-slate-400 shadow-md" : `${theme.softBorder} bg-gradient-to-br from-slate-900 via-slate-900 to-slate-900/80 hover:border-slate-500/70`}`}
+          className={`group relative h-full min-h-0 overflow-hidden rounded-[2.25rem] border p-6 md:p-8 cursor-pointer transition-all duration-500 ${isLightTheme ? "border-slate-300 bg-gradient-to-br from-[#fffefb] via-[#faf8f4] to-[#ebe8e3] hover:border-slate-400 shadow-md" : `${theme.softBorder} bg-gradient-to-br from-slate-900 via-slate-900 to-slate-900/80 hover:border-slate-500/70`}`}
         >
           {/* Arka plan ışıltısı */}
           <div className={`absolute -top-20 -right-20 w-72 h-72 ${theme.softBg} rounded-full blur-3xl transition-all duration-700 pointer-events-none`} />
           <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-cyan-500/5 rounded-full blur-2xl pointer-events-none" />
 
-          <div className="relative z-10 flex flex-col lg:flex-row lg:items-center gap-8">
+          <div className="relative z-10 flex h-full flex-col gap-6 lg:flex-row lg:items-center">
 
             {/* Sol: Başlık + özellikler */}
             <div className="flex-1">
@@ -400,7 +441,7 @@ export default function Dashboard({
               </div>
 
               <div className="flex items-center gap-4">
-                <div className={`flex items-center justify-center gap-3 px-8 py-4 rounded-2xl ${theme.primary} text-slate-950 font-black text-lg shadow-lg ${theme.glow} group-hover:scale-[1.03] transition-transform duration-300`}>
+                <div className={`flex items-center justify-center gap-3 px-8 py-4 rounded-2xl ${theme.primary} text-slate-950 font-black text-lg shadow-lg ${theme.glow} group-hover:scale-[1.01] transition-transform duration-300`}>
                   Denemeyi Başlat
                   <span className="text-xl">→</span>
                 </div>
@@ -409,7 +450,7 @@ export default function Dashboard({
             </div>
 
             {/* Sağ: Analiz önizlemesi (sahte ama gerçekçi) */}
-            <div className="lg:w-72 shrink-0">
+            <div className="w-full shrink-0 lg:w-72">
               <div className={`border rounded-[2rem] p-5 backdrop-blur-sm ${isLightTheme ? "bg-[#fffefb] border-slate-300 shadow-sm" : "bg-slate-950/70 border-slate-800"}`}>
                 <p className={`text-[10px] font-black uppercase tracking-widest mb-4 flex items-center gap-2 ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>
                   <span className={`w-1.5 h-1.5 rounded-full ${theme.primary} animate-ping inline-block`} />
@@ -456,7 +497,7 @@ export default function Dashboard({
           </div>
         </div>
 
-        <div className={`mb-6 rounded-[2.25rem] border p-5 md:p-7 ${isLightTheme ? "border-slate-300 bg-[#fffefb] shadow-md" : "border-emerald-300/20 bg-gradient-to-br from-slate-900 via-[#0b1326] to-emerald-950/20 shadow-[0_0_0_1px_rgba(16,185,129,0.08),0_28px_60px_-30px_rgba(16,185,129,0.35)]"}`}>
+        <div className={`h-full min-h-0 rounded-[2.25rem] border p-5 md:p-7 ${isLightTheme ? "border-slate-300 bg-[#fffefb] shadow-md" : "border-emerald-300/20 bg-gradient-to-br from-slate-900 via-[#0b1326] to-emerald-950/20 shadow-[0_0_0_1px_rgba(16,185,129,0.08),0_28px_60px_-30px_rgba(16,185,129,0.35)]"}`}>
           <div className="min-w-0 space-y-4 md:space-y-5">
             <div className="min-w-0">
               <p className={`text-[10px] md:text-xs font-black uppercase tracking-[0.28em] ${theme.text}`}>
@@ -501,7 +542,7 @@ export default function Dashboard({
                     trackClarityEvent("study_area_card_clicked");
                     setView("studyCollection");
                   }}
-                  className={`w-full md:w-auto md:self-start min-h-11 px-5 md:px-6 rounded-2xl text-sm font-black transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 ${isLightTheme ? "text-white bg-gradient-to-r from-emerald-500 via-teal-500 to-violet-500 hover:from-emerald-400 hover:via-teal-400 hover:to-violet-400 shadow-sm focus-visible:ring-emerald-400/60" : "text-white bg-gradient-to-r from-emerald-500/90 via-teal-500/85 to-violet-500/85 hover:from-emerald-400 hover:via-teal-400 hover:to-violet-400 shadow-[0_10px_30px_-16px_rgba(45,212,191,0.9)] focus-visible:ring-emerald-300/60"}`}
+                  className={`w-full md:w-auto md:self-start min-h-12 px-5 md:px-6 rounded-2xl text-sm font-black text-slate-950 transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-[#f5f2ec]" : "focus-visible:ring-offset-slate-950"} ${theme.primary} ${theme.primaryHover} shadow-lg ${theme.glow} ${theme.ring}`}
                 >
                   Çalışma Alanını Aç
                 </button>
@@ -509,12 +550,21 @@ export default function Dashboard({
             </div>
           </div>
         </div>
+        </div>
 
-        {/* İKİNCİL AKSİYONLAR */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+        {/* Diğer araçlar */}
+        <section className="mb-10" aria-labelledby="other-tools-heading">
+          <h2
+            id="other-tools-heading"
+            className={`mb-3 text-xs font-black uppercase tracking-[0.22em] ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}
+          >
+            Diğer araçlar
+          </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <button
+            type="button"
             onClick={() => openTopicSetup?.()}
-            className={`group flex items-center gap-4 px-6 py-5 rounded-[2rem] transition-all text-left ${isLightTheme ? "bg-[#fffefb] border border-slate-300 hover:border-slate-400 shadow-md" : "bg-slate-900 border border-slate-800 hover:border-slate-600"}`}
+            className={`group flex items-center gap-4 px-6 py-5 rounded-[2rem] transition-all text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "bg-[#fffefb] border border-slate-300 hover:border-slate-400 shadow-md focus-visible:ring-offset-[#faf8f4] focus-visible:ring-emerald-500/45" : "bg-slate-900 border border-slate-800 hover:border-slate-600 focus-visible:ring-offset-slate-950 focus-visible:ring-emerald-400/40"}`}
           >
             <span className="text-2xl">⚡</span>
             <div>
@@ -534,8 +584,9 @@ export default function Dashboard({
             </div>
           </button>
           <button
+            type="button"
             onClick={() => setView("tracker")}
-            className={`group relative flex items-center gap-4 px-7 py-6 rounded-[2rem] transition-all text-left sm:scale-[1.03] hover:scale-[1.05] ${isLightTheme ? "bg-gradient-to-br from-violet-100 via-fuchsia-50 to-cyan-100 border border-violet-300 hover:border-violet-400 shadow-md" : "bg-gradient-to-br from-violet-500/20 via-fuchsia-500/10 to-cyan-400/20 border border-violet-300/35 hover:border-violet-200/70 shadow-[0_0_0_1px_rgba(167,139,250,0.15),0_24px_45px_-24px_rgba(167,139,250,0.65)]"}`}
+            className={`group relative flex items-center gap-4 px-7 py-6 rounded-[2rem] transition-all text-left hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "bg-gradient-to-br from-violet-100 via-fuchsia-50 to-cyan-100 border border-violet-300 hover:border-violet-400 shadow-md focus-visible:ring-offset-[#faf8f4] focus-visible:ring-violet-400/50" : "bg-gradient-to-br from-violet-500/20 via-fuchsia-500/10 to-cyan-400/20 border border-violet-300/35 hover:border-violet-200/70 shadow-[0_0_0_1px_rgba(167,139,250,0.15),0_24px_45px_-24px_rgba(167,139,250,0.65)] focus-visible:ring-offset-slate-950 focus-visible:ring-violet-400/45"}`}
           >
             <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.2),transparent_45%)] opacity-90 pointer-events-none" />
             <span className="relative z-10 text-3xl drop-shadow-[0_0_12px_rgba(167,139,250,0.85)]">🗺️</span>
@@ -545,8 +596,9 @@ export default function Dashboard({
             </div>
           </button>
           <button
+            type="button"
             onClick={() => setView("suggestions")}
-            className={`group flex items-center gap-4 px-6 py-5 rounded-[2rem] transition-all text-left ${isLightTheme ? "bg-[#fffefb] border border-slate-300 hover:border-slate-400 shadow-md" : "bg-slate-900 border border-slate-800 hover:border-slate-600"}`}
+            className={`group flex items-center gap-4 px-6 py-5 rounded-[2rem] transition-all text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "bg-[#fffefb] border border-slate-300 hover:border-slate-400 shadow-md focus-visible:ring-offset-[#faf8f4] focus-visible:ring-emerald-500/45" : "bg-slate-900 border border-slate-800 hover:border-slate-600 focus-visible:ring-offset-slate-950 focus-visible:ring-emerald-400/40"}`}
           >
             <span className="text-2xl">💡</span>
             <div>
@@ -555,13 +607,14 @@ export default function Dashboard({
             </div>
           </button>
         </div>
+        </section>
 
         {isAdmin && (
           <div className="mb-10">
             <button
               type="button"
               onClick={() => setView("admin")}
-              className="px-5 py-3 rounded-2xl bg-amber-300 text-slate-950 font-black text-sm hover:brightness-95 transition"
+              className={`px-5 py-3 rounded-2xl bg-amber-300 text-slate-950 font-black text-sm hover:brightness-95 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-600/60 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-[#faf8f4]" : "focus-visible:ring-offset-slate-950"}`}
             >
               Admin Panel
             </button>
@@ -569,6 +622,9 @@ export default function Dashboard({
         )}
 
         {/* BRANŞLAR */}
+        <h2 className={`mb-2 text-2xl font-black tracking-tight ${isLightTheme ? "text-slate-900" : "text-white"}`}>
+          Çalışılacak dersler
+        </h2>
         {!premiumActive && (
           <p className={`text-xs mb-5 ${isLightTheme ? "text-slate-500" : "text-slate-400"}`}>
             Free planda günlük 30 soruya kadar aşağıdaki ders kartlarından çözebilirsiniz.
@@ -576,11 +632,26 @@ export default function Dashboard({
         )}
         {["Temel", "Klinik"].map((type) => (
           <section key={type} className="mb-12">
-            <div className="flex items-center gap-4 mb-8">
-              <h2 className={`text-2xl font-black uppercase tracking-tighter ${isLightTheme ? "text-slate-900" : "text-white"}`}>{type} Bilimler</h2>
-              <div className={`h-[1px] flex-1 bg-gradient-to-r ${isLightTheme ? "from-slate-300 to-transparent" : "from-slate-800 to-transparent"}`} />
+            <div className={`mb-6 flex flex-col gap-3 rounded-[1.75rem] border px-5 py-4 sm:flex-row sm:items-center sm:justify-between ${
+              isLightTheme
+                ? "border-slate-200 bg-white/70 shadow-sm"
+                : "border-slate-800 bg-slate-900/45"
+            }`}>
+              <div>
+                <p className={`text-[10px] font-black uppercase tracking-[0.3em] ${theme.text}`}>
+                  Branş seçimi
+                </p>
+                <h2 className={`mt-1 text-2xl font-black uppercase tracking-tighter ${isLightTheme ? "text-slate-900" : "text-white"}`}>
+                  {type} Bilimler
+                </h2>
+              </div>
+              <p className={`max-w-md text-sm font-medium leading-relaxed ${isLightTheme ? "text-slate-600" : "text-slate-400"}`}>
+                {type === "Temel"
+                  ? "Temel bilimlerde hızlı tekrar yap, hazır sorularla ritmini koru."
+                  : "Klinik branşlarda vaka odaklı çözüm pratiğini güçlendir."}
+              </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {SUBJECTS.filter((s) => s.type === type).map((s) => (
                 <SubjectCard
                   key={s.name}

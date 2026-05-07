@@ -20,6 +20,7 @@ import { isIOS } from "./utils/device";
 import { setClarityTag, trackClarityEvent } from "./lib/clarity";
 import {
   addWrongQuestion,
+  buildTodayReviewQueue,
   getWrongQuestions,
   toggleFavoriteQuestion,
   updateWrongQuestionAfterReview,
@@ -144,6 +145,26 @@ export default function App() {
     setFavoriteQuestionIds,
   } = useAppAuthBootstrap(setView);
 
+  const [bottomNavReviewCount, setBottomNavReviewCount] = useState(0);
+  useEffect(() => {
+    let active = true;
+    const loadQueueLen = async () => {
+      try {
+        const queue = await buildTodayReviewQueue(user, QUESTIONS, userData);
+        if (active) setBottomNavReviewCount(Array.isArray(queue) ? queue.length : 0);
+      } catch {
+        if (active) setBottomNavReviewCount(0);
+      }
+    };
+    loadQueueLen();
+    return () => {
+      active = false;
+    };
+  }, [user, userData, QUESTIONS, view]);
+
+  const bottomNavExamLocked =
+    !isUserPremium(userData) && (remainingUsage?.fullExamRemaining ?? 1) <= 0;
+
   // --- 2. ÇALIŞMA MODU (STUDY) STATE ---
   const [currentSubject, setCurrentSubject] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -259,7 +280,12 @@ export default function App() {
     : [];
 
   const subjectCountsByLoadedQuestions = useMemo(() => {
-    const counts = { ...SUBJECT_QUESTION_COUNTS };
+    // QUESTIONS yüklüyse gerçek dağılımı doğrudan ondan üret;
+    // aksi halde manifest sayılarıyla fallback yap.
+    if (!Array.isArray(QUESTIONS) || QUESTIONS.length === 0) {
+      return { ...SUBJECT_QUESTION_COUNTS };
+    }
+    const counts = {};
     for (const item of QUESTIONS) {
       if (!item?.ders) continue;
       counts[item.ders] = (counts[item.ders] || 0) + 1;
@@ -1291,7 +1317,13 @@ export default function App() {
         </Suspense>
       )}
       {showBottomNav && (
-        <MobileBottomNav currentView={view} setView={guardedSetView} accentTheme={accentTheme} />
+        <MobileBottomNav
+          currentView={view}
+          setView={guardedSetView}
+          accentTheme={accentTheme}
+          reviewQueueCount={bottomNavReviewCount}
+          examLocked={bottomNavExamLocked}
+        />
       )}
       <IOSInstallBanner />
     </div>

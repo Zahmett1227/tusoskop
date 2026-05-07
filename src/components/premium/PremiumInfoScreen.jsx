@@ -247,29 +247,84 @@ export default function PremiumInfoScreen({
 
         {/* Paketler */}
         <section className="space-y-5">
-          <div className="px-0.5">
-            <h2 className="text-2xl md:text-3xl font-black text-neutral-950 tracking-tight">
-              Paketler
-            </h2>
-            <ul className="mt-3 text-sm md:text-base font-medium text-neutral-700 space-y-2 list-none max-w-2xl">
-              {[
-                "Sınırsız soru çözme",
-                "Sınırsız deneme",
-                "Sınırsız tekrar kuyruğu",
-                "Sınırsız favori ve yanlış geçmişi",
-                "Gelişmiş deneme net grafiği",
-              ].map((line) => (
-                <li key={line} className="flex gap-2.5 items-start">
-                  <span
-                    className="mt-0.5 text-[#8b6914] font-black shrink-0"
-                    aria-hidden
-                  >
-                    ✓
-                  </span>
-                  <span>{line}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-stretch">
+            <div className="rounded-[2rem] border border-[#eadccd] bg-white/95 p-5 shadow-[0_18px_50px_-32px_rgba(60,40,20,0.18)] sm:p-7">
+              <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#9a7758]">
+                Plus farkı
+              </p>
+              <h2 className="mt-2 text-2xl md:text-3xl font-black text-neutral-950 tracking-tight">
+                Limitleri kaldır, çalışma akışını büyüt
+              </h2>
+              <ul className="mt-4 text-sm md:text-base font-medium text-neutral-700 space-y-2 list-none max-w-2xl">
+                {[
+                  "Sınırsız soru çözme",
+                  "Sınırsız deneme",
+                  "Sınırsız tekrar kuyruğu",
+                  "Sınırsız favori ve yanlış geçmişi",
+                  "Gelişmiş deneme net grafiği",
+                ].map((line) => (
+                  <li key={line} className="flex gap-2.5 items-start">
+                    <span
+                      className="mt-0.5 text-[#8b6914] font-black shrink-0"
+                      aria-hidden
+                    >
+                      ✓
+                    </span>
+                    <span>{line}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="min-w-0 rounded-[2rem] border border-[#d9c3ac] bg-gradient-to-br from-[#fff8ef] via-white to-[#f8eadb] p-4 shadow-[0_22px_60px_-34px_rgba(90,55,25,0.32)] sm:p-5">
+              <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#9a7758]">
+                Free vs Plus
+              </p>
+              <div className="mt-3 overflow-x-auto rounded-xl border border-[#e8d5c4] bg-white/90">
+                <table className="w-full min-w-[280px] text-left text-xs sm:text-sm">
+                  <thead>
+                    <tr className="border-b border-neutral-200 bg-[#faf6f0]">
+                      <th className="px-3 py-2.5 font-black text-neutral-600">Özellik</th>
+                      <th className="px-3 py-2.5 font-black text-neutral-600">Free</th>
+                      <th className="px-3 py-2.5 font-black text-[#2a1a0f]">Plus</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-neutral-100 font-medium text-neutral-800">
+                    {[
+                      ["Soru çözme", "Günlük limit", "Sınırsız"],
+                      ["Deneme", "Limitli hak", "Sınırsız"],
+                      ["Tekrar kuyruğu", "Limitli hak", "Sınırsız"],
+                      ["Favori / yanlış geçmişi", "Temel", "Sınırsız"],
+                      ["Deneme net grafiği", "Standart", "Gelişmiş"],
+                    ].map(([label, freeCol, plusCol]) => (
+                      <tr key={label}>
+                        <td className="px-3 py-2.5 font-bold text-neutral-700">{label}</td>
+                        <td className="px-3 py-2.5 text-neutral-600">{freeCol}</td>
+                        <td className="px-3 py-2.5 font-semibold text-emerald-800">{plusCol}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div
+            role="status"
+            className="rounded-[1.75rem] border border-[#c9a88a] bg-gradient-to-r from-[#fff8ef] to-white px-4 py-4 shadow-md sm:px-6 sm:py-5"
+          >
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <span className="inline-block rounded-full bg-[#1f160f] px-3 py-1 text-[10px] font-black uppercase tracking-wide text-white">
+                  En geç 24 saat içinde aktivasyon
+                </span>
+                <p className="mt-2 text-sm font-semibold text-neutral-900 leading-snug">
+                  Ödeme tamamlandıktan sonra Plus erişiminiz manuel kontrol edilir; en geç 24 saat içinde hesabınıza tanımlanır.
+                </p>
+                <p className="mt-1 text-xs font-medium text-neutral-600 leading-relaxed">
+                  Doğru hesapla giriş yaptığınızdan emin olun. Gerekirse Hesap ID&apos;nizi destek mesajında paylaşın.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 items-stretch">
@@ -278,23 +333,26 @@ export default function PremiumInfoScreen({
               const hasUrl = Boolean(plan.shopifyUrl?.trim());
               const highlight = plan.highlight;
               const cardBase =
-                "relative flex flex-col rounded-3xl border p-5 sm:p-6 min-h-0 min-w-0 transition duration-300 ease-out";
+                "relative flex flex-col overflow-hidden rounded-[2rem] border p-5 sm:p-6 min-h-0 min-w-0 transition duration-300 ease-out";
               const cardVisual = highlight
-                ? "md:-translate-y-1 z-[1] border-[#c9a88a] bg-gradient-to-b from-[#fffefb] to-white shadow-[0_28px_64px_-28px_rgba(110,75,45,0.38)] ring-1 ring-[#dfc7ae]/70 hover:shadow-[0_32px_70px_-26px_rgba(110,75,45,0.45)] hover:-translate-y-1 md:hover:-translate-y-1.5"
-                : "border-neutral-200/95 bg-white shadow-[0_18px_48px_-32px_rgba(0,0,0,0.16)] hover:shadow-[0_24px_56px_-28px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 md:hover:-translate-y-1";
+                ? "md:-translate-y-1 z-[1] border-[#b99671] bg-gradient-to-b from-[#fff8ef] via-white to-white shadow-[0_34px_76px_-28px_rgba(110,75,45,0.45)] ring-2 ring-[#dfc7ae]/80 hover:shadow-[0_38px_84px_-26px_rgba(110,75,45,0.52)] hover:-translate-y-px md:hover:-translate-y-2"
+                : "border-neutral-200/95 bg-white shadow-[0_18px_48px_-32px_rgba(0,0,0,0.16)] hover:shadow-[0_24px_56px_-28px_rgba(0,0,0,0.2)] hover:-translate-y-px md:hover:-translate-y-1";
 
               return (
                 <article
                   key={plan.id}
                   className={`${cardBase} ${cardVisual}`}
                 >
+                  {highlight ? (
+                    <div className="pointer-events-none absolute -right-12 -top-16 h-40 w-40 rounded-full bg-[#d9a66f]/25 blur-3xl" />
+                  ) : null}
                   {plan.badge ? (
-                    <span className="absolute -top-3 right-4 max-w-[min(100%,14rem)] rounded-full bg-gradient-to-r from-[#2d1f14] to-[#3d2918] px-3 py-1 text-[10px] sm:text-[11px] font-black uppercase tracking-wide text-white text-center leading-tight shadow-md">
+                    <span className="absolute right-4 top-4 max-w-[min(100%,14rem)] rounded-full bg-gradient-to-r from-[#2d1f14] to-[#3d2918] px-3 py-1 text-[10px] sm:text-[11px] font-black uppercase tracking-wide text-white text-center leading-tight shadow-md">
                       {plan.badge}
                     </span>
                   ) : null}
 
-                  <div className="pr-2">
+                  <div className="relative pr-2">
                     <h3 className="text-xl sm:text-2xl font-extrabold text-neutral-950 leading-tight">
                       {plan.label}
                     </h3>
@@ -303,7 +361,7 @@ export default function PremiumInfoScreen({
                     </p>
                   </div>
 
-                  <div className="mt-5 space-y-1 min-w-0">
+                  <div className="relative mt-5 space-y-1 min-w-0">
                     {is1m ? (
                       <p className="text-3xl sm:text-4xl font-black tabular-nums tracking-tight text-neutral-950 break-words">
                         {plan.totalPriceLabel}
@@ -324,11 +382,11 @@ export default function PremiumInfoScreen({
                     )}
                   </div>
 
-                  <p className="mt-4 text-sm font-medium text-neutral-700 leading-relaxed flex-1">
+                  <p className="relative mt-4 text-sm font-medium text-neutral-700 leading-relaxed flex-1">
                     {plan.description}
                   </p>
 
-                  <ul className="mt-4 space-y-1.5 text-xs sm:text-sm font-semibold text-neutral-600">
+                  <ul className="relative mt-4 space-y-1.5 text-xs sm:text-sm font-semibold text-neutral-600">
                     {PLAN_CARD_PERKS.map((perk) => (
                       <li key={perk} className="flex gap-2">
                         <span className="text-[#a67c52] shrink-0">•</span>
@@ -341,7 +399,7 @@ export default function PremiumInfoScreen({
                     type="button"
                     onClick={(e) => handlePlanClick(e, plan)}
                     disabled={!hasUrl}
-                    className={`mt-5 w-full min-h-12 rounded-2xl text-sm font-extrabold px-3 py-3 transition ${
+                    className={`relative mt-5 w-full min-h-12 rounded-2xl text-sm font-extrabold px-3 py-3 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c4a882] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
                       hasUrl
                         ? "bg-[#1a120c] text-white shadow-lg shadow-neutral-900/15 hover:bg-black hover:shadow-xl active:scale-[0.98]"
                         : "bg-neutral-100 text-neutral-500 border border-neutral-200 cursor-not-allowed"
