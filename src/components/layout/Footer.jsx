@@ -53,9 +53,15 @@ export default function Footer({
         </div>
 
         <nav
-          aria-label="Yasal bağlantılar"
+          aria-label="Site ve yasal bağlantılar"
           className="flex flex-col sm:flex-row sm:flex-wrap gap-x-4 gap-y-2 min-w-0 lg:justify-end"
         >
+          <a
+            href="/rehber/index.html"
+            className={`${linkClass} text-xs sm:text-sm py-1 sm:py-0`}
+          >
+            TUS branş rehberi
+          </a>
           {LEGAL_PAGES.map((p) => (
             <button
               key={p.id}

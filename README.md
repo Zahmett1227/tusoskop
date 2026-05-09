@@ -52,6 +52,13 @@ node scripts/split-questions.mjs
 
 (Komut, o anda [`src/data/questions.js`](src/data/questions.js) içinden tam `QUESTIONS` export’unu bekler — güncelleme akışınızda tam dizi dosyasını geçici olarak geri koymanız gerekebilir.)
 
+## Pazarlama (statik rehber, takvim, şablonlar)
+
+- **Branş landing sayfaları:** [`public/rehber/`](public/rehber/) — Firebase Hosting’de dosya olarak sunulur (SPA rewrite’undan önce). Güncellemek için `npm run generate:rehber` (`scripts/generate-rehber-pages.mjs`). Canonical ve sosyal meta kökü şu an **`https://tusoskop.com`** (`SITE_ORIGIN`).
+- **İçerik takvimi ve şablonlar:** [`marketing/content-calendar.json`](marketing/content-calendar.json), [`marketing/outreach-templates.txt`](marketing/outreach-templates.txt), [`marketing/google-ads-pilot-checklist.txt`](marketing/google-ads-pilot-checklist.txt).
+- **Huni tanımları:** [`src/marketing/analyticsFunnel.js`](src/marketing/analyticsFunnel.js); SPA ekranları için Firebase Analytics’e `screen_view` gönderilir (`src/firebase.js`, `src/App.jsx`).
+- **Sosyal önizleme:** [`public/og-share.png`](public/og-share.png), meta etiketleri [`index.html`](index.html).
+
 ## PWA ve çevrimdışı önbellek
 
 - **Manifest:** [`public/manifest.json`](public/manifest.json) (ana ekran / PWA meta).

@@ -1,0 +1,22 @@
+Tusoskop — küçük bütçeli Google Arama (Search) pilotu (2–4 hafta)
+
+Ön koşullar:
+- Dönüşüm ölçümü: Firebase Analytics (measurementId src/firebase.js içinde) + mümkünse GA4 arayüzünde dönüşüm olarak “kayıt” veya anahtar olay tanımı.
+- Tek landing varsayımı: ana site https://tusoskop.com/ veya belirli bir rehber sayfası (tek kampanyada tek URL ile başlayın).
+
+Kampanya yapısı:
+1) Tek kampanya → Arama ağı → Türkiye → Türkçe.
+2) Tek reklam grubu → dar anahtar kelimeler (örnek): [TUS deneme çöz], [TUS soru bankası], [TUS soru çöz].
+3) Eşleşme: Önce tam veya dar ifade; geniş eşleşmeyi düşük teklifle veya kapalı tutun.
+4) Reklam öğesi: Tek net mesaj — “Branşa göre soru, tam deneme, analiz”. İddia ettiğiniz sayıları doğrulayın.
+
+Haftalık kontrol listesi:
+- [ ] Tıklama başına maliyet ve gösterim payı (kalite puanı).
+- [ ] Oturum → kayıt veya ilk soru çözümü oranı (Firebase/GA4 olayları).
+- [ ] Arama terimleri raporu: gereksiz sorguları negatif anahtar kelimeye ekleyin.
+
+Bitiş:
+- 2 haftada anlamlı sinyal yoksa: kelime listesini daraltın veya teklifi düşürün; mesajı değiştirmeden önce tek değişken test edin.
+
+Retargeting (isteğe bağlı, ek bütçe):
+- Site ziyareti + kayıt olmadı — için GA4 kitleleri veya Google Ads etiketi gerekir; şimdilik Search pilotunu netleştirin.
