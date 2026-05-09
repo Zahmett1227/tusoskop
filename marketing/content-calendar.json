@@ -1,5 +1,5 @@
 {
-  "siteOrigin": "https://tusoskop.web.app",
+  "siteOrigin": "https://tusoskop.com",
   "rehberHubUrl": "/rehber/index.html",
   "weeklyThemes": [
     {
@@ -106,6 +106,6 @@
   "notes": [
     "Her hafta en az bir iç link rehber → ana uygulama (/).",
     "Statik sayfalar scripts/generate-rehber-pages.mjs ile yeniden üretilir.",
-    "Özel alan adı kullanıyorsanız script içindeki SITE_ORIGIN ve og:image URL’lerini güncelleyin."
+    "Alan adı değişirse script içindeki SITE_ORIGIN ve npm run generate:rehber ile sayfaları yenileyin."
   ]
 }

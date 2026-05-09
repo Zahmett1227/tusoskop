@@ -12,7 +12,7 @@ Kurallar (özet):
 Konu: Mini özet
 
 Merhaba,
-TUS [BRANŞ] için soru pratiği arayanlar için Tusoskop diye bir web uygulaması kullanıyorum; branşa göre soru, konu testi ve tam deneme var. İsterseniz bir göz atın: https://tusoskop.web.app/
+TUS [BRANŞ] için soru pratiği arayanlar için Tusoskop diye bir web uygulaması kullanıyorum; branşa göre soru, konu testi ve tam deneme var. İsterseniz bir göz atın: https://tusoskop.com/
 İyi çalışmalar.
 
 ---

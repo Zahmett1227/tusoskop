@@ -2,7 +2,7 @@ Tusoskop — küçük bütçeli Google Arama (Search) pilotu (2–4 hafta)
 
 Ön koşullar:
 - Dönüşüm ölçümü: Firebase Analytics (measurementId src/firebase.js içinde) + mümkünse GA4 arayüzünde dönüşüm olarak “kayıt” veya anahtar olay tanımı.
-- Tek landing varsayımı: ana site https://tusoskop.web.app/ veya belirli bir rehber sayfası (tek kampanyada tek URL ile başlayın).
+- Tek landing varsayımı: ana site https://tusoskop.com/ veya belirli bir rehber sayfası (tek kampanyada tek URL ile başlayın).
 
 Kampanya yapısı:
 1) Tek kampanya → Arama ağı → Türkiye → Türkçe.

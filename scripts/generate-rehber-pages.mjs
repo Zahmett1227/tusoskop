@@ -13,7 +13,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const OUT_DIR = join(ROOT, "public", "rehber");
 
-const SITE_ORIGIN = "https://tusoskop.web.app";
+const SITE_ORIGIN = "https://tusoskop.com";
 
 const SUBJECTS = [
   {
