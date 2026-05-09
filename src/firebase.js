@@ -10,6 +10,26 @@ import { getFirestore } from "firebase/firestore";
 import { getFunctions } from "firebase/functions";
 import { trackClarityEvent } from "./lib/clarity";
 
+/** Tek Analytics örneği — logEvent için paylaşılır */
+let analyticsPromise = null;
+
+function getAnalyticsSingleton() {
+  if (typeof window === "undefined") return Promise.resolve(null);
+  if (!analyticsPromise) {
+    analyticsPromise = import("firebase/analytics")
+      .then(({ getAnalytics, logEvent }) => {
+        const analytics = getAnalytics(app);
+        logEvent(analytics, "page_view");
+        return analytics;
+      })
+      .catch((error) => {
+        console.warn("Analytics init failed:", error);
+        return null;
+      });
+  }
+  return analyticsPromise;
+}
+
 const firebaseConfig = {
   apiKey: "AIzaSyBF8gh8mOeCpPgbfX_0jP_Fg47wyUXs278",
   authDomain: "tusoskop.firebaseapp.com",
@@ -66,14 +86,34 @@ export const functions = getFunctions(app);
 
 
 export async function initAnalytics() {
-  if (typeof window === "undefined") return null;
+  return getAnalyticsSingleton();
+}
+
+/**
+ * Firebase Analytics (GA4) özel olay — huni ve kampanya ölçümü için.
+ * @param {string} eventName
+ * @param {Record<string, unknown>} [params]
+ */
+export async function logMarketingEvent(eventName, params = {}) {
+  if (!eventName || typeof window === "undefined") return;
   try {
-    const { getAnalytics, logEvent } = await import("firebase/analytics");
-    const analytics = getAnalytics(app);
-    logEvent(analytics, "page_view");
-    return analytics;
+    const analytics = await getAnalyticsSingleton();
+    if (!analytics) return;
+    const { logEvent } = await import("firebase/analytics");
+    logEvent(analytics, eventName, params);
   } catch (error) {
-    console.warn("Analytics init failed:", error);
-    return null;
+    console.warn("logMarketingEvent failed:", eventName, error);
   }
+}
+
+/**
+ * SPA “ekran” izlenmesi — GA4’te screen_view.
+ * @param {string} screenName — iç view adı (örn. dashboard, exam)
+ */
+export async function logScreenViewFirebase(screenName) {
+  if (!screenName) return;
+  await logMarketingEvent("screen_view", {
+    firebase_screen: screenName,
+    firebase_screen_class: screenName,
+  });
 }

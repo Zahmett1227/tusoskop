@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, useMemo, useState, useEffect, useRef } from "react";
 import './index.css';
-import { auth, db, initAnalytics, loginWithGoogle, logout } from "./firebase";
+import { auth, db, initAnalytics, logScreenViewFirebase, loginWithGoogle, logout } from "./firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 // Veri ve Yardımcı Araçlar
@@ -133,6 +133,10 @@ export default function App() {
 
   // --- 1. KULLANICI VE NAVİGASYON ---
   const [view, setView] = useState("dashboard");
+
+  useEffect(() => {
+    logScreenViewFirebase(view);
+  }, [view]);
   const legalReturnViewRef = useRef("dashboard");
   const [legalPageId, setLegalPageId] = useState(LEGAL_PAGES[0].id);
   const { accentThemeKey, accentTheme, handleAccentThemeChange } = useAppAccentTheme();

@@ -1,0 +1,111 @@
+{
+  "siteOrigin": "https://tusoskop.web.app",
+  "rehberHubUrl": "/rehber/index.html",
+  "weeklyThemes": [
+    {
+      "week": 1,
+      "focus": "Temel bilimler — anatomi / fizyoloji giriş",
+      "actions": [
+        "Instagram/Reels veya kısa video: ‘TUS’ta anatomide ilk 5 tuzak’",
+        "Rehber iç linki: /rehber/anatomi.html → site ana sayfa",
+        "Topluluk paylaşımı: grupta tek soru + Tusoskop çözüm linki (spam kurallarına uygun)"
+      ]
+    },
+    {
+      "week": 2,
+      "focus": "Farmakoloji / yan etki soruları",
+      "actions": [
+        "Blog veya statik içerik taslağı: ilaç gruplarına göre mini özet",
+        "Rehber: /rehber/farmakoloji.html",
+        "Google Ads test kelimesi örneği: `TUS farmakoloji soru` (dar eşleşme)"
+      ]
+    },
+    {
+      "week": 3,
+      "focus": "Dahiliye vaka mantığı",
+      "actions": [
+        "İçerik: ‘tanı algoritması’ şeması (görsel)",
+        "Rehber: /rehber/dahiliye.html",
+        "YouTube mini partner: 30 sn tanıtım + link"
+      ]
+    },
+    {
+      "week": 4,
+      "focus": "Pediatri — yaş grupları",
+      "actions": [
+        "Haftanın 5 sorusu PDF (lead magnet — isteğe bağlı)",
+        "Rehber: /rehber/pediatri.html",
+        "Telegram’da kanal özet mesajı"
+      ]
+    },
+    {
+      "week": 5,
+      "focus": "Mikrobiyoloji — etken-tedavi",
+      "actions": [
+        "Karşılaştırma tablosu paylaşımı",
+        "Rehber: /rehber/mikrobiyoloji.html"
+      ]
+    },
+    {
+      "week": 6,
+      "focus": "Genel cerrahi aciller",
+      "actions": [
+        "Vaka formatında soru çözüm videosu",
+        "Rehber: /rehber/genel-cerrahi.html"
+      ]
+    },
+    {
+      "week": 7,
+      "focus": "KHD — gebelik ve obstetrik",
+      "actions": [
+        "Checklist içeriği",
+        "Rehber: /rehber/kadin-hastaliklari-dogum.html"
+      ]
+    },
+    {
+      "week": 8,
+      "focus": "Küçük stajlar dağılımı",
+      "actions": [
+        "TUS blueprint ile uyumlu çalışma planı yazısı",
+        "Rehber: /rehber/kucuk-stajlar.html"
+      ]
+    },
+    {
+      "week": 9,
+      "focus": "Biyokimya metabolizma",
+      "actions": [
+        "Şema paylaşımı",
+        "Rehber: /rehber/biyokimya.html"
+      ]
+    },
+    {
+      "week": 10,
+      "focus": "Patoloji görsel hafıza",
+      "actions": [
+        "Mikro görüntü ipuçları (telifsiz kaynak)",
+        "Rehber: /rehber/patoloji.html"
+      ]
+    },
+    {
+      "week": 11,
+      "focus": "Tam deneme ritmi",
+      "actions": [
+        "‘Haftada 1 tam deneme’ çağrısı + Tusoskop analiz özelliği",
+        "Ana sayfa CTA"
+      ]
+    },
+    {
+      "week": 12,
+      "focus": "Yorum / sosyal kanıt",
+      "actions": [
+        "Kullanıcı alıntıları (izinli)",
+        "Önce/sonra net hikâyesi (anonim)"
+      ]
+    }
+  ],
+  "notes": [
+    "Her hafta en az bir iç link rehber → ana uygulama (/).",
+    "Statik sayfalar scripts/generate-rehber-pages.mjs ile yeniden üretilir.",
+    "Özel alan adı kullanıyorsanız script içindeki SITE_ORIGIN ve og:image URL’lerini güncelleyin."
+  ]
+}
