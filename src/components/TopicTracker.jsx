@@ -178,11 +178,11 @@ export default function TopicTracker({ onBack }) {
           <div className="relative z-10 flex flex-wrap items-center justify-between gap-3">
             <div>
               <p className="inline-flex items-center rounded-full border border-violet-200/20 bg-violet-400/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-violet-100/80">
-                Premium Yeterlilik Analizi
+                Konu ilerlemen
               </p>
-              <h1 className="mt-3 text-3xl font-black tracking-tight text-white md:text-4xl">Konu Yeterlilik Düzeyim</h1>
+              <h1 className="mt-3 text-3xl font-black tracking-tight text-white md:text-4xl">Kayıtlı çözüm geçmişin</h1>
               <p className="mt-2 text-sm text-slate-300/80">
-                Çözüm geçmişine göre konu bazlı yetkinlik seviyen, açık alanların ve tekrar ihtiyacın.
+                Bu cihazda kayıtlı çözümlere göre konu özeti; uzun vadeli genel skor değildir.
               </p>
             </div>
             <button
@@ -196,11 +196,11 @@ export default function TopicTracker({ onBack }) {
 
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
           <div className="rounded-2xl border border-slate-700/70 bg-slate-900/80 p-4">
-            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Genel doğruluk</p>
+            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Kayıtlı çözümlerde doğruluk</p>
             <p className="mt-2 text-2xl font-black text-emerald-300">%{overallStats.accuracy}</p>
           </div>
           <div className="rounded-2xl border border-slate-700/70 bg-slate-900/80 p-4">
-            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Tamamlanma</p>
+            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Banka kapsama</p>
             <p className="mt-2 text-2xl font-black text-cyan-300">%{overallStats.completion}</p>
           </div>
           <div className="rounded-2xl border border-slate-700/70 bg-slate-900/80 p-4">
@@ -262,7 +262,7 @@ export default function TopicTracker({ onBack }) {
 
                       {warning && (
                         <p className="mt-3 rounded-xl border border-amber-400/20 bg-amber-500/10 px-3 py-2 text-xs font-semibold text-amber-300">
-                          ⚠ Bu konuyu bir kere daha tekrar etmen faydalı olur.
+                          ⚠ Kayıtlı çözümlerde zayıf görünüyor; kısa tekrar faydalı olur.
                         </p>
                       )}
                     </div>

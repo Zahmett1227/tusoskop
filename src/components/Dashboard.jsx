@@ -419,9 +419,9 @@ export default function Dashboard({
               {/* Özellik etiketleri */}
               <div className="flex flex-wrap gap-3 mb-8">
                 {[
-                  { icon: "📊", label: "Ders bazlı başarı analizi" },
+                  { icon: "📊", label: "Bu denemede ders özeti" },
                   { icon: "🎯", label: "Tahmini TUS puanı" },
-                  { icon: "⚠️", label: "Zayıf konu tespiti" },
+                  { icon: "⚠️", label: "Bu denemede zayıf konu özeti" },
                   { icon: "☁️", label: "Buluta otomatik kayıt" },
                 ].map(f => (
                   <span key={f.label} className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold ${isLightTheme ? "bg-[#fffefb] border border-slate-300 text-slate-700 shadow-sm" : "bg-slate-800/80 border border-slate-700 text-slate-300"}`}>

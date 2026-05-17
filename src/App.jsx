@@ -10,6 +10,7 @@ import { useAppAuthBootstrap } from "./hooks/useAppAuthBootstrap";
 import { EXAM_SETS } from "./data/exams";
 import {
   buildFullExam,
+  getFixedExamQuestions,
   scaleBlueprintToTotal,
   analyzeExamResults,
   getEstimatedTusResult,
@@ -514,8 +515,14 @@ export default function App() {
       fallbackSet;
 
     const totalQuestions = activeSet?.questionCount || 200;
-    const scaledBlueprint = scaleBlueprintToTotal(FULL_EXAM_BLUEPRINT, totalQuestions);
-    const exam = toDisplayQuestions(buildFullExam(allQuestions, scaledBlueprint));
+    const rawExam =
+      Array.isArray(activeSet?.questionIds) && activeSet.questionIds.length > 0
+        ? getFixedExamQuestions(activeSet.questionIds, allQuestions)
+        : buildFullExam(
+            allQuestions,
+            scaleBlueprintToTotal(FULL_EXAM_BLUEPRINT, totalQuestions)
+          );
+    const exam = toDisplayQuestions(rawExam);
     if (!exam.length) return;
     try {
       await incrementFullExamUsage(user, userData);
@@ -802,7 +809,7 @@ export default function App() {
   const getMasteryLevel = (topic) => {
     const stats = topicMastery[topic] || { seen: 0, correct: 0 };
     const accuracy = stats.seen ? Math.round((stats.correct / stats.seen) * 100) : 0;
-    const level = accuracy >= 85 ? "Ustalık" : accuracy >= 70 ? "Oturma" : accuracy >= 50 ? "Isınma" : "Başlangıç";
+    const level = accuracy >= 85 ? "Güçlü tempo" : accuracy >= 70 ? "İyi tempo" : accuracy >= 50 ? "Isınma" : "Başlangıç";
     const progress = Math.max(8, Math.min(100, accuracy || 8));
     return { ...stats, accuracy, level, progress };
   };
@@ -821,7 +828,9 @@ export default function App() {
         answeredAt: String(entry.answeredAt || new Date().toISOString()),
       };
       if (!Number.isFinite(safeEntry.questionId) || !Number.isFinite(safeEntry.correct)) {
-        console.error("Question history save skipped: invalid numeric fields", entry);
+        console.error("Question history save skipped: invalid numeric fields", {
+          questionId: entry?.questionId,
+        });
         return;
       }
       const raw = localStorage.getItem(QUESTION_HISTORY_KEY);
@@ -836,7 +845,7 @@ export default function App() {
   const recordHistoryForQuestion = ({ question, selectedOption, mode }) => {
     if (!question?.id) return;
     if (isReactEventOrDomNode(selectedOption)) {
-      console.error("Invalid selected answer: React event/DOM node received", selectedOption);
+      console.error("Invalid selected answer: React event/DOM node received");
     }
     const normalizedSelected = normalizeAnswerValue(selectedOption);
     const normalizedCorrect = Number(question.correct);
@@ -900,14 +909,14 @@ export default function App() {
     }
   };
 
-  const saveExamAnswer = (questionId, selectedIndex) => {
-    if (questionId === undefined || questionId === null) return;
-    examAnswersRef.current = { ...examAnswersRef.current, [questionId]: selectedIndex };
-    setExamAnswers(examAnswersRef.current);
+  const saveExamAnswer = (questionIndex, selectedIndex) => {
+    if (questionIndex === undefined || questionIndex === null) return;
+    examAnswersRef.current = { ...examAnswersRef.current, [questionIndex]: selectedIndex };
+    setExamAnswers({ ...examAnswersRef.current });
   };
 
-  const saveExamBlank = (questionId) => {
-    saveExamAnswer(questionId, null);
+  const saveExamBlank = (questionIndex) => {
+    saveExamAnswer(questionIndex, null);
   };
 
   const handleExamNext = (selectedOverride) => {
@@ -919,18 +928,21 @@ export default function App() {
       safeOverride !== undefined
         ? safeOverride
         : (persistedAnswer ?? examSelected ?? null);
-    saveExamAnswer(currentQuestion.id, currentAnswer);
+    saveExamAnswer(examIndex, currentAnswer);
     const latestAnswers = examAnswersRef.current;
     recordHistoryForQuestion({
       question: currentQuestion,
-      selectedOption: latestAnswers[currentQuestion.id],
+      selectedOption: getSelectedAnswerIndex(latestAnswers, currentQuestion, examIndex),
       mode: "exam",
     });
 
     if (examIndex < examQuestions.length - 1) {
-      setExamIndex(prev => prev + 1);
-      const nextQuestion = examQuestions[examIndex + 1];
-      setExamSelected(nextQuestion?.id ? (getSelectedAnswerIndex(latestAnswers, nextQuestion, examIndex + 1) ?? null) : null);
+      const nextIdx = examIndex + 1;
+      const nextQuestion = examQuestions[nextIdx];
+      setExamIndex(nextIdx);
+      setExamSelected(
+        nextQuestion ? (getSelectedAnswerIndex(latestAnswers, nextQuestion, nextIdx) ?? null) : null
+      );
     } else setView("examAnalysis");
   };
 
@@ -940,33 +952,31 @@ export default function App() {
     if (currentQuestion?.id) {
       const currentAnswer =
         getSelectedAnswerIndex(examAnswersRef.current, currentQuestion, examIndex) ?? examSelected ?? null;
-      saveExamAnswer(currentQuestion.id, currentAnswer);
+      saveExamAnswer(examIndex, currentAnswer);
     }
     const latestAnswers = examAnswersRef.current;
     recordHistoryForQuestion({
       question: currentQuestion,
-      selectedOption: currentQuestion?.id ? (latestAnswers[currentQuestion.id] ?? null) : null,
+      selectedOption: getSelectedAnswerIndex(latestAnswers, currentQuestion, examIndex),
       mode: "exam",
     });
     const newIndex = examIndex - 1;
     setExamIndex(newIndex);
     const prevQuestion = examQuestions[newIndex];
     setExamSelected(
-      prevQuestion?.id ? (getSelectedAnswerIndex(latestAnswers, prevQuestion, newIndex) ?? null) : null
+      prevQuestion ? (getSelectedAnswerIndex(latestAnswers, prevQuestion, newIndex) ?? null) : null
     );
   };
 
   const handleExamSelect = (optionIndex) => {
-    const currentQuestion = examQuestions[examIndex];
-    if (!currentQuestion?.id) return;
-    saveExamAnswer(currentQuestion.id, optionIndex);
+    if (!examQuestions[examIndex]) return;
+    saveExamAnswer(examIndex, optionIndex);
     setExamSelected(optionIndex);
   };
 
   const handleExamSelectForQuestion = (questionIdx, letterIdx) => {
-    const question = examQuestions[questionIdx];
-    if (!question?.id) return;
-    saveExamAnswer(question.id, letterIdx);
+    if (!examQuestions[questionIdx]) return;
+    saveExamAnswer(questionIdx, letterIdx);
     setExamIndex(questionIdx);
     setExamSelected(letterIdx);
   };
@@ -1110,21 +1120,26 @@ export default function App() {
           getExamAnswersSnapshot={() => examAnswersRef.current}
           onJump={(idx) => {
             const currentQuestion = examQuestions[examIndex];
+            if (examSelected !== null && examSelected !== undefined) {
+              saveExamAnswer(examIndex, examSelected);
+            }
             const latestAnswers = examAnswersRef.current;
             recordHistoryForQuestion({
               question: currentQuestion,
-              selectedOption: currentQuestion?.id ? (getSelectedAnswerIndex(latestAnswers, currentQuestion, examIndex) ?? null) : null,
+              selectedOption: getSelectedAnswerIndex(latestAnswers, currentQuestion, examIndex) ?? null,
               mode: "exam",
             });
             const nextQuestion = examQuestions[idx];
-            setExamAnswers(latestAnswers); setExamIndex(idx); setExamSelected(nextQuestion?.id ? (getSelectedAnswerIndex(latestAnswers, nextQuestion, idx) ?? null) : null);
+            setExamAnswers({ ...latestAnswers });
+            setExamIndex(idx);
+            setExamSelected(
+              nextQuestion ? (getSelectedAnswerIndex(latestAnswers, nextQuestion, idx) ?? null) : null
+            );
           }}
           handleExamSelect={handleExamSelect}
           handleExamSelectForQuestion={handleExamSelectForQuestion}
           handleExamBlank={() => {
-            const currentQuestion = examQuestions[examIndex];
-            if (!currentQuestion?.id) return;
-            saveExamBlank(currentQuestion.id);
+            saveExamBlank(examIndex);
             setExamSelected(null);
             handleExamNext(null);
           }}

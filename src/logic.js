@@ -55,8 +55,7 @@ export const saveTusResult = async (user, questions, answers) => {
       breakdown: branchStats // Ders ders başarı oranları
     };
 
-    const docRef = await addDoc(collection(db, "results"), resultData);
-    console.log("Başarıyla kaydedildi, ID:", docRef.id);
+    await addDoc(collection(db, "results"), resultData);
     return true;
   } catch (error) {
     console.error("Veri kaydedilirken hata oluştu:", error);

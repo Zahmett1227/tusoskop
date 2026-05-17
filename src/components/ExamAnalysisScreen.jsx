@@ -241,7 +241,7 @@ export default function ExamAnalysisScreen({
                 </h1>
               </div>
               <p className="text-slate-400 text-sm md:text-base">
-                Sonuçların hazır. Hangi derste ne kadar ilerlediğini buradan takip edebilirsin.
+                Bu denemenin özeti. Ders bazlı sonuçları buradan görebilirsin.
               </p>
             </div>
             <button
@@ -326,7 +326,7 @@ export default function ExamAnalysisScreen({
             <div className="lg:col-span-2 rounded-[2rem] bg-slate-900 border border-slate-800 overflow-hidden shadow-xl">
               <div className="bg-slate-950/50 px-6 py-5 border-b border-slate-800">
                 <h2 className="text-xl font-bold flex items-center gap-2">
-                  <span className="text-fuchsia-400">🔬</span> Ders Bazlı Performans
+                  <span className="text-fuchsia-400">🔬</span> Bu denemede ders performansı
                 </h2>
               </div>
               <div className="p-1 overflow-x-auto">
@@ -338,7 +338,7 @@ export default function ExamAnalysisScreen({
                       <th className={`py-4 px-2 font-medium ${theme.text}/80 text-center`}>D</th>
                       <th className="py-4 px-2 font-medium text-rose-400/80 text-center">Y</th>
                       <th className="py-4 px-2 font-medium text-slate-500 text-center">B</th>
-                      <th className="py-4 pr-5 font-medium text-right">Başarı</th>
+                      <th className="py-4 pr-5 font-medium text-right">Bu testte</th>
                     </tr>
                   </thead>
                   <tbody>

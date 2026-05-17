@@ -49,7 +49,13 @@ export default function ExamSetSelectScreen({ onSelectSet, goDashboard }) {
                         <h4 className="font-bold text-slate-200 group-hover:text-white">{exam.title}</h4>
                         <p className="text-[10px] text-slate-500 mt-1 font-black uppercase">
                           {exam.questionCount} Soru • {exam.difficulty}
+                          {exam.questionIds?.length ? " • Sabit set" : ""}
                         </p>
+                        {exam.description ? (
+                          <p className="text-[11px] text-slate-400 mt-2 leading-snug font-medium normal-case">
+                            {exam.description}
+                          </p>
+                        ) : null}
                       </div>
                       <span className="text-xl opacity-20 group-hover:opacity-100 transition-opacity">🚀</span>
                     </div>

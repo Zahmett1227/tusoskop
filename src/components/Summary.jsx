@@ -16,7 +16,7 @@ export default function Summary({ currentSubject, score, total, onRetry, goDashb
     ? "Hız iyi, ama doğrulukla birlikte değerlendirmek lazım."
     : avgTime <= 45
     ? "Dengeli tempo."
-    : "Yavaş çözüyorsun, konu hakimiyeti veya karar verme süresi uzuyor olabilir.";
+    : "Yavaş çözüyorsun; bu oturumda tempo veya karar süresi uzuyor olabilir.";
 
   return (
     <div className="min-h-screen bg-slate-950 text-white p-6 md:p-10">

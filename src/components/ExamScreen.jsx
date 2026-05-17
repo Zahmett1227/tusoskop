@@ -269,8 +269,8 @@ export default function ExamScreen({
       const persistedAnswer = getSelectedAnswerIndex(latestAnswers, currentQuestion, examIndex);
       const finalAnswers = {
         ...latestAnswers,
-        ...(currentQuestion?.id
-          ? { [currentQuestion.id]: persistedAnswer ?? examSelected ?? null }
+        ...(currentQuestion != null && examIndex != null
+          ? { [examIndex]: persistedAnswer ?? examSelected ?? null }
           : {}),
       };
 
@@ -481,7 +481,7 @@ export default function ExamScreen({
             {/* Ders Bazlı Tablo */}
             <div className="bg-slate-900 border border-slate-800 rounded-[2.5rem] overflow-hidden mb-8 shadow-2xl">
               <div className="p-6 border-b border-slate-800 font-bold flex items-center gap-2">
-                <span className="text-fuchsia-400">🔬</span> Branş Performansın
+                <span className="text-fuchsia-400">🔬</span> Bu denemede branş performansı
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-sm">
@@ -491,7 +491,7 @@ export default function ExamScreen({
                       <th className="p-5 text-center text-emerald-500">D</th>
                       <th className="p-5 text-center text-rose-500">Y</th>
                       <th className="p-5 text-center text-slate-600">B</th>
-                      <th className="p-5 text-right">Başarı</th>
+                      <th className="p-5 text-right">Bu testte</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-800">

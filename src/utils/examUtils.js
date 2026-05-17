@@ -52,6 +52,43 @@ export const pickBalancedQuestions = (questions, quota) => {
   return shuffleArray(result);
 };
 
+/**
+ * Sabit questionIds listesinden soruları sırayla döndürür (shuffle yok).
+ * @param {number[]} questionIds
+ * @param {Array<{ id: number }>} allQuestions
+ */
+export function getFixedExamQuestions(questionIds, allQuestions) {
+  if (!Array.isArray(questionIds) || questionIds.length === 0) return [];
+
+  const byId = new Map();
+  for (const question of allQuestions || []) {
+    if (question?.id == null) continue;
+    byId.set(Number(question.id), question);
+  }
+
+  const result = [];
+  const missing = [];
+
+  for (const rawId of questionIds) {
+    const id = Number(rawId);
+    const question = byId.get(id);
+    if (!question) {
+      missing.push(id);
+      continue;
+    }
+    result.push(question);
+  }
+
+  if (missing.length > 0) {
+    console.error(
+      `getFixedExamQuestions: ${missing.length} missing id(s)`,
+      missing.slice(0, 20)
+    );
+  }
+
+  return result;
+}
+
 export const buildFullExam = (QUESTIONS, blueprint) => {
   const exam = [];
   const usedIds = new Set();
@@ -99,16 +136,17 @@ export const scaleBlueprintToTotal = (blueprint, totalQuestions) => {
   }, {});
 };
 
-export const getSelectedAnswerIndex = (answers, question, index) => {
-  if (!answers || !question) return undefined;
-  const questionId = question.id;
-  if (questionId !== undefined && questionId !== null) {
-    if (Object.prototype.hasOwnProperty.call(answers, questionId)) return answers[questionId];
-    const stringId = String(questionId);
-    if (Object.prototype.hasOwnProperty.call(answers, stringId)) return answers[stringId];
-  }
-  return answers[index];
+/** Deneme cevabı — yalnızca deneme içi sıra (0 tabanlı index). question.id ile okuma yapılmaz. */
+export const getExamAnswerAtIndex = (answers, index) => {
+  if (!answers || index === undefined || index === null) return undefined;
+  if (Object.prototype.hasOwnProperty.call(answers, index)) return answers[index];
+  const indexKey = String(index);
+  if (Object.prototype.hasOwnProperty.call(answers, indexKey)) return answers[indexKey];
+  return undefined;
 };
+
+export const getSelectedAnswerIndex = (answers, _question, index) =>
+  getExamAnswerAtIndex(answers, index);
 
 export const analyzeExamResults = (examQuestions, examAnswers) => {
   const summary = {

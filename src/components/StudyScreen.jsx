@@ -160,7 +160,7 @@ export default function StudyScreen({
                   {topicProgress.ders} • {topicProgress.konu}
                 </div>
                 <div className="mt-1 text-xs text-slate-400">
-                  {topicProgress.current} / {topicProgress.total} soru
+                  Bu testte {topicProgress.current} / {topicProgress.total} soru
                 </div>
               </div>
               <div className="text-xs font-bold text-slate-300">
@@ -218,7 +218,7 @@ export default function StudyScreen({
             className={`mb-2 flex w-full items-center justify-between rounded-2xl border border-slate-700/80 bg-slate-950/80 px-4 py-2.5 text-left text-xs font-extrabold text-slate-200 transition hover:bg-slate-900/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617] ${theme.ring}`}
             aria-expanded={insightsOpen}
           >
-            <span>İçgörü (sosyal kanıt & mastery)</span>
+            <span>İçgörü (oturum)</span>
             <span className="tabular-nums text-slate-400">{insightsOpen ? "▼" : "▶"}</span>
           </button>
           {insightsOpen ? (
@@ -229,7 +229,7 @@ export default function StudyScreen({
                 <span className="text-[11px] text-slate-300">{socialProof?.label || "Dengeli"}</span>
               </div>
               <div className="inline-flex flex-wrap items-center gap-2 rounded-xl border border-slate-700/70 bg-slate-950/80 px-3 py-2 shadow">
-                <span className="text-[10px] uppercase tracking-wider font-black text-slate-400">Mastery</span>
+                <span className="text-[10px] uppercase tracking-wider font-black text-slate-400">Bu oturum</span>
                 <span className="text-xs font-bold text-slate-200">{mastery?.level || "Başlangıç"}</span>
                 <span className={`text-xs font-black ${theme.text}`}>%{mastery?.accuracy ?? 0}</span>
               </div>
@@ -253,7 +253,7 @@ export default function StudyScreen({
             <p className="text-xs text-slate-400 mt-1">{socialProof?.label || "Dengeli zorluk"}</p>
           </div>
           <div className="rounded-2xl border border-slate-700/70 bg-slate-950/80 px-4 py-3 shadow-xl">
-            <p className="text-[11px] uppercase tracking-widest font-black text-slate-400 mb-1">Konu Mastery</p>
+            <p className="text-[11px] uppercase tracking-widest font-black text-slate-400 mb-1">Bu oturumdaki konu performansı</p>
             <div className="flex items-center justify-between text-sm mb-2">
               <span className="text-slate-300 font-bold">{mastery?.level || "Başlangıç"}</span>
               <span className={`${theme.text} font-black`}>%{mastery?.accuracy ?? 0}</span>
@@ -265,7 +265,7 @@ export default function StudyScreen({
               />
             </div>
             <p className="text-[11px] text-slate-500 mt-1">
-              {mastery?.seen || 0} soru • {mastery?.correct || 0} doğru
+              Bu oturumda {mastery?.seen || 0} soru • {mastery?.correct || 0} doğru
             </p>
           </div>
         </div>

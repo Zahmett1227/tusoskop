@@ -74,7 +74,9 @@ export async function initAnalytics() {
     logEvent(analytics, "page_view");
     return analytics;
   } catch (error) {
-    console.warn("Analytics init failed:", error);
+    if (import.meta.env.DEV) {
+      console.warn("Analytics init failed:", error);
+    }
     return null;
   }
 }

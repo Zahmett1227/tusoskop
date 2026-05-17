@@ -242,7 +242,7 @@ export default function PerformanceChartCard({
       <div className="relative z-10 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-6 min-w-0">
         <div className="min-w-0">
           <h3 className="text-lg md:text-xl font-black text-white tracking-tight mb-1">Deneme Performansı</h3>
-          <p className="text-slate-500 text-xs md:text-sm font-medium">Son denemelerde TUS neti değişimi</p>
+          <p className="text-slate-500 text-xs md:text-sm font-medium">Kayıtlı deneme geçmişinde net değişimi</p>
         </div>
         <div className="flex flex-wrap gap-3 lg:justify-end shrink-0">
           <div className="rounded-2xl bg-slate-950/70 border border-slate-800 px-4 py-3 min-w-[88px]">

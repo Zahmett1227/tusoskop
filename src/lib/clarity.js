@@ -32,7 +32,9 @@ export function initClarity() {
       tagsApplied = true;
     })
     .catch((err) => {
-      console.warn("Clarity init tags failed:", err);
+      if (import.meta.env.DEV) {
+        console.warn("Clarity init tags failed:", err);
+      }
     });
 }
 
@@ -41,7 +43,9 @@ export function trackClarityEvent(eventName) {
   getClarity()
     .then((Clarity) => Clarity?.event?.(eventName))
     .catch((err) => {
-      console.warn("Clarity event failed:", eventName, err);
+      if (import.meta.env.DEV) {
+        console.warn("Clarity event failed:", eventName, err);
+      }
     });
 }
 
@@ -50,7 +54,9 @@ export function setClarityTag(key, value) {
   getClarity()
     .then((Clarity) => Clarity?.setTag?.(key, String(value)))
     .catch((err) => {
-      console.warn("Clarity tag failed:", key, err);
+      if (import.meta.env.DEV) {
+        console.warn("Clarity tag failed:", key, err);
+      }
     });
 }
 
@@ -59,7 +65,9 @@ export function identifyClarityUser(userId) {
   getClarity()
     .then((Clarity) => Clarity?.identify?.(String(userId)))
     .catch((err) => {
-      console.warn("Clarity identify failed:", err);
+      if (import.meta.env.DEV) {
+        console.warn("Clarity identify failed:", err);
+      }
     });
 }
 
