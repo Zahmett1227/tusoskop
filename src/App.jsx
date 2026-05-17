@@ -878,11 +878,12 @@ export default function App() {
         try {
           await incrementQuestionUsage(user, userData, 1);
           await refreshRemainingUsage();
+          answeredQuestionIdsRef.current.add(questionId);
         } catch (err) {
           if (openLimitFromUsageError(err)) return;
-          console.warn("Kullanım sayacı yazılamadı; cevap yine gösteriliyor.", err);
+          console.warn("Kullanım sayacı yazılamadı; cevap gösterilmiyor.", err);
+          return;
         }
-        answeredQuestionIdsRef.current.add(questionId);
       }
 
       if (isReview && !answeredReviewIdsRef.current.has(questionId)) {
@@ -900,11 +901,12 @@ export default function App() {
         try {
           await incrementReviewUsage(user, userData, 1);
           await refreshRemainingUsage();
+          answeredReviewIdsRef.current.add(questionId);
         } catch (err) {
           if (openLimitFromUsageError(err)) return;
-          console.warn("Tekrar kullanım sayacı yazılamadı; cevap yine gösteriliyor.", err);
+          console.warn("Tekrar kullanım sayacı yazılamadı; cevap gösterilmiyor.", err);
+          return;
         }
-        answeredReviewIdsRef.current.add(questionId);
       }
     }
 

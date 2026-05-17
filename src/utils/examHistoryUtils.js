@@ -1,3 +1,5 @@
+import { isRecord, readLocalStorageJson } from "./safeLocalStorage";
+
 /** localStorage — kullanıcı isteği: key sabit kalmalı */
 export const TUSOSKOP_EXAM_HISTORY_KEY = "tusoskopExamHistory";
 
@@ -159,6 +161,9 @@ export function normalizeFirestoreResultDoc(docSnap) {
 }
 
 export function normalizeLocalExamEntry(raw, index) {
+  if (!isRecord(raw)) {
+    throw new TypeError("normalizeLocalExamEntry: expected object");
+  }
   const correct = Number(raw.totalCorrect ?? raw.stats?.correct ?? 0);
   const wrong = Number(raw.totalWrong ?? raw.stats?.wrong ?? 0);
   const blank = Number(raw.totalBlank ?? raw.stats?.empty ?? 0);
@@ -200,15 +205,29 @@ export function normalizeLocalExamEntry(raw, index) {
 }
 
 export function loadLocalExamHistory() {
-  if (typeof window === "undefined") return [];
+  const parsed = readLocalStorageJson(TUSOSKOP_EXAM_HISTORY_KEY, { fallback: [] });
+  return Array.isArray(parsed) ? parsed : [];
+}
+
+/** Tek geçersiz kayıt tüm geçmişi düşürmez; normalize edilemeyenler atlanır. */
+export function safeNormalizeLocalExamEntry(raw, index) {
+  if (!isRecord(raw)) return null;
   try {
-    const raw = localStorage.getItem(TUSOSKOP_EXAM_HISTORY_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
+    return normalizeLocalExamEntry(raw, index);
   } catch {
-    return [];
+    return null;
   }
+}
+
+/** Bitmiş deneme geçmişi — bozuk JSON patlatmaz; geçersiz satırlar filtrelenir. */
+export function loadNormalizedLocalExamHistory() {
+  const raw = loadLocalExamHistory();
+  const rows = [];
+  for (let i = 0; i < raw.length; i += 1) {
+    const row = safeNormalizeLocalExamEntry(raw[i], i);
+    if (row) rows.push(row);
+  }
+  return rows;
 }
 
 export function appendLocalExamHistory(entry) {

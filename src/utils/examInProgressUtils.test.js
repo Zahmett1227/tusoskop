@@ -183,9 +183,16 @@ describe("localStorage in-progress", () => {
     expect(localStorage.getItem("tusoskopExamHistory")).toBeNull();
   });
 
-  it("bozuk JSON loadInProgressExamRaw null döner", () => {
+  it("bozuk JSON loadInProgressExamRaw null döner ve key temizlenir", () => {
     localStorage.setItem(TUSOSKOP_EXAM_IN_PROGRESS_KEY, "{not json");
     expect(loadInProgressExamRaw()).toBeNull();
+    expect(localStorage.getItem(TUSOSKOP_EXAM_IN_PROGRESS_KEY)).toBeNull();
+  });
+
+  it("array tipi in-progress kaydı temizlenir", () => {
+    localStorage.setItem(TUSOSKOP_EXAM_IN_PROGRESS_KEY, "[]");
+    expect(loadInProgressExamRaw()).toBeNull();
+    expect(localStorage.getItem(TUSOSKOP_EXAM_IN_PROGRESS_KEY)).toBeNull();
   });
 });
 

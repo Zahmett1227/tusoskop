@@ -18,10 +18,9 @@ import { FREE_LIMITS, PLUS_LIMITS } from "../config/limits";
 import { isUserPremium } from "../utils/premiumUtils";
 import {
   buildChartRows,
-  loadLocalExamHistory,
+  loadNormalizedLocalExamHistory,
   mergeExamHistories,
   normalizeFirestoreResultDoc,
-  normalizeLocalExamEntry,
   summarizeNetStats,
 } from "../utils/examHistoryUtils";
 
@@ -78,8 +77,7 @@ export default function PerformanceChartCard({
         );
         const querySnapshot = await getDocs(resultsQuery);
         const firestoreRows = querySnapshot.docs.map(normalizeFirestoreResultDoc);
-        const localRaw = loadLocalExamHistory();
-        const localRows = localRaw.map((row, i) => normalizeLocalExamEntry(row, i));
+        const localRows = loadNormalizedLocalExamHistory();
         const merged = mergeExamHistories(firestoreRows, localRows);
         merged.sort((a, b) => {
           const ta = a.rawDate ? new Date(a.rawDate).getTime() : Number.MAX_SAFE_INTEGER;

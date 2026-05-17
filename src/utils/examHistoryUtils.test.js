@@ -1,11 +1,15 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeEach, vi } from "vitest";
 import { EXAM_SETS, TEKRAR_DENEMESI_1_EXAM_ID, TEKRAR_DENEMESI_1_SET_VERSION } from "../data/exams";
 import { TEKRAR_DENEMESI_1_QUESTION_IDS } from "../data/tekrarDenemesi1QuestionIds";
 import {
+  TUSOSKOP_EXAM_HISTORY_KEY,
   buildExamResultMetadata,
   getResultSetVersion,
+  loadLocalExamHistory,
+  loadNormalizedLocalExamHistory,
   normalizeFirestoreResultDoc,
   normalizeLocalExamEntry,
+  safeNormalizeLocalExamEntry,
 } from "./examHistoryUtils";
 
 describe("buildExamResultMetadata", () => {
@@ -67,3 +71,52 @@ function calculateTusNetSafe(exam) {
   const n = exam.tusNet ?? exam.totalNet;
   return Number(n);
 }
+
+describe("loadLocalExamHistory", () => {
+  beforeEach(() => {
+    const store = {};
+    vi.stubGlobal("localStorage", {
+      getItem: (k) => store[k] ?? null,
+      setItem: (k, v) => {
+        store[k] = v;
+      },
+      removeItem: (k) => {
+        delete store[k];
+      },
+    });
+  });
+
+  it("bozuk JSON patlatmaz, boş dizi döner", () => {
+    localStorage.setItem(TUSOSKOP_EXAM_HISTORY_KEY, "{bad json");
+    expect(loadLocalExamHistory()).toEqual([]);
+  });
+
+  it("array olmayan veri boş dizi döner", () => {
+    localStorage.setItem(TUSOSKOP_EXAM_HISTORY_KEY, JSON.stringify({ x: 1 }));
+    expect(loadLocalExamHistory()).toEqual([]);
+  });
+
+  it("geçersiz kayıt atlanır, geçerli kayıt korunur", () => {
+    localStorage.setItem(
+      TUSOSKOP_EXAM_HISTORY_KEY,
+      JSON.stringify([
+        { examTitle: "İyi", tusNet: 80, totalCorrect: 80, totalWrong: 0, totalBlank: 120 },
+        null,
+        "not-an-object",
+        { tusNet: 50 },
+      ])
+    );
+    const rows = loadNormalizedLocalExamHistory();
+    expect(rows.length).toBeGreaterThanOrEqual(2);
+    expect(rows.every((r) => r.setVersion)).toBe(true);
+    expect(rows[0].examTitle).toBe("İyi");
+    expect(safeNormalizeLocalExamEntry(null, 0)).toBeNull();
+  });
+
+  it("setVersion olmayan kayıt unknown ile normalize edilir", () => {
+    const row = safeNormalizeLocalExamEntry({ examTitle: "Eski", tusNet: 60 }, 0);
+    expect(row?.setVersion).toBe("unknown");
+    expect(row?.fixedSet).toBe(false);
+    expect(row?.questionIdsSnapshot).toBeUndefined();
+  });
+});

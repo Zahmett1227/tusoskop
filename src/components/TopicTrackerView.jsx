@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { TRACKER_COLUMNS, TRACKER_TOPICS } from '../data/TopicTrackerData';
+import { isRecord } from '../utils/safeLocalStorage';
 
 const STORAGE_KEY = 'tusoskop_tracker_v2';
 
@@ -14,7 +15,8 @@ export default function TopicTracker({ onBack }) {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       try {
-        setProgressMap(JSON.parse(saved));
+        const parsed = JSON.parse(saved);
+        setProgressMap(isRecord(parsed) ? parsed : {});
       } catch {
         setProgressMap({});
       }

@@ -1,4 +1,5 @@
 import { buildExamResultMetadata, getResultSetVersion } from "./examHistoryUtils";
+import { readLocalStorageJson, isRecord } from "./safeLocalStorage";
 
 /** Yarım kalan deneme — yalnızca bu key; bitmiş geçmişe dokunulmaz. */
 export const TUSOSKOP_EXAM_IN_PROGRESS_KEY = "tusoskopExamInProgress";
@@ -59,15 +60,12 @@ export function looksLikeIdBasedAnswers(answers, questionCount, questionIdsSnaps
     (Array.isArray(questionIdsSnapshot) ? questionIdsSnapshot : []).map((id) => Number(id))
   );
 
-  let indexStyle = 0;
   let idOnlyStyle = 0;
 
   for (const key of keys) {
     const inIndexRange = count > 0 && key >= 0 && key < count;
     const matchesId = idSet.has(key);
-    if (inIndexRange) {
-      indexStyle += 1;
-    } else if (matchesId) {
+    if (!inIndexRange && matchesId) {
       idOnlyStyle += 1;
     }
   }
@@ -169,15 +167,21 @@ export function validateInProgressExam(raw, examSet) {
 }
 
 export function loadInProgressExamRaw() {
-  if (typeof window === "undefined") return null;
-  try {
-    const raw = localStorage.getItem(TUSOSKOP_EXAM_IN_PROGRESS_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw);
-    return parsed && typeof parsed === "object" ? parsed : null;
-  } catch {
+  const parsed = readLocalStorageJson(TUSOSKOP_EXAM_IN_PROGRESS_KEY, {
+    fallback: null,
+    clearOnError: true,
+  });
+  if (!isRecord(parsed)) {
+    if (parsed != null && typeof window !== "undefined") {
+      try {
+        window.localStorage.removeItem(TUSOSKOP_EXAM_IN_PROGRESS_KEY);
+      } catch {
+        /* ignore */
+      }
+    }
     return null;
   }
+  return parsed;
 }
 
 export function saveInProgressExam(payload) {

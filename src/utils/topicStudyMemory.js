@@ -1,4 +1,5 @@
 import { TOPIC_STUDY_COUNT_OPTIONS, resolveTopicStudyCount } from "./topicStudyUtils";
+import { isRecord, readLocalStorageJson } from "./safeLocalStorage";
 
 /** @deprecated Tek kayıt — okuma uyumluluğu için */
 export const TUSOSKOP_LAST_TOPIC_STUDY_KEY = "tusoskopLastTopicStudy";
@@ -51,14 +52,12 @@ export function normalizeRecentTopicStudies(value) {
 }
 
 function readRecentListFromStorage() {
-  if (typeof window === "undefined") return [];
-  try {
-    const raw = localStorage.getItem(TUSOSKOP_RECENT_TOPIC_STUDIES_KEY);
-    if (!raw) return [];
-    return normalizeRecentTopicStudies(JSON.parse(raw));
-  } catch {
-    return [];
-  }
+  const parsed = readLocalStorageJson(TUSOSKOP_RECENT_TOPIC_STUDIES_KEY, {
+    fallback: null,
+    clearOnError: true,
+  });
+  if (parsed == null) return [];
+  return normalizeRecentTopicStudies(parsed);
 }
 
 function writeRecentListToStorage(list) {
@@ -147,22 +146,18 @@ export function saveLastTopicStudy(entry) {
 
 /** @returns {TopicStudyMemory | null} */
 export function getLastTopicStudy() {
-  if (typeof window === "undefined") return null;
-  try {
-    const raw = localStorage.getItem(TUSOSKOP_LAST_TOPIC_STUDY_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw);
-    if (!isValidLastTopicStudyRecord(parsed)) return null;
-    return {
-      ders: String(parsed.ders),
-      konu: String(parsed.konu),
-      countMode: normalizeCountMode(parsed.countMode),
-      resolvedCount: Number(parsed.resolvedCount),
-      updatedAt: parsed.updatedAt,
-    };
-  } catch {
-    return null;
-  }
+  const parsed = readLocalStorageJson(TUSOSKOP_LAST_TOPIC_STUDY_KEY, {
+    fallback: null,
+    clearOnError: true,
+  });
+  if (!isRecord(parsed) || !isValidLastTopicStudyRecord(parsed)) return null;
+  return {
+    ders: String(parsed.ders),
+    konu: String(parsed.konu),
+    countMode: normalizeCountMode(parsed.countMode),
+    resolvedCount: Number(parsed.resolvedCount),
+    updatedAt: typeof parsed.updatedAt === "string" ? parsed.updatedAt : new Date(0).toISOString(),
+  };
 }
 
 export function clearLastTopicStudy() {

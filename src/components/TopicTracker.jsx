@@ -96,7 +96,8 @@ function getQuestionHistoryMap() {
   if (typeof window === "undefined") return {};
   try {
     const raw = localStorage.getItem(HISTORY_KEY);
-    const list = raw ? JSON.parse(raw) : [];
+    const parsed = raw ? JSON.parse(raw) : [];
+    const list = Array.isArray(parsed) ? parsed : [];
     const map = {};
     list.forEach((item) => {
       if (item?.questionId) map[item.questionId] = item;

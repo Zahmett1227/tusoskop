@@ -54,8 +54,10 @@ const getLocalArray = (key) => {
   if (!canUseLocalStorage()) return [];
   try {
     const raw = window.localStorage.getItem(key);
-    const parsed = raw ? JSON.parse(raw) : [];
-    return Array.isArray(parsed) ? parsed : [];
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter((item) => item != null && typeof item === "object");
   } catch {
     return [];
   }

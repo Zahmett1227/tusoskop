@@ -80,6 +80,18 @@ describe("topicStudyMemory", () => {
   it("bozuk JSON boş liste döner", () => {
     localStorage.setItem(TUSOSKOP_RECENT_TOPIC_STUDIES_KEY, "{bad");
     expect(getRecentTopicStudies()).toEqual([]);
+    expect(localStorage.getItem(TUSOSKOP_RECENT_TOPIC_STUDIES_KEY)).toBeNull();
+  });
+
+  it("array olmayan recent veri boş liste döner", () => {
+    localStorage.setItem(TUSOSKOP_RECENT_TOPIC_STUDIES_KEY, JSON.stringify("x"));
+    expect(getRecentTopicStudies()).toEqual([]);
+  });
+
+  it("bozuk legacy last topic kaydı yok sayılır", () => {
+    localStorage.setItem(TUSOSKOP_LAST_TOPIC_STUDY_KEY, "{bad");
+    expect(getLastTopicStudy()).toBeNull();
+    expect(localStorage.getItem(TUSOSKOP_LAST_TOPIC_STUDY_KEY)).toBeNull();
   });
 
   it("eksik ders/konu kayıt filtrelenir", () => {
