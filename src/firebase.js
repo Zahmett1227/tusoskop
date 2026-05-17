@@ -62,7 +62,8 @@ export const loginWithGoogle = async () => {
 export const logout = () => signOut(auth);
 
 export const db = getFirestore(app);
-export const functions = getFunctions(app);
+/** Match deployed Cloud Functions region (`incrementUsage` is `us-central1`). */
+export const functions = getFunctions(app, "us-central1");
 
 
 export async function initAnalytics() {

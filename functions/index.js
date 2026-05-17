@@ -3,6 +3,14 @@ const { initializeApp } = require("firebase-admin/app");
 const { getFirestore, FieldValue } = require("firebase-admin/firestore");
 const { FREE_LIMITS } = require("./constants");
 
+/** Callable preflight + browser clients (match Hosting / Vite dev ports). */
+const allowedOrigins = [
+  "https://tusoskop.com",
+  "https://www.tusoskop.com",
+  "http://localhost:5173",
+  "http://localhost:5174",
+];
+
 initializeApp();
 const db = getFirestore();
 
@@ -49,7 +57,12 @@ function normalizeDailyUsage(raw, tKey, mKey) {
  * Authenticated users only. Applies usage increments for free plans with server-side caps.
  * Premium users: no-op success (no usage doc writes required).
  */
-exports.incrementUsage = onCall(async (request) => {
+exports.incrementUsage = onCall(
+  {
+    region: "us-central1",
+    cors: allowedOrigins,
+  },
+  async (request) => {
   if (!request.auth?.uid) {
     throw new HttpsError("unauthenticated", "Giriş gerekli.");
   }
@@ -177,4 +190,5 @@ exports.incrementUsage = onCall(async (request) => {
 
     return { success: true, usage };
   });
-});
+  }
+);

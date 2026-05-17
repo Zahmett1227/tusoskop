@@ -68,6 +68,25 @@ const getLocalMonthlyUsage = () => {
   };
 };
 
+/**
+ * When the callable fails, we bump local counters; merge max(remote, local) so limits stay enforced client-side.
+ */
+function mergeDailyUsageWithLocal(remote, local, todayKey, monthKey) {
+  const r = safeUsage(remote);
+  const l = safeUsage(local);
+  if (l.dateKey !== todayKey || l.monthKey !== monthKey) {
+    return r;
+  }
+  return safeUsage({
+    dateKey: todayKey,
+    monthKey,
+    questionCount: Math.max(r.questionCount, l.questionCount),
+    topicTestCount: Math.max(r.topicTestCount, l.topicTestCount),
+    reviewQuestionCount: Math.max(r.reviewQuestionCount, l.reviewQuestionCount),
+    fullExamCount: Math.max(r.fullExamCount, l.fullExamCount),
+  });
+}
+
 let incrementUsageCallable = null;
 function getIncrementUsageCallable() {
   if (!incrementUsageCallable) {
@@ -85,8 +104,9 @@ async function invokeIncrementUsage(payload) {
 export async function getUserUsage(user) {
   const todayKey = getTodayKey();
   const monthKey = getMonthKey();
+  const localUsage = getLocalUsage();
+
   if (!user?.uid) {
-    const localUsage = getLocalUsage();
     setLocalUsage(localUsage);
     return localUsage;
   }
@@ -94,24 +114,27 @@ export async function getUserUsage(user) {
   const ref = doc(db, "users", user.uid, "usage", `usage_${todayKey}`);
   try {
     const snap = await getDoc(ref);
+    let remote;
     if (!snap.exists()) {
-      return safeUsage({ dateKey: todayKey, monthKey });
+      remote = safeUsage({ dateKey: todayKey, monthKey });
+    } else {
+      const usage = safeUsage(snap.data());
+      if (usage.dateKey !== todayKey || usage.monthKey !== monthKey) {
+        remote = safeUsage({
+          dateKey: todayKey,
+          monthKey,
+          questionCount: 0,
+          topicTestCount: 0,
+          reviewQuestionCount: 0,
+          fullExamCount: 0,
+        });
+      } else {
+        remote = usage;
+      }
     }
-    const usage = safeUsage(snap.data());
-    if (usage.dateKey !== todayKey || usage.monthKey !== monthKey) {
-      return safeUsage({
-        dateKey: todayKey,
-        monthKey,
-        questionCount: 0,
-        topicTestCount: 0,
-        reviewQuestionCount: 0,
-        fullExamCount: 0,
-      });
-    }
-    return usage;
+    return mergeDailyUsageWithLocal(remote, localUsage, todayKey, monthKey);
   } catch (error) {
     console.error("getUserUsage fallback to localStorage:", error);
-    const localUsage = getLocalUsage();
     setLocalUsage(localUsage);
     return localUsage;
   }
@@ -132,11 +155,13 @@ async function getMonthlyFullExamUsage(user) {
   const ref = doc(db, "users", user.uid, "usage", `usage_month_${monthKey}`);
   try {
     const snap = await getDoc(ref);
-    if (!snap.exists()) return { monthKey, fullExamCount: 0 };
-    const data = snap.data() || {};
+    const remoteCount = snap.exists() ? Number(snap.data()?.fullExamCount || 0) : 0;
+    const local = getLocalMonthlyUsage();
+    const localCount =
+      local.monthKey === monthKey ? Number(local.fullExamCount || 0) : 0;
     return {
       monthKey,
-      fullExamCount: Number(data.fullExamCount || 0),
+      fullExamCount: Math.max(remoteCount, localCount),
     };
   } catch (error) {
     console.error("getMonthlyFullExamUsage fallback to localStorage:", error);
@@ -163,14 +188,28 @@ export async function canAnswerQuestion(user, userData) {
 
 export async function incrementQuestionUsage(user, userData, count = 1) {
   if (passIfPremium(userData)) return null;
-  const data = await invokeIncrementUsage({
-    type: "question",
-    delta: Number(count || 0) || 1,
-  });
-  if (!data.success) {
-    throw new UsageLimitError(data.code || "daily_question_limit", data.message);
+  const delta = Number(count || 0) || 1;
+  try {
+    const data = await invokeIncrementUsage({
+      type: "question",
+      delta,
+    });
+    if (!data.success) {
+      throw new UsageLimitError(data.code || "daily_question_limit", data.message);
+    }
+    return data.usage ? safeUsage(data.usage) : null;
+  } catch (err) {
+    if (err instanceof UsageLimitError) throw err;
+    console.warn("incrementQuestionUsage: callable failed; applying capped local increment", err);
+    const usage = getLocalUsage();
+    const next = usage.questionCount + delta;
+    if (usage.questionCount >= FREE_LIMITS.dailyQuestions || next > FREE_LIMITS.dailyQuestions) {
+      throw new UsageLimitError("daily_question_limit", "Günlük soru limiti doldu.");
+    }
+    const updated = safeUsage({ ...usage, questionCount: next });
+    setLocalUsage(updated);
+    return updated;
   }
-  return data.usage ? safeUsage(data.usage) : null;
 }
 
 export async function canStartTopicTest(user, userData) {
@@ -186,11 +225,23 @@ export async function canStartTopicTest(user, userData) {
 
 export async function incrementTopicTestUsage(user, userData) {
   if (passIfPremium(userData)) return null;
-  const data = await invokeIncrementUsage({ type: "topicTest" });
-  if (!data.success) {
-    throw new UsageLimitError(data.code || "daily_topic_test_limit", data.message);
+  try {
+    const data = await invokeIncrementUsage({ type: "topicTest" });
+    if (!data.success) {
+      throw new UsageLimitError(data.code || "daily_topic_test_limit", data.message);
+    }
+    return data.usage ? safeUsage(data.usage) : null;
+  } catch (err) {
+    if (err instanceof UsageLimitError) throw err;
+    console.warn("incrementTopicTestUsage: callable failed; applying capped local increment", err);
+    const usage = getLocalUsage();
+    if (usage.topicTestCount >= FREE_LIMITS.dailyTopicTests) {
+      throw new UsageLimitError("daily_topic_test_limit", "Günlük konu testi limiti doldu.");
+    }
+    const updated = safeUsage({ ...usage, topicTestCount: usage.topicTestCount + 1 });
+    setLocalUsage(updated);
+    return updated;
   }
-  return data.usage ? safeUsage(data.usage) : null;
 }
 
 export async function canStartFullExam(user, userData) {
@@ -206,11 +257,28 @@ export async function canStartFullExam(user, userData) {
 
 export async function incrementFullExamUsage(user, userData) {
   if (passIfPremium(userData)) return null;
-  const data = await invokeIncrementUsage({ type: "fullExam" });
-  if (!data.success) {
-    throw new UsageLimitError(data.code || "monthly_exam_limit", data.message);
+  const mKey = getMonthKey();
+  try {
+    const data = await invokeIncrementUsage({ type: "fullExam" });
+    if (!data.success) {
+      throw new UsageLimitError(data.code || "monthly_exam_limit", data.message);
+    }
+    return { monthKey: getMonthKey(), fullExamCount: data.fullExamCount };
+  } catch (err) {
+    if (err instanceof UsageLimitError) throw err;
+    console.warn("incrementFullExamUsage: callable failed; applying capped local increment", err);
+    let usage = getLocalUsage();
+    if (usage.monthKey !== mKey) {
+      usage = safeUsage({ ...usage, monthKey: mKey, fullExamCount: 0 });
+    }
+    const next = usage.fullExamCount + 1;
+    if (usage.fullExamCount >= FREE_LIMITS.monthlyFullExams || next > FREE_LIMITS.monthlyFullExams) {
+      throw new UsageLimitError("monthly_exam_limit", "Aylık deneme limiti doldu.");
+    }
+    const updated = safeUsage({ ...usage, fullExamCount: next });
+    setLocalUsage(updated);
+    return { monthKey: mKey, fullExamCount: next };
   }
-  return { monthKey: getMonthKey(), fullExamCount: data.fullExamCount };
 }
 
 export async function canStartReview(user, userData, requestedCount = 1) {
@@ -228,14 +296,31 @@ export async function canStartReview(user, userData, requestedCount = 1) {
 
 export async function incrementReviewUsage(user, userData, count = 1) {
   if (passIfPremium(userData)) return null;
-  const data = await invokeIncrementUsage({
-    type: "review",
-    delta: Number(count || 0) || 1,
-  });
-  if (!data.success) {
-    throw new UsageLimitError(data.code || "daily_review_limit", data.message);
+  const delta = Number(count || 0) || 1;
+  try {
+    const data = await invokeIncrementUsage({
+      type: "review",
+      delta,
+    });
+    if (!data.success) {
+      throw new UsageLimitError(data.code || "daily_review_limit", data.message);
+    }
+    return data.usage ? safeUsage(data.usage) : null;
+  } catch (err) {
+    if (err instanceof UsageLimitError) throw err;
+    console.warn("incrementReviewUsage: callable failed; applying capped local increment", err);
+    const usage = getLocalUsage();
+    const next = usage.reviewQuestionCount + delta;
+    if (
+      usage.reviewQuestionCount >= FREE_LIMITS.dailyReviewQuestions ||
+      next > FREE_LIMITS.dailyReviewQuestions
+    ) {
+      throw new UsageLimitError("daily_review_limit", "Günlük tekrar limiti doldu.");
+    }
+    const updated = safeUsage({ ...usage, reviewQuestionCount: next });
+    setLocalUsage(updated);
+    return updated;
   }
-  return data.usage ? safeUsage(data.usage) : null;
 }
 
 export async function getRemainingFreeUsage(user, userData) {
