@@ -8,6 +8,7 @@ import { getSubjectVisual } from "../theme/subjectVisual";
 import { getSelectedAnswerIndex } from "../utils/examUtils";
 import {
   appendLocalExamHistory,
+  buildExamResultMetadata,
   estimatedTusNumericFromNet,
 } from "../utils/examHistoryUtils";
 import { trackClarityEvent } from "../lib/clarity";
@@ -211,6 +212,7 @@ export default function ExamScreen({
   examAnswers,
   examSelected,
   examTitle,
+  examSetMeta,
   onJump,
   handleExamSelect,
   handleExamSelectForQuestion,
@@ -219,6 +221,7 @@ export default function ExamScreen({
   handleExamPrev = () => {},
   getExamAnswersSnapshot,
   goDashboard,
+  onExamCompleted,
   userId,
   userData,
   accentTheme,
@@ -326,10 +329,11 @@ export default function ExamScreen({
       const totalNet = tusNet;
       const completedAt = new Date().toISOString();
       const estimatedTusScore = estimatedTusNumericFromNet(totalNet);
+      const resultMeta = examSetMeta ?? buildExamResultMetadata(null);
 
       const docRef = await addDoc(collection(db, "results"), {
         userId: user.uid,
-        examTitle: examTitle || "TUS Genel Deneme",
+        ...resultMeta,
         completedAt,
         date: serverTimestamp(),
         tusNet,
@@ -347,7 +351,7 @@ export default function ExamScreen({
         totalWrong: wrong,
         totalBlank: empty,
         totalNet,
-        examTitle: examTitle || "TUS Genel Deneme",
+        ...resultMeta,
       });
 
       try {
@@ -357,6 +361,7 @@ export default function ExamScreen({
       }
 
       trackClarityEvent("deneme_tamamlandi");
+      onExamCompleted?.();
 
       setResults({ correct, wrong, empty, totalNet, breakdown });
       setWrongByLessonTopic(wByLT);

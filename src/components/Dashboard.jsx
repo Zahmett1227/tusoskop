@@ -8,6 +8,7 @@ import SubjectCard from "./SubjectCard";
 import TusCountDown from "./TusCountDown";
 import StreakBadge from "./StreakBadge";
 import { SUBJECTS } from "../data/subjects";
+import { FIXED_EXAM_CARD_SUBTITLE } from "../data/exams";
 import { SUBJECT_QUESTION_COUNTS } from "../data/questions";
 import { useQuestions } from "../hooks/useQuestions";
 import { accentThemes } from "../theme/accentThemes";
@@ -253,7 +254,7 @@ export default function Dashboard({
                 Bugün ne çalışacağını tek bakışta gör.
               </h3>
               <p className={`mt-3 max-w-2xl text-sm font-semibold leading-relaxed md:text-base ${isLightTheme ? "text-slate-600" : "text-slate-300"}`}>
-                Seri, hedef net ve tekrar kuyruğunu bir araya getirdik. Kaldığın yerden devam et ya da gerçek TUS formatında denemeye geç.
+                Seri, hedef net ve tekrar kuyruğunu bir araya getirdik. Kaldığın yerden devam et ya da sabit 200 soruluk TUS denemesine geç.
               </p>
               <div className="mt-6 grid grid-cols-3 gap-2.5 sm:gap-3">
                 {[
@@ -405,7 +406,7 @@ export default function Dashboard({
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-3">
                 <span className={`px-3 py-1 rounded-full ${theme.softBg} border ${theme.softBorder} ${theme.text} text-[10px] font-black uppercase tracking-widest`}>
-                  Akıllı Deneme Sistemi
+                  Sabit Deneme Setleri
                 </span>
               </div>
 
@@ -413,13 +414,13 @@ export default function Dashboard({
                 TUS Denemesi Çöz
               </h2>
               <p className={`text-sm md:text-base mb-6 max-w-md ${isLightTheme ? "text-slate-600" : "text-slate-400"}`}>
-                200 soruluk gerçek TUS formatında deneme. Bitirince sana özel derin analiz ve tahmini puan raporu hazırlanır.
+                {FIXED_EXAM_CARD_SUBTITLE}. Her kullanıcıda aynı soru seti ve sıra; bitince analiz ve tahmini puan raporu hazırlanır.
               </p>
 
               {/* Özellik etiketleri */}
               <div className="flex flex-wrap gap-3 mb-8">
                 {[
-                  { icon: "📊", label: "Bu denemede ders özeti" },
+                  { icon: "📋", label: "Sabit set · aynı sıra" },
                   { icon: "🎯", label: "Tahmini TUS puanı" },
                   { icon: "⚠️", label: "Bu denemede zayıf konu özeti" },
                   { icon: "☁️", label: "Buluta otomatik kayıt" },
@@ -435,7 +436,7 @@ export default function Dashboard({
                   Denemeyi Başlat
                   <span className="text-xl">→</span>
                 </div>
-                <span className={`text-xs font-bold uppercase tracking-wider ${isLightTheme ? "text-slate-500" : "text-slate-600"}`}>200 Soru • ~150 dk</span>
+                <span className={`text-xs font-bold uppercase tracking-wider ${isLightTheme ? "text-slate-500" : "text-slate-600"}`}>200 Soru · ~150 dk · Sabit set</span>
               </div>
             </div>
 

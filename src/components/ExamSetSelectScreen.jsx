@@ -1,5 +1,5 @@
 import React from "react";
-import { EXAM_SETS } from "../data/exams";
+import { EXAM_SETS, FIXED_EXAM_CARD_SUBTITLE } from "../data/exams";
 
 export default function ExamSetSelectScreen({ onSelectSet, goDashboard }) {
   const categories = [
@@ -17,7 +17,9 @@ export default function ExamSetSelectScreen({ onSelectSet, goDashboard }) {
         <header className="mb-12 flex justify-between items-end">
           <div>
             <h2 className="text-4xl font-black text-white tracking-tighter">Sınav Merkezi</h2>
-            <p className="text-slate-500 font-medium">Kategorine göre deneme seç ve seviyeni ölç.</p>
+            <p className="text-slate-500 font-medium">
+              Sabit 200 soruluk denemelerden birini seç. İlk 100 Temel, son 100 Klinik; her kullanıcıda aynı set ve sıra.
+            </p>
           </div>
           <button onClick={goDashboard} className="px-6 py-2 rounded-2xl bg-slate-900 border border-slate-800 hover:bg-slate-800 transition-all font-bold">
             ← Geri Dön
@@ -48,8 +50,8 @@ export default function ExamSetSelectScreen({ onSelectSet, goDashboard }) {
                       <div>
                         <h4 className="font-bold text-slate-200 group-hover:text-white">{exam.title}</h4>
                         <p className="text-[10px] text-slate-500 mt-1 font-black uppercase">
-                          {exam.questionCount} Soru • {exam.difficulty}
-                          {exam.questionIds?.length ? " • Sabit set" : ""}
+                          {FIXED_EXAM_CARD_SUBTITLE} • {exam.difficulty}
+                          {exam.setVersion ? ` • Set ${exam.setVersion}` : ""}
                         </p>
                         {exam.description ? (
                           <p className="text-[11px] text-slate-400 mt-2 leading-snug font-medium normal-case">

@@ -1,6 +1,38 @@
 /** localStorage — kullanıcı isteği: key sabit kalmalı */
 export const TUSOSKOP_EXAM_HISTORY_KEY = "tusoskopExamHistory";
 
+/** Sabit/dinamik deneme tanımından sonuç kaydına taşınacak meta. */
+export function buildExamResultMetadata(examSet) {
+  const examTitle = examSet?.title || "TUS Genel Deneme";
+  const examId = examSet?.id ?? null;
+  const hasFixedIds = Array.isArray(examSet?.questionIds) && examSet.questionIds.length > 0;
+
+  if (!hasFixedIds) {
+    return {
+      examId,
+      examKey: examId,
+      examTitle,
+      fixedSet: false,
+    };
+  }
+
+  return {
+    examId,
+    examKey: examId,
+    examTitle,
+    fixedSet: true,
+    setVersion: examSet.setVersion ?? "unknown",
+    questionIdsSnapshot: [...examSet.questionIds],
+  };
+}
+
+/** Eski kayıtlar için güvenli okuma. */
+export function getResultSetVersion(result) {
+  if (!result || typeof result !== "object") return "unknown";
+  const v = result.setVersion;
+  return v === undefined || v === null || v === "" ? "unknown" : String(v);
+}
+
 /**
  * Firestore Timestamp, ISO string, sayı veya { seconds } için güvenli ISO string.
  */
@@ -116,6 +148,12 @@ export function normalizeFirestoreResultDoc(docSnap) {
     totalNet: tusNet,
     tusNet,
     examTitle: data.examTitle || "TUS Denemesi",
+    examId: data.examId ?? null,
+    fixedSet: Boolean(data.fixedSet),
+    setVersion: getResultSetVersion(data),
+    questionIdsSnapshot: Array.isArray(data.questionIdsSnapshot)
+      ? data.questionIdsSnapshot
+      : undefined,
     source: "firestore",
   };
 }
@@ -151,6 +189,12 @@ export function normalizeLocalExamEntry(raw, index) {
     totalNet: tusNet,
     tusNet,
     examTitle: raw.examTitle || "TUS Denemesi",
+    examId: raw.examId ?? null,
+    fixedSet: Boolean(raw.fixedSet),
+    setVersion: getResultSetVersion(raw),
+    questionIdsSnapshot: Array.isArray(raw.questionIdsSnapshot)
+      ? raw.questionIdsSnapshot
+      : undefined,
     source: "local",
   };
 }
