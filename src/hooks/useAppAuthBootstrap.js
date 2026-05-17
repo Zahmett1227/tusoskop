@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
 import { identifyClarityUser } from "../lib/clarity";
@@ -16,6 +16,12 @@ export function useAppAuthBootstrap(setView) {
   const [isAdmin, setIsAdmin] = useState(false);
   const [remainingUsage, setRemainingUsage] = useState(null);
   const [favoriteQuestionIds, setFavoriteQuestionIds] = useState(new Set());
+
+  const refreshRemainingUsage = useCallback(async () => {
+    const usage = await getRemainingFreeUsage(user, userData);
+    setRemainingUsage(usage);
+    return usage;
+  }, [user, userData]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -55,16 +61,10 @@ export function useAppAuthBootstrap(setView) {
   }, [user]);
 
   useEffect(() => {
-    let active = true;
-    const loadUsage = async () => {
-      const usage = await getRemainingFreeUsage(user, userData);
-      if (active) setRemainingUsage(usage);
-    };
-    loadUsage();
-    return () => {
-      active = false;
-    };
-  }, [user, userData]);
+    refreshRemainingUsage().catch((error) => {
+      console.error("Remaining usage load error:", error);
+    });
+  }, [refreshRemainingUsage]);
 
   useEffect(() => {
     if (user?.uid) {
@@ -90,6 +90,7 @@ export function useAppAuthBootstrap(setView) {
     userData,
     isAdmin,
     remainingUsage,
+    refreshRemainingUsage,
     favoriteQuestionIds,
     setFavoriteQuestionIds,
   };

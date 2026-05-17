@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --configLoader native",
-    "build": "vite build --configLoader native --emptyOutDir false",
+    "build": "vite build --configLoader native",
     "lint": "eslint .",
     "test": "vitest run --configLoader native",
     "validate:questions": "node scripts/validate-question-bank.mjs",

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { db, auth } from "../firebase";
 import {
   doc, getDoc, setDoc,
@@ -8,6 +8,7 @@ import SubjectCard from "./SubjectCard";
 import TusCountDown from "./TusCountDown";
 import StreakBadge from "./StreakBadge";
 import { SUBJECTS } from "../data/subjects";
+import { SUBJECT_QUESTION_COUNTS } from "../data/questions";
 import { useQuestions } from "../hooks/useQuestions";
 import { accentThemes } from "../theme/accentThemes";
 import { isUserPremium } from "../utils/premiumUtils";
@@ -36,7 +37,6 @@ export default function Dashboard({
   /** App içinden gelen görünüm — dashboard’a her dönüşte geçmiş yenilenebilir */
   currentView = "dashboard",
   onOpenLegalPage,
-  subjectQuestionCounts = {},
 }) {
   const { questions: QUESTIONS } = useQuestions();
   const theme = accentTheme || accentThemes.emerald;
@@ -62,16 +62,6 @@ export default function Dashboard({
     reviewQueueCount: 0,
   });
   const [planStreak, setPlanStreak] = useState(0);
-  const fallbackCounts = useMemo(() => {
-    const counts = {};
-    (QUESTIONS || []).forEach((item) => {
-      counts[item.ders] = (counts[item.ders] || 0) + 1;
-    });
-    return counts;
-  }, [QUESTIONS]);
-  const subjectCounts = subjectQuestionCounts && Object.keys(subjectQuestionCounts).length
-    ? subjectQuestionCounts
-    : fallbackCounts;
 
   useEffect(() => {
     if (!user?.uid) return;
@@ -656,7 +646,7 @@ export default function Dashboard({
                 <SubjectCard
                   key={s.name}
                   subject={s}
-                  count={subjectCounts[s.name] || 0}
+                  count={SUBJECT_QUESTION_COUNTS[s.name] ?? 0}
                   accentTheme={theme}
                   isLightTheme={isLightTheme}
                   onClick={() => startSubject(s.name)}

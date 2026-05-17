@@ -45,7 +45,6 @@ import {
   limitModalFromUsageError,
 } from "./services/usageLimitService";
 import { SUBJECTS as SUBJECT_CATALOG } from "./data/subjects";
-import { SUBJECT_QUESTION_COUNTS } from "./data/questions";
 import { applyQuestionTextFilter } from "./utils/questionTextFilter";
 
 const Dashboard = lazy(() => import("./components/Dashboard"));
@@ -141,6 +140,7 @@ export default function App() {
     userData,
     isAdmin,
     remainingUsage,
+    refreshRemainingUsage,
     favoriteQuestionIds,
     setFavoriteQuestionIds,
   } = useAppAuthBootstrap(setView);
@@ -278,20 +278,6 @@ export default function App() {
   const availableTopics = selectedLesson
     ? [...new Set(QUESTIONS.filter((item) => item.ders === selectedLesson).map((item) => item.konu))]
     : [];
-
-  const subjectCountsByLoadedQuestions = useMemo(() => {
-    // QUESTIONS yüklüyse gerçek dağılımı doğrudan ondan üret;
-    // aksi halde manifest sayılarıyla fallback yap.
-    if (!Array.isArray(QUESTIONS) || QUESTIONS.length === 0) {
-      return { ...SUBJECT_QUESTION_COUNTS };
-    }
-    const counts = {};
-    for (const item of QUESTIONS) {
-      if (!item?.ders) continue;
-      counts[item.ders] = (counts[item.ders] || 0) + 1;
-    }
-    return counts;
-  }, [QUESTIONS]);
 
   // --- 7. YARDIMCI FONKSİYONLAR ---
   const resetStudyState = () => {
@@ -490,6 +476,7 @@ export default function App() {
     }
     try {
       await incrementTopicTestUsage(user, userData);
+      await refreshRemainingUsage();
     } catch (err) {
       if (openLimitFromUsageError(err)) return;
       throw err;
@@ -532,6 +519,7 @@ export default function App() {
     if (!exam.length) return;
     try {
       await incrementFullExamUsage(user, userData);
+      await refreshRemainingUsage();
     } catch (err) {
       if (openLimitFromUsageError(err)) return;
       throw err;
@@ -727,9 +715,10 @@ export default function App() {
         }
         try {
           await incrementQuestionUsage(user, userData, 1);
+          await refreshRemainingUsage();
         } catch (err) {
           if (openLimitFromUsageError(err)) return;
-          throw err;
+          console.warn("Kullanım sayacı yazılamadı; cevap yine gösteriliyor.", err);
         }
         answeredQuestionIdsRef.current.add(questionId);
       }
@@ -748,9 +737,10 @@ export default function App() {
         }
         try {
           await incrementReviewUsage(user, userData, 1);
+          await refreshRemainingUsage();
         } catch (err) {
           if (openLimitFromUsageError(err)) return;
-          throw err;
+          console.warn("Tekrar kullanım sayacı yazılamadı; cevap yine gösteriliyor.", err);
         }
         answeredReviewIdsRef.current.add(questionId);
       }
@@ -1050,7 +1040,6 @@ export default function App() {
           onAccentThemeChange={handleAccentThemeChange}
           currentView={view}
           onOpenLegalPage={openLegalPage}
-          subjectQuestionCounts={subjectCountsByLoadedQuestions}
         />
       );
       break;
@@ -1072,7 +1061,6 @@ export default function App() {
             onAccentThemeChange={handleAccentThemeChange}
             currentView={view}
             onOpenLegalPage={openLegalPage}
-            subjectQuestionCounts={subjectCountsByLoadedQuestions}
           />
         );
         break;
@@ -1270,7 +1258,6 @@ export default function App() {
           onAccentThemeChange={handleAccentThemeChange}
           currentView={view}
           onOpenLegalPage={openLegalPage}
-          subjectQuestionCounts={subjectCountsByLoadedQuestions}
         />
       );
   }
