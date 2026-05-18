@@ -88,7 +88,7 @@ const SubjectCard = ({ subject, count, onClick, accentTheme, isLightTheme = fals
             </span>
           </div>
 
-          <h3 className={`text-xl md:text-2xl font-black leading-tight ${isLightTheme ? "text-slate-900" : "text-white"} transition`}>
+          <h3 className={`text-xl md:text-2xl font-black leading-tight break-words min-w-0 ${isLightTheme ? "text-slate-900" : "text-white"} transition`}>
             {subject.name}
           </h3>
 

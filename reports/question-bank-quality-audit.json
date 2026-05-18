@@ -1,0 +1,5960 @@
+{
+  "generatedAt": "2026-05-18T10:06:33.171Z",
+  "totalQuestions": 4114,
+  "summary": {
+    "criticalCount": 0,
+    "mediumCount": 486,
+    "lowCount": 70,
+    "uniqueCriticalIds": 0,
+    "topProblemTypes": [
+      [
+        "exp_missing_correct_option_text",
+        475
+      ],
+      [
+        "konu_alias_hint",
+        30
+      ],
+      [
+        "very_short_option",
+        24
+      ],
+      [
+        "very_long_option",
+        7
+      ],
+      [
+        "risky_all_none_option",
+        5
+      ],
+      [
+        "konu_near_duplicate_name",
+        4
+      ],
+      [
+        "suspicious_option_phrase",
+        3
+      ],
+      [
+        "konu_ascii_turkish_hint",
+        3
+      ],
+      [
+        "unbalanced_brackets_q",
+        2
+      ],
+      [
+        "konu_double_space",
+        1
+      ],
+      [
+        "konu_case_or_diacritic_variant",
+        1
+      ],
+      [
+        "near_duplicate_question",
+        1
+      ]
+    ],
+    "problematicDers": [
+      [
+        "Dahiliye",
+        100
+      ],
+      [
+        "Pediatri",
+        87
+      ],
+      [
+        "Farmakoloji",
+        70
+      ],
+      [
+        "Patoloji",
+        61
+      ],
+      [
+        "Küçük Stajlar",
+        55
+      ],
+      [
+        "Fizyoloji",
+        51
+      ],
+      [
+        "Genel Cerrahi",
+        46
+      ],
+      [
+        "Kadın Hastalıkları ve Doğum",
+        38
+      ],
+      [
+        "Biyokimya",
+        18
+      ],
+      [
+        "Mikrobiyoloji",
+        15
+      ]
+    ],
+    "problematicKonu": [
+      [
+        "Dahiliye — Kardiyoloji",
+        15
+      ],
+      [
+        "Kadın Hastalıkları ve Doğum — Perinatoloji",
+        15
+      ],
+      [
+        "Dahiliye — Hepatoloji",
+        13
+      ],
+      [
+        "Farmakoloji — Endokrin Sistem Farmakolojisi",
+        12
+      ],
+      [
+        "Dahiliye — Gastroenteroloji",
+        12
+      ],
+      [
+        "Dahiliye — Hematoloji",
+        12
+      ],
+      [
+        "Kadın Hastalıkları ve Doğum — Jinekoloji",
+        12
+      ],
+      [
+        "Dahiliye — Onkoloji",
+        11
+      ],
+      [
+        "Farmakoloji — Genel Farmakoloji",
+        10
+      ],
+      [
+        "Farmakoloji — Santral Sinir Sistemi Farmakolojisi",
+        10
+      ]
+    ],
+    "manualReviewIdsTop20": [
+      585,
+      587,
+      2338,
+      2340,
+      2354,
+      2355,
+      2356,
+      2358,
+      2372,
+      2375,
+      2376,
+      2389,
+      2398,
+      2404,
+      2407,
+      2418,
+      2424,
+      2433,
+      2446,
+      2459
+    ],
+    "manualReviewIdsTop50": [
+      585,
+      587,
+      2338,
+      2340,
+      2354,
+      2355,
+      2356,
+      2358,
+      2372,
+      2375,
+      2376,
+      2389,
+      2398,
+      2404,
+      2407,
+      2418,
+      2424,
+      2433,
+      2446,
+      2459,
+      2461,
+      2476,
+      2480,
+      3584,
+      3596,
+      3601,
+      3602,
+      3603,
+      3604,
+      3605,
+      3607,
+      3625,
+      3630,
+      3634,
+      3635,
+      3641,
+      3642,
+      3648,
+      3654,
+      3655,
+      631,
+      651,
+      652,
+      653,
+      669,
+      673,
+      704,
+      714,
+      724,
+      727
+    ]
+  },
+  "stats": {
+    "total": 4114,
+    "byDers": {
+      "Fizyoloji": 308,
+      "Patoloji": 413,
+      "Farmakoloji": 374,
+      "Mikrobiyoloji": 270,
+      "Dahiliye": 678,
+      "Pediatri": 566,
+      "Kadın Hastalıkları ve Doğum": 270,
+      "Küçük Stajlar": 475,
+      "Biyokimya": 200,
+      "Genel Cerrahi": 280,
+      "Anatomi": 280
+    },
+    "byDiff": {
+      "3": 358,
+      "4": 3193,
+      "5": 563
+    },
+    "manifestCounts": {
+      "Fizyoloji": 308,
+      "Patoloji": 413,
+      "Farmakoloji": 374,
+      "Mikrobiyoloji": 270,
+      "Dahiliye": 678,
+      "Pediatri": 566,
+      "Kadın Hastalıkları ve Doğum": 270,
+      "Küçük Stajlar": 475,
+      "Biyokimya": 200,
+      "Genel Cerrahi": 280,
+      "Anatomi": 280
+    },
+    "top20Konu": [
+      [
+        "Kadın Hastalıkları ve Doğum — Perinatoloji",
+        89
+      ],
+      [
+        "Dahiliye — Gastroenteroloji",
+        82
+      ],
+      [
+        "Dahiliye — Endokrinoloji",
+        82
+      ],
+      [
+        "Dahiliye — Nefroloji",
+        80
+      ],
+      [
+        "Dahiliye — Kardiyoloji",
+        80
+      ],
+      [
+        "Dahiliye — Hematoloji",
+        78
+      ],
+      [
+        "Dahiliye — Hepatoloji",
+        76
+      ],
+      [
+        "Kadın Hastalıkları ve Doğum — Jinekoloji",
+        71
+      ],
+      [
+        "Mikrobiyoloji — Bakteriyoloji",
+        65
+      ],
+      [
+        "Dahiliye — Göğüs Hastalıkları",
+        62
+      ],
+      [
+        "Dahiliye — Onkoloji",
+        58
+      ],
+      [
+        "Farmakoloji — Kardiyovasküler Sistem Farmakolojisi",
+        57
+      ],
+      [
+        "Farmakoloji — Santral Sinir Sistemi Farmakolojisi",
+        55
+      ],
+      [
+        "Kadın Hastalıkları ve Doğum — Onkoloji",
+        55
+      ],
+      [
+        "Kadın Hastalıkları ve Doğum — İnfertilite",
+        55
+      ],
+      [
+        "Pediatri — Pediatrik Enfeksiyon Hastalıkları",
+        54
+      ],
+      [
+        "Farmakoloji — Endokrin Sistem Farmakolojisi",
+        53
+      ],
+      [
+        "Dahiliye — Romatoloji",
+        52
+      ],
+      [
+        "Farmakoloji — Otonom Sinir Sistemi Farmakolojisi",
+        51
+      ],
+      [
+        "Pediatri — Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+        50
+      ]
+    ],
+    "fewKonu": [
+      [
+        "Pediatri — Pediatrik  İmmünoloji/Alerji",
+        1
+      ]
+    ],
+    "uniqueKonuCount": 156,
+    "diffByDers": {
+      "Fizyoloji": {
+        "3": 27,
+        "4": 243,
+        "5": 38
+      },
+      "Patoloji": {
+        "3": 19,
+        "4": 320,
+        "5": 74
+      },
+      "Farmakoloji": {
+        "3": 55,
+        "4": 302,
+        "5": 17
+      },
+      "Mikrobiyoloji": {
+        "3": 21,
+        "4": 218,
+        "5": 31
+      },
+      "Dahiliye": {
+        "3": 41,
+        "4": 533,
+        "5": 104
+      },
+      "Pediatri": {
+        "3": 36,
+        "4": 469,
+        "5": 61
+      },
+      "Kadın Hastalıkları ve Doğum": {
+        "3": 62,
+        "4": 189,
+        "5": 19
+      },
+      "Küçük Stajlar": {
+        "3": 37,
+        "4": 359,
+        "5": 79
+      },
+      "Biyokimya": {
+        "3": 8,
+        "4": 159,
+        "5": 33
+      },
+      "Genel Cerrahi": {
+        "3": 31,
+        "4": 186,
+        "5": 63
+      },
+      "Anatomi": {
+        "3": 21,
+        "4": 215,
+        "5": 44
+      }
+    }
+  },
+  "findings": [
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 585,
+      "ders": "Fizyoloji",
+      "konu": "Genel Embriyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 587,
+      "ders": "Fizyoloji",
+      "konu": "Genel Embriyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_long_option",
+      "id": 616,
+      "ders": "Fizyoloji",
+      "konu": "Sinir Sistemi HistoFizyolojisi",
+      "detail": "options[2] çok uzun (222 karakter)",
+      "action": "kısaltmayı değerlendir",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2338,
+      "ders": "Fizyoloji",
+      "konu": "Hücre Histolojisi ve Fizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2340,
+      "ders": "Fizyoloji",
+      "konu": "Hücre Histolojisi ve Fizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2354,
+      "ders": "Fizyoloji",
+      "konu": "Kas Dokusu HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2355,
+      "ders": "Fizyoloji",
+      "konu": "Kas Dokusu HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2356,
+      "ders": "Fizyoloji",
+      "konu": "Kas Dokusu HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2358,
+      "ders": "Fizyoloji",
+      "konu": "Kas Dokusu HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2372,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2375,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2376,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2389,
+      "ders": "Fizyoloji",
+      "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2398,
+      "ders": "Fizyoloji",
+      "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2404,
+      "ders": "Fizyoloji",
+      "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2407,
+      "ders": "Fizyoloji",
+      "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2418,
+      "ders": "Fizyoloji",
+      "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2424,
+      "ders": "Fizyoloji",
+      "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2433,
+      "ders": "Fizyoloji",
+      "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2446,
+      "ders": "Fizyoloji",
+      "konu": "Solunum Sistemi HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "risky_all_none_option",
+      "id": 2452,
+      "ders": "Fizyoloji",
+      "konu": "Sinir Sistemi HistoFizyolojisi",
+      "detail": "options[2]: \"Kas iğciklerinin tümünün kaybolması\"",
+      "action": "TUS uygunluğunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2459,
+      "ders": "Fizyoloji",
+      "konu": "Sinir Sistemi HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2461,
+      "ders": "Fizyoloji",
+      "konu": "Sinir Sistemi HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2476,
+      "ders": "Fizyoloji",
+      "konu": "Üriner Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2480,
+      "ders": "Fizyoloji",
+      "konu": "Üriner Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3584,
+      "ders": "Fizyoloji",
+      "konu": "Hücre Histolojisi ve Fizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3596,
+      "ders": "Fizyoloji",
+      "konu": "Genital Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3601,
+      "ders": "Fizyoloji",
+      "konu": "Genel Embriyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3602,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3603,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3604,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3605,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3607,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3625,
+      "ders": "Fizyoloji",
+      "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3630,
+      "ders": "Fizyoloji",
+      "konu": "Solunum Sistemi HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3634,
+      "ders": "Fizyoloji",
+      "konu": "Solunum Sistemi HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3635,
+      "ders": "Fizyoloji",
+      "konu": "Solunum Sistemi HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3641,
+      "ders": "Fizyoloji",
+      "konu": "Sinir Sistemi HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3642,
+      "ders": "Fizyoloji",
+      "konu": "Sinir Sistemi HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3648,
+      "ders": "Fizyoloji",
+      "konu": "Üriner Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3654,
+      "ders": "Fizyoloji",
+      "konu": "Üriner Sistem HistoFizyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3655,
+      "ders": "Fizyoloji",
+      "konu": "Baş Boyun Embriyolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 631,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 651,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 652,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 653,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "unbalanced_brackets_q",
+      "id": 662,
+      "ders": "Patoloji",
+      "konu": "Pediatrik Hastalıklar",
+      "detail": "Parantez/tırnak dengesiz olabilir",
+      "action": "noktalama kontrol",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 669,
+      "ders": "Patoloji",
+      "konu": "Çevresel ve Enfeksiyoz Hastalıklar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 673,
+      "ders": "Patoloji",
+      "konu": "Vasküler Hastalıklar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 704,
+      "ders": "Patoloji",
+      "konu": "Kadın Genital Sistem Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 714,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 724,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 727,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_long_option",
+      "id": 730,
+      "ders": "Patoloji",
+      "konu": "Pankreas Hastalıkları",
+      "detail": "options[2] çok uzun (221 karakter)",
+      "action": "kısaltmayı değerlendir",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 749,
+      "ders": "Patoloji",
+      "konu": "Endokrin Sistem Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "unbalanced_brackets_q",
+      "id": 753,
+      "ders": "Patoloji",
+      "konu": "Meme Hastalıkları",
+      "detail": "Parantez/tırnak dengesiz olabilir",
+      "action": "noktalama kontrol",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_long_option",
+      "id": 754,
+      "ders": "Patoloji",
+      "konu": "Meme Hastalıkları",
+      "detail": "options[2] çok uzun (223 karakter)",
+      "action": "kısaltmayı değerlendir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_long_option",
+      "id": 765,
+      "ders": "Patoloji",
+      "konu": "Genel Tekrar ve Entegre Vakalar",
+      "detail": "options[1] çok uzun (222 karakter)",
+      "action": "kısaltmayı değerlendir",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 852,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 862,
+      "ders": "Patoloji",
+      "konu": "Çevresel ve Enfeksiyoz Hastalıklar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 870,
+      "ders": "Patoloji",
+      "konu": "Erkek Genital Sistem Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 875,
+      "ders": "Patoloji",
+      "konu": "Kadın Genital Sistem Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 887,
+      "ders": "Patoloji",
+      "konu": "Pankreas Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 889,
+      "ders": "Patoloji",
+      "konu": "Meme Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 901,
+      "ders": "Patoloji",
+      "konu": "Deri Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 903,
+      "ders": "Patoloji",
+      "konu": "Deri Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2988,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2990,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2993,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3000,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3003,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3007,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3011,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3016,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3019,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3021,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3023,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3026,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3031,
+      "ders": "Patoloji",
+      "konu": "Neoplazi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3036,
+      "ders": "Patoloji",
+      "konu": "Pediatrik Hastalıklar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3044,
+      "ders": "Patoloji",
+      "konu": "Çevresel ve Enfeksiyoz Hastalıklar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3045,
+      "ders": "Patoloji",
+      "konu": "Çevresel ve Enfeksiyoz Hastalıklar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3057,
+      "ders": "Patoloji",
+      "konu": "Vasküler Hastalıklar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3060,
+      "ders": "Patoloji",
+      "konu": "Kalp Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3067,
+      "ders": "Patoloji",
+      "konu": "Kalp Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3069,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3070,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3072,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3073,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3077,
+      "ders": "Patoloji",
+      "konu": "Solunum Sistem Hastallıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3082,
+      "ders": "Patoloji",
+      "konu": "Solunum Sistem Hastallıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3089,
+      "ders": "Patoloji",
+      "konu": "Üriner Sistem Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3100,
+      "ders": "Patoloji",
+      "konu": "Kadın Genital Sistem Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3109,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3119,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3126,
+      "ders": "Patoloji",
+      "konu": "Pankreas Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3128,
+      "ders": "Patoloji",
+      "konu": "Pankreas Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3130,
+      "ders": "Patoloji",
+      "konu": "Pankreas Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3136,
+      "ders": "Patoloji",
+      "konu": "Meme Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3151,
+      "ders": "Patoloji",
+      "konu": "Endokrin Sistem Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 37,
+      "ders": "Farmakoloji",
+      "konu": "Genel Farmakoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 787,
+      "ders": "Farmakoloji",
+      "konu": "Genel Farmakoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 807,
+      "ders": "Farmakoloji",
+      "konu": "Kardiyovasküler Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 829,
+      "ders": "Farmakoloji",
+      "konu": "Endokrin Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 836,
+      "ders": "Farmakoloji",
+      "konu": "Santral Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 840,
+      "ders": "Farmakoloji",
+      "konu": "Santral Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 913,
+      "ders": "Farmakoloji",
+      "konu": "Otonom Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 914,
+      "ders": "Farmakoloji",
+      "konu": "Otonom Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 916,
+      "ders": "Farmakoloji",
+      "konu": "Otonom Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 920,
+      "ders": "Farmakoloji",
+      "konu": "Kardiyovasküler Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 922,
+      "ders": "Farmakoloji",
+      "konu": "Endokrin Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 925,
+      "ders": "Farmakoloji",
+      "konu": "Santral Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 933,
+      "ders": "Farmakoloji",
+      "konu": "Kemoterapotikler ve İmmunmodülatörler",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2868,
+      "ders": "Farmakoloji",
+      "konu": "Genel Farmakoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2874,
+      "ders": "Farmakoloji",
+      "konu": "Genel Farmakoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2890,
+      "ders": "Farmakoloji",
+      "konu": "Otonom Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2900,
+      "ders": "Farmakoloji",
+      "konu": "Kardiyovasküler Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2920,
+      "ders": "Farmakoloji",
+      "konu": "Endokrin Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2926,
+      "ders": "Farmakoloji",
+      "konu": "Endokrin Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2928,
+      "ders": "Farmakoloji",
+      "konu": "Endokrin Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2950,
+      "ders": "Farmakoloji",
+      "konu": "Santral Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2956,
+      "ders": "Farmakoloji",
+      "konu": "Otokoidler ve NSAİİ",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2961,
+      "ders": "Farmakoloji",
+      "konu": "Otokoidler ve NSAİİ",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2985,
+      "ders": "Farmakoloji",
+      "konu": "Diğer Sistem İlaçları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3168,
+      "ders": "Farmakoloji",
+      "konu": "Genel Farmakoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3170,
+      "ders": "Farmakoloji",
+      "konu": "Genel Farmakoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3172,
+      "ders": "Farmakoloji",
+      "konu": "Genel Farmakoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3175,
+      "ders": "Farmakoloji",
+      "konu": "Genel Farmakoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3178,
+      "ders": "Farmakoloji",
+      "konu": "Otonom Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3183,
+      "ders": "Farmakoloji",
+      "konu": "Otonom Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3188,
+      "ders": "Farmakoloji",
+      "konu": "Kardiyovasküler Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3190,
+      "ders": "Farmakoloji",
+      "konu": "Kardiyovasküler Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3195,
+      "ders": "Farmakoloji",
+      "konu": "Endokrin Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3199,
+      "ders": "Farmakoloji",
+      "konu": "Endokrin Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3200,
+      "ders": "Farmakoloji",
+      "konu": "Endokrin Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3201,
+      "ders": "Farmakoloji",
+      "konu": "Endokrin Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3202,
+      "ders": "Farmakoloji",
+      "konu": "Endokrin Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3204,
+      "ders": "Farmakoloji",
+      "konu": "Santral Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3217,
+      "ders": "Farmakoloji",
+      "konu": "Otokoidler ve NSAİİ",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3225,
+      "ders": "Farmakoloji",
+      "konu": "Kemoterapotikler ve İmmunmodülatörler",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3226,
+      "ders": "Farmakoloji",
+      "konu": "Kemoterapotikler ve İmmunmodülatörler",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3228,
+      "ders": "Farmakoloji",
+      "konu": "Kemoterapotikler ve İmmunmodülatörler",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3231,
+      "ders": "Farmakoloji",
+      "konu": "Diğer Sistem İlaçları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3234,
+      "ders": "Farmakoloji",
+      "konu": "Diğer Sistem İlaçları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3800,
+      "ders": "Farmakoloji",
+      "konu": "Genel Farmakoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3807,
+      "ders": "Farmakoloji",
+      "konu": "Genel Farmakoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3809,
+      "ders": "Farmakoloji",
+      "konu": "Otonom Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3813,
+      "ders": "Farmakoloji",
+      "konu": "Otonom Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3814,
+      "ders": "Farmakoloji",
+      "konu": "Otonom Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3815,
+      "ders": "Farmakoloji",
+      "konu": "Otonom Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3817,
+      "ders": "Farmakoloji",
+      "konu": "Kardiyovasküler Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3818,
+      "ders": "Farmakoloji",
+      "konu": "Kardiyovasküler Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3821,
+      "ders": "Farmakoloji",
+      "konu": "Kardiyovasküler Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3822,
+      "ders": "Farmakoloji",
+      "konu": "Kardiyovasküler Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3831,
+      "ders": "Farmakoloji",
+      "konu": "Endokrin Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3839,
+      "ders": "Farmakoloji",
+      "konu": "Endokrin Sistem Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3840,
+      "ders": "Farmakoloji",
+      "konu": "Santral Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3844,
+      "ders": "Farmakoloji",
+      "konu": "Santral Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3848,
+      "ders": "Farmakoloji",
+      "konu": "Santral Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3850,
+      "ders": "Farmakoloji",
+      "konu": "Santral Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3851,
+      "ders": "Farmakoloji",
+      "konu": "Santral Sinir Sistemi Farmakolojisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3854,
+      "ders": "Farmakoloji",
+      "konu": "Otokoidler ve NSAİİ",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3857,
+      "ders": "Farmakoloji",
+      "konu": "Otokoidler ve NSAİİ",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3864,
+      "ders": "Farmakoloji",
+      "konu": "Kemoterapotikler ve İmmunmodülatörler",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3870,
+      "ders": "Farmakoloji",
+      "konu": "Kemoterapotikler ve İmmunmodülatörler",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3874,
+      "ders": "Farmakoloji",
+      "konu": "Diğer Sistem İlaçları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3878,
+      "ders": "Farmakoloji",
+      "konu": "Diğer Sistem İlaçları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3879,
+      "ders": "Farmakoloji",
+      "konu": "Diğer Sistem İlaçları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 53,
+      "ders": "Mikrobiyoloji",
+      "konu": "Genel Mikrobiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 941,
+      "ders": "Mikrobiyoloji",
+      "konu": "Genel Mikrobiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 961,
+      "ders": "Mikrobiyoloji",
+      "konu": "Viroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 963,
+      "ders": "Mikrobiyoloji",
+      "konu": "Viroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 983,
+      "ders": "Mikrobiyoloji",
+      "konu": "Genel Mikrobiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 993,
+      "ders": "Mikrobiyoloji",
+      "konu": "İmmünoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 998,
+      "ders": "Mikrobiyoloji",
+      "konu": "İmmünoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1012,
+      "ders": "Mikrobiyoloji",
+      "konu": "Viroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1491,
+      "ders": "Mikrobiyoloji",
+      "konu": "Viroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2804,
+      "ders": "Mikrobiyoloji",
+      "konu": "Bakteriyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2841,
+      "ders": "Mikrobiyoloji",
+      "konu": "Mikoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2849,
+      "ders": "Mikrobiyoloji",
+      "konu": "Parazitoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2863,
+      "ders": "Mikrobiyoloji",
+      "konu": "Klinik Mikrobiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 67,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 96,
+      "ders": "Dahiliye",
+      "konu": "Geriartri",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 106,
+      "ders": "Dahiliye",
+      "konu": "Geriartri",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 363,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 365,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 379,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 412,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 413,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 415,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 425,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 428,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 429,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 435,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 442,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 445,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 446,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 473,
+      "ders": "Dahiliye",
+      "konu": "Romatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 477,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 478,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 482,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1840,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1841,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1848,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1859,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1868,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1870,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1872,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1876,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1882,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1884,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1887,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1888,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1900,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1902,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1917,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1922,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1924,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1927,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1929,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1934,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1943,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1959,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1961,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1972,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1975,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1978,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1979,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1996,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2003,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2006,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2014,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2015,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2016,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2021,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2033,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2050,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2079,
+      "ders": "Dahiliye",
+      "konu": "Romatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2080,
+      "ders": "Dahiliye",
+      "konu": "Romatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2084,
+      "ders": "Dahiliye",
+      "konu": "Geriartri",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2087,
+      "ders": "Dahiliye",
+      "konu": "Geriartri",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3244,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3248,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3249,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3251,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3252,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3254,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3261,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3263,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3274,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3277,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3279,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3280,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3284,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3290,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3292,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3294,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3299,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3301,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3302,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3305,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3306,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3309,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3320,
+      "ders": "Dahiliye",
+      "konu": "Romatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3323,
+      "ders": "Dahiliye",
+      "konu": "Geriartri",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3326,
+      "ders": "Dahiliye",
+      "konu": "Geriartri",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3882,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3930,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3976,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3992,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 4001,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 4004,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 4005,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 4011,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 4014,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 4022,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 4024,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 4025,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 4039,
+      "ders": "Dahiliye",
+      "konu": "Romatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 118,
+      "ders": "Pediatri",
+      "konu": "Yenidoğan",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 122,
+      "ders": "Pediatri",
+      "konu": "Genetik",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 128,
+      "ders": "Pediatri",
+      "konu": "Beslenme",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 131,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 142,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Enfeksiyon Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 143,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Enfeksiyon Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 144,
+      "ders": "Pediatri",
+      "konu": "Pediatrik İmmünoloji/Alerji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 153,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nefroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 161,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 491,
+      "ders": "Pediatri",
+      "konu": "Yenidoğan",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 504,
+      "ders": "Pediatri",
+      "konu": "Büyüme ve Gelişme",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 505,
+      "ders": "Pediatri",
+      "konu": "Beslenme",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 520,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 527,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 531,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Enfeksiyon Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 535,
+      "ders": "Pediatri",
+      "konu": "Pediatrik İmmünoloji/Alerji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 536,
+      "ders": "Pediatri",
+      "konu": "Pediatrik İmmünoloji/Alerji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 548,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Hematoloji ve Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 553,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nefroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 563,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_long_option",
+      "id": 1511,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nefroloji",
+      "detail": "options[2] çok uzun (222 karakter)",
+      "action": "kısaltmayı değerlendir",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1517,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Endokrinoloji ve Metabolizma",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1623,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1629,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1665,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1669,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1676,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Enfeksiyon Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1678,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Enfeksiyon Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1684,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Enfeksiyon Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1690,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Hematoloji ve Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1700,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nefroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2090,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2091,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2093,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2110,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2117,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2118,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2119,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2129,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Enfeksiyon Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2132,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Enfeksiyon Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2138,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Enfeksiyon Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2166,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "suspicious_option_phrase",
+      "id": 2167,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+      "detail": "options[0]: \"Parkland formülü\"",
+      "action": "terminoloji kontrol",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2171,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2187,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2196,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2199,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2202,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2219,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2255,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2261,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nefroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2266,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nefroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2272,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nefroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2273,
+      "ders": "Pediatri",
+      "konu": "Büyüme ve Gelişme",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2274,
+      "ders": "Pediatri",
+      "konu": "Büyüme ve Gelişme",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2282,
+      "ders": "Pediatri",
+      "konu": "Büyüme ve Gelişme",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2283,
+      "ders": "Pediatri",
+      "konu": "Büyüme ve Gelişme",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2302,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Endokrinoloji ve Metabolizma",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2306,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Endokrinoloji ve Metabolizma",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2318,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Hematoloji ve Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2325,
+      "ders": "Pediatri",
+      "konu": "Pediatrik İmmünoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3737,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3753,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3756,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3757,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3771,
+      "ders": "Pediatri",
+      "konu": "Pediatrik İmmünoloji/Alerji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3780,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Hematoloji ve Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3782,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Hematoloji ve Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3787,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nefroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3797,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 162,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Jinekoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "suspicious_option_phrase",
+      "id": 166,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Jinekoloji",
+      "detail": "options[4]: \"Taşikardi form\"",
+      "action": "terminoloji kontrol",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 172,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Perinatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 173,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Perinatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 175,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Perinatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 180,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "İnfertilite",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1065,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Jinekoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_long_option",
+      "id": 1068,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Jinekoloji",
+      "detail": "options[1] çok uzun (226 karakter)",
+      "action": "kısaltmayı değerlendir",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1068,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Jinekoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_long_option",
+      "id": 1072,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Jinekoloji",
+      "detail": "options[2] çok uzun (249 karakter)",
+      "action": "kısaltmayı değerlendir",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1091,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Perinatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1099,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Perinatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1103,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Perinatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2640,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Perinatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2645,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Perinatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2650,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Perinatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2652,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Perinatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2665,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Perinatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2683,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Jinekoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2703,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Jinekoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2706,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Jinekoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2717,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Jinekoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2728,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2732,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2734,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2735,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2746,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "İnfertilite",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2749,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "İnfertilite",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2759,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "İnfertilite",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2764,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "İnfertilite",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3664,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Perinatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3668,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Perinatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3675,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Perinatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3683,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Perinatoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3687,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Jinekoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3691,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Jinekoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3700,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Onkoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3718,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "İnfertilite",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 190,
+      "ders": "Küçük Stajlar",
+      "konu": "Beyin Cerrahi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "risky_all_none_option",
+      "id": 193,
+      "ders": "Küçük Stajlar",
+      "konu": "Anestezi",
+      "detail": "options[3]: \"Denervasyona/yanığa bağlı kas zarı boyunca yayılan 'ekstra-jonksiyonel' asetilkolin reseptörlerinin tümünün birden açılarak hücre dışına masif potasyum sızdırması\"",
+      "action": "TUS uygunluğunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 195,
+      "ders": "Küçük Stajlar",
+      "konu": "Anestezi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 214,
+      "ders": "Küçük Stajlar",
+      "konu": "Kulak Burun Boğaz",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1367,
+      "ders": "Küçük Stajlar",
+      "konu": "Beyin Cerrahisi",
+      "detail": "options[0] çok kısa: \"7\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1367,
+      "ders": "Küçük Stajlar",
+      "konu": "Beyin Cerrahisi",
+      "detail": "options[1] çok kısa: \"6\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1367,
+      "ders": "Küçük Stajlar",
+      "konu": "Beyin Cerrahisi",
+      "detail": "options[2] çok kısa: \"8\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1367,
+      "ders": "Küçük Stajlar",
+      "konu": "Beyin Cerrahisi",
+      "detail": "options[4] çok kısa: \"9\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "suspicious_option_phrase",
+      "id": 1380,
+      "ders": "Küçük Stajlar",
+      "konu": "Anestezi",
+      "detail": "options[4]: \"Dalga form kapnografi\"",
+      "action": "terminoloji kontrol",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1435,
+      "ders": "Küçük Stajlar",
+      "konu": "Halk Sağlığı",
+      "detail": "options[2] çok kısa: \"1\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1435,
+      "ders": "Küçük Stajlar",
+      "konu": "Halk Sağlığı",
+      "detail": "options[4] çok kısa: \"5\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1437,
+      "ders": "Küçük Stajlar",
+      "konu": "Halk Sağlığı",
+      "detail": "options[3] çok kısa: \"2\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1437,
+      "ders": "Küçük Stajlar",
+      "konu": "Halk Sağlığı",
+      "detail": "options[4] çok kısa: \"5\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1719,
+      "ders": "Küçük Stajlar",
+      "konu": "Nöroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1721,
+      "ders": "Küçük Stajlar",
+      "konu": "Nöroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1730,
+      "ders": "Küçük Stajlar",
+      "konu": "Nöroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1734,
+      "ders": "Küçük Stajlar",
+      "konu": "Nöroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1741,
+      "ders": "Küçük Stajlar",
+      "konu": "Psikiyatri",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1745,
+      "ders": "Küçük Stajlar",
+      "konu": "Psikiyatri",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1771,
+      "ders": "Küçük Stajlar",
+      "konu": "Kulak Burun Boğaz",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1779,
+      "ders": "Küçük Stajlar",
+      "konu": "Göz Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1785,
+      "ders": "Küçük Stajlar",
+      "konu": "Üroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1802,
+      "ders": "Küçük Stajlar",
+      "konu": "Halk Sağlığı",
+      "detail": "options[0] çok kısa: \"4\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1806,
+      "ders": "Küçük Stajlar",
+      "konu": "Dermotoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1818,
+      "ders": "Küçük Stajlar",
+      "konu": "Çocuk Cerrahisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1822,
+      "ders": "Küçük Stajlar",
+      "konu": "Anestezi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1832,
+      "ders": "Küçük Stajlar",
+      "konu": "Fizik Tedavi ve Rehabilitasyon",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3340,
+      "ders": "Küçük Stajlar",
+      "konu": "Nöroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3345,
+      "ders": "Küçük Stajlar",
+      "konu": "Beyin Cerrahi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3346,
+      "ders": "Küçük Stajlar",
+      "konu": "Anestezi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3352,
+      "ders": "Küçük Stajlar",
+      "konu": "Psikiyatri",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3353,
+      "ders": "Küçük Stajlar",
+      "konu": "Psikiyatri",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3358,
+      "ders": "Küçük Stajlar",
+      "konu": "Psikiyatri",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3380,
+      "ders": "Küçük Stajlar",
+      "konu": "Göz Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3385,
+      "ders": "Küçük Stajlar",
+      "konu": "Göz Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3391,
+      "ders": "Küçük Stajlar",
+      "konu": "Radyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3393,
+      "ders": "Küçük Stajlar",
+      "konu": "Radyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3394,
+      "ders": "Küçük Stajlar",
+      "konu": "Radyoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3397,
+      "ders": "Küçük Stajlar",
+      "konu": "Halk Sağlığı",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3402,
+      "ders": "Küçük Stajlar",
+      "konu": "Ortopedi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3414,
+      "ders": "Küçük Stajlar",
+      "konu": "Fizik Tedavi ve Rehabilitasyon",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3416,
+      "ders": "Küçük Stajlar",
+      "konu": "Fizik Tedavi ve Rehabilitasyon",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3417,
+      "ders": "Küçük Stajlar",
+      "konu": "Dermotoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3418,
+      "ders": "Küçük Stajlar",
+      "konu": "Dermotoloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 4055,
+      "ders": "Küçük Stajlar",
+      "konu": "Nöroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 4061,
+      "ders": "Küçük Stajlar",
+      "konu": "Nöroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 4063,
+      "ders": "Küçük Stajlar",
+      "konu": "Nöroloji",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 4067,
+      "ders": "Küçük Stajlar",
+      "konu": "Beyin Cerrahi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 4089,
+      "ders": "Küçük Stajlar",
+      "konu": "Çocuk Cerrahisi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 4099,
+      "ders": "Küçük Stajlar",
+      "konu": "Kulak Burun Boğaz",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 4112,
+      "ders": "Küçük Stajlar",
+      "konu": "Halk Sağlığı",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 4114,
+      "ders": "Küçük Stajlar",
+      "konu": "Halk Sağlığı",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 251,
+      "ders": "Biyokimya",
+      "konu": "Lipid Metabolizması",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 266,
+      "ders": "Biyokimya",
+      "konu": "Enzimler ve Klinik Biyokimya",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1250,
+      "ders": "Biyokimya",
+      "konu": "Karbonhidratlar",
+      "detail": "options[0] çok kısa: \"1\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1250,
+      "ders": "Biyokimya",
+      "konu": "Karbonhidratlar",
+      "detail": "options[2] çok kısa: \"6\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1250,
+      "ders": "Biyokimya",
+      "konu": "Karbonhidratlar",
+      "detail": "options[3] çok kısa: \"4\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1250,
+      "ders": "Biyokimya",
+      "konu": "Karbonhidratlar",
+      "detail": "options[4] çok kısa: \"0\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1303,
+      "ders": "Biyokimya",
+      "konu": "Aminoasitler",
+      "detail": "options[1] çok kısa: \"C\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1337,
+      "ders": "Biyokimya",
+      "konu": "Vitaminler",
+      "detail": "options[0] çok kısa: \"K\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1338,
+      "ders": "Biyokimya",
+      "konu": "Vitaminler",
+      "detail": "options[0] çok kısa: \"A\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1338,
+      "ders": "Biyokimya",
+      "konu": "Vitaminler",
+      "detail": "options[2] çok kısa: \"K\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1338,
+      "ders": "Biyokimya",
+      "konu": "Vitaminler",
+      "detail": "options[4] çok kısa: \"E\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1339,
+      "ders": "Biyokimya",
+      "konu": "Vitaminler",
+      "detail": "options[0] çok kısa: \"E\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1339,
+      "ders": "Biyokimya",
+      "konu": "Vitaminler",
+      "detail": "options[2] çok kısa: \"K\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1339,
+      "ders": "Biyokimya",
+      "konu": "Vitaminler",
+      "detail": "options[3] çok kısa: \"D\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1340,
+      "ders": "Biyokimya",
+      "konu": "Vitaminler",
+      "detail": "options[0] çok kısa: \"E\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1340,
+      "ders": "Biyokimya",
+      "konu": "Vitaminler",
+      "detail": "options[2] çok kısa: \"D\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "very_short_option",
+      "id": 1340,
+      "ders": "Biyokimya",
+      "konu": "Vitaminler",
+      "detail": "options[3] çok kısa: \"A\"",
+      "action": "seçeneği gözden geçir",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1549,
+      "ders": "Biyokimya",
+      "konu": "Enzimler ve Klinik Biyokimya",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 279,
+      "ders": "Genel Cerrahi",
+      "konu": "Asit Baz Bozuklukları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 282,
+      "ders": "Genel Cerrahi",
+      "konu": "Hemostaz ve Kan Transfüzyonu",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 295,
+      "ders": "Genel Cerrahi",
+      "konu": "Transplantasyon",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2490,
+      "ders": "Genel Cerrahi",
+      "konu": "Asit Baz Bozuklukları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2509,
+      "ders": "Genel Cerrahi",
+      "konu": "Yanık",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2512,
+      "ders": "Genel Cerrahi",
+      "konu": "Yanık",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2522,
+      "ders": "Genel Cerrahi",
+      "konu": "Tiroid ve Paratiroid Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2551,
+      "ders": "Genel Cerrahi",
+      "konu": "Perianal Hastalıklar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2559,
+      "ders": "Genel Cerrahi",
+      "konu": "Karaciğer Hastalıkları ve Portal HT",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2573,
+      "ders": "Genel Cerrahi",
+      "konu": "Safra yolları Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2581,
+      "ders": "Genel Cerrahi",
+      "konu": "Travma ve Travma Hastasına Yaklaşım",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2585,
+      "ders": "Genel Cerrahi",
+      "konu": "Akut Batın",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2588,
+      "ders": "Genel Cerrahi",
+      "konu": "Akut Batın",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2603,
+      "ders": "Genel Cerrahi",
+      "konu": "Karın Duvarı ve Herniler",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2605,
+      "ders": "Genel Cerrahi",
+      "konu": "Meme Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2617,
+      "ders": "Genel Cerrahi",
+      "konu": "Özefagus Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2624,
+      "ders": "Genel Cerrahi",
+      "konu": "Gis Kanamaları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2629,
+      "ders": "Genel Cerrahi",
+      "konu": "Gis Kanamaları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2630,
+      "ders": "Genel Cerrahi",
+      "konu": "Pankreas Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2632,
+      "ders": "Genel Cerrahi",
+      "konu": "Pankreas Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 2635,
+      "ders": "Genel Cerrahi",
+      "konu": "Pankreas Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "risky_all_none_option",
+      "id": 2637,
+      "ders": "Genel Cerrahi",
+      "konu": "Dalak Hastalıkları",
+      "detail": "options[2]: \"Aşıların tümünü ameliyat sonrası hiç yapmamak\"",
+      "action": "TUS uygunluğunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3427,
+      "ders": "Genel Cerrahi",
+      "konu": "Hemostaz ve Kan Transfüzyonu",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3430,
+      "ders": "Genel Cerrahi",
+      "konu": "Şok",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "risky_all_none_option",
+      "id": 3431,
+      "ders": "Genel Cerrahi",
+      "konu": "Şok",
+      "detail": "options[4]: \"Fibrinolizin tümüyle baskılanması\"",
+      "action": "TUS uygunluğunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3432,
+      "ders": "Genel Cerrahi",
+      "konu": "Travmaya Sistemik Cevap",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3434,
+      "ders": "Genel Cerrahi",
+      "konu": "Beslenme",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3438,
+      "ders": "Genel Cerrahi",
+      "konu": "Yanık",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3446,
+      "ders": "Genel Cerrahi",
+      "konu": "Adrenal Bez Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3447,
+      "ders": "Genel Cerrahi",
+      "konu": "Adrenal Bez Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3454,
+      "ders": "Genel Cerrahi",
+      "konu": "Kolon Rektum Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3461,
+      "ders": "Genel Cerrahi",
+      "konu": "Perianal Hastalıklar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3474,
+      "ders": "Genel Cerrahi",
+      "konu": "Safra yolları Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3475,
+      "ders": "Genel Cerrahi",
+      "konu": "Travma ve Travma Hastasına Yaklaşım",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3484,
+      "ders": "Genel Cerrahi",
+      "konu": "Yara İyileşmesi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3485,
+      "ders": "Genel Cerrahi",
+      "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3487,
+      "ders": "Genel Cerrahi",
+      "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3491,
+      "ders": "Genel Cerrahi",
+      "konu": "Meme Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3493,
+      "ders": "Genel Cerrahi",
+      "konu": "Meme Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3494,
+      "ders": "Genel Cerrahi",
+      "konu": "Meme Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3495,
+      "ders": "Genel Cerrahi",
+      "konu": "Özefagus Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "risky_all_none_option",
+      "id": 3497,
+      "ders": "Genel Cerrahi",
+      "konu": "Özefagus Hastalıkları",
+      "detail": "options[1]: \"Skuamöz epitelin tümüyle normale dönmesi\"",
+      "action": "TUS uygunluğunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3501,
+      "ders": "Genel Cerrahi",
+      "konu": "Gis Kanamaları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3509,
+      "ders": "Genel Cerrahi",
+      "konu": "Dalak Hastalıkları",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 327,
+      "ders": "Anatomi",
+      "konu": "Kemikler",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 357,
+      "ders": "Anatomi",
+      "konu": "Nöroanatomi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1582,
+      "ders": "Anatomi",
+      "konu": "Eklemler",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1594,
+      "ders": "Anatomi",
+      "konu": "Dolaşım",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1596,
+      "ders": "Anatomi",
+      "konu": "Dolaşım",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1601,
+      "ders": "Anatomi",
+      "konu": "Dolaşım",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1607,
+      "ders": "Anatomi",
+      "konu": "Sinirler",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 1611,
+      "ders": "Anatomi",
+      "konu": "Sinirler",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3515,
+      "ders": "Anatomi",
+      "konu": "Kemikler",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3536,
+      "ders": "Anatomi",
+      "konu": "Solunum",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3538,
+      "ders": "Anatomi",
+      "konu": "Solunum",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3548,
+      "ders": "Anatomi",
+      "konu": "Sindirim",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3564,
+      "ders": "Anatomi",
+      "konu": "Nöroanatomi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3565,
+      "ders": "Anatomi",
+      "konu": "Nöroanatomi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "exp_missing_correct_option_text",
+      "id": 3570,
+      "ders": "Anatomi",
+      "konu": "Nöroanatomi",
+      "detail": "Açıklamada doğru şık metni zayıf geçiyor",
+      "action": "açıklama–cevap uyumunu kontrol et",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "konu_near_duplicate_name",
+      "id": null,
+      "ders": "Patoloji",
+      "konu": "Üriner Sistem Hastalıkları",
+      "detail": "\"Üriner Sistem Hastalıkları\" ~ \"Sinir Sistem Hastalıkları\" (88%)",
+      "action": "konu adlarını birleştir",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "konu_near_duplicate_name",
+      "id": null,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji",
+      "detail": "\"Hepatoloji\" ~ \"Hematoloji\" (90%)",
+      "action": "konu adlarını birleştir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_double_space",
+      "id": null,
+      "ders": "Pediatri",
+      "konu": "Pediatrik  İmmünoloji/Alerji",
+      "detail": "\"Pediatrik  İmmünoloji/Alerji\"",
+      "action": "boşlukları düzelt",
+      "manual": false
+    },
+    {
+      "severity": "medium",
+      "type": "konu_near_duplicate_name",
+      "id": null,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji",
+      "detail": "\"Pediatrik Nöroloji\" ~ \"Pediatrik Nefroloji\" (89%)",
+      "action": "konu adlarını birleştir",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "konu_case_or_diacritic_variant",
+      "id": null,
+      "ders": "Pediatri",
+      "konu": "Pediatrik İmmünoloji/Alerji",
+      "detail": "\"Pediatrik İmmünoloji/Alerji\" vs \"Pediatrik  İmmünoloji/Alerji\"",
+      "action": "tek konu adına birleştir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_ascii_turkish_hint",
+      "id": null,
+      "ders": "Küçük Stajlar",
+      "konu": "Beyin Cerrahi",
+      "detail": "Türkçe karakter eksik olabilir",
+      "action": "yazım kontrol",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_ascii_turkish_hint",
+      "id": null,
+      "ders": "Küçük Stajlar",
+      "konu": "Beyin Cerrahisi",
+      "detail": "Türkçe karakter eksik olabilir",
+      "action": "yazım kontrol",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "konu_near_duplicate_name",
+      "id": null,
+      "ders": "Küçük Stajlar",
+      "konu": "Dermatoloji",
+      "detail": "\"Dermatoloji\" ~ \"Dermotoloji\" (91%)",
+      "action": "konu adlarını birleştir",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_ascii_turkish_hint",
+      "id": null,
+      "ders": "Genel Cerrahi",
+      "konu": "Cerrahi Enfeksiyonlar ve Komplikasyonlar",
+      "detail": "Türkçe karakter eksik olabilir",
+      "action": "yazım kontrol",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 76,
+      "ders": "Dahiliye",
+      "konu": "Geriartri",
+      "detail": "Konu \"Geriartri\" — \"geriatri\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 17,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji",
+      "detail": "Konu \"İmmunoloji\" — \"immün\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 49,
+      "ders": "Farmakoloji",
+      "konu": "Kemoterapotikler ve İmmunmodülatörler",
+      "detail": "Konu \"Kemoterapotikler ve İmmunmodülatörler\" — \"immün\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 55,
+      "ders": "Mikrobiyoloji",
+      "konu": "İmmünoloji",
+      "detail": "Konu \"İmmünoloji\" — \"immün\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 144,
+      "ders": "Pediatri",
+      "konu": "Pediatrik İmmünoloji/Alerji",
+      "detail": "Konu \"Pediatrik İmmünoloji/Alerji\" — \"immün\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 1702,
+      "ders": "Pediatri",
+      "konu": "Pediatrik İmmünoloji",
+      "detail": "Konu \"Pediatrik İmmünoloji\" — \"immün\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 49,
+      "ders": "Farmakoloji",
+      "konu": "Kemoterapotikler ve İmmunmodülatörler",
+      "detail": "Konu \"Kemoterapotikler ve İmmunmodülatörler\" — \"kemoterapötik\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 316,
+      "ders": "Genel Cerrahi",
+      "konu": "Appendix Hastalıkları",
+      "detail": "Konu \"Appendix Hastalıkları\" — \"apendiks\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 3,
+      "ders": "Fizyoloji",
+      "konu": "Kas Dokusu HistoFizyolojisi",
+      "detail": "Konu \"Kas Dokusu HistoFizyolojisi\" — \"histo fizyoloji\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 4,
+      "ders": "Fizyoloji",
+      "konu": "Genital Sistem HistoFizyolojisi",
+      "detail": "Konu \"Genital Sistem HistoFizyolojisi\" — \"histo fizyoloji\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 6,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "detail": "Konu \"Hematopoetik Sistem HistoFizyolojisi\" — \"histo fizyoloji\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 7,
+      "ders": "Fizyoloji",
+      "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+      "detail": "Konu \"Gastrointestinal Sistem HistoFizyolojisi\" — \"histo fizyoloji\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 8,
+      "ders": "Fizyoloji",
+      "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+      "detail": "Konu \"Kardiyovasküler Sistem HistoFizyolojisi\" — \"histo fizyoloji\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 9,
+      "ders": "Fizyoloji",
+      "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+      "detail": "Konu \"Endokrin ve Genital Sistem HistoFizyolojisi\" — \"histo fizyoloji\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 10,
+      "ders": "Fizyoloji",
+      "konu": "Solunum Sistemi HistoFizyolojisi",
+      "detail": "Konu \"Solunum Sistemi HistoFizyolojisi\" — \"histo fizyoloji\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 11,
+      "ders": "Fizyoloji",
+      "konu": "Sinir Sistemi HistoFizyolojisi",
+      "detail": "Konu \"Sinir Sistemi HistoFizyolojisi\" — \"histo fizyoloji\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 12,
+      "ders": "Fizyoloji",
+      "konu": "Üriner Sistem HistoFizyolojisi",
+      "detail": "Konu \"Üriner Sistem HistoFizyolojisi\" — \"histo fizyoloji\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 20,
+      "ders": "Patoloji",
+      "konu": "Pediatrik Hastalıklar",
+      "detail": "Konu \"Pediatrik Hastalıklar\" — \"çocuk sağlığı\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 129,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji",
+      "detail": "Konu \"Pediatrik Gastroenteroloji\" — \"çocuk sağlığı\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 132,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji",
+      "detail": "Konu \"Pediatrik Nöroloji\" — \"çocuk sağlığı\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 135,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji",
+      "detail": "Konu \"Pediatrik Kardiyoloji\" — \"çocuk sağlığı\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 138,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "detail": "Konu \"Pediatrik Göğüs Hastalıkları\" — \"çocuk sağlığı\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 141,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Enfeksiyon Hastalıkları",
+      "detail": "Konu \"Pediatrik Enfeksiyon Hastalıkları\" — \"çocuk sağlığı\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 144,
+      "ders": "Pediatri",
+      "konu": "Pediatrik İmmünoloji/Alerji",
+      "detail": "Konu \"Pediatrik İmmünoloji/Alerji\" — \"çocuk sağlığı\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 147,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Endokrinoloji ve Metabolizma",
+      "detail": "Konu \"Pediatrik Endokrinoloji ve Metabolizma\" — \"çocuk sağlığı\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 150,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Hematoloji ve Onkoloji",
+      "detail": "Konu \"Pediatrik Hematoloji ve Onkoloji\" — \"çocuk sağlığı\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 153,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nefroloji",
+      "detail": "Konu \"Pediatrik Nefroloji\" — \"çocuk sağlığı\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 156,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Romatoloji",
+      "detail": "Konu \"Pediatrik Romatoloji\" — \"çocuk sağlığı\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 159,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+      "detail": "Konu \"Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım\" — \"çocuk sağlığı\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "low",
+      "type": "konu_alias_hint",
+      "id": 1702,
+      "ders": "Pediatri",
+      "konu": "Pediatrik İmmünoloji",
+      "detail": "Konu \"Pediatrik İmmünoloji\" — \"çocuk sağlığı\" varyantı da var mı?",
+      "action": "standardizasyon",
+      "manual": true
+    },
+    {
+      "severity": "medium",
+      "type": "near_duplicate_question",
+      "id": 1037,
+      "ders": "Mikrobiyoloji",
+      "konu": "Mikoloji",
+      "detail": "id 969 ile çok benzer (93%)",
+      "action": "tekrar veya varyant kontrol",
+      "manual": true
+    }
+  ]
+}

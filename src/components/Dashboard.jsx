@@ -23,6 +23,32 @@ import { getMailtoFeedback, getMailtoPaymentIssue } from "../config/support";
 import Footer from "./layout/Footer";
 import { getStreak } from "../services/streakService";
 
+function toSafeTargetScore(value, fallback = 65) {
+  const n = Number(value);
+  return Number.isFinite(n) ? n : fallback;
+}
+
+/** remainingUsage yüklenmeden veya Plus’ta güvenli kullanım göstergesi */
+function getFreeUsageUsed(remainingUsage) {
+  if (!remainingUsage || remainingUsage.unlimited) {
+    return { questionUsed: 0, examUsed: 0, reviewUsed: 0 };
+  }
+  const questionRemaining = Number(remainingUsage.questionRemaining);
+  const examRemaining = Number(remainingUsage.fullExamRemaining);
+  const reviewRemaining = Number(remainingUsage.reviewRemaining);
+  return {
+    questionUsed: Math.max(
+      0,
+      30 - (Number.isFinite(questionRemaining) ? questionRemaining : 30)
+    ),
+    examUsed: Math.max(0, 1 - (Number.isFinite(examRemaining) ? examRemaining : 1)),
+    reviewUsed: Math.max(
+      0,
+      10 - (Number.isFinite(reviewRemaining) ? reviewRemaining : 10)
+    ),
+  };
+}
+
 export default function Dashboard({
   setView,
   openTopicSetup,
@@ -38,6 +64,14 @@ export default function Dashboard({
   /** App içinden gelen görünüm — dashboard’a her dönüşte geçmiş yenilenebilir */
   currentView = "dashboard",
   onOpenLegalPage,
+  smartReviewSummary = {
+    dueCount: 0,
+    overdueCount: 0,
+    totalCount: 0,
+    topSubjects: [],
+    topTopics: [],
+  },
+  onStartSmartReview,
 }) {
   const { questions: QUESTIONS } = useQuestions();
   const theme = accentTheme || accentThemes.emerald;
@@ -51,11 +85,12 @@ export default function Dashboard({
       : "min-h-dvh bg-slate-950 text-white");
   const appCardShell = isLightTheme ? "app-card app-card--light" : "app-card";
   const premiumActive = isUserPremium(userData);
-  const freeQuestionUsed = Math.max(0, 30 - (remainingUsage?.questionRemaining ?? 30));
-  const freeExamUsed = Math.max(0, 1 - (remainingUsage?.fullExamRemaining ?? 1));
-  const freeReviewUsed = Math.max(0, 10 - (remainingUsage?.reviewRemaining ?? 10));
-  const [myTarget, setMyTarget] = useState(65.00);
-  const [tempTarget, setTempTarget] = useState(65.00);
+  const { questionUsed: freeQuestionUsed, examUsed: freeExamUsed, reviewUsed: freeReviewUsed } =
+    getFreeUsageUsed(remainingUsage);
+  const [myTarget, setMyTarget] = useState(65.0);
+  const [tempTarget, setTempTarget] = useState(65.0);
+  const displayTarget = toSafeTargetScore(myTarget);
+  const displayTempTarget = toSafeTargetScore(tempTarget);
   const [isEditingTarget, setIsEditingTarget] = useState(false);
   const [studySummary, setStudySummary] = useState({
     wrongCount: 0,
@@ -63,6 +98,10 @@ export default function Dashboard({
     reviewQueueCount: 0,
   });
   const [planStreak, setPlanStreak] = useState(0);
+  const smartDue = Number(smartReviewSummary?.dueCount) || 0;
+  const smartOverdue = Number(smartReviewSummary?.overdueCount) || 0;
+  const smartTopSubjects = smartReviewSummary?.topSubjects || [];
+  const smartTopTopics = smartReviewSummary?.topTopics || [];
 
   useEffect(() => {
     if (!user?.uid) return;
@@ -71,8 +110,8 @@ export default function Dashboard({
       if (!authed?.uid) return;
       try {
         const userDoc = await getDoc(doc(db, "users", authed.uid));
-        if (userDoc.exists() && userDoc.data().targetScore) {
-          const target = userDoc.data().targetScore;
+        if (userDoc.exists() && userDoc.data().targetScore != null) {
+          const target = toSafeTargetScore(userDoc.data().targetScore);
           setMyTarget(target);
           setTempTarget(target);
         }
@@ -122,10 +161,12 @@ export default function Dashboard({
     const currentUser = auth.currentUser;
     if (!currentUser) return;
     try {
+      const saved = toSafeTargetScore(tempTarget);
       await setDoc(doc(db, "users", currentUser.uid), {
-        targetScore: tempTarget
+        targetScore: saved,
       }, { merge: true });
-      setMyTarget(tempTarget);
+      setMyTarget(saved);
+      setTempTarget(saved);
       setIsEditingTarget(false);
     } catch (err) {
       alert("Hata: " + err.message);
@@ -231,6 +272,80 @@ export default function Dashboard({
           })}
         </div>
 
+        {/* Akıllı Tekrar Planı — bugünkü due tekrarlar */}
+        <section
+          className={`relative mb-6 overflow-hidden rounded-[2rem] border p-5 shadow-xl md:p-7 ${
+            isLightTheme
+              ? "border-emerald-200/80 bg-gradient-to-br from-white via-emerald-50/60 to-cyan-50/40 text-slate-950 shadow-emerald-100/60"
+              : "border-emerald-500/25 bg-gradient-to-br from-slate-950 via-emerald-950/40 to-slate-900 text-white shadow-black/30"
+          }`}
+          aria-labelledby="smart-review-heading"
+        >
+          <h2
+            id="smart-review-heading"
+            className={`mb-1 text-[10px] font-black uppercase tracking-[0.32em] ${isLightTheme ? "text-emerald-700" : "text-emerald-300"}`}
+          >
+            Akıllı Tekrar Planı
+          </h2>
+          <p className={`text-2xl font-black tracking-tight md:text-3xl ${isLightTheme ? "text-slate-950" : "text-white"}`}>
+            Bugünkü Tekrarım
+          </p>
+          <p className={`mt-2 max-w-2xl text-sm font-semibold leading-relaxed ${isLightTheme ? "text-slate-600" : "text-slate-300"}`}>
+            FSRS tabanlı akıllı plan, zorlandığın soruları doğru zamanda geri getirir.
+          </p>
+          <div className="mt-4 space-y-2" role="status">
+            {smartDue > 0 ? (
+              <>
+                <p className={`text-base font-bold ${isLightTheme ? "text-slate-800" : "text-slate-100"}`}>
+                  Bugün {smartDue} soru hazır
+                  {smartOverdue > 0 ? (
+                    <span className={`ml-2 text-sm font-extrabold ${isLightTheme ? "text-amber-700" : "text-amber-300"}`}>
+                      · Geciken {smartOverdue} tekrar
+                    </span>
+                  ) : null}
+                </p>
+                {(smartTopSubjects.length > 0 || smartTopTopics.length > 0) && (
+                  <p className={`text-xs font-semibold ${isLightTheme ? "text-slate-500" : "text-slate-400"}`}>
+                    Öncelik:{" "}
+                    {[
+                      ...smartTopSubjects.slice(0, 2).map((s) => s.name),
+                      ...smartTopTopics.slice(0, 1).map((t) => t.name),
+                    ]
+                      .filter(Boolean)
+                      .join(" · ")}
+                  </p>
+                )}
+              </>
+            ) : (
+              <p className={`text-sm font-semibold ${isLightTheme ? "text-slate-600" : "text-slate-300"}`}>
+                Bugün tekrar yok. Yeni konu çözerek planını besleyebilirsin. Yanlış yaptığın yeni sorular burada zamanlanır.
+              </p>
+            )}
+          </div>
+          <div className="mt-5 flex flex-wrap gap-2">
+            <button
+              type="button"
+              disabled={smartDue <= 0 || !onStartSmartReview}
+              onClick={() => {
+                trackClarityEvent("bugunku_tekrarim_cta");
+                onStartSmartReview?.();
+              }}
+              className={`inline-flex min-h-12 items-center justify-center rounded-2xl px-6 py-3 text-sm font-black transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${isLightTheme ? "focus-visible:ring-offset-emerald-50" : "focus-visible:ring-offset-slate-950"} ${theme.primary} ${theme.primaryHover} text-slate-950 shadow-lg ${theme.glow} ${theme.ring}`}
+            >
+              Tekrara Başla
+            </button>
+            {smartDue <= 0 && (
+              <button
+                type="button"
+                onClick={() => openTopicSetup?.()}
+                className={`inline-flex min-h-12 items-center justify-center rounded-2xl border px-5 py-3 text-sm font-bold transition-all ${isLightTheme ? "border-slate-300 bg-white text-slate-800 hover:bg-slate-50" : "border-slate-600 bg-slate-900/60 text-slate-200 hover:bg-slate-800"}`}
+              >
+                Yeni konu çöz
+              </button>
+            )}
+          </div>
+        </section>
+
         {/* Bugünün planı — ilk ekranda tek güçlü karar alanı */}
         <section
           className={`relative mb-6 md:mb-8 overflow-hidden rounded-[2rem] md:rounded-[3rem] border p-5 shadow-2xl md:p-8 ${
@@ -254,13 +369,13 @@ export default function Dashboard({
                 Bugün ne çalışacağını tek bakışta gör.
               </h3>
               <p className={`mt-3 max-w-2xl text-sm font-semibold leading-relaxed md:text-base ${isLightTheme ? "text-slate-600" : "text-slate-300"}`}>
-                Seri, hedef net ve tekrar kuyruğunu bir araya getirdik. Kaldığın yerden devam et ya da sabit 200 soruluk TUS denemesine geç.
+                Seri, hedef net ve akıllı tekrar planını bir araya getirdik. Kaldığın yerden devam et ya da sabit 200 soruluk TUS denemesine geç.
               </p>
               <div className="mt-6 grid grid-cols-3 gap-2.5 sm:gap-3">
                 {[
                   ["Seri", planStreak, "gün"],
-                  ["Hedef net", myTarget.toFixed(2), "kişisel"],
-                  ["Tekrar kuyruğu", studySummary.reviewQueueCount || 0, "soru"],
+                  ["Hedef net", displayTarget.toFixed(2), "kişisel"],
+                  ["Bugünkü tekrar", smartDue, "soru"],
                 ].map(([label, value, suffix]) => (
                   <div
                     key={label}
@@ -273,7 +388,7 @@ export default function Dashboard({
                     <p className="text-[9px] font-black uppercase tracking-wider text-slate-500 sm:text-[10px]">
                       {label}
                     </p>
-                    <p className={`mt-1 text-2xl font-black tabular-nums md:text-3xl ${label === "Tekrar kuyruğu" ? theme.text : isLightTheme ? "text-slate-950" : "text-white"}`}>
+                    <p className={`mt-1 text-2xl font-black tabular-nums md:text-3xl ${label === "Bugünkü tekrar" ? theme.text : isLightTheme ? "text-slate-950" : "text-white"}`}>
                       {value}
                     </p>
                     <p className="text-[10px] font-semibold text-slate-500">{suffix}</p>
@@ -294,12 +409,16 @@ export default function Dashboard({
                 type="button"
                 onClick={() => {
                   trackClarityEvent("today_plan_primary_cta");
-                  setView("studyCollection");
+                  if (smartDue > 0 && onStartSmartReview) {
+                    onStartSmartReview();
+                  } else {
+                    setView("studyCollection");
+                  }
                 }}
                 className={`inline-flex min-h-12 w-full items-center justify-center rounded-2xl px-6 py-4 text-sm font-black transition-all hover:-translate-y-px active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-[#fffefb]" : "focus-visible:ring-offset-slate-950"} ${theme.primary} ${theme.primaryHover} text-slate-950 shadow-lg ${theme.glow} ${theme.ring}`}
               >
-                {studySummary.reviewQueueCount > 0
-                  ? `Bugünkü tekrara başla (${studySummary.reviewQueueCount})`
+                {smartDue > 0
+                  ? `Tekrara başla (${smartDue})`
                   : "Çalışma alanını aç"}
               </button>
               <button
@@ -363,7 +482,7 @@ export default function Dashboard({
                 <div className="flex items-center justify-between mb-4">
                   <button onClick={() => adjustTarget(-0.25)} className={`w-12 h-12 rounded-full text-rose-500 text-2xl font-bold transition-all ${isLightTheme ? "bg-slate-100 hover:bg-rose-100" : "bg-slate-800 hover:bg-rose-500/10"}`}>-</button>
                   <div className="text-center">
-                    <span className={`text-4xl font-black ${isLightTheme ? "text-slate-900" : "text-white"}`}>{tempTarget.toFixed(2)}</span>
+                    <span className={`text-4xl font-black ${isLightTheme ? "text-slate-900" : "text-white"}`}>{displayTempTarget.toFixed(2)}</span>
                     <p className={`text-[10px] font-bold uppercase tracking-widest mt-1 ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>Hedef Netin</p>
                   </div>
                   <button onClick={() => adjustTarget(0.25)} className={`w-12 h-12 rounded-full ${theme.text} text-2xl font-bold transition-all ${isLightTheme ? "bg-emerald-50 hover:bg-emerald-100" : `bg-slate-800 ${theme.softBg}`}`}>+</button>
@@ -377,7 +496,7 @@ export default function Dashboard({
               <div onClick={() => setIsEditingTarget(true)} className="group cursor-pointer text-center">
                 <p className={`text-xs font-black uppercase tracking-[0.3em] mb-1 ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>Kişisel Hedefin</p>
                 <div className="flex items-center justify-center gap-3">
-                  <span className={`text-5xl font-black tracking-tighter ${isLightTheme ? "text-slate-950" : "text-white"}`}>{myTarget.toFixed(2)}</span>
+                  <span className={`text-5xl font-black tracking-tighter ${isLightTheme ? "text-slate-950" : "text-white"}`}>{displayTarget.toFixed(2)}</span>
                   <span className={`${theme.text} text-xl animate-pulse`}>✎</span>
                 </div>
                 <p className={`text-[10px] font-bold uppercase tracking-wider mt-2 ${isLightTheme ? "text-slate-500" : "text-slate-600"}`}>Düzenlemek için tıkla</p>
@@ -431,7 +550,7 @@ export default function Dashboard({
                 ))}
               </div>
 
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
                 <div className={`flex items-center justify-center gap-3 px-8 py-4 rounded-2xl ${theme.primary} text-slate-950 font-black text-lg shadow-lg ${theme.glow} group-hover:scale-[1.01] transition-transform duration-300`}>
                   Denemeyi Başlat
                   <span className="text-xl">→</span>
@@ -498,7 +617,7 @@ export default function Dashboard({
                 Tekrarlarını tek yerden yönet
               </h3>
               <p className={`mt-2 text-[13px] md:text-sm leading-snug line-clamp-2 ${isLightTheme ? "text-slate-600" : "text-slate-300"}`}>
-                Yanlışların, favorilerin ve bugünkü tekrar kuyruğun burada.
+                Yanlışların, favorilerin ve akıllı tekrar planın burada.
               </p>
               <p className={`mt-1.5 text-[11px] md:text-sm leading-snug line-clamp-2 md:line-clamp-none ${isLightTheme ? "text-slate-500" : "text-slate-400"}`}>
                 Deneme net grafiğinle birlikte neyi tekrar etmen gerektiğini daha net gör.
@@ -515,7 +634,7 @@ export default function Dashboard({
                 <p className="mt-1 text-lg md:text-xl font-black text-amber-300 tabular-nums">{studySummary.favoriteCount || 0}</p>
               </div>
               <div className={`rounded-2xl border px-3 py-3 md:px-4 md:py-3.5 min-w-0 ${isLightTheme ? "border-slate-300 bg-[#f5f2ec]" : "border-slate-700/70 bg-slate-950/55"}`}>
-                <p className="text-[10px] uppercase tracking-wider text-slate-500 font-black">Tekrar Kuyruğu</p>
+                <p className="text-[10px] uppercase tracking-wider text-slate-500 font-black">Akıllı tekrar</p>
                 <p className={`mt-1 text-lg md:text-xl font-black tabular-nums ${theme.text}`}>{studySummary.reviewQueueCount || 0}</p>
               </div>
             </div>
@@ -525,7 +644,7 @@ export default function Dashboard({
                 <p className={`text-xs md:text-sm leading-relaxed ${isLightTheme ? "text-slate-700" : "text-slate-300"}`}>
                   {studySummary.reviewQueueCount > 0
                     ? `Bugünkü tekrarın hazır: ${studySummary.reviewQueueCount} soru`
-                    : "Tekrar kuyruğun, yanlışların ve favorilerin biriktikçe oluşacak."}
+                    : "Akıllı tekrar planın, yanlışların ve favorilerin biriktikçe oluşacak."}
                 </p>
                 <button
                   type="button"

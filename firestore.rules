@@ -101,6 +101,10 @@ service cloud.firestore {
       allow read, write: if isOwner(uid) || isAdmin();
     }
 
+    match /users/{uid}/smartReviews/{questionId} {
+      allow read, write: if isOwner(uid) || isAdmin();
+    }
+
     match /results/{resultId} {
       allow create: if isSignedIn() && request.resource.data.userId == request.auth.uid;
       allow read: if isAdmin()
@@ -115,9 +119,72 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
+    // purchaseIntentService.js create payload ile hizalı; admin/aktivasyon alanları yalnızca admin update.
+    function hasForbiddenPremiumPurchaseIntentCreateKeys() {
+      return request.resource.data.keys().hasAny([
+        'activated',
+        'activatedAt',
+        'activatedBy',
+        'activatedForUid',
+        'grantedAt',
+        'grantedBy',
+        'grantedUntil',
+        'premiumUntil',
+        'lifetimePremium',
+        'premiumStatus',
+        'premiumSource',
+        'plan',
+        'paidAt',
+        'paymentStatus',
+        'orderId',
+        'paytrOrderId',
+        'reviewedAt',
+        'reviewedBy',
+        'updatedAt',
+        'userId',
+        'displayName',
+        'amount',
+        'source',
+        'userAgent'
+      ]);
+    }
+
+    function isSafePremiumPurchaseIntentCreate() {
+      let data = request.resource.data;
+      return !hasForbiddenPremiumPurchaseIntentCreateKeys()
+        && data.keys().hasOnly([
+          'uid',
+          'email',
+          'planId',
+          'planLabel',
+          'planSku',
+          'durationDays',
+          'monthlyPrice',
+          'monthlyPriceLabel',
+          'totalPrice',
+          'totalPriceLabel',
+          'currency',
+          'provider',
+          'status',
+          'shopifyUrlConfigured',
+          'shopifyOrderName',
+          'shopifyOrderId',
+          'paymentCheckedAt',
+          'paymentCheckedBy',
+          'adminNote',
+          'createdAt'
+        ])
+        && data.uid == request.auth.uid
+        && data.status == 'started'
+        && data.shopifyOrderName == null
+        && data.shopifyOrderId == null
+        && data.paymentCheckedAt == null
+        && data.paymentCheckedBy == null
+        && data.adminNote == null;
+    }
+
     match /premiumPurchaseIntents/{intentId} {
-      allow create: if isSignedIn()
-        && request.resource.data.uid == request.auth.uid;
+      allow create: if isSignedIn() && isSafePremiumPurchaseIntentCreate();
       allow read, update: if isAdmin();
       allow delete: if false;
     }

@@ -13,6 +13,7 @@ import {
 } from "../utils/examHistoryUtils";
 import { trackClarityEvent } from "../lib/clarity";
 import { addWrongQuestion } from "../services/studyCollectionService";
+import { upsertSmartReview } from "../services/smartReviewService";
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -211,7 +212,6 @@ export default function ExamScreen({
   examQuestions,
   examAnswers,
   examSelected,
-  examTitle,
   examSetMeta,
   onJump,
   handleExamSelect,
@@ -318,7 +318,10 @@ export default function ExamScreen({
           if (userAnswer === undefined || userAnswer === null || userAnswer === q.correct) {
             return null;
           }
-          return addWrongQuestion(user, q, userAnswer, userData);
+          return Promise.all([
+            addWrongQuestion(user, q, userAnswer, userData),
+            upsertSmartReview(user, q, "wrong"),
+          ]);
         })
         .filter(Boolean);
       if (wrongSaveTasks.length) {

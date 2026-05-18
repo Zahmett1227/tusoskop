@@ -53,6 +53,7 @@ export default function QuestionSetupScreen({
         let map = topicCache.get(memory.ders);
         if (!map) {
           try {
+            if (typeof ensureSubjectQuestions !== "function") continue;
             const list = await ensureSubjectQuestions(memory.ders);
             map = countQuestionsByTopic(list, memory.ders);
             topicCache.set(memory.ders, map);
@@ -95,6 +96,10 @@ export default function QuestionSetupScreen({
     setLoadError("");
     (async () => {
       try {
+        if (typeof ensureSubjectQuestions !== "function") {
+          if (!cancelled) setLoadError("Konu listesi yüklenemedi.");
+          return;
+        }
         const list = await ensureSubjectQuestions(selectedLesson);
         if (cancelled) return;
         setTopicCountMap(countQuestionsByTopic(list, selectedLesson));
@@ -125,9 +130,19 @@ export default function QuestionSetupScreen({
     !loadingTopics;
 
   const handleSelectLesson = (name) => {
-    setSelectedLesson(name);
+    const lesson = typeof name === "string" ? name : name?.name;
+    if (!lesson) return;
+    if (typeof setSelectedLesson !== "function") {
+      throw new Error("QuestionSetupScreen: setSelectedLesson prop must be a function");
+    }
+    if (typeof setSelectedTopic !== "function") {
+      throw new Error("QuestionSetupScreen: setSelectedTopic prop must be a function");
+    }
+    setSelectedLesson(lesson);
     setSelectedTopic("");
     setTopicSearch("");
+    setStudyCount(20);
+    setLoadError("");
   };
 
   const handleStart = () => {

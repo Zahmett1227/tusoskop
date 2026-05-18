@@ -142,6 +142,22 @@ describe("localStorage in-progress", () => {
     clearInProgressExam();
   });
 
+  it("sabit deneme payload fixedSet, setVersion ve questionIdsSnapshot içerir", () => {
+    const questions = TEKRAR_DENEMESI_1_QUESTION_IDS.slice(0, 5).map((id) => ({ id }));
+    const payload = buildInProgressExamPayload({
+      examSet: fixedExam,
+      examQuestions: questions,
+      examIndex: 2,
+      answers: { 0: 1, 1: 3 },
+      examSelected: 3,
+    });
+    expect(payload.fixedSet).toBe(true);
+    expect(payload.setVersion).toBe(TEKRAR_DENEMESI_1_SET_VERSION);
+    expect(payload.questionIdsSnapshot).toEqual(TEKRAR_DENEMESI_1_QUESTION_IDS.slice(0, 5));
+    expect(payload.examIndex).toBe(2);
+    expect(payload.answers).toEqual({ 0: 1, 1: 3 });
+  });
+
   it("kayıt ve okuma round-trip", () => {
     const payload = buildInProgressExamPayload({
       examSet: fixedExam,

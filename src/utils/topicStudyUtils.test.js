@@ -38,4 +38,9 @@ describe("topicStudyUtils", () => {
     expect(resolveTopicStudyCount("all", 12)).toBe(12);
     expect(resolveTopicStudyCount(10, 0)).toBe(0);
   });
+
+  it("geçersiz topicCountMap veya topics patlatmaz", () => {
+    expect(sortedTopicNames(null)).toEqual([]);
+    expect(filterTopicsBySearch(undefined, "x")).toEqual([]);
+  });
 });

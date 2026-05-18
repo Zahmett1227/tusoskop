@@ -10,6 +10,7 @@ import { db } from "../firebase";
 import { trackClarityEvent } from "../lib/clarity";
 import { FREE_LIMITS } from "../config/limits";
 import { isUserPremium } from "../utils/premiumUtils";
+import { readLocalStorageJson } from "../utils/safeLocalStorage";
 
 const WRONG_KEY = "tusoskopWrongQuestions";
 const FAVORITE_KEY = "tusoskopFavoriteQuestions";
@@ -20,6 +21,24 @@ const safeNowIso = () => new Date().toISOString();
 const toNumber = (value, fallback = 0) => {
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : fallback;
+};
+
+/** Kalıcı kayıtlar yalnızca soru bankası question.id ile tutulur (examIndex değil). */
+export function getQuestionIdSafe(question) {
+  const id = Number(question?.id);
+  return Number.isFinite(id) && id > 0 ? id : null;
+}
+
+const isValidQuestionId = (questionId) =>
+  Number.isFinite(questionId) && questionId > 0;
+
+const normalizeSelectedAnswer = (value, optionCount = 5) => {
+  if (value === null || value === undefined) return null;
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed)) return null;
+  const maxIndex = Math.max(0, Number(optionCount) - 1);
+  if (parsed < 0 || parsed > maxIndex) return null;
+  return parsed;
 };
 
 const normalizeWrongItem = (raw = {}) => ({
@@ -52,15 +71,60 @@ const canUseLocalStorage = () =>
 
 const getLocalArray = (key) => {
   if (!canUseLocalStorage()) return [];
-  try {
-    const raw = window.localStorage.getItem(key);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    if (!Array.isArray(parsed)) return [];
-    return parsed.filter((item) => item != null && typeof item === "object");
-  } catch {
+  const parsed = readLocalStorageJson(key, { fallback: [], clearOnError: true });
+  if (!Array.isArray(parsed)) {
+    try {
+      window.localStorage.removeItem(key);
+    } catch {
+      /* ignore */
+    }
     return [];
   }
+  return parsed.filter((item) => item != null && typeof item === "object");
+};
+
+const dedupeWrongByQuestionId = (items = []) => {
+  const map = new Map();
+  for (const raw of items) {
+    const item = normalizeWrongItem(raw);
+    if (!isValidQuestionId(item.questionId)) continue;
+    const prev = map.get(item.questionId);
+    if (!prev) {
+      map.set(item.questionId, item);
+      continue;
+    }
+    const prevTime = prev.lastWrongAt ? new Date(prev.lastWrongAt).getTime() : 0;
+    const itemTime = item.lastWrongAt ? new Date(item.lastWrongAt).getTime() : 0;
+    const newer = itemTime >= prevTime ? item : prev;
+    map.set(
+      item.questionId,
+      normalizeWrongItem({
+        ...newer,
+        wrongCount: Math.max(prev.wrongCount, item.wrongCount),
+        reviewCount: Math.max(prev.reviewCount, item.reviewCount),
+        correctReviewStreak: Math.max(prev.correctReviewStreak, item.correctReviewStreak),
+        isResolved: Boolean(prev.isResolved && item.isResolved),
+      })
+    );
+  }
+  return [...map.values()];
+};
+
+const dedupeFavoritesByQuestionId = (items = []) => {
+  const map = new Map();
+  for (const raw of items) {
+    const item = normalizeFavoriteItem(raw);
+    if (!isValidQuestionId(item.questionId)) continue;
+    const prev = map.get(item.questionId);
+    if (!prev) {
+      map.set(item.questionId, item);
+      continue;
+    }
+    const prevTime = prev.addedAt ? new Date(prev.addedAt).getTime() : 0;
+    const itemTime = item.addedAt ? new Date(item.addedAt).getTime() : 0;
+    if (itemTime >= prevTime) map.set(item.questionId, item);
+  }
+  return [...map.values()];
 };
 
 const setLocalArray = (key, value) => {
@@ -86,9 +150,7 @@ async function readWrongFromFirestore(user, userData) {
   const ref = collection(db, "users", user.uid, "wrongQuestions");
   const snap = await getDocs(ref);
   const list = sortWrongItems(
-    snap.docs
-      .map((d) => normalizeWrongItem(d.data()))
-      .filter((item) => Number.isFinite(item.questionId))
+    dedupeWrongByQuestionId(snap.docs.map((d) => normalizeWrongItem(d.data())))
   );
   return isUserPremium(userData) ? list : list.slice(0, FREE_LIMITS.maxWrongQuestions);
 }
@@ -96,26 +158,20 @@ async function readWrongFromFirestore(user, userData) {
 async function readFavoritesFromFirestore(user) {
   const ref = collection(db, "users", user.uid, "favoriteQuestions");
   const snap = await getDocs(ref);
-  return snap.docs
-    .map((d) => normalizeFavoriteItem(d.data()))
-    .filter((item) => Number.isFinite(item.questionId))
-    .sort((a, b) => new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime());
+  return dedupeFavoritesByQuestionId(snap.docs.map((d) => normalizeFavoriteItem(d.data()))).sort(
+    (a, b) => new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime()
+  );
 }
 
 function readWrongFromLocal(userData) {
-  const list = sortWrongItems(
-    getLocalArray(WRONG_KEY)
-      .map(normalizeWrongItem)
-      .filter((item) => Number.isFinite(item.questionId))
-  );
+  const list = sortWrongItems(dedupeWrongByQuestionId(getLocalArray(WRONG_KEY)));
   return isUserPremium(userData) ? list : list.slice(0, FREE_LIMITS.maxWrongQuestions);
 }
 
 function readFavoritesFromLocal() {
-  return getLocalArray(FAVORITE_KEY)
-    .map(normalizeFavoriteItem)
-    .filter((item) => Number.isFinite(item.questionId))
-    .sort((a, b) => new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime());
+  return dedupeFavoritesByQuestionId(getLocalArray(FAVORITE_KEY)).sort(
+    (a, b) => new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime()
+  );
 }
 
 export async function getWrongQuestions(user, userData = null) {
@@ -138,13 +194,11 @@ export async function getFavoriteQuestions(user) {
 
 export async function addWrongQuestion(user, question, selectedAnswer, userData = null) {
   try {
-    if (!question?.id) return null;
+    const questionId = getQuestionIdSafe(question);
+    if (!questionId) return null;
     const now = safeNowIso();
-    const questionId = Number(question.id);
-    const normalizedSelected =
-      selectedAnswer === null || selectedAnswer === undefined
-        ? null
-        : toNumber(selectedAnswer, null);
+    const optionCount = Array.isArray(question.options) ? question.options.length : 5;
+    const normalizedSelected = normalizeSelectedAnswer(selectedAnswer, optionCount);
     const patch = {
       questionId,
       ders: String(question.ders || ""),
@@ -234,13 +288,11 @@ export async function updateWrongQuestionAfterReview(
   userData
 ) {
   try {
-    if (!question?.id) return null;
+    const questionId = getQuestionIdSafe(question);
+    if (!questionId) return null;
     const now = safeNowIso();
-    const questionId = Number(question.id);
-    const normalizedSelected =
-      selectedAnswer === null || selectedAnswer === undefined
-        ? null
-        : toNumber(selectedAnswer, null);
+    const optionCount = Array.isArray(question.options) ? question.options.length : 5;
+    const normalizedSelected = normalizeSelectedAnswer(selectedAnswer, optionCount);
 
     const applyRules = (prev) => {
       const base = normalizeWrongItem({
@@ -304,8 +356,8 @@ export async function updateWrongQuestionAfterReview(
 
 export async function toggleFavoriteQuestion(user, question) {
   try {
-    if (!question?.id) return { isFavorite: false };
-    const questionId = Number(question.id);
+    const questionId = getQuestionIdSafe(question);
+    if (!questionId) return { isFavorite: false };
     const payload = normalizeFavoriteItem({
       questionId,
       ders: question.ders || "",

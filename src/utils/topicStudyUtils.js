@@ -18,15 +18,17 @@ export function countQuestionsByTopic(questions, ders) {
 }
 
 export function sortedTopicNames(topicCountMap) {
+  if (!topicCountMap || typeof topicCountMap.keys !== "function") return [];
   return [...topicCountMap.keys()].sort((a, b) => a.localeCompare(b, "tr"));
 }
 
 export function filterTopicsBySearch(topics, query) {
+  const list = Array.isArray(topics) ? topics : [];
   const q = String(query || "")
     .trim()
     .toLocaleLowerCase("tr");
-  if (!q) return topics;
-  return topics.filter((t) => t.toLocaleLowerCase("tr").includes(q));
+  if (!q) return list;
+  return list.filter((t) => t.toLocaleLowerCase("tr").includes(q));
 }
 
 /**

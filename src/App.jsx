@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useMemo, useState, useEffect, useRef } from "react";
+import React, { Suspense, lazy, useMemo, useState, useEffect, useRef, useCallback } from "react";
 import './index.css';
 import { auth, db, initAnalytics, loginWithGoogle, logout } from "./firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
@@ -7,6 +7,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useQuestions } from "./hooks/useQuestions";
 import { useAppAccentTheme } from "./hooks/useAppAccentTheme";
 import { useAppAuthBootstrap } from "./hooks/useAppAuthBootstrap";
+import { useTopicStudyFlow } from "./hooks/useTopicStudyFlow";
 import { EXAM_SETS } from "./data/exams";
 import {
   buildFullExam,
@@ -32,12 +33,17 @@ import { isIOS } from "./utils/device";
 import { setClarityTag, trackClarityEvent } from "./lib/clarity";
 import {
   addWrongQuestion,
-  buildTodayReviewQueue,
-  getStudyCollectionSummary,
   getWrongQuestions,
   toggleFavoriteQuestion,
   updateWrongQuestionAfterReview,
 } from "./services/studyCollectionService";
+import {
+  getDueSmartReviews,
+  getSmartReviewSummary,
+  resolveQuestionsFromReviews,
+  upsertSmartReview,
+  updateSmartReviewFromAnswer,
+} from "./services/smartReviewService";
 
 // Bileşenler (Screens)
 import MobileBottomNav from "./components/MobileBottomNav";
@@ -49,18 +55,14 @@ import {
   canAnswerQuestion,
   canStartFullExam,
   canStartReview,
-  canStartTopicTest,
   incrementFullExamUsage,
   incrementQuestionUsage,
   incrementReviewUsage,
-  incrementTopicTestUsage,
   UsageLimitError,
   limitModalFromUsageError,
 } from "./services/usageLimitService";
 import { SUBJECTS as SUBJECT_CATALOG } from "./data/subjects";
 import { SUBJECT_QUESTION_COUNTS } from "./data/questions";
-import { resolveTopicStudyCount } from "./utils/topicStudyUtils";
-import { saveRecentTopicStudy } from "./utils/topicStudyMemory";
 import { applyQuestionTextFilter } from "./utils/questionTextFilter";
 
 const Dashboard = lazy(() => import("./components/Dashboard"));
@@ -162,43 +164,34 @@ export default function App() {
   } = useAppAuthBootstrap(setView);
 
   const [bottomNavReviewCount, setBottomNavReviewCount] = useState(0);
-  const [questionSetupWrongCount, setQuestionSetupWrongCount] = useState(0);
-  useEffect(() => {
-    let active = true;
-    const loadQueueLen = async () => {
-      try {
-        const queue = await buildTodayReviewQueue(user, QUESTIONS, userData);
-        if (active) setBottomNavReviewCount(Array.isArray(queue) ? queue.length : 0);
-      } catch {
-        if (active) setBottomNavReviewCount(0);
-      }
-    };
-    loadQueueLen();
-    return () => {
-      active = false;
-    };
-  }, [user, userData, QUESTIONS, view]);
+  const [smartReviewSummary, setSmartReviewSummary] = useState({
+    dueCount: 0,
+    overdueCount: 0,
+    totalCount: 0,
+    topSubjects: [],
+    topTopics: [],
+  });
+
+  const refreshSmartReviewSummary = useCallback(async () => {
+    try {
+      const summary = await getSmartReviewSummary(user);
+      setSmartReviewSummary(summary);
+      setBottomNavReviewCount(summary?.dueCount ?? 0);
+    } catch {
+      setSmartReviewSummary({
+        dueCount: 0,
+        overdueCount: 0,
+        totalCount: 0,
+        topSubjects: [],
+        topTopics: [],
+      });
+      setBottomNavReviewCount(0);
+    }
+  }, [user]);
 
   useEffect(() => {
-    if (view !== "questionSetup" || !user?.uid) return;
-    let active = true;
-    const loadWrongCount = async () => {
-      try {
-        const summary = await getStudyCollectionSummary(user, userData);
-        if (active) {
-          setQuestionSetupWrongCount(
-            summary?.unresolvedWrongCount ?? summary?.wrongCount ?? 0
-          );
-        }
-      } catch {
-        if (active) setQuestionSetupWrongCount(0);
-      }
-    };
-    loadWrongCount();
-    return () => {
-      active = false;
-    };
-  }, [view, user, userData]);
+    refreshSmartReviewSummary();
+  }, [refreshSmartReviewSummary, userData, QUESTIONS, view]);
 
   const bottomNavExamLocked =
     !isUserPremium(userData) && (remainingUsage?.fullExamRemaining ?? 1) <= 0;
@@ -276,11 +269,7 @@ export default function App() {
   const examAnswersRef = useRef({});
   const inProgressNotifiedRef = useRef(false);
 
-  // --- 4. KONU SEÇİM STATE ---
-  const [selectedLesson, setSelectedLesson] = useState("");
-  const [selectedTopic, setSelectedTopic] = useState("");
-
-  // --- 5. HESAPLANAN VERİLER (MEMO) ---
+  // --- 4. HESAPLANAN VERİLER (MEMO) ---
   const q = activeQuestions[currentIndex];
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -293,13 +282,6 @@ export default function App() {
       setQuestionStartTime(Date.now());
     }
   }, [view, currentIndex]);
-
-  useEffect(() => {
-    if (!selectedLesson) return;
-    ensureSubjectQuestions(selectedLesson).catch((error) => {
-      console.error("Konu listesi için ders soruları yüklenemedi:", error);
-    });
-  }, [selectedLesson, ensureSubjectQuestions]);
 
   useEffect(() => {
     const raw = loadInProgressExamRaw();
@@ -317,22 +299,23 @@ export default function App() {
     }
   }, []);
 
-  const persistInProgressExam = () => {
+  const persistInProgressExam = useCallback(() => {
     if (view !== "exam" || !selectedExamSet || !examQuestions.length) return;
+    const answers = examAnswersRef.current;
     saveInProgressExam(
       buildInProgressExamPayload({
         examSet: selectedExamSet,
         examQuestions,
         examIndex,
-        answers: examAnswersRef.current,
+        answers,
         examSelected,
       })
     );
-  };
+  }, [view, selectedExamSet, examQuestions, examIndex, examSelected]);
 
   useEffect(() => {
     persistInProgressExam();
-  }, [view, selectedExamSet, examQuestions, examIndex, examAnswers, examSelected]);
+  }, [persistInProgressExam, examAnswers]);
 
   const examQ = examQuestions[examIndex];
 
@@ -372,21 +355,24 @@ export default function App() {
     clearInProgressExam();
   };
 
-  const withQuestionLoading = async (message, task) => {
+  const withQuestionLoading = useCallback(async (message, task) => {
     setQuestionActionLoading({ active: true, message });
     try {
       return await task();
     } finally {
       setQuestionActionLoading({ active: false, message: "" });
     }
-  };
+  }, []);
 
-  const ensureQuestionsForSubject = async (subjectName) => {
-    if (!subjectName) return [];
-    return withQuestionLoading(`${subjectName} soruları hazırlanıyor…`, () =>
-      ensureSubjectQuestions(subjectName)
-    );
-  };
+  const ensureQuestionsForSubject = useCallback(
+    async (subjectName) => {
+      if (!subjectName) return [];
+      return withQuestionLoading(`${subjectName} soruları hazırlanıyor…`, () =>
+        ensureSubjectQuestions(subjectName)
+      );
+    },
+    [ensureSubjectQuestions, withQuestionLoading]
+  );
 
   const ensureAllQuestionsLoaded = async (message = "Soru bankası hazırlanıyor…") =>
     withQuestionLoading(message, () => ensureAllQuestions());
@@ -396,31 +382,25 @@ export default function App() {
     return safeList.map((q) => applyQuestionTextFilter(q));
   };
 
-  const openSubjectTopicPlusGate = () => {
-    trackClarityEvent("subject_topic_plus_gate_shown");
-    setLimitModal({
-      open: true,
-      title: "Ders ve konu seçerek çözme Plus'a özel",
-      description:
-        "Free planda günlük ücretsiz soru hakkınızla çalışmaya devam edebilirsiniz. Ders ve konu seçerek sınırsız çalışma Plus üyelikte açılır.",
-      remainingInfo: "",
-      ctaLabel: "Plus'ı İncele",
-      secondaryLabel: "Free ile Devam Et",
-      premiumMessage: "Aylık bir kahve ücretine Plus üyelik almak ister misiniz?",
-      premiumDescription:
-        "Plus ile istediğiniz ders ve konudan sınırsız soru çözebilir, tekrar kuyruğunuzu ve analizlerinizi daha geniş kullanabilirsiniz.",
-      limitReason: "subject_topic_gate",
-    });
-  };
+  const topicStudy = useTopicStudyFlow({
+    user,
+    userData,
+    view,
+    setView,
+    ensureQuestionsForSubject,
+    refreshRemainingUsage,
+    resetStudyState,
+    setStudyMode,
+    setActiveTopicSubject,
+    setActiveTopicName,
+    setCurrentSubject,
+    setActiveQuestions,
+    toDisplayQuestions,
+    setLimitModal,
+    openLimitFromUsageError,
+  });
 
-  const openTopicSetup = () => {
-    if (!isUserPremium(userData)) {
-      openSubjectTopicPlusGate();
-      return;
-    }
-    trackClarityEvent("subject_topic_started");
-    setView("questionSetup");
-  };
+  const { openTopicSetup, questionSetupScreenProps } = topicStudy;
 
   const guardedSetView = async (nextView) => {
     if (nextView === "questionSetup") {
@@ -432,19 +412,6 @@ export default function App() {
     }
     setView(nextView);
   };
-
-  const questionSetupNonPremiumHandledRef = useRef(false);
-  useEffect(() => {
-    if (view !== "questionSetup") {
-      questionSetupNonPremiumHandledRef.current = false;
-      return;
-    }
-    if (isUserPremium(userData)) return;
-    if (questionSetupNonPremiumHandledRef.current) return;
-    questionSetupNonPremiumHandledRef.current = true;
-    openSubjectTopicPlusGate();
-    setView("dashboard");
-  }, [view, userData]);
 
   const openLegalPage = (id) => {
     const valid = LEGAL_PAGES.some((p) => p.id === id) ? id : LEGAL_PAGES[0].id;
@@ -526,6 +493,16 @@ export default function App() {
     startReviewWithQuestions(list, "wrong");
   };
 
+  const startSmartReview = async () => {
+    await ensureAllQuestionsLoaded("Akıllı tekrar planı hazırlanıyor…");
+    const due = await getDueSmartReviews(user);
+    const list = resolveQuestionsFromReviews(due, QUESTIONS);
+    if (!list.length) return;
+    setClarityTag("akilli_tekrar_due", String(list.length));
+    trackClarityEvent("akilli_tekrar_baslatildi");
+    startReviewWithQuestions(list, "smart");
+  };
+
   const startSubject = (subjectName) => {
     (async () => {
       const loaded = await ensureQuestionsForSubject(subjectName);
@@ -539,62 +516,6 @@ export default function App() {
       setActiveQuestions(toDisplayQuestions(filtered));
       setView("study");
     })();
-  };
-
-  const startTopicTest = async (questionLimit = "all", topicOverride) => {
-    if (!isUserPremium(userData)) {
-      openSubjectTopicPlusGate();
-      return;
-    }
-    const lesson = topicOverride?.ders ?? selectedLesson;
-    const topic = topicOverride?.konu ?? selectedTopic;
-    const limit = topicOverride?.countMode ?? questionLimit;
-    if (!lesson || !topic) {
-      window.alert("Lütfen ders ve konu seçin.");
-      return;
-    }
-    const loaded = await ensureQuestionsForSubject(lesson);
-    const filtered = loaded.filter((item) => item.ders === lesson && item.konu === topic);
-    if (filtered.length === 0) { alert("Soru bulunamadı."); return; }
-    const take = resolveTopicStudyCount(limit, filtered.length);
-    const subset = filtered.slice(0, take);
-    const gate = await canStartTopicTest(user, userData);
-    if (!gate.allowed) {
-      setLimitModal({
-        open: true,
-        title: "Günlük konu testi limitine ulaştın",
-        description: "Free planda günde en fazla 2 konu testi başlatabilirsin. Plus ile sınırsız konu testi açılır.",
-        remainingInfo: "",
-        limitReason: "daily_topic_test_limit",
-      });
-      return;
-    }
-    try {
-      await incrementTopicTestUsage(user, userData);
-      await refreshRemainingUsage();
-    } catch (err) {
-      if (openLimitFromUsageError(err)) return;
-      throw err;
-    }
-    saveRecentTopicStudy({
-      ders: lesson,
-      konu: topic,
-      countMode: limit,
-      resolvedCount: take,
-    });
-    trackClarityEvent("konu_testi_baslatildi");
-    setClarityTag("son_ders", lesson);
-    setClarityTag("son_konu", topic);
-    setClarityTag("son_mod", "konu_testi");
-    resetStudyState();
-    setStudyMode("topic");
-    setSelectedLesson(lesson);
-    setSelectedTopic(topic);
-    setActiveTopicSubject(lesson);
-    setActiveTopicName(topic);
-    setCurrentSubject(`${lesson} / ${topic}`);
-    setActiveQuestions(toDisplayQuestions(subset));
-    setView("study");
   };
 
   const startFullExam = async (setId) => {
@@ -949,9 +870,11 @@ export default function App() {
     if (studyMode === "review") {
       if (answer !== null && answer !== undefined && q?.id) {
         await updateWrongQuestionAfterReview(user, q, isCorrect, answer, userData);
+        await updateSmartReviewFromAnswer(user, q, isCorrect);
       }
     } else if (isWrong && q?.id) {
       await addWrongQuestion(user, q, answer, userData);
+      await upsertSmartReview(user, q, "wrong");
     }
   };
 
@@ -1051,6 +974,7 @@ export default function App() {
           stillNeedsReview,
         });
         trackClarityEvent("tekrar_tamamlandi");
+        await refreshSmartReviewSummary();
         resetStudyState();
         setView("reviewSummary");
         return;
@@ -1207,6 +1131,8 @@ export default function App() {
           onAccentThemeChange={handleAccentThemeChange}
           currentView={view}
           onOpenLegalPage={openLegalPage}
+          smartReviewSummary={smartReviewSummary}
+          onStartSmartReview={startSmartReview}
         />
       );
       break;
@@ -1228,6 +1154,8 @@ export default function App() {
             onAccentThemeChange={handleAccentThemeChange}
             currentView={view}
             onOpenLegalPage={openLegalPage}
+            smartReviewSummary={smartReviewSummary}
+            onStartSmartReview={startSmartReview}
           />
         );
         break;
@@ -1236,14 +1164,8 @@ export default function App() {
         <QuestionSetupScreen
           subjectCatalog={SUBJECT_CATALOG}
           subjectQuestionCounts={SUBJECT_QUESTION_COUNTS}
-          selectedLesson={selectedLesson}
-          setSelectedLesson={setSelectedLesson}
-          selectedTopic={selectedTopic}
-          setSelectedTopic={setSelectedTopic}
-          ensureSubjectQuestions={ensureQuestionsForSubject}
-          startTopicTest={startTopicTest}
+          {...questionSetupScreenProps}
           goDashboard={goDashboard}
-          wrongCount={questionSetupWrongCount}
           onStartWrongReview={startWrongReview}
         />
       );
@@ -1277,7 +1199,6 @@ export default function App() {
         <ExamScreen
           examQ={examQ} examIndex={examIndex} examQuestions={examQuestions}
           examAnswers={examAnswers} examSelected={examSelected}
-          examTitle={selectedExamSet?.title || "TUS Genel Deneme"}
           examSetMeta={buildExamResultMetadata(selectedExamSet)}
           accentTheme={accentTheme}
           userId={user?.uid}
@@ -1439,6 +1360,8 @@ export default function App() {
           onAccentThemeChange={handleAccentThemeChange}
           currentView={view}
           onOpenLegalPage={openLegalPage}
+          smartReviewSummary={smartReviewSummary}
+          onStartSmartReview={startSmartReview}
         />
       );
   }

@@ -210,6 +210,8 @@ export default function ExamAnalysisScreen({
 
   if (!examAnalysis) return null;
 
+  const summary = examAnalysis.summary || {};
+  const netScore = Number(summary.net);
   const lessonRows = Object.entries(examAnalysis.byLesson || {});
 
   const getProgressColor = (rate) => {
@@ -223,7 +225,7 @@ export default function ExamAnalysisScreen({
       {showWrongModal && (
         <WrongQuestionsModal
           wrongByLessonTopic={examAnalysis.wrongByLessonTopic || {}}
-          totalWrong={examAnalysis.summary.wrong}
+          totalWrong={summary.wrong ?? 0}
           onClose={() => setShowWrongModal(false)}
         />
       )}
@@ -257,14 +259,14 @@ export default function ExamAnalysisScreen({
             <div className="app-card flex flex-col justify-center items-center text-center hover:border-slate-600 transition-colors !py-6">
               <span className="text-slate-500 mb-1 text-xl">📝</span>
               <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Toplam</p>
-              <p className="text-3xl font-black mt-1 text-slate-200">{examAnalysis.summary.total}</p>
+              <p className="text-3xl font-black mt-1 text-slate-200">{summary.total ?? 0}</p>
             </div>
 
             <div className={`app-card flex flex-col justify-center items-center text-center transition-colors relative overflow-hidden !py-6 border ${theme.softBorder}`}>
               <div className={`absolute top-0 right-0 w-24 h-24 ${theme.softBg} rounded-full blur-2xl`} />
               <span className={`${theme.text} mb-1 text-xl relative z-10`}>✅</span>
               <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold relative z-10">Doğru</p>
-              <p className={`text-3xl font-black mt-1 ${theme.text} relative z-10`}>{examAnalysis.summary.correct}</p>
+              <p className={`text-3xl font-black mt-1 ${theme.text} relative z-10`}>{summary.correct ?? 0}</p>
             </div>
 
             {/* Yanlış — tıklanabilir, detaylı analiz açar */}
@@ -275,7 +277,7 @@ export default function ExamAnalysisScreen({
               <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/5 rounded-full blur-2xl group-hover:bg-rose-500/10 transition-all" />
               <span className="text-rose-500 mb-1 text-xl">❌</span>
               <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Yanlış</p>
-              <p className="text-3xl font-black mt-1 text-rose-400">{examAnalysis.summary.wrong}</p>
+              <p className="text-3xl font-black mt-1 text-rose-400">{summary.wrong ?? 0}</p>
               <span className="text-[9px] text-rose-500/60 font-bold uppercase tracking-wider mt-1 group-hover:text-rose-400 transition-colors">
                 detay →
               </span>
@@ -284,14 +286,16 @@ export default function ExamAnalysisScreen({
             <div className="app-card flex flex-col justify-center items-center text-center hover:border-slate-600 transition-colors !py-6">
               <span className="text-slate-500 mb-1 text-xl">⚪</span>
               <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Boş</p>
-              <p className="text-3xl font-black mt-1 text-slate-300">{examAnalysis.summary.blank}</p>
+              <p className="text-3xl font-black mt-1 text-slate-300">{summary.blank ?? 0}</p>
             </div>
 
             <div className={`app-card relative flex flex-col justify-center items-center text-center bg-gradient-to-b from-slate-800 to-slate-900 border ${theme.softBorder} shadow-[0_0_20px_rgba(34,211,238,0.05)] !py-6`}>
               <div className={`absolute -top-10 -right-10 w-32 h-32 ${theme.softBg} rounded-full blur-3xl`} />
               <span className={`relative z-10 ${theme.text} mb-1 text-xl`}>🎯</span>
               <p className={`relative z-10 ${theme.text}/70 text-xs uppercase tracking-wider font-semibold`}>Net Skor</p>
-              <p className={`relative z-10 text-4xl font-black mt-1 ${theme.text}`}>{examAnalysis.summary.net.toFixed(2)}</p>
+              <p className={`relative z-10 text-4xl font-black mt-1 ${theme.text}`}>
+                {(Number.isFinite(netScore) ? netScore : 0).toFixed(2)}
+              </p>
             </div>
           </div>
 
@@ -312,7 +316,7 @@ export default function ExamAnalysisScreen({
               <div className="text-left">
                 <p className="font-black text-white text-base">Yanlış Soruların Detaylı Analizi</p>
                 <p className="text-slate-400 text-xs mt-0.5">
-                  {examAnalysis.summary.wrong} yanlış soru • ders ve konuya göre gruplandırılmış
+                  {summary.wrong ?? 0} yanlış soru • ders ve konuya göre gruplandırılmış
                 </p>
               </div>
             </div>

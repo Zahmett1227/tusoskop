@@ -5,7 +5,6 @@ import {
   MAX_RECENT_TOPIC_STUDIES,
   getLastTopicStudy,
   getRecentTopicStudies,
-  isValidLastTopicStudyRecord,
   normalizeRecentTopicStudies,
   pickResumeCountMode,
   saveLastTopicStudy,
