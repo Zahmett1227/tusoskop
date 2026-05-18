@@ -16,7 +16,14 @@ const SUBJECT_ICONS = {
   "Küçük Stajlar": "📚",
 };
 
-const SubjectCard = ({ subject, count, onClick, accentTheme, isLightTheme = false }) => {
+const SubjectCard = ({
+  subject,
+  count,
+  onClick,
+  accentTheme,
+  isLightTheme = false,
+  wrongCount = 0,
+}) => {
   const theme = accentTheme || accentThemes.emerald;
   const subjectVisual = getSubjectVisual(subject?.name);
   /** Görsel ölçek: 500 soru = %100 (kişisel ilerleme değil, havuz büyüklüğü) */
@@ -127,9 +134,24 @@ const SubjectCard = ({ subject, count, onClick, accentTheme, isLightTheme = fals
 
           <div className={`flex items-center justify-between gap-2 text-sm font-bold ${theme.text} transition`}>
             <span>Çözmeye başla</span>
-            <span className="text-lg transition group-hover:translate-x-1">
-              →
-            </span>
+            <div className="flex items-center gap-2">
+              {wrongCount > 0 ? (
+                <span
+                  className={`rounded-full px-2 py-0.5 text-[10px] font-black uppercase tracking-wide ${
+                    wrongCount >= 4
+                      ? isLightTheme
+                        ? "bg-red-100 text-red-800"
+                        : "bg-red-500/20 text-red-300"
+                      : isLightTheme
+                        ? "bg-amber-100 text-amber-800"
+                        : "bg-amber-500/20 text-amber-200"
+                  }`}
+                >
+                  {wrongCount} yanlış{wrongCount >= 4 ? " ⚠" : ""}
+                </span>
+              ) : null}
+              <span className="text-lg transition group-hover:translate-x-1">→</span>
+            </div>
           </div>
         </div>
       </div>

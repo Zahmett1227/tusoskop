@@ -14,6 +14,7 @@ import {
 import { trackClarityEvent } from "../lib/clarity";
 import { addWrongQuestion } from "../services/studyCollectionService";
 import { upsertSmartReview } from "../services/smartReviewService";
+import FsrsDifficultyRating from "./FsrsDifficultyRating";
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -224,6 +225,7 @@ export default function ExamScreen({
   onExamCompleted,
   userId,
   userData,
+  user = null,
   accentTheme,
 }) {
   const theme = accentTheme || accentThemes.emerald;
@@ -239,7 +241,43 @@ export default function ExamScreen({
   const [wrongByLessonTopic, setWrongByLessonTopic] = useState({});
   const [showWrongModal, setShowWrongModal] = useState(false);
   const [userTarget, setUserTarget] = useState(65);
+  const [showWrongFeedback, setShowWrongFeedback] = useState(false);
   const candidateName = auth.currentUser?.displayName || auth.currentUser?.email || "ADAY";
+  const examUser = user || auth.currentUser;
+
+  useEffect(() => {
+    setShowWrongFeedback(false);
+  }, [examIndex]);
+
+  const currentAnswerIsWrong =
+    examSelected !== null &&
+    examSelected !== undefined &&
+    Number(examSelected) !== Number(examQ?.correct);
+
+  const advanceExam = () => {
+    setShowWrongFeedback(false);
+    if (examIndex < examQuestions.length - 1) {
+      handleExamNext();
+    } else {
+      handleFinish();
+    }
+  };
+
+  const handleSonrakiClick = () => {
+    if (isSaving) return;
+    if (currentAnswerIsWrong) {
+      if (!showWrongFeedback) {
+        setShowWrongFeedback(true);
+      }
+      return;
+    }
+    advanceExam();
+  };
+
+  const handleFsrsDone = () => {
+    setShowWrongFeedback(false);
+    advanceExam();
+  };
 
   useEffect(() => {
     const fetchTarget = async () => {
@@ -655,6 +693,30 @@ export default function ExamScreen({
             ))}
           </div>
 
+          {showWrongFeedback && currentAnswerIsWrong && (
+            <div className="max-w-4xl mx-auto w-full space-y-4 rounded-3xl border border-rose-500/25 bg-slate-900/90 p-5 md:p-6">
+              <p className="text-[11px] font-black uppercase tracking-widest text-rose-300/90">
+                Yanlış cevap — inceleme
+              </p>
+              <p className={`text-sm font-bold ${theme.text}`}>
+                Doğru cevap: {LETTERS[examQ.correct]} — {examQ.options[examQ.correct]}
+              </p>
+              {examQ.exp && (
+                <p className="text-sm text-slate-300 leading-relaxed whitespace-pre-wrap break-words">
+                  {examQ.exp}
+                </p>
+              )}
+              <FsrsDifficultyRating
+                question={examQ}
+                user={examUser}
+                isLightTheme={false}
+                accentTheme={theme}
+                onRated={handleFsrsDone}
+                onSkip={handleFsrsDone}
+              />
+            </div>
+          )}
+
           {/* Alt kontrol — zen: Önceki | Boş | Sonraki */}
           <div
             className="fixed bottom-0 left-0 right-0 z-40 grid grid-cols-3 gap-2 border-t border-slate-800 bg-slate-950/95 px-3 pt-3 sticky-bar-blur lg:static lg:z-auto lg:border-t-0 lg:bg-transparent lg:px-0 lg:pt-0 lg:backdrop-blur-none"
@@ -681,10 +743,8 @@ export default function ExamScreen({
             </button>
             <button
               type="button"
-              onClick={
-                examIndex < examQuestions.length - 1 ? () => handleExamNext() : () => handleFinish()
-              }
-              disabled={isSaving}
+              onClick={handleSonrakiClick}
+              disabled={isSaving || (showWrongFeedback && currentAnswerIsWrong)}
               className={`min-h-[52px] rounded-2xl px-2 py-3 text-sm font-black shadow-lg transition-all active:scale-[0.98] ${
                 isSaving
                   ? "bg-slate-700 text-slate-500"

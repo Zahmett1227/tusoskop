@@ -1202,6 +1202,7 @@ export default function App() {
           examSetMeta={buildExamResultMetadata(selectedExamSet)}
           accentTheme={accentTheme}
           userId={user?.uid}
+          user={user}
           userData={userData}
           getExamAnswersSnapshot={() => examAnswersRef.current}
           onJump={(idx) => {
@@ -1269,6 +1270,7 @@ export default function App() {
           onToggleFavorite={handleToggleFavorite}
           favoriteFeedback={favoriteFeedback}
           goDashboard={goDashboard}
+          user={user}
         />
       );
       break;

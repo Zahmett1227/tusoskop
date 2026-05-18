@@ -5,6 +5,7 @@ import {
 } from "firebase/firestore";
 
 import SubjectCard from "./SubjectCard";
+import SmartReviewPanel from "./SmartReviewPanel";
 import TusCountDown from "./TusCountDown";
 import StreakBadge from "./StreakBadge";
 import { SUBJECTS } from "../data/subjects";
@@ -22,6 +23,25 @@ import DashboardMembershipHero from "./DashboardMembershipHero";
 import { getMailtoFeedback, getMailtoPaymentIssue } from "../config/support";
 import Footer from "./layout/Footer";
 import { getStreak } from "../services/streakService";
+import { getSmartReviewSummary, getSmartReviews } from "../services/smartReviewService";
+
+function buildTopicRows(summary, reviews = []) {
+  if (!summary?.topTopics?.length) return [];
+  return summary.topTopics.slice(0, 3).map((topic) => {
+    const related = reviews.filter((r) => String(r.konu || "").trim() === String(topic.name || "").trim());
+    const ders = related[0]?.ders || "";
+    return { name: topic.name, count: topic.count, subtitle: ders };
+  });
+}
+
+function groupReviewsBySubject(reviews = []) {
+  return reviews.reduce((acc, r) => {
+    const ders = String(r.ders || "").trim();
+    if (!ders) return acc;
+    acc[ders] = (acc[ders] || 0) + 1;
+    return acc;
+  }, {});
+}
 
 function toSafeTargetScore(value, fallback = 65) {
   const n = Number(value);
@@ -98,6 +118,10 @@ export default function Dashboard({
     reviewQueueCount: 0,
   });
   const [planStreak, setPlanStreak] = useState(0);
+  const [panelSummary, setPanelSummary] = useState(null);
+  const [panelLoading, setPanelLoading] = useState(false);
+  const [panelTopicRows, setPanelTopicRows] = useState([]);
+  const [wrongBySubject, setWrongBySubject] = useState({});
   const smartDue = Number(smartReviewSummary?.dueCount) || 0;
   const smartOverdue = Number(smartReviewSummary?.overdueCount) || 0;
   const smartTopSubjects = smartReviewSummary?.topSubjects || [];
@@ -121,6 +145,41 @@ export default function Dashboard({
     };
     loadTarget();
   }, [user?.uid]);
+
+  useEffect(() => {
+    if (!user?.uid) {
+      setPanelSummary(null);
+      setPanelTopicRows([]);
+      setWrongBySubject({});
+      setPanelLoading(false);
+      return;
+    }
+    let active = true;
+    const loadPanel = async () => {
+      setPanelLoading(true);
+      try {
+        const [summary, reviews] = await Promise.all([
+          getSmartReviewSummary(user),
+          getSmartReviews(user),
+        ]);
+        if (!active) return;
+        setPanelSummary(summary);
+        setPanelTopicRows(buildTopicRows(summary, reviews));
+        setWrongBySubject(groupReviewsBySubject(reviews));
+      } catch {
+        if (!active) return;
+        setPanelSummary(null);
+        setPanelTopicRows([]);
+        setWrongBySubject({});
+      } finally {
+        if (active) setPanelLoading(false);
+      }
+    };
+    loadPanel();
+    return () => {
+      active = false;
+    };
+  }, [user, userData, currentView]);
 
   useEffect(() => {
     let active = true;
@@ -449,6 +508,16 @@ export default function Dashboard({
           </div>
         </section>
 
+        <SmartReviewPanel
+          summary={panelSummary}
+          loading={panelLoading}
+          isLightTheme={isLightTheme}
+          accentTheme={theme}
+          appCardShell={appCardShell}
+          topicRows={panelTopicRows}
+          onStartReview={() => setView("studyCollection")}
+        />
+
         <DashboardMembershipHero
           isLightTheme={isLightTheme}
           premiumActive={premiumActive}
@@ -767,6 +836,7 @@ export default function Dashboard({
                   key={s.name}
                   subject={s}
                   count={SUBJECT_QUESTION_COUNTS[s.name] ?? 0}
+                  wrongCount={wrongBySubject[s.name] || 0}
                   accentTheme={theme}
                   isLightTheme={isLightTheme}
                   onClick={() => startSubject(s.name)}

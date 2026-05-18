@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePrefersReducedMotion, useSwipeHandlers } from "../hooks/useSwipeHandlers";
 import { accentThemes } from "../theme/accentThemes";
 import { getSubjectVisual } from "../theme/subjectVisual";
+import FsrsDifficultyRating from "./FsrsDifficultyRating";
 
 export default function StudyScreen({
   q,
@@ -27,6 +28,7 @@ export default function StudyScreen({
   isFavorite,
   onToggleFavorite,
   favoriteFeedback,
+  user = null,
 }) {
   const theme = accentTheme || accentThemes.emerald;
   const subjectVisual = getSubjectVisual(q?.ders);
@@ -39,6 +41,11 @@ export default function StudyScreen({
   });
   const progressPercent = Math.round(((index + 1) / Math.max(1, total)) * 100);
   const [insightsOpen, setInsightsOpen] = useState(true);
+  const [fsrsRated, setFsrsRated] = useState(false);
+
+  useEffect(() => {
+    setFsrsRated(false);
+  }, [q?.id, index]);
 
   if (!q && total > 0) {
     return (
@@ -379,6 +386,17 @@ export default function StudyScreen({
                 </div>
               )}
             </div>
+
+            {!fsrsRated && (
+              <FsrsDifficultyRating
+                question={q}
+                user={user}
+                isLightTheme={false}
+                accentTheme={theme}
+                onRated={() => setFsrsRated(true)}
+                onSkip={() => setFsrsRated(true)}
+              />
+            )}
 
             {/* İleri/geri butonlar */}
             <div className="grid grid-cols-2 gap-2 sm:gap-3 mobile-action-bar sticky bottom-0 z-30 bg-slate-950/95 sticky-bar-blur rounded-2xl p-1 border border-slate-800/60 shadow-[0_-8px_32px_rgba(0,0,0,0.35)]">
