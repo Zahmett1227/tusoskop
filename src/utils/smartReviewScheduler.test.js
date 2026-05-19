@@ -5,6 +5,7 @@ import {
   computeRetrievability,
   createInitialReviewState,
   dedupeSmartReviewsByQuestionId,
+  filterInsightReviewPool,
   isDueForReview,
   normalizeSmartReviewEntry,
   sortDueReviews,
@@ -123,5 +124,14 @@ describe("smartReviewScheduler", () => {
   it("isDueForReview geçmiş dueAt için true döner", () => {
     const entry = { questionId: 1, dueAt: day(-1).toISOString(), stability: 1 };
     expect(isDueForReview(entry, day(0))).toBe(true);
+  });
+
+  it("filterInsightReviewPool gelecek due olsa bile yanlış kayıtları dahil eder", () => {
+    const now = day(0);
+    const futureDue = createInitialReviewState(q, "wrong", now);
+    const graded = updateReviewAfterGrade(futureDue, "good", now);
+    const pool = filterInsightReviewPool([graded], now);
+    expect(pool).toHaveLength(1);
+    expect(isDueForReview(graded, now)).toBe(false);
   });
 });

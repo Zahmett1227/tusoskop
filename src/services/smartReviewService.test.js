@@ -15,13 +15,19 @@ vi.mock("firebase/firestore", () => ({
   deleteDoc: firestoreMocks.deleteDoc,
 }));
 
-vi.mock("../firebase", () => ({ db: {} }));
+const authMock = vi.hoisted(() => ({ currentUser: null }));
+
+vi.mock("../firebase", () => ({
+  db: {},
+  auth: authMock,
+}));
 
 const storage = {};
 
 describe("smartReviewService", () => {
   beforeEach(() => {
     vi.resetModules();
+    authMock.currentUser = null;
     firestoreMocks.getDocs.mockReset();
     firestoreMocks.setDoc.mockReset();
     Object.keys(storage).forEach((k) => delete storage[k]);
@@ -42,6 +48,18 @@ describe("smartReviewService", () => {
     firestoreMocks.getDocs.mockRejectedValue(new Error("offline"));
     const list = await getSmartReviews(null);
     expect(Array.isArray(list)).toBe(true);
+  });
+
+  it("boş Firestore yanıtı yerel smart review kayıtlarını silmez", async () => {
+    const { upsertSmartReview, getSmartReviews } = await import("./smartReviewService.js");
+    authMock.currentUser = { uid: "u1" };
+    const question = { id: 99, ders: "Patoloji", konu: "Tümör" };
+    firestoreMocks.getDocs.mockResolvedValue({ docs: [] });
+    firestoreMocks.setDoc.mockResolvedValue(undefined);
+    await upsertSmartReview({ uid: "u1" }, question, "wrong");
+    firestoreMocks.getDocs.mockResolvedValue({ docs: [] });
+    const list = await getSmartReviews({ uid: "u1" });
+    expect(list.some((x) => x.questionId === 99)).toBe(true);
   });
 
   it("aynı questionId iki kez upsert edilince duplicate olmaz", async () => {
@@ -68,6 +86,7 @@ describe("smartReviewService", () => {
 
   it("dueCount doğru hesaplanır", async () => {
     const { getSmartReviewSummary } = await import("./smartReviewService.js");
+    authMock.currentUser = { uid: "u1" };
     const now = new Date("2026-05-17T12:00:00.000Z");
     const past = new Date("2026-05-15T12:00:00.000Z").toISOString();
     const future = new Date("2026-05-20T12:00:00.000Z").toISOString();
@@ -84,6 +103,7 @@ describe("smartReviewService", () => {
 
   it("topSubjects her ders için en yoğun konuyu içerir", async () => {
     const { getSmartReviewSummary } = await import("./smartReviewService.js");
+    authMock.currentUser = { uid: "u1" };
     const now = new Date("2026-05-17T12:00:00.000Z");
     const past = new Date("2026-05-15T12:00:00.000Z").toISOString();
     firestoreMocks.getDocs.mockResolvedValue({

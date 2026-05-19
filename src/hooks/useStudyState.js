@@ -442,6 +442,7 @@ export function useStudyState({
       } else if (isWrong && q?.id) {
         await addWrongQuestion(user, q, answer, userData);
         await upsertSmartReview(user, q, "wrong");
+        await refreshSmartReviewSummary?.();
       }
     },
     [
@@ -457,6 +458,7 @@ export function useStudyState({
       recordQuestionTime,
       getFeedbackMessage,
       recordHistoryForQuestion,
+      refreshSmartReviewSummary,
     ]
   );
 
@@ -568,10 +570,10 @@ export function useStudyState({
   ]);
 
   const handleStudySelect = useCallback(
-    (optionIndex) => {
+    async (optionIndex) => {
       setSelected(optionIndex);
       if (!flowMode || showResult || isAutoAdvancing) return;
-      revealCurrentAnswer(optionIndex);
+      await revealCurrentAnswer(optionIndex);
       if (currentIndex >= activeQuestions.length - 1) return;
       setIsAutoAdvancing(true);
       setTimeout(() => {

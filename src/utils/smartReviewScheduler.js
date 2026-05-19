@@ -203,6 +203,34 @@ export function dedupeSmartReviewsByQuestionId(list = []) {
   return [...map.values()];
 }
 
+/** Yerel + uzak listeyi birleştirir; aynı soruda en güncel kayıt kalır. */
+export function mergeSmartReviewLists(local = [], remote = []) {
+  const map = new Map();
+  for (const raw of [...local, ...remote]) {
+    const item = normalizeSmartReviewEntry(raw);
+    if (!item) continue;
+    const prev = map.get(item.questionId);
+    if (!prev) {
+      map.set(item.questionId, item);
+      continue;
+    }
+    const prevUpdated = toDate(prev.updatedAt)?.getTime() ?? 0;
+    const itemUpdated = toDate(item.updatedAt)?.getTime() ?? 0;
+    map.set(item.questionId, itemUpdated >= prevUpdated ? item : prev);
+  }
+  return [...map.values()];
+}
+
+/** Kör nokta paneli: bugün tekrar + henüz zayıf / yanlış işaretli kayıtlar. */
+export function filterInsightReviewPool(reviews = [], now = new Date()) {
+  return dedupeSmartReviewsByQuestionId(reviews).filter(
+    (item) =>
+      isDueForReview(item, now) ||
+      item.lapseCount > 0 ||
+      item.lastAnswerCorrect === false
+  );
+}
+
 export function sortDueReviews(reviews, now = new Date()) {
   const list = dedupeSmartReviewsByQuestionId(reviews).filter((item) =>
     isDueForReview(item, now)

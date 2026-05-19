@@ -140,6 +140,17 @@ export default function App() {
   });
 
   const refreshSmartReviewSummary = useCallback(async () => {
+    if (!user?.uid) {
+      setSmartReviewSummary({
+        dueCount: 0,
+        overdueCount: 0,
+        totalCount: 0,
+        topSubjects: [],
+        topTopics: [],
+      });
+      setBottomNavReviewCount(0);
+      return;
+    }
     try {
       const summary = await getSmartReviewSummary(user);
       setSmartReviewSummary(summary);

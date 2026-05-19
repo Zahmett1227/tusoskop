@@ -5,14 +5,16 @@ import {
   getDocs,
   setDoc,
 } from "firebase/firestore";
-import { db } from "../firebase";
+import { auth, db } from "../firebase";
 import { readLocalStorageJson } from "../utils/safeLocalStorage";
 import {
   createInitialReviewState,
   dedupeSmartReviewsByQuestionId,
+  filterInsightReviewPool,
   gradeFromAnswerCorrect,
   isDueForReview,
   isOverdue,
+  mergeSmartReviewLists,
   normalizeSmartReviewEntry,
   sortDueReviews,
   updateReviewAfterGrade,
@@ -49,36 +51,49 @@ const setLocalList = (list) => {
   }
 };
 
+function canSyncSmartReviewsToFirestore(user) {
+  return Boolean(user?.uid && auth.currentUser?.uid === user.uid);
+}
+
+function isFirestoreAccessError(error) {
+  const code = error?.code || "";
+  return code === "permission-denied" || code === "unauthenticated";
+}
+
 async function readFirestoreReviews(user) {
-  if (!user?.uid) return null;
+  if (!canSyncSmartReviewsToFirestore(user)) return null;
   try {
     const snap = await getDocs(collection(db, "users", user.uid, "smartReviews"));
     return dedupeSmartReviewsByQuestionId(snap.docs.map((d) => ({ ...d.data(), questionId: Number(d.id) })));
   } catch (error) {
-    console.error("getSmartReviews firestore error:", error);
+    if (!isFirestoreAccessError(error)) {
+      console.error("getSmartReviews firestore error:", error);
+    }
     return null;
   }
 }
 
 async function writeFirestoreReview(user, entry) {
-  if (!user?.uid || !entry?.questionId) return false;
+  if (!canSyncSmartReviewsToFirestore(user) || !entry?.questionId) return false;
   try {
     const ref = doc(db, "users", user.uid, "smartReviews", String(entry.questionId));
     await setDoc(ref, entry, { merge: true });
     return true;
   } catch (error) {
-    console.error("writeFirestoreReview error:", error);
+    if (!isFirestoreAccessError(error)) {
+      console.error("writeFirestoreReview error:", error);
+    }
     return false;
   }
 }
 
 export async function getSmartReviews(user) {
+  const local = getLocalList();
   const remote = await readFirestoreReviews(user);
-  if (remote) {
-    setLocalList(remote);
-    return remote;
-  }
-  return getLocalList();
+  if (remote === null) return local;
+  const merged = mergeSmartReviewLists(local, remote);
+  setLocalList(merged);
+  return merged;
 }
 
 export async function getDueSmartReviews(user, now = new Date(), { limit = MAX_SESSION_DUE } = {}) {
@@ -148,11 +163,13 @@ export async function removeSmartReview(user, questionId) {
   if (!Number.isFinite(id) || id <= 0) return;
   const all = getLocalList().filter((item) => item.questionId !== id);
   setLocalList(all);
-  if (user?.uid) {
+  if (canSyncSmartReviewsToFirestore(user)) {
     try {
       await deleteDoc(doc(db, "users", user.uid, "smartReviews", String(id)));
     } catch (error) {
-      console.error("removeSmartReview firestore error:", error);
+      if (!isFirestoreAccessError(error)) {
+        console.error("removeSmartReview firestore error:", error);
+      }
     }
   }
 }
@@ -174,13 +191,14 @@ export async function getSmartReviewSummary(user, now = new Date()) {
   const all = await getSmartReviews(user);
   const due = all.filter((item) => isDueForReview(item, now));
   const overdue = due.filter((item) => isOverdue(item, now));
+  const insightPool = filterInsightReviewPool(all, now);
 
   return {
     dueCount: due.length,
     overdueCount: overdue.length,
     totalCount: all.length,
-    topSubjects: buildTopSubjectsWithTopics(due),
-    topTopics: topLabels(due, "konu"),
+    topSubjects: buildTopSubjectsWithTopics(insightPool),
+    topTopics: topLabels(insightPool, "konu"),
   };
 }
 
