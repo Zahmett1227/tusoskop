@@ -41,6 +41,22 @@ const appSource = readFileSync(
   join(dirname(fileURLToPath(import.meta.url)), "../App.jsx"),
   "utf8"
 );
+const examStateSource = readFileSync(
+  join(dirname(fileURLToPath(import.meta.url)), "../hooks/useExamState.js"),
+  "utf8"
+);
+const examScreenSource = readFileSync(
+  join(dirname(fileURLToPath(import.meta.url)), "./ExamScreen.jsx"),
+  "utf8"
+);
+const examAnalysisSource = readFileSync(
+  join(dirname(fileURLToPath(import.meta.url)), "./ExamAnalysisScreen.jsx"),
+  "utf8"
+);
+const studyScreenSource = readFileSync(
+  join(dirname(fileURLToPath(import.meta.url)), "./StudyScreen.jsx"),
+  "utf8"
+);
 
 const mockQuestion = {
   id: 42,
@@ -49,13 +65,14 @@ const mockQuestion = {
   q: "Örnek soru metni?",
   options: ["A şıkkı", "B şıkkı", "C şıkkı", "D şıkkı", "E şıkkı"],
   correct: 1,
+  exp: "Bu açıklama deneme sırasında görünmemeli.",
 };
 
 describe("App.jsx ExamScreen prop ve cevap anahtarı", () => {
   it("handleExamSelect examIndex ile saveExamAnswer kullanır", () => {
-    const block = appSource.slice(
-      appSource.indexOf("const handleExamSelect = "),
-      appSource.indexOf("const handleExamSelectForQuestion = ")
+    const block = examStateSource.slice(
+      examStateSource.indexOf("const handleExamSelect = "),
+      examStateSource.indexOf("const handleExamSelectForQuestion = ")
     );
     expect(block).toContain("saveExamAnswer(examIndex, optionIndex)");
     expect(block).not.toMatch(/saveExamAnswer\([^)]*\.id/);
@@ -66,8 +83,8 @@ describe("App.jsx ExamScreen prop ve cevap anahtarı", () => {
       appSource.indexOf('case "exam"'),
       appSource.indexOf('case "examAnalysis"')
     );
-    expect(block).toContain("handleExamSelect={handleExamSelect}");
-    expect(block).toContain("handleExamNext={handleExamNext}");
+    expect(block).toContain("handleExamSelect={examState.handleExamSelect}");
+    expect(block).toContain("handleExamNext={examState.handleExamNext}");
     expect(block).toContain("goDashboard={goDashboard}");
     expect(block).not.toContain("examTitle=");
   });
@@ -166,5 +183,107 @@ describe("ExamScreen şık seçimi", () => {
       dashBtn.click();
     });
     expect(goDashboard).toHaveBeenCalled();
+  });
+});
+
+describe("ExamScreen deneme modu — çalışma/review UI yok", () => {
+  let container;
+  let root;
+
+  beforeEach(() => {
+    container = document.createElement("div");
+    document.body.appendChild(container);
+    root = createRoot(container);
+  });
+
+  afterEach(() => {
+    act(() => root.unmount());
+    container.remove();
+  });
+
+  const renderActiveExam = async (overrides = {}) => {
+    const handleExamNext = vi.fn();
+    const examQuestions = [
+      mockQuestion,
+      { ...mockQuestion, id: 43, q: "İkinci soru?" },
+    ];
+    await act(async () => {
+      root.render(
+        <ExamScreen
+          examQ={mockQuestion}
+          examIndex={0}
+          examQuestions={examQuestions}
+          examAnswers={{}}
+          examSelected={0}
+          examSetMeta={{ examId: 1 }}
+          onJump={vi.fn()}
+          handleExamSelect={vi.fn()}
+          handleExamSelectForQuestion={vi.fn()}
+          handleExamBlank={vi.fn()}
+          handleExamNext={handleExamNext}
+          handleExamPrev={vi.fn()}
+          getExamAnswersSnapshot={() => ({})}
+          goDashboard={vi.fn()}
+          onExamCompleted={vi.fn()}
+          userId="u1"
+          userData={null}
+          {...overrides}
+        />
+      );
+    });
+    await act(async () => {
+      await new Promise((r) => setTimeout(r, 0));
+    });
+    return { handleExamNext };
+  };
+
+  it("yanlış cevapta Sonraki doğrudan sonraki soruya geçer", async () => {
+    const { handleExamNext } = await renderActiveExam();
+    const sonraki = [...container.querySelectorAll("button")].find(
+      (b) => b.textContent?.trim() === "Sonraki"
+    );
+    expect(sonraki).toBeTruthy();
+    expect(sonraki.disabled).toBe(false);
+    await act(() => {
+      sonraki.click();
+    });
+    expect(handleExamNext).toHaveBeenCalled();
+  });
+
+  it("deneme sırasında doğru cevap, açıklama ve FSRS grade görünmez", async () => {
+    await renderActiveExam();
+    expect(container.textContent).not.toMatch(/Doğru cevap:/);
+    expect(container.textContent).not.toContain(mockQuestion.exp);
+    expect(container.textContent).not.toMatch(/Bu soruyu ne kadar zorlandın/i);
+    expect(container.textContent).not.toMatch(/Yanlış cevap — inceleme/);
+    expect(container.textContent).not.toMatch(/Çok Zor|Tekrar et/i);
+  });
+
+  it("önceki soruya dönünce seçili cevap korunur", async () => {
+    await renderActiveExam({
+      examIndex: 1,
+      examSelected: 2,
+      examAnswers: { 0: 0, 1: 2 },
+      examQ: { ...mockQuestion, id: 43, q: "İkinci soru?" },
+    });
+    const pressed = container.querySelector('button[aria-pressed="true"]');
+    expect(pressed).toBeTruthy();
+  });
+});
+
+describe("ExamScreen kaynak regresyonu", () => {
+  it("aktif deneme ekranında FsrsDifficultyRating ve showWrongFeedback yok", () => {
+    expect(examScreenSource).not.toContain("FsrsDifficultyRating");
+    expect(examScreenSource).not.toContain("showWrongFeedback");
+    expect(examScreenSource).not.toContain("Yanlış cevap — inceleme");
+  });
+
+  it("ExamAnalysisScreen deneme sonrası açıklama göstermeye devam eder", () => {
+    expect(examAnalysisSource).toMatch(/wq\.exp/);
+    expect(examAnalysisSource).toMatch(/Doğru cevap:/);
+  });
+
+  it("StudyScreen FSRS grade bileşenini kullanır", () => {
+    expect(studyScreenSource).toContain("FsrsDifficultyRating");
   });
 });

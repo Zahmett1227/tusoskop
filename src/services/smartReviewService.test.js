@@ -81,4 +81,33 @@ describe("smartReviewService", () => {
     expect(summary.dueCount).toBe(1);
     expect(summary.totalCount).toBe(2);
   });
+
+  it("topSubjects her ders için en yoğun konuyu içerir", async () => {
+    const { getSmartReviewSummary } = await import("./smartReviewService.js");
+    const now = new Date("2026-05-17T12:00:00.000Z");
+    const past = new Date("2026-05-15T12:00:00.000Z").toISOString();
+    firestoreMocks.getDocs.mockResolvedValue({
+      docs: [
+        {
+          id: "1",
+          data: () => ({ questionId: 1, dueAt: past, stability: 1, ders: "Pediatri", konu: "Yenidoğan" }),
+        },
+        {
+          id: "2",
+          data: () => ({ questionId: 2, dueAt: past, stability: 1, ders: "Pediatri", konu: "Yenidoğan" }),
+        },
+        {
+          id: "3",
+          data: () => ({ questionId: 3, dueAt: past, stability: 1, ders: "Pediatri", konu: "Aşılar" }),
+        },
+      ],
+    });
+    const summary = await getSmartReviewSummary({ uid: "u1" }, now);
+    expect(summary.dueCount).toBe(3);
+    expect(summary.topSubjects[0]).toMatchObject({
+      name: "Pediatri",
+      count: 3,
+      topTopic: "Yenidoğan",
+    });
+  });
 });

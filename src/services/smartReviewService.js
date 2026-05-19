@@ -17,6 +17,7 @@ import {
   sortDueReviews,
   updateReviewAfterGrade,
 } from "../utils/smartReviewScheduler";
+import { buildTopSubjectsWithTopics } from "../utils/smartReviewUtils";
 import { getQuestionIdSafe } from "./studyCollectionService";
 
 const STORAGE_KEY = "tusoskopSmartReviews";
@@ -178,7 +179,7 @@ export async function getSmartReviewSummary(user, now = new Date()) {
     dueCount: due.length,
     overdueCount: overdue.length,
     totalCount: all.length,
-    topSubjects: topLabels(due, "ders"),
+    topSubjects: buildTopSubjectsWithTopics(due),
     topTopics: topLabels(due, "konu"),
   };
 }

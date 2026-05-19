@@ -121,7 +121,7 @@ export default function MobileBottomNav({
               >
                 {tab.key === "studyCollection" && queueBadge ? (
                   <span
-                    className="absolute -right-1 -top-1 z-10 flex min-h-[1.125rem] min-w-[1.125rem] items-center justify-center rounded-full border border-slate-950 bg-violet-400 px-0.5 text-[9px] font-black leading-none text-slate-950"
+                    className="absolute -right-1 -top-1 z-10 flex min-h-[1.125rem] min-w-[1.125rem] items-center justify-center rounded-full border border-slate-950 bg-violet-400 px-0.5 text-[10px] font-black leading-none text-slate-950"
                     aria-label={`Tekrar kuyruğu: ${reviewQueueCount} soru`}
                   >
                     {queueBadge}
@@ -141,7 +141,7 @@ export default function MobileBottomNav({
                 {tab.icon(active)}
               </span>
               <span
-                className={`max-w-[3.8rem] truncate text-[9px] font-black tracking-wide transition-colors duration-200
+                className={`max-w-[3.8rem] truncate text-[10px] font-black tracking-wide transition-colors duration-200
                   ${active ? theme.text : "text-slate-600"}`}
               >
                 {tab.label}

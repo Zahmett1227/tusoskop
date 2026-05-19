@@ -417,7 +417,7 @@ export default function AdminPurchaseIntentsTab({
                     </div>
                     <div className="flex flex-col items-end gap-1.5 shrink-0">
                       {showHidden && isRowHidden ? (
-                        <span className="rounded-full border border-slate-500/60 bg-slate-800 px-2 py-0.5 text-[9px] font-black uppercase tracking-wide text-slate-300">
+                        <span className="rounded-full border border-slate-500/60 bg-slate-800 px-2 py-0.5 text-[10px] font-black uppercase tracking-wide text-slate-300">
                           Listede gizli
                         </span>
                       ) : null}

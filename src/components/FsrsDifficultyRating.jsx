@@ -67,16 +67,13 @@ export default function FsrsDifficultyRating({
   };
 
   const titleClass = isLightTheme ? "text-slate-500" : "text-slate-400";
-  const skipClass = isLightTheme
-    ? "text-slate-500 hover:text-slate-700"
-    : "text-slate-500 hover:text-slate-300";
 
   return (
     <div className="w-full max-w-xl mx-auto">
       <p className={`mb-2.5 text-xs font-semibold ${titleClass}`}>
         Bu soruyu ne kadar zorlandın?
       </p>
-      <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
+      <div className="grid grid-cols-2 gap-2 min-[400px]:grid-cols-4 min-[400px]:gap-1.5 sm:gap-2">
         {OPTIONS.map((opt) => (
           <button
             key={opt.grade}
@@ -94,19 +91,26 @@ export default function FsrsDifficultyRating({
               />
             ) : (
               <>
-                <span className="text-[10px] font-black leading-tight sm:text-xs">{opt.label}</span>
-                <span className="mt-0.5 text-[9px] font-medium opacity-80 leading-tight">{opt.hint}</span>
+                <span className="text-xs font-black leading-tight sm:text-sm">{opt.label}</span>
+                <span className="mt-0.5 text-[10px] font-medium opacity-80 leading-tight">{opt.hint}</span>
               </>
             )}
           </button>
         ))}
       </div>
-      <div className="mt-2 flex justify-end">
+      <div className="mt-3 flex items-center justify-between gap-3">
+        <p className={`text-[10px] font-medium ${isLightTheme ? "text-slate-400" : "text-slate-600"}`}>
+          İstersen şimdi değerlendirmeden geçebilirsin
+        </p>
         <button
           type="button"
           disabled={loading}
           onClick={() => onSkip?.()}
-          className={`text-xs font-bold underline-offset-2 transition hover:underline disabled:opacity-50 ${skipClass}`}
+          className={`shrink-0 min-h-[36px] px-4 rounded-xl border text-xs font-bold transition-all disabled:opacity-50 active:scale-[0.97] ${
+            isLightTheme
+              ? "border-slate-300 bg-white text-slate-600 hover:bg-slate-50 hover:border-slate-400"
+              : "border-slate-700 bg-slate-800/60 text-slate-300 hover:bg-slate-700 hover:border-slate-500"
+          }`}
         >
           Geç →
         </button>

@@ -278,7 +278,7 @@ export default function ExamAnalysisScreen({
               <span className="text-rose-500 mb-1 text-xl">❌</span>
               <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Yanlış</p>
               <p className="text-3xl font-black mt-1 text-rose-400">{summary.wrong ?? 0}</p>
-              <span className="text-[9px] text-rose-500/60 font-bold uppercase tracking-wider mt-1 group-hover:text-rose-400 transition-colors">
+              <span className="text-[10px] text-rose-500/60 font-bold uppercase tracking-wider mt-1 group-hover:text-rose-400 transition-colors">
                 detay →
               </span>
             </button>

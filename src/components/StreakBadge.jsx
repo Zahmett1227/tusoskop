@@ -97,7 +97,7 @@ export default function StreakBadge({ userId, isLightTheme = false }) {
             ${hovered ? 'scale-105 shadow-lg ' + milestone.glow : ''}
           `}>
             <span className="text-lg">{milestone.emoji}</span>
-            <span className={`text-[9px] font-black uppercase tracking-wider bg-gradient-to-r ${milestone.color} bg-clip-text text-transparent`}>
+            <span className={`text-[10px] font-black uppercase tracking-wider bg-gradient-to-r ${milestone.color} bg-clip-text text-transparent`}>
               {milestone.label}
             </span>
           </div>

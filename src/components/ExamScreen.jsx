@@ -14,7 +14,6 @@ import {
 import { trackClarityEvent } from "../lib/clarity";
 import { addWrongQuestion } from "../services/studyCollectionService";
 import { upsertSmartReview } from "../services/smartReviewService";
-import FsrsDifficultyRating from "./FsrsDifficultyRating";
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -225,7 +224,6 @@ export default function ExamScreen({
   onExamCompleted,
   userId,
   userData,
-  user = null,
   accentTheme,
 }) {
   const theme = accentTheme || accentThemes.emerald;
@@ -241,42 +239,15 @@ export default function ExamScreen({
   const [wrongByLessonTopic, setWrongByLessonTopic] = useState({});
   const [showWrongModal, setShowWrongModal] = useState(false);
   const [userTarget, setUserTarget] = useState(65);
-  const [showWrongFeedback, setShowWrongFeedback] = useState(false);
   const candidateName = auth.currentUser?.displayName || auth.currentUser?.email || "ADAY";
-  const examUser = user || auth.currentUser;
 
-  useEffect(() => {
-    setShowWrongFeedback(false);
-  }, [examIndex]);
-
-  const currentAnswerIsWrong =
-    examSelected !== null &&
-    examSelected !== undefined &&
-    Number(examSelected) !== Number(examQ?.correct);
-
-  const advanceExam = () => {
-    setShowWrongFeedback(false);
+  const handleSonrakiClick = () => {
+    if (isSaving) return;
     if (examIndex < examQuestions.length - 1) {
       handleExamNext();
     } else {
       handleFinish();
     }
-  };
-
-  const handleSonrakiClick = () => {
-    if (isSaving) return;
-    if (currentAnswerIsWrong) {
-      if (!showWrongFeedback) {
-        setShowWrongFeedback(true);
-      }
-      return;
-    }
-    advanceExam();
-  };
-
-  const handleFsrsDone = () => {
-    setShowWrongFeedback(false);
-    advanceExam();
   };
 
   useEffect(() => {
@@ -481,7 +452,7 @@ export default function ExamScreen({
               >
                 <p className={`text-[10px] uppercase font-black ${theme.text} mb-1`}>Yanlış</p>
                 <p className={`text-4xl font-black ${theme.text}`}>{results.wrong}</p>
-                <p className={`text-[9px] ${theme.text}/70 font-bold uppercase tracking-wider mt-1 transition-colors`}>
+                <p className={`text-[10px] ${theme.text}/70 font-bold uppercase tracking-wider mt-1 transition-colors`}>
                   detay →
                 </p>
               </button>
@@ -693,30 +664,6 @@ export default function ExamScreen({
             ))}
           </div>
 
-          {showWrongFeedback && currentAnswerIsWrong && (
-            <div className="max-w-4xl mx-auto w-full space-y-4 rounded-3xl border border-rose-500/25 bg-slate-900/90 p-5 md:p-6">
-              <p className="text-[11px] font-black uppercase tracking-widest text-rose-300/90">
-                Yanlış cevap — inceleme
-              </p>
-              <p className={`text-sm font-bold ${theme.text}`}>
-                Doğru cevap: {LETTERS[examQ.correct]} — {examQ.options[examQ.correct]}
-              </p>
-              {examQ.exp && (
-                <p className="text-sm text-slate-300 leading-relaxed whitespace-pre-wrap break-words">
-                  {examQ.exp}
-                </p>
-              )}
-              <FsrsDifficultyRating
-                question={examQ}
-                user={examUser}
-                isLightTheme={false}
-                accentTheme={theme}
-                onRated={handleFsrsDone}
-                onSkip={handleFsrsDone}
-              />
-            </div>
-          )}
-
           {/* Alt kontrol — zen: Önceki | Boş | Sonraki */}
           <div
             className="fixed bottom-0 left-0 right-0 z-40 grid grid-cols-3 gap-2 border-t border-slate-800 bg-slate-950/95 px-3 pt-3 sticky-bar-blur lg:static lg:z-auto lg:border-t-0 lg:bg-transparent lg:px-0 lg:pt-0 lg:backdrop-blur-none"
@@ -744,7 +691,7 @@ export default function ExamScreen({
             <button
               type="button"
               onClick={handleSonrakiClick}
-              disabled={isSaving || (showWrongFeedback && currentAnswerIsWrong)}
+              disabled={isSaving}
               className={`min-h-[52px] rounded-2xl px-2 py-3 text-sm font-black shadow-lg transition-all active:scale-[0.98] ${
                 isSaving
                   ? "bg-slate-700 text-slate-500"
@@ -783,11 +730,11 @@ export default function ExamScreen({
           <h3 className="text-slate-800 font-black text-center tracking-tighter text-xl mb-4">CEVAP KAĞIDI</h3>
           <div className="grid grid-cols-2 gap-2">
             <div className="bg-white p-2 border border-[#d1d1cf] rounded shadow-sm text-center">
-              <p className="text-[9px] text-slate-400 uppercase font-black mb-0.5">Aday</p>
+              <p className="text-[10px] text-slate-400 uppercase font-black mb-0.5">Aday</p>
               <p className="text-[11px] text-slate-800 font-bold truncate uppercase">{candidateName}</p>
             </div>
             <div className="bg-white p-2 border border-[#d1d1cf] rounded shadow-sm text-center">
-              <p className="text-[9px] text-slate-400 uppercase font-black mb-0.5">ÖSYM</p>
+              <p className="text-[10px] text-slate-400 uppercase font-black mb-0.5">ÖSYM</p>
               <p className="text-[11px] text-slate-800 font-bold">2026-TUS</p>
             </div>
           </div>

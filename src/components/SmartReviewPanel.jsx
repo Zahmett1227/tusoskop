@@ -1,4 +1,5 @@
 import React from "react";
+import { getSubjectRowSubtitle } from "../utils/smartReviewUtils";
 
 function barColorClass(percent) {
   if (percent <= 40) return "bg-red-500";
@@ -30,7 +31,7 @@ function InsightRow({ label, subtitle, count, totalCount, isLightTheme }) {
           ) : null}
         </div>
         <span className={`shrink-0 text-xs font-black tabular-nums ${textColorClass(percent, isLightTheme)}`}>
-          %{percent}
+          {count} soru
         </span>
       </div>
       <div className={`h-2 overflow-hidden rounded-full ${isLightTheme ? "bg-slate-200" : "bg-slate-800"}`}>
@@ -166,7 +167,7 @@ export default function SmartReviewPanel({
                 <InsightRow
                   key={`subject-${item.name}`}
                   label={item.name}
-                  subtitle="Branş yoğunluğu"
+                  subtitle={getSubjectRowSubtitle(item)}
                   count={item.count}
                   totalCount={totalCount}
                   isLightTheme={isLightTheme}

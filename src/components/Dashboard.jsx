@@ -24,24 +24,7 @@ import { getMailtoFeedback, getMailtoPaymentIssue } from "../config/support";
 import Footer from "./layout/Footer";
 import { getStreak } from "../services/streakService";
 import { getSmartReviewSummary, getSmartReviews } from "../services/smartReviewService";
-
-function buildTopicRows(summary, reviews = []) {
-  if (!summary?.topTopics?.length) return [];
-  return summary.topTopics.slice(0, 3).map((topic) => {
-    const related = reviews.filter((r) => String(r.konu || "").trim() === String(topic.name || "").trim());
-    const ders = related[0]?.ders || "";
-    return { name: topic.name, count: topic.count, subtitle: ders };
-  });
-}
-
-function groupReviewsBySubject(reviews = []) {
-  return reviews.reduce((acc, r) => {
-    const ders = String(r.ders || "").trim();
-    if (!ders) return acc;
-    acc[ders] = (acc[ders] || 0) + 1;
-    return acc;
-  }, {});
-}
+import { buildTopicRows, groupReviewsBySubject } from "../utils/smartReviewUtils";
 
 function toSafeTargetScore(value, fallback = 65) {
   const n = Number(value);
@@ -444,7 +427,7 @@ export default function Dashboard({
                         : "border-white/10 bg-white/[0.06] shadow-lg shadow-black/10"
                     }`}
                   >
-                    <p className="text-[9px] font-black uppercase tracking-wider text-slate-500 sm:text-[10px]">
+                    <p className="text-[10px] font-black uppercase tracking-wider text-slate-500 sm:text-[10px]">
                       {label}
                     </p>
                     <p className={`mt-1 text-2xl font-black tabular-nums md:text-3xl ${label === "Bugünkü tekrar" ? theme.text : isLightTheme ? "text-slate-950" : "text-white"}`}>
@@ -644,7 +627,7 @@ export default function Dashboard({
                     { label: "Net", val: "83.75", color: "text-cyan-400" },
                   ].map(s => (
                     <div key={s.label} className={`rounded-xl p-2.5 text-center ${isLightTheme ? "border border-slate-200 bg-[#ebe9e4]" : "bg-slate-900"}`}>
-                      <p className="text-[9px] text-slate-500 font-black uppercase">{s.label}</p>
+                      <p className="text-[10px] text-slate-500 font-black uppercase">{s.label}</p>
                       <p className={`text-lg font-black ${s.color}`}>{s.val}</p>
                     </div>
                   ))}
@@ -668,7 +651,7 @@ export default function Dashboard({
                       <span className={`text-[10px] font-bold w-8 text-right ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>%{r.oran}</span>
                     </div>
                   ))}
-                  <p className={`text-[9px] text-center pt-1 italic ${isLightTheme ? "text-slate-500" : "text-slate-600"}`}>+ tüm branşlar...</p>
+                  <p className={`text-[10px] text-center pt-1 italic ${isLightTheme ? "text-slate-500" : "text-slate-600"}`}>+ tüm branşlar...</p>
                 </div>
               </div>
             </div>
@@ -749,7 +732,7 @@ export default function Dashboard({
             <div>
               <div className="flex items-center gap-2">
                 <p className={`font-black text-sm ${isLightTheme ? "text-slate-900" : "text-white"}`}>Ders/Konu seçerek çöz</p>
-                <span className={`px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider ${
+                <span className={`px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider ${
                   premiumActive
                     ? "bg-emerald-500/15 text-emerald-300 border border-emerald-400/30"
                     : "bg-amber-500/15 text-amber-300 border border-amber-400/30"

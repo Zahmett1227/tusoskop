@@ -236,6 +236,24 @@ export const analyzeExamResults = (examQuestions, examAnswers) => {
   };
 };
 
+export const isReactEventOrDomNode = (value) =>
+  Boolean(
+    value &&
+      typeof value === "object" &&
+      (value.nativeEvent ||
+        value.currentTarget ||
+        value.target ||
+        value.nodeType ||
+        value.__reactFiber)
+  );
+
+export const normalizeAnswerValue = (value) => {
+  if (value === null || value === undefined) return null;
+  if (isReactEventOrDomNode(value)) return null;
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : null;
+};
+
 export const getEstimatedTusResult = (net) => {
   if (net >= 140)
     return { score: "72+", label: "Çok yüksek", advice: "Rekabetçi branşlar mümkün." };

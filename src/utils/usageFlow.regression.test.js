@@ -13,7 +13,12 @@ const topicStudyHookSource = readFileSync(
   "utf8"
 );
 
-const combinedUsageSource = `${appSource}\n${topicStudyHookSource}`;
+const studyStateHookSource = readFileSync(
+  join(dirname(fileURLToPath(import.meta.url)), "../hooks/useStudyState.js"),
+  "utf8"
+);
+
+const combinedUsageSource = `${appSource}\n${topicStudyHookSource}\n${studyStateHookSource}`;
 
 describe("usage increment call sites (App.jsx regression)", () => {
   it("await increment yalnızca dört akışta (tek çağrı each)", () => {
@@ -37,8 +42,8 @@ describe("usage increment call sites (App.jsx regression)", () => {
   });
 
   it("başarısız soru increment sonrası cevap gösterilmiyor", () => {
-    expect(appSource).toContain("Kullanım sayacı yazılamadı; cevap gösterilmiyor.");
-    expect(appSource).not.toContain("cevap yine gösteriliyor");
+    expect(studyStateHookSource).toContain("Kullanım sayacı yazılamadı; cevap gösterilmiyor.");
+    expect(combinedUsageSource).not.toContain("cevap yine gösteriliyor");
   });
 
   it("konu testi increment sonrası study state başlar", () => {

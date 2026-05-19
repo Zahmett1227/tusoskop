@@ -1,20 +1,19 @@
 import React, { Suspense, lazy, useMemo, useState, useEffect, useRef, useCallback } from "react";
 import './index.css';
-import { auth, db, initAnalytics, loginWithGoogle, logout } from "./firebase";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { initAnalytics, loginWithGoogle, logout } from "./firebase";
 
 // Veri ve Yardımcı Araçlar
 import { useQuestions } from "./hooks/useQuestions";
 import { useAppAccentTheme } from "./hooks/useAppAccentTheme";
 import { useAppAuthBootstrap } from "./hooks/useAppAuthBootstrap";
 import { useTopicStudyFlow } from "./hooks/useTopicStudyFlow";
+import { useExamState } from "./hooks/useExamState";
+import { useStudyState } from "./hooks/useStudyState";
 import { EXAM_SETS } from "./data/exams";
 import {
   buildFullExam,
   getFixedExamQuestions,
   scaleBlueprintToTotal,
-  analyzeExamResults,
-  getEstimatedTusResult,
   getSelectedAnswerIndex,
 } from "./utils/examUtils";
 import { buildExamResultMetadata } from "./utils/examHistoryUtils";
@@ -28,21 +27,13 @@ import {
   shouldNotifyInProgressReset,
   validateInProgressExam,
 } from "./utils/examInProgressUtils";
-import { updateStreak } from "./services/streakService";
 import { isIOS } from "./utils/device";
 import { setClarityTag, trackClarityEvent } from "./lib/clarity";
-import {
-  addWrongQuestion,
-  getWrongQuestions,
-  toggleFavoriteQuestion,
-  updateWrongQuestionAfterReview,
-} from "./services/studyCollectionService";
+import { getWrongQuestions } from "./services/studyCollectionService";
 import {
   getDueSmartReviews,
   getSmartReviewSummary,
   resolveQuestionsFromReviews,
-  upsertSmartReview,
-  updateSmartReviewFromAnswer,
 } from "./services/smartReviewService";
 
 // Bileşenler (Screens)
@@ -52,12 +43,9 @@ import { LEGAL_PAGES } from "./content/legalPages";
 import { FREE_LIMITS } from "./config/limits";
 import { isUserPremium } from "./utils/premiumUtils";
 import {
-  canAnswerQuestion,
   canStartFullExam,
   canStartReview,
   incrementFullExamUsage,
-  incrementQuestionUsage,
-  incrementReviewUsage,
   UsageLimitError,
   limitModalFromUsageError,
 } from "./services/usageLimitService";
@@ -95,26 +83,6 @@ const BOTTOM_NAV_VIEWS = new Set([
   "studyCollection",
   "tracker",
 ]);
-const QUESTION_HISTORY_KEY = "tusoskop-question-history";
-
-const isReactEventOrDomNode = (value) =>
-  Boolean(
-    value &&
-      typeof value === "object" &&
-      (value.nativeEvent ||
-        value.currentTarget ||
-        value.target ||
-        value.nodeType ||
-        value.__reactFiber)
-  );
-
-const normalizeAnswerValue = (value) => {
-  if (value === null || value === undefined) return null;
-  if (isReactEventOrDomNode(value)) return null;
-  const parsed = Number(value);
-  return Number.isFinite(parsed) ? parsed : null;
-};
-
 function RouteFallback() {
   return (
     <div className="min-h-dvh bg-slate-950 text-white flex items-center justify-center px-6">
@@ -148,7 +116,6 @@ export default function App() {
     return () => clearTimeout(id);
   }, []);
 
-  // --- 1. KULLANICI VE NAVİGASYON ---
   const [view, setView] = useState("dashboard");
   const legalReturnViewRef = useRef("dashboard");
   const [legalPageId, setLegalPageId] = useState(LEGAL_PAGES[0].id);
@@ -196,33 +163,6 @@ export default function App() {
   const bottomNavExamLocked =
     !isUserPremium(userData) && (remainingUsage?.fullExamRemaining ?? 1) <= 0;
 
-  // --- 2. ÇALIŞMA MODU (STUDY) STATE ---
-  const [currentSubject, setCurrentSubject] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [selected, setSelected] = useState(null);
-  const [showResult, setShowResult] = useState(false);
-  const [score, setScore] = useState(0);
-  const [activeQuestions, setActiveQuestions] = useState([]);
-  const [studyMode, setStudyMode] = useState("study");
-  const [activeTopicSubject, setActiveTopicSubject] = useState("");
-  const [activeTopicName, setActiveTopicName] = useState("");
-  const [flowMode, setFlowMode] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return localStorage.getItem("tusoskop-flow-mode") === "true";
-  });
-  const [isAutoAdvancing, setIsAutoAdvancing] = useState(false);
-  const [streak, setStreak] = useState(0);
-  const [bestStreak, setBestStreak] = useState(() => {
-    if (typeof window === "undefined") return 0;
-    return Number(localStorage.getItem("tusoskop-best-streak") || 0);
-  });
-  const [questionStartTime, setQuestionStartTime] = useState(() => Date.now());
-  const [questionTimes, setQuestionTimes] = useState({});
-  const [studyFeedback, setStudyFeedback] = useState(null);
-  const [topicMastery, setTopicMastery] = useState({});
-  const [feedbackMeta, setFeedbackMeta] = useState({ count: 0, lastText: "", lastType: "", lastTopic: "" });
-  const [favoriteFeedback, setFavoriteFeedback] = useState("");
-  const [reviewSummary, setReviewSummary] = useState(null);
   const [limitModal, setLimitModal] = useState({
     open: false,
     title: "",
@@ -234,11 +174,6 @@ export default function App() {
     premiumDescription: "",
     limitReason: "",
   });
-  const [questionActionLoading, setQuestionActionLoading] = useState({
-    active: false,
-    message: "",
-  });
-
   const openLimitFromUsageError = (error) => {
     if (!(error instanceof UsageLimitError)) return false;
     const base = limitModalFromUsageError(error.code);
@@ -257,97 +192,22 @@ export default function App() {
     return true;
   };
 
-  const answeredQuestionIdsRef = useRef(new Set());
-  const answeredReviewIdsRef = useRef(new Set());
-
-  // --- 3. DENEME MODU (EXAM) STATE ---
-  const [examQuestions, setExamQuestions] = useState([]);
-  const [examIndex, setExamIndex] = useState(0);
-  const [examAnswers, setExamAnswers] = useState({});
-  const [examSelected, setExamSelected] = useState(null);
-  const [selectedExamSet, setSelectedExamSet] = useState(null);
-  const examAnswersRef = useRef({});
-  const inProgressNotifiedRef = useRef(false);
-
-  // --- 4. HESAPLANAN VERİLER (MEMO) ---
-  const q = activeQuestions[currentIndex];
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("tusoskop-flow-mode", String(flowMode));
-    }
-  }, [flowMode]);
-
-  useEffect(() => {
-    if (view === "study") {
-      setQuestionStartTime(Date.now());
-    }
-  }, [view, currentIndex]);
-
-  useEffect(() => {
-    const raw = loadInProgressExamRaw();
-    if (!raw || inProgressNotifiedRef.current) return;
-    const examSet = EXAM_SETS.find(
-      (item) => Number(item.id) === Number(raw.examId ?? raw.examKey)
-    );
-    const check = validateInProgressExam(raw, examSet);
-    if (!check.ok) {
-      clearInProgressExam();
-      if (shouldNotifyInProgressReset(check.reason)) {
-        inProgressNotifiedRef.current = true;
-        window.alert(EXAM_IN_PROGRESS_RESET_MESSAGE);
-      }
-    }
-  }, []);
-
-  const persistInProgressExam = useCallback(() => {
-    if (view !== "exam" || !selectedExamSet || !examQuestions.length) return;
-    const answers = examAnswersRef.current;
-    saveInProgressExam(
-      buildInProgressExamPayload({
-        examSet: selectedExamSet,
-        examQuestions,
-        examIndex,
-        answers,
-        examSelected,
-      })
-    );
-  }, [view, selectedExamSet, examQuestions, examIndex, examSelected]);
-
-  useEffect(() => {
-    persistInProgressExam();
-  }, [persistInProgressExam, examAnswers]);
-
-  const examQ = examQuestions[examIndex];
-
-  const examAnalysis = useMemo(() => {
-    if (!examQuestions.length) return null;
-    return analyzeExamResults(examQuestions, examAnswers);
-  }, [examQuestions, examAnswers]);
-
-  const estimatedTus = useMemo(() => {
-    if (!examAnalysis) return null;
-    return getEstimatedTusResult(examAnalysis.summary.net);
-  }, [examAnalysis]);
-
-  // --- 7. YARDIMCI FONKSİYONLAR ---
-  const resetStudyState = () => {
-    setCurrentSubject(null); setCurrentIndex(0); setSelected(null);
-    setShowResult(false); setScore(0); setActiveQuestions([]);
-    setStudyMode("study");
-    setActiveTopicSubject("");
-    setActiveTopicName("");
-    setIsAutoAdvancing(false);
-    setStreak(0);
-    setQuestionTimes({});
-    setStudyFeedback(null);
-    setTopicMastery({});
-    setFeedbackMeta({ count: 0, lastText: "", lastType: "", lastTopic: "" });
-    answeredQuestionIdsRef.current = new Set();
-    answeredReviewIdsRef.current = new Set();
-  };
+  const studyState = useStudyState({
+    user,
+    userData,
+    QUESTIONS,
+    view,
+    setView,
+    refreshSmartReviewSummary,
+    refreshRemainingUsage,
+    openLimitFromUsageError,
+    setLimitModal,
+    favoriteQuestionIds,
+    setFavoriteQuestionIds,
+  });
 
   const goDashboard = () => {
-    resetStudyState();
+    studyState.resetStudyState();
     setView("dashboard");
   };
 
@@ -355,6 +215,7 @@ export default function App() {
     clearInProgressExam();
   };
 
+  const { setQuestionActionLoading } = studyState;
   const withQuestionLoading = useCallback(async (message, task) => {
     setQuestionActionLoading({ active: true, message });
     try {
@@ -362,7 +223,7 @@ export default function App() {
     } finally {
       setQuestionActionLoading({ active: false, message: "" });
     }
-  }, []);
+  }, [setQuestionActionLoading]);
 
   const ensureQuestionsForSubject = useCallback(
     async (subjectName) => {
@@ -382,6 +243,17 @@ export default function App() {
     return safeList.map((q) => applyQuestionTextFilter(q));
   };
 
+  const examState = useExamState({
+    user,
+    userData,
+    view,
+    QUESTIONS,
+    toDisplayQuestions,
+    onExamFinish: () => setView("examAnalysis"),
+    recordHistoryForQuestion: studyState.recordHistoryForQuestion,
+  });
+  const examQ = examState.examQuestions[examState.examIndex];
+
   const topicStudy = useTopicStudyFlow({
     user,
     userData,
@@ -389,12 +261,12 @@ export default function App() {
     setView,
     ensureQuestionsForSubject,
     refreshRemainingUsage,
-    resetStudyState,
-    setStudyMode,
-    setActiveTopicSubject,
-    setActiveTopicName,
-    setCurrentSubject,
-    setActiveQuestions,
+    resetStudyState: studyState.resetStudyState,
+    setStudyMode: studyState.setStudyMode,
+    setActiveTopicSubject: studyState.setActiveTopicSubject,
+    setActiveTopicName: studyState.setActiveTopicName,
+    setCurrentSubject: studyState.setCurrentSubject,
+    setActiveQuestions: studyState.setActiveQuestions,
     toDisplayQuestions,
     setLimitModal,
     openLimitFromUsageError,
@@ -424,34 +296,6 @@ export default function App() {
     setView(legalReturnViewRef.current || "dashboard");
   };
 
-  const showFavoriteToast = (text) => {
-    setFavoriteFeedback(text);
-    setTimeout(() => setFavoriteFeedback(""), 1400);
-  };
-
-  const handleToggleFavorite = async (question) => {
-    if (!question?.id) return;
-    const isFavoriteNow = favoriteQuestionIds.has(Number(question?.id));
-    if (!isFavoriteNow && !isUserPremium(userData) && favoriteQuestionIds.size >= FREE_LIMITS.maxFavorites) {
-      setLimitModal({
-        open: true,
-        title: "Favori sınırına ulaştın",
-        description: "Free planda en fazla 20 soruyu favoriye ekleyebilirsin. Plus ile favorilerin sınırsız olur.",
-        remainingInfo: "",
-        limitReason: "favorite_limit",
-      });
-      return;
-    }
-    const result = await toggleFavoriteQuestion(user, question);
-    setFavoriteQuestionIds((prev) => {
-      const next = new Set(prev);
-      if (result?.isFavorite) next.add(Number(question.id));
-      else next.delete(Number(question.id));
-      return next;
-    });
-    showFavoriteToast(result?.isFavorite ? "Favorilere eklendi" : "Favorilerden çıkarıldı");
-  };
-
   const startReviewWithQuestions = (questionList, source = "custom") => {
     const list = Array.isArray(questionList) ? questionList.filter(Boolean) : [];
     if (!list.length) return;
@@ -469,12 +313,12 @@ export default function App() {
       const safeList = isUserPremium(userData)
         ? list
         : list.slice(0, Math.min(FREE_LIMITS.dailyReviewQuestions, gate.allowedCount || FREE_LIMITS.dailyReviewQuestions));
-      resetStudyState();
-      setStudyMode("review");
-      setCurrentSubject("Çalışma Alanım Tekrarı");
-      setActiveTopicSubject("Çalışma Alanım");
-      setActiveTopicName(source);
-      setActiveQuestions(toDisplayQuestions(safeList));
+      studyState.resetStudyState();
+      studyState.setStudyMode("review");
+      studyState.setCurrentSubject("Çalışma Alanım Tekrarı");
+      studyState.setActiveTopicSubject("Çalışma Alanım");
+      studyState.setActiveTopicName(source);
+      studyState.setActiveQuestions(toDisplayQuestions(safeList));
       setView("study");
       setClarityTag("son_mod", "review");
       trackClarityEvent("bugunku_tekrar_baslatildi");
@@ -510,10 +354,10 @@ export default function App() {
       if (filtered.length === 0) return;
       trackClarityEvent("ders_karti_tiklandi");
       setClarityTag("son_ders", subjectName);
-      resetStudyState();
-      setStudyMode("study");
-      setCurrentSubject(subjectName);
-      setActiveQuestions(toDisplayQuestions(filtered));
+      studyState.resetStudyState();
+      studyState.setStudyMode("study");
+      studyState.setCurrentSubject(subjectName);
+      studyState.setActiveQuestions(toDisplayQuestions(filtered));
       setView("study");
     })();
   };
@@ -534,7 +378,7 @@ export default function App() {
     const fallbackSet = EXAM_SETS[0] || null;
     const activeSet =
       EXAM_SETS.find((item) => item.id === setId) ||
-      selectedExamSet ||
+      examState.selectedExamSet ||
       fallbackSet;
 
     const totalQuestions = activeSet?.questionCount || 200;
@@ -569,12 +413,12 @@ export default function App() {
             const displayExam = toDisplayQuestions(restored);
             const idx = check.data.examIndex;
             const currentQ = displayExam[idx];
-            setSelectedExamSet(activeSet);
-            setExamQuestions(displayExam);
-            examAnswersRef.current = { ...check.data.answers };
-            setExamAnswers({ ...check.data.answers });
-            setExamIndex(idx);
-            setExamSelected(
+            examState.setSelectedExamSet(activeSet);
+            examState.setExamQuestions(displayExam);
+            examState.examAnswersRef.current = { ...check.data.answers };
+            examState.setExamAnswers({ ...check.data.answers });
+            examState.setExamIndex(idx);
+            examState.setExamSelected(
               check.data.examSelected ??
                 (currentQ
                   ? (getSelectedAnswerIndex(check.data.answers, currentQ, idx) ?? null)
@@ -600,12 +444,12 @@ export default function App() {
     }
     trackClarityEvent("deneme_baslatildi");
     setClarityTag("son_mod", "deneme");
-    setSelectedExamSet(activeSet);
-    setExamQuestions(exam);
-    examAnswersRef.current = {};
-    setExamAnswers({});
-    setExamIndex(0);
-    setExamSelected(null);
+    examState.setSelectedExamSet(activeSet);
+    examState.setExamQuestions(exam);
+    examState.examAnswersRef.current = {};
+    examState.setExamAnswers({});
+    examState.setExamIndex(0);
+    examState.setExamSelected(null);
     saveInProgressExam(
       buildInProgressExamPayload({
         examSet: activeSet,
@@ -618,463 +462,6 @@ export default function App() {
     setView("exam");
   };
 
-  // --- 8. EVENT HANDLERS ---
-  const handleReveal = async () => {
-    await revealCurrentAnswer(selected);
-  };
-
-  const getTimeMetrics = () => {
-    const numericTimes = Object.entries(questionTimes)
-      .filter(([key, value]) => !String(key).startsWith("q-") && Number.isFinite(value))
-      .map(([, value]) => Number(value));
-
-    if (!numericTimes.length) {
-      return { avgTime: 0, fastest: 0, slowest: 0, answeredCount: 0 };
-    }
-
-    return {
-      avgTime: Math.round(numericTimes.reduce((sum, sec) => sum + sec, 0) / numericTimes.length),
-      fastest: Math.min(...numericTimes),
-      slowest: Math.max(...numericTimes),
-      answeredCount: numericTimes.length,
-    };
-  };
-
-  const persistStudySessionMetrics = async () => {
-    const currentUser = auth.currentUser;
-    if (!currentUser) return;
-
-    try {
-      const { avgTime, fastest, slowest, answeredCount } = getTimeMetrics();
-      await addDoc(collection(db, "studySessions"), {
-        userId: currentUser.uid,
-        subject: currentSubject || "Genel",
-        totalQuestions: activeQuestions.length,
-        score,
-        streak,
-        bestStreak,
-        flowMode,
-        timing: { avgTime, fastest, slowest, answeredCount },
-        createdAt: serverTimestamp(),
-      });
-    } catch (error) {
-      console.error("Study session metrics save error:", error);
-    }
-  };
-
-  const getDifficultyLabel = (diff) => {
-    const map = { 1: "Kolay", 2: "Orta", 3: "Orta-zor", 4: "Zor", 5: "Seçici" };
-    return map[diff] || "Orta";
-  };
-
-  const pickDifferentMessage = (messages, fallback) => {
-    const candidates = messages.filter((m) => m !== feedbackMeta.lastText);
-    const pool = candidates.length ? candidates : messages;
-    return pool[Math.floor(Math.random() * pool.length)] || fallback;
-  };
-
-  const shouldShowFeedback = (type, question) => {
-    // Critical moments are always shown.
-    if (type === "blank") return true;
-    if ((question?.diff || 0) >= 4) return true;
-    if (streak === 0 || streak % 3 === 0) return true;
-    // Otherwise reduce frequency: show every 2nd-3rd interaction.
-    return (feedbackMeta.count + 1) % 3 === 0;
-  };
-
-  const getFeedbackMessage = (question, answer) => {
-    const level = getDifficultyLabel(question?.diff);
-    const topic = question?.konu || "";
-    const type =
-      answer === null || answer === undefined
-        ? "blank"
-        : answer === question?.correct
-        ? "correct"
-        : "wrong";
-
-    if (!shouldShowFeedback(type, question)) {
-      return null;
-    }
-
-    if (type === "blank") {
-      const text = pickDifferentMessage(
-        [
-          "Boş bırakıldı. Bu soruyu tekrar listesine eklemek mantıklı.",
-          "Bu soru boş geçti; dönüşte kısa bir tekrar iyi çalışır.",
-          "Boş bıraktın, sorun değil. Bunu tekrar turuna almak faydalı olur.",
-        ],
-        "Boş bırakıldı. Bu soruyu tekrar listesine eklemek mantıklı."
-      );
-      return { type, text };
-    }
-
-    if (type === "correct") {
-      const topicAware =
-        feedbackMeta.lastTopic && feedbackMeta.lastTopic === topic
-          ? [
-              `${topic} tarafında çizgiyi korudun, çok iyi gidiyorsun.`,
-              `${topic} sorularında ritmi yakaladın.`,
-              `${topic} için net bir okuma yaptın, devam.`,
-            ]
-          : [];
-      const text = pickDifferentMessage(
-        [
-          ...topicAware,
-          `İyi yakaladın. Bu soru ${level.toLowerCase()} seviyedeydi.`,
-          `Temiz cevap. ${level} düzeyindeki bu soruda doğru çizgide kaldın.`,
-          `Güzel okuma. ${level} seviyesinde iyi karar verdin.`,
-        ],
-        `İyi yakaladın. Bu soru ${level.toLowerCase()} seviyedeydi.`
-      );
-      return { type, text };
-    }
-
-    const topicAwareWrong =
-      feedbackMeta.lastTopic && feedbackMeta.lastTopic === topic
-        ? [
-            `${topic} tarafı seçici olabilir; kısa bir konu dönüşü iyi gelir.`,
-            `${topic} sorularında küçük bir tekrar net fark yaratır.`,
-            `${topic} içinde benzer çeldiriciler var, sakin tempo iyi gider.`,
-          ]
-        : [];
-    const text = pickDifferentMessage(
-      [
-        ...topicAwareWrong,
-        "Burada takılman normal. Bu konu TUS'ta sık çeldirir.",
-        "Bu tip sorular seçici olur; kısa bir tekrar büyük fark yaratır.",
-        "Çeldirici bir nokta. Konunun ana ayrımını tekrar etmek iyi olur.",
-      ],
-      "Burada takılman normal. Bu konu TUS'ta sık çeldirir."
-    );
-    return { type, text };
-  };
-
-  const recordQuestionTime = (questionId) => {
-    if (!questionId) return;
-    setQuestionTimes((prev) => {
-      if (prev[questionId]) return prev;
-      const elapsedSeconds = Math.max(1, Math.round((Date.now() - questionStartTime) / 1000));
-      return { ...prev, [questionId]: elapsedSeconds };
-    });
-  };
-
-  const updateStreakForQuestion = (isCorrect, questionId) => {
-    if (!questionId) return;
-    const key = `q-${questionId}`;
-    setQuestionTimes((prev) => {
-      if (prev[key] !== undefined) return prev;
-      setStreak((prevStreak) => {
-        if (isCorrect) {
-          const next = prevStreak + 1;
-          if (next > bestStreak) {
-            setBestStreak(next);
-            if (typeof window !== "undefined") {
-              localStorage.setItem("tusoskop-best-streak", String(next));
-            }
-          }
-          return next;
-        }
-        return 0;
-      });
-      return { ...prev, [key]: isCorrect ? 1 : 0 };
-    });
-  };
-
-  const revealCurrentAnswer = async (answerOverride = selected) => {
-    const isReview = studyMode === "review";
-    const questionId = q?.id ? Number(q.id) : null;
-    if (questionId) {
-      if (!isReview && !answeredQuestionIdsRef.current.has(questionId)) {
-        const gate = await canAnswerQuestion(user, userData);
-        if (!gate.allowed) {
-          setLimitModal({
-            open: true,
-            title: "Bugünkü ücretsiz soru hakkın doldu",
-            description: "Free planda günde 30 soru çözebilirsin. Plus ile sınırsız soru, deneme ve tekrar açılır.",
-            remainingInfo: "",
-            limitReason: "daily_question_limit",
-          });
-          return;
-        }
-        try {
-          await incrementQuestionUsage(user, userData, 1);
-          await refreshRemainingUsage();
-          answeredQuestionIdsRef.current.add(questionId);
-        } catch (err) {
-          if (openLimitFromUsageError(err)) return;
-          console.warn("Kullanım sayacı yazılamadı; cevap gösterilmiyor.", err);
-          return;
-        }
-      }
-
-      if (isReview && !answeredReviewIdsRef.current.has(questionId)) {
-        const reviewGate = await canStartReview(user, userData, 1);
-        if (!reviewGate.allowed) {
-          setLimitModal({
-            open: true,
-            title: "Bugünkü ücretsiz tekrar hakkın doldu",
-            description: "Free planda günde 10 tekrar sorusu çözebilirsin. Plus ile tekrar kuyruğun sınırsız açılır.",
-            remainingInfo: "",
-            limitReason: "daily_review_limit_study",
-          });
-          return;
-        }
-        try {
-          await incrementReviewUsage(user, userData, 1);
-          await refreshRemainingUsage();
-          answeredReviewIdsRef.current.add(questionId);
-        } catch (err) {
-          if (openLimitFromUsageError(err)) return;
-          console.warn("Tekrar kullanım sayacı yazılamadı; cevap gösterilmiyor.", err);
-          return;
-        }
-      }
-    }
-
-    setShowResult(true);
-    const answer = answerOverride;
-    const isCorrect = answer !== null && answer !== undefined && answer === q?.correct;
-    const isWrong =
-      answer !== null &&
-      answer !== undefined &&
-      Number(answer) !== Number(q?.correct);
-    if (isCorrect) setScore((prev) => prev + 1);
-    updateStreakForQuestion(isCorrect, q?.id);
-    recordQuestionTime(q?.id);
-    const feedback = getFeedbackMessage(q, answer);
-    setStudyFeedback(feedback);
-    setFeedbackMeta((prev) => ({
-      count: prev.count + 1,
-      lastText: feedback?.text || prev.lastText,
-      lastType: feedback?.type || prev.lastType,
-      lastTopic: q?.konu || prev.lastTopic,
-    }));
-    if (q?.konu) {
-      setTopicMastery((prev) => {
-        const current = prev[q.konu] || { seen: 0, correct: 0 };
-        return {
-          ...prev,
-          [q.konu]: {
-            seen: current.seen + 1,
-            correct: current.correct + (isCorrect ? 1 : 0),
-          },
-        };
-      });
-    }
-    recordHistoryForQuestion({
-      question: q,
-      selectedOption: answer,
-      mode: studyMode === "topic" ? "topic" : studyMode === "review" ? "review" : "study",
-    });
-    if (user) updateStreak(user.uid);
-    if (studyMode === "review") {
-      if (answer !== null && answer !== undefined && q?.id) {
-        await updateWrongQuestionAfterReview(user, q, isCorrect, answer, userData);
-        await updateSmartReviewFromAnswer(user, q, isCorrect);
-      }
-    } else if (isWrong && q?.id) {
-      await addWrongQuestion(user, q, answer, userData);
-      await upsertSmartReview(user, q, "wrong");
-    }
-  };
-
-  const getSocialProof = (question) => {
-    const wrongRateByDiff = { 1: 28, 2: 41, 3: 56, 4: 68, 5: 79 };
-    const wrongRate = wrongRateByDiff[question?.diff] ?? 52;
-    const label =
-      wrongRate >= 70 ? "Seçici soru" : wrongRate >= 55 ? "Sık zorlanılan soru" : "Dengeli zorluk";
-    return { wrongRate, label };
-  };
-
-  const getMasteryLevel = (topic) => {
-    const stats = topicMastery[topic] || { seen: 0, correct: 0 };
-    const accuracy = stats.seen ? Math.round((stats.correct / stats.seen) * 100) : 0;
-    const level = accuracy >= 85 ? "Güçlü tempo" : accuracy >= 70 ? "İyi tempo" : accuracy >= 50 ? "Isınma" : "Başlangıç";
-    const progress = Math.max(8, Math.min(100, accuracy || 8));
-    return { ...stats, accuracy, level, progress };
-  };
-
-  const saveQuestionHistory = (entry) => {
-    if (typeof window === "undefined" || !entry?.questionId) return;
-    try {
-      const safeEntry = {
-        questionId: Number(entry.questionId),
-        ders: String(entry.ders || ""),
-        konu: String(entry.konu || ""),
-        selected: normalizeAnswerValue(entry.selected),
-        correct: Number(entry.correct),
-        isCorrect: Boolean(entry.isCorrect),
-        mode: String(entry.mode || "exam"),
-        answeredAt: String(entry.answeredAt || new Date().toISOString()),
-      };
-      if (!Number.isFinite(safeEntry.questionId) || !Number.isFinite(safeEntry.correct)) {
-        console.error("Question history save skipped: invalid numeric fields", {
-          questionId: entry?.questionId,
-        });
-        return;
-      }
-      const raw = localStorage.getItem(QUESTION_HISTORY_KEY);
-      const list = raw ? JSON.parse(raw) : [];
-      const next = [...list.filter((item) => item.questionId !== safeEntry.questionId), safeEntry];
-      localStorage.setItem(QUESTION_HISTORY_KEY, JSON.stringify(next));
-    } catch (error) {
-      console.error("Question history save error:", error);
-    }
-  };
-
-  const recordHistoryForQuestion = ({ question, selectedOption, mode }) => {
-    if (!question?.id) return;
-    if (isReactEventOrDomNode(selectedOption)) {
-      console.error("Invalid selected answer: React event/DOM node received");
-    }
-    const normalizedSelected = normalizeAnswerValue(selectedOption);
-    const normalizedCorrect = Number(question.correct);
-    saveQuestionHistory({
-      questionId: Number(question.id),
-      ders: String(question.ders || ""),
-      konu: String(question.konu || ""),
-      selected: normalizedSelected,
-      correct: normalizedCorrect,
-      isCorrect:
-        normalizedSelected !== null &&
-        Number.isFinite(normalizedCorrect) &&
-        normalizedSelected === normalizedCorrect,
-      mode: mode || "exam",
-      answeredAt: new Date().toISOString(),
-    });
-  };
-
-  const handleStudySelect = (optionIndex) => {
-    setSelected(optionIndex);
-    if (!flowMode || showResult || isAutoAdvancing) return;
-    revealCurrentAnswer(optionIndex);
-    if (currentIndex >= activeQuestions.length - 1) return;
-    setIsAutoAdvancing(true);
-    setTimeout(() => {
-      setIsAutoAdvancing(false);
-      handleNext();
-    }, 700);
-  };
-
-  const handleNext = async () => {
-    if (currentIndex < activeQuestions.length - 1) {
-      setCurrentIndex(prev => prev + 1); setSelected(null); setShowResult(false);
-      setStudyFeedback(null);
-    } else {
-      if (studyMode === "review") {
-        const wrongRecords = await getWrongQuestions(user, userData);
-        const activeIds = new Set(activeQuestions.map((item) => Number(item.id)));
-        const stillNeedsReview = wrongRecords.filter(
-          (item) => activeIds.has(Number(item.questionId)) && !item.isResolved
-        ).length;
-        setReviewSummary({
-          total: activeQuestions.length,
-          correct: score,
-          wrong: Math.max(0, activeQuestions.length - score),
-          stillNeedsReview,
-        });
-        trackClarityEvent("tekrar_tamamlandi");
-        await refreshSmartReviewSummary();
-        resetStudyState();
-        setView("reviewSummary");
-        return;
-      }
-      persistStudySessionMetrics();
-      setView("summary");
-    }
-  };
-
-  const handleStudyPrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(prev => prev - 1); setSelected(null); setShowResult(false);
-    }
-  };
-
-  const saveExamAnswer = (questionIndex, selectedIndex) => {
-    if (questionIndex === undefined || questionIndex === null) return;
-    examAnswersRef.current = { ...examAnswersRef.current, [questionIndex]: selectedIndex };
-    setExamAnswers({ ...examAnswersRef.current });
-  };
-
-  const saveExamBlank = (questionIndex) => {
-    saveExamAnswer(questionIndex, null);
-  };
-
-  const handleExamNext = (selectedOverride) => {
-    const safeOverride = isReactEventOrDomNode(selectedOverride) ? undefined : selectedOverride;
-    const currentQuestion = examQuestions[examIndex];
-    if (!currentQuestion?.id) return;
-    const persistedAnswer = getSelectedAnswerIndex(examAnswersRef.current, currentQuestion, examIndex);
-    const currentAnswer =
-      safeOverride !== undefined
-        ? safeOverride
-        : (persistedAnswer ?? examSelected ?? null);
-    saveExamAnswer(examIndex, currentAnswer);
-    const latestAnswers = examAnswersRef.current;
-    recordHistoryForQuestion({
-      question: currentQuestion,
-      selectedOption: getSelectedAnswerIndex(latestAnswers, currentQuestion, examIndex),
-      mode: "exam",
-    });
-
-    if (examIndex < examQuestions.length - 1) {
-      const nextIdx = examIndex + 1;
-      const nextQuestion = examQuestions[nextIdx];
-      setExamIndex(nextIdx);
-      setExamSelected(
-        nextQuestion ? (getSelectedAnswerIndex(latestAnswers, nextQuestion, nextIdx) ?? null) : null
-      );
-    } else setView("examAnalysis");
-  };
-
-  const handleExamPrev = () => {
-    if (examIndex <= 0) return;
-    const currentQuestion = examQuestions[examIndex];
-    if (currentQuestion?.id) {
-      const currentAnswer =
-        getSelectedAnswerIndex(examAnswersRef.current, currentQuestion, examIndex) ?? examSelected ?? null;
-      saveExamAnswer(examIndex, currentAnswer);
-    }
-    const latestAnswers = examAnswersRef.current;
-    recordHistoryForQuestion({
-      question: currentQuestion,
-      selectedOption: getSelectedAnswerIndex(latestAnswers, currentQuestion, examIndex),
-      mode: "exam",
-    });
-    const newIndex = examIndex - 1;
-    setExamIndex(newIndex);
-    const prevQuestion = examQuestions[newIndex];
-    setExamSelected(
-      prevQuestion ? (getSelectedAnswerIndex(latestAnswers, prevQuestion, newIndex) ?? null) : null
-    );
-  };
-
-  const handleExamSelect = (optionIndex) => {
-    if (!examQuestions[examIndex]) return;
-    saveExamAnswer(examIndex, optionIndex);
-    setExamSelected(optionIndex);
-  };
-
-  const handleExamSelectForQuestion = (questionIdx, letterIdx) => {
-    if (!examQuestions[questionIdx]) return;
-    saveExamAnswer(questionIdx, letterIdx);
-    setExamIndex(questionIdx);
-    setExamSelected(letterIdx);
-  };
-
-  const topicProgress = useMemo(() => {
-    if (studyMode !== "topic" || !activeTopicSubject || !activeTopicName || !q) return null;
-    const totalQuestions = activeQuestions.length;
-    if (!totalQuestions) return null;
-    return {
-      ders: activeTopicSubject,
-      konu: activeTopicName,
-      current: Math.min(currentIndex + 1, totalQuestions),
-      total: totalQuestions,
-    };
-  }, [studyMode, activeTopicSubject, activeTopicName, q, activeQuestions.length, currentIndex]);
-
-  // --- 9. GİRİŞ EKRANI (LOGIN) ---
   if (!user) {
     return (
       <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
@@ -1111,7 +498,6 @@ export default function App() {
     );
   }
 
-  // --- 10. ANA YÖNLENDİRME (ROUTING) ---
   const showBottomNav = BOTTOM_NAV_VIEWS.has(view);
   let screenContent;
   switch (view) {
@@ -1182,9 +568,9 @@ export default function App() {
     case "summary":
       screenContent = (
         <Summary
-          currentSubject={currentSubject} score={score} total={activeQuestions.length}
-          questionTimes={questionTimes}
-          onRetry={() => { setCurrentIndex(0); setView("study"); }}
+          currentSubject={studyState.currentSubject} score={studyState.score} total={studyState.activeQuestions.length}
+          questionTimes={studyState.questionTimes}
+          onRetry={() => { studyState.setCurrentIndex(0); setView("study"); }}
           goDashboard={goDashboard}
         />
       );
@@ -1197,41 +583,41 @@ export default function App() {
     case "exam":
       screenContent = (
         <ExamScreen
-          examQ={examQ} examIndex={examIndex} examQuestions={examQuestions}
-          examAnswers={examAnswers} examSelected={examSelected}
-          examSetMeta={buildExamResultMetadata(selectedExamSet)}
+          examQ={examQ} examIndex={examState.examIndex} examQuestions={examState.examQuestions}
+          examAnswers={examState.examAnswers} examSelected={examState.examSelected}
+          examSetMeta={buildExamResultMetadata(examState.selectedExamSet)}
           accentTheme={accentTheme}
           userId={user?.uid}
           user={user}
           userData={userData}
-          getExamAnswersSnapshot={() => examAnswersRef.current}
+          getExamAnswersSnapshot={() => examState.examAnswersRef.current}
           onJump={(idx) => {
-            const currentQuestion = examQuestions[examIndex];
-            if (examSelected !== null && examSelected !== undefined) {
-              saveExamAnswer(examIndex, examSelected);
+            const currentQuestion = examState.examQuestions[examState.examIndex];
+            if (examState.examSelected !== null && examState.examSelected !== undefined) {
+              examState.saveExamAnswer(examState.examIndex, examState.examSelected);
             }
-            const latestAnswers = examAnswersRef.current;
-            recordHistoryForQuestion({
+            const latestAnswers = examState.examAnswersRef.current;
+            studyState.recordHistoryForQuestion({
               question: currentQuestion,
-              selectedOption: getSelectedAnswerIndex(latestAnswers, currentQuestion, examIndex) ?? null,
+              selectedOption: getSelectedAnswerIndex(latestAnswers, currentQuestion, examState.examIndex) ?? null,
               mode: "exam",
             });
-            const nextQuestion = examQuestions[idx];
-            setExamAnswers({ ...latestAnswers });
-            setExamIndex(idx);
-            setExamSelected(
+            const nextQuestion = examState.examQuestions[idx];
+            examState.setExamAnswers({ ...latestAnswers });
+            examState.setExamIndex(idx);
+            examState.setExamSelected(
               nextQuestion ? (getSelectedAnswerIndex(latestAnswers, nextQuestion, idx) ?? null) : null
             );
           }}
-          handleExamSelect={handleExamSelect}
-          handleExamSelectForQuestion={handleExamSelectForQuestion}
+          handleExamSelect={examState.handleExamSelect}
+          handleExamSelectForQuestion={examState.handleExamSelectForQuestion}
           handleExamBlank={() => {
-            saveExamBlank(examIndex);
-            setExamSelected(null);
-            handleExamNext(null);
+            examState.saveExamBlank(examState.examIndex);
+            examState.setExamSelected(null);
+            examState.handleExamNext(null);
           }}
-          handleExamNext={handleExamNext}
-          handleExamPrev={handleExamPrev}
+          handleExamNext={examState.handleExamNext}
+          handleExamPrev={examState.handleExamPrev}
           onExamCompleted={handleExamCompleted}
           goDashboard={goDashboard}
         />
@@ -1241,7 +627,7 @@ export default function App() {
     case "examAnalysis":
       screenContent = (
         <ExamAnalysisScreen
-          examAnalysis={examAnalysis} estimatedTus={estimatedTus}
+          examAnalysis={examState.examAnalysis} estimatedTus={examState.estimatedTus}
           userData={userData}
           accentTheme={accentTheme}
           startFullExam={startFullExam} goDashboard={goDashboard}
@@ -1252,23 +638,23 @@ export default function App() {
     case "study":
       screenContent = (
         <StudyScreen
-          q={q} index={currentIndex} total={activeQuestions.length}
-          selected={selected} setSelected={handleStudySelect}
-          showAnswer={showResult} revealAnswer={handleReveal}
-          nextQuestion={handleNext} prevQuestion={handleStudyPrev}
-          flowMode={flowMode}
-          setFlowMode={setFlowMode}
-          streak={streak}
-          bestStreak={bestStreak}
-          feedback={studyFeedback}
-          isAutoAdvancing={isAutoAdvancing}
-          socialProof={getSocialProof(q)}
-          mastery={getMasteryLevel(q?.konu)}
-          topicProgress={topicProgress}
+          q={studyState.q} index={studyState.currentIndex} total={studyState.activeQuestions.length}
+          selected={studyState.selected} setSelected={studyState.handleStudySelect}
+          showAnswer={studyState.showResult} revealAnswer={studyState.handleReveal}
+          nextQuestion={studyState.handleNext} prevQuestion={studyState.handleStudyPrev}
+          flowMode={studyState.flowMode}
+          setFlowMode={studyState.setFlowMode}
+          streak={studyState.streak}
+          bestStreak={studyState.bestStreak}
+          feedback={studyState.studyFeedback}
+          isAutoAdvancing={studyState.isAutoAdvancing}
+          socialProof={studyState.getSocialProof(studyState.q)}
+          mastery={studyState.getMasteryLevel(studyState.q?.konu)}
+          topicProgress={studyState.topicProgress}
           accentTheme={accentTheme}
-          isFavorite={favoriteQuestionIds.has(Number(q?.id))}
-          onToggleFavorite={handleToggleFavorite}
-          favoriteFeedback={favoriteFeedback}
+          isFavorite={favoriteQuestionIds.has(Number(studyState.q?.id))}
+          onToggleFavorite={studyState.handleToggleFavorite}
+          favoriteFeedback={studyState.favoriteFeedback}
           goDashboard={goDashboard}
           user={user}
         />
@@ -1293,7 +679,7 @@ export default function App() {
     case "reviewSummary":
       screenContent = (
         <ReviewSummaryScreen
-          summary={reviewSummary}
+          summary={studyState.reviewSummary}
           accentTheme={accentTheme}
           goStudyCollection={() => setView("studyCollection")}
         />
@@ -1373,12 +759,12 @@ export default function App() {
       <Suspense fallback={<RouteFallback />}>
         {screenContent}
       </Suspense>
-      {questionActionLoading.active && (
+      {studyState.questionActionLoading.active && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/70 backdrop-blur-sm px-6">
           <div className="rounded-3xl border border-slate-700 bg-slate-900/90 px-6 py-5 text-center shadow-2xl">
             <div className="mx-auto mb-3 h-10 w-10 rounded-full border-2 border-slate-600 border-t-emerald-400 animate-spin" />
             <p className="text-sm font-semibold text-slate-200">
-              {questionActionLoading.message || "Hazırlanıyor…"}
+              {studyState.questionActionLoading.message || "Hazırlanıyor…"}
             </p>
             {questionBankError && (
               <p className="mt-2 text-xs text-rose-300">

@@ -36,7 +36,7 @@ describe("App.jsx ekran geri navigasyonu", () => {
     );
     expect(block).toContain("goDashboard={goDashboard}");
     expect(block).toContain("startFullExam={startFullExam}");
-    expect(block).toContain("examAnalysis={examAnalysis}");
+    expect(block).toContain("examAnalysis={examState.examAnalysis}");
   });
 });
 

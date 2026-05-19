@@ -7,6 +7,7 @@ import {
   getWrongQuestions,
   toggleFavoriteQuestion,
 } from "../services/studyCollectionService";
+import { getSmartReviewSummary } from "../services/smartReviewService";
 import PerformanceChartCard from "./PerformanceChartCard";
 
 const TABS = [
@@ -42,6 +43,7 @@ export default function StudyCollectionScreen({
   const [wrongItems, setWrongItems] = useState([]);
   const [favoriteItems, setFavoriteItems] = useState([]);
   const [todayQueue, setTodayQueue] = useState([]);
+  const [fsrsSummary, setFsrsSummary] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const mapById = useMemo(
@@ -52,14 +54,16 @@ export default function StudyCollectionScreen({
   const hydrate = async () => {
     setLoading(true);
     try {
-      const [wrong, favorites, queue] = await Promise.all([
+      const [wrong, favorites, queue, smartSummary] = await Promise.all([
         getWrongQuestions(user, userData),
         getFavoriteQuestions(user),
         buildTodayReviewQueue(user, questions, userData),
+        getSmartReviewSummary(user),
       ]);
       setWrongItems(wrong);
       setFavoriteItems(favorites);
       setTodayQueue(queue);
+      setFsrsSummary(smartSummary ?? null);
     } finally {
       setLoading(false);
     }
@@ -150,7 +154,11 @@ export default function StudyCollectionScreen({
           </h2>
           <p className="text-sm text-slate-400">
             {todayQueue.length
-              ? `Yanlışların ve favorilerinden seçilen ${todayQueue.length} soruluk tekrar kuyruğu.`
+              ? `${todayQueue.length} soruluk tekrar kuyruğu${
+                  fsrsSummary?.overdueCount > 0
+                    ? ` · ${fsrsSummary.overdueCount} soru gecikmiş`
+                    : ""
+                }`
               : "Yanlış yaptığın veya favoriye eklediğin sorular burada tekrar için birikecek."}
           </p>
           <p className={`text-xs mt-3 ${theme.text}`}>
@@ -211,6 +219,22 @@ export default function StudyCollectionScreen({
                 <p className="text-xl font-black text-amber-300">{favoriteItems.length}</p>
               </div>
             </div>
+            {fsrsSummary && (fsrsSummary.overdueCount > 0 || fsrsSummary.dueCount > 0) && (
+              <div className="rounded-2xl border border-violet-500/20 bg-violet-500/5 px-4 py-3 flex items-center gap-3">
+                <span className="text-base">🧠</span>
+                <div className="min-w-0">
+                  <p className="text-xs font-black text-violet-300">
+                    FSRS Tekrar Kuyruğu
+                  </p>
+                  <p className="text-xs text-slate-400 mt-0.5">
+                    {fsrsSummary.dueCount} soru bekliyor
+                    {fsrsSummary.overdueCount > 0
+                      ? ` · ${fsrsSummary.overdueCount} gecikmiş`
+                      : ""}
+                  </p>
+                </div>
+              </div>
+            )}
             <div className="rounded-2xl border border-slate-800 bg-slate-900/30 p-4">
               <p className="text-xs text-slate-400 mb-2">Ders/Konu mini özet</p>
               <div className="text-sm text-slate-200">
