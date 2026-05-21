@@ -26,7 +26,7 @@
     "anatomi": "Anatomi"
   },
   "subjectCounts": {
-    "Fizyoloji": 408,
+    "Fizyoloji": 528,
     "Patoloji": 413,
     "Farmakoloji": 494,
     "Mikrobiyoloji": 390,
@@ -36,6 +36,6 @@
     "Küçük Stajlar": 475,
     "Biyokimya": 320,
     "Genel Cerrahi": 530,
-    "Anatomi": 280
+    "Anatomi": 397
   }
 }
