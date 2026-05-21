@@ -1,0 +1,482 @@
+[
+  {
+    "id": 31,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "Sağ el bileği ağrısı olan bir asistan, anatomik pozisyonda radius tarafındaki yapıyı tarif ederken \"lateral\" terimini kullanıyor. Aynı kişinin ön kolu pronasyona geldiğinde başparmak tarafı öne ve mediale döndüğü halde standart anatomik tarif neden yine radius tarafını lateral kabul eder?",
+    "options": [
+      "Terimler ekstremitenin o anki fonksiyonel pozisyonuna göre değişir",
+      "Üst ekstremitede lateral-medial yerine yalnızca proksimal-distal kullanılır",
+      "Anatomik yön terimleri referans olarak anatomik pozisyona sabitlenmiştir",
+      "Pronasyonda radius ve ulna anatomik adlarını karşılıklı değiştirir",
+      "Lateral terimi yalnızca gövde için, medial terimi yalnızca ekstremite için geçerlidir"
+    ],
+    "correct": 2,
+    "exp": "Yön terimleri, vücudun standart anatomik pozisyonuna göre tanımlanır. Ön kol pronasyonda olsa bile radius anatomik pozisyonda ulna'ya göre lateraldedir."
+  },
+  {
+    "id": 32,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 5,
+    "q": "Travma BT raporunda mermi yolunun hastanın sol inguinal bölgesinden girip sağ skapula inferior açısına doğru, hem kraniyal hem posterior hem de medial seyir gösterdiği belirtiliyor. Bu tarifte merminin yönünü hangi ifade en doğru karşılar?",
+    "options": [
+      "Kaudal, anterior ve lateral",
+      "Kraniyal, anterior ve lateral",
+      "Kaudal, posterior ve medial",
+      "Kraniyal, posterior ve lateral",
+      "Kraniyal, posterior ve medial"
+    ],
+    "correct": 4,
+    "exp": "Sol inguinal bölgeden sağ skapula inferior açısına doğru ilerleme yukarı yönlü, arkaya doğru ve orta hatta yaklaşan bir seyir tarif eder; bu nedenle kraniyal, posterior ve medialdir."
+  },
+  {
+    "id": 33,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "Omuz MR'ında kolun gövdeden uzaklaştırılması sırasında humerusun gövdeye göre hareketi değerlendiriliyor. Bu hareketin esas izlendiği anatomik düzlem ve eksen eşleşmesi hangisidir?",
+    "options": [
+      "Transvers düzlem, vertikal eksen",
+      "Koronal düzlem, sagittal eksen",
+      "Sagittal düzlem, transvers eksen",
+      "Oblik düzlem, longitudinal eksen",
+      "Median düzlem, vertikal eksen"
+    ],
+    "correct": 1,
+    "exp": "Abdüksiyon ve addüksiyon hareketleri koronal düzlemde, sagittal eksen etrafında gerçekleşir. Omuz abdüksiyonunun düzlem-eksen ilişkisi bu temel kurala uyar."
+  },
+  {
+    "id": 34,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 5,
+    "q": "Acil serviste el bileği üzerine düşen 24 yaşındaki erkek hastanın grafisinde snuffbox hassasiyeti ile birlikte karpal kemik kırığı düşünülüyor. Bu bölgede beslenmesi distalden proksimale olduğu için proksimal fragmanda avasküler nekroz riski hangi kemikte en yüksektir?",
+    "options": [
+      "Lunatum",
+      "Triquetrum",
+      "Hamulus ossis hamati",
+      "Scaphoideum",
+      "Pisiforme"
+    ],
+    "correct": 3,
+    "exp": "Scaphoid kırıklarında kanlanma çoğunlukla distalden proksimale ilerlediği için proksimal kutup avasküler nekroza yatkındır. Snuffbox hassasiyeti de scaphoid kırığını destekler."
+  },
+  {
+    "id": 35,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 4,
+    "q": "Doğum sırasında omuz distosisi gelişen yenidoğanda klavikula orta üçte kırığı saptanıyor. Kırık hattının bu bölgede sık görülmesini en iyi açıklayan özellik hangisidir?",
+    "options": [
+      "Klavikulanın medial ve lateral eğrilikleri arasında mekanik geçiş bölgesi olması",
+      "Klavikulanın tamamen intramembranöz kemikleşme göstermemesi",
+      "Subklavian arterin yalnızca orta üçte kemiğe tutunması",
+      "Akromioklaviküler bağların orta üçte yoğunlaşması",
+      "Klavikulanın orta üçte epifiz plağı içermesi"
+    ],
+    "correct": 0,
+    "exp": "Klavikula orta üçte, medial konveksite ile lateral konkavite arasında geçiş bölgesidir ve mekanik olarak zayıftır. Bu nedenle düşme ve doğum travmalarında sık kırılır."
+  },
+  {
+    "id": 36,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 5,
+    "q": "Yaşlı bir kadında femur boynu kırığı sonrası femur başında dolaşım bozukluğu gelişiyor. Bu komplikasyonda erişkinde femur başını besleyen temel damarlar hangi anatomik yoldan gelir?",
+    "options": [
+      "Ligamentum capitis femoris içindeki obturator dalından",
+      "A. profunda femoris'in perforan dallarından doğrudan medüller yolla",
+      "A. circumflexa femoris medialis'in retinaküler dallarıyla",
+      "A. circumflexa femoris lateralis'in yalnızca inen dalıyla",
+      "A. glutea inferiorun trokanterik dallarıyla"
+    ],
+    "correct": 2,
+    "exp": "Erişkinde femur başının esas kanlanması medial circumflex femoral arterin retinaküler dallarıyla sağlanır. Femur boynu kırıkları bu damarları zedeleyerek avasküler nekroza yol açabilir."
+  },
+  {
+    "id": 37,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 4,
+    "q": "Basketbol oynarken ayağı inversiyona zorlanan 19 yaşındaki hastada ayak bileğinin ön-lateralinde belirgin hassasiyet var. Bu klinik tabloda en sık zedelenen bağ hangisidir?",
+    "options": [
+      "Ligamentum deltoideum pars tibiocalcanea",
+      "Ligamentum talofibulare anterius",
+      "Ligamentum calcaneofibulare",
+      "Ligamentum talofibulare posterius",
+      "Ligamentum tibiofibulare posterius"
+    ],
+    "correct": 1,
+    "exp": "İnversiyon burkulmalarında en sık anterior talofibular bağ zedelenir. Ön-lateral ayak bileği hassasiyeti bu bağ yaralanmasıyla uyumludur."
+  },
+  {
+    "id": 38,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 5,
+    "q": "Diz travması sonrası tibianın femura göre öne çekilmesi artmış bulunan hastada Lachman testi pozitiftir. Bu bulgu hangi yapının primer stabilizatör işlevinin kaybıyla en iyi açıklanır?",
+    "options": [
+      "Ligamentum collaterale tibiale",
+      "Ligamentum collaterale fibulare",
+      "Ligamentum cruciatum posterius",
+      "Meniscus medialis arka boynuzu",
+      "Ligamentum cruciatum anterius"
+    ],
+    "correct": 4,
+    "exp": "Ön çapraz bağ tibianın femura göre anterior translasyonunu sınırlar. Lachman testinde artmış anterior çekme bu bağın yırtığını düşündürür."
+  },
+  {
+    "id": 39,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 4,
+    "q": "Romatoid artritli bir hastada atlantoaksiyel instabilite gelişiyor ve densin posteriora kayması medulla spinalis basısı riski doğuruyor. Normalde densin arkaya yer değiştirmesini hangi yapı doğrudan engeller?",
+    "options": [
+      "Ligamentum flavum",
+      "Membrana tectoria",
+      "Ligamentum alare",
+      "Ligamentum transversum atlantis",
+      "Ligamentum nuchae"
+    ],
+    "correct": 3,
+    "exp": "Transvers atlas bağı dens axis'i atlasın anterior arkına karşı tutar. Bu bağın gevşemesi veya yırtılması densin posteriora kaymasına ve spinal kord basısına neden olabilir."
+  },
+  {
+    "id": 40,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 5,
+    "q": "Radikal mastektomi sonrası hasta kolunu 90 derecenin üzerine kaldırmakta zorlanıyor; skapulanın medial kenarı belirginleşiyor. Bu tablo hangi kasın denervasyonu ile en iyi açıklanır?",
+    "options": [
+      "M. serratus anterior",
+      "M. rhomboideus major",
+      "M. trapezius pars descendens",
+      "M. levator scapulae",
+      "M. pectoralis minor"
+    ],
+    "correct": 0,
+    "exp": "N. thoracicus longus hasarı serratus anterior paralizisine yol açar. Skapula kanatlanır ve glenoid yukarı döndürülemediği için kolun 90 derece üzeri abdüksiyonu bozulur."
+  },
+  {
+    "id": 41,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 4,
+    "q": "Femoral sinir blokajı sonrası hasta merdiven çıkarken dizini ekstansiyonda tutamıyor ve patella refleksi azalmış bulunuyor. Bu motor kayıp hangi kas grubunun işlev kaybını gösterir?",
+    "options": [
+      "Hamstring kasları",
+      "Adduktor kompartman kasları",
+      "M. quadriceps femoris",
+      "M. iliopsoas",
+      "Gluteal abduktorlar"
+    ],
+    "correct": 2,
+    "exp": "Femoral sinir quadriceps femoris'i innerve eder. Quadriceps diz ekstansiyonunun ana kasıdır ve patella refleksinin efferent kolunu oluşturur."
+  },
+  {
+    "id": 42,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 5,
+    "q": "Kompartman sendromu sonrası ön kol anterior interosseöz siniri etkilenen hastadan başparmak ve işaret parmağıyla 'OK' işareti yapması isteniyor; hasta yuvarlak yerine düz bir pinch oluşturuyor. Bu bulguda hangi kasların güçsüzlüğü belirleyicidir?",
+    "options": [
+      "M. flexor carpi radialis ve m. palmaris longus",
+      "M. pronator teres ve m. flexor carpi ulnaris",
+      "M. extensor pollicis longus ve m. extensor indicis",
+      "Lumbrikal kaslar ve interosseöz kaslar",
+      "M. flexor pollicis longus ve m. flexor digitorum profundus'un lateral yarısı"
+    ],
+    "correct": 4,
+    "exp": "Anterior interosseöz sinir flexor pollicis longus ile flexor digitorum profundus'un lateral yarısını innerve eder. Bu kaslar başparmak IP ve işaret DIP fleksiyonunu sağlayarak normal pinch hareketini oluşturur."
+  },
+  {
+    "id": 43,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 4,
+    "q": "Santral venöz kateterizasyon sonrası hastada pnömotoraks gelişiyor ve akciğer apeksinin klavikula üzerinde yükseldiği hatırlanıyor. Pleura kubbesi boyunda hangi anatomik sınır nedeniyle bu girişimlerde risk altındadır?",
+    "options": [
+      "Sternum açısının hemen arkasında sonlanması",
+      "Birinci kaburganın medial üçte birini aşarak kök boyuna uzanması",
+      "Diafragmanın santral tendonuna yapışması",
+      "Trakea bifurkasyonunun üstünde mediastene açılması",
+      "Alt lob fissürünün klavikula düzeyine kadar yükselmesi"
+    ],
+    "correct": 1,
+    "exp": "Servikal pleura ve akciğer apeksi birinci kaburganın üstüne, kök boyuna doğru uzanır. Subklavian girişimler sırasında bu uzanım pnömotoraks riskini artırır."
+  },
+  {
+    "id": 44,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 5,
+    "q": "Aspirasyon pnömonisi nedeniyle yatan sırtüstü hastada enfeksiyonun en olası yerleşimi araştırılıyor. Yerçekimi ve ana bronş anatomisi birlikte düşünüldüğünde aspiratın en sık hangi bronkopulmoner segmente ulaşması beklenir?",
+    "options": [
+      "Sol üst lob apikoposterior segment",
+      "Sağ üst lob anterior segment",
+      "Sol alt lob anterior bazal segment",
+      "Sağ alt lob superior segment",
+      "Lingula inferior segment"
+    ],
+    "correct": 3,
+    "exp": "Sağ ana bronş daha geniş, kısa ve vertikale yakındır. Sırtüstü pozisyonda aspirasyon materyali sıklıkla sağ alt lobun superior segmentine yönelir."
+  },
+  {
+    "id": 45,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 4,
+    "q": "Torasentez planlanan hastada iğnenin kaburganın alt kenarından değil üst kenarından ilerletilmesi isteniyor. Bu tercih hangi anatomik ilişkiyi korumak için yapılır?",
+    "options": [
+      "İnterkostal damar-sinir paketinin kaburga alt oluğunda seyretmesi",
+      "Parietal pleuranın yalnızca kaburga üst kenarına tutunması",
+      "İç interkostal kasların üst kenarda bulunmaması",
+      "Akciğer fissürlerinin kaburga alt kenarında seyretmesi",
+      "Sempatik zincirin kaburga üst kenarına komşu olması"
+    ],
+    "correct": 0,
+    "exp": "İnterkostal ven, arter ve sinir kaburganın alt kenarındaki sulcus costae içinde seyreder. İğnenin alt kaburganın üst kenarından ilerletilmesi nörovasküler paketi korur."
+  },
+  {
+    "id": 46,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 5,
+    "q": "Kalp cerrahisi sırasında sağ koroner arterin proksimal tıkanıklığı sonrası hastada AV blok gelişiyor. Bu iletim bozukluğu en sık hangi dalın kan akımının etkilenmesiyle açıklanır?",
+    "options": [
+      "Ramus interventricularis anterior",
+      "Ramus nodi atrioventricularis",
+      "Ramus marginalis sinister",
+      "Ramus circumflexus",
+      "Ramus diagonalis"
+    ],
+    "correct": 1,
+    "exp": "AV nod arterinin çoğu kişide sağ koroner arterden, genellikle crux cordis yakınında çıktığı kabul edilir. Sağ koroner arter tıkanıklıkları bu nedenle AV blokla ilişkili olabilir."
+  },
+  {
+    "id": 47,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 4,
+    "q": "Sol femoral ven kateterizasyonu sonrası psoas absesi ile birlikte uyluk medialinde venöz drenaj bozuluyor. İnguinal bölgede lateralden mediale doğru temel yapıların sıralanışı hangi seçenekte doğrudur?",
+    "options": [
+      "Ven, arter, sinir, lenfatik",
+      "Arter, ven, sinir, lenfatik",
+      "Sinir, ven, arter, lenfatik",
+      "Sinir, arter, ven, lenfatik",
+      "Lenfatik, ven, arter, sinir"
+    ],
+    "correct": 3,
+    "exp": "İnguinal bölgede lateralden mediale N-A-V-L dizilimi vardır; femoral sinir kılıf dışında daha lateralde, arter ve ven kılıf içinde, femoral kanal en medialdedir."
+  },
+  {
+    "id": 48,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 5,
+    "q": "Portal hipertansiyonlu hastada özofagus varis kanaması gelişiyor. Bu varislerin oluştuğu bölgede portal ve sistemik dolaşım arasındaki temel anastomoz hangi damarlar arasındadır?",
+    "options": [
+      "V. rectalis superior ile vv. rectales inferiores",
+      "Vv. paraumbilicales ile vv. epigastricae superficiales",
+      "V. gastrica sinistra ile vv. azygos sistemi",
+      "V. lienalis ile v. renalis sinistra",
+      "V. mesenterica superior ile v. cava inferior"
+    ],
+    "correct": 2,
+    "exp": "Alt özofagusta sol gastrik venin özofageal dalları portal sisteme, azygos sistemi sistemik dolaşıma drene olur. Portal hipertansiyonda bu anastomoz genişleyerek varis oluşturur."
+  },
+  {
+    "id": 49,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 4,
+    "q": "Safra kesesi ameliyatında Calot üçgeni disseke edilirken cerrah arter ligasyonu öncesi sınırları yeniden kontrol ediyor. Klasik hepatosistik üçgenin sınırları hangi yapılarla tanımlanır?",
+    "options": [
+      "Ductus cysticus, ductus hepaticus communis ve karaciğer inferior yüzü",
+      "Ductus choledochus, ductus pancreaticus ve duodenum ikinci kısmı",
+      "A. hepatica propria, v. porta ve ductus choledochus",
+      "Ductus cysticus, ductus choledochus ve a. cystica",
+      "Ligamentum teres hepatis, ductus venosus kalıntısı ve v. porta"
+    ],
+    "correct": 0,
+    "exp": "Hepatosistik üçgen ductus cysticus, ductus hepaticus communis ve karaciğerin inferior yüzüyle sınırlanır. A. cystica genellikle bu üçgen içinde bulunur."
+  },
+  {
+    "id": 50,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 5,
+    "q": "Posterior duodenal ülser perforasyonu sonrası masif üst gastrointestinal kanama gelişen hastada hangi damar en olası olarak erozyona uğramıştır?",
+    "options": [
+      "A. mesenterica superior",
+      "A. pancreaticoduodenalis inferior anterior",
+      "A. hepatica propria",
+      "A. gastrica dextra",
+      "A. gastroduodenalis"
+    ],
+    "correct": 4,
+    "exp": "Duodenum birinci kısmının posteriorunda gastroduodenal arter seyreder. Posterior duodenal ülserler bu arteri erode ederek ciddi kanamaya yol açabilir."
+  },
+  {
+    "id": 51,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 4,
+    "q": "Apandisit şüphesi olan hastada ağrı başlangıçta periumbilikal iken saatler içinde sağ alt kadrana lokalize oluyor. İlk ağrının periumbilikal hissedilmesi hangi embriyolojik-anatomik ilişkiyle en iyi açıklanır?",
+    "options": [
+      "Appendiksin son bağırsak kökenli olması",
+      "Visseral afferentlerin orta bağırsak düzeyi olan T10 segmentine eşlik etmesi",
+      "Parietal peritonun yalnızca n. femoralis ile innerve edilmesi",
+      "Çekumun retroperitoneal konumda sabit olması",
+      "Appendiks mezosunun portal venle doğrudan bağlantılı olması"
+    ],
+    "correct": 1,
+    "exp": "Appendiks orta bağırsak kökenlidir ve visseral afferentleri T10 düzeyine taşınır. Bu nedenle erken apandisit ağrısı periumbilikal algılanır; parietal periton irritasyonu lokalize sağ alt kadran ağrısı yapar."
+  },
+  {
+    "id": 52,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 5,
+    "q": "Pelvik cerrahi sırasında kadın hastada uterin arter bağlanırken üreter hasarı gelişiyor. Bu yaralanma en sık hangi anatomik komşuluk nedeniyle ortaya çıkar?",
+    "options": [
+      "Üreterin infundibulopelvik ligaman içinde over damarlarıyla birlikte seyretmesi",
+      "Üreterin mesane kubbesinde urachus ile çaprazlaşması",
+      "Üreterin round ligamanı yüzeyel olarak çaprazlaması",
+      "Üreterin obturator kanalda arterin üzerinden geçmesi",
+      "Üreterin serviks lateralinde uterin arterin altından geçmesi"
+    ],
+    "correct": 4,
+    "exp": "Üreter serviksin lateralinde, uterin arterin altından geçerek mesaneye ulaşır. Bu 'water under the bridge' ilişkisi histerektomi ve uterin arter ligasyonunda önemlidir."
+  },
+  {
+    "id": 53,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 4,
+    "q": "Sol varikoseli olan genç erkek hastada semptomların solda daha sık görülmesi hangi venöz drenaj ilişkisiyle en iyi açıklanır?",
+    "options": [
+      "Sol testiküler venin doğrudan inferior vena cavaya dar açıyla açılması",
+      "Sağ testiküler venin sol renal vene dik açıyla açılması",
+      "Sol testiküler venin sol renal vene dik açıya yakın şekilde drene olması",
+      "Pampiniform pleksusun sağda bulunmaması",
+      "Sol testiküler arterin venöz dönüşü kapakçıklarla engellemesi"
+    ],
+    "correct": 2,
+    "exp": "Sol testiküler ven sol renal vene dik açıya yakın drene olur ve sol renal ven basıncından etkilenebilir. Bu anatomik drenaj sol varikoselin daha sık görülmesine katkı sağlar."
+  },
+  {
+    "id": 54,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 5,
+    "q": "Böbrek taşı olan hastada ağrı kostovertebral açıdan kasığa ve skrotuma yayılıyor. Bu yansıyan ağrı hangi sinir-segment ilişkisiyle en iyi açıklanır?",
+    "options": [
+      "N. pudendusun S2-S4 lifleriyle dış genital deriye gitmesi",
+      "N. femoralisin L2-L4 lifleriyle ön uyluğa yayılması",
+      "N. obturatoriusun adduktor kompartmana dal vermesi",
+      "Üreter visseral afferentlerinin T11-L2 düzeylerine eşlik edip genitofemoral/ilioinguinal alanlarla örtüşmesi",
+      "N. gluteus superiorun L4-S1 kökenli olması"
+    ],
+    "correct": 3,
+    "exp": "Üreter ağrısı T11-L2 segmentlerine taşınır ve bu segmentlerin somatik alanları kasık, skrotum veya labiuma yansıyan ağrı oluşturabilir."
+  },
+  {
+    "id": 55,
+    "ders": "Anatomi",
+    "konu": "Nöroanatomi",
+    "diff": 5,
+    "q": "Hipofiz adenomu nedeniyle hastada bitemporal hemianopsi gelişiyor. Bu görme alanı kaybı hangi liflerin basıya uğramasıyla en iyi açıklanır?",
+    "options": [
+      "Nazal retinal liflerin kiazmada çaprazlaşan bölümü",
+      "Temporal retinal liflerin ipsilateral optik traktusa geçen bölümü",
+      "Maküler liflerin lateral genikulat cisme giden bölümü",
+      "Optik radyasyonun parietal lobdan geçen üst demeti",
+      "Oksipital korteksin primer görme alanı"
+    ],
+    "correct": 0,
+    "exp": "Nazal retina temporal görme alanını algılar ve lifleri optik kiazmada çaprazlaşır. Hipofiz adenomu bu lifleri basıya uğratarak bitemporal hemianopsi yapar."
+  },
+  {
+    "id": 56,
+    "ders": "Anatomi",
+    "konu": "Nöroanatomi",
+    "diff": 4,
+    "q": "Sağ capsula interna posterior bacağı infarktı geçiren hastada sol hemiparezi gelişiyor. Kortikospinal liflerin bu bölgede yoğun etkilenmesi hangi anatomik geçişle ilişkilidir?",
+    "options": [
+      "Liflerin corpus callosum genu üzerinden karşı hemisfere geçmesi",
+      "Piramidal liflerin thalamus ile nucleus lentiformis arasından aşağı inmesi",
+      "Motor liflerin cerebellar pedinkül içinde çaprazlaşması",
+      "Liflerin yalnızca anterior commissura içinde seyretmesi",
+      "Tractus rubrospinalisin medulla spinaliste kortikospinal traktusa katılması"
+    ],
+    "correct": 1,
+    "exp": "Kortikospinal lifler capsula interna posterior bacağından, thalamus ve nucleus lentiformis arasından geçer. Bu dar alandaki infarkt kontrlateral motor kayba yol açar."
+  },
+  {
+    "id": 57,
+    "ders": "Anatomi",
+    "konu": "Nöroanatomi",
+    "diff": 5,
+    "q": "Lateral medüller sendromlu hastada yüzün ipsilateral ağrı-ısı duyusu kaybolurken gövdenin karşı tarafında ağrı-ısı duyusu azalıyor. Bu çapraz bulgu hangi iki yolun birlikte etkilenmesiyle açıklanır?",
+    "options": [
+      "Fasciculus gracilis ve tractus corticospinalis anterior",
+      "Lemniscus medialis ve fasciculus cuneatus",
+      "Nucleus ambiguus ve tractus solitarius",
+      "Tractus trigeminothalamicus ventralis ve tractus spinocerebellaris posterior",
+      "Nucleus spinalis nervi trigemini ve tractus spinothalamicus"
+    ],
+    "correct": 4,
+    "exp": "Lateral medullada spinal trigeminal nükleus/yol ipsilateral yüz ağrı-ısı duyusunu, spinotalamik trakt ise kontrlateral gövde ağrı-ısı duyusunu taşır. Birlikte etkilenmeleri çapraz duyu kaybı oluşturur."
+  },
+  {
+    "id": 58,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 4,
+    "q": "Otitis media sonrası tat duyusunda azalma ve gözyaşı salgısında etkilenme gelişen hastada fasiyal sinirin temporal kemik içi dalı düşünülüyor. Dilin ön üçte ikisinden tat duyusunu hangi yapı taşır?",
+    "options": [
+      "N. petrosus major",
+      "Chorda tympani",
+      "N. lingualis'in yalnız genel duyu lifleri",
+      "N. glossopharyngeus",
+      "N. auriculotemporalis"
+    ],
+    "correct": 1,
+    "exp": "Chorda tympani fasiyal sinirin dalıdır ve dilin ön üçte ikisinin tat liflerini lingual sinire katılarak taşır. Orta kulaktan geçtiği için otitis media veya cerrahide etkilenebilir."
+  },
+  {
+    "id": 59,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 5,
+    "q": "Glokom tanılı hastada göz içi basıncını düşürmek için humor aquosus drenaj yolu hedefleniyor. Normal dolaşımda humor aquosus hangi sırayla venöz sisteme ulaşır?",
+    "options": [
+      "Arka kamara, pupil, ön kamara, trabeküler ağ, Schlemm kanalı",
+      "Ön kamara, pupil, arka kamara, vitreus, v. ophthalmica superior",
+      "Corpus vitreum, retina, koroid, vorteks venleri, sinus cavernosus",
+      "Lens kapsülü, zonula lifleri, corpus ciliare, ductus nasolacrimalis",
+      "Arka kamara, canalis hyaloideus, retina venleri, v. centralis retinae"
+    ],
+    "correct": 0,
+    "exp": "Humor aquosus corpus ciliare tarafından arka kamaraya salgılanır, pupilden ön kamaraya geçer, trabeküler ağ ve Schlemm kanalı üzerinden venöz sisteme drene olur."
+  },
+  {
+    "id": 60,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 5,
+    "q": "Akustik nörinom nedeniyle denge yakınmaları olan hastada vestibüler bilginin santral bağlantıları değerlendiriliyor. Baş hareketine karşı gözlerin hedefte kalmasını sağlayan vestibülo-oküler refleks hangi yol üzerinden ekstraoküler motor çekirdeklere ulaşır?",
+    "options": [
+      "Tractus spinothalamicus lateralis",
+      "Fasciculus gracilis",
+      "Lemniscus lateralis",
+      "Tractus corticobulbaris",
+      "Fasciculus longitudinalis medialis"
+    ],
+    "correct": 4,
+    "exp": "Vestibüler çekirdekler medial longitudinal fasciculus aracılığıyla III, IV ve VI. sinir çekirdekleriyle bağlantı kurar. Bu bağlantı vestibülo-oküler refleksin anatomik temelidir."
+  }
+]

@@ -1,0 +1,302 @@
+[
+  {
+    "id": 61,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "Batın BT'sinde karaciğer segment IV lezyonunun safra kesesine göre orta hatta, transvers kolona göre kraniale yakın olduğu raporlanıyor. Anatomik pozisyonda bu iki ilişkiyi tanımlamak için hangi terimler birlikte kullanılmalıdır?",
+    "options": ["Lateral ve inferior", "Medial ve superior", "Anterior ve distal", "Proksimal ve posterior", "Kaudal ve lateral"],
+    "correct": 1,
+    "exp": "Anatomik pozisyonda orta hatta yakınlık medial, baş tarafına yakınlık superior olarak adlandırılır. Distal-proksimal terimleri daha çok ekstremite segmentleri için kullanılır."
+  },
+  {
+    "id": 62,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "El avuç içleri öne bakacak şekilde ayakta duran bir hastada beşinci parmak tarafındaki önkol kesisi tarif ediliyor. Anatomik pozisyona göre bu kesi radius tarafına göre hangi konumdadır?",
+    "options": ["Lateral", "Proksimal", "Anterior", "Medial", "Superior"],
+    "correct": 3,
+    "exp": "Anatomik pozisyonda radius başparmak tarafında ve lateral, ulna beşinci parmak tarafında ve medialdedir. Bu nedenle ulnar taraftaki kesi radius tarafına göre medialdir."
+  },
+  {
+    "id": 63,
+    "ders": "Anatomi",
+    "konu": "Anatomiye Giriş ve Terminoloji",
+    "diff": 4,
+    "q": "Bir kadavrada gövdeyi üst ve alt bölümlere ayıran kesitte vertebra korpusu, kostalar ve sternum aynı düzlemde izleniyor. Bu kesit hangi anatomik düzleme karşılık gelir?",
+    "options": ["Transvers düzlem", "Sagittal düzlem", "Median düzlem", "Koronal düzlem", "Oblik düzlem"],
+    "correct": 0,
+    "exp": "Transvers düzlem vücudu superior ve inferior bölümlere ayırır. Sagittal düzlem sağ-sol, koronal düzlem anterior-posterior ayrım yapar."
+  },
+  {
+    "id": 64,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 4,
+    "q": "El üzerine düşme sonrası distal önkol ağrısı olan hastada distal parça dorsale yer değiştirmiştir. Muayenede lateral el bileğinde belirgin hassasiyet, başparmak tarafındaki çıkıntıya uyar. Bu çıkıntı hangi kemik yapıya aittir?",
+    "options": ["Ulna stiloid çıkıntısı", "Radius tuberositası", "Radius stiloid çıkıntısı", "Skaphoid tüberkülü", "Hamatum kancası"],
+    "correct": 2,
+    "exp": "Başparmak tarafındaki lateral el bileği çıkıntısı radiusun stiloid çıkıntısıdır. Colles kırığında distal radius etkilenir ve distal parça çoğunlukla dorsale yer değiştirir."
+  },
+  {
+    "id": 65,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 5,
+    "q": "Omuz travması sonrası deltoid kasında güçsüzlük ve omuz lateralinde duyu kaybı gelişen hastada posterior sirkumfleks humeral arter de risk altındadır. Bu nörovasküler paket humerusun hangi bölgesiyle en yakın ilişkilidir?",
+    "options": ["Caput humeri", "Tuberculum minus", "Crista tuberculi majoris", "Epicondylus medialis", "Collum chirurgicum humeri"],
+    "correct": 4,
+    "exp": "Aksiller sinir ve posterior sirkumfleks humeral arter quadrangular aralıktan geçerek humerusun cerrahi boynu çevresinde seyreder. Bu nedenle cerrahi boyun kırıkları deltoid fonksiyonunu etkileyebilir."
+  },
+  {
+    "id": 66,
+    "ders": "Anatomi",
+    "konu": "Kemikler",
+    "diff": 4,
+    "q": "Yaşlı bir hastada düşme sonrası intrakapsüler kalça kırığı saptanıyor ve femur başı avasküler nekrozu açısından yakın izlem planlanıyor. Bu komplikasyonla en çok ilişkili kırık hattı hangi kemik bölgededir?",
+    "options": ["Trochanter major", "Collum femoris", "Linea aspera", "Trochanter minor", "Condylus medialis femoris"],
+    "correct": 1,
+    "exp": "Femur boynu intrakapsüler kırıkları, femur başına giden retinaküler arter dallarını bozabilir. Bu nedenle collum femoris kırıkları avasküler nekroz açısından önemlidir."
+  },
+  {
+    "id": 67,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 4,
+    "q": "Araç içi kazada fleksiyondaki diz üzerine önden darbe alan hastada tibia femura göre posteriora yer değiştirmiştir. Bu bulguda primer gerilen veya kopan eklem içi bağ hangisidir?",
+    "options": ["Ligamentum collaterale tibiale", "Ligamentum collaterale fibulare", "Ligamentum cruciatum anterius", "Ligamentum cruciatum posterius", "Ligamentum patellae"],
+    "correct": 3,
+    "exp": "Fleksiyondaki dizde tibianın posteriora itilmesi posterior çapraz bağı zorlar. PCL tibianın femura göre arkaya kaymasını sınırlayan temel bağdır."
+  },
+  {
+    "id": 68,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 4,
+    "q": "Posterior çıkığında trakea ve büyük damar basısı oluşturabilen, intraartiküler diski bulunan ve üst ekstremiteyi aksiyal iskelete bağlayan tek gerçek eklem hangisidir?",
+    "options": ["Articulatio sternoclavicularis", "Articulatio acromioclavicularis", "Articulatio humeri", "Articulatio costovertebralis", "Articulatio radioulnaris proximalis"],
+    "correct": 0,
+    "exp": "Sternoklaviküler eklem üst ekstremitenin aksiyal iskeletle kemiksel bağlantısını sağlar. Posterior çıkığı mediastinal yapılara bası yapabileceği için klinik açıdan önemlidir."
+  },
+  {
+    "id": 69,
+    "ders": "Anatomi",
+    "konu": "Eklemler",
+    "diff": 5,
+    "q": "Tekrarlayan anterior omuz çıkığı olan genç sporcuda glenoid labrumun anteroinferior bölgesi hasarlıdır. Bu eklemde çıkığı en çok provoke eden kol pozisyonu hangisidir?",
+    "options": ["Adduksiyon ve iç rotasyon", "Fleksiyon ve pronasyon", "Abduksiyon ve dış rotasyon", "Ekstansiyon ve supinasyon", "Depresyon ve retraksiyon"],
+    "correct": 2,
+    "exp": "Glenohumeral eklem abduksiyon ve dış rotasyonda anteroinferior kapsül-labrum kompleksine yük bindirir. Anterior omuz çıkıkları sıklıkla bu pozisyonda gelişir."
+  },
+  {
+    "id": 70,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 4,
+    "q": "Humerus cisim kırığı sonrası el bileği düşüklüğü gelişen hastada parmak ve el bileği ekstansiyonu belirgin zayıftır. Hangi kas grubu bu bulgunun ana kaynağıdır?",
+    "options": ["Önkol anterior yüzey fleksör-pronator kasları", "Tenar kaslar", "Hipotenar kaslar", "Kol anterior kompartıman kasları", "Önkol posterior yüzey ekstansör-supinator kasları"],
+    "correct": 4,
+    "exp": "Radial sinir humerus cismiyle yakın seyreder ve önkol posterior kompartımanındaki ekstansör-supinator kasları innerve eder. Hasarında el bileği ve parmak ekstansiyonu zayıflar."
+  },
+  {
+    "id": 71,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 4,
+    "q": "Kalça bölgesine intramusküler enjeksiyon sonrası hastanın tek ayak üzerinde dururken karşı pelvisinin aşağı düştüğü görülüyor. Bu yürüyüş bozukluğunda hangi kasların yetersizliği en olasıdır?",
+    "options": ["Gluteus maximus ve piriformis", "Gluteus medius ve gluteus minimus", "Adductor longus ve adductor brevis", "Iliopsoas ve pectineus", "Biceps femoris ve semitendinosus"],
+    "correct": 1,
+    "exp": "Gluteus medius ve minimus, stance fazında pelvisin karşı tarafının düşmesini engeller. Superior gluteal sinir hasarında Trendelenburg bulgusu gelişir."
+  },
+  {
+    "id": 72,
+    "ders": "Anatomi",
+    "konu": "Kaslar",
+    "diff": 5,
+    "q": "Boyun cerrahisi sonrası nazal regürjitasyon ve yutma sırasında yumuşak damakta yükselme kusuru gelişen hastada uvula sağlam tarafa deviye oluyor. Bu işlevi en çok sağlayan kas hangisidir?",
+    "options": ["Tensor veli palatini", "Palatoglossus", "Styloglossus", "Levator veli palatini", "Geniohyoideus"],
+    "correct": 3,
+    "exp": "Levator veli palatini yumuşak damağı yükseltir ve vagus siniriyle innerve edilir. Tensor veli palatini mandibular sinirle innerve edilir ve temel olarak damak gerilimini sağlar."
+  },
+  {
+    "id": 73,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 4,
+    "q": "Plevral efüzyon nedeniyle torasentez yapılacak hastada iğnenin kaburga aralığında damar-sinir paketinden uzak ilerletilmesi planlanıyor. İğne hangi seviyeden geçirilirse interkostal ana damar-sinir paketi en iyi korunur?",
+    "options": ["Alt kaburganın üst kenarından", "Üst kaburganın alt kenarından", "İnterkostal aralığın tam ortasından", "Alt kaburganın alt kenarından", "Kostokondral bileşkenin medialinden"],
+    "correct": 0,
+    "exp": "İnterkostal ven, arter ve sinir üstteki kaburganın alt kenarındaki sulkusta seyreder. Bu yüzden torasentezde iğne alttaki kaburganın üst kenarından ilerletilir."
+  },
+  {
+    "id": 74,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 4,
+    "q": "Dik pozisyonda fındık aspire eden erişkin hastada bronkoskopide yabancı cisim sağ ana bronşta izleniyor. Hangi anatomik özellik bu yerleşimi en iyi açıklar?",
+    "options": ["Sağ ana bronşun daha uzun ve daha yatay olması", "Sol ana bronşun çapının daha geniş olması", "Sağ ana bronşun daha kısa, geniş ve vertikal olması", "Sol ana bronşun trakea ile aynı doğrultuda olması", "Sağ üst lob bronşunun trakeadan önce ayrılması"],
+    "correct": 2,
+    "exp": "Sağ ana bronş sol tarafa göre daha kısa, daha geniş ve daha vertikal seyreder. Aspire edilen cisimler bu nedenle erişkinde daha sık sağ bronş ağacına kaçar."
+  },
+  {
+    "id": 75,
+    "ders": "Anatomi",
+    "konu": "Solunum",
+    "diff": 5,
+    "q": "Tiroid cerrahisi sonrası hastada belirgin ses kısıklığı ve aspirasyon eğilimi gelişiyor; krikotiroid kas fonksiyonu korunmuş görünüyor. Hangi kas grubu bu tabloya en çok katkı verir?",
+    "options": ["Sadece ekstrensek dil kasları", "Sadece suprahyoid kaslar", "Diyaframın krural lifleri", "Pektoralis minör ve serratus anterior", "Krikotiroid dışındaki intrinsik larenks kasları"],
+    "correct": 4,
+    "exp": "Rekürren larengeal sinir krikotiroid dışındaki intrinsik larenks kaslarını innerve eder. Tiroid cerrahisinde hasarı ses kısıklığı ve glottik kapanma kusuruna bağlı aspirasyon riski oluşturur."
+  },
+  {
+    "id": 76,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 5,
+    "q": "Koroner anjiyografide sağ dominant dolaşıma sahip hastada posterior interventriküler arter tıkanıklığı saptanıyor. Bu hastada tıkanıklığın kaynaklandığı ana koroner damar hangisidir?",
+    "options": ["Ramus circumflexus", "Arteria coronaria dextra", "Ramus interventricularis anterior", "Arteria thoracica interna", "Arteria coronaria sinistra ana gövdesi"],
+    "correct": 1,
+    "exp": "Sağ dominant koroner dolaşımda posterior interventriküler arter genellikle sağ koroner arterden çıkar. Sol dominant dolaşımda ise sirkumfleks arterden kaynaklanabilir."
+  },
+  {
+    "id": 77,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 4,
+    "q": "Koroner baypas için sternumun her iki yanında, kostal kıkırdakların derininde seyreden ve subklavyen arterden çıkan greft damarı hazırlanıyor. Bu damar hangisidir?",
+    "options": ["Arteria epigastrica inferior", "Arteria intercostalis posterior", "Arteria axillaris", "Arteria thoracica interna", "Arteria thoracoacromialis"],
+    "correct": 3,
+    "exp": "İnternal torasik arter subklavyen arterin dalıdır ve sternumun lateralinde aşağı seyreder. Koroner baypasta özellikle LAD grefti için sık kullanılır."
+  },
+  {
+    "id": 78,
+    "ders": "Anatomi",
+    "konu": "Dolaşım",
+    "diff": 4,
+    "q": "Femoral kateterizasyon yapılacak hastada nabız inguinal ligamanın hemen altında palpe ediliyor. Femoral üçgende damarsal yapılar açısından hangi ilişki doğrudur?",
+    "options": ["Femoral ven, femoral arterin medialindedir", "Femoral sinir, femoral venin medialindedir", "Femoral arter, femoral sinirin lateralindedir", "Femoral ven, femoral kanalın lateralindedir", "Femoral arter, lacuna musculorumdan geçer"],
+    "correct": 0,
+    "exp": "Femoral üçgende lateralden mediale sinir, arter, ven ve lenfatik kanal sıralanır. Bu nedenle femoral ven arterin medialinde yer alır."
+  },
+  {
+    "id": 79,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 5,
+    "q": "Pankreas başı kitlesi olan hastada ağrısız sarılık ve safra yollarında dilatasyon gelişiyor. Kitlenin bası yaptığı yapı pankreas başının hangi komşuluğunda seyreder?",
+    "options": ["Pankreas kuyruğunun anteriorunda arteria lienalis", "Midenin küçük kurvaturunda nervus vagus", "Pankreas başının posterior oluğunda ductus choledochus", "Duodenum dördüncü kısmının önünde vena porta", "Transvers kolon mezosunun içinde ductus pancreaticus accessorius"],
+    "correct": 2,
+    "exp": "Ductus choledochus pankreas başının posterior yüzündeki olukta veya pankreas dokusu içinde seyreder. Pankreas başı tümörlerinde bu nedenle obstrüktif sarılık gelişebilir."
+  },
+  {
+    "id": 80,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 4,
+    "q": "Periumbilikal başlayan ağrısı sağ alt kadrana yerleşen hastada appendisit düşünülüyor. Cerrah appendiks tabanını bulmak için hangi anatomik işareti izlemelidir?",
+    "options": ["Omentum minusun serbest kenarı", "Plica semilunaris duodeni", "Treitz ligamanı", "Haustra sınırındaki epiploik appendiksler", "Çekum üzerindeki üç taenia coli birleşimi"],
+    "correct": 4,
+    "exp": "Appendiks tabanı çekumda üç taenia colinin birleştiği noktadadır. Bu ilişki, appendiksin değişken pozisyonuna rağmen tabanın bulunmasını sağlar."
+  },
+  {
+    "id": 81,
+    "ders": "Anatomi",
+    "konu": "Sindirim",
+    "diff": 5,
+    "q": "Posterior mide ülseri olan hastada ani üst gastrointestinal kanama gelişiyor ve kanamanın küçük keseye açılan komşu arterden kaynaklandığı düşünülüyor. Hangi arter en olasıdır?",
+    "options": ["Arteria gastrica dextra", "Arteria lienalis", "Arteria mesenterica inferior", "Arteria ileocolica", "Arteria cystica"],
+    "correct": 1,
+    "exp": "Midenin posterior duvarı küçük kese aracılığıyla pankreas ve splenik arterle komşudur. Posterior penetran ülserler splenik arteri erode ederek ciddi kanama yapabilir."
+  },
+  {
+    "id": 82,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 5,
+    "q": "Histerektomi sırasında serviks lateralinde üreter yaralanmasını önlemek için uterin arter bağlanırken dikkat ediliyor. Bu bölgede üreter hangi damar ilişkisi nedeniyle risk altındadır?",
+    "options": ["Ovaryan arterin üzerinden geçmesi", "İnternal iliak venin lateralinde yükselmesi", "Uterin venin içinden geçmesi", "Uterin arterin altından geçmesi", "External iliak arterin önünden oblik geçmesi"],
+    "correct": 3,
+    "exp": "Üreter servikse yakın bölgede uterin arterin altından geçer. Klinik hatırlatmayla su köprünün altından geçer; bu ilişki histerektomide üreter yaralanması riskini açıklar."
+  },
+  {
+    "id": 83,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 4,
+    "q": "Radikal prostatektomi sırasında mesane tabanına yaklaşılırken üreterin üstünden geçerek seminal veziküle yönelen kalın duvarlı tübüler yapı görülüyor. Bu yapı hangisidir?",
+    "options": ["Ductus deferens", "Ductus ejaculatorius", "Urachus", "Ductus epididymidis", "Urethra prostatica"],
+    "correct": 0,
+    "exp": "Ductus deferens pelviste üreterin üzerinden geçerek seminal vezikül yakınında ampulla yapar ve ejakülatuvar kanala katılır. Kalın musküler duvarı cerrahide ayırt ettiricidir."
+  },
+  {
+    "id": 84,
+    "ders": "Anatomi",
+    "konu": "Ürogenital",
+    "diff": 4,
+    "q": "Yan ağrısı kasığa ve skrotuma yayılan hastada taşın mesaneye giriş düzeyinde takıldığı görülüyor. Üreterin hangi anatomik daralma noktası bu tabloya karşılık gelir?",
+    "options": ["Pelviüreterik bileşke", "Üreterin iliak damarları çaprazladığı nokta", "Üreterovezikal bileşke", "Renal pelvisin kalikslerle birleşimi", "Üreterin gonadal damarlarla kesişimi"],
+    "correct": 2,
+    "exp": "Üreter taşları en sık fizyolojik daralma noktalarında takılır. Mesaneye giriş düzeyi üreterovezikal bileşkedir ve distal üreter ağrısı kasık-genital bölgeye yansıyabilir."
+  },
+  {
+    "id": 85,
+    "ders": "Anatomi",
+    "konu": "Nöroanatomi",
+    "diff": 5,
+    "q": "Ani başlayan karşı taraf hemiparezisi ve aynı taraf dil deviasyonu olan hastada medial medulla infarktı düşünülüyor. Bu sendromda en olası damar tutulumu hangisidir?",
+    "options": ["Arteria cerebelli inferior posterior", "Arteria cerebelli inferior anterior", "Arteria cerebri media", "Arteria communicans posterior", "Arteria spinalis anterior"],
+    "correct": 4,
+    "exp": "Medial medulla; piramidal trakt, medial lemniskus ve hipoglossal lifleri içerir. Bu bölge anterior spinal arter dallarıyla beslendiği için oklüzyonunda medial meduller sendrom gelişebilir."
+  },
+  {
+    "id": 86,
+    "ders": "Anatomi",
+    "konu": "Nöroanatomi",
+    "diff": 4,
+    "q": "Kavernöz sinüs trombozu olan hastada sağ gözünü dışa baktıramama ve horizontal diplopi gelişiyor. İnternal karotid arterle sinüs içinde yakın seyri nedeniyle hangi kraniyal sinir en olası etkilenmiştir?",
+    "options": ["Nervus trochlearis", "Nervus abducens", "Nervus oculomotorius", "Nervus opticus", "Nervus ophthalmicus"],
+    "correct": 1,
+    "exp": "Abducens siniri kavernöz sinüsün içinde internal karotid arterle birlikte seyreder ve lateral rektusu innerve eder. Hasarında göz abduksiyonu bozulur."
+  },
+  {
+    "id": 87,
+    "ders": "Anatomi",
+    "konu": "Nöroanatomi",
+    "diff": 5,
+    "q": "Sağ T10 hemikord lezyonu olan hastada aynı tarafta motor ve derin duyu kaybı beklenirken ağrı-ısı duyusu için hangi bulgu daha olasıdır?",
+    "options": ["Sağ tarafta yalnız T10 dermatomunda ağrı-ısı artışı", "Her iki tarafta sadece vibrasyon kaybı", "Sağ tarafta yüz ve gövdede ağrı-ısı kaybı", "Sol tarafta lezyonun birkaç segment altından başlayan ağrı-ısı kaybı", "Sol tarafta sadece propriosepsiyon kaybı"],
+    "correct": 3,
+    "exp": "Spinotalamik lifler omurilikte birkaç segment içinde çapraz yaparak karşı taraftan yükselir. Sağ hemikord lezyonunda sol tarafta lezyonun biraz altından başlayan ağrı-ısı kaybı beklenir."
+  },
+  {
+    "id": 88,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 4,
+    "q": "Açık açılı glokomu olan hastada aköz hümör drenajının bozulduğu yapı hedeflenerek tedavi planlanıyor. Aköz hümör normalde ön kamaradan hangi yolla venöz sisteme geçer?",
+    "options": ["Trabeküler ağ ve Schlemm kanalı", "Lens kapsülü ve hyaloid kanal", "Retinal venler ve optik disk", "Koroid pleksus ve vorteks venleri", "Nazolakrimal kanal ve inferior meatus"],
+    "correct": 0,
+    "exp": "Aköz hümör arka kamaradan pupilla aracılığıyla ön kamaraya geçer, iridokorneal açıda trabeküler ağdan Schlemm kanalına drene olur. Bu yol glokom fizyopatolojisinde kritiktir."
+  },
+  {
+    "id": 89,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 4,
+    "q": "Sol kulakta sensörinöral işitme kaybı olan hastada Weber testi sağa lateralize oluyor, Rinne testi iki kulakta da pozitiftir. Hangi yapı düzeyindeki hasar bu paterni en iyi açıklar?",
+    "options": ["Sol dış kulak yolu", "Sağ stapes tabanı", "Sol koklea veya vestibulokoklear sinir", "Sağ tuba auditiva", "Sol membrana tympani"],
+    "correct": 2,
+    "exp": "Sensörinöral kayıpta Weber sağlam kulağa lateralize olur ve Rinne genellikle pozitif kalır. Sol koklea veya vestibulokoklear sinir hasarı bu paterne uyar."
+  },
+  {
+    "id": 90,
+    "ders": "Anatomi",
+    "konu": "Duyu",
+    "diff": 5,
+    "q": "Orbita taban kırığı sonrası hastada üst bakışta diplopi ve üst dudak-yanak bölgesinde hipoestezi gelişiyor. Hangi orbital duvar ve komşu sinir ilişkisi bu bulguları açıklar?",
+    "options": ["Medial duvar ve nervus ethmoidalis anterior", "Lateral duvar ve nervus zygomaticus", "Tavan ve nervus frontalis", "Orbita apeksi ve nervus opticus", "Taban ve nervus infraorbitalis"],
+    "correct": 4,
+    "exp": "Blow-out kırıklarında orbita tabanı, özellikle maksilla çatısı etkilenir; inferior rektus sıkışması üst bakışta diplopi yapabilir. Infraorbital sinir tabanla komşu olduğundan yanak ve üst dudakta hipoestezi gelişir."
+  }
+]
