@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0b1220"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1350" fill="url(#bg)"/>
+  <rect x="48" y="48" width="984" height="1254" rx="28" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <rect x="48" y="48" width="984" height="6" rx="3" fill="#10b981"/>
+  <text x="56" y="104" fill="#10b981" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="800"><tspan x="56" dy="0">TUSOSKOP</tspan></text>
+<text x="56" y="138" fill="#94a3b8" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600"><tspan x="56" dy="0">Konu Testi</tspan></text>
+<text x="56" y="240" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="44" font-weight="700"><tspan x="56" dy="0">Zayıf konunu hedefle, hızlı ilerle.</tspan></text>
+<text x="56" y="345.2" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="32" font-weight="500"><tspan x="56" dy="0">Ders ve konu seçerek odaklı test çöz. Yanlışları</tspan><tspan x="56" dy="44">otomatik tekrar et.</tspan></text>
+
+  <circle cx="996" cy="92" r="28" fill="#10b981" opacity="0.18"/>
+  <text x="996" y="100" text-anchor="middle" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="800">T</text>
+
+  <text x="56" y="1298" fill="#10b981" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700"><tspan x="56" dy="0">tusoskop.com</tspan></text>
+  
+  <circle cx="1008" cy="1290" r="18" fill="#10b981" opacity="0.25"/>
+  <text x="1008" y="1296" text-anchor="middle" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="800">T</text>
+</svg>

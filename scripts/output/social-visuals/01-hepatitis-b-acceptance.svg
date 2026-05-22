@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0b1220"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <rect x="48" y="48" width="984" height="984" rx="28" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <rect x="48" y="48" width="984" height="6" rx="3" fill="#10b981"/>
+  <text x="56" y="88" fill="#10b981" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="800"><tspan x="56" dy="0">GÜNÜN TUS SORUSU</tspan></text>
+<text x="56" y="126" fill="#94a3b8" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600"><tspan x="56" dy="0">Dahiliye · Hepatoloji</tspan></text>
+<text x="56" y="204" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="40" font-weight="600"><tspan x="56" dy="0">Kronik hepatit B izlenen hastada HBeAg</tspan><tspan x="56" dy="55">pozitif ve HBV DNA çok yüksek seviyede</tspan><tspan x="56" dy="55">saptanıyor. Aşağıdaki ifadelerden hangisi</tspan><tspan x="56" dy="55">yanlıştır?</tspan></text>
+<rect x="56" y="402.79999999999995" width="968" height="61" rx="14" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+<circle cx="84" cy="433.29999999999995" r="18" fill="#10b981" opacity="0.22"/>
+<text x="84" y="440.29999999999995" text-anchor="middle" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="800">A</text>
+<text x="112" y="448.79999999999995" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="500"><tspan x="112" dy="0">Nükleoz(t)id analog tedavisi önerilir.</tspan></text>
+<rect x="56" y="473.79999999999995" width="968" height="61" rx="14" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+<circle cx="84" cy="504.29999999999995" r="18" fill="#10b981" opacity="0.22"/>
+<text x="84" y="511.29999999999995" text-anchor="middle" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="800">B</text>
+<text x="112" y="519.8" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="500"><tspan x="112" dy="0">Entekavir ilk basamak tedavide kullanılabilir.</tspan></text>
+<rect x="56" y="544.8" width="968" height="61" rx="14" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+<circle cx="84" cy="575.3" r="18" fill="#10b981" opacity="0.22"/>
+<text x="84" y="582.3" text-anchor="middle" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="800">C</text>
+<text x="112" y="590.8" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="500"><tspan x="112" dy="0">Pegile interferon alfa tedavisi kesin kontrendikedir.</tspan></text>
+<rect x="56" y="615.8" width="968" height="61" rx="14" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+<circle cx="84" cy="646.3" r="18" fill="#10b981" opacity="0.22"/>
+<text x="84" y="653.3" text-anchor="middle" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="800">D</text>
+<text x="112" y="661.8" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="500"><tspan x="112" dy="0">Karaciğer biyopsisi tedavi kararı için şarttır.</tspan></text>
+<rect x="56" y="686.8" width="968" height="61" rx="14" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+<circle cx="84" cy="717.3" r="18" fill="#10b981" opacity="0.22"/>
+<text x="84" y="724.3" text-anchor="middle" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="800">E</text>
+<text x="112" y="732.8" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="500"><tspan x="112" dy="0">Tedavi yanıtı ALT ve HBV DNA ile izlenir.</tspan></text>
+
+  <circle cx="996" cy="92" r="28" fill="#10b981" opacity="0.18"/>
+  <text x="996" y="100" text-anchor="middle" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="800">T</text>
+
+  <text x="56" y="1028" fill="#10b981" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700"><tspan x="56" dy="0">Cevabını yorumlara yaz</tspan></text>
+  <text x="540" y="1028" fill="#94a3b8" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" text-anchor="middle"><tspan x="540" dy="0">Tusoskop ile daha fazla soru çöz.</tspan></text>
+  <circle cx="1008" cy="1020" r="18" fill="#10b981" opacity="0.25"/>
+  <text x="1008" y="1026" text-anchor="middle" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="800">T</text>
+</svg>

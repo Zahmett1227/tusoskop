@@ -7,16 +7,39 @@ import {
   MOTIVATION_LINES,
 } from "../data/socialContentRules.js";
 
-const QUESTION_PREVIEW_MAX = 420;
-
-function trimQuestionForPost(q) {
-  const text = String(q || "").trim();
-  if (text.length <= QUESTION_PREVIEW_MAX) return text;
-  return `${text.slice(0, QUESTION_PREVIEW_MAX - 1).trim()}…`;
-}
-
 function optionLabel(index) {
   return String.fromCharCode(65 + index);
+}
+
+function buildQuestionOptions(question) {
+  return question.options.map((opt, i) => ({
+    letter: optionLabel(i),
+    text: String(opt).trim(),
+  }));
+}
+
+function buildQuestionVisualSpec(question) {
+  return {
+    templateType: "question_post",
+    format: "1080x1080",
+    badge: "GÜNÜN TUS SORUSU",
+    metaLine: `${question.ders} · ${question.konu}`,
+    questionText: String(question.q || "").trim(),
+    options: buildQuestionOptions(question),
+    footerLeft: "Cevabını yorumlara yaz",
+    footerCenter: "Tusoskop ile daha fazla soru çöz.",
+  };
+}
+
+function buildQuestionStorySpec(question) {
+  return {
+    templateType: "story_question",
+    format: "1080x1920",
+    badge: "BUGÜNÜN SORUSU",
+    metaLine: `${question.ders} · ${question.konu}`,
+    questionText: String(question.q || "").trim(),
+    footer: "Yorumlara cevap yaz →",
+  };
 }
 
 /**
@@ -48,7 +71,7 @@ function generateDailyQuestion(question, rng) {
   if (!question) {
     throw new Error("Günün sorusu için soru bankasından kayıt gerekli.");
   }
-  const qPreview = trimQuestionForPost(question.q);
+  const qFull = String(question.q || "").trim();
   const optionsText = question.options
     .map((opt, i) => `${optionLabel(i)}) ${opt}`)
     .join("\n");
@@ -65,12 +88,12 @@ function generateDailyQuestion(question, rng) {
   const caption = [
     intro,
     "",
-    qPreview,
+    qFull,
     "",
     optionsText,
     "",
     "Cevabını yorumlara yaz; yarın açıklamayı paylaşırız.",
-    "Benzer sorular için Tusoskop’ta çalışmaya devam et.",
+    "Benzer sorular için Tusoskop'ta çalışmaya devam et.",
     "",
     pickHashtags({ ders: question.ders, max: SOCIAL_CONFIG.maxHashtags }).join(" "),
   ].join("\n");
@@ -89,19 +112,8 @@ function generateDailyQuestion(question, rng) {
       explanation: question.exp,
       revealCaption: buildAnswerRevealCaption(question),
     },
-    visual: {
-      headline: "Günün TUS Sorusu",
-      subline: `${question.ders} · ${question.konu}`,
-      body: qPreview,
-      footer: "Cevabı yorumlara yaz",
-      format: "1080x1080",
-    },
-    storyVisual: {
-      headline: "Bugünün sorusu",
-      body: qPreview.slice(0, 280),
-      footer: "Yorumlara cevap yaz",
-      format: "1080x1920",
-    },
+    visual: buildQuestionVisualSpec(question),
+    storyVisual: buildQuestionStorySpec(question),
   };
 }
 
@@ -120,6 +132,7 @@ function buildAnswerRevealCaption(question) {
 
 function generateAnswerReveal(question) {
   if (!question) throw new Error("Cevap paylaşımı için kaynak soru gerekli.");
+  const letter = optionLabel(question.correct);
   return {
     type: SOCIAL_CONTENT_TYPES.ANSWER_REVEAL,
     title: "Cevap Paylaşımı",
@@ -127,11 +140,11 @@ function generateAnswerReveal(question) {
     hashtags: pickHashtags({ ders: question.ders }),
     sourceQuestionId: question.id,
     visual: {
-      headline: "Cevap",
-      subline: question.ders,
-      body: `Doğru cevap: ${optionLabel(question.correct)}) ${question.options[question.correct]}`,
-      footer: question.exp.slice(0, 120),
+      templateType: "answer_post",
       format: "1080x1080",
+      subline: `${question.ders} · dünün sorusu`,
+      answerLine: `Doğru cevap: ${letter}) ${question.options[question.correct]}`,
+      explanation: String(question.exp || "").trim(),
     },
   };
 }
@@ -141,13 +154,18 @@ function generateMiniTip(rng) {
   const template = pickOne(topic.templates, rng);
   const fillers = miniTipFillers(rng);
   const body = fillTemplate(template, fillers);
+  const bullets = body
+    .split(/[.!?]\s+/)
+    .map((s) => s.trim())
+    .filter((s) => s.length > 12)
+    .slice(0, 4);
 
   const caption = [
     "1 dakikalık TUS notu",
     "",
     body,
     "",
-    "Benzer sorular için Tusoskop’ta konu testi çözebilirsin.",
+    "Benzer sorular için Tusoskop'ta konu testi çözebilirsin.",
     "",
     pickHashtags({ ders: fillers.topic, extra: ["#TUSBilgi"] }).join(" "),
   ].join("\n");
@@ -158,17 +176,20 @@ function generateMiniTip(rng) {
     caption,
     hashtags: pickHashtags({ ders: fillers.topic, extra: ["#TUSBilgi"] }),
     visual: {
+      templateType: "mini_info_post",
+      format: "1080x1080",
       headline: "Mini TUS Bilgisi",
       subline: topic.title,
       body,
+      bullets: bullets.length >= 2 ? bullets : [],
       footer: "Tusoskop · tusoskop.com",
-      format: "1080x1080",
     },
     storyVisual: {
-      headline: "1 dk TUS notu",
-      body,
-      footer: "Kaydet · tekrar et",
+      templateType: "story_question",
       format: "1080x1920",
+      badge: "1 DK TUS NOTU",
+      questionText: body,
+      footer: "Kaydet · tekrar et",
     },
   };
 }
@@ -230,11 +251,13 @@ function generateFeaturePromo(feature, rng) {
     hashtags: pickHashtags({ extra: ["#TUSÇalışması"] }),
     featureId: f.id,
     visual: {
-      headline: "Tusoskop",
-      subline: f.title,
-      body: `${f.hook}\n\n${f.body}`,
-      footer: f.cta,
+      templateType: "feature_post",
       format: "1080x1350",
+      featureTitle: f.title,
+      hook: f.hook,
+      body: f.body,
+      footer: f.cta,
+      cta: f.cta,
     },
   };
 }
@@ -247,10 +270,11 @@ function generateMotivation(rng) {
     caption: [line, "", pickHashtags().join(" ")].join("\n"),
     hashtags: pickHashtags(),
     visual: {
+      templateType: "mini_info_post",
+      format: "1080x1080",
       headline: "TUS yolculuğu",
       body: line,
       footer: "Tusoskop",
-      format: "1080x1080",
     },
   };
 }
@@ -276,10 +300,11 @@ function generateStory(planItem, rng) {
       quizIdea: "Mini TUS: ACE inhibitörü yan etkisi?",
     },
     storyVisual: {
-      headline: "Tusoskop",
-      body: pollQuestion,
-      footer: "Ankete katıl",
+      templateType: "story_question",
       format: "1080x1920",
+      badge: "TUSOSKOP",
+      questionText: pollQuestion,
+      footer: "Ankete katıl",
     },
   };
 }
@@ -292,4 +317,8 @@ function fillTemplate(tpl, data) {
   return tpl.replace(/\{(\w+)\}/g, (_, key) => data[key] || "");
 }
 
-export { trimQuestionForPost, optionLabel };
+export {
+  buildQuestionVisualSpec,
+  buildQuestionOptions,
+  optionLabel,
+};

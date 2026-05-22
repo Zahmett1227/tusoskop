@@ -128,7 +128,8 @@ export default function SocialMediaTab({ currentUser }) {
   const handleRegenerateVisual = async (item) => {
     setBusy(true);
     try {
-      await regenerateVisual(item.id, item, currentUser.uid);
+      const questions = await loadAllQuestions();
+      await regenerateVisual(item.id, item, currentUser.uid, questions);
       await refresh();
       setMessage("Görsel yeniden üretildi.");
     } finally {

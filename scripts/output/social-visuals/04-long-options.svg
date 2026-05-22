@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0b1220"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <rect x="48" y="48" width="984" height="984" rx="28" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <rect x="48" y="48" width="984" height="6" rx="3" fill="#10b981"/>
+  <text x="56" y="88" fill="#10b981" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="800"><tspan x="56" dy="0">GÜNÜN TUS SORUSU</tspan></text>
+<text x="56" y="126" fill="#94a3b8" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600"><tspan x="56" dy="0">Pediatri · Neonatoloji</tspan></text>
+<text x="56" y="204" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="40" font-weight="600"><tspan x="56" dy="0">Prematü bebekte nekrotizan enterokolit</tspan><tspan x="56" dy="55">gelişiminde en önemli risk faktörü</tspan><tspan x="56" dy="55">hangisidir?</tspan></text>
+<rect x="56" y="347.6" width="968" height="61" rx="14" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+<circle cx="84" cy="378.1" r="18" fill="#10b981" opacity="0.22"/>
+<text x="84" y="385.1" text-anchor="middle" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="800">A</text>
+<text x="112" y="393.6" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="500"><tspan x="112" dy="0">Erken doğum ve enteral beslenmenin erken başlanması</tspan></text>
+<rect x="56" y="418.6" width="968" height="61" rx="14" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+<circle cx="84" cy="449.1" r="18" fill="#10b981" opacity="0.22"/>
+<text x="84" y="456.1" text-anchor="middle" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="800">B</text>
+<text x="112" y="464.6" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="500"><tspan x="112" dy="0">Anne sütü ile beslenmenin geciktirilmesi</tspan></text>
+<rect x="56" y="489.6" width="968" height="61" rx="14" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+<circle cx="84" cy="520.1" r="18" fill="#10b981" opacity="0.22"/>
+<text x="84" y="527.1" text-anchor="middle" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="800">C</text>
+<text x="112" y="535.6" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="500"><tspan x="112" dy="0">Yüksek doz vitamin K profilaksisi</tspan></text>
+<rect x="56" y="560.6" width="968" height="61" rx="14" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+<circle cx="84" cy="591.1" r="18" fill="#10b981" opacity="0.22"/>
+<text x="84" y="598.1" text-anchor="middle" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="800">D</text>
+<text x="112" y="606.6" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="500"><tspan x="112" dy="0">Uzun süreli fototerapi uygulaması</tspan></text>
+<rect x="56" y="631.6" width="968" height="61" rx="14" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+<circle cx="84" cy="662.1" r="18" fill="#10b981" opacity="0.22"/>
+<text x="84" y="669.1" text-anchor="middle" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="800">E</text>
+<text x="112" y="677.6" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="500"><tspan x="112" dy="0">Rutin antibiyotik profilaksisi</tspan></text>
+
+  <circle cx="996" cy="92" r="28" fill="#10b981" opacity="0.18"/>
+  <text x="996" y="100" text-anchor="middle" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="800">T</text>
+
+  <text x="56" y="1028" fill="#10b981" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700"><tspan x="56" dy="0">Cevabını yorumlara yaz</tspan></text>
+  <text x="540" y="1028" fill="#94a3b8" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" text-anchor="middle"><tspan x="540" dy="0">Tusoskop ile daha fazla soru çöz.</tspan></text>
+  <circle cx="1008" cy="1020" r="18" fill="#10b981" opacity="0.25"/>
+  <text x="1008" y="1026" text-anchor="middle" fill="#34d399" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="800">T</text>
+</svg>

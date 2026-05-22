@@ -10,9 +10,13 @@ import {
   updateDoc,
   limit,
 } from "firebase/firestore";
-import { SOCIAL_CONTENT_STATUS } from "../social/socialTypes.js";
+import { SOCIAL_CONTENT_STATUS, SOCIAL_CONTENT_TYPES } from "../social/socialTypes.js";
 import { buildSocialContentBatch } from "../social/socialPipeline.js";
 import { renderSocialVisual, renderStoryVisual } from "../social/visualGenerator.js";
+import {
+  buildQuestionVisualSpec,
+  optionLabel,
+} from "../social/contentGenerator.js";
 import { runSafetyCheck } from "../social/safetyChecker.js";
 
 const QUEUE_COL = "socialContentQueue";
@@ -164,13 +168,16 @@ export async function markContentFailed(contentId, adminUid, error) {
   await logSocialEvent({ action: "publish_failed", contentId, adminUid, detail: error });
 }
 
-export async function regenerateVisual(contentId, content, adminUid) {
-  const visual = renderSocialVisual(content.visualSpec || rebuildVisualSpec(content));
-  const storyVisual = content.storyVisualSpec
-    ? renderStoryVisual(content.storyVisualSpec)
-    : content.storyVisualSvg
-      ? renderStoryVisual(rebuildStorySpec(content))
-      : null;
+/**
+ * @param {object[]} [questions] — kaynak sorudan visualSpec yeniden kurmak için
+ */
+export async function regenerateVisual(contentId, content, adminUid, questions = []) {
+  const visualSpec = content.visualSpec || rebuildVisualSpec(content, questions);
+  const storyVisualSpec =
+    content.storyVisualSpec || rebuildStorySpec(content, questions);
+
+  const visual = renderSocialVisual(visualSpec);
+  const storyVisual = storyVisualSpec ? renderStoryVisual(storyVisualSpec) : null;
 
   const patch = {
     visualUrl: visual.svgUrl,
@@ -178,29 +185,148 @@ export async function regenerateVisual(contentId, content, adminUid) {
     visualWidth: visual.width,
     visualHeight: visual.height,
     visualFormat: visual.format,
+    visualSpec,
     storyVisualUrl: storyVisual?.svgUrl ?? null,
     storyVisualSvg: storyVisual?.svg ?? null,
+    storyVisualSpec: storyVisualSpec ?? null,
   };
   await updateSocialContent(contentId, patch, adminUid);
   return patch;
 }
 
-function rebuildVisualSpec(content) {
+function findQuestionById(questions, id) {
+  if (!id || !questions?.length) return null;
+  return questions.find((q) => q.id === id) || null;
+}
+
+function parseQuestionFromCaption(caption) {
+  if (!caption) return null;
+  const lines = caption.split("\n");
+  const optionRe = /^([A-E])\)\s*(.+)$/;
+  const options = [];
+  let questionLines = [];
+  let inQuestion = false;
+  let pastIntro = false;
+
+  for (const raw of lines) {
+    const line = raw.trim();
+    if (!line) {
+      if (inQuestion && questionLines.length) pastIntro = true;
+      continue;
+    }
+    if (line.startsWith("#") || line.includes("Tusoskop") || line.includes("yorumlara")) {
+      continue;
+    }
+    const optMatch = line.match(optionRe);
+    if (optMatch) {
+      options.push({ letter: optMatch[1], text: optMatch[2].trim() });
+      inQuestion = false;
+      continue;
+    }
+    if (options.length) continue;
+    if (!pastIntro && questionLines.length === 0 && line.length < 60) {
+      continue;
+    }
+    inQuestion = true;
+    questionLines.push(line);
+  }
+
+  const questionText = questionLines.join(" ").trim();
+  if (!questionText) return null;
+  return { questionText, options };
+}
+
+export function rebuildVisualSpec(content, questions = []) {
+  if (content.visualSpec?.templateType) return content.visualSpec;
+
+  const sourceQ = findQuestionById(questions, content.sourceQuestionId);
+  if (sourceQ && content.type === SOCIAL_CONTENT_TYPES.DAILY_QUESTION) {
+    return buildQuestionVisualSpec(sourceQ);
+  }
+
+  if (content.type === SOCIAL_CONTENT_TYPES.ANSWER_REVEAL && content.answerPayload) {
+    const letter = optionLabel(content.answerPayload.correctIndex ?? 0);
+    return {
+      templateType: "answer_post",
+      format: content.visualFormat || "1080x1080",
+      subline: content.sourceDers ? `${content.sourceDers} · dünün sorusu` : "Dünün sorusu",
+      answerLine: `Doğru cevap: ${letter}) ${content.answerPayload.correctText || ""}`,
+      explanation: content.answerPayload.explanation || "",
+    };
+  }
+
+  if (content.type === SOCIAL_CONTENT_TYPES.DAILY_QUESTION) {
+    const parsed = parseQuestionFromCaption(content.caption);
+    if (parsed) {
+      return {
+        templateType: "question_post",
+        format: "1080x1080",
+        badge: "GÜNÜN TUS SORUSU",
+        metaLine: content.sourceDers
+          ? `${content.sourceDers}${content.sourceKonu ? ` · ${content.sourceKonu}` : ""}`
+          : "",
+        questionText: parsed.questionText,
+        options: parsed.options,
+        footerLeft: "Cevabını yorumlara yaz",
+        footerCenter: "Tusoskop ile daha fazla soru çöz.",
+      };
+    }
+  }
+
+  if (content.type === SOCIAL_CONTENT_TYPES.MINI_TIP) {
+    const body = content.caption?.split("\n\n")[1] || content.caption || "";
+    return {
+      templateType: "mini_info_post",
+      format: "1080x1080",
+      headline: "Mini TUS Bilgisi",
+      subline: content.title || "",
+      body,
+      footer: "Tusoskop · tusoskop.com",
+    };
+  }
+
+  if (content.type === SOCIAL_CONTENT_TYPES.FEATURE_PROMO) {
+    const parts = (content.caption || "").split("\n\n");
+    return {
+      templateType: "feature_post",
+      format: content.visualFormat || "1080x1350",
+      featureTitle: content.title || "",
+      hook: parts[0] || "",
+      body: parts[1] || "",
+      footer: parts[2] || "tusoskop.com",
+    };
+  }
+
   return {
     headline: content.title,
     subline: content.sourceDers || content.featureId || "",
-    body: content.caption?.split("\n").slice(0, 6).join("\n") || "",
+    body: content.caption?.split("\n").slice(0, 8).join("\n") || "",
     footer: "tusoskop.com",
     format: content.visualFormat || "1080x1080",
   };
 }
 
-function rebuildStorySpec(content) {
+function rebuildStorySpec(content, questions = []) {
+  if (content.storyVisualSpec?.templateType) return content.storyVisualSpec;
+
+  const sourceQ = findQuestionById(questions, content.sourceQuestionId);
+  if (sourceQ) {
+    return {
+      templateType: "story_question",
+      format: "1080x1920",
+      badge: "BUGÜNÜN SORUSU",
+      metaLine: `${sourceQ.ders} · ${sourceQ.konu}`,
+      questionText: String(sourceQ.q || "").trim(),
+      footer: "Yorumlara cevap yaz →",
+    };
+  }
+
   return {
-    headline: "Tusoskop",
-    body: content.storyText || content.caption?.slice(0, 200) || "",
-    footer: "tusoskop.com",
+    templateType: "story_question",
     format: "1080x1920",
+    badge: "TUSOSKOP",
+    questionText: content.storyText || content.caption?.slice(0, 400) || "",
+    footer: "tusoskop.com",
   };
 }
 

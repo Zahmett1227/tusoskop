@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "test": "vitest run --configLoader native",
     "validate:questions": "node scripts/validate-question-bank.mjs",
+    "test:social-visuals": "node scripts/test-social-visuals.mjs",
     "test:e2e": "playwright test",
     "test:e2e:full": "npm run build && npm run test:e2e",
     "preview": "vite preview --configLoader native"

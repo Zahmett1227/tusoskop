@@ -59,6 +59,8 @@ export function buildSocialContentBatch(input) {
         visualFormat: visual.format,
         storyVisualUrl: storyVisual?.svgUrl ?? null,
         storyVisualSvg: storyVisual?.svg ?? null,
+        visualSpec: pkg.visual ?? null,
+        storyVisualSpec: pkg.storyVisual ?? null,
         createdBy: "auto",
       };
 
