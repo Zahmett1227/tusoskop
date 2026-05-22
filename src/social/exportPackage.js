@@ -11,7 +11,27 @@ export async function buildExportPackage(content) {
   const fullCaption = hashtags ? `${caption}\n\n${hashtags}` : caption;
 
   let pngDataUrl = null;
-  if (content.visualSvg && content.visualWidth && content.visualHeight) {
+  let pngDataUrls = [];
+
+  const slideSources =
+    content.carouselSlides?.length > 0
+      ? content.carouselSlides
+      : content.visualSvg
+        ? [{ svg: content.visualSvg, width: content.visualWidth, height: content.visualHeight }]
+        : [];
+
+  for (const slide of slideSources) {
+    if (!slide.svg || !slide.width || !slide.height) continue;
+    try {
+      const png = await svgToPngDataUrl(slide.svg, slide.width, slide.height);
+      if (png) pngDataUrls.push(png);
+    } catch {
+      /* tek slide atla */
+    }
+  }
+
+  pngDataUrl = pngDataUrls[0] || null;
+  if (!pngDataUrl && content.visualSvg && content.visualWidth && content.visualHeight) {
     try {
       pngDataUrl = await svgToPngDataUrl(
         content.visualSvg,
@@ -21,7 +41,7 @@ export async function buildExportPackage(content) {
     } catch {
       pngDataUrl = content.visualUrl || null;
     }
-  } else {
+  } else if (!pngDataUrl) {
     pngDataUrl = content.visualUrl || null;
   }
 
@@ -45,7 +65,9 @@ export async function buildExportPackage(content) {
       ),
     },
     pngDataUrl,
+    pngDataUrls: pngDataUrls.length ? pngDataUrls : null,
     svg: content.visualSvg || null,
+    carouselSlides: content.carouselSlides || null,
     storySvg: content.storyVisualSvg || null,
   };
 }
@@ -73,7 +95,11 @@ export async function exportContentToDownloads(content) {
   downloadTextFile(`${content.id}-caption.txt`, pkg.files["caption.txt"]);
   downloadTextFile(`${content.id}-hashtags.txt`, pkg.files["hashtags.txt"]);
   downloadTextFile(`${content.id}-meta.json`, pkg.files["meta.json"]);
-  if (pkg.pngDataUrl) {
+  if (pkg.pngDataUrls?.length) {
+    for (let i = 0; i < pkg.pngDataUrls.length; i++) {
+      downloadDataUrl(`${content.id}-slide-${i + 1}.png`, pkg.pngDataUrls[i]);
+    }
+  } else if (pkg.pngDataUrl) {
     downloadDataUrl(`${content.id}-post.png`, pkg.pngDataUrl);
   } else if (content.visualUrl) {
     downloadDataUrl(`${content.id}-post.svg`, content.visualUrl);

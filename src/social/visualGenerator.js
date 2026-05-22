@@ -6,15 +6,32 @@ import {
   wrapTextByWidth,
   splitLongText,
 } from "./textLayout.js";
-
-const FORMATS = {
-  "1080x1080": { width: 1080, height: 1080 },
-  "1080x1350": { width: 1080, height: 1350 },
-  "1080x1920": { width: 1080, height: 1920 },
-};
-
-const PAD = 56;
-const INNER_W = 1080 - PAD * 2;
+import {
+  FORMATS,
+  CTAS,
+  fonts,
+  typography,
+  fontSizeMin,
+  fontSizeMax,
+  measureContentDensity,
+  chooseLayoutVariant,
+  layoutSpacing,
+  colors,
+} from "./design/socialTheme.js";
+import {
+  makeUid,
+  svgDocument,
+  renderHookChip,
+  renderGlassCard,
+  renderOptionPill,
+  renderCtaBar,
+  renderBrandMark,
+  renderSlideDots,
+  renderMetaLine,
+  renderDisplayText,
+  renderBulletCards,
+  finishVisual,
+} from "./design/svgCompositor.js";
 
 export function renderSocialVisual(visualSpec = {}) {
   const type = visualSpec.templateType || inferTemplateType(visualSpec);
@@ -29,6 +46,8 @@ export function renderSocialVisual(visualSpec = {}) {
       return renderAnswerPost(visualSpec);
     case "story_question":
       return renderStoryQuestion(visualSpec);
+    case "carousel_slide":
+      return renderCarouselSlide(visualSpec);
     default:
       return renderLegacyCard(visualSpec);
   }
@@ -36,11 +55,11 @@ export function renderSocialVisual(visualSpec = {}) {
 
 export function renderStoryVisual(storySpec = {}) {
   const spec = { ...storySpec, templateType: storySpec.templateType || "story_question" };
-  if (spec.templateType === "story_question") return renderStoryQuestion(spec);
   return renderSocialVisual({ ...spec, format: "1080x1920" });
 }
 
 function inferTemplateType(spec) {
+  if (spec.slideRole) return "carousel_slide";
   if (spec.options?.length) return "question_post";
   if (spec.bullets?.length) return "mini_info_post";
   if (spec.featureTitle || spec.hook) return "feature_post";
@@ -48,525 +67,572 @@ function inferTemplateType(spec) {
   return "legacy";
 }
 
-function brandColors() {
-  return {
-    ...SOCIAL_CONFIG.colors,
-    bg2: "#0b1220",
-    optionBg: "#1e293b",
-    optionBorder: "#334155",
-  };
+function getFormat(spec) {
+  const key = spec.format || "1080x1080";
+  return { key, ...FORMATS[key] };
 }
 
-function finishSvg(svg, width, height, format) {
-  return {
-    svg,
-    svgUrl: `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`,
-    width,
-    height,
-    format,
-  };
+function innerWidth(pad, width = 1080) {
+  return width - pad * 2;
 }
 
-function svgShell(width, height, inner) {
-  const c = brandColors();
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
-      <stop offset="0%" stop-color="${c.bg}"/>
-      <stop offset="100%" stop-color="${c.bg2}"/>
-    </linearGradient>
-  </defs>
-  <rect width="${width}" height="${height}" fill="url(#bg)"/>
-  <rect x="${PAD - 8}" y="${PAD - 8}" width="${width - (PAD - 8) * 2}" height="${height - (PAD - 8) * 2}" rx="28" fill="${c.card}" stroke="${c.border}" stroke-width="2"/>
-  <rect x="${PAD - 8}" y="${PAD - 8}" width="${width - (PAD - 8) * 2}" height="6" rx="3" fill="${c.accent}"/>
-  ${inner}
-</svg>`;
+function renderCarouselSlide(spec) {
+  const { width, height, pad } = getFormat(spec);
+  const uid = makeUid(`c${spec.slideIndex ?? 0}`);
+  const contentW = innerWidth(pad, width);
+  const ls = layoutSpacing("balanced");
+  let y = pad + 8;
+  const parts = [];
+
+  if (spec.hook) {
+    parts.push(renderHookChip(spec.hook, pad, y, { uid }));
+    y += 44 + ls.hookMarginBottom;
+  }
+
+  if (spec.eyebrow) {
+    parts.push(
+      renderMultilineText({
+        lines: [spec.eyebrow],
+        x: pad,
+        y: y + typography.eyebrow.size,
+        fontSize: typography.eyebrow.size,
+        lineHeight: 16,
+        fill: colors.accentBright,
+        fontWeight: "700",
+        fontFamily: fonts.display,
+        letterSpacing: typography.eyebrow.letterSpacing,
+      })
+    );
+    y += 28;
+  }
+
+  if (spec.metaLine) {
+    parts.push(renderMetaLine(spec.metaLine, pad, y));
+    y += 32;
+  }
+
+  const role = spec.slideRole || "context";
+
+  if (role === "hook_question" || role === "options") {
+    const qFit = fitTextToBox(spec.questionText || "", {
+      maxWidthPx: contentW - ls.cardPad * 2,
+      maxLines: role === "options" ? 4 : 7,
+      fontSizeMax: 32,
+      fontSizeMin: fontSizeMin,
+    });
+    const cardH = qFit.lines.length * qFit.fontSize * 1.28 + ls.cardPad * 2 + 16;
+    parts.push(renderGlassCard(pad, y, contentW, cardH, uid));
+    parts.push(
+      renderDisplayText(qFit.lines, pad + ls.cardPad, y + ls.cardPad, {
+        fontSize: qFit.fontSize,
+        weight: 700,
+      })
+    );
+    y += cardH + ls.sectionGap;
+
+    if (role === "options" && spec.options?.length) {
+      let optSize = fontSizeMax.option;
+      let shown = [...spec.options];
+      while (shown.length > 0) {
+        const trial = layoutOptionsPremium(shown, y, pad, contentW, optSize, uid, height - pad - 120);
+        if (trial.fits || optSize <= fontSizeMin) {
+          parts.push(trial.svg);
+          y = trial.endY;
+          break;
+        }
+        if (shown.length > 3) shown = shown.slice(0, 3);
+        else optSize -= 2;
+      }
+    }
+  } else if (role === "answer") {
+    parts.push(
+      renderMultilineText({
+        lines: [spec.title || "Doğru cevap"],
+        x: pad,
+        y: y + 28,
+        fontSize: 26,
+        lineHeight: 32,
+        fill: colors.text,
+        fontWeight: "700",
+        fontFamily: fonts.display,
+      })
+    );
+    y += 48;
+    const ansFit = fitTextToBox(spec.answerLine || "", {
+      maxWidthPx: contentW - 40,
+      maxLines: 4,
+      fontSizeMax: 30,
+      fontSizeMin: 22,
+    });
+    const cardH = ansFit.lines.length * ansFit.fontSize * 1.3 + 48;
+    parts.push(renderGlassCard(pad, y, contentW, cardH, uid));
+    parts.push(
+      renderMultilineText({
+        lines: ansFit.lines,
+        x: pad + 24,
+        y: y + 36 + ansFit.fontSize,
+        fontSize: ansFit.fontSize,
+        lineHeight: Math.round(ansFit.fontSize * 1.3),
+        fill: colors.accentBright,
+        fontWeight: "700",
+        fontFamily: fonts.display,
+      })
+    );
+    y += cardH + ls.sectionGap;
+  } else {
+    if (spec.title) {
+      parts.push(
+        renderMultilineText({
+          lines: [spec.title],
+          x: pad,
+          y: y + 30,
+          fontSize: 28,
+          lineHeight: 34,
+          fill: colors.text,
+          fontWeight: "700",
+          fontFamily: fonts.display,
+        })
+      );
+      y += 44;
+    }
+    if (spec.body) {
+      const bodyFit = fitTextToBox(spec.body, {
+        maxWidthPx: contentW - 40,
+        maxLines: 6,
+        fontSizeMax: 22,
+        fontSizeMin: fontSizeMin,
+      });
+      const cardH = bodyFit.lines.length * bodyFit.fontSize * 1.4 + 40;
+      parts.push(renderGlassCard(pad, y, contentW, cardH, uid));
+      parts.push(
+        renderMultilineText({
+          lines: bodyFit.lines,
+          x: pad + 24,
+          y: y + 28 + bodyFit.fontSize,
+          fontSize: bodyFit.fontSize,
+          lineHeight: Math.round(bodyFit.fontSize * 1.4),
+          fill: colors.textSecondary,
+          fontWeight: "500",
+          fontFamily: fonts.body,
+        })
+      );
+      y += cardH + ls.sectionGap;
+    }
+    if (spec.bullets?.length) {
+      const { svg, endY } = renderBulletCards(spec.bullets, pad, y, contentW, uid);
+      parts.push(svg);
+      y = endY;
+    }
+    if (spec.bulletsNote) {
+      parts.push(renderMetaLine(spec.bulletsNote, pad, y));
+      y += 28;
+    }
+  }
+
+  parts.push(renderBrandMark(width, pad, pad + 4));
+  parts.push(
+    renderCtaBar(width, height, pad, uid, {
+      primary: spec.footerPrimary || CTAS.save,
+      secondary: spec.footerSecondary || "",
+    })
+  );
+  if (spec.slideTotal > 1) {
+    parts.push(renderSlideDots(width, height, pad, spec.slideIndex ?? 0, spec.slideTotal));
+  }
+
+  return finishVisual(svgDocument({ width, height, uid, body: parts.join("\n") }), width, height, spec.format || "1080x1350", {
+    slideIndex: spec.slideIndex,
+    slideRole: spec.slideRole,
+  });
 }
 
-function brandLogo(width, c) {
-  return `
-  <circle cx="${width - PAD - 28}" cy="${PAD + 36}" r="28" fill="${c.accent}" opacity="0.18"/>
-  <text x="${width - PAD - 28}" y="${PAD + 44}" text-anchor="middle" fill="${c.accentSoft}" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="800">T</text>`;
-}
-
-function footerBar(width, height, c, { left, center }) {
-  const y = height - PAD + 4;
-  return `
-  ${renderMultilineText({ lines: [left], x: PAD, y, fontSize: 22, lineHeight: 28, fill: c.accent, fontWeight: "700" })}
-  ${center ? renderMultilineText({ lines: [center], x: width / 2, y, fontSize: 20, lineHeight: 26, fill: c.muted, fontWeight: "500", textAnchor: "middle" }) : ""}
-  <circle cx="${width - PAD - 16}" cy="${y - 8}" r="18" fill="${c.accent}" opacity="0.25"/>
-  <text x="${width - PAD - 16}" y="${y - 2}" text-anchor="middle" fill="${c.accentSoft}" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="800">T</text>`;
-}
-
-function layoutOptionsAbsolute(options, startY, contentW, fontSize, maxLinesPerOption) {
-  const c = brandColors();
-  const layouts = [];
+function layoutOptionsPremium(options, startY, pad, contentW, fontSize, uid, maxY) {
   let y = startY;
-
+  const blocks = [];
   for (const opt of options) {
     const letter = opt.letter || "A";
     const text = opt.text || String(opt);
-    let wrapped = wrapTextByWidth(text, contentW - 88, fontSize);
-    if (wrapped.length > maxLinesPerOption) {
-      wrapped = splitLongText(wrapped, maxLinesPerOption, "…").lines;
-    }
-    const lineH = Math.round(fontSize * 1.32);
-    const cardH = Math.max(52, wrapped.length * lineH + 24);
-
-    layouts.push({
-      height: cardH + 10,
-      svg: [
-        `<rect x="${PAD}" y="${y}" width="${contentW}" height="${cardH}" rx="14" fill="${c.optionBg}" stroke="${c.optionBorder}" stroke-width="1.5"/>`,
-        `<circle cx="${PAD + 28}" cy="${y + cardH / 2}" r="18" fill="${c.accent}" opacity="0.22"/>`,
-        `<text x="${PAD + 28}" y="${y + cardH / 2 + 7}" text-anchor="middle" fill="${c.accentSoft}" font-family="Segoe UI, system-ui, sans-serif" font-size="${Math.round(fontSize * 0.85)}" font-weight="800">${escapeXml(letter)}</text>`,
-        renderMultilineText({
-          lines: wrapped,
-          x: PAD + 56,
-          y: y + 18 + fontSize,
-          fontSize,
-          lineHeight: lineH,
-          fill: c.text,
-          fontWeight: "500",
-        }),
-      ].join("\n"),
-    });
-    y += cardH + 10;
+    let wrapped = wrapTextByWidth(text, contentW - 72, fontSize);
+    if (wrapped.length > 2) wrapped = splitLongText(wrapped, 2, "…").lines;
+    const pill = renderOptionPill(letter, wrapped, pad, y, contentW, fontSize, uid);
+    blocks.push(pill.svg);
+    y += pill.height;
   }
-
-  return { layouts, endY: y };
-}
-
-function measureQuestionPost(height, showOptions, optionFont, questionFit, optionsNote) {
-  const headerEnd = PAD + 108;
-  const qH = questionFit.lines.length * questionFit.fontSize * 1.38;
-  const truncH = questionFit.truncated ? 32 : 0;
-  let y = headerEnd + qH + 18 + truncH;
-  const { layouts } = layoutOptionsAbsolute(showOptions, y, INNER_W, optionFont, 2);
-  const optsH = layouts.reduce((s, l) => s + l.height, 0);
-  const noteH = optionsNote ? 36 : 0;
-  return headerEnd + qH + 18 + truncH + optsH + noteH + 88 <= height;
+  return { svg: blocks.join("\n"), endY: y, fits: y <= maxY };
 }
 
 function renderQuestionPost(spec) {
-  const format = spec.format || "1080x1080";
-  const { width, height } = FORMATS[format] || FORMATS["1080x1080"];
-  const c = brandColors();
+  const fmt = getFormat(spec);
+  const { width, height, pad } = fmt;
+  const uid = makeUid("q");
+  const density = measureContentDensity(spec);
+  const variant = chooseLayoutVariant(density, fmt.key);
+  const ls = layoutSpacing(variant);
+  const contentW = innerWidth(pad, width);
 
-  let optionFont = 28;
+  let optionFont = fontSizeMax.option;
   let showOptions = [...(spec.options || [])];
   let optionsNote = null;
 
   let questionFit = fitTextToBox(spec.questionText || spec.body || "", {
-    maxWidthPx: INNER_W,
-    maxLines: 7,
-    fontSizeMax: 40,
-    fontSizeMin: 28,
+    maxWidthPx: contentW - ls.cardPad * 2,
+    maxLines: variant === "compact" ? 6 : 7,
+    fontSizeMax: fontSizeMax.question,
+    fontSizeMin: 24,
   });
 
-  const fitLoop = () =>
-    measureQuestionPost(height, showOptions, optionFont, questionFit, optionsNote);
+  const maxContentY = height - pad - 100;
+  const measure = () => {
+    let y = pad + (spec.hook ? 52 : 0) + (spec.metaLine ? 36 : 0) + 24;
+    y += questionFit.lines.length * questionFit.fontSize * 1.26 + ls.cardPad * 2 + ls.sectionGap;
+    if (questionFit.truncated) y += 28;
+    const trial = layoutOptionsPremium(showOptions, y, pad, contentW, optionFont, uid, maxContentY);
+    return trial.fits;
+  };
 
-  while (!fitLoop() && optionFont > 22) optionFont -= 2;
-  while (!fitLoop() && questionFit.fontSize > 28) {
+  while (!measure() && optionFont > fontSizeMin) optionFont -= 2;
+  while (!measure() && questionFit.fontSize > 24) {
     questionFit = fitTextToBox(spec.questionText || "", {
-      maxWidthPx: INNER_W,
-      maxLines: 7,
+      maxWidthPx: contentW - ls.cardPad * 2,
+      maxLines: 6,
       fontSizeMax: questionFit.fontSize - 2,
-      fontSizeMin: 28,
+      fontSizeMin: 24,
     });
   }
-  if (!fitLoop() && showOptions.length > 3) {
-    showOptions = (spec.options || []).slice(0, 3);
-    optionsNote = "Tüm seçenekler caption'da";
-  }
-  if (!fitLoop() && showOptions.length > 2) {
-    showOptions = (spec.options || []).slice(0, 2);
+  if (!measure() && showOptions.length > 3) {
+    showOptions = showOptions.slice(0, 3);
     optionsNote = "Tüm seçenekler caption'da";
   }
 
+  let y = pad + (variant === "centered" ? 24 : 8);
   const parts = [];
-  parts.push(
-    renderMultilineText({
-      lines: [spec.badge || "GÜNÜN TUS SORUSU"],
-      x: PAD,
-      y: PAD + 32,
-      fontSize: 22,
-      lineHeight: 28,
-      fill: c.accent,
-      fontWeight: "800",
-    })
-  );
+
+  parts.push(renderHookChip(spec.hook || spec.badge || "GÜNÜN TUS SORUSU", pad, y, { uid }));
+  y += 48 + ls.hookMarginBottom;
+
   if (spec.metaLine || spec.subline) {
-    parts.push(
-      renderMultilineText({
-        lines: [spec.metaLine || spec.subline],
-        x: PAD,
-        y: PAD + 70,
-        fontSize: 24,
-        lineHeight: 30,
-        fill: c.muted,
-        fontWeight: "600",
-      })
-    );
+    parts.push(renderMetaLine(spec.metaLine || spec.subline, pad, y));
+    y += 34;
   }
 
-  let y = PAD + 108;
+  const qCardH = questionFit.lines.length * questionFit.fontSize * 1.26 + ls.cardPad * 2 + 12;
+  parts.push(renderGlassCard(pad, y, contentW, qCardH, uid));
   parts.push(
-    renderMultilineText({
-      lines: questionFit.lines,
-      x: PAD,
-      y: y + questionFit.fontSize,
+    renderDisplayText(questionFit.lines, pad + ls.cardPad, y + ls.cardPad - 4, {
       fontSize: questionFit.fontSize,
-      lineHeight: Math.round(questionFit.fontSize * 1.38),
-      fill: c.text,
-      fontWeight: "600",
+      weight: 700,
     })
   );
-  y += questionFit.lines.length * questionFit.fontSize * 1.38 + 18;
+  y += qCardH + ls.sectionGap;
 
   if (questionFit.truncated) {
     parts.push(
       renderMultilineText({
-        lines: ["Soru metninin devamı caption'da"],
-        x: PAD,
-        y: y + 20,
-        fontSize: 20,
-        lineHeight: 26,
-        fill: c.accentSoft,
+        lines: ["Devamı caption'da"],
+        x: pad,
+        y: y + 16,
+        fontSize: typography.micro.size,
+        lineHeight: 18,
+        fill: colors.accentBright,
         fontWeight: "600",
+        fontFamily: fonts.body,
       })
     );
-    y += 32;
+    y += 28;
   }
 
-  const { layouts } = layoutOptionsAbsolute(showOptions, y, INNER_W, optionFont, 2);
-  for (const block of layouts) parts.push(block.svg);
+  const optLayout = layoutOptionsPremium(showOptions, y, pad, contentW, optionFont, uid, maxContentY);
+  parts.push(optLayout.svg);
+  y = optLayout.endY;
 
   if (optionsNote) {
-    const noteY = y + layouts.reduce((s, l) => s + l.height, 0) + 8;
-    parts.push(
-      renderMultilineText({
-        lines: [optionsNote],
-        x: PAD,
-        y: noteY + 20,
-        fontSize: 22,
-        lineHeight: 28,
-        fill: c.muted,
-        fontWeight: "600",
-      })
-    );
+    parts.push(renderMetaLine(optionsNote, pad, y + 4));
   }
 
-  parts.push(brandLogo(width, c));
+  parts.push(renderBrandMark(width, pad, pad));
   parts.push(
-    footerBar(width, height, c, {
-      left: spec.footerLeft || "Cevabını yorumlara yaz",
-      center: spec.footerCenter || "Tusoskop ile daha fazla soru çöz.",
+    renderCtaBar(width, height, pad, uid, {
+      primary: spec.footerLeft || spec.footerPrimary || CTAS.comment,
+      secondary: spec.footerCenter || spec.footerSecondary || CTAS.tomorrow,
     })
   );
 
-  return finishSvg(svgShell(width, height, parts.join("\n")), width, height, format);
+  return finishVisual(svgDocument({ width, height, uid, body: parts.join("\n") }), width, height, fmt.key);
 }
 
 function renderMiniInfoPost(spec) {
-  const format = spec.format || "1080x1080";
-  const { width, height } = FORMATS[format] || FORMATS["1080x1080"];
-  const c = brandColors();
-
-  const bodyFit = fitTextToBox(spec.body || "", {
-    maxWidthPx: INNER_W,
-    maxLines: 8,
-    fontSizeMax: 36,
-    fontSizeMin: 24,
-  });
-
+  const fmt = getFormat(spec);
+  const { width, height, pad } = fmt;
+  const uid = makeUid("m");
+  const contentW = innerWidth(pad, width);
+  const ls = layoutSpacing("balanced");
+  let y = pad + 8;
   const parts = [];
-  parts.push(
-    renderMultilineText({
-      lines: [(spec.headline || "Mini TUS Bilgisi").toUpperCase()],
-      x: PAD,
-      y: PAD + 40,
-      fontSize: 24,
-      lineHeight: 30,
-      fill: c.accent,
-      fontWeight: "800",
-    })
-  );
-  if (spec.subline) {
+
+  parts.push(renderHookChip(spec.hook || "1 DAKİKADA ÖĞREN", pad, y, { uid }));
+  y += 48 + ls.hookMarginBottom;
+
+  if (spec.subline || spec.headline) {
     parts.push(
       renderMultilineText({
-        lines: [spec.subline],
-        x: PAD,
-        y: PAD + 76,
-        fontSize: 26,
-        lineHeight: 32,
-        fill: c.muted,
-        fontWeight: "600",
+        lines: [spec.subline || spec.headline],
+        x: pad,
+        y: y + 26,
+        fontSize: 24,
+        lineHeight: 30,
+        fill: colors.text,
+        fontWeight: "700",
+        fontFamily: fonts.display,
       })
     );
+    y += 40;
   }
-  parts.push(
-    renderMultilineText({
-      lines: bodyFit.lines,
-      x: PAD,
-      y: PAD + 130 + bodyFit.fontSize,
-      fontSize: bodyFit.fontSize,
-      lineHeight: Math.round(bodyFit.fontSize * 1.4),
-      fill: c.text,
-      fontWeight: "500",
-    })
-  );
 
-  let by = PAD + 130 + bodyFit.lines.length * bodyFit.fontSize * 1.4 + 32;
-  for (const b of (spec.bullets || []).slice(0, 5)) {
+  const bullets = spec.bullets?.length
+    ? spec.bullets
+    : spec.body
+      ? spec.body.split(/\n+/).filter(Boolean)
+      : [];
+
+  if (bullets.length) {
+    const { svg, endY } = renderBulletCards(bullets, pad, y, contentW, uid, 20);
+    parts.push(svg);
+    y = endY;
+  } else if (spec.body) {
+    const bodyFit = fitTextToBox(spec.body, {
+      maxWidthPx: contentW - 40,
+      maxLines: 5,
+      fontSizeMax: 22,
+      fontSizeMin: fontSizeMin,
+    });
+    const cardH = bodyFit.lines.length * bodyFit.fontSize * 1.4 + 40;
+    parts.push(renderGlassCard(pad, y, contentW, cardH, uid));
     parts.push(
       renderMultilineText({
-        lines: [`• ${b}`],
-        x: PAD + 8,
-        y: by + 26,
-        fontSize: 26,
-        lineHeight: 34,
-        fill: c.text,
+        lines: bodyFit.lines,
+        x: pad + 24,
+        y: y + 28 + bodyFit.fontSize,
+        fontSize: bodyFit.fontSize,
+        lineHeight: Math.round(bodyFit.fontSize * 1.4),
+        fill: colors.textSecondary,
         fontWeight: "500",
+        fontFamily: fonts.body,
       })
     );
-    by += 42;
   }
 
-  parts.push(brandLogo(width, c));
+  parts.push(renderBrandMark(width, pad, pad));
   parts.push(
-    footerBar(width, height, c, {
-      left: spec.footer || "Tusoskop · tusoskop.com",
-      center: "",
+    renderCtaBar(width, height, pad, uid, {
+      primary: spec.footer || spec.footerPrimary || CTAS.save,
+      secondary: "tusoskop.com",
     })
   );
 
-  return finishSvg(svgShell(width, height, parts.join("\n")), width, height, format);
+  return finishVisual(svgDocument({ width, height, uid, body: parts.join("\n") }), width, height, fmt.key);
 }
 
 function renderFeaturePost(spec) {
-  const format = spec.format || "1080x1350";
-  const { width, height } = FORMATS[format] || FORMATS["1080x1350"];
-  const c = brandColors();
+  const fmt = getFormat({ format: spec.format || "1080x1350" });
+  const { width, height, pad } = fmt;
+  const uid = makeUid("f");
+  const contentW = innerWidth(pad, width);
+  let y = pad + 16;
+  const parts = [];
+
+  parts.push(renderHookChip(spec.hook || "TUSOSKOP", pad, y, { uid, maxWidth: 360 }));
+  y += 52;
+
+  if (spec.featureTitle) {
+    parts.push(renderMetaLine(spec.featureTitle, pad, y));
+    y += 36;
+  }
 
   const hookFit = fitTextToBox(spec.hook || spec.headline || "", {
-    maxWidthPx: INNER_W,
+    maxWidthPx: contentW - 40,
     maxLines: 2,
-    fontSizeMax: 44,
-    fontSizeMin: 32,
+    fontSizeMax: 34,
+    fontSizeMin: 26,
   });
+  const hookCardH = hookFit.lines.length * hookFit.fontSize * 1.25 + 48;
+  parts.push(renderGlassCard(pad, y, contentW, hookCardH, uid));
+  parts.push(
+    renderDisplayText(hookFit.lines, pad + 24, y + 20, { fontSize: hookFit.fontSize, weight: 700 })
+  );
+  y += hookCardH + 20;
+
   const bodyFit = fitTextToBox(spec.body || "", {
-    maxWidthPx: INNER_W,
-    maxLines: 6,
-    fontSizeMax: 32,
-    fontSizeMin: 24,
+    maxWidthPx: contentW - 40,
+    maxLines: 5,
+    fontSizeMax: 21,
+    fontSizeMin: fontSizeMin,
   });
+  if (bodyFit.lines.length) {
+    const bodyCardH = bodyFit.lines.length * bodyFit.fontSize * 1.4 + 40;
+    parts.push(renderGlassCard(pad, y, contentW, bodyCardH, uid, { elevated: false }));
+    parts.push(
+      renderMultilineText({
+        lines: bodyFit.lines,
+        x: pad + 24,
+        y: y + 28 + bodyFit.fontSize,
+        fontSize: bodyFit.fontSize,
+        lineHeight: Math.round(bodyFit.fontSize * 1.4),
+        fill: colors.textSecondary,
+        fontWeight: "500",
+        fontFamily: fonts.body,
+      })
+    );
+  }
 
-  const parts = [
-    renderMultilineText({
-      lines: ["TUSOSKOP"],
-      x: PAD,
-      y: PAD + 48,
-      fontSize: 22,
-      lineHeight: 28,
-      fill: c.accent,
-      fontWeight: "800",
-    }),
-    renderMultilineText({
-      lines: [spec.featureTitle || spec.subline || ""],
-      x: PAD,
-      y: PAD + 82,
-      fontSize: 26,
-      lineHeight: 32,
-      fill: c.muted,
-      fontWeight: "600",
-    }),
-    renderMultilineText({
-      lines: hookFit.lines,
-      x: PAD,
-      y: PAD + 140 + hookFit.fontSize,
-      fontSize: hookFit.fontSize,
-      lineHeight: Math.round(hookFit.fontSize * 1.3),
-      fill: c.text,
-      fontWeight: "700",
-    }),
-    renderMultilineText({
-      lines: bodyFit.lines,
-      x: PAD,
-      y: PAD + 200 + hookFit.lines.length * hookFit.fontSize * 1.3 + bodyFit.fontSize,
-      fontSize: bodyFit.fontSize,
-      lineHeight: Math.round(bodyFit.fontSize * 1.38),
-      fill: c.text,
-      fontWeight: "500",
-    }),
-    brandLogo(width, c),
-    footerBar(width, height, c, {
-      left: spec.footer || spec.cta || "tusoskop.com",
-      center: "",
-    }),
-  ];
+  parts.push(renderBrandMark(width, pad, pad));
+  parts.push(
+    renderCtaBar(width, height, pad, uid, {
+      primary: spec.footer || spec.cta || CTAS.app,
+      secondary: "tusoskop.com",
+    })
+  );
 
-  return finishSvg(svgShell(width, height, parts.join("\n")), width, height, format);
+  return finishVisual(svgDocument({ width, height, uid, body: parts.join("\n") }), width, height, fmt.key);
 }
 
 function renderAnswerPost(spec) {
-  const format = spec.format || "1080x1080";
-  const { width, height } = FORMATS[format] || FORMATS["1080x1080"];
-  const c = brandColors();
+  const fmt = getFormat(spec);
+  const { width, height, pad } = fmt;
+  const uid = makeUid("a");
+  const contentW = innerWidth(pad, width);
+  let y = pad + 8;
+  const parts = [];
 
-  const answerFit = fitTextToBox(spec.answerLine || "", {
-    maxWidthPx: INNER_W,
+  parts.push(renderHookChip(spec.hook || "CEVAP AÇIKLANDI", pad, y, { uid }));
+  y += 50;
+  if (spec.subline) {
+    parts.push(renderMetaLine(spec.subline, pad, y));
+    y += 34;
+  }
+
+  const ansFit = fitTextToBox(spec.answerLine || "", {
+    maxWidthPx: contentW - 40,
     maxLines: 3,
-    fontSizeMax: 36,
-    fontSizeMin: 26,
-  });
-  const expFit = fitTextToBox(spec.explanation || "", {
-    maxWidthPx: INNER_W,
-    maxLines: 6,
     fontSizeMax: 28,
     fontSizeMin: 22,
   });
-
-  const parts = [
+  const ansCardH = ansFit.lines.length * ansFit.fontSize * 1.3 + 44;
+  parts.push(renderGlassCard(pad, y, contentW, ansCardH, uid));
+  parts.push(
     renderMultilineText({
-      lines: ["CEVAP"],
-      x: PAD,
-      y: PAD + 36,
-      fontSize: 24,
-      lineHeight: 30,
-      fill: c.accent,
-      fontWeight: "800",
-    }),
-    renderMultilineText({
-      lines: [spec.subline || "Dünün sorusu"],
-      x: PAD,
-      y: PAD + 72,
-      fontSize: 24,
-      lineHeight: 30,
-      fill: c.muted,
-      fontWeight: "600",
-    }),
-    renderMultilineText({
-      lines: answerFit.lines,
-      x: PAD,
-      y: PAD + 130 + answerFit.fontSize,
-      fontSize: answerFit.fontSize,
-      lineHeight: Math.round(answerFit.fontSize * 1.35),
-      fill: c.accentSoft,
+      lines: ansFit.lines,
+      x: pad + 24,
+      y: y + 32 + ansFit.fontSize,
+      fontSize: ansFit.fontSize,
+      lineHeight: Math.round(ansFit.fontSize * 1.3),
+      fill: colors.accentBright,
       fontWeight: "700",
-    }),
-    renderMultilineText({
-      lines: expFit.lines,
-      x: PAD,
-      y: PAD + 200 + answerFit.lines.length * answerFit.fontSize * 1.35 + expFit.fontSize,
-      fontSize: expFit.fontSize,
-      lineHeight: Math.round(expFit.fontSize * 1.38),
-      fill: c.text,
-      fontWeight: "500",
-    }),
-    brandLogo(width, c),
-    footerBar(width, height, c, {
-      left: "Tusoskop'ta benzer sorular",
-      center: "tusoskop.com",
-    }),
-  ];
+      fontFamily: fonts.display,
+    })
+  );
+  y += ansCardH + 18;
 
-  return finishSvg(svgShell(width, height, parts.join("\n")), width, height, format);
+  const expFit = fitTextToBox(spec.explanation || "", {
+    maxWidthPx: contentW - 40,
+    maxLines: 5,
+    fontSizeMax: 20,
+    fontSizeMin: fontSizeMin,
+  });
+  if (expFit.lines.length) {
+    const expCardH = expFit.lines.length * expFit.fontSize * 1.4 + 40;
+    parts.push(renderGlassCard(pad, y, contentW, expCardH, uid, { elevated: false }));
+    parts.push(
+      renderMultilineText({
+        lines: expFit.lines,
+        x: pad + 24,
+        y: y + 28 + expFit.fontSize,
+        fontSize: expFit.fontSize,
+        lineHeight: Math.round(expFit.fontSize * 1.4),
+        fill: colors.textSecondary,
+        fontWeight: "500",
+        fontFamily: fonts.body,
+      })
+    );
+  }
+
+  parts.push(renderBrandMark(width, pad, pad));
+  parts.push(
+    renderCtaBar(width, height, pad, uid, {
+      primary: CTAS.save,
+      secondary: CTAS.app,
+    })
+  );
+
+  return finishVisual(svgDocument({ width, height, uid, body: parts.join("\n") }), width, height, fmt.key);
 }
 
 function renderStoryQuestion(spec) {
-  const { width, height } = FORMATS["1080x1920"];
-  const c = brandColors();
+  const fmt = getFormat({ format: "1080x1920" });
+  const { width, height, pad } = fmt;
+  const uid = makeUid("st");
+  const contentW = innerWidth(pad, width);
+  const ls = layoutSpacing("story");
+  const parts = [];
+
+  parts.push(renderHookChip(spec.hook || spec.badge || "QUIZ", pad, pad + 40, { uid, maxWidth: 320 }));
+
+  if (spec.metaLine) {
+    parts.push(renderMetaLine(spec.metaLine, pad, pad + 100));
+  }
+
   const qFit = fitTextToBox(spec.questionText || spec.body || "", {
-    maxWidthPx: INNER_W,
-    maxLines: 10,
-    fontSizeMax: 42,
-    fontSizeMin: 30,
+    maxWidthPx: contentW - 48,
+    maxLines: 8,
+    fontSizeMax: typography.storyHero.size,
+    fontSizeMin: 32,
   });
 
-  const parts = [
-    renderMultilineText({
-      lines: [spec.badge || "BUGÜNÜN SORUSU"],
-      x: PAD,
-      y: PAD + 80,
-      fontSize: 26,
-      lineHeight: 32,
-      fill: c.accent,
-      fontWeight: "800",
-    }),
-    renderMultilineText({
-      lines: qFit.lines,
-      x: PAD,
-      y: PAD + 160 + qFit.fontSize,
-      fontSize: qFit.fontSize,
-      lineHeight: Math.round(qFit.fontSize * 1.4),
-      fill: c.text,
-      fontWeight: "600",
-    }),
-    renderMultilineText({
-      lines: [spec.footer || "Yorumlara cevap yaz →"],
-      x: PAD,
-      y: height - PAD - 20,
-      fontSize: 28,
-      lineHeight: 34,
-      fill: c.accentSoft,
-      fontWeight: "700",
-    }),
-    brandLogo(width, c),
-  ];
+  const cardY = pad + 140;
+  const cardH = qFit.lines.length * qFit.fontSize * 1.22 + ls.cardPad * 2 + 24;
+  parts.push(renderGlassCard(pad, cardY, contentW, cardH, uid));
 
-  return finishSvg(svgShell(width, height, parts.join("\n")), width, height, "1080x1920");
+  const textY =
+    spec.storyVariant === "poll" ? cardY + cardH / 2 - (qFit.lines.length * qFit.fontSize * 1.22) / 2 : cardY + ls.cardPad;
+  parts.push(
+    renderDisplayText(qFit.lines, pad + ls.cardPad, textY, {
+      fontSize: qFit.fontSize,
+      weight: 700,
+      centered: spec.storyVariant === "poll",
+      width: spec.storyVariant === "poll" ? width : undefined,
+    })
+  );
+
+  if (spec.options?.length && spec.storyVariant === "quiz") {
+    let oy = cardY + cardH + 24;
+    for (const opt of spec.options.slice(0, 3)) {
+      const wrapped = wrapTextByWidth(opt.text || opt, contentW - 80, 20);
+      const pill = renderOptionPill(opt.letter || "?", wrapped, pad, oy, contentW, 20, uid);
+      parts.push(pill.svg);
+      oy += pill.height;
+    }
+  }
+
+  parts.push(renderBrandMark(width, pad, pad + 36, { size: 36 }));
+
+  parts.push(
+    renderCtaBar(width, height, pad, uid, {
+      primary: spec.footer || spec.footerPrimary || CTAS.swipe,
+      secondary: spec.footerSecondary || "",
+      variant: "story",
+    })
+  );
+
+  return finishVisual(svgDocument({ width, height, uid, body: parts.join("\n") }), width, height, "1080x1920");
 }
 
 function renderLegacyCard(visualSpec) {
-  const format = visualSpec.format || "1080x1080";
-  const { width, height } = FORMATS[format] || FORMATS["1080x1080"];
-  const c = brandColors();
-  const bodyFit = fitTextToBox(visualSpec.body || "", {
-    maxWidthPx: INNER_W,
-    maxLines: 10,
-    fontSizeMax: 32,
-    fontSizeMin: 22,
+  return renderMiniInfoPost({
+    ...visualSpec,
+    templateType: "mini_info_post",
+    hook: visualSpec.headline,
+    body: visualSpec.body,
+    subline: visualSpec.subline,
   });
-
-  const parts = [
-    renderMultilineText({
-      lines: [visualSpec.headline || "Tusoskop"],
-      x: PAD,
-      y: PAD + 48,
-      fontSize: 36,
-      lineHeight: 42,
-      fill: c.accentSoft,
-      fontWeight: "700",
-    }),
-    visualSpec.subline
-      ? renderMultilineText({
-          lines: [visualSpec.subline],
-          x: PAD,
-          y: PAD + 96,
-          fontSize: 26,
-          lineHeight: 32,
-          fill: c.muted,
-          fontWeight: "600",
-        })
-      : "",
-    renderMultilineText({
-      lines: bodyFit.lines,
-      x: PAD,
-      y: PAD + 150 + bodyFit.fontSize,
-      fontSize: bodyFit.fontSize,
-      lineHeight: Math.round(bodyFit.fontSize * 1.38),
-      fill: c.text,
-      fontWeight: "500",
-    }),
-    footerBar(width, height, c, {
-      left: visualSpec.footer || "tusoskop.com",
-      center: "",
-    }),
-  ];
-
-  return finishSvg(svgShell(width, height, parts.join("\n")), width, height, format);
 }
 
 export async function svgToPngDataUrl(svg, width, height) {
@@ -597,6 +663,7 @@ export async function svgToPngDataUrl(svg, width, height) {
 export function renderQuestionPostSample() {
   return renderQuestionPost({
     templateType: "question_post",
+    hook: "TUS'ta çok karışan nokta",
     badge: "GÜNÜN TUS SORUSU",
     metaLine: "Dahiliye · Hepatoloji",
     questionText:

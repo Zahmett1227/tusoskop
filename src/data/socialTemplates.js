@@ -7,6 +7,7 @@ export const VISUAL_TEMPLATE_TYPES = {
   FEATURE_POST: "feature_post",
   STORY_QUESTION: "story_question",
   ANSWER_POST: "answer_post",
+  CAROUSEL_SLIDE: "carousel_slide",
 };
 
 export const POST_TEMPLATES = {

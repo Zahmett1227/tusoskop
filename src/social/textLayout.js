@@ -84,16 +84,23 @@ export function renderMultilineText({
   fontWeight = "500",
   fontFamily = "Segoe UI, system-ui, sans-serif",
   textAnchor = "start",
+  letterSpacing,
 }) {
   const lh = lineHeight || Math.round(fontSize * 1.38);
-  const anchor = textAnchor === "middle" ? ' text-anchor="middle"' : textAnchor === "end" ? ' text-anchor="end"' : "";
+  const anchor =
+    textAnchor === "middle"
+      ? ' text-anchor="middle"'
+      : textAnchor === "end"
+        ? ' text-anchor="end"'
+        : "";
+  const ls = letterSpacing != null ? ` letter-spacing="${letterSpacing}em"` : "";
   const tspans = lines
     .map((line, i) => {
       const dy = i === 0 ? 0 : lh;
       return `<tspan x="${x}" dy="${i === 0 ? 0 : dy}">${escapeXml(line)}</tspan>`;
     })
     .join("");
-  return `<text x="${x}" y="${y}" fill="${fill}" font-family="${fontFamily}" font-size="${fontSize}" font-weight="${fontWeight}"${anchor}>${tspans}</text>`;
+  return `<text x="${x}" y="${y}" fill="${fill}" font-family="${fontFamily}" font-size="${fontSize}" font-weight="${fontWeight}"${anchor}${ls}>${tspans}</text>`;
 }
 
 export function escapeXml(str) {

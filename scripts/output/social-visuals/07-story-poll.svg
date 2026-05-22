@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<defs>
+
+  <linearGradient id="bgGrad-st-3668a5y" x1="0" y1="0" x2="0.4" y2="1">
+    <stop offset="0%" stop-color="#0a0f1a"/>
+    <stop offset="55%" stop-color="#010409"/>
+    <stop offset="100%" stop-color="#030712"/>
+  </linearGradient>
+  <radialGradient id="glowAccent-st-3668a5y" cx="85%" cy="8%" r="55%">
+    <stop offset="0%" stop-color="#10b981" stop-opacity="0.22"/>
+    <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowSoft-st-3668a5y" cx="15%" cy="92%" r="45%">
+    <stop offset="0%" stop-color="#1e3a5f" stop-opacity="0.35"/>
+    <stop offset="100%" stop-color="#1e3a5f" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="glassGrad-st-3668a5y" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="rgba(255,255,255,0.06)"/>
+    <stop offset="100%" stop-color="rgba(255,255,255,0.01)"/>
+  </linearGradient>
+  <linearGradient id="chipGrad-st-3668a5y" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="rgba(16,185,129,0.28)"/>
+    <stop offset="100%" stop-color="rgba(16,185,129,0.08)"/>
+  </linearGradient>
+  <pattern id="dotGrid-st-3668a5y" width="24" height="24" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="0.8" fill="#64748b" opacity="0.12"/>
+  </pattern>
+
+  <filter id="cardShadow-st-3668a5y" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.45"/>
+    <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#10b981" flood-opacity="0.08"/>
+  </filter>
+  <filter id="innerGlow-st-3668a5y" x="-10%" y="-10%" width="120%" height="120%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+    <feOffset dx="0" dy="1"/>
+    <feComposite in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.06 0 0 0 0 0.73 0 0 0 0 0.51 0 0 0 0.15 0"/>
+    <feBlend in="SourceGraphic" mode="normal"/>
+  </filter>
+  <filter id="noise-st-3668a5y">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" result="noise"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer>
+      <feFuncA type="linear" slope="0.035"/>
+    </feComponentTransfer>
+  </filter>
+</defs>
+
+<rect width="1080" height="1920" fill="url(#bgGrad-st-3668a5y)"/>
+<rect width="1080" height="1920" fill="url(#glowAccent-st-3668a5y)"/>
+<rect width="1080" height="1920" fill="url(#glowSoft-st-3668a5y)"/>
+<rect width="1080" height="1920" fill="url(#dotGrid-st-3668a5y)" opacity="0.5"/>
+<rect width="1080" height="1920" filter="url(#noise-st-3668a5y)" opacity="0.6"/>
+
+<g filter="url(#cardShadow-st-3668a5y)">
+  <rect x="64" y="104" width="69.69999999999999" height="37.55" rx="999" fill="url(#chipGrad-st-3668a5y)" stroke="rgba(16, 185, 129, 0.35)" stroke-width="1"/>
+  <rect x="65" y="105" width="67.69999999999999" height="35.55" rx="999" fill="url(#glassGrad-st-3668a5y)" opacity="0.5"/>
+  <text x="80" y="127" fill="#34d399" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em"><tspan x="80" dy="0">ANKET</tspan></text>
+</g>
+
+<g filter="url(#cardShadow-st-3668a5y)">
+  <rect x="64" y="204" width="952" height="149.68" rx="22" fill="#0f172a" fill-opacity="0.88" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
+  <rect x="64" y="204" width="952" height="149.68" rx="22" fill="url(#glassGrad-st-3668a5y)" opacity="0.35"/>
+  <rect x="80" y="216" width="80" height="3" rx="1.5" fill="#10b981" opacity="0.7"/>
+</g>
+<text x="540" y="296" fill="#f1f5f9" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="44" font-weight="700" text-anchor="middle"><tspan x="540" dy="0">Bugün kaç TUS sorusu çözdün?</tspan></text>
+
+<g opacity="0.95">
+  <circle cx="994" cy="118" r="22" fill="rgba(16, 185, 129, 0.15)" stroke="rgba(16, 185, 129, 0.35)" stroke-width="1"/>
+  <text x="994" y="125" text-anchor="middle" fill="#34d399" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="20" font-weight="800">T</text>
+</g>
+
+<g filter="url(#cardShadow-st-3668a5y)">
+  <rect x="64" y="1792" width="952" height="56" rx="22" fill="#0f172a" fill-opacity="0.94" stroke="rgba(16, 185, 129, 0.35)" stroke-width="1"/>
+  <rect x="64" y="1792" width="952" height="56" rx="22" fill="url(#glassGrad-st-3668a5y)" opacity="0.25"/>
+  <text x="84" y="1814" fill="#34d399" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="700"><tspan x="84" dy="0">↑ Kaydır · oy ver</tspan></text>
+  
+  
+<text x="540" y="1860" text-anchor="middle" fill="#94a3b8" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.85">↑ Kaydır · devam et</text>
+</g>
+</svg>

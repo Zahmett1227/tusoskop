@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+<defs>
+
+  <linearGradient id="bgGrad-m-5z46pg8" x1="0" y1="0" x2="0.4" y2="1">
+    <stop offset="0%" stop-color="#0a0f1a"/>
+    <stop offset="55%" stop-color="#010409"/>
+    <stop offset="100%" stop-color="#030712"/>
+  </linearGradient>
+  <radialGradient id="glowAccent-m-5z46pg8" cx="85%" cy="8%" r="55%">
+    <stop offset="0%" stop-color="#10b981" stop-opacity="0.22"/>
+    <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowSoft-m-5z46pg8" cx="15%" cy="92%" r="45%">
+    <stop offset="0%" stop-color="#1e3a5f" stop-opacity="0.35"/>
+    <stop offset="100%" stop-color="#1e3a5f" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="glassGrad-m-5z46pg8" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="rgba(255,255,255,0.06)"/>
+    <stop offset="100%" stop-color="rgba(255,255,255,0.01)"/>
+  </linearGradient>
+  <linearGradient id="chipGrad-m-5z46pg8" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="rgba(16,185,129,0.28)"/>
+    <stop offset="100%" stop-color="rgba(16,185,129,0.08)"/>
+  </linearGradient>
+  <pattern id="dotGrid-m-5z46pg8" width="24" height="24" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="0.8" fill="#64748b" opacity="0.12"/>
+  </pattern>
+
+  <filter id="cardShadow-m-5z46pg8" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.45"/>
+    <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#10b981" flood-opacity="0.08"/>
+  </filter>
+  <filter id="innerGlow-m-5z46pg8" x="-10%" y="-10%" width="120%" height="120%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+    <feOffset dx="0" dy="1"/>
+    <feComposite in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.06 0 0 0 0 0.73 0 0 0 0 0.51 0 0 0 0.15 0"/>
+    <feBlend in="SourceGraphic" mode="normal"/>
+  </filter>
+  <filter id="noise-m-5z46pg8">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" result="noise"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer>
+      <feFuncA type="linear" slope="0.035"/>
+    </feComponentTransfer>
+  </filter>
+</defs>
+
+<rect width="1080" height="1080" fill="url(#bgGrad-m-5z46pg8)"/>
+<rect width="1080" height="1080" fill="url(#glowAccent-m-5z46pg8)"/>
+<rect width="1080" height="1080" fill="url(#glowSoft-m-5z46pg8)"/>
+<rect width="1080" height="1080" fill="url(#dotGrid-m-5z46pg8)" opacity="0.5"/>
+<rect width="1080" height="1080" filter="url(#noise-m-5z46pg8)" opacity="0.6"/>
+
+<g filter="url(#cardShadow-m-5z46pg8)">
+  <rect x="52" y="60" width="152.64" height="37.55" rx="999" fill="url(#chipGrad-m-5z46pg8)" stroke="rgba(16, 185, 129, 0.35)" stroke-width="1"/>
+  <rect x="53" y="61" width="150.64" height="35.55" rx="999" fill="url(#glassGrad-m-5z46pg8)" opacity="0.5"/>
+  <text x="68" y="83" fill="#34d399" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em"><tspan x="68" dy="0">1 DAKİKADA ÖĞREN</tspan></text>
+</g>
+<text x="52" y="150" fill="#f1f5f9" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="24" font-weight="700"><tspan x="52" dy="0">Penisilin</tspan></text>
+
+<g filter="url(#cardShadow-m-5z46pg8)">
+  <rect x="52" y="164" width="976" height="56" rx="16" fill="#0f172a" fill-opacity="0.9" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
+  <circle cx="74" cy="192" r="4" fill="#34d399"/>
+  <text x="88" y="200" fill="#cbd5e1" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="20" font-weight="500"><tspan x="88" dy="0">Hücre duvarı sentez inhibitörü</tspan></text>
+</g>
+
+<g filter="url(#cardShadow-m-5z46pg8)">
+  <rect x="52" y="230" width="976" height="56" rx="16" fill="#0f172a" fill-opacity="0.9" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
+  <circle cx="74" cy="258" r="4" fill="#34d399"/>
+  <text x="88" y="266" fill="#cbd5e1" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="20" font-weight="500"><tspan x="88" dy="0">Grup A streptokokta direnç nadir</tspan></text>
+</g>
+
+<g filter="url(#cardShadow-m-5z46pg8)">
+  <rect x="52" y="296" width="976" height="56" rx="16" fill="#0f172a" fill-opacity="0.9" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
+  <circle cx="74" cy="324" r="4" fill="#34d399"/>
+  <text x="88" y="332" fill="#cbd5e1" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="20" font-weight="500"><tspan x="88" dy="0">Eksüdatif tonsillitte ilk seçenek</tspan></text>
+</g>
+
+<g opacity="0.95">
+  <circle cx="1008" cy="68" r="20" fill="rgba(16, 185, 129, 0.15)" stroke="rgba(16, 185, 129, 0.35)" stroke-width="1"/>
+  <text x="1008" y="75" text-anchor="middle" fill="#34d399" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="18" font-weight="800">T</text>
+</g>
+
+<g filter="url(#cardShadow-m-5z46pg8)">
+  <rect x="52" y="964" width="976" height="56" rx="22" fill="#0f172a" fill-opacity="0.94" stroke="rgba(16, 185, 129, 0.35)" stroke-width="1"/>
+  <rect x="52" y="964" width="976" height="56" rx="22" fill="url(#glassGrad-m-5z46pg8)" opacity="0.25"/>
+  <text x="72" y="986" fill="#34d399" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="700"><tspan x="72" dy="0">Kaydet · Tekrar et</tspan></text>
+  <text x="1008" y="986" fill="#94a3b8" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="end"><tspan x="1008" dy="0">tusoskop.com</tspan></text>
+  
+</g>
+</svg>

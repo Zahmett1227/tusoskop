@@ -6,6 +6,9 @@ import {
   MINI_TIP_TOPICS,
   MOTIVATION_LINES,
 } from "../data/socialContentRules.js";
+import { pickHookForContent, generateCarouselSlides } from "./carouselGenerator.js";
+import { structureMiniTipContent, optimizeForInstagram } from "./contentDensity.js";
+import { CTAS } from "./design/socialTheme.js";
 
 function optionLabel(index) {
   return String.fromCharCode(65 + index);
@@ -18,27 +21,31 @@ function buildQuestionOptions(question) {
   }));
 }
 
-function buildQuestionVisualSpec(question) {
+function buildQuestionVisualSpec(question, rng = Math.random) {
   return {
     templateType: "question_post",
     format: "1080x1080",
+    hook: pickHookForContent(rng, question.ders),
     badge: "GÜNÜN TUS SORUSU",
     metaLine: `${question.ders} · ${question.konu}`,
     questionText: String(question.q || "").trim(),
     options: buildQuestionOptions(question),
-    footerLeft: "Cevabını yorumlara yaz",
-    footerCenter: "Tusoskop ile daha fazla soru çöz.",
+    footerLeft: CTAS.comment,
+    footerSecondary: CTAS.tomorrow,
   };
 }
 
-function buildQuestionStorySpec(question) {
+function buildQuestionStorySpec(question, rng = Math.random) {
   return {
     templateType: "story_question",
     format: "1080x1920",
+    hook: pickHookForContent(rng, question.ders),
     badge: "BUGÜNÜN SORUSU",
     metaLine: `${question.ders} · ${question.konu}`,
     questionText: String(question.q || "").trim(),
-    footer: "Yorumlara cevap yaz →",
+    storyVariant: "quiz",
+    footerPrimary: CTAS.comment,
+    footer: "↑ Kaydır · yorumlara yaz",
   };
 }
 
@@ -112,8 +119,9 @@ function generateDailyQuestion(question, rng) {
       explanation: question.exp,
       revealCaption: buildAnswerRevealCaption(question),
     },
-    visual: buildQuestionVisualSpec(question),
-    storyVisual: buildQuestionStorySpec(question),
+    visual: buildQuestionVisualSpec(question, rng),
+    storyVisual: buildQuestionStorySpec(question, rng),
+    carousel: generateCarouselSlides(question, rng),
   };
 }
 
@@ -142,30 +150,31 @@ function generateAnswerReveal(question) {
     visual: {
       templateType: "answer_post",
       format: "1080x1080",
+      hook: "CEVAP AÇIKLANDI",
       subline: `${question.ders} · dünün sorusu`,
       answerLine: `Doğru cevap: ${letter}) ${question.options[question.correct]}`,
-      explanation: String(question.exp || "").trim(),
+      explanation: optimizeForInstagram(String(question.exp || "").trim()),
     },
   };
 }
 
 function generateMiniTip(rng) {
   const topic = MINI_TIP_TOPICS[Math.floor(rng() * MINI_TIP_TOPICS.length)];
-  const template = pickOne(topic.templates, rng);
   const fillers = miniTipFillers(rng);
-  const body = fillTemplate(template, fillers);
-  const bullets = body
-    .split(/[.!?]\s+/)
-    .map((s) => s.trim())
-    .filter((s) => s.length > 12)
-    .slice(0, 4);
+  const structured = structureMiniTipContent({
+    title: topic.title,
+    point: fillers.point,
+    mechanism: fillers.drug ? `${fillers.drug} → ${fillers.mechanism}` : fillers.point,
+    hint: fillers.hint,
+    contrast: fillers.contrast,
+  });
 
   const caption = [
-    "1 dakikalık TUS notu",
+    pickHookForContent(rng, fillers.topic),
     "",
-    body,
+    structured.captionBody,
     "",
-    "Benzer sorular için Tusoskop'ta konu testi çözebilirsin.",
+    CTAS.app,
     "",
     pickHashtags({ ders: fillers.topic, extra: ["#TUSBilgi"] }).join(" "),
   ].join("\n");
@@ -178,18 +187,19 @@ function generateMiniTip(rng) {
     visual: {
       templateType: "mini_info_post",
       format: "1080x1080",
+      hook: pickHookForContent(rng, fillers.topic),
       headline: "Mini TUS Bilgisi",
       subline: topic.title,
-      body,
-      bullets: bullets.length >= 2 ? bullets : [],
-      footer: "Tusoskop · tusoskop.com",
+      bullets: structured.bullets,
+      footerPrimary: CTAS.save,
     },
     storyVisual: {
       templateType: "story_question",
       format: "1080x1920",
-      badge: "1 DK TUS NOTU",
-      questionText: body,
-      footer: "Kaydet · tekrar et",
+      hook: "1 DAKİKADA ÖĞREN",
+      storyVariant: "poll",
+      questionText: structured.bullets[0] || topic.title,
+      footer: CTAS.save,
     },
   };
 }
@@ -253,9 +263,9 @@ function generateFeaturePromo(feature, rng) {
     visual: {
       templateType: "feature_post",
       format: "1080x1350",
-      featureTitle: f.title,
       hook: f.hook,
-      body: f.body,
+      featureTitle: f.title,
+      body: optimizeForInstagram(f.body),
       footer: f.cta,
       cta: f.cta,
     },
@@ -272,9 +282,10 @@ function generateMotivation(rng) {
     visual: {
       templateType: "mini_info_post",
       format: "1080x1080",
+      hook: "TUS yolculuğu",
       headline: "TUS yolculuğu",
       body: line,
-      footer: "Tusoskop",
+      footerPrimary: CTAS.app,
     },
   };
 }
@@ -302,19 +313,16 @@ function generateStory(planItem, rng) {
     storyVisual: {
       templateType: "story_question",
       format: "1080x1920",
-      badge: "TUSOSKOP",
+      hook: "ANKET",
+      storyVariant: "poll",
       questionText: pollQuestion,
-      footer: "Ankete katıl",
+      footer: "↑ Kaydır · oy ver",
     },
   };
 }
 
 function pickOne(arr, rng) {
   return arr[Math.floor(rng() * arr.length)];
-}
-
-function fillTemplate(tpl, data) {
-  return tpl.replace(/\{(\w+)\}/g, (_, key) => data[key] || "");
 }
 
 export {

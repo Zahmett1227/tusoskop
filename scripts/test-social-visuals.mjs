@@ -1,6 +1,5 @@
 /**
  * Sosyal medya görsel testleri — SVG çıktıları scripts/output/social-visuals/ altına yazar.
- * Kullanım: node scripts/test-social-visuals.mjs
  */
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -10,23 +9,37 @@ import {
   renderStoryVisual,
   renderQuestionPostSample,
 } from "../src/social/visualGenerator.js";
+import { renderCarousel, generateCarouselSlides } from "../src/social/carouselGenerator.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = join(__dirname, "output", "social-visuals");
 
 mkdirSync(OUT, { recursive: true });
 
+const sampleQuestion = {
+  id: 1,
+  ders: "Dahiliye",
+  konu: "Hepatoloji",
+  q: "Kronik hepatit B izlenen hastada HBeAg pozitif ve HBV DNA çok yüksek seviyede saptanıyor. Aşağıdaki ifadelerden hangisi yanlıştır?",
+  options: [
+    "Nükleoz(t)id analog tedavisi önerilir.",
+    "Entekavir ilk basamak tedavide kullanılabilir.",
+    "Pegile interferon alfa tedavisi kesin kontrendikedir.",
+    "Karaciğer biyopsisi tedavi kararı için şarttır.",
+    "Tedavi yanıtı ALT ve HBV DNA ile izlenir.",
+  ],
+  correct: 3,
+  exp: "HBeAg pozitif kronik hepatit B'de biyopsi her zaman şart değildir; klinik ve laboratuvar bulguları tedavi kararı için yeterli olabilir.",
+};
+
 const cases = [
-  {
-    name: "01-hepatitis-b-acceptance",
-    fn: () => renderQuestionPostSample(),
-  },
+  { name: "01-hepatitis-b-premium", fn: () => renderQuestionPostSample() },
   {
     name: "02-short-question",
     fn: () =>
       renderSocialVisual({
         templateType: "question_post",
-        badge: "GÜNÜN TUS SORUSU",
+        hook: "Farmakolojide sık hata",
         metaLine: "Farmakoloji · Antihipertansifler",
         questionText: "ACE inhibitörlerinin en sık görülen yan etkisi hangisidir?",
         options: [
@@ -39,83 +52,50 @@ const cases = [
       }),
   },
   {
-    name: "03-long-question",
-    fn: () =>
-      renderSocialVisual({
-        templateType: "question_post",
-        metaLine: "Dahiliye · Hepatoloji",
-        questionText:
-          "Kronik hepatit B izlenen 28 yaşındaki erkek hastada HBeAg pozitif, ALT 2× üst sınırın üzerinde ve HBV DNA 10⁸ IU/mL düzeyinde saptanıyor. Karaciğer biyopsisi yapılmadan tedavi planlanıyor. Aşağıdaki ifadelerden hangisi yanlıştır?",
-        options: [
-          { letter: "A", text: "Nükleoz(t)id analog tedavisi önerilir." },
-          { letter: "B", text: "Entekavir ilk basamak tedavide kullanılabilir." },
-          { letter: "C", text: "Pegile interferon alfa tedavisi kesin kontrendikedir." },
-          { letter: "D", text: "Karaciğer biyopsisi tedavi kararı için şarttır." },
-          { letter: "E", text: "Tedavi yanıtı ALT ve HBV DNA ile izlenir." },
-        ],
-      }),
-  },
-  {
-    name: "04-long-options",
-    fn: () =>
-      renderSocialVisual({
-        templateType: "question_post",
-        metaLine: "Pediatri · Neonatoloji",
-        questionText: "Prematü bebekte nekrotizan enterokolit gelişiminde en önemli risk faktörü hangisidir?",
-        options: [
-          { letter: "A", text: "Erken doğum ve enteral beslenmenin erken başlanması" },
-          { letter: "B", text: "Anne sütü ile beslenmenin geciktirilmesi" },
-          { letter: "C", text: "Yüksek doz vitamin K profilaksisi" },
-          { letter: "D", text: "Uzun süreli fototerapi uygulaması" },
-          { letter: "E", text: "Rutin antibiyotik profilaksisi" },
-        ],
-      }),
-  },
-  {
-    name: "05-mini-info",
+    name: "05-mini-info-bullets",
     fn: () =>
       renderSocialVisual({
         templateType: "mini_info_post",
-        headline: "Mini TUS Bilgisi",
-        subline: "Addison krizi",
-        body: "Addison krizinde önce sıvı replasmanı, ardından glukokortikoid verilir.",
+        hook: "1 DAKİKADA ÖĞREN",
+        subline: "Penisilin",
         bullets: [
-          "Hipotansiyon + hiperpigmentasyon ipucu",
-          "Hiponatremi ve hiperkalemi sık",
-          "SIADH ile karışabilir",
+          "Hücre duvarı sentez inhibitörü",
+          "Grup A streptokokta direnç nadir",
+          "Eksüdatif tonsillitte ilk seçenek",
         ],
       }),
   },
   {
-    name: "06-feature",
+    name: "06-feature-premium",
     fn: () =>
       renderSocialVisual({
         templateType: "feature_post",
+        hook: "Zayıf konunu hedefle",
         featureTitle: "Konu Testi",
-        hook: "Zayıf konunu hedefle, hızlı ilerle.",
-        body: "Ders ve konu seçerek odaklı test çöz. Yanlışları otomatik tekrar et.",
+        body: "Ders seç · odaklı çöz · yanlışları tekrar et.",
         footer: "tusoskop.com",
       }),
   },
   {
-    name: "07-story",
+    name: "07-story-poll",
     fn: () =>
       renderStoryVisual({
         templateType: "story_question",
-        badge: "BUGÜNÜN SORUSU",
+        hook: "ANKET",
+        storyVariant: "poll",
         questionText: "Bugün kaç TUS sorusu çözdün?",
-        footer: "Ankete katıl",
+        footer: "↑ Kaydır · oy ver",
       }),
   },
   {
-    name: "08-answer",
+    name: "08-answer-premium",
     fn: () =>
       renderSocialVisual({
         templateType: "answer_post",
+        hook: "CEVAP AÇIKLANDI",
         subline: "Dahiliye · dünün sorusu",
         answerLine: "Doğru cevap: D) Karaciğer biyopsisi tedavi kararı için şarttır.",
-        explanation:
-          "HBeAg pozitif kronik hepatit B'de biyopsi her zaman şart değildir; klinik ve laboratuvar bulguları tedavi kararı için yeterli olabilir.",
+        explanation: "Biyopsi her zaman şart değildir; klinik ve lab yeterli olabilir.",
       }),
   },
 ];
@@ -126,11 +106,8 @@ let fail = 0;
 for (const tc of cases) {
   try {
     const result = tc.fn();
-    if (!result?.svg || result.width < 100) {
-      throw new Error("Geçersiz SVG çıktısı");
-    }
-    const path = join(OUT, `${tc.name}.svg`);
-    writeFileSync(path, result.svg, "utf8");
+    if (!result?.svg || result.width < 100) throw new Error("Geçersiz SVG");
+    writeFileSync(join(OUT, `${tc.name}.svg`), result.svg, "utf8");
     console.log(`✓ ${tc.name} → ${result.width}x${result.height}`);
     ok++;
   } catch (err) {
@@ -139,5 +116,19 @@ for (const tc of cases) {
   }
 }
 
-console.log(`\n${ok} başarılı, ${fail} hata — çıktı: ${OUT}`);
+try {
+  const specs = generateCarouselSlides(sampleQuestion);
+  const carousel = renderCarousel(specs);
+  carousel.slides.forEach((slide, i) => {
+    const name = `09-carousel-${String(i + 1).padStart(2, "0")}-${specs[i].slideRole}`;
+    writeFileSync(join(OUT, `${name}.svg`), slide.svg, "utf8");
+    console.log(`✓ ${name} → ${slide.width}x${slide.height}`);
+    ok++;
+  });
+} catch (err) {
+  console.error(`✗ carousel: ${err.message}`);
+  fail++;
+}
+
+console.log(`\n${ok} başarılı, ${fail} hata — ${OUT}`);
 process.exit(fail > 0 ? 1 : 0);

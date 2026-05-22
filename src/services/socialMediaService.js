@@ -13,6 +13,7 @@ import {
 import { SOCIAL_CONTENT_STATUS, SOCIAL_CONTENT_TYPES } from "../social/socialTypes.js";
 import { buildSocialContentBatch } from "../social/socialPipeline.js";
 import { renderSocialVisual, renderStoryVisual } from "../social/visualGenerator.js";
+import { renderCarousel, generateCarouselSlides } from "../social/carouselGenerator.js";
 import {
   buildQuestionVisualSpec,
   optionLabel,
@@ -172,24 +173,54 @@ export async function markContentFailed(contentId, adminUid, error) {
  * @param {object[]} [questions] — kaynak sorudan visualSpec yeniden kurmak için
  */
 export async function regenerateVisual(contentId, content, adminUid, questions = []) {
-  const visualSpec = content.visualSpec || rebuildVisualSpec(content, questions);
+  const sourceQ = findQuestionById(questions, content.sourceQuestionId);
   const storyVisualSpec =
     content.storyVisualSpec || rebuildStorySpec(content, questions);
 
-  const visual = renderSocialVisual(visualSpec);
-  const storyVisual = storyVisualSpec ? renderStoryVisual(storyVisualSpec) : null;
+  let patch = {};
 
-  const patch = {
-    visualUrl: visual.svgUrl,
-    visualSvg: visual.svg,
-    visualWidth: visual.width,
-    visualHeight: visual.height,
-    visualFormat: visual.format,
-    visualSpec,
-    storyVisualUrl: storyVisual?.svgUrl ?? null,
-    storyVisualSvg: storyVisual?.svg ?? null,
-    storyVisualSpec: storyVisualSpec ?? null,
-  };
+  if (content.carouselSpecs?.length || (sourceQ && content.type === SOCIAL_CONTENT_TYPES.DAILY_QUESTION)) {
+    const specs = content.carouselSpecs || generateCarouselSlides(sourceQ);
+    const carousel = renderCarousel(specs);
+    patch = {
+      carouselSpecs: specs,
+      carouselSlideCount: carousel.slideCount,
+      carouselSlides: carousel.slides.map((s, i) => ({
+        index: i,
+        svgUrl: s.svgUrl,
+        svg: s.svg,
+        width: s.width,
+        height: s.height,
+        format: s.format,
+        slideRole: specs[i]?.slideRole,
+      })),
+      visualUrl: carousel.primary?.svgUrl,
+      visualSvg: carousel.primary?.svg,
+      visualWidth: carousel.primary?.width,
+      visualHeight: carousel.primary?.height,
+      visualFormat: carousel.primary?.format,
+      visualMode: "carousel",
+      visualSpec: content.visualSpec || rebuildVisualSpec(content, questions),
+    };
+  } else {
+    const visualSpec = content.visualSpec || rebuildVisualSpec(content, questions);
+    const visual = renderSocialVisual(visualSpec);
+    patch = {
+      visualUrl: visual.svgUrl,
+      visualSvg: visual.svg,
+      visualWidth: visual.width,
+      visualHeight: visual.height,
+      visualFormat: visual.format,
+      visualSpec,
+      visualMode: "single",
+    };
+  }
+
+  const storyVisual = storyVisualSpec ? renderStoryVisual(storyVisualSpec) : null;
+  patch.storyVisualUrl = storyVisual?.svgUrl ?? null;
+  patch.storyVisualSvg = storyVisual?.svg ?? null;
+  patch.storyVisualSpec = storyVisualSpec ?? null;
+
   await updateSocialContent(contentId, patch, adminUid);
   return patch;
 }

@@ -5,8 +5,35 @@
 import { planContentForDay, filterUnusedQuestions, pickRandomQuestion } from "./contentPlanner.js";
 import { generateContentPackage } from "./contentGenerator.js";
 import { renderSocialVisual, renderStoryVisual } from "./visualGenerator.js";
+import { renderCarousel } from "./carouselGenerator.js";
 import { runSafetyCheck } from "./safetyChecker.js";
 import { SOCIAL_CONTENT_STATUS } from "./socialTypes.js";
+
+function attachCarouselToDraft(draft, carouselSpecs) {
+  if (!carouselSpecs?.length) return;
+  const carousel = renderCarousel(carouselSpecs);
+  draft.carouselSpecs = carouselSpecs;
+  draft.carouselSlideCount = carousel.slideCount;
+  draft.carouselSlides = carousel.slides.map((s, i) => ({
+    index: i,
+    svgUrl: s.svgUrl,
+    svg: s.svg,
+    width: s.width,
+    height: s.height,
+    format: s.format,
+    slideRole: carouselSpecs[i]?.slideRole,
+  }));
+  // Carousel birincil görsel — Instagram kaydetmelik akış
+  const primary = carousel.primary;
+  if (primary) {
+    draft.visualUrl = primary.svgUrl;
+    draft.visualSvg = primary.svg;
+    draft.visualWidth = primary.width;
+    draft.visualHeight = primary.height;
+    draft.visualFormat = primary.format;
+    draft.visualMode = "carousel";
+  }
+}
 
 /**
  * @param {{ questions: object[], recentQuestionIds?: number[], recentFeatureIds?: string[], recentCaptions?: string[], date?: Date }} input
@@ -34,8 +61,6 @@ export function buildSocialContentBatch(input) {
       }
 
       const pkg = generateContentPackage(item, ctx);
-      const visual = renderSocialVisual(pkg.visual);
-      const storyVisual = pkg.storyVisual ? renderStoryVisual(pkg.storyVisual) : null;
 
       const draft = {
         type: pkg.type,
@@ -52,17 +77,26 @@ export function buildSocialContentBatch(input) {
         answerPayload: pkg.answerPayload ?? null,
         storyText: pkg.storyText ?? null,
         storySuggestions: pkg.storySuggestions ?? null,
-        visualUrl: visual.svgUrl,
-        visualSvg: visual.svg,
-        visualWidth: visual.width,
-        visualHeight: visual.height,
-        visualFormat: visual.format,
-        storyVisualUrl: storyVisual?.svgUrl ?? null,
-        storyVisualSvg: storyVisual?.svg ?? null,
         visualSpec: pkg.visual ?? null,
         storyVisualSpec: pkg.storyVisual ?? null,
+        visualMode: "single",
         createdBy: "auto",
       };
+
+      if (pkg.carousel?.length) {
+        attachCarouselToDraft(draft, pkg.carousel);
+      } else {
+        const visual = renderSocialVisual(pkg.visual);
+        draft.visualUrl = visual.svgUrl;
+        draft.visualSvg = visual.svg;
+        draft.visualWidth = visual.width;
+        draft.visualHeight = visual.height;
+        draft.visualFormat = visual.format;
+      }
+
+      const storyVisual = pkg.storyVisual ? renderStoryVisual(pkg.storyVisual) : null;
+      draft.storyVisualUrl = storyVisual?.svgUrl ?? null;
+      draft.storyVisualSvg = storyVisual?.svg ?? null;
 
       const safetyReport = runSafetyCheck(draft, {
         recentCaptions: input.recentCaptions || [],

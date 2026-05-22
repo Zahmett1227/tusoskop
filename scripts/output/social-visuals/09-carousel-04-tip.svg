@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<defs>
+
+  <linearGradient id="bgGrad-c3-v1tq7yq" x1="0" y1="0" x2="0.4" y2="1">
+    <stop offset="0%" stop-color="#0a0f1a"/>
+    <stop offset="55%" stop-color="#010409"/>
+    <stop offset="100%" stop-color="#030712"/>
+  </linearGradient>
+  <radialGradient id="glowAccent-c3-v1tq7yq" cx="85%" cy="8%" r="55%">
+    <stop offset="0%" stop-color="#10b981" stop-opacity="0.22"/>
+    <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowSoft-c3-v1tq7yq" cx="15%" cy="92%" r="45%">
+    <stop offset="0%" stop-color="#1e3a5f" stop-opacity="0.35"/>
+    <stop offset="100%" stop-color="#1e3a5f" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="glassGrad-c3-v1tq7yq" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="rgba(255,255,255,0.06)"/>
+    <stop offset="100%" stop-color="rgba(255,255,255,0.01)"/>
+  </linearGradient>
+  <linearGradient id="chipGrad-c3-v1tq7yq" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="rgba(16,185,129,0.28)"/>
+    <stop offset="100%" stop-color="rgba(16,185,129,0.08)"/>
+  </linearGradient>
+  <pattern id="dotGrid-c3-v1tq7yq" width="24" height="24" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="0.8" fill="#64748b" opacity="0.12"/>
+  </pattern>
+
+  <filter id="cardShadow-c3-v1tq7yq" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.45"/>
+    <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#10b981" flood-opacity="0.08"/>
+  </filter>
+  <filter id="innerGlow-c3-v1tq7yq" x="-10%" y="-10%" width="120%" height="120%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+    <feOffset dx="0" dy="1"/>
+    <feComposite in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.06 0 0 0 0 0.73 0 0 0 0 0.51 0 0 0 0.15 0"/>
+    <feBlend in="SourceGraphic" mode="normal"/>
+  </filter>
+  <filter id="noise-c3-v1tq7yq">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" result="noise"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer>
+      <feFuncA type="linear" slope="0.035"/>
+    </feComponentTransfer>
+  </filter>
+</defs>
+
+<rect width="1080" height="1350" fill="url(#bgGrad-c3-v1tq7yq)"/>
+<rect width="1080" height="1350" fill="url(#glowAccent-c3-v1tq7yq)"/>
+<rect width="1080" height="1350" fill="url(#glowSoft-c3-v1tq7yq)"/>
+<rect width="1080" height="1350" fill="url(#dotGrid-c3-v1tq7yq)" opacity="0.5"/>
+<rect width="1080" height="1350" filter="url(#noise-c3-v1tq7yq)" opacity="0.6"/>
+
+<g filter="url(#cardShadow-c3-v1tq7yq)">
+  <rect x="56" y="64" width="152.64" height="37.55" rx="999" fill="url(#chipGrad-c3-v1tq7yq)" stroke="rgba(16, 185, 129, 0.35)" stroke-width="1"/>
+  <rect x="57" y="65" width="150.64" height="35.55" rx="999" fill="url(#glassGrad-c3-v1tq7yq)" opacity="0.5"/>
+  <text x="72" y="87" fill="#34d399" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em"><tspan x="72" dy="0">KLINIK PÜF NOKTA</tspan></text>
+</g>
+<text x="56" y="139" fill="#94a3b8" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="500"><tspan x="56" dy="0">Dahiliye · Hepatoloji</tspan></text>
+<text x="56" y="186" fill="#f1f5f9" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="28" font-weight="700"><tspan x="56" dy="0">Unutma</tspan></text>
+
+<g filter="url(#cardShadow-c3-v1tq7yq)">
+  <rect x="56" y="200" width="968" height="101.6" rx="22" fill="#0f172a" fill-opacity="0.88" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
+  <rect x="56" y="200" width="968" height="101.6" rx="22" fill="url(#glassGrad-c3-v1tq7yq)" opacity="0.35"/>
+  <rect x="72" y="212" width="80" height="3" rx="1.5" fill="#10b981" opacity="0.7"/>
+</g>
+<text x="80" y="250" fill="#cbd5e1" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="500"><tspan x="80" dy="0">HBeAg pozitif kronik hepatit B'de biyopsi her zaman şart değildir; klinik ve</tspan><tspan x="80" dy="31">laboratuvar bulguları tedavi kararı için yeterli olabilir.</tspan></text>
+
+<g opacity="0.95">
+  <circle cx="1004" cy="76" r="20" fill="rgba(16, 185, 129, 0.15)" stroke="rgba(16, 185, 129, 0.35)" stroke-width="1"/>
+  <text x="1004" y="83" text-anchor="middle" fill="#34d399" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="18" font-weight="800">T</text>
+</g>
+
+<g filter="url(#cardShadow-c3-v1tq7yq)">
+  <rect x="56" y="1230" width="968" height="56" rx="22" fill="#0f172a" fill-opacity="0.94" stroke="rgba(16, 185, 129, 0.35)" stroke-width="1"/>
+  <rect x="56" y="1230" width="968" height="56" rx="22" fill="url(#glassGrad-c3-v1tq7yq)" opacity="0.25"/>
+  <text x="76" y="1252" fill="#34d399" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="700"><tspan x="76" dy="0">Kaydet · Tekrar et</tspan></text>
+  
+  
+</g>
+<circle cx="500" cy="1278" r="4" fill="#64748b" opacity="0.45"/><circle cx="520" cy="1278" r="4" fill="#64748b" opacity="0.45"/><circle cx="540" cy="1278" r="4" fill="#64748b" opacity="0.45"/><circle cx="560" cy="1278" r="5" fill="#34d399" opacity="1"/><circle cx="580" cy="1278" r="4" fill="#64748b" opacity="0.45"/>
+</svg>

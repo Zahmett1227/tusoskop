@@ -1,0 +1,21 @@
+/** Tusoskop sosyal medya renk paleti */
+export const colors = {
+  bg: "#010409",
+  bgElevated: "#0a0f1a",
+  bgCard: "#0f172a",
+  bgCardHover: "#131f35",
+  glass: "rgba(15, 23, 42, 0.72)",
+  glassBorder: "rgba(148, 163, 184, 0.12)",
+  border: "#1e293b",
+  borderGlow: "rgba(16, 185, 129, 0.35)",
+  text: "#f1f5f9",
+  textSecondary: "#cbd5e1",
+  muted: "#64748b",
+  mutedSoft: "#94a3b8",
+  accent: "#10b981",
+  accentBright: "#34d399",
+  accentMuted: "rgba(16, 185, 129, 0.15)",
+  accentGlow: "rgba(52, 211, 153, 0.25)",
+  danger: "#f87171",
+  white: "#ffffff",
+};
