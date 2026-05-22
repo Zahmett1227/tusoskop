@@ -1,0 +1,126 @@
+---
+description: Tusoskop soru üretimi, düzenleme, validasyon ve chunk dosyalarına ekleme görevlerinde devreye girer. UI, Firebase, ödeme, deploy ve genel kodlama için kullanılmaz.
+globs: src/data/questionChunks/**,src/data/questions.js,scripts/validate-question-bank.mjs,scripts/*question*
+alwaysApply: false
+---
+
+# Tusoskop Soru Üretimi Kuralı
+
+Bu kural **yalnızca** Tusoskop soru üretimi, soru düzenleme, soru validasyonu ve soru verisi dosyalarına ekleme görevlerinde geçerlidir.
+
+## Kapsam dışı (bu kural devreye girmesin)
+
+- UI / CSS / Tailwind / PWA
+- Firebase, Firestore rules, auth, hosting deploy
+- Ödeme, premium, admin panel
+- Analytics, pazarlama, genel refaktör
+
+## Zorunlu subagent kullanımı
+
+Soru üretimi veya toplu ekleme görevlerinde sırayla şu proje subagentlarını kullan veya eşdeğer kontrolleri uygula:
+
+1. `tusoskop-question-orchestrator` — plan ve koordinasyon
+2. `tusoskop-question-writer` — soru yazımı
+3. `tusoskop-format-data-guard` — şema (yazım sonrası erken kontrol)
+4. `tusoskop-medical-validator` — tıbbi doğruluk
+5. `tusoskop-tus-alignment-reviewer` — TUS uyumu
+6. `tusoskop-duplicate-auditor` — tekrar kontrolü
+7. `tusoskop-explanation-editor` — `exp` iyileştirme
+8. `tusoskop-final-reviewer` — nihai karar
+
+## Zorunlu ekleme akışı (kapı sırası)
+
+Bankaya yazmadan önce bu sıra **bozulamaz**:
+
+```
+taslak JSON → batch QC (metrik + subagent raporları) → kullanıcı onayı → append script → validate:questions → build
+```
+
+- QC geçmeden chunk/manifest **yazma**
+- `DOĞRULANMALI` etiketli soru **otomatik eklenmez**
+- Her batch raporunda **rev numarası** (rev1, rev2…) ve hangi rev’e ait “EKLENEBİLİR” olduğu yazılır
+- Büyük setler **30–50’lik parçalar**; bir parça fail ise sadece o parça rewrite
+
+## Sayısal kalite kapıları (tüm subagent’lar + final-reviewer)
+
+| Metrik | Geçiş eşiği | Fail |
+|--------|-------------|------|
+| Vaka-benzeri kök uzunluğu | ≥220 karakter | <220 |
+| Set ortalama kök uzunluğu | ≥280 karakter | <280 |
+| Telegrafik kök oranı (`;` listesi, kısa) | ≤%5 | >%10 |
+| tus-alignment vaka skoru ortalaması | ≥4.0 | <3.5 |
+| Mekanizma odaklı soru oranı (vaka setinde) | ≥%60 | <%40 |
+| Banka duplicate (Jaccard kök) | <0.85 | ≥0.85 |
+| medical-validator kritik hata | 0 | ≥1 |
+| DOĞRULANMALI etiketli soru | 0 (ekleme öncesi) | ≥1 |
+| correct index tek şıkta yoğunlaşma | ≤%40 bir index | >%40 |
+| Golden referans: yeni vaka ort./banka vaka ort. | ≥%80 | <%80 |
+
+## Veri şeması (değiştirilemez)
+
+```js
+{
+  id: number,
+  ders: string,
+  konu: string,
+  diff: number,      // 1-5
+  q: string,
+  options: string[], // length === 5
+  correct: number,   // 0-4
+  exp: string
+}
+```
+
+Bankaya yazılacak objede `_type`, `tags` vb. **şema dışı alan olmasın**.
+
+## Ders adları (birebir eşleşme zorunlu)
+
+`src/data/subjects.js` içindeki `SUBJECTS[].name` ile %100 aynı olmalı.
+
+## Konu adları
+
+- Yeni konu uydurma.
+- İlgili chunk dosyasındaki mevcut `konu` stringleri allowlist; dışındaki konu → bloklayıcı hata.
+- Talimat: `TUSOSKOP informations/Tusoskop_Cursor_Soru_Uretim_Ana_Talimat_Dosyasi.docx`
+
+## Dosya hedefleri
+
+- Chunk: `src/data/questionChunks/{slug}.js` → `export const QUESTIONS = [...]`
+- Manifest: `src/data/questionChunks/_manifest.json` → `subjectCounts`
+- ID: global benzersiz; mevcut max ID + 1 ile devam et
+- Taslak: `TUSOSKOP informations/{ders}_N_taslak.json`
+- QC raporu: `TUSOSKOP informations/{ders}_N_kalite_kontrol_raporu.md`
+
+## Çalışma protokolü
+
+1. Kullanıcı açıkça istemedikçe chunk dosyalarını değiştirme; önce plan + taslak + QC raporu.
+2. Kullanıcı "direkt ekle" dese bile **batch QC + format + duplicate** zorunlu.
+3. Append sonrası: taslak ile chunk **fieldMismatch = 0** doğrula; global max ID = beklenen max.
+4. Ekleme sonrası: `npm run validate:questions`, `npm run build` (test isteğe bağlı).
+5. Yanlıştır sorularda **şık rotasyonu yapma** (correct index kaymasın).
+
+## Kalite ilkeleri
+
+- Türkçe, **tam cümleli** klinik vaka kökü; tek doğru cevap
+- TUS/USMLE: **mekanizma / patofizyoloji / yönetim mantığı** dolaylı sorgulanır
+- Vaka kökü min ~220 (ideal 280–550); telegrafik `;` listeleri yasak
+- Vaka yapısı: demografi → öykü → muayene → tetkik → mekanizma sorusu
+- `exp` öğretici; mekanizma açıklar; doğru şık metniyle tutarlı
+- Emin olunmayan iddia → `DOĞRULANMALI`; sessizce geçirme ve otomatik ekleme yok
+
+## Vaka kökü red bayrakları
+
+- `q.length < 180` (vaka-benzeri)
+- Noktalı virgülle 3+ parça, akıcı paragraf yok
+- Sadece "en olası tanı" ezberi, klinik derinlik yok
+- Set ortalama vaka uzunluğu < 220 → **YENİDEN YAZ**
+
+## QC script referansları
+
+Subagent raporları şu script mantığıyla **uyumlu** olmalı (varsa çalıştır):
+
+- `scripts/pediatri-150-qc.mjs` — batch metrikleri (genelleştirilebilir `qc-batch.mjs`)
+- `scripts/validate-question-bank.mjs` — şema, manifest, global ID
+- `scripts/append-*-*.mjs` — ID aralığı, duplicate ID, append öncesi son kontrol
+
+Final-reviewer **“EKLENEBİLİR”** demeden önce sayısal kapı tablosunun geçtiğini doğrular.
