@@ -192,45 +192,87 @@ export async function getFavoriteQuestions(user) {
   }
 }
 
+/** Tekil ve toplu yanlış kayıt için ortak payload (document id = question.id). */
+export function buildNextWrongQuestionEntry(
+  question,
+  selectedAnswer,
+  previous = null,
+  now = safeNowIso()
+) {
+  const questionId = getQuestionIdSafe(question);
+  if (!questionId) return null;
+  const optionCount = Array.isArray(question.options) ? question.options.length : 5;
+  const normalizedSelected = normalizeSelectedAnswer(selectedAnswer, optionCount);
+  const patch = {
+    questionId,
+    ders: String(question.ders || ""),
+    konu: String(question.konu || ""),
+    lastSelectedAnswer: normalizedSelected,
+    correctAnswer: toNumber(question.correct, null),
+    updatedAt: now,
+  };
+  const prev = previous ? normalizeWrongItem(previous) : null;
+  return {
+    ...patch,
+    wrongCount: (prev?.wrongCount || 0) + 1,
+    lastWrongAt: now,
+    reviewCount: prev?.reviewCount || 0,
+    lastReviewedAt: prev?.lastReviewedAt || null,
+    correctReviewStreak: 0,
+    isResolved: false,
+  };
+}
+
+/** Toplu deneme bitişi: yerel wrongQuestions listesini günceller. */
+export function applyWrongQuestionsBatchToLocal(entries = [], userData = null) {
+  if (!canUseLocalStorage()) return [];
+  let current = dedupeWrongByQuestionId(getLocalArray(WRONG_KEY));
+  const map = new Map(current.map((item) => [item.questionId, item]));
+  for (const entry of entries) {
+    const normalized = normalizeWrongItem(entry);
+    if (!isValidQuestionId(normalized.questionId)) continue;
+    map.set(normalized.questionId, normalized);
+  }
+  let list = sortWrongItems([...map.values()]);
+  list = isUserPremium(userData) ? list : list.slice(0, FREE_LIMITS.maxWrongQuestions);
+  const trimmed = list.slice(0, 1000);
+  setLocalArray(WRONG_KEY, trimmed);
+  return trimmed;
+}
+
+/** Ücretsiz kullanıcı yanlış listesi limiti — Firestore fazlalıklarını bir kez temizler. */
+export async function enforceWrongQuestionsLimitForFreeUser(user, userData = null) {
+  if (!user?.uid || isUserPremium(userData)) return;
+  try {
+    const all = await readWrongFromFirestore(user, userData);
+    const allIds = new Set(all.map((item) => String(item.questionId)));
+    const allSnap = await getDocs(collection(db, "users", user.uid, "wrongQuestions"));
+    const deleteTasks = allSnap.docs
+      .filter((d) => !allIds.has(d.id))
+      .map((d) => deleteDoc(d.ref));
+    if (deleteTasks.length) await Promise.allSettled(deleteTasks);
+  } catch {
+    /* ignore */
+  }
+}
+
 export async function addWrongQuestion(user, question, selectedAnswer, userData = null) {
   try {
     const questionId = getQuestionIdSafe(question);
     if (!questionId) return null;
     const now = safeNowIso();
-    const optionCount = Array.isArray(question.options) ? question.options.length : 5;
-    const normalizedSelected = normalizeSelectedAnswer(selectedAnswer, optionCount);
-    const patch = {
-      questionId,
-      ders: String(question.ders || ""),
-      konu: String(question.konu || ""),
-      lastSelectedAnswer: normalizedSelected,
-      correctAnswer: toNumber(question.correct, null),
-      updatedAt: now,
-    };
 
     const writeWrongToLocal = () => {
+      const next = buildNextWrongQuestionEntry(question, selectedAnswer, null, now);
+      if (!next) return null;
       const current = readWrongFromLocal();
       const existingIdx = current.findIndex((item) => item.questionId === questionId);
+      const prev = existingIdx >= 0 ? current[existingIdx] : null;
+      const merged = buildNextWrongQuestionEntry(question, selectedAnswer, prev, now);
       if (existingIdx >= 0) {
-        const prev = current[existingIdx];
-        current[existingIdx] = {
-          ...prev,
-          ...patch,
-          wrongCount: (prev.wrongCount || 0) + 1,
-          lastWrongAt: now,
-          correctReviewStreak: 0,
-          isResolved: false,
-        };
+        current[existingIdx] = merged;
       } else {
-        current.push({
-          ...patch,
-          wrongCount: 1,
-          lastWrongAt: now,
-          reviewCount: 0,
-          lastReviewedAt: null,
-          correctReviewStreak: 0,
-          isResolved: false,
-        });
+        current.push(merged);
       }
       const capped = isUserPremium(userData)
         ? current
@@ -238,7 +280,7 @@ export async function addWrongQuestion(user, question, selectedAnswer, userData 
       const trimmed = capped.slice(0, 1000);
       setLocalArray(WRONG_KEY, sortWrongItems(trimmed));
       trackClarityEvent("yanlis_soru_kaydedildi");
-      return current[existingIdx >= 0 ? existingIdx : current.length - 1];
+      return merged;
     };
 
     if (user?.uid) {
@@ -246,25 +288,9 @@ export async function addWrongQuestion(user, question, selectedAnswer, userData 
         const docRef = doc(db, "users", user.uid, "wrongQuestions", String(questionId));
         const snap = await getDoc(docRef);
         const previous = snap.exists() ? normalizeWrongItem(snap.data()) : null;
-        const next = {
-          ...patch,
-          wrongCount: (previous?.wrongCount || 0) + 1,
-          lastWrongAt: now,
-          reviewCount: previous?.reviewCount || 0,
-          lastReviewedAt: previous?.lastReviewedAt || null,
-          correctReviewStreak: 0,
-          isResolved: false,
-        };
+        const next = buildNextWrongQuestionEntry(question, selectedAnswer, previous, now);
         await setDoc(docRef, next, { merge: true });
-        if (!isUserPremium(userData)) {
-          const all = await readWrongFromFirestore(user, userData);
-          const allIds = new Set(all.map((item) => String(item.questionId)));
-          const allSnap = await getDocs(collection(db, "users", user.uid, "wrongQuestions"));
-          const deleteTasks = allSnap.docs
-            .filter((d) => !allIds.has(d.id))
-            .map((d) => deleteDoc(d.ref));
-          if (deleteTasks.length) await Promise.allSettled(deleteTasks);
-        }
+        await enforceWrongQuestionsLimitForFreeUser(user, userData);
         trackClarityEvent("yanlis_soru_kaydedildi");
         return next;
       } catch (firestoreError) {

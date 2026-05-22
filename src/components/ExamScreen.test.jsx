@@ -24,8 +24,8 @@ vi.mock("../services/streakService", () => ({
   updateStreak: vi.fn(),
 }));
 
-vi.mock("../services/studyCollectionService", () => ({
-  addWrongQuestion: vi.fn(),
+vi.mock("../services/examFinishBatchService", () => ({
+  saveExamWrongAndSmartReviewsBatch: vi.fn().mockResolvedValue({ ok: true, count: 0 }),
 }));
 
 vi.mock("../lib/clarity", () => ({
@@ -285,5 +285,184 @@ describe("ExamScreen kaynak regresyonu", () => {
 
   it("StudyScreen FSRS grade bileşenini kullanır", () => {
     expect(studyScreenSource).toContain("FsrsDifficultyRating");
+  });
+
+  it("handleFinish çift tıklama için useRef tabanlı guard kullanır", () => {
+    expect(examScreenSource).toContain("finishInProgressRef");
+    expect(examScreenSource).toMatch(/useRef\(false\)/);
+    expect(examScreenSource).toMatch(
+      /if \(finishInProgressRef\.current \|\| isFinished\) return/
+    );
+    expect(examScreenSource).toMatch(/finishInProgressRef\.current = true/);
+  });
+
+  it("handleFinish içinde usage increment / kullanım sayacı çağrısı yok", () => {
+    expect(examScreenSource).not.toMatch(/incrementUsage|increment_usage/i);
+    expect(examScreenSource).not.toMatch(/incrementDailyUsage/);
+  });
+
+  it("deneme bitişinde saveExamWrongAndSmartReviewsBatch kullanılır", () => {
+    expect(examScreenSource).toContain("saveExamWrongAndSmartReviewsBatch");
+    expect(examScreenSource).not.toContain("addWrongQuestion");
+    expect(examScreenSource).not.toContain("upsertSmartReview");
+  });
+});
+
+describe("ExamScreen handleFinish double-submit guard", () => {
+  let container;
+  let root;
+  let firestoreModule;
+  let batchModule;
+  let historyKey;
+
+  beforeEach(async () => {
+    vi.stubGlobal("alert", vi.fn());
+    container = document.createElement("div");
+    document.body.appendChild(container);
+    root = createRoot(container);
+    firestoreModule = await import("firebase/firestore");
+    batchModule = await import("../services/examFinishBatchService");
+    const utils = await import("../utils/examHistoryUtils");
+    historyKey = utils.TUSOSKOP_EXAM_HISTORY_KEY;
+    firestoreModule.addDoc.mockClear();
+    batchModule.saveExamWrongAndSmartReviewsBatch.mockClear();
+    localStorage.clear();
+  });
+
+  afterEach(() => {
+    act(() => root.unmount());
+    container.remove();
+    localStorage.clear();
+    vi.unstubAllGlobals();
+  });
+
+  const renderAtLastQuestion = async (overrides = {}) => {
+    const examQuestions = [
+      { ...mockQuestion, id: 100, correct: 0 },
+      { ...mockQuestion, id: 101, correct: 1 },
+    ];
+    await act(async () => {
+      root.render(
+        <ExamScreen
+          examQ={examQuestions[1]}
+          examIndex={1}
+          examQuestions={examQuestions}
+          examAnswers={{ 0: 0, 1: 2 }}
+          examSelected={2}
+          examSetMeta={{
+            examId: 7,
+            examTitle: "Sabit Deneme 7",
+            fixedSet: true,
+            setVersion: "v1",
+            questionIdsSnapshot: [100, 101],
+          }}
+          onJump={vi.fn()}
+          handleExamSelect={vi.fn()}
+          handleExamSelectForQuestion={vi.fn()}
+          handleExamBlank={vi.fn()}
+          handleExamNext={vi.fn()}
+          handleExamPrev={vi.fn()}
+          getExamAnswersSnapshot={() => ({ 0: 0, 1: 2 })}
+          goDashboard={vi.fn()}
+          onExamCompleted={vi.fn()}
+          userId="u1"
+          userData={null}
+          {...overrides}
+        />
+      );
+    });
+    await act(async () => {
+      await new Promise((r) => setTimeout(r, 0));
+    });
+  };
+
+  const findBitir = () =>
+    [...container.querySelectorAll("button")].find(
+      (b) => b.textContent?.trim() === "Bitir"
+    );
+
+  it("Bitir butonuna hızlı çift basılınca Firestore'a tek sonuç yazılır", async () => {
+    await renderAtLastQuestion();
+    const bitir = findBitir();
+    expect(bitir).toBeTruthy();
+
+    await act(async () => {
+      bitir.click();
+      bitir.click();
+      await new Promise((r) => setTimeout(r, 0));
+    });
+    await act(async () => {
+      await new Promise((r) => setTimeout(r, 0));
+    });
+
+    expect(firestoreModule.addDoc).toHaveBeenCalledTimes(1);
+    const localHistory = JSON.parse(localStorage.getItem(historyKey) || "[]");
+    expect(localHistory).toHaveLength(1);
+    expect(localHistory[0].fixedSet).toBe(true);
+    expect(localHistory[0].setVersion).toBe("v1");
+    expect(localHistory[0].questionIdsSnapshot).toEqual([100, 101]);
+    expect(batchModule.saveExamWrongAndSmartReviewsBatch).toHaveBeenCalledTimes(1);
+    const wrongArg = batchModule.saveExamWrongAndSmartReviewsBatch.mock.calls[0][1];
+    expect(wrongArg).toHaveLength(1);
+    expect(wrongArg[0].questionId).toBe(101);
+    expect(wrongArg[0].examIndex).toBe(1);
+  });
+
+  it("başarılı bitişten sonra ikinci tetikleme yeni kayıt oluşturmaz", async () => {
+    await renderAtLastQuestion();
+    const bitir = findBitir();
+
+    await act(async () => {
+      bitir.click();
+      await new Promise((r) => setTimeout(r, 0));
+    });
+    await act(async () => {
+      await new Promise((r) => setTimeout(r, 0));
+    });
+
+    expect(firestoreModule.addDoc).toHaveBeenCalledTimes(1);
+
+    // İlk bitişten sonra analiz ekranı render olur, Bitir butonu artık DOM'da değil.
+    expect(findBitir()).toBeFalsy();
+
+    const localHistory = JSON.parse(localStorage.getItem(historyKey) || "[]");
+    expect(localHistory).toHaveLength(1);
+  });
+
+  it("ilk kayıt hata verirse kullanıcı tekrar deneyebilir", async () => {
+    firestoreModule.addDoc
+      .mockRejectedValueOnce(new Error("network"))
+      .mockResolvedValueOnce({ id: "doc-retry" });
+
+    await renderAtLastQuestion();
+    const bitir = findBitir();
+
+    await act(async () => {
+      bitir.click();
+      await new Promise((r) => setTimeout(r, 0));
+    });
+    await act(async () => {
+      await new Promise((r) => setTimeout(r, 0));
+    });
+
+    expect(firestoreModule.addDoc).toHaveBeenCalledTimes(1);
+    expect(JSON.parse(localStorage.getItem(historyKey) || "[]")).toHaveLength(0);
+
+    // Guard hata sonrası serbest kalmış olmalı; Bitir butonu hâlâ ekrandadır.
+    const bitirAfterError = findBitir();
+    expect(bitirAfterError).toBeTruthy();
+
+    await act(async () => {
+      bitirAfterError.click();
+      await new Promise((r) => setTimeout(r, 0));
+    });
+    await act(async () => {
+      await new Promise((r) => setTimeout(r, 0));
+    });
+
+    expect(firestoreModule.addDoc).toHaveBeenCalledTimes(2);
+    const localHistory = JSON.parse(localStorage.getItem(historyKey) || "[]");
+    expect(localHistory).toHaveLength(1);
+    expect(localHistory[0].id).toBe("doc-retry");
   });
 });

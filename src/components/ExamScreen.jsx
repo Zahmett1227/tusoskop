@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { usePrefersReducedMotion, useSwipeHandlers } from "../hooks/useSwipeHandlers";
 import { db, auth } from "../firebase";
 import { collection, addDoc, serverTimestamp, doc, getDoc } from "firebase/firestore";
@@ -12,8 +12,7 @@ import {
   estimatedTusNumericFromNet,
 } from "../utils/examHistoryUtils";
 import { trackClarityEvent } from "../lib/clarity";
-import { addWrongQuestion } from "../services/studyCollectionService";
-import { upsertSmartReview } from "../services/smartReviewService";
+import { saveExamWrongAndSmartReviewsBatch } from "../services/examFinishBatchService";
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -239,10 +238,14 @@ export default function ExamScreen({
   const [wrongByLessonTopic, setWrongByLessonTopic] = useState({});
   const [showWrongModal, setShowWrongModal] = useState(false);
   const [userTarget, setUserTarget] = useState(65);
+  // Senkron guard: setIsSaving / setIsFinished React state'leri batch'lendiği için
+  // çift tıklamada iki çağrı da "kaydetmiyor" görüp ikinci kez kayıt açabiliyor.
+  // useRef anında günceller, böylece tek bir handleFinish çalışması garanti edilir.
+  const finishInProgressRef = useRef(false);
   const candidateName = auth.currentUser?.displayName || auth.currentUser?.email || "ADAY";
 
   const handleSonrakiClick = () => {
-    if (isSaving) return;
+    if (isSaving || finishInProgressRef.current) return;
     if (examIndex < examQuestions.length - 1) {
       handleExamNext();
     } else {
@@ -269,9 +272,13 @@ export default function ExamScreen({
 
   // ── Sınavı Bitir ─────────────────────────────────────────────────────────
   const handleFinish = async () => {
+    // Çift tıklama / double-submit guard'ı: senkron ref + isFinished kontrolü.
+    if (finishInProgressRef.current || isFinished) return;
+
     const user = auth.currentUser;
     if (!user) { alert("Lütfen giriş yapın!"); return; }
 
+    finishInProgressRef.current = true;
     if (userId) updateStreak(userId);
     setIsSaving(true);
     try {
@@ -321,20 +328,28 @@ export default function ExamScreen({
         }
       });
 
-      const wrongSaveTasks = examQuestions
-        .map((q, idx) => {
-          const userAnswer = getSelectedAnswerIndex(finalAnswers, q, idx);
-          if (userAnswer === undefined || userAnswer === null || userAnswer === q.correct) {
-            return null;
-          }
-          return Promise.all([
-            addWrongQuestion(user, q, userAnswer, userData),
-            upsertSmartReview(user, q, "wrong"),
-          ]);
-        })
-        .filter(Boolean);
-      if (wrongSaveTasks.length) {
-        await Promise.allSettled(wrongSaveTasks);
+      const examWrongItems = [];
+      examQuestions.forEach((q, idx) => {
+        const userAnswer = getSelectedAnswerIndex(finalAnswers, q, idx);
+        if (userAnswer === undefined || userAnswer === null || userAnswer === q.correct) {
+          return;
+        }
+        examWrongItems.push({
+          question: q,
+          questionId: q.id,
+          userAnswer,
+          correctAnswer: q.correct,
+          examIndex: idx,
+          ders: q.ders,
+          konu: q.konu,
+        });
+      });
+      if (examWrongItems.length) {
+        try {
+          await saveExamWrongAndSmartReviewsBatch(user, examWrongItems, userData);
+        } catch (wrongBatchError) {
+          console.error("saveExamWrongAndSmartReviewsBatch:", wrongBatchError);
+        }
       }
 
       const tusNet = Number((correct - wrong / 4).toFixed(2));
@@ -378,7 +393,10 @@ export default function ExamScreen({
       setResults({ correct, wrong, empty, totalNet, breakdown });
       setWrongByLessonTopic(wByLT);
       setIsFinished(true);
+      // Başarılı bitişte ref true kalır; isFinished guard'ı yeniden kaydı engeller.
     } catch (error) {
+      // Kayıt başarısız olursa kullanıcı tekrar deneyebilsin diye guard'ı serbest bırak.
+      finishInProgressRef.current = false;
       alert("Kayıt hatası: " + error.message);
     } finally {
       setIsSaving(false);
@@ -389,12 +407,12 @@ export default function ExamScreen({
   const examSwipe = useSwipeHandlers({
     enabled: Boolean(examQ) && !isOpticalOpen && !reducedMotion,
     onSwipeLeft: () => {
-      if (isSaving) return;
+      if (isSaving || finishInProgressRef.current) return;
       if (examIndex < examQuestions.length - 1) handleExamNext();
       else void handleFinish();
     },
     onSwipeRight: () => {
-      if (isSaving) return;
+      if (isSaving || finishInProgressRef.current) return;
       handleExamPrev?.();
     },
     reducedMotion,

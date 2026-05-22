@@ -103,14 +103,18 @@ export async function getDueSmartReviews(user, now = new Date(), { limit = MAX_S
   return sorted.slice(0, cap);
 }
 
-export async function upsertSmartReview(user, question, source = "wrong", grade = null, now = new Date()) {
+/** Tekil ve toplu kayıt için ortak smart review state hesabı. */
+export function computeNextSmartReviewEntry(
+  question,
+  existing = null,
+  source = "wrong",
+  grade = null,
+  now = new Date()
+) {
   const questionId = getQuestionIdSafe(question);
   if (!questionId) return null;
 
-  const all = await getSmartReviews(user);
-  const existing = all.find((item) => item.questionId === questionId);
   let next;
-
   if (!existing) {
     next = createInitialReviewState(question, source, now);
     if (grade && grade !== "again") {
@@ -124,13 +128,34 @@ export async function upsertSmartReview(user, question, source = "wrong", grade 
     next = normalizeSmartReviewEntry(existing, now);
   }
 
+  return next ? normalizeSmartReviewEntry(next, now) : null;
+}
+
+/** Toplu deneme bitişi: yerel smart review listesini birleştirir. */
+export function mergeSmartReviewsIntoLocal(entries = [], now = new Date()) {
+  const all = getLocalList();
+  const map = new Map(all.map((item) => [item.questionId, item]));
+  for (const entry of entries) {
+    const normalized = normalizeSmartReviewEntry(entry, now);
+    if (!normalized) continue;
+    map.set(normalized.questionId, normalized);
+  }
+  const merged = dedupeSmartReviewsByQuestionId([...map.values()]);
+  setLocalList(merged);
+  return merged;
+}
+
+export async function upsertSmartReview(user, question, source = "wrong", grade = null, now = new Date()) {
+  const questionId = getQuestionIdSafe(question);
+  if (!questionId) return null;
+
+  const all = await getSmartReviews(user);
+  const existing = all.find((item) => item.questionId === questionId);
+  const next = computeNextSmartReviewEntry(question, existing, source, grade, now);
+
   if (!next) return null;
 
-  const merged = dedupeSmartReviewsByQuestionId([
-    ...all.filter((item) => item.questionId !== questionId),
-    next,
-  ]);
-  setLocalList(merged);
+  mergeSmartReviewsIntoLocal([next], now);
   await writeFirestoreReview(user, next);
   return next;
 }

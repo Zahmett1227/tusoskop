@@ -16,19 +16,6 @@ service cloud.firestore {
       return isSignedIn() && request.auth.uid == uid;
     }
 
-    function hasProtectedPremiumKeysOnCreate() {
-      return request.resource.data.keys().hasAny([
-        'plan',
-        'premiumStatus',
-        'premiumSource',
-        'premiumUntil',
-        'lifetimePremium',
-        'adminNote',
-        'grantedBy',
-        'grantedAt'
-      ]);
-    }
-
     function hasOnlySafeSelfCreatePremiumValues() {
       return request.resource.data.plan == 'free'
         && request.resource.data.premiumStatus == 'inactive'
@@ -40,13 +27,43 @@ service cloud.firestore {
         && request.resource.data.grantedAt == null;
     }
 
+    function hasRequiredSelfCreatePremiumKeys() {
+      return request.resource.data.keys().hasAll([
+        'plan',
+        'premiumStatus',
+        'premiumSource',
+        'premiumUntil',
+        'lifetimePremium'
+      ]);
+    }
+
+    function hasAllowedSelfUserCreateKeys() {
+      return request.resource.data.keys().hasOnly([
+        'uid',
+        'email',
+        'displayName',
+        'photoURL',
+        'plan',
+        'premiumStatus',
+        'premiumSource',
+        'premiumUntil',
+        'lifetimePremium',
+        'adminNote',
+        'grantedBy',
+        'grantedAt',
+        'createdAt',
+        'updatedAt',
+        'lastLoginAt'
+      ]);
+    }
+
     match /users/{uid} {
       allow read: if isOwner(uid) || isAdmin();
       allow create: if isOwner(uid)
-        && (
-          !hasProtectedPremiumKeysOnCreate()
-          || hasOnlySafeSelfCreatePremiumValues()
-        );
+        && request.resource.data.uid == request.auth.uid
+        && hasAllowedSelfUserCreateKeys()
+        && hasRequiredSelfCreatePremiumKeys()
+        && hasOnlySafeSelfCreatePremiumValues();
       allow update: if isAdmin()
         || (
           isOwner(uid)
@@ -103,6 +120,13 @@ service cloud.firestore {
 
     match /users/{uid}/smartReviews/{questionId} {
       allow read, write: if isOwner(uid) || isAdmin();
+    }
+
+    match /users/{uid}/questionHistory/{questionId} {
+      allow read: if isOwner(uid) || isAdmin();
+      allow create, update: if (isOwner(uid) || isAdmin())
+        && request.resource.data.questionId == int(questionId);
+      allow delete: if isAdmin();
     }
 
     match /results/{resultId} {

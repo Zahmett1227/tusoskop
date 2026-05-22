@@ -1,7 +1,8 @@
 import React, { useMemo, useState } from "react";
 import { useQuestions } from "../hooks/useQuestions";
+import { useQuestionHistory } from "../hooks/useQuestionHistory";
+import { getTopicStatsFromHistory } from "../utils/questionHistoryUtils";
 
-const HISTORY_KEY = "tusoskop-question-history";
 const SUBJECT_ORDER = [
   "Fizyoloji",
   "Patoloji",
@@ -92,37 +93,6 @@ const DEFAULT_SUBJECT_THEME = {
   percent: "text-violet-100",
 };
 
-function getQuestionHistoryMap() {
-  if (typeof window === "undefined") return {};
-  try {
-    const raw = localStorage.getItem(HISTORY_KEY);
-    const parsed = raw ? JSON.parse(raw) : [];
-    const list = Array.isArray(parsed) ? parsed : [];
-    const map = {};
-    list.forEach((item) => {
-      if (item?.questionId) map[item.questionId] = item;
-    });
-    return map;
-  } catch {
-    return {};
-  }
-}
-
-function getTopicStats(ders, konu, questions, historyMap) {
-  const topicQuestions = questions.filter((q) => q.ders === ders && q.konu === konu);
-  const solved = topicQuestions.map((q) => historyMap[q.id]).filter(Boolean);
-  const solvedCount = solved.length;
-  const correctCount = solved.filter((x) => x.isCorrect).length;
-  const percent = solvedCount > 0 ? Math.round((correctCount / solvedCount) * 100) : null;
-
-  return {
-    total: topicQuestions.length,
-    solvedCount,
-    correctCount,
-    percent,
-  };
-}
-
 function getProgressColor(percent) {
   if (percent === null) return "bg-slate-700";
   if (percent >= 70) return "bg-gradient-to-r from-emerald-400 to-teal-500";
@@ -130,10 +100,13 @@ function getProgressColor(percent) {
   return "bg-gradient-to-r from-red-400 to-orange-500";
 }
 
-export default function TopicTracker({ onBack }) {
+export default function TopicTracker({ onBack, user }) {
   const { questions: QUESTIONS } = useQuestions();
   const [openSubjects, setOpenSubjects] = useState({});
-  const historyMap = useMemo(() => getQuestionHistoryMap(), []);
+  const rawHistoryMap = useQuestionHistory(user);
+  const historyLoading = rawHistoryMap === null;
+  const historyMap = useMemo(() => rawHistoryMap ?? {}, [rawHistoryMap]);
+  const usingCloudHistory = Boolean(user?.uid) && Object.keys(historyMap).length > 0;
 
   const subjects = useMemo(() => {
     const list = QUESTIONS || [];
@@ -163,12 +136,45 @@ export default function TopicTracker({ onBack }) {
   const overallStats = useMemo(() => {
     const list = QUESTIONS || [];
     const totalQuestions = list.length;
-    const solvedCount = Object.keys(historyMap).length;
-    const correctCount = Object.values(historyMap).filter((item) => item?.isCorrect).length;
-    const accuracy = solvedCount > 0 ? Math.round((correctCount / solvedCount) * 100) : 0;
+    const entries = Object.values(historyMap);
+    const solvedCount = entries.length;
+    let correctCount = 0;
+    let wrongCount = 0;
+    entries.forEach((item) => {
+      if (item.correctCount != null && item.wrongCount != null) {
+        correctCount += item.correctCount;
+        wrongCount += item.wrongCount;
+      } else if (item.isCorrect || item.lastCorrect) {
+        correctCount += 1;
+      } else {
+        wrongCount += 1;
+      }
+    });
+    const attempts = correctCount + wrongCount;
+    const accuracy =
+      attempts > 0
+        ? Math.round((correctCount / attempts) * 100)
+        : solvedCount > 0
+          ? Math.round((correctCount / solvedCount) * 100)
+          : 0;
     const completion = totalQuestions > 0 ? Math.round((solvedCount / totalQuestions) * 100) : 0;
-    return { totalQuestions, solvedCount, correctCount, accuracy, completion };
+    return { totalQuestions, solvedCount, correctCount, wrongCount, accuracy, completion };
   }, [historyMap, QUESTIONS]);
+
+  const headerTitle = usingCloudHistory
+    ? "Kayıtlı çözüm geçmişin"
+    : "Bu cihazda kayıtlı çözümler";
+  const headerSubtitle = usingCloudHistory
+    ? "Hesabına kayıtlı çözümlere göre konu özeti; uzun vadeli genel skor değildir."
+    : "Bu cihazda kayıtlı çözümlere göre konu özeti; uzun vadeli genel skor değildir.";
+
+  if (historyLoading) {
+    return (
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+        <p className="text-slate-400 text-sm animate-pulse">Yükleniyor...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-slate-950 px-4 py-6 text-slate-100">
@@ -181,10 +187,10 @@ export default function TopicTracker({ onBack }) {
               <p className="inline-flex items-center rounded-full border border-violet-200/20 bg-violet-400/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-violet-100/80">
                 Konu ilerlemen
               </p>
-              <h1 className="mt-3 text-3xl font-black tracking-tight text-white md:text-4xl">Kayıtlı çözüm geçmişin</h1>
-              <p className="mt-2 text-sm text-slate-300/80">
-                Bu cihazda kayıtlı çözümlere göre konu özeti; uzun vadeli genel skor değildir.
-              </p>
+              <h1 className="mt-3 text-3xl font-black tracking-tight text-white md:text-4xl">
+                {headerTitle}
+              </h1>
+              <p className="mt-2 text-sm text-slate-300/80">{headerSubtitle}</p>
             </div>
             <button
               onClick={onBack}
@@ -235,7 +241,7 @@ export default function TopicTracker({ onBack }) {
             {openSubjects[ders] && (
               <div className="space-y-3 border-t border-white/10 px-4 py-4 pl-6 md:px-5 md:pl-10">
                 {konular.map((konu) => {
-                  const stats = getTopicStats(ders, konu, QUESTIONS, historyMap);
+                  const stats = getTopicStatsFromHistory(ders, konu, QUESTIONS, historyMap);
                   const solvedPercent = stats.total > 0 ? Math.round((stats.solvedCount / stats.total) * 100) : 0;
                   const warning = stats.solvedCount > 0 && (stats.percent ?? 0) < 20;
 
@@ -250,7 +256,7 @@ export default function TopicTracker({ onBack }) {
                       </div>
                       <p className="mt-1 text-sm text-slate-400">
                         {stats.solvedCount > 0
-                          ? `${stats.solvedCount} / ${stats.total} soru çözüldü • ${stats.correctCount} doğru`
+                          ? `${stats.solvedCount} / ${stats.total} soru çözüldü • ${stats.correctCount} doğru${stats.wrongCount > 0 ? ` • ${stats.wrongCount} yanlış` : ""}`
                           : "Henüz çözülmedi"}
                       </p>
 

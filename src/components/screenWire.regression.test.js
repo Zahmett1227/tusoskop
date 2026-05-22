@@ -27,6 +27,7 @@ describe("App.jsx ekran geri navigasyonu", () => {
       appSource.indexOf('case "suggestions"')
     );
     expect(trackerBlock).toContain("<TopicTracker onBack={goDashboard}");
+    expect(trackerBlock).toContain("user={user}");
   });
 
   it("ExamAnalysisScreen analiz ve panele dön handler'ları alır", () => {

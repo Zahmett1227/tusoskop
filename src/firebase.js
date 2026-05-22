@@ -1,12 +1,17 @@
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
+  getRedirectResult,
   GoogleAuthProvider,
   signInWithPopup,
   signInWithRedirect,
-  signOut
+  signOut,
 } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import {
+  CACHE_SIZE_UNLIMITED,
+  initializeFirestore,
+  persistentLocalCache,
+} from "firebase/firestore";
 import { getFunctions } from "firebase/functions";
 import { trackClarityEvent } from "./lib/clarity";
 
@@ -25,6 +30,12 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 
+/**
+ * Google girişi: önce popup; popup engellenmediği sürece redirect'e düşmez.
+ * iOS Safari + ITP'de `signInWithRedirect` sessionStorage'ı kaybedip
+ * "missing initial state" hatası verdiği için redirect yalnızca popup
+ * gerçekten engellendiğinde son çare olarak kullanılır.
+ */
 export const loginWithGoogle = async () => {
   try {
     const result = await signInWithPopup(auth, googleProvider);
@@ -43,14 +54,17 @@ export const loginWithGoogle = async () => {
       return null;
     }
 
-    const shouldRedirect = [
-      "auth/popup-blocked",
-      "auth/cancelled-popup-request",
-      "auth/operation-not-supported-in-this-environment",
-    ].includes(code);
+    if (code === "auth/popup-blocked") {
+      try {
+        await signInWithRedirect(auth, googleProvider);
+      } catch (redirectError) {
+        console.error("signInWithRedirect fallback hatası:", redirectError);
+        alert("Google giriş hatası: Tarayıcınız popup'ı engelledi. Lütfen popup'lara izin verip tekrar deneyin.");
+      }
+      return null;
+    }
 
-    if (shouldRedirect) {
-      await signInWithRedirect(auth, googleProvider);
+    if (code === "auth/cancelled-popup-request" || code === "auth/popup-closed-by-user") {
       return null;
     }
 
@@ -59,9 +73,36 @@ export const loginWithGoogle = async () => {
   }
 };
 
+/**
+ * Sayfa yüklendiğinde redirect dönüşünü güvenli işle.
+ * Popup-first akış için artık zorunlu değil; yalnızca popup-blocked
+ * fallback'i tetiklendiğinde state'i temizler.
+ */
+export async function consumePendingRedirectResult() {
+  try {
+    const result = await getRedirectResult(auth);
+    if (!result) return null;
+    trackClarityEvent("login_basarili");
+    return result.user;
+  } catch (error) {
+    if (error?.code !== "auth/no-auth-event") {
+      console.error("getRedirectResult error:", error);
+    }
+    return null;
+  }
+}
+
 export const logout = () => signOut(auth);
 
-export const db = getFirestore(app);
+/**
+ * Firestore offline persistence: oturumlar arası sorgu cache'i.
+ * TopicTracker ve smart review onSnapshot abonelikleri ilk açılışta cache'den
+ * anında dönerek cihazlar arası geçişte hızlı veri sağlar.
+ */
+export const db = initializeFirestore(app, {
+  localCache: persistentLocalCache({ cacheSizeBytes: CACHE_SIZE_UNLIMITED }),
+});
+
 /** Match deployed Cloud Functions region (`incrementUsage` is `us-central1`). */
 export const functions = getFunctions(app, "us-central1");
 

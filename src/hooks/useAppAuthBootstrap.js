@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth, consumePendingRedirectResult } from "../firebase";
 import { identifyClarityUser } from "../lib/clarity";
 import { getFavoriteQuestions } from "../services/studyCollectionService";
 import { isCurrentUserAdmin } from "../services/adminService";
@@ -24,6 +24,11 @@ export function useAppAuthBootstrap(setView) {
   }, [user, userData]);
 
   useEffect(() => {
+    // popup-blocked fallback yalnız çağrıldığında bir redirect sonucu olur;
+    // null kontrolü ile iOS Safari ITP'de güvenli geçer.
+    consumePendingRedirectResult().catch(() => {
+      /* sessizce yut */
+    });
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       try {
         if (currentUser?.uid) {

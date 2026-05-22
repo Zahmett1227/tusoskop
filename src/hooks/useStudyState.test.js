@@ -54,6 +54,11 @@ describe("useStudyState kaynak sözleşmesi", () => {
     expect(src).toContain("addWrongQuestion");
   });
 
+  it("recordQuestionHistory çalışma/review geçmişi yazar", () => {
+    expect(src).toContain("recordQuestionHistory");
+    expect(src).not.toContain("tusoskop-question-history");
+  });
+
   it("hook tüm gerekli değerleri return ediyor", () => {
     const returnBlock = src.slice(src.lastIndexOf("return {"));
     expect(returnBlock).toContain("activeQuestions");

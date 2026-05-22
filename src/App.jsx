@@ -569,7 +569,7 @@ export default function App() {
       break;
 
     case "tracker":
-      screenContent = <TopicTracker onBack={goDashboard} />;
+      screenContent = <TopicTracker onBack={goDashboard} user={user} />;
       break;
 
     case "suggestions":

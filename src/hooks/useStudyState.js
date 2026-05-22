@@ -22,8 +22,7 @@ import {
   updateSmartReviewFromAnswer,
 } from "../services/smartReviewService";
 import { isReactEventOrDomNode, normalizeAnswerValue } from "../utils/examUtils";
-
-const QUESTION_HISTORY_KEY = "tusoskop-question-history";
+import { recordQuestionHistory } from "../services/questionHistoryService";
 
 /**
  * Çalışma / tekrar / konu modu state ve handler'ları.
@@ -293,57 +292,25 @@ export function useStudyState({
     [bestStreak]
   );
 
-  const saveQuestionHistory = useCallback((entry) => {
-    if (typeof window === "undefined" || !entry?.questionId) return;
-    try {
-      const safeEntry = {
-        questionId: Number(entry.questionId),
-        ders: String(entry.ders || ""),
-        konu: String(entry.konu || ""),
-        selected: normalizeAnswerValue(entry.selected),
-        correct: Number(entry.correct),
-        isCorrect: Boolean(entry.isCorrect),
-        mode: String(entry.mode || "exam"),
-        answeredAt: String(entry.answeredAt || new Date().toISOString()),
-      };
-      if (!Number.isFinite(safeEntry.questionId) || !Number.isFinite(safeEntry.correct)) {
-        console.error("Question history save skipped: invalid numeric fields", {
-          questionId: entry?.questionId,
-        });
-        return;
-      }
-      const raw = localStorage.getItem(QUESTION_HISTORY_KEY);
-      const list = raw ? JSON.parse(raw) : [];
-      const next = [...list.filter((item) => item.questionId !== safeEntry.questionId), safeEntry];
-      localStorage.setItem(QUESTION_HISTORY_KEY, JSON.stringify(next));
-    } catch (error) {
-      console.error("Question history save error:", error);
-    }
-  }, []);
-
   const recordHistoryForQuestion = useCallback(
     ({ question, selectedOption, mode }) => {
       if (!question?.id) return;
       if (isReactEventOrDomNode(selectedOption)) {
         console.error("Invalid selected answer: React event/DOM node received");
+        return;
       }
       const normalizedSelected = normalizeAnswerValue(selectedOption);
-      const normalizedCorrect = Number(question.correct);
-      saveQuestionHistory({
-        questionId: Number(question.id),
-        ders: String(question.ders || ""),
-        konu: String(question.konu || ""),
-        selected: normalizedSelected,
-        correct: normalizedCorrect,
-        isCorrect:
-          normalizedSelected !== null &&
-          Number.isFinite(normalizedCorrect) &&
-          normalizedSelected === normalizedCorrect,
-        mode: mode || "exam",
-        answeredAt: new Date().toISOString(),
+      const source =
+        mode === "topic" ? "topic" : mode === "review" ? "review" : "study";
+      void recordQuestionHistory(user, {
+        question,
+        selectedOption: normalizedSelected,
+        source,
+      }).catch((error) => {
+        console.error("recordQuestionHistory error:", error);
       });
     },
-    [saveQuestionHistory]
+    [user]
   );
 
   const revealCurrentAnswer = useCallback(
@@ -667,7 +634,6 @@ export function useStudyState({
     getFeedbackMessage,
     getSocialProof,
     getMasteryLevel,
-    saveQuestionHistory,
     recordHistoryForQuestion,
     handleStudySelect,
     handleNext,
