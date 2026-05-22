@@ -10,6 +10,7 @@ import AdminUserTable from "./AdminUserTable";
 import AdminGrantModal from "./AdminGrantModal";
 import AdminNoteModal from "./AdminNoteModal";
 import AdminPurchaseIntentsTab from "./AdminPurchaseIntentsTab";
+import SocialMediaQueue from "./SocialMediaQueue";
 
 export default function AdminPanel({ currentUser }) {
   const [adminTab, setAdminTab] = useState("users");
@@ -143,6 +144,7 @@ export default function AdminPanel({ currentUser }) {
           {[
             { id: "users", label: "Kullanıcılar" },
             { id: "payments", label: "Ödeme Talepleri" },
+            { id: "social", label: "Sosyal Medya" },
           ].map((t) => (
             <button
               key={t.id}
@@ -166,6 +168,10 @@ export default function AdminPanel({ currentUser }) {
             currentUser={currentUser}
             onPremiumActivated={refreshUsers}
           />
+        ) : null}
+
+        {adminTab === "social" ? (
+          <SocialMediaQueue currentUser={currentUser} />
         ) : null}
 
         {adminTab === "users" ? (

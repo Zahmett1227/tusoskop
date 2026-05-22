@@ -212,5 +212,17 @@ service cloud.firestore {
       allow read, update: if isAdmin();
       allow delete: if false;
     }
+
+    // Sosyal medya içerik kuyruğu — yalnızca admin
+    match /socialContentQueue/{contentId} {
+      allow read, create, update: if isAdmin();
+      allow delete: if false;
+    }
+
+    match /socialLogs/{logId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin();
+      allow update, delete: if false;
+    }
   }
 }

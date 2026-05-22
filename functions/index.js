@@ -1,7 +1,13 @@
+const admin = require("firebase-admin");
+
+if (!admin.apps.length) {
+  admin.initializeApp();
+}
+
 const { onCall, HttpsError } = require("firebase-functions/v2/https");
-const { initializeApp } = require("firebase-admin/app");
 const { getFirestore, FieldValue } = require("firebase-admin/firestore");
 const { FREE_LIMITS } = require("./constants");
+const { tryPublishSocialContentHandler } = require("./socialPublisher");
 
 /** Callable preflight + browser clients (match Hosting / Vite dev ports). */
 const allowedOrigins = [
@@ -11,7 +17,6 @@ const allowedOrigins = [
   "http://localhost:5174",
 ];
 
-initializeApp();
 const db = getFirestore();
 
 function todayKey() {
@@ -191,4 +196,16 @@ exports.incrementUsage = onCall(
     return { success: true, usage };
   });
   }
+);
+
+/**
+ * Admin: onaylı sosyal medya içeriğini resmi Instagram Graph API ile paylaşmayı dener.
+ * API yoksa export modu önerir. Private API / bot etkileşimi kullanılmaz.
+ */
+exports.tryPublishSocialContent = onCall(
+  {
+    region: "us-central1",
+    cors: allowedOrigins,
+  },
+  tryPublishSocialContentHandler
 );
