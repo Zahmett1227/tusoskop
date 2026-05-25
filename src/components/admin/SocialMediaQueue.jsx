@@ -12,7 +12,6 @@ import {
   listSocialContent,
   recheckSafety,
   regenerateVisual,
-  rejectSocialContent,
   triggerInstagramStory,
   updateSocialContent,
 } from "../../services/socialMediaService.js";
@@ -93,17 +92,6 @@ export default function SocialMediaTab({ currentUser }) {
       await approveSocialContent(item.id, currentUser.uid, item.scheduledAt || null);
       await refresh();
       showMsg("Onaylandı.");
-    } finally {
-      setBusy(false);
-    }
-  };
-
-  const handleReject = async (item) => {
-    const reason = window.prompt("Red nedeni (opsiyonel):") || "";
-    setBusy(true);
-    try {
-      await rejectSocialContent(item.id, currentUser.uid, reason);
-      await refresh();
     } finally {
       setBusy(false);
     }
