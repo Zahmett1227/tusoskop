@@ -4,6 +4,7 @@ import {
   collection,
   deleteDoc,
   doc,
+  getDoc,
   getDocs,
   orderBy,
   query,
@@ -405,6 +406,57 @@ function rebuildStoryAnswerSpec(content, questions = []) {
   }
 
   return null;
+}
+
+export async function deleteSocialContent(contentId, adminUid) {
+  await deleteDoc(doc(db, QUEUE_COL, contentId));
+  await logSocialEvent({ action: "content_deleted", contentId, adminUid });
+}
+
+/**
+ * GitHub Actions daily-story.yml workflow'unu tetikle.
+ * Firestore'da adminConfig/githubWorkflow dokümanı gerekir:
+ *   { token: "ghp_xxx", owner: "Zahmett1227", repo: "tusoskop" }
+ */
+export async function triggerInstagramStory(adminUid) {
+  const configSnap = await getDoc(doc(db, "adminConfig", "githubWorkflow"));
+  if (!configSnap.exists()) {
+    throw new Error(
+      "Firestore'da adminConfig/githubWorkflow dokümanı bulunamadı. " +
+        "token, owner ve repo alanlarıyla oluşturun."
+    );
+  }
+  const {
+    token,
+    owner = "Zahmett1227",
+    repo = "tusoskop",
+    workflow = "daily-story.yml",
+  } = configSnap.data();
+  if (!token) throw new Error("GitHub token eksik");
+
+  const resp = await fetch(
+    `https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflow}/dispatches`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+      },
+      body: JSON.stringify({ ref: "main" }),
+    }
+  );
+
+  if (!resp.ok) {
+    const err = await resp.text();
+    throw new Error(`GitHub API ${resp.status}: ${err}`);
+  }
+
+  await logSocialEvent({
+    action: "workflow_triggered",
+    adminUid,
+    detail: { owner, repo, workflow },
+  });
 }
 
 export async function deleteAllSocialDrafts(adminUid) {
