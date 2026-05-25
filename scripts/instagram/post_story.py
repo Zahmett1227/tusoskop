@@ -198,13 +198,13 @@ def main():
     question = pick_question(questions, recently_used)
     print(f"✓ Soru seçildi: [{question['id']}] {question.get('ders')} / {question.get('konu')}")
 
-    # 4. PNG üret
-    with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmp:
+    # 4. JPEG üret (Instagram PNG kabul etmiyor)
+    with tempfile.NamedTemporaryFile(suffix=".jpg", delete=False) as tmp:
         tmp_path = tmp.name
 
     try:
         generate_story_png(question, tmp_path)
-        print(f"✓ Story PNG üretildi: {tmp_path}")
+        print(f"✓ Story görseli üretildi: {tmp_path}")
 
         # 5. Instagram'a yükle
         print("📸 Instagram'a bağlanılıyor...")

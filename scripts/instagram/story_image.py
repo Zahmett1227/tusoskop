@@ -319,9 +319,9 @@ def generate_story_png(question: dict[str, Any], output_path: str,
     wm_font = fonts["chip"]
     draw.text((PAD_X, 60), "TUSOSKOP", font=wm_font, fill=(255, 255, 255, 60))
 
-    # Kaydet
-    canvas.convert("RGB").save(output_path, "PNG", quality=95)
-    print(f"✓ Story PNG → {output_path}")
+    # Kaydet — JPEG (Instagram PNG kabul etmiyor)
+    canvas.convert("RGB").save(output_path, "JPEG", quality=95)
+    print(f"✓ Story JPEG → {output_path}")
 
 
 # ---------------------------------------------------------------------------
