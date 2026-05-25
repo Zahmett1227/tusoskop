@@ -53,14 +53,27 @@ SHADOW_COLOR = (0, 0, 0, 80)
 # Font yükleme
 # ---------------------------------------------------------------------------
 def _load_font(name: str, size: int) -> ImageFont.FreeTypeFont:
-    path = FONTS_DIR / name
-    if path.exists():
-        return ImageFont.truetype(str(path), size)
-    # Fallback: sistem fontları
-    for fallback in ["/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-                     "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"]:
-        if Path(fallback).exists():
-            return ImageFont.truetype(fallback, size)
+    is_regular = "Regular" in name
+    bold_paths = [
+        FONTS_DIR / name,
+        Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"),
+        Path("/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"),
+        Path("/usr/share/fonts/truetype/liberation2/LiberationSans-Bold.ttf"),
+        Path("/usr/share/fonts/truetype/ubuntu/Ubuntu-B.ttf"),
+    ]
+    regular_paths = [
+        FONTS_DIR / name,
+        Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
+        Path("/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"),
+        Path("/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf"),
+        Path("/usr/share/fonts/truetype/ubuntu/Ubuntu-R.ttf"),
+    ]
+    for candidate in (regular_paths if is_regular else bold_paths):
+        if candidate.exists():
+            try:
+                return ImageFont.truetype(str(candidate), size)
+            except OSError:
+                continue
     return ImageFont.load_default()
 
 
