@@ -1,11 +1,10 @@
 """
-Ana orkestratör: soru seç → PNG üret → Instagram Story yayınla → Firestore log.
+Ana orkestratör: soru seç → JPEG üret → Instagram Story yayınla → Firestore log.
 
 Çevre değişkenleri (GitHub Secrets):
   IG_USERNAME              Instagram kullanıcı adı
   IG_PASSWORD              Instagram şifresi
   FIREBASE_SERVICE_ACCOUNT Firebase service account JSON (single-line stringify)
-  IG_STORY_CAPTION         (opsiyonel) özel caption; yoksa varsayılan oluşturulur
 """
 
 from __future__ import annotations
@@ -15,6 +14,7 @@ import os
 import random
 import sys
 import tempfile
+import traceback
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -33,6 +33,12 @@ try:
     from firebase_admin import credentials, firestore
 except ImportError:
     print("❌ firebase-admin kurulu değil: pip install firebase-admin")
+    sys.exit(1)
+
+try:
+    from PIL import Image as PILImage
+except ImportError:
+    print("❌ Pillow kurulu değil: pip install Pillow")
     sys.exit(1)
 
 from story_image import generate_story_png
@@ -63,7 +69,6 @@ def init_firebase():
 
 def get_recently_used_ids(db, days: int = RECENT_DAYS) -> set[int]:
     cutoff = datetime.now(timezone.utc) - timedelta(days=days)
-    # Sadece createdAt filtresi — composite index gerekmez
     docs = (
         db.collection(QUEUE_COLLECTION)
         .where("createdAt", ">=", cutoff)
@@ -120,6 +125,25 @@ def pick_question(questions: list[dict], recently_used: set[int]) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Görsel üretimi
+# ---------------------------------------------------------------------------
+def build_story_image(question: dict, output_path: str) -> None:
+    generate_story_png(question, output_path)
+
+    # Dosya boyutu kontrolü
+    size = Path(output_path).stat().st_size
+    print(f"   → Dosya boyutu: {size:,} bytes")
+    if size == 0:
+        raise RuntimeError("Görsel dosyası boş (0 bytes)")
+
+    # PIL ile format doğrulama
+    with PILImage.open(output_path) as img:
+        print(f"   → PIL doğrulama: format={img.format} size={img.size} mode={img.mode}")
+        if img.format not in ("JPEG", "PNG"):
+            raise RuntimeError(f"Beklenmeyen format: {img.format}")
+
+
+# ---------------------------------------------------------------------------
 # Instagram
 # ---------------------------------------------------------------------------
 def get_instagram_client() -> Client:
@@ -131,12 +155,11 @@ def get_instagram_client() -> Client:
     cl = Client()
     cl.delay_range = [1, 3]
 
-    # Önceki session varsa yükle (ban riskini azaltır)
     if SESSION_FILE.exists():
         try:
             cl.load_settings(str(SESSION_FILE))
             cl.login(username, password)
-            cl.get_timeline_feed()  # session geçerli mi kontrol
+            cl.get_timeline_feed()
             print("✓ Mevcut session ile giriş yapıldı")
             return cl
         except Exception:
@@ -149,30 +172,8 @@ def get_instagram_client() -> Client:
 
 
 def post_to_instagram(cl: Client, image_path: str) -> str:
-    media = cl.photo_upload_to_story(image_path)
+    media = cl.photo_upload_to_story(Path(image_path))
     return str(media.id)
-
-
-def post_feed(cl: Client, image_path: str, caption: str) -> str:
-    """Feed post atmak için (story yerine). Opsiyonel kullanım."""
-    media = cl.photo_upload(image_path, caption=caption)
-    return str(media.id)
-
-
-# ---------------------------------------------------------------------------
-# Caption
-# ---------------------------------------------------------------------------
-def build_caption(question: dict) -> str:
-    ders = question.get("ders", "TUS")
-    konu = question.get("konu", "")
-    lines = [
-        f"📚 {ders} — {konu}" if konu else f"📚 {ders}",
-        "",
-        "💬 Cevabını yorum olarak yaz!",
-        "",
-        "#TUS #TUSsınavı #tıp #tusoskop #gününsoru",
-    ]
-    return "\n".join(lines)
 
 
 # ---------------------------------------------------------------------------
@@ -183,30 +184,26 @@ def main():
     print(f"🚀 Tusoskop Günlük Story — {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print("=" * 50)
 
-    # 1. Firebase başlat
     print("🔥 Firebase bağlanıyor...")
     db = init_firebase()
 
-    # 2. Son kullanılan soruları al
     print(f"📋 Son {RECENT_DAYS} günde kullanılan sorular alınıyor...")
     recently_used = get_recently_used_ids(db)
     print(f"   → {len(recently_used)} soru daha önce kullanılmış")
 
-    # 3. Soru seç
     questions = load_questions()
     print(f"   → {len(questions)} soru bankada")
     question = pick_question(questions, recently_used)
     print(f"✓ Soru seçildi: [{question['id']}] {question.get('ders')} / {question.get('konu')}")
 
-    # 4. JPEG üret (Instagram PNG kabul etmiyor)
     with tempfile.NamedTemporaryFile(suffix=".jpg", delete=False) as tmp:
         tmp_path = tmp.name
 
     try:
-        generate_story_png(question, tmp_path)
-        print(f"✓ Story görseli üretildi: {tmp_path}")
+        print("🎨 Görsel üretiliyor...")
+        build_story_image(question, tmp_path)
+        print(f"✓ Görsel hazır: {tmp_path}")
 
-        # 5. Instagram'a yükle
         print("📸 Instagram'a bağlanılıyor...")
         cl = get_instagram_client()
 
@@ -214,12 +211,12 @@ def main():
         media_id = post_to_instagram(cl, tmp_path)
         print(f"✓ Story yayınlandı! media_id={media_id}")
 
-        # 6. Firestore log
         log_to_firestore(db, question, "published", media_id=media_id)
         print("✓ Firestore'a log yazıldı")
 
     except Exception as e:
         print(f"❌ Hata: {e}")
+        traceback.print_exc()
         try:
             log_to_firestore(db, question, "failed", error=str(e))
         except Exception as log_err:
