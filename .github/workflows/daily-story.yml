@@ -48,7 +48,19 @@ jobs:
           echo "✓ Sistem fontları kuruldu:"
           fc-list | grep -i "liberation\|dejavu" | head -6
 
-      # 4. Story yayınla
+      # 4. Session dosyasını yükle (ev IP'nden oluşturulmuş session)
+      - name: Load Instagram session
+        env:
+          IG_SESSION: ${{ secrets.IG_SESSION }}
+        run: |
+          if [ -n "$IG_SESSION" ]; then
+            echo "$IG_SESSION" | base64 -d > scripts/instagram/.ig_session.json
+            echo "✓ Instagram session yüklendi"
+          else
+            echo "⚠ IG_SESSION secret bulunamadı, şifre ile giriş denenecek"
+          fi
+
+      # 5. Story yayınla
       - name: Post Instagram Story
         working-directory: scripts/instagram
         run: python post_story.py
