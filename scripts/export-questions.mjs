@@ -5,9 +5,9 @@
  * Kullanım: node scripts/export-questions.mjs
  */
 
-import { readdir, readFile, writeFile, mkdir } from "fs/promises";
+import { readdir, writeFile, mkdir } from "fs/promises";
 import { join, dirname } from "path";
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dir, "..");
@@ -28,46 +28,54 @@ async function main() {
 
   for (const file of files) {
     const filePath = join(CHUNKS_DIR, file);
-    const raw = await readFile(filePath, "utf8");
-
-    // Extract the exported array — supports `export default [...]` and `export const questions = [...]`
-    const match = raw.match(/export\s+(?:default\s+|const\s+\w+\s*=\s*)\[[\s\S]*?\];?/);
-    if (!match) {
-      console.warn(`[skip] ${file}: no exportable array found`);
-      continue;
-    }
-
-    // Use Function constructor to evaluate the array literal safely
-    const arrayStr = match[0]
-      .replace(/^export\s+(default\s+)?/, "")
-      .replace(/^const\s+\w+\s*=\s*/, "")
-      .replace(/;$/, "");
-
-    let questions;
+    let mod;
     try {
-      questions = Function(`"use strict"; return (${arrayStr})`)();
+      mod = await import(pathToFileURL(filePath).href);
     } catch (err) {
-      console.warn(`[skip] ${file}: parse error — ${err.message}`);
+      console.warn(`[skip] ${file}: import hatası — ${err.message}`);
       continue;
     }
 
-    if (!Array.isArray(questions)) {
-      console.warn(`[skip] ${file}: not an array`);
+    // QUESTIONS (büyük) veya questions (küçük) veya default export
+    const raw = mod.QUESTIONS || mod.questions || mod.default;
+    if (!Array.isArray(raw)) {
+      console.warn(`[skip] ${file}: dizi bulunamadı`);
       continue;
     }
 
-    for (const q of questions) {
+    for (const q of raw) {
       if (!q || typeof q !== "object") continue;
+
+      // Dosya formatı: q/options/correct  →  soru/option_1.../cevap formatına çevir
       const slim = {};
-      for (const k of KEEP_FIELDS) {
-        if (k in q) slim[k] = q[k];
+
+      slim.id   = q.id;
+      slim.ders = q.ders;
+      slim.konu = q.konu;
+      slim.soru = q.soru || q.q;
+
+      if (Array.isArray(q.options)) {
+        q.options.forEach((opt, i) => {
+          slim[`option_${i + 1}`] = opt;
+        });
+      } else {
+        for (const k of ["option_1","option_2","option_3","option_4","option_5"]) {
+          if (k in q) slim[k] = q[k];
+        }
       }
+
+      // correct (0-bazlı index) → cevap (0-bazlı, aynı)
+      slim.cevap = q.cevap ?? q.correct ?? 0;
+      slim.difficulty = q.difficulty || q.diff;
+
       if (slim.id !== undefined && slim.soru) allQuestions.push(slim);
     }
+
+    console.log(`  ${file}: ${raw.length} soru`);
   }
 
   await writeFile(OUT_FILE, JSON.stringify(allQuestions, null, 2), "utf8");
-  console.log(`✓ ${allQuestions.length} soru → ${OUT_FILE}`);
+  console.log(`✓ Toplam ${allQuestions.length} soru → ${OUT_FILE}`);
 }
 
 main().catch((err) => {
