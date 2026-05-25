@@ -10,15 +10,12 @@ import {
   generateTodaySocialContent,
   listSocialContent,
   markContentExported,
-  markContentFailed,
-  markContentPublished,
   recheckSafety,
   regenerateVisual,
   rejectSocialContent,
   updateSocialContent,
 } from "../../services/socialMediaService.js";
 import { exportContentToDownloads } from "../../social/exportPackage.js";
-import { publishContent } from "../../social/publisher.js";
 import SocialMediaContentPreview from "./SocialMediaContentPreview.jsx";
 import SocialMediaEditor from "./SocialMediaEditor.jsx";
 
@@ -96,31 +93,6 @@ export default function SocialMediaTab({ currentUser }) {
       setMessage("Export paketi indirildi.");
     } catch (err) {
       setMessage(`Export hatası: ${err?.message}`);
-    } finally {
-      setBusy(false);
-    }
-  };
-
-  const handleTryPublish = async (item) => {
-    setBusy(true);
-    setMessage("");
-    try {
-      const result = await publishContent(item.id);
-      if (result?.success && result?.mode === "api") {
-        await markContentPublished(item.id, currentUser.uid, result);
-        setMessage("Instagram API ile paylaşıldı.");
-      } else if (result?.mode === "export") {
-        await exportContentToDownloads({ ...item, id: item.id });
-        await markContentExported(item.id, currentUser.uid);
-        setMessage(result?.message || "API yapılandırılmadı — export paketi indirildi.");
-      } else {
-        await markContentFailed(item.id, currentUser.uid, result?.message);
-        setMessage(result?.message || "Paylaşım başarısız.");
-      }
-      await refresh();
-    } catch (err) {
-      await markContentFailed(item.id, currentUser.uid, err?.message);
-      setMessage(`Paylaşım hatası: ${err?.message}`);
     } finally {
       setBusy(false);
     }
@@ -296,24 +268,14 @@ export default function SocialMediaTab({ currentUser }) {
                     </>
                   ) : null}
                   {["approved", "scheduled", "pending_review"].includes(item.status) ? (
-                    <>
-                      <button
-                        type="button"
-                        disabled={busy}
-                        onClick={() => handleExport(item)}
-                        className="min-h-9 px-3 rounded-lg border border-cyan-700 text-xs font-bold text-cyan-300"
-                      >
-                        Export et
-                      </button>
-                      <button
-                        type="button"
-                        disabled={busy}
-                        onClick={() => handleTryPublish(item)}
-                        className="min-h-9 px-3 rounded-lg border border-emerald-700 text-xs font-bold text-emerald-300"
-                      >
-                        Paylaşımı dene
-                      </button>
-                    </>
+                    <button
+                      type="button"
+                      disabled={busy}
+                      onClick={() => handleExport(item)}
+                      className="min-h-9 px-3 rounded-lg border border-cyan-700 text-xs font-bold text-cyan-300"
+                    >
+                      Export et
+                    </button>
                   ) : null}
                 </div>
               </div>

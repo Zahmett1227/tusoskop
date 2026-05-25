@@ -2,43 +2,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
 <defs>
 
-  <linearGradient id="bgGrad-q-pljhutr" x1="0" y1="0" x2="0.4" y2="1">
+  <linearGradient id="bgGrad-q-yhyf6pa" x1="0" y1="0" x2="0.4" y2="1">
     <stop offset="0%" stop-color="#0a0f1a"/>
     <stop offset="55%" stop-color="#010409"/>
     <stop offset="100%" stop-color="#030712"/>
   </linearGradient>
-  <radialGradient id="glowAccent-q-pljhutr" cx="78%" cy="12%" r="50%">
+  <radialGradient id="glowAccent-q-yhyf6pa" cx="78%" cy="12%" r="50%">
     <stop offset="0%" stop-color="#ef4444" stop-opacity="0.24"/>
     <stop offset="100%" stop-color="#ef4444" stop-opacity="0"/>
   </radialGradient>
-  <radialGradient id="glowSoft-q-pljhutr" cx="15%" cy="92%" r="45%">
+  <radialGradient id="glowSoft-q-yhyf6pa" cx="15%" cy="92%" r="45%">
     <stop offset="0%" stop-color="#450a0a" stop-opacity="0.4"/>
     <stop offset="100%" stop-color="#450a0a" stop-opacity="0"/>
   </radialGradient>
-  <linearGradient id="glassGrad-q-pljhutr" x1="0" y1="0" x2="0" y2="1">
+  <linearGradient id="glassGrad-q-yhyf6pa" x1="0" y1="0" x2="0" y2="1">
     <stop offset="0%" stop-color="rgba(255,255,255,0.06)"/>
     <stop offset="100%" stop-color="rgba(255,255,255,0.01)"/>
   </linearGradient>
-  <linearGradient id="chipGrad-q-pljhutr" x1="0" y1="0" x2="1" y2="0">
+  <linearGradient id="chipGrad-q-yhyf6pa" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0%" stop-color="rgba(239,68,68,0.28)"/>
     <stop offset="100%" stop-color="rgba(239,68,68,0.08)"/>
   </linearGradient>
-  <pattern id="topicPattern-q-pljhutr" width="120" height="40" patternUnits="userSpaceOnUse">
+  <pattern id="topicPattern-q-yhyf6pa" width="120" height="40" patternUnits="userSpaceOnUse">
       <path d="M0 20 H20 L25 8 L32 32 L38 20 H120" fill="none" stroke="#ef4444" stroke-width="1" opacity="0.14"/>
     </pattern>
 
-  <filter id="cardShadow-q-pljhutr" x="-20%" y="-20%" width="140%" height="140%">
+  <filter id="cardShadow-q-yhyf6pa" x="-20%" y="-20%" width="140%" height="140%">
     <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.45"/>
     <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#10b981" flood-opacity="0.08"/>
   </filter>
-  <filter id="innerGlow-q-pljhutr" x="-10%" y="-10%" width="120%" height="120%">
+  <filter id="innerGlow-q-yhyf6pa" x="-10%" y="-10%" width="120%" height="120%">
     <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
     <feOffset dx="0" dy="1"/>
     <feComposite in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1"/>
     <feColorMatrix type="matrix" values="0 0 0 0 0.06 0 0 0 0 0.73 0 0 0 0 0.51 0 0 0 0.15 0"/>
     <feBlend in="SourceGraphic" mode="normal"/>
   </filter>
-  <filter id="noise-q-pljhutr">
+  <filter id="noise-q-yhyf6pa">
     <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" result="noise"/>
     <feColorMatrix type="saturate" values="0"/>
     <feComponentTransfer>
@@ -47,59 +47,59 @@
   </filter>
 </defs>
 
-<rect width="1080" height="1080" fill="url(#bgGrad-q-pljhutr)"/>
-<rect width="1080" height="1080" fill="url(#glowAccent-q-pljhutr)"/>
-<rect width="1080" height="1080" fill="url(#glowSoft-q-pljhutr)"/>
-<rect width="1080" height="1080" fill="url(#topicPattern-q-pljhutr)" opacity="0.85"/>
-<rect width="1080" height="1080" filter="url(#noise-q-pljhutr)" opacity="0.55"/>
+<rect width="1080" height="1080" fill="url(#bgGrad-q-yhyf6pa)"/>
+<rect width="1080" height="1080" fill="url(#glowAccent-q-yhyf6pa)"/>
+<rect width="1080" height="1080" fill="url(#glowSoft-q-yhyf6pa)"/>
+<rect width="1080" height="1080" fill="url(#topicPattern-q-yhyf6pa)" opacity="0.85"/>
+<rect width="1080" height="1080" filter="url(#noise-q-yhyf6pa)" opacity="0.55"/>
 <g opacity="0.22" stroke-linecap="round" stroke-linejoin="round">
     <path d="M920 110 C905 90 880 95 880 118 C880 138 920 158 920 158 C920 158 960 138 960 118 C960 95 935 90 920 110 Z" fill="none" stroke="#ef4444" stroke-width="2"/>
     <path d="M860 175 H885 L892 158 L900 188 L908 168 H990" fill="none" stroke="#ef4444" stroke-width="1.5"/>
   </g>
 
-<g filter="url(#cardShadow-q-pljhutr)">
-  <rect x="52" y="60" width="197.88" height="37.55" rx="999" fill="url(#chipGrad-q-pljhutr)" stroke="rgba(239,68,68,0.38)" stroke-width="1"/>
-  <rect x="53" y="61" width="195.88" height="35.55" rx="999" fill="url(#glassGrad-q-pljhutr)" opacity="0.5"/>
+<g filter="url(#cardShadow-q-yhyf6pa)">
+  <rect x="52" y="60" width="197.88" height="37.55" rx="999" fill="url(#chipGrad-q-yhyf6pa)" stroke="rgba(239,68,68,0.38)" stroke-width="1"/>
+  <rect x="53" y="61" width="195.88" height="35.55" rx="999" fill="url(#glassGrad-q-yhyf6pa)" opacity="0.5"/>
   <text x="68" y="83" fill="#f87171" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em"><tspan x="68" dy="0">KLINIKTE KARŞINA ÇIKAR</tspan></text>
 </g>
 <text x="52" y="139" fill="#94a3b8" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="500"><tspan x="52" dy="0">Dahiliye · Kardiyoloji</tspan></text>
 
-<g filter="url(#cardShadow-q-pljhutr)">
+<g filter="url(#cardShadow-q-yhyf6pa)">
   <rect x="52" y="158" width="976" height="150.72" rx="22" fill="#0f172a" fill-opacity="0.88" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
-  <rect x="52" y="158" width="976" height="150.72" rx="22" fill="url(#glassGrad-q-pljhutr)" opacity="0.35"/>
+  <rect x="52" y="158" width="976" height="150.72" rx="22" fill="url(#glassGrad-q-yhyf6pa)" opacity="0.35"/>
   <rect x="68" y="170" width="80" height="3" rx="1.5" fill="#ef4444" opacity="0.75"/>
 </g>
 <text x="76" y="214" fill="#f1f5f9" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="36" font-weight="700"><tspan x="76" dy="0">Akut miyokard enfarktüsünde en erken yükselen</tspan><tspan x="76" dy="45">biyobelirteç hangisidir?</tspan></text>
 
-<g filter="url(#cardShadow-q-pljhutr)">
+<g filter="url(#cardShadow-q-yhyf6pa)">
   <rect x="52" y="328.72" width="976" height="50" rx="16" fill="#0f172a" fill-opacity="0.92" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
   <circle cx="80" cy="353.72" r="16" fill="rgba(239,68,68,0.15)" stroke="rgba(239,68,68,0.38)" stroke-width="1"/>
   <text x="80" y="359.72" text-anchor="middle" fill="#f87171" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="800">A</text>
   <text x="106" y="364.72" fill="#cbd5e1" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="500"><tspan x="106" dy="0">Troponin</tspan></text>
 </g>
 
-<g filter="url(#cardShadow-q-pljhutr)">
+<g filter="url(#cardShadow-q-yhyf6pa)">
   <rect x="52" y="386.72" width="976" height="50" rx="16" fill="#0f172a" fill-opacity="0.92" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
   <circle cx="80" cy="411.72" r="16" fill="rgba(239,68,68,0.15)" stroke="rgba(239,68,68,0.38)" stroke-width="1"/>
   <text x="80" y="417.72" text-anchor="middle" fill="#f87171" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="800">B</text>
   <text x="106" y="422.72" fill="#cbd5e1" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="500"><tspan x="106" dy="0">CK-MB</tspan></text>
 </g>
 
-<g filter="url(#cardShadow-q-pljhutr)">
+<g filter="url(#cardShadow-q-yhyf6pa)">
   <rect x="52" y="444.72" width="976" height="50" rx="16" fill="#0f172a" fill-opacity="0.92" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
   <circle cx="80" cy="469.72" r="16" fill="rgba(239,68,68,0.15)" stroke="rgba(239,68,68,0.38)" stroke-width="1"/>
   <text x="80" y="475.72" text-anchor="middle" fill="#f87171" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="800">C</text>
   <text x="106" y="480.72" fill="#cbd5e1" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="500"><tspan x="106" dy="0">LDH</tspan></text>
 </g>
 
-<g filter="url(#cardShadow-q-pljhutr)">
+<g filter="url(#cardShadow-q-yhyf6pa)">
   <rect x="52" y="502.72" width="976" height="50" rx="16" fill="#0f172a" fill-opacity="0.92" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
   <circle cx="80" cy="527.72" r="16" fill="rgba(239,68,68,0.15)" stroke="rgba(239,68,68,0.38)" stroke-width="1"/>
   <text x="80" y="533.72" text-anchor="middle" fill="#f87171" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="800">D</text>
   <text x="106" y="538.72" fill="#cbd5e1" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="500"><tspan x="106" dy="0">AST</tspan></text>
 </g>
 
-<g filter="url(#cardShadow-q-pljhutr)">
+<g filter="url(#cardShadow-q-yhyf6pa)">
   <rect x="52" y="560.72" width="976" height="50" rx="16" fill="#0f172a" fill-opacity="0.92" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
   <circle cx="80" cy="585.72" r="16" fill="rgba(239,68,68,0.15)" stroke="rgba(239,68,68,0.38)" stroke-width="1"/>
   <text x="80" y="591.72" text-anchor="middle" fill="#f87171" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="800">E</text>
@@ -111,9 +111,9 @@
   <circle cx="1008" cy="68" r="8" fill="#f87171" opacity="0.85"/>
 </g>
 
-<g filter="url(#cardShadow-q-pljhutr)">
+<g filter="url(#cardShadow-q-yhyf6pa)">
   <rect x="52" y="964" width="976" height="56" rx="22" fill="#0f172a" fill-opacity="0.94" stroke="rgba(239,68,68,0.38)" stroke-width="1"/>
-  <rect x="52" y="964" width="976" height="56" rx="22" fill="url(#glassGrad-q-pljhutr)" opacity="0.25"/>
+  <rect x="52" y="964" width="976" height="56" rx="22" fill="url(#glassGrad-q-yhyf6pa)" opacity="0.25"/>
   <text x="72" y="986" fill="#f87171" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="700"><tspan x="72" dy="0">Cevabını yorumlara yaz</tspan></text>
   <text x="1008" y="986" fill="#94a3b8" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="600" text-anchor="end"><tspan x="1008" dy="0">Yarın cevabı paylaşacağız</tspan></text>
   

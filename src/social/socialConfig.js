@@ -35,9 +35,4 @@ export const SOCIAL_CONFIG = {
     accentSoft: "#34d399",
   },
 
-  /** Cloud Functions callable adları */
-  functions: {
-    publishContent: "publishSocialContent",
-    tryPublish: "tryPublishSocialContent",
-  },
 };
