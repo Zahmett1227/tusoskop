@@ -67,6 +67,7 @@ jobs:
         env:
           IG_USERNAME: ${{ secrets.IG_USERNAME }}
           IG_PASSWORD: ${{ secrets.IG_PASSWORD }}
+          IG_SESSION_ID: ${{ secrets.IG_SESSION_ID }}
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
       # 5. (Opsiyonel) Hata durumunda bildirim
