@@ -63,10 +63,10 @@ def init_firebase():
 
 def get_recently_used_ids(db, days: int = RECENT_DAYS) -> set[int]:
     cutoff = datetime.now(timezone.utc) - timedelta(days=days)
+    # Sadece createdAt filtresi — composite index gerekmez
     docs = (
         db.collection(QUEUE_COLLECTION)
         .where("createdAt", ">=", cutoff)
-        .where("sourceQuestionId", "!=", None)
         .stream()
     )
     used = set()
