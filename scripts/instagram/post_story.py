@@ -148,28 +148,36 @@ def build_story_image(question: dict, output_path: str) -> None:
 # ---------------------------------------------------------------------------
 def get_instagram_client() -> Client:
     username = os.environ.get("IG_USERNAME", "")
-    password = os.environ.get("IG_PASSWORD", "")
+    session_id = os.environ.get("IG_SESSION_ID", "")
 
     cl = Client()
     cl.delay_range = [1, 3]
 
-    # Mevcut session varsa — login() çağırmadan direkt kullan
+    # sessionid ile giriş (en güvenilir yöntem — IP blacklist'e takılmaz)
+    if session_id:
+        try:
+            import urllib.parse
+            decoded = urllib.parse.unquote(session_id)
+            cl.login_by_sessionid(decoded)
+            print(f"✓ sessionid ile giriş yapıldı (user: {cl.username})")
+            return cl
+        except Exception as e:
+            print(f"⚠ sessionid geçersiz: {e}")
+
+    # Önceden kaydedilmiş session dosyası
     if SESSION_FILE.exists():
         try:
             cl.load_settings(str(SESSION_FILE))
             cl.get_timeline_feed()
-            print("✓ Mevcut session ile giriş yapıldı")
+            print("✓ Session dosyası ile giriş yapıldı")
             return cl
         except Exception as e:
-            print(f"⚠ Session geçersiz ({e}), şifre ile devam edilecek...")
+            print(f"⚠ Session dosyası geçersiz: {e}")
 
-    if not username or not password:
-        raise RuntimeError("Session geçersiz ve IG_USERNAME/IG_PASSWORD eksik")
-
-    cl.login(username, password)
-    cl.dump_settings(str(SESSION_FILE))
-    print("✓ Instagram'a şifre ile giriş yapıldı")
-    return cl
+    raise RuntimeError(
+        "Giriş yapılamadı. IG_SESSION_ID secret'ını kontrol et.\n"
+        "instagram.com → F12 → Application → Cookies → sessionid değerini kopyala."
+    )
 
 
 def post_to_instagram(cl: Client, image_path: str) -> str:
