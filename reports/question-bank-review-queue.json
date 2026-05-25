@@ -1,0 +1,1158 @@
+{
+  "generatedAt": "2026-05-24T21:59:04.150Z",
+  "sourceAuditGeneratedAt": "2026-05-24T21:59:03.716Z",
+  "totalQuestions": 5687,
+  "limit": 50,
+  "rows": [
+    {
+      "rank": 1,
+      "id": 585,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Genel Embriyoloji",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Fertilizasyon (döllenme) sırasında, kapasitasyona uğramış bir sperm hücresi oositin etrafındaki Zona Pellucida'yı (ZP3 reseptörleri aracılığıyla) delip oosit zarına ulaştığında ve…",
+      "correct": "B: Zona Pellucida'nın yapısını (ZP3 reseptörlerini) değiştirerek ve sertleştirerek polispermiyi (birden fazla spermin girmesini) engellemek",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 2,
+      "id": 587,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Genel Embriyoloji",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Gelişimin 3. haftasında (Gastrulasyon evresi), epiblast hücreleri primitif çizgi (primitive streak) boyunca göç ederek üç temel germ yaprağını (Ektoderm, Mezoderm ve Endoderm) olu…",
+      "correct": "B: Üzerindeki ektodermi indükleyerek Nöral Plağın (dolayısıyla santral sinir sisteminin) gelişmesini başlatmak",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 3,
+      "id": 2338,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Hücre Histolojisi ve Fizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Yoğun bakımda hiperkalemi gelişen bir hastanın EKG'sinde QRS genişlemesi ve iletim yavaşlaması izleniyor. Bu tablonun hücre düzeyinde en iyi açıklaması aşağıdakilerden hangisidir?",
+      "correct": "B: Hücre dışı potasyum artışı membranı kısmen depolarize ederek voltaj kapılı sodyum kanallarının bir kısmını inaktive eder",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 4,
+      "id": 2340,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Hücre Histolojisi ve Fizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Tip 1 diyabetli bir hastada insülin eksikliği nedeniyle kas ve yağ dokusuna glukoz girişi azalıyor. Aynı glukoz düzeyinde nöronların glukoz kullanımı ise belirgin şekilde korunuyo…",
+      "correct": "B: Adipoz ve iskelet kasında GLUT4 translokasyonunun insüline bağımlı olması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 5,
+      "id": 2354,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Kas Dokusu HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Myastenia gravisli bir hastada tekrarlayan bakış yukarı testinde pitoz belirginleşiyor. Bu bulgunun temel nedeni aşağıdakilerden hangisidir?",
+      "correct": "B: Nöromüsküler kavşakta güvenlik faktörünün azalması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 6,
+      "id": 2355,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Kas Dokusu HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Botulinum toksini maruziyeti sonrası diplopi, disfaji ve simetrik güçsüzlük gelişen hastada refleksler azalıyor. Nöromüsküler kavşakta beklenen temel bozukluk hangisidir?",
+      "correct": "B: Presinaptik veziküllerden asetilkolin salınımının engellenmesi",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 7,
+      "id": 2356,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Kas Dokusu HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Bir kas lifinde ardışık uyarılar gevşeme tamamlanmadan verildiğinde kasılma kuvveti giderek artıyor ve sürekli kasılmaya yaklaşıyor. Bu durum iskelet kasında hangi özellikle açıkl…",
+      "correct": "B: Sarkoplazmada kalsiyumun tam uzaklaştırılamadan yeniden artması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 8,
+      "id": 2358,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Kas Dokusu HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Ağır bir yük kaldırılırken önce küçük motor üniteler, ihtiyaç arttıkça daha büyük motor üniteler devreye giriyor. Bu düzenlenmenin temel sonucu hangisidir?",
+      "correct": "A: Kas gücünün kademeli ve kontrollü artırılması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 9,
+      "id": 2372,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Kronik akciğer hastalığı olan hastada hematokrit yüksek, eritropoietin düzeyi artmış bulunuyor. Eritropoietin salgısını en çok uyaran değişiklik hangisidir?",
+      "correct": "A: Arteriyel oksijen içeriğinin azalmasına bağlı renal hipoksi sinyali",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 10,
+      "id": 2375,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Von Willebrand hastalığı olan çocukta mukozal kanama ve uzamış kanama zamanı saptanıyor. Primer hemostazdaki temel kusur hangisidir?",
+      "correct": "A: Trombositlerin subendotelyal kollajene adezyonunun azalması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 11,
+      "id": 2376,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Akut inflamasyonu olan hastada eritrosit sedimantasyon hızı artıyor. Bu artışı en iyi açıklayan plazma değişikliği hangisidir?",
+      "correct": "A: Fibrinojen artışıyla eritrositlerde rulo formasyonu gelişmesi",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 12,
+      "id": 2389,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Süt içtikten sonra şişkinlik, kramp ve sulu ishal gelişen hastanın dışkısında pH düşük bulunuyor. Bu tablo en çok hangi fizyolojik sonuçla uyumludur?",
+      "correct": "A: Laktaz eksikliğine bağlı emilemeyen karbonhidratların osmotik yük oluşturması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 13,
+      "id": 2398,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Mitral yetmezliği olan hastanın basınç-hacim döngüsünde izovolümetrik kontraksiyon ve gevşeme fazlarının belirgin olmadığı görülüyor. Bu durumun nedeni hangisidir?",
+      "correct": "B: Sol ventrikülün sistolde atriyuma, diyastolde atriyumdan ventriküle açık kaçak yolu bulması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 14,
+      "id": 2404,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Koroner kan akımı özellikle sol ventrikülde sistolde azalır, diyastolde artar. Bunun nedeni en iyi nasıl açıklanır?",
+      "correct": "A: Sistolde intramiyokardiyal damarların kasılan miyokard tarafından sıkıştırılması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 15,
+      "id": 2407,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Ağır anemide kardiyak debi artmış, sistemik damar direnci azalmış bulunuyor. Bu yüksek debili dolaşım yanıtına katkı veren temel faktör hangisidir?",
+      "correct": "A: Doku hipoksisine bağlı lokal vazodilatasyon ve kan viskozitesinde azalma",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 16,
+      "id": 2418,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "İnsülin verildikten sonra iskelet kasında glukoz alımı artıyor. Bu etkinin hızlı başlamasını sağlayan temel hücresel olay hangisidir?",
+      "correct": "A: GLUT4 veziküllerinin hücre membranına taşınması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 17,
+      "id": 2424,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Normal siklusta ovulasyondan hemen önce LH pikinin oluşmasını sağlayan hormonal ortam hangisidir?",
+      "correct": "A: Uzun süre yüksek seyreden östradiolün hipotalamus-hipofiz üzerine pozitif geri bildirimi",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 18,
+      "id": 2433,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Gebelikte artan plasental hormonlar nedeniyle periferik insülin direnci gelişebiliyor. Bu durumun anne metabolizmasındaki fizyolojik amacı en iyi hangisidir?",
+      "correct": "A: Glukozun fetüse yönlendirilmesine katkı sağlamak",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 19,
+      "id": 2446,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Solunum Sistemi HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Fetal hemoglobin erişkin hemoglobine göre oksijeni plasentadan daha kolay alır. Bu fark disosiasyon eğrisinde nasıl görünür?",
+      "correct": "A: Fetal hemoglobinin sola kayması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 20,
+      "id": 2459,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Sinir Sistemi HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "İnhibitör postsinaptik potansiyel oluşturan bir sinapsta postsinaptik membranın eşikten uzaklaştığı görülüyor. Bu etki en çok hangi iyon hareketiyle uyumludur?",
+      "correct": "A: Klor girişinin veya potasyum çıkışının artması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 21,
+      "id": 2461,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Sinir Sistemi HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "İç kulaktaki saçlı hücrelerde stereosilyalar kinosilyuma doğru eğildiğinde hücre depolarize olur. Bu depolarizasyonun başlıca nedeni hangisidir?",
+      "correct": "A: Endolenften K+ girişi",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 22,
+      "id": 2476,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Üriner Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Kontrolsüz diyabette plazma glukozu arttıkça bir noktadan sonra idrarda glukoz görülüyor. Bu durumun nedeni hangisidir?",
+      "correct": "A: Proksimal tübüldeki glukoz taşıyıcılarının taşıma maksimumuna ulaşması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 23,
+      "id": 2480,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Üriner Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Primer hiperaldosteronizmli hastada hipertansiyon, hipokalemi ve metabolik alkaloz var. Aldosteronun principal hücrede potasyumu düşüren etkisi hangisidir?",
+      "correct": "A: ENaC üzerinden sodyum geri emilimini artırıp lümen negatifliğini güçlendirmesi",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 24,
+      "id": 3584,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Hücre Histolojisi ve Fizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Bir hücrede kolaylaştırılmış difüzyon ile basit difüzyonu ayırmada en belirleyici özellik hangisidir?",
+      "correct": "A: Taşıyıcı doygunluğuna bağlı maksimum taşıma hızının bulunması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 25,
+      "id": 3596,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Genital Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "26 yaşındaki kadın hasta 6 haftadır adet gecikmesi ve sabah bulantısı yakınmasıyla geliyor. Kronik hastalığı yok, ilaç kullanmıyor. Erken gebelikte korpus luteumun progesteron üre…",
+      "correct": "A: İnsan koryonik gonadotropini",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 26,
+      "id": 3601,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Genel Embriyoloji",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "28 yaşındaki kadın hasta gebeliğin 4. haftasında rutin kontrole geliyor. Kronik hastalığı yok, folik asit kullanıyor; şikayeti yok. Bu dönemde gastrulasyonun embriyolojik açıdan e…",
+      "correct": "A: Ektoderm, mezoderm ve endoderm germ yapraklarının oluşması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 27,
+      "id": 3602,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "72 yaşındaki erkek hasta 2 aydır eforla nefes darlığı ve halsizlik yakınmasıyla geliyor. Kronik böbrek hastalığı var, kalsiyum asetat kullanıyor. Normositer aneminin temel nedeni …",
+      "correct": "A: Renal eritropoietin üretiminin azalması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 28,
+      "id": 3603,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "25 yaşındaki kadın hasta 4 haftadır halsizlik, çarpıntı ve tırnak kırılması yakınmasıyla geliyor. Kronik hastalığı yok, ilaç kullanmıyor; menstrüasyonları yoğun. Demir eksikliğind…",
+      "correct": "A: Hem sentezi için yeterli demirin bulunmaması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 29,
+      "id": 3604,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "59 yaşındaki erkek hasta 3 gündür ateş ve öksürük yakınmasıyla geliyor. KOAH öyküsü var, inhaler bronkodilatör kullanıyor. Akut inflamasyonda karaciğerden hepsidin artışı sonrası …",
+      "correct": "A: Ferroportinin yıkılmasıyla demirin makrofaj ve enterositlerden çıkışının azalması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 30,
+      "id": 3605,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "41 yaşındaki kadın hasta 1 aydır uyuşma ve dengesizlik yakınmasıyla başvuruyor. Hashimoto tiroiditi var, levotiroksin kullanıyor. B12 eksikliğinde megaloblastik değişimin temel ne…",
+      "correct": "A: DNA sentezinin bozulması nedeniyle nükleer olgunlaşmanın gecikmesi",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 31,
+      "id": 3607,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Primer hemostazda trombositlerin subendotelyal kollajene tutunmasını sağlayan ana köprü molekül hangisidir?",
+      "correct": "A: von Willebrand faktör",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 32,
+      "id": 3625,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "33 yaşındaki kadın hasta 5 aydır adet düzensizliği ve memeden süt gelmesi yakınmasıyla başvuruyor. Kronik hastalığı yok, düzenli ilaç kullanmıyor. Prolaktin yüksekliğinin ovulasyo…",
+      "correct": "A: GnRH pulslarının baskılanması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 33,
+      "id": 3630,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Solunum Sistemi HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "69 yaşındaki erkek hasta 6 aydır giderek artan efor dispnesi ve kuru öksürük yakınmasıyla geliyor. İdiyopatik pulmoner fibrozis tanısı var, antifibrotik tedavi kullanıyor. Bu hast…",
+      "correct": "A: FVC azalır, FEV1/FVC oranı normal ya da artmış bulunur",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 34,
+      "id": 3634,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Solunum Sistemi HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "29 yaşındaki kadın hasta 12 saattir süren ani nefes darlığı ve plöritik göğüs ağrısı yakınmasıyla geliyor. Oral kontraseptif kullanıyor, kronik hastalığı yok. Pulmoner embolide et…",
+      "correct": "A: Ventilasyonun korunup perfüzyonun azalmasıyla alveoler ölü boşluk artışı",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 35,
+      "id": 3635,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Solunum Sistemi HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Oksijen-hemoglobin ayrışma eğrisini sağa kaydıran değişiklik hangisidir?",
+      "correct": "A: Artmış 2,3-BPG düzeyi",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 36,
+      "id": 3641,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Sinir Sistemi HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "60 yaşındaki erkek hasta 1 yıldır istirahat tremoru ve hareketlerde yavaşlama yakınmasıyla geliyor. Hipertansiyonu var, ramipril kullanıyor. Bu tabloda bazal ganglion devrelerinde…",
+      "correct": "A: Substantia nigra dopaminerjik uyarısının azalmasıyla direkt yol aktivitesinin düşmesi",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 37,
+      "id": 3642,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Sinir Sistemi HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "19 yaşındaki erkek hasta 20 dakikadır süren jeneralize tonik-klonik nöbet sonrası değerlendiriliyor. Epilepsi öyküsü var, levetirasetam kullanıyor. İnhibitör sinaptik iletimde pos…",
+      "correct": "A: GABA-A reseptörü üzerinden klorür girişinin artması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 38,
+      "id": 3648,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Üriner Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "40 yaşındaki kadın hasta 2 gündür poliüri ve aşırı susama yakınmasıyla başvuruyor. Bipolar bozukluğu var, lityum kullanıyor. Toplayıcı kanalda su geçirgenliğinin azalmasını en iyi…",
+      "correct": "A: ADH yanıtıyla aquaporin-2 kanallarının lüminal membrana taşınamaması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 39,
+      "id": 3654,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Üriner Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Kalın çıkan Henle kolunun idrarı seyreltici segment olarak adlandırılmasının nedeni hangisidir?",
+      "correct": "A: Sodyum, potasyum ve klor emmesine rağmen suya geçirgen olmaması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 40,
+      "id": 3655,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Baş Boyun Embriyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "2 aylık erkek bebek 3 haftadır beslenirken morarma ve tekrarlayan öksürük yakınmasıyla getiriliyor. Doğuştan kalp hastalığı dışında bilinen kronik hastalığı yok, ilaç kullanmıyor.…",
+      "correct": "A: Ön bağırsağın trakea ve özofagusa ayrılmasında septasyon kusuru",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 41,
+      "id": 4728,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Hücre Histolojisi ve Fizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Kemoterapi sonrası tümör dokusunda tek tek hücrelerde büzüşme ve nükleer parçalanma izleniyor, çevrede belirgin inflamasyon yok. Bu hücre ölümünde hangi özellik beklenir?",
+      "correct": "C: Kaspaz aktivasyonu ile apoptotik cisimcik oluşması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 42,
+      "id": 4737,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Kas Dokusu HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Miyastenia gravisli bir kadında tekrarlayan kullanım sonrası göz kapağı düşüklüğü artıyor. Nöromüsküler kavşakta hangi değişiklik kas aksiyon potansiyeli oluşmasını zorlaştırır?",
+      "correct": "B: Motor son plak potansiyelinin amplitüdünün azalması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 43,
+      "id": 4743,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Kas Dokusu HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Ölümden birkaç saat sonra gelişen rigor mortiste kaslar sertleşir. Bu sertliğin temel nedeni hangisidir?",
+      "correct": "C: ATP eksikliği nedeniyle miyozinin aktinden ayrılamaması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 44,
+      "id": 4753,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Genel Embriyoloji",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Üçüncü gebelik haftasında primitif çizgi üzerinden hücre göçü bozulursa embriyonik tabakaların oluşumu etkilenir. Bu süreçte temel olarak hangi olay gerçekleşir?",
+      "correct": "C: Ektodermden mezoderm ve endoderm gelişiminin başlaması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 45,
+      "id": 4766,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Kronik inflamasyonu olan hastada serum demiri düşük, ferritin yüksek ve hepsidin artmıştır. Hepsidin artışı demir metabolizmasını nasıl etkiler?",
+      "correct": "A: Ferroportini inhibe ederek demirin plazmaya çıkışını azaltır",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 46,
+      "id": 4767,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Hematopoetik Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Tekrarlayan bakteriyel enfeksiyonları olan bir çocukta nötrofillerin damar dışına geçemediği saptanıyor. Lökosit adezyon eksikliğinde beklenen bozukluk hangisidir?",
+      "correct": "B: CD18 integrin aracılı sıkı adezyonun bozulması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 47,
+      "id": 4773,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Gastrointestinal Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Terminal ileum rezeksiyonu sonrası yağlı dışkılama gelişen hastada safra tuzu havuzu azalıyor. Bu malabsorpsiyonun temel nedeni hangisidir?",
+      "correct": "C: Safra tuzlarının enterohepatik dolaşıma geri alınamaması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 48,
+      "id": 4777,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Sıvı yüklemesi sonrası sağlıklı bir kişide atım hacmi artıyor. Frank-Starling ilişkisine göre bu artışın temel nedeni hangisidir?",
+      "correct": "B: Diyastol sonu hacim artışıyla miyofilament duyarlılığının artması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 49,
+      "id": 4778,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Kardiyovasküler Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Akut aort basıncı artan bir hastada sol ventrikül aynı preload ve kontraktilitede çalışıyor. Afterload artışının beklenen ilk etkisi hangisidir?",
+      "correct": "C: Atım hacminin azalması ve diyastol sonu hacmin artma eğilimi",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    },
+    {
+      "rank": 50,
+      "id": 4786,
+      "score": 85,
+      "ders": "Fizyoloji",
+      "konu": "Endokrin ve Genital Sistem HistoFizyolojisi",
+      "slug": "fizyoloji",
+      "severities": [
+        "medium"
+      ],
+      "problemTypes": [
+        "exp_missing_correct_option_text"
+      ],
+      "actions": [
+        "açıklama–cevap uyumunu kontrol et"
+      ],
+      "questionExcerpt": "Kilo kaybı, hipotansiyon, hiponatremi ve hiperpigmentasyonla gelen hastada primer adrenal yetmezlik düşünülüyor. Hiperpigmentasyonu en iyi açıklayan değişiklik hangisidir?",
+      "correct": "A: ACTH ve POMC türevlerinin artması",
+      "status": "open",
+      "reviewer": "",
+      "decision": "",
+      "notes": ""
+    }
+  ]
+}

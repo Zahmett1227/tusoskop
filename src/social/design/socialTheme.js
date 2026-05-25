@@ -5,3 +5,5 @@ export { shadowFilters, cardShadowFilter } from "./shadows.js";
 export { gradientDefs } from "./gradients.js";
 export { measureContentDensity, chooseLayoutVariant, layoutSpacing } from "./layouts.js";
 export { tokens, FORMATS, HOOKS, CTAS } from "./tokens.js";
+export { getTopicTheme, themeToPalette } from "./topicThemes.js";
+export { resolveThemeContext } from "./svgCompositor.js";

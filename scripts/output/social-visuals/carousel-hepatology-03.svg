@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<defs>
+
+  <linearGradient id="bgGrad-c2-jj0ddwl" x1="0" y1="0" x2="0.4" y2="1">
+    <stop offset="0%" stop-color="#0a0f1a"/>
+    <stop offset="55%" stop-color="#010409"/>
+    <stop offset="100%" stop-color="#030712"/>
+  </linearGradient>
+  <radialGradient id="glowAccent-c2-jj0ddwl" cx="88%" cy="15%" r="48%">
+    <stop offset="0%" stop-color="#a16207" stop-opacity="0.24"/>
+    <stop offset="100%" stop-color="#a16207" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowSoft-c2-jj0ddwl" cx="15%" cy="92%" r="45%">
+    <stop offset="0%" stop-color="#422006" stop-opacity="0.4"/>
+    <stop offset="100%" stop-color="#422006" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="glassGrad-c2-jj0ddwl" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="rgba(255,255,255,0.06)"/>
+    <stop offset="100%" stop-color="rgba(255,255,255,0.01)"/>
+  </linearGradient>
+  <linearGradient id="chipGrad-c2-jj0ddwl" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="rgba(161,98,7,0.28)"/>
+    <stop offset="100%" stop-color="rgba(161,98,7,0.08)"/>
+  </linearGradient>
+  <pattern id="topicPattern-c2-jj0ddwl" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M0 40 Q20 20 40 40 T80 40" fill="none" stroke="#a16207" stroke-width="1" opacity="0.12"/>
+      <path d="M0 55 Q25 35 50 55 T100 55" fill="none" stroke="#a16207" stroke-width="0.8" opacity="0.08"/>
+    </pattern>
+
+  <filter id="cardShadow-c2-jj0ddwl" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.45"/>
+    <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#10b981" flood-opacity="0.08"/>
+  </filter>
+  <filter id="innerGlow-c2-jj0ddwl" x="-10%" y="-10%" width="120%" height="120%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+    <feOffset dx="0" dy="1"/>
+    <feComposite in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.06 0 0 0 0 0.73 0 0 0 0 0.51 0 0 0 0.15 0"/>
+    <feBlend in="SourceGraphic" mode="normal"/>
+  </filter>
+  <filter id="noise-c2-jj0ddwl">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" result="noise"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer>
+      <feFuncA type="linear" slope="0.035"/>
+    </feComponentTransfer>
+  </filter>
+</defs>
+
+<rect width="1080" height="1350" fill="url(#bgGrad-c2-jj0ddwl)"/>
+<rect width="1080" height="1350" fill="url(#glowAccent-c2-jj0ddwl)"/>
+<rect width="1080" height="1350" fill="url(#glowSoft-c2-jj0ddwl)"/>
+<rect width="1080" height="1350" fill="url(#topicPattern-c2-jj0ddwl)" opacity="0.85"/>
+<rect width="1080" height="1350" filter="url(#noise-c2-jj0ddwl)" opacity="0.55"/>
+<g opacity="0.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M920 120 C870 90 850 140 880 165 C910 185 960 175 975 145 C985 125 950 105 920 120 Z" fill="none" stroke="#ca8a04" stroke-width="2"/>
+  </g>
+
+<g filter="url(#cardShadow-c2-jj0ddwl)">
+  <rect x="56" y="64" width="167.72" height="37.55" rx="999" fill="url(#chipGrad-c2-jj0ddwl)" stroke="rgba(161,98,7,0.38)" stroke-width="1"/>
+  <rect x="57" y="65" width="165.72" height="35.55" rx="999" fill="url(#glassGrad-c2-jj0ddwl)" opacity="0.5"/>
+  <text x="72" y="87" fill="#ca8a04" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em"><tspan x="72" dy="0">SEÇENEKLERI INCELE</tspan></text>
+</g>
+<text x="56" y="139" fill="#94a3b8" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="500"><tspan x="56" dy="0">Dahiliye · Hepatoloji</tspan></text>
+
+<g filter="url(#cardShadow-c2-jj0ddwl)">
+  <rect x="56" y="156" width="968" height="186.88" rx="22" fill="#0f172a" fill-opacity="0.88" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
+  <rect x="56" y="156" width="968" height="186.88" rx="22" fill="url(#glassGrad-c2-jj0ddwl)" opacity="0.35"/>
+  <rect x="72" y="168" width="80" height="3" rx="1.5" fill="#a16207" opacity="0.75"/>
+</g>
+<text x="80" y="212" fill="#f1f5f9" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="32" font-weight="700"><tspan x="80" dy="0">Kronik hepatit B izlenen hastada HBeAg pozitif ve HBV</tspan><tspan x="80" dy="40">DNA çok yüksek seviyede saptanıyor. Aşağıdaki</tspan><tspan x="80" dy="40">ifadelerden…</tspan></text>
+
+<g filter="url(#cardShadow-c2-jj0ddwl)">
+  <rect x="56" y="362.88" width="968" height="50" rx="16" fill="#0f172a" fill-opacity="0.92" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
+  <circle cx="84" cy="387.88" r="16" fill="rgba(161,98,7,0.15)" stroke="rgba(161,98,7,0.38)" stroke-width="1"/>
+  <text x="84" y="393.88" text-anchor="middle" fill="#ca8a04" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="800">A</text>
+  <text x="110" y="398.88" fill="#cbd5e1" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="500"><tspan x="110" dy="0">Nükleoz(t)id analog tedavisi önerilir.</tspan></text>
+</g>
+
+<g filter="url(#cardShadow-c2-jj0ddwl)">
+  <rect x="56" y="420.88" width="968" height="50" rx="16" fill="#0f172a" fill-opacity="0.92" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
+  <circle cx="84" cy="445.88" r="16" fill="rgba(161,98,7,0.15)" stroke="rgba(161,98,7,0.38)" stroke-width="1"/>
+  <text x="84" y="451.88" text-anchor="middle" fill="#ca8a04" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="800">B</text>
+  <text x="110" y="456.88" fill="#cbd5e1" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="500"><tspan x="110" dy="0">Entekavir ilk basamak tedavide kullanılabilir.</tspan></text>
+</g>
+
+<g filter="url(#cardShadow-c2-jj0ddwl)">
+  <rect x="56" y="478.88" width="968" height="50" rx="16" fill="#0f172a" fill-opacity="0.92" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
+  <circle cx="84" cy="503.88" r="16" fill="rgba(161,98,7,0.15)" stroke="rgba(161,98,7,0.38)" stroke-width="1"/>
+  <text x="84" y="509.88" text-anchor="middle" fill="#ca8a04" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="800">C</text>
+  <text x="110" y="514.88" fill="#cbd5e1" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="500"><tspan x="110" dy="0">Pegile interferon alfa tedavisi kesin kontrendikedir.</tspan></text>
+</g>
+
+<g filter="url(#cardShadow-c2-jj0ddwl)">
+  <rect x="56" y="536.88" width="968" height="50" rx="16" fill="#0f172a" fill-opacity="0.92" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
+  <circle cx="84" cy="561.88" r="16" fill="rgba(161,98,7,0.15)" stroke="rgba(161,98,7,0.38)" stroke-width="1"/>
+  <text x="84" y="567.88" text-anchor="middle" fill="#ca8a04" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="800">D</text>
+  <text x="110" y="572.88" fill="#cbd5e1" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="500"><tspan x="110" dy="0">Karaciğer biyopsisi tedavi kararı için şarttır.</tspan></text>
+</g>
+
+<g filter="url(#cardShadow-c2-jj0ddwl)">
+  <rect x="56" y="594.88" width="968" height="50" rx="16" fill="#0f172a" fill-opacity="0.92" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
+  <circle cx="84" cy="619.88" r="16" fill="rgba(161,98,7,0.15)" stroke="rgba(161,98,7,0.38)" stroke-width="1"/>
+  <text x="84" y="625.88" text-anchor="middle" fill="#ca8a04" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="17" font-weight="800">E</text>
+  <text x="110" y="630.88" fill="#cbd5e1" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="500"><tspan x="110" dy="0">Tedavi yanıtı ALT ve HBV DNA ile izlenir.</tspan></text>
+</g>
+
+<g opacity="0.95">
+  <circle cx="1004" cy="76" r="20" fill="rgba(161,98,7,0.15)" stroke="rgba(161,98,7,0.38)" stroke-width="1"/>
+  <circle cx="1004" cy="76" r="8" fill="#ca8a04" opacity="0.85"/>
+</g>
+
+<g filter="url(#cardShadow-c2-jj0ddwl)">
+  <rect x="56" y="1230" width="968" height="56" rx="22" fill="#0f172a" fill-opacity="0.94" stroke="rgba(161,98,7,0.38)" stroke-width="1"/>
+  <rect x="56" y="1230" width="968" height="56" rx="22" fill="url(#glassGrad-c2-jj0ddwl)" opacity="0.25"/>
+  <text x="76" y="1252" fill="#ca8a04" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="700"><tspan x="76" dy="0">Cevabını yorumlara yaz</tspan></text>
+  
+  
+</g>
+<circle cx="500" cy="1278" r="4" fill="#64748b" opacity="0.45"/><circle cx="520" cy="1278" r="4" fill="#64748b" opacity="0.45"/><circle cx="540" cy="1278" r="5" fill="#ca8a04" opacity="1"/><circle cx="560" cy="1278" r="4" fill="#64748b" opacity="0.45"/><circle cx="580" cy="1278" r="4" fill="#64748b" opacity="0.45"/>
+</svg>

@@ -76,7 +76,10 @@ service cloud.firestore {
               'lifetimePremium',
               'adminNote',
               'grantedBy',
-              'grantedAt'
+              'grantedAt',
+              'role',
+              'isAdmin',
+              'admin'
             ])
         );
     }

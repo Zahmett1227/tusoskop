@@ -16,12 +16,11 @@ function optionLabel(index) {
  */
 export function generateCarouselSlides(question, rng = Math.random, options = {}) {
   const hook = options.hook || pickHook(question, rng);
-  const letter = optionLabel(question.correct);
-  const correctText = question.options[question.correct];
   const metaLine = `${question.ders} · ${question.konu}`;
   const qText = String(question.q || "").trim();
   const tip = extractClinicalTip(question.exp);
   const slideTotal = 5;
+  const topicCtx = { ders: question.ders, konu: question.konu, metaLine };
 
   return [
     {
@@ -30,6 +29,7 @@ export function generateCarouselSlides(question, rng = Math.random, options = {}
       slideIndex: 0,
       slideTotal,
       format: "1080x1350",
+      ...topicCtx,
       hook,
       metaLine,
       eyebrow: "GÜNÜN TUS SORUSU",
@@ -43,6 +43,7 @@ export function generateCarouselSlides(question, rng = Math.random, options = {}
       slideIndex: 1,
       slideTotal,
       format: "1080x1350",
+      ...topicCtx,
       hook: "Odak noktası",
       metaLine,
       title: "Ne soruluyor?",
@@ -56,6 +57,7 @@ export function generateCarouselSlides(question, rng = Math.random, options = {}
       slideIndex: 2,
       slideTotal,
       format: "1080x1350",
+      ...topicCtx,
       hook: "Seçenekleri incele",
       metaLine,
       questionText: summarizeForSlide(qText, 120),
@@ -68,6 +70,7 @@ export function generateCarouselSlides(question, rng = Math.random, options = {}
       slideIndex: 3,
       slideTotal,
       format: "1080x1350",
+      ...topicCtx,
       hook: "Klinik püf nokta",
       metaLine,
       title: "Unutma",
@@ -81,6 +84,7 @@ export function generateCarouselSlides(question, rng = Math.random, options = {}
       slideIndex: 4,
       slideTotal,
       format: "1080x1350",
+      ...topicCtx,
       hook: "Tusoskop",
       title: "Daha fazla soru çöz",
       body: "Konu testleri, yanlış tekrarı ve TUS odaklı soru bankası.",

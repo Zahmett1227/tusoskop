@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<defs>
+
+  <linearGradient id="bgGrad-st-r5ghlx5" x1="0" y1="0" x2="0.4" y2="1">
+    <stop offset="0%" stop-color="#0a0f1a"/>
+    <stop offset="55%" stop-color="#010409"/>
+    <stop offset="100%" stop-color="#030712"/>
+  </linearGradient>
+  <radialGradient id="glowAccent-st-r5ghlx5" cx="80%" cy="14%" r="50%">
+    <stop offset="0%" stop-color="#f472b6" stop-opacity="0.24"/>
+    <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowSoft-st-r5ghlx5" cx="15%" cy="92%" r="45%">
+    <stop offset="0%" stop-color="#500724" stop-opacity="0.4"/>
+    <stop offset="100%" stop-color="#500724" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="glassGrad-st-r5ghlx5" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="rgba(255,255,255,0.06)"/>
+    <stop offset="100%" stop-color="rgba(255,255,255,0.01)"/>
+  </linearGradient>
+  <linearGradient id="chipGrad-st-r5ghlx5" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="rgba(244,114,182,0.28)"/>
+    <stop offset="100%" stop-color="rgba(244,114,182,0.08)"/>
+  </linearGradient>
+  <pattern id="topicPattern-st-r5ghlx5" width="36" height="36" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="1.2" fill="#f472b6" opacity="0.2"/>
+      <circle cx="28" cy="22" r="1.5" fill="#f472b6" opacity="0.15"/>
+      <circle cx="18" cy="30" r="1" fill="#f472b6" opacity="0.18"/>
+    </pattern>
+
+  <filter id="cardShadow-st-r5ghlx5" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.45"/>
+    <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#10b981" flood-opacity="0.08"/>
+  </filter>
+  <filter id="innerGlow-st-r5ghlx5" x="-10%" y="-10%" width="120%" height="120%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+    <feOffset dx="0" dy="1"/>
+    <feComposite in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.06 0 0 0 0 0.73 0 0 0 0 0.51 0 0 0 0.15 0"/>
+    <feBlend in="SourceGraphic" mode="normal"/>
+  </filter>
+  <filter id="noise-st-r5ghlx5">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" result="noise"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer>
+      <feFuncA type="linear" slope="0.035"/>
+    </feComponentTransfer>
+  </filter>
+</defs>
+
+<rect width="1080" height="1920" fill="url(#bgGrad-st-r5ghlx5)"/>
+<rect width="1080" height="1920" fill="url(#glowAccent-st-r5ghlx5)"/>
+<rect width="1080" height="1920" fill="url(#glowSoft-st-r5ghlx5)"/>
+<rect width="1080" height="1920" fill="url(#topicPattern-st-r5ghlx5)" opacity="0.85"/>
+<rect width="1080" height="1920" filter="url(#noise-st-r5ghlx5)" opacity="0.55"/>
+<g opacity="0.35" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="960" cy="100" r="3" fill="#f9a8d4"/>
+    <circle cx="990" cy="130" r="2.5" fill="#f9a8d4"/>
+    <circle cx="930" cy="140" r="2" fill="#f9a8d4"/>
+    <circle cx="1010" cy="95" r="2" fill="#f9a8d4"/>
+  </g>
+
+<defs>
+  <filter id="storyBlur-st-r5ghlx5"><feGaussianBlur stdDeviation="1.4"/></filter>
+  <radialGradient id="storyFocus-st-r5ghlx5" cx="48%" cy="38%" r="62%">
+    <stop offset="0%" stop-color="#f9a8d4" stop-opacity="0.22"/>
+    <stop offset="54%" stop-color="#f472b6" stop-opacity="0.08"/>
+    <stop offset="100%" stop-color="#02030a" stop-opacity="0.88"/>
+  </radialGradient>
+  <linearGradient id="storyShade-st-r5ghlx5" x1="0" x2="0" y1="0" y2="1">
+    <stop offset="0%" stop-color="#02030a" stop-opacity="0.86"/>
+    <stop offset="38%" stop-color="#050712" stop-opacity="0.62"/>
+    <stop offset="76%" stop-color="#02030a" stop-opacity="0.72"/>
+    <stop offset="100%" stop-color="#010207" stop-opacity="0.96"/>
+  </linearGradient>
+</defs>
+<rect width="1080" height="1920" fill="#02030a"/>
+<image href="/social/story-backgrounds/pediatri.svg" x="-84" y="120" width="1248" height="1400" preserveAspectRatio="xMidYMid meet" opacity="0.66" filter="url(#storyBlur-st-r5ghlx5)"/>
+<rect width="1080" height="1920" fill="url(#storyFocus-st-r5ghlx5)"/>
+<rect width="1080" height="1920" fill="url(#storyShade-st-r5ghlx5)"/>
+<rect width="1080" height="1920" fill="#000" opacity="0.12"/>
+<path d="M34 1430 C260 1370 505 1392 720 1320 C850 1277 940 1215 1030 1188" fill="none" stroke="#f9a8d4" stroke-width="3" opacity="0.18"/>
+<path d="M70 430 C260 360 456 395 628 326 C785 263 890 230 1034 260" fill="none" stroke="#f472b6" stroke-width="2" opacity="0.16"/>
+
+<g filter="url(#cardShadow-st-r5ghlx5)">
+  <rect x="454" y="535" width="172" height="42" rx="21" fill="#050712" fill-opacity="0.78" stroke="rgba(244,114,182,0.38)" stroke-width="1"/>
+  <rect x="457" y="538" width="166" height="36" rx="18" fill="rgba(244,114,182,0.15)" opacity="0.55"/>
+  <text x="540" y="563" text-anchor="middle" fill="#f9a8d4" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="18" font-weight="900" letter-spacing="0.08em">PEDİATRİ</text>
+</g>
+<text x="540" y="615" text-anchor="middle" fill="#f1f5f9" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="32" font-weight="900" letter-spacing="0.16em">SORU</text>
+<text x="540" y="690" fill="#f1f5f9" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="45" font-weight="800" text-anchor="middle"><tspan x="540" dy="0">Prematüre bebekte nekrotizan enterokolit</tspan><tspan x="540" dy="58">için en güçlü risk faktörü hangisidir?</tspan></text>
+
+<g filter="url(#cardShadow-st-r5ghlx5)" opacity="1">
+  <rect x="42" y="900" width="870" height="82" rx="12" fill="#050712" fill-opacity="0.62" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
+  <rect x="43" y="901" width="868" height="80" rx="11" fill="url(#glassGrad-st-r5ghlx5)" opacity="0.18"/>
+  <rect x="70" y="918" width="50" height="46" rx="12" fill="#f472b6" fill-opacity="0.75" stroke="rgba(244,114,182,0.38)" stroke-width="1"/>
+  <text x="95" y="949" text-anchor="middle" fill="#f1f5f9" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="20" font-weight="900">A</text>
+  <text opacity="1" x="140" y="950" fill="#f1f5f9" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="25" font-weight="800"><tspan x="140" dy="0">Nükleoz(t)id analog tedavisi önerilir.</tspan></text>
+</g>
+
+<g filter="url(#cardShadow-st-r5ghlx5)" opacity="1">
+  <rect x="42" y="1000" width="870" height="82" rx="12" fill="#050712" fill-opacity="0.62" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
+  <rect x="43" y="1001" width="868" height="80" rx="11" fill="url(#glassGrad-st-r5ghlx5)" opacity="0.18"/>
+  <rect x="70" y="1018" width="50" height="46" rx="12" fill="#f472b6" fill-opacity="0.75" stroke="rgba(244,114,182,0.38)" stroke-width="1"/>
+  <text x="95" y="1049" text-anchor="middle" fill="#f1f5f9" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="20" font-weight="900">B</text>
+  <text opacity="1" x="140" y="1050" fill="#f1f5f9" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="25" font-weight="800"><tspan x="140" dy="0">Entekavir ilk basamak tedavide kullanılabilir.</tspan></text>
+</g>
+
+<g filter="url(#cardShadow-st-r5ghlx5)" opacity="1">
+  <rect x="42" y="1100" width="870" height="82" rx="12" fill="#050712" fill-opacity="0.62" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
+  <rect x="43" y="1101" width="868" height="80" rx="11" fill="url(#glassGrad-st-r5ghlx5)" opacity="0.18"/>
+  <rect x="70" y="1118" width="50" height="46" rx="12" fill="#f472b6" fill-opacity="0.75" stroke="rgba(244,114,182,0.38)" stroke-width="1"/>
+  <text x="95" y="1149" text-anchor="middle" fill="#f1f5f9" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="20" font-weight="900">C</text>
+  <text opacity="1" x="140" y="1150" fill="#f1f5f9" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="25" font-weight="800"><tspan x="140" dy="0">Pegile interferon alfa tedavisi kesin kontrendikedir.</tspan></text>
+</g>
+
+<g filter="url(#cardShadow-st-r5ghlx5)" opacity="1">
+  <rect x="42" y="1200" width="870" height="82" rx="12" fill="#050712" fill-opacity="0.62" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
+  <rect x="43" y="1201" width="868" height="80" rx="11" fill="url(#glassGrad-st-r5ghlx5)" opacity="0.18"/>
+  <rect x="70" y="1218" width="50" height="46" rx="12" fill="#f472b6" fill-opacity="0.75" stroke="rgba(244,114,182,0.38)" stroke-width="1"/>
+  <text x="95" y="1249" text-anchor="middle" fill="#f1f5f9" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="20" font-weight="900">D</text>
+  <text opacity="1" x="140" y="1250" fill="#f1f5f9" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="25" font-weight="800"><tspan x="140" dy="0">Karaciğer biyopsisi tedavi kararı için şarttır.</tspan></text>
+</g>
+
+<g filter="url(#cardShadow-st-r5ghlx5)" opacity="1">
+  <rect x="42" y="1300" width="870" height="82" rx="12" fill="#050712" fill-opacity="0.62" stroke="rgba(148, 163, 184, 0.12)" stroke-width="1"/>
+  <rect x="43" y="1301" width="868" height="80" rx="11" fill="url(#glassGrad-st-r5ghlx5)" opacity="0.18"/>
+  <rect x="70" y="1318" width="50" height="46" rx="12" fill="#f472b6" fill-opacity="0.75" stroke="rgba(244,114,182,0.38)" stroke-width="1"/>
+  <text x="95" y="1349" text-anchor="middle" fill="#f1f5f9" font-family="'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif" font-size="20" font-weight="900">E</text>
+  <text opacity="1" x="140" y="1350" fill="#f1f5f9" font-family="'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif" font-size="25" font-weight="800"><tspan x="140" dy="0">Tedavi yanıtı ALT ve HBV DNA ile izlenir.</tspan></text>
+</g>
+</svg>

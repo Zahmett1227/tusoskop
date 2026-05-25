@@ -12,6 +12,8 @@ export async function buildExportPackage(content) {
 
   let pngDataUrl = null;
   let pngDataUrls = [];
+  let storyQuestionPngDataUrl = null;
+  let storyAnswerPngDataUrl = null;
 
   const slideSources =
     content.carouselSlides?.length > 0
@@ -45,6 +47,30 @@ export async function buildExportPackage(content) {
     pngDataUrl = content.visualUrl || null;
   }
 
+  if (content.storyVisualSvg) {
+    try {
+      storyQuestionPngDataUrl = await svgToPngDataUrl(
+        content.storyVisualSvg,
+        content.storyVisualWidth || 1080,
+        content.storyVisualHeight || 1920
+      );
+    } catch {
+      storyQuestionPngDataUrl = content.storyVisualUrl || null;
+    }
+  }
+
+  if (content.storyAnswerVisualSvg) {
+    try {
+      storyAnswerPngDataUrl = await svgToPngDataUrl(
+        content.storyAnswerVisualSvg,
+        content.storyAnswerVisualWidth || 1080,
+        content.storyAnswerVisualHeight || 1920
+      );
+    } catch {
+      storyAnswerPngDataUrl = content.storyAnswerVisualUrl || null;
+    }
+  }
+
   return {
     contentId: id,
     scheduledAt: content.scheduledAt || null,
@@ -69,6 +95,9 @@ export async function buildExportPackage(content) {
     svg: content.visualSvg || null,
     carouselSlides: content.carouselSlides || null,
     storySvg: content.storyVisualSvg || null,
+    storyAnswerSvg: content.storyAnswerVisualSvg || null,
+    storyQuestionPngDataUrl,
+    storyAnswerPngDataUrl,
   };
 }
 
@@ -103,6 +132,12 @@ export async function exportContentToDownloads(content) {
     downloadDataUrl(`${content.id}-post.png`, pkg.pngDataUrl);
   } else if (content.visualUrl) {
     downloadDataUrl(`${content.id}-post.svg`, content.visualUrl);
+  }
+  if (pkg.storyQuestionPngDataUrl) {
+    downloadDataUrl(`${content.id}-story-question.png`, pkg.storyQuestionPngDataUrl);
+  }
+  if (pkg.storyAnswerPngDataUrl) {
+    downloadDataUrl(`${content.id}-story-answer.png`, pkg.storyAnswerPngDataUrl);
   }
   return pkg;
 }

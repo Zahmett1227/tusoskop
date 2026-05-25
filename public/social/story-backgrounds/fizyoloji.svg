@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<defs>
+  <radialGradient id="bg" cx="50%" cy="38%" r="68%">
+    <stop offset="0%" stop-color="#0d2220"/>
+    <stop offset="100%" stop-color="#010209"/>
+  </radialGradient>
+  <radialGradient id="kCortex" cx="360" cy="530" r="580" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#b84040"/>
+    <stop offset="32%" stop-color="#7a1e1e"/>
+    <stop offset="68%" stop-color="#3e0b0b"/>
+    <stop offset="100%" stop-color="#130303"/>
+  </radialGradient>
+  <radialGradient id="kMedulla" cx="430" cy="580" r="420" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#c83030"/>
+    <stop offset="48%" stop-color="#7a1818"/>
+    <stop offset="100%" stop-color="#280606"/>
+  </radialGradient>
+  <radialGradient id="kPelvis" cx="50%" cy="50%" r="60%">
+    <stop offset="0%" stop-color="#e8b090"/>
+    <stop offset="38%" stop-color="#b85040"/>
+    <stop offset="100%" stop-color="#5a1414"/>
+  </radialGradient>
+  <radialGradient id="kSpec" cx="34%" cy="26%" r="46%">
+    <stop offset="0%" stop-color="rgba(255,215,195,0.32)"/>
+    <stop offset="52%" stop-color="rgba(255,160,140,0.08)"/>
+    <stop offset="100%" stop-color="rgba(255,100,80,0)"/>
+  </radialGradient>
+  <radialGradient id="kVig" cx="50%" cy="48%" r="56%">
+    <stop offset="52%" stop-color="#010209" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#010209" stop-opacity="0.90"/>
+  </radialGradient>
+  <linearGradient id="kTopFade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#010209" stop-opacity="0.72"/>
+    <stop offset="14%" stop-color="#010209" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="kBotFade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#010209" stop-opacity="0"/>
+    <stop offset="72%" stop-color="#010209" stop-opacity="0"/>
+    <stop offset="90%" stop-color="#010209" stop-opacity="0.55"/>
+    <stop offset="100%" stop-color="#010209" stop-opacity="0.82"/>
+  </linearGradient>
+  <filter id="kGlow">
+    <feGaussianBlur stdDeviation="12" result="blur"/>
+    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+  </filter>
+</defs>
+
+<rect width="1080" height="1920" fill="#010209"/>
+<rect width="1080" height="1920" fill="url(#bg)"/>
+
+<!-- Atmospheric glow behind kidney -->
+<ellipse cx="540" cy="720" rx="420" ry="360" fill="#3a0a0a" opacity="0.55"/>
+
+<!-- KIDNEY cross-section centered at (540, 760), ~700×860px -->
+<g transform="translate(540, 760)">
+  <!-- Outer kidney cortex — bean shape -->
+  <path d="M 0,-420 C 155,-425 315,-342 372,-182 C 428,-36 412,158 318,285 C 228,400 92,438 -18,402 C -116,368 -178,284 -208,180 C -242,72 -234,8 -272,-52 C -316,-118 -316,-216 -244,-316 C -172,-412 -85,-422 0,-420 Z"
+    fill="url(#kCortex)"/>
+
+  <!-- Medulla boundary -->
+  <path d="M 8,-340 C 136,-344 268,-272 312,-145 C 352,-22 336,150 252,256 C 175,350 58,378 -16,344 C -100,308 -148,236 -168,152 C -196,60 -184,4 -218,-50 C -252,-106 -252,-178 -190,-262 C -124,-344 -56,-340 8,-340 Z"
+    fill="url(#kMedulla)" opacity="0.80"/>
+
+  <!-- Medullary pyramids — pointing toward pelvis center -->
+  <path d="M 0,-280 L 48,-75 L -48,-75 Z" fill="#902222" opacity="0.78"/>
+  <path d="M 148,-235 L 52,-68 L 152,-28 Z" fill="#8a2020" opacity="0.74"/>
+  <path d="M 245,-62 L 64,8 L 205,72 Z" fill="#882020" opacity="0.72"/>
+  <path d="M 208,148 L 54,78 L 182,178 Z" fill="#8a2020" opacity="0.74"/>
+  <path d="M 0,288 L 46,98 L -46,98 Z" fill="#902222" opacity="0.78"/>
+  <path d="M -158,152 L -50,76 L -82,182 Z" fill="#701818" opacity="0.60"/>
+  <path d="M -190,-22 L -54,8 L -88,-78 Z" fill="#701818" opacity="0.60"/>
+  <path d="M -162,-208 L -52,-72 L -132,-48 Z" fill="#7a1c1c" opacity="0.64"/>
+
+  <!-- Renal columns (cortex tissue between pyramids) -->
+  <ellipse cx="84" cy="-158" rx="22" ry="60" fill="#7a1e1e" opacity="0.48" transform="rotate(-25 84 -158)"/>
+  <ellipse cx="196" cy="54" rx="20" ry="56" fill="#7a1e1e" opacity="0.46" transform="rotate(-75 196 54)"/>
+  <ellipse cx="96" cy="238" rx="20" ry="52" fill="#7a1e1e" opacity="0.44" transform="rotate(-5 96 238)"/>
+
+  <!-- Renal pelvis — central collection system -->
+  <path d="M -78,-98 Q -40,-110 2,-104 Q 56,-98 74,-58 Q 88,-18 78,30 Q 64,74 28,88 Q -2,98 -42,88 Q -80,68 -88,28 Q -98,-22 -78,-98 Z"
+    fill="url(#kPelvis)" opacity="0.90"/>
+
+  <!-- Major calyces -->
+  <path d="M 2,-146 Q -14,-118 2,-92 Q 18,-118 2,-146 Z" fill="#c06868" opacity="0.62"/>
+  <path d="M 126,-122 Q 114,-92 128,-72 Q 140,-92 126,-122 Z" fill="#c06868" opacity="0.55"/>
+  <path d="M 215,40 Q 202,66 214,82 Q 226,66 215,40 Z" fill="#c06868" opacity="0.52"/>
+  <path d="M 150,188 Q 136,212 148,226 Q 160,212 150,188 Z" fill="#c06868" opacity="0.52"/>
+  <path d="M 2,142 Q -14,168 2,190 Q 18,168 2,142 Z" fill="#c06868" opacity="0.55"/>
+
+  <!-- Ureter -->
+  <path d="M -218,58 Q -282,122 -295,238 Q -310,365 -298,432" fill="none" stroke="#b06060" stroke-width="22" stroke-linecap="round" opacity="0.60"/>
+  <path d="M -218,58 Q -282,122 -295,238 Q -310,365 -298,432" fill="none" stroke="#e09090" stroke-width="8" stroke-linecap="round" opacity="0.22"/>
+
+  <!-- Renal artery -->
+  <path d="M -228,-28 Q -308,-52 -382,-44 Q -445,-38 -492,-52" fill="none" stroke="#c03030" stroke-width="18" stroke-linecap="round" opacity="0.58"/>
+  <path d="M -228,-28 Q -308,-52 -382,-44 Q -445,-38 -492,-52" fill="none" stroke="#e88888" stroke-width="7" stroke-linecap="round" opacity="0.22"/>
+
+  <!-- Renal vein -->
+  <path d="M -228,22 Q -308,36 -384,28 Q -452,22 -495,32" fill="none" stroke="#5060b0" stroke-width="20" stroke-linecap="round" opacity="0.52"/>
+  <path d="M -228,22 Q -308,36 -384,28 Q -452,22 -495,32" fill="none" stroke="#9098d8" stroke-width="7" stroke-linecap="round" opacity="0.18"/>
+
+  <!-- Surface blood vessels (fine details) -->
+  <g fill="none" stroke="#d06060" stroke-linecap="round" opacity="0.22">
+    <path d="M 0,-420 Q 55,-375 82,-298" stroke-width="4.5"/>
+    <path d="M 82,-298 Q 122,-248 102,-176" stroke-width="3.8"/>
+    <path d="M 202,-250 Q 256,-178 282,-98" stroke-width="4.5"/>
+    <path d="M 282,-98 Q 322,-28 338,52" stroke-width="3.5"/>
+    <path d="M -105,-358 Q -135,-288 -152,-198" stroke-width="4"/>
+    <path d="M 102,-420 Q 152,-370 172,-308" stroke-width="3.5"/>
+    <path d="M 252,132 Q 312,182 332,252" stroke-width="4"/>
+    <path d="M 98,378 Q 48,402 0,412 Q -50,402 -82,382" stroke-width="4.5"/>
+  </g>
+
+  <!-- Specular highlight (3D effect) -->
+  <ellipse cx="-82" cy="-262" rx="95" ry="58" fill="rgba(255,215,185,0.20)" transform="rotate(22 -82 -262)"/>
+  <ellipse cx="-42" cy="-315" rx="52" ry="32" fill="rgba(255,235,215,0.14)" transform="rotate(12 -42 -315)"/>
+
+  <!-- Overall specular gradient -->
+  <path d="M 0,-420 C 155,-425 315,-342 372,-182 C 428,-36 412,158 318,285 C 228,400 92,438 -18,402 C -116,368 -178,284 -208,180 C -242,72 -234,8 -272,-52 C -316,-118 -316,-216 -244,-316 C -172,-412 -85,-422 0,-420 Z"
+    fill="url(#kSpec)" opacity="0.85"/>
+
+  <!-- Dark edge rim -->
+  <path d="M 0,-420 C 155,-425 315,-342 372,-182 C 428,-36 412,158 318,285 C 228,400 92,438 -18,402 C -116,368 -178,284 -208,180 C -242,72 -234,8 -272,-52 C -316,-118 -316,-216 -244,-316 C -172,-412 -85,-422 0,-420 Z"
+    fill="none" stroke="#010209" stroke-width="32" opacity="0.55"/>
+</g>
+
+<!-- Vignette overlay -->
+<rect width="1080" height="1920" fill="url(#kVig)"/>
+<!-- Top fade -->
+<rect width="1080" height="1920" fill="url(#kTopFade)"/>
+<!-- Bottom fade -->
+<rect width="1080" height="1920" fill="url(#kBotFade)"/>
+</svg>

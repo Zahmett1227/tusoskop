@@ -76,31 +76,35 @@ describe("usageLimitService", () => {
     expect(httpsCallableMock).not.toHaveBeenCalled();
   });
 
-  it("incrementTopicTestUsage yalnızca bir kez artar (local fallback)", async () => {
+  it("incrementTopicTestUsage callable hatasında işlemi kapatır", async () => {
     const callable = vi.fn().mockRejectedValue(new Error("network"));
     httpsCallableMock.mockReturnValue(callable);
 
     const { incrementTopicTestUsage, getRemainingFreeUsage } = await loadService();
-    await incrementTopicTestUsage(null, null);
-    await incrementTopicTestUsage(null, null);
-    const after = await getRemainingFreeUsage(null, null);
-    expect(after.topicTestRemaining).toBe(0);
-
     await expect(incrementTopicTestUsage(null, null)).rejects.toMatchObject({
-      code: "daily_topic_test_limit",
+      code: "usage_counter_unavailable",
     });
-    const exhausted = await getRemainingFreeUsage(null, null);
-    expect(exhausted.topicTestRemaining).toBe(0);
+    const after = await getRemainingFreeUsage(null, null);
+    expect(after.topicTestRemaining).toBe(FREE_LIMITS.dailyTopicTests);
   });
 
-  it("incrementFullExamUsage limit dolunca UsageLimitError fırlatır", async () => {
+  it("incrementFullExamUsage callable hatasında işlemi kapatır", async () => {
     const callable = vi.fn().mockRejectedValue(new Error("network"));
     httpsCallableMock.mockReturnValue(callable);
 
     const { incrementFullExamUsage } = await loadService();
-    await incrementFullExamUsage(null, null);
     await expect(incrementFullExamUsage(null, null)).rejects.toMatchObject({
-      code: "monthly_exam_limit",
+      code: "usage_counter_unavailable",
+    });
+  });
+
+  it("incrementQuestionUsage callable hatasında işlemi kapatır", async () => {
+    const callable = vi.fn().mockRejectedValue(new Error("network"));
+    httpsCallableMock.mockReturnValue(callable);
+
+    const { incrementQuestionUsage } = await loadService();
+    await expect(incrementQuestionUsage(null, null, 1)).rejects.toMatchObject({
+      code: "usage_counter_unavailable",
     });
   });
 

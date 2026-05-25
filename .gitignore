@@ -15,6 +15,10 @@ dist-ssr/
 .vite-cache/
 .firebase/
 .firebase/*
+.firebase-config/
+.firebase-cache/
+.npm-cache/
+.tmp-npm-cache/
 .env
 .env.local
 .env.*.local
@@ -39,4 +43,9 @@ blob-report/
 
 temp-build/
 temp-build-2/
+
+# Instagram otomasyon — üretilen dosyalar
+scripts/instagram/questions.json
+scripts/instagram/*.png
+scripts/instagram/.ig_session.json
 

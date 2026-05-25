@@ -1,5 +1,5 @@
 import { colors } from "./colors.js";
-import { spacing, radius, glow, canvasPad, contentMaxWidth } from "./spacing.js";
+import { spacing, radius, canvasPad, contentMaxWidth } from "./spacing.js";
 import { fonts, typography, fontSizeMin, fontSizeMax } from "./typography.js";
 import { glow as glowScale } from "./spacing.js";
 

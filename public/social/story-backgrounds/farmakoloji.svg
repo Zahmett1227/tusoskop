@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<defs>
+  <radialGradient id="bg" cx="50%" cy="38%" r="65%">
+    <stop offset="0%" stop-color="#120a2e"/>
+    <stop offset="100%" stop-color="#010209"/>
+  </radialGradient>
+  <radialGradient id="atom" cx="50%" cy="50%" r="60%">
+    <stop offset="0%" stop-color="#a78bfa"/>
+    <stop offset="45%" stop-color="#7c3aed"/>
+    <stop offset="100%" stop-color="#2e1065"/>
+  </radialGradient>
+  <radialGradient id="atomSm" cx="50%" cy="50%" r="60%">
+    <stop offset="0%" stop-color="#c4b5fd"/>
+    <stop offset="50%" stop-color="#8b5cf6"/>
+    <stop offset="100%" stop-color="#3b0764"/>
+  </radialGradient>
+  <radialGradient id="fSpec" cx="34%" cy="26%" r="44%">
+    <stop offset="0%" stop-color="rgba(196,181,253,0.32)"/>
+    <stop offset="55%" stop-color="rgba(167,139,250,0.07)"/>
+    <stop offset="100%" stop-color="rgba(124,58,237,0)"/>
+  </radialGradient>
+  <radialGradient id="fVig" cx="50%" cy="46%" r="58%">
+    <stop offset="52%" stop-color="#010209" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#010209" stop-opacity="0.90"/>
+  </radialGradient>
+  <linearGradient id="fTop" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#010209" stop-opacity="0.65"/>
+    <stop offset="14%" stop-color="#010209" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="fBot" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="68%" stop-color="#010209" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#010209" stop-opacity="0.82"/>
+  </linearGradient>
+  <filter id="fGlow">
+    <feGaussianBlur stdDeviation="10" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<rect width="1080" height="1920" fill="#010209"/>
+<rect width="1080" height="1920" fill="url(#bg)"/>
+
+<!-- Large drug molecule — aspirin-like ring structure centered at (540, 720) -->
+<g transform="translate(540, 720)" filter="url(#fGlow)">
+  <!-- Benzene ring structure (6-membered aromatic ring) - large, centered -->
+  <!-- Hexagon with 300px radius -->
+  <!-- Vertices at angles 90, 150, 210, 270, 330, 30 degrees (pointing up) -->
+  <!-- (0,-300), (-260,-150), (-260,150), (0,300), (260,150), (260,-150) -->
+
+  <!-- Bond lines (alternating single/double shown as thick/thin) -->
+  <g stroke="#8b5cf6" stroke-linecap="round" fill="none">
+    <line x1="0" y1="-300" x2="-260" y2="-150" stroke-width="18" opacity="0.75"/>
+    <line x1="0" y1="-288" x2="-248" y2="-144" stroke-width="5" opacity="0.45"/>
+    <line x1="-260" y1="-150" x2="-260" y2="150" stroke-width="18" opacity="0.75"/>
+    <line x1="-260" y1="150" x2="0" y2="300" stroke-width="18" opacity="0.75"/>
+    <line x1="-248" y1="144" x2="0" y2="288" stroke-width="5" opacity="0.45"/>
+    <line x1="0" y1="300" x2="260" y2="150" stroke-width="18" opacity="0.75"/>
+    <line x1="260" y1="150" x2="260" y2="-150" stroke-width="18" opacity="0.75"/>
+    <line x1="248" y1="144" x2="248" y2="-144" stroke-width="5" opacity="0.45"/>
+    <line x1="260" y1="-150" x2="0" y2="-300" stroke-width="18" opacity="0.75"/>
+    <line x1="248" y1="-144" x2="0" y2="-288" stroke-width="5" opacity="0.45"/>
+    <!-- Inner aromatic circle (delocalized electrons) -->
+    <circle cx="0" cy="0" r="150" stroke-width="8" stroke="#a78bfa" opacity="0.30" fill="none"/>
+  </g>
+
+  <!-- Substituent groups -->
+  <!-- OH group at top -->
+  <line x1="0" y1="-300" x2="0" y2="-430" stroke="#8b5cf6" stroke-width="15" stroke-linecap="round" opacity="0.70"/>
+  <!-- O atom -->
+  <circle cx="0" cy="-470" r="38" fill="url(#atom)"/>
+  <text x="0" y="-458" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="900" fill="#ede9fe" opacity="0.90">O</text>
+  <!-- H atom -->
+  <line x1="0" y1="-508" x2="0" y2="-580" stroke="#8b5cf6" stroke-width="10" stroke-linecap="round" opacity="0.60"/>
+  <circle cx="0" cy="-608" r="26" fill="url(#atomSm)"/>
+  <text x="0" y="-598" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="800" fill="#ede9fe" opacity="0.85">H</text>
+
+  <!-- COOH group at upper-right -->
+  <line x1="260" y1="-150" x2="385" y2="-225" stroke="#8b5cf6" stroke-width="15" stroke-linecap="round" opacity="0.70"/>
+  <!-- C atom of COOH -->
+  <circle cx="415" cy="-242" r="35" fill="url(#atom)"/>
+  <text x="415" y="-230" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="900" fill="#ede9fe" opacity="0.90">C</text>
+  <!-- =O branch -->
+  <line x1="440" y1="-265" x2="520" y2="-340" stroke="#8b5cf6" stroke-width="12" stroke-linecap="round" opacity="0.65"/>
+  <line x1="450" y1="-250" x2="528" y2="-325" stroke="#8b5cf6" stroke-width="4" stroke-linecap="round" opacity="0.40"/>
+  <circle cx="548" cy="-362" r="30" fill="url(#atom)"/>
+  <text x="548" y="-350" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="900" fill="#ede9fe" opacity="0.88">O</text>
+  <!-- -OH branch -->
+  <line x1="440" y1="-220" x2="522" y2="-175" stroke="#8b5cf6" stroke-width="12" stroke-linecap="round" opacity="0.65"/>
+  <circle cx="548" cy="-160" r="30" fill="url(#atomSm)"/>
+  <text x="548" y="-148" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="900" fill="#ede9fe" opacity="0.88">O</text>
+  <line x1="568" y1="-145" x2="628" y2="-110" stroke="#8b5cf6" stroke-width="9" stroke-linecap="round" opacity="0.55"/>
+  <circle cx="648" cy="-98" r="22" fill="url(#atomSm)"/>
+  <text x="648" y="-89" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ede9fe" opacity="0.82">H</text>
+
+  <!-- CH3 group at lower right -->
+  <line x1="260" y1="150" x2="385" y2="225" stroke="#8b5cf6" stroke-width="15" stroke-linecap="round" opacity="0.70"/>
+  <circle cx="415" cy="242" r="35" fill="url(#atom)"/>
+  <text x="415" y="254" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="900" fill="#ede9fe" opacity="0.90">C</text>
+  <g stroke="#8b5cf6" stroke-linecap="round" opacity="0.60">
+    <line x1="446" y1="254" x2="516" y2="292" stroke-width="10"/>
+    <circle cx="535" cy="302" r="22" fill="url(#atomSm)"/>
+    <line x1="445" y1="222" x2="514" y2="185" stroke-width="10"/>
+    <circle cx="532" cy="175" r="22" fill="url(#atomSm)"/>
+    <line x1="415" y1="278" x2="415" y2="355" stroke-width="10"/>
+    <circle cx="415" cy="372" r="22" fill="url(#atomSm)"/>
+  </g>
+  <text x="535" y="311" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ede9fe" opacity="0.82">H</text>
+  <text x="532" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ede9fe" opacity="0.82">H</text>
+  <text x="415" y="381" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ede9fe" opacity="0.82">H</text>
+
+  <!-- Carbon atoms at ring vertices -->
+  <g fill="url(#atom)">
+    <circle cx="0" cy="-300" r="32"/>
+    <circle cx="-260" cy="-150" r="32"/>
+    <circle cx="-260" cy="150" r="32"/>
+    <circle cx="0" cy="300" r="32"/>
+    <circle cx="260" cy="150" r="32"/>
+    <circle cx="260" cy="-150" r="32"/>
+  </g>
+  <g fill="#ede9fe" font-family="Arial, sans-serif" font-size="30" font-weight="900" opacity="0.88" text-anchor="middle">
+    <text x="0" y="-289">C</text>
+    <text x="-260" y="-139">C</text>
+    <text x="-260" y="161">C</text>
+    <text x="0" y="311">C</text>
+    <text x="260" y="161">C</text>
+    <text x="260" y="-139">C</text>
+  </g>
+
+  <!-- Electron cloud / delocalization glow -->
+  <circle cx="0" cy="0" r="180" fill="#4c1d95" opacity="0.20"/>
+  <circle cx="0" cy="0" r="120" fill="#7c3aed" opacity="0.12"/>
+</g>
+
+<!-- Background glow -->
+<ellipse cx="540" cy="720" rx="380" ry="420" fill="#2e1065" opacity="0.30"/>
+
+<rect width="1080" height="1920" fill="url(#fVig)"/>
+<rect width="1080" height="1920" fill="url(#fTop)"/>
+<rect width="1080" height="1920" fill="url(#fBot)"/>
+</svg>

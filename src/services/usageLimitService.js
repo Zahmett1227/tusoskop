@@ -69,7 +69,8 @@ const getLocalMonthlyUsage = () => {
 };
 
 /**
- * When the callable fails, we bump local counters; merge max(remote, local) so limits stay enforced client-side.
+ * Local usage only protects anonymous/offline reads. Authenticated increments must
+ * be accepted by Cloud Functions before a limited action proceeds.
  */
 function mergeDailyUsageWithLocal(remote, local, todayKey, monthKey) {
   const r = safeUsage(remote);
@@ -200,15 +201,11 @@ export async function incrementQuestionUsage(user, userData, count = 1) {
     return data.usage ? safeUsage(data.usage) : null;
   } catch (err) {
     if (err instanceof UsageLimitError) throw err;
-    console.warn("incrementQuestionUsage: callable failed; applying capped local increment", err);
-    const usage = getLocalUsage();
-    const next = usage.questionCount + delta;
-    if (usage.questionCount >= FREE_LIMITS.dailyQuestions || next > FREE_LIMITS.dailyQuestions) {
-      throw new UsageLimitError("daily_question_limit", "Günlük soru limiti doldu.");
-    }
-    const updated = safeUsage({ ...usage, questionCount: next });
-    setLocalUsage(updated);
-    return updated;
+    console.warn("incrementQuestionUsage: callable failed; blocking limited action", err);
+    throw new UsageLimitError(
+      "usage_counter_unavailable",
+      "Kullanım sayacı sunucuda doğrulanamadı."
+    );
   }
 }
 
@@ -233,14 +230,11 @@ export async function incrementTopicTestUsage(user, userData) {
     return data.usage ? safeUsage(data.usage) : null;
   } catch (err) {
     if (err instanceof UsageLimitError) throw err;
-    console.warn("incrementTopicTestUsage: callable failed; applying capped local increment", err);
-    const usage = getLocalUsage();
-    if (usage.topicTestCount >= FREE_LIMITS.dailyTopicTests) {
-      throw new UsageLimitError("daily_topic_test_limit", "Günlük konu testi limiti doldu.");
-    }
-    const updated = safeUsage({ ...usage, topicTestCount: usage.topicTestCount + 1 });
-    setLocalUsage(updated);
-    return updated;
+    console.warn("incrementTopicTestUsage: callable failed; blocking limited action", err);
+    throw new UsageLimitError(
+      "usage_counter_unavailable",
+      "Kullanım sayacı sunucuda doğrulanamadı."
+    );
   }
 }
 
@@ -257,7 +251,6 @@ export async function canStartFullExam(user, userData) {
 
 export async function incrementFullExamUsage(user, userData) {
   if (passIfPremium(userData)) return null;
-  const mKey = getMonthKey();
   try {
     const data = await invokeIncrementUsage({ type: "fullExam" });
     if (!data.success) {
@@ -266,18 +259,11 @@ export async function incrementFullExamUsage(user, userData) {
     return { monthKey: getMonthKey(), fullExamCount: data.fullExamCount };
   } catch (err) {
     if (err instanceof UsageLimitError) throw err;
-    console.warn("incrementFullExamUsage: callable failed; applying capped local increment", err);
-    let usage = getLocalUsage();
-    if (usage.monthKey !== mKey) {
-      usage = safeUsage({ ...usage, monthKey: mKey, fullExamCount: 0 });
-    }
-    const next = usage.fullExamCount + 1;
-    if (usage.fullExamCount >= FREE_LIMITS.monthlyFullExams || next > FREE_LIMITS.monthlyFullExams) {
-      throw new UsageLimitError("monthly_exam_limit", "Aylık deneme limiti doldu.");
-    }
-    const updated = safeUsage({ ...usage, fullExamCount: next });
-    setLocalUsage(updated);
-    return { monthKey: mKey, fullExamCount: next };
+    console.warn("incrementFullExamUsage: callable failed; blocking limited action", err);
+    throw new UsageLimitError(
+      "usage_counter_unavailable",
+      "Kullanım sayacı sunucuda doğrulanamadı."
+    );
   }
 }
 
@@ -308,18 +294,11 @@ export async function incrementReviewUsage(user, userData, count = 1) {
     return data.usage ? safeUsage(data.usage) : null;
   } catch (err) {
     if (err instanceof UsageLimitError) throw err;
-    console.warn("incrementReviewUsage: callable failed; applying capped local increment", err);
-    const usage = getLocalUsage();
-    const next = usage.reviewQuestionCount + delta;
-    if (
-      usage.reviewQuestionCount >= FREE_LIMITS.dailyReviewQuestions ||
-      next > FREE_LIMITS.dailyReviewQuestions
-    ) {
-      throw new UsageLimitError("daily_review_limit", "Günlük tekrar limiti doldu.");
-    }
-    const updated = safeUsage({ ...usage, reviewQuestionCount: next });
-    setLocalUsage(updated);
-    return updated;
+    console.warn("incrementReviewUsage: callable failed; blocking limited action", err);
+    throw new UsageLimitError(
+      "usage_counter_unavailable",
+      "Kullanım sayacı sunucuda doğrulanamadı."
+    );
   }
 }
 
@@ -366,6 +345,13 @@ export function limitModalFromUsageError(code) {
         description:
           "Free planda günde 10 tekrar sorusu çözebilirsin. Plus ile tekrar kuyruğun sınırsız açılır.",
         limitReason: "daily_review_limit_study",
+      };
+    case "usage_counter_unavailable":
+      return {
+        title: "Kullanım doğrulanamadı",
+        description:
+          "Kullanım sayacı sunucuda doğrulanamadı. Bağlantını kontrol edip tekrar dene.",
+        limitReason: "usage_counter_unavailable",
       };
     default:
       return {

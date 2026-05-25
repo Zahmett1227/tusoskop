@@ -1,0 +1,58 @@
+name: Daily Instagram Story
+
+on:
+  schedule:
+    - cron: '0 7 * * *'   # Her gün 10:00 İstanbul (UTC+3 = UTC 07:00)
+  workflow_dispatch:        # Manuel tetikleyici (GitHub Actions UI'dan "Run workflow")
+
+jobs:
+  post-story:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      # 1. Kodu indir
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Node.js kur ve soruları JSON'a aktar
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Export questions JSON
+        run: node scripts/export-questions.mjs
+
+      - name: Verify questions exported
+        run: |
+          if [ ! -f scripts/instagram/questions.json ]; then
+            echo "❌ questions.json oluşturulamadı"
+            exit 1
+          fi
+          COUNT=$(python3 -c "import json; data=json.load(open('scripts/instagram/questions.json')); print(len(data))")
+          echo "✓ $COUNT soru dışa aktarıldı"
+
+      # 3. Python kur ve bağımlılıkları yükle
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install -r scripts/instagram/requirements.txt
+
+      # 4. Story yayınla
+      - name: Post Instagram Story
+        working-directory: scripts/instagram
+        run: python post_story.py
+        env:
+          IG_USERNAME: ${{ secrets.IG_USERNAME }}
+          IG_PASSWORD: ${{ secrets.IG_PASSWORD }}
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+      # 5. (Opsiyonel) Hata durumunda bildirim
+      - name: Report failure
+        if: failure()
+        run: |
+          echo "::error::Story yayını başarısız oldu! Loglara bakın."

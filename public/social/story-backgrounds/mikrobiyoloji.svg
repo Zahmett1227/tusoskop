@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<defs>
+  <radialGradient id="bg" cx="50%" cy="38%" r="65%">
+    <stop offset="0%" stop-color="#021518"/>
+    <stop offset="100%" stop-color="#010209"/>
+  </radialGradient>
+  <!-- Main bacterium body gradient -->
+  <radialGradient id="bact" cx="38%" cy="32%" r="65%" gradientUnits="userSpaceOnUse"
+                  cx="420" cy="620" r="420">
+    <stop offset="0%" stop-color="#06b6d4"/>
+    <stop offset="28%" stop-color="#0e7490"/>
+    <stop offset="60%" stop-color="#155e75"/>
+    <stop offset="100%" stop-color="#062840"/>
+  </radialGradient>
+  <!-- Inner cytoplasm -->
+  <radialGradient id="cyto" cx="42%" cy="35%" r="60%">
+    <stop offset="0%" stop-color="#22d3ee"/>
+    <stop offset="45%" stop-color="#0891b2"/>
+    <stop offset="100%" stop-color="#083344"/>
+  </radialGradient>
+  <!-- Nucleoid region -->
+  <radialGradient id="nuc" cx="50%" cy="50%" r="60%">
+    <stop offset="0%" stop-color="#a5f3fc"/>
+    <stop offset="55%" stop-color="#22d3ee"/>
+    <stop offset="100%" stop-color="#0e7490"/>
+  </radialGradient>
+  <radialGradient id="mSpec" cx="36%" cy="28%" r="44%">
+    <stop offset="0%" stop-color="rgba(165,243,252,0.32)"/>
+    <stop offset="55%" stop-color="rgba(103,232,249,0.07)"/>
+    <stop offset="100%" stop-color="rgba(6,182,212,0)"/>
+  </radialGradient>
+  <radialGradient id="mVig" cx="50%" cy="46%" r="58%">
+    <stop offset="52%" stop-color="#010209" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#010209" stop-opacity="0.88"/>
+  </radialGradient>
+  <linearGradient id="mTop" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#010209" stop-opacity="0.65"/>
+    <stop offset="14%" stop-color="#010209" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="mBot" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="68%" stop-color="#010209" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#010209" stop-opacity="0.82"/>
+  </linearGradient>
+  <filter id="mGlow">
+    <feGaussianBlur stdDeviation="6" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<rect width="1080" height="1920" fill="#010209"/>
+<rect width="1080" height="1920" fill="url(#bg)"/>
+<ellipse cx="540" cy="750" rx="430" ry="370" fill="#062840" opacity="0.55"/>
+
+<!-- LARGE BACTERIUM (E. coli style) centered at (540, 750), ~800×450px oval -->
+<g transform="translate(540, 750)">
+  <!-- Outer cell wall / membrane -->
+  <ellipse cx="0" cy="0" rx="400" ry="240" fill="url(#bact)"/>
+  <!-- Periplasmic space (slightly smaller) -->
+  <ellipse cx="0" cy="0" rx="368" ry="215" fill="url(#cyto)" opacity="0.65"/>
+  <!-- Cytoplasm -->
+  <ellipse cx="0" cy="0" rx="335" ry="195" fill="#083344" opacity="0.82"/>
+
+  <!-- Nucleoid (DNA region, irregular blob in center) -->
+  <path d="M 0,-68 C 48,-72 90,-52 98,-18 C 106,18 88,58 48,72 C 8,86 -38,78 -72,52 C -106,26 -108,-22 -88,-52 C -68,-82 -38,-66 0,-68 Z" fill="url(#nuc)" opacity="0.70"/>
+  <!-- Nucleoid DNA strands -->
+  <g stroke="#a5f3fc" stroke-width="2.5" fill="none" opacity="0.45">
+    <path d="M -60,-40 Q -20,-55 20,-42 Q 60,-28 80,-8"/>
+    <path d="M -80,0 Q -40,-12 0,0 Q 40,12 78,5"/>
+    <path d="M -65,35 Q -25,22 15,35 Q 55,48 75,32"/>
+  </g>
+
+  <!-- Ribosomes (small dark dots throughout cytoplasm) -->
+  <g fill="#0e7490" opacity="0.60">
+    <circle cx="-200" cy="-80" r="8"/><circle cx="-160" cy="-120" r="7"/>
+    <circle cx="-120" cy="-150" r="9"/><circle cx="-80" cy="-165" r="8"/>
+    <circle cx="-40" cy="-175" r="7"/><circle cx="0" cy="-178" r="9"/>
+    <circle cx="40" cy="-175" r="8"/><circle cx="80" cy="-168" r="7"/>
+    <circle cx="120" cy="-150" r="9"/><circle cx="160" cy="-125" r="8"/>
+    <circle cx="200" cy="-88" r="7"/><circle cx="230" cy="-50" r="9"/>
+    <circle cx="-230" cy="-45" r="7"/><circle cx="-240" cy="10" r="9"/>
+    <circle cx="240" cy="15" r="8"/><circle cx="-235" cy="70" r="7"/>
+    <circle cx="235" cy="75" r="9"/><circle cx="-200" cy="120" r="8"/>
+    <circle cx="200" cy="115" r="7"/><circle cx="-150" cy="150" r="9"/>
+    <circle cx="150" cy="148" r="8"/><circle cx="-100" cy="170" r="7"/>
+    <circle cx="100" cy="170" r="8"/><circle cx="-50" cy="178" r="9"/>
+    <circle cx="50" cy="176" r="7"/><circle cx="0" cy="180" r="8"/>
+    <circle cx="-180" cy="-5" r="7"/><circle cx="180" cy="0" r="8"/>
+    <circle cx="-140" cy="30" r="9"/><circle cx="140" cy="32" r="7"/>
+    <circle cx="-100" cy="60" r="8"/><circle cx="100" cy="62" r="9"/>
+  </g>
+
+  <!-- Flagella (long whip-like appendages) -->
+  <g stroke="#22d3ee" stroke-linecap="round" fill="none" opacity="0.62">
+    <!-- Left side flagella -->
+    <path d="M -400,0 Q -520,-40 -620,-10 Q -720,20 -820,-20 Q -900,-45 -960,-30" stroke-width="5"/>
+    <path d="M -398,-30 Q -510,-80 -615,-60 Q -720,-38 -810,-70 Q -880,-92 -940,-80" stroke-width="4"/>
+    <path d="M -398,35 Q -500,60 -600,40 Q -710,18 -800,55 Q -868,80 -920,70" stroke-width="4"/>
+    <path d="M -395,70 Q -490,120 -580,105 Q -670,88 -750,125 Q -820,152 -870,140" stroke-width="3.5"/>
+    <!-- Right side flagella -->
+    <path d="M 400,0 Q 520,40 620,10 Q 720,-20 820,20 Q 900,45 960,30" stroke-width="5"/>
+    <path d="M 398,-28 Q 510,-70 615,-52 Q 718,-32 808,-65 Q 878,-88 938,-75" stroke-width="4"/>
+    <path d="M 398,32 Q 500,65 598,48 Q 705,28 798,62 Q 865,85 918,72" stroke-width="4"/>
+  </g>
+
+  <!-- Pili (short hair-like surface projections) -->
+  <g stroke="#0891b2" stroke-width="2.5" fill="none" opacity="0.50">
+    <line x1="-380" y1="-80" x2="-430" y2="-130"/>
+    <line x1="-360" y1="-140" x2="-400" y2="-198"/>
+    <line x1="-320" y1="-195" x2="-348" y2="-260"/>
+    <line x1="-240" y1="-232" x2="-255" y2="-298"/>
+    <line x1="-160" y1="-238" x2="-165" y2="-308"/>
+    <line x1="-80" y1="-242" x2="-78" y2="-315"/>
+    <line x1="0" y1="-240" x2="0" y2="-315"/>
+    <line x1="80" y1="-240" x2="82" y2="-315"/>
+    <line x1="160" y1="-236" x2="168" y2="-310"/>
+    <line x1="240" y1="-228" x2="258" y2="-295"/>
+    <line x1="320" y1="-192" x2="350" y2="-258"/>
+    <line x1="360" y1="-138" x2="402" y2="-196"/>
+    <line x1="382" y1="-78" x2="432" y2="-128"/>
+    <line x1="-380" y1="82" x2="-432" y2="132"/>
+    <line x1="-320" y1="196" x2="-350" y2="262"/>
+    <line x1="-160" y1="240" x2="-168" y2="312"/>
+    <line x1="0" y1="242" x2="0" y2="318"/>
+    <line x1="160" y1="238" x2="170" y2="312"/>
+    <line x1="320" y1="195" x2="352" y2="260"/>
+    <line x1="382" y1="80" x2="435" y2="130"/>
+  </g>
+
+  <!-- Cell membrane outer ring highlight -->
+  <ellipse cx="0" cy="0" rx="400" ry="240" fill="none" stroke="#22d3ee" stroke-width="5" opacity="0.38"/>
+  <ellipse cx="0" cy="0" rx="400" ry="240" fill="none" stroke="#a5f3fc" stroke-width="2" opacity="0.15"/>
+
+  <!-- Specular highlight -->
+  <ellipse cx="-80" cy="-90" rx="120" ry="72" fill="rgba(165,243,252,0.22)" transform="rotate(20 -80 -90)"/>
+  <ellipse cx="-40" cy="-130" rx="65" ry="38" fill="rgba(207,250,254,0.15)" transform="rotate(10 -40 -130)"/>
+  <ellipse cx="0" cy="0" rx="400" ry="240" fill="url(#mSpec)" opacity="0.80"/>
+  <ellipse cx="0" cy="0" rx="400" ry="240" fill="none" stroke="#010209" stroke-width="30" opacity="0.48"/>
+</g>
+
+<!-- Background micro-organisms (small, scattered) -->
+<g opacity="0.18" fill="none">
+  <ellipse cx="150" cy="280" rx="45" ry="25" stroke="#22d3ee" stroke-width="3"/>
+  <ellipse cx="920" cy="350" rx="55" ry="30" stroke="#06b6d4" stroke-width="2.5"/>
+  <ellipse cx="180" cy="1380" rx="40" ry="22" stroke="#22d3ee" stroke-width="2"/>
+  <ellipse cx="940" cy="1280" rx="50" ry="28" stroke="#06b6d4" stroke-width="2.5"/>
+  <circle cx="200" cy="500" r="18" stroke="#0891b2" stroke-width="2"/>
+  <circle cx="880" cy="580" r="22" stroke="#0891b2" stroke-width="2"/>
+</g>
+
+<rect width="1080" height="1920" fill="url(#mVig)"/>
+<rect width="1080" height="1920" fill="url(#mTop)"/>
+<rect width="1080" height="1920" fill="url(#mBot)"/>
+</svg>

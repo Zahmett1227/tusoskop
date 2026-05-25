@@ -6,6 +6,7 @@ export const VISUAL_TEMPLATE_TYPES = {
   MINI_INFO_POST: "mini_info_post",
   FEATURE_POST: "feature_post",
   STORY_QUESTION: "story_question",
+  STORY_ANSWER: "story_answer",
   ANSWER_POST: "answer_post",
   CAROUSEL_SLIDE: "carousel_slide",
 };

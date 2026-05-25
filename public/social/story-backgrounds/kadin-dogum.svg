@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<defs>
+  <radialGradient id="bg" cx="50%" cy="36%" r="65%">
+    <stop offset="0%" stop-color="#280a1e"/>
+    <stop offset="100%" stop-color="#010209"/>
+  </radialGradient>
+  <!-- Uterus gradient — deep fuchsia/magenta -->
+  <radialGradient id="uterus" cx="360" cy="520" r="480" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#e879f9"/>
+    <stop offset="28%" stop-color="#a21caf"/>
+    <stop offset="62%" stop-color="#5b0e6e"/>
+    <stop offset="100%" stop-color="#1a0320"/>
+  </radialGradient>
+  <radialGradient id="myom" cx="42%" cy="38%" r="60%">
+    <stop offset="0%" stop-color="#d946ef"/>
+    <stop offset="45%" stop-color="#86198f"/>
+    <stop offset="100%" stop-color="#2e0635"/>
+  </radialGradient>
+  <radialGradient id="cavity" cx="50%" cy="50%" r="60%">
+    <stop offset="0%" stop-color="#fae8ff"/>
+    <stop offset="45%" stop-color="#e879f9"/>
+    <stop offset="100%" stop-color="#7e22ce"/>
+  </radialGradient>
+  <radialGradient id="uSpec" cx="34%" cy="26%" r="44%">
+    <stop offset="0%" stop-color="rgba(232,121,249,0.32)"/>
+    <stop offset="55%" stop-color="rgba(217,70,239,0.07)"/>
+    <stop offset="100%" stop-color="rgba(162,28,175,0)"/>
+  </radialGradient>
+  <radialGradient id="uVig" cx="50%" cy="46%" r="58%">
+    <stop offset="52%" stop-color="#010209" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#010209" stop-opacity="0.90"/>
+  </radialGradient>
+  <linearGradient id="uTop" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#010209" stop-opacity="0.65"/>
+    <stop offset="14%" stop-color="#010209" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="uBot" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="68%" stop-color="#010209" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#010209" stop-opacity="0.82"/>
+  </linearGradient>
+</defs>
+<rect width="1080" height="1920" fill="#010209"/>
+<rect width="1080" height="1920" fill="url(#bg)"/>
+<ellipse cx="540" cy="750" rx="400" ry="380" fill="#280a1e" opacity="0.55"/>
+
+<!-- UTERUS cross-section centered at (540,750) -->
+<g transform="translate(540, 750)">
+  <!-- Main uterine body (corpus uteri) — pear/heart shape -->
+  <path d="M 0,-380 C 80,-385 160,-360 215,-315 C 270,-270 298,-208 295,-145 C 292,-82 268,-28 225,20 C 182,68 128,98 80,118 Q 50,130 30,168 Q 15,205 0,228 Q -15,205 -30,168 Q -50,130 -80,118 C -128,98 -182,68 -225,20 C -268,-28 -292,-82 -295,-145 C -298,-208 -270,-270 -215,-315 C -160,-360 -80,-385 0,-380 Z"
+    fill="url(#uterus)"/>
+
+  <!-- Myometrium layer (thick smooth muscle wall) -->
+  <path d="M 0,-330 C 68,-334 138,-312 185,-272 C 232,-232 255,-178 252,-118 C 249,-58 228,-10 190,32 C 152,74 105,100 62,116 Q 38,126 22,158 Q 10,185 0,202 Q -10,185 -22,158 Q -38,126 -62,116 C -105,100 -152,74 -190,32 C -228,-10 -249,-58 -252,-118 C -255,-178 -232,-232 -185,-272 C -138,-312 -68,-334 0,-330 Z"
+    fill="url(#myom)" opacity="0.68"/>
+
+  <!-- Endometrium layer (inner lining, triangular cavity) -->
+  <!-- Uterine cavity -->
+  <path d="M 0,-250 C 42,-252 80,-228 95,-188 C 110,-148 105,-102 85,-68 C 65,-34 32,-12 0,8 C -32,-12 -65,-34 -85,-68 C -105,-102 -110,-148 -95,-188 C -80,-228 -42,-252 0,-250 Z"
+    fill="#6b21a8" opacity="0.75"/>
+  <path d="M 0,-230 C 36,-232 68,-210 80,-172 C 92,-134 88,-88 70,-56 C 52,-24 25,-4 0,12 C -25,-4 -52,-24 -70,-56 C -88,-88 -92,-134 -80,-172 C -68,-210 -36,-232 0,-230 Z"
+    fill="url(#cavity)" opacity="0.65"/>
+
+  <!-- Internal os (cervix beginning) -->
+  <rect x="-28" y="8" width="56" height="30" rx="12" fill="#6b21a8" opacity="0.60"/>
+
+  <!-- Cervix (cervical canal) -->
+  <path d="M -30,168 Q -28,142 -22,118 Q -12,95 0,82 Q 12,95 22,118 Q 28,142 30,168" fill="#86198f" opacity="0.65"/>
+  <path d="M -18,168 Q -16,148 -12,128 Q -6,112 0,104 Q 6,112 12,128 Q 16,148 18,168" fill="url(#cavity)" opacity="0.55"/>
+
+  <!-- Fallopian tubes (extend bilaterally from cornua) -->
+  <!-- Left tube -->
+  <path d="M -225,20 Q -310,-5 -380,-30 Q -430,-48 -465,-35 Q -490,-22 -490,0"
+    fill="none" stroke="#e879f9" stroke-width="20" stroke-linecap="round" opacity="0.72"/>
+  <path d="M -225,20 Q -310,-5 -380,-30 Q -430,-48 -465,-35 Q -490,-22 -490,0"
+    fill="none" stroke="#fae8ff" stroke-width="6" stroke-linecap="round" opacity="0.25"/>
+  <!-- Left fimbriae (finger-like projections at end of tube) -->
+  <g stroke="#e879f9" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.62">
+    <path d="M -490,0 Q -505,-18 -515,-32"/>
+    <path d="M -490,0 Q -510,-5 -525,-2"/>
+    <path d="M -490,0 Q -505,15 -512,28"/>
+    <path d="M -490,0 Q -490,22 -488,38"/>
+  </g>
+  <!-- Right tube -->
+  <path d="M 225,20 Q 310,-5 380,-30 Q 430,-48 465,-35 Q 490,-22 490,0"
+    fill="none" stroke="#e879f9" stroke-width="20" stroke-linecap="round" opacity="0.68"/>
+  <path d="M 225,20 Q 310,-5 380,-30 Q 430,-48 465,-35 Q 490,-22 490,0"
+    fill="none" stroke="#fae8ff" stroke-width="6" stroke-linecap="round" opacity="0.22"/>
+  <!-- Right fimbriae -->
+  <g stroke="#e879f9" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.58">
+    <path d="M 490,0 Q 505,-18 515,-32"/>
+    <path d="M 490,0 Q 510,-5 525,-2"/>
+    <path d="M 490,0 Q 505,15 512,28"/>
+    <path d="M 490,0 Q 490,22 488,38"/>
+  </g>
+
+  <!-- Ovaries (elliptical, at end of tubes) -->
+  <!-- Left ovary -->
+  <ellipse cx="-492" cy="28" rx="52" ry="35" fill="#a21caf" opacity="0.78"/>
+  <ellipse cx="-492" cy="28" rx="35" ry="23" fill="#d946ef" opacity="0.52"/>
+  <!-- Follicles in left ovary -->
+  <circle cx="-505" cy="22" r="10" fill="#fae8ff" opacity="0.48"/>
+  <circle cx="-478" cy="35" r="8" fill="#fae8ff" opacity="0.38"/>
+  <circle cx="-498" cy="40" r="7" fill="#fae8ff" opacity="0.35"/>
+
+  <!-- Right ovary -->
+  <ellipse cx="492" cy="28" rx="52" ry="35" fill="#a21caf" opacity="0.75"/>
+  <ellipse cx="492" cy="28" rx="35" ry="23" fill="#d946ef" opacity="0.50"/>
+  <!-- Follicles in right ovary -->
+  <circle cx="505" cy="22" r="10" fill="#fae8ff" opacity="0.48"/>
+  <circle cx="478" cy="35" r="8" fill="#fae8ff" opacity="0.35"/>
+
+  <!-- Uterine blood vessels -->
+  <g fill="none" stroke="#be185d" stroke-linecap="round" opacity="0.32">
+    <path d="M -295,-145 Q -328,-112 -340,-72 Q -352,-32 -340,8" stroke-width="8"/>
+    <path d="M 295,-145 Q 328,-112 340,-72 Q 352,-32 340,8" stroke-width="8"/>
+    <path d="M -215,-315 Q -245,-280 -258,-238 Q -268,-198 -258,-158" stroke-width="7"/>
+    <path d="M 215,-315 Q 245,-280 258,-238 Q 268,-198 258,-158" stroke-width="7"/>
+  </g>
+
+  <!-- Specular highlight -->
+  <ellipse cx="-60" cy="-300" rx="100" ry="60" fill="rgba(232,121,249,0.22)" transform="rotate(18 -60 -300)"/>
+  <ellipse cx="-28" cy="-352" rx="56" ry="32" fill="rgba(250,232,255,0.15)" transform="rotate(8 -28 -352)"/>
+
+  <path d="M 0,-380 C 80,-385 160,-360 215,-315 C 270,-270 298,-208 295,-145 C 292,-82 268,-28 225,20 C 182,68 128,98 80,118 Q 50,130 30,168 Q 15,205 0,228 Q -15,205 -30,168 Q -50,130 -80,118 C -128,98 -182,68 -225,20 C -268,-28 -292,-82 -295,-145 C -298,-208 -270,-270 -215,-315 C -160,-360 -80,-385 0,-380 Z"
+    fill="url(#uSpec)" opacity="0.78"/>
+  <path d="M 0,-380 C 80,-385 160,-360 215,-315 C 270,-270 298,-208 295,-145 C 292,-82 268,-28 225,20 C 182,68 128,98 80,118 Q 50,130 30,168 Q 15,205 0,228 Q -15,205 -30,168 Q -50,130 -80,118 C -128,98 -182,68 -225,20 C -268,-28 -292,-82 -295,-145 C -298,-208 -270,-270 -215,-315 C -160,-360 -80,-385 0,-380 Z"
+    fill="none" stroke="#010209" stroke-width="32" opacity="0.50"/>
+</g>
+
+<rect width="1080" height="1920" fill="url(#uVig)"/>
+<rect width="1080" height="1920" fill="url(#uTop)"/>
+<rect width="1080" height="1920" fill="url(#uBot)"/>
+</svg>

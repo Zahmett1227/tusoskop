@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<defs>
+  <radialGradient id="bg" cx="50%" cy="38%" r="65%">
+    <stop offset="0%" stop-color="#041a0c"/>
+    <stop offset="100%" stop-color="#010209"/>
+  </radialGradient>
+  <radialGradient id="dnaGlow" cx="50%" cy="50%" r="55%">
+    <stop offset="0%" stop-color="#052e16"/>
+    <stop offset="100%" stop-color="#010209"/>
+  </radialGradient>
+  <linearGradient id="strand1" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#22c55e"/>
+    <stop offset="50%" stop-color="#86efac"/>
+    <stop offset="100%" stop-color="#22c55e"/>
+  </linearGradient>
+  <linearGradient id="strand2" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#16a34a"/>
+    <stop offset="50%" stop-color="#4ade80"/>
+    <stop offset="100%" stop-color="#16a34a"/>
+  </linearGradient>
+  <radialGradient id="atom1" cx="50%" cy="50%" r="60%">
+    <stop offset="0%" stop-color="#86efac"/>
+    <stop offset="100%" stop-color="#166534"/>
+  </radialGradient>
+  <radialGradient id="atom2" cx="50%" cy="50%" r="60%">
+    <stop offset="0%" stop-color="#4ade80"/>
+    <stop offset="100%" stop-color="#14532d"/>
+  </radialGradient>
+  <radialGradient id="bVig" cx="50%" cy="46%" r="58%">
+    <stop offset="52%" stop-color="#010209" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#010209" stop-opacity="0.88"/>
+  </radialGradient>
+  <linearGradient id="bTop" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#010209" stop-opacity="0.65"/>
+    <stop offset="14%" stop-color="#010209" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="bBot" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="68%" stop-color="#010209" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#010209" stop-opacity="0.82"/>
+  </linearGradient>
+  <filter id="glow">
+    <feGaussianBlur stdDeviation="8" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<rect width="1080" height="1920" fill="#010209"/>
+<rect width="1080" height="1920" fill="url(#bg)"/>
+<rect width="1080" height="1920" fill="url(#dnaGlow)"/>
+
+<!-- DNA DOUBLE HELIX centered at x=540, spanning full height -->
+<!-- The helix makes ~6 full turns over 1920px height -->
+<!-- Period: ~320px per full turn -->
+
+<g transform="translate(540,0)" filter="url(#glow)">
+  <!-- Backbone strand 1 (sine wave, left-right) -->
+  <!-- Using cubic bezier to approximate sine curves -->
+  <!-- Period 320px, amplitude 220px -->
+
+  <!-- Strand 1 - front strand (green) -->
+  <g stroke="url(#strand1)" stroke-width="14" fill="none" stroke-linecap="round" opacity="0.90">
+    <!-- Turn 1: 60 → 380 -->
+    <path d="M 0,60 C 120,60 220,140 220,220 C 220,300 120,380 0,380"/>
+    <!-- Turn 2: 380 → 700 -->
+    <path d="M 0,380 C -120,380 -220,460 -220,540 C -220,620 -120,700 0,700"/>
+    <!-- Turn 3: 700 → 1020 -->
+    <path d="M 0,700 C 120,700 220,780 220,860 C 220,940 120,1020 0,1020"/>
+    <!-- Turn 4: 1020 → 1340 -->
+    <path d="M 0,1020 C -120,1020 -220,1100 -220,1180 C -220,1260 -120,1340 0,1340"/>
+    <!-- Turn 5: 1340 → 1660 -->
+    <path d="M 0,1340 C 120,1340 220,1420 220,1500 C 220,1580 120,1660 0,1660"/>
+    <!-- Turn 6: 1660 → 1920 -->
+    <path d="M 0,1660 C -120,1660 -220,1740 -220,1820 C -220,1880 -160,1920 -80,1920"/>
+  </g>
+
+  <!-- Strand 2 - back strand (offset by half period = 160px) -->
+  <g stroke="url(#strand2)" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.65">
+    <path d="M 0,-100 C -120,-100 -220,-20 -220,60 C -220,140 -120,220 0,220"/>
+    <path d="M 0,220 C 120,220 220,300 220,380 C 220,460 120,540 0,540"/>
+    <path d="M 0,540 C -120,540 -220,620 -220,700 C -220,780 -120,860 0,860"/>
+    <path d="M 0,860 C 120,860 220,940 220,1020 C 220,1100 120,1180 0,1180"/>
+    <path d="M 0,1180 C -120,1180 -220,1260 -220,1340 C -220,1420 -120,1500 0,1500"/>
+    <path d="M 0,1500 C 120,1500 220,1580 220,1660 C 220,1740 120,1820 0,1820"/>
+  </g>
+
+  <!-- Base pairs (rungs of the ladder) — horizontal bars connecting strands -->
+  <!-- Each full period has ~8 base pairs, spaced 40px apart within each crossing zone -->
+  <!-- Crossing zones where strands intersect: ~220, ~540, ~860, ~1180, ~1500, ~1820 for strand1 -->
+  <!-- Base pairs drawn as gradient bars with nucleotide dots -->
+  <g opacity="0.72">
+    <!-- Period 1 base pairs: y 80-380, at crossing near y=220 the strands are closest -->
+    <g stroke="#34d399" stroke-width="5" fill="none" opacity="0.80">
+      <line x1="-145" y1="110" x2="145" y2="110"/>
+      <line x1="-190" y1="150" x2="190" y2="150"/>
+      <line x1="-210" y1="190" x2="210" y2="190"/>
+      <line x1="-210" y1="230" x2="210" y2="230"/>
+      <line x1="-190" y1="270" x2="190" y2="270"/>
+      <line x1="-145" y1="310" x2="145" y2="310"/>
+      <line x1="-80" y1="348" x2="80" y2="348"/>
+    </g>
+    <!-- Period 2 base pairs -->
+    <g stroke="#22c55e" stroke-width="5" fill="none" opacity="0.70">
+      <line x1="-80" y1="428" x2="80" y2="428"/>
+      <line x1="-145" y1="465" x2="145" y2="465"/>
+      <line x1="-190" y1="502" x2="190" y2="502"/>
+      <line x1="-210" y1="540" x2="210" y2="540"/>
+      <line x1="-190" y1="578" x2="190" y2="578"/>
+      <line x1="-145" y1="615" x2="145" y2="615"/>
+      <line x1="-80" y1="653" x2="80" y2="653"/>
+    </g>
+    <!-- Period 3 base pairs -->
+    <g stroke="#4ade80" stroke-width="5" fill="none" opacity="0.80">
+      <line x1="-145" y1="730" x2="145" y2="730"/>
+      <line x1="-190" y1="770" x2="190" y2="770"/>
+      <line x1="-210" y1="810" x2="210" y2="810"/>
+      <line x1="-210" y1="850" x2="210" y2="850"/>
+      <line x1="-190" y1="890" x2="190" y2="890"/>
+      <line x1="-145" y1="930" x2="145" y2="930"/>
+      <line x1="-80" y1="968" x2="80" y2="968"/>
+    </g>
+    <!-- Period 4 base pairs -->
+    <g stroke="#22c55e" stroke-width="5" fill="none" opacity="0.68">
+      <line x1="-80" y1="1048" x2="80" y2="1048"/>
+      <line x1="-145" y1="1086" x2="145" y2="1086"/>
+      <line x1="-190" y1="1124" x2="190" y2="1124"/>
+      <line x1="-210" y1="1162" x2="210" y2="1162"/>
+      <line x1="-190" y1="1200" x2="190" y2="1200"/>
+      <line x1="-145" y1="1238" x2="145" y2="1238"/>
+      <line x1="-80" y1="1275" x2="80" y2="1275"/>
+    </g>
+    <!-- Period 5 base pairs -->
+    <g stroke="#34d399" stroke-width="5" fill="none" opacity="0.75">
+      <line x1="-145" y1="1350" x2="145" y2="1350"/>
+      <line x1="-190" y1="1388" x2="190" y2="1388"/>
+      <line x1="-210" y1="1426" x2="210" y2="1426"/>
+      <line x1="-210" y1="1464" x2="210" y2="1464"/>
+      <line x1="-190" y1="1502" x2="190" y2="1502"/>
+      <line x1="-145" y1="1540" x2="145" y2="1540"/>
+      <line x1="-80" y1="1578" x2="80" y2="1578"/>
+    </g>
+  </g>
+
+  <!-- Nucleotide base spheres at strand endpoints of rungs -->
+  <g opacity="0.85">
+    <!-- A-T pair dots (adenine=large circle, thymine=smaller) - green pairs -->
+    <circle cx="-145" cy="110" r="10" fill="#86efac"/>
+    <circle cx="145" cy="110" r="8" fill="#4ade80"/>
+    <circle cx="-210" cy="190" r="12" fill="#22c55e"/>
+    <circle cx="210" cy="190" r="10" fill="#86efac"/>
+    <circle cx="-210" cy="850" r="12" fill="#22c55e"/>
+    <circle cx="210" cy="850" r="10" fill="#86efac"/>
+    <circle cx="-210" cy="1162" r="12" fill="#22c55e"/>
+    <circle cx="210" cy="1162" r="10" fill="#86efac"/>
+    <circle cx="-210" cy="1426" r="12" fill="#4ade80"/>
+    <circle cx="210" cy="1426" r="10" fill="#86efac"/>
+    <!-- G-C pair dots (guanine=teal) -->
+    <circle cx="-190" cy="270" r="10" fill="#34d399"/>
+    <circle cx="190" cy="270" r="9" fill="#6ee7b7"/>
+    <circle cx="-190" cy="502" r="10" fill="#34d399"/>
+    <circle cx="190" cy="502" r="9" fill="#6ee7b7"/>
+    <circle cx="-190" cy="770" r="10" fill="#34d399"/>
+    <circle cx="190" cy="770" r="9" fill="#6ee7b7"/>
+  </g>
+</g>
+
+<!-- Ambient glow halos around helix -->
+<ellipse cx="540" cy="500" rx="250" ry="300" fill="#052e16" opacity="0.35"/>
+<ellipse cx="540" cy="1000" rx="250" ry="300" fill="#052e16" opacity="0.30"/>
+<ellipse cx="540" cy="1500" rx="250" ry="250" fill="#052e16" opacity="0.25"/>
+
+<rect width="1080" height="1920" fill="url(#bVig)"/>
+<rect width="1080" height="1920" fill="url(#bTop)"/>
+<rect width="1080" height="1920" fill="url(#bBot)"/>
+</svg>

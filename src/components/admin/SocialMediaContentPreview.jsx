@@ -111,6 +111,25 @@ export default function SocialMediaContentPreview({ content, phoneFrame = true }
         </div>
       ) : null}
 
+      {content.storyAnswerVisualUrl ? (
+        <div className="rounded-2xl border border-slate-700 bg-slate-900/60 p-4">
+          <p className="text-xs font-bold text-emerald-400 mb-2">Cevap Story · 9:16</p>
+          <div
+            className={
+              phoneFrame
+                ? "mx-auto max-w-[200px] rounded-[1.75rem] border-[3px] border-slate-600 bg-slate-950 p-1.5"
+                : ""
+            }
+          >
+            <img
+              src={content.storyAnswerVisualUrl}
+              alt="Cevap Story"
+              className="w-full rounded-xl bg-slate-950"
+            />
+          </div>
+        </div>
+      ) : null}
+
       <div className="md:col-span-2 rounded-2xl border border-slate-700 bg-slate-900/60 p-4">
         <p className="text-xs font-bold text-slate-400 mb-2">Caption</p>
         <pre className="whitespace-pre-wrap text-sm text-slate-200 font-medium leading-relaxed">

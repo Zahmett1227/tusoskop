@@ -35,6 +35,10 @@ Firebase Web SDK yapılandırması şu an **`src/firebase.js`** içinde sabit ta
 | `npm run test` | Birim testleri (Vitest) |
 | `npm run test:e2e` | Playwright e2e — derlenmiş `dist/` gerekir (`vite preview`); önce `npm run build` çalıştırın |
 | `npm run test:e2e:full` | `build` + `test:e2e` (yerelde tek komut) |
+| `npm run validate:questions` | Soru bankası format / manifest doğrulaması |
+| `npm run audit:questions` | Soru bankası kalite raporlarını üretir |
+| `npm run review:questions` | Manuel kontrol kuyruğunu üretir |
+| `npm run quality:questions` | `validate` + `audit` + `review` kalite akışı |
 
 ## Kalite ve CI
 
@@ -51,6 +55,8 @@ node scripts/split-questions.mjs
 ```
 
 (Komut, o anda [`src/data/questions.js`](src/data/questions.js) içinden tam `QUESTIONS` export’unu bekler — güncelleme akışınızda tam dizi dosyasını geçici olarak geri koymanız gerekebilir.)
+
+Kalite iş akışı için [`docs/QUESTION_BANK_QUALITY_WORKFLOW.md`](docs/QUESTION_BANK_QUALITY_WORKFLOW.md) dosyasına bakın. Güncel raporlar `reports/question-bank-quality-audit.*`, manuel kontrol kuyruğu ise `reports/question-bank-review-queue.*` altında üretilir.
 
 ## PWA ve çevrimdışı önbellek
 

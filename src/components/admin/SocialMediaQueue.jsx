@@ -6,6 +6,7 @@ import {
 } from "../../social/socialTypes.js";
 import {
   approveSocialContent,
+  deleteAllSocialDrafts,
   generateTodaySocialContent,
   listSocialContent,
   markContentExported,
@@ -137,6 +138,21 @@ export default function SocialMediaTab({ currentUser }) {
     }
   };
 
+  const handleDeleteDrafts = async () => {
+    if (!window.confirm("Onay bekleyen ve reddedilen tüm taslaklar silinecek. Emin misin?")) return;
+    setBusy(true);
+    setMessage("");
+    try {
+      const count = await deleteAllSocialDrafts(currentUser.uid);
+      setMessage(`${count} taslak silindi.`);
+      await refresh();
+    } catch (err) {
+      setMessage(`Hata: ${err?.message}`);
+    } finally {
+      setBusy(false);
+    }
+  };
+
   const handleSaveEdit = async (patch) => {
     if (!selected) return;
     setBusy(true);
@@ -169,6 +185,14 @@ export default function SocialMediaTab({ currentUser }) {
             className="min-h-10 px-4 rounded-xl bg-emerald-500 text-slate-950 text-sm font-black disabled:opacity-50"
           >
             Bugünün içeriklerini üret
+          </button>
+          <button
+            type="button"
+            disabled={busy}
+            onClick={handleDeleteDrafts}
+            className="min-h-10 px-4 rounded-xl bg-red-600/20 border border-red-500/30 text-red-300 text-sm font-bold disabled:opacity-50"
+          >
+            Taslakları sil
           </button>
           <button
             type="button"

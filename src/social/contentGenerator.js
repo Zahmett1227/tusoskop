@@ -25,6 +25,8 @@ function buildQuestionVisualSpec(question, rng = Math.random) {
   return {
     templateType: "question_post",
     format: "1080x1080",
+    ders: question.ders,
+    konu: question.konu,
     hook: pickHookForContent(rng, question.ders),
     badge: "GÜNÜN TUS SORUSU",
     metaLine: `${question.ders} · ${question.konu}`,
@@ -39,13 +41,35 @@ function buildQuestionStorySpec(question, rng = Math.random) {
   return {
     templateType: "story_question",
     format: "1080x1920",
+    ders: question.ders,
+    konu: question.konu,
     hook: pickHookForContent(rng, question.ders),
     badge: "BUGÜNÜN SORUSU",
     metaLine: `${question.ders} · ${question.konu}`,
     questionText: String(question.q || "").trim(),
+    options: buildQuestionOptions(question),
+    safeLayout: "instagram_story",
     storyVariant: "quiz",
     footerPrimary: CTAS.comment,
     footer: "↑ Kaydır · yorumlara yaz",
+  };
+}
+
+function buildAnswerStorySpec(question) {
+  const letter = optionLabel(question.correct);
+  return {
+    templateType: "story_answer",
+    format: "1080x1920",
+    ders: question.ders,
+    konu: question.konu,
+    badge: "DOĞRU CEVAP",
+    metaLine: `${question.ders} Â· ${question.konu}`,
+    options: buildQuestionOptions(question),
+    correctIndex: question.correct,
+    correctText: question.options[question.correct],
+    answerLine: `Doğru cevap: ${letter}) ${question.options[question.correct]}`,
+    explanation: optimizeForInstagram(String(question.exp || "").trim()),
+    safeLayout: "instagram_story",
   };
 }
 
@@ -121,6 +145,7 @@ function generateDailyQuestion(question, rng) {
     },
     visual: buildQuestionVisualSpec(question, rng),
     storyVisual: buildQuestionStorySpec(question, rng),
+    storyAnswerVisual: buildAnswerStorySpec(question),
     carousel: generateCarouselSlides(question, rng),
   };
 }
@@ -155,6 +180,7 @@ function generateAnswerReveal(question) {
       answerLine: `Doğru cevap: ${letter}) ${question.options[question.correct]}`,
       explanation: optimizeForInstagram(String(question.exp || "").trim()),
     },
+    storyVisual: buildAnswerStorySpec(question),
   };
 }
 
@@ -187,6 +213,8 @@ function generateMiniTip(rng) {
     visual: {
       templateType: "mini_info_post",
       format: "1080x1080",
+      ders: fillers.topic,
+      konu: topic.title,
       hook: pickHookForContent(rng, fillers.topic),
       headline: "Mini TUS Bilgisi",
       subline: topic.title,
@@ -328,5 +356,7 @@ function pickOne(arr, rng) {
 export {
   buildQuestionVisualSpec,
   buildQuestionOptions,
+  buildQuestionStorySpec,
+  buildAnswerStorySpec,
   optionLabel,
 };

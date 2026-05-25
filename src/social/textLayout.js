@@ -68,7 +68,7 @@ export function fitTextToBox(text, options = {}) {
 
   const wrapped = wrapTextByWidth(text, maxWidthPx, fontSizeMin);
   const { lines, truncated } = splitLongText(wrapped, maxLines, ellipsis);
-  return { lines, fontSize: fontSizeMin, truncated: true };
+  return { lines, fontSize: fontSizeMin, truncated };
 }
 
 /**

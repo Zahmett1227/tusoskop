@@ -6,7 +6,7 @@ export function measureContentDensity(spec = {}) {
   const optionCount = spec.options?.length || 0;
   const optionLen = (spec.options || []).reduce((s, o) => s + (o.text?.length || 0), 0);
   const bulletCount = spec.bullets?.length || 0;
-  const total = questionLen + optionLen + bulletCount * 40;
+  const total = questionLen + optionLen + optionCount * 18 + bulletCount * 40;
 
   if (total < 180) return "sparse";
   if (total < 420) return "balanced";

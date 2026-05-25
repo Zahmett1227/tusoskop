@@ -79,6 +79,7 @@ export function buildSocialContentBatch(input) {
         storySuggestions: pkg.storySuggestions ?? null,
         visualSpec: pkg.visual ?? null,
         storyVisualSpec: pkg.storyVisual ?? null,
+        storyAnswerVisualSpec: pkg.storyAnswerVisual ?? null,
         visualMode: "single",
         createdBy: "auto",
       };
@@ -97,6 +98,16 @@ export function buildSocialContentBatch(input) {
       const storyVisual = pkg.storyVisual ? renderStoryVisual(pkg.storyVisual) : null;
       draft.storyVisualUrl = storyVisual?.svgUrl ?? null;
       draft.storyVisualSvg = storyVisual?.svg ?? null;
+      draft.storyVisualWidth = storyVisual?.width ?? null;
+      draft.storyVisualHeight = storyVisual?.height ?? null;
+      draft.storyVisualFormat = storyVisual?.format ?? null;
+
+      const storyAnswerVisual = pkg.storyAnswerVisual ? renderSocialVisual(pkg.storyAnswerVisual) : null;
+      draft.storyAnswerVisualUrl = storyAnswerVisual?.svgUrl ?? null;
+      draft.storyAnswerVisualSvg = storyAnswerVisual?.svg ?? null;
+      draft.storyAnswerVisualWidth = storyAnswerVisual?.width ?? null;
+      draft.storyAnswerVisualHeight = storyAnswerVisual?.height ?? null;
+      draft.storyAnswerVisualFormat = storyAnswerVisual?.format ?? null;
 
       const safetyReport = runSafetyCheck(draft, {
         recentCaptions: input.recentCaptions || [],

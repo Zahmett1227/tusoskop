@@ -2,12 +2,15 @@ import { db } from "../firebase.js";
 import {
   addDoc,
   collection,
+  deleteDoc,
   doc,
   getDocs,
   orderBy,
   query,
   serverTimestamp,
   updateDoc,
+  where,
+  writeBatch,
   limit,
 } from "firebase/firestore";
 import { SOCIAL_CONTENT_STATUS, SOCIAL_CONTENT_TYPES } from "../social/socialTypes.js";
@@ -15,6 +18,8 @@ import { buildSocialContentBatch } from "../social/socialPipeline.js";
 import { renderSocialVisual, renderStoryVisual } from "../social/visualGenerator.js";
 import { renderCarousel, generateCarouselSlides } from "../social/carouselGenerator.js";
 import {
+  buildAnswerStorySpec,
+  buildQuestionStorySpec,
   buildQuestionVisualSpec,
   optionLabel,
 } from "../social/contentGenerator.js";
@@ -176,6 +181,8 @@ export async function regenerateVisual(contentId, content, adminUid, questions =
   const sourceQ = findQuestionById(questions, content.sourceQuestionId);
   const storyVisualSpec =
     content.storyVisualSpec || rebuildStorySpec(content, questions);
+  const storyAnswerVisualSpec =
+    content.storyAnswerVisualSpec || rebuildStoryAnswerSpec(content, questions);
 
   let patch = {};
 
@@ -219,7 +226,18 @@ export async function regenerateVisual(contentId, content, adminUid, questions =
   const storyVisual = storyVisualSpec ? renderStoryVisual(storyVisualSpec) : null;
   patch.storyVisualUrl = storyVisual?.svgUrl ?? null;
   patch.storyVisualSvg = storyVisual?.svg ?? null;
+  patch.storyVisualWidth = storyVisual?.width ?? null;
+  patch.storyVisualHeight = storyVisual?.height ?? null;
+  patch.storyVisualFormat = storyVisual?.format ?? null;
   patch.storyVisualSpec = storyVisualSpec ?? null;
+
+  const storyAnswerVisual = storyAnswerVisualSpec ? renderSocialVisual(storyAnswerVisualSpec) : null;
+  patch.storyAnswerVisualUrl = storyAnswerVisual?.svgUrl ?? null;
+  patch.storyAnswerVisualSvg = storyAnswerVisual?.svg ?? null;
+  patch.storyAnswerVisualWidth = storyAnswerVisual?.width ?? null;
+  patch.storyAnswerVisualHeight = storyAnswerVisual?.height ?? null;
+  patch.storyAnswerVisualFormat = storyAnswerVisual?.format ?? null;
+  patch.storyAnswerVisualSpec = storyAnswerVisualSpec ?? null;
 
   await updateSocialContent(contentId, patch, adminUid);
   return patch;
@@ -341,6 +359,7 @@ function rebuildStorySpec(content, questions = []) {
   if (content.storyVisualSpec?.templateType) return content.storyVisualSpec;
 
   const sourceQ = findQuestionById(questions, content.sourceQuestionId);
+  if (sourceQ) return buildQuestionStorySpec(sourceQ);
   if (sourceQ) {
     return {
       templateType: "story_question",
@@ -359,6 +378,52 @@ function rebuildStorySpec(content, questions = []) {
     questionText: content.storyText || content.caption?.slice(0, 400) || "",
     footer: "tusoskop.com",
   };
+}
+
+function rebuildStoryAnswerSpec(content, questions = []) {
+  if (content.storyAnswerVisualSpec?.templateType) return content.storyAnswerVisualSpec;
+
+  const sourceQ = findQuestionById(questions, content.sourceQuestionId);
+  if (sourceQ) return buildAnswerStorySpec(sourceQ);
+
+  if (content.answerPayload) {
+    const options = parseQuestionFromCaption(content.caption)?.options || [];
+    return {
+      templateType: "story_answer",
+      format: "1080x1920",
+      ders: content.sourceDers,
+      konu: content.sourceKonu,
+      metaLine: content.sourceDers
+        ? `${content.sourceDers}${content.sourceKonu ? ` Â· ${content.sourceKonu}` : ""}`
+        : "",
+      options,
+      correctIndex: content.answerPayload.correctIndex ?? 0,
+      correctText: content.answerPayload.correctText || "",
+      explanation: content.answerPayload.explanation || "",
+      safeLayout: "instagram_story",
+    };
+  }
+
+  return null;
+}
+
+export async function deleteAllSocialDrafts(adminUid) {
+  const snap = await getDocs(
+    query(
+      collection(db, QUEUE_COL),
+      where("status", "in", ["draft", "pending_review", "rejected"]),
+      limit(500)
+    )
+  );
+  const batch = writeBatch(db);
+  snap.forEach((d) => batch.delete(d.ref));
+  await batch.commit();
+  await logSocialEvent({
+    action: "delete_all_drafts",
+    adminUid,
+    detail: `${snap.size} taslak silindi`,
+  });
+  return snap.size;
 }
 
 export async function recheckSafety(contentId, content, adminUid) {
