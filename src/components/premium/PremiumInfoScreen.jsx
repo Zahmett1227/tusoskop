@@ -8,7 +8,8 @@ import {
   getMailtoPaymentIssue,
 } from "../../config/support";
 import { setClarityTag, trackClarityEvent } from "../../lib/clarity";
-import { isUserPremium } from "../../utils/premiumUtils";
+import { getPremiumStatusLabel, isUserPremium } from "../../utils/premiumUtils";
+import { canShowExternalPayments } from "../../utils/device";
 import CoffeeAnimation from "./CoffeeAnimation";
 import Footer from "../layout/Footer";
 
@@ -51,10 +52,12 @@ export default function PremiumInfoScreen({
   const [copyDone, setCopyDone] = useState(false);
   const [banner, setBanner] = useState("");
   const plusPageViewSent = useRef(false);
+  const allowExternalPayments = canShowExternalPayments();
+  const premiumActive = isUserPremium(userData);
 
   useEffect(() => {
     try {
-      setClarityTag("plan_status", isUserPremium(userData) ? "plus" : "free");
+      setClarityTag("plan_status", premiumActive ? "plus" : "free");
       setClarityTag("user_logged_in", user?.uid ? "true" : "false");
       if (!plusPageViewSent.current) {
         plusPageViewSent.current = true;
@@ -63,7 +66,7 @@ export default function PremiumInfoScreen({
     } catch {
       /* sessiz */
     }
-  }, [userData, user?.uid]);
+  }, [premiumActive, user?.uid]);
 
   const handleCopyUid = useCallback(async () => {
     if (!user?.uid || typeof navigator?.clipboard?.writeText !== "function") return;
@@ -81,6 +84,11 @@ export default function PremiumInfoScreen({
       event?.preventDefault?.();
       event?.stopPropagation?.();
       setBanner("");
+
+      if (!allowExternalPayments) {
+        setBanner("iOS sürümünde satın alma akışı sunulmuyor. Mevcut Plus durumunuzu bu ekrandan görebilirsiniz.");
+        return;
+      }
 
       if (plan?.id) {
         try {
@@ -141,7 +149,7 @@ export default function PremiumInfoScreen({
 
       window.location.assign(url);
     },
-    [user]
+    [allowExternalPayments, user]
   );
 
   const emailDisplay = user?.email?.trim()
@@ -150,6 +158,100 @@ export default function PremiumInfoScreen({
   const uidShort = user?.uid ? shortAccountId(user.uid) : "";
   const uidLine =
     user?.uid && uidShort ? uidShort : "Hesap bilgisi bulunamadı";
+
+  if (!allowExternalPayments) {
+    return (
+      <div className="min-h-dvh bg-gradient-to-b from-[#fdfcfa] via-[#fcfbf9] to-[#f5f0ea] px-4 py-5 pb-12 text-black md:px-8 md:py-10">
+        <div className="mx-auto max-w-3xl space-y-6">
+          <section className="rounded-[2rem] border border-neutral-200/90 bg-white/95 p-5 shadow-[0_24px_70px_-32px_rgba(45,35,25,0.22)] sm:p-8">
+            <p className="mb-3 text-[10px] font-black uppercase tracking-[0.2em] text-neutral-500">
+              Tusoskop Plus
+            </p>
+            <h1 className="mb-3 text-3xl font-black leading-tight tracking-tight text-neutral-950 sm:text-4xl">
+              Plan durumun
+            </h1>
+            <p className="text-sm font-semibold leading-relaxed text-neutral-700 sm:text-base">
+              {premiumActive
+                ? "Plus erişimin aktif. iOS içinde satın alma akışı bulunmaz; mevcut erişim durumunu burada takip edebilirsin."
+                : "Bu iOS sürümünde Plus satın alma akışı sunulmuyor. Mevcut hesap durumunu burada görebilirsin."}
+            </p>
+            <div className="mt-5 rounded-3xl border border-[#e8d5c4] bg-[#fff8ef] p-4">
+              <p className="text-xs font-black uppercase tracking-wide text-[#8a6a4d]">
+                Durum
+              </p>
+              <p className="mt-1 text-xl font-black text-[#2a1a0f]">
+                {getPremiumStatusLabel(userData)}
+              </p>
+            </div>
+          </section>
+
+          <section className="rounded-3xl border border-[#e6dfd6] bg-white/95 p-5 shadow-[0_18px_50px_-30px_rgba(60,40,20,0.12)] sm:p-7">
+            <h2 className="mb-2 text-2xl font-black text-neutral-950">
+              Hesap bilgileri
+            </h2>
+            <div className="grid gap-3 rounded-2xl border border-neutral-100 bg-[#fafaf9] p-4 text-sm">
+              <p className="break-all font-medium text-neutral-900">
+                <span className="text-xs font-bold uppercase tracking-wide text-neutral-500">
+                  E-posta{" "}
+                </span>
+                {emailDisplay}
+              </p>
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <p className="min-w-0 break-all font-medium text-neutral-900">
+                  <span className="text-xs font-bold uppercase tracking-wide text-neutral-500">
+                    Hesap ID{" "}
+                  </span>
+                  <span className="font-mono text-[13px] tabular-nums text-neutral-800">
+                    {uidLine}
+                  </span>
+                </p>
+                <button
+                  type="button"
+                  disabled={!user?.uid}
+                  onClick={handleCopyUid}
+                  className="min-h-11 shrink-0 rounded-2xl border border-[#c4a882] bg-white px-5 text-xs font-extrabold text-[#2f1f11] shadow-sm transition hover:bg-[#faf6f0] disabled:cursor-not-allowed disabled:opacity-40"
+                >
+                  {copyDone ? "Hesap ID kopyalandı" : "Hesap ID'yi kopyala"}
+                </button>
+              </div>
+            </div>
+          </section>
+
+          {typeof onOpenLegalPage === "function" ? (
+            <section className="rounded-3xl border border-neutral-200/90 bg-white/90 p-5 text-sm font-semibold text-neutral-700">
+              <p className="mb-3 text-xs font-black uppercase tracking-wide text-neutral-500">
+                Yasal metinler
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  ["gizlilik-sozlesmesi", "Gizlilik"],
+                  ["kvkk-aydinlatma-metni", "KVKK"],
+                  ["kullanim-kosullari", "Kullanım Koşulları"],
+                ].map(([id, label]) => (
+                  <button
+                    key={id}
+                    type="button"
+                    onClick={() => onOpenLegalPage(id)}
+                    className="rounded-2xl border border-neutral-200 bg-white px-4 py-2 font-bold underline-offset-2 hover:underline"
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+          <button
+            type="button"
+            onClick={onBack}
+            className="min-h-12 w-full rounded-2xl border-2 border-neutral-300 bg-white px-8 text-sm font-extrabold text-neutral-900 shadow-sm transition hover:bg-neutral-50"
+          >
+            Dashboard'a dön
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-dvh bg-gradient-to-b from-[#fdfcfa] via-[#fcfbf9] to-[#f5f0ea] text-black px-3 py-5 pb-12 sm:px-4 md:px-8 md:py-10">

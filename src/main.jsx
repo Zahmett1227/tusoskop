@@ -9,6 +9,7 @@ import ErrorBoundary from './components/ErrorBoundary.jsx'
 import { QuestionsProvider } from './context/QuestionsContext.jsx'
 import { initClarity } from './lib/clarity'
 import { registerServiceWorker } from './registerServiceWorker'
+import { initNativeAppShell } from './utils/nativeApp'
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -28,6 +29,7 @@ const runAfterFirstPaint = (task) => {
 }
 
 runAfterFirstPaint(() => {
+  initNativeAppShell()
   initClarity()
   registerServiceWorker()
 })

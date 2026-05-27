@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, useMemo, useState, useEffect, useRef, useCallback } from "react";
 import './index.css';
-import { initAnalytics, loginWithGoogle, logout } from "./firebase";
+import { initAnalytics, logout } from "./firebase";
 
 // Veri ve Yardımcı Araçlar
 import { useQuestions } from "./hooks/useQuestions";
@@ -39,6 +39,7 @@ import {
 // Bileşenler (Screens)
 import MobileBottomNav from "./components/MobileBottomNav";
 import IOSInstallBanner from "./components/IOSInstallBanner";
+import SignInOptions from "./components/auth/SignInOptions";
 import { LEGAL_PAGES } from "./content/legalPages";
 import { FREE_LIMITS } from "./config/limits";
 import { isUserPremium } from "./utils/premiumUtils";
@@ -65,6 +66,7 @@ const QuestionSetupScreen = lazy(() => import("./components/QuestionSetupScreen"
 const ExamSetSelectScreen = lazy(() => import("./components/ExamSetSelectScreen"));
 const TopicTracker = lazy(() => import("./components/TopicTracker"));
 const AdminPanel = lazy(() => import("./components/admin/AdminPanel"));
+const AccountSettingsScreen = lazy(() => import("./components/account/AccountSettingsScreen"));
 const PremiumInfoScreen = lazy(() => import("./components/premium/PremiumInfoScreen"));
 const LimitReachedModal = lazy(() => import("./components/premium/LimitReachedModal"));
 const LegalPage = lazy(() => import("./components/legal/LegalPage"));
@@ -495,14 +497,7 @@ export default function App() {
           <p className="text-slate-400 mb-10 text-center max-w-sm">
             TUS hazırlık sürecini dijital asistanınla yönet. Verilerini bulutta sakla.
           </p>
-          <button
-            type="button"
-            onClick={loginWithGoogle}
-            className={`flex items-center gap-4 px-8 py-4 ${accentTheme.primary} ${accentTheme.primaryHover} text-slate-950 rounded-3xl font-black shadow-2xl ${accentTheme.glow} hover:scale-105 transition-transform active:scale-95`}
-          >
-            <img src="https://www.google.com/favicon.ico" className="w-5 h-5" alt="" loading="lazy" decoding="async" />
-            Google ile Giriş Yap
-          </button>
+          <SignInOptions accentTheme={accentTheme} />
         </div>
         <IOSInstallBanner />
       </div>
@@ -528,6 +523,7 @@ export default function App() {
           onAccentThemeChange={handleAccentThemeChange}
           currentView={view}
           onOpenLegalPage={openLegalPage}
+          onOpenAccountSettings={() => setView("accountSettings")}
           smartReviewSummary={smartReviewSummary}
           onStartSmartReview={startSmartReview}
         />
@@ -551,6 +547,7 @@ export default function App() {
             onAccentThemeChange={handleAccentThemeChange}
             currentView={view}
             onOpenLegalPage={openLegalPage}
+            onOpenAccountSettings={() => setView("accountSettings")}
             smartReviewSummary={smartReviewSummary}
             onStartSmartReview={startSmartReview}
           />
@@ -719,6 +716,16 @@ export default function App() {
       );
       break;
 
+    case "accountSettings":
+      screenContent = (
+        <AccountSettingsScreen
+          user={user}
+          userData={userData}
+          onBack={() => setView("dashboard")}
+        />
+      );
+      break;
+
     case "premiumInfo":
       screenContent = (
         <PremiumInfoScreen
@@ -759,6 +766,7 @@ export default function App() {
           onAccentThemeChange={handleAccentThemeChange}
           currentView={view}
           onOpenLegalPage={openLegalPage}
+          onOpenAccountSettings={() => setView("accountSettings")}
           smartReviewSummary={smartReviewSummary}
           onStartSmartReview={startSmartReview}
         />

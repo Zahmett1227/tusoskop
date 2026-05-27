@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { PRICING } from "../../constants/pricing";
 import { getMailtoQuickSupport } from "../../config/support";
 import { setClarityTag, trackClarityEvent } from "../../lib/clarity";
+import { canShowExternalPayments } from "../../utils/device";
 import CoffeeAnimation from "./CoffeeAnimation";
 
 export default function LimitReachedModal({
@@ -19,6 +20,7 @@ export default function LimitReachedModal({
   limitReason = "",
 }) {
   const limitModalOpened = useRef(false);
+  const allowExternalPayments = canShowExternalPayments();
 
   useEffect(() => {
     if (!open) {
@@ -50,19 +52,30 @@ export default function LimitReachedModal({
           {description}
         </p>
 
-        <div className="mb-4 rounded-3xl border border-[#ead9c1] bg-gradient-to-br from-[#fffbf7] to-[#fff8ef] p-4 flex items-start gap-3">
-          <div className="shrink-0 scale-90 origin-top">
-            <CoffeeAnimation />
+        {allowExternalPayments ? (
+          <div className="mb-4 rounded-3xl border border-[#ead9c1] bg-gradient-to-br from-[#fffbf7] to-[#fff8ef] p-4 flex items-start gap-3">
+            <div className="shrink-0 scale-90 origin-top">
+              <CoffeeAnimation />
+            </div>
+            <div className="min-w-0">
+              <p className="text-lg md:text-xl font-extrabold text-[#2f1f11] leading-snug">
+                {premiumMessage}
+              </p>
+              <p className="text-xs md:text-sm font-medium text-[#5c4736] mt-1.5 leading-relaxed">
+                {premiumDescription}
+              </p>
+            </div>
           </div>
-          <div className="min-w-0">
-            <p className="text-lg md:text-xl font-extrabold text-[#2f1f11] leading-snug">
-              {premiumMessage}
+        ) : (
+          <div className="mb-4 rounded-3xl border border-[#ead9c1] bg-[#fff8ef] p-4">
+            <p className="text-base font-extrabold leading-snug text-[#2f1f11]">
+              Bu iOS sürümünde satın alma akışı sunulmuyor.
             </p>
-            <p className="text-xs md:text-sm font-medium text-[#5c4736] mt-1.5 leading-relaxed">
-              {premiumDescription}
+            <p className="mt-1.5 text-xs font-medium leading-relaxed text-[#5c4736] md:text-sm">
+              Mevcut Plus durumunu plan ekranından görebilirsin; uygulama içinde dış ödeme bağlantısı gösterilmez.
             </p>
           </div>
-        </div>
+        )}
 
         {remainingInfo ? (
           <p className="text-xs font-medium text-neutral-600 mb-4 leading-relaxed">
@@ -70,17 +83,19 @@ export default function LimitReachedModal({
           </p>
         ) : null}
 
-        <div className="rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-3.5 mb-5">
-          <p className="text-[11px] font-bold uppercase tracking-wide text-neutral-500">
-            Plus paketleri
-          </p>
-          <p className="text-sm md:text-base font-black text-neutral-950 leading-snug mt-0.5">
-            {PRICING.PLUS_STARTS_AT_LABEL}
-          </p>
-          <p className="text-xs font-medium text-neutral-600 mt-1 leading-snug">
-            {PRICING.PLUS_PLANS_DETAIL_LABEL}
-          </p>
-        </div>
+        {allowExternalPayments ? (
+          <div className="rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-3.5 mb-5">
+            <p className="text-[11px] font-bold uppercase tracking-wide text-neutral-500">
+              Plus paketleri
+            </p>
+            <p className="text-sm md:text-base font-black text-neutral-950 leading-snug mt-0.5">
+              {PRICING.PLUS_STARTS_AT_LABEL}
+            </p>
+            <p className="text-xs font-medium text-neutral-600 mt-1 leading-snug">
+              {PRICING.PLUS_PLANS_DETAIL_LABEL}
+            </p>
+          </div>
+        ) : null}
 
         <div className="mb-5 space-y-2">
           <p className="text-xs md:text-sm font-semibold text-neutral-700">
@@ -102,20 +117,22 @@ export default function LimitReachedModal({
           >
             {secondaryLabel}
           </button>
-          <button
-            type="button"
-            onClick={() => {
-              try {
-                trackClarityEvent("upgrade_cta_click");
-              } catch {
-                /* sessiz */
-              }
-              onUpgradeClick();
-            }}
-            className="min-h-11 px-4 rounded-2xl bg-neutral-950 text-white font-extrabold text-sm shadow-lg hover:bg-black transition sm:flex-1"
-          >
-            {ctaLabel}
-          </button>
+          {allowExternalPayments ? (
+            <button
+              type="button"
+              onClick={() => {
+                try {
+                  trackClarityEvent("upgrade_cta_click");
+                } catch {
+                  /* sessiz */
+                }
+                onUpgradeClick();
+              }}
+              className="min-h-11 px-4 rounded-2xl bg-neutral-950 text-white font-extrabold text-sm shadow-lg hover:bg-black transition sm:flex-1"
+            >
+              {ctaLabel}
+            </button>
+          ) : null}
         </div>
 
         <p className="mt-4 text-center">

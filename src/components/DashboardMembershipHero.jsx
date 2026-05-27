@@ -1,6 +1,7 @@
 import React from "react";
 import { PRICING } from "../constants/pricing";
 import { formatPremiumUntil } from "../utils/premiumUtils";
+import { canShowExternalPayments } from "../utils/device";
 
 /**
  * Dashboard üstü — plan özeti + Plus upsell / Plus durum kartı.
@@ -17,6 +18,7 @@ export default function DashboardMembershipHero({
 }) {
   const lifetime = Boolean(userData?.lifetimePremium);
   const untilLabel = formatPremiumUntil(userData?.premiumUntil);
+  const allowExternalPayments = canShowExternalPayments();
 
   const outer = isLightTheme
     ? "border-slate-200/90 bg-gradient-to-br from-white via-[#fffefb] to-[#f4f0ea] shadow-[0_20px_50px_-28px_rgba(15,23,42,0.12)] hover:shadow-[0_28px_60px_-26px_rgba(15,23,42,0.16)]"
@@ -46,11 +48,15 @@ export default function DashboardMembershipHero({
   const rightBadgeSub = premiumActive ? "Aktif üyelik" : "Sınırsız erişim";
   const rightHeadline = premiumActive
     ? "Avantajların aktif."
-    : "Plus ile tüm sınırları kaldır.";
+    : allowExternalPayments
+      ? "Plus ile tüm sınırları kaldır."
+      : "Plan durumunu takip et.";
   const rightSub = premiumActive
     ? "Sınırsız soru, sınırsız deneme ve gelişmiş analiz erişimin hazır."
-    : "Sınırsız soru çöz, deneme sınırlarını kaldır ve tekrar akışını kesintisiz sürdür.";
-  const ctaLabel = premiumActive ? "Plan detayı" : "Plus'ı İncele";
+    : allowExternalPayments
+      ? "Sınırsız soru çöz, deneme sınırlarını kaldır ve tekrar akışını kesintisiz sürdür."
+      : "iOS uygulamasında dış ödeme bağlantısı gösterilmez; mevcut hesap durumunu görebilirsin.";
+  const ctaLabel = premiumActive || !allowExternalPayments ? "Plan durumu" : "Plus'ı İncele";
 
   const chipBase = isLightTheme
     ? "border-slate-200/90 bg-white/90 text-slate-800 shadow-sm"
@@ -216,7 +222,7 @@ export default function DashboardMembershipHero({
                 {rightHeadline}
               </h3>
 
-              {!premiumActive ? (
+              {!premiumActive && allowExternalPayments ? (
                 <p
                   className={`mt-2 text-lg sm:text-xl font-black leading-snug tracking-tight ${
                     isLightTheme ? "text-amber-800" : "text-amber-200"
@@ -234,7 +240,7 @@ export default function DashboardMembershipHero({
                 {rightSub}
               </p>
 
-              {!premiumActive ? (
+              {!premiumActive && allowExternalPayments ? (
                 <ul
                   className={`mt-4 space-y-1.5 text-xs sm:text-sm font-semibold ${
                     isLightTheme ? "text-slate-600" : "text-slate-400"

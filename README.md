@@ -35,6 +35,8 @@ Firebase Web SDK yapılandırması şu an **`src/firebase.js`** içinde sabit ta
 | `npm run test` | Birim testleri (Vitest) |
 | `npm run test:e2e` | Playwright e2e — derlenmiş `dist/` gerekir (`vite preview`); önce `npm run build` çalıştırın |
 | `npm run test:e2e:full` | `build` + `test:e2e` (yerelde tek komut) |
+| `npm run cap:sync:ios` | Üretim build alır ve Capacitor iOS projesine senkronlar |
+| `npm run cap:open:ios` | iOS projesini Xcode ile açar (macOS gerekir) |
 | `npm run validate:questions` | Soru bankası format / manifest doğrulaması |
 | `npm run audit:questions` | Soru bankası kalite raporlarını üretir |
 | `npm run review:questions` | Manuel kontrol kuyruğunu üretir |
@@ -62,6 +64,7 @@ Kalite iş akışı için [`docs/QUESTION_BANK_QUALITY_WORKFLOW.md`](docs/QUESTI
 
 - **Manifest:** [`public/manifest.json`](public/manifest.json) (ana ekran / PWA meta).
 - **Service worker:** [`public/sw.js`](public/sw.js) kabuk varlıklarını hafifçe önbelleğe alır. Üretimde [`src/registerServiceWorker.js`](src/registerServiceWorker.js) `main.jsx` üzerinden kayıt edilir; geliştirme modunda kayıt yapılmaz. Soru bankası parçaları (JS chunk’lar) çalışma anında ağdan yüklenmeye devam eder.
+- **Capacitor iOS:** Native wrapper içinde PWA kurulum banner'ı ve service worker kaydı kapalıdır; web PWA davranışı korunur. iOS App Store sürümünde dış ödeme/Shopify bağlantıları gösterilmez, kullanıcı yalnızca mevcut Plus durumunu görebilir.
 
 ## Firebase deploy
 

@@ -1,3 +1,41 @@
+import { Capacitor } from "@capacitor/core";
+
+function getCapacitorPlatform() {
+  try {
+    return Capacitor.getPlatform();
+  } catch {
+    return "web";
+  }
+}
+
+export function isNativePlatform() {
+  try {
+    return Capacitor.isNativePlatform();
+  } catch {
+    return false;
+  }
+}
+
+export function isNativeIOS() {
+  return isNativePlatform() && getCapacitorPlatform() === "ios";
+}
+
+export function isWebIOS() {
+  return !isNativePlatform() && isIOS();
+}
+
+export function shouldRegisterServiceWorker() {
+  return !isNativePlatform();
+}
+
+export function shouldShowPwaInstallBanner() {
+  return !isNativePlatform() && isIOSSafari() && !isStandalone();
+}
+
+export function canShowExternalPayments() {
+  return !isNativeIOS();
+}
+
 /**
  * iOS/Safari detection using multiple signals.
  * Avoids relying solely on User-Agent which can be spoofed or change across versions.

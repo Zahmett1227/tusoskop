@@ -22,6 +22,7 @@ html {
   --sar: env(safe-area-inset-right);
   --sab: env(safe-area-inset-bottom);
   --sal: env(safe-area-inset-left);
+  --native-keyboard-height: 0px;
 }
 
 /* ─── Temel gövde ayarları ────────────────────────────────────────────────── */
@@ -212,6 +213,27 @@ button:active {
 /* ─── iOS cihaz sınıfı: sadece .ios-device içinde aktif özel kurallar ─────── */
 .ios-device {
   /* Cam/blur efektleri iOS GPU'da çok daha iyi çalışır */
+}
+
+.native-app,
+.native-app body {
+  height: 100%;
+  min-height: 100dvh;
+  background: #020617;
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.native-app input,
+.native-app textarea,
+.native-app [contenteditable="true"] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.native-ios.keyboard-visible body {
+  padding-bottom: var(--native-keyboard-height);
 }
 
 .ios-device .glass-card {

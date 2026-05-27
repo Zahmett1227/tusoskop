@@ -1,8 +1,10 @@
+import { isNativeIOS } from "../utils/device";
+
 let clarityPromise = null;
 let tagsApplied = false;
 
 function inBrowser() {
-  return typeof window !== "undefined";
+  return typeof window !== "undefined" && !isNativeIOS();
 }
 
 async function getClarity() {

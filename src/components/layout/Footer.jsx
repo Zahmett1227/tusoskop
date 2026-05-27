@@ -1,5 +1,6 @@
 import React from "react";
 import { LEGAL_PAGES } from "../../content/legalPages";
+import { canShowExternalPayments } from "../../utils/device";
 
 /**
  * @param {(pageId: string) => void} onOpenLegal
@@ -16,6 +17,13 @@ export default function Footer({
     accentThemeKey === "light" || theme?.mode === "light";
 
   const isPremiumSurface = variant === "premium";
+  const legalPages = canShowExternalPayments()
+    ? LEGAL_PAGES
+    : LEGAL_PAGES.filter(
+        (page) =>
+          page.id !== "mesafeli-satis-sozlesmesi" &&
+          page.id !== "iade-iptal-politikasi"
+      );
   const border = isPremiumSurface
     ? "border-t border-neutral-200/90"
     : isLightTheme
@@ -56,7 +64,7 @@ export default function Footer({
           aria-label="Yasal bağlantılar"
           className="flex flex-col sm:flex-row sm:flex-wrap gap-x-4 gap-y-2 min-w-0 lg:justify-end"
         >
-          {LEGAL_PAGES.map((p) => (
+          {legalPages.map((p) => (
             <button
               key={p.id}
               type="button"

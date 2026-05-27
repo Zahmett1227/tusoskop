@@ -67,6 +67,7 @@ export default function Dashboard({
   /** App içinden gelen görünüm — dashboard’a her dönüşte geçmiş yenilenebilir */
   currentView = "dashboard",
   onOpenLegalPage,
+  onOpenAccountSettings,
   smartReviewSummary = {
     dueCount: 0,
     overdueCount: 0,
@@ -287,6 +288,13 @@ export default function Dashboard({
               <span className={`text-xs font-bold hidden sm:block truncate max-w-[160px] ${isLightTheme ? "text-slate-600" : "text-slate-500"}`}>
                 {user.displayName || user.email}
               </span>
+              <button
+                type="button"
+                onClick={onOpenAccountSettings}
+                className={`shrink-0 px-4 py-2 rounded-2xl text-xs font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 focus-visible:ring-offset-[#faf8f4] focus-visible:ring-slate-400/60" : "bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-400 focus-visible:ring-offset-slate-950 focus-visible:ring-slate-500/50"}`}
+              >
+                Hesap
+              </button>
               <button
                 type="button"
                 onClick={onLogout}

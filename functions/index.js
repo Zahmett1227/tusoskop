@@ -1,4 +1,5 @@
 const admin = require("firebase-admin");
+const crypto = require("node:crypto");
 
 if (!admin.apps.length) {
   admin.initializeApp();
@@ -13,6 +14,9 @@ const { tryPublishSocialContentHandler } = require("./socialPublisher");
 const allowedOrigins = [
   "https://tusoskop.com",
   "https://www.tusoskop.com",
+  "https://localhost",
+  "capacitor://localhost",
+  "ionic://localhost",
   "http://localhost:5173",
   "http://localhost:5174",
 ];
@@ -56,6 +60,56 @@ function normalizeDailyUsage(raw, tKey, mKey) {
     reviewQuestionCount: Number(raw.reviewQuestionCount || 0),
     fullExamCount: Number(raw.fullExamCount || 0),
   };
+}
+
+function hashUid(uid) {
+  return crypto.createHash("sha256").update(String(uid)).digest("hex");
+}
+
+async function recursiveDeleteDoc(path) {
+  const ref = db.doc(path);
+  if (typeof db.recursiveDelete === "function") {
+    await db.recursiveDelete(ref);
+    return;
+  }
+  await ref.delete();
+}
+
+async function deleteQueryResults(query, maxPasses = 20) {
+  for (let pass = 0; pass < maxPasses; pass += 1) {
+    const snap = await query.limit(450).get();
+    if (snap.empty) return;
+
+    const batch = db.batch();
+    snap.docs.forEach((docSnap) => batch.delete(docSnap.ref));
+    await batch.commit();
+  }
+  throw new HttpsError("resource-exhausted", "Silinecek veri miktarı tek işlem sınırını aştı.");
+}
+
+async function anonymizePurchaseIntents(uid, uidHash) {
+  for (let pass = 0; pass < 20; pass += 1) {
+    const snap = await db
+      .collection("premiumPurchaseIntents")
+      .where("uid", "==", uid)
+      .limit(450)
+      .get();
+
+    if (snap.empty) return;
+
+    const batch = db.batch();
+    snap.docs.forEach((docSnap) => {
+      batch.update(docSnap.ref, {
+        uid: null,
+        email: null,
+        deletedAccount: true,
+        deletedUserHash: uidHash,
+        deletedAt: FieldValue.serverTimestamp(),
+      });
+    });
+    await batch.commit();
+  }
+  throw new HttpsError("resource-exhausted", "Anonimleştirilecek ödeme kaydı miktarı tek işlem sınırını aştı.");
 }
 
 /**
@@ -195,6 +249,42 @@ exports.incrementUsage = onCall(
 
     return { success: true, usage };
   });
+  }
+);
+
+exports.deleteAccountAndData = onCall(
+  {
+    region: "us-central1",
+    cors: allowedOrigins,
+  },
+  async (request) => {
+    if (!request.auth?.uid) {
+      throw new HttpsError("unauthenticated", "Giriş gerekli.");
+    }
+
+    const uid = request.auth.uid;
+    const uidHash = hashUid(uid);
+
+    await anonymizePurchaseIntents(uid, uidHash);
+
+    await Promise.all([
+      recursiveDeleteDoc(`users/${uid}`),
+      recursiveDeleteDoc(`studyCollections/${uid}`),
+      recursiveDeleteDoc(`examResults/${uid}`),
+      recursiveDeleteDoc(`streaks/${uid}`),
+      deleteQueryResults(db.collection("results").where("userId", "==", uid)),
+      deleteQueryResults(db.collection("studySessions").where("userId", "==", uid)),
+    ]);
+
+    try {
+      await admin.auth().deleteUser(uid);
+    } catch (error) {
+      if (error?.code !== "auth/user-not-found") {
+        throw error;
+      }
+    }
+
+    return { success: true };
   }
 );
 

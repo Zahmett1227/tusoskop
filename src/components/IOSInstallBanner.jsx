@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { isIOSSafari, isStandalone } from "../utils/device";
+import { shouldShowPwaInstallBanner } from "../utils/device";
 
 const DISMISSED_KEY = "tusoskop_install_banner_v1";
 
@@ -9,7 +9,7 @@ export default function IOSInstallBanner() {
 
   useEffect(() => {
     if (localStorage.getItem(DISMISSED_KEY)) return;
-    if (!isIOSSafari() || isStandalone()) return;
+    if (!shouldShowPwaInstallBanner()) return;
 
     // Biraz bekleyip göster — sayfa yüklenir yüklenmez çıkmasın
     const t = setTimeout(() => {
