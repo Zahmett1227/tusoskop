@@ -33,7 +33,7 @@ export const TRACKER_TOPICS = [
   { id: "patoloji-1", ders: "Patoloji", konu: "Hücre Zedelenmesi" },
   { id: "patoloji-2", ders: "Patoloji", konu: "İnflamasyon" },
   { id: "patoloji-3", ders: "Patoloji", konu: "Onarım ve Yara İyileşmesi" },
-  { id: "patoloji-4", ders: "Patoloji", konu: "İmmunoloji" },
+  { id: "patoloji-4", ders: "Patoloji", konu: "İmmünoloji" },
   { id: "patoloji-5", ders: "Patoloji", konu: "Hemodinamik Bozukluklar" },
   { id: "patoloji-6", ders: "Patoloji", konu: "Neoplazi" },
   { id: "patoloji-7", ders: "Patoloji", konu: "Pediatrik Hastalıklar" },
@@ -63,7 +63,7 @@ export const TRACKER_TOPICS = [
   { id: "dahiliye-7", ders: "Dahiliye", konu: "Kardiyoloji" },
   { id: "dahiliye-8", ders: "Dahiliye", konu: "Göğüs Hastalıkları" },
   { id: "dahiliye-9", ders: "Dahiliye", konu: "Romatoloji" },
-  { id: "dahiliye-10", ders: "Dahiliye", konu: "Geriartri" },
+  { id: "dahiliye-10", ders: "Dahiliye", konu: "Geriatri" },
 
   { id: "farmakoloji-1", ders: "Farmakoloji", konu: "Genel Farmakoloji" },
   { id: "farmakoloji-2", ders: "Farmakoloji", konu: "Otonom Sinir Sistemi Farmakolojisi" },
@@ -71,7 +71,7 @@ export const TRACKER_TOPICS = [
   { id: "farmakoloji-4", ders: "Farmakoloji", konu: "Endokrin Sistem Farmakolojisi" },
   { id: "farmakoloji-5", ders: "Farmakoloji", konu: "Santral Sinir Sistemi Farmakolojisi" },
   { id: "farmakoloji-6", ders: "Farmakoloji", konu: "Otokoidler ve NSAİİ" },
-  { id: "farmakoloji-7", ders: "Farmakoloji", konu: "Kemoterapotikler ve İmmunmodülatörler" },
+  { id: "farmakoloji-7", ders: "Farmakoloji", konu: "Kemoterapötikler ve İmmünomodülatörler" },
   { id: "farmakoloji-8", ders: "Farmakoloji", konu: "Diğer Sistem İlaçları" },
 
   { id: "mikrobiyoloji-1", ders: "Mikrobiyoloji", konu: "Genel Mikrobiyoloji" },
@@ -133,7 +133,7 @@ export const TRACKER_TOPICS = [
   { id: "genel-cerrahi-11", ders: "Genel Cerrahi", konu: "İnce Barsak Hastalıkları" },
   { id: "genel-cerrahi-12", ders: "Genel Cerrahi", konu: "Mezenterik Hastalıklar" },
   { id: "genel-cerrahi-13", ders: "Genel Cerrahi", konu: "Kolon Rektum Hastalıkları" },
-  { id: "genel-cerrahi-14", ders: "Genel Cerrahi", konu: "Appendix Hastalıkları" },
+  { id: "genel-cerrahi-14", ders: "Genel Cerrahi", konu: "Apendiks Hastalıkları" },
   { id: "genel-cerrahi-15", ders: "Genel Cerrahi", konu: "Perianal Hastalıklar" },
   { id: "genel-cerrahi-16", ders: "Genel Cerrahi", konu: "İntestinal Tıkanıklıklar ve GİS Fistülleri" },
   { id: "genel-cerrahi-17", ders: "Genel Cerrahi", konu: "Karaciğer Hastalıkları ve Portal HT" },
@@ -146,7 +146,7 @@ export const TRACKER_TOPICS = [
   { id: "genel-cerrahi-24", ders: "Genel Cerrahi", konu: "Meme Hastalıkları" },
   { id: "genel-cerrahi-25", ders: "Genel Cerrahi", konu: "Özefagus Hastalıkları" },
   { id: "genel-cerrahi-26", ders: "Genel Cerrahi", konu: "Mide Hastalıkları ve Morbid Obezite" },
-  { id: "genel-cerrahi-27", ders: "Genel Cerrahi", konu: "Gis Kanamaları" },
+  { id: "genel-cerrahi-27", ders: "Genel Cerrahi", konu: "GIS Kanamaları" },
   { id: "genel-cerrahi-28", ders: "Genel Cerrahi", konu: "Pankreas Hastalıkları" },
   { id: "genel-cerrahi-29", ders: "Genel Cerrahi", konu: "Dalak Hastalıkları" },
 
@@ -167,5 +167,5 @@ export const TRACKER_TOPICS = [
   { id: "kucuk-stajlar-10", ders: "Küçük Stajlar", konu: "Halk Sağlığı" },
   { id: "kucuk-stajlar-11", ders: "Küçük Stajlar", konu: "Ortopedi" },
   { id: "kucuk-stajlar-12", ders: "Küçük Stajlar", konu: "Fizik Tedavi ve Rehabilitasyon" },
-  { id: "kucuk-stajlar-13", ders: "Küçük Stajlar", konu: "Dermotoloji" },
+  { id: "kucuk-stajlar-13", ders: "Küçük Stajlar", konu: "Dermatoloji" },
 ];
