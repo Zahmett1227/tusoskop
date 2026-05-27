@@ -169,6 +169,8 @@ def create_media_container(ig_user_id: str, image_url: str,
         },
         timeout=30,
     )
+    if not resp.ok:
+        print(f"   → Instagram API hata detayi: {resp.text}")
     resp.raise_for_status()
     data = resp.json()
     creation_id = data.get("id")
