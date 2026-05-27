@@ -73,12 +73,26 @@ export default function SocialMediaContentPreview({ content, phoneFrame = true }
 
   if (!content) return null;
 
-  const questionText = content.questionText || "";
-  const options = content.options || [];
-  const ders = content.ders || "";
-  const konu = content.konu || "";
-  const correctIndex = content.answerPayload?.correctIndex ?? -1;
-  const explanation = content.answerPayload?.explanation || "";
+  const questionText =
+    content.storyVisual?.questionText ||
+    content.visual?.questionText ||
+    content.questionText ||
+    "";
+  const options =
+    content.storyVisual?.options ||
+    content.visual?.options ||
+    content.options ||
+    [];
+  const ders = content.sourceDers || content.ders || "";
+  const konu = content.sourceKonu || content.konu || "";
+  const correctIndex =
+    content.answerPayload?.correctIndex ??
+    content.storyAnswerVisual?.correctIndex ??
+    -1;
+  const explanation =
+    content.answerPayload?.explanation ||
+    content.storyAnswerVisual?.explanation ||
+    "";
 
   const PREVIEW_W = 182;
 
