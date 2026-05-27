@@ -67,32 +67,106 @@ function PromoSlide({ previewWidth }) {
   );
 }
 
+function slideDataUrl(slide) {
+  if (slide?.svgUrl) return slide.svgUrl;
+  if (slide?.svg) return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(slide.svg)}`;
+  return "";
+}
+
+function SvgSlidePreview({ slide, previewWidth }) {
+  const W = slide.width || 1080;
+  const H = slide.height || 1350;
+  const src = slideDataUrl(slide);
+  if (!src) return null;
+
+  return (
+    <img
+      src={src}
+      alt=""
+      style={{
+        width: previewWidth,
+        height: Math.round((H / W) * previewWidth),
+        display: "block",
+        borderRadius: 12,
+        objectFit: "cover",
+      }}
+    />
+  );
+}
+
+function normalizeOptions(options = []) {
+  return options
+    .map((opt, index) => ({
+      letter: opt?.letter || String.fromCharCode(65 + index),
+      text: String(opt?.text || opt || "").trim(),
+    }))
+    .filter((opt) => opt.text);
+}
+
+function parseQuestionFromCaption(caption = "") {
+  const optionRe = /^([A-E])\)\s*(.+)$/;
+  const options = [];
+  const questionLines = [];
+  let collectingQuestion = false;
+
+  for (const raw of String(caption).split("\n")) {
+    const line = raw.trim();
+    if (!line) continue;
+    const opt = line.match(optionRe);
+    if (opt) {
+      options.push({ letter: opt[1], text: opt[2].trim() });
+      collectingQuestion = false;
+      continue;
+    }
+    if (options.length || line.startsWith("#") || line.includes("Tusoskop")) continue;
+    if (!collectingQuestion && line.length < 60) continue;
+    collectingQuestion = true;
+    questionLines.push(line);
+  }
+
+  return {
+    questionText: questionLines.join(" ").trim(),
+    options,
+  };
+}
+
+function getPreviewData(content) {
+  const visualSpec = content.visualSpec || {};
+  const storyVisualSpec = content.storyVisualSpec || {};
+  const answerSpec = content.storyAnswerVisualSpec || {};
+  const parsed = parseQuestionFromCaption(content.caption);
+  const answerPayload = content.answerPayload || {};
+
+  return {
+    questionText:
+      storyVisualSpec.questionText ||
+      visualSpec.questionText ||
+      content.questionText ||
+      parsed.questionText ||
+      "",
+    options: normalizeOptions(storyVisualSpec.options || visualSpec.options || content.options || parsed.options),
+    ders: content.sourceDers || visualSpec.ders || storyVisualSpec.ders || content.ders || "",
+    konu: content.sourceKonu || visualSpec.konu || storyVisualSpec.konu || content.konu || "",
+    correctIndex:
+      answerPayload.correctIndex ??
+      answerSpec.correctIndex ??
+      content.correctIndex ??
+      -1,
+    explanation:
+      answerPayload.explanation ||
+      answerSpec.explanation ||
+      content.explanation ||
+      "",
+  };
+}
+
 /** @param {{ content: object, phoneFrame?: boolean }} props */
 export default function SocialMediaContentPreview({ content, phoneFrame = true }) {
   const [slideIndex, setSlideIndex] = useState(0);
 
   if (!content) return null;
 
-  const questionText =
-    content.storyVisual?.questionText ||
-    content.visual?.questionText ||
-    content.questionText ||
-    "";
-  const options =
-    content.storyVisual?.options ||
-    content.visual?.options ||
-    content.options ||
-    [];
-  const ders = content.sourceDers || content.ders || "";
-  const konu = content.sourceKonu || content.konu || "";
-  const correctIndex =
-    content.answerPayload?.correctIndex ??
-    content.storyAnswerVisual?.correctIndex ??
-    -1;
-  const explanation =
-    content.answerPayload?.explanation ||
-    content.storyAnswerVisual?.explanation ||
-    "";
+  const preview = getPreviewData(content);
 
   const PREVIEW_W = 182;
 
@@ -100,11 +174,48 @@ export default function SocialMediaContentPreview({ content, phoneFrame = true }
     ? "mx-auto max-w-[200px] rounded-[1.75rem] border-[3px] border-slate-600 bg-slate-950 p-1.5 overflow-hidden"
     : "";
 
-  const slides = [
-    { label: "Soru", node: <StoryCard ders={ders} konu={konu} questionText={questionText} options={options} previewWidth={PREVIEW_W} /> },
-    { label: "Cevap", node: <StoryCard ders={ders} konu={konu} questionText={questionText} options={options} showAnswer correctIndex={correctIndex} explanation={explanation} previewWidth={PREVIEW_W} /> },
-    { label: "Promo", node: <PromoSlide previewWidth={PREVIEW_W} /> },
-  ];
+  // Prefer HTML/CSS StoryCard when we have structured question data.
+  // SVG slides (from old pipeline) can't load web fonts inside <img> tags.
+  const useStoryCard = Boolean(preview.questionText);
+  const savedSlides = !useStoryCard && Array.isArray(content.carouselSlides)
+    ? content.carouselSlides.filter((slide) => slideDataUrl(slide))
+    : [];
+
+  const slides = savedSlides.length
+    ? savedSlides.map((slide, i) => ({
+        label: ["Soru", "Cevap", "Promo"][i] || `Slayt ${i + 1}`,
+        node: <SvgSlidePreview slide={slide} previewWidth={PREVIEW_W} />,
+      }))
+    : [
+        {
+          label: "Soru",
+          node: (
+            <StoryCard
+              ders={preview.ders}
+              konu={preview.konu}
+              questionText={preview.questionText}
+              options={preview.options}
+              previewWidth={PREVIEW_W}
+            />
+          ),
+        },
+        {
+          label: "Cevap",
+          node: (
+            <StoryCard
+              ders={preview.ders}
+              konu={preview.konu}
+              questionText={preview.questionText}
+              options={preview.options}
+              showAnswer
+              correctIndex={preview.correctIndex}
+              explanation={preview.explanation}
+              previewWidth={PREVIEW_W}
+            />
+          ),
+        },
+        { label: "Promo", node: <PromoSlide previewWidth={PREVIEW_W} /> },
+      ];
 
   const active = slides[slideIndex] || slides[0];
 
@@ -164,7 +275,7 @@ export default function SocialMediaContentPreview({ content, phoneFrame = true }
       <div className="md:col-span-1 rounded-2xl border border-slate-700 bg-slate-900/60 p-4">
         <p className="text-xs font-bold text-slate-400 mb-2">Caption</p>
         <pre className="whitespace-pre-wrap text-sm text-slate-200 font-medium leading-relaxed">
-          {content.caption || content.storyText || "—"}
+          {content.caption || "—"}
         </pre>
         {content.hashtags?.length ? (
           <p className="mt-3 text-xs text-emerald-400/90">{content.hashtags.join(" ")}</p>
