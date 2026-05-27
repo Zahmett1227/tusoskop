@@ -3,6 +3,7 @@ import {
   getAuth,
   getRedirectResult,
   GoogleAuthProvider,
+  OAuthProvider,
   signInWithPopup,
   signInWithRedirect,
   signOut,
@@ -14,6 +15,8 @@ import {
 } from "firebase/firestore";
 import { getFunctions } from "firebase/functions";
 import { trackClarityEvent } from "./lib/clarity";
+import { signInWithNativeApple } from "./services/nativeAuthService";
+import { isNativeIOS } from "./utils/device";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBF8gh8mOeCpPgbfX_0jP_Fg47wyUXs278",
@@ -29,6 +32,10 @@ const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
+export const appleProvider = new OAuthProvider("apple.com");
+appleProvider.addScope("email");
+appleProvider.addScope("name");
+appleProvider.setCustomParameters({ locale: "tr" });
 
 /**
  * Google girişi: önce popup; popup engellenmediği sürece redirect'e düşmez.
@@ -69,6 +76,53 @@ export const loginWithGoogle = async () => {
     }
 
     alert("Google giriş hatası: " + (error?.message || "Bilinmeyen hata"));
+    return null;
+  }
+};
+
+export const loginWithApple = async () => {
+  if (isNativeIOS()) {
+    try {
+      const user = await signInWithNativeApple(auth, appleProvider);
+      trackClarityEvent("apple_native_login_basarili");
+      return user;
+    } catch (error) {
+      trackClarityEvent("apple_native_login_hatasi");
+      console.error("Native Apple giriş hatası:", error);
+      alert(error?.message || "Apple ile giriş tamamlanamadı. Lütfen tekrar deneyin.");
+      return null;
+    }
+  }
+
+  try {
+    const result = await signInWithPopup(auth, appleProvider);
+    trackClarityEvent("apple_login_basarili");
+    return result.user;
+  } catch (error) {
+    trackClarityEvent("apple_login_hatasi");
+    console.error("Apple giriş hatası:", error);
+
+    const code = error?.code || "";
+    if (code === "auth/popup-blocked") {
+      try {
+        await signInWithRedirect(auth, appleProvider);
+      } catch (redirectError) {
+        console.error("Apple signInWithRedirect fallback hatası:", redirectError);
+        alert("Apple giriş hatası: Tarayıcınız popup'ı engelledi. Lütfen popup'lara izin verip tekrar deneyin.");
+      }
+      return null;
+    }
+
+    if (code === "auth/cancelled-popup-request" || code === "auth/popup-closed-by-user") {
+      return null;
+    }
+
+    if (code === "auth/operation-not-allowed") {
+      alert("Apple ile giriş Firebase Console üzerinde henüz etkinleştirilmemiş görünüyor.");
+      return null;
+    }
+
+    alert("Apple giriş hatası: " + (error?.message || "Bilinmeyen hata"));
     return null;
   }
 };
