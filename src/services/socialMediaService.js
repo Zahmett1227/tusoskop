@@ -449,7 +449,7 @@ export async function triggerInstagramStory(adminUid) {
 
   if (!resp.ok) {
     let errText = "";
-    try { errText = await resp.text(); } catch (_) {}
+    try { errText = await resp.text(); } catch { errText = ""; }
     if (resp.status === 403) {
       throw new Error(
         "GitHub API 403: Token'ın 'workflow' yetkisi eksik. " +
