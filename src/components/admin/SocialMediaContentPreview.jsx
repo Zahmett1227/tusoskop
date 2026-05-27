@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import StoryCard from "../social/StoryCard.jsx";
 
 /** Simple promo slide preview (matches post_template.html slide 3). */
@@ -144,7 +144,12 @@ function getPreviewData(content) {
       content.questionText ||
       parsed.questionText ||
       "",
-    options: normalizeOptions(storyVisualSpec.options || visualSpec.options || content.options || parsed.options),
+    options: normalizeOptions(
+      (storyVisualSpec.options?.length && storyVisualSpec.options) ||
+      (visualSpec.options?.length && visualSpec.options) ||
+      (content.options?.length && content.options) ||
+      parsed.options
+    ),
     ders: content.sourceDers || visualSpec.ders || storyVisualSpec.ders || content.ders || "",
     konu: content.sourceKonu || visualSpec.konu || storyVisualSpec.konu || content.konu || "",
     correctIndex:
@@ -164,14 +169,18 @@ function getPreviewData(content) {
 export default function SocialMediaContentPreview({ content, phoneFrame = true }) {
   const [slideIndex, setSlideIndex] = useState(0);
 
+  useEffect(() => {
+    setSlideIndex(0);
+  }, [content?.id]);
+
   if (!content) return null;
 
   const preview = getPreviewData(content);
 
-  const PREVIEW_W = 182;
+  const PREVIEW_W = 280;
 
   const frameClass = phoneFrame
-    ? "mx-auto max-w-[200px] rounded-[1.75rem] border-[3px] border-slate-600 bg-slate-950 p-1.5 overflow-hidden"
+    ? "mx-auto max-w-[300px] rounded-[1.75rem] border-[3px] border-slate-600 bg-slate-950 p-1.5 overflow-hidden"
     : "";
 
   // Prefer HTML/CSS StoryCard when we have structured question data.

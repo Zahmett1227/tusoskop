@@ -435,7 +435,7 @@ export default function StoryCard({
                   minHeight: 62,
                   backdropFilter: "blur(8px)",
                   WebkitBackdropFilter: "blur(8px)",
-                  opacity: isDimmed ? 0.65 : 1,
+                  opacity: isDimmed ? 0.82 : 1,
                 }}
               >
                 <div
