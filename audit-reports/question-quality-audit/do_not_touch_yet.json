@@ -1,0 +1,8 @@
+{
+  "count": 0,
+  "findings": [],
+  "notes": [
+    "Hicbir P0 finding fixed exam ID lerini etkilemiyor (Pediatri 5500-5687 hicbir fixed exam de yer almiyor). Bu durum manuel correct index duzeltmesi icin yesil isiktir.",
+    "id 1037 ve 969 near-duplicate sorulardir; ID degistirme yasagi nedeniyle SADECE icerik guncellemesi yapilabilir (varyant yapilirsa kabul, silme yasak)."
+  ]
+}

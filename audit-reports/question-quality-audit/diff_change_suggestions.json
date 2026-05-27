@@ -1,0 +1,19 @@
+{
+  "systemic_finding": "Havuzda 0 adet diff=1 ve 0 adet diff=2 sorusu var. 5687 sorunun %71 i diff=4 (4049), %15 i diff=3 (876), %13 u diff=5 (762). Bu kalibrasyon problemidir - kolay sorular tamamen eksik.",
+  "recommended_diff_distribution": {
+    "1": "5%",
+    "2": "15%",
+    "3": "30%",
+    "4": "35%",
+    "5": "15%"
+  },
+  "current_diff_distribution": {
+    "1": "0%",
+    "2": "0%",
+    "3": "15.4%",
+    "4": "71.2%",
+    "5": "13.4%"
+  },
+  "action_required": "Toplu diff=4 sorulari iceriksel olarak diff 2-3-4-5 e dagitilmali. Once 50-100 ornek manuel kalibrasyon, sonra heuristik destekli toplu yeniden etiketleme.",
+  "individual_findings": []
+}

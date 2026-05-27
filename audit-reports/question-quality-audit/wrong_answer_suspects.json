@@ -1,0 +1,1492 @@
+{
+  "count": 69,
+  "findings": [
+    {
+      "finding_id": 1,
+      "id": 5570,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) D sikkini destekliyor ancak correct=C isaretli (gap=0.456).",
+      "current_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "Konjenital hiperamonyemi üre döngüsü defektidir"
+      },
+      "suggested_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "Maternal hiperglisemi fetal hiperinsülinizm yapar; doğum sonrası plasental glukoz kaynağı kesilince rebound hipoglisemi gelişir"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 2,
+      "id": 5559,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) E sikkini destekliyor ancak correct=B isaretli (gap=0.372).",
+      "current_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Flumazenil benzodiazepin etkisini antagonize eder"
+      },
+      "suggested_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Sodyum bikarbonat ile sistemik alkalinizasyon hızlı sodyum kanalı blokajını azaltır ve QRS daraltır"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 3,
+      "id": 5550,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Enfeksiyon Hastalıkları",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) D sikkini destekliyor ancak correct=C isaretli (gap=0.324).",
+      "current_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "Toksoplazmozda Paul-Bunnell testi pozitiftir"
+      },
+      "suggested_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "EBV B lenfosit enfeksiyonu poliklonal atipik lenfositoz ve splenomegali yapar; kontakt spor riski ve travmadan kaçınma önemlidir"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 4,
+      "id": 5599,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) E sikkini destekliyor ancak correct=B isaretli (gap=0.276).",
+      "current_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Kan transfüzyonu"
+      },
+      "suggested_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Tüm hane halkının eş zamanlı tedavisi ve tırnak hijyeni"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 5,
+      "id": 5544,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Enfeksiyon Hastalıkları",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) E sikkini destekliyor ancak correct=B isaretli (gap=0.275).",
+      "current_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "IVIG rutin olarak tüm kızamık olgularında endikedir"
+      },
+      "suggested_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Yüksek doz vitamin A epitel bariyer onarımını destekler ve ciddi kızamıkta mortaliteyi azaltır"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 6,
+      "id": 5561,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) C sikkini destekliyor ancak correct=D isaretli (gap=0.271).",
+      "current_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "Hipotonik sıvı her DKA olgusunda birinci seçenektir"
+      },
+      "suggested_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "DKA'da total vücut potasyum eksikliği vardır; insülin potasyumu hücre içine sokarak yaşamı tehdit eden hipokalemiye yol açabilir"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 7,
+      "id": 5540,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Enfeksiyon Hastalıkları",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) D sikkini destekliyor ancak correct=C isaretli (gap=0.27).",
+      "current_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "Dehidratasyon varsa oral sıvı kesinlikle kontrendikedir"
+      },
+      "suggested_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "Villus epitel hücrelerinin direkt lizisi sonrası osmotik diyare gelişir; tedavi ORS ve çinko desteğidir, antibiyotik endike değildir"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 8,
+      "id": 5614,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) E sikkini destekliyor ancak correct=B isaretli (gap=0.267).",
+      "current_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Astım bronş spazmı"
+      },
+      "suggested_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Viskoz sekresyonlarla mukosiliyer klirens bozukluğu"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 9,
+      "id": 5595,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) D sikkini destekliyor ancak correct=C isaretli (gap=0.265).",
+      "current_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "Submukozal polipler"
+      },
+      "suggested_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "Transmural granülomatöz inflamasyon ve segmenter tutulum"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 10,
+      "id": 5632,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nefroloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) B sikkini destekliyor ancak correct=E isaretli (gap=0.247).",
+      "current_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Diabetes insipidus"
+      },
+      "suggested_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "21-hidroksilaz eksikliğine bağlı aldosteron ve kortizol sentez yetersizliği"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 11,
+      "id": 5677,
+      "ders": "Pediatri",
+      "konu": "Pediatrik İmmünoloji/Alerji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) B sikkini destekliyor ancak correct=E isaretli (gap=0.238).",
+      "current_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Aylık IVIG infüzyonu"
+      },
+      "suggested_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Allerjen kaçınma, eğitim ve epinefrin otoenjektör reçetesi"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 12,
+      "id": 5664,
+      "ders": "Pediatri",
+      "konu": "Beslenme",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) E sikkini destekliyor ancak correct=B isaretli (gap=0.232).",
+      "current_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Rekombinant büyüme hormonu"
+      },
+      "suggested_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Aile temelli yaşam tarzı değişikliği: beslenme ve fizik aktivite"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 13,
+      "id": 5587,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) B sikkini destekliyor ancak correct=E isaretli (gap=0.226).",
+      "current_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Dravet sendromu; SCN1A mutasyonu"
+      },
+      "suggested_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Benign rolandik epilepsi (BRE); çocukluk çağının en sık fokal epilepsisi"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 14,
+      "id": 5639,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Endokrinoloji ve Metabolizma",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) E sikkini destekliyor ancak correct=B isaretli (gap=0.221).",
+      "current_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Feokromositoma"
+      },
+      "suggested_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Ekzojen glukokortikoid kullanımına bağlı iatrogenik Cushing sendromu"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 15,
+      "id": 5546,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Enfeksiyon Hastalıkları",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) A sikkini destekliyor ancak correct=D isaretli (gap=0.217).",
+      "current_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "Oral amoksisilin BOS penetrasyonu yeterlidir"
+      },
+      "suggested_value": {
+        "correct_idx": 0,
+        "correct_letter": "A",
+        "correct_text": "Azitromisin neonatal menenjitte standart tedavidir"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 16,
+      "id": 5626,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nefroloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) C sikkini destekliyor ancak correct=D isaretli (gap=0.207).",
+      "current_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "Postinfeksiyöz immün kompleks birikimi"
+      },
+      "suggested_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "Shiga toksinine bağlı endotel hasarı, mikroanjiopati ve trombosit tüketimi"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 17,
+      "id": 5627,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nefroloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) B sikkini destekliyor ancak correct=E isaretli (gap=0.204).",
+      "current_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Antiviral profilaksi"
+      },
+      "suggested_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Düşük grade VUR'de gözlem, tekrarlayan UTI'de profilaktik antibiyotik ve yakın takip"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 18,
+      "id": 5622,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) B sikkini destekliyor ancak correct=E isaretli (gap=0.201).",
+      "current_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "İnsülin replasmanı"
+      },
+      "suggested_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Anti-IgE (omalizumab) veya anti-IL5/IL5R ajanları"
+      },
+      "confidence": "high",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 19,
+      "id": 5589,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) D sikkini destekliyor ancak correct=B isaretli (gap=0.198).",
+      "current_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Ergotamin çocuklarda rutin endikedir"
+      },
+      "suggested_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "Valproat akut migren atağında birinci seçenektir"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 20,
+      "id": 5621,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) C sikkini destekliyor ancak correct=D isaretli (gap=0.198).",
+      "current_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "T hücre immün yetmezliği"
+      },
+      "suggested_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "Bruton agamaglobulinemisinde olgun B hücre ve antikor sentezi yokluğu"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 21,
+      "id": 5625,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nefroloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) D sikkini destekliyor ancak correct=C isaretli (gap=0.198).",
+      "current_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "Amyloid birikimi"
+      },
+      "suggested_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "Streptokok antijenine karşı oluşan immün komplekslerin glomerülde birikimi"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 22,
+      "id": 5549,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Enfeksiyon Hastalıkları",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) E sikkini destekliyor ancak correct=B isaretli (gap=0.196).",
+      "current_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "HHV-6'ya bağlı roseola infantum; yüksek ateş sonrası döküntü"
+      },
+      "suggested_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Kızamıkçık virüsüne bağlı lenfadenopati ve döküntü; aşı sonrası hafif-orta seyirli infeksiyon veya wild-type enfeksiyon"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 23,
+      "id": 5585,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) D sikkini destekliyor ancak correct=C isaretli (gap=0.195).",
+      "current_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "IVIG infantil spazm tedavisinde birinci basamaktır"
+      },
+      "suggested_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "ACTH veya vigabatrin erken epileptik ensefalopati ve gelişim geriliğini yavaşlatır"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 24,
+      "id": 5656,
+      "ders": "Pediatri",
+      "konu": "Büyüme ve Gelişme",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) C sikkini destekliyor ancak correct=D isaretli (gap=0.195).",
+      "current_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "Aşı takvimini otomatik olarak geciktirmek"
+      },
+      "suggested_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "İntrauterin büyüme geriliğini ve prematüre doğum etkisini gelişim değerlendirmesine yansıtmak"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 25,
+      "id": 5567,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) B sikkini destekliyor ancak correct=E isaretli (gap=0.194).",
+      "current_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "NEC'de iskemik mukozal nekroz"
+      },
+      "suggested_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Aganglionik distal kolon segmentinde peristaltizm kaybı ve proksimal segmentte obstrüktif dilatasyon"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 26,
+      "id": 5581,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) C sikkini destekliyor ancak correct=D isaretli (gap=0.184).",
+      "current_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "Duchenne musküler distrofi; distrofin eksikliği"
+      },
+      "suggested_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "Pompe hastalığı (GSD II); lizozomal alfa-glukozidaz eksikliği ile glikojen birikimi"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 27,
+      "id": 5580,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) D sikkini destekliyor ancak correct=C isaretli (gap=0.182).",
+      "current_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "Demir eksikliği anemisi"
+      },
+      "suggested_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "Obstrüktif hidrosefali ve tonsiller herniasyon"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 28,
+      "id": 5634,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Endokrinoloji ve Metabolizma",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) E sikkini destekliyor ancak correct=B isaretli (gap=0.181).",
+      "current_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Üre döngüsü defekti"
+      },
+      "suggested_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Mutlak insülin eksikliğine bağlı lipoliz artışı ve keton cisimleri birikimi"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 29,
+      "id": 5562,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) B sikkini destekliyor ancak correct=E isaretli (gap=0.177).",
+      "current_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Acil torasentez birinci basamaktır"
+      },
+      "suggested_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Klinik şüphe yüksekse radyoloji negatif olsa bile bronkoskopi tanı ve tedavi için endikedir"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 30,
+      "id": 5645,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Hematoloji ve Onkoloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) D sikkini destekliyor ancak correct=C isaretli (gap=0.177).",
+      "current_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "Geniş spektrumlu antibiyotik"
+      },
+      "suggested_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "Gözlem veya kanama riskine göre kortikosteroid/IVIG"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 31,
+      "id": 5601,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) C sikkini destekliyor ancak correct=D isaretli (gap=0.174).",
+      "current_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "Primer hipertansiyon"
+      },
+      "suggested_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "İrreversibl pulmoner vasküler hastalık (Eisenmenger sendromu)"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 32,
+      "id": 5554,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) E sikkini destekliyor ancak correct=B isaretli (gap=0.173).",
+      "current_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Epilepsi; ateşten bağımsız tekrarlayan afebrile nöbetler"
+      },
+      "suggested_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Basit febril konvülsiyon; yüksek ateşte gelişen immatür nöronal devrelerin eşik değişikliği ile jeneralize kısa nöbet"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 33,
+      "id": 5576,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) C sikkini destekliyor ancak correct=D isaretli (gap=0.172).",
+      "current_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "Term doğum ve normal ağırlık"
+      },
+      "suggested_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "Çok düşük gestasyonel yaş ve doğum ağırlığı; immatür germinal matriks damarları"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 34,
+      "id": 5657,
+      "ders": "Pediatri",
+      "konu": "Büyüme ve Gelişme",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) B sikkini destekliyor ancak correct=E isaretli (gap=0.171).",
+      "current_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Profilaktik antibiyotik"
+      },
+      "suggested_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Erken fizik tedavi ve altta yatan nedenin araştırılması"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 35,
+      "id": 5607,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) B sikkini destekliyor ancak correct=E isaretli (gap=0.162).",
+      "current_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Sağ ventrikül hipertrofisi"
+      },
+      "suggested_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Aksesuar atrioventriküler yol (bundle of Kent)"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 36,
+      "id": 5252,
+      "ders": "Fizyoloji",
+      "konu": "Üriner Sistem HistoFizyolojisi",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) A sikkini destekliyor ancak correct=E isaretli (gap=0.152).",
+      "current_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "İç medullada ozmotik gradyanı güçlendirerek"
+      },
+      "suggested_value": {
+        "correct_idx": 0,
+        "correct_letter": "A",
+        "correct_text": "Kortikal toplayıcı kanalda sodyum geri emilimini durdurarak"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": ""
+    },
+    {
+      "finding_id": 37,
+      "id": 5552,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) B sikkini destekliyor ancak correct=E isaretli (gap=0.152).",
+      "current_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Hipoglisemi ile santral sinir sistemi depresyonu"
+      },
+      "suggested_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Alkali maddelerin mukozada derin liküefaktif nekroz ve perforasyon riski oluşturması"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 38,
+      "id": 5556,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Aciller, Zehirlenmeler ve Yoğun Bakım",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) C sikkini destekliyor ancak correct=D isaretli (gap=0.145).",
+      "current_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "Kurşunun DNA hipermetilasyonu ile lenfoma riski"
+      },
+      "suggested_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "Kurşunun delta-ALA dehidrogenaz ve ferrokelataz inhibisyonu ile hem sentez bozukluğu"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 39,
+      "id": 5565,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) D sikkini destekliyor ancak correct=C isaretli (gap=0.139).",
+      "current_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "Konjenital kalp hastalığı; pulmoner venöz hipertansiyon"
+      },
+      "suggested_value": {
+        "correct_idx": 3,
+        "correct_letter": "D",
+        "correct_text": "Respiratuar distres sendromu; surfaktan eksikliğine bağlı alveoler atelektazi ve compliance azalması"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 40,
+      "id": 5579,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) E sikkini destekliyor ancak correct=B isaretli (gap=0.138).",
+      "current_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Fokal temporal spike; temporal lob epilepsisi"
+      },
+      "suggested_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "3 Hz spike-wave; çocukluk çağı absans epilepsisi"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 41,
+      "id": 2705,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Jinekoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) C sikkini destekliyor ancak correct=E isaretli (gap=0.131).",
+      "current_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Bakırlı RİA"
+      },
+      "suggested_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "Levonorgestrel salan RİA"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": ""
+    },
+    {
+      "finding_id": 42,
+      "id": 3753,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) B sikkini destekliyor ancak correct=A isaretli (gap=0.113).",
+      "current_value": {
+        "correct_idx": 0,
+        "correct_letter": "A",
+        "correct_text": "Destek tedavisi ve hidrasyonun değerlendirilmesi"
+      },
+      "suggested_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Rutin salbutamol ve sistemik steroid başlanması"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": ""
+    },
+    {
+      "finding_id": 43,
+      "id": 5574,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) E sikkini destekliyor ancak correct=B isaretli (gap=0.109).",
+      "current_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "G6PD eksikliği; oksidatif hemoliz"
+      },
+      "suggested_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Rh hemolitik hastalık; maternal anti-D antikorları fetal eritrositleri hemolize eder"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 44,
+      "id": 5670,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Romatoloji",
+      "severity": "P0",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) B sikkini destekliyor ancak correct=C isaretli (gap=0.103).",
+      "current_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "Kompleman yükselmesi aktif nefrit gösterir"
+      },
+      "suggested_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Anti-dsDNA negatifliği lupus nefriti gösterir"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Bu ID pediatri.js 5500-5687 batch sistemik correct-index hatasinin parcasi olabilir."
+    },
+    {
+      "finding_id": 45,
+      "id": 5566,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.05, correct=D -> suspect=C).",
+      "current_value": {
+        "correct_letter": "D"
+      },
+      "suggested_value": {
+        "correct_letter": "C"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 46,
+      "id": 5571,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.08, correct=D -> suspect=C).",
+      "current_value": {
+        "correct_letter": "D"
+      },
+      "suggested_value": {
+        "correct_letter": "C"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 47,
+      "id": 5575,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.09, correct=C -> suspect=D).",
+      "current_value": {
+        "correct_letter": "C"
+      },
+      "suggested_value": {
+        "correct_letter": "D"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 48,
+      "id": 5590,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.093, correct=C -> suspect=D).",
+      "current_value": {
+        "correct_letter": "C"
+      },
+      "suggested_value": {
+        "correct_letter": "D"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 49,
+      "id": 5592,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.082, correct=E -> suspect=B).",
+      "current_value": {
+        "correct_letter": "E"
+      },
+      "suggested_value": {
+        "correct_letter": "B"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 50,
+      "id": 5594,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.053, correct=B -> suspect=E).",
+      "current_value": {
+        "correct_letter": "B"
+      },
+      "suggested_value": {
+        "correct_letter": "E"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 51,
+      "id": 5600,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.078, correct=C -> suspect=D).",
+      "current_value": {
+        "correct_letter": "C"
+      },
+      "suggested_value": {
+        "correct_letter": "D"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 52,
+      "id": 5604,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.093, correct=B -> suspect=E).",
+      "current_value": {
+        "correct_letter": "B"
+      },
+      "suggested_value": {
+        "correct_letter": "E"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 53,
+      "id": 5605,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.07, correct=C -> suspect=D).",
+      "current_value": {
+        "correct_letter": "C"
+      },
+      "suggested_value": {
+        "correct_letter": "D"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 54,
+      "id": 5606,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.074, correct=D -> suspect=C).",
+      "current_value": {
+        "correct_letter": "D"
+      },
+      "suggested_value": {
+        "correct_letter": "C"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 55,
+      "id": 5609,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.058, correct=B -> suspect=E).",
+      "current_value": {
+        "correct_letter": "B"
+      },
+      "suggested_value": {
+        "correct_letter": "E"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 56,
+      "id": 5611,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.067, correct=D -> suspect=C).",
+      "current_value": {
+        "correct_letter": "D"
+      },
+      "suggested_value": {
+        "correct_letter": "C"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 57,
+      "id": 5612,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.096, correct=E -> suspect=B).",
+      "current_value": {
+        "correct_letter": "E"
+      },
+      "suggested_value": {
+        "correct_letter": "B"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 58,
+      "id": 5615,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.058, correct=C -> suspect=D).",
+      "current_value": {
+        "correct_letter": "C"
+      },
+      "suggested_value": {
+        "correct_letter": "D"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 59,
+      "id": 5620,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.075, correct=C -> suspect=D).",
+      "current_value": {
+        "correct_letter": "C"
+      },
+      "suggested_value": {
+        "correct_letter": "D"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 60,
+      "id": 5629,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nefroloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.051, correct=B -> suspect=E).",
+      "current_value": {
+        "correct_letter": "B"
+      },
+      "suggested_value": {
+        "correct_letter": "E"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 61,
+      "id": 5642,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Endokrinoloji ve Metabolizma",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.052, correct=E -> suspect=B).",
+      "current_value": {
+        "correct_letter": "E"
+      },
+      "suggested_value": {
+        "correct_letter": "B"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 62,
+      "id": 5646,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Hematoloji ve Onkoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.05, correct=D -> suspect=C).",
+      "current_value": {
+        "correct_letter": "D"
+      },
+      "suggested_value": {
+        "correct_letter": "C"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 63,
+      "id": 5652,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Hematoloji ve Onkoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.053, correct=E -> suspect=B).",
+      "current_value": {
+        "correct_letter": "E"
+      },
+      "suggested_value": {
+        "correct_letter": "B"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 64,
+      "id": 5659,
+      "ders": "Pediatri",
+      "konu": "Büyüme ve Gelişme",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.089, correct=B -> suspect=E).",
+      "current_value": {
+        "correct_letter": "B"
+      },
+      "suggested_value": {
+        "correct_letter": "E"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 65,
+      "id": 5665,
+      "ders": "Pediatri",
+      "konu": "Beslenme",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.064, correct=C -> suspect=D).",
+      "current_value": {
+        "correct_letter": "C"
+      },
+      "suggested_value": {
+        "correct_letter": "D"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 66,
+      "id": 5667,
+      "ders": "Pediatri",
+      "konu": "Beslenme",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.087, correct=E -> suspect=D).",
+      "current_value": {
+        "correct_letter": "E"
+      },
+      "suggested_value": {
+        "correct_letter": "D"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 67,
+      "id": 5681,
+      "ders": "Pediatri",
+      "konu": "Genetik",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.061, correct=D -> suspect=C).",
+      "current_value": {
+        "correct_letter": "D"
+      },
+      "suggested_value": {
+        "correct_letter": "C"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 68,
+      "id": 5684,
+      "ders": "Pediatri",
+      "konu": "Pediatrik İmmünoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.078, correct=B -> suspect=E).",
+      "current_value": {
+        "correct_letter": "B"
+      },
+      "suggested_value": {
+        "correct_letter": "E"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 69,
+      "id": 5686,
+      "ders": "Pediatri",
+      "konu": "Pediatrik İmmünoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.08, correct=D -> suspect=C).",
+      "current_value": {
+        "correct_letter": "D"
+      },
+      "suggested_value": {
+        "correct_letter": "C"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    }
+  ]
+}

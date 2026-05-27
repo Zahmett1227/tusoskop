@@ -1,0 +1,5 @@
+{
+  "count": 0,
+  "findings": [],
+  "notes": "same_question_different_correct heuristigi tetiklenmedi. Manuel inceleme onerilen 44 ana wrong-answer adayinda da multi-correct riski heuristic disinda olabilir."
+}

@@ -1,0 +1,5 @@
+{
+  "description": "Otomatik uygulanabilir P3 duzeyinde guvenli duzeltmeler. Kullanici geçmisini, fixed exam yi veya TopicTracker yi etkilemez.",
+  "fixes": [],
+  "notes": "Bu turda hiçbir otomatik duzeltme uygulanmadi. Cunku tum format-fix kandidatlari (konu typo, konu çift bosluk, GIS standardizasyon) TopicTracker performans kayitlarini etkileyebilir. Once TopicTracker migration plani gerekir, sonra konu standardizasyon batch i uygulanabilir."
+}

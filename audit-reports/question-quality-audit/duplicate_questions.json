@@ -1,0 +1,19 @@
+{
+  "count": 1,
+  "findings": [
+    {
+      "finding_id": 110,
+      "id": 1037,
+      "ders": "Mikrobiyoloji",
+      "konu": "Mikoloji",
+      "severity": "P1",
+      "agent": "DUPLICATE-SIMILARITY-AUDITOR",
+      "issue_type": "near_duplicate_question",
+      "description": "id 969 ile çok benzer (93%)",
+      "current_value": "iki soru icerik bakimindan ~%93 ayni",
+      "suggested_value": "birini guncelle/sil VEYA varyant olarak isaretle (id degistirme; silme yapilirsa manifest count dusurulur)",
+      "confidence": "high",
+      "requires_manual_review": true
+    }
+  ]
+}

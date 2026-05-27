@@ -1,0 +1,568 @@
+{
+  "count": 30,
+  "findings": [
+    {
+      "finding_id": 41,
+      "id": 2705,
+      "ders": "Kadın Hastalıkları ve Doğum",
+      "konu": "Jinekoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) C sikkini destekliyor ancak correct=E isaretli (gap=0.131).",
+      "current_value": {
+        "correct_idx": 4,
+        "correct_letter": "E",
+        "correct_text": "Bakırlı RİA"
+      },
+      "suggested_value": {
+        "correct_idx": 2,
+        "correct_letter": "C",
+        "correct_text": "Levonorgestrel salan RİA"
+      },
+      "confidence": "medium",
+      "requires_manual_review": true,
+      "notes": ""
+    },
+    {
+      "finding_id": 42,
+      "id": 3753,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect",
+      "description": "Aciklama (exp) B sikkini destekliyor ancak correct=A isaretli (gap=0.113).",
+      "current_value": {
+        "correct_idx": 0,
+        "correct_letter": "A",
+        "correct_text": "Destek tedavisi ve hidrasyonun değerlendirilmesi"
+      },
+      "suggested_value": {
+        "correct_idx": 1,
+        "correct_letter": "B",
+        "correct_text": "Rutin salbutamol ve sistemik steroid başlanması"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": ""
+    },
+    {
+      "finding_id": 45,
+      "id": 5566,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.05, correct=D -> suspect=C).",
+      "current_value": {
+        "correct_letter": "D"
+      },
+      "suggested_value": {
+        "correct_letter": "C"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 46,
+      "id": 5571,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.08, correct=D -> suspect=C).",
+      "current_value": {
+        "correct_letter": "D"
+      },
+      "suggested_value": {
+        "correct_letter": "C"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 47,
+      "id": 5575,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.09, correct=C -> suspect=D).",
+      "current_value": {
+        "correct_letter": "C"
+      },
+      "suggested_value": {
+        "correct_letter": "D"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 48,
+      "id": 5590,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.093, correct=C -> suspect=D).",
+      "current_value": {
+        "correct_letter": "C"
+      },
+      "suggested_value": {
+        "correct_letter": "D"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 49,
+      "id": 5592,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.082, correct=E -> suspect=B).",
+      "current_value": {
+        "correct_letter": "E"
+      },
+      "suggested_value": {
+        "correct_letter": "B"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 50,
+      "id": 5594,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.053, correct=B -> suspect=E).",
+      "current_value": {
+        "correct_letter": "B"
+      },
+      "suggested_value": {
+        "correct_letter": "E"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 51,
+      "id": 5600,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.078, correct=C -> suspect=D).",
+      "current_value": {
+        "correct_letter": "C"
+      },
+      "suggested_value": {
+        "correct_letter": "D"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 52,
+      "id": 5604,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.093, correct=B -> suspect=E).",
+      "current_value": {
+        "correct_letter": "B"
+      },
+      "suggested_value": {
+        "correct_letter": "E"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 53,
+      "id": 5605,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.07, correct=C -> suspect=D).",
+      "current_value": {
+        "correct_letter": "C"
+      },
+      "suggested_value": {
+        "correct_letter": "D"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 54,
+      "id": 5606,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.074, correct=D -> suspect=C).",
+      "current_value": {
+        "correct_letter": "D"
+      },
+      "suggested_value": {
+        "correct_letter": "C"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 55,
+      "id": 5609,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.058, correct=B -> suspect=E).",
+      "current_value": {
+        "correct_letter": "B"
+      },
+      "suggested_value": {
+        "correct_letter": "E"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 56,
+      "id": 5611,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.067, correct=D -> suspect=C).",
+      "current_value": {
+        "correct_letter": "D"
+      },
+      "suggested_value": {
+        "correct_letter": "C"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 57,
+      "id": 5612,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.096, correct=E -> suspect=B).",
+      "current_value": {
+        "correct_letter": "E"
+      },
+      "suggested_value": {
+        "correct_letter": "B"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 58,
+      "id": 5615,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.058, correct=C -> suspect=D).",
+      "current_value": {
+        "correct_letter": "C"
+      },
+      "suggested_value": {
+        "correct_letter": "D"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 59,
+      "id": 5620,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Göğüs Hastalıkları",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.075, correct=C -> suspect=D).",
+      "current_value": {
+        "correct_letter": "C"
+      },
+      "suggested_value": {
+        "correct_letter": "D"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 60,
+      "id": 5629,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nefroloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.051, correct=B -> suspect=E).",
+      "current_value": {
+        "correct_letter": "B"
+      },
+      "suggested_value": {
+        "correct_letter": "E"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 61,
+      "id": 5642,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Endokrinoloji ve Metabolizma",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.052, correct=E -> suspect=B).",
+      "current_value": {
+        "correct_letter": "E"
+      },
+      "suggested_value": {
+        "correct_letter": "B"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 62,
+      "id": 5646,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Hematoloji ve Onkoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.05, correct=D -> suspect=C).",
+      "current_value": {
+        "correct_letter": "D"
+      },
+      "suggested_value": {
+        "correct_letter": "C"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 63,
+      "id": 5652,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Hematoloji ve Onkoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.053, correct=E -> suspect=B).",
+      "current_value": {
+        "correct_letter": "E"
+      },
+      "suggested_value": {
+        "correct_letter": "B"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 64,
+      "id": 5659,
+      "ders": "Pediatri",
+      "konu": "Büyüme ve Gelişme",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.089, correct=B -> suspect=E).",
+      "current_value": {
+        "correct_letter": "B"
+      },
+      "suggested_value": {
+        "correct_letter": "E"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 65,
+      "id": 5665,
+      "ders": "Pediatri",
+      "konu": "Beslenme",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.064, correct=C -> suspect=D).",
+      "current_value": {
+        "correct_letter": "C"
+      },
+      "suggested_value": {
+        "correct_letter": "D"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 66,
+      "id": 5667,
+      "ders": "Pediatri",
+      "konu": "Beslenme",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.087, correct=E -> suspect=D).",
+      "current_value": {
+        "correct_letter": "E"
+      },
+      "suggested_value": {
+        "correct_letter": "D"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 67,
+      "id": 5681,
+      "ders": "Pediatri",
+      "konu": "Genetik",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.061, correct=D -> suspect=C).",
+      "current_value": {
+        "correct_letter": "D"
+      },
+      "suggested_value": {
+        "correct_letter": "C"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 68,
+      "id": 5684,
+      "ders": "Pediatri",
+      "konu": "Pediatrik İmmünoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.078, correct=B -> suspect=E).",
+      "current_value": {
+        "correct_letter": "B"
+      },
+      "suggested_value": {
+        "correct_letter": "E"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 69,
+      "id": 5686,
+      "ders": "Pediatri",
+      "konu": "Pediatrik İmmünoloji",
+      "severity": "P1",
+      "agent": "MEDICAL-TRUTH-AUDITOR",
+      "issue_type": "wrong_answer_suspect_low_confidence",
+      "description": "Pediatri batch sistemik hatasi gerekcesiyle dusuk gap secenegi de suphe altinda (gap=0.08, correct=D -> suspect=C).",
+      "current_value": {
+        "correct_letter": "D"
+      },
+      "suggested_value": {
+        "correct_letter": "C"
+      },
+      "confidence": "low",
+      "requires_manual_review": true,
+      "notes": "Pediatri 5500-5687 batch sistemik problem incelemesi kapsaminda manuel kontrol gerekir."
+    },
+    {
+      "finding_id": 110,
+      "id": 1037,
+      "ders": "Mikrobiyoloji",
+      "konu": "Mikoloji",
+      "severity": "P1",
+      "agent": "DUPLICATE-SIMILARITY-AUDITOR",
+      "issue_type": "near_duplicate_question",
+      "description": "id 969 ile çok benzer (93%)",
+      "current_value": "iki soru icerik bakimindan ~%93 ayni",
+      "suggested_value": "birini guncelle/sil VEYA varyant olarak isaretle (id degistirme; silme yapilirsa manifest count dusurulur)",
+      "confidence": "high",
+      "requires_manual_review": true
+    },
+    {
+      "finding_id": 152,
+      "id": 5329,
+      "ders": "Mikrobiyoloji",
+      "konu": "İmmünoloji",
+      "severity": "P1",
+      "agent": "EXPLANATION-QUALITY-AUDITOR",
+      "issue_type": "exp_favors_other_option",
+      "description": "Açıklama A şıkkına daha yakın görünüyor (heuristik)",
+      "current_value": null,
+      "suggested_value": "aciklama dogru cevabi acikca destekleyecek sekilde yeniden yazilmali; correct index kontrol edilmeli",
+      "confidence": "medium",
+      "requires_manual_review": true
+    },
+    {
+      "finding_id": 153,
+      "id": 5570,
+      "ders": "Pediatri",
+      "konu": "Neonatoloji",
+      "severity": "P1",
+      "agent": "EXPLANATION-QUALITY-AUDITOR",
+      "issue_type": "exp_favors_other_option",
+      "description": "Açıklama D şıkkına daha yakın görünüyor (heuristik)",
+      "current_value": null,
+      "suggested_value": "aciklama dogru cevabi acikca destekleyecek sekilde yeniden yazilmali; correct index kontrol edilmeli",
+      "confidence": "medium",
+      "requires_manual_review": true
+    }
+  ]
+}
