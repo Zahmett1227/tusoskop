@@ -90,8 +90,15 @@ export default function SocialMediaTab({ currentUser }) {
     setBusy(true);
     try {
       await approveSocialContent(item.id, currentUser.uid, item.scheduledAt || null);
-      await refresh();
-      showMsg("Onaylandı.");
+      setItems((prev) =>
+        prev.map((i) =>
+          i.id === item.id ? { ...i, status: "approved", approvedBy: currentUser.uid } : i
+        )
+      );
+      setFilter("approved");
+      showMsg("Onaylandı. 'Onaylı' sekmesine geçildi.");
+    } catch (err) {
+      showMsg(`Onayla hatası: ${err?.message || err}`, "err");
     } finally {
       setBusy(false);
     }

@@ -1,7 +1,7 @@
-/** Tipografi hiyerarşisi — sistem font stack (PNG export uyumlu) */
+/** Tipografi hiyerarşisi — Google Fonts üzerinden yüklenen fontlar (inline SVG uyumlu) */
 export const fonts = {
-  display: "'Poppins', 'Montserrat', 'Segoe UI', system-ui, sans-serif",
-  body: "'Inter', 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif",
+  display: "'Space Grotesk', 'Poppins', system-ui, sans-serif",
+  body: "'Inter', system-ui, sans-serif",
   mono: "'JetBrains Mono', 'Consolas', monospace",
 };
 

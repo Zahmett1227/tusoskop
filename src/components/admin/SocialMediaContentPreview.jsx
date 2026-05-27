@@ -1,5 +1,24 @@
 import React, { useState } from "react";
 
+function InlineSvg({ svg, svgUrl, alt, className }) {
+  if (svg) {
+    return (
+      <div
+        dangerouslySetInnerHTML={{ __html: svg }}
+        className={`overflow-hidden [&>svg]:w-full [&>svg]:h-auto [&>svg]:block ${className ?? ""}`}
+      />
+    );
+  }
+  if (svgUrl) {
+    return <img src={svgUrl} alt={alt} className={className} />;
+  }
+  return (
+    <div className={`flex items-center justify-center bg-slate-800 text-slate-500 text-sm ${className ?? ""}`}>
+      Görsel yok
+    </div>
+  );
+}
+
 /** @param {{ content: object, phoneFrame?: boolean }} props */
 export default function SocialMediaContentPreview({ content, phoneFrame = true }) {
   const [carouselIndex, setCarouselIndex] = useState(0);
@@ -10,7 +29,7 @@ export default function SocialMediaContentPreview({ content, phoneFrame = true }
     content.carouselSlides?.length > 0
       ? content.carouselSlides
       : content.visualUrl
-        ? [{ svgUrl: content.visualUrl, index: 0 }]
+        ? [{ svgUrl: content.visualUrl, svg: content.visualSvg, index: 0 }]
         : [];
 
   const activeSlide = slides[carouselIndex] || slides[0];
@@ -35,9 +54,10 @@ export default function SocialMediaContentPreview({ content, phoneFrame = true }
         </div>
 
         <div className={frameClass}>
-          {activeSlide?.svgUrl ? (
-            <img
-              src={activeSlide.svgUrl}
+          {activeSlide ? (
+            <InlineSvg
+              svg={activeSlide.svg}
+              svgUrl={activeSlide.svgUrl}
               alt={content.title || "Post önizleme"}
               className="w-full rounded-2xl bg-slate-950"
             />
@@ -92,7 +112,7 @@ export default function SocialMediaContentPreview({ content, phoneFrame = true }
         ) : null}
       </div>
 
-      {content.storyVisualUrl ? (
+      {(content.storyVisualUrl || content.storyVisualSvg) ? (
         <div className="rounded-2xl border border-slate-700 bg-slate-900/60 p-4">
           <p className="text-xs font-bold text-emerald-400 mb-2">Story · 9:16</p>
           <div
@@ -102,8 +122,9 @@ export default function SocialMediaContentPreview({ content, phoneFrame = true }
                 : ""
             }
           >
-            <img
-              src={content.storyVisualUrl}
+            <InlineSvg
+              svg={content.storyVisualSvg}
+              svgUrl={content.storyVisualUrl}
               alt="Story"
               className="w-full rounded-xl bg-slate-950"
             />
@@ -111,7 +132,7 @@ export default function SocialMediaContentPreview({ content, phoneFrame = true }
         </div>
       ) : null}
 
-      {content.storyAnswerVisualUrl ? (
+      {(content.storyAnswerVisualUrl || content.storyAnswerVisualSvg) ? (
         <div className="rounded-2xl border border-slate-700 bg-slate-900/60 p-4">
           <p className="text-xs font-bold text-emerald-400 mb-2">Cevap Story · 9:16</p>
           <div
@@ -121,8 +142,9 @@ export default function SocialMediaContentPreview({ content, phoneFrame = true }
                 : ""
             }
           >
-            <img
-              src={content.storyAnswerVisualUrl}
+            <InlineSvg
+              svg={content.storyAnswerVisualSvg}
+              svgUrl={content.storyAnswerVisualUrl}
               alt="Cevap Story"
               className="w-full rounded-xl bg-slate-950"
             />

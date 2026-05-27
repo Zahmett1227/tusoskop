@@ -448,8 +448,16 @@ export async function triggerInstagramStory(adminUid) {
   );
 
   if (!resp.ok) {
-    const err = await resp.text();
-    throw new Error(`GitHub API ${resp.status}: ${err}`);
+    let errText = "";
+    try { errText = await resp.text(); } catch (_) {}
+    if (resp.status === 403) {
+      throw new Error(
+        "GitHub API 403: Token'ın 'workflow' yetkisi eksik. " +
+        "Çözüm: github.com/settings/tokens → token'ı düzenle → 'workflow' scope'unu işaretle → kaydet. " +
+        "Yeni token değerini Firestore adminConfig/githubWorkflow.token alanına yaz."
+      );
+    }
+    throw new Error(`GitHub API ${resp.status}: ${errText}`);
   }
 
   await logSocialEvent({
