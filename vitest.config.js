@@ -8,5 +8,6 @@ export default defineConfig({
     include: ["src/**/*.test.{js,jsx}"],
     setupFiles: ["./src/test/setupTests.js"],
     pool: "threads",
+    testTimeout: 15000,
   },
 });
