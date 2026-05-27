@@ -21,6 +21,7 @@ import uuid
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+import subprocess
 import requests
 
 try:
@@ -35,8 +36,6 @@ try:
 except ImportError:
     print("❌ Pillow kurulu degil: pip install Pillow")
     sys.exit(1)
-
-from story_image import generate_story_png
 
 SCRIPT_DIR = Path(__file__).parent
 QUESTIONS_FILE = SCRIPT_DIR / "questions.json"
@@ -124,7 +123,21 @@ def pick_question(questions: list[dict], recently_used: set[int]) -> dict:
 # Gorsel uretimi
 # ---------------------------------------------------------------------------
 def build_story_image(question: dict, output_path: str) -> None:
-    generate_story_png(question, output_path)
+    question_json = json.dumps(question, ensure_ascii=False)
+    result = subprocess.run(
+        ["node", "render_story.mjs", question_json, output_path],
+        cwd=SCRIPT_DIR,
+        capture_output=True,
+        text=True,
+        timeout=120,
+        check=False,
+    )
+    if result.stdout:
+        print(result.stdout.strip())
+    if result.returncode != 0:
+        if result.stderr:
+            print(f"   → render_story stderr: {result.stderr.strip()}")
+        raise RuntimeError(f"Story render basarisiz (exit code {result.returncode})")
     size = Path(output_path).stat().st_size
     print(f"   → Dosya boyutu: {size:,} bytes")
     if size == 0:

@@ -22,6 +22,10 @@ jobs:
       - name: Export questions JSON
         run: node scripts/export-questions.mjs
 
+      - name: Install story renderer deps
+        run: npm install --no-audit --prefer-offline
+        working-directory: scripts/instagram
+
       - name: Verify questions exported
         run: |
           if [ ! -f scripts/instagram/questions.json ]; then

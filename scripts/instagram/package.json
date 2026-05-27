@@ -1,0 +1,9 @@
+{
+  "name": "tusoskop-story-renderer",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "puppeteer-core": "^22.0.0"
+  }
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import StoryCard from "../social/StoryCard.jsx";
 
 function InlineSvg({ svg, svgUrl, alt, className }) {
   if (svg) {
@@ -112,22 +113,32 @@ export default function SocialMediaContentPreview({ content, phoneFrame = true }
         ) : null}
       </div>
 
-      {(content.storyVisualUrl || content.storyVisualSvg) ? (
+      {(content.questionText || content.storyVisualUrl || content.storyVisualSvg) ? (
         <div className="rounded-2xl border border-slate-700 bg-slate-900/60 p-4">
           <p className="text-xs font-bold text-emerald-400 mb-2">Story · 9:16</p>
           <div
             className={
               phoneFrame
-                ? "mx-auto max-w-[200px] rounded-[1.75rem] border-[3px] border-slate-600 bg-slate-950 p-1.5"
+                ? "mx-auto max-w-[200px] rounded-[1.75rem] border-[3px] border-slate-600 bg-slate-950 p-1.5 overflow-hidden"
                 : ""
             }
           >
-            <InlineSvg
-              svg={content.storyVisualSvg}
-              svgUrl={content.storyVisualUrl}
-              alt="Story"
-              className="w-full rounded-xl bg-slate-950"
-            />
+            {content.questionText ? (
+              <StoryCard
+                ders={content.ders}
+                konu={content.konu}
+                questionText={content.questionText}
+                options={content.options}
+                previewWidth={182}
+              />
+            ) : (
+              <InlineSvg
+                svg={content.storyVisualSvg}
+                svgUrl={content.storyVisualUrl}
+                alt="Story"
+                className="w-full rounded-xl bg-slate-950"
+              />
+            )}
           </div>
         </div>
       ) : null}
