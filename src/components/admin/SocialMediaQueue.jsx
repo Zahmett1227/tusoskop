@@ -67,7 +67,7 @@ export default function SocialMediaTab({ currentUser }) {
   const handleTriggerWorkflow = async () => {
     if (
       !window.confirm(
-        "GitHub Actions workflow'u tetikle? Birkaç dakika içinde Instagram'a story paylaşılacak."
+        "GitHub Actions workflow'u tetikle? Birkaç dakika içinde Instagram'a 3 slaytlı carousel paylaşılacak."
       )
     )
       return;
@@ -76,7 +76,7 @@ export default function SocialMediaTab({ currentUser }) {
     try {
       await triggerInstagramStory(currentUser.uid);
       showMsg(
-        "✓ Workflow tetiklendi! GitHub Actions → daily-story.yml çalışıyor. Birkaç dakika içinde story paylaşılır.",
+        "✓ Workflow tetiklendi! GitHub Actions → daily-story.yml çalışıyor. Birkaç dakika içinde carousel paylaşılır.",
         "ok"
       );
     } catch (err) {
@@ -171,7 +171,7 @@ export default function SocialMediaTab({ currentUser }) {
         <div>
           <h2 className="text-xl font-black text-white">Sosyal Medya</h2>
           <p className="text-sm text-slate-400 mt-1">
-            Story paylaş → GitHub Actions workflow'u çalışır → Instagram'a otomatik gönderilir.
+            Post Paylaş → GitHub Actions çalışır → 3 slaytlı carousel Instagram'a gönderilir (günde 3 otomatik).
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -181,7 +181,7 @@ export default function SocialMediaTab({ currentUser }) {
             onClick={handleTriggerWorkflow}
             className="min-h-10 px-4 rounded-xl bg-gradient-to-r from-pink-500 to-purple-600 text-white text-sm font-black disabled:opacity-50 shadow-lg"
           >
-            📸 Story Paylaş
+            📸 Post Paylaş
           </button>
           <button
             type="button"

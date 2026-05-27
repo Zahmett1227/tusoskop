@@ -1,169 +1,153 @@
 import React, { useState } from "react";
 import StoryCard from "../social/StoryCard.jsx";
 
-function InlineSvg({ svg, svgUrl, alt, className }) {
-  if (svg) {
-    return (
-      <div
-        dangerouslySetInnerHTML={{ __html: svg }}
-        className={`overflow-hidden [&>svg]:w-full [&>svg]:h-auto [&>svg]:block ${className ?? ""}`}
-      />
-    );
-  }
-  if (svgUrl) {
-    return <img src={svgUrl} alt={alt} className={className} />;
-  }
+/** Simple promo slide preview (matches post_template.html slide 3). */
+function PromoSlide({ previewWidth }) {
+  const W = 1080;
+  const H = 1350;
+  const scale = previewWidth ? previewWidth / W : 1;
+
+  const card = (
+    <div
+      style={{
+        width: W,
+        height: H,
+        background:
+          "radial-gradient(ellipse 70% 55% at 50% 20%, rgba(16,185,129,0.18) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 80%, rgba(16,185,129,0.10) 0%, transparent 55%), linear-gradient(180deg, #01030f 0%, #050e18 40%, #01030f 100%)",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        fontFamily: "'Space Grotesk', system-ui, sans-serif",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      {/* Logo */}
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="160" height="160" style={{ marginBottom: 36 }}>
+        <rect width="512" height="512" rx="110" fill="#020617" />
+        <rect x="130" y="148" width="252" height="52" rx="26" fill="#34d399" />
+        <rect x="230" y="196" width="52" height="180" rx="26" fill="#34d399" />
+        <circle cx="392" cy="380" r="48" fill="#059669" opacity="0.4" />
+        <rect x="375" y="362" width="34" height="10" rx="5" fill="#34d399" />
+        <rect x="387" y="350" width="10" height="34" rx="5" fill="#34d399" />
+      </svg>
+
+      {/* Brand name */}
+      <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 80, fontWeight: 900, letterSpacing: "0.08em", color: "#fff", textAlign: "center", marginBottom: 10 }}>
+        TUSOS<span style={{ color: "#34d399" }}>KOP</span>
+      </div>
+
+      {/* Divider */}
+      <div style={{ width: 120, height: 3, background: "linear-gradient(90deg, transparent, #34d399, transparent)", margin: "20px auto 36px", borderRadius: 2 }} />
+
+      {/* Lines */}
+      <div style={{ display: "flex", flexDirection: "column", gap: 8, textAlign: "center" }}>
+        {["TUSOSKOP'la soru çöz.", "Eksiklerini öğren.", "Hedefine bir adım at."].map((line, i) => (
+          <div key={i} style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 38, fontWeight: 700, color: "#dde6f0" }}>
+            {line}
+          </div>
+        ))}
+      </div>
+
+      {/* URL */}
+      <div style={{ marginTop: 44, fontFamily: "'Space Grotesk', sans-serif", fontSize: 28, fontWeight: 900, letterSpacing: "0.10em", color: "#34d399" }}>
+        tusoskop.com
+      </div>
+    </div>
+  );
+
+  if (!previewWidth) return card;
   return (
-    <div className={`flex items-center justify-center bg-slate-800 text-slate-500 text-sm ${className ?? ""}`}>
-      Görsel yok
+    <div style={{ width: previewWidth, height: Math.round(H * scale), overflow: "hidden", position: "relative", borderRadius: 12 }}>
+      <div style={{ transform: `scale(${scale})`, transformOrigin: "top left", position: "absolute", top: 0, left: 0 }}>
+        {card}
+      </div>
     </div>
   );
 }
 
 /** @param {{ content: object, phoneFrame?: boolean }} props */
 export default function SocialMediaContentPreview({ content, phoneFrame = true }) {
-  const [carouselIndex, setCarouselIndex] = useState(0);
+  const [slideIndex, setSlideIndex] = useState(0);
 
   if (!content) return null;
 
-  const slides =
-    content.carouselSlides?.length > 0
-      ? content.carouselSlides
-      : content.visualUrl
-        ? [{ svgUrl: content.visualUrl, svg: content.visualSvg, index: 0 }]
-        : [];
+  const questionText = content.questionText || "";
+  const options = content.options || [];
+  const ders = content.ders || "";
+  const konu = content.konu || "";
+  const correctIndex = content.answerPayload?.correctIndex ?? -1;
+  const explanation = content.answerPayload?.explanation || "";
 
-  const activeSlide = slides[carouselIndex] || slides[0];
-  const isCarousel = slides.length > 1;
+  const PREVIEW_W = 182;
 
   const frameClass = phoneFrame
-    ? "mx-auto max-w-[280px] rounded-[2rem] border-[3px] border-slate-600 bg-slate-950 p-2 shadow-2xl shadow-black/50"
+    ? "mx-auto max-w-[200px] rounded-[1.75rem] border-[3px] border-slate-600 bg-slate-950 p-1.5 overflow-hidden"
     : "";
+
+  const slides = [
+    { label: "Soru", node: <StoryCard ders={ders} konu={konu} questionText={questionText} options={options} previewWidth={PREVIEW_W} /> },
+    { label: "Cevap", node: <StoryCard ders={ders} konu={konu} questionText={questionText} options={options} showAnswer correctIndex={correctIndex} explanation={explanation} previewWidth={PREVIEW_W} /> },
+    { label: "Promo", node: <PromoSlide previewWidth={PREVIEW_W} /> },
+  ];
+
+  const active = slides[slideIndex] || slides[0];
 
   return (
     <div className="grid md:grid-cols-2 gap-4">
+      {/* Carousel preview */}
       <div className="rounded-2xl border border-slate-700 bg-slate-900/60 p-4">
         <div className="flex items-center justify-between mb-2">
           <p className="text-xs font-bold text-emerald-400">
-            {isCarousel ? `Carousel · ${slides.length} slayt` : "Post görseli"}
+            Carousel · {slides.length} slayt · 1080×1350
           </p>
-          {content.visualMode === "carousel" ? (
-            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
-              1080×1350
-            </span>
-          ) : null}
+          <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+            {active.label}
+          </span>
         </div>
 
         <div className={frameClass}>
-          {activeSlide ? (
-            <InlineSvg
-              svg={activeSlide.svg}
-              svgUrl={activeSlide.svgUrl}
-              alt={content.title || "Post önizleme"}
-              className="w-full rounded-2xl bg-slate-950"
-            />
-          ) : (
-            <div className="h-48 rounded-2xl bg-slate-800 flex items-center justify-center text-slate-500 text-sm">
-              Görsel yok
-            </div>
-          )}
+          {active.node}
         </div>
 
-        {isCarousel ? (
-          <div className="mt-3 flex items-center justify-center gap-2">
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => setCarouselIndex(i)}
-                className={`h-2 rounded-full transition-all ${
-                  i === carouselIndex
-                    ? "w-6 bg-emerald-400"
-                    : "w-2 bg-slate-600 hover:bg-slate-500"
-                }`}
-                aria-label={`Slayt ${i + 1}`}
-              />
-            ))}
-          </div>
-        ) : null}
+        {/* Dot nav */}
+        <div className="mt-3 flex items-center justify-center gap-2">
+          {slides.map((s, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setSlideIndex(i)}
+              className={`h-2 rounded-full transition-all ${i === slideIndex ? "w-8 bg-emerald-400" : "w-2 bg-slate-600 hover:bg-slate-500"}`}
+              aria-label={s.label}
+            />
+          ))}
+        </div>
 
-        {isCarousel ? (
-          <div className="mt-2 flex justify-between">
-            <button
-              type="button"
-              disabled={carouselIndex <= 0}
-              onClick={() => setCarouselIndex((i) => Math.max(0, i - 1))}
-              className="text-xs font-bold text-slate-400 disabled:opacity-30"
-            >
-              ← Önceki
-            </button>
-            <span className="text-xs text-slate-500">
-              {carouselIndex + 1} / {slides.length}
-              {slides[carouselIndex]?.slideRole ? ` · ${slides[carouselIndex].slideRole}` : ""}
-            </span>
-            <button
-              type="button"
-              disabled={carouselIndex >= slides.length - 1}
-              onClick={() => setCarouselIndex((i) => Math.min(slides.length - 1, i + 1))}
-              className="text-xs font-bold text-slate-400 disabled:opacity-30"
-            >
-              Sonraki →
-            </button>
-          </div>
-        ) : null}
+        {/* Arrow nav */}
+        <div className="mt-2 flex justify-between">
+          <button
+            type="button"
+            disabled={slideIndex <= 0}
+            onClick={() => setSlideIndex((i) => Math.max(0, i - 1))}
+            className="text-xs font-bold text-slate-400 disabled:opacity-30"
+          >
+            ← Önceki
+          </button>
+          <span className="text-xs text-slate-500">{slideIndex + 1} / {slides.length} · {active.label}</span>
+          <button
+            type="button"
+            disabled={slideIndex >= slides.length - 1}
+            onClick={() => setSlideIndex((i) => Math.min(slides.length - 1, i + 1))}
+            className="text-xs font-bold text-slate-400 disabled:opacity-30"
+          >
+            Sonraki →
+          </button>
+        </div>
       </div>
 
-      {(content.questionText || content.storyVisualUrl || content.storyVisualSvg) ? (
-        <div className="rounded-2xl border border-slate-700 bg-slate-900/60 p-4">
-          <p className="text-xs font-bold text-emerald-400 mb-2">Story · 9:16</p>
-          <div
-            className={
-              phoneFrame
-                ? "mx-auto max-w-[200px] rounded-[1.75rem] border-[3px] border-slate-600 bg-slate-950 p-1.5 overflow-hidden"
-                : ""
-            }
-          >
-            {content.questionText ? (
-              <StoryCard
-                ders={content.ders}
-                konu={content.konu}
-                questionText={content.questionText}
-                options={content.options}
-                previewWidth={182}
-              />
-            ) : (
-              <InlineSvg
-                svg={content.storyVisualSvg}
-                svgUrl={content.storyVisualUrl}
-                alt="Story"
-                className="w-full rounded-xl bg-slate-950"
-              />
-            )}
-          </div>
-        </div>
-      ) : null}
-
-      {(content.storyAnswerVisualUrl || content.storyAnswerVisualSvg) ? (
-        <div className="rounded-2xl border border-slate-700 bg-slate-900/60 p-4">
-          <p className="text-xs font-bold text-emerald-400 mb-2">Cevap Story · 9:16</p>
-          <div
-            className={
-              phoneFrame
-                ? "mx-auto max-w-[200px] rounded-[1.75rem] border-[3px] border-slate-600 bg-slate-950 p-1.5"
-                : ""
-            }
-          >
-            <InlineSvg
-              svg={content.storyAnswerVisualSvg}
-              svgUrl={content.storyAnswerVisualUrl}
-              alt="Cevap Story"
-              className="w-full rounded-xl bg-slate-950"
-            />
-          </div>
-        </div>
-      ) : null}
-
-      <div className="md:col-span-2 rounded-2xl border border-slate-700 bg-slate-900/60 p-4">
+      {/* Caption */}
+      <div className="md:col-span-1 rounded-2xl border border-slate-700 bg-slate-900/60 p-4">
         <p className="text-xs font-bold text-slate-400 mb-2">Caption</p>
         <pre className="whitespace-pre-wrap text-sm text-slate-200 font-medium leading-relaxed">
           {content.caption || content.storyText || "—"}

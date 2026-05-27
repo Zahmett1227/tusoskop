@@ -1,10 +1,10 @@
 """
-Ana orkestrator: soru sec → JPEG uret → Firebase Storage'a yukle →
-Instagram Graph API ile Story yayinla → Firestore log.
+Ana orkestrator: soru sec → 3 JPEG uret → Firebase Storage'a yukle →
+Instagram Graph API ile Carousel Feed Post yayinla → Firestore log.
 
 Cevre degiskenleri (GitHub Secrets):
   IG_ACCESS_TOKEN          Instagram uzun sureli access token
-  IG_USER_ID               Instagram kullanici ID (graph.instagram.com/me -> id)
+  IG_USER_ID               Instagram kullanici ID
   FIREBASE_SERVICE_ACCOUNT Firebase service account JSON (single-line stringify)
   FIREBASE_STORAGE_BUCKET  (opsiyonel) ornek: tusoskop.appspot.com
 """
@@ -85,7 +85,7 @@ def log_to_firestore(db, question: dict, status: str,
                      media_id: str | None = None,
                      error: str | None = None):
     doc = {
-        "type": "story",
+        "type": "carousel_post",
         "status": status,
         "sourceQuestionId": question.get("id"),
         "sourceDers": question.get("ders"),
@@ -120,40 +120,40 @@ def pick_question(questions: list[dict], recently_used: set[int]) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Gorsel uretimi
+# Gorsel uretimi (3 slayt)
 # ---------------------------------------------------------------------------
-def build_story_image(question: dict, output_path: str) -> None:
+def build_carousel_images(question: dict, out_paths: list[str]) -> None:
     question_json = json.dumps(question, ensure_ascii=False)
     result = subprocess.run(
-        ["node", "render_story.mjs", question_json, output_path],
+        ["node", "render_post.mjs", question_json, out_paths[0], out_paths[1], out_paths[2]],
         cwd=SCRIPT_DIR,
         capture_output=True,
         text=True,
-        timeout=120,
+        timeout=180,
         check=False,
     )
     if result.stdout:
         print(result.stdout.strip())
     if result.returncode != 0:
         if result.stderr:
-            print(f"   → render_story stderr: {result.stderr.strip()}")
-        raise RuntimeError(f"Story render basarisiz (exit code {result.returncode})")
-    size = Path(output_path).stat().st_size
-    print(f"   → Dosya boyutu: {size:,} bytes")
-    if size == 0:
-        raise RuntimeError("Gorsel dosyasi bos (0 bytes)")
-    with PILImage.open(output_path) as img:
-        print(f"   → PIL: format={img.format} size={img.size} mode={img.mode}")
+            print(f"   → render_post stderr: {result.stderr.strip()}")
+        raise RuntimeError(f"Carousel render basarisiz (exit code {result.returncode})")
+    for path in out_paths:
+        size = Path(path).stat().st_size
+        print(f"   → {Path(path).name}: {size:,} bytes")
+        if size == 0:
+            raise RuntimeError(f"Gorsel dosyasi bos: {path}")
+        with PILImage.open(path) as img:
+            print(f"   → PIL: format={img.format} size={img.size} mode={img.mode}")
 
 
 # ---------------------------------------------------------------------------
 # Firebase Storage
 # ---------------------------------------------------------------------------
-def upload_to_storage(local_path: str) -> tuple[str, str]:
-    """Resmi Firebase Storage'a yukle, (public_url, blob_name) domdur."""
+def upload_to_storage(local_path: str, label: str) -> tuple[str, str]:
     bucket = storage.bucket()
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
-    blob_name = f"story-uploads/{timestamp}_{uuid.uuid4().hex[:8]}.jpg"
+    blob_name = f"carousel-uploads/{timestamp}_{uuid.uuid4().hex[:8]}_{label}.jpg"
     blob = bucket.blob(blob_name)
     blob.upload_from_filename(local_path, content_type="image/jpeg")
     blob.make_public()
@@ -169,31 +169,49 @@ def delete_from_storage(blob_name: str) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Instagram Graph API
+# Instagram Graph API — Carousel
 # ---------------------------------------------------------------------------
-def create_media_container(ig_user_id: str, image_url: str,
-                           access_token: str) -> str:
+def create_image_container(ig_user_id: str, image_url: str, access_token: str) -> str:
     resp = requests.post(
         f"{IG_API}/{ig_user_id}/media",
         data={
             "image_url": image_url,
-            "media_type": "STORIES",
+            "is_carousel_item": "true",
             "access_token": access_token,
         },
         timeout=30,
     )
     if not resp.ok:
-        print(f"   → Instagram API hata detayi: {resp.text}")
+        print(f"   → IMAGE container hata: {resp.text}")
     resp.raise_for_status()
-    data = resp.json()
-    creation_id = data.get("id")
-    if not creation_id:
-        raise RuntimeError(f"Container ID alinamadi: {resp.text}")
-    return creation_id
+    container_id = resp.json().get("id")
+    if not container_id:
+        raise RuntimeError(f"IMAGE container ID alinamadi: {resp.text}")
+    return container_id
 
 
-def wait_for_container(ig_user_id: str, creation_id: str,
-                       access_token: str, max_wait: int = 60) -> None:
+def create_carousel_container(ig_user_id: str, children: list[str],
+                              caption: str, access_token: str) -> str:
+    resp = requests.post(
+        f"{IG_API}/{ig_user_id}/media",
+        data={
+            "media_type": "CAROUSEL_ALBUM",
+            "children": ",".join(children),
+            "caption": caption,
+            "access_token": access_token,
+        },
+        timeout=30,
+    )
+    if not resp.ok:
+        print(f"   → CAROUSEL_ALBUM container hata: {resp.text}")
+    resp.raise_for_status()
+    container_id = resp.json().get("id")
+    if not container_id:
+        raise RuntimeError(f"CAROUSEL_ALBUM container ID alinamadi: {resp.text}")
+    return container_id
+
+
+def wait_for_container(creation_id: str, access_token: str, max_wait: int = 60) -> None:
     for _ in range(max_wait // 5):
         resp = requests.get(
             f"{IG_API}/{creation_id}",
@@ -215,8 +233,7 @@ def wait_for_container(ig_user_id: str, creation_id: str,
     raise RuntimeError("Container FINISHED olmadi (timeout 60s)")
 
 
-def publish_media(ig_user_id: str, creation_id: str,
-                  access_token: str) -> str:
+def publish_media(ig_user_id: str, creation_id: str, access_token: str) -> str:
     resp = requests.post(
         f"{IG_API}/{ig_user_id}/media_publish",
         data={
@@ -226,20 +243,41 @@ def publish_media(ig_user_id: str, creation_id: str,
         timeout=30,
     )
     resp.raise_for_status()
-    data = resp.json()
-    media_id = data.get("id")
+    media_id = resp.json().get("id")
     if not media_id:
         raise RuntimeError(f"media_id alinamadi: {resp.text}")
     return media_id
 
 
 # ---------------------------------------------------------------------------
+# Caption
+# ---------------------------------------------------------------------------
+def build_caption(question: dict) -> str:
+    ders = question.get("ders", "")
+    konu = question.get("konu", "")
+    exp = question.get("exp", "")
+
+    caption = f"📚 {ders} | {konu}\n\n"
+    if exp:
+        exp_short = exp[:280] + ("…" if len(exp) > 280 else "")
+        caption += f"💡 {exp_short}\n\n"
+    caption += "🎯 Günlük TUS pratik soruları için takipte kal!\n"
+    caption += "👉 tusoskop.com\n\n"
+
+    ders_tag = "#" + "".join(ders.split())
+    konu_tag = "#" + "".join(konu.split())[:20]
+    caption += f"#TUS #TUSsınavı #TıpSınavı {ders_tag} {konu_tag}"
+
+    return caption
+
+
+# ---------------------------------------------------------------------------
 # Ana akis
 # ---------------------------------------------------------------------------
 def main():
-    print("=" * 50)
-    print(f"Tusoskop Gunluk Story — {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    print("=" * 50)
+    print("=" * 55)
+    print(f"Tusoskop Gunluk Carousel Post — {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    print("=" * 55)
 
     access_token = os.environ.get("IG_ACCESS_TOKEN", "")
     ig_user_id = os.environ.get("IG_USER_ID", "")
@@ -259,29 +297,52 @@ def main():
     question = pick_question(questions, recently_used)
     print(f"✓ Soru: [{question['id']}] {question.get('ders')} / {question.get('konu')}")
 
-    with tempfile.NamedTemporaryFile(suffix=".jpg", delete=False) as tmp:
-        tmp_path = tmp.name
+    # 3 temp dosya
+    tmp_paths = []
+    for i in range(3):
+        with tempfile.NamedTemporaryFile(suffix=".jpg", delete=False) as tmp:
+            tmp_paths.append(tmp.name)
 
-    blob_name = None
+    blob_names: list[str] = []
     try:
-        print("🎨 Gorsel uretiliyor...")
-        build_story_image(question, tmp_path)
-        print("✓ Gorsel hazir")
+        print("🎨 3 slayt gorsel uretiliyor...")
+        build_carousel_images(question, tmp_paths)
+        print("✓ Gorseller hazir")
 
-        print("☁ Firebase Storage'a yukleniyor...")
-        image_url, blob_name = upload_to_storage(tmp_path)
-        print(f"✓ Yuklendi: {image_url}")
+        # Upload 3 images
+        image_urls = []
+        for i, path in enumerate(tmp_paths):
+            label = ["soru", "cevap", "promo"][i]
+            print(f"☁ Slayt {i+1} yuklenıyor ({label})...")
+            url, blob_name = upload_to_storage(path, label)
+            image_urls.append(url)
+            blob_names.append(blob_name)
+            print(f"✓ Yuklendi: {url}")
 
-        print("📦 Instagram media container olusturuluyor...")
-        creation_id = create_media_container(ig_user_id, image_url, access_token)
-        print(f"✓ Container: {creation_id}")
+        # Create 3 IMAGE containers
+        print("📦 IMAGE container'lar olusturuluyor...")
+        child_ids = []
+        for i, url in enumerate(image_urls):
+            cid = create_image_container(ig_user_id, url, access_token)
+            child_ids.append(cid)
+            print(f"   → Slayt {i+1} container: {cid}")
 
-        print("⏳ Container hazirlanıyor...")
-        wait_for_container(ig_user_id, creation_id, access_token)
+        # Build caption
+        caption = build_caption(question)
 
-        print("🚀 Story yayinlaniyor...")
-        media_id = publish_media(ig_user_id, creation_id, access_token)
-        print(f"✓ Story yayinlandi! media_id={media_id}")
+        # Create carousel container
+        print("📦 CAROUSEL_ALBUM container olusturuluyor...")
+        carousel_id = create_carousel_container(ig_user_id, child_ids, caption, access_token)
+        print(f"✓ Carousel container: {carousel_id}")
+
+        # Wait for carousel to be ready
+        print("⏳ Carousel hazirlaniyor...")
+        wait_for_container(carousel_id, access_token)
+
+        # Publish
+        print("🚀 Carousel post yayinlaniyor...")
+        media_id = publish_media(ig_user_id, carousel_id, access_token)
+        print(f"✓ Post yayinlandi! media_id={media_id}")
 
         log_to_firestore(db, question, "published", media_id=media_id)
         print("✓ Firestore log yazildi")
@@ -295,11 +356,12 @@ def main():
             print(f"⚠ Log yazılamadi: {log_err}")
         sys.exit(1)
     finally:
-        Path(tmp_path).unlink(missing_ok=True)
-        if blob_name:
+        for path in tmp_paths:
+            Path(path).unlink(missing_ok=True)
+        for blob_name in blob_names:
             delete_from_storage(blob_name)
 
-    print("=" * 50)
+    print("=" * 55)
     print("✅ Tamamlandi!")
 
 

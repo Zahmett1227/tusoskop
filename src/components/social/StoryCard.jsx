@@ -8,18 +8,18 @@ function hexToRgb(hex) {
 
 function questionFontSize(text) {
   const len = (text || "").length;
-  if (len < 80) return 44;
-  if (len < 130) return 38;
-  if (len < 190) return 33;
-  if (len < 260) return 29;
-  return 26;
+  if (len < 80) return 36;
+  if (len < 130) return 32;
+  if (len < 190) return 27;
+  if (len < 260) return 24;
+  return 21;
 }
 
 function optionFontSize(options) {
   const maxLen = Math.max(0, ...(options || []).map((o) => (o.text || String(o || "")).length));
-  if (maxLen < 35) return 26;
-  if (maxLen < 55) return 23;
-  return 20;
+  if (maxLen < 35) return 22;
+  if (maxLen < 55) return 19;
+  return 17;
 }
 
 function AnatomyDecor({ themeId, color: c }) {
@@ -61,13 +61,13 @@ function AnatomyDecor({ themeId, color: c }) {
   }
   if (themeId === "biochemistry") {
     const N = 9;
-    const H = 300;
+    const SH = 300;
     const strands = Array.from({ length: N }, (_, i) => {
       const t = i / (N - 1);
-      const y = 14 + t * (H - 28);
+      const y = 14 + t * (SH - 28);
       const ox = Math.sin(t * 2 * Math.PI) * 52;
       const nt = (i + 1) / (N - 1);
-      const ny = 14 + nt * (H - 28);
+      const ny = 14 + nt * (SH - 28);
       const nox = Math.sin(nt * 2 * Math.PI) * 52;
       return (
         <g key={i}>
@@ -82,7 +82,7 @@ function AnatomyDecor({ themeId, color: c }) {
       );
     });
     return (
-      <svg width="260" height={H + 10} viewBox={`0 0 260 ${H + 10}`} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="260" height={SH + 10} viewBox={`0 0 260 ${SH + 10}`} fill="none" xmlns="http://www.w3.org/2000/svg">
         {strands}
       </svg>
     );
@@ -172,7 +172,6 @@ function AnatomyDecor({ themeId, color: c }) {
       </svg>
     );
   }
-  // Default: abstract molecule / rings
   return (
     <svg width="280" height="268" viewBox="0 0 280 268" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="140" cy="102" r="36" stroke={c} strokeWidth="2" />
@@ -187,14 +186,19 @@ function AnatomyDecor({ themeId, color: c }) {
 }
 
 /**
- * Premium HTML/CSS story card (1080×1920).
- * @param {{ ders: string, konu: string, questionText: string, options: Array, previewWidth: number|null }} props
+ * Premium HTML/CSS post card (1080×1350, Instagram 4:5 feed).
+ * @param {{ ders: string, konu: string, questionText: string, options: Array,
+ *           showAnswer?: boolean, correctIndex?: number, explanation?: string,
+ *           previewWidth?: number|null }} props
  */
 export default function StoryCard({
   ders = "",
   konu = "",
   questionText = "",
   options = [],
+  showAnswer = false,
+  correctIndex = -1,
+  explanation = "",
   previewWidth = null,
 }) {
   const theme = useMemo(() => getTopicTheme({ ders, konu }), [ders, konu]);
@@ -209,7 +213,7 @@ export default function StoryCard({
   const optSize = optionFontSize(options);
 
   const W = 1080;
-  const H = 1920;
+  const H = 1350;
   const scale = previewWidth ? previewWidth / W : 1;
 
   const bg = [
@@ -243,9 +247,9 @@ export default function StoryCard({
       <div
         style={{
           position: "absolute",
-          top: 56,
-          left: 60,
-          right: 60,
+          top: 40,
+          left: 54,
+          right: 54,
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
@@ -254,7 +258,7 @@ export default function StoryCard({
         <span
           style={{
             fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: 28,
+            fontSize: 24,
             fontWeight: 900,
             letterSpacing: "0.12em",
             color: `rgba(${abr}, 0.72)`,
@@ -264,15 +268,15 @@ export default function StoryCard({
         </span>
         <div
           style={{
-            width: 54,
-            height: 54,
+            width: 46,
+            height: 46,
             borderRadius: "50%",
             background: `rgba(${ar}, 0.14)`,
             border: `1.5px solid rgba(${ar}, 0.38)`,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: 26,
+            fontSize: 22,
             fontWeight: 900,
             color: accentBright,
             fontFamily: "'Space Grotesk', sans-serif",
@@ -286,9 +290,9 @@ export default function StoryCard({
       <div
         style={{
           position: "absolute",
-          top: 126,
+          top: 88,
           right: 42,
-          opacity: 0.2,
+          opacity: 0.20,
           filter: `drop-shadow(0 0 48px rgba(${abr}, 0.38))`,
           pointerEvents: "none",
         }}
@@ -300,7 +304,7 @@ export default function StoryCard({
       <div
         style={{
           position: "absolute",
-          top: 480,
+          top: 336,
           left: 16,
           opacity: 0.07,
           transform: "scale(0.52)",
@@ -315,26 +319,26 @@ export default function StoryCard({
       <div
         style={{
           position: "absolute",
-          top: 800,
-          left: 54,
-          right: 54,
+          top: 560,
+          left: 48,
+          right: 48,
           display: "flex",
           flexDirection: "column",
-          gap: 22,
+          gap: 14,
         }}
       >
         {/* Subject + konu badge */}
         <div style={{ display: "flex", justifyContent: "center" }}>
           <div
             style={{
-              padding: "11px 32px",
+              padding: "9px 26px",
               borderRadius: 40,
               background: `rgba(${ar}, 0.12)`,
               border: `1.5px solid rgba(${ar}, 0.38)`,
               backdropFilter: "blur(12px)",
               WebkitBackdropFilter: "blur(12px)",
               fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: 19,
+              fontSize: 17,
               fontWeight: 900,
               letterSpacing: "0.08em",
               color: accentBright,
@@ -348,29 +352,47 @@ export default function StoryCard({
           </div>
         </div>
 
-        {/* Kicker */}
-        <div
-          style={{
-            textAlign: "center",
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: 36,
-            fontWeight: 900,
-            letterSpacing: "0.22em",
-            color: "rgba(218, 230, 244, 0.86)",
-          }}
-        >
-          S O R U
-        </div>
+        {/* Kicker — only on question slide */}
+        {!showAnswer && (
+          <div
+            style={{
+              textAlign: "center",
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 28,
+              fontWeight: 900,
+              letterSpacing: "0.22em",
+              color: "rgba(218, 230, 244, 0.86)",
+            }}
+          >
+            S O R U
+          </div>
+        )}
+
+        {/* Answer banner — only on answer slide */}
+        {showAnswer && (
+          <div
+            style={{
+              textAlign: "center",
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 22,
+              fontWeight: 900,
+              letterSpacing: "0.14em",
+              color: "#34d399",
+            }}
+          >
+            ✓ DOĞRU CEVAP
+          </div>
+        )}
 
         {/* Question card */}
         <div
           style={{
             background: "rgba(5, 10, 30, 0.74)",
             border: `1px solid rgba(${ar}, 0.28)`,
-            borderRadius: 22,
+            borderRadius: 18,
             backdropFilter: "blur(16px)",
             WebkitBackdropFilter: "blur(16px)",
-            padding: "36px 40px",
+            padding: "26px 32px",
             boxShadow: `0 8px 36px rgba(0,0,0,0.52), 0 0 80px rgba(${ar}, 0.06)`,
           }}
         >
@@ -389,51 +411,62 @@ export default function StoryCard({
         </div>
 
         {/* Options */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 13 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 9 }}>
           {shownOpts.map((opt, i) => {
             const letter = opt.letter || String.fromCharCode(65 + i);
             const text = opt.text || String(opt || "");
+            const isCorrect = showAnswer && i === correctIndex;
+            const isDimmed = showAnswer && !isCorrect;
             return (
               <div
                 key={i}
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: 20,
-                  background: "rgba(5, 8, 25, 0.66)",
-                  border: "1px solid rgba(255,255,255,0.09)",
-                  borderRadius: 14,
-                  padding: "18px 24px",
-                  minHeight: 76,
+                  gap: 16,
+                  background: isCorrect
+                    ? "rgba(16, 185, 129, 0.18)"
+                    : "rgba(5, 8, 25, 0.66)",
+                  border: isCorrect
+                    ? "1.5px solid rgba(52, 211, 153, 0.55)"
+                    : "1px solid rgba(255,255,255,0.09)",
+                  borderRadius: 12,
+                  padding: "13px 20px",
+                  minHeight: 62,
                   backdropFilter: "blur(8px)",
                   WebkitBackdropFilter: "blur(8px)",
+                  opacity: isDimmed ? 0.65 : 1,
                 }}
               >
                 <div
                   style={{
-                    width: 50,
-                    height: 50,
-                    borderRadius: 12,
+                    width: 42,
+                    height: 42,
+                    borderRadius: 10,
                     flexShrink: 0,
-                    background: `rgba(${ar}, 0.70)`,
-                    border: `1px solid rgba(${abr}, 0.42)`,
+                    background: isCorrect
+                      ? "rgba(16, 185, 129, 0.80)"
+                      : `rgba(${ar}, 0.70)`,
+                    border: isCorrect
+                      ? "1px solid rgba(52, 211, 153, 0.60)"
+                      : `1px solid rgba(${abr}, 0.42)`,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: 22,
+                    fontSize: 18,
                     fontWeight: 900,
                     color: "#fff",
                   }}
                 >
-                  {letter}
+                  {isCorrect ? "✓" : letter}
                 </div>
                 <span
                   style={{
                     fontFamily: "'Inter', sans-serif",
                     fontSize: optSize,
-                    fontWeight: 600,
-                    color: "#c8d6e5",
+                    fontWeight: isCorrect ? 700 : 600,
+                    color: isCorrect ? "#a7f3d0" : "#c8d6e5",
                     lineHeight: 1.36,
                   }}
                 >
@@ -443,24 +476,47 @@ export default function StoryCard({
             );
           })}
         </div>
+
+        {/* Explanation — only on answer slide */}
+        {showAnswer && explanation && (
+          <div
+            style={{
+              background: "rgba(16, 185, 129, 0.06)",
+              border: "1px solid rgba(52, 211, 153, 0.20)",
+              borderRadius: 12,
+              padding: "14px 20px",
+              fontFamily: "'Inter', sans-serif",
+              fontSize: 17,
+              fontWeight: 500,
+              color: "#8fa0b0",
+              lineHeight: 1.55,
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: 3,
+              overflow: "hidden",
+            }}
+          >
+            {explanation}
+          </div>
+        )}
       </div>
 
       {/* Footer */}
       <div
         style={{
           position: "absolute",
-          bottom: 50,
+          bottom: 36,
           left: 0,
           right: 0,
           textAlign: "center",
           fontFamily: "'Inter', sans-serif",
-          fontSize: 19,
+          fontSize: 16,
           fontWeight: 500,
           color: "#6b7a8d",
           letterSpacing: "0.02em",
         }}
       >
-        Cevabını yorumlara yaz · tusoskop.com
+        {showAnswer ? "tusoskop.com" : "Cevabını yorumlara yaz · tusoskop.com"}
       </div>
     </div>
   );
