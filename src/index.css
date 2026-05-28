@@ -103,6 +103,29 @@ button:active {
   padding-bottom: calc(12px + env(safe-area-inset-bottom));
 }
 
+.bottom-nav-safe-scroll {
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: calc(7rem + env(safe-area-inset-bottom));
+  scroll-padding-bottom: calc(7rem + env(safe-area-inset-bottom));
+}
+
+.bottom-nav-safe-scroll-inner {
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  scroll-padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 768px) {
+  .bottom-nav-safe-scroll {
+    padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+    scroll-padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+  }
+}
+
 /* Yapışkan çubuklar: Android/WebView’da daha hafif blur; iOS’ta daha güçlü */
 .sticky-bar-blur {
   -webkit-backdrop-filter: blur(10px);

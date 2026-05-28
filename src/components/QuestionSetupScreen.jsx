@@ -233,10 +233,9 @@ export default function QuestionSetupScreen({
 
   return (
     <div
-      className="min-h-dvh bg-slate-950 text-white p-4 md:p-8 overflow-y-auto"
+      className="bottom-nav-safe-scroll bg-slate-950 text-white p-4 md:p-8"
       style={{
         paddingTop: "calc(1rem + env(safe-area-inset-top))",
-        paddingBottom: "calc(1.5rem + env(safe-area-inset-bottom))",
       }}
     >
       <div className="max-w-4xl mx-auto space-y-6">
@@ -346,7 +345,7 @@ export default function QuestionSetupScreen({
 
             {loadError ? <p className="text-sm text-rose-400">{loadError}</p> : null}
 
-            <div className="max-h-64 overflow-y-auto rounded-xl border border-slate-800 divide-y divide-slate-800/80">
+            <div className="bottom-nav-safe-scroll-inner max-h-[min(22rem,55dvh)] overflow-y-auto rounded-xl border border-slate-800 divide-y divide-slate-800/80">
               {loadingTopics ? (
                 <p className="p-4 text-sm text-slate-500">Konular hazırlanıyor…</p>
               ) : visibleTopics.length === 0 ? (

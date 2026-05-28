@@ -170,14 +170,14 @@ export default function TopicTracker({ onBack, user }) {
 
   if (historyLoading) {
     return (
-      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+      <div className="min-h-dvh bg-slate-950 flex items-center justify-center">
         <p className="text-slate-400 text-sm animate-pulse">Yükleniyor...</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 px-4 py-6 text-slate-100">
+    <div className="bottom-nav-safe-scroll bg-slate-950 px-4 py-6 text-slate-100">
       <div className="mx-auto max-w-6xl space-y-5">
         <div className="relative overflow-hidden rounded-[2rem] border border-violet-300/25 bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950/70 p-6 shadow-[0_25px_70px_-45px_rgba(139,92,246,0.9)]">
           <div className="pointer-events-none absolute -right-16 -top-20 h-52 w-52 rounded-full bg-violet-500/25 blur-3xl" />

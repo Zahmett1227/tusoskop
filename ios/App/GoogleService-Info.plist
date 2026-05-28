@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>447547841381-7aisne06vbgialiqeq3cgsfeholthbvm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.447547841381-7aisne06vbgialiqeq3cgsfeholthbvm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAdJ57XiwovYdjxJkwj94YnC6Sq3D-kLRk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>447547841381</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.tusoskop.app</string>
+	<key>PROJECT_ID</key>
+	<string>tusoskop</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tusoskop.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:447547841381:ios:8c05acc2d87f57726b1f8c</string>
+	<key>DATABASE_URL</key>
+	<string>https://tusoskop-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>
