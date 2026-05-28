@@ -183,12 +183,35 @@ export default function SocialMediaContentPreview({ content, phoneFrame = true }
     ? "mx-auto max-w-[300px] rounded-[1.75rem] border-[3px] border-slate-600 bg-slate-950 p-1.5 overflow-hidden"
     : "";
 
-  // Prefer HTML/CSS StoryCard when we have structured question data.
-  // SVG slides (from old pipeline) can't load web fonts inside <img> tags.
-  const useStoryCard = Boolean(preview.questionText);
-  const savedSlides = !useStoryCard && Array.isArray(content.carouselSlides)
-    ? content.carouselSlides.filter((slide) => slideDataUrl(slide))
-    : [];
+  // A valid daily question carousel needs both a question and ≥2 options.
+  // Old MINI_TIP / FEATURE_PROMO drafts only have a bullet text → render
+  // a clear warning instead of an empty card.
+  const hasQuestionData = Boolean(preview.questionText) && preview.options.length >= 2;
+
+  if (!hasQuestionData) {
+    return (
+      <div className="grid md:grid-cols-2 gap-4">
+        <div className="rounded-2xl border border-amber-700/50 bg-amber-950/30 p-4">
+          <p className="text-xs font-bold text-amber-400 mb-2">⚠ Eski tür içerik</p>
+          <p className="text-sm text-slate-200 leading-relaxed">
+            Bu taslak yeni 3 slaytlı soru-cevap karuseli formatına uymuyor (soru veya
+            şıklar eksik). Sil ya da "Görseli Yenile" ile düzenle.
+          </p>
+          <p className="text-xs text-slate-500 mt-3">
+            Tip: {content.type || "bilinmiyor"} · ID: {content.id}
+          </p>
+        </div>
+        <div className="rounded-2xl border border-slate-700 bg-slate-900/60 p-4">
+          <p className="text-xs font-bold text-slate-400 mb-2">Caption</p>
+          <pre className="whitespace-pre-wrap text-sm text-slate-200 font-medium leading-relaxed">
+            {content.caption || "—"}
+          </pre>
+        </div>
+      </div>
+    );
+  }
+
+  const savedSlides = [];
 
   const slides = savedSlides.length
     ? savedSlides.map((slide, i) => ({

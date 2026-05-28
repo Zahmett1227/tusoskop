@@ -81,15 +81,66 @@ def get_recently_used_ids(db, days: int = RECENT_DAYS) -> set[int]:
     return used
 
 
+def question_options(question: dict) -> list[str]:
+    if isinstance(question.get("options"), list):
+        return [str(x.get("text", x) if isinstance(x, dict) else x).strip()
+                for x in question["options"] if str(x).strip()]
+    return [
+        str(question.get(f"option_{i}", "")).strip()
+        for i in range(1, 6)
+        if str(question.get(f"option_{i}", "")).strip()
+    ]
+
+
+def correct_index(question: dict) -> int:
+    raw = question.get("cevap", question.get("correct", 0))
+    if isinstance(raw, str) and raw.upper() in ["A", "B", "C", "D", "E"]:
+        return ord(raw.upper()) - ord("A")
+    try:
+        return int(raw)
+    except (TypeError, ValueError):
+        return 0
+
+
+def build_visual_spec(question: dict) -> dict:
+    opts = question_options(question)
+    return {
+        "templateType": "question_post",
+        "format": "1080x1350",
+        "ders": question.get("ders"),
+        "konu": question.get("konu"),
+        "questionText": question.get("soru") or question.get("q") or "",
+        "options": [
+            {"letter": chr(ord("A") + i), "text": text}
+            for i, text in enumerate(opts)
+        ],
+    }
+
+
 def log_to_firestore(db, question: dict, status: str,
                      media_id: str | None = None,
-                     error: str | None = None):
+                     error: str | None = None,
+                     caption: str | None = None):
+    opts = question_options(question)
+    c_index = correct_index(question)
+    correct_text = opts[c_index] if 0 <= c_index < len(opts) else ""
     doc = {
-        "type": "carousel_post",
+        "type": "daily_question",
         "status": status,
+        "title": f"Günün TUS Sorusu — {question.get('ders', '')}",
+        "caption": caption if caption is not None else build_caption(question),
+        "hashtags": ["#TUS", "#TUSsınavı", "#TıpSınavı"],
         "sourceQuestionId": question.get("id"),
         "sourceDers": question.get("ders"),
         "sourceKonu": question.get("konu"),
+        "answerPayload": {
+            "correctIndex": c_index,
+            "correctText": correct_text,
+            "explanation": question.get("exp", ""),
+        },
+        "visualMode": "carousel",
+        "visualSpec": build_visual_spec(question),
+        "carouselSlideCount": 3,
         "createdAt": firestore.SERVER_TIMESTAMP,
         "createdBy": "github-actions",
         "platform": "instagram",
@@ -195,7 +246,7 @@ def create_carousel_container(ig_user_id: str, children: list[str],
     resp = requests.post(
         f"{IG_API}/{ig_user_id}/media",
         data={
-            "media_type": "CAROUSEL_ALBUM",
+            "media_type": "CAROUSEL",
             "children": ",".join(children),
             "caption": caption,
             "access_token": access_token,
@@ -203,11 +254,11 @@ def create_carousel_container(ig_user_id: str, children: list[str],
         timeout=30,
     )
     if not resp.ok:
-        print(f"   → CAROUSEL_ALBUM container hata: {resp.text}")
+        print(f"   → CAROUSEL container hata: {resp.text}")
     resp.raise_for_status()
     container_id = resp.json().get("id")
     if not container_id:
-        raise RuntimeError(f"CAROUSEL_ALBUM container ID alinamadi: {resp.text}")
+        raise RuntimeError(f"CAROUSEL container ID alinamadi: {resp.text}")
     return container_id
 
 
@@ -344,7 +395,7 @@ def main():
         media_id = publish_media(ig_user_id, carousel_id, access_token)
         print(f"✓ Post yayinlandi! media_id={media_id}")
 
-        log_to_firestore(db, question, "published", media_id=media_id)
+        log_to_firestore(db, question, "published", media_id=media_id, caption=caption)
         print("✓ Firestore log yazildi")
 
     except Exception as e:
