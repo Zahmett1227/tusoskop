@@ -8,11 +8,11 @@ function hexToRgb(hex) {
 
 function questionFontSize(text) {
   const len = (text || "").length;
-  if (len < 80) return 36;
-  if (len < 130) return 32;
-  if (len < 190) return 27;
-  if (len < 260) return 24;
-  return 21;
+  if (len < 80) return 42;
+  if (len < 130) return 38;
+  if (len < 190) return 32;
+  if (len < 260) return 28;
+  return 25;
 }
 
 function optionFontSize(options) {
@@ -319,7 +319,7 @@ export default function StoryCard({
       <div
         style={{
           position: "absolute",
-          top: 560,
+          top: 500,
           left: 48,
           right: 48,
           display: "flex",
@@ -388,11 +388,11 @@ export default function StoryCard({
         <div
           style={{
             background: "rgba(5, 10, 30, 0.74)",
-            border: `1px solid rgba(${ar}, 0.28)`,
-            borderRadius: 18,
+            border: `1.5px solid rgba(${ar}, 0.35)`,
+            borderRadius: 22,
             backdropFilter: "blur(16px)",
             WebkitBackdropFilter: "blur(16px)",
-            padding: "26px 32px",
+            padding: "34px 40px",
             boxShadow: `0 8px 36px rgba(0,0,0,0.52), 0 0 80px rgba(${ar}, 0.06)`,
           }}
         >
