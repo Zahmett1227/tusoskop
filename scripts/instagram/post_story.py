@@ -246,7 +246,6 @@ def create_carousel_container(ig_user_id: str, children: list[str],
     resp = requests.post(
         f"{IG_API}/{ig_user_id}/media",
         data={
-            "media_type": "CAROUSEL",
             "children": ",".join(children),
             "caption": caption,
             "access_token": access_token,
