@@ -49,23 +49,25 @@
     /* ── Anatomy decor ── */
     .decor-main {
       position: absolute;
-      top: 88px; right: 42px;
-      opacity: 0.20;
+      top: 76px; right: 34px;
+      opacity: 0.10;
+      transform: scale(0.62);
+      transform-origin: top right;
       filter: drop-shadow(0 0 48px var(--accent-bright-38));
       pointer-events: none;
     }
     .decor-small {
       position: absolute;
-      top: 336px; left: 16px;
-      opacity: 0.07;
-      transform: scale(0.52);
+      top: 88px; left: 28px;
+      opacity: 0.06;
+      transform: scale(0.40);
       transform-origin: top left;
       pointer-events: none;
     }
     /* ── Content zone ── */
     .post-content {
       position: absolute;
-      top: 560px; left: 48px; right: 48px;
+      top: 256px; left: 48px; right: 48px;
       display: flex; flex-direction: column; gap: 14px;
     }
     .subject-badge-wrap { display: flex; justify-content: center; }
@@ -184,6 +186,13 @@
     }
     .promo-logo-wrap {
       margin-bottom: 36px;
+    }
+    .promo-logo-img {
+      width: 360px;
+      height: 360px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 12px 48px rgba(52, 211, 153, 0.18));
     }
     .promo-brand {
       font-family: 'Space Grotesk', sans-serif;
@@ -492,11 +501,13 @@ ${lines}
         `linear-gradient(180deg, #01030f 0%, #050e18 40%, #01030f 100%)`
       ].join(', ');
 
+      const logoHtml = data.logoDataUrl
+        ? `<img class="promo-logo-img" src="${data.logoDataUrl}" alt="TUSOSKOP" />`
+        : PROMO_LOGO;
+
       return `
 <div class="promo-root" style="background:${promoBg}">
-  <div class="promo-logo-wrap">${PROMO_LOGO}</div>
-  <div class="promo-brand">TUSOS<span>KOP</span></div>
-  <div class="promo-divider"></div>
+  <div class="promo-logo-wrap">${logoHtml}</div>
   <div class="promo-lines">
     <div class="promo-line">TUSOSKOP'la soru çöz.</div>
     <div class="promo-line">Eksiklerini öğren.</div>

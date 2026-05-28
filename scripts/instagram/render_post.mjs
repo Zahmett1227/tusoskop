@@ -3,7 +3,7 @@
  * Usage: node render_post.mjs '<question-json>' /slide1.jpg /slide2.jpg /slide3.jpg
  */
 import puppeteer from "puppeteer-core";
-import { existsSync, readFileSync, writeFileSync, unlinkSync } from "fs";
+import { existsSync, readFileSync, statSync, writeFileSync, unlinkSync } from "fs";
 import { tmpdir } from "os";
 import { join } from "path";
 import { fileURLToPath } from "url";
@@ -30,13 +30,22 @@ function findChrome() {
 }
 
 async function renderPost(questionJson, outputPaths) {
-  const question = JSON.parse(questionJson);
+  const question = normalizeQuestion(JSON.parse(questionJson));
+  validateQuestion(question);
 
   const templatePath = join(__dir, "post_template.html");
   const templateHtml = readFileSync(templatePath, "utf8");
 
+  // Custom logo for slide 3 promo (optional — falls back to inline SVG if missing or empty).
+  const logoPath = join(__dir, "logo.png");
+  let logoDataUrl = "";
+  if (existsSync(logoPath) && statSync(logoPath).size > 0) {
+    const buf = readFileSync(logoPath);
+    logoDataUrl = `data:image/png;base64,${buf.toString("base64")}`;
+  }
+
   // Inject data and set initial slideType=1
-  const dataWithSlide = { ...question, slideType: 1 };
+  const dataWithSlide = { ...question, slideType: 1, logoDataUrl };
   const injectedHtml = templateHtml.replace(
     "var data = window.STORY_DATA || {};",
     `var data = window.STORY_DATA || ${JSON.stringify(dataWithSlide)};`
@@ -94,6 +103,46 @@ async function renderPost(questionJson, outputPaths) {
   } finally {
     await browser.close();
     try { unlinkSync(tmpHtml); } catch {}
+  }
+}
+
+function normalizeQuestion(raw) {
+  const fromOptions = Array.isArray(raw.options)
+    ? raw.options
+        .map((opt) => (typeof opt === "string" ? opt : opt?.text))
+        .filter(Boolean)
+    : [];
+  const optionFields = [1, 2, 3, 4, 5].map((i) => raw[`option_${i}`]).filter(Boolean);
+  const options = optionFields.length ? optionFields : fromOptions;
+  const normalized = {
+    ...raw,
+    soru: raw.soru || raw.q || raw.questionText || raw.body || "",
+    cevap: normalizeCorrect(raw.cevap ?? raw.correct ?? raw.correctIndex ?? 0),
+    exp: raw.exp || raw.explanation || raw.answerPayload?.explanation || "",
+  };
+
+  options.slice(0, 5).forEach((text, index) => {
+    normalized[`option_${index + 1}`] = String(text || "").trim();
+  });
+
+  return normalized;
+}
+
+function normalizeCorrect(value) {
+  if (typeof value === "string" && /^[A-E]$/i.test(value.trim())) {
+    return value.trim().toUpperCase().charCodeAt(0) - 65;
+  }
+  const numeric = Number(value);
+  return Number.isFinite(numeric) ? Math.max(0, Math.min(4, numeric)) : 0;
+}
+
+function validateQuestion(question) {
+  const optionCount = [1, 2, 3, 4, 5].filter((i) => question[`option_${i}`]).length;
+  if (!String(question.soru || "").trim()) {
+    throw new Error("Post gorseli icin soru metni bos geldi.");
+  }
+  if (optionCount < 2) {
+    throw new Error("Post gorseli icin en az iki sik gerekli.");
   }
 }
 
