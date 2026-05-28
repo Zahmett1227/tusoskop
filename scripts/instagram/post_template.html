@@ -122,9 +122,9 @@
     }
     .option-row.correct {
       background: rgba(16, 185, 129, 0.18);
-      border: 1.5px solid rgba(52, 211, 153, 0.55);
+      border: 2px solid rgba(52, 211, 153, 0.85);
+      box-shadow: 0 0 24px rgba(52, 211, 153, 0.32);
     }
-    .option-row.dimmed { opacity: 0.65; }
     .option-letter {
       width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
       background: var(--accent-70);
@@ -393,11 +393,18 @@ ${lines}
       const root = document.getElementById('root');
       const ders = data.ders || '';
       const konu = data.konu || '';
-      const soru = data.soru || data.questionText || '';
-      const cevap = typeof data.cevap === 'number' ? data.cevap : 0;
-      const exp = data.exp || '';
+      const soru = data.soru || data.q || data.questionText || '';
+      const cevap = typeof data.cevap === 'number'
+        ? data.cevap
+        : (typeof data.correct === 'number' ? data.correct : 0);
+      const exp = data.exp || data.explanation || (data.answerPayload && data.answerPayload.explanation) || '';
 
-      const rawOpts = [data.option_1, data.option_2, data.option_3, data.option_4, data.option_5].filter(Boolean);
+      let rawOpts = [data.option_1, data.option_2, data.option_3, data.option_4, data.option_5].filter(Boolean);
+      if (!rawOpts.length && Array.isArray(data.options)) {
+        rawOpts = data.options
+          .map((opt) => typeof opt === 'string' ? opt : opt && opt.text)
+          .filter(Boolean);
+      }
 
       if (slideType === 3) {
         root.innerHTML = buildSlide3();
@@ -446,17 +453,14 @@ ${lines}
         const letters = ['A', 'B', 'C', 'D', 'E'];
         const letter = letters[i] || String.fromCharCode(65 + i);
         const isCorrect = showAnswer && i === cevap;
-        const isDimmed = showAnswer && !isCorrect;
         return `
-<div class="option-row${isCorrect ? ' correct' : ''}${isDimmed ? ' dimmed' : ''}">
-  <div class="option-letter${isCorrect ? ' correct-badge' : ''}">${isCorrect ? '✓' : letter}</div>
+<div class="option-row${isCorrect ? ' correct' : ''}">
+  <div class="option-letter${isCorrect ? ' correct-badge' : ''}">${letter}</div>
   <span class="option-text${isCorrect ? ' correct-text' : ''}" style="font-size:${optFontSize}px">${escHtml(optText)}</span>
 </div>`;
       }).join('');
 
-      const explanationHtml = (showAnswer && exp)
-        ? `<div class="explanation-box">${escHtml(exp)}</div>`
-        : '';
+      const explanationHtml = '';
 
       root.innerHTML = `
 <div class="post-root" style="background:${bg}">
