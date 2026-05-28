@@ -12,6 +12,7 @@ import {
   getSmartReviews,
   mergeSmartReviewsIntoLocal,
 } from "./smartReviewService";
+import { isDemoMode } from "./demoModeService";
 
 /** Firestore writeBatch üst sınırı 500; yanlış başına 2 write → güvenli chunk. */
 export const MAX_WRITES_PER_BATCH = 450;
@@ -168,9 +169,10 @@ export async function saveExamWrongAndSmartReviewsBatch(
   if (!deduped.length) {
     return { ok: true, count: 0, writeCount: 0 };
   }
+  const demoMode = isDemoMode(user, userData);
 
   const questionIds = deduped.map((item) => item.questionId);
-  const existingWrongById = user?.uid
+  const existingWrongById = user?.uid && !demoMode
     ? await fetchExistingWrongByIds(user, questionIds)
     : new Map();
   const existingReviews = await getSmartReviews(user);
@@ -191,7 +193,7 @@ export async function saveExamWrongAndSmartReviewsBatch(
   }
 
   let firestoreOk = false;
-  if (user?.uid && writes.length && canSyncSmartReviewsToFirestore(user)) {
+  if (!demoMode && user?.uid && writes.length && canSyncSmartReviewsToFirestore(user)) {
     try {
       await commitFirestoreBatches(writes);
       firestoreOk = true;

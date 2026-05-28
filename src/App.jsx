@@ -53,6 +53,7 @@ import {
 import { SUBJECTS as SUBJECT_CATALOG } from "./data/subjects";
 import { SUBJECT_QUESTION_COUNTS } from "./data/questions";
 import { applyQuestionTextFilter } from "./utils/questionTextFilter";
+import { shouldShowDemoLogin } from "./services/demoModeService";
 
 const Dashboard = lazy(() => import("./components/Dashboard"));
 const Suggestions = lazy(() => import("./components/Suggestions"));
@@ -125,11 +126,14 @@ export default function App() {
   const {
     user,
     userData,
+    isDemo,
     isAdmin,
     remainingUsage,
     refreshRemainingUsage,
     favoriteQuestionIds,
     setFavoriteQuestionIds,
+    startDemoMode,
+    endDemoMode,
   } = useAppAuthBootstrap(setView);
 
   const [bottomNavReviewCount, setBottomNavReviewCount] = useState(0);
@@ -142,7 +146,7 @@ export default function App() {
   });
 
   const refreshSmartReviewSummary = useCallback(async () => {
-    if (!user?.uid) {
+    if (!user?.uid && !isDemo) {
       setSmartReviewSummary({
         dueCount: 0,
         overdueCount: 0,
@@ -167,7 +171,7 @@ export default function App() {
       });
       setBottomNavReviewCount(0);
     }
-  }, [user]);
+  }, [isDemo, user]);
 
   useEffect(() => {
     refreshSmartReviewSummary();
@@ -270,6 +274,7 @@ export default function App() {
   const topicStudy = useTopicStudyFlow({
     user,
     userData,
+    isDemo,
     view,
     setView,
     ensureQuestionsForSubject,
@@ -288,6 +293,9 @@ export default function App() {
   const { openTopicSetup, questionSetupScreenProps } = topicStudy;
 
   const guardedSetView = async (nextView) => {
+    if (isDemo && nextView === "premiumInfo") {
+      return;
+    }
     if (nextView === "questionSetup") {
       openTopicSetup();
       return;
@@ -497,7 +505,11 @@ export default function App() {
           <p className="text-slate-400 mb-10 text-center max-w-sm">
             TUS hazırlık sürecini dijital asistanınla yönet. Verilerini bulutta sakla.
           </p>
-          <SignInOptions accentTheme={accentTheme} />
+          <SignInOptions
+            accentTheme={accentTheme}
+            onDemoLogin={startDemoMode}
+            showDemoLogin={shouldShowDemoLogin()}
+          />
         </div>
         <IOSInstallBanner />
       </div>
@@ -516,14 +528,17 @@ export default function App() {
           user={user}
           userData={userData}
           remainingUsage={remainingUsage}
-          onLogout={logout}
+          onLogout={isDemo ? endDemoMode : logout}
           isAdmin={isAdmin}
+          isDemo={isDemo}
           accentTheme={accentTheme}
           accentThemeKey={accentThemeKey}
           onAccentThemeChange={handleAccentThemeChange}
           currentView={view}
           onOpenLegalPage={openLegalPage}
-          onOpenAccountSettings={() => setView("accountSettings")}
+          onOpenAccountSettings={() => {
+            if (!isDemo) setView("accountSettings");
+          }}
           smartReviewSummary={smartReviewSummary}
           onStartSmartReview={startSmartReview}
         />
@@ -531,7 +546,7 @@ export default function App() {
       break;
 
     case "questionSetup":
-      if (!isUserPremium(userData)) {
+      if (!isDemo && !isUserPremium(userData)) {
         screenContent = (
           <Dashboard
             setView={guardedSetView}
@@ -540,14 +555,17 @@ export default function App() {
             user={user}
             userData={userData}
             remainingUsage={remainingUsage}
-            onLogout={logout}
+            onLogout={isDemo ? endDemoMode : logout}
             isAdmin={isAdmin}
+            isDemo={isDemo}
             accentTheme={accentTheme}
             accentThemeKey={accentThemeKey}
             onAccentThemeChange={handleAccentThemeChange}
             currentView={view}
             onOpenLegalPage={openLegalPage}
-            onOpenAccountSettings={() => setView("accountSettings")}
+            onOpenAccountSettings={() => {
+              if (!isDemo) setView("accountSettings");
+            }}
             smartReviewSummary={smartReviewSummary}
             onStartSmartReview={startSmartReview}
           />
@@ -598,6 +616,7 @@ export default function App() {
           userId={user?.uid}
           user={user}
           userData={userData}
+          isDemo={isDemo}
           getExamAnswersSnapshot={() => examState.examAnswersRef.current}
           onJump={(idx) => {
             const currentQuestion = examState.examQuestions[examState.examIndex];
@@ -637,6 +656,7 @@ export default function App() {
         <ExamAnalysisScreen
           examAnalysis={examState.examAnalysis} estimatedTus={examState.estimatedTus}
           userData={userData}
+          isDemo={isDemo}
           accentTheme={accentTheme}
           startFullExam={startFullExam} goDashboard={goDashboard}
         />
@@ -665,6 +685,7 @@ export default function App() {
           favoriteFeedback={studyState.favoriteFeedback}
           goDashboard={goDashboard}
           user={user}
+          isDemo={isDemo}
         />
       );
       break;
@@ -674,6 +695,7 @@ export default function App() {
         <StudyCollectionScreen
           user={user}
           userData={userData}
+          isDemo={isDemo}
           questions={QUESTIONS}
           accentTheme={accentTheme}
           accentThemeKey={accentThemeKey}
@@ -727,10 +749,35 @@ export default function App() {
       break;
 
     case "premiumInfo":
+      if (isDemo) {
+        screenContent = (
+          <Dashboard
+            setView={guardedSetView}
+            openTopicSetup={openTopicSetup}
+            startSubject={startSubject}
+            user={user}
+            userData={userData}
+            remainingUsage={remainingUsage}
+            onLogout={endDemoMode}
+            isAdmin={isAdmin}
+            isDemo={isDemo}
+            accentTheme={accentTheme}
+            accentThemeKey={accentThemeKey}
+            onAccentThemeChange={handleAccentThemeChange}
+            currentView={view}
+            onOpenLegalPage={openLegalPage}
+            onOpenAccountSettings={() => {}}
+            smartReviewSummary={smartReviewSummary}
+            onStartSmartReview={startSmartReview}
+          />
+        );
+        break;
+      }
       screenContent = (
         <PremiumInfoScreen
           user={user}
           userData={userData}
+          isDemo={isDemo}
           onBack={() => setView("dashboard")}
           accentTheme={accentTheme}
           accentThemeKey={accentThemeKey}
@@ -759,14 +806,17 @@ export default function App() {
           user={user}
           userData={userData}
           remainingUsage={remainingUsage}
-          onLogout={logout}
+          onLogout={isDemo ? endDemoMode : logout}
           isAdmin={isAdmin}
+          isDemo={isDemo}
           accentTheme={accentTheme}
           accentThemeKey={accentThemeKey}
           onAccentThemeChange={handleAccentThemeChange}
           currentView={view}
           onOpenLegalPage={openLegalPage}
-          onOpenAccountSettings={() => setView("accountSettings")}
+          onOpenAccountSettings={() => {
+            if (!isDemo) setView("accountSettings");
+          }}
           smartReviewSummary={smartReviewSummary}
           onStartSmartReview={startSmartReview}
         />
@@ -778,6 +828,14 @@ export default function App() {
       <Suspense fallback={<RouteFallback />}>
         {screenContent}
       </Suspense>
+      {isDemo && (
+        <div
+          className="pointer-events-none fixed right-3 top-3 z-[130] rounded-full border border-amber-300/30 bg-slate-950/85 px-3 py-1.5 text-[11px] font-black uppercase tracking-[0.16em] text-amber-200 shadow-xl backdrop-blur"
+          style={{ top: "calc(0.75rem + env(safe-area-inset-top))" }}
+        >
+          Demo modu
+        </div>
+      )}
       {studyState.questionActionLoading.active && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/70 backdrop-blur-sm px-6">
           <div className="rounded-3xl border border-slate-700 bg-slate-900/90 px-6 py-5 text-center shadow-2xl">
@@ -805,11 +863,12 @@ export default function App() {
             premiumMessage={limitModal.premiumMessage || "Aylık bir kahve ücretine Plus üyelik almak ister misiniz?"}
             premiumDescription={limitModal.premiumDescription || "Plus ile soru çözme sınırları kalkar; denemeler, tekrarlar ve gelişmiş analizler tamamen açılır."}
             user={user}
+            isDemo={isDemo}
             limitReason={limitModal.limitReason || ""}
             onClose={() => setLimitModal((prev) => ({ ...prev, open: false }))}
             onUpgradeClick={() => {
               setLimitModal((prev) => ({ ...prev, open: false }));
-              setView("premiumInfo");
+              if (!isDemo) setView("premiumInfo");
             }}
           />
         </Suspense>

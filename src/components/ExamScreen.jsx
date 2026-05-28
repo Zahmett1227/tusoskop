@@ -13,6 +13,7 @@ import {
 } from "../utils/examHistoryUtils";
 import { trackClarityEvent } from "../lib/clarity";
 import { saveExamWrongAndSmartReviewsBatch } from "../services/examFinishBatchService";
+import { isDemoMode } from "../services/demoModeService";
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -223,9 +224,11 @@ export default function ExamScreen({
   onExamCompleted,
   userId,
   userData,
+  isDemo = false,
   accentTheme,
 }) {
   const theme = accentTheme || accentThemes.emerald;
+  const demoMode = isDemo || isDemoMode(null, userData);
   const subjectVisual = examQ ? getSubjectVisual(examQ.ders) : getSubjectVisual("");
   const examProgressPct = Math.min(
     100,
@@ -242,7 +245,9 @@ export default function ExamScreen({
   // çift tıklamada iki çağrı da "kaydetmiyor" görüp ikinci kez kayıt açabiliyor.
   // useRef anında günceller, böylece tek bir handleFinish çalışması garanti edilir.
   const finishInProgressRef = useRef(false);
-  const candidateName = auth.currentUser?.displayName || auth.currentUser?.email || "ADAY";
+  const candidateName = demoMode
+    ? "Demo Kullanıcı"
+    : auth.currentUser?.displayName || auth.currentUser?.email || "ADAY";
 
   const handleSonrakiClick = () => {
     if (isSaving || finishInProgressRef.current) return;
@@ -254,6 +259,7 @@ export default function ExamScreen({
   };
 
   useEffect(() => {
+    if (demoMode) return;
     const fetchTarget = async () => {
       const user = auth.currentUser;
       if (user) {
@@ -268,18 +274,19 @@ export default function ExamScreen({
       }
     };
     fetchTarget();
-  }, []);
+  }, [demoMode]);
 
   // ── Sınavı Bitir ─────────────────────────────────────────────────────────
   const handleFinish = async () => {
     // Çift tıklama / double-submit guard'ı: senkron ref + isFinished kontrolü.
     if (finishInProgressRef.current || isFinished) return;
 
-    const user = auth.currentUser;
-    if (!user) { alert("Lütfen giriş yapın!"); return; }
+      const user = auth.currentUser;
+      if (!user && !demoMode) { alert("Lütfen giriş yapın!"); return; }
+      const syncUser = demoMode ? null : user;
 
     finishInProgressRef.current = true;
-    if (userId) updateStreak(userId);
+      if (!demoMode && userId) updateStreak(userId);
     setIsSaving(true);
     try {
       const latestAnswers = getExamAnswersSnapshot ? getExamAnswersSnapshot() : examAnswers;
@@ -346,7 +353,7 @@ export default function ExamScreen({
       });
       if (examWrongItems.length) {
         try {
-          await saveExamWrongAndSmartReviewsBatch(user, examWrongItems, userData);
+          await saveExamWrongAndSmartReviewsBatch(syncUser, examWrongItems, userData);
         } catch (wrongBatchError) {
           console.error("saveExamWrongAndSmartReviewsBatch:", wrongBatchError);
         }
@@ -358,19 +365,23 @@ export default function ExamScreen({
       const estimatedTusScore = estimatedTusNumericFromNet(totalNet);
       const resultMeta = examSetMeta ?? buildExamResultMetadata(null);
 
-      const docRef = await addDoc(collection(db, "results"), {
-        userId: user.uid,
-        ...resultMeta,
-        completedAt,
-        date: serverTimestamp(),
-        tusNet,
-        stats: { correct, wrong, empty, totalNet },
-        estimatedTusScore,
-        breakdown,
-      });
+      let resultId = `demo-${Date.now()}`;
+      if (!demoMode) {
+        const docRef = await addDoc(collection(db, "results"), {
+          userId: user.uid,
+          ...resultMeta,
+          completedAt,
+          date: serverTimestamp(),
+          tusNet,
+          stats: { correct, wrong, empty, totalNet },
+          estimatedTusScore,
+          breakdown,
+        });
+        resultId = docRef.id;
+      }
 
       appendLocalExamHistory({
-        id: docRef.id,
+        id: resultId,
         completedAt,
         tusNet,
         estimatedTusScore,

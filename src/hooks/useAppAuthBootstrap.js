@@ -6,6 +6,11 @@ import { getFavoriteQuestions } from "../services/studyCollectionService";
 import { isCurrentUserAdmin } from "../services/adminService";
 import { ensureUserDocument } from "../services/userService";
 import { getRemainingFreeUsage } from "../services/usageLimitService";
+import {
+  DEMO_USER,
+  DEMO_USER_DATA,
+  isDemoMode,
+} from "../services/demoModeService";
 
 /**
  * Oturum, admin, kullanım özeti ve favori kimlikleri — App içindeki auth yan etkileri.
@@ -16,12 +21,33 @@ export function useAppAuthBootstrap(setView) {
   const [isAdmin, setIsAdmin] = useState(false);
   const [remainingUsage, setRemainingUsage] = useState(null);
   const [favoriteQuestionIds, setFavoriteQuestionIds] = useState(new Set());
+  const [demoActive, setDemoActive] = useState(false);
+  const isDemo = isDemoMode(user, userData) || demoActive;
 
   const refreshRemainingUsage = useCallback(async () => {
     const usage = await getRemainingFreeUsage(user, userData);
     setRemainingUsage(usage);
     return usage;
   }, [user, userData]);
+
+  const startDemoMode = useCallback(() => {
+    setDemoActive(true);
+    setUser(DEMO_USER);
+    setUserData(DEMO_USER_DATA);
+    setIsAdmin(false);
+    setFavoriteQuestionIds(new Set());
+    setView("dashboard");
+  }, [setView]);
+
+  const endDemoMode = useCallback(() => {
+    setDemoActive(false);
+    setUser(null);
+    setUserData(null);
+    setIsAdmin(false);
+    setFavoriteQuestionIds(new Set());
+    setRemainingUsage(null);
+    setView("dashboard");
+  }, [setView]);
 
   useEffect(() => {
     // popup-blocked fallback yalnız çağrıldığında bir redirect sonucu olur;
@@ -30,6 +56,7 @@ export function useAppAuthBootstrap(setView) {
       /* sessizce yut */
     });
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      if (demoActive) return;
       try {
         if (currentUser?.uid) {
           const ensured = await ensureUserDocument(currentUser);
@@ -47,12 +74,12 @@ export function useAppAuthBootstrap(setView) {
       }
     });
     return () => unsubscribe();
-  }, [setView]);
+  }, [demoActive, setView]);
 
   useEffect(() => {
     let active = true;
     const loadAdmin = async () => {
-      if (!user?.uid) {
+      if (isDemo || !user?.uid) {
         setIsAdmin(false);
         return;
       }
@@ -63,7 +90,7 @@ export function useAppAuthBootstrap(setView) {
     return () => {
       active = false;
     };
-  }, [user]);
+  }, [isDemo, user]);
 
   useEffect(() => {
     refreshRemainingUsage().catch((error) => {
@@ -72,10 +99,10 @@ export function useAppAuthBootstrap(setView) {
   }, [refreshRemainingUsage]);
 
   useEffect(() => {
-    if (user?.uid) {
+    if (!isDemo && user?.uid) {
       identifyClarityUser(user.uid);
     }
-  }, [user]);
+  }, [isDemo, user]);
 
   useEffect(() => {
     let active = true;
@@ -93,10 +120,13 @@ export function useAppAuthBootstrap(setView) {
   return {
     user,
     userData,
+    isDemo,
     isAdmin,
     remainingUsage,
     refreshRemainingUsage,
     favoriteQuestionIds,
     setFavoriteQuestionIds,
+    startDemoMode,
+    endDemoMode,
   };
 }
