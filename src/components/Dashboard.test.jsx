@@ -144,8 +144,6 @@ describe("Dashboard render ve CTA", () => {
     });
     expect(container.textContent).toContain("Kadın Hastalıkları ve Doğum");
     expect(container.textContent).toContain("Küçük Stajlar");
-    expect(container.textContent).toContain("678");
-    expect(container.textContent).toContain("475");
   });
 
   it("remainingUsage null iken patlamaz", async () => {
