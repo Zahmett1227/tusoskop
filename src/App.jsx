@@ -54,7 +54,6 @@ import { SUBJECT_QUESTION_COUNTS } from "./data/questions";
 import { applyQuestionTextFilter } from "./utils/questionTextFilter";
 
 const Dashboard = lazy(() => import("./components/Dashboard"));
-const Suggestions = lazy(() => import("./components/Suggestions"));
 const Summary = lazy(() => import("./components/Summary"));
 const ExamScreen = lazy(() => import("./components/ExamScreen"));
 const ExamAnalysisScreen = lazy(() => import("./components/ExamAnalysisScreen"));
@@ -570,10 +569,6 @@ export default function App() {
 
     case "tracker":
       screenContent = <TopicTracker onBack={goDashboard} user={user} />;
-      break;
-
-    case "suggestions":
-      screenContent = <Suggestions goDashboard={goDashboard} />;
       break;
 
     case "summary":

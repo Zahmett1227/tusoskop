@@ -69,10 +69,6 @@ export default function LegalPage({
             <p className={`mt-3 text-sm font-semibold ${muted}`}>
               Son güncelleme: {page.updatedAt}
             </p>
-            <p className={`mt-2 text-xs ${muted}`}>
-              Bu metin taslak niteliğindedir; yürürlükteki mevzuat ve iş
-              uygulamalarına göre güncellenebilir.
-            </p>
           </header>
 
           <div className="space-y-8 text-sm md:text-base leading-relaxed">

@@ -57,15 +57,18 @@ export default function AdminPanel({ currentUser }) {
       return !search || name.includes(search) || email.includes(search) || uid.includes(search);
     });
 
+    const isActivePlus = (item) =>
+      item.plan === "plus" &&
+      item.premiumStatus === "active" &&
+      (item.lifetimePremium === true ||
+        !item.premiumUntil ||
+        new Date(item.premiumUntil) > new Date());
+
     if (activeFilter === "plus") {
-      return bySearch.filter(
-        (item) => item.plan === "plus" && item.premiumStatus === "active"
-      );
+      return bySearch.filter(isActivePlus);
     }
     if (activeFilter === "free") {
-      return bySearch.filter(
-        (item) => item.plan !== "plus" || item.premiumStatus !== "active"
-      );
+      return bySearch.filter((item) => !isActivePlus(item));
     }
     if (activeFilter === "no-email") {
       return bySearch.filter((item) => !item.email);

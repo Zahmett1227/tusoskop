@@ -757,17 +757,6 @@ export default function Dashboard({
               <p className={`text-[11px] font-semibold ${isLightTheme ? "text-violet-700" : "text-violet-100/80"}`}>Konu bazında ustalık, tekrar ve güç alanların</p>
             </div>
           </button>
-          <button
-            type="button"
-            onClick={() => setView("suggestions")}
-            className={`group flex items-center gap-4 px-6 py-5 rounded-[2rem] transition-all text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "bg-[#fffefb] border border-slate-300 hover:border-slate-400 shadow-md focus-visible:ring-offset-[#faf8f4] focus-visible:ring-emerald-500/45" : "bg-slate-900 border border-slate-800 hover:border-slate-600 focus-visible:ring-offset-slate-950 focus-visible:ring-emerald-400/40"}`}
-          >
-            <span className="text-2xl">💡</span>
-            <div>
-              <p className={`font-black text-sm ${isLightTheme ? "text-slate-900" : "text-white"}`}>Öneriler</p>
-              <p className="text-[10px] text-slate-500 font-medium">Strateji & tavsiyeler</p>
-            </div>
-          </button>
         </div>
         </section>
 
