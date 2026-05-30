@@ -164,9 +164,28 @@ export default function StudyCollectionScreen({
               <p className="text-sm text-slate-400 max-w-sm">
                 FSRS zamanlamasına göre bugün çalışman gereken kart bulunmuyor.
               </p>
-              <p className={`text-xs mt-3 ${theme.text}`}>
-                Yanlışlarım veya Favorilerim sekmesinden özel çalışma başlatabilirsin.
-              </p>
+              {(unresolvedWrong.length > 0 || favoriteItems.length > 0) && (
+                <div className="mt-5 flex flex-col gap-2 w-full max-w-xs">
+                  {unresolvedWrong.length > 0 && (
+                    <button
+                      type="button"
+                      onClick={handleStartWrongReview}
+                      className={`min-h-10 px-5 rounded-2xl text-sm font-black ${theme.primary} ${theme.primaryHover} text-slate-950 shadow-lg ${theme.glow}`}
+                    >
+                      Yanlışlardan Özel Çalışma ({unresolvedWrong.length} soru)
+                    </button>
+                  )}
+                  {favoriteItems.length > 0 && (
+                    <button
+                      type="button"
+                      onClick={handleStartFavoriteReview}
+                      className="min-h-10 px-5 rounded-2xl text-sm font-bold border border-slate-700 bg-slate-900/80 text-slate-200"
+                    >
+                      Favorilerden Özel Çalışma ({favoriteItems.length} soru)
+                    </button>
+                  )}
+                </div>
+              )}
             </div>
           ) : (
             <>
