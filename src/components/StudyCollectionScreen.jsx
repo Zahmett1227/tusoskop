@@ -2,12 +2,18 @@ import { useEffect, useMemo, useState } from "react";
 import { accentThemes } from "../theme/accentThemes";
 import { trackClarityEvent } from "../lib/clarity";
 import {
-  buildTodayReviewQueue,
   getFavoriteQuestions,
   getWrongQuestions,
   toggleFavoriteQuestion,
 } from "../services/studyCollectionService";
-import { getSmartReviewSummary } from "../services/smartReviewService";
+import {
+  getDueSmartReviews,
+  getSmartReviewSummary,
+  MAX_SESSION_DUE,
+  resolveQuestionsFromReviews,
+} from "../services/smartReviewService";
+import { FREE_LIMITS } from "../config/limits";
+import { isUserPremium } from "../utils/premiumUtils";
 import PerformanceChartCard from "./PerformanceChartCard";
 
 const TABS = [
@@ -54,15 +60,17 @@ export default function StudyCollectionScreen({
   const hydrate = async () => {
     setLoading(true);
     try {
-      const [wrong, favorites, queue, smartSummary] = await Promise.all([
+      const isPremium = isUserPremium(userData);
+      const dueLimit = isPremium ? MAX_SESSION_DUE : FREE_LIMITS.dailyReviewQuestions;
+      const [wrong, favorites, dueReviews, smartSummary] = await Promise.all([
         getWrongQuestions(user, userData),
         getFavoriteQuestions(user),
-        buildTodayReviewQueue(user, questions, userData),
+        getDueSmartReviews(user, new Date(), { limit: dueLimit }),
         getSmartReviewSummary(user),
       ]);
       setWrongItems(wrong);
       setFavoriteItems(favorites);
-      setTodayQueue(queue);
+      setTodayQueue(resolveQuestionsFromReviews(dueReviews, questions));
       setFsrsSummary(smartSummary ?? null);
     } finally {
       setLoading(false);
@@ -152,12 +160,12 @@ export default function StudyCollectionScreen({
           {todayQueue.length === 0 ? (
             <div className="flex flex-col items-center text-center py-6">
               <span className="text-5xl mb-3" aria-hidden="true">🌱</span>
-              <h2 className="text-xl font-black mb-1">Bugünlük tekrar kuyruğun boş</h2>
+              <h2 className="text-xl font-black mb-1">Bugün tekrar zamanı gelen soru yok</h2>
               <p className="text-sm text-slate-400 max-w-sm">
-                Yanlış yaptığın veya favoriye eklediğin sorular burada tekrar için birikecek.
+                FSRS zamanlamasına göre bugün çalışman gereken kart bulunmuyor.
               </p>
               <p className={`text-xs mt-3 ${theme.text}`}>
-                Öncelik: En çok yanlış yaptığın konular ve çözülmemiş sorular.
+                Yanlışlarım veya Favorilerim sekmesinden özel çalışma başlatabilirsin.
               </p>
             </div>
           ) : (
@@ -173,7 +181,7 @@ export default function StudyCollectionScreen({
                 }`}
           </p>
           <p className={`text-xs mt-3 ${theme.text}`}>
-            Öncelik: En çok yanlış yaptığın konular ve çözülmemiş sorular.
+            FSRS zamanlamasına göre bugün tekrar etmen gereken sorular.
           </p>
             </>
           )}
@@ -275,7 +283,7 @@ export default function StudyCollectionScreen({
                 onClick={handleStartWrongReview}
                 className={`min-h-10 px-4 rounded-2xl text-xs font-black ${theme.primary} text-slate-950`}
               >
-                Yanlışlarla çöz
+                Özel Çalışma Başlat
               </button>
             </div>
             {!wrongItems.length && (
@@ -327,7 +335,7 @@ export default function StudyCollectionScreen({
                 onClick={handleStartFavoriteReview}
                 className={`min-h-10 px-4 rounded-2xl text-xs font-black ${theme.primary} text-slate-950`}
               >
-                Favorilerle çöz
+                Özel Çalışma Başlat
               </button>
             </div>
             {!favoriteItems.length && (

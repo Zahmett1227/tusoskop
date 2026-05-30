@@ -1,11 +1,14 @@
 import { describe, expect, it } from "vitest";
 import {
+  applyReview,
   clampDifficulty,
   clampStability,
   computeRetrievability,
+  computeScheduledDays,
   createInitialReviewState,
   dedupeSmartReviewsByQuestionId,
   filterInsightReviewPool,
+  getEarlyWeight,
   isDueForReview,
   normalizeSmartReviewEntry,
   sortDueReviews,
@@ -133,5 +136,123 @@ describe("smartReviewScheduler", () => {
     const pool = filterInsightReviewPool([graded], now);
     expect(pool).toHaveLength(1);
     expect(isDueForReview(graded, now)).toBe(false);
+  });
+});
+
+describe("computeScheduledDays", () => {
+  it("lastReviewedAt → dueAt arasındaki gün farkını döner", () => {
+    const card = {
+      questionId: 1,
+      lastReviewedAt: day(0).toISOString(),
+      dueAt: day(5).toISOString(),
+      stability: 1,
+    };
+    expect(computeScheduledDays(card)).toBeCloseTo(5, 0);
+  });
+
+  it("lastReviewedAt yoksa null döner", () => {
+    const card = { questionId: 1, lastReviewedAt: null, dueAt: day(5).toISOString(), stability: 1 };
+    expect(computeScheduledDays(card)).toBeNull();
+  });
+});
+
+describe("getEarlyWeight", () => {
+  it("elapsedDays çok küçükse 0.1 döner", () => {
+    expect(getEarlyWeight(0.1, 10)).toBe(0.1);
+  });
+
+  it("yarıya ulaşmışsa 0.35 döner", () => {
+    expect(getEarlyWeight(3, 10)).toBe(0.35);
+  });
+
+  it("scheduledDays sıfırsa 0.3 döner", () => {
+    expect(getEarlyWeight(5, 0)).toBe(0.3);
+  });
+});
+
+describe("applyReview", () => {
+  const mkCard = (lastReviewedOffset, dueOffset) => ({
+    questionId: 42,
+    ders: "A",
+    konu: "B",
+    lastReviewedAt: day(lastReviewedOffset).toISOString(),
+    dueAt: day(dueOffset).toISOString(),
+    difficulty: 5,
+    stability: 4,
+    lapseCount: 0,
+    softLapseCount: 0,
+    reviewCount: 1,
+    source: "wrong",
+    state: "review",
+  });
+
+  it("due kart → normal FSRS update (doğru → stability artar)", () => {
+    const card = mkCard(-5, -1); // due dün, son review 5 gün önce
+    const now = day(0);
+    const result = applyReview(card, "good", now);
+    expect(result.stability).toBeGreaterThan(card.stability);
+    expect(result.lapseCount).toBe(0);
+  });
+
+  it("due kart yanlış → lapseCount artar", () => {
+    const card = mkCard(-5, -1);
+    const result = applyReview(card, "again", day(0));
+    expect(result.lapseCount).toBe(1);
+    expect(result.softLapseCount).toBe(0);
+  });
+
+  it("same-day: elapsedDays < 1 → dueAt değişmez", () => {
+    // Son review 7 saat önce (0.29 gün), due 5 gün sonra
+    const baseNow = day(0);
+    const lastReviewedAt = new Date(baseNow.getTime() - 7 * 3600 * 1000).toISOString();
+    const card = {
+      questionId: 42,
+      ders: "A",
+      konu: "B",
+      lastReviewedAt,
+      dueAt: day(5).toISOString(),
+      difficulty: 5,
+      stability: 4,
+      lapseCount: 0,
+      softLapseCount: 0,
+      reviewCount: 1,
+      source: "wrong",
+      state: "review",
+    };
+    const result = applyReview(card, "good", baseNow);
+    expect(result.dueAt).toBe(card.dueAt);
+    expect(result.stability).toBe(card.stability);
+    expect(result.sameDayReviewCount).toBe(1);
+  });
+
+  it("early doğru progressRatio < 0.5 → dueAt korunur", () => {
+    // Son review 0 gün önce, due 10 gün sonra, elapsed = 1 gün (ratio 0.1)
+    const card = mkCard(0, 10);
+    const nowPlus1 = day(1); // 1 gün geçmiş, ratio = 1/10 = 0.1
+    const result = applyReview(card, "good", nowPlus1);
+    expect(result.dueAt).toBe(card.dueAt);
+    expect(result.stability).toBeGreaterThan(card.stability);
+    expect(result.stability).toBeLessThan(
+      updateReviewAfterGrade(normalizeSmartReviewEntry(card), "good", nowPlus1).stability
+    );
+  });
+
+  it("early yanlış progressRatio < 0.75 → softLapseCount artar, lapseCount değişmez", () => {
+    // Last review bugün, due 10 gün sonra, elapsed ~4 gün (ratio ~0.4)
+    const card = mkCard(0, 10);
+    const nowPlus4 = day(4);
+    const result = applyReview(card, "again", nowPlus4);
+    expect(result.lapseCount).toBe(0);
+    expect(result.softLapseCount).toBe(1);
+    expect(new Date(result.dueAt).getTime()).toBeLessThanOrEqual(new Date(day(5).getTime()).getTime());
+  });
+
+  it("early yanlış progressRatio >= 0.75 → gerçek lapseCount artar", () => {
+    // Last review 0, due 4, elapsed 3.2, ratio ~0.8
+    const card = mkCard(0, 4);
+    const nowPlus32 = new Date(day(0).getTime() + 3.2 * 86400000);
+    const result = applyReview(card, "again", nowPlus32);
+    expect(result.lapseCount).toBe(1);
+    expect(result.softLapseCount).toBe(0);
   });
 });
