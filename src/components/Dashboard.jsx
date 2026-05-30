@@ -20,6 +20,7 @@ import {
 } from "../services/studyCollectionService";
 import { setClarityTag, trackClarityEvent } from "../lib/clarity";
 import DashboardMembershipHero from "./DashboardMembershipHero";
+import DashboardProfileMenu from "./DashboardProfileMenu";
 import { getMailtoFeedback, getMailtoPaymentIssue } from "../config/support";
 import Footer from "./layout/Footer";
 import { getStreak } from "../services/streakService";
@@ -212,6 +213,7 @@ export default function Dashboard({
       setMyTarget(saved);
       setTempTarget(saved);
       setIsEditingTarget(false);
+      showToast("Hedef netin kaydedildi.", { type: "success" });
     } catch {
       showToast("Hedef kaydedilemedi. Lütfen tekrar dene.", { type: "error" });
     }
@@ -238,83 +240,37 @@ export default function Dashboard({
             />
             <h1 className={`text-2xl md:text-3xl font-black tracking-tight ${isLightTheme ? "text-slate-950" : theme.text}`}>TUSOSKOP</h1>
           </div>
-          <div className="hidden md:flex items-center gap-2">
-            {Object.keys(accentThemes).map((key) => {
-              const t = accentThemes[key];
-              const active = accentThemeKey === key;
-              return (
-                <button
-                  key={key}
-                  type="button"
-                  onClick={() => onAccentThemeChange?.(key)}
-                  className={`w-8 h-8 rounded-full ${t.previewClass || t.primary} border-2 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-[#faf8f4]" : "focus-visible:ring-offset-slate-950"} focus-visible:ring-emerald-400/50 ${key === "light" ? "border-slate-300" : ""} ${active ? (isLightTheme ? "ring-2 ring-slate-400 border-slate-600 scale-110" : "border-white scale-110") : (isLightTheme ? "border-slate-300 hover:border-slate-500" : "border-slate-700 hover:border-slate-500")}`}
-                  title={t.name}
-                  aria-label={`${t.name} teması`}
-                />
-              );
-            })}
-          </div>
           {user && (
-            <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-end max-w-[min(100%,22rem)] sm:max-w-none">
-              <a
-                href={getMailtoPaymentIssue(user)}
-                onClick={() => {
-                  try {
-                    setClarityTag("support_email_provider", "gmail");
-                    setClarityTag("support_email_address_type", "gmail");
-                    trackClarityEvent("support_payment_issue_click");
-                  } catch {
-                    /* sessiz */
-                  }
-                }}
-                className={`shrink-0 text-[10px] sm:text-xs font-extrabold underline-offset-2 hover:underline ${isLightTheme ? "text-slate-600 hover:text-slate-900" : "text-slate-400 hover:text-white"}`}
-              >
-                Destek
-              </a>
-              <a
-                href={getMailtoFeedback(user)}
-                onClick={() => {
-                  try {
-                    setClarityTag("support_email_provider", "gmail");
-                    setClarityTag("support_email_address_type", "gmail");
-                    trackClarityEvent("feedback_email_click");
-                  } catch {
-                    /* sessiz */
-                  }
-                }}
-                className={`shrink-0 text-[10px] sm:text-xs font-extrabold underline-offset-2 hover:underline ${isLightTheme ? "text-slate-600 hover:text-slate-900" : "text-slate-400 hover:text-white"}`}
-              >
-                Geri bildirim
-              </a>
-              <span className={`text-xs font-bold hidden sm:block truncate max-w-[160px] ${isLightTheme ? "text-slate-600" : "text-slate-500"}`}>
-                {user.displayName || user.email}
-              </span>
-              <button
-                type="button"
-                onClick={onLogout}
-                className={`shrink-0 px-4 py-2 rounded-2xl text-xs font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 focus-visible:ring-offset-[#faf8f4] focus-visible:ring-slate-400/60" : "bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-400 focus-visible:ring-offset-slate-950 focus-visible:ring-slate-500/50"}`}
-              >
-                Çıkış
-              </button>
-            </div>
+            <DashboardProfileMenu
+              user={user}
+              isLightTheme={isLightTheme}
+              theme={theme}
+              accentThemeKey={accentThemeKey}
+              onAccentThemeChange={onAccentThemeChange}
+              onLogout={onLogout}
+              mailtoSupport={getMailtoPaymentIssue(user)}
+              mailtoFeedback={getMailtoFeedback(user)}
+              onSupportClick={() => {
+                try {
+                  setClarityTag("support_email_provider", "gmail");
+                  setClarityTag("support_email_address_type", "gmail");
+                  trackClarityEvent("support_payment_issue_click");
+                } catch {
+                  /* sessiz */
+                }
+              }}
+              onFeedbackClick={() => {
+                try {
+                  setClarityTag("support_email_provider", "gmail");
+                  setClarityTag("support_email_address_type", "gmail");
+                  trackClarityEvent("feedback_email_click");
+                } catch {
+                  /* sessiz */
+                }
+              }}
+            />
           )}
         </header>
-        <div className="md:hidden flex items-center justify-center gap-2 mb-6">
-          {Object.keys(accentThemes).map((key) => {
-            const t = accentThemes[key];
-            const active = accentThemeKey === key;
-            return (
-              <button
-                key={`mobile-${key}`}
-                type="button"
-                onClick={() => onAccentThemeChange?.(key)}
-                className={`w-7 h-7 rounded-full ${t.previewClass || t.primary} border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-[#faf8f4]" : "focus-visible:ring-offset-slate-950"} focus-visible:ring-emerald-400/50 ${key === "light" ? "border-slate-300" : ""} ${active ? (isLightTheme ? "ring-2 ring-slate-400 border-slate-600 scale-110" : "border-white scale-110") : (isLightTheme ? "border-slate-300" : "border-slate-700")}`}
-                title={t.name}
-                aria-label={`${t.name} teması`}
-              />
-            );
-          })}
-        </div>
 
         {/* Akıllı Tekrar Planı — bugünkü due tekrarlar */}
         <section

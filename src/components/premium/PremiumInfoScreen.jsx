@@ -207,6 +207,24 @@ export default function PremiumInfoScreen({
               {PRICING.PLUS_PLANS_DETAIL_LABEL}
             </p>
           </div>
+
+          {/* Güven şeridi */}
+          <div className="mt-6 flex flex-wrap gap-2.5">
+            {[
+              ["♾️", "Sınırsız soru, deneme ve tekrar"],
+              ["⚡", "En geç 24 saatte aktivasyon"],
+              ["🔒", "Shopify ile güvenli ödeme"],
+              ["📄", "Mesafeli satış & iade güvencesi"],
+            ].map(([icon, label]) => (
+              <span
+                key={label}
+                className="inline-flex items-center gap-2 rounded-full border border-[#e8d5c4] bg-white/80 px-3.5 py-1.5 text-xs sm:text-[13px] font-semibold text-[#5c4736] shadow-sm"
+              >
+                <span aria-hidden>{icon}</span>
+                {label}
+              </span>
+            ))}
+          </div>
         </section>
 
         {/* Hesap */}
@@ -335,18 +353,22 @@ export default function PremiumInfoScreen({
               const cardBase =
                 "relative flex flex-col overflow-hidden rounded-[2rem] border p-5 sm:p-6 min-h-0 min-w-0 transition duration-300 ease-out";
               const cardVisual = highlight
-                ? "md:-translate-y-1 z-[1] border-[#b99671] bg-gradient-to-b from-[#fff8ef] via-white to-white shadow-[0_34px_76px_-28px_rgba(110,75,45,0.45)] ring-2 ring-[#dfc7ae]/80 hover:shadow-[0_38px_84px_-26px_rgba(110,75,45,0.52)] hover:-translate-y-px md:hover:-translate-y-2"
+                ? "md:-translate-y-2 z-[1] border-[#b99671] bg-gradient-to-b from-[#fff8ef] via-white to-white shadow-[0_34px_76px_-28px_rgba(110,75,45,0.45)] ring-2 ring-[#c9a16f] hover:shadow-[0_38px_84px_-26px_rgba(110,75,45,0.52)] hover:-translate-y-px md:hover:-translate-y-3"
                 : "border-neutral-200/95 bg-white shadow-[0_18px_48px_-32px_rgba(0,0,0,0.16)] hover:shadow-[0_24px_56px_-28px_rgba(0,0,0,0.2)] hover:-translate-y-px md:hover:-translate-y-1";
 
               return (
                 <article
                   key={plan.id}
-                  className={`${cardBase} ${cardVisual}`}
+                  className={`${cardBase} ${cardVisual} ${highlight ? "pt-7" : ""}`}
                 >
                   {highlight ? (
                     <div className="pointer-events-none absolute -right-12 -top-16 h-40 w-40 rounded-full bg-[#d9a66f]/25 blur-3xl" />
                   ) : null}
-                  {plan.badge ? (
+                  {highlight && plan.badge ? (
+                    <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.12em] text-white shadow-[0_8px_20px_-6px_rgba(154,107,50,0.7)]">
+                      ★ {plan.badge}
+                    </span>
+                  ) : !highlight && plan.badge ? (
                     <span className="absolute right-4 top-4 max-w-[min(100%,14rem)] rounded-full bg-gradient-to-r from-[#2d1f14] to-[#3d2918] px-3 py-1 text-[10px] sm:text-[11px] font-black uppercase tracking-wide text-white text-center leading-tight shadow-md">
                       {plan.badge}
                     </span>
@@ -399,10 +421,14 @@ export default function PremiumInfoScreen({
                     type="button"
                     onClick={(e) => handlePlanClick(e, plan)}
                     disabled={!hasUrl}
-                    className={`relative mt-5 w-full min-h-12 rounded-2xl text-sm font-extrabold px-3 py-3 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c4a882] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
-                      hasUrl
-                        ? "bg-[#1a120c] text-white shadow-lg shadow-neutral-900/15 hover:bg-black hover:shadow-xl active:scale-[0.98]"
-                        : "bg-neutral-100 text-neutral-500 border border-neutral-200 cursor-not-allowed"
+                    className={`relative mt-5 w-full rounded-2xl font-black transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c4a882] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
+                      highlight ? "min-h-14 px-4 py-4 text-base" : "min-h-12 px-3 py-3 text-sm"
+                    } ${
+                      !hasUrl
+                        ? "bg-neutral-100 text-neutral-500 border border-neutral-200 cursor-not-allowed"
+                        : highlight
+                        ? "bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] text-white shadow-[0_14px_30px_-10px_rgba(154,107,50,0.75)] hover:brightness-105 hover:shadow-[0_18px_36px_-10px_rgba(154,107,50,0.8)] active:scale-[0.98]"
+                        : "bg-[#1a120c] text-white shadow-lg shadow-neutral-900/15 hover:bg-black hover:shadow-xl active:scale-[0.98]"
                     }`}
                   >
                     {hasUrl ? plan.ctaLabel : "Bağlantı hazırlanıyor"}
