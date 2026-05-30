@@ -66,8 +66,8 @@ function buildAnswerStorySpec(question) {
     metaLine: `${question.ders} Â· ${question.konu}`,
     options: buildQuestionOptions(question),
     correctIndex: question.correct,
-    correctText: question.options[question.correct],
-    answerLine: `Doğru cevap: ${letter}) ${question.options[question.correct]}`,
+    correctText: (question.options?.[question.correct] ?? "—"),
+    answerLine: `Doğru cevap: ${letter}) ${(question.options?.[question.correct] ?? "—")}`,
     explanation: optimizeForInstagram(String(question.exp || "").trim()),
     safeLayout: "instagram_story",
   };
@@ -139,7 +139,7 @@ function generateDailyQuestion(question, rng) {
     sourceKonu: question.konu,
     answerPayload: {
       correctIndex: question.correct,
-      correctText: question.options[question.correct],
+      correctText: (question.options?.[question.correct] ?? "—"),
       explanation: question.exp,
       revealCaption: buildAnswerRevealCaption(question),
     },
@@ -155,7 +155,7 @@ function buildAnswerRevealCaption(question) {
   return [
     "Dünün sorusunun cevabı:",
     "",
-    `Doğru cevap: ${letter}) ${question.options[question.correct]}`,
+    `Doğru cevap: ${letter}) ${(question.options?.[question.correct] ?? "—")}`,
     "",
     question.exp,
     "",
@@ -177,7 +177,7 @@ function generateAnswerReveal(question) {
       format: "1080x1080",
       hook: "CEVAP AÇIKLANDI",
       subline: `${question.ders} · dünün sorusu`,
-      answerLine: `Doğru cevap: ${letter}) ${question.options[question.correct]}`,
+      answerLine: `Doğru cevap: ${letter}) ${(question.options?.[question.correct] ?? "—")}`,
       explanation: optimizeForInstagram(String(question.exp || "").trim()),
     },
     storyVisual: buildAnswerStorySpec(question),

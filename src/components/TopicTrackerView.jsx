@@ -163,6 +163,13 @@ export default function TopicTracker({ onBack }) {
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                onFocus={(e) => {
+                  // iOS sanal klavyesi açılınca input görünür kalsın
+                  const target = e.currentTarget;
+                  setTimeout(() => {
+                    target.scrollIntoView({ behavior: "smooth", block: "center" });
+                  }, 300);
+                }}
                 placeholder="Örn: inflamasyon, kardiyoloji..."
                 className="w-full bg-slate-950 border border-slate-800 rounded-2xl px-4 py-3 text-white outline-none focus:border-emerald-500"
               />

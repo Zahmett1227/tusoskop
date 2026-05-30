@@ -42,12 +42,24 @@ export default function StudyScreen({
   const progressPercent = Math.round(((index + 1) / Math.max(1, total)) * 100);
   const [insightsOpen, setInsightsOpen] = useState(true);
   const [fsrsRated, setFsrsRated] = useState(false);
+  // İlk render'da sorular henüz hazır değilse "bulunamadı" mesajını hemen
+  // göstermek yerine kısa bir bekleme penceresinde skeleton göster.
+  const [settling, setSettling] = useState(true);
 
   useEffect(() => {
     setFsrsRated(false);
   }, [q?.id, index]);
 
-  if (!q && total > 0) {
+  useEffect(() => {
+    if (q) {
+      setSettling(false);
+      return;
+    }
+    const t = setTimeout(() => setSettling(false), 700);
+    return () => clearTimeout(t);
+  }, [q]);
+
+  if (!q && (total > 0 || settling)) {
     return (
       <div
         className="min-h-dvh bg-slate-950 text-white overflow-x-hidden flex flex-col"
@@ -367,7 +379,7 @@ export default function StudyScreen({
                 Doğru cevap
               </p>
               <p className={`text-sm md:text-base font-bold ${theme.text} break-words`}>
-                {String.fromCharCode(65 + q.correct)} — {q.options[q.correct]}
+                {String.fromCharCode(65 + q.correct)} — {q.options?.[q.correct] ?? "—"}
               </p>
               {selected !== null && selected !== q.correct && (
                 <p className="mt-2 text-xs text-amber-300/90 font-medium">

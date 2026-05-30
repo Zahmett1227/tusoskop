@@ -149,21 +149,34 @@ export default function StudyCollectionScreen({
         </div>
 
         <div className="rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900/90 to-slate-950 p-5">
+          {todayQueue.length === 0 ? (
+            <div className="flex flex-col items-center text-center py-6">
+              <span className="text-5xl mb-3" aria-hidden="true">🌱</span>
+              <h2 className="text-xl font-black mb-1">Bugünlük tekrar kuyruğun boş</h2>
+              <p className="text-sm text-slate-400 max-w-sm">
+                Yanlış yaptığın veya favoriye eklediğin sorular burada tekrar için birikecek.
+              </p>
+              <p className={`text-xs mt-3 ${theme.text}`}>
+                Öncelik: En çok yanlış yaptığın konular ve çözülmemiş sorular.
+              </p>
+            </div>
+          ) : (
+            <>
           <h2 className="text-xl font-black mb-1">
-            {todayQueue.length ? "Bugünkü tekrarın hazır" : "Bugünlük tekrar kuyruğun boş"}
+            Bugünkü tekrarın hazır
           </h2>
           <p className="text-sm text-slate-400">
-            {todayQueue.length
-              ? `${todayQueue.length} soruluk tekrar kuyruğu${
+            {`${todayQueue.length} soruluk tekrar kuyruğu${
                   fsrsSummary?.overdueCount > 0
                     ? ` · ${fsrsSummary.overdueCount} soru gecikmiş`
                     : ""
-                }`
-              : "Yanlış yaptığın veya favoriye eklediğin sorular burada tekrar için birikecek."}
+                }`}
           </p>
           <p className={`text-xs mt-3 ${theme.text}`}>
             Öncelik: En çok yanlış yaptığın konular ve çözülmemiş sorular.
           </p>
+            </>
+          )}
           {todayQueue.length > 0 && (
             <button
               type="button"

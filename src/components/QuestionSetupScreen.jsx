@@ -14,6 +14,7 @@ import {
   recentStudyKey,
 } from "../utils/topicStudyMemory";
 import { getWrongReviewCardCopy } from "../utils/questionSetupWrongCard";
+import { useToast } from "../context/ToastContext";
 
 export default function QuestionSetupScreen({
   subjectCatalog,
@@ -28,6 +29,7 @@ export default function QuestionSetupScreen({
   wrongCount = 0,
   onStartWrongReview,
 }) {
+  const { showToast } = useToast();
   const [topicSearch, setTopicSearch] = useState("");
   const [studyCount, setStudyCount] = useState(20);
   const [topicCountMap, setTopicCountMap] = useState(() => new Map());
@@ -147,15 +149,15 @@ export default function QuestionSetupScreen({
 
   const handleStart = () => {
     if (!selectedLesson) {
-      window.alert("Lütfen bir ders seçin.");
+      showToast("Lütfen bir ders seçin.", { type: "info" });
       return;
     }
     if (!selectedTopic) {
-      window.alert("Lütfen bir konu seçin.");
+      showToast("Lütfen bir konu seçin.", { type: "info" });
       return;
     }
     if (topicQuestionCount < 1) {
-      window.alert("Bu konuda henüz soru bulunmuyor.");
+      showToast("Bu konuda henüz soru bulunmuyor.", { type: "info" });
       return;
     }
     startTopicTest(studyCount);
