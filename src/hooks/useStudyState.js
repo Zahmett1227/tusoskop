@@ -404,7 +404,7 @@ export function useStudyState({
       if (studyMode === "review") {
         if (answer !== null && answer !== undefined && q?.id) {
           await updateWrongQuestionAfterReview(user, q, isCorrect, answer, userData);
-          await updateSmartReviewFromAnswer(user, q, isCorrect);
+          await updateSmartReviewFromAnswer(user, q, isCorrect, new Date(), activeTopicName);
         }
       } else if (isWrong && q?.id) {
         await addWrongQuestion(user, q, answer, userData);

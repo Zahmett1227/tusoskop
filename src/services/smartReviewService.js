@@ -8,6 +8,7 @@ import {
 import { auth, db } from "../firebase";
 import { readLocalStorageJson } from "../utils/safeLocalStorage";
 import {
+  applyReview,
   createInitialReviewState,
   dedupeSmartReviewsByQuestionId,
   filterInsightReviewPool,
@@ -160,7 +161,13 @@ export async function upsertSmartReview(user, question, source = "wrong", grade 
   return next;
 }
 
-export async function updateSmartReviewGrade(user, question, grade, now = new Date()) {
+export async function updateSmartReviewGrade(
+  user,
+  question,
+  grade,
+  now = new Date(),
+  reviewContext = null
+) {
   const questionId = getQuestionIdSafe(question);
   if (!questionId || !grade) return null;
   const all = await getSmartReviews(user);
@@ -168,7 +175,7 @@ export async function updateSmartReviewGrade(user, question, grade, now = new Da
   if (!existing) {
     return upsertSmartReview(user, question, "wrong", grade, now);
   }
-  const next = updateReviewAfterGrade(existing, grade, now);
+  const next = applyReview(existing, grade, now, reviewContext);
   if (!next) return null;
   const merged = dedupeSmartReviewsByQuestionId([
     ...all.filter((item) => item.questionId !== questionId),
@@ -179,8 +186,20 @@ export async function updateSmartReviewGrade(user, question, grade, now = new Da
   return next;
 }
 
-export async function updateSmartReviewFromAnswer(user, question, isCorrect, now = new Date()) {
-  return updateSmartReviewGrade(user, question, gradeFromAnswerCorrect(isCorrect), now);
+export async function updateSmartReviewFromAnswer(
+  user,
+  question,
+  isCorrect,
+  now = new Date(),
+  reviewContext = null
+) {
+  return updateSmartReviewGrade(
+    user,
+    question,
+    gradeFromAnswerCorrect(isCorrect),
+    now,
+    reviewContext
+  );
 }
 
 export async function removeSmartReview(user, questionId) {
