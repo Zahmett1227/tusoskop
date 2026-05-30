@@ -51,6 +51,7 @@ import {
 import { SUBJECTS as SUBJECT_CATALOG } from "./data/subjects";
 import { SUBJECT_QUESTION_COUNTS } from "./data/questions";
 import { applyQuestionTextFilter } from "./utils/questionTextFilter";
+import { useToast } from "./context/ToastContext";
 
 const Dashboard = lazy(() => import("./components/Dashboard"));
 const Summary = lazy(() => import("./components/Summary"));
@@ -103,6 +104,15 @@ export default function App() {
 
   // iOS tespiti — ilk render'da hesapla, değişmez
   const [iosDevice] = useState(() => isIOS());
+  const { showToast } = useToast();
+
+  const handleLoginWithGoogle = useCallback(async () => {
+    try {
+      await loginWithGoogle();
+    } catch (error) {
+      showToast(error?.userMessage || "Google girişi başarısız oldu.", { type: "error" });
+    }
+  }, [showToast]);
 
   useEffect(() => {
     const startAnalytics = () => initAnalytics();
@@ -412,7 +422,7 @@ export default function App() {
       if (!check.ok) {
         clearInProgressExam();
         if (shouldNotifyInProgressReset(check.reason)) {
-          window.alert(EXAM_IN_PROGRESS_RESET_MESSAGE);
+          showToast(EXAM_IN_PROGRESS_RESET_MESSAGE, { type: "info" });
         }
       } else if (hasMeaningfulExamProgress(check.data)) {
         const resume = window.confirm("Yarım kalan denemeye devam etmek ister misiniz?");
@@ -437,7 +447,7 @@ export default function App() {
             return;
           }
           clearInProgressExam();
-          window.alert(EXAM_IN_PROGRESS_RESET_MESSAGE);
+          showToast(EXAM_IN_PROGRESS_RESET_MESSAGE, { type: "info" });
         } else {
           clearInProgressExam();
         }
@@ -495,7 +505,7 @@ export default function App() {
           </p>
           <button
             type="button"
-            onClick={loginWithGoogle}
+            onClick={handleLoginWithGoogle}
             className={`flex items-center gap-4 px-8 py-4 ${accentTheme.primary} ${accentTheme.primaryHover} text-slate-950 rounded-3xl font-black shadow-2xl ${accentTheme.glow} hover:scale-105 transition-transform active:scale-95`}
           >
             <img src="https://www.google.com/favicon.ico" className="w-5 h-5" alt="" loading="lazy" decoding="async" />

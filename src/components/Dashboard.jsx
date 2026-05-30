@@ -25,6 +25,7 @@ import Footer from "./layout/Footer";
 import { getStreak } from "../services/streakService";
 import { getSmartReviewSummary, getSmartReviews } from "../services/smartReviewService";
 import { buildTopicRows, groupReviewsBySubject } from "../utils/smartReviewUtils";
+import { useToast } from "../context/ToastContext";
 
 function toSafeTargetScore(value, fallback = 65) {
   const n = Number(value);
@@ -77,6 +78,7 @@ export default function Dashboard({
   onStartSmartReview,
 }) {
   const { questions: QUESTIONS } = useQuestions();
+  const { showToast } = useToast();
   const theme = accentTheme || accentThemes.emerald;
   const isLightTheme =
     theme.usesLightChrome ??
@@ -210,8 +212,8 @@ export default function Dashboard({
       setMyTarget(saved);
       setTempTarget(saved);
       setIsEditingTarget(false);
-    } catch (err) {
-      alert("Hata: " + err.message);
+    } catch {
+      showToast("Hedef kaydedilemedi. Lütfen tekrar dene.", { type: "error" });
     }
   };
 

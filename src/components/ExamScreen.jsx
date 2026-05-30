@@ -13,6 +13,7 @@ import {
 } from "../utils/examHistoryUtils";
 import { trackClarityEvent } from "../lib/clarity";
 import { saveExamWrongAndSmartReviewsBatch } from "../services/examFinishBatchService";
+import { useToast } from "../context/ToastContext";
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -36,7 +37,13 @@ function WrongQuestionsModal({ wrongByLessonTopic, totalWrong, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-slate-950 overflow-hidden">
+    <div
+      className="fixed inset-0 z-50 flex flex-col bg-slate-950 overflow-hidden"
+      style={{
+        paddingLeft: "env(safe-area-inset-left)",
+        paddingRight: "env(safe-area-inset-right)",
+      }}
+    >
       {/* Başlık */}
       <div
         className="flex items-center justify-between px-4 md:px-8 py-5 border-b border-slate-800 bg-slate-950/95 backdrop-blur-md shrink-0"
@@ -141,11 +148,11 @@ function WrongQuestionsModal({ wrongByLessonTopic, totalWrong, onClose }) {
                                   <div className="px-5 pb-4 flex flex-wrap gap-2">
                                     <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-bold">
                                       <span className="opacity-60">Senin cevabın:</span>
-                                      <span>{wq.userAnswer !== null && wq.userAnswer !== undefined ? LETTERS[wq.userAnswer] : '—'}</span>
+                                      <span>{wq.userAnswer !== null && wq.userAnswer !== undefined ? (LETTERS[wq.userAnswer] ?? '?') : '—'}</span>
                                     </span>
                                     <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold">
                                       <span className="opacity-60">Doğru cevap:</span>
-                                      <span>{LETTERS[wq.correct]}</span>
+                                      <span>{LETTERS[wq.correct] ?? '?'}</span>
                                     </span>
                                   </div>
 
@@ -225,6 +232,7 @@ export default function ExamScreen({
   userData,
   accentTheme,
 }) {
+  const { showToast } = useToast();
   const theme = accentTheme || accentThemes.emerald;
   const subjectVisual = examQ ? getSubjectVisual(examQ.ders) : getSubjectVisual("");
   const examProgressPct = Math.min(
@@ -276,7 +284,7 @@ export default function ExamScreen({
     if (finishInProgressRef.current || isFinished) return;
 
     const user = auth.currentUser;
-    if (!user) { alert("Lütfen giriş yapın!"); return; }
+    if (!user) { showToast("Lütfen giriş yapın!", { type: "error" }); return; }
 
     finishInProgressRef.current = true;
     if (userId) updateStreak(userId);
@@ -396,8 +404,9 @@ export default function ExamScreen({
       // Başarılı bitişte ref true kalır; isFinished guard'ı yeniden kaydı engeller.
     } catch (error) {
       // Kayıt başarısız olursa kullanıcı tekrar deneyebilsin diye guard'ı serbest bırak.
+      console.error("Sınav sonucu kaydedilemedi:", error);
       finishInProgressRef.current = false;
-      alert("Kayıt hatası: " + error.message);
+      showToast("Sonuç kaydedilemedi. İnternet bağlantını kontrol edip tekrar dene.", { type: "error" });
     } finally {
       setIsSaving(false);
     }
@@ -435,7 +444,12 @@ export default function ExamScreen({
 
         <div
           className="min-h-dvh bg-slate-950 text-white p-4 md:p-10 overflow-y-auto"
-          style={{ paddingTop: "calc(1rem + env(safe-area-inset-top))" }}
+          style={{
+            paddingTop: "calc(1rem + env(safe-area-inset-top))",
+            paddingBottom: "calc(1rem + env(safe-area-inset-bottom))",
+            paddingLeft: "max(1rem, env(safe-area-inset-left))",
+            paddingRight: "max(1rem, env(safe-area-inset-right))",
+          }}
         >
           <div className="max-w-4xl mx-auto">
 
@@ -574,7 +588,10 @@ export default function ExamScreen({
   if (!examQ) return null;
 
   return (
-    <div className="flex h-dvh bg-[#020617] text-white overflow-x-hidden relative">
+    <div
+      className="flex h-dvh bg-[#020617] text-white overflow-x-hidden relative"
+      style={{ paddingLeft: "env(safe-area-inset-left)" }}
+    >
 
       {/* SOL: Soru Alanı */}
       <div
@@ -758,7 +775,10 @@ export default function ExamScreen({
           </div>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-2 space-y-0.5">
+        <div
+          className="flex-1 overflow-y-auto p-2 space-y-0.5"
+          style={{ paddingBottom: "calc(0.5rem + env(safe-area-inset-bottom))" }}
+        >
           {examQuestions.map((_, idx) => {
             const currentQuestion = examQuestions[idx];
             const currentAnswer = idx === examIndex

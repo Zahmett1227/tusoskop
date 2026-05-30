@@ -63,7 +63,7 @@ export default function SocialMediaEditor({ content, onSave, onClose }) {
                 title,
                 caption,
                 hashtags: hashtags.split(/\s+/).filter(Boolean),
-                scheduledAt: scheduledAt ? new Date(scheduledAt).toISOString() : content.scheduledAt,
+                scheduledAt: toIsoOrFallback(scheduledAt, content.scheduledAt),
               })
             }
             className="min-h-10 px-4 rounded-xl bg-emerald-500 text-slate-950 text-sm font-black"
@@ -76,9 +76,18 @@ export default function SocialMediaEditor({ content, onSave, onClose }) {
   );
 }
 
-function toLocalInput(iso) {
+function toIsoOrFallback(localValue, fallback) {
+  if (!localValue) return fallback;
+  const d = new Date(localValue);
+  if (Number.isNaN(d.getTime())) return fallback;
+  return d.toISOString();
+}
+
+function toLocalInput(value) {
   try {
-    const d = new Date(iso);
+    // Firestore Timestamp veya ISO string / Date'i normalize et
+    const d = typeof value?.toDate === "function" ? value.toDate() : new Date(value);
+    if (Number.isNaN(d.getTime())) return "";
     const pad = (n) => String(n).padStart(2, "0");
     return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
   } catch {

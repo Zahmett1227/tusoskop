@@ -55,6 +55,7 @@ export default function PerformanceChartCard({
   const isSmallScreen = useIsSmallScreen();
   const [myTarget, setMyTarget] = useState(65);
   const [examHistoryMerged, setExamHistoryMerged] = useState([]);
+  const [loadError, setLoadError] = useState(false);
   const premium = isUserPremium(userData);
 
   useEffect(() => {
@@ -87,8 +88,18 @@ export default function PerformanceChartCard({
         });
         if (!active) return;
         setExamHistoryMerged(merged);
+        setLoadError(false);
       } catch (error) {
         console.error("PerformanceChartCard load error:", error);
+        if (!active) return;
+        // Yerel geçmiş varsa onu göster; tamamen boşsa hata durumunu işaretle.
+        const localRows = loadNormalizedLocalExamHistory();
+        if (localRows.length > 0) {
+          setExamHistoryMerged(localRows);
+          setLoadError(false);
+        } else {
+          setLoadError(true);
+        }
       }
     }
 
@@ -270,7 +281,15 @@ export default function PerformanceChartCard({
             Free planda son {FREE_LIMITS.visibleExamHistory} deneme gorunur. Plus ile tum gelisimini takip edebilirsin.
           </p>
         )}
-        {sortedExamHistory.length === 0 ? (
+        {loadError && sortedExamHistory.length === 0 ? (
+          <div className="flex flex-col items-center justify-center py-12 px-4 text-center rounded-2xl border border-dashed border-rose-800/60 bg-rose-950/20">
+            <span className="text-4xl mb-3" aria-hidden="true">⚠️</span>
+            <p className="text-white font-black text-base mb-1">Grafik yüklenemedi</p>
+            <p className="text-slate-400 text-sm max-w-sm">
+              Deneme geçmişin alınamadı. İnternet bağlantını kontrol edip sayfayı yenileyebilirsin.
+            </p>
+          </div>
+        ) : sortedExamHistory.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-12 px-4 text-center rounded-2xl border border-dashed border-slate-800 bg-slate-950/40">
             <span className="text-4xl mb-3" aria-hidden="true">📈</span>
             <p className="text-white font-black text-base mb-1">Henüz deneme verisi yok</p>
