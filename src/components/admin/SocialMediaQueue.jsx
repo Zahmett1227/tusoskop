@@ -166,6 +166,16 @@ export default function SocialMediaTab({ currentUser }) {
 
   return (
     <div>
+      {/* Instagram token hatırlatıcısı */}
+      <div className="mb-5 flex items-start gap-3 rounded-2xl border border-amber-500/35 bg-amber-500/8 px-4 py-3 text-sm text-amber-200">
+        <span className="mt-0.5 shrink-0" aria-hidden>⏱</span>
+        <span>
+          <strong className="font-black">Instagram erişim tokeni 60 günde bir yenilenmeli.</strong>{" "}
+          Süresi dolmadan{" "}
+          <span className="font-bold text-amber-100">IG_ACCESS_TOKEN</span> secret'ını Meta Token Debugger'dan kontrol edip GitHub Secrets'ta güncelle.
+        </span>
+      </div>
+
       {/* Başlık + butonlar */}
       <div className="mb-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
         <div>

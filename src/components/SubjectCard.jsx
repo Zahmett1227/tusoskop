@@ -106,13 +106,11 @@ const SubjectCard = ({
 
         {/* ALT */}
         <div className="mt-6">
-          <div className={`mb-4 rounded-2xl border px-3 py-3 ${isLightTheme ? "border-slate-200 bg-white/75" : "border-slate-800 bg-slate-950/45"}`}>
-            <div className={`h-2 overflow-hidden rounded-full ${isLightTheme ? "bg-slate-200" : "bg-slate-800"}`}>
-              <div
-                className={`h-full rounded-full ${subjectVisual.bar} transition-all duration-500`}
-                style={{ width: `${barWidthPercent}%` }}
-              />
-            </div>
+          <div className={`mb-4 h-2 overflow-hidden rounded-full ${isLightTheme ? "bg-slate-200" : "bg-slate-800"}`}>
+            <div
+              className={`h-full rounded-full ${subjectVisual.bar} transition-all duration-500`}
+              style={{ width: `${barWidthPercent}%` }}
+            />
           </div>
 
           <div className={`flex items-center justify-between gap-2 text-sm font-bold ${theme.text} transition`}>

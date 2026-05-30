@@ -38,7 +38,6 @@ import {
 
 // Bileşenler (Screens)
 import MobileBottomNav from "./components/MobileBottomNav";
-import IOSInstallBanner from "./components/IOSInstallBanner";
 import { LEGAL_PAGES } from "./content/legalPages";
 import { FREE_LIMITS } from "./config/limits";
 import { isUserPremium } from "./utils/premiumUtils";
@@ -503,7 +502,6 @@ export default function App() {
             Google ile Giriş Yap
           </button>
         </div>
-        <IOSInstallBanner />
       </div>
     );
   }
@@ -810,7 +808,6 @@ export default function App() {
           examLocked={bottomNavExamLocked}
         />
       )}
-      <IOSInstallBanner />
     </div>
   );
 }
