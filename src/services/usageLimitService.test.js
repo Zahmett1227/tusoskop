@@ -76,30 +76,38 @@ describe("usageLimitService", () => {
     expect(httpsCallableMock).not.toHaveBeenCalled();
   });
 
-  it("incrementTopicTestUsage callable hatasında işlemi kapatır", async () => {
+  it("incrementTopicTestUsage geçici/ağ hatasında işleme izin verir", async () => {
     const callable = vi.fn().mockRejectedValue(new Error("network"));
     httpsCallableMock.mockReturnValue(callable);
 
-    const { incrementTopicTestUsage, getRemainingFreeUsage } = await loadService();
-    await expect(incrementTopicTestUsage(null, null)).rejects.toMatchObject({
-      code: "usage_counter_unavailable",
-    });
-    const after = await getRemainingFreeUsage(null, null);
-    expect(after.topicTestRemaining).toBe(FREE_LIMITS.dailyTopicTests);
+    const { incrementTopicTestUsage } = await loadService();
+    // Ağ hatası (kodsuz) geçici sayılır; kullanıcı bloke edilmez
+    await expect(incrementTopicTestUsage(null, null)).resolves.toBeNull();
   });
 
-  it("incrementFullExamUsage callable hatasında işlemi kapatır", async () => {
+  it("incrementFullExamUsage geçici/ağ hatasında işleme izin verir", async () => {
     const callable = vi.fn().mockRejectedValue(new Error("network"));
     httpsCallableMock.mockReturnValue(callable);
 
     const { incrementFullExamUsage } = await loadService();
-    await expect(incrementFullExamUsage(null, null)).rejects.toMatchObject({
-      code: "usage_counter_unavailable",
+    await expect(incrementFullExamUsage(null, null)).resolves.toMatchObject({
+      fullExamCount: null,
     });
   });
 
-  it("incrementQuestionUsage callable hatasında işlemi kapatır", async () => {
+  it("incrementQuestionUsage geçici/ağ hatasında işleme izin verir", async () => {
     const callable = vi.fn().mockRejectedValue(new Error("network"));
+    httpsCallableMock.mockReturnValue(callable);
+
+    const { incrementQuestionUsage } = await loadService();
+    await expect(incrementQuestionUsage(null, null, 1)).resolves.toBeNull();
+  });
+
+  it("incrementQuestionUsage kalıcı (auth) hatada bloklamaya devam eder", async () => {
+    const authErr = Object.assign(new Error("permission"), {
+      code: "functions/permission-denied",
+    });
+    const callable = vi.fn().mockRejectedValue(authErr);
     httpsCallableMock.mockReturnValue(callable);
 
     const { incrementQuestionUsage } = await loadService();

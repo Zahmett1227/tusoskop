@@ -11,11 +11,9 @@ import StreakBadge from "./StreakBadge";
 import { SUBJECTS } from "../data/subjects";
 import { FIXED_EXAM_CARD_SUBTITLE } from "../data/exams";
 import { SUBJECT_QUESTION_COUNTS } from "../data/questions";
-import { useQuestions } from "../hooks/useQuestions";
 import { accentThemes } from "../theme/accentThemes";
 import { isUserPremium } from "../utils/premiumUtils";
 import {
-  buildTodayReviewQueue,
   getStudyCollectionSummary,
 } from "../services/studyCollectionService";
 import { setClarityTag, trackClarityEvent } from "../lib/clarity";
@@ -26,6 +24,7 @@ import { getStreak } from "../services/streakService";
 import { getSmartReviewSummary, getSmartReviews } from "../services/smartReviewService";
 import { buildTopicRows, groupReviewsBySubject } from "../utils/smartReviewUtils";
 import { isDemoMode } from "../services/demoModeService";
+import { useToast } from "../context/ToastContext";
 
 function toSafeTargetScore(value, fallback = 65) {
   const n = Number(value);
@@ -79,7 +78,7 @@ export default function Dashboard({
   },
   onStartSmartReview,
 }) {
-  const { questions: QUESTIONS } = useQuestions();
+  const { showToast } = useToast();
   const theme = accentTheme || accentThemes.emerald;
   const isLightTheme =
     theme.usesLightChrome ??
@@ -102,7 +101,6 @@ export default function Dashboard({
   const [studySummary, setStudySummary] = useState({
     wrongCount: 0,
     favoriteCount: 0,
-    reviewQueueCount: 0,
   });
   const [planStreak, setPlanStreak] = useState(0);
   const [panelSummary, setPanelSummary] = useState(null);
@@ -173,21 +171,19 @@ export default function Dashboard({
     let active = true;
     const loadStudySummary = async () => {
       try {
-        const [summary, queue, streakSnap] = await Promise.all([
+        const [summary, streakSnap] = await Promise.all([
           getStudyCollectionSummary(user, userData),
-          buildTodayReviewQueue(user, QUESTIONS || [], userData),
           user?.uid ? getStreak(user.uid) : Promise.resolve({ currentStreak: 0 }),
         ]);
         if (!active) return;
         setStudySummary({
           wrongCount: summary?.wrongCount || 0,
           favoriteCount: summary?.favoriteCount || 0,
-          reviewQueueCount: queue.length,
         });
         setPlanStreak(streakSnap?.currentStreak ?? 0);
       } catch {
         if (!active) return;
-        setStudySummary({ wrongCount: 0, favoriteCount: 0, reviewQueueCount: 0 });
+        setStudySummary({ wrongCount: 0, favoriteCount: 0 });
         setPlanStreak(0);
       }
     };
@@ -195,7 +191,7 @@ export default function Dashboard({
     return () => {
       active = false;
     };
-  }, [user, currentView, userData, QUESTIONS]);
+  }, [user, currentView, userData]);
 
   const adjustTarget = (amount) => {
     setTempTarget(prev => {
@@ -222,8 +218,9 @@ export default function Dashboard({
       setMyTarget(saved);
       setTempTarget(saved);
       setIsEditingTarget(false);
-    } catch (err) {
-      alert("Hata: " + err.message);
+      showToast("Hedef netin kaydedildi.", { type: "success" });
+    } catch {
+      showToast("Hedef kaydedilemedi. Lütfen tekrar dene.", { type: "error" });
     }
   };
 
@@ -247,22 +244,6 @@ export default function Dashboard({
               aria-hidden
             />
             <h1 className={`text-2xl md:text-3xl font-black tracking-tight ${isLightTheme ? "text-slate-950" : theme.text}`}>TUSOSKOP</h1>
-          </div>
-          <div className="hidden md:flex items-center gap-2">
-            {Object.keys(accentThemes).map((key) => {
-              const t = accentThemes[key];
-              const active = accentThemeKey === key;
-              return (
-                <button
-                  key={key}
-                  type="button"
-                  onClick={() => onAccentThemeChange?.(key)}
-                  className={`w-8 h-8 rounded-full ${t.previewClass || t.primary} border-2 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-[#faf8f4]" : "focus-visible:ring-offset-slate-950"} focus-visible:ring-emerald-400/50 ${key === "light" ? "border-slate-300" : ""} ${active ? (isLightTheme ? "ring-2 ring-slate-400 border-slate-600 scale-110" : "border-white scale-110") : (isLightTheme ? "border-slate-300 hover:border-slate-500" : "border-slate-700 hover:border-slate-500")}`}
-                  title={t.name}
-                  aria-label={`${t.name} teması`}
-                />
-              );
-            })}
           </div>
           {user && (
             <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-end max-w-[min(100%,22rem)] sm:max-w-none">
@@ -324,22 +305,6 @@ export default function Dashboard({
             </div>
           )}
         </header>
-        <div className="md:hidden flex items-center justify-center gap-2 mb-6">
-          {Object.keys(accentThemes).map((key) => {
-            const t = accentThemes[key];
-            const active = accentThemeKey === key;
-            return (
-              <button
-                key={`mobile-${key}`}
-                type="button"
-                onClick={() => onAccentThemeChange?.(key)}
-                className={`w-7 h-7 rounded-full ${t.previewClass || t.primary} border transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-[#faf8f4]" : "focus-visible:ring-offset-slate-950"} focus-visible:ring-emerald-400/50 ${key === "light" ? "border-slate-300" : ""} ${active ? (isLightTheme ? "ring-2 ring-slate-400 border-slate-600 scale-110" : "border-white scale-110") : (isLightTheme ? "border-slate-300" : "border-slate-700")}`}
-                title={t.name}
-                aria-label={`${t.name} teması`}
-              />
-            );
-          })}
-        </div>
 
         {/* Akıllı Tekrar Planı — bugünkü due tekrarlar */}
         <section
@@ -394,12 +359,15 @@ export default function Dashboard({
           <div className="mt-5 flex flex-wrap gap-2">
             <button
               type="button"
-              disabled={smartDue <= 0 || !onStartSmartReview}
               onClick={() => {
                 trackClarityEvent("bugunku_tekrarim_cta");
-                onStartSmartReview?.();
+                if (smartDue > 0 && onStartSmartReview) {
+                  onStartSmartReview();
+                } else {
+                  setView("studyCollection");
+                }
               }}
-              className={`inline-flex min-h-12 items-center justify-center rounded-2xl px-6 py-3 text-sm font-black transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${isLightTheme ? "focus-visible:ring-offset-emerald-50" : "focus-visible:ring-offset-slate-950"} ${theme.primary} ${theme.primaryHover} text-slate-950 shadow-lg ${theme.glow} ${theme.ring}`}
+              className={`inline-flex min-h-12 items-center justify-center rounded-2xl px-6 py-3 text-sm font-black transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-emerald-50" : "focus-visible:ring-offset-slate-950"} ${theme.primary} ${theme.primaryHover} text-slate-950 shadow-lg ${theme.glow} ${theme.ring}`}
             >
               Tekrara Başla
             </button>
@@ -715,15 +683,15 @@ export default function Dashboard({
               </div>
               <div className={`rounded-2xl border px-3 py-3 md:px-4 md:py-3.5 min-w-0 ${isLightTheme ? "border-slate-300 bg-[#f5f2ec]" : "border-slate-700/70 bg-slate-950/55"}`}>
                 <p className="text-[10px] uppercase tracking-wider text-slate-500 font-black">Akıllı tekrar</p>
-                <p className={`mt-1 text-lg md:text-xl font-black tabular-nums ${theme.text}`}>{studySummary.reviewQueueCount || 0}</p>
+                <p className={`mt-1 text-lg md:text-xl font-black tabular-nums ${theme.text}`}>{smartDue || 0}</p>
               </div>
             </div>
 
             <div className={`rounded-2xl border px-3.5 py-3 md:px-4 md:py-3.5 ${isLightTheme ? "border-slate-300 bg-[#f5f2ec]" : "border-slate-800/80 bg-slate-950/45"}`}>
               <div className="flex flex-col gap-3 md:gap-3.5">
                 <p className={`text-xs md:text-sm leading-relaxed ${isLightTheme ? "text-slate-700" : "text-slate-300"}`}>
-                  {studySummary.reviewQueueCount > 0
-                    ? `Bugünkü tekrarın hazır: ${studySummary.reviewQueueCount} soru`
+                  {smartDue > 0
+                    ? `Bugünkü tekrarın hazır: ${smartDue} soru`
                     : "Akıllı tekrar planın, yanlışların ve favorilerin biriktikçe oluşacak."}
                 </p>
                 <button
@@ -785,17 +753,6 @@ export default function Dashboard({
             <div className="relative z-10">
               <p className={`font-black text-base tracking-tight ${isLightTheme ? "text-slate-900" : "text-white"}`}>Konu Yeterlilik Düzeyim</p>
               <p className={`text-[11px] font-semibold ${isLightTheme ? "text-violet-700" : "text-violet-100/80"}`}>Konu bazında ustalık, tekrar ve güç alanların</p>
-            </div>
-          </button>
-          <button
-            type="button"
-            onClick={() => setView("suggestions")}
-            className={`group flex items-center gap-4 px-6 py-5 rounded-[2rem] transition-all text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "bg-[#fffefb] border border-slate-300 hover:border-slate-400 shadow-md focus-visible:ring-offset-[#faf8f4] focus-visible:ring-emerald-500/45" : "bg-slate-900 border border-slate-800 hover:border-slate-600 focus-visible:ring-offset-slate-950 focus-visible:ring-emerald-400/40"}`}
-          >
-            <span className="text-2xl">💡</span>
-            <div>
-              <p className={`font-black text-sm ${isLightTheme ? "text-slate-900" : "text-white"}`}>Öneriler</p>
-              <p className="text-[10px] text-slate-500 font-medium">Strateji & tavsiyeler</p>
             </div>
           </button>
         </div>

@@ -9,6 +9,7 @@ import {
 import { getStudyCollectionSummary } from "../services/studyCollectionService";
 import { resolveTopicStudyCount } from "../utils/topicStudyUtils";
 import { saveRecentTopicStudy } from "../utils/topicStudyMemory";
+import { useToast } from "../context/ToastContext";
 
 /**
  * Konu seçerek çöz (questionSetup → topic study) akışı.
@@ -33,6 +34,7 @@ export function useTopicStudyFlow({
   openLimitFromUsageError,
 }) {
   const demoMode = isDemo || isDemoMode(user, userData);
+  const { showToast } = useToast();
   const [selectedLesson, setSelectedLesson] = useState("");
   const [selectedTopic, setSelectedTopic] = useState("");
   const [questionSetupWrongCount, setQuestionSetupWrongCount] = useState(0);
@@ -114,13 +116,13 @@ export function useTopicStudyFlow({
       const topic = topicOverride?.konu ?? selectedTopic;
       const limit = topicOverride?.countMode ?? questionLimit;
       if (!lesson || !topic) {
-        window.alert("Lütfen ders ve konu seçin.");
+        showToast("Lütfen ders ve konu seçin.", { type: "info" });
         return;
       }
       const loaded = await ensureQuestionsForSubject(lesson);
       const filtered = loaded.filter((item) => item.ders === lesson && item.konu === topic);
       if (filtered.length === 0) {
-        alert("Soru bulunamadı.");
+        showToast("Bu konuda soru bulunamadı.", { type: "info" });
         return;
       }
       const take = resolveTopicStudyCount(limit, filtered.length);
@@ -183,6 +185,7 @@ export function useTopicStudyFlow({
       setView,
       setLimitModal,
       openSubjectTopicPlusGate,
+      showToast,
     ]
   );
 

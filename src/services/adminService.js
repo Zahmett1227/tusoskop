@@ -40,8 +40,11 @@ export async function getAdminUserList() {
     orderBy("createdAt", "desc"),
     limit(100)
   );
+  // Güvenli üst sınır: tüm users koleksiyonunu sınırsız okumak yerine
+  // makul bir tavan koyarak okuma maliyeti ve gecikmeyi sınırla.
+  const usersQuery = query(collection(db, "users"), limit(500));
   const [usersSnap, intentsSnap] = await Promise.all([
-    getDocs(collection(db, "users")),
+    getDocs(usersQuery),
     getDocs(intentsQuery),
   ]);
   const intentEmailByUid = newestIntentEmailByUid(intentsSnap.docs);

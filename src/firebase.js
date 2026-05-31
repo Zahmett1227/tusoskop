@@ -4,6 +4,7 @@ import {
   getRedirectResult,
   GoogleAuthProvider,
   OAuthProvider,
+  signInWithCredential,
   signInWithPopup,
   signInWithRedirect,
   signOut,
@@ -37,14 +38,56 @@ appleProvider.addScope("email");
 appleProvider.addScope("name");
 appleProvider.setCustomParameters({ locale: "tr" });
 
+/** Capacitor native platform kontrolü — web build'i kırmadan global üzerinden. */
+function isNativePlatform() {
+  return Boolean(
+    typeof window !== "undefined" &&
+    window.Capacitor &&
+    typeof window.Capacitor.isNativePlatform === "function" &&
+    window.Capacitor.isNativePlatform()
+  );
+}
+
 /**
- * Google girişi: önce popup; popup engellenmediği sürece redirect'e düşmez.
- * iOS Safari + ITP'de `signInWithRedirect` sessionStorage'ı kaybedip
- * "missing initial state" hatası verdiği için redirect yalnızca popup
- * gerçekten engellendiğinde son çare olarak kullanılır.
+ * Native (Capacitor iOS/Android) Google girişi.
+ * `@codetrix-studio/capacitor-google-auth` plugini kuruluysa global
+ * `window.Capacitor.Plugins.GoogleAuth` üzerinden erişilir; böylece web
+ * build'i bu paketi bundle etmeye çalışmaz. Plugin idToken döndürür,
+ * onu Firebase credential'ına çevirip signInWithCredential ile giriş yaparız.
+ */
+async function loginWithGoogleNative() {
+  const GoogleAuth = window?.Capacitor?.Plugins?.GoogleAuth;
+  if (!GoogleAuth || typeof GoogleAuth.signIn !== "function") {
+    const err = new Error("Google girişi şu an kullanılamıyor. Lütfen daha sonra tekrar deneyin.");
+    err.userMessage = err.message;
+    throw err;
+  }
+  const result = await GoogleAuth.signIn();
+  const idToken = result?.authentication?.idToken;
+  if (!idToken) {
+    const err = new Error("Google girişi tamamlanamadı.");
+    err.userMessage = err.message;
+    throw err;
+  }
+  const credential = GoogleAuthProvider.credential(idToken);
+  const userCred = await signInWithCredential(auth, credential);
+  return userCred.user;
+}
+
+/**
+ * Google girişi. Native platformda Capacitor GoogleAuth plugini, web'de
+ * popup (gerekirse redirect fallback) kullanılır.
+ *
+ * Kullanıcıya gösterilecek mesaj `error.userMessage` alanında döner;
+ * çağıran taraf bunu toast ile gösterir. Sessiz iptallerde `null` döner.
  */
 export const loginWithGoogle = async () => {
   try {
+    if (isNativePlatform()) {
+      const user = await loginWithGoogleNative();
+      trackClarityEvent("login_basarili");
+      return user;
+    }
     const result = await signInWithPopup(auth, googleProvider);
     trackClarityEvent("login_basarili");
     return result.user;
@@ -54,29 +97,30 @@ export const loginWithGoogle = async () => {
 
     const code = error?.code || "";
     if (code === "auth/unauthorized-domain") {
-      alert("Google giriş hatası: Bu adres Firebase Auth için yetkili değil. Yerelde localhost adresine yönlendiriliyorsunuz; sayfa yenilenince tekrar deneyin.");
-      if (typeof window !== "undefined" && window.location.hostname === "127.0.0.1") {
-        window.location.replace(`http://localhost:${window.location.port}${window.location.pathname}${window.location.search}${window.location.hash}`);
-      }
-      return null;
+      const err = new Error("Bu adres Google girişi için yetkili değil. Lütfen sayfayı yenileyip tekrar deneyin.");
+      err.userMessage = err.message;
+      throw err;
     }
 
     if (code === "auth/popup-blocked") {
       try {
         await signInWithRedirect(auth, googleProvider);
+        return null;
       } catch (redirectError) {
         console.error("signInWithRedirect fallback hatası:", redirectError);
-        alert("Google giriş hatası: Tarayıcınız popup'ı engelledi. Lütfen popup'lara izin verip tekrar deneyin.");
+        const err = new Error("Tarayıcınız popup'ı engelledi. Lütfen popup'lara izin verip tekrar deneyin.");
+        err.userMessage = err.message;
+        throw err;
       }
-      return null;
     }
 
     if (code === "auth/cancelled-popup-request" || code === "auth/popup-closed-by-user") {
       return null;
     }
 
-    alert("Google giriş hatası: " + (error?.message || "Bilinmeyen hata"));
-    return null;
+    const err = new Error(error?.userMessage || "Google girişi başarısız oldu. Lütfen tekrar deneyin.");
+    err.userMessage = err.message;
+    throw err;
   }
 };
 

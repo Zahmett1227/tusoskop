@@ -66,6 +66,7 @@ async function main() {
 
       // correct (0-bazlı index) → cevap (0-bazlı, aynı)
       slim.cevap = q.cevap ?? q.correct ?? 0;
+      slim.exp = q.exp || q.explanation || "";
       slim.difficulty = q.difficulty || q.diff;
 
       if (slim.id !== undefined && slim.soru) allQuestions.push(slim);

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { EXAM_SETS } from "../data/exams";
+import { useToast } from "../context/ToastContext";
 import {
   analyzeExamResults,
   getEstimatedTusResult,
@@ -28,6 +29,7 @@ export function useExamState({
   onExamFinish,
   recordHistoryForQuestion = () => {},
 }) {
+  const { showToast } = useToast();
   // API parity with App.jsx; reserved for upcoming exam-side effects
   useEffect(() => {}, [user, userData, QUESTIONS, toDisplayQuestions]);
   const [examQuestions, setExamQuestions] = useState([]);
@@ -49,9 +51,10 @@ export function useExamState({
       clearInProgressExam();
       if (shouldNotifyInProgressReset(check.reason)) {
         inProgressNotifiedRef.current = true;
-        window.alert(EXAM_IN_PROGRESS_RESET_MESSAGE);
+        showToast(EXAM_IN_PROGRESS_RESET_MESSAGE, { type: "info" });
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const persistInProgressExam = useCallback(() => {

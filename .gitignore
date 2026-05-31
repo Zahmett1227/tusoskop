@@ -43,10 +43,12 @@ blob-report/
 
 temp-build/
 temp-build-2/
+temp-build-codex-social-post/
 
 # Instagram otomasyon — üretilen ve hassas dosyalar
 scripts/instagram/questions.json
 scripts/instagram/*.png
+!scripts/instagram/logo.png
 scripts/instagram/*.jpg
 scripts/instagram/.ig_session.json
 scripts/instagram/ig_session.json

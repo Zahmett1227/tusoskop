@@ -103,6 +103,27 @@ async function invokeIncrementUsage(payload) {
   return result.data;
 }
 
+/**
+ * Firebase callable'ın geçici/ağ kaynaklı hatası mı?
+ * Bu durumlarda kullanıcıyı sert biçimde bloklamak yerine işleme izin
+ * verilir; gerçek limit denetimi sayaç sunucu tarafında olduğu için
+ * bir sonraki başarılı çağrıda yine devreye girer. Yetki/kimlik gibi
+ * kalıcı hatalarda ise güvenli tarafta kalıp bloklamaya devam ederiz.
+ */
+function isTransientUsageError(err) {
+  const code = String(err?.code || "");
+  return (
+    code === "functions/unavailable" ||
+    code === "functions/deadline-exceeded" ||
+    code === "functions/internal" ||
+    code === "functions/cancelled" ||
+    code === "functions/aborted" ||
+    code === "functions/resource-exhausted" ||
+    // Kod yoksa genelde ağ/fetch hatasıdır
+    code === ""
+  );
+}
+
 export async function getUserUsage(user) {
   const todayKey = getTodayKey();
   const monthKey = getMonthKey();
@@ -205,6 +226,10 @@ export async function incrementQuestionUsage(user, userData, count = 1) {
     return data.usage ? safeUsage(data.usage) : null;
   } catch (err) {
     if (err instanceof UsageLimitError) throw err;
+    if (isTransientUsageError(err)) {
+      console.warn("incrementQuestionUsage: geçici hata; işleme izin veriliyor", err);
+      return null;
+    }
     console.warn("incrementQuestionUsage: callable failed; blocking limited action", err);
     throw new UsageLimitError(
       "usage_counter_unavailable",
@@ -236,6 +261,10 @@ export async function incrementTopicTestUsage(user, userData) {
     return data.usage ? safeUsage(data.usage) : null;
   } catch (err) {
     if (err instanceof UsageLimitError) throw err;
+    if (isTransientUsageError(err)) {
+      console.warn("incrementTopicTestUsage: geçici hata; işleme izin veriliyor", err);
+      return null;
+    }
     console.warn("incrementTopicTestUsage: callable failed; blocking limited action", err);
     throw new UsageLimitError(
       "usage_counter_unavailable",
@@ -267,6 +296,10 @@ export async function incrementFullExamUsage(user, userData) {
     return { monthKey: getMonthKey(), fullExamCount: data.fullExamCount };
   } catch (err) {
     if (err instanceof UsageLimitError) throw err;
+    if (isTransientUsageError(err)) {
+      console.warn("incrementFullExamUsage: geçici hata; işleme izin veriliyor", err);
+      return { monthKey: getMonthKey(), fullExamCount: null };
+    }
     console.warn("incrementFullExamUsage: callable failed; blocking limited action", err);
     throw new UsageLimitError(
       "usage_counter_unavailable",
@@ -310,6 +343,10 @@ export async function incrementReviewUsage(user, userData, count = 1) {
     return data.usage ? safeUsage(data.usage) : null;
   } catch (err) {
     if (err instanceof UsageLimitError) throw err;
+    if (isTransientUsageError(err)) {
+      console.warn("incrementReviewUsage: geçici hata; işleme izin veriliyor", err);
+      return null;
+    }
     console.warn("incrementReviewUsage: callable failed; blocking limited action", err);
     throw new UsageLimitError(
       "usage_counter_unavailable",

@@ -2,12 +2,18 @@ import { useEffect, useMemo, useState } from "react";
 import { accentThemes } from "../theme/accentThemes";
 import { trackClarityEvent } from "../lib/clarity";
 import {
-  buildTodayReviewQueue,
   getFavoriteQuestions,
   getWrongQuestions,
   toggleFavoriteQuestion,
 } from "../services/studyCollectionService";
-import { getSmartReviewSummary } from "../services/smartReviewService";
+import {
+  getDueSmartReviews,
+  getSmartReviewSummary,
+  MAX_SESSION_DUE,
+  resolveQuestionsFromReviews,
+} from "../services/smartReviewService";
+import { FREE_LIMITS } from "../config/limits";
+import { isUserPremium } from "../utils/premiumUtils";
 import PerformanceChartCard from "./PerformanceChartCard";
 
 const TABS = [
@@ -55,15 +61,17 @@ export default function StudyCollectionScreen({
   const hydrate = async () => {
     setLoading(true);
     try {
-      const [wrong, favorites, queue, smartSummary] = await Promise.all([
+      const isPremium = isUserPremium(userData);
+      const dueLimit = isPremium ? MAX_SESSION_DUE : FREE_LIMITS.dailyReviewQuestions;
+      const [wrong, favorites, dueReviews, smartSummary] = await Promise.all([
         getWrongQuestions(user, userData),
         getFavoriteQuestions(user),
-        buildTodayReviewQueue(user, questions, userData),
+        getDueSmartReviews(user, new Date(), { limit: dueLimit }),
         getSmartReviewSummary(user),
       ]);
       setWrongItems(wrong);
       setFavoriteItems(favorites);
-      setTodayQueue(queue);
+      setTodayQueue(resolveQuestionsFromReviews(dueReviews, questions));
       setFsrsSummary(smartSummary ?? null);
     } finally {
       setLoading(false);
@@ -150,21 +158,53 @@ export default function StudyCollectionScreen({
         </div>
 
         <div className="rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900/90 to-slate-950 p-5">
+          {todayQueue.length === 0 ? (
+            <div className="flex flex-col items-center text-center py-6">
+              <span className="text-5xl mb-3" aria-hidden="true">🌱</span>
+              <h2 className="text-xl font-black mb-1">Bugün tekrar zamanı gelen soru yok</h2>
+              <p className="text-sm text-slate-400 max-w-sm">
+                FSRS zamanlamasına göre bugün çalışman gereken kart bulunmuyor.
+              </p>
+              {(unresolvedWrong.length > 0 || favoriteItems.length > 0) && (
+                <div className="mt-5 flex flex-col gap-2 w-full max-w-xs">
+                  {unresolvedWrong.length > 0 && (
+                    <button
+                      type="button"
+                      onClick={handleStartWrongReview}
+                      className={`min-h-10 px-5 rounded-2xl text-sm font-black ${theme.primary} ${theme.primaryHover} text-slate-950 shadow-lg ${theme.glow}`}
+                    >
+                      Yanlışlardan Özel Çalışma ({unresolvedWrong.length} soru)
+                    </button>
+                  )}
+                  {favoriteItems.length > 0 && (
+                    <button
+                      type="button"
+                      onClick={handleStartFavoriteReview}
+                      className="min-h-10 px-5 rounded-2xl text-sm font-bold border border-slate-700 bg-slate-900/80 text-slate-200"
+                    >
+                      Favorilerden Özel Çalışma ({favoriteItems.length} soru)
+                    </button>
+                  )}
+                </div>
+              )}
+            </div>
+          ) : (
+            <>
           <h2 className="text-xl font-black mb-1">
-            {todayQueue.length ? "Bugünkü tekrarın hazır" : "Bugünlük tekrar kuyruğun boş"}
+            Bugünkü tekrarın hazır
           </h2>
           <p className="text-sm text-slate-400">
-            {todayQueue.length
-              ? `${todayQueue.length} soruluk tekrar kuyruğu${
+            {`${todayQueue.length} soruluk tekrar kuyruğu${
                   fsrsSummary?.overdueCount > 0
                     ? ` · ${fsrsSummary.overdueCount} soru gecikmiş`
                     : ""
-                }`
-              : "Yanlış yaptığın veya favoriye eklediğin sorular burada tekrar için birikecek."}
+                }`}
           </p>
           <p className={`text-xs mt-3 ${theme.text}`}>
-            Öncelik: En çok yanlış yaptığın konular ve çözülmemiş sorular.
+            FSRS zamanlamasına göre bugün tekrar etmen gereken sorular.
           </p>
+            </>
+          )}
           {todayQueue.length > 0 && (
             <button
               type="button"
@@ -264,7 +304,7 @@ export default function StudyCollectionScreen({
                 onClick={handleStartWrongReview}
                 className={`min-h-10 px-4 rounded-2xl text-xs font-black ${theme.primary} text-slate-950`}
               >
-                Yanlışlarla çöz
+                Özel Çalışma Başlat
               </button>
             </div>
             {!wrongItems.length && (
@@ -316,7 +356,7 @@ export default function StudyCollectionScreen({
                 onClick={handleStartFavoriteReview}
                 className={`min-h-10 px-4 rounded-2xl text-xs font-black ${theme.primary} text-slate-950`}
               >
-                Favorilerle çöz
+                Özel Çalışma Başlat
               </button>
             </div>
             {!favoriteItems.length && (

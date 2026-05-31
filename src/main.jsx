@@ -1,12 +1,10 @@
-if (typeof window !== 'undefined' && window.location.hostname === '127.0.0.1') {
-  window.location.replace(`http://localhost:${window.location.port}${window.location.pathname}${window.location.search}${window.location.hash}`)
-}
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import ErrorBoundary from './components/ErrorBoundary.jsx'
 import { QuestionsProvider } from './context/QuestionsContext.jsx'
+import { ToastProvider } from './context/ToastContext.jsx'
 import { initClarity } from './lib/clarity'
 import { registerServiceWorker } from './registerServiceWorker'
 import { initNativeAppShell } from './utils/nativeApp'
@@ -14,9 +12,11 @@ import { initNativeAppShell } from './utils/nativeApp'
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ErrorBoundary>
-      <QuestionsProvider>
-        <App />
-      </QuestionsProvider>
+      <ToastProvider>
+        <QuestionsProvider>
+          <App />
+        </QuestionsProvider>
+      </ToastProvider>
     </ErrorBoundary>
   </React.StrictMode>
 )

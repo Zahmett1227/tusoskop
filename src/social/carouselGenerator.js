@@ -109,7 +109,7 @@ export function generateAnswerCarouselSlides(question) {
       hook: "Dünün sorusu · cevap",
       metaLine,
       title: "Doğru cevap",
-      answerLine: `${letter}) ${question.options[question.correct]}`,
+      answerLine: `${letter}) ${question.options?.[question.correct] ?? "—"}`,
       footerPrimary: CTAS.save,
     },
     {

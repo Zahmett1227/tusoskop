@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;900&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: #01030f;
+    }
+    .story-root {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg-gradient);
+    }
+    /* ── Header ── */
+    .story-header {
+      position: absolute;
+      top: 56px; left: 60px; right: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      color: var(--accent-bright-72);
+    }
+    .brand-circle {
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      background: var(--accent-14);
+      border: 1.5px solid var(--accent-38);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px; font-weight: 900;
+      color: var(--accent-bright);
+    }
+    /* ── Anatomy decor ── */
+    .decor-main {
+      position: absolute;
+      top: 126px; right: 42px;
+      opacity: 0.20;
+      filter: drop-shadow(0 0 48px var(--accent-bright-38));
+      pointer-events: none;
+    }
+    .decor-small {
+      position: absolute;
+      top: 480px; left: 16px;
+      opacity: 0.07;
+      transform: scale(0.52);
+      transform-origin: top left;
+      pointer-events: none;
+    }
+    /* ── Content zone ── */
+    .story-content {
+      position: absolute;
+      top: 800px; left: 54px; right: 54px;
+      display: flex; flex-direction: column; gap: 22px;
+    }
+    .subject-badge-wrap {
+      display: flex;
+      justify-content: center;
+    }
+    .subject-badge {
+      padding: 11px 32px;
+      border-radius: 40px;
+      background: var(--accent-12);
+      border: 1.5px solid var(--accent-38);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 19px; font-weight: 900; letter-spacing: 0.08em;
+      color: var(--accent-bright);
+      max-width: 100%; overflow: hidden;
+      text-overflow: ellipsis; white-space: nowrap;
+    }
+    .story-kicker {
+      text-align: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 36px; font-weight: 900; letter-spacing: 0.22em;
+      color: rgba(218, 230, 244, 0.86);
+    }
+    .question-card {
+      background: rgba(5, 10, 30, 0.74);
+      border: 1px solid var(--accent-28);
+      border-radius: 22px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 36px 40px;
+      box-shadow: 0 8px 36px rgba(0,0,0,0.52), 0 0 80px var(--accent-06);
+    }
+    .question-text {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      line-height: 1.40;
+      color: #dde6f0;
+    }
+    .options-list {
+      display: flex; flex-direction: column; gap: 13px;
+    }
+    .option-row {
+      display: flex; align-items: center; gap: 20px;
+      background: rgba(5, 8, 25, 0.66);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 14px;
+      padding: 18px 24px;
+      min-height: 76px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .option-letter {
+      width: 50px; height: 50px; border-radius: 12px; flex-shrink: 0;
+      background: var(--accent-70);
+      border: 1px solid var(--accent-bright-42);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px; font-weight: 900; color: #fff;
+    }
+    .option-text {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      color: #c8d6e5;
+      line-height: 1.36;
+    }
+    /* ── Footer ── */
+    .story-footer {
+      position: absolute;
+      bottom: 50px; left: 0; right: 0;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 19px; font-weight: 500;
+      color: #6b7a8d; letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+  <div class="story-root" id="story-root">
+    <div class="story-header">
+      <span class="brand-text">TUSOSKOP</span>
+      <div class="brand-circle">T</div>
+    </div>
+
+    <div class="decor-main" id="decor-main"></div>
+    <div class="decor-small" id="decor-small"></div>
+
+    <div class="story-content">
+      <div class="subject-badge-wrap">
+        <div class="subject-badge" id="subject-badge"></div>
+      </div>
+      <div class="story-kicker">S O R U</div>
+      <div class="question-card">
+        <p class="question-text" id="question-text"></p>
+      </div>
+      <div class="options-list" id="options-list"></div>
+    </div>
+
+    <div class="story-footer">Cevabını yorumlara yaz · tusoskop.com</div>
+  </div>
+
+  <script>
+  (function () {
+    // ── Colour palette (matches topicThemes.js) ──────────────────────────────
+    const PALETTES = {
+      physiology:       { accent: '20,184,166',  bright: '94,234,212'  },
+      anatomy:          { accent: '56,189,248',  bright: '125,211,252' },
+      biochemistry:     { accent: '34,197,94',   bright: '134,239,172' },
+      microbiology:     { accent: '6,182,212',   bright: '34,211,238'  },
+      pathology:        { accent: '251,113,133', bright: '253,164,175' },
+      pharmacology:     { accent: '139,92,246',  bright: '167,139,250' },
+      internal_medicine:{ accent: '45,212,191',  bright: '103,232,249' },
+      pediatrics:       { accent: '244,114,182', bright: '249,168,212' },
+      surgery:          { accent: '249,115,22',  bright: '253,186,116' },
+      obgyn:            { accent: '236,72,153',  bright: '244,114,182' },
+      small_rotations:  { accent: '129,140,248', bright: '165,180,252' },
+      cardiology:       { accent: '239,68,68',   bright: '248,113,113' },
+      hepatology:       { accent: '161,98,7',    bright: '202,138,4'   },
+      neurology:        { accent: '99,102,241',  bright: '129,140,248' },
+      hematology:       { accent: '220,38,38',   bright: '239,68,68'   },
+      pulmonology:      { accent: '14,165,233',  bright: '56,189,248'  },
+      nephrology:       { accent: '20,184,166',  bright: '45,212,191'  },
+      endocrinology:    { accent: '234,179,8',   bright: '250,204,21'  },
+      gastroenterology: { accent: '249,115,22',  bright: '251,146,60'  },
+      infectious:       { accent: '132,204,22',  bright: '163,230,53'  },
+    };
+    const DEFAULT_PALETTE = { accent: '16,185,129', bright: '52,211,153' };
+
+    // ── Ders → theme ID (mirrors DERS_RULES in topicThemes.js) ───────────────
+    function getThemeId(ders) {
+      const d = (ders || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+      if (/fizyoloji/.test(d)) return 'physiology';
+      if (/anatomi/.test(d)) return 'anatomy';
+      if (/biyokimya|biokimya/.test(d)) return 'biochemistry';
+      if (/patoloji/.test(d)) return 'pathology';
+      if (/farmakol/.test(d)) return 'pharmacology';
+      if (/mikrobiyol|mikrobiol/.test(d)) return 'microbiology';
+      if (/dahiliye/.test(d)) return 'internal_medicine';
+      if (/pediatr/.test(d)) return 'pediatrics';
+      if (/genel cerrahi|cerrahi/.test(d)) return 'surgery';
+      if (/kad[iı]n|dogum|do[gğ]um/.test(d)) return 'obgyn';
+      if (/nörolo|norol/.test(d)) return 'neurology';
+      if (/kardiyol/.test(d)) return 'cardiology';
+      if (/kucuk staj|kucuk|staj/.test(d)) return 'small_rotations';
+      if (/enfeksiy/.test(d)) return 'infectious';
+      return 'default';
+    }
+
+    // ── Font size helpers ─────────────────────────────────────────────────────
+    function questionFontSize(text) {
+      const n = (text || '').length;
+      if (n < 80)  return 44;
+      if (n < 130) return 38;
+      if (n < 190) return 33;
+      if (n < 260) return 29;
+      return 26;
+    }
+    function optionFontSize(options) {
+      const max = Math.max(0, ...(options||[]).map(o=>(o.text||'').length));
+      if (max < 35) return 26;
+      if (max < 55) return 23;
+      return 20;
+    }
+
+    // ── Anatomy SVG strings ───────────────────────────────────────────────────
+    function decorSvg(themeId, c) {
+      switch (themeId) {
+        case 'cardiology': case 'internal_medicine': return `
+<svg width="300" height="280" viewBox="0 0 300 280" fill="none">
+  <path d="M150 235 C115 195 55 168 55 112 C55 72 86 44 117 50 C133 53 148 66 150 66 C152 66 167 53 183 50 C214 44 245 72 245 112 C245 168 185 195 150 235Z" stroke="${c}" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M72 182 H104 L115 158 L128 196 L139 170 H228" stroke="${c}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+        case 'microbiology': case 'infectious': {
+          const lines = [0,45,90,135,180,225,270,315].map(a=>{
+            const r=Math.PI*a/180;
+            return `<line x1="${(140+54*Math.cos(r)).toFixed(1)}" y1="${(140+54*Math.sin(r)).toFixed(1)}" x2="${(140+76*Math.cos(r)).toFixed(1)}" y2="${(140+76*Math.sin(r)).toFixed(1)}" stroke="${c}" stroke-width="2.2" stroke-linecap="round"/>`;
+          }).join('');
+          return `<svg width="280" height="280" viewBox="0 0 280 280" fill="none">
+<circle cx="140" cy="140" r="54" stroke="${c}" stroke-width="2.2"/>
+<circle cx="140" cy="140" r="22" fill="${c}" opacity="0.55"/>
+${lines}
+<circle cx="78" cy="78" r="26" stroke="${c}" stroke-width="1.8" opacity="0.65"/>
+<circle cx="212" cy="210" r="20" stroke="${c}" stroke-width="1.5" opacity="0.5"/>
+</svg>`; }
+        case 'biochemistry': {
+          const N=9, H=300;
+          let els='';
+          for(let i=0;i<N;i++){
+            const t=i/(N-1), nt=(i+1)/(N-1);
+            const y=14+t*(H-28), ny=14+nt*(H-28);
+            const ox=Math.sin(t*2*Math.PI)*52, nox=Math.sin(nt*2*Math.PI)*52;
+            els+=`<ellipse cx="${(130+ox).toFixed(1)}" cy="${y.toFixed(1)}" rx="19" ry="7" stroke="${c}" stroke-width="1.8"/>`;
+            if(i<N-1) els+=`<line x1="${(130+ox).toFixed(1)}" y1="${y.toFixed(1)}" x2="${(130-nox).toFixed(1)}" y2="${ny.toFixed(1)}" stroke="${c}" stroke-width="1" opacity="0.5" stroke-linecap="round"/>`;
+          }
+          return `<svg width="260" height="${H+10}" viewBox="0 0 260 ${H+10}" fill="none">${els}</svg>`; }
+        case 'neurology': case 'small_rotations': return `
+<svg width="280" height="270" viewBox="0 0 280 270" fill="none">
+  <path d="M90 135 C85 80 102 32 140 30 C178 32 195 80 190 135 C185 178 168 204 140 218 C112 204 95 178 90 135Z" stroke="${c}" stroke-width="2.2"/>
+  <path d="M140 30 C143 72 148 104 153 130 C158 155 168 172 140 184 C112 172 122 155 127 130 C132 104 137 72 140 30Z" stroke="${c}" stroke-width="1.2" opacity="0.6"/>
+  <path d="M90 112 C68 96 54 68 76 52 C98 38 120 62 132 90" stroke="${c}" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M190 112 C212 96 226 68 204 52 C182 38 160 62 148 90" stroke="${c}" stroke-width="1.8" stroke-linecap="round"/>
+</svg>`;
+        case 'pulmonology': case 'anatomy': return `
+<svg width="290" height="280" viewBox="0 0 290 280" fill="none">
+  <path d="M145 46 L145 190" stroke="${c}" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M145 68 C102 56 68 88 63 132 C58 170 80 204 112 218 C122 180 117 138 145 68Z" stroke="${c}" stroke-width="2.2" fill="none"/>
+  <path d="M145 68 C188 56 222 88 227 132 C232 170 210 204 178 218 C168 180 173 138 145 68Z" stroke="${c}" stroke-width="2.2" fill="none"/>
+</svg>`;
+        case 'physiology': case 'nephrology': return `
+<svg width="290" height="250" viewBox="0 0 290 250" fill="none">
+  <path d="M88 46 C44 58 40 146 78 182 C100 200 124 168 124 118 C124 68 104 42 88 46Z" stroke="${c}" stroke-width="2.2" fill="none"/>
+  <path d="M202 46 C246 58 250 146 212 182 C190 200 166 168 166 118 C166 68 186 42 202 46Z" stroke="${c}" stroke-width="2.2" fill="none"/>
+  <ellipse cx="145" cy="114" rx="21" ry="32" stroke="${c}" stroke-width="1.8"/>
+  <line x1="88" y1="118" x2="124" y2="118" stroke="${c}" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="166" y1="118" x2="202" y2="118" stroke="${c}" stroke-width="1.4" stroke-linecap="round"/>
+</svg>`;
+        case 'pharmacology': return `
+<svg width="280" height="268" viewBox="0 0 280 268" fill="none">
+  <circle cx="140" cy="88" r="40" stroke="${c}" stroke-width="2.2"/>
+  <circle cx="76" cy="182" r="30" stroke="${c}" stroke-width="1.8" opacity="0.85"/>
+  <circle cx="204" cy="182" r="30" stroke="${c}" stroke-width="1.8" opacity="0.85"/>
+  <line x1="108" y1="110" x2="92" y2="158" stroke="${c}" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="172" y1="110" x2="188" y2="158" stroke="${c}" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="76" y1="212" x2="204" y2="212" stroke="${c}" stroke-width="1.2" opacity="0.5" stroke-linecap="round"/>
+</svg>`;
+        case 'pathology': return `
+<svg width="280" height="280" viewBox="0 0 280 280" fill="none">
+  <circle cx="140" cy="140" r="60" stroke="${c}" stroke-width="2"/>
+  <circle cx="140" cy="140" r="30" stroke="${c}" stroke-width="1.5" opacity="0.7"/>
+  <circle cx="140" cy="140" r="8" fill="${c}" opacity="0.55"/>
+  <circle cx="80" cy="80" r="20" stroke="${c}" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="200" cy="90" r="16" stroke="${c}" stroke-width="1.3" opacity="0.4"/>
+  <circle cx="90" cy="200" r="18" stroke="${c}" stroke-width="1.3" opacity="0.45"/>
+</svg>`;
+        default: return `
+<svg width="280" height="268" viewBox="0 0 280 268" fill="none">
+  <circle cx="140" cy="102" r="36" stroke="${c}" stroke-width="2"/>
+  <circle cx="78" cy="192" r="24" stroke="${c}" stroke-width="1.8" opacity="0.8"/>
+  <circle cx="202" cy="192" r="24" stroke="${c}" stroke-width="1.8" opacity="0.8"/>
+  <circle cx="140" cy="50" r="15" stroke="${c}" stroke-width="1.5" opacity="0.65"/>
+  <line x1="107" y1="120" x2="92" y2="173" stroke="${c}" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="173" y1="120" x2="188" y2="173" stroke="${c}" stroke-width="1.5" stroke-linecap="round"/>
+</svg>`;
+      }
+    }
+
+    // ── CSS variable helpers ──────────────────────────────────────────────────
+    function rgba(rgb, a) { return `rgba(${rgb},${a})`; }
+    function hex3(rgb) {
+      return '#' + rgb.split(',').map(v=>parseInt(v.trim()).toString(16).padStart(2,'0')).join('');
+    }
+
+    // ── Main render ───────────────────────────────────────────────────────────
+    var data = window.STORY_DATA || {};
+    var ders = data.ders || '';
+    var konu = data.konu || '';
+    var questionText = data.questionText || data.soru || '';
+    var options = data.options || data.secenekler || [];
+
+    var themeId = getThemeId(ders);
+    var pal = PALETTES[themeId] || DEFAULT_PALETTE;
+    var ar = pal.accent;
+    var abr = pal.bright;
+    var accentHex = hex3(ar);
+    var accentBrightHex = hex3(abr);
+
+    // Set CSS variables
+    var root = document.documentElement;
+    root.style.setProperty('--accent-bright', accentBrightHex);
+    root.style.setProperty('--accent-bright-72', rgba(abr, 0.72));
+    root.style.setProperty('--accent-bright-38', rgba(abr, 0.38));
+    root.style.setProperty('--accent-bright-42', rgba(abr, 0.42));
+    root.style.setProperty('--accent-14', rgba(ar, 0.14));
+    root.style.setProperty('--accent-38', rgba(ar, 0.38));
+    root.style.setProperty('--accent-12', rgba(ar, 0.12));
+    root.style.setProperty('--accent-28', rgba(ar, 0.28));
+    root.style.setProperty('--accent-06', rgba(ar, 0.06));
+    root.style.setProperty('--accent-70', rgba(ar, 0.70));
+
+    // Build gradient background
+    var bg = [
+      `radial-gradient(ellipse 82% 58% at 84% 7%, rgba(${abr},0.42) 0%, transparent 58%)`,
+      `radial-gradient(ellipse 55% 44% at 14% 90%, rgba(${ar},0.26) 0%, transparent 54%)`,
+      `radial-gradient(ellipse 70% 50% at 50% 36%, rgba(${ar},0.07) 0%, transparent 64%)`,
+      `radial-gradient(circle at 50% 0%, rgba(255,255,255,0.025) 0%, transparent 38%)`,
+      `linear-gradient(180deg, #01030f 0%, #060c1a 28%, #03080f 66%, #01030f 100%)`
+    ].join(', ');
+    document.getElementById('story-root').style.background = bg;
+
+    // Subject badge
+    var badge = (ders || 'TUSOSKOP').toUpperCase();
+    if (konu) badge += ' · ' + konu.toUpperCase();
+    document.getElementById('subject-badge').textContent = badge;
+
+    // Question text + font size
+    var qEl = document.getElementById('question-text');
+    qEl.textContent = questionText;
+    qEl.style.fontSize = questionFontSize(questionText) + 'px';
+
+    // Anatomy decorations
+    var decorHtml = decorSvg(themeId, accentBrightHex);
+    document.getElementById('decor-main').innerHTML = decorHtml;
+    document.getElementById('decor-small').innerHTML = decorHtml;
+
+    // Options
+    var optFSize = optionFontSize(options);
+    var listEl = document.getElementById('options-list');
+    (options || []).slice(0, 5).forEach(function(opt, i) {
+      var letter = opt.letter || String.fromCharCode(65 + i);
+      var text   = opt.text || String(opt || '');
+      var row = document.createElement('div');
+      row.className = 'option-row';
+      var badge = document.createElement('div');
+      badge.className = 'option-letter';
+      badge.textContent = letter;
+      var label = document.createElement('span');
+      label.className = 'option-text';
+      label.style.fontSize = optFSize + 'px';
+      label.textContent = text;
+      row.appendChild(badge);
+      row.appendChild(label);
+      listEl.appendChild(row);
+    });
+  })();
+  </script>
+</body>
+</html>

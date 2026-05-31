@@ -8,6 +8,7 @@ import {
 import { auth, db } from "../firebase";
 import { readLocalStorageJson } from "../utils/safeLocalStorage";
 import {
+  applyReview,
   createInitialReviewState,
   dedupeSmartReviewsByQuestionId,
   filterInsightReviewPool,
@@ -160,7 +161,13 @@ export async function upsertSmartReview(user, question, source = "wrong", grade 
   return next;
 }
 
-export async function updateSmartReviewGrade(user, question, grade, now = new Date()) {
+export async function updateSmartReviewGrade(
+  user,
+  question,
+  grade,
+  now = new Date(),
+  reviewContext = null
+) {
   const questionId = getQuestionIdSafe(question);
   if (!questionId || !grade) return null;
   const all = await getSmartReviews(user);
@@ -168,7 +175,7 @@ export async function updateSmartReviewGrade(user, question, grade, now = new Da
   if (!existing) {
     return upsertSmartReview(user, question, "wrong", grade, now);
   }
-  const next = updateReviewAfterGrade(existing, grade, now);
+  const next = applyReview(existing, grade, now, reviewContext);
   if (!next) return null;
   const merged = dedupeSmartReviewsByQuestionId([
     ...all.filter((item) => item.questionId !== questionId),
@@ -179,8 +186,20 @@ export async function updateSmartReviewGrade(user, question, grade, now = new Da
   return next;
 }
 
-export async function updateSmartReviewFromAnswer(user, question, isCorrect, now = new Date()) {
-  return updateSmartReviewGrade(user, question, gradeFromAnswerCorrect(isCorrect), now);
+export async function updateSmartReviewFromAnswer(
+  user,
+  question,
+  isCorrect,
+  now = new Date(),
+  reviewContext = null
+) {
+  return updateSmartReviewGrade(
+    user,
+    question,
+    gradeFromAnswerCorrect(isCorrect),
+    now,
+    reviewContext
+  );
 }
 
 export async function removeSmartReview(user, questionId) {
@@ -225,6 +244,32 @@ export async function getSmartReviewSummary(user, now = new Date()) {
     topSubjects: buildTopSubjectsWithTopics(insightPool),
     topTopics: topLabels(insightPool, "konu"),
   };
+}
+
+/**
+ * Favori sorular için FSRS kartı yoksa otomatik olarak source:"favorite" kartı oluşturur.
+ * Mevcut kart varsa dokunmaz (duplicate oluşturmaz).
+ */
+export async function ensureSmartReviewsForFavorites(user, questions, now = new Date()) {
+  if (!Array.isArray(questions) || !questions.length) return [];
+  const all = await getSmartReviews(user);
+  const existingIds = new Set(all.map((item) => item.questionId));
+  const toCreate = questions.filter((q) => {
+    const id = getQuestionIdSafe(q);
+    return id && !existingIds.has(id);
+  });
+  if (!toCreate.length) return [];
+  const created = [];
+  for (const q of toCreate) {
+    const entry = createInitialReviewState(q, "favorite", now);
+    if (!entry) continue;
+    created.push(entry);
+    await writeFirestoreReview(user, entry);
+  }
+  if (created.length) {
+    mergeSmartReviewsIntoLocal(created, now);
+  }
+  return created;
 }
 
 export function resolveQuestionsFromReviews(reviews, questions = []) {

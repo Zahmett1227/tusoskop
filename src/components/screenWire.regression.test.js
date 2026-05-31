@@ -24,7 +24,7 @@ describe("App.jsx ekran geri navigasyonu", () => {
 
     const trackerBlock = appSource.slice(
       appSource.indexOf('case "tracker"'),
-      appSource.indexOf('case "suggestions"')
+      appSource.indexOf('case "summary"')
     );
     expect(trackerBlock).toContain("<TopicTracker onBack={goDashboard}");
     expect(trackerBlock).toContain("user={user}");

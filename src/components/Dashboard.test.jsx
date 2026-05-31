@@ -25,7 +25,6 @@ vi.mock("../services/studyCollectionService", () => ({
     wrongCount: 2,
     favoriteCount: 1,
   }),
-  buildTodayReviewQueue: vi.fn().mockResolvedValue([]),
 }));
 
 vi.mock("../services/streakService", () => ({
@@ -35,6 +34,17 @@ vi.mock("../services/streakService", () => ({
 const stableMockQuestions = [];
 vi.mock("../hooks/useQuestions", () => ({
   useQuestions: () => ({ questions: stableMockQuestions }),
+}));
+
+vi.mock("../services/smartReviewService", () => ({
+  getSmartReviewSummary: vi.fn().mockResolvedValue({
+    dueCount: 5,
+    overdueCount: 1,
+    totalCount: 10,
+    topSubjects: [],
+    topTopics: [],
+  }),
+  getSmartReviews: vi.fn().mockResolvedValue([]),
 }));
 
 vi.mock("../lib/clarity", () => ({
@@ -58,6 +68,17 @@ describe("Dashboard manifest ders sayıları", () => {
     expect(SUBJECT_QUESTION_COUNTS["Küçük Stajlar"]).toBe(475);
     expect(dashboardSource).toContain("SUBJECT_QUESTION_COUNTS[s.name]");
     expect(dashboardSource).not.toMatch(/QUESTIONS\.filter/);
+  });
+});
+
+describe("Dashboard due count kaynağı", () => {
+  it("buildTodayReviewQueue dashboard kaynak kodunda import edilmez", () => {
+    expect(dashboardSource).not.toContain("buildTodayReviewQueue");
+  });
+
+  it("dashboard akıllı tekrar sayısını smartDue üzerinden gösterir", () => {
+    expect(dashboardSource).toContain("smartDue");
+    expect(dashboardSource).not.toContain("reviewQueueCount");
   });
 });
 
@@ -144,8 +165,6 @@ describe("Dashboard render ve CTA", () => {
     });
     expect(container.textContent).toContain("Kadın Hastalıkları ve Doğum");
     expect(container.textContent).toContain("Küçük Stajlar");
-    expect(container.textContent).toContain("678");
-    expect(container.textContent).toContain("475");
   });
 
   it("remainingUsage null iken patlamaz", async () => {

@@ -3,6 +3,15 @@ import { PRICING } from "../constants/pricing";
 import { formatPremiumUntil } from "../utils/premiumUtils";
 import { canShowExternalPayments } from "../utils/device";
 
+function isExpiredPlus(userData) {
+  if (!userData) return false;
+  if (userData.lifetimePremium) return false;
+  if (userData.plan !== "plus" || userData.premiumStatus !== "active") return false;
+  if (!userData.premiumUntil) return false;
+  const until = new Date(userData.premiumUntil?.toDate?.() ?? userData.premiumUntil);
+  return !isNaN(until.getTime()) && until <= new Date();
+}
+
 /**
  * Dashboard üstü — plan özeti + Plus upsell / Plus durum kartı.
  * setView("premiumInfo") akışı korunur.
@@ -85,7 +94,23 @@ export default function DashboardMembershipHero({
     );
   }
 
+  const expiredPlus = isExpiredPlus(userData);
+
   return (
+    <>
+    {expiredPlus && (
+      <div className={`mb-4 flex items-center gap-3 rounded-2xl border px-4 py-3 text-sm font-semibold ${isLightTheme ? "border-amber-300 bg-amber-50 text-amber-900" : "border-amber-500/40 bg-amber-500/10 text-amber-200"}`}>
+        <span aria-hidden>⚠</span>
+        <span>Plus aboneliğin sona erdi. Devam etmek için yenile.</span>
+        <button
+          type="button"
+          onClick={onOpenPremium}
+          className={`ml-auto shrink-0 rounded-xl px-3 py-1.5 text-xs font-black transition ${isLightTheme ? "bg-amber-500 text-white hover:bg-amber-600" : "bg-amber-500 text-slate-950 hover:bg-amber-400"}`}
+        >
+          Yenile
+        </button>
+      </div>
+    )}
     <div
       className={`group relative mb-6 overflow-hidden rounded-3xl border p-5 sm:p-7 md:p-8 transition-all duration-300 ease-out hover:-translate-y-0.5 ${outer}`}
     >
@@ -304,6 +329,7 @@ export default function DashboardMembershipHero({
         </div>
       </div>
     </div>
+    </>
   );
 }
 

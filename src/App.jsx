@@ -54,9 +54,9 @@ import { SUBJECTS as SUBJECT_CATALOG } from "./data/subjects";
 import { SUBJECT_QUESTION_COUNTS } from "./data/questions";
 import { applyQuestionTextFilter } from "./utils/questionTextFilter";
 import { shouldShowDemoLogin } from "./services/demoModeService";
+import { useToast } from "./context/ToastContext";
 
 const Dashboard = lazy(() => import("./components/Dashboard"));
-const Suggestions = lazy(() => import("./components/Suggestions"));
 const Summary = lazy(() => import("./components/Summary"));
 const ExamScreen = lazy(() => import("./components/ExamScreen"));
 const ExamAnalysisScreen = lazy(() => import("./components/ExamAnalysisScreen"));
@@ -71,6 +71,22 @@ const AccountSettingsScreen = lazy(() => import("./components/account/AccountSet
 const PremiumInfoScreen = lazy(() => import("./components/premium/PremiumInfoScreen"));
 const LimitReachedModal = lazy(() => import("./components/premium/LimitReachedModal"));
 const LegalPage = lazy(() => import("./components/legal/LegalPage"));
+const REVIEW_CONTEXT = {
+  DAILY_FSRS: "daily_fsrs_review",
+  WRONGS: "wrongs_practice",
+  FAVORITES: "favorites_practice",
+  TOPIC: "topic_practice",
+  CUSTOM: "mixed_practice",
+};
+
+const SOURCE_TO_REVIEW_CONTEXT = {
+  smart: REVIEW_CONTEXT.DAILY_FSRS,
+  wrong: REVIEW_CONTEXT.WRONGS,
+  favorite: REVIEW_CONTEXT.FAVORITES,
+  topic: REVIEW_CONTEXT.TOPIC,
+  custom: REVIEW_CONTEXT.CUSTOM,
+};
+
 // TUS Deneme Dağılımı (Blueprint)
 const FULL_EXAM_BLUEPRINT = {
   Anatomi: 13, Fizyoloji: 15, Biyokimya: 18, Mikrobiyoloji: 18, 
@@ -108,6 +124,15 @@ export default function App() {
 
   // iOS tespiti — ilk render'da hesapla, değişmez
   const [iosDevice] = useState(() => isIOS());
+  const { showToast } = useToast();
+
+  const handleLoginWithGoogle = useCallback(async () => {
+    try {
+      await loginWithGoogle();
+    } catch (error) {
+      showToast(error?.userMessage || "Google girişi başarısız oldu.", { type: "error" });
+    }
+  }, [showToast]);
 
   useEffect(() => {
     const startAnalytics = () => initAnalytics();
@@ -339,6 +364,7 @@ export default function App() {
       studyState.setCurrentSubject("Çalışma Alanım Tekrarı");
       studyState.setActiveTopicSubject("Çalışma Alanım");
       studyState.setActiveTopicName(source);
+      studyState.setActiveReviewContext(SOURCE_TO_REVIEW_CONTEXT[source] ?? REVIEW_CONTEXT.CUSTOM);
       studyState.setActiveQuestions(toDisplayQuestions(safeList));
       setView("study");
       setClarityTag("son_mod", "review");
@@ -424,7 +450,7 @@ export default function App() {
       if (!check.ok) {
         clearInProgressExam();
         if (shouldNotifyInProgressReset(check.reason)) {
-          window.alert(EXAM_IN_PROGRESS_RESET_MESSAGE);
+          showToast(EXAM_IN_PROGRESS_RESET_MESSAGE, { type: "info" });
         }
       } else if (hasMeaningfulExamProgress(check.data)) {
         const resume = window.confirm("Yarım kalan denemeye devam etmek ister misiniz?");
@@ -449,7 +475,7 @@ export default function App() {
             return;
           }
           clearInProgressExam();
-          window.alert(EXAM_IN_PROGRESS_RESET_MESSAGE);
+          showToast(EXAM_IN_PROGRESS_RESET_MESSAGE, { type: "info" });
         } else {
           clearInProgressExam();
         }
@@ -511,7 +537,6 @@ export default function App() {
             showDemoLogin={shouldShowDemoLogin()}
           />
         </div>
-        <IOSInstallBanner />
       </div>
     );
   }
@@ -585,10 +610,6 @@ export default function App() {
 
     case "tracker":
       screenContent = <TopicTracker onBack={goDashboard} user={user} />;
-      break;
-
-    case "suggestions":
-      screenContent = <Suggestions goDashboard={goDashboard} />;
       break;
 
     case "summary":
@@ -882,7 +903,6 @@ export default function App() {
           examLocked={bottomNavExamLocked}
         />
       )}
-      <IOSInstallBanner />
     </div>
   );
 }

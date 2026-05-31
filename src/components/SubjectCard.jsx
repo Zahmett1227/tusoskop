@@ -106,30 +106,11 @@ const SubjectCard = ({
 
         {/* ALT */}
         <div className="mt-6">
-          <div className={`mb-4 rounded-2xl border px-3 py-3 ${isLightTheme ? "border-slate-200 bg-white/75" : "border-slate-800 bg-slate-950/45"}`}>
-            <p className={`mb-2 text-[10px] font-bold uppercase tracking-wide ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>
-              Mini test havuzu
-            </p>
-            <div className="mb-2 flex items-end justify-between gap-3">
-              <div>
-                <p className={`text-3xl font-black ${theme.text}`}>
-                  {count}
-                </p>
-                <p className={`text-sm font-semibold ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>hazır soru</p>
-              </div>
-              <span className={`shrink-0 rounded-full px-2.5 py-1 text-[10px] font-black uppercase tracking-wider tabular-nums ${isLightTheme ? "bg-slate-100 text-slate-600" : "bg-slate-800 text-slate-400"}`}>
-                %{poolFillPercent}
-              </span>
-            </div>
-            <p className={`mb-2 text-[10px] leading-snug ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>
-              Çubuk, bu branştaki toplam soru hacmini gösterir.
-            </p>
-            <div className={`h-2 overflow-hidden rounded-full ${isLightTheme ? "bg-slate-200" : "bg-slate-800"}`}>
-              <div
-                className={`h-full rounded-full ${subjectVisual.bar} transition-all duration-500`}
-                style={{ width: `${barWidthPercent}%` }}
-              />
-            </div>
+          <div className={`mb-4 h-2 overflow-hidden rounded-full ${isLightTheme ? "bg-slate-200" : "bg-slate-800"}`}>
+            <div
+              className={`h-full rounded-full ${subjectVisual.bar} transition-all duration-500`}
+              style={{ width: `${barWidthPercent}%` }}
+            />
           </div>
 
           <div className={`flex items-center justify-between gap-2 text-sm font-bold ${theme.text} transition`}>

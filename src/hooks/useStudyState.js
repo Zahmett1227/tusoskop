@@ -49,6 +49,7 @@ export function useStudyState({
   const [studyMode, setStudyMode] = useState("study");
   const [activeTopicSubject, setActiveTopicSubject] = useState("");
   const [activeTopicName, setActiveTopicName] = useState("");
+  const [activeReviewContext, setActiveReviewContext] = useState(null);
   const [flowMode, setFlowMode] = useState(() => {
     if (typeof window === "undefined") return false;
     return localStorage.getItem("tusoskop-flow-mode") === "true";
@@ -104,6 +105,7 @@ export function useStudyState({
     setStudyMode("study");
     setActiveTopicSubject("");
     setActiveTopicName("");
+    setActiveReviewContext(null);
     setIsAutoAdvancing(false);
     setStreak(0);
     setQuestionTimes({});
@@ -404,7 +406,7 @@ export function useStudyState({
       if (studyMode === "review") {
         if (answer !== null && answer !== undefined && q?.id) {
           await updateWrongQuestionAfterReview(user, q, isCorrect, answer, userData);
-          await updateSmartReviewFromAnswer(user, q, isCorrect);
+          await updateSmartReviewFromAnswer(user, q, isCorrect, new Date(), activeTopicName);
         }
       } else if (isWrong && q?.id) {
         await addWrongQuestion(user, q, answer, userData);
@@ -426,6 +428,7 @@ export function useStudyState({
       getFeedbackMessage,
       recordHistoryForQuestion,
       refreshSmartReviewSummary,
+      activeTopicName,
     ]
   );
 
@@ -599,6 +602,8 @@ export function useStudyState({
     setActiveTopicSubject,
     activeTopicName,
     setActiveTopicName,
+    activeReviewContext,
+    setActiveReviewContext,
     flowMode,
     setFlowMode,
     isAutoAdvancing,

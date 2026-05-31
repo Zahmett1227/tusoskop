@@ -42,12 +42,24 @@ export default function StudyScreen({
   const progressPercent = Math.round(((index + 1) / Math.max(1, total)) * 100);
   const [insightsOpen, setInsightsOpen] = useState(true);
   const [fsrsRated, setFsrsRated] = useState(false);
+  // İlk render'da sorular henüz hazır değilse "bulunamadı" mesajını hemen
+  // göstermek yerine kısa bir bekleme penceresinde skeleton göster.
+  const [settling, setSettling] = useState(true);
 
   useEffect(() => {
     setFsrsRated(false);
   }, [q?.id, index]);
 
-  if (!q && total > 0) {
+  useEffect(() => {
+    if (q) {
+      setSettling(false);
+      return;
+    }
+    const t = setTimeout(() => setSettling(false), 700);
+    return () => clearTimeout(t);
+  }, [q]);
+
+  if (!q && (total > 0 || settling)) {
     return (
       <div
         className="min-h-dvh bg-slate-950 text-white overflow-x-hidden flex flex-col"
@@ -185,8 +197,10 @@ export default function StudyScreen({
           </div>
         )}
 
-        {/* Soru kartı */}
-        <div className={`relative overflow-hidden rounded-[2rem] border ${theme.border} ${subjectVisual.border} bg-gradient-to-br from-slate-950/95 via-slate-900/95 to-slate-950/95 shadow-2xl ${theme.glow} backdrop-blur-xl p-5 md:p-8`}>
+        {/* Soru kartı — ekranın görsel ağırlık merkezi */}
+        <div className={`relative overflow-hidden rounded-[2rem] border ${theme.border} ${subjectVisual.border} bg-gradient-to-br from-slate-900/95 via-slate-900/92 to-slate-950/95 shadow-[0_30px_70px_-30px_rgba(0,0,0,0.85)] ${theme.glow} ring-1 ring-inset ring-white/[0.07] backdrop-blur-xl p-5 md:p-8`}>
+          {/* Üst aksan şeridi — kartın kimliği */}
+          <div className={`pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${theme.gradient} opacity-80`} />
           <div className={`pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full blur-3xl ${theme.softBg}`} />
           <button
             type="button"
@@ -294,15 +308,16 @@ export default function StudyScreen({
                   aria-pressed={isSelected}
                   onClick={() => setSelected(i)}
                   className={`group flex min-h-[58px] w-full min-w-0 items-start gap-3 rounded-[1.35rem] border px-4 py-4 text-left text-slate-100 shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617] ${theme.ring} active:scale-[0.99] sm:items-center sm:gap-4 md:px-6 md:py-5
-                    ${isSelected ? `${theme.border} ${theme.softBg} shadow-lg ${theme.glow}` : "border-slate-700/80 bg-slate-950/80 hover:-translate-y-px hover:bg-slate-900/95 hover:border-slate-500 hover:shadow-lg hover:shadow-black/20"}
-                    ${showCorrectHighlight ? `${theme.border} ${theme.softBg}` : ""}
+                    ${isSelected && !showAnswer ? `${theme.border} ${theme.softBg} shadow-lg ${theme.glow}` : ""}
+                    ${!isSelected && !showCorrectHighlight ? "border-slate-700/80 bg-slate-950/80 hover:-translate-y-px hover:bg-slate-900/95 hover:border-slate-500 hover:shadow-lg hover:shadow-black/20" : ""}
+                    ${showCorrectHighlight && !selectedIsCorrect ? "border-emerald-400/60 bg-emerald-500/[0.12] shadow-[0_0_30px_rgba(16,185,129,0.18)]" : ""}
                     ${selectedIsWrong ? "border-amber-400/70 bg-amber-500/10 shadow-[0_0_35px_rgba(250,204,21,0.15)]" : ""}
                     ${selectedIsCorrect ? "correct-pop" : ""}
                   `}
                 >
                   <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border text-sm font-extrabold transition-all mt-0.5 sm:mt-0
                     ${showCorrectHighlight
-                      ? `${theme.primary} text-slate-950 ${theme.border}`
+                      ? "bg-emerald-500 text-slate-950 border-emerald-400/60"
                       : isSelected
                       ? `${theme.primary} text-slate-950 ${theme.border}`
                       : "border-slate-600/70 bg-gradient-to-br from-slate-700 to-slate-900 text-slate-300"}
@@ -313,7 +328,7 @@ export default function StudyScreen({
                     {opt}
                   </span>
                   {showCorrectHighlight && (
-                    <span className={`${theme.text} font-black text-sm`}>✔</span>
+                    <span className="text-emerald-400 font-black text-sm">✔</span>
                   )}
                 </button>
               );
@@ -367,7 +382,7 @@ export default function StudyScreen({
                 Doğru cevap
               </p>
               <p className={`text-sm md:text-base font-bold ${theme.text} break-words`}>
-                {String.fromCharCode(65 + q.correct)} — {q.options[q.correct]}
+                {String.fromCharCode(65 + q.correct)} — {q.options?.[q.correct] ?? "—"}
               </p>
               {selected !== null && selected !== q.correct && (
                 <p className="mt-2 text-xs text-amber-300/90 font-medium">

@@ -165,6 +165,9 @@ export function normalizeSmartReviewEntry(raw, now = new Date()) {
     lastReviewedAt: raw.lastReviewedAt
       ? (toDate(raw.lastReviewedAt)?.toISOString() ?? null)
       : null,
+    lastPracticeAt: raw.lastPracticeAt
+      ? (toDate(raw.lastPracticeAt)?.toISOString() ?? null)
+      : null,
     createdAt: raw.createdAt
       ? (toDate(raw.createdAt)?.toISOString() ?? now.toISOString())
       : now.toISOString(),
@@ -176,8 +179,12 @@ export function normalizeSmartReviewEntry(raw, now = new Date()) {
     retrievability: Number(raw.retrievability ?? 1),
     reviewCount: Math.max(0, Number(raw.reviewCount) || 0),
     lapseCount: Math.max(0, Number(raw.lapseCount) || 0),
+    softLapseCount: Math.max(0, Number(raw.softLapseCount) || 0),
+    softReviewCount: Math.max(0, Number(raw.softReviewCount) || 0),
+    sameDayReviewCount: Math.max(0, Number(raw.sameDayReviewCount) || 0),
     lastGrade: GRADES.includes(raw.lastGrade) ? raw.lastGrade : null,
     lastAnswerCorrect: Boolean(raw.lastAnswerCorrect),
+    lastReviewContext: raw.lastReviewContext ? String(raw.lastReviewContext) : null,
     schemaVersion: Number(raw.schemaVersion) || SCHEMA_VERSION,
   };
 
@@ -253,4 +260,137 @@ export function sortDueReviews(reviews, now = new Date()) {
 
 export function gradeFromAnswerCorrect(isCorrect) {
   return isCorrect ? "good" : "again";
+}
+
+/** lastReviewedAt → dueAt arasındaki gün sayısı. */
+export function computeScheduledDays(reviewState) {
+  const last = toDate(reviewState?.lastReviewedAt);
+  const due = toDate(reviewState?.dueAt);
+  if (!last || !due) return null;
+  const diff = (due.getTime() - last.getTime()) / MS_PER_DAY;
+  return diff > 0 ? diff : null;
+}
+
+/** progressRatio (elapsedDays/scheduledDays) → erken review ağırlığı (0–1). */
+export function getEarlyWeight(elapsedDays, scheduledDays) {
+  if (!scheduledDays || scheduledDays <= 0) return 0.3;
+  const ratio = elapsedDays / scheduledDays;
+  if (ratio < 0.15) return 0.1;
+  if (ratio < 0.50) return 0.35;
+  if (ratio < 0.80) return 0.65;
+  return 0.9;
+}
+
+function applyNormalReview(base, grade, context, now) {
+  const updated = updateReviewAfterGrade(base, grade, now);
+  if (!updated) return null;
+  return normalizeSmartReviewEntry({
+    ...updated,
+    lastPracticeAt: now.toISOString(),
+    lastReviewContext: context ?? updated.lastReviewContext,
+  }, now);
+}
+
+export function applyEarlyReview(base, grade, context, progressRatio = 1, now = new Date()) {
+  const isCorrect = grade === "good" || grade === "easy";
+
+  if (isCorrect && progressRatio < 0.5) {
+    // Very early correct: preserve dueAt and lastReviewedAt; soft stability bump via earlyWeight
+    const normalResult = updateReviewAfterGrade(base, grade, now);
+    const lastReviewMs = toDate(base.lastReviewedAt)?.getTime();
+    const elapsedDays = lastReviewMs ? (now.getTime() - lastReviewMs) / MS_PER_DAY : 0;
+    const earlyWeight = getEarlyWeight(elapsedDays, computeScheduledDays(base));
+    const adjustedStability = clampStability(
+      base.stability + ((normalResult?.stability ?? base.stability) - base.stability) * earlyWeight
+    );
+    return normalizeSmartReviewEntry({
+      ...base,
+      stability: adjustedStability,
+      lastPracticeAt: now.toISOString(),
+      lastReviewContext: context ?? base.lastReviewContext,
+      softReviewCount: (base.softReviewCount || 0) + 1,
+      updatedAt: now.toISOString(),
+    }, now);
+  }
+
+  if (isCorrect) {
+    // Early correct with meaningful progress: apply delta from normalResult, not spread
+    const normalResult = updateReviewAfterGrade(base, grade, now);
+    return normalizeSmartReviewEntry({
+      ...base,
+      difficulty: normalResult?.difficulty ?? base.difficulty,
+      stability: normalResult?.stability ?? base.stability,
+      dueAt: normalResult?.dueAt ?? base.dueAt,
+      lastReviewedAt: now.toISOString(),
+      lastPracticeAt: now.toISOString(),
+      lastReviewContext: context ?? base.lastReviewContext,
+      softReviewCount: (base.softReviewCount || 0) + 1,
+      reviewCount: base.reviewCount + 1,
+      lastGrade: grade,
+      lastAnswerCorrect: true,
+      updatedAt: now.toISOString(),
+    }, now);
+  }
+
+  // Wrong during early review: dueAt = min(oldDueAt, now+1gün)
+  const oldDueMsec = toDate(base.dueAt)?.getTime() ?? Infinity;
+  const nextDayMsec = addDays(now, 1).getTime();
+  const newDueAt = new Date(Math.min(oldDueMsec, nextDayMsec));
+
+  let { lapseCount } = base;
+  let softLapseCount = base.softLapseCount || 0;
+  if (progressRatio < 0.75) {
+    softLapseCount += 1;
+  } else {
+    lapseCount += 1;
+  }
+
+  return normalizeSmartReviewEntry({
+    ...base,
+    dueAt: newDueAt.toISOString(),
+    lastPracticeAt: now.toISOString(),
+    lastReviewContext: context ?? base.lastReviewContext,
+    softReviewCount: (base.softReviewCount || 0) + 1,
+    lapseCount,
+    softLapseCount,
+    lastGrade: grade,
+    lastAnswerCorrect: false,
+    updatedAt: now.toISOString(),
+  }, now);
+}
+
+/**
+ * Zamanlama bağlamına göre FSRS güncellemesini yönlendirir.
+ * Sıra: isDue → isSameDay → earlyReview
+ */
+export function applyReview(reviewState, grade, now = new Date(), reviewContext = null) {
+  const base = normalizeSmartReviewEntry(reviewState, now);
+  if (!base) return null;
+
+  // 1. isDue → normal FSRS review
+  if (isDueForReview(base, now)) {
+    return applyNormalReview(base, grade, reviewContext, now);
+  }
+
+  // 2. isSameDay → aynı takvim günü, schedule değişmez
+  const lastReviewed = toDate(base.lastReviewedAt);
+  if (lastReviewed && startOfDay(lastReviewed).getTime() === startOfDay(now).getTime()) {
+    return normalizeSmartReviewEntry({
+      ...base,
+      lastPracticeAt: now.toISOString(),
+      lastReviewContext: reviewContext ?? base.lastReviewContext,
+      sameDayReviewCount: (base.sameDayReviewCount || 0) + 1,
+      updatedAt: now.toISOString(),
+    }, now);
+  }
+
+  // 3. Early review — progressRatio hesaplanır
+  const scheduledDays = computeScheduledDays(base);
+  const lastReviewMs = toDate(base.lastReviewedAt)?.getTime();
+  const elapsedDays = lastReviewMs ? (now.getTime() - lastReviewMs) / MS_PER_DAY : 0;
+  const progressRatio = scheduledDays && scheduledDays > 0
+    ? Math.min(elapsedDays / scheduledDays, 1)
+    : 0.5;
+
+  return applyEarlyReview(base, grade, reviewContext, progressRatio, now);
 }
