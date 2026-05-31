@@ -11,11 +11,9 @@ import StreakBadge from "./StreakBadge";
 import { SUBJECTS } from "../data/subjects";
 import { FIXED_EXAM_CARD_SUBTITLE } from "../data/exams";
 import { SUBJECT_QUESTION_COUNTS } from "../data/questions";
-import { useQuestions } from "../hooks/useQuestions";
 import { accentThemes } from "../theme/accentThemes";
 import { isUserPremium } from "../utils/premiumUtils";
 import {
-  buildTodayReviewQueue,
   getStudyCollectionSummary,
 } from "../services/studyCollectionService";
 import { setClarityTag, trackClarityEvent } from "../lib/clarity";
@@ -78,7 +76,6 @@ export default function Dashboard({
   },
   onStartSmartReview,
 }) {
-  const { questions: QUESTIONS } = useQuestions();
   const { showToast } = useToast();
   const theme = accentTheme || accentThemes.emerald;
   const isLightTheme =
@@ -101,7 +98,6 @@ export default function Dashboard({
   const [studySummary, setStudySummary] = useState({
     wrongCount: 0,
     favoriteCount: 0,
-    reviewQueueCount: 0,
   });
   const [planStreak, setPlanStreak] = useState(0);
   const [panelSummary, setPanelSummary] = useState(null);
@@ -171,21 +167,19 @@ export default function Dashboard({
     let active = true;
     const loadStudySummary = async () => {
       try {
-        const [summary, queue, streakSnap] = await Promise.all([
+        const [summary, streakSnap] = await Promise.all([
           getStudyCollectionSummary(user, userData),
-          buildTodayReviewQueue(user, QUESTIONS || [], userData),
           user?.uid ? getStreak(user.uid) : Promise.resolve({ currentStreak: 0 }),
         ]);
         if (!active) return;
         setStudySummary({
           wrongCount: summary?.wrongCount || 0,
           favoriteCount: summary?.favoriteCount || 0,
-          reviewQueueCount: queue.length,
         });
         setPlanStreak(streakSnap?.currentStreak ?? 0);
       } catch {
         if (!active) return;
-        setStudySummary({ wrongCount: 0, favoriteCount: 0, reviewQueueCount: 0 });
+        setStudySummary({ wrongCount: 0, favoriteCount: 0 });
         setPlanStreak(0);
       }
     };
@@ -193,7 +187,7 @@ export default function Dashboard({
     return () => {
       active = false;
     };
-  }, [user, currentView, userData, QUESTIONS]);
+  }, [user, currentView, userData]);
 
   const adjustTarget = (amount) => {
     setTempTarget(prev => {
@@ -645,15 +639,15 @@ export default function Dashboard({
               </div>
               <div className={`rounded-2xl border px-3 py-3 md:px-4 md:py-3.5 min-w-0 ${isLightTheme ? "border-slate-300 bg-[#f5f2ec]" : "border-slate-700/70 bg-slate-950/55"}`}>
                 <p className="text-[10px] uppercase tracking-wider text-slate-500 font-black">Akıllı tekrar</p>
-                <p className={`mt-1 text-lg md:text-xl font-black tabular-nums ${theme.text}`}>{studySummary.reviewQueueCount || 0}</p>
+                <p className={`mt-1 text-lg md:text-xl font-black tabular-nums ${theme.text}`}>{smartDue || 0}</p>
               </div>
             </div>
 
             <div className={`rounded-2xl border px-3.5 py-3 md:px-4 md:py-3.5 ${isLightTheme ? "border-slate-300 bg-[#f5f2ec]" : "border-slate-800/80 bg-slate-950/45"}`}>
               <div className="flex flex-col gap-3 md:gap-3.5">
                 <p className={`text-xs md:text-sm leading-relaxed ${isLightTheme ? "text-slate-700" : "text-slate-300"}`}>
-                  {studySummary.reviewQueueCount > 0
-                    ? `Bugünkü tekrarın hazır: ${studySummary.reviewQueueCount} soru`
+                  {smartDue > 0
+                    ? `Bugünkü tekrarın hazır: ${smartDue} soru`
                     : "Akıllı tekrar planın, yanlışların ve favorilerin biriktikçe oluşacak."}
                 </p>
                 <button

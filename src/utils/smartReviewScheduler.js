@@ -165,6 +165,9 @@ export function normalizeSmartReviewEntry(raw, now = new Date()) {
     lastReviewedAt: raw.lastReviewedAt
       ? (toDate(raw.lastReviewedAt)?.toISOString() ?? null)
       : null,
+    lastPracticeAt: raw.lastPracticeAt
+      ? (toDate(raw.lastPracticeAt)?.toISOString() ?? null)
+      : null,
     createdAt: raw.createdAt
       ? (toDate(raw.createdAt)?.toISOString() ?? now.toISOString())
       : now.toISOString(),
@@ -176,8 +179,11 @@ export function normalizeSmartReviewEntry(raw, now = new Date()) {
     retrievability: Number(raw.retrievability ?? 1),
     reviewCount: Math.max(0, Number(raw.reviewCount) || 0),
     lapseCount: Math.max(0, Number(raw.lapseCount) || 0),
+    softLapseCount: Math.max(0, Number(raw.softLapseCount) || 0),
+    softReviewCount: Math.max(0, Number(raw.softReviewCount) || 0),
     lastGrade: GRADES.includes(raw.lastGrade) ? raw.lastGrade : null,
     lastAnswerCorrect: Boolean(raw.lastAnswerCorrect),
+    lastReviewContext: raw.lastReviewContext ? String(raw.lastReviewContext) : null,
     schemaVersion: Number(raw.schemaVersion) || SCHEMA_VERSION,
   };
 
@@ -253,4 +259,102 @@ export function sortDueReviews(reviews, now = new Date()) {
 
 export function gradeFromAnswerCorrect(isCorrect) {
   return isCorrect ? "good" : "again";
+}
+
+function applyNormalReview(base, grade, context, now) {
+  const updated = updateReviewAfterGrade(base, grade, now);
+  if (!updated) return null;
+  return normalizeSmartReviewEntry({
+    ...updated,
+    lastPracticeAt: now.toISOString(),
+    lastReviewContext: context ?? updated.lastReviewContext,
+  }, now);
+}
+
+export function applyEarlyReview(base, grade, context, progressRatio = 1, now = new Date()) {
+  const isCorrect = grade === "good" || grade === "easy";
+
+  if (isCorrect && progressRatio < 0.5) {
+    // Very early correct: preserve dueAt and lastReviewedAt; only track practice
+    return normalizeSmartReviewEntry({
+      ...base,
+      lastPracticeAt: now.toISOString(),
+      lastReviewContext: context ?? base.lastReviewContext,
+      softReviewCount: (base.softReviewCount || 0) + 1,
+      updatedAt: now.toISOString(),
+    }, now);
+  }
+
+  if (isCorrect) {
+    // Early correct with meaningful progress: apply delta from normalResult, not spread
+    const normalResult = updateReviewAfterGrade(base, grade, now);
+    return normalizeSmartReviewEntry({
+      ...base,
+      difficulty: normalResult?.difficulty ?? base.difficulty,
+      stability: normalResult?.stability ?? base.stability,
+      dueAt: normalResult?.dueAt ?? base.dueAt,
+      lastReviewedAt: now.toISOString(),
+      lastPracticeAt: now.toISOString(),
+      lastReviewContext: context ?? base.lastReviewContext,
+      softReviewCount: (base.softReviewCount || 0) + 1,
+      reviewCount: base.reviewCount + 1,
+      lastGrade: grade,
+      lastAnswerCorrect: true,
+      updatedAt: now.toISOString(),
+    }, now);
+  }
+
+  // Wrong during early review
+  const oldDueMsec = toDate(base.dueAt)?.getTime() ?? Infinity;
+  const nextDayMsec = addDays(now, 1).getTime();
+  const newDueAt = new Date(Math.min(oldDueMsec, nextDayMsec));
+
+  let { lapseCount } = base;
+  let softLapseCount = base.softLapseCount || 0;
+  if (progressRatio < 0.75) {
+    softLapseCount += 1;
+  } else {
+    lapseCount += 1;
+  }
+
+  return normalizeSmartReviewEntry({
+    ...base,
+    dueAt: newDueAt.toISOString(),
+    lastPracticeAt: now.toISOString(),
+    lastReviewContext: context ?? base.lastReviewContext,
+    softReviewCount: (base.softReviewCount || 0) + 1,
+    lapseCount,
+    softLapseCount,
+    lastGrade: grade,
+    lastAnswerCorrect: false,
+    updatedAt: now.toISOString(),
+  }, now);
+}
+
+/**
+ * Ana tekrar uygulama fonksiyonu.
+ * Sıra: isDue → isSameDay → earlyReview
+ */
+export function applyReview(reviewState, grade, context = null, progressRatio = 1, now = new Date()) {
+  const base = normalizeSmartReviewEntry(reviewState, now);
+  if (!base) return null;
+
+  // 1. isDue → normal FSRS review
+  if (isDueForReview(base, now)) {
+    return applyNormalReview(base, grade, context, now);
+  }
+
+  // 2. isSameDay → bugün zaten tekrar edilmiş, schedule değişmez
+  const lastReviewed = toDate(base.lastReviewedAt);
+  if (lastReviewed && startOfDay(lastReviewed).getTime() === startOfDay(now).getTime()) {
+    return normalizeSmartReviewEntry({
+      ...base,
+      lastPracticeAt: now.toISOString(),
+      lastReviewContext: context ?? base.lastReviewContext,
+      updatedAt: now.toISOString(),
+    }, now);
+  }
+
+  // 3. Early review
+  return applyEarlyReview(base, grade, context, progressRatio, now);
 }

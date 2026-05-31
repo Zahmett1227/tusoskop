@@ -227,6 +227,32 @@ export async function getSmartReviewSummary(user, now = new Date()) {
   };
 }
 
+/**
+ * Favori sorular için FSRS kartı yoksa otomatik olarak source:"favorite" kartı oluşturur.
+ * Mevcut kart varsa dokunmaz (duplicate oluşturmaz).
+ */
+export async function ensureSmartReviewsForFavorites(user, questions, now = new Date()) {
+  if (!Array.isArray(questions) || !questions.length) return [];
+  const all = await getSmartReviews(user);
+  const existingIds = new Set(all.map((item) => item.questionId));
+  const toCreate = questions.filter((q) => {
+    const id = getQuestionIdSafe(q);
+    return id && !existingIds.has(id);
+  });
+  if (!toCreate.length) return [];
+  const created = [];
+  for (const q of toCreate) {
+    const entry = createInitialReviewState(q, "favorite", now);
+    if (!entry) continue;
+    created.push(entry);
+    await writeFirestoreReview(user, entry);
+  }
+  if (created.length) {
+    mergeSmartReviewsIntoLocal(created, now);
+  }
+  return created;
+}
+
 export function resolveQuestionsFromReviews(reviews, questions = []) {
   const mapById = new Map((questions || []).map((q) => [Number(q.id), q]));
   return (reviews || [])

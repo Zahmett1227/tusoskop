@@ -101,6 +101,34 @@ describe("smartReviewService", () => {
     expect(summary.totalCount).toBe(2);
   });
 
+  it("ensureSmartReviewsForFavorites mevcut kart varsa setDoc çağırmaz", async () => {
+    const { ensureSmartReviewsForFavorites } = await import("./smartReviewService.js");
+    authMock.currentUser = { uid: "u1" };
+    const question = { id: 55, ders: "Fizyoloji", konu: "Test" };
+    // Kart zaten var
+    firestoreMocks.getDocs.mockResolvedValue({
+      docs: [
+        { id: "55", data: () => ({ questionId: 55, dueAt: new Date(Date.now() + 86400000 * 2).toISOString(), stability: 2, ders: "Fizyoloji", konu: "Test" }) },
+      ],
+    });
+    firestoreMocks.setDoc.mockResolvedValue(undefined);
+    const created = await ensureSmartReviewsForFavorites({ uid: "u1" }, [question]);
+    expect(created).toHaveLength(0);
+    expect(firestoreMocks.setDoc).not.toHaveBeenCalled();
+  });
+
+  it("ensureSmartReviewsForFavorites kart yoksa source:favorite ile oluşturur", async () => {
+    const { ensureSmartReviewsForFavorites } = await import("./smartReviewService.js");
+    authMock.currentUser = { uid: "u1" };
+    const question = { id: 77, ders: "Patoloji", konu: "Neoplazi" };
+    firestoreMocks.getDocs.mockResolvedValue({ docs: [] });
+    firestoreMocks.setDoc.mockResolvedValue(undefined);
+    const created = await ensureSmartReviewsForFavorites({ uid: "u1" }, [question]);
+    expect(created).toHaveLength(1);
+    expect(created[0].source).toBe("favorite");
+    expect(firestoreMocks.setDoc).toHaveBeenCalledTimes(1);
+  });
+
   it("topSubjects her ders için en yoğun konuyu içerir", async () => {
     const { getSmartReviewSummary } = await import("./smartReviewService.js");
     authMock.currentUser = { uid: "u1" };

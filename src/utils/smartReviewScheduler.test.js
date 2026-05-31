@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
+  applyEarlyReview,
+  applyReview,
   clampDifficulty,
   clampStability,
   computeRetrievability,
@@ -133,5 +135,96 @@ describe("smartReviewScheduler", () => {
     const pool = filterInsightReviewPool([graded], now);
     expect(pool).toHaveLength(1);
     expect(isDueForReview(graded, now)).toBe(false);
+  });
+
+  it("normalizeSmartReviewEntry softReviewCount ve lastReviewContext alanlarını içerir", () => {
+    const now = day(0);
+    const entry = normalizeSmartReviewEntry({ questionId: 1, softReviewCount: 3, lastReviewContext: "daily_fsrs_review" }, now);
+    expect(entry.softReviewCount).toBe(3);
+    expect(entry.lastReviewContext).toBe("daily_fsrs_review");
+  });
+});
+
+describe("applyReview", () => {
+  it("due soru normal review tetikler — dueAt ilerler, reviewCount artar", () => {
+    const now = day(0);
+    const base = { ...createInitialReviewState(q, "wrong", day(-3)), dueAt: day(-1).toISOString() };
+    const result = applyReview(base, "good", "daily_fsrs_review", 1, now);
+    expect(result).not.toBeNull();
+    expect(new Date(result.dueAt).getTime()).toBeGreaterThan(now.getTime());
+    expect(result.reviewCount).toBe(1);
+    expect(result.lastReviewContext).toBe("daily_fsrs_review");
+  });
+
+  it("same-day non-due: scheduling değişmez", () => {
+    const now = day(0);
+    const futureDue = day(3);
+    // lastReviewedAt = bugün, 30 dk önce
+    const reviewedToday = new Date(now.getTime() - 30 * 60 * 1000).toISOString();
+    const base = {
+      ...createInitialReviewState(q, "wrong", day(-5)),
+      dueAt: futureDue.toISOString(),
+      lastReviewedAt: reviewedToday,
+    };
+    const result = applyReview(base, "good", "daily_fsrs_review", 1, now);
+    expect(result).not.toBeNull();
+    expect(new Date(result.dueAt).getTime()).toBe(futureDue.getTime());
+    expect(result.lastPracticeAt).not.toBeNull();
+  });
+
+  it("early correct progressRatio < 0.5: lastReviewedAt ve dueAt korunur, lastPracticeAt güncellenir", () => {
+    const now = day(0);
+    const futureDue = day(5);
+    const oldLastReviewed = day(-2).toISOString();
+    const base = {
+      ...createInitialReviewState(q, "wrong", day(-5)),
+      dueAt: futureDue.toISOString(),
+      lastReviewedAt: oldLastReviewed,
+    };
+    const result = applyReview(base, "good", "topic_practice", 0.3, now);
+    expect(result).not.toBeNull();
+    expect(new Date(result.dueAt).getTime()).toBe(futureDue.getTime());
+    expect(result.lastReviewedAt).toBe(oldLastReviewed);
+    expect(result.lastPracticeAt).not.toBeNull();
+    expect(result.softReviewCount).toBe(1);
+  });
+
+  it("early wrong: dueAt = min(oldDueAt, now+1gün)", () => {
+    const now = day(0);
+    // Kart çok uzakta due, min → now+1
+    const farBase = { ...createInitialReviewState(q, "wrong", day(-5)), dueAt: day(10).toISOString() };
+    const r1 = applyReview(farBase, "again", "wrongs_practice", 0.8, now);
+    expect(new Date(r1.dueAt).getTime()).toBe(day(1).getTime());
+    // Kart yakında due, min → oldDueAt
+    const nearBase = { ...createInitialReviewState(q, "wrong", day(-5)), dueAt: day(0).toISOString() };
+    // addDays(day(0), 1) = day(1); min(day(0), day(1)) = day(0)
+    const r2 = applyReview(nearBase, "again", "wrongs_practice", 0.8, now);
+    expect(new Date(r2.dueAt).getTime()).toBeLessThanOrEqual(day(1).getTime());
+  });
+
+  it("early wrong progressRatio < 0.75: softLapseCount artar, lapseCount değişmez", () => {
+    const now = day(0);
+    const base = {
+      ...createInitialReviewState(q, "wrong", day(-5)),
+      dueAt: day(5).toISOString(),
+      lapseCount: 1,
+      softLapseCount: 0,
+    };
+    const result = applyEarlyReview(base, "again", "wrongs_practice", 0.5, now);
+    expect(result.lapseCount).toBe(1);
+    expect(result.softLapseCount).toBe(1);
+  });
+
+  it("early wrong progressRatio >= 0.75: lapseCount artar, softLapseCount değişmez", () => {
+    const now = day(0);
+    const base = {
+      ...createInitialReviewState(q, "wrong", day(-5)),
+      dueAt: day(5).toISOString(),
+      lapseCount: 1,
+      softLapseCount: 0,
+    };
+    const result = applyEarlyReview(base, "again", "wrongs_practice", 0.8, now);
+    expect(result.lapseCount).toBe(2);
+    expect(result.softLapseCount).toBe(0);
   });
 });

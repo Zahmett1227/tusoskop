@@ -67,6 +67,22 @@ const AdminPanel = lazy(() => import("./components/admin/AdminPanel"));
 const PremiumInfoScreen = lazy(() => import("./components/premium/PremiumInfoScreen"));
 const LimitReachedModal = lazy(() => import("./components/premium/LimitReachedModal"));
 const LegalPage = lazy(() => import("./components/legal/LegalPage"));
+export const REVIEW_CONTEXT = {
+  DAILY_FSRS: "daily_fsrs_review",
+  WRONGS: "wrongs_practice",
+  FAVORITES: "favorites_practice",
+  TOPIC: "topic_practice",
+  CUSTOM: "mixed_practice",
+};
+
+const SOURCE_TO_REVIEW_CONTEXT = {
+  smart: REVIEW_CONTEXT.DAILY_FSRS,
+  wrong: REVIEW_CONTEXT.WRONGS,
+  favorite: REVIEW_CONTEXT.FAVORITES,
+  topic: REVIEW_CONTEXT.TOPIC,
+  custom: REVIEW_CONTEXT.CUSTOM,
+};
+
 // TUS Deneme Dağılımı (Blueprint)
 const FULL_EXAM_BLUEPRINT = {
   Anatomi: 13, Fizyoloji: 15, Biyokimya: 18, Mikrobiyoloji: 18, 
@@ -337,6 +353,7 @@ export default function App() {
       studyState.setCurrentSubject("Çalışma Alanım Tekrarı");
       studyState.setActiveTopicSubject("Çalışma Alanım");
       studyState.setActiveTopicName(source);
+      studyState.setActiveReviewContext(SOURCE_TO_REVIEW_CONTEXT[source] ?? REVIEW_CONTEXT.CUSTOM);
       studyState.setActiveQuestions(toDisplayQuestions(safeList));
       setView("study");
       setClarityTag("son_mod", "review");
