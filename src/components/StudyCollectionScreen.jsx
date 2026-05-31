@@ -159,7 +159,7 @@ export default function StudyCollectionScreen({
         <div className="rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900/90 to-slate-950 p-5">
           {todayQueue.length === 0 ? (
             <div className="flex flex-col items-center text-center py-6">
-              <span className="text-5xl mb-3" aria-hidden="true">🌱</span>
+              <span className="text-5xl mb-3" aria-hidden="true">🎯</span>
               <h2 className="text-xl font-black mb-1">Bugün tekrar zamanı gelen soru yok</h2>
               <p className="text-sm text-slate-400 max-w-sm">
                 FSRS zamanlamasına göre bugün çalışman gereken kart bulunmuyor.

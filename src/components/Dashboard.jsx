@@ -275,6 +275,12 @@ export default function Dashboard({
           }`}
           aria-labelledby="smart-review-heading"
         >
+          <span
+            className="pointer-events-none absolute -right-3 -top-3 select-none text-[7rem] leading-none opacity-[0.13] rotate-12"
+            aria-hidden="true"
+          >
+            🌱
+          </span>
           <h2
             id="smart-review-heading"
             className={`mb-1 text-[10px] font-black uppercase tracking-[0.32em] ${isLightTheme ? "text-emerald-700" : "text-emerald-300"}`}
