@@ -428,6 +428,7 @@ export function useStudyState({
       getFeedbackMessage,
       recordHistoryForQuestion,
       refreshSmartReviewSummary,
+      activeTopicName,
     ]
   );
 

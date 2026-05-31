@@ -67,7 +67,7 @@ const AdminPanel = lazy(() => import("./components/admin/AdminPanel"));
 const PremiumInfoScreen = lazy(() => import("./components/premium/PremiumInfoScreen"));
 const LimitReachedModal = lazy(() => import("./components/premium/LimitReachedModal"));
 const LegalPage = lazy(() => import("./components/legal/LegalPage"));
-export const REVIEW_CONTEXT = {
+const REVIEW_CONTEXT = {
   DAILY_FSRS: "daily_fsrs_review",
   WRONGS: "wrongs_practice",
   FAVORITES: "favorites_practice",
