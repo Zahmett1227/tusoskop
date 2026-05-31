@@ -1,5 +1,5 @@
 import { FirebaseAuthentication } from "@capacitor-firebase/authentication";
-import { signInWithCredential } from "firebase/auth";
+import { GoogleAuthProvider, signInWithCredential } from "firebase/auth";
 import { isNativeIOS } from "../utils/device";
 
 function createAppleCredential(provider, credential) {
@@ -27,6 +27,22 @@ export async function signInWithNativeApple(auth, provider) {
     skipNativeAuth: true,
   });
   const credential = createAppleCredential(provider, result?.credential);
+  const userCredential = await signInWithCredential(auth, credential);
+  return userCredential.user;
+}
+
+export async function signInWithNativeGoogle(auth) {
+  const result = await FirebaseAuthentication.signInWithGoogle({
+    skipNativeAuth: true,
+  });
+  const idToken = result?.credential?.idToken;
+  const accessToken = result?.credential?.accessToken;
+  if (!idToken) {
+    const err = new Error("Google girişi tamamlanamadı.");
+    err.userMessage = err.message;
+    throw err;
+  }
+  const credential = GoogleAuthProvider.credential(idToken, accessToken);
   const userCredential = await signInWithCredential(auth, credential);
   return userCredential.user;
 }

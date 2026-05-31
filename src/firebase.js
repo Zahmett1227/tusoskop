@@ -16,7 +16,7 @@ import {
 } from "firebase/firestore";
 import { getFunctions } from "firebase/functions";
 import { trackClarityEvent } from "./lib/clarity";
-import { signInWithNativeApple } from "./services/nativeAuthService";
+import { signInWithNativeApple, signInWithNativeGoogle } from "./services/nativeAuthService";
 import { isNativeIOS } from "./utils/device";
 
 const firebaseConfig = {
@@ -48,30 +48,9 @@ function isNativePlatform() {
   );
 }
 
-/**
- * Native (Capacitor iOS/Android) Google girişi.
- * `@codetrix-studio/capacitor-google-auth` plugini kuruluysa global
- * `window.Capacitor.Plugins.GoogleAuth` üzerinden erişilir; böylece web
- * build'i bu paketi bundle etmeye çalışmaz. Plugin idToken döndürür,
- * onu Firebase credential'ına çevirip signInWithCredential ile giriş yaparız.
- */
+// Native Google giriş — @capacitor-firebase/authentication plugini kullanır (Apple ile aynı yaklaşım)
 async function loginWithGoogleNative() {
-  const GoogleAuth = window?.Capacitor?.Plugins?.GoogleAuth;
-  if (!GoogleAuth || typeof GoogleAuth.signIn !== "function") {
-    const err = new Error("Google girişi şu an kullanılamıyor. Lütfen daha sonra tekrar deneyin.");
-    err.userMessage = err.message;
-    throw err;
-  }
-  const result = await GoogleAuth.signIn();
-  const idToken = result?.authentication?.idToken;
-  if (!idToken) {
-    const err = new Error("Google girişi tamamlanamadı.");
-    err.userMessage = err.message;
-    throw err;
-  }
-  const credential = GoogleAuthProvider.credential(idToken);
-  const userCred = await signInWithCredential(auth, credential);
-  return userCred.user;
+  return signInWithNativeGoogle(auth);
 }
 
 /**
