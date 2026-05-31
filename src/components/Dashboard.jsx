@@ -319,12 +319,15 @@ export default function Dashboard({
           <div className="mt-5 flex flex-wrap gap-2">
             <button
               type="button"
-              disabled={smartDue <= 0 || !onStartSmartReview}
               onClick={() => {
                 trackClarityEvent("bugunku_tekrarim_cta");
-                onStartSmartReview?.();
+                if (smartDue > 0 && onStartSmartReview) {
+                  onStartSmartReview();
+                } else {
+                  setView("studyCollection");
+                }
               }}
-              className={`inline-flex min-h-12 items-center justify-center rounded-2xl px-6 py-3 text-sm font-black transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${isLightTheme ? "focus-visible:ring-offset-emerald-50" : "focus-visible:ring-offset-slate-950"} ${theme.primary} ${theme.primaryHover} text-slate-950 shadow-lg ${theme.glow} ${theme.ring}`}
+              className={`inline-flex min-h-12 items-center justify-center rounded-2xl px-6 py-3 text-sm font-black transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-emerald-50" : "focus-visible:ring-offset-slate-950"} ${theme.primary} ${theme.primaryHover} text-slate-950 shadow-lg ${theme.glow} ${theme.ring}`}
             >
               Tekrara Başla
             </button>
