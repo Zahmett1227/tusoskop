@@ -362,9 +362,9 @@ export default function App() {
   };
 
   const startWrongReview = async () => {
-    await ensureAllQuestionsLoaded("Yanlış sorular hazırlanıyor…");
+    const allQuestions = await ensureAllQuestionsLoaded("Yanlış sorular hazırlanıyor…");
     const wrongItems = await getWrongQuestions(user, userData);
-    const mapById = new Map(QUESTIONS.map((q) => [Number(q.id), q]));
+    const mapById = new Map((allQuestions ?? QUESTIONS).map((q) => [Number(q.id), q]));
     const list = wrongItems
       .filter((item) => !item.isResolved)
       .map((item) => mapById.get(item.questionId))
@@ -374,9 +374,9 @@ export default function App() {
   };
 
   const startSmartReview = async () => {
-    await ensureAllQuestionsLoaded("Akıllı tekrar planı hazırlanıyor…");
+    const allQuestions = await ensureAllQuestionsLoaded("Akıllı tekrar planı hazırlanıyor…");
     const due = await getDueSmartReviews(user);
-    const list = resolveQuestionsFromReviews(due, QUESTIONS);
+    const list = resolveQuestionsFromReviews(due, allQuestions ?? QUESTIONS);
     if (!list.length) return;
     setClarityTag("akilli_tekrar_due", String(list.length));
     trackClarityEvent("akilli_tekrar_baslatildi");
