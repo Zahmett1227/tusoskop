@@ -266,86 +266,168 @@ export default function Dashboard({
           )}
         </header>
 
-        {/* Akıllı Tekrar Planı — bugünkü due tekrarlar */}
+        {/* Akıllı Tekrar Kartı — mobil öncelikli premium hero CTA */}
         <section
-          className={`relative mb-6 overflow-hidden rounded-[2rem] border p-5 shadow-xl md:p-7 ${
+          className={`relative mb-6 overflow-hidden rounded-3xl border px-5 py-5 shadow-xl backdrop-blur-xl md:px-7 md:py-6 ${
             isLightTheme
-              ? "border-emerald-200/80 bg-gradient-to-br from-white via-emerald-50/60 to-cyan-50/40 text-slate-950 shadow-emerald-100/60"
-              : "border-emerald-500/25 bg-gradient-to-br from-slate-950 via-emerald-950/40 to-slate-900 text-white shadow-black/30"
+              ? "border-emerald-300/40 bg-white/70 text-slate-950 shadow-emerald-100/60"
+              : "border-emerald-300/15 bg-slate-950/60 text-white shadow-black/40"
           }`}
           aria-labelledby="smart-review-heading"
         >
-          <span
-            className="pointer-events-none absolute -right-3 -top-3 select-none text-[7rem] leading-none opacity-[0.13] rotate-12"
+          {/* yumuşak premium glow — abartısız */}
+          <div
             aria-hidden="true"
-          >
-            🌱
-          </span>
-          <h2
-            id="smart-review-heading"
-            className={`mb-1 text-[10px] font-black uppercase tracking-[0.32em] ${isLightTheme ? "text-emerald-700" : "text-emerald-300"}`}
-          >
-            Akıllı Tekrar Planı
-          </h2>
-          <p className={`text-2xl font-black tracking-tight md:text-3xl ${isLightTheme ? "text-slate-950" : "text-white"}`}>
-            Bugünkü Tekrarım
-          </p>
-          <p className={`mt-2 max-w-2xl text-sm font-semibold leading-relaxed ${isLightTheme ? "text-slate-600" : "text-slate-300"}`}>
-            FSRS tabanlı akıllı plan, zorlandığın soruları doğru zamanda geri getirir.
-          </p>
-          <div className="mt-4 space-y-2" role="status">
-            {smartDue > 0 ? (
-              <>
-                <p className={`text-base font-bold ${isLightTheme ? "text-slate-800" : "text-slate-100"}`}>
-                  Bugün {smartDue} soru hazır
-                  {smartOverdue > 0 ? (
-                    <span className={`ml-2 text-sm font-extrabold ${isLightTheme ? "text-amber-700" : "text-amber-300"}`}>
-                      · Geciken {smartOverdue} tekrar
-                    </span>
-                  ) : null}
-                </p>
-                {(smartTopSubjects.length > 0 || smartTopTopics.length > 0) && (
-                  <p className={`text-xs font-semibold ${isLightTheme ? "text-slate-500" : "text-slate-400"}`}>
-                    Öncelik:{" "}
-                    {[
-                      ...smartTopSubjects.slice(0, 2).map((s) => s.name),
-                      ...smartTopTopics.slice(0, 1).map((t) => t.name),
-                    ]
-                      .filter(Boolean)
-                      .join(" · ")}
-                  </p>
-                )}
-              </>
-            ) : (
-              <p className={`text-sm font-semibold ${isLightTheme ? "text-slate-600" : "text-slate-300"}`}>
-                Bugün tekrar yok. Yeni konu çözerek planını besleyebilirsin. Yanlış yaptığın yeni sorular burada zamanlanır.
-              </p>
-            )}
-          </div>
-          <div className="mt-5 flex flex-wrap gap-2">
-            <button
-              type="button"
-              onClick={() => {
-                trackClarityEvent("bugunku_tekrarim_cta");
-                if (smartDue > 0 && onStartSmartReview) {
-                  onStartSmartReview();
-                } else {
-                  setView("studyCollection");
-                }
-              }}
-              className={`inline-flex min-h-12 items-center justify-center rounded-2xl px-6 py-3 text-sm font-black transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-emerald-50" : "focus-visible:ring-offset-slate-950"} ${theme.primary} ${theme.primaryHover} text-slate-950 shadow-lg ${theme.glow} ${theme.ring}`}
+            className="pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full bg-teal-400/15 blur-3xl"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-24 -left-10 h-48 w-48 rounded-full bg-emerald-400/10 blur-3xl"
+          />
+
+          <div className="relative">
+            {/* rozet satırı */}
+            <div className="flex flex-wrap items-center gap-2">
+              <span
+                className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-black uppercase tracking-[0.14em] ${
+                  isLightTheme
+                    ? "border-emerald-300/60 bg-emerald-50 text-emerald-700"
+                    : "border-emerald-300/25 bg-emerald-400/10 text-emerald-300"
+                }`}
+              >
+                <span aria-hidden="true" className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(45,212,191,0.8)]" />
+                FSRS Akıllı Plan
+              </span>
+              {smartDue > 0 && smartOverdue > 0 && (
+                <span
+                  className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-[11px] font-bold ${
+                    isLightTheme
+                      ? "border-amber-300/70 bg-amber-50 text-amber-700"
+                      : "border-amber-300/25 bg-amber-400/10 text-amber-300"
+                  }`}
+                >
+                  <span aria-hidden="true" className="inline-block h-1.5 w-1.5 rounded-full bg-amber-400" />
+                  Gecikenler öncelikli
+                </span>
+              )}
+            </div>
+
+            {/* erişilebilir başlık — görünür eyebrow */}
+            <h2
+              id="smart-review-heading"
+              className={`mt-3 text-[11px] font-black uppercase tracking-[0.28em] ${isLightTheme ? "text-emerald-700" : "text-emerald-300/80"}`}
             >
-              Tekrara Başla
-            </button>
-            {smartDue <= 0 && (
+              Bugünkü Tekrarım
+            </h2>
+
+            <div className="mt-1.5" role="status" aria-live="polite">
+              {smartDue > 0 ? (
+                <>
+                  <span className="sr-only">Bugün {smartDue} soru hazır.</span>
+                  <p className={`text-balance text-[1.55rem] font-black leading-[1.15] tracking-tight md:text-3xl ${isLightTheme ? "text-slate-950" : "text-white"}`}>
+                    <span className={isLightTheme ? "text-emerald-600" : "text-emerald-400"}>{smartDue}</span> yüksek verimli tekrar hazır
+                  </p>
+                  <p className={`mt-2 max-w-xl text-sm font-medium leading-relaxed ${isLightTheme ? "text-slate-600" : "text-slate-300"}`}>
+                    Zorlandığın sorular bugün öne alındı.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <span className="sr-only">Bugün tekrar yok.</span>
+                  <p className={`text-balance text-[1.45rem] font-black leading-[1.15] tracking-tight md:text-3xl ${isLightTheme ? "text-slate-950" : "text-white"}`}>
+                    Bugün planlı tekrar yok
+                  </p>
+                  <p className={`mt-2 max-w-xl text-sm font-medium leading-relaxed ${isLightTheme ? "text-slate-600" : "text-slate-300"}`}>
+                    Yeni konu çözerek planını besle; yanlış yaptığın sorular burada akıllıca zamanlanır.
+                  </p>
+                </>
+              )}
+            </div>
+
+            {/* öncelik dersleri — chip formatı */}
+            {smartDue > 0 && (smartTopSubjects.length > 0 || smartTopTopics.length > 0) && (
+              <div className="mt-3 flex flex-wrap items-center gap-1.5">
+                <span className={`text-[11px] font-bold uppercase tracking-wide ${isLightTheme ? "text-slate-400" : "text-slate-500"}`}>
+                  Öncelik
+                </span>
+                {[
+                  ...smartTopSubjects.slice(0, 2).map((s) => s.name),
+                  ...smartTopTopics.slice(0, 1).map((t) => t.name),
+                ]
+                  .filter(Boolean)
+                  .map((name) => (
+                    <span
+                      key={name}
+                      className={`inline-flex items-center rounded-lg border px-2.5 py-1 text-xs font-bold ${
+                        isLightTheme
+                          ? "border-slate-200 bg-slate-50 text-slate-700"
+                          : "border-white/10 bg-white/[0.06] text-slate-200"
+                      }`}
+                    >
+                      {name}
+                    </span>
+                  ))}
+              </div>
+            )}
+
+            {/* CTA — mobilde full width, ~64px yükseklik */}
+            <div className="mt-5 flex flex-col gap-2.5">
               <button
                 type="button"
-                onClick={() => openTopicSetup?.()}
-                className={`inline-flex min-h-12 items-center justify-center rounded-2xl border px-5 py-3 text-sm font-bold transition-all ${isLightTheme ? "border-slate-300 bg-white text-slate-800 hover:bg-slate-50" : "border-slate-600 bg-slate-900/60 text-slate-200 hover:bg-slate-800"}`}
+                onClick={() => {
+                  trackClarityEvent("bugunku_tekrarim_cta");
+                  if (smartDue > 0 && onStartSmartReview) {
+                    onStartSmartReview();
+                  } else {
+                    setView("studyCollection");
+                  }
+                }}
+                className="group relative flex min-h-[64px] w-full items-center justify-center gap-3 overflow-hidden rounded-2xl bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 px-6 text-base font-black text-slate-950 shadow-[0_0_28px_rgba(45,212,191,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_36px_rgba(45,212,191,0.4)] active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 focus-visible:ring-offset-2 sm:w-auto sm:self-start sm:px-8"
               >
-                Yeni konu çöz
+                {/* hover parlaması */}
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+                />
+                {/* sade play ikonu */}
+                <span
+                  aria-hidden="true"
+                  className="relative flex h-7 w-7 items-center justify-center rounded-full bg-slate-950/15 transition-transform duration-300 group-hover:scale-110"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5 translate-x-px">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </span>
+                <span className="relative">Akıllı Tekrara Başla</span>
+                {smartDue > 0 && (
+                  <span className="relative inline-flex min-w-[1.75rem] items-center justify-center rounded-full bg-slate-950/20 px-2 py-0.5 text-sm font-black tabular-nums">
+                    {smartDue}
+                  </span>
+                )}
+                {/* en sağda ok */}
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="relative h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
               </button>
-            )}
+              {smartDue <= 0 && (
+                <button
+                  type="button"
+                  onClick={() => openTopicSetup?.()}
+                  className={`inline-flex min-h-12 w-full items-center justify-center rounded-2xl border px-5 py-3 text-sm font-bold transition-all sm:w-auto sm:self-start ${isLightTheme ? "border-slate-300 bg-white text-slate-800 hover:bg-slate-50" : "border-slate-600 bg-slate-900/60 text-slate-200 hover:bg-slate-800"}`}
+                >
+                  Yeni konu çöz
+                </button>
+              )}
+            </div>
           </div>
         </section>
 
