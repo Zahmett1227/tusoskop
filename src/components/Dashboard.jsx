@@ -399,6 +399,7 @@ export default function Dashboard({
                   </svg>
                 </span>
                 <span className="relative">Akıllı Tekrara Başla</span>
+                <span aria-hidden="true" className="relative text-lg leading-none">🌱</span>
                 {smartDue > 0 && (
                   <span className="relative inline-flex min-w-[1.75rem] items-center justify-center rounded-full bg-slate-950/20 px-2 py-0.5 text-sm font-black tabular-nums">
                     {smartDue}
