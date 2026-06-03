@@ -37,20 +37,14 @@ export default function SignInOptions({
 
   return (
     <div className="w-full max-w-sm space-y-3">
-      <div className="relative">
-        <button
-          type="button"
-          disabled
-          aria-disabled="true"
-          className="flex min-h-14 w-full cursor-not-allowed items-center justify-center gap-3 rounded-3xl bg-white/50 px-6 py-4 text-base font-black text-slate-400 shadow-lg shadow-black/10"
-        >
-          <AppleMark />
-          Apple ile Giriş Yap
-        </button>
-        <span className="absolute -right-2 -top-2 inline-flex items-center rounded-full bg-amber-400 px-2.5 py-0.5 text-[11px] font-black text-slate-950 shadow-md">
-          Yakında
-        </span>
-      </div>
+      <button
+        type="button"
+        onClick={handleApple}
+        className="flex min-h-14 w-full items-center justify-center gap-3 rounded-3xl bg-white px-6 py-4 text-base font-black text-slate-950 shadow-2xl shadow-black/20 transition-transform hover:scale-[1.02] active:scale-95"
+      >
+        <AppleMark />
+        Apple ile Giriş Yap
+      </button>
       <button
         type="button"
         onClick={handleGoogle}
