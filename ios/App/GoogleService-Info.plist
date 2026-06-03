@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>447547841381-7aisne06vbgialiqeq3cgsfeholthbvm.apps.googleusercontent.com</string>
+	<string>447547841381-0sos01r07rl2i7jekrkpnfv7opb1okkj.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.447547841381-7aisne06vbgialiqeq3cgsfeholthbvm</string>
+	<string>com.googleusercontent.apps.447547841381-0sos01r07rl2i7jekrkpnfv7opb1okkj</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAdJ57XiwovYdjxJkwj94YnC6Sq3D-kLRk</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.tusoskop.app</string>
+	<string>com.tusoskop.tusoskop</string>
 	<key>PROJECT_ID</key>
 	<string>tusoskop</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:447547841381:ios:8c05acc2d87f57726b1f8c</string>
+	<string>1:447547841381:ios:05faf31d55767d046b1f8c</string>
 	<key>DATABASE_URL</key>
 	<string>https://tusoskop-default-rtdb.europe-west1.firebasedatabase.app</string>
 </dict>
