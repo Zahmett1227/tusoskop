@@ -1,6 +1,7 @@
 import React, { Suspense, lazy, useMemo, useState, useEffect, useRef, useCallback } from "react";
 import './index.css';
-import { initAnalytics, loginWithGoogle, logout } from "./firebase";
+import { initAnalytics, loginWithApple, loginWithGoogle, logout } from "./firebase";
+import SignInOptions from "./components/auth/SignInOptions";
 
 // Veri ve Yardımcı Araçlar
 import { useQuestions } from "./hooks/useQuestions";
@@ -127,6 +128,14 @@ export default function App() {
       await loginWithGoogle();
     } catch (error) {
       showToast(error?.userMessage || "Google girişi başarısız oldu.", { type: "error" });
+    }
+  }, [showToast]);
+
+  const handleLoginWithApple = useCallback(async () => {
+    try {
+      await loginWithApple();
+    } catch (error) {
+      showToast(error?.userMessage || "Apple girişi başarısız oldu.", { type: "error" });
     }
   }, [showToast]);
 
@@ -520,14 +529,11 @@ export default function App() {
           <p className="text-slate-400 mb-10 text-center max-w-sm">
             TUS hazırlık sürecini dijital asistanınla yönet. Verilerini bulutta sakla.
           </p>
-          <button
-            type="button"
-            onClick={handleLoginWithGoogle}
-            className={`flex items-center gap-4 px-8 py-4 ${accentTheme.primary} ${accentTheme.primaryHover} text-slate-950 rounded-3xl font-black shadow-2xl ${accentTheme.glow} hover:scale-105 transition-transform active:scale-95`}
-          >
-            <img src="https://www.google.com/favicon.ico" className="w-5 h-5" alt="" loading="lazy" decoding="async" />
-            Google ile Giriş Yap
-          </button>
+          <SignInOptions
+            accentTheme={accentTheme}
+            onAppleLogin={handleLoginWithApple}
+            onGoogleLogin={handleLoginWithGoogle}
+          />
         </div>
       </div>
     );

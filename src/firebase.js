@@ -3,6 +3,7 @@ import {
   getAuth,
   getRedirectResult,
   GoogleAuthProvider,
+  OAuthProvider,
   signInWithCredential,
   signInWithPopup,
   signInWithRedirect,
@@ -30,6 +31,10 @@ const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
+export const appleProvider = new OAuthProvider("apple.com");
+appleProvider.addScope("email");
+appleProvider.addScope("name");
+appleProvider.setCustomParameters({ locale: "tr" });
 
 /** Capacitor native platform kontrolü — web build'i kırmadan global üzerinden. */
 function isNativePlatform() {
@@ -112,6 +117,48 @@ export const loginWithGoogle = async () => {
     }
 
     const err = new Error(error?.userMessage || "Google girişi başarısız oldu. Lütfen tekrar deneyin.");
+    err.userMessage = err.message;
+    throw err;
+  }
+};
+
+/**
+ * Apple girişi — web'de popup (gerekirse redirect fallback).
+ * Sessiz iptallerde null döner; hatalar userMessage ile fırlatılır.
+ */
+export const loginWithApple = async () => {
+  try {
+    const result = await signInWithPopup(auth, appleProvider);
+    trackClarityEvent("apple_login_basarili");
+    return result.user;
+  } catch (error) {
+    trackClarityEvent("apple_login_hatasi");
+    console.error("Apple giriş hatası:", error);
+
+    const code = error?.code || "";
+    if (code === "auth/popup-blocked") {
+      try {
+        await signInWithRedirect(auth, appleProvider);
+      } catch (redirectError) {
+        console.error("Apple signInWithRedirect fallback hatası:", redirectError);
+        const err = new Error("Tarayıcınız popup'ı engelledi. Lütfen popup'lara izin verip tekrar deneyin.");
+        err.userMessage = err.message;
+        throw err;
+      }
+      return null;
+    }
+
+    if (code === "auth/cancelled-popup-request" || code === "auth/popup-closed-by-user") {
+      return null;
+    }
+
+    if (code === "auth/operation-not-allowed") {
+      const err = new Error("Apple ile giriş Firebase Console üzerinde henüz etkinleştirilmemiş.");
+      err.userMessage = err.message;
+      throw err;
+    }
+
+    const err = new Error(error?.message || "Apple ile giriş başarısız oldu. Lütfen tekrar deneyin.");
     err.userMessage = err.message;
     throw err;
   }
