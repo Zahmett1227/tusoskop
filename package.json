@@ -16,9 +16,19 @@
     "test:social-visuals": "node scripts/test-social-visuals.mjs",
     "test:e2e": "playwright test",
     "test:e2e:full": "npm run build && npm run test:e2e",
-    "preview": "vite preview --configLoader native"
+    "preview": "vite preview --configLoader native",
+    "cap:sync:ios": "npm run build && cap sync ios",
+    "cap:open:ios": "cap open ios"
   },
   "dependencies": {
+    "@capacitor-firebase/authentication": "^8.2.0",
+    "@capacitor/app": "^8.1.0",
+    "@capacitor/cli": "^8.3.4",
+    "@capacitor/core": "^8.3.4",
+    "@capacitor/ios": "^8.3.4",
+    "@capacitor/keyboard": "^8.0.3",
+    "@capacitor/splash-screen": "^8.0.1",
+    "@capacitor/status-bar": "^8.0.2",
     "@microsoft/clarity": "^1.0.2",
     "@tailwindcss/postcss": "^4.2.2",
     "@tailwindcss/vite": "^4.2.2",

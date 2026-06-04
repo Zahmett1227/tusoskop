@@ -16,6 +16,8 @@ import {
 } from "firebase/firestore";
 import { getFunctions } from "firebase/functions";
 import { trackClarityEvent } from "./lib/clarity";
+import { isNativeIOS } from "./utils/device";
+import { signInWithNativeApple } from "./services/nativeAuthService";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBF8gh8mOeCpPgbfX_0jP_Fg47wyUXs278",
@@ -123,10 +125,26 @@ export const loginWithGoogle = async () => {
 };
 
 /**
- * Apple girişi — web'de popup (gerekirse redirect fallback).
- * Sessiz iptallerde null döner; hatalar userMessage ile fırlatılır.
+ * Apple girişi.
+ * iOS native'de: NativeAppleSignIn Capacitor plugin → ASAuthorizationAppleIDProvider →
+ *   window.handleAppleSignIn({idToken, nonce}) → signInWithCredential.
+ * Web'de: popup (gerekirse redirect fallback).
  */
 export const loginWithApple = async () => {
+  if (isNativeIOS()) {
+    try {
+      const user = await signInWithNativeApple(auth, appleProvider);
+      if (user) trackClarityEvent("apple_native_login_basarili");
+      return user;
+    } catch (error) {
+      trackClarityEvent("apple_native_login_hatasi");
+      console.error("Native Apple giriş hatası:", error);
+      const err = new Error(error?.userMessage || error?.message || "Apple ile giriş tamamlanamadı. Lütfen tekrar deneyin.");
+      err.userMessage = err.message;
+      throw err;
+    }
+  }
+
   try {
     const result = await signInWithPopup(auth, appleProvider);
     trackClarityEvent("apple_login_basarili");
