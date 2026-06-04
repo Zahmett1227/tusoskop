@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gizlilik Sözleşmesi — Tusoskop</title>
-  <meta name="description" content="Tusoskop Gizlilik Sözleşmesi ve Kişisel Veri İşleme Politikası" />
+  <title>Yasal Belgeler — Tusoskop</title>
+  <meta name="description" content="Tusoskop Gizlilik Sözleşmesi, KVKK Aydınlatma Metni, Kullanım Koşulları, Mesafeli Satış Sözleşmesi ve İade Politikası" />
   <link rel="canonical" href="https://tusoskop.com/gizlilik-sozlesmesi" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -14,188 +14,330 @@
       background: #020617;
       color: #f1f5f9;
       line-height: 1.7;
-      padding: 24px 16px 64px;
       -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .logo-row {
+    /* ── Logo bar ── */
+    .topbar {
+      padding: 18px 20px;
+      border-bottom: 1px solid #1e293b;
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 32px;
     }
-
     .logo-mark {
-      width: 36px;
-      height: 36px;
+      width: 32px; height: 32px;
       background: #34d399;
-      border-radius: 10px;
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 15px; color: #020617; flex-shrink: 0;
+    }
+    .logo-name { font-size: 17px; font-weight: 800; color: #f1f5f9; letter-spacing: -0.3px; }
+
+    /* ── Tab nav ── */
+    .tab-nav {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 16px;
-      color: #020617;
-      flex-shrink: 0;
-    }
-
-    .logo-name {
-      font-size: 18px;
-      font-weight: 800;
-      color: #f1f5f9;
-      letter-spacing: -0.3px;
-    }
-
-    article {
-      background: #0f172a;
-      border: 1px solid #1e293b;
-      border-radius: 20px;
-      padding: 32px 24px;
-    }
-
-    @media (min-width: 600px) {
-      article { padding: 40px 40px; }
-    }
-
-    header {
+      gap: 0;
+      overflow-x: auto;
       border-bottom: 1px solid #1e293b;
-      padding-bottom: 24px;
-      margin-bottom: 32px;
+      padding: 0 16px;
+      scrollbar-width: none;
     }
+    .tab-nav::-webkit-scrollbar { display: none; }
 
-    h1 {
-      font-size: 26px;
-      font-weight: 900;
-      color: #f8fafc;
-      letter-spacing: -0.5px;
-      line-height: 1.2;
-    }
-
-    .updated {
-      margin-top: 10px;
-      font-size: 13px;
-      font-weight: 600;
+    .tab-btn {
+      flex-shrink: 0;
+      background: none;
+      border: none;
       color: #64748b;
-    }
-
-    .sections { display: flex; flex-direction: column; gap: 28px; }
-
-    h2 {
-      font-size: 16px;
+      font-size: 13px;
       font-weight: 700;
-      color: #e2e8f0;
-      margin-bottom: 10px;
+      cursor: pointer;
+      padding: 14px 14px;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
     }
+    .tab-btn:hover { color: #cbd5e1; }
+    .tab-btn.active { color: #34d399; border-bottom-color: #34d399; }
 
-    p {
-      font-size: 15px;
-      color: #94a3b8;
-      margin-bottom: 6px;
+    /* ── Content ── */
+    .content { padding: 24px 16px 64px; max-width: 720px; margin: 0 auto; }
+
+    .doc { display: none; }
+    .doc.active { display: block; }
+
+    .doc-header {
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #1e293b;
     }
+    h1 { font-size: 24px; font-weight: 900; color: #f8fafc; letter-spacing: -0.4px; line-height: 1.2; }
+    .updated { margin-top: 8px; font-size: 13px; font-weight: 600; color: #475569; }
 
+    .sections { display: flex; flex-direction: column; gap: 24px; }
+
+    h2 { font-size: 15px; font-weight: 700; color: #e2e8f0; margin-bottom: 8px; }
+
+    p { font-size: 14px; color: #94a3b8; margin-bottom: 5px; line-height: 1.65; }
     p:last-child { margin-bottom: 0; }
 
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 20px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #94a3b8;
-      text-decoration: none;
-      border: 1px solid #1e293b;
-      background: #0f172a;
-      padding: 8px 16px;
-      border-radius: 12px;
-      transition: color 0.15s;
-    }
-
-    .back-link:hover { color: #f1f5f9; }
+    a { color: #34d399; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     footer {
-      margin-top: 32px;
       text-align: center;
+      margin-top: 48px;
       font-size: 12px;
-      color: #334155;
+      color: #1e293b;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo-row">
-      <div class="logo-mark">T</div>
-      <span class="logo-name">Tusoskop</span>
-    </div>
 
-    <a href="https://tusoskop.com" class="back-link">← tusoskop.com</a>
+  <div class="topbar">
+    <div class="logo-mark">T</div>
+    <span class="logo-name">Tusoskop</span>
+  </div>
 
-    <article>
-      <header>
+  <nav class="tab-nav" role="tablist">
+    <button class="tab-btn active" role="tab" onclick="showTab('gizlilik')">Gizlilik</button>
+    <button class="tab-btn" role="tab" onclick="showTab('kvkk')">KVKK</button>
+    <button class="tab-btn" role="tab" onclick="showTab('kullanim')">Kullanım Koşulları</button>
+    <button class="tab-btn" role="tab" onclick="showTab('mesafeli')">Mesafeli Satış</button>
+    <button class="tab-btn" role="tab" onclick="showTab('iade')">İade ve İptal</button>
+  </nav>
+
+  <div class="content">
+
+    <!-- ── Gizlilik Sözleşmesi ── -->
+    <div id="tab-gizlilik" class="doc active">
+      <div class="doc-header">
         <h1>Gizlilik Sözleşmesi</h1>
         <p class="updated">Son güncelleme: 2026-05-03</p>
-      </header>
-
+      </div>
       <div class="sections">
         <section>
           <h2>Genel</h2>
           <p>Tusoskop, kullanıcıların gizliliğine önem verir.</p>
           <p>Bu metin, platformun kullanımı sırasında işlenen veriler hakkında genel bilgilendirme sağlar.</p>
         </section>
-
         <section>
           <h2>Toplanan veriler</h2>
           <p>Tusoskop aşağıdaki verileri işleyebilir: hesap e-postası; kullanıcı adı / displayName; UID; çözülen sorulara ilişkin kullanım verileri; yanlış sorular; favori sorular; deneme sonuçları; kullanım limitleri; Plus erişim durumu; ödeme talebi bilgileri; teknik analiz ve kullanım olayları.</p>
         </section>
-
         <section>
           <h2>Verilerin kullanım amaçları</h2>
           <p>Veriler şu amaçlarla kullanılabilir: kullanıcı hesabını yönetmek; soru çözme ve deneme geçmişini göstermek; yanlışlar ve favoriler gibi çalışma özelliklerini sunmak; Free / Plus erişim kontrollerini sağlamak; ödeme taleplerini takip etmek; uygulama performansını ve kullanıcı deneyimini geliştirmek; güvenlik ve kötüye kullanım önleme.</p>
         </section>
-
         <section>
           <h2>Ödeme bilgileri</h2>
           <p>Kart bilgileri Tusoskop tarafından saklanmaz.</p>
           <p>Ödeme işlemleri Shopify ve ilgili ödeme sağlayıcısı üzerinden yürütülür.</p>
           <p>Tusoskop yalnızca ödeme talebi, paket bilgisi ve erişim tanımlaması için gerekli sınırlı bilgileri işler.</p>
         </section>
-
         <section>
           <h2>Üçüncü taraf hizmetler</h2>
-          <p>Platformda Firebase, Vercel, Shopify ve Microsoft Clarity gibi üçüncü taraf hizmetler kullanılabilir.</p>
-          <p>Bu hizmetler kendi gizlilik politikalarına tabi olabilir.</p>
+          <p>Platformda Firebase, Vercel, Shopify ve Microsoft Clarity gibi üçüncü taraf hizmetler kullanılabilir. Bu hizmetler kendi gizlilik politikalarına tabi olabilir.</p>
         </section>
-
+        <section>
+          <h2>Apple ile Giriş Yapın</h2>
+          <p>iOS uygulamasında "Apple ile Giriş Yapın" kullanıldığında Apple yalnızca kimlik doğrulama için gerekli minimum veriyi iletir. Bu veri Tusoskop hesabı oluşturmak amacıyla Firebase Auth aracılığıyla güvenli şekilde işlenir.</p>
+        </section>
         <section>
           <h2>Veri güvenliği</h2>
           <p>Tusoskop, kullanıcı verilerinin yetkisiz erişime karşı korunması için makul teknik ve idari önlemler alır.</p>
         </section>
-
-        <section>
-          <h2>Apple ile Giriş Yapın</h2>
-          <p>iOS uygulamasında "Apple ile Giriş Yapın" kullanıldığında Apple yalnızca kimlik doğrulama için gerekli minimum veriyi (e-posta veya anonim alias) iletir. Bu veri Tusoskop hesabı oluşturmak amacıyla Firebase Auth aracılığıyla güvenli şekilde işlenir.</p>
-        </section>
-
-        <section>
-          <h2>KVKK</h2>
-          <p>Kişisel verilerinizin işlenmesine ilişkin ayrıntılı bilgi için KVKK Aydınlatma Metni'ne başvurabilirsiniz.</p>
-        </section>
-
         <section>
           <h2>İletişim</h2>
-          <p>Gizlilikle ilgili sorularınız için: <a href="mailto:tusoskop.destek@gmail.com" style="color:#34d399;text-decoration:none;">tusoskop.destek@gmail.com</a></p>
+          <p>Gizlilikle ilgili sorularınız için: <a href="mailto:tusoskop.destek@gmail.com">tusoskop.destek@gmail.com</a></p>
         </section>
       </div>
-    </article>
+    </div>
 
-    <footer>
-      &copy; 2026 Tusoskop. Tüm hakları saklıdır.
-    </footer>
+    <!-- ── KVKK ── -->
+    <div id="tab-kvkk" class="doc">
+      <div class="doc-header">
+        <h1>KVKK Aydınlatma Metni</h1>
+        <p class="updated">Son güncelleme: 2026-05-03</p>
+      </div>
+      <div class="sections">
+        <section>
+          <h2>Veri sorumlusu</h2>
+          <p>Bu aydınlatma metni, Tusoskop platformunu kullanan kişilerin kişisel verilerinin işlenmesine ilişkin bilgilendirme amacıyla hazırlanmıştır.</p>
+          <p>Veri sorumlusu: TUSOSKOP — E-posta: tusoskop.destek@gmail.com — Adres: Nilüfer / BURSA</p>
+        </section>
+        <section>
+          <h2>İşlenen kişisel veriler</h2>
+          <p>Kimlik ve iletişim bilgileri: ad, soyad, e-posta.</p>
+          <p>Kullanıcı hesap bilgileri: UID, displayName, photoURL.</p>
+          <p>Kullanım verileri: çözülen soru sayısı, deneme sonuçları, yanlışlar, favoriler, tekrar kuyruğu.</p>
+          <p>Abonelik / erişim bilgileri: plan, premiumStatus, premiumUntil, premiumSource.</p>
+          <p>Ödeme talebi bilgileri: satın alınmak istenen paket, fiyat, tarih, Shopify yönlendirme bilgisi.</p>
+          <p>Teknik veriler: cihaz, tarayıcı, oturum ve kullanım analitiği.</p>
+        </section>
+        <section>
+          <h2>İşlenme amaçları</h2>
+          <p>Kullanıcı hesabı oluşturmak ve yönetmek; platform hizmetlerini sunmak; çalışma geçmişi, yanlışlar, favoriler ve deneme analizlerini göstermek; Free / Plus erişim kontrollerini sağlamak; ödeme taleplerini ve Plus aktivasyonunu yönetmek; güvenlik, hata takibi ve kötüye kullanım önleme; kullanıcı deneyimini geliştirmek.</p>
+        </section>
+        <section>
+          <h2>Hukuki sebepler</h2>
+          <p>Kişisel veriler, sözleşmenin kurulması ve ifası, hukuki yükümlülüklerin yerine getirilmesi, meşru menfaat ve gerekli hallerde açık rıza hukuki sebeplerine dayanarak işlenebilir.</p>
+        </section>
+        <section>
+          <h2>Verilerin aktarılması</h2>
+          <p>Kişisel veriler, hizmetin sunulması için kullanılan Firebase, Vercel, Shopify, Microsoft Clarity ve benzeri teknik hizmet sağlayıcılarla sınırlı olarak paylaşılabilir. Ödeme işlemleri Shopify ve ilgili ödeme altyapısı üzerinden yürütülür.</p>
+        </section>
+        <section>
+          <h2>Saklama süresi</h2>
+          <p>Kişisel veriler, işleme amacı için gerekli süre boyunca ve yasal yükümlülükler kapsamında saklanır.</p>
+        </section>
+        <section>
+          <h2>İlgili kişinin hakları</h2>
+          <p>Kullanıcılar, KVKK kapsamındaki haklarına ilişkin taleplerini <a href="mailto:tusoskop.destek@gmail.com">tusoskop.destek@gmail.com</a> adresine iletebilir.</p>
+        </section>
+      </div>
+    </div>
+
+    <!-- ── Kullanım Koşulları ── -->
+    <div id="tab-kullanim" class="doc">
+      <div class="doc-header">
+        <h1>Kullanım Koşulları</h1>
+        <p class="updated">Son güncelleme: 2026-05-03</p>
+      </div>
+      <div class="sections">
+        <section>
+          <h2>Platformun amacı</h2>
+          <p>Tusoskop, TUS hazırlık sürecine destek olmak amacıyla soru çözme, deneme, tekrar ve analiz özellikleri sunan dijital bir çalışma platformudur.</p>
+        </section>
+        <section>
+          <h2>Tıbbi / hukuki uyarı</h2>
+          <p>Tusoskop'ta yer alan içerikler eğitim ve sınava hazırlık amacı taşır. Gerçek hasta yönetimi, tanı veya tedavi kararı için kullanılmamalıdır.</p>
+        </section>
+        <section>
+          <h2>Hesap kullanımı</h2>
+          <p>Kullanıcı kendi hesabının güvenliğinden sorumludur. Hesap paylaşımı, kötüye kullanım veya sistem sınırlarını aşmaya yönelik davranışlar halinde erişim kısıtlanabilir.</p>
+        </section>
+        <section>
+          <h2>Free ve Plus kullanım</h2>
+          <p>Free kullanıcılar belirli günlük / aylık limitlerle platformu kullanabilir. Plus kullanıcılar, satın alınan dönem boyunca premium özelliklere erişebilir.</p>
+        </section>
+        <section>
+          <h2>İçerik ve fikri haklar</h2>
+          <p>Platformdaki soru, açıklama, analiz ve tasarım içerikleri Tusoskop'a aittir veya Tusoskop tarafından kullanım hakkı kapsamında sunulur. İzinsiz kopyalama, çoğaltma veya ticari kullanım yasaktır.</p>
+        </section>
+        <section>
+          <h2>Hizmet değişiklikleri</h2>
+          <p>Tusoskop, platform özelliklerinde, fiyatlandırmada ve kullanım koşullarında değişiklik yapabilir. Önemli değişiklikler kullanıcıya uygun yöntemlerle bildirilebilir.</p>
+        </section>
+        <section>
+          <h2>İletişim</h2>
+          <p>Destek için: <a href="mailto:tusoskop.destek@gmail.com">tusoskop.destek@gmail.com</a></p>
+        </section>
+      </div>
+    </div>
+
+    <!-- ── Mesafeli Satış Sözleşmesi ── -->
+    <div id="tab-mesafeli" class="doc">
+      <div class="doc-header">
+        <h1>Mesafeli Satış Sözleşmesi</h1>
+        <p class="updated">Son güncelleme: 2026-05-03</p>
+      </div>
+      <div class="sections">
+        <section>
+          <h2>Taraflar</h2>
+          <p>Sağlayıcı / Satıcı: TUSOSKOP — E-posta: tusoskop.destek@gmail.com — Adres: Nilüfer / BURSA</p>
+          <p>Alıcı / Kullanıcı: Tusoskop hesabı üzerinden Plus erişim paketi satın alan kullanıcı.</p>
+        </section>
+        <section>
+          <h2>Konu</h2>
+          <p>Bu sözleşmenin konusu, kullanıcının Tusoskop platformu üzerinden seçtiği Plus erişim paketinin elektronik ortamda satın alınması ve bu hizmetten yararlanmasına ilişkin hak ve yükümlülüklerin düzenlenmesidir.</p>
+        </section>
+        <section>
+          <h2>Ürün / Hizmet bilgisi</h2>
+          <p>Tusoskop Plus, kullanıcıya belirli süre boyunca platformdaki premium özelliklere erişim sağlayan dijital hizmettir.</p>
+          <p>Paketler: 1 Aylık Plus (30 gün), 3 Aylık Plus (90 gün), 6 Aylık Plus (180 gün).</p>
+          <p>Plus kapsamında: sınırsız soru çözme; sınırsız deneme; sınırsız tekrar kuyruğu; sınırsız favori ve yanlış geçmişi; gelişmiş deneme net grafiği ve analiz özellikleri.</p>
+        </section>
+        <section>
+          <h2>Fiyat ve ödeme</h2>
+          <p>Güncel paket fiyatları satın alma ekranında gösterilir. Ödeme işlemi Shopify altyapısı üzerinden gerçekleştirilir. Ödeme sonrası Plus erişimi kullanıcının Tusoskop hesabına tanımlanır.</p>
+        </section>
+        <section>
+          <h2>Hizmetin teslimi</h2>
+          <p>Plus erişimi dijital olarak sunulur. Fiziksel teslimat yapılmaz. Ödeme sonrası erişim, erken erişim döneminde manuel kontrolle tanımlanabilir.</p>
+        </section>
+        <section>
+          <h2>Cayma hakkı</h2>
+          <p>Dijital içerik niteliğindeki Plus erişim paketlerinde, hizmetin kullanıcı onayıyla başlaması ve kullanıcının erişim hakkından yararlanmaya başlaması durumunda cayma hakkı mevzuattaki istisnalar kapsamında sınırlı olabilir.</p>
+          <p>Hatalı ödeme, çift ödeme veya teknik erişim problemi gibi durumlarda <a href="mailto:tusoskop.destek@gmail.com">tusoskop.destek@gmail.com</a> adresine başvuru yapılabilir.</p>
+        </section>
+        <section>
+          <h2>Kullanıcının yükümlülükleri</h2>
+          <p>Kullanıcı, ödeme sırasında doğru hesap bilgileriyle işlem yapmaktan sorumludur. Plus erişiminin doğru hesaba tanımlanabilmesi için Tusoskop hesap e-postası veya Hesap ID bilgisinin doğru paylaşılması gerekir.</p>
+        </section>
+        <section>
+          <h2>Uyuşmazlık</h2>
+          <p>Uyuşmazlık halinde yürürlükteki Türkiye Cumhuriyeti mevzuatı uygulanır. Tüketici işlemlerinden doğan uyuşmazlıklarda ilgili tüketici hakem heyetleri ve tüketici mahkemeleri yetkilidir.</p>
+        </section>
+        <section>
+          <h2>Yürürlük</h2>
+          <p>Kullanıcı, satın alma işlemine devam ederek bu sözleşmeyi okuduğunu ve kabul ettiğini beyan eder.</p>
+        </section>
+      </div>
+    </div>
+
+    <!-- ── İade ve İptal ── -->
+    <div id="tab-iade" class="doc">
+      <div class="doc-header">
+        <h1>İade ve İptal Politikası</h1>
+        <p class="updated">Son güncelleme: 2026-05-03</p>
+      </div>
+      <div class="sections">
+        <section>
+          <h2>Genel bilgilendirme</h2>
+          <p>Tusoskop Plus erişim paketleri dijital hizmet niteliğindedir. Satın alma sonrası erişim, kullanıcının Tusoskop hesabına tanımlanır.</p>
+        </section>
+        <section>
+          <h2>İade koşulları</h2>
+          <p>Aşağıdaki durumlarda destek ekibiyle iletişime geçilebilir: hatalı veya mükerrer ödeme; ödeme alınmasına rağmen Plus erişiminin tanımlanmaması; yanlış paketin satın alınması; teknik nedenlerle hizmete erişilememesi.</p>
+        </section>
+        <section>
+          <h2>Cayma hakkı ve dijital hizmet</h2>
+          <p>Plus erişimi dijital hizmet niteliğindedir. Hizmetin kullanıcı onayıyla başlaması ve kullanıcı hesabına tanımlanması sonrasında cayma hakkı mevzuattaki dijital hizmet istisnaları kapsamında sınırlı olabilir.</p>
+        </section>
+        <section>
+          <h2>İade başvurusu</h2>
+          <p>İade ve iptal talepleri için: <a href="mailto:tusoskop.destek@gmail.com">tusoskop.destek@gmail.com</a></p>
+          <p>Başvuruda şu bilgiler yer almalıdır: Tusoskop hesap e-postası; Hesap ID; satın alınan paket; ödeme tarihi; varsa Shopify sipariş numarası; talep nedeni.</p>
+        </section>
+        <section>
+          <h2>İptal</h2>
+          <p>Tek seferlik Plus erişim paketlerinde otomatik yenilenen abonelik bulunmuyorsa ayrıca iptal işlemi gerekmez. Kullanıcı, paket süresi sonunda yeniden satın alma yapmadıkça Plus erişimi sona erer.</p>
+        </section>
+      </div>
+    </div>
+
+    <footer>&copy; 2026 Tusoskop</footer>
   </div>
+
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('.doc').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById('tab-' + id).classList.add('active');
+      event.currentTarget.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // URL hash ile doğrudan sekmeye git: #kvkk, #mesafeli vb.
+    const hash = location.hash.replace('#', '');
+    const valid = ['gizlilik', 'kvkk', 'kullanim', 'mesafeli', 'iade'];
+    if (valid.includes(hash)) {
+      const btn = document.querySelector(`.tab-btn[onclick="showTab('${hash}')"]`);
+      if (btn) btn.click();
+    }
+  </script>
 </body>
 </html>
