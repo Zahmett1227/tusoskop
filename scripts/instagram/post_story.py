@@ -293,6 +293,8 @@ def publish_media(ig_user_id: str, creation_id: str, access_token: str) -> str:
         },
         timeout=30,
     )
+    if not resp.ok:
+        print(f"   → media_publish hata detay: {resp.text}")
     resp.raise_for_status()
     media_id = resp.json().get("id")
     if not media_id:
@@ -377,6 +379,12 @@ def main():
             cid = create_image_container(ig_user_id, url, access_token)
             child_ids.append(cid)
             print(f"   → Slayt {i+1} container: {cid}")
+
+        # Wait for each image container to reach FINISHED before creating carousel
+        print("⏳ Image container'lar bekleniyor...")
+        for i, cid in enumerate(child_ids):
+            wait_for_container(cid, access_token, max_wait=120)
+            print(f"   → Slayt {i+1} container hazir")
 
         # Build caption
         caption = build_caption(question)
