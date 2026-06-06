@@ -87,25 +87,25 @@ export function useTopicStudyFlow({
       questionSetupNonPremiumHandledRef.current = false;
       return;
     }
-    if (isUserPremium(userData)) return;
+    if (isUserPremium(userData, user)) return;
     if (questionSetupNonPremiumHandledRef.current) return;
     questionSetupNonPremiumHandledRef.current = true;
     openSubjectTopicPlusGate();
     setView("dashboard");
-  }, [view, userData, setView, openSubjectTopicPlusGate]);
+  }, [view, user, userData, setView, openSubjectTopicPlusGate]);
 
   const openTopicSetup = useCallback(() => {
-    if (!isUserPremium(userData)) {
+    if (!isUserPremium(userData, user)) {
       openSubjectTopicPlusGate();
       return;
     }
     trackClarityEvent("subject_topic_started");
     setView("questionSetup");
-  }, [userData, openSubjectTopicPlusGate, setView]);
+  }, [user, userData, openSubjectTopicPlusGate, setView]);
 
   const startTopicTest = useCallback(
     async (questionLimit = "all", topicOverride) => {
-      if (!isUserPremium(userData)) {
+      if (!isUserPremium(userData, user)) {
         openSubjectTopicPlusGate();
         return;
       }

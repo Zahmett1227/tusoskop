@@ -1,5 +1,5 @@
-import React from "react";
-import { loginWithApple } from "../../firebase";
+import React, { useState } from "react";
+import { loginWithApple, loginWithAppReviewEmail } from "../../firebase";
 
 function GoogleMark() {
   return (
@@ -25,6 +25,31 @@ export default function SignInOptions({ accentTheme, onGoogleLogin }) {
   const primary = accentTheme?.primary || "bg-emerald-400";
   const primaryHover = accentTheme?.primaryHover || "hover:bg-emerald-300";
   const glow = accentTheme?.glow || "";
+  const [reviewEmail, setReviewEmail] = useState("");
+  const [reviewPassword, setReviewPassword] = useState("");
+  const [reviewStatus, setReviewStatus] = useState("");
+  const [reviewLoading, setReviewLoading] = useState(false);
+
+  const handleReviewLogin = async (event) => {
+    event.preventDefault();
+    if (!reviewEmail.trim()) {
+      setReviewStatus("E-posta girin.");
+      return;
+    }
+    if (!reviewPassword.trim()) {
+      setReviewStatus("Şifre girin.");
+      return;
+    }
+    setReviewLoading(true);
+    setReviewStatus("");
+    try {
+      await loginWithAppReviewEmail(reviewEmail, reviewPassword);
+    } catch (error) {
+      setReviewStatus(error?.userMessage || "Giriş başarısız oldu.");
+    } finally {
+      setReviewLoading(false);
+    }
+  };
 
   return (
     <div className="w-full max-w-sm space-y-3">
@@ -47,6 +72,43 @@ export default function SignInOptions({ accentTheme, onGoogleLogin }) {
       <p className="px-2 text-center text-xs font-medium leading-relaxed text-slate-500">
         Giriş yaparak çalışma verilerinin hesabına bağlı saklanmasını kabul edersin.
       </p>
+      <form
+        onSubmit={handleReviewLogin}
+        className="mt-2 rounded-2xl border border-slate-800 bg-slate-900/45 p-3"
+      >
+        <div className="space-y-2">
+          <input
+            type="email"
+            value={reviewEmail}
+            onChange={(event) => setReviewEmail(event.target.value)}
+            placeholder="E-posta"
+            autoComplete="email"
+            className="h-10 w-full rounded-xl border border-slate-800 bg-slate-950 px-3 text-center text-xs font-semibold text-white outline-none transition focus:border-slate-600"
+            aria-label="E-posta"
+          />
+          <input
+            type="password"
+            value={reviewPassword}
+            onChange={(event) => setReviewPassword(event.target.value)}
+            placeholder="Şifre"
+            autoComplete="current-password"
+            className="h-10 w-full rounded-xl border border-slate-800 bg-slate-950 px-3 text-center text-xs font-semibold text-white outline-none transition focus:border-slate-600"
+            aria-label="Şifre"
+          />
+          <button
+            type="submit"
+            disabled={reviewLoading}
+            className="h-10 w-full rounded-xl border border-slate-700 bg-slate-800 px-3 text-xs font-black text-slate-100 transition hover:bg-slate-700 disabled:cursor-wait disabled:opacity-60"
+          >
+            {reviewLoading ? "Giriş yapılıyor..." : "Giriş"}
+          </button>
+        </div>
+        {reviewStatus ? (
+          <p className="mt-2 text-center text-[11px] font-semibold text-rose-300">
+            {reviewStatus}
+          </p>
+        ) : null}
+      </form>
     </div>
   );
 }

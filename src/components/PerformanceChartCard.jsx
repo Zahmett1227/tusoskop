@@ -56,7 +56,7 @@ export default function PerformanceChartCard({
   const [myTarget, setMyTarget] = useState(65);
   const [examHistoryMerged, setExamHistoryMerged] = useState([]);
   const [loadError, setLoadError] = useState(false);
-  const premium = isUserPremium(userData);
+  const premium = isUserPremium(userData, user);
 
   useEffect(() => {
     if (!user?.uid) return;

@@ -4,6 +4,7 @@ import {
   getRedirectResult,
   GoogleAuthProvider,
   OAuthProvider,
+  signInWithEmailAndPassword,
   signInWithCredential,
   signInWithPopup,
   signInWithRedirect,
@@ -147,6 +148,27 @@ export const loginWithApple = async () => {
 
     alert("Apple giriş hatası: " + (error?.message || "Bilinmeyen hata"));
     return null;
+  }
+};
+
+const APP_REVIEW_EMAIL = "apple-review@tusoskop.com";
+
+export const loginWithAppReviewEmail = async (email, password) => {
+  const normalizedEmail = String(email || "").trim().toLowerCase();
+  if (normalizedEmail !== APP_REVIEW_EMAIL) {
+    const err = new Error("Bu giriş alanı yalnız App Review hesabı içindir.");
+    err.userMessage = err.message;
+    throw err;
+  }
+  try {
+    const result = await signInWithEmailAndPassword(auth, APP_REVIEW_EMAIL, password);
+    trackClarityEvent("app_review_email_login_basarili");
+    return result.user;
+  } catch (error) {
+    trackClarityEvent("app_review_email_login_hatasi");
+    const err = new Error("App Review girişi başarısız oldu. Email veya şifreyi kontrol edin.");
+    err.userMessage = err.message;
+    throw err;
   }
 };
 

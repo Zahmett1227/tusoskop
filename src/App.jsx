@@ -199,7 +199,7 @@ export default function App() {
   }, [refreshSmartReviewSummary, userData, QUESTIONS, view]);
 
   const bottomNavExamLocked =
-    !isUserPremium(userData) && (remainingUsage?.fullExamRemaining ?? 1) <= 0;
+    !isUserPremium(userData, user) && (remainingUsage?.fullExamRemaining ?? 1) <= 0;
 
   const [limitModal, setLimitModal] = useState({
     open: false,
@@ -348,7 +348,7 @@ export default function App() {
         });
         return;
       }
-      const safeList = isUserPremium(userData)
+      const safeList = isUserPremium(userData, user)
         ? list
         : list.slice(0, Math.min(FREE_LIMITS.dailyReviewQuestions, gate.allowedCount || FREE_LIMITS.dailyReviewQuestions));
       studyState.resetStudyState();
@@ -559,7 +559,7 @@ export default function App() {
       break;
 
     case "questionSetup":
-      if (!isUserPremium(userData)) {
+      if (!isUserPremium(userData, user)) {
         screenContent = (
           <Dashboard
             setView={guardedSetView}
@@ -660,6 +660,7 @@ export default function App() {
       screenContent = (
         <ExamAnalysisScreen
           examAnalysis={examState.examAnalysis} estimatedTus={examState.estimatedTus}
+          user={user}
           userData={userData}
           accentTheme={accentTheme}
           startFullExam={startFullExam} goDashboard={goDashboard}

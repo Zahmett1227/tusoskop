@@ -88,7 +88,7 @@ export default function Dashboard({
       ? "min-h-dvh bg-[#faf8f4] text-slate-950"
       : "min-h-dvh bg-slate-950 text-white");
   const appCardShell = isLightTheme ? "app-card app-card--light" : "app-card";
-  const premiumActive = isUserPremium(userData);
+  const premiumActive = isUserPremium(userData, user);
   const { questionUsed: freeQuestionUsed, examUsed: freeExamUsed, reviewUsed: freeReviewUsed } =
     getFreeUsageUsed(remainingUsage);
   const [myTarget, setMyTarget] = useState(65.0);

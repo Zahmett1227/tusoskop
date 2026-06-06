@@ -4,7 +4,7 @@ import { auth, consumePendingRedirectResult } from "../firebase";
 import { identifyClarityUser } from "../lib/clarity";
 import { getFavoriteQuestions } from "../services/studyCollectionService";
 import { isCurrentUserAdmin } from "../services/adminService";
-import { ensureUserDocument } from "../services/userService";
+import { ensureUserDocument, withAppReviewAccess } from "../services/userService";
 import { getRemainingFreeUsage } from "../services/usageLimitService";
 
 /**
@@ -33,7 +33,7 @@ export function useAppAuthBootstrap(setView) {
       try {
         if (currentUser?.uid) {
           const ensured = await ensureUserDocument(currentUser);
-          setUserData(ensured);
+          setUserData(withAppReviewAccess(currentUser, ensured));
         }
       } catch (error) {
         console.error("User profile sync error:", error);

@@ -9,7 +9,14 @@ const toSafeDate = (value) => {
   return Number.isNaN(parsed.getTime()) ? null : parsed;
 };
 
-export function isUserPremium(userData) {
+const APP_REVIEW_EMAIL = "apple-review@tusoskop.com";
+
+export function isAppReviewEmail(value) {
+  return String(value || "").trim().toLowerCase() === APP_REVIEW_EMAIL;
+}
+
+export function isUserPremium(userData, user = null) {
+  if (isAppReviewEmail(user?.email) || isAppReviewEmail(userData?.email)) return true;
   if (!userData) return false;
   if (userData.lifetimePremium === true) return true;
   if (userData.plan !== "plus") return false;

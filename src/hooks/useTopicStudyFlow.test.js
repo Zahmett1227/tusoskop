@@ -39,7 +39,7 @@ describe("useTopicStudyFlow kaynak sözleşmesi", () => {
   });
 
   it("premium olmayan openTopicSetup gate", () => {
-    expect(hookSource).toContain("if (!isUserPremium(userData))");
+    expect(hookSource).toContain("if (!isUserPremium(userData, user))");
     expect(hookSource).toContain("openSubjectTopicPlusGate()");
   });
 

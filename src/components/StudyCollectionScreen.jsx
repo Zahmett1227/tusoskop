@@ -60,7 +60,7 @@ export default function StudyCollectionScreen({
   const hydrate = async () => {
     setLoading(true);
     try {
-      const isPremium = isUserPremium(userData);
+      const isPremium = isUserPremium(userData, user);
       const dueLimit = isPremium ? MAX_SESSION_DUE : FREE_LIMITS.dailyReviewQuestions;
       const [wrong, favorites, dueReviews, smartSummary] = await Promise.all([
         getWrongQuestions(user, userData),

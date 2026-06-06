@@ -473,7 +473,7 @@ export function useStudyState({
       const isFavoriteNow = favoriteQuestionIds.has(Number(question?.id));
       if (
         !isFavoriteNow &&
-        !isUserPremium(userData) &&
+        !isUserPremium(userData, user) &&
         favoriteQuestionIds.size >= FREE_LIMITS.maxFavorites
       ) {
         setLimitModal({

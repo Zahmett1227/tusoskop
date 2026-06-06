@@ -53,7 +53,7 @@ export default function PremiumInfoScreen({
   const [banner, setBanner] = useState("");
   const plusPageViewSent = useRef(false);
   const allowExternalPayments = canShowExternalPayments();
-  const premiumActive = isUserPremium(userData);
+  const premiumActive = isUserPremium(userData, user);
 
   useEffect(() => {
     try {

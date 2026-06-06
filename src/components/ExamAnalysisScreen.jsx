@@ -202,10 +202,11 @@ export default function ExamAnalysisScreen({
   startFullExam,
   goDashboard,
   accentTheme,
+  user,
   userData,
 }) {
   const theme = accentTheme || accentThemes.emerald;
-  const premium = isUserPremium(userData);
+  const premium = isUserPremium(userData, user);
   const [showWrongModal, setShowWrongModal] = useState(false);
 
   if (!examAnalysis) return null;
