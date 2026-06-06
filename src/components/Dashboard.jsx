@@ -13,6 +13,7 @@ import { FIXED_EXAM_CARD_SUBTITLE } from "../data/exams";
 import { SUBJECT_QUESTION_COUNTS } from "../data/questions";
 import { accentThemes } from "../theme/accentThemes";
 import { isUserPremium } from "../utils/premiumUtils";
+import { canShowExternalPayments } from "../utils/device";
 import {
   getStudyCollectionSummary,
 } from "../services/studyCollectionService";
@@ -89,6 +90,8 @@ export default function Dashboard({
       : "min-h-dvh bg-slate-950 text-white");
   const appCardShell = isLightTheme ? "app-card app-card--light" : "app-card";
   const premiumActive = isUserPremium(userData, user);
+  // iOS native'de Plus/free ayrımı yok; Plus rozetleri gizlenir.
+  const showPlusBadges = canShowExternalPayments();
   const { questionUsed: freeQuestionUsed, examUsed: freeExamUsed, reviewUsed: freeReviewUsed } =
     getFreeUsageUsed(remainingUsage);
   const [myTarget, setMyTarget] = useState(65.0);
@@ -243,6 +246,7 @@ export default function Dashboard({
               accentThemeKey={accentThemeKey}
               onAccentThemeChange={onAccentThemeChange}
               onLogout={onLogout}
+              onOpenAccountSettings={onOpenAccountSettings}
               mailtoSupport={getMailtoPaymentIssue(user)}
               mailtoFeedback={getMailtoFeedback(user)}
               onSupportClick={() => {
@@ -777,13 +781,15 @@ export default function Dashboard({
             <div>
               <div className="flex items-center gap-2">
                 <p className={`font-black text-sm ${isLightTheme ? "text-slate-900" : "text-white"}`}>Ders/Konu seçerek çöz</p>
-                <span className={`px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider ${
-                  premiumActive
-                    ? "bg-emerald-500/15 text-emerald-300 border border-emerald-400/30"
-                    : "bg-amber-500/15 text-amber-300 border border-amber-400/30"
-                }`}>
-                  {premiumActive ? "Plus" : "Plus'a özel"}
-                </span>
+                {showPlusBadges ? (
+                  <span className={`px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider ${
+                    premiumActive
+                      ? "bg-emerald-500/15 text-emerald-300 border border-emerald-400/30"
+                      : "bg-amber-500/15 text-amber-300 border border-amber-400/30"
+                  }`}>
+                    {premiumActive ? "Plus" : "Plus'a özel"}
+                  </span>
+                ) : null}
               </div>
               <p className={`text-[10px] font-medium ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>
                 {premiumActive ? "Ders ve konuya göre sınırsız çöz" : "Free kullanıcılar için kilitli"}

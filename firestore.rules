@@ -51,9 +51,12 @@ service cloud.firestore {
         'adminNote',
         'grantedBy',
         'grantedAt',
+        'platform',
+        'appVersion',
         'createdAt',
         'updatedAt',
-        'lastLoginAt'
+        'lastLoginAt',
+        'lastSeenAt'
       ]);
     }
 

@@ -41,20 +41,35 @@ export default function DashboardMembershipHero({
       ? "bg-emerald-500/15"
       : "bg-indigo-500/20";
 
-  const leftTitle = premiumActive ? "Plus aktif" : "Ücretsiz plan";
-  const leftLead = premiumActive
-    ? "Sınırsız çalışma akışın açık. Tüm Plus avantajlarından yararlanıyorsun."
-    : "Günlük soru, deneme ve tekrar limitlerini buradan takip edebilirsin.";
-  const leftMeta = premiumActive
-    ? lifetime
-      ? "Ömür boyu erişim aktif."
-      : untilLabel && untilLabel !== "-"
-        ? `${untilLabel} tarihine kadar aktif.`
-        : "Plus erişimin hazır."
-    : "Limitler her gün yenilenir.";
+  // iOS native'de Plus/üyelik/satın alma çağrışımı yapmayan nötr ifadeler kullanılır.
+  const nativeNoPay = !allowExternalPayments;
 
-  const rightBadge = premiumActive ? "Plus" : "Önerilen";
-  const rightBadgeSub = premiumActive ? "Aktif üyelik" : "Sınırsız erişim";
+  const leftTitle = nativeNoPay
+    ? "Tam erişim"
+    : premiumActive
+      ? "Plus aktif"
+      : "Ücretsiz plan";
+  const leftLead = nativeNoPay
+    ? "Tüm özellikler açık. Sınırsız çalışabilirsin."
+    : premiumActive
+      ? "Sınırsız çalışma akışın açık. Tüm Plus avantajlarından yararlanıyorsun."
+      : "Günlük soru, deneme ve tekrar limitlerini buradan takip edebilirsin.";
+  const leftMeta = nativeNoPay
+    ? "Tüm özellikler kullanımına açık."
+    : premiumActive
+      ? lifetime
+        ? "Ömür boyu erişim aktif."
+        : untilLabel && untilLabel !== "-"
+          ? `${untilLabel} tarihine kadar aktif.`
+          : "Plus erişimin hazır."
+      : "Limitler her gün yenilenir.";
+
+  const rightBadge = nativeNoPay ? "Aktif" : premiumActive ? "Plus" : "Önerilen";
+  const rightBadgeSub = nativeNoPay
+    ? "Tam erişim"
+    : premiumActive
+      ? "Aktif üyelik"
+      : "Sınırsız erişim";
   const rightHeadline = premiumActive
     ? "Avantajların aktif."
     : allowExternalPayments

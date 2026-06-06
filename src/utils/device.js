@@ -20,6 +20,16 @@ export function isNativeIOS() {
   return isNativePlatform() && getCapacitorPlatform() === "ios";
 }
 
+/**
+ * Kullanıcı dokümanına yazılan platform etiketi.
+ * Native Capacitor → "ios" / "android"; aksi halde "web".
+ */
+export function getPlatformTag() {
+  if (!isNativePlatform()) return "web";
+  const platform = getCapacitorPlatform();
+  return platform === "ios" || platform === "android" ? platform : "web";
+}
+
 export function isWebIOS() {
   return !isNativePlatform() && isIOS();
 }

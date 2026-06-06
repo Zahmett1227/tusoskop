@@ -165,15 +165,13 @@ export default function PremiumInfoScreen({
         <div className="mx-auto max-w-3xl space-y-6">
           <section className="rounded-[2rem] border border-neutral-200/90 bg-white/95 p-5 shadow-[0_24px_70px_-32px_rgba(45,35,25,0.22)] sm:p-8">
             <p className="mb-3 text-[10px] font-black uppercase tracking-[0.2em] text-neutral-500">
-              Tusoskop Plus
+              Tusoskop
             </p>
             <h1 className="mb-3 text-3xl font-black leading-tight tracking-tight text-neutral-950 sm:text-4xl">
-              Plan durumun
+              Erişim durumun
             </h1>
             <p className="text-sm font-semibold leading-relaxed text-neutral-700 sm:text-base">
-              {premiumActive
-                ? "Plus erişimin aktif. iOS içinde satın alma akışı bulunmaz; mevcut erişim durumunu burada takip edebilirsin."
-                : "Bu iOS sürümünde Plus satın alma akışı sunulmuyor. Mevcut hesap durumunu burada görebilirsin."}
+              Tüm özellikler hesabında açık. Aşağıda hesap bilgilerini görebilirsin.
             </p>
             <div className="mt-5 rounded-3xl border border-[#e8d5c4] bg-[#fff8ef] p-4">
               <p className="text-xs font-black uppercase tracking-wide text-[#8a6a4d]">

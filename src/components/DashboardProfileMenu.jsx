@@ -22,6 +22,7 @@ export default function DashboardProfileMenu({
   accentThemeKey,
   onAccentThemeChange,
   onLogout,
+  onOpenAccountSettings,
   mailtoSupport,
   mailtoFeedback,
   onSupportClick,
@@ -181,6 +182,19 @@ export default function DashboardProfileMenu({
             >
               <span aria-hidden>✍️</span> Geri bildirim
             </a>
+            {onOpenAccountSettings ? (
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  onOpenAccountSettings();
+                }}
+                className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm font-bold transition ${linkItem}`}
+                role="menuitem"
+              >
+                <span aria-hidden>⚙️</span> Hesap ve gizlilik
+              </button>
+            ) : null}
             <button
               type="button"
               onClick={() => {

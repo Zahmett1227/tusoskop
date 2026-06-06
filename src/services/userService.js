@@ -1,7 +1,10 @@
 import { db } from "../firebase";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
+import { getPlatformTag } from "../utils/device";
 
 const APP_REVIEW_EMAIL = "apple-review@tusoskop.com";
+// iOS MARKETING_VERSION ile hizalı; build sürümü değişince güncellenir.
+const APP_VERSION = "1.0";
 
 export function isAppReviewAccount(firebaseUser) {
   return String(firebaseUser?.email || "").trim().toLowerCase() === APP_REVIEW_EMAIL;
@@ -54,9 +57,12 @@ export async function ensureUserDocument(firebaseUser) {
         adminNote: null,
         grantedBy: null,
         grantedAt: null,
+        platform: getPlatformTag(),
+        appVersion: APP_VERSION,
         createdAt: now,
         updatedAt: now,
         lastLoginAt: now,
+        lastSeenAt: now,
       };
 
       await setDoc(ref, newUserData);
@@ -82,8 +88,11 @@ export async function ensureUserDocument(firebaseUser) {
       premiumUntil: existing.premiumUntil ?? null,
       lifetimePremium: existing.lifetimePremium ?? false,
       ...(reviewAccess || {}),
+      platform: getPlatformTag(),
+      appVersion: APP_VERSION,
       updatedAt: now,
       lastLoginAt: now,
+      lastSeenAt: now,
     };
 
     await setDoc(ref, safeUpdate, { merge: true });
