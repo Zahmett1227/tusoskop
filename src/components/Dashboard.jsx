@@ -24,7 +24,6 @@ import Footer from "./layout/Footer";
 import { getStreak } from "../services/streakService";
 import { getSmartReviewSummary, getSmartReviews } from "../services/smartReviewService";
 import { buildTopicRows, groupReviewsBySubject } from "../utils/smartReviewUtils";
-import { isDemoMode } from "../services/demoModeService";
 import { useToast } from "../context/ToastContext";
 
 function toSafeTargetScore(value, fallback = 65) {
@@ -65,7 +64,6 @@ export default function Dashboard({
   accentThemeKey,
   onAccentThemeChange,
   isAdmin = false,
-  isDemo = false,
   /** App içinden gelen görünüm — dashboard’a her dönüşte geçmiş yenilenebilir */
   currentView = "dashboard",
   onOpenLegalPage,
@@ -91,7 +89,6 @@ export default function Dashboard({
       : "min-h-dvh bg-slate-950 text-white");
   const appCardShell = isLightTheme ? "app-card app-card--light" : "app-card";
   const premiumActive = isUserPremium(userData);
-  const demoMode = isDemo || isDemoMode(user, userData);
   const { questionUsed: freeQuestionUsed, examUsed: freeExamUsed, reviewUsed: freeReviewUsed } =
     getFreeUsageUsed(remainingUsage);
   const [myTarget, setMyTarget] = useState(65.0);
@@ -114,7 +111,6 @@ export default function Dashboard({
   const smartTopTopics = smartReviewSummary?.topTopics || [];
 
   useEffect(() => {
-    if (demoMode) return;
     if (!user?.uid) return;
     const loadTarget = async () => {
       const authed = auth.currentUser;
@@ -131,10 +127,10 @@ export default function Dashboard({
       }
     };
     loadTarget();
-  }, [demoMode, user?.uid]);
+  }, [user?.uid]);
 
   useEffect(() => {
-    if (!user?.uid && !demoMode) {
+    if (!user?.uid) {
       setPanelSummary(null);
       setPanelTopicRows([]);
       setWrongBySubject({});
@@ -166,7 +162,7 @@ export default function Dashboard({
     return () => {
       active = false;
     };
-  }, [demoMode, user, userData, currentView]);
+  }, [user, userData, currentView]);
 
   useEffect(() => {
     let active = true;
@@ -202,13 +198,6 @@ export default function Dashboard({
   };
 
   const saveTarget = async () => {
-    if (demoMode) {
-      const saved = toSafeTargetScore(tempTarget);
-      setMyTarget(saved);
-      setTempTarget(saved);
-      setIsEditingTarget(false);
-      return;
-    }
     const currentUser = auth.currentUser;
     if (!currentUser) return;
     try {
@@ -561,7 +550,6 @@ export default function Dashboard({
           isLightTheme={isLightTheme}
           premiumActive={premiumActive}
           userData={userData}
-          isDemo={demoMode}
           freeQuestionUsed={freeQuestionUsed}
           freeExamUsed={freeExamUsed}
           freeReviewUsed={freeReviewUsed}
@@ -794,13 +782,11 @@ export default function Dashboard({
                     ? "bg-emerald-500/15 text-emerald-300 border border-emerald-400/30"
                     : "bg-amber-500/15 text-amber-300 border border-amber-400/30"
                 }`}>
-                  {demoMode ? "Demo açık" : premiumActive ? "Plus" : "Plus'a özel"}
+                  {premiumActive ? "Plus" : "Plus'a özel"}
                 </span>
               </div>
               <p className={`text-[10px] font-medium ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>
-                {demoMode
-                  ? "Smoke test için açık"
-                  : premiumActive ? "Ders ve konuya göre sınırsız çöz" : "Free kullanıcılar için kilitli"}
+                {premiumActive ? "Ders ve konuya göre sınırsız çöz" : "Free kullanıcılar için kilitli"}
               </p>
             </div>
           </button>
@@ -882,7 +868,6 @@ export default function Dashboard({
             onOpenLegal={onOpenLegalPage}
             accentTheme={theme}
             accentThemeKey={accentThemeKey}
-            isDemo={demoMode}
           />
         ) : null}
 

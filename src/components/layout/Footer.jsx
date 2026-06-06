@@ -11,14 +11,13 @@ export default function Footer({
   accentTheme,
   accentThemeKey,
   variant = "default",
-  isDemo = false,
 }) {
   const theme = accentTheme ?? { mode: "dark" };
   const isLightTheme =
     accentThemeKey === "light" || theme?.mode === "light";
 
   const isPremiumSurface = variant === "premium";
-  const legalPages = canShowExternalPayments() && !isDemo
+  const legalPages = canShowExternalPayments()
     ? LEGAL_PAGES
     : LEGAL_PAGES.filter(
         (page) =>

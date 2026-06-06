@@ -1,5 +1,5 @@
 import React from "react";
-import { loginWithApple, loginWithGoogle } from "../../firebase";
+import { loginWithApple } from "../../firebase";
 
 function GoogleMark() {
   return (
@@ -21,11 +21,7 @@ function AppleMark() {
   );
 }
 
-export default function SignInOptions({
-  accentTheme,
-  onDemoLogin,
-  showDemoLogin = false,
-}) {
+export default function SignInOptions({ accentTheme, onGoogleLogin }) {
   const primary = accentTheme?.primary || "bg-emerald-400";
   const primaryHover = accentTheme?.primaryHover || "hover:bg-emerald-300";
   const glow = accentTheme?.glow || "";
@@ -42,26 +38,12 @@ export default function SignInOptions({
       </button>
       <button
         type="button"
-        onClick={loginWithGoogle}
+        onClick={onGoogleLogin}
         className={`flex min-h-14 w-full items-center justify-center gap-3 rounded-3xl px-6 py-4 text-base font-black text-slate-950 shadow-2xl transition-transform hover:scale-[1.02] active:scale-95 ${primary} ${primaryHover} ${glow}`}
       >
         <GoogleMark />
         Google ile Giriş Yap
       </button>
-      {showDemoLogin && typeof onDemoLogin === "function" ? (
-        <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-3">
-          <button
-            type="button"
-            onClick={onDemoLogin}
-            className="flex min-h-12 w-full items-center justify-center rounded-2xl border border-slate-700 bg-slate-950 px-5 py-3 text-sm font-extrabold text-slate-100 transition hover:border-slate-500 hover:bg-slate-900 active:scale-95"
-          >
-            Demo olarak incele
-          </button>
-          <p className="mt-2 px-1 text-center text-[11px] font-medium leading-relaxed text-slate-500">
-            Gerçek hesap oluşturmadan uygulamayı test eder.
-          </p>
-        </div>
-      ) : null}
       <p className="px-2 text-center text-xs font-medium leading-relaxed text-slate-500">
         Giriş yaparak çalışma verilerinin hesabına bağlı saklanmasını kabul edersin.
       </p>

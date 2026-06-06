@@ -48,7 +48,6 @@ export default function PremiumInfoScreen({
   accentTheme,
   accentThemeKey,
   onOpenLegalPage,
-  isDemo = false,
 }) {
   const [copyDone, setCopyDone] = useState(false);
   const [banner, setBanner] = useState("");
@@ -159,31 +158,6 @@ export default function PremiumInfoScreen({
   const uidShort = user?.uid ? shortAccountId(user.uid) : "";
   const uidLine =
     user?.uid && uidShort ? uidShort : "Hesap bilgisi bulunamadı";
-
-  if (isDemo) {
-    return (
-      <div className="min-h-dvh bg-slate-950 px-4 py-6 text-white md:px-8 md:py-10">
-        <div className="mx-auto max-w-2xl rounded-[2rem] border border-amber-400/20 bg-amber-500/10 p-6 shadow-2xl">
-          <p className="text-[10px] font-black uppercase tracking-[0.22em] text-amber-200">
-            Demo modu
-          </p>
-          <h1 className="mt-3 text-3xl font-black tracking-tight">
-            Ödeme ekranı demo oturumunda kapalı.
-          </h1>
-          <p className="mt-3 text-sm font-semibold leading-relaxed text-amber-50/85">
-            Bu oturum yalnız iOS smoke test içindir. Fiyat, paket, checkout ve ödeme destek akışları gösterilmez.
-          </p>
-          <button
-            type="button"
-            onClick={onBack}
-            className="mt-6 min-h-12 w-full rounded-2xl border border-amber-300/30 bg-slate-950 px-5 text-sm font-extrabold text-amber-100 transition hover:bg-slate-900"
-          >
-            Dashboard'a dön
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   if (!allowExternalPayments) {
     return (
@@ -699,7 +673,6 @@ export default function PremiumInfoScreen({
             onOpenLegal={onOpenLegalPage}
             accentTheme={accentTheme}
             accentThemeKey={accentThemeKey}
-            isDemo={isDemo}
           />
         ) : null}
 

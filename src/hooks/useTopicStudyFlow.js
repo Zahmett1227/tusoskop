@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { setClarityTag, trackClarityEvent } from "../lib/clarity";
 import { isUserPremium } from "../utils/premiumUtils";
-import { isDemoMode } from "../services/demoModeService";
 import {
   canStartTopicTest,
   incrementTopicTestUsage,
@@ -18,7 +17,6 @@ import { useToast } from "../context/ToastContext";
 export function useTopicStudyFlow({
   user,
   userData,
-  isDemo = false,
   view,
   setView,
   ensureQuestionsForSubject,
@@ -33,7 +31,6 @@ export function useTopicStudyFlow({
   setLimitModal,
   openLimitFromUsageError,
 }) {
-  const demoMode = isDemo || isDemoMode(user, userData);
   const { showToast } = useToast();
   const [selectedLesson, setSelectedLesson] = useState("");
   const [selectedTopic, setSelectedTopic] = useState("");
@@ -90,25 +87,25 @@ export function useTopicStudyFlow({
       questionSetupNonPremiumHandledRef.current = false;
       return;
     }
-    if (demoMode || isUserPremium(userData)) return;
+    if (isUserPremium(userData)) return;
     if (questionSetupNonPremiumHandledRef.current) return;
     questionSetupNonPremiumHandledRef.current = true;
     openSubjectTopicPlusGate();
     setView("dashboard");
-  }, [demoMode, view, userData, setView, openSubjectTopicPlusGate]);
+  }, [view, userData, setView, openSubjectTopicPlusGate]);
 
   const openTopicSetup = useCallback(() => {
-    if (!demoMode && !isUserPremium(userData)) {
+    if (!isUserPremium(userData)) {
       openSubjectTopicPlusGate();
       return;
     }
     trackClarityEvent("subject_topic_started");
     setView("questionSetup");
-  }, [demoMode, userData, openSubjectTopicPlusGate, setView]);
+  }, [userData, openSubjectTopicPlusGate, setView]);
 
   const startTopicTest = useCallback(
     async (questionLimit = "all", topicOverride) => {
-      if (!demoMode && !isUserPremium(userData)) {
+      if (!isUserPremium(userData)) {
         openSubjectTopicPlusGate();
         return;
       }
@@ -169,7 +166,6 @@ export function useTopicStudyFlow({
     [
       user,
       userData,
-      demoMode,
       selectedLesson,
       selectedTopic,
       ensureQuestionsForSubject,

@@ -3,7 +3,6 @@ import { httpsCallable } from "firebase/functions";
 import { db, functions } from "../firebase";
 import { FREE_LIMITS } from "../config/limits";
 import { isUserPremium } from "../utils/premiumUtils";
-import { isDemoMode } from "./demoModeService";
 
 const USAGE_KEY = "tusoskopUsage";
 
@@ -197,10 +196,8 @@ async function getMonthlyFullExamUsage(user) {
 }
 
 const passIfPremium = (userData) => (isUserPremium(userData) ? { allowed: true } : null);
-const passIfDemo = (user, userData) => (isDemoMode(user, userData) ? { allowed: true, demo: true } : null);
 
 export async function canAnswerQuestion(user, userData) {
-  if (passIfDemo(user, userData)) return { allowed: true, demo: true };
   if (passIfPremium(userData)) return { allowed: true };
   const usage = await getUserUsage(user);
   return {
@@ -212,7 +209,6 @@ export async function canAnswerQuestion(user, userData) {
 }
 
 export async function incrementQuestionUsage(user, userData, count = 1) {
-  if (passIfDemo(user, userData)) return null;
   if (passIfPremium(userData)) return null;
   const delta = Number(count || 0) || 1;
   try {
@@ -239,7 +235,6 @@ export async function incrementQuestionUsage(user, userData, count = 1) {
 }
 
 export async function canStartTopicTest(user, userData) {
-  if (passIfDemo(user, userData)) return { allowed: true, demo: true };
   if (passIfPremium(userData)) return { allowed: true };
   const usage = await getUserUsage(user);
   return {
@@ -251,7 +246,6 @@ export async function canStartTopicTest(user, userData) {
 }
 
 export async function incrementTopicTestUsage(user, userData) {
-  if (passIfDemo(user, userData)) return null;
   if (passIfPremium(userData)) return null;
   try {
     const data = await invokeIncrementUsage({ type: "topicTest" });
@@ -274,7 +268,6 @@ export async function incrementTopicTestUsage(user, userData) {
 }
 
 export async function canStartFullExam(user, userData) {
-  if (passIfDemo(user, userData)) return { allowed: true, demo: true };
   if (passIfPremium(userData)) return { allowed: true };
   const usage = await getMonthlyFullExamUsage(user);
   return {
@@ -286,7 +279,6 @@ export async function canStartFullExam(user, userData) {
 }
 
 export async function incrementFullExamUsage(user, userData) {
-  if (passIfDemo(user, userData)) return null;
   if (passIfPremium(userData)) return null;
   try {
     const data = await invokeIncrementUsage({ type: "fullExam" });
@@ -309,13 +301,6 @@ export async function incrementFullExamUsage(user, userData) {
 }
 
 export async function canStartReview(user, userData, requestedCount = 1) {
-  if (passIfDemo(user, userData)) {
-    return {
-      allowed: true,
-      demo: true,
-      allowedCount: Math.max(1, Number(requestedCount || 1)),
-    };
-  }
   if (passIfPremium(userData)) return { allowed: true };
   const usage = await getUserUsage(user);
   const remaining = Math.max(0, FREE_LIMITS.dailyReviewQuestions - usage.reviewQuestionCount);
@@ -329,7 +314,6 @@ export async function canStartReview(user, userData, requestedCount = 1) {
 }
 
 export async function incrementReviewUsage(user, userData, count = 1) {
-  if (passIfDemo(user, userData)) return null;
   if (passIfPremium(userData)) return null;
   const delta = Number(count || 0) || 1;
   try {
@@ -356,7 +340,6 @@ export async function incrementReviewUsage(user, userData, count = 1) {
 }
 
 export async function getRemainingFreeUsage(user, userData) {
-  if (passIfDemo(user, userData)) return { unlimited: true, demo: true };
   if (passIfPremium(userData)) return { unlimited: true };
   const usage = await getUserUsage(user);
   const monthlyUsage = await getMonthlyFullExamUsage(user);

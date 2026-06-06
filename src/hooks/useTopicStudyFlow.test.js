@@ -39,14 +39,8 @@ describe("useTopicStudyFlow kaynak sözleşmesi", () => {
   });
 
   it("premium olmayan openTopicSetup gate", () => {
-    expect(hookSource).toContain("if (!demoMode && !isUserPremium(userData))");
+    expect(hookSource).toContain("if (!isUserPremium(userData))");
     expect(hookSource).toContain("openSubjectTopicPlusGate()");
-  });
-
-  it("demo modda topic gate açık kabul edilir", () => {
-    expect(hookSource).toContain("isDemo = false");
-    expect(hookSource).toContain("const demoMode = isDemo || isDemoMode(user, userData)");
-    expect(hookSource).toContain("if (demoMode || isUserPremium(userData)) return");
   });
 
   it("saveRecentTopicStudy ve questionSetupScreenProps", () => {

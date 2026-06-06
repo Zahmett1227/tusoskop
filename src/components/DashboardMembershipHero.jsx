@@ -24,7 +24,6 @@ export default function DashboardMembershipHero({
   freeExamUsed,
   freeReviewUsed,
   onOpenPremium,
-  isDemo = false,
 }) {
   const lifetime = Boolean(userData?.lifetimePremium);
   const untilLabel = formatPremiumUntil(userData?.premiumUntil);
@@ -71,28 +70,6 @@ export default function DashboardMembershipHero({
   const chipBase = isLightTheme
     ? "border-slate-200/90 bg-white/90 text-slate-800 shadow-sm"
     : "border-white/10 bg-white/[0.04] text-slate-100 backdrop-blur-sm";
-
-  if (isDemo) {
-    return (
-      <div
-        className={`relative mb-6 overflow-hidden rounded-3xl border p-5 sm:p-7 md:p-8 ${
-          isLightTheme
-            ? "border-amber-200 bg-amber-50/80 text-slate-950 shadow-sm"
-            : "border-amber-400/20 bg-amber-500/10 text-white shadow-[0_24px_60px_-32px_rgba(251,191,36,0.35)]"
-        }`}
-      >
-        <p className={`text-[10px] font-black uppercase tracking-[0.22em] ${isLightTheme ? "text-amber-700" : "text-amber-200"}`}>
-          Demo modu
-        </p>
-        <h2 className={`mt-2 text-2xl font-black tracking-tight sm:text-3xl ${isLightTheme ? "text-slate-950" : "text-white"}`}>
-          Gerçek hesap oluşturmadan smoke test yapıyorsun.
-        </h2>
-        <p className={`mt-2 max-w-2xl text-sm font-semibold leading-relaxed ${isLightTheme ? "text-slate-700" : "text-amber-50/85"}`}>
-          Bu oturum yerel çalışır; kullanıcı profili, ödeme ve uzak çalışma verileri oluşturulmaz.
-        </p>
-      </div>
-    );
-  }
 
   const expiredPlus = isExpiredPlus(userData);
 
