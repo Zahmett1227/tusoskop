@@ -6,9 +6,17 @@ if (!admin.apps.length) {
 }
 
 const { onCall, HttpsError } = require("firebase-functions/v2/https");
+const { defineSecret } = require("firebase-functions/params");
 const { getFirestore, FieldValue } = require("firebase-admin/firestore");
 const { FREE_LIMITS } = require("./constants");
 const { tryPublishSocialContentHandler } = require("./socialPublisher");
+const {
+  exchangeAuthCodeForRefreshToken,
+  revokeToken,
+} = require("./appleAuth");
+
+// Apple Sign in private key (.p8 içeriği). `firebase functions:secrets:set` ile tanımlanır.
+const APPLE_SIGNIN_PRIVATE_KEY = defineSecret("APPLE_SIGNIN_PRIVATE_KEY");
 
 /** Callable preflight + browser clients (match Hosting / Vite dev ports). */
 const allowedOrigins = [
@@ -252,10 +260,50 @@ exports.incrementUsage = onCall(
   }
 );
 
+/**
+ * Apple ile giriş sonrası refresh token'ı (authorization_code'dan takas ederek)
+ * sunucu tarafında saklar. Hesap silmede Apple token revoke için gereklidir
+ * (App Store Guideline 5.1.1(v)). `appleTokens/{uid}` istemciye kapalıdır.
+ */
+exports.registerAppleRefreshToken = onCall(
+  {
+    region: "us-central1",
+    cors: allowedOrigins,
+    secrets: [APPLE_SIGNIN_PRIVATE_KEY],
+  },
+  async (request) => {
+    if (!request.auth?.uid) {
+      throw new HttpsError("unauthenticated", "Giriş gerekli.");
+    }
+    const uid = request.auth.uid;
+    const authorizationCode = String(request.data?.authorizationCode || "").trim();
+    if (!authorizationCode) {
+      throw new HttpsError("invalid-argument", "authorizationCode gerekli.");
+    }
+
+    try {
+      const refreshToken = await exchangeAuthCodeForRefreshToken(
+        authorizationCode,
+        APPLE_SIGNIN_PRIVATE_KEY.value()
+      );
+      await db.doc(`appleTokens/${uid}`).set(
+        { refreshToken, updatedAt: FieldValue.serverTimestamp() },
+        { merge: true }
+      );
+      return { success: true };
+    } catch (error) {
+      // Girişi bozmamak için hata fırlatma; revoke yine de best-effort kalır.
+      console.error("registerAppleRefreshToken hatası:", error?.message || error);
+      return { success: false };
+    }
+  }
+);
+
 exports.deleteAccountAndData = onCall(
   {
     region: "us-central1",
     cors: allowedOrigins,
+    secrets: [APPLE_SIGNIN_PRIVATE_KEY],
   },
   async (request) => {
     if (!request.auth?.uid) {
@@ -266,6 +314,17 @@ exports.deleteAccountAndData = onCall(
     const uidHash = hashUid(uid);
 
     try {
+      // Apple Sign in token'ını iptal et (best-effort; silmeyi bloklamaz).
+      try {
+        const appleSnap = await db.doc(`appleTokens/${uid}`).get();
+        const refreshToken = appleSnap.exists ? appleSnap.data()?.refreshToken : null;
+        if (refreshToken) {
+          await revokeToken(refreshToken, APPLE_SIGNIN_PRIVATE_KEY.value());
+        }
+      } catch (revokeError) {
+        console.error("Apple token revoke atlandı:", revokeError?.message || revokeError);
+      }
+
       await anonymizePurchaseIntents(uid, uidHash);
 
       await Promise.all([
@@ -273,6 +332,7 @@ exports.deleteAccountAndData = onCall(
         recursiveDeleteDoc(`studyCollections/${uid}`),
         recursiveDeleteDoc(`examResults/${uid}`),
         recursiveDeleteDoc(`streaks/${uid}`),
+        recursiveDeleteDoc(`appleTokens/${uid}`),
         deleteQueryResults(db.collection("results").where("userId", "==", uid)),
         deleteQueryResults(db.collection("studySessions").where("userId", "==", uid)),
       ]);

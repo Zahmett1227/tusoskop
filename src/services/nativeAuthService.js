@@ -18,6 +18,24 @@ function createAppleCredential(provider, credential) {
   });
 }
 
+/**
+ * Apple authorization_code'unu sunucuya gönderir; sunucu refresh token'a takas
+ * edip saklar (hesap silmede Apple token revoke için). Best-effort — girişi bozmaz.
+ * Dinamik import ile firebase.js ↔ nativeAuthService dairesel bağımlılığı önlenir.
+ */
+async function registerAppleRefreshToken(authorizationCode) {
+  if (!authorizationCode) return;
+  try {
+    const [{ functions }, { httpsCallable }] = await Promise.all([
+      import("../firebase"),
+      import("firebase/functions"),
+    ]);
+    await httpsCallable(functions, "registerAppleRefreshToken")({ authorizationCode });
+  } catch (error) {
+    if (import.meta.env.DEV) console.warn("[Apple] refresh token kaydı atlandı:", error?.message);
+  }
+}
+
 export async function signInWithNativeApple(auth, provider) {
   if (!isNativeIOS()) {
     throw new Error("Native Apple giriş yalnızca iOS uygulamasında kullanılabilir.");
@@ -35,6 +53,7 @@ export async function signInWithNativeApple(auth, provider) {
   }));
 
   const credential = createAppleCredential(provider, result?.credential);
+  const authorizationCode = result?.credential?.authorizationCode;
   if (import.meta.env.DEV) console.log("[Apple] OAuthCredential oluşturuldu, signInWithCredential çağrılıyor...");
 
   try {
@@ -47,6 +66,8 @@ export async function signInWithNativeApple(auth, provider) {
     );
     const userCredential = await Promise.race([signInPromise, timeoutPromise]);
     if (import.meta.env.DEV) console.log("[Apple] signInWithCredential başarılı:", userCredential.user?.uid);
+    // Hesap silmede Apple token'ı iptal edebilmek için refresh token'ı kaydet.
+    await registerAppleRefreshToken(authorizationCode);
     return userCredential.user;
   } catch (signInError) {
     if (import.meta.env.DEV) console.error("[Apple] signInWithCredential hatası:", signInError?.code, signInError?.message);
