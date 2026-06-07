@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
+  initializeAuth,
+  browserLocalPersistence,
   getRedirectResult,
   GoogleAuthProvider,
   OAuthProvider,
@@ -18,7 +20,7 @@ import {
 import { getFunctions } from "firebase/functions";
 import { trackClarityEvent } from "./lib/clarity";
 import { signInWithNativeApple, signInWithNativeGoogle } from "./services/nativeAuthService";
-import { isNativeIOS } from "./utils/device";
+import { isNativeIOS, isNativePlatform } from "./utils/device";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBF8gh8mOeCpPgbfX_0jP_Fg47wyUXs278",
@@ -32,22 +34,17 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-export const auth = getAuth(app);
+// Native WKWebView'de Firebase SDK v12, IndexedDB persistence başlatırken
+// kilitlenerek sonraki tüm auth işlemlerini askıya alabiliyor.
+// initializeAuth + browserLocalPersistence bu sorunu önler.
+export const auth = isNativePlatform()
+  ? initializeAuth(app, { persistence: [browserLocalPersistence] })
+  : getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 export const appleProvider = new OAuthProvider("apple.com");
 appleProvider.addScope("email");
 appleProvider.addScope("name");
 appleProvider.setCustomParameters({ locale: "tr" });
-
-/** Capacitor native platform kontrolü — web build'i kırmadan global üzerinden. */
-function isNativePlatform() {
-  return Boolean(
-    typeof window !== "undefined" &&
-    window.Capacitor &&
-    typeof window.Capacitor.isNativePlatform === "function" &&
-    window.Capacitor.isNativePlatform()
-  );
-}
 
 // Native Google giriş — @capacitor-firebase/authentication plugini kullanır (Apple ile aynı yaklaşım)
 async function loginWithGoogleNative() {
@@ -173,6 +170,19 @@ export const loginWithApple = async () => {
 };
 
 const APP_REVIEW_EMAIL = "apple-review@tusoskop.com";
+const AUTH_TIMEOUT_MS = 12000;
+
+function withAuthTimeout(promise) {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) =>
+      setTimeout(
+        () => reject(new Error("Giriş zaman aşımına uğradı. İnternet bağlantınızı kontrol edin.")),
+        AUTH_TIMEOUT_MS
+      )
+    ),
+  ]);
+}
 
 export const loginWithAppReviewEmail = async (email, password) => {
   const normalizedEmail = String(email || "").trim().toLowerCase();
@@ -182,12 +192,15 @@ export const loginWithAppReviewEmail = async (email, password) => {
     throw err;
   }
   try {
-    const result = await signInWithEmailAndPassword(auth, APP_REVIEW_EMAIL, password);
+    console.log("[Email] signInWithEmailAndPassword çağrılıyor...");
+    const result = await withAuthTimeout(signInWithEmailAndPassword(auth, APP_REVIEW_EMAIL, password));
+    console.log("[Email] signInWithEmailAndPassword başarılı:", result.user?.uid);
     trackClarityEvent("app_review_email_login_basarili");
     return result.user;
   } catch (error) {
+    console.error("[Email] signInWithEmailAndPassword hatası:", error?.code, error?.message);
     trackClarityEvent("app_review_email_login_hatasi");
-    const err = new Error("App Review girişi başarısız oldu. Email veya şifreyi kontrol edin.");
+    const err = new Error(error?.message || "App Review girişi başarısız oldu. Email veya şifreyi kontrol edin.");
     err.userMessage = err.message;
     throw err;
   }

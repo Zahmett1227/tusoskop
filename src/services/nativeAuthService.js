@@ -38,7 +38,14 @@ export async function signInWithNativeApple(auth, provider) {
   console.log("[Apple] OAuthCredential oluşturuldu, signInWithCredential çağrılıyor...");
 
   try {
-    const userCredential = await signInWithCredential(auth, credential);
+    const signInPromise = signInWithCredential(auth, credential);
+    const timeoutPromise = new Promise((_, reject) =>
+      setTimeout(
+        () => reject(new Error("Giriş zaman aşımına uğradı. İnternet bağlantınızı kontrol edin.")),
+        12000
+      )
+    );
+    const userCredential = await Promise.race([signInPromise, timeoutPromise]);
     console.log("[Apple] signInWithCredential başarılı:", userCredential.user?.uid);
     return userCredential.user;
   } catch (signInError) {
