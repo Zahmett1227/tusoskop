@@ -505,8 +505,11 @@ export default function App() {
     return (
       <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
         <div
-          className="flex flex-col items-center justify-center bg-slate-950 text-white p-6 min-h-dvh"
-          style={{ paddingTop: "calc(2rem + env(safe-area-inset-top))" }}
+          className="flex flex-col items-center justify-start bg-slate-950 text-white p-6 min-h-dvh overflow-y-auto"
+          style={{
+            paddingTop: "calc(3rem + env(safe-area-inset-top))",
+            paddingBottom: "calc(2rem + env(safe-area-inset-bottom))",
+          }}
         >
           <div className="mb-6 flex justify-center">
             <img

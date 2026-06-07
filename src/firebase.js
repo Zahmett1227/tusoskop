@@ -111,6 +111,17 @@ export const loginWithApple = async () => {
       trackClarityEvent("apple_native_login_basarili");
       return user;
     } catch (error) {
+      const msg = String(error?.message || error?.code || "");
+      // Kullanıcı iptal etti — hata gösterme
+      if (
+        msg.includes("cancel") ||
+        msg.includes("Cancel") ||
+        msg.includes("1001") ||
+        msg.includes("dismissed") ||
+        error?.code === "1001"
+      ) {
+        return null;
+      }
       trackClarityEvent("apple_native_login_hatasi");
       console.error("Native Apple giriş hatası:", error);
       alert(error?.message || "Apple ile giriş tamamlanamadı. Lütfen tekrar deneyin.");
