@@ -12,7 +12,7 @@
       "providers": ["apple.com"]
     },
     "Keyboard": {
-      "resize": "body",
+      "resize": "native",
       "style": "dark",
       "resizeOnFullScreen": true
     },

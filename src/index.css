@@ -270,8 +270,10 @@ button:active {
   user-select: text;
 }
 
+/* resize: native modunda webview zaten klavye üstüne küçülür;
+   ekstra padding gap yaratacağı için eklenmez. */
 .native-ios.keyboard-visible body {
-  padding-bottom: var(--native-keyboard-height);
+  padding-bottom: 0;
 }
 
 .ios-device .glass-card {
