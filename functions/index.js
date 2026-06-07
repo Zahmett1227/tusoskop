@@ -265,26 +265,38 @@ exports.deleteAccountAndData = onCall(
     const uid = request.auth.uid;
     const uidHash = hashUid(uid);
 
-    await anonymizePurchaseIntents(uid, uidHash);
-
-    await Promise.all([
-      recursiveDeleteDoc(`users/${uid}`),
-      recursiveDeleteDoc(`studyCollections/${uid}`),
-      recursiveDeleteDoc(`examResults/${uid}`),
-      recursiveDeleteDoc(`streaks/${uid}`),
-      deleteQueryResults(db.collection("results").where("userId", "==", uid)),
-      deleteQueryResults(db.collection("studySessions").where("userId", "==", uid)),
-    ]);
-
     try {
-      await admin.auth().deleteUser(uid);
+      await anonymizePurchaseIntents(uid, uidHash);
+
+      await Promise.all([
+        recursiveDeleteDoc(`users/${uid}`),
+        recursiveDeleteDoc(`studyCollections/${uid}`),
+        recursiveDeleteDoc(`examResults/${uid}`),
+        recursiveDeleteDoc(`streaks/${uid}`),
+        deleteQueryResults(db.collection("results").where("userId", "==", uid)),
+        deleteQueryResults(db.collection("studySessions").where("userId", "==", uid)),
+      ]);
+
+      try {
+        await admin.auth().deleteUser(uid);
+      } catch (error) {
+        if (error?.code !== "auth/user-not-found") {
+          throw error;
+        }
+      }
+
+      return { success: true };
     } catch (error) {
-      if (error?.code !== "auth/user-not-found") {
+      // HttpsError'ları olduğu gibi geçir; ham hataları maskelemeden ilet.
+      if (error instanceof HttpsError) {
         throw error;
       }
+      console.error("deleteAccountAndData hatası:", error);
+      throw new HttpsError(
+        "internal",
+        `Hesap silme başarısız: ${error?.code || ""} ${error?.message || error}`.trim()
+      );
     }
-
-    return { success: true };
   }
 );
 
