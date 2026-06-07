@@ -111,25 +111,29 @@ export const loginWithApple = async () => {
       trackClarityEvent("apple_native_login_basarili");
       return user;
     } catch (error) {
-      const msg = String(error?.message || error?.code || "");
+      const code = String(error?.code ?? "");
+      const msg = String(error?.message ?? "");
+      console.error("[Apple] loginWithApple catch — code:", code, "msg:", msg);
+
       // Kullanıcı iptal etti — hata gösterme
-      if (
-        msg.includes("cancel") ||
-        msg.includes("Cancel") ||
-        msg.includes("1001") ||
-        msg.includes("dismissed") ||
-        error?.code === "1001"
-      ) {
+      // Sadece bilinen Apple iptal kodlarını sessizce geç
+      const isCancelled =
+        code === "1001" ||
+        code === "com.apple.AuthenticationServices.AuthorizationError.1001" ||
+        msg.toLowerCase().includes("user cancel") ||
+        msg.toLowerCase().includes("error 1001") ||
+        msg.toLowerCase().includes("dismissed");
+      if (isCancelled) {
         return null;
       }
+
       trackClarityEvent("apple_native_login_hatasi");
-      console.error("Native Apple giriş hatası:", error);
-      const code = error?.code ? ` (${error.code})` : "";
+      const displayCode = code ? ` (${code})` : "";
       alert(
         "Apple ile giriş tamamlanamadı." +
-          code +
+          displayCode +
           "\n" +
-          (error?.message || "Lütfen tekrar deneyin.")
+          (msg || "Lütfen tekrar deneyin.")
       );
       return null;
     }

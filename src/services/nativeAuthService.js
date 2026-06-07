@@ -23,12 +23,28 @@ export async function signInWithNativeApple(auth, provider) {
     throw new Error("Native Apple giriş yalnızca iOS uygulamasında kullanılabilir.");
   }
 
+  console.log("[Apple] signInWithApple plugin çağrılıyor...");
   const result = await FirebaseAuthentication.signInWithApple({
     skipNativeAuth: true,
   });
+  console.log("[Apple] Plugin yanıtı:", JSON.stringify({
+    hasCredential: !!result?.credential,
+    hasIdToken: !!result?.credential?.idToken,
+    hasNonce: !!result?.credential?.nonce,
+    nonceLength: result?.credential?.nonce?.length ?? 0,
+  }));
+
   const credential = createAppleCredential(provider, result?.credential);
-  const userCredential = await signInWithCredential(auth, credential);
-  return userCredential.user;
+  console.log("[Apple] OAuthCredential oluşturuldu, signInWithCredential çağrılıyor...");
+
+  try {
+    const userCredential = await signInWithCredential(auth, credential);
+    console.log("[Apple] signInWithCredential başarılı:", userCredential.user?.uid);
+    return userCredential.user;
+  } catch (signInError) {
+    console.error("[Apple] signInWithCredential hatası:", signInError?.code, signInError?.message);
+    throw signInError;
+  }
 }
 
 export async function signInWithNativeGoogle(auth) {
