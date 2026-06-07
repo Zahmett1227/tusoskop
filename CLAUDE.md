@@ -77,6 +77,52 @@ WRONGS_PRACTICE, FAVORITES_PRACTICE, TOPIC_PRACTICE, EXAM, NORMAL_STUDY
 **Not**: `@codetrix-studio/capacitor-google-auth` KULLANILMIYOR. Projede yüklü değil.
 **Not**: Google Sign-In iOS Simulator'da çalışmaz, gerçek cihaz gerekir.
 
+## iOS Native Auth Stabilizasyonu (ios-appstore-v1)
+
+iOS App Store öncesi Apple/Google/email girişlerinin **sonsuza asılı kalma** sorunu çözüldü.
+
+### Kök neden & çözüm — Firebase Auth IndexedDB kilidi
+`src/firebase.js`:
+```js
+export const auth = isNativePlatform()
+  ? initializeAuth(app, { persistence: [browserLocalPersistence] })
+  : getAuth(app);
+```
+- Firebase SDK v12, native WKWebView'de IndexedDB persistence başlatırken **tüm auth işlemlerini askıya alıyordu** → `signInWithCredential` / `signInWithEmailAndPassword` hiç resolve/reject olmuyordu.
+- `initializeAuth` + `browserLocalPersistence` (localStorage) bunu giderir. Web'de `getAuth(app)` korunur.
+- Dosyadaki yinelenen yerel `isNativePlatform()` silindi; `./utils/device`'tan import edilir.
+
+### Timeout & teşhis
+- `signInWithCredential` (Apple+Google) ve `signInWithEmailAndPassword`'a **12 sn timeout** (`Promise.race`) — ağ erişilemezse asılı kalmak yerine net hata.
+- Teşhis `console.log`'ları `[Apple]` / `[Google]` / `[Email]` prefiksli (`nativeAuthService.js`, `firebase.js`).
+- Native giriş hataları artık **`alert` ile `error.code` gösterir** (toast native'de kaçabiliyor). Apple cancel filtresi yalnızca bilinen iptal kodlarına (1001) daraltıldı.
+
+### Yapılandırma
+- `capacitor.config.json` → `FirebaseAuthentication.providers`: `["apple.com", "google.com"]`.
+- `ios/App/App/Info.plist` → `NSAppTransportSecurity` / `NSAllowsArbitraryLoadsInWebContent: true` (WKWebView'in `identitytoolkit.googleapis.com` gibi dış HTTPS isteklerini ATS engellemesin).
+
+## Klavye & Input (iOS)
+
+- `capacitor.config.json` → `Keyboard.resize: "native"` — webview klavye açılınca üstüne küçülür; `min-h-dvh` layout'lar uyar, `--native-keyboard-height` ile ekstra padding **eklenmez** (`src/index.css`: `.native-ios.keyboard-visible body { padding-bottom: 0; }`).
+- `src/index.css` → tüm `input/textarea/select`'e `touch-action: manipulation` + `-webkit-tap-highlight-color: transparent`. iOS'un double-tap-zoom beklemesinden kaynaklı **4-5 sn klavye açılma gecikmesi** giderildi.
+- `src/components/auth/SignInOptions.jsx` → input'larda `onFocus` `scrollIntoView` **YOK**. Smooth scroll input'u kaydırıp dokunma hedefini şaşırtıyor, focus düşüyordu (3-dokunma sorunu). `resize: native` görünürlüğü zaten sağlıyor.
+
+## Hesap Silme (Account Deletion)
+
+App Store zorunluluğu — uygulama içinden erişilebilir.
+
+- **Akış**: `AccountSettingsScreen.jsx` → `accountDeletionService.deleteCurrentAccountAndData()` → callable `deleteAccountAndData` (`functions/index.js`, `us-central1`).
+- **Onay**: kullanıcı alana `SIL` yazar + `window.confirm`.
+- **Cloud Function**: `users/`, `studyCollections/`, `examResults/`, `streaks/` recursive silinir; `results` / `studySessions` query-batch silinir; `premiumPurchaseIntents` anonimleştirilir; `admin.auth().deleteUser`.
+- **"internal" hatası tuzağı**: Firebase, callable içindeki **ham (non-HttpsError) JS hatalarının** mesajını güvenlik gereği `"internal"` diye maskeler. Bu yüzden silme gövdesi `try/catch` ile sarıldı; ham hatalar `HttpsError("internal", gerçek mesaj)` olarak yeniden fırlatılır. İstemci `error.code/message/details` log'lar ve UI'da gösterir.
+- ⚠️ **Her değişiklikten sonra deploy şart**:
+  ```bash
+  cd functions && npm install && cd ..
+  firebase deploy --only functions
+  ```
+  Yoksa eski kod çalışır / maskelenmiş `internal` görülür.
+- **Kapsam dışı (sonraya)**: Apple Sign-In token revoke — App Review reddederse ilk eklenecek.
+
 ## iOS Yapılandırma
 
 - Bundle ID: `com.tusoskop.app`
@@ -91,6 +137,7 @@ WRONGS_PRACTICE, FAVORITES_PRACTICE, TOPIC_PRACTICE, EXAM, NORMAL_STUDY
 | `src/services/smartReviewService.js` | FSRS review CRUD, Firestore sync |
 | `src/services/studyCollectionService.js` | wrongQuestions, favoriteQuestions (artık scheduler değil) |
 | `src/services/nativeAuthService.js` | iOS native auth (Apple + Google) — sadece ios-appstore-v1'de |
+| `src/services/accountDeletionService.js` | Hesap silme callable sarmalayıcı (`deleteAccountAndData`) |
 | `src/hooks/useStudyState.js` | Soru çözme state'i, `activeTopicName` → reviewContext olarak FSRS'ye iletilir |
 
 ## Dashboard Profil Menüsü (ios-appstore-v1)
@@ -118,6 +165,12 @@ npm run test
 npm run validate:questions
 ```
 
+### Cloud Functions deploy (hesap silme vb.)
+```bash
+cd functions && npm install && cd ..
+firebase deploy --only functions
+```
+
 ### Her iki branche aynı commit eklemek
 ```bash
 # main'e commit at
@@ -135,6 +188,8 @@ git push origin ios-appstore-v1
 ## Kullanıcı Notları
 
 - Demo mod çalışıyor, Google ile giriş iOS'ta düzeltildi (commit: 644d1db)
+- iOS native auth kilidi (Apple/Google/email asılı kalma) `initializeAuth` + `browserLocalPersistence` ile çözüldü → bkz. "iOS Native Auth Stabilizasyonu"
+- Hesap silme kod değişikliği sonrası `firebase deploy --only functions` yapılmazsa UI'da `internal` hatası görülür
 - SplashScreen uyarısı (otomatik gizleniyor) — kritik değil
 - `xpc_user_sessions` hatası → Simulator kısıtlaması, gerçek cihazda çıkmaz
 - Free kullanıcı limitleri: `src/config/limits.js` → `FREE_LIMITS`
