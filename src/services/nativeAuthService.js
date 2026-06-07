@@ -55,17 +55,39 @@ export async function signInWithNativeApple(auth, provider) {
 }
 
 export async function signInWithNativeGoogle(auth) {
+  console.log("[Google] signInWithGoogle plugin çağrılıyor...");
   const result = await FirebaseAuthentication.signInWithGoogle({
     skipNativeAuth: true,
   });
+  console.log("[Google] Plugin yanıtı:", JSON.stringify({
+    hasCredential: !!result?.credential,
+    hasIdToken: !!result?.credential?.idToken,
+    hasAccessToken: !!result?.credential?.accessToken,
+  }));
+
   const idToken = result?.credential?.idToken;
   const accessToken = result?.credential?.accessToken;
   if (!idToken) {
-    const err = new Error("Google girişi tamamlanamadı.");
+    const err = new Error("Google girişi tamamlanamadı. (idToken yok)");
     err.userMessage = err.message;
     throw err;
   }
   const credential = GoogleAuthProvider.credential(idToken, accessToken);
-  const userCredential = await signInWithCredential(auth, credential);
-  return userCredential.user;
+  console.log("[Google] OAuthCredential oluşturuldu, signInWithCredential çağrılıyor...");
+
+  try {
+    const signInPromise = signInWithCredential(auth, credential);
+    const timeoutPromise = new Promise((_, reject) =>
+      setTimeout(
+        () => reject(new Error("Giriş zaman aşımına uğradı. İnternet bağlantınızı kontrol edin.")),
+        12000
+      )
+    );
+    const userCredential = await Promise.race([signInPromise, timeoutPromise]);
+    console.log("[Google] signInWithCredential başarılı:", userCredential.user?.uid);
+    return userCredential.user;
+  } catch (signInError) {
+    console.error("[Google] signInWithCredential hatası:", signInError?.code, signInError?.message);
+    throw signInError;
+  }
 }

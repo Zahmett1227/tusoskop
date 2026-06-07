@@ -69,6 +69,24 @@ export const loginWithGoogle = async () => {
     trackClarityEvent("login_basarili");
     return result.user;
   } catch (error) {
+    // Native platformda hata kodunu doğrudan göster (toast bazen kaçıyor)
+    if (isNativePlatform()) {
+      const code = String(error?.code ?? "");
+      const msg = String(error?.message ?? "");
+      console.error("[Google] loginWithGoogle native catch — code:", code, "msg:", msg);
+      // Kullanıcı iptal etti — sessizce geç
+      const isCancelled =
+        msg.toLowerCase().includes("cancel") ||
+        msg.toLowerCase().includes("12501") ||
+        code === "12501";
+      if (isCancelled) {
+        return null;
+      }
+      trackClarityEvent("login_hatasi");
+      const displayCode = code ? ` (${code})` : "";
+      alert("Google ile giriş tamamlanamadı." + displayCode + "\n" + (msg || "Lütfen tekrar deneyin."));
+      return null;
+    }
     trackClarityEvent("login_hatasi");
     console.error("Google giriş hatası:", error);
 

@@ -9,7 +9,7 @@
   "plugins": {
     "FirebaseAuthentication": {
       "skipNativeAuth": true,
-      "providers": ["apple.com"]
+      "providers": ["apple.com", "google.com"]
     },
     "Keyboard": {
       "resize": "native",

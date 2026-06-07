@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { loginWithApple, loginWithAppReviewEmail } from "../../firebase";
 
 function GoogleMark() {
@@ -29,13 +29,6 @@ export default function SignInOptions({ accentTheme, onGoogleLogin }) {
   const [reviewPassword, setReviewPassword] = useState("");
   const [reviewStatus, setReviewStatus] = useState("");
   const [reviewLoading, setReviewLoading] = useState(false);
-  const formRef = useRef(null);
-
-  const scrollFormIntoView = () => {
-    setTimeout(() => {
-      formRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-    }, 300);
-  };
 
   const handleReviewLogin = async (event) => {
     event.preventDefault();
@@ -80,7 +73,6 @@ export default function SignInOptions({ accentTheme, onGoogleLogin }) {
         Giriş yaparak çalışma verilerinin hesabına bağlı saklanmasını kabul edersin.
       </p>
       <form
-        ref={formRef}
         onSubmit={handleReviewLogin}
         className="mt-2 rounded-2xl border border-slate-800 bg-slate-900/45 p-3"
       >
@@ -89,7 +81,6 @@ export default function SignInOptions({ accentTheme, onGoogleLogin }) {
             type="email"
             value={reviewEmail}
             onChange={(event) => setReviewEmail(event.target.value)}
-            onFocus={scrollFormIntoView}
             placeholder="E-posta"
             autoComplete="email"
             className="h-10 w-full rounded-xl border border-slate-800 bg-slate-950 px-3 text-center text-xs font-semibold text-white outline-none transition focus:border-slate-600"
@@ -99,7 +90,6 @@ export default function SignInOptions({ accentTheme, onGoogleLogin }) {
             type="password"
             value={reviewPassword}
             onChange={(event) => setReviewPassword(event.target.value)}
-            onFocus={scrollFormIntoView}
             placeholder="Şifre"
             autoComplete="current-password"
             className="h-10 w-full rounded-xl border border-slate-800 bg-slate-950 px-3 text-center text-xs font-semibold text-white outline-none transition focus:border-slate-600"
