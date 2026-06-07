@@ -57,12 +57,18 @@ body {
 
 /* ─── Buton tap efekti — parmak hissi ────────────────────────────────────── */
 button,
-a {
+a,
+input,
+textarea,
+select {
   -webkit-tap-highlight-color: transparent;
 }
 
-a {
-  touch-action: manipulation;
+a,
+input,
+textarea,
+select {
+  touch-action: manipulation; /* double-tap zoom bekleme gecikmesini engeller */
 }
 
 button {
