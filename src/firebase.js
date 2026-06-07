@@ -34,6 +34,22 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
+// Native giriş hatalarında kullanıcıya ham kod yerine sade bir mesaj göster.
+// Ağ/zaman aşımı durumunda bağlantı uyarısı, aksi halde genel "tekrar dene".
+function friendlyNativeAuthMessage(providerLabel, rawMessage) {
+  const m = String(rawMessage || "").toLowerCase();
+  const isNetwork =
+    m.includes("zaman aşımı") ||
+    m.includes("zaman asimi") ||
+    m.includes("bağlant") ||
+    m.includes("baglant") ||
+    m.includes("network");
+  const tail = isNetwork
+    ? "İnternet bağlantınızı kontrol edip tekrar deneyin."
+    : "Lütfen tekrar deneyin.";
+  return `${providerLabel} ile giriş tamamlanamadı.\n${tail}`;
+}
+
 // Native WKWebView'de Firebase SDK v12, IndexedDB persistence başlatırken
 // kilitlenerek sonraki tüm auth işlemlerini askıya alabiliyor.
 // initializeAuth + browserLocalPersistence bu sorunu önler.
@@ -73,7 +89,9 @@ export const loginWithGoogle = async () => {
     if (isNativePlatform()) {
       const code = String(error?.code ?? "");
       const msg = String(error?.message ?? "");
-      console.error("[Google] loginWithGoogle native catch — code:", code, "msg:", msg);
+      if (import.meta.env.DEV) {
+        console.error("[Google] loginWithGoogle native catch — code:", code, "msg:", msg);
+      }
       // Kullanıcı iptal etti — sessizce geç
       const isCancelled =
         msg.toLowerCase().includes("cancel") ||
@@ -83,8 +101,7 @@ export const loginWithGoogle = async () => {
         return null;
       }
       trackClarityEvent("login_hatasi");
-      const displayCode = code ? ` (${code})` : "";
-      alert("Google ile giriş tamamlanamadı." + displayCode + "\n" + (msg || "Lütfen tekrar deneyin."));
+      alert(friendlyNativeAuthMessage("Google", msg));
       return null;
     }
     trackClarityEvent("login_hatasi");
@@ -128,7 +145,9 @@ export const loginWithApple = async () => {
     } catch (error) {
       const code = String(error?.code ?? "");
       const msg = String(error?.message ?? "");
-      console.error("[Apple] loginWithApple catch — code:", code, "msg:", msg);
+      if (import.meta.env.DEV) {
+        console.error("[Apple] loginWithApple catch — code:", code, "msg:", msg);
+      }
 
       // Kullanıcı iptal etti — hata gösterme
       // Sadece bilinen Apple iptal kodlarını sessizce geç
@@ -143,13 +162,7 @@ export const loginWithApple = async () => {
       }
 
       trackClarityEvent("apple_native_login_hatasi");
-      const displayCode = code ? ` (${code})` : "";
-      alert(
-        "Apple ile giriş tamamlanamadı." +
-          displayCode +
-          "\n" +
-          (msg || "Lütfen tekrar deneyin.")
-      );
+      alert(friendlyNativeAuthMessage("Apple", msg));
       return null;
     }
   }
@@ -178,11 +191,11 @@ export const loginWithApple = async () => {
     }
 
     if (code === "auth/operation-not-allowed") {
-      alert("Apple ile giriş Firebase Console üzerinde henüz etkinleştirilmemiş görünüyor.");
+      alert("Apple ile giriş şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin.");
       return null;
     }
 
-    alert("Apple giriş hatası: " + (error?.message || "Bilinmeyen hata"));
+    alert(friendlyNativeAuthMessage("Apple", error?.message));
     return null;
   }
 };
@@ -210,13 +223,13 @@ export const loginWithAppReviewEmail = async (email, password) => {
     throw err;
   }
   try {
-    console.log("[Email] signInWithEmailAndPassword çağrılıyor...");
+    if (import.meta.env.DEV) console.log("[Email] signInWithEmailAndPassword çağrılıyor...");
     const result = await withAuthTimeout(signInWithEmailAndPassword(auth, APP_REVIEW_EMAIL, password));
-    console.log("[Email] signInWithEmailAndPassword başarılı:", result.user?.uid);
+    if (import.meta.env.DEV) console.log("[Email] signInWithEmailAndPassword başarılı:", result.user?.uid);
     trackClarityEvent("app_review_email_login_basarili");
     return result.user;
   } catch (error) {
-    console.error("[Email] signInWithEmailAndPassword hatası:", error?.code, error?.message);
+    if (import.meta.env.DEV) console.error("[Email] signInWithEmailAndPassword hatası:", error?.code, error?.message);
     trackClarityEvent("app_review_email_login_hatasi");
     const err = new Error(error?.message || "App Review girişi başarısız oldu. Email veya şifreyi kontrol edin.");
     err.userMessage = err.message;

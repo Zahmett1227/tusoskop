@@ -86,7 +86,8 @@ export default function DashboardMembershipHero({
     ? "border-slate-200/90 bg-white/90 text-slate-800 shadow-sm"
     : "border-white/10 bg-white/[0.04] text-slate-100 backdrop-blur-sm";
 
-  const expiredPlus = isExpiredPlus(userData);
+  // iOS'ta dış ödeme akışı gizli olduğundan "Plus sona erdi / yenile" uyarısı da gösterilmez.
+  const expiredPlus = allowExternalPayments && isExpiredPlus(userData);
 
   return (
     <>

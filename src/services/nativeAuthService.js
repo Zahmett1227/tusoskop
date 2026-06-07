@@ -23,11 +23,11 @@ export async function signInWithNativeApple(auth, provider) {
     throw new Error("Native Apple giriş yalnızca iOS uygulamasında kullanılabilir.");
   }
 
-  console.log("[Apple] signInWithApple plugin çağrılıyor...");
+  if (import.meta.env.DEV) console.log("[Apple] signInWithApple plugin çağrılıyor...");
   const result = await FirebaseAuthentication.signInWithApple({
     skipNativeAuth: true,
   });
-  console.log("[Apple] Plugin yanıtı:", JSON.stringify({
+  if (import.meta.env.DEV) console.log("[Apple] Plugin yanıtı:", JSON.stringify({
     hasCredential: !!result?.credential,
     hasIdToken: !!result?.credential?.idToken,
     hasNonce: !!result?.credential?.nonce,
@@ -35,7 +35,7 @@ export async function signInWithNativeApple(auth, provider) {
   }));
 
   const credential = createAppleCredential(provider, result?.credential);
-  console.log("[Apple] OAuthCredential oluşturuldu, signInWithCredential çağrılıyor...");
+  if (import.meta.env.DEV) console.log("[Apple] OAuthCredential oluşturuldu, signInWithCredential çağrılıyor...");
 
   try {
     const signInPromise = signInWithCredential(auth, credential);
@@ -46,20 +46,20 @@ export async function signInWithNativeApple(auth, provider) {
       )
     );
     const userCredential = await Promise.race([signInPromise, timeoutPromise]);
-    console.log("[Apple] signInWithCredential başarılı:", userCredential.user?.uid);
+    if (import.meta.env.DEV) console.log("[Apple] signInWithCredential başarılı:", userCredential.user?.uid);
     return userCredential.user;
   } catch (signInError) {
-    console.error("[Apple] signInWithCredential hatası:", signInError?.code, signInError?.message);
+    if (import.meta.env.DEV) console.error("[Apple] signInWithCredential hatası:", signInError?.code, signInError?.message);
     throw signInError;
   }
 }
 
 export async function signInWithNativeGoogle(auth) {
-  console.log("[Google] signInWithGoogle plugin çağrılıyor...");
+  if (import.meta.env.DEV) console.log("[Google] signInWithGoogle plugin çağrılıyor...");
   const result = await FirebaseAuthentication.signInWithGoogle({
     skipNativeAuth: true,
   });
-  console.log("[Google] Plugin yanıtı:", JSON.stringify({
+  if (import.meta.env.DEV) console.log("[Google] Plugin yanıtı:", JSON.stringify({
     hasCredential: !!result?.credential,
     hasIdToken: !!result?.credential?.idToken,
     hasAccessToken: !!result?.credential?.accessToken,
@@ -68,12 +68,12 @@ export async function signInWithNativeGoogle(auth) {
   const idToken = result?.credential?.idToken;
   const accessToken = result?.credential?.accessToken;
   if (!idToken) {
-    const err = new Error("Google girişi tamamlanamadı. (idToken yok)");
+    const err = new Error("Google ile giriş tamamlanamadı. Lütfen tekrar deneyin.");
     err.userMessage = err.message;
     throw err;
   }
   const credential = GoogleAuthProvider.credential(idToken, accessToken);
-  console.log("[Google] OAuthCredential oluşturuldu, signInWithCredential çağrılıyor...");
+  if (import.meta.env.DEV) console.log("[Google] OAuthCredential oluşturuldu, signInWithCredential çağrılıyor...");
 
   try {
     const signInPromise = signInWithCredential(auth, credential);
@@ -84,10 +84,10 @@ export async function signInWithNativeGoogle(auth) {
       )
     );
     const userCredential = await Promise.race([signInPromise, timeoutPromise]);
-    console.log("[Google] signInWithCredential başarılı:", userCredential.user?.uid);
+    if (import.meta.env.DEV) console.log("[Google] signInWithCredential başarılı:", userCredential.user?.uid);
     return userCredential.user;
   } catch (signInError) {
-    console.error("[Google] signInWithCredential hatası:", signInError?.code, signInError?.message);
+    if (import.meta.env.DEV) console.error("[Google] signInWithCredential hatası:", signInError?.code, signInError?.message);
     throw signInError;
   }
 }
