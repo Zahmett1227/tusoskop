@@ -14,6 +14,19 @@ function base64url(input) {
 }
 
 /**
+ * Secret olarak saklanan .p8 içeriğini geçerli PEM'e normalize eder.
+ * Firebase secret'a kaçışlı (`\n`) girilmişse gerçek satır sonuna çevirir;
+ * baş/son boşlukları temizler. crypto.sign geçerli PEM bekler.
+ */
+function normalizePrivateKey(privateKeyPem) {
+  return String(privateKeyPem || "")
+    .replace(/\\r\\n/g, "\n")
+    .replace(/\\n/g, "\n")
+    .replace(/\\r/g, "\n")
+    .trim();
+}
+
+/**
  * Apple token/revoke endpoint'leri için ES256 imzalı client_secret JWT üretir.
  * @param {string} privateKeyPem .p8 içeriği (PEM). Firebase secret'tan gelir.
  */
@@ -32,7 +45,7 @@ function buildClientSecret(privateKeyPem) {
   )}`;
   // ES256 imzasını JOSE (R||S) formatında üret — JWT bunu bekler.
   const signature = crypto.sign("sha256", Buffer.from(signingInput), {
-    key: privateKeyPem,
+    key: normalizePrivateKey(privateKeyPem),
     dsaEncoding: "ieee-p1363",
   });
   return `${signingInput}.${signature.toString("base64url")}`;
