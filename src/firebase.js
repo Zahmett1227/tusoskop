@@ -1,10 +1,12 @@
 import { initializeApp } from "firebase/app";
 import {
+  createUserWithEmailAndPassword,
   getAuth,
   getRedirectResult,
   GoogleAuthProvider,
   OAuthProvider,
   signInWithCredential,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signInWithRedirect,
   signOut,
@@ -147,6 +149,61 @@ export const loginWithApple = async () => {
 
     alert("Apple giriş hatası: " + (error?.message || "Bilinmeyen hata"));
     return null;
+  }
+};
+
+/** Firebase auth hata kodunu kullanıcıya gösterilecek Türkçe mesaja çevirir. */
+function emailAuthErrorMessage(code) {
+  switch (code) {
+    case "auth/invalid-email":
+      return "Geçersiz e-posta adresi.";
+    case "auth/invalid-credential":
+    case "auth/wrong-password":
+    case "auth/user-not-found":
+      return "E-posta veya şifre hatalı.";
+    case "auth/user-disabled":
+      return "Bu hesap devre dışı bırakılmış.";
+    case "auth/too-many-requests":
+      return "Çok fazla deneme yapıldı. Lütfen biraz sonra tekrar deneyin.";
+    case "auth/email-already-in-use":
+      return "Bu e-posta zaten kayıtlı. Giriş yapmayı deneyin.";
+    case "auth/weak-password":
+      return "Şifre en az 6 karakter olmalı.";
+    default:
+      return "İşlem tamamlanamadı. Lütfen tekrar deneyin.";
+  }
+}
+
+/**
+ * E-posta/şifre ile giriş. Hata durumunda kullanıcıya gösterilecek mesaj
+ * `error.userMessage` alanında döner; çağıran taraf bunu inline gösterir.
+ */
+export const loginWithEmail = async (email, password) => {
+  try {
+    const result = await signInWithEmailAndPassword(auth, email, password);
+    trackClarityEvent("login_basarili");
+    return result.user;
+  } catch (error) {
+    trackClarityEvent("login_hatasi");
+    console.error("E-posta giriş hatası:", error);
+    const err = new Error(emailAuthErrorMessage(error?.code));
+    err.userMessage = err.message;
+    throw err;
+  }
+};
+
+/** E-posta/şifre ile yeni hesap oluşturur. */
+export const registerWithEmail = async (email, password) => {
+  try {
+    const result = await createUserWithEmailAndPassword(auth, email, password);
+    trackClarityEvent("login_basarili");
+    return result.user;
+  } catch (error) {
+    trackClarityEvent("login_hatasi");
+    console.error("E-posta kayıt hatası:", error);
+    const err = new Error(emailAuthErrorMessage(error?.code));
+    err.userMessage = err.message;
+    throw err;
   }
 };
 

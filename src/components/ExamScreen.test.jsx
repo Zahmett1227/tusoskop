@@ -481,32 +481,4 @@ describe("ExamScreen handleFinish double-submit guard", () => {
     expect(localHistory).toHaveLength(1);
     expect(localHistory[0].id).toBe("doc-retry");
   });
-
-  it("demo modda Firestore addDoc çağırmadan deneme sonucu üretir", async () => {
-    firebaseModule.auth.currentUser = null;
-    await renderAtLastQuestion({
-      isDemo: true,
-      userId: null,
-      userData: { demoMode: true, plan: "demo", isDemo: true },
-    });
-    const bitir = findBitir();
-    expect(bitir).toBeTruthy();
-
-    await act(async () => {
-      bitir.click();
-      await new Promise((r) => setTimeout(r, 0));
-    });
-    await act(async () => {
-      await new Promise((r) => setTimeout(r, 0));
-    });
-
-    expect(firestoreModule.addDoc).not.toHaveBeenCalled();
-    expect(batchModule.saveExamWrongAndSmartReviewsBatch).toHaveBeenCalledTimes(1);
-    expect(batchModule.saveExamWrongAndSmartReviewsBatch.mock.calls[0][0]).toBeNull();
-    const localHistory = JSON.parse(localStorage.getItem(historyKey) || "[]");
-    expect(localHistory).toHaveLength(1);
-    expect(localHistory[0].id).toMatch(/^demo-/);
-    expect(container.textContent).toContain("Deneme Analizi");
-    expect(container.textContent).toContain("Yanlış Soruların Detaylı Analizi");
-  });
 });

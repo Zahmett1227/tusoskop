@@ -1,5 +1,10 @@
-import React from "react";
-import { loginWithApple, loginWithGoogle } from "../../firebase";
+import React, { useState } from "react";
+import {
+  loginWithApple,
+  loginWithEmail,
+  loginWithGoogle,
+  registerWithEmail,
+} from "../../firebase";
 
 function GoogleMark() {
   return (
@@ -21,14 +26,40 @@ function AppleMark() {
   );
 }
 
-export default function SignInOptions({
-  accentTheme,
-  onDemoLogin,
-  showDemoLogin = false,
-}) {
+export default function SignInOptions({ accentTheme }) {
   const primary = accentTheme?.primary || "bg-emerald-400";
   const primaryHover = accentTheme?.primaryHover || "hover:bg-emerald-300";
   const glow = accentTheme?.glow || "";
+
+  const [showEmailForm, setShowEmailForm] = useState(false);
+  const [mode, setMode] = useState("login"); // "login" | "register"
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleEmailSubmit = async (event) => {
+    event.preventDefault();
+    if (submitting) return;
+    setError("");
+    const trimmedEmail = email.trim();
+    if (!trimmedEmail || !password) {
+      setError("E-posta ve şifre gerekli.");
+      return;
+    }
+    setSubmitting(true);
+    try {
+      if (mode === "register") {
+        await registerWithEmail(trimmedEmail, password);
+      } else {
+        await loginWithEmail(trimmedEmail, password);
+      }
+    } catch (err) {
+      setError(err?.userMessage || "İşlem tamamlanamadı. Lütfen tekrar deneyin.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <div className="w-full max-w-sm space-y-3">
@@ -48,20 +79,64 @@ export default function SignInOptions({
         <GoogleMark />
         Google ile Giriş Yap
       </button>
-      {showDemoLogin && typeof onDemoLogin === "function" ? (
-        <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-3">
+      {!showEmailForm ? (
+        <button
+          type="button"
+          onClick={() => setShowEmailForm(true)}
+          className="flex min-h-12 w-full items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/70 px-5 py-3 text-sm font-extrabold text-slate-200 transition hover:border-slate-500 hover:bg-slate-900 active:scale-95"
+        >
+          E-posta ile giriş
+        </button>
+      ) : (
+        <form
+          onSubmit={handleEmailSubmit}
+          className="space-y-2.5 rounded-3xl border border-slate-800 bg-slate-900/70 p-3"
+        >
+          <input
+            type="email"
+            inputMode="email"
+            autoComplete="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="E-posta"
+            className="min-h-12 w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 text-sm font-semibold text-slate-100 placeholder:text-slate-500 focus:border-slate-500 focus:outline-none"
+          />
+          <input
+            type="password"
+            autoComplete={mode === "register" ? "new-password" : "current-password"}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Şifre"
+            className="min-h-12 w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 text-sm font-semibold text-slate-100 placeholder:text-slate-500 focus:border-slate-500 focus:outline-none"
+          />
+          {error ? (
+            <p className="px-1 text-xs font-semibold text-rose-300">{error}</p>
+          ) : null}
+          <button
+            type="submit"
+            disabled={submitting}
+            className={`flex min-h-12 w-full items-center justify-center rounded-2xl px-5 py-3 text-sm font-black text-slate-950 transition active:scale-95 disabled:opacity-60 ${primary} ${primaryHover}`}
+          >
+            {submitting
+              ? "Lütfen bekleyin…"
+              : mode === "register"
+                ? "Kayıt Ol"
+                : "Giriş Yap"}
+          </button>
           <button
             type="button"
-            onClick={onDemoLogin}
-            className="flex min-h-12 w-full items-center justify-center rounded-2xl border border-slate-700 bg-slate-950 px-5 py-3 text-sm font-extrabold text-slate-100 transition hover:border-slate-500 hover:bg-slate-900 active:scale-95"
+            onClick={() => {
+              setMode((m) => (m === "register" ? "login" : "register"));
+              setError("");
+            }}
+            className="w-full px-1 text-center text-xs font-semibold text-slate-400 underline-offset-2 transition hover:text-slate-200 hover:underline"
           >
-            Demo olarak incele
+            {mode === "register"
+              ? "Zaten hesabın var mı? Giriş yap"
+              : "Hesabın yok mu? Kayıt ol"}
           </button>
-          <p className="mt-2 px-1 text-center text-[11px] font-medium leading-relaxed text-slate-500">
-            Gerçek hesap oluşturmadan uygulamayı test eder.
-          </p>
-        </div>
-      ) : null}
+        </form>
+      )}
       <p className="px-2 text-center text-xs font-medium leading-relaxed text-slate-500">
         Giriş yaparak çalışma verilerinin hesabına bağlı saklanmasını kabul edersin.
       </p>

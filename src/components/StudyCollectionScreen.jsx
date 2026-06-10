@@ -43,7 +43,6 @@ export default function StudyCollectionScreen({
   goDashboard,
   openExamSetSelect,
   startReviewWithQuestions,
-  isDemo = false,
 }) {
   const theme = accentTheme || accentThemes.emerald;
   const [activeTab, setActiveTab] = useState("queue");
@@ -219,7 +218,6 @@ export default function StudyCollectionScreen({
         <PerformanceChartCard
           user={user}
           userData={userData}
-          isDemo={isDemo}
           accentTheme={theme}
           accentThemeKey={accentThemeKey}
           onStartExam={openExamSetSelect}

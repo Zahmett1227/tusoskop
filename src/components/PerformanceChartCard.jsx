@@ -50,7 +50,6 @@ export default function PerformanceChartCard({
   accentTheme,
   accentThemeKey,
   onStartExam,
-  isDemo = false,
 }) {
   const theme = accentTheme || accentThemes.emerald;
   const isSmallScreen = useIsSmallScreen();
@@ -60,10 +59,6 @@ export default function PerformanceChartCard({
   const premium = isUserPremium(userData);
 
   useEffect(() => {
-    if (isDemo) {
-      setExamHistoryMerged(loadNormalizedLocalExamHistory());
-      return undefined;
-    }
     if (!user?.uid) return;
     let active = true;
 
@@ -120,7 +115,7 @@ export default function PerformanceChartCard({
       window.removeEventListener("tusoskop-exam-saved", refresh);
       document.removeEventListener("visibilitychange", onVis);
     };
-  }, [isDemo, user?.uid]);
+  }, [user?.uid]);
 
   const sortedExamHistory = useMemo(() => {
     return [...examHistoryMerged].sort((a, b) => {

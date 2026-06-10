@@ -18,11 +18,10 @@ export default function LimitReachedModal({
   remainingInfo = "",
   user = null,
   limitReason = "",
-  isDemo = false,
 }) {
   const limitModalOpened = useRef(false);
   const allowExternalPayments = canShowExternalPayments();
-  const showUpgradeContent = !isDemo && allowExternalPayments;
+  const showUpgradeContent = allowExternalPayments;
 
   useEffect(() => {
     if (!open) {
@@ -45,7 +44,7 @@ export default function LimitReachedModal({
     <div className="fixed inset-0 z-[120] bg-black/45 backdrop-blur-sm p-4 flex items-center justify-center">
       <div className="w-full max-w-md rounded-3xl border border-neutral-200 bg-white p-5 md:p-7 shadow-[0_28px_80px_-28px_rgba(0,0,0,0.35)]">
         <p className="text-[11px] uppercase tracking-[0.16em] text-neutral-500 font-black mb-2">
-          {isDemo ? "Demo modu" : "Tusoskop Plus"}
+          Tusoskop Plus
         </p>
         <h3 className="text-xl md:text-2xl font-black text-neutral-950 mb-2 leading-tight">
           {title}
@@ -68,7 +67,7 @@ export default function LimitReachedModal({
               </p>
             </div>
           </div>
-        ) : !isDemo ? (
+        ) : (
           <div className="mb-4 rounded-3xl border border-[#ead9c1] bg-[#fff8ef] p-4">
             <p className="text-base font-extrabold leading-snug text-[#2f1f11]">
               Bu iOS sürümünde satın alma akışı sunulmuyor.
@@ -77,7 +76,7 @@ export default function LimitReachedModal({
               Mevcut Plus durumunu plan ekranından görebilirsin; uygulama içinde dış ödeme bağlantısı gösterilmez.
             </p>
           </div>
-        ) : null}
+        )}
 
         {remainingInfo ? (
           <p className="text-xs font-medium text-neutral-600 mb-4 leading-relaxed">
@@ -99,7 +98,6 @@ export default function LimitReachedModal({
           </div>
         ) : null}
 
-        {!isDemo ? (
         <div className="mb-5 space-y-2">
           <p className="text-xs md:text-sm font-semibold text-neutral-700">
             • Sınırsız soru çözme
@@ -111,7 +109,6 @@ export default function LimitReachedModal({
             • Sınırsız favori ve yanlış geçmişi
           </p>
         </div>
-        ) : null}
 
         <div className="flex flex-col-reverse sm:flex-row gap-2">
           <button
@@ -139,7 +136,6 @@ export default function LimitReachedModal({
           ) : null}
         </div>
 
-        {!isDemo ? (
         <p className="mt-4 text-center">
           <a
             href={getMailtoQuickSupport(user)}
@@ -157,7 +153,6 @@ export default function LimitReachedModal({
             Ödeme veya Plus erişimiyle ilgili sorun mu yaşıyorsunuz? Destek alın.
           </a>
         </p>
-        ) : null}
       </div>
     </div>
   );

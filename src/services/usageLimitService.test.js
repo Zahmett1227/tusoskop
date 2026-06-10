@@ -121,32 +121,4 @@ describe("usageLimitService", () => {
     const gate = await canStartReview(null, { lifetimePremium: true }, 5);
     expect(gate.allowed).toBe(true);
   });
-
-  it("demo modda Cloud Function çağırmadan izin verir", async () => {
-    const {
-      canAnswerQuestion,
-      canStartFullExam,
-      canStartReview,
-      canStartTopicTest,
-      incrementFullExamUsage,
-      incrementQuestionUsage,
-      incrementReviewUsage,
-      incrementTopicTestUsage,
-    } = await loadService();
-    const demoUser = { isDemo: true };
-    const demoData = { demoMode: true, plan: "demo" };
-
-    await expect(canAnswerQuestion(demoUser, demoData)).resolves.toMatchObject({ allowed: true });
-    await expect(canStartTopicTest(demoUser, demoData)).resolves.toMatchObject({ allowed: true });
-    await expect(canStartFullExam(demoUser, demoData)).resolves.toMatchObject({ allowed: true });
-    await expect(canStartReview(demoUser, demoData, 3)).resolves.toMatchObject({
-      allowed: true,
-      allowedCount: 3,
-    });
-    await expect(incrementQuestionUsage(demoUser, demoData, 1)).resolves.toBeNull();
-    await expect(incrementTopicTestUsage(demoUser, demoData)).resolves.toBeNull();
-    await expect(incrementFullExamUsage(demoUser, demoData)).resolves.toBeNull();
-    await expect(incrementReviewUsage(demoUser, demoData, 1)).resolves.toBeNull();
-    expect(httpsCallableMock).not.toHaveBeenCalled();
-  });
 });
