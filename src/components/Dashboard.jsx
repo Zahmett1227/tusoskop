@@ -21,6 +21,7 @@ import DashboardMembershipHero from "./DashboardMembershipHero";
 import DashboardProfileMenu from "./DashboardProfileMenu";
 import { getMailtoFeedback, getMailtoPaymentIssue } from "../config/support";
 import Footer from "./layout/Footer";
+import AppStoreBadge from "./AppStoreBadge";
 import { getStreak } from "../services/streakService";
 import { getSmartReviewSummary, getSmartReviews } from "../services/smartReviewService";
 import { buildTopicRows, groupReviewsBySubject } from "../utils/smartReviewUtils";
@@ -861,6 +862,13 @@ export default function Dashboard({
             </div>
           </section>
         ))}
+
+        <div className="flex flex-col items-center gap-2 pt-2">
+          <p className={`text-xs font-medium ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>
+            iPhone'da daha hızlı: uygulamayı indir
+          </p>
+          <AppStoreBadge />
+        </div>
 
         {typeof onOpenLegalPage === "function" ? (
           <Footer
