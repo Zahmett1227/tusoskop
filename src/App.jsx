@@ -2,6 +2,7 @@ import React, { Suspense, lazy, useMemo, useState, useEffect, useRef, useCallbac
 import './index.css';
 import { initAnalytics, loginWithApple, loginWithGoogle, logout } from "./firebase";
 import SignInOptions from "./components/auth/SignInOptions";
+import AppStoreBadge from "./components/AppStoreBadge";
 
 // Veri ve Yardımcı Araçlar
 import { useQuestions } from "./hooks/useQuestions";
@@ -534,6 +535,10 @@ export default function App() {
             onAppleLogin={handleLoginWithApple}
             onGoogleLogin={handleLoginWithGoogle}
           />
+          <div className="mt-8 flex flex-col items-center gap-2">
+            <p className="text-xs font-medium text-slate-500">iPhone'da daha hızlı: uygulamayı indir</p>
+            <AppStoreBadge />
+          </div>
         </div>
       </div>
     );
