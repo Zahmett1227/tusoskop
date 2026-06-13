@@ -54,6 +54,7 @@ import { SUBJECTS as SUBJECT_CATALOG } from "./data/subjects";
 import { SUBJECT_QUESTION_COUNTS } from "./data/questions";
 import { applyQuestionTextFilter } from "./utils/questionTextFilter";
 import { useToast } from "./context/ToastContext";
+import { useSEOMeta } from "./hooks/useSEOMeta";
 
 const Dashboard = lazy(() => import("./components/Dashboard"));
 const Summary = lazy(() => import("./components/Summary"));
@@ -151,6 +152,7 @@ export default function App() {
   }, []);
 
   const [view, setView] = useState("dashboard");
+  useSEOMeta(user ? view : "login"); // SEO: view değişince title/description/canonical güncelle
   const legalReturnViewRef = useRef("dashboard");
   const [legalPageId, setLegalPageId] = useState(LEGAL_PAGES[0].id);
   const { accentThemeKey, accentTheme, handleAccentThemeChange } = useAppAccentTheme();
