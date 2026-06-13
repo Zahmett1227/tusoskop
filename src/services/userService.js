@@ -1,4 +1,4 @@
-import { db } from "../firebase";
+import { db, logAnalyticsEvent } from "../firebase";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 
 export async function ensureUserDocument(firebaseUser) {
@@ -30,6 +30,7 @@ export async function ensureUserDocument(firebaseUser) {
       };
 
       await setDoc(ref, newUserData);
+      logAnalyticsEvent("sign_up", { method: "email" }); // Firebase Analytics event
       return newUserData;
     }
 

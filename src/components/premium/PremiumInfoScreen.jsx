@@ -8,6 +8,7 @@ import {
   getMailtoPaymentIssue,
 } from "../../config/support";
 import { setClarityTag, trackClarityEvent } from "../../lib/clarity";
+import { logAnalyticsEvent } from "../../firebase";
 import { isUserPremium } from "../../utils/premiumUtils";
 import CoffeeAnimation from "./CoffeeAnimation";
 import Footer from "../layout/Footer";
@@ -138,6 +139,8 @@ export default function PremiumInfoScreen({
       } catch {
         /* sessiz */
       }
+
+      logAnalyticsEvent("begin_checkout", { currency: "TRY", value: plan.totalPrice ?? 89.9 }); // Firebase Analytics event
 
       window.location.assign(url);
     },

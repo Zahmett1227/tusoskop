@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { auth, db } from "../firebase";
+import { auth, db, logAnalyticsEvent } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { trackClarityEvent } from "../lib/clarity";
 import { FREE_LIMITS } from "../config/limits";
@@ -372,6 +372,13 @@ export function useStudyState({
       setShowResult(true);
       const answer = answerOverride;
       const isCorrect = answer !== null && answer !== undefined && answer === q?.correct;
+
+      // Firebase Analytics event
+      if (!localStorage.getItem("tusoskop_first_question_fired")) {
+        localStorage.setItem("tusoskop_first_question_fired", "1");
+        logAnalyticsEvent("first_question_solved");
+      }
+      logAnalyticsEvent("question_answered", { correct: isCorrect }); // Firebase Analytics event
       const isWrong =
         answer !== null && answer !== undefined && Number(answer) !== Number(q?.correct);
       if (isCorrect) setScore((prev) => prev + 1);

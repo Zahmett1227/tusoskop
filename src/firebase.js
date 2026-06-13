@@ -84,10 +84,12 @@ export const loginWithGoogle = async () => {
     if (isNativePlatform()) {
       const user = await loginWithGoogleNative();
       trackClarityEvent("login_basarili");
+      logAnalyticsEvent("login", { method: "google" }); // Firebase Analytics event
       return user;
     }
     const result = await signInWithPopup(auth, googleProvider);
     trackClarityEvent("login_basarili");
+    logAnalyticsEvent("login", { method: "google" }); // Firebase Analytics event
     return result.user;
   } catch (error) {
     trackClarityEvent("login_hatasi");
@@ -130,6 +132,7 @@ export const loginWithApple = async () => {
   try {
     const result = await signInWithPopup(auth, appleProvider);
     trackClarityEvent("apple_login_basarili");
+    logAnalyticsEvent("login", { method: "apple" }); // Firebase Analytics event
     return result.user;
   } catch (error) {
     trackClarityEvent("apple_login_hatasi");
@@ -210,5 +213,19 @@ export async function initAnalytics() {
       console.warn("Analytics init failed:", error);
     }
     return null;
+  }
+}
+
+/** Lazy-load analytics ve event gönder; hata olursa sessizce geç. */
+export async function logAnalyticsEvent(eventName, params) {
+  if (typeof window === "undefined") return;
+  try {
+    const { getAnalytics, logEvent } = await import("firebase/analytics");
+    const analytics = getAnalytics(app);
+    logEvent(analytics, eventName, params);
+  } catch (error) {
+    if (import.meta.env.DEV) {
+      console.warn("Analytics event failed:", eventName, error);
+    }
   }
 }
