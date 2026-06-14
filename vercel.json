@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/indir",
+      "destination": "https://apps.apple.com/tr/app/tusoskop/id6776331691?l=tr",
+      "permanent": true
+    }
+  ]
+}
