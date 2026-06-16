@@ -14,9 +14,13 @@ const {
   exchangeAuthCodeForRefreshToken,
   revokeToken,
 } = require("./appleAuth");
+const { buildUserStudySummary } = require("./services/buildUserStudySummary");
+const { generateAiStudyPlan } = require("./services/generateAiStudyPlan");
+const { buildFallbackDailyStudyPlan } = require("./services/buildFallbackDailyStudyPlan");
 
 // Apple Sign in private key (.p8 içeriği). `firebase functions:secrets:set` ile tanımlanır.
 const APPLE_SIGNIN_PRIVATE_KEY = defineSecret("APPLE_SIGNIN_PRIVATE_KEY");
+const GEMINI_API_KEY = defineSecret("GEMINI_API_KEY");
 
 /** Callable preflight + browser clients (match Hosting / Vite dev ports). */
 const allowedOrigins = [
@@ -370,4 +374,86 @@ exports.tryPublishSocialContent = onCall(
     cors: allowedOrigins,
   },
   tryPublishSocialContentHandler
+);
+
+/**
+ * Generates (or returns cached) an AI-powered daily study plan for the authenticated user.
+ * Uses Google Gemini via server-side API key; uid is taken from auth context only.
+ * Caches result at users/{uid}/aiRecommendations/{yyyy-MM-dd}.
+ */
+exports.generateDailyStudyPlan = onCall(
+  {
+    region: "us-central1",
+    cors: allowedOrigins,
+    secrets: [GEMINI_API_KEY],
+  },
+  async (request) => {
+    if (!request.auth?.uid) {
+      throw new HttpsError("unauthenticated", "Giriş gerekli.");
+    }
+
+    const uid = request.auth.uid;
+
+    // Sadece premium kullanıcılar AI planı alabilir
+    const userSnap = await db.doc(`users/${uid}`).get();
+    const userData = userSnap.exists ? userSnap.data() : {};
+    if (!isPremiumServer(userData)) {
+      throw new HttpsError(
+        "permission-denied",
+        "Bu özellik premium kullanıcılara özeldir."
+      );
+    }
+
+    const today = todayKey();
+    const cacheRef = db.doc(`users/${uid}/aiRecommendations/${today}`);
+
+    // Return cached plan if exists
+    const cached = await cacheRef.get();
+    if (cached.exists) {
+      const data = cached.data();
+      return { cached: true, date: today, ...data };
+    }
+
+    let studySummary;
+    try {
+      studySummary = await buildUserStudySummary(uid, db);
+    } catch (err) {
+      console.error("[AI_PLAN] buildUserStudySummary error:", err);
+      throw new HttpsError("internal", "Çalışma özeti oluşturulamadı.");
+    }
+
+    let recommendation;
+    let model = null;
+    let status = "success";
+
+    try {
+      const apiKey = GEMINI_API_KEY.value();
+      if (!apiKey) throw new Error("GEMINI_API_KEY secret tanımlı değil.");
+      const result = await generateAiStudyPlan(studySummary, apiKey);
+      recommendation = result.recommendation;
+      model = result.model;
+    } catch (err) {
+      console.error("[AI_PLAN] generateAiStudyPlan error:", err.message);
+      recommendation = buildFallbackDailyStudyPlan(studySummary);
+      status = "fallback";
+    }
+
+    const docData = {
+      date: today,
+      inputSummary: studySummary,
+      recommendation,
+      model,
+      status,
+      createdAt: FieldValue.serverTimestamp(),
+      updatedAt: FieldValue.serverTimestamp(),
+    };
+
+    try {
+      await cacheRef.set(docData);
+    } catch (err) {
+      console.error("[AI_PLAN] Firestore cache write error:", err);
+    }
+
+    return { cached: false, date: today, ...docData };
+  }
 );
