@@ -53,6 +53,7 @@ export default function StudyCollectionScreen({
   const [todayQueue, setTodayQueue] = useState([]);
   const [fsrsSummary, setFsrsSummary] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   const mapById = useMemo(
     () => new Map((questions || []).map((q) => [Number(q.id), q])),
@@ -61,6 +62,7 @@ export default function StudyCollectionScreen({
 
   const hydrate = async () => {
     setLoading(true);
+    setHasError(false);
     try {
       const isPremium = isUserPremium(userData, user);
       const dueLimit = isPremium ? MAX_SESSION_DUE : FREE_LIMITS.dailyReviewQuestions;
@@ -74,6 +76,8 @@ export default function StudyCollectionScreen({
       setFavoriteItems(favorites);
       setTodayQueue(resolveQuestionsFromReviews(dueReviews, questions));
       setFsrsSummary(smartSummary ?? null);
+    } catch {
+      setHasError(true);
     } finally {
       setLoading(false);
     }
@@ -168,6 +172,23 @@ export default function StudyCollectionScreen({
             Panele dön
           </button>
         </div>
+
+        {hasError && (
+          <div className="flex items-center gap-3 rounded-2xl border border-amber-400/25 bg-amber-400/10 px-4 py-3">
+            <span className="shrink-0 text-lg" aria-hidden="true">⚠️</span>
+            <div className="min-w-0">
+              <p className="text-sm font-bold text-amber-200">Veriler yüklenemedi</p>
+              <p className="text-xs text-amber-300/70">İnternet bağlantını kontrol et</p>
+            </div>
+            <button
+              type="button"
+              onClick={hydrate}
+              className="ml-auto shrink-0 rounded-xl border border-amber-400/30 bg-amber-400/15 px-3 py-1.5 text-xs font-black text-amber-200 transition-colors hover:bg-amber-400/25"
+            >
+              Yenile
+            </button>
+          </div>
+        )}
 
         <div className="rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900/90 to-slate-950 p-5">
           {todayQueue.length === 0 ? (

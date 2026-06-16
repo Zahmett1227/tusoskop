@@ -173,14 +173,16 @@ button:active {
   }
   @media (min-width: 768px) {
     .mobile-reading-stem {
-      font-size: 1.5rem;
+      font-size: 1.375rem;
       line-height: 1.55;
+      text-wrap: auto;
     }
   }
   @media (min-width: 1024px) {
     .mobile-reading-stem {
-      font-size: 1.875rem;
+      font-size: 1.625rem;
       line-height: 1.58;
+      text-wrap: auto;
     }
   }
 
@@ -197,7 +199,6 @@ button:active {
       sans-serif;
     font-weight: 500;
     letter-spacing: 0.01em;
-    text-wrap: pretty;
   }
 }
 
