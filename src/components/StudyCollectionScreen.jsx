@@ -16,6 +16,7 @@ import { FREE_LIMITS } from "../config/limits";
 import { isUserPremium } from "../utils/premiumUtils";
 import PerformanceChartCard from "./PerformanceChartCard";
 import FsrsStatsSection from "./study/FsrsStatsSection";
+import AiDailyPlanCard from "./study/AiDailyPlanCard";
 
 const TABS = [
   { key: "queue", label: "Tekrar Kuyruğu" },
@@ -216,6 +217,13 @@ export default function StudyCollectionScreen({
             </button>
           )}
         </div>
+
+        <AiDailyPlanCard
+          user={user}
+          theme={theme}
+          onStartFsrs={todayQueue.length > 0 ? handleStartQueue : undefined}
+          onStartTopicTest={undefined}
+        />
 
         <FsrsStatsSection
           user={user}
