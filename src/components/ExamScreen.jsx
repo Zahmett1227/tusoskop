@@ -659,11 +659,9 @@ export default function ExamScreen({
             <div className="text-xs md:text-sm text-slate-400 mb-4 leading-relaxed">
               {examQ.konu || "Konu"}
             </div>
-            <div className="mx-auto max-w-prose">
-              <h2 className="exam-question-body mobile-reading-stem leading-relaxed text-slate-50 break-words whitespace-pre-wrap [overflow-wrap:anywhere]">
-                {examQ.q}
-              </h2>
-            </div>
+            <h2 className="exam-question-body mobile-reading-stem leading-relaxed text-slate-50 break-words whitespace-pre-wrap [overflow-wrap:anywhere]">
+              {examQ.q}
+            </h2>
           </div>
 
           {/* Şıklar */}

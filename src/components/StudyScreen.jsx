@@ -223,11 +223,9 @@ export default function StudyScreen({
             {q.ders} • {q.konu}
           </div>
           <div className="relative z-10 max-h-[min(52dvh,28rem)] md:max-h-[42vh] overflow-y-auto overscroll-y-contain pr-1 -mr-1">
-            <div className="max-w-prose">
-              <h2 className="exam-question-body mobile-reading-stem leading-relaxed tracking-tight text-slate-50 break-words whitespace-normal [overflow-wrap:anywhere]">
-                {q.q}
-              </h2>
-            </div>
+            <h2 className="exam-question-body mobile-reading-stem leading-relaxed tracking-tight text-slate-50 break-words whitespace-normal [overflow-wrap:anywhere]">
+              {q.q}
+            </h2>
           </div>
         </div>
 
