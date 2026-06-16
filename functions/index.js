@@ -17,6 +17,7 @@ const {
 const { buildUserStudySummary } = require("./services/buildUserStudySummary");
 const { generateAiStudyPlan } = require("./services/generateAiStudyPlan");
 const { buildFallbackDailyStudyPlan } = require("./services/buildFallbackDailyStudyPlan");
+const { verifyApplePurchaseHandler } = require("./verifyApplePurchase");
 
 // Apple Sign in private key (.p8 içeriği). `firebase functions:secrets:set` ile tanımlanır.
 const APPLE_SIGNIN_PRIVATE_KEY = defineSecret("APPLE_SIGNIN_PRIVATE_KEY");
@@ -362,6 +363,15 @@ exports.deleteAccountAndData = onCall(
       );
     }
   }
+);
+
+/**
+ * Apple IAP: StoreKit 2 JWS transaction token'ını doğrular, Firestore'da premium aktif eder.
+ * iOS App Store abonelik satın almalarında çağrılır.
+ */
+exports.verifyApplePurchase = onCall(
+  { region: "us-central1", cors: allowedOrigins },
+  verifyApplePurchaseHandler
 );
 
 /**
