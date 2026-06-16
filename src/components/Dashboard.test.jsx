@@ -65,7 +65,7 @@ const appSource = readFileSync(
 describe("Dashboard manifest ders sayıları", () => {
   it("Dahiliye ve Küçük Stajlar manifest count kullanır", () => {
     expect(SUBJECT_QUESTION_COUNTS.Dahiliye).toBe(678);
-    expect(SUBJECT_QUESTION_COUNTS["Küçük Stajlar"]).toBe(475);
+    expect(SUBJECT_QUESTION_COUNTS["Küçük Stajlar"]).toBe(512);
     expect(dashboardSource).toContain("SUBJECT_QUESTION_COUNTS[s.name]");
     expect(dashboardSource).not.toMatch(/QUESTIONS\.filter/);
   });
