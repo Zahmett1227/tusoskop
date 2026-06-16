@@ -15,6 +15,7 @@ import {
 import { FREE_LIMITS } from "../config/limits";
 import { isUserPremium } from "../utils/premiumUtils";
 import PerformanceChartCard from "./PerformanceChartCard";
+import FsrsStatsSection from "./study/FsrsStatsSection";
 
 const TABS = [
   { key: "queue", label: "Tekrar Kuyruğu" },
@@ -37,6 +38,7 @@ const safePreview = (text) => {
 export default function StudyCollectionScreen({
   user,
   userData,
+  isAuthReady = true,
   questions,
   accentTheme,
   accentThemeKey,
@@ -214,6 +216,13 @@ export default function StudyCollectionScreen({
             </button>
           )}
         </div>
+
+        <FsrsStatsSection
+          user={user}
+          isAuthReady={isAuthReady}
+          accentTheme={theme}
+          dueCountSnapshot={fsrsSummary?.dueCount ?? todayQueue.length}
+        />
 
         <PerformanceChartCard
           user={user}

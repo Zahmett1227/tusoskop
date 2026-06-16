@@ -17,8 +17,15 @@ import { setClarityTag, trackClarityEvent } from "../lib/clarity";
 
 export async function isCurrentUserAdmin(uid) {
   if (!uid) return false;
-  const snap = await getDoc(doc(db, "admins", uid));
-  return snap.exists() && snap.data()?.active === true;
+  try {
+    const snap = await getDoc(doc(db, "admins", uid));
+    return snap.exists() && snap.data()?.active === true;
+  } catch (error) {
+    if (error?.code !== "permission-denied") {
+      console.error("isCurrentUserAdmin error:", error);
+    }
+    return false;
+  }
 }
 
 function newestIntentEmailByUid(intentDocs) {

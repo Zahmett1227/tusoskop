@@ -12,6 +12,7 @@ import {
   getSmartReviews,
   mergeSmartReviewsIntoLocal,
 } from "./smartReviewService";
+import { trackFsrsAddedQuestion } from "./fsrsStatsService";
 
 /** Firestore writeBatch üst sınırı 500; yanlış başına 2 write → güvenli chunk. */
 export const MAX_WRITES_PER_BATCH = 450;
@@ -196,6 +197,20 @@ export async function saveExamWrongAndSmartReviewsBatch(
       await commitFirestoreBatches(writes);
       firestoreOk = true;
       await enforceWrongQuestionsLimitForFreeUser(user, userData);
+      await Promise.allSettled(
+        reviewEntries
+          .map((entry) => {
+            console.log("[FSRS_STATS] wrongAdded tracking", {
+              uid: user.uid,
+              questionId: entry.questionId,
+            });
+            return trackFsrsAddedQuestion({
+              uid: user.uid,
+              questionId: entry.questionId,
+              source: "wrongAdded",
+            });
+          })
+      );
     } catch (error) {
       console.error("saveExamWrongAndSmartReviewsBatch firestore error:", error);
     }

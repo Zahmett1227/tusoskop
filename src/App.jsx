@@ -37,6 +37,7 @@ import {
   getSmartReviewSummary,
   resolveQuestionsFromReviews,
 } from "./services/smartReviewService";
+import { updateFsrsDueSnapshot } from "./services/fsrsStatsService";
 
 // Bileşenler (Screens)
 import MobileBottomNav from "./components/MobileBottomNav";
@@ -162,6 +163,7 @@ export default function App() {
     refreshRemainingUsage,
     favoriteQuestionIds,
     setFavoriteQuestionIds,
+    isAuthReady,
   } = useAppAuthBootstrap(setView);
 
   const [bottomNavReviewCount, setBottomNavReviewCount] = useState(0);
@@ -189,6 +191,9 @@ export default function App() {
       const summary = await getSmartReviewSummary(user);
       setSmartReviewSummary(summary);
       setBottomNavReviewCount(summary?.dueCount ?? 0);
+      updateFsrsDueSnapshot({ uid: user.uid, dueCount: summary?.dueCount ?? 0 }).catch((error) => {
+        console.error("FSRS due snapshot update error:", error);
+      });
     } catch {
       setSmartReviewSummary({
         dueCount: 0,
@@ -708,6 +713,7 @@ export default function App() {
         <StudyCollectionScreen
           user={user}
           userData={userData}
+          isAuthReady={isAuthReady}
           questions={QUESTIONS}
           accentTheme={accentTheme}
           accentThemeKey={accentThemeKey}

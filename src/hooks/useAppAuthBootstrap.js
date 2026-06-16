@@ -16,6 +16,7 @@ export function useAppAuthBootstrap(setView) {
   const [isAdmin, setIsAdmin] = useState(false);
   const [remainingUsage, setRemainingUsage] = useState(null);
   const [favoriteQuestionIds, setFavoriteQuestionIds] = useState(new Set());
+  const [isAuthReady, setIsAuthReady] = useState(false);
 
   const refreshRemainingUsage = useCallback(async () => {
     const usage = await getRemainingFreeUsage(user, userData);
@@ -39,6 +40,7 @@ export function useAppAuthBootstrap(setView) {
         console.error("User profile sync error:", error);
       } finally {
         setUser(currentUser);
+        setIsAuthReady(true);
         if (!currentUser) {
           setIsAdmin(false);
           setUserData(null);
@@ -56,8 +58,15 @@ export function useAppAuthBootstrap(setView) {
         setIsAdmin(false);
         return;
       }
-      const admin = await isCurrentUserAdmin(user.uid);
-      if (active) setIsAdmin(admin);
+      try {
+        const admin = await isCurrentUserAdmin(user.uid);
+        if (active) setIsAdmin(admin);
+      } catch (error) {
+        if (active) setIsAdmin(false);
+        if (error?.code !== "permission-denied") {
+          console.error("Admin status load error:", error);
+        }
+      }
     };
     loadAdmin();
     return () => {
@@ -98,5 +107,6 @@ export function useAppAuthBootstrap(setView) {
     refreshRemainingUsage,
     favoriteQuestionIds,
     setFavoriteQuestionIds,
+    isAuthReady,
   };
 }

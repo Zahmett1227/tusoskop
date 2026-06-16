@@ -21,6 +21,7 @@ import {
   upsertSmartReview,
   updateSmartReviewFromAnswer,
 } from "../services/smartReviewService";
+import { trackFsrsReviewedQuestion } from "../services/fsrsStatsService";
 import { isReactEventOrDomNode, normalizeAnswerValue } from "../utils/examUtils";
 import { recordQuestionHistory } from "../services/questionHistoryService";
 
@@ -78,6 +79,7 @@ export function useStudyState({
   });
   const answeredQuestionIdsRef = useRef(new Set());
   const answeredReviewIdsRef = useRef(new Set());
+  const trackedFsrsReviewIdsRef = useRef(new Set());
 
   const q = activeQuestions[currentIndex];
 
@@ -114,6 +116,7 @@ export function useStudyState({
     setFeedbackMeta({ count: 0, lastText: "", lastType: "", lastTopic: "" });
     answeredQuestionIdsRef.current = new Set();
     answeredReviewIdsRef.current = new Set();
+    trackedFsrsReviewIdsRef.current = new Set();
   }, []);
 
   const getTimeMetrics = useCallback(() => {
@@ -407,6 +410,10 @@ export function useStudyState({
         if (answer !== null && answer !== undefined && q?.id) {
           await updateWrongQuestionAfterReview(user, q, isCorrect, answer, userData);
           await updateSmartReviewFromAnswer(user, q, isCorrect, new Date(), activeTopicName);
+          if (!trackedFsrsReviewIdsRef.current.has(questionId)) {
+            trackedFsrsReviewIdsRef.current.add(questionId);
+            await trackFsrsReviewedQuestion({ uid: user?.uid, questionId });
+          }
         }
       } else if (isWrong && q?.id) {
         await addWrongQuestion(user, q, answer, userData);
@@ -487,6 +494,10 @@ export function useStudyState({
         return;
       }
       const result = await toggleFavoriteQuestion(user, question);
+      if (result?.isFavorite) {
+        await upsertSmartReview(user, question, "favorite");
+        await refreshSmartReviewSummary?.();
+      }
       setFavoriteQuestionIds((prev) => {
         const next = new Set(prev);
         if (result?.isFavorite) next.add(Number(question.id));
@@ -495,7 +506,15 @@ export function useStudyState({
       });
       showFavoriteToast(result?.isFavorite ? "Favorilere eklendi" : "Favorilerden çıkarıldı");
     },
-    [favoriteQuestionIds, user, userData, setLimitModal, setFavoriteQuestionIds, showFavoriteToast]
+    [
+      favoriteQuestionIds,
+      user,
+      userData,
+      setLimitModal,
+      setFavoriteQuestionIds,
+      showFavoriteToast,
+      refreshSmartReviewSummary,
+    ]
   );
 
   const handleNext = useCallback(async () => {

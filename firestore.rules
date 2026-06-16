@@ -125,6 +125,16 @@ service cloud.firestore {
       allow read, write: if isOwner(uid) || isAdmin();
     }
 
+    match /users/{uid}/fsrsAddEvents/{eventId} {
+      allow read, create: if isOwner(uid);
+      allow update, delete: if false;
+    }
+
+    match /users/{uid}/fsrsDailyStats/{statDate} {
+      allow read, create, update: if isOwner(uid);
+      allow delete: if false;
+    }
+
     match /users/{uid}/questionHistory/{questionId} {
       allow read: if isOwner(uid) || isAdmin();
       allow create, update: if (isOwner(uid) || isAdmin())

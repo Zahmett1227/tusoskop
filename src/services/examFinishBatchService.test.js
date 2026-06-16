@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const firestoreMocks = vi.hoisted(() => ({
   getDoc: vi.fn(),
+  runTransaction: vi.fn(),
   writeBatch: vi.fn(),
 }));
 
@@ -11,6 +12,10 @@ vi.mock("firebase/firestore", () => ({
   getDoc: firestoreMocks.getDoc,
   getDocs: vi.fn().mockResolvedValue({ docs: [] }),
   deleteDoc: vi.fn(),
+  increment: vi.fn((value) => ({ __increment: value })),
+  runTransaction: firestoreMocks.runTransaction,
+  serverTimestamp: vi.fn(() => ({ __serverTimestamp: true })),
+  setDoc: vi.fn(),
   writeBatch: firestoreMocks.writeBatch,
 }));
 
@@ -32,8 +37,15 @@ describe("examFinishBatchService", () => {
     vi.resetModules();
     authMock.currentUser = { uid: "u1" };
     firestoreMocks.getDoc.mockReset();
+    firestoreMocks.runTransaction.mockReset();
     firestoreMocks.writeBatch.mockReset();
     firestoreMocks.getDoc.mockResolvedValue({ exists: () => false });
+    firestoreMocks.runTransaction.mockImplementation(async (_db, callback) =>
+      callback({
+        get: vi.fn(async () => ({ exists: () => false })),
+        set: vi.fn(),
+      })
+    );
     Object.keys(storage).forEach((k) => delete storage[k]);
     vi.stubGlobal("localStorage", {
       getItem: (key) => storage[key] ?? null,

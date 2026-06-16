@@ -22,6 +22,7 @@ import {
 } from "../utils/smartReviewScheduler";
 import { buildTopSubjectsWithTopics } from "../utils/smartReviewUtils";
 import { getQuestionIdSafe } from "./studyCollectionService";
+import { trackFsrsAddedQuestion } from "./fsrsStatsService";
 
 const STORAGE_KEY = "tusoskopSmartReviews";
 const MAX_SESSION_DUE = 30;
@@ -157,7 +158,19 @@ export async function upsertSmartReview(user, question, source = "wrong", grade 
   if (!next) return null;
 
   mergeSmartReviewsIntoLocal([next], now);
-  await writeFirestoreReview(user, next);
+  const wroteRemote = await writeFirestoreReview(user, next);
+  if (wroteRemote) {
+    const trackingSource =
+      source === "favorite" ? "favoriteAdded" : source === "manual" ? "manualAdded" : "wrongAdded";
+    if (trackingSource === "wrongAdded") {
+      console.log("[FSRS_STATS] wrongAdded tracking", { uid: user?.uid, questionId });
+    }
+    await trackFsrsAddedQuestion({
+      uid: user?.uid,
+      questionId,
+      source: trackingSource,
+    });
+  }
   return next;
 }
 
@@ -173,7 +186,7 @@ export async function updateSmartReviewGrade(
   const all = await getSmartReviews(user);
   const existing = all.find((item) => item.questionId === questionId);
   if (!existing) {
-    return upsertSmartReview(user, question, "wrong", grade, now);
+    return upsertSmartReview(user, question, "manual", grade, now);
   }
   const next = applyReview(existing, grade, now, reviewContext);
   if (!next) return null;
@@ -264,7 +277,14 @@ export async function ensureSmartReviewsForFavorites(user, questions, now = new 
     const entry = createInitialReviewState(q, "favorite", now);
     if (!entry) continue;
     created.push(entry);
-    await writeFirestoreReview(user, entry);
+    const wroteRemote = await writeFirestoreReview(user, entry);
+    if (wroteRemote) {
+      await trackFsrsAddedQuestion({
+        uid: user?.uid,
+        questionId: entry.questionId,
+        source: "favoriteAdded",
+      });
+    }
   }
   if (created.length) {
     mergeSmartReviewsIntoLocal(created, now);
