@@ -92,7 +92,7 @@ describe("Dashboard kaynak metinleri", () => {
   it("kullanıcıya görünen eski dinamik deneme ifadesi yok", () => {
     expect(dashboardSource).not.toMatch(/rastgele|dinamik deneme|havuzdan oluştur|her seferinde farklı/i);
     expect(dashboardSource).toContain("FIXED_EXAM_CARD_SUBTITLE");
-    expect(dashboardSource).toMatch(/sabit 200 soruluk/i);
+    expect(dashboardSource).toMatch(/sabit deneme setleri/i);
   });
 
   it("remainingUsage ve hedef net için güvenli yardımcılar var", () => {
@@ -214,16 +214,21 @@ describe("Dashboard render ve CTA", () => {
       await new Promise((r) => setTimeout(r, 0));
     });
 
-    const buttons = [...container.querySelectorAll("button")];
-    const examBtn = buttons.find((b) => b.textContent?.includes("TUS denemesi seç"));
-    const topicBtn = buttons.find((b) =>
-      b.textContent?.includes("Ders veya konu seçerek çöz")
+    // Exam kartı bir <div onClick> olduğu için querySelectorAll("button") ile bulunmaz.
+    // textContent içeren herhangi bir clickable elementi bul.
+    const allClickable = [...container.querySelectorAll("[class*='cursor-pointer']")];
+    const examCard = allClickable.find((el) =>
+      el.textContent?.includes("TUS Denemesi Çöz")
     );
-    expect(examBtn).toBeTruthy();
+    const buttons = [...container.querySelectorAll("button")];
+    const topicBtn = buttons.find((b) =>
+      b.textContent?.includes("Ders/Konu seçerek çöz")
+    );
+    expect(examCard).toBeTruthy();
     expect(topicBtn).toBeTruthy();
 
     await act(() => {
-      examBtn.click();
+      examCard.click();
     });
     expect(setView).toHaveBeenCalledWith("examSetSelect");
 
