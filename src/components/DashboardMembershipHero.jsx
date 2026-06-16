@@ -28,16 +28,16 @@ export default function DashboardMembershipHero({
   const untilLabel = formatPremiumUntil(userData?.premiumUntil);
 
   const outer = isLightTheme
-    ? "border-slate-200/90 bg-gradient-to-br from-white via-[#fffefb] to-[#f4f0ea] shadow-[0_20px_50px_-28px_rgba(15,23,42,0.12)] hover:shadow-[0_28px_60px_-26px_rgba(15,23,42,0.16)]"
+    ? "border-slate-200 bg-white shadow-sm hover:shadow-md"
     : premiumActive
-      ? "border-emerald-500/25 bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/30 shadow-[0_24px_60px_-28px_rgba(16,185,129,0.18)] hover:shadow-[0_28px_70px_-24px_rgba(16,185,129,0.22)]"
-      : "border-slate-700/80 bg-gradient-to-br from-slate-950 via-[#0f1419] to-indigo-950/40 shadow-[0_24px_60px_-30px_rgba(0,0,0,0.45)] hover:shadow-[0_28px_70px_-28px_rgba(99,102,241,0.12)]";
+      ? "border-emerald-500/20 bg-white/[0.025] backdrop-blur-xl hover:border-emerald-500/30"
+      : "border-white/[0.08] bg-white/[0.025] backdrop-blur-xl hover:border-white/[0.14]";
 
   const glowOrb = isLightTheme
     ? "bg-amber-200/30"
     : premiumActive
-      ? "bg-emerald-500/15"
-      : "bg-indigo-500/20";
+      ? "bg-emerald-500/10"
+      : "bg-indigo-500/12";
 
   const leftTitle = premiumActive ? "Plus aktif" : "Ücretsiz plan";
   const leftLead = premiumActive
@@ -90,7 +90,7 @@ export default function DashboardMembershipHero({
         aria-hidden
       />
       <div
-        className={`pointer-events-none absolute -bottom-20 -left-16 h-48 w-48 rounded-full blur-3xl ${isLightTheme ? "bg-violet-200/25" : "bg-violet-600/10"}`}
+        className={`pointer-events-none absolute -bottom-20 -left-16 h-48 w-48 rounded-full blur-3xl ${isLightTheme ? "bg-violet-200/25" : "bg-violet-600/[0.07]"}`}
         aria-hidden
       />
 
@@ -205,10 +205,10 @@ export default function DashboardMembershipHero({
           <div
             className={`flex w-full flex-col justify-between rounded-2xl border p-5 sm:p-6 ${
               isLightTheme
-                ? "border-slate-200/90 bg-gradient-to-br from-[#faf8f4] to-white shadow-inner"
+                ? "border-slate-200 bg-slate-50"
                 : premiumActive
-                  ? "border-emerald-400/20 bg-gradient-to-br from-emerald-950/25 to-slate-900/80"
-                  : "border-indigo-400/20 bg-gradient-to-br from-indigo-950/35 to-slate-900/90"
+                  ? "border-emerald-400/15 bg-black/20"
+                  : "border-indigo-400/15 bg-black/20"
             }`}
           >
             <div>

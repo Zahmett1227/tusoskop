@@ -15,11 +15,21 @@ import {
 import { FREE_LIMITS } from "../config/limits";
 import { isUserPremium } from "../utils/premiumUtils";
 import PerformanceChartCard from "./PerformanceChartCard";
-import FsrsStatsSection from "./study/FsrsStatsSection";
+import FsrsActivityCard from "./study/FsrsActivityCard";
 import AiDailyPlanCard from "./study/AiDailyPlanCard";
 
+const ACCENT_HEX = {
+  emerald: "#34d399",
+  cyan: "#22d3ee",
+  violet: "#a78bfa",
+  amber: "#fbbf24",
+  light: "#10b981",
+};
+
+const accentHex = (key) => ACCENT_HEX[key] || ACCENT_HEX.emerald;
+
 const TABS = [
-  { key: "queue", label: "Tekrar Kuyruğu" },
+  { key: "queue", label: "Kuyruk" },
   { key: "wrong", label: "Yanlışlarım" },
   { key: "favorite", label: "Favorilerim" },
 ];
@@ -28,7 +38,7 @@ const formatDate = (dateValue) => {
   if (!dateValue) return "—";
   const d = new Date(dateValue);
   if (Number.isNaN(d.getTime())) return "—";
-  return d.toLocaleDateString("tr-TR");
+  return d.toLocaleDateString("tr-TR", { day: "numeric", month: "short" });
 };
 
 const safePreview = (text) => {
@@ -36,18 +46,37 @@ const safePreview = (text) => {
   return String(text).slice(0, 120);
 };
 
+function ChevronLeft() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+      strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
+      <path d="M15 18l-6-6 6-6" />
+    </svg>
+  );
+}
+
+function ArrowRight({ className = "h-4 w-4" }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6"
+      strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  );
+}
+
 export default function StudyCollectionScreen({
   user,
   userData,
   isAuthReady = true,
   questions,
   accentTheme,
-  accentThemeKey,
+  accentThemeKey = "emerald",
   goDashboard,
   openExamSetSelect,
   startReviewWithQuestions,
 }) {
   const theme = accentTheme || accentThemes.emerald;
+  const hex = accentHex(accentThemeKey);
   const [activeTab, setActiveTab] = useState("queue");
   const [wrongItems, setWrongItems] = useState([]);
   const [favoriteItems, setFavoriteItems] = useState([]);
@@ -103,22 +132,31 @@ export default function StudyCollectionScreen({
     return { ders, konu, count: best[1] };
   }, [wrongItems]);
 
+  const priorityChips = useMemo(() => {
+    const subjects = (fsrsSummary?.topSubjects || []).slice(0, 2).map((s) => s.name);
+    const topics = (fsrsSummary?.topTopics || []).slice(0, 1).map((t) => t.name);
+    return [...subjects, ...topics].filter(Boolean);
+  }, [fsrsSummary]);
+
   const handleStartQueue = () => {
     if (!todayQueue.length) return;
     trackClarityEvent("bugunku_tekrar_baslatildi");
     startReviewWithQuestions?.(todayQueue, "todayQueue");
   };
 
-  const handleStartTopicTest = useCallback((lesson, topic) => {
-    if (!questions?.length) return;
-    let pool = [...questions];
-    if (lesson) pool = pool.filter((q) => q.ders === lesson);
-    if (topic) pool = pool.filter((q) => q.konu === topic);
-    if (!pool.length) return;
-    const shuffled = pool.sort(() => Math.random() - 0.5).slice(0, 20);
-    trackClarityEvent("ai_plan_topic_test_baslatildi");
-    startReviewWithQuestions?.(shuffled, "topic_practice");
-  }, [questions, startReviewWithQuestions]);
+  const handleStartTopicTest = useCallback(
+    (lesson, topic) => {
+      if (!questions?.length) return;
+      let pool = [...questions];
+      if (lesson) pool = pool.filter((q) => q.ders === lesson);
+      if (topic) pool = pool.filter((q) => q.konu === topic);
+      if (!pool.length) return;
+      const shuffled = pool.sort(() => Math.random() - 0.5).slice(0, 20);
+      trackClarityEvent("ai_plan_topic_test_baslatildi");
+      startReviewWithQuestions?.(shuffled, "topic_practice");
+    },
+    [questions, startReviewWithQuestions]
+  );
 
   const handleStartWrongReview = () => {
     const list = unresolvedWrong
@@ -145,297 +183,423 @@ export default function StudyCollectionScreen({
     await hydrate();
   };
 
+  const dueCount = todayQueue.length;
+  const overdue = fsrsSummary?.overdueCount || 0;
+
+  const collectionStats = [
+    { key: "queue", label: "Kuyruk", value: dueCount, color: hex },
+    { key: "wrong", label: "Yanlış", value: unresolvedWrong.length, color: "#fb7185" },
+    { key: "favorite", label: "Favori", value: favoriteItems.length, color: "#fbbf24" },
+  ];
+
   return (
     <div
-      className={`min-h-dvh bg-slate-950 text-white px-4 py-5 md:px-8 ${theme.softBg}`}
-      style={{ paddingTop: "calc(1rem + env(safe-area-inset-top))" }}
+      className="min-h-dvh bg-[#05070d] text-white"
+      style={{
+        paddingTop: "calc(0.75rem + env(safe-area-inset-top))",
+        backgroundImage: `radial-gradient(125% 80% at 50% -10%, ${hex}12, transparent 55%)`,
+      }}
     >
-      <div className="max-w-5xl mx-auto space-y-5">
-        <div className="flex items-center justify-between gap-3">
-          <div>
-            <p className={`text-xs font-black uppercase tracking-[0.24em] ${theme.text}`}>
-              Çalışma Alanım
-            </p>
-            <h1 className="text-2xl md:text-3xl font-black mt-1">Tekrar Merkezi</h1>
-            <p className="text-sm text-slate-400 mt-1">
-              Yanlışların, favorilerin, tekrar kuyruğun ve deneme netlerin tek yerde.
-            </p>
-          </div>
+      <div className="mx-auto w-full max-w-2xl px-4 pb-28 md:px-6">
+        {/* Üst bar */}
+        <div className="flex items-center justify-between gap-3 py-3">
           <button
             type="button"
             onClick={goDashboard}
-            className="px-4 py-2 rounded-2xl border border-slate-700 bg-slate-900/80 text-sm font-bold"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-300 transition-colors hover:bg-white/[0.08] active:scale-95"
+            aria-label="Panele dön"
           >
-            Panele dön
+            <ChevronLeft />
           </button>
+          <div className="text-center">
+            <p className="text-sm font-black tracking-tight text-white">Çalışma Alanı</p>
+            <p className="text-[11px] font-medium text-slate-500">Tekrar · Yanlış · Favori</p>
+          </div>
+          <div className="h-10 w-10" aria-hidden="true" />
         </div>
 
-        <div className="rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900/90 to-slate-950 p-5">
-          {todayQueue.length === 0 ? (
-            <div className="flex flex-col items-center text-center py-6">
-              <span className="text-5xl mb-3" aria-hidden="true">🎯</span>
-              <h2 className="text-xl font-black mb-1">Bugün tekrar zamanı gelen soru yok</h2>
-              <p className="text-sm text-slate-400 max-w-sm">
-                FSRS zamanlamasına göre bugün çalışman gereken kart bulunmuyor.
-              </p>
-              {(unresolvedWrong.length > 0 || favoriteItems.length > 0) && (
-                <div className="mt-5 flex flex-col gap-2 w-full max-w-xs">
+        {/* ───────── HERO: FSRS Tekrar ───────── */}
+        <section
+          className="relative mt-1 overflow-hidden rounded-[30px] border border-white/[0.08] bg-gradient-to-b from-white/[0.05] to-white/[0.01] p-6 shadow-[0_30px_70px_-40px_rgba(0,0,0,0.9)] backdrop-blur-xl"
+        >
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-20 -top-24 h-56 w-56 rounded-full blur-3xl"
+            style={{ background: `${hex}1f` }}
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-24 -left-16 h-48 w-48 rounded-full bg-cyan-400/[0.06] blur-3xl"
+          />
+
+          <div className="relative">
+            <div className="flex flex-wrap items-center gap-2">
+              <span
+                className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[10px] font-black uppercase tracking-[0.16em]"
+                style={{ borderColor: `${hex}40`, color: hex, backgroundColor: `${hex}14` }}
+              >
+                <span
+                  className="inline-block h-1.5 w-1.5 rounded-full"
+                  style={{ backgroundColor: hex, boxShadow: `0 0 8px ${hex}` }}
+                />
+                FSRS Akıllı Tekrar
+              </span>
+              {overdue > 0 && (
+                <span className="inline-flex items-center gap-1 rounded-full border border-amber-300/25 bg-amber-400/10 px-2.5 py-1 text-[10px] font-bold text-amber-300">
+                  {overdue} gecikmiş
+                </span>
+              )}
+            </div>
+
+            {dueCount > 0 ? (
+              <>
+                <div className="mt-4 flex items-end gap-3">
+                  <span
+                    className="text-[64px] font-black leading-[0.85] tracking-tighter tabular-nums"
+                    style={{ color: hex }}
+                  >
+                    {dueCount}
+                  </span>
+                  <span className="pb-1.5 text-base font-bold leading-tight text-slate-300">
+                    soru bugün
+                    <br />
+                    tekrara hazır
+                  </span>
+                </div>
+                <p className="mt-3 max-w-md text-sm leading-relaxed text-slate-400">
+                  Zorlandığın sorular FSRS zamanlamasıyla öne alındı. Şimdi çözmek
+                  hafızanı en verimli noktada güçlendirir.
+                </p>
+
+                {priorityChips.length > 0 && (
+                  <div className="mt-4 flex flex-wrap items-center gap-1.5">
+                    <span className="text-[10px] font-black uppercase tracking-wider text-slate-500">
+                      Öncelik
+                    </span>
+                    {priorityChips.map((name) => (
+                      <span
+                        key={name}
+                        className="inline-flex items-center rounded-lg border border-white/10 bg-white/[0.05] px-2.5 py-1 text-xs font-bold text-slate-200"
+                      >
+                        {name}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                <button
+                  type="button"
+                  onClick={handleStartQueue}
+                  className="group mt-5 flex min-h-[58px] w-full items-center justify-center gap-2.5 rounded-2xl px-6 text-base font-black text-slate-950 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.99]"
+                  style={{ backgroundColor: hex, boxShadow: `0 14px 34px -22px ${hex}` }}
+                >
+                  Tekrarı Başlat
+                  <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </button>
+              </>
+            ) : (
+              <>
+                <h2 className="mt-4 text-2xl font-black leading-tight tracking-tight text-white">
+                  Bugün için tekrar yok
+                </h2>
+                <p className="mt-2 max-w-md text-sm leading-relaxed text-slate-400">
+                  FSRS planın temiz. Yeni konu çözerek planını besle ya da
+                  aşağıdan özel çalışma başlat.
+                </p>
+                <div className="mt-5 flex flex-col gap-2.5">
                   {unresolvedWrong.length > 0 && (
                     <button
                       type="button"
                       onClick={handleStartWrongReview}
-                      className={`min-h-10 px-5 rounded-2xl text-sm font-black ${theme.primary} ${theme.primaryHover} text-slate-950 shadow-lg ${theme.glow}`}
+                      className="flex min-h-[52px] w-full items-center justify-between rounded-2xl border border-rose-400/20 bg-rose-500/[0.08] px-5 text-sm font-bold text-rose-200 transition-colors hover:bg-rose-500/[0.14] active:scale-[0.99]"
                     >
-                      Yanlışlardan Özel Çalışma ({unresolvedWrong.length} soru)
+                      <span>Yanlışlardan çalış · {unresolvedWrong.length} soru</span>
+                      <ArrowRight />
                     </button>
                   )}
                   {favoriteItems.length > 0 && (
                     <button
                       type="button"
                       onClick={handleStartFavoriteReview}
-                      className="min-h-10 px-5 rounded-2xl text-sm font-bold border border-slate-700 bg-slate-900/80 text-slate-200"
+                      className="flex min-h-[52px] w-full items-center justify-between rounded-2xl border border-amber-300/20 bg-amber-400/[0.08] px-5 text-sm font-bold text-amber-200 transition-colors hover:bg-amber-400/[0.14] active:scale-[0.99]"
                     >
-                      Favorilerden Özel Çalışma ({favoriteItems.length} soru)
+                      <span>Favorilerden çalış · {favoriteItems.length} soru</span>
+                      <ArrowRight />
+                    </button>
+                  )}
+                  {unresolvedWrong.length === 0 && favoriteItems.length === 0 && (
+                    <button
+                      type="button"
+                      onClick={goDashboard}
+                      className="flex min-h-[52px] w-full items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] px-5 text-sm font-bold text-slate-200 transition-colors hover:bg-white/[0.08]"
+                    >
+                      Yeni konu çözmeye başla
                     </button>
                   )}
                 </div>
-              )}
-            </div>
-          ) : (
-            <>
-          <h2 className="text-xl font-black mb-1">
-            Bugünkü tekrarın hazır
-          </h2>
-          <p className="text-sm text-slate-400">
-            {`${todayQueue.length} soruluk tekrar kuyruğu${
-                  fsrsSummary?.overdueCount > 0
-                    ? ` · ${fsrsSummary.overdueCount} soru gecikmiş`
-                    : ""
-                }`}
-          </p>
-          <p className={`text-xs mt-3 ${theme.text}`}>
-            FSRS zamanlamasına göre bugün tekrar etmen gereken sorular.
-          </p>
-            </>
-          )}
-          {todayQueue.length > 0 && (
-            <button
-              type="button"
-              onClick={handleStartQueue}
-              className={`mt-4 min-h-10 px-5 rounded-2xl text-sm font-black ${theme.primary} ${theme.primaryHover} text-slate-950 shadow-lg ${theme.glow}`}
-            >
-              Tekrarı Başlat
-            </button>
-          )}
-        </div>
+              </>
+            )}
+          </div>
+        </section>
 
-        <AiDailyPlanCard
-          user={user}
-          theme={theme}
-          onStartFsrs={todayQueue.length > 0 ? handleStartQueue : undefined}
-          onStartTopicTest={handleStartTopicTest}
-        />
-
-        <FsrsStatsSection
-          user={user}
-          isAuthReady={isAuthReady}
-          accentTheme={theme}
-          dueCountSnapshot={fsrsSummary?.dueCount ?? todayQueue.length}
-        />
-
-        <PerformanceChartCard
-          user={user}
-          userData={userData}
-          accentTheme={theme}
-          accentThemeKey={accentThemeKey}
-          onStartExam={openExamSetSelect}
-        />
-
-        <div className="rounded-full bg-slate-900/70 border border-slate-800 p-1 grid grid-cols-3 gap-1 min-w-0">
-          {TABS.map((tab) => {
-            const active = activeTab === tab.key;
+        {/* ───────── Koleksiyon istatistik pill'leri ───────── */}
+        <div className="mt-4 grid grid-cols-3 gap-2.5">
+          {collectionStats.map((s) => {
+            const active = activeTab === s.key;
             return (
               <button
-                key={tab.key}
+                key={s.key}
                 type="button"
-                onClick={() => setActiveTab(tab.key)}
-                className={`min-h-10 rounded-full text-xs md:text-sm font-bold px-2 min-w-0 truncate transition-colors ${
+                onClick={() => setActiveTab(s.key)}
+                className={`rounded-2xl border px-3 py-3 text-left transition-all active:scale-[0.97] ${
                   active
-                    ? `${theme.primary} text-slate-950 shadow-lg`
-                    : "text-slate-400 hover:text-slate-200"
+                    ? "border-white/20 bg-white/[0.07]"
+                    : "border-white/[0.07] bg-white/[0.025] hover:bg-white/[0.05]"
                 }`}
               >
-                {tab.label}
+                <span
+                  className="text-2xl font-black tabular-nums leading-none"
+                  style={{ color: s.color }}
+                >
+                  {s.value}
+                </span>
+                <p className="mt-1 text-[11px] font-bold text-slate-400">{s.label}</p>
               </button>
             );
           })}
         </div>
 
-        {activeTab === "queue" && (
-          <section className="space-y-3">
-            <div className="grid grid-cols-3 gap-2">
-              <div className="rounded-2xl bg-slate-900/60 border border-slate-800 p-3 text-center">
-                <p className="text-[10px] text-slate-500 uppercase font-black">Kuyruk</p>
-                <p className={`text-xl font-black ${theme.text}`}>{todayQueue.length}</p>
-              </div>
-              <div className="rounded-2xl bg-slate-900/60 border border-slate-800 p-3 text-center">
-                <p className="text-[10px] text-slate-500 uppercase font-black">Yanlış</p>
-                <p className="text-xl font-black text-rose-300">{unresolvedWrong.length}</p>
-              </div>
-              <div className="rounded-2xl bg-slate-900/60 border border-slate-800 p-3 text-center">
-                <p className="text-[10px] text-slate-500 uppercase font-black">Favori</p>
-                <p className="text-xl font-black text-amber-300">{favoriteItems.length}</p>
-              </div>
-            </div>
-            {fsrsSummary && (fsrsSummary.overdueCount > 0 || fsrsSummary.dueCount > 0) && (
-              <div className="rounded-2xl border border-violet-500/20 bg-violet-500/5 px-4 py-3 flex items-center gap-3">
-                <span className="text-base">🧠</span>
-                <div className="min-w-0">
-                  <p className="text-xs font-black text-violet-300">
-                    FSRS Tekrar Kuyruğu
-                  </p>
-                  <p className="text-xs text-slate-400 mt-0.5">
-                    {fsrsSummary.dueCount} soru bekliyor
-                    {fsrsSummary.overdueCount > 0
-                      ? ` · ${fsrsSummary.overdueCount} gecikmiş`
-                      : ""}
-                  </p>
-                </div>
-              </div>
-            )}
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/30 p-4">
-              <p className="text-xs text-slate-400 mb-2">Ders/Konu mini özet</p>
-              <div className="text-sm text-slate-200">
-                {topWrongTopic
-                  ? `${topWrongTopic.ders} • ${topWrongTopic.konu} (${topWrongTopic.count} tekrar ihtiyacı)`
-                  : "Henüz tekrar önceliği oluşmadı."}
-              </div>
-            </div>
-          </section>
-        )}
+        {/* ───────── FSRS aktivite grafiği ───────── */}
+        <div className="mt-4">
+          <FsrsActivityCard
+            user={user}
+            isAuthReady={isAuthReady}
+            accentThemeKey={accentThemeKey}
+            dueCountSnapshot={fsrsSummary?.dueCount ?? dueCount}
+          />
+        </div>
 
-        {activeTab === "wrong" && (
-          <section className="space-y-3">
-            <div className="flex items-center justify-between gap-2">
-              <div>
-                <p className="text-sm text-slate-300 font-bold">Toplam yanlış soru: {wrongItems.length}</p>
-                <p className="text-xs text-slate-500">
-                  {topWrongTopic
-                    ? `En çok: ${topWrongTopic.ders} / ${topWrongTopic.konu}`
-                    : "Henüz yanlış kaydı yok"}
-                </p>
-              </div>
-              <button
-                type="button"
-                onClick={handleStartWrongReview}
-                className={`min-h-10 px-4 rounded-2xl text-xs font-black ${theme.primary} text-slate-950`}
-              >
-                Özel Çalışma Başlat
-              </button>
-            </div>
-            {!wrongItems.length && (
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-4 text-slate-500">
-                Yanlış yaptığın sorular burada listelenecek.
-              </div>
-            )}
-            {wrongItems.map((item) => {
-              const q = mapById.get(item.questionId);
+        {/* ───────── AI günlük plan ───────── */}
+        <div className="mt-4">
+          <AiDailyPlanCard
+            user={user}
+            theme={theme}
+            onStartFsrs={dueCount > 0 ? handleStartQueue : undefined}
+            onStartTopicTest={handleStartTopicTest}
+          />
+        </div>
+
+        {/* ───────── Koleksiyon: tab + içerik ───────── */}
+        <div className="mt-6">
+          <div className="grid grid-cols-3 gap-1 rounded-2xl border border-white/[0.07] bg-white/[0.025] p-1">
+            {TABS.map((tab) => {
+              const active = activeTab === tab.key;
               return (
-                <div key={item.questionId} className="rounded-2xl border border-slate-800 bg-slate-900/40 p-4">
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="min-w-0">
-                      <div className="flex gap-2 flex-wrap">
-                        <span className="px-2 py-1 rounded-full text-[10px] border border-slate-700 text-slate-300">
-                          {item.ders || "Ders"}
-                        </span>
-                        <span className="px-2 py-1 rounded-full text-[10px] border border-slate-700 text-slate-300">
-                          {item.konu || "Konu"}
-                        </span>
+                <button
+                  key={tab.key}
+                  type="button"
+                  onClick={() => setActiveTab(tab.key)}
+                  className={`min-h-10 truncate rounded-xl px-2 text-xs font-bold transition-all md:text-sm ${
+                    active ? "text-slate-950" : "text-slate-400 hover:text-slate-200"
+                  }`}
+                  style={active ? { backgroundColor: hex } : undefined}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="mt-3">
+            {activeTab === "queue" && (
+              <div className="rounded-[24px] border border-white/[0.07] bg-white/[0.025] p-5">
+                <p className="text-[11px] font-black uppercase tracking-[0.18em] text-slate-500">
+                  Tekrar kuyruğu
+                </p>
+                {dueCount > 0 ? (
+                  <>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                      Bugün <span className="font-black" style={{ color: hex }}>{dueCount}</span> soru
+                      hazır
+                      {overdue > 0 ? `, bunların ${overdue} tanesi gecikmiş` : ""}.
+                    </p>
+                    {topWrongTopic && (
+                      <div className="mt-4 flex items-center gap-3 rounded-2xl border border-white/[0.06] bg-black/20 px-4 py-3">
+                        <span className="text-lg">🎯</span>
+                        <div className="min-w-0">
+                          <p className="text-[10px] font-black uppercase tracking-wider text-slate-500">
+                            En çok tekrar gereken
+                          </p>
+                          <p className="truncate text-sm font-bold text-slate-200">
+                            {topWrongTopic.ders} · {topWrongTopic.konu}
+                          </p>
+                        </div>
                       </div>
-                      <p className="text-xs text-slate-500 mt-2">
-                        wrongCount: {item.wrongCount || 0} • Son yanlış: {formatDate(item.lastWrongAt)}
-                      </p>
-                    </div>
+                    )}
                     <button
                       type="button"
-                      onClick={() => q && startReviewWithQuestions?.([q], "wrong-single")}
-                      className="min-h-10 px-4 rounded-xl bg-slate-800 text-slate-200 text-xs font-bold"
+                      onClick={handleStartQueue}
+                      className="mt-4 flex min-h-[48px] w-full items-center justify-center gap-2 rounded-2xl text-sm font-black text-slate-950 transition-all active:scale-[0.99]"
+                      style={{ backgroundColor: hex }}
                     >
-                      Tekrar et
+                      Tekrarı Başlat
+                      <ArrowRight />
                     </button>
+                  </>
+                ) : (
+                  <div className="flex flex-col items-center py-6 text-center">
+                    <span className="text-3xl" aria-hidden="true">🎯</span>
+                    <p className="mt-2 text-sm font-bold text-slate-300">Kuyruk temiz</p>
+                    <p className="mt-1 max-w-xs text-xs text-slate-500">
+                      Bugün tekrar zamanı gelen kart yok. Yeni soru çözdükçe kuyruğun dolar.
+                    </p>
                   </div>
-                  <p className="mt-3 text-sm text-slate-300 line-clamp-2">
-                    {q ? safePreview(q.q) : "Soru bulunamadı"}
-                  </p>
-                </div>
-              );
-            })}
-          </section>
-        )}
-
-        {activeTab === "favorite" && (
-          <section className="space-y-3">
-            <div className="flex items-center justify-between gap-2">
-              <p className="text-sm text-slate-300 font-bold">Toplam favori: {favoriteItems.length}</p>
-              <button
-                type="button"
-                onClick={handleStartFavoriteReview}
-                className={`min-h-10 px-4 rounded-2xl text-xs font-black ${theme.primary} text-slate-950`}
-              >
-                Özel Çalışma Başlat
-              </button>
-            </div>
-            {!favoriteItems.length && (
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-4 text-slate-500">
-                Favoriye eklediğin sorular burada görünecek.
+                )}
               </div>
             )}
-            {favoriteItems.map((item) => {
-              const q = mapById.get(item.questionId);
-              return (
-                <div key={item.questionId} className="rounded-2xl border border-slate-800 bg-slate-900/40 p-4">
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="min-w-0">
-                      <div className="flex gap-2 flex-wrap">
-                        <span className="px-2 py-1 rounded-full text-[10px] border border-slate-700 text-slate-300">
-                          {item.ders || "Ders"}
-                        </span>
-                        <span className="px-2 py-1 rounded-full text-[10px] border border-slate-700 text-slate-300">
-                          {item.konu || "Konu"}
-                        </span>
-                      </div>
-                      <p className="text-xs text-slate-500 mt-2">
-                        Eklenme: {formatDate(item.addedAt)}
-                      </p>
-                    </div>
-                    <div className="flex gap-2">
-                      <button
-                        type="button"
-                        onClick={() => q && startReviewWithQuestions?.([q], "favorite-single")}
-                        className="min-h-10 px-3 rounded-xl bg-slate-800 text-slate-200 text-xs font-bold"
-                      >
-                        Çöz
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => handleRemoveFavorite(item)}
-                        className="min-h-10 px-3 rounded-xl border border-rose-500/30 text-rose-300 text-xs font-bold"
-                      >
-                        Çıkar
-                      </button>
-                    </div>
-                  </div>
-                  <p className="mt-3 text-sm text-slate-300 line-clamp-2">
-                    {q ? safePreview(q.q) : "Soru bulunamadı"}
-                  </p>
-                </div>
-              );
-            })}
-          </section>
+
+            {activeTab === "wrong" && (
+              <CollectionList
+                items={wrongItems}
+                mapById={mapById}
+                hex={hex}
+                emptyIcon="📝"
+                emptyText="Yanlış yaptığın sorular burada birikecek."
+                headerLabel={`${wrongItems.length} yanlış soru`}
+                headerSub={
+                  topWrongTopic
+                    ? `En çok: ${topWrongTopic.ders} / ${topWrongTopic.konu}`
+                    : null
+                }
+                onStartAll={unresolvedWrong.length ? handleStartWrongReview : null}
+                renderMeta={(item) =>
+                  `${item.wrongCount || 0}× yanlış · son ${formatDate(item.lastWrongAt)}`
+                }
+                onSolve={(q) => startReviewWithQuestions?.([q], "wrong-single")}
+              />
+            )}
+
+            {activeTab === "favorite" && (
+              <CollectionList
+                items={favoriteItems}
+                mapById={mapById}
+                hex={hex}
+                emptyIcon="⭐"
+                emptyText="Favoriye eklediğin sorular burada görünecek."
+                headerLabel={`${favoriteItems.length} favori soru`}
+                headerSub={null}
+                onStartAll={favoriteItems.length ? handleStartFavoriteReview : null}
+                renderMeta={(item) => `Eklenme: ${formatDate(item.addedAt)}`}
+                onSolve={(q) => startReviewWithQuestions?.([q], "favorite-single")}
+                onRemove={handleRemoveFavorite}
+              />
+            )}
+          </div>
+        </div>
+
+        {/* ───────── Deneme performansı ───────── */}
+        <div className="mt-6">
+          <PerformanceChartCard
+            user={user}
+            userData={userData}
+            accentTheme={theme}
+            accentThemeKey={accentThemeKey}
+            onStartExam={openExamSetSelect}
+          />
+        </div>
+
+        {loading && (
+          <p className="mt-4 text-center text-xs text-slate-600">Yükleniyor…</p>
         )}
-        {loading && <p className="text-xs text-slate-500">Yükleniyor...</p>}
-        <div className="md:hidden h-24" aria-hidden="true" />
       </div>
+    </div>
+  );
+}
+
+function CollectionList({
+  items,
+  mapById,
+  hex,
+  emptyIcon,
+  emptyText,
+  headerLabel,
+  headerSub,
+  onStartAll,
+  renderMeta,
+  onSolve,
+  onRemove,
+}) {
+  if (!items.length) {
+    return (
+      <div className="flex flex-col items-center rounded-[24px] border border-dashed border-white/10 bg-white/[0.02] px-4 py-10 text-center">
+        <span className="text-3xl" aria-hidden="true">{emptyIcon}</span>
+        <p className="mt-2 max-w-xs text-sm text-slate-400">{emptyText}</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-3">
+      <div className="flex items-center justify-between gap-2 rounded-2xl border border-white/[0.07] bg-white/[0.025] px-4 py-3">
+        <div className="min-w-0">
+          <p className="text-sm font-black text-white">{headerLabel}</p>
+          {headerSub && <p className="truncate text-[11px] text-slate-500">{headerSub}</p>}
+        </div>
+        {onStartAll && (
+          <button
+            type="button"
+            onClick={onStartAll}
+            className="shrink-0 rounded-xl px-3.5 py-2 text-xs font-black text-slate-950"
+            style={{ backgroundColor: hex }}
+          >
+            Özel çalış
+          </button>
+        )}
+      </div>
+
+      {items.map((item) => {
+        const q = mapById.get(item.questionId);
+        return (
+          <div
+            key={item.questionId}
+            className="rounded-[20px] border border-white/[0.07] bg-white/[0.025] p-4"
+          >
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-[10px] font-bold text-slate-300">
+                {item.ders || "Ders"}
+              </span>
+              <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-[10px] font-bold text-slate-400">
+                {item.konu || "Konu"}
+              </span>
+            </div>
+            <p className="mt-2.5 line-clamp-2 text-sm leading-relaxed text-slate-300">
+              {q ? safePreview(q.q) : "Soru bulunamadı"}
+            </p>
+            <div className="mt-3 flex items-center justify-between gap-2">
+              <p className="truncate text-[11px] text-slate-500">{renderMeta(item)}</p>
+              <div className="flex shrink-0 gap-2">
+                {onRemove && (
+                  <button
+                    type="button"
+                    onClick={() => onRemove(item)}
+                    className="rounded-xl border border-rose-500/25 px-3 py-1.5 text-[11px] font-bold text-rose-300 transition-colors hover:bg-rose-500/10"
+                  >
+                    Çıkar
+                  </button>
+                )}
+                <button
+                  type="button"
+                  onClick={() => q && onSolve(q)}
+                  disabled={!q}
+                  className="rounded-xl border border-white/10 bg-white/[0.06] px-3.5 py-1.5 text-[11px] font-bold text-slate-200 transition-colors hover:bg-white/[0.12] disabled:opacity-40"
+                >
+                  Çöz
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

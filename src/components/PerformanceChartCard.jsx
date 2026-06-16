@@ -254,19 +254,19 @@ export default function PerformanceChartCard({
           <p className="text-slate-500 text-xs md:text-sm font-medium">Kayıtlı deneme geçmişinde net değişimi</p>
         </div>
         <div className="flex flex-wrap gap-3 lg:justify-end shrink-0">
-          <div className="rounded-2xl bg-slate-950/70 border border-slate-800 px-4 py-3 min-w-[88px]">
+          <div className="rounded-2xl bg-black/20 border border-white/[0.06] px-4 py-3 min-w-[88px]">
             <p className="text-[10px] font-black text-slate-500 uppercase tracking-wider mb-1">Son net</p>
             <p className={`text-xl font-black tabular-nums ${theme.text}`}>
               {performanceChart.summaryStats.last != null ? performanceChart.summaryStats.last : "—"}
             </p>
           </div>
-          <div className="rounded-2xl bg-slate-950/70 border border-slate-800 px-4 py-3 min-w-[88px]">
+          <div className="rounded-2xl bg-black/20 border border-white/[0.06] px-4 py-3 min-w-[88px]">
             <p className="text-[10px] font-black text-slate-500 uppercase tracking-wider mb-1">En iyi net</p>
             <p className="text-xl font-black tabular-nums text-emerald-400">
               {performanceChart.summaryStats.best != null ? performanceChart.summaryStats.best : "—"}
             </p>
           </div>
-          <div className="rounded-2xl bg-slate-950/70 border border-slate-800 px-4 py-3 min-w-[88px]">
+          <div className="rounded-2xl bg-black/20 border border-white/[0.06] px-4 py-3 min-w-[88px]">
             <p className="text-[10px] font-black text-slate-500 uppercase tracking-wider mb-1">Ortalama net</p>
             <p className="text-xl font-black tabular-nums text-slate-200">
               {performanceChart.summaryStats.avg != null ? performanceChart.summaryStats.avg : "—"}
@@ -290,7 +290,7 @@ export default function PerformanceChartCard({
             </p>
           </div>
         ) : sortedExamHistory.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-12 px-4 text-center rounded-2xl border border-dashed border-slate-800 bg-slate-950/40">
+          <div className="flex flex-col items-center justify-center py-12 px-4 text-center rounded-2xl border border-dashed border-white/[0.08] bg-black/20">
             <span className="text-4xl mb-3" aria-hidden="true">📈</span>
             <p className="text-white font-black text-base mb-1">Henüz deneme verisi yok</p>
             <p className="text-slate-500 text-sm max-w-sm mb-6">

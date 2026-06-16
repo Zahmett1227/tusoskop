@@ -89,7 +89,7 @@ export default function TopicTracker({ onBack }) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white p-4 md:p-8">
+    <div className="min-h-screen bg-[#05070d] text-white p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
         {/* ÜST ALAN */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-6">
@@ -112,7 +112,7 @@ export default function TopicTracker({ onBack }) {
 
             <button
               onClick={onBack}
-              className="px-4 py-3 rounded-2xl bg-slate-800 hover:bg-slate-700 font-bold transition"
+              className="px-4 py-3 rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.08] backdrop-blur-xl font-bold transition"
             >
               Panele dön
             </button>
@@ -147,7 +147,7 @@ export default function TopicTracker({ onBack }) {
               <select
                 value={selectedLesson}
                 onChange={(e) => setSelectedLesson(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-800 rounded-2xl px-4 py-3 text-white outline-none focus:border-emerald-500"
+                className="w-full bg-black/30 border border-white/[0.08] rounded-2xl px-4 py-3 text-white outline-none focus:border-emerald-500/60"
               >
                 {lessons.map((lesson) => (
                   <option key={lesson} value={lesson}>
@@ -171,13 +171,13 @@ export default function TopicTracker({ onBack }) {
                   }, 300);
                 }}
                 placeholder="Örn: inflamasyon, kardiyoloji..."
-                className="w-full bg-slate-950 border border-slate-800 rounded-2xl px-4 py-3 text-white outline-none focus:border-emerald-500"
+                className="w-full bg-black/30 border border-white/[0.08] rounded-2xl px-4 py-3 text-white outline-none focus:border-emerald-500/60"
               />
             </div>
           </div>
 
           <div className="mt-4">
-            <div className="w-full h-4 rounded-full bg-slate-800 overflow-hidden">
+            <div className="w-full h-4 rounded-full bg-white/10 overflow-hidden">
               <div
                 className="h-full bg-emerald-500 transition-all duration-300"
                 style={{ width: `${percent}%` }}
@@ -187,20 +187,20 @@ export default function TopicTracker({ onBack }) {
         </div>
 
         {/* MASAÜSTÜ TABLO */}
-        <div className="hidden lg:block overflow-x-auto rounded-[2rem] border border-slate-800 bg-slate-900 shadow-[0_0_30px_rgba(16,185,129,0.05)]">
+        <div className="hidden lg:block overflow-x-auto rounded-[2rem] border border-white/[0.08] bg-[#0a0d15]">
           <table className="min-w-[1500px] w-full border-collapse">
             <thead>
-              <tr className="bg-slate-950">
-                <th className="sticky left-0 z-20 bg-slate-950 border-b border-r border-slate-800 px-4 py-4 text-left min-w-[160px]">
+              <tr className="bg-[#070a11]">
+                <th className="sticky left-0 z-20 bg-[#070a11] border-b border-r border-white/[0.06] px-4 py-4 text-left min-w-[160px]">
                   Ders
                 </th>
-                <th className="sticky left-[160px] z-20 bg-slate-950 border-b border-r border-slate-800 px-4 py-4 text-left min-w-[320px]">
+                <th className="sticky left-[160px] z-20 bg-[#070a11] border-b border-r border-white/[0.06] px-4 py-4 text-left min-w-[320px]">
                   Konu
                 </th>
                 {TRACKER_COLUMNS.map((col) => (
                   <th
                     key={col}
-                    className="border-b border-r border-slate-800 px-4 py-4 text-center min-w-[120px] text-sm text-slate-300"
+                    className="border-b border-r border-white/[0.06] px-4 py-4 text-center min-w-[120px] text-sm text-slate-300"
                   >
                     {col}
                   </th>
@@ -219,14 +219,14 @@ export default function TopicTracker({ onBack }) {
                     className={`transition ${
                       rowCompleted
                         ? 'bg-emerald-500/5'
-                        : 'hover:bg-slate-800/40'
+                        : 'hover:bg-white/[0.03]'
                     }`}
                   >
-                    <td className="sticky left-0 z-10 bg-slate-900 border-b border-r border-slate-800 px-4 py-4 font-semibold text-emerald-300 min-w-[160px]">
+                    <td className="sticky left-0 z-10 bg-[#0a0d15] border-b border-r border-white/[0.06] px-4 py-4 font-semibold text-emerald-300 min-w-[160px]">
                       {topic.ders}
                     </td>
 
-                    <td className="sticky left-[160px] z-10 bg-slate-900 border-b border-r border-slate-800 px-4 py-4 min-w-[320px]">
+                    <td className="sticky left-[160px] z-10 bg-[#0a0d15] border-b border-r border-white/[0.06] px-4 py-4 min-w-[320px]">
                       <div className="font-semibold">{topic.konu}</div>
                       <div className="text-xs text-slate-400 mt-1">
                         {topicDone} / {TRACKER_COLUMNS.length} tamamlandı
@@ -240,7 +240,7 @@ export default function TopicTracker({ onBack }) {
                       return (
                         <td
                           key={col}
-                          className="border-b border-r border-slate-800 px-4 py-4 text-center"
+                          className="border-b border-r border-white/[0.06] px-4 py-4 text-center"
                         >
                           <label className="inline-flex items-center justify-center cursor-pointer">
                             <input
@@ -271,13 +271,13 @@ export default function TopicTracker({ onBack }) {
               <div 
                 key={topic.id} 
                 className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
-                  rowCompleted ? 'border-emerald-500/30 bg-emerald-500/5' : 'border-slate-800 bg-slate-900/80'
+                  rowCompleted ? 'border-emerald-500/30 bg-emerald-500/5' : 'border-white/[0.08] bg-white/[0.025]'
                 }`}
               >
                 {/* KONU BAŞLIĞI (Her zaman görünür, tıklanabilir) */}
                 <button
                   onClick={() => setExpandedTopic(isExpanded ? null : topic.id)}
-                  className="w-full flex items-center justify-between p-4 text-left focus:outline-none hover:bg-slate-800/50 active:bg-slate-800"
+                  className="w-full flex items-center justify-between p-4 text-left focus:outline-none hover:bg-white/[0.04] active:bg-white/[0.06]"
                 >
                   <div className="flex-1 pr-4">
                      <span className="text-[10px] font-black uppercase tracking-wider text-emerald-400 mb-1 block">
@@ -293,7 +293,7 @@ export default function TopicTracker({ onBack }) {
                      <span className={`text-xs font-bold ${rowCompleted ? 'text-emerald-400' : 'text-slate-500'}`}>
                        {topicDone}/{TRACKER_COLUMNS.length}
                      </span>
-                     <div className={`flex items-center justify-center w-6 h-6 rounded-full bg-slate-800 transition-transform duration-300 ${isExpanded ? 'rotate-180 bg-slate-700' : ''}`}>
+                     <div className={`flex items-center justify-center w-6 h-6 rounded-full bg-white/[0.06] transition-transform duration-300 ${isExpanded ? 'rotate-180 bg-white/[0.12]' : ''}`}>
                        <span className="text-slate-400 text-xs">▼</span>
                      </div>
                   </div>
@@ -301,7 +301,7 @@ export default function TopicTracker({ onBack }) {
 
                 {/* İŞARETLEME KUTUCUKLARI (Sadece tıklandığında açılır) */}
                 {isExpanded && (
-                  <div className="p-4 pt-1 border-t border-slate-800/50 bg-slate-950/30">
+                  <div className="p-4 pt-1 border-t border-white/[0.06] bg-black/20">
                     <div className="grid grid-cols-2 gap-2 mt-2">
                       {TRACKER_COLUMNS.map((col) => {
                         const key = `${topic.id}__${col}`;
@@ -315,12 +315,12 @@ export default function TopicTracker({ onBack }) {
                             className={`flex min-h-[44px] items-center justify-between rounded-xl border px-3 py-2 text-sm font-semibold transition ${
                               checked
                                 ? 'border-emerald-400 bg-emerald-500/20 text-emerald-400'
-                                : 'border-slate-700 bg-slate-900 text-slate-400 active:border-slate-500'
+                                : 'border-white/[0.08] bg-white/[0.03] text-slate-400 active:border-white/[0.16]'
                             }`}
                           >
                             <span className="truncate mr-2">{col}</span>
                             <div className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md ${
-                                checked ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800'
+                                checked ? 'bg-emerald-500 text-slate-950' : 'bg-white/[0.06]'
                             }`}>
                               {checked && <span className="text-xs">✓</span>}
                             </div>
@@ -336,7 +336,7 @@ export default function TopicTracker({ onBack }) {
         </div>
 
         {filteredTopics.length === 0 && (
-          <div className="rounded-[1.75rem] border border-slate-800 bg-slate-900 p-10 text-center mt-6">
+          <div className="rounded-[1.75rem] border border-white/[0.08] bg-white/[0.025] backdrop-blur-xl p-10 text-center mt-6">
             <p className="text-xl font-bold text-white">Sonuç bulunamadı</p>
             <p className="text-slate-400 mt-2">
               Arama kelimesini veya ders filtresini değiştir.

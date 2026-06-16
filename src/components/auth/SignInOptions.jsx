@@ -54,11 +54,11 @@ export default function SignInOptions({
         Google ile Giriş Yap
       </button>
       {showDemoLogin && typeof onDemoLogin === "function" ? (
-        <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-3">
+        <div className="rounded-3xl border border-white/[0.08] bg-white/[0.025] backdrop-blur-xl p-3">
           <button
             type="button"
             onClick={onDemoLogin}
-            className="flex min-h-12 w-full items-center justify-center rounded-2xl border border-slate-700 bg-slate-950 px-5 py-3 text-sm font-extrabold text-slate-100 transition hover:border-slate-500 hover:bg-slate-900 active:scale-95"
+            className="flex min-h-12 w-full items-center justify-center rounded-2xl border border-white/[0.1] bg-white/[0.04] px-5 py-3 text-sm font-extrabold text-slate-100 transition hover:border-white/[0.18] hover:bg-white/[0.08] active:scale-95"
           >
             Demo olarak incele
           </button>

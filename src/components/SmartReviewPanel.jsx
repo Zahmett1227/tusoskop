@@ -34,7 +34,7 @@ function InsightRow({ label, subtitle, count, totalCount, isLightTheme }) {
           {count} soru
         </span>
       </div>
-      <div className={`h-2 overflow-hidden rounded-full ${isLightTheme ? "bg-slate-200" : "bg-slate-800"}`}>
+      <div className={`h-2 overflow-hidden rounded-full ${isLightTheme ? "bg-slate-200" : "bg-white/10"}`}>
         <div
           className={`h-full rounded-full transition-all duration-500 ${barColorClass(percent)}`}
           style={{ width: `${Math.max(4, percent)}%` }}
@@ -96,14 +96,14 @@ export default function SmartReviewPanel({
     <section
       className={`${appCardShell} relative mb-6 overflow-hidden border p-5 md:p-6 ${
         isLightTheme
-          ? "border-violet-200/80 bg-gradient-to-br from-white via-violet-50/40 to-fuchsia-50/30 shadow-md shadow-violet-100/50"
-          : "border-violet-500/30 bg-gradient-to-br from-slate-950 via-violet-950/30 to-slate-900 shadow-xl shadow-black/25"
+          ? "border-violet-200/80 bg-gradient-to-br from-white via-violet-50/40 to-fuchsia-50/30 shadow-sm"
+          : "border-violet-500/20 bg-white/[0.025] backdrop-blur-xl"
       }`}
       aria-labelledby="smart-review-panel-heading"
     >
       <div
         className={`pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full blur-3xl ${
-          isLightTheme ? "bg-violet-300/30" : "bg-violet-500/15"
+          isLightTheme ? "bg-violet-300/30" : "bg-violet-500/10"
         }`}
       />
 

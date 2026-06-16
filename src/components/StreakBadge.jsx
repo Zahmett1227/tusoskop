@@ -21,7 +21,7 @@ export default function StreakBadge({ userId, isLightTheme = false }) {
 
   if (loading) {
     return (
-      <div className={`rounded-[2rem] border p-5 animate-pulse h-28 ${isLightTheme ? "border-slate-300 bg-[#fffefb]" : "border-slate-800 bg-slate-900/60"}`} />
+      <div className={`rounded-[2rem] border p-5 animate-pulse h-28 ${isLightTheme ? "border-slate-200 bg-white" : "border-white/[0.08] bg-white/[0.025]"}`} />
     );
   }
 
@@ -40,10 +40,10 @@ export default function StreakBadge({ userId, isLightTheme = false }) {
         relative overflow-hidden rounded-[2rem] border p-5 flex flex-col gap-3
         transition-all duration-500 cursor-default select-none
         ${isActive
-          ? `${isLightTheme ? "border-orange-300 shadow-md bg-gradient-to-br from-[#fffefb] via-orange-50 to-amber-50" : "border-orange-500/30 bg-gradient-to-br from-slate-900 via-slate-900 to-orange-950/30"}
-             ${hovered ? 'shadow-[0_0_40px_rgba(249,115,22,0.18)] border-orange-500/50 -translate-y-0.5' : 'shadow-[0_0_20px_rgba(249,115,22,0.07)]'}`
-          : `${isLightTheme ? "border-slate-300 bg-[#fffefb] shadow-md" : "border-slate-800 bg-slate-900/60"}
-             ${hovered ? 'border-slate-700 -translate-y-0.5' : ''}`
+          ? `${isLightTheme ? "border-orange-300 shadow-sm bg-gradient-to-br from-white via-orange-50 to-amber-50" : "border-orange-500/25 bg-white/[0.025] backdrop-blur-xl"}
+             ${hovered ? 'shadow-[0_0_32px_rgba(249,115,22,0.12)] border-orange-500/40 -translate-y-0.5' : ''}`
+          : `${isLightTheme ? "border-slate-200 bg-white shadow-sm" : "border-white/[0.08] bg-white/[0.025] backdrop-blur-xl"}
+             ${hovered ? 'border-white/[0.14] -translate-y-0.5' : ''}`
         }
       `}
     >
@@ -61,7 +61,7 @@ export default function StreakBadge({ userId, isLightTheme = false }) {
           ${isActive
             ? `bg-gradient-to-br from-orange-500/20 to-rose-500/10 border border-orange-500/30
                ${hovered ? 'scale-110 shadow-lg shadow-orange-500/30' : ''}`
-            : isLightTheme ? 'bg-slate-100 border border-slate-200' : 'bg-slate-800/60 border border-slate-700'
+            : isLightTheme ? 'bg-slate-100 border border-slate-200' : 'bg-white/[0.06] border border-white/10'
           }
         `}>
           <span className={`text-2xl transition-all duration-300 ${hovered && isActive ? 'scale-125' : ''} ${isActive ? '' : 'grayscale opacity-30'}`}>
@@ -114,7 +114,7 @@ export default function StreakBadge({ userId, isLightTheme = false }) {
             {streak}/{milestone ? NEXT_MILESTONE.find(d => d > streak) ?? '✓' : nextMilestone}
           </span>
         </div>
-        <div className={`h-2 rounded-full overflow-hidden border ${isLightTheme ? "bg-slate-200 border-slate-300/70" : "bg-slate-800 border-slate-700/50"}`}>
+        <div className={`h-2 rounded-full overflow-hidden border ${isLightTheme ? "bg-slate-200 border-slate-300/70" : "bg-white/10 border-white/10"}`}>
           <div
             className={`h-full rounded-full transition-all duration-700 ease-out ${
               isActive

@@ -26,7 +26,7 @@ function Skeleton() {
   return (
     <div className="space-y-3 animate-pulse">
       {[0.75, 0.9, 0.6].map((w, i) => (
-        <div key={i} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 space-y-2.5">
+        <div key={i} className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-4 space-y-2.5">
           <div className="flex items-center gap-3">
             <div className="h-8 w-8 rounded-xl bg-slate-800" />
             <div className="space-y-1.5 flex-1">
@@ -40,7 +40,7 @@ function Skeleton() {
   );
 }
 
-function PlanItem({ item, index, theme, onStartFsrs, onStartTopicTest, total }) {
+function PlanItem({ item, index, theme, onStartFsrs, onStartTopicTest }) {
   const [open, setOpen] = useState(false);
   const meta = TYPE_META[item.type] ?? { label: item.type, icon: "📋", accent: "slate" };
   const colors = ACCENT_CLASSES[meta.accent];
@@ -49,7 +49,7 @@ function PlanItem({ item, index, theme, onStartFsrs, onStartTopicTest, total }) 
                    (item.type === "weak_topic_test" && onStartTopicTest);
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/60 transition-colors hover:border-slate-700/80">
+    <div className="relative overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.03] transition-colors hover:border-white/[0.12]">
       {/* Sol renk aksanı */}
       <div className={`absolute left-0 top-0 bottom-0 w-0.5 ${colors.dot}`} />
 
@@ -57,7 +57,7 @@ function PlanItem({ item, index, theme, onStartFsrs, onStartTopicTest, total }) 
         {/* Üst satır: numara badge + tip badge + süre */}
         <div className="flex items-center justify-between gap-2 mb-2">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-800 text-[10px] font-black text-slate-400 tabular-nums">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/[0.08] text-[10px] font-black text-slate-400 tabular-nums">
               {index + 1}
             </span>
             <span className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[10px] font-black uppercase tracking-wider ${colors.badge}`}>
@@ -156,10 +156,10 @@ export default function AiDailyPlanCard({ user, theme, onStartFsrs, onStartTopic
   const totalMinutes = plan?.recommendation.dailyPlan?.reduce((s, i) => s + i.estimatedMinutes, 0) ?? 0;
 
   return (
-    <div className="overflow-hidden rounded-3xl border border-slate-700/50 bg-gradient-to-b from-slate-900 to-slate-950 shadow-2xl shadow-black/40">
+    <div className="overflow-hidden rounded-[28px] border border-white/[0.08] bg-white/[0.025] backdrop-blur-xl">
 
       {/* ── Header ── */}
-      <div className="relative overflow-hidden px-5 pt-5 pb-4 border-b border-slate-800/60">
+      <div className="relative overflow-hidden px-5 pt-5 pb-4 border-b border-white/[0.06]">
         {/* Arka plan parlaması */}
         <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-violet-500/10 blur-2xl" />
         <div className="pointer-events-none absolute -left-5 bottom-0 h-24 w-40 rounded-full bg-cyan-500/8 blur-2xl" />
@@ -182,7 +182,7 @@ export default function AiDailyPlanCard({ user, theme, onStartFsrs, onStartTopic
 
           {/* Toplam süre — sadece plan varsa */}
           {plan && totalMinutes > 0 && (
-            <div className="shrink-0 rounded-xl border border-slate-700 bg-slate-800/60 px-3 py-1.5 text-right">
+            <div className="shrink-0 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-1.5 text-right">
               <p className="text-[10px] font-black uppercase tracking-wider text-slate-500">Tahmini</p>
               <p className="text-sm font-black text-white">{totalMinutes} dk</p>
             </div>
@@ -220,14 +220,14 @@ export default function AiDailyPlanCard({ user, theme, onStartFsrs, onStartTopic
 
         {/* Hata durumu */}
         {!loading && !isPremiumRequired && error && (
-          <div className="rounded-2xl border border-slate-700/60 bg-slate-900/50 px-4 py-5 text-center">
+          <div className="rounded-2xl border border-white/[0.07] bg-white/[0.03] px-4 py-5 text-center">
             <p className="text-xs font-semibold text-slate-500">Plan şu an yüklenemiyor</p>
           </div>
         )}
 
         {/* Giriş yapılmamış */}
         {!loading && !isPremiumRequired && !error && !plan && (
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/50 px-4 py-5 text-center">
+          <div className="rounded-2xl border border-white/[0.07] bg-white/[0.03] px-4 py-5 text-center">
             <p className="text-xs text-slate-500">Plan için giriş yapman gerekiyor.</p>
           </div>
         )}
@@ -249,7 +249,7 @@ export default function AiDailyPlanCard({ user, theme, onStartFsrs, onStartTopic
 
             {/* Özet + Motivasyon */}
             {(plan.recommendation.summary || plan.recommendation.motivationMessage) && (
-              <div className="rounded-2xl border border-slate-800/60 bg-slate-900/40 px-4 py-3.5 space-y-2">
+              <div className="rounded-2xl border border-white/[0.06] bg-black/20 px-4 py-3.5 space-y-2">
                 {plan.recommendation.summary && (
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1">

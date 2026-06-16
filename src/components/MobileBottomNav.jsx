@@ -89,8 +89,8 @@ export default function MobileBottomNav({
   return (
     <nav
       className="fixed bottom-0 left-0 right-0 z-40 md:hidden
-                 bg-slate-950/92 backdrop-blur-xl
-                 border-t border-slate-800/70 rounded-t-[1.75rem] shadow-[0_-18px_45px_rgba(0,0,0,0.42)]"
+                 bg-[#05070d]/92 backdrop-blur-xl
+                 border-t border-white/[0.08] rounded-t-[1.75rem] shadow-[0_-18px_45px_rgba(0,0,0,0.5)]"
       style={{ paddingBottom: "calc(10px + env(safe-area-inset-bottom))" }}
       aria-label="Ana mobil menü"
     >

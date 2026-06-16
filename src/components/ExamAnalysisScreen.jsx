@@ -23,10 +23,10 @@ function WrongQuestionsModal({ wrongByLessonTopic, totalWrong, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-slate-950 overflow-hidden">
+    <div className="fixed inset-0 z-50 flex flex-col bg-[#05070d] overflow-hidden">
 
       {/* Başlık çubuğu */}
-      <div className="flex items-center justify-between px-4 md:px-8 py-5 border-b border-slate-800 bg-slate-950/90 backdrop-blur-md shrink-0">
+      <div className="flex items-center justify-between px-4 md:px-8 py-5 border-b border-white/[0.08] bg-[#05070d]/90 backdrop-blur-md shrink-0">
         <div>
           <h2 className="text-xl md:text-2xl font-black text-white tracking-tight">Yanlış Soru Analizi</h2>
           <p className="text-slate-500 text-xs font-medium mt-0.5">
@@ -35,7 +35,7 @@ function WrongQuestionsModal({ wrongByLessonTopic, totalWrong, onClose }) {
         </div>
         <button
           onClick={onClose}
-          className="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-400 font-bold transition-all"
+          className="w-10 h-10 rounded-full bg-white/[0.06] hover:bg-white/[0.1] flex items-center justify-center text-slate-400 font-bold transition-all"
         >
           ✕
         </button>
@@ -56,12 +56,12 @@ function WrongQuestionsModal({ wrongByLessonTopic, totalWrong, onClose }) {
           const isLessonOpen = openLesson === lesson;
 
           return (
-            <div key={lesson} className="rounded-[1.75rem] border border-slate-800 overflow-hidden">
+            <div key={lesson} className="rounded-[1.75rem] border border-white/[0.08] overflow-hidden">
 
               {/* Ders başlığı */}
               <button
                 onClick={() => toggleLesson(lesson)}
-                className="w-full flex items-center justify-between px-6 py-4 bg-slate-900/60 hover:bg-slate-900 transition-colors text-left"
+                className="w-full flex items-center justify-between px-6 py-4 bg-white/[0.03] hover:bg-white/[0.06] transition-colors text-left"
               >
                 <div className="flex items-center gap-3">
                   <span className={`w-2.5 h-2.5 rounded-full shrink-0 ${isLessonOpen ? 'bg-rose-400' : 'bg-slate-700'}`} />
@@ -77,7 +77,7 @@ function WrongQuestionsModal({ wrongByLessonTopic, totalWrong, onClose }) {
 
               {/* Konular */}
               {isLessonOpen && (
-                <div className="divide-y divide-slate-800/60 bg-slate-950/40">
+                <div className="divide-y divide-white/[0.06] bg-black/20">
                   {Object.keys(topics).map((topic) => {
                     const questions = topics[topic];
                     const isTopicOpen = openTopic === `${lesson}__${topic}`;
@@ -89,7 +89,7 @@ function WrongQuestionsModal({ wrongByLessonTopic, totalWrong, onClose }) {
                         {/* Konu başlığı */}
                         <button
                           onClick={() => toggleTopic(topicKey)}
-                          className="w-full flex items-center justify-between px-6 py-3.5 hover:bg-slate-900/50 transition-colors text-left"
+                          className="w-full flex items-center justify-between px-6 py-3.5 hover:bg-white/[0.04] transition-colors text-left"
                         >
                           <div className="flex items-center gap-3">
                             <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0" />
@@ -111,14 +111,14 @@ function WrongQuestionsModal({ wrongByLessonTopic, totalWrong, onClose }) {
                               return (
                                 <div
                                   key={qi}
-                                  className="rounded-2xl border border-slate-800 bg-slate-900/50 overflow-hidden"
+                                  className="rounded-2xl border border-white/[0.07] bg-white/[0.025] overflow-hidden"
                                 >
                                   {/* Soru metni + genişlet butonu */}
                                   <button
                                     onClick={() => setExpandedQ(prev => prev === qKey ? null : qKey)}
-                                    className="w-full text-left px-5 py-4 flex items-start gap-3 hover:bg-slate-800/30 transition-colors"
+                                    className="w-full text-left px-5 py-4 flex items-start gap-3 hover:bg-white/[0.04] transition-colors"
                                   >
-                                    <span className="mt-0.5 w-5 h-5 rounded-full bg-slate-800 text-slate-500 text-[10px] font-black flex items-center justify-center shrink-0">
+                                    <span className="mt-0.5 w-5 h-5 rounded-full bg-white/[0.06] text-slate-500 text-[10px] font-black flex items-center justify-center shrink-0">
                                       {qi + 1}
                                     </span>
                                     <p className="text-slate-300 text-sm leading-relaxed flex-1 text-left line-clamp-2">
@@ -141,7 +141,7 @@ function WrongQuestionsModal({ wrongByLessonTopic, totalWrong, onClose }) {
 
                                   {/* Genişletilmiş detay */}
                                   {isExpanded && (
-                                    <div className="border-t border-slate-800 px-5 py-4 space-y-3">
+                                    <div className="border-t border-white/[0.08] px-5 py-4 space-y-3">
                                       {/* Tüm şıklar */}
                                       <div className="space-y-1.5">
                                         {wq.options.map((opt, oi) => {
@@ -171,7 +171,7 @@ function WrongQuestionsModal({ wrongByLessonTopic, totalWrong, onClose }) {
 
                                       {/* Açıklama */}
                                       {wq.exp && (
-                                        <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-4">
+                                        <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
                                           <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-2">Açıklama</p>
                                           <p className="text-slate-300 text-sm leading-relaxed">{wq.exp}</p>
                                         </div>
@@ -230,11 +230,11 @@ export default function ExamAnalysisScreen({
         />
       )}
 
-      <div className="min-h-screen bg-slate-950 text-white p-4 md:p-8">
+      <div className="min-h-screen bg-[#05070d] text-white p-4 md:p-8">
         <div className="max-w-6xl mx-auto space-y-10">
 
           {/* Üst Başlık */}
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-slate-800/60 pb-6">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-white/[0.08] pb-6">
             <div>
               <div className="flex items-center gap-3 mb-2">
                 <span className="text-3xl">📊</span>
@@ -248,7 +248,7 @@ export default function ExamAnalysisScreen({
             </div>
             <button
               onClick={goDashboard}
-              className="px-6 py-3 rounded-2xl bg-slate-900 border border-slate-700 hover:bg-slate-800 hover:border-slate-600 transition-all text-sm font-bold shadow-lg"
+              className="px-6 py-3 rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.08] hover:border-white/[0.14] backdrop-blur-xl transition-all text-sm font-bold"
             >
               ← Panele Dön
             </button>
@@ -256,7 +256,7 @@ export default function ExamAnalysisScreen({
 
           {/* Özet İstatistik Kartları */}
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            <div className="app-card flex flex-col justify-center items-center text-center hover:border-slate-600 transition-colors !py-6">
+            <div className="app-card flex flex-col justify-center items-center text-center hover:border-white/[0.14] transition-colors !py-6">
               <span className="text-slate-500 mb-1 text-xl">📝</span>
               <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Toplam</p>
               <p className="text-3xl font-black mt-1 text-slate-200">{summary.total ?? 0}</p>
@@ -272,7 +272,7 @@ export default function ExamAnalysisScreen({
             {/* Yanlış — tıklanabilir, detaylı analiz açar */}
             <button
               onClick={() => setShowWrongModal(true)}
-              className="app-card flex flex-col justify-center items-center text-center border border-rose-900/50 hover:border-rose-500/50 hover:bg-rose-950/20 transition-all relative overflow-hidden group !py-6"
+              className="app-card flex flex-col justify-center items-center text-center !border-rose-500/25 hover:!border-rose-500/50 hover:bg-rose-500/[0.06] transition-all relative overflow-hidden group !py-6"
             >
               <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/5 rounded-full blur-2xl group-hover:bg-rose-500/10 transition-all" />
               <span className="text-rose-500 mb-1 text-xl">❌</span>
@@ -283,13 +283,13 @@ export default function ExamAnalysisScreen({
               </span>
             </button>
 
-            <div className="app-card flex flex-col justify-center items-center text-center hover:border-slate-600 transition-colors !py-6">
+            <div className="app-card flex flex-col justify-center items-center text-center hover:border-white/[0.14] transition-colors !py-6">
               <span className="text-slate-500 mb-1 text-xl">⚪</span>
               <p className="text-slate-400 text-xs uppercase tracking-wider font-semibold">Boş</p>
               <p className="text-3xl font-black mt-1 text-slate-300">{summary.blank ?? 0}</p>
             </div>
 
-            <div className={`app-card relative flex flex-col justify-center items-center text-center bg-gradient-to-b from-slate-800 to-slate-900 border ${theme.softBorder} shadow-[0_0_20px_rgba(34,211,238,0.05)] !py-6`}>
+            <div className={`app-card relative flex flex-col justify-center items-center text-center !border ${theme.softBorder} ${theme.softBg} !py-6`}>
               <div className={`absolute -top-10 -right-10 w-32 h-32 ${theme.softBg} rounded-full blur-3xl`} />
               <span className={`relative z-10 ${theme.text} mb-1 text-xl`}>🎯</span>
               <p className={`relative z-10 ${theme.text}/70 text-xs uppercase tracking-wider font-semibold`}>Net Skor</p>
@@ -327,8 +327,8 @@ export default function ExamAnalysisScreen({
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
             {/* Ders Bazlı Performans Tablosu */}
-            <div className="lg:col-span-2 rounded-[2rem] bg-slate-900 border border-slate-800 overflow-hidden shadow-xl">
-              <div className="bg-slate-950/50 px-6 py-5 border-b border-slate-800">
+            <div className="lg:col-span-2 rounded-[2rem] bg-white/[0.025] border border-white/[0.08] backdrop-blur-xl overflow-hidden">
+              <div className="bg-white/[0.03] px-6 py-5 border-b border-white/[0.08]">
                 <h2 className="text-xl font-bold flex items-center gap-2">
                   <span className="text-fuchsia-400">🔬</span> Bu denemede ders performansı
                 </h2>
@@ -336,7 +336,7 @@ export default function ExamAnalysisScreen({
               <div className="p-1 overflow-x-auto">
                 <table className="w-full text-sm md:text-base border-collapse">
                   <thead>
-                    <tr className="text-left text-slate-400 border-b border-slate-800/50 bg-slate-900/30">
+                    <tr className="text-left text-slate-400 border-b border-white/[0.06] bg-white/[0.02]">
                       <th className="py-4 pl-5 font-medium">Ders</th>
                       <th className="py-4 px-2 font-medium text-center">Soru</th>
                       <th className={`py-4 px-2 font-medium ${theme.text}/80 text-center`}>D</th>
@@ -347,7 +347,7 @@ export default function ExamAnalysisScreen({
                   </thead>
                   <tbody>
                     {lessonRows.map(([lesson, stats]) => (
-                      <tr key={lesson} className="border-b border-slate-800/30 hover:bg-slate-800/20 transition-colors">
+                      <tr key={lesson} className="border-b border-white/[0.05] hover:bg-white/[0.03] transition-colors">
                         <td className="py-3 pl-5 font-semibold text-slate-200">{lesson}</td>
                         <td className="py-3 px-2 text-center text-slate-400">{stats.total}</td>
                         <td className={`py-3 px-2 text-center ${theme.text}`}>{stats.correct}</td>
@@ -358,7 +358,7 @@ export default function ExamAnalysisScreen({
                             <span className="font-bold text-slate-200 min-w-[3rem] text-right">
                               %{stats.successRate}
                             </span>
-                            <div className="h-2 w-20 md:w-28 bg-slate-950 rounded-full overflow-hidden border border-slate-800">
+                            <div className="h-2 w-20 md:w-28 bg-black/30 rounded-full overflow-hidden border border-white/[0.08]">
                               <div
                                 className={`h-full rounded-full transition-all duration-1000 ${getProgressColor(stats.successRate)}`}
                                 style={{ width: `${stats.successRate}%` }}
@@ -376,7 +376,7 @@ export default function ExamAnalysisScreen({
             {/* Tahmini Puan + Aksiyonlar */}
             <div className="space-y-6">
               {estimatedTus && (
-                <div className={`relative rounded-[2rem] bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 border border-slate-700 p-8 overflow-hidden shadow-2xl group ${theme.softBorder} transition-all duration-500`}>
+                <div className={`relative rounded-[2rem] bg-white/[0.025] backdrop-blur-xl border p-8 overflow-hidden group ${theme.softBorder} transition-all duration-500`}>
                   <div className={`absolute -right-10 -top-10 w-40 h-40 ${theme.softBg} rounded-full blur-3xl transition-all duration-500`} />
                   <div className="absolute right-4 top-4 text-6xl opacity-5">🏆</div>
 
@@ -388,7 +388,7 @@ export default function ExamAnalysisScreen({
                     <span className="text-xl text-slate-500 font-bold">Puan</span>
                   </div>
 
-                  <div className="bg-slate-950/50 rounded-2xl p-4 border border-slate-800/80">
+                  <div className="bg-black/20 rounded-2xl p-4 border border-white/[0.06]">
                     <p className="text-lg font-bold text-slate-200 mb-1 flex items-center gap-2">
                       <span>💡</span> {estimatedTus.label}
                     </p>

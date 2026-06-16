@@ -109,7 +109,7 @@ export default function FsrsDifficultyRating({
           className={`shrink-0 min-h-[36px] px-4 rounded-xl border text-xs font-bold transition-all disabled:opacity-50 active:scale-[0.97] ${
             isLightTheme
               ? "border-slate-300 bg-white text-slate-600 hover:bg-slate-50 hover:border-slate-400"
-              : "border-slate-700 bg-slate-800/60 text-slate-300 hover:bg-slate-700 hover:border-slate-500"
+              : "border-white/[0.08] bg-white/[0.04] text-slate-300 hover:bg-white/[0.08] hover:border-white/[0.16]"
           }`}
         >
           Geç →

@@ -36,9 +36,9 @@ export default function IOSInstallBanner() {
     <div
       className="fixed left-3 right-3 z-50 md:hidden
                  flex items-center gap-3
-                 bg-slate-800/95 backdrop-blur-xl
-                 border border-slate-600/40 rounded-2xl px-4 py-3.5
-                 shadow-2xl shadow-slate-950/60"
+                 bg-[#0a0d15]/95 backdrop-blur-xl
+                 border border-white/[0.1] rounded-2xl px-4 py-3.5
+                 shadow-2xl shadow-black/60"
       style={{
         bottom: "calc(5.5rem + env(safe-area-inset-bottom))",
         opacity: mounted ? 1 : 0,
