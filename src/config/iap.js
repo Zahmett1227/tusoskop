@@ -3,7 +3,7 @@
 export const IAP_PRODUCT_IDS = [
   'com.tusoskop.app.plus.1m',
   'com.tusoskop.app.plus.3m',
-  'com.tusoskop.app.plus.6m',
+  'com.tusoskop.app.plus.1y',
 ];
 
 export const IAP_PLAN_MAP = {
@@ -19,9 +19,9 @@ export const IAP_PLAN_MAP = {
     badge: 'Önerilen',
     highlight: true,
   },
-  'com.tusoskop.app.plus.6m': {
-    id: 'plus_6m',
-    durationLabel: '6 Aylık',
+  'com.tusoskop.app.plus.1y': {
+    id: 'plus_1y',
+    durationLabel: '1 Yıllık',
     badge: 'En avantajlı',
     highlight: false,
   },

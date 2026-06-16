@@ -6,7 +6,7 @@ const ALLOWED_BUNDLE_ID = "com.tusoskop.app";
 const ALLOWED_PRODUCT_IDS = new Set([
   "com.tusoskop.app.plus.1m",
   "com.tusoskop.app.plus.3m",
-  "com.tusoskop.app.plus.6m",
+  "com.tusoskop.app.plus.1y",
 ]);
 
 /**
