@@ -156,7 +156,7 @@ export const TRACKER_TOPICS = [
   { id: "kadin-dogum-4", ders: "Kadın Doğum", konu: "İnfertilite" },
 
   { id: "kucuk-stajlar-1", ders: "Küçük Stajlar", konu: "Nöroloji" },
-  { id: "kucuk-stajlar-2", ders: "Küçük Stajlar", konu: "Beyin Cerrahi" },
+  { id: "kucuk-stajlar-2", ders: "Küçük Stajlar", konu: "Beyin Cerrahisi" },
   { id: "kucuk-stajlar-3", ders: "Küçük Stajlar", konu: "Anestezi" },
   { id: "kucuk-stajlar-4", ders: "Küçük Stajlar", konu: "Psikiyatri" },
   { id: "kucuk-stajlar-5", ders: "Küçük Stajlar", konu: "Üroloji" },
