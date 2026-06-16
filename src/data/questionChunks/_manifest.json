@@ -26,16 +26,16 @@
     "anatomi": "Anatomi"
   },
   "subjectCounts": {
-    "Fizyoloji": 528,
-    "Patoloji": 413,
-    "Farmakoloji": 494,
-    "Mikrobiyoloji": 510,
+    "Fizyoloji": 725,
+    "Patoloji": 471,
+    "Farmakoloji": 575,
+    "Mikrobiyoloji": 659,
     "Dahiliye": 678,
-    "Pediatri": 716,
+    "Pediatri": 832,
     "Kadın Hastalıkları ve Doğum": 506,
-    "Küçük Stajlar": 475,
-    "Biyokimya": 440,
+    "Küçük Stajlar": 512,
+    "Biyokimya": 450,
     "Genel Cerrahi": 530,
-    "Anatomi": 397
+    "Anatomi": 493
   }
 }
