@@ -372,7 +372,7 @@ export default function Dashboard({
             )}
 
             {/* CTA — mobilde full width, ~64px yükseklik */}
-            <div className="mt-5 flex flex-col gap-2.5">
+            <div className="mt-5">
               <button
                 type="button"
                 onClick={() => {
@@ -385,12 +385,10 @@ export default function Dashboard({
                 }}
                 className="group relative flex min-h-[64px] w-full items-center justify-center gap-3 overflow-hidden rounded-2xl bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 px-6 text-base font-black text-slate-950 shadow-[0_0_28px_rgba(45,212,191,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_36px_rgba(45,212,191,0.4)] active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 focus-visible:ring-offset-2 sm:w-auto sm:self-start sm:px-8"
               >
-                {/* hover parlaması */}
                 <span
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
                 />
-                {/* sade play ikonu */}
                 <span
                   aria-hidden="true"
                   className="relative flex h-7 w-7 items-center justify-center rounded-full bg-slate-950/15 transition-transform duration-300 group-hover:scale-110"
@@ -399,14 +397,12 @@ export default function Dashboard({
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </span>
-                <span className="relative">Akıllı Tekrara Başla</span>
-                <span aria-hidden="true" className="relative text-lg leading-none">🌱</span>
+                <span className="relative">{smartDue > 0 ? "Akıllı Tekrara Başla" : "Çalışma Alanına Gir"}</span>
                 {smartDue > 0 && (
                   <span className="relative inline-flex min-w-[1.75rem] items-center justify-center rounded-full bg-slate-950/20 px-2 py-0.5 text-sm font-black tabular-nums">
                     {smartDue}
                   </span>
                 )}
-                {/* en sağda ok */}
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 24 24"
@@ -420,15 +416,6 @@ export default function Dashboard({
                   <path d="M5 12h14M13 6l6 6-6 6" />
                 </svg>
               </button>
-              {smartDue <= 0 && (
-                <button
-                  type="button"
-                  onClick={() => openTopicSetup?.()}
-                  className={`inline-flex min-h-12 w-full items-center justify-center rounded-2xl border px-5 py-3 text-sm font-bold transition-all sm:w-auto sm:self-start ${isLightTheme ? "border-slate-300 bg-white text-slate-800 hover:bg-slate-50" : "border-slate-600 bg-slate-900/60 text-slate-200 hover:bg-slate-800"}`}
-                >
-                  Yeni konu çöz
-                </button>
-              )}
             </div>
           </div>
         </section>
@@ -450,88 +437,36 @@ export default function Dashboard({
           >
             Bugünün planı
           </h2>
-          <div className="relative z-10 grid gap-6 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-end">
-            <div>
-              <h3 className={`max-w-3xl text-3xl font-black tracking-tight md:text-5xl ${isLightTheme ? "text-slate-950" : "text-white"}`}>
-                Bugün ne çalışacağını tek bakışta gör.
-              </h3>
-              <p className={`mt-3 max-w-2xl text-sm font-semibold leading-relaxed md:text-base ${isLightTheme ? "text-slate-600" : "text-slate-300"}`}>
-                Seri, hedef net ve akıllı tekrar planını bir araya getirdik. Kaldığın yerden devam et ya da sabit 200 soruluk TUS denemesine geç.
-              </p>
-              <div className="mt-6 grid grid-cols-3 gap-2.5 sm:gap-3">
-                {[
-                  ["Seri", planStreak, "gün"],
-                  ["Hedef net", displayTarget.toFixed(2), "kişisel"],
-                  ["Bugünkü tekrar", smartDue, "soru"],
-                ].map(([label, value, suffix]) => (
-                  <div
-                    key={label}
-                    className={`rounded-2xl border px-3 py-3 text-center sm:px-4 sm:text-left ${
-                      isLightTheme
-                        ? "border-white/80 bg-white/80 shadow-sm"
-                        : "border-white/10 bg-white/[0.06] shadow-lg shadow-black/10"
-                    }`}
-                  >
-                    <p className="text-[10px] font-black uppercase tracking-wider text-slate-500 sm:text-[10px]">
-                      {label}
-                    </p>
-                    <p className={`mt-1 text-2xl font-black tabular-nums md:text-3xl ${label === "Bugünkü tekrar" ? theme.text : isLightTheme ? "text-slate-950" : "text-white"}`}>
-                      {value}
-                    </p>
-                    <p className="text-[10px] font-semibold text-slate-500">{suffix}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className={`rounded-[1.75rem] border p-4 ${
-              isLightTheme
-                ? "border-slate-200 bg-white/85 shadow-sm"
-                : "border-white/10 bg-slate-950/55 shadow-xl shadow-black/20"
-            }`}>
-              <p className={`mb-3 text-xs font-extrabold uppercase tracking-[0.18em] ${isLightTheme ? "text-slate-500" : "text-slate-400"}`}>
-                Hızlı başlangıç
-              </p>
-              <div className="flex flex-col gap-2.5">
-              <button
-                type="button"
-                onClick={() => {
-                  trackClarityEvent("today_plan_primary_cta");
-                  if (smartDue > 0 && onStartSmartReview) {
-                    onStartSmartReview();
-                  } else {
-                    setView("studyCollection");
-                  }
-                }}
-                className={`inline-flex min-h-12 w-full items-center justify-center rounded-2xl px-6 py-4 text-sm font-black transition-all hover:-translate-y-px active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-[#fffefb]" : "focus-visible:ring-offset-slate-950"} ${theme.primary} ${theme.primaryHover} text-slate-950 shadow-lg ${theme.glow} ${theme.ring}`}
-              >
-                {smartDue > 0
-                  ? `Tekrara başla (${smartDue})`
-                  : "Çalışma alanını aç"}
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  trackClarityEvent("today_plan_secondary_exam");
-                  setView("examSetSelect");
-                }}
-                className={`inline-flex min-h-12 w-full items-center justify-center rounded-2xl border px-5 text-sm font-bold transition-all hover:-translate-y-px active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "border-slate-300 bg-white text-slate-800 hover:bg-slate-50 focus-visible:ring-offset-[#fffefb] focus-visible:ring-emerald-500/50" : "border-slate-700 bg-slate-950/50 text-slate-200 hover:bg-slate-900 focus-visible:ring-offset-slate-950 focus-visible:ring-emerald-400/40"}`}
-              >
-                TUS denemesi seç
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  trackClarityEvent("today_plan_tertiary_topic_setup");
-                  openTopicSetup?.();
-                }}
-                className={`w-full rounded-xl px-2 py-2 text-left text-sm font-extrabold underline-offset-2 transition hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "text-slate-700 focus-visible:ring-emerald-500/40 focus-visible:ring-offset-[#fffefb]" : "text-slate-300 focus-visible:ring-emerald-400/40 focus-visible:ring-offset-slate-950"}`}
-              >
-                Ders veya konu seçerek çöz →
-              </button>
-              </div>
-              <p className={`mt-3 text-xs font-medium leading-relaxed ${isLightTheme ? "text-slate-500" : "text-slate-400"}`}>
-                Bugünkü hedefin hazır; tekrarlarını, denemeni ve konu çalışmanı aynı akıştan yönet.
-              </p>
+          <div className="relative z-10">
+            <h3 className={`max-w-3xl text-3xl font-black tracking-tight md:text-4xl ${isLightTheme ? "text-slate-950" : "text-white"}`}>
+              Bugün ne çalışacağını tek bakışta gör.
+            </h3>
+            <p className={`mt-2 max-w-2xl text-sm font-medium leading-relaxed ${isLightTheme ? "text-slate-600" : "text-slate-400"}`}>
+              Seri, hedef net ve akıllı tekrar planın bir arada.
+            </p>
+            <div className="mt-5 grid grid-cols-3 gap-2.5 sm:gap-3">
+              {[
+                ["Seri", planStreak, "gün"],
+                ["Hedef net", displayTarget.toFixed(2), "kişisel"],
+                ["Bugünkü tekrar", smartDue, "soru"],
+              ].map(([label, value, suffix]) => (
+                <div
+                  key={label}
+                  className={`rounded-2xl border px-3 py-3 text-center ${
+                    isLightTheme
+                      ? "border-white/80 bg-white/80 shadow-sm"
+                      : "border-white/10 bg-white/[0.06] shadow-lg shadow-black/10"
+                  }`}
+                >
+                  <p className="text-[10px] font-black uppercase tracking-wider text-slate-500">
+                    {label}
+                  </p>
+                  <p className={`mt-1 text-2xl font-black tabular-nums md:text-3xl ${label === "Bugünkü tekrar" ? theme.text : isLightTheme ? "text-slate-950" : "text-white"}`}>
+                    {value}
+                  </p>
+                  <p className="text-[10px] font-semibold text-slate-500">{suffix}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -603,121 +538,35 @@ export default function Dashboard({
           </div>
         </section>
 
-        {/* Ana iki yol: deneme + çalışma alanı */}
+        {/* Ana iki yol: çalışma alanı (öne) + deneme */}
         <div className="mb-6 grid grid-cols-1 gap-5 lg:grid-cols-2 lg:items-stretch">
+
         {/* ═══════════════════════════════════════════════════════
-            HERO: DENEME KARTI — sitenin en değerli özelliği
+            HERO: ÇALIŞMA ALANI — uygulamanın kalbi
         ═══════════════════════════════════════════════════════ */}
-        <div
-          onClick={() => setView("examSetSelect")}
-          className={`group relative h-full min-h-0 overflow-hidden rounded-[2.25rem] border p-6 md:p-8 cursor-pointer transition-all duration-500 ${isLightTheme ? "border-slate-300 bg-gradient-to-br from-[#fffefb] via-[#faf8f4] to-[#ebe8e3] hover:border-slate-400 shadow-md" : `${theme.softBorder} bg-gradient-to-br from-slate-900 via-slate-900 to-slate-900/80 hover:border-slate-500/70`}`}
-        >
-          {/* Arka plan ışıltısı */}
-          <div className={`absolute -top-20 -right-20 w-72 h-72 ${theme.softBg} rounded-full blur-3xl transition-all duration-700 pointer-events-none`} />
-          <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-cyan-500/5 rounded-full blur-2xl pointer-events-none" />
+        <div className={`relative h-full min-h-0 overflow-hidden rounded-[2.25rem] border p-5 md:p-7 ${
+          isLightTheme
+            ? "border-emerald-200/60 bg-[#fffefb] shadow-md"
+            : "border-emerald-400/20 bg-gradient-to-br from-slate-900 via-[#0a1a1a] to-emerald-950/25 shadow-[0_0_0_1px_rgba(16,185,129,0.10),0_32px_64px_-28px_rgba(16,185,129,0.40)]"
+        }`}>
+          <div className={`pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full blur-3xl ${theme.softBg}`} />
+          <div className="pointer-events-none absolute -bottom-12 left-1/4 h-40 w-40 rounded-full bg-cyan-400/8 blur-3xl" />
 
-          <div className="relative z-10 flex h-full flex-col gap-6 lg:flex-row lg:items-center">
-
-            {/* Sol: Başlık + özellikler */}
-            <div className="flex-1">
-              <div className="flex items-center gap-3 mb-3">
-                <span className={`px-3 py-1 rounded-full ${theme.softBg} border ${theme.softBorder} ${theme.text} text-[10px] font-black uppercase tracking-widest`}>
-                  Sabit Deneme Setleri
+          <div className="relative z-10 min-w-0 space-y-4 md:space-y-5">
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 mb-2">
+                <p className={`text-[10px] font-black uppercase tracking-[0.28em] ${theme.text}`}>
+                  ÇALIŞMA ALANIM
+                </p>
+                <span className="inline-flex items-center gap-1 rounded-full border border-violet-500/25 bg-violet-500/10 px-2 py-0.5 text-[9px] font-black uppercase tracking-wider text-violet-400">
+                  ✨ AI Destekli
                 </span>
               </div>
-
-              <h2 className={`text-3xl md:text-4xl font-black tracking-tight mb-2 ${isLightTheme ? "text-slate-950" : "text-white"}`}>
-                TUS Denemesi Çöz
-              </h2>
-              <p className={`text-sm md:text-base mb-6 max-w-md ${isLightTheme ? "text-slate-600" : "text-slate-400"}`}>
-                {FIXED_EXAM_CARD_SUBTITLE}. Her kullanıcıda aynı soru seti ve sıra; bitince analiz ve tahmini puan raporu hazırlanır.
-              </p>
-
-              {/* Özellik etiketleri */}
-              <div className="flex flex-wrap gap-3 mb-8">
-                {[
-                  { icon: "📋", label: "Sabit set · aynı sıra" },
-                  { icon: "🎯", label: "Tahmini TUS puanı" },
-                  { icon: "⚠️", label: "Bu denemede zayıf konu özeti" },
-                  { icon: "☁️", label: "Buluta otomatik kayıt" },
-                ].map(f => (
-                  <span key={f.label} className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold ${isLightTheme ? "bg-[#fffefb] border border-slate-300 text-slate-700 shadow-sm" : "bg-slate-800/80 border border-slate-700 text-slate-300"}`}>
-                    <span>{f.icon}</span> {f.label}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-                <div className={`flex items-center justify-center gap-3 px-8 py-4 rounded-2xl ${theme.primary} text-slate-950 font-black text-lg shadow-lg ${theme.glow} group-hover:scale-[1.01] transition-transform duration-300`}>
-                  Denemeyi Başlat
-                  <span className="text-xl">→</span>
-                </div>
-                <span className={`text-xs font-bold uppercase tracking-wider ${isLightTheme ? "text-slate-500" : "text-slate-600"}`}>200 Soru · ~150 dk · Sabit set</span>
-              </div>
-            </div>
-
-            {/* Sağ: Analiz önizlemesi (sahte ama gerçekçi) */}
-            <div className="w-full shrink-0 lg:w-72">
-              <div className={`border rounded-[2rem] p-5 backdrop-blur-sm ${isLightTheme ? "bg-[#fffefb] border-slate-300 shadow-sm" : "bg-slate-950/70 border-slate-800"}`}>
-                <p className={`text-[10px] font-black uppercase tracking-widest mb-4 flex items-center gap-2 ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>
-                  <span className={`w-1.5 h-1.5 rounded-full ${theme.primary} animate-ping inline-block`} />
-                  Deneme Sonu Analiz Ekranı
-                </p>
-
-                {/* Sahte net kartları */}
-                <div className="grid grid-cols-3 gap-2 mb-4">
-                  {[
-                    { label: "Doğru", val: "89", color: "text-emerald-400" },
-                    { label: "Yanlış", val: "21", color: "text-rose-400" },
-                    { label: "Net", val: "83.75", color: "text-cyan-400" },
-                  ].map(s => (
-                    <div key={s.label} className={`rounded-xl p-2.5 text-center ${isLightTheme ? "border border-slate-200 bg-[#ebe9e4]" : "bg-slate-900"}`}>
-                      <p className="text-[10px] text-slate-500 font-black uppercase">{s.label}</p>
-                      <p className={`text-lg font-black ${s.color}`}>{s.val}</p>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Sahte ders satırları */}
-                <div className="space-y-2">
-                  {[
-                    { ders: "Dahiliye", oran: 82 },
-                    { ders: "Patoloji", oran: 61 },
-                    { ders: "Farmakoloji", oran: 44 },
-                  ].map(r => (
-                    <div key={r.ders} className="flex items-center gap-2">
-                      <span className={`text-[10px] w-20 shrink-0 ${isLightTheme ? "text-slate-600" : "text-slate-400"}`}>{r.ders}</span>
-                      <div className={`flex-1 h-1.5 rounded-full overflow-hidden ${isLightTheme ? "bg-slate-200" : "bg-slate-800"}`}>
-                        <div
-                          className={`h-full rounded-full ${r.oran >= 65 ? 'bg-emerald-500' : r.oran >= 45 ? 'bg-cyan-400' : 'bg-rose-500'}`}
-                          style={{ width: `${r.oran}%` }}
-                        />
-                      </div>
-                      <span className={`text-[10px] font-bold w-8 text-right ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>%{r.oran}</span>
-                    </div>
-                  ))}
-                  <p className={`text-[10px] text-center pt-1 italic ${isLightTheme ? "text-slate-500" : "text-slate-600"}`}>+ tüm branşlar...</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div className={`h-full min-h-0 rounded-[2.25rem] border p-5 md:p-7 ${isLightTheme ? "border-slate-300 bg-[#fffefb] shadow-md" : "border-emerald-300/20 bg-gradient-to-br from-slate-900 via-[#0b1326] to-emerald-950/20 shadow-[0_0_0_1px_rgba(16,185,129,0.08),0_28px_60px_-30px_rgba(16,185,129,0.35)]"}`}>
-          <div className="min-w-0 space-y-4 md:space-y-5">
-            <div className="min-w-0">
-              <p className={`text-[10px] md:text-xs font-black uppercase tracking-[0.28em] ${theme.text}`}>
-                ÇALIŞMA ALANIM
-              </p>
-              <h3 className={`mt-1 text-xl md:text-2xl font-black tracking-tight ${isLightTheme ? "text-slate-900" : "text-white"}`}>
+              <h3 className={`text-xl md:text-2xl font-black tracking-tight ${isLightTheme ? "text-slate-900" : "text-white"}`}>
                 Tekrarlarını tek yerden yönet
               </h3>
-              <p className={`mt-2 text-[13px] md:text-sm leading-snug line-clamp-2 ${isLightTheme ? "text-slate-600" : "text-slate-300"}`}>
-                Yanlışların, favorilerin ve akıllı tekrar planın burada.
-              </p>
-              <p className={`mt-1.5 text-[11px] md:text-sm leading-snug line-clamp-2 md:line-clamp-none ${isLightTheme ? "text-slate-500" : "text-slate-400"}`}>
-                Deneme net grafiğinle birlikte neyi tekrar etmen gerektiğini daha net gör.
+              <p className={`mt-2 text-sm leading-relaxed ${isLightTheme ? "text-slate-600" : "text-slate-300"}`}>
+                FSRS planın, AI önerilerin, yanlışların ve favorilerin burada. Her şey tek akışta.
               </p>
             </div>
 
@@ -731,32 +580,101 @@ export default function Dashboard({
                 <p className="mt-1 text-lg md:text-xl font-black text-amber-300 tabular-nums">{studySummary.favoriteCount || 0}</p>
               </div>
               <div className={`rounded-2xl border px-3 py-3 md:px-4 md:py-3.5 min-w-0 ${isLightTheme ? "border-slate-300 bg-[#f5f2ec]" : "border-slate-700/70 bg-slate-950/55"}`}>
-                <p className="text-[10px] uppercase tracking-wider text-slate-500 font-black">Akıllı tekrar</p>
+                <p className="text-[10px] uppercase tracking-wider text-slate-500 font-black">FSRS Tekrar</p>
                 <p className={`mt-1 text-lg md:text-xl font-black tabular-nums ${theme.text}`}>{smartDue || 0}</p>
               </div>
             </div>
 
-            <div className={`rounded-2xl border px-3.5 py-3 md:px-4 md:py-3.5 ${isLightTheme ? "border-slate-300 bg-[#f5f2ec]" : "border-slate-800/80 bg-slate-950/45"}`}>
-              <div className="flex flex-col gap-3 md:gap-3.5">
-                <p className={`text-xs md:text-sm leading-relaxed ${isLightTheme ? "text-slate-700" : "text-slate-300"}`}>
-                  {smartDue > 0
-                    ? `Bugünkü tekrarın hazır: ${smartDue} soru`
-                    : "Akıllı tekrar planın, yanlışların ve favorilerin biriktikçe oluşacak."}
-                </p>
-                <button
-                  type="button"
-                  onClick={() => {
-                    trackClarityEvent("study_area_card_clicked");
-                    setView("studyCollection");
-                  }}
-                  className={`w-full md:w-auto md:self-start min-h-12 px-5 md:px-6 rounded-2xl text-sm font-black text-slate-950 transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-[#f5f2ec]" : "focus-visible:ring-offset-slate-950"} ${theme.primary} ${theme.primaryHover} shadow-lg ${theme.glow} ${theme.ring}`}
-                >
-                  Çalışma Alanını Aç
-                </button>
+            <button
+              type="button"
+              onClick={() => {
+                trackClarityEvent("study_area_card_clicked");
+                setView("studyCollection");
+              }}
+              className={`w-full min-h-12 rounded-2xl text-sm font-black text-slate-950 transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-[#fffefb]" : "focus-visible:ring-offset-slate-950"} ${theme.primary} ${theme.primaryHover} shadow-lg ${theme.glow} ${theme.ring}`}
+            >
+              Çalışma Alanına Gir
+            </button>
+          </div>
+        </div>
+
+        {/* ═══════════════════════════════════════════════════════
+            DENEME KARTI
+        ═══════════════════════════════════════════════════════ */}
+        <div
+          onClick={() => setView("examSetSelect")}
+          className={`group relative h-full min-h-0 overflow-hidden rounded-[2.25rem] border p-6 md:p-8 cursor-pointer transition-all duration-500 ${isLightTheme ? "border-slate-300 bg-gradient-to-br from-[#fffefb] via-[#faf8f4] to-[#ebe8e3] hover:border-slate-400 shadow-md" : `${theme.softBorder} bg-gradient-to-br from-slate-900 via-slate-900 to-slate-900/80 hover:border-slate-500/70`}`}
+        >
+          <div className={`absolute -top-20 -right-20 w-72 h-72 ${theme.softBg} rounded-full blur-3xl transition-all duration-700 pointer-events-none`} />
+          <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-cyan-500/5 rounded-full blur-2xl pointer-events-none" />
+
+          <div className="relative z-10 flex h-full flex-col gap-6">
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-3">
+                <span className={`px-3 py-1 rounded-full ${theme.softBg} border ${theme.softBorder} ${theme.text} text-[10px] font-black uppercase tracking-widest`}>
+                  Sabit Deneme Setleri
+                </span>
+              </div>
+              <h2 className={`text-3xl md:text-4xl font-black tracking-tight mb-2 ${isLightTheme ? "text-slate-950" : "text-white"}`}>
+                TUS Denemesi Çöz
+              </h2>
+              <p className={`text-sm mb-6 max-w-md ${isLightTheme ? "text-slate-600" : "text-slate-400"}`}>
+                {FIXED_EXAM_CARD_SUBTITLE}. Bitince analiz ve tahmini puan raporu hazırlanır.
+              </p>
+
+              <div className="flex flex-wrap gap-2.5 mb-8">
+                {[
+                  { icon: "🎯", label: "Tahmini TUS puanı" },
+                  { icon: "⚠️", label: "Zayıf konu özeti" },
+                  { icon: "☁️", label: "Buluta otomatik kayıt" },
+                ].map(f => (
+                  <span key={f.label} className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold ${isLightTheme ? "bg-[#fffefb] border border-slate-300 text-slate-700 shadow-sm" : "bg-slate-800/80 border border-slate-700 text-slate-300"}`}>
+                    <span>{f.icon}</span> {f.label}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <div className={`flex items-center justify-center gap-3 px-7 py-4 rounded-2xl ${theme.primary} text-slate-950 font-black text-base shadow-lg ${theme.glow} group-hover:scale-[1.01] transition-transform duration-300`}>
+                  Denemeyi Başlat →
+                </div>
+                <span className={`text-xs font-bold uppercase tracking-wider ${isLightTheme ? "text-slate-500" : "text-slate-600"}`}>200 Soru · ~150 dk</span>
+              </div>
+            </div>
+
+            {/* Küçük analiz önizlemesi */}
+            <div className={`border rounded-2xl p-4 ${isLightTheme ? "bg-[#fffefb] border-slate-200 shadow-sm" : "bg-slate-950/70 border-slate-800"}`}>
+              <p className={`text-[10px] font-black uppercase tracking-widest mb-3 flex items-center gap-2 ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>
+                <span className={`w-1.5 h-1.5 rounded-full ${theme.primary} animate-ping inline-block`} />
+                Deneme Sonu Analiz
+              </p>
+              <div className="grid grid-cols-3 gap-2 mb-3">
+                {[
+                  { label: "Doğru", val: "89", color: "text-emerald-400" },
+                  { label: "Yanlış", val: "21", color: "text-rose-400" },
+                  { label: "Net",    val: "83.75", color: "text-cyan-400" },
+                ].map(s => (
+                  <div key={s.label} className={`rounded-xl p-2 text-center ${isLightTheme ? "border border-slate-200 bg-[#ebe9e4]" : "bg-slate-900"}`}>
+                    <p className="text-[10px] text-slate-500 font-black uppercase">{s.label}</p>
+                    <p className={`text-base font-black ${s.color}`}>{s.val}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="space-y-1.5">
+                {[{ ders: "Dahiliye", oran: 82 }, { ders: "Patoloji", oran: 61 }, { ders: "Farmakoloji", oran: 44 }].map(r => (
+                  <div key={r.ders} className="flex items-center gap-2">
+                    <span className={`text-[10px] w-20 shrink-0 ${isLightTheme ? "text-slate-600" : "text-slate-400"}`}>{r.ders}</span>
+                    <div className={`flex-1 h-1.5 rounded-full overflow-hidden ${isLightTheme ? "bg-slate-200" : "bg-slate-800"}`}>
+                      <div className={`h-full rounded-full ${r.oran >= 65 ? "bg-emerald-500" : r.oran >= 45 ? "bg-cyan-400" : "bg-rose-500"}`} style={{ width: `${r.oran}%` }} />
+                    </div>
+                    <span className={`text-[10px] font-bold w-8 text-right ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>%{r.oran}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
+
         </div>
 
         {/* Diğer araçlar */}

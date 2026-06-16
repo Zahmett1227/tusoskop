@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { accentThemes } from "../theme/accentThemes";
 import { trackClarityEvent } from "../lib/clarity";
 import {
@@ -108,6 +108,17 @@ export default function StudyCollectionScreen({
     trackClarityEvent("bugunku_tekrar_baslatildi");
     startReviewWithQuestions?.(todayQueue, "todayQueue");
   };
+
+  const handleStartTopicTest = useCallback((lesson, topic) => {
+    if (!questions?.length) return;
+    let pool = [...questions];
+    if (lesson) pool = pool.filter((q) => q.ders === lesson);
+    if (topic) pool = pool.filter((q) => q.konu === topic);
+    if (!pool.length) return;
+    const shuffled = pool.sort(() => Math.random() - 0.5).slice(0, 20);
+    trackClarityEvent("ai_plan_topic_test_baslatildi");
+    startReviewWithQuestions?.(shuffled, "topic_practice");
+  }, [questions, startReviewWithQuestions]);
 
   const handleStartWrongReview = () => {
     const list = unresolvedWrong
@@ -222,7 +233,7 @@ export default function StudyCollectionScreen({
           user={user}
           theme={theme}
           onStartFsrs={todayQueue.length > 0 ? handleStartQueue : undefined}
-          onStartTopicTest={undefined}
+          onStartTopicTest={handleStartTopicTest}
         />
 
         <FsrsStatsSection
