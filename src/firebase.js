@@ -7,7 +7,6 @@ import {
   GoogleAuthProvider,
   OAuthProvider,
   signInWithEmailAndPassword,
-  signInWithCredential,
   signInWithPopup,
   signInWithRedirect,
   signOut,
@@ -21,6 +20,7 @@ import { getFunctions } from "firebase/functions";
 import { trackClarityEvent } from "./lib/clarity";
 import { signInWithNativeApple, signInWithNativeGoogle } from "./services/nativeAuthService";
 import { isNativeIOS, isNativePlatform } from "./utils/device";
+import { clearLastProvider, saveLastProvider } from "./utils/authPersistence";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBF8gh8mOeCpPgbfX_0jP_Fg47wyUXs278",
@@ -78,10 +78,12 @@ export const loginWithGoogle = async () => {
   try {
     if (isNativePlatform()) {
       const user = await loginWithGoogleNative();
+      saveLastProvider("google");
       trackClarityEvent("login_basarili");
       return user;
     }
     const result = await signInWithPopup(auth, googleProvider);
+    saveLastProvider("google");
     trackClarityEvent("login_basarili");
     return result.user;
   } catch (error) {
@@ -140,6 +142,7 @@ export const loginWithApple = async () => {
   if (isNativeIOS()) {
     try {
       const user = await signInWithNativeApple(auth, appleProvider);
+      saveLastProvider("apple");
       trackClarityEvent("apple_native_login_basarili");
       return user;
     } catch (error) {
@@ -169,6 +172,7 @@ export const loginWithApple = async () => {
 
   try {
     const result = await signInWithPopup(auth, appleProvider);
+    saveLastProvider("apple");
     trackClarityEvent("apple_login_basarili");
     return result.user;
   } catch (error) {
@@ -256,7 +260,11 @@ export async function consumePendingRedirectResult() {
   }
 }
 
-export const logout = () => signOut(auth);
+export const logout = () => {
+  // Auto-login fallback'in çıkıştan sonra tekrar giriş yapmasını engelle.
+  clearLastProvider();
+  return signOut(auth);
+};
 
 /**
  * Firestore offline persistence: oturumlar arası sorgu cache'i.

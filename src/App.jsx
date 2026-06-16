@@ -40,6 +40,7 @@ import {
 import MobileBottomNav from "./components/MobileBottomNav";
 import IOSInstallBanner from "./components/IOSInstallBanner";
 import SignInOptions from "./components/auth/SignInOptions";
+import NativeSplash from "./components/NativeSplash";
 import { LEGAL_PAGES } from "./content/legalPages";
 import { FREE_LIMITS } from "./config/limits";
 import { isUserPremium } from "./utils/premiumUtils";
@@ -155,6 +156,8 @@ export default function App() {
     refreshRemainingUsage,
     favoriteQuestionIds,
     setFavoriteQuestionIds,
+    isAuthReady,
+    autoLoginState,
   } = useAppAuthBootstrap(setView);
 
   const [bottomNavReviewCount, setBottomNavReviewCount] = useState(0);
@@ -500,6 +503,16 @@ export default function App() {
     );
     setView("exam");
   };
+
+  // İlk auth kontrolü tamamlanana kadar markalı splash göster.
+  if (!isAuthReady) {
+    return <NativeSplash accentTheme={accentTheme} />;
+  }
+
+  // Native auto-login denemesi sürerken splash'te beklet.
+  if (!user && autoLoginState === "pending") {
+    return <NativeSplash accentTheme={accentTheme} />;
+  }
 
   if (!user) {
     return (
