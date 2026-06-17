@@ -1,6 +1,7 @@
 import { db } from "../firebase";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { getPlatformTag } from "../utils/device";
+import { getStoredAcquisitionForUserDoc } from "../utils/acquisitionAttribution";
 
 const APP_REVIEW_EMAIL = "apple-review@tusoskop.com";
 // iOS MARKETING_VERSION ile hizalı; build sürümü değişince güncellenir.
@@ -29,6 +30,18 @@ export function withAppReviewAccess(firebaseUser, userData = {}) {
     displayName: userData?.displayName ?? firebaseUser.displayName ?? null,
     photoURL: userData?.photoURL ?? firebaseUser.photoURL ?? null,
     ...appReviewAccessPatch(),
+  };
+}
+
+function buildAcquisitionPatch(existingAcquisition, now) {
+  if (existingAcquisition) return {};
+  const stored = getStoredAcquisitionForUserDoc();
+  if (!stored) return {};
+  return {
+    acquisition: {
+      ...stored,
+      firstSeenAt: now,
+    },
   };
 }
 
@@ -63,6 +76,7 @@ export async function ensureUserDocument(firebaseUser) {
         updatedAt: now,
         lastLoginAt: now,
         lastSeenAt: now,
+        ...buildAcquisitionPatch(null, now),
       };
 
       await setDoc(ref, newUserData);
@@ -93,6 +107,7 @@ export async function ensureUserDocument(firebaseUser) {
       updatedAt: now,
       lastLoginAt: now,
       lastSeenAt: now,
+      ...buildAcquisitionPatch(existing.acquisition, now),
     };
 
     await setDoc(ref, safeUpdate, { merge: true });

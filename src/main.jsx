@@ -6,6 +6,7 @@ import ErrorBoundary from './components/ErrorBoundary.jsx'
 import { QuestionsProvider } from './context/QuestionsContext.jsx'
 import { ToastProvider } from './context/ToastContext.jsx'
 import { initClarity } from './lib/clarity'
+import { captureAcquisitionFromUrl } from './utils/acquisitionAttribution'
 import { registerServiceWorker } from './registerServiceWorker'
 import { initNativeAppShell } from './utils/nativeApp'
 
@@ -30,6 +31,7 @@ const runAfterFirstPaint = (task) => {
 
 runAfterFirstPaint(() => {
   initNativeAppShell()
+  captureAcquisitionFromUrl()
   initClarity()
   registerServiceWorker()
 })
