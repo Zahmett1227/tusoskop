@@ -162,9 +162,6 @@ export async function upsertSmartReview(user, question, source = "wrong", grade 
   if (wroteRemote) {
     const trackingSource =
       source === "favorite" ? "favoriteAdded" : source === "manual" ? "manualAdded" : "wrongAdded";
-    if (trackingSource === "wrongAdded") {
-      console.log("[FSRS_STATS] wrongAdded tracking", { uid: user?.uid, questionId });
-    }
     await trackFsrsAddedQuestion({
       uid: user?.uid,
       questionId,

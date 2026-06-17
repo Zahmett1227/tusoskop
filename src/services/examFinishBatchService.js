@@ -198,18 +198,13 @@ export async function saveExamWrongAndSmartReviewsBatch(
       firestoreOk = true;
       await enforceWrongQuestionsLimitForFreeUser(user, userData);
       await Promise.allSettled(
-        reviewEntries
-          .map((entry) => {
-            console.log("[FSRS_STATS] wrongAdded tracking", {
-              uid: user.uid,
-              questionId: entry.questionId,
-            });
-            return trackFsrsAddedQuestion({
-              uid: user.uid,
-              questionId: entry.questionId,
-              source: "wrongAdded",
-            });
+        reviewEntries.map((entry) =>
+          trackFsrsAddedQuestion({
+            uid: user.uid,
+            questionId: entry.questionId,
+            source: "wrongAdded",
           })
+        )
       );
     } catch (error) {
       console.error("saveExamWrongAndSmartReviewsBatch firestore error:", error);

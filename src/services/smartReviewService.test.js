@@ -139,7 +139,9 @@ describe("smartReviewService", () => {
     const created = await ensureSmartReviewsForFavorites({ uid: "u1" }, [question]);
     expect(created).toHaveLength(1);
     expect(created[0].source).toBe("favorite");
-    expect(firestoreMocks.setDoc).toHaveBeenCalledTimes(1);
+    // 1) smartReview kaydı  2) trackFsrsAddedQuestion günlük istatistik artışı
+    // (artış artık transaction dışında setDoc + increment ile yapılıyor).
+    expect(firestoreMocks.setDoc).toHaveBeenCalledTimes(2);
   });
 
   it("topSubjects her ders için en yoğun konuyu içerir", async () => {
