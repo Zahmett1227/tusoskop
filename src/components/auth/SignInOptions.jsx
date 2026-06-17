@@ -25,42 +25,29 @@ export default function SignInOptions({ accentTheme, onGoogleLogin }) {
   const primary = accentTheme?.primary || "bg-emerald-400";
   const primaryHover = accentTheme?.primaryHover || "hover:bg-emerald-300";
   const glow = accentTheme?.glow || "";
-  const [reviewEmail, setReviewEmail] = useState("");
-  const [reviewPassword, setReviewPassword] = useState("");
-  const [reviewStatus, setReviewStatus] = useState("");
-  const [reviewLoading, setReviewLoading] = useState(false);
+  const [showEmailForm, setShowEmailForm] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleReviewLogin = async (event) => {
+  const handleEmailLogin = async (event) => {
     event.preventDefault();
-    if (!reviewEmail.trim()) {
-      setReviewStatus("E-posta girin.");
-      return;
-    }
-    if (!reviewPassword.trim()) {
-      setReviewStatus("Şifre girin.");
-      return;
-    }
-    setReviewLoading(true);
-    setReviewStatus("");
+    if (!email.trim()) { setStatus("E-posta girin."); return; }
+    if (!password.trim()) { setStatus("Şifre girin."); return; }
+    setLoading(true);
+    setStatus("");
     try {
-      await loginWithAppReviewEmail(reviewEmail, reviewPassword);
+      await loginWithAppReviewEmail(email, password);
     } catch (error) {
-      setReviewStatus(error?.userMessage || "Giriş başarısız oldu.");
+      setStatus(error?.userMessage || "Giriş başarısız oldu.");
     } finally {
-      setReviewLoading(false);
+      setLoading(false);
     }
   };
 
   return (
     <div className="w-full max-w-sm space-y-3">
-      <button
-        type="button"
-        onClick={loginWithApple}
-        className="flex min-h-14 w-full items-center justify-center gap-3 rounded-3xl bg-white px-6 py-4 text-base font-black text-slate-950 shadow-2xl shadow-black/20 transition-transform hover:scale-[1.02] active:scale-95"
-      >
-        <AppleMark />
-        Apple ile Giriş Yap
-      </button>
       <button
         type="button"
         onClick={onGoogleLogin}
@@ -69,46 +56,62 @@ export default function SignInOptions({ accentTheme, onGoogleLogin }) {
         <GoogleMark />
         Google ile Giriş Yap
       </button>
+
+      <button
+        type="button"
+        onClick={loginWithApple}
+        className="flex min-h-14 w-full items-center justify-center gap-3 rounded-3xl bg-white px-6 py-4 text-base font-black text-slate-950 shadow-2xl shadow-black/20 transition-transform hover:scale-[1.02] active:scale-95"
+      >
+        <AppleMark />
+        Apple ile Giriş Yap
+      </button>
+
+      <button
+        type="button"
+        onClick={() => { setShowEmailForm((v) => !v); setStatus(""); }}
+        className="w-full text-center text-xs font-semibold text-slate-400 hover:text-slate-200 transition py-1"
+      >
+        Diğer giriş seçenekleri
+      </button>
+
+      {showEmailForm && (
+        <form onSubmit={handleEmailLogin} className="rounded-2xl border border-slate-800 bg-slate-900/45 p-3">
+          <div className="space-y-2">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="E-posta"
+              autoComplete="email"
+              className="h-10 w-full rounded-xl border border-slate-800 bg-slate-950 px-3 text-center text-xs font-semibold text-white outline-none transition focus:border-slate-600"
+              aria-label="E-posta"
+            />
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Şifre"
+              autoComplete="current-password"
+              className="h-10 w-full rounded-xl border border-slate-800 bg-slate-950 px-3 text-center text-xs font-semibold text-white outline-none transition focus:border-slate-600"
+              aria-label="Şifre"
+            />
+            <button
+              type="submit"
+              disabled={loading}
+              className="h-10 w-full rounded-xl border border-slate-700 bg-slate-800 px-3 text-xs font-black text-slate-100 transition hover:bg-slate-700 disabled:cursor-wait disabled:opacity-60"
+            >
+              {loading ? "Giriş yapılıyor..." : "Giriş"}
+            </button>
+          </div>
+          {status ? (
+            <p className="mt-2 text-center text-[11px] font-semibold text-rose-300">{status}</p>
+          ) : null}
+        </form>
+      )}
+
       <p className="px-2 text-center text-xs font-medium leading-relaxed text-slate-500">
         Giriş yaparak çalışma verilerinin hesabına bağlı saklanmasını kabul edersin.
       </p>
-      <form
-        onSubmit={handleReviewLogin}
-        className="mt-2 rounded-2xl border border-slate-800 bg-slate-900/45 p-3"
-      >
-        <div className="space-y-2">
-          <input
-            type="email"
-            value={reviewEmail}
-            onChange={(event) => setReviewEmail(event.target.value)}
-            placeholder="E-posta"
-            autoComplete="email"
-            className="h-10 w-full rounded-xl border border-slate-800 bg-slate-950 px-3 text-center text-xs font-semibold text-white outline-none transition focus:border-slate-600"
-            aria-label="E-posta"
-          />
-          <input
-            type="password"
-            value={reviewPassword}
-            onChange={(event) => setReviewPassword(event.target.value)}
-            placeholder="Şifre"
-            autoComplete="current-password"
-            className="h-10 w-full rounded-xl border border-slate-800 bg-slate-950 px-3 text-center text-xs font-semibold text-white outline-none transition focus:border-slate-600"
-            aria-label="Şifre"
-          />
-          <button
-            type="submit"
-            disabled={reviewLoading}
-            className="h-10 w-full rounded-xl border border-slate-700 bg-slate-800 px-3 text-xs font-black text-slate-100 transition hover:bg-slate-700 disabled:cursor-wait disabled:opacity-60"
-          >
-            {reviewLoading ? "Giriş yapılıyor..." : "Giriş"}
-          </button>
-        </div>
-        {reviewStatus ? (
-          <p className="mt-2 text-center text-[11px] font-semibold text-rose-300">
-            {reviewStatus}
-          </p>
-        ) : null}
-      </form>
     </div>
   );
 }
