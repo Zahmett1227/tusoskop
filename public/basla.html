@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Tusoskop — Yönlendiriliyor</title>
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        background: #05070d;
+        color: #e2e8f0;
+      }
+      main {
+        width: min(100%, 26rem);
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.025);
+        backdrop-filter: blur(16px);
+        border-radius: 1.75rem;
+        padding: 2rem 1.5rem;
+      }
+      .mark {
+        width: 3rem;
+        height: 3rem;
+        margin: 0 auto 1rem;
+        border-radius: 999px;
+        border: 2px solid rgba(16, 185, 129, 0.35);
+        border-top-color: #34d399;
+        animation: spin 0.9s linear infinite;
+      }
+      h1 {
+        margin: 0 0 0.5rem;
+        font-size: 1.125rem;
+        font-weight: 800;
+      }
+      p {
+        margin: 0;
+        color: #94a3b8;
+        font-size: 0.9375rem;
+        line-height: 1.5;
+      }
+      .links {
+        margin-top: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      a {
+        color: #6ee7b7;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="mark" aria-hidden="true"></div>
+      <h1>Tusoskop'a yönlendiriliyorsun</h1>
+      <p id="status">Cihazın algılanıyor…</p>
+      <div class="links">
+        <a id="ios-link" href="https://apps.apple.com/tr/app/tusoskop/id6776331691?l=tr">App Store'da aç</a>
+        <a id="web-link" href="https://tusoskop.com/">tusoskop.com'a git</a>
+      </div>
+    </main>
+    <script>
+      (function () {
+        var APP_STORE_URL = "https://apps.apple.com/tr/app/tusoskop/id6776331691?l=tr";
+        var APP_STORE_DEEP_LINK = "itms-apps://apps.apple.com/tr/app/tusoskop/id6776331691?l=tr";
+        var SITE_URL = "https://tusoskop.com/";
+
+        function isAppleMobile() {
+          var ua = navigator.userAgent || "";
+          var platform = navigator.platform || "";
+          var maxTouch = navigator.maxTouchPoints || 0;
+
+          if (/iPhone|iPod/.test(ua)) return true;
+          if (/iPad/.test(ua)) return true;
+          if (platform === "MacIntel" && maxTouch > 1) return true;
+          return false;
+        }
+
+        function withQuery(base) {
+          var search = window.location.search || "";
+          var hash = window.location.hash || "";
+          if (!search && !hash) return base;
+          return base + search + hash;
+        }
+
+        var status = document.getElementById("status");
+        var iosLink = document.getElementById("ios-link");
+        var webLink = document.getElementById("web-link");
+        var target = isAppleMobile() ? APP_STORE_URL : SITE_URL;
+        var targetWithQuery = withQuery(target);
+
+        iosLink.href = withQuery(APP_STORE_URL);
+        webLink.href = withQuery(SITE_URL);
+
+        if (isAppleMobile()) {
+          status.textContent = "iPhone veya iPad algılandı. App Store açılıyor…";
+          window.location.replace(withQuery(APP_STORE_DEEP_LINK));
+          window.setTimeout(function () {
+            window.location.replace(targetWithQuery);
+          }, 1200);
+          return;
+        }
+
+        status.textContent = "Web sürümüne yönlendiriliyorsun…";
+        window.location.replace(targetWithQuery);
+      })();
+    </script>
+  </body>
+</html>

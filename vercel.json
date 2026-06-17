@@ -1,0 +1,24 @@
+{
+  "rewrites": [
+    {
+      "source": "/basla",
+      "destination": "/basla.html"
+    },
+    {
+      "source": "/basla/",
+      "destination": "/basla.html"
+    },
+    {
+      "source": "/başla",
+      "destination": "/basla.html"
+    },
+    {
+      "source": "/ba%C5%9Fla",
+      "destination": "/basla.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
