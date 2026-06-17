@@ -54,6 +54,14 @@ function CountdownTimer({ weekId }) {
   );
 }
 
+const ACCENT_HEX = {
+  emerald: "#34d399",
+  cyan: "#22d3ee",
+  violet: "#a78bfa",
+  amber: "#fbbf24",
+  light: "#10b981",
+};
+
 export default function LeaderboardScreen({ user, userData, accentTheme, accentThemeKey, goDashboard }) {
   const theme = accentTheme || accentThemes.emerald;
   const isLightTheme = theme.usesLightChrome ?? (theme.mode === "light" || accentThemeKey === "light");
@@ -143,6 +151,7 @@ export default function LeaderboardScreen({ user, userData, accentTheme, accentT
   };
 
   const topScore = rankings[0]?.score || 0;
+  const accentHex = ACCENT_HEX[accentThemeKey] || theme.hex || "#34d399";
 
   const pageClasses = isLightTheme
     ? "min-h-dvh bg-[#faf8f4] text-slate-950"
@@ -151,16 +160,27 @@ export default function LeaderboardScreen({ user, userData, accentTheme, accentT
   return (
     <div className={pageClasses}>
       {/* Header */}
-      <div className="sticky top-0 z-30 bg-[#05070d]/90 backdrop-blur-md border-b border-white/[0.06]"
-        style={{ paddingTop: "env(safe-area-inset-top)" }}>
-        <div className="flex items-center justify-between px-4 py-4 max-w-lg mx-auto">
+      <div className="sticky top-0 z-30 backdrop-blur-md border-b border-white/[0.06] relative overflow-hidden"
+        style={{
+          paddingTop: "env(safe-area-inset-top)",
+          background: `linear-gradient(180deg, ${accentHex}26 0%, rgba(5,7,13,0.92) 100%)`,
+        }}>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 h-28 w-72 rounded-full blur-3xl opacity-50"
+          style={{ background: `${accentHex}55` }}
+        />
+        <div className="relative flex items-center justify-between px-4 py-4 max-w-lg mx-auto">
           <button type="button" onClick={goDashboard}
             className="w-9 h-9 rounded-full flex items-center justify-center bg-white/[0.05]
               border border-white/[0.08] text-slate-400 hover:text-white transition-colors active:scale-95">
             <ChevronLeft />
           </button>
           <div className="text-center">
-            <h1 className="text-base font-black text-white tracking-tight">Haftalık Sıralama</h1>
+            <h1 className="text-base font-black tracking-tight flex items-center justify-center gap-1.5">
+              <span aria-hidden="true">🏆</span>
+              <span className="text-white">Haftalık Sıralama</span>
+            </h1>
             <CountdownTimer weekId={weekId} />
           </div>
           <button type="button" onClick={() => { setShowSettings((s) => !s); setEditNickname(profile?.nickname || ""); setNicknameError(""); }}
@@ -270,7 +290,7 @@ export default function LeaderboardScreen({ user, userData, accentTheme, accentT
                 nickname={profile?.nickname}
                 topScore={topScore}
                 currentStreak={currentStreak}
-                accentTheme={theme}
+                accentTheme={{ ...theme, hex: accentHex }}
               />
             </div>
 
@@ -294,17 +314,31 @@ export default function LeaderboardScreen({ user, userData, accentTheme, accentT
             </div>
 
             {/* Puanlama bilgisi */}
-            <div className="rounded-[1.75rem] border border-white/[0.06] bg-white/[0.02] p-5">
-              <p className="text-xs font-black text-slate-400 mb-3">Puan Sistemi</p>
-              <div className="space-y-2 text-xs text-slate-500">
-                <div className="flex justify-between"><span>Benzersiz soru çözme</span><span className="font-bold text-slate-400">+2</span></div>
-                <div className="flex justify-between"><span>Doğru cevap</span><span className="font-bold text-slate-400">+8</span></div>
-                <div className="flex justify-between"><span>Zor soru doğru (diff 4-5)</span><span className="font-bold text-slate-400">+4</span></div>
-                <div className="flex justify-between"><span>Günlük FSRS tekrar tamamlama</span><span className="font-bold text-slate-400">+20</span></div>
-                <div className="flex justify-between"><span>Günlük çalışma bonusu</span><span className="font-bold text-slate-400">+10</span></div>
-                <div className="flex justify-between"><span>Tam deneme tamamlama</span><span className="font-bold text-slate-400">+50</span></div>
-                <p className="text-slate-700 mt-2 border-t border-white/[0.04] pt-2">
-                  Aynı soru aynı hafta içinde yalnızca ilk çözümde puan verir.
+            <div className="relative overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-white/[0.02] p-5">
+              <div className="pointer-events-none absolute -right-10 -bottom-10 h-32 w-32 rounded-full blur-3xl opacity-30"
+                style={{ background: `${accentHex}40` }} />
+              <p className="relative text-xs font-black text-slate-300 mb-3 flex items-center gap-1.5">
+                <span aria-hidden="true">💎</span> Puan Sistemi
+              </p>
+              <div className="relative space-y-2 text-xs">
+                {[
+                  { icon: "📝", label: "Benzersiz soru çözme", pts: "+2", color: "#94a3b8" },
+                  { icon: "✅", label: "Doğru cevap", pts: "+8", color: "#34d399" },
+                  { icon: "🔥", label: "Zor soru doğru (diff 4-5)", pts: "+4", color: "#fb923c" },
+                  { icon: "📚", label: "Günlük FSRS tekrar", pts: "+20", color: "#a78bfa" },
+                  { icon: "⚡", label: "Günlük çalışma bonusu", pts: "+10", color: "#fbbf24" },
+                  { icon: "🎯", label: "Tam deneme tamamlama", pts: "+50", color: "#22d3ee" },
+                ].map((row) => (
+                  <div key={row.label} className="flex items-center justify-between rounded-lg px-2 py-1.5 bg-white/[0.02]">
+                    <span className="flex items-center gap-2 text-slate-400">
+                      <span aria-hidden="true">{row.icon}</span>
+                      {row.label}
+                    </span>
+                    <span className="font-black tabular-nums" style={{ color: row.color }}>{row.pts}</span>
+                  </div>
+                ))}
+                <p className="text-slate-600 mt-2 border-t border-white/[0.06] pt-2.5 leading-relaxed">
+                  💡 Aynı soru aynı hafta içinde yalnızca ilk çözümde puan verir.
                 </p>
               </div>
             </div>
