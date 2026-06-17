@@ -24,6 +24,9 @@ import {
 import { trackFsrsReviewedQuestion } from "../services/fsrsStatsService";
 import { isReactEventOrDomNode, normalizeAnswerValue } from "../utils/examUtils";
 import { recordQuestionHistory } from "../services/questionHistoryService";
+import { submitQuestionScoreEvent, submitDailyBonusEvent } from "../services/leaderboardService";
+import { getCurrentWeekId } from "../utils/weekIdUtils";
+import { EVENT_TYPES } from "../utils/leaderboardScoreUtils";
 
 /**
  * Çalışma / tekrar / konu modu state ve handler'ları.
@@ -406,6 +409,25 @@ export function useStudyState({
         mode: studyMode === "topic" ? "topic" : studyMode === "review" ? "review" : "study",
       });
       if (user) updateStreak(user.uid);
+
+      // Leaderboard: soru puanı (fire-and-forget — kullanıcı deneyimini yavaşlatmaz)
+      if (user?.uid && q?.id) {
+        const weekId = getCurrentWeekId();
+        submitQuestionScoreEvent(user.uid, {
+          questionId: q.id,
+          isCorrect,
+          difficulty: q.diff,
+          lessonName: q.ders,
+          topicName: q.konu,
+          weekId,
+        }).catch(() => {});
+        // Günlük çalışma bonusu (streak günü) — Firestore transaction deduplicate eder
+        submitDailyBonusEvent(user.uid, {
+          eventType: EVENT_TYPES.STREAK_DAY,
+          weekId,
+        }).catch(() => {});
+      }
+
       if (studyMode === "review") {
         if (answer !== null && answer !== undefined && q?.id) {
           await updateWrongQuestionAfterReview(user, q, isCorrect, answer, userData);
@@ -537,6 +559,15 @@ export function useStudyState({
           stillNeedsReview,
         });
         trackClarityEvent("tekrar_tamamlandi");
+
+        // Leaderboard: Günlük FSRS tekrar tamamlama bonusu
+        if (user?.uid && activeReviewContext === "daily_fsrs_review") {
+          submitDailyBonusEvent(user.uid, {
+            eventType: EVENT_TYPES.FSRS_DAILY_COMPLETED,
+            weekId: getCurrentWeekId(),
+          }).catch(() => {});
+        }
+
         await refreshSmartReviewSummary();
         resetStudyState();
         setView("reviewSummary");
@@ -547,6 +578,7 @@ export function useStudyState({
     }
   }, [
     activeQuestions,
+    activeReviewContext,
     currentIndex,
     persistStudySessionMetrics,
     refreshSmartReviewSummary,
