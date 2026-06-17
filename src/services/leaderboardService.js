@@ -9,7 +9,6 @@ import {
   query,
   runTransaction,
   serverTimestamp,
-  setDoc,
 } from "firebase/firestore";
 import { auth, db } from "../firebase";
 import { getCurrentWeekId } from "../utils/weekIdUtils";
@@ -31,17 +30,6 @@ export function clearLeaderboardProfileCache() {
   _profileCache = null;
 }
 
-async function fetchAndCacheProfile(uid) {
-  if (_profileCache?.uid === uid) return _profileCache;
-  try {
-    const snap = await getDoc(profileRef(uid));
-    if (snap.exists()) {
-      _profileCache = snap.data();
-      return _profileCache;
-    }
-  } catch {}
-  return null;
-}
 
 function isOptedInFromCache(uid) {
   if (!_profileCache || _profileCache.uid !== uid) return false;
@@ -157,26 +145,6 @@ export async function checkNicknameAvailable(nickname, currentUid = null) {
 
 // ─── Score Events ─────────────────────────────────────────────────────────────
 
-async function getOrCreateWeekUserDoc(tx, weekId, uid, nickname) {
-  const ref = weekUserDocRef(weekId, uid);
-  const snap = await tx.get(ref);
-  if (!snap.exists()) {
-    tx.set(ref, {
-      nickname: nickname || "Anonim",
-      score: 0,
-      solvedCount: 0,
-      correctCount: 0,
-      accuracy: 0,
-      streakBonusCount: 0,
-      fsrsCompletedCount: 0,
-      mockExamCount: 0,
-      lastScoreAt: serverTimestamp(),
-      updatedAt: serverTimestamp(),
-    });
-  }
-  return ref;
-}
-
 /**
  * Soru çözme puanı gönderir. Aynı sorudan aynı hafta tekrar puan verilmez.
  * Fire-and-forget olarak çağrılmalı — await kullanma.
@@ -209,7 +177,6 @@ export async function submitQuestionScoreEvent(uid, {
 
       const userRef = weekUserDocRef(weekId, uid);
       const userSnap = await tx.get(userRef);
-      const currentScore = userSnap.exists() ? (userSnap.data().score || 0) : 0;
       const currentSolvedCount = userSnap.exists() ? (userSnap.data().solvedCount || 0) : 0;
 
       // Soft cap: günlük soru puanından max 150 — basit yaklaşım: toplam skor kontrolü
