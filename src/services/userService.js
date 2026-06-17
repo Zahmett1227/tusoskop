@@ -1,5 +1,18 @@
 import { db } from "../firebase";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
+import { getStoredAcquisitionForUserDoc } from "../utils/acquisitionAttribution";
+
+function buildAcquisitionPatch(existingAcquisition, now) {
+  if (existingAcquisition) return {};
+  const stored = getStoredAcquisitionForUserDoc();
+  if (!stored) return {};
+  return {
+    acquisition: {
+      ...stored,
+      firstSeenAt: now,
+    },
+  };
+}
 
 export async function ensureUserDocument(firebaseUser) {
   if (!firebaseUser?.uid) return null;
@@ -27,6 +40,7 @@ export async function ensureUserDocument(firebaseUser) {
         createdAt: now,
         updatedAt: now,
         lastLoginAt: now,
+        ...buildAcquisitionPatch(null, now),
       };
 
       await setDoc(ref, newUserData);
@@ -53,6 +67,7 @@ export async function ensureUserDocument(firebaseUser) {
       lifetimePremium: existing.lifetimePremium ?? false,
       updatedAt: now,
       lastLoginAt: now,
+      ...buildAcquisitionPatch(existing.acquisition, now),
     };
 
     await setDoc(ref, safeUpdate, { merge: true });

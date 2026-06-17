@@ -37,6 +37,44 @@ service cloud.firestore {
       ]);
     }
 
+    function hasValidAcquisitionShape(data) {
+      return data.keys().hasOnly(['source', 'medium', 'campaign', 'firstSeenAt'])
+        && data.source is string
+        && data.source.size() > 0
+        && data.source.size() <= 50
+        && data.medium is string
+        && data.medium.size() > 0
+        && data.medium.size() <= 30
+        && data.campaign is string
+        && data.campaign.size() > 0
+        && data.campaign.size() <= 40
+        && data.firstSeenAt is timestamp;
+    }
+
+    function hasOptionalValidAcquisitionOnCreate() {
+      return !request.resource.data.keys().hasAny(['acquisition'])
+        || hasValidAcquisitionShape(request.resource.data.acquisition);
+    }
+
+    function userHasAcquisition() {
+      return resource.data.keys().hasAny(['acquisition'])
+        && resource.data.acquisition != null;
+    }
+
+    function isSafeAcquisitionUpdate() {
+      return !userHasAcquisition()
+        && request.resource.data.keys().hasAny(['acquisition'])
+        && hasValidAcquisitionShape(request.resource.data.acquisition)
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'acquisition',
+          'updatedAt',
+          'lastLoginAt',
+          'email',
+          'displayName',
+          'photoURL'
+        ]);
+    }
+
     function hasAllowedSelfUserCreateKeys() {
       return request.resource.data.keys().hasOnly([
         'uid',
@@ -53,7 +91,8 @@ service cloud.firestore {
         'grantedAt',
         'createdAt',
         'updatedAt',
-        'lastLoginAt'
+        'lastLoginAt',
+        'acquisition'
       ]);
     }
 
@@ -63,8 +102,10 @@ service cloud.firestore {
         && request.resource.data.uid == request.auth.uid
         && hasAllowedSelfUserCreateKeys()
         && hasRequiredSelfCreatePremiumKeys()
-        && hasOnlySafeSelfCreatePremiumValues();
+        && hasOnlySafeSelfCreatePremiumValues()
+        && hasOptionalValidAcquisitionOnCreate();
       allow update: if isAdmin()
+        || isSafeAcquisitionUpdate()
         || (
           isOwner(uid)
           && !request.resource.data.diff(resource.data).affectedKeys()
@@ -79,7 +120,8 @@ service cloud.firestore {
               'grantedAt',
               'role',
               'isAdmin',
-              'admin'
+              'admin',
+              'acquisition'
             ])
         );
     }
@@ -242,6 +284,12 @@ service cloud.firestore {
       allow read: if isAdmin();
       allow create: if isAdmin();
       allow update, delete: if false;
+    }
+
+    // Instagram /basla kampanya tıklamaları — yalnızca backend (Admin SDK) yazar.
+    match /campaignClicks/{clickId} {
+      allow read: if isAdmin();
+      allow create, update, delete: if false;
     }
   }
 }

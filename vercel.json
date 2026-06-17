@@ -9,19 +9,19 @@
   "rewrites": [
     {
       "source": "/basla",
-      "destination": "/basla.html"
+      "destination": "/api/campaign-redirect"
     },
     {
       "source": "/basla/",
-      "destination": "/basla.html"
+      "destination": "/api/campaign-redirect"
     },
     {
       "source": "/başla",
-      "destination": "/basla.html"
+      "destination": "/api/campaign-redirect"
     },
     {
       "source": "/ba%C5%9Fla",
-      "destination": "/basla.html"
+      "destination": "/api/campaign-redirect"
     },
     {
       "source": "/(.*)",
