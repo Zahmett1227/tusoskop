@@ -36,7 +36,7 @@ function LoadingSpinner() {
   );
 }
 
-function CountdownTimer({ weekId }) {
+function CountdownTimer() {
   const [remaining, setRemaining] = useState(() => getTimeUntilWeekEnd());
   useEffect(() => {
     const id = setInterval(() => setRemaining(getTimeUntilWeekEnd()), 60000);
@@ -62,7 +62,7 @@ const ACCENT_HEX = {
   light: "#10b981",
 };
 
-export default function LeaderboardScreen({ user, userData, accentTheme, accentThemeKey, goDashboard }) {
+export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, goDashboard }) {
   const theme = accentTheme || accentThemes.emerald;
   const isLightTheme = theme.usesLightChrome ?? (theme.mode === "light" || accentThemeKey === "light");
 

@@ -39,7 +39,7 @@ export function getTodayDateStr() {
   return new Date().toISOString().split("T")[0];
 }
 
-export function getMotivationMessage({ rank, score, topScore, solvedCount }) {
+export function getMotivationMessage({ rank, score, topScore }) {
   if (rank === 1) return "Bu hafta zirvede! Devam et!";
   if (rank <= 3) return `İlk 3'tesin! Haftayı güçlü bitir.`;
   if (rank <= 10) return `İlk 10'dasin. ${topScore - score > 0 ? `Birinciye ${topScore - score} puan kaldı.` : ""}`;
