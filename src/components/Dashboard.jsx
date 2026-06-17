@@ -26,6 +26,7 @@ import { getStreak } from "../services/streakService";
 import { getSmartReviewSummary, getSmartReviews } from "../services/smartReviewService";
 import { buildTopicRows, groupReviewsBySubject } from "../utils/smartReviewUtils";
 import { useToast } from "../context/ToastContext";
+import DashboardLeaderboardWidget from "./leaderboard/DashboardLeaderboardWidget";
 
 function toSafeTargetScore(value, fallback = 65) {
   const n = Number(value);
@@ -493,6 +494,14 @@ export default function Dashboard({
           freeExamUsed={freeExamUsed}
           freeReviewUsed={freeReviewUsed}
           onOpenPremium={() => setView("premiumInfo")}
+        />
+
+        {/* Haftalık Sıralama widget'ı */}
+        <DashboardLeaderboardWidget
+          user={user}
+          isLightTheme={isLightTheme}
+          accentTheme={{ ...theme, hex }}
+          setView={setView}
         />
 
         {/* İkincil katman: takvim, seri, hedef — ana hero ile rekabet etmez */}
