@@ -1,5 +1,6 @@
 import React from "react";
 import { getMotivationMessage } from "../../utils/leaderboardScoreUtils";
+import AvatarIcon from "./AvatarIcon";
 
 function StatPill({ label, value, accent = false, color }) {
   return (
@@ -75,9 +76,12 @@ export default function UserRankCard({ stats, rank, nickname, topScore, currentS
         )}
 
         <div className="flex items-center justify-between mb-4">
-          <div className="min-w-0">
-            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-0.5">Senin Kartın</p>
-            <p className="text-xl font-black text-white tracking-tight truncate">{nickname || "Anonim"}</p>
+          <div className="flex items-center gap-2.5 min-w-0">
+            <AvatarIcon size={36} />
+            <div className="min-w-0">
+              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-0.5">Senin Kartın</p>
+              <p className="text-xl font-black text-white tracking-tight truncate">{nickname || "Anonim"}</p>
+            </div>
           </div>
           <div className="text-right shrink-0 ml-3">
             <p className="text-3xl font-black tabular-nums leading-none" style={{ color: hex }}>
