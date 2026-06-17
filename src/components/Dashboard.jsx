@@ -26,6 +26,7 @@ import { getStreak } from "../services/streakService";
 import { getSmartReviewSummary, getSmartReviews } from "../services/smartReviewService";
 import { buildTopicRows, groupReviewsBySubject } from "../utils/smartReviewUtils";
 import { useToast } from "../context/ToastContext";
+import DashboardLeaderboardWidget from "./leaderboard/DashboardLeaderboardWidget";
 
 const ACCENT_HEX = {
   emerald: "#34d399",
@@ -496,6 +497,14 @@ export default function Dashboard({
           freeExamUsed={freeExamUsed}
           freeReviewUsed={freeReviewUsed}
           onOpenPremium={() => setView("premiumInfo")}
+        />
+
+        {/* Haftalık Sıralama widget'ı */}
+        <DashboardLeaderboardWidget
+          user={user}
+          isLightTheme={isLightTheme}
+          accentTheme={{ ...theme, hex }}
+          setView={setView}
         />
 
         {/* İkincil katman: takvim, seri, hedef — ana hero ile rekabet etmez */}
