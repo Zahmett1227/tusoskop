@@ -38,6 +38,9 @@ import {
   resolveQuestionsFromReviews,
 } from "./services/smartReviewService";
 import { updateFsrsDueSnapshot } from "./services/fsrsStatsService";
+import { submitDailyBonusEvent, clearLeaderboardProfileCache } from "./services/leaderboardService";
+import { EVENT_TYPES } from "./utils/leaderboardScoreUtils";
+import { getCurrentWeekId } from "./utils/weekIdUtils";
 
 // Bileşenler (Screens)
 import MobileBottomNav from "./components/MobileBottomNav";
@@ -68,6 +71,7 @@ const ExamSetSelectScreen = lazy(() => import("./components/ExamSetSelectScreen"
 const TopicTracker = lazy(() => import("./components/TopicTracker"));
 const AdminPanel = lazy(() => import("./components/admin/AdminPanel"));
 const PremiumInfoScreen = lazy(() => import("./components/premium/PremiumInfoScreen"));
+const LeaderboardScreen = lazy(() => import("./components/LeaderboardScreen"));
 const LimitReachedModal = lazy(() => import("./components/premium/LimitReachedModal"));
 const LegalPage = lazy(() => import("./components/legal/LegalPage"));
 const REVIEW_CONTEXT = {
@@ -100,6 +104,7 @@ const BOTTOM_NAV_VIEWS = new Set([
   "questionSetup",
   "studyCollection",
   "tracker",
+  "leaderboard",
 ]);
 function RouteFallback() {
   return (
@@ -165,6 +170,11 @@ export default function App() {
     setFavoriteQuestionIds,
     isAuthReady,
   } = useAppAuthBootstrap(setView);
+
+  // Kullanıcı çıkış yaptığında leaderboard profile cache'ini temizle
+  useEffect(() => {
+    if (!user) clearLeaderboardProfileCache();
+  }, [user]);
 
   const [bottomNavReviewCount, setBottomNavReviewCount] = useState(0);
   const [smartReviewSummary, setSmartReviewSummary] = useState({
@@ -263,6 +273,14 @@ export default function App() {
 
   const handleExamCompleted = () => {
     clearInProgressExam();
+    // Leaderboard: deneme tamamlama bonusu (fire-and-forget)
+    if (user?.uid) {
+      submitDailyBonusEvent(user.uid, {
+        eventType: EVENT_TYPES.MOCK_EXAM_COMPLETED,
+        weekId: getCurrentWeekId(),
+        examId: examState.selectedExamSet?.id,
+      }).catch(() => {});
+    }
   };
 
   const { setQuestionActionLoading } = studyState;
@@ -753,6 +771,18 @@ export default function App() {
             </button>
           </div>
         </div>
+      );
+      break;
+
+    case "leaderboard":
+      screenContent = (
+        <LeaderboardScreen
+          user={user}
+          userData={userData}
+          accentTheme={accentTheme}
+          accentThemeKey={accentThemeKey}
+          goDashboard={goDashboard}
+        />
       );
       break;
 
