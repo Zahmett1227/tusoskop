@@ -236,6 +236,59 @@ service cloud.firestore {
       allow delete: if false;
     }
 
+    // Nickname benzersizlik tablo — okuma herkes, yazma transaction ile kendi kaydı
+    match /normalizedNicknames/{normalized} {
+      allow read: if true;
+      allow create: if isSignedIn()
+        && request.resource.data.uid == request.auth.uid;
+      allow delete: if isSignedIn()
+        && resource.data.uid == request.auth.uid;
+      allow update: if false;
+    }
+
+    // Leaderboard profilleri — nickname, isOptedIn vs.
+    function isValidLeaderboardNickname(nick) {
+      return nick is string
+        && nick.size() >= 3
+        && nick.size() <= 20;
+    }
+
+    match /leaderboardProfiles/{uid} {
+      allow read: if true;
+      allow create: if isOwner(uid)
+        && request.resource.data.uid == uid
+        && isValidLeaderboardNickname(request.resource.data.nickname)
+        && request.resource.data.keys().hasOnly([
+          'uid', 'nickname', 'normalizedNickname', 'isOptedIn',
+          'createdAt', 'updatedAt', 'lastNicknameChangeAt'
+        ]);
+      allow update: if isOwner(uid)
+        && isValidLeaderboardNickname(request.resource.data.nickname)
+        && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['uid', 'createdAt']);
+      allow delete: if false;
+    }
+
+    // Haftalık sıralama — kullanıcı kendi skorunu yazar, herkes okur
+    match /weeklyLeaderboard/{weekId}/users/{uid} {
+      allow read: if true;
+      allow create, update: if isOwner(uid);
+      allow delete: if false;
+    }
+
+    // Soru deduplicate — kullanıcı kendi çözüm kaydını ekler, silemez
+    match /weeklyLeaderboard/{weekId}/users/{uid}/solvedQuestions/{questionId} {
+      allow read: if isOwner(uid);
+      allow create: if isOwner(uid);
+      allow update, delete: if false;
+    }
+
+    // Günlük bonus deduplicate — kullanıcı kendi event'ini ekler, silemez
+    match /weeklyLeaderboard/{weekId}/users/{uid}/dailyEvents/{eventId} {
+      allow read: if isOwner(uid);
+      allow create: if isOwner(uid);
+      allow update, delete: if false;
+    }
+
     // Sosyal medya içerik kuyruğu — yalnızca admin
     match /socialContentQueue/{contentId} {
       allow read, create, update: if isAdmin();
