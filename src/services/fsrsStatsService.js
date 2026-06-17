@@ -90,7 +90,6 @@ function normalizeStatsDoc(date, data = {}) {
 }
 
 export async function trackFsrsAddedQuestion({ uid, questionId, source }) {
-  console.log("[FSRS_STATS] trackFsrsAddedQuestion called", { uid, questionId, source });
   const safeUid = resolveStatsUid(uid);
   if (!safeUid) return;
   const eventQuestionId = normalizeQuestionEventId(questionId);
@@ -104,33 +103,39 @@ export async function trackFsrsAddedQuestion({ uid, questionId, source }) {
   const statsRef = doc(db, "users", safeUid, "fsrsDailyStats", date);
 
   try {
-    await runTransaction(db, async (transaction) => {
+    // Dedup yalnızca event dokümanı üzerinden yapılır. Bu doküman soru+source
+    // başına benzersiz olduğundan eşzamanlı çağrılar birbiriyle çakışmaz.
+    // Paylaşılan günlük istatistik dokümanı (statsRef) transaction'a DAHİL
+    // EDİLMEZ — aksi halde deneme bitişinde onlarca eşzamanlı transaction aynı
+    // dokümanı okuyup "stored version does not match" (failed-precondition)
+    // hatası verir.
+    const isNewEvent = await runTransaction(db, async (transaction) => {
       const eventSnap = await transaction.get(eventRef);
-      if (eventSnap.exists()) {
-        console.log("[FSRS_STATS] duplicate event skipped", { eventId });
-        return;
-      }
-
-      const statsSnap = await transaction.get(statsRef);
+      if (eventSnap.exists()) return false;
       transaction.set(eventRef, {
         questionId: eventQuestionId,
         date,
         source: normalizedSource,
         createdAt: serverTimestamp(),
       });
-      transaction.set(
-        statsRef,
-        {
-          date,
-          addedCount: increment(1),
-          [sourceCounter]: increment(1),
-          ...(statsSnap.exists() ? {} : { createdAt: serverTimestamp() }),
-          updatedAt: serverTimestamp(),
-        },
-        { merge: true }
-      );
+      return true;
     });
-    console.log("[FSRS_STATS] daily stat updated", { date, source: normalizedSource });
+
+    if (!isNewEvent) return;
+
+    // Günlük istatistik artışı transaction dışında: increment() atomik ve
+    // değişmeli (commutative) olduğundan eşzamanlı yazımlar güvenle birikir,
+    // versiyon çakışması oluşmaz.
+    await setDoc(
+      statsRef,
+      {
+        date,
+        addedCount: increment(1),
+        [sourceCounter]: increment(1),
+        updatedAt: serverTimestamp(),
+      },
+      { merge: true }
+    );
   } catch (error) {
     console.error("trackFsrsAddedQuestion error:", error);
   }
