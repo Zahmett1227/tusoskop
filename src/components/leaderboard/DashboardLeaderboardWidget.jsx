@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getTopRankings, getUserWeeklyStats, getUserRank } from "../../services/leaderboardService";
 import { getCurrentWeekId, formatWeekLabel } from "../../utils/weekIdUtils";
+import AvatarIcon from "./AvatarIcon";
 
 const MEDALS = ["🥇", "🥈", "🥉"];
 
@@ -121,6 +122,7 @@ export default function DashboardLeaderboardWidget({ user, isLightTheme, accentT
                   style={isCurrentUser ? { borderColor: `${hex}50`, backgroundColor: `${hex}12` } : {}}
                 >
                   <span className="text-lg w-7 text-center shrink-0">{MEDALS[i]}</span>
+                  <AvatarIcon size={26} />
                   <span className={`flex-1 text-sm font-black truncate ${isCurrentUser ? "" : (isLightTheme ? "text-slate-800" : "text-white")}`}
                     style={isCurrentUser ? { color: hex } : {}}>
                     {item.nickname}
@@ -149,6 +151,7 @@ export default function DashboardLeaderboardWidget({ user, isLightTheme, accentT
                   <span className={`text-sm font-black w-7 text-center shrink-0 tabular-nums ${isLightTheme ? "text-slate-500" : "text-slate-400"}`}>
                     {userRank}.
                   </span>
+                  <AvatarIcon size={26} />
                   <span className="flex-1 text-sm font-black truncate" style={{ color: hex }}>
                     Sen
                   </span>

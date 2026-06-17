@@ -1,4 +1,5 @@
 import React from "react";
+import AvatarIcon from "./AvatarIcon";
 
 // Top 3 için zengin podyum stilleri — gradient + glow + parıltı
 const PODIUM = {
@@ -62,6 +63,7 @@ function LeaderboardRow({ entry, isCurrentUser }) {
   return (
     <div className={`relative flex items-center gap-3 px-3.5 py-3 rounded-2xl border transition-all duration-200 ${baseBg}`}>
       <RankBadge rank={entry.rank} />
+      <AvatarIcon size={30} />
       <div className="flex-1 min-w-0">
         <p className={`text-sm font-black truncate ${
           isCurrentUser ? "text-emerald-300" : p ? p.name : "text-white"

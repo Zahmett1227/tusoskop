@@ -201,7 +201,7 @@ export async function submitQuestionScoreEvent(uid, {
       const newAccuracy = newSolvedCount > 0 ? Math.round((newCorrectCount / newSolvedCount) * 100) : 0;
 
       tx.set(userRef, {
-        nickname: nickname || userSnap.data()?.nickname || "Anonim",
+        nickname: nickname || _profileCache?.nickname || userSnap.data()?.nickname || "Anonim",
         score: increment(points),
         solvedCount: increment(1),
         correctCount: increment(newCorrectDelta),
@@ -259,7 +259,7 @@ export async function submitDailyBonusEvent(uid, { eventType, weekId, nickname, 
 
       tx.set(dedupeDocRef, { eventType, points, createdAt: serverTimestamp() });
       tx.set(userRef, {
-        nickname: nickname || userSnap.data()?.nickname || "Anonim",
+        nickname: nickname || _profileCache?.nickname || userSnap.data()?.nickname || "Anonim",
         score: increment(points),
         ...(countField ? { [countField]: increment(1) } : {}),
         lastScoreAt: serverTimestamp(),
