@@ -270,10 +270,16 @@ async function paytrCallbackHandler(req, res) {
       }
 
       const nowIso = new Date().toISOString();
-      const until = new Date(Date.now() + Number(days) * 86400000).toISOString();
       const userRef = db().doc(`users/${targetUid}`);
       const userSnap = await tx.get(userRef);
       const prev = userSnap.exists ? userSnap.data() : {};
+
+      // Mevcut aktif Plus bitiş tarihini koru; üzerine ekle (süreyi silme).
+      const existingUntil = premiumUntilToDate(prev.premiumUntil);
+      const baseMs = (existingUntil && existingUntil > new Date())
+        ? existingUntil.getTime()
+        : Date.now();
+      const until = new Date(baseMs + Number(days) * 86400000).toISOString();
 
       tx.set(
         userRef,

@@ -19,6 +19,9 @@ import {
 export default function PaytrCheckoutModal({ token, uid, onClose, onSuccess }) {
   const [phase, setPhase] = useState("paying"); // paying | success
   const iframeRef = useRef(null);
+  // Modalın açıldığı andaki premium bitiş tarihini sakla; onSnapshot sadece
+  // bu modal açıldıktan SONRA oluşan bir premium değişikliğini yakalamalı.
+  const baseUntilRef = useRef(null);
 
   // iframeResizer scriptini yükle ve iframe'e bağla
   useEffect(() => {
@@ -55,12 +58,24 @@ export default function PaytrCheckoutModal({ token, uid, onClose, onSuccess }) {
     };
   }, [token]);
 
-  // Ödeme sonucu: callback users/{uid} dokümanını günceller → premium aktif olunca yakala
+  // Ödeme sonucu: callback users/{uid} dokümanını günceller → bu ödemeye ait
+  // yeni bir premium tanımı gelince "başarılı" ekranına geç.
+  // İlk snapshot'ta mevcut premiumUntil'i kaydet; sadece bundan SONRA gelen
+  // daha ileri bir premiumUntil değeri bu ödemenin başarısı sayılır.
   useEffect(() => {
     if (!uid) return undefined;
+    let initialized = false;
     const unsub = onSnapshot(doc(db, "users", uid), (snap) => {
       const data = snap.exists() ? snap.data() : null;
-      if (data && isUserPremium(data)) {
+      if (!initialized) {
+        // İlk tetiklenme: mevcut durumu baz al, başarı saymaz.
+        baseUntilRef.current = data?.premiumUntil ?? null;
+        initialized = true;
+        return;
+      }
+      if (!data || !isUserPremium(data)) return;
+      // premiumUntil bu modal açılmadan öncekinden farklıysa bu ödeme aktive etti.
+      if (data.premiumUntil !== baseUntilRef.current) {
         setPhase("success");
         try {
           trackClarityEvent("paytr_payment_success");
