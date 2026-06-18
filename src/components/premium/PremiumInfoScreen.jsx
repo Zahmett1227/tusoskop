@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { PRICING } from "../../constants/pricing";
 import { PLUS_PLANS } from "../../config/plusPlans";
-import { createPremiumPurchaseIntent } from "../../services/purchaseIntentService";
+import { requestPaytrToken } from "../../services/paytrService";
 import {
   SUPPORT_EMAIL,
   getMailtoFeedback,
@@ -10,6 +10,7 @@ import {
 import { setClarityTag, trackClarityEvent } from "../../lib/clarity";
 import { isUserPremium } from "../../utils/premiumUtils";
 import CoffeeAnimation from "./CoffeeAnimation";
+import PaytrCheckoutModal from "./PaytrCheckoutModal";
 import Footer from "../layout/Footer";
 
 const PLUS_PLAN_CLICK_EVENT = {
@@ -50,6 +51,8 @@ export default function PremiumInfoScreen({
 }) {
   const [copyDone, setCopyDone] = useState(false);
   const [banner, setBanner] = useState("");
+  const [loadingPlanId, setLoadingPlanId] = useState(null);
+  const [paytrCheckout, setPaytrCheckout] = useState(null); // { token, merchantOid }
   const plusPageViewSent = useRef(false);
 
   useEffect(() => {
@@ -93,53 +96,37 @@ export default function PremiumInfoScreen({
         }
       }
 
-      if (!plan?.shopifyUrl?.trim()) {
-        try {
-          setClarityTag("checkout_missing_plan", plan?.id || "");
-          trackClarityEvent("checkout_link_missing");
-        } catch {
-          /* sessiz */
-        }
-        setBanner("Bu paket için satın alma bağlantısı hazırlanıyor.");
-        return;
-      }
-
-      const url = plan.shopifyUrl.trim();
-
-      if (!url.startsWith("https://")) {
-        try {
-          setClarityTag("checkout_missing_plan", plan?.id || "");
-          trackClarityEvent("checkout_link_missing");
-        } catch {
-          /* sessiz */
-        }
-        console.error("Geçersiz Shopify URL:", url);
-        setBanner(
-          "Satın alma bağlantısı hatalı görünüyor. Lütfen daha sonra tekrar deneyin."
-        );
-        return;
-      }
-
       if (!user?.uid) {
         setBanner("Satın alma için hesabınızla giriş yapmalısınız.");
         return;
       }
 
+      setLoadingPlanId(plan.id);
       try {
-        await createPremiumPurchaseIntent(user, plan);
+        const res = await requestPaytrToken(plan, {
+          userName: user?.displayName || undefined,
+        });
+        if (!res.ok || !res.token) {
+          console.error("PayTR token alınamadı:", res.error);
+          setBanner(
+            "Ödeme başlatılamadı. Lütfen birkaç saniye sonra tekrar deneyin."
+          );
+          return;
+        }
+        try {
+          setClarityTag("checkout_plan", plan.id);
+          setClarityTag("checkout_sku", plan.sku || "");
+          trackClarityEvent("paytr_checkout_open");
+        } catch {
+          /* sessiz */
+        }
+        setPaytrCheckout({ token: res.token, merchantOid: res.merchantOid });
       } catch (error) {
-        console.error("Purchase intent oluşturulamadı:", error);
+        console.error("PayTR ödeme akışı hatası:", error);
+        setBanner("Ödeme başlatılamadı. Lütfen tekrar deneyin.");
+      } finally {
+        setLoadingPlanId(null);
       }
-
-      try {
-        setClarityTag("checkout_plan", plan.id);
-        setClarityTag("checkout_sku", plan.sku || "");
-        trackClarityEvent("checkout_redirect");
-      } catch {
-        /* sessiz */
-      }
-
-      window.location.assign(url);
     },
     [user]
   );
@@ -153,6 +140,14 @@ export default function PremiumInfoScreen({
 
   return (
     <div className="min-h-dvh bg-gradient-to-b from-[#fdfcfa] via-[#fcfbf9] to-[#f5f0ea] text-black px-3 py-5 pb-12 sm:px-4 md:px-8 md:py-10">
+      {paytrCheckout ? (
+        <PaytrCheckoutModal
+          token={paytrCheckout.token}
+          uid={user?.uid}
+          onClose={() => setPaytrCheckout(null)}
+          onSuccess={onBack}
+        />
+      ) : null}
       <div className="max-w-5xl mx-auto space-y-8 md:space-y-10">
         {banner ? (
           <div
@@ -212,8 +207,8 @@ export default function PremiumInfoScreen({
           <div className="mt-6 flex flex-wrap gap-2.5">
             {[
               ["♾️", "Sınırsız soru, deneme ve tekrar"],
-              ["⚡", "En geç 24 saatte aktivasyon"],
-              ["🔒", "Shopify ile güvenli ödeme"],
+              ["⚡", "Ödeme sonrası anında aktivasyon"],
+              ["🔒", "PayTR ile güvenli ödeme"],
               ["📄", "Mesafeli satış & iade güvencesi"],
             ].map(([icon, label]) => (
               <span
@@ -333,13 +328,13 @@ export default function PremiumInfoScreen({
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <span className="inline-block rounded-full bg-[#1f160f] px-3 py-1 text-[10px] font-black uppercase tracking-wide text-white">
-                  En geç 24 saat içinde aktivasyon
+                  Ödeme sonrası anında aktivasyon
                 </span>
                 <p className="mt-2 text-sm font-semibold text-neutral-900 leading-snug">
-                  Ödeme tamamlandıktan sonra Plus erişiminiz manuel kontrol edilir; en geç 24 saat içinde hesabınıza tanımlanır.
+                  Ödeme tamamlandığı anda Plus erişiminiz otomatik olarak hesabınıza tanımlanır; beklemeniz gerekmez.
                 </p>
                 <p className="mt-1 text-xs font-medium text-neutral-600 leading-relaxed">
-                  Doğru hesapla giriş yaptığınızdan emin olun. Gerekirse Hesap ID&apos;nizi destek mesajında paylaşın.
+                  Erişim, giriş yaptığınız hesaba tanımlanır. Sorun yaşarsanız Hesap ID&apos;nizi destek mesajında paylaşabilirsiniz.
                 </p>
               </div>
             </div>
@@ -348,7 +343,8 @@ export default function PremiumInfoScreen({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 items-stretch">
             {PLUS_PLANS.map((plan) => {
               const is1m = plan.id === "plus_1m";
-              const hasUrl = Boolean(plan.shopifyUrl?.trim());
+              const isLoading = loadingPlanId === plan.id;
+              const disabled = Boolean(loadingPlanId) || !user?.uid;
               const highlight = plan.highlight;
               const cardBase =
                 "relative flex flex-col overflow-hidden rounded-[2rem] border p-5 sm:p-6 min-h-0 min-w-0 transition duration-300 ease-out";
@@ -420,22 +416,22 @@ export default function PremiumInfoScreen({
                   <button
                     type="button"
                     onClick={(e) => handlePlanClick(e, plan)}
-                    disabled={!hasUrl}
+                    disabled={disabled}
                     className={`relative mt-5 w-full rounded-2xl font-black transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c4a882] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
                       highlight ? "min-h-14 px-4 py-4 text-base" : "min-h-12 px-3 py-3 text-sm"
                     } ${
-                      !hasUrl
+                      disabled && !isLoading
                         ? "bg-neutral-100 text-neutral-500 border border-neutral-200 cursor-not-allowed"
                         : highlight
                         ? "bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] text-white shadow-[0_14px_30px_-10px_rgba(154,107,50,0.75)] hover:brightness-105 hover:shadow-[0_18px_36px_-10px_rgba(154,107,50,0.8)] active:scale-[0.98]"
                         : "bg-[#1a120c] text-white shadow-lg shadow-neutral-900/15 hover:bg-black hover:shadow-xl active:scale-[0.98]"
                     }`}
                   >
-                    {hasUrl ? plan.ctaLabel : "Bağlantı hazırlanıyor"}
+                    {isLoading ? "Ödeme hazırlanıyor…" : plan.ctaLabel}
                   </button>
-                  {!hasUrl ? (
+                  {!user?.uid ? (
                     <p className="mt-2 text-center text-xs font-medium text-neutral-500">
-                      Bu paket için satın alma bağlantısı hazırlanıyor.
+                      Satın almak için önce giriş yapın.
                     </p>
                   ) : null}
                 </article>
@@ -480,17 +476,16 @@ export default function PremiumInfoScreen({
             Ödeme sonrası nasıl aktifleşir?
           </h2>
           <p className="text-sm md:text-base font-medium text-neutral-800 leading-relaxed">
-            Satın alma tamamlandıktan sonra Plus erişiminiz manuel olarak kontrol
-            edilir ve en geç 24 saat içinde hesabınıza tanımlanır.
+            Ödemeniz PayTR üzerinden güvenli şekilde alınır ve onaylandığı anda
+            Plus erişiminiz otomatik olarak hesabınıza tanımlanır.
           </p>
           <p className="text-sm md:text-base font-medium text-neutral-700 mt-3 leading-relaxed">
-            Erişimin doğru tanımlanabilmesi için ödeme yapmadan önce doğru Tusoskop
-            hesabıyla giriş yaptığınızdan emin olun. Gerekirse Hesap ID'nizi
-            destek mesajında paylaşabilirsiniz.
+            Erişim, giriş yaptığınız Tusoskop hesabına tanımlanır. Ödemeden önce
+            doğru hesapla giriş yaptığınızdan emin olun.
           </p>
           <p className="text-xs sm:text-sm font-medium text-neutral-600 mt-3 leading-relaxed">
-            Ödeme sırasında sorun yaşarsanız veya Plus erişiminiz 24 saat içinde
-            açılmazsa{" "}
+            Ödeme sırasında sorun yaşarsanız veya Plus erişiminiz birkaç dakika
+            içinde açılmazsa{" "}
             <span className="font-bold text-neutral-800">{SUPPORT_EMAIL}</span>{" "}
             üzerinden bize ulaşabilirsiniz.
           </p>

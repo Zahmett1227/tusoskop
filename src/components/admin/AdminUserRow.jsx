@@ -8,6 +8,7 @@ import {
 function formatPremiumSource(src) {
   if (!src || src === "none") return "—";
   if (src === "admin") return "Admin";
+  if (src === "paytr") return "PayTR";
   if (src === "shopify") return "Shopify";
   return String(src);
 }

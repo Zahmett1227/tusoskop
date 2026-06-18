@@ -4,7 +4,7 @@ if (!admin.apps.length) {
   admin.initializeApp();
 }
 
-const { onCall, HttpsError } = require("firebase-functions/v2/https");
+const { onCall, onRequest, HttpsError } = require("firebase-functions/v2/https");
 const { defineSecret } = require("firebase-functions/params");
 const { getFirestore, FieldValue } = require("firebase-admin/firestore");
 const { FREE_LIMITS } = require("./constants");
@@ -12,6 +12,12 @@ const { tryPublishSocialContentHandler } = require("./socialPublisher");
 const { buildUserStudySummary } = require("./services/buildUserStudySummary");
 const { generateAiStudyPlan } = require("./services/generateAiStudyPlan");
 const { buildFallbackDailyStudyPlan } = require("./services/buildFallbackDailyStudyPlan");
+const {
+  PAYTR_MERCHANT_KEY,
+  PAYTR_MERCHANT_SALT,
+  createPaytrTokenHandler,
+  paytrCallbackHandler,
+} = require("./paytr");
 
 const GEMINI_API_KEY = defineSecret("GEMINI_API_KEY");
 
@@ -214,6 +220,32 @@ exports.tryPublishSocialContent = onCall(
     cors: allowedOrigins,
   },
   tryPublishSocialContentHandler
+);
+
+/**
+ * PayTR iFrame ödeme token'ı üretir. Kimlik doğrulamalı kullanıcı çağırır.
+ * Tutar/süre sunucudaki PAYTR_PLANS tablosundan gelir; istemci yalnızca planId yollar.
+ */
+exports.createPaytrToken = onCall(
+  {
+    region: "us-central1",
+    cors: allowedOrigins,
+    secrets: [PAYTR_MERCHANT_KEY, PAYTR_MERCHANT_SALT],
+  },
+  createPaytrTokenHandler
+);
+
+/**
+ * PayTR sunucudan sunucuya ödeme bildirimi (notification URL).
+ * Başarılı ödemede kullanıcıya otomatik Plus tanımlar. Yanıt düz metin "OK".
+ * PayTR panelinde bildirim URL'i olarak bu fonksiyonun adresi tanımlanmalıdır.
+ */
+exports.paytrCallback = onRequest(
+  {
+    region: "us-central1",
+    secrets: [PAYTR_MERCHANT_KEY, PAYTR_MERCHANT_SALT],
+  },
+  paytrCallbackHandler
 );
 
 /**

@@ -37,7 +37,7 @@ export const LEGAL_PAGES = [
         heading: "Fiyat ve ödeme",
         paragraphs: [
           "Güncel paket fiyatları satın alma ekranında gösterilir.",
-          "Ödeme işlemi Shopify altyapısı üzerinden gerçekleştirilir.",
+          "Ödeme işlemi PayTR ödeme altyapısı üzerinden gerçekleştirilir.",
           "Ödeme sonrası Plus erişimi kullanıcının Tusoskop hesabına tanımlanır.",
         ],
       },
@@ -115,14 +115,14 @@ export const LEGAL_PAGES = [
         heading: "İade başvurusu",
         paragraphs: [
           "İade ve iptal talepleri için e-posta: tusoskop.destek@gmail.com",
-          "Başvuruda şu bilgiler yer almalıdır: Tusoskop hesap e-postası; Hesap ID; satın alınan paket; ödeme tarihi; varsa Shopify sipariş numarası; talep nedeni.",
+          "Başvuruda şu bilgiler yer almalıdır: Tusoskop hesap e-postası; Hesap ID; satın alınan paket; ödeme tarihi; varsa PayTR sipariş/işlem numarası; talep nedeni.",
         ],
       },
       {
         heading: "Değerlendirme süreci",
         paragraphs: [
           "Başvurular makul süre içinde değerlendirilir.",
-          "Ödeme Shopify üzerinden yapıldığı için iade süreçleri Shopify ve ödeme sağlayıcısının işlem sürelerine bağlı olabilir.",
+          "Ödeme PayTR üzerinden yapıldığı için iade süreçleri PayTR ve ilgili ödeme sağlayıcısının işlem sürelerine bağlı olabilir.",
         ],
       },
       {
@@ -163,14 +163,14 @@ export const LEGAL_PAGES = [
         heading: "Ödeme bilgileri",
         paragraphs: [
           "Kart bilgileri Tusoskop tarafından saklanmaz.",
-          "Ödeme işlemleri Shopify ve ilgili ödeme sağlayıcısı üzerinden yürütülür.",
+          "Ödeme işlemleri PayTR ve ilgili ödeme sağlayıcısı üzerinden yürütülür.",
           "Tusoskop yalnızca ödeme talebi, paket bilgisi ve erişim tanımlaması için gerekli sınırlı bilgileri işler.",
         ],
       },
       {
         heading: "Üçüncü taraf hizmetler",
         paragraphs: [
-          "Platformda Firebase, Vercel, Shopify ve Microsoft Clarity gibi üçüncü taraf hizmetler kullanılabilir.",
+          "Platformda Firebase, Vercel, PayTR ve Microsoft Clarity gibi üçüncü taraf hizmetler kullanılabilir.",
           "Bu hizmetler kendi gizlilik politikalarına tabi olabilir.",
         ],
       },
@@ -208,7 +208,7 @@ export const LEGAL_PAGES = [
           "Kullanıcı hesap bilgileri: UID, displayName, photoURL.",
           "Kullanım verileri: çözülen soru sayısı, deneme sonuçları, yanlışlar, favoriler, tekrar kuyruğu.",
           "Abonelik / erişim bilgileri: plan, premiumStatus, premiumUntil, premiumSource.",
-          "Ödeme talebi bilgileri: satın alınmak istenen paket, fiyat, tarih, Shopify yönlendirme bilgisi.",
+          "Ödeme talebi bilgileri: satın alınmak istenen paket, fiyat, tarih, PayTR işlem/sipariş bilgisi.",
           "Teknik veriler: cihaz, tarayıcı, oturum ve kullanım analitiği.",
         ],
       },
@@ -227,8 +227,8 @@ export const LEGAL_PAGES = [
       {
         heading: "Verilerin aktarılması",
         paragraphs: [
-          "Kişisel veriler, hizmetin sunulması için kullanılan Firebase, Vercel, Shopify, Microsoft Clarity ve benzeri teknik hizmet sağlayıcılarla sınırlı olarak paylaşılabilir.",
-          "Ödeme işlemleri Shopify ve ilgili ödeme altyapısı üzerinden yürütülür.",
+          "Kişisel veriler, hizmetin sunulması için kullanılan Firebase, Vercel, PayTR, Microsoft Clarity ve benzeri teknik hizmet sağlayıcılarla sınırlı olarak paylaşılabilir.",
+          "Ödeme işlemleri PayTR ve ilgili ödeme altyapısı üzerinden yürütülür.",
         ],
       },
       {

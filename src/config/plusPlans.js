@@ -14,7 +14,6 @@ export const PLUS_PLANS = [
     highlight: false,
     badge: null,
     ctaLabel: "1 Aylık Başlat",
-    shopifyUrl: import.meta.env.VITE_SHOPIFY_PLUS_1M_URL || "",
   },
   {
     id: "plus_3m",
@@ -30,7 +29,6 @@ export const PLUS_PLANS = [
     highlight: true,
     badge: "Önerilen",
     ctaLabel: "3 Aylık Başlat",
-    shopifyUrl: import.meta.env.VITE_SHOPIFY_PLUS_3M_URL || "",
   },
   {
     id: "plus_6m",
@@ -47,7 +45,6 @@ export const PLUS_PLANS = [
     highlight: false,
     badge: "En avantajlı aylık fiyat",
     ctaLabel: "6 Aylık Başlat",
-    shopifyUrl: import.meta.env.VITE_SHOPIFY_PLUS_6M_URL || "",
   },
 ];
 
