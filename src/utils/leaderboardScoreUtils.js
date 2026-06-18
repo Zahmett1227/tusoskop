@@ -39,6 +39,20 @@ export function getTodayDateStr() {
   return new Date().toISOString().split("T")[0];
 }
 
+export const LEAGUES = {
+  TEMEL: "temel",
+  KLINIK: "klinik",
+};
+
+const TEMEL_SUBJECT_SET = new Set([
+  "Fizyoloji", "Patoloji", "Farmakoloji", "Mikrobiyoloji", "Anatomi", "Biyokimya",
+]);
+
+export function getLeagueForSubject(subjectName) {
+  if (!subjectName) return LEAGUES.KLINIK;
+  return TEMEL_SUBJECT_SET.has(subjectName) ? LEAGUES.TEMEL : LEAGUES.KLINIK;
+}
+
 export function getMotivationMessage({ rank, score, topScore }) {
   if (rank === 1) return "Bu hafta zirvede! Devam et!";
   if (rank <= 3) return `İlk 3'tesin! Haftayı güçlü bitir.`;

@@ -52,25 +52,35 @@ function RankBadge({ rank }) {
   );
 }
 
-function LeaderboardRow({ entry, isCurrentUser }) {
+function LeaderboardRow({ entry, isCurrentUser, accentHex }) {
+  const hex = accentHex || "#34d399";
   const p = PODIUM[entry.rank];
   const baseBg = isCurrentUser
-    ? "bg-gradient-to-r from-emerald-500/[0.16] via-emerald-400/[0.07] to-transparent border-emerald-400/40 shadow-[0_0_22px_-10px_rgba(52,211,153,0.6)]"
+    ? "border transition-all duration-200"
     : p
       ? `${p.rowBg} ${p.glow}`
       : "bg-white/[0.025] border-white/[0.05] hover:bg-white/[0.05]";
 
   return (
-    <div className={`relative flex items-center gap-3 px-3.5 py-3 rounded-2xl border transition-all duration-200 ${baseBg}`}>
+    <div
+      className={`relative flex items-center gap-3 px-3.5 py-3 rounded-2xl border transition-all duration-200 ${baseBg}`}
+      style={isCurrentUser ? {
+        borderColor: `${hex}50`,
+        backgroundColor: `${hex}16`,
+        boxShadow: `0 0 22px -10px ${hex}60`,
+      } : {}}
+    >
       <RankBadge rank={entry.rank} />
       <AvatarIcon size={30} />
       <div className="flex-1 min-w-0">
-        <p className={`text-sm font-black truncate ${
-          isCurrentUser ? "text-emerald-300" : p ? p.name : "text-white"
-        }`}>
+        <p className={`text-sm font-black truncate ${p && !isCurrentUser ? p.name : "text-white"}`}
+          style={isCurrentUser ? { color: hex } : {}}>
           {entry.nickname}
           {isCurrentUser && (
-            <span className="ml-1.5 inline-flex items-center rounded-md bg-emerald-400/20 px-1.5 py-0.5 text-[9px] font-black uppercase tracking-wider text-emerald-300 align-middle">
+            <span
+              className="ml-1.5 inline-flex items-center rounded-md px-1.5 py-0.5 text-[9px] font-black uppercase tracking-wider align-middle"
+              style={{ backgroundColor: `${hex}25`, color: hex }}
+            >
               Sen
             </span>
           )}
@@ -90,7 +100,10 @@ function LeaderboardRow({ entry, isCurrentUser }) {
         </p>
       </div>
       <div className="text-right shrink-0">
-        <p className={`text-base font-black tabular-nums ${isCurrentUser ? "text-emerald-300" : p ? p.score : "text-white"}`}>
+        <p
+          className={`text-base font-black tabular-nums ${p && !isCurrentUser ? p.score : "text-white"}`}
+          style={isCurrentUser ? { color: hex } : {}}
+        >
           {entry.score?.toLocaleString("tr-TR")}
         </p>
         <p className="text-[9px] text-slate-600 font-bold uppercase tracking-wider">puan</p>
@@ -99,11 +112,15 @@ function LeaderboardRow({ entry, isCurrentUser }) {
   );
 }
 
-export default function LeaderboardList({ rankings, currentUserDocId, userRank }) {
+export default function LeaderboardList({ rankings, currentUserDocId, userRank, accentHex }) {
+  const hex = accentHex || "#34d399";
   if (!rankings || rankings.length === 0) {
     return (
       <div className="relative flex flex-col items-center justify-center py-12 text-slate-600 overflow-hidden rounded-[1.75rem] border border-white/[0.06] bg-white/[0.02]">
-        <div className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 h-32 w-32 rounded-full bg-emerald-400/10 blur-3xl" />
+        <div
+          className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 h-32 w-32 rounded-full blur-3xl opacity-20"
+          style={{ background: hex }}
+        />
         <span className="relative text-5xl mb-3 animate-bounce">🏁</span>
         <p className="relative font-black text-sm text-slate-400">Henüz sıralamada kimse yok.</p>
         <p className="relative text-xs mt-1">Soru çözerek ilk sıraya gir!</p>
@@ -121,6 +138,7 @@ export default function LeaderboardList({ rankings, currentUserDocId, userRank }
           key={entry.docId || entry.rank}
           entry={entry}
           isCurrentUser={entry.docId === currentUserDocId}
+          accentHex={hex}
         />
       ))}
 
@@ -141,6 +159,7 @@ export default function LeaderboardList({ rankings, currentUserDocId, userRank }
               docId: currentUserDocId,
             }}
             isCurrentUser
+            accentHex={hex}
           />
         </>
       )}

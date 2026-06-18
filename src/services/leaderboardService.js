@@ -15,6 +15,8 @@ import { getCurrentWeekId } from "../utils/weekIdUtils";
 import {
   calcQuestionPoints,
   EVENT_TYPES,
+  LEAGUES,
+  getLeagueForSubject,
   SCORING,
 } from "../utils/leaderboardScoreUtils";
 import { normalizeNickname } from "../utils/nicknameUtils";
@@ -38,6 +40,11 @@ function isOptedInFromCache(uid) {
 
 function canWrite() {
   return Boolean(auth.currentUser?.uid);
+}
+
+// league: "temel" | "klinik" — weekId'ye suffix olarak eklenir
+function leagueWeekId(weekId, league) {
+  return league ? `${weekId}_${league}` : weekId;
 }
 
 function weekUsersRef(weekId) {
@@ -164,26 +171,23 @@ export async function submitQuestionScoreEvent(uid, {
   nickname,
 }) {
   if (!uid || !canWrite() || !questionId) return;
-  if (!isOptedInFromCache(uid)) return; // Opt-in değilse atla
+  if (!isOptedInFromCache(uid)) return;
   if (!weekId) weekId = getCurrentWeekId();
 
+  const league = getLeagueForSubject(lessonName);
+  const wid = leagueWeekId(weekId, league);
   const points = calcQuestionPoints({ isCorrect, difficulty });
-  const dedupeSolved = solvedRef(weekId, uid, questionId);
+  const dedupeSolved = solvedRef(wid, uid, questionId);
 
   try {
     await runTransaction(db, async (tx) => {
       const solvedSnap = await tx.get(dedupeSolved);
-      if (solvedSnap.exists()) return; // Aynı sorudan aynı hafta tekrar puan yok
+      if (solvedSnap.exists()) return;
 
-      const userRef = weekUserDocRef(weekId, uid);
+      const userRef = weekUserDocRef(wid, uid);
       const userSnap = await tx.get(userRef);
       const currentSolvedCount = userSnap.exists() ? (userSnap.data().solvedCount || 0) : 0;
 
-      // Soft cap: günlük soru puanından max 150 — basit yaklaşım: toplam skor kontrolü
-      // Not: Gerçek bir daily cap uygulaması için dailyQuestionPoints ayrı tutulmalı
-      // MVP'de soft cap uygulamıyoruz; deduplication yeterince adil
-
-      // Mark as solved
       tx.set(dedupeSolved, {
         questionId: Number(questionId),
         isCorrect,
@@ -193,7 +197,6 @@ export async function submitQuestionScoreEvent(uid, {
         solvedAt: serverTimestamp(),
       });
 
-      // Update weekly user stats
       const newCorrectDelta = isCorrect ? 1 : 0;
       const newSolvedCount = currentSolvedCount + 1;
       const currentCorrectCount = userSnap.exists() ? (userSnap.data().correctCount || 0) : 0;
@@ -211,24 +214,27 @@ export async function submitQuestionScoreEvent(uid, {
       }, { merge: true });
     });
   } catch (err) {
-    // Sessiz hata — kullanıcı deneyimini etkilemez
     if (import.meta.env.DEV) console.warn("submitQuestionScoreEvent error:", err);
   }
 }
 
 /**
  * Günlük event bonusu: FSRS tamamlama, streak günü, deneme.
- * Günde 1 kez verilebilir (deduplication ile).
- */
-/**
- * Günlük event bonusu: FSRS tamamlama, streak günü, deneme.
- * Günde 1 kez (veya deneme için sınav başına 1 kez).
+ * Her iki ligə de ayrı transaction ile yazılır (ortak kriterler).
+ * Fire-and-forget olarak çağrılmalı.
  */
 export async function submitDailyBonusEvent(uid, { eventType, weekId, nickname, examId }) {
   if (!uid || !canWrite()) return;
   if (!isOptedInFromCache(uid)) return;
   if (!weekId) weekId = getCurrentWeekId();
 
+  await Promise.all([
+    _submitDailyBonusToLeague(uid, { eventType, wid: leagueWeekId(weekId, LEAGUES.TEMEL), nickname, examId }),
+    _submitDailyBonusToLeague(uid, { eventType, wid: leagueWeekId(weekId, LEAGUES.KLINIK), nickname, examId }),
+  ]);
+}
+
+async function _submitDailyBonusToLeague(uid, { eventType, wid, nickname, examId }) {
   const bonusMap = {
     [EVENT_TYPES.FSRS_DAILY_COMPLETED]: SCORING.FSRS_DAILY_BONUS,
     [EVENT_TYPES.STREAK_DAY]: SCORING.STREAK_DAY_BONUS,
@@ -237,10 +243,9 @@ export async function submitDailyBonusEvent(uid, { eventType, weekId, nickname, 
   const points = bonusMap[eventType];
   if (!points) return;
 
-  // Deneme bonusu: examId bazlı dedupe (aynı sınavı aynı hafta iki kez bitirirse ikinci puan yok)
   const dedupeDocRef = eventType === EVENT_TYPES.MOCK_EXAM_COMPLETED && examId
-    ? doc(db, "weeklyLeaderboard", weekId, "users", uid, "dailyEvents", `exam_${examId}`)
-    : dailyDedupeRef(weekId, uid, eventType);
+    ? doc(db, "weeklyLeaderboard", wid, "users", uid, "dailyEvents", `exam_${examId}`)
+    : doc(db, "weeklyLeaderboard", wid, "users", uid, "dailyEvents", `${eventType}_${todayStr()}`);
 
   const fieldMap = {
     [EVENT_TYPES.FSRS_DAILY_COMPLETED]: "fsrsCompletedCount",
@@ -252,9 +257,9 @@ export async function submitDailyBonusEvent(uid, { eventType, weekId, nickname, 
   try {
     await runTransaction(db, async (tx) => {
       const dedupeSnap = await tx.get(dedupeDocRef);
-      if (dedupeSnap.exists()) return; // Bugün zaten verildi
+      if (dedupeSnap.exists()) return;
 
-      const userRef = weekUserDocRef(weekId, uid);
+      const userRef = weekUserDocRef(wid, uid);
       const userSnap = await tx.get(userRef);
 
       tx.set(dedupeDocRef, { eventType, points, createdAt: serverTimestamp() });
@@ -273,10 +278,11 @@ export async function submitDailyBonusEvent(uid, { eventType, weekId, nickname, 
 
 // ─── Rankings ─────────────────────────────────────────────────────────────────
 
-export async function getTopRankings(weekId, topN = 50) {
+export async function getTopRankings(weekId, topN = 50, league) {
   if (!weekId) weekId = getCurrentWeekId();
+  const wid = leagueWeekId(weekId, league);
   try {
-    const q = query(weekUsersRef(weekId), orderBy("score", "desc"), limit(topN));
+    const q = query(weekUsersRef(wid), orderBy("score", "desc"), limit(topN));
     const snap = await getDocs(q);
     return snap.docs.map((d, i) => ({
       rank: i + 1,
@@ -294,11 +300,12 @@ export async function getTopRankings(weekId, topN = 50) {
   }
 }
 
-export async function getUserWeeklyStats(uid, weekId) {
+export async function getUserWeeklyStats(uid, weekId, league) {
   if (!uid) return null;
   if (!weekId) weekId = getCurrentWeekId();
+  const wid = leagueWeekId(weekId, league);
   try {
-    const snap = await getDoc(weekUserDocRef(weekId, uid));
+    const snap = await getDoc(weekUserDocRef(wid, uid));
     if (!snap.exists()) return null;
     const data = snap.data();
     return {
@@ -316,21 +323,17 @@ export async function getUserWeeklyStats(uid, weekId) {
   }
 }
 
-export async function getUserRank(uid, weekId) {
+export async function getUserRank(uid, weekId, league) {
   if (!uid) return null;
   if (!weekId) weekId = getCurrentWeekId();
   try {
-    const userStats = await getUserWeeklyStats(uid, weekId);
+    const userStats = await getUserWeeklyStats(uid, weekId, league);
     if (!userStats) return null;
 
-    // Rank'ı bulmak için tüm listeyi score'a göre sırala, uid'yi bul
-    // Not: Firestore'da offset+rank yoktur; top 50'yi çekip kontrol ederiz
-    // Eğer kullanıcı top 50 dışındaysa, score > userScore olan kayıtları say
-    const topList = await getTopRankings(weekId, 200);
+    const topList = await getTopRankings(weekId, 200, league);
     const found = topList.findIndex((item) => item.docId === uid);
     if (found !== -1) return found + 1;
 
-    // Top 200 dışında: count+1 approximation
     return topList.length + 1;
   } catch {
     return null;
