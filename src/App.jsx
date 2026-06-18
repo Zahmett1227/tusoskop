@@ -531,6 +531,30 @@ export default function App() {
     setView("exam");
   };
 
+  if (!isAuthReady) {
+    return (
+      <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
+        <div
+          className="flex flex-col items-center justify-center bg-slate-950 text-white p-6 min-h-dvh"
+          style={{ paddingTop: "calc(2rem + env(safe-area-inset-top))" }}
+        >
+          <div className="mb-6 flex justify-center">
+            <img
+              src="/tusoskop-mark.png"
+              alt=""
+              width={96}
+              height={96}
+              decoding="async"
+              className="h-20 w-20 md:h-24 md:w-24 rounded-2xl object-contain shadow-lg shadow-black/20"
+              aria-hidden
+            />
+          </div>
+          <h1 className={`text-5xl font-black mb-2 ${accentTheme.text} tracking-tighter`}>TUSOSKOP</h1>
+        </div>
+      </div>
+    );
+  }
+
   if (!user) {
     return (
       <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
