@@ -10,7 +10,7 @@ const LEAGUE_CONFIG = {
   klinik: { label: "Klinik", emoji: "🩺", from: "#fb923c", to: "#f43f5e" },
 };
 
-export default function DashboardLeaderboardWidget({ user, isLightTheme, accentTheme, setView }) {
+export default function DashboardLeaderboardWidget({ user, isLightTheme, setView }) {
   const [selectedLeague, setSelectedLeague] = useState("temel");
   const [top3, setTop3] = useState([]);
   const [userStats, setUserStats] = useState(null);

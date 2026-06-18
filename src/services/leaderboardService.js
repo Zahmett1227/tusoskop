@@ -59,10 +59,6 @@ function solvedRef(weekId, uid, questionId) {
   return doc(db, "weeklyLeaderboard", weekId, "users", uid, "solvedQuestions", String(questionId));
 }
 
-function dailyDedupeRef(weekId, uid, eventType) {
-  const key = `${eventType}_${todayStr()}`;
-  return doc(db, "weeklyLeaderboard", weekId, "users", uid, "dailyEvents", key);
-}
 
 function profileRef(uid) {
   return doc(db, "leaderboardProfiles", uid);
