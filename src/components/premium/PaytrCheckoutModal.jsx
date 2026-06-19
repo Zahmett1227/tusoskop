@@ -16,7 +16,7 @@ import {
  *   burada onSnapshot ile premium aktif olduğu an "başarılı" ekranına geçilir.
  * - iframeResizer scripti yüklenince iframe yüksekliği içeriğe göre ayarlanır.
  */
-export default function PaytrCheckoutModal({ token, uid, onClose, onSuccess }) {
+export default function PaytrCheckoutModal({ token, uid, onClose }) {
   const [phase, setPhase] = useState("paying"); // paying | success
   const iframeRef = useRef(null);
   // Modalın açıldığı andaki premium bitiş tarihini sakla; onSnapshot sadece
