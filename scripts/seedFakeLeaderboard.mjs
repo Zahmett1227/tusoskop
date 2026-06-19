@@ -1,5 +1,8 @@
 /**
- * Leaderboard motivasyon seed'i — 5 sahte kullanıcı ekler.
+ * Leaderboard motivasyon seed'i — her iki lige 6'şar sahte kullanıcı ekler.
+ *
+ * ÖNEMLİ: Skorlar lig ekiyle yazılır → `weeklyLeaderboard/{weekId}_{league}/users/{uid}`.
+ * Servis (leaderboardService.js → leagueWeekId) bu yolu sorgular; eksik ek = listede görünmez.
  *
  * Kullanım:
  *   1. Firebase Console → Project Settings → Service Accounts →
@@ -25,7 +28,7 @@ const serviceAccount = JSON.parse(readFileSync(resolve(serviceAccountPath), "utf
 initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
 
-// ── Hafta ID ────────────────────────────────────────────────────────────────
+// ── Hafta ID (ISO 8601, Pazartesi başlangıç) ─────────────────────────────────
 function getCurrentWeekId(now = new Date()) {
   const d = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()));
   const day = d.getUTCDay() || 7;
@@ -35,122 +38,60 @@ function getCurrentWeekId(now = new Date()) {
   return `${d.getUTCFullYear()}-W${String(weekNo).padStart(2, "0")}`;
 }
 
-// ── Sahte kullanıcılar ───────────────────────────────────────────────────────
 const WEEK_ID = getCurrentWeekId();
 const NOW = FieldValue.serverTimestamp();
 
-const FAKE_USERS = [
-  {
-    uid: "fake_DrPatoloji_001aabbccdd",
-    nickname: "DrPatoloji",
-    normalizedNickname: "drpatoloji",
-    stats: {
-      score: 1048,
-      solvedCount: 82,
-      correctCount: 71,
-      accuracy: 87,
-      streakBonusCount: 6,
-      fsrsCompletedCount: 5,
-      mockExamCount: 2,
-    },
-  },
-  {
-    uid: "fake_TusAday42_002eeffgghh",
-    nickname: "TusAday42",
-    normalizedNickname: "tusaday42",
-    stats: {
-      score: 874,
-      solvedCount: 65,
-      correctCount: 54,
-      accuracy: 83,
-      streakBonusCount: 5,
-      fsrsCompletedCount: 4,
-      mockExamCount: 1,
-    },
-  },
-  {
-    uid: "fake_KlinikUs7_003iiijjjkkk",
-    nickname: "KlinikUs7",
-    normalizedNickname: "klinkus7",
-    stats: {
-      score: 712,
-      solvedCount: 55,
-      correctCount: 44,
-      accuracy: 80,
-      streakBonusCount: 4,
-      fsrsCompletedCount: 3,
-      mockExamCount: 1,
-    },
-  },
-  {
-    uid: "fake_Fizyolog07_004lllmmmnnn",
-    nickname: "Fizyolog07",
-    normalizedNickname: "fizyolog07",
-    stats: {
-      score: 561,
-      solvedCount: 43,
-      correctCount: 33,
-      accuracy: 77,
-      streakBonusCount: 3,
-      fsrsCompletedCount: 2,
-      mockExamCount: 0,
-    },
-  },
-  {
-    uid: "fake_BiokimYa_X_005ooopppqqq",
-    nickname: "BiokimYa_X",
-    normalizedNickname: "biokimya_x",
-    stats: {
-      score: 418,
-      solvedCount: 31,
-      correctCount: 23,
-      accuracy: 74,
-      streakBonusCount: 2,
-      fsrsCompletedCount: 1,
-      mockExamCount: 0,
-    },
-  },
-];
+// ── Sahte kullanıcılar (lig bazlı) ───────────────────────────────────────────
+const FAKE_USERS = {
+  temel: [
+    { uid: "fake_temel_anatomikrali", nickname: "AnatomiKrali", stats: { score: 1340, solvedCount: 96, correctCount: 84, accuracy: 88, streakBonusCount: 6, fsrsCompletedCount: 6, mockExamCount: 2 } },
+    { uid: "fake_temel_sinapsavcisi", nickname: "SinapsAvcisi", stats: { score: 1085, solvedCount: 78, correctCount: 66, accuracy: 85, streakBonusCount: 5, fsrsCompletedCount: 5, mockExamCount: 1 } },
+    { uid: "fake_temel_krebsdongusu", nickname: "KrebsDongusu", stats: { score: 932, solvedCount: 71, correctCount: 57, accuracy: 80, streakBonusCount: 4, fsrsCompletedCount: 4, mockExamCount: 1 } },
+    { uid: "fake_temel_noronninja", nickname: "NoronNinja", stats: { score: 768, solvedCount: 60, correctCount: 47, accuracy: 78, streakBonusCount: 4, fsrsCompletedCount: 3, mockExamCount: 1 } },
+    { uid: "fake_temel_histolojipro", nickname: "HistolojiPro", stats: { score: 604, solvedCount: 49, correctCount: 37, accuracy: 76, streakBonusCount: 3, fsrsCompletedCount: 2, mockExamCount: 0 } },
+    { uid: "fake_temel_enzimkinetik", nickname: "EnzimKinetik", stats: { score: 451, solvedCount: 37, correctCount: 27, accuracy: 73, streakBonusCount: 2, fsrsCompletedCount: 1, mockExamCount: 0 } },
+  ],
+  klinik: [
+    { uid: "fake_klinik_drvizit", nickname: "DrVizit", stats: { score: 1410, solvedCount: 102, correctCount: 90, accuracy: 88, streakBonusCount: 7, fsrsCompletedCount: 6, mockExamCount: 2 } },
+    { uid: "fake_klinik_ekgustasi", nickname: "EKGustasi", stats: { score: 1120, solvedCount: 83, correctCount: 70, accuracy: 84, streakBonusCount: 5, fsrsCompletedCount: 5, mockExamCount: 2 } },
+    { uid: "fake_klinik_pediatripro", nickname: "PediatriPro", stats: { score: 945, solvedCount: 73, correctCount: 59, accuracy: 81, streakBonusCount: 5, fsrsCompletedCount: 4, mockExamCount: 1 } },
+    { uid: "fake_klinik_nobetciasistan", nickname: "NobetciAsistan", stats: { score: 792, solvedCount: 62, correctCount: 49, accuracy: 79, streakBonusCount: 4, fsrsCompletedCount: 3, mockExamCount: 1 } },
+    { uid: "fake_klinik_stajyerdoktor", nickname: "StajyerDoktor", stats: { score: 618, solvedCount: 50, correctCount: 38, accuracy: 76, streakBonusCount: 3, fsrsCompletedCount: 2, mockExamCount: 0 } },
+    { uid: "fake_klinik_receterunner", nickname: "ReceteRunner", stats: { score: 472, solvedCount: 39, correctCount: 28, accuracy: 72, streakBonusCount: 2, fsrsCompletedCount: 1, mockExamCount: 0 } },
+  ],
+};
+
+const normalize = (n) => String(n || "").trim().toLowerCase().replace(/\s+/g, "_");
 
 // ── Seed ────────────────────────────────────────────────────────────────────
 async function seed() {
-  console.log(`Hafta: ${WEEK_ID}`);
-  console.log("Sahte kullanıcılar ekleniyor...\n");
+  console.log(`Hafta: ${WEEK_ID}\nSahte kullanıcılar ekleniyor...\n`);
 
-  for (const user of FAKE_USERS) {
-    const batch = db.batch();
+  for (const [league, users] of Object.entries(FAKE_USERS)) {
+    console.log(`── ${league.toUpperCase()} LİGİ ──`);
+    for (const user of users) {
+      const batch = db.batch();
+      const normalized = normalize(user.nickname);
 
-    // 1. leaderboardProfiles/{uid}
-    const profileRef = db.doc(`leaderboardProfiles/${user.uid}`);
-    batch.set(profileRef, {
-      uid: user.uid,
-      nickname: user.nickname,
-      normalizedNickname: user.normalizedNickname,
-      isOptedIn: true,
-      createdAt: NOW,
-      updatedAt: NOW,
-      lastNicknameChangeAt: NOW,
-    });
+      // 1. Haftalık skor — lig ekiyle (görünürlük için zorunlu)
+      const weekRef = db.doc(`weeklyLeaderboard/${WEEK_ID}_${league}/users/${user.uid}`);
+      batch.set(weekRef, {
+        nickname: user.nickname,
+        ...user.stats,
+        lastScoreAt: NOW,
+        updatedAt: NOW,
+      });
 
-    // 2. normalizedNicknames/{normalized} — benzersizlik tablosu
-    const normRef = db.doc(`normalizedNicknames/${user.normalizedNickname}`);
-    batch.set(normRef, { uid: user.uid, claimedAt: NOW });
+      // 2. normalizedNicknames — benzersizlik rezervasyonu (çakışma önler)
+      batch.set(db.doc(`normalizedNicknames/${normalized}`), { uid: user.uid, claimedAt: NOW });
 
-    // 3. weeklyLeaderboard/{weekId}/users/{uid}
-    const weekRef = db.doc(`weeklyLeaderboard/${WEEK_ID}/users/${user.uid}`);
-    batch.set(weekRef, {
-      nickname: user.nickname,
-      ...user.stats,
-      lastScoreAt: NOW,
-      updatedAt: NOW,
-    });
-
-    await batch.commit();
-    console.log(`✓ ${user.nickname.padEnd(14)} — ${user.stats.score} puan`);
+      await batch.commit();
+      console.log(`  ✓ ${user.nickname.padEnd(16)} — ${user.stats.score} puan`);
+    }
   }
 
-  console.log(`\n✅ ${FAKE_USERS.length} sahte kullanıcı başarıyla eklendi.`);
-  console.log(`   Leaderboard'u yenileyince görünürler: hafta ${WEEK_ID}`);
+  const total = FAKE_USERS.temel.length + FAKE_USERS.klinik.length;
+  console.log(`\n✅ ${total} sahte kullanıcı eklendi (hafta ${WEEK_ID}).`);
 }
 
 seed().catch((err) => {
