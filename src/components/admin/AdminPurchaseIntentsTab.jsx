@@ -20,6 +20,12 @@ function intentStatusLabel(status) {
       return "Ödeme kontrol edildi";
     case "manually_activated":
       return "Aktive edildi";
+    case "paid_activated":
+      return "Ödendi · Otomatik aktif";
+    case "failed":
+      return "Başarısız";
+    case "token_error":
+      return "Başlatılamadı";
     case "cancelled":
       return "İptal";
     case "needs_review":
@@ -37,6 +43,11 @@ function intentStatusPillClass(status) {
       return "bg-sky-500/12 text-sky-200 border-sky-400/30";
     case "manually_activated":
       return "bg-emerald-500/15 text-emerald-200 border-emerald-400/30";
+    case "paid_activated":
+      return "bg-emerald-500/15 text-emerald-200 border-emerald-400/30";
+    case "failed":
+    case "token_error":
+      return "bg-rose-500/12 text-rose-200 border-rose-400/28";
     case "cancelled":
       return "bg-rose-500/12 text-rose-200 border-rose-400/28";
     case "needs_review":
@@ -61,10 +72,13 @@ function canGrantPlus(row) {
   );
 }
 
-function shopifyOrderDisplay(row) {
+function orderDisplay(row) {
+  if (row.merchantOid) {
+    return `PayTR oid: ${String(row.merchantOid).trim()}`;
+  }
   const name = row.shopifyOrderName;
   if (name && String(name).trim()) {
-    return `Shopify Order: ${String(name).trim()}`;
+    return `Sipariş: ${String(name).trim()}`;
   }
   return "Sipariş no yok";
 }
@@ -163,7 +177,7 @@ function IntentOrderModal({ intent, adminUid, onClose, onSaved }) {
         onClick={(e) => e.stopPropagation()}
       >
         <h3 id="intent-order-title" className="text-lg font-black text-white mb-1">
-          Shopify sipariş no
+          Manuel sipariş no
         </h3>
         <p className="text-xs text-slate-400 mb-4 leading-relaxed">
           Örnek: 1001, #1001 veya #1042. Kayıt tek # ile saklanır.
@@ -318,8 +332,8 @@ export default function AdminPurchaseIntentsTab({
       <div className="flex flex-col gap-4">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <p className="text-slate-400 text-sm font-medium max-w-xl leading-relaxed">
-            Son 50 kayıt — Shopify ödeme öncesi niyet bildirimleri. Sipariş numarasını
-            Orders ekranından alıp kaydederek taleple eşleştirin.
+            Son 50 kayıt — PayTR ödeme talepleri. Başarılı ödemeler otomatik
+            aktive olur; gerekirse manuel sipariş no ile de eşleştirebilirsiniz.
           </p>
           <button
             type="button"
@@ -425,7 +439,7 @@ export default function AdminPurchaseIntentsTab({
                     </div>
                   </div>
                   <p className="text-[11px] text-slate-400 font-medium mb-3 break-words">
-                    {shopifyOrderDisplay(row)}
+                    {orderDisplay(row)}
                   </p>
                   <div className="grid grid-cols-2 gap-3 text-xs">
                     <div>
@@ -529,7 +543,7 @@ export default function AdminPurchaseIntentsTab({
                     Tutar
                   </th>
                   <th className="px-3 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400 min-w-[7.5rem]">
-                    Shopify
+                    Sipariş
                   </th>
                   <th className="px-3 py-3.5 text-[11px] font-black uppercase tracking-wider text-slate-400">
                     Durum
@@ -547,7 +561,9 @@ export default function AdminPurchaseIntentsTab({
                   const canPlus = canGrantPlus(row);
                   const isBusy = busyId === row.id;
                   const amount = row.totalPriceLabel || "—";
-                  const orderShort = row.shopifyOrderName
+                  const orderShort = row.merchantOid
+                    ? String(row.merchantOid).trim()
+                    : row.shopifyOrderName
                     ? String(row.shopifyOrderName).trim()
                     : null;
                   const isRowHidden = hiddenIds.has(row.id);
