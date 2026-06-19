@@ -11,9 +11,14 @@ export default class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, info) {
-    if (import.meta.env.DEV) {
-      console.error("ErrorBoundary:", error, info);
-    }
+    // Error nesneleri JSON'da boş ({}) serileşir; mesaj/stack'i string olarak
+    // yazarak iOS production logunda gerçek hatayı görünür kıl.
+    const message = error?.message ?? String(error);
+    const stack = error?.stack ?? "(stack yok)";
+    const componentStack = info?.componentStack ?? "(component stack yok)";
+    console.error(
+      `[ErrorBoundary] message: ${message}\nstack: ${stack}\ncomponentStack: ${componentStack}`
+    );
   }
 
   render() {
