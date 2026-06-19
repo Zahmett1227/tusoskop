@@ -102,10 +102,6 @@ export const loginWithGoogle = async () => {
       if (isCancelled) {
         return null;
       }
-      // Empty error object from plugin (e.g. called before UI ready) — skip alert
-      if (!code && !msg) {
-        return null;
-      }
       trackClarityEvent("login_hatasi");
       alert(friendlyNativeAuthMessage("Google", msg));
       return null;
