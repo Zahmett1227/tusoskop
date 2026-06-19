@@ -17,7 +17,29 @@ import { checkNicknameAvailable } from "../services/leaderboardService";
 import { getStreak } from "../services/streakService";
 import UserRankCard from "./leaderboard/UserRankCard";
 import LeaderboardList from "./leaderboard/LeaderboardList";
+import LeaderboardPodium from "./leaderboard/LeaderboardPodium";
 import NicknameSetupModal from "./leaderboard/NicknameSetupModal";
+
+const LEAGUE_CONFIG = {
+  temel: {
+    label: "Temel Bilimler",
+    shortLabel: "Temel",
+    emoji: "🔬",
+    from: "#818cf8",
+    to: "#06b6d4",
+    hex: "#818cf8",
+    subjects: "Anatomi · Fizyoloji · Biyokimya · Mikrobiyoloji · Patoloji · Farmakoloji",
+  },
+  klinik: {
+    label: "Klinik Bilimler",
+    shortLabel: "Klinik",
+    emoji: "🩺",
+    from: "#fb923c",
+    to: "#f43f5e",
+    hex: "#fb923c",
+    subjects: "Dahiliye · Pediatri · Genel Cerrahi · Kadın Hast. · Küçük Stajlar",
+  },
+};
 
 function ChevronLeft() {
   return (
@@ -28,10 +50,11 @@ function ChevronLeft() {
   );
 }
 
-function LoadingSpinner() {
+function LoadingSpinner({ hex }) {
   return (
     <div className="flex items-center justify-center py-12">
-      <div className="h-8 w-8 rounded-full border-2 border-slate-700 border-t-emerald-400 animate-spin" />
+      <div className="h-8 w-8 rounded-full border-2 border-slate-700 animate-spin"
+        style={{ borderTopColor: hex }} />
     </div>
   );
 }
@@ -54,19 +77,14 @@ function CountdownTimer() {
   );
 }
 
-const ACCENT_HEX = {
-  emerald: "#34d399",
-  cyan: "#22d3ee",
-  violet: "#a78bfa",
-  amber: "#fbbf24",
-  light: "#10b981",
-};
-
 export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, goDashboard }) {
   const theme = accentTheme || accentThemes.emerald;
   const isLightTheme = theme.usesLightChrome ?? (theme.mode === "light" || accentThemeKey === "light");
 
   const weekId = getCurrentWeekId();
+
+  const [selectedLeague, setSelectedLeague] = useState("temel");
+  const league = LEAGUE_CONFIG[selectedLeague];
 
   const [profile, setProfile] = useState(null);
   const [userStats, setUserStats] = useState(null);
@@ -76,7 +94,6 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
   const [loading, setLoading] = useState(true);
   const [showNicknameModal, setShowNicknameModal] = useState(false);
 
-  // Settings panel state
   const [showSettings, setShowSettings] = useState(false);
   const [editNickname, setEditNickname] = useState("");
   const [nicknameError, setNicknameError] = useState("");
@@ -89,9 +106,9 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
     try {
       const [prof, stats, rank, top, streakData] = await Promise.all([
         getLeaderboardProfile(user.uid),
-        getUserWeeklyStats(user.uid, weekId),
-        getUserRank(user.uid, weekId),
-        getTopRankings(weekId, 50),
+        getUserWeeklyStats(user.uid, weekId, selectedLeague),
+        getUserRank(user.uid, weekId, selectedLeague),
+        getTopRankings(weekId, 50, selectedLeague),
         getStreak(user.uid),
       ]);
       setProfile(prof);
@@ -104,7 +121,7 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
     } finally {
       setLoading(false);
     }
-  }, [user?.uid, weekId]);
+  }, [user?.uid, weekId, selectedLeague]);
 
   useEffect(() => {
     loadData();
@@ -151,7 +168,8 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
   };
 
   const topScore = rankings[0]?.score || 0;
-  const accentHex = ACCENT_HEX[accentThemeKey] || theme.hex || "#34d399";
+  const podiumTop3 = rankings.slice(0, 3);
+  const restRankings = rankings.slice(3);
 
   const pageClasses = isLightTheme
     ? "min-h-dvh bg-[#faf8f4] text-slate-950"
@@ -163,12 +181,12 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
       <div className="sticky top-0 z-30 backdrop-blur-md border-b border-white/[0.06] relative overflow-hidden"
         style={{
           paddingTop: "env(safe-area-inset-top)",
-          background: `linear-gradient(180deg, ${accentHex}26 0%, rgba(5,7,13,0.92) 100%)`,
+          background: `linear-gradient(180deg, ${league.from}26 0%, rgba(5,7,13,0.92) 100%)`,
         }}>
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 h-28 w-72 rounded-full blur-3xl opacity-50"
-          style={{ background: `${accentHex}55` }}
+          style={{ background: `${league.from}55` }}
         />
         <div className="relative flex items-center justify-between px-4 py-4 max-w-lg mx-auto">
           <button type="button" onClick={goDashboard}
@@ -179,11 +197,17 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
           <div className="text-center">
             <h1 className="text-base font-black tracking-tight flex items-center justify-center gap-1.5">
               <span aria-hidden="true">🏆</span>
-              <span className="text-white">Haftalık Sıralama</span>
+              <span
+                className="bg-clip-text text-transparent"
+                style={{ backgroundImage: `linear-gradient(90deg, #fff, ${league.from})` }}
+              >
+                Haftalık Sıralama
+              </span>
             </h1>
-            <CountdownTimer weekId={weekId} />
+            <CountdownTimer />
           </div>
-          <button type="button" onClick={() => { setShowSettings((s) => !s); setEditNickname(profile?.nickname || ""); setNicknameError(""); }}
+          <button type="button"
+            onClick={() => { setShowSettings((s) => !s); setEditNickname(profile?.nickname || ""); setNicknameError(""); }}
             className="w-9 h-9 rounded-full flex items-center justify-center bg-white/[0.05]
               border border-white/[0.08] text-slate-400 hover:text-white transition-colors active:scale-95">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
@@ -198,6 +222,41 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
       <div className="max-w-lg mx-auto px-4 py-5 pb-32 space-y-5">
         {/* Hafta etiketi */}
         <p className="text-xs text-slate-600 font-medium text-center">{formatWeekLabel(weekId)}</p>
+
+        {/* Liga seçici */}
+        <div className="relative p-1 rounded-2xl border border-white/[0.08]"
+          style={{ background: "rgba(255,255,255,0.03)" }}>
+          {/* Sliding indicator */}
+          <div
+            className="absolute top-1 bottom-1 rounded-xl transition-all duration-300 ease-out"
+            style={{
+              left: selectedLeague === "temel" ? "4px" : "calc(50% + 2px)",
+              width: "calc(50% - 6px)",
+              background: `linear-gradient(90deg, ${league.from}, ${league.to})`,
+              opacity: 0.95,
+              boxShadow: `0 6px 20px -6px ${league.from}aa`,
+            }}
+          />
+          <div className="relative flex">
+            {Object.entries(LEAGUE_CONFIG).map(([key, cfg]) => (
+              <button
+                key={key}
+                type="button"
+                onClick={() => setSelectedLeague(key)}
+                className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-black transition-colors duration-200 z-10"
+                style={{ color: selectedLeague === key ? "#fff" : "#64748b" }}
+              >
+                <span aria-hidden="true">{cfg.emoji}</span>
+                {cfg.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Liga açıklaması */}
+        <div className="text-center">
+          <p className="text-[10px] text-slate-600 font-medium">{league.subjects}</p>
+        </div>
 
         {/* Ayarlar paneli */}
         {showSettings && (
@@ -224,9 +283,9 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
                       type="button"
                       onClick={handleSaveNickname}
                       disabled={savingNickname || !editNickname.trim() || editNickname.trim() === profile.nickname}
-                      className={`px-4 py-2 rounded-xl font-black text-slate-950 text-xs
-                        transition-all active:scale-95 disabled:opacity-40
-                        ${theme.primary || "bg-emerald-500"}`}
+                      className="px-4 py-2 rounded-xl font-black text-white text-xs
+                        transition-all active:scale-95 disabled:opacity-40"
+                      style={{ background: `linear-gradient(90deg, ${league.from}, ${league.to})` }}
                     >
                       {savingNickname ? "…" : "Kaydet"}
                     </button>
@@ -245,8 +304,8 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
                     type="button"
                     onClick={handleToggleOptIn}
                     disabled={savingOptIn}
-                    className={`relative w-12 h-6 rounded-full transition-colors duration-200 disabled:opacity-40
-                      ${profile.isOptedIn ? (theme.primary || "bg-emerald-500") : "bg-slate-700"}`}
+                    className="relative w-12 h-6 rounded-full transition-colors duration-200 disabled:opacity-40"
+                    style={{ background: profile.isOptedIn ? `linear-gradient(90deg, ${league.from}, ${league.to})` : "#334155" }}
                   >
                     <span className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white shadow transition-transform duration-200
                       ${profile.isOptedIn ? "translate-x-6" : "translate-x-0"}`} />
@@ -257,8 +316,8 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
               <button
                 type="button"
                 onClick={() => { setShowSettings(false); setShowNicknameModal(true); }}
-                className={`w-full py-3 rounded-2xl font-black text-slate-950 text-sm
-                  ${theme.primary || "bg-emerald-500"}`}
+                className="w-full py-3 rounded-2xl font-black text-white text-sm"
+                style={{ background: `linear-gradient(90deg, ${league.from}, ${league.to})` }}
               >
                 Sıralamaya Katıl
               </button>
@@ -267,7 +326,7 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
         )}
 
         {loading ? (
-          <LoadingSpinner />
+          <LoadingSpinner hex={league.hex} />
         ) : (
           <>
             {/* Opt-in değilse uyarı */}
@@ -282,7 +341,7 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
             {/* Kullanıcının kendi kartı */}
             <div>
               <p className="text-[11px] font-bold text-slate-600 uppercase tracking-widest mb-2 px-1">
-                Bu Haftaki Durumun
+                Bu Haftaki Durumun — {league.emoji} {league.label}
               </p>
               <UserRankCard
                 stats={userStats}
@@ -290,41 +349,62 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
                 nickname={profile?.nickname}
                 topScore={topScore}
                 currentStreak={currentStreak}
-                accentTheme={{ ...theme, hex: accentHex }}
+                accentTheme={{ hex: league.hex }}
               />
             </div>
 
-            {/* Sıralama listesi */}
-            <div>
-              <div className="flex items-center justify-between mb-2 px-1">
-                <p className="text-[11px] font-bold text-slate-600 uppercase tracking-widest">
-                  Bu Hafta İlk {Math.min(rankings.length, 50)}
-                </p>
-                {rankings.length > 0 && (
-                  <span className="text-[10px] text-slate-600">
-                    {rankings.length} aktif kullanıcı
-                  </span>
-                )}
+            {/* Podyum — İlk 3 */}
+            {podiumTop3.length > 0 && (
+              <div>
+                <div className="flex items-center justify-between mb-2 px-1">
+                  <p className="text-[11px] font-bold text-slate-600 uppercase tracking-widest flex items-center gap-1.5">
+                    <span aria-hidden="true">🏅</span> Zirve
+                  </p>
+                  {rankings.length > 0 && (
+                    <span className="text-[10px] text-slate-600">
+                      {rankings.length} aktif kullanıcı
+                    </span>
+                  )}
+                </div>
+                <LeaderboardPodium
+                  top3={podiumTop3}
+                  currentUserDocId={user?.uid}
+                  accentHex={league.hex}
+                />
               </div>
-              <LeaderboardList
-                rankings={rankings}
-                currentUserDocId={user?.uid}
-                userRank={userRank}
-              />
-            </div>
+            )}
+
+            {/* Sıralama listesi — 4. sıradan itibaren */}
+            {(restRankings.length > 0 || (userRank != null && userRank > 3)) && (
+              <div>
+                <p className="text-[11px] font-bold text-slate-600 uppercase tracking-widest mb-2 px-1">
+                  Diğer Sıralar
+                </p>
+                <LeaderboardList
+                  rankings={restRankings}
+                  currentUserDocId={user?.uid}
+                  userRank={userRank}
+                  accentHex={league.hex}
+                />
+              </div>
+            )}
 
             {/* Puanlama bilgisi */}
             <div className="relative overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-white/[0.02] p-5">
               <div className="pointer-events-none absolute -right-10 -bottom-10 h-32 w-32 rounded-full blur-3xl opacity-30"
-                style={{ background: `${accentHex}40` }} />
-              <p className="relative text-xs font-black text-slate-300 mb-3 flex items-center gap-1.5">
+                style={{ background: `${league.from}60` }} />
+              <p className="relative text-xs font-black text-slate-300 mb-1 flex items-center gap-1.5">
                 <span aria-hidden="true">💎</span> Puan Sistemi
+              </p>
+              <p className="relative text-[10px] text-slate-600 mb-3">
+                Soru puanları sadece ilgili ligi; tekrar, streak ve deneme puanları her iki ligi etkiler.
               </p>
               <div className="relative space-y-2 text-xs">
                 {[
-                  { icon: "📝", label: "Benzersiz soru çözme", pts: "+2", color: "#94a3b8" },
-                  { icon: "✅", label: "Doğru cevap", pts: "+8", color: "#34d399" },
-                  { icon: "🔥", label: "Zor soru doğru (diff 4-5)", pts: "+4", color: "#fb923c" },
+                  { icon: "🔬", label: "Temel bilimler sorusu", pts: "+2–14", color: "#818cf8" },
+                  { icon: "🩺", label: "Klinik bilimler sorusu", pts: "+2–14", color: "#fb923c" },
+                  { icon: "✅", label: "Doğru cevap bonusu", pts: "+8", color: "#34d399" },
+                  { icon: "🔥", label: "Zor soru (diff 4-5)", pts: "+4", color: "#fb923c" },
                   { icon: "📚", label: "Günlük FSRS tekrar", pts: "+20", color: "#a78bfa" },
                   { icon: "⚡", label: "Günlük çalışma bonusu", pts: "+10", color: "#fbbf24" },
                   { icon: "🎯", label: "Tam deneme tamamlama", pts: "+50", color: "#22d3ee" },
