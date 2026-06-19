@@ -500,7 +500,6 @@ export default function Dashboard({
         <DashboardLeaderboardWidget
           user={user}
           isLightTheme={isLightTheme}
-          accentTheme={{ ...theme, hex }}
           setView={setView}
         />
 
