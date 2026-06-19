@@ -163,6 +163,7 @@ export default function App() {
     favoriteQuestionIds,
     setFavoriteQuestionIds,
     isAuthReady,
+    autoLoginState,
   } = useAppAuthBootstrap(setView);
 
   // Kullanıcı çıkış yaptığında leaderboard profile cache'ini temizle
@@ -524,6 +525,11 @@ export default function App() {
 
   // İlk auth kontrolü tamamlanana kadar markalı splash göster.
   if (!isAuthReady) {
+    return <NativeSplash accentTheme={accentTheme} />;
+  }
+
+  // Native auto-login denemesi sürerken splash'te beklet.
+  if (!user && autoLoginState === "pending") {
     return <NativeSplash accentTheme={accentTheme} />;
   }
 
