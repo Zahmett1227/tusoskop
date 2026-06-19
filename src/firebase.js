@@ -247,6 +247,8 @@ export const loginWithAppReviewEmail = async (email, password) => {
  * fallback'i tetiklendiğinde state'i temizler.
  */
 export async function consumePendingRedirectResult() {
+  // getRedirectResult is web-only; initializeAuth on native has no PopupRedirectResolver
+  if (isNativePlatform()) return null;
   try {
     const result = await getRedirectResult(auth);
     if (!result) return null;
