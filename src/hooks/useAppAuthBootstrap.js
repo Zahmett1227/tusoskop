@@ -1,18 +1,14 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import {
   auth,
   consumePendingRedirectResult,
-  loginWithApple,
-  loginWithGoogle,
 } from "../firebase";
 import { identifyClarityUser } from "../lib/clarity";
 import { getFavoriteQuestions } from "../services/studyCollectionService";
 import { isCurrentUserAdmin } from "../services/adminService";
 import { ensureUserDocument, withAppReviewAccess } from "../services/userService";
 import { getRemainingFreeUsage } from "../services/usageLimitService";
-import { isNativePlatform } from "../utils/device";
-import { getLastProvider } from "../utils/authPersistence";
 
 /**
  * Oturum, admin, kullanım özeti ve favori kimlikleri — App içindeki auth yan etkileri.
@@ -25,10 +21,6 @@ export function useAppAuthBootstrap(setView) {
   const [favoriteQuestionIds, setFavoriteQuestionIds] = useState(new Set());
   // İlk onAuthStateChanged tetiklenene kadar splash göstermek için.
   const [isAuthReady, setIsAuthReady] = useState(false);
-  // Native auto-login fallback durumu: "idle" | "pending" | "failed"
-  const [autoLoginState, setAutoLoginState] = useState("idle");
-  // Auto-login yalnızca bir kez denensin (sonsuz döngü önlemi).
-  const autoLoginAttemptedRef = useRef(false);
 
   const refreshRemainingUsage = useCallback(async () => {
     const usage = await getRemainingFreeUsage(user, userData);
@@ -52,31 +44,10 @@ export function useAppAuthBootstrap(setView) {
         console.error("User profile sync error:", error);
       } finally {
         setUser(currentUser);
-        if (currentUser) {
-          setAutoLoginState("idle");
-        } else {
+        if (!currentUser) {
           setIsAdmin(false);
           setUserData(null);
           setView("dashboard");
-          // Native + son provider kayıtlı + henüz denenmediyse: sessiz auto-login.
-          if (
-            isNativePlatform() &&
-            getLastProvider() &&
-            !autoLoginAttemptedRef.current
-          ) {
-            autoLoginAttemptedRef.current = true;
-            const lastProvider = getLastProvider();
-            setAutoLoginState("pending");
-            try {
-              if (lastProvider === "apple") {
-                await loginWithApple();
-              }
-              // Google Sign-In requires user interaction; skip silent auto-login
-              // Başarılıysa onAuthStateChanged tekrar tetiklenir; state'i orada idle yaparız.
-            } catch {
-              setAutoLoginState("failed");
-            }
-          }
         }
         setIsAuthReady(true);
       }
@@ -134,6 +105,5 @@ export function useAppAuthBootstrap(setView) {
     favoriteQuestionIds,
     setFavoriteQuestionIds,
     isAuthReady,
-    autoLoginState,
   };
 }
