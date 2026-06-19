@@ -57,6 +57,17 @@ const PAYTR_PLANS = {
 
 const db = () => getFirestore();
 
+/** premiumUntil değerini Date'e çevirir (Firestore Timestamp veya ISO string). */
+function premiumUntilToDate(value) {
+  if (!value) return null;
+  if (typeof value.toDate === "function") {
+    const d = value.toDate();
+    return Number.isNaN(d.getTime()) ? null : d;
+  }
+  const d = new Date(value);
+  return Number.isNaN(d.getTime()) ? null : d;
+}
+
 function base64Hmac(input, key) {
   return crypto.createHmac("sha256", key).update(input).digest("base64");
 }
