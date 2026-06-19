@@ -141,8 +141,7 @@ export default function PaytrCheckoutModal({ token, uid, onClose, onSuccess }) {
             <button
               type="button"
               onClick={() => {
-                if (typeof onSuccess === "function") onSuccess();
-                onClose();
+                window.location.reload();
               }}
               className="mt-2 min-h-12 rounded-2xl bg-[#1a120c] px-8 text-sm font-extrabold text-white shadow-lg transition hover:bg-black"
             >
