@@ -17,6 +17,7 @@ import { checkNicknameAvailable } from "../services/leaderboardService";
 import { getStreak } from "../services/streakService";
 import UserRankCard from "./leaderboard/UserRankCard";
 import LeaderboardList from "./leaderboard/LeaderboardList";
+import LeaderboardPodium from "./leaderboard/LeaderboardPodium";
 import NicknameSetupModal from "./leaderboard/NicknameSetupModal";
 
 const LEAGUE_CONFIG = {
@@ -167,6 +168,8 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
   };
 
   const topScore = rankings[0]?.score || 0;
+  const podiumTop3 = rankings.slice(0, 3);
+  const restRankings = rankings.slice(3);
 
   const pageClasses = isLightTheme
     ? "min-h-dvh bg-[#faf8f4] text-slate-950"
@@ -194,7 +197,12 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
           <div className="text-center">
             <h1 className="text-base font-black tracking-tight flex items-center justify-center gap-1.5">
               <span aria-hidden="true">🏆</span>
-              <span className="text-white">Haftalık Sıralama</span>
+              <span
+                className="bg-clip-text text-transparent"
+                style={{ backgroundImage: `linear-gradient(90deg, #fff, ${league.from})` }}
+              >
+                Haftalık Sıralama
+              </span>
             </h1>
             <CountdownTimer />
           </div>
@@ -226,6 +234,7 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
               width: "calc(50% - 6px)",
               background: `linear-gradient(90deg, ${league.from}, ${league.to})`,
               opacity: 0.95,
+              boxShadow: `0 6px 20px -6px ${league.from}aa`,
             }}
           />
           <div className="relative flex">
@@ -344,25 +353,41 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
               />
             </div>
 
-            {/* Sıralama listesi */}
-            <div>
-              <div className="flex items-center justify-between mb-2 px-1">
-                <p className="text-[11px] font-bold text-slate-600 uppercase tracking-widest">
-                  Bu Hafta İlk {Math.min(rankings.length, 50)}
-                </p>
-                {rankings.length > 0 && (
-                  <span className="text-[10px] text-slate-600">
-                    {rankings.length} aktif kullanıcı
-                  </span>
-                )}
+            {/* Podyum — İlk 3 */}
+            {podiumTop3.length > 0 && (
+              <div>
+                <div className="flex items-center justify-between mb-2 px-1">
+                  <p className="text-[11px] font-bold text-slate-600 uppercase tracking-widest flex items-center gap-1.5">
+                    <span aria-hidden="true">🏅</span> Zirve
+                  </p>
+                  {rankings.length > 0 && (
+                    <span className="text-[10px] text-slate-600">
+                      {rankings.length} aktif kullanıcı
+                    </span>
+                  )}
+                </div>
+                <LeaderboardPodium
+                  top3={podiumTop3}
+                  currentUserDocId={user?.uid}
+                  accentHex={league.hex}
+                />
               </div>
-              <LeaderboardList
-                rankings={rankings}
-                currentUserDocId={user?.uid}
-                userRank={userRank}
-                accentHex={league.hex}
-              />
-            </div>
+            )}
+
+            {/* Sıralama listesi — 4. sıradan itibaren */}
+            {(restRankings.length > 0 || (userRank != null && userRank > 3)) && (
+              <div>
+                <p className="text-[11px] font-bold text-slate-600 uppercase tracking-widest mb-2 px-1">
+                  Diğer Sıralar
+                </p>
+                <LeaderboardList
+                  rankings={restRankings}
+                  currentUserDocId={user?.uid}
+                  userRank={userRank}
+                  accentHex={league.hex}
+                />
+              </div>
+            )}
 
             {/* Puanlama bilgisi */}
             <div className="relative overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-white/[0.02] p-5">
