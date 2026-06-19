@@ -70,9 +70,8 @@ export function useAppAuthBootstrap(setView) {
             try {
               if (lastProvider === "apple") {
                 await loginWithApple();
-              } else {
-                await loginWithGoogle();
               }
+              // Google Sign-In requires user interaction; skip silent auto-login
               // Başarılıysa onAuthStateChanged tekrar tetiklenir; state'i orada idle yaparız.
             } catch {
               setAutoLoginState("failed");
