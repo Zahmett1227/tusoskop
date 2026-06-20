@@ -2,6 +2,7 @@ import React from "react";
 import { PRICING } from "../constants/pricing";
 import { formatPremiumUntil } from "../utils/premiumUtils";
 import { canShowExternalPayments } from "../utils/device";
+import { FREE_LIMITS } from "../config/limits";
 
 function isExpiredPlus(userData) {
   if (!userData) return false;
@@ -41,46 +42,41 @@ export default function DashboardMembershipHero({
       ? "bg-emerald-500/10"
       : "bg-indigo-500/12";
 
-  // iOS native'de Plus/üyelik/satın alma çağrışımı yapmayan nötr ifadeler kullanılır.
   const nativeNoPay = !allowExternalPayments;
 
-  const leftTitle = nativeNoPay
-    ? "Tam erişim"
-    : premiumActive
-      ? "Plus aktif"
-      : "Ücretsiz plan";
-  const leftLead = nativeNoPay
-    ? "Tüm özellikler açık. Sınırsız çalışabilirsin."
-    : premiumActive
-      ? "Sınırsız çalışma akışın açık. Tüm Plus avantajlarından yararlanıyorsun."
-      : "Günlük soru, deneme ve tekrar limitlerini buradan takip edebilirsin.";
-  const leftMeta = nativeNoPay
-    ? "Tüm özellikler kullanımına açık."
-    : premiumActive
-      ? lifetime
-        ? "Ömür boyu erişim aktif."
-        : untilLabel && untilLabel !== "-"
-          ? `${untilLabel} tarihine kadar aktif.`
-          : "Plus erişimin hazır."
-      : "Limitler her gün yenilenir.";
+  const leftTitle = premiumActive
+    ? "Plus aktif"
+    : "Ücretsiz plan";
+  const leftLead = premiumActive
+    ? "Sınırsız çalışma akışın açık. Tüm Plus avantajlarından yararlanıyorsun."
+    : "Günlük soru, deneme ve tekrar limitlerini buradan takip edebilirsin.";
+  const leftMeta = premiumActive
+    ? lifetime
+      ? "Ömür boyu erişim aktif."
+      : untilLabel && untilLabel !== "-"
+        ? `${untilLabel} tarihine kadar aktif.`
+        : "Plus erişimin hazır."
+    : "Limitler her gün yenilenir.";
 
-  const rightBadge = nativeNoPay ? "Aktif" : premiumActive ? "Plus" : "Önerilen";
-  const rightBadgeSub = nativeNoPay
-    ? "Tam erişim"
-    : premiumActive
-      ? "Aktif üyelik"
+  const rightBadge = premiumActive ? "Plus" : nativeNoPay ? "Abonelik" : "Önerilen";
+  const rightBadgeSub = premiumActive
+    ? "Aktif üyelik"
+    : nativeNoPay
+      ? "App Store"
       : "Sınırsız erişim";
   const rightHeadline = premiumActive
     ? "Avantajların aktif."
-    : allowExternalPayments
-      ? "Plus ile tüm sınırları kaldır."
-      : "Plan durumunu takip et.";
+    : "Plus ile tüm sınırları kaldır.";
   const rightSub = premiumActive
     ? "Sınırsız soru, sınırsız deneme ve gelişmiş analiz erişimin hazır."
-    : allowExternalPayments
-      ? "Sınırsız soru çöz, deneme sınırlarını kaldır ve tekrar akışını kesintisiz sürdür."
-      : "iOS uygulamasında dış ödeme bağlantısı gösterilmez; mevcut hesap durumunu görebilirsin.";
-  const ctaLabel = premiumActive || !allowExternalPayments ? "Plan durumu" : "Plus'ı İncele";
+    : nativeNoPay
+      ? "App Store aboneliğiyle sınırsız soru, deneme ve tekrar erişimi kazan."
+      : "Sınırsız soru çöz, deneme sınırlarını kaldır ve tekrar akışını kesintisiz sürdür.";
+  const ctaLabel = premiumActive
+    ? "Plan durumu"
+    : nativeNoPay
+      ? "Aboneliği Başlat"
+      : "Plus'ı İncele";
 
   const chipBase = isLightTheme
     ? "border-slate-200/90 bg-white/90 text-slate-800 shadow-sm"
@@ -200,21 +196,21 @@ export default function DashboardMembershipHero({
                   isLightTheme={isLightTheme}
                   chipBase={chipBase}
                   label="Bugün"
-                  value={`${freeQuestionUsed}/30`}
+                  value={`${freeQuestionUsed}/${FREE_LIMITS.dailyQuestions}`}
                   suffix="soru"
                 />
                 <UsageChip
                   isLightTheme={isLightTheme}
                   chipBase={chipBase}
                   label="Deneme"
-                  value={`${freeExamUsed}/1`}
+                  value={`${freeExamUsed}/${FREE_LIMITS.monthlyFullExams}`}
                   suffix="bu ay"
                 />
                 <UsageChip
                   isLightTheme={isLightTheme}
                   chipBase={chipBase}
                   label="Tekrar"
-                  value={`${freeReviewUsed}/10`}
+                  value={`${freeReviewUsed}/${FREE_LIMITS.dailyReviewQuestions}`}
                   suffix="bugün"
                 />
               </>
@@ -281,7 +277,7 @@ export default function DashboardMembershipHero({
                 {rightSub}
               </p>
 
-              {!premiumActive && allowExternalPayments ? (
+              {!premiumActive ? (
                 <ul
                   className={`mt-4 space-y-1.5 text-xs sm:text-sm font-semibold ${
                     isLightTheme ? "text-slate-600" : "text-slate-400"
@@ -298,6 +294,12 @@ export default function DashboardMembershipHero({
                       ✓
                     </span>
                     Deneme ve tekrar limitleri kalkar
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="text-emerald-500 shrink-0" aria-hidden>
+                      ✓
+                    </span>
+                    Sınırsız favori ve yanlış geçmişi
                   </li>
                 </ul>
               ) : null}

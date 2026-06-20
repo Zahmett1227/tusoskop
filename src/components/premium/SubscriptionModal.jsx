@@ -1,8 +1,80 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { IAP_PRODUCT_IDS, IAP_PLAN_MAP } from '../../config/iap';
+import { IAP_PRODUCT_IDS, IAP_PLAN_MAP, YEARLY_PRODUCT_IDS } from '../../config/iap';
 import { loadProducts, purchaseProduct, verifyAndActivatePurchase } from '../../services/iapService';
 
-const ORDERED_PRODUCT_IDS = IAP_PRODUCT_IDS; // 1m, 3m, 6m sırası
+// Ürün sırasını sabit tut (1m, 3m, yıllık grup)
+const ORDERED_NON_YEARLY = ['com.tusoskop.app.plus.1m', 'com.tusoskop.app.plus.3m'];
+
+function PlanCard({ productId, planInfo, localizedPrice, selected, highlight, onSelect, disabled }) {
+  const displayPrice = localizedPrice || planInfo?.fallbackPrice || '—';
+  const displayNote = !localizedPrice ? planInfo?.fallbackNote : null;
+
+  return (
+    <button
+      type="button"
+      onClick={() => onSelect(productId)}
+      disabled={disabled}
+      className={`relative w-full text-left rounded-2xl border-2 p-4 transition disabled:opacity-60 ${
+        selected
+          ? highlight
+            ? 'border-[#b99671] bg-gradient-to-br from-[#fff8ef] to-white ring-2 ring-[#c9a16f]'
+            : 'border-neutral-800 bg-white ring-2 ring-neutral-800/20'
+          : 'border-neutral-200 bg-white hover:border-neutral-300'
+      }`}
+    >
+      {planInfo?.badge ? (
+        <span
+          className={`absolute right-3 top-3 rounded-full px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wide ${
+            highlight
+              ? 'bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] text-white'
+              : 'bg-neutral-800 text-white'
+          }`}
+        >
+          {planInfo.badge}
+        </span>
+      ) : null}
+
+      <div className="flex items-start justify-between gap-2 pr-16">
+        <div>
+          <p className="text-base font-extrabold text-neutral-950">
+            {planInfo?.durationLabel}
+          </p>
+          <p className="mt-0.5 text-xs font-medium text-neutral-500">
+            {planInfo?.description || 'Otomatik yenilenen abonelik'}
+          </p>
+        </div>
+        <div className="text-right shrink-0">
+          <p className="text-lg font-black tabular-nums text-neutral-950">
+            {displayPrice}
+          </p>
+          {displayNote ? (
+            <p className="text-[11px] font-medium text-neutral-400 leading-tight">
+              {displayNote}
+            </p>
+          ) : null}
+        </div>
+      </div>
+
+      {selected ? (
+        <div
+          className={`absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+            highlight ? 'border-[#b99671] bg-[#b99671]' : 'border-neutral-800 bg-neutral-800'
+          }`}
+          aria-hidden="true"
+        >
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+            <path d="M1.5 4l2 2 3-3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
+      ) : (
+        <div
+          className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 border-neutral-300"
+          aria-hidden="true"
+        />
+      )}
+    </button>
+  );
+}
 
 export default function SubscriptionModal({ open, onClose, onSuccess, accentTheme }) {
   const [products, setProducts] = useState([]);
@@ -12,7 +84,6 @@ export default function SubscriptionModal({ open, onClose, onSuccess, accentThem
   const [error, setError] = useState(null);
   const [loadingProducts, setLoadingProducts] = useState(false);
 
-  // Ürünleri yükle
   useEffect(() => {
     if (!open) return;
     setError(null);
@@ -20,22 +91,31 @@ export default function SubscriptionModal({ open, onClose, onSuccess, accentThem
     loadProducts()
       .then((prods) => {
         setProducts(prods || []);
-        // Varsayılan seçim: 3 aylık (önerilen)
+        // Varsayılan: 3 aylık (önerilen)
         const default3m = prods?.find((p) => p.productId === 'com.tusoskop.app.plus.3m');
-        const defaultSel = default3m ? default3m.productId : (prods?.[0]?.productId || null);
+        const defaultSel = default3m?.productId ?? prods?.[0]?.productId ?? 'com.tusoskop.app.plus.3m';
         setSelectedProductId(defaultSel);
       })
       .catch((e) => setError(e?.message || 'Ürünler yüklenemedi'))
       .finally(() => setLoadingProducts(false));
   }, [open]);
 
-  // Sıralanmış ürün listesi (1m, 3m, 6m)
-  const sortedProducts = ORDERED_PRODUCT_IDS
-    .map((id) => products.find((p) => p.productId === id))
-    .filter(Boolean);
+  // Varsayılan seçim (ürünler yüklenemese bile)
+  useEffect(() => {
+    if (!open) return;
+    if (!selectedProductId) setSelectedProductId('com.tusoskop.app.plus.3m');
+  }, [open, selectedProductId]);
+
+  const getLocalizedPrice = (productId) =>
+    products.find((p) => p.productId === productId)?.localizedPrice || null;
 
   const handlePurchase = useCallback(async () => {
     if (!selectedProductId) return;
+    const hasStoreProduct = products.some((p) => p.productId === selectedProductId);
+    if (!hasStoreProduct) {
+      setError('Bu ürün henüz App Store\'da yapılandırılmadı. Lütfen daha sonra tekrar deneyin.');
+      return;
+    }
     setError(null);
     setPurchasing(true);
     try {
@@ -44,15 +124,13 @@ export default function SubscriptionModal({ open, onClose, onSuccess, accentThem
       onSuccess?.(verifyResult?.premiumUntil || null);
       onClose?.();
     } catch (e) {
-      if (e?.message === 'USER_CANCELLED' || String(e?.message).includes('USER_CANCELLED')) {
-        // Kullanıcı iptal etti — sessizce geç
-      } else {
+      if (!String(e?.message).includes('USER_CANCELLED')) {
         setError(e?.message || 'Satın alma tamamlanamadı. Lütfen tekrar deneyin.');
       }
     } finally {
       setPurchasing(false);
     }
-  }, [selectedProductId, onSuccess, onClose]);
+  }, [selectedProductId, products, onSuccess, onClose]);
 
   const handleRestore = useCallback(async () => {
     setError(null);
@@ -77,6 +155,7 @@ export default function SubscriptionModal({ open, onClose, onSuccess, accentThem
 
   const selectedPlan = selectedProductId ? IAP_PLAN_MAP[selectedProductId] : null;
   const isLoading = purchasing || restoring;
+  const hasStoreProducts = products.length > 0;
 
   return (
     <div className="fixed inset-0 z-[130] flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm p-0 sm:p-4">
@@ -105,14 +184,12 @@ export default function SubscriptionModal({ open, onClose, onSuccess, accentThem
         </div>
 
         <div className="px-5 pb-5 space-y-4 max-h-[80dvh] overflow-y-auto">
-          {/* Hata mesajı */}
           {error ? (
             <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800">
               {error}
             </div>
           ) : null}
 
-          {/* Ürün yükleniyor */}
           {loadingProducts ? (
             <div className="flex flex-col items-center justify-center py-8 gap-3">
               <div className="w-8 h-8 border-2 border-neutral-300 border-t-neutral-700 rounded-full animate-spin" />
@@ -120,83 +197,99 @@ export default function SubscriptionModal({ open, onClose, onSuccess, accentThem
             </div>
           ) : (
             <>
-              {/* Plan kartları */}
+              {/* 1 Aylık + 3 Aylık */}
               <div className="space-y-3">
-                {sortedProducts.map((product) => {
-                  const planInfo = IAP_PLAN_MAP[product.productId];
+                {ORDERED_NON_YEARLY.map((productId) => {
+                  const planInfo = IAP_PLAN_MAP[productId];
                   if (!planInfo) return null;
-                  const isSelected = selectedProductId === product.productId;
-                  const isHighlight = planInfo.highlight;
-
                   return (
-                    <button
-                      key={product.productId}
-                      type="button"
-                      onClick={() => setSelectedProductId(product.productId)}
+                    <PlanCard
+                      key={productId}
+                      productId={productId}
+                      planInfo={planInfo}
+                      localizedPrice={getLocalizedPrice(productId)}
+                      selected={selectedProductId === productId}
+                      highlight={planInfo.highlight}
+                      onSelect={setSelectedProductId}
                       disabled={isLoading}
-                      className={`relative w-full text-left rounded-2xl border-2 p-4 transition disabled:opacity-60 ${
-                        isSelected
-                          ? isHighlight
-                            ? 'border-[#b99671] bg-gradient-to-br from-[#fff8ef] to-white ring-2 ring-[#c9a16f]'
-                            : 'border-neutral-800 bg-white ring-2 ring-neutral-800/20'
-                          : 'border-neutral-200 bg-white hover:border-neutral-300'
-                      }`}
-                    >
-                      {planInfo.badge ? (
-                        <span
-                          className={`absolute right-3 top-3 rounded-full px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wide ${
-                            isHighlight
-                              ? 'bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] text-white'
-                              : 'bg-neutral-800 text-white'
-                          }`}
-                        >
-                          {planInfo.badge}
-                        </span>
-                      ) : null}
-
-                      <div className="flex items-start justify-between gap-2 pr-16">
-                        <div>
-                          <p className="text-base font-extrabold text-neutral-950">
-                            {planInfo.durationLabel}
-                          </p>
-                          <p className="mt-0.5 text-xs font-medium text-neutral-500">
-                            Otomatik yenilenen abonelik
-                          </p>
-                        </div>
-                        <div className="text-right shrink-0">
-                          <p className="text-lg font-black tabular-nums text-neutral-950">
-                            {product.localizedPrice}
-                          </p>
-                        </div>
-                      </div>
-
-                      {isSelected ? (
-                        <div
-                          className={`absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                            isHighlight ? 'border-[#b99671] bg-[#b99671]' : 'border-neutral-800 bg-neutral-800'
-                          }`}
-                          aria-hidden="true"
-                        >
-                          <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                            <path d="M1.5 4l2 2 3-3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                      ) : (
-                        <div
-                          className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 border-neutral-300"
-                          aria-hidden="true"
-                        />
-                      )}
-                    </button>
+                    />
                   );
                 })}
+              </div>
+
+              {/* Yıllık grubu */}
+              <div className="rounded-2xl border-2 border-neutral-200 overflow-hidden">
+                <div className="bg-neutral-50 px-4 py-2.5">
+                  <p className="text-[11px] font-black uppercase tracking-widest text-neutral-500">
+                    1 Yıllık
+                  </p>
+                </div>
+                <div className="divide-y divide-neutral-100">
+                  {YEARLY_PRODUCT_IDS.map((productId) => {
+                    const planInfo = IAP_PLAN_MAP[productId];
+                    if (!planInfo) return null;
+                    const selected = selectedProductId === productId;
+                    const localizedPrice = getLocalizedPrice(productId);
+                    const displayPrice = localizedPrice || planInfo.fallbackPrice || '—';
+                    const displayNote = !localizedPrice ? planInfo.fallbackNote : null;
+                    return (
+                      <button
+                        key={productId}
+                        type="button"
+                        onClick={() => setSelectedProductId(productId)}
+                        disabled={isLoading}
+                        className={`relative w-full text-left px-4 py-3.5 transition disabled:opacity-60 ${
+                          selected ? 'bg-[#fff8ef]' : 'bg-white hover:bg-neutral-50'
+                        }`}
+                      >
+                        {planInfo.badge ? (
+                          <span className="absolute right-4 top-3.5 rounded-full bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wide text-white">
+                            {planInfo.badge}
+                          </span>
+                        ) : null}
+                        <div className="flex items-start justify-between gap-2 pr-16 pl-6">
+                          <div>
+                            <p className="text-sm font-extrabold text-neutral-950">
+                              {planInfo.durationLabel}
+                            </p>
+                            <p className="mt-0.5 text-xs font-medium text-neutral-500">
+                              {planInfo.description}
+                            </p>
+                          </div>
+                          <div className="text-right shrink-0">
+                            <p className="text-base font-black tabular-nums text-neutral-950">
+                              {displayPrice}
+                            </p>
+                            {displayNote ? (
+                              <p className="text-[11px] font-medium text-neutral-400 leading-tight">
+                                {displayNote}
+                              </p>
+                            ) : null}
+                          </div>
+                        </div>
+                        <div
+                          className={`absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+                            selected ? 'border-[#b99671] bg-[#b99671]' : 'border-neutral-300 bg-white'
+                          }`}
+                          aria-hidden="true"
+                        >
+                          {selected ? (
+                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+                              <path d="M1.5 4l2 2 3-3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          ) : null}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
 
               {/* Satın al butonu */}
               <button
                 type="button"
                 onClick={handlePurchase}
-                disabled={isLoading || !selectedProductId || loadingProducts}
+                disabled={isLoading || !selectedProductId}
                 className="w-full min-h-14 rounded-2xl bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] text-white font-black text-base shadow-[0_8px_24px_-8px_rgba(154,107,50,0.6)] hover:brightness-105 transition disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]"
               >
                 {purchasing ? (
@@ -211,7 +304,12 @@ export default function SubscriptionModal({ open, onClose, onSuccess, accentThem
                 )}
               </button>
 
-              {/* Otomatik yenileme notu */}
+              {!hasStoreProducts ? (
+                <p className="text-[11px] font-medium text-amber-700 text-center bg-amber-50 rounded-xl px-3 py-2 border border-amber-200">
+                  Fiyatlar gösteriliyor; App Store bağlantısı kurulunca gerçek fiyatlar yüklenir.
+                </p>
+              ) : null}
+
               <p className="text-[11px] font-medium text-neutral-500 text-center leading-relaxed">
                 Abonelik seçilen dönem sonunda otomatik yenilenir. İptal için bitiş tarihinden en az 24 saat önce iptal edilmeli.
               </p>
@@ -221,7 +319,6 @@ export default function SubscriptionModal({ open, onClose, onSuccess, accentThem
             </>
           )}
 
-          {/* Restore butonu */}
           <button
             type="button"
             onClick={handleRestore}
@@ -238,7 +335,6 @@ export default function SubscriptionModal({ open, onClose, onSuccess, accentThem
             )}
           </button>
 
-          {/* Yasal linkler */}
           <div className="flex justify-center gap-4 pb-2">
             <a
               href="https://tusoskop.com/gizlilik-politikasi"

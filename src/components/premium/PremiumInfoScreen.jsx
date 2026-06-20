@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { PRICING } from "../../constants/pricing";
 import { PLUS_PLANS } from "../../config/plusPlans";
+import { FREE_LIMITS } from "../../config/limits";
 import { createPremiumPurchaseIntent } from "../../services/purchaseIntentService";
 import {
   SUPPORT_EMAIL,
@@ -188,13 +189,50 @@ export default function PremiumInfoScreen({
             </div>
 
             {nativeIOS && !premiumActive ? (
-              <button
-                type="button"
-                onClick={() => setShowSubscriptionModal(true)}
-                className="mt-5 w-full min-h-14 rounded-2xl bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] text-white font-black text-base shadow-[0_8px_24px_-8px_rgba(154,107,50,0.6)] hover:brightness-105 transition active:scale-[0.98]"
-              >
-                Abonelik Başlat
-              </button>
+              <>
+                {/* Free vs Plus karşılaştırması */}
+                <div className="mt-5 overflow-hidden rounded-2xl border border-neutral-200">
+                  <table className="w-full text-left text-sm">
+                    <thead>
+                      <tr className="border-b border-neutral-200 bg-neutral-50">
+                        <th className="px-3 py-2.5 text-xs font-black text-neutral-500">Özellik</th>
+                        <th className="px-3 py-2.5 text-xs font-black text-neutral-500">Ücretsiz</th>
+                        <th className="px-3 py-2.5 text-xs font-black text-[#8b6914]">Plus</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-neutral-100 font-medium text-neutral-800">
+                      <tr>
+                        <td className="px-3 py-2.5 text-xs font-bold text-neutral-600">Günlük soru</td>
+                        <td className="px-3 py-2.5 text-xs">{FREE_LIMITS.dailyQuestions}</td>
+                        <td className="px-3 py-2.5 text-xs font-semibold text-emerald-700">Sınırsız</td>
+                      </tr>
+                      <tr>
+                        <td className="px-3 py-2.5 text-xs font-bold text-neutral-600">Aylık deneme</td>
+                        <td className="px-3 py-2.5 text-xs">{FREE_LIMITS.monthlyFullExams}</td>
+                        <td className="px-3 py-2.5 text-xs font-semibold text-emerald-700">Sınırsız</td>
+                      </tr>
+                      <tr>
+                        <td className="px-3 py-2.5 text-xs font-bold text-neutral-600">Günlük tekrar</td>
+                        <td className="px-3 py-2.5 text-xs">{FREE_LIMITS.dailyReviewQuestions}</td>
+                        <td className="px-3 py-2.5 text-xs font-semibold text-emerald-700">Sınırsız</td>
+                      </tr>
+                      <tr>
+                        <td className="px-3 py-2.5 text-xs font-bold text-neutral-600">Favori limit</td>
+                        <td className="px-3 py-2.5 text-xs">{FREE_LIMITS.maxFavorites}</td>
+                        <td className="px-3 py-2.5 text-xs font-semibold text-emerald-700">Sınırsız</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setShowSubscriptionModal(true)}
+                  className="mt-5 w-full min-h-14 rounded-2xl bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] text-white font-black text-base shadow-[0_8px_24px_-8px_rgba(154,107,50,0.6)] hover:brightness-105 transition active:scale-[0.98]"
+                >
+                  Aboneliği Başlat
+                </button>
+              </>
             ) : null}
           </section>
 
