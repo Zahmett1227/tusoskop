@@ -9,9 +9,10 @@ import {
 } from "../../config/support";
 import { setClarityTag, trackClarityEvent } from "../../lib/clarity";
 import { getPremiumStatusLabel, isUserPremium } from "../../utils/premiumUtils";
-import { canShowExternalPayments } from "../../utils/device";
+import { canShowExternalPayments, isNativeIOS } from "../../utils/device";
 import CoffeeAnimation from "./CoffeeAnimation";
 import Footer from "../layout/Footer";
+import SubscriptionModal from "./SubscriptionModal";
 
 const PLUS_PLAN_CLICK_EVENT = {
   plus_1m: "plus_plan_click_1m",
@@ -51,8 +52,10 @@ export default function PremiumInfoScreen({
 }) {
   const [copyDone, setCopyDone] = useState(false);
   const [banner, setBanner] = useState("");
+  const [showSubscriptionModal, setShowSubscriptionModal] = useState(false);
   const plusPageViewSent = useRef(false);
   const allowExternalPayments = canShowExternalPayments();
+  const nativeIOS = isNativeIOS();
   const premiumActive = isUserPremium(userData, user);
 
   useEffect(() => {
@@ -168,10 +171,12 @@ export default function PremiumInfoScreen({
               Tusoskop
             </p>
             <h1 className="mb-3 text-3xl font-black leading-tight tracking-tight text-neutral-950 sm:text-4xl">
-              Erişim durumun
+              {nativeIOS && !premiumActive ? "Plus Abonelik" : "Erişim durumun"}
             </h1>
             <p className="text-sm font-semibold leading-relaxed text-neutral-700 sm:text-base">
-              Tüm özellikler hesabında açık. Aşağıda hesap bilgilerini görebilirsin.
+              {nativeIOS && !premiumActive
+                ? "App Store aboneliğiyle sınırsız soru, deneme ve tekrar erişimi kazan."
+                : "Tüm özellikler hesabında açık. Aşağıda hesap bilgilerini görebilirsin."}
             </p>
             <div className="mt-5 rounded-3xl border border-[#e8d5c4] bg-[#fff8ef] p-4">
               <p className="text-xs font-black uppercase tracking-wide text-[#8a6a4d]">
@@ -181,6 +186,16 @@ export default function PremiumInfoScreen({
                 {getPremiumStatusLabel(userData)}
               </p>
             </div>
+
+            {nativeIOS && !premiumActive ? (
+              <button
+                type="button"
+                onClick={() => setShowSubscriptionModal(true)}
+                className="mt-5 w-full min-h-14 rounded-2xl bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] text-white font-black text-base shadow-[0_8px_24px_-8px_rgba(154,107,50,0.6)] hover:brightness-105 transition active:scale-[0.98]"
+              >
+                Abonelik Başlat
+              </button>
+            ) : null}
           </section>
 
           <section className="rounded-3xl border border-[#e6dfd6] bg-white/95 p-5 shadow-[0_18px_50px_-30px_rgba(60,40,20,0.12)] sm:p-7">
@@ -244,9 +259,25 @@ export default function PremiumInfoScreen({
             onClick={onBack}
             className="min-h-12 w-full rounded-2xl border-2 border-neutral-300 bg-white px-8 text-sm font-extrabold text-neutral-900 shadow-sm transition hover:bg-neutral-50"
           >
-            Dashboard'a dön
+            Dashboard&apos;a dön
           </button>
         </div>
+
+        {showSubscriptionModal ? (
+          <SubscriptionModal
+            open={showSubscriptionModal}
+            onClose={() => setShowSubscriptionModal(false)}
+            onSuccess={(premiumUntil) => {
+              setShowSubscriptionModal(false);
+              setBanner(
+                premiumUntil
+                  ? `Plus aktif! Aboneliğiniz ${new Date(premiumUntil).toLocaleDateString("tr-TR")} tarihine kadar geçerli.`
+                  : "Plus aboneliğiniz aktifleştirildi."
+              );
+            }}
+            accentTheme={accentTheme}
+          />
+        ) : null}
       </div>
     );
   }

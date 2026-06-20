@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { PRICING } from "../../constants/pricing";
 import { getMailtoQuickSupport } from "../../config/support";
 import { setClarityTag, trackClarityEvent } from "../../lib/clarity";
-import { canShowExternalPayments } from "../../utils/device";
+import { canShowExternalPayments, isNativeIOS } from "../../utils/device";
 import CoffeeAnimation from "./CoffeeAnimation";
 
 export default function LimitReachedModal({
@@ -15,12 +15,14 @@ export default function LimitReachedModal({
   premiumDescription = "Plus ile soru çözme sınırları kalkar; denemeler, tekrarlar ve gelişmiş analizler tamamen açılır.",
   onClose,
   onUpgradeClick,
+  onIosSubscribeClick,
   remainingInfo = "",
   user = null,
   limitReason = "",
 }) {
   const limitModalOpened = useRef(false);
   const allowExternalPayments = canShowExternalPayments();
+  const nativeIOS = isNativeIOS();
 
   useEffect(() => {
     if (!open) {
@@ -65,6 +67,15 @@ export default function LimitReachedModal({
                 {premiumDescription}
               </p>
             </div>
+          </div>
+        ) : nativeIOS ? (
+          <div className="mb-4 rounded-3xl border border-[#ead9c1] bg-gradient-to-br from-[#fffbf7] to-[#fff8ef] p-4">
+            <p className="text-base font-extrabold leading-snug text-[#2f1f11]">
+              Plus abonelikle sınırları kaldır
+            </p>
+            <p className="mt-1.5 text-xs font-medium leading-relaxed text-[#5c4736] md:text-sm">
+              App Store üzerinden aylık, 3 aylık veya 6 aylık abonelikle sınırsız erişim kazan.
+            </p>
           </div>
         ) : (
           <div className="mb-4 rounded-3xl border border-[#ead9c1] bg-[#fff8ef] p-4">
@@ -131,6 +142,22 @@ export default function LimitReachedModal({
               className="min-h-11 px-4 rounded-2xl bg-neutral-950 text-white font-extrabold text-sm shadow-lg hover:bg-black transition sm:flex-1"
             >
               {ctaLabel}
+            </button>
+          ) : null}
+          {!allowExternalPayments && nativeIOS ? (
+            <button
+              type="button"
+              onClick={() => {
+                try {
+                  trackClarityEvent("ios_iap_cta_click");
+                } catch {
+                  /* sessiz */
+                }
+                onIosSubscribeClick?.();
+              }}
+              className="min-h-11 px-4 rounded-2xl bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] text-white font-extrabold text-sm shadow-lg hover:brightness-105 transition sm:flex-1"
+            >
+              Plus Üye Ol — Abonelik Başlat
             </button>
           ) : null}
         </div>

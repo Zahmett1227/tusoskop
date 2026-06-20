@@ -55,12 +55,12 @@ export default function DashboardProfileMenu({
 
   const panelSurface = isLightTheme
     ? "border-slate-200 bg-white text-slate-900 shadow-[0_24px_60px_-20px_rgba(15,23,42,0.25)]"
-    : "border-slate-700/70 bg-slate-900 text-white shadow-[0_24px_60px_-20px_rgba(0,0,0,0.7)]";
-  const dividerColor = isLightTheme ? "border-slate-200" : "border-slate-700/60";
+    : "border-white/[0.1] bg-[#0a0d15] text-white shadow-[0_24px_60px_-20px_rgba(0,0,0,0.8)]";
+  const dividerColor = isLightTheme ? "border-slate-200" : "border-white/[0.08]";
   const subText = isLightTheme ? "text-slate-500" : "text-slate-400";
   const linkItem = isLightTheme
     ? "text-slate-700 hover:bg-slate-100"
-    : "text-slate-200 hover:bg-slate-800/70";
+    : "text-slate-200 hover:bg-white/[0.06]";
 
   return (
     <div className="relative" ref={containerRef}>
@@ -73,7 +73,7 @@ export default function DashboardProfileMenu({
         className={`flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border-2 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
           isLightTheme
             ? "border-slate-300 focus-visible:ring-offset-[#faf8f4]"
-            : "border-slate-700 focus-visible:ring-offset-slate-950"
+            : "border-white/[0.14] focus-visible:ring-offset-slate-950"
         } ${theme.ring} ${open ? "scale-105" : "hover:scale-105"}`}
       >
         {photoURL ? (
@@ -146,7 +146,7 @@ export default function DashboardProfileMenu({
                         ? "scale-105 border-white ring-2 ring-offset-1 ring-white/60"
                         : isLightTheme
                         ? "border-slate-300 hover:scale-105"
-                        : "border-slate-700 hover:scale-105"
+                        : "border-white/[0.12] hover:scale-105"
                     } ${key === "light" ? "border-slate-300" : ""}`}
                   >
                     {active ? (

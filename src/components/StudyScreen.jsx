@@ -62,7 +62,7 @@ export default function StudyScreen({
   if (!q && (total > 0 || settling)) {
     return (
       <div
-        className="min-h-dvh bg-slate-950 text-white overflow-x-hidden flex flex-col"
+        className="min-h-dvh bg-[#05070d] text-white overflow-x-hidden flex flex-col"
         style={{
           paddingTop: "calc(0.75rem + env(safe-area-inset-top))",
           paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))",
@@ -71,7 +71,7 @@ export default function StudyScreen({
         }}
       >
         <div className="max-w-4xl w-full mx-auto space-y-3 md:space-y-5 md:px-2 flex-1">
-          <div className="rounded-3xl p-4 md:p-6 border border-slate-800 bg-gradient-to-br from-slate-950 to-slate-900/80">
+          <div className="rounded-3xl p-4 md:p-6 border border-white/[0.07] bg-white/[0.025]">
             <div className="skeleton-shimmer h-3 w-36 rounded mb-4" />
             <div className="space-y-2">
               <div className="skeleton-shimmer h-4 w-full rounded" />
@@ -81,7 +81,7 @@ export default function StudyScreen({
           </div>
           <div className="space-y-2">
             {[...Array(5)].map((_, i) => (
-              <div key={i} className="skeleton-shimmer h-14 rounded-2xl border border-slate-800" />
+              <div key={i} className="skeleton-shimmer h-14 rounded-2xl border border-white/[0.06]" />
             ))}
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function StudyScreen({
 
   if (!q) {
     return (
-      <div className="min-h-dvh bg-slate-950 text-white flex items-center justify-center px-4">
+      <div className="min-h-dvh bg-[#05070d] text-white flex items-center justify-center px-4">
         <div className="text-center">
           <p className="text-xl font-bold mb-4">Soru bulunamadı</p>
           <button
@@ -107,7 +107,7 @@ export default function StudyScreen({
 
   return (
     <div
-      className="min-h-dvh bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.10),transparent_35%),#020617] text-white overflow-x-hidden flex flex-col px-4 py-5 sm:py-8 md:py-10"
+      className="min-h-dvh bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.06),transparent_38%),#05070d] text-white overflow-x-hidden flex flex-col px-4 py-5 sm:py-8 md:py-10"
       style={{
         paddingTop: "calc(0.75rem + env(safe-area-inset-top))",
         paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))",
@@ -116,12 +116,12 @@ export default function StudyScreen({
       }}
     >
       {/* Üst bar — tek satır rozetler + taşarsa yatay kaydırma */}
-      <div className="sticky top-2 z-30 mx-auto mb-5 flex max-w-4xl w-full flex-col gap-2 rounded-[1.5rem] border border-slate-800/80 bg-slate-950/88 p-2 shadow-2xl shadow-black/30 sticky-bar-blur">
+      <div className="sticky top-2 z-30 mx-auto mb-5 flex max-w-4xl w-full flex-col gap-2 rounded-[1.5rem] border border-white/[0.08] bg-[#05070d]/85 p-2 shadow-[0_20px_50px_-30px_rgba(0,0,0,0.9)] sticky-bar-blur">
         <div className="flex min-w-0 items-center gap-2">
           <button
             type="button"
             onClick={goDashboard}
-            className={`inline-flex shrink-0 items-center gap-2 rounded-2xl border ${theme.border} ${theme.softBg} px-3 py-2.5 text-sm font-extrabold ${theme.text} transition-all duration-200 hover:-translate-y-px active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617] ${theme.ring}`}
+            className={`inline-flex shrink-0 items-center gap-2 rounded-2xl border ${theme.border} ${theme.softBg} px-3 py-2.5 text-sm font-extrabold ${theme.text} transition-all duration-200 hover:-translate-y-px active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d] ${theme.ring}`}
           >
             <span>←</span> Panele dön
           </button>
@@ -129,10 +129,10 @@ export default function StudyScreen({
             <button
               type="button"
               onClick={() => setFlowMode?.(!flowMode)}
-              className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-3 py-2 text-xs font-extrabold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617] ${theme.ring} ${
+              className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-3 py-2 text-xs font-extrabold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d] ${theme.ring} ${
                 flowMode
                   ? `${theme.border} ${theme.softBg} ${theme.text} shadow-lg ${theme.glow}`
-                  : "border-slate-700 bg-slate-900/70 text-slate-400"
+                  : "border-white/[0.08] bg-white/[0.04] text-slate-400"
               }`}
             >
               Akış modu
@@ -142,13 +142,13 @@ export default function StudyScreen({
               className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-3 py-2 text-xs font-extrabold ${
                 streak >= 3
                   ? "border-orange-400/20 bg-orange-400/10 text-orange-200 shadow-[0_0_25px_rgba(251,146,60,0.12)]"
-                  : "border-slate-700 bg-slate-900/70 text-slate-400"
+                  : "border-white/[0.08] bg-white/[0.04] text-slate-400"
               }`}
             >
               {streak >= 10 ? `🔥 Seri: ${streak} | Klinik soğukkanlılık` : streak >= 5 ? `🔥 Seri: ${streak} | Isındın` : `🔥 Seri: ${streak}`}
               <span className="text-slate-400">Rekor: {bestStreak}</span>
             </span>
-            <span className="inline-flex shrink-0 items-center rounded-full border border-slate-700 bg-slate-900/80 px-3 py-2 text-xs font-bold text-slate-400 tabular-nums">
+            <span className="inline-flex shrink-0 items-center rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-2 text-xs font-bold text-slate-400 tabular-nums">
               {index + 1} / {total}
             </span>
           </div>
@@ -158,7 +158,7 @@ export default function StudyScreen({
             <span>İlerleme</span>
             <span>%{progressPercent}</span>
           </div>
-          <div className="h-2 overflow-hidden rounded-full bg-slate-800">
+          <div className="h-2 overflow-hidden rounded-full bg-white/10">
             <div
               className={`h-full rounded-full bg-gradient-to-r ${theme.gradient} shadow-[0_0_24px_rgba(16,185,129,0.32)] transition-all duration-500`}
               style={{ width: `${progressPercent}%` }}
@@ -172,7 +172,7 @@ export default function StudyScreen({
         {...swipeStudy}
       >
         {topicProgress && (
-          <div className="rounded-2xl border border-slate-700/70 bg-slate-950/70 px-4 py-3 shadow-lg">
+          <div className="rounded-2xl border border-white/[0.07] bg-white/[0.025] px-4 py-3 backdrop-blur-xl">
             <div className="mb-2 flex items-center justify-between gap-3">
               <div>
                 <div className="text-xs font-extrabold tracking-wide text-yellow-300">
@@ -186,7 +186,7 @@ export default function StudyScreen({
                 %{Math.round((topicProgress.current / Math.max(1, topicProgress.total)) * 100)}
               </div>
             </div>
-            <div className="h-2 overflow-hidden rounded-full bg-slate-800">
+            <div className="h-2 overflow-hidden rounded-full bg-white/10">
               <div
                 className="h-full rounded-full bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 shadow-[0_0_20px_rgba(250,204,21,0.25)] transition-all duration-500"
                 style={{
@@ -198,9 +198,9 @@ export default function StudyScreen({
         )}
 
         {/* Soru kartı — ekranın görsel ağırlık merkezi */}
-        <div className={`relative overflow-hidden rounded-[2rem] border ${theme.border} ${subjectVisual.border} bg-gradient-to-br from-slate-900/95 via-slate-900/92 to-slate-950/95 shadow-[0_30px_70px_-30px_rgba(0,0,0,0.85)] ${theme.glow} ring-1 ring-inset ring-white/[0.07] backdrop-blur-xl p-5 md:p-8`}>
+        <div className={`relative overflow-hidden rounded-[2rem] border border-white/[0.08] ${subjectVisual.border} bg-white/[0.03] shadow-[0_30px_70px_-44px_rgba(0,0,0,0.9)] ring-1 ring-inset ring-white/[0.05] backdrop-blur-xl p-5 md:p-8`}>
           {/* Üst aksan şeridi — kartın kimliği */}
-          <div className={`pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${theme.gradient} opacity-80`} />
+          <div className={`pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${theme.gradient} opacity-50`} />
           <div className={`pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full blur-3xl ${theme.softBg}`} />
           <button
             type="button"
@@ -213,12 +213,12 @@ export default function StudyScreen({
             className={`absolute z-20 top-3 right-3 min-h-10 min-w-10 px-2 rounded-full border text-lg font-black pointer-events-auto transition-all ${
               isFavorite
                 ? "border-amber-300/60 bg-amber-400/15 text-amber-200"
-                : "border-slate-700 bg-slate-900/80 text-slate-400 hover:text-amber-200"
+                : "border-white/[0.08] bg-white/[0.05] text-slate-400 hover:text-amber-200"
             }`}
           >
             {isFavorite ? "★" : "☆"}
           </button>
-          <div className={`relative z-10 mb-4 inline-flex max-w-[calc(100%-3rem)] items-center gap-2 rounded-full border border-slate-700/80 bg-slate-950/60 px-3 py-1.5 text-xs md:text-sm font-extrabold tracking-wide ${theme.text} uppercase`}>
+          <div className={`relative z-10 mb-4 inline-flex max-w-[calc(100%-3rem)] items-center gap-2 rounded-full border border-white/[0.08] bg-black/30 px-3 py-1.5 text-xs md:text-sm font-extrabold tracking-wide ${theme.text} uppercase`}>
             <span className={`h-2 w-2 rounded-full ${subjectVisual.dot}`} />
             {q.ders} • {q.konu}
           </div>
@@ -234,25 +234,25 @@ export default function StudyScreen({
           <button
             type="button"
             onClick={() => setInsightsOpen((o) => !o)}
-            className={`mb-2 flex w-full items-center justify-between rounded-2xl border border-slate-700/80 bg-slate-950/80 px-4 py-2.5 text-left text-xs font-extrabold text-slate-200 transition hover:bg-slate-900/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617] ${theme.ring}`}
+            className={`mb-2 flex w-full items-center justify-between rounded-2xl border border-white/[0.08] bg-white/[0.03] px-4 py-2.5 text-left text-xs font-extrabold text-slate-200 transition hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d] ${theme.ring}`}
             aria-expanded={insightsOpen}
           >
             <span>İçgörü (oturum)</span>
             <span className="tabular-nums text-slate-400">{insightsOpen ? "▼" : "▶"}</span>
           </button>
           {insightsOpen ? (
-            <div className="flex flex-col gap-2 rounded-2xl border border-slate-800/80 bg-slate-950/60 p-3">
+            <div className="flex flex-col gap-2 rounded-2xl border border-white/[0.07] bg-white/[0.025] p-3">
               <div className={`inline-flex flex-wrap items-center gap-2 rounded-xl border ${theme.border} ${theme.softBg} px-3 py-2 shadow ${theme.glow}`}>
                 <span className="text-[10px] uppercase tracking-wider font-black text-slate-400">Sosyal</span>
                 <span className={`text-xs font-black ${theme.text}`}>%{socialProof?.wrongRate ?? 52}</span>
                 <span className="text-[11px] text-slate-300">{socialProof?.label || "Dengeli"}</span>
               </div>
-              <div className="inline-flex flex-wrap items-center gap-2 rounded-xl border border-slate-700/70 bg-slate-950/80 px-3 py-2 shadow">
+              <div className="inline-flex flex-wrap items-center gap-2 rounded-xl border border-white/[0.07] bg-white/[0.03] px-3 py-2">
                 <span className="text-[10px] uppercase tracking-wider font-black text-slate-400">Bu oturum</span>
                 <span className="text-xs font-bold text-slate-200">{mastery?.level || "Başlangıç"}</span>
                 <span className={`text-xs font-black ${theme.text}`}>%{mastery?.accuracy ?? 0}</span>
               </div>
-              <div className="h-1.5 w-full overflow-hidden rounded-full border border-slate-700/70 bg-slate-800">
+              <div className="h-1.5 w-full overflow-hidden rounded-full border border-white/10 bg-white/10">
                 <div
                   className={`h-full bg-gradient-to-r ${theme.gradient} transition-all duration-500`}
                   style={{ width: `${mastery?.progress ?? 8}%` }}
@@ -271,13 +271,13 @@ export default function StudyScreen({
             </p>
             <p className="text-xs text-slate-400 mt-1">{socialProof?.label || "Dengeli zorluk"}</p>
           </div>
-          <div className="rounded-2xl border border-slate-700/70 bg-slate-950/80 px-4 py-3 shadow-xl">
+          <div className="rounded-2xl border border-white/[0.07] bg-white/[0.03] px-4 py-3">
             <p className="text-[11px] uppercase tracking-widest font-black text-slate-400 mb-1">Bu oturumdaki konu performansı</p>
             <div className="flex items-center justify-between text-sm mb-2">
               <span className="text-slate-300 font-bold">{mastery?.level || "Başlangıç"}</span>
               <span className={`${theme.text} font-black`}>%{mastery?.accuracy ?? 0}</span>
             </div>
-            <div className="h-2 rounded-full bg-slate-800 overflow-hidden border border-slate-700/70">
+            <div className="h-2 rounded-full bg-white/10 overflow-hidden border border-white/10">
               <div
                 className={`h-full bg-gradient-to-r ${theme.gradient} transition-all duration-500`}
                 style={{ width: `${mastery?.progress ?? 8}%` }}
@@ -305,9 +305,9 @@ export default function StudyScreen({
                   type="button"
                   aria-pressed={isSelected}
                   onClick={() => setSelected(i)}
-                  className={`group flex min-h-[58px] w-full min-w-0 items-start gap-3 rounded-[1.35rem] border px-4 py-4 text-left text-slate-100 shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617] ${theme.ring} active:scale-[0.99] sm:items-center sm:gap-4 md:px-6 md:py-5
+                  className={`group flex min-h-[58px] w-full min-w-0 items-start gap-3 rounded-[1.35rem] border px-4 py-4 text-left text-slate-100 shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d] ${theme.ring} active:scale-[0.99] sm:items-center sm:gap-4 md:px-6 md:py-5
                     ${isSelected && !showAnswer ? `${theme.border} ${theme.softBg} shadow-lg ${theme.glow}` : ""}
-                    ${!isSelected && !showCorrectHighlight ? "border-slate-700/80 bg-slate-950/80 hover:-translate-y-px hover:bg-slate-900/95 hover:border-slate-500 hover:shadow-lg hover:shadow-black/20" : ""}
+                    ${!isSelected && !showCorrectHighlight ? "border-white/[0.08] bg-white/[0.025] hover:-translate-y-px hover:bg-white/[0.05] hover:border-white/[0.16]" : ""}
                     ${showCorrectHighlight && !selectedIsCorrect ? "border-emerald-400/60 bg-emerald-500/[0.12] shadow-[0_0_30px_rgba(16,185,129,0.18)]" : ""}
                     ${selectedIsWrong ? "border-amber-400/70 bg-amber-500/10 shadow-[0_0_35px_rgba(250,204,21,0.15)]" : ""}
                     ${selectedIsCorrect ? "correct-pop" : ""}
@@ -318,7 +318,7 @@ export default function StudyScreen({
                       ? "bg-emerald-500 text-slate-950 border-emerald-400/60"
                       : isSelected
                       ? `${theme.primary} text-slate-950 ${theme.border}`
-                      : "border-slate-600/70 bg-gradient-to-br from-slate-700 to-slate-900 text-slate-300"}
+                      : "border-white/10 bg-white/[0.06] text-slate-300"}
                   `}>
                     {String.fromCharCode(65 + i)}
                   </span>
@@ -341,7 +341,7 @@ export default function StudyScreen({
                 ? "border border-emerald-400/25 bg-gradient-to-r from-emerald-400/15 to-teal-400/10 text-emerald-100 shadow-[0_0_35px_rgba(52,211,153,0.14)]"
                 : feedback.type === "wrong"
                 ? "border border-red-400/25 bg-gradient-to-r from-red-400/15 to-amber-400/10 text-red-100 shadow-[0_0_35px_rgba(248,113,113,0.14)]"
-                : "border border-slate-500/30 bg-slate-800/70 text-slate-300"
+                : "border border-white/10 bg-white/[0.05] text-slate-300"
             }`}
           >
             {feedback.text}
@@ -355,19 +355,19 @@ export default function StudyScreen({
 
         {/* Aksiyon butonları */}
         {!showAnswer ? (
-          <div className="grid grid-cols-2 gap-2 sm:gap-3 mobile-action-bar sticky bottom-0 z-30 bg-slate-950/95 sticky-bar-blur rounded-2xl p-1 border border-slate-800/60 shadow-[0_-8px_32px_rgba(0,0,0,0.35)]">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3 mobile-action-bar sticky bottom-0 z-30 bg-[#05070d]/92 sticky-bar-blur rounded-2xl p-1 border border-white/[0.08] shadow-[0_-8px_32px_rgba(0,0,0,0.45)]">
             <button
               type="button"
               onClick={revealAnswer}
               disabled={isAutoAdvancing}
-              className={`min-h-12 rounded-2xl px-6 py-4 font-extrabold text-slate-950 shadow-lg ${theme.glow} transition-all duration-200 hover:-translate-y-px active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617] ${theme.ring} ${theme.primary} ${theme.primaryHover} disabled:opacity-50`}
+              className={`min-h-12 rounded-2xl px-6 py-4 font-extrabold text-slate-950 shadow-lg ${theme.glow} transition-all duration-200 hover:-translate-y-px active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d] ${theme.ring} ${theme.primary} ${theme.primaryHover} disabled:opacity-50`}
             >
               {isAutoAdvancing ? "Geçiliyor..." : "Cevabı göster"}
             </button>
             <button
               type="button"
               onClick={goDashboard}
-              className="min-h-12 rounded-2xl border border-slate-700/80 bg-slate-800/80 px-6 py-4 font-extrabold text-slate-100 transition-all duration-200 hover:-translate-y-px hover:bg-slate-700/90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617]"
+              className="min-h-12 rounded-2xl border border-white/[0.08] bg-white/[0.05] px-6 py-4 font-extrabold text-slate-100 transition-all duration-200 hover:-translate-y-px hover:bg-white/[0.09] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d]"
             >
               Bitir
             </button>
@@ -375,7 +375,7 @@ export default function StudyScreen({
         ) : (
           <div className="space-y-4">
             {/* Cevap & açıklama */}
-            <div className="rounded-3xl border border-slate-700/60 bg-gradient-to-br from-slate-900 to-slate-900/70 p-5 md:p-6">
+            <div className="rounded-3xl border border-white/[0.07] bg-white/[0.025] backdrop-blur-xl p-5 md:p-6">
               <p className="text-[11px] text-slate-500 font-black uppercase tracking-widest mb-1">
                 Doğru cevap
               </p>
@@ -389,7 +389,7 @@ export default function StudyScreen({
               )}
 
               {q.exp && (
-                <div className="mt-3 pt-3 border-t border-slate-800">
+                <div className="mt-3 pt-3 border-t border-white/[0.08]">
                   <p className="text-[11px] text-slate-500 font-black uppercase tracking-widest mb-1.5">
                     Açıklama
                   </p>
@@ -412,10 +412,10 @@ export default function StudyScreen({
             )}
 
             {/* İleri/geri butonlar */}
-            <div className="grid grid-cols-2 gap-2 sm:gap-3 mobile-action-bar sticky bottom-0 z-30 bg-slate-950/95 sticky-bar-blur rounded-2xl p-1 border border-slate-800/60 shadow-[0_-8px_32px_rgba(0,0,0,0.35)]">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 mobile-action-bar sticky bottom-0 z-30 bg-[#05070d]/92 sticky-bar-blur rounded-2xl p-1 border border-white/[0.08] shadow-[0_-8px_32px_rgba(0,0,0,0.45)]">
               <button
                 type="button"
-                className="min-h-12 rounded-2xl border border-slate-700/80 bg-slate-800/80 px-6 py-4 font-extrabold text-slate-100 transition-all duration-200 hover:-translate-y-px hover:bg-slate-700/90 disabled:opacity-40 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617]"
+                className="min-h-12 rounded-2xl border border-white/[0.08] bg-white/[0.05] px-6 py-4 font-extrabold text-slate-100 transition-all duration-200 hover:-translate-y-px hover:bg-white/[0.09] disabled:opacity-40 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d]"
                 onClick={prevQuestion}
                 disabled={index === 0}
               >
@@ -424,7 +424,7 @@ export default function StudyScreen({
               <button
                 type="button"
                 onClick={nextQuestion}
-                className={`min-h-12 rounded-2xl px-6 py-4 font-extrabold text-slate-950 shadow-lg ${theme.glow} transition-all duration-200 hover:-translate-y-px active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617] ${theme.ring} ${theme.primary} ${theme.primaryHover}`}
+                className={`min-h-12 rounded-2xl px-6 py-4 font-extrabold text-slate-950 shadow-lg ${theme.glow} transition-all duration-200 hover:-translate-y-px active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d] ${theme.ring} ${theme.primary} ${theme.primaryHover}`}
               >
                 {index < total - 1 ? "Sonraki →" : "Özete git"}
               </button>

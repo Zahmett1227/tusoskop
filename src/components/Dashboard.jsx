@@ -28,6 +28,16 @@ import { buildTopicRows, groupReviewsBySubject } from "../utils/smartReviewUtils
 import { useToast } from "../context/ToastContext";
 import DashboardLeaderboardWidget from "./leaderboard/DashboardLeaderboardWidget";
 
+const ACCENT_HEX = {
+  emerald: "#34d399",
+  cyan: "#22d3ee",
+  violet: "#a78bfa",
+  amber: "#fbbf24",
+  light: "#10b981",
+};
+
+const accentHex = (key) => ACCENT_HEX[key] || ACCENT_HEX.emerald;
+
 function toSafeTargetScore(value, fallback = 65) {
   const n = Number(value);
   return Number.isFinite(n) ? n : fallback;
@@ -88,8 +98,9 @@ export default function Dashboard({
     theme.shellBg ??
     (isLightTheme
       ? "min-h-dvh bg-[#faf8f4] text-slate-950"
-      : "min-h-dvh bg-slate-950 text-white");
+      : "min-h-dvh bg-[#05070d] text-white");
   const appCardShell = isLightTheme ? "app-card app-card--light" : "app-card";
+  const hex = accentHex(accentThemeKey);
   const premiumActive = isUserPremium(userData, user);
   // iOS native'de Plus/free ayrımı yok; Plus rozetleri gizlenir.
   const showPlusBadges = canShowExternalPayments();
@@ -274,34 +285,27 @@ export default function Dashboard({
 
         {/* Akıllı Tekrar Kartı — mobil öncelikli premium hero CTA */}
         <section
-          className={`relative mb-6 overflow-hidden rounded-3xl border px-5 py-5 shadow-xl backdrop-blur-xl md:px-7 md:py-6 ${
+          className={`relative mb-6 overflow-hidden rounded-[28px] border px-5 py-6 backdrop-blur-xl md:px-7 ${
             isLightTheme
-              ? "border-emerald-300/40 bg-white/70 text-slate-950 shadow-emerald-100/60"
-              : "border-emerald-300/15 bg-slate-950/60 text-white shadow-black/40"
+              ? "border-slate-200 bg-white/80 text-slate-950 shadow-sm"
+              : "border-white/[0.08] bg-white/[0.03] text-white shadow-[0_24px_60px_-44px_rgba(0,0,0,0.9)]"
           }`}
           aria-labelledby="smart-review-heading"
         >
-          {/* yumuşak premium glow — abartısız */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full bg-teal-400/15 blur-3xl"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-24 -left-10 h-48 w-48 rounded-full bg-emerald-400/10 blur-3xl"
+            className="pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full blur-3xl"
+            style={{ background: `${hex}16` }}
           />
 
           <div className="relative">
             {/* rozet satırı */}
             <div className="flex flex-wrap items-center gap-2">
               <span
-                className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-black uppercase tracking-[0.14em] ${
-                  isLightTheme
-                    ? "border-emerald-300/60 bg-emerald-50 text-emerald-700"
-                    : "border-emerald-300/25 bg-emerald-400/10 text-emerald-300"
-                }`}
+                className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-black uppercase tracking-[0.14em]"
+                style={{ borderColor: `${hex}40`, color: hex, backgroundColor: `${hex}14` }}
               >
-                <span aria-hidden="true" className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(45,212,191,0.8)]" />
+                <span aria-hidden="true" className="inline-block h-1.5 w-1.5 rounded-full" style={{ backgroundColor: hex }} />
                 FSRS Akıllı Plan
               </span>
               {smartDue > 0 && smartOverdue > 0 && (
@@ -321,7 +325,7 @@ export default function Dashboard({
             {/* erişilebilir başlık — görünür eyebrow */}
             <h2
               id="smart-review-heading"
-              className={`mt-3 text-[11px] font-black uppercase tracking-[0.28em] ${isLightTheme ? "text-emerald-700" : "text-emerald-300/80"}`}
+              className={`mt-3 text-[11px] font-black uppercase tracking-[0.28em] ${isLightTheme ? "text-slate-500" : "text-slate-400"}`}
             >
               Bugünkü Tekrarım
             </h2>
@@ -331,7 +335,7 @@ export default function Dashboard({
                 <>
                   <span className="sr-only">Bugün {smartDue} soru hazır.</span>
                   <p className={`text-balance text-[1.55rem] font-black leading-[1.15] tracking-tight md:text-3xl ${isLightTheme ? "text-slate-950" : "text-white"}`}>
-                    <span className={isLightTheme ? "text-emerald-600" : "text-emerald-400"}>{smartDue}</span> yüksek verimli tekrar hazır
+                    <span style={{ color: hex }}>{smartDue}</span> yüksek verimli tekrar hazır
                   </p>
                   <p className={`mt-2 max-w-xl text-sm font-medium leading-relaxed ${isLightTheme ? "text-slate-600" : "text-slate-300"}`}>
                     Zorlandığın sorular bugün öne alındı.
@@ -367,7 +371,7 @@ export default function Dashboard({
                       className={`inline-flex items-center rounded-lg border px-2.5 py-1 text-xs font-bold ${
                         isLightTheme
                           ? "border-slate-200 bg-slate-50 text-slate-700"
-                          : "border-white/10 bg-white/[0.06] text-slate-200"
+                          : "border-white/10 bg-white/[0.05] text-slate-200"
                       }`}
                     >
                       {name}
@@ -376,7 +380,7 @@ export default function Dashboard({
               </div>
             )}
 
-            {/* CTA — mobilde full width, ~64px yükseklik */}
+            {/* CTA — mobilde full width */}
             <div className="mt-5">
               <button
                 type="button"
@@ -388,12 +392,9 @@ export default function Dashboard({
                     setView("studyCollection");
                   }
                 }}
-                className="group relative flex min-h-[64px] w-full items-center justify-center gap-3 overflow-hidden rounded-2xl bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 px-6 text-base font-black text-slate-950 shadow-[0_0_28px_rgba(45,212,191,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_36px_rgba(45,212,191,0.4)] active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 focus-visible:ring-offset-2 sm:w-auto sm:self-start sm:px-8"
+                className={`group relative flex min-h-[58px] w-full items-center justify-center gap-3 rounded-2xl px-6 text-base font-black text-slate-950 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 sm:w-auto sm:self-start sm:px-8 ${isLightTheme ? "focus-visible:ring-offset-white" : "focus-visible:ring-offset-slate-950"}`}
+                style={{ backgroundColor: hex, boxShadow: `0 14px 34px -22px ${hex}` }}
               >
-                <span
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
-                />
                 <span
                   aria-hidden="true"
                   className="relative flex h-7 w-7 items-center justify-center rounded-full bg-slate-950/15 transition-transform duration-300 group-hover:scale-110"
@@ -427,18 +428,21 @@ export default function Dashboard({
 
         {/* Bugünün planı — ilk ekranda tek güçlü karar alanı */}
         <section
-          className={`relative mb-6 md:mb-8 overflow-hidden rounded-[2rem] md:rounded-[3rem] border p-5 shadow-2xl md:p-8 ${
+          className={`relative mb-6 md:mb-8 overflow-hidden rounded-[28px] border p-5 md:p-8 ${
             isLightTheme
-              ? "border-slate-200 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.18),transparent_35%),linear-gradient(135deg,#fffefb,#f4fbf7_45%,#ebe8e3)] text-slate-950 shadow-slate-200/80"
-              : `${theme.softBorder} bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.20),transparent_38%),linear-gradient(135deg,#020617,#0f172a_48%,#04140f)] text-white shadow-black/40`
+              ? "border-slate-200 bg-white text-slate-950 shadow-sm"
+              : "border-white/[0.08] bg-white/[0.025] text-white backdrop-blur-xl shadow-[0_24px_60px_-44px_rgba(0,0,0,0.9)]"
           }`}
           aria-labelledby="today-plan-heading"
         >
-          <div className={`pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full blur-3xl ${theme.softBg}`} />
-          <div className="pointer-events-none absolute -bottom-24 left-1/3 h-52 w-52 rounded-full bg-cyan-400/10 blur-3xl" />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full blur-3xl"
+            style={{ background: `${hex}14` }}
+          />
           <h2
             id="today-plan-heading"
-            className={`relative z-10 mb-3 text-[10px] font-black uppercase tracking-[0.32em] ${isLightTheme ? "text-slate-500" : theme.text}`}
+            className={`relative z-10 mb-3 text-[10px] font-black uppercase tracking-[0.32em] ${isLightTheme ? "text-slate-500" : "text-slate-400"}`}
           >
             Bugünün planı
           </h2>
@@ -459,14 +463,17 @@ export default function Dashboard({
                   key={label}
                   className={`rounded-2xl border px-3 py-3 text-center ${
                     isLightTheme
-                      ? "border-white/80 bg-white/80 shadow-sm"
-                      : "border-white/10 bg-white/[0.06] shadow-lg shadow-black/10"
+                      ? "border-slate-200 bg-slate-50"
+                      : "border-white/[0.06] bg-black/20"
                   }`}
                 >
                   <p className="text-[10px] font-black uppercase tracking-wider text-slate-500">
                     {label}
                   </p>
-                  <p className={`mt-1 text-2xl font-black tabular-nums md:text-3xl ${label === "Bugünkü tekrar" ? theme.text : isLightTheme ? "text-slate-950" : "text-white"}`}>
+                  <p
+                    className={`mt-1 text-2xl font-black tabular-nums md:text-3xl ${label !== "Bugünkü tekrar" ? (isLightTheme ? "text-slate-950" : "text-white") : ""}`}
+                    style={label === "Bugünkü tekrar" ? { color: hex } : undefined}
+                  >
                     {value}
                   </p>
                   <p className="text-[10px] font-semibold text-slate-500">{suffix}</p>
@@ -500,7 +507,6 @@ export default function Dashboard({
         <DashboardLeaderboardWidget
           user={user}
           isLightTheme={isLightTheme}
-          accentTheme={{ ...theme, hex }}
           setView={setView}
         />
 
@@ -525,16 +531,16 @@ export default function Dashboard({
             {isEditingTarget ? (
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <button onClick={() => adjustTarget(-0.25)} className={`w-12 h-12 rounded-full text-rose-500 text-2xl font-bold transition-all ${isLightTheme ? "bg-slate-100 hover:bg-rose-100" : "bg-slate-800 hover:bg-rose-500/10"}`}>-</button>
+                  <button onClick={() => adjustTarget(-0.25)} className={`w-12 h-12 rounded-full text-rose-500 text-2xl font-bold transition-all ${isLightTheme ? "bg-slate-100 hover:bg-rose-100" : "bg-white/[0.06] hover:bg-rose-500/10"}`}>-</button>
                   <div className="text-center">
                     <span className={`text-4xl font-black ${isLightTheme ? "text-slate-900" : "text-white"}`}>{displayTempTarget.toFixed(2)}</span>
                     <p className={`text-[10px] font-bold uppercase tracking-widest mt-1 ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>Hedef Netin</p>
                   </div>
-                  <button onClick={() => adjustTarget(0.25)} className={`w-12 h-12 rounded-full ${theme.text} text-2xl font-bold transition-all ${isLightTheme ? "bg-emerald-50 hover:bg-emerald-100" : `bg-slate-800 ${theme.softBg}`}`}>+</button>
+                  <button onClick={() => adjustTarget(0.25)} className={`w-12 h-12 rounded-full ${theme.text} text-2xl font-bold transition-all ${isLightTheme ? "bg-emerald-50 hover:bg-emerald-100" : `bg-white/[0.06] ${theme.softBg}`}`}>+</button>
                 </div>
                 <div className="flex gap-2">
                   <button type="button" onClick={saveTarget} className={`flex-1 min-h-12 ${theme.primary} ${theme.primaryHover} text-slate-950 py-3 rounded-2xl font-black text-sm transition-all shadow-lg ${theme.glow} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-[#faf8f4]" : "focus-visible:ring-offset-slate-950"} ${theme.ring}`}>KAYDET</button>
-                  <button type="button" onClick={() => setIsEditingTarget(false)} className={`px-4 py-3 rounded-2xl font-bold text-sm focus-visible:outline-none focus-visible:ring-2 ${isLightTheme ? "bg-slate-100 text-slate-600 border border-slate-300 focus-visible:ring-slate-400/50" : "bg-slate-800 text-slate-400 focus-visible:ring-slate-500/40"}`}>İPTAL</button>
+                  <button type="button" onClick={() => setIsEditingTarget(false)} className={`px-4 py-3 rounded-2xl font-bold text-sm focus-visible:outline-none focus-visible:ring-2 ${isLightTheme ? "bg-slate-100 text-slate-600 border border-slate-300 focus-visible:ring-slate-400/50" : "bg-white/[0.06] text-slate-400 border border-white/[0.08] focus-visible:ring-slate-500/40"}`}>İPTAL</button>
                 </div>
               </div>
             ) : (
@@ -557,57 +563,94 @@ export default function Dashboard({
         {/* ═══════════════════════════════════════════════════════
             HERO: ÇALIŞMA ALANI — uygulamanın kalbi
         ═══════════════════════════════════════════════════════ */}
-        <div className={`relative h-full min-h-0 overflow-hidden rounded-[2.25rem] border p-5 md:p-7 ${
-          isLightTheme
-            ? "border-emerald-200/60 bg-[#fffefb] shadow-md"
-            : "border-emerald-400/20 bg-gradient-to-br from-slate-900 via-[#0a1a1a] to-emerald-950/25 shadow-[0_0_0_1px_rgba(16,185,129,0.10),0_32px_64px_-28px_rgba(16,185,129,0.40)]"
-        }`}>
-          <div className={`pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full blur-3xl ${theme.softBg}`} />
-          <div className="pointer-events-none absolute -bottom-12 left-1/4 h-40 w-40 rounded-full bg-cyan-400/8 blur-3xl" />
+        <div
+          onClick={() => {
+            trackClarityEvent("study_area_card_clicked");
+            setView("studyCollection");
+          }}
+          className={`group relative h-full min-h-0 cursor-pointer overflow-hidden rounded-[2rem] border p-6 transition-all duration-300 md:p-7 ${
+            isLightTheme
+              ? "border-slate-200 bg-white shadow-md hover:shadow-lg"
+              : "border-white/[0.08] bg-gradient-to-b from-white/[0.05] to-white/[0.01] shadow-[0_30px_70px_-44px_rgba(0,0,0,0.9)] hover:border-white/[0.14]"
+          }`}
+        >
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-20 -top-24 h-56 w-56 rounded-full blur-3xl"
+            style={{ background: `${hex}1c` }}
+          />
+          <div className="pointer-events-none absolute -bottom-16 left-1/4 h-40 w-40 rounded-full bg-cyan-400/[0.06] blur-3xl" />
 
-          <div className="relative z-10 min-w-0 space-y-4 md:space-y-5">
-            <div className="min-w-0">
-              <div className="flex items-center gap-2 mb-2">
-                <p className={`text-[10px] font-black uppercase tracking-[0.28em] ${theme.text}`}>
-                  ÇALIŞMA ALANIM
-                </p>
-                <span className="inline-flex items-center gap-1 rounded-full border border-violet-500/25 bg-violet-500/10 px-2 py-0.5 text-[9px] font-black uppercase tracking-wider text-violet-400">
-                  ✨ AI Destekli
+          <div className="relative z-10 flex h-full min-w-0 flex-col">
+            <div className="flex items-center gap-2">
+              <p
+                className="text-[10px] font-black uppercase tracking-[0.24em]"
+                style={{ color: hex }}
+              >
+                ÇALIŞMA ALANIM
+              </p>
+              <span className="inline-flex items-center gap-1 rounded-full border border-violet-400/25 bg-violet-400/10 px-2 py-0.5 text-[9px] font-black uppercase tracking-wider text-violet-300">
+                ✨ AI Destekli
+              </span>
+            </div>
+
+            {smartDue > 0 ? (
+              <div className="mt-4 flex items-end gap-3">
+                <span
+                  className="text-[52px] font-black leading-[0.8] tracking-tighter tabular-nums"
+                  style={{ color: hex }}
+                >
+                  {smartDue}
+                </span>
+                <span className={`pb-1 text-sm font-bold leading-tight ${isLightTheme ? "text-slate-600" : "text-slate-300"}`}>
+                  soru bugün
+                  <br />
+                  tekrara hazır
                 </span>
               </div>
-              <h3 className={`text-xl md:text-2xl font-black tracking-tight ${isLightTheme ? "text-slate-900" : "text-white"}`}>
-                Tekrarlarını tek yerden yönet
+            ) : (
+              <h3 className={`mt-4 text-2xl font-black tracking-tight ${isLightTheme ? "text-slate-900" : "text-white"}`}>
+                Tekrarların güncel
               </h3>
-              <p className={`mt-2 text-sm leading-relaxed ${isLightTheme ? "text-slate-600" : "text-slate-300"}`}>
-                FSRS planın, AI önerilerin, yanlışların ve favorilerin burada. Her şey tek akışta.
-              </p>
+            )}
+            <p className={`mt-2 text-sm leading-relaxed ${isLightTheme ? "text-slate-600" : "text-slate-400"}`}>
+              FSRS planın, AI önerilerin, yanlışların ve favorilerin tek akışta.
+            </p>
+
+            <div className="mt-5 grid grid-cols-3 gap-2.5">
+              {[
+                { label: "Yanlış", value: studySummary.wrongCount || 0, color: "#fb7185" },
+                { label: "Favori", value: studySummary.favoriteCount || 0, color: "#fbbf24" },
+                { label: "FSRS", value: smartDue || 0, color: hex },
+              ].map((s) => (
+                <div
+                  key={s.label}
+                  className={`min-w-0 rounded-2xl border px-3 py-3 ${
+                    isLightTheme ? "border-slate-200 bg-slate-50" : "border-white/[0.06] bg-black/20"
+                  }`}
+                >
+                  <p className="text-2xl font-black tabular-nums leading-none" style={{ color: s.color }}>
+                    {s.value}
+                  </p>
+                  <p className="mt-1 text-[10px] font-black uppercase tracking-wider text-slate-500">
+                    {s.label}
+                  </p>
+                </div>
+              ))}
             </div>
 
-            <div className="grid grid-cols-3 gap-2.5 md:gap-3 min-w-0">
-              <div className={`rounded-2xl border px-3 py-3 md:px-4 md:py-3.5 min-w-0 ${isLightTheme ? "border-slate-300 bg-[#f5f2ec]" : "border-slate-700/70 bg-slate-950/55"}`}>
-                <p className="text-[10px] uppercase tracking-wider text-slate-500 font-black">Yanlışlarım</p>
-                <p className="mt-1 text-lg md:text-xl font-black text-rose-300 tabular-nums">{studySummary.wrongCount || 0}</p>
-              </div>
-              <div className={`rounded-2xl border px-3 py-3 md:px-4 md:py-3.5 min-w-0 ${isLightTheme ? "border-slate-300 bg-[#f5f2ec]" : "border-slate-700/70 bg-slate-950/55"}`}>
-                <p className="text-[10px] uppercase tracking-wider text-slate-500 font-black">Favorilerim</p>
-                <p className="mt-1 text-lg md:text-xl font-black text-amber-300 tabular-nums">{studySummary.favoriteCount || 0}</p>
-              </div>
-              <div className={`rounded-2xl border px-3 py-3 md:px-4 md:py-3.5 min-w-0 ${isLightTheme ? "border-slate-300 bg-[#f5f2ec]" : "border-slate-700/70 bg-slate-950/55"}`}>
-                <p className="text-[10px] uppercase tracking-wider text-slate-500 font-black">FSRS Tekrar</p>
-                <p className={`mt-1 text-lg md:text-xl font-black tabular-nums ${theme.text}`}>{smartDue || 0}</p>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => {
-                trackClarityEvent("study_area_card_clicked");
-                setView("studyCollection");
-              }}
-              className={`w-full min-h-12 rounded-2xl text-sm font-black text-slate-950 transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "focus-visible:ring-offset-[#fffefb]" : "focus-visible:ring-offset-slate-950"} ${theme.primary} ${theme.primaryHover} shadow-lg ${theme.glow} ${theme.ring}`}
+            <div className="mt-5 flex-1" />
+            <div
+              className="flex min-h-[52px] w-full items-center justify-center gap-2 rounded-2xl text-sm font-black text-slate-950 transition-transform duration-300 group-hover:-translate-y-0.5"
+              style={{ backgroundColor: hex, boxShadow: `0 14px 34px -22px ${hex}` }}
             >
               Çalışma Alanına Gir
-            </button>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6"
+                strokeLinecap="round" strokeLinejoin="round"
+                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </div>
           </div>
         </div>
 
@@ -616,10 +659,13 @@ export default function Dashboard({
         ═══════════════════════════════════════════════════════ */}
         <div
           onClick={() => setView("examSetSelect")}
-          className={`group relative h-full min-h-0 overflow-hidden rounded-[2.25rem] border p-6 md:p-8 cursor-pointer transition-all duration-500 ${isLightTheme ? "border-slate-300 bg-gradient-to-br from-[#fffefb] via-[#faf8f4] to-[#ebe8e3] hover:border-slate-400 shadow-md" : `${theme.softBorder} bg-gradient-to-br from-slate-900 via-slate-900 to-slate-900/80 hover:border-slate-500/70`}`}
+          className={`group relative h-full min-h-0 overflow-hidden rounded-[2rem] border p-6 md:p-8 cursor-pointer transition-all duration-300 ${isLightTheme ? "border-slate-200 bg-white hover:shadow-lg shadow-md" : "border-white/[0.08] bg-white/[0.025] backdrop-blur-xl hover:border-white/[0.14]"}`}
         >
-          <div className={`absolute -top-20 -right-20 w-72 h-72 ${theme.softBg} rounded-full blur-3xl transition-all duration-700 pointer-events-none`} />
-          <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-cyan-500/5 rounded-full blur-2xl pointer-events-none" />
+          <div
+            aria-hidden="true"
+            className="absolute -top-20 -right-20 w-72 h-72 rounded-full blur-3xl pointer-events-none"
+            style={{ background: `${hex}12` }}
+          />
 
           <div className="relative z-10 flex h-full flex-col gap-6">
             <div className="flex-1">
@@ -641,7 +687,7 @@ export default function Dashboard({
                   { icon: "⚠️", label: "Zayıf konu özeti" },
                   { icon: "☁️", label: "Buluta otomatik kayıt" },
                 ].map(f => (
-                  <span key={f.label} className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold ${isLightTheme ? "bg-[#fffefb] border border-slate-300 text-slate-700 shadow-sm" : "bg-slate-800/80 border border-slate-700 text-slate-300"}`}>
+                  <span key={f.label} className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold ${isLightTheme ? "bg-slate-50 border border-slate-200 text-slate-700" : "bg-white/[0.04] border border-white/10 text-slate-300"}`}>
                     <span>{f.icon}</span> {f.label}
                   </span>
                 ))}
@@ -656,7 +702,7 @@ export default function Dashboard({
             </div>
 
             {/* Küçük analiz önizlemesi */}
-            <div className={`border rounded-2xl p-4 ${isLightTheme ? "bg-[#fffefb] border-slate-200 shadow-sm" : "bg-slate-950/70 border-slate-800"}`}>
+            <div className={`border rounded-2xl p-4 ${isLightTheme ? "bg-slate-50 border-slate-200" : "bg-black/20 border-white/[0.06]"}`}>
               <p className={`text-[10px] font-black uppercase tracking-widest mb-3 flex items-center gap-2 ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>
                 <span className={`w-1.5 h-1.5 rounded-full ${theme.primary} animate-ping inline-block`} />
                 Deneme Sonu Analiz
@@ -667,7 +713,7 @@ export default function Dashboard({
                   { label: "Yanlış", val: "21", color: "text-rose-400" },
                   { label: "Net",    val: "83.75", color: "text-cyan-400" },
                 ].map(s => (
-                  <div key={s.label} className={`rounded-xl p-2 text-center ${isLightTheme ? "border border-slate-200 bg-[#ebe9e4]" : "bg-slate-900"}`}>
+                  <div key={s.label} className={`rounded-xl p-2 text-center ${isLightTheme ? "border border-slate-200 bg-white" : "bg-white/[0.04]"}`}>
                     <p className="text-[10px] text-slate-500 font-black uppercase">{s.label}</p>
                     <p className={`text-base font-black ${s.color}`}>{s.val}</p>
                   </div>
@@ -677,7 +723,7 @@ export default function Dashboard({
                 {[{ ders: "Dahiliye", oran: 82 }, { ders: "Patoloji", oran: 61 }, { ders: "Farmakoloji", oran: 44 }].map(r => (
                   <div key={r.ders} className="flex items-center gap-2">
                     <span className={`text-[10px] w-20 shrink-0 ${isLightTheme ? "text-slate-600" : "text-slate-400"}`}>{r.ders}</span>
-                    <div className={`flex-1 h-1.5 rounded-full overflow-hidden ${isLightTheme ? "bg-slate-200" : "bg-slate-800"}`}>
+                    <div className={`flex-1 h-1.5 rounded-full overflow-hidden ${isLightTheme ? "bg-slate-200" : "bg-white/10"}`}>
                       <div className={`h-full rounded-full ${r.oran >= 65 ? "bg-emerald-500" : r.oran >= 45 ? "bg-cyan-400" : "bg-rose-500"}`} style={{ width: `${r.oran}%` }} />
                     </div>
                     <span className={`text-[10px] font-bold w-8 text-right ${isLightTheme ? "text-slate-500" : "text-slate-500"}`}>%{r.oran}</span>
@@ -702,7 +748,7 @@ export default function Dashboard({
           <button
             type="button"
             onClick={() => openTopicSetup?.()}
-            className={`group flex items-center gap-4 px-6 py-5 rounded-[2rem] transition-all text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "bg-[#fffefb] border border-slate-300 hover:border-slate-400 shadow-md focus-visible:ring-offset-[#faf8f4] focus-visible:ring-emerald-500/45" : "bg-slate-900 border border-slate-800 hover:border-slate-600 focus-visible:ring-offset-slate-950 focus-visible:ring-emerald-400/40"}`}
+            className={`group flex items-center gap-4 px-6 py-5 rounded-[2rem] transition-all text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "bg-white border border-slate-200 hover:border-slate-300 shadow-sm focus-visible:ring-offset-[#faf8f4] focus-visible:ring-emerald-500/45" : "bg-white/[0.025] border border-white/[0.08] backdrop-blur-xl hover:border-white/[0.14] focus-visible:ring-offset-slate-950 focus-visible:ring-white/30"}`}
           >
             <span className="text-2xl">⚡</span>
             <div>
@@ -726,10 +772,9 @@ export default function Dashboard({
           <button
             type="button"
             onClick={() => setView("tracker")}
-            className={`group relative flex items-center gap-4 px-7 py-6 rounded-[2rem] transition-all text-left hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "bg-gradient-to-br from-violet-100 via-fuchsia-50 to-cyan-100 border border-violet-300 hover:border-violet-400 shadow-md focus-visible:ring-offset-[#faf8f4] focus-visible:ring-violet-400/50" : "bg-gradient-to-br from-violet-500/20 via-fuchsia-500/10 to-cyan-400/20 border border-violet-300/35 hover:border-violet-200/70 shadow-[0_0_0_1px_rgba(167,139,250,0.15),0_24px_45px_-24px_rgba(167,139,250,0.65)] focus-visible:ring-offset-slate-950 focus-visible:ring-violet-400/45"}`}
+            className={`group relative flex items-center gap-4 px-7 py-6 rounded-[2rem] transition-all text-left hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${isLightTheme ? "bg-gradient-to-br from-violet-100 via-fuchsia-50 to-cyan-100 border border-violet-200 hover:border-violet-300 shadow-sm focus-visible:ring-offset-[#faf8f4] focus-visible:ring-violet-400/50" : "bg-violet-500/[0.08] border border-violet-300/20 hover:border-violet-200/40 backdrop-blur-xl focus-visible:ring-offset-slate-950 focus-visible:ring-violet-400/45"}`}
           >
-            <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.2),transparent_45%)] opacity-90 pointer-events-none" />
-            <span className="relative z-10 text-3xl drop-shadow-[0_0_12px_rgba(167,139,250,0.85)]">🗺️</span>
+            <span className="relative z-10 text-3xl">🗺️</span>
             <div className="relative z-10">
               <p className={`font-black text-base tracking-tight ${isLightTheme ? "text-slate-900" : "text-white"}`}>Konu Yeterlilik Düzeyim</p>
               <p className={`text-[11px] font-semibold ${isLightTheme ? "text-violet-700" : "text-violet-100/80"}`}>Konu bazında ustalık, tekrar ve güç alanların</p>
@@ -763,8 +808,8 @@ export default function Dashboard({
           <section key={type} className="mb-12">
             <div className={`mb-6 flex flex-col gap-3 rounded-[1.75rem] border px-5 py-4 sm:flex-row sm:items-center sm:justify-between ${
               isLightTheme
-                ? "border-slate-200 bg-white/70 shadow-sm"
-                : "border-slate-800 bg-slate-900/45"
+                ? "border-slate-200 bg-white shadow-sm"
+                : "border-white/[0.07] bg-white/[0.025] backdrop-blur-xl"
             }`}>
               <div>
                 <p className={`text-[10px] font-black uppercase tracking-[0.3em] ${theme.text}`}>

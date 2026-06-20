@@ -94,22 +94,27 @@ export async function upsertLeaderboardProfile(uid, { nickname, isOptedIn }) {
       const oldNormalized = existing?.normalizedNickname || null;
       const nicknameChanged = oldNormalized !== normalized;
 
+      // Firestore transaction kuralı: TÜM okumalar yazımlardan önce yapılmalı.
+      // Aksi halde "invalid-argument" hatası fırlar (eski rumuzu serbest
+      // bırakırken yapılan okuma, yeni claim yazımından sonraya kalıyordu).
+      const claimRef = nicknameChanged ? normalizedNicknameRef(normalized) : null;
+      const oldRef =
+        nicknameChanged && oldNormalized && oldNormalized !== normalized
+          ? normalizedNicknameRef(oldNormalized)
+          : null;
+      const claimSnap = claimRef ? await tx.get(claimRef) : null;
+      const oldSnap = oldRef ? await tx.get(oldRef) : null;
+
       if (nicknameChanged) {
         // Claim yeni nickname
-        const claimRef = normalizedNicknameRef(normalized);
-        const claimSnap = await tx.get(claimRef);
         if (claimSnap.exists() && claimSnap.data().uid !== uid) {
           throw new Error("Bu rumuz zaten kullanımda.");
         }
         tx.set(claimRef, { uid, claimedAt: serverTimestamp() });
 
         // Eski nickname'i serbest bırak
-        if (oldNormalized && oldNormalized !== normalized) {
-          const oldRef = normalizedNicknameRef(oldNormalized);
-          const oldSnap = await tx.get(oldRef);
-          if (oldSnap.exists() && oldSnap.data().uid === uid) {
-            tx.delete(oldRef);
-          }
+        if (oldRef && oldSnap.exists() && oldSnap.data().uid === uid) {
+          tx.delete(oldRef);
         }
       }
 

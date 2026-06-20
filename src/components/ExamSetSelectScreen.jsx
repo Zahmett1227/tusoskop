@@ -10,7 +10,7 @@ export default function ExamSetSelectScreen({ onSelectSet, goDashboard }) {
 
   return (
     <div
-      className="min-h-dvh bg-slate-950 text-white p-4 md:p-10 overflow-y-auto"
+      className="min-h-dvh bg-[#05070d] text-white p-4 md:p-10 overflow-y-auto"
       style={{ paddingTop: "calc(1rem + env(safe-area-inset-top))", paddingBottom: "calc(5rem + env(safe-area-inset-bottom))" }}
     >
       <div className="max-w-7xl mx-auto">
@@ -21,7 +21,7 @@ export default function ExamSetSelectScreen({ onSelectSet, goDashboard }) {
               Sabit 200 soruluk denemelerden birini seç. İlk 100 Temel, son 100 Klinik; her kullanıcıda aynı set ve sıra.
             </p>
           </div>
-          <button onClick={goDashboard} className="px-6 py-2 rounded-2xl bg-slate-900 border border-slate-800 hover:bg-slate-800 transition-all font-bold">
+          <button onClick={goDashboard} className="px-6 py-2 rounded-2xl bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.08] backdrop-blur-xl transition-all font-bold">
             ← Geri Dön
           </button>
         </header>
@@ -31,7 +31,7 @@ export default function ExamSetSelectScreen({ onSelectSet, goDashboard }) {
           {categories.map((cat) => (
             <div key={cat.name} className="flex flex-col gap-4">
               {/* Kategori Başlığı */}
-              <div className={`flex items-center gap-3 p-4 rounded-3xl border-b-4 ${cat.bg} bg-slate-900/40 mb-2`}>
+              <div className={`flex items-center gap-3 p-4 rounded-3xl border-b-4 ${cat.bg} bg-white/[0.025] backdrop-blur-xl mb-2`}>
                 <span className="text-2xl">{cat.icon}</span>
                 <h3 className={`text-xl font-black uppercase tracking-widest ${cat.color}`}>
                   {cat.name} DENEMELERİ
@@ -44,7 +44,7 @@ export default function ExamSetSelectScreen({ onSelectSet, goDashboard }) {
                   <button
                     key={exam.id}
                     onClick={() => onSelectSet(exam.id)}
-                    className="w-full group bg-slate-900/30 border border-slate-800 p-5 rounded-3xl text-left hover:border-slate-600 hover:bg-slate-900/60 transition-all duration-300"
+                    className="w-full group bg-white/[0.025] border border-white/[0.08] p-5 rounded-3xl text-left hover:border-white/[0.16] hover:bg-white/[0.05] backdrop-blur-xl transition-all duration-300"
                   >
                     <div className="flex justify-between items-center">
                       <div>

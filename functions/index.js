@@ -17,6 +17,7 @@ const {
 const { buildUserStudySummary } = require("./services/buildUserStudySummary");
 const { generateAiStudyPlan } = require("./services/generateAiStudyPlan");
 const { buildFallbackDailyStudyPlan } = require("./services/buildFallbackDailyStudyPlan");
+const { verifyApplePurchaseHandler } = require("./verifyApplePurchase");
 
 // Apple Sign in private key (.p8 içeriği). `firebase functions:secrets:set` ile tanımlanır.
 const APPLE_SIGNIN_PRIVATE_KEY = defineSecret("APPLE_SIGNIN_PRIVATE_KEY");
@@ -365,6 +366,15 @@ exports.deleteAccountAndData = onCall(
 );
 
 /**
+ * Apple IAP: StoreKit 2 JWS transaction token'ını doğrular, Firestore'da premium aktif eder.
+ * iOS App Store abonelik satın almalarında çağrılır.
+ */
+exports.verifyApplePurchase = onCall(
+  { region: "us-central1", cors: allowedOrigins },
+  verifyApplePurchaseHandler
+);
+
+/**
  * Admin: onaylı sosyal medya içeriğini resmi Instagram Graph API ile paylaşmayı dener.
  * API yoksa export modu önerir. Private API / bot etkileşimi kullanılmaz.
  */
@@ -418,8 +428,15 @@ exports.generateDailyStudyPlan = onCall(
     try {
       studySummary = await buildUserStudySummary(uid, db);
     } catch (err) {
-      console.error("[AI_PLAN] buildUserStudySummary error:", err);
-      throw new HttpsError("internal", "Çalışma özeti oluşturulamadı.");
+      console.error("[AI_PLAN] buildUserStudySummary error:", err?.message ?? err);
+      studySummary = {
+        userLevel: "TUS hazırlık",
+        availableTimeMinutes: 90,
+        recentPerformance: { last7DaysSolved: 0, last7DaysCorrectRate: 0, last7DaysWrongCount: 0, activeDaysLast7: 0 },
+        fsrsStats: { dueToday: 0, overdue: 0, addedLast7Days: 0, reviewedLast7Days: 0, lapseRate: 0 },
+        topicMastery: [],
+        weakTopics: [],
+      };
     }
 
     let recommendation;
