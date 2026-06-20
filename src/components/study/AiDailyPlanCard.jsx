@@ -134,7 +134,7 @@ export default function AiDailyPlanCard({ user, theme, onStartFsrs, onStartTopic
       .catch((err) => {
         if (cancelled) return;
         if (err?.isPremiumRequired) setIsPremiumRequired(true);
-        else { console.error("[AiDailyPlanCard]", err); setError(err?.message ?? "Plan yüklenemedi."); }
+        else { console.error("[AiDailyPlanCard]", err?.code, err?.message, err); setError(err?.message ?? "Plan yüklenemedi."); }
       })
       .finally(() => { if (!cancelled) setLoading(false); });
     return () => { cancelled = true; };

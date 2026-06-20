@@ -428,8 +428,15 @@ exports.generateDailyStudyPlan = onCall(
     try {
       studySummary = await buildUserStudySummary(uid, db);
     } catch (err) {
-      console.error("[AI_PLAN] buildUserStudySummary error:", err);
-      throw new HttpsError("internal", "Çalışma özeti oluşturulamadı.");
+      console.error("[AI_PLAN] buildUserStudySummary error:", err?.message ?? err);
+      studySummary = {
+        userLevel: "TUS hazırlık",
+        availableTimeMinutes: 90,
+        recentPerformance: { last7DaysSolved: 0, last7DaysCorrectRate: 0, last7DaysWrongCount: 0, activeDaysLast7: 0 },
+        fsrsStats: { dueToday: 0, overdue: 0, addedLast7Days: 0, reviewedLast7Days: 0, lapseRate: 0 },
+        topicMastery: [],
+        weakTopics: [],
+      };
     }
 
     let recommendation;
