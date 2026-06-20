@@ -205,11 +205,11 @@ button:active {
 /* ─── Ortak kart yüzeyi (dashboard / grafik / takip) ─────────────────────── */
 @layer components {
   .app-card {
-    @apply rounded-2xl border border-slate-800 bg-slate-900/40 p-5 md:p-6;
+    @apply rounded-[24px] border border-white/[0.07] bg-white/[0.025] p-5 md:p-6 backdrop-blur-xl;
   }
 
   .app-card--light {
-    @apply rounded-2xl border border-slate-300 bg-[#fffefb] shadow-md;
+    @apply rounded-[24px] border border-slate-200 bg-white p-5 md:p-6 shadow-sm;
   }
 
   .app-card-title {

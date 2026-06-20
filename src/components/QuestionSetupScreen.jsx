@@ -189,8 +189,8 @@ export default function QuestionSetupScreen({
         onClick={() => handleSelectLesson(subject.name)}
         className={`rounded-2xl border p-3 text-left transition-all min-h-[4.5rem] ${
           selected
-            ? "border-emerald-500/80 bg-emerald-500/15 ring-1 ring-emerald-500/40"
-            : "border-slate-800 bg-slate-950/60 hover:border-slate-600 hover:bg-slate-900/80"
+            ? "border-emerald-500/60 bg-emerald-500/15 ring-1 ring-emerald-500/30"
+            : "border-white/[0.07] bg-white/[0.025] hover:border-white/[0.16] hover:bg-white/[0.05]"
         }`}
       >
         <p className="font-bold text-sm text-slate-100 leading-snug break-words">{subject.name}</p>
@@ -222,8 +222,8 @@ export default function QuestionSetupScreen({
           onClick={() => setStudyCount(option)}
           className={`min-h-11 px-3 py-2 rounded-xl text-xs font-bold border transition-all ${
             selected
-              ? "border-emerald-500 bg-emerald-500/20 text-emerald-300"
-              : "border-slate-800 bg-slate-950 text-slate-300 hover:border-slate-600 disabled:opacity-40"
+              ? "border-emerald-500/60 bg-emerald-500/20 text-emerald-300"
+              : "border-white/[0.08] bg-white/[0.03] text-slate-300 hover:border-white/[0.16] disabled:opacity-40"
           }`}
         >
           {label}
@@ -235,7 +235,7 @@ export default function QuestionSetupScreen({
 
   return (
     <div
-      className="bottom-nav-safe-scroll bg-slate-950 text-white p-4 md:p-8"
+      className="bottom-nav-safe-scroll bg-[#05070d] text-white p-4 md:p-8"
       style={{
         paddingTop: "calc(1rem + env(safe-area-inset-top))",
       }}
@@ -276,7 +276,7 @@ export default function QuestionSetupScreen({
         </section>
 
         {!recentLoading && recentPlans.length > 0 ? (
-          <section className="bg-slate-900/50 border border-slate-800 rounded-[1.75rem] p-4 md:p-5">
+          <section className="bg-white/[0.025] border border-white/[0.08] backdrop-blur-xl rounded-[1.75rem] p-4 md:p-5">
             <p className="text-[10px] font-black uppercase tracking-widest text-emerald-400/90 mb-3">
               Son çalışılan konular
             </p>
@@ -306,7 +306,7 @@ export default function QuestionSetupScreen({
           </section>
         ) : null}
 
-        <section className="bg-slate-900/50 border border-slate-800 rounded-[1.75rem] p-4 md:p-6">
+        <section className="bg-white/[0.025] border border-white/[0.08] backdrop-blur-xl rounded-[1.75rem] p-4 md:p-6">
           <h3 className="text-xs font-black uppercase tracking-widest text-orange-400/90 mb-3">
             Temel Bilimler
           </h3>
@@ -315,7 +315,7 @@ export default function QuestionSetupScreen({
           </div>
         </section>
 
-        <section className="bg-slate-900/50 border border-slate-800 rounded-[1.75rem] p-4 md:p-6">
+        <section className="bg-white/[0.025] border border-white/[0.08] backdrop-blur-xl rounded-[1.75rem] p-4 md:p-6">
           <h3 className="text-xs font-black uppercase tracking-widest text-cyan-400/90 mb-3">
             Klinik Bilimler
           </h3>
@@ -325,7 +325,7 @@ export default function QuestionSetupScreen({
         </section>
 
         {selectedLesson ? (
-          <section className="bg-slate-900 border border-slate-800 rounded-[1.75rem] p-4 md:p-6 space-y-4">
+          <section className="bg-white/[0.025] border border-white/[0.08] backdrop-blur-xl rounded-[1.75rem] p-4 md:p-6 space-y-4">
             <div className="flex flex-wrap items-end justify-between gap-2">
               <div>
                 <h3 className="text-lg font-black text-white">{selectedLesson}</h3>
@@ -341,13 +341,13 @@ export default function QuestionSetupScreen({
                 onChange={(e) => setTopicSearch(e.target.value)}
                 placeholder="Konu ara…"
                 disabled={loadingTopics || allTopics.length === 0}
-                className="w-full sm:w-56 bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-sm text-white outline-none focus:border-emerald-500 disabled:opacity-50"
+                className="w-full sm:w-56 bg-black/30 border border-white/[0.08] rounded-xl px-3 py-2.5 text-sm text-white outline-none focus:border-emerald-500/60 disabled:opacity-50"
               />
             </div>
 
             {loadError ? <p className="text-sm text-rose-400">{loadError}</p> : null}
 
-            <div className="bottom-nav-safe-scroll-inner max-h-[min(22rem,55dvh)] overflow-y-auto rounded-xl border border-slate-800 divide-y divide-slate-800/80">
+            <div className="bottom-nav-safe-scroll-inner max-h-[min(22rem,55dvh)] overflow-y-auto rounded-xl border border-white/[0.08] divide-y divide-white/[0.06]">
               {loadingTopics ? (
                 <p className="p-4 text-sm text-slate-500">Konular hazırlanıyor…</p>
               ) : visibleTopics.length === 0 ? (
@@ -364,7 +364,7 @@ export default function QuestionSetupScreen({
                       type="button"
                       onClick={() => setSelectedTopic(topic)}
                       className={`w-full flex items-center justify-between gap-3 px-4 py-3 text-left transition-colors ${
-                        selected ? "bg-emerald-500/15" : "hover:bg-slate-800/60"
+                        selected ? "bg-emerald-500/15" : "hover:bg-white/[0.04]"
                       }`}
                     >
                       <span className="font-semibold text-sm text-slate-200 break-words flex-1 min-w-0">
@@ -374,7 +374,7 @@ export default function QuestionSetupScreen({
                         className={`shrink-0 text-[10px] font-black uppercase tracking-wider px-2 py-1 rounded-lg ${
                           selected
                             ? "bg-emerald-500/30 text-emerald-200"
-                            : "bg-slate-800 text-slate-400"
+                            : "bg-white/[0.06] text-slate-400"
                         }`}
                       >
                         {count} soru

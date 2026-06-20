@@ -28,7 +28,7 @@ export default function Footer({
     ? "border-t border-neutral-200/90"
     : isLightTheme
       ? "border-t border-slate-200/90"
-      : "border-t border-slate-800";
+      : "border-t border-white/[0.08]";
   const textMuted = isPremiumSurface
     ? "text-neutral-600"
     : isLightTheme

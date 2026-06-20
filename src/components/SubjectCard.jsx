@@ -38,25 +38,25 @@ const SubjectCard = ({
   }[theme.name] || "hover:border-emerald-400/40";
 
   const hoverGlowClass = {
-    Emerald: "hover:shadow-[0_0_40px_rgba(16,185,129,0.15)]",
-    Cyan: "hover:shadow-[0_0_40px_rgba(34,211,238,0.15)]",
-    Violet: "hover:shadow-[0_0_40px_rgba(168,85,247,0.15)]",
-    Amber: "hover:shadow-[0_0_40px_rgba(251,191,36,0.15)]",
-  }[theme.name] || "hover:shadow-[0_0_40px_rgba(16,185,129,0.15)]";
+    Emerald: "hover:shadow-[0_0_36px_rgba(16,185,129,0.10)]",
+    Cyan: "hover:shadow-[0_0_36px_rgba(34,211,238,0.10)]",
+    Violet: "hover:shadow-[0_0_36px_rgba(168,85,247,0.10)]",
+    Amber: "hover:shadow-[0_0_36px_rgba(251,191,36,0.10)]",
+  }[theme.name] || "hover:shadow-[0_0_36px_rgba(16,185,129,0.10)]";
 
   const radialClass = {
-    Emerald: "bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.15),transparent_60%)]",
-    Cyan: "bg-[radial-gradient(circle_at_30%_20%,rgba(34,211,238,0.15),transparent_60%)]",
-    Violet: "bg-[radial-gradient(circle_at_30%_20%,rgba(168,85,247,0.15),transparent_60%)]",
-    Amber: "bg-[radial-gradient(circle_at_30%_20%,rgba(251,191,36,0.15),transparent_60%)]",
-  }[theme.name] || "bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.15),transparent_60%)]";
+    Emerald: "bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.10),transparent_60%)]",
+    Cyan: "bg-[radial-gradient(circle_at_30%_20%,rgba(34,211,238,0.10),transparent_60%)]",
+    Violet: "bg-[radial-gradient(circle_at_30%_20%,rgba(168,85,247,0.10),transparent_60%)]",
+    Amber: "bg-[radial-gradient(circle_at_30%_20%,rgba(251,191,36,0.10),transparent_60%)]",
+  }[theme.name] || "bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.10),transparent_60%)]";
 
   const blurClass = {
-    Emerald: "bg-emerald-400/10 group-hover:bg-emerald-400/20",
-    Cyan: "bg-cyan-400/10 group-hover:bg-cyan-400/20",
-    Violet: "bg-violet-400/10 group-hover:bg-violet-400/20",
-    Amber: "bg-amber-300/10 group-hover:bg-amber-300/20",
-  }[theme.name] || "bg-emerald-400/10 group-hover:bg-emerald-400/20";
+    Emerald: "bg-emerald-400/[0.07] group-hover:bg-emerald-400/15",
+    Cyan: "bg-cyan-400/[0.07] group-hover:bg-cyan-400/15",
+    Violet: "bg-violet-400/[0.07] group-hover:bg-violet-400/15",
+    Amber: "bg-amber-300/[0.07] group-hover:bg-amber-300/15",
+  }[theme.name] || "bg-emerald-400/[0.07] group-hover:bg-emerald-400/15";
 
   return (
     <button
@@ -68,7 +68,7 @@ const SubjectCard = ({
         ${isLightTheme ? "focus-visible:ring-offset-[#faf8f4]" : "focus-visible:ring-offset-slate-950"}
         ${theme.ring}
         ${subjectVisual.border}
-        ${isLightTheme ? "border-slate-300 shadow-md bg-gradient-to-br from-[#fffefb] via-[#faf8f4] to-[#ebe8e3]" : "border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900/80 to-slate-950"}
+        ${isLightTheme ? "border-slate-200 shadow-sm bg-white" : "border-white/[0.08] bg-white/[0.025] backdrop-blur-xl"}
         p-5 text-left md:p-6
         transition-all duration-300
         hover:-translate-y-px
@@ -86,11 +86,11 @@ const SubjectCard = ({
         {/* ÜST */}
         <div>
           <div className="mb-4 flex items-center justify-between gap-3">
-            <div className={`inline-flex items-center gap-2 rounded-xl px-3 py-1 text-xs font-bold ${theme.text} backdrop-blur ${isLightTheme ? "bg-slate-100" : "bg-slate-800/80"}`}>
+            <div className={`inline-flex items-center gap-2 rounded-xl px-3 py-1 text-xs font-bold ${theme.text} backdrop-blur ${isLightTheme ? "bg-slate-100" : "bg-white/[0.06]"}`}>
               <span className={`w-2 h-2 rounded-full ${subjectVisual.dot} shrink-0`} />
               {subject.type}
             </div>
-            <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border text-xl shadow-sm ${isLightTheme ? "border-slate-200 bg-white" : "border-slate-700 bg-slate-950/70"}`}>
+            <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border text-xl ${isLightTheme ? "border-slate-200 bg-white" : "border-white/10 bg-black/30"}`}>
               {icon}
             </span>
           </div>
@@ -106,7 +106,7 @@ const SubjectCard = ({
 
         {/* ALT */}
         <div className="mt-6">
-          <div className={`mb-4 h-2 overflow-hidden rounded-full ${isLightTheme ? "bg-slate-200" : "bg-slate-800"}`}>
+          <div className={`mb-4 h-2 overflow-hidden rounded-full ${isLightTheme ? "bg-slate-200" : "bg-white/10"}`}>
             <div
               className={`h-full rounded-full ${subjectVisual.bar} transition-all duration-500`}
               style={{ width: `${barWidthPercent}%` }}

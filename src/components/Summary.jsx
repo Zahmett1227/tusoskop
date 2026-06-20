@@ -19,8 +19,8 @@ export default function Summary({ currentSubject, score, total, onRetry, goDashb
     : "Yavaş çözüyorsun; bu oturumda tempo veya karar süresi uzuyor olabilir.";
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white p-6 md:p-10">
-      <div className="max-w-3xl mx-auto bg-slate-900 border border-slate-800 rounded-[2rem] p-8 md:p-10">
+    <div className="min-h-screen bg-[#05070d] text-white p-6 md:p-10">
+      <div className="max-w-3xl mx-auto bg-white/[0.025] border border-white/[0.08] backdrop-blur-xl rounded-[2rem] p-8 md:p-10">
         <h2 className="text-3xl font-black mb-4 text-emerald-400">
           Test Tamamlandı
         </h2>
@@ -28,15 +28,15 @@ export default function Summary({ currentSubject, score, total, onRetry, goDashb
         <p className="text-slate-400 mb-8">
           Skor: <span className="text-white font-bold">{score} / {total}</span>
         </p>
-        <div className="rounded-3xl border border-slate-700/70 bg-slate-950/80 p-5 shadow-xl mb-8">
+        <div className="rounded-3xl border border-white/[0.07] bg-black/20 p-5 mb-8">
           <p className="text-sm text-slate-400 font-bold mb-1">⏱ Ortalama süre</p>
           <p className="text-2xl font-black text-white mb-3">{avgTime} sn / soru</p>
           <div className="grid grid-cols-2 gap-3 text-sm">
-            <div className="rounded-xl border border-slate-800 bg-slate-900/70 px-3 py-2">
+            <div className="rounded-xl border border-white/[0.07] bg-white/[0.03] px-3 py-2">
               <p className="text-slate-500">En hızlı</p>
               <p className="font-bold text-emerald-300">{fastest} sn</p>
             </div>
-            <div className="rounded-xl border border-slate-800 bg-slate-900/70 px-3 py-2">
+            <div className="rounded-xl border border-white/[0.07] bg-white/[0.03] px-3 py-2">
               <p className="text-slate-500">En yavaş</p>
               <p className="font-bold text-amber-300">{slowest} sn</p>
             </div>
@@ -52,7 +52,7 @@ export default function Summary({ currentSubject, score, total, onRetry, goDashb
           </button>
           <button
             onClick={goDashboard}
-            className="px-5 py-3 rounded-2xl bg-slate-800 text-white font-bold hover:bg-slate-700"
+            className="px-5 py-3 rounded-2xl bg-white/[0.06] border border-white/[0.08] text-white font-bold hover:bg-white/[0.1]"
           >
             Panele dön
           </button>
