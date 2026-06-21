@@ -76,31 +76,48 @@ describe("usageLimitService", () => {
     expect(httpsCallableMock).not.toHaveBeenCalled();
   });
 
-  it("incrementTopicTestUsage geçici/ağ hatasında işleme izin verir", async () => {
-    const callable = vi.fn().mockRejectedValue(new Error("network"));
-    httpsCallableMock.mockReturnValue(callable);
-
-    const { incrementTopicTestUsage } = await loadService();
-    // Ağ hatası (kodsuz) geçici sayılır; kullanıcı bloke edilmez
-    await expect(incrementTopicTestUsage(null, null)).resolves.toBeNull();
-  });
-
-  it("incrementFullExamUsage geçici/ağ hatasında işleme izin verir", async () => {
-    const callable = vi.fn().mockRejectedValue(new Error("network"));
-    httpsCallableMock.mockReturnValue(callable);
-
-    const { incrementFullExamUsage } = await loadService();
-    await expect(incrementFullExamUsage(null, null)).resolves.toMatchObject({
-      fullExamCount: null,
+  it("incrementQuestionUsage gerçekten geçici (functions/unavailable) hatada izin verir", async () => {
+    const transientErr = Object.assign(new Error("unavailable"), {
+      code: "functions/unavailable",
     });
+    const callable = vi.fn().mockRejectedValue(transientErr);
+    httpsCallableMock.mockReturnValue(callable);
+
+    const { incrementQuestionUsage } = await loadService();
+    // Açık altyapı/timeout kodu geçici sayılır; kullanıcı bloke edilmez
+    await expect(incrementQuestionUsage(null, null, 1)).resolves.toBeNull();
   });
 
-  it("incrementQuestionUsage geçici/ağ hatasında işleme izin verir", async () => {
+  it("incrementQuestionUsage kodsuz ağ/CORS hatasında bloklar (fail-closed)", async () => {
     const callable = vi.fn().mockRejectedValue(new Error("network"));
     httpsCallableMock.mockReturnValue(callable);
 
     const { incrementQuestionUsage } = await loadService();
-    await expect(incrementQuestionUsage(null, null, 1)).resolves.toBeNull();
+    // Kodsuz hata (CORS/platform reddi) artık geçici sayılmaz → sayaç
+    // doğrulanamadığı için işleme izin verilmez
+    await expect(incrementQuestionUsage(null, null, 1)).rejects.toMatchObject({
+      code: "usage_counter_unavailable",
+    });
+  });
+
+  it("incrementTopicTestUsage kodsuz ağ/CORS hatasında bloklar (fail-closed)", async () => {
+    const callable = vi.fn().mockRejectedValue(new Error("network"));
+    httpsCallableMock.mockReturnValue(callable);
+
+    const { incrementTopicTestUsage } = await loadService();
+    await expect(incrementTopicTestUsage(null, null)).rejects.toMatchObject({
+      code: "usage_counter_unavailable",
+    });
+  });
+
+  it("incrementFullExamUsage kodsuz ağ/CORS hatasında bloklar (fail-closed)", async () => {
+    const callable = vi.fn().mockRejectedValue(new Error("network"));
+    httpsCallableMock.mockReturnValue(callable);
+
+    const { incrementFullExamUsage } = await loadService();
+    await expect(incrementFullExamUsage(null, null)).rejects.toMatchObject({
+      code: "usage_counter_unavailable",
+    });
   });
 
   it("incrementQuestionUsage kalıcı (auth) hatada bloklamaya devam eder", async () => {
