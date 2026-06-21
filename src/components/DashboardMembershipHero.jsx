@@ -301,6 +301,12 @@ export default function DashboardMembershipHero({
                     </span>
                     Sınırsız favori ve yanlış geçmişi
                   </li>
+                  <li className="flex gap-2">
+                    <span className="text-emerald-500 shrink-0" aria-hidden>
+                      ✓
+                    </span>
+                    AI destekli kişisel çalışma planı
+                  </li>
                 </ul>
               ) : null}
             </div>
