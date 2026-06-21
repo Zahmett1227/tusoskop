@@ -14,7 +14,7 @@ function PlanCard({ productId, planInfo, localizedPrice, selected, highlight, on
       type="button"
       onClick={() => onSelect(productId)}
       disabled={disabled}
-      className={`relative w-full text-left rounded-2xl border-2 p-4 transition disabled:opacity-60 ${
+      className={`w-full text-left rounded-2xl border-2 p-4 transition disabled:opacity-60 ${
         selected
           ? highlight
             ? 'border-[#b99671] bg-gradient-to-br from-[#fff8ef] to-white ring-2 ring-[#c9a16f]'
@@ -22,56 +22,59 @@ function PlanCard({ productId, planInfo, localizedPrice, selected, highlight, on
           : 'border-neutral-200 bg-white hover:border-neutral-300'
       }`}
     >
-      {planInfo?.badge ? (
-        <span
-          className={`absolute right-3 top-3 rounded-full px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wide ${
-            highlight
-              ? 'bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] text-white'
-              : 'bg-neutral-800 text-white'
+      <div className="flex items-start gap-3">
+        {/* Radio — flow içinde, asla üst üste binmez */}
+        <div
+          className={`mt-0.5 shrink-0 w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+            selected
+              ? highlight ? 'border-[#b99671] bg-[#b99671]' : 'border-neutral-800 bg-neutral-800'
+              : 'border-neutral-300'
           }`}
+          aria-hidden="true"
         >
-          {planInfo.badge}
-        </span>
-      ) : null}
-
-      <div className="flex items-start justify-between gap-2 pr-16">
-        <div>
-          <p className="text-base font-extrabold text-neutral-950">
-            {planInfo?.durationLabel}
-          </p>
-          <p className="mt-0.5 text-xs font-medium text-neutral-500">
-            {planInfo?.description || 'Otomatik yenilenen abonelik'}
-          </p>
-        </div>
-        <div className="text-right shrink-0">
-          <p className="text-lg font-black tabular-nums text-neutral-950">
-            {displayPrice}
-          </p>
-          {displayNote ? (
-            <p className="text-[11px] font-medium text-neutral-400 leading-tight">
-              {displayNote}
-            </p>
+          {selected ? (
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+              <path d="M1.5 4l2 2 3-3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           ) : null}
         </div>
-      </div>
 
-      {selected ? (
-        <div
-          className={`absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-            highlight ? 'border-[#b99671] bg-[#b99671]' : 'border-neutral-800 bg-neutral-800'
-          }`}
-          aria-hidden="true"
-        >
-          <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-            <path d="M1.5 4l2 2 3-3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+        {/* İçerik: sol etiket + sağ fiyat */}
+        <div className="flex-1 min-w-0 flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-1.5">
+              <p className="text-base font-extrabold text-neutral-950">
+                {planInfo?.durationLabel}
+              </p>
+              {planInfo?.badge ? (
+                <span
+                  className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-black uppercase tracking-wide ${
+                    highlight
+                      ? 'bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] text-white'
+                      : 'bg-neutral-800 text-white'
+                  }`}
+                >
+                  {planInfo.badge}
+                </span>
+              ) : null}
+            </div>
+            <p className="mt-0.5 text-xs font-medium text-neutral-500 leading-snug">
+              {planInfo?.description || 'Otomatik yenilenen abonelik'}
+            </p>
+          </div>
+
+          <div className="text-right shrink-0">
+            <p className="text-lg font-black tabular-nums text-neutral-950">
+              {displayPrice}
+            </p>
+            {displayNote ? (
+              <p className="text-[11px] font-medium text-neutral-400 leading-tight whitespace-nowrap">
+                {displayNote}
+              </p>
+            ) : null}
+          </div>
         </div>
-      ) : (
-        <div
-          className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 border-neutral-300"
-          aria-hidden="true"
-        />
-      )}
+      </div>
     </button>
   );
 }
@@ -256,46 +259,53 @@ export default function SubscriptionModal({ open, onClose, onSuccess, accentThem
                         type="button"
                         onClick={() => setSelectedProductId(productId)}
                         disabled={isLoading}
-                        className={`relative w-full text-left px-4 py-3.5 transition disabled:opacity-60 ${
+                        className={`w-full text-left px-4 py-3.5 transition disabled:opacity-60 ${
                           selected ? 'bg-[#fff8ef]' : 'bg-white hover:bg-neutral-50'
                         }`}
                       >
-                        {planInfo.badge ? (
-                          <span className="absolute right-4 top-3.5 rounded-full bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wide text-white">
-                            {planInfo.badge}
-                          </span>
-                        ) : null}
-                        <div className="flex items-start justify-between gap-2 pr-16 pl-6">
-                          <div>
-                            <p className="text-sm font-extrabold text-neutral-950">
-                              {planInfo.durationLabel}
-                            </p>
-                            <p className="mt-0.5 text-xs font-medium text-neutral-500">
-                              {planInfo.description}
-                            </p>
-                          </div>
-                          <div className="text-right shrink-0">
-                            <p className="text-base font-black tabular-nums text-neutral-950">
-                              {displayPrice}
-                            </p>
-                            {displayNote ? (
-                              <p className="text-[11px] font-medium text-neutral-400 leading-tight">
-                                {displayNote}
-                              </p>
+                        <div className="flex items-start gap-3">
+                          {/* Radio — flow içinde */}
+                          <div
+                            className={`mt-0.5 shrink-0 w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+                              selected ? 'border-[#b99671] bg-[#b99671]' : 'border-neutral-300 bg-white'
+                            }`}
+                            aria-hidden="true"
+                          >
+                            {selected ? (
+                              <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+                                <path d="M1.5 4l2 2 3-3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
                             ) : null}
                           </div>
-                        </div>
-                        <div
-                          className={`absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                            selected ? 'border-[#b99671] bg-[#b99671]' : 'border-neutral-300 bg-white'
-                          }`}
-                          aria-hidden="true"
-                        >
-                          {selected ? (
-                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                              <path d="M1.5 4l2 2 3-3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                          ) : null}
+
+                          {/* İçerik */}
+                          <div className="flex-1 min-w-0 flex items-start justify-between gap-3">
+                            <div className="min-w-0">
+                              <div className="flex flex-wrap items-center gap-1.5">
+                                <p className="text-sm font-extrabold text-neutral-950">
+                                  {planInfo.durationLabel}
+                                </p>
+                                {planInfo.badge ? (
+                                  <span className="shrink-0 rounded-full bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] px-2 py-0.5 text-[10px] font-black uppercase tracking-wide text-white">
+                                    {planInfo.badge}
+                                  </span>
+                                ) : null}
+                              </div>
+                              <p className="mt-0.5 text-xs font-medium text-neutral-500 leading-snug">
+                                {planInfo.description}
+                              </p>
+                            </div>
+                            <div className="text-right shrink-0">
+                              <p className="text-base font-black tabular-nums text-neutral-950">
+                                {displayPrice}
+                              </p>
+                              {displayNote ? (
+                                <p className="text-[11px] font-medium text-neutral-400 leading-tight whitespace-nowrap">
+                                  {displayNote}
+                                </p>
+                              ) : null}
+                            </div>
+                          </div>
                         </div>
                       </button>
                     );
