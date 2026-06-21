@@ -7,9 +7,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // IAPPlugin'in Swift metadata'sının linker tarafından kaldırılmasını önler.
-        // CAPBridgedPlugin auto-discovery'nin çalışması için gerekli.
-        _ = IAPPlugin.self
+        // Storyboard'dan bağımsız olarak MainViewController'ı programatik kur.
+        // Capacitor'ın IAPPlugin kaydının garantili çalışması için gerekli.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = MainViewController()
+        window?.makeKeyAndVisible()
         return true
     }
 
