@@ -132,6 +132,7 @@ exports.incrementUsage = onCall(
   {
     region: "us-central1",
     cors: allowedOrigins,
+    invoker: "public",
   },
   async (request) => {
   if (!request.auth?.uid) {
