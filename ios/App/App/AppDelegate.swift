@@ -7,6 +7,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        NSLog("⚡️ [Tusoskop] AppDelegate.didFinishLaunching — TUSOSKOP_IAP_BUILD_MARKER_42")
         // Storyboard'dan bağımsız olarak MainViewController'ı programatik kur.
         // Capacitor'ın IAPPlugin kaydının garantili çalışması için gerekli.
         window = UIWindow(frame: UIScreen.main.bounds)
