@@ -45,6 +45,11 @@ temp-build/
 temp-build-2/
 temp-build-codex-social-post/
 
+# Firebase / GCP servis hesabı private key'leri — ASLA commit edilmemeli
+*-firebase-adminsdk-*.json
+serviceAccountKey*.json
+gcp-service-account*.json
+
 # Instagram otomasyon — üretilen ve hassas dosyalar
 scripts/instagram/questions.json
 scripts/instagram/*.png
