@@ -262,6 +262,10 @@ export default function ExamScreen({
   };
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [examIndex]);
+
+  useEffect(() => {
     const fetchTarget = async () => {
       const user = auth.currentUser;
       if (user) {
