@@ -1,0 +1,4594 @@
+{
+  "generatedAt": "2026-06-21T21:10:08.260Z",
+  "sourceFile": "c:/Users/ahmet/OneDrive/Masaüstü/tusoskop_kutuphane_646soru.json",
+  "previousMaxId": 6431,
+  "firstNewId": 6432,
+  "lastNewId": 7077,
+  "totalAdded": 646,
+  "bySubject": {
+    "Dahiliye": {
+      "slug": "dahiliye",
+      "count": 164,
+      "oldIdRange": [
+        1,
+        19
+      ],
+      "newIdRange": [
+        6432,
+        6595
+      ]
+    },
+    "Patoloji": {
+      "slug": "patoloji",
+      "count": 326,
+      "oldIdRange": [
+        1,
+        20
+      ],
+      "newIdRange": [
+        6596,
+        7077
+      ]
+    },
+    "Anatomi": {
+      "slug": "anatomi",
+      "count": 93,
+      "oldIdRange": [
+        1,
+        10
+      ],
+      "newIdRange": [
+        6874,
+        6966
+      ]
+    },
+    "Biyokimya": {
+      "slug": "biyokimya",
+      "count": 18,
+      "oldIdRange": [
+        1,
+        9
+      ],
+      "newIdRange": [
+        6967,
+        6984
+      ]
+    },
+    "Pediatri": {
+      "slug": "pediatri",
+      "count": 45,
+      "oldIdRange": [
+        1,
+        3
+      ],
+      "newIdRange": [
+        6985,
+        7029
+      ]
+    }
+  },
+  "mappings": [
+    {
+      "index": 0,
+      "oldId": 1,
+      "newId": 6432,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 1,
+      "oldId": 2,
+      "newId": 6433,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 2,
+      "oldId": 3,
+      "newId": 6434,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 3,
+      "oldId": 1,
+      "newId": 6435,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 4,
+      "oldId": 2,
+      "newId": 6436,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 5,
+      "oldId": 3,
+      "newId": 6437,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 6,
+      "oldId": 7,
+      "newId": 6438,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 7,
+      "oldId": 8,
+      "newId": 6439,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 8,
+      "oldId": 9,
+      "newId": 6440,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 9,
+      "oldId": 10,
+      "newId": 6441,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 10,
+      "oldId": 11,
+      "newId": 6442,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 11,
+      "oldId": 1,
+      "newId": 6443,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 12,
+      "oldId": 2,
+      "newId": 6444,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 13,
+      "oldId": 3,
+      "newId": 6445,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 14,
+      "oldId": 15,
+      "newId": 6446,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 15,
+      "oldId": 16,
+      "newId": 6447,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 16,
+      "oldId": 17,
+      "newId": 6448,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 17,
+      "oldId": 18,
+      "newId": 6449,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 18,
+      "oldId": 19,
+      "newId": 6450,
+      "ders": "Dahiliye",
+      "konu": "Gastroenteroloji"
+    },
+    {
+      "index": 19,
+      "oldId": 1,
+      "newId": 6451,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 20,
+      "oldId": 2,
+      "newId": 6452,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 21,
+      "oldId": 3,
+      "newId": 6453,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 22,
+      "oldId": 1,
+      "newId": 6454,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 23,
+      "oldId": 2,
+      "newId": 6455,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 24,
+      "oldId": 6,
+      "newId": 6456,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 25,
+      "oldId": 7,
+      "newId": 6457,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 26,
+      "oldId": 8,
+      "newId": 6458,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 27,
+      "oldId": 9,
+      "newId": 6459,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 28,
+      "oldId": 10,
+      "newId": 6460,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 29,
+      "oldId": 11,
+      "newId": 6461,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 30,
+      "oldId": 1,
+      "newId": 6462,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 31,
+      "oldId": 2,
+      "newId": 6463,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 32,
+      "oldId": 3,
+      "newId": 6464,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 33,
+      "oldId": 15,
+      "newId": 6465,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 34,
+      "oldId": 16,
+      "newId": 6466,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 35,
+      "oldId": 17,
+      "newId": 6467,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 36,
+      "oldId": 18,
+      "newId": 6468,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 37,
+      "oldId": 19,
+      "newId": 6469,
+      "ders": "Dahiliye",
+      "konu": "Hepatoloji"
+    },
+    {
+      "index": 38,
+      "oldId": 1,
+      "newId": 6470,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji"
+    },
+    {
+      "index": 39,
+      "oldId": 2,
+      "newId": 6471,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji"
+    },
+    {
+      "index": 40,
+      "oldId": 1,
+      "newId": 6472,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji"
+    },
+    {
+      "index": 41,
+      "oldId": 2,
+      "newId": 6473,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji"
+    },
+    {
+      "index": 42,
+      "oldId": 5,
+      "newId": 6474,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji"
+    },
+    {
+      "index": 43,
+      "oldId": 6,
+      "newId": 6475,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji"
+    },
+    {
+      "index": 44,
+      "oldId": 7,
+      "newId": 6476,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji"
+    },
+    {
+      "index": 45,
+      "oldId": 1,
+      "newId": 6477,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji"
+    },
+    {
+      "index": 46,
+      "oldId": 2,
+      "newId": 6478,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji"
+    },
+    {
+      "index": 47,
+      "oldId": 3,
+      "newId": 6479,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji"
+    },
+    {
+      "index": 48,
+      "oldId": 11,
+      "newId": 6480,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji"
+    },
+    {
+      "index": 49,
+      "oldId": 12,
+      "newId": 6481,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji"
+    },
+    {
+      "index": 50,
+      "oldId": 13,
+      "newId": 6482,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji"
+    },
+    {
+      "index": 51,
+      "oldId": 1,
+      "newId": 6483,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji"
+    },
+    {
+      "index": 52,
+      "oldId": 2,
+      "newId": 6484,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji"
+    },
+    {
+      "index": 53,
+      "oldId": 16,
+      "newId": 6485,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji"
+    },
+    {
+      "index": 54,
+      "oldId": 17,
+      "newId": 6486,
+      "ders": "Dahiliye",
+      "konu": "Nefroloji"
+    },
+    {
+      "index": 55,
+      "oldId": 1,
+      "newId": 6487,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji"
+    },
+    {
+      "index": 56,
+      "oldId": 2,
+      "newId": 6488,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji"
+    },
+    {
+      "index": 57,
+      "oldId": 3,
+      "newId": 6489,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji"
+    },
+    {
+      "index": 58,
+      "oldId": 1,
+      "newId": 6490,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji"
+    },
+    {
+      "index": 59,
+      "oldId": 2,
+      "newId": 6491,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji"
+    },
+    {
+      "index": 60,
+      "oldId": 3,
+      "newId": 6492,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji"
+    },
+    {
+      "index": 61,
+      "oldId": 7,
+      "newId": 6493,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji"
+    },
+    {
+      "index": 62,
+      "oldId": 8,
+      "newId": 6494,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji"
+    },
+    {
+      "index": 63,
+      "oldId": 9,
+      "newId": 6495,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji"
+    },
+    {
+      "index": 64,
+      "oldId": 1,
+      "newId": 6496,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji"
+    },
+    {
+      "index": 65,
+      "oldId": 2,
+      "newId": 6497,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji"
+    },
+    {
+      "index": 66,
+      "oldId": 3,
+      "newId": 6498,
+      "ders": "Dahiliye",
+      "konu": "Endokrinoloji"
+    },
+    {
+      "index": 67,
+      "oldId": 1,
+      "newId": 6499,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji"
+    },
+    {
+      "index": 68,
+      "oldId": 2,
+      "newId": 6500,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji"
+    },
+    {
+      "index": 69,
+      "oldId": 3,
+      "newId": 6501,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji"
+    },
+    {
+      "index": 70,
+      "oldId": 1,
+      "newId": 6502,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji"
+    },
+    {
+      "index": 71,
+      "oldId": 2,
+      "newId": 6503,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji"
+    },
+    {
+      "index": 72,
+      "oldId": 3,
+      "newId": 6504,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji"
+    },
+    {
+      "index": 73,
+      "oldId": 7,
+      "newId": 6505,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji"
+    },
+    {
+      "index": 74,
+      "oldId": 8,
+      "newId": 6506,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji"
+    },
+    {
+      "index": 75,
+      "oldId": 9,
+      "newId": 6507,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji"
+    },
+    {
+      "index": 76,
+      "oldId": 10,
+      "newId": 6508,
+      "ders": "Dahiliye",
+      "konu": "Hematoloji"
+    },
+    {
+      "index": 77,
+      "oldId": 1,
+      "newId": 6509,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 78,
+      "oldId": 2,
+      "newId": 6510,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 79,
+      "oldId": 1,
+      "newId": 6511,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 80,
+      "oldId": 2,
+      "newId": 6512,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 81,
+      "oldId": 3,
+      "newId": 6513,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 82,
+      "oldId": 6,
+      "newId": 6514,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 83,
+      "oldId": 7,
+      "newId": 6515,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 84,
+      "oldId": 8,
+      "newId": 6516,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 85,
+      "oldId": 9,
+      "newId": 6517,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 86,
+      "oldId": 1,
+      "newId": 6518,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 87,
+      "oldId": 2,
+      "newId": 6519,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 88,
+      "oldId": 3,
+      "newId": 6520,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 89,
+      "oldId": 4,
+      "newId": 6521,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 90,
+      "oldId": 5,
+      "newId": 6522,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 91,
+      "oldId": 6,
+      "newId": 6523,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 92,
+      "oldId": 7,
+      "newId": 6524,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 93,
+      "oldId": 8,
+      "newId": 6525,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 94,
+      "oldId": 9,
+      "newId": 6526,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 95,
+      "oldId": 10,
+      "newId": 6527,
+      "ders": "Dahiliye",
+      "konu": "Onkoloji"
+    },
+    {
+      "index": 96,
+      "oldId": 1,
+      "newId": 6528,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 97,
+      "oldId": 2,
+      "newId": 6529,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 98,
+      "oldId": 3,
+      "newId": 6530,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 99,
+      "oldId": 4,
+      "newId": 6531,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 100,
+      "oldId": 5,
+      "newId": 6532,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 101,
+      "oldId": 6,
+      "newId": 6533,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 102,
+      "oldId": 7,
+      "newId": 6534,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 103,
+      "oldId": 8,
+      "newId": 6535,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 104,
+      "oldId": 9,
+      "newId": 6536,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 105,
+      "oldId": 1,
+      "newId": 6537,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 106,
+      "oldId": 2,
+      "newId": 6538,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 107,
+      "oldId": 3,
+      "newId": 6539,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 108,
+      "oldId": 1,
+      "newId": 6540,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 109,
+      "oldId": 2,
+      "newId": 6541,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 110,
+      "oldId": 3,
+      "newId": 6542,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 111,
+      "oldId": 7,
+      "newId": 6543,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 112,
+      "oldId": 8,
+      "newId": 6544,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 113,
+      "oldId": 9,
+      "newId": 6545,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 114,
+      "oldId": 10,
+      "newId": 6546,
+      "ders": "Dahiliye",
+      "konu": "Kardiyoloji"
+    },
+    {
+      "index": 115,
+      "oldId": 1,
+      "newId": 6547,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 116,
+      "oldId": 2,
+      "newId": 6548,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 117,
+      "oldId": 3,
+      "newId": 6549,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 118,
+      "oldId": 4,
+      "newId": 6550,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 119,
+      "oldId": 5,
+      "newId": 6551,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 120,
+      "oldId": 6,
+      "newId": 6552,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 121,
+      "oldId": 7,
+      "newId": 6553,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 122,
+      "oldId": 8,
+      "newId": 6554,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 123,
+      "oldId": 9,
+      "newId": 6555,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 124,
+      "oldId": 10,
+      "newId": 6556,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 125,
+      "oldId": 1,
+      "newId": 6557,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 126,
+      "oldId": 2,
+      "newId": 6558,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 127,
+      "oldId": 3,
+      "newId": 6559,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 128,
+      "oldId": 4,
+      "newId": 6560,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 129,
+      "oldId": 5,
+      "newId": 6561,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 130,
+      "oldId": 6,
+      "newId": 6562,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 131,
+      "oldId": 1,
+      "newId": 6563,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 132,
+      "oldId": 2,
+      "newId": 6564,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 133,
+      "oldId": 3,
+      "newId": 6565,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 134,
+      "oldId": 10,
+      "newId": 6566,
+      "ders": "Dahiliye",
+      "konu": "Göğüs Hastalıkları"
+    },
+    {
+      "index": 135,
+      "oldId": 1,
+      "newId": 6567,
+      "ders": "Dahiliye",
+      "konu": "Romatoloji"
+    },
+    {
+      "index": 136,
+      "oldId": 2,
+      "newId": 6568,
+      "ders": "Dahiliye",
+      "konu": "Romatoloji"
+    },
+    {
+      "index": 137,
+      "oldId": 3,
+      "newId": 6569,
+      "ders": "Dahiliye",
+      "konu": "Romatoloji"
+    },
+    {
+      "index": 138,
+      "oldId": 4,
+      "newId": 6570,
+      "ders": "Dahiliye",
+      "konu": "Romatoloji"
+    },
+    {
+      "index": 139,
+      "oldId": 5,
+      "newId": 6571,
+      "ders": "Dahiliye",
+      "konu": "Romatoloji"
+    },
+    {
+      "index": 140,
+      "oldId": 6,
+      "newId": 6572,
+      "ders": "Dahiliye",
+      "konu": "Romatoloji"
+    },
+    {
+      "index": 141,
+      "oldId": 7,
+      "newId": 6573,
+      "ders": "Dahiliye",
+      "konu": "Romatoloji"
+    },
+    {
+      "index": 142,
+      "oldId": 8,
+      "newId": 6574,
+      "ders": "Dahiliye",
+      "konu": "Romatoloji"
+    },
+    {
+      "index": 143,
+      "oldId": 9,
+      "newId": 6575,
+      "ders": "Dahiliye",
+      "konu": "Romatoloji"
+    },
+    {
+      "index": 144,
+      "oldId": 10,
+      "newId": 6576,
+      "ders": "Dahiliye",
+      "konu": "Romatoloji"
+    },
+    {
+      "index": 145,
+      "oldId": 1,
+      "newId": 6577,
+      "ders": "Dahiliye",
+      "konu": "Geriartri"
+    },
+    {
+      "index": 146,
+      "oldId": 2,
+      "newId": 6578,
+      "ders": "Dahiliye",
+      "konu": "Geriartri"
+    },
+    {
+      "index": 147,
+      "oldId": 3,
+      "newId": 6579,
+      "ders": "Dahiliye",
+      "konu": "Geriartri"
+    },
+    {
+      "index": 148,
+      "oldId": 1,
+      "newId": 6580,
+      "ders": "Dahiliye",
+      "konu": "Geriatri"
+    },
+    {
+      "index": 149,
+      "oldId": 2,
+      "newId": 6581,
+      "ders": "Dahiliye",
+      "konu": "Geriatri"
+    },
+    {
+      "index": 150,
+      "oldId": 3,
+      "newId": 6582,
+      "ders": "Dahiliye",
+      "konu": "Geriatri"
+    },
+    {
+      "index": 151,
+      "oldId": 7,
+      "newId": 6583,
+      "ders": "Dahiliye",
+      "konu": "Geriartri"
+    },
+    {
+      "index": 152,
+      "oldId": 8,
+      "newId": 6584,
+      "ders": "Dahiliye",
+      "konu": "Geriartri"
+    },
+    {
+      "index": 153,
+      "oldId": 9,
+      "newId": 6585,
+      "ders": "Dahiliye",
+      "konu": "Geriartri"
+    },
+    {
+      "index": 154,
+      "oldId": 10,
+      "newId": 6586,
+      "ders": "Dahiliye",
+      "konu": "Geriartri"
+    },
+    {
+      "index": 155,
+      "oldId": 1,
+      "newId": 6587,
+      "ders": "Dahiliye",
+      "konu": "Geriartri"
+    },
+    {
+      "index": 156,
+      "oldId": 2,
+      "newId": 6588,
+      "ders": "Dahiliye",
+      "konu": "Geriartri"
+    },
+    {
+      "index": 157,
+      "oldId": 1,
+      "newId": 6589,
+      "ders": "Dahiliye",
+      "konu": "Geriartri"
+    },
+    {
+      "index": 158,
+      "oldId": 2,
+      "newId": 6590,
+      "ders": "Dahiliye",
+      "konu": "Geriartri"
+    },
+    {
+      "index": 159,
+      "oldId": 3,
+      "newId": 6591,
+      "ders": "Dahiliye",
+      "konu": "Geriartri"
+    },
+    {
+      "index": 160,
+      "oldId": 6,
+      "newId": 6592,
+      "ders": "Dahiliye",
+      "konu": "Geriartri"
+    },
+    {
+      "index": 161,
+      "oldId": 7,
+      "newId": 6593,
+      "ders": "Dahiliye",
+      "konu": "Geriartri"
+    },
+    {
+      "index": 162,
+      "oldId": 8,
+      "newId": 6594,
+      "ders": "Dahiliye",
+      "konu": "Geriartri"
+    },
+    {
+      "index": 163,
+      "oldId": 9,
+      "newId": 6595,
+      "ders": "Dahiliye",
+      "konu": "Geriartri"
+    },
+    {
+      "index": 164,
+      "oldId": 1,
+      "newId": 6596,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 165,
+      "oldId": 2,
+      "newId": 6597,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 166,
+      "oldId": 3,
+      "newId": 6598,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 167,
+      "oldId": 1,
+      "newId": 6599,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 168,
+      "oldId": 2,
+      "newId": 6600,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 169,
+      "oldId": 3,
+      "newId": 6601,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 170,
+      "oldId": 7,
+      "newId": 6602,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 171,
+      "oldId": 8,
+      "newId": 6603,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 172,
+      "oldId": 9,
+      "newId": 6604,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 173,
+      "oldId": 10,
+      "newId": 6605,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 174,
+      "oldId": 1,
+      "newId": 6606,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 175,
+      "oldId": 2,
+      "newId": 6607,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 176,
+      "oldId": 3,
+      "newId": 6608,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 177,
+      "oldId": 1,
+      "newId": 6609,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 178,
+      "oldId": 2,
+      "newId": 6610,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 179,
+      "oldId": 3,
+      "newId": 6611,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 180,
+      "oldId": 7,
+      "newId": 6612,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 181,
+      "oldId": 8,
+      "newId": 6613,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 182,
+      "oldId": 9,
+      "newId": 6614,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 183,
+      "oldId": 10,
+      "newId": 6615,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 184,
+      "oldId": 1,
+      "newId": 6616,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 185,
+      "oldId": 2,
+      "newId": 6617,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 186,
+      "oldId": 3,
+      "newId": 6618,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 187,
+      "oldId": 1,
+      "newId": 6619,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 188,
+      "oldId": 2,
+      "newId": 6620,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 189,
+      "oldId": 3,
+      "newId": 6621,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 190,
+      "oldId": 7,
+      "newId": 6622,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 191,
+      "oldId": 8,
+      "newId": 6623,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 192,
+      "oldId": 9,
+      "newId": 6624,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 193,
+      "oldId": 10,
+      "newId": 6625,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 194,
+      "oldId": 1,
+      "newId": 6626,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 195,
+      "oldId": 2,
+      "newId": 6627,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 196,
+      "oldId": 3,
+      "newId": 6628,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 197,
+      "oldId": 1,
+      "newId": 6629,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 198,
+      "oldId": 2,
+      "newId": 6630,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 199,
+      "oldId": 3,
+      "newId": 6631,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 200,
+      "oldId": 7,
+      "newId": 6632,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 201,
+      "oldId": 8,
+      "newId": 6633,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 202,
+      "oldId": 9,
+      "newId": 6634,
+      "ders": "Patoloji",
+      "konu": "İnflamasyon"
+    },
+    {
+      "index": 203,
+      "oldId": 1,
+      "newId": 6635,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 204,
+      "oldId": 2,
+      "newId": 6636,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 205,
+      "oldId": 3,
+      "newId": 6637,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 206,
+      "oldId": 1,
+      "newId": 6638,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 207,
+      "oldId": 2,
+      "newId": 6639,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 208,
+      "oldId": 3,
+      "newId": 6640,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 209,
+      "oldId": 7,
+      "newId": 6641,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 210,
+      "oldId": 8,
+      "newId": 6642,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 211,
+      "oldId": 9,
+      "newId": 6643,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 212,
+      "oldId": 10,
+      "newId": 6644,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 213,
+      "oldId": 1,
+      "newId": 6645,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 214,
+      "oldId": 2,
+      "newId": 6646,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 215,
+      "oldId": 3,
+      "newId": 6647,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 216,
+      "oldId": 4,
+      "newId": 6648,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 217,
+      "oldId": 5,
+      "newId": 6649,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 218,
+      "oldId": 6,
+      "newId": 6650,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 219,
+      "oldId": 7,
+      "newId": 6651,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 220,
+      "oldId": 8,
+      "newId": 6652,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 221,
+      "oldId": 9,
+      "newId": 6653,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 222,
+      "oldId": 10,
+      "newId": 6654,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 223,
+      "oldId": 1,
+      "newId": 6655,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 224,
+      "oldId": 2,
+      "newId": 6656,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 225,
+      "oldId": 3,
+      "newId": 6657,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 226,
+      "oldId": 4,
+      "newId": 6658,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 227,
+      "oldId": 5,
+      "newId": 6659,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 228,
+      "oldId": 6,
+      "newId": 6660,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 229,
+      "oldId": 7,
+      "newId": 6661,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 230,
+      "oldId": 8,
+      "newId": 6662,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 231,
+      "oldId": 9,
+      "newId": 6663,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 232,
+      "oldId": 10,
+      "newId": 6664,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 233,
+      "oldId": 1,
+      "newId": 6665,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 234,
+      "oldId": 2,
+      "newId": 6666,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 235,
+      "oldId": 3,
+      "newId": 6667,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 236,
+      "oldId": 4,
+      "newId": 6668,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 237,
+      "oldId": 5,
+      "newId": 6669,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 238,
+      "oldId": 6,
+      "newId": 6670,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 239,
+      "oldId": 7,
+      "newId": 6671,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 240,
+      "oldId": 8,
+      "newId": 6672,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 241,
+      "oldId": 9,
+      "newId": 6673,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 242,
+      "oldId": 10,
+      "newId": 6674,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 243,
+      "oldId": 1,
+      "newId": 6675,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 244,
+      "oldId": 2,
+      "newId": 6676,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 245,
+      "oldId": 3,
+      "newId": 6677,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 246,
+      "oldId": 1,
+      "newId": 6678,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 247,
+      "oldId": 2,
+      "newId": 6679,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 248,
+      "oldId": 3,
+      "newId": 6680,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 249,
+      "oldId": 7,
+      "newId": 6681,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 250,
+      "oldId": 8,
+      "newId": 6682,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 251,
+      "oldId": 9,
+      "newId": 6683,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 252,
+      "oldId": 10,
+      "newId": 6684,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 253,
+      "oldId": 1,
+      "newId": 6685,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 254,
+      "oldId": 2,
+      "newId": 6686,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 255,
+      "oldId": 3,
+      "newId": 6687,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 256,
+      "oldId": 1,
+      "newId": 6688,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 257,
+      "oldId": 2,
+      "newId": 6689,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 258,
+      "oldId": 3,
+      "newId": 6690,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 259,
+      "oldId": 1,
+      "newId": 6691,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 260,
+      "oldId": 2,
+      "newId": 6692,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 261,
+      "oldId": 3,
+      "newId": 6693,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 262,
+      "oldId": 1,
+      "newId": 6694,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 263,
+      "oldId": 2,
+      "newId": 6695,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 264,
+      "oldId": 3,
+      "newId": 6696,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 265,
+      "oldId": 1,
+      "newId": 6697,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 266,
+      "oldId": 2,
+      "newId": 6698,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 267,
+      "oldId": 3,
+      "newId": 6699,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 268,
+      "oldId": 7,
+      "newId": 6700,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 269,
+      "oldId": 8,
+      "newId": 6701,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 270,
+      "oldId": 9,
+      "newId": 6702,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 271,
+      "oldId": 10,
+      "newId": 6703,
+      "ders": "Patoloji",
+      "konu": "Hücre Zedelenmesi"
+    },
+    {
+      "index": 272,
+      "oldId": 1,
+      "newId": 6704,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 273,
+      "oldId": 2,
+      "newId": 6705,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 274,
+      "oldId": 3,
+      "newId": 6706,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 275,
+      "oldId": 1,
+      "newId": 6707,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 276,
+      "oldId": 2,
+      "newId": 6708,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 277,
+      "oldId": 3,
+      "newId": 6709,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 278,
+      "oldId": 7,
+      "newId": 6710,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 279,
+      "oldId": 8,
+      "newId": 6711,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 280,
+      "oldId": 9,
+      "newId": 6712,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 281,
+      "oldId": 10,
+      "newId": 6713,
+      "ders": "Patoloji",
+      "konu": "Onarım ve Yara İyileşmesi"
+    },
+    {
+      "index": 282,
+      "oldId": 1,
+      "newId": 6714,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 283,
+      "oldId": 2,
+      "newId": 6715,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 284,
+      "oldId": 3,
+      "newId": 6716,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 285,
+      "oldId": 1,
+      "newId": 6717,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 286,
+      "oldId": 2,
+      "newId": 6718,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 287,
+      "oldId": 3,
+      "newId": 6719,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 288,
+      "oldId": 7,
+      "newId": 6720,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 289,
+      "oldId": 8,
+      "newId": 6721,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 290,
+      "oldId": 9,
+      "newId": 6722,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 291,
+      "oldId": 10,
+      "newId": 6723,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 292,
+      "oldId": 1,
+      "newId": 6724,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 293,
+      "oldId": 2,
+      "newId": 6725,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 294,
+      "oldId": 3,
+      "newId": 6726,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 295,
+      "oldId": 1,
+      "newId": 6727,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 296,
+      "oldId": 2,
+      "newId": 6728,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 297,
+      "oldId": 3,
+      "newId": 6729,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 298,
+      "oldId": 7,
+      "newId": 6730,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 299,
+      "oldId": 8,
+      "newId": 6731,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 300,
+      "oldId": 9,
+      "newId": 6732,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 301,
+      "oldId": 10,
+      "newId": 6733,
+      "ders": "Patoloji",
+      "konu": "Hemodinamik Bozukluklar"
+    },
+    {
+      "index": 302,
+      "oldId": 1,
+      "newId": 6734,
+      "ders": "Patoloji",
+      "konu": "Neoplazi"
+    },
+    {
+      "index": 303,
+      "oldId": 2,
+      "newId": 6735,
+      "ders": "Patoloji",
+      "konu": "Neoplazi"
+    },
+    {
+      "index": 304,
+      "oldId": 3,
+      "newId": 6736,
+      "ders": "Patoloji",
+      "konu": "Neoplazi"
+    },
+    {
+      "index": 305,
+      "oldId": 1,
+      "newId": 6737,
+      "ders": "Patoloji",
+      "konu": "Neoplazi"
+    },
+    {
+      "index": 306,
+      "oldId": 2,
+      "newId": 6738,
+      "ders": "Patoloji",
+      "konu": "Neoplazi"
+    },
+    {
+      "index": 307,
+      "oldId": 3,
+      "newId": 6739,
+      "ders": "Patoloji",
+      "konu": "Neoplazi"
+    },
+    {
+      "index": 308,
+      "oldId": 1,
+      "newId": 6740,
+      "ders": "Patoloji",
+      "konu": "Neoplazi"
+    },
+    {
+      "index": 309,
+      "oldId": 2,
+      "newId": 6741,
+      "ders": "Patoloji",
+      "konu": "Neoplazi"
+    },
+    {
+      "index": 310,
+      "oldId": 3,
+      "newId": 6742,
+      "ders": "Patoloji",
+      "konu": "Neoplazi"
+    },
+    {
+      "index": 311,
+      "oldId": 10,
+      "newId": 6743,
+      "ders": "Patoloji",
+      "konu": "Neoplazi"
+    },
+    {
+      "index": 312,
+      "oldId": 1,
+      "newId": 6744,
+      "ders": "Patoloji",
+      "konu": "Pediatrik Hastalıklar"
+    },
+    {
+      "index": 313,
+      "oldId": 2,
+      "newId": 6745,
+      "ders": "Patoloji",
+      "konu": "Pediatrik Hastalıklar"
+    },
+    {
+      "index": 314,
+      "oldId": 3,
+      "newId": 6746,
+      "ders": "Patoloji",
+      "konu": "Pediatrik Hastalıklar"
+    },
+    {
+      "index": 315,
+      "oldId": 1,
+      "newId": 6747,
+      "ders": "Patoloji",
+      "konu": "Pediatrik Hastalıklar"
+    },
+    {
+      "index": 316,
+      "oldId": 2,
+      "newId": 6748,
+      "ders": "Patoloji",
+      "konu": "Pediatrik Hastalıklar"
+    },
+    {
+      "index": 317,
+      "oldId": 3,
+      "newId": 6749,
+      "ders": "Patoloji",
+      "konu": "Pediatrik Hastalıklar"
+    },
+    {
+      "index": 318,
+      "oldId": 7,
+      "newId": 6750,
+      "ders": "Patoloji",
+      "konu": "Pediatrik Hastalıklar"
+    },
+    {
+      "index": 319,
+      "oldId": 8,
+      "newId": 6751,
+      "ders": "Patoloji",
+      "konu": "Pediatrik Hastalıklar"
+    },
+    {
+      "index": 320,
+      "oldId": 9,
+      "newId": 6752,
+      "ders": "Patoloji",
+      "konu": "Pediatrik Hastalıklar"
+    },
+    {
+      "index": 321,
+      "oldId": 10,
+      "newId": 6753,
+      "ders": "Patoloji",
+      "konu": "Pediatrik Hastalıklar"
+    },
+    {
+      "index": 322,
+      "oldId": 1,
+      "newId": 6754,
+      "ders": "Patoloji",
+      "konu": "Çevresel ve Enfeksiyoz Hastalıklar"
+    },
+    {
+      "index": 323,
+      "oldId": 2,
+      "newId": 6755,
+      "ders": "Patoloji",
+      "konu": "Çevresel ve Enfeksiyoz Hastalıklar"
+    },
+    {
+      "index": 324,
+      "oldId": 3,
+      "newId": 6756,
+      "ders": "Patoloji",
+      "konu": "Çevresel ve Enfeksiyoz Hastalıklar"
+    },
+    {
+      "index": 325,
+      "oldId": 1,
+      "newId": 6757,
+      "ders": "Patoloji",
+      "konu": "Çevresel ve Enfeksiyoz Hastalıklar"
+    },
+    {
+      "index": 326,
+      "oldId": 2,
+      "newId": 6758,
+      "ders": "Patoloji",
+      "konu": "Çevresel ve Enfeksiyoz Hastalıklar"
+    },
+    {
+      "index": 327,
+      "oldId": 3,
+      "newId": 6759,
+      "ders": "Patoloji",
+      "konu": "Çevresel ve Enfeksiyoz Hastalıklar"
+    },
+    {
+      "index": 328,
+      "oldId": 1,
+      "newId": 6760,
+      "ders": "Patoloji",
+      "konu": "Çevresel ve Enfeksiyoz Hastalıklar"
+    },
+    {
+      "index": 329,
+      "oldId": 2,
+      "newId": 6761,
+      "ders": "Patoloji",
+      "konu": "Çevresel ve Enfeksiyoz Hastalıklar"
+    },
+    {
+      "index": 330,
+      "oldId": 3,
+      "newId": 6762,
+      "ders": "Patoloji",
+      "konu": "Çevresel ve Enfeksiyoz Hastalıklar"
+    },
+    {
+      "index": 331,
+      "oldId": 10,
+      "newId": 6763,
+      "ders": "Patoloji",
+      "konu": "Çevresel ve Enfeksiyoz Hastalıklar"
+    },
+    {
+      "index": 332,
+      "oldId": 1,
+      "newId": 6764,
+      "ders": "Patoloji",
+      "konu": "Vasküler Hastalıklar"
+    },
+    {
+      "index": 333,
+      "oldId": 2,
+      "newId": 6765,
+      "ders": "Patoloji",
+      "konu": "Vasküler Hastalıklar"
+    },
+    {
+      "index": 334,
+      "oldId": 3,
+      "newId": 6766,
+      "ders": "Patoloji",
+      "konu": "Vasküler Hastalıklar"
+    },
+    {
+      "index": 335,
+      "oldId": 4,
+      "newId": 6767,
+      "ders": "Patoloji",
+      "konu": "Vasküler Hastalıklar"
+    },
+    {
+      "index": 336,
+      "oldId": 5,
+      "newId": 6768,
+      "ders": "Patoloji",
+      "konu": "Vasküler Hastalıklar"
+    },
+    {
+      "index": 337,
+      "oldId": 6,
+      "newId": 6769,
+      "ders": "Patoloji",
+      "konu": "Vasküler Hastalıklar"
+    },
+    {
+      "index": 338,
+      "oldId": 7,
+      "newId": 6770,
+      "ders": "Patoloji",
+      "konu": "Vasküler Hastalıklar"
+    },
+    {
+      "index": 339,
+      "oldId": 8,
+      "newId": 6771,
+      "ders": "Patoloji",
+      "konu": "Vasküler Hastalıklar"
+    },
+    {
+      "index": 340,
+      "oldId": 9,
+      "newId": 6772,
+      "ders": "Patoloji",
+      "konu": "Vasküler Hastalıklar"
+    },
+    {
+      "index": 341,
+      "oldId": 10,
+      "newId": 6773,
+      "ders": "Patoloji",
+      "konu": "Vasküler Hastalıklar"
+    },
+    {
+      "index": 342,
+      "oldId": 1,
+      "newId": 6774,
+      "ders": "Patoloji",
+      "konu": "Kalp Hastalıkları"
+    },
+    {
+      "index": 343,
+      "oldId": 2,
+      "newId": 6775,
+      "ders": "Patoloji",
+      "konu": "Kalp Hastalıkları"
+    },
+    {
+      "index": 344,
+      "oldId": 3,
+      "newId": 6776,
+      "ders": "Patoloji",
+      "konu": "Kalp Hastalıkları"
+    },
+    {
+      "index": 345,
+      "oldId": 4,
+      "newId": 6777,
+      "ders": "Patoloji",
+      "konu": "Kalp Hastalıkları"
+    },
+    {
+      "index": 346,
+      "oldId": 5,
+      "newId": 6778,
+      "ders": "Patoloji",
+      "konu": "Kalp Hastalıkları"
+    },
+    {
+      "index": 347,
+      "oldId": 6,
+      "newId": 6779,
+      "ders": "Patoloji",
+      "konu": "Kalp Hastalıkları"
+    },
+    {
+      "index": 348,
+      "oldId": 7,
+      "newId": 6780,
+      "ders": "Patoloji",
+      "konu": "Kalp Hastalıkları"
+    },
+    {
+      "index": 349,
+      "oldId": 8,
+      "newId": 6781,
+      "ders": "Patoloji",
+      "konu": "Kalp Hastalıkları"
+    },
+    {
+      "index": 350,
+      "oldId": 9,
+      "newId": 6782,
+      "ders": "Patoloji",
+      "konu": "Kalp Hastalıkları"
+    },
+    {
+      "index": 351,
+      "oldId": 10,
+      "newId": 6783,
+      "ders": "Patoloji",
+      "konu": "Kalp Hastalıkları"
+    },
+    {
+      "index": 352,
+      "oldId": 1,
+      "newId": 6784,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 353,
+      "oldId": 2,
+      "newId": 6785,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 354,
+      "oldId": 3,
+      "newId": 6786,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 355,
+      "oldId": 4,
+      "newId": 6787,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 356,
+      "oldId": 5,
+      "newId": 6788,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 357,
+      "oldId": 6,
+      "newId": 6789,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 358,
+      "oldId": 7,
+      "newId": 6790,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 359,
+      "oldId": 8,
+      "newId": 6791,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 360,
+      "oldId": 9,
+      "newId": 6792,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 361,
+      "oldId": 10,
+      "newId": 6793,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 362,
+      "oldId": 1,
+      "newId": 6794,
+      "ders": "Patoloji",
+      "konu": "Solunum Sistem Hastalıkları"
+    },
+    {
+      "index": 363,
+      "oldId": 2,
+      "newId": 6795,
+      "ders": "Patoloji",
+      "konu": "Solunum Sistem Hastalıkları"
+    },
+    {
+      "index": 364,
+      "oldId": 3,
+      "newId": 6796,
+      "ders": "Patoloji",
+      "konu": "Solunum Sistem Hastalıkları"
+    },
+    {
+      "index": 365,
+      "oldId": 1,
+      "newId": 6797,
+      "ders": "Patoloji",
+      "konu": "Solunum Sistem Hastalıkları"
+    },
+    {
+      "index": 366,
+      "oldId": 2,
+      "newId": 6798,
+      "ders": "Patoloji",
+      "konu": "Solunum Sistem Hastalıkları"
+    },
+    {
+      "index": 367,
+      "oldId": 3,
+      "newId": 6799,
+      "ders": "Patoloji",
+      "konu": "Solunum Sistem Hastalıkları"
+    },
+    {
+      "index": 368,
+      "oldId": 7,
+      "newId": 6800,
+      "ders": "Patoloji",
+      "konu": "Solunum Sistem Hastalıkları"
+    },
+    {
+      "index": 369,
+      "oldId": 8,
+      "newId": 6801,
+      "ders": "Patoloji",
+      "konu": "Solunum Sistem Hastalıkları"
+    },
+    {
+      "index": 370,
+      "oldId": 9,
+      "newId": 6802,
+      "ders": "Patoloji",
+      "konu": "Solunum Sistem Hastalıkları"
+    },
+    {
+      "index": 371,
+      "oldId": 10,
+      "newId": 6803,
+      "ders": "Patoloji",
+      "konu": "Solunum Sistem Hastalıkları"
+    },
+    {
+      "index": 372,
+      "oldId": 1,
+      "newId": 6804,
+      "ders": "Patoloji",
+      "konu": "Üriner Sistem Hastalıkları"
+    },
+    {
+      "index": 373,
+      "oldId": 2,
+      "newId": 6805,
+      "ders": "Patoloji",
+      "konu": "Üriner Sistem Hastalıkları"
+    },
+    {
+      "index": 374,
+      "oldId": 3,
+      "newId": 6806,
+      "ders": "Patoloji",
+      "konu": "Üriner Sistem Hastalıkları"
+    },
+    {
+      "index": 375,
+      "oldId": 1,
+      "newId": 6807,
+      "ders": "Patoloji",
+      "konu": "Üriner Sistem Hastalıkları"
+    },
+    {
+      "index": 376,
+      "oldId": 2,
+      "newId": 6808,
+      "ders": "Patoloji",
+      "konu": "Üriner Sistem Hastalıkları"
+    },
+    {
+      "index": 377,
+      "oldId": 3,
+      "newId": 6809,
+      "ders": "Patoloji",
+      "konu": "Üriner Sistem Hastalıkları"
+    },
+    {
+      "index": 378,
+      "oldId": 7,
+      "newId": 6810,
+      "ders": "Patoloji",
+      "konu": "Üriner Sistem Hastalıkları"
+    },
+    {
+      "index": 379,
+      "oldId": 8,
+      "newId": 6811,
+      "ders": "Patoloji",
+      "konu": "Üriner Sistem Hastalıkları"
+    },
+    {
+      "index": 380,
+      "oldId": 9,
+      "newId": 6812,
+      "ders": "Patoloji",
+      "konu": "Üriner Sistem Hastalıkları"
+    },
+    {
+      "index": 381,
+      "oldId": 10,
+      "newId": 6813,
+      "ders": "Patoloji",
+      "konu": "Üriner Sistem Hastalıkları"
+    },
+    {
+      "index": 382,
+      "oldId": 1,
+      "newId": 6814,
+      "ders": "Patoloji",
+      "konu": "Erkek Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 383,
+      "oldId": 2,
+      "newId": 6815,
+      "ders": "Patoloji",
+      "konu": "Erkek Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 384,
+      "oldId": 3,
+      "newId": 6816,
+      "ders": "Patoloji",
+      "konu": "Erkek Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 385,
+      "oldId": 1,
+      "newId": 6817,
+      "ders": "Patoloji",
+      "konu": "Erkek Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 386,
+      "oldId": 2,
+      "newId": 6818,
+      "ders": "Patoloji",
+      "konu": "Erkek Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 387,
+      "oldId": 3,
+      "newId": 6819,
+      "ders": "Patoloji",
+      "konu": "Erkek Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 388,
+      "oldId": 7,
+      "newId": 6820,
+      "ders": "Patoloji",
+      "konu": "Erkek Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 389,
+      "oldId": 8,
+      "newId": 6821,
+      "ders": "Patoloji",
+      "konu": "Erkek Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 390,
+      "oldId": 9,
+      "newId": 6822,
+      "ders": "Patoloji",
+      "konu": "Erkek Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 391,
+      "oldId": 10,
+      "newId": 6823,
+      "ders": "Patoloji",
+      "konu": "Erkek Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 392,
+      "oldId": 1,
+      "newId": 6824,
+      "ders": "Patoloji",
+      "konu": "Kadın Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 393,
+      "oldId": 2,
+      "newId": 6825,
+      "ders": "Patoloji",
+      "konu": "Kadın Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 394,
+      "oldId": 3,
+      "newId": 6826,
+      "ders": "Patoloji",
+      "konu": "Kadın Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 395,
+      "oldId": 4,
+      "newId": 6827,
+      "ders": "Patoloji",
+      "konu": "Kadın Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 396,
+      "oldId": 5,
+      "newId": 6828,
+      "ders": "Patoloji",
+      "konu": "Kadın Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 397,
+      "oldId": 6,
+      "newId": 6829,
+      "ders": "Patoloji",
+      "konu": "Kadın Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 398,
+      "oldId": 7,
+      "newId": 6830,
+      "ders": "Patoloji",
+      "konu": "Kadın Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 399,
+      "oldId": 8,
+      "newId": 6831,
+      "ders": "Patoloji",
+      "konu": "Kadın Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 400,
+      "oldId": 9,
+      "newId": 6832,
+      "ders": "Patoloji",
+      "konu": "Kadın Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 401,
+      "oldId": 10,
+      "newId": 6833,
+      "ders": "Patoloji",
+      "konu": "Kadın Genital Sistem Hastalıkları"
+    },
+    {
+      "index": 402,
+      "oldId": 1,
+      "newId": 6834,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 403,
+      "oldId": 2,
+      "newId": 6835,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 404,
+      "oldId": 3,
+      "newId": 6836,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 405,
+      "oldId": 1,
+      "newId": 6837,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 406,
+      "oldId": 2,
+      "newId": 6838,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 407,
+      "oldId": 3,
+      "newId": 6839,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 408,
+      "oldId": 1,
+      "newId": 6840,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 409,
+      "oldId": 2,
+      "newId": 6841,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 410,
+      "oldId": 3,
+      "newId": 6842,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 411,
+      "oldId": 10,
+      "newId": 6843,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 412,
+      "oldId": 1,
+      "newId": 6844,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 413,
+      "oldId": 2,
+      "newId": 6845,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 414,
+      "oldId": 3,
+      "newId": 6846,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 415,
+      "oldId": 1,
+      "newId": 6847,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 416,
+      "oldId": 2,
+      "newId": 6848,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 417,
+      "oldId": 3,
+      "newId": 6849,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 418,
+      "oldId": 7,
+      "newId": 6850,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 419,
+      "oldId": 8,
+      "newId": 6851,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 420,
+      "oldId": 9,
+      "newId": 6852,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 421,
+      "oldId": 10,
+      "newId": 6853,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 422,
+      "oldId": 1,
+      "newId": 6854,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 423,
+      "oldId": 2,
+      "newId": 6855,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 424,
+      "oldId": 3,
+      "newId": 6856,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 425,
+      "oldId": 1,
+      "newId": 6857,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 426,
+      "oldId": 2,
+      "newId": 6858,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 427,
+      "oldId": 3,
+      "newId": 6859,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 428,
+      "oldId": 7,
+      "newId": 6860,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 429,
+      "oldId": 8,
+      "newId": 6861,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 430,
+      "oldId": 9,
+      "newId": 6862,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 431,
+      "oldId": 10,
+      "newId": 6863,
+      "ders": "Patoloji",
+      "konu": "Karaciğer Hastalıkları"
+    },
+    {
+      "index": 432,
+      "oldId": 1,
+      "newId": 6864,
+      "ders": "Patoloji",
+      "konu": "Pankreas Hastalıkları"
+    },
+    {
+      "index": 433,
+      "oldId": 2,
+      "newId": 6865,
+      "ders": "Patoloji",
+      "konu": "Pankreas Hastalıkları"
+    },
+    {
+      "index": 434,
+      "oldId": 3,
+      "newId": 6866,
+      "ders": "Patoloji",
+      "konu": "Pankreas Hastalıkları"
+    },
+    {
+      "index": 435,
+      "oldId": 1,
+      "newId": 6867,
+      "ders": "Patoloji",
+      "konu": "Pankreas Hastalıkları"
+    },
+    {
+      "index": 436,
+      "oldId": 2,
+      "newId": 6868,
+      "ders": "Patoloji",
+      "konu": "Pankreas Hastalıkları"
+    },
+    {
+      "index": 437,
+      "oldId": 3,
+      "newId": 6869,
+      "ders": "Patoloji",
+      "konu": "Pankreas Hastalıkları"
+    },
+    {
+      "index": 438,
+      "oldId": 1,
+      "newId": 6870,
+      "ders": "Patoloji",
+      "konu": "Pankreas Hastalıkları"
+    },
+    {
+      "index": 439,
+      "oldId": 2,
+      "newId": 6871,
+      "ders": "Patoloji",
+      "konu": "Pankreas Hastalıkları"
+    },
+    {
+      "index": 440,
+      "oldId": 3,
+      "newId": 6872,
+      "ders": "Patoloji",
+      "konu": "Pankreas Hastalıkları"
+    },
+    {
+      "index": 441,
+      "oldId": 10,
+      "newId": 6873,
+      "ders": "Patoloji",
+      "konu": "Pankreas Hastalıkları"
+    },
+    {
+      "index": 442,
+      "oldId": 1,
+      "newId": 6874,
+      "ders": "Anatomi",
+      "konu": "Anatomiye Giriş ve Terminoloji"
+    },
+    {
+      "index": 443,
+      "oldId": 2,
+      "newId": 6875,
+      "ders": "Anatomi",
+      "konu": "Anatomiye Giriş ve Terminoloji"
+    },
+    {
+      "index": 444,
+      "oldId": 3,
+      "newId": 6876,
+      "ders": "Anatomi",
+      "konu": "Anatomiye Giriş ve Terminoloji"
+    },
+    {
+      "index": 445,
+      "oldId": 1,
+      "newId": 6877,
+      "ders": "Anatomi",
+      "konu": "Anatomiye Giriş ve Terminoloji"
+    },
+    {
+      "index": 446,
+      "oldId": 2,
+      "newId": 6878,
+      "ders": "Anatomi",
+      "konu": "Anatomiye Giriş ve Terminoloji"
+    },
+    {
+      "index": 447,
+      "oldId": 3,
+      "newId": 6879,
+      "ders": "Anatomi",
+      "konu": "Anatomiye Giriş ve Terminoloji"
+    },
+    {
+      "index": 448,
+      "oldId": 1,
+      "newId": 6880,
+      "ders": "Anatomi",
+      "konu": "Anatomiye Giriş ve Terminoloji"
+    },
+    {
+      "index": 449,
+      "oldId": 2,
+      "newId": 6881,
+      "ders": "Anatomi",
+      "konu": "Anatomiye Giriş ve Terminoloji"
+    },
+    {
+      "index": 450,
+      "oldId": 3,
+      "newId": 6882,
+      "ders": "Anatomi",
+      "konu": "Anatomiye Giriş ve Terminoloji"
+    },
+    {
+      "index": 451,
+      "oldId": 10,
+      "newId": 6883,
+      "ders": "Anatomi",
+      "konu": "Anatomiye Giriş ve Terminoloji"
+    },
+    {
+      "index": 452,
+      "oldId": 1,
+      "newId": 6884,
+      "ders": "Anatomi",
+      "konu": "Kemikler"
+    },
+    {
+      "index": 453,
+      "oldId": 2,
+      "newId": 6885,
+      "ders": "Anatomi",
+      "konu": "Kemikler"
+    },
+    {
+      "index": 454,
+      "oldId": 3,
+      "newId": 6886,
+      "ders": "Anatomi",
+      "konu": "Kemikler"
+    },
+    {
+      "index": 455,
+      "oldId": 4,
+      "newId": 6887,
+      "ders": "Anatomi",
+      "konu": "Kemikler"
+    },
+    {
+      "index": 456,
+      "oldId": 5,
+      "newId": 6888,
+      "ders": "Anatomi",
+      "konu": "Kemikler"
+    },
+    {
+      "index": 457,
+      "oldId": 6,
+      "newId": 6889,
+      "ders": "Anatomi",
+      "konu": "Kemikler"
+    },
+    {
+      "index": 458,
+      "oldId": 7,
+      "newId": 6890,
+      "ders": "Anatomi",
+      "konu": "Kemikler"
+    },
+    {
+      "index": 459,
+      "oldId": 8,
+      "newId": 6891,
+      "ders": "Anatomi",
+      "konu": "Kemikler"
+    },
+    {
+      "index": 460,
+      "oldId": 9,
+      "newId": 6892,
+      "ders": "Anatomi",
+      "konu": "Kemikler"
+    },
+    {
+      "index": 461,
+      "oldId": 10,
+      "newId": 6893,
+      "ders": "Anatomi",
+      "konu": "Kemikler"
+    },
+    {
+      "index": 462,
+      "oldId": 1,
+      "newId": 6894,
+      "ders": "Anatomi",
+      "konu": "Eklemler"
+    },
+    {
+      "index": 463,
+      "oldId": 2,
+      "newId": 6895,
+      "ders": "Anatomi",
+      "konu": "Eklemler"
+    },
+    {
+      "index": 464,
+      "oldId": 3,
+      "newId": 6896,
+      "ders": "Anatomi",
+      "konu": "Eklemler"
+    },
+    {
+      "index": 465,
+      "oldId": 4,
+      "newId": 6897,
+      "ders": "Anatomi",
+      "konu": "Eklemler"
+    },
+    {
+      "index": 466,
+      "oldId": 5,
+      "newId": 6898,
+      "ders": "Anatomi",
+      "konu": "Eklemler"
+    },
+    {
+      "index": 467,
+      "oldId": 6,
+      "newId": 6899,
+      "ders": "Anatomi",
+      "konu": "Eklemler"
+    },
+    {
+      "index": 468,
+      "oldId": 7,
+      "newId": 6900,
+      "ders": "Anatomi",
+      "konu": "Eklemler"
+    },
+    {
+      "index": 469,
+      "oldId": 8,
+      "newId": 6901,
+      "ders": "Anatomi",
+      "konu": "Eklemler"
+    },
+    {
+      "index": 470,
+      "oldId": 9,
+      "newId": 6902,
+      "ders": "Anatomi",
+      "konu": "Eklemler"
+    },
+    {
+      "index": 471,
+      "oldId": 10,
+      "newId": 6903,
+      "ders": "Anatomi",
+      "konu": "Eklemler"
+    },
+    {
+      "index": 472,
+      "oldId": 1,
+      "newId": 6904,
+      "ders": "Anatomi",
+      "konu": "Kaslar"
+    },
+    {
+      "index": 473,
+      "oldId": 2,
+      "newId": 6905,
+      "ders": "Anatomi",
+      "konu": "Kaslar"
+    },
+    {
+      "index": 474,
+      "oldId": 3,
+      "newId": 6906,
+      "ders": "Anatomi",
+      "konu": "Kaslar"
+    },
+    {
+      "index": 475,
+      "oldId": 1,
+      "newId": 6907,
+      "ders": "Anatomi",
+      "konu": "Solunum"
+    },
+    {
+      "index": 476,
+      "oldId": 2,
+      "newId": 6908,
+      "ders": "Anatomi",
+      "konu": "Solunum"
+    },
+    {
+      "index": 477,
+      "oldId": 3,
+      "newId": 6909,
+      "ders": "Anatomi",
+      "konu": "Solunum"
+    },
+    {
+      "index": 478,
+      "oldId": 1,
+      "newId": 6910,
+      "ders": "Anatomi",
+      "konu": "Solunum"
+    },
+    {
+      "index": 479,
+      "oldId": 2,
+      "newId": 6911,
+      "ders": "Anatomi",
+      "konu": "Solunum"
+    },
+    {
+      "index": 480,
+      "oldId": 3,
+      "newId": 6912,
+      "ders": "Anatomi",
+      "konu": "Solunum"
+    },
+    {
+      "index": 481,
+      "oldId": 7,
+      "newId": 6913,
+      "ders": "Anatomi",
+      "konu": "Solunum"
+    },
+    {
+      "index": 482,
+      "oldId": 8,
+      "newId": 6914,
+      "ders": "Anatomi",
+      "konu": "Solunum"
+    },
+    {
+      "index": 483,
+      "oldId": 9,
+      "newId": 6915,
+      "ders": "Anatomi",
+      "konu": "Solunum"
+    },
+    {
+      "index": 484,
+      "oldId": 10,
+      "newId": 6916,
+      "ders": "Anatomi",
+      "konu": "Solunum"
+    },
+    {
+      "index": 485,
+      "oldId": 1,
+      "newId": 6917,
+      "ders": "Anatomi",
+      "konu": "Dolaşım"
+    },
+    {
+      "index": 486,
+      "oldId": 2,
+      "newId": 6918,
+      "ders": "Anatomi",
+      "konu": "Dolaşım"
+    },
+    {
+      "index": 487,
+      "oldId": 3,
+      "newId": 6919,
+      "ders": "Anatomi",
+      "konu": "Dolaşım"
+    },
+    {
+      "index": 488,
+      "oldId": 4,
+      "newId": 6920,
+      "ders": "Anatomi",
+      "konu": "Dolaşım"
+    },
+    {
+      "index": 489,
+      "oldId": 5,
+      "newId": 6921,
+      "ders": "Anatomi",
+      "konu": "Dolaşım"
+    },
+    {
+      "index": 490,
+      "oldId": 6,
+      "newId": 6922,
+      "ders": "Anatomi",
+      "konu": "Dolaşım"
+    },
+    {
+      "index": 491,
+      "oldId": 7,
+      "newId": 6923,
+      "ders": "Anatomi",
+      "konu": "Dolaşım"
+    },
+    {
+      "index": 492,
+      "oldId": 8,
+      "newId": 6924,
+      "ders": "Anatomi",
+      "konu": "Dolaşım"
+    },
+    {
+      "index": 493,
+      "oldId": 9,
+      "newId": 6925,
+      "ders": "Anatomi",
+      "konu": "Dolaşım"
+    },
+    {
+      "index": 494,
+      "oldId": 10,
+      "newId": 6926,
+      "ders": "Anatomi",
+      "konu": "Dolaşım"
+    },
+    {
+      "index": 495,
+      "oldId": 1,
+      "newId": 6927,
+      "ders": "Anatomi",
+      "konu": "Sindirim"
+    },
+    {
+      "index": 496,
+      "oldId": 2,
+      "newId": 6928,
+      "ders": "Anatomi",
+      "konu": "Sindirim"
+    },
+    {
+      "index": 497,
+      "oldId": 3,
+      "newId": 6929,
+      "ders": "Anatomi",
+      "konu": "Sindirim"
+    },
+    {
+      "index": 498,
+      "oldId": 1,
+      "newId": 6930,
+      "ders": "Anatomi",
+      "konu": "Sindirim"
+    },
+    {
+      "index": 499,
+      "oldId": 2,
+      "newId": 6931,
+      "ders": "Anatomi",
+      "konu": "Sindirim"
+    },
+    {
+      "index": 500,
+      "oldId": 3,
+      "newId": 6932,
+      "ders": "Anatomi",
+      "konu": "Sindirim"
+    },
+    {
+      "index": 501,
+      "oldId": 7,
+      "newId": 6933,
+      "ders": "Anatomi",
+      "konu": "Sindirim"
+    },
+    {
+      "index": 502,
+      "oldId": 8,
+      "newId": 6934,
+      "ders": "Anatomi",
+      "konu": "Sindirim"
+    },
+    {
+      "index": 503,
+      "oldId": 9,
+      "newId": 6935,
+      "ders": "Anatomi",
+      "konu": "Sindirim"
+    },
+    {
+      "index": 504,
+      "oldId": 10,
+      "newId": 6936,
+      "ders": "Anatomi",
+      "konu": "Sindirim"
+    },
+    {
+      "index": 505,
+      "oldId": 1,
+      "newId": 6937,
+      "ders": "Anatomi",
+      "konu": "Ürogenital"
+    },
+    {
+      "index": 506,
+      "oldId": 2,
+      "newId": 6938,
+      "ders": "Anatomi",
+      "konu": "Ürogenital"
+    },
+    {
+      "index": 507,
+      "oldId": 3,
+      "newId": 6939,
+      "ders": "Anatomi",
+      "konu": "Ürogenital"
+    },
+    {
+      "index": 508,
+      "oldId": 1,
+      "newId": 6940,
+      "ders": "Anatomi",
+      "konu": "Ürogenital"
+    },
+    {
+      "index": 509,
+      "oldId": 2,
+      "newId": 6941,
+      "ders": "Anatomi",
+      "konu": "Ürogenital"
+    },
+    {
+      "index": 510,
+      "oldId": 3,
+      "newId": 6942,
+      "ders": "Anatomi",
+      "konu": "Ürogenital"
+    },
+    {
+      "index": 511,
+      "oldId": 1,
+      "newId": 6943,
+      "ders": "Anatomi",
+      "konu": "Ürogenital"
+    },
+    {
+      "index": 512,
+      "oldId": 2,
+      "newId": 6944,
+      "ders": "Anatomi",
+      "konu": "Ürogenital"
+    },
+    {
+      "index": 513,
+      "oldId": 3,
+      "newId": 6945,
+      "ders": "Anatomi",
+      "konu": "Ürogenital"
+    },
+    {
+      "index": 514,
+      "oldId": 10,
+      "newId": 6946,
+      "ders": "Anatomi",
+      "konu": "Ürogenital"
+    },
+    {
+      "index": 515,
+      "oldId": 1,
+      "newId": 6947,
+      "ders": "Anatomi",
+      "konu": "Nöroanatomi"
+    },
+    {
+      "index": 516,
+      "oldId": 2,
+      "newId": 6948,
+      "ders": "Anatomi",
+      "konu": "Nöroanatomi"
+    },
+    {
+      "index": 517,
+      "oldId": 3,
+      "newId": 6949,
+      "ders": "Anatomi",
+      "konu": "Nöroanatomi"
+    },
+    {
+      "index": 518,
+      "oldId": 1,
+      "newId": 6950,
+      "ders": "Anatomi",
+      "konu": "Nöroanatomi"
+    },
+    {
+      "index": 519,
+      "oldId": 2,
+      "newId": 6951,
+      "ders": "Anatomi",
+      "konu": "Nöroanatomi"
+    },
+    {
+      "index": 520,
+      "oldId": 3,
+      "newId": 6952,
+      "ders": "Anatomi",
+      "konu": "Nöroanatomi"
+    },
+    {
+      "index": 521,
+      "oldId": 7,
+      "newId": 6953,
+      "ders": "Anatomi",
+      "konu": "Nöroanatomi"
+    },
+    {
+      "index": 522,
+      "oldId": 8,
+      "newId": 6954,
+      "ders": "Anatomi",
+      "konu": "Nöroanatomi"
+    },
+    {
+      "index": 523,
+      "oldId": 9,
+      "newId": 6955,
+      "ders": "Anatomi",
+      "konu": "Nöroanatomi"
+    },
+    {
+      "index": 524,
+      "oldId": 10,
+      "newId": 6956,
+      "ders": "Anatomi",
+      "konu": "Nöroanatomi"
+    },
+    {
+      "index": 525,
+      "oldId": 1,
+      "newId": 6957,
+      "ders": "Anatomi",
+      "konu": "Duyu"
+    },
+    {
+      "index": 526,
+      "oldId": 2,
+      "newId": 6958,
+      "ders": "Anatomi",
+      "konu": "Duyu"
+    },
+    {
+      "index": 527,
+      "oldId": 3,
+      "newId": 6959,
+      "ders": "Anatomi",
+      "konu": "Duyu"
+    },
+    {
+      "index": 528,
+      "oldId": 1,
+      "newId": 6960,
+      "ders": "Anatomi",
+      "konu": "Duyu"
+    },
+    {
+      "index": 529,
+      "oldId": 2,
+      "newId": 6961,
+      "ders": "Anatomi",
+      "konu": "Duyu"
+    },
+    {
+      "index": 530,
+      "oldId": 3,
+      "newId": 6962,
+      "ders": "Anatomi",
+      "konu": "Duyu"
+    },
+    {
+      "index": 531,
+      "oldId": 7,
+      "newId": 6963,
+      "ders": "Anatomi",
+      "konu": "Duyu"
+    },
+    {
+      "index": 532,
+      "oldId": 8,
+      "newId": 6964,
+      "ders": "Anatomi",
+      "konu": "Duyu"
+    },
+    {
+      "index": 533,
+      "oldId": 9,
+      "newId": 6965,
+      "ders": "Anatomi",
+      "konu": "Duyu"
+    },
+    {
+      "index": 534,
+      "oldId": 10,
+      "newId": 6966,
+      "ders": "Anatomi",
+      "konu": "Duyu"
+    },
+    {
+      "index": 535,
+      "oldId": 1,
+      "newId": 6967,
+      "ders": "Biyokimya",
+      "konu": "Karbonhidratlar"
+    },
+    {
+      "index": 536,
+      "oldId": 2,
+      "newId": 6968,
+      "ders": "Biyokimya",
+      "konu": "Karbonhidratlar"
+    },
+    {
+      "index": 537,
+      "oldId": 3,
+      "newId": 6969,
+      "ders": "Biyokimya",
+      "konu": "Karbonhidratlar"
+    },
+    {
+      "index": 538,
+      "oldId": 1,
+      "newId": 6970,
+      "ders": "Biyokimya",
+      "konu": "Karbonhidratlar"
+    },
+    {
+      "index": 539,
+      "oldId": 2,
+      "newId": 6971,
+      "ders": "Biyokimya",
+      "konu": "Karbonhidratlar"
+    },
+    {
+      "index": 540,
+      "oldId": 3,
+      "newId": 6972,
+      "ders": "Biyokimya",
+      "konu": "Karbonhidratlar"
+    },
+    {
+      "index": 541,
+      "oldId": 7,
+      "newId": 6973,
+      "ders": "Biyokimya",
+      "konu": "Karbonhidratlar"
+    },
+    {
+      "index": 542,
+      "oldId": 8,
+      "newId": 6974,
+      "ders": "Biyokimya",
+      "konu": "Karbonhidratlar"
+    },
+    {
+      "index": 543,
+      "oldId": 9,
+      "newId": 6975,
+      "ders": "Biyokimya",
+      "konu": "Karbonhidratlar"
+    },
+    {
+      "index": 544,
+      "oldId": 1,
+      "newId": 6976,
+      "ders": "Biyokimya",
+      "konu": "Lipid Metabolizması"
+    },
+    {
+      "index": 545,
+      "oldId": 2,
+      "newId": 6977,
+      "ders": "Biyokimya",
+      "konu": "Lipid Metabolizması"
+    },
+    {
+      "index": 546,
+      "oldId": 3,
+      "newId": 6978,
+      "ders": "Biyokimya",
+      "konu": "Lipid Metabolizması"
+    },
+    {
+      "index": 547,
+      "oldId": 1,
+      "newId": 6979,
+      "ders": "Biyokimya",
+      "konu": "Lipid Metabolizması"
+    },
+    {
+      "index": 548,
+      "oldId": 2,
+      "newId": 6980,
+      "ders": "Biyokimya",
+      "konu": "Lipid Metabolizması"
+    },
+    {
+      "index": 549,
+      "oldId": 3,
+      "newId": 6981,
+      "ders": "Biyokimya",
+      "konu": "Lipid Metabolizması"
+    },
+    {
+      "index": 550,
+      "oldId": 7,
+      "newId": 6982,
+      "ders": "Biyokimya",
+      "konu": "Lipid Metabolizması"
+    },
+    {
+      "index": 551,
+      "oldId": 8,
+      "newId": 6983,
+      "ders": "Biyokimya",
+      "konu": "Lipid Metabolizması"
+    },
+    {
+      "index": 552,
+      "oldId": 9,
+      "newId": 6984,
+      "ders": "Biyokimya",
+      "konu": "Lipid Metabolizması"
+    },
+    {
+      "index": 553,
+      "oldId": 1,
+      "newId": 6985,
+      "ders": "Pediatri",
+      "konu": "Yenidoğan"
+    },
+    {
+      "index": 554,
+      "oldId": 2,
+      "newId": 6986,
+      "ders": "Pediatri",
+      "konu": "Yenidoğan"
+    },
+    {
+      "index": 555,
+      "oldId": 3,
+      "newId": 6987,
+      "ders": "Pediatri",
+      "konu": "Yenidoğan"
+    },
+    {
+      "index": 556,
+      "oldId": 1,
+      "newId": 6988,
+      "ders": "Pediatri",
+      "konu": "Yenidoğan"
+    },
+    {
+      "index": 557,
+      "oldId": 2,
+      "newId": 6989,
+      "ders": "Pediatri",
+      "konu": "Yenidoğan"
+    },
+    {
+      "index": 558,
+      "oldId": 1,
+      "newId": 6990,
+      "ders": "Pediatri",
+      "konu": "Genetik"
+    },
+    {
+      "index": 559,
+      "oldId": 2,
+      "newId": 6991,
+      "ders": "Pediatri",
+      "konu": "Genetik"
+    },
+    {
+      "index": 560,
+      "oldId": 3,
+      "newId": 6992,
+      "ders": "Pediatri",
+      "konu": "Genetik"
+    },
+    {
+      "index": 561,
+      "oldId": 1,
+      "newId": 6993,
+      "ders": "Pediatri",
+      "konu": "Genetik"
+    },
+    {
+      "index": 562,
+      "oldId": 2,
+      "newId": 6994,
+      "ders": "Pediatri",
+      "konu": "Genetik"
+    },
+    {
+      "index": 563,
+      "oldId": 1,
+      "newId": 6995,
+      "ders": "Pediatri",
+      "konu": "Büyüme ve Gelişme"
+    },
+    {
+      "index": 564,
+      "oldId": 2,
+      "newId": 6996,
+      "ders": "Pediatri",
+      "konu": "Büyüme ve Gelişme"
+    },
+    {
+      "index": 565,
+      "oldId": 3,
+      "newId": 6997,
+      "ders": "Pediatri",
+      "konu": "Büyüme ve Gelişme"
+    },
+    {
+      "index": 566,
+      "oldId": 1,
+      "newId": 6998,
+      "ders": "Pediatri",
+      "konu": "Büyüme ve Gelişme"
+    },
+    {
+      "index": 567,
+      "oldId": 2,
+      "newId": 6999,
+      "ders": "Pediatri",
+      "konu": "Büyüme ve Gelişme"
+    },
+    {
+      "index": 568,
+      "oldId": 1,
+      "newId": 7000,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji"
+    },
+    {
+      "index": 569,
+      "oldId": 2,
+      "newId": 7001,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji"
+    },
+    {
+      "index": 570,
+      "oldId": 3,
+      "newId": 7002,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji"
+    },
+    {
+      "index": 571,
+      "oldId": 1,
+      "newId": 7003,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji"
+    },
+    {
+      "index": 572,
+      "oldId": 2,
+      "newId": 7004,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Gastroenteroloji"
+    },
+    {
+      "index": 573,
+      "oldId": 1,
+      "newId": 7005,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji"
+    },
+    {
+      "index": 574,
+      "oldId": 2,
+      "newId": 7006,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji"
+    },
+    {
+      "index": 575,
+      "oldId": 3,
+      "newId": 7007,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji"
+    },
+    {
+      "index": 576,
+      "oldId": 1,
+      "newId": 7008,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji"
+    },
+    {
+      "index": 577,
+      "oldId": 2,
+      "newId": 7009,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji"
+    },
+    {
+      "index": 578,
+      "oldId": 1,
+      "newId": 7010,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji"
+    },
+    {
+      "index": 579,
+      "oldId": 2,
+      "newId": 7011,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji"
+    },
+    {
+      "index": 580,
+      "oldId": 3,
+      "newId": 7012,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji"
+    },
+    {
+      "index": 581,
+      "oldId": 1,
+      "newId": 7013,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji"
+    },
+    {
+      "index": 582,
+      "oldId": 2,
+      "newId": 7014,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Nöroloji"
+    },
+    {
+      "index": 583,
+      "oldId": 1,
+      "newId": 7015,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji"
+    },
+    {
+      "index": 584,
+      "oldId": 2,
+      "newId": 7016,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji"
+    },
+    {
+      "index": 585,
+      "oldId": 3,
+      "newId": 7017,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji"
+    },
+    {
+      "index": 586,
+      "oldId": 1,
+      "newId": 7018,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji"
+    },
+    {
+      "index": 587,
+      "oldId": 2,
+      "newId": 7019,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji"
+    },
+    {
+      "index": 588,
+      "oldId": 1,
+      "newId": 7020,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji"
+    },
+    {
+      "index": 589,
+      "oldId": 2,
+      "newId": 7021,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji"
+    },
+    {
+      "index": 590,
+      "oldId": 3,
+      "newId": 7022,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji"
+    },
+    {
+      "index": 591,
+      "oldId": 1,
+      "newId": 7023,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji"
+    },
+    {
+      "index": 592,
+      "oldId": 2,
+      "newId": 7024,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Kardiyoloji"
+    },
+    {
+      "index": 593,
+      "oldId": 1,
+      "newId": 7025,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Romatoloji"
+    },
+    {
+      "index": 594,
+      "oldId": 2,
+      "newId": 7026,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Romatoloji"
+    },
+    {
+      "index": 595,
+      "oldId": 3,
+      "newId": 7027,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Romatoloji"
+    },
+    {
+      "index": 596,
+      "oldId": 1,
+      "newId": 7028,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Romatoloji"
+    },
+    {
+      "index": 597,
+      "oldId": 2,
+      "newId": 7029,
+      "ders": "Pediatri",
+      "konu": "Pediatrik Romatoloji"
+    },
+    {
+      "index": 598,
+      "oldId": 1,
+      "newId": 7030,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 599,
+      "oldId": 2,
+      "newId": 7031,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 600,
+      "oldId": 3,
+      "newId": 7032,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 601,
+      "oldId": 4,
+      "newId": 7033,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 602,
+      "oldId": 5,
+      "newId": 7034,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 603,
+      "oldId": 6,
+      "newId": 7035,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 604,
+      "oldId": 7,
+      "newId": 7036,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 605,
+      "oldId": 8,
+      "newId": 7037,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 606,
+      "oldId": 1,
+      "newId": 7038,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 607,
+      "oldId": 2,
+      "newId": 7039,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 608,
+      "oldId": 3,
+      "newId": 7040,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 609,
+      "oldId": 1,
+      "newId": 7041,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 610,
+      "oldId": 2,
+      "newId": 7042,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 611,
+      "oldId": 3,
+      "newId": 7043,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 612,
+      "oldId": 15,
+      "newId": 7044,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 613,
+      "oldId": 16,
+      "newId": 7045,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 614,
+      "oldId": 17,
+      "newId": 7046,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 615,
+      "oldId": 18,
+      "newId": 7047,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 616,
+      "oldId": 19,
+      "newId": 7048,
+      "ders": "Patoloji",
+      "konu": "Hematopoetik Sistem Hastalıkları"
+    },
+    {
+      "index": 617,
+      "oldId": 1,
+      "newId": 7049,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 618,
+      "oldId": 2,
+      "newId": 7050,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 619,
+      "oldId": 3,
+      "newId": 7051,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 620,
+      "oldId": 4,
+      "newId": 7052,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 621,
+      "oldId": 5,
+      "newId": 7053,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 622,
+      "oldId": 6,
+      "newId": 7054,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 623,
+      "oldId": 7,
+      "newId": 7055,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 624,
+      "oldId": 8,
+      "newId": 7056,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 625,
+      "oldId": 9,
+      "newId": 7057,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 626,
+      "oldId": 10,
+      "newId": 7058,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 627,
+      "oldId": 11,
+      "newId": 7059,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 628,
+      "oldId": 12,
+      "newId": 7060,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 629,
+      "oldId": 13,
+      "newId": 7061,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 630,
+      "oldId": 14,
+      "newId": 7062,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 631,
+      "oldId": 15,
+      "newId": 7063,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 632,
+      "oldId": 16,
+      "newId": 7064,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 633,
+      "oldId": 17,
+      "newId": 7065,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 634,
+      "oldId": 18,
+      "newId": 7066,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 635,
+      "oldId": 19,
+      "newId": 7067,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 636,
+      "oldId": 20,
+      "newId": 7068,
+      "ders": "Patoloji",
+      "konu": "İmmunoloji"
+    },
+    {
+      "index": 637,
+      "oldId": 1,
+      "newId": 7069,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 638,
+      "oldId": 2,
+      "newId": 7070,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 639,
+      "oldId": 3,
+      "newId": 7071,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 640,
+      "oldId": 4,
+      "newId": 7072,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 641,
+      "oldId": 5,
+      "newId": 7073,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 642,
+      "oldId": 6,
+      "newId": 7074,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 643,
+      "oldId": 7,
+      "newId": 7075,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 644,
+      "oldId": 8,
+      "newId": 7076,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    },
+    {
+      "index": 645,
+      "oldId": 9,
+      "newId": 7077,
+      "ders": "Patoloji",
+      "konu": "Gastrointestinal Sistem Hastalıkları"
+    }
+  ]
+}
