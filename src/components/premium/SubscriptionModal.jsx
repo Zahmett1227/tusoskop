@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { IAP_PRODUCT_IDS, IAP_PLAN_MAP, YEARLY_PRODUCT_IDS } from '../../config/iap';
+import { IAP_PRODUCT_IDS, IAP_PLAN_MAP } from '../../config/iap';
 import { loadProducts, purchaseProduct, verifyAndActivatePurchase } from '../../services/iapService';
 
-// Ürün sırasını sabit tut (1m, 3m, yıllık grup)
-const ORDERED_NON_YEARLY = ['com.tusoskop.app.plus.1m', 'com.tusoskop.app.plus.3m'];
+const ORDERED_PRODUCTS = IAP_PRODUCT_IDS;
 
 function PlanCard({ productId, planInfo, localizedPrice, selected, highlight, onSelect, disabled }) {
   const displayPrice = localizedPrice || planInfo?.fallbackPrice || '—';
@@ -218,9 +217,9 @@ export default function SubscriptionModal({ open, onClose, onSuccess, accentThem
             </div>
           ) : (
             <>
-              {/* 1 Aylık + 3 Aylık */}
+              {/* Tüm planlar — ASC'deki 3 ürünle birebir eşleşir */}
               <div className="space-y-3">
-                {ORDERED_NON_YEARLY.map((productId) => {
+                {ORDERED_PRODUCTS.map((productId) => {
                   const planInfo = IAP_PLAN_MAP[productId];
                   if (!planInfo) return null;
                   return (
@@ -236,81 +235,6 @@ export default function SubscriptionModal({ open, onClose, onSuccess, accentThem
                     />
                   );
                 })}
-              </div>
-
-              {/* Yıllık grubu */}
-              <div className="rounded-2xl border-2 border-neutral-200 overflow-hidden">
-                <div className="bg-neutral-50 px-4 py-2.5">
-                  <p className="text-[11px] font-black uppercase tracking-widest text-neutral-500">
-                    1 Yıllık
-                  </p>
-                </div>
-                <div className="divide-y divide-neutral-100">
-                  {YEARLY_PRODUCT_IDS.map((productId) => {
-                    const planInfo = IAP_PLAN_MAP[productId];
-                    if (!planInfo) return null;
-                    const selected = selectedProductId === productId;
-                    const localizedPrice = getLocalizedPrice(productId);
-                    const displayPrice = localizedPrice || planInfo.fallbackPrice || '—';
-                    const displayNote = !localizedPrice ? planInfo.fallbackNote : null;
-                    return (
-                      <button
-                        key={productId}
-                        type="button"
-                        onClick={() => setSelectedProductId(productId)}
-                        disabled={isLoading}
-                        className={`w-full text-left px-4 py-3.5 transition disabled:opacity-60 ${
-                          selected ? 'bg-[#fff8ef]' : 'bg-white hover:bg-neutral-50'
-                        }`}
-                      >
-                        <div className="flex items-start gap-3">
-                          {/* Radio — flow içinde */}
-                          <div
-                            className={`mt-0.5 shrink-0 w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                              selected ? 'border-[#b99671] bg-[#b99671]' : 'border-neutral-300 bg-white'
-                            }`}
-                            aria-hidden="true"
-                          >
-                            {selected ? (
-                              <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                                <path d="M1.5 4l2 2 3-3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                              </svg>
-                            ) : null}
-                          </div>
-
-                          {/* İçerik */}
-                          <div className="flex-1 min-w-0 flex items-start justify-between gap-3">
-                            <div className="min-w-0">
-                              <div className="flex flex-wrap items-center gap-1.5">
-                                <p className="text-sm font-extrabold text-neutral-950">
-                                  {planInfo.durationLabel}
-                                </p>
-                                {planInfo.badge ? (
-                                  <span className="shrink-0 rounded-full bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] px-2 py-0.5 text-[10px] font-black uppercase tracking-wide text-white">
-                                    {planInfo.badge}
-                                  </span>
-                                ) : null}
-                              </div>
-                              <p className="mt-0.5 text-xs font-medium text-neutral-500 leading-snug">
-                                {planInfo.description}
-                              </p>
-                            </div>
-                            <div className="text-right shrink-0">
-                              <p className="text-base font-black tabular-nums text-neutral-950">
-                                {displayPrice}
-                              </p>
-                              {displayNote ? (
-                                <p className="text-[11px] font-medium text-neutral-400 leading-tight whitespace-nowrap">
-                                  {displayNote}
-                                </p>
-                              ) : null}
-                            </div>
-                          </div>
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
               </div>
 
               {/* Satın al butonu */}
