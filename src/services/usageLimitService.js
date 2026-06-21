@@ -103,23 +103,26 @@ async function invokeIncrementUsage(payload) {
 }
 
 /**
- * Firebase callable'ın geçici/ağ kaynaklı hatası mı?
- * Bu durumlarda kullanıcıyı sert biçimde bloklamak yerine işleme izin
- * verilir; gerçek limit denetimi sayaç sunucu tarafında olduğu için
- * bir sonraki başarılı çağrıda yine devreye girer. Yetki/kimlik gibi
- * kalıcı hatalarda ise güvenli tarafta kalıp bloklamaya devam ederiz.
+ * Firebase callable'ın gerçekten GEÇİCİ (altyapı/timeout) bir hatası mı?
+ * Sadece bu dar küme için işleme izin verilir; çünkü bir sonraki başarılı
+ * çağrıda sunucu sayacı yine devreye girer.
+ *
+ * GÜVENLİK: Boş kod ("") ve `functions/internal` bilinçli olarak DIŞARIDA
+ * bırakıldı. Cloud Run platform seviyesinde isteği reddederse (ör. eksik
+ * invoker yetkisi → 403 / CORS hatası) hata bu kodlarla gelir. Bunları
+ * "geçici" sayıp izin vermek, sayaç hiç yazılamadığı için limitlerin
+ * tamamen bypass edilmesine yol açıyordu (fail-open). Artık bu durumlar
+ * `usage_counter_unavailable` ile bloklanıp kullanıcıya "tekrar dene"
+ * modalı gösterilir (fail-closed). `resource-exhausted` (kota) de izin
+ * verilmemesi için listeden çıkarıldı.
  */
 function isTransientUsageError(err) {
   const code = String(err?.code || "");
   return (
     code === "functions/unavailable" ||
     code === "functions/deadline-exceeded" ||
-    code === "functions/internal" ||
     code === "functions/cancelled" ||
-    code === "functions/aborted" ||
-    code === "functions/resource-exhausted" ||
-    // Kod yoksa genelde ağ/fetch hatasıdır
-    code === ""
+    code === "functions/aborted"
   );
 }
 
