@@ -6,6 +6,7 @@ import { act } from "react";
 import { createRoot } from "react-dom/client";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { SUBJECT_QUESTION_COUNTS } from "../data/questions";
+import manifest from "../data/questionChunks/_manifest.json";
 import { SUBJECTS } from "../data/subjects";
 import Dashboard from "./Dashboard";
 
@@ -64,8 +65,10 @@ const appSource = readFileSync(
 
 describe("Dashboard manifest ders sayıları", () => {
   it("Dahiliye ve Küçük Stajlar manifest count kullanır", () => {
-    expect(SUBJECT_QUESTION_COUNTS.Dahiliye).toBe(678);
-    expect(SUBJECT_QUESTION_COUNTS["Küçük Stajlar"]).toBe(512);
+    expect(SUBJECT_QUESTION_COUNTS.Dahiliye).toBe(manifest.subjectCounts.Dahiliye);
+    expect(SUBJECT_QUESTION_COUNTS["Küçük Stajlar"]).toBe(
+      manifest.subjectCounts["Küçük Stajlar"]
+    );
     expect(dashboardSource).toContain("SUBJECT_QUESTION_COUNTS[s.name]");
     expect(dashboardSource).not.toMatch(/QUESTIONS\.filter/);
   });
