@@ -184,6 +184,24 @@ export default function SubscriptionModal({ open, onClose, onSuccess, accentThem
         </div>
 
         <div className="px-5 pb-5 space-y-4 max-h-[80dvh] overflow-y-auto">
+          {/* Özellik özeti */}
+          <div className="flex flex-wrap gap-1.5">
+            {[
+              "Sınırsız soru",
+              "Sınırsız deneme",
+              "Sınırsız tekrar",
+              "AI çalışma planı",
+            ].map((feat) => (
+              <span
+                key={feat}
+                className="inline-flex items-center gap-1 rounded-full bg-emerald-50 border border-emerald-200 px-2.5 py-1 text-[11px] font-semibold text-emerald-800"
+              >
+                <span className="text-emerald-500" aria-hidden>✓</span>
+                {feat}
+              </span>
+            ))}
+          </div>
+
           {error ? (
             <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800">
               {error}

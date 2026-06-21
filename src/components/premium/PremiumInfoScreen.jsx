@@ -41,6 +41,7 @@ const PLAN_CARD_PERKS = [
   "Sınırsız soru, deneme ve tekrar",
   "Favori ve yanlış geçmişi",
   "Gelişmiş deneme net grafiği",
+  "AI destekli çalışma planı",
 ];
 
 export default function PremiumInfoScreen({
@@ -220,6 +221,21 @@ export default function PremiumInfoScreen({
                         <td className="px-3 py-2.5 text-xs font-bold text-neutral-600">Favori limit</td>
                         <td className="px-3 py-2.5 text-xs">{FREE_LIMITS.maxFavorites}</td>
                         <td className="px-3 py-2.5 text-xs font-semibold text-emerald-700">Sınırsız</td>
+                      </tr>
+                      <tr>
+                        <td className="px-3 py-2.5 text-xs font-bold text-neutral-600">Yanlış geçmişi</td>
+                        <td className="px-3 py-2.5 text-xs">{FREE_LIMITS.maxWrongQuestions}</td>
+                        <td className="px-3 py-2.5 text-xs font-semibold text-emerald-700">Sınırsız</td>
+                      </tr>
+                      <tr>
+                        <td className="px-3 py-2.5 text-xs font-bold text-neutral-600">Deneme grafiği</td>
+                        <td className="px-3 py-2.5 text-xs">Standart</td>
+                        <td className="px-3 py-2.5 text-xs font-semibold text-emerald-700">Gelişmiş</td>
+                      </tr>
+                      <tr>
+                        <td className="px-3 py-2.5 text-xs font-bold text-neutral-600">AI çalışma planı</td>
+                        <td className="px-3 py-2.5 text-xs text-neutral-400">—</td>
+                        <td className="px-3 py-2.5 text-xs font-semibold text-emerald-700">Plus'a özel</td>
                       </tr>
                     </tbody>
                   </table>
@@ -449,6 +465,7 @@ export default function PremiumInfoScreen({
                   "Sınırsız tekrar kuyruğu",
                   "Sınırsız favori ve yanlış geçmişi",
                   "Gelişmiş deneme net grafiği",
+                  "AI destekli kişisel çalışma planı",
                 ].map((line) => (
                   <li key={line} className="flex gap-2.5 items-start">
                     <span
@@ -482,6 +499,7 @@ export default function PremiumInfoScreen({
                       ["Tekrar kuyruğu", "Limitli hak", "Sınırsız"],
                       ["Favori / yanlış geçmişi", "Temel", "Sınırsız"],
                       ["Deneme net grafiği", "Standart", "Gelişmiş"],
+                      ["AI çalışma planı", "—", "Plus'a özel"],
                     ].map(([label, freeCol, plusCol]) => (
                       <tr key={label}>
                         <td className="px-3 py-2.5 font-bold text-neutral-700">{label}</td>
@@ -713,6 +731,10 @@ export default function PremiumInfoScreen({
               [
                 "Gelişmiş deneme grafiği",
                 "Deneme netlerinizi daha geniş geçmişle takip ederek gelişiminizi daha net görürsünüz.",
+              ],
+              [
+                "AI Destekli Çalışma Planı",
+                "Yapay zeka destekli kişiselleştirilmiş plan, zayıf konularınızı analiz ederek en verimli tekrar programını oluşturur.",
               ],
               [
                 "Daha düzenli çalışma akışı",
