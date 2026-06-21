@@ -370,7 +370,7 @@ exports.deleteAccountAndData = onCall(
  * iOS App Store abonelik satın almalarında çağrılır.
  */
 exports.verifyApplePurchase = onCall(
-  { region: "us-central1", cors: allowedOrigins },
+  { region: "us-central1", cors: allowedOrigins, invoker: "public" },
   verifyApplePurchaseHandler
 );
 
