@@ -44,20 +44,24 @@ const NOW = FieldValue.serverTimestamp();
 // ── Sahte kullanıcılar (lig bazlı) ───────────────────────────────────────────
 const FAKE_USERS = {
   temel: [
-    { uid: "fake_temel_anatomikrali", nickname: "AnatomiKrali", stats: { score: 1340, solvedCount: 96, correctCount: 84, accuracy: 88, streakBonusCount: 6, fsrsCompletedCount: 6, mockExamCount: 2 } },
-    { uid: "fake_temel_sinapsavcisi", nickname: "SinapsAvcisi", stats: { score: 1085, solvedCount: 78, correctCount: 66, accuracy: 85, streakBonusCount: 5, fsrsCompletedCount: 5, mockExamCount: 1 } },
-    { uid: "fake_temel_krebsdongusu", nickname: "KrebsDongusu", stats: { score: 932, solvedCount: 71, correctCount: 57, accuracy: 80, streakBonusCount: 4, fsrsCompletedCount: 4, mockExamCount: 1 } },
-    { uid: "fake_temel_noronninja", nickname: "NoronNinja", stats: { score: 768, solvedCount: 60, correctCount: 47, accuracy: 78, streakBonusCount: 4, fsrsCompletedCount: 3, mockExamCount: 1 } },
-    { uid: "fake_temel_histolojipro", nickname: "HistolojiPro", stats: { score: 604, solvedCount: 49, correctCount: 37, accuracy: 76, streakBonusCount: 3, fsrsCompletedCount: 2, mockExamCount: 0 } },
-    { uid: "fake_temel_enzimkinetik", nickname: "EnzimKinetik", stats: { score: 451, solvedCount: 37, correctCount: 27, accuracy: 73, streakBonusCount: 2, fsrsCompletedCount: 1, mockExamCount: 0 } },
+    { uid: "fake_temel_anatomikrali",  nickname: "AnatomiKrali",  stats: { score: 1340, solvedCount: 96, correctCount: 84, accuracy: 88, streakBonusCount: 6, fsrsCompletedCount: 6, mockExamCount: 2 } },
+    { uid: "fake_temel_sinapsavcisi",  nickname: "SinapsAvcisi",  stats: { score: 1085, solvedCount: 78, correctCount: 66, accuracy: 85, streakBonusCount: 5, fsrsCompletedCount: 5, mockExamCount: 1 } },
+    { uid: "fake_temel_krebsdongusu",  nickname: "KrebsDongusu",  stats: { score: 932,  solvedCount: 71, correctCount: 57, accuracy: 80, streakBonusCount: 4, fsrsCompletedCount: 4, mockExamCount: 1 } },
+    { uid: "fake_temel_noronninja",    nickname: "NoronNinja",    stats: { score: 768,  solvedCount: 60, correctCount: 47, accuracy: 78, streakBonusCount: 4, fsrsCompletedCount: 3, mockExamCount: 1 } },
+    { uid: "fake_temel_histolojipro",  nickname: "HistolojiPro",  stats: { score: 604,  solvedCount: 49, correctCount: 37, accuracy: 76, streakBonusCount: 3, fsrsCompletedCount: 2, mockExamCount: 0 } },
+    { uid: "fake_temel_enzimkinetik",  nickname: "EnzimKinetik",  stats: { score: 451,  solvedCount: 37, correctCount: 27, accuracy: 73, streakBonusCount: 2, fsrsCompletedCount: 1, mockExamCount: 0 } },
+    { uid: "fake_temel_fizyobeyni",    nickname: "FizyoBeyni",    stats: { score: 340,  solvedCount: 29, correctCount: 20, accuracy: 69, streakBonusCount: 1, fsrsCompletedCount: 1, mockExamCount: 0 } },
+    { uid: "fake_temel_mikrobossi",    nickname: "MikroBossi",    stats: { score: 218,  solvedCount: 20, correctCount: 13, accuracy: 65, streakBonusCount: 1, fsrsCompletedCount: 0, mockExamCount: 0 } },
   ],
   klinik: [
-    { uid: "fake_klinik_drvizit", nickname: "DrVizit", stats: { score: 1410, solvedCount: 102, correctCount: 90, accuracy: 88, streakBonusCount: 7, fsrsCompletedCount: 6, mockExamCount: 2 } },
-    { uid: "fake_klinik_ekgustasi", nickname: "EKGustasi", stats: { score: 1120, solvedCount: 83, correctCount: 70, accuracy: 84, streakBonusCount: 5, fsrsCompletedCount: 5, mockExamCount: 2 } },
-    { uid: "fake_klinik_pediatripro", nickname: "PediatriPro", stats: { score: 945, solvedCount: 73, correctCount: 59, accuracy: 81, streakBonusCount: 5, fsrsCompletedCount: 4, mockExamCount: 1 } },
-    { uid: "fake_klinik_nobetciasistan", nickname: "NobetciAsistan", stats: { score: 792, solvedCount: 62, correctCount: 49, accuracy: 79, streakBonusCount: 4, fsrsCompletedCount: 3, mockExamCount: 1 } },
-    { uid: "fake_klinik_stajyerdoktor", nickname: "StajyerDoktor", stats: { score: 618, solvedCount: 50, correctCount: 38, accuracy: 76, streakBonusCount: 3, fsrsCompletedCount: 2, mockExamCount: 0 } },
-    { uid: "fake_klinik_receterunner", nickname: "ReceteRunner", stats: { score: 472, solvedCount: 39, correctCount: 28, accuracy: 72, streakBonusCount: 2, fsrsCompletedCount: 1, mockExamCount: 0 } },
+    { uid: "fake_klinik_drvizit",       nickname: "DrVizit",       stats: { score: 1410, solvedCount: 102, correctCount: 90, accuracy: 88, streakBonusCount: 7, fsrsCompletedCount: 6, mockExamCount: 2 } },
+    { uid: "fake_klinik_ekgustasi",     nickname: "EKGustasi",     stats: { score: 1120, solvedCount: 83,  correctCount: 70, accuracy: 84, streakBonusCount: 5, fsrsCompletedCount: 5, mockExamCount: 2 } },
+    { uid: "fake_klinik_pediatripro",   nickname: "PediatriPro",   stats: { score: 945,  solvedCount: 73,  correctCount: 59, accuracy: 81, streakBonusCount: 5, fsrsCompletedCount: 4, mockExamCount: 1 } },
+    { uid: "fake_klinik_nobetciasistan",nickname: "NobetciAsistan",stats: { score: 792,  solvedCount: 62,  correctCount: 49, accuracy: 79, streakBonusCount: 4, fsrsCompletedCount: 3, mockExamCount: 1 } },
+    { uid: "fake_klinik_stajyerdoktor", nickname: "StajyerDoktor", stats: { score: 618,  solvedCount: 50,  correctCount: 38, accuracy: 76, streakBonusCount: 3, fsrsCompletedCount: 2, mockExamCount: 0 } },
+    { uid: "fake_klinik_receterunner",  nickname: "ReceteRunner",  stats: { score: 472,  solvedCount: 39,  correctCount: 28, accuracy: 72, streakBonusCount: 2, fsrsCompletedCount: 1, mockExamCount: 0 } },
+    { uid: "fake_klinik_cerrahi34",     nickname: "Cerrahi34",     stats: { score: 335,  solvedCount: 28,  correctCount: 19, accuracy: 68, streakBonusCount: 1, fsrsCompletedCount: 1, mockExamCount: 0 } },
+    { uid: "fake_klinik_dahiliyeci",    nickname: "Dahiliyeci",    stats: { score: 197,  solvedCount: 18,  correctCount: 11, accuracy: 61, streakBonusCount: 0, fsrsCompletedCount: 0, mockExamCount: 0 } },
   ],
 };
 
