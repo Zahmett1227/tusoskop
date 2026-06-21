@@ -51,6 +51,7 @@ export default function PremiumInfoScreen({
   accentTheme,
   accentThemeKey,
   onOpenLegalPage,
+  onPremiumActivated,
 }) {
   const [copyDone, setCopyDone] = useState(false);
   const [banner, setBanner] = useState("");
@@ -328,6 +329,9 @@ export default function PremiumInfoScreen({
                   ? `Plus aktif! Aboneliğiniz ${new Date(premiumUntil).toLocaleDateString("tr-TR")} tarihine kadar geçerli.`
                   : "Plus aboneliğiniz aktifleştirildi."
               );
+              // Firestore'daki güncel premium durumunu anında çek — uygulama
+              // yeniden açılmadan UI'da Plus görünsün.
+              onPremiumActivated?.();
             }}
             accentTheme={accentTheme}
           />

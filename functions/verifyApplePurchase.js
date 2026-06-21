@@ -1,5 +1,6 @@
 const crypto = require("node:crypto");
 const { getFirestore, FieldValue, Timestamp } = require("firebase-admin/firestore");
+const { getAuth } = require("firebase-admin/auth");
 const { HttpsError } = require("firebase-functions/v2/https");
 
 const ALLOWED_BUNDLE_ID = "com.tusoskop.app";
@@ -8,6 +9,13 @@ const ALLOWED_PRODUCT_IDS = new Set([
   "com.tusoskop.app.plus.3m",
   "com.tusoskop.app.plus.1y",
 ]);
+
+// Ürün → admin panelinde gösterilecek plan bilgisi
+const PRODUCT_INFO = {
+  "com.tusoskop.app.plus.1m": { planId: "plus_1m", planLabel: "1 Aylık Plus", durationDays: 30 },
+  "com.tusoskop.app.plus.3m": { planId: "plus_3m", planLabel: "3 Aylık Plus", durationDays: 90 },
+  "com.tusoskop.app.plus.1y": { planId: "plus_1y", planLabel: "1 Yıllık Plus", durationDays: 365 },
+};
 
 function parseJws(jws) {
   const parts = jws.split(".");
@@ -123,18 +131,59 @@ async function verifyApplePurchaseHandler(request) {
     }
 
     const db = getFirestore();
-    await db.collection("users").doc(uid).set(
-      {
-        plan: "plus",
-        premiumStatus: "active",
-        premiumUntil: Timestamp.fromDate(expDate),
-        iapSource: "apple",
+
+    // Kullanıcının e-postasını auth'tan al (admin panelde kimliklendirme için).
+    let userEmail = null;
+    let userDisplayName = null;
+    try {
+      const authUser = await getAuth().getUser(uid);
+      userEmail = authUser.email || null;
+      userDisplayName = authUser.displayName || null;
+    } catch (e) {
+      console.warn("[verifyApplePurchase] auth.getUser başarısız:", e?.message);
+    }
+
+    const userPatch = {
+      plan: "plus",
+      premiumStatus: "active",
+      premiumSource: "apple",
+      premiumUntil: Timestamp.fromDate(expDate),
+      iapSource: "apple",
+      iapProductId: productId,
+      iapOriginalTransactionId: String(originalTransactionId || transactionId || ""),
+      iapLastUpdated: FieldValue.serverTimestamp(),
+    };
+    if (userEmail) userPatch.email = userEmail;
+    if (userDisplayName) userPatch.displayName = userDisplayName;
+
+    await db.collection("users").doc(uid).set(userPatch, { merge: true });
+
+    // Admin panelinde görünmesi için ödeme kaydı yaz (best-effort — akışı bozmaz).
+    try {
+      const info = PRODUCT_INFO[productId] || { planId: productId, planLabel: productId, durationDays: null };
+      await db.collection("premiumPurchaseIntents").add({
+        uid,
+        email: userEmail,
+        displayName: userDisplayName,
+        planId: info.planId,
+        planLabel: info.planLabel,
+        planSku: productId,
+        durationDays: info.durationDays,
+        totalPriceLabel: "App Store (IAP)",
+        currency: "TRY",
+        provider: "apple",
+        status: "apple_activated",
         iapProductId: productId,
+        iapTransactionId: String(transactionId || ""),
         iapOriginalTransactionId: String(originalTransactionId || transactionId || ""),
-        iapLastUpdated: FieldValue.serverTimestamp(),
-      },
-      { merge: true }
-    );
+        premiumUntil: expDate.toISOString(),
+        shopifyOrderName: null,
+        createdAt: new Date().toISOString(),
+        activatedAt: new Date().toISOString(),
+      });
+    } catch (e) {
+      console.error("[verifyApplePurchase] premiumPurchaseIntents kaydı başarısız:", e?.message);
+    }
 
     console.log(`[verifyApplePurchase] OK uid=${uid} productId=${productId} premiumUntil=${expDate.toISOString()}`);
 

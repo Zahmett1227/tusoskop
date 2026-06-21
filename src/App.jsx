@@ -160,6 +160,7 @@ export default function App() {
     isAdmin,
     remainingUsage,
     refreshRemainingUsage,
+    refreshUserData,
     favoriteQuestionIds,
     setFavoriteQuestionIds,
     isAuthReady,
@@ -807,6 +808,7 @@ export default function App() {
           accentTheme={accentTheme}
           accentThemeKey={accentThemeKey}
           onOpenLegalPage={openLegalPage}
+          onPremiumActivated={refreshUserData}
         />
       );
       break;

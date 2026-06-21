@@ -36,6 +36,22 @@ export function useAppAuthBootstrap(setView) {
     return usage;
   }, [user, userData]);
 
+  // Firestore'dan kullanıcı belgesini yeniden okuyup userData'yı tazeler.
+  // IAP satın alma sonrası premium durumunun anında yansıması için kullanılır.
+  const refreshUserData = useCallback(async () => {
+    const currentUser = auth.currentUser;
+    if (!currentUser?.uid) return null;
+    try {
+      const ensured = await ensureUserDocument(currentUser);
+      const next = withAppReviewAccess(currentUser, ensured);
+      setUserData(next);
+      return next;
+    } catch (error) {
+      console.error("refreshUserData error:", error);
+      return null;
+    }
+  }, []);
+
   useEffect(() => {
     // popup-blocked fallback yalnız çağrıldığında bir redirect sonucu olur;
     // null kontrolü ile iOS Safari ITP'de güvenli geçer.
@@ -132,6 +148,7 @@ export function useAppAuthBootstrap(setView) {
     isAdmin,
     remainingUsage,
     refreshRemainingUsage,
+    refreshUserData,
     favoriteQuestionIds,
     setFavoriteQuestionIds,
     isAuthReady,

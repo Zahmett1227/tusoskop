@@ -20,6 +20,8 @@ function intentStatusLabel(status) {
       return "Ödeme kontrol edildi";
     case "manually_activated":
       return "Aktive edildi";
+    case "apple_activated":
+      return "App Store (otomatik)";
     case "cancelled":
       return "İptal";
     case "needs_review":
@@ -36,6 +38,8 @@ function intentStatusPillClass(status) {
     case "payment_checked":
       return "bg-sky-500/12 text-sky-200 border-sky-400/30";
     case "manually_activated":
+      return "bg-emerald-500/15 text-emerald-200 border-emerald-400/30";
+    case "apple_activated":
       return "bg-emerald-500/15 text-emerald-200 border-emerald-400/30";
     case "cancelled":
       return "bg-rose-500/12 text-rose-200 border-rose-400/28";
