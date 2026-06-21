@@ -48,6 +48,7 @@ export default function StudyScreen({
 
   useEffect(() => {
     setFsrsRated(false);
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [q?.id, index]);
 
   useEffect(() => {
