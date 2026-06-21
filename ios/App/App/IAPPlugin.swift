@@ -21,7 +21,9 @@ public class IAPPlugin: CAPPlugin, CAPBridgedPlugin {
         }
         Task {
             do {
+                NSLog("⚡️ [Tusoskop IAP] getProducts istenen ID'ler: \(productIds)")
                 let products = try await Product.products(for: Set(productIds))
+                NSLog("⚡️ [Tusoskop IAP] StoreKit \(products.count) ürün döndürdü: \(products.map { $0.id })")
                 self.cachedProducts = products
                 let list = products.map { p -> [String: Any] in
                     var d: [String: Any] = [
@@ -47,6 +49,7 @@ public class IAPPlugin: CAPPlugin, CAPBridgedPlugin {
                 }
                 call.resolve(["products": list])
             } catch {
+                NSLog("⚡️ [Tusoskop IAP] getProducts HATA: \(error.localizedDescription)")
                 call.reject("PRODUCTS_ERROR", error.localizedDescription, error)
             }
         }
