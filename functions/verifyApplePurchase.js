@@ -2,6 +2,7 @@ const crypto = require("node:crypto");
 const { getFirestore, FieldValue, Timestamp } = require("firebase-admin/firestore");
 const { getAuth } = require("firebase-admin/auth");
 const { HttpsError } = require("firebase-functions/v2/https");
+const { defineSecret } = require("firebase-functions/params");
 
 const ALLOWED_BUNDLE_ID = "com.tusoskop.app";
 const ALLOWED_PRODUCT_IDS = new Set([
@@ -9,6 +10,17 @@ const ALLOWED_PRODUCT_IDS = new Set([
   "com.tusoskop.app.plus.3m",
   "com.tusoskop.app.plus.1y",
 ]);
+
+/**
+ * Pin'lenmiş güven kökü: Apple Root CA - G3.
+ * Sertifika PUBLIC'tir ama güven zincirinin tepesi koda dışarıdan enjekte
+ * edilmemeli; aksi halde `x5c` içindeki kök istemci kontrolünde olduğu için
+ * sahte bir zincirle makbuz uydurulabilir. Değer, resmi sertifikadan
+ * (https://www.apple.com/certificateauthority/AppleRootCA-G3.cer) üretilen
+ * PEM **veya** base64 DER içeriğidir ve `firebase functions:secrets:set
+ * APPLE_ROOT_CA_G3` ile tanımlanır. Tanımlı değilse doğrulama fail-closed olur.
+ */
+const APPLE_ROOT_CA_G3 = defineSecret("APPLE_ROOT_CA_G3");
 
 // Ürün → admin panelinde gösterilecek plan bilgisi
 const PRODUCT_INFO = {
@@ -18,7 +30,7 @@ const PRODUCT_INFO = {
 };
 
 function parseJws(jws) {
-  const parts = jws.split(".");
+  const parts = String(jws || "").split(".");
   if (parts.length !== 3) throw new Error("Geçersiz JWS formatı.");
   const header = JSON.parse(Buffer.from(parts[0], "base64url").toString("utf8"));
   const payload = JSON.parse(Buffer.from(parts[1], "base64url").toString("utf8"));
@@ -26,27 +38,88 @@ function parseJws(jws) {
 }
 
 function base64ToPem(b64) {
-  const body = b64.replace(/(.{64})/g, "$1\n").replace(/\n$/, "");
+  const body = String(b64).replace(/\s+/g, "").replace(/(.{64})/g, "$1\n").replace(/\n$/, "");
   return `-----BEGIN CERTIFICATE-----\n${body}\n-----END CERTIFICATE-----`;
 }
 
-function verifyCertificateChain(x5c) {
+/**
+ * Secret değerinden (PEM veya base64 DER) Apple kök X509Certificate'ını üretir.
+ * Boş/geçersizse hata fırlatır (fail-closed).
+ */
+function loadPinnedRootCert(rawValue) {
+  const val = String(rawValue || "").trim();
+  if (!val) throw new Error("APPLE_ROOT_CA_G3 secret tanımlı değil.");
+  const pem = val.includes("BEGIN CERTIFICATE") ? val : base64ToPem(val);
+  return new crypto.X509Certificate(pem);
+}
+
+let _pinnedRootCache = null;
+function getPinnedRootCert() {
+  if (!_pinnedRootCache) {
+    _pinnedRootCache = loadPinnedRootCert(APPLE_ROOT_CA_G3.value());
+  }
+  return _pinnedRootCache;
+}
+
+/** İki X509 sertifikasının DER baytları birebir aynı mı (sabit zamanlı). */
+function certsEqual(a, b) {
+  const da = a?.raw;
+  const dbb = b?.raw;
+  if (!Buffer.isBuffer(da) || !Buffer.isBuffer(dbb) || da.length !== dbb.length) {
+    return false;
+  }
+  return crypto.timingSafeEqual(da, dbb);
+}
+
+function assertCertWithinValidity(cert, nowMs) {
+  const notBefore = Date.parse(cert.validFrom);
+  const notAfter = Date.parse(cert.validTo);
+  if (Number.isFinite(notBefore) && nowMs < notBefore) {
+    throw new Error("Sertifika henüz geçerli değil.");
+  }
+  if (Number.isFinite(notAfter) && nowMs > notAfter) {
+    throw new Error("Sertifika süresi dolmuş.");
+  }
+}
+
+/**
+ * JWS `x5c` sertifika zincirini doğrular ve leaf public key'ini döner.
+ *
+ * Güven, `pinnedRoot` (koda gömülü Apple Root CA - G3) sertifikasına dayanır:
+ *  1) Her sertifika geçerlilik tarihleri içinde olmalı.
+ *  2) Zincir halka halka imzalı olmalı (certs[i] ↔ certs[i+1].publicKey).
+ *  3) Zincirin tepesindeki kök, pin'lenmiş Apple köküyle BAYT BAYT aynı olmalı.
+ *  4) Pin'lenmiş kök kendi kendini imzalamış (self-signed) olmalı.
+ *
+ * `pinnedRoot` dışarıdan parametre olarak alınır → birim testlerde secret'a
+ * ihtiyaç olmadan doğrulanabilir.
+ */
+function verifyCertificateChain(x5c, pinnedRoot, nowMs = Date.now()) {
   if (!Array.isArray(x5c) || x5c.length < 2) {
     throw new Error("Geçersiz sertifika zinciri.");
+  }
+  if (!pinnedRoot) {
+    throw new Error("Pin'lenmiş Apple kök sertifikası yapılandırılmamış.");
   }
 
   const certs = x5c.map((b64) => new crypto.X509Certificate(base64ToPem(b64)));
 
-  for (let i = 0; i < certs.length - 1; i++) {
+  for (const cert of certs) {
+    assertCertWithinValidity(cert, nowMs);
+  }
+
+  for (let i = 0; i < certs.length - 1; i += 1) {
     if (!certs[i].verify(certs[i + 1].publicKey)) {
       throw new Error(`Sertifika zinciri doğrulaması başarısız: indeks ${i}`);
     }
   }
 
-  const root = certs[certs.length - 1];
-  const rootSubject = root.subject || "";
-  if (!rootSubject.includes("Apple") || !rootSubject.includes("Root CA")) {
-    throw new Error("Sertifika zinciri Apple Root CA ile imzalanmamış.");
+  const providedRoot = certs[certs.length - 1];
+  if (!certsEqual(providedRoot, pinnedRoot)) {
+    throw new Error("Sertifika zinciri pin'lenmiş Apple Root CA ile eşleşmiyor.");
+  }
+  if (!pinnedRoot.verify(pinnedRoot.publicKey)) {
+    throw new Error("Pin'lenmiş kök sertifika kendi kendini imzalamamış.");
   }
 
   return certs[0].publicKey;
@@ -63,17 +136,60 @@ function verifyJwsSignature(parts, publicKey) {
   if (!valid) throw new Error("JWS imzası geçersiz.");
 }
 
-function verifyJwsTransaction(jwsRepresentation) {
+function verifyJwsTransaction(jwsRepresentation, pinnedRoot) {
   const { header, payload, parts } = parseJws(jwsRepresentation);
 
   if (header.alg !== "ES256") {
     throw new Error(`Beklenmeyen algoritma: ${header.alg}`);
   }
 
-  const publicKey = verifyCertificateChain(header.x5c);
+  const publicKey = verifyCertificateChain(header.x5c, pinnedRoot);
   verifyJwsSignature(parts, publicKey);
 
   return payload;
+}
+
+/**
+ * Doğrulanmış JWS payload'ının iş kurallarını kontrol eder; geçerliyse
+ * abonelik bitiş tarihini (Date) döner, değilse HttpsError fırlatır.
+ * Saf fonksiyon — birim testlerde kullanılır.
+ */
+function validateTransactionPayload(payload, nowMs = Date.now()) {
+  const { bundleId, productId, expiresDate, type } = payload || {};
+
+  if (bundleId !== ALLOWED_BUNDLE_ID) {
+    throw new HttpsError("invalid-argument", `Geçersiz bundle ID: ${bundleId}`);
+  }
+  if (type !== "Auto-Renewable Subscription") {
+    throw new HttpsError("invalid-argument", `Geçersiz abonelik tipi: ${type}`);
+  }
+  if (!ALLOWED_PRODUCT_IDS.has(productId)) {
+    throw new HttpsError("invalid-argument", `İzin verilmeyen ürün ID: ${productId}`);
+  }
+
+  const expMs = new Date(expiresDate).getTime();
+  if (Number.isNaN(expMs)) {
+    throw new HttpsError("invalid-argument", `Geçersiz son kullanma tarihi: ${expiresDate}`);
+  }
+  if (expMs <= nowMs) {
+    throw new HttpsError("failed-precondition", `Abonelik süresi dolmuş: ${new Date(expMs).toISOString()}`);
+  }
+
+  return new Date(expMs);
+}
+
+/**
+ * Bir abonelik (originalTransactionId) yalnızca tek bir Firebase hesabına
+ * tanımlanabilir. Mevcut bağ farklı bir uid'e aitse hata fırlatır.
+ * Saf fonksiyon — birim testlerde kullanılır.
+ */
+function assertSubscriptionOwnership(existingBindingData, uid) {
+  if (existingBindingData && existingBindingData.uid && existingBindingData.uid !== uid) {
+    throw new HttpsError(
+      "permission-denied",
+      "Bu abonelik başka bir hesaba tanımlı. Lütfen aboneliği satın aldığınız hesapla giriş yapın ya da destek ile iletişime geçin."
+    );
+  }
 }
 
 async function verifyApplePurchaseHandler(request) {
@@ -89,45 +205,38 @@ async function verifyApplePurchaseHandler(request) {
       throw new HttpsError("invalid-argument", "jwsRepresentation gerekli.");
     }
 
+    // Pin'lenmiş Apple kökü yapılandırılmamışsa fail-closed: hiçbir aktivasyon yapma.
+    let pinnedRoot;
+    try {
+      pinnedRoot = getPinnedRootCert();
+    } catch (cfgErr) {
+      console.error("[verifyApplePurchase] Pin yapılandırma hatası:", cfgErr?.message);
+      throw new HttpsError("failed-precondition", "Ödeme doğrulama altyapısı yapılandırılmamış.");
+    }
+
     let payload;
     try {
-      payload = verifyJwsTransaction(jwsRepresentation);
+      payload = verifyJwsTransaction(jwsRepresentation, pinnedRoot);
     } catch (err) {
       console.error("[verifyApplePurchase] JWS doğrulama hatası:", err?.message);
       throw new HttpsError("invalid-argument", `JWS doğrulama başarısız: ${err?.message}`);
     }
 
-    const {
-      bundleId,
+    const { productId, originalTransactionId, transactionId } = payload;
+
+    console.log("[verifyApplePurchase] Payload:", {
+      bundleId: payload.bundleId,
       productId,
-      expiresDate,
-      type,
-      originalTransactionId,
-      transactionId,
-    } = payload;
+      type: payload.type,
+      expiresDate: payload.expiresDate,
+    });
 
-    console.log("[verifyApplePurchase] Payload:", { bundleId, productId, type, expiresDate });
+    const expDate = validateTransactionPayload(payload);
 
-    if (bundleId !== ALLOWED_BUNDLE_ID) {
-      throw new HttpsError("invalid-argument", `Geçersiz bundle ID: ${bundleId}`);
-    }
-
-    if (type !== "Auto-Renewable Subscription") {
-      throw new HttpsError("invalid-argument", `Geçersiz abonelik tipi: ${type}`);
-    }
-
-    if (!ALLOWED_PRODUCT_IDS.has(productId)) {
-      throw new HttpsError("invalid-argument", `İzin verilmeyen ürün ID: ${productId}`);
-    }
-
-    const expDate = new Date(expiresDate);
-    if (Number.isNaN(expDate.getTime())) {
-      throw new HttpsError("invalid-argument", `Geçersiz son kullanma tarihi: ${expiresDate}`);
-    }
-
-    const now = new Date();
-    if (expDate <= now) {
-      throw new HttpsError("failed-precondition", `Abonelik süresi dolmuş: ${expDate.toISOString()}`);
+    // Abonelik bağı için kararlı anahtar: originalTransactionId (yenilemelerde sabit).
+    const bindingKey = String(originalTransactionId || transactionId || "");
+    if (!bindingKey) {
+      throw new HttpsError("invalid-argument", "İşlem kimliği bulunamadı.");
     }
 
     const db = getFirestore();
@@ -150,13 +259,35 @@ async function verifyApplePurchaseHandler(request) {
       premiumUntil: Timestamp.fromDate(expDate),
       iapSource: "apple",
       iapProductId: productId,
-      iapOriginalTransactionId: String(originalTransactionId || transactionId || ""),
+      iapOriginalTransactionId: bindingKey,
       iapLastUpdated: FieldValue.serverTimestamp(),
     };
     if (userEmail) userPatch.email = userEmail;
     if (userDisplayName) userPatch.displayName = userDisplayName;
 
-    await db.collection("users").doc(uid).set(userPatch, { merge: true });
+    const bindingRef = db.collection("appleSubscriptions").doc(bindingKey);
+    const userRef = db.collection("users").doc(uid);
+
+    // Bağ kontrolü + aktivasyon tek transaction'da: aynı abonelik başka hesaba
+    // tanımlıysa reddet; değilse bu hesaba kilitle ve premium'u aktive et.
+    await db.runTransaction(async (tx) => {
+      const bindingSnap = await tx.get(bindingRef);
+      assertSubscriptionOwnership(bindingSnap.exists ? bindingSnap.data() : null, uid);
+
+      const bindingPatch = {
+        uid,
+        productId,
+        originalTransactionId: bindingKey,
+        premiumUntil: Timestamp.fromDate(expDate),
+        lastVerifiedAt: FieldValue.serverTimestamp(),
+      };
+      if (!bindingSnap.exists) {
+        bindingPatch.firstActivatedAt = FieldValue.serverTimestamp();
+      }
+
+      tx.set(bindingRef, bindingPatch, { merge: true });
+      tx.set(userRef, userPatch, { merge: true });
+    });
 
     // Admin panelinde görünmesi için ödeme kaydı yaz (best-effort — akışı bozmaz).
     try {
@@ -175,7 +306,7 @@ async function verifyApplePurchaseHandler(request) {
         status: "apple_activated",
         iapProductId: productId,
         iapTransactionId: String(transactionId || ""),
-        iapOriginalTransactionId: String(originalTransactionId || transactionId || ""),
+        iapOriginalTransactionId: bindingKey,
         premiumUntil: expDate.toISOString(),
         shopifyOrderName: null,
         createdAt: new Date().toISOString(),
@@ -197,4 +328,15 @@ async function verifyApplePurchaseHandler(request) {
   }
 }
 
-module.exports = { verifyApplePurchaseHandler };
+module.exports = {
+  verifyApplePurchaseHandler,
+  APPLE_ROOT_CA_G3,
+  // Doğrulama yardımcıları (birim testlerde kullanılır)
+  parseJws,
+  base64ToPem,
+  loadPinnedRootCert,
+  verifyCertificateChain,
+  verifyJwsTransaction,
+  validateTransactionPayload,
+  assertSubscriptionOwnership,
+};

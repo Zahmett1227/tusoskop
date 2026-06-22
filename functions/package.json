@@ -5,6 +5,9 @@
     "node": "20"
   },
   "main": "index.js",
+  "scripts": {
+    "test": "node --test"
+  },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
     "firebase-admin": "^13.0.0",

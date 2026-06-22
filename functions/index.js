@@ -17,7 +17,7 @@ const {
 const { buildUserStudySummary } = require("./services/buildUserStudySummary");
 const { generateAiStudyPlan } = require("./services/generateAiStudyPlan");
 const { buildFallbackDailyStudyPlan } = require("./services/buildFallbackDailyStudyPlan");
-const { verifyApplePurchaseHandler } = require("./verifyApplePurchase");
+const { verifyApplePurchaseHandler, APPLE_ROOT_CA_G3 } = require("./verifyApplePurchase");
 
 // Apple Sign in private key (.p8 içeriği). `firebase functions:secrets:set` ile tanımlanır.
 const APPLE_SIGNIN_PRIVATE_KEY = defineSecret("APPLE_SIGNIN_PRIVATE_KEY");
@@ -341,6 +341,8 @@ exports.deleteAccountAndData = onCall(
         recursiveDeleteDoc(`appleTokens/${uid}`),
         deleteQueryResults(db.collection("results").where("userId", "==", uid)),
         deleteQueryResults(db.collection("studySessions").where("userId", "==", uid)),
+        // IAP abonelik bağını sil → kullanıcı yeni hesapla aynı aboneliği restore edebilsin.
+        deleteQueryResults(db.collection("appleSubscriptions").where("uid", "==", uid)),
       ]);
 
       try {
@@ -371,7 +373,7 @@ exports.deleteAccountAndData = onCall(
  * iOS App Store abonelik satın almalarında çağrılır.
  */
 exports.verifyApplePurchase = onCall(
-  { region: "us-central1", cors: allowedOrigins, invoker: "public" },
+  { region: "us-central1", cors: allowedOrigins, invoker: "public", secrets: [APPLE_ROOT_CA_G3] },
   verifyApplePurchaseHandler
 );
 

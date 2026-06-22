@@ -281,6 +281,12 @@ service cloud.firestore {
       allow delete: if false;
     }
 
+    // IAP abonelik → hesap bağı. Yalnızca Cloud Functions (Admin SDK) yazar/okur;
+    // istemci erişimi tamamen kapalı (savunma derinliği).
+    match /appleSubscriptions/{originalTransactionId} {
+      allow read, write: if false;
+    }
+
     // Nickname benzersizlik tablo — okuma herkes, yazma transaction ile kendi kaydı
     match /normalizedNicknames/{normalized} {
       allow read: if true;
