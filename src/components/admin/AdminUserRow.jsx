@@ -9,6 +9,8 @@ function formatPremiumSource(src) {
   if (!src || src === "none") return "—";
   if (src === "admin") return "Admin";
   if (src === "shopify") return "Shopify";
+  if (src === "apple") return "App Store";
+  if (src === "app_review") return "App Review";
   return String(src);
 }
 

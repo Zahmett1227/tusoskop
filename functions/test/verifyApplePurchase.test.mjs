@@ -101,10 +101,21 @@ test("validateTransactionPayload: süresi dolmuş abonelik reddedilir", () => {
         bundleId: "com.tusoskop.app",
         type: "Auto-Renewable Subscription",
         productId: "com.tusoskop.app.plus.1m",
-        expiresDate: Date.now() - 1000,
+        expiresDate: Date.now() - 5 * 60 * 1000, // 5 dk önce dolmuş — grace dışında
       }),
     (e) => e.code === "failed-precondition"
   );
+});
+
+test("validateTransactionPayload: saat kayması toleransı içinde (kıl payı dolmuş) kabul edilir", () => {
+  const exp = Date.now() - 5 * 1000; // 5 sn önce — 60 sn grace içinde
+  const d = validateTransactionPayload({
+    bundleId: "com.tusoskop.app",
+    type: "Auto-Renewable Subscription",
+    productId: "com.tusoskop.app.plus.1m",
+    expiresDate: exp,
+  });
+  assert.equal(d.getTime(), exp);
 });
 
 test("assertSubscriptionOwnership: aynı uid ise sorun yok", () => {

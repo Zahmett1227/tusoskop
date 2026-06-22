@@ -75,14 +75,26 @@ public class IAPPlugin: CAPPlugin, CAPBridgedPlugin {
                     switch vr {
                     case .verified(let tx):
                         await tx.finish()
+                        // En güncel transaction'ı kullan. Sandbox'ta product.purchase()
+                        // bazen aboneliğin ESKİ/orijinal transaction'ını döndürebiliyor;
+                        // bunun expirationDate'i (hızlandırılmış sandbox süresi) geçmişte
+                        // kalıp sunucuda "süresi dolmuş" hatasına yol açıyor.
+                        // Transaction.latest mevcut dönemi yansıtır.
+                        var bestVR = vr
+                        var bestTx = tx
+                        if let latest = await Transaction.latest(for: tx.productID),
+                           case .verified(let ltx) = latest {
+                            bestVR = latest
+                            bestTx = ltx
+                        }
                         var d: [String: Any] = [
-                            "transactionId": String(tx.id),
-                            "productId": tx.productID,
-                            "jwsRepresentation": vr.jwsRepresentation,
-                            "originalTransactionId": String(tx.originalID),
-                            "purchaseDate": tx.purchaseDate.timeIntervalSince1970 * 1000,
+                            "transactionId": String(bestTx.id),
+                            "productId": bestTx.productID,
+                            "jwsRepresentation": bestVR.jwsRepresentation,
+                            "originalTransactionId": String(bestTx.originalID),
+                            "purchaseDate": bestTx.purchaseDate.timeIntervalSince1970 * 1000,
                         ]
-                        if let exp = tx.expirationDate {
+                        if let exp = bestTx.expirationDate {
                             d["expirationDate"] = exp.timeIntervalSince1970 * 1000
                         }
                         call.resolve(d)

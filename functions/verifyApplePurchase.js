@@ -153,6 +153,11 @@ function verifyJwsTransaction(jwsRepresentation, pinnedRoot) {
   return payload;
 }
 
+// Sunucu/Apple saatleri arasındaki küçük kaymalar için tolerans. Yalnızca
+// "kıl payı dolmuş" gibi görünen geçerli abonelikleri kurtarır; gerçek (dakikalar
+// önce dolmuş) aboneliklerde etkisizdir.
+const CLOCK_SKEW_MS = 60 * 1000;
+
 /**
  * Doğrulanmış JWS payload'ının iş kurallarını kontrol eder; geçerliyse
  * abonelik bitiş tarihini (Date) döner, değilse HttpsError fırlatır.
@@ -175,8 +180,11 @@ function validateTransactionPayload(payload, nowMs = Date.now()) {
   if (Number.isNaN(expMs)) {
     throw new HttpsError("invalid-argument", `Geçersiz son kullanma tarihi: ${expiresDate}`);
   }
-  if (expMs <= nowMs) {
-    throw new HttpsError("failed-precondition", `Abonelik süresi dolmuş: ${new Date(expMs).toISOString()}`);
+  if (expMs <= nowMs - CLOCK_SKEW_MS) {
+    throw new HttpsError(
+      "failed-precondition",
+      `Abonelik süresi dolmuş: expiresDate=${new Date(expMs).toISOString()} now=${new Date(nowMs).toISOString()}`
+    );
   }
 
   return new Date(expMs);
@@ -221,11 +229,15 @@ async function verifyApplePurchaseHandler(request) {
 
     const { productId, originalTransactionId, transactionId } = payload;
 
+    const expRawMs = new Date(payload.expiresDate).getTime();
     console.log("[verifyApplePurchase] Payload:", {
       bundleId: payload.bundleId,
       productId,
       type: payload.type,
-      expiresDate: payload.expiresDate,
+      expiresDateRaw: payload.expiresDate,
+      expiresDateIso: Number.isNaN(expRawMs) ? "INVALID" : new Date(expRawMs).toISOString(),
+      nowIso: new Date().toISOString(),
+      remainingMin: Number.isNaN(expRawMs) ? null : Math.round((expRawMs - Date.now()) / 60000),
     });
 
     const expDate = validateTransactionPayload(payload);
@@ -289,7 +301,7 @@ async function verifyApplePurchaseHandler(request) {
     // Admin panelinde görünmesi için ödeme kaydı yaz (best-effort — akışı bozmaz).
     try {
       const info = PRODUCT_INFO[productId] || { planId: productId, planLabel: productId, durationDays: null };
-      await db.collection("premiumPurchaseIntents").add({
+      const intentRef = await db.collection("premiumPurchaseIntents").add({
         uid,
         email: userEmail,
         displayName: userDisplayName,
@@ -309,6 +321,7 @@ async function verifyApplePurchaseHandler(request) {
         createdAt: new Date().toISOString(),
         activatedAt: new Date().toISOString(),
       });
+      console.log(`[verifyApplePurchase] premiumPurchaseIntents yazıldı id=${intentRef.id} uid=${uid}`);
     } catch (e) {
       console.error("[verifyApplePurchase] premiumPurchaseIntents kaydı başarısız:", e?.message);
     }
