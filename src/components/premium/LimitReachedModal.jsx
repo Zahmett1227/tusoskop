@@ -74,7 +74,7 @@ export default function LimitReachedModal({
               Plus abonelikle sınırları kaldır
             </p>
             <p className="mt-1.5 text-xs font-medium leading-relaxed text-[#5c4736] md:text-sm">
-              App Store üzerinden aylık, 3 aylık veya 6 aylık abonelikle sınırsız erişim kazan.
+              App Store üzerinden aylık, 3 aylık veya 1 yıllık abonelikle sınırsız erişim kazan.
             </p>
           </div>
         ) : (
