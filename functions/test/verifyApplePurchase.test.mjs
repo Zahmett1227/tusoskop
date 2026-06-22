@@ -19,7 +19,7 @@ const require = createRequire(import.meta.url);
 const {
   verifyCertificateChain,
   validateTransactionPayload,
-  assertSubscriptionOwnership,
+  resolveSubscriptionBinding,
   loadPinnedRootCert,
   parseJws,
 } = require("../verifyApplePurchase.js");
@@ -118,19 +118,29 @@ test("validateTransactionPayload: saat kayması toleransı içinde (kıl payı d
   assert.equal(d.getTime(), exp);
 });
 
-test("assertSubscriptionOwnership: aynı uid ise sorun yok", () => {
-  assert.doesNotThrow(() => assertSubscriptionOwnership({ uid: "user-1" }, "user-1"));
+test("resolveSubscriptionBinding: bağ yoksa yeni kayıt (devir yok)", () => {
+  const r = resolveSubscriptionBinding(null, "user-1");
+  assert.equal(r.isNew, true);
+  assert.equal(r.transferred, false);
 });
 
-test("assertSubscriptionOwnership: bağ yoksa sorun yok", () => {
-  assert.doesNotThrow(() => assertSubscriptionOwnership(null, "user-1"));
+test("resolveSubscriptionBinding: aynı uid ise devir yok", () => {
+  const r = resolveSubscriptionBinding({ uid: "user-1" }, "user-1");
+  assert.equal(r.isNew, false);
+  assert.equal(r.transferred, false);
 });
 
-test("assertSubscriptionOwnership: farklı uid ise reddeder (abonelik paylaşımı engeli)", () => {
-  assert.throws(
-    () => assertSubscriptionOwnership({ uid: "user-1" }, "user-2"),
-    (e) => e.code === "permission-denied"
-  );
+test("resolveSubscriptionBinding: farklı uid ise devreder (kilit yok)", () => {
+  const r = resolveSubscriptionBinding({ uid: "user-1" }, "user-2");
+  assert.equal(r.transferred, true);
+  assert.equal(r.previousUid, "user-1");
+  assert.equal(r.transferCount, 1);
+});
+
+test("resolveSubscriptionBinding: devir sayacı artar", () => {
+  const r = resolveSubscriptionBinding({ uid: "user-1", transferCount: 3 }, "user-9");
+  assert.equal(r.transferred, true);
+  assert.equal(r.transferCount, 4);
 });
 
 test("parseJws: bozuk format reddedilir", () => {

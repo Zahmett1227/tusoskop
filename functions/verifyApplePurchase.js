@@ -191,17 +191,28 @@ function validateTransactionPayload(payload, nowMs = Date.now()) {
 }
 
 /**
- * Bir abonelik (originalTransactionId) yalnızca tek bir Firebase hesabına
- * tanımlanabilir. Mevcut bağ farklı bir uid'e aitse hata fırlatır.
+ * Abonelik bağı artık KİLİTLEMEZ. Aynı abonelik (originalTransactionId) başka
+ * bir hesaba geçtiğinde devir metadatası üretir; premium çağrı yapan hesaba
+ * verilir, önceki sahip doğal bitiş tarihine kadar premium kalır.
+ *
+ * Devir geçmişi (previousUids/transferCount) ileride istismar tespiti içindir:
+ * tek bir abonelik çok sayıda hesapta dolaşıyorsa fark edilebilir.
  * Saf fonksiyon — birim testlerde kullanılır.
  */
-function assertSubscriptionOwnership(existingBindingData, uid) {
-  if (existingBindingData && existingBindingData.uid && existingBindingData.uid !== uid) {
-    throw new HttpsError(
-      "permission-denied",
-      "Bu abonelik başka bir hesaba tanımlı. Lütfen aboneliği satın aldığınız hesapla giriş yapın ya da destek ile iletişime geçin."
-    );
+function resolveSubscriptionBinding(existingBindingData, uid) {
+  if (!existingBindingData) {
+    return { isNew: true, transferred: false };
   }
+  const prevUid = existingBindingData.uid;
+  if (prevUid && prevUid !== uid) {
+    return {
+      isNew: false,
+      transferred: true,
+      previousUid: prevUid,
+      transferCount: (existingBindingData.transferCount || 0) + 1,
+    };
+  }
+  return { isNew: false, transferred: false };
 }
 
 async function verifyApplePurchaseHandler(request) {
@@ -277,11 +288,14 @@ async function verifyApplePurchaseHandler(request) {
     const bindingRef = db.collection("appleSubscriptions").doc(bindingKey);
     const userRef = db.collection("users").doc(uid);
 
-    // Bağ kontrolü + aktivasyon tek transaction'da: aynı abonelik başka hesaba
-    // tanımlıysa reddet; değilse bu hesaba kilitle ve premium'u aktive et.
+    // Bağ + aktivasyon tek transaction'da: kilit YOK. Abonelik başka hesaba
+    // geçtiyse bu hesaba devredilir (devir geçmişi tutulur), premium aktive edilir.
     await db.runTransaction(async (tx) => {
       const bindingSnap = await tx.get(bindingRef);
-      assertSubscriptionOwnership(bindingSnap.exists ? bindingSnap.data() : null, uid);
+      const binding = resolveSubscriptionBinding(
+        bindingSnap.exists ? bindingSnap.data() : null,
+        uid
+      );
 
       const bindingPatch = {
         uid,
@@ -290,8 +304,17 @@ async function verifyApplePurchaseHandler(request) {
         premiumUntil: Timestamp.fromDate(expDate),
         lastVerifiedAt: FieldValue.serverTimestamp(),
       };
-      if (!bindingSnap.exists) {
+      if (binding.isNew) {
         bindingPatch.firstActivatedAt = FieldValue.serverTimestamp();
+      }
+      if (binding.transferred) {
+        bindingPatch.previousUids = FieldValue.arrayUnion(binding.previousUid);
+        bindingPatch.transferCount = binding.transferCount;
+        bindingPatch.lastTransferAt = FieldValue.serverTimestamp();
+        console.log(
+          `[verifyApplePurchase] Abonelik devri: ${binding.previousUid} → ${uid} ` +
+            `(toplam devir=${binding.transferCount}) originalTransactionId=${bindingKey}`
+        );
       }
 
       tx.set(bindingRef, bindingPatch, { merge: true });
@@ -347,5 +370,5 @@ module.exports = {
   verifyCertificateChain,
   verifyJwsTransaction,
   validateTransactionPayload,
-  assertSubscriptionOwnership,
+  resolveSubscriptionBinding,
 };
