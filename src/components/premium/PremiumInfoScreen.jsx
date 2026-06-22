@@ -247,7 +247,7 @@ export default function PremiumInfoScreen({
                   onClick={() => setShowSubscriptionModal(true)}
                   className="mt-5 w-full min-h-14 rounded-2xl bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] text-white font-black text-base shadow-[0_8px_24px_-8px_rgba(154,107,50,0.6)] hover:brightness-105 transition active:scale-[0.98]"
                 >
-                  Aboneliği Başlat
+                  Planları İncele
                 </button>
               </>
             ) : null}
