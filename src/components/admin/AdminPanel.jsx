@@ -11,6 +11,7 @@ import AdminGrantModal from "./AdminGrantModal";
 import AdminNoteModal from "./AdminNoteModal";
 import AdminPurchaseIntentsTab from "./AdminPurchaseIntentsTab";
 import SocialMediaQueue from "./SocialMediaQueue";
+import { isUserPremium } from "../../utils/premiumUtils";
 
 export default function AdminPanel({ currentUser }) {
   const [adminTab, setAdminTab] = useState("users");
@@ -57,12 +58,10 @@ export default function AdminPanel({ currentUser }) {
       return !search || name.includes(search) || email.includes(search) || uid.includes(search);
     });
 
-    const isActivePlus = (item) =>
-      item.plan === "plus" &&
-      item.premiumStatus === "active" &&
-      (item.lifetimePremium === true ||
-        !item.premiumUntil ||
-        new Date(item.premiumUntil) > new Date());
+    // Satır rozetiyle (AdminUserRow → isUserPremium) AYNI mantık. Doğrudan
+    // new Date(premiumUntil) kullanmak Firestore Timestamp'te (AppStore/IAP)
+    // Invalid Date verip Plus filtresinden düşürüyordu; toSafeDate bunu çözer.
+    const isActivePlus = (item) => isUserPremium(item);
 
     if (activeFilter === "plus") {
       return bySearch.filter(isActivePlus);
