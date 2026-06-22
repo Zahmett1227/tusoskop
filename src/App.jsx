@@ -197,6 +197,9 @@ export default function App() {
       const summary = await getSmartReviewSummary(user);
       setSmartReviewSummary(summary);
       setBottomNavReviewCount(summary?.dueCount ?? 0);
+      updateFsrsDueSnapshot({ uid: user.uid, dueCount: summary?.dueCount ?? 0 }).catch((error) => {
+        console.error("FSRS due snapshot update error:", error);
+      });
     } catch {
       setSmartReviewSummary({
         dueCount: 0,

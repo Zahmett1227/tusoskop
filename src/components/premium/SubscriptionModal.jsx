@@ -78,7 +78,7 @@ function PlanCard({ productId, planInfo, localizedPrice, selected, highlight, on
   );
 }
 
-export default function SubscriptionModal({ open, onClose, onSuccess, accentTheme }) {
+export default function SubscriptionModal({ open, onClose, onSuccess }) {
   const [products, setProducts] = useState([]);
   const [selectedProductId, setSelectedProductId] = useState(null);
   const [purchasing, setPurchasing] = useState(false);
