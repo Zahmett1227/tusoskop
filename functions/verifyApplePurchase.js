@@ -2,7 +2,6 @@ const crypto = require("node:crypto");
 const { getFirestore, FieldValue, Timestamp } = require("firebase-admin/firestore");
 const { getAuth } = require("firebase-admin/auth");
 const { HttpsError } = require("firebase-functions/v2/https");
-const { defineSecret } = require("firebase-functions/params");
 
 const ALLOWED_BUNDLE_ID = "com.tusoskop.app";
 const ALLOWED_PRODUCT_IDS = new Set([
@@ -11,16 +10,14 @@ const ALLOWED_PRODUCT_IDS = new Set([
   "com.tusoskop.app.plus.1y",
 ]);
 
-/**
- * Pin'lenmiş güven kökü: Apple Root CA - G3.
- * Sertifika PUBLIC'tir ama güven zincirinin tepesi koda dışarıdan enjekte
- * edilmemeli; aksi halde `x5c` içindeki kök istemci kontrolünde olduğu için
- * sahte bir zincirle makbuz uydurulabilir. Değer, resmi sertifikadan
- * (https://www.apple.com/certificateauthority/AppleRootCA-G3.cer) üretilen
- * PEM **veya** base64 DER içeriğidir ve `firebase functions:secrets:set
- * APPLE_ROOT_CA_G3` ile tanımlanır. Tanımlı değilse doğrulama fail-closed olur.
- */
-const APPLE_ROOT_CA_G3 = defineSecret("APPLE_ROOT_CA_G3");
+// Apple Root CA - G3 (public cert, base64 DER)
+// Source: https://www.apple.com/certificateauthority/AppleRootCA-G3.cer
+// SHA-256: 63:34:3A:BF:B8:9A:6A:03:EB:B5:7E:9B:3F:5F:A7:BE:7C:4F:5C:75:6F:30:17:B3:A8:C4:88:C3:65:3E:91:79
+// prettier-ignore
+const APPLE_ROOT_CA_G3_B64 = "MIICQzCCAcmgAwIBAgIILcX8iNLFS5UwCgYIKoZIzj0EAwMwZzEbMBkGA1UEAwwSQXBwbGUgUm9vdCBDQSAtIEczMSYwJAYDVQQLDB1BcHBsZSBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTETMBEGA1UECgwKQXBwbGUgSW5jLjELMAkGA1UEBhMCVVMwHhcNMTQwNDMwMTgxOTA2WhcNMzkwNDMwMTgxOTA2WjBnMRswGQYDVQQDDBJBcHBsZSBSb290IENBIC0gRzMxJjAkBgNVBAsMHUFwcGxlIENlcnRpZmljYXRpb24gQXV0aG9yaXR5MRMwEQYDVQQKDApBcHBsZSBJbmMuMQswCQYDVQQGEwJVUzB2MBAGByqGSM49AgEGBSuBBAAiA2IABJjpLz1AcqTtkyJygRMc3RCV8cWjTnHcFBbZDuWmBSp3ZHtfTjjTuxxEtX/1H7YyYl3J6YRbTzBPEVoA/VhYDKX1DyxNB0cTddqXl5dvMVztK517IDvYuVTZXpmkOlEKMaNCMEAwHQYDVR0OBBYEFLuw3qFYM4iapIqZ3r6966/ayySrMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgEGMAoGCCqGSM49BAMDA2gAMGUCMQCD6cHEFl4aXTQY2e3v9GwOAEZLuN+yRhHFD/3meoyhpmvOwgPUnPWTxnS4at+qIxUCMG1mihDK1A3UT82NQz60imOlM27jbdoXt2QfyFMm+YhidDkLF1vLUagM6BgD56KyKA==";
+
+const APPLE_ROOT_CA_G3_SHA256 =
+  "63:34:3A:BF:B8:9A:6A:03:EB:B5:7E:9B:3F:5F:A7:BE:7C:4F:5C:75:6F:30:17:B3:A8:C4:88:C3:65:3E:91:79";
 
 // Ürün → admin panelinde gösterilecek plan bilgisi
 const PRODUCT_INFO = {
@@ -43,12 +40,12 @@ function base64ToPem(b64) {
 }
 
 /**
- * Secret değerinden (PEM veya base64 DER) Apple kök X509Certificate'ını üretir.
- * Boş/geçersizse hata fırlatır (fail-closed).
+ * PEM veya base64 DER stringinden X509Certificate üretir.
+ * Birim testlerde sahte kökü enjekte etmek için kullanılır.
  */
 function loadPinnedRootCert(rawValue) {
   const val = String(rawValue || "").trim();
-  if (!val) throw new Error("APPLE_ROOT_CA_G3 secret tanımlı değil.");
+  if (!val) throw new Error("Sertifika değeri boş veya tanımlı değil.");
   const pem = val.includes("BEGIN CERTIFICATE") ? val : base64ToPem(val);
   return new crypto.X509Certificate(pem);
 }
@@ -56,7 +53,14 @@ function loadPinnedRootCert(rawValue) {
 let _pinnedRootCache = null;
 function getPinnedRootCert() {
   if (!_pinnedRootCache) {
-    _pinnedRootCache = loadPinnedRootCert(APPLE_ROOT_CA_G3.value());
+    const cert = new crypto.X509Certificate(Buffer.from(APPLE_ROOT_CA_G3_B64, "base64"));
+    const fp = cert.fingerprint256;
+    if (fp.toUpperCase() !== APPLE_ROOT_CA_G3_SHA256.toUpperCase()) {
+      throw new Error(
+        `Apple Root CA G3 parmak izi eşleşmiyor. Beklenen: ${APPLE_ROOT_CA_G3_SHA256}, Gerçek: ${fp}`
+      );
+    }
+    _pinnedRootCache = cert;
   }
   return _pinnedRootCache;
 }
@@ -205,14 +209,7 @@ async function verifyApplePurchaseHandler(request) {
       throw new HttpsError("invalid-argument", "jwsRepresentation gerekli.");
     }
 
-    // Pin'lenmiş Apple kökü yapılandırılmamışsa fail-closed: hiçbir aktivasyon yapma.
-    let pinnedRoot;
-    try {
-      pinnedRoot = getPinnedRootCert();
-    } catch (cfgErr) {
-      console.error("[verifyApplePurchase] Pin yapılandırma hatası:", cfgErr?.message);
-      throw new HttpsError("failed-precondition", "Ödeme doğrulama altyapısı yapılandırılmamış.");
-    }
+    const pinnedRoot = getPinnedRootCert();
 
     let payload;
     try {
@@ -330,7 +327,6 @@ async function verifyApplePurchaseHandler(request) {
 
 module.exports = {
   verifyApplePurchaseHandler,
-  APPLE_ROOT_CA_G3,
   // Doğrulama yardımcıları (birim testlerde kullanılır)
   parseJws,
   base64ToPem,
