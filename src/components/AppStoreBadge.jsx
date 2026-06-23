@@ -1,6 +1,6 @@
 import React from "react";
 
-const APP_STORE_URL = "https://apps.apple.com/tr/app/tusoskop/id6776331691?l=tr";
+export const APP_STORE_URL = "https://apps.apple.com/tr/app/tusoskop/id6776331691?l=tr";
 
 /**
  * Apple "App Store'dan İndir" rozeti — resmi badge stilinde, link gömülü.

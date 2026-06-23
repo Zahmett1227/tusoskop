@@ -1,5 +1,19 @@
 import React from "react";
 import { LEGAL_PAGES } from "../../content/legalPages";
+import { APP_STORE_URL } from "../../seo/seoContent";
+
+const SEO_FOOTER_LINKS = [
+  ["Tusoskop Nedir?", "/tusoskop-nedir"],
+  ["TUS Hazırlık Platformu", "/tus-hazirlik-platformu"],
+  ["TUS Soru Çözme Uygulaması", "/tus-soru-cozme-uygulamasi"],
+  ["TUS Deneme Analizi", "/tus-deneme-analizi"],
+  ["Tusoskop Özellikleri", "/tusoskop-ozellikleri"],
+  ["Fiyatlandırma", "/tusoskop-fiyatlandirma"],
+  ["Sık Sorulan Sorular", "/tusoskop-sss"],
+  ["Gizlilik Sözleşmesi", "/gizlilik-sozlesmesi"],
+  ["Kullanım Koşulları", "/kullanim-kosullari"],
+  ["App Store", APP_STORE_URL],
+];
 
 /**
  * @param {(pageId: string) => void} onOpenLegal
@@ -48,14 +62,23 @@ export default function Footer({
             © 2026 Tusoskop
           </p>
           <p className={`mt-2 text-xs sm:text-sm leading-relaxed ${textMuted}`}>
-            TUS hazırlık süreciniz için kişisel çalışma ve analiz platformu.
+            TUS hazırlığında soru çözme, deneme, AI çalışma planı, haftalık lig ve analiz sürecini destekleyen dijital platform.
           </p>
         </div>
 
         <nav
-          aria-label="Yasal bağlantılar"
-          className="flex flex-col sm:flex-row sm:flex-wrap gap-x-4 gap-y-2 min-w-0 lg:justify-end"
+          aria-label="Tusoskop bağlantıları"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-2 min-w-0 lg:justify-end"
         >
+          {SEO_FOOTER_LINKS.map(([label, href]) => (
+            <a
+              key={label}
+              href={href}
+              className={`${linkClass} text-xs sm:text-sm py-1 sm:py-0`}
+            >
+              {label}
+            </a>
+          ))}
           {LEGAL_PAGES.map((p) => (
             <button
               key={p.id}

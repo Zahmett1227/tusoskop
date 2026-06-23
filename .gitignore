@@ -44,6 +44,7 @@ blob-report/
 temp-build/
 temp-build-2/
 temp-build-codex-social-post/
+temp-build-seo-verify/
 
 # Firebase / GCP servis hesabı private key'leri — ASLA commit edilmemeli
 *-firebase-adminsdk-*.json

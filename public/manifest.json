@@ -1,7 +1,7 @@
 {
   "name": "Tusoskop",
   "short_name": "Tusoskop",
-  "description": "TUS hazırlık sürecini dijital asistanınla yönet. Verilerini bulutta sakla.",
+  "description": "TUS hazırlığında konu bazlı soru, deneme, yanlış takibi, AI çalışma planı, haftalık lig ve analiz sunan web ve mobil platform.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#020617",

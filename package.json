@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --configLoader native",
-    "build": "vite build --configLoader native",
+    "build": "node scripts/generate-seo-pages.mjs && vite build --configLoader native",
     "lint": "eslint .",
     "test": "vitest run --configLoader native",
     "test:rules": "firebase emulators:exec --only firestore \"node scripts/firestore-rules-emulator-test.mjs\"",
