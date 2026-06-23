@@ -78,7 +78,7 @@ function PlanCard({ productId, planInfo, localizedPrice, selected, highlight, on
   );
 }
 
-export default function SubscriptionModal({ open, onClose, onSuccess }) {
+export default function SubscriptionModal({ open, onClose, onSuccess, onOpenLegalPage }) {
   const [products, setProducts] = useState([]);
   const [selectedProductId, setSelectedProductId] = useState(null);
   const [purchasing, setPurchasing] = useState(false);
@@ -288,23 +288,51 @@ export default function SubscriptionModal({ open, onClose, onSuccess }) {
           </button>
 
           <div className="flex justify-center gap-4 pb-2">
-            <a
-              href="https://tusoskop.com/gizlilik-politikasi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] font-medium text-neutral-500 underline underline-offset-2 decoration-neutral-400 hover:text-neutral-700"
-            >
-              Gizlilik Politikası
-            </a>
-            <span className="text-neutral-300 text-[11px]">•</span>
-            <a
-              href="https://tusoskop.com/kullanim-kosullari"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] font-medium text-neutral-500 underline underline-offset-2 decoration-neutral-400 hover:text-neutral-700"
-            >
-              Kullanım Koşulları
-            </a>
+            {typeof onOpenLegalPage === "function" ? (
+              <>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onClose?.();
+                    onOpenLegalPage("gizlilik-sozlesmesi");
+                  }}
+                  className="text-[11px] font-medium text-neutral-500 underline underline-offset-2 decoration-neutral-400 hover:text-neutral-700"
+                >
+                  Gizlilik Politikası
+                </button>
+                <span className="text-neutral-300 text-[11px]">•</span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onClose?.();
+                    onOpenLegalPage("kullanim-kosullari");
+                  }}
+                  className="text-[11px] font-medium text-neutral-500 underline underline-offset-2 decoration-neutral-400 hover:text-neutral-700"
+                >
+                  Kullanım Koşulları (EULA)
+                </button>
+              </>
+            ) : (
+              <>
+                <a
+                  href="https://tusoskop.com/gizlilik-politikasi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[11px] font-medium text-neutral-500 underline underline-offset-2 decoration-neutral-400 hover:text-neutral-700"
+                >
+                  Gizlilik Politikası
+                </a>
+                <span className="text-neutral-300 text-[11px]">•</span>
+                <a
+                  href="https://tusoskop.com/kullanim-kosullari"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[11px] font-medium text-neutral-500 underline underline-offset-2 decoration-neutral-400 hover:text-neutral-700"
+                >
+                  Kullanım Koşulları (EULA)
+                </a>
+              </>
+            )}
           </div>
         </div>
       </div>

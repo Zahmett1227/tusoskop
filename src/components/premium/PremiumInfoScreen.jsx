@@ -334,6 +334,7 @@ export default function PremiumInfoScreen({
               onPremiumActivated?.();
             }}
             accentTheme={accentTheme}
+            onOpenLegalPage={onOpenLegalPage}
           />
         ) : null}
       </div>
