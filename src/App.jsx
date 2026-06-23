@@ -554,12 +554,12 @@ export default function App() {
         >
           <div className="mb-6 flex justify-center">
             <img
-              src="/tusoskop-mark.png"
+              src="/tusoskop-login-logo.jpg"
               alt=""
-              width={96}
-              height={96}
+              width={128}
+              height={128}
               decoding="async"
-              className="h-20 w-20 md:h-24 md:w-24 rounded-2xl object-contain shadow-lg shadow-black/20"
+              className="h-28 w-28 md:h-32 md:w-32 rounded-full object-cover shadow-lg shadow-black/30"
               aria-hidden
             />
           </div>
@@ -578,12 +578,12 @@ export default function App() {
         >
           <div className="mb-6 flex justify-center">
             <img
-              src="/tusoskop-mark.png"
+              src="/tusoskop-login-logo.jpg"
               alt=""
-              width={96}
-              height={96}
+              width={128}
+              height={128}
               decoding="async"
-              className="h-20 w-20 md:h-24 md:w-24 rounded-2xl object-contain shadow-lg shadow-black/20"
+              className="h-28 w-28 md:h-32 md:w-32 rounded-full object-cover shadow-lg shadow-black/30"
               aria-hidden
             />
           </div>
