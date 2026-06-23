@@ -22,7 +22,6 @@ function PlanCard({ productId, planInfo, localizedPrice, selected, highlight, on
       }`}
     >
       <div className="flex items-start gap-3">
-        {/* Radio — flow içinde, asla üst üste binmez */}
         <div
           className={`mt-0.5 shrink-0 w-4 h-4 rounded-full border-2 flex items-center justify-center ${
             selected
@@ -38,7 +37,6 @@ function PlanCard({ productId, planInfo, localizedPrice, selected, highlight, on
           ) : null}
         </div>
 
-        {/* İçerik: sol etiket + sağ fiyat */}
         <div className="flex-1 min-w-0 flex items-start justify-between gap-3">
           <div className="min-w-0">
             <div className="flex flex-wrap items-center gap-1.5">
@@ -93,7 +91,6 @@ export default function SubscriptionModal({ open, onClose, onSuccess, onOpenLega
     loadProducts()
       .then((prods) => {
         setProducts(prods || []);
-        // Varsayılan: 3 aylık (önerilen)
         const default3m = prods?.find((p) => p.productId === 'com.tusoskop.app.plus.3m');
         const defaultSel = default3m?.productId ?? prods?.[0]?.productId ?? 'com.tusoskop.app.plus.3m';
         setSelectedProductId(defaultSel);
@@ -102,7 +99,6 @@ export default function SubscriptionModal({ open, onClose, onSuccess, onOpenLega
       .finally(() => setLoadingProducts(false));
   }, [open]);
 
-  // Varsayılan seçim (ürünler yüklenemese bile)
   useEffect(() => {
     if (!open) return;
     if (!selectedProductId) setSelectedProductId('com.tusoskop.app.plus.3m');
@@ -162,7 +158,6 @@ export default function SubscriptionModal({ open, onClose, onSuccess, onOpenLega
   return (
     <div className="fixed inset-0 z-[130] flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm p-0 sm:p-4">
       <div className="w-full sm:max-w-md rounded-t-3xl sm:rounded-3xl bg-white shadow-[0_-8px_60px_-10px_rgba(0,0,0,0.3)] sm:shadow-[0_28px_80px_-28px_rgba(0,0,0,0.35)] overflow-hidden">
-        {/* Header */}
         <div className="flex items-center justify-between px-5 pt-5 pb-3">
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.2em] text-neutral-500">
@@ -186,7 +181,6 @@ export default function SubscriptionModal({ open, onClose, onSuccess, onOpenLega
         </div>
 
         <div className="px-5 pb-5 space-y-4 max-h-[80dvh] overflow-y-auto">
-          {/* Özellik özeti */}
           <div className="flex flex-wrap gap-1.5">
             {[
               "Sınırsız soru",
@@ -217,7 +211,6 @@ export default function SubscriptionModal({ open, onClose, onSuccess, onOpenLega
             </div>
           ) : (
             <>
-              {/* Tüm planlar — ASC'deki 3 ürünle birebir eşleşir */}
               <div className="space-y-3">
                 {ORDERED_PRODUCTS.map((productId) => {
                   const planInfo = IAP_PLAN_MAP[productId];
@@ -237,7 +230,6 @@ export default function SubscriptionModal({ open, onClose, onSuccess, onOpenLega
                 })}
               </div>
 
-              {/* Satın al butonu */}
               <button
                 type="button"
                 onClick={handlePurchase}
@@ -315,7 +307,7 @@ export default function SubscriptionModal({ open, onClose, onSuccess, onOpenLega
             ) : (
               <>
                 <a
-                  href="https://tusoskop.com/gizlilik-politikasi"
+                  href="https://tusoskop.com/gizlilik.html"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[11px] font-medium text-neutral-500 underline underline-offset-2 decoration-neutral-400 hover:text-neutral-700"
