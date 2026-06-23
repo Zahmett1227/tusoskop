@@ -1,8 +1,10 @@
 import React, { Suspense, lazy, useMemo, useState, useEffect, useRef, useCallback } from "react";
 import './index.css';
 import { initAnalytics, loginWithApple, loginWithGoogle, logout } from "./firebase";
-import { PublicHome, SeoLandingPage } from "./components/seo/PublicSeoPages";
+import { SeoLandingPage } from "./components/seo/PublicSeoPages";
 import { getSeoPageByPath } from "./seo/seoContent";
+import SignInOptions from "./components/auth/SignInOptions";
+import AppStoreBadge from "./components/AppStoreBadge";
 
 // Veri ve Yardımcı Araçlar
 import { useQuestions } from "./hooks/useQuestions";
@@ -570,11 +572,41 @@ export default function App() {
   if (!user) {
     return (
       <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
-        <PublicHome
-          accentTheme={accentTheme}
-          onAppleLogin={handleLoginWithApple}
-          onGoogleLogin={handleLoginWithGoogle}
-        />
+        <div
+          className="flex flex-col items-center justify-center bg-slate-950 text-white p-6 min-h-dvh"
+          style={{ paddingTop: "calc(2rem + env(safe-area-inset-top))" }}
+        >
+          <div className="mb-6 flex justify-center">
+            <img
+              src="/tusoskop-mark.png"
+              alt=""
+              width={96}
+              height={96}
+              decoding="async"
+              className="h-20 w-20 md:h-24 md:w-24 rounded-2xl object-contain shadow-lg shadow-black/20"
+              aria-hidden
+            />
+          </div>
+          <h1 className={`text-5xl font-black mb-2 ${accentTheme.text} tracking-tighter`}>TUSOSKOP</h1>
+          <p className="text-slate-400 mb-10 text-center max-w-sm">
+            TUS hazırlık sürecini dijital asistanınla yönet. Verilerini bulutta sakla.
+          </p>
+          <SignInOptions
+            accentTheme={accentTheme}
+            onAppleLogin={handleLoginWithApple}
+            onGoogleLogin={handleLoginWithGoogle}
+          />
+          <div className="mt-8 flex flex-col items-center gap-3">
+            <p className="text-xs font-medium text-slate-500">iPhone'da daha hızlı: uygulamayı indir</p>
+            <AppStoreBadge />
+            <a
+              href="/tusoskop-nedir"
+              className="mt-1 text-xs font-semibold text-slate-500 underline-offset-4 transition hover:text-slate-300 hover:underline"
+            >
+              Tusoskop nedir? →
+            </a>
+          </div>
+        </div>
       </div>
     );
   }
