@@ -15,7 +15,7 @@ function setMeta(selector, attributes) {
   if (typeof document === "undefined") return;
   let element = document.head.querySelector(selector);
   if (!element) {
-    element = document.createElement(attributes.property ? "meta" : "meta");
+    element = document.createElement("meta");
     document.head.appendChild(element);
   }
   Object.entries(attributes).forEach(([key, value]) => {
@@ -348,7 +348,7 @@ export function SeoLandingPage({ page }) {
       <main>
         <article className="px-4 py-12 md:py-16">
           <div className="mx-auto max-w-4xl">
-            <p className="text-xs font-black uppercase tracking-[0.28em] text-emerald-300">Tusoskop SEO Rehberi</p>
+            <p className="text-xs font-black uppercase tracking-[0.28em] text-emerald-300">Tusoskop Rehberi</p>
             <h1 className="mt-4 text-4xl font-black leading-tight tracking-tight md:text-5xl">{page.h1}</h1>
             <div className="mt-6">
               <AnswerBox>{page.intro}</AnswerBox>

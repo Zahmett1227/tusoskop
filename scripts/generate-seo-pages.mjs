@@ -225,7 +225,7 @@ function renderPage(page, isLegal = false) {
   <body>
     ${renderHeader()}
     <main>
-      <p class="eyebrow">${isLegal ? "Tusoskop Yasal" : "Tusoskop SEO Rehberi"}</p>
+      <p class="eyebrow">${isLegal ? "Tusoskop Yasal" : "Tusoskop Rehberi"}</p>
       <h1>${escapeHtml(page.h1)}</h1>
       <div class="answer">${escapeHtml(page.intro)}</div>
       ${appStore}
