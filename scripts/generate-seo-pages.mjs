@@ -140,6 +140,8 @@ const css = `
   .footer-inner{max-width:1120px;margin:0 auto;padding:36px 18px;display:grid;gap:28px}
   .footer p{font-size:14px;max-width:480px}
   .footer-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;font-size:14px;font-weight:750}
+  .footer-tags-title{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin:6px 0 8px}
+  .footer-tags{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;font-weight:750}
   @media (max-width:720px){.nav{display:none}main{padding-top:38px}.topbar-inner{padding-inline:14px}}
 `;
 
@@ -186,8 +188,11 @@ function renderFooter() {
         <nav class="footer-links" aria-label="Footer bağlantıları">
           ${footerLinks.map(([label, href]) => `<a href="${escapeHtml(href)}">${escapeHtml(label)}</a>`).join("")}
         </nav>
-        <nav class="footer-links" aria-label="Branş bağlantıları">
-          ${subjectIndexLinks.map(([label, href]) => `<a href="${escapeHtml(href)}">${escapeHtml(label)}</a>`).join("")}
+        <nav aria-label="Branşa göre TUS soruları">
+          <p class="footer-tags-title">Branşa göre sorular</p>
+          <div class="footer-tags">
+            ${subjectIndexLinks.map(([label, href]) => `<a href="${escapeHtml(href)}">${escapeHtml(label.replace(/^TUS\s+/, "").replace(/\s+Soruları$/, ""))}</a>`).join("")}
+          </div>
         </nav>
       </div>
     </footer>`;

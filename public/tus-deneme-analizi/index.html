@@ -70,6 +70,8 @@
   .footer-inner{max-width:1120px;margin:0 auto;padding:36px 18px;display:grid;gap:28px}
   .footer p{font-size:14px;max-width:480px}
   .footer-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;font-size:14px;font-weight:750}
+  .footer-tags-title{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin:6px 0 8px}
+  .footer-tags{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;font-weight:750}
   @media (max-width:720px){.nav{display:none}main{padding-top:38px}.topbar-inner{padding-inline:14px}}
 </style>
   </head>
@@ -171,8 +173,11 @@
         <nav class="footer-links" aria-label="Footer bağlantıları">
           <a href="/tusoskop-nedir">Tusoskop Nedir?</a><a href="/tus-hazirlik-platformu">TUS Hazırlık Platformu</a><a href="/tus-soru-cozme-uygulamasi">TUS Soru Çözme Uygulaması</a><a href="/tus-deneme-analizi">TUS Deneme Analizi</a><a href="/tusoskop-ozellikleri">Tusoskop Özellikleri</a><a href="/tusoskop-fiyatlandirma">Fiyatlandırma</a><a href="/tusoskop-sss">Sık Sorulan Sorular</a><a href="/gizlilik-sozlesmesi">Gizlilik Sözleşmesi</a><a href="/kullanim-kosullari">Kullanım Koşulları</a><a href="https://apps.apple.com/tr/app/tusoskop/id6776331691?l=tr">App Store</a>
         </nav>
-        <nav class="footer-links" aria-label="Branş bağlantıları">
-          <a href="/tus-anatomi-sorulari">TUS Anatomi Soruları</a><a href="/tus-biyokimya-sorulari">TUS Biyokimya Soruları</a><a href="/tus-dahiliye-sorulari">TUS Dahiliye Soruları</a><a href="/tus-farmakoloji-sorulari">TUS Farmakoloji Soruları</a><a href="/tus-fizyoloji-sorulari">TUS Fizyoloji Soruları</a><a href="/tus-genel-cerrahi-sorulari">TUS Genel Cerrahi Soruları</a><a href="/tus-kadin-dogum-sorulari">TUS Kadın Hastalıkları ve Doğum Soruları</a><a href="/tus-kucuk-stajlar-sorulari">TUS Küçük Stajlar Soruları</a><a href="/tus-mikrobiyoloji-sorulari">TUS Mikrobiyoloji Soruları</a><a href="/tus-patoloji-sorulari">TUS Patoloji Soruları</a><a href="/tus-pediatri-sorulari">TUS Pediatri Soruları</a>
+        <nav aria-label="Branşa göre TUS soruları">
+          <p class="footer-tags-title">Branşa göre sorular</p>
+          <div class="footer-tags">
+            <a href="/tus-anatomi-sorulari">Anatomi</a><a href="/tus-biyokimya-sorulari">Biyokimya</a><a href="/tus-dahiliye-sorulari">Dahiliye</a><a href="/tus-farmakoloji-sorulari">Farmakoloji</a><a href="/tus-fizyoloji-sorulari">Fizyoloji</a><a href="/tus-genel-cerrahi-sorulari">Genel Cerrahi</a><a href="/tus-kadin-dogum-sorulari">Kadın Hastalıkları ve Doğum</a><a href="/tus-kucuk-stajlar-sorulari">Küçük Stajlar</a><a href="/tus-mikrobiyoloji-sorulari">Mikrobiyoloji</a><a href="/tus-patoloji-sorulari">Patoloji</a><a href="/tus-pediatri-sorulari">Pediatri</a>
+          </div>
         </nav>
       </div>
     </footer>

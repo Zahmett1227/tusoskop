@@ -258,7 +258,7 @@ function PublicFooter() {
             TUS hazırlığında soru çözme, deneme, tekrar, AI çalışma planı, haftalık lig ve analiz sürecini kolaylaştıran dijital platform.
           </p>
         </div>
-        <div className="grid gap-6">
+        <div className="grid gap-5">
           <nav aria-label="SEO ve yasal bağlantılar" className="grid grid-cols-1 gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
             {links.map(([label, href]) => (
               <a key={label} href={href} className="font-semibold text-slate-400 hover:text-white">
@@ -266,12 +266,15 @@ function PublicFooter() {
               </a>
             ))}
           </nav>
-          <nav aria-label="Branş bağlantıları" className="grid grid-cols-1 gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
-            {subjectIndexLinks.map(([label, href]) => (
-              <a key={href} href={href} className="font-semibold text-slate-400 hover:text-white">
-                {label}
-              </a>
-            ))}
+          <nav aria-label="Branşa göre TUS soruları">
+            <p className="mb-2 text-xs font-bold uppercase tracking-wider text-slate-500">Branşa göre sorular</p>
+            <div className="flex flex-wrap gap-x-3 gap-y-1.5 text-sm">
+              {subjectIndexLinks.map(([label, href]) => (
+                <a key={href} href={href} className="font-semibold text-slate-400 hover:text-white">
+                  {label.replace(/^TUS\s+/, "").replace(/\s+Soruları$/, "")}
+                </a>
+              ))}
+            </div>
           </nav>
         </div>
       </div>
