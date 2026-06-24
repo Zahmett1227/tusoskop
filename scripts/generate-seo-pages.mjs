@@ -25,68 +25,72 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;");
 }
 
-function jsonLd(page, pagePath, faq = commonFaq) {
+function jsonLd(page, pagePath, faq = []) {
   const url = pageUrl(pagePath);
-  return JSON.stringify({
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        name: BRAND_NAME,
-        url: SITE_URL,
-        logo: OG_IMAGE,
-        sameAs: [APP_STORE_URL],
+  const graph = [
+    {
+      "@type": "Organization",
+      name: BRAND_NAME,
+      url: SITE_URL,
+      logo: OG_IMAGE,
+      sameAs: [APP_STORE_URL],
+    },
+    {
+      "@type": "WebSite",
+      name: BRAND_NAME,
+      url: SITE_URL,
+      inLanguage: "tr-TR",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: BRAND_NAME,
+      applicationCategory: "EducationalApplication",
+      operatingSystem: "iOS, Web",
+      description: homeSeo.answer,
+      url: SITE_URL,
+      sameAs: [APP_STORE_URL],
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "TRY",
+        availability: "https://schema.org/InStock",
       },
-      {
-        "@type": "WebSite",
-        name: BRAND_NAME,
-        url: SITE_URL,
-        inLanguage: "tr-TR",
-      },
-      {
-        "@type": "SoftwareApplication",
-        name: BRAND_NAME,
-        applicationCategory: "EducationalApplication",
-        operatingSystem: "iOS, Web",
-        description: homeSeo.answer,
-        url: SITE_URL,
-        sameAs: [APP_STORE_URL],
-        offers: {
-          "@type": "Offer",
-          priceCurrency: "TRY",
-          availability: "https://schema.org/InStock",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Ana sayfa",
+          item: SITE_URL,
         },
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Ana sayfa",
-            item: SITE_URL,
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: page.h1,
-            item: url,
-          },
-        ],
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: faq.map((item) => ({
-          "@type": "Question",
-          name: item.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: item.answer,
-          },
-        })),
-      },
-    ],
-  });
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: page.h1,
+          item: url,
+        },
+      ],
+    },
+  ];
+
+  // FAQPage şemasını yalnızca sayfada görünen sorular varsa ekle —
+  // böylece JSON-LD sayfadaki içerikle birebir hizalı kalır.
+  if (faq.length) {
+    graph.push({
+      "@type": "FAQPage",
+      mainEntity: faq.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    });
+  }
+
+  return JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
 }
 
 const css = `
@@ -225,7 +229,8 @@ function renderSample(sample, subject) {
 
 function renderPage(page, isLegal = false) {
   const pagePath = `/${page.slug}`;
-  const faq = page.faq ?? commonFaq;
+  // Sayfada görünen FAQ seti — legal sayfalarda FAQ gösterilmez.
+  const visibleFaq = isLegal ? [] : (page.faq ?? commonFaq).slice(0, 6);
   const related = page.links?.length
     ? `<nav class="related" aria-label="İlgili sayfalar">
         <h2>İlgili bağlantılar</h2>
@@ -234,17 +239,17 @@ function renderPage(page, isLegal = false) {
         </div>
       </nav>`
     : "";
-  const faqBlock = isLegal
-    ? ""
-    : `<section class="faq">
+  const faqBlock = visibleFaq.length
+    ? `<section class="faq">
         <h2>Sık sorulan sorular</h2>
-        ${faq.slice(0, 6).map((item) => `
+        ${visibleFaq.map((item) => `
           <details>
             <summary>${escapeHtml(item.question)}</summary>
             <p>${escapeHtml(item.answer)}</p>
           </details>
         `).join("")}
-      </section>`;
+      </section>`
+    : "";
   const appStore = page.slug === "tus-mobil-uygulama"
     ? `<a class="appstore" href="${APP_STORE_URL}">Tusoskop'u App Store'da Gör</a>`
     : "";
@@ -269,7 +274,7 @@ function renderPage(page, isLegal = false) {
     <meta name="twitter:title" content="${escapeHtml(page.title)}" />
     <meta name="twitter:description" content="${escapeHtml(page.description)}" />
     <meta name="twitter:image" content="${OG_IMAGE}" />
-    <script type="application/ld+json">${jsonLd(page, pagePath, faq)}</script>
+    <script type="application/ld+json">${jsonLd(page, pagePath, visibleFaq)}</script>
     <style>${css}</style>
   </head>
   <body>

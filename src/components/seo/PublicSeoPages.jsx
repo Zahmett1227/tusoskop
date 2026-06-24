@@ -439,12 +439,14 @@ export function PublicHome({ accentTheme, onAppleLogin, onGoogleLogin }) {
 
 export function SeoLandingPage({ page }) {
   const faq = useMemo(() => page.faq ?? commonFaq, [page.faq]);
+  // JSON-LD FAQ şeması, sayfada görünen soru setiyle birebir aynı olmalı.
+  const visibleFaq = useMemo(() => faq.slice(0, 6), [faq]);
   const path = `/${page.slug}`;
   usePageMetadata({
     title: page.title,
     description: page.description,
     path,
-    faq,
+    faq: visibleFaq,
     breadcrumbs: [
       { name: "Ana sayfa", path: "/" },
       { name: page.h1, path },
@@ -499,7 +501,7 @@ export function SeoLandingPage({ page }) {
             <section className="mt-10">
               <h2 className="text-2xl font-black tracking-tight">Sık sorulan sorular</h2>
               <div className="mt-4 divide-y divide-slate-800 rounded-3xl border border-slate-800 bg-slate-900/45">
-                {faq.slice(0, 6).map((item) => (
+                {visibleFaq.map((item) => (
                   <details key={item.question} className="p-5">
                     <summary className="cursor-pointer font-black text-white">{item.question}</summary>
                     <p className="mt-3 text-sm leading-relaxed text-slate-300">{item.answer}</p>
