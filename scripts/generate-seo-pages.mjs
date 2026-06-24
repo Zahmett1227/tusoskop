@@ -12,6 +12,7 @@ import {
   pageUrl,
   seoPages,
   sitemapEntries,
+  subjectIndexLinks,
 } from "../src/seo/seoContent.js";
 
 const publicDir = path.resolve("public");
@@ -24,68 +25,72 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;");
 }
 
-function jsonLd(page, pagePath, faq = commonFaq) {
+function jsonLd(page, pagePath, faq = []) {
   const url = pageUrl(pagePath);
-  return JSON.stringify({
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        name: BRAND_NAME,
-        url: SITE_URL,
-        logo: OG_IMAGE,
-        sameAs: [APP_STORE_URL],
+  const graph = [
+    {
+      "@type": "Organization",
+      name: BRAND_NAME,
+      url: SITE_URL,
+      logo: OG_IMAGE,
+      sameAs: [APP_STORE_URL],
+    },
+    {
+      "@type": "WebSite",
+      name: BRAND_NAME,
+      url: SITE_URL,
+      inLanguage: "tr-TR",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: BRAND_NAME,
+      applicationCategory: "EducationalApplication",
+      operatingSystem: "iOS, Web",
+      description: homeSeo.answer,
+      url: SITE_URL,
+      sameAs: [APP_STORE_URL],
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "TRY",
+        availability: "https://schema.org/InStock",
       },
-      {
-        "@type": "WebSite",
-        name: BRAND_NAME,
-        url: SITE_URL,
-        inLanguage: "tr-TR",
-      },
-      {
-        "@type": "SoftwareApplication",
-        name: BRAND_NAME,
-        applicationCategory: "EducationalApplication",
-        operatingSystem: "iOS, Web",
-        description: homeSeo.answer,
-        url: SITE_URL,
-        sameAs: [APP_STORE_URL],
-        offers: {
-          "@type": "Offer",
-          priceCurrency: "TRY",
-          availability: "https://schema.org/InStock",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Ana sayfa",
+          item: SITE_URL,
         },
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Ana sayfa",
-            item: SITE_URL,
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: page.h1,
-            item: url,
-          },
-        ],
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: faq.map((item) => ({
-          "@type": "Question",
-          name: item.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: item.answer,
-          },
-        })),
-      },
-    ],
-  });
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: page.h1,
+          item: url,
+        },
+      ],
+    },
+  ];
+
+  // FAQPage şemasını yalnızca sayfada görünen sorular varsa ekle —
+  // böylece JSON-LD sayfadaki içerikle birebir hizalı kalır.
+  if (faq.length) {
+    graph.push({
+      "@type": "FAQPage",
+      mainEntity: faq.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    });
+  }
+
+  return JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
 }
 
 const css = `
@@ -106,6 +111,22 @@ const css = `
   h2{font-size:clamp(24px,3vw,32px);line-height:1.18;letter-spacing:-.02em;margin:0 0 12px;color:#fff}
   p{margin:0;color:#cbd5e1}
   .answer{margin-top:28px;border:1px solid rgba(110,231,183,.28);background:rgba(110,231,183,.1);border-radius:22px;padding:20px;color:#ecfdf5;font-size:17px}
+  .stats{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+  .stat{border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:18px;padding:16px;text-align:center}
+  .stat b{display:block;font-size:26px;font-weight:900;color:#6ee7b7;letter-spacing:-.02em}
+  .stat span{display:block;margin-top:4px;font-size:13px;color:#94a3b8;font-weight:700}
+  .qcard{margin-top:30px;border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:24px;padding:22px}
+  .qcard .badge{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#020617;background:#6ee7b7;border-radius:999px;padding:5px 11px}
+  .qcard .qkonu{margin-left:8px;font-size:13px;font-weight:800;color:#94a3b8}
+  .qcard .qtext{margin-top:14px;font-size:17px;font-weight:750;color:#f8fafc;line-height:1.5}
+  .qopts{margin-top:16px;display:grid;gap:9px}
+  .qopt{display:flex;gap:10px;align-items:flex-start;border:1px solid #334155;border-radius:14px;padding:11px 13px;font-size:15px;color:#e2e8f0}
+  .qopt .qkey{font-weight:900;color:#94a3b8;flex:0 0 auto}
+  .qopt.correct{border-color:#6ee7b7;background:rgba(110,231,183,.12);color:#ecfdf5}
+  .qopt.correct .qkey{color:#6ee7b7}
+  .qexp{margin-top:16px;border-top:1px solid #1e293b;padding-top:14px}
+  .qexp strong{color:#6ee7b7;font-weight:900}
+  .qexp p{margin-top:6px;font-size:15px}
   .sections{margin-top:44px;display:grid;gap:34px}
   .section{border-bottom:1px solid #1e293b;padding-bottom:28px}
   .section:last-child{border-bottom:0}
@@ -123,6 +144,8 @@ const css = `
   .footer-inner{max-width:1120px;margin:0 auto;padding:36px 18px;display:grid;gap:28px}
   .footer p{font-size:14px;max-width:480px}
   .footer-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;font-size:14px;font-weight:750}
+  .footer-tags-title{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin:6px 0 8px}
+  .footer-tags{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;font-weight:750}
   @media (max-width:720px){.nav{display:none}main{padding-top:38px}.topbar-inner{padding-inline:14px}}
 `;
 
@@ -169,13 +192,45 @@ function renderFooter() {
         <nav class="footer-links" aria-label="Footer bağlantıları">
           ${footerLinks.map(([label, href]) => `<a href="${escapeHtml(href)}">${escapeHtml(label)}</a>`).join("")}
         </nav>
+        <nav aria-label="Branşa göre TUS soruları">
+          <p class="footer-tags-title">Branşa göre sorular</p>
+          <div class="footer-tags">
+            ${subjectIndexLinks.map(([label, href]) => `<a href="${escapeHtml(href)}">${escapeHtml(label.replace(/^TUS\s+/, "").replace(/\s+Soruları$/, ""))}</a>`).join("")}
+          </div>
+        </nav>
       </div>
     </footer>`;
 }
 
+const OPTION_KEYS = ["A", "B", "C", "D", "E"];
+
+function renderStats(stats) {
+  if (!stats?.length) return "";
+  return `<div class="stats">
+    ${stats.map((s) => `<div class="stat"><b>${escapeHtml(s.value)}</b><span>${escapeHtml(s.label)}</span></div>`).join("")}
+  </div>`;
+}
+
+function renderSample(sample, subject) {
+  if (!sample) return "";
+  const options = sample.options
+    .map((opt, index) => {
+      const isCorrect = index === sample.correct;
+      return `<li class="qopt${isCorrect ? " correct" : ""}"><span class="qkey">${OPTION_KEYS[index] ?? index + 1}</span><span>${escapeHtml(opt)}</span></li>`;
+    })
+    .join("");
+  return `<section class="qcard" aria-label="Örnek soru">
+    <span class="badge">Örnek Soru</span><span class="qkonu">${escapeHtml(subject)} · ${escapeHtml(sample.konu)}</span>
+    <p class="qtext">${escapeHtml(sample.q)}</p>
+    <ul class="qopts">${options}</ul>
+    <div class="qexp"><strong>Doğru cevap: ${OPTION_KEYS[sample.correct]}</strong><p>${escapeHtml(sample.exp)}</p></div>
+  </section>`;
+}
+
 function renderPage(page, isLegal = false) {
   const pagePath = `/${page.slug}`;
-  const faq = page.faq ?? commonFaq;
+  // Sayfada görünen FAQ seti — legal sayfalarda FAQ gösterilmez.
+  const visibleFaq = isLegal ? [] : (page.faq ?? commonFaq).slice(0, 6);
   const related = page.links?.length
     ? `<nav class="related" aria-label="İlgili sayfalar">
         <h2>İlgili bağlantılar</h2>
@@ -184,17 +239,17 @@ function renderPage(page, isLegal = false) {
         </div>
       </nav>`
     : "";
-  const faqBlock = isLegal
-    ? ""
-    : `<section class="faq">
+  const faqBlock = visibleFaq.length
+    ? `<section class="faq">
         <h2>Sık sorulan sorular</h2>
-        ${faq.slice(0, 6).map((item) => `
+        ${visibleFaq.map((item) => `
           <details>
             <summary>${escapeHtml(item.question)}</summary>
             <p>${escapeHtml(item.answer)}</p>
           </details>
         `).join("")}
-      </section>`;
+      </section>`
+    : "";
   const appStore = page.slug === "tus-mobil-uygulama"
     ? `<a class="appstore" href="${APP_STORE_URL}">Tusoskop'u App Store'da Gör</a>`
     : "";
@@ -219,7 +274,7 @@ function renderPage(page, isLegal = false) {
     <meta name="twitter:title" content="${escapeHtml(page.title)}" />
     <meta name="twitter:description" content="${escapeHtml(page.description)}" />
     <meta name="twitter:image" content="${OG_IMAGE}" />
-    <script type="application/ld+json">${jsonLd(page, pagePath, faq)}</script>
+    <script type="application/ld+json">${jsonLd(page, pagePath, visibleFaq)}</script>
     <style>${css}</style>
   </head>
   <body>
@@ -228,6 +283,8 @@ function renderPage(page, isLegal = false) {
       <p class="eyebrow">${isLegal ? "Tusoskop Yasal" : "Tusoskop Rehberi"}</p>
       <h1>${escapeHtml(page.h1)}</h1>
       <div class="answer">${escapeHtml(page.intro)}</div>
+      ${renderStats(page.stats)}
+      ${renderSample(page.sample, page.subject)}
       ${appStore}
       <div class="sections">
         ${page.sections.map((section) => `

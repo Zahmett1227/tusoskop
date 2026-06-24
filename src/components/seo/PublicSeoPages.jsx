@@ -9,7 +9,94 @@ import {
   commonFaq,
   homeSeo,
   pageUrl,
+  HERO_STATS,
+  QUESTION_COUNT_LABEL,
+  FREE_DAILY_QUESTIONS,
+  FREE_DAILY_TOPIC_TESTS,
+  LESSON_COUNT,
+  subjectIndexLinks,
 } from "../../seo/seoContent";
+
+const OPTION_KEYS = ["A", "B", "C", "D", "E"];
+
+function StatGrid({ stats }) {
+  if (!stats?.length) return null;
+  return (
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      {stats.map((stat) => (
+        <div key={stat.label} className="rounded-2xl border border-slate-800 bg-slate-900/55 px-3 py-4 text-center">
+          <p className="text-2xl font-black tracking-tight text-emerald-300">{stat.value}</p>
+          <p className="mt-1 text-xs font-bold text-slate-400">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function SampleQuestionCard({ sample, subject }) {
+  if (!sample) return null;
+  return (
+    <section aria-label="Örnek soru" className="mt-8 rounded-3xl border border-slate-800 bg-slate-900/55 p-5 md:p-6">
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="rounded-full bg-emerald-300 px-3 py-1 text-[11px] font-black uppercase tracking-[0.14em] text-slate-950">
+          Örnek Soru
+        </span>
+        <span className="text-sm font-bold text-slate-400">
+          {subject ? `${subject} · ` : ""}{sample.konu}
+        </span>
+      </div>
+      <p className="mt-4 text-lg font-bold leading-relaxed text-white">{sample.q}</p>
+      <ul className="mt-4 space-y-2">
+        {sample.options.map((option, index) => {
+          const isCorrect = index === sample.correct;
+          return (
+            <li
+              key={option}
+              className={`flex items-start gap-3 rounded-2xl border px-4 py-3 text-sm ${
+                isCorrect
+                  ? "border-emerald-300/70 bg-emerald-300/10 text-emerald-50"
+                  : "border-slate-700 text-slate-200"
+              }`}
+            >
+              <span className={`font-black ${isCorrect ? "text-emerald-300" : "text-slate-400"}`}>
+                {OPTION_KEYS[index] ?? index + 1}
+              </span>
+              <span>{option}</span>
+            </li>
+          );
+        })}
+      </ul>
+      <div className="mt-5 border-t border-slate-800 pt-4">
+        <p className="text-sm font-black text-emerald-300">Doğru cevap: {OPTION_KEYS[sample.correct]}</p>
+        <p className="mt-2 text-sm leading-relaxed text-slate-300">{sample.exp}</p>
+      </div>
+    </section>
+  );
+}
+
+function SubjectIndex() {
+  return (
+    <section className="px-4 py-12">
+      <div className="mx-auto max-w-6xl">
+        <h2 className="text-3xl font-black tracking-tight">Branşına Göre TUS Soruları</h2>
+        <p className="mt-3 max-w-2xl text-base leading-relaxed text-slate-300">
+          {QUESTION_COUNT_LABEL} soruyu {LESSON_COUNT} dersten ve istediğin konudan seçerek çöz. Her branşta gerçek örnek soruları incele.
+        </p>
+        <div className="mt-7 flex flex-wrap gap-3">
+          {subjectIndexLinks.map(([label, href]) => (
+            <a
+              key={href}
+              href={href}
+              className="rounded-2xl border border-slate-700 px-4 py-2 text-sm font-bold text-slate-200 hover:border-emerald-300/70 hover:text-white"
+            >
+              {label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function setMeta(selector, attributes) {
   if (typeof document === "undefined") return;
@@ -171,13 +258,25 @@ function PublicFooter() {
             TUS hazırlığında soru çözme, deneme, tekrar, AI çalışma planı, haftalık lig ve analiz sürecini kolaylaştıran dijital platform.
           </p>
         </div>
-        <nav aria-label="SEO ve yasal bağlantılar" className="grid grid-cols-1 gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
-          {links.map(([label, href]) => (
-            <a key={label} href={href} className="font-semibold text-slate-400 hover:text-white">
-              {label}
-            </a>
-          ))}
-        </nav>
+        <div className="grid gap-5">
+          <nav aria-label="SEO ve yasal bağlantılar" className="grid grid-cols-1 gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
+            {links.map(([label, href]) => (
+              <a key={label} href={href} className="font-semibold text-slate-400 hover:text-white">
+                {label}
+              </a>
+            ))}
+          </nav>
+          <nav aria-label="Branşa göre TUS soruları">
+            <p className="mb-2 text-xs font-bold uppercase tracking-wider text-slate-500">Branşa göre sorular</p>
+            <div className="flex flex-wrap gap-x-3 gap-y-1.5 text-sm">
+              {subjectIndexLinks.map(([label, href]) => (
+                <a key={href} href={href} className="font-semibold text-slate-400 hover:text-white">
+                  {label.replace(/^TUS\s+/, "").replace(/\s+Soruları$/, "")}
+                </a>
+              ))}
+            </div>
+          </nav>
+        </div>
       </div>
     </footer>
   );
@@ -209,12 +308,24 @@ export function PublicHome({ accentTheme, onAppleLogin, onGoogleLogin }) {
   });
 
   const features = [
-    ["Konu Bazlı Test Çöz", "Çalıştığın ders ve konulara göre TUS tarzı sorular çözerek bilgini pekiştir."],
-    ["Deneme Çöz", "TUS hazırlık sürecinde dijital denemelerle performansını ölç."],
-    ["Analizlerini Takip Et", "Deneme ve soru çözüm sonuçlarını inceleyerek güçlü ve zayıf alanlarını gör."],
-    ["Yanlışlarını Tekrar Et", "Yanlış yaptığın ve favoriye aldığın soruları takip ederek tekrar sürecini düzenle."],
-    ["AI Çalışma Planı Oluştur", "AI entegrasyonu ile çalışma planını daha düzenli hale getirmeye yardımcı öneriler al."],
-    ["Haftalık Ligde İlerle", "Haftalık lig sistemiyle çalışma motivasyonunu ve düzenini destekle."],
+    [
+      `${QUESTION_COUNT_LABEL} Soruyu Konu Konu Çöz`,
+      `${LESSON_COUNT} dersten ve istediğin konudan seçerek yüksek kaliteli, TUS tarzı sorular çöz; çalıştığın konuyu hemen sına.`,
+    ],
+    ["Deneme Çöz", "TUS hazırlık sürecinde dijital denemelerle performansını ölç, neti zamanla takip et."],
+    [
+      "Akıllı Tekrar (FSRS)",
+      "Yanlış yaptığın soruyu, beynin tam unutmaya başladığı anda bilimsel aralıklı tekrarla yeniden karşına çıkarırız.",
+    ],
+    [
+      `Günde ${FREE_DAILY_QUESTIONS} Soru Ücretsiz`,
+      `Free planda her gün ${FREE_DAILY_QUESTIONS} soru ve ${FREE_DAILY_TOPIC_TESTS} konu testi ücretsiz. Nöbet arasında telefonundan çöz.`,
+    ],
+    [
+      "AI Çalışma Planı",
+      "Yapay zeka eksik konularını bulup sana günlük çalışma planı çıkarsın; neyi çözeceğini düşünme.",
+    ],
+    ["Haftalık Ligde Yarış", "Binlerce TUS adayıyla aynı ligde yarış, haftalık sıralamada yüksel ve motivasyonunu koru."],
   ];
 
   return (
@@ -242,12 +353,8 @@ export function PublicHome({ accentTheme, onAppleLogin, onGoogleLogin }) {
             </div>
             <div className="rounded-3xl border border-slate-800 bg-slate-900/65 p-5 shadow-2xl shadow-black/30">
               <AnswerBox>{homeSeo.answer}</AnswerBox>
-              <div className="mt-5 grid grid-cols-2 gap-3 text-center">
-                {["Soru", "Deneme", "Analiz", "AI Plan"].map((item) => (
-                  <div key={item} className="rounded-2xl border border-slate-800 bg-slate-950/70 px-3 py-4">
-                    <p className="text-sm font-black text-white">{item}</p>
-                  </div>
-                ))}
+              <div className="mt-5">
+                <StatGrid stats={HERO_STATS} />
               </div>
             </div>
           </div>
@@ -263,6 +370,8 @@ export function PublicHome({ accentTheme, onAppleLogin, onGoogleLogin }) {
             </div>
           </div>
         </section>
+
+        <SubjectIndex />
 
         <section className="px-4 py-12">
           <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
@@ -330,12 +439,14 @@ export function PublicHome({ accentTheme, onAppleLogin, onGoogleLogin }) {
 
 export function SeoLandingPage({ page }) {
   const faq = useMemo(() => page.faq ?? commonFaq, [page.faq]);
+  // JSON-LD FAQ şeması, sayfada görünen soru setiyle birebir aynı olmalı.
+  const visibleFaq = useMemo(() => faq.slice(0, 6), [faq]);
   const path = `/${page.slug}`;
   usePageMetadata({
     title: page.title,
     description: page.description,
     path,
-    faq,
+    faq: visibleFaq,
     breadcrumbs: [
       { name: "Ana sayfa", path: "/" },
       { name: page.h1, path },
@@ -353,6 +464,12 @@ export function SeoLandingPage({ page }) {
             <div className="mt-6">
               <AnswerBox>{page.intro}</AnswerBox>
             </div>
+            {page.stats?.length ? (
+              <div className="mt-6">
+                <StatGrid stats={page.stats} />
+              </div>
+            ) : null}
+            <SampleQuestionCard sample={page.sample} subject={page.subject} />
             <div className="mt-10 space-y-9">
               {page.sections.map((section) => (
                 <section key={section.heading}>
@@ -384,7 +501,7 @@ export function SeoLandingPage({ page }) {
             <section className="mt-10">
               <h2 className="text-2xl font-black tracking-tight">Sık sorulan sorular</h2>
               <div className="mt-4 divide-y divide-slate-800 rounded-3xl border border-slate-800 bg-slate-900/45">
-                {faq.slice(0, 6).map((item) => (
+                {visibleFaq.map((item) => (
                   <details key={item.question} className="p-5">
                     <summary className="cursor-pointer font-black text-white">{item.question}</summary>
                     <p className="mt-3 text-sm leading-relaxed text-slate-300">{item.answer}</p>

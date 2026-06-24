@@ -2,6 +2,11 @@ import {
   APP_STORE_URL,
   commonFaq,
   homeSeo,
+  QUESTION_COUNT_LABEL,
+  LESSON_COUNT,
+  FREE_DAILY_QUESTIONS,
+  FREE_DAILY_TOPIC_TESTS,
+  subjectIndexLinks,
 } from "../src/seo/seoContent.js";
 
 function escapeHtml(value) {
@@ -13,12 +18,21 @@ function escapeHtml(value) {
 }
 
 const features = [
-  ["Konu Bazlı Test Çöz", "Çalıştığın ders ve konulara göre TUS tarzı sorular çözerek bilgini pekiştir."],
-  ["Deneme Çöz", "TUS hazırlık sürecinde dijital denemelerle performansını ölç."],
-  ["Analizlerini Takip Et", "Deneme ve soru çözüm sonuçlarını inceleyerek güçlü ve zayıf alanlarını gör."],
-  ["Yanlışlarını Tekrar Et", "Yanlış yaptığın ve favoriye aldığın soruları takip ederek tekrar sürecini düzenle."],
-  ["AI Çalışma Planı Oluştur", "AI entegrasyonu ile çalışma planını daha düzenli hale getirmeye yardımcı öneriler al."],
-  ["Haftalık Ligde İlerle", "Haftalık lig sistemiyle çalışma motivasyonunu ve düzenini destekle."],
+  [
+    `${QUESTION_COUNT_LABEL} Soruyu Konu Konu Çöz`,
+    `${LESSON_COUNT} dersten ve istediğin konudan seçerek yüksek kaliteli, TUS tarzı sorular çöz; çalıştığın konuyu hemen sına.`,
+  ],
+  ["Deneme Çöz", "TUS hazırlık sürecinde dijital denemelerle performansını ölç, neti zamanla takip et."],
+  [
+    "Akıllı Tekrar (FSRS)",
+    "Yanlış yaptığın soruyu, beynin tam unutmaya başladığı anda bilimsel aralıklı tekrarla yeniden karşına çıkarırız.",
+  ],
+  [
+    `Günde ${FREE_DAILY_QUESTIONS} Soru Ücretsiz`,
+    `Free planda her gün ${FREE_DAILY_QUESTIONS} soru ve ${FREE_DAILY_TOPIC_TESTS} konu testi ücretsiz; nöbet arasında telefonundan çöz.`,
+  ],
+  ["AI Çalışma Planı", "Yapay zeka eksik konularını bulup sana günlük çalışma planı çıkarır."],
+  ["Haftalık Ligde Yarış", "Binlerce TUS adayıyla aynı ligde yarış, haftalık sıralamada yüksel."],
 ];
 
 const seoLinks = [
@@ -64,6 +78,12 @@ export function renderHomeSeoNoscript() {
         <h2>Tusoskop Sayfaları</h2>
         <ul>
           ${seoLinks.map(([label, href]) => `<li><a href="${escapeHtml(href)}">${escapeHtml(label)}</a></li>`).join("\n          ")}
+        </ul>
+      </nav>
+      <nav aria-label="Branşa göre TUS soruları">
+        <h2>Branşa Göre TUS Soruları</h2>
+        <ul>
+          ${subjectIndexLinks.map(([label, href]) => `<li><a href="${escapeHtml(href)}">${escapeHtml(label)}</a></li>`).join("\n          ")}
         </ul>
       </nav>
     </main>
