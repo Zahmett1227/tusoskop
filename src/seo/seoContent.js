@@ -1,17 +1,40 @@
+import {
+  SUBJECTS,
+  TOTAL_QUESTIONS,
+  LESSON_COUNT,
+  FREE_DAILY_QUESTIONS,
+  FREE_DAILY_TOPIC_TESTS,
+  questionCountLabel,
+} from "./subjectData.js";
+
 export const SITE_URL = "https://tusoskop.com";
 export const BRAND_NAME = "Tusoskop";
 export const APP_STORE_URL = "https://apps.apple.com/tr/app/tusoskop/id6776331691?l=tr";
 export const OG_IMAGE = `${SITE_URL}/tusoskop-mark.png`;
 export const LASTMOD = "2026-06-24";
 
+// Pazarlama etiketleri — soru bankasından otomatik türetilir, asla abartmaz.
+export const QUESTION_COUNT_LABEL = questionCountLabel(); // örn. "7.000+"
+export const LESSON_COUNT_LABEL = `${LESSON_COUNT} ders`;
+
+// Ana sayfa ve branş sayfalarında gösterilen rakamsal güven kartları.
+export const HERO_STATS = [
+  { value: QUESTION_COUNT_LABEL, label: "TUS tarzı soru" },
+  { value: `${LESSON_COUNT}`, label: "Ders / branş" },
+  { value: `${FREE_DAILY_QUESTIONS}`, label: "Günlük ücretsiz soru" },
+  { value: "AI", label: "Çalışma planı" },
+];
+
+export { SUBJECTS, TOTAL_QUESTIONS, LESSON_COUNT, FREE_DAILY_QUESTIONS, FREE_DAILY_TOPIC_TESTS };
+
 export const homeSeo = {
   path: "/",
-  title: "TUS Soru, Deneme ve Analiz Platformu | Tusoskop",
+  title: `TUS Soru Bankası — ${QUESTION_COUNT_LABEL} Soru, Deneme ve Analiz | Tusoskop`,
   description:
-    "Tusoskop, TUS hazırlığında konu bazlı soru, deneme, yanlış takibi, AI çalışma planı ve analiz sunan web ve mobil platformdur.",
+    `Tusoskop'ta ${QUESTION_COUNT_LABEL} yüksek kaliteli TUS tarzı soruyu ${LESSON_COUNT} dersten ve istediğin konudan seçerek çöz. Deneme, yanlış takibi, akıllı tekrar (FSRS), AI çalışma planı, haftalık lig ve performans analizi tek platformda.`,
   h1: "TUS Hazırlığı İçin Soru Çözme, Deneme ve Analiz Platformu",
   answer:
-    "Tusoskop, TUS'a hazırlanan tıp öğrencileri ve hekimler için konu bazlı test, deneme çözümü, yanlış/favori takibi, AI destekli çalışma planı, haftalık lig sistemi ve performans analizi sunan web ve mobil odaklı dijital çalışma platformudur.",
+    `Tusoskop; TUS'a hazırlanan tıp öğrencileri ve hekimler için ${QUESTION_COUNT_LABEL} yüksek kaliteli TUS tarzı soruyu ${LESSON_COUNT} dersten ve istediğin konudan seçerek çözmeni sağlar. Konu bazlı test, deneme çözümü, yanlış/favori takibi, bilimsel aralıklı tekrar (FSRS), AI destekli çalışma planı, haftalık lig ve performans analizini tek bir web ve mobil platformda sunar.`,
 };
 
 export const commonFaq = [
@@ -21,9 +44,24 @@ export const commonFaq = [
       "Tusoskop, TUS'a hazırlanan tıp öğrencileri ve hekimler için geliştirilmiş dijital soru çözme ve analiz platformudur.",
   },
   {
+    question: "Tusoskop'ta kaç soru var?",
+    answer:
+      `Tusoskop'ta ${QUESTION_COUNT_LABEL} yüksek kaliteli TUS tarzı soru bulunur. Soruları ${LESSON_COUNT} dersten ve istediğin konudan seçerek çözebilirsin.`,
+  },
+  {
     question: "Tusoskop'ta konu bazlı soru çözülür mü?",
     answer:
       "Evet. Tusoskop'ta ders ve konu seçerek TUS hazırlığına yönelik testler çözülebilir.",
+  },
+  {
+    question: "Tusoskop ücretsiz soru çözdürüyor mu?",
+    answer:
+      `Evet. Free planda her gün ${FREE_DAILY_QUESTIONS} soru ve ${FREE_DAILY_TOPIC_TESTS} konu testi ücretsiz çözülebilir. Plus erişimde günlük soru ve konu testi limiti kalkar.`,
+  },
+  {
+    question: "Tusoskop yanlışları nasıl tekrar ettiriyor?",
+    answer:
+      "Tusoskop, bilimsel aralıklı tekrar (FSRS tabanlı akıllı tekrar) yaklaşımıyla yanlış yaptığın soruları tam unutmaya başladığın aralıklarda yeniden karşına çıkarır.",
   },
   {
     question: "Tusoskop'ta deneme çözülür mü?",
@@ -42,7 +80,7 @@ export const commonFaq = [
   },
 ];
 
-export const seoPages = [
+const contentSeoPages = [
   {
     slug: "tusoskop-nedir",
     title: "Tusoskop Nedir? TUS İçin Dijital Soru Platformu",
@@ -526,6 +564,80 @@ export const seoPages = [
     ],
   },
 ];
+
+// --- Branş (ders) bazlı SEO sayfaları -------------------------------------
+// Her ders için "TUS {Ders} Soruları" sayfası: gerçek soru sayısı + soru
+// bankamızdan örnek bir soru. "tus {ders} soruları" aramalarını hedefler.
+
+function relatedSubjectLinks(currentSlug) {
+  const others = SUBJECTS.filter((s) => s.slug !== currentSlug).slice(0, 2);
+  return [
+    ...others.map((s) => [`TUS ${s.name} Soruları`, `/${s.slug}`]),
+    ["TUS Soru Çözme Uygulaması", "/tus-soru-cozme-uygulamasi"],
+  ];
+}
+
+const subjectSeoPages = SUBJECTS.map((subject) => ({
+  slug: subject.slug,
+  isSubject: true,
+  subject: subject.name,
+  questionCount: subject.count,
+  sample: subject.sample,
+  stats: [
+    { value: `${subject.count}`, label: `${subject.name} sorusu` },
+    { value: QUESTION_COUNT_LABEL, label: "Toplam soru" },
+    { value: `${FREE_DAILY_QUESTIONS}`, label: "Günlük ücretsiz" },
+  ],
+  title: `TUS ${subject.name} Soruları — ${subject.count} Soru Çöz | Tusoskop`,
+  description:
+    `Tusoskop'ta ${subject.count} TUS tarzı ${subject.name} sorusunu konu konu seçerek çöz. Yanlışlarını akıllı tekrarla pekiştir, performansını analiz et. Örnek soruyu hemen incele.`,
+  h1: `TUS ${subject.name} Soruları`,
+  intro:
+    `Tusoskop'ta ${subject.name} dersine ait ${subject.count} TUS tarzı soruyu konu konu seçerek çözebilirsin. Aşağıda soru bankamızdan gerçek bir ${subject.name} örnek sorusu ve açıklaması yer alıyor.`,
+  sections: [
+    {
+      heading: `TUS ${subject.name} sorularını konu konu çöz`,
+      paragraphs: [
+        `Tusoskop'ta ${subject.name} dersini alt konularına ayırarak çalışabilir, çalıştığın konudan hemen sonra o konuya ait soruları çözerek bilgini sınayabilirsin. Toplam ${subject.count} ${subject.name} sorusu konu bazlı test akışında sunulur.`,
+      ],
+    },
+    {
+      heading: `${subject.name} yanlışlarını akıllı tekrarla pekiştir`,
+      paragraphs: [
+        `Yanlış yaptığın ${subject.name} sorularını ve favoriye aldıklarını takip edebilir, bilimsel aralıklı tekrar (FSRS) ile bu soruları tam unutmaya başladığın aralıklarda yeniden karşına çıkarabilirsin.`,
+      ],
+    },
+    {
+      heading: `${subject.name} performansını analiz et`,
+      paragraphs: [
+        `Çözdüğün ${subject.name} sorularının doğru/yanlış dağılımını ve konu bazlı eksiklerini analiz ekranlarından takip edebilir, hangi konulara daha çok çalışman gerektiğini görebilirsin.`,
+      ],
+    },
+  ],
+  faq: [
+    {
+      question: `Tusoskop'ta kaç ${subject.name} sorusu var?`,
+      answer: `Tusoskop'ta ${subject.count} TUS tarzı ${subject.name} sorusu bulunur ve bunları konu konu seçerek çözebilirsin.`,
+    },
+    {
+      question: `TUS ${subject.name} sorularını konu seçerek çözebilir miyim?`,
+      answer: `Evet. ${subject.name} dersini alt konularına ayırarak istediğin konudan soru çözebilirsin.`,
+    },
+    {
+      question: `${subject.name} yanlışlarımı tekrar edebilir miyim?`,
+      answer: `Evet. Yanlış ve favori ${subject.name} sorularını takip eder, akıllı tekrar (FSRS) ile düzenli olarak yeniden çözebilirsin.`,
+    },
+    {
+      question: "Tusoskop ücretsiz mi?",
+      answer: `Free planda günde ${FREE_DAILY_QUESTIONS} soru ve ${FREE_DAILY_TOPIC_TESTS} konu testi ücretsizdir; Plus erişimde limitler kalkar.`,
+    },
+  ],
+  links: relatedSubjectLinks(subject.slug),
+}));
+
+export const subjectIndexLinks = SUBJECTS.map((s) => [`TUS ${s.name} Soruları`, `/${s.slug}`]);
+
+export const seoPages = [...contentSeoPages, ...subjectSeoPages];
 
 export const legalStaticPages = [
   {
