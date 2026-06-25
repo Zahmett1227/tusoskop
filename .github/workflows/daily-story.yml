@@ -2,9 +2,7 @@ name: Daily Instagram Post
 
 on:
   schedule:
-    - cron: '0 6 * * *'    # 09:00 İstanbul (UTC+3)
-    - cron: '0 10 * * *'   # 13:00 İstanbul
-    - cron: '0 16 * * *'   # 19:00 İstanbul
+    - cron: '30 17 * * *'   # 20:30 İstanbul (UTC+3)
   workflow_dispatch:        # Manuel tetikleyici
 
 jobs:
