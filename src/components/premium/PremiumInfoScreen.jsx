@@ -120,7 +120,11 @@ export default function PremiumInfoScreen({
         } catch {
           /* sessiz */
         }
-        setPaytrCheckout({ token: res.token, merchantOid: res.merchantOid });
+        setPaytrCheckout({
+          token: res.token,
+          merchantOid: res.merchantOid,
+          amount: plan.totalPrice,
+        });
       } catch (error) {
         console.error("PayTR ödeme akışı hatası:", error);
         setBanner("Ödeme başlatılamadı. Lütfen tekrar deneyin.");
@@ -144,6 +148,8 @@ export default function PremiumInfoScreen({
         <PaytrCheckoutModal
           token={paytrCheckout.token}
           uid={user?.uid}
+          amount={paytrCheckout.amount}
+          merchantOid={paytrCheckout.merchantOid}
           onClose={() => setPaytrCheckout(null)}
           onSuccess={onBack}
         />

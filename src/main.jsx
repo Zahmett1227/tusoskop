@@ -6,6 +6,7 @@ import ErrorBoundary from './components/ErrorBoundary.jsx'
 import { QuestionsProvider } from './context/QuestionsContext.jsx'
 import { ToastProvider } from './context/ToastContext.jsx'
 import { initClarity } from './lib/clarity'
+import { initMetaPixel } from './lib/metaPixel'
 import { captureAcquisitionFromUrl } from './utils/acquisitionAttribution'
 import { registerServiceWorker } from './registerServiceWorker'
 
@@ -31,5 +32,6 @@ const runAfterFirstPaint = (task) => {
 runAfterFirstPaint(() => {
   captureAcquisitionFromUrl()
   initClarity()
+  initMetaPixel()
   registerServiceWorker()
 })

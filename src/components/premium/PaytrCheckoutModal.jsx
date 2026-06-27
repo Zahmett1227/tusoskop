@@ -3,6 +3,7 @@ import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../../firebase";
 import { isUserPremium } from "../../utils/premiumUtils";
 import { trackClarityEvent } from "../../lib/clarity";
+import { trackPurchase } from "../../lib/metaPixel";
 import {
   PAYTR_IFRAME_URL,
   PAYTR_IFRAME_RESIZER_SRC,
@@ -16,9 +17,11 @@ import {
  *   burada onSnapshot ile premium aktif olduğu an "başarılı" ekranına geçilir.
  * - iframeResizer scripti yüklenince iframe yüksekliği içeriğe göre ayarlanır.
  */
-export default function PaytrCheckoutModal({ token, uid, onClose }) {
+export default function PaytrCheckoutModal({ token, uid, amount, merchantOid, onClose }) {
   const [phase, setPhase] = useState("paying"); // paying | success
   const iframeRef = useRef(null);
+  // Purchase event'i sadece bir kez atılsın (onSnapshot birden çok tetiklenebilir).
+  const purchaseTrackedRef = useRef(false);
   // Modalın açıldığı andaki premium bitiş tarihini sakla; onSnapshot sadece
   // bu modal açıldıktan SONRA oluşan bir premium değişikliğini yakalamalı.
   const baseUntilRef = useRef(null);
@@ -82,10 +85,20 @@ export default function PaytrCheckoutModal({ token, uid, onClose }) {
         } catch {
           /* sessiz */
         }
+        // Meta Pixel Purchase — backend-onaylı (PayTR callback → Firestore aktivasyonu).
+        // Tutar gerçek plandan gelir; merchantOid order_id olarak dedup sağlar.
+        if (!purchaseTrackedRef.current) {
+          purchaseTrackedRef.current = true;
+          try {
+            trackPurchase({ value: amount, currency: "TRY", orderId: merchantOid });
+          } catch {
+            /* sessiz */
+          }
+        }
       }
     });
     return () => unsub();
-  }, [uid]);
+  }, [uid, amount, merchantOid]);
 
   // ESC ile kapat
   useEffect(() => {

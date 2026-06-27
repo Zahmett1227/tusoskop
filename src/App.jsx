@@ -33,6 +33,7 @@ import {
 } from "./utils/examInProgressUtils";
 import { isIOS } from "./utils/device";
 import { setClarityTag, trackClarityEvent } from "./lib/clarity";
+import { usePageTracking } from "./lib/metaPixel";
 import { getWrongQuestions } from "./services/studyCollectionService";
 import {
   getDueSmartReviews,
@@ -163,6 +164,7 @@ export default function App() {
   }, []);
 
   const [view, setView] = useState("dashboard");
+  usePageTracking(view); // Meta Pixel: her view değişiminde PageView
   const legalReturnViewRef = useRef("dashboard");
   const [legalPageId, setLegalPageId] = useState(LEGAL_PAGES[0].id);
   const { accentThemeKey, accentTheme, handleAccentThemeChange } = useAppAccentTheme();

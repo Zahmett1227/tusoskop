@@ -1,6 +1,16 @@
 import { db } from "../firebase";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { getStoredAcquisitionForUserDoc } from "../utils/acquisitionAttribution";
+import { trackCompleteRegistration } from "../lib/metaPixel";
+
+// Firebase provider ID → Meta event'i için okunaklı kayıt yöntemi.
+function resolveRegistrationMethod(firebaseUser) {
+  const providerId = firebaseUser?.providerData?.[0]?.providerId || "";
+  if (providerId.includes("google")) return "google";
+  if (providerId.includes("apple")) return "apple";
+  if (providerId.includes("password")) return "email";
+  return providerId || undefined;
+}
 
 function buildAcquisitionPatch(existingAcquisition, now) {
   if (existingAcquisition) return {};
@@ -44,6 +54,12 @@ export async function ensureUserDocument(firebaseUser) {
       };
 
       await setDoc(ref, newUserData);
+      // Meta Pixel: yalnızca yeni hesap oluşturulduğunda (her girişte değil).
+      try {
+        trackCompleteRegistration({ method: resolveRegistrationMethod(firebaseUser) });
+      } catch {
+        /* analytics kritik değil, sessiz geç */
+      }
       return newUserData;
     }
 

@@ -182,6 +182,17 @@ TUS özelliklerini agresif pazarlayan SEO altyapısı. Amaç: özellikleri rakam
 - **FAQ JSON-LD ↔ sayfa hizalaması (önemli):** Şemaya konan FAQ, sayfada görünen FAQ ile **birebir aynı** olmalı (Google kuralı). `SeoLandingPage` ve üretici `slice(0,6)` ile görünen seti hem render'a hem şemaya verir; FAQ boşsa (legal sayfalar) FAQPage düğümü hiç eklenmez.
 - Footer'da branş linkleri kompakt: kısa ders adları (Anatomi, Biyokimya…), `flex-wrap` tek satır.
 
+### Meta (Facebook) Pixel — dönüşüm izleme (main)
+
+`src/lib/metaPixel.js` — Clarity (`src/lib/clarity.js`) ile aynı desen: pixel ID **yalnızca** `.env`'den (`VITE_META_PIXEL_ID`), `fbq` base snippet'i `initMetaPixel()` ile JS'ten yüklenir (index.html'e inline snippet **yok**). Pixel ID ya da `fbq` yoksa (ad-blocker) tüm event'ler sessizce atlanır, uygulama çökmez.
+
+- **Başlatma:** `src/main.jsx` → `runAfterFirstPaint` içinde `initMetaPixel()` (Clarity'nin yanında). İlk PageView burada atılır.
+- **PageView:** react-router yok; `App.jsx`'te `usePageTracking(view)` her `view` state değişiminde PageView atar. Mount'taki ilk effect guard'lı (init zaten attı + StrictMode çift tetik koruması).
+- **CompleteRegistration:** `src/services/userService.js` → `ensureUserDocument` **yalnızca yeni hesap dalında** (`!snap.exists()`), `setDoc` sonrası. Her girişte değil. `method` = provider'dan türetilir (google/apple/email).
+- **Purchase:** `src/components/premium/PaytrCheckoutModal.jsx` → backend-onaylı; PayTR callback → Firestore `users/{uid}` aktivasyonu → `onSnapshot` başarı anında (`trackClarityEvent("paytr_payment_success")` ile aynı yer). `value` = gerçek `plan.totalPrice` (89,90 / 209,70 / 359,40), `orderId` = `merchantOid` (dedup). `purchaseTrackedRef` ile tek tetik.
+- **StartTrial YOK:** Üründe abonelik denemesi kavramı yok (free katman + PayTR Plus). Bilerek eklenmedi.
+- **Env:** `VITE_META_PIXEL_ID` (`.env.example`'da belgeli, boşsa pixel devre dışı). Events Manager → **Web** veri kaynağı (Uygulama değil — `fbq` WKWebView içinde web olarak çalışır).
+
 ## Sık Yapılan İşlemler
 
 ### iOS'a değişiklik göndermek
