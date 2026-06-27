@@ -84,6 +84,59 @@ WRONGS_PRACTICE, FAVORITES_PRACTICE, TOPIC_PRACTICE, EXAM, NORMAL_STUDY
 - SPM packages: `ios/App/CapApp-SPM/Package.swift`
 - `@capacitor-firebase/authentication` SPM ile dahil
 
+## Ödeme Altyapısı — PayTR iFrame (Shopify kaldırıldı)
+
+Shopify ödeme entegrasyonu tamamen kaldırıldı. Yerine doğrudan PayTR iFrame API kullanılıyor.
+
+### Akış
+1. Kullanıcı plan seçer → `PremiumInfoScreen` → `requestPaytrToken()` → Firebase `createPaytrToken` (onCall)
+2. Sunucu `premiumPurchaseIntents` koleksiyonuna intent kaydeder, PayTR token alır, döner
+3. `PaytrCheckoutModal` iframe'i açar (`https://www.paytr.com/odeme/guvenli/{token}`)
+4. Kullanıcı öder → PayTR sunucudan sunucuya `paytrCallback` (onRequest) çağırır
+5. Hash doğrulanır, `users/{uid}` güncellenir: `plan:"plus", premiumStatus:"active"`
+6. Modal'daki `onSnapshot` değişikliği yakalar → başarı ekranı → "Çalışmaya devam et" → `window.location.reload()`
+
+### Kritik Dosyalar
+| Dosya | Görev |
+|-------|-------|
+| `functions/paytr.js` | Token üretimi + callback handler + PAYTR_PLANS fiyat tablosu |
+| `functions/index.js` | `createPaytrToken` (onCall) + `paytrCallback` (onRequest) export |
+| `src/services/paytrService.js` | `requestPaytrToken(plan, contact)` — Firebase Function çağrısı |
+| `src/components/premium/PaytrCheckoutModal.jsx` | iFrame modal, onSnapshot ile otomatik aktivasyon tespiti |
+| `src/components/premium/PremiumInfoScreen.jsx` | Plan seçimi, token talebi, modal yönetimi |
+| `src/config/plusPlans.js` | İstemci tarafı plan listesi (shopifyUrl alanları kaldırıldı) |
+
+### Güvenlik Kuralları
+- `PAYTR_MERCHANT_KEY` ve `PAYTR_MERCHANT_SALT` → **Firebase Secret Manager** (`defineSecret`)
+- `PAYTR_MERCHANT_ID = "699560"` → gizli değil, env ile override edilebilir
+- `TEST_MODE`: `process.env.PAYTR_TEST_MODE === "1"` → canlıda "0" olmalı
+- Ödeme tutarı **ASLA istemciden alınmaz** → `PAYTR_PLANS` sunucu tablosundan gelir
+
+### Plan Tablosu (functions/paytr.js içinde)
+```js
+plus_1m: { days: 30,  amount: 89.9,  sku: "TUSOSKOP_PLUS_1M" }
+plus_3m: { days: 90,  amount: 209.7, sku: "TUSOSKOP_PLUS_3M" }
+plus_6m: { days: 180, amount: 359.4, sku: "TUSOSKOP_PLUS_6M" }
+```
+
+### Firestore Koleksiyonları
+- `premiumPurchaseIntents/{merchantOid}` — ödeme niyeti kaydı
+  - status: `"started"` → `"paid_activated"` | `"failed"` | `"token_error"` | `"needs_review"`
+- `users/{uid}` — aktivasyon sonrası güncellenen alanlar:
+  - `plan: "plus"`, `premiumStatus: "active"`, `premiumSource: "paytr"`, `premiumUntil: ISO string`
+  - `premiumUntil` uzatma: `max(now, mevcutPremiumUntil)` — mevcut süresi silinmez
+- `adminLogs/{id}` — aktivasyon log kaydı
+
+### PayTR Panel Ayarları
+- Bildirim URL: `https://us-central1-tusoskop.cloudfunctions.net/paytrCallback`
+- Test modu: `PAYTR_TEST_MODE=1` env değişkeni ile açılır
+- İşyeri adı PayTR panelinden değiştirilir (kod değil): Mağaza Bilgileri → İşyeri Adı
+
+### Önemli Notlar / Geçmiş Hatalar
+- `premiumUntilToDate()` helper **`functions/paytr.js` içinde** tanımlı olmalı — `index.js`'de değil (ReferenceError yaşandı)
+- `PaytrCheckoutModal` mount anındaki `premiumUntil` değerini `baseUntilRef`'te saklar; sadece bu değerden farklı yeni bir `premiumUntil` gelince başarı sayar (mevcut Plus kullanıcıları hemen başarı görmez)
+- Ödeme başarısında `window.location.reload()` çağrılır → dashboard taze veriyle yüklenir
+
 ## Önemli Servisler
 
 | Dosya | Görev |
