@@ -154,6 +154,34 @@ plus_6m: { days: 180, amount: 359.4, sku: "TUSOSKOP_PLUS_6M" }
 - Tıklanınca dropdown: isim/e-posta, 5-renkli tema seçici, Destek linki, Geri bildirim, Çıkış
 - Tema seçici direkt görünmez — avatara basınca açılır
 
+## SEO ve Pazarlama (main)
+
+TUS özelliklerini agresif pazarlayan SEO altyapısı. Amaç: özellikleri rakamlarla öne çıkarıp organik görünürlüğü artırmak.
+
+### Tek doğruluk kaynağı: `src/seo/subjectData.js`
+- 11 dersin gerçek soru sayıları + her dersten **soru bankamızdan alınmış gerçek örnek soru** (id, konu, q, options, correct, exp).
+- `TOTAL_QUESTIONS` = branş sayımlarının toplamı (şu an 7077). `_manifest.json` `subjectCounts` ile aynı tutulmalı.
+- **"X+" pazarlama kuralı** (`questionCountLabel`): gerçek sayıyı **bir alt yüzlüğe** yuvarlar, asla abartmaz. `7077 → 7.000+`, `7200 → 7.100+`. Sayı arttıkça etiket otomatik büyür ama her zaman gerçeğin altında kalır.
+
+### İşlenen 6 pazarlama fikri
+1. **Soru sayısı vurgusu** — "7.000+ TUS tarzı soru, 11 dersten ve istediğin konudan seç" (hero, meta, stat kartları).
+2. **Branş bazlı 11 SEO sayfası** — `/tus-{ders}-sorulari` (örn. `/tus-anatomi-sorulari`). Her birinde dersin gerçek soru sayısı + örnek soru kartı (şık + doğru cevap + açıklama). "tus {ders} soruları" aramalarını hedefler.
+3. **Akıllı tekrar (FSRS)** — "yanlışını tam unutmadan önce karşına çıkarırız".
+4. **Ücretsiz limit** — "günde 30 soru ücretsiz" (`FREE_LIMITS` ile uyumlu).
+5. **Haftalık lig / sıralama** rekabeti.
+6. **AI çalışma planı**.
+
+### Üç render katmanı (hepsi aynı veriden beslenir)
+| Katman | Dosya | Görev |
+|--------|-------|-------|
+| React (canlı) | `src/components/seo/PublicSeoPages.jsx` | `PublicHome` + `SeoLandingPage`, örnek soru kartı, branş indeksi, footer |
+| Statik prerender | `scripts/generate-seo-pages.mjs` | `public/{slug}/index.html` + `sitemap.xml` + `robots.txt` üretir (build'de çalışır) |
+| Noscript ana sayfa | `scripts/render-home-seo.mjs` | JS'siz tarayıcı + AI botları (GPTBot/ClaudeBot/Perplexity) için `index.html` içine gömülür |
+
+- SEO sayfaları `seoContent.js`'teki `seoPages = [...contentSeoPages, ...subjectSeoPages]` dizisinden gelir. Routing `getSeoPageByPath` ile; yeni slug eklemek otomatik olarak routing + sitemap + prerender'a girer.
+- **FAQ JSON-LD ↔ sayfa hizalaması (önemli):** Şemaya konan FAQ, sayfada görünen FAQ ile **birebir aynı** olmalı (Google kuralı). `SeoLandingPage` ve üretici `slice(0,6)` ile görünen seti hem render'a hem şemaya verir; FAQ boşsa (legal sayfalar) FAQPage düğümü hiç eklenmez.
+- Footer'da branş linkleri kompakt: kısa ders adları (Anatomi, Biyokimya…), `flex-wrap` tek satır.
+
 ## Sık Yapılan İşlemler
 
 ### iOS'a değişiklik göndermek
