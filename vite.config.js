@@ -1,17 +1,20 @@
 ﻿import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-import { renderHomeSeoNoscript } from "./scripts/render-home-seo.mjs";
+import { renderHomeSeoStatic } from "./scripts/render-home-seo.mjs";
 
-// Ana sayfa (/) için JS'siz okunabilir içerik. AI tarama botları (GPTBot,
-// ClaudeBot, PerplexityBot) bu <noscript> bloğunu okur; JS'li kullanıcı görmez.
-function homeSeoNoscriptPlugin() {
+// Ana sayfa (/) için gerçek DOM fallback'i. SEO içeriği <noscript> içinde
+// DEĞİL, doğrudan #root içinde servis edilir: curl, JS'siz tarayıcı ve AI
+// tarama botları (GPTBot, ClaudeBot, PerplexityBot) içeriği okur. React mount
+// olunca createRoot #root içeriğini temizleyip PublicHome'u render eder.
+// Bot tespiti yoktur; herkese aynı HTML gider (cloaking değil).
+function homeSeoFallbackPlugin() {
   return {
-    name: "home-seo-noscript",
+    name: "home-seo-fallback",
     transformIndexHtml(html) {
       return html.replace(
         '<div id="root"></div>',
-        `<div id="root"></div>\n    ${renderHomeSeoNoscript()}`,
+        `<div id="root">${renderHomeSeoStatic()}</div>`,
       );
     },
   };
@@ -19,7 +22,7 @@ function homeSeoNoscriptPlugin() {
 
 export default defineConfig({
   cacheDir: ".vite-cache",
-  plugins: [react(), tailwindcss(), homeSeoNoscriptPlugin()],
+  plugins: [react(), tailwindcss(), homeSeoFallbackPlugin()],
   build: {
     modulePreload: false,
     rollupOptions: {

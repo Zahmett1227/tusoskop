@@ -7,7 +7,7 @@ import {
   questionCountLabel,
 } from "./subjectData.js";
 
-export const SITE_URL = "https://tusoskop.com";
+export const SITE_URL = "https://www.tusoskop.com";
 export const BRAND_NAME = "Tusoskop";
 export const APP_STORE_URL = "https://apps.apple.com/tr/app/tusoskop/id6776331691?l=tr";
 export const OG_IMAGE = `${SITE_URL}/tusoskop-mark.png`;
@@ -117,7 +117,7 @@ const contentSeoPages = [
     ],
     links: [
       ["Tusoskop özellikleri", "/tusoskop-ozellikleri"],
-      ["Tusoskop fiyatlandırma", "/tusoskop-fiyatlandirma"],
+      ["Tusoskop fiyatlandırma", "/fiyatlandirma"],
       ["Ana sayfa", "/"],
     ],
   },
@@ -464,11 +464,11 @@ const contentSeoPages = [
     ],
     links: [
       ["TUS çalışma takip sistemi", "/tus-calisma-takip-sistemi"],
-      ["Tusoskop fiyatlandırma", "/tusoskop-fiyatlandirma"],
+      ["Tusoskop fiyatlandırma", "/fiyatlandirma"],
     ],
   },
   {
-    slug: "tusoskop-fiyatlandirma",
+    slug: "fiyatlandirma",
     title: "Tusoskop Fiyatlandırma | TUS Soru Platformu",
     description:
       "Tusoskop fiyatlandırma seçeneklerini, ücretsiz kullanım imkanlarını ve TUS hazırlığı için sunulan dijital özellikleri incele.",
@@ -504,6 +504,42 @@ const contentSeoPages = [
     links: [
       ["Tusoskop özellikleri", "/tusoskop-ozellikleri"],
       ["Kullanım koşulları", "/kullanim-kosullari"],
+    ],
+  },
+  {
+    slug: "hakkimizda",
+    title: "Hakkımızda | Tusoskop TUS Hazırlık Platformu",
+    description:
+      "Tusoskop; TUS'a hazırlanan tıp öğrencileri ve hekimler için soru çözme, deneme, akıllı tekrar ve analiz sürecini bir araya getiren dijital çalışma platformudur.",
+    h1: "Hakkımızda",
+    intro:
+      "Tusoskop, TUS'a hazırlanan tıp öğrencileri ve hekimlerin soru çözme, deneme, tekrar ve analiz sürecini tek bir yerde toplamak için geliştirilmiş dijital bir çalışma platformudur. Amacımız; dağınık çalışma materyalleri yerine, çalıştığın konuyu hemen sınayabileceğin, yanlışlarını unutmadan tekrar edebileceğin ve gelişimini rakamlarla görebileceğin sade bir deneyim sunmaktır.",
+    sections: [
+      {
+        heading: "Neden Tusoskop?",
+        paragraphs: [
+          "TUS hazırlığında en çok kaybedilen şey zaman ve odak. Tusoskop, konu çalışmasından sonra doğru soruyu doğru anda karşına çıkararak çalışmanı verimli hale getirmeye odaklanır.",
+          "Platformun ana odağı video ders değildir; soru çözme, deneme, bilimsel aralıklı tekrar (FSRS), AI destekli çalışma planı ve performans analizidir.",
+        ],
+      },
+      {
+        heading: "Yaklaşımımız",
+        paragraphs: [
+          "Soru bankamızdaki içerikler TUS formatına uygun şekilde hazırlanır. Pazarlama dilinde abartıdan kaçınır, gerçek soru sayısını ve özellikleri olduğu gibi paylaşırız.",
+          "Akıllı tekrar sistemi, yanlış yaptığın soruları tam unutmaya başladığın aralıklarda yeniden karşına çıkararak kalıcı öğrenmeyi destekler.",
+        ],
+      },
+      {
+        heading: "İletişim",
+        paragraphs: [
+          "Soru, geri bildirim ve iş birliği talepleri için tusoskop.destek@gmail.com adresinden bize ulaşabilirsin.",
+        ],
+      },
+    ],
+    links: [
+      ["Tusoskop nedir?", "/tusoskop-nedir"],
+      ["Tusoskop özellikleri", "/tusoskop-ozellikleri"],
+      ["Fiyatlandırma", "/fiyatlandirma"],
     ],
   },
   {

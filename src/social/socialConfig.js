@@ -4,7 +4,7 @@
  */
 export const SOCIAL_CONFIG = {
   brandName: "Tusoskop",
-  siteUrl: "https://tusoskop.com",
+  siteUrl: "https://www.tusoskop.com",
   language: "tr",
   platform: "instagram",
 

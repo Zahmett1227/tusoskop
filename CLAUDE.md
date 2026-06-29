@@ -158,6 +158,18 @@ plus_6m: { days: 180, amount: 359.4, sku: "TUSOSKOP_PLUS_6M" }
 
 TUS özelliklerini agresif pazarlayan SEO altyapısı. Amaç: özellikleri rakamlarla öne çıkarıp organik görünürlüğü artırmak.
 
+### Route mimarisi (pathname tabanlı, react-router YOK)
+`App.jsx` içinde `pathRoute` (`window.location.pathname`'den) ile:
+- `/` → anonim kullanıcıya **`PublicHome`** (zengin public landing), girişliye uygulama.
+- `/giris` → sadece Apple/Google login ekranı (`noindex,follow`).
+- `/app` → uygulama alanı; anonimse login ekranı (`noindex,follow`).
+- SEO sayfaları (`getSeoPageByPath`) auth gate'ten ÖNCE `SeoLandingPage` ile render — auth beklemez.
+- **Login ekranı artık ana sayfayı bastırmaz.** Ana sayfa SEO içeriği `<noscript>` içinde DEĞİL; `#root` içine gerçek DOM olarak gömülür (`scripts/render-home-seo.mjs > renderHomeSeoStatic` → `vite.config.js` plugin). React mount olunca `PublicHome` yerini alır.
+- **Canonical base = `https://www.tusoskop.com`** (www). Tek kaynak: `seoContent.js > SITE_URL`. index.html, sitemap, robots, statik prerender ve React meta hepsi www.
+- Slug: `tusoskop-fiyatlandirma` → **`/fiyatlandirma`** (301 redirect: vercel.json + firebase.json). Yeni: **`/hakkimizda`**.
+- **iOS notu (cherry-pick):** iOS'ta anonim `/` artık `PublicHome` render eder. iOS açılışında doğrudan login isteniyorsa `ios-appstore-v1`'de `/` → `/giris` veya `Capacitor.isNativePlatform()` kontrolü gerekir.
+- Uzun vadeli mimari karşılaştırması: `SEO_MIGRATION_PLAN.md` (Astro vs Next vs mevcut Vite).
+
 ### Tek doğruluk kaynağı: `src/seo/subjectData.js`
 - 11 dersin gerçek soru sayıları + her dersten **soru bankamızdan alınmış gerçek örnek soru** (id, konu, q, options, correct, exp).
 - `TOTAL_QUESTIONS` = branş sayımlarının toplamı (şu an 7077). `_manifest.json` `subjectCounts` ile aynı tutulmalı.
@@ -176,7 +188,7 @@ TUS özelliklerini agresif pazarlayan SEO altyapısı. Amaç: özellikleri rakam
 |--------|-------|-------|
 | React (canlı) | `src/components/seo/PublicSeoPages.jsx` | `PublicHome` + `SeoLandingPage`, örnek soru kartı, branş indeksi, footer |
 | Statik prerender | `scripts/generate-seo-pages.mjs` | `public/{slug}/index.html` + `sitemap.xml` + `robots.txt` üretir (build'de çalışır) |
-| Noscript ana sayfa | `scripts/render-home-seo.mjs` | JS'siz tarayıcı + AI botları (GPTBot/ClaudeBot/Perplexity) için `index.html` içine gömülür |
+| Ana sayfa statik fallback | `scripts/render-home-seo.mjs` → `vite.config.js` | `renderHomeSeoStatic()` ile ana sayfa içeriği `#root` içine **gerçek DOM** olarak gömülür (noscript DEĞİL). curl/JS'siz tarayıcı/AI botları okur; React mount olunca `PublicHome` yerini alır |
 
 - SEO sayfaları `seoContent.js`'teki `seoPages = [...contentSeoPages, ...subjectSeoPages]` dizisinden gelir. Routing `getSeoPageByPath` ile; yeni slug eklemek otomatik olarak routing + sitemap + prerender'a girer.
 - **FAQ JSON-LD ↔ sayfa hizalaması (önemli):** Şemaya konan FAQ, sayfada görünen FAQ ile **birebir aynı** olmalı (Google kuralı). `SeoLandingPage` ve üretici `slice(0,6)` ile görünen seti hem render'a hem şemaya verir; FAQ boşsa (legal sayfalar) FAQPage düğümü hiç eklenmez.

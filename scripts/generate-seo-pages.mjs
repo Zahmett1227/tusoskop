@@ -155,11 +155,13 @@ const footerLinks = [
   ["TUS Soru Çözme Uygulaması", "/tus-soru-cozme-uygulamasi"],
   ["TUS Deneme Analizi", "/tus-deneme-analizi"],
   ["Tusoskop Özellikleri", "/tusoskop-ozellikleri"],
-  ["Fiyatlandırma", "/tusoskop-fiyatlandirma"],
+  ["Fiyatlandırma", "/fiyatlandirma"],
+  ["Hakkımızda", "/hakkimizda"],
   ["Sık Sorulan Sorular", "/tusoskop-sss"],
   ["Gizlilik Sözleşmesi", "/gizlilik-sozlesmesi"],
   ["Kullanım Koşulları", "/kullanim-kosullari"],
   ["App Store", APP_STORE_URL],
+  ["Giriş Yap", "/giris"],
 ];
 
 function renderHeader() {
@@ -173,10 +175,11 @@ function renderHeader() {
         <nav class="nav" aria-label="Ana bağlantılar">
           <a href="/tusoskop-nedir">Nedir?</a>
           <a href="/tusoskop-ozellikleri">Özellikler</a>
-          <a href="/tusoskop-fiyatlandirma">Fiyatlandırma</a>
+          <a href="/fiyatlandirma">Fiyatlandırma</a>
+          <a href="/hakkimizda">Hakkımızda</a>
           <a href="/tusoskop-sss">SSS</a>
         </nav>
-        <a class="cta" href="/">Hemen Başla</a>
+        <a class="cta" href="/giris">Giriş Yap</a>
       </div>
     </header>`;
 }

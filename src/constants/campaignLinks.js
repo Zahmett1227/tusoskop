@@ -1,7 +1,7 @@
 export const APP_STORE_APP_ID = "6776331691";
 export const APP_STORE_FALLBACK_URL =
   "https://apps.apple.com/tr/app/tusoskop/id6776331691?l=tr";
-export const SITE_HOME_URL = "https://tusoskop.com/";
+export const SITE_HOME_URL = "https://www.tusoskop.com/";
 export const CAMPAIGN_SOURCE = "instagram";
 
 const CAMPAIGN_PATTERN = /^[a-z0-9_-]{1,40}$/;
