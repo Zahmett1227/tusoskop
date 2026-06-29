@@ -221,14 +221,15 @@ function PublicHeader() {
         <nav aria-label="Ana bağlantılar" className="hidden items-center gap-5 text-sm font-bold text-slate-300 md:flex">
           <a className="hover:text-white" href="/tusoskop-nedir">Nedir?</a>
           <a className="hover:text-white" href="/tusoskop-ozellikleri">Özellikler</a>
-          <a className="hover:text-white" href="/tusoskop-fiyatlandirma">Fiyatlandırma</a>
+          <a className="hover:text-white" href="/fiyatlandirma">Fiyatlandırma</a>
+          <a className="hover:text-white" href="/hakkimizda">Hakkımızda</a>
           <a className="hover:text-white" href="/tusoskop-sss">SSS</a>
         </nav>
         <a
-          href="#basla"
+          href="/giris"
           className="rounded-2xl bg-emerald-300 px-4 py-2 text-sm font-black text-slate-950 shadow-lg shadow-emerald-950/20 transition hover:bg-emerald-200"
         >
-          Hemen Başla
+          Giriş Yap
         </a>
       </div>
     </header>
@@ -242,11 +243,13 @@ function PublicFooter() {
     ["TUS Soru Çözme Uygulaması", "/tus-soru-cozme-uygulamasi"],
     ["TUS Deneme Analizi", "/tus-deneme-analizi"],
     ["Tusoskop Özellikleri", "/tusoskop-ozellikleri"],
-    ["Fiyatlandırma", "/tusoskop-fiyatlandirma"],
+    ["Fiyatlandırma", "/fiyatlandirma"],
+    ["Hakkımızda", "/hakkimizda"],
     ["Sık Sorulan Sorular", "/tusoskop-sss"],
     ["Gizlilik Sözleşmesi", "/gizlilik-sozlesmesi"],
     ["Kullanım Koşulları", "/kullanim-kosullari"],
     ["App Store", APP_STORE_URL],
+    ["Giriş Yap", "/giris"],
   ];
 
   return (

@@ -1,7 +1,7 @@
 import React, { Suspense, lazy, useMemo, useState, useEffect, useRef, useCallback } from "react";
 import './index.css';
 import { initAnalytics, loginWithApple, loginWithGoogle, logout } from "./firebase";
-import { SeoLandingPage } from "./components/seo/PublicSeoPages";
+import { SeoLandingPage, PublicHome } from "./components/seo/PublicSeoPages";
 import { getSeoPageByPath } from "./seo/seoContent";
 import SignInOptions from "./components/auth/SignInOptions";
 import AppStoreBadge from "./components/AppStoreBadge";
@@ -137,6 +137,20 @@ export default function App() {
     return getSeoPageByPath(window.location.pathname);
   }, []);
 
+  // Pathname tabanlı hafif route ayrımı (react-router yok):
+  //   "/"        → anonim kullanıcıya public landing (PublicHome), girişliye uygulama
+  //   "/giris"   → sadece Apple/Google giriş ekranı
+  //   "/app"     → uygulama alanı (anonimse giriş ekranı)
+  // SEO sayfaları (publicSeoPage) ayrı ele alınır ve auth'tan bağımsızdır.
+  const pathRoute = useMemo(() => {
+    if (typeof window === "undefined") return "home";
+    const clean = window.location.pathname.replace(/\/+$/, "") || "/";
+    if (clean === "/giris") return "login";
+    if (clean === "/app") return "app";
+    if (clean === "/") return "home";
+    return "home";
+  }, []);
+
   const handleLoginWithGoogle = useCallback(async () => {
     try {
       await loginWithGoogle();
@@ -152,6 +166,15 @@ export default function App() {
       showToast(error?.userMessage || "Apple girişi başarısız oldu.", { type: "error" });
     }
   }, [showToast]);
+
+  // /giris ve /app gibi uygulama route'ları dizine eklenmemeli — robots meta'sını
+  // noindex'e çek (SEO sayfaları ve ana sayfa index,follow olarak kalır).
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    if (pathRoute !== "login" && pathRoute !== "app") return;
+    const meta = document.head.querySelector('meta[name="robots"]');
+    if (meta) meta.setAttribute("content", "noindex,follow");
+  }, [pathRoute]);
 
   useEffect(() => {
     const startAnalytics = () => initAnalytics();
@@ -572,6 +595,19 @@ export default function App() {
   }
 
   if (!user) {
+    // Anonim kullanıcı ana sayfada → zengin public landing (SEO içeriği gerçek DOM'da).
+    // Giriş ekranı sadece /giris ve /app altında gösterilir; ana sayfayı bastırmaz.
+    if (pathRoute === "home") {
+      return (
+        <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
+          <PublicHome
+            accentTheme={accentTheme}
+            onAppleLogin={handleLoginWithApple}
+            onGoogleLogin={handleLoginWithGoogle}
+          />
+        </div>
+      );
+    }
     return (
       <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
         <div
@@ -602,10 +638,10 @@ export default function App() {
             <p className="text-xs font-medium text-slate-500">iPhone'da daha hızlı: uygulamayı indir</p>
             <AppStoreBadge />
             <a
-              href="/tusoskop-nedir"
+              href="/"
               className="mt-1 text-xs font-semibold text-slate-500 underline-offset-4 transition hover:text-slate-300 hover:underline"
             >
-              Tusoskop nedir? →
+              ← Ana sayfaya dön
             </a>
           </div>
         </div>

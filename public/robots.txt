@@ -28,4 +28,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://tusoskop.com/sitemap.xml
+Sitemap: https://www.tusoskop.com/sitemap.xml
