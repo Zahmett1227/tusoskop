@@ -1,0 +1,3 @@
+{
+  "rewrites": [{ "source": "/((?!questions.json).*)", "destination": "/index.html" }]
+}
