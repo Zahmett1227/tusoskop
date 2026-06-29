@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Header from "./components/Header.jsx";
 import GameScreen from "./components/GameScreen.jsx";
+import SubjectBar from "./components/SubjectBar.jsx";
 import StatsModal from "./components/StatsModal.jsx";
 import HowToModal from "./components/HowToModal.jsx";
 import { useStats } from "./hooks/useStats.js";
@@ -14,6 +15,7 @@ export default function App() {
   const [loadError, setLoadError] = useState(false);
   const [mode, setMode] = useState("daily");
   const [practiceQ, setPracticeQ] = useState(null);
+  const [practiceSubject, setPracticeSubject] = useState(null);
   const [finished, setFinished] = useState(false);
   const [showStats, setShowStats] = useState(false);
   const [showHelp, setShowHelp] = useState(() => !localStorage.getItem(SEEN_HELP_KEY));
@@ -33,6 +35,16 @@ export default function App() {
 
   const daily = questions ? pickDaily(questions) : null;
   const savedDaily = loadDailyState(dKey);
+
+  // Pratik için branş listesi (soru sayısına göre azalan).
+  const subjects = useMemo(() => {
+    if (!questions) return [];
+    const counts = {};
+    for (const q of questions) counts[q.ders] = (counts[q.ders] || 0) + 1;
+    return Object.entries(counts)
+      .sort((a, b) => b[1] - a[1])
+      .map(([name, count]) => ({ name, count }));
+  }, [questions]);
 
   // Sayfa açılışında günün oyunu zaten bitmişse footer'ı göster.
   useEffect(() => {
@@ -64,12 +76,15 @@ export default function App() {
     [record, dIndex, dKey, savedDaily]
   );
 
-  function startPractice() {
+  function startPractice(subject = practiceSubject) {
     if (!questions?.length) return;
+    const pool = subject ? questions.filter((q) => q.ders === subject) : questions;
+    if (!pool.length) return;
     let q;
     do {
-      q = questions[Math.floor(Math.random() * questions.length)];
-    } while (daily && q.id === daily.question.id && questions.length > 1);
+      q = pool[Math.floor(Math.random() * pool.length)];
+    } while (daily && q.id === daily.question.id && pool.length > 1);
+    setPracticeSubject(subject);
     setPracticeQ(q);
     setMode("practice");
     setFinished(false);
@@ -105,6 +120,14 @@ export default function App() {
           savedState={savedDaily}
           onPersist={handleDailyPersist}
           onFinish={handleDailyFinish}
+        />
+      )}
+
+      {questions && mode === "practice" && (
+        <SubjectBar
+          subjects={subjects}
+          active={practiceSubject}
+          onSelect={(s) => startPractice(s)}
         />
       )}
 

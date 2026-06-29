@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { buildShareText, share } from "../lib/share.js";
+import { renderResultCard, shareImageBlob } from "../lib/shareImage.js";
 
 // Tusoskop dönüşüm hunisi: oyun sonunda kaynak + CTA.
 const TUSOSKOP_URL = "https://tusoskop.com";
@@ -13,6 +14,8 @@ export default function ResultScreen({
   maxGuesses,
 }) {
   const [shareMsg, setShareMsg] = useState("");
+  const [imgMsg, setImgMsg] = useState("");
+  const [imgBusy, setImgBusy] = useState(false);
 
   async function handleShare() {
     const text = buildShareText({ number, guesses, solved, maxGuesses });
@@ -21,6 +24,31 @@ export default function ResultScreen({
       res === "shared" ? "Paylaşıldı" : res === "copied" ? "Panoya kopyalandı" : "Kopyalanamadı"
     );
     setTimeout(() => setShareMsg(""), 2000);
+  }
+
+  async function handleShareImage() {
+    setImgBusy(true);
+    try {
+      if (document.fonts?.ready) await document.fonts.ready;
+      const blob = await renderResultCard({
+        number,
+        guesses,
+        solved,
+        maxGuesses,
+        ders: question.ders,
+        konu: question.konu,
+      });
+      const res = await shareImageBlob(
+        blob,
+        buildShareText({ number, guesses, solved, maxGuesses })
+      );
+      setImgMsg(res === "shared" ? "Paylaşıldı" : "Görsel indirildi");
+    } catch {
+      setImgMsg("Görsel oluşturulamadı");
+    } finally {
+      setImgBusy(false);
+      setTimeout(() => setImgMsg(""), 2500);
+    }
   }
 
   return (
@@ -50,13 +78,23 @@ export default function ResultScreen({
 
       {/* Paylaş (yalnızca günün vakası) */}
       {mode === "daily" && (
-        <button
-          type="button"
-          onClick={handleShare}
-          className="w-full rounded-2xl bg-brand-600 py-3.5 font-bold text-white shadow transition hover:bg-brand-700 active:scale-[0.99]"
-        >
-          {shareMsg || "Sonucu Paylaş"}
-        </button>
+        <div className="grid grid-cols-2 gap-2">
+          <button
+            type="button"
+            onClick={handleShare}
+            className="rounded-2xl bg-brand-600 py-3.5 font-bold text-white shadow transition hover:bg-brand-700 active:scale-[0.99]"
+          >
+            {shareMsg || "Sonucu Paylaş"}
+          </button>
+          <button
+            type="button"
+            onClick={handleShareImage}
+            disabled={imgBusy}
+            className="rounded-2xl border border-brand-300 bg-white py-3.5 font-bold text-brand-700 shadow-sm transition hover:bg-brand-50 active:scale-[0.99] disabled:opacity-60"
+          >
+            {imgMsg || (imgBusy ? "Hazırlanıyor…" : "🖼️ Görsel")}
+          </button>
+        </div>
       )}
 
       {/* Tusoskop CTA */}
