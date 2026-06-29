@@ -60,12 +60,13 @@ export default function ResultScreen({
         }`}
       >
         {solved ? (
-          <>
-            🎉 Doğru tanı! {guesses.length}. tahminde bildin.
-          </>
+          <>🎉 Doğru! {guesses.length}. tahminde bildin.</>
         ) : (
-          <>Bu sefer olmadı — doğru cevap işaretlendi.</>
+          <>Bu sefer olmadı.</>
         )}
+        <div className="mt-1 text-base font-extrabold text-slate-800">
+          {question.answer}
+        </div>
       </div>
 
       {/* Açıklama */}

@@ -1,8 +1,9 @@
-import { MAX_GUESSES } from "./GameScreen.jsx";
-
 export default function StatsModal({ stats, onClose }) {
   const winRate = stats.played ? Math.round((stats.wins / stats.played) * 100) : 0;
-  const maxBar = Math.max(1, ...Object.values(stats.distribution || {}));
+  const dist = stats.distribution || {};
+  const maxBar = Math.max(1, ...Object.values(dist));
+  // Tahmin hakkı vakaya göre değişir; dağılımdaki en yüksek anahtara kadar göster.
+  const rows = Math.max(6, ...Object.keys(dist).map(Number).filter(Number.isFinite));
 
   return (
     <Overlay onClose={onClose}>
@@ -17,9 +18,9 @@ export default function StatsModal({ stats, onClose }) {
 
       <h3 className="mb-2 text-sm font-bold text-slate-700">Tahmin Dağılımı</h3>
       <div className="space-y-1.5">
-        {Array.from({ length: MAX_GUESSES }).map((_, i) => {
+        {Array.from({ length: rows }).map((_, i) => {
           const n = i + 1;
-          const count = stats.distribution?.[n] || 0;
+          const count = dist[n] || 0;
           const pct = Math.round((count / maxBar) * 100);
           return (
             <div key={n} className="flex items-center gap-2 text-sm">

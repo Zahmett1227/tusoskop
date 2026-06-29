@@ -1,56 +1,60 @@
 import { useEffect, useMemo, useState } from "react";
 import ResultScreen from "./ResultScreen.jsx";
+import AnswerInput from "./AnswerInput.jsx";
+import { isCorrect } from "../lib/match.js";
 
-export const MAX_GUESSES = 4;
+// Tahmin hakkı = ipucu sayısı + 1 (son ipucu açılınca bir hak daha kalır).
+export function maxGuessesFor(question) {
+  return question.clues.length + 1;
+}
 
-// Tek bir vakayı oynatır. Açılan ipucu = 1 + yanlış tahmin sayısı.
+// Tek bir vakayı oynatır (serbest metin / tanı modeli).
 export default function GameScreen({
   question,
   number,
   mode,
+  dictionary,
   savedState,
   onPersist,
   onFinish,
 }) {
-  // guesses: tıklanan şık indeksleri sırayla
+  // guesses: yazılan tanı metinleri (sırayla)
   const [guesses, setGuesses] = useState(() => savedState?.guesses || []);
   const [shakeKey, setShakeKey] = useState(0);
 
-  // Soru değişince (pratik modunda) durumu sıfırla.
   useEffect(() => {
     setGuesses(savedState?.guesses || []);
   }, [question.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const wrongCount = guesses.filter((g) => g !== question.correct).length;
-  const solved = guesses.includes(question.correct);
-  const lost = !solved && wrongCount >= MAX_GUESSES;
+  const maxGuesses = maxGuessesFor(question);
+  const records = useMemo(
+    () => guesses.map((g) => ({ text: g, correct: isCorrect(g, question.answer) })),
+    [guesses, question.answer]
+  );
+  const solved = records.some((r) => r.correct);
+  const wrongCount = records.filter((r) => !r.correct).length;
+  const lost = !solved && guesses.length >= maxGuesses;
   const finished = solved || lost;
-
   const cluesShown = Math.min(1 + wrongCount, question.clues.length);
 
-  const guessRecords = useMemo(
-    () => guesses.map((g) => ({ correct: g === question.correct })),
-    [guesses, question.correct]
-  );
-
-  // Durum kalıcılığı (günlük mod) + bitiş bildirimi.
   useEffect(() => {
     onPersist?.({ guesses, finished, solved });
     if (finished) {
       onFinish?.({
         solved,
-        guessNumber: solved ? guesses.length : MAX_GUESSES,
-        guesses: guessRecords,
+        guessNumber: solved ? guesses.length : maxGuesses,
+        guesses: records.map((r) => ({ correct: r.correct })),
       });
     }
   }, [finished]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  function handleGuess(idx) {
-    if (finished || guesses.includes(idx)) return;
-    const correct = idx === question.correct;
-    setGuesses((g) => [...g, idx]);
-    if (!correct) setShakeKey((k) => k + 1);
+  function handleGuess(text) {
+    if (finished) return;
+    setGuesses((g) => [...g, text]);
+    if (!isCorrect(text, question.answer)) setShakeKey((k) => k + 1);
   }
+
+  const wrongGuesses = records.filter((r) => !r.correct);
 
   return (
     <div className="mx-auto max-w-2xl px-4 pb-28 pt-5">
@@ -67,13 +71,9 @@ export default function GameScreen({
 
       {/* Tahmin göstergesi */}
       <div className="mb-4 flex gap-1.5">
-        {Array.from({ length: MAX_GUESSES }).map((_, i) => {
-          const g = guessRecords[i];
-          const cls = !g
-            ? "bg-slate-200"
-            : g.correct
-              ? "bg-brand-500"
-              : "bg-rose-400";
+        {Array.from({ length: maxGuesses }).map((_, i) => {
+          const r = records[i];
+          const cls = !r ? "bg-slate-200" : r.correct ? "bg-brand-500" : "bg-rose-400";
           return <div key={i} className={`h-1.5 flex-1 rounded-full ${cls}`} />;
         })}
       </div>
@@ -103,34 +103,29 @@ export default function GameScreen({
         {question.prompt}
       </div>
 
-      {/* Şıklar */}
-      <div className="mt-4 grid gap-2.5">
-        {question.options.map((opt, idx) => {
-          const picked = guesses.includes(idx);
-          const isCorrect = idx === question.correct;
-          let cls =
-            "border-slate-200 bg-white text-slate-800 hover:border-brand-400 hover:bg-brand-50";
-          if (finished && isCorrect)
-            cls = "border-brand-500 bg-brand-50 text-brand-800 font-semibold";
-          else if (picked && !isCorrect)
-            cls = "border-rose-200 bg-rose-50 text-rose-400 line-through";
-          else if (finished) cls = "border-slate-200 bg-white text-slate-400";
-          return (
-            <button
-              key={idx}
-              type="button"
-              disabled={finished || picked}
-              onClick={() => handleGuess(idx)}
-              className={`flex items-start gap-3 rounded-2xl border p-3.5 text-left text-[15px] leading-snug transition active:scale-[0.99] disabled:cursor-default ${cls}`}
+      {/* Tahmin girişi */}
+      {!finished && (
+        <div className="mt-4">
+          <AnswerInput dictionary={dictionary} onGuess={handleGuess} />
+          <p className="mt-2 px-1 text-xs text-slate-400">
+            {maxGuesses - wrongCount} tahmin hakkın kaldı
+          </p>
+        </div>
+      )}
+
+      {/* Yanlış denenenler */}
+      {wrongGuesses.length > 0 && (
+        <div className="mt-4 flex flex-wrap gap-2">
+          {wrongGuesses.map((r, i) => (
+            <span
+              key={i}
+              className="rounded-full border border-rose-200 bg-rose-50 px-3 py-1 text-sm text-rose-500 line-through"
             >
-              <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-current text-xs font-bold">
-                {String.fromCharCode(65 + idx)}
-              </span>
-              <span>{opt}</span>
-            </button>
-          );
-        })}
-      </div>
+              {r.text}
+            </span>
+          ))}
+        </div>
+      )}
 
       {finished && (
         <ResultScreen
@@ -138,8 +133,8 @@ export default function GameScreen({
           number={number}
           mode={mode}
           solved={solved}
-          guesses={guessRecords}
-          maxGuesses={MAX_GUESSES}
+          guesses={records.map((r) => ({ correct: r.correct }))}
+          maxGuesses={maxGuesses}
         />
       )}
     </div>

@@ -12,6 +12,7 @@ const SEEN_HELP_KEY = "tanidle.seenHelp";
 
 export default function App() {
   const [questions, setQuestions] = useState(null);
+  const [dictionary, setDictionary] = useState([]);
   const [loadError, setLoadError] = useState(false);
   const [mode, setMode] = useState("daily");
   const [practiceQ, setPracticeQ] = useState(null);
@@ -25,11 +26,16 @@ export default function App() {
   const dIndex = dayIndexFromDate();
   const recordedRef = useRef(false);
 
-  // Veri yükle.
+  // Veri yükle (vakalar + otomatik tamamlama sözlüğü).
   useEffect(() => {
-    fetch("/questions.json")
-      .then((r) => (r.ok ? r.json() : Promise.reject()))
-      .then((data) => setQuestions(data))
+    Promise.all([
+      fetch("/questions.json").then((r) => (r.ok ? r.json() : Promise.reject())),
+      fetch("/answers.json").then((r) => (r.ok ? r.json() : [])),
+    ])
+      .then(([qs, dict]) => {
+        setQuestions(qs);
+        setDictionary(dict);
+      })
       .catch(() => setLoadError(true));
   }, []);
 
@@ -60,20 +66,27 @@ export default function App() {
   }
 
   const handleDailyPersist = useCallback(
-    (state) => saveDailyState(dKey, { ...state, recorded: recordedRef.current }),
+    (state) => {
+      const saved = loadDailyState(dKey);
+      saveDailyState(dKey, { ...state, recorded: saved?.recorded || recordedRef.current });
+    },
     [dKey]
   );
 
   const handleDailyFinish = useCallback(
     (result) => {
       setFinished(true);
-      if (recordedRef.current || savedDaily?.recorded) return;
+      const saved = loadDailyState(dKey);
+      if (recordedRef.current || saved?.recorded) {
+        recordedRef.current = true;
+        return;
+      }
       recordedRef.current = true;
       record({ ...result, dayIndex: dIndex });
-      saveDailyState(dKey, { guesses: [], finished: true, ...result, recorded: true, solved: result.solved });
+      saveDailyState(dKey, { ...(saved || {}), finished: true, recorded: true });
       setTimeout(() => setShowStats(true), 900);
     },
-    [record, dIndex, dKey, savedDaily]
+    [record, dIndex, dKey]
   );
 
   function startPractice(subject = practiceSubject) {
@@ -117,6 +130,7 @@ export default function App() {
           question={daily.question}
           number={daily.number}
           mode="daily"
+          dictionary={dictionary}
           savedState={savedDaily}
           onPersist={handleDailyPersist}
           onFinish={handleDailyFinish}
@@ -137,6 +151,7 @@ export default function App() {
           question={practiceQ}
           number={daily?.number}
           mode="practice"
+          dictionary={dictionary}
           onFinish={() => setFinished(true)}
         />
       )}

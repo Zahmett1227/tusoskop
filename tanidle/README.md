@@ -1,12 +1,15 @@
 # Tanıdle 🩺
 
-Günlük TUS klinik vaka tahmin oyunu — **Doctordle**'ın Türkçe / TUS uyarlaması.
+Günlük TUS klinik vaka **tanı** tahmin oyunu — **Doctordle**'ın Türkçe / TUS
+uyarlaması.
 
-Her gün bir klinik vaka. İlk ipucu açık başlar; her yanlış tahmin yeni bir ipucu
-açar. Ne kadar az ipucuyla doğru tanıyı/yanıtı bulursan o kadar iyi.
+Her gün bir klinik vaka. İlk ipucu açık başlar; **tanıyı yazarsın** (yazdıkça
+otomatik tamamlama önerileri çıkar — "ap" → *Akut apandisit*). Her yanlış tahmin
+yeni bir ipucu açar. Ne kadar az ipucuyla doğru tanıyı bulursan o kadar iyi.
 
 Vakalar [Tusoskop](https://tusoskop.com) TUS soru bankasındaki gerçek klinik
-vignette'lerden otomatik üretilir (cümle cümle ipucu yapısı).
+vignette'lerden otomatik üretilir (cümle cümle ipucu yapısı). Sadece "en olası
+tanı" soran sorular alınır; cevap = yazılacak tanı adı.
 
 ## Mimari
 
@@ -38,8 +41,10 @@ node scripts/build-questions.mjs /path/to/tusoskop/src/data/questionChunks
 ```
 
 Pipeline klinik dersleri (Dahiliye, Pediatri, Genel Cerrahi, Kadın Hastalıkları
-ve Doğum, Küçük Stajlar) tarar; çok cümleli vignette'leri ipucu setlerine çevirir.
-Şu an **2009 vaka** üretiliyor (~5.5 yıllık günlük bulmaca).
+ve Doğum, Küçük Stajlar) tarar; çok cümleli vignette'leri ipucu setlerine çevirir
+ve sadece tanı sorularını alır. Çıktı: `public/questions.json` (vakalar) +
+`public/answers.json` (otomatik tamamlama sözlüğü). Şu an **251 tanı vakası**,
+**236 benzersiz tanı** üretiliyor (Tusoskop büyüdükçe artar).
 
 ## Ortam Değişkenleri
 

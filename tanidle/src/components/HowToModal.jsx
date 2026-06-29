@@ -10,14 +10,17 @@ export default function HowToModal({ onClose }) {
           <span>Her gün bir <strong>klinik vaka</strong>. İlk ipucu açık başlar.</span>
         </li>
         <li className="flex gap-3">
-          <span className="text-xl">🎯</span>
-          <span>Soruyu okuyup şıklardan <strong>doğru tanıyı/yanıtı</strong> seç.</span>
+          <span className="text-xl">⌨️</span>
+          <span>
+            <strong>Tanıyı yaz</strong> — yazdıkça öneriler çıkar (örn. "ap" →
+            <em> Akut apandisit</em>). Öneriye dokun ya da Enter'a bas.
+          </span>
         </li>
         <li className="flex gap-3">
           <span className="text-xl">🔓</span>
           <span>
-            Her <strong>yanlış tahmin</strong> yeni bir ipucu açar. Toplam{" "}
-            <strong>4 hakkın</strong> var.
+            Her <strong>yanlış tahmin</strong> yeni bir ipucu açar. İpucu sayısı
+            kadar (+1) hakkın var.
           </span>
         </li>
         <li className="flex gap-3">
