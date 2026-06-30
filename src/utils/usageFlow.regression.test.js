@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 
 const appSource = readFileSync(
-  join(dirname(fileURLToPath(import.meta.url)), "../App.jsx"),
+  join(dirname(fileURLToPath(import.meta.url)), "../AppAuthenticated.jsx"),
   "utf8"
 );
 

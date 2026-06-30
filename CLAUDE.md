@@ -158,8 +158,14 @@ plus_6m: { days: 180, amount: 359.4, sku: "TUSOSKOP_PLUS_6M" }
 
 TUS özelliklerini agresif pazarlayan SEO altyapısı. Amaç: özellikleri rakamlarla öne çıkarıp organik görünürlüğü artırmak.
 
+### Auth lazy-load (App / AppAuthenticated ayrımı)
+- `src/App.jsx` = **hafif public kabuk**, firebase import ETMEZ. SEO sayfalarını (`SeoLandingPage`) ve anonim `/` (`PublicHome`) doğrudan render eder.
+- `src/AppAuthenticated.jsx` = firebase + Firestore + tüm uygulama; **`lazy(() => import("./AppAuthenticated"))`** ile yalnızca `/giris`, `/app`, mevcut oturum veya giriş butonuna tıklanınca yüklenir.
+- Giriş butonu (PublicHome): `App.startLogin` → `await import("./firebase")` (tıklayınca lazy). `SignInOptions` artık firebase import etmez (handler dışarıdan gelir).
+- Hafif oturum işareti: `localStorage["tusoskop_session"]` — `useAppAuthBootstrap` girişte set/çıkışta temizler; `App.jsx` bunu okuyup mevcut oturumda uygulamayı doğrudan yükler. **Sonuç:** `/` ve SEO route'larında Firebase Auth SDK'sı/iframe'i hiç yüklenmez (curl/Playwright ile doğrulandı).
+
 ### Route mimarisi (pathname tabanlı, react-router YOK)
-`App.jsx` içinde `pathRoute` (`window.location.pathname`'den) ile:
+`App.jsx` (+ `AppAuthenticated.jsx`) içinde `pathRoute` (`window.location.pathname`'den) ile:
 - `/` → anonim kullanıcıya **`PublicHome`** (zengin public landing), girişliye uygulama.
 - `/giris` → sadece Apple/Google login ekranı (`noindex,follow`).
 - `/app` → uygulama alanı; anonimse login ekranı (`noindex,follow`).

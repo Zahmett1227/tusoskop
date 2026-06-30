@@ -229,7 +229,7 @@ describe("QuestionSetupScreen kaynak guard'ları", () => {
 
 describe("App.jsx QuestionSetupScreen prop bağlantısı", () => {
   const appSource = readFileSync(
-    join(dirname(fileURLToPath(import.meta.url)), "../App.jsx"),
+    join(dirname(fileURLToPath(import.meta.url)), "../AppAuthenticated.jsx"),
     "utf8"
   );
 

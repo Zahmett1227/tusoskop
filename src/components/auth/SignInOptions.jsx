@@ -1,5 +1,4 @@
 import React from "react";
-import { loginWithApple, loginWithGoogle } from "../../firebase";
 
 function GoogleMark() {
   return (
@@ -32,8 +31,12 @@ export default function SignInOptions({
   const primaryHover = accentTheme?.primaryHover || "hover:bg-emerald-300";
   const glow = accentTheme?.glow || "";
 
-  const handleApple = onAppleLogin ?? loginWithApple;
-  const handleGoogle = onGoogleLogin ?? loginWithGoogle;
+  // Auth firebase'i çağıran handler'lar dışarıdan (App) verilir; SignInOptions
+  // firebase'i import etmez, böylece public SEO sayfalarına (PublicHome) auth
+  // SDK'sı sızmaz. Handler yoksa buton no-op.
+  const noop = () => {};
+  const handleApple = onAppleLogin ?? noop;
+  const handleGoogle = onGoogleLogin ?? noop;
 
   return (
     <div className="w-full max-w-sm space-y-3">
