@@ -685,6 +685,7 @@ const subjectSeoPages = SUBJECTS.map((subject) => ({
   isSubject: true,
   subject: subject.name,
   questionCount: subject.count,
+  topics: subject.topics ?? [],
   sample: subject.sample,
   stats: [
     { value: `${subject.count}`, label: `${subject.name} sorusu` },
