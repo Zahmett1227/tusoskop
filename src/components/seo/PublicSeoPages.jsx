@@ -247,6 +247,7 @@ function PublicHeader() {
         <nav aria-label="Ana bağlantılar" className="hidden items-center gap-5 text-sm font-bold text-slate-300 md:flex">
           <a className="hover:text-white" href="/tusoskop-nedir">Nedir?</a>
           <a className="hover:text-white" href="/tusoskop-ozellikleri">Özellikler</a>
+          <a className="hover:text-white" href="/tus-puan-hesaplama">Puan Hesaplama</a>
           <a className="hover:text-white" href="/fiyatlandirma">Fiyatlandırma</a>
           <a className="hover:text-white" href="/hakkimizda">Hakkımızda</a>
           <a className="hover:text-white" href="/tusoskop-sss">SSS</a>
