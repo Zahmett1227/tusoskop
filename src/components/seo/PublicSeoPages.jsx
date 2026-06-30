@@ -78,6 +78,28 @@ function SampleQuestionCard({ sample, subject }) {
   );
 }
 
+function SubjectTopics({ subject, topics }) {
+  if (!topics?.length) return null;
+  return (
+    <section aria-label={`${subject} konuları`} className="mt-8">
+      <h2 className="text-2xl font-black tracking-tight">{subject} konuları</h2>
+      <p className="mt-2 text-base leading-relaxed text-slate-300">
+        Tusoskop&apos;ta {subject} dersini şu konulara ayırarak konu konu çözebilirsin:
+      </p>
+      <ul className="mt-4 flex flex-wrap gap-2">
+        {topics.map((topic) => (
+          <li
+            key={topic}
+            className="rounded-2xl border border-slate-700 bg-slate-900/55 px-3.5 py-2 text-sm font-bold text-slate-200"
+          >
+            {topic}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 function SubjectIndex() {
   return (
     <section className="px-4 py-12">
@@ -584,6 +606,7 @@ export function SeoLandingPage({ page }) {
               </div>
             ) : null}
             <SampleQuestionCard sample={page.sample} subject={page.subject} />
+            {page.isSubject ? <SubjectTopics subject={page.subject} topics={page.topics} /> : null}
             {page.tool === "score" ? <TusScoreCalculator /> : null}
             <div className="mt-10 space-y-9">
               {page.sections.map((section) => (

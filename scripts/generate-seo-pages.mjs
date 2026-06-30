@@ -147,6 +147,10 @@ const css = `
   .footer-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;font-size:14px;font-weight:750}
   .footer-tags-title{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin:6px 0 8px}
   .footer-tags{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;font-weight:750}
+  .topics{margin-top:30px}
+  .topics h2{margin-bottom:8px}
+  .topic-chips{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  .topic-chips li{border:1px solid #334155;background:rgba(15,23,42,.55);border-radius:16px;padding:8px 13px;font-size:14px;font-weight:800;color:#e2e8f0}
   .calc{margin-top:30px;border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:24px;padding:22px}
   .calc-grid{display:grid;gap:14px;grid-template-columns:1fr 1fr}
   .calc-sec{border:1px solid #1e293b;background:rgba(2,6,23,.5);border-radius:18px;padding:16px}
@@ -233,6 +237,17 @@ function renderStats(stats) {
   return `<div class="stats">
     ${stats.map((s) => `<div class="stat"><b>${escapeHtml(s.value)}</b><span>${escapeHtml(s.label)}</span></div>`).join("")}
   </div>`;
+}
+
+function renderTopics(subject, topics) {
+  if (!topics?.length) return "";
+  return `<section class="topics" aria-label="${escapeHtml(subject)} konuları">
+    <h2>${escapeHtml(subject)} konuları</h2>
+    <p>Tusoskop'ta ${escapeHtml(subject)} dersini şu konulara ayırarak konu konu çözebilirsin:</p>
+    <ul class="topic-chips">
+      ${topics.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}
+    </ul>
+  </section>`;
 }
 
 function renderSample(sample, subject) {
@@ -352,6 +367,7 @@ function renderPage(page, isLegal = false) {
       <div class="answer">${escapeHtml(page.intro)}</div>
       ${renderStats(page.stats)}
       ${renderSample(page.sample, page.subject)}
+      ${page.isSubject ? renderTopics(page.subject, page.topics) : ""}
       ${page.tool === "score" ? renderScoreTool() : ""}
       ${appStore}
       <div class="sections">
