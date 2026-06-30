@@ -9,6 +9,12 @@
       "source": "/tusoskop-fiyatlandirma",
       "destination": "/fiyatlandirma",
       "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "tusoskop.com" }],
+      "destination": "https://www.tusoskop.com/:path*",
+      "permanent": true
     }
   ],
   "headers": [

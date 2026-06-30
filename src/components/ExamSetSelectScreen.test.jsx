@@ -9,7 +9,7 @@ import { EXAM_SETS } from "../data/exams";
 import ExamSetSelectScreen from "./ExamSetSelectScreen";
 
 const appSource = readFileSync(
-  join(dirname(fileURLToPath(import.meta.url)), "../App.jsx"),
+  join(dirname(fileURLToPath(import.meta.url)), "../AppAuthenticated.jsx"),
   "utf8"
 );
 

@@ -38,7 +38,7 @@ vi.mock("../hooks/useSwipeHandlers", () => ({
 }));
 
 const appSource = readFileSync(
-  join(dirname(fileURLToPath(import.meta.url)), "../App.jsx"),
+  join(dirname(fileURLToPath(import.meta.url)), "../AppAuthenticated.jsx"),
   "utf8"
 );
 const examStateSource = readFileSync(

@@ -9,7 +9,7 @@ const hookSource = readFileSync(
 );
 
 const appSource = readFileSync(
-  join(dirname(fileURLToPath(import.meta.url)), "../App.jsx"),
+  join(dirname(fileURLToPath(import.meta.url)), "../AppAuthenticated.jsx"),
   "utf8"
 );
 

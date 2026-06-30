@@ -41,6 +41,17 @@ export function useAppAuthBootstrap(setView) {
       } finally {
         setUser(currentUser);
         setIsAuthReady(true);
+        // Hafif oturum işareti: App.jsx (firebase'siz kabuk) bunu okuyup mevcut
+        // oturumda asıl uygulamayı doğrudan yükler; çıkışta temizlenir.
+        try {
+          if (currentUser?.uid) {
+            window.localStorage.setItem("tusoskop_session", "1");
+          } else {
+            window.localStorage.removeItem("tusoskop_session");
+          }
+        } catch {
+          /* localStorage erişilemiyorsa yok say */
+        }
         if (!currentUser) {
           setIsAdmin(false);
           setUserData(null);
