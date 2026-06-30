@@ -41,6 +41,7 @@ const seoLinks = [
   ["TUS Hazırlık Platformu", "/tus-hazirlik-platformu"],
   ["TUS Soru Çözme Uygulaması", "/tus-soru-cozme-uygulamasi"],
   ["TUS Deneme Analizi", "/tus-deneme-analizi"],
+  ["TUS Puan Hesaplama", "/tus-puan-hesaplama"],
   ["TUS Konu Bazlı Soru Çözme", "/tus-konu-bazli-soru-cozme"],
   ["TUS Yanlış Takibi", "/tus-yanlis-takibi"],
   ["Tusoskop Özellikleri", "/tusoskop-ozellikleri"],

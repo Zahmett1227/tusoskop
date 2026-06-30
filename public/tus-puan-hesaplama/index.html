@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>TUS Puan Hesaplama — Net ve Tahmini TUS Puanı | Tusoskop</title>
+    <meta name="description" content="TUS puan hesaplama aracı: Temel ve Klinik Tıp net sayını gir, tahmini TUS puanını anında gör. Net nasıl hesaplanır, yanlış doğruyu götürür mü? Ücretsiz." />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://www.tusoskop.com/tus-puan-hesaplama" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <meta property="og:title" content="TUS Puan Hesaplama — Net ve Tahmini TUS Puanı | Tusoskop" />
+    <meta property="og:description" content="TUS puan hesaplama aracı: Temel ve Klinik Tıp net sayını gir, tahmini TUS puanını anında gör. Net nasıl hesaplanır, yanlış doğruyu götürür mü? Ücretsiz." />
+    <meta property="og:url" content="https://www.tusoskop.com/tus-puan-hesaplama" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.tusoskop.com/tusoskop-mark.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TUS Puan Hesaplama — Net ve Tahmini TUS Puanı | Tusoskop" />
+    <meta name="twitter:description" content="TUS puan hesaplama aracı: Temel ve Klinik Tıp net sayını gir, tahmini TUS puanını anında gör. Net nasıl hesaplanır, yanlış doğruyu götürür mü? Ücretsiz." />
+    <meta name="twitter:image" content="https://www.tusoskop.com/tusoskop-mark.png" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Tusoskop","url":"https://www.tusoskop.com","logo":"https://www.tusoskop.com/tusoskop-mark.png","sameAs":["https://apps.apple.com/tr/app/tusoskop/id6776331691?l=tr"]},{"@type":"WebSite","name":"Tusoskop","url":"https://www.tusoskop.com","inLanguage":"tr-TR"},{"@type":"SoftwareApplication","name":"Tusoskop","applicationCategory":"EducationalApplication","operatingSystem":"iOS, Web","description":"Tusoskop; TUS'a hazırlanan tıp öğrencileri ve hekimler için 7.000+ yüksek kaliteli TUS tarzı soruyu 11 dersten ve istediğin konudan seçerek çözmeni sağlar. Konu bazlı test, deneme çözümü, yanlış/favori takibi, bilimsel aralıklı tekrar (FSRS), AI destekli çalışma planı, haftalık lig ve performans analizini tek bir web ve mobil platformda sunar.","url":"https://www.tusoskop.com","sameAs":["https://apps.apple.com/tr/app/tusoskop/id6776331691?l=tr"],"offers":{"@type":"Offer","priceCurrency":"TRY","availability":"https://schema.org/InStock"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":"https://www.tusoskop.com"},{"@type":"ListItem","position":2,"name":"TUS Puan Hesaplama","item":"https://www.tusoskop.com/tus-puan-hesaplama"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"TUS'ta yanlış doğruyu götürür mü?","acceptedAnswer":{"@type":"Answer","text":"Evet. Her 4 yanlış 1 doğruyu götürür. Net, doğru − yanlış/4 ile hesaplanır; boşlar neti etkilemez."}},{"@type":"Question","name":"TUS puanı nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Temel Tıp ve Klinik Tıp için ayrı netler hesaplanır (net = doğru − yanlış/4), ÖSYM bu netleri standardize edip ağırlıklandırarak TUS puanını oluşturur."}},{"@type":"Question","name":"Kaç net kaç TUS puanı eder?","acceptedAnswer":{"@type":"Answer","text":"Yaklaşık olarak: 75 net ~56, 95 net ~62, 120 net ~68, 140 net ~72 puan civarındadır. Bu değerler tahminidir ve dönemden döneme değişir."}},{"@type":"Question","name":"Bu hesaplama kesin mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır, tahminidir. Gerçek TUS puanı ÖSYM'nin dönem ortalaması ve standart sapmasına göre standardize edilir; bu araç geçmiş eğilimlere dayalı yaklaşık bir değer verir."}}]}]}</script>
+    <style>
+  *,*::before,*::after{box-sizing:border-box}
+  html{background:#020617;color:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+  body{margin:0;background:#020617;color:#f8fafc;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .topbar{position:sticky;top:0;z-index:20;border-bottom:1px solid #1e293b;background:rgba(2,6,23,.9);backdrop-filter:blur(18px)}
+  .topbar-inner{max-width:1120px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:900;color:#fff}
+  .brand img{width:36px;height:36px;border-radius:10px}
+  .nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap;font-size:14px;font-weight:750;color:#cbd5e1}
+  .nav a:hover,.footer a:hover{color:#fff}
+  .cta{display:inline-flex;align-items:center;justify-content:center;border-radius:16px;background:#6ee7b7;color:#020617;font-weight:900;padding:10px 16px}
+  main{max-width:900px;margin:0 auto;padding:54px 18px}
+  .eyebrow{font-size:12px;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:#6ee7b7}
+  h1{font-size:clamp(36px,6vw,56px);line-height:1.08;letter-spacing:-.03em;margin:16px 0 0;color:#fff}
+  h2{font-size:clamp(24px,3vw,32px);line-height:1.18;letter-spacing:-.02em;margin:0 0 12px;color:#fff}
+  p{margin:0;color:#cbd5e1}
+  .answer{margin-top:28px;border:1px solid rgba(110,231,183,.28);background:rgba(110,231,183,.1);border-radius:22px;padding:20px;color:#ecfdf5;font-size:17px}
+  .stats{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+  .stat{border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:18px;padding:16px;text-align:center}
+  .stat b{display:block;font-size:26px;font-weight:900;color:#6ee7b7;letter-spacing:-.02em}
+  .stat span{display:block;margin-top:4px;font-size:13px;color:#94a3b8;font-weight:700}
+  .qcard{margin-top:30px;border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:24px;padding:22px}
+  .qcard .badge{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#020617;background:#6ee7b7;border-radius:999px;padding:5px 11px}
+  .qcard .qkonu{margin-left:8px;font-size:13px;font-weight:800;color:#94a3b8}
+  .qcard .qtext{margin-top:14px;font-size:17px;font-weight:750;color:#f8fafc;line-height:1.5}
+  .qopts{margin-top:16px;display:grid;gap:9px}
+  .qopt{display:flex;gap:10px;align-items:flex-start;border:1px solid #334155;border-radius:14px;padding:11px 13px;font-size:15px;color:#e2e8f0}
+  .qopt .qkey{font-weight:900;color:#94a3b8;flex:0 0 auto}
+  .qopt.correct{border-color:#6ee7b7;background:rgba(110,231,183,.12);color:#ecfdf5}
+  .qopt.correct .qkey{color:#6ee7b7}
+  .qexp{margin-top:16px;border-top:1px solid #1e293b;padding-top:14px}
+  .qexp strong{color:#6ee7b7;font-weight:900}
+  .qexp p{margin-top:6px;font-size:15px}
+  .sections{margin-top:44px;display:grid;gap:34px}
+  .section{border-bottom:1px solid #1e293b;padding-bottom:28px}
+  .section:last-child{border-bottom:0}
+  .section p+p{margin-top:12px}
+  .related,.faq{margin-top:38px;border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:26px;padding:20px}
+  .link-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .pill{border:1px solid #334155;border-radius:16px;padding:9px 13px;color:#e2e8f0;font-size:14px;font-weight:800}
+  .pill:hover{border-color:#6ee7b7}
+  details{border-top:1px solid #1e293b;padding:16px 0}
+  details:first-of-type{border-top:0}
+  summary{cursor:pointer;font-weight:900;color:#fff}
+  details p{margin-top:9px;font-size:15px}
+  .appstore{display:inline-flex;margin-top:16px;border:1px solid #334155;background:#000;border-radius:16px;padding:10px 14px;font-weight:900}
+  .footer{border-top:1px solid #1e293b;background:#020617;color:#94a3b8}
+  .footer-inner{max-width:1120px;margin:0 auto;padding:36px 18px;display:grid;gap:28px}
+  .footer p{font-size:14px;max-width:480px}
+  .footer-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;font-size:14px;font-weight:750}
+  .footer-tags-title{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin:6px 0 8px}
+  .footer-tags{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;font-weight:750}
+  .calc{margin-top:30px;border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:24px;padding:22px}
+  .calc-grid{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+  .calc-sec{border:1px solid #1e293b;background:rgba(2,6,23,.5);border-radius:18px;padding:16px}
+  .calc-sec h3{margin:0;font-size:15px;color:#fff}
+  .calc-sec .net{float:right;font-size:14px;font-weight:800;color:#6ee7b7}
+  .calc-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+  .calc-field label{display:block;font-size:13px;font-weight:700;color:#cbd5e1;margin-bottom:6px}
+  .calc-field input{width:100%;border:1px solid #334155;background:#020617;color:#fff;border-radius:14px;padding:11px 13px;font-size:16px;font-weight:700;outline:none}
+  .calc-field input:focus{border-color:#6ee7b7}
+  .calc-out{display:grid;grid-template-columns:1fr 2fr;gap:12px;margin-top:16px}
+  .calc-box{border:1px solid #1e293b;background:#020617;border-radius:16px;padding:14px;text-align:center}
+  .calc-box.hi{border-color:rgba(110,231,183,.4);background:rgba(110,231,183,.1)}
+  .calc-box small{display:block;font-size:12px;font-weight:700;color:#94a3b8}
+  .calc-box.hi small{color:#a7f3d0}
+  .calc-box b{display:block;margin-top:4px;font-size:22px;font-weight:900;color:#fff}
+  .calc-box.hi b{font-size:30px;color:#6ee7b7}
+  .calc-box .band{display:block;margin-top:4px;font-size:12px;font-weight:700;color:#a7f3d0}
+  .calc-note{margin-top:14px;font-size:13px;color:#94a3b8}
+  @media (max-width:560px){.calc-grid{grid-template-columns:1fr}.calc-out{grid-template-columns:1fr}}
+  @media (max-width:720px){.nav{display:none}main{padding-top:38px}.topbar-inner{padding-inline:14px}}
+</style>
+  </head>
+  <body>
+    
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/">
+          <img src="/tusoskop-mark.png" alt="" width="36" height="36" />
+          <span>Tusoskop</span>
+        </a>
+        <nav class="nav" aria-label="Ana bağlantılar">
+          <a href="/tusoskop-nedir">Nedir?</a>
+          <a href="/tusoskop-ozellikleri">Özellikler</a>
+          <a href="/fiyatlandirma">Fiyatlandırma</a>
+          <a href="/hakkimizda">Hakkımızda</a>
+          <a href="/tusoskop-sss">SSS</a>
+        </nav>
+        <a class="cta" href="/giris">Giriş Yap</a>
+      </div>
+    </header>
+    <main>
+      <p class="eyebrow">Tusoskop Rehberi</p>
+      <h1>TUS Puan Hesaplama</h1>
+      <div class="answer">Temel Tıp ve Klinik Tıp bölümlerindeki doğru ve yanlış sayılarını gir; netlerini ve tahmini TUS puanını anında hesapla. Hesaplama net üzerinden yapılır (doğru − yanlış/4) ve sonuç tahminidir; gerçek TUS puanı ÖSYM'nin ilgili dönemdeki standardizasyonuna göre belirlenir.</div>
+      
+      
+      <section class="calc" aria-label="TUS puan hesaplama aracı">
+      <div class="calc-grid">
+        <div class="calc-sec">
+          <h3>Temel Tıp Bilimleri <span class="net">Net: <span id="temel-net">0</span></span></h3>
+          <div class="calc-row">
+            <div class="calc-field"><label for="td">Doğru</label><input id="td" type="number" inputmode="numeric" min="0" max="120" placeholder="0" /></div>
+            <div class="calc-field"><label for="ty">Yanlış</label><input id="ty" type="number" inputmode="numeric" min="0" max="120" placeholder="0" /></div>
+          </div>
+        </div>
+        <div class="calc-sec">
+          <h3>Klinik Tıp Bilimleri <span class="net">Net: <span id="klinik-net">0</span></span></h3>
+          <div class="calc-row">
+            <div class="calc-field"><label for="kd">Doğru</label><input id="kd" type="number" inputmode="numeric" min="0" max="120" placeholder="0" /></div>
+            <div class="calc-field"><label for="ky">Yanlış</label><input id="ky" type="number" inputmode="numeric" min="0" max="120" placeholder="0" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="calc-out">
+        <div class="calc-box"><small>Toplam Net</small><b id="toplam-net">0</b></div>
+        <div class="calc-box hi"><small>Tahmini TUS Puanı</small><b id="tahmini-puan">—</b><span class="band" id="puan-band">Doğru ve yanlış sayını gir</span></div>
+      </div>
+      <p class="calc-note">Sonuç tahminidir. Net = doğru − yanlış/4. Gerçek TUS puanı ÖSYM'nin ilgili dönemdeki ortalama ve standart sapmasına göre standardize edilir.</p>
+      <script>
+        (function(){
+          var ANCHORS=[[40,45],[60,52],[75,56],[95,62],[110,66],[120,68],[140,72],[160,75]],SEC=120;
+          function r1(x){return Math.round(x*10)/10;}
+          function net(c,w){var n=(Number(c)||0)-(Number(w)||0)/4;return n>0?r1(n):0;}
+          function est(n){n=Number(n);if(!isFinite(n)||n<=0)return 0;var f=ANCHORS[0],l=ANCHORS[ANCHORS.length-1];if(n<=f[0])return r1(f[1]*n/f[0]);if(n>=l[0])return l[1];for(var i=0;i<ANCHORS.length-1;i++){var a=ANCHORS[i],b=ANCHORS[i+1];if(n>=a[0]&&n<=b[0]){var t=(n-a[0])/(b[0]-a[0]);return r1(a[1]+t*(b[1]-a[1]));}}return l[1];}
+          function band(s){s=Number(s)||0;if(s>=68)return"Yüksek · Rekabetçi branşlar için güçlü bir aralık.";if(s>=60)return"İyi · Birçok branş için yeterli; netlerini biraz daha yükselt.";if(s>=54)return"Orta · Temel ve klinik açıklarını kapatmaya odaklan.";return"Geliştirilmeli · Düzenli soru çözümü ve tekrarla net artışı hedefle.";}
+          function cap(el){var x=el.value.replace(/[^0-9]/g,'');if(x!=='')x=String(Math.min(Number(x),SEC));el.value=x;return x;}
+          var td=document.getElementById('td'),ty=document.getElementById('ty'),kd=document.getElementById('kd'),ky=document.getElementById('ky');
+          function upd(){var tn=net(cap(td),cap(ty)),kn=net(cap(kd),cap(ky)),sum=r1(tn+kn);document.getElementById('temel-net').textContent=tn;document.getElementById('klinik-net').textContent=kn;document.getElementById('toplam-net').textContent=sum;var has=td.value||ty.value||kd.value||ky.value;var sc=est(sum);document.getElementById('tahmini-puan').textContent=has?sc:'—';document.getElementById('puan-band').textContent=has?band(sc):'Doğru ve yanlış sayını gir';}
+          [td,ty,kd,ky].forEach(function(el){el.addEventListener('input',upd);});upd();
+        })();
+      </script>
+    </section>
+      
+      <div class="sections">
+        
+          <section class="section">
+            <h2>TUS puanı nasıl hesaplanır?</h2>
+            <p>TUS'ta Temel Tıp Bilimleri (120 soru) ve Klinik Tıp Bilimleri (120 soru) için ayrı netler hesaplanır. Net = doğru sayısı − (yanlış sayısı / 4) formülüyle bulunur.</p><p>ÖSYM bu netleri standart puana çevirir, iki bölümü ağırlıklandırarak TUS puanını oluşturur. Yukarıdaki araç, toplam netine karşılık gelen tahmini bir TUS puanı verir.</p>
+          </section>
+        
+          <section class="section">
+            <h2>Net nedir? Yanlış doğruyu götürür mü?</h2>
+            <p>Evet, TUS'ta her 4 yanlış 1 doğruyu götürür. Net, doğru sayısından yanlışların dörtte birinin çıkarılmasıyla bulunur; boş bırakılan sorular neti etkilemez.</p><p>Örneğin 100 doğru ve 20 yanlış yapan bir aday için net = 100 − (20 / 4) = 95 olur.</p>
+          </section>
+        
+          <section class="section">
+            <h2>Temel Tıp ve Klinik Tıp Bilimleri</h2>
+            <p>Temel Tıp Bilimleri anatomi, fizyoloji, biyokimya, mikrobiyoloji, patoloji ve farmakoloji gibi alanları; Klinik Tıp Bilimleri ise dahiliye, pediatri, genel cerrahi, kadın hastalıkları ve doğum ile küçük stajları kapsar.</p><p>Çoğu uzmanlık dalı yerleştirmesinde iki bölümün neti birlikte değerlendirilir; bu yüzden hesaplayıcıda her iki bölümü de girmen önerilir.</p>
+          </section>
+        
+          <section class="section">
+            <h2>Tahmini puan ile gerçek TUS puanı farkı</h2>
+            <p>Buradaki sonuç tahminidir. Gerçek TUS puanı; sınava giren adayların o dönemdeki ortalaması ve standart sapmasına göre standardize edildiği için dönemden döneme değişir.</p><p>Aracı net hedefi belirlemek, denemelerdeki gelişimini kabaca yorumlamak ve hangi puan aralığında olduğunu görmek için kullan; kesin yerleştirme puanı için ÖSYM sonuç belgeni esas al.</p>
+          </section>
+        
+      </div>
+      <nav class="related" aria-label="İlgili sayfalar">
+        <h2>İlgili bağlantılar</h2>
+        <div class="link-list">
+          <a class="pill" href="/tus-deneme-analizi">TUS deneme analizi</a><a class="pill" href="/tus-soru-cozme-uygulamasi">TUS soru çözme uygulaması</a>
+        </div>
+      </nav>
+      <section class="faq">
+        <h2>Sık sorulan sorular</h2>
+        
+          <details>
+            <summary>TUS'ta yanlış doğruyu götürür mü?</summary>
+            <p>Evet. Her 4 yanlış 1 doğruyu götürür. Net, doğru − yanlış/4 ile hesaplanır; boşlar neti etkilemez.</p>
+          </details>
+        
+          <details>
+            <summary>TUS puanı nasıl hesaplanır?</summary>
+            <p>Temel Tıp ve Klinik Tıp için ayrı netler hesaplanır (net = doğru − yanlış/4), ÖSYM bu netleri standardize edip ağırlıklandırarak TUS puanını oluşturur.</p>
+          </details>
+        
+          <details>
+            <summary>Kaç net kaç TUS puanı eder?</summary>
+            <p>Yaklaşık olarak: 75 net ~56, 95 net ~62, 120 net ~68, 140 net ~72 puan civarındadır. Bu değerler tahminidir ve dönemden döneme değişir.</p>
+          </details>
+        
+          <details>
+            <summary>Bu hesaplama kesin mi?</summary>
+            <p>Hayır, tahminidir. Gerçek TUS puanı ÖSYM'nin dönem ortalaması ve standart sapmasına göre standardize edilir; bu araç geçmiş eğilimlere dayalı yaklaşık bir değer verir.</p>
+          </details>
+        
+      </section>
+    </main>
+    
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <strong style="color:#fff">© 2026 Tusoskop</strong>
+          <p>TUS hazırlığında soru çözme, deneme, AI çalışma planı, haftalık lig ve analiz sürecini destekleyen dijital platform.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer bağlantıları">
+          <a href="/tusoskop-nedir">Tusoskop Nedir?</a><a href="/tus-hazirlik-platformu">TUS Hazırlık Platformu</a><a href="/tus-soru-cozme-uygulamasi">TUS Soru Çözme Uygulaması</a><a href="/tus-deneme-analizi">TUS Deneme Analizi</a><a href="/tus-puan-hesaplama">TUS Puan Hesaplama</a><a href="/tusoskop-ozellikleri">Tusoskop Özellikleri</a><a href="/fiyatlandirma">Fiyatlandırma</a><a href="/hakkimizda">Hakkımızda</a><a href="/tusoskop-sss">Sık Sorulan Sorular</a><a href="/gizlilik-sozlesmesi">Gizlilik Sözleşmesi</a><a href="/kullanim-kosullari">Kullanım Koşulları</a><a href="https://apps.apple.com/tr/app/tusoskop/id6776331691?l=tr">App Store</a><a href="/giris">Giriş Yap</a>
+        </nav>
+        <nav aria-label="Branşa göre TUS soruları">
+          <p class="footer-tags-title">Branşa göre sorular</p>
+          <div class="footer-tags">
+            <a href="/tus-anatomi-sorulari">Anatomi</a><a href="/tus-biyokimya-sorulari">Biyokimya</a><a href="/tus-dahiliye-sorulari">Dahiliye</a><a href="/tus-farmakoloji-sorulari">Farmakoloji</a><a href="/tus-fizyoloji-sorulari">Fizyoloji</a><a href="/tus-genel-cerrahi-sorulari">Genel Cerrahi</a><a href="/tus-kadin-dogum-sorulari">Kadın Hastalıkları ve Doğum</a><a href="/tus-kucuk-stajlar-sorulari">Küçük Stajlar</a><a href="/tus-mikrobiyoloji-sorulari">Mikrobiyoloji</a><a href="/tus-patoloji-sorulari">Patoloji</a><a href="/tus-pediatri-sorulari">Pediatri</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

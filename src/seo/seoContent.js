@@ -272,6 +272,73 @@ const contentSeoPages = [
     links: [
       ["TUS deneme çözme platformu", "/tus-deneme-cozme-platformu"],
       ["TUS çalışma takip sistemi", "/tus-calisma-takip-sistemi"],
+      ["TUS puan hesaplama", "/tus-puan-hesaplama"],
+    ],
+  },
+  {
+    slug: "tus-puan-hesaplama",
+    tool: "score",
+    title: "TUS Puan Hesaplama — Net ve Tahmini TUS Puanı | Tusoskop",
+    description:
+      "TUS puan hesaplama aracı: Temel ve Klinik Tıp net sayını gir, tahmini TUS puanını anında gör. Net nasıl hesaplanır, yanlış doğruyu götürür mü? Ücretsiz.",
+    h1: "TUS Puan Hesaplama",
+    intro:
+      "Temel Tıp ve Klinik Tıp bölümlerindeki doğru ve yanlış sayılarını gir; netlerini ve tahmini TUS puanını anında hesapla. Hesaplama net üzerinden yapılır (doğru − yanlış/4) ve sonuç tahminidir; gerçek TUS puanı ÖSYM'nin ilgili dönemdeki standardizasyonuna göre belirlenir.",
+    sections: [
+      {
+        heading: "TUS puanı nasıl hesaplanır?",
+        paragraphs: [
+          "TUS'ta Temel Tıp Bilimleri (120 soru) ve Klinik Tıp Bilimleri (120 soru) için ayrı netler hesaplanır. Net = doğru sayısı − (yanlış sayısı / 4) formülüyle bulunur.",
+          "ÖSYM bu netleri standart puana çevirir, iki bölümü ağırlıklandırarak TUS puanını oluşturur. Yukarıdaki araç, toplam netine karşılık gelen tahmini bir TUS puanı verir.",
+        ],
+      },
+      {
+        heading: "Net nedir? Yanlış doğruyu götürür mü?",
+        paragraphs: [
+          "Evet, TUS'ta her 4 yanlış 1 doğruyu götürür. Net, doğru sayısından yanlışların dörtte birinin çıkarılmasıyla bulunur; boş bırakılan sorular neti etkilemez.",
+          "Örneğin 100 doğru ve 20 yanlış yapan bir aday için net = 100 − (20 / 4) = 95 olur.",
+        ],
+      },
+      {
+        heading: "Temel Tıp ve Klinik Tıp Bilimleri",
+        paragraphs: [
+          "Temel Tıp Bilimleri anatomi, fizyoloji, biyokimya, mikrobiyoloji, patoloji ve farmakoloji gibi alanları; Klinik Tıp Bilimleri ise dahiliye, pediatri, genel cerrahi, kadın hastalıkları ve doğum ile küçük stajları kapsar.",
+          "Çoğu uzmanlık dalı yerleştirmesinde iki bölümün neti birlikte değerlendirilir; bu yüzden hesaplayıcıda her iki bölümü de girmen önerilir.",
+        ],
+      },
+      {
+        heading: "Tahmini puan ile gerçek TUS puanı farkı",
+        paragraphs: [
+          "Buradaki sonuç tahminidir. Gerçek TUS puanı; sınava giren adayların o dönemdeki ortalaması ve standart sapmasına göre standardize edildiği için dönemden döneme değişir.",
+          "Aracı net hedefi belirlemek, denemelerdeki gelişimini kabaca yorumlamak ve hangi puan aralığında olduğunu görmek için kullan; kesin yerleştirme puanı için ÖSYM sonuç belgeni esas al.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "TUS'ta yanlış doğruyu götürür mü?",
+        answer:
+          "Evet. Her 4 yanlış 1 doğruyu götürür. Net, doğru − yanlış/4 ile hesaplanır; boşlar neti etkilemez.",
+      },
+      {
+        question: "TUS puanı nasıl hesaplanır?",
+        answer:
+          "Temel Tıp ve Klinik Tıp için ayrı netler hesaplanır (net = doğru − yanlış/4), ÖSYM bu netleri standardize edip ağırlıklandırarak TUS puanını oluşturur.",
+      },
+      {
+        question: "Kaç net kaç TUS puanı eder?",
+        answer:
+          "Yaklaşık olarak: 75 net ~56, 95 net ~62, 120 net ~68, 140 net ~72 puan civarındadır. Bu değerler tahminidir ve dönemden döneme değişir.",
+      },
+      {
+        question: "Bu hesaplama kesin mi?",
+        answer:
+          "Hayır, tahminidir. Gerçek TUS puanı ÖSYM'nin dönem ortalaması ve standart sapmasına göre standardize edilir; bu araç geçmiş eğilimlere dayalı yaklaşık bir değer verir.",
+      },
+    ],
+    links: [
+      ["TUS deneme analizi", "/tus-deneme-analizi"],
+      ["TUS soru çözme uygulaması", "/tus-soru-cozme-uygulamasi"],
     ],
   },
   {

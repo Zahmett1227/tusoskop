@@ -14,6 +14,7 @@ import {
   sitemapEntries,
   subjectIndexLinks,
 } from "../src/seo/seoContent.js";
+import { TUS_SCORE_ANCHORS, TUS_SECTION_QUESTIONS } from "../src/seo/tusScoring.js";
 
 const publicDir = path.resolve("public");
 
@@ -146,6 +147,25 @@ const css = `
   .footer-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;font-size:14px;font-weight:750}
   .footer-tags-title{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin:6px 0 8px}
   .footer-tags{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;font-weight:750}
+  .calc{margin-top:30px;border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:24px;padding:22px}
+  .calc-grid{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+  .calc-sec{border:1px solid #1e293b;background:rgba(2,6,23,.5);border-radius:18px;padding:16px}
+  .calc-sec h3{margin:0;font-size:15px;color:#fff}
+  .calc-sec .net{float:right;font-size:14px;font-weight:800;color:#6ee7b7}
+  .calc-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+  .calc-field label{display:block;font-size:13px;font-weight:700;color:#cbd5e1;margin-bottom:6px}
+  .calc-field input{width:100%;border:1px solid #334155;background:#020617;color:#fff;border-radius:14px;padding:11px 13px;font-size:16px;font-weight:700;outline:none}
+  .calc-field input:focus{border-color:#6ee7b7}
+  .calc-out{display:grid;grid-template-columns:1fr 2fr;gap:12px;margin-top:16px}
+  .calc-box{border:1px solid #1e293b;background:#020617;border-radius:16px;padding:14px;text-align:center}
+  .calc-box.hi{border-color:rgba(110,231,183,.4);background:rgba(110,231,183,.1)}
+  .calc-box small{display:block;font-size:12px;font-weight:700;color:#94a3b8}
+  .calc-box.hi small{color:#a7f3d0}
+  .calc-box b{display:block;margin-top:4px;font-size:22px;font-weight:900;color:#fff}
+  .calc-box.hi b{font-size:30px;color:#6ee7b7}
+  .calc-box .band{display:block;margin-top:4px;font-size:12px;font-weight:700;color:#a7f3d0}
+  .calc-note{margin-top:14px;font-size:13px;color:#94a3b8}
+  @media (max-width:560px){.calc-grid{grid-template-columns:1fr}.calc-out{grid-template-columns:1fr}}
   @media (max-width:720px){.nav{display:none}main{padding-top:38px}.topbar-inner{padding-inline:14px}}
 `;
 
@@ -154,6 +174,7 @@ const footerLinks = [
   ["TUS Hazırlık Platformu", "/tus-hazirlik-platformu"],
   ["TUS Soru Çözme Uygulaması", "/tus-soru-cozme-uygulamasi"],
   ["TUS Deneme Analizi", "/tus-deneme-analizi"],
+  ["TUS Puan Hesaplama", "/tus-puan-hesaplama"],
   ["Tusoskop Özellikleri", "/tusoskop-ozellikleri"],
   ["Fiyatlandırma", "/fiyatlandirma"],
   ["Hakkımızda", "/hakkimizda"],
@@ -230,6 +251,49 @@ function renderSample(sample, subject) {
   </section>`;
 }
 
+// TUS puan hesaplama aracı — statik HTML + satır-içi vanilla JS.
+// React hesaplayıcısıyla (PublicSeoPages.jsx) aynı çapa tablosunu (tusScoring.js)
+// kullanır; production'da bu statik sürüm servis edilir.
+function renderScoreTool() {
+  const anchors = JSON.stringify(TUS_SCORE_ANCHORS);
+  return `<section class="calc" aria-label="TUS puan hesaplama aracı">
+      <div class="calc-grid">
+        <div class="calc-sec">
+          <h3>Temel Tıp Bilimleri <span class="net">Net: <span id="temel-net">0</span></span></h3>
+          <div class="calc-row">
+            <div class="calc-field"><label for="td">Doğru</label><input id="td" type="number" inputmode="numeric" min="0" max="${TUS_SECTION_QUESTIONS}" placeholder="0" /></div>
+            <div class="calc-field"><label for="ty">Yanlış</label><input id="ty" type="number" inputmode="numeric" min="0" max="${TUS_SECTION_QUESTIONS}" placeholder="0" /></div>
+          </div>
+        </div>
+        <div class="calc-sec">
+          <h3>Klinik Tıp Bilimleri <span class="net">Net: <span id="klinik-net">0</span></span></h3>
+          <div class="calc-row">
+            <div class="calc-field"><label for="kd">Doğru</label><input id="kd" type="number" inputmode="numeric" min="0" max="${TUS_SECTION_QUESTIONS}" placeholder="0" /></div>
+            <div class="calc-field"><label for="ky">Yanlış</label><input id="ky" type="number" inputmode="numeric" min="0" max="${TUS_SECTION_QUESTIONS}" placeholder="0" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="calc-out">
+        <div class="calc-box"><small>Toplam Net</small><b id="toplam-net">0</b></div>
+        <div class="calc-box hi"><small>Tahmini TUS Puanı</small><b id="tahmini-puan">—</b><span class="band" id="puan-band">Doğru ve yanlış sayını gir</span></div>
+      </div>
+      <p class="calc-note">Sonuç tahminidir. Net = doğru − yanlış/4. Gerçek TUS puanı ÖSYM'nin ilgili dönemdeki ortalama ve standart sapmasına göre standardize edilir.</p>
+      <script>
+        (function(){
+          var ANCHORS=${anchors},SEC=${TUS_SECTION_QUESTIONS};
+          function r1(x){return Math.round(x*10)/10;}
+          function net(c,w){var n=(Number(c)||0)-(Number(w)||0)/4;return n>0?r1(n):0;}
+          function est(n){n=Number(n);if(!isFinite(n)||n<=0)return 0;var f=ANCHORS[0],l=ANCHORS[ANCHORS.length-1];if(n<=f[0])return r1(f[1]*n/f[0]);if(n>=l[0])return l[1];for(var i=0;i<ANCHORS.length-1;i++){var a=ANCHORS[i],b=ANCHORS[i+1];if(n>=a[0]&&n<=b[0]){var t=(n-a[0])/(b[0]-a[0]);return r1(a[1]+t*(b[1]-a[1]));}}return l[1];}
+          function band(s){s=Number(s)||0;if(s>=68)return"Yüksek · Rekabetçi branşlar için güçlü bir aralık.";if(s>=60)return"İyi · Birçok branş için yeterli; netlerini biraz daha yükselt.";if(s>=54)return"Orta · Temel ve klinik açıklarını kapatmaya odaklan.";return"Geliştirilmeli · Düzenli soru çözümü ve tekrarla net artışı hedefle.";}
+          function cap(el){var x=el.value.replace(/[^0-9]/g,'');if(x!=='')x=String(Math.min(Number(x),SEC));el.value=x;return x;}
+          var td=document.getElementById('td'),ty=document.getElementById('ty'),kd=document.getElementById('kd'),ky=document.getElementById('ky');
+          function upd(){var tn=net(cap(td),cap(ty)),kn=net(cap(kd),cap(ky)),sum=r1(tn+kn);document.getElementById('temel-net').textContent=tn;document.getElementById('klinik-net').textContent=kn;document.getElementById('toplam-net').textContent=sum;var has=td.value||ty.value||kd.value||ky.value;var sc=est(sum);document.getElementById('tahmini-puan').textContent=has?sc:'—';document.getElementById('puan-band').textContent=has?band(sc):'Doğru ve yanlış sayını gir';}
+          [td,ty,kd,ky].forEach(function(el){el.addEventListener('input',upd);});upd();
+        })();
+      </script>
+    </section>`;
+}
+
 function renderPage(page, isLegal = false) {
   const pagePath = `/${page.slug}`;
   // Sayfada görünen FAQ seti — legal sayfalarda FAQ gösterilmez.
@@ -288,6 +352,7 @@ function renderPage(page, isLegal = false) {
       <div class="answer">${escapeHtml(page.intro)}</div>
       ${renderStats(page.stats)}
       ${renderSample(page.sample, page.subject)}
+      ${page.tool === "score" ? renderScoreTool() : ""}
       ${appStore}
       <div class="sections">
         ${page.sections.map((section) => `
