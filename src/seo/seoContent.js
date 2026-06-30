@@ -677,6 +677,7 @@ function relatedSubjectLinks(currentSlug) {
   return [
     ...others.map((s) => [`TUS ${s.name} Soruları`, `/${s.slug}`]),
     ["TUS Soru Çözme Uygulaması", "/tus-soru-cozme-uygulamasi"],
+    ["TUS Puan Hesaplama", "/tus-puan-hesaplama"],
   ];
 }
 
