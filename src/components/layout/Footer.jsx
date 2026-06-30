@@ -7,6 +7,7 @@ const SEO_FOOTER_LINKS = [
   ["TUS Hazırlık Platformu", "/tus-hazirlik-platformu"],
   ["TUS Soru Çözme Uygulaması", "/tus-soru-cozme-uygulamasi"],
   ["TUS Deneme Analizi", "/tus-deneme-analizi"],
+  ["TUS Puan Hesaplama", "/tus-puan-hesaplama"],
   ["Tusoskop Özellikleri", "/tusoskop-ozellikleri"],
   ["Fiyatlandırma", "/fiyatlandirma"],
   ["Hakkımızda", "/hakkimizda"],

@@ -1,6 +1,10 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import SignInOptions from "../auth/SignInOptions";
 import AppStoreBadge from "../AppStoreBadge";
+import {
+  TUS_SECTION_QUESTIONS,
+  calculateTusResult,
+} from "../../seo/tusScoring";
 import {
   APP_STORE_URL,
   BRAND_NAME,
@@ -242,6 +246,7 @@ function PublicFooter() {
     ["TUS Hazırlık Platformu", "/tus-hazirlik-platformu"],
     ["TUS Soru Çözme Uygulaması", "/tus-soru-cozme-uygulamasi"],
     ["TUS Deneme Analizi", "/tus-deneme-analizi"],
+    ["TUS Puan Hesaplama", "/tus-puan-hesaplama"],
     ["Tusoskop Özellikleri", "/tusoskop-ozellikleri"],
     ["Fiyatlandırma", "/fiyatlandirma"],
     ["Hakkımızda", "/hakkimizda"],
@@ -440,6 +445,112 @@ export function PublicHome({ accentTheme, onAppleLogin, onGoogleLogin }) {
   );
 }
 
+function ScoreInput({ id, label, value, onChange }) {
+  return (
+    <label htmlFor={id} className="flex flex-col gap-1.5">
+      <span className="text-sm font-bold text-slate-300">{label}</span>
+      <input
+        id={id}
+        type="number"
+        inputMode="numeric"
+        min="0"
+        max={TUS_SECTION_QUESTIONS}
+        value={value}
+        onChange={onChange}
+        placeholder="0"
+        className="w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-base font-bold text-white outline-none focus:border-emerald-300/70"
+      />
+    </label>
+  );
+}
+
+function ScoreSection({ title, dogruId, yanlisId, dogru, yanlis, onDogru, onYanlis, net }) {
+  return (
+    <div className="rounded-2xl border border-slate-800 bg-slate-900/55 p-5">
+      <div className="flex items-center justify-between">
+        <h3 className="text-base font-black text-white">{title}</h3>
+        <span className="text-sm font-bold text-emerald-300">Net: {net}</span>
+      </div>
+      <div className="mt-4 grid grid-cols-2 gap-3">
+        <ScoreInput id={dogruId} label="Doğru" value={dogru} onChange={onDogru} />
+        <ScoreInput id={yanlisId} label="Yanlış" value={yanlis} onChange={onYanlis} />
+      </div>
+    </div>
+  );
+}
+
+function TusScoreCalculator() {
+  const [v, setV] = useState({ td: "", ty: "", kd: "", ky: "" });
+
+  const set = (key) => (event) => {
+    const raw = event.target.value.replace(/[^0-9]/g, "");
+    const capped = raw === "" ? "" : String(Math.min(Number(raw), TUS_SECTION_QUESTIONS));
+    setV((prev) => ({ ...prev, [key]: capped }));
+  };
+
+  const result = useMemo(
+    () =>
+      calculateTusResult({
+        temelDogru: v.td,
+        temelYanlis: v.ty,
+        klinikDogru: v.kd,
+        klinikYanlis: v.ky,
+      }),
+    [v]
+  );
+
+  const hasInput = v.td || v.ty || v.kd || v.ky;
+
+  return (
+    <section aria-label="TUS puan hesaplama aracı" className="mt-8 rounded-3xl border border-slate-800 bg-slate-900/55 p-5 md:p-6">
+      <div className="grid gap-4 md:grid-cols-2">
+        <ScoreSection
+          title="Temel Tıp Bilimleri"
+          dogruId="temel-dogru"
+          yanlisId="temel-yanlis"
+          dogru={v.td}
+          yanlis={v.ty}
+          onDogru={set("td")}
+          onYanlis={set("ty")}
+          net={result.temelNet}
+        />
+        <ScoreSection
+          title="Klinik Tıp Bilimleri"
+          dogruId="klinik-dogru"
+          yanlisId="klinik-yanlis"
+          dogru={v.kd}
+          yanlis={v.ky}
+          onDogru={set("kd")}
+          onYanlis={set("ky")}
+          net={result.klinikNet}
+        />
+      </div>
+
+      <div className="mt-5 grid gap-4 sm:grid-cols-3">
+        <div className="rounded-2xl border border-slate-800 bg-slate-950 px-4 py-4 text-center">
+          <p className="text-xs font-bold text-slate-400">Toplam Net</p>
+          <p className="mt-1 text-2xl font-black text-white">{result.toplamNet}</p>
+        </div>
+        <div className="rounded-2xl border border-emerald-300/40 bg-emerald-300/10 px-4 py-4 text-center sm:col-span-2">
+          <p className="text-xs font-bold text-emerald-200">Tahmini TUS Puanı</p>
+          <p className="mt-1 text-3xl font-black text-emerald-300">{hasInput ? result.score : "—"}</p>
+          {hasInput ? (
+            <p className="mt-1 text-xs font-semibold text-emerald-100/80">
+              {result.band.label} · {result.band.advice}
+            </p>
+          ) : (
+            <p className="mt-1 text-xs font-semibold text-emerald-100/70">Doğru ve yanlış sayını gir</p>
+          )}
+        </div>
+      </div>
+
+      <p className="mt-4 text-xs leading-relaxed text-slate-400">
+        Sonuç tahminidir. Net = doğru − yanlış/4. Gerçek TUS puanı ÖSYM'nin ilgili dönemdeki ortalama ve standart sapmasına göre standardize edilir.
+      </p>
+    </section>
+  );
+}
+
 export function SeoLandingPage({ page }) {
   const faq = useMemo(() => page.faq ?? commonFaq, [page.faq]);
   // JSON-LD FAQ şeması, sayfada görünen soru setiyle birebir aynı olmalı.
@@ -473,6 +584,7 @@ export function SeoLandingPage({ page }) {
               </div>
             ) : null}
             <SampleQuestionCard sample={page.sample} subject={page.subject} />
+            {page.tool === "score" ? <TusScoreCalculator /> : null}
             <div className="mt-10 space-y-9">
               {page.sections.map((section) => (
                 <section key={section.heading}>
