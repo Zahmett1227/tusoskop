@@ -37,6 +37,21 @@ export function computeNet(correct, wrong) {
   return net > 0 ? round1(net) : 0;
 }
 
+/** Bölümdeki boş soru sayısı (120 − doğru − yanlış). Negatif olmaz. */
+export function computeBlank(correct, wrong) {
+  const c = Number(correct) || 0;
+  const w = Number(wrong) || 0;
+  const blank = TUS_SECTION_QUESTIONS - c - w;
+  return blank >= 0 ? blank : 0;
+}
+
+/** Bölüm girişi 120 soruyu aşıyor mu (girdi hatası). */
+export function isSectionOverflow(correct, wrong) {
+  const c = Number(correct) || 0;
+  const w = Number(wrong) || 0;
+  return c + w > TUS_SECTION_QUESTIONS;
+}
+
 /**
  * Toplam netten tahmini TUS puanı (çapa tablosu + lineer interpolasyon).
  * - İlk çapanın altında: (0,0)→ilk çapa arası lineer.
@@ -63,6 +78,48 @@ export function estimateTusScore(net) {
     }
   }
   return last[1];
+}
+
+// %5 puan kesintisi: daha önce TUS ile yerleşip devam etmemiş adaylar için
+// (ÖSYM TUS kılavuzu kuralı). Kullanıcı toggle ile açıp kapatır.
+export const TUS_DEDUCTION_RATE = 0.05;
+
+// Çapa tablosunun ürettiği azami tahmini puan (tavan değer).
+export const MAX_MODEL_SCORE = TUS_SCORE_ANCHORS[TUS_SCORE_ANCHORS.length - 1][1];
+
+/** %5 kesinti uygulanmış puan (aktifse); değilse puanı değiştirmeden döner. */
+export function applyScoreDeduction(score, active) {
+  const s = Number(score) || 0;
+  if (!active) return s;
+  return round1(s * (1 - TUS_DEDUCTION_RATE));
+}
+
+/**
+ * Ters hesap: hedef tahmini puana ulaşmak için gereken toplam net
+ * (çapa tablosunun ters interpolasyonu). Hedef, modelin tavanı olan
+ * MAX_MODEL_SCORE'u aşarsa son çapadaki net döner (yaklaşık üst sınır).
+ */
+export function netForScore(targetScore) {
+  const s = Number(targetScore);
+  if (!Number.isFinite(s) || s <= 0) return 0;
+  const a = TUS_SCORE_ANCHORS;
+  const first = a[0];
+  const last = a[a.length - 1];
+  if (s <= first[1]) {
+    return round1((first[0] * s) / first[1]);
+  }
+  if (s >= last[1]) {
+    return last[0];
+  }
+  for (let i = 0; i < a.length - 1; i++) {
+    const [n0, p0] = a[i];
+    const [n1, p1] = a[i + 1];
+    if (s >= p0 && s <= p1) {
+      const t = (s - p0) / (p1 - p0);
+      return round1(n0 + t * (n1 - n0));
+    }
+  }
+  return last[0];
 }
 
 /** Puan aralığına göre kısa etiket + tavsiye. */

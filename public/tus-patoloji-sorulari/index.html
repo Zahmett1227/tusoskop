@@ -94,6 +94,39 @@
   .calc-box.hi b{font-size:30px;color:#6ee7b7}
   .calc-box .band{display:block;margin-top:4px;font-size:12px;font-weight:700;color:#a7f3d0}
   .calc-note{margin-top:14px;font-size:13px;color:#94a3b8}
+  .calc-blank{margin-top:10px;font-size:12px;font-weight:700;color:#94a3b8}
+  .calc-overflow{margin-top:4px;font-size:12px;font-weight:800;color:#fb7185}
+  .calc-toggle{margin-top:18px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid rgba(252,211,77,.35);background:rgba(252,211,77,.1);border-radius:18px;padding:13px 16px;cursor:pointer;text-align:left;font:inherit;color:inherit}
+  .calc-toggle .ttl{font-size:14px;font-weight:900;color:#fde68a}
+  .calc-toggle .desc{display:block;margin-top:2px;font-size:12px;font-weight:600;color:rgba(253,230,138,.8)}
+  .calc-switch{position:relative;flex:0 0 auto;width:48px;height:28px;border-radius:999px;background:#334155;transition:background .15s}
+  .calc-switch.on{background:#34d399}
+  .calc-switch i{position:absolute;top:2px;left:2px;width:24px;height:24px;border-radius:999px;background:#fff;transition:transform .15s}
+  .calc-switch.on i{transform:translateX(20px)}
+  .calc-raw{margin-top:4px;font-size:11px;font-weight:700;color:rgba(110,231,183,.65)}
+  .ref-table,.kontenjan-table{margin-top:24px;overflow-x:auto;border:1px solid #1e293b;border-radius:20px}
+  .ref-table table,.kontenjan-table table{width:100%;border-collapse:collapse;font-size:14px}
+  .ref-table thead tr,.kontenjan-table thead tr{background:rgba(15,23,42,.7);text-align:left;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8}
+  .ref-table th,.ref-table td,.kontenjan-table th,.kontenjan-table td{padding:11px 15px}
+  .kontenjan-table th{cursor:pointer;user-select:none}
+  .ref-table tbody tr,.kontenjan-table tbody tr{border-top:1px solid #1e293b}
+  .ref-table td:first-child,.kontenjan-table td:first-child{font-weight:800;color:#e2e8f0}
+  .ref-table td:nth-child(2){font-weight:900;color:#6ee7b7}
+  .kontenjan-table td.puan{font-weight:900;color:#6ee7b7}
+  .ref-note{border-top:1px solid #1e293b;padding:10px 15px;font-size:12px;color:#64748b}
+  .reverse-box{margin-top:32px;border:1px solid #1e293b;background:rgba(2,6,23,.5);border-radius:18px;padding:20px}
+  .reverse-box h3{margin:0;font-size:16px;color:#fff}
+  .reverse-box .hint{margin-top:6px;font-size:12px;color:#94a3b8}
+  .reverse-row{margin-top:14px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px}
+  .reverse-field label{display:block;font-size:13px;font-weight:700;color:#cbd5e1;margin-bottom:6px}
+  .reverse-field input{width:160px;border:1px solid #334155;background:#0f172a;color:#fff;border-radius:14px;padding:11px 13px;font-size:16px;font-weight:700;outline:none}
+  .reverse-out{border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:14px;padding:11px 16px}
+  .reverse-out small{display:block;font-size:12px;font-weight:700;color:#94a3b8}
+  .reverse-out b{display:block;margin-top:2px;font-size:20px;font-weight:900;color:#fff}
+  .reverse-warn{margin-top:10px;font-size:12px;font-weight:700;color:#fbbf24}
+  .kontenjan-search{width:100%;max-width:360px;border:1px solid #334155;background:#020617;color:#fff;border-radius:16px;padding:10px 15px;font-size:14px;font-weight:700;outline:none}
+  .kontenjan-search:focus{border-color:#6ee7b7}
+  .kontenjan-meta{margin-top:10px;font-size:12px;font-weight:700;color:#64748b}
   @media (max-width:560px){.calc-grid{grid-template-columns:1fr}.calc-out{grid-template-columns:1fr}}
   @media (max-width:720px){.nav{display:none}main{padding-top:38px}.topbar-inner{padding-inline:14px}}
 </style>
@@ -110,6 +143,7 @@
           <a href="/tusoskop-nedir">Nedir?</a>
           <a href="/tusoskop-ozellikleri">Özellikler</a>
           <a href="/tus-puan-hesaplama">Puan Hesaplama</a>
+          <a href="/tus-kontenjan-tablosu">Kontenjanlar</a>
           <a href="/fiyatlandirma">Fiyatlandırma</a>
           <a href="/hakkimizda">Hakkımızda</a>
           <a href="/tusoskop-sss">SSS</a>
@@ -137,6 +171,7 @@
       <li>İmmünoloji</li><li>Gastrointestinal Sistem Hastalıkları</li><li>Hemodinamik Bozukluklar</li><li>Hücre Zedelenmesi</li><li>Hematopoetik Sistem Hastalıkları</li><li>Karaciğer Hastalıkları</li><li>Pankreas Hastalıkları</li><li>Üriner Sistem Hastalıkları</li><li>Onarım ve Yara İyileşmesi</li><li>İnflamasyon</li><li>Solunum Sistem Hastalıkları</li><li>Endokrin Sistem Hastalıkları</li><li>Çevresel ve Enfeksiyoz Hastalıklar</li><li>Erkek Genital Sistem Hastalıkları</li><li>Kadın Genital Sistem Hastalıkları</li><li>Neoplazi</li><li>Pediatrik Hastalıklar</li><li>Kalp Hastalıkları</li><li>Vasküler Hastalıklar</li><li>Meme Hastalıkları</li><li>Sinir Sistem Hastalıkları</li><li>Kalp ve İskelet Sistemi Hastalıkları</li><li>Genel Tekrar ve Entegre Vakalar</li><li>Deri Hastalıkları</li>
     </ul>
   </section>
+      
       
       
       <div class="sections">
@@ -196,7 +231,7 @@
           <p>TUS hazırlığında soru çözme, deneme, AI çalışma planı, haftalık lig ve analiz sürecini destekleyen dijital platform.</p>
         </div>
         <nav class="footer-links" aria-label="Footer bağlantıları">
-          <a href="/tusoskop-nedir">Tusoskop Nedir?</a><a href="/tus-hazirlik-platformu">TUS Hazırlık Platformu</a><a href="/tus-soru-cozme-uygulamasi">TUS Soru Çözme Uygulaması</a><a href="/tus-deneme-analizi">TUS Deneme Analizi</a><a href="/tus-puan-hesaplama">TUS Puan Hesaplama</a><a href="/tusoskop-ozellikleri">Tusoskop Özellikleri</a><a href="/fiyatlandirma">Fiyatlandırma</a><a href="/hakkimizda">Hakkımızda</a><a href="/tusoskop-sss">Sık Sorulan Sorular</a><a href="/gizlilik-sozlesmesi">Gizlilik Sözleşmesi</a><a href="/kullanim-kosullari">Kullanım Koşulları</a><a href="https://apps.apple.com/tr/app/tusoskop/id6776331691?l=tr">App Store</a><a href="/giris">Giriş Yap</a>
+          <a href="/tusoskop-nedir">Tusoskop Nedir?</a><a href="/tus-hazirlik-platformu">TUS Hazırlık Platformu</a><a href="/tus-soru-cozme-uygulamasi">TUS Soru Çözme Uygulaması</a><a href="/tus-deneme-analizi">TUS Deneme Analizi</a><a href="/tus-puan-hesaplama">TUS Puan Hesaplama</a><a href="/tus-kontenjan-tablosu">TUS Kontenjan Tablosu</a><a href="/tusoskop-ozellikleri">Tusoskop Özellikleri</a><a href="/fiyatlandirma">Fiyatlandırma</a><a href="/hakkimizda">Hakkımızda</a><a href="/tusoskop-sss">Sık Sorulan Sorular</a><a href="/gizlilik-sozlesmesi">Gizlilik Sözleşmesi</a><a href="/kullanim-kosullari">Kullanım Koşulları</a><a href="https://apps.apple.com/tr/app/tusoskop/id6776331691?l=tr">App Store</a><a href="/giris">Giriş Yap</a>
         </nav>
         <nav aria-label="Branşa göre TUS soruları">
           <p class="footer-tags-title">Branşa göre sorular</p>

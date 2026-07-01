@@ -6,6 +6,12 @@ import {
   FREE_DAILY_TOPIC_TESTS,
   questionCountLabel,
 } from "./subjectData.js";
+import {
+  KONTENJAN_DATA,
+  KONTENJAN_DAL_COUNT,
+  KONTENJAN_TOPLAM,
+  KONTENJAN_DONEM_LABEL,
+} from "./kontenjanData.js";
 
 export const SITE_URL = "https://www.tusoskop.com";
 export const BRAND_NAME = "Tusoskop";
@@ -335,10 +341,92 @@ const contentSeoPages = [
         answer:
           "Hayır, tahminidir. Gerçek TUS puanı ÖSYM'nin dönem ortalaması ve standart sapmasına göre standardize edilir; bu araç geçmiş eğilimlere dayalı yaklaşık bir değer verir.",
       },
+      {
+        question: "TUS'ta %5 puan kesintisi nedir?",
+        answer:
+          "Daha önce TUS ile bir uzmanlık/yan dal eğitimine yerleşip bu eğitimine devam etmemiş adaylara ÖSYM tarafından %5 puan kesintisi uygulanır. Hesaplayıcıdaki anahtarı açarak bu kesintiyi tahmini puanına yansıtabilirsin.",
+      },
+      {
+        question: "Hedef puana kaç net gerekir?",
+        answer:
+          "Hesaplayıcıdaki 'Hedef Puan' alanına ulaşmak istediğin tahmini TUS puanını gir; araç yaklaşık olarak kaç toplam nete ihtiyacın olduğunu hesaplar.",
+      },
     ],
     links: [
       ["TUS deneme analizi", "/tus-deneme-analizi"],
       ["TUS soru çözme uygulaması", "/tus-soru-cozme-uygulamasi"],
+      ["TUS kontenjan tablosu", "/tus-kontenjan-tablosu"],
+    ],
+  },
+  {
+    slug: "tus-kontenjan-tablosu",
+    tool: "kontenjan",
+    kontenjanData: KONTENJAN_DATA,
+    kontenjanDonem: KONTENJAN_DONEM_LABEL,
+    title: `TUS Kontenjan Tablosu ${KONTENJAN_DONEM_LABEL} — Taban Puanlar | Tusoskop`,
+    description:
+      `${KONTENJAN_DONEM_LABEL} TUS kontenjan tablosu: ${KONTENJAN_DAL_COUNT} uzmanlık dalı için kontenjan, taban puan ve yerleşen sayısı. Dala göre ara, kontenjana veya taban puana göre sırala.`,
+    h1: `TUS Kontenjan Tablosu — ${KONTENJAN_DONEM_LABEL}`,
+    intro:
+      `${KONTENJAN_DONEM_LABEL} yerleştirme sonuçlarına göre ${KONTENJAN_DAL_COUNT} uzmanlık dalının kontenjan, taban puan ve yerleşen aday sayısını aşağıda bulabilirsin. Dal adına göre arayabilir, kontenjan veya taban puana göre sıralayabilirsin.`,
+    stats: [
+      { value: `${KONTENJAN_DAL_COUNT}`, label: "Uzmanlık dalı" },
+      { value: `${KONTENJAN_TOPLAM.toLocaleString("tr-TR")}`, label: "Toplam kontenjan" },
+      { value: KONTENJAN_DONEM_LABEL.replace(" (Mart 2026)", ""), label: "Dönem" },
+    ],
+    sections: [
+      {
+        heading: "TUS kontenjanı ve taban puan nedir?",
+        paragraphs: [
+          "Her uzmanlık dalı için ÖSYM tarafından belirlenen kadro sayısına kontenjan denir. Taban puan ise o dönemde ilgili dalda dolan kontenjanlar içindeki en düşük tahmini TUS puanını ifade eder.",
+          "Taban puanlar dönemden döneme değişir; tercih eden aday sayısı, kontenjan sayısı ve genel puan dağılımına göre yükselip alçalabilir.",
+        ],
+      },
+      {
+        heading: "Kontenjan tablosu nasıl okunmalı?",
+        paragraphs: [
+          "Bir dalın taban puanı, o dönemde o dala yerleşebilmek için gereken asgari puanı gösterir. Kontenjanı yüksek fakat taban puanı düşük dallarda yerleşme ihtimali görece daha yüksektir.",
+          "'Yerleşen' sütunu, kontenjanın ne kadarının dolduğunu gösterir; kontenjanın tamamı dolmamışsa taban puan oluşmamış olabilir (tabloda '—' ile gösterilir).",
+        ],
+      },
+      {
+        heading: "Taban puanlar dönemden döneme neden değişir?",
+        paragraphs: [
+          "Adayların o dönemki genel başarı düzeyi, tercih eden aday sayısı ve kontenjan artış/azalışları taban puanı doğrudan etkiler. Bu yüzden geçmiş dönem taban puanı, gelecek dönem için kesin bir garanti değil, yalnızca bir gösterge olarak kullanılmalıdır.",
+        ],
+      },
+      {
+        heading: "Tahmini TUS puanınla kıyaslama",
+        paragraphs: [
+          "Tahmini TUS puanını hesapladıktan sonra bu tablodaki taban puanlarla karşılaştırarak hangi dallarda rekabetçi olabileceğin konusunda kaba bir fikir edinebilirsin.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "TUS kontenjan tablosu ne sıklıkla güncellenir?",
+        answer:
+          "Her TUS döneminin (yılda iki kez) yerleştirme sonuçları açıklandıkça tablo güncellenir. Şu an gösterilen veri " + KONTENJAN_DONEM_LABEL + " dönemine aittir.",
+      },
+      {
+        question: "Taban puan neden bazı dallarda gösterilmiyor?",
+        answer:
+          "Kontenjanın tamamı dolmadıysa o dalda taban puan oluşmaz; tabloda bu durum '—' ile belirtilir.",
+      },
+      {
+        question: "Kontenjan tablosu ile puan hesaplama aracı birlikte nasıl kullanılır?",
+        answer:
+          "Önce TUS Puan Hesaplama aracıyla tahmini puanını bul, ardından bu tablodaki taban puanlarla karşılaştırarak hangi dallarda daha rekabetçi olabileceğini kabaca değerlendir.",
+      },
+      {
+        question: "Bu veriler resmi mi?",
+        answer:
+          `${KONTENJAN_DONEM_LABEL} yerleştirme sonuçlarına dayanır. Kesin ve güncel bilgi için ÖSYM'nin resmi yerleştirme sonuçları sayfasını esas al.`,
+      },
+    ],
+    links: [
+      ["TUS puan hesaplama", "/tus-puan-hesaplama"],
+      ["TUS deneme analizi", "/tus-deneme-analizi"],
     ],
   },
   {
