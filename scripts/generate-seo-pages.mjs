@@ -6,6 +6,7 @@ import {
   LASTMOD,
   OG_IMAGE,
   SITE_URL,
+  buildSiteNavigationNodes,
   commonFaq,
   homeSeo,
   legalStaticPages,
@@ -78,6 +79,7 @@ function jsonLd(page, pagePath, faq = []) {
         },
       ],
     },
+    ...buildSiteNavigationNodes(),
   ];
 
   // FAQPage şemasını yalnızca sayfada görünen sorular varsa ekle —

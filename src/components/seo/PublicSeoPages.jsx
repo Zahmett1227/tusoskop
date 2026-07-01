@@ -18,6 +18,7 @@ import {
   BRAND_NAME,
   OG_IMAGE,
   SITE_URL,
+  buildSiteNavigationNodes,
   commonFaq,
   homeSeo,
   pageUrl,
@@ -218,6 +219,10 @@ function usePageMetadata({ title, description, path = "/", faq = commonFaq, brea
         },
       },
       buildFaqSchema(faq),
+      ...buildSiteNavigationNodes().map((node) => ({
+        "@context": "https://schema.org",
+        ...node,
+      })),
     ];
 
     if (breadcrumbs.length) {

@@ -33,6 +33,27 @@ export const HERO_STATS = [
 
 export { SUBJECTS, TOTAL_QUESTIONS, LESSON_COUNT, FREE_DAILY_QUESTIONS, FREE_DAILY_TOPIC_TESTS };
 
+// Google'ın site adı aramalarında "sitelinks" olarak göstermeyi değerlendirdiği
+// ana navigasyon — üstteki header ile birebir aynı olmalı (PublicHeader'daki nav'a bak).
+export const MAIN_NAV_LINKS = [
+  { name: "Tusoskop Nedir?", path: "/tusoskop-nedir" },
+  { name: "Özellikler", path: "/tusoskop-ozellikleri" },
+  { name: "TUS Puan Hesaplama", path: "/tus-puan-hesaplama" },
+  { name: "TUS Kontenjan Tablosu", path: "/tus-kontenjan-tablosu" },
+  { name: "Fiyatlandırma", path: "/fiyatlandirma" },
+  { name: "Hakkımızda", path: "/hakkimizda" },
+  { name: "Sık Sorulan Sorular", path: "/tusoskop-sss" },
+];
+
+export function buildSiteNavigationNodes() {
+  return MAIN_NAV_LINKS.map((link, index) => ({
+    "@type": "SiteNavigationElement",
+    position: index + 1,
+    name: link.name,
+    url: pageUrl(link.path),
+  }));
+}
+
 export const homeSeo = {
   path: "/",
   title: `TUS Soru Bankası — ${QUESTION_COUNT_LABEL} Soru, Deneme ve Analiz | Tusoskop`,
