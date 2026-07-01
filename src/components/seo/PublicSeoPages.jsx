@@ -3,7 +3,15 @@ import SignInOptions from "../auth/SignInOptions";
 import AppStoreBadge from "../AppStoreBadge";
 import {
   TUS_SECTION_QUESTIONS,
+  TUS_SCORE_ANCHORS,
+  TUS_DEDUCTION_RATE,
+  MAX_MODEL_SCORE,
   calculateTusResult,
+  computeBlank,
+  isSectionOverflow,
+  applyScoreDeduction,
+  netForScore,
+  tusScoreBand,
 } from "../../seo/tusScoring";
 import {
   APP_STORE_URL,
@@ -248,6 +256,7 @@ function PublicHeader() {
           <a className="hover:text-white" href="/tusoskop-nedir">Nedir?</a>
           <a className="hover:text-white" href="/tusoskop-ozellikleri">Özellikler</a>
           <a className="hover:text-white" href="/tus-puan-hesaplama">Puan Hesaplama</a>
+          <a className="hover:text-white" href="/tus-kontenjan-tablosu">Kontenjanlar</a>
           <a className="hover:text-white" href="/fiyatlandirma">Fiyatlandırma</a>
           <a className="hover:text-white" href="/hakkimizda">Hakkımızda</a>
           <a className="hover:text-white" href="/tusoskop-sss">SSS</a>
@@ -270,6 +279,7 @@ function PublicFooter() {
     ["TUS Soru Çözme Uygulaması", "/tus-soru-cozme-uygulamasi"],
     ["TUS Deneme Analizi", "/tus-deneme-analizi"],
     ["TUS Puan Hesaplama", "/tus-puan-hesaplama"],
+    ["TUS Kontenjan Tablosu", "/tus-kontenjan-tablosu"],
     ["Tusoskop Özellikleri", "/tusoskop-ozellikleri"],
     ["Fiyatlandırma", "/fiyatlandirma"],
     ["Hakkımızda", "/hakkimizda"],
@@ -487,7 +497,7 @@ function ScoreInput({ id, label, value, onChange }) {
   );
 }
 
-function ScoreSection({ title, dogruId, yanlisId, dogru, yanlis, onDogru, onYanlis, net }) {
+function ScoreSection({ title, dogruId, yanlisId, dogru, yanlis, onDogru, onYanlis, net, blank, overflow }) {
   return (
     <div className="rounded-2xl border border-slate-800 bg-slate-900/55 p-5">
       <div className="flex items-center justify-between">
@@ -498,12 +508,78 @@ function ScoreSection({ title, dogruId, yanlisId, dogru, yanlis, onDogru, onYanl
         <ScoreInput id={dogruId} label="Doğru" value={dogru} onChange={onDogru} />
         <ScoreInput id={yanlisId} label="Yanlış" value={yanlis} onChange={onYanlis} />
       </div>
+      <p className="mt-3 text-xs font-semibold text-slate-400">
+        Boş: {blank} / {TUS_SECTION_QUESTIONS}
+      </p>
+      {overflow ? (
+        <p className="mt-1 text-xs font-bold text-rose-400">Bu bölümde en fazla {TUS_SECTION_QUESTIONS} soru olabilir.</p>
+      ) : null}
+    </div>
+  );
+}
+
+function DeductionToggle({ checked, onChange }) {
+  return (
+    <button
+      type="button"
+      role="switch"
+      aria-checked={checked}
+      onClick={() => onChange(!checked)}
+      className="mt-5 flex w-full items-center justify-between gap-4 rounded-2xl border border-amber-300/30 bg-amber-300/10 px-4 py-3.5 text-left"
+    >
+      <span>
+        <span
+          className="flex items-center gap-1.5 text-sm font-black text-amber-100"
+          title="Daha önce bir TUS ile uzmanlık/yan dal eğitimine yerleşip devam etmemiş adaylara ÖSYM tarafından uygulanan kesinti."
+        >
+          %5 Puan Kesintisi <span aria-hidden>ⓘ</span>
+        </span>
+        <span className="mt-0.5 block text-xs font-medium text-amber-200/80">
+          Daha önce TUS ile yerleşip devam etmemiş adaylar için geçerli
+        </span>
+      </span>
+      <span
+        aria-hidden
+        className={`relative h-7 w-12 shrink-0 rounded-full transition-colors ${checked ? "bg-emerald-400" : "bg-slate-700"}`}
+      >
+        <span
+          className={`absolute top-0.5 h-6 w-6 rounded-full bg-white shadow transition-transform ${checked ? "translate-x-5" : "translate-x-0.5"}`}
+        />
+      </span>
+    </button>
+  );
+}
+
+function ScoreReferenceTable() {
+  return (
+    <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-800">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="bg-slate-900/70 text-left text-xs font-black uppercase tracking-wide text-slate-400">
+            <th className="px-4 py-3">Toplam Net</th>
+            <th className="px-4 py-3">Tahmini TUS Puanı</th>
+          </tr>
+        </thead>
+        <tbody>
+          {TUS_SCORE_ANCHORS.map(([net, score]) => (
+            <tr key={net} className="border-t border-slate-800">
+              <td className="px-4 py-2.5 font-bold text-slate-200">{net}</td>
+              <td className="px-4 py-2.5 font-bold text-emerald-300">{score}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="border-t border-slate-800 px-4 py-2.5 text-xs text-slate-500">
+        Ara değerler için hesaplayıcı doğrusal aradeğerleme kullanır.
+      </p>
     </div>
   );
 }
 
 function TusScoreCalculator() {
   const [v, setV] = useState({ td: "", ty: "", kd: "", ky: "" });
+  const [kesinti, setKesinti] = useState(false);
+  const [hedef, setHedef] = useState("");
 
   const set = (key) => (event) => {
     const raw = event.target.value.replace(/[^0-9]/g, "");
@@ -523,6 +599,21 @@ function TusScoreCalculator() {
   );
 
   const hasInput = v.td || v.ty || v.kd || v.ky;
+  const displayScore = kesinti ? applyScoreDeduction(result.score, true) : result.score;
+  const displayBand = useMemo(() => tusScoreBand(displayScore), [displayScore]);
+  const temelBlank = computeBlank(v.td, v.ty);
+  const klinikBlank = computeBlank(v.kd, v.ky);
+  const temelOverflow = isSectionOverflow(v.td, v.ty);
+  const klinikOverflow = isSectionOverflow(v.kd, v.ky);
+
+  const handleHedef = (event) => {
+    setHedef(event.target.value.replace(/[^0-9.]/g, ""));
+  };
+  const hedefNum = Number(hedef);
+  const hedefValid = hedef !== "" && Number.isFinite(hedefNum) && hedefNum > 0;
+  const hedefEffective = hedefValid && kesinti ? hedefNum / (1 - TUS_DEDUCTION_RATE) : hedefNum;
+  const hedefUnreachable = hedefValid && hedefEffective > MAX_MODEL_SCORE;
+  const gerekliNet = hedefValid ? netForScore(hedefEffective) : null;
 
   return (
     <section aria-label="TUS puan hesaplama aracı" className="mt-8 rounded-3xl border border-slate-800 bg-slate-900/55 p-5 md:p-6">
@@ -536,6 +627,8 @@ function TusScoreCalculator() {
           onDogru={set("td")}
           onYanlis={set("ty")}
           net={result.temelNet}
+          blank={temelBlank}
+          overflow={temelOverflow}
         />
         <ScoreSection
           title="Klinik Tıp Bilimleri"
@@ -546,8 +639,12 @@ function TusScoreCalculator() {
           onDogru={set("kd")}
           onYanlis={set("ky")}
           net={result.klinikNet}
+          blank={klinikBlank}
+          overflow={klinikOverflow}
         />
       </div>
+
+      <DeductionToggle checked={kesinti} onChange={setKesinti} />
 
       <div className="mt-5 grid gap-4 sm:grid-cols-3">
         <div className="rounded-2xl border border-slate-800 bg-slate-950 px-4 py-4 text-center">
@@ -555,21 +652,148 @@ function TusScoreCalculator() {
           <p className="mt-1 text-2xl font-black text-white">{result.toplamNet}</p>
         </div>
         <div className="rounded-2xl border border-emerald-300/40 bg-emerald-300/10 px-4 py-4 text-center sm:col-span-2">
-          <p className="text-xs font-bold text-emerald-200">Tahmini TUS Puanı</p>
-          <p className="mt-1 text-3xl font-black text-emerald-300">{hasInput ? result.score : "—"}</p>
+          <p className="text-xs font-bold text-emerald-200">
+            {kesinti ? "Tahmini TUS Puanı (−%5 kesintili)" : "Tahmini TUS Puanı"}
+          </p>
+          <p className="mt-1 text-3xl font-black text-emerald-300">{hasInput ? displayScore : "—"}</p>
           {hasInput ? (
             <p className="mt-1 text-xs font-semibold text-emerald-100/80">
-              {result.band.label} · {result.band.advice}
+              {displayBand.label} · {displayBand.advice}
             </p>
           ) : (
             <p className="mt-1 text-xs font-semibold text-emerald-100/70">Doğru ve yanlış sayını gir</p>
           )}
+          {hasInput && kesinti ? (
+            <p className="mt-1 text-[11px] font-semibold text-emerald-100/60">Ham puan: {result.score}</p>
+          ) : null}
         </div>
       </div>
 
       <p className="mt-4 text-xs leading-relaxed text-slate-400">
         Sonuç tahminidir. Net = doğru − yanlış/4. Gerçek TUS puanı ÖSYM'nin ilgili dönemdeki ortalama ve standart sapmasına göre standardize edilir.
       </p>
+
+      <ScoreReferenceTable />
+
+      <div className="mt-8 rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
+        <h3 className="text-base font-black text-white">Hedef puana kaç net gerekir?</h3>
+        <p className="mt-1 text-xs leading-relaxed text-slate-400">
+          Ulaşmak istediğin tahmini TUS puanını gir; yaklaşık gereken toplam neti hesaplayalım
+          {kesinti ? " (kesinti anahtarı açıkken hedefin kesinti sonrası puan olarak alındığı varsayılır)" : ""}.
+        </p>
+        <div className="mt-3 flex flex-wrap items-end gap-3">
+          <label htmlFor="hedef-puan" className="flex flex-col gap-1.5">
+            <span className="text-sm font-bold text-slate-300">Hedef Puan</span>
+            <input
+              id="hedef-puan"
+              type="number"
+              inputMode="decimal"
+              min="0"
+              max="100"
+              value={hedef}
+              onChange={handleHedef}
+              placeholder="örn. 65"
+              className="w-40 rounded-2xl border border-slate-700 bg-slate-900 px-4 py-3 text-base font-bold text-white outline-none focus:border-emerald-300/70"
+            />
+          </label>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-3">
+            <p className="text-xs font-bold text-slate-400">Gereken Toplam Net</p>
+            <p className="mt-1 text-xl font-black text-white">
+              {hedefValid ? (hedefUnreachable ? `${MAX_MODEL_SCORE}+` : gerekliNet) : "—"}
+            </p>
+          </div>
+        </div>
+        {hedefUnreachable ? (
+          <p className="mt-2 text-xs font-semibold text-amber-300">
+            Bu modelde ulaşılabilecek azami tahmini puan {MAX_MODEL_SCORE}&apos;tir. Daha yüksek hedefler gerçek dönem istatistiklerine göre değişir.
+          </p>
+        ) : null}
+      </div>
+    </section>
+  );
+}
+
+function KontenjanTable({ data, donem }) {
+  const [query, setQuery] = useState("");
+  const [sortKey, setSortKey] = useState("dal");
+  const [sortDir, setSortDir] = useState("asc");
+
+  const rows = useMemo(() => {
+    const list = Array.isArray(data) ? data : [];
+    const q = query.trim().toLocaleLowerCase("tr");
+    const filtered = q ? list.filter((r) => r.dal.toLocaleLowerCase("tr").includes(q)) : list;
+    return [...filtered].sort((a, b) => {
+      const av = a[sortKey] ?? (sortKey === "tabanPuan" ? -1 : 0);
+      const bv = b[sortKey] ?? (sortKey === "tabanPuan" ? -1 : 0);
+      if (typeof av === "string") {
+        return sortDir === "asc" ? av.localeCompare(bv, "tr") : bv.localeCompare(av, "tr");
+      }
+      return sortDir === "asc" ? av - bv : bv - av;
+    });
+  }, [data, query, sortKey, sortDir]);
+
+  const toggleSort = (key) => {
+    if (sortKey === key) {
+      setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+    } else {
+      setSortKey(key);
+      setSortDir(key === "dal" ? "asc" : "desc");
+    }
+  };
+
+  const arrow = (key) => (sortKey === key ? (sortDir === "asc" ? " ▲" : " ▼") : "");
+
+  return (
+    <section aria-label="TUS kontenjan tablosu" className="mt-8">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <input
+          type="text"
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+          placeholder="Uzmanlık dalı ara…"
+          className="w-full max-w-sm rounded-2xl border border-slate-700 bg-slate-950 px-4 py-2.5 text-sm font-semibold text-white outline-none focus:border-emerald-300/70"
+        />
+        <p className="text-xs font-semibold text-slate-500">
+          {donem} · {Array.isArray(data) ? data.length : 0} dal
+        </p>
+      </div>
+      <div className="mt-4 overflow-x-auto rounded-2xl border border-slate-800">
+        <table className="w-full min-w-[560px] text-sm">
+          <thead>
+            <tr className="bg-slate-900/70 text-left text-xs font-black uppercase tracking-wide text-slate-400">
+              <th className="cursor-pointer select-none px-4 py-3" onClick={() => toggleSort("dal")}>
+                Uzmanlık Dalı{arrow("dal")}
+              </th>
+              <th className="cursor-pointer select-none px-4 py-3" onClick={() => toggleSort("kontenjan")}>
+                Kontenjan{arrow("kontenjan")}
+              </th>
+              <th className="cursor-pointer select-none px-4 py-3" onClick={() => toggleSort("tabanPuan")}>
+                Taban Puan{arrow("tabanPuan")}
+              </th>
+              <th className="cursor-pointer select-none px-4 py-3" onClick={() => toggleSort("yerlesen")}>
+                Yerleşen{arrow("yerlesen")}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.dal} className="border-t border-slate-800">
+                <td className="px-4 py-2.5 font-bold text-slate-200">{r.dal}</td>
+                <td className="px-4 py-2.5 font-semibold text-slate-300">{r.kontenjan}</td>
+                <td className="px-4 py-2.5 font-black text-emerald-300">{r.tabanPuan != null ? r.tabanPuan : "—"}</td>
+                <td className="px-4 py-2.5 font-semibold text-slate-300">{r.yerlesen}</td>
+              </tr>
+            ))}
+            {rows.length === 0 ? (
+              <tr>
+                <td colSpan={4} className="px-4 py-6 text-center text-sm font-semibold text-slate-500">
+                  Aramanla eşleşen dal bulunamadı.
+                </td>
+              </tr>
+            ) : null}
+          </tbody>
+        </table>
+      </div>
     </section>
   );
 }
@@ -609,6 +833,9 @@ export function SeoLandingPage({ page }) {
             <SampleQuestionCard sample={page.sample} subject={page.subject} />
             {page.isSubject ? <SubjectTopics subject={page.subject} topics={page.topics} /> : null}
             {page.tool === "score" ? <TusScoreCalculator /> : null}
+            {page.tool === "kontenjan" ? (
+              <KontenjanTable data={page.kontenjanData} donem={page.kontenjanDonem} />
+            ) : null}
             <div className="mt-10 space-y-9">
               {page.sections.map((section) => (
                 <section key={section.heading}>

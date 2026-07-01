@@ -42,6 +42,7 @@ const seoLinks = [
   ["TUS Soru Çözme Uygulaması", "/tus-soru-cozme-uygulamasi"],
   ["TUS Deneme Analizi", "/tus-deneme-analizi"],
   ["TUS Puan Hesaplama", "/tus-puan-hesaplama"],
+  ["TUS Kontenjan Tablosu", "/tus-kontenjan-tablosu"],
   ["TUS Konu Bazlı Soru Çözme", "/tus-konu-bazli-soru-cozme"],
   ["TUS Yanlış Takibi", "/tus-yanlis-takibi"],
   ["Tusoskop Özellikleri", "/tusoskop-ozellikleri"],
@@ -116,6 +117,7 @@ export function renderHomeSeoStatic() {
           <a href="/tusoskop-nedir">Nedir?</a>
           <a href="/tusoskop-ozellikleri">Özellikler</a>
           <a href="/tus-puan-hesaplama">Puan Hesaplama</a>
+          <a href="/tus-kontenjan-tablosu">Kontenjanlar</a>
           <a href="/fiyatlandirma">Fiyatlandırma</a>
           <a href="/hakkimizda">Hakkımızda</a>
           <a href="/tusoskop-sss">SSS</a>

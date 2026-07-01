@@ -1,9 +1,15 @@
 import { describe, it, expect } from "vitest";
 import {
   computeNet,
+  computeBlank,
+  isSectionOverflow,
   estimateTusScore,
   calculateTusResult,
+  applyScoreDeduction,
+  netForScore,
   TUS_SCORE_ANCHORS,
+  TUS_DEDUCTION_RATE,
+  MAX_MODEL_SCORE,
 } from "./tusScoring.js";
 
 describe("tusScoring", () => {
@@ -57,5 +63,44 @@ describe("tusScoring", () => {
     expect(r.toplamNet).toBe(160);
     expect(r.score).toBe(75);
     expect(r.band.label).toBe("Yüksek");
+  });
+
+  it("computeBlank: 120 - doğru - yanlış, negatif olmaz", () => {
+    expect(computeBlank(80, 20)).toBe(20);
+    expect(computeBlank(0, 0)).toBe(120);
+    expect(computeBlank(100, 30)).toBe(0); // 130>120 → negatifi 0'a clamp
+  });
+
+  it("isSectionOverflow: doğru+yanlış 120'yi aşıyorsa true", () => {
+    expect(isSectionOverflow(100, 20)).toBe(false); // tam 120
+    expect(isSectionOverflow(100, 21)).toBe(true);
+    expect(isSectionOverflow(0, 0)).toBe(false);
+  });
+
+  it("applyScoreDeduction: aktif değilse aynı puanı, aktifse %5 azaltılmış puanı verir", () => {
+    expect(applyScoreDeduction(70, false)).toBe(70);
+    expect(applyScoreDeduction(70, true)).toBe(66.5);
+    expect(TUS_DEDUCTION_RATE).toBe(0.05);
+  });
+
+  it("netForScore: çapa noktalarında estimateTusScore'un tersini verir", () => {
+    for (const [net, score] of TUS_SCORE_ANCHORS) {
+      expect(netForScore(score)).toBe(net);
+    }
+  });
+
+  it("netForScore ve estimateTusScore birbirinin tersidir (round-trip)", () => {
+    for (let net = 40; net <= 160; net += 5) {
+      const score = estimateTusScore(net);
+      const backNet = netForScore(score);
+      expect(Math.abs(backNet - net)).toBeLessThan(1); // yuvarlama toleransı
+    }
+  });
+
+  it("netForScore: 0 ve altı için 0, tavanın üstü için son çapa neti", () => {
+    expect(netForScore(0)).toBe(0);
+    expect(netForScore(-5)).toBe(0);
+    expect(netForScore(MAX_MODEL_SCORE)).toBe(160);
+    expect(netForScore(90)).toBe(160); // tavanın üstü → üst sınır neti
   });
 });

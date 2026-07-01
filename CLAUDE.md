@@ -181,6 +181,10 @@ TUS özelliklerini agresif pazarlayan SEO altyapısı. Amaç: özellikleri rakam
 - `TOTAL_QUESTIONS` = branş sayımlarının toplamı (şu an 7077). `_manifest.json` `subjectCounts` ile aynı tutulmalı.
 - **"X+" pazarlama kuralı** (`questionCountLabel`): gerçek sayıyı **bir alt yüzlüğe** yuvarlar, asla abartmaz. `7077 → 7.000+`, `7200 → 7.100+`. Sayı arttıkça etiket otomatik büyür ama her zaman gerçeğin altında kalır.
 
+### TUS Araçları — Puan Hesaplama ve Kontenjan Tablosu
+- **`/tus-puan-hesaplama`**: `src/seo/tusScoring.js` tek matematik kaynağı — `TUS_SCORE_ANCHORS` (net→puan çapa tablosu, kullanıcı onaylı), `computeNet`, `estimateTusScore` (lineer interpolasyon), `netForScore` (ters interpolasyon), `applyScoreDeduction` (%5 kesinti, `TUS_DEDUCTION_RATE = 0.05`), `computeBlank`/`isSectionOverflow` (120 soru validasyonu). React (`TusScoreCalculator`) ve statik prerender (`renderScoreTool` in `generate-seo-pages.mjs`) **aynı mantığı iki dilde (JS/inline JS) birebir uygular** — biri değişirse diğeri de güncellenmeli.
+- **`/tus-kontenjan-tablosu`**: `src/seo/kontenjanData.js` — dönem bazlı kontenjan/taban puan/yerleşen verisi (başarı sırası kasıtlı olarak yok). **Her yeni TUS döneminde bu dosya elle güncellenmeli** (`KONTENJAN_DATA` dizisi + `KONTENJAN_DONEM_LABEL`). `tabanPuan: null` → kontenjan dolmadı, tabloda "—" gösterilir. Sıralanabilir/aranabilir tablo React (`KontenjanTable`) ve statik (`renderKontenjanTable`) olarak iki katmanda var.
+
 ### İşlenen 6 pazarlama fikri
 1. **Soru sayısı vurgusu** — "7.000+ TUS tarzı soru, 11 dersten ve istediğin konudan seç" (hero, meta, stat kartları).
 2. **Branş bazlı 11 SEO sayfası** — `/tus-{ders}-sorulari` (örn. `/tus-anatomi-sorulari`). Her birinde dersin gerçek soru sayısı + örnek soru kartı (şık + doğru cevap + açıklama). "tus {ders} soruları" aramalarını hedefler.

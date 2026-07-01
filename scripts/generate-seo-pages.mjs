@@ -14,7 +14,12 @@ import {
   sitemapEntries,
   subjectIndexLinks,
 } from "../src/seo/seoContent.js";
-import { TUS_SCORE_ANCHORS, TUS_SECTION_QUESTIONS } from "../src/seo/tusScoring.js";
+import {
+  TUS_SCORE_ANCHORS,
+  TUS_SECTION_QUESTIONS,
+  TUS_DEDUCTION_RATE,
+  MAX_MODEL_SCORE,
+} from "../src/seo/tusScoring.js";
 
 const publicDir = path.resolve("public");
 
@@ -169,6 +174,39 @@ const css = `
   .calc-box.hi b{font-size:30px;color:#6ee7b7}
   .calc-box .band{display:block;margin-top:4px;font-size:12px;font-weight:700;color:#a7f3d0}
   .calc-note{margin-top:14px;font-size:13px;color:#94a3b8}
+  .calc-blank{margin-top:10px;font-size:12px;font-weight:700;color:#94a3b8}
+  .calc-overflow{margin-top:4px;font-size:12px;font-weight:800;color:#fb7185}
+  .calc-toggle{margin-top:18px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid rgba(252,211,77,.35);background:rgba(252,211,77,.1);border-radius:18px;padding:13px 16px;cursor:pointer;text-align:left;font:inherit;color:inherit}
+  .calc-toggle .ttl{font-size:14px;font-weight:900;color:#fde68a}
+  .calc-toggle .desc{display:block;margin-top:2px;font-size:12px;font-weight:600;color:rgba(253,230,138,.8)}
+  .calc-switch{position:relative;flex:0 0 auto;width:48px;height:28px;border-radius:999px;background:#334155;transition:background .15s}
+  .calc-switch.on{background:#34d399}
+  .calc-switch i{position:absolute;top:2px;left:2px;width:24px;height:24px;border-radius:999px;background:#fff;transition:transform .15s}
+  .calc-switch.on i{transform:translateX(20px)}
+  .calc-raw{margin-top:4px;font-size:11px;font-weight:700;color:rgba(110,231,183,.65)}
+  .ref-table,.kontenjan-table{margin-top:24px;overflow-x:auto;border:1px solid #1e293b;border-radius:20px}
+  .ref-table table,.kontenjan-table table{width:100%;border-collapse:collapse;font-size:14px}
+  .ref-table thead tr,.kontenjan-table thead tr{background:rgba(15,23,42,.7);text-align:left;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8}
+  .ref-table th,.ref-table td,.kontenjan-table th,.kontenjan-table td{padding:11px 15px}
+  .kontenjan-table th{cursor:pointer;user-select:none}
+  .ref-table tbody tr,.kontenjan-table tbody tr{border-top:1px solid #1e293b}
+  .ref-table td:first-child,.kontenjan-table td:first-child{font-weight:800;color:#e2e8f0}
+  .ref-table td:nth-child(2){font-weight:900;color:#6ee7b7}
+  .kontenjan-table td.puan{font-weight:900;color:#6ee7b7}
+  .ref-note{border-top:1px solid #1e293b;padding:10px 15px;font-size:12px;color:#64748b}
+  .reverse-box{margin-top:32px;border:1px solid #1e293b;background:rgba(2,6,23,.5);border-radius:18px;padding:20px}
+  .reverse-box h3{margin:0;font-size:16px;color:#fff}
+  .reverse-box .hint{margin-top:6px;font-size:12px;color:#94a3b8}
+  .reverse-row{margin-top:14px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px}
+  .reverse-field label{display:block;font-size:13px;font-weight:700;color:#cbd5e1;margin-bottom:6px}
+  .reverse-field input{width:160px;border:1px solid #334155;background:#0f172a;color:#fff;border-radius:14px;padding:11px 13px;font-size:16px;font-weight:700;outline:none}
+  .reverse-out{border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:14px;padding:11px 16px}
+  .reverse-out small{display:block;font-size:12px;font-weight:700;color:#94a3b8}
+  .reverse-out b{display:block;margin-top:2px;font-size:20px;font-weight:900;color:#fff}
+  .reverse-warn{margin-top:10px;font-size:12px;font-weight:700;color:#fbbf24}
+  .kontenjan-search{width:100%;max-width:360px;border:1px solid #334155;background:#020617;color:#fff;border-radius:16px;padding:10px 15px;font-size:14px;font-weight:700;outline:none}
+  .kontenjan-search:focus{border-color:#6ee7b7}
+  .kontenjan-meta{margin-top:10px;font-size:12px;font-weight:700;color:#64748b}
   @media (max-width:560px){.calc-grid{grid-template-columns:1fr}.calc-out{grid-template-columns:1fr}}
   @media (max-width:720px){.nav{display:none}main{padding-top:38px}.topbar-inner{padding-inline:14px}}
 `;
@@ -179,6 +217,7 @@ const footerLinks = [
   ["TUS Soru Çözme Uygulaması", "/tus-soru-cozme-uygulamasi"],
   ["TUS Deneme Analizi", "/tus-deneme-analizi"],
   ["TUS Puan Hesaplama", "/tus-puan-hesaplama"],
+  ["TUS Kontenjan Tablosu", "/tus-kontenjan-tablosu"],
   ["Tusoskop Özellikleri", "/tusoskop-ozellikleri"],
   ["Fiyatlandırma", "/fiyatlandirma"],
   ["Hakkımızda", "/hakkimizda"],
@@ -201,6 +240,7 @@ function renderHeader() {
           <a href="/tusoskop-nedir">Nedir?</a>
           <a href="/tusoskop-ozellikleri">Özellikler</a>
           <a href="/tus-puan-hesaplama">Puan Hesaplama</a>
+          <a href="/tus-kontenjan-tablosu">Kontenjanlar</a>
           <a href="/fiyatlandirma">Fiyatlandırma</a>
           <a href="/hakkimizda">Hakkımızda</a>
           <a href="/tusoskop-sss">SSS</a>
@@ -272,6 +312,9 @@ function renderSample(sample, subject) {
 // kullanır; production'da bu statik sürüm servis edilir.
 function renderScoreTool() {
   const anchors = JSON.stringify(TUS_SCORE_ANCHORS);
+  const refRows = TUS_SCORE_ANCHORS.map(
+    ([net, score]) => `<tr><td>${net}</td><td>${score}</td></tr>`
+  ).join("");
   return `<section class="calc" aria-label="TUS puan hesaplama aracı">
       <div class="calc-grid">
         <div class="calc-sec">
@@ -280,6 +323,8 @@ function renderScoreTool() {
             <div class="calc-field"><label for="td">Doğru</label><input id="td" type="number" inputmode="numeric" min="0" max="${TUS_SECTION_QUESTIONS}" placeholder="0" /></div>
             <div class="calc-field"><label for="ty">Yanlış</label><input id="ty" type="number" inputmode="numeric" min="0" max="${TUS_SECTION_QUESTIONS}" placeholder="0" /></div>
           </div>
+          <p class="calc-blank">Boş: <span id="temel-blank">${TUS_SECTION_QUESTIONS}</span> / ${TUS_SECTION_QUESTIONS}</p>
+          <p class="calc-overflow" id="temel-overflow" style="display:none">Bu bölümde en fazla ${TUS_SECTION_QUESTIONS} soru olabilir.</p>
         </div>
         <div class="calc-sec">
           <h3>Klinik Tıp Bilimleri <span class="net">Net: <span id="klinik-net">0</span></span></h3>
@@ -287,24 +332,173 @@ function renderScoreTool() {
             <div class="calc-field"><label for="kd">Doğru</label><input id="kd" type="number" inputmode="numeric" min="0" max="${TUS_SECTION_QUESTIONS}" placeholder="0" /></div>
             <div class="calc-field"><label for="ky">Yanlış</label><input id="ky" type="number" inputmode="numeric" min="0" max="${TUS_SECTION_QUESTIONS}" placeholder="0" /></div>
           </div>
+          <p class="calc-blank">Boş: <span id="klinik-blank">${TUS_SECTION_QUESTIONS}</span> / ${TUS_SECTION_QUESTIONS}</p>
+          <p class="calc-overflow" id="klinik-overflow" style="display:none">Bu bölümde en fazla ${TUS_SECTION_QUESTIONS} soru olabilir.</p>
         </div>
       </div>
+
+      <button type="button" class="calc-toggle" id="kesinti-toggle" role="switch" aria-checked="false">
+        <span>
+          <span class="ttl" title="Daha önce bir TUS ile uzmanlık/yan dal eğitimine yerleşip devam etmemiş adaylara ÖSYM tarafından uygulanan kesinti.">%5 Puan Kesintisi ⓘ</span>
+          <span class="desc">Daha önce TUS ile yerleşip devam etmemiş adaylar için geçerli</span>
+        </span>
+        <span class="calc-switch" id="kesinti-switch" aria-hidden="true"><i></i></span>
+      </button>
+
       <div class="calc-out">
         <div class="calc-box"><small>Toplam Net</small><b id="toplam-net">0</b></div>
-        <div class="calc-box hi"><small>Tahmini TUS Puanı</small><b id="tahmini-puan">—</b><span class="band" id="puan-band">Doğru ve yanlış sayını gir</span></div>
+        <div class="calc-box hi">
+          <small id="puan-label">Tahmini TUS Puanı</small>
+          <b id="tahmini-puan">—</b>
+          <span class="band" id="puan-band">Doğru ve yanlış sayını gir</span>
+          <span class="calc-raw" id="puan-ham" style="display:none"></span>
+        </div>
       </div>
       <p class="calc-note">Sonuç tahminidir. Net = doğru − yanlış/4. Gerçek TUS puanı ÖSYM'nin ilgili dönemdeki ortalama ve standart sapmasına göre standardize edilir.</p>
+
+      <div class="ref-table" aria-label="Net - tahmini puan referans tablosu">
+        <table>
+          <thead><tr><th>Toplam Net</th><th>Tahmini TUS Puanı</th></tr></thead>
+          <tbody>${refRows}</tbody>
+        </table>
+        <p class="ref-note">Ara değerler için hesaplayıcı doğrusal aradeğerleme kullanır.</p>
+      </div>
+
+      <div class="reverse-box">
+        <h3>Hedef puana kaç net gerekir?</h3>
+        <p class="hint" id="reverse-hint">Ulaşmak istediğin tahmini TUS puanını gir; yaklaşık gereken toplam neti hesaplayalım.</p>
+        <div class="reverse-row">
+          <div class="reverse-field"><label for="hedef-puan">Hedef Puan</label><input id="hedef-puan" type="number" inputmode="decimal" min="0" max="100" placeholder="örn. 65" /></div>
+          <div class="reverse-out"><small>Gereken Toplam Net</small><b id="gerekli-net">—</b></div>
+        </div>
+        <p class="reverse-warn" id="reverse-warn" style="display:none"></p>
+      </div>
+
       <script>
         (function(){
-          var ANCHORS=${anchors},SEC=${TUS_SECTION_QUESTIONS};
+          var ANCHORS=${anchors},SEC=${TUS_SECTION_QUESTIONS},RATE=${TUS_DEDUCTION_RATE},MAXS=${MAX_MODEL_SCORE};
+          var kesinti=false;
           function r1(x){return Math.round(x*10)/10;}
           function net(c,w){var n=(Number(c)||0)-(Number(w)||0)/4;return n>0?r1(n):0;}
+          function blank(c,w){var b=SEC-(Number(c)||0)-(Number(w)||0);return b>=0?b:0;}
+          function overflow(c,w){return (Number(c)||0)+(Number(w)||0)>SEC;}
           function est(n){n=Number(n);if(!isFinite(n)||n<=0)return 0;var f=ANCHORS[0],l=ANCHORS[ANCHORS.length-1];if(n<=f[0])return r1(f[1]*n/f[0]);if(n>=l[0])return l[1];for(var i=0;i<ANCHORS.length-1;i++){var a=ANCHORS[i],b=ANCHORS[i+1];if(n>=a[0]&&n<=b[0]){var t=(n-a[0])/(b[0]-a[0]);return r1(a[1]+t*(b[1]-a[1]));}}return l[1];}
+          function netForScore(s){s=Number(s);if(!isFinite(s)||s<=0)return 0;var f=ANCHORS[0],l=ANCHORS[ANCHORS.length-1];if(s<=f[1])return r1(f[0]*s/f[1]);if(s>=l[1])return l[0];for(var i=0;i<ANCHORS.length-1;i++){var a=ANCHORS[i],b=ANCHORS[i+1];if(s>=a[1]&&s<=b[1]){var t=(s-a[1])/(b[1]-a[1]);return r1(a[0]+t*(b[0]-a[0]));}}return l[0];}
+          function deduct(s,active){s=Number(s)||0;return active?r1(s*(1-RATE)):s;}
           function band(s){s=Number(s)||0;if(s>=68)return"Yüksek · Rekabetçi branşlar için güçlü bir aralık.";if(s>=60)return"İyi · Birçok branş için yeterli; netlerini biraz daha yükselt.";if(s>=54)return"Orta · Temel ve klinik açıklarını kapatmaya odaklan.";return"Geliştirilmeli · Düzenli soru çözümü ve tekrarla net artışı hedefle.";}
           function cap(el){var x=el.value.replace(/[^0-9]/g,'');if(x!=='')x=String(Math.min(Number(x),SEC));el.value=x;return x;}
           var td=document.getElementById('td'),ty=document.getElementById('ty'),kd=document.getElementById('kd'),ky=document.getElementById('ky');
-          function upd(){var tn=net(cap(td),cap(ty)),kn=net(cap(kd),cap(ky)),sum=r1(tn+kn);document.getElementById('temel-net').textContent=tn;document.getElementById('klinik-net').textContent=kn;document.getElementById('toplam-net').textContent=sum;var has=td.value||ty.value||kd.value||ky.value;var sc=est(sum);document.getElementById('tahmini-puan').textContent=has?sc:'—';document.getElementById('puan-band').textContent=has?band(sc):'Doğru ve yanlış sayını gir';}
-          [td,ty,kd,ky].forEach(function(el){el.addEventListener('input',upd);});upd();
+          var tOverflowEl=document.getElementById('temel-overflow'),kOverflowEl=document.getElementById('klinik-overflow');
+          var toggleBtn=document.getElementById('kesinti-toggle'),switchEl=document.getElementById('kesinti-switch');
+          var hedefEl=document.getElementById('hedef-puan'),hintEl=document.getElementById('reverse-hint'),warnEl=document.getElementById('reverse-warn');
+          var lastScore=0;
+          function upd(){
+            var tc=cap(td),tw=cap(ty),kc=cap(kd),kw=cap(ky);
+            var tn=net(tc,tw),kn=net(kc,kw),sum=r1(tn+kn);
+            document.getElementById('temel-net').textContent=tn;
+            document.getElementById('klinik-net').textContent=kn;
+            document.getElementById('toplam-net').textContent=sum;
+            document.getElementById('temel-blank').textContent=blank(tc,tw);
+            document.getElementById('klinik-blank').textContent=blank(kc,kw);
+            tOverflowEl.style.display=overflow(tc,tw)?'block':'none';
+            kOverflowEl.style.display=overflow(kc,kw)?'block':'none';
+            var has=td.value||ty.value||kd.value||ky.value;
+            var rawScore=est(sum);
+            lastScore=rawScore;
+            var shown=kesinti?deduct(rawScore,true):rawScore;
+            document.getElementById('puan-label').textContent=kesinti?'Tahmini TUS Puanı (−%5 kesintili)':'Tahmini TUS Puanı';
+            document.getElementById('tahmini-puan').textContent=has?shown:'—';
+            document.getElementById('puan-band').textContent=has?band(shown):'Doğru ve yanlış sayını gir';
+            var hamEl=document.getElementById('puan-ham');
+            if(has&&kesinti){hamEl.style.display='block';hamEl.textContent='Ham puan: '+rawScore;}else{hamEl.style.display='none';}
+            updReverse();
+          }
+          function updReverse(){
+            hintEl.textContent='Ulaşmak istediğin tahmini TUS puanını gir; yaklaşık gereken toplam neti hesaplayalım'+(kesinti?' (kesinti anahtarı açıkken hedefin kesinti sonrası puan olarak alındığı varsayılır).':'.');
+            var raw=hedefEl.value.replace(/[^0-9.]/g,'');
+            if(raw!==hedefEl.value)hedefEl.value=raw;
+            var s=Number(raw);
+            var valid=raw!==''&&isFinite(s)&&s>0;
+            var effective=valid&&kesinti?s/(1-RATE):s;
+            var unreachable=valid&&effective>MAXS;
+            document.getElementById('gerekli-net').textContent=valid?(unreachable?(MAXS+'+'):netForScore(effective)):'—';
+            warnEl.style.display=unreachable?'block':'none';
+            if(unreachable)warnEl.textContent='Bu modelde ulaşılabilecek azami tahmini puan '+MAXS+'\\'dir. Daha yüksek hedefler gerçek dönem istatistiklerine göre değişir.';
+          }
+          toggleBtn.addEventListener('click',function(){
+            kesinti=!kesinti;
+            toggleBtn.setAttribute('aria-checked',String(kesinti));
+            switchEl.className='calc-switch'+(kesinti?' on':'');
+            upd();
+          });
+          [td,ty,kd,ky].forEach(function(el){el.addEventListener('input',upd);});
+          hedefEl.addEventListener('input',updReverse);
+          upd();
+        })();
+      </script>
+    </section>`;
+}
+
+// TUS kontenjan tablosu — sıralanabilir/aranabilir statik tablo + satır-içi JS.
+function renderKontenjanTable(data, donem) {
+  const rows = data
+    .map(
+      (r) =>
+        `<tr data-dal="${escapeHtml(r.dal.toLocaleLowerCase("tr"))}" data-kontenjan="${r.kontenjan}" data-taban="${r.tabanPuan ?? -1}" data-yerlesen="${r.yerlesen}">` +
+        `<td>${escapeHtml(r.dal)}</td><td>${r.kontenjan}</td><td class="puan">${r.tabanPuan != null ? r.tabanPuan : "—"}</td><td>${r.yerlesen}</td></tr>`
+    )
+    .join("");
+  return `<section aria-label="TUS kontenjan tablosu" style="margin-top:30px">
+      <input type="text" id="kontenjan-search" class="kontenjan-search" placeholder="Uzmanlık dalı ara…" />
+      <p class="kontenjan-meta">${escapeHtml(donem)} · <span id="kontenjan-count">${data.length}</span> dal</p>
+      <div class="kontenjan-table">
+        <table>
+          <thead>
+            <tr>
+              <th data-key="dal" data-type="str">Uzmanlık Dalı</th>
+              <th data-key="kontenjan" data-type="num">Kontenjan</th>
+              <th data-key="taban" data-type="num">Taban Puan</th>
+              <th data-key="yerlesen" data-type="num">Yerleşen</th>
+            </tr>
+          </thead>
+          <tbody id="kontenjan-body">${rows}</tbody>
+        </table>
+      </div>
+      <script>
+        (function(){
+          var search=document.getElementById('kontenjan-search');
+          var body=document.getElementById('kontenjan-body');
+          var countEl=document.getElementById('kontenjan-count');
+          var headers=document.querySelectorAll('.kontenjan-table th[data-key]');
+          var rows=Array.prototype.slice.call(body.querySelectorAll('tr'));
+          var sortKey='dal',sortDir=1;
+          function applyFilter(){
+            var q=search.value.trim().toLocaleLowerCase('tr');
+            var visible=0;
+            rows.forEach(function(tr){
+              var match=!q||tr.getAttribute('data-dal').indexOf(q)!==-1;
+              tr.style.display=match?'':'none';
+              if(match)visible++;
+            });
+            countEl.textContent=visible;
+          }
+          function applySort(){
+            var attr=sortKey==='dal'?'data-dal':sortKey==='kontenjan'?'data-kontenjan':sortKey==='taban'?'data-taban':'data-yerlesen';
+            var sorted=rows.slice().sort(function(a,b){
+              var av=a.getAttribute(attr),bv=b.getAttribute(attr);
+              if(attr==='data-dal')return sortDir*av.localeCompare(bv,'tr');
+              return sortDir*(Number(av)-Number(bv));
+            });
+            sorted.forEach(function(tr){body.appendChild(tr);});
+          }
+          headers.forEach(function(th){
+            th.addEventListener('click',function(){
+              var key=th.getAttribute('data-key');
+              if(sortKey===key){sortDir=-sortDir;}else{sortKey=key;sortDir=key==='dal'?1:-1;}
+              applySort();
+            });
+          });
+          search.addEventListener('input',applyFilter);
         })();
       </script>
     </section>`;
@@ -370,6 +564,7 @@ function renderPage(page, isLegal = false) {
       ${renderSample(page.sample, page.subject)}
       ${page.isSubject ? renderTopics(page.subject, page.topics) : ""}
       ${page.tool === "score" ? renderScoreTool() : ""}
+      ${page.tool === "kontenjan" ? renderKontenjanTable(page.kontenjanData, page.kontenjanDonem) : ""}
       ${appStore}
       <div class="sections">
         ${page.sections.map((section) => `
