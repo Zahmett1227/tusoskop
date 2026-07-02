@@ -246,6 +246,43 @@ git cherry-pick $COMMIT
 git push origin ios-appstore-v1
 ```
 
+## Meta Reklam Mikro Deneme Funnel'ı (`/coz/:campaignSlug`)
+
+Meta Traffic reklamlarından gelen kullanıcı için **login-öncesi 3 soruluk mini deneme**. Amaç: reklam ile login duvarı arasındaki soğuk geçişi kaldırmak. (commit: `8ac2146`)
+
+### Mimari
+- `src/main.jsx` → `src/AppRoot.jsx`: `/coz/` path'i **ağır App ağacından izole** (auth/QuestionsProvider yüklenmez), lazy `PublicQuizFunnel`. Firebase SDK sadece "Web'de devam et" login'inde dinamik import → en hızlı ilk render.
+- Bileşenler: `src/components/funnel/` → `PublicQuizFunnel.jsx` (orchestrator) + `QuizQuestionCard.jsx` + `QuizResultScreen.jsx` + `QuizContinueModal.jsx`.
+- Kampanya + sorular **statik bundle**: `src/data/publicQuizCampaigns.js`. Firestore public read YOK (ana banka güvende). `correctIndex` 0-tabanlı (ana bankadaki `correct` ile aynı).
+- Session: `src/utils/publicQuizSession.js` (sessionStorage, slug'a göre namespaced, yenilemede resume). Sonuç `localStorage` `tusoskop_quiz_result`.
+- Analytics: `src/lib/publicQuizAnalytics.js` — Firebase Analytics + **mevcut** `src/lib/metaPixel.js`'i yeniden kullanır (`ensureMetaPixel`→`initMetaPixel`). Kendi pixel bootstrap'ı KURMA.
+- App Store linki: `src/utils/appStoreCampaignLink.js` (`buildClientAppStoreUrl`) — `VITE_APP_STORE_PROVIDER_TOKEN` env'inden `pt`, `ct`=kampanyanın `appleCampaignToken`.
+- Firestore oturum özeti: `/api/quiz-session.js` + `lib/quiz/logQuizSession.js` (admin-SDK, `logCampaignClick` deseni). Client Firestore write YOK, **rules değişmez**.
+- Web-devam attribution: mevcut `acquisition` mekanizması (utm → `acquisitionAttribution.js` → `userService`). Mevcut Google/Apple auth kullanılır; yeni auth kurma.
+
+### Yeni ders için kampanya eklemek
+`src/data/publicQuizCampaigns.js` → `PUBLIC_QUIZ_CAMPAIGNS` dizisine yeni obje ekle:
+```js
+{ slug: "farmakoloji-01", campaignCode: "mq_far_01", title: "3 Soruluk Farmakoloji Mini Denemesi",
+  subject: "Farmakoloji", active: true, appleCampaignToken: "mq_far_01",
+  questions: [ /* 3 soru: {id, subject, topic, difficulty, questionText, options[5], correctIndex, explanation} */ ] }
+```
+- Soruları **ana bankadan** seç (uydurma): `node -e` ile ilgili `src/data/questionChunks/<ders>.js`'ten `id,q,options,correct,exp` çek. `correct`→`correctIndex` (0-tabanlı, birebir).
+- Slug taksonomisi: `mq_<ders3harf>_<no>` (mq=Meta Quiz). Route otomatik: `/coz/<slug>` (rewrite'lar `vercel.json`+`firebase.json`'da `/coz/**` ile hazır, ekleme gerekmez).
+- Deploy sonrası test: `https://www.tusoskop.com/coz/<slug>`.
+
+### Instagram kreatifi (reklam görseli)
+- **1. sorunun metni reklam görseliyle BİREBİR aynı olmalı** (mesaj eşleşmesi = dönüşüm için kritik). Doğru cevabı gösterme (teaser).
+- Format 4:5 dikey (1080×1350), koyu lacivert (#070c18) + emerald (#10b981), soru büyük.
+- Üretim: SVG yaz → HTML `<img>` wrapper → headless Chrome ile PNG: `chrome --headless=new --force-device-scale-factor=2 --window-size=1080,1350 --screenshot=<abs>.png file:///<abs>.html`. (rsvg/imagemagick metin render'ı kötü, Chrome kullan. Instagram SVG kabul etmez, PNG şart.)
+
+### Reklam & takip
+- Meta Ads hesabı (Tusoskop): `2734371800349546` (TRY, min ~46.81 TL/gün). App Store campaign link: `pt=128988812`, `ct=<campaignCode>`.
+- Reklam URL formatı: `https://www.tusoskop.com/coz/<slug>?campaign_code=<code>&utm_source={{site_source_name}}&utm_medium=paid_social&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&campaign_id={{campaign.id}}&adset_id={{adset.id}}&ad_id={{ad.id}}&placement={{placement}}`
+- Firebase Analytics event'leri: `quiz_landing_view, quiz_start, question_answered, quiz_complete, result_view, appstore_click, web_continue_click, signup_start`. Meta Pixel: `ViewContent, QuizStart, QuizComplete, AppStoreClick, WebContinueClick, CompleteRegistration`. Meta kampanyasını sayfa-içi `QuizComplete`/`AppStoreClick`'e optimize et (iOS ATT körleştirmez).
+- ENV (Vercel): `VITE_META_PIXEL_ID` (var), `VITE_APP_STORE_PROVIDER_TOKEN=128988812`, `VITE_APP_STORE_BASE_URL` (opsiyonel). Hepsi build-time → değişince redeploy gerekir.
+- Bilinen sınır (Phase-2): çözülen cevaplar henüz hesaba içe aktarılmıyor (skor+attribution bağlanıyor, cevaplar `localStorage`'da bekliyor); MVP'de `correctIndex` client'ta.
+
 ## Kullanıcı Notları
 
 - Demo mod çalışıyor, Google ile giriş iOS'ta düzeltildi (commit: 644d1db)
