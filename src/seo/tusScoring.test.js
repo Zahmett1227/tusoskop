@@ -3,13 +3,21 @@ import {
   computeNet,
   computeBlank,
   isSectionOverflow,
-  estimateTusScore,
+  computeStandardPuan,
+  computeTPuani,
+  computeKPuani,
   calculateTusResult,
   applyScoreDeduction,
-  netForScore,
-  TUS_SCORE_ANCHORS,
+  puanBandi,
+  netForTargetPuan,
+  TEMEL_ORTALAMA,
+  TEMEL_STDDEV,
+  KLINIK_ORTALAMA,
+  KLINIK_STDDEV,
+  T_PUANI_AGIRLIK,
+  K_PUANI_AGIRLIK,
   TUS_DEDUCTION_RATE,
-  MAX_MODEL_SCORE,
+  TUS_BARAJ_PUANI,
 } from "./tusScoring.js";
 
 describe("tusScoring", () => {
@@ -19,39 +27,43 @@ describe("tusScoring", () => {
     expect(computeNet(10, 80)).toBe(0); // negatif → 0
   });
 
-  it("çapa noktalarında tabloyla birebir aynı puanı verir", () => {
-    for (const [net, score] of TUS_SCORE_ANCHORS) {
-      expect(estimateTusScore(net)).toBe(score);
-    }
+  it("computeBlank: 100 - doğru - yanlış, negatif olmaz", () => {
+    expect(computeBlank(80, 20)).toBe(0);
+    expect(computeBlank(0, 0)).toBe(100);
+    expect(computeBlank(80, 30)).toBe(0); // 110>100 → negatifi 0'a clamp
   });
 
-  it("çapalar arasında monoton artan interpolasyon yapar", () => {
-    // 95→62 ile 110→66 arası: 100 net ~ 63.x olmalı (62 ile 66 arasında)
-    const s = estimateTusScore(100);
-    expect(s).toBeGreaterThan(62);
-    expect(s).toBeLessThan(66);
+  it("isSectionOverflow: doğru+yanlış 100'ü aşıyorsa true", () => {
+    expect(isSectionOverflow(80, 20)).toBe(false); // tam 100
+    expect(isSectionOverflow(80, 21)).toBe(true);
+    expect(isSectionOverflow(0, 0)).toBe(false);
   });
 
-  it("son çapanın üstünde tavan puanı verir", () => {
-    expect(estimateTusScore(200)).toBe(75);
-    expect(estimateTusScore(240)).toBe(75);
+  it("computeStandardPuan: net ortalamaya eşitse 50 döner", () => {
+    expect(computeStandardPuan(TEMEL_ORTALAMA, TEMEL_ORTALAMA, TEMEL_STDDEV)).toBe(50);
+    expect(computeStandardPuan(KLINIK_ORTALAMA + KLINIK_STDDEV, KLINIK_ORTALAMA, KLINIK_STDDEV)).toBe(60); // +1 stddev → +10 puan
   });
 
-  it("0 ve altı net 0 puan verir", () => {
-    expect(estimateTusScore(0)).toBe(0);
-    expect(estimateTusScore(-5)).toBe(0);
+  it("computeTPuani / computeKPuani: net ortalamalarda ikisi de 50 olur", () => {
+    expect(computeTPuani(TEMEL_ORTALAMA, KLINIK_ORTALAMA)).toBe(50);
+    expect(computeKPuani(TEMEL_ORTALAMA, KLINIK_ORTALAMA)).toBe(50);
   });
 
-  it("genel monotonluk: net arttıkça puan azalmaz", () => {
-    let prev = -1;
-    for (let n = 0; n <= 240; n += 5) {
-      const s = estimateTusScore(n);
-      expect(s).toBeGreaterThanOrEqual(prev);
-      prev = s;
-    }
+  it("T Puanı temel ağırlıklı, K Puanı klinik ağırlıklıdır (aynı girdide farklı sonuç verir)", () => {
+    // Temel neti ortalamanın çok üstünde, klinik net ortalamada → T Puanı > K Puanı olmalı
+    const temelNet = TEMEL_ORTALAMA + 2 * TEMEL_STDDEV;
+    const klinikNet = KLINIK_ORTALAMA;
+    const t = computeTPuani(temelNet, klinikNet);
+    const k = computeKPuani(temelNet, klinikNet);
+    expect(t).toBeGreaterThan(k);
   });
 
-  it("calculateTusResult temel/klinik neti ve toplamı doğru birleştirir", () => {
+  it("ağırlıklar toplamı 1 eder", () => {
+    expect(T_PUANI_AGIRLIK.temel + T_PUANI_AGIRLIK.klinik).toBe(1);
+    expect(K_PUANI_AGIRLIK.temel + K_PUANI_AGIRLIK.klinik).toBe(1);
+  });
+
+  it("calculateTusResult temel/klinik neti ve her iki puanı doğru üretir", () => {
     const r = calculateTusResult({
       temelDogru: 90,
       temelYanlis: 20, // net 85
@@ -61,20 +73,8 @@ describe("tusScoring", () => {
     expect(r.temelNet).toBe(85);
     expect(r.klinikNet).toBe(75);
     expect(r.toplamNet).toBe(160);
-    expect(r.score).toBe(75);
-    expect(r.band.label).toBe("Yüksek");
-  });
-
-  it("computeBlank: 120 - doğru - yanlış, negatif olmaz", () => {
-    expect(computeBlank(80, 20)).toBe(20);
-    expect(computeBlank(0, 0)).toBe(120);
-    expect(computeBlank(100, 30)).toBe(0); // 130>120 → negatifi 0'a clamp
-  });
-
-  it("isSectionOverflow: doğru+yanlış 120'yi aşıyorsa true", () => {
-    expect(isSectionOverflow(100, 20)).toBe(false); // tam 120
-    expect(isSectionOverflow(100, 21)).toBe(true);
-    expect(isSectionOverflow(0, 0)).toBe(false);
+    expect(r.tPuani).toBe(computeTPuani(85, 75));
+    expect(r.kPuani).toBe(computeKPuani(85, 75));
   });
 
   it("applyScoreDeduction: aktif değilse aynı puanı, aktifse %5 azaltılmış puanı verir", () => {
@@ -83,24 +83,22 @@ describe("tusScoring", () => {
     expect(TUS_DEDUCTION_RATE).toBe(0.05);
   });
 
-  it("netForScore: çapa noktalarında estimateTusScore'un tersini verir", () => {
-    for (const [net, score] of TUS_SCORE_ANCHORS) {
-      expect(netForScore(score)).toBe(net);
-    }
+  it("puanBandi: baraj altı/üstü ve üst bantları doğru etiketler", () => {
+    expect(puanBandi(TUS_BARAJ_PUANI - 1).label).toBe("Baraj Altı");
+    expect(puanBandi(TUS_BARAJ_PUANI).label).toBe("Baraj Üstü");
+    expect(puanBandi(60).label).toBe("İyi");
+    expect(puanBandi(70).label).toBe("Yüksek");
   });
 
-  it("netForScore ve estimateTusScore birbirinin tersidir (round-trip)", () => {
-    for (let net = 40; net <= 160; net += 5) {
-      const score = estimateTusScore(net);
-      const backNet = netForScore(score);
-      expect(Math.abs(backNet - net)).toBeLessThan(1); // yuvarlama toleransı
-    }
-  });
-
-  it("netForScore: 0 ve altı için 0, tavanın üstü için son çapa neti", () => {
-    expect(netForScore(0)).toBe(0);
-    expect(netForScore(-5)).toBe(0);
-    expect(netForScore(MAX_MODEL_SCORE)).toBe(160);
-    expect(netForScore(90)).toBe(160); // tavanın üstü → üst sınır neti
+  it("netForTargetPuan: hedefe ulaşmak için gereken net, o puanı geri üretir", () => {
+    const fixedTemelNet = 40;
+    const { neededKlinikNet } = netForTargetPuan({
+      targetPuan: 55,
+      puanTuru: "K",
+      fixedTemelNet,
+      fixedKlinikNet: 0,
+    });
+    const roundTrip = computeKPuani(fixedTemelNet, neededKlinikNet);
+    expect(Math.abs(roundTrip - 55)).toBeLessThan(0.2);
   });
 });

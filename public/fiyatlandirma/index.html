@@ -85,15 +85,22 @@
   .calc-field label{display:block;font-size:13px;font-weight:700;color:#cbd5e1;margin-bottom:6px}
   .calc-field input{width:100%;border:1px solid #334155;background:#020617;color:#fff;border-radius:14px;padding:11px 13px;font-size:16px;font-weight:700;outline:none}
   .calc-field input:focus{border-color:#6ee7b7}
-  .calc-out{display:grid;grid-template-columns:1fr 2fr;gap:12px;margin-top:16px}
+  .calc>.accent-bar{height:4px;margin:-22px -22px 22px;background:linear-gradient(90deg,#7dd3fc,#6ee7b7,#34d399)}
+  .calc-out{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:16px}
   .calc-box{border:1px solid #1e293b;background:#020617;border-radius:16px;padding:14px;text-align:center}
   .calc-box.hi{border-color:rgba(110,231,183,.4);background:rgba(110,231,183,.1)}
+  .calc-box.hi-t{border-color:rgba(125,211,252,.4);background:rgba(125,211,252,.1)}
   .calc-box small{display:block;font-size:12px;font-weight:700;color:#94a3b8}
   .calc-box.hi small{color:#a7f3d0}
+  .calc-box.hi-t small{color:#bae6fd}
   .calc-box b{display:block;margin-top:4px;font-size:22px;font-weight:900;color:#fff}
-  .calc-box.hi b{font-size:30px;color:#6ee7b7}
-  .calc-box .band{display:block;margin-top:4px;font-size:12px;font-weight:700;color:#a7f3d0}
+  .calc-box.hi b,.calc-box.hi-t b{font-size:27px}
+  .calc-box .band{display:block;margin-top:4px;font-size:11px;font-weight:700;color:#a7f3d0}
+  .calc-box.hi-t .band{color:#bae6fd}
+  .calc-box .usedby{display:block;margin-top:6px;font-size:10px;font-weight:600;color:#64748b}
   .calc-note{margin-top:14px;font-size:13px;color:#94a3b8}
+  .calc-note b{color:#6ee7b7}
+  .calc-note b.t{color:#7dd3fc}
   .calc-blank{margin-top:10px;font-size:12px;font-weight:700;color:#94a3b8}
   .calc-overflow{margin-top:4px;font-size:12px;font-weight:800;color:#fb7185}
   .calc-toggle{margin-top:18px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid rgba(252,211,77,.35);background:rgba(252,211,77,.1);border-radius:18px;padding:13px 16px;cursor:pointer;text-align:left;font:inherit;color:inherit}
@@ -104,30 +111,54 @@
   .calc-switch i{position:absolute;top:2px;left:2px;width:24px;height:24px;border-radius:999px;background:#fff;transition:transform .15s}
   .calc-switch.on i{transform:translateX(20px)}
   .calc-raw{margin-top:4px;font-size:11px;font-weight:700;color:rgba(110,231,183,.65)}
-  .ref-table,.kontenjan-table{margin-top:24px;overflow-x:auto;border:1px solid #1e293b;border-radius:20px}
-  .ref-table table,.kontenjan-table table{width:100%;border-collapse:collapse;font-size:14px}
-  .ref-table thead tr,.kontenjan-table thead tr{background:rgba(15,23,42,.7);text-align:left;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8}
-  .ref-table th,.ref-table td,.kontenjan-table th,.kontenjan-table td{padding:11px 15px}
+  .puan-badge{display:inline-flex;align-items:center;border-radius:999px;padding:2px 8px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;border:1px solid;white-space:nowrap}
+  .puan-badge.t{border-color:rgba(125,211,252,.4);background:rgba(125,211,252,.1);color:#bae6fd}
+  .puan-badge.k{border-color:rgba(110,231,183,.4);background:rgba(110,231,183,.1);color:#a7f3d0}
+  .method-note{margin-top:24px;border:1px solid #1e293b;background:rgba(2,6,23,.5);border-radius:18px;padding:20px}
+  .method-note summary{cursor:pointer;font-size:14px;font-weight:900;color:#fff}
+  .method-note .body{margin-top:12px;display:grid;gap:8px}
+  .method-note p{font-size:12px;color:#94a3b8;line-height:1.6}
+  .method-note b{color:#cbd5e1}
+  .match-panel{margin-top:32px;border:1px solid #1e293b;background:rgba(2,6,23,.5);border-radius:18px;padding:20px}
+  .match-panel h3{margin:0;font-size:16px;color:#fff}
+  .match-panel .hint{margin-top:6px;font-size:12px;color:#94a3b8}
+  .match-panel .lead{margin-top:14px;font-size:14px;font-weight:800;color:#6ee7b7}
+  .match-panel .lead.warn{color:#fbbf24}
+  .match-list{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  .match-chip{display:flex;align-items:center;gap:6px;border-radius:14px;padding:7px 12px;font-size:12px;font-weight:800;border:1px solid rgba(110,231,183,.3);background:rgba(110,231,183,.1);color:#ecfdf5}
+  .match-chip.open{border-color:#334155;background:rgba(15,23,42,.6);color:#cbd5e1}
+  .match-near{margin-top:16px;border-top:1px solid #1e293b;padding-top:14px}
+  .match-near-title{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:#64748b}
+  .match-near-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:14px;gap:10px}
+  .match-near-row .dal{display:flex;align-items:center;gap:6px;color:#cbd5e1;font-weight:700}
+  .match-near-row .gap{font-size:11px;color:#64748b;font-weight:700}
+  .kontenjan-table,.ref-table{margin-top:24px;overflow-x:auto;border:1px solid #1e293b;border-radius:20px}
+  .kontenjan-table table,.ref-table table{width:100%;border-collapse:collapse;font-size:14px}
+  .kontenjan-table thead tr,.ref-table thead tr{background:rgba(15,23,42,.7);text-align:left;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8}
+  .kontenjan-table th,.kontenjan-table td,.ref-table th,.ref-table td{padding:11px 15px}
   .kontenjan-table th{cursor:pointer;user-select:none}
-  .ref-table tbody tr,.kontenjan-table tbody tr{border-top:1px solid #1e293b}
-  .ref-table td:first-child,.kontenjan-table td:first-child{font-weight:800;color:#e2e8f0}
-  .ref-table td:nth-child(2){font-weight:900;color:#6ee7b7}
+  .kontenjan-table tbody tr,.ref-table tbody tr{border-top:1px solid #1e293b}
+  .kontenjan-table td:first-child{font-weight:800;color:#e2e8f0}
   .kontenjan-table td.puan{font-weight:900;color:#6ee7b7}
-  .ref-note{border-top:1px solid #1e293b;padding:10px 15px;font-size:12px;color:#64748b}
+  .kontenjan-search{width:100%;max-width:360px;border:1px solid #334155;background:#020617;color:#fff;border-radius:16px;padding:10px 15px;font-size:14px;font-weight:700;outline:none}
+  .kontenjan-search:focus{border-color:#6ee7b7}
+  .kontenjan-meta{margin-top:10px;font-size:12px;font-weight:700;color:#64748b;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
   .reverse-box{margin-top:32px;border:1px solid #1e293b;background:rgba(2,6,23,.5);border-radius:18px;padding:20px}
   .reverse-box h3{margin:0;font-size:16px;color:#fff}
   .reverse-box .hint{margin-top:6px;font-size:12px;color:#94a3b8}
   .reverse-row{margin-top:14px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px}
   .reverse-field label{display:block;font-size:13px;font-weight:700;color:#cbd5e1;margin-bottom:6px}
   .reverse-field input{width:160px;border:1px solid #334155;background:#0f172a;color:#fff;border-radius:14px;padding:11px 13px;font-size:16px;font-weight:700;outline:none}
+  .seg-group{display:flex;overflow:hidden;border-radius:16px;border:1px solid #334155}
+  .seg-btn{padding:11px 16px;font-size:14px;font-weight:900;background:#0f172a;color:#94a3b8;cursor:pointer;border:none;font-family:inherit}
+  .seg-btn.active-t{background:#7dd3fc;color:#020617}
+  .seg-btn.active-k{background:#6ee7b7;color:#020617}
+  .reverse-out-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
   .reverse-out{border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:14px;padding:11px 16px}
   .reverse-out small{display:block;font-size:12px;font-weight:700;color:#94a3b8}
   .reverse-out b{display:block;margin-top:2px;font-size:20px;font-weight:900;color:#fff}
-  .reverse-warn{margin-top:10px;font-size:12px;font-weight:700;color:#fbbf24}
-  .kontenjan-search{width:100%;max-width:360px;border:1px solid #334155;background:#020617;color:#fff;border-radius:16px;padding:10px 15px;font-size:14px;font-weight:700;outline:none}
-  .kontenjan-search:focus{border-color:#6ee7b7}
-  .kontenjan-meta{margin-top:10px;font-size:12px;font-weight:700;color:#64748b}
-  @media (max-width:560px){.calc-grid{grid-template-columns:1fr}.calc-out{grid-template-columns:1fr}}
+  .reverse-warn{margin-top:6px;font-size:11px;font-weight:700;color:#fbbf24}
+  @media (max-width:560px){.calc-grid{grid-template-columns:1fr}.calc-out{grid-template-columns:1fr}.reverse-out-grid{grid-template-columns:1fr}}
   @media (max-width:720px){.nav{display:none}main{padding-top:38px}.topbar-inner{padding-inline:14px}}
 </style>
   </head>

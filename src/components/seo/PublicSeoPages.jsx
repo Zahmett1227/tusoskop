@@ -3,15 +3,18 @@ import SignInOptions from "../auth/SignInOptions";
 import AppStoreBadge from "../AppStoreBadge";
 import {
   TUS_SECTION_QUESTIONS,
-  TUS_SCORE_ANCHORS,
+  TUS_BARAJ_PUANI,
+  TEMEL_ORTALAMA,
+  KLINIK_ORTALAMA,
+  T_PUANI_AGIRLIK,
+  K_PUANI_AGIRLIK,
   TUS_DEDUCTION_RATE,
-  MAX_MODEL_SCORE,
   calculateTusResult,
   computeBlank,
   isSectionOverflow,
   applyScoreDeduction,
-  netForScore,
-  tusScoreBand,
+  netForTargetPuan,
+  puanBandi,
 } from "../../seo/tusScoring";
 import {
   APP_STORE_URL,
@@ -29,8 +32,12 @@ import {
   LESSON_COUNT,
   subjectIndexLinks,
 } from "../../seo/seoContent";
+import { KONTENJAN_DATA, KONTENJAN_DONEM_LABEL } from "../../seo/kontenjanData";
+import { SUBJECTS } from "../../data/subjects";
 
 const OPTION_KEYS = ["A", "B", "C", "D", "E"];
+const TEMEL_DERSLER = SUBJECTS.filter((s) => s.type === "Temel").map((s) => s.name);
+const KLINIK_DERSLER = SUBJECTS.filter((s) => s.type === "Klinik").map((s) => s.name);
 
 function StatGrid({ stats }) {
   if (!stats?.length) return null;
@@ -555,28 +562,74 @@ function DeductionToggle({ checked, onChange }) {
   );
 }
 
-function ScoreReferenceTable() {
+function PuanTuruBadge({ puanTuru, size = "sm" }) {
+  const isT = puanTuru === "T";
+  const sizing = size === "sm" ? "h-4 w-4 text-[10px]" : "h-5 w-5 text-xs";
   return (
-    <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-800">
-      <table className="w-full text-sm">
-        <thead>
-          <tr className="bg-slate-900/70 text-left text-xs font-black uppercase tracking-wide text-slate-400">
-            <th className="px-4 py-3">Toplam Net</th>
-            <th className="px-4 py-3">Tahmini TUS Puanı</th>
-          </tr>
-        </thead>
-        <tbody>
-          {TUS_SCORE_ANCHORS.map(([net, score]) => (
-            <tr key={net} className="border-t border-slate-800">
-              <td className="px-4 py-2.5 font-bold text-slate-200">{net}</td>
-              <td className="px-4 py-2.5 font-bold text-emerald-300">{score}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <p className="border-t border-slate-800 px-4 py-2.5 text-xs text-slate-500">
-        Ara değerler için hesaplayıcı doğrusal aradeğerleme kullanır.
+    <span
+      title={isT ? "T Puanı" : "K Puanı"}
+      className={`inline-flex shrink-0 items-center justify-center rounded-full border font-black ${sizing} ${
+        isT ? "border-sky-300/40 bg-sky-300/10 text-sky-200" : "border-emerald-300/40 bg-emerald-300/10 text-emerald-200"
+      }`}
+    >
+      {puanTuru}
+    </span>
+  );
+}
+
+function PuanCard({ label, value, band, puanTuru, usedBy }) {
+  const isT = puanTuru === "T";
+  const accent = isT
+    ? { border: "border-sky-300/40", bg: "bg-sky-300/10", text: "text-sky-300", soft: "text-sky-100/80" }
+    : { border: "border-emerald-300/40", bg: "bg-emerald-300/10", text: "text-emerald-300", soft: "text-emerald-100/80" };
+  return (
+    <div className={`rounded-2xl border ${accent.border} ${accent.bg} px-4 py-4 text-center`}>
+      <p className={`text-xs font-bold ${accent.text}`}>{label}</p>
+      <p className="mt-1 text-3xl font-black text-white">{value}</p>
+      <p className={`mt-1 text-xs font-semibold ${accent.soft}`}>{band.label} · {band.advice}</p>
+      <p className="mt-2 text-[11px] font-semibold text-slate-500">{usedBy}</p>
+    </div>
+  );
+}
+
+function MethodologyNote() {
+  return (
+    <details className="mt-6 rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
+      <summary className="cursor-pointer text-sm font-black text-white">Nasıl hesaplanıyor?</summary>
+      <div className="mt-3 space-y-2 text-xs leading-relaxed text-slate-400">
+        <p>
+          <span className="font-bold text-slate-300">1. Standart puan:</span> her bölümün neti, o bölümün ortalama ve
+          standart sapmasına göre 50 ortalamalı bir standart puana çevrilir: <span className="font-mono text-slate-300">SP = 50 + 10 × (Net − Ortalama) / Standart Sapma</span>.
+        </p>
+        <p>
+          <span className="font-bold text-slate-300">2. Ağırlıklı birleşim:</span>{" "}
+          <span className="font-bold text-sky-300">T Puanı</span> = %{T_PUANI_AGIRLIK.temel * 100} Temel + %{T_PUANI_AGIRLIK.klinik * 100} Klinik ·{" "}
+          <span className="font-bold text-emerald-300">K Puanı</span> = %{K_PUANI_AGIRLIK.temel * 100} Temel + %{K_PUANI_AGIRLIK.klinik * 100} Klinik.
+        </p>
+        <p>
+          <span className="font-bold text-slate-300">3. Baraj:</span> T veya K puanından {TUS_BARAJ_PUANI} puanın altında kalan bir puan türüyle tercih yapılamaz.
+        </p>
+        <p className="pt-1 text-slate-500">
+          ÖSYM, dönem bazlı ortalama/standart sapmayı resmi olarak yayımlamaz. Buradaki hesaplama Temel ≈{TEMEL_ORTALAMA} ve Klinik ≈{KLINIK_ORTALAMA} net ortalamasına dayalı yaklaşık bir referans kullanır; gerçek dönem istatistikleri farklı olabilir.
+        </p>
+      </div>
+    </details>
+  );
+}
+
+function ReverseCalcResult({ label, netValue, sectionLabel }) {
+  const valid = Number.isFinite(netValue);
+  const overCap = valid && netValue > TUS_SECTION_QUESTIONS;
+  const underZero = valid && netValue < 0;
+  return (
+    <div className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-3">
+      <p className="text-xs font-bold text-slate-400">{label}</p>
+      <p className="mt-1 text-xl font-black text-white">
+        {!valid ? "—" : underZero ? "Zaten üzerinde" : overCap ? `${TUS_SECTION_QUESTIONS}+` : netValue}
       </p>
+      {overCap ? (
+        <p className="mt-1 text-[11px] font-semibold text-amber-300">{sectionLabel} tek başına yetmiyor, diğer bölümü de artırman gerekir.</p>
+      ) : null}
     </div>
   );
 }
@@ -585,6 +638,7 @@ function TusScoreCalculator() {
   const [v, setV] = useState({ td: "", ty: "", kd: "", ky: "" });
   const [kesinti, setKesinti] = useState(false);
   const [hedef, setHedef] = useState("");
+  const [hedefTuru, setHedefTuru] = useState("K");
 
   const set = (key) => (event) => {
     const raw = event.target.value.replace(/[^0-9]/g, "");
@@ -604,8 +658,10 @@ function TusScoreCalculator() {
   );
 
   const hasInput = v.td || v.ty || v.kd || v.ky;
-  const displayScore = kesinti ? applyScoreDeduction(result.score, true) : result.score;
-  const displayBand = useMemo(() => tusScoreBand(displayScore), [displayScore]);
+  const displayTPuani = kesinti ? applyScoreDeduction(result.tPuani, true) : result.tPuani;
+  const displayKPuani = kesinti ? applyScoreDeduction(result.kPuani, true) : result.kPuani;
+  const tBand = useMemo(() => puanBandi(displayTPuani), [displayTPuani]);
+  const kBand = useMemo(() => puanBandi(displayKPuani), [displayKPuani]);
   const temelBlank = computeBlank(v.td, v.ty);
   const klinikBlank = computeBlank(v.kd, v.ky);
   const temelOverflow = isSectionOverflow(v.td, v.ty);
@@ -617,11 +673,23 @@ function TusScoreCalculator() {
   const hedefNum = Number(hedef);
   const hedefValid = hedef !== "" && Number.isFinite(hedefNum) && hedefNum > 0;
   const hedefEffective = hedefValid && kesinti ? hedefNum / (1 - TUS_DEDUCTION_RATE) : hedefNum;
-  const hedefUnreachable = hedefValid && hedefEffective > MAX_MODEL_SCORE;
-  const gerekliNet = hedefValid ? netForScore(hedefEffective) : null;
+  const reverse = useMemo(
+    () =>
+      hedefValid
+        ? netForTargetPuan({
+            targetPuan: hedefEffective,
+            puanTuru: hedefTuru,
+            fixedTemelNet: result.temelNet,
+            fixedKlinikNet: result.klinikNet,
+          })
+        : { neededTemelNet: null, neededKlinikNet: null },
+    [hedefValid, hedefEffective, hedefTuru, result.temelNet, result.klinikNet]
+  );
 
   return (
-    <section aria-label="TUS puan hesaplama aracı" className="mt-8 rounded-3xl border border-slate-800 bg-slate-900/55 p-5 md:p-6">
+    <section aria-label="TUS puan hesaplama aracı" className="mt-8 overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/55">
+      <div className="h-1 w-full bg-gradient-to-r from-sky-300 via-emerald-300 to-emerald-400" aria-hidden />
+      <div className="p-5 md:p-6">
       <div className="grid gap-4 md:grid-cols-2">
         <ScoreSection
           title="Temel Tıp Bilimleri"
@@ -655,38 +723,57 @@ function TusScoreCalculator() {
         <div className="rounded-2xl border border-slate-800 bg-slate-950 px-4 py-4 text-center">
           <p className="text-xs font-bold text-slate-400">Toplam Net</p>
           <p className="mt-1 text-2xl font-black text-white">{result.toplamNet}</p>
+          {kesinti ? <p className="mt-1 text-[11px] font-semibold text-amber-300/80">−%5 kesintili gösteriliyor</p> : null}
         </div>
-        <div className="rounded-2xl border border-emerald-300/40 bg-emerald-300/10 px-4 py-4 text-center sm:col-span-2">
-          <p className="text-xs font-bold text-emerald-200">
-            {kesinti ? "Tahmini TUS Puanı (−%5 kesintili)" : "Tahmini TUS Puanı"}
-          </p>
-          <p className="mt-1 text-3xl font-black text-emerald-300">{hasInput ? displayScore : "—"}</p>
-          {hasInput ? (
-            <p className="mt-1 text-xs font-semibold text-emerald-100/80">
-              {displayBand.label} · {displayBand.advice}
-            </p>
-          ) : (
-            <p className="mt-1 text-xs font-semibold text-emerald-100/70">Doğru ve yanlış sayını gir</p>
-          )}
-          {hasInput && kesinti ? (
-            <p className="mt-1 text-[11px] font-semibold text-emerald-100/60">Ham puan: {result.score}</p>
-          ) : null}
-        </div>
+        <PuanCard
+          label="T Puanı"
+          value={hasInput ? displayTPuani : "—"}
+          band={hasInput ? tBand : { label: "", advice: "Doğru ve yanlış sayını gir" }}
+          puanTuru="T"
+          usedBy={`${TEMEL_DERSLER.length} temel ders (${TEMEL_DERSLER.join(", ")})`}
+        />
+        <PuanCard
+          label="K Puanı"
+          value={hasInput ? displayKPuani : "—"}
+          band={hasInput ? kBand : { label: "", advice: "Doğru ve yanlış sayını gir" }}
+          puanTuru="K"
+          usedBy={`${KLINIK_DERSLER.length} klinik ders (${KLINIK_DERSLER.join(", ")})`}
+        />
       </div>
 
       <p className="mt-4 text-xs leading-relaxed text-slate-400">
-        Sonuç tahminidir. Net = doğru − yanlış/4. Gerçek TUS puanı ÖSYM'nin ilgili dönemdeki ortalama ve standart sapmasına göre standardize edilir.
+        Sonuç tahminidir. Net = doğru − yanlış/4. TUS'ta tek bir puan değil, ayrı ayrı <span className="font-bold text-sky-300">T Puanı</span> ve{" "}
+        <span className="font-bold text-emerald-300">K Puanı</span> hesaplanır; hangi dala yerleşeceğine göre ilgili puan geçerlidir.
       </p>
 
-      <ScoreReferenceTable />
+      {hasInput ? <BranchMatchPanel tPuani={displayTPuani} kPuani={displayKPuani} /> : null}
+
+      <MethodologyNote />
 
       <div className="mt-8 rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
         <h3 className="text-base font-black text-white">Hedef puana kaç net gerekir?</h3>
         <p className="mt-1 text-xs leading-relaxed text-slate-400">
-          Ulaşmak istediğin tahmini TUS puanını gir; yaklaşık gereken toplam neti hesaplayalım
+          Hedef puan türünü ve puanı gir; bir bölümdeki mevcut netini sabit tutup diğer bölümde gereken neti hesaplayalım
           {kesinti ? " (kesinti anahtarı açıkken hedefin kesinti sonrası puan olarak alındığı varsayılır)" : ""}.
         </p>
         <div className="mt-3 flex flex-wrap items-end gap-3">
+          <div className="flex flex-col gap-1.5">
+            <span className="text-sm font-bold text-slate-300">Puan Türü</span>
+            <div className="flex overflow-hidden rounded-2xl border border-slate-700">
+              {["T", "K"].map((tur) => (
+                <button
+                  key={tur}
+                  type="button"
+                  onClick={() => setHedefTuru(tur)}
+                  className={`px-4 py-3 text-sm font-black transition-colors ${
+                    hedefTuru === tur ? (tur === "T" ? "bg-sky-300 text-slate-950" : "bg-emerald-300 text-slate-950") : "bg-slate-900 text-slate-400"
+                  }`}
+                >
+                  {tur} Puanı
+                </button>
+              ))}
+            </div>
+          </div>
           <label htmlFor="hedef-puan" className="flex flex-col gap-1.5">
             <span className="text-sm font-bold text-slate-300">Hedef Puan</span>
             <input
@@ -697,24 +784,119 @@ function TusScoreCalculator() {
               max="100"
               value={hedef}
               onChange={handleHedef}
-              placeholder="örn. 65"
+              placeholder="örn. 55"
               className="w-40 rounded-2xl border border-slate-700 bg-slate-900 px-4 py-3 text-base font-bold text-white outline-none focus:border-emerald-300/70"
             />
           </label>
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-3">
-            <p className="text-xs font-bold text-slate-400">Gereken Toplam Net</p>
-            <p className="mt-1 text-xl font-black text-white">
-              {hedefValid ? (hedefUnreachable ? `${MAX_MODEL_SCORE}+` : gerekliNet) : "—"}
-            </p>
-          </div>
         </div>
-        {hedefUnreachable ? (
-          <p className="mt-2 text-xs font-semibold text-amber-300">
-            Bu modelde ulaşılabilecek azami tahmini puan {MAX_MODEL_SCORE}&apos;tir. Daha yüksek hedefler gerçek dönem istatistiklerine göre değişir.
-          </p>
-        ) : null}
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+          <ReverseCalcResult
+            label={`Temel net ${result.temelNet || 0} sabit kalırsa, gereken Klinik net`}
+            netValue={reverse.neededKlinikNet}
+            sectionLabel="Klinik bölüm"
+          />
+          <ReverseCalcResult
+            label={`Klinik net ${result.klinikNet || 0} sabit kalırsa, gereken Temel net`}
+            netValue={reverse.neededTemelNet}
+            sectionLabel="Temel bölüm"
+          />
+        </div>
+      </div>
       </div>
     </section>
+  );
+}
+
+function relevantScore(row, tPuani, kPuani) {
+  return row.puanTuru === "T" ? tPuani : kPuani;
+}
+
+function BranchMatchPanel({ tPuani, kPuani }) {
+  const hasScore = (tPuani > 0 || kPuani > 0);
+  const { qualifies, openQuota, near } = useMemo(() => {
+    if (!hasScore) return { qualifies: [], openQuota: [], near: [] };
+    const withThreshold = KONTENJAN_DATA.filter((r) => r.tabanPuan != null);
+    const noThreshold = KONTENJAN_DATA.filter((r) => r.tabanPuan == null);
+    const qualifies = withThreshold
+      .filter((r) => r.tabanPuan <= relevantScore(r, tPuani, kPuani))
+      .sort((a, b) => b.tabanPuan - a.tabanPuan);
+    const near = withThreshold
+      .filter((r) => r.tabanPuan > relevantScore(r, tPuani, kPuani))
+      .sort((a, b) => a.tabanPuan - relevantScore(a, tPuani, kPuani) - (b.tabanPuan - relevantScore(b, tPuani, kPuani)))
+      .slice(0, 5);
+    return { qualifies, openQuota: noThreshold, near };
+  }, [hasScore, tPuani, kPuani]);
+
+  if (!hasScore) return null;
+
+  const totalQualifies = qualifies.length + openQuota.length;
+
+  return (
+    <div className="mt-8 rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
+      <h3 className="text-base font-black text-white">Bu puanla hangi dallara girebilirsin?</h3>
+      <p className="mt-1 text-xs leading-relaxed text-slate-400">
+        {KONTENJAN_DONEM_LABEL} taban puanlarına göre yaklaşık kıyaslama — her dal kendi puan türüyle (T veya K) karşılaştırılır. Taban puanlar dönemden döneme değişir, bu bir garanti değil, referanstır.
+      </p>
+
+      {totalQualifies > 0 ? (
+        <>
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {qualifies.map((r) => (
+              <li
+                key={r.dal}
+                className="flex items-center gap-1.5 rounded-xl border border-emerald-300/30 bg-emerald-300/10 px-3 py-1.5 text-xs font-bold text-emerald-100"
+              >
+                <PuanTuruBadge puanTuru={r.puanTuru} />
+                {r.dal} <span className="text-emerald-300/70">· {r.tabanPuan}</span>
+              </li>
+            ))}
+            {openQuota.map((r) => (
+              <li
+                key={r.dal}
+                className="flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-900/60 px-3 py-1.5 text-xs font-bold text-slate-300"
+              >
+                <PuanTuruBadge puanTuru={r.puanTuru} />
+                {r.dal} <span className="text-slate-500">· kontenjan dolmadı</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        <p className="mt-4 text-sm font-bold text-amber-300">
+          Bu puanla geçen dönem taban puanı oluşan hiçbir dala girebilmiş değilsin
+          {openQuota.length ? `, ancak kontenjanı hiç dolmayan ${openQuota.length} dal her zaman açık kalıyor.` : "."}
+        </p>
+      )}
+
+      {near.length > 0 ? (
+        <div className="mt-5 border-t border-slate-800 pt-4">
+          <p className="text-xs font-bold uppercase tracking-wide text-slate-500">Az kalanlar</p>
+          <ul className="mt-2 space-y-1.5">
+            {near.map((r) => (
+              <li key={r.dal} className="flex items-center justify-between text-sm">
+                <span className="flex items-center gap-1.5 font-semibold text-slate-300">
+                  <PuanTuruBadge puanTuru={r.puanTuru} />
+                  {r.dal}
+                </span>
+                <span className="font-bold text-slate-400">
+                  {r.tabanPuan}{" "}
+                  <span className="text-xs text-slate-500">
+                    (+{Math.round((r.tabanPuan - relevantScore(r, tPuani, kPuani)) * 10) / 10} puan)
+                  </span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
+      <a
+        href="/tus-kontenjan-tablosu"
+        className="mt-5 inline-flex items-center text-sm font-bold text-emerald-300 hover:text-emerald-200"
+      >
+        Tüm kontenjan tablosunu gör →
+      </a>
+    </div>
   );
 }
 
@@ -758,17 +940,21 @@ function KontenjanTable({ data, donem }) {
           placeholder="Uzmanlık dalı ara…"
           className="w-full max-w-sm rounded-2xl border border-slate-700 bg-slate-950 px-4 py-2.5 text-sm font-semibold text-white outline-none focus:border-emerald-300/70"
         />
-        <p className="text-xs font-semibold text-slate-500">
-          {donem} · {Array.isArray(data) ? data.length : 0} dal
+        <p className="flex items-center gap-2 text-xs font-semibold text-slate-500">
+          <span>{donem} · {Array.isArray(data) ? data.length : 0} dal</span>
+          <span className="hidden items-center gap-1.5 sm:flex">
+            <PuanTuruBadge puanTuru="T" /> temel bilim · <PuanTuruBadge puanTuru="K" /> klinik
+          </span>
         </p>
       </div>
       <div className="mt-4 overflow-x-auto rounded-2xl border border-slate-800">
-        <table className="w-full min-w-[560px] text-sm">
+        <table className="w-full min-w-[620px] text-sm">
           <thead>
-            <tr className="bg-slate-900/70 text-left text-xs font-black uppercase tracking-wide text-slate-400">
+            <tr className="sticky top-0 z-10 bg-slate-900/95 text-left text-xs font-black uppercase tracking-wide text-slate-400 backdrop-blur">
               <th className="cursor-pointer select-none px-4 py-3" onClick={() => toggleSort("dal")}>
                 Uzmanlık Dalı{arrow("dal")}
               </th>
+              <th className="px-3 py-3">Puan Türü</th>
               <th className="cursor-pointer select-none px-4 py-3" onClick={() => toggleSort("kontenjan")}>
                 Kontenjan{arrow("kontenjan")}
               </th>
@@ -781,9 +967,13 @@ function KontenjanTable({ data, donem }) {
             </tr>
           </thead>
           <tbody>
-            {rows.map((r) => (
-              <tr key={r.dal} className="border-t border-slate-800">
+            {rows.map((r, index) => (
+              <tr
+                key={r.dal}
+                className={`border-t border-slate-800 transition-colors hover:bg-slate-900/60 ${index % 2 === 1 ? "bg-slate-900/25" : ""}`}
+              >
                 <td className="px-4 py-2.5 font-bold text-slate-200">{r.dal}</td>
+                <td className="px-3 py-2.5"><PuanTuruBadge puanTuru={r.puanTuru} /></td>
                 <td className="px-4 py-2.5 font-semibold text-slate-300">{r.kontenjan}</td>
                 <td className="px-4 py-2.5 font-black text-emerald-300">{r.tabanPuan != null ? r.tabanPuan : "—"}</td>
                 <td className="px-4 py-2.5 font-semibold text-slate-300">{r.yerlesen}</td>
@@ -791,7 +981,7 @@ function KontenjanTable({ data, donem }) {
             ))}
             {rows.length === 0 ? (
               <tr>
-                <td colSpan={4} className="px-4 py-6 text-center text-sm font-semibold text-slate-500">
+                <td colSpan={5} className="px-4 py-6 text-center text-sm font-semibold text-slate-500">
                   Aramanla eşleşen dal bulunamadı.
                 </td>
               </tr>

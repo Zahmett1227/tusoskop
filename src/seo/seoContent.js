@@ -307,16 +307,16 @@ const contentSeoPages = [
     tool: "score",
     title: "TUS Puan Hesaplama — Net ve Tahmini TUS Puanı | Tusoskop",
     description:
-      "TUS puan hesaplama aracı: Temel ve Klinik Tıp net sayını gir, tahmini TUS puanını anında gör. Net nasıl hesaplanır, yanlış doğruyu götürür mü? Ücretsiz.",
+      "TUS puan hesaplama aracı: Temel ve Klinik Tıp net sayını gir, tahmini T Puanı ve K Puanını anında gör. Net nasıl hesaplanır, yanlış doğruyu götürür mü? Ücretsiz.",
     h1: "TUS Puan Hesaplama",
     intro:
-      "Temel Tıp ve Klinik Tıp bölümlerindeki doğru ve yanlış sayılarını gir; netlerini ve tahmini TUS puanını anında hesapla. Hesaplama net üzerinden yapılır (doğru − yanlış/4) ve sonuç tahminidir; gerçek TUS puanı ÖSYM'nin ilgili dönemdeki standardizasyonuna göre belirlenir.",
+      "Temel Tıp ve Klinik Tıp bölümlerindeki doğru ve yanlış sayılarını gir; netlerini ve tahmini T Puanı ile K Puanını anında hesapla. Hesaplama net üzerinden yapılır (doğru − yanlış/4) ve sonuç tahminidir; gerçek TUS puanı ÖSYM'nin ilgili dönemdeki standardizasyonuna göre belirlenir.",
     sections: [
       {
         heading: "TUS puanı nasıl hesaplanır?",
         paragraphs: [
-          "TUS'ta Temel Tıp Bilimleri (120 soru) ve Klinik Tıp Bilimleri (120 soru) için ayrı netler hesaplanır. Net = doğru sayısı − (yanlış sayısı / 4) formülüyle bulunur.",
-          "ÖSYM bu netleri standart puana çevirir, iki bölümü ağırlıklandırarak TUS puanını oluşturur. Yukarıdaki araç, toplam netine karşılık gelen tahmini bir TUS puanı verir.",
+          "TUS'ta Temel Tıp Bilimleri (100 soru) ve Klinik Tıp Bilimleri (100 soru) için ayrı netler hesaplanır. Net = doğru sayısı − (yanlış sayısı / 4) formülüyle bulunur.",
+          "ÖSYM bu netleri ayrı ayrı standart puana çevirir; TUS'ta tek bir puan değil, iki farklı ağırlıklı puan üretilir: T Puanı (Temel ağırlıklı) ve K Puanı (Klinik ağırlıklı). Temel bilim dallarına T Puanı, diğer tüm klinik dallara K Puanı ile yerleşilir. Yukarıdaki araç, girdiğin netlere karşılık gelen her iki tahmini puanı da gösterir.",
         ],
       },
       {
@@ -330,7 +330,7 @@ const contentSeoPages = [
         heading: "Temel Tıp ve Klinik Tıp Bilimleri",
         paragraphs: [
           "Temel Tıp Bilimleri anatomi, fizyoloji, biyokimya, mikrobiyoloji, patoloji ve farmakoloji gibi alanları; Klinik Tıp Bilimleri ise dahiliye, pediatri, genel cerrahi, kadın hastalıkları ve doğum ile küçük stajları kapsar.",
-          "Çoğu uzmanlık dalı yerleştirmesinde iki bölümün neti birlikte değerlendirilir; bu yüzden hesaplayıcıda her iki bölümü de girmen önerilir.",
+          "Sadece 7 temel bilim dalı T Puanı ile, geri kalan tüm klinik dallar K Puanı ile değerlendirilir; bu yüzden hesaplayıcıda her iki bölümü de girmen ve hangi puan türünün seni ilgilendirdiğini bilmen önerilir.",
         ],
       },
       {
@@ -350,12 +350,12 @@ const contentSeoPages = [
       {
         question: "TUS puanı nasıl hesaplanır?",
         answer:
-          "Temel Tıp ve Klinik Tıp için ayrı netler hesaplanır (net = doğru − yanlış/4), ÖSYM bu netleri standardize edip ağırlıklandırarak TUS puanını oluşturur.",
+          "Temel Tıp ve Klinik Tıp için ayrı netler hesaplanır (net = doğru − yanlış/4), ÖSYM bu netleri ayrı ayrı standardize edip iki farklı ağırlıkla birleştirir: T Puanı (%60 Temel + %40 Klinik) ve K Puanı (%40 Temel + %60 Klinik). Tek bir 'TUS puanı' yoktur.",
       },
       {
-        question: "Kaç net kaç TUS puanı eder?",
+        question: "T Puanı ile K Puanı arasındaki fark nedir?",
         answer:
-          "Yaklaşık olarak: 75 net ~56, 95 net ~62, 120 net ~68, 140 net ~72 puan civarındadır. Bu değerler tahminidir ve dönemden döneme değişir.",
+          "T Puanı Temel ağırlıklı hesaplanır ve yalnızca 7 temel bilim dalına (Anatomi, Fizyoloji, Biyokimya, Mikrobiyoloji, Patoloji, Farmakoloji, Histoloji-Embriyoloji) yerleşmek için kullanılır. K Puanı Klinik ağırlıklıdır ve diğer tüm klinik dallarda (Dahiliye, Cerrahi, Pediatri, Kadın Doğum vb.) geçerlidir.",
       },
       {
         question: "Bu hesaplama kesin mi?",
@@ -370,7 +370,7 @@ const contentSeoPages = [
       {
         question: "Hedef puana kaç net gerekir?",
         answer:
-          "Hesaplayıcıdaki 'Hedef Puan' alanına ulaşmak istediğin tahmini TUS puanını gir; araç yaklaşık olarak kaç toplam nete ihtiyacın olduğunu hesaplar.",
+          "Hesaplayıcıdaki 'Hedef puana kaç net gerekir?' bölümünden puan türünü (T veya K) ve hedef puanı gir; araç bir bölümdeki mevcut netini sabit tutup diğer bölümde yaklaşık kaç net gerektiğini hesaplar.",
       },
     ],
     links: [
@@ -399,7 +399,7 @@ const contentSeoPages = [
       {
         heading: "TUS kontenjanı ve taban puan nedir?",
         paragraphs: [
-          "Her uzmanlık dalı için ÖSYM tarafından belirlenen kadro sayısına kontenjan denir. Taban puan ise o dönemde ilgili dalda dolan kontenjanlar içindeki en düşük tahmini TUS puanını ifade eder.",
+          "Her uzmanlık dalı için ÖSYM tarafından belirlenen kadro sayısına kontenjan denir. Taban puan ise o dönemde ilgili dalda dolan kontenjanlar içindeki en düşük tahmini puanı ifade eder — 7 temel bilim dalında T Puanı, diğer tüm dallarda K Puanı geçerlidir (tabloda 'Puan Türü' sütunuyla belirtilir).",
           "Taban puanlar dönemden döneme değişir; tercih eden aday sayısı, kontenjan sayısı ve genel puan dağılımına göre yükselip alçalabilir.",
         ],
       },
@@ -417,9 +417,9 @@ const contentSeoPages = [
         ],
       },
       {
-        heading: "Tahmini TUS puanınla kıyaslama",
+        heading: "Tahmini T Puanı / K Puanınla kıyaslama",
         paragraphs: [
-          "Tahmini TUS puanını hesapladıktan sonra bu tablodaki taban puanlarla karşılaştırarak hangi dallarda rekabetçi olabileceğin konusunda kaba bir fikir edinebilirsin.",
+          "TUS Puan Hesaplama aracından tahmini T Puanı ve K Puanını hesapladıktan sonra bu tablodaki taban puanlarla karşılaştırarak hangi dallarda rekabetçi olabileceğin konusunda kaba bir fikir edinebilirsin — her dalı kendi puan türüyle (T veya K) kıyaslamayı unutma.",
         ],
       },
     ],
@@ -437,7 +437,7 @@ const contentSeoPages = [
       {
         question: "Kontenjan tablosu ile puan hesaplama aracı birlikte nasıl kullanılır?",
         answer:
-          "Önce TUS Puan Hesaplama aracıyla tahmini puanını bul, ardından bu tablodaki taban puanlarla karşılaştırarak hangi dallarda daha rekabetçi olabileceğini kabaca değerlendir.",
+          "Önce TUS Puan Hesaplama aracıyla tahmini T Puanı ve K Puanını bul, ardından bu tablodaki taban puanlarla (her dalın kendi puan türüyle) karşılaştırarak hangi dallarda daha rekabetçi olabileceğini kabaca değerlendir.",
       },
       {
         question: "Bu veriler resmi mi?",

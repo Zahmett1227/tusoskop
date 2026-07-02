@@ -16,11 +16,21 @@ import {
   subjectIndexLinks,
 } from "../src/seo/seoContent.js";
 import {
-  TUS_SCORE_ANCHORS,
   TUS_SECTION_QUESTIONS,
   TUS_DEDUCTION_RATE,
-  MAX_MODEL_SCORE,
+  TUS_BARAJ_PUANI,
+  TEMEL_ORTALAMA,
+  TEMEL_STDDEV,
+  KLINIK_ORTALAMA,
+  KLINIK_STDDEV,
+  T_PUANI_AGIRLIK,
+  K_PUANI_AGIRLIK,
 } from "../src/seo/tusScoring.js";
+import { KONTENJAN_DATA } from "../src/seo/kontenjanData.js";
+import { SUBJECTS } from "../src/data/subjects.js";
+
+const TEMEL_DERSLER = SUBJECTS.filter((s) => s.type === "Temel").map((s) => s.name);
+const KLINIK_DERSLER = SUBJECTS.filter((s) => s.type === "Klinik").map((s) => s.name);
 
 const publicDir = path.resolve("public");
 
@@ -167,15 +177,22 @@ const css = `
   .calc-field label{display:block;font-size:13px;font-weight:700;color:#cbd5e1;margin-bottom:6px}
   .calc-field input{width:100%;border:1px solid #334155;background:#020617;color:#fff;border-radius:14px;padding:11px 13px;font-size:16px;font-weight:700;outline:none}
   .calc-field input:focus{border-color:#6ee7b7}
-  .calc-out{display:grid;grid-template-columns:1fr 2fr;gap:12px;margin-top:16px}
+  .calc>.accent-bar{height:4px;margin:-22px -22px 22px;background:linear-gradient(90deg,#7dd3fc,#6ee7b7,#34d399)}
+  .calc-out{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:16px}
   .calc-box{border:1px solid #1e293b;background:#020617;border-radius:16px;padding:14px;text-align:center}
   .calc-box.hi{border-color:rgba(110,231,183,.4);background:rgba(110,231,183,.1)}
+  .calc-box.hi-t{border-color:rgba(125,211,252,.4);background:rgba(125,211,252,.1)}
   .calc-box small{display:block;font-size:12px;font-weight:700;color:#94a3b8}
   .calc-box.hi small{color:#a7f3d0}
+  .calc-box.hi-t small{color:#bae6fd}
   .calc-box b{display:block;margin-top:4px;font-size:22px;font-weight:900;color:#fff}
-  .calc-box.hi b{font-size:30px;color:#6ee7b7}
-  .calc-box .band{display:block;margin-top:4px;font-size:12px;font-weight:700;color:#a7f3d0}
+  .calc-box.hi b,.calc-box.hi-t b{font-size:27px}
+  .calc-box .band{display:block;margin-top:4px;font-size:11px;font-weight:700;color:#a7f3d0}
+  .calc-box.hi-t .band{color:#bae6fd}
+  .calc-box .usedby{display:block;margin-top:6px;font-size:10px;font-weight:600;color:#64748b}
   .calc-note{margin-top:14px;font-size:13px;color:#94a3b8}
+  .calc-note b{color:#6ee7b7}
+  .calc-note b.t{color:#7dd3fc}
   .calc-blank{margin-top:10px;font-size:12px;font-weight:700;color:#94a3b8}
   .calc-overflow{margin-top:4px;font-size:12px;font-weight:800;color:#fb7185}
   .calc-toggle{margin-top:18px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid rgba(252,211,77,.35);background:rgba(252,211,77,.1);border-radius:18px;padding:13px 16px;cursor:pointer;text-align:left;font:inherit;color:inherit}
@@ -186,30 +203,54 @@ const css = `
   .calc-switch i{position:absolute;top:2px;left:2px;width:24px;height:24px;border-radius:999px;background:#fff;transition:transform .15s}
   .calc-switch.on i{transform:translateX(20px)}
   .calc-raw{margin-top:4px;font-size:11px;font-weight:700;color:rgba(110,231,183,.65)}
-  .ref-table,.kontenjan-table{margin-top:24px;overflow-x:auto;border:1px solid #1e293b;border-radius:20px}
-  .ref-table table,.kontenjan-table table{width:100%;border-collapse:collapse;font-size:14px}
-  .ref-table thead tr,.kontenjan-table thead tr{background:rgba(15,23,42,.7);text-align:left;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8}
-  .ref-table th,.ref-table td,.kontenjan-table th,.kontenjan-table td{padding:11px 15px}
+  .puan-badge{display:inline-flex;align-items:center;border-radius:999px;padding:2px 8px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;border:1px solid;white-space:nowrap}
+  .puan-badge.t{border-color:rgba(125,211,252,.4);background:rgba(125,211,252,.1);color:#bae6fd}
+  .puan-badge.k{border-color:rgba(110,231,183,.4);background:rgba(110,231,183,.1);color:#a7f3d0}
+  .method-note{margin-top:24px;border:1px solid #1e293b;background:rgba(2,6,23,.5);border-radius:18px;padding:20px}
+  .method-note summary{cursor:pointer;font-size:14px;font-weight:900;color:#fff}
+  .method-note .body{margin-top:12px;display:grid;gap:8px}
+  .method-note p{font-size:12px;color:#94a3b8;line-height:1.6}
+  .method-note b{color:#cbd5e1}
+  .match-panel{margin-top:32px;border:1px solid #1e293b;background:rgba(2,6,23,.5);border-radius:18px;padding:20px}
+  .match-panel h3{margin:0;font-size:16px;color:#fff}
+  .match-panel .hint{margin-top:6px;font-size:12px;color:#94a3b8}
+  .match-panel .lead{margin-top:14px;font-size:14px;font-weight:800;color:#6ee7b7}
+  .match-panel .lead.warn{color:#fbbf24}
+  .match-list{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  .match-chip{display:flex;align-items:center;gap:6px;border-radius:14px;padding:7px 12px;font-size:12px;font-weight:800;border:1px solid rgba(110,231,183,.3);background:rgba(110,231,183,.1);color:#ecfdf5}
+  .match-chip.open{border-color:#334155;background:rgba(15,23,42,.6);color:#cbd5e1}
+  .match-near{margin-top:16px;border-top:1px solid #1e293b;padding-top:14px}
+  .match-near-title{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:#64748b}
+  .match-near-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:14px;gap:10px}
+  .match-near-row .dal{display:flex;align-items:center;gap:6px;color:#cbd5e1;font-weight:700}
+  .match-near-row .gap{font-size:11px;color:#64748b;font-weight:700}
+  .kontenjan-table,.ref-table{margin-top:24px;overflow-x:auto;border:1px solid #1e293b;border-radius:20px}
+  .kontenjan-table table,.ref-table table{width:100%;border-collapse:collapse;font-size:14px}
+  .kontenjan-table thead tr,.ref-table thead tr{background:rgba(15,23,42,.7);text-align:left;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:#94a3b8}
+  .kontenjan-table th,.kontenjan-table td,.ref-table th,.ref-table td{padding:11px 15px}
   .kontenjan-table th{cursor:pointer;user-select:none}
-  .ref-table tbody tr,.kontenjan-table tbody tr{border-top:1px solid #1e293b}
-  .ref-table td:first-child,.kontenjan-table td:first-child{font-weight:800;color:#e2e8f0}
-  .ref-table td:nth-child(2){font-weight:900;color:#6ee7b7}
+  .kontenjan-table tbody tr,.ref-table tbody tr{border-top:1px solid #1e293b}
+  .kontenjan-table td:first-child{font-weight:800;color:#e2e8f0}
   .kontenjan-table td.puan{font-weight:900;color:#6ee7b7}
-  .ref-note{border-top:1px solid #1e293b;padding:10px 15px;font-size:12px;color:#64748b}
+  .kontenjan-search{width:100%;max-width:360px;border:1px solid #334155;background:#020617;color:#fff;border-radius:16px;padding:10px 15px;font-size:14px;font-weight:700;outline:none}
+  .kontenjan-search:focus{border-color:#6ee7b7}
+  .kontenjan-meta{margin-top:10px;font-size:12px;font-weight:700;color:#64748b;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
   .reverse-box{margin-top:32px;border:1px solid #1e293b;background:rgba(2,6,23,.5);border-radius:18px;padding:20px}
   .reverse-box h3{margin:0;font-size:16px;color:#fff}
   .reverse-box .hint{margin-top:6px;font-size:12px;color:#94a3b8}
   .reverse-row{margin-top:14px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px}
   .reverse-field label{display:block;font-size:13px;font-weight:700;color:#cbd5e1;margin-bottom:6px}
   .reverse-field input{width:160px;border:1px solid #334155;background:#0f172a;color:#fff;border-radius:14px;padding:11px 13px;font-size:16px;font-weight:700;outline:none}
+  .seg-group{display:flex;overflow:hidden;border-radius:16px;border:1px solid #334155}
+  .seg-btn{padding:11px 16px;font-size:14px;font-weight:900;background:#0f172a;color:#94a3b8;cursor:pointer;border:none;font-family:inherit}
+  .seg-btn.active-t{background:#7dd3fc;color:#020617}
+  .seg-btn.active-k{background:#6ee7b7;color:#020617}
+  .reverse-out-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
   .reverse-out{border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:14px;padding:11px 16px}
   .reverse-out small{display:block;font-size:12px;font-weight:700;color:#94a3b8}
   .reverse-out b{display:block;margin-top:2px;font-size:20px;font-weight:900;color:#fff}
-  .reverse-warn{margin-top:10px;font-size:12px;font-weight:700;color:#fbbf24}
-  .kontenjan-search{width:100%;max-width:360px;border:1px solid #334155;background:#020617;color:#fff;border-radius:16px;padding:10px 15px;font-size:14px;font-weight:700;outline:none}
-  .kontenjan-search:focus{border-color:#6ee7b7}
-  .kontenjan-meta{margin-top:10px;font-size:12px;font-weight:700;color:#64748b}
-  @media (max-width:560px){.calc-grid{grid-template-columns:1fr}.calc-out{grid-template-columns:1fr}}
+  .reverse-warn{margin-top:6px;font-size:11px;font-weight:700;color:#fbbf24}
+  @media (max-width:560px){.calc-grid{grid-template-columns:1fr}.calc-out{grid-template-columns:1fr}.reverse-out-grid{grid-template-columns:1fr}}
   @media (max-width:720px){.nav{display:none}main{padding-top:38px}.topbar-inner{padding-inline:14px}}
 `;
 
@@ -310,14 +351,13 @@ function renderSample(sample, subject) {
 }
 
 // TUS puan hesaplama aracı — statik HTML + satır-içi vanilla JS.
-// React hesaplayıcısıyla (PublicSeoPages.jsx) aynı çapa tablosunu (tusScoring.js)
-// kullanır; production'da bu statik sürüm servis edilir.
+// React hesaplayıcısıyla (PublicSeoPages.jsx) aynı formülü ve sabitleri
+// (tusScoring.js, kontenjanData.js) kullanır; production'da bu statik sürüm
+// crawler'lara ve ilk boyamaya servis edilir.
 function renderScoreTool() {
-  const anchors = JSON.stringify(TUS_SCORE_ANCHORS);
-  const refRows = TUS_SCORE_ANCHORS.map(
-    ([net, score]) => `<tr><td>${net}</td><td>${score}</td></tr>`
-  ).join("");
+  const kontenjanJson = JSON.stringify(KONTENJAN_DATA.map((r) => [r.dal, r.tabanPuan, r.puanTuru]));
   return `<section class="calc" aria-label="TUS puan hesaplama aracı">
+      <div class="accent-bar"></div>
       <div class="calc-grid">
         <div class="calc-sec">
           <h3>Temel Tıp Bilimleri <span class="net">Net: <span id="temel-net">0</span></span></h3>
@@ -349,83 +389,167 @@ function renderScoreTool() {
 
       <div class="calc-out">
         <div class="calc-box"><small>Toplam Net</small><b id="toplam-net">0</b></div>
+        <div class="calc-box hi-t">
+          <small>T Puanı</small>
+          <b id="t-puani">—</b>
+          <span class="band" id="t-band">Doğru ve yanlış sayını gir</span>
+          <span class="usedby">${TEMEL_DERSLER.length} temel ders (${escapeHtml(TEMEL_DERSLER.join(", "))})</span>
+        </div>
         <div class="calc-box hi">
-          <small id="puan-label">Tahmini TUS Puanı</small>
-          <b id="tahmini-puan">—</b>
-          <span class="band" id="puan-band">Doğru ve yanlış sayını gir</span>
-          <span class="calc-raw" id="puan-ham" style="display:none"></span>
+          <small>K Puanı</small>
+          <b id="k-puani">—</b>
+          <span class="band" id="k-band">Doğru ve yanlış sayını gir</span>
+          <span class="usedby">${KLINIK_DERSLER.length} klinik ders (${escapeHtml(KLINIK_DERSLER.join(", "))})</span>
         </div>
       </div>
-      <p class="calc-note">Sonuç tahminidir. Net = doğru − yanlış/4. Gerçek TUS puanı ÖSYM'nin ilgili dönemdeki ortalama ve standart sapmasına göre standardize edilir.</p>
+      <p class="calc-note">Sonuç tahminidir. Net = doğru − yanlış/4. TUS'ta tek bir puan değil, ayrı ayrı <b class="t">T Puanı</b> ve <b>K Puanı</b> hesaplanır; hangi dala yerleşeceğine göre ilgili puan geçerlidir.</p>
 
-      <div class="ref-table" aria-label="Net - tahmini puan referans tablosu">
-        <table>
-          <thead><tr><th>Toplam Net</th><th>Tahmini TUS Puanı</th></tr></thead>
-          <tbody>${refRows}</tbody>
-        </table>
-        <p class="ref-note">Ara değerler için hesaplayıcı doğrusal aradeğerleme kullanır.</p>
+      <div class="match-panel" id="match-panel" style="display:none">
+        <h3>Bu puanla hangi dallara girebilirsin?</h3>
+        <p class="hint">2026-TUS 1. Dönem taban puanlarına göre yaklaşık kıyaslama — her dal kendi puan türüyle (T veya K) karşılaştırılır. Taban puanlar dönemden döneme değişir, bu bir garanti değil, referanstır.</p>
+        <p class="lead" id="match-lead" style="display:none"></p>
+        <ul class="match-list" id="match-list"></ul>
+        <div class="match-near" id="match-near" style="display:none">
+          <p class="match-near-title">Az kalanlar</p>
+          <div id="match-near-rows"></div>
+        </div>
+        <a href="/tus-kontenjan-tablosu" style="display:inline-flex;margin-top:16px;font-size:14px;font-weight:800;color:#6ee7b7">Tüm kontenjan tablosunu gör →</a>
       </div>
+
+      <details class="method-note">
+        <summary>Nasıl hesaplanıyor?</summary>
+        <div class="body">
+          <p><b>1. Standart puan:</b> her bölümün neti, o bölümün ortalama ve standart sapmasına göre 50 ortalamalı bir standart puana çevrilir: SP = 50 + 10 × (Net − Ortalama) / Standart Sapma.</p>
+          <p><b>2. Ağırlıklı birleşim:</b> <b class="t">T Puanı</b> = %${T_PUANI_AGIRLIK.temel * 100} Temel + %${T_PUANI_AGIRLIK.klinik * 100} Klinik · <b>K Puanı</b> = %${K_PUANI_AGIRLIK.temel * 100} Temel + %${K_PUANI_AGIRLIK.klinik * 100} Klinik.</p>
+          <p><b>3. Baraj:</b> T veya K puanından ${TUS_BARAJ_PUANI} puanın altında kalan bir puan türüyle tercih yapılamaz.</p>
+          <p>ÖSYM, dönem bazlı ortalama/standart sapmayı resmi olarak yayımlamaz. Buradaki hesaplama Temel ≈${TEMEL_ORTALAMA} ve Klinik ≈${KLINIK_ORTALAMA} net ortalamasına dayalı yaklaşık bir referans kullanır; gerçek dönem istatistikleri farklı olabilir.</p>
+        </div>
+      </details>
 
       <div class="reverse-box">
         <h3>Hedef puana kaç net gerekir?</h3>
-        <p class="hint" id="reverse-hint">Ulaşmak istediğin tahmini TUS puanını gir; yaklaşık gereken toplam neti hesaplayalım.</p>
+        <p class="hint" id="reverse-hint">Hedef puan türünü ve puanı gir; bir bölümdeki mevcut netini sabit tutup diğer bölümde gereken neti hesaplayalım.</p>
         <div class="reverse-row">
-          <div class="reverse-field"><label for="hedef-puan">Hedef Puan</label><input id="hedef-puan" type="number" inputmode="decimal" min="0" max="100" placeholder="örn. 65" /></div>
-          <div class="reverse-out"><small>Gereken Toplam Net</small><b id="gerekli-net">—</b></div>
+          <div class="reverse-field">
+            <label>Puan Türü</label>
+            <div class="seg-group">
+              <button type="button" class="seg-btn active-k" id="hedef-t" data-tur="T">T Puanı</button>
+              <button type="button" class="seg-btn active-k" id="hedef-k" data-tur="K">K Puanı</button>
+            </div>
+          </div>
+          <div class="reverse-field"><label for="hedef-puan">Hedef Puan</label><input id="hedef-puan" type="number" inputmode="decimal" min="0" max="100" placeholder="örn. 55" /></div>
         </div>
-        <p class="reverse-warn" id="reverse-warn" style="display:none"></p>
+        <div class="reverse-out-grid">
+          <div class="reverse-out"><small id="reverse-label-k">Temel net sabit kalırsa, gereken Klinik net</small><b id="gerekli-klinik-net">—</b></div>
+          <div class="reverse-out"><small id="reverse-label-t">Klinik net sabit kalırsa, gereken Temel net</small><b id="gerekli-temel-net">—</b></div>
+        </div>
       </div>
 
       <script>
         (function(){
-          var ANCHORS=${anchors},SEC=${TUS_SECTION_QUESTIONS},RATE=${TUS_DEDUCTION_RATE},MAXS=${MAX_MODEL_SCORE};
-          var kesinti=false;
+          var SEC=${TUS_SECTION_QUESTIONS},RATE=${TUS_DEDUCTION_RATE},BARAJ=${TUS_BARAJ_PUANI};
+          var TO=${TEMEL_ORTALAMA},TS=${TEMEL_STDDEV},KO=${KLINIK_ORTALAMA},KS=${KLINIK_STDDEV};
+          var TW={temel:${T_PUANI_AGIRLIK.temel},klinik:${T_PUANI_AGIRLIK.klinik}};
+          var KW={temel:${K_PUANI_AGIRLIK.temel},klinik:${K_PUANI_AGIRLIK.klinik}};
+          var KONTENJAN=${kontenjanJson};
+          var kesinti=false,hedefTuru='K';
           function r1(x){return Math.round(x*10)/10;}
           function net(c,w){var n=(Number(c)||0)-(Number(w)||0)/4;return n>0?r1(n):0;}
           function blank(c,w){var b=SEC-(Number(c)||0)-(Number(w)||0);return b>=0?b:0;}
           function overflow(c,w){return (Number(c)||0)+(Number(w)||0)>SEC;}
-          function est(n){n=Number(n);if(!isFinite(n)||n<=0)return 0;var f=ANCHORS[0],l=ANCHORS[ANCHORS.length-1];if(n<=f[0])return r1(f[1]*n/f[0]);if(n>=l[0])return l[1];for(var i=0;i<ANCHORS.length-1;i++){var a=ANCHORS[i],b=ANCHORS[i+1];if(n>=a[0]&&n<=b[0]){var t=(n-a[0])/(b[0]-a[0]);return r1(a[1]+t*(b[1]-a[1]));}}return l[1];}
-          function netForScore(s){s=Number(s);if(!isFinite(s)||s<=0)return 0;var f=ANCHORS[0],l=ANCHORS[ANCHORS.length-1];if(s<=f[1])return r1(f[0]*s/f[1]);if(s>=l[1])return l[0];for(var i=0;i<ANCHORS.length-1;i++){var a=ANCHORS[i],b=ANCHORS[i+1];if(s>=a[1]&&s<=b[1]){var t=(s-a[1])/(b[1]-a[1]);return r1(a[0]+t*(b[0]-a[0]));}}return l[0];}
+          function sp(n,o,s){return 50+10*((Number(n)||0)-o)/s;}
+          function tPuani(tn,kn){return r1(Math.max(0,TW.temel*sp(tn,TO,TS)+TW.klinik*sp(kn,KO,KS)));}
+          function kPuani(tn,kn){return r1(Math.max(0,KW.temel*sp(tn,TO,TS)+KW.klinik*sp(kn,KO,KS)));}
           function deduct(s,active){s=Number(s)||0;return active?r1(s*(1-RATE)):s;}
-          function band(s){s=Number(s)||0;if(s>=68)return"Yüksek · Rekabetçi branşlar için güçlü bir aralık.";if(s>=60)return"İyi · Birçok branş için yeterli; netlerini biraz daha yükselt.";if(s>=54)return"Orta · Temel ve klinik açıklarını kapatmaya odaklan.";return"Geliştirilmeli · Düzenli soru çözümü ve tekrarla net artışı hedefle.";}
+          function band(s){s=Number(s)||0;if(s<BARAJ)return"Baraj Altı · "+BARAJ+" puan barajının altındasın; bu puan türüyle tercih hakkın doğmuyor.";if(s<55)return"Baraj Üstü · Barajı geçtin; rekabetin düşük olduğu dallarda seçeneklerin olabilir.";if(s<65)return"İyi · Birçok branş için yeterli; netlerini biraz daha yükselt.";return"Yüksek · Rekabetçi branşlar için güçlü bir aralık.";}
           function cap(el){var x=el.value.replace(/[^0-9]/g,'');if(x!=='')x=String(Math.min(Number(x),SEC));el.value=x;return x;}
+          function netForTarget(target,tur,fixedT,fixedK){
+            var w=tur==='T'?TW:KW;
+            var spTFixed=sp(fixedT,TO,TS);
+            var neededSpK=(target-w.temel*spTFixed)/w.klinik;
+            var neededK=r1(KO+(KS*(neededSpK-50))/10);
+            var spKFixed=sp(fixedK,KO,KS);
+            var neededSpT=(target-w.klinik*spKFixed)/w.temel;
+            var neededT=r1(TO+(TS*(neededSpT-50))/10);
+            return {t:neededT,k:neededK};
+          }
           var td=document.getElementById('td'),ty=document.getElementById('ty'),kd=document.getElementById('kd'),ky=document.getElementById('ky');
           var tOverflowEl=document.getElementById('temel-overflow'),kOverflowEl=document.getElementById('klinik-overflow');
           var toggleBtn=document.getElementById('kesinti-toggle'),switchEl=document.getElementById('kesinti-switch');
-          var hedefEl=document.getElementById('hedef-puan'),hintEl=document.getElementById('reverse-hint'),warnEl=document.getElementById('reverse-warn');
-          var lastScore=0;
+          var hedefEl=document.getElementById('hedef-puan'),hintEl=document.getElementById('reverse-hint');
+          var hedefTBtn=document.getElementById('hedef-t'),hedefKBtn=document.getElementById('hedef-k');
+          var matchPanel=document.getElementById('match-panel'),matchLead=document.getElementById('match-lead'),matchList=document.getElementById('match-list');
+          var matchNear=document.getElementById('match-near'),matchNearRows=document.getElementById('match-near-rows');
+          var lastTemelNet=0,lastKlinikNet=0;
+          function renderMatch(tShown,kShown){
+            var hasScore=tShown>0||kShown>0;
+            matchPanel.style.display=hasScore?'block':'none';
+            if(!hasScore)return;
+            var withThreshold=KONTENJAN.filter(function(r){return r[1]!=null;});
+            var noThreshold=KONTENJAN.filter(function(r){return r[1]==null;});
+            function relevant(r){return r[2]==='T'?tShown:kShown;}
+            var qualifies=withThreshold.filter(function(r){return r[1]<=relevant(r);}).sort(function(a,b){return b[1]-a[1];});
+            var near=withThreshold.filter(function(r){return r[1]>relevant(r);}).sort(function(a,b){return (a[1]-relevant(a))-(b[1]-relevant(b));}).slice(0,5);
+            var total=qualifies.length+noThreshold.length;
+            if(total>0){
+              matchLead.style.display='none';
+            }else{
+              matchLead.style.display='block';
+              matchLead.className='lead warn';
+              matchLead.textContent='Bu puanla geçen dönem taban puanı oluşan hiçbir dala girebilmiş değilsin'+(noThreshold.length?', ancak kontenjanı hiç dolmayan '+noThreshold.length+' dal her zaman açık kalıyor.':'.');
+            }
+            matchList.innerHTML='';
+            qualifies.concat(noThreshold).forEach(function(r){
+              var li=document.createElement('li');
+              li.className='match-chip'+(r[1]==null?' open':'');
+              var badge='<span class="puan-badge '+(r[2]==='T'?'t':'k')+'">'+r[2]+'</span> ';
+              li.innerHTML=badge+r[0]+' · '+(r[1]==null?'kontenjan dolmadı':r[1]);
+              matchList.appendChild(li);
+            });
+            matchNear.style.display=near.length?'block':'none';
+            matchNearRows.innerHTML='';
+            near.forEach(function(r){
+              var row=document.createElement('div');
+              row.className='match-near-row';
+              var badge='<span class="puan-badge '+(r[2]==='T'?'t':'k')+'">'+r[2]+'</span>';
+              row.innerHTML='<span class="dal">'+badge+' '+r[0]+'</span><span class="gap">'+r[1]+' (+'+r1(r[1]-relevant(r))+' puan)</span>';
+              matchNearRows.appendChild(row);
+            });
+          }
           function upd(){
             var tc=cap(td),tw=cap(ty),kc=cap(kd),kw=cap(ky);
-            var tn=net(tc,tw),kn=net(kc,kw),sum=r1(tn+kn);
+            var tn=net(tc,tw),kn=net(kc,kw);
+            lastTemelNet=tn;lastKlinikNet=kn;
             document.getElementById('temel-net').textContent=tn;
             document.getElementById('klinik-net').textContent=kn;
-            document.getElementById('toplam-net').textContent=sum;
+            document.getElementById('toplam-net').textContent=r1(tn+kn);
             document.getElementById('temel-blank').textContent=blank(tc,tw);
             document.getElementById('klinik-blank').textContent=blank(kc,kw);
             tOverflowEl.style.display=overflow(tc,tw)?'block':'none';
             kOverflowEl.style.display=overflow(kc,kw)?'block':'none';
             var has=td.value||ty.value||kd.value||ky.value;
-            var rawScore=est(sum);
-            lastScore=rawScore;
-            var shown=kesinti?deduct(rawScore,true):rawScore;
-            document.getElementById('puan-label').textContent=kesinti?'Tahmini TUS Puanı (−%5 kesintili)':'Tahmini TUS Puanı';
-            document.getElementById('tahmini-puan').textContent=has?shown:'—';
-            document.getElementById('puan-band').textContent=has?band(shown):'Doğru ve yanlış sayını gir';
-            var hamEl=document.getElementById('puan-ham');
-            if(has&&kesinti){hamEl.style.display='block';hamEl.textContent='Ham puan: '+rawScore;}else{hamEl.style.display='none';}
+            var rawT=tPuani(tn,kn),rawK=kPuani(tn,kn);
+            var shownT=kesinti?deduct(rawT,true):rawT;
+            var shownK=kesinti?deduct(rawK,true):rawK;
+            document.getElementById('t-puani').textContent=has?shownT:'—';
+            document.getElementById('k-puani').textContent=has?shownK:'—';
+            document.getElementById('t-band').textContent=has?band(shownT):'Doğru ve yanlış sayını gir';
+            document.getElementById('k-band').textContent=has?band(shownK):'Doğru ve yanlış sayını gir';
+            renderMatch(has?shownT:0,has?shownK:0);
             updReverse();
           }
           function updReverse(){
-            hintEl.textContent='Ulaşmak istediğin tahmini TUS puanını gir; yaklaşık gereken toplam neti hesaplayalım'+(kesinti?' (kesinti anahtarı açıkken hedefin kesinti sonrası puan olarak alındığı varsayılır).':'.');
+            hintEl.textContent='Hedef puan türünü ve puanı gir; bir bölümdeki mevcut netini sabit tutup diğer bölümde gereken neti hesaplayalım'+(kesinti?' (kesinti anahtarı açıkken hedefin kesinti sonrası puan olarak alındığı varsayılır).':'.');
             var raw=hedefEl.value.replace(/[^0-9.]/g,'');
             if(raw!==hedefEl.value)hedefEl.value=raw;
             var s=Number(raw);
             var valid=raw!==''&&isFinite(s)&&s>0;
             var effective=valid&&kesinti?s/(1-RATE):s;
-            var unreachable=valid&&effective>MAXS;
-            document.getElementById('gerekli-net').textContent=valid?(unreachable?(MAXS+'+'):netForScore(effective)):'—';
-            warnEl.style.display=unreachable?'block':'none';
-            if(unreachable)warnEl.textContent='Bu modelde ulaşılabilecek azami tahmini puan '+MAXS+'\\'dir. Daha yüksek hedefler gerçek dönem istatistiklerine göre değişir.';
+            var kEl=document.getElementById('gerekli-klinik-net'),tEl=document.getElementById('gerekli-temel-net');
+            if(!valid){kEl.textContent='—';tEl.textContent='—';return;}
+            var needed=netForTarget(effective,hedefTuru,lastTemelNet,lastKlinikNet);
+            kEl.textContent=needed.k<0?'Zaten üzerinde':(needed.k>SEC?(SEC+'+'):needed.k);
+            tEl.textContent=needed.t<0?'Zaten üzerinde':(needed.t>SEC?(SEC+'+'):needed.t);
           }
           toggleBtn.addEventListener('click',function(){
             kesinti=!kesinti;
@@ -435,6 +559,14 @@ function renderScoreTool() {
           });
           [td,ty,kd,ky].forEach(function(el){el.addEventListener('input',upd);});
           hedefEl.addEventListener('input',updReverse);
+          [hedefTBtn,hedefKBtn].forEach(function(btn){
+            btn.addEventListener('click',function(){
+              hedefTuru=btn.getAttribute('data-tur');
+              hedefTBtn.className='seg-btn'+(hedefTuru==='T'?' active-t':'');
+              hedefKBtn.className='seg-btn'+(hedefTuru==='K'?' active-k':'');
+              updReverse();
+            });
+          });
           upd();
         })();
       </script>
@@ -447,17 +579,18 @@ function renderKontenjanTable(data, donem) {
     .map(
       (r) =>
         `<tr data-dal="${escapeHtml(r.dal.toLocaleLowerCase("tr"))}" data-kontenjan="${r.kontenjan}" data-taban="${r.tabanPuan ?? -1}" data-yerlesen="${r.yerlesen}">` +
-        `<td>${escapeHtml(r.dal)}</td><td>${r.kontenjan}</td><td class="puan">${r.tabanPuan != null ? r.tabanPuan : "—"}</td><td>${r.yerlesen}</td></tr>`
+        `<td>${escapeHtml(r.dal)}</td><td><span class="puan-badge ${r.puanTuru === "T" ? "t" : "k"}">${r.puanTuru}</span></td><td>${r.kontenjan}</td><td class="puan">${r.tabanPuan != null ? r.tabanPuan : "—"}</td><td>${r.yerlesen}</td></tr>`
     )
     .join("");
   return `<section aria-label="TUS kontenjan tablosu" style="margin-top:30px">
       <input type="text" id="kontenjan-search" class="kontenjan-search" placeholder="Uzmanlık dalı ara…" />
-      <p class="kontenjan-meta">${escapeHtml(donem)} · <span id="kontenjan-count">${data.length}</span> dal</p>
+      <p class="kontenjan-meta">${escapeHtml(donem)} · <span id="kontenjan-count">${data.length}</span> dal · <span class="puan-badge t">T</span> temel bilim · <span class="puan-badge k">K</span> klinik</p>
       <div class="kontenjan-table">
         <table>
           <thead>
             <tr>
               <th data-key="dal" data-type="str">Uzmanlık Dalı</th>
+              <th>Puan Türü</th>
               <th data-key="kontenjan" data-type="num">Kontenjan</th>
               <th data-key="taban" data-type="num">Taban Puan</th>
               <th data-key="yerlesen" data-type="num">Yerleşen</th>
