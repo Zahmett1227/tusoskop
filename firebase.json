@@ -66,6 +66,10 @@
         "destination": "/basla.html"
       },
       {
+        "source": "/coz/**",
+        "destination": "/index.html"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }

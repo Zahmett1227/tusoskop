@@ -40,6 +40,18 @@ export function isIOSSafari() {
   return !/CriOS|FxiOS|EdgiOS|OPiOS/.test(ua);
 }
 
+/**
+ * Kaba cihaz sınıfı: "ios" | "android" | "desktop".
+ * /coz mikro deneme akışında cihaza uygun CTA seçmek için kullanılır.
+ */
+export function getDeviceType() {
+  if (isIOS()) return 'ios';
+  if (typeof navigator !== 'undefined' && /Android/i.test(navigator.userAgent ?? '')) {
+    return 'android';
+  }
+  return 'desktop';
+}
+
 // Backward-compatible aliases for clearer naming in UI components.
 export const isIOSDevice = isIOS;
 export const isStandaloneMode = isStandalone;

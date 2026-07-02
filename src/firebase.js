@@ -16,18 +16,9 @@ import {
 } from "firebase/firestore";
 import { getFunctions } from "firebase/functions";
 import { trackClarityEvent } from "./lib/clarity";
+import { FIREBASE_CONFIG } from "./lib/firebaseConfig";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBF8gh8mOeCpPgbfX_0jP_Fg47wyUXs278",
-  authDomain: "tusoskop.firebaseapp.com",
-  projectId: "tusoskop",
-  storageBucket: "tusoskop.firebasestorage.app",
-  messagingSenderId: "447547841381",
-  appId: "1:447547841381:web:5ac74af2196a71be6b1f8c",
-  measurementId: "G-P5BCLN20L3"
-};
-
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(FIREBASE_CONFIG);
 
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();

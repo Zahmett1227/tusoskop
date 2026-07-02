@@ -49,6 +49,10 @@
       "destination": "/api/campaign-redirect"
     },
     {
+      "source": "/coz/(.*)",
+      "destination": "/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
