@@ -52,6 +52,18 @@ export function getDeviceType() {
   return 'desktop';
 }
 
+/**
+ * Meta'nın (Instagram/Facebook/Messenger) uygulama-içi tarayıcısını tespit eder.
+ * Google OAuth (signInWithPopup/Redirect) bu tarayıcılarda Google tarafından
+ * politika gereği engelleniyor ("bu tarayıcı güvenli olmayabilir") — funnel'da
+ * kullanıcıyı gerçek Safari/Chrome'a yönlendirmek için kullanılır.
+ */
+export function isInAppBrowser() {
+  if (typeof navigator === 'undefined') return false;
+  const ua = navigator.userAgent ?? '';
+  return /FBAN|FBAV|FB_IAB|Instagram|Messenger/i.test(ua);
+}
+
 // Backward-compatible aliases for clearer naming in UI components.
 export const isIOSDevice = isIOS;
 export const isStandaloneMode = isStandalone;
