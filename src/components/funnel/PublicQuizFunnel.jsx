@@ -286,13 +286,21 @@ export default function PublicQuizFunnel() {
     [campaign, session]
   );
 
-  const handleAppStoreClick = useCallback(() => {
-    trackPublicQuizEvent("appstore_click", { ...baseParams, destination: "appstore" });
-    trackMetaCustom("AppStoreClick", { campaign_code: session.campaignCode });
-    const updated = updateQuizSession(slug, { appStoreClicked: true });
-    postQuizSession(updated, "appstore_click", { appStoreClicked: true });
-    // <a href> navigasyonu engellenmez; beacon zaten yola çıktı.
-  }, [baseParams, session, slug]);
+  const handleAppStoreClick = useCallback(
+    (event) => {
+      /* App Store'a geçiş sayfayı anında koparabiliyor; pixel isteğinin ağa
+         çıkması için navigasyonu kısa bir süre erteliyoruz. */
+      event.preventDefault();
+      trackPublicQuizEvent("appstore_click", { ...baseParams, destination: "appstore" });
+      trackMetaCustom("AppStoreClick", { campaign_code: session.campaignCode });
+      const updated = updateQuizSession(slug, { appStoreClicked: true });
+      postQuizSession(updated, "appstore_click", { appStoreClicked: true });
+      window.setTimeout(() => {
+        window.location.href = appStoreUrl;
+      }, 250);
+    },
+    [baseParams, session, slug, appStoreUrl]
+  );
 
   const handleWebContinue = useCallback(() => {
     trackPublicQuizEvent("web_continue_click", { ...baseParams, destination: "website" });
