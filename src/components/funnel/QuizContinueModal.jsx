@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { isInAppBrowser } from "../../utils/device";
 
 /**
  * "Sonucunu kaydet" giriş paneli — web devam akışı.
@@ -47,6 +48,9 @@ export default function QuizContinueModal({
   onGoogle,
   onApple,
 }) {
+  const [linkCopied, setLinkCopied] = useState(false);
+  const inAppBrowser = isInAppBrowser();
+
   useEffect(() => {
     if (!open) return undefined;
     const onKey = (event) => {
@@ -56,7 +60,20 @@ export default function QuizContinueModal({
     return () => document.removeEventListener("keydown", onKey);
   }, [open, busy, onClose]);
 
+  useEffect(() => {
+    if (!open) setLinkCopied(false);
+  }, [open]);
+
   if (!open) return null;
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setLinkCopied(true);
+    } catch {
+      /* pano izni yoksa sessizce yut, banner metni zaten adres çubuğuna yönlendiriyor */
+    }
+  };
 
   return (
     <div
@@ -94,6 +111,25 @@ export default function QuizContinueModal({
         <p className="mt-2 text-sm leading-relaxed text-slate-300">
           {score}/{total} skorun ve çözdüğün sorular hesabına aktarılacak.
         </p>
+
+        {inAppBrowser && (
+          <div className="mt-4 rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-left">
+            <p className="text-sm font-bold text-amber-300">Google girişi burada çalışmayabilir</p>
+            <p className="mt-1 text-xs leading-relaxed text-amber-200/90">
+              Instagram/Facebook'un uygulama-içi tarayıcısındasın. Sağ üstteki{" "}
+              <span className="font-semibold">"•••"</span> menüsünden{" "}
+              <span className="font-semibold">"Tarayıcıda Aç"</span>'ı seç, ya da linki kopyalayıp
+              Safari/Chrome'da aç.
+            </p>
+            <button
+              type="button"
+              onClick={handleCopyLink}
+              className="mt-2.5 rounded-xl border border-amber-400/40 px-3 py-1.5 text-xs font-bold text-amber-200 transition hover:bg-amber-500/10"
+            >
+              {linkCopied ? "Kopyalandı ✓" : "Linki Kopyala"}
+            </button>
+          </div>
+        )}
 
         <div className="mt-5 flex flex-col gap-2.5">
           <button
