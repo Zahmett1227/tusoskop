@@ -7,6 +7,8 @@ import {
   initQuizSession,
   getQuizSession,
   updateQuizSession,
+  buildResumeUrl,
+  parseResumeToken,
 } from "../../utils/publicQuizSession";
 import {
   trackPublicQuizEvent,
@@ -89,8 +91,25 @@ export default function PublicQuizFunnel() {
 
   const sessionRef = useRef(null);
   if (!sessionRef.current && !errorKind) {
-    sessionRef.current =
-      getQuizSession(slug) || initQuizSession(slug, { campaignCode: campaign.campaignCode });
+    const existing = getQuizSession(slug);
+    if (existing) {
+      sessionRef.current = existing;
+    } else {
+      const created = initQuizSession(slug, { campaignCode: campaign.campaignCode });
+      /* Instagram/Facebook'tan gerçek Safari/Chrome'a "Linki Kopyala" ile geçen
+         kullanıcı için: sessionStorage taşınmadığından skor URL'e gömülü gelir. */
+      const resume = parseResumeToken();
+      if (resume) {
+        created.score = resume.score;
+        created.completedAt = resume.completedAt;
+        created.startedAt = resume.completedAt; // süre bu tarayıcıda anlamsız, 0'a sabitle
+        created.currentIndex = total;
+        created.firstAnswerTracked = true;
+        created.completeTracked = true;
+        updateQuizSession(slug, created);
+      }
+      sessionRef.current = created;
+    }
   }
   const session = sessionRef.current;
 
@@ -439,6 +458,7 @@ export default function PublicQuizFunnel() {
         error={loginError}
         onGoogle={() => runLogin("google")}
         onApple={() => runLogin("apple")}
+        resumeUrl={buildResumeUrl(session)}
       />
     </div>
   );

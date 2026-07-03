@@ -47,6 +47,7 @@ export default function QuizContinueModal({
   error,
   onGoogle,
   onApple,
+  resumeUrl,
 }) {
   const [linkCopied, setLinkCopied] = useState(false);
   const inAppBrowser = isInAppBrowser();
@@ -68,7 +69,7 @@ export default function QuizContinueModal({
 
   const handleCopyLink = async () => {
     try {
-      await navigator.clipboard.writeText(window.location.href);
+      await navigator.clipboard.writeText(resumeUrl || window.location.href);
       setLinkCopied(true);
     } catch {
       /* pano izni yoksa sessizce yut, banner metni zaten adres çubuğuna yönlendiriyor */
