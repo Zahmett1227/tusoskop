@@ -119,6 +119,43 @@ export function getQuizSession(slug) {
   return readSession(slug);
 }
 
+const RESUME_PARAM = "qr";
+
+/**
+ * Mevcut sayfa linkine tamamlanmış oturumun skorunu gömer. Instagram/Facebook
+ * gibi uygulama-içi tarayıcılardan gerçek Safari/Chrome'a geçerken
+ * sessionStorage taşınmadığı için, "Linki Kopyala" ile paylaşılan linkin
+ * sonuç ekranını skor kaybetmeden yeniden kurabilmesi bunu gerektirir.
+ */
+export function buildResumeUrl(session) {
+  if (!inBrowser()) return "";
+  const href = window.location.href;
+  if (!session?.completedAt) return href;
+  try {
+    const payload = { s: session.score || 0, ca: session.completedAt };
+    const token = btoa(encodeURIComponent(JSON.stringify(payload)));
+    const url = new URL(href);
+    url.searchParams.set(RESUME_PARAM, token);
+    return url.toString();
+  } catch {
+    return href;
+  }
+}
+
+/** URL'de gömülü bir devam token'ı varsa skor/tamamlanma bilgisini döner. */
+export function parseResumeToken() {
+  if (!inBrowser()) return null;
+  try {
+    const token = new URLSearchParams(window.location.search).get(RESUME_PARAM);
+    if (!token) return null;
+    const parsed = JSON.parse(decodeURIComponent(atob(token)));
+    if (!parsed || typeof parsed.s !== "number" || !parsed.ca) return null;
+    return { score: parsed.s, completedAt: parsed.ca };
+  } catch {
+    return null;
+  }
+}
+
 /**
  * Oturuma kısmi güncelleme uygular ve saklar.
  * @param {string} slug
