@@ -307,7 +307,7 @@
           var TW={temel:0.6,klinik:0.4};
           var KW={temel:0.4,klinik:0.6};
           var KONTENJAN=[["Acil Tıp",45.02,"K",52.07],["Adli Tıp",54.45,"K",59.76],["Aile Hekimliği",45.02,"K",56.25],["Anatomi",58.79,"T",60.92],["Anesteziyoloji ve Reanimasyon",45.03,"K",54.51],["Askeri Sağlık Hizmetleri",null,"K",null],["Beyin ve Sinir Cerrahisi",45.06,"K",53.08],["Deri ve Zührevi Hastalıkları",59.01,"K",72.69],["Enfeksiyon Hastalıkları ve Klinik Mikrobiyoloji",54.45,"K",63.42],["Fiziksel Tıp ve Rehabilitasyon",53.33,"K",68.09],["Fizyoloji",61.16,"T",62.15],["Genel Cerrahi",45.19,"K",53.48],["Göz Hastalıkları",60.08,"K",70.74],["Göğüs Cerrahisi",45.14,"K",52.78],["Göğüs Hastalıkları",45.5,"K",55.21],["Halk Sağlığı",52.88,"K",63.14],["Hava ve Uzay Hekimliği",57.8,"K",57.8],["Histoloji ve Embriyoloji",61.05,"T",63.52],["Kadın Hastalıkları ve Doğum",45.03,"K",54.68],["Kalp ve Damar Cerrahisi",45.12,"K",54.01],["Kardiyoloji",45.48,"K",58.98],["Kulak, Burun, Boğaz Hastalıkları",52.01,"K",67.44],["Nöroloji",45.47,"K",56.53],["Nükleer Tıp",53.86,"K",68.62],["Ortopedi ve Travmatoloji",46.57,"K",58.85],["Plastik, Rekonstrüktif ve Estetik Cerrahi",61.78,"K",72.18],["Radyasyon Onkolojisi",64.86,"K",67.24],["Radyoloji",45.48,"K",65.07],["Ruh Sağlığı ve Hastalıkları",55.95,"K",68.24],["Spor Hekimliği",54.92,"K",65.91],["Sualtı Hekimliği ve Hiperbarik Tıp",53.98,"K",62.86],["Tıbbi Biyokimya",63.41,"T",66.87],["Tıbbi Ekoloji ve Hidroklimatoloji",64.2,"K",65.21],["Tıbbi Farmakoloji",63.66,"T",66.26],["Tıbbi Genetik",65.82,"K",69.38],["Tıbbi Mikrobiyoloji",45.33,"T",65.71],["Tıbbi Patoloji",54.36,"T",62.32],["Çocuk Cerrahisi",45.48,"K",51.21],["Çocuk Sağlığı ve Hastalıkları",45,"K",55.76],["Çocuk ve Ergen Ruh Sağlığı ve Hastalıkları",46.73,"K",69.35],["Üroloji",52.98,"K",62.72],["İç Hastalıkları",45,"K",56.56]];
-          var kesinti=false,hedefTuru='K';
+          var kesinti=false,hedefTuru='K',RAHAT_MARJ=1.5;
           function r1(x){return Math.round(x*10)/10;}
           function net(c,w){var n=(Number(c)||0)-(Number(w)||0)/4;return n>0?r1(n):0;}
           function blank(c,w){var b=SEC-(Number(c)||0)-(Number(w)||0);return b>=0?b:0;}
@@ -366,7 +366,7 @@
               var s=relevant(r);
               if(r[1]==null){open.push(r);return;}
               if(s<r[1]){near.push(r);return;}
-              if(r[3]!=null&&s>=r[3])rahat.push(r);else sinirda.push(r);
+              if(r[3]!=null&&s>=r[3]+RAHAT_MARJ)rahat.push(r);else sinirda.push(r);
             });
             rahat.sort(function(a,b){return b[3]-a[3];});
             sinirda.sort(function(a,b){return a[3]-b[3];});
@@ -381,8 +381,8 @@
               matchLead.textContent='Bu puanla geçen dönem taban puanı oluşan hiçbir dala girebilmiş değilsin'+(open.length?', ancak kontenjanı hiç dolmayan '+open.length+' dal her zaman açık kalıyor.':'.');
             }
             matchGroups.innerHTML='';
-            renderGroup('Rahat girersin','rahat','(ortalamanın üzerindesin)',rahat,'',function(r){return 'ort. '+r[3];});
-            renderGroup('Sınırda / rekabetçi','sinirda','(taban üstü, ortalama altı)',sinirda,'sinirda',function(r){return 'taban '+r[1]+' · ort. '+r[3];});
+            renderGroup('Rahat girersin','rahat','(ortalamanın en az +1.5 üzerindesin)',rahat,'',function(r){return 'ort. '+r[3];});
+            renderGroup('Sınırda / rekabetçi','sinirda','(taban üstü, ortalamaya +1.5’e kadar yakın)',sinirda,'sinirda',function(r){return 'taban '+r[1]+' · ort. '+r[3];});
             renderGroup('Kontenjanı dolmayan dallar','open','',open,'open',function(){return 'kontenjan dolmadı';});
             matchNear.style.display=near.length?'block':'none';
             matchNearRows.innerHTML='';

@@ -21,6 +21,10 @@ export const REKABET_ESIK = {
   orta: 52,
 };
 
+// "Rahat" sınıfı için güvenli marj: ortalamanın bu kadar üstüne çıkmadan
+// kullanıcıyı rahat kabul etmiyoruz; aksi halde "sınırda/rekabetçi".
+export const MATCH_RAHAT_MARGIN = 1.5;
+
 /** Kontenjan doluluk oranı (0–1). Kontenjan yoksa null. */
 export function getDoluluk(row) {
   if (!row || !row.kontenjan) return null;
@@ -50,8 +54,8 @@ export function getRekabetTier(row) {
 
 /**
  * Bir adayın puanının, bir dala göre konumu:
- *   "rahat"   — puan ortalamanın üzerinde (rahat yerleşir)
- *   "sinirda" — puan taban ile ortalama arasında (girer ama alt sıralarda, rekabetçi)
+ *   "rahat"   — puan, ortalamanın en az MATCH_RAHAT_MARGIN üstünde
+ *   "sinirda" — puan taban ile ortalama+marj arasında (girer ama rekabetçi)
  *   "uzak"    — puan tabanın altında (bu dönem yerleşemezdi)
  *   "acik"    — kontenjan dolmadı (baraj üstü herkes yerleşebilir)
  */
@@ -59,6 +63,6 @@ export function getMatchLevel(row, score) {
   if (!row) return "uzak";
   if (row.tabanPuan == null) return "acik";
   if (score < row.tabanPuan) return "uzak";
-  if (row.ortalamaPuan != null && score >= row.ortalamaPuan) return "rahat";
+  if (row.ortalamaPuan != null && score >= row.ortalamaPuan + MATCH_RAHAT_MARGIN) return "rahat";
   return "sinirda";
 }

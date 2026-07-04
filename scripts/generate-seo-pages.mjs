@@ -475,7 +475,7 @@ function renderScoreTool() {
           var TW={temel:${T_PUANI_AGIRLIK.temel},klinik:${T_PUANI_AGIRLIK.klinik}};
           var KW={temel:${K_PUANI_AGIRLIK.temel},klinik:${K_PUANI_AGIRLIK.klinik}};
           var KONTENJAN=${kontenjanJson};
-          var kesinti=false,hedefTuru='K';
+          var kesinti=false,hedefTuru='K',RAHAT_MARJ=1.5;
           function r1(x){return Math.round(x*10)/10;}
           function net(c,w){var n=(Number(c)||0)-(Number(w)||0)/4;return n>0?r1(n):0;}
           function blank(c,w){var b=SEC-(Number(c)||0)-(Number(w)||0);return b>=0?b:0;}
@@ -534,7 +534,7 @@ function renderScoreTool() {
               var s=relevant(r);
               if(r[1]==null){open.push(r);return;}
               if(s<r[1]){near.push(r);return;}
-              if(r[3]!=null&&s>=r[3])rahat.push(r);else sinirda.push(r);
+              if(r[3]!=null&&s>=r[3]+RAHAT_MARJ)rahat.push(r);else sinirda.push(r);
             });
             rahat.sort(function(a,b){return b[3]-a[3];});
             sinirda.sort(function(a,b){return a[3]-b[3];});
@@ -549,8 +549,8 @@ function renderScoreTool() {
               matchLead.textContent='Bu puanla geçen dönem taban puanı oluşan hiçbir dala girebilmiş değilsin'+(open.length?', ancak kontenjanı hiç dolmayan '+open.length+' dal her zaman açık kalıyor.':'.');
             }
             matchGroups.innerHTML='';
-            renderGroup('Rahat girersin','rahat','(ortalamanın üzerindesin)',rahat,'',function(r){return 'ort. '+r[3];});
-            renderGroup('Sınırda / rekabetçi','sinirda','(taban üstü, ortalama altı)',sinirda,'sinirda',function(r){return 'taban '+r[1]+' · ort. '+r[3];});
+            renderGroup('Rahat girersin','rahat','(ortalamanın en az +1.5 üzerindesin)',rahat,'',function(r){return 'ort. '+r[3];});
+            renderGroup('Sınırda / rekabetçi','sinirda','(taban üstü, ortalamaya +1.5’e kadar yakın)',sinirda,'sinirda',function(r){return 'taban '+r[1]+' · ort. '+r[3];});
             renderGroup('Kontenjanı dolmayan dallar','open','',open,'open',function(){return 'kontenjan dolmadı';});
             matchNear.style.display=near.length?'block':'none';
             matchNearRows.innerHTML='';

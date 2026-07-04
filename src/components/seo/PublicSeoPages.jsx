@@ -902,7 +902,7 @@ function BranchMatchPanel({ tPuani, kPuani }) {
       {rahat.length > 0 ? (
         <div className="mt-4">
           <p className="text-xs font-bold uppercase tracking-wide text-emerald-300/80">
-            Rahat girersin <span className="text-slate-500">(ortalamanın üzerindesin)</span>
+            Rahat girersin <span className="text-slate-500">(ortalamanın en az +1.5 üzerindesin)</span>
           </p>
           <ul className="mt-2 flex flex-wrap gap-2">
             {rahat.map((r) => (
@@ -921,7 +921,7 @@ function BranchMatchPanel({ tPuani, kPuani }) {
       {sinirda.length > 0 ? (
         <div className="mt-4">
           <p className="text-xs font-bold uppercase tracking-wide text-amber-300/80">
-            Sınırda / rekabetçi <span className="text-slate-500">(taban üstü, ortalama altı)</span>
+            Sınırda / rekabetçi <span className="text-slate-500">(taban üstü, ortalamaya +1.5’e kadar yakın)</span>
           </p>
           <ul className="mt-2 flex flex-wrap gap-2">
             {sinirda.map((r) => (

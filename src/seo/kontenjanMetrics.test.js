@@ -7,6 +7,7 @@ import {
   getMatchLevel,
   REKABET_TIERS,
   REKABET_ESIK,
+  MATCH_RAHAT_MARGIN,
 } from "./kontenjanMetrics.js";
 
 const derma = KONTENJAN_DATA.find((r) => r.dal === "Deri ve Zührevi Hastalıkları");
@@ -66,12 +67,16 @@ describe("getRekabetTier", () => {
 describe("getMatchLevel", () => {
   const row = { tabanPuan: 59, ortalamaPuan: 72, tavanPuan: 83 };
 
-  it("ortalamanın üzerinde: rahat", () => {
-    expect(getMatchLevel(row, 75)).toBe("rahat");
+  it("ortalamanın marj kadar üzerinde: rahat", () => {
+    expect(getMatchLevel(row, 72 + MATCH_RAHAT_MARGIN)).toBe("rahat");
   });
 
-  it("taban ile ortalama arasında: sinirda", () => {
+  it("taban ile ortalama+marj arasında: sinirda", () => {
     expect(getMatchLevel(row, 65)).toBe("sinirda");
+  });
+
+  it("ortalamanın 1.5 puandan az üstünde de sinirda (istenen davranış)", () => {
+    expect(getMatchLevel({ tabanPuan: 46.57, ortalamaPuan: 56.8 }, 58)).toBe("sinirda");
   });
 
   it("tabanın altında: uzak", () => {
