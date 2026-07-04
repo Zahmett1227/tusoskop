@@ -911,7 +911,13 @@ function BranchMatchPanel({ tPuani, kPuani }) {
                 className="flex items-center gap-1.5 rounded-xl border border-emerald-300/30 bg-emerald-300/10 px-3 py-1.5 text-xs font-bold text-emerald-100"
               >
                 <PuanTuruBadge puanTuru={r.puanTuru} />
-                {r.dal} <span className="text-emerald-300/70">· ort. {r.ortalamaPuan}</span>
+                <span>{r.dal}</span>
+                <span className="rounded-full border border-emerald-200/35 bg-slate-950/45 px-2 py-0.5 text-[11px] font-black text-emerald-200">
+                  taban {r.tabanPuan}
+                </span>
+                <span className="rounded-full border border-emerald-200/35 bg-slate-950/45 px-2 py-0.5 text-[11px] font-black text-emerald-200">
+                  ort. {r.ortalamaPuan}
+                </span>
               </li>
             ))}
           </ul>
@@ -932,7 +938,10 @@ function BranchMatchPanel({ tPuani, kPuani }) {
                 <PuanTuruBadge puanTuru={r.puanTuru} />
                 <span>{r.dal}</span>
                 <span className="rounded-full border border-amber-200/35 bg-slate-950/45 px-2 py-0.5 text-[11px] font-black text-amber-200">
-                  taban {r.tabanPuan} · ort. {r.ortalamaPuan}
+                  taban {r.tabanPuan}
+                </span>
+                <span className="rounded-full border border-amber-200/35 bg-slate-950/45 px-2 py-0.5 text-[11px] font-black text-amber-200">
+                  ort. {r.ortalamaPuan}
                 </span>
               </li>
             ))}

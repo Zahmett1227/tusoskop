@@ -221,7 +221,8 @@ const css = `
   .match-chip{display:flex;align-items:center;gap:6px;border-radius:14px;padding:7px 12px;font-size:12px;font-weight:800;border:1px solid rgba(110,231,183,.3);background:rgba(110,231,183,.1);color:#ecfdf5}
   .match-chip.sinirda{border-color:rgba(252,211,77,.3);background:rgba(252,211,77,.1);color:#fef3c7}
   .match-chip.open{border-color:#334155;background:rgba(15,23,42,.6);color:#cbd5e1}
-  .match-chip .chip-metrics{display:inline-flex;border:1px solid rgba(253,230,138,.35);background:rgba(2,6,23,.45);border-radius:999px;padding:2px 8px;font-size:11px;font-weight:900;color:#fde68a}
+  .match-chip .chip-metric{display:inline-flex;border:1px solid rgba(253,230,138,.35);background:rgba(2,6,23,.45);border-radius:999px;padding:2px 8px;font-size:11px;font-weight:900;color:#fde68a}
+  .match-chip .chip-metric.em{border-color:rgba(167,243,208,.35);color:#a7f3d0}
   .match-group{margin-top:16px}
   .match-group-title{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
   .match-group-title.rahat{color:rgba(110,231,183,.8)}
@@ -550,8 +551,8 @@ function renderScoreTool() {
               matchLead.textContent='Bu puanla geçen dönem taban puanı oluşan hiçbir dala girebilmiş değilsin'+(open.length?', ancak kontenjanı hiç dolmayan '+open.length+' dal her zaman açık kalıyor.':'.');
             }
             matchGroups.innerHTML='';
-            renderGroup('Rahat girersin','rahat','(ortalamanın en az +1.5 üzerindesin)',rahat,'',function(r){return 'ort. '+r[3];});
-            renderGroup('Sınırda / rekabetçi','sinirda','(taban üstü, ortalamaya +1.5’e kadar yakın)',sinirda,'sinirda',function(r){return '<span class="chip-metrics">taban '+r[1]+' · ort. '+r[3]+'</span>';});
+            renderGroup('Rahat girersin','rahat','(ortalamanın en az +1.5 üzerindesin)',rahat,'',function(r){return '<span class="chip-metric em">taban '+r[1]+'</span> <span class="chip-metric em">ort. '+r[3]+'</span>';});
+            renderGroup('Sınırda / rekabetçi','sinirda','(taban üstü, ortalamaya +1.5’e kadar yakın)',sinirda,'sinirda',function(r){return '<span class="chip-metric">taban '+r[1]+'</span> <span class="chip-metric">ort. '+r[3]+'</span>';});
             renderGroup('Kontenjanı dolmayan dallar','open','',open,'open',function(){return 'kontenjan dolmadı';});
             matchNear.style.display=near.length?'block':'none';
             matchNearRows.innerHTML='';
