@@ -126,7 +126,29 @@
   .match-panel .lead.warn{color:#fbbf24}
   .match-list{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
   .match-chip{display:flex;align-items:center;gap:6px;border-radius:14px;padding:7px 12px;font-size:12px;font-weight:800;border:1px solid rgba(110,231,183,.3);background:rgba(110,231,183,.1);color:#ecfdf5}
+  .match-chip.sinirda{border-color:rgba(252,211,77,.3);background:rgba(252,211,77,.1);color:#fef3c7}
   .match-chip.open{border-color:#334155;background:rgba(15,23,42,.6);color:#cbd5e1}
+  .match-group{margin-top:16px}
+  .match-group-title{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+  .match-group-title.rahat{color:rgba(110,231,183,.8)}
+  .match-group-title.sinirda{color:rgba(252,211,77,.8)}
+  .match-group-title.open{color:#64748b}
+  .match-group-title span{color:#64748b;font-weight:700}
+  .rekabet-badge{display:inline-flex;align-items:center;white-space:nowrap;border-radius:999px;padding:3px 9px;font-size:11px;font-weight:900;border:1px solid}
+  .rekabet-badge.cokRekabetci{border-color:rgba(251,113,133,.4);background:rgba(251,113,133,.1);color:#fda4af}
+  .rekabet-badge.rekabetci{border-color:rgba(253,186,116,.4);background:rgba(253,186,116,.1);color:#fdba74}
+  .rekabet-badge.orta{border-color:rgba(252,211,77,.4);background:rgba(252,211,77,.1);color:#fcd34d}
+  .rekabet-badge.erisilebilir{border-color:rgba(110,231,183,.4);background:rgba(110,231,183,.1);color:#a7f3d0}
+  .rekabet-badge.dolmadi{border-color:rgba(100,116,139,.5);background:rgba(51,65,85,.2);color:#cbd5e1}
+  .doluluk-cell{display:flex;align-items:center;gap:8px}
+  .doluluk-bar{display:none;height:6px;width:56px;overflow:hidden;border-radius:999px;background:#334155}
+  .doluluk-bar>i{display:block;height:100%;border-radius:999px}
+  .doluluk-bar.full>i{background:#34d399}
+  .doluluk-bar.high>i{background:#38bdf8}
+  .doluluk-bar.low>i{background:#fbbf24}
+  @media(min-width:640px){.doluluk-bar{display:block}}
+  .kontenjan-help{margin-top:8px;font-size:12px;line-height:1.6;color:#94a3b8}
+  .kontenjan-help b{color:#6ee7b7;font-weight:700}
   .match-near{margin-top:16px;border-top:1px solid #1e293b;padding-top:14px}
   .match-near-title{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:#64748b}
   .match-near-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:14px;gap:10px}
@@ -239,9 +261,9 @@
 
       <div class="match-panel" id="match-panel" style="display:none">
         <h3>Bu puanla hangi dallara girebilirsin?</h3>
-        <p class="hint">2026-TUS 1. Dönem taban puanlarına göre yaklaşık kıyaslama — her dal kendi puan türüyle (T veya K) karşılaştırılır. Taban puanlar dönemden döneme değişir, bu bir garanti değil, referanstır.</p>
+        <p class="hint">2026-TUS 1. Dönem verisine göre yaklaşık kıyaslama — her dal kendi puan türüyle (T veya K) karşılaştırılır. Bir dala taban puanla girmek mümkün olsa da, ortalama puanın altındaysan alt sıralarda ve rekabetçi kalırsın. Puanlar dönemden döneme değişir; bu bir garanti değil, referanstır.</p>
         <p class="lead" id="match-lead" style="display:none"></p>
-        <ul class="match-list" id="match-list"></ul>
+        <div id="match-groups"></div>
         <div class="match-near" id="match-near" style="display:none">
           <p class="match-near-title">Az kalanlar</p>
           <div id="match-near-rows"></div>
@@ -284,7 +306,7 @@
           var TO=16.87,TS=19.6,KO=23.07,KS=20.2;
           var TW={temel:0.6,klinik:0.4};
           var KW={temel:0.4,klinik:0.6};
-          var KONTENJAN=[["Acil Tıp",45.02,"K"],["Adli Tıp",54.45,"K"],["Aile Hekimliği",45.02,"K"],["Anatomi",58.79,"T"],["Anesteziyoloji ve Reanimasyon",45.03,"K"],["Askeri Sağlık Hizmetleri",null,"K"],["Beyin ve Sinir Cerrahisi",45.06,"K"],["Deri ve Zührevi Hastalıkları",59.01,"K"],["Enfeksiyon Hastalıkları ve Klinik Mikrobiyoloji",54.45,"K"],["Fiziksel Tıp ve Rehabilitasyon",53.33,"K"],["Fizyoloji",61.16,"T"],["Genel Cerrahi",45.19,"K"],["Göz Hastalıkları",60.08,"K"],["Göğüs Cerrahisi",45.14,"K"],["Göğüs Hastalıkları",45.5,"K"],["Halk Sağlığı",52.88,"K"],["Hava ve Uzay Hekimliği",57.8,"K"],["Histoloji ve Embriyoloji",61.05,"T"],["Kadın Hastalıkları ve Doğum",45.03,"K"],["Kalp ve Damar Cerrahisi",45.12,"K"],["Kardiyoloji",45.48,"K"],["Kulak, Burun, Boğaz Hastalıkları",52.01,"K"],["Nöroloji",45.47,"K"],["Nükleer Tıp",53.86,"K"],["Ortopedi ve Travmatoloji",46.57,"K"],["Plastik, Rekonstrüktif ve Estetik Cerrahi",61.78,"K"],["Radyasyon Onkolojisi",64.86,"K"],["Radyoloji",45.48,"K"],["Ruh Sağlığı ve Hastalıkları",55.95,"K"],["Spor Hekimliği",54.92,"K"],["Sualtı Hekimliği ve Hiperbarik Tıp",53.98,"K"],["Tıbbi Biyokimya",63.41,"T"],["Tıbbi Ekoloji ve Hidroklimatoloji",64.2,"K"],["Tıbbi Farmakoloji",63.66,"T"],["Tıbbi Genetik",65.82,"K"],["Tıbbi Mikrobiyoloji",45.33,"T"],["Tıbbi Patoloji",54.36,"T"],["Çocuk Cerrahisi",45.48,"K"],["Çocuk Sağlığı ve Hastalıkları",45,"K"],["Çocuk ve Ergen Ruh Sağlığı ve Hastalıkları",46.73,"K"],["Üroloji",52.98,"K"],["İç Hastalıkları",45,"K"]];
+          var KONTENJAN=[["Acil Tıp",45.02,"K",52.07],["Adli Tıp",54.45,"K",59.76],["Aile Hekimliği",45.02,"K",56.25],["Anatomi",58.79,"T",60.92],["Anesteziyoloji ve Reanimasyon",45.03,"K",54.51],["Askeri Sağlık Hizmetleri",null,"K",null],["Beyin ve Sinir Cerrahisi",45.06,"K",53.08],["Deri ve Zührevi Hastalıkları",59.01,"K",72.69],["Enfeksiyon Hastalıkları ve Klinik Mikrobiyoloji",54.45,"K",63.42],["Fiziksel Tıp ve Rehabilitasyon",53.33,"K",68.09],["Fizyoloji",61.16,"T",62.15],["Genel Cerrahi",45.19,"K",53.48],["Göz Hastalıkları",60.08,"K",70.74],["Göğüs Cerrahisi",45.14,"K",52.78],["Göğüs Hastalıkları",45.5,"K",55.21],["Halk Sağlığı",52.88,"K",63.14],["Hava ve Uzay Hekimliği",57.8,"K",57.8],["Histoloji ve Embriyoloji",61.05,"T",63.52],["Kadın Hastalıkları ve Doğum",45.03,"K",54.68],["Kalp ve Damar Cerrahisi",45.12,"K",54.01],["Kardiyoloji",45.48,"K",58.98],["Kulak, Burun, Boğaz Hastalıkları",52.01,"K",67.44],["Nöroloji",45.47,"K",56.53],["Nükleer Tıp",53.86,"K",68.62],["Ortopedi ve Travmatoloji",46.57,"K",58.85],["Plastik, Rekonstrüktif ve Estetik Cerrahi",61.78,"K",72.18],["Radyasyon Onkolojisi",64.86,"K",67.24],["Radyoloji",45.48,"K",65.07],["Ruh Sağlığı ve Hastalıkları",55.95,"K",68.24],["Spor Hekimliği",54.92,"K",65.91],["Sualtı Hekimliği ve Hiperbarik Tıp",53.98,"K",62.86],["Tıbbi Biyokimya",63.41,"T",66.87],["Tıbbi Ekoloji ve Hidroklimatoloji",64.2,"K",65.21],["Tıbbi Farmakoloji",63.66,"T",66.26],["Tıbbi Genetik",65.82,"K",69.38],["Tıbbi Mikrobiyoloji",45.33,"T",65.71],["Tıbbi Patoloji",54.36,"T",62.32],["Çocuk Cerrahisi",45.48,"K",51.21],["Çocuk Sağlığı ve Hastalıkları",45,"K",55.76],["Çocuk ve Ergen Ruh Sağlığı ve Hastalıkları",46.73,"K",69.35],["Üroloji",52.98,"K",62.72],["İç Hastalıkları",45,"K",56.56]];
           var kesinti=false,hedefTuru='K';
           function r1(x){return Math.round(x*10)/10;}
           function net(c,w){var n=(Number(c)||0)-(Number(w)||0)/4;return n>0?r1(n):0;}
@@ -311,34 +333,57 @@
           var toggleBtn=document.getElementById('kesinti-toggle'),switchEl=document.getElementById('kesinti-switch');
           var hedefEl=document.getElementById('hedef-puan'),hintEl=document.getElementById('reverse-hint');
           var hedefTBtn=document.getElementById('hedef-t'),hedefKBtn=document.getElementById('hedef-k');
-          var matchPanel=document.getElementById('match-panel'),matchLead=document.getElementById('match-lead'),matchList=document.getElementById('match-list');
+          var matchPanel=document.getElementById('match-panel'),matchLead=document.getElementById('match-lead'),matchGroups=document.getElementById('match-groups');
           var matchNear=document.getElementById('match-near'),matchNearRows=document.getElementById('match-near-rows');
           var lastTemelNet=0,lastKlinikNet=0;
+          function badgeHtml(r){return '<span class="puan-badge '+(r[2]==='T'?'t':'k')+'">'+r[2]+'</span> ';}
+          function renderGroup(title,titleClass,note,items,chipClass,fmt){
+            if(!items.length)return;
+            var wrap=document.createElement('div');
+            wrap.className='match-group';
+            var h=document.createElement('p');
+            h.className='match-group-title '+titleClass;
+            h.innerHTML=title+(note?' <span>'+note+'</span>':'');
+            wrap.appendChild(h);
+            var ul=document.createElement('ul');
+            ul.className='match-list';
+            items.forEach(function(r){
+              var li=document.createElement('li');
+              li.className='match-chip'+(chipClass?' '+chipClass:'');
+              li.innerHTML=badgeHtml(r)+r[0]+' · '+fmt(r);
+              ul.appendChild(li);
+            });
+            wrap.appendChild(ul);
+            matchGroups.appendChild(wrap);
+          }
           function renderMatch(tShown,kShown){
             var hasScore=tShown>0||kShown>0;
             matchPanel.style.display=hasScore?'block':'none';
             if(!hasScore)return;
-            var withThreshold=KONTENJAN.filter(function(r){return r[1]!=null;});
-            var noThreshold=KONTENJAN.filter(function(r){return r[1]==null;});
             function relevant(r){return r[2]==='T'?tShown:kShown;}
-            var qualifies=withThreshold.filter(function(r){return r[1]<=relevant(r);}).sort(function(a,b){return b[1]-a[1];});
-            var near=withThreshold.filter(function(r){return r[1]>relevant(r);}).sort(function(a,b){return (a[1]-relevant(a))-(b[1]-relevant(b));}).slice(0,5);
-            var total=qualifies.length+noThreshold.length;
+            var rahat=[],sinirda=[],open=[],near=[];
+            KONTENJAN.forEach(function(r){
+              var s=relevant(r);
+              if(r[1]==null){open.push(r);return;}
+              if(s<r[1]){near.push(r);return;}
+              if(r[3]!=null&&s>=r[3])rahat.push(r);else sinirda.push(r);
+            });
+            rahat.sort(function(a,b){return b[3]-a[3];});
+            sinirda.sort(function(a,b){return a[3]-b[3];});
+            near.sort(function(a,b){return (a[1]-relevant(a))-(b[1]-relevant(b));});
+            near=near.slice(0,5);
+            var total=rahat.length+sinirda.length+open.length;
             if(total>0){
               matchLead.style.display='none';
             }else{
               matchLead.style.display='block';
               matchLead.className='lead warn';
-              matchLead.textContent='Bu puanla geçen dönem taban puanı oluşan hiçbir dala girebilmiş değilsin'+(noThreshold.length?', ancak kontenjanı hiç dolmayan '+noThreshold.length+' dal her zaman açık kalıyor.':'.');
+              matchLead.textContent='Bu puanla geçen dönem taban puanı oluşan hiçbir dala girebilmiş değilsin'+(open.length?', ancak kontenjanı hiç dolmayan '+open.length+' dal her zaman açık kalıyor.':'.');
             }
-            matchList.innerHTML='';
-            qualifies.concat(noThreshold).forEach(function(r){
-              var li=document.createElement('li');
-              li.className='match-chip'+(r[1]==null?' open':'');
-              var badge='<span class="puan-badge '+(r[2]==='T'?'t':'k')+'">'+r[2]+'</span> ';
-              li.innerHTML=badge+r[0]+' · '+(r[1]==null?'kontenjan dolmadı':r[1]);
-              matchList.appendChild(li);
-            });
+            matchGroups.innerHTML='';
+            renderGroup('Rahat girersin','rahat','(ortalamanın üzerindesin)',rahat,'',function(r){return 'ort. '+r[3];});
+            renderGroup('Sınırda / rekabetçi','sinirda','(taban üstü, ortalama altı)',sinirda,'sinirda',function(r){return 'taban '+r[1]+' · ort. '+r[3];});
+            renderGroup('Kontenjanı dolmayan dallar','open','',open,'open',function(){return 'kontenjan dolmadı';});
             matchNear.style.display=near.length?'block':'none';
             matchNearRows.innerHTML='';
             near.forEach(function(r){
