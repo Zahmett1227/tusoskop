@@ -283,6 +283,20 @@ Meta Traffic reklamlarından gelen kullanıcı için **login-öncesi 3 soruluk m
 - ENV (Vercel): `VITE_META_PIXEL_ID` (var), `VITE_APP_STORE_PROVIDER_TOKEN=128988812`, `VITE_APP_STORE_BASE_URL` (opsiyonel). Hepsi build-time → değişince redeploy gerekir.
 - Bilinen sınır (Phase-2): çözülen cevaplar henüz hesaba içe aktarılmıyor (skor+attribution bağlanıyor, cevaplar `localStorage`'da bekliyor); MVP'de `correctIndex` client'ta.
 
+### Patoloji-01 kampanyası — kurulum ve öğrenilenler (Temmuz 2026)
+
+- **Meta Pixel/dataset**: "Tusoskop", ID `1327796822800702` (Events Manager → Eylemler → Özel Dönüşümler'de yönetiliyor).
+- **Custom Conversion'lar oluşturuldu**: `QuizStart` (URL içeriği: `/coz/patoloji-01`). `QuizComplete` ve `AppStoreClick` için de aynı yöntemle eklenebilir (Events Manager'da event dropdown'ında görünmesi için event'in en az bir kez, yakın zamanda fire olmuş olması gerekiyor).
+- **`CompleteRegistration` custom conversion'ı henüz eklenemedi** — pixel'deki tek `CompleteRegistration` funnel'dan değil, uygulamanın genel kayıt akışından ve kampanya öncesinden geliyor. Eklemek için: `/coz/patoloji-01` üzerinden gerçek bir Google/Apple girişi tamamlanması lazım (dikkat: bu gerçek bir Tusoskop hesabı oluşturur, test için kullanılmamış bir Google/Apple hesabıyla yapılmalı).
+- **Kampanya**: `52560159975763` ("Trafik | Patoloji-01 → /coz", OUTCOME_TRAFFIC, CBO ₺160/gün). Hesap **LINK_CLICKS faturalamaya henüz uygun değil** (yeni işletme kısıtlaması, birkaç hafta sonra açılabilir) → billing_event=IMPRESSIONS + optimization_goal=LANDING_PAGE_VIEWS kullanılıyor, hesaptaki diğer trafik kampanyaları da aynı şekilde.
+- **Ad set'ler**: `52560160072763` ("Patoloji-01 | TR 18-30", geniş Reels+Stories+Feed, şu an PAUSED) ve `52560700074363` ("Patoloji-01 | TR 18-30 | Sadece Feed Testi", ACTIVE — `facebook_positions:["feed"]` + `instagram_positions:["stream"]` ile Reels/Stories/Instream dışlanmış).
+- **Bulgu — placement kalitesi**: Karma trafikte (Reels+Stories ağırlıklı, tıklamaların %71'i) ViewContent→QuizStart oranı sadece %13-20 iken, **sadece Feed'e daraltılınca oran %29-33'e çıkıyor** (iki ayrı ölçümde, büyüyen örneklemle tutarlı). Sebep: Reels/Stories kullanıcısı hızlı kaydırma modunda, çok soruyu okuyup cevaplamıyor; ayrıca reklam görselinin kendisi soruyu zaten gösterdiği için merak unsuru azalmış olabilir. Feed trafiği cost-per-link-click açısından daha pahalı (₺1,30 vs ₺0,83) ama kalite farkı bunu telafi ediyor gibi duruyor. Örneklem büyüdükçe tekrar değerlendirilmeli.
+- **Bug fix'leri (bu dönemde yapıldı)**:
+  - `AppStoreClick` hiç fire olmuyordu — App Store'a hard navigasyon pixel isteğini kesiyordu. Çözüm: `handleAppStoreClick` artık `preventDefault` + ~250ms gecikmeli `window.location.href` kullanıyor (`PublicQuizFunnel.jsx`).
+  - In-app tarayıcı (Instagram/Facebook WebView) Google OAuth'u engelliyor (Google'ın kendi politikası, `signInWithPopup` sessizce başarısız oluyor) → hiç `CompleteRegistration` gelmiyordu. `src/utils/device.js` → `isInAppBrowser()` eklendi; `QuizContinueModal.jsx` in-app tarayıcıda "Tarayıcıda Aç" uyarı banner'ı + "Linki Kopyala" gösteriyor.
+  - "Linki Kopyala" ile in-app tarayıcıdan gerçek Safari/Chrome'a geçilince `sessionStorage` taşınmadığından skor kayboluyordu. `publicQuizSession.js` → `buildResumeUrl`/`parseResumeToken` ile skor+tamamlanma zamanı linke (`?qr=` param) gömülüyor, yeni tarayıcıda local oturum yoksa buradan restore ediliyor.
+- **Meta Ads MCP güvenilirlik notu**: `ads_get_dataset_stats` bazen (özellikle `event_total_counts` agregasyonunda) tutarsız/eski sayılar döndürebiliyor. Kritik kararlardan önce kullanıcıdan Events Manager ekran görüntüsü almak (Genel Bakış → Toplam Olaylar) daha güvenilir.
+
 ## Kullanıcı Notları
 
 - Demo mod çalışıyor, Google ile giriş iOS'ta düzeltildi (commit: 644d1db)
