@@ -930,7 +930,10 @@ function BranchMatchPanel({ tPuani, kPuani }) {
                 className="flex items-center gap-1.5 rounded-xl border border-amber-300/30 bg-amber-300/10 px-3 py-1.5 text-xs font-bold text-amber-100"
               >
                 <PuanTuruBadge puanTuru={r.puanTuru} />
-                {r.dal} <span className="text-amber-300/70">· taban {r.tabanPuan} · ort. {r.ortalamaPuan}</span>
+                <span>{r.dal}</span>
+                <span className="rounded-full border border-amber-200/35 bg-slate-950/45 px-2 py-0.5 text-[11px] font-black text-amber-200">
+                  taban {r.tabanPuan} · ort. {r.ortalamaPuan}
+                </span>
               </li>
             ))}
           </ul>
