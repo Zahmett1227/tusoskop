@@ -55,10 +55,16 @@ export function initMetaPixel() {
   pixelInitialized = true;
 }
 
-function track(event, params) {
+function track(event, params, options) {
   if (!PIXEL_ID || !fbqReady()) return;
   try {
-    params ? window.fbq("track", event, params) : window.fbq("track", event);
+    if (options) {
+      window.fbq("track", event, params || {}, options);
+    } else if (params) {
+      window.fbq("track", event, params);
+    } else {
+      window.fbq("track", event);
+    }
   } catch (err) {
     if (import.meta.env.DEV) {
       console.warn("[MetaPixel] track failed:", event, err);
@@ -79,13 +85,18 @@ export function trackCompleteRegistration({ method } = {}) {
 }
 
 export function trackPurchase({ value = 89.9, currency = "TRY", orderId } = {}) {
-  track("Purchase", {
-    content_name: "Tusoskop Plus Abonelik",
-    content_type: "subscription",
-    currency,
-    value,
-    ...(orderId ? { order_id: orderId } : {}),
-  });
+  track(
+    "Purchase",
+    {
+      content_name: "Tusoskop Plus Abonelik",
+      content_type: "subscription",
+      currency,
+      value,
+      ...(orderId ? { order_id: orderId } : {}),
+    },
+    // eventID = merchantOid → sunucu CAPI (functions/metaCapi.js) ile dedup.
+    orderId ? { eventID: orderId } : undefined
+  );
 }
 
 /**

@@ -18,9 +18,12 @@ const crypto = require("crypto");
 const { defineSecret } = require("firebase-functions/params");
 const { HttpsError } = require("firebase-functions/v2/https");
 const { getFirestore, FieldValue } = require("firebase-admin/firestore");
+const { sendMetaCapiPurchase } = require("./metaCapi");
 
 const PAYTR_MERCHANT_KEY = defineSecret("PAYTR_MERCHANT_KEY");
 const PAYTR_MERCHANT_SALT = defineSecret("PAYTR_MERCHANT_SALT");
+/** Meta CAPI erişim token'ı — opsiyonel. Yoksa CAPI sessizce atlanır. */
+const META_CAPI_TOKEN = defineSecret("META_CAPI_TOKEN");
 
 /** Mağaza No (merchant_id) gizli değil; env ile override edilebilir. */
 const MERCHANT_ID = process.env.PAYTR_MERCHANT_ID || "699560";
@@ -243,19 +246,20 @@ async function paytrCallbackHandler(req, res) {
 
   const intentRef = db().collection("premiumPurchaseIntents").doc(merchantOid);
 
+  let txResult = { activated: false };
   try {
-    await db().runTransaction(async (tx) => {
+    txResult = await db().runTransaction(async (tx) => {
       const snap = await tx.get(intentRef);
       if (!snap.exists) {
         // Kayıt yoksa loglayıp OK dönebiliriz (PayTR retry'ı durur).
         console.warn("[PAYTR] callback intent not found:", merchantOid);
-        return;
+        return { activated: false };
       }
       const intent = snap.data() || {};
 
       // Idempotency: zaten işlenmişse tekrar tanımlama.
       if (intent.status === "paid_activated" || intent.status === "failed") {
-        return;
+        return { activated: false };
       }
 
       if (status !== "success") {
@@ -264,7 +268,7 @@ async function paytrCallbackHandler(req, res) {
           failedReason: String(body.failed_reason_msg || body.failed_reason_code || ""),
           paymentNotifiedAt: new Date().toISOString(),
         });
-        return;
+        return { activated: false };
       }
 
       const planId = intent.planId;
@@ -277,7 +281,7 @@ async function paytrCallbackHandler(req, res) {
           status: "needs_review",
           paymentNotifiedAt: new Date().toISOString(),
         });
-        return;
+        return { activated: false };
       }
 
       const nowIso = new Date().toISOString();
@@ -337,6 +341,13 @@ async function paytrCallbackHandler(req, res) {
         reason: `PayTR otomatik / ${plan?.sku || planId} / oid:${merchantOid}`,
         createdAt: FieldValue.serverTimestamp(),
       });
+
+      // Bu callback gerçekten aktivasyonu yaptı → CAPI için sinyal (dedup: merchantOid).
+      return {
+        activated: true,
+        value: Number(intent.totalPrice) || Number(plan?.amount) || 0,
+        email: intent.email || null,
+      };
     });
   } catch (err) {
     console.error("[PAYTR] callback processing error:", err);
@@ -345,12 +356,25 @@ async function paytrCallbackHandler(req, res) {
     return;
   }
 
+  // Sunucu taraflı Meta Purchase — yalnızca bu çağrı aktivasyonu yaptıysa (dedup).
+  // Fail-safe: token yoksa veya hata olursa sessizce geçer, OK yanıtını engellemez.
+  if (txResult?.activated) {
+    await sendMetaCapiPurchase({
+      accessToken: META_CAPI_TOKEN.value(),
+      eventId: merchantOid,
+      value: txResult.value,
+      currency: "TRY",
+      email: txResult.email,
+    });
+  }
+
   res.status(200).send("OK");
 }
 
 module.exports = {
   PAYTR_MERCHANT_KEY,
   PAYTR_MERCHANT_SALT,
+  META_CAPI_TOKEN,
   PAYTR_PLANS,
   createPaytrTokenHandler,
   paytrCallbackHandler,

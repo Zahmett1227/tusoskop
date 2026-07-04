@@ -15,6 +15,7 @@ const { buildFallbackDailyStudyPlan } = require("./services/buildFallbackDailySt
 const {
   PAYTR_MERCHANT_KEY,
   PAYTR_MERCHANT_SALT,
+  META_CAPI_TOKEN,
   createPaytrTokenHandler,
   paytrCallbackHandler,
 } = require("./paytr");
@@ -244,7 +245,7 @@ exports.createPaytrToken = onCall(
 exports.paytrCallback = onRequest(
   {
     region: "us-central1",
-    secrets: [PAYTR_MERCHANT_KEY, PAYTR_MERCHANT_SALT],
+    secrets: [PAYTR_MERCHANT_KEY, PAYTR_MERCHANT_SALT, META_CAPI_TOKEN],
   },
   paytrCallbackHandler
 );

@@ -52,18 +52,21 @@ function AppStoreCta({ href, onClick, primary }) {
   );
 }
 
-function WebCta({ onClick, primary, label }) {
+function WebCta({ onClick, primary, label, subtitle }) {
   return (
     <button
       type="button"
       onClick={onClick}
       className={
         primary
-          ? "flex w-full items-center justify-center rounded-2xl bg-emerald-500 px-5 py-4 text-base font-black text-slate-950 transition-colors hover:bg-emerald-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
+          ? "flex w-full flex-col items-center justify-center rounded-2xl bg-emerald-500 px-5 py-4 text-center font-black text-slate-950 transition-colors hover:bg-emerald-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
           : "flex w-full items-center justify-center rounded-2xl border border-slate-600 bg-slate-800/60 px-5 py-3.5 text-base font-bold text-slate-100 transition-colors hover:border-slate-500 hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/70"
       }
     >
-      {label}
+      <span className="text-base">{label}</span>
+      {primary && subtitle && (
+        <span className="mt-0.5 text-xs font-semibold text-slate-800/80">{subtitle}</span>
+      )}
     </button>
   );
 }
@@ -113,29 +116,27 @@ export default function QuizResultScreen({
         {performanceMessage(ratio, subject)}
       </p>
 
+      {/* Web kayıt her cihazda BİRİNCİL CTA'dır: ölçülebilir tek gelir yolu web
+         (PayTR) ve reklam optimizasyonu buradan beslenir. App Store, iOS'ta
+         gerçek bir ikincil seçenek olarak kalır (ATT nedeniyle attribution'da kör). */}
       <div className="mt-6 flex flex-col gap-2.5">
+        <WebCta
+          onClick={onWebContinue}
+          primary
+          label="Skorunu Kaydet, Devam Et"
+          subtitle="Zayıf konularını gör — ücretsiz"
+        />
         {deviceType === "ios" && (
-          <>
-            <AppStoreCta href={appStoreUrl} onClick={onAppStoreClick} primary />
-            <WebCta onClick={onWebContinue} label="Web'de devam et" />
-          </>
+          <AppStoreCta href={appStoreUrl} onClick={onAppStoreClick} />
         )}
-
-        {deviceType === "android" && (
-          <WebCta onClick={onWebContinue} primary label="Web'de Ücretsiz Devam Et" />
-        )}
-
         {deviceType === "desktop" && (
-          <>
-            <WebCta onClick={onWebContinue} primary label="Web'de Devam Et" />
-            <AppStoreCta href={appStoreUrl} onClick={onAppStoreClick} />
-          </>
+          <AppStoreCta href={appStoreUrl} onClick={onAppStoreClick} />
         )}
       </div>
 
       <p className="mt-4 text-xs font-medium text-slate-500">
-        Tusoskop'ta ders ve konu bazlı soruları çöz, yanlışlarını takip et ve kişisel
-        tekrar planını oluştur.
+        Ücretsiz hesabınla skorun kaydedilir; yanlışların kişisel tekrar planına
+        eklenir ve ders/konu bazlı çözmeye kaldığın yerden devam edersin.
       </p>
     </div>
   );

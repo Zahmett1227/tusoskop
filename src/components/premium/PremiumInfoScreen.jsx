@@ -264,6 +264,75 @@ export default function PremiumInfoScreen({
           </div>
         </section>
 
+        {/* Eylül Paketi — dershane fiyat çıpası (§07-7) */}
+        <section className="overflow-hidden rounded-[1.75rem] border border-[#c9a88a] bg-gradient-to-br from-[#fff8ef] via-white to-[#f8eadb] p-5 sm:p-7 shadow-[0_22px_60px_-34px_rgba(90,55,25,0.32)]">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="inline-block rounded-full bg-gradient-to-r from-[#bf8a4c] to-[#9a6b32] px-3.5 py-1 text-[11px] font-black uppercase tracking-[0.12em] text-white shadow-sm">
+              ★ Eylül Paketi
+            </span>
+            <span className="text-xs font-bold text-[#7a5c3d]">
+              Sınava kadar sınırsız her şey
+            </span>
+          </div>
+
+          <h2 className="mt-4 text-2xl md:text-3xl font-black tracking-tight text-neutral-950">
+            Dershaneye on binlerce lira vermeden hazırlan
+          </h2>
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            {/* Dershane çıpası */}
+            <div className="rounded-2xl border border-neutral-200 bg-white/70 p-4 sm:p-5">
+              <p className="text-[11px] font-black uppercase tracking-wide text-neutral-500">
+                TUS dershanesi / kampı
+              </p>
+              <p className="mt-1.5 text-3xl font-black tabular-nums text-neutral-400 line-through decoration-2">
+                ~45.000 ₺
+              </p>
+              <p className="mt-1 text-xs font-medium text-neutral-500 leading-snug">
+                Piyasadaki yüz yüze ve online TUS kampları çoğunlukla bu banttan başlar.
+              </p>
+            </div>
+            {/* Tusoskop */}
+            <div className="rounded-2xl border-2 border-[#c9a16f] bg-[#fffdf9] p-4 sm:p-5 shadow-sm">
+              <p className="text-[11px] font-black uppercase tracking-wide text-[#9a6b32]">
+                Tusoskop 3 Aylık Plus
+              </p>
+              <p className="mt-1.5 text-3xl font-black tabular-nums text-neutral-950">
+                209,70 ₺
+              </p>
+              <p className="mt-1 text-xs font-semibold text-emerald-800 leading-snug">
+                Sınava kadar günde yaklaşık 2,33 ₺ — sınırsız soru, deneme ve akıllı tekrar.
+              </p>
+            </div>
+          </div>
+
+          {/* Kanıt satırı — ucuzluk kalitesizlik okunmasın */}
+          <div className="mt-4 flex flex-wrap gap-2">
+            {[
+              "7.000+ TUS tarzı soru",
+              "Akıllı tekrar (unutmadan önce)",
+              "Haftalık Türkiye ligi",
+              "AI çalışma planı",
+            ].map((proof) => (
+              <span
+                key={proof}
+                className="inline-flex items-center gap-1.5 rounded-full border border-[#e8d5c4] bg-white/80 px-3 py-1.5 text-xs font-semibold text-[#5c4736] shadow-sm"
+              >
+                <span className="text-[#8b6914]" aria-hidden>
+                  ✓
+                </span>
+                {proof}
+              </span>
+            ))}
+          </div>
+
+          <p className="mt-4 text-[11px] font-medium text-neutral-500 leading-relaxed">
+            Karşılaştırma bilgilendirme amaçlıdır; dershane fiyatları kuruma göre değişir.
+            Tusoskop video ders veya birebir hoca sunmaz; soru çözme, deneme, tekrar ve
+            analiz odaklı dijital bir çalışma platformudur.
+          </p>
+        </section>
+
         {/* Paketler */}
         <section className="space-y-5">
           <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-stretch">
