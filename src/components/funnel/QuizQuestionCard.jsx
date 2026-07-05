@@ -43,6 +43,7 @@ export default function QuizQuestionCard({
   onSelect,
   onNext,
   isLast,
+  total,
 }) {
   const answered = selectedIndex !== null && selectedIndex !== undefined;
   const isCorrect = answered && selectedIndex === question.correctIndex;
@@ -147,9 +148,9 @@ export default function QuizQuestionCard({
             </svg>
           </button>
 
-          {!isLast && index === 0 && (
+          {!isLast && index === 0 && total > 0 && (
             <p className="mt-3 text-center text-sm font-semibold text-slate-400">
-              2 soru daha çözerek mini analizini gör.
+              {total - 1} soru daha çözerek mini analizini gör.
             </p>
           )}
         </div>

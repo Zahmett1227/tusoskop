@@ -32,6 +32,8 @@
  * @property {string} subject
  * @property {boolean} active
  * @property {string} appleCampaignToken  App Store Connect ct değeri
+ * @property {boolean} [isMiniTus]     true ise sonuç ekranı istatistiksel tahmin
+ *   (kalibrasyon puanı + yüzdelik) gösterir — bkz. utils/miniTusScoring.js
  * @property {PublicQuizQuestion[]} questions
  */
 
@@ -223,6 +225,383 @@ export const PUBLIC_QUIZ_CAMPAIGNS = [
         correctIndex: 1,
         explanation:
           "Ekstrasellüler K+ artışı istirahat membran potansiyelini daha az negatif yapar. Sürekli kısmi depolarizasyon hızlı Na+ kanallarını inaktive eder; özellikle kalpte iletim yavaşlar ve QRS genişleyebilir.",
+      },
+    ],
+  },
+
+  // ── K1: Mini TUS — 20 soruluk karışık deneme, istatistiksel tahminli sonuç ──
+  // Reklam açısı: haftalık "Türkiye Geneli Mini TUS" etkinliği (C2). Temel/klinik
+  // dağılımı gerçek TUS oranına yakın (10 temel + 10 klinik). Sonuç ekranında
+  // tahmini kalibrasyon puanı + "Türkiye'de tahmini ilk %X" gösterilir —
+  // istatistiksel tahmindir, resmi ÖSYM puanı DEĞİLDİR (bkz. miniTusScoring.js).
+  {
+    slug: "mini-tus",
+    campaignCode: "mq_mini_01",
+    title: "20 Soruluk Mini TUS",
+    subject: "TUS",
+    active: true,
+    appleCampaignToken: "mq_mini_01",
+    isMiniTus: true,
+    questions: [
+      {
+        id: "public_mini_anatomi_1123",
+        subject: "Anatomi",
+        topic: "Anatomiye Giriş ve Terminoloji",
+        difficulty: 4,
+        questionText:
+          "Hasta anatomik pozisyondan avuç içi yere bakacak şekilde ön kolunu çeviriyor. Bu bulgular birlikte değerlendirildiğinde: Bu hareketin adı nedir?",
+        options: [
+          "Pronasyon",
+          "Retraksiyon",
+          "İnversiyon",
+          "Eversiyon",
+          "Supinasyon",
+        ],
+        correctIndex: 0,
+        explanation:
+          "Avuç içinin aşağı/posteriora dönmesi pronasyondur. Supinasyonda avuç içi yukarı/anteriora döner.",
+      },
+      {
+        id: "public_mini_anatomi_1192",
+        subject: "Anatomi",
+        topic: "Solunum",
+        difficulty: 4,
+        questionText:
+          "Sağ akciğer lob ve fissür sayısı değerlendiriliyor. Doğru seçenek hangisidir?",
+        options: [
+          "3 lob, 2 fissür",
+          "4 lob, 3 fissür",
+          "2 lob, 2 fissür",
+          "3 lob, 1 fissür",
+          "2 lob, 1 fissür",
+        ],
+        correctIndex: 0,
+        explanation:
+          "Sağ akciğer 3 loblu, horizontal ve oblik fissürlüdür.",
+      },
+      {
+        id: "public_mini_biyokimya_1241",
+        subject: "Biyokimya",
+        topic: "Karbonhidratlar",
+        difficulty: 4,
+        questionText:
+          "Bakla sonrası hemoliz, Heinz cisimcikleri ve koyu idrar gelişiyor. Tanısal tuzaklar dışlandığında: Eksik enzim-yol hangisidir?",
+        options: [
+          "Aldolaz B-fruktoz",
+          "Piruvat kinaz-glikoliz",
+          "Glukoz-6-fosfataz-glikojen",
+          "GALT-galaktoz",
+          "Glukoz-6-fosfat dehidrogenaz - pentoz fosfat yolu",
+        ],
+        correctIndex: 4,
+        explanation:
+          "G6PD eksikliği NADPH azalmasıyla oksidatif hemoliz yapar.",
+      },
+      {
+        id: "public_mini_biyokimya_1305",
+        subject: "Biyokimya",
+        topic: "Aminoasitler",
+        difficulty: 4,
+        questionText:
+          "Nitrik oksit sentezinde substrat aminoasit değerlendiriliyor. Doğru seçenek hangisidir?",
+        options: [
+          "Histidin",
+          "Sitrülin",
+          "Ornitin",
+          "Glutamin",
+          "Arjinin",
+        ],
+        correctIndex: 4,
+        explanation:
+          "NO sentaz arjininden NO üretir.",
+      },
+      {
+        id: "public_mini_dahiliye_1839",
+        subject: "Dahiliye",
+        topic: "Gastroenteroloji",
+        difficulty: 4,
+        questionText:
+          "Son 4 ayda katı gıdalara karşı giderek artan disfaji, kilo kaybı ve sigara öyküsü olan 68 yaş erkek hastanın fizik muayenesinde supraklaviküler lenf nodu palpe ediliyor. Bu tabloda ilk tercih edilmesi gereken tanısal yaklaşım hangisidir?",
+        options: [
+          "Ampirik proton pompa inhibitörü başlamak",
+          "Üst GİS endoskopisi ve biyopsi",
+          "Baryumlu grafi ile takip etmek",
+          "Özofagus manometrisi istemek",
+          "H2 reseptör blokeri ile 8 hafta izlemek",
+        ],
+        correctIndex: 1,
+        explanation:
+          "İlerleyici katı disfaji ve kilo kaybı özofagus malignitesi açısından alarm bulgusudur. Tanı histoloji gerektirdiği için endoskopi ve biyopsi önceliklidir.",
+      },
+      {
+        id: "public_mini_dahiliye_1889",
+        subject: "Dahiliye",
+        topic: "Hepatoloji",
+        difficulty: 4,
+        questionText:
+          "Polisitemi vera öyküsü olan hastada karın ağrısı, hepatomegali ve hızla gelişen asit ortaya çıkıyor. En olası tanı hangisidir?",
+        options: [
+          "Gilbert sendromu",
+          "Akut hepatit A",
+          "Budd-Chiari sendromu",
+          "Çölyak hastalığı",
+          "Primer biliyer kolanjit",
+        ],
+        correctIndex: 2,
+        explanation:
+          "Budd-Chiari hepatik ven trombozudur. Miyeloproliferatif hastalıklar önemli risk faktörüdür; karın ağrısı, hepatomegali ve asit tipiktir.",
+      },
+      {
+        id: "public_mini_farmakoloji_786",
+        subject: "Farmakoloji",
+        topic: "Genel Farmakoloji",
+        difficulty: 4,
+        questionText:
+          "Sürekli ve sabit dozda (IV infüzyon veya düzenli oral alım) uygulanan bir ilacın, kanda 'Kararlı Durum Konsantrasyonuna (Steady-State Concentration)' ulaşması için geçmesi gereken süre, sadece ilacın HANGİ farmakokinetik parametresine bağlıdır?",
+        options: [
+          "Biyoyararlanım (Bioavailability)",
+          "Dağılım Hacmi (Vd)",
+          "Eliminasyon Yarı Ömrü (t1/2)",
+          "Veriliş yolu (IV veya oral)",
+          "Uygulanan ilacın dozu",
+        ],
+        correctIndex: 2,
+        explanation:
+          "Kararlı durum (Steady-State), kana giren ilaç miktarı ile kandan atılan ilaç miktarının eşitlendiği, kan seviyesinin sabitlendiği hedeftir. Bir ilacın kararlı duruma ulaşması İÇİN GEÇEN SÜRE SADECE ve SADECE 'Eliminasyon Yarı Ömrüne (t1/2)' bağlıdır. İlacın dozunu artırmak veya veriliş yolunu değiştirmek bu SÜREYİ değiştirmez (sadece ulaşılacak o kararlı durumun seviyesini/yüksekliğini değiştirir). Kural olarak, bir ilacın kararlı duruma (yaklaşık %94-95'ine) ulaşması için bağımsız olarak '4 ile 5 yarı ömür (t1/2)' geçmesi GEREKİR. (Örn: Yarı ömrü 10 saat olan bir ilaç, dozu ne olursa olsun 40-50 saat sonra kararlı duruma ulaşır).",
+      },
+      {
+        id: "public_mini_fizyoloji_1",
+        subject: "Fizyoloji",
+        topic: "Hücre Histolojisi ve Fizyolojisi",
+        difficulty: 5,
+        questionText:
+          "I-cell (İnklüzyon cisimciği) hastalığında, Golgi aygıtında lizozomal enzimlerin hedeflenmesinden sorumlu olan ve eksikliği hücresel düzeyde enzimlerin lizozom yerine ekstraselüler alana salgılanmasına yol açan enzim aşağıdakilerden hangisidir?",
+        options: [
+          "N-asetilglukozaminil-1-fosfotransferaz",
+          "Sfingomiyelinaz",
+          "Glukoserebrozidaz",
+          "Asit alfa-glukozidaz",
+          "Hekzozaminidaz A",
+        ],
+        correctIndex: 0,
+        explanation:
+          "I-cell hastalığında cis-Golgi'de lizozomal enzimlere mannoz-6-fosfat eklentisini yapan N-asetilglukozaminil-1-fosfotransferaz enzimi eksiktir. Bu spesifik sinyal (M6P) olmaksızın hidrolitik enzimler lizozoma yönlendirilemez ve hücre dışına atılır.",
+      },
+      {
+        id: "public_mini_fizyoloji_2413",
+        subject: "Fizyoloji",
+        topic: "Kardiyovasküler Sistem HistoFizyolojisi",
+        difficulty: 5,
+        questionText:
+          "Pulmoner kapiller kama basıncı yüksek olan hastada akciğer ödemi gelişiyor. Bu ölçüm klinikte hangi basınca yaklaşık bilgi verir?",
+        options: [
+          "Sol atriyum basıncı",
+          "Sağ atriyum basıncı",
+          "Aort sistolik basıncı",
+          "İntrakraniyal basınç",
+          "Portal ven basıncı",
+        ],
+        correctIndex: 0,
+        explanation:
+          "Pulmoner kapiller wedge basıncı, mitral kapak darlığı gibi engel yoksa sol atriyum basıncını ve sol ventrikül dolum basıncını yaklaşık yansıtır.",
+      },
+      {
+        id: "public_mini_genelcerrahi_2488",
+        subject: "Genel Cerrahi",
+        topic: "Asit Baz Bozuklukları",
+        difficulty: 4,
+        questionText:
+          "Üç gündür inatçı kusması olan pilor stenozlu hastada ameliyat öncesi kan gazında pH 7,52, HCO3 yüksek, klor düşük ve potasyum düşük saptanıyor. Bu hastada operasyon öncesi öncelikli düzeltme hangi bozukluğa yönelik olmalıdır?",
+        options: [
+          "Hipokloremik metabolik alkaloz ve hipokalemi",
+          "Yüksek anyon açıklı metabolik asidoz",
+          "Respiratuvar alkaloz",
+          "Hiperkloremik metabolik asidoz",
+          "Laktat yüksekliğine bağlı mikst asidoz",
+        ],
+        correctIndex: 0,
+        explanation:
+          "Uzamış gastrik sıvı kaybı hidrojen ve klor kaybına bağlı hipokloremik metabolik alkaloz yapar. Volüm ve klor replasmanı böbreğin bikarbonat atılımını düzeltir; hipokalemi de mutlaka düzeltilmelidir.",
+      },
+      {
+        id: "public_mini_genelcerrahi_2530",
+        subject: "Genel Cerrahi",
+        topic: "İnce Barsak Hastalıkları",
+        difficulty: 4,
+        questionText:
+          "Çocukluk çağından beri aralıklı ağrısız alt gastrointestinal kanaması olan genç hastada sintigrafide sağ alt kadranda ektopik mide mukozası tutulumu görülüyor. En olası tanı hangisidir?",
+        options: [
+          "Meckel divertikülü",
+          "Zenker divertikülü",
+          "Sigmoid volvulus",
+          "İntussusepsiyon sonrası polip",
+          "Anal fissür",
+        ],
+        correctIndex: 0,
+        explanation:
+          "Meckel divertikülü omfalomezenterik kanal artığıdır ve ektopik gastrik mukoza içerebilir. Asit sekresyonu ülser ve kanamaya yol açabilir.",
+      },
+      {
+        id: "public_mini_kadnhastalklarvedogum_2639",
+        subject: "Kadın Hastalıkları ve Doğum",
+        topic: "Perinatoloji",
+        difficulty: 4,
+        questionText:
+          "İlk gebeliği olan 29 yaşındaki hastada 35. haftada ani başlayan şiddetli karın ağrısı, vajinal kanama, uterusta tahta sertliği ve fetal distres izleniyor. Plasenta previa öyküsü yok. Bu tablo için en olası tanı hangisidir?",
+        options: [
+          "Uterin rüptür",
+          "Abruptio plasenta",
+          "Servikal polip kanaması",
+          "Vasa previa",
+          "Nişan gelmesi",
+        ],
+        correctIndex: 1,
+        explanation:
+          "Ağrılı vajinal kanama, hipertonik uterus ve fetal distres abruptio plasentayı düşündürür. Plasenta previa tipik olarak ağrısız kanama ile seyreder; uterus genellikle yumuşaktır.",
+      },
+      {
+        id: "public_mini_kadnhastalklarvedogum_2682",
+        subject: "Kadın Hastalıkları ve Doğum",
+        topic: "Perinatoloji",
+        difficulty: 4,
+        questionText:
+          "Gebede epilepsi nedeniyle valproat kullanımı öyküsü var. Fetus açısından özellikle hangi anomali riski artar?",
+        options: [
+          "Konjenital glokom",
+          "Omfalit",
+          "Trakeoözofageal fistül zorunlu birlikteliği",
+          "Nöral tüp defekti",
+          "Bilateral renal agenezi",
+        ],
+        correctIndex: 3,
+        explanation:
+          "Valproat nöral tüp defekti ve nörogelişimsel sorun riskini artırır. Gebelik planlayan epilepsi hastalarında ilaç seçimi ve folat desteği önemlidir.",
+      },
+      {
+        id: "public_mini_kucukstajlar_1365",
+        subject: "Küçük Stajlar",
+        topic: "Beyin Cerrahisi",
+        difficulty: 4,
+        questionText:
+          "Ateş, sırt ağrısı ve nörolojik defisitli IV ilaç kullanıcısında epidural apse şüphesi var. Tanısal tuzaklar dışlandığında: En uygun görüntüleme hangisidir?",
+        options: [
+          "Kemik sintigrafisi",
+          "LP",
+          "Kontrastlı spinal MR",
+          "EMG",
+          "Direkt grafi",
+        ],
+        correctIndex: 2,
+        explanation:
+          "Spinal epidural apse için kontrastlı MR seçilir.",
+      },
+      {
+        id: "public_mini_kucukstajlar_1420",
+        subject: "Küçük Stajlar",
+        topic: "Kulak Burun Boğaz",
+        difficulty: 4,
+        questionText:
+          "Ani sensörinöral işitme kaybında erken yaklaşım değerlendiriliyor. Doğru seçenek hangisidir?",
+        options: [
+          "Kulak lavajı",
+          "Tüp",
+          "Sistemik/intratimpanik steroid",
+          "Adenoidektomi",
+          "Antikoagülan zorunlu",
+        ],
+        correctIndex: 2,
+        explanation:
+          "Ani SNİK'te erken steroid tedavisi kullanılır.",
+      },
+      {
+        id: "public_mini_mikrobiyoloji_2769",
+        subject: "Mikrobiyoloji",
+        topic: "Genel Mikrobiyoloji",
+        difficulty: 4,
+        questionText:
+          "Kronik öksürük, gece terlemesi ve kilo kaybı olan hastanın balgam örneğinde rutin Gram boyamada belirgin bakteri görülmüyor. Ancak aside dirençli boyamada kırmızı basiller saptanıyor. Bu boyama özelliği en çok hangi hücre duvarı bileşeniyle ilişkilidir?",
+        options: [
+          "Kapsül polisakkaridi",
+          "Teikoik asit",
+          "Mikolik asit",
+          "Lipid A",
+          "Ergosterol",
+        ],
+        correctIndex: 2,
+        explanation:
+          "Mycobacterium türlerinde hücre duvarındaki mikolik asit lipid açısından zengin bir yapı oluşturur. Bu nedenle Ziehl-Neelsen veya benzeri aside dirençli boyalarla gösterilir; sıradan Gram boyama ile kolay seçilemeyebilir.",
+      },
+      {
+        id: "public_mini_mikrobiyoloji_2810",
+        subject: "Mikrobiyoloji",
+        topic: "Bakteriyoloji",
+        difficulty: 4,
+        questionText:
+          "Peptik ülser nedeniyle endoskopi yapılan hastada antrum biyopsisinde spiral Gram negatif basil ve üreaz testi pozitifliği saptanıyor. Bu etkenin mide asidinde yaşayabilmesini sağlayan ana özellik hangisidir?",
+        options: [
+          "Kapsül polisakkaridi",
+          "Üreaz ile amonyak üretimi",
+          "Spor oluşturması",
+          "Endotoksin lipid A kaybı",
+          "Mikolik asit tabakası",
+        ],
+        correctIndex: 1,
+        explanation:
+          "Helicobacter pylori güçlü üreaz aktivitesiyle üreyi amonyağa çevirir ve lokal asit ortamını tamponlar. Gastrit, peptik ülser ve mide maligniteleriyle ilişkilidir.",
+      },
+      {
+        id: "public_mini_patoloji_14",
+        subject: "Patoloji",
+        topic: "Hücre Zedelenmesi",
+        difficulty: 5,
+        questionText:
+          "Apoptozisin intrensek (mitokondriyal) yolağında, sitozole salınan sitokrom c'nin bağlanarak apoptozom kompleksini oluşturduğu ve kaspaz-9'u aktive eden adaptör molekül aşağıdakilerden hangisidir?",
+        options: [
+          "Fas-associated death domain (FADD)",
+          "Apoptotic protease activating factor-1 (Apaf-1)",
+          "Bcl-2",
+          "Smac/DIABLO",
+          "Bax",
+        ],
+        correctIndex: 1,
+        explanation:
+          "Mitokondriden sitozole sızan sitokrom c, Apaf-1 (Apoptotic protease activating factor-1) adı verilen adaptör proteine bağlanır. Bu birleşme, hekzamerik yapıda bir 'apoptozom' kompleksi oluşturur ve pro-kaspaz 9'u klevajla aktif kaspaz-9'a dönüştürerek intrensek yolağı başlatır.",
+      },
+      {
+        id: "public_mini_pediatri_1618",
+        subject: "Pediatri",
+        topic: "Neonatoloji",
+        difficulty: 4,
+        questionText:
+          "Doğumdan hemen sonra term bir bebek zayıf soluyor, tonusu az ve kalp hızı 80/dk ölçülüyor. Kurulama, ısıtma ve havayolu pozisyonu sonrası spontan solunumu hâlâ yetersizdir. Bu aşamada en uygun ilk aktif girişim hangisidir?",
+        options: [
+          "Endotrakeal adrenalin uygulamak",
+          "Pozitif basınçlı ventilasyona başlamak",
+          "Göbek veninden sodyum bikarbonat vermek",
+          "Derhal göğüs kompresyonu başlamak",
+          "Nalokson uygulamak",
+        ],
+        correctIndex: 1,
+        explanation:
+          "Yenidoğan resüsitasyonunda apne/gasping veya kalp hızı <100/dk ise temel girişim pozitif basınçlı ventilasyondur. Kalp hızı <60/dk ancak etkin ventilasyona rağmen devam ederse kompresyon ve ileri tedaviler düşünülür.",
+      },
+      {
+        id: "public_mini_pediatri_1686",
+        subject: "Pediatri",
+        topic: "Pediatrik Endokrinoloji ve Metabolizma",
+        difficulty: 4,
+        questionText:
+          "Kız yenidoğanda ambigus genitalya, kusma, hiponatremi, hiperkalemi ve hipoglisemi saptanıyor. 17-hidroksiprogesteron yüksek bulunuyor. En olası enzim eksikliği hangisidir?",
+        options: [
+          "21-hidroksilaz eksikliği",
+          "11-beta hidroksilaz eksikliği",
+          "Aromataz eksikliği",
+          "Fenilalanin hidroksilaz eksikliği",
+          "Galaktoz-1-fosfat üridiltransferaz eksikliği",
+        ],
+        correctIndex: 0,
+        explanation:
+          "Konjenital adrenal hiperplazinin en sık nedeni 21-hidroksilaz eksikliğidir. Kortizol ve aldosteron sentezi azalır, ACTH artışı adrenal androjenleri artırır; tuz kaybettiren formda hiponatremi ve hiperkalemi görülür.",
       },
     ],
   },

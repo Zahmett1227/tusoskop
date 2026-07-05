@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { renderMiniTusShareCard, shareOrDownloadCard } from "../../utils/miniTusShareCard";
 
 /**
  * Mikro deneme sonuç ekranı — asıl dönüşüm noktası.
@@ -80,14 +81,34 @@ export default function QuizResultScreen({
   appStoreUrl,
   onAppStoreClick,
   onWebContinue,
+  miniTusEstimate,
 }) {
   const ratio = total > 0 ? score / total : 0;
   const percent = Math.round(ratio * 100);
+  const [shareBusy, setShareBusy] = useState(false);
+
+  const handleShare = async () => {
+    if (shareBusy || !miniTusEstimate) return;
+    setShareBusy(true);
+    try {
+      const blob = await renderMiniTusShareCard({
+        score,
+        total,
+        tahminiPuan: miniTusEstimate.tahminiPuan,
+        topPercent: miniTusEstimate.topPercent,
+      });
+      await shareOrDownloadCard(blob);
+    } catch {
+      /* paylaşım/indirme başarısız olursa sessizce geç — akış bozulmasın */
+    } finally {
+      setShareBusy(false);
+    }
+  };
 
   return (
     <div className="w-full text-center">
       <p className="text-sm font-black uppercase tracking-wide text-emerald-400">
-        Mini deneme tamamlandı
+        {miniTusEstimate ? "Mini TUS tamamlandı" : "Mini deneme tamamlandı"}
       </p>
 
       <div className="mx-auto mt-4 flex h-32 w-32 flex-col items-center justify-center rounded-full border-4 border-emerald-500/40 bg-emerald-500/5">
@@ -97,24 +118,56 @@ export default function QuizResultScreen({
         <span className="mt-0.5 text-sm font-bold text-slate-400">%{percent}</span>
       </div>
 
-      <div className="mt-5 grid grid-cols-2 gap-2.5">
-        <div className="rounded-2xl border border-slate-700/70 bg-slate-800/40 px-3 py-3">
-          <p className="text-xs font-semibold text-slate-400">Süre</p>
-          <p className="mt-0.5 text-base font-black text-slate-100">
-            {formatDuration(durationMs)}
-          </p>
-        </div>
-        <div className="rounded-2xl border border-slate-700/70 bg-slate-800/40 px-3 py-3">
-          <p className="text-xs font-semibold text-slate-400">{subject} performansın</p>
-          <p className="mt-0.5 text-base font-black text-emerald-300">
-            {performanceLabel(ratio)}
-          </p>
-        </div>
-      </div>
+      {miniTusEstimate ? (
+        <>
+          <div className="mt-5 rounded-2xl border border-emerald-500/30 bg-emerald-500/5 px-4 py-4">
+            <p className="text-xs font-bold uppercase tracking-wide text-slate-400">
+              Tahmini kalibrasyon puanın
+            </p>
+            <p className="mt-1 text-4xl font-black text-emerald-300">
+              {String(miniTusEstimate.tahminiPuan).replace(".", ",")}
+            </p>
+            <p className="mt-2 text-sm font-bold text-slate-200">
+              Türkiye'de tahmini{" "}
+              <span className="text-emerald-300">ilk %{miniTusEstimate.topPercent}</span>
+            </p>
+          </div>
 
-      <p className="mt-5 text-[15px] leading-relaxed text-slate-300">
-        {performanceMessage(ratio, subject)}
-      </p>
+          <p className="mt-3 text-xs font-medium text-slate-500">
+            İstatistiksel tahmindir; resmi ÖSYM puanı değildir. Süre: {formatDuration(durationMs)}
+          </p>
+
+          <button
+            type="button"
+            onClick={handleShare}
+            disabled={shareBusy}
+            className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl border border-emerald-500/40 bg-emerald-500/10 px-5 py-3.5 text-base font-bold text-emerald-300 transition-colors hover:bg-emerald-500/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/70 disabled:opacity-60"
+          >
+            {shareBusy ? "Kart hazırlanıyor…" : "Sonucunu Paylaş"}
+          </button>
+        </>
+      ) : (
+        <>
+          <div className="mt-5 grid grid-cols-2 gap-2.5">
+            <div className="rounded-2xl border border-slate-700/70 bg-slate-800/40 px-3 py-3">
+              <p className="text-xs font-semibold text-slate-400">Süre</p>
+              <p className="mt-0.5 text-base font-black text-slate-100">
+                {formatDuration(durationMs)}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-slate-700/70 bg-slate-800/40 px-3 py-3">
+              <p className="text-xs font-semibold text-slate-400">{subject} performansın</p>
+              <p className="mt-0.5 text-base font-black text-emerald-300">
+                {performanceLabel(ratio)}
+              </p>
+            </div>
+          </div>
+
+          <p className="mt-5 text-[15px] leading-relaxed text-slate-300">
+            {performanceMessage(ratio, subject)}
+          </p>
+        </>
+      )}
 
       {/* Web kayıt her cihazda BİRİNCİL CTA'dır: ölçülebilir tek gelir yolu web
          (PayTR) ve reklam optimizasyonu buradan beslenir. App Store, iOS'ta

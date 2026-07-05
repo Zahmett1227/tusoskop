@@ -18,6 +18,7 @@ import {
 } from "../../lib/publicQuizAnalytics";
 import { buildClientAppStoreUrl } from "../../utils/appStoreCampaignLink";
 import { getDeviceType } from "../../utils/device";
+import { estimateMiniTusResult } from "../../utils/miniTusScoring";
 import QuizQuestionCard from "./QuizQuestionCard";
 import QuizResultScreen from "./QuizResultScreen";
 import QuizContinueModal from "./QuizContinueModal";
@@ -282,11 +283,34 @@ export default function PublicQuizFunnel() {
         score,
         question_count: total,
       });
+      if (campaign.isMiniTus) {
+        const estimate = estimateMiniTusResult({ correct: score, total });
+        trackPublicQuizEvent("mini_tus_complete", {
+          ...baseParams,
+          score,
+          question_count: total,
+          tahmini_puan: estimate.tahminiPuan,
+          ilk_yuzde: estimate.topPercent,
+        });
+        trackMetaCustom("MiniTusComplete", {
+          campaign_code: session.campaignCode,
+          score,
+          question_count: total,
+          tahmini_puan: estimate.tahminiPuan,
+        });
+      }
       session.completeTracked = true;
       updateQuizSession(slug, { completeTracked: true });
     }
     postQuizSession(updated, "quiz_complete", { score, questionCount: total });
   }, [session, slug, total, score, baseParams, campaign]);
+
+  /* Mini TUS istatistiksel tahmini — sonuç ekranında ve sayfa yenilenince
+     (kaldığı yerden devam) aynı şekilde türetilir; ayrı bir state gerekmez. */
+  const miniTusEstimate = useMemo(() => {
+    if (!campaign?.isMiniTus || phase !== "result") return null;
+    return estimateMiniTusResult({ correct: score, total });
+  }, [campaign, phase, score, total]);
 
   const handleNext = useCallback(() => {
     if (currentIndex >= total - 1) {
@@ -430,6 +454,7 @@ export default function PublicQuizFunnel() {
                 onSelect={handleSelect}
                 onNext={handleNext}
                 isLast={currentIndex >= total - 1}
+                total={total}
               />
             </>
           )}
@@ -444,6 +469,7 @@ export default function PublicQuizFunnel() {
               appStoreUrl={appStoreUrl}
               onAppStoreClick={handleAppStoreClick}
               onWebContinue={handleWebContinue}
+              miniTusEstimate={miniTusEstimate}
             />
           )}
         </main>
