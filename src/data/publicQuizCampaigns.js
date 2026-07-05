@@ -102,24 +102,6 @@ export const PUBLIC_QUIZ_CAMPAIGNS = [
     appleCampaignToken: "mq_far_02",
     questions: [
       {
-        id: "public_far_787",
-        subject: "Farmakoloji",
-        topic: "Genel Farmakoloji",
-        difficulty: 4,
-        questionText:
-          "Bir tam agonistin, bir kompetitif (yarışmalı) antagonist varlığında çizilen Doz-Yanıt (Dose-Response) eğrisinde meydana gelen farmakodinamik değişiklik aşağıdakilerden hangisinde doğru ifade edilmiştir?",
-        options: [
-          "Agonistin Maksimum Etkinliği (Emax) düşer, EC50 değeri değişmez.",
-          "Agonistin Maksimum Etkinliği (Emax) DEĞİŞMEZ, eğri SAĞA kayar ve EC50 değeri artar.",
-          "Agonistin Maksimum Etkinliği (Emax) düşer, eğri SOLA kayar ve EC50 değeri azalır.",
-          "Hem Emax düşer hem de EC50 artar.",
-          "Agonist reseptöre hiç bağlanamaz, eğri oluşmaz.",
-        ],
-        correctIndex: 1,
-        explanation:
-          "Kompetitif antagonizmada agonist ve antagonist aynı reseptör için yarışır. Antagonist varlığında aynı etkiyi elde etmek için daha fazla agonist gerekir; eğri SAĞA kayar ve EC50 artar (potens düşer). Ancak yeterince yüksek dozda agonist antagonisti yerinden edebildiği için Emax DEĞİŞMEZ. Non-kompetitif blokörlerde ise reseptör kalıcı bozulduğu için Emax düşer.",
-      },
-      {
         id: "public_far_2873",
         subject: "Farmakoloji",
         topic: "İlaç Etkileşimleri",
@@ -136,6 +118,24 @@ export const PUBLIC_QUIZ_CAMPAIGNS = [
         correctIndex: 0,
         explanation:
           "Makrolidler, özellikle eritromisin ve klaritromisin, CYP3A4 inhibisyonu yapabilir. Simvastatin gibi CYP3A4 ile metabolize olan statinlerin düzeyi artar; miyopati ve rabdomiyoliz riski yükselir.",
+      },
+      {
+        id: "public_far_787",
+        subject: "Farmakoloji",
+        topic: "Genel Farmakoloji",
+        difficulty: 4,
+        questionText:
+          "Bir tam agonistin, bir kompetitif (yarışmalı) antagonist varlığında çizilen Doz-Yanıt (Dose-Response) eğrisinde meydana gelen farmakodinamik değişiklik aşağıdakilerden hangisinde doğru ifade edilmiştir?",
+        options: [
+          "Agonistin Maksimum Etkinliği (Emax) düşer, EC50 değeri değişmez.",
+          "Agonistin Maksimum Etkinliği (Emax) DEĞİŞMEZ, eğri SAĞA kayar ve EC50 değeri artar.",
+          "Agonistin Maksimum Etkinliği (Emax) düşer, eğri SOLA kayar ve EC50 değeri azalır.",
+          "Hem Emax düşer hem de EC50 artar.",
+          "Agonist reseptöre hiç bağlanamaz, eğri oluşmaz.",
+        ],
+        correctIndex: 1,
+        explanation:
+          "Kompetitif antagonizmada agonist ve antagonist aynı reseptör için yarışır. Antagonist varlığında aynı etkiyi elde etmek için daha fazla agonist gerekir; eğri SAĞA kayar ve EC50 artar (potens düşer). Ancak yeterince yüksek dozda agonist antagonisti yerinden edebildiği için Emax DEĞİŞMEZ. Non-kompetitif blokörlerde ise reseptör kalıcı bozulduğu için Emax düşer.",
       },
       {
         id: "public_far_2882",
