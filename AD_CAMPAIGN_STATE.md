@@ -121,8 +121,8 @@ Lookalike'ların INACTIVE olması normal — kaynak kitleler (özellikle Complet
 | `52561072857363` | C1 · K3 Karışık Deneme | **ACTIVE** | `1525375429128203` |
 | `52561072875563` | C1 · K7 Geri Sayım | **ACTIVE** | `1034067412919221` |
 | `52561072844763` | C1 · K4 Tuzak Farmakoloji | **⚠️ DISAPPROVED** | `2277307659682607` |
-| `52561079280163` | C1 · K1 Mini TUS (Story, 1080×1920) | PAUSED (hiç aktive edilmedi) | `1565109175270607` |
-| `52561095267963` | C1 · K1 Mini TUS Feed (1080×1350) | PAUSED (bu oturumda az önce eklendi) | `2007932956513390` |
+| `52561079280163` | C1 · K1 Mini TUS (Story, 1080×1920) | PAUSED (bilerek yedekte tutuluyor, §6 madde 2 kararı) | `1565109175270607` |
+| `52561095267963` | C1 · K1 Mini TUS Feed (1080×1350) | **ACTIVE** (kullanıcı onayıyla aktive edildi) | `2007932956513390` |
 
 Görsel hash'leri: K1 Story → `c2179d195f043dfb9fc60138f8be2fe0`; K1 Feed → `8acdeded48c3ee9880a41beb5e2f9feb` (1122×1402, indirilip görsel olarak doğrulandı: "(ÖRNEK)" etiketi ve "İstatistiksel tahmindir, resmi ÖSYM puanı değildir." dipnotu mevcut).
 
@@ -144,7 +144,7 @@ K6 fiyatı ₺120.000 olarak üretildi (K5/K6/K8 promptunda ₺45.000 yazıyordu
 
 - **Dataset ID:** `1327796822800702` ("Tusoskop"), `is_active: true`, `data_use_setting: advertising_and_analytics`.
 - **`last_fired_time` (browser pixel):** güncel (5 Temmuz 2026'da ateşlenmiş).
-- **`server_last_fired_time`: `1969-12-31` (epoch 0) — yani CAPI sunucu tarafı event'i ŞİMDİYE KADAR HİÇ ATEŞLENMEMİŞ.** Bu, §6'daki en kritik açık maddedir (bkz. aşağı).
+- **`server_last_fired_time`:** kullanıcı tarafından test ödemesiyle doğrulandı — CAPI Purchase event'i artık ateşleniyor (§6 eski madde 4, çözüldü).
 
 ---
 
@@ -152,7 +152,7 @@ K6 fiyatı ₺120.000 olarak üretildi (K5/K6/K8 promptunda ₺45.000 yazıyordu
 
 | Kod | Konsept | Route | Meta durumu |
 |---|---|---|---|
-| K1 | Mini TUS (20 soru, istatistiksel tahmini puan) | `/coz/mini-tus` | Story+Feed ikisi de PAUSED, C1 içinde |
+| K1 | Mini TUS (20 soru, istatistiksel tahmini puan) | `/coz/mini-tus` | Feed **ACTIVE**, Story PAUSED yedekte, C1 içinde |
 | K3 | Karışık TUS Denemesi (3 soru, klinik vaka) | `/coz/karisik-tus-01` | ACTIVE, C1 |
 | K4 | Tuzak Soru — Farmakoloji (klinik vaka: klaritromisin/rabdomiyoliz) | `/coz/tuzak-farmakoloji-01` | **DISAPPROVED**, C1 |
 | K5 | Unutma Eğrisi (FSRS, grafik, soru yok) | — (retarget mesajı, landing'e link yok, sadece kreatif) | PAUSED, C3 |
@@ -166,11 +166,11 @@ K6 fiyatı ₺120.000 olarak üretildi (K5/K6/K8 promptunda ₺45.000 yazıyordu
 
 ## 6) ⚠️ ŞU AN AÇIK SORUNLAR (yeni oturum önce buraya baksın)
 
-1. **K4 Tuzak Farmakoloji reklamı DISAPPROVED.** Bu MCP araç seti (Marketing API) ret sebebini expose etmiyor — `ads_get_errors` boş döndü, `ads_account_get_activity_logs` bu hesapta henüz kullanıma açılmamış ("gradually rolled out"). **Kullanıcının Ads Manager arayüzünde K4 reklamının detay sayfasını açıp "Neden reddedildi?" bandını okuyup buraya iletmesi gerekiyor.** Muhtemel sebep: ilaç adı geçen klinik vaka metninin sağlık/ilaç reklam politikasına takılması — ama bu doğrulanmadı, tahmin.
-2. **Mini TUS aktivasyon kararı bekliyor.** Story (`52561079280163`) hiç aktive edilmemiş, Feed (`52561095267963`) bu oturumda PAUSED olarak eklendi. **Tavsiyem:** İkisini birden aktive etme — C1'in günlük bütçesi sadece ₺165, zaten 3 aktif reklam (+K4 düzelirse 4) var; 2 Mini TUS reklamını daha eklemek CBO öğrenme fazını aşırı ince dilimlere böler. Sadece **Feed** versiyonunu aktive et, Story'yi yedekte PAUSED bırak; birkaç gün sonra performansa göre K3/Patoloji'den zayıf olanla yer değiştir. **Kullanıcıdan onay bekleniyor.**
+1. **K4 Tuzak Farmakoloji reklamı DISAPPROVED — hâlâ açık.** Bu MCP araç seti (Marketing API) ret sebebini expose etmiyor — `ads_get_errors` boş döndü, `ads_account_get_activity_logs` bu hesapta henüz kullanıma açılmamış ("gradually rolled out"). Kullanıcı Ads Manager'daki ret sebebini kendisi araştırıyor, öğrenince iletecek — **bu oturumda hâlâ cevap gelmedi, sıradaki oturum önce buna bakmamalı, kullanıcıdan bekliyor.** Muhtemel sebep: ilaç adı geçen klinik vaka metninin sağlık/ilaç reklam politikasına takılması — ama bu doğrulanmadı, tahmin.
+2. ~~Mini TUS aktivasyon kararı bekliyor.~~ **Çözüldü (5 Temmuz):** Kullanıcı onayıyla Feed (`52561095267963`) ACTIVE edildi, Story (`52561079280163`) plana göre yedekte PAUSED bırakıldı.
 3. **C3'ün tamamen aktive edilip edilmeyeceği kararı hâlâ açık.** 3 reklam da (K5, K6, K8) PAUSED — kitleler (özellikle CompleteRegistration bazlı lookalike) henüz yeterince dolmadı. Kitleler birkaç yüz kişiye ulaşınca gündeme gelmesi planlanmıştı.
-4. **CAPI Purchase sunucu event'i hiç ateşlenmedi (`server_last_fired_time` epoch 0).** Kod yazıldı ve deploy edildiği varsayılıyor ama gerçek bir test ödemesiyle hiç doğrulanmadı. Kontrol edilmesi gerekenler: `firebase functions:log --only paytrCallback` veya Firebase Console'dan son deploy zamanı; ardından `PAYTR_TEST_MODE=1` ile test ödemesi yapıp Events Manager'da Purchase'ın "Deduplicated" göründüğünü doğrulamak.
-5. **Sohbette daha önce plaintext paylaşılan Meta CAPI access token'ının iptal edilip yenisiyle değiştirildiği hiç teyit edilmedi.** Öneri hâlâ geçerli: Events Manager → Ayarlar → Dönüşümler API'si'nden eski token'ı kaldır, yenisini üret, `firebase functions:secrets:set META_CAPI_TOKEN` ile güncelle, deploy et. **Bu bir güvenlik açığı olabilir, öncelik verilmeli.**
+4. ~~CAPI Purchase sunucu event'i hiç ateşlenmedi.~~ **Çözüldü (5 Temmuz):** Kullanıcı gerçek bir test ödemesiyle doğruladı, CAPI Purchase server-side event artık ateşleniyor.
+5. ~~Meta CAPI access token rotasyonu teyit edilmedi.~~ **Çözüldü (5 Temmuz):** Kullanıcı yeni bir CAPI access token aldı, `firebase functions:secrets:set` ile Firebase secret'ı güncellendi. Eski token artık kullanımda değil.
 
 ---
 
@@ -200,8 +200,8 @@ Tier 1 (K3/K4/K7), Tier 2 (K5/K6/K8) ve K1 Mini TUS (Feed+Story) promptlarının
 
 ## 9) Sonraki Oturum İçin İlk Adımlar (önerilen sıra)
 
-1. Kullanıcıdan K4'ün Ads Manager'daki ret sebebini al, düzelt veya kaldır.
-2. Mini TUS Feed aktivasyonu için onay al (yalnızca Feed, Story yedekte kalsın).
-3. CAPI test ödemesi + dedup doğrulamasını birlikte yap (§6 madde 4).
-4. Token rotasyonunu teyit et (§6 madde 5) — güvenlik açığı olabilir, ertelenmemeli.
-5. Birkaç günlük C1 performans verisi birikince (QuizComplete/maliyet), K3 vs Patoloji vs Mini TUS karşılaştırıp zayıf olanı C3'ün kitle doluluğuna göre değerlendir.
+1. Kullanıcıdan K4'ün Ads Manager'daki ret sebebini al, düzelt veya kaldır. **(hâlâ açık, kullanıcı araştırıyor)**
+2. ~~Mini TUS Feed aktivasyonu için onay al.~~ **Yapıldı** — Feed ACTIVE.
+3. ~~CAPI test ödemesi + dedup doğrulaması.~~ **Yapıldı** — kullanıcı doğruladı.
+4. ~~Token rotasyonu.~~ **Yapıldı** — yeni CAPI token alındı, Firebase secret güncellendi.
+5. Birkaç günlük C1 performans verisi birikince (QuizComplete/maliyet), K3 vs Patoloji vs Mini TUS Feed karşılaştırıp zayıf olanı C3'ün kitle doluluğuna göre değerlendir. **Şimdiki en yakın açık iş** — K4 dışında bekleyen bir aksiyon yok, veri birikmesi gerekiyor.
