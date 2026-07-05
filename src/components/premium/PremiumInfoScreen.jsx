@@ -286,7 +286,7 @@ export default function PremiumInfoScreen({
                 TUS dershanesi / kampı
               </p>
               <p className="mt-1.5 text-3xl font-black tabular-nums text-neutral-400 line-through decoration-2">
-                ~45.000 ₺
+                ~120.000 ₺
               </p>
               <p className="mt-1 text-xs font-medium text-neutral-500 leading-snug">
                 Piyasadaki yüz yüze ve online TUS kampları çoğunlukla bu banttan başlar.
