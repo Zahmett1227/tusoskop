@@ -111,7 +111,8 @@ Lookalike'ların INACTIVE olması normal — kaynak kitleler (özellikle Complet
 
 ### C1 — Çekirdek Dönüşüm (ACTIVE)
 
-- **Kampanya ID:** `52561037294163` — "C1 · Çekirdek Dönüşüm — QuizComplete", objective `OUTCOME_SALES`, **CBO günlük bütçe ₺165,00**.
+- **Kampanya ID:** `52561037294163` — "C1 · Çekirdek Dönüşüm — QuizComplete", objective `OUTCOME_SALES`, **CBO günlük bütçe ₺300,00** (5 Temmuz'da ₺165'ten yükseltildi, kullanıcı onayıyla).
+- **⚠️ Dikkat (öğrenildi 5 Temmuz):** `ads_update_entity` ile CBO bütçesi değiştirilince Meta kampanyayı **otomatik PAUSED'a çekiyor** (`status_forced_to_paused`). Bütçe güncellemesinden sonra kampanyayı tekrar `ads_activate_entity` ile ACTIVE'e almak gerekiyor — unutulursa tüm C1 durur.
 - **Ad Set ID:** `52561037322763` — "C1 · TR 20-33 · Geniş", optimizasyon: QuizComplete (custom event, `promoted_object: {pixel_id, custom_event_type:"OTHER", custom_event_str:"QuizComplete"}` — resmi "Özel Dönüşüm" nesnesi OLARAK KURULMADI, doğrudan pixel event'i hedeflendi; bu çalışıyor ama Ads Manager'ın "Özel Dönüşümler" sekmesinde görünmez, raporda "Özel Etkinlik" olarak görünür).
 - **Reklamlar:**
 
@@ -123,7 +124,7 @@ Lookalike'ların INACTIVE olması normal — kaynak kitleler (özellikle Complet
 | `52561072844763` | C1 · K4 Tuzak Farmakoloji | **⚠️ DISAPPROVED** | `2277307659682607` |
 | `52561079280163` | C1 · K1 Mini TUS (Story, 1080×1920) | PAUSED (bilerek yedekte tutuluyor, §6 madde 2 kararı) | `1565109175270607` |
 | `52561095267963` | C1 · K1 Mini TUS Feed (1080×1350) | **ACTIVE** (kullanıcı onayıyla aktive edildi) | `2007932956513390` |
-| `52561172814363` | C1 · K2 Vaka Reels — Patoloji-01 (video, 1080×1920, 18sn) | PAUSED (aktivasyon onayı bekliyor) | `1445220184304632` (video_id: `1485496119932305`) |
+| `52561172814363` | C1 · K2 Vaka Reels — Patoloji-01 (video, 1080×1920, 18sn) | **ACTIVE** (kullanıcı onayıyla, 5 Temmuz) — `effective_status: PENDING_REVIEW`, Meta incelemesi tamamlanana kadar delivery başlamaz | `1445220184304632` (video_id: `1485496119932305`) |
 
 Görsel hash'leri: K1 Story → `c2179d195f043dfb9fc60138f8be2fe0`; K1 Feed → `8acdeded48c3ee9880a41beb5e2f9feb` (1122×1402, indirilip görsel olarak doğrulandı: "(ÖRNEK)" etiketi ve "İstatistiksel tahmindir, resmi ÖSYM puanı değildir." dipnotu mevcut).
 
@@ -160,7 +161,7 @@ K6 fiyatı ₺120.000 olarak üretildi (K5/K6/K8 promptunda ₺45.000 yazıyordu
 | K6 | Eylül Paketi (dershane 120.000₺ kıyası) | `PremiumInfoScreen` fiyat sayfası | PAUSED, C3 |
 | K7 | Geri Sayım ("7 hafta kaldı, +1.900 soru") | — | ACTIVE, C1 |
 | K8 | Sosyal Kanıt (haftalık lig, gerçek rakamlar) | — | PAUSED, C3 |
-| K2 | Vaka Reels (Patoloji-01'in video versiyonu) | `/coz/patoloji-01` | PAUSED, C1 (aktivasyon onayı bekliyor) |
+| K2 | Vaka Reels (Patoloji-01'in video versiyonu) | `/coz/patoloji-01` | **ACTIVE**, C1 (PENDING_REVIEW, Meta incelemesi sürüyor) |
 | K9, K10 | UGC / post-exam kanıt | — | **Hiç üretilmedi** |
 | Patoloji-01 | Önceden var olan "kanıtlanmış" statik kreatif | `/coz` (eski) | ACTIVE, C1 (kontrol/baseline) |
 
@@ -180,7 +181,7 @@ K6 fiyatı ₺120.000 olarak üretildi (K5/K6/K8 promptunda ₺45.000 yazıyordu
 
 - **C2 (Mini TUS haftalık ritüel kampanyası)** Meta'da hiç kurulmadı — ürün (K1) artık hazır olduğu için istenirse şimdi kurulabilir, ya da mevcut plana göre Mini TUS reklamları şimdilik C1 içinde test edilip C2 daha sonra (kendi kitlesi/ritmiyle) kurulabilir.
 - **K2 Vaka Reels serisi** — İlk video üretildi (5 Temmuz): `public/reklam/mq_pat_01_reels.mp4`, 1080×1920, 18sn, mp4 (h264+aac). Patoloji-01'in aynı soru/şık/CTA metnini kullanan kinetic-typography animasyon (hook → geri sayım → soru reveal → şık stagger → CTA pulse), `/coz/patoloji-01` landing'iyle message-match korunuyor. Üretim scripti `scripts/ads-creative/k2-vaka-reels/capture.mjs` — yeni varyant için `index.html`'deki soru/şık metnini değiştirip tekrar çalıştırılabilir.
-  - **Meta'ya yüklendi ve reklam kuruldu (5 Temmuz).** Kullanıcı videoyu Ads Manager'dan elle yükledi (thumbnail ayrıca yüklenemedi ama gerekmedi — Meta'nın videodan otomatik ürettiği kapak karesi `ads_get_ad_videos`'un `picture` alanından çekilip kullanıldı). Video ID: `1485496119932305`. Creative ID: `1445220184304632` (mesaj: Patoloji-01 creative'iyle birebir aynı body/title/CTA=LEARN_MORE, link `/coz/patoloji-01`). **Ad ID: `52561172814363` — C1 içinde PAUSED, aktivasyon onayı bekliyor** (bkz. §4 tablo).
+  - **Meta'ya yüklendi, reklam kuruldu ve aktive edildi (5 Temmuz).** Kullanıcı videoyu Ads Manager'dan elle yükledi (thumbnail ayrıca yüklenemedi ama gerekmedi — Meta'nın videodan otomatik ürettiği kapak karesi `ads_get_ad_videos`'un `picture` alanından çekilip kullanıldı). Video ID: `1485496119932305`. Creative ID: `1445220184304632` (mesaj: Patoloji-01 creative'iyle birebir aynı body/title/CTA=LEARN_MORE, link `/coz/patoloji-01`). **Ad ID: `52561172814363` — C1 içinde ACTIVE**, `effective_status: PENDING_REVIEW` (Meta incelemesi sürüyor, henüz delivery yok).
   - **⏳ HATIRLATMA (kullanıcı 5 Temmuz'da istedi, henüz yapılmadı):** K2'nin **farklı bir versiyonu** üretilecek — CTA hook'u "Anında patoloji seviyeni gör" tarzı bir merak/skor vaadine çevrilecek. **Kritik:** bu hook patoloji-01/karışık-tus gibi 3 soruluk mini denemelere DEĞİL, sadece **K1 Mini TUS**'a (20 soru, kalibre edilmiş `tahminiPuan`/`topPercent`) bağlanmalı — çünkü "seviyeni gör" vaadini gerçek hesapla karşılayan tek ürün o (dürüstlük kuralı: 3 soruluk quiz'de "seviye" hesabı yok, `QuizResultScreen.jsx` sadece doğru/yanlış sayısı gösteriyor).
 - **K9 UGC** — 5 dönem-6/intern öğrenciyle iş geliştirme görüşmesi hiç başlamadı (bu tamamen kullanıcı tarafı, Claude'un erişimi yok).
 - **K10 post-exam kanıt altyapısı** — TUS 2026/2 sonrası "çıkanları biz sorduk" sayfası. Planda Ağustos'ta yapılması yazıyor, konu eşleştirme scripti + kanıt landing şablonu hiç yazılmadı. C4 kampanyası da bu ürüne bağlı, henüz kurulmadı.
