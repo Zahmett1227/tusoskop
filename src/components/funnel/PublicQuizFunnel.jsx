@@ -281,6 +281,8 @@ export default function PublicQuizFunnel() {
         campaign_code: session.campaignCode,
         score,
         question_count: total,
+        value: 1,
+        currency: "TRY",
       });
       session.completeTracked = true;
       updateQuizSession(slug, { completeTracked: true });
