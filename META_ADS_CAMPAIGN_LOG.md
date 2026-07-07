@@ -194,8 +194,14 @@ C1 altındaki reklamlar (last_7d):
 - QuizComplete/AppStoreClick gerçek sayıları bu güncellemede çekilmedi (log Bölüm 4.2 uyarısı: `ads_get_dataset_stats` güvenilmez; Events Manager ekran görüntüsü daha sağlıklı).
 
 ### 8.4 Hâlâ açık kalan işler (Bölüm 5'ten devam)
-- ~~`QuizComplete` ve `AppStoreClick` için Custom Conversion~~ → **kullanıcı tarafından Events Manager'dan elle oluşturuldu (7 Temmuz 2026).**
-- `CompleteRegistration` custom conversion'ı hâlâ eklenmedi — kullanıcı `/coz/patoloji-01` üzerinden yeni bir Google/Apple hesabıyla login tamamladıktan sonra deneyecek (henüz yapılmadı, plan onaylandı).
+- ~~`QuizComplete` ve `AppStoreClick` için Custom Conversion~~ → **doğrulandı, üçü de kurulu (7 Temmuz 2026):**
+  - `Kayıt tamamlama` (id `1012897055065152`) — event=`CompleteRegistration`, URL `coz/patoloji-01` içeriyor
+  - `Quiz tamamlama` (id `1013559844976709`) — event=`QuizComplete`, URL `/coz/patoloji-01` içeriyor
+  - `AppStore tıklama` (id `850413834588863`) — event=`AppStoreClick`, URL `/coz/patoloji-01` içeriyor
+  - Not: İlk denemede sadece "Kayıt tamamlama" oluşmuştu, kullanıcı Events Manager'ın **Genel Bakış → Olay hareketleri** (ham event listesi) sayfasını **Eylemler → Özel Dönüşümler** (asıl Custom Conversion oluşturma sayfası) sanmıştı — ikinci denemede doğru sayfadan diğer ikisini de ekledi. Üçünün de `last_fired_time` hâlâ `null` (yeni oluşturuldular, bir sonraki eşleşen event'te dolacak).
+- `CompleteRegistration` **gerçek fonksiyonel testi** hâlâ yapılmadı — kullanıcı `/coz/patoloji-01` üzerinden yeni bir Google/Apple hesabıyla login tamamladıktan sonra deneyecek.
+- **Events Manager Genel Bakış'tan görülen ham event hacmi (9 Haz–6 Tem 2026 aralığı, olumlu sinyal):** PageView 767, İçerik Görüntüleme (ViewContent) 490, QuizStart 188, QuizComplete 107, WebContinueClick 30, AppStoreClick 15, Kaydı Tamamlama 7, Alışveriş (Purchase) 2. Purchase event'i `/coz` funnel'ından bağımsız — uygulamanın genelinde gerçek PayTR Plus satın alımlarından geliyor (`PaytrCheckoutModal.jsx`), kampanya döneminde 2 gerçek satın alma olmuş.
+- **Aksiyon gerektirebilir (henüz araştırılmadı):** Events Manager üstünde "Etkilenen reklam harcaması — düşük veri kalitesinden etkilenen reklam harcaması" uyarısı, **Yüksek öncelik** etiketiyle "geçerli para birimi kodları gönderin" öneriyor. Muhtemelen Purchase event'indeki `currency` parametresiyle ilgili (`trackPurchase()` → `src/lib/metaPixel.js`, şu an `currency: "TRY"` gönderiyor). Yeni oturum bunu inceleyebilir.
 
 ### 8.5 K1 Mini TUS Feed durduruldu (7 Temmuz 2026)
 Zayıf performans (CTR %1,39, cost per link click ₺7,15 — diğer C1 reklamlarının 4-7 katı) nedeniyle `52561095267963` ("C1 · K1 Mini TUS Feed") kullanıcı onayıyla **PAUSED** durumuna alındı (`ads_update_entity`). Bütçe artık güçlü çalışan reklamlara (Patoloji-01 kanıtlanmış kreatif, K2 Vaka Reels, K3 Karışık Deneme) kayacak. C1'de artık aktif reklamlar: Patoloji-01, K2 Vaka Reels, K3 Karışık Deneme, K7 Geri Sayım, K4 Tuzak Farmakoloji (yeni onaylı, henüz teslimat yok).
