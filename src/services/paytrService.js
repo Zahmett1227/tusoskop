@@ -2,6 +2,13 @@ import { httpsCallable } from "firebase/functions";
 import { functions } from "../firebase";
 import { setClarityTag, trackClarityEvent } from "../lib/clarity";
 
+/** Meta pixel'in `_fbp`/`_fbc` çerezlerini okur — CAPI eşleştirme kalitesi için. */
+function readCookie(name) {
+  if (typeof document === "undefined") return undefined;
+  const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
+  return match ? decodeURIComponent(match[1]) : undefined;
+}
+
 /**
  * PayTR iFrame token'ı ister. Tutar/süre sunucuda doğrulanır;
  * istemci yalnızca planId (ve opsiyonel iletişim alanları) gönderir.
@@ -20,6 +27,8 @@ export async function requestPaytrToken(plan, contact = {}) {
       userName: contact.userName || undefined,
       userPhone: contact.userPhone || undefined,
       userAddress: contact.userAddress || undefined,
+      fbp: readCookie("_fbp"),
+      fbc: readCookie("_fbc"),
     });
     const data = res?.data || {};
     if (!data.token) {

@@ -246,4 +246,22 @@ Kullanıcı `META_ADS_MEDIA_PLAN.md`'yi (Temmuz→Eylül 2026 nihai medya planı
 `src/components/funnel/QuizResultScreen.jsx` — iOS cihaz bloğunda `AppStoreCta`'nın `primary` olması, planın İlke 1'ine ("satış web'de biter, App Store ikincil") doğrudan aykırıydı ve planın kendi teşhisiyle örtüşüyordu ("Web kayıt/satış 28 günde 1 kayıt 0 satış — kullanıcı App Store'da kayboluyor"). Düzeltme: Android/Desktop ile aynı desene getirildi — `WebCta` artık iOS'ta da `primary` ("Web'de Ücretsiz Devam Et"), `AppStoreCta` ikincil. Commit `claude/meta-ads-campaign-log-idhrgw` branch'inde.
 
 ### 10.3 Kullanıcı onaylı öncelik sırası
-Kullanıcıya H1'in bitmemiş 3 maddesi (iOS CTA / K1'i tamamen durdurma / genel yol haritası) soruldu. **Seçim: önce iOS CTA düzeltmesi** (yukarıda 10.2, tamamlandı). Sıradaki adaylar (henüz karar verilmedi): K1 reklamlarının tamamen durdurulması (Mini TUS ürünü yazılana kadar), Phase-2 cevap aktarımı, CAPI kurulumu.
+Kullanıcıya H1'in bitmemiş 3 maddesi (iOS CTA / K1'i tamamen durdurma / genel yol haritası) soruldu. **Seçim: önce iOS CTA düzeltmesi** (yukarıda 10.2, tamamlandı). Ardından kullanıcı **Phase-2 cevap aktarımı + CAPI kurulumunu** istedi (bkz. 10.4). K1'in kaderi hâlâ karar bekliyor.
+
+### 10.4 Phase-2 cevap aktarımı + Meta CAPI kurulumu (7 Temmuz 2026, kod tamamlandı)
+
+**Phase-2 (çözülen cevapların hesaba aktarılması) — ✅ tamamlandı:**
+- `src/utils/publicQuizSession.js` → `QUIZ_RESULT_KEY` export edildi + `readAndClearQuizResult()` eklendi (localStorage'dan oku, tekrar işlenmesin diye sil).
+- `src/services/publicQuizImportService.js` (yeni) → `importPublicQuizResultIfPresent(user, userData, questions)`: yanlış cevaplanan soruları `addWrongQuestion` + `upsertSmartReview(..., "wrong")` ile işler (`useStudyState.js`'teki normal yanlış-cevap akışıyla birebir aynı çağrı deseni). Doğru cevaplar hiçbir kayıt tetiklemiyor (normal akışla tutarlı).
+- `src/AppAuthenticated.jsx` → `user?.uid` ve `QUESTIONS` hazır olunca bu fonksiyonu çağıran yeni bir effect eklendi, ardından `refreshSmartReviewSummary()` çağrılıyor.
+- Doğal olarak idempotent: `readAndClearQuizResult` ilk okumada localStorage'ı siliyor, sonraki tetiklenmelerde `null` dönüyor.
+
+**Meta CAPI (Conversions API) — ✅ kod tamamlandı, ⚠️ deploy öncesi bir secret gerekiyor:**
+- `functions/metaCapi.js` (yeni) → `sendMetaCapiEvent(eventName, params)`: Graph API'ye `https://graph.facebook.com/v21.0/{pixel_id}/events` POST atar, `em`/`external_id` SHA-256 hash'lenir, hata asla fırlatmaz (sadece loglar, akış bozulmaz).
+- **Purchase:** `functions/paytr.js` → `createPaytrTokenHandler` artık `fbp`/`fbc`/`clientUserAgent`/`clientIp`'i `premiumPurchaseIntents/{merchantOid}` dokümanına kaydediyor (istemciden: `src/services/paytrService.js` → `requestPaytrToken` artık `_fbp`/`_fbc` çerezlerini okuyup gönderiyor). `paytrCallbackHandler`, transaction'ın DIŞINDA (retry'da tekrar API çağrısı olmasın diye) `sendMetaCapiEvent("Purchase", {eventId: merchantOid, ...})` çağırıyor.
+- **CompleteRegistration:** `functions/userTriggers.js` (yeni) → `users/{uid}` Firestore `onDocumentCreated` trigger'ı, `functions/index.js`'te `exports.onUserDocumentCreated` olarak bağlandı. `event_id: uid`.
+- **Dedup:** `src/lib/metaPixel.js`'in `track()` fonksiyonu artık 3. parametre olarak `eventId` alıyor, `fbq(..., {eventID})` ile gönderiyor. `trackPurchase({orderId})` → eventId=merchantOid, `trackCompleteRegistration({uid})` → eventId=uid (`src/services/userService.js`'te `ensureUserDocument` çağrısına `uid` eklendi). Sunucu ve istemci aynı `event_id`'yi kullandığı için Meta ikisini tek olay sayacak.
+- **⚠️ BLOKE — deploy öncesi kullanıcının yapması gereken tek şey:** `META_CAPI_ACCESS_TOKEN` secret'ı henüz yok. Meta Business Settings → Sistem Kullanıcıları'ndan `ads_management` izniyle bir System User token'ı üretilip şununla eklenmeli: `firebase functions:secrets:set META_CAPI_ACCESS_TOKEN`. Secret yoksa `sendMetaCapiEvent` sessizce atlanır (log'da uyarı düşer), hiçbir şey bozulmaz — ama CAPI event'leri gitmez.
+- **Bilinen ayrı sorun (bilerek düzeltilmedi, scope dışı bırakıldı):** `PublicQuizFunnel.jsx:349`'daki `trackMetaStandard("CompleteRegistration", ...)` her girişte (yeni/mevcut ayrımı yapmadan) tetikleniyor — `ensureUserDocument`'in yalnızca yeni hesapta ateşlenen kanonik event'inden ayrı, potansiyel bir çift sayım kaynağı. CAPI dedup'ı sadece kanonik event'i kapsıyor, bu ayrı çağrıyı kapsamıyor. İleride ayrıca ele alınmalı.
+
+**Sonraki adım:** Kullanıcı `META_CAPI_ACCESS_TOKEN` secret'ını ekleyip `firebase deploy --only functions` yaptıktan sonra, bir test satın alma / test kayıt ile CAPI event'lerinin Events Manager'da (Entegrasyonlar → Dönüşümler API'si satırında) göründüğünü doğrulamalı.

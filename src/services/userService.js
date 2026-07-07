@@ -56,7 +56,10 @@ export async function ensureUserDocument(firebaseUser) {
       await setDoc(ref, newUserData);
       // Meta Pixel: yalnızca yeni hesap oluşturulduğunda (her girişte değil).
       try {
-        trackCompleteRegistration({ method: resolveRegistrationMethod(firebaseUser) });
+        trackCompleteRegistration({
+          method: resolveRegistrationMethod(firebaseUser),
+          uid: firebaseUser.uid,
+        });
       } catch {
         /* analytics kritik değil, sessiz geç */
       }

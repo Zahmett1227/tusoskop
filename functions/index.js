@@ -5,6 +5,7 @@ if (!admin.apps.length) {
 }
 
 const { onCall, onRequest, HttpsError } = require("firebase-functions/v2/https");
+const { onDocumentCreated } = require("firebase-functions/v2/firestore");
 const { defineSecret } = require("firebase-functions/params");
 const { getFirestore, FieldValue } = require("firebase-admin/firestore");
 const { FREE_LIMITS } = require("./constants");
@@ -18,6 +19,8 @@ const {
   createPaytrTokenHandler,
   paytrCallbackHandler,
 } = require("./paytr");
+const { META_CAPI_ACCESS_TOKEN } = require("./metaCapi");
+const { onUserDocumentCreatedHandler } = require("./userTriggers");
 
 const GEMINI_API_KEY = defineSecret("GEMINI_API_KEY");
 
@@ -244,9 +247,23 @@ exports.createPaytrToken = onCall(
 exports.paytrCallback = onRequest(
   {
     region: "us-central1",
-    secrets: [PAYTR_MERCHANT_KEY, PAYTR_MERCHANT_SALT],
+    secrets: [PAYTR_MERCHANT_KEY, PAYTR_MERCHANT_SALT, META_CAPI_ACCESS_TOKEN],
   },
   paytrCallbackHandler
+);
+
+/**
+ * Yeni kullanıcı dokümanı oluşturulunca Meta CAPI'ye sunucu taraflı
+ * CompleteRegistration event'i gönderir (tarayıcı pixel'iyle event_id=uid
+ * üzerinden dedup edilir). Bkz. `functions/userTriggers.js`.
+ */
+exports.onUserDocumentCreated = onDocumentCreated(
+  {
+    document: "users/{uid}",
+    region: "us-central1",
+    secrets: [META_CAPI_ACCESS_TOKEN],
+  },
+  onUserDocumentCreatedHandler
 );
 
 /**
