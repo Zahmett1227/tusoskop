@@ -10,11 +10,17 @@
  *    Firestore koleksiyonlarına taşımayı kolaylaştıracak biçimde tutulmuştur.
  *
  * `correctIndex` 0-tabanlıdır (ana bankadaki `correct` alanıyla aynı konvansiyon).
+ *
+ * `bankId`: sorunun ANA BANKADAKİ sayısal id'si. Funnel sonuçları girişten sonra
+ * hesaba işlenirken (`publicQuizImportService`) yanlış cevaplar bu sayısal id ile
+ * wrongQuestions/FSRS'e eklenir — sentetik `id` (public_pat_001) ana bankada
+ * çözülemez. Yeni soru eklerken bankId'yi mutlaka ana bankadan doğru al.
  */
 
 /**
  * @typedef {Object} PublicQuizQuestion
  * @property {string} id
+ * @property {number} bankId          Ana bankadaki sayısal soru id'si (import için)
  * @property {string} questionText
  * @property {string[]} options
  * @property {number} correctIndex   0-tabanlı doğru şık indeksi
@@ -47,6 +53,7 @@ export const PUBLIC_QUIZ_CAMPAIGNS = [
     questions: [
       {
         id: "public_pat_001",
+        bankId: 15,
         subject: "Patoloji",
         topic: "İnflamasyon",
         difficulty: 4,
@@ -59,6 +66,7 @@ export const PUBLIC_QUIZ_CAMPAIGNS = [
       },
       {
         id: "public_pat_002",
+        bankId: 18,
         subject: "Patoloji",
         topic: "Hemodinamik Bozukluklar",
         difficulty: 4,
@@ -77,6 +85,7 @@ export const PUBLIC_QUIZ_CAMPAIGNS = [
       },
       {
         id: "public_pat_003",
+        bankId: 19,
         subject: "Patoloji",
         topic: "Neoplazi",
         difficulty: 5,
