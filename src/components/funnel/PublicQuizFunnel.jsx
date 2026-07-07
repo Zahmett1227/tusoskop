@@ -339,13 +339,20 @@ export default function PublicQuizFunnel() {
       try {
         const firebase = await import("../../firebase");
         const loginFn = method === "apple" ? firebase.loginWithApple : firebase.loginWithGoogle;
+        // Giriş öncesi UID — bu tarayıcıda zaten bir oturum olup olmadığını ayırt eder.
+        const previousUid = firebase.auth?.currentUser?.uid || null;
         // Popup akışı bazen (özellikle Apple/Safari'de) auth başarıyla tamamlandığı
         // halde null döndürebilir (ör. auth/popup-closed-by-user iyi huylu kodu).
-        // Böyle bir durumda auth.currentUser set olmuştur — onu fallback al ki
-        // "giriş başarılı ama modalda kalıyor" durumu oluşmasın.
-        const user = (await loginFn()) || firebase.auth?.currentUser || null;
+        // Böyle bir durumda auth.currentUser BU denemeyle YENİ set olmuştur; sadece
+        // UID gerçekten değiştiyse fallback al — aksi halde mevcut oturumu olan biri
+        // popup'ı iptal edince yanlışlıkla "kayıt" sayılıp sonuç yanlış hesaba bağlanır.
+        const resolvedUser = await loginFn();
+        const currentUser = firebase.auth?.currentUser || null;
+        const user =
+          resolvedUser ||
+          (currentUser && currentUser.uid !== previousUid ? currentUser : null);
         if (!user) {
-          // Gerçek sessiz iptal (auth da yok) — kullanıcı modalda kalır.
+          // Gerçek sessiz iptal (bu denemeden yeni bir kullanıcı doğmadı) — modalda kal.
           setLoginBusy(false);
           return;
         }
