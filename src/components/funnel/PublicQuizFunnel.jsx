@@ -9,6 +9,7 @@ import {
   updateQuizSession,
   buildResumeUrl,
   parseResumeToken,
+  QUIZ_RESULT_KEY,
 } from "../../utils/publicQuizSession";
 import {
   trackPublicQuizEvent,
@@ -21,8 +22,6 @@ import { getDeviceType } from "../../utils/device";
 import QuizQuestionCard from "./QuizQuestionCard";
 import QuizResultScreen from "./QuizResultScreen";
 import QuizContinueModal from "./QuizContinueModal";
-
-const QUIZ_RESULT_STORAGE_KEY = "tusoskop_quiz_result";
 
 /** Analitik/beacon oturum özetini serverless endpoint'e fire-and-forget gönderir. */
 function postQuizSession(session, event, extra = {}) {
@@ -254,7 +253,7 @@ export default function PublicQuizFunnel() {
     /* Sonucu Phase-2 içe aktarımı için sakla (kayıt sonrası hesaba bağlanabilir). */
     try {
       window.localStorage.setItem(
-        QUIZ_RESULT_STORAGE_KEY,
+        QUIZ_RESULT_KEY,
         JSON.stringify({
           campaignCode: session.campaignCode,
           campaignSlug: session.campaignSlug,
@@ -281,6 +280,8 @@ export default function PublicQuizFunnel() {
         campaign_code: session.campaignCode,
         score,
         question_count: total,
+        value: 1,
+        currency: "TRY",
       });
       session.completeTracked = true;
       updateQuizSession(slug, { completeTracked: true });

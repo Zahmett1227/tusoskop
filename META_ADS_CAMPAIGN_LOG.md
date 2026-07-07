@@ -1,6 +1,8 @@
 # Meta Ads Kampanya Günlüğü — Patoloji-01 / TUS Mikro Deneme Funnel'ı
 
 > Bu dosya, uzun bir sohbette (Temmuz 2026) yapılan Meta Ads kampanya kurulumu, hata ayıklama ve analiz çalışmasının **tam özetidir**. Amaç: yeni bir Claude oturumunun bu dosyayı okuyarak, önceki sohbetin hiçbir parçasını görmeden kaldığı yerden devam edebilmesi. Kod/mimari bağlamı için önce `CLAUDE.md`'deki "Meta Reklam Mikro Deneme Funnel'ı" bölümünü oku, bu dosya onun **kronolojik, ayrıntılı** eki niteliğindedir.
+>
+> **ÖNEMLİ:** `META_ADS_MEDIA_PLAN.md` bu projenin **asıl nihai stratejisi/mimarisidir** (Temmuz→Eylül 2026, C1/C2/C3/C4 kampanya çatısı, 10 kreatif fikri, sinyal merdiveni, bütçe, 9 haftalık takvim, guardrail'ler). Bu dosya (CAMPAIGN_LOG) o planın kronolojik uygulama günlüğü — yeni bir oturum ÖNCE media plan'ı, SONRA bu günlüğü okumalı.
 
 ## 1. Genel bağlam
 
@@ -147,3 +149,124 @@ Kullanıcının C1 yapısındaki `52561072844763` ("C1 · K4 Tuzak Farmakoloji",
 - **Custom Conversion oluşturma API'de yok** — sadece Events Manager UI'dan elle yapılabiliyor (`ads_get_customconversions` sadece okuma). Event dropdown'da görünmesi için event'in yakın zamanda en az bir kez fire olmuş olması gerekiyor.
 - **GitHub squash-merge sonrası branch geçmişi ayrışıyor** — yeni bir PR açmadan önce `git fetch origin main && git rebase origin/main && git push --force-with-lease` yapılmalı, yoksa gerçek olmayan bir "merge conflict" hatası çıkıyor.
 - Proje branch'i: `claude/campaign-launch-1wypch` (bu sohbette kullanılan feature branch, main'e sürekli squash-merge edildi).
+
+## 8. Güncelleme — 7 Temmuz 2026 (yeni oturum)
+
+Önceki oturumun bıraktığı "net görev" (Bölüm 6: K4 reddini kontrol et) ele alındı. Özet: **K4 sorunu çözülmüş.**
+
+### 8.1 K4 "Tuzak Farmakoloji" reddi — ÇÖZÜLDÜ ✅
+- Reklam `52561072844763` ("C1 · K4 Tuzak Farmakoloji") artık **`effective_status: ACTIVE`** (onaylı, teslimatta).
+- Çözüm yöntemi: reddedilen kreatif değiştirilmiş. Ad'ın `creative_id`'si artık **`1857961992063106`** (eski reddedilen `2277307659682607` değil).
+- Yeni onaylı kreatif (`1857961992063106`) metni — Bölüm 6'daki önerinin neredeyse birebir uygulanmış hali:
+  - **title:** `TUS MİNİ DENEME`
+  - **body:** "Farmakolojide sık çıkan bir klinik vaka sorusu 👇 30 saniyede çözebilir misin? 3 soruluk ücretsiz TUS mini denemesini hemen dene. Üyelik gerekmez."
+  - "az %3" istatistiği tamamen kaldırılmış.
+  - `call_to_action_type: LEARN_MORE`.
+- **Not (küçük risk):** yeni kreatifin `image_hash`'i (`36e15163eee256939ae061972e756e70`) eski reddedilen kreatifle **aynı** — yani görsel değişmemiş, sadece metin (title/body) değişmiş. Eğer "TUZAK" rozeti görselin İÇİNE gömülüyse hâlâ görünüyor olabilir; ama Meta onayladığı için asıl tetikleyici metin istatistiği imiş. Yine de kreatif adı ("...mq_far_02...") ve görsel eski Tuzak temasını taşıyor olabilir, ilerideki bir revizyonda görsel de nötrleştirilebilir.
+- **Araç durumu:** `ads_get_creatives` ve `ads_get_ad_images` bu oturumda **sorunsuz çalıştı** (önceki oturumdaki "MCP tool call requires approval" kısıtlaması geçmiş).
+
+### 8.2 Güncel kampanya yapısı ve performans (last_7d, 30 Haz–6 Tem 2026)
+
+Hesaptaki kampanyalar (`ads_get_ad_entities`, level=campaign):
+
+| Kampanya ID | Ad | Durum | Objective | Imp | Clicks | Harcama | CTR | CPLC |
+|---|---|---|---|---|---|---|---|---|
+| `52561037294163` | C1 · Çekirdek Dönüşüm — QuizComplete | **ACTIVE** | OUTCOME_SALES | 13.144 | 732 | ₺674,72 | 5,57% | ₺1,87 |
+| `52561039359763` | C3 · Retarget & Satış — Purchase | PAUSED | OUTCOME_SALES | — | — | — | — | — |
+| `52560159975763` | Trafik \| Patoloji-01 → /coz | PAUSED | LINK_CLICKS | 8.027 | 387 | ₺254,10 | 4,82% | ₺0,89 |
+| `52555647897963` | Trafik \| Vaka → /basla | PAUSED | LINK_CLICKS | — | — | — | — | — |
+| `52554241997363` | Yeni Bilinirlik Kampanya | PAUSED | AWARENESS | — | — | — | — | — |
+
+**Tek aktif kampanya artık C1** (`52561037294163`, OUTCOME_SALES, QuizComplete'e optimize). Benim önceki oturumda kurduğum Trafik kampanyası (`52560159975763`) ve Feed testi ad set'i artık PAUSED — kullanıcı C1 dönüşüm yapısına geçmiş.
+
+C1 altındaki reklamlar (last_7d):
+
+| Ad ID | Ad | Durum | Imp | Clicks | Harcama | CTR | CPLC |
+|---|---|---|---|---|---|---|---|
+| `52561037371763` | C1 · Patoloji-01 (kanıtlanmış kreatif) | ACTIVE | 8.267 | 510 | ₺409,70 | 6,17% | ₺1,91 |
+| `52561172814363` | C1 · K2 Vaka Reels — Patoloji-01 | ACTIVE | 2.014 | 113 | ₺89,19 | 5,61% | **₺1,04** ✅ |
+| `52561072857363` | C1 · K3 Karışık Deneme | ACTIVE | 1.162 | 80 | ₺72,22 | **6,88%** ✅ | ₺1,72 |
+| `52561095267963` | C1 · K1 Mini TUS Feed | ACTIVE | 1.588 | 22 | ₺100,11 | **1,39%** ⚠️ | **₺7,15** ⚠️ |
+| `52561072875563` | C1 · K7 Geri Sayım | ACTIVE | 113 | 7 | ₺3,50 | 6,19% | ₺1,17 |
+| `52561072844763` | C1 · K4 Tuzak Farmakoloji | ACTIVE | henüz teslimat yok (yeni onaylandı) | | | | |
+| `52561079280163` | C1 · K1 Mini TUS | PAUSED | — | — | — | — | — |
+
+### 8.3 Actionable bulgu (karar kullanıcıya bırakıldı, henüz uygulanmadı)
+- **`52561095267963` "K1 Mini TUS Feed" bariz zayıf performanslı:** CTR %1,39 (diğerleri %5-7), cost-per-link-click ₺7,15 (diğerleri ₺1-2). ₺100 harcayıp sadece 22 tıklama getirmiş. En güçlü aday olan "kanıtlanmış kreatif" ve "K2 Vaka Reels" varken bu reklam bütçe yiyor. Öneri: bu reklamı PAUSE et (kullanıcı onayı bekliyor). NOT: C1 OUTCOME_SALES/QuizComplete'e optimize olduğu için nihai metrik link-click değil QuizComplete; ama link-click ve CTR proxy olarak zayıf performansı net gösteriyor.
+- QuizComplete/AppStoreClick gerçek sayıları bu güncellemede çekilmedi (log Bölüm 4.2 uyarısı: `ads_get_dataset_stats` güvenilmez; Events Manager ekran görüntüsü daha sağlıklı).
+
+### 8.4 Hâlâ açık kalan işler (Bölüm 5'ten devam)
+- ~~`QuizComplete` ve `AppStoreClick` için Custom Conversion~~ → **doğrulandı, üçü de kurulu (7 Temmuz 2026):**
+  - `Kayıt tamamlama` (id `1012897055065152`) — event=`CompleteRegistration`, URL `coz/patoloji-01` içeriyor
+  - `Quiz tamamlama` (id `1013559844976709`) — event=`QuizComplete`, URL `/coz/patoloji-01` içeriyor
+  - `AppStore tıklama` (id `850413834588863`) — event=`AppStoreClick`, URL `/coz/patoloji-01` içeriyor
+  - Not: İlk denemede sadece "Kayıt tamamlama" oluşmuştu, kullanıcı Events Manager'ın **Genel Bakış → Olay hareketleri** (ham event listesi) sayfasını **Eylemler → Özel Dönüşümler** (asıl Custom Conversion oluşturma sayfası) sanmıştı — ikinci denemede doğru sayfadan diğer ikisini de ekledi. Üçünün de `last_fired_time` hâlâ `null` (yeni oluşturuldular, bir sonraki eşleşen event'te dolacak).
+- `CompleteRegistration` **gerçek fonksiyonel testi** hâlâ yapılmadı — kullanıcı `/coz/patoloji-01` üzerinden yeni bir Google/Apple hesabıyla login tamamladıktan sonra deneyecek.
+- **Events Manager Genel Bakış'tan görülen ham event hacmi (9 Haz–6 Tem 2026 aralığı, olumlu sinyal):** PageView 767, İçerik Görüntüleme (ViewContent) 490, QuizStart 188, QuizComplete 107, WebContinueClick 30, AppStoreClick 15, Kaydı Tamamlama 7, Alışveriş (Purchase) 2. Purchase event'i `/coz` funnel'ından bağımsız — uygulamanın genelinde gerçek PayTR Plus satın alımlarından geliyor (`PaytrCheckoutModal.jsx`), kampanya döneminde 2 gerçek satın alma olmuş.
+- ~~Aksiyon gerektirebilir: "geçerli para birimi kodları gönderin" uyarısı~~ → **kök sebep bulundu ve düzeltildi (7 Temmuz 2026).** Uyarı Purchase ile değil **`QuizComplete`** event'iyle ilgiliymiş (Events Manager'daki "Detaylar" ekranı: "Olay adı: QuizComplete, % etkilendi: 100, Sorun: Para birimi alanı eksik"). Sebep: `src/components/funnel/PublicQuizFunnel.jsx` içindeki `trackMetaCustom("QuizComplete", {...})` çağrısı `value`/`currency` alanları olmadan gönderiliyordu — C1 kampanyası bu event'e (OUTCOME_SALES) optimize olduğu için Meta ROAS hesaplayamıyordu. **Çözüm:** kullanıcı onayıyla `value: 1, currency: "TRY"` (sembolik/placeholder değer — gerçek LTV verisi henüz yok) eklendi. Commit `claude/meta-ads-campaign-log-idhrgw` branch'inde.
+
+### 8.6 CompleteRegistration fonksiyonel testi — BAŞARILI ✅ (7 Temmuz 2026, doğrulandı)
+Kullanıcı 7 Temmuz ~12:4x civarı `/coz/patoloji-01` üzerinden tamamen yeni bir hesapla login denedi. İlk kontrolde `ads_get_dataset_stats` gecikmeli veri gösteriyordu, birkaç dakika sonra tekrar kontrol edilince **iki bağımsız kanıtla doğrulandı:**
+- Custom Conversion `Kayıt tamamlama` (id `1012897055065152`) `last_fired_time` alanı ilk kez doldu: **2026-07-07T12:51:13-07:00** — testin yapıldığı zamanla birebir örtüşüyor.
+- Events Manager Genel Bakış'ta ham "Kaydı Tamamlama" event sayacı **7 → 15**'e çıktı, "Son alma 28 dakika önce" (kullanıcının ekran görüntüsüyle teyit edildi).
+
+**Sonuç: funnel'ın CompleteRegistration izleme zinciri (pixel event → URL-scope'lu Custom Conversion) uçtan uca çalışıyor, doğrulandı.** Bölüm 5'teki bu açık madde artık kapalı. Not: ham event sayacı (15) hesaptaki TÜM kayıtları sayıyor (sadece funnel'dan değil, `ensureUserDocument` her yeni hesapta tetikleniyor) — asıl scope'lu/güvenilir sinyal Custom Conversion'ın fire olması.
+
+### 8.5 K1 Mini TUS Feed durduruldu (7 Temmuz 2026)
+Zayıf performans (CTR %1,39, cost per link click ₺7,15 — diğer C1 reklamlarının 4-7 katı) nedeniyle `52561095267963` ("C1 · K1 Mini TUS Feed") kullanıcı onayıyla **PAUSED** durumuna alındı (`ads_update_entity`). Bütçe artık güçlü çalışan reklamlara (Patoloji-01 kanıtlanmış kreatif, K2 Vaka Reels, K3 Karışık Deneme) kayacak. C1'de artık aktif reklamlar: Patoloji-01, K2 Vaka Reels, K3 Karışık Deneme, K7 Geri Sayım, K4 Tuzak Farmakoloji (yeni onaylı, henüz teslimat yok).
+
+**Sonraki adım:** Birkaç gün sonra C1'in genel performansını (özellikle QuizComplete/AppStoreClick — artık custom conversion'lar hazır) tekrar kontrol et, K1 Feed'in durdurulmasının bütçe dağılımına etkisini gözlemle.
+
+## 10 — Asıl nihai plan bulundu ve gerçek denetim yapıldı (7 Temmuz 2026)
+
+Kullanıcı `META_ADS_MEDIA_PLAN.md`'yi (Temmuz→Eylül 2026 nihai medya planı) paylaştı — bu ana kadar hiç bilinmeyen, C1/C2/C3/C4 mimarisini, sinyal merdivenini (QuizComplete→CompleteRegistration→Purchase) ve §07 ön koşullarını tanımlayan asıl strateji belgesiydi. Repoya kaydedildi, CLAUDE.md ve bu günlükten referans verildi.
+
+### 10.1 Kod + Meta hesabı denetimi — plana göre gerçek durum
+
+**Kampanya mimarisi (Bölüm 3):**
+- C1 ✅ doğru (QuizComplete'e optimize) ama **K1 reklamları yanlışlıkla içine konmuş** (tek ad set: "C1 · TR 20-33 · Geniş", campaign_id `52561037294163`).
+- **C2 (Mini TUS haftalık kampanyası) hiç yok** — plana göre K1 burada, ayrı, MiniTusComplete'e optimize olmalıydı.
+- C3 PAUSED — **bu doğru**, sinyal merdiveni CompleteRegistration eşiğine (haftada 50 kayıt) bile ulaşmadı, Purchase'a optimize olmak için çok erken. (Önceki oturumdaki "C3'ü aktive edelim" önerim yanlıştı, düzeltildi.)
+- C4 yok — doğru, Eylül'e kadar gerekmiyor.
+
+**🔴 Kritik bulgu — K1'in kötü performansının kök sebebi:** K1 reklam metni (`ads_get_creatives`, creative `2007932956513390`) "20 soruda TUS'un neresinde olduğunu gör, tahmini kalibrasyon puanın ve Türkiye'de sıralaman" vaat ediyor. Ama `src/data/publicQuizCampaigns.js`'te **tek slug var: `patoloji-01`** — "mini-tus" hiç yazılmamış, 20 soruluk format/yüzdelik/paylaşım kartı (§07-6 ürün paketi) hiç kodlanmamış. Yani K1 reklamları **var olmayan bir ürünü satıyor** — muhtemelen 404 veya alakasız bir sayfaya düşüyor. Düşük CTR (%1,39) ve yüksek maliyetin (₺7,15) asıl sebebi zayıf kreatif değil, mesaj-gerçeklik uyumsuzluğu. Kalıcı çözüm: Mini TUS ürününü inşa etmek (planda zaten H2 haftası, §07-6, 3-4 gün kod işi).
+
+**Ön koşullar (§07) — H1 haftası (6-12 Temmuz) hedefi olan 1-5 maddesi:**
+| # | Ön koşul | Durum |
+|---|---|---|
+| 1 | Landing'de ilk soru direkt açık, "Başla" ekranı yok | ✅ Yapılmış — `PublicQuizFunnel.jsx`'te ayrı bir "başla" fazı yok, `phase` hep `"quiz"` ile başlıyor, ilk şıkka basmak (`handleSelect`) QuizStart'ı tetikliyor |
+| 2 | Sonuç ekranında web kayıt birincil / App Store ikincil + cevaplar hesaba işlenir | ⚠️ Kısmen — **iOS'ta App Store hâlâ birincil CTA'ydı** (Android/Desktop'ta zaten web birincildi), **7 Temmuz'da düzeltildi** (`QuizResultScreen.jsx`, bkz. 10.2). Cevapların hesaba aktarılması (Phase-2 borcu) **hâlâ yapılmadı** — `tusoskop_quiz_result` localStorage'a yazılıyor ama hiçbir yerde okunmuyor. |
+| 3 | Custom Conversions: QuizComplete + MiniTusComplete | QuizComplete ✅ (bu oturumda kuruldu), MiniTusComplete ❌ (ürün olmadığı için event de yok) |
+| 4 | CAPI (sunucu taraflı Purchase + kayıt event, `paytrCallback`'ten) | ❌ Hiç yok — `functions/` içinde Facebook Conversions API çağrısı bulunmuyor |
+| 5 | Custom Audiences (ViewContent/QuizStart/QuizComplete/CompleteRegistration 30-90g + %1 lookalike) | ✅ Yapılmış — 5 Temmuz'da kurulmuş (`ads_get_ad_account_custom_audiences`), WCA-ViewContent/QuizStart/QuizComplete ACTIVE, CompleteRegistration + tüm lookalike'ler henüz INACTIVE (muhtemelen küçük boyut/henüz ad set'e bağlanmamış) |
+
+**Sonuç: Şu an H1 haftasındayız, §07'nin 5 maddesinden 2'si tam, 1'i kısmen (bu oturumda tamamlandı), 2'si (CAPI, MiniTusComplete/ürün) hiç yapılmamış.**
+
+### 10.2 Kod fix — iOS'ta web CTA'yı birincil yap (7 Temmuz 2026)
+`src/components/funnel/QuizResultScreen.jsx` — iOS cihaz bloğunda `AppStoreCta`'nın `primary` olması, planın İlke 1'ine ("satış web'de biter, App Store ikincil") doğrudan aykırıydı ve planın kendi teşhisiyle örtüşüyordu ("Web kayıt/satış 28 günde 1 kayıt 0 satış — kullanıcı App Store'da kayboluyor"). Düzeltme: Android/Desktop ile aynı desene getirildi — `WebCta` artık iOS'ta da `primary` ("Web'de Ücretsiz Devam Et"), `AppStoreCta` ikincil. Commit `claude/meta-ads-campaign-log-idhrgw` branch'inde.
+
+### 10.3 Kullanıcı onaylı öncelik sırası
+Kullanıcıya H1'in bitmemiş 3 maddesi (iOS CTA / K1'i tamamen durdurma / genel yol haritası) soruldu. **Seçim: önce iOS CTA düzeltmesi** (yukarıda 10.2, tamamlandı). Ardından kullanıcı **Phase-2 cevap aktarımı + CAPI kurulumunu** istedi (bkz. 10.4). K1'in kaderi hâlâ karar bekliyor.
+
+### 10.4 Phase-2 cevap aktarımı + Meta CAPI kurulumu (7 Temmuz 2026, kod tamamlandı)
+
+**Phase-2 (çözülen cevapların hesaba aktarılması) — ✅ tamamlandı:**
+- `src/utils/publicQuizSession.js` → `QUIZ_RESULT_KEY` export edildi + `readAndClearQuizResult()` eklendi (localStorage'dan oku, tekrar işlenmesin diye sil).
+- `src/services/publicQuizImportService.js` (yeni) → `importPublicQuizResultIfPresent(user, userData, questions)`: yanlış cevaplanan soruları `addWrongQuestion` + `upsertSmartReview(..., "wrong")` ile işler (`useStudyState.js`'teki normal yanlış-cevap akışıyla birebir aynı çağrı deseni). Doğru cevaplar hiçbir kayıt tetiklemiyor (normal akışla tutarlı).
+- `src/AppAuthenticated.jsx` → `user?.uid` ve `QUESTIONS` hazır olunca bu fonksiyonu çağıran yeni bir effect eklendi, ardından `refreshSmartReviewSummary()` çağrılıyor.
+- Doğal olarak idempotent: `readAndClearQuizResult` ilk okumada localStorage'ı siliyor, sonraki tetiklenmelerde `null` dönüyor.
+
+**Meta CAPI (Conversions API) — ✅ kod tamamlandı, ⚠️ deploy öncesi bir secret gerekiyor:**
+- `functions/metaCapi.js` (yeni) → `sendMetaCapiEvent(eventName, params)`: Graph API'ye `https://graph.facebook.com/v21.0/{pixel_id}/events` POST atar, `em`/`external_id` SHA-256 hash'lenir, hata asla fırlatmaz (sadece loglar, akış bozulmaz).
+- **Purchase:** `functions/paytr.js` → `createPaytrTokenHandler` artık `fbp`/`fbc`/`clientUserAgent`/`clientIp`'i `premiumPurchaseIntents/{merchantOid}` dokümanına kaydediyor (istemciden: `src/services/paytrService.js` → `requestPaytrToken` artık `_fbp`/`_fbc` çerezlerini okuyup gönderiyor). `paytrCallbackHandler`, transaction'ın DIŞINDA (retry'da tekrar API çağrısı olmasın diye) `sendMetaCapiEvent("Purchase", {eventId: merchantOid, ...})` çağırıyor.
+- **CompleteRegistration:** `functions/userTriggers.js` (yeni) → `users/{uid}` Firestore `onDocumentCreated` trigger'ı, `functions/index.js`'te `exports.onUserDocumentCreated` olarak bağlandı. `event_id: uid`.
+- **Dedup:** `src/lib/metaPixel.js`'in `track()` fonksiyonu artık 3. parametre olarak `eventId` alıyor, `fbq(..., {eventID})` ile gönderiyor. `trackPurchase({orderId})` → eventId=merchantOid, `trackCompleteRegistration({uid})` → eventId=uid (`src/services/userService.js`'te `ensureUserDocument` çağrısına `uid` eklendi). Sunucu ve istemci aynı `event_id`'yi kullandığı için Meta ikisini tek olay sayacak.
+- **Secret adı — çözülmüş isim uyuşmazlığı (7 Temmuz 2026):** Kullanıcı token'ı Firebase'e **`META_CAPI_TOKEN`** adıyla eklemişti (birkaç gün önce, başka bir oturumda). Kod başta `META_CAPI_ACCESS_TOKEN` okuyordu → uyuşmuyordu (`firebase functions:secrets:access META_CAPI_ACCESS_TOKEN` hata, `META_CAPI_TOKEN` değer döndü). Çözüm: **kod, mevcut secret ismine göre güncellendi** — `functions/metaCapi.js` ve `functions/index.js`'te tüm referanslar `META_CAPI_ACCESS_TOKEN` → `META_CAPI_TOKEN`. Token zaten Firebase'de mevcut ve geçerli, yeniden üretmeye gerek yok.
+- **Bilinen ayrı sorun (bilerek düzeltilmedi, scope dışı bırakıldı):** `PublicQuizFunnel.jsx:349`'daki `trackMetaStandard("CompleteRegistration", ...)` her girişte (yeni/mevcut ayrımı yapmadan) tetikleniyor — `ensureUserDocument`'in yalnızca yeni hesapta ateşlenen kanonik event'inden ayrı, potansiyel bir çift sayım kaynağı. CAPI dedup'ı sadece kanonik event'i kapsıyor, bu ayrı çağrıyı kapsamıyor. İleride ayrıca ele alınmalı.
+
+**Sonraki adım (secret hazır, tek kalan deploy):** `META_CAPI_TOKEN` secret'ı Firebase'de mevcut ve kod artık bu ismi okuyor. Kullanıcının yapması gereken tek şey **bu branch'i deploy etmek**: `firebase deploy --only functions`. Sonra bir test satın alma / test kayıt ile CAPI event'lerinin Events Manager'da (Entegrasyonlar → Dönüşümler API'si satırında) göründüğünü doğrulamalı.
+
+### 10.5 K1'in kaderi — plana göre çözüldü (7 Temmuz 2026)
+Kullanıcı "plan ne diyorsa o" dedi. Plan (`META_ADS_MEDIA_PLAN.md` §03): K1 (Mini TUS), **C2'nin** fikri (C1'in değil); ihtiyaç duyduğu 20 soruluk Mini TUS ürünü §07-6 ön koşulu, henüz yazılmamış (takvimde H2 işi, C2 yumuşak açılışı H3). Ayrıca "Yapma listesi": reklam görseli ile landing ilk sorusu ayrıştırılamaz — K1 var olmayan bir ürün vaat ettiği için bu kuralı ihlal ediyor. **Sonuç: her iki K1 reklamı da (`52561095267963` "K1 Mini TUS Feed" ve `52561079280163` "K1 Mini TUS") zaten PAUSED durumda — plana uygun, ek işlem gerekmedi.** `ads_get_ad_entities` ile doğrulandı. C1'de kalan aktif reklamlar (K2 Vaka Reels, K3 Karışık Deneme, K4 Tuzak Farmakoloji, K7 Geri Sayım, Patoloji-01 kanıtlanmış kreatif) hepsi planın C1 üyeleri, QuizComplete'e optimize.
+
+**C1/C2 mimari borcu (gelecek iş, H2-H3):** K1 reklamları teknik olarak hâlâ C1 kampanyasının içindeki tek ad set'te (`52561037322763`) duruyor — PAUSED olsalar da yanlış kampanyadalar. Doğru çözüm: Mini TUS ürünü yazıldıktan sonra ayrı bir C2 kampanyası açıp K1'i orada MiniTusComplete'e optimize kurmak (Meta'da ad'ı kampanyalar arası taşımak pratik değil, yeniden oluşturmak gerekiyor — o yüzden şimdilik PAUSED bırakmak yeterli, ürün gelince C2 sıfırdan kurulacak).

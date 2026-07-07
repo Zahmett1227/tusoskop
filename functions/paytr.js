@@ -18,6 +18,7 @@ const crypto = require("crypto");
 const { defineSecret } = require("firebase-functions/params");
 const { HttpsError } = require("firebase-functions/v2/https");
 const { getFirestore, FieldValue } = require("firebase-admin/firestore");
+const { sendMetaCapiEvent } = require("./metaCapi");
 
 const PAYTR_MERCHANT_KEY = defineSecret("PAYTR_MERCHANT_KEY");
 const PAYTR_MERCHANT_SALT = defineSecret("PAYTR_MERCHANT_SALT");
@@ -111,6 +112,9 @@ async function createPaytrTokenHandler(request) {
     rawReq?.ip ||
     rawReq?.socket?.remoteAddress ||
     "127.0.0.1";
+  const clientUserAgent = String(rawReq?.headers?.["user-agent"] || "");
+  const fbp = String(request.data?.fbp || "");
+  const fbc = String(request.data?.fbc || "");
 
   // merchant_oid: alfanümerik ve benzersiz olmalı → Firestore otomatik doc id
   const intentRef = db().collection("premiumPurchaseIntents").doc();
@@ -179,6 +183,11 @@ async function createPaytrTokenHandler(request) {
     merchantOid,
     paymentAmount,
     testMode: TEST_MODE === "1",
+    /* Meta CAPI Purchase eşleştirme kalitesi için — paytrCallback'te okunur. */
+    clientIp: userIp,
+    clientUserAgent,
+    fbp,
+    fbc,
     createdAt: new Date().toISOString(),
     createdAtTs: FieldValue.serverTimestamp(),
   });
@@ -242,6 +251,10 @@ async function paytrCallbackHandler(req, res) {
   }
 
   const intentRef = db().collection("premiumPurchaseIntents").doc(merchantOid);
+
+  /* Transaction başarıyla aktivasyon yaparsa doldurulur; CAPI çağrısı transaction
+     DIŞINDA yapılır (transaction retry olursa dış API çağrısı tekrarlanmasın). */
+  let capiPurchase = null;
 
   try {
     await db().runTransaction(async (tx) => {
@@ -337,12 +350,33 @@ async function paytrCallbackHandler(req, res) {
         reason: `PayTR otomatik / ${plan?.sku || planId} / oid:${merchantOid}`,
         createdAt: FieldValue.serverTimestamp(),
       });
+
+      capiPurchase = {
+        eventId: merchantOid,
+        email: intent.email,
+        externalId: targetUid,
+        clientIp: intent.clientIp,
+        clientUserAgent: intent.clientUserAgent,
+        fbp: intent.fbp,
+        fbc: intent.fbc,
+        customData: {
+          currency: "TRY",
+          value: plan?.amount ?? intent.totalPrice,
+          content_name: "Tusoskop Plus Abonelik",
+          content_type: "subscription",
+          order_id: merchantOid,
+        },
+      };
     });
   } catch (err) {
     console.error("[PAYTR] callback processing error:", err);
     // İşlenemedi → OK dönme ki PayTR tekrar denesin.
     res.status(500).send("PAYTR notification failed: processing error");
     return;
+  }
+
+  if (capiPurchase) {
+    await sendMetaCapiEvent("Purchase", capiPurchase);
   }
 
   res.status(200).send("OK");

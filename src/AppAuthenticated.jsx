@@ -39,6 +39,7 @@ import {
   getSmartReviewSummary,
   resolveQuestionsFromReviews,
 } from "./services/smartReviewService";
+import { importPublicQuizResultIfPresent } from "./services/publicQuizImportService";
 import { updateFsrsDueSnapshot } from "./services/fsrsStatsService";
 import { submitDailyBonusEvent, clearLeaderboardProfileCache } from "./services/leaderboardService";
 import { EVENT_TYPES } from "./utils/leaderboardScoreUtils";
@@ -248,6 +249,14 @@ export default function AppAuthenticated() {
   useEffect(() => {
     refreshSmartReviewSummary();
   }, [refreshSmartReviewSummary, userData, QUESTIONS, view]);
+
+  // /coz mini deneme funnel'ından girişten sonra bekleyen sonuç varsa hesaba işle (Phase-2).
+  useEffect(() => {
+    if (!user?.uid || !QUESTIONS.length) return;
+    importPublicQuizResultIfPresent(user, userData, QUESTIONS).then(() => {
+      refreshSmartReviewSummary();
+    });
+  }, [user?.uid, QUESTIONS, userData, refreshSmartReviewSummary]);
 
   const bottomNavExamLocked =
     !isUserPremium(userData) && (remainingUsage?.fullExamRemaining ?? 1) <= 0;

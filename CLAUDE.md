@@ -250,6 +250,8 @@ git push origin ios-appstore-v1
 
 Meta Traffic reklamlarından gelen kullanıcı için **login-öncesi 3 soruluk mini deneme**. Amaç: reklam ile login duvarı arasındaki soğuk geçişi kaldırmak. (commit: `8ac2146`)
 
+> **Asıl nihai Meta Ads stratejisi/mimarisi için:** `META_ADS_MEDIA_PLAN.md` (Temmuz→Eylül 2026 planı — C1/C2/C3/C4 kampanya mimarisi, 10 kreatif fikri, bütçe, sinyal merdiveni QuizComplete→CompleteRegistration→Purchase, 9 haftalık takvim, guardrail'ler). Her yeni kampanya/bütçe/hedefleme kararı bu plana göre değerlendirilmeli. `META_ADS_CAMPAIGN_LOG.md` ise bu planın kronolojik uygulama günlüğüdür — ikisi birlikte okunmalı.
+
 ### Mimari
 - `src/main.jsx` → `src/AppRoot.jsx`: `/coz/` path'i **ağır App ağacından izole** (auth/QuestionsProvider yüklenmez), lazy `PublicQuizFunnel`. Firebase SDK sadece "Web'de devam et" login'inde dinamik import → en hızlı ilk render.
 - Bileşenler: `src/components/funnel/` → `PublicQuizFunnel.jsx` (orchestrator) + `QuizQuestionCard.jsx` + `QuizResultScreen.jsx` + `QuizContinueModal.jsx`.
@@ -281,7 +283,9 @@ Meta Traffic reklamlarından gelen kullanıcı için **login-öncesi 3 soruluk m
 - Reklam URL formatı: `https://www.tusoskop.com/coz/<slug>?campaign_code=<code>&utm_source={{site_source_name}}&utm_medium=paid_social&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&campaign_id={{campaign.id}}&adset_id={{adset.id}}&ad_id={{ad.id}}&placement={{placement}}`
 - Firebase Analytics event'leri: `quiz_landing_view, quiz_start, question_answered, quiz_complete, result_view, appstore_click, web_continue_click, signup_start`. Meta Pixel: `ViewContent, QuizStart, QuizComplete, AppStoreClick, WebContinueClick, CompleteRegistration`. Meta kampanyasını sayfa-içi `QuizComplete`/`AppStoreClick`'e optimize et (iOS ATT körleştirmez).
 - ENV (Vercel): `VITE_META_PIXEL_ID` (var), `VITE_APP_STORE_PROVIDER_TOKEN=128988812`, `VITE_APP_STORE_BASE_URL` (opsiyonel). Hepsi build-time → değişince redeploy gerekir.
-- Bilinen sınır (Phase-2): çözülen cevaplar henüz hesaba içe aktarılmıyor (skor+attribution bağlanıyor, cevaplar `localStorage`'da bekliyor); MVP'de `correctIndex` client'ta.
+- ~~Bilinen sınır (Phase-2)~~ → **kapandı (7 Temmuz 2026):** `src/services/publicQuizImportService.js` → `importPublicQuizResultIfPresent()`, `AppAuthenticated.jsx`'te girişten sonra çalışır; `tusoskop_quiz_result` (localStorage) içindeki yanlış cevapları `addWrongQuestion` + `upsertSmartReview(..., "wrong")` ile hesaba/FSRS'e işler (doğru cevaplar normal çalışma akışıyla tutarlı şekilde herhangi bir kayıt tetiklemez).
+- **Meta CAPI (Conversions API):** `functions/metaCapi.js` → `sendMetaCapiEvent()`. `Purchase` → `paytrCallback`'ten (`functions/paytr.js`), `CompleteRegistration` → `users/{uid}` Firestore trigger'ından (`functions/userTriggers.js`) gönderiliyor. Dedup: her ikisi de istemci pixel'iyle aynı `event_id` kullanıyor (Purchase→`merchantOid`, CompleteRegistration→`uid`) — `src/lib/metaPixel.js`'in `track()` fonksiyonu artık `eventID` destekliyor. **Kurulum:** CAPI access token'ı Meta Events Manager → veri seti → Ayarlar → Dönüşümler API'si → "Erişim belirteci oluştur" ile üretilip `firebase functions:secrets:set META_CAPI_TOKEN` ile eklenir (secret adı **`META_CAPI_TOKEN`** — kod bu ismi okur; kullanıcının hesabında bu isimle mevcut). Secret yoksa CAPI event'leri sessizce atlanır (log uyarısı düşer, akış bozulmaz). **Not:** CAPI kodu `claude/meta-ads-campaign-log-idhrgw` branch'inde; canlıya geçmesi için `firebase deploy --only functions` gerekiyor.
+- **Bilinen ayrı sorun (düzeltilmedi):** `PublicQuizFunnel.jsx`'teki `trackMetaStandard("CompleteRegistration", ...)` çağrısı her girişte (yeni/mevcut hesap ayrımı yapmadan) tetikleniyor — `ensureUserDocument`'in yalnızca yeni hesapta tetiklenen kanonik event'inden ayrı, potansiyel bir çift sayım kaynağı. CAPI dedup'ı yalnızca kanonik event'i kapsıyor.
 
 ### Patoloji-01 kampanyası — kurulum ve öğrenilenler (Temmuz 2026)
 

@@ -55,10 +55,19 @@ export function initMetaPixel() {
   pixelInitialized = true;
 }
 
-function track(event, params) {
+/**
+ * `eventId` verilirse Meta'nın resmi dedup mekanizmasını (fbq'nun 4. argümanı
+ * `{eventID}`) kullanır — sunucu taraflı CAPI event'i aynı `event_id` ile
+ * gönderildiğinde Meta ikisini tek olay sayar (bkz. `functions/metaCapi.js`).
+ */
+function track(event, params, eventId) {
   if (!PIXEL_ID || !fbqReady()) return;
   try {
-    params ? window.fbq("track", event, params) : window.fbq("track", event);
+    if (eventId) {
+      window.fbq("track", event, params || {}, { eventID: String(eventId) });
+    } else {
+      params ? window.fbq("track", event, params) : window.fbq("track", event);
+    }
   } catch (err) {
     if (import.meta.env.DEV) {
       console.warn("[MetaPixel] track failed:", event, err);
@@ -70,22 +79,30 @@ export function trackPageView() {
   track("PageView");
 }
 
-export function trackCompleteRegistration({ method } = {}) {
-  track("CompleteRegistration", {
-    content_name: "Tusoskop Kayıt",
-    status: true,
-    ...(method ? { registration_method: method } : {}),
-  });
+export function trackCompleteRegistration({ method, uid } = {}) {
+  track(
+    "CompleteRegistration",
+    {
+      content_name: "Tusoskop Kayıt",
+      status: true,
+      ...(method ? { registration_method: method } : {}),
+    },
+    uid
+  );
 }
 
 export function trackPurchase({ value = 89.9, currency = "TRY", orderId } = {}) {
-  track("Purchase", {
-    content_name: "Tusoskop Plus Abonelik",
-    content_type: "subscription",
-    currency,
-    value,
-    ...(orderId ? { order_id: orderId } : {}),
-  });
+  track(
+    "Purchase",
+    {
+      content_name: "Tusoskop Plus Abonelik",
+      content_type: "subscription",
+      currency,
+      value,
+      ...(orderId ? { order_id: orderId } : {}),
+    },
+    orderId
+  );
 }
 
 /**

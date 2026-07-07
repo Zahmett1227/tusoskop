@@ -10,6 +10,7 @@
  */
 
 const KEY_PREFIX = "tusoskop_quiz_";
+export const QUIZ_RESULT_KEY = "tusoskop_quiz_result";
 
 /** Meta reklam URL'sinden okunacak parametreler. */
 export const QUIZ_PARAM_KEYS = [
@@ -151,6 +152,27 @@ export function parseResumeToken() {
     const parsed = JSON.parse(decodeURIComponent(atob(token)));
     if (!parsed || typeof parsed.s !== "number" || !parsed.ca) return null;
     return { score: parsed.s, completedAt: parsed.ca };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Girişten (login) sonra hesaba işlenmek üzere localStorage'a yazılmış mini
+ * deneme sonucunu okur ve tekrar işlenmesin diye siler. `PublicQuizFunnel`
+ * tamamlanmış oturumu bu anahtara yazar; `sessionStorage` değil `localStorage`
+ * kullanılır çünkü giriş sonrası tam sayfa navigasyonundan (`window.location.href
+ * = "/"`) sağ salim çıkması gerekir.
+ * @returns {{ campaignCode: string, campaignSlug: string, subject: string, score: number, total: number, answers: Array, completedAt: string } | null}
+ */
+export function readAndClearQuizResult() {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.localStorage.getItem(QUIZ_RESULT_KEY);
+    if (!raw) return null;
+    window.localStorage.removeItem(QUIZ_RESULT_KEY);
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === "object" ? parsed : null;
   } catch {
     return null;
   }
