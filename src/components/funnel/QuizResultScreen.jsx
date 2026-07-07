@@ -116,8 +116,8 @@ export default function QuizResultScreen({
       <div className="mt-6 flex flex-col gap-2.5">
         {deviceType === "ios" && (
           <>
-            <AppStoreCta href={appStoreUrl} onClick={onAppStoreClick} primary />
-            <WebCta onClick={onWebContinue} label="Web'de devam et" />
+            <WebCta onClick={onWebContinue} primary label="Web'de Ücretsiz Devam Et" />
+            <AppStoreCta href={appStoreUrl} onClick={onAppStoreClick} />
           </>
         )}
 

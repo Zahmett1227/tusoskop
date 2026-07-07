@@ -216,3 +216,34 @@ Kullanıcı 7 Temmuz ~12:4x civarı `/coz/patoloji-01` üzerinden tamamen yeni b
 Zayıf performans (CTR %1,39, cost per link click ₺7,15 — diğer C1 reklamlarının 4-7 katı) nedeniyle `52561095267963` ("C1 · K1 Mini TUS Feed") kullanıcı onayıyla **PAUSED** durumuna alındı (`ads_update_entity`). Bütçe artık güçlü çalışan reklamlara (Patoloji-01 kanıtlanmış kreatif, K2 Vaka Reels, K3 Karışık Deneme) kayacak. C1'de artık aktif reklamlar: Patoloji-01, K2 Vaka Reels, K3 Karışık Deneme, K7 Geri Sayım, K4 Tuzak Farmakoloji (yeni onaylı, henüz teslimat yok).
 
 **Sonraki adım:** Birkaç gün sonra C1'in genel performansını (özellikle QuizComplete/AppStoreClick — artık custom conversion'lar hazır) tekrar kontrol et, K1 Feed'in durdurulmasının bütçe dağılımına etkisini gözlemle.
+
+## 10 — Asıl nihai plan bulundu ve gerçek denetim yapıldı (7 Temmuz 2026)
+
+Kullanıcı `META_ADS_MEDIA_PLAN.md`'yi (Temmuz→Eylül 2026 nihai medya planı) paylaştı — bu ana kadar hiç bilinmeyen, C1/C2/C3/C4 mimarisini, sinyal merdivenini (QuizComplete→CompleteRegistration→Purchase) ve §07 ön koşullarını tanımlayan asıl strateji belgesiydi. Repoya kaydedildi, CLAUDE.md ve bu günlükten referans verildi.
+
+### 10.1 Kod + Meta hesabı denetimi — plana göre gerçek durum
+
+**Kampanya mimarisi (Bölüm 3):**
+- C1 ✅ doğru (QuizComplete'e optimize) ama **K1 reklamları yanlışlıkla içine konmuş** (tek ad set: "C1 · TR 20-33 · Geniş", campaign_id `52561037294163`).
+- **C2 (Mini TUS haftalık kampanyası) hiç yok** — plana göre K1 burada, ayrı, MiniTusComplete'e optimize olmalıydı.
+- C3 PAUSED — **bu doğru**, sinyal merdiveni CompleteRegistration eşiğine (haftada 50 kayıt) bile ulaşmadı, Purchase'a optimize olmak için çok erken. (Önceki oturumdaki "C3'ü aktive edelim" önerim yanlıştı, düzeltildi.)
+- C4 yok — doğru, Eylül'e kadar gerekmiyor.
+
+**🔴 Kritik bulgu — K1'in kötü performansının kök sebebi:** K1 reklam metni (`ads_get_creatives`, creative `2007932956513390`) "20 soruda TUS'un neresinde olduğunu gör, tahmini kalibrasyon puanın ve Türkiye'de sıralaman" vaat ediyor. Ama `src/data/publicQuizCampaigns.js`'te **tek slug var: `patoloji-01`** — "mini-tus" hiç yazılmamış, 20 soruluk format/yüzdelik/paylaşım kartı (§07-6 ürün paketi) hiç kodlanmamış. Yani K1 reklamları **var olmayan bir ürünü satıyor** — muhtemelen 404 veya alakasız bir sayfaya düşüyor. Düşük CTR (%1,39) ve yüksek maliyetin (₺7,15) asıl sebebi zayıf kreatif değil, mesaj-gerçeklik uyumsuzluğu. Kalıcı çözüm: Mini TUS ürününü inşa etmek (planda zaten H2 haftası, §07-6, 3-4 gün kod işi).
+
+**Ön koşullar (§07) — H1 haftası (6-12 Temmuz) hedefi olan 1-5 maddesi:**
+| # | Ön koşul | Durum |
+|---|---|---|
+| 1 | Landing'de ilk soru direkt açık, "Başla" ekranı yok | ✅ Yapılmış — `PublicQuizFunnel.jsx`'te ayrı bir "başla" fazı yok, `phase` hep `"quiz"` ile başlıyor, ilk şıkka basmak (`handleSelect`) QuizStart'ı tetikliyor |
+| 2 | Sonuç ekranında web kayıt birincil / App Store ikincil + cevaplar hesaba işlenir | ⚠️ Kısmen — **iOS'ta App Store hâlâ birincil CTA'ydı** (Android/Desktop'ta zaten web birincildi), **7 Temmuz'da düzeltildi** (`QuizResultScreen.jsx`, bkz. 10.2). Cevapların hesaba aktarılması (Phase-2 borcu) **hâlâ yapılmadı** — `tusoskop_quiz_result` localStorage'a yazılıyor ama hiçbir yerde okunmuyor. |
+| 3 | Custom Conversions: QuizComplete + MiniTusComplete | QuizComplete ✅ (bu oturumda kuruldu), MiniTusComplete ❌ (ürün olmadığı için event de yok) |
+| 4 | CAPI (sunucu taraflı Purchase + kayıt event, `paytrCallback`'ten) | ❌ Hiç yok — `functions/` içinde Facebook Conversions API çağrısı bulunmuyor |
+| 5 | Custom Audiences (ViewContent/QuizStart/QuizComplete/CompleteRegistration 30-90g + %1 lookalike) | ✅ Yapılmış — 5 Temmuz'da kurulmuş (`ads_get_ad_account_custom_audiences`), WCA-ViewContent/QuizStart/QuizComplete ACTIVE, CompleteRegistration + tüm lookalike'ler henüz INACTIVE (muhtemelen küçük boyut/henüz ad set'e bağlanmamış) |
+
+**Sonuç: Şu an H1 haftasındayız, §07'nin 5 maddesinden 2'si tam, 1'i kısmen (bu oturumda tamamlandı), 2'si (CAPI, MiniTusComplete/ürün) hiç yapılmamış.**
+
+### 10.2 Kod fix — iOS'ta web CTA'yı birincil yap (7 Temmuz 2026)
+`src/components/funnel/QuizResultScreen.jsx` — iOS cihaz bloğunda `AppStoreCta`'nın `primary` olması, planın İlke 1'ine ("satış web'de biter, App Store ikincil") doğrudan aykırıydı ve planın kendi teşhisiyle örtüşüyordu ("Web kayıt/satış 28 günde 1 kayıt 0 satış — kullanıcı App Store'da kayboluyor"). Düzeltme: Android/Desktop ile aynı desene getirildi — `WebCta` artık iOS'ta da `primary` ("Web'de Ücretsiz Devam Et"), `AppStoreCta` ikincil. Commit `claude/meta-ads-campaign-log-idhrgw` branch'inde.
+
+### 10.3 Kullanıcı onaylı öncelik sırası
+Kullanıcıya H1'in bitmemiş 3 maddesi (iOS CTA / K1'i tamamen durdurma / genel yol haritası) soruldu. **Seçim: önce iOS CTA düzeltmesi** (yukarıda 10.2, tamamlandı). Sıradaki adaylar (henüz karar verilmedi): K1 reklamlarının tamamen durdurulması (Mini TUS ürünü yazılana kadar), Phase-2 cevap aktarımı, CAPI kurulumu.
