@@ -194,5 +194,10 @@ C1 altındaki reklamlar (last_7d):
 - QuizComplete/AppStoreClick gerçek sayıları bu güncellemede çekilmedi (log Bölüm 4.2 uyarısı: `ads_get_dataset_stats` güvenilmez; Events Manager ekran görüntüsü daha sağlıklı).
 
 ### 8.4 Hâlâ açık kalan işler (Bölüm 5'ten devam)
-- `QuizComplete` ve `AppStoreClick` için Custom Conversion henüz oluşturulmadı (Events Manager UI'dan elle yapılmalı; API'de create yok).
-- `CompleteRegistration` custom conversion'ı hâlâ eklenmedi (funnel'dan gerçek bir giriş tamamlanması gerekiyor).
+- ~~`QuizComplete` ve `AppStoreClick` için Custom Conversion~~ → **kullanıcı tarafından Events Manager'dan elle oluşturuldu (7 Temmuz 2026).**
+- `CompleteRegistration` custom conversion'ı hâlâ eklenmedi — kullanıcı `/coz/patoloji-01` üzerinden yeni bir Google/Apple hesabıyla login tamamladıktan sonra deneyecek (henüz yapılmadı, plan onaylandı).
+
+### 8.5 K1 Mini TUS Feed durduruldu (7 Temmuz 2026)
+Zayıf performans (CTR %1,39, cost per link click ₺7,15 — diğer C1 reklamlarının 4-7 katı) nedeniyle `52561095267963` ("C1 · K1 Mini TUS Feed") kullanıcı onayıyla **PAUSED** durumuna alındı (`ads_update_entity`). Bütçe artık güçlü çalışan reklamlara (Patoloji-01 kanıtlanmış kreatif, K2 Vaka Reels, K3 Karışık Deneme) kayacak. C1'de artık aktif reklamlar: Patoloji-01, K2 Vaka Reels, K3 Karışık Deneme, K7 Geri Sayım, K4 Tuzak Farmakoloji (yeni onaylı, henüz teslimat yok).
+
+**Sonraki adım:** Birkaç gün sonra C1'in genel performansını (özellikle QuizComplete/AppStoreClick — artık custom conversion'lar hazır) tekrar kontrol et, K1 Feed'in durdurulmasının bütçe dağılımına etkisini gözlemle.
