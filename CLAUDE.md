@@ -250,6 +250,8 @@ git push origin ios-appstore-v1
 
 Meta Traffic reklamlarından gelen kullanıcı için **login-öncesi 3 soruluk mini deneme**. Amaç: reklam ile login duvarı arasındaki soğuk geçişi kaldırmak. (commit: `8ac2146`)
 
+> **Asıl nihai Meta Ads stratejisi/mimarisi için:** `META_ADS_MEDIA_PLAN.md` (Temmuz→Eylül 2026 planı — C1/C2/C3/C4 kampanya mimarisi, 10 kreatif fikri, bütçe, sinyal merdiveni QuizComplete→CompleteRegistration→Purchase, 9 haftalık takvim, guardrail'ler). Her yeni kampanya/bütçe/hedefleme kararı bu plana göre değerlendirilmeli. `META_ADS_CAMPAIGN_LOG.md` ise bu planın kronolojik uygulama günlüğüdür — ikisi birlikte okunmalı.
+
 ### Mimari
 - `src/main.jsx` → `src/AppRoot.jsx`: `/coz/` path'i **ağır App ağacından izole** (auth/QuestionsProvider yüklenmez), lazy `PublicQuizFunnel`. Firebase SDK sadece "Web'de devam et" login'inde dinamik import → en hızlı ilk render.
 - Bileşenler: `src/components/funnel/` → `PublicQuizFunnel.jsx` (orchestrator) + `QuizQuestionCard.jsx` + `QuizResultScreen.jsx` + `QuizContinueModal.jsx`.

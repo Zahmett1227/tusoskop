@@ -1,6 +1,8 @@
 # Meta Ads Kampanya Günlüğü — Patoloji-01 / TUS Mikro Deneme Funnel'ı
 
 > Bu dosya, uzun bir sohbette (Temmuz 2026) yapılan Meta Ads kampanya kurulumu, hata ayıklama ve analiz çalışmasının **tam özetidir**. Amaç: yeni bir Claude oturumunun bu dosyayı okuyarak, önceki sohbetin hiçbir parçasını görmeden kaldığı yerden devam edebilmesi. Kod/mimari bağlamı için önce `CLAUDE.md`'deki "Meta Reklam Mikro Deneme Funnel'ı" bölümünü oku, bu dosya onun **kronolojik, ayrıntılı** eki niteliğindedir.
+>
+> **ÖNEMLİ:** `META_ADS_MEDIA_PLAN.md` bu projenin **asıl nihai stratejisi/mimarisidir** (Temmuz→Eylül 2026, C1/C2/C3/C4 kampanya çatısı, 10 kreatif fikri, sinyal merdiveni, bütçe, 9 haftalık takvim, guardrail'ler). Bu dosya (CAMPAIGN_LOG) o planın kronolojik uygulama günlüğü — yeni bir oturum ÖNCE media plan'ı, SONRA bu günlüğü okumalı.
 
 ## 1. Genel bağlam
 
