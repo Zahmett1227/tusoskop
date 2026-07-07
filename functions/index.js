@@ -19,7 +19,7 @@ const {
   createPaytrTokenHandler,
   paytrCallbackHandler,
 } = require("./paytr");
-const { META_CAPI_ACCESS_TOKEN } = require("./metaCapi");
+const { META_CAPI_TOKEN } = require("./metaCapi");
 const { onUserDocumentCreatedHandler } = require("./userTriggers");
 
 const GEMINI_API_KEY = defineSecret("GEMINI_API_KEY");
@@ -247,7 +247,7 @@ exports.createPaytrToken = onCall(
 exports.paytrCallback = onRequest(
   {
     region: "us-central1",
-    secrets: [PAYTR_MERCHANT_KEY, PAYTR_MERCHANT_SALT, META_CAPI_ACCESS_TOKEN],
+    secrets: [PAYTR_MERCHANT_KEY, PAYTR_MERCHANT_SALT, META_CAPI_TOKEN],
   },
   paytrCallbackHandler
 );
@@ -261,7 +261,7 @@ exports.onUserDocumentCreated = onDocumentCreated(
   {
     document: "users/{uid}",
     region: "us-central1",
-    secrets: [META_CAPI_ACCESS_TOKEN],
+    secrets: [META_CAPI_TOKEN],
   },
   onUserDocumentCreatedHandler
 );

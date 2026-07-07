@@ -6,14 +6,14 @@
  * kullanan kullanıcılarda tarayıcı pixel'i hiç gitmeyebildiği için CAPI,
  * ölçümün tek güvenilir kopyasını garantiler.
  *
- * META_CAPI_ACCESS_TOKEN: Meta Business Settings → Sistem Kullanıcıları →
- * "ads_management" izniyle üretilmiş, süresiz bir System User token'ı olmalı.
- * Firebase Secret Manager'a elle eklenmeli: `firebase functions:secrets:set META_CAPI_ACCESS_TOKEN`.
+ * META_CAPI_TOKEN: Meta Events Manager → veri seti → Ayarlar → Dönüşümler API'si →
+ * "Erişim belirteci oluştur" ile üretilmiş bir CAPI access token'ı olmalı.
+ * Firebase Secret Manager'a elle eklenmeli: `firebase functions:secrets:set META_CAPI_TOKEN`.
  */
 const crypto = require("crypto");
 const { defineSecret } = require("firebase-functions/params");
 
-const META_CAPI_ACCESS_TOKEN = defineSecret("META_CAPI_ACCESS_TOKEN");
+const META_CAPI_TOKEN = defineSecret("META_CAPI_TOKEN");
 
 /** Pixel/dataset ID gizli değil; env ile override edilebilir. */
 const META_PIXEL_ID = process.env.META_PIXEL_ID || "1327796822800702";
@@ -43,12 +43,12 @@ function sha256(value) {
 async function sendMetaCapiEvent(eventName, params = {}) {
   let accessToken;
   try {
-    accessToken = META_CAPI_ACCESS_TOKEN.value();
+    accessToken = META_CAPI_TOKEN.value();
   } catch {
     accessToken = null;
   }
   if (!accessToken) {
-    console.warn(`[MetaCAPI] META_CAPI_ACCESS_TOKEN tanımlı değil, ${eventName} event'i atlandı.`);
+    console.warn(`[MetaCAPI] META_CAPI_TOKEN tanımlı değil, ${eventName} event'i atlandı.`);
     return;
   }
   if (!params.eventId) {
@@ -95,4 +95,4 @@ async function sendMetaCapiEvent(eventName, params = {}) {
   }
 }
 
-module.exports = { sendMetaCapiEvent, META_CAPI_ACCESS_TOKEN };
+module.exports = { sendMetaCapiEvent, META_CAPI_TOKEN };
