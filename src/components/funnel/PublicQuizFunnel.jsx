@@ -339,9 +339,13 @@ export default function PublicQuizFunnel() {
       try {
         const firebase = await import("../../firebase");
         const loginFn = method === "apple" ? firebase.loginWithApple : firebase.loginWithGoogle;
-        const user = await loginFn();
+        // Popup akışı bazen (özellikle Apple/Safari'de) auth başarıyla tamamlandığı
+        // halde null döndürebilir (ör. auth/popup-closed-by-user iyi huylu kodu).
+        // Böyle bir durumda auth.currentUser set olmuştur — onu fallback al ki
+        // "giriş başarılı ama modalda kalıyor" durumu oluşmasın.
+        const user = (await loginFn()) || firebase.auth?.currentUser || null;
         if (!user) {
-          // Sessiz iptal (popup kapatıldı) — kullanıcı modalda kalır.
+          // Gerçek sessiz iptal (auth da yok) — kullanıcı modalda kalır.
           setLoginBusy(false);
           return;
         }
