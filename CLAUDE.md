@@ -285,6 +285,8 @@ Meta Traffic reklamlarından gelen kullanıcı için **login-öncesi 3 soruluk m
 
 ### Patoloji-01 kampanyası — kurulum ve öğrenilenler (Temmuz 2026)
 
+> **Ayrıntılı, kronolojik oturum günlüğü:** `META_ADS_CAMPAIGN_LOG.md` — tüm kampanya/ad set/kreatif ID'leri, yapılan bug fix'lerin tam açıklaması, analiz bulguları ve **devam eden K4 "Tuzak Farmakoloji" red sorunu** için oraya bak. Aşağıdaki liste sadece özettir.
+
 - **Meta Pixel/dataset**: "Tusoskop", ID `1327796822800702` (Events Manager → Eylemler → Özel Dönüşümler'de yönetiliyor).
 - **Custom Conversion'lar oluşturuldu**: `QuizStart` (URL içeriği: `/coz/patoloji-01`). `QuizComplete` ve `AppStoreClick` için de aynı yöntemle eklenebilir (Events Manager'da event dropdown'ında görünmesi için event'in en az bir kez, yakın zamanda fire olmuş olması gerekiyor).
 - **`CompleteRegistration` custom conversion'ı henüz eklenemedi** — pixel'deki tek `CompleteRegistration` funnel'dan değil, uygulamanın genel kayıt akışından ve kampanya öncesinden geliyor. Eklemek için: `/coz/patoloji-01` üzerinden gerçek bir Google/Apple girişi tamamlanması lazım (dikkat: bu gerçek bir Tusoskop hesabı oluşturur, test için kullanılmamış bir Google/Apple hesabıyla yapılmalı).
