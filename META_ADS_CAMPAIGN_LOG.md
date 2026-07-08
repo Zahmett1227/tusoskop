@@ -291,7 +291,9 @@ Log 8.1'de "yeni onaylandı, henüz teslimat yok" idi. Artık aktif teslimatta: 
 | AppStoreClick | ~25 |
 | Purchase | 2 (ikisi de 6 Tem, yeni satış yok) |
 
-**🔑 En kritik bulgu — login adımında kayıp:** WebContinueClick ~80 → CompleteRegistration ~20 = "Devam Et"e basanların sadece ~%25'i girişi tamamlıyor. Bu, PR #18'de düzeltilen Apple popup bug'ıyla birebir örtüşüyor (insanlar login ekranında takılıyordu). **Fix'in etkisi birkaç gün sonra bu oranda görülmeli** — takip et.
+**🔑 Login adımında kayıp hipotezi — AMA metrik geçersiz (8 Tem düzeltmesi):** İlk analizde "WebContinueClick ~80 → CompleteRegistration ~20 = ~%25 tamamlama" yazılmıştı. **Bu oran YANLIŞ/abartılı** — funnel-scoped `WebContinueClick`'i **ham** `CompleteRegistration` ile kıyaslıyor. Ham kayıt event'i `/coz` dışında da tetikleniyor (`ensureUserDocument` her yeni hesapta) + funnel'ın kendi CompleteRegistration çift-sayımı karışabilir. `ads_get_dataset_stats` aggregation=url ile doğrulandı: **20 CompleteRegistration'ın HEPSİ `https://www.tusoskop.com/` (uygulama kökü) URL'inde, HİÇBİRİ `/coz` URL'inde değil** — yani ham event funnel kaydını izole etmiyor, funnel + organik kayıtları karışık sayıyor. Gerçek funnel login tamamlama oranı bu ham orandan hesaplanamaz.
+- **Doğru ölçüm için:** URL-scoped custom conversion **"Kayıt tamamlama"** (id `1012897055065152`, kuralı `coz/patoloji-01`) fire sayısı — ama bu `ads_get_customconversions`'da (config-only) görünmez; **Events Manager**'dan ya da kampanyaya-atfedilen (campaign-tagged) CompleteRegistration'dan alınmalı.
+- **Login-kaybı hipotezi hâlâ makul** (Apple popup bug'ı gerçekti, PR #18 ile düzeltildi) ama **bu ham oranla ölçülemez/doğrulanamaz**. PR #18 etkisi ve optimizasyon-hedefi değiştirme kararları **URL-scoped custom conversion veya campaign-tagged event'lerle** verilmeli, bu ham oranla DEĞİL.
 
 **Sinyal merdiveni konumu (plana göre):**
 - QuizComplete ~23/gün (~160/hafta) → optimizasyon hedefi olarak fazlasıyla yeterli ✅
