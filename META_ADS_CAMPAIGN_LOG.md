@@ -270,3 +270,36 @@ Kullanıcıya H1'in bitmemiş 3 maddesi (iOS CTA / K1'i tamamen durdurma / genel
 Kullanıcı "plan ne diyorsa o" dedi. Plan (`META_ADS_MEDIA_PLAN.md` §03): K1 (Mini TUS), **C2'nin** fikri (C1'in değil); ihtiyaç duyduğu 20 soruluk Mini TUS ürünü §07-6 ön koşulu, henüz yazılmamış (takvimde H2 işi, C2 yumuşak açılışı H3). Ayrıca "Yapma listesi": reklam görseli ile landing ilk sorusu ayrıştırılamaz — K1 var olmayan bir ürün vaat ettiği için bu kuralı ihlal ediyor. **Sonuç: her iki K1 reklamı da (`52561095267963` "K1 Mini TUS Feed" ve `52561079280163` "K1 Mini TUS") zaten PAUSED durumda — plana uygun, ek işlem gerekmedi.** `ads_get_ad_entities` ile doğrulandı. C1'de kalan aktif reklamlar (K2 Vaka Reels, K3 Karışık Deneme, K4 Tuzak Farmakoloji, K7 Geri Sayım, Patoloji-01 kanıtlanmış kreatif) hepsi planın C1 üyeleri, QuizComplete'e optimize.
 
 **C1/C2 mimari borcu (gelecek iş, H2-H3):** K1 reklamları teknik olarak hâlâ C1 kampanyasının içindeki tek ad set'te (`52561037322763`) duruyor — PAUSED olsalar da yanlış kampanyadalar. Doğru çözüm: Mini TUS ürünü yazıldıktan sonra ayrı bir C2 kampanyası açıp K1'i orada MiniTusComplete'e optimize kurmak (Meta'da ad'ı kampanyalar arası taşımak pratik değil, yeniden oluşturmak gerekiyor — o yüzden şimdilik PAUSED bırakmak yeterli, ürün gelince C2 sıfırdan kurulacak).
+
+## 11 — Funnel dönüşüm analizi + K4 yayında + login fix'leri (8 Temmuz 2026)
+
+### 11.1 Yeni kod düzeltmeleri (bu oturumda, hepsi main'e merge edildi)
+- **PR #16** — Meta CAPI + funnel dönüşüm iyileştirmeleri + medya planı (iOS CTA web-birincil, QuizComplete value/currency, Phase-2 import, CAPI istemci dedup, `META_ADS_MEDIA_PLAN.md`). CAPI functions **deploy edildi, canlı**. Secret adı: **`META_CAPI_TOKEN`** (kod bu isme göre güncellendi).
+- **PR #17** — Phase-2 içe aktarımı bug fix (Codex P2): funnel cevapları sentetik id (`public_pat_001`) taşıyor, `Number()` ile ana bankada çözülemiyordu → her yanlış sessizce atlanıyordu. Çözüm: sorulara `bankId` (15/18/19) eklendi, import sentetik id → bankId → ana banka sorusu çözüyor.
+- **PR #18** — Apple/Safari login fix: `signInWithPopup` auth başarılı olduğu halde bazen null döndürüyor (`auth/popup-closed-by-user`) → funnel modalda takılıyordu ("giriş başarılı ama Web'de Devam Et ekranında kalıyor"). Çözüm: `runLogin`'de giriş öncesi UID yakalanıp, `loginFn()` null dönse de `auth.currentUser` bu denemeyle **gerçekten değiştiyse** girişi tamamla (Codex P2 edge-case'i: mevcut oturumu olan biri popup'ı iptal edince yanlış kayıt sayılmasın diye UID karşılaştırması eklendi).
+
+### 11.2 K4 "Tuzak Farmakoloji" artık teslimat alıyor (last_3d, 5-7 Tem)
+Log 8.1'de "yeni onaylandı, henüz teslimat yok" idi. Artık aktif teslimatta: 54 gösterim · 18 tıklama · CTR %33,3 · tıklama başı ₺0,07. **⚠️ 54 gösterim çok küçük örneklem — %33 CTR henüz gürültü**, birkaç yüz gösterime ulaşınca değerlendirilecek. Diğer C1 reklamları (last_3d): Patoloji-01 kanıtlanmış 19.311 imp/%5,49/₺2,02 CPLC (harcamanın ~%75'i), K2 Vaka Reels %5,51/₺1,07 (en iyi CPLC), K3 Karışık Deneme %8,12 (en iyi CTR)/₺1,34, K7 Geri Sayım düşük hacim. C1 toplam last_3d: 24.464 imp · ₺1.099 · ~₺366/gün tempo.
+
+### 11.3 Funnel dönüşüm sayıları (`ads_get_dataset_stats`, 30 Haz–8 Tem, YAKLAŞIK — saatlikten elle toplandı)
+| Event | ~Toplam |
+|---|---|
+| QuizStart | ~380 |
+| QuizComplete | ~210 (başlayanların ~%55'i — sağlam tamamlama) |
+| WebContinueClick | ~80 |
+| CompleteRegistration | ~20 (1'i kampanya öncesi) |
+| AppStoreClick | ~25 |
+| Purchase | 2 (ikisi de 6 Tem, yeni satış yok) |
+
+**🔑 En kritik bulgu — login adımında kayıp:** WebContinueClick ~80 → CompleteRegistration ~20 = "Devam Et"e basanların sadece ~%25'i girişi tamamlıyor. Bu, PR #18'de düzeltilen Apple popup bug'ıyla birebir örtüşüyor (insanlar login ekranında takılıyordu). **Fix'in etkisi birkaç gün sonra bu oranda görülmeli** — takip et.
+
+**Sinyal merdiveni konumu (plana göre):**
+- QuizComplete ~23/gün (~160/hafta) → optimizasyon hedefi olarak fazlasıyla yeterli ✅
+- CompleteRegistration ~15/hafta → **50/hafta eşiğinin ALTINDA** → henüz CompleteRegistration'a geçilmez
+- Purchase 2 toplam → 25/hafta'nın çok altında
+- **Sonuç: C1'i QuizComplete'e optimize tutmak DOĞRU, C3'ü (Purchase) PAUSED tutmak DOĞRU** — plan tam öngördüğü basamakta. Kayıt hacmini 50/hafta'ya çıkarmanın yolu: login kaybını kapatmak (PR #18) + hacim.
+
+**Güvenilirlik notu:** `ads_get_dataset_stats` log 4.2'de tutarsız olabildiği notlu; bu sefer saatlik kırılım (aggregation=event) makul/tutarlı geldi ama kesin sayı için Events Manager ekran görüntüsüyle çapraz kontrol önerilir. Oranlar/hikaye küçük sayım hatalarından etkilenmeyecek kadar net.
+
+### 11.4 H1 ön koşulları durumu (§07) — 8 Temmuz itibarıyla
+1. Landing ilk soru açık ✅ · 2. Web-birincil CTA + Phase-2 ✅ (deploy edildi) · 3. QuizComplete custom conversion ✅ / MiniTusComplete ❌ (H2) · 4. CAPI ✅ (deploy edildi) · 5. Custom Audiences ✅. **H1 kod ön koşulları tamam.** Sıradaki: Mini TUS ürünü (H2, §07-6) → C2 kampanyası + duran K1'leri açar.
