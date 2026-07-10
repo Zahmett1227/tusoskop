@@ -141,26 +141,41 @@ export async function generateMiniTusShareBlob(result) {
  * @returns {Promise<"shared"|"downloaded"|"failed">}
  */
 export async function shareMiniTusCard(result) {
+  let blob;
   try {
-    const blob = await generateMiniTusShareBlob(result);
-    if (!blob) return "failed";
-    const file = new File([blob], "tusoskop-mini-tus.png", { type: "image/png" });
+    blob = await generateMiniTusShareBlob(result);
+  } catch (error) {
+    if (typeof console !== "undefined") console.warn("shareMiniTusCard render failed:", error);
+    return "failed";
+  }
+  if (!blob) return "failed";
+  const file = new File([blob], "tusoskop-mini-tus.png", { type: "image/png" });
 
-    if (
-      typeof navigator !== "undefined" &&
-      navigator.canShare &&
-      navigator.canShare({ files: [file] }) &&
-      navigator.share
-    ) {
+  // Web Share API level 2 — dosya paylaşımı
+  if (
+    typeof navigator !== "undefined" &&
+    navigator.canShare &&
+    navigator.canShare({ files: [file] }) &&
+    navigator.share
+  ) {
+    try {
       await navigator.share({
         files: [file],
         title: "Mini TUS sonucum",
         text: "20 soruluk Mini TUS'ta neredeyim? Sen de dene 👇",
       });
       return "shared";
+    } catch (error) {
+      // AbortError = kullanıcı paylaşım sayfasını kapattı; indirmeye zorlama.
+      if (error && error.name === "AbortError") return "failed";
+      // Diğer hatalar (NotAllowedError, transient activation süresi dolması vb.)
+      // → paylaşım gerçekleşmedi, aşağıdaki indir fallback'ine düş (sessiz kalma).
+      if (typeof console !== "undefined") console.warn("navigator.share failed, indiriliyor:", error);
     }
+  }
 
-    // Fallback: indir
+  // Fallback: indir (paylaşım desteklenmiyor ya da başarısız oldu)
+  try {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
@@ -171,9 +186,7 @@ export async function shareMiniTusCard(result) {
     setTimeout(() => URL.revokeObjectURL(url), 4000);
     return "downloaded";
   } catch (error) {
-    // AbortError = kullanıcı paylaşım sayfasını kapattı; hata değil
-    if (error && error.name === "AbortError") return "failed";
-    if (typeof console !== "undefined") console.warn("shareMiniTusCard failed:", error);
+    if (typeof console !== "undefined") console.warn("shareMiniTusCard download failed:", error);
     return "failed";
   }
 }
