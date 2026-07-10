@@ -342,6 +342,14 @@ export default function PublicQuizFunnel() {
     setModalOpen(true);
   }, [baseParams, session, slug]);
 
+  const handleMiniTusShared = useCallback(
+    (outcome) => {
+      trackPublicQuizEvent("share_card", { ...baseParams, outcome });
+      trackMetaCustom("MiniTusShare", { campaign_code: session.campaignCode, outcome });
+    },
+    [baseParams, session]
+  );
+
   const runLogin = useCallback(
     async (method) => {
       setLoginBusy(true);
@@ -468,6 +476,7 @@ export default function PublicQuizFunnel() {
               appStoreUrl={appStoreUrl}
               onAppStoreClick={handleAppStoreClick}
               onWebContinue={handleWebContinue}
+              onShared={handleMiniTusShared}
             />
           )}
           {phase === "result" && !isMiniTus && (

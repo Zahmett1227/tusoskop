@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { shareMiniTusCard } from "./miniTusShareCard";
 
 /**
  * Mini TUS (20 soruluk kalibrasyon) sonuç ekranı.
@@ -84,9 +85,23 @@ export default function MiniTusResultScreen({
   appStoreUrl,
   onAppStoreClick,
   onWebContinue,
+  onShared,
 }) {
+  const [shareBusy, setShareBusy] = useState(false);
+  const [shareDone, setShareDone] = useState(false);
   if (!result) return null;
   const { dogru, ilkYuzdelik, enIyiPuanTuru, tPuanAralik, kPuanAralik, tBand, kBand } = result;
+
+  const handleShare = async () => {
+    if (shareBusy) return;
+    setShareBusy(true);
+    const outcome = await shareMiniTusCard(result);
+    setShareBusy(false);
+    if (outcome !== "failed") {
+      setShareDone(true);
+      if (typeof onShared === "function") onShared(outcome);
+    }
+  };
 
   return (
     <div className="w-full text-center">
@@ -150,6 +165,18 @@ export default function MiniTusResultScreen({
             <AppStoreCta href={appStoreUrl} onClick={onAppStoreClick} />
           </>
         )}
+
+        <button
+          type="button"
+          onClick={handleShare}
+          disabled={shareBusy}
+          className="flex w-full items-center justify-center gap-2 rounded-2xl border border-emerald-500/40 bg-emerald-500/10 px-5 py-3.5 text-sm font-bold text-emerald-200 transition hover:bg-emerald-500/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/70 disabled:opacity-60"
+        >
+          <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
+            <path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          {shareBusy ? "Kart hazırlanıyor…" : shareDone ? "Kart hazır ✓ Tekrar paylaş" : "Sonuç kartını paylaş"}
+        </button>
       </div>
 
       <p className="mt-4 text-xs font-medium text-slate-500">

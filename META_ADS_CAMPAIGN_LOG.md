@@ -323,3 +323,27 @@ Log 8.1'de "yeni onaylandı, henüz teslimat yok" idi. Artık aktif teslimatta: 
 - **Login fix (PR #18) etkisi:** dün ~15:00 deploy oldu; sonraki kayıt penceresi çok küçük (8 Tem 23:00: 3, 9 Tem 01:00: 2) + ham event güvenilmez. 2-3 gün sonra **Events Manager "Kayıt tamamlama" custom conversion** sayısından ölçülmeli.
 
 **Aksiyon:** Acil yok. K4'ün yükselişini izle (birkaç gün daha korursa kazanan kreatif formatı teyit). Optimizasyon hedefi ve C3/C2 kararları değişmedi — plandaki H1 basamağındayız.
+
+## 12 — Mini TUS ürünü (H2 işi, §07-6) — Faz 1 + Faz 2 tamamlandı (10 Temmuz 2026)
+
+Plan §07-6 / K1 (C2 kampanyası) için Mini TUS ürünü kodlandı. Kullanıcı kararları: **Faz 1 MVP önce**, **10 Temel + 10 Klinik** dağılım.
+
+### 12.1 Faz 1 — Çekirdek (PR #22, merge edildi)
+Yeni rota **`/coz/mini-tus`**: 20 soru (10 Temel + 10 Klinik, ana bankadan) → tahmini T/K puan aralığı + "Türkiye'de tahmini ilk %X" + zayıf alan ipucu → web-kayıt CTA. Mevcut 3-soruluk mini deneme akışı dokunulmadan `type` alanıyla ayrıştırıldı.
+- **`src/seo/miniTusScoring.js`** — `tusScoring.js`'i yeniden kullanır: 10 soruluk mini-net → ×10 projeksiyon → **bölüm ortalamasına shrinkage (0.55)** → normal CDF yüzdelik. **Kritik dürüstlük düzeltmesi:** ham ×10 "15/20 → ilk %1" gibi savunulamaz sonuç veriyordu; shrinkage + yüzdelik tabanı (min %3) ile artık 20/20 → ilk %3, 15/20 → ilk %8, 10/20 → ilk %31, 0/20 → ilk %83. Puan **±5 band aralık** olarak. Dil her yerde "tahmini/kalibrasyon".
+- **`src/data/miniTusQuestions.js`** — ana bankadan 20 soru, her biri `bankId` (Phase-2 import) + `section` ("temel"/"klinik", puan hesabı).
+- **`MiniTusResultScreen.jsx`** — yeni sonuç ekranı.
+- **`publicQuizCampaigns.js`** — `type: "mini_tus" | "mini_deneme"` şeması + mini-tus kampanyası (slug `mini-tus`, campaignCode `mq_minitus_01`).
+- **`PublicQuizFunnel.jsx`** — tip-farkında akış, `MiniTusComplete` pixel event'i (mini_deneme'de `QuizComplete`), dinamik başlık.
+
+### 12.2 Faz 2 — Paylaşım kartı (bu PR)
+- **`src/components/funnel/miniTusShareCard.js`** — 1080×1920 (9:16 story) canvas → PNG. Skor + tahmini puan + "İLK %X" yüzdeliği; **doğru cevap GÖSTERİLMEZ** (teaser). Lacivert #070c18 + emerald #10b981. Web Share API level-2 (dosya paylaşımı), yoksa PNG indir fallback. Chrome-headless ile görsel olarak doğrulandı (kart temiz/marka-tutarlı).
+- **`MiniTusResultScreen.jsx`** — "Sonuç kartını paylaş" butonu eklendi (`shareMiniTusCard`).
+- **`PublicQuizFunnel.jsx`** — `share_card` (Firebase) + `MiniTusShare` (Meta pixel) event'leri.
+
+### 12.3 Kalan — Faz 3 (yapılmadı)
+- **`MiniTusComplete` custom conversion** — Events Manager'dan elle kurulmalı (event en az bir kez fire olduktan sonra; API'de create yok). Aynı şekilde istenirse `MiniTusShare`.
+- **C2 kampanya kurulumu** — ayrı kampanya, MiniTusComplete'e optimize, Per–Paz yayın (plan K1). Bu, log'daki C1/C2 mimari borcunu da kapatır (K1 artık C1'de değil, gerçek bir C2 landing'i var).
+- Reklam kreatifi (K1 görseli) — mesaj eşleşmesi: reklam "20 soruda nerede olduğunu gör" → landing `/coz/mini-tus`.
+
+**Doğrulama:** Faz 1 ve Faz 2'de 354 test geçti, `vite build` + `eslint` temiz, skor kalibrasyonu ve paylaşım kartı (Chrome screenshot) doğrulandı.
