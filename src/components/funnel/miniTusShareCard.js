@@ -149,29 +149,34 @@ export async function shareMiniTusCard(result) {
     return "failed";
   }
   if (!blob) return "failed";
-  const file = new File([blob], "tusoskop-mini-tus.png", { type: "image/png" });
 
-  // Web Share API level 2 — dosya paylaşımı
-  if (
-    typeof navigator !== "undefined" &&
-    navigator.canShare &&
-    navigator.canShare({ files: [file] }) &&
-    navigator.share
-  ) {
-    try {
-      await navigator.share({
-        files: [file],
-        title: "Mini TUS sonucum",
-        text: "20 soruluk Mini TUS'ta neredeyim? Sen de dene 👇",
-      });
-      return "shared";
-    } catch (error) {
-      // AbortError = kullanıcı paylaşım sayfasını kapattı; indirmeye zorlama.
-      if (error && error.name === "AbortError") return "failed";
-      // Diğer hatalar (NotAllowedError, transient activation süresi dolması vb.)
-      // → paylaşım gerçekleşmedi, aşağıdaki indir fallback'ine düş (sessiz kalma).
-      if (typeof console !== "undefined") console.warn("navigator.share failed, indiriliyor:", error);
+  // Web Share API level 2 — dosya paylaşımı. File constructor / canShare / share
+  // hepsi tek try içinde; File yoksa (eski tarayıcı) ya da herhangi biri atarsa
+  // AŞAĞIDAKİ indir fallback'ine düşülür (fonksiyondan hata KAÇMAZ, aksi halde
+  // çağıran taraftaki butonu kalıcı disabled bırakırdı).
+  try {
+    if (
+      typeof File === "function" &&
+      typeof navigator !== "undefined" &&
+      navigator.canShare &&
+      navigator.share
+    ) {
+      const file = new File([blob], "tusoskop-mini-tus.png", { type: "image/png" });
+      if (navigator.canShare({ files: [file] })) {
+        await navigator.share({
+          files: [file],
+          title: "Mini TUS sonucum",
+          text: "20 soruluk Mini TUS'ta neredeyim? Sen de dene 👇",
+        });
+        return "shared";
+      }
     }
+  } catch (error) {
+    // AbortError = kullanıcı paylaşım sayfasını kapattı; indirmeye zorlama.
+    if (error && error.name === "AbortError") return "failed";
+    // Diğer hatalar (NotAllowedError, File yok, activation süresi dolması vb.)
+    // → paylaşım gerçekleşmedi, aşağıdaki indir fallback'ine düş (sessiz kalma).
+    if (typeof console !== "undefined") console.warn("navigator.share başarısız, indiriliyor:", error);
   }
 
   // Fallback: indir (paylaşım desteklenmiyor ya da başarısız oldu)
