@@ -305,3 +305,21 @@ Log 8.1'de "yeni onaylandı, henüz teslimat yok" idi. Artık aktif teslimatta: 
 
 ### 11.4 H1 ön koşulları durumu (§07) — 8 Temmuz itibarıyla
 1. Landing ilk soru açık ✅ · 2. Web-birincil CTA + Phase-2 ✅ (deploy edildi) · 3. QuizComplete custom conversion ✅ / MiniTusComplete ❌ (H2) · 4. CAPI ✅ (deploy edildi) · 5. Custom Audiences ✅. **H1 kod ön koşulları tamam.** Sıradaki: Mini TUS ürünü (H2, §07-6) → C2 kampanyası + duran K1'leri açar.
+
+### 11.5 K4 breakout + güncel durum (9 Temmuz 2026)
+**🌟 K4 "Tuzak Farmakoloji" gerçek kazanan çıktı.** Dün (8 Tem) 54 gösterim/%33 CTR "gürültü" diye işaretlenmişti; bugün örneklem büyüdü ve rakam TUTTU:
+
+| Reklam (today, 9 Tem) | Gösterim | CTR | CPLC |
+|---|---|---|---|
+| **K4 Tuzak Farmakoloji** | 240 | **%13,75** | **₺0,31** ⭐ |
+| Patoloji-01 (kanıtlanmış) | 2.714 | %6,34 | ₺1,03 |
+| K2/K3/K7 | ~0-4 (Meta bugün beslemiyor) | — | — |
+
+- K4 artık C1'in en verimli reklamı: Patoloji'nin CTR'ının ~2 katı, CPLC'sinin ~1/3'ü. Reddedilip düzeltilen kreatif (bkz. Bölüm 6 + 8.1) kazanan oldu — planın K4 fikrini ("%68 yanlış yaptı / klinik vaka + ego-merak kancası") doğruluyor. Meta henüz bütçenin çoğunu Patoloji'de tutuyor ama K4'ü beslemeye başladı; CBO olduğu için birkaç güne bütçeyi K4'e kaydırması beklenir — **Meta'nın optimizasyonuna bırak, izle.**
+- **Patoloji CPLC ₺2,02 → ₺1,03'e düştü** (kampanya olgunlaştı).
+- **Funnel sağlıklı:** QuizStart→QuizComplete hâlâ ~%55-65.
+- **⚠️ Non-funnel PageView dalgaları:** 7-8 Tem gecesi bazı saatlerde 85-145 PageView ama ~0 ViewContent/QuizStart (ör. 8 Tem 01:00: 145 PV / 0 VC) — `/coz` dışı organik/SEO/uygulama trafiği. Bölüm 11.3'teki metrik uyarısını somut olarak doğruluyor: dataset'te bol non-funnel trafik var, funnel ölçümü scoped custom conversion'dan yapılmalı.
+- **Purchase hâlâ 2** (yeni satış yok — retarget/satış katmanı henüz açık değil, plana uygun).
+- **Login fix (PR #18) etkisi:** dün ~15:00 deploy oldu; sonraki kayıt penceresi çok küçük (8 Tem 23:00: 3, 9 Tem 01:00: 2) + ham event güvenilmez. 2-3 gün sonra **Events Manager "Kayıt tamamlama" custom conversion** sayısından ölçülmeli.
+
+**Aksiyon:** Acil yok. K4'ün yükselişini izle (birkaç gün daha korursa kazanan kreatif formatı teyit). Optimizasyon hedefi ve C3/C2 kararları değişmedi — plandaki H1 basamağındayız.
