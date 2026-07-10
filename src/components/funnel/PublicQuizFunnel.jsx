@@ -19,8 +19,10 @@ import {
 } from "../../lib/publicQuizAnalytics";
 import { buildClientAppStoreUrl } from "../../utils/appStoreCampaignLink";
 import { getDeviceType } from "../../utils/device";
+import { estimateMiniTusFromAnswers } from "../../seo/miniTusScoring";
 import QuizQuestionCard from "./QuizQuestionCard";
 import QuizResultScreen from "./QuizResultScreen";
+import MiniTusResultScreen from "./MiniTusResultScreen";
 import QuizContinueModal from "./QuizContinueModal";
 
 /** Analitik/beacon oturum özetini serverless endpoint'e fire-and-forget gönderir. */
@@ -78,6 +80,7 @@ export default function PublicQuizFunnel() {
   const campaign = useMemo(() => getPublicQuizCampaignBySlug(slug), [slug]);
   const questions = useMemo(() => campaign?.questions ?? [], [campaign]);
   const total = questions.length;
+  const isMiniTus = campaign?.type === "mini_tus";
   const deviceType = useMemo(() => getDeviceType(), []);
 
   const errorKind = !campaign
@@ -127,6 +130,9 @@ export default function PublicQuizFunnel() {
     return 0;
   });
   const questionStartRef = useRef(Date.now());
+  const [miniTusResult, setMiniTusResult] = useState(() =>
+    isMiniTus && session?.completedAt ? estimateMiniTusFromAnswers(session.answers, questions) : null
+  );
 
   const [modalOpen, setModalOpen] = useState(false);
   const [loginBusy, setLoginBusy] = useState(false);
@@ -268,6 +274,10 @@ export default function PublicQuizFunnel() {
       /* kota — yut */
     }
 
+    if (isMiniTus) {
+      setMiniTusResult(estimateMiniTusFromAnswers(session.answers, questions));
+    }
+
     if (!session.completeTracked) {
       trackPublicQuizEvent("quiz_complete", {
         ...baseParams,
@@ -276,7 +286,8 @@ export default function PublicQuizFunnel() {
         question_count: total,
       });
       trackPublicQuizEvent("result_view", { ...baseParams, score, question_count: total });
-      trackMetaCustom("QuizComplete", {
+      // mini_tus akışı MiniTusComplete'e, mini_deneme akışı QuizComplete'e optimize edilir.
+      trackMetaCustom(isMiniTus ? "MiniTusComplete" : "QuizComplete", {
         campaign_code: session.campaignCode,
         score,
         question_count: total,
@@ -287,7 +298,7 @@ export default function PublicQuizFunnel() {
       updateQuizSession(slug, { completeTracked: true });
     }
     postQuizSession(updated, "quiz_complete", { score, questionCount: total });
-  }, [session, slug, total, score, baseParams, campaign]);
+  }, [session, slug, total, score, baseParams, campaign, isMiniTus, questions]);
 
   const handleNext = useCallback(() => {
     if (currentIndex >= total - 1) {
@@ -407,7 +418,9 @@ export default function PublicQuizFunnel() {
             <img src="/tusoskop-mark.png" alt="Tusoskop" width={32} height={32} className="h-8 w-8 rounded-lg" />
             <span className="text-lg font-black tracking-tight text-slate-100">TUSOSKOP</span>
           </div>
-          <h1 className="mt-3 text-xl font-black text-slate-100">3 Soruluk TUS Mikro Denemesi</h1>
+          <h1 className="mt-3 text-xl font-black text-slate-100">
+            {campaign?.title || "TUS Mikro Denemesi"}
+          </h1>
           <span className="mt-1.5 inline-flex items-center gap-1 rounded-full bg-slate-800/70 px-3 py-1 text-xs font-bold text-slate-300">
             Üyelik gerekmez
           </span>
@@ -446,7 +459,18 @@ export default function PublicQuizFunnel() {
             </>
           )}
 
-          {phase === "result" && (
+          {phase === "result" && isMiniTus && (
+            <MiniTusResultScreen
+              result={miniTusResult}
+              total={total}
+              durationMs={durationMs}
+              deviceType={deviceType}
+              appStoreUrl={appStoreUrl}
+              onAppStoreClick={handleAppStoreClick}
+              onWebContinue={handleWebContinue}
+            />
+          )}
+          {phase === "result" && !isMiniTus && (
             <QuizResultScreen
               score={score}
               total={total}

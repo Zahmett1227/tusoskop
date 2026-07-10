@@ -11,6 +11,10 @@
  *
  * `correctIndex` 0-tabanlıdır (ana bankadaki `correct` alanıyla aynı konvansiyon).
  *
+ * Kampanya `type`:
+ *  - varsayılan/`mini_deneme`: 3 soru, basit skor sonucu (mevcut Meta reklam funnel'ı)
+ *  - `mini_tus`: 20 soru (10 Temel + 10 Klinik), tahmini puan + yüzdelik sonucu
+ *
  * `bankId`: sorunun ANA BANKADAKİ sayısal id'si. Funnel sonuçları girişten sonra
  * hesaba işlenirken (`publicQuizImportService`) yanlış cevaplar bu sayısal id ile
  * wrongQuestions/FSRS'e eklenir — sentetik `id` (public_pat_001) ana bankada
@@ -21,6 +25,7 @@
  * @typedef {Object} PublicQuizQuestion
  * @property {string} id
  * @property {number} bankId          Ana bankadaki sayısal soru id'si (import için)
+ * @property {"temel"|"klinik"} [section]  Mini TUS puan hesabı için bölüm (yalnız mini_tus)
  * @property {string} questionText
  * @property {string[]} options
  * @property {number} correctIndex   0-tabanlı doğru şık indeksi
@@ -38,11 +43,24 @@
  * @property {string} subject
  * @property {boolean} active
  * @property {string} appleCampaignToken  App Store Connect ct değeri
+ * @property {"mini_deneme"|"mini_tus"} [type]  Akış tipi (varsayılan: mini_deneme, 3 soru)
  * @property {PublicQuizQuestion[]} questions
  */
 
+import { MINI_TUS_QUESTIONS } from "./miniTusQuestions";
+
 /** @type {PublicQuizCampaign[]} */
 export const PUBLIC_QUIZ_CAMPAIGNS = [
+  {
+    slug: "mini-tus",
+    campaignCode: "mq_minitus_01",
+    title: "20 Soruluk Mini TUS",
+    subject: "Karışık (Temel + Klinik)",
+    active: true,
+    type: "mini_tus",
+    appleCampaignToken: "mq_minitus_01",
+    questions: MINI_TUS_QUESTIONS,
+  },
   {
     slug: "patoloji-01",
     campaignCode: "mq_pat_01",
