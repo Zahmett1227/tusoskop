@@ -95,11 +95,15 @@ export default function MiniTusResultScreen({
   const handleShare = async () => {
     if (shareBusy) return;
     setShareBusy(true);
-    const outcome = await shareMiniTusCard(result);
-    setShareBusy(false);
-    if (outcome !== "failed") {
-      setShareDone(true);
-      if (typeof onShared === "function") onShared(outcome);
+    try {
+      const outcome = await shareMiniTusCard(result);
+      if (outcome !== "failed") {
+        setShareDone(true);
+        if (typeof onShared === "function") onShared(outcome);
+      }
+    } finally {
+      // Ne olursa olsun butonu tekrar aktif et (kalıcı "hazırlanıyor" kalmasın).
+      setShareBusy(false);
     }
   };
 
