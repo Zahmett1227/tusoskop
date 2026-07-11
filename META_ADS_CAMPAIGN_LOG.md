@@ -347,3 +347,27 @@ Yeni rota **`/coz/mini-tus`**: 20 soru (10 Temel + 10 Klinik, ana bankadan) → 
 - Reklam kreatifi (K1 görseli) — mesaj eşleşmesi: reklam "20 soruda nerede olduğunu gör" → landing `/coz/mini-tus`.
 
 **Doğrulama:** Faz 1 ve Faz 2'de 354 test geçti, `vite build` + `eslint` temiz, skor kalibrasyonu ve paylaşım kartı (Chrome screenshot) doğrulandı.
+
+### 12.4 Faz 3 kısmı — C2 kampanyası kuruldu (11 Temmuz 2026)
+Kullanıcı canlıda Mini TUS'u test etti (çalışıyor), **MiniTusComplete event'i fire oldu (2 adet, 10 Tem 13:00)**. Faz 3'e geçildi.
+
+**Karar (kullanıcı):** C2 bütçe **₺75/gün** (plan B), yayın **her gün** (day-parting sonra), başlatma yolu **A: şimdi kur + bootstrap** (custom conversion'ı beklemeden).
+
+**Neden bootstrap:** MiniTusComplete Events Manager custom conversion seçicisinde henüz görünmüyor (2 kez, birkaç saat önce fire oldu — Meta seçiciye eklemek için birikim istiyor; QuizComplete/AppStoreClick'te de yaşanmıştı). Ayrıca sinyal merdiveni (İlke 2) ~0/hafta event'e optimizasyonu yasaklıyor. Çözüm: C2 şimdilik **ViewContent'e** optimize; hacim birikince MiniTusComplete'e çevrilecek (tek `ads_update_entity`, aynı OFFSITE_CONVERSIONS goal — sadece promoted_object custom_event_type → custom_conversion_id).
+
+**Kurulan yapı (hepsi PAUSED — kullanıcı inceleyip yayına alacak):**
+| Katman | ID | Ayar |
+|---|---|---|
+| Kampanya | `52564189098163` | C2 · Mini TUS Etkinliği, OUTCOME_SALES, CBO ₺75/gün (7500 kuruş) |
+| Ad set | `52564189409363` | OFFSITE_CONVERSIONS → CONTENT_VIEW (ViewContent) bootstrap, TR 20-33, Advantage+, WEBSITE, pixel `1327796822800702` |
+| Reklam | `52564189421963` | "C2 · K1 Mini TUS" |
+| Kreatif | `995100973346876` | "C2 · Mini TUS Kreatif — mq_minitus_01"; image_hash `8acdeded48c3ee9880a41beb5e2f9feb` (eski K1'den yeniden kullanıldı), başlık "20 Soruda Nerede Olduğunu Gör", link `https://www.tusoskop.com/coz/mini-tus?campaign_code=mq_minitus_01&utm_source=facebook&utm_medium=paid_social&utm_campaign=mini_tus&utm_content=mq_minitus_01`, CTA LEARN_MORE |
+
+- **Önizleme (MOBILE_FEED_STANDARD) doğrulandı** — kreatif ürünle birebir mesaj eşleşmesi (örnek "kalibrasyon puanın 49,7 → ilk %51" + "resmi ÖSYM puanı değildir" notu). Link doğru.
+- **Bilinen kısıt — IG kimliği:** `ads_get_ig_accounts` bu hesapta henüz açık değil ("gradually rolling out"), IG user id alınamadı. Kreatif sayfa-bağlı IG kimliğiyle oluşturuldu. Kullanıcı Ads Manager'da INSTAGRAM önizlemesini + IG hesabını yayına almadan önce doğrulamalı.
+- **campaignCode:** `mq_minitus_01`, slug `mini-tus` (bkz. `src/data/publicQuizCampaigns.js`).
+
+**Sıradaki adımlar:**
+1. Kullanıcı: C2'yi Ads Manager'da inceleyip (IG önizleme dahil) yayına al.
+2. MiniTusComplete ~30-50/hafta olunca: Events Manager'dan custom conversion oluştur → ad set `52564189409363`'ün promoted_object'ini `{custom_conversion_id: <MiniTusComplete CC>}` yap (`ads_update_entity`).
+3. Kalan Faz 3: `MiniTusShare` custom conversion (opsiyonel), in-app tarayıcı paylaşım ipucu (`isInAppBrowser()`).
