@@ -372,3 +372,56 @@ Kullanıcı canlıda Mini TUS'u test etti (çalışıyor), **MiniTusComplete eve
 2. MiniTusComplete ~30-50/hafta olunca: Events Manager'dan custom conversion oluştur → ad set `52564189409363`'ün promoted_object'ini `{custom_conversion_id: <MiniTusComplete CC>}` yap (`ads_update_entity`).
 3. Kalan Faz 3: `MiniTusShare` custom conversion (opsiyonel), in-app tarayıcı paylaşım ipucu (`isInAppBrowser()`).
 4. **İzleme:** 1-2 gün sonra C2 CTR trendi + MiniTusComplete organik hacmi. Ayrıca login-fix'in (PR #18) kayıt dönüşümüne etkisini scoped "Kayıt tamamlama" custom conversion'dan ölç.
+
+## 13 — Satış katmanı: Eylül Paketi + dershane ~120.000₺ çıpası (13 Temmuz 2026)
+
+Kullanıcı: *"Önce plan yap. Dershane fiyatları şuan 120.000 TL civarı, buna göre detaylı plan çıkar. Amaç: satışı artırmak. Plandan çok aşırı kopmayalım."* → Onay: *"Hepsini onaylıyorum. Satışı artıracak ne varsa yap. Kaliteli yap."* Plan §07-7 + §08 + K6 satış katmanı **H5'ten (3-9 Ağu) H2'ye (şimdi) öne çekildi** — plandan yapısal sapma değil: satış hedefi + retarget Purchase plan-onaylı + C1/C2'nin sıcak havuzu zaten dolmakta. Çıpa dershane 45.000₺ → **~120.000₺** güncellendi (fark ~214× → ~572×).
+
+### 13.1 Teşhis (neden satış ~0)
+Hiçbir kampanya "satın al" demiyordu: C1→QuizComplete, C2→ViewContent (ikisi de edinim/huni tepesi). Satış katmanı (C3 + K6 + `/fiyatlandirma` kıyas) hiç kurulmamıştı. Ürün sorunu değil, **eksik katman**.
+
+### 13.2 Kod — satış katmanı (bu oturum, tek PR)
+Tek doğruluk kaynağı **`src/constants/eylulPaketi.js`** (Eylül Paketi = plus_3m'in sezonluk çerçevesi, 209,70₺; dershane çıpası ~120.000₺; kanıt satırı; günde ≈2,3₺). Dürüstlük guardrail'i dosyada belgeli.
+- **Adım 0 — `/fiyatlandirma` kıyas bloğu + deep-link:**
+  - `PublicSeoPages.jsx` → `PricingComparison` (React) + `scripts/generate-seo-pages.mjs` → `renderPricingComparison()` (statik prerender, SEO/no-JS) — **iki katman senkron**. Dershane ~120.000₺ vs Eylül Paketi 209,70₺ + zorunlu kanıt satırı + "farklı tür ürün" dürüstlük notu.
+  - `seoContent.js` → `/fiyatlandirma` metni artık gerçek fiyat/Eylül Paketi çerçevesini yansıtıyor ("fiyat verilmez" politikası kaldırıldı — fiyatlar sunucu-otoriter ve gerçek).
+  - **Deep-link `/app?intent=plus`** (`AppAuthenticated.jsx`): girişliyse doğrudan `premiumInfo`; anonimse giriş sonrası SPA state korunduğu için yine açılır. URL tüketilince temizlenir.
+  - **"Eylül Paketi" adlandırması** (`PremiumInfoScreen.jsx`): plan cards üstünde dershane çıpa şeridi + plus_3m kartında "🍂 Eylül Paketi · TUS'a kadar sınırsız her şey" eyebrow. plusPlans.js **dokunulmadı** (billing güvende) — sadece EYLUL_PAKETI.planId eşleşmesiyle sunum.
+- **Adım 1 — satın alma anı kartı (§08):** `src/components/funnel/EylulPaketiCard.jsx` (yeni, ortak). Funnel sonuç ekranlarına (`MiniTusResultScreen` + `QuizResultScreen`) **ikincil** kart olarak eklendi (birincil CTA hâlâ ücretsiz kayıt — soğuk edinimi bastırmıyor). En yüksek niyet anında (skor + zayıf konu görüldü) fiyat çıpası. CTA → `/app?intent=plus`, `EylulPaketiClick` (Meta) + `eylul_paketi_click` (Firebase) event'leri.
+- **Adım 3 — `InitiateCheckout` köprü sinyali:** `metaPixel.js` → `trackInitiateCheckout`; `PremiumInfoScreen` token başarısında (iframe açılmadan) fire eder. ViewContent↔Purchase arası ara sinyal — C3, Purchase hacmi yokken buna optimize edilebilir. **Not: şimdilik yalnız istemci pixel'i (CAPI yok);** ad-blocker'da az sayar ama optimizasyon bootstrap'ı için yeterli. event_id=merchantOid → istenirse CAPI ile dedup edilebilir (gelecek iş).
+
+**Doğrulama:** 354 test geçti · `vite build` (generator dâhil) + eslint temiz (0 hata; 1 önceden var olan uyarı) · `/fiyatlandirma` React bloğu Chromium'da temiz render (içerik tam, JS exception yok) · `/app?intent=plus` deep-link JS exception'sız. **Sınırlı test:** PremiumInfoScreen değişiklikleri (Eylül eyebrow, dershane şeridi, InitiateCheckout) giriş arkasında olduğu için headless sürülemedi — derleme + import'lar geçerli, mantık minimal; canlıda bir kez göz doğrulaması önerilir.
+
+### 13.3 C3 kampanyası — iskelet PAUSED kuruldu, kreatif+aktivasyon deploy'a bağlı
+Retarget & satış kampanyası kuruldu (hepsi **PAUSED**):
+
+| Katman | ID | Ayar |
+|---|---|---|
+| Kampanya | `52564951297363` | "C3 · Retarget & Satış — Eylül Paketi", OUTCOME_SALES, CBO **₺50/gün** (5000 kuruş), LOWEST_COST |
+| Ad set | `52564951353563` | OFFSITE_CONVERSIONS → **PURCHASE** (promoted_object `{pixel 1327796822800702, custom_event_type PURCHASE}`), WEBSITE, TR 20-40, **sıcak kitle hard-scoped** (Advantage+ audience OFF): `52561038615363` (WCA QuizComplete 30g) + `52561038908763` (WCA Kayıt/CompleteRegistration 90g), billing IMPRESSIONS |
+
+- **Neden Purchase optimizasyonu (plan §09 istisnası):** hacim yokken bile retarget'ın dar sıcak kitlesinde Purchase izinli ("dar kitlede sıklıkla teslimat yeter"). Advantage+ audience **kapatıldı** — retarget'ın sıcak havuzu genişlemesin (C1/C2 prospecting'de açıktı; C3 farkı bu).
+- **Kreatif hazır:** K6 kıyas kartı `public/ads/k6-eylul-paketi.png` (2160×2700, 4:5). Kaynak `scripts/ads-creatives/`. Landing ile mesaj eşleşmesi: reklam "Dershaneye ~120.000₺ vermeden önce" → `/fiyatlandirma` aynı blok.
+- **Page ID:** `1262932140225631` (hesabın tek promoted sayfası).
+
+**⚠️ KALAN — SADECE DEPLOY SONRASI YAPILABİLİR (iki sert bağımlılık):**
+1. **Landing:** `/fiyatlandirma` kıyas bloğu PR #28 merge + deploy olmadan canlı değil. C3 şimdi açılırsa retarget trafiği ESKİ fiyat sayfasına iner (mesaj eşleşmesi kırılır). → **C3, PR deploy olmadan ASLA aktive edilmemeli.**
+2. **Kreatif image_url:** Meta `image_url`'i fetch eder; PNG canlı bir public URL'de olmalı. Repo private (raw.githubusercontent çalışmaz), prod'a deploy edilince `https://www.tusoskop.com/ads/k6-eylul-paketi.png` canlı olur.
+
+**Deploy sonrası tek seferlik adımlar (bende hazır, kullanıcı "deploy oldu" derse ben de yapabilirim):**
+```
+1) ads_create_creative(ad_account_id=2734371800349546, page_id=1262932140225631,
+     image_url="https://www.tusoskop.com/ads/k6-eylul-paketi.png",
+     link_url="https://www.tusoskop.com/fiyatlandirma",
+     message="TUS dershaneleri ~120.000₺. Tusoskop Eylül Paketi ile sınava kadar sınırsız
+              soru + akıllı tekrar: 209,70₺ (günde ≈2,3₺). 7.000+ soru · haftalık Türkiye ligi.",
+     headline="Dershaneye ~120.000₺ vermeden önce",
+     description="Sınava kadar sınırsız — 209,70₺", call_to_action_type="GET_OFFER",
+     name="C3 · K6 Eylül Paketi kıyas")
+2) ads_create_ad(ad_set_id=52564951353563, creative={creative_id}, name="C3 · K6 Eylül Paketi")
+3) Meta incelemesi temiz geçince: ads_activate_entity(campaign 52564951297363 + ad set + ad).
+```
+
+- **K8 (sosyal kanıt) eklenmedi — bilerek:** plan K8 GERÇEK haftalık sayı ister (lig/çözülen soru); uydurma yasak. Kullanıcı gerçek rakam verince K8 kreatifi üretilip C3'e K6'nın yanına eklenecek. Şimdilik K6'nın içindeki kanıt satırı ("7.000+ soru · akıllı tekrar · haftalık lig") dürüstlük emniyeti.
+- **Bütçe/sıklık notu:** sıcak kitle küçük (~1000-2000 kişi tabanı). ₺50/gün'de sıklık hızlı yükselebilir; plan KPI sıklık ≤ 4/hafta. Aktivasyondan sonra 2-3 gün sıklık izlenmeli, gerekirse bütçe düşürülmeli. Bütçe kullanıcı onayına açık (PAUSED).
+- **Optimizasyon merdiveni (İlke 2):** Purchase hacmi 0 iken Meta öğrenmesi yavaş olur ama dar kitlede teslimat sürer. `InitiateCheckout` (bu PR'da eklendi) hacim toplayınca C3 ona çevrilip Purchase'a kademeli inilebilir (C2'nin ViewContent→MiniTusComplete deseni).

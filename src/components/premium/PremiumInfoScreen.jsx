@@ -8,6 +8,8 @@ import {
   getMailtoPaymentIssue,
 } from "../../config/support";
 import { setClarityTag, trackClarityEvent } from "../../lib/clarity";
+import { trackInitiateCheckout } from "../../lib/metaPixel";
+import { EYLUL_PAKETI, DERSHANE_ANCHOR } from "../../constants/eylulPaketi";
 import { isUserPremium } from "../../utils/premiumUtils";
 import CoffeeAnimation from "./CoffeeAnimation";
 import PaytrCheckoutModal from "./PaytrCheckoutModal";
@@ -117,6 +119,14 @@ export default function PremiumInfoScreen({
           setClarityTag("checkout_plan", plan.id);
           setClarityTag("checkout_sku", plan.sku || "");
           trackClarityEvent("paytr_checkout_open");
+          // Meta: ödeme başlatıldı (C3 için Purchase-öncesi köprü sinyali).
+          // event_id = merchantOid → gelecekte CAPI ile dedup edilebilir.
+          trackInitiateCheckout({
+            value: plan.totalPrice,
+            currency: "TRY",
+            planId: plan.id,
+            orderId: res.merchantOid,
+          });
         } catch {
           /* sessiz */
         }
@@ -346,6 +356,30 @@ export default function PremiumInfoScreen({
             </div>
           </div>
 
+          {/* Dershane çıpası — satın alma anında fiyat karşılaştırması (plan K6/§08) */}
+          <div className="rounded-[1.75rem] border border-[#d9c3ac] bg-gradient-to-r from-[#fff8ef] via-white to-[#f8eadb] px-4 py-4 shadow-sm sm:px-6 sm:py-5">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="min-w-0">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#9a7758]">
+                  {EYLUL_PAKETI.name}
+                </p>
+                <p className="mt-1.5 text-base sm:text-lg font-black leading-snug text-[#2a1a0f]">
+                  TUS dershaneleri {DERSHANE_ANCHOR.priceLabel}; {EYLUL_PAKETI.name} ile
+                  sınava kadar sınırsız {EYLUL_PAKETI.priceLabel}.
+                </p>
+                <p className="mt-1 text-xs font-semibold text-[#6f5946]">
+                  {EYLUL_PAKETI.proofLine}
+                </p>
+              </div>
+              <div className="shrink-0 text-center sm:text-right">
+                <p className="text-2xl font-black tabular-nums text-emerald-700">
+                  {EYLUL_PAKETI.perDayLabel}
+                </p>
+                <p className="text-[11px] font-bold text-[#6f5946]">90 gün · sınava kadar</p>
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 items-stretch">
             {PLUS_PLANS.map((plan) => {
               const is1m = plan.id === "plus_1m";
@@ -377,6 +411,11 @@ export default function PremiumInfoScreen({
                   ) : null}
 
                   <div className="relative pr-2">
+                    {plan.id === EYLUL_PAKETI.planId ? (
+                      <p className="mb-1.5 text-[10px] font-black uppercase tracking-[0.16em] text-[#9a6b32]">
+                        🍂 {EYLUL_PAKETI.name} · {EYLUL_PAKETI.tagline}
+                      </p>
+                    ) : null}
                     <h3 className="text-xl sm:text-2xl font-extrabold text-neutral-950 leading-tight">
                       {plan.label}
                     </h3>

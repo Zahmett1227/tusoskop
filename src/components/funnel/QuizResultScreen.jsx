@@ -1,4 +1,5 @@
 import React from "react";
+import EylulPaketiCard from "./EylulPaketiCard";
 
 /**
  * Mikro deneme sonuç ekranı — asıl dönüşüm noktası.
@@ -77,6 +78,7 @@ export default function QuizResultScreen({
   appStoreUrl,
   onAppStoreClick,
   onWebContinue,
+  onEylulPaketiClick,
 }) {
   const ratio = total > 0 ? score / total : 0;
   const percent = Math.round(ratio * 100);
@@ -132,6 +134,8 @@ export default function QuizResultScreen({
           </>
         )}
       </div>
+
+      <EylulPaketiCard onClick={onEylulPaketiClick} />
 
       <p className="mt-4 text-xs font-medium text-slate-500">
         Tusoskop'ta ders ve konu bazlı soruları çöz, yanlışlarını takip et ve kişisel

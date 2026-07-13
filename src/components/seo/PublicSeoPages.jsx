@@ -34,6 +34,11 @@ import {
 } from "../../seo/seoContent";
 import { KONTENJAN_DATA, KONTENJAN_DONEM_LABEL } from "../../seo/kontenjanData";
 import { SUBJECTS } from "../../data/subjects";
+import {
+  EYLUL_PAKETI,
+  DERSHANE_ANCHOR,
+  PRICING_COMPARISON_ROWS,
+} from "../../constants/eylulPaketi";
 
 const OPTION_KEYS = ["A", "B", "C", "D", "E"];
 const TEMEL_DERSLER = SUBJECTS.filter((s) => s.type === "Temel").map((s) => s.name);
@@ -993,6 +998,84 @@ function KontenjanTable({ data, donem }) {
   );
 }
 
+/**
+ * /fiyatlandirma kıyas bloğu (plan §07-7 / K6). Dershane çıpası (~120.000₺) +
+ * Eylül Paketi (209,70₺) + zorunlu kanıt satırı + satın alma CTA'sı.
+ * CTA → /app?intent=plus: anonim kullanıcı önce giriş yapar, ardından uygulama
+ * doğrudan Plus satın alma ekranını açar (bkz. AppAuthenticated intent=plus).
+ */
+function PricingComparison() {
+  return (
+    <section aria-label="Eylül Paketi karşılaştırması" className="mt-10">
+      <div className="rounded-3xl border border-emerald-400/30 bg-gradient-to-b from-emerald-400/[0.08] to-slate-900/40 p-5 md:p-8">
+        <p className="text-xs font-black uppercase tracking-[0.22em] text-emerald-300">
+          Eylül Paketi
+        </p>
+        <h2 className="mt-3 text-2xl font-black leading-tight tracking-tight md:text-3xl">
+          Dershaneye {DERSHANE_ANCHOR.priceLabel} vermeden önce
+        </h2>
+        <p className="mt-3 max-w-2xl text-base leading-relaxed text-slate-300">
+          Aynı hazırlık dönemine dershaneler {DERSHANE_ANCHOR.priceLabel} isterken,
+          Tusoskop {EYLUL_PAKETI.name} sınava kadar sınırsız soru çözme ve akıllı
+          tekrar sunar — <span className="font-bold text-emerald-200">{EYLUL_PAKETI.priceLabel}</span>{" "}
+          ({EYLUL_PAKETI.perDayLabel}).
+        </p>
+
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          {PRICING_COMPARISON_ROWS.map((row) => (
+            <div
+              key={row.key}
+              className={`rounded-2xl border p-5 ${
+                row.highlight
+                  ? "border-emerald-300/70 bg-emerald-300/10"
+                  : "border-slate-700 bg-slate-900/50"
+              }`}
+            >
+              <p className={`text-sm font-bold ${row.highlight ? "text-emerald-200" : "text-slate-300"}`}>
+                {row.title}
+              </p>
+              <p className={`mt-2 text-3xl font-black tracking-tight ${row.highlight ? "text-emerald-300" : "text-slate-200"}`}>
+                {row.price}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-400">{row.detail}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Kanıt satırı — plan K6 guardrail'i: kıyasın yanında ZORUNLU. */}
+        <p className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-bold text-slate-200">
+          <span className="text-emerald-300" aria-hidden>✓</span>
+          {EYLUL_PAKETI.proofLine}
+        </p>
+
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <a
+            href="/app?intent=plus"
+            className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-emerald-300 px-6 font-black text-slate-950 transition hover:bg-emerald-200"
+          >
+            {EYLUL_PAKETI.name}&apos;ni Al · {EYLUL_PAKETI.priceLabel}
+          </a>
+          <a
+            href="/app?intent=plus"
+            className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-slate-700 px-6 font-bold text-white transition hover:border-emerald-300/70"
+          >
+            Önce ücretsiz dene
+          </a>
+        </div>
+
+        {/* Dürüstlük notu: farklı tür ürün — abartısız konumlandırma. */}
+        <p className="mt-5 text-xs leading-relaxed text-slate-500">
+          {DERSHANE_ANCHOR.note}. Tusoskop bir soru çözme ve akıllı tekrar
+          platformudur (ders anlatımı değil); kıyas hazırlık bütçesi içindir.
+          Plus paketleri 89,90₺&apos;den başlar, {EYLUL_PAKETI.name}{" "}
+          ({EYLUL_PAKETI.durationLabel}) {EYLUL_PAKETI.priceLabel}&apos;dir.
+          Ödeme PayTR ile güvenli alınır, onay anında hesabına tanımlanır.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 export function SeoLandingPage({ page }) {
   const faq = useMemo(() => page.faq ?? commonFaq, [page.faq]);
   // JSON-LD FAQ şeması, sayfada görünen soru setiyle birebir aynı olmalı.
@@ -1027,6 +1110,7 @@ export function SeoLandingPage({ page }) {
             ) : null}
             <SampleQuestionCard sample={page.sample} subject={page.subject} />
             {page.isSubject ? <SubjectTopics subject={page.subject} topics={page.topics} /> : null}
+            {page.slug === "fiyatlandirma" ? <PricingComparison /> : null}
             {page.tool === "score" ? <TusScoreCalculator /> : null}
             {page.tool === "kontenjan" ? (
               <KontenjanTable data={page.kontenjanData} donem={page.kontenjanDonem} />

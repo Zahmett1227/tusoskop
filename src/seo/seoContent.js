@@ -650,30 +650,30 @@ const contentSeoPages = [
       "Tusoskop fiyatlandırma seçeneklerini, ücretsiz kullanım imkanlarını ve TUS hazırlığı için sunulan dijital özellikleri incele.",
     h1: "Tusoskop Fiyatlandırma",
     intro:
-      "Tusoskop'ta ücretsiz kullanım ve Plus erişim seçenekleri bulunabilir. Güncel fiyatlar ve paket detayları uygulama içindeki satın alma ekranında veya ilgili mağaza ekranında görüntülenmelidir.",
+      "Tusoskop ücretsiz kullanılabilir; günlük soru hakkın dolduğunda ise Plus'a geçebilirsin. Plus paketleri 89,90₺'den başlar. Sınav dönemi için Eylül Paketi (3 aylık, sınava kadar sınırsız) 209,70₺'dir — TUS dershanelerinin ~120.000₺'ye ulaşan paketlerinin yanında hazırlık bütçesinde büyük fark yaratır.",
     sections: [
       {
         heading: "Tusoskop ücretli mi?",
         paragraphs: [
-          "Tusoskop'ta ücretsiz kullanım limitleri ve Plus özellikler bulunur. Net fiyat bilgisi zamanla değişebileceği için güncel fiyatlar uygulama içinde kontrol edilmelidir.",
+          "Tusoskop'ta ücretsiz kullanım limitleri ve Plus özellikler bulunur. Ücretsiz katmanda günde belirli sayıda soru çözebilir, Plus ile bu sınırları kaldırabilirsin.",
         ],
       },
       {
         heading: "Ücretsiz kullanım var mı?",
         paragraphs: [
-          "Uygulamada ücretsiz kullanım hakkı bulunur; limitler ve kapsam uygulama içindeki güncel kurallara göre değişebilir.",
+          "Evet. Uygulamada ücretsiz kullanım hakkı bulunur; günlük soru ve deneme limitleri uygulama içindeki güncel kurallara göre uygulanır. Önce ücretsiz deneyip sonra Plus'a geçebilirsin.",
         ],
       },
       {
-        heading: "Premium özellikler neler?",
+        heading: "Premium (Plus) özellikler neler?",
         paragraphs: [
-          "Plus erişim, daha geniş soru çözme, deneme, tekrar ve analiz kullanımını destekleyen özellikler sunar. Güncel kapsam uygulama içinde gösterilir.",
+          "Plus erişim; sınırsız soru çözme, sınırsız deneme, sınırsız tekrar kuyruğu, tam favori/yanlış geçmişi ve gelişmiş deneme net grafiği sunar. Akıllı tekrar (FSRS) ve haftalık Türkiye ligi tüm kullanıcılara açıktır.",
         ],
       },
       {
-        heading: "Abonelik varsa nasıl çalışır?",
+        heading: "Eylül Paketi nedir?",
         paragraphs: [
-          "Satın alma ve erişim koşulları uygulama içindeki güncel bilgilere göre değerlendirilmelidir. Fiyat uydurmamak için bu sayfada sabit tutar verilmemiştir.",
+          "Eylül Paketi, 3 aylık Plus planının sınav dönemi çerçevesidir: 209,70₺ karşılığında sınava kadar (90 gün) sınırsız erişim — günde yaklaşık 2,3₺. Fiyat, standart 3 aylık planla aynıdır. Ödeme PayTR ile güvenli şekilde alınır ve onaylandığı anda hesabına tanımlanır.",
         ],
       },
     ],

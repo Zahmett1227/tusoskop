@@ -91,6 +91,26 @@ export function trackCompleteRegistration({ method, uid } = {}) {
   );
 }
 
+/**
+ * Ödeme akışı başlatıldığında (PayTR token alındı, iframe açılmak üzere) atılır.
+ * Satış hunisinde ViewContent ile Purchase arasındaki ara sinyal — C3 retarget
+ * kampanyası hacim biriktirene dek Purchase yerine buna optimize edilebilir
+ * (plan İlke 2: "en derin, yeterli hacimli olayı hedefle").
+ */
+export function trackInitiateCheckout({ value = 89.9, currency = "TRY", planId, orderId } = {}) {
+  track(
+    "InitiateCheckout",
+    {
+      content_name: "Tusoskop Plus Ödeme",
+      content_type: "subscription",
+      currency,
+      value,
+      ...(planId ? { content_ids: [planId] } : {}),
+    },
+    orderId
+  );
+}
+
 export function trackPurchase({ value = 89.9, currency = "TRY", orderId } = {}) {
   track(
     "Purchase",

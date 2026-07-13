@@ -154,10 +154,12 @@ Hedefleme her yerde aynı ve sıkıcı: Türkiye, 20–33 yaş, Advantage+ açı
 
 **Risk:** Soğuk kitlede harcarsan boşa gider — bu fikir kesinlikle sıcak kitle mesajı. C1'e sızdırma.
 
-### K6 — "Dershaneye 45.000₺ vermeden önce" — Eylül Paketi
+### K6 — "Dershaneye ~120.000₺ vermeden önce" — Eylül Paketi
 *Retarget · C3 · Satış katmanı*
 
-**Kanca:** "TUS dershanesi: 45.000₺. Tusoskop Eylül Paketi — sınava kadar sınırsız her şey: 209,70₺. Soru çözerek kazanılan sınava soru çözerek hazırlan." Kartta kanıt satırı şart: "7.000+ soru · akıllı tekrar · haftalık Türkiye ligi" — yoksa ucuzluk kalitesizlik okunur.
+**Kanca:** "TUS dershaneleri ~120.000₺. Tusoskop Eylül Paketi — sınava kadar sınırsız her şey: 209,70₺ (günde ≈2,3₺). Soru çözerek kazanılan sınava soru çözerek hazırlan." Kartta kanıt satırı şart: "7.000+ soru · akıllı tekrar · haftalık Türkiye ligi" — yoksa ucuzluk kalitesizlik okunur.
+
+> **Çıpa güncellemesi (13 Tem 2026):** Referans dershane fiyatı 45.000₺ değil ~120.000₺ (kullanıcı beyanı, güncel piyasa). Fark ~572× — çıpa çok daha güçlü, ama "bu kadar ucuzsa kalitesizdir" riski de aynı oranda keskinleşir. Bu yüzden kanıt satırı + "farklı tür ürün (soru bankası, ders anlatımı değil)" dürüstlük notu ZORUNLU; K6 asla K8 (sosyal kanıt) olmadan tek başına dönmez. Tek doğruluk kaynağı: `src/constants/eylulPaketi.js`.
 
 **Format:** Tek slaytlık kıyas kartı + 3 kartlı carousel (dershane / online kamp / Tusoskop). "Eylül Paketi" = mevcut 3 aylık planın (₺209,70) sezonluk yeniden adlandırması — fiyat değişmiyor, çerçeve değişiyor.
 
@@ -169,7 +171,7 @@ Hedefleme her yerde aynı ve sıkıcı: Türkiye, 20–33 yaş, Advantage+ açı
 
 **KPI:** İlk 60 gün Purchase ≤ ₺300, sonra ≤ ₺200 · sıklık ≤ 4/hafta
 
-**Neden işler:** Satın alma anı yaratır: soruyu çözmüş, skorunu görmüş, kayıt olmuş kullanıcıya doğru anda fiyat çıpasıyla gelir. 45.000₺'lik çıpanın yanında ₺209,70 "karar bile değil" seviyesine iner.
+**Neden işler:** Satın alma anı yaratır: soruyu çözmüş, skorunu görmüş, kayıt olmuş kullanıcıya doğru anda fiyat çıpasıyla gelir. ~120.000₺'lik çıpanın yanında ₺209,70 "karar bile değil" seviyesine iner.
 
 **Risk:** Ucuz fiyat tek başına güven kırar — bu kart asla K8 (sosyal kanıt) olmadan tek başına dönmesin; C3'te ikisi rotasyonda kalsın.
 
@@ -291,7 +293,7 @@ Bunlar olmadan yukarıdaki hiçbir kampanya hakkını vermez. 1–6 kod işi.
 4. **CAPI (Conversions API):** paytrCallback'ten sunucu taraflı Purchase (event_id = merchantOid ile pixel'le dedup) + kayıt eventi Functions'tan. Ad-blocker kullanan tıp öğrencisi kitlesinde tarayıcı pixel'i tek başına eksik sayar. *kod · 1 gün*
 5. **Özel hedef kitleler:** ViewContent / QuizStart / QuizComplete / CompleteRegistration (30–90 gün) + kayıt bazlı %1 benzer hedef kitle. *panel · 30 dk*
 6. **Mini TUS ürün paketi:** 20 soruluk kampanya tipi, tahmini puan + yüzdelik hesabı, 1080×1920 paylaşım kartı (canvas→PNG). *kod · 3–4 gün*
-7. **/fiyatlandirma kıyas bloğu + "Eylül Paketi" adlandırması** (3 aylık planın sezonluk çerçevesi). *kod · yarım gün*
+7. **/fiyatlandirma kıyas bloğu + "Eylül Paketi" adlandırması** (3 aylık planın sezonluk çerçevesi). *kod · yarım gün* — ✅ **yapıldı (13 Tem 2026, H5'ten öne çekildi):** `/fiyatlandirma` dershane ~120.000₺ vs Eylül Paketi 209,70₺ kıyas bloğu + kanıt satırı + CTA; `/app?intent=plus` deep-link → Plus satın alma ekranı; sonuç ekranlarında satın alma anı kartı; PremiumInfoScreen'de Eylül Paketi çerçevesi + `InitiateCheckout` köprü sinyali. Tek kaynak `src/constants/eylulPaketi.js`.
 8. **K10 kanıt altyapısı:** TUS konu başlıklarını soru bankası taksonomisiyle eşleştiren script + kanıt landing şablonu — sınav günü 48 saat içinde yayın için. *kod · 2 gün, Ağustos'ta*
 
 ## 08 — Ben olsam neyi farklı yapardım
