@@ -392,5 +392,36 @@ Tek doğruluk kaynağı **`src/constants/eylulPaketi.js`** (Eylül Paketi = plus
 
 **Doğrulama:** 354 test geçti · `vite build` (generator dâhil) + eslint temiz (0 hata; 1 önceden var olan uyarı) · `/fiyatlandirma` React bloğu Chromium'da temiz render (içerik tam, JS exception yok) · `/app?intent=plus` deep-link JS exception'sız. **Sınırlı test:** PremiumInfoScreen değişiklikleri (Eylül eyebrow, dershane şeridi, InitiateCheckout) giriş arkasında olduğu için headless sürülemedi — derleme + import'lar geçerli, mantık minimal; canlıda bir kez göz doğrulaması önerilir.
 
-### 13.3 Sıradaki — C3 kampanyası (kuruluyor)
-Retarget & satış: sıcak kitle (CompleteRegistration + QuizComplete + Mini TUS), **Purchase optimizasyonu** (plan §09 retarget istisnası), K6 Eylül Paketi ~120.000₺ çıpalı kreatif + K8 sosyal kanıt rotasyonda. Funnel: reklam → `/fiyatlandirma` → `/app?intent=plus` → PayTR → Purchase pixel+CAPI (✅ canlı). PAUSED kurulacak, kullanıcı yayına alacak. Detay bu bölümün devamına işlenecek.
+### 13.3 C3 kampanyası — iskelet PAUSED kuruldu, kreatif+aktivasyon deploy'a bağlı
+Retarget & satış kampanyası kuruldu (hepsi **PAUSED**):
+
+| Katman | ID | Ayar |
+|---|---|---|
+| Kampanya | `52564951297363` | "C3 · Retarget & Satış — Eylül Paketi", OUTCOME_SALES, CBO **₺50/gün** (5000 kuruş), LOWEST_COST |
+| Ad set | `52564951353563` | OFFSITE_CONVERSIONS → **PURCHASE** (promoted_object `{pixel 1327796822800702, custom_event_type PURCHASE}`), WEBSITE, TR 20-40, **sıcak kitle hard-scoped** (Advantage+ audience OFF): `52561038615363` (WCA QuizComplete 30g) + `52561038908763` (WCA Kayıt/CompleteRegistration 90g), billing IMPRESSIONS |
+
+- **Neden Purchase optimizasyonu (plan §09 istisnası):** hacim yokken bile retarget'ın dar sıcak kitlesinde Purchase izinli ("dar kitlede sıklıkla teslimat yeter"). Advantage+ audience **kapatıldı** — retarget'ın sıcak havuzu genişlemesin (C1/C2 prospecting'de açıktı; C3 farkı bu).
+- **Kreatif hazır:** K6 kıyas kartı `public/ads/k6-eylul-paketi.png` (2160×2700, 4:5). Kaynak `scripts/ads-creatives/`. Landing ile mesaj eşleşmesi: reklam "Dershaneye ~120.000₺ vermeden önce" → `/fiyatlandirma` aynı blok.
+- **Page ID:** `1262932140225631` (hesabın tek promoted sayfası).
+
+**⚠️ KALAN — SADECE DEPLOY SONRASI YAPILABİLİR (iki sert bağımlılık):**
+1. **Landing:** `/fiyatlandirma` kıyas bloğu PR #28 merge + deploy olmadan canlı değil. C3 şimdi açılırsa retarget trafiği ESKİ fiyat sayfasına iner (mesaj eşleşmesi kırılır). → **C3, PR deploy olmadan ASLA aktive edilmemeli.**
+2. **Kreatif image_url:** Meta `image_url`'i fetch eder; PNG canlı bir public URL'de olmalı. Repo private (raw.githubusercontent çalışmaz), prod'a deploy edilince `https://www.tusoskop.com/ads/k6-eylul-paketi.png` canlı olur.
+
+**Deploy sonrası tek seferlik adımlar (bende hazır, kullanıcı "deploy oldu" derse ben de yapabilirim):**
+```
+1) ads_create_creative(ad_account_id=2734371800349546, page_id=1262932140225631,
+     image_url="https://www.tusoskop.com/ads/k6-eylul-paketi.png",
+     link_url="https://www.tusoskop.com/fiyatlandirma",
+     message="TUS dershaneleri ~120.000₺. Tusoskop Eylül Paketi ile sınava kadar sınırsız
+              soru + akıllı tekrar: 209,70₺ (günde ≈2,3₺). 7.000+ soru · haftalık Türkiye ligi.",
+     headline="Dershaneye ~120.000₺ vermeden önce",
+     description="Sınava kadar sınırsız — 209,70₺", call_to_action_type="GET_OFFER",
+     name="C3 · K6 Eylül Paketi kıyas")
+2) ads_create_ad(ad_set_id=52564951353563, creative={creative_id}, name="C3 · K6 Eylül Paketi")
+3) Meta incelemesi temiz geçince: ads_activate_entity(campaign 52564951297363 + ad set + ad).
+```
+
+- **K8 (sosyal kanıt) eklenmedi — bilerek:** plan K8 GERÇEK haftalık sayı ister (lig/çözülen soru); uydurma yasak. Kullanıcı gerçek rakam verince K8 kreatifi üretilip C3'e K6'nın yanına eklenecek. Şimdilik K6'nın içindeki kanıt satırı ("7.000+ soru · akıllı tekrar · haftalık lig") dürüstlük emniyeti.
+- **Bütçe/sıklık notu:** sıcak kitle küçük (~1000-2000 kişi tabanı). ₺50/gün'de sıklık hızlı yükselebilir; plan KPI sıklık ≤ 4/hafta. Aktivasyondan sonra 2-3 gün sıklık izlenmeli, gerekirse bütçe düşürülmeli. Bütçe kullanıcı onayına açık (PAUSED).
+- **Optimizasyon merdiveni (İlke 2):** Purchase hacmi 0 iken Meta öğrenmesi yavaş olur ama dar kitlede teslimat sürer. `InitiateCheckout` (bu PR'da eklendi) hacim toplayınca C3 ona çevrilip Purchase'a kademeli inilebilir (C2'nin ViewContent→MiniTusComplete deseni).
