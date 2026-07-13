@@ -392,8 +392,8 @@ Tek doğruluk kaynağı **`src/constants/eylulPaketi.js`** (Eylül Paketi = plus
 
 **Doğrulama:** 354 test geçti · `vite build` (generator dâhil) + eslint temiz (0 hata; 1 önceden var olan uyarı) · `/fiyatlandirma` React bloğu Chromium'da temiz render (içerik tam, JS exception yok) · `/app?intent=plus` deep-link JS exception'sız. **Sınırlı test:** PremiumInfoScreen değişiklikleri (Eylül eyebrow, dershane şeridi, InitiateCheckout) giriş arkasında olduğu için headless sürülemedi — derleme + import'lar geçerli, mantık minimal; canlıda bir kez göz doğrulaması önerilir.
 
-### 13.3 C3 kampanyası — iskelet PAUSED kuruldu, kreatif+aktivasyon deploy'a bağlı
-Retarget & satış kampanyası kuruldu (hepsi **PAUSED**):
+### 13.3 C3 kampanyası — iskelet kuruldu (→ 13.4: merge + AKTİF edildi)
+Retarget & satış kampanyası kuruldu (kuruluşta **PAUSED**; aşağıdaki deploy-bağımlılıkları 13.4'te çözülüp aktive edildi):
 
 | Katman | ID | Ayar |
 |---|---|---|
@@ -425,3 +425,21 @@ Retarget & satış kampanyası kuruldu (hepsi **PAUSED**):
 - **K8 (sosyal kanıt) eklenmedi — bilerek:** plan K8 GERÇEK haftalık sayı ister (lig/çözülen soru); uydurma yasak. Kullanıcı gerçek rakam verince K8 kreatifi üretilip C3'e K6'nın yanına eklenecek. Şimdilik K6'nın içindeki kanıt satırı ("7.000+ soru · akıllı tekrar · haftalık lig") dürüstlük emniyeti.
 - **Bütçe/sıklık notu:** sıcak kitle küçük (~1000-2000 kişi tabanı). ₺50/gün'de sıklık hızlı yükselebilir; plan KPI sıklık ≤ 4/hafta. Aktivasyondan sonra 2-3 gün sıklık izlenmeli, gerekirse bütçe düşürülmeli. Bütçe kullanıcı onayına açık (PAUSED).
 - **Optimizasyon merdiveni (İlke 2):** Purchase hacmi 0 iken Meta öğrenmesi yavaş olur ama dar kitlede teslimat sürer. `InitiateCheckout` (bu PR'da eklendi) hacim toplayınca C3 ona çevrilip Purchase'a kademeli inilebilir (C2'nin ViewContent→MiniTusComplete deseni).
+
+### 13.4 Merge + deploy + C3 AKTİF (13 Temmuz 2026)
+Kullanıcı: *"Bunu merge et. Ve kampanyayı aktifle"* → *"Şimdi yap"*.
+
+- **PR #28 squash-merge** → `main` (`b93e82d`). Ayrıca Codex bulgusu deep-link bug'ı bu PR'da düzeltildi: `/app?intent=plus`'a gelen **anonim** kullanıcıda `onAuthStateChanged(null)` mount'ta `setView("dashboard")` yapıp başlangıç `premiumInfo`'yu eziyordu + mount effect'i intent'i giriş öncesi URL'den siliyordu → popup/redirect girişi sonrası dashboard'a düşüyordu (birincil satış deep-link'i kırık). Çözüm: intent tüketilene dek URL'de kalıyor; açılış `user?.uid` effect'iyle giriş **başarılı** olunca yapılıyor (popup + signInWithRedirect dönüşü kapsanıyor), sonra URL temizleniyor.
+- **Deploy doğrulandı (anında canlıydı):** `https://www.tusoskop.com/ads/k6-eylul-paketi.png` → HTTP 200 (2.045.473 B) · `/fiyatlandirma` kıyas bloğu ("Dershaneye ≈120.000₺ vermeden önce" + "günde ≈2,3₺") canlı.
+- **C3 kreatif + reklam oluşturuldu ve aktive edildi (hepsi ACTIVE):**
+
+| Katman | ID | Durum |
+|---|---|---|
+| Kampanya | `52564951297363` | **ACTIVE** · OUTCOME_SALES · CBO ₺50/gün |
+| Ad set | `52564951353563` | **ACTIVE** · OFFSITE_CONVERSIONS→PURCHASE · sıcak kitle (QuizComplete 30g + Kayıt 90g), Advantage+ audience OFF |
+| Reklam | `52564973422763` | **ACTIVE** · kreatif `2306160273521939` (K6 Eylül Paketi kıyas) |
+
+- **Kreatif:** `image_url=https://www.tusoskop.com/ads/k6-eylul-paketi.png` (Meta fetch başarılı), `link_url=/fiyatlandirma?utm...c3_eylul_paketi`, CTA GET_OFFER, page `1262932140225631` (C2 gibi sayfa-bağlı IG kimliği; IG hesabı hâlâ MCP'de açık değil — kullanıcı Ads Manager'da IG önizlemesini doğrulamalı).
+- **Durum:** Reklam Meta **incelemesinde** (C2 temiz geçmişti; red gelirse — K4'teki gibi — kreatif düzeltilecek). Onaylanınca dağıtım başlar.
+- **İzlenecekler:** (1) inceleme sonucu, (2) frekans (dar kitle + ₺50/gün → 2-3 günde bak, ≤4/hafta), (3) ilk Purchase'lar (guardrail satış ≤ ₺300/60g), (4) hacim gelince Purchase→InitiateCheckout optimizasyon değerlendirmesi.
+- **Kalan (kullanıcı verisi bekliyor):** K8 sosyal kanıt kreatifi (gerçek haftalık lig/soru sayısı gelince) → C3'te K6 ile rotasyon.
