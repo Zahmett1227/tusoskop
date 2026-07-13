@@ -186,8 +186,11 @@ export default function AppAuthenticated() {
   }, []);
 
   // Deep-link: /fiyatlandirma "Eylül Paketi'ni Al" CTA'sı /app?intent=plus'a
-  // gelir. Girişliyse doğrudan Plus satın alma ekranını aç; anonimse giriş
-  // sonrası state korunduğu için (SPA, popup reload yok) yine premiumInfo açılır.
+  // gelir. Girişli kullanıcıda flaş olmasın diye başlangıç view'ı doğrudan
+  // premiumInfo (auth çözülünce switch premiumInfo render eder). Anonimde bu
+  // değer useAppAuthBootstrap'ın onAuthStateChanged(null) → setView("dashboard")
+  // çağrısıyla ezilir — bu yüzden asıl açılış aşağıdaki user?.uid effect'iyle,
+  // giriş BAŞARILI olduktan sonra yapılır (intent URL'de tüketilene dek kalır).
   const [view, setView] = useState(() => {
     if (typeof window === "undefined") return "dashboard";
     try {
@@ -198,20 +201,6 @@ export default function AppAuthenticated() {
       return "dashboard";
     }
   });
-  // intent=plus tüketildikten sonra URL'i temizle (yenile/geri tuşunda tekrar
-  // tetiklenmesin, adres çubuğu temiz kalsın).
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("intent") !== "plus") return;
-    params.delete("intent");
-    const qs = params.toString();
-    window.history.replaceState(
-      {},
-      "",
-      window.location.pathname + (qs ? `?${qs}` : "") + window.location.hash
-    );
-  }, []);
   usePageTracking(view); // Meta Pixel: her view değişiminde PageView
   const legalReturnViewRef = useRef("dashboard");
   const [legalPageId, setLegalPageId] = useState(LEGAL_PAGES[0].id);
@@ -226,6 +215,30 @@ export default function AppAuthenticated() {
     setFavoriteQuestionIds,
     isAuthReady,
   } = useAppAuthBootstrap(setView);
+
+  // Deep-link /app?intent=plus: giriş BAŞARILI olunca Plus satın alma ekranını
+  // aç. intent, tüketilene dek URL'de kalır — bu yüzden anonim → popup girişi de,
+  // popup engellenince devreye giren signInWithRedirect dönüşü de (aynı URL'e
+  // döner) çalışır. Girişliyse bu effect mount'ta hemen tetiklenir. Tüketince
+  // URL'den temizlenir (yenile/geri'de tekrar açılmasın, adres çubuğu temiz).
+  useEffect(() => {
+    if (typeof window === "undefined" || !user?.uid) return;
+    let params;
+    try {
+      params = new URLSearchParams(window.location.search);
+    } catch {
+      return;
+    }
+    if (params.get("intent") !== "plus") return;
+    setView("premiumInfo");
+    params.delete("intent");
+    const qs = params.toString();
+    window.history.replaceState(
+      {},
+      "",
+      window.location.pathname + (qs ? `?${qs}` : "") + window.location.hash
+    );
+  }, [user?.uid]);
 
   // Kullanıcı çıkış yaptığında leaderboard profile cache'ini temizle
   useEffect(() => {
