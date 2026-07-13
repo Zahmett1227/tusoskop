@@ -185,7 +185,33 @@ export default function AppAuthenticated() {
     return () => clearTimeout(id);
   }, []);
 
-  const [view, setView] = useState("dashboard");
+  // Deep-link: /fiyatlandirma "Eylül Paketi'ni Al" CTA'sı /app?intent=plus'a
+  // gelir. Girişliyse doğrudan Plus satın alma ekranını aç; anonimse giriş
+  // sonrası state korunduğu için (SPA, popup reload yok) yine premiumInfo açılır.
+  const [view, setView] = useState(() => {
+    if (typeof window === "undefined") return "dashboard";
+    try {
+      return new URLSearchParams(window.location.search).get("intent") === "plus"
+        ? "premiumInfo"
+        : "dashboard";
+    } catch {
+      return "dashboard";
+    }
+  });
+  // intent=plus tüketildikten sonra URL'i temizle (yenile/geri tuşunda tekrar
+  // tetiklenmesin, adres çubuğu temiz kalsın).
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("intent") !== "plus") return;
+    params.delete("intent");
+    const qs = params.toString();
+    window.history.replaceState(
+      {},
+      "",
+      window.location.pathname + (qs ? `?${qs}` : "") + window.location.hash
+    );
+  }, []);
   usePageTracking(view); // Meta Pixel: her view değişiminde PageView
   const legalReturnViewRef = useRef("dashboard");
   const [legalPageId, setLegalPageId] = useState(LEGAL_PAGES[0].id);

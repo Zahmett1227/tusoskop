@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { shareMiniTusCard } from "./miniTusShareCard";
+import EylulPaketiCard from "./EylulPaketiCard";
 
 /**
  * Mini TUS (20 soruluk kalibrasyon) sonuç ekranı.
@@ -86,6 +87,7 @@ export default function MiniTusResultScreen({
   onAppStoreClick,
   onWebContinue,
   onShared,
+  onEylulPaketiClick,
 }) {
   const [shareBusy, setShareBusy] = useState(false);
   const [shareDone, setShareDone] = useState(false);
@@ -182,6 +184,8 @@ export default function MiniTusResultScreen({
           {shareBusy ? "Kart hazırlanıyor…" : shareDone ? "Kart hazır ✓ Tekrar paylaş" : "Sonuç kartını paylaş"}
         </button>
       </div>
+
+      <EylulPaketiCard onClick={onEylulPaketiClick} />
 
       <p className="mt-4 text-xs font-medium text-slate-500">
         Bu sonuç 20 soruluk bir <span className="font-bold">kalibrasyondur</span>, kesin puan

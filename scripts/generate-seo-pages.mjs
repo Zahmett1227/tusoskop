@@ -639,6 +639,34 @@ function renderKontenjanTable(data, donem) {
     </section>`;
 }
 
+// /fiyatlandirma kıyas bloğu — React'teki PricingComparison'ın statik eşi
+// (plan §07-7 / K6). Emerald #6ee7b7 + slate paletiyle inline stil.
+function renderPricingComparison() {
+  return `<section aria-label="Eylül Paketi karşılaştırması" style="margin-top:44px;border:1px solid rgba(110,231,183,.3);background:linear-gradient(180deg,rgba(110,231,183,.08),rgba(15,23,42,.4));border-radius:22px;padding:28px">
+      <p class="eyebrow" style="margin:0">Eylül Paketi</p>
+      <h2 style="margin-top:12px">Dershaneye ≈120.000₺ vermeden önce</h2>
+      <p style="max-width:640px">Aynı hazırlık dönemine dershaneler ≈120.000₺ isterken, Tusoskop Eylül Paketi sınava kadar sınırsız soru çözme ve akıllı tekrar sunar — <strong style="color:#6ee7b7">209,70₺</strong> (günde ≈2,3₺).</p>
+      <div style="margin-top:24px;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+        <div style="border:1px solid #334155;background:rgba(15,23,42,.5);border-radius:16px;padding:20px">
+          <p style="font-weight:800;color:#cbd5e1;margin:0">TUS Dershanesi</p>
+          <p style="margin-top:8px;font-size:30px;font-weight:900;color:#e2e8f0">≈120.000₺</p>
+          <p style="margin-top:8px;color:#94a3b8;font-size:14px">Ders anlatımı + sınıf temposu</p>
+        </div>
+        <div style="border:1px solid rgba(110,231,183,.7);background:rgba(110,231,183,.1);border-radius:16px;padding:20px">
+          <p style="font-weight:800;color:#6ee7b7;margin:0">Tusoskop Eylül Paketi</p>
+          <p style="margin-top:8px;font-size:30px;font-weight:900;color:#6ee7b7">209,70₺</p>
+          <p style="margin-top:8px;color:#94a3b8;font-size:14px">Sınava kadar sınırsız soru + akıllı tekrar</p>
+        </div>
+      </div>
+      <p style="margin-top:20px;font-weight:800;color:#e2e8f0"><span style="color:#6ee7b7">✓</span> 7.000+ soru · akıllı tekrar (FSRS) · haftalık Türkiye ligi</p>
+      <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="cta" href="/app?intent=plus">Eylül Paketi'ni Al · 209,70₺</a>
+        <a class="pill" href="/app?intent=plus" style="display:inline-flex;align-items:center">Önce ücretsiz dene</a>
+      </div>
+      <p style="margin-top:20px;font-size:13px;color:#64748b;line-height:1.6">TUS dershane paketleri bu banda ulaşıyor. Tusoskop bir soru çözme ve akıllı tekrar platformudur (ders anlatımı değil); kıyas hazırlık bütçesi içindir. Plus paketleri 89,90₺'den başlar, Eylül Paketi (90 gün · sınava kadar sınırsız) 209,70₺'dir. Ödeme PayTR ile güvenli alınır, onay anında hesabına tanımlanır.</p>
+    </section>`;
+}
+
 function renderPage(page, isLegal = false) {
   const pagePath = `/${page.slug}`;
   // Sayfada görünen FAQ seti — legal sayfalarda FAQ gösterilmez.
@@ -698,6 +726,7 @@ function renderPage(page, isLegal = false) {
       ${renderStats(page.stats)}
       ${renderSample(page.sample, page.subject)}
       ${page.isSubject ? renderTopics(page.subject, page.topics) : ""}
+      ${page.slug === "fiyatlandirma" ? renderPricingComparison() : ""}
       ${page.tool === "score" ? renderScoreTool() : ""}
       ${page.tool === "kontenjan" ? renderKontenjanTable(page.kontenjanData, page.kontenjanDonem) : ""}
       ${appStore}
