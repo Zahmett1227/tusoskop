@@ -368,6 +368,7 @@ Kullanıcı canlıda Mini TUS'u test etti (çalışıyor), **MiniTusComplete eve
 - **campaignCode:** `mq_minitus_01`, slug `mini-tus` (bkz. `src/data/publicQuizCampaigns.js`).
 
 **Sıradaki adımlar:**
-1. Kullanıcı: C2'yi Ads Manager'da inceleyip (IG önizleme dahil) yayına al.
+1. ~~Kullanıcı: C2'yi yayına al~~ → **YAPILDI (13 Temmuz 2026):** C2 kampanya+ad set+reklam `ads_activate_entity` ile ACTIVE. Reklam Meta incelemesinden **temiz geçti** (K4'teki gibi red YOK). İlk saatler (13 Tem): 1.542 gösterim · 19 tıklama · ₺55,70 · CTR %1,23. **Erken CTR düşük ama beklenen/erken:** öğrenme fazı + ViewContent optimizasyonu (tıklayıcı değil içerik-görüntüleyici arıyor) + sonuç-teaser kreatifi (soru-teaser'dan doğal düşük CTR) + landing artık gerçek ürün. 1.5k gösterimde karar verilmez, izlenecek.
 2. MiniTusComplete ~30-50/hafta olunca: Events Manager'dan custom conversion oluştur → ad set `52564189409363`'ün promoted_object'ini `{custom_conversion_id: <MiniTusComplete CC>}` yap (`ads_update_entity`).
 3. Kalan Faz 3: `MiniTusShare` custom conversion (opsiyonel), in-app tarayıcı paylaşım ipucu (`isInAppBrowser()`).
+4. **İzleme:** 1-2 gün sonra C2 CTR trendi + MiniTusComplete organik hacmi. Ayrıca login-fix'in (PR #18) kayıt dönüşümüne etkisini scoped "Kayıt tamamlama" custom conversion'dan ölç.
