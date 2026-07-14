@@ -443,3 +443,10 @@ Kullanıcı: *"Bunu merge et. Ve kampanyayı aktifle"* → *"Şimdi yap"*.
 - **Durum:** Reklam Meta **incelemesinde** (C2 temiz geçmişti; red gelirse — K4'teki gibi — kreatif düzeltilecek). Onaylanınca dağıtım başlar.
 - **İzlenecekler:** (1) inceleme sonucu, (2) frekans (dar kitle + ₺50/gün → 2-3 günde bak, ≤4/hafta), (3) ilk Purchase'lar (guardrail satış ≤ ₺300/60g), (4) hacim gelince Purchase→InitiateCheckout optimizasyon değerlendirmesi.
 - **Kalan (kullanıcı verisi bekliyor):** K8 sosyal kanıt kreatifi (gerçek haftalık lig/soru sayısı gelince) → C3'te K6 ile rotasyon.
+
+### 13.5 K8 sosyal kanıt — App Store yorumlarına pivot (14 Temmuz 2026)
+Kullanıcı: *"maalesef haftalık ligi kullanan yok"*. Plan K8 "canlı lig/sayaç" haftalık gerçek katılım ister — o yok. **Kalabalık kanıtı yerine App Store yorum kanıtına pivot** (plan K8 dürüstlük kuralına sadık: sayı şişirilmez).
+- **Gerçek veri:** `apps.apple.com/tr/app/tusoskop/id6776331691` → **5,0 ★ · 5 değerlendirme** (5.0 ⇒ her biri 5 yıldız), 3 gerçek yorum (Haz 2026): Statusss1 "analiz özelliği çok iyi", Caglar3540 "TUS'la uyumlu ve öğretici", A.Bilgi "güzel bir alternatif".
+- **Kreatif:** `public/ads/k8-sosyal-kanit.png` (4:5) — 5,0 ★ + "5 değerlendirme" (sayı **olduğu gibi**, şişirilmedi) + 3 yorum birebir (rumuz + "App Store yorumu" etiketi). Kaynak `scripts/ads-creatives/k8-sosyal-kanit.html`.
+- **Sıradaki:** deploy sonrası K8 kreatifi + reklamı C3 ad set'ine (`52564951353563`) eklenip **K6 ile rotasyona** girecek (plan: K6 asla K8 olmadan tek başına dönmesin — kıyas + kanıt bir arada).
+- **Diğer kanıt yolları (açık):** veri-derinliği (K4 gerçek per-soru istatistiği) + Mini TUS gerçek katılımı biriktikçe "geçen hafta X kişi" — ikisi de gerçek sayı gelince.
