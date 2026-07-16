@@ -384,12 +384,12 @@ const contentSeoPages = [
     tool: "kontenjan",
     kontenjanData: KONTENJAN_DATA,
     kontenjanDonem: KONTENJAN_DONEM_LABEL,
-    title: `TUS Kontenjan Tablosu ${KONTENJAN_DONEM_LABEL} — Taban Puanlar | Tusoskop`,
+    title: `TUS Kontenjan Tablosu ${KONTENJAN_DONEM_LABEL} — Taban, Ortalama ve Tavan Puanlar | Tusoskop`,
     description:
-      `${KONTENJAN_DONEM_LABEL} TUS kontenjan tablosu: ${KONTENJAN_DAL_COUNT} uzmanlık dalı için kontenjan, taban puan ve yerleşen sayısı. Dala göre ara, kontenjana veya taban puana göre sırala.`,
+      `${KONTENJAN_DONEM_LABEL} TUS kontenjan tablosu: ${KONTENJAN_DAL_COUNT} uzmanlık dalı için kontenjan, taban–ortalama–tavan puan, doluluk ve rekabet düzeyi. Dala göre ara; ortalama, taban puan veya kontenjana göre sırala.`,
     h1: `TUS Kontenjan Tablosu — ${KONTENJAN_DONEM_LABEL}`,
     intro:
-      `${KONTENJAN_DONEM_LABEL} yerleştirme sonuçlarına göre ${KONTENJAN_DAL_COUNT} uzmanlık dalının kontenjan, taban puan ve yerleşen aday sayısını aşağıda bulabilirsin. Dal adına göre arayabilir, kontenjan veya taban puana göre sıralayabilirsin.`,
+      `${KONTENJAN_DONEM_LABEL} yerleştirme sonuçlarına göre ${KONTENJAN_DAL_COUNT} uzmanlık dalının kontenjanı, taban–ortalama–tavan puanı, doluluğu ve rekabet düzeyini aşağıda bulabilirsin. Bir dalın gerçek rekabetini yalnızca taban puandan okumak yanıltıcıdır; tabloda ortalama ve tavan puan ile rekabet rozetini birlikte gösteriyoruz.`,
     stats: [
       { value: `${KONTENJAN_DAL_COUNT}`, label: "Uzmanlık dalı" },
       { value: `${KONTENJAN_TOPLAM.toLocaleString("tr-TR")}`, label: "Toplam kontenjan" },
@@ -397,47 +397,57 @@ const contentSeoPages = [
     ],
     sections: [
       {
-        heading: "TUS kontenjanı ve taban puan nedir?",
+        heading: "Taban, ortalama ve tavan puan nedir?",
         paragraphs: [
-          "Her uzmanlık dalı için ÖSYM tarafından belirlenen kadro sayısına kontenjan denir. Taban puan ise o dönemde ilgili dalda dolan kontenjanlar içindeki en düşük tahmini puanı ifade eder — 7 temel bilim dalında T Puanı, diğer tüm dallarda K Puanı geçerlidir (tabloda 'Puan Türü' sütunuyla belirtilir).",
-          "Taban puanlar dönemden döneme değişir; tercih eden aday sayısı, kontenjan sayısı ve genel puan dağılımına göre yükselip alçalabilir.",
+          "Her uzmanlık dalı için ÖSYM tarafından belirlenen kadro sayısına kontenjan denir. Taban puan, o dala yerleşen son (en düşük puanlı) adayın puanıdır. Ortalama puan, o dala yerleşen tüm adayların ortalama puanını; tavan puan ise en yüksek puanla yerleşen adayın puanını gösterir — 7 temel bilim dalında T Puanı, diğer tüm dallarda K Puanı geçerlidir (tabloda 'Tür' sütunuyla belirtilir).",
+          "Sadece taban puana bakmak yanıltıcı olabilir: az tercih edilen tek bir program bir dalın taban puanını aşağı çekebilir. Örneğin Deri ve Zührevi Hastalıkları (Dermatoloji) taban puanı ~59 olsa da, yerleşenlerin ortalaması ~73 ve tavanı ~83'tür; yani gerçekte en rekabetçi dallardan biridir.",
         ],
       },
       {
-        heading: "Kontenjan tablosu nasıl okunmalı?",
+        heading: "Rekabet rozeti ve doluluk nasıl okunmalı?",
         paragraphs: [
-          "Bir dalın taban puanı, o dönemde o dala yerleşebilmek için gereken asgari puanı gösterir. Kontenjanı yüksek fakat taban puanı düşük dallarda yerleşme ihtimali görece daha yüksektir.",
-          "'Yerleşen' sütunu, kontenjanın ne kadarının dolduğunu gösterir; kontenjanın tamamı dolmamışsa taban puan oluşmamış olabilir (tabloda '—' ile gösterilir).",
+          "Rekabet rozeti (Çok Rekabetçi, Rekabetçi, Orta, Erişilebilir), o dala yerleşenlerin ortalama puanından türetilir; bu yüzden bir dalın gerçek yarışını taban puandan daha iyi yansıtır. Yüksek ortalama, o dala yerleşmek için genelde yüksek puan gerektiğini gösterir.",
+          "Doluluk sütunu, kontenjanın ne kadarının dolduğunu (%) gösterir. Kontenjanı tamamen dolmayan dallarda baraj üstü puanla yerleşme ihtimali daha yüksektir; kontenjan hiç dolmadıysa taban/ortalama/tavan oluşmaz ve tabloda '—' ile gösterilir.",
         ],
       },
       {
-        heading: "Taban puanlar dönemden döneme neden değişir?",
+        heading: "Puanlar dönemden döneme neden değişir?",
         paragraphs: [
-          "Adayların o dönemki genel başarı düzeyi, tercih eden aday sayısı ve kontenjan artış/azalışları taban puanı doğrudan etkiler. Bu yüzden geçmiş dönem taban puanı, gelecek dönem için kesin bir garanti değil, yalnızca bir gösterge olarak kullanılmalıdır.",
+          "Adayların o dönemki genel başarı düzeyi, tercih eden aday sayısı ve kontenjan artış/azalışları taban, ortalama ve tavan puanı doğrudan etkiler. Bu yüzden geçmiş dönem puanları, gelecek dönem için kesin bir garanti değil, yalnızca bir gösterge olarak kullanılmalıdır.",
         ],
       },
       {
         heading: "Tahmini T Puanı / K Puanınla kıyaslama",
         paragraphs: [
-          "TUS Puan Hesaplama aracından tahmini T Puanı ve K Puanını hesapladıktan sonra bu tablodaki taban puanlarla karşılaştırarak hangi dallarda rekabetçi olabileceğin konusunda kaba bir fikir edinebilirsin — her dalı kendi puan türüyle (T veya K) kıyaslamayı unutma.",
+          "TUS Puan Hesaplama aracından tahmini T Puanı ve K Puanını hesapladıktan sonra bu tablodaki puanlarla karşılaştırabilirsin. Bir dala taban puanla girmek mümkün olsa da, ortalama puanın altındaysan o dalda alt sıralarda ve rekabetçi kalırsın; ortalamanın üzerindeysen daha rahat yerleşirsin. Her dalı kendi puan türüyle (T veya K) kıyaslamayı unutma.",
         ],
       },
     ],
     faq: [
+      {
+        question: "Neden sadece taban puana bakmak yeterli değil?",
+        answer:
+          "Taban puan, bir dala yerleşen son (en düşük puanlı) adayın puanıdır ve az tercih edilen tek bir program tarafından aşağı çekilebilir. Bir dalın gerçek rekabetini görmek için taban puanın yanında ortalama puan, tavan puan ve doluluk oranına da bakmak gerekir. Örneğin Dermatoloji'nin taban puanı düşük görünse de ortalaması yüksektir ve en rekabetçi dallardan biridir.",
+      },
+      {
+        question: "Ortalama ve tavan puan nasıl hesaplandı?",
+        answer:
+          KONTENJAN_DONEM_LABEL + " kurum bazlı taban/tavan tablolarından türetilmiştir. Ortalama puan, yerleşen aday sayısıyla ağırlıklandırılmış program bazlı taban–tavan orta noktalarının ortalamasıdır (tahmini). Tavan puan, o dala yerleşen programlar içindeki en yüksek tavan puandır. Kesin ve güncel bilgi için ÖSYM'nin resmi yerleştirme sonuçlarını esas al.",
+      },
       {
         question: "TUS kontenjan tablosu ne sıklıkla güncellenir?",
         answer:
           "Her TUS döneminin (yılda iki kez) yerleştirme sonuçları açıklandıkça tablo güncellenir. Şu an gösterilen veri " + KONTENJAN_DONEM_LABEL + " dönemine aittir.",
       },
       {
-        question: "Taban puan neden bazı dallarda gösterilmiyor?",
+        question: "Puanlar neden bazı dallarda gösterilmiyor?",
         answer:
-          "Kontenjanın tamamı dolmadıysa o dalda taban puan oluşmaz; tabloda bu durum '—' ile belirtilir.",
+          "Kontenjanın tamamı dolmadıysa o dalda taban/ortalama/tavan puan oluşmaz; tabloda bu durum '—' ile belirtilir.",
       },
       {
         question: "Kontenjan tablosu ile puan hesaplama aracı birlikte nasıl kullanılır?",
         answer:
-          "Önce TUS Puan Hesaplama aracıyla tahmini T Puanı ve K Puanını bul, ardından bu tablodaki taban puanlarla (her dalın kendi puan türüyle) karşılaştırarak hangi dallarda daha rekabetçi olabileceğini kabaca değerlendir.",
+          "Önce TUS Puan Hesaplama aracıyla tahmini T Puanı ve K Puanını bul, ardından bu tablodaki taban ve ortalama puanlarla (her dalın kendi puan türüyle) karşılaştır: ortalamanın üzerindeysen o dala rahat, taban ile ortalama arasındaysan sınırda/rekabetçi girersin.",
       },
       {
         question: "Bu veriler resmi mi?",

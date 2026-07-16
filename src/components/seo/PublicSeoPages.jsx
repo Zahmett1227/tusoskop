@@ -33,6 +33,7 @@ import {
   subjectIndexLinks,
 } from "../../seo/seoContent";
 import { KONTENJAN_DATA, KONTENJAN_DONEM_LABEL } from "../../seo/kontenjanData";
+import { getDoluluk, getDolulukYuzde, getRekabetTier, getMatchLevel } from "../../seo/kontenjanMetrics";
 import { SUBJECTS } from "../../data/subjects";
 import {
   EYLUL_PAKETI,
@@ -582,6 +583,44 @@ function PuanTuruBadge({ puanTuru, size = "sm" }) {
   );
 }
 
+const REKABET_STYLES = {
+  cokRekabetci: "border-rose-400/40 bg-rose-400/10 text-rose-200",
+  rekabetci: "border-orange-300/40 bg-orange-300/10 text-orange-200",
+  orta: "border-amber-300/40 bg-amber-300/10 text-amber-200",
+  erisilebilir: "border-emerald-300/40 bg-emerald-300/10 text-emerald-200",
+  dolmadi: "border-slate-600/50 bg-slate-700/20 text-slate-300",
+};
+
+function RekabetBadge({ row }) {
+  const tier = getRekabetTier(row);
+  return (
+    <span
+      className={`inline-flex items-center whitespace-nowrap rounded-full border px-2.5 py-1 text-[11px] font-black ${
+        REKABET_STYLES[tier.key] ?? REKABET_STYLES.dolmadi
+      }`}
+    >
+      {tier.label}
+    </span>
+  );
+}
+
+function DolulukCell({ row }) {
+  const yuzde = getDolulukYuzde(row);
+  if (yuzde == null) return <span className="text-slate-500">—</span>;
+  const full = yuzde >= 100;
+  return (
+    <span className="flex items-center gap-2">
+      <span className="hidden h-1.5 w-14 overflow-hidden rounded-full bg-slate-700 sm:block" aria-hidden>
+        <span
+          className={`block h-full rounded-full ${full ? "bg-emerald-400" : yuzde >= 90 ? "bg-sky-400" : "bg-amber-400"}`}
+          style={{ width: `${Math.min(yuzde, 100)}%` }}
+        />
+      </span>
+      <span className="font-semibold text-slate-300">%{yuzde}</span>
+    </span>
+  );
+}
+
 function PuanCard({ label, value, band, puanTuru, usedBy }) {
   const isT = puanTuru === "T";
   const accent = isT
@@ -818,43 +857,107 @@ function relevantScore(row, tPuani, kPuani) {
 
 function BranchMatchPanel({ tPuani, kPuani }) {
   const hasScore = (tPuani > 0 || kPuani > 0);
-  const { qualifies, openQuota, near } = useMemo(() => {
-    if (!hasScore) return { qualifies: [], openQuota: [], near: [] };
-    const withThreshold = KONTENJAN_DATA.filter((r) => r.tabanPuan != null);
-    const noThreshold = KONTENJAN_DATA.filter((r) => r.tabanPuan == null);
-    const qualifies = withThreshold
-      .filter((r) => r.tabanPuan <= relevantScore(r, tPuani, kPuani))
-      .sort((a, b) => b.tabanPuan - a.tabanPuan);
-    const near = withThreshold
-      .filter((r) => r.tabanPuan > relevantScore(r, tPuani, kPuani))
-      .sort((a, b) => a.tabanPuan - relevantScore(a, tPuani, kPuani) - (b.tabanPuan - relevantScore(b, tPuani, kPuani)))
-      .slice(0, 5);
-    return { qualifies, openQuota: noThreshold, near };
+  const { rahat, sinirda, openQuota, near } = useMemo(() => {
+    if (!hasScore) return { rahat: [], sinirda: [], openQuota: [], near: [] };
+    const rahat = [];
+    const sinirda = [];
+    const openQuota = [];
+    const near = [];
+    KONTENJAN_DATA.forEach((r) => {
+      const score = relevantScore(r, tPuani, kPuani);
+      const level = getMatchLevel(r, score);
+      if (level === "rahat") rahat.push(r);
+      else if (level === "sinirda") sinirda.push(r);
+      else if (level === "acik") openQuota.push(r);
+      else near.push(r);
+    });
+    // Rahat: en yüksek ortalamalı (en prestijli) önce.
+    rahat.sort((a, b) => b.ortalamaPuan - a.ortalamaPuan);
+    // Sınırda: ortalamaya en yakın olan (en ulaşılabilir rekabetçi) önce.
+    sinirda.sort((a, b) => a.ortalamaPuan - b.ortalamaPuan);
+    // Az kalanlar: tabana en yakın olan önce.
+    near.sort(
+      (a, b) =>
+        a.tabanPuan - relevantScore(a, tPuani, kPuani) - (b.tabanPuan - relevantScore(b, tPuani, kPuani))
+    );
+    return { rahat, sinirda, openQuota, near: near.slice(0, 5) };
   }, [hasScore, tPuani, kPuani]);
 
   if (!hasScore) return null;
 
-  const totalQualifies = qualifies.length + openQuota.length;
+  const totalQualifies = rahat.length + sinirda.length + openQuota.length;
 
   return (
     <div className="mt-8 rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
       <h3 className="text-base font-black text-white">Bu puanla hangi dallara girebilirsin?</h3>
       <p className="mt-1 text-xs leading-relaxed text-slate-400">
-        {KONTENJAN_DONEM_LABEL} taban puanlarına göre yaklaşık kıyaslama — her dal kendi puan türüyle (T veya K) karşılaştırılır. Taban puanlar dönemden döneme değişir, bu bir garanti değil, referanstır.
+        {KONTENJAN_DONEM_LABEL} verisine göre yaklaşık kıyaslama — her dal kendi puan türüyle (T veya K) karşılaştırılır.
+        Bir dala <span className="font-bold text-emerald-300">taban puanla</span> girmek mümkün olsa da,{" "}
+        <span className="font-bold text-amber-300">ortalama puanın</span> altındaysan alt sıralarda ve rekabetçi kalırsın.
+        Puanlar dönemden döneme değişir; bu bir garanti değil, referanstır.
       </p>
 
-      {totalQualifies > 0 ? (
-        <>
-          <ul className="mt-4 flex flex-wrap gap-2">
-            {qualifies.map((r) => (
+      {totalQualifies === 0 ? (
+        <p className="mt-4 text-sm font-bold text-amber-300">
+          Bu puanla geçen dönem taban puanı oluşan hiçbir dala girebilmiş değilsin
+          {openQuota.length ? `, ancak kontenjanı hiç dolmayan ${openQuota.length} dal her zaman açık kalıyor.` : "."}
+        </p>
+      ) : null}
+
+      {rahat.length > 0 ? (
+        <div className="mt-4">
+          <p className="text-xs font-bold uppercase tracking-wide text-emerald-300/80">
+            Rahat girersin <span className="text-slate-500">(ortalamanın en az +1.5 üzerindesin)</span>
+          </p>
+          <ul className="mt-2 flex flex-wrap gap-2">
+            {rahat.map((r) => (
               <li
                 key={r.dal}
                 className="flex items-center gap-1.5 rounded-xl border border-emerald-300/30 bg-emerald-300/10 px-3 py-1.5 text-xs font-bold text-emerald-100"
               >
                 <PuanTuruBadge puanTuru={r.puanTuru} />
-                {r.dal} <span className="text-emerald-300/70">· {r.tabanPuan}</span>
+                <span>{r.dal}</span>
+                <span className="rounded-full border border-emerald-200/35 bg-slate-950/45 px-2 py-0.5 text-[11px] font-black text-emerald-200">
+                  taban {r.tabanPuan}
+                </span>
+                <span className="rounded-full border border-emerald-200/35 bg-slate-950/45 px-2 py-0.5 text-[11px] font-black text-emerald-200">
+                  ort. {r.ortalamaPuan}
+                </span>
               </li>
             ))}
+          </ul>
+        </div>
+      ) : null}
+
+      {sinirda.length > 0 ? (
+        <div className="mt-4">
+          <p className="text-xs font-bold uppercase tracking-wide text-amber-300/80">
+            Sınırda / rekabetçi <span className="text-slate-500">(taban üstü, ortalamaya +1.5’e kadar yakın)</span>
+          </p>
+          <ul className="mt-2 flex flex-wrap gap-2">
+            {sinirda.map((r) => (
+              <li
+                key={r.dal}
+                className="flex items-center gap-1.5 rounded-xl border border-amber-300/30 bg-amber-300/10 px-3 py-1.5 text-xs font-bold text-amber-100"
+              >
+                <PuanTuruBadge puanTuru={r.puanTuru} />
+                <span>{r.dal}</span>
+                <span className="rounded-full border border-amber-200/35 bg-slate-950/45 px-2 py-0.5 text-[11px] font-black text-amber-200">
+                  taban {r.tabanPuan}
+                </span>
+                <span className="rounded-full border border-amber-200/35 bg-slate-950/45 px-2 py-0.5 text-[11px] font-black text-amber-200">
+                  ort. {r.ortalamaPuan}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
+      {openQuota.length > 0 ? (
+        <div className="mt-4">
+          <p className="text-xs font-bold uppercase tracking-wide text-slate-500">Kontenjanı dolmayan dallar</p>
+          <ul className="mt-2 flex flex-wrap gap-2">
             {openQuota.map((r) => (
               <li
                 key={r.dal}
@@ -865,13 +968,8 @@ function BranchMatchPanel({ tPuani, kPuani }) {
               </li>
             ))}
           </ul>
-        </>
-      ) : (
-        <p className="mt-4 text-sm font-bold text-amber-300">
-          Bu puanla geçen dönem taban puanı oluşan hiçbir dala girebilmiş değilsin
-          {openQuota.length ? `, ancak kontenjanı hiç dolmayan ${openQuota.length} dal her zaman açık kalıyor.` : "."}
-        </p>
-      )}
+        </div>
+      ) : null}
 
       {near.length > 0 ? (
         <div className="mt-5 border-t border-slate-800 pt-4">
@@ -907,16 +1005,23 @@ function BranchMatchPanel({ tPuani, kPuani }) {
 
 function KontenjanTable({ data, donem }) {
   const [query, setQuery] = useState("");
-  const [sortKey, setSortKey] = useState("dal");
-  const [sortDir, setSortDir] = useState("asc");
+  const [sortKey, setSortKey] = useState("ortalamaPuan");
+  const [sortDir, setSortDir] = useState("desc");
 
   const rows = useMemo(() => {
     const list = Array.isArray(data) ? data : [];
     const q = query.trim().toLocaleLowerCase("tr");
     const filtered = q ? list.filter((r) => r.dal.toLocaleLowerCase("tr").includes(q)) : list;
+    const nullLast = (sortKey === "tabanPuan" || sortKey === "ortalamaPuan" || sortKey === "tavanPuan");
+    const val = (r) => {
+      if (sortKey === "doluluk") return getDoluluk(r) ?? -1;
+      const raw = r[sortKey];
+      if (raw == null) return nullLast ? -1 : 0;
+      return raw;
+    };
     return [...filtered].sort((a, b) => {
-      const av = a[sortKey] ?? (sortKey === "tabanPuan" ? -1 : 0);
-      const bv = b[sortKey] ?? (sortKey === "tabanPuan" ? -1 : 0);
+      const av = val(a);
+      const bv = val(b);
       if (typeof av === "string") {
         return sortDir === "asc" ? av.localeCompare(bv, "tr") : bv.localeCompare(av, "tr");
       }
@@ -952,22 +1057,35 @@ function KontenjanTable({ data, donem }) {
           </span>
         </p>
       </div>
+      <p className="mt-2 text-xs leading-relaxed text-slate-400">
+        Bir dalın rekabetini yalnızca <span className="font-semibold text-slate-300">taban puanla</span> değerlendirme:
+        taban, o dala giren <span className="font-semibold text-slate-300">son kişinin</span> puanıdır.{" "}
+        <span className="font-semibold text-emerald-300">Ortalama</span> ve{" "}
+        <span className="font-semibold text-emerald-300">tavan</span> puan ile{" "}
+        <span className="font-semibold text-emerald-300">rekabet</span> rozeti, dalın gerçek yarışını daha doğru gösterir.
+      </p>
       <div className="mt-4 overflow-x-auto rounded-2xl border border-slate-800">
-        <table className="w-full min-w-[620px] text-sm">
+        <table className="w-full min-w-[820px] text-sm">
           <thead>
             <tr className="sticky top-0 z-10 bg-slate-900/95 text-left text-xs font-black uppercase tracking-wide text-slate-400 backdrop-blur">
               <th className="cursor-pointer select-none px-4 py-3" onClick={() => toggleSort("dal")}>
                 Uzmanlık Dalı{arrow("dal")}
               </th>
-              <th className="px-3 py-3">Puan Türü</th>
+              <th className="px-3 py-3">Tür</th>
+              <th className="cursor-pointer select-none px-4 py-3" onClick={() => toggleSort("ortalamaPuan")}>
+                Rekabet{arrow("ortalamaPuan")}
+              </th>
+              <th className="cursor-pointer select-none px-4 py-3" onClick={() => toggleSort("ortalamaPuan")}>
+                Ortalama{arrow("ortalamaPuan")}
+              </th>
+              <th className="cursor-pointer select-none px-4 py-3" onClick={() => toggleSort("tabanPuan")}>
+                Taban–Tavan{arrow("tabanPuan")}
+              </th>
               <th className="cursor-pointer select-none px-4 py-3" onClick={() => toggleSort("kontenjan")}>
                 Kontenjan{arrow("kontenjan")}
               </th>
-              <th className="cursor-pointer select-none px-4 py-3" onClick={() => toggleSort("tabanPuan")}>
-                Taban Puan{arrow("tabanPuan")}
-              </th>
-              <th className="cursor-pointer select-none px-4 py-3" onClick={() => toggleSort("yerlesen")}>
-                Yerleşen{arrow("yerlesen")}
+              <th className="cursor-pointer select-none px-4 py-3" onClick={() => toggleSort("doluluk")}>
+                Doluluk{arrow("doluluk")}
               </th>
             </tr>
           </thead>
@@ -979,14 +1097,24 @@ function KontenjanTable({ data, donem }) {
               >
                 <td className="px-4 py-2.5 font-bold text-slate-200">{r.dal}</td>
                 <td className="px-3 py-2.5"><PuanTuruBadge puanTuru={r.puanTuru} /></td>
+                <td className="px-4 py-2.5"><RekabetBadge row={r} /></td>
+                <td className="px-4 py-2.5 font-black text-emerald-300">{r.ortalamaPuan != null ? r.ortalamaPuan : "—"}</td>
+                <td className="px-4 py-2.5 font-semibold text-slate-400">
+                  {r.tabanPuan != null ? (
+                    <span>
+                      {r.tabanPuan} <span className="text-slate-600">–</span> {r.tavanPuan}
+                    </span>
+                  ) : (
+                    "—"
+                  )}
+                </td>
                 <td className="px-4 py-2.5 font-semibold text-slate-300">{r.kontenjan}</td>
-                <td className="px-4 py-2.5 font-black text-emerald-300">{r.tabanPuan != null ? r.tabanPuan : "—"}</td>
-                <td className="px-4 py-2.5 font-semibold text-slate-300">{r.yerlesen}</td>
+                <td className="px-4 py-2.5"><DolulukCell row={r} /></td>
               </tr>
             ))}
             {rows.length === 0 ? (
               <tr>
-                <td colSpan={5} className="px-4 py-6 text-center text-sm font-semibold text-slate-500">
+                <td colSpan={7} className="px-4 py-6 text-center text-sm font-semibold text-slate-500">
                   Aramanla eşleşen dal bulunamadı.
                 </td>
               </tr>

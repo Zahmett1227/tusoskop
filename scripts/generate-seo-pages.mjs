@@ -27,6 +27,7 @@ import {
   K_PUANI_AGIRLIK,
 } from "../src/seo/tusScoring.js";
 import { KONTENJAN_DATA } from "../src/seo/kontenjanData.js";
+import { getDolulukYuzde, getRekabetTier } from "../src/seo/kontenjanMetrics.js";
 import { SUBJECTS } from "../src/data/subjects.js";
 
 const TEMEL_DERSLER = SUBJECTS.filter((s) => s.type === "Temel").map((s) => s.name);
@@ -218,7 +219,31 @@ const css = `
   .match-panel .lead.warn{color:#fbbf24}
   .match-list{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
   .match-chip{display:flex;align-items:center;gap:6px;border-radius:14px;padding:7px 12px;font-size:12px;font-weight:800;border:1px solid rgba(110,231,183,.3);background:rgba(110,231,183,.1);color:#ecfdf5}
+  .match-chip.sinirda{border-color:rgba(252,211,77,.3);background:rgba(252,211,77,.1);color:#fef3c7}
   .match-chip.open{border-color:#334155;background:rgba(15,23,42,.6);color:#cbd5e1}
+  .match-chip .chip-metric{display:inline-flex;border:1px solid rgba(253,230,138,.35);background:rgba(2,6,23,.45);border-radius:999px;padding:2px 8px;font-size:11px;font-weight:900;color:#fde68a}
+  .match-chip .chip-metric.em{border-color:rgba(167,243,208,.35);color:#a7f3d0}
+  .match-group{margin-top:16px}
+  .match-group-title{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+  .match-group-title.rahat{color:rgba(110,231,183,.8)}
+  .match-group-title.sinirda{color:rgba(252,211,77,.8)}
+  .match-group-title.open{color:#64748b}
+  .match-group-title span{color:#64748b;font-weight:700}
+  .rekabet-badge{display:inline-flex;align-items:center;white-space:nowrap;border-radius:999px;padding:3px 9px;font-size:11px;font-weight:900;border:1px solid}
+  .rekabet-badge.cokRekabetci{border-color:rgba(251,113,133,.4);background:rgba(251,113,133,.1);color:#fda4af}
+  .rekabet-badge.rekabetci{border-color:rgba(253,186,116,.4);background:rgba(253,186,116,.1);color:#fdba74}
+  .rekabet-badge.orta{border-color:rgba(252,211,77,.4);background:rgba(252,211,77,.1);color:#fcd34d}
+  .rekabet-badge.erisilebilir{border-color:rgba(110,231,183,.4);background:rgba(110,231,183,.1);color:#a7f3d0}
+  .rekabet-badge.dolmadi{border-color:rgba(100,116,139,.5);background:rgba(51,65,85,.2);color:#cbd5e1}
+  .doluluk-cell{display:flex;align-items:center;gap:8px}
+  .doluluk-bar{display:none;height:6px;width:56px;overflow:hidden;border-radius:999px;background:#334155}
+  .doluluk-bar>i{display:block;height:100%;border-radius:999px}
+  .doluluk-bar.full>i{background:#34d399}
+  .doluluk-bar.high>i{background:#38bdf8}
+  .doluluk-bar.low>i{background:#fbbf24}
+  @media(min-width:640px){.doluluk-bar{display:block}}
+  .kontenjan-help{margin-top:8px;font-size:12px;line-height:1.6;color:#94a3b8}
+  .kontenjan-help b{color:#6ee7b7;font-weight:700}
   .match-near{margin-top:16px;border-top:1px solid #1e293b;padding-top:14px}
   .match-near-title{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:#64748b}
   .match-near-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:14px;gap:10px}
@@ -355,7 +380,7 @@ function renderSample(sample, subject) {
 // (tusScoring.js, kontenjanData.js) kullanır; production'da bu statik sürüm
 // crawler'lara ve ilk boyamaya servis edilir.
 function renderScoreTool() {
-  const kontenjanJson = JSON.stringify(KONTENJAN_DATA.map((r) => [r.dal, r.tabanPuan, r.puanTuru]));
+  const kontenjanJson = JSON.stringify(KONTENJAN_DATA.map((r) => [r.dal, r.tabanPuan, r.puanTuru, r.ortalamaPuan]));
   return `<section class="calc" aria-label="TUS puan hesaplama aracı">
       <div class="accent-bar"></div>
       <div class="calc-grid">
@@ -406,9 +431,9 @@ function renderScoreTool() {
 
       <div class="match-panel" id="match-panel" style="display:none">
         <h3>Bu puanla hangi dallara girebilirsin?</h3>
-        <p class="hint">2026-TUS 1. Dönem taban puanlarına göre yaklaşık kıyaslama — her dal kendi puan türüyle (T veya K) karşılaştırılır. Taban puanlar dönemden döneme değişir, bu bir garanti değil, referanstır.</p>
+        <p class="hint">2026-TUS 1. Dönem verisine göre yaklaşık kıyaslama — her dal kendi puan türüyle (T veya K) karşılaştırılır. Bir dala taban puanla girmek mümkün olsa da, ortalama puanın altındaysan alt sıralarda ve rekabetçi kalırsın. Puanlar dönemden döneme değişir; bu bir garanti değil, referanstır.</p>
         <p class="lead" id="match-lead" style="display:none"></p>
-        <ul class="match-list" id="match-list"></ul>
+        <div id="match-groups"></div>
         <div class="match-near" id="match-near" style="display:none">
           <p class="match-near-title">Az kalanlar</p>
           <div id="match-near-rows"></div>
@@ -452,7 +477,7 @@ function renderScoreTool() {
           var TW={temel:${T_PUANI_AGIRLIK.temel},klinik:${T_PUANI_AGIRLIK.klinik}};
           var KW={temel:${K_PUANI_AGIRLIK.temel},klinik:${K_PUANI_AGIRLIK.klinik}};
           var KONTENJAN=${kontenjanJson};
-          var kesinti=false,hedefTuru='K';
+          var kesinti=false,hedefTuru='K',RAHAT_MARJ=1.5;
           function r1(x){return Math.round(x*10)/10;}
           function net(c,w){var n=(Number(c)||0)-(Number(w)||0)/4;return n>0?r1(n):0;}
           function blank(c,w){var b=SEC-(Number(c)||0)-(Number(w)||0);return b>=0?b:0;}
@@ -478,34 +503,57 @@ function renderScoreTool() {
           var toggleBtn=document.getElementById('kesinti-toggle'),switchEl=document.getElementById('kesinti-switch');
           var hedefEl=document.getElementById('hedef-puan'),hintEl=document.getElementById('reverse-hint');
           var hedefTBtn=document.getElementById('hedef-t'),hedefKBtn=document.getElementById('hedef-k');
-          var matchPanel=document.getElementById('match-panel'),matchLead=document.getElementById('match-lead'),matchList=document.getElementById('match-list');
+          var matchPanel=document.getElementById('match-panel'),matchLead=document.getElementById('match-lead'),matchGroups=document.getElementById('match-groups');
           var matchNear=document.getElementById('match-near'),matchNearRows=document.getElementById('match-near-rows');
           var lastTemelNet=0,lastKlinikNet=0;
+          function badgeHtml(r){return '<span class="puan-badge '+(r[2]==='T'?'t':'k')+'">'+r[2]+'</span> ';}
+          function renderGroup(title,titleClass,note,items,chipClass,fmt){
+            if(!items.length)return;
+            var wrap=document.createElement('div');
+            wrap.className='match-group';
+            var h=document.createElement('p');
+            h.className='match-group-title '+titleClass;
+            h.innerHTML=title+(note?' <span>'+note+'</span>':'');
+            wrap.appendChild(h);
+            var ul=document.createElement('ul');
+            ul.className='match-list';
+            items.forEach(function(r){
+              var li=document.createElement('li');
+              li.className='match-chip'+(chipClass?' '+chipClass:'');
+              li.innerHTML=badgeHtml(r)+r[0]+' · '+fmt(r);
+              ul.appendChild(li);
+            });
+            wrap.appendChild(ul);
+            matchGroups.appendChild(wrap);
+          }
           function renderMatch(tShown,kShown){
             var hasScore=tShown>0||kShown>0;
             matchPanel.style.display=hasScore?'block':'none';
             if(!hasScore)return;
-            var withThreshold=KONTENJAN.filter(function(r){return r[1]!=null;});
-            var noThreshold=KONTENJAN.filter(function(r){return r[1]==null;});
             function relevant(r){return r[2]==='T'?tShown:kShown;}
-            var qualifies=withThreshold.filter(function(r){return r[1]<=relevant(r);}).sort(function(a,b){return b[1]-a[1];});
-            var near=withThreshold.filter(function(r){return r[1]>relevant(r);}).sort(function(a,b){return (a[1]-relevant(a))-(b[1]-relevant(b));}).slice(0,5);
-            var total=qualifies.length+noThreshold.length;
+            var rahat=[],sinirda=[],open=[],near=[];
+            KONTENJAN.forEach(function(r){
+              var s=relevant(r);
+              if(r[1]==null){open.push(r);return;}
+              if(s<r[1]){near.push(r);return;}
+              if(r[3]!=null&&s>=r[3]+RAHAT_MARJ)rahat.push(r);else sinirda.push(r);
+            });
+            rahat.sort(function(a,b){return b[3]-a[3];});
+            sinirda.sort(function(a,b){return a[3]-b[3];});
+            near.sort(function(a,b){return (a[1]-relevant(a))-(b[1]-relevant(b));});
+            near=near.slice(0,5);
+            var total=rahat.length+sinirda.length+open.length;
             if(total>0){
               matchLead.style.display='none';
             }else{
               matchLead.style.display='block';
               matchLead.className='lead warn';
-              matchLead.textContent='Bu puanla geçen dönem taban puanı oluşan hiçbir dala girebilmiş değilsin'+(noThreshold.length?', ancak kontenjanı hiç dolmayan '+noThreshold.length+' dal her zaman açık kalıyor.':'.');
+              matchLead.textContent='Bu puanla geçen dönem taban puanı oluşan hiçbir dala girebilmiş değilsin'+(open.length?', ancak kontenjanı hiç dolmayan '+open.length+' dal her zaman açık kalıyor.':'.');
             }
-            matchList.innerHTML='';
-            qualifies.concat(noThreshold).forEach(function(r){
-              var li=document.createElement('li');
-              li.className='match-chip'+(r[1]==null?' open':'');
-              var badge='<span class="puan-badge '+(r[2]==='T'?'t':'k')+'">'+r[2]+'</span> ';
-              li.innerHTML=badge+r[0]+' · '+(r[1]==null?'kontenjan dolmadı':r[1]);
-              matchList.appendChild(li);
-            });
+            matchGroups.innerHTML='';
+            renderGroup('Rahat girersin','rahat','(ortalamanın en az +1.5 üzerindesin)',rahat,'',function(r){return '<span class="chip-metric em">taban '+r[1]+'</span> <span class="chip-metric em">ort. '+r[3]+'</span>';});
+            renderGroup('Sınırda / rekabetçi','sinirda','(taban üstü, ortalamaya +1.5’e kadar yakın)',sinirda,'sinirda',function(r){return '<span class="chip-metric">taban '+r[1]+'</span> <span class="chip-metric">ort. '+r[3]+'</span>';});
+            renderGroup('Kontenjanı dolmayan dallar','open','',open,'open',function(){return 'kontenjan dolmadı';});
             matchNear.style.display=near.length?'block':'none';
             matchNearRows.innerHTML='';
             near.forEach(function(r){
@@ -575,25 +623,45 @@ function renderScoreTool() {
 
 // TUS kontenjan tablosu — sıralanabilir/aranabilir statik tablo + satır-içi JS.
 function renderKontenjanTable(data, donem) {
-  const rows = data
-    .map(
-      (r) =>
-        `<tr data-dal="${escapeHtml(r.dal.toLocaleLowerCase("tr"))}" data-kontenjan="${r.kontenjan}" data-taban="${r.tabanPuan ?? -1}" data-yerlesen="${r.yerlesen}">` +
-        `<td>${escapeHtml(r.dal)}</td><td><span class="puan-badge ${r.puanTuru === "T" ? "t" : "k"}">${r.puanTuru}</span></td><td>${r.kontenjan}</td><td class="puan">${r.tabanPuan != null ? r.tabanPuan : "—"}</td><td>${r.yerlesen}</td></tr>`
-    )
+  const sorted = [...data].sort((a, b) => (b.ortalamaPuan ?? -1) - (a.ortalamaPuan ?? -1));
+  const rows = sorted
+    .map((r) => {
+      const tier = getRekabetTier(r);
+      const yuzde = getDolulukYuzde(r);
+      const barClass = yuzde == null ? "" : yuzde >= 100 ? "full" : yuzde >= 90 ? "high" : "low";
+      const doluluk =
+        yuzde == null
+          ? '<span style="color:#64748b">—</span>'
+          : `<span class="doluluk-cell"><span class="doluluk-bar ${barClass}"><i style="width:${Math.min(yuzde, 100)}%"></i></span><span style="font-weight:600;color:#cbd5e1">%${yuzde}</span></span>`;
+      const aralik =
+        r.tabanPuan != null ? `${r.tabanPuan} <span style="color:#475569">–</span> ${r.tavanPuan}` : "—";
+      return (
+        `<tr data-dal="${escapeHtml(r.dal.toLocaleLowerCase("tr"))}" data-kontenjan="${r.kontenjan}" data-taban="${r.tabanPuan ?? -1}" data-ortalama="${r.ortalamaPuan ?? -1}" data-doluluk="${yuzde ?? -1}">` +
+        `<td>${escapeHtml(r.dal)}</td>` +
+        `<td><span class="puan-badge ${r.puanTuru === "T" ? "t" : "k"}">${r.puanTuru}</span></td>` +
+        `<td><span class="rekabet-badge ${tier.key}">${escapeHtml(tier.label)}</span></td>` +
+        `<td class="puan">${r.ortalamaPuan != null ? r.ortalamaPuan : "—"}</td>` +
+        `<td style="color:#94a3b8;font-weight:600">${aralik}</td>` +
+        `<td>${r.kontenjan}</td>` +
+        `<td>${doluluk}</td></tr>`
+      );
+    })
     .join("");
   return `<section aria-label="TUS kontenjan tablosu" style="margin-top:30px">
       <input type="text" id="kontenjan-search" class="kontenjan-search" placeholder="Uzmanlık dalı ara…" />
       <p class="kontenjan-meta">${escapeHtml(donem)} · <span id="kontenjan-count">${data.length}</span> dal · <span class="puan-badge t">T</span> temel bilim · <span class="puan-badge k">K</span> klinik</p>
+      <p class="kontenjan-help">Bir dalın rekabetini yalnızca <b style="color:#cbd5e1">taban puanla</b> değerlendirme: taban, o dala giren <b style="color:#cbd5e1">son kişinin</b> puanıdır. <b>Ortalama</b> ve <b>tavan</b> puan ile <b>rekabet</b> rozeti, dalın gerçek yarışını daha doğru gösterir.</p>
       <div class="kontenjan-table">
         <table>
           <thead>
             <tr>
               <th data-key="dal" data-type="str">Uzmanlık Dalı</th>
-              <th>Puan Türü</th>
+              <th>Tür</th>
+              <th data-key="ortalama" data-type="num">Rekabet</th>
+              <th data-key="ortalama" data-type="num">Ortalama</th>
+              <th data-key="taban" data-type="num">Taban–Tavan</th>
               <th data-key="kontenjan" data-type="num">Kontenjan</th>
-              <th data-key="taban" data-type="num">Taban Puan</th>
-              <th data-key="yerlesen" data-type="num">Yerleşen</th>
+              <th data-key="doluluk" data-type="num">Doluluk</th>
             </tr>
           </thead>
           <tbody id="kontenjan-body">${rows}</tbody>
@@ -606,7 +674,7 @@ function renderKontenjanTable(data, donem) {
           var countEl=document.getElementById('kontenjan-count');
           var headers=document.querySelectorAll('.kontenjan-table th[data-key]');
           var rows=Array.prototype.slice.call(body.querySelectorAll('tr'));
-          var sortKey='dal',sortDir=1;
+          var sortKey='ortalama',sortDir=-1;
           function applyFilter(){
             var q=search.value.trim().toLocaleLowerCase('tr');
             var visible=0;
@@ -618,7 +686,7 @@ function renderKontenjanTable(data, donem) {
             countEl.textContent=visible;
           }
           function applySort(){
-            var attr=sortKey==='dal'?'data-dal':sortKey==='kontenjan'?'data-kontenjan':sortKey==='taban'?'data-taban':'data-yerlesen';
+            var attr='data-'+sortKey;
             var sorted=rows.slice().sort(function(a,b){
               var av=a.getAttribute(attr),bv=b.getAttribute(attr);
               if(attr==='data-dal')return sortDir*av.localeCompare(bv,'tr');
