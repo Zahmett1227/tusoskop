@@ -69,6 +69,9 @@ service cloud.firestore {
           'acquisition',
           'updatedAt',
           'lastLoginAt',
+          'lastSeenAt',
+          'platform',
+          'appVersion',
           'email',
           'displayName',
           'photoURL'
@@ -89,9 +92,12 @@ service cloud.firestore {
         'adminNote',
         'grantedBy',
         'grantedAt',
+        'platform',
+        'appVersion',
         'createdAt',
         'updatedAt',
         'lastLoginAt',
+        'lastSeenAt',
         'acquisition'
       ]);
     }
@@ -183,6 +189,7 @@ service cloud.firestore {
       allow create, update, delete: if false;
     }
 
+
     match /users/{uid}/questionHistory/{questionId} {
       allow read: if isOwner(uid) || isAdmin();
       allow create, update: if (isOwner(uid) || isAdmin())
@@ -272,6 +279,12 @@ service cloud.firestore {
       allow create: if isSignedIn() && isSafePremiumPurchaseIntentCreate();
       allow read, update: if isAdmin();
       allow delete: if false;
+    }
+
+    // IAP abonelik → hesap bağı. Yalnızca Cloud Functions (Admin SDK) yazar/okur;
+    // istemci erişimi tamamen kapalı (savunma derinliği).
+    match /appleSubscriptions/{originalTransactionId} {
+      allow read, write: if false;
     }
 
     // Nickname benzersizlik tablo — okuma herkes, yazma transaction ile kendi kaydı
