@@ -120,6 +120,32 @@ function IntentStatusBadge({ status }) {
   );
 }
 
+/**
+ * Apple IAP ödemelerinde StoreKit ortamını (Sandbox / Production) gösterir.
+ * `iapEnvironment` yalnızca App Store satın almalarında yazılır; PayTR
+ * kayıtlarında olmadığından hiç render edilmez. Sandbox = test/gerçek para YOK.
+ */
+function IapEnvironmentBadge({ environment }) {
+  if (!environment) return null;
+  const isSandbox = String(environment).toLowerCase() === "sandbox";
+  const cls = isSandbox
+    ? "bg-amber-500/12 text-amber-200 border-amber-400/30"
+    : "bg-emerald-500/12 text-emerald-200 border-emerald-400/28";
+  const label = isSandbox ? "Sandbox (test)" : "Production";
+  return (
+    <span
+      title={
+        isSandbox
+          ? "App Store Sandbox — test satın alması, gerçek ödeme yok"
+          : "App Store Production — gerçek satın alma"
+      }
+      className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-bold whitespace-nowrap ${cls}`}
+    >
+      {label}
+    </span>
+  );
+}
+
 function IntentOrderModal({ intent, adminUid, onClose, onSaved }) {
   const [value, setValue] = useState("");
   const [saving, setSaving] = useState(false);
@@ -468,6 +494,11 @@ export default function AdminPurchaseIntentsTab({
                           {row.planSku}
                         </p>
                       ) : null}
+                      {row.iapEnvironment ? (
+                        <p className="mt-1.5">
+                          <IapEnvironmentBadge environment={row.iapEnvironment} />
+                        </p>
+                      ) : null}
                     </div>
                     <div className="col-span-2">
                       <p className="text-slate-500 font-bold uppercase tracking-wide">
@@ -589,6 +620,11 @@ export default function AdminPurchaseIntentsTab({
                         {row.planSku ? (
                           <div className="text-[10px] text-slate-500 font-mono mt-0.5">
                             {row.planSku}
+                          </div>
+                        ) : null}
+                        {row.iapEnvironment ? (
+                          <div className="mt-1">
+                            <IapEnvironmentBadge environment={row.iapEnvironment} />
                           </div>
                         ) : null}
                       </td>

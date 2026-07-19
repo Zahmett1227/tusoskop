@@ -133,6 +133,43 @@ test("validateTransactionPayload: revocationDate yoksa geçerli abonelik kabul e
   assert.equal(d.getTime(), exp);
 });
 
+test("validateTransactionPayload: eski signedDate (tekrar oynatma) reddedilir", () => {
+  assert.throws(
+    () =>
+      validateTransactionPayload({
+        bundleId: "com.tusoskop.app",
+        type: "Auto-Renewable Subscription",
+        productId: "com.tusoskop.app.plus.1m",
+        expiresDate: Date.now() + 30 * 86400000, // hâlâ geçerli
+        signedDate: Date.now() - 2 * 86400000, // 2 gün önce imzalanmış — 24s penceresi dışında
+      }),
+    (e) => e.code === "failed-precondition"
+  );
+});
+
+test("validateTransactionPayload: taze signedDate kabul edilir", () => {
+  const exp = Date.now() + 86400000;
+  const d = validateTransactionPayload({
+    bundleId: "com.tusoskop.app",
+    type: "Auto-Renewable Subscription",
+    productId: "com.tusoskop.app.plus.3m",
+    expiresDate: exp,
+    signedDate: Date.now() - 5 * 1000, // 5 sn önce — pencere içinde
+  });
+  assert.equal(d.getTime(), exp);
+});
+
+test("validateTransactionPayload: signedDate yoksa tazelik kontrolü atlanır (geriye uyumlu)", () => {
+  const exp = Date.now() + 86400000;
+  const d = validateTransactionPayload({
+    bundleId: "com.tusoskop.app",
+    type: "Auto-Renewable Subscription",
+    productId: "com.tusoskop.app.plus.1m",
+    expiresDate: exp,
+  });
+  assert.equal(d.getTime(), exp);
+});
+
 test("validateTransactionPayload: saat kayması toleransı içinde (kıl payı dolmuş) kabul edilir", () => {
   const exp = Date.now() - 5 * 1000; // 5 sn önce — 60 sn grace içinde
   const d = validateTransactionPayload({

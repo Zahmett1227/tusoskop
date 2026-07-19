@@ -158,13 +158,21 @@ function verifyJwsTransaction(jwsRepresentation, pinnedRoot) {
 // önce dolmuş) aboneliklerde etkisizdir.
 const CLOCK_SKEW_MS = 60 * 1000;
 
+// İmza tazeliği penceresi. StoreKit, JWS'i satın alma/restore anında Apple'a
+// yeniden imzalatır; dolayısıyla meşru bir istekte `signedDate` günceldir.
+// Pencere bilinçli olarak cömert (24 saat) tutulur ki çevrimdışı kalıp sonradan
+// restore eden gibi uç meşru durumlar reddedilmesin. Yine de günler önce
+// kaydedilmiş bir token'ın (iade sonrası) doğrudan callable'a tekrar
+// oynatılmasını engeller.
+const SIGNED_DATE_MAX_AGE_MS = 24 * 60 * 60 * 1000;
+
 /**
  * Doğrulanmış JWS payload'ının iş kurallarını kontrol eder; geçerliyse
  * abonelik bitiş tarihini (Date) döner, değilse HttpsError fırlatır.
  * Saf fonksiyon — birim testlerde kullanılır.
  */
 function validateTransactionPayload(payload, nowMs = Date.now()) {
-  const { bundleId, productId, expiresDate, type, revocationDate } = payload || {};
+  const { bundleId, productId, expiresDate, type, revocationDate, signedDate } = payload || {};
 
   if (bundleId !== ALLOWED_BUNDLE_ID) {
     throw new HttpsError("invalid-argument", `Geçersiz bundle ID: ${bundleId}`);
@@ -188,6 +196,22 @@ function validateTransactionPayload(payload, nowMs = Date.now()) {
         Number.isNaN(revMs) ? String(revocationDate) : new Date(revMs).toISOString()
       }`
     );
+  }
+
+  // İmza tazeliği (tekrar oynatma savunması). İade edilen bir kullanıcı, iadeden
+  // ÖNCE kaydettiği (revocationDate taşımayan) eski bir JWS'i doğrudan callable'a
+  // yeniden gönderebilir. Böyle eski bir token'ın signedDate'i tazelik penceresi
+  // dışında kalır ve reddedilir; Apple'ın yeniden imzaladığı güncel token ise
+  // artık revocationDate taşıyacağından yukarıda zaten reddedilir. signedDate yoksa
+  // (Apple her zaman ekler; savunmacı davranış) tazelik kontrolü atlanır.
+  if (signedDate != null) {
+    const signedMs = new Date(signedDate).getTime();
+    if (!Number.isNaN(signedMs) && signedMs < nowMs - SIGNED_DATE_MAX_AGE_MS) {
+      throw new HttpsError(
+        "failed-precondition",
+        `İmza çok eski (olası tekrar oynatma): signedDate=${new Date(signedMs).toISOString()} now=${new Date(nowMs).toISOString()}`
+      );
+    }
   }
 
   const expMs = new Date(expiresDate).getTime();
