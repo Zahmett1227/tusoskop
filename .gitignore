@@ -60,3 +60,6 @@ scripts/instagram/.ig_session.json
 scripts/instagram/ig_session.json
 scripts/instagram/exchange_token.py
 
+
+# Claude audit working data (temporary)
+scratchpad/
