@@ -1,4 +1,5 @@
 import { readFile } from "node:fs/promises";
+import { isValidTopic } from "../src/data/subjectTopicSchema.js";
 
 const manifest = JSON.parse(
   await readFile(new URL("../src/data/questionChunks/_manifest.json", import.meta.url), "utf8")
@@ -78,6 +79,11 @@ for (const [slug, subjectName] of Object.entries(manifest.subjectBySlug || {})) 
     const context = `${slug}[${index}]`;
     if (question?.ders !== subjectName) {
       addError(`${context}: ders "${question?.ders}" does not match "${subjectName}"`);
+    }
+    if (isNonEmptyString(question?.konu) && !isValidTopic(subjectName, question.konu)) {
+      addError(
+        `${context}: konu "${question.konu}" is not a valid topic for "${subjectName}" (see src/data/subjectTopicSchema.js)`
+      );
     }
     validateQuestion(question, context);
   });
