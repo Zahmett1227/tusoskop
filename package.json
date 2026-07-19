@@ -12,6 +12,7 @@
     "validate:questions": "node scripts/validate-question-bank.mjs",
     "audit:questions": "node scripts/audit-question-bank-quality.mjs",
     "review:questions": "node scripts/build-question-review-queue.mjs",
+    "check:incoming": "node scripts/check-incoming-questions.mjs",
     "quality:questions": "npm run validate:questions && npm run audit:questions && npm run review:questions",
     "test:social-visuals": "node scripts/test-social-visuals.mjs",
     "test:e2e": "playwright test",
