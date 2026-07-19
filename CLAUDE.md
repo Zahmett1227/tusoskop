@@ -2,6 +2,18 @@
 
 Türk TUS (Tıpta Uzmanlık Sınavı) sınav hazırlık uygulaması. React + Vite + Firebase + Capacitor iOS.
 
+## Backend Tek Kaynak Kuralı (functions + firestore.rules) — KRİTİK
+
+İki branch (`main` ve `ios-appstore-v2`) **tek Firebase projesine** deploy eder. Bu yüzden:
+
+- `functions/` klasörü, `firestore.rules` ve `firebase.json`'ın **`firestore` + `functions` blokları** her iki branch'te **birebir aynı (birleşik süperset)** tutulur. Backend değişikliği hangi branch'te yapılırsa yapılsın diğerine aynen cherry-pick edilir. (`firebase.json`'ın `hosting` bloğu branch'e özgü kalabilir — canlı web hosting Vercel'de, Firebase Hosting kullanılmıyor; iOS uygulaması da firebase.json'ı hiç okumaz.)
+- Birleşik `functions/index.js` **9 fonksiyon** export eder: `incrementUsage`, `registerAppleRefreshToken`, `deleteAccountAndData`, `verifyApplePurchase`, `tryPublishSocialContent`, `createPaytrToken`, `paytrCallback`, `onUserDocumentCreated`, `generateDailyStudyPlan`. Eksik export'lu kaynaktan deploy, eksik fonksiyonları **canlıdan siler** (web ödeme / iOS IAP kırılır).
+- `allowedOrigins` Capacitor origin'lerini (`capacitor://localhost`, `ionic://localhost`, `https://localhost`) **içermek zorunda** — silinirse iOS callable'ları CORS'tan kırılır.
+- `firestore.rules` birleşik sürümü, users create/update allowlist'lerinde `platform`/`appVersion`/`lastSeenAt` alanlarını içerir (iOS istemcisi bunları yazar; alanlar silinirse **iOS'ta yeni kullanıcı kaydı kırılır**) + istemciye kapalı `appleSubscriptions` bloğu.
+- Deploy'da `--force` **asla** kullanılmaz. Doğru birleşik kaynaktan deploy'da CLI silme sorusu hiç sormamalı; sorarsa DUR — kaynak eksik demektir.
+- `firebase.json`'daki predeploy hook'u (`scripts/check-backend-integrity.mjs`) export setini ve rules alanlarını doğrular, hata varsa deploy'u durdurur. Bu koruma bilerek eklendi; atlatmak yerine listeyi güncelle (yeni fonksiyon eklerken her iki branch'te birden).
+- Deploy öncesi gerekli secret'lar (Secret Manager'da mevcut olmalı): `PAYTR_MERCHANT_KEY`, `PAYTR_MERCHANT_SALT`, `META_CAPI_TOKEN`, `GEMINI_API_KEY`, `APPLE_SIGNIN_PRIVATE_KEY`.
+
 ## Branch Yapısı
 
 | Branch | Amaç |

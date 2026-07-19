@@ -5,7 +5,8 @@ if (!admin.apps.length) {
   admin.initializeApp();
 }
 
-const { onCall, HttpsError } = require("firebase-functions/v2/https");
+const { onCall, onRequest, HttpsError } = require("firebase-functions/v2/https");
+const { onDocumentCreated } = require("firebase-functions/v2/firestore");
 const { defineSecret } = require("firebase-functions/params");
 const { getFirestore, FieldValue } = require("firebase-admin/firestore");
 const { FREE_LIMITS } = require("./constants");
@@ -18,6 +19,14 @@ const { buildUserStudySummary } = require("./services/buildUserStudySummary");
 const { generateAiStudyPlan } = require("./services/generateAiStudyPlan");
 const { buildFallbackDailyStudyPlan } = require("./services/buildFallbackDailyStudyPlan");
 const { verifyApplePurchaseHandler } = require("./verifyApplePurchase");
+const {
+  PAYTR_MERCHANT_KEY,
+  PAYTR_MERCHANT_SALT,
+  createPaytrTokenHandler,
+  paytrCallbackHandler,
+} = require("./paytr");
+const { META_CAPI_TOKEN } = require("./metaCapi");
+const { onUserDocumentCreatedHandler } = require("./userTriggers");
 
 // Apple Sign in private key (.p8 içeriği). `firebase functions:secrets:set` ile tanımlanır.
 const APPLE_SIGNIN_PRIVATE_KEY = defineSecret("APPLE_SIGNIN_PRIVATE_KEY");
@@ -387,6 +396,46 @@ exports.tryPublishSocialContent = onCall(
     cors: allowedOrigins,
   },
   tryPublishSocialContentHandler
+);
+
+/**
+ * PayTR iFrame ödeme token'ı üretir. Kimlik doğrulamalı kullanıcı çağırır.
+ * Tutar/süre sunucudaki PAYTR_PLANS tablosundan gelir; istemci yalnızca planId yollar.
+ */
+exports.createPaytrToken = onCall(
+  {
+    region: "us-central1",
+    cors: allowedOrigins,
+    secrets: [PAYTR_MERCHANT_KEY, PAYTR_MERCHANT_SALT],
+  },
+  createPaytrTokenHandler
+);
+
+/**
+ * PayTR sunucudan sunucuya ödeme bildirimi (notification URL).
+ * Başarılı ödemede kullanıcıya otomatik Plus tanımlar. Yanıt düz metin "OK".
+ * PayTR panelinde bildirim URL'i olarak bu fonksiyonun adresi tanımlanmalıdır.
+ */
+exports.paytrCallback = onRequest(
+  {
+    region: "us-central1",
+    secrets: [PAYTR_MERCHANT_KEY, PAYTR_MERCHANT_SALT, META_CAPI_TOKEN],
+  },
+  paytrCallbackHandler
+);
+
+/**
+ * Yeni kullanıcı dokümanı oluşturulunca Meta CAPI'ye sunucu taraflı
+ * CompleteRegistration event'i gönderir (tarayıcı pixel'iyle event_id=uid
+ * üzerinden dedup edilir). Bkz. `functions/userTriggers.js`.
+ */
+exports.onUserDocumentCreated = onDocumentCreated(
+  {
+    document: "users/{uid}",
+    region: "us-central1",
+    secrets: [META_CAPI_TOKEN],
+  },
+  onUserDocumentCreatedHandler
 );
 
 /**
