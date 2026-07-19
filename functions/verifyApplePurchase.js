@@ -158,13 +158,21 @@ function verifyJwsTransaction(jwsRepresentation, pinnedRoot) {
 // önce dolmuş) aboneliklerde etkisizdir.
 const CLOCK_SKEW_MS = 60 * 1000;
 
+// İmza tazeliği penceresi. StoreKit, JWS'i satın alma/restore anında Apple'a
+// yeniden imzalatır; dolayısıyla meşru bir istekte `signedDate` günceldir.
+// Pencere bilinçli olarak cömert (24 saat) tutulur ki çevrimdışı kalıp sonradan
+// restore eden gibi uç meşru durumlar reddedilmesin. Yine de günler önce
+// kaydedilmiş bir token'ın (iade sonrası) doğrudan callable'a tekrar
+// oynatılmasını engeller.
+const SIGNED_DATE_MAX_AGE_MS = 24 * 60 * 60 * 1000;
+
 /**
  * Doğrulanmış JWS payload'ının iş kurallarını kontrol eder; geçerliyse
  * abonelik bitiş tarihini (Date) döner, değilse HttpsError fırlatır.
  * Saf fonksiyon — birim testlerde kullanılır.
  */
 function validateTransactionPayload(payload, nowMs = Date.now()) {
-  const { bundleId, productId, expiresDate, type } = payload || {};
+  const { bundleId, productId, expiresDate, type, revocationDate, signedDate } = payload || {};
 
   if (bundleId !== ALLOWED_BUNDLE_ID) {
     throw new HttpsError("invalid-argument", `Geçersiz bundle ID: ${bundleId}`);
@@ -174,6 +182,36 @@ function validateTransactionPayload(payload, nowMs = Date.now()) {
   }
   if (!ALLOWED_PRODUCT_IDS.has(productId)) {
     throw new HttpsError("invalid-argument", `İzin verilmeyen ürün ID: ${productId}`);
+  }
+
+  // İade/iptal edilmiş işlemler: StoreKit 2 payload'ı, Apple Support bir işlemi
+  // iade ettiğinde veya Family Sharing'den çektiğinde `revocationDate` (ms) taşır.
+  // Bu alan varsa abonelik geri alınmış demektir; expiresDate hâlâ gelecekte olsa
+  // bile premium VERİLMEMELİDİR (aksi halde iadeli abonelik bitişe dek kullanılır).
+  if (revocationDate != null) {
+    const revMs = new Date(revocationDate).getTime();
+    throw new HttpsError(
+      "failed-precondition",
+      `İşlem iptal/iade edilmiş: revocationDate=${
+        Number.isNaN(revMs) ? String(revocationDate) : new Date(revMs).toISOString()
+      }`
+    );
+  }
+
+  // İmza tazeliği (tekrar oynatma savunması). İade edilen bir kullanıcı, iadeden
+  // ÖNCE kaydettiği (revocationDate taşımayan) eski bir JWS'i doğrudan callable'a
+  // yeniden gönderebilir. Böyle eski bir token'ın signedDate'i tazelik penceresi
+  // dışında kalır ve reddedilir; Apple'ın yeniden imzaladığı güncel token ise
+  // artık revocationDate taşıyacağından yukarıda zaten reddedilir. signedDate yoksa
+  // (Apple her zaman ekler; savunmacı davranış) tazelik kontrolü atlanır.
+  if (signedDate != null) {
+    const signedMs = new Date(signedDate).getTime();
+    if (!Number.isNaN(signedMs) && signedMs < nowMs - SIGNED_DATE_MAX_AGE_MS) {
+      throw new HttpsError(
+        "failed-precondition",
+        `İmza çok eski (olası tekrar oynatma): signedDate=${new Date(signedMs).toISOString()} now=${new Date(nowMs).toISOString()}`
+      );
+    }
   }
 
   const expMs = new Date(expiresDate).getTime();
@@ -240,11 +278,17 @@ async function verifyApplePurchaseHandler(request) {
 
     const { productId, originalTransactionId, transactionId } = payload;
 
+    // Sandbox/Production ayrımı. İzlenebilirlik için kaydedilir (Sandbox işlemleri
+    // App Review + TestFlight tarafından üretildiğinden REDDEDİLMEZ; yalnızca
+    // iapEnvironment olarak damgalanır ki admin panelde ayırt edilebilsin).
+    const iapEnvironment = String(payload.environment || "").trim() || null;
+
     const expRawMs = new Date(payload.expiresDate).getTime();
     console.log("[verifyApplePurchase] Payload:", {
       bundleId: payload.bundleId,
       productId,
       type: payload.type,
+      environment: iapEnvironment,
       expiresDateRaw: payload.expiresDate,
       expiresDateIso: Number.isNaN(expRawMs) ? "INVALID" : new Date(expRawMs).toISOString(),
       nowIso: new Date().toISOString(),
@@ -280,6 +324,7 @@ async function verifyApplePurchaseHandler(request) {
       iapSource: "apple",
       iapProductId: productId,
       iapOriginalTransactionId: bindingKey,
+      iapEnvironment,
       iapLastUpdated: FieldValue.serverTimestamp(),
     };
     if (userEmail) userPatch.email = userEmail;
@@ -302,6 +347,7 @@ async function verifyApplePurchaseHandler(request) {
         productId,
         originalTransactionId: bindingKey,
         premiumUntil: Timestamp.fromDate(expDate),
+        environment: iapEnvironment,
         lastVerifiedAt: FieldValue.serverTimestamp(),
       };
       if (binding.isNew) {
@@ -339,6 +385,7 @@ async function verifyApplePurchaseHandler(request) {
         iapProductId: productId,
         iapTransactionId: String(transactionId || ""),
         iapOriginalTransactionId: bindingKey,
+        iapEnvironment,
         premiumUntil: expDate.toISOString(),
         shopifyOrderName: null,
         createdAt: new Date().toISOString(),
