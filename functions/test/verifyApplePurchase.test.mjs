@@ -107,6 +107,32 @@ test("validateTransactionPayload: süresi dolmuş abonelik reddedilir", () => {
   );
 });
 
+test("validateTransactionPayload: iade/iptal edilmiş işlem (revocationDate) reddedilir — bitiş gelecekte olsa bile", () => {
+  assert.throws(
+    () =>
+      validateTransactionPayload({
+        bundleId: "com.tusoskop.app",
+        type: "Auto-Renewable Subscription",
+        productId: "com.tusoskop.app.plus.1m",
+        expiresDate: Date.now() + 30 * 86400000, // 30 gün sonra (hâlâ geçerli görünür)
+        revocationDate: Date.now() - 86400000, // dün iade edilmiş
+      }),
+    (e) => e.code === "failed-precondition"
+  );
+});
+
+test("validateTransactionPayload: revocationDate yoksa geçerli abonelik kabul edilir", () => {
+  const exp = Date.now() + 86400000;
+  const d = validateTransactionPayload({
+    bundleId: "com.tusoskop.app",
+    type: "Auto-Renewable Subscription",
+    productId: "com.tusoskop.app.plus.3m",
+    expiresDate: exp,
+    revocationDate: null,
+  });
+  assert.equal(d.getTime(), exp);
+});
+
 test("validateTransactionPayload: saat kayması toleransı içinde (kıl payı dolmuş) kabul edilir", () => {
   const exp = Date.now() - 5 * 1000; // 5 sn önce — 60 sn grace içinde
   const d = validateTransactionPayload({
