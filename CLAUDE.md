@@ -190,15 +190,15 @@ TUS özelliklerini agresif pazarlayan SEO altyapısı. Amaç: özellikleri rakam
 
 ### Tek doğruluk kaynağı: `src/seo/subjectData.js`
 - 11 dersin gerçek soru sayıları + her dersten **soru bankamızdan alınmış gerçek örnek soru** (id, konu, q, options, correct, exp).
-- `TOTAL_QUESTIONS` = branş sayımlarının toplamı (şu an 7077). `_manifest.json` `subjectCounts` ile aynı tutulmalı.
-- **"X+" pazarlama kuralı** (`questionCountLabel`): gerçek sayıyı **bir alt yüzlüğe** yuvarlar, asla abartmaz. `7077 → 7.000+`, `7200 → 7.100+`. Sayı arttıkça etiket otomatik büyür ama her zaman gerçeğin altında kalır.
+- `TOTAL_QUESTIONS` = branş sayımlarının toplamı (şu an 10061). `_manifest.json` `subjectCounts` ile aynı tutulmalı.
+- **"X+" pazarlama kuralı** (`questionCountLabel`): gerçek sayıyı **bir alt yüzlüğe** yuvarlar, asla abartmaz. `10061 → 10.000+`, `10200 → 10.100+`. Sayı arttıkça etiket otomatik büyür ama her zaman gerçeğin altında kalır.
 
 ### TUS Araçları — Puan Hesaplama ve Kontenjan Tablosu
 - **`/tus-puan-hesaplama`**: `src/seo/tusScoring.js` tek matematik kaynağı — `TUS_SCORE_ANCHORS` (net→puan çapa tablosu, kullanıcı onaylı), `computeNet`, `estimateTusScore` (lineer interpolasyon), `netForScore` (ters interpolasyon), `applyScoreDeduction` (%5 kesinti, `TUS_DEDUCTION_RATE = 0.05`), `computeBlank`/`isSectionOverflow` (120 soru validasyonu). React (`TusScoreCalculator`) ve statik prerender (`renderScoreTool` in `generate-seo-pages.mjs`) **aynı mantığı iki dilde (JS/inline JS) birebir uygular** — biri değişirse diğeri de güncellenmeli.
 - **`/tus-kontenjan-tablosu`**: `src/seo/kontenjanData.js` — dönem bazlı kontenjan/taban puan/yerleşen verisi (başarı sırası kasıtlı olarak yok). **Her yeni TUS döneminde bu dosya elle güncellenmeli** (`KONTENJAN_DATA` dizisi + `KONTENJAN_DONEM_LABEL`). `tabanPuan: null` → kontenjan dolmadı, tabloda "—" gösterilir. Sıralanabilir/aranabilir tablo React (`KontenjanTable`) ve statik (`renderKontenjanTable`) olarak iki katmanda var.
 
 ### İşlenen 6 pazarlama fikri
-1. **Soru sayısı vurgusu** — "7.000+ TUS tarzı soru, 11 dersten ve istediğin konudan seç" (hero, meta, stat kartları).
+1. **Soru sayısı vurgusu** — "10.000+ TUS tarzı soru, 11 dersten ve istediğin konudan seç" (hero, meta, stat kartları).
 2. **Branş bazlı 11 SEO sayfası** — `/tus-{ders}-sorulari` (örn. `/tus-anatomi-sorulari`). Her birinde dersin gerçek soru sayısı + örnek soru kartı (şık + doğru cevap + açıklama). "tus {ders} soruları" aramalarını hedefler.
 3. **Akıllı tekrar (FSRS)** — "yanlışını tam unutmadan önce karşına çıkarırız".
 4. **Ücretsiz limit** — "günde 30 soru ücretsiz" (`FREE_LIMITS` ile uyumlu).
@@ -264,7 +264,7 @@ Meta Traffic reklamlarından gelen kullanıcı için **login-öncesi 3 soruluk m
 
 > **Asıl nihai Meta Ads stratejisi/mimarisi için:** `META_ADS_MEDIA_PLAN.md` (Temmuz→Eylül 2026 planı — C1/C2/C3/C4 kampanya mimarisi, 10 kreatif fikri, bütçe, sinyal merdiveni QuizComplete→CompleteRegistration→Purchase, 9 haftalık takvim, guardrail'ler). Her yeni kampanya/bütçe/hedefleme kararı bu plana göre değerlendirilmeli. `META_ADS_CAMPAIGN_LOG.md` ise bu planın kronolojik uygulama günlüğüdür — ikisi birlikte okunmalı.
 
-> **Satış katmanı — Eylül Paketi (K6/§07-7, 13 Tem 2026):** Tek doğruluk kaynağı **`src/constants/eylulPaketi.js`** — "Eylül Paketi" = 3 aylık Plus planının (plus_3m, 209,70₺) sezonluk çerçevesi; dershane çıpası **~120.000₺** (kullanıcı beyanı). Kullanıldığı yerler: `/fiyatlandirma` kıyas bloğu (`PublicSeoPages.jsx` `PricingComparison` + `generate-seo-pages.mjs` `renderPricingComparison` — **ikisi senkron tutulmalı**), funnel sonuç ekranı kartı (`funnel/EylulPaketiCard.jsx`), `PremiumInfoScreen` çerçevesi. **Deep-link `/app?intent=plus`** → `AppAuthenticated` doğrudan `premiumInfo` view'ını açar (girişliyse hemen, anonimse giriş sonrası). Satış hunisi köprü sinyali: `metaPixel.js` `trackInitiateCheckout` (PremiumInfoScreen token başarısında). **Dürüstlük guardrail'i:** dershane ≠ Tusoskop (ders anlatımı vs soru bankası); kıyas çerçeve, kanıt satırı ("7.000+ soru · akıllı tekrar · haftalık lig") zorunlu.
+> **Satış katmanı — Eylül Paketi (K6/§07-7, 13 Tem 2026):** Tek doğruluk kaynağı **`src/constants/eylulPaketi.js`** — "Eylül Paketi" = 3 aylık Plus planının (plus_3m, 209,70₺) sezonluk çerçevesi; dershane çıpası **~120.000₺** (kullanıcı beyanı). Kullanıldığı yerler: `/fiyatlandirma` kıyas bloğu (`PublicSeoPages.jsx` `PricingComparison` + `generate-seo-pages.mjs` `renderPricingComparison` — **ikisi senkron tutulmalı**), funnel sonuç ekranı kartı (`funnel/EylulPaketiCard.jsx`), `PremiumInfoScreen` çerçevesi. **Deep-link `/app?intent=plus`** → `AppAuthenticated` doğrudan `premiumInfo` view'ını açar (girişliyse hemen, anonimse giriş sonrası). Satış hunisi köprü sinyali: `metaPixel.js` `trackInitiateCheckout` (PremiumInfoScreen token başarısında). **Dürüstlük guardrail'i:** dershane ≠ Tusoskop (ders anlatımı vs soru bankası); kıyas çerçeve, kanıt satırı ("10.000+ soru · akıllı tekrar · haftalık lig") zorunlu.
 
 ### Mimari
 - `src/main.jsx` → `src/AppRoot.jsx`: `/coz/` path'i **ağır App ağacından izole** (auth/QuestionsProvider yüklenmez), lazy `PublicQuizFunnel`. Firebase SDK sadece "Web'de devam et" login'inde dinamik import → en hızlı ilk render.

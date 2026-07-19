@@ -658,7 +658,7 @@ function renderPricingComparison() {
           <p style="margin-top:8px;color:#94a3b8;font-size:14px">Sınava kadar sınırsız soru + akıllı tekrar</p>
         </div>
       </div>
-      <p style="margin-top:20px;font-weight:800;color:#e2e8f0"><span style="color:#6ee7b7">✓</span> 7.000+ soru · akıllı tekrar (FSRS) · haftalık Türkiye ligi</p>
+      <p style="margin-top:20px;font-weight:800;color:#e2e8f0"><span style="color:#6ee7b7">✓</span> 10.000+ soru · akıllı tekrar (FSRS) · haftalık Türkiye ligi</p>
       <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
         <a class="cta" href="/app?intent=plus">Eylül Paketi'ni Al · 209,70₺</a>
         <a class="pill" href="/app?intent=plus" style="display:inline-flex;align-items:center">Önce ücretsiz dene</a>

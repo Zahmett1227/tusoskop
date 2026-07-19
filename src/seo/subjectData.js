@@ -83,7 +83,7 @@ export const SUBJECTS = [
   {
     name: "Dahiliye",
     slug: "tus-dahiliye-sorulari",
-    count: 842,
+    count: 1154,
     topics: [
       "Gastroenteroloji",
       "Kardiyoloji",
@@ -114,7 +114,7 @@ export const SUBJECTS = [
   {
     name: "Farmakoloji",
     slug: "tus-farmakoloji-sorulari",
-    count: 575,
+    count: 617,
     topics: [
       "Kardiyovasküler Sistem Farmakolojisi",
       "Santral Sinir Sistemi Farmakolojisi",
@@ -143,7 +143,7 @@ export const SUBJECTS = [
   {
     name: "Fizyoloji",
     slug: "tus-fizyoloji-sorulari",
-    count: 725,
+    count: 1234,
     topics: [
       "Sinir Sistemi HistoFizyolojisi",
       "Kas Dokusu HistoFizyolojisi",
@@ -252,7 +252,7 @@ export const SUBJECTS = [
   {
     name: "Küçük Stajlar",
     slug: "tus-kucuk-stajlar-sorulari",
-    count: 512,
+    count: 900,
     topics: [
       "Psikiyatri",
       "Anestezi",
@@ -286,7 +286,7 @@ export const SUBJECTS = [
   {
     name: "Mikrobiyoloji",
     slug: "tus-mikrobiyoloji-sorulari",
-    count: 659,
+    count: 1035,
     topics: [
       "Bakteriyoloji",
       "Viroloji",
@@ -314,7 +314,7 @@ export const SUBJECTS = [
   {
     name: "Patoloji",
     slug: "tus-patoloji-sorulari",
-    count: 797,
+    count: 1003,
     topics: [
       "İmmünoloji",
       "Gastrointestinal Sistem Hastalıkları",
@@ -359,7 +359,7 @@ export const SUBJECTS = [
   {
     name: "Pediatri",
     slug: "tus-pediatri-sorulari",
-    count: 877,
+    count: 2028,
     topics: [
       "Pediatrik Nöroloji",
       "Neonatoloji",
@@ -402,13 +402,13 @@ export const LESSON_COUNT = SUBJECTS.length;
 
 // Pazarlama "X+" kuralı: gerçek soru sayısını bir alt yüzlüğe yuvarlar.
 // Hiçbir zaman gerçek sayının üzerine çıkmaz → iddia her zaman doğrulanabilir.
-//   7077 → 7000   |   7200 → 7100   |   7100 → 7000
+//   10061 → 10000  |   10200 → 10100  |   10100 → 10000
 export function flooredHundred(n = TOTAL_QUESTIONS) {
   const floored = Math.floor(n / 100) * 100;
   return n % 100 === 0 ? floored - 100 : floored;
 }
 
-// "7000+" biçiminde pazarlama etiketi.
+// "10.000+" biçiminde pazarlama etiketi.
 export function questionCountLabel(n = TOTAL_QUESTIONS) {
   return `${flooredHundred(n).toLocaleString("tr-TR")}+`;
 }

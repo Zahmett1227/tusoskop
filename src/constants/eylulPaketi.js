@@ -26,7 +26,7 @@ export const EYLUL_PAKETI = {
   priceLabel: "209,70₺",
   perDayLabel: "günde ≈2,3₺",
   // Kanıt satırı — kıyasın yanında ZORUNLU (bkz. guardrail notu).
-  proofLine: "7.000+ soru · akıllı tekrar (FSRS) · haftalık Türkiye ligi",
+  proofLine: "10.000+ soru · akıllı tekrar (FSRS) · haftalık Türkiye ligi",
 };
 
 /** Referans dershane çıpası — kullanıcı beyanı: "TUS dershaneleri ~120.000₺". */

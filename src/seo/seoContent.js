@@ -20,7 +20,7 @@ export const OG_IMAGE = `${SITE_URL}/tusoskop-mark.png`;
 export const LASTMOD = "2026-06-24";
 
 // Pazarlama etiketleri — soru bankasından otomatik türetilir, asla abartmaz.
-export const QUESTION_COUNT_LABEL = questionCountLabel(); // örn. "7.000+"
+export const QUESTION_COUNT_LABEL = questionCountLabel(); // örn. "10.000+"
 export const LESSON_COUNT_LABEL = `${LESSON_COUNT} ders`;
 
 // Ana sayfa ve branş sayfalarında gösterilen rakamsal güven kartları.
