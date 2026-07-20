@@ -1,0 +1,319 @@
+{
+  "totalQuestions": 10061,
+  "perSubject": {
+    "Anatomi": 586,
+    "Biyokimya": 468,
+    "Dahiliye": 1154,
+    "Farmakoloji": 617,
+    "Fizyoloji": 1234,
+    "Genel Cerrahi": 530,
+    "Kadın Hastalıkları ve Doğum": 506,
+    "Küçük Stajlar": 900,
+    "Mikrobiyoloji": 1035,
+    "Patoloji": 1003,
+    "Pediatri": 2028
+  },
+  "findingsBySeverity": {
+    "HIGH": 1,
+    "MED": 0,
+    "LOW": 1451
+  },
+  "findingsByType": {
+    "exp.no_ref": 540,
+    "opt.longest_correct": 862,
+    "opt.allnone_pos": 49,
+    "opt.dup": 1
+  },
+  "duplicateQuestionGroups": 0,
+  "negativeWorded": {
+    "total": 395,
+    "bySubject": {
+      "Anatomi": 5,
+      "Biyokimya": 19,
+      "Dahiliye": 63,
+      "Farmakoloji": 20,
+      "Fizyoloji": 30,
+      "Genel Cerrahi": 3,
+      "Kadın Hastalıkları ve Doğum": 7,
+      "Küçük Stajlar": 56,
+      "Mikrobiyoloji": 61,
+      "Patoloji": 36,
+      "Pediatri": 95
+    }
+  },
+  "answerPositionBias": {
+    "Anatomi": {
+      "n": 586,
+      "dist": [
+        134,
+        208,
+        111,
+        72,
+        61
+      ],
+      "pct": [
+        "22.9%",
+        "35.5%",
+        "18.9%",
+        "12.3%",
+        "10.4%"
+      ],
+      "chi2": 117.5,
+      "biased": true
+    },
+    "Biyokimya": {
+      "n": 468,
+      "dist": [
+        179,
+        103,
+        84,
+        58,
+        44
+      ],
+      "pct": [
+        "38.2%",
+        "22.0%",
+        "17.9%",
+        "12.4%",
+        "9.4%"
+      ],
+      "chi2": 119.7,
+      "biased": true
+    },
+    "Dahiliye": {
+      "n": 1154,
+      "dist": [
+        410,
+        358,
+        210,
+        116,
+        60
+      ],
+      "pct": [
+        "35.5%",
+        "31.0%",
+        "18.2%",
+        "10.1%",
+        "5.2%"
+      ],
+      "chi2": 394.6,
+      "biased": true
+    },
+    "Farmakoloji": {
+      "n": 617,
+      "dist": [
+        314,
+        134,
+        106,
+        42,
+        21
+      ],
+      "pct": [
+        "50.9%",
+        "21.7%",
+        "17.2%",
+        "6.8%",
+        "3.4%"
+      ],
+      "chi2": 436.4,
+      "biased": true
+    },
+    "Fizyoloji": {
+      "n": 1234,
+      "dist": [
+        409,
+        402,
+        272,
+        93,
+        58
+      ],
+      "pct": [
+        "33.1%",
+        "32.6%",
+        "22.0%",
+        "7.5%",
+        "4.7%"
+      ],
+      "chi2": 447,
+      "biased": true
+    },
+    "Genel Cerrahi": {
+      "n": 530,
+      "dist": [
+        206,
+        232,
+        81,
+        9,
+        2
+      ],
+      "pct": [
+        "38.9%",
+        "43.8%",
+        "15.3%",
+        "1.7%",
+        "0.4%"
+      ],
+      "chi2": 440.8,
+      "biased": true
+    },
+    "Kadın Hastalıkları ve Doğum": {
+      "n": 506,
+      "dist": [
+        94,
+        224,
+        121,
+        43,
+        24
+      ],
+      "pct": [
+        "18.6%",
+        "44.3%",
+        "23.9%",
+        "8.5%",
+        "4.7%"
+      ],
+      "chi2": 245.8,
+      "biased": true
+    },
+    "Küçük Stajlar": {
+      "n": 900,
+      "dist": [
+        354,
+        308,
+        150,
+        58,
+        30
+      ],
+      "pct": [
+        "39.3%",
+        "34.2%",
+        "16.7%",
+        "6.4%",
+        "3.3%"
+      ],
+      "chi2": 471.9,
+      "biased": true
+    },
+    "Mikrobiyoloji": {
+      "n": 1035,
+      "dist": [
+        221,
+        455,
+        239,
+        96,
+        24
+      ],
+      "pct": [
+        "21.4%",
+        "44.0%",
+        "23.1%",
+        "9.3%",
+        "2.3%"
+      ],
+      "chi2": 524.3,
+      "biased": true
+    },
+    "Patoloji": {
+      "n": 1003,
+      "dist": [
+        255,
+        344,
+        267,
+        86,
+        51
+      ],
+      "pct": [
+        "25.4%",
+        "34.3%",
+        "26.6%",
+        "8.6%",
+        "5.1%"
+      ],
+      "chi2": 316.3,
+      "biased": true
+    },
+    "Pediatri": {
+      "n": 2028,
+      "dist": [
+        923,
+        576,
+        375,
+        106,
+        48
+      ],
+      "pct": [
+        "45.5%",
+        "28.4%",
+        "18.5%",
+        "5.2%",
+        "2.4%"
+      ],
+      "chi2": 1270.5,
+      "biased": true
+    }
+  },
+  "diffDistribution": {
+    "Anatomi": {
+      "3": 79,
+      "4": 417,
+      "5": 90
+    },
+    "Biyokimya": {
+      "3": 65,
+      "4": 303,
+      "5": 100
+    },
+    "Dahiliye": {
+      "2": 53,
+      "3": 138,
+      "4": 859,
+      "5": 104
+    },
+    "Farmakoloji": {
+      "2": 7,
+      "3": 110,
+      "4": 480,
+      "5": 20
+    },
+    "Fizyoloji": {
+      "2": 83,
+      "3": 235,
+      "4": 847,
+      "5": 69
+    },
+    "Genel Cerrahi": {
+      "3": 175,
+      "4": 292,
+      "5": 63
+    },
+    "Kadın Hastalıkları ve Doğum": {
+      "3": 197,
+      "4": 290,
+      "5": 19
+    },
+    "Küçük Stajlar": {
+      "2": 65,
+      "3": 113,
+      "4": 643,
+      "5": 79
+    },
+    "Mikrobiyoloji": {
+      "2": 66,
+      "3": 188,
+      "4": 727,
+      "5": 54
+    },
+    "Patoloji": {
+      "2": 36,
+      "3": 169,
+      "4": 724,
+      "5": 74
+    },
+    "Pediatri": {
+      "2": 184,
+      "3": 317,
+      "4": 1437,
+      "5": 90
+    }
+  }
+}

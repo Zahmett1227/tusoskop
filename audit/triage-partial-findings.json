@@ -1,0 +1,461 @@
+[
+  {
+    "id": 14,
+    "category": "medical_accuracy",
+    "severity": "major",
+    "issue": "Açıklamada apoptozom kompleksinin 'hekzamerik' (6'lı) yapıda olduğu belirtilmiş, ancak literatürde (kriyo-EM yapısal çalışmaları, Robbins Patoloji dahil) Apaf-1 apoptozomu 'heptamerik' (7 alt üniteli), tekerlek benzeri bir yapıdır. Soru kökü ve doğru şık (Apaf-1) kendisi doğru, sorun sadece açıklamadaki sayısal/yapısal detayda.",
+    "proposedFix": "Açıklamadaki 'hekzamerik yapıda' ifadesi 'heptamerik (7 alt üniteli) yapıda' olarak düzeltilmeli. Doğru şık (B - Apaf-1) değişmiyor.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-000.json"
+  },
+  {
+    "id": 32,
+    "category": "language",
+    "severity": "minor",
+    "issue": "D şıkkında yazım hatası var: 'Miyoepeitelyal p63 kaybı' yazılmış, doğrusu 'Miyoepitelyal' olmalı.",
+    "proposedFix": "D şıkkını 'Miyoepitelyal p63 kaybı' olarak düzelt (doğru şık B/E-kaderin kaybı değişmiyor, sadece yazım hatası giderilmeli).",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-001.json"
+  },
+  {
+    "id": 130,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Doğru şık (A), diğer dört şıkka göre belirgin şekilde daha uzun ve teknik açıdan daha yüklü (iki pleksus adı + iki ayrı histopatolojik bulgu bir arada), bu durum şıklar arasında \"en uzun/en detaylı olan doğrudur\" şeklinde bir ipucu (giveaway) oluşturuyor.",
+    "proposedFix": "Doğru şıkkı kısaltarak (örn. sadece \"ganglion hücrelerinin yokluğu ve hipertrofik asetilkolinesteraz-pozitif sinir lifleri\" gibi tek cümleye indirerek) veya diğer şıkları benzer detay seviyesine çıkararak uzunluk farkını azaltın.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-001.json"
+  },
+  {
+    "id": 133,
+    "category": "language",
+    "severity": "minor",
+    "issue": "D şıkkında \"Etosüksimid / Taramik T-tipi kalsiyum kanallarını bloke etmek\" ifadesinde yazım hatası var. \"Taramik\" Türkçede anlamsız bir kelime; kastedilen etosüksimidin talamik nöronlardaki T-tipi kalsiyum kanallarını bloke etmesi mekanizmasıdır, doğrusu \"Talamik\" olmalı.",
+    "proposedFix": "D şıkkındaki \"Taramik\" kelimesini \"Talamik\" olarak düzeltin: \"Etosüksimid / Talamik T-tipi kalsiyum kanallarını bloke etmek\".",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-001.json"
+  },
+  {
+    "id": 138,
+    "category": "medical_accuracy",
+    "severity": "major",
+    "issue": "Doğru olarak işaretlenen B şıkkı, CFTR proteininin yanlış katlanma (misfolding) yerini 'Golgi aygıtı' olarak belirtiyor. Ancak ΔF508 (Sınıf II) mutasyonunda yanlış katlanma, translasyon sırasında endoplazmik retikulumda (ko-translasyonel olarak) gerçekleşir; protein ER kalite kontrol mekanizması (kalneksin/kalretikulin, Hsc70/Hsp70) tarafından tanınıp Golgi'ye hiç ulaşmadan ER-ilişkili degradasyon (ERAD) yoluyla proteazomda yıkılır. Golgi, bu sürecin gerçekleştiği yer değildir. Açıklama (exp) metni de 'endoplazmik retikulum/Golgi'de' şeklinde belirsiz/hatalı bir ifade kullanarak bu yanlışlığı pekiştiriyor.",
+    "proposedFix": "Şık B'deki 'Golgi aygıtında yanlış katlanarak' ifadesi 'endoplazmik retikulumda yanlış katlanarak' şeklinde düzeltilmeli. Açıklamadaki 'endoplazmik retikulum/Golgi'de' ifadesi de netleştirilip yalnızca 'endoplazmik retikulumda' olarak güncellenmeli. Doğru şıkkın kendisi (B) diğer distraktörlere göre halen en isabetli seçenek olduğundan doğru cevap indeksi (1) değişmemeli, sadece metin düzeltilmeli.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-002.json"
+  },
+  {
+    "id": 160,
+    "category": "logic_consistency",
+    "severity": "minor",
+    "issue": "Soru kokundeki kan gazi degerleri birbiriyle matematiksel olarak tutarsiz. Henderson-Hasselbalch esitligine gore (pH = 6.1 + log(HCO3/(0.03xpCO2))), verilen pCO2:20 mmHg ve HCO3:14 mEq/L degerlerinden hesaplanan pH yaklasik 7.47 cikar, ancak soruda pH:7.42 olarak verilmis. Yaklasik 0.05 birimlik bir tutarsizlik var; teshis ve dogru sik (Salisilat) etkilenmiyor ama denklemi kontrol eden ogrenciyi yaniltabilir.",
+    "proposedFix": "pH degerini H-H denklemiyle tutarli olacak sekilde 7.46-7.47 araligina cekin (ornegin pH:7.46) veya HCO3/pCO2 degerlerini pH:7.42'ye uyacak sekilde yeniden ayarlayin (ornegin HCO3:13, pCO2:20 -> pH~7.44 gibi daha yakin bir kombinasyon secin).",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-004.json"
+  },
+  {
+    "id": 499,
+    "category": "language",
+    "severity": "minor",
+    "issue": "Soru kokunde 'Turunkus arteriozus' yazilmis, dogrusu 'Trunkus arteriozus' (konotrunkal kalp anomalisi ismi yanlis yazilmis).",
+    "proposedFix": "'Turunkus arteriozus' ifadesini 'Trunkus arteriozus' olarak duzelt.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-005.json"
+  },
+  {
+    "id": 504,
+    "category": "explanation_error",
+    "severity": "major",
+    "issue": "Isaretli dogru sik (C: 'Ilk dis 4-6 ayda cikar / Gecikme tanisi icin 18 ay beklenir') ile aciklama metni celisiyor. Aciklamada ilk disin 'ortalama 6. ayda, genis bir aralikla 4-8 ay arasinda' ciktigi belirtiliyor; bu '4-8 ay' araligi, secilen sikta yazan '4-6 ay' ile uyusmuyor (7-8. ay disi disarida birakiyor). Ayrica aciklama hem 'eskiden 13 ay' hem 'guncel kaynaklarda 18 ay' kriterinden bahsederek kendi icinde belirsiz/celiskili; klasik TUS bilgisi olan 'ilk dis 6-8 ayda cikar, gecikme tanisi icin 13 ay beklenir' B sikkina karsilik geliyor ve cogu kaynakta bu sik daha standart kabul edilir.",
+    "proposedFix": "Ya B sikki (6-8 ay / 13 ay) dogru kabul edilip aciklama ona gore sadelestirilmeli, ya da C sikkindaki '4-6 ay' araligi aciklamadaki '4-8 ay, ortalama 6. ay' bilgisiyle tam uyumlu hale getirilmeli ve 13/18 ay celiskisi tek bir net kritere indirgenmeli.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-005.json"
+  },
+  {
+    "id": 510,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Soru kokunde dogru sik (D - 'Viral enfeksiyon (Adenovirus/Rotavirus) sonrasi reaktif olarak buyuyen Peyer Plaklari (Lenfoid hiperplazi)') diger dort sikka (Meckel divertikulu, Burkitt lenfomasi, Polipler, GI duplikasyon kistleri - hepsi 1-3 kelimelik kisa isim tamlamalari) kiyasla belirgin sekilde daha uzun ve aciklayici parantezli ifade iceriyor. Bu, konuyu bilmeyen bir adayin bile format/uzunluk farkindan dogru sikki tahmin edebilecegi bir giveaway (ipucu) yaratiyor.",
+    "proposedFix": "Dogru sikki digerleriyle benzer kisalikta yeniden yazin, ornegin: 'Peyer plaklarinin lenfoid hiperplazisi' seklinde kisaltip parantez ici ek aciklamalari (viral etken, 'lead point' tanimi vb.) soru kokune veya diger siklara dagitarak uzunluk dengesini saglayin.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-006.json"
+  },
+  {
+    "id": 516,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Dogru sik (B) diger dort sikkin toplam uzunlugunun neredeyse esdegeri kadar uzun ve detayli: hem 'X'e bagli' hem 'frameshift' hem 'nonsense' terimlerini birlikte iceriyor, digerleri ise tek kisa ifade. Bu belirgin uzunluk/detay farki dogru sikki kolayca ele veriyor (giveaway).",
+    "proposedFix": "Dogru sikki digerleriyle benzer uzunluga cekin, orn. 'Distrofin geninde X'e bagli, protein uretimini durduran (frameshift/nonsense) mutasyon' seklinde kisaltip yanlis siklarin detay seviyesiyle dengeleyin.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-007.json"
+  },
+  {
+    "id": 518,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Dogru sik (A) diger dort sikka gore cok daha uzun ve mekanizmayi aciktan isimlendiriyor ('Moleculer Mimicry' terimini de icinde barindirarak); digerleri kisa tek cumlelik yanlis mekanizma onerileri. Bu belirgin uzunluk/ozgunluk farki cevabi ele veriyor.",
+    "proposedFix": "Dogru sikki kisaltip terim adini (Moleculer Mimicry) siktan cikararak veya diger siklari da benzer detay seviyesine getirerek uzunluk dengesini saglayin.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-007.json"
+  },
+  {
+    "id": 527,
+    "category": "language",
+    "severity": "minor",
+    "issue": "Soru kökündeki ifade kendi içinde çelişkili: 'hayat kurtarıcı olan ve KESİNLİKLE YAPILMAMASI GEREKEN klinik hamle' denilerek aynı seçeneğe hem 'hayat kurtarıcı' hem de 'kesinlikle yapılmaması gereken' sıfatları birlikte yükleniyor. Bu iki nitelik birbiriyle çelişir (bir işlem aynı anda hem hayat kurtarıcı hem de kesinlikle yapılmaması gereken olamaz), cümle mantıksal olarak tutarsız ve öğrenciyi gereksiz yere kafa karıştırıcı.",
+    "proposedFix": "Cümle 'hayat kurtarıcı olan ve' ifadesi çıkarılarak sadeleştirilmeli: 'Akut Epiglottit tablosundaki bu hastanın acil yönetiminde KESİNLİKLE YAPILMAMASI GEREKEN klinik hamle aşağıdakilerden hangisidir?' Doğru şık (B - tahta abeslang ile boğaza bakmak) değişmez, sadece kök cümledeki çelişkili nitelik kaldırılmalı.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-008.json"
+  },
+  {
+    "id": 534,
+    "category": "logic_consistency",
+    "severity": "minor",
+    "issue": "Soru kökü orşiti tükürük bezi dışı komplikasyonlar arasında 'en sık görülen' olarak tanımlıyor; ancak aynı sorunun açıklaması bunun tam tersini söylüyor: 'Tüm yaş gruplarında en sık ekstra-salivary komplikasyon Aseptik Menenjit'tir', orşit ise sadece pubertal/postpubertal erkeklerde 'en spesifik ve en ağrılı' komplikasyon olarak nitelendiriliyor. Ayrıca hasta 10 yaşında olup çoğu erkek çocukta bu yaş genellikle puberte öncesidir; açıklamadaki 'puberte sonrası/döneminde erkek çocuklarda' ön koşulu bu hasta için net karşılanmıyor, bu da yaş-cevap uyumunu tartışmalı hale getiriyor.",
+    "proposedFix": "Soru kökündeki 'en sık görülen' ifadesi kaldırılıp sadece 'en spesifik ve en ağrılı majör komplikasyon' şeklinde düzeltilmeli (açıklamayla tutarlı hale gelir); ayrıca hasta yaşı puberte ile daha net örtüşmesi için 13-14 yaş gibi postpubertal bir yaşa güncellenebilir.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-008.json"
+  },
+  {
+    "id": 548,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Doğru şık (B), diğer dört şıkka göre belirgin şekilde daha uzun ve ayrıntılı yazılmış (yaklaşık 165 karakter vs diğerlerinin 60-90 karakter). Bu, soruyu bilmeden 'en uzun/en detaylı şıkkı işaretle' stratejisiyle çözülebilir hale getiren klasik bir giveaway (ipucu) sorunu.",
+    "proposedFix": "Doğru şıkkı diğer şıklarla benzer uzunlukta ve ayrıntı düzeyinde yeniden yazın; örn. 'GPIIb/IIIa'ya karşı gelişen IgG otoantikorlarının dalakta trombosit yıkımına yol açması' gibi kısaltılmış bir ifade kullanılabilir. Ayrıca yanlış şıklardan bir-ikisi de biraz daha ayrıntılandırılarak fark azaltılabilir.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-010.json"
+  },
+  {
+    "id": 549,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Doğru şık (C), diğer şıklara göre belirgin şekilde daha uzun (yaklaşık 178 karakter vs diğerlerinin 65-80 karakter), bilgiden bağımsız olarak seçilebilecek bir uzunluk ipucu oluşturuyor.",
+    "proposedFix": "Doğru şıkkı kısaltarak diğer şıklarla benzer uzunlukta hale getirin; örn. 'Parvovirüs B19'un eritroid öncül hücreleri enfekte edip apoptoza uğratarak eritropoezi geçici olarak durdurması' gibi.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-010.json"
+  },
+  {
+    "id": 550,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Doğru şık (B) diğer dört şıkka kıyasla belirgin şekilde daha uzun ve teknik ayrıntı bakımından zengin (yaklaşık 160 karakter vs diğerlerinin 58-90 karakter), bu da bilgiden bağımsız bir seçim ipucu oluşturuyor.",
+    "proposedFix": "Doğru şıkkı diğer şıklarla kıyaslanabilir uzunlukta sadeleştirin; örn. 'İmmün komplekslerin subepitelyal alana çökerek alternatif kompleman yolağını aktive etmesi' gibi kısaltılabilir.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-010.json"
+  },
+  {
+    "id": 551,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Doğru şık (B) diğer şıklara göre yaklaşık 2,5 kat daha uzun (172 karakter vs diğerlerinin 63-71 karakter) ve çok daha fazla teknik ayrıntı içeriyor; bu belirgin bir uzunluk/ayrıntı ipucu (giveaway) oluşturuyor.",
+    "proposedFix": "Doğru şıkkı kısaltarak diğer şıklarla benzer uzunlukta yazın; örn. 'T hücre kaynaklı permeabilite faktörlerinin podosit ayakçıklarını silmesi ve GBM'deki negatif yükü ortadan kaldırması' gibi sadeleştirilebilir.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-010.json"
+  },
+  {
+    "id": 559,
+    "category": "language",
+    "severity": "minor",
+    "issue": "Soru kökünde 'Ondört yaşında' ifadesi bitişik yazılmış. TDK kuralına göre bileşik olmayan sayılar ayrı yazılır: 'On dört yaşında' olmalı.",
+    "proposedFix": "'Ondört yaşında' ifadesini 'On dört yaşında' olarak düzelt.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-011.json"
+  },
+  {
+    "id": 560,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Giveaway sorunu: Doğru şık (B) diğer dört şıkka (kısa, tek cümlelik) göre belirgin şekilde daha uzun ve çok bileşenli bir mekanizma açıklaması içeriyor (uncoupling + Fenton reaksiyonu + lipid peroksidasyonu). Bu, tıbbi bilgi olmadan da doğru şıkkın tahmin edilmesine yol açabilir.",
+    "proposedFix": "Diğer şıkları da (A, C, D, E) benzer uzunlukta ve ayrıntı düzeyinde yeniden yazarak şıklar arası uzunluk dengesini sağla, ya da doğru şıkkı kısaltıp temel mekanizmaya indir.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-011.json"
+  },
+  {
+    "id": 562,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Giveaway sorunu: Doğru şık (B), Atropin ve Pralidoksim mekanizmalarını diğer şıklara kıyasla daha ayrıntılı ve iki adımlı biçimde anlatıyor; diğer şıklar tek cümlelik ve daha yüzeysel kalmış.",
+    "proposedFix": "Şıkların uzunluk/detay seviyesini birbirine yaklaştır; doğru şıkkı biraz kısalt veya yanlış şıkları da benzer ayrıntı düzeyine getir.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-011.json"
+  },
+  {
+    "id": 563,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Giveaway sorunu: Doğru şık (C) hem pH artışı/protein bağlanma hem de sodyum yükü/kanal blokajı aşımı olmak üzere iki mekanizmayı bir arada anlatan uzun bir cümle; diğer dört şık ise tek cümlelik ve belirgin şekilde daha kısa, bu da doğru şıkkı öne çıkarıyor.",
+    "proposedFix": "Doğru şıkkı tek bir mekanizma vurgusuna indirerek kısalt ya da diğer şıkları da benzer çift-mekanizma detayında yeniden yaz.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-011.json"
+  },
+  {
+    "id": 632,
+    "category": "language",
+    "severity": "minor",
+    "issue": "Soru kokunde ve aciklamada 'Likofaktif (Eriyici) Nekroz' terimi kullanilmis. Standart Turkce patoloji terminolojisinde bu kavram 'Likefaksiyon Nekrozu' / 'Kolikuasyon Nekrozu' (ingilizce 'liquefactive'den) olarak gecer; 'Likofaktif' yazimi (o harfi ile) muhtemelen 'Likefaktif' kelimesinin bir yazim hatasidir.",
+    "proposedFix": "Metindeki 'Likofaktif' ifadesini 'Likefaktif' veya standart kullanim olan 'Likefaksiyon (Kolikuasyon) Nekrozu' seklinde duzeltin. Anlam parantez ici '(Eriyici)' aciklamasi sayesinde zaten anlasilir oldugundan soru cozumunu etkilemez, sadece terminoloji duzeltmesi gerekir.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-002.json"
+  },
+  {
+    "id": 651,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Doğru şık (B - APC direnci açıklaması), diğer dört yanlış şıkka göre belirgin şekilde daha uzun ve ayrıntılı yazılmış (parantez içi açıklama dahil ~17 kelime vs diğerlerinin ~7-9 kelimesi). Bu, sınavda 'en uzun/en detaylı şık genelde doğrudur' sezgisiyle ipucu (giveaway) oluşturabilir.",
+    "proposedFix": "Doğru şıkkı diğer şıklarla benzer uzunlukta kısaltın, örn: 'Mutant Faktör V'in Aktif Protein C (APC) tarafından inaktive edilememesi (APC direnci)' ve yanlış şıkları da benzer detay seviyesine getirin.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-004.json"
+  },
+  {
+    "id": 652,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Doğru şık (C), diğer şıklara göre belirgin şekilde daha uzun ve iki ayrı mekanizmayı (endotel hasarı + lokalize DIC/trombositopeni) art arda açıklıyor; diğer yanlış şıklar tek cümlelik ve daha kısa. Bu uzunluk farkı doğru şıkkı ele verebilir (giveaway).",
+    "proposedFix": "Doğru şıkkı sadeleştirip diğer şıklarla benzer uzunlukta tutun, örn: 'Yağ globüllerinin mikrovasküler yatağı tıkayarak endotel hasarı ve lokalize trombosit tüketimine yol açması' ve yanlış şıkları da kabaca aynı kelime sayısına getirin.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-004.json"
+  },
+  {
+    "id": 667,
+    "category": "language",
+    "severity": "minor",
+    "issue": "Soru kökünde cümle ortasında 'Hangi viral ajanın...' ifadesinde 'Hangi' kelimesi gereksiz yere büyük harfle başlıyor (cümle ortasında özel isim olmadığı halde büyük harf kullanımı, Türkçe imla hatası).",
+    "proposedFix": "'Hangi' kelimesi küçük harfle 'hangi' olarak yazılmalı: '...servikal karsinogenezde rol oynayan hangi viral ajanın karakteristik sitopatik etkisidir?'",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-006.json"
+  },
+  {
+    "id": 677,
+    "category": "medical_accuracy",
+    "severity": "minor",
+    "issue": "Açıklamada 'Hastalığın temelinde %100 Sarkomerik Protein genlerindeki mutasyonlar yatar' ifadesi hem tıbben abartılı (literatürde ailesel HCM olgularının yaklaşık %50-60'ında sarkomerik gen mutasyonu saptanır, geri kalanında neden bilinmiyor ya da başka genler sorumlu) hem de soru kökündeki 'vakaların çoğunda' (yani çoğunluk, tamamı değil) ifadesiyle çelişiyor.",
+    "proposedFix": "Açıklamadaki '%100' ifadesi 'vakaların büyük çoğunluğunda (~%60-70)' şeklinde düzeltilmeli; şık ve doğru cevap (A) değişmeden kalabilir, sadece abartılı yüzde iddiası kaldırılmalı.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-007.json"
+  },
+  {
+    "id": 692,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Dogru sik (C - Podositopati) diger siklara gore belirgin sekilde daha uzun ve mekanizmayi tam anlatan bir cumle iken, digerleri (D, E, A, B) sadece kisa hucre/olay isimlerinden olusuyor. Bu uzunluk/detay farki dogru sikki 'giveaway' (belli edici) hale getiriyor.",
+    "proposedFix": "Dogru sikki digerleriyle benzer uzunlukta ve sadelikte yazin, orn. 'Podosit hasari (podositopati)' seklinde kisaltip, mekanizma anlatimini aciklamaya (exp) tasiyin.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-008.json"
+  },
+  {
+    "id": 694,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Dogru sik (B - VHL/HIF-1a mekanizmasi) tam bir mekanizma cumlesi seklinde cok uzun yazilmisken, diger dort sik sadece gen/protein adindan olusan kisa ifadeler. Bu belirgin uzunluk farki dogru sikki digerlerinden ayirt edilebilir kiliyor (giveaway).",
+    "proposedFix": "Dogru sikki 'VHL (von Hippel-Lindau) gen mutasyonu' gibi kisa ve diger siklarla ayni formatta yazin; HIF-1a/VEGF mekanizma detayini aciklama (exp) kismina birakin.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-008.json"
+  },
+  {
+    "id": 699,
+    "category": "language",
+    "severity": "minor",
+    "issue": "Soru kökünde 'poliakonal (çok köşeli) hücrelerden oluştuğu görülüyor' ifadesinde yazım hatası var. Doğru tıbbi terim 'poligonal' (çok köşeli) olmalı; 'poliakonal' Türkçede veya tıp literatüründe karşılığı olmayan hatalı bir kelime.",
+    "proposedFix": "'poliakonal' kelimesi 'poligonal' olarak düzeltilmeli: '...poligonal (çok köşeli) hücrelerden oluştuğu görülüyor.'",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-009.json"
+  },
+  {
+    "id": 717,
+    "category": "medical_accuracy",
+    "severity": "minor",
+    "issue": "Soru kökünde 'MRCP'de... ampulla Vater'den çıkış noktasında mukus ekstrüzyonu görülüyor' deniyor. Ancak ampulladan sümük/mukus çıkışı (fish-mouth/balık ağzı bulgusu) klasik olarak ENDOSKOPİK (üst GİS endoskopisi/ERCP) bir bulgudur; MRCP kesitsel/kolanjiyografik bir MR görüntüleme yöntemi olup ampulladan gerçek zamanlı mukus akışını göstermez. Bu, iki farklı görüntüleme/inceleme yönteminin (MRCP vs endoskopi) birbirine karıştırılmasıdır.",
+    "proposedFix": "Cümle 'Endoskopide (ERCP'de) ampulla Vater'den mukus ekstrüzyonu görülüyor, MRCP'de ise Wirsung kanalında genişleme saptanıyor' şeklinde ikiye ayrılarak düzeltilebilir. Doğru cevap şıkkı (C) etkilenmiyor, sadece klinik senaryo cümlesi teknik olarak düzeltilmeli.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-011.json"
+  },
+  {
+    "id": 764,
+    "category": "wrong_answer",
+    "severity": "critical",
+    "issue": "Soru, aldosteron salgılayan adenomun adrenal korteksin hangi tabakasından köken aldığını soruyor. İşaretli doğru sık (correct=1) 'Zona Retikülaris' (options[1]), ancak aldosteron sadece 'Zona Glomeruloza' (options[2]) tarafından sentezlenir. Aciklama (exp) metninin kendisi de bunu acikca dogruluyor: 'Adrenal kortekste Aldosteron sentezleyen TEK tabaka en distaki Zona Glomeruloza'dir. Tumor de dogal olarak bu tabakadan cikar.' Yani exp, options[2]'yi (Zona Glomeruloza) dogru sik olarak anlatirken, correct alani yanlislikla options[1]'i (Zona Retikülaris) isaret ediyor.",
+    "proposedFix": "correct alani 1'den 2'ye duzeltilmeli (dogru sik: 'Zona Glomeruloza'). Zona Retikülaris androjen (DHEA) uretir, aldosteron degil; bu nedenle mevcut isaretli sik tibben kesinlikle yanlistir.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-015.json"
+  },
+  {
+    "id": 775,
+    "category": "language",
+    "severity": "minor",
+    "issue": "D şıkkında 'Medulla oblangata' yazım hatası var; doğru tıbbi terim 'Medulla oblongata' olmalı.",
+    "proposedFix": "'Medulla oblangata (Bulbus)' ifadesini 'Medulla oblongata (Bulbus)' olarak düzelt. Bu şık zaten yanlış cevap (doğru cevap Globus pallidus) olduğu için soru mantığını etkilemiyor, sadece imla düzeltmesi.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-016.json"
+  },
+  {
+    "id": 779,
+    "category": "medical_accuracy",
+    "severity": "minor",
+    "issue": "Soru kokunde GIST 'GIS'in en nadir tumorlerinden biri' olarak tanimlaniyor. Bu yaniltici: GIST, adenokarsinomlara gore nadir olsa da, GI sisteminin EN SIK gorulen mezenkimal (stromal) tumorudur; 'en nadir tumorlerden biri' ifadesi tibben dogru degil. Ayrica stem 'T hucreli bir lenfoma veya epiteloid karsinom DEGIL' seklinde gereksiz ve kafa karistirici negatif ifadeler iceriyor, cevaba etkisi olmayan flavor-text.",
+    "proposedFix": "Ifadeyi 'GIS'in en sik gorulen mezenkimal tumoru olan GIST' seklinde duzeltin veya 'nadir' vurgusunu kaldirin. Gereksiz 'lenfoma/karsinom degil' negatif cumlelerini stem'den cikarip soruyu sadelestirin (dogru cevap Schwannom, index 1, degismiyor).",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-017.json"
+  },
+  {
+    "id": 861,
+    "category": "medical_accuracy",
+    "severity": "minor",
+    "issue": "Soru kokunde, 'RNA birikimine (bazofilik stippling) VE mikrositer anemiye' ayni zamanda ayni 'cift enzim inhibisyonunun' (ALA Dehidrataz + Ferroselataz) neden oldugu ima ediliyor. Ancak kursunda bazofilik stippling asil olarak pirimidin 5'-nukleotidaz enziminin inhibisyonuna bagli RNA yikiminin bozulmasindan kaynaklanir; bu, heme sentez yolagindaki ALA Dehidrataz/Ferroselataz inhibisyonundan (mikrositer anemi nedeni) ayri bir mekanizmadir. Aciklama metninde bu ayri mekanizma dolayli olarak belirtilse de ('Kurşun aynı zamanda rRNA yıkımını sağlayan enzimleri de bozduğu için...'), soru kokunun ifadesi iki farkli sonucu tek bir 'cift enzim inhibisyonuna' bagliyormus gibi yaniltici bir izlenim veriyor.",
+    "proposedFix": "Soru koku 'RNA birikimine (stippling) VE mikrositer anemiye yol acan cift enzim inhibisyonu' yerine sadece 'mikrositer anemiye yol acan (heme sentezindeki) cift enzim inhibisyonu' seklinde daraltilmali; stippling'in ayri bir mekanizma (pirimidin 5'-nukleotidaz inhibisyonu) oldugu ayrica belirtilebilir. Dogru sik (ALA Dehidrataz + Ferroselataz, B) degismemeli, sadece stem'in nedensellik ifadesi netlestirilmeli.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-018.json"
+  },
+  {
+    "id": 867,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Dogru sik (B: 'Ileri Glikasyon Son Urunlerinin (AGE) birikimine bagli hiyalin arteriyoloskleroz') diger dort sikka gore belirgin sekilde daha uzun ve detayli yazilmis; bu uzunluk farki cevabi bilgiye gerek kalmadan tahmin edilebilir kilan bir giveaway olusturuyor.",
+    "proposedFix": "Dogru sikki digerleriyle benzer uzunlukta kisa bir ifadeye indirin, orn. 'AGE birikimine bagli hiyalin arteriyoloskleroz' seklinde kisaltip mekanizma detayini aciklama (exp) kismina birakin.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-019.json"
+  },
+  {
+    "id": 872,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Dogru sik (C), tum mekanizmayi tek cumlede anlatan uzun bir aciklama seklinde yazilmis; diger dort sik ise kisa tek ifadelik cumleler. Bu belirgin uzunluk/detay farki, tibbi bilgiye ihtiyac duymadan dogru sikkin secilmesini kolaylastiran bir giveaway.",
+    "proposedFix": "Dogru sikki 'Arteriyel kan girisi devam ederken ince duvarli venoz sistemin tikanmasi (venoz oklüzyon)' gibi kisa ve diger siklarla benzer uzunlukta bir ifadeye indirin; ayrintili mekanizma aciklamasini exp alaninda tutun.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-019.json"
+  },
+  {
+    "id": 879,
+    "category": "language",
+    "severity": "minor",
+    "issue": "Soru kökünde yazım hatası var: 'Buğıdaydaki' kelimesi hatalı yazılmış, doğrusu 'Buğdaydaki' olmalı (fazladan 'ı' harfi eklenmiş).",
+    "proposedFix": "'Buğıdaydaki zararsız gluten...' ifadesini 'Buğdaydaki zararsız gluten...' olarak düzelt.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-020.json"
+  },
+  {
+    "id": 880,
+    "category": "medical_accuracy",
+    "severity": "minor",
+    "issue": "Soru kökünde 'sağ kolon kanserlerinin %15-20'sinin nedenidirler' ifadesi hatalı. Standart patoloji kaynaklarında (Robbins) serrated/MSI yolağı TÜM sporadik kolorektal kanserlerin (sağ+sol) %15-20'sinden sorumlu tutulur, sadece sağ kolon kanserlerinin değil. Bu istatistiksel iddia soruyu yanıltıcı hale getiriyor (doğru şıkkı etkilemiyor ama bilgi yanlış).",
+    "proposedFix": "İfadeyi 'tüm kolorektal kanserlerin %15-20'sinin nedenidirler' şeklinde düzeltmek daha doğru olur; sağ kolonda daha sık görüldükleri ayrıca belirtilebilir ama oran tüm KRK'ler için geçerlidir.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-020.json"
+  },
+  {
+    "id": 888,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Kronik pankreatit sorusunda dogru sik (Protein Tikaclari mekanizmasi), digerlerine gore belirgin sekilde daha uzun ve mekanistik detay iceriyor (~20 kelime); yanlis siklar 5-8 kelimelik kisa cumleler. Bu uzunluk farki sikki dogru cevabi belirgin hale getiren bir 'giveaway' olusturuyor.",
+    "proposedFix": "Dogru sikkin uzunlugunu diger siklarla dengelemek icin kisaltilmasi veya yanlis siklarin da benzer detay seviyesine cikarilmasi onerilir. Ic icerik (protein tikaci mekanizmasi) tibben dogru, sadece format sorunu.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-021.json"
+  },
+  {
+    "id": 889,
+    "category": "language",
+    "severity": "minor",
+    "issue": "D sikkinda 'Miyoepeitelyal' yazim hatasi var; dogrusu 'Miyoepitelyal' olmalidir (fazladan bir 'e' harfi eklenmis).",
+    "proposedFix": "'Miyoepeitelyal hücrelerin...' ifadesi 'Miyoepitelyal hücrelerin...' olarak duzeltilmeli.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-021.json"
+  },
+  {
+    "id": 892,
+    "category": "language",
+    "severity": "minor",
+    "issue": "C sikkinda 'miyoepeitelyal' yazim hatasi var; dogrusu 'miyoepitelyal' olmalidir (ayni yazim hatasi id=889'da da tekrarlaniyor).",
+    "proposedFix": "'Kanalları saran miyoepeitelyal hücreler' ifadesi 'Kanalları saran miyoepitelyal hücreler' olarak duzeltilmeli.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-021.json"
+  },
+  {
+    "id": 899,
+    "category": "quality",
+    "severity": "minor",
+    "issue": "Dogru sik (B - kortizol/PNMT mekanizmasi) diger dort cellikten belirgin sekilde daha uzun ve detayli yazilmis (mekanizma aciklamasi iceriyor), digerleri tek cumlelik kisa distraktorler. Bu uzunluk farki 'en uzun/en detayli sik dogrudur' sezgisiyle soruyu kismen ele veriyor (giveaway).",
+    "proposedFix": "Dogru sikki digerleriyle benzer uzunlukta ve sadelikte yazin (orn. 'Kortizolun portal dolasimla medullaya ulasip PNMT'yi indüklemesi'), detayli mekanizma sadece aciklama (exp) kisminda kalsin.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-022.json"
+  },
+  {
+    "id": 906,
+    "category": "medical_accuracy",
+    "severity": "minor",
+    "issue": "Açıklamada Ewing Sarkomunda t(11;22) EWS-FLI1 translokasyonunun 'vakaların %95'inde' görüldüğü belirtiliyor; standart patoloji kaynaklarında (Robbins) bu oran yaklaşık %85 olarak verilir (kalan küçük bir kısmı EWS-ERG gibi diğer EWSR1 füzyonlarıdır).",
+    "proposedFix": "Açıklamadaki '%95' ifadesini '%85' (veya 'yaklaşık %85-90') olarak güncelleyin; doğru şık (t(11;22) EWS-FLI1) değişmiyor.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-023.json"
+  },
+  {
+    "id": 1503,
+    "category": "language",
+    "severity": "minor",
+    "issue": "A sikkinda 'İlişkili' kelimesi hatali sekilde 'İli şkili' olarak bolunmus/yazilmis (OCR/format hatasi kaynakli olabilir).",
+    "proposedFix": "'Gıda Proteini İli şkili Enterokolit Sendromu (FPIES)' ifadesini 'Gıda Proteini İlişkili Enterokolit Sendromu (FPIES)' olarak duzeltin.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-012.json"
+  },
+  {
+    "id": 1506,
+    "category": "language",
+    "severity": "minor",
+    "issue": "C sikkinda 'mutasyonu' kelimesi hatali sekilde 'mutasy onu' olarak bolunmus yazilmis.",
+    "proposedFix": "'CD18 (Integrin) mutasy onu' ifadesini 'CD18 (Integrin) mutasyonu' olarak duzeltin.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-012.json"
+  },
+  {
+    "id": 1511,
+    "category": "quality",
+    "severity": "major",
+    "issue": "Dogru sik (C sikki, index 2) diger dort sikka gore asiri uzun ve detayli yazilmis (tam bir paragraf), digerleri ise tek cumlelik kisa ifadeler. Bu, tibbi bilgiden bagimsiz olarak sadece uzunluga bakarak dogru sikki tahmin etmeyi kolaylastiran klasik bir 'giveaway' (ele verme) formatidir ve sinavin olcme gecerliligini zedeler.",
+    "proposedFix": "Dogru sikki digerleriyle benzer uzunlukta ozetlenmis bir cumleye indirgeyin (orn. 'C3 Nefritik Faktorun C3 konvertazi stabilize ederek alternatif yolagi asiri aktive etmesi ve C3'u tuketmesi'), detayli mekanizma anlatimini sadece 'exp' aciklama alaninda birakin.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-012.json"
+  },
+  {
+    "id": 1513,
+    "category": "language",
+    "severity": "minor",
+    "issue": "Soru kokunde 'soluklu k' kelimesi hatali sekilde 'solukl uk' olarak bolunmus, okunurlugu bozan kesik/hatali bir yazim var.",
+    "proposedFix": "'solukl uk' ifadesi 'solukluk' olarak duzeltilmeli (bu tur kelime ortasindan bolunmus yazim hatalari icin metnin genelinde de kontrol yapilmasi onerilir).",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-013.json"
+  },
+  {
+    "id": 1515,
+    "category": "medical_accuracy",
+    "severity": "minor",
+    "issue": "Soru kokunde ve aciklamada FGF-23'un PHEX enzimi tarafindan dogrudan yikildigi/parcalandigi ileri suruluyor ('PHEX enzimi bu hormonu yikar... FGF-23 yikilamaz, kanda birikir'). Guncel literatur bu mekanizmayi dogrulamiyor: PHEX, dolasimdaki FGF-23'u dogrudan proteolize etmez (FGF-23'un asil yikimi furin benzeri konvertazlarla RXXR bolgesinden olur). PHEX mutasyonunun XLH'de FGF-23 duzeyini nasil arttirdigi tam netlesmemis olup osteositlerde FGF-23 uretiminin indirekt (MEPE/ASARM peptidleri uzerinden) artmasiyla iliskilendirilir, dogrudan enzimatik yikim degil.",
+    "proposedFix": "Cevap sikki (X'e Bagli Hipofosfatemik Rasitizm) tibben dogru, degistirilmesine gerek yok. Ancak exp metni 'PHEX enzimi FGF-23'u yikar, mutasyonla yikilamayip birikir' yerine 'PHEX mutasyonu osteositlerde FGF-23 uretiminin/sinyalinin artmasina yol acar, dolasimdaki FGF-23 duzeyi yukselir' seklinde daha dogru ve genel bir ifadeyle guncellenebilir.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-013.json"
+  },
+  {
+    "id": 1654,
+    "category": "language",
+    "severity": "minor",
+    "issue": "D şıkkı 'Levetirasetam dışı tedavisiz izlem' ifadesi bozuk/anlaşılmaz Türkçe ile yazılmış; bir tedavi seçeneği olarak mantıklı bir anlam ifade etmiyor (negatif+izlem karışık kurgu).",
+    "proposedFix": "D şıkkı standart bir yanlış tedavi seçeneğiyle değiştirilmeli, örn. 'Valproik asit' veya 'Sadece semptomatik izlem'. Doğru şık (A - Etosüksimid) değişmemeli.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-017.json"
+  },
+  {
+    "id": 1658,
+    "category": "language",
+    "severity": "minor",
+    "issue": "E şıkkı 'Candida albicans dışı dermatofitler' ifadesi karışık ve tıbben tuhaf; Candida bir maya, dermatofitler ayrı bir mantar grubu olduğundan bu şekilde birleştirilmesi anlam bozukluğu yaratıyor.",
+    "proposedFix": "E şıkkı daha standart bir yanlış etken ile değiştirilmeli, örn. 'Cryptococcus neoformans' veya sade 'Dermatofitler'. Doğru şık (A - Staphylococcus epidermidis) değişmemeli.",
+    "subject": "Pediatri",
+    "batch": "/home/user/tusoskop/scratchpad/batches/pediatri-017.json"
+  },
+  {
+    "id": 2990,
+    "category": "medical_accuracy",
+    "severity": "major",
+    "issue": "Klinik senaryo 'uzun süreli safra yolu tıkanıklığı / kronik kolestaz' (8 aydır sarılık-kaşıntı) üzerine kurulu. Patoloji literatüründe kronik kolestazın hepatositlerde bıraktığı klasik ve sınav-tipik bulgu, lipofuskin değil BAKIR (ve bakır-bağlayan protein) birikimidir (rodanin/orsein boyası ile gösterilir, Prusya mavisi ile boyanmaz - tıpkı soruda tarif edildiği gibi). Seçenekler arasında 'Bakırın lizozomal depolanması' (C şıkkı, index 2) zaten mevcutken doğru olarak lipofuskin/lipid peroksidasyonu (D şıkkı, index 3) işaretlenmiş. Bu, vakanın klinik çerçevesiyle (kronik safra yolu obstrüksiyonu) örtüşmeyen, tartışmalı bir doğru cevap seçimi oluşturuyor; açıklama da bakır seçeneğinin neden yanlış olduğunu tartışmıyor.",
+    "proposedFix": "Ya doğru şıkkı 'Bakırın lizozomal depolanması' (C, index 2) olarak değiştirin -- kronik kolestazda hepatositte bakır/bakır-bağlayan protein birikimi klasik bulgudur -- ya da vinyeti lipofuskin ile daha uyumlu bir kronik yıpranma/atrofi senaryosuna (örn. ileri yaş, kaşeksi, kronik hastalık) çevirin ve safra yolu tıkanıklığı bağlamını kaldırın.",
+    "subject": "Patoloji",
+    "batch": "/home/user/tusoskop/scratchpad/batches/patoloji-023.json"
+  }
+]
