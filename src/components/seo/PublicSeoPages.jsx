@@ -39,6 +39,7 @@ import {
   DERSHANE_ANCHOR,
   PRICING_COMPARISON_ROWS,
 } from "../../constants/eylulPaketi";
+import { isInAppBrowser } from "../../utils/device";
 
 const OPTION_KEYS = ["A", "B", "C", "D", "E"];
 const TEMEL_DERSLER = SUBJECTS.filter((s) => s.type === "Temel").map((s) => s.name);
@@ -1005,6 +1006,24 @@ function KontenjanTable({ data, donem }) {
  * doğrudan Plus satın alma ekranını açar (bkz. AppAuthenticated intent=plus).
  */
 function PricingComparison() {
+  // In-app tarayıcı (Instagram/Facebook) Google girişini engelliyor; hard-nav
+  // /app?intent=plus anonim kullanıcıyı giriş duvarına toslatır (C3 retarget
+  // trafiği burayı iner). Bu durumda "Tarayıcıda Aç / link kopyala" göster.
+  const inApp = isInAppBrowser();
+  const [copied, setCopied] = useState(false);
+  const plusUrl =
+    typeof window !== "undefined"
+      ? `${window.location.origin}/app?intent=plus`
+      : "/app?intent=plus";
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(plusUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch {
+      /* clipboard yoksa sessiz — kullanıcı "Tarayıcıda Aç"ı kullanır */
+    }
+  };
   return (
     <section aria-label="Eylül Paketi karşılaştırması" className="mt-10">
       <div className="rounded-3xl border border-emerald-400/30 bg-gradient-to-b from-emerald-400/[0.08] to-slate-900/40 p-5 md:p-8">
@@ -1048,20 +1067,39 @@ function PricingComparison() {
           {EYLUL_PAKETI.proofLine}
         </p>
 
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <a
-            href="/app?intent=plus"
-            className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-emerald-300 px-6 font-black text-slate-950 transition hover:bg-emerald-200"
-          >
-            {EYLUL_PAKETI.name}&apos;ni Al · {EYLUL_PAKETI.priceLabel}
-          </a>
-          <a
-            href="/app?intent=plus"
-            className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-slate-700 px-6 font-bold text-white transition hover:border-emerald-300/70"
-          >
-            Önce ücretsiz dene
-          </a>
-        </div>
+        {inApp ? (
+          <div className="mt-6 rounded-2xl border border-amber-400/40 bg-amber-400/10 p-4">
+            <p className="text-sm font-black text-amber-200">Satın alma için tarayıcıda aç</p>
+            <p className="mt-1 text-xs leading-relaxed text-amber-100/90">
+              Instagram/Facebook uygulama-içi tarayıcısındasın; giriş burada
+              çalışmayabilir. Sağ üstteki <span className="font-semibold">&quot;•••&quot;</span>{" "}
+              menüsünden <span className="font-semibold">&quot;Tarayıcıda Aç&quot;</span>ı seç ya da
+              linki kopyalayıp Safari/Chrome&apos;da aç.
+            </p>
+            <button
+              type="button"
+              onClick={handleCopy}
+              className="mt-3 inline-flex min-h-11 items-center justify-center rounded-xl bg-emerald-300 px-5 font-black text-slate-950 transition hover:bg-emerald-200"
+            >
+              {copied ? "Link kopyalandı ✓" : "Satın alma linkini kopyala"}
+            </button>
+          </div>
+        ) : (
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a
+              href="/app?intent=plus"
+              className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-emerald-300 px-6 font-black text-slate-950 transition hover:bg-emerald-200"
+            >
+              {EYLUL_PAKETI.name}&apos;ni Al · {EYLUL_PAKETI.priceLabel}
+            </a>
+            <a
+              href="/app?intent=plus"
+              className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-slate-700 px-6 font-bold text-white transition hover:border-emerald-300/70"
+            >
+              Önce ücretsiz dene
+            </a>
+          </div>
+        )}
 
         {/* Dürüstlük notu: farklı tür ürün — abartısız konumlandırma. */}
         <p className="mt-5 text-xs leading-relaxed text-slate-500">
