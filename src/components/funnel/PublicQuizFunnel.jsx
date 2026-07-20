@@ -351,12 +351,16 @@ export default function PublicQuizFunnel() {
   );
 
   const handleEylulPaketiClick = useCallback(
-    (event) => {
+    (event, opts) => {
       /* Aynı App Store deseni: sert navigasyon pixel isteğini kesmesin diye
-         önce event'i at, sonra kısa gecikmeyle /app?intent=plus'a git. */
+         önce event'i at, sonra kısa gecikmeyle /app?intent=plus'a git.
+         In-app tarayıcıda kart navigasyon yerine "Tarayıcıda Aç" ipucu gösterir
+         (opts.noNav=true) — o durumda analitiği at ama navigasyon YAPMA (giriş
+         duvarına toslamasın; bkz. EylulPaketiCard). */
       if (event) event.preventDefault();
       trackPublicQuizEvent("eylul_paketi_click", { ...baseParams, destination: "plus" });
       trackMetaCustom("EylulPaketiClick", { campaign_code: session.campaignCode });
+      if (opts?.noNav) return;
       window.setTimeout(() => {
         window.location.href = "/app?intent=plus";
       }, 200);
