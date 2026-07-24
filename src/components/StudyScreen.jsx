@@ -59,6 +59,13 @@ export default function StudyScreen({
   };
   const showNavigator = studyMode === "topic" && total > 1 && typeof goToIndex === "function";
   const answeredCount = Object.values(studyAnswers || {}).filter((r) => r?.revealed).length;
+  // Konu modunda ilerleme yerel snapshot'a kaydediliyor; study/review modunda
+  // kaydedilmiyor. Cevaplanmış soru varken çıkışta onay sor (ilerleme kaybı önlemi).
+  const [showExitConfirm, setShowExitConfirm] = useState(false);
+  const requestExit = () => {
+    if (answeredCount > 0 && studyMode !== "topic") setShowExitConfirm(true);
+    else goDashboard?.();
+  };
   // İlk render'da sorular henüz hazır değilse "bulunamadı" mesajını hemen
   // göstermek yerine kısa bir bekleme penceresinde skeleton göster.
   const [settling, setSettling] = useState(true);
@@ -138,7 +145,7 @@ export default function StudyScreen({
         <div className="flex min-w-0 items-center gap-2">
           <button
             type="button"
-            onClick={goDashboard}
+            onClick={requestExit}
             className={`inline-flex shrink-0 items-center gap-2 rounded-2xl border ${theme.border} ${theme.softBg} px-3 py-2.5 text-sm font-extrabold ${theme.text} transition-all duration-200 hover:-translate-y-px active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d] ${theme.ring}`}
           >
             <span>←</span> Panele dön
@@ -436,7 +443,7 @@ export default function StudyScreen({
             </button>
             <button
               type="button"
-              onClick={goDashboard}
+              onClick={requestExit}
               className="min-h-12 rounded-2xl border border-white/[0.08] bg-white/[0.05] px-6 py-4 font-extrabold text-slate-100 transition-all duration-200 hover:-translate-y-px hover:bg-white/[0.09] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d]"
             >
               Bitir
@@ -502,6 +509,48 @@ export default function StudyScreen({
           </div>
         )}
       </div>
+
+      {showExitConfirm && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 p-6"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="study-exit-title"
+          onClick={() => setShowExitConfirm(false)}
+        >
+          <div
+            className="w-full max-w-sm rounded-3xl border border-white/10 bg-[#0a0d15] p-6 text-center"
+            style={{ paddingBottom: "calc(1.5rem + env(safe-area-inset-bottom, 0px))" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <p id="study-exit-title" className="text-lg font-black text-white">
+              Çıkmak istiyor musun?
+            </p>
+            <p className="mt-2 text-sm text-slate-300">
+              Bu oturumdaki {answeredCount} cevabın ve seri ilerlemen kaydedilmeyecek.
+            </p>
+            <div className="mt-6 grid grid-cols-2 gap-3">
+              <button
+                type="button"
+                onClick={() => setShowExitConfirm(false)}
+                className="min-h-[48px] rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-bold text-slate-200 hover:bg-white/[0.08] active:scale-[0.98]"
+              >
+                Devam Et
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowExitConfirm(false);
+                  goDashboard?.();
+                }}
+                className="min-h-[48px] rounded-2xl border border-amber-400/30 bg-amber-500/15 px-4 py-3 text-sm font-black text-amber-200 hover:bg-amber-500/25 active:scale-[0.98]"
+              >
+                Çık
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
