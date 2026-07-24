@@ -394,14 +394,31 @@ describe("ExamScreen handleFinish double-submit guard", () => {
       (b) => b.textContent?.trim() === "Bitir"
     );
 
+  // Bitirme artık onay modalından geçiyor: alt bardaki "Bitir" modalı açar,
+  // modaldaki "Bitir" gerçek bitişi tetikler.
+  const findModalConfirm = () =>
+    [...container.querySelectorAll('[role="dialog"] button')].find(
+      (b) => b.textContent?.trim() === "Bitir"
+    );
+
+  const openFinishModal = async () => {
+    await act(async () => {
+      findBitir().click();
+      await new Promise((r) => setTimeout(r, 0));
+    });
+  };
+
   it("Bitir butonuna hızlı çift basılınca Firestore'a tek sonuç yazılır", async () => {
     await renderAtLastQuestion();
-    const bitir = findBitir();
-    expect(bitir).toBeTruthy();
+    expect(findBitir()).toBeTruthy();
+
+    await openFinishModal();
+    const confirm = findModalConfirm();
+    expect(confirm).toBeTruthy();
 
     await act(async () => {
-      bitir.click();
-      bitir.click();
+      confirm.click();
+      confirm.click();
       await new Promise((r) => setTimeout(r, 0));
     });
     await act(async () => {
@@ -423,10 +440,10 @@ describe("ExamScreen handleFinish double-submit guard", () => {
 
   it("başarılı bitişten sonra ikinci tetikleme yeni kayıt oluşturmaz", async () => {
     await renderAtLastQuestion();
-    const bitir = findBitir();
 
+    await openFinishModal();
     await act(async () => {
-      bitir.click();
+      findModalConfirm().click();
       await new Promise((r) => setTimeout(r, 0));
     });
     await act(async () => {
@@ -448,10 +465,10 @@ describe("ExamScreen handleFinish double-submit guard", () => {
       .mockResolvedValueOnce({ id: "doc-retry" });
 
     await renderAtLastQuestion();
-    const bitir = findBitir();
 
+    await openFinishModal();
     await act(async () => {
-      bitir.click();
+      findModalConfirm().click();
       await new Promise((r) => setTimeout(r, 0));
     });
     await act(async () => {
@@ -465,8 +482,9 @@ describe("ExamScreen handleFinish double-submit guard", () => {
     const bitirAfterError = findBitir();
     expect(bitirAfterError).toBeTruthy();
 
+    await openFinishModal();
     await act(async () => {
-      bitirAfterError.click();
+      findModalConfirm().click();
       await new Promise((r) => setTimeout(r, 0));
     });
     await act(async () => {
@@ -477,5 +495,32 @@ describe("ExamScreen handleFinish double-submit guard", () => {
     const localHistory = JSON.parse(localStorage.getItem(historyKey) || "[]");
     expect(localHistory).toHaveLength(1);
     expect(localHistory[0].id).toBe("doc-retry");
+  });
+
+  it("son soruda 'Boş' bitirmeyi bypass etmez — sonuç kaydedilir", async () => {
+    await renderAtLastQuestion();
+    const bos = [...container.querySelectorAll("button")].find(
+      (b) => b.textContent?.trim() === "Boş"
+    );
+    expect(bos).toBeTruthy();
+
+    // "Boş" son soruda onay modalını açmalı, doğrudan bitirmemeli.
+    await act(async () => {
+      bos.click();
+      await new Promise((r) => setTimeout(r, 0));
+    });
+    expect(firestoreModule.addDoc).not.toHaveBeenCalled();
+    expect(findModalConfirm()).toBeTruthy();
+
+    // Onaylanınca sonuç Firestore'a yazılır (bypass yok).
+    await act(async () => {
+      findModalConfirm().click();
+      await new Promise((r) => setTimeout(r, 0));
+    });
+    await act(async () => {
+      await new Promise((r) => setTimeout(r, 0));
+    });
+    expect(firestoreModule.addDoc).toHaveBeenCalledTimes(1);
+    expect(JSON.parse(localStorage.getItem(historyKey) || "[]")).toHaveLength(1);
   });
 });
