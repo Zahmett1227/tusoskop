@@ -43,6 +43,32 @@ export async function verifyAndActivatePurchase(jwsRepresentation) {
 }
 
 /**
+ * StoreKit işlemini kuyruktan kaldırır. SUNUCU DOĞRULAMASI BAŞARILI OLDUKTAN
+ * SONRA çağrılmalı — aksi halde doğrulanmamış işlemi bitirip ödeme kaybına
+ * yol açar. Hata sessizce yutulur (finish idempotent; kritik değil).
+ * @param {string|number} transactionId
+ */
+export async function finishTransaction(transactionId) {
+  if (!isNativeIOS() || transactionId == null) return;
+  try {
+    await IAP.finishTransaction({ transactionId: String(transactionId) });
+  } catch {
+    /* finish idempotent; StoreKit gerekirse yeniden teslim eder */
+  }
+}
+
+/**
+ * Bir satın almayı doğrula, premium'u aktive et ve işlemi bitir (doğru sıra).
+ * @param {object} txData - purchaseProduct / restore / transactionUpdate çıktısı
+ * @returns {Promise<object>} verifyAndActivatePurchase sonucu
+ */
+export async function verifyActivateAndFinish(txData) {
+  const verifyResult = await verifyAndActivatePurchase(txData.jwsRepresentation);
+  await finishTransaction(txData.transactionId);
+  return verifyResult;
+}
+
+/**
  * Mevcut abonelikleri geri yükler. Aktif abonelik bulunursa sunucu doğrulaması yapar.
  * @returns {Promise<object|null>} Aktif abonelik bulunursa { premiumUntil } döner, yoksa null
  */
@@ -52,11 +78,22 @@ export async function restoreAndSyncPurchases() {
   if (!transactions || transactions.length === 0) {
     return null;
   }
-  // En son biten aboneliği bul (en uzun expirationDate)
-  const sorted = [...transactions].sort((a, b) => (b.expirationDate || 0) - (a.expirationDate || 0));
-  const latest = sorted[0];
-  const verifyResult = await verifyAndActivatePurchase(latest.jwsRepresentation);
-  return verifyResult;
+  // En son biten aboneliği önce dene; ilk doğrulama başarısızsa (aile paylaşımı /
+  // çoklu abonelik) diğerlerini sırayla dene — tek denemede pes etme.
+  const sorted = [...transactions].sort(
+    (a, b) => (b.expirationDate || 0) - (a.expirationDate || 0)
+  );
+  let lastError = null;
+  for (const tx of sorted) {
+    try {
+      const verifyResult = await verifyActivateAndFinish(tx);
+      if (verifyResult?.premiumUntil) return verifyResult;
+    } catch (e) {
+      lastError = e;
+    }
+  }
+  if (lastError) throw lastError;
+  return null;
 }
 
 /**
@@ -67,4 +104,49 @@ export async function checkActiveSubscriptions() {
   if (!isNativeIOS()) return [];
   const { subscriptions } = await IAP.getActiveSubscriptions();
   return subscriptions || [];
+}
+
+/**
+ * Açılışta / öne gelişte aktif abonelikleri sunucuyla senkronlar. Yenileme
+ * (auto-renew) sonrası premiumUntil'ı günceller ve bitirilmemiş işlemleri finish
+ * eder. Aktif abonelik yoksa sessizce null döner.
+ * @returns {Promise<object|null>}
+ */
+export async function syncActiveSubscriptions() {
+  if (!isNativeIOS()) return null;
+  let subs = [];
+  try {
+    subs = await checkActiveSubscriptions();
+  } catch {
+    return null;
+  }
+  if (!subs.length) return null;
+  const sorted = [...subs].sort((a, b) => (b.expirationDate || 0) - (a.expirationDate || 0));
+  for (const tx of sorted) {
+    try {
+      const verifyResult = await verifyActivateAndFinish(tx);
+      if (verifyResult?.premiumUntil) return verifyResult;
+    } catch {
+      /* sonraki işlemi dene */
+    }
+  }
+  return null;
+}
+
+/**
+ * Uygulama açıkken gelen işlem güncellemelerini (yenileme/geri ödeme) dinler.
+ * Her güncellemede sunucu doğrulaması + finish yapılır; başarılıysa onSynced çağrılır.
+ * @param {(result: object) => void} onSynced
+ * @returns {Promise<{remove: () => void}|null>} dinleyici tutamacı
+ */
+export async function registerTransactionUpdateListener(onSynced) {
+  if (!isNativeIOS()) return null;
+  return IAP.addListener('transactionUpdate', async (txData) => {
+    try {
+      const result = await verifyActivateAndFinish(txData);
+      if (result?.premiumUntil) onSynced?.(result);
+    } catch {
+      /* doğrulama başarısızsa işlem bitirilmez; sonraki açılışta yeniden denenir */
+    }
+  });
 }

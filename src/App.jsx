@@ -27,7 +27,7 @@ import {
   shouldNotifyInProgressReset,
   validateInProgressExam,
 } from "./utils/examInProgressUtils";
-import { isIOS } from "./utils/device";
+import { isIOS, isNativeIOS } from "./utils/device";
 import { setClarityTag, trackClarityEvent } from "./lib/clarity";
 import { getWrongQuestions } from "./services/studyCollectionService";
 import {
@@ -245,6 +245,43 @@ export default function App() {
   useEffect(() => {
     if (!user) clearLeaderboardProfileCache();
   }, [user]);
+
+  // iOS IAP senkronu: açılışta/öne gelişte aktif abonelikleri sunucuyla
+  // doğrula (yenileme sonrası premiumUntil güncellenir) + uygulama açıkken
+  // gelen işlem güncellemelerini (Transaction.updates) dinle. Böylece ödeme
+  // alınıp doğrulama anında koptuysa ya da abonelik yenilendiyse premium
+  // otomatik telafi edilir.
+  useEffect(() => {
+    if (!user?.uid || !isNativeIOS()) return;
+    let cancelled = false;
+    let listenerHandle = null;
+
+    (async () => {
+      try {
+        const { syncActiveSubscriptions, registerTransactionUpdateListener } = await import(
+          "./services/iapService"
+        );
+        const synced = await syncActiveSubscriptions();
+        if (!cancelled && synced?.premiumUntil) {
+          refreshUserData?.();
+        }
+        listenerHandle = await registerTransactionUpdateListener(() => {
+          if (!cancelled) refreshUserData?.();
+        });
+      } catch {
+        /* IAP yoksa / hata → sessiz */
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      try {
+        listenerHandle?.remove?.();
+      } catch {
+        /* ignore */
+      }
+    };
+  }, [user, refreshUserData]);
 
   const [bottomNavReviewCount, setBottomNavReviewCount] = useState(0);
   const [smartReviewSummary, setSmartReviewSummary] = useState({

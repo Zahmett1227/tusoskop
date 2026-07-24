@@ -8,11 +8,41 @@ public class IAPPlugin: CAPPlugin, CAPBridgedPlugin {
     public let pluginMethods: [CAPPluginMethod] = [
         CAPPluginMethod(name: "getProducts", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "purchaseProduct", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "finishTransaction", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "restorePurchases", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "getActiveSubscriptions", returnType: CAPPluginReturnPromise),
     ]
 
     private var cachedProducts: [Product] = []
+    private var updatesTask: Task<Void, Never>?
+
+    // StoreKit 2: uygulama açıkken gelen yenileme/geri ödeme/aile-paylaşımı
+    // işlemleri Transaction.updates'ten akar. Bunları JS'e ilet ki sunucu
+    // doğrulaması yapılıp premium süresi uzatılsın ve ardından finish edilsin.
+    override public func load() {
+        updatesTask = Task { [weak self] in
+            for await update in Transaction.updates {
+                guard let self = self else { continue }
+                if case .verified(let tx) = update {
+                    var payload: [String: Any] = [
+                        "transactionId": String(tx.id),
+                        "productId": tx.productID,
+                        "jwsRepresentation": update.jwsRepresentation,
+                        "originalTransactionId": String(tx.originalID),
+                        "purchaseDate": tx.purchaseDate.timeIntervalSince1970 * 1000,
+                    ]
+                    if let exp = tx.expirationDate {
+                        payload["expirationDate"] = exp.timeIntervalSince1970 * 1000
+                    }
+                    self.notifyListeners("transactionUpdate", data: payload)
+                }
+            }
+        }
+    }
+
+    deinit {
+        updatesTask?.cancel()
+    }
 
     @objc func getProducts(_ call: CAPPluginCall) {
         guard let productIds = call.getArray("productIds", String.self), !productIds.isEmpty else {
@@ -74,7 +104,11 @@ public class IAPPlugin: CAPPlugin, CAPBridgedPlugin {
                 case .success(let vr):
                     switch vr {
                     case .verified(let tx):
-                        await tx.finish()
+                        // ÖNEMLİ: tx.finish() burada ÇAĞRILMAZ. Önce JS sunucuda
+                        // JWS doğrulaması yapıp premium'u aktive eder, SONRA
+                        // finishTransaction ile bitirir. Doğrulama başarısız olursa
+                        // işlem bitirilmemiş kalır ve StoreKit Transaction.updates
+                        // üzerinden yeniden teslim eder — böylece ödeme kaybolmaz.
                         // En güncel transaction'ı kullan. Sandbox'ta product.purchase()
                         // bazen aboneliğin ESKİ/orijinal transaction'ını döndürebiliyor;
                         // bunun expirationDate'i (hızlandırılmış sandbox süresi) geçmişte
@@ -111,6 +145,26 @@ public class IAPPlugin: CAPPlugin, CAPBridgedPlugin {
             } catch {
                 call.reject("PURCHASE_ERROR", error.localizedDescription, error)
             }
+        }
+    }
+
+    @objc func finishTransaction(_ call: CAPPluginCall) {
+        guard let txIdStr = call.getString("transactionId"), let txId = UInt64(txIdStr) else {
+            call.reject("transactionId required")
+            return
+        }
+        Task {
+            // Sunucu doğrulaması başarılı olduktan sonra çağrılır: eşleşen
+            // bitirilmemiş işlemi kuyruktan kaldır.
+            for await result in Transaction.unfinished {
+                if case .verified(let tx) = result, tx.id == txId {
+                    await tx.finish()
+                    call.resolve(["finished": true])
+                    return
+                }
+            }
+            // İşlem zaten bitirilmiş olabilir — hata değil.
+            call.resolve(["finished": false])
         }
     }
 

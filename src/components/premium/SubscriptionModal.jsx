@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { IAP_PRODUCT_IDS, IAP_PLAN_MAP } from '../../config/iap';
-import { loadProducts, purchaseProduct, verifyAndActivatePurchase } from '../../services/iapService';
+import { loadProducts, purchaseProduct, verifyActivateAndFinish } from '../../services/iapService';
 
 const ORDERED_PRODUCTS = IAP_PRODUCT_IDS;
 
@@ -118,7 +118,10 @@ export default function SubscriptionModal({ open, onClose, onSuccess, onOpenLega
     setPurchasing(true);
     try {
       const txData = await purchaseProduct(selectedProductId);
-      const verifyResult = await verifyAndActivatePurchase(txData.jwsRepresentation);
+      // Doğru sıra: önce sunucu doğrulaması + premium aktivasyonu, SONRA
+      // StoreKit işlemini bitir (verifyActivateAndFinish). Doğrulama başarısız
+      // olursa işlem bitirilmez ve kaybolmaz.
+      const verifyResult = await verifyActivateAndFinish(txData);
       onSuccess?.(verifyResult?.premiumUntil || null);
       onClose?.();
     } catch (e) {
