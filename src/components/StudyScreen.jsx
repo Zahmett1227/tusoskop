@@ -46,8 +46,26 @@ export default function StudyScreen({
   const [insightsOpen, setInsightsOpen] = useState(true);
   const [navOpen, setNavOpen] = useState(false);
   const [fsrsRated, setFsrsRated] = useState(false);
+  // "Cevabı göster" await sürerken butonu kilitle (çift dokunma → çift skor önlemi).
+  const [revealing, setRevealing] = useState(false);
+  const handleRevealClick = async () => {
+    if (revealing || showAnswer) return;
+    setRevealing(true);
+    try {
+      await revealAnswer?.();
+    } finally {
+      setRevealing(false);
+    }
+  };
   const showNavigator = studyMode === "topic" && total > 1 && typeof goToIndex === "function";
   const answeredCount = Object.values(studyAnswers || {}).filter((r) => r?.revealed).length;
+  // Konu modunda ilerleme yerel snapshot'a kaydediliyor; study/review modunda
+  // kaydedilmiyor. Cevaplanmış soru varken çıkışta onay sor (ilerleme kaybı önlemi).
+  const [showExitConfirm, setShowExitConfirm] = useState(false);
+  const requestExit = () => {
+    if (answeredCount > 0 && studyMode !== "topic") setShowExitConfirm(true);
+    else goDashboard?.();
+  };
   // İlk render'da sorular henüz hazır değilse "bulunamadı" mesajını hemen
   // göstermek yerine kısa bir bekleme penceresinde skeleton göster.
   const [settling, setSettling] = useState(true);
@@ -127,7 +145,7 @@ export default function StudyScreen({
         <div className="flex min-w-0 items-center gap-2">
           <button
             type="button"
-            onClick={goDashboard}
+            onClick={requestExit}
             className={`inline-flex shrink-0 items-center gap-2 rounded-2xl border ${theme.border} ${theme.softBg} px-3 py-2.5 text-sm font-extrabold ${theme.text} transition-all duration-200 hover:-translate-y-px active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d] ${theme.ring}`}
           >
             <span>←</span> Panele dön
@@ -362,8 +380,9 @@ export default function StudyScreen({
                   key={i}
                   type="button"
                   aria-pressed={isSelected}
+                  disabled={showAnswer}
                   onClick={() => setSelected(i)}
-                  className={`group flex min-h-[58px] w-full min-w-0 items-start gap-3 rounded-[1.35rem] border px-4 py-4 text-left text-slate-100 shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d] ${theme.ring} active:scale-[0.99] sm:items-center sm:gap-4 md:px-6 md:py-5
+                  className={`group flex min-h-[58px] w-full min-w-0 items-start gap-3 rounded-[1.35rem] border px-4 py-4 text-left text-slate-100 shadow-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d] ${theme.ring} active:scale-[0.99] disabled:active:scale-100 disabled:cursor-default sm:items-center sm:gap-4 md:px-6 md:py-5
                     ${isSelected && !showAnswer ? `${theme.border} ${theme.softBg} shadow-lg ${theme.glow}` : ""}
                     ${!isSelected && !showCorrectHighlight ? "border-white/[0.08] bg-white/[0.025] hover:-translate-y-px hover:bg-white/[0.05] hover:border-white/[0.16]" : ""}
                     ${showCorrectHighlight && !selectedIsCorrect ? "border-emerald-400/60 bg-emerald-500/[0.12] shadow-[0_0_30px_rgba(16,185,129,0.18)]" : ""}
@@ -416,15 +435,15 @@ export default function StudyScreen({
           <div className="grid grid-cols-2 gap-2 sm:gap-3 mobile-action-bar sticky bottom-0 z-30 bg-[#05070d]/92 sticky-bar-blur rounded-2xl p-1 border border-white/[0.08] shadow-[0_-8px_32px_rgba(0,0,0,0.45)]">
             <button
               type="button"
-              onClick={revealAnswer}
-              disabled={isAutoAdvancing}
+              onClick={handleRevealClick}
+              disabled={isAutoAdvancing || revealing}
               className={`min-h-12 rounded-2xl px-6 py-4 font-extrabold text-slate-950 shadow-lg ${theme.glow} transition-all duration-200 hover:-translate-y-px active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d] ${theme.ring} ${theme.primary} ${theme.primaryHover} disabled:opacity-50`}
             >
-              {isAutoAdvancing ? "Geçiliyor..." : "Cevabı göster"}
+              {isAutoAdvancing ? "Geçiliyor..." : revealing ? "Kontrol ediliyor…" : "Cevabı göster"}
             </button>
             <button
               type="button"
-              onClick={goDashboard}
+              onClick={requestExit}
               className="min-h-12 rounded-2xl border border-white/[0.08] bg-white/[0.05] px-6 py-4 font-extrabold text-slate-100 transition-all duration-200 hover:-translate-y-px hover:bg-white/[0.09] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d]"
             >
               Bitir
@@ -490,6 +509,48 @@ export default function StudyScreen({
           </div>
         )}
       </div>
+
+      {showExitConfirm && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 p-6"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="study-exit-title"
+          onClick={() => setShowExitConfirm(false)}
+        >
+          <div
+            className="w-full max-w-sm rounded-3xl border border-white/10 bg-[#0a0d15] p-6 text-center"
+            style={{ paddingBottom: "calc(1.5rem + env(safe-area-inset-bottom, 0px))" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <p id="study-exit-title" className="text-lg font-black text-white">
+              Çıkmak istiyor musun?
+            </p>
+            <p className="mt-2 text-sm text-slate-300">
+              Bu oturumdaki {answeredCount} cevabın ve seri ilerlemen kaydedilmeyecek.
+            </p>
+            <div className="mt-6 grid grid-cols-2 gap-3">
+              <button
+                type="button"
+                onClick={() => setShowExitConfirm(false)}
+                className="min-h-[48px] rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-bold text-slate-200 hover:bg-white/[0.08] active:scale-[0.98]"
+              >
+                Devam Et
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowExitConfirm(false);
+                  goDashboard?.();
+                }}
+                className="min-h-[48px] rounded-2xl border border-amber-400/30 bg-amber-500/15 px-4 py-3 text-sm font-black text-amber-200 hover:bg-amber-500/25 active:scale-[0.98]"
+              >
+                Çık
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

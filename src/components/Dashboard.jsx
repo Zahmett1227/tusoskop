@@ -10,7 +10,7 @@ import { FIXED_EXAM_CARD_SUBTITLE } from "../data/exams";
 import { SUBJECT_QUESTION_COUNTS } from "../data/questions";
 import { accentThemes } from "../theme/accentThemes";
 import { isUserPremium } from "../utils/premiumUtils";
-import { canShowExternalPayments } from "../utils/device";
+import { canShowExternalPayments, isNativeIOS } from "../utils/device";
 import { setClarityTag, trackClarityEvent } from "../lib/clarity";
 import DashboardProfileMenu from "./DashboardProfileMenu";
 import { getMailtoFeedback, getMailtoPaymentIssue } from "../config/support";
@@ -107,8 +107,11 @@ export default function Dashboard({
       : "min-h-dvh bg-[#05070d] text-white");
   const hex = accentHex(accentThemeKey);
   const premiumActive = isUserPremium(userData, user);
-  // iOS native'de Plus/free ayrımı yok; Plus rozetleri gizlenir.
+  // iOS native'de dış-ödeme rozetleri/fiyatları gizlenir (Apple 3.1.1).
   const showPlusBadges = canShowExternalPayments();
+  // Ancak Plus ekranına (StoreKit IAP + "Satın Almaları Geri Yükle") giriş
+  // iOS'ta da SUNULMALI — aksi halde abonelik ve restore erişilemez kalır.
+  const canReachPremiumScreen = showPlusBadges || isNativeIOS();
   const { questionUsed: freeQuestionUsed, examUsed: freeExamUsed, reviewUsed: freeReviewUsed } =
     getFreeUsageUsed(remainingUsage);
   const [myTarget, setMyTarget] = useState(65.0);
@@ -116,6 +119,7 @@ export default function Dashboard({
   const displayTarget = toSafeTargetScore(myTarget);
   const displayTempTarget = toSafeTargetScore(tempTarget);
   const [isEditingTarget, setIsEditingTarget] = useState(false);
+  const [savingTarget, setSavingTarget] = useState(false);
   const [planStreak, setPlanStreak] = useState(0);
   const [wrongBySubject, setWrongBySubject] = useState({});
   const tusLeft = useMemo(() => getTusCountdown(), []);
@@ -175,11 +179,15 @@ export default function Dashboard({
   const adjustTarget = (amount) => {
     setTempTarget(prev => {
       const val = parseFloat(prev) + amount;
-      return parseFloat(val.toFixed(2));
+      if (!Number.isFinite(val)) return prev;
+      // TUS net aralığı: 0–120 arası clamp (negatif/absürt hedef yazımını önle).
+      const clamped = Math.min(120, Math.max(0, val));
+      return parseFloat(clamped.toFixed(2));
     });
   };
 
   const saveTarget = async () => {
+    if (savingTarget) return;
     const currentUser = auth.currentUser;
     if (!currentUser) {
       // Misafir/oturumsuz: yerel değeri güncelle, uyar.
@@ -189,6 +197,7 @@ export default function Dashboard({
       showToast("Hedefi kaydetmek için giriş yapın.", { type: "info" });
       return;
     }
+    setSavingTarget(true);
     try {
       const saved = toSafeTargetScore(tempTarget);
       await setDoc(doc(db, "users", currentUser.uid), {
@@ -200,6 +209,8 @@ export default function Dashboard({
       showToast("Hedef netin kaydedildi.", { type: "success" });
     } catch {
       showToast("Hedef kaydedilemedi. Lütfen tekrar dene.", { type: "error" });
+    } finally {
+      setSavingTarget(false);
     }
   };
 
@@ -267,7 +278,7 @@ export default function Dashboard({
             <button
               type="button"
               onClick={() => onGuestLogin?.()}
-              className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-xs font-black transition-all active:scale-95 ${
+              className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 min-h-11 text-xs font-black transition-all active:scale-95 ${
                 isLightTheme
                   ? "border-slate-300 bg-white text-slate-700 hover:bg-slate-100"
                   : "border-white/[0.12] bg-white/[0.05] text-slate-200 hover:bg-white/[0.09]"
@@ -464,7 +475,7 @@ export default function Dashboard({
                 <button type="button" onClick={() => adjustTarget(0.25)} className={`w-11 h-11 rounded-full ${theme.text} text-2xl font-bold transition-all ${isLightTheme ? "bg-emerald-50 hover:bg-emerald-100" : `bg-white/[0.06] ${theme.softBg}`}`}>+</button>
               </div>
               <div className="mt-3 flex gap-2">
-                <button type="button" onClick={saveTarget} className={`flex-1 min-h-11 ${theme.primary} ${theme.primaryHover} text-slate-950 py-2.5 rounded-xl font-black text-sm transition-all shadow-lg ${theme.glow}`}>KAYDET</button>
+                <button type="button" onClick={saveTarget} disabled={savingTarget} className={`flex-1 min-h-11 ${theme.primary} ${theme.primaryHover} text-slate-950 py-2.5 rounded-xl font-black text-sm transition-all shadow-lg ${theme.glow} disabled:opacity-60`}>{savingTarget ? "KAYDEDİLİYOR…" : "KAYDET"}</button>
                 <button type="button" onClick={() => setIsEditingTarget(false)} className={`px-4 py-2.5 rounded-xl font-bold text-sm ${isLightTheme ? "bg-slate-100 text-slate-600 border border-slate-300" : "bg-white/[0.06] text-slate-400 border border-white/[0.08]"}`}>İPTAL</button>
               </div>
             </div>
@@ -485,7 +496,7 @@ export default function Dashboard({
               <button
                 type="button"
                 onClick={() => onGuestLogin?.()}
-                className={`ml-auto shrink-0 rounded-xl px-3 py-1.5 text-xs font-black transition ${isLightTheme ? "bg-slate-900 text-white hover:bg-slate-800" : "bg-white/90 text-slate-950 hover:bg-white"}`}
+                className={`ml-auto shrink-0 rounded-xl px-3 py-2 min-h-11 text-xs font-black transition ${isLightTheme ? "bg-slate-900 text-white hover:bg-slate-800" : "bg-white/90 text-slate-950 hover:bg-white"}`}
               >
                 Giriş yap
               </button>
@@ -510,11 +521,11 @@ export default function Dashboard({
               <span className="text-xs font-black tabular-nums text-slate-400">Deneme {freeExamUsed}/{FREE_LIMITS.monthlyFullExams}</span>
               <span className="text-slate-500">·</span>
               <span className="text-xs font-black tabular-nums text-slate-400">Tekrar {freeReviewUsed}/{FREE_LIMITS.dailyReviewQuestions}</span>
-              {showPlusBadges ? (
+              {canReachPremiumScreen ? (
                 <button
                   type="button"
                   onClick={() => setView("premiumInfo")}
-                  className={`ml-auto shrink-0 rounded-xl px-3 py-1.5 text-xs font-black transition ${isLightTheme ? "bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:brightness-105" : "bg-gradient-to-r from-amber-400 to-orange-600 text-slate-950 hover:brightness-110"}`}
+                  className={`ml-auto shrink-0 rounded-xl px-3 py-2 text-xs font-black transition min-h-11 ${isLightTheme ? "bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:brightness-105" : "bg-gradient-to-r from-amber-400 to-orange-600 text-slate-950 hover:brightness-110"}`}
                 >
                   Plus’ı İncele
                 </button>

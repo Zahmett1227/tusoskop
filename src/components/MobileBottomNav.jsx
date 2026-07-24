@@ -118,12 +118,13 @@ export default function MobileBottomNav({
               key={tab.key}
               type="button"
               onClick={() => setView(tab.key)}
+              aria-current={active ? "page" : undefined}
               className={`
                 relative flex-1 flex flex-col items-center justify-center rounded-2xl pt-2.5 pb-2 gap-1
                 transition-all duration-200 active:scale-95
                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950
                 ${theme.ring}
-                ${active ? "bg-white/[0.06] text-white shadow-inner" : "text-slate-500"}
+                ${active ? "bg-white/[0.06] text-white shadow-inner" : "text-slate-400"}
               `}
             >
               <span
@@ -157,8 +158,8 @@ export default function MobileBottomNav({
                 {tab.icon(active)}
               </span>
               <span
-                className={`max-w-[3.8rem] truncate text-[10px] font-black tracking-wide transition-colors duration-200
-                  ${active ? theme.text : "text-slate-600"}`}
+                className={`max-w-[3.8rem] truncate text-[11px] font-black tracking-wide transition-colors duration-200
+                  ${active ? theme.text : "text-slate-300"}`}
               >
                 {tab.label}
               </span>

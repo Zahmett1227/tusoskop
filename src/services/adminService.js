@@ -17,8 +17,15 @@ import { setClarityTag, trackClarityEvent } from "../lib/clarity";
 
 export async function isCurrentUserAdmin(uid) {
   if (!uid) return false;
-  const snap = await getDoc(doc(db, "admins", uid));
-  return snap.exists() && snap.data()?.active === true;
+  try {
+    // /admins/{uid} okuması yalnız admin'e açık; admin olmayan kullanıcıda
+    // permission-denied fırlar. Bunu yakalayıp sessizce false dön — aksi halde
+    // her normal girişte yakalanmayan hata/telemetri gürültüsü oluşuyordu.
+    const snap = await getDoc(doc(db, "admins", uid));
+    return snap.exists() && snap.data()?.active === true;
+  } catch {
+    return false;
+  }
 }
 
 function newestIntentEmailByUid(intentDocs) {

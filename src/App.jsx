@@ -27,7 +27,8 @@ import {
   shouldNotifyInProgressReset,
   validateInProgressExam,
 } from "./utils/examInProgressUtils";
-import { isIOS } from "./utils/device";
+import { isIOS, isNativeIOS } from "./utils/device";
+import { applyStatusBarForTheme } from "./utils/nativeApp";
 import { setClarityTag, trackClarityEvent } from "./lib/clarity";
 import { getWrongQuestions } from "./services/studyCollectionService";
 import {
@@ -53,7 +54,6 @@ import {
 } from "./services/guestModeService";
 import AppReviewPromptModal from "./components/AppReviewPromptModal";
 import {
-  markDismissedForever,
   markPrompted,
   markRated,
   openAppStoreReview,
@@ -102,9 +102,12 @@ const REVIEW_CONTEXT = {
 
 const SOURCE_TO_REVIEW_CONTEXT = {
   smart: REVIEW_CONTEXT.DAILY_FSRS,
+  todayQueue: REVIEW_CONTEXT.DAILY_FSRS,
   wrong: REVIEW_CONTEXT.WRONGS,
+  "wrong-single": REVIEW_CONTEXT.WRONGS,
   favorite: REVIEW_CONTEXT.FAVORITES,
   topic: REVIEW_CONTEXT.TOPIC,
+  topic_practice: REVIEW_CONTEXT.TOPIC,
   custom: REVIEW_CONTEXT.CUSTOM,
 };
 
@@ -177,6 +180,13 @@ export default function App() {
   const legalReturnViewRef = useRef("dashboard");
   const [legalPageId, setLegalPageId] = useState(LEGAL_PAGES[0].id);
   const { accentThemeKey, accentTheme, handleAccentThemeChange } = useAppAccentTheme();
+  const isLightAccent = accentTheme?.mode === "light" || accentThemeKey === "light";
+
+  // Status bar metnini temaya göre güncelle: "Beyaz" temada açık zeminde beyaz
+  // saat/pil görünmez kalıyordu — tema her değiştiğinde yeniden ayarla.
+  useEffect(() => {
+    applyStatusBarForTheme(isLightAccent);
+  }, [isLightAccent]);
   const {
     user,
     userData,
@@ -247,6 +257,43 @@ export default function App() {
     if (!user) clearLeaderboardProfileCache();
   }, [user]);
 
+  // iOS IAP senkronu: açılışta/öne gelişte aktif abonelikleri sunucuyla
+  // doğrula (yenileme sonrası premiumUntil güncellenir) + uygulama açıkken
+  // gelen işlem güncellemelerini (Transaction.updates) dinle. Böylece ödeme
+  // alınıp doğrulama anında koptuysa ya da abonelik yenilendiyse premium
+  // otomatik telafi edilir.
+  useEffect(() => {
+    if (!user?.uid || !isNativeIOS()) return;
+    let cancelled = false;
+    let listenerHandle = null;
+
+    (async () => {
+      try {
+        const { syncActiveSubscriptions, registerTransactionUpdateListener } = await import(
+          "./services/iapService"
+        );
+        const synced = await syncActiveSubscriptions();
+        if (!cancelled && synced?.premiumUntil) {
+          refreshUserData?.();
+        }
+        listenerHandle = await registerTransactionUpdateListener(() => {
+          if (!cancelled) refreshUserData?.();
+        });
+      } catch {
+        /* IAP yoksa / hata → sessiz */
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      try {
+        listenerHandle?.remove?.();
+      } catch {
+        /* ignore */
+      }
+    };
+  }, [user, refreshUserData]);
+
   const [bottomNavReviewCount, setBottomNavReviewCount] = useState(0);
   const [smartReviewSummary, setSmartReviewSummary] = useState({
     dueCount: 0,
@@ -287,9 +334,46 @@ export default function App() {
     }
   }, [user]);
 
+  // Tekrar özeti yalnızca kullanıcı/profil değişince yenilenir. Eskiden `view`
+  // ve `QUESTIONS` da bağımlıydı → her ekran geçişinde ve her soru paketi
+  // yüklemesinde gereksiz Firestore okuma + due snapshot YAZIMI tetikliyordu.
+  // Tekrar akışı bittiğinde useStudyState zaten doğrudan çağırıyor; öne dönüşte
+  // appStateChange tazeliyor.
   useEffect(() => {
     refreshSmartReviewSummary();
-  }, [refreshSmartReviewSummary, userData, QUESTIONS, view]);
+  }, [refreshSmartReviewSummary, userData]);
+
+  // Arka plandan öne dönüşte bayat veriyi tazele: uygulama saatlerce/günlerce
+  // arka planda kaldıysa günlük hak, tekrar özeti ve kullanıcı/premium durumu
+  // eski değerde kalıyordu.
+  useEffect(() => {
+    if (!user?.uid) return;
+    let handle = null;
+    let cancelled = false;
+    (async () => {
+      try {
+        const { App: CapApp } = await import("@capacitor/app");
+        const listener = await CapApp.addListener("appStateChange", ({ isActive }) => {
+          if (!isActive || cancelled) return;
+          refreshRemainingUsage?.();
+          refreshSmartReviewSummary?.();
+          refreshUserData?.();
+        });
+        if (cancelled) listener.remove?.();
+        else handle = listener;
+      } catch {
+        /* @capacitor/app yoksa (web) → sessiz */
+      }
+    })();
+    return () => {
+      cancelled = true;
+      try {
+        handle?.remove?.();
+      } catch {
+        /* ignore */
+      }
+    };
+  }, [user, refreshRemainingUsage, refreshSmartReviewSummary, refreshUserData]);
 
   const bottomNavExamLocked =
     !isUserPremium(userData, user) && (remainingUsage?.fullExamRemaining ?? 1) <= 0;
@@ -517,7 +601,12 @@ export default function App() {
     })();
   };
 
+  const startFullExamInFlightRef = useRef(false);
   const startFullExam = async (setId) => {
+    // Çift dokunma koruması: aylık 1 deneme hakkı ikinci dokunuşla yanmasın.
+    if (startFullExamInFlightRef.current) return;
+    startFullExamInFlightRef.current = true;
+    try {
     const allQuestions = await ensureAllQuestionsLoaded("Tam deneme hazırlanıyor…");
     // Misafirde aylık deneme limiti (Cloud Function) uygulanmaz; global 10-soru
     // sınırı cevaplama anında devreye girer.
@@ -600,7 +689,11 @@ export default function App() {
         await refreshRemainingUsage();
       } catch (err) {
         if (openLimitFromUsageError(err)) return;
-        throw err;
+        console.error("incrementFullExamUsage error:", err);
+        showToast("Deneme başlatılamadı. İnternet bağlantını kontrol edip tekrar dene.", {
+          type: "error",
+        });
+        return;
       }
     }
     trackClarityEvent("deneme_baslatildi");
@@ -621,6 +714,9 @@ export default function App() {
       })
     );
     setView("exam");
+    } finally {
+      startFullExamInFlightRef.current = false;
+    }
   };
 
   // İlk auth kontrolü tamamlanana kadar markalı splash göster.
@@ -1006,6 +1102,10 @@ export default function App() {
               setLimitModal((prev) => ({ ...prev, open: false }));
               setView("premiumInfo");
             }}
+            onIosSubscribeClick={() => {
+              setLimitModal((prev) => ({ ...prev, open: false }));
+              setView("premiumInfo");
+            }}
           />
         </Suspense>
       )}
@@ -1019,13 +1119,17 @@ export default function App() {
         open={reviewPrompt}
         mailtoFeedback={getMailtoFeedback(user)}
         onLike={() => {
-          markRated();
           const opened = openAppStoreReview();
+          // markRated yalnızca App Store gerçekten açıldıysa — aksi halde
+          // (APP_STORE_ID boşken) kullanıcının tek değerlendirme şansı yanmaz;
+          // markPrompted zaten 30 günlük aralığı uyguladı.
+          if (opened) markRated();
           setReviewPrompt(false);
           if (!opened) showToast("Teşekkürler! Desteğin bizim için çok değerli. 💚", { type: "success" });
         }}
         onDislike={() => {
-          markDismissedForever();
+          // Kalıcı kapatma yerine ertelemeye güven: markPrompted zaten 30 günlük
+          // aralık + ömür boyu 3 istem sınırını uyguluyor.
           setReviewPrompt(false);
         }}
         onClose={() => setReviewPrompt(false)}

@@ -45,6 +45,7 @@ export default function QuestionSetupScreen({
   const [recentPlans, setRecentPlans] = useState([]);
   const [recentLoading, setRecentLoading] = useState(true);
   const [resumeData, setResumeData] = useState(null);
+  const [starting, setStarting] = useState(false);
 
   useEffect(() => {
     const data = loadValidatedTopicTestInProgress();
@@ -160,7 +161,8 @@ export default function QuestionSetupScreen({
     setLoadError("");
   };
 
-  const handleStart = () => {
+  const handleStart = async () => {
+    if (starting) return;
     if (!selectedLesson) {
       showToast("Lütfen bir ders seçin.", { type: "info" });
       return;
@@ -173,21 +175,37 @@ export default function QuestionSetupScreen({
       showToast("Bu konuda henüz soru bulunmuyor.", { type: "info" });
       return;
     }
-    startTopicTest(studyCount);
+    setStarting(true);
+    try {
+      await startTopicTest(studyCount);
+    } catch (e) {
+      console.error("startTopicTest error:", e);
+      showToast("Konu testi başlatılamadı. Tekrar dene.", { type: "error" });
+    } finally {
+      setStarting(false);
+    }
   };
 
   const handleContinueRecent = async (plan) => {
-    if (!plan) return;
+    if (!plan || starting) return;
     const { memory, countMode } = plan;
     setSelectedLesson(memory.ders);
     setSelectedTopic(memory.konu);
     setStudyCount(countMode);
     setTopicSearch("");
-    await startTopicTest(countMode, {
-      ders: memory.ders,
-      konu: memory.konu,
-      countMode,
-    });
+    setStarting(true);
+    try {
+      await startTopicTest(countMode, {
+        ders: memory.ders,
+        konu: memory.konu,
+        countMode,
+      });
+    } catch (e) {
+      console.error("startTopicTest (resume) error:", e);
+      showToast("Konu testi başlatılamadı. Tekrar dene.", { type: "error" });
+    } finally {
+      setStarting(false);
+    }
   };
 
   const wrongCard = getWrongReviewCardCopy(wrongCount);
@@ -447,7 +465,7 @@ export default function QuestionSetupScreen({
             <button
               type="button"
               onClick={handleStart}
-              disabled={!canStart}
+              disabled={!canStart || starting}
               className="w-full min-h-12 px-5 py-3 rounded-2xl bg-emerald-500 text-slate-950 font-black text-base hover:opacity-90 disabled:opacity-50 transition-opacity"
             >
               {canStart

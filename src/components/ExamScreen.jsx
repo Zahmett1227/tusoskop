@@ -250,18 +250,63 @@ export default function ExamScreen({
   // çift tıklamada iki çağrı da "kaydetmiyor" görüp ikinci kez kayıt açabiliyor.
   // useRef anında günceller, böylece tek bir handleFinish çalışması garanti edilir.
   const finishInProgressRef = useRef(false);
+  const [showFinishConfirm, setShowFinishConfirm] = useState(false);
   const candidateName = auth.currentUser?.displayName || auth.currentUser?.email || "ADAY";
+
+  const isLastQuestion = examIndex >= examQuestions.length - 1;
+
+  // Bitirmeden önce boş kalan soru sayısını hesapla (mevcut sorunun seçimi
+  // henüz examAnswers'a yansımamış olabilir; onu da hesaba kat).
+  const countBlanks = () => {
+    const snapshot = getExamAnswersSnapshot ? getExamAnswersSnapshot() : examAnswers;
+    let blanks = 0;
+    examQuestions.forEach((q, idx) => {
+      let ans = getSelectedAnswerIndex(snapshot, q, idx);
+      if (idx === examIndex && (ans === null || ans === undefined)) ans = examSelected;
+      if (ans === null || ans === undefined) blanks += 1;
+    });
+    return blanks;
+  };
+
+  // Bitirme her zaman handleFinish'ten geçer (tek bitiş noktası, kayıt garantili).
+  // Önce onay modalını aç — kazara swipe/dokunuş saatlerce süren denemeyi kapatmasın.
+  const requestFinish = () => {
+    if (isSaving || finishInProgressRef.current) return;
+    setShowFinishConfirm(true);
+  };
+
+  const confirmFinish = () => {
+    setShowFinishConfirm(false);
+    void handleFinish();
+  };
 
   const handleSonrakiClick = () => {
     if (isSaving || finishInProgressRef.current) return;
-    if (examIndex < examQuestions.length - 1) {
+    if (!isLastQuestion) {
       handleExamNext();
     } else {
-      handleFinish();
+      requestFinish();
     }
   };
 
+  // "Boş": son soruda ilerletmek yerine bitirme onayını açar (handleFinish
+  // cevaplanmamış soruyu zaten boş olarak kaydeder — bypass yok).
+  const handleBosClick = () => {
+    if (isSaving || finishInProgressRef.current) return;
+    if (!isLastQuestion) {
+      handleExamBlank();
+    } else {
+      requestFinish();
+    }
+  };
+
+  const scrollContainerRef = useRef(null);
   useEffect(() => {
+    // Soru değişince gerçek kaydırma kabını başa al (window scroll bu kabı
+    // etkilemiyordu; uzun soruda kullanıcı yeni soruya ortasından giriyordu).
+    if (typeof scrollContainerRef.current?.scrollTo === "function") {
+      scrollContainerRef.current.scrollTo({ top: 0, behavior: "instant" });
+    }
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [examIndex]);
 
@@ -294,7 +339,7 @@ export default function ExamScreen({
       }
 
     finishInProgressRef.current = true;
-      if (userId) updateStreak(userId);
+      if (userId) Promise.resolve(updateStreak(userId)).catch(() => {});
     setIsSaving(true);
     try {
       const latestAnswers = getExamAnswersSnapshot ? getExamAnswersSnapshot() : examAnswers;
@@ -424,8 +469,8 @@ export default function ExamScreen({
     enabled: Boolean(examQ) && !isOpticalOpen && !reducedMotion,
     onSwipeLeft: () => {
       if (isSaving || finishInProgressRef.current) return;
-      if (examIndex < examQuestions.length - 1) handleExamNext();
-      else void handleFinish();
+      if (!isLastQuestion) handleExamNext();
+      else requestFinish();
     },
     onSwipeRight: () => {
       if (isSaving || finishInProgressRef.current) return;
@@ -602,6 +647,7 @@ export default function ExamScreen({
 
       {/* SOL: Soru Alanı */}
       <div
+        ref={scrollContainerRef}
         className="flex-1 overflow-y-auto border-r border-white/[0.06] overscroll-y-contain touch-pan-y"
         {...examSwipe}
       >
@@ -723,7 +769,7 @@ export default function ExamScreen({
             </button>
             <button
               type="button"
-              onClick={() => handleExamBlank()}
+              onClick={handleBosClick}
               className="min-h-[52px] rounded-2xl border border-white/[0.08] bg-white/[0.04] px-2 py-3 text-sm font-bold text-slate-200 hover:bg-white/[0.08] transition-all active:scale-[0.98]"
             >
               Boş
@@ -834,6 +880,51 @@ export default function ExamScreen({
       >
         <span className="text-[10px] font-black leading-tight text-center">OPTİK</span>
       </button>
+
+      {/* Bitirme onay modalı — kazara bitirmeyi ve veri kaybını önler */}
+      {showFinishConfirm && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 p-6"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="exam-finish-title"
+          onClick={() => setShowFinishConfirm(false)}
+        >
+          <div
+            className="w-full max-w-sm rounded-3xl border border-white/10 bg-[#0a0d15] p-6 text-center"
+            style={{ paddingBottom: "calc(1.5rem + env(safe-area-inset-bottom, 0px))" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <p id="exam-finish-title" className="text-lg font-black text-white">
+              Denemeyi bitir?
+            </p>
+            <p className="mt-2 text-sm text-slate-300">
+              {(() => {
+                const blanks = countBlanks();
+                return blanks > 0
+                  ? `${blanks} soru boş kalacak. Bitirdikten sonra denemeye dönemezsin.`
+                  : "Bitirdikten sonra denemeye dönemezsin.";
+              })()}
+            </p>
+            <div className="mt-6 grid grid-cols-2 gap-3">
+              <button
+                type="button"
+                onClick={() => setShowFinishConfirm(false)}
+                className="min-h-[48px] rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-bold text-slate-200 hover:bg-white/[0.08] active:scale-[0.98]"
+              >
+                Devam Et
+              </button>
+              <button
+                type="button"
+                onClick={confirmFinish}
+                className={`min-h-[48px] rounded-2xl bg-gradient-to-r ${theme.gradient} px-4 py-3 text-sm font-black text-slate-950 ${theme.glow} active:scale-[0.98]`}
+              >
+                Bitir
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

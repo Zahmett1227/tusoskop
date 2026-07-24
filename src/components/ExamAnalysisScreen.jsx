@@ -231,7 +231,13 @@ export default function ExamAnalysisScreen({
         />
       )}
 
-      <div className="min-h-screen bg-[#05070d] text-white p-4 md:p-8">
+      <div
+        className="min-h-dvh bg-[#05070d] text-white p-4 md:p-8"
+        style={{
+          paddingTop: "max(1rem, env(safe-area-inset-top, 0px))",
+          paddingBottom: "max(1rem, env(safe-area-inset-bottom, 0px))",
+        }}
+      >
         <div className="max-w-6xl mx-auto space-y-10">
 
           {/* Üst Başlık */}

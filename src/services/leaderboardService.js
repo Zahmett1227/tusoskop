@@ -20,9 +20,10 @@ import {
   SCORING,
 } from "../utils/leaderboardScoreUtils";
 import { normalizeNickname } from "../utils/nicknameUtils";
+import { getLocalDateKey } from "../utils/localDate";
 
 function todayStr() {
-  return new Date().toISOString().split("T")[0];
+  return getLocalDateKey();
 }
 
 // Oturum başına profil cache — Firestore read sayısını azaltır

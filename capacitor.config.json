@@ -6,6 +6,10 @@
     "androidScheme": "https",
     "iosScheme": "https"
   },
+  "ios": {
+    "backgroundColor": "#020617",
+    "webContentsDebuggingEnabled": false
+  },
   "plugins": {
     "FirebaseAuthentication": {
       "skipNativeAuth": true,
