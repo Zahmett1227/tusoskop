@@ -51,6 +51,15 @@ import {
   resetGuestUsage,
   setGuestSession,
 } from "./services/guestModeService";
+import AppReviewPromptModal from "./components/AppReviewPromptModal";
+import {
+  markDismissedForever,
+  markPrompted,
+  markRated,
+  openAppStoreReview,
+  shouldPromptForTrigger,
+} from "./services/appReviewService";
+import { getMailtoFeedback } from "./config/support";
 import NativeSplash from "./components/NativeSplash";
 import { LEGAL_PAGES } from "./content/legalPages";
 import { FREE_LIMITS } from "./config/limits";
@@ -162,6 +171,9 @@ export default function App() {
   const [guestMode, setGuestMode] = useState(() => isGuestSession());
   const [guestRemaining, setGuestRemaining] = useState(() => getGuestRemaining());
   const [guestLoginPrompt, setGuestLoginPrompt] = useState(false);
+  // Nazik değerlendirme istemi — oturum başına en fazla bir kez.
+  const [reviewPrompt, setReviewPrompt] = useState(false);
+  const reviewPromptShownRef = useRef(false);
   const legalReturnViewRef = useRef("dashboard");
   const [legalPageId, setLegalPageId] = useState(LEGAL_PAGES[0].id);
   const { accentThemeKey, accentTheme, handleAccentThemeChange } = useAppAccentTheme();
@@ -200,6 +212,20 @@ export default function App() {
     setGuestSession(false);
     setGuestMode(false);
   }, []);
+
+  // Değerlendirme istemi: yalnızca giriş yapmış kullanıcı, oturum başına bir kez,
+  // uygunluk/sıklık kurallarına takılmazsa.
+  const maybePromptReview = useCallback(
+    (trigger) => {
+      if (reviewPromptShownRef.current) return;
+      if (!user?.uid) return;
+      if (!shouldPromptForTrigger(trigger)) return;
+      reviewPromptShownRef.current = true;
+      markPrompted();
+      setReviewPrompt(true);
+    },
+    [user]
+  );
 
   // Giriş yapılınca misafir modunu temizle (yerel misafir verisi taşınmaz).
   useEffect(() => {
@@ -312,11 +338,14 @@ export default function App() {
     isGuest,
     openGuestLoginPrompt,
     onGuestAnswered: refreshGuestRemaining,
+    onMaybePromptReview: maybePromptReview,
   });
 
   const goDashboard = () => {
     studyState.resetStudyState();
     setView("dashboard");
+    // Panele dönüş — 20+ soru çözmüş uygun kullanıcıya nazik değerlendirme istemi.
+    maybePromptReview("answered_threshold");
   };
 
   const handleExamCompleted = () => {
@@ -986,6 +1015,21 @@ export default function App() {
         remaining={guestRemaining}
         onLogin={exitGuestToLogin}
         onClose={() => setGuestLoginPrompt(false)}
+      />
+      <AppReviewPromptModal
+        open={reviewPrompt}
+        mailtoFeedback={getMailtoFeedback(user)}
+        onLike={() => {
+          markRated();
+          const opened = openAppStoreReview();
+          setReviewPrompt(false);
+          if (!opened) showToast("Teşekkürler! Desteğin bizim için çok değerli. 💚", { type: "success" });
+        }}
+        onDislike={() => {
+          markDismissedForever();
+          setReviewPrompt(false);
+        }}
+        onClose={() => setReviewPrompt(false)}
       />
       {showBottomNav && (
         <MobileBottomNav

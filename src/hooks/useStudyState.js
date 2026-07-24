@@ -30,6 +30,7 @@ import {
   clearTopicTestInProgress,
   saveTopicTestInProgress,
 } from "../utils/topicTestInProgressUtils";
+import { recordAnsweredForReview } from "../services/appReviewService";
 import { isReactEventOrDomNode, normalizeAnswerValue } from "../utils/examUtils";
 import { recordQuestionHistory } from "../services/questionHistoryService";
 import { submitQuestionScoreEvent, submitDailyBonusEvent } from "../services/leaderboardService";
@@ -54,6 +55,7 @@ export function useStudyState({
   isGuest = false,
   openGuestLoginPrompt,
   onGuestAnswered,
+  onMaybePromptReview,
 }) {
   const [currentSubject, setCurrentSubject] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -440,6 +442,11 @@ export function useStudyState({
           correct: isCorrect,
         },
       }));
+      // Değerlendirme istemi: giriş yapmış (misafir olmayan) kullanıcı için soru sayacı.
+      // İstem ekran ortasında değil, panele/özete dönüşte gösterilir (App tetikler).
+      if (user?.uid && !isGuest) {
+        recordAnsweredForReview();
+      }
       updateStreakForQuestion(isCorrect, q?.id);
       recordQuestionTime(q?.id);
       const feedback = getFeedbackMessage(q, answer);
@@ -632,12 +639,16 @@ export function useStudyState({
             eventType: EVENT_TYPES.FSRS_DAILY_COMPLETED,
             weekId: getCurrentWeekId(),
           }).catch(() => {});
+          onMaybePromptReview?.("fsrs_daily");
         }
 
         await refreshSmartReviewSummary();
         resetStudyState();
         setView("reviewSummary");
         return;
+      }
+      if (studyMode === "topic") {
+        onMaybePromptReview?.("topic_test_done");
       }
       persistStudySessionMetrics();
       setView("summary");
@@ -655,6 +666,7 @@ export function useStudyState({
     studyMode,
     user,
     userData,
+    onMaybePromptReview,
   ]);
 
   const handleStudySelect = useCallback(

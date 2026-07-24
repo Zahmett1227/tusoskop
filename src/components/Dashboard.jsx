@@ -105,7 +105,6 @@ export default function Dashboard({
     (isLightTheme
       ? "min-h-dvh bg-[#faf8f4] text-slate-950"
       : "min-h-dvh bg-[#05070d] text-white");
-  const appCardShell = isLightTheme ? "app-card app-card--light" : "app-card";
   const hex = accentHex(accentThemeKey);
   const premiumActive = isUserPremium(userData, user);
   // iOS native'de Plus/free ayrımı yok; Plus rozetleri gizlenir.

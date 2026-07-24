@@ -7,7 +7,6 @@ import { trackClarityEvent } from "../../lib/clarity";
  */
 export default function GuestLoginPromptModal({
   open,
-  remaining = 0,
   onLogin,
   onClose,
 }) {
