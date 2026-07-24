@@ -338,6 +338,38 @@ export default function App() {
     refreshSmartReviewSummary();
   }, [refreshSmartReviewSummary, userData, QUESTIONS, view]);
 
+  // Arka plandan öne dönüşte bayat veriyi tazele: uygulama saatlerce/günlerce
+  // arka planda kaldıysa günlük hak, tekrar özeti ve kullanıcı/premium durumu
+  // eski değerde kalıyordu.
+  useEffect(() => {
+    if (!user?.uid) return;
+    let handle = null;
+    let cancelled = false;
+    (async () => {
+      try {
+        const { App: CapApp } = await import("@capacitor/app");
+        const listener = await CapApp.addListener("appStateChange", ({ isActive }) => {
+          if (!isActive || cancelled) return;
+          refreshRemainingUsage?.();
+          refreshSmartReviewSummary?.();
+          refreshUserData?.();
+        });
+        if (cancelled) listener.remove?.();
+        else handle = listener;
+      } catch {
+        /* @capacitor/app yoksa (web) → sessiz */
+      }
+    })();
+    return () => {
+      cancelled = true;
+      try {
+        handle?.remove?.();
+      } catch {
+        /* ignore */
+      }
+    };
+  }, [user, refreshRemainingUsage, refreshSmartReviewSummary, refreshUserData]);
+
   const bottomNavExamLocked =
     !isUserPremium(userData, user) && (remainingUsage?.fullExamRemaining ?? 1) <= 0;
 
@@ -564,7 +596,12 @@ export default function App() {
     })();
   };
 
+  const startFullExamInFlightRef = useRef(false);
   const startFullExam = async (setId) => {
+    // Çift dokunma koruması: aylık 1 deneme hakkı ikinci dokunuşla yanmasın.
+    if (startFullExamInFlightRef.current) return;
+    startFullExamInFlightRef.current = true;
+    try {
     const allQuestions = await ensureAllQuestionsLoaded("Tam deneme hazırlanıyor…");
     // Misafirde aylık deneme limiti (Cloud Function) uygulanmaz; global 10-soru
     // sınırı cevaplama anında devreye girer.
@@ -647,7 +684,11 @@ export default function App() {
         await refreshRemainingUsage();
       } catch (err) {
         if (openLimitFromUsageError(err)) return;
-        throw err;
+        console.error("incrementFullExamUsage error:", err);
+        showToast("Deneme başlatılamadı. İnternet bağlantını kontrol edip tekrar dene.", {
+          type: "error",
+        });
+        return;
       }
     }
     trackClarityEvent("deneme_baslatildi");
@@ -668,6 +709,9 @@ export default function App() {
       })
     );
     setView("exam");
+    } finally {
+      startFullExamInFlightRef.current = false;
+    }
   };
 
   // İlk auth kontrolü tamamlanana kadar markalı splash göster.
