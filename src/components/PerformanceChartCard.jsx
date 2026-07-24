@@ -56,6 +56,7 @@ export default function PerformanceChartCard({
   const [myTarget, setMyTarget] = useState(65);
   const [examHistoryMerged, setExamHistoryMerged] = useState([]);
   const [loadError, setLoadError] = useState(false);
+  const [loading, setLoading] = useState(true);
   const premium = isUserPremium(userData, user);
 
   useEffect(() => {
@@ -67,8 +68,11 @@ export default function PerformanceChartCard({
       if (!authed?.uid) return;
       try {
         const userDoc = await getDoc(doc(db, "users", authed.uid));
-        if (userDoc.exists() && userDoc.data().targetScore) {
-          setMyTarget(userDoc.data().targetScore);
+        if (userDoc.exists()) {
+          // targetScore Firestore'da string olabiliyor; sayıya zorla — aksi
+          // halde toFixed çağrıları bileşeni çökertip beyaz ekran veriyordu.
+          const rawTarget = Number(userDoc.data().targetScore);
+          if (Number.isFinite(rawTarget)) setMyTarget(rawTarget);
         }
 
         const resultsQuery = query(
@@ -102,6 +106,8 @@ export default function PerformanceChartCard({
         } else {
           setLoadError(true);
         }
+      } finally {
+        if (active) setLoading(false);
       }
     }
 
@@ -280,10 +286,12 @@ export default function PerformanceChartCard({
       <div className="relative z-10 min-w-0 w-full overflow-x-auto">
         {!premium && sortedExamHistory.length > FREE_LIMITS.visibleExamHistory && (
           <p className="text-xs text-slate-400 mb-3">
-            Free planda son {FREE_LIMITS.visibleExamHistory} deneme gorunur. Plus ile tum gelisimini takip edebilirsin.
+            Free planda son {FREE_LIMITS.visibleExamHistory} deneme görünür. Plus ile tüm gelişimini takip edebilirsin.
           </p>
         )}
-        {loadError && sortedExamHistory.length === 0 ? (
+        {loading && sortedExamHistory.length === 0 ? (
+          <div className="h-[260px] md:h-[340px] w-full rounded-2xl bg-white/[0.03] animate-pulse" />
+        ) : loadError && sortedExamHistory.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-12 px-4 text-center rounded-2xl border border-dashed border-rose-800/60 bg-rose-950/20">
             <span className="text-4xl mb-3" aria-hidden="true">⚠️</span>
             <p className="text-white font-black text-base mb-1">Grafik yüklenemedi</p>

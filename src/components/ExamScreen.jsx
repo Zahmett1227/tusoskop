@@ -300,7 +300,13 @@ export default function ExamScreen({
     }
   };
 
+  const scrollContainerRef = useRef(null);
   useEffect(() => {
+    // Soru değişince gerçek kaydırma kabını başa al (window scroll bu kabı
+    // etkilemiyordu; uzun soruda kullanıcı yeni soruya ortasından giriyordu).
+    if (typeof scrollContainerRef.current?.scrollTo === "function") {
+      scrollContainerRef.current.scrollTo({ top: 0, behavior: "instant" });
+    }
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [examIndex]);
 
@@ -641,6 +647,7 @@ export default function ExamScreen({
 
       {/* SOL: Soru Alanı */}
       <div
+        ref={scrollContainerRef}
         className="flex-1 overflow-y-auto border-r border-white/[0.06] overscroll-y-contain touch-pan-y"
         {...examSwipe}
       >

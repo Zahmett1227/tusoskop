@@ -46,7 +46,13 @@ export default function Summary({
   ];
 
   return (
-    <div className="min-h-screen bg-[#05070d] text-white p-6 md:p-10">
+    <div
+      className="min-h-dvh bg-[#05070d] text-white p-6 md:p-10"
+      style={{
+        paddingTop: "max(1.5rem, env(safe-area-inset-top, 0px))",
+        paddingBottom: "max(1.5rem, env(safe-area-inset-bottom, 0px))",
+      }}
+    >
       <div className="max-w-3xl mx-auto bg-white/[0.025] border border-white/[0.08] backdrop-blur-xl rounded-[2rem] p-8 md:p-10">
         <h2 className="text-3xl font-black mb-2 text-emerald-400">
           {isTopic ? "Konu Testi Tamamlandı" : "Test Tamamlandı"}

@@ -119,6 +119,7 @@ export default function Dashboard({
   const displayTarget = toSafeTargetScore(myTarget);
   const displayTempTarget = toSafeTargetScore(tempTarget);
   const [isEditingTarget, setIsEditingTarget] = useState(false);
+  const [savingTarget, setSavingTarget] = useState(false);
   const [planStreak, setPlanStreak] = useState(0);
   const [wrongBySubject, setWrongBySubject] = useState({});
   const tusLeft = useMemo(() => getTusCountdown(), []);
@@ -178,11 +179,15 @@ export default function Dashboard({
   const adjustTarget = (amount) => {
     setTempTarget(prev => {
       const val = parseFloat(prev) + amount;
-      return parseFloat(val.toFixed(2));
+      if (!Number.isFinite(val)) return prev;
+      // TUS net aralığı: 0–120 arası clamp (negatif/absürt hedef yazımını önle).
+      const clamped = Math.min(120, Math.max(0, val));
+      return parseFloat(clamped.toFixed(2));
     });
   };
 
   const saveTarget = async () => {
+    if (savingTarget) return;
     const currentUser = auth.currentUser;
     if (!currentUser) {
       // Misafir/oturumsuz: yerel değeri güncelle, uyar.
@@ -192,6 +197,7 @@ export default function Dashboard({
       showToast("Hedefi kaydetmek için giriş yapın.", { type: "info" });
       return;
     }
+    setSavingTarget(true);
     try {
       const saved = toSafeTargetScore(tempTarget);
       await setDoc(doc(db, "users", currentUser.uid), {
@@ -203,6 +209,8 @@ export default function Dashboard({
       showToast("Hedef netin kaydedildi.", { type: "success" });
     } catch {
       showToast("Hedef kaydedilemedi. Lütfen tekrar dene.", { type: "error" });
+    } finally {
+      setSavingTarget(false);
     }
   };
 
@@ -467,7 +475,7 @@ export default function Dashboard({
                 <button type="button" onClick={() => adjustTarget(0.25)} className={`w-11 h-11 rounded-full ${theme.text} text-2xl font-bold transition-all ${isLightTheme ? "bg-emerald-50 hover:bg-emerald-100" : `bg-white/[0.06] ${theme.softBg}`}`}>+</button>
               </div>
               <div className="mt-3 flex gap-2">
-                <button type="button" onClick={saveTarget} className={`flex-1 min-h-11 ${theme.primary} ${theme.primaryHover} text-slate-950 py-2.5 rounded-xl font-black text-sm transition-all shadow-lg ${theme.glow}`}>KAYDET</button>
+                <button type="button" onClick={saveTarget} disabled={savingTarget} className={`flex-1 min-h-11 ${theme.primary} ${theme.primaryHover} text-slate-950 py-2.5 rounded-xl font-black text-sm transition-all shadow-lg ${theme.glow} disabled:opacity-60`}>{savingTarget ? "KAYDEDİLİYOR…" : "KAYDET"}</button>
                 <button type="button" onClick={() => setIsEditingTarget(false)} className={`px-4 py-2.5 rounded-xl font-bold text-sm ${isLightTheme ? "bg-slate-100 text-slate-600 border border-slate-300" : "bg-white/[0.06] text-slate-400 border border-white/[0.08]"}`}>İPTAL</button>
               </div>
             </div>
