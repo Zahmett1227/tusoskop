@@ -65,7 +65,10 @@ function canUseUserStats(uid) {
 function resolveStatsUid(uid) {
   const currentUid = auth.currentUser?.uid || null;
   if (!currentUid || currentUid !== uid) {
-    console.error("[FSRS_STATS] uid mismatch or missing auth user", { uid, currentUid });
+    // Auth henüz hazır değilken normal bir durum — prod'da error basma.
+    if (import.meta.env.DEV) {
+      console.warn("[FSRS_STATS] uid mismatch or missing auth user", { uid, currentUid });
+    }
     return null;
   }
   return currentUid;
@@ -157,9 +160,8 @@ export async function trackFsrsReviewedQuestion({ uid, questionId }) {
       },
       { merge: true }
     );
-    console.log("[FSRS_STATS] reviewed question tracked", { uid: safeUid, questionId });
   } catch (error) {
-    console.error("trackFsrsReviewedQuestion error:", error);
+    if (import.meta.env.DEV) console.error("trackFsrsReviewedQuestion error:", error);
   }
 }
 
@@ -188,7 +190,6 @@ export async function updateFsrsDueSnapshot({ uid, dueCount = null }) {
       },
       { merge: true }
     );
-    console.log("[FSRS_STATS] due snapshot updated", { dueCount: resolvedDueCount });
     return resolvedDueCount;
   } catch (error) {
     console.error("updateFsrsDueSnapshot error:", error);

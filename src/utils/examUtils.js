@@ -1,5 +1,12 @@
 export const shuffleArray = (arr) => {
-  return [...arr].sort(() => Math.random() - 0.5);
+  // Fisher-Yates: sort(() => Math.random() - 0.5) istatistiksel olarak yanlıdır
+  // (bazı sıralar diğerlerinden daha sık gelir). Bu, düzgün dağılım verir.
+  const out = [...arr];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
 };
 
 export const groupByTopic = (questions) => {

@@ -14,6 +14,7 @@ import {
 } from "../services/smartReviewService";
 import { FREE_LIMITS } from "../config/limits";
 import { isUserPremium } from "../utils/premiumUtils";
+import { shuffleArray } from "../utils/examUtils";
 import PerformanceChartCard from "./PerformanceChartCard";
 import FsrsActivityCard from "./study/FsrsActivityCard";
 import AiDailyPlanCard from "./study/AiDailyPlanCard";
@@ -155,7 +156,7 @@ export default function StudyCollectionScreen({
       if (lesson) pool = pool.filter((q) => q.ders === lesson);
       if (topic) pool = pool.filter((q) => q.konu === topic);
       if (!pool.length) return;
-      const shuffled = pool.sort(() => Math.random() - 0.5).slice(0, 20);
+      const shuffled = shuffleArray(pool).slice(0, 20);
       trackClarityEvent("ai_plan_topic_test_baslatildi");
       startReviewWithQuestions?.(shuffled, "topic_practice");
     },
