@@ -337,7 +337,6 @@ export default function AppAuthenticated() {
     setView,
     refreshSmartReviewSummary,
     refreshRemainingUsage,
-    openLimitFromUsageError,
     setLimitModal,
     favoriteQuestionIds,
     setFavoriteQuestionIds,

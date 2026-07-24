@@ -5,6 +5,7 @@ import { trackClarityEvent } from "../lib/clarity";
 import { FREE_LIMITS } from "../config/limits";
 import { isUserPremium } from "../utils/premiumUtils";
 import {
+  bumpLocalUsage,
   canAnswerQuestion,
   canStartReview,
   incrementQuestionUsage,
@@ -39,7 +40,6 @@ export function useStudyState({
   setView,
   refreshSmartReviewSummary,
   refreshRemainingUsage,
-  openLimitFromUsageError,
   setLimitModal,
   favoriteQuestionIds,
   setFavoriteQuestionIds,
@@ -327,6 +327,7 @@ export function useStudyState({
       const questionId = q?.id ? Number(q.id) : null;
       if (questionId) {
         if (!isReview && !answeredQuestionIdsRef.current.has(questionId)) {
+          // Limit kapısı senkron kalır (hak dolduysa cevap gösterilmez).
           const gate = await canAnswerQuestion(user, userData);
           if (!gate.allowed) {
             setLimitModal({
@@ -339,15 +340,15 @@ export function useStudyState({
             });
             return;
           }
-          try {
-            await incrementQuestionUsage(user, userData, 1);
-            await refreshRemainingUsage();
-            answeredQuestionIdsRef.current.add(questionId);
-          } catch (err) {
-            if (openLimitFromUsageError(err)) return;
-            console.warn("Kullanım sayacı yazılamadı; cevap gösterilmiyor.", err);
-            return;
-          }
+          // Optimistik: kapı geçildi → cevabı bekletmeden say (Cloud Function arka planda).
+          answeredQuestionIdsRef.current.add(questionId);
+          // Limiti yerel olarak da uygula: callable kesilse bile bypass olmasın (fail-safe).
+          bumpLocalUsage(user, userData, "question", 1);
+          incrementQuestionUsage(user, userData, 1)
+            .then(() => refreshRemainingUsage())
+            .catch((err) => {
+              console.warn("incrementQuestionUsage arka plan hatası:", err);
+            });
         }
 
         if (isReview && !answeredReviewIdsRef.current.has(questionId)) {
@@ -363,15 +364,14 @@ export function useStudyState({
             });
             return;
           }
-          try {
-            await incrementReviewUsage(user, userData, 1);
-            await refreshRemainingUsage();
-            answeredReviewIdsRef.current.add(questionId);
-          } catch (err) {
-            if (openLimitFromUsageError(err)) return;
-            console.warn("Tekrar kullanım sayacı yazılamadı; cevap gösterilmiyor.", err);
-            return;
-          }
+          // Optimistik: kapı geçildi → arka planda say.
+          answeredReviewIdsRef.current.add(questionId);
+          bumpLocalUsage(user, userData, "review", 1);
+          incrementReviewUsage(user, userData, 1)
+            .then(() => refreshRemainingUsage())
+            .catch((err) => {
+              console.warn("incrementReviewUsage arka plan hatası:", err);
+            });
         }
       }
 
@@ -451,7 +451,6 @@ export function useStudyState({
       selected,
       setLimitModal,
       refreshRemainingUsage,
-      openLimitFromUsageError,
       updateStreakForQuestion,
       recordQuestionTime,
       getFeedbackMessage,
