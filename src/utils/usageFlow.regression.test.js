@@ -52,6 +52,9 @@ describe("usage increment call sites (App.jsx regression)", () => {
     expect(studyStateHookSource).toContain("daily_question_limit");
     // Arka plan sayaç hatası yutulur, reveal engellenmez.
     expect(studyStateHookSource).toContain("incrementQuestionUsage arka plan hatası");
+    // Fail-safe: callable kesilse bile limit yerelde uygulanır (bypass olmaz).
+    expect(studyStateHookSource).toContain('bumpLocalUsage(user, userData, "question"');
+    expect(studyStateHookSource).toContain('bumpLocalUsage(user, userData, "review"');
   });
 
   it("konu testi increment sonrası study state başlar", () => {

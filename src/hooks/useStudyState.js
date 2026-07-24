@@ -5,6 +5,7 @@ import { trackClarityEvent } from "../lib/clarity";
 import { FREE_LIMITS } from "../config/limits";
 import { isUserPremium } from "../utils/premiumUtils";
 import {
+  bumpLocalUsage,
   canAnswerQuestion,
   canStartReview,
   incrementQuestionUsage,
@@ -396,6 +397,8 @@ export function useStudyState({
           }
           // Optimistik: kapı geçildi → cevabı bekletmeden say (Cloud Function arka planda).
           answeredQuestionIdsRef.current.add(questionId);
+          // Limiti yerel olarak da uygula: callable kesilse bile bypass olmasın (fail-safe).
+          bumpLocalUsage(user, userData, "question", 1);
           incrementQuestionUsage(user, userData, 1)
             .then(() => refreshRemainingUsage())
             .catch((err) => {
@@ -418,6 +421,7 @@ export function useStudyState({
           }
           // Optimistik: kapı geçildi → arka planda say.
           answeredReviewIdsRef.current.add(questionId);
+          bumpLocalUsage(user, userData, "review", 1);
           incrementReviewUsage(user, userData, 1)
             .then(() => refreshRemainingUsage())
             .catch((err) => {
