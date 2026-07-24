@@ -355,6 +355,24 @@ export async function getRemainingFreeUsage(user, userData) {
   };
 }
 
+/**
+ * Optimistik yerel sayaç artışı. Cevap sunucu sayacını beklemeden gösterildiğinde
+ * çağrılır; limitin YEREL olarak da uygulanmasını sağlar. Böylece incrementUsage
+ * callable'ı kesintiye uğrasa bile (ör. 403/CORS), `canAnswerQuestion` yerel sayacı
+ * (getUserUsage local+remote max ile birleştirir) okuyup limiti korur — fail-open bypass olmaz.
+ */
+export function bumpLocalUsage(user, userData, type, delta = 1) {
+  if (passIfPremium(user, userData)) return;
+  const usage = getLocalUsage();
+  const d = Math.max(1, Number(delta) || 1);
+  if (type === "question") usage.questionCount += d;
+  else if (type === "review") usage.reviewQuestionCount += d;
+  else if (type === "topicTest") usage.topicTestCount += 1;
+  else if (type === "fullExam") usage.fullExamCount += 1;
+  else return;
+  setLocalUsage(usage);
+}
+
 /** UI metinleri — App.jsx limit modal ile uyumlu */
 export function limitModalFromUsageError(code) {
   switch (code) {

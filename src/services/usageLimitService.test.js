@@ -138,4 +138,24 @@ describe("usageLimitService", () => {
     const gate = await canStartReview(null, { lifetimePremium: true }, 5);
     expect(gate.allowed).toBe(true);
   });
+
+  it("bumpLocalUsage: callable olmadan bile limit yerel uygulanır (fail-safe)", async () => {
+    const { bumpLocalUsage, canAnswerQuestion } = await loadService();
+    // Sunucu callable'ı hiç çağrılmadan limite kadar yerel say (kesinti senaryosu).
+    for (let i = 0; i < FREE_LIMITS.dailyQuestions; i += 1) {
+      bumpLocalUsage(null, null, "question", 1);
+    }
+    const gate = await canAnswerQuestion(null, null);
+    expect(gate.allowed).toBe(false);
+    expect(httpsCallableMock).not.toHaveBeenCalled();
+  });
+
+  it("bumpLocalUsage premium için no-op", async () => {
+    const { bumpLocalUsage, canAnswerQuestion } = await loadService();
+    for (let i = 0; i < FREE_LIMITS.dailyQuestions + 5; i += 1) {
+      bumpLocalUsage(null, { lifetimePremium: true }, "question", 1);
+    }
+    const gate = await canAnswerQuestion(null, { lifetimePremium: true });
+    expect(gate.allowed).toBe(true);
+  });
 });

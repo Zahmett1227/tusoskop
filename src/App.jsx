@@ -331,7 +331,6 @@ export default function App() {
     setView,
     refreshSmartReviewSummary,
     refreshRemainingUsage,
-    openLimitFromUsageError,
     setLimitModal,
     favoriteQuestionIds,
     setFavoriteQuestionIds,

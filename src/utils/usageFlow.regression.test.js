@@ -21,16 +21,19 @@ const studyStateHookSource = readFileSync(
 const combinedUsageSource = `${appSource}\n${topicStudyHookSource}\n${studyStateHookSource}`;
 
 describe("usage increment call sites (App.jsx regression)", () => {
-  it("await increment yalnızca dört akışta (tek çağrı each)", () => {
+  it("await increment yalnızca deneme ve konu testinde (soru/tekrar optimistik)", () => {
+    // Soru/tekrar reveal'ı optimistik: sayaç arka planda (await yok).
+    // Deneme/konu testi başlangıçta senkron sayılır (await).
     const awaitIncrements = [
       ...combinedUsageSource.matchAll(/await increment(\w+)Usage/g),
     ].map((m) => `increment${m[1]}Usage`);
     expect(awaitIncrements.sort()).toEqual([
       "incrementFullExamUsage",
-      "incrementQuestionUsage",
-      "incrementReviewUsage",
       "incrementTopicTestUsage",
     ]);
+    // Soru/tekrar sayacı arka planda çağrılır (fire-and-forget).
+    expect(studyStateHookSource).toMatch(/incrementQuestionUsage\(user, userData, 1\)\s*\.then/);
+    expect(studyStateHookSource).toMatch(/incrementReviewUsage\(user, userData, 1\)\s*\.then/);
   });
 
   it("deneme bitişinde usage increment yok", () => {
@@ -41,9 +44,17 @@ describe("usage increment call sites (App.jsx regression)", () => {
     expect(handleExamCompletedBlock).not.toMatch(/increment\w+Usage/);
   });
 
-  it("başarısız soru increment sonrası cevap gösterilmiyor", () => {
-    expect(studyStateHookSource).toContain("Kullanım sayacı yazılamadı; cevap gösterilmiyor.");
-    expect(combinedUsageSource).not.toContain("cevap yine gösteriliyor");
+  it("optimistik reveal: limit kapısı senkron, sayaç arka planda", () => {
+    // Cevap artık sayaç yazımını beklemez (eski fail-closed mesajı kaldırıldı).
+    expect(studyStateHookSource).not.toContain("cevap gösterilmiyor");
+    // Ama limit kapısı hâlâ senkron: hak dolduysa modal + return (reveal yok).
+    expect(studyStateHookSource).toContain("if (!gate.allowed)");
+    expect(studyStateHookSource).toContain("daily_question_limit");
+    // Arka plan sayaç hatası yutulur, reveal engellenmez.
+    expect(studyStateHookSource).toContain("incrementQuestionUsage arka plan hatası");
+    // Fail-safe: callable kesilse bile limit yerelde uygulanır (bypass olmaz).
+    expect(studyStateHookSource).toContain('bumpLocalUsage(user, userData, "question"');
+    expect(studyStateHookSource).toContain('bumpLocalUsage(user, userData, "review"');
   });
 
   it("konu testi increment sonrası study state başlar", () => {
