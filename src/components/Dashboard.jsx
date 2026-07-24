@@ -10,7 +10,7 @@ import { FIXED_EXAM_CARD_SUBTITLE } from "../data/exams";
 import { SUBJECT_QUESTION_COUNTS } from "../data/questions";
 import { accentThemes } from "../theme/accentThemes";
 import { isUserPremium } from "../utils/premiumUtils";
-import { canShowExternalPayments } from "../utils/device";
+import { canShowExternalPayments, isNativeIOS } from "../utils/device";
 import { setClarityTag, trackClarityEvent } from "../lib/clarity";
 import DashboardProfileMenu from "./DashboardProfileMenu";
 import { getMailtoFeedback, getMailtoPaymentIssue } from "../config/support";
@@ -107,8 +107,11 @@ export default function Dashboard({
       : "min-h-dvh bg-[#05070d] text-white");
   const hex = accentHex(accentThemeKey);
   const premiumActive = isUserPremium(userData, user);
-  // iOS native'de Plus/free ayrımı yok; Plus rozetleri gizlenir.
+  // iOS native'de dış-ödeme rozetleri/fiyatları gizlenir (Apple 3.1.1).
   const showPlusBadges = canShowExternalPayments();
+  // Ancak Plus ekranına (StoreKit IAP + "Satın Almaları Geri Yükle") giriş
+  // iOS'ta da SUNULMALI — aksi halde abonelik ve restore erişilemez kalır.
+  const canReachPremiumScreen = showPlusBadges || isNativeIOS();
   const { questionUsed: freeQuestionUsed, examUsed: freeExamUsed, reviewUsed: freeReviewUsed } =
     getFreeUsageUsed(remainingUsage);
   const [myTarget, setMyTarget] = useState(65.0);
@@ -510,11 +513,11 @@ export default function Dashboard({
               <span className="text-xs font-black tabular-nums text-slate-400">Deneme {freeExamUsed}/{FREE_LIMITS.monthlyFullExams}</span>
               <span className="text-slate-500">·</span>
               <span className="text-xs font-black tabular-nums text-slate-400">Tekrar {freeReviewUsed}/{FREE_LIMITS.dailyReviewQuestions}</span>
-              {showPlusBadges ? (
+              {canReachPremiumScreen ? (
                 <button
                   type="button"
                   onClick={() => setView("premiumInfo")}
-                  className={`ml-auto shrink-0 rounded-xl px-3 py-1.5 text-xs font-black transition ${isLightTheme ? "bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:brightness-105" : "bg-gradient-to-r from-amber-400 to-orange-600 text-slate-950 hover:brightness-110"}`}
+                  className={`ml-auto shrink-0 rounded-xl px-3 py-2 text-xs font-black transition min-h-11 ${isLightTheme ? "bg-gradient-to-r from-amber-500 to-orange-600 text-white hover:brightness-105" : "bg-gradient-to-r from-amber-400 to-orange-600 text-slate-950 hover:brightness-110"}`}
                 >
                   Plus’ı İncele
                 </button>

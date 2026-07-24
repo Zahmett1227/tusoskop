@@ -1005,6 +1005,10 @@ export default function App() {
               setLimitModal((prev) => ({ ...prev, open: false }));
               setView("premiumInfo");
             }}
+            onIosSubscribeClick={() => {
+              setLimitModal((prev) => ({ ...prev, open: false }));
+              setView("premiumInfo");
+            }}
           />
         </Suspense>
       )}
