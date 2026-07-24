@@ -1,6 +1,18 @@
 import React from "react";
 
-export default function Summary({ currentSubject, score, total, onRetry, goDashboard, questionTimes = {} }) {
+export default function Summary({
+  currentSubject,
+  score,
+  total,
+  onRetry,
+  goDashboard,
+  questionTimes = {},
+  studyMode = "study",
+  result = null,
+  ders,
+  konu,
+  onNewTopic,
+}) {
   const numericTimes = Object.entries(questionTimes)
     .filter(([key, value]) => !String(key).startsWith("q-") && Number.isFinite(value))
     .map(([, value]) => Number(value));
@@ -18,16 +30,41 @@ export default function Summary({ currentSubject, score, total, onRetry, goDashb
     ? "Dengeli tempo."
     : "Yavaş çözüyorsun; bu oturumda tempo veya karar süresi uzuyor olabilir.";
 
+  const isTopic = studyMode === "topic";
+  const correct = result?.correct ?? score;
+  const wrong = result?.wrong ?? Math.max(0, total - score);
+  const blank = result?.blank ?? 0;
+  const net = result?.net ?? Math.max(0, Math.round((correct - wrong / 4) * 100) / 100);
+  const accuracy = total ? Math.round((correct / total) * 100) : 0;
+  const title = isTopic && ders ? `${ders} · ${konu}` : currentSubject;
+
+  const stats = [
+    { label: "Doğru", value: correct, color: "text-emerald-400" },
+    { label: "Yanlış", value: wrong, color: "text-rose-400" },
+    { label: "Boş", value: blank, color: "text-slate-300" },
+    { label: "Net", value: net, color: "text-cyan-400" },
+  ];
+
   return (
     <div className="min-h-screen bg-[#05070d] text-white p-6 md:p-10">
       <div className="max-w-3xl mx-auto bg-white/[0.025] border border-white/[0.08] backdrop-blur-xl rounded-[2rem] p-8 md:p-10">
-        <h2 className="text-3xl font-black mb-4 text-emerald-400">
-          Test Tamamlandı
+        <h2 className="text-3xl font-black mb-2 text-emerald-400">
+          {isTopic ? "Konu Testi Tamamlandı" : "Test Tamamlandı"}
         </h2>
-        <p className="text-xl text-slate-200 mb-3">{currentSubject}</p>
-        <p className="text-slate-400 mb-8">
-          Skor: <span className="text-white font-bold">{score} / {total}</span>
+        {title ? <p className="text-lg text-slate-200 mb-1 break-words">{title}</p> : null}
+        <p className="text-slate-400 mb-6">
+          Doğruluk <span className="text-white font-bold">%{accuracy}</span> · {correct}/{total} doğru
         </p>
+
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-8">
+          {stats.map((s) => (
+            <div key={s.label} className="rounded-2xl border border-white/[0.07] bg-black/20 px-3 py-4 text-center">
+              <p className={`text-3xl font-black tabular-nums ${s.color}`}>{s.value}</p>
+              <p className="mt-1 text-[10px] font-black uppercase tracking-wider text-slate-500">{s.label}</p>
+            </div>
+          ))}
+        </div>
+
         <div className="rounded-3xl border border-white/[0.07] bg-black/20 p-5 mb-8">
           <p className="text-sm text-slate-400 font-bold mb-1">⏱ Ortalama süre</p>
           <p className="text-2xl font-black text-white mb-3">{avgTime} sn / soru</p>
@@ -43,13 +80,22 @@ export default function Summary({ currentSubject, score, total, onRetry, goDashb
           </div>
           <p className="text-xs text-slate-400 mt-3">{tempoComment}</p>
         </div>
-        <div className="flex gap-3">
+
+        <div className="flex flex-wrap gap-3">
           <button
             onClick={onRetry}
-            className="px-5 py-3 rounded-2xl bg-emerald-500 text-white font-bold hover:opacity-90"
+            className="px-5 py-3 rounded-2xl bg-emerald-500 text-slate-950 font-black hover:opacity-90"
           >
-            Tekrar çöz
+            {isTopic ? "Yeniden çöz" : "Tekrar çöz"}
           </button>
+          {isTopic && typeof onNewTopic === "function" ? (
+            <button
+              onClick={onNewTopic}
+              className="px-5 py-3 rounded-2xl bg-white/[0.06] border border-white/[0.08] text-white font-bold hover:bg-white/[0.1]"
+            >
+              Yeni konu seç
+            </button>
+          ) : null}
           <button
             onClick={goDashboard}
             className="px-5 py-3 rounded-2xl bg-white/[0.06] border border-white/[0.08] text-white font-bold hover:bg-white/[0.1]"

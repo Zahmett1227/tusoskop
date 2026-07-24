@@ -8,6 +8,7 @@ import {
 import { getStudyCollectionSummary } from "../services/studyCollectionService";
 import { resolveTopicStudyCount } from "../utils/topicStudyUtils";
 import { saveRecentTopicStudy } from "../utils/topicStudyMemory";
+import { clearTopicTestInProgress } from "../utils/topicTestInProgressUtils";
 import { useToast } from "../context/ToastContext";
 
 /**
@@ -31,6 +32,13 @@ export function useTopicStudyFlow({
   setLimitModal,
   openLimitFromUsageError,
   isGuest = false,
+  // Yarım kalan testi kaldığı yerden sürdürmek için ek study setter'ları.
+  setStudyAnswers,
+  setCurrentIndex,
+  setScore,
+  setStreak,
+  setSelected,
+  setShowResult,
 }) {
   const { showToast } = useToast();
   const [selectedLesson, setSelectedLesson] = useState("");
@@ -192,6 +200,63 @@ export function useTopicStudyFlow({
     ]
   );
 
+  /** Yarım kalan konu testini kaldığı index'ten, cevaplarıyla sürdür. */
+  const resumeTopicTest = useCallback(
+    async (data) => {
+      if (!data?.ders || !data?.konu || !Array.isArray(data.questionIdsSnapshot)) return;
+      const loaded = await ensureQuestionsForSubject(data.ders);
+      const byId = new Map((loaded || []).map((q) => [Number(q.id), q]));
+      const restored = data.questionIdsSnapshot
+        .map((id) => byId.get(Number(id)))
+        .filter(Boolean);
+      if (restored.length !== data.questionIdsSnapshot.length) {
+        clearTopicTestInProgress();
+        showToast("Yarım test güncel soru bankasıyla eşleşmedi, sıfırlandı.", { type: "info" });
+        return;
+      }
+      const display = toDisplayQuestions(restored);
+      const safeIndex = Math.min(Math.max(0, Number(data.currentIndex) || 0), display.length - 1);
+      const answers = data.answers || {};
+      const currentRec = answers[safeIndex];
+      resetStudyState();
+      setStudyMode("topic");
+      setSelectedLesson(data.ders);
+      setSelectedTopic(data.konu);
+      setActiveTopicSubject(data.ders);
+      setActiveTopicName(data.konu);
+      setCurrentSubject(`${data.ders} / ${data.konu}`);
+      setActiveQuestions(display);
+      setStudyAnswers?.(answers);
+      setScore?.(Number(data.score) || 0);
+      setStreak?.(Number(data.streak) || 0);
+      setCurrentIndex?.(safeIndex);
+      setSelected?.(currentRec?.selected ?? null);
+      setShowResult?.(Boolean(currentRec?.revealed));
+      trackClarityEvent("konu_testi_devam");
+      setClarityTag("son_ders", data.ders);
+      setClarityTag("son_konu", data.konu);
+      setView("study");
+    },
+    [
+      ensureQuestionsForSubject,
+      toDisplayQuestions,
+      resetStudyState,
+      setStudyMode,
+      setActiveTopicSubject,
+      setActiveTopicName,
+      setCurrentSubject,
+      setActiveQuestions,
+      setStudyAnswers,
+      setScore,
+      setStreak,
+      setCurrentIndex,
+      setSelected,
+      setShowResult,
+      setView,
+      showToast,
+    ]
+  );
+
   const questionSetupScreenProps = useMemo(
     () => ({
       selectedLesson,
@@ -200,6 +265,7 @@ export function useTopicStudyFlow({
       setSelectedTopic,
       ensureSubjectQuestions: ensureQuestionsForSubject,
       startTopicTest,
+      resumeTopicTest,
       wrongCount: questionSetupWrongCount,
     }),
     [
@@ -207,6 +273,7 @@ export function useTopicStudyFlow({
       selectedTopic,
       ensureQuestionsForSubject,
       startTopicTest,
+      resumeTopicTest,
       questionSetupWrongCount,
     ]
   );
@@ -218,6 +285,7 @@ export function useTopicStudyFlow({
     setSelectedTopic,
     openTopicSetup,
     startTopicTest,
+    resumeTopicTest,
     questionSetupWrongCount,
     questionSetupScreenProps,
     openSubjectTopicPlusGate,

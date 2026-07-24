@@ -28,6 +28,9 @@ export default function StudyScreen({
   isFavorite,
   onToggleFavorite,
   favoriteFeedback,
+  studyMode = "study",
+  studyAnswers = {},
+  goToIndex,
   user = null,
 }) {
   const theme = accentTheme || accentThemes.emerald;
@@ -41,7 +44,10 @@ export default function StudyScreen({
   });
   const progressPercent = Math.round(((index + 1) / Math.max(1, total)) * 100);
   const [insightsOpen, setInsightsOpen] = useState(true);
+  const [navOpen, setNavOpen] = useState(false);
   const [fsrsRated, setFsrsRated] = useState(false);
+  const showNavigator = studyMode === "topic" && total > 1 && typeof goToIndex === "function";
+  const answeredCount = Object.values(studyAnswers || {}).filter((r) => r?.revealed).length;
   // İlk render'da sorular henüz hazır değilse "bulunamadı" mesajını hemen
   // göstermek yerine kısa bir bekleme penceresinde skeleton göster.
   const [settling, setSettling] = useState(true);
@@ -180,7 +186,8 @@ export default function StudyScreen({
                   {topicProgress.ders} • {topicProgress.konu}
                 </div>
                 <div className="mt-1 text-xs text-slate-400">
-                  Bu testte {topicProgress.current} / {topicProgress.total} soru
+                  {topicProgress.current} / {topicProgress.total} soru
+                  {answeredCount > 0 ? ` · ${answeredCount} cevaplandı` : ""}
                 </div>
               </div>
               <div className="text-xs font-bold text-slate-300">
@@ -195,6 +202,56 @@ export default function StudyScreen({
                 }}
               />
             </div>
+          </div>
+        )}
+
+        {/* Soru navigatörü — testte sorular arası zıpla, cevaplananları işaretle */}
+        {showNavigator && (
+          <div className="rounded-2xl border border-white/[0.07] bg-white/[0.025] px-4 py-3">
+            <button
+              type="button"
+              onClick={() => setNavOpen((o) => !o)}
+              className={`flex w-full items-center justify-between text-left text-xs font-extrabold text-slate-200 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070d] ${theme.ring}`}
+              aria-expanded={navOpen}
+            >
+              <span>Soru navigatörü</span>
+              <span className="tabular-nums text-slate-400">
+                {answeredCount}/{total} · {navOpen ? "▲" : "▼"}
+              </span>
+            </button>
+            {navOpen && (
+              <div className="mt-3 grid grid-cols-8 gap-1.5 sm:grid-cols-10">
+                {Array.from({ length: total }).map((_, i) => {
+                  const rec = studyAnswers[i];
+                  const isCurrent = i === index;
+                  const answered = Boolean(rec?.revealed);
+                  const blank = answered && (rec.selected === null || rec.selected === undefined);
+                  const correct = answered && !blank && rec.correct;
+                  const wrong = answered && !blank && !rec.correct;
+                  let tone;
+                  if (isCurrent) tone = "border-white/70 bg-white text-slate-950";
+                  else if (correct) tone = "border-emerald-400/40 bg-emerald-500/20 text-emerald-200";
+                  else if (wrong) tone = "border-rose-400/40 bg-rose-500/20 text-rose-200";
+                  else if (blank) tone = "border-amber-400/30 bg-amber-500/10 text-amber-200";
+                  else tone = "border-white/10 bg-white/[0.04] text-slate-400";
+                  return (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => {
+                        goToIndex(i);
+                        setNavOpen(false);
+                      }}
+                      className={`flex aspect-square items-center justify-center rounded-lg border text-xs font-black tabular-nums transition-all active:scale-95 ${tone}`}
+                      aria-current={isCurrent ? "true" : undefined}
+                      aria-label={`Soru ${i + 1}${answered ? (blank ? " (boş)" : correct ? " (doğru)" : " (yanlış)") : ""}`}
+                    >
+                      {i + 1}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </div>
         )}
 

@@ -390,6 +390,12 @@ export default function App() {
     setLimitModal,
     openLimitFromUsageError,
     isGuest,
+    setStudyAnswers: studyState.setStudyAnswers,
+    setCurrentIndex: studyState.setCurrentIndex,
+    setScore: studyState.setScore,
+    setStreak: studyState.setStreak,
+    setSelected: studyState.setSelected,
+    setShowResult: studyState.setShowResult,
   });
 
   const { openTopicSetup, questionSetupScreenProps } = topicStudy;
@@ -707,7 +713,19 @@ export default function App() {
         <Summary
           currentSubject={studyState.currentSubject} score={studyState.score} total={studyState.activeQuestions.length}
           questionTimes={studyState.questionTimes}
-          onRetry={() => { studyState.setCurrentIndex(0); setView("study"); }}
+          studyMode={studyState.studyMode}
+          result={studyState.getStudyResult()}
+          ders={studyState.activeTopicSubject}
+          konu={studyState.activeTopicName}
+          onRetry={() => {
+            studyState.setStudyAnswers({});
+            studyState.setScore(0);
+            studyState.setSelected(null);
+            studyState.setShowResult(false);
+            studyState.setCurrentIndex(0);
+            setView("study");
+          }}
+          onNewTopic={openTopicSetup}
           goDashboard={goDashboard}
         />
       );
@@ -789,6 +807,9 @@ export default function App() {
           socialProof={studyState.getSocialProof(studyState.q)}
           mastery={studyState.getMasteryLevel(studyState.q?.konu)}
           topicProgress={studyState.topicProgress}
+          studyMode={studyState.studyMode}
+          studyAnswers={studyState.studyAnswers}
+          goToIndex={studyState.goToIndex}
           accentTheme={accentTheme}
           isFavorite={favoriteQuestionIds.has(Number(studyState.q?.id))}
           onToggleFavorite={studyState.handleToggleFavorite}
