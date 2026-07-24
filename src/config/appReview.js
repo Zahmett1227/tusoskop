@@ -5,7 +5,7 @@
  * Uygulama yayına alındığında buraya yazılır. Boşken derin bağlantı açılmaz
  * (ön-soru yine gösterilir; "Evet" sessizce kapanır).
  */
-export const APP_STORE_ID = "";
+export const APP_STORE_ID = "6776331691";
 
 export const APP_REVIEW_CONFIG = {
   /** Toplam çözülen soru bu eşiği geçince (bir kez) değerlendirme istenebilir. */

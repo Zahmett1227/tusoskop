@@ -1,5 +1,5 @@
-import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { APP_REVIEW_CONFIG } from "../config/appReview";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { APP_REVIEW_CONFIG, APP_STORE_ID } from "../config/appReview";
 import {
   getAppReviewState,
   isEligibleForPrompt,
@@ -61,8 +61,17 @@ describe("appReviewService", () => {
     expect(isEligibleForPrompt(daysLater(day + 60))).toBe(false);
   });
 
-  it("APP_STORE_ID boşken openAppStoreReview false döner", () => {
-    // Varsayılan config'te ID boş — link açılmaz.
-    expect(openAppStoreReview()).toBe(false);
+  it("APP_STORE_ID yapılandırılmış: openAppStoreReview doğru App Store URL'sini açar", () => {
+    expect(APP_STORE_ID).toBeTruthy();
+    const openSpy = vi.spyOn(window, "open").mockReturnValue({ focus: () => {} });
+    try {
+      expect(openAppStoreReview()).toBe(true);
+      expect(openSpy).toHaveBeenCalledTimes(1);
+      const url = String(openSpy.mock.calls[0][0]);
+      expect(url).toContain(`id${APP_STORE_ID}`);
+      expect(url).toContain("action=write-review");
+    } finally {
+      openSpy.mockRestore();
+    }
   });
 });
