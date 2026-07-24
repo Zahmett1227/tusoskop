@@ -334,9 +334,14 @@ export default function App() {
     }
   }, [user]);
 
+  // Tekrar özeti yalnızca kullanıcı/profil değişince yenilenir. Eskiden `view`
+  // ve `QUESTIONS` da bağımlıydı → her ekran geçişinde ve her soru paketi
+  // yüklemesinde gereksiz Firestore okuma + due snapshot YAZIMI tetikliyordu.
+  // Tekrar akışı bittiğinde useStudyState zaten doğrudan çağırıyor; öne dönüşte
+  // appStateChange tazeliyor.
   useEffect(() => {
     refreshSmartReviewSummary();
-  }, [refreshSmartReviewSummary, userData, QUESTIONS, view]);
+  }, [refreshSmartReviewSummary, userData]);
 
   // Arka plandan öne dönüşte bayat veriyi tazele: uygulama saatlerce/günlerce
   // arka planda kaldıysa günlük hak, tekrar özeti ve kullanıcı/premium durumu
