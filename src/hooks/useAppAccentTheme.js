@@ -1,16 +1,18 @@
 import { useState } from "react";
-import { accentThemes, getRandomAccentTheme } from "../theme/accentThemes";
+import { accentThemes } from "../theme/accentThemes";
+
+const DEFAULT_ACCENT = "emerald";
 
 export function useAppAccentTheme() {
   const [accentThemeKey, setAccentThemeKey] = useState(() => {
-    if (typeof window === "undefined") return "emerald";
+    if (typeof window === "undefined") return DEFAULT_ACCENT;
     const localKey = localStorage.getItem("tusoskop-accent-theme-preference");
     if (localKey && accentThemes[localKey]) return localKey;
     const sessionKey = sessionStorage.getItem("tusoskop-accent-theme");
     if (sessionKey && accentThemes[sessionKey]) return sessionKey;
-    const randomKey = getRandomAccentTheme();
-    sessionStorage.setItem("tusoskop-accent-theme", randomKey);
-    return randomKey;
+    // Sabit marka rengi — her açılışta rastgele renk marka tutarlılığını bozuyordu.
+    sessionStorage.setItem("tusoskop-accent-theme", DEFAULT_ACCENT);
+    return DEFAULT_ACCENT;
   });
 
   const accentTheme = accentThemes[accentThemeKey] || accentThemes.emerald;

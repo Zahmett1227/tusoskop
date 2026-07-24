@@ -28,6 +28,7 @@ import {
   validateInProgressExam,
 } from "./utils/examInProgressUtils";
 import { isIOS, isNativeIOS } from "./utils/device";
+import { applyStatusBarForTheme } from "./utils/nativeApp";
 import { setClarityTag, trackClarityEvent } from "./lib/clarity";
 import { getWrongQuestions } from "./services/studyCollectionService";
 import {
@@ -176,6 +177,13 @@ export default function App() {
   const legalReturnViewRef = useRef("dashboard");
   const [legalPageId, setLegalPageId] = useState(LEGAL_PAGES[0].id);
   const { accentThemeKey, accentTheme, handleAccentThemeChange } = useAppAccentTheme();
+  const isLightAccent = accentTheme?.mode === "light" || accentThemeKey === "light";
+
+  // Status bar metnini temaya göre güncelle: "Beyaz" temada açık zeminde beyaz
+  // saat/pil görünmez kalıyordu — tema her değiştiğinde yeniden ayarla.
+  useEffect(() => {
+    applyStatusBarForTheme(isLightAccent);
+  }, [isLightAccent]);
   const {
     user,
     userData,

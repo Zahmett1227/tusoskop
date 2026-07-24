@@ -12,7 +12,8 @@ export function initNativeAppShell() {
   }
 
   StatusBar.setStyle({ style: Style.Dark }).catch(() => {});
-  StatusBar.setBackgroundColor({ color: "#020617" }).catch(() => {});
+  // setBackgroundColor/setOverlaysWebView Android-only'dir; iOS'ta no-op olur.
+  // iOS'ta overlay davranışı Info.plist / güvenli alan CSS'i ile yönetilir.
   StatusBar.setOverlaysWebView({ overlay: true }).catch(() => {});
   SplashScreen.hide().catch(() => {});
 
@@ -28,4 +29,15 @@ export function initNativeAppShell() {
     document.documentElement.style.setProperty("--native-keyboard-height", "0px");
     document.documentElement.classList.remove("keyboard-visible");
   }).catch(() => {});
+}
+
+/**
+ * Status bar metin rengini aktif temaya göre ayarlar.
+ * Capacitor: Style.Light = koyu metin (açık zemin için), Style.Dark = beyaz metin.
+ * "Beyaz" tema seçildiğinde beyaz metin okunmaz kalıyordu — bu onu düzeltir.
+ * @param {boolean} isLightTheme
+ */
+export function applyStatusBarForTheme(isLightTheme) {
+  if (!isNativePlatform()) return;
+  StatusBar.setStyle({ style: isLightTheme ? Style.Light : Style.Dark }).catch(() => {});
 }
