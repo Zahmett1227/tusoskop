@@ -79,6 +79,12 @@ export function useStudyState({
     return localStorage.getItem("tusoskop-flow-mode") === "true";
   });
   const [isAutoAdvancing, setIsAutoAdvancing] = useState(false);
+  // Akış modundaki 700ms otomatik geçiş timer'ı — "Panele dön"/index değişiminde
+  // temizlenmezse ekran kullanıcının altından kayabiliyordu.
+  const autoAdvanceTimerRef = useRef(null);
+  // "Cevabı göster" senkron re-entrancy guard'ı: await canAnswerQuestion sürerken
+  // ikinci dokunuş skoru/yanlış kaydını çift işlemesini engeller.
+  const revealInFlightRef = useRef(false);
   const [streak, setStreak] = useState(0);
   const [bestStreak, setBestStreak] = useState(() => {
     if (typeof window === "undefined") return 0;
@@ -147,6 +153,10 @@ export function useStudyState({
   ]);
 
   const resetStudyState = useCallback(() => {
+    if (autoAdvanceTimerRef.current) {
+      clearTimeout(autoAdvanceTimerRef.current);
+      autoAdvanceTimerRef.current = null;
+    }
     setCurrentSubject(null);
     setCurrentIndex(0);
     setSelected(null);
@@ -371,6 +381,11 @@ export function useStudyState({
 
   const revealCurrentAnswer = useCallback(
     async (answerOverride = selected) => {
+      // Çift dokunma / re-entrancy koruması: zaten işleniyorsa veya cevap zaten
+      // gösterildiyse ikinci çağrıyı yut.
+      if (revealInFlightRef.current || showResult) return;
+      revealInFlightRef.current = true;
+      try {
       const isReview = studyMode === "review";
       const questionId = q?.id ? Number(q.id) : null;
       if (isGuest) {
@@ -526,10 +541,14 @@ export function useStudyState({
         }
         await refreshSmartReviewSummary?.();
       }
+      } finally {
+        revealInFlightRef.current = false;
+      }
     },
     [
       q,
       studyMode,
+      showResult,
       user,
       userData,
       selected,
@@ -618,6 +637,10 @@ export function useStudyState({
   const goToIndex = useCallback(
     (idx) => {
       if (!Number.isInteger(idx) || idx < 0 || idx >= activeQuestions.length) return;
+      if (autoAdvanceTimerRef.current) {
+        clearTimeout(autoAdvanceTimerRef.current);
+        autoAdvanceTimerRef.current = null;
+      }
       const rec = studyAnswers[idx];
       setCurrentIndex(idx);
       setSelected(rec?.selected ?? null);
@@ -627,6 +650,13 @@ export function useStudyState({
     },
     [activeQuestions.length, studyAnswers]
   );
+
+  // Unmount'ta bekleyen otomatik geçiş timer'ını temizle (setState-after-unmount önlemi).
+  useEffect(() => {
+    return () => {
+      if (autoAdvanceTimerRef.current) clearTimeout(autoAdvanceTimerRef.current);
+    };
+  }, []);
 
   const handleNext = useCallback(async () => {
     if (currentIndex < activeQuestions.length - 1) {
@@ -692,12 +722,17 @@ export function useStudyState({
 
   const handleStudySelect = useCallback(
     async (optionIndex) => {
+      // Cevap gösterildikten sonra şık seçimi kilitli: "senin cevabın" işareti
+      // kaymasın ve navigatördeki doğru/yanlış rengiyle çelişmesin.
+      if (showResult) return;
       setSelected(optionIndex);
-      if (!flowMode || showResult || isAutoAdvancing) return;
+      if (!flowMode || isAutoAdvancing) return;
       await revealCurrentAnswer(optionIndex);
       if (currentIndex >= activeQuestions.length - 1) return;
       setIsAutoAdvancing(true);
-      setTimeout(() => {
+      if (autoAdvanceTimerRef.current) clearTimeout(autoAdvanceTimerRef.current);
+      autoAdvanceTimerRef.current = setTimeout(() => {
+        autoAdvanceTimerRef.current = null;
         setIsAutoAdvancing(false);
         handleNext();
       }, 700);
