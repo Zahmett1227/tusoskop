@@ -345,6 +345,8 @@ export function useStudyState({
   const recordHistoryForQuestion = useCallback(
     ({ question, selectedOption, mode }) => {
       if (!question?.id) return;
+      // Misafir hiçbir şey saklamaz — yerel geçmiş de yazılmaz (giriş sonrası sızmasın).
+      if (isGuest) return;
       if (isReactEventOrDomNode(selectedOption)) {
         console.error("Invalid selected answer: React event/DOM node received");
         return;
@@ -360,7 +362,7 @@ export function useStudyState({
         console.error("recordQuestionHistory error:", error);
       });
     },
-    [user]
+    [user, isGuest]
   );
 
   const revealCurrentAnswer = useCallback(
@@ -492,6 +494,12 @@ export function useStudyState({
           eventType: EVENT_TYPES.STREAK_DAY,
           weekId,
         }).catch(() => {});
+      }
+
+      // Misafir hiçbir şey saklamaz: yanlış/tekrar kayıtları yerele yazılmaz.
+      // Aksi halde giriş sonrası getSmartReviews yerel kayıtları hesaba sızdırır.
+      if (isGuest) {
+        return;
       }
 
       if (studyMode === "review") {
