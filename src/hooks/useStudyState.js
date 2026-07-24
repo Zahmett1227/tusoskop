@@ -21,6 +21,10 @@ import {
   upsertSmartReview,
   updateSmartReviewFromAnswer,
 } from "../services/smartReviewService";
+import {
+  isGuestLimitReached,
+  recordGuestAnswer,
+} from "../services/guestModeService";
 import { isReactEventOrDomNode, normalizeAnswerValue } from "../utils/examUtils";
 import { recordQuestionHistory } from "../services/questionHistoryService";
 import { submitQuestionScoreEvent, submitDailyBonusEvent } from "../services/leaderboardService";
@@ -42,6 +46,9 @@ export function useStudyState({
   setLimitModal,
   favoriteQuestionIds,
   setFavoriteQuestionIds,
+  isGuest = false,
+  openGuestLoginPrompt,
+  onGuestAnswered,
 }) {
   const [currentSubject, setCurrentSubject] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -322,7 +329,18 @@ export function useStudyState({
     async (answerOverride = selected) => {
       const isReview = studyMode === "review";
       const questionId = q?.id ? Number(q.id) : null;
-      if (questionId) {
+      if (isGuest) {
+        // Misafir: tek global soru sayacı; Cloud Function çağrılmaz. Aşınca giriş iste.
+        if (questionId && !answeredQuestionIdsRef.current.has(questionId)) {
+          if (isGuestLimitReached()) {
+            openGuestLoginPrompt?.();
+            return;
+          }
+          recordGuestAnswer();
+          answeredQuestionIdsRef.current.add(questionId);
+          onGuestAnswered?.();
+        }
+      } else if (questionId) {
         if (!isReview && !answeredQuestionIdsRef.current.has(questionId)) {
           const gate = await canAnswerQuestion(user, userData);
           if (!gate.allowed) {
@@ -451,6 +469,9 @@ export function useStudyState({
       recordHistoryForQuestion,
       refreshSmartReviewSummary,
       activeTopicName,
+      isGuest,
+      openGuestLoginPrompt,
+      onGuestAnswered,
     ]
   );
 

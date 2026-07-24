@@ -8,6 +8,11 @@ export const FREE_LIMITS = {
   visibleExamHistory: 3,
 };
 
+/** Misafir (hesapsız) modu — tek global soru hakkı; aşınca giriş istenir. */
+export const GUEST_LIMITS = {
+  totalQuestions: 10,
+};
+
 export const PLUS_LIMITS = {
   dailyQuestions: Infinity,
   dailyTopicTests: Infinity,

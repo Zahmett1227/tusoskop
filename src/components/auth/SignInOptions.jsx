@@ -21,7 +21,7 @@ function AppleMark() {
   );
 }
 
-export default function SignInOptions({ accentTheme, onGoogleLogin }) {
+export default function SignInOptions({ accentTheme, onGoogleLogin, onGuestContinue }) {
   const primary = accentTheme?.primary || "bg-emerald-400";
   const primaryHover = accentTheme?.primaryHover || "hover:bg-emerald-300";
   const glow = accentTheme?.glow || "";
@@ -108,6 +108,27 @@ export default function SignInOptions({ accentTheme, onGoogleLogin }) {
           ) : null}
         </form>
       )}
+
+      {onGuestContinue ? (
+        <>
+          <div className="flex items-center gap-3 pt-1">
+            <span className="h-px flex-1 bg-slate-800" />
+            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-600">veya</span>
+            <span className="h-px flex-1 bg-slate-800" />
+          </div>
+          <button
+            type="button"
+            onClick={onGuestContinue}
+            className="flex min-h-12 w-full items-center justify-center gap-2 rounded-3xl border border-slate-700 bg-slate-900/50 px-6 py-3 text-sm font-black text-slate-200 transition-transform hover:bg-slate-800 active:scale-95"
+          >
+            <span aria-hidden>👤</span>
+            Misafir olarak devam et
+          </button>
+          <p className="px-2 text-center text-[11px] font-medium leading-relaxed text-slate-600">
+            Hesap açmadan 10 soru dene. Verilerin bu cihazda kalır, saklanmaz.
+          </p>
+        </>
+      ) : null}
 
       <p className="px-2 text-center text-xs font-medium leading-relaxed text-slate-500">
         Giriş yaparak çalışma verilerinin hesabına bağlı saklanmasını kabul edersin.

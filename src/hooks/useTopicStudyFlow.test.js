@@ -38,8 +38,9 @@ describe("useTopicStudyFlow kaynak sözleşmesi", () => {
     expect(block).toContain("if (openLimitFromUsageError(err)) return");
   });
 
-  it("premium olmayan openTopicSetup gate", () => {
-    expect(hookSource).toContain("if (!isUserPremium(userData, user))");
+  it("premium olmayan (ve misafir olmayan) openTopicSetup gate", () => {
+    // Misafir "her yeri denesin" için Plus kapısını atlar; free logged-in kapıya takılır.
+    expect(hookSource).toContain("if (!isGuest && !isUserPremium(userData, user))");
     expect(hookSource).toContain("openSubjectTopicPlusGate()");
   });
 

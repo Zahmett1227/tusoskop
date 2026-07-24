@@ -30,6 +30,7 @@ export function useTopicStudyFlow({
   toDisplayQuestions,
   setLimitModal,
   openLimitFromUsageError,
+  isGuest = false,
 }) {
   const { showToast } = useToast();
   const [selectedLesson, setSelectedLesson] = useState("");
@@ -87,25 +88,26 @@ export function useTopicStudyFlow({
       questionSetupNonPremiumHandledRef.current = false;
       return;
     }
-    if (isUserPremium(userData, user)) return;
+    // Misafir "her yeri denesin" — Plus kapısı uygulanmaz.
+    if (isGuest || isUserPremium(userData, user)) return;
     if (questionSetupNonPremiumHandledRef.current) return;
     questionSetupNonPremiumHandledRef.current = true;
     openSubjectTopicPlusGate();
     setView("dashboard");
-  }, [view, user, userData, setView, openSubjectTopicPlusGate]);
+  }, [view, user, userData, setView, openSubjectTopicPlusGate, isGuest]);
 
   const openTopicSetup = useCallback(() => {
-    if (!isUserPremium(userData, user)) {
+    if (!isGuest && !isUserPremium(userData, user)) {
       openSubjectTopicPlusGate();
       return;
     }
     trackClarityEvent("subject_topic_started");
     setView("questionSetup");
-  }, [user, userData, openSubjectTopicPlusGate, setView]);
+  }, [user, userData, openSubjectTopicPlusGate, setView, isGuest]);
 
   const startTopicTest = useCallback(
     async (questionLimit = "all", topicOverride) => {
-      if (!isUserPremium(userData, user)) {
+      if (!isGuest && !isUserPremium(userData, user)) {
         openSubjectTopicPlusGate();
         return;
       }
@@ -124,24 +126,28 @@ export function useTopicStudyFlow({
       }
       const take = resolveTopicStudyCount(limit, filtered.length);
       const subset = filtered.slice(0, take);
-      const gate = await canStartTopicTest(user, userData);
-      if (!gate.allowed) {
-        setLimitModal({
-          open: true,
-          title: "Günlük konu testi limitine ulaştın",
-          description:
-            "Free planda günde en fazla 2 konu testi başlatabilirsin. Plus ile sınırsız konu testi açılır.",
-          remainingInfo: "",
-          limitReason: "daily_topic_test_limit",
-        });
-        return;
-      }
-      try {
-        await incrementTopicTestUsage(user, userData);
-        await refreshRemainingUsage();
-      } catch (err) {
-        if (openLimitFromUsageError(err)) return;
-        throw err;
+      // Misafirde günlük konu-testi limiti (Cloud Function) uygulanmaz;
+      // global 10-soru sınırı cevaplama anında devreye girer.
+      if (!isGuest) {
+        const gate = await canStartTopicTest(user, userData);
+        if (!gate.allowed) {
+          setLimitModal({
+            open: true,
+            title: "Günlük konu testi limitine ulaştın",
+            description:
+              "Free planda günde en fazla 2 konu testi başlatabilirsin. Plus ile sınırsız konu testi açılır.",
+            remainingInfo: "",
+            limitReason: "daily_topic_test_limit",
+          });
+          return;
+        }
+        try {
+          await incrementTopicTestUsage(user, userData);
+          await refreshRemainingUsage();
+        } catch (err) {
+          if (openLimitFromUsageError(err)) return;
+          throw err;
+        }
       }
       saveRecentTopicStudy({
         ders: lesson,
@@ -182,6 +188,7 @@ export function useTopicStudyFlow({
       setLimitModal,
       openSubjectTopicPlusGate,
       showToast,
+      isGuest,
     ]
   );
 
