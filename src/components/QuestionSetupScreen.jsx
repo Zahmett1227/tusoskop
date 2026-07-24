@@ -13,6 +13,12 @@ import {
   getRecentTopicStudies,
   recentStudyKey,
 } from "../utils/topicStudyMemory";
+import {
+  clearTopicTestInProgress,
+  formatTopicResumeProgress,
+  hasMeaningfulTopicProgress,
+  loadValidatedTopicTestInProgress,
+} from "../utils/topicTestInProgressUtils";
 import { getWrongReviewCardCopy } from "../utils/questionSetupWrongCard";
 import { useToast } from "../context/ToastContext";
 
@@ -25,6 +31,7 @@ export default function QuestionSetupScreen({
   setSelectedTopic,
   ensureSubjectQuestions,
   startTopicTest,
+  resumeTopicTest,
   goDashboard,
   wrongCount = 0,
   onStartWrongReview,
@@ -37,6 +44,12 @@ export default function QuestionSetupScreen({
   const [loadError, setLoadError] = useState("");
   const [recentPlans, setRecentPlans] = useState([]);
   const [recentLoading, setRecentLoading] = useState(true);
+  const [resumeData, setResumeData] = useState(null);
+
+  useEffect(() => {
+    const data = loadValidatedTopicTestInProgress();
+    setResumeData(data && hasMeaningfulTopicProgress(data) ? data : null);
+  }, []);
 
   const knownSubjectNames = useMemo(
     () => new Set((subjectCatalog || []).map((s) => s.name)),
@@ -256,6 +269,43 @@ export default function QuestionSetupScreen({
             Konu seç, kısa bir çalışma oturumu başlat.
           </p>
         </header>
+
+        {resumeData ? (
+          <section className="rounded-[1.75rem] border border-emerald-500/40 bg-emerald-500/10 p-4 md:p-5">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="min-w-0">
+                <p className="text-[10px] font-black uppercase tracking-widest text-emerald-300/90">
+                  Yarım kalan test
+                </p>
+                <p className="mt-1 font-bold text-white break-words">
+                  {resumeData.ders} · {resumeData.konu}
+                </p>
+                <p className="mt-0.5 text-xs text-slate-300">
+                  {formatTopicResumeProgress(resumeData)} — kaldığın yerden devam et
+                </p>
+              </div>
+              <div className="flex shrink-0 gap-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    clearTopicTestInProgress();
+                    setResumeData(null);
+                  }}
+                  className="min-h-11 rounded-xl border border-white/10 bg-white/[0.05] px-4 py-2 text-xs font-bold text-slate-300 hover:bg-white/[0.1]"
+                >
+                  Sil
+                </button>
+                <button
+                  type="button"
+                  onClick={() => resumeTopicTest?.(resumeData)}
+                  className="min-h-11 rounded-xl bg-emerald-500 px-5 py-2 text-sm font-black text-slate-950 hover:opacity-90"
+                >
+                  Devam et
+                </button>
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <section className="bg-rose-500/10 border border-rose-500/30 rounded-[1.75rem] p-4 md:p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="min-w-0">

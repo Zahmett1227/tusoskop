@@ -44,6 +44,22 @@ import { getCurrentWeekId } from "./utils/weekIdUtils";
 import MobileBottomNav from "./components/MobileBottomNav";
 import IOSInstallBanner from "./components/IOSInstallBanner";
 import SignInOptions from "./components/auth/SignInOptions";
+import GuestLoginPromptModal from "./components/auth/GuestLoginPromptModal";
+import {
+  getGuestRemaining,
+  isGuestSession,
+  resetGuestUsage,
+  setGuestSession,
+} from "./services/guestModeService";
+import AppReviewPromptModal from "./components/AppReviewPromptModal";
+import {
+  markDismissedForever,
+  markPrompted,
+  markRated,
+  openAppStoreReview,
+  shouldPromptForTrigger,
+} from "./services/appReviewService";
+import { getMailtoFeedback } from "./config/support";
 import NativeSplash from "./components/NativeSplash";
 import { LEGAL_PAGES } from "./content/legalPages";
 import { FREE_LIMITS } from "./config/limits";
@@ -151,6 +167,13 @@ export default function App() {
   }, []);
 
   const [view, setView] = useState("dashboard");
+  // Misafir (hesapsız) mod — oturum bayrağıyla yenilemede korunur.
+  const [guestMode, setGuestMode] = useState(() => isGuestSession());
+  const [guestRemaining, setGuestRemaining] = useState(() => getGuestRemaining());
+  const [guestLoginPrompt, setGuestLoginPrompt] = useState(false);
+  // Nazik değerlendirme istemi — oturum başına en fazla bir kez.
+  const [reviewPrompt, setReviewPrompt] = useState(false);
+  const reviewPromptShownRef = useRef(false);
   const legalReturnViewRef = useRef("dashboard");
   const [legalPageId, setLegalPageId] = useState(LEGAL_PAGES[0].id);
   const { accentThemeKey, accentTheme, handleAccentThemeChange } = useAppAccentTheme();
@@ -166,6 +189,58 @@ export default function App() {
     isAuthReady,
     autoLoginState,
   } = useAppAuthBootstrap(setView);
+
+  const isGuest = !user && guestMode;
+
+  const refreshGuestRemaining = useCallback(() => {
+    setGuestRemaining(getGuestRemaining());
+  }, []);
+
+  const openGuestLoginPrompt = useCallback(() => {
+    setGuestLoginPrompt(true);
+  }, []);
+
+  const startGuestMode = useCallback(() => {
+    setGuestSession(true);
+    setGuestMode(true);
+    setGuestRemaining(getGuestRemaining());
+    trackClarityEvent("guest_mode_started");
+  }, []);
+
+  const exitGuestToLogin = useCallback(() => {
+    setGuestLoginPrompt(false);
+    setGuestSession(false);
+    setGuestMode(false);
+  }, []);
+
+  // Değerlendirme istemi: yalnızca giriş yapmış kullanıcı, oturum başına bir kez,
+  // uygunluk/sıklık kurallarına takılmazsa.
+  const maybePromptReview = useCallback(
+    (trigger) => {
+      if (reviewPromptShownRef.current) return;
+      if (!user?.uid) return;
+      if (!shouldPromptForTrigger(trigger)) return;
+      reviewPromptShownRef.current = true;
+      markPrompted();
+      setReviewPrompt(true);
+    },
+    [user]
+  );
+
+  // Giriş yapılınca misafir modunu temizle (yerel misafir verisi taşınmaz).
+  useEffect(() => {
+    if (user) {
+      setGuestMode(false);
+      setGuestSession(false);
+      setGuestLoginPrompt(false);
+      resetGuestUsage();
+    }
+  }, [user]);
+
+  // Görünüm değişiminde misafir kalan hakkını tazele.
+  useEffect(() => {
+    if (isGuest) setGuestRemaining(getGuestRemaining());
+  }, [isGuest, view]);
 
   // Kullanıcı çıkış yaptığında leaderboard profile cache'ini temizle
   useEffect(() => {
@@ -260,11 +335,17 @@ export default function App() {
     setLimitModal,
     favoriteQuestionIds,
     setFavoriteQuestionIds,
+    isGuest,
+    openGuestLoginPrompt,
+    onGuestAnswered: refreshGuestRemaining,
+    onMaybePromptReview: maybePromptReview,
   });
 
   const goDashboard = () => {
     studyState.resetStudyState();
     setView("dashboard");
+    // Panele dönüş — 20+ soru çözmüş uygun kullanıcıya nazik değerlendirme istemi.
+    maybePromptReview("answered_threshold");
   };
 
   const handleExamCompleted = () => {
@@ -315,6 +396,9 @@ export default function App() {
     toDisplayQuestions,
     onExamFinish: () => setView("examAnalysis"),
     recordHistoryForQuestion: studyState.recordHistoryForQuestion,
+    isGuest,
+    openGuestLoginPrompt,
+    onGuestAnswered: refreshGuestRemaining,
   });
   const examQ = examState.examQuestions[examState.examIndex];
 
@@ -334,6 +418,13 @@ export default function App() {
     toDisplayQuestions,
     setLimitModal,
     openLimitFromUsageError,
+    isGuest,
+    setStudyAnswers: studyState.setStudyAnswers,
+    setCurrentIndex: studyState.setCurrentIndex,
+    setScore: studyState.setScore,
+    setStreak: studyState.setStreak,
+    setSelected: studyState.setSelected,
+    setShowResult: studyState.setShowResult,
   });
 
   const { openTopicSetup, questionSetupScreenProps } = topicStudy;
@@ -429,16 +520,20 @@ export default function App() {
 
   const startFullExam = async (setId) => {
     const allQuestions = await ensureAllQuestionsLoaded("Tam deneme hazırlanıyor…");
-    const gate = await canStartFullExam(user, userData);
-    if (!gate.allowed) {
-      setLimitModal({
-        open: true,
-        title: "Bu ayki ücretsiz deneme hakkını kullandın",
-        description: "Free planda ayda 1 tam deneme çözebilirsin. Plus ile sınırsız deneme ve gelişmiş analiz açılır.",
-        remainingInfo: "",
-        limitReason: "monthly_exam_limit",
-      });
-      return;
+    // Misafirde aylık deneme limiti (Cloud Function) uygulanmaz; global 10-soru
+    // sınırı cevaplama anında devreye girer.
+    if (!isGuest) {
+      const gate = await canStartFullExam(user, userData);
+      if (!gate.allowed) {
+        setLimitModal({
+          open: true,
+          title: "Bu ayki ücretsiz deneme hakkını kullandın",
+          description: "Free planda ayda 1 tam deneme çözebilirsin. Plus ile sınırsız deneme ve gelişmiş analiz açılır.",
+          remainingInfo: "",
+          limitReason: "monthly_exam_limit",
+        });
+        return;
+      }
     }
     const fallbackSet = EXAM_SETS[0] || null;
     const activeSet =
@@ -500,12 +595,14 @@ export default function App() {
       }
     }
 
-    try {
-      await incrementFullExamUsage(user, userData);
-      await refreshRemainingUsage();
-    } catch (err) {
-      if (openLimitFromUsageError(err)) return;
-      throw err;
+    if (!isGuest) {
+      try {
+        await incrementFullExamUsage(user, userData);
+        await refreshRemainingUsage();
+      } catch (err) {
+        if (openLimitFromUsageError(err)) return;
+        throw err;
+      }
     }
     trackClarityEvent("deneme_baslatildi");
     setClarityTag("son_mod", "deneme");
@@ -537,7 +634,7 @@ export default function App() {
     return <NativeSplash accentTheme={accentTheme} />;
   }
 
-  if (!user) {
+  if (!user && !guestMode) {
     return (
       <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
         <div
@@ -565,6 +662,7 @@ export default function App() {
           <SignInOptions
             accentTheme={accentTheme}
             onGoogleLogin={handleLoginWithGoogle}
+            onGuestContinue={startGuestMode}
           />
         </div>
       </div>
@@ -593,12 +691,15 @@ export default function App() {
           onOpenAccountSettings={() => setView("accountSettings")}
           smartReviewSummary={smartReviewSummary}
           onStartSmartReview={startSmartReview}
+          isGuest={isGuest}
+          guestRemaining={guestRemaining}
+          onGuestLogin={exitGuestToLogin}
         />
       );
       break;
 
     case "questionSetup":
-      if (!isUserPremium(userData, user)) {
+      if (!isGuest && !isUserPremium(userData, user)) {
         screenContent = (
           <Dashboard
             setView={guardedSetView}
@@ -641,7 +742,19 @@ export default function App() {
         <Summary
           currentSubject={studyState.currentSubject} score={studyState.score} total={studyState.activeQuestions.length}
           questionTimes={studyState.questionTimes}
-          onRetry={() => { studyState.setCurrentIndex(0); setView("study"); }}
+          studyMode={studyState.studyMode}
+          result={studyState.getStudyResult()}
+          ders={studyState.activeTopicSubject}
+          konu={studyState.activeTopicName}
+          onRetry={() => {
+            studyState.setStudyAnswers({});
+            studyState.setScore(0);
+            studyState.setSelected(null);
+            studyState.setShowResult(false);
+            studyState.setCurrentIndex(0);
+            setView("study");
+          }}
+          onNewTopic={openTopicSetup}
           goDashboard={goDashboard}
         />
       );
@@ -723,6 +836,9 @@ export default function App() {
           socialProof={studyState.getSocialProof(studyState.q)}
           mastery={studyState.getMasteryLevel(studyState.q?.konu)}
           topicProgress={studyState.topicProgress}
+          studyMode={studyState.studyMode}
+          studyAnswers={studyState.studyAnswers}
+          goToIndex={studyState.goToIndex}
           accentTheme={accentTheme}
           isFavorite={favoriteQuestionIds.has(Number(studyState.q?.id))}
           onToggleFavorite={studyState.handleToggleFavorite}
@@ -846,6 +962,9 @@ export default function App() {
           onOpenAccountSettings={() => setView("accountSettings")}
           smartReviewSummary={smartReviewSummary}
           onStartSmartReview={startSmartReview}
+          isGuest={isGuest}
+          guestRemaining={guestRemaining}
+          onGuestLogin={exitGuestToLogin}
         />
       );
   }
@@ -891,6 +1010,27 @@ export default function App() {
           />
         </Suspense>
       )}
+      <GuestLoginPromptModal
+        open={guestLoginPrompt}
+        remaining={guestRemaining}
+        onLogin={exitGuestToLogin}
+        onClose={() => setGuestLoginPrompt(false)}
+      />
+      <AppReviewPromptModal
+        open={reviewPrompt}
+        mailtoFeedback={getMailtoFeedback(user)}
+        onLike={() => {
+          markRated();
+          const opened = openAppStoreReview();
+          setReviewPrompt(false);
+          if (!opened) showToast("Teşekkürler! Desteğin bizim için çok değerli. 💚", { type: "success" });
+        }}
+        onDislike={() => {
+          markDismissedForever();
+          setReviewPrompt(false);
+        }}
+        onClose={() => setReviewPrompt(false)}
+      />
       {showBottomNav && (
         <MobileBottomNav
           currentView={view}

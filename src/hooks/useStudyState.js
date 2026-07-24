@@ -21,6 +21,16 @@ import {
   upsertSmartReview,
   updateSmartReviewFromAnswer,
 } from "../services/smartReviewService";
+import {
+  isGuestLimitReached,
+  recordGuestAnswer,
+} from "../services/guestModeService";
+import {
+  buildTopicTestPayload,
+  clearTopicTestInProgress,
+  saveTopicTestInProgress,
+} from "../utils/topicTestInProgressUtils";
+import { recordAnsweredForReview } from "../services/appReviewService";
 import { isReactEventOrDomNode, normalizeAnswerValue } from "../utils/examUtils";
 import { recordQuestionHistory } from "../services/questionHistoryService";
 import { submitQuestionScoreEvent, submitDailyBonusEvent } from "../services/leaderboardService";
@@ -42,6 +52,10 @@ export function useStudyState({
   setLimitModal,
   favoriteQuestionIds,
   setFavoriteQuestionIds,
+  isGuest = false,
+  openGuestLoginPrompt,
+  onGuestAnswered,
+  onMaybePromptReview,
 }) {
   const [currentSubject, setCurrentSubject] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -49,6 +63,9 @@ export function useStudyState({
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const [activeQuestions, setActiveQuestions] = useState([]);
+  // Soru bazlı cevap haritası (index → {selected, revealed, correct}).
+  // Navigatör + "önceki cevap" geri yükleme + konu testi devam için.
+  const [studyAnswers, setStudyAnswers] = useState({});
   const [studyMode, setStudyMode] = useState("study");
   const [activeTopicSubject, setActiveTopicSubject] = useState("");
   const [activeTopicName, setActiveTopicName] = useState("");
@@ -98,6 +115,33 @@ export function useStudyState({
 
   useEffect(() => {}, [QUESTIONS]);
 
+  // Konu testi ilerlemesini yerelde sakla — kaldığı yerden devam için.
+  useEffect(() => {
+    if (studyMode !== "topic" || view !== "study") return;
+    if (!activeQuestions.length) return;
+    saveTopicTestInProgress(
+      buildTopicTestPayload({
+        ders: activeTopicSubject,
+        konu: activeTopicName,
+        questions: activeQuestions,
+        currentIndex,
+        answers: studyAnswers,
+        score,
+        streak,
+      })
+    );
+  }, [
+    studyMode,
+    view,
+    activeQuestions,
+    currentIndex,
+    studyAnswers,
+    score,
+    streak,
+    activeTopicSubject,
+    activeTopicName,
+  ]);
+
   const resetStudyState = useCallback(() => {
     setCurrentSubject(null);
     setCurrentIndex(0);
@@ -105,6 +149,7 @@ export function useStudyState({
     setShowResult(false);
     setScore(0);
     setActiveQuestions([]);
+    setStudyAnswers({});
     setStudyMode("study");
     setActiveTopicSubject("");
     setActiveTopicName("");
@@ -300,6 +345,8 @@ export function useStudyState({
   const recordHistoryForQuestion = useCallback(
     ({ question, selectedOption, mode }) => {
       if (!question?.id) return;
+      // Misafir hiçbir şey saklamaz — yerel geçmiş de yazılmaz (giriş sonrası sızmasın).
+      if (isGuest) return;
       if (isReactEventOrDomNode(selectedOption)) {
         console.error("Invalid selected answer: React event/DOM node received");
         return;
@@ -315,14 +362,25 @@ export function useStudyState({
         console.error("recordQuestionHistory error:", error);
       });
     },
-    [user]
+    [user, isGuest]
   );
 
   const revealCurrentAnswer = useCallback(
     async (answerOverride = selected) => {
       const isReview = studyMode === "review";
       const questionId = q?.id ? Number(q.id) : null;
-      if (questionId) {
+      if (isGuest) {
+        // Misafir: tek global soru sayacı; Cloud Function çağrılmaz. Aşınca giriş iste.
+        if (questionId && !answeredQuestionIdsRef.current.has(questionId)) {
+          if (isGuestLimitReached()) {
+            openGuestLoginPrompt?.();
+            return;
+          }
+          recordGuestAnswer();
+          answeredQuestionIdsRef.current.add(questionId);
+          onGuestAnswered?.();
+        }
+      } else if (questionId) {
         if (!isReview && !answeredQuestionIdsRef.current.has(questionId)) {
           const gate = await canAnswerQuestion(user, userData);
           if (!gate.allowed) {
@@ -378,6 +436,19 @@ export function useStudyState({
       const isWrong =
         answer !== null && answer !== undefined && Number(answer) !== Number(q?.correct);
       if (isCorrect) setScore((prev) => prev + 1);
+      setStudyAnswers((prev) => ({
+        ...prev,
+        [currentIndex]: {
+          selected: answer === null || answer === undefined ? null : Number(answer),
+          revealed: true,
+          correct: isCorrect,
+        },
+      }));
+      // Değerlendirme istemi: giriş yapmış (misafir olmayan) kullanıcı için soru sayacı.
+      // İstem ekran ortasında değil, panele/özete dönüşte gösterilir (App tetikler).
+      if (user?.uid && !isGuest) {
+        recordAnsweredForReview();
+      }
       updateStreakForQuestion(isCorrect, q?.id);
       recordQuestionTime(q?.id);
       const feedback = getFeedbackMessage(q, answer);
@@ -425,6 +496,12 @@ export function useStudyState({
         }).catch(() => {});
       }
 
+      // Misafir hiçbir şey saklamaz: yanlış/tekrar kayıtları yerele yazılmaz.
+      // Aksi halde giriş sonrası getSmartReviews yerel kayıtları hesaba sızdırır.
+      if (isGuest) {
+        return;
+      }
+
       if (studyMode === "review") {
         if (answer !== null && answer !== undefined && q?.id) {
           await updateWrongQuestionAfterReview(user, q, isCorrect, answer, userData);
@@ -451,6 +528,10 @@ export function useStudyState({
       recordHistoryForQuestion,
       refreshSmartReviewSummary,
       activeTopicName,
+      currentIndex,
+      isGuest,
+      openGuestLoginPrompt,
+      onGuestAnswered,
     ]
   );
 
@@ -520,13 +601,32 @@ export function useStudyState({
     [favoriteQuestionIds, user, userData, setLimitModal, setFavoriteQuestionIds, showFavoriteToast]
   );
 
+  /** Navigatör / geri-ileri — hedef sorunun kaydedilmiş cevabını geri yükler. */
+  const goToIndex = useCallback(
+    (idx) => {
+      if (!Number.isInteger(idx) || idx < 0 || idx >= activeQuestions.length) return;
+      const rec = studyAnswers[idx];
+      setCurrentIndex(idx);
+      setSelected(rec?.selected ?? null);
+      setShowResult(Boolean(rec?.revealed));
+      setStudyFeedback(null);
+      setIsAutoAdvancing(false);
+    },
+    [activeQuestions.length, studyAnswers]
+  );
+
   const handleNext = useCallback(async () => {
     if (currentIndex < activeQuestions.length - 1) {
-      setCurrentIndex((prev) => prev + 1);
-      setSelected(null);
-      setShowResult(false);
+      const nextIdx = currentIndex + 1;
+      const rec = studyAnswers[nextIdx];
+      setCurrentIndex(nextIdx);
+      setSelected(rec?.selected ?? null);
+      setShowResult(Boolean(rec?.revealed));
       setStudyFeedback(null);
     } else {
+      if (studyMode === "topic") {
+        clearTopicTestInProgress();
+      }
       if (studyMode === "review") {
         const wrongRecords = await getWrongQuestions(user, userData);
         const activeIds = new Set(activeQuestions.map((item) => Number(item.id)));
@@ -547,12 +647,16 @@ export function useStudyState({
             eventType: EVENT_TYPES.FSRS_DAILY_COMPLETED,
             weekId: getCurrentWeekId(),
           }).catch(() => {});
+          onMaybePromptReview?.("fsrs_daily");
         }
 
         await refreshSmartReviewSummary();
         resetStudyState();
         setView("reviewSummary");
         return;
+      }
+      if (studyMode === "topic") {
+        onMaybePromptReview?.("topic_test_done");
       }
       persistStudySessionMetrics();
       setView("summary");
@@ -561,6 +665,7 @@ export function useStudyState({
     activeQuestions,
     activeReviewContext,
     currentIndex,
+    studyAnswers,
     persistStudySessionMetrics,
     refreshSmartReviewSummary,
     resetStudyState,
@@ -569,6 +674,7 @@ export function useStudyState({
     studyMode,
     user,
     userData,
+    onMaybePromptReview,
   ]);
 
   const handleStudySelect = useCallback(
@@ -595,12 +701,8 @@ export function useStudyState({
   );
 
   const handleStudyPrev = useCallback(() => {
-    if (currentIndex > 0) {
-      setCurrentIndex((prev) => prev - 1);
-      setSelected(null);
-      setShowResult(false);
-    }
-  }, [currentIndex]);
+    if (currentIndex > 0) goToIndex(currentIndex - 1);
+  }, [currentIndex, goToIndex]);
 
   const topicProgress = useMemo(() => {
     if (studyMode !== "topic" || !activeTopicSubject || !activeTopicName || !q) return null;
@@ -613,6 +715,25 @@ export function useStudyState({
       total: totalQuestions,
     };
   }, [studyMode, activeTopicSubject, activeTopicName, q, activeQuestions.length, currentIndex]);
+
+  /** Konu testi/oturum sonucu — doğru/yanlış/boş/net özeti. */
+  const getStudyResult = useCallback(() => {
+    const total = activeQuestions.length;
+    let correct = 0;
+    let wrong = 0;
+    let blank = 0;
+    for (let i = 0; i < total; i += 1) {
+      const rec = studyAnswers[i];
+      if (!rec || !rec.revealed || rec.selected == null) {
+        blank += 1;
+        continue;
+      }
+      if (rec.correct) correct += 1;
+      else wrong += 1;
+    }
+    const net = Math.max(0, correct - wrong / 4);
+    return { total, correct, wrong, blank, net: Math.round(net * 100) / 100 };
+  }, [activeQuestions.length, studyAnswers]);
 
   return {
     q,
@@ -682,5 +803,9 @@ export function useStudyState({
     showFavoriteToast,
     handleToggleFavorite,
     topicProgress,
+    studyAnswers,
+    setStudyAnswers,
+    goToIndex,
+    getStudyResult,
   };
 }

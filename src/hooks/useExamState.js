@@ -16,6 +16,10 @@ import {
   shouldNotifyInProgressReset,
   validateInProgressExam,
 } from "../utils/examInProgressUtils";
+import {
+  isGuestLimitReached,
+  recordGuestAnswer,
+} from "../services/guestModeService";
 
 /**
  * Tam deneme (exam) ekranı state ve handler'ları.
@@ -28,8 +32,33 @@ export function useExamState({
   toDisplayQuestions,
   onExamFinish,
   recordHistoryForQuestion = () => {},
+  isGuest = false,
+  openGuestLoginPrompt,
+  onGuestAnswered,
 }) {
   const { showToast } = useToast();
+  // Misafirde deneme içinde cevaplanan (sayılmış) soru index'leri.
+  const guestCountedRef = useRef(new Set());
+
+  /**
+   * Misafir global 10-soru sınırını uygular. Yeni bir soru cevaplanacaksa:
+   * sınır dolmuşsa giriş iste + engelle; değilse say ve izin ver.
+   */
+  const guestGateAllows = useCallback(
+    (questionIndex) => {
+      if (!isGuest) return true;
+      if (guestCountedRef.current.has(questionIndex)) return true;
+      if (isGuestLimitReached()) {
+        openGuestLoginPrompt?.();
+        return false;
+      }
+      recordGuestAnswer();
+      guestCountedRef.current.add(questionIndex);
+      onGuestAnswered?.();
+      return true;
+    },
+    [isGuest, openGuestLoginPrompt, onGuestAnswered]
+  );
   // API parity with App.jsx; reserved for upcoming exam-side effects
   useEffect(() => {}, [user, userData, QUESTIONS, toDisplayQuestions]);
   const [examQuestions, setExamQuestions] = useState([]);
@@ -172,20 +201,22 @@ export function useExamState({
   const handleExamSelect = useCallback(
     (optionIndex) => {
       if (!examQuestions[examIndex]) return;
+      if (!guestGateAllows(examIndex)) return;
       saveExamAnswer(examIndex, optionIndex);
       setExamSelected(optionIndex);
     },
-    [examQuestions, examIndex, saveExamAnswer]
+    [examQuestions, examIndex, saveExamAnswer, guestGateAllows]
   );
 
   const handleExamSelectForQuestion = useCallback(
     (questionIdx, letterIdx) => {
       if (!examQuestions[questionIdx]) return;
+      if (!guestGateAllows(questionIdx)) return;
       saveExamAnswer(questionIdx, letterIdx);
       setExamIndex(questionIdx);
       setExamSelected(letterIdx);
     },
-    [examQuestions, saveExamAnswer]
+    [examQuestions, saveExamAnswer, guestGateAllows]
   );
 
   return {
