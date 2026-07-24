@@ -10,6 +10,7 @@ import {
 } from "firebase/firestore";
 import { auth, db } from "../firebase";
 import { isDueForReview } from "../utils/smartReviewScheduler";
+import { getLocalDateKey } from "../utils/localDate";
 
 const ZERO_STATS = {
   addedCount: 0,
@@ -35,12 +36,9 @@ const SOURCE_ALIASES = {
   manualAdded: "manualAdded",
 };
 
-function pad2(value) {
-  return String(value).padStart(2, "0");
-}
-
+// Streak / leaderboard / FSRS istatistikleri tek gün eksenini paylaşır.
 export function getFsrsStatsDateKey(date = new Date()) {
-  return `${date.getFullYear()}-${pad2(date.getMonth() + 1)}-${pad2(date.getDate())}`;
+  return getLocalDateKey(date);
 }
 
 function addDays(date, amount) {

@@ -1,13 +1,6 @@
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
-
-const todayStr = () => new Date().toISOString().split("T")[0];
-
-const yesterdayStr = () => {
-  const d = new Date();
-  d.setDate(d.getDate() - 1);
-  return d.toISOString().split("T")[0];
-};
+import { classifyDateKey, getLocalDateKey } from "../utils/localDate";
 
 export const updateStreak = async (userId) => {
   if (!userId) return;
@@ -16,7 +9,7 @@ export const updateStreak = async (userId) => {
   const snap = await getDoc(ref);
   const data = snap.exists() ? snap.data() : {};
 
-  const today = todayStr();
+  const today = getLocalDateKey();
   const lastActive = data.lastActiveDate || null;
 
   if (lastActive === today) return; // Bugün zaten sayıldı
@@ -24,7 +17,8 @@ export const updateStreak = async (userId) => {
   let currentStreak = data.currentStreak || 0;
   let longestStreak = data.longestStreak || 0;
 
-  if (lastActive === yesterdayStr()) {
+  // Yerel gün ekseninde: dün aktifse zincir sürer, aksi halde kopar.
+  if (classifyDateKey(lastActive) === "yesterday") {
     currentStreak += 1;
   } else {
     currentStreak = 1; // Zincir koptu, sıfırla
@@ -47,9 +41,14 @@ export const getStreak = async (userId) => {
   if (!snap.exists()) return { currentStreak: 0, longestStreak: 0, lastActiveDate: null };
 
   const data = snap.data();
-  return {
-    currentStreak: data.currentStreak || 0,
-    longestStreak: data.longestStreak || 0,
-    lastActiveDate: data.lastActiveDate || null,
-  };
+  const lastActiveDate = data.lastActiveDate || null;
+  const longestStreak = data.longestStreak || 0;
+
+  // Tazelik: son aktiflik bugün veya dün değilse zincir fiilen kopmuştur.
+  // Kopmuş seriyi "canlı" gösterip sonra aniden 1'e düşürmek yerine 0 döndür.
+  const freshness = classifyDateKey(lastActiveDate);
+  const currentStreak =
+    freshness === "today" || freshness === "yesterday" ? data.currentStreak || 0 : 0;
+
+  return { currentStreak, longestStreak, lastActiveDate };
 };

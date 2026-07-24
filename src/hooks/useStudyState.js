@@ -35,6 +35,10 @@ import { recordAnsweredForReview } from "../services/appReviewService";
 import { isReactEventOrDomNode, normalizeAnswerValue } from "../utils/examUtils";
 import { recordQuestionHistory } from "../services/questionHistoryService";
 import { submitQuestionScoreEvent, submitDailyBonusEvent } from "../services/leaderboardService";
+import {
+  trackFsrsAddedQuestion,
+  trackFsrsReviewedQuestion,
+} from "../services/fsrsStatsService";
 import { getCurrentWeekId } from "../utils/weekIdUtils";
 import { EVENT_TYPES } from "../utils/leaderboardScoreUtils";
 
@@ -476,7 +480,7 @@ export function useStudyState({
         selectedOption: answer,
         mode: studyMode === "topic" ? "topic" : studyMode === "review" ? "review" : "study",
       });
-      if (user) updateStreak(user.uid);
+      if (user) updateStreak(user.uid).catch(() => {});
 
       // Leaderboard: soru puanı (fire-and-forget — kullanıcı deneyimini yavaşlatmaz)
       if (user?.uid && q?.id) {
@@ -506,10 +510,20 @@ export function useStudyState({
         if (answer !== null && answer !== undefined && q?.id) {
           await updateWrongQuestionAfterReview(user, q, isCorrect, answer, userData);
           await updateSmartReviewFromAnswer(user, q, isCorrect, new Date(), activeTopicName);
+          // FSRS aktivite istatistiği: tekrar çözülen soruyu say (kart dolsun).
+          if (user?.uid) {
+            trackFsrsReviewedQuestion({ uid: user.uid, questionId: q.id }).catch(() => {});
+          }
         }
       } else if (isWrong && q?.id) {
         await addWrongQuestion(user, q, answer, userData);
         await upsertSmartReview(user, q, "wrong");
+        // FSRS aktivite istatistiği: yeni eklenen yanlışı say.
+        if (user?.uid) {
+          trackFsrsAddedQuestion({ uid: user.uid, questionId: q.id, source: "wrong" }).catch(
+            () => {}
+          );
+        }
         await refreshSmartReviewSummary?.();
       }
     },

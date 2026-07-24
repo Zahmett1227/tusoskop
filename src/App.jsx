@@ -53,7 +53,6 @@ import {
 } from "./services/guestModeService";
 import AppReviewPromptModal from "./components/AppReviewPromptModal";
 import {
-  markDismissedForever,
   markPrompted,
   markRated,
   openAppStoreReview,
@@ -1019,13 +1018,17 @@ export default function App() {
         open={reviewPrompt}
         mailtoFeedback={getMailtoFeedback(user)}
         onLike={() => {
-          markRated();
           const opened = openAppStoreReview();
+          // markRated yalnızca App Store gerçekten açıldıysa — aksi halde
+          // (APP_STORE_ID boşken) kullanıcının tek değerlendirme şansı yanmaz;
+          // markPrompted zaten 30 günlük aralığı uyguladı.
+          if (opened) markRated();
           setReviewPrompt(false);
           if (!opened) showToast("Teşekkürler! Desteğin bizim için çok değerli. 💚", { type: "success" });
         }}
         onDislike={() => {
-          markDismissedForever();
+          // Kalıcı kapatma yerine ertelemeye güven: markPrompted zaten 30 günlük
+          // aralık + ömür boyu 3 istem sınırını uyguluyor.
           setReviewPrompt(false);
         }}
         onClose={() => setReviewPrompt(false)}

@@ -11,6 +11,10 @@ export default class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, info) {
+    // Hata ekranı gösterildiğinde native splash asılı kalmasın.
+    import("@capacitor/splash-screen")
+      .then(({ SplashScreen }) => SplashScreen.hide().catch(() => {}))
+      .catch(() => {});
     if (import.meta.env.DEV) {
       console.error("ErrorBoundary:", error, info);
     }

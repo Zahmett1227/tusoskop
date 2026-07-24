@@ -9,6 +9,32 @@ import { initClarity } from './lib/clarity'
 import { captureAcquisitionFromUrl } from './utils/acquisitionAttribution'
 import { registerServiceWorker } from './registerServiceWorker'
 import { initNativeAppShell } from './utils/nativeApp'
+import { isNativePlatform } from './utils/device'
+
+// Failsafe: React hiç mount olmasa bile (ör. Firebase init hatası) native splash
+// süresiz asılı kalmasın. initNativeAppShell zaten ilk boyamada hide() çağırıyor;
+// bu yalnızca o yol hiç çalışmazsa devreye giren güvenlik ağı.
+if (isNativePlatform()) {
+  window.setTimeout(() => {
+    import('@capacitor/splash-screen')
+      .then(({ SplashScreen }) => SplashScreen.hide().catch(() => {}))
+      .catch(() => {})
+  }, 4000)
+}
+
+// Yakalanmayan promise reddi / global hatalar sessizce kaybolmasın.
+if (typeof window !== 'undefined') {
+  window.addEventListener('unhandledrejection', (event) => {
+    if (import.meta.env.DEV) {
+      console.error('[unhandledrejection]', event.reason)
+    }
+  })
+  window.addEventListener('error', (event) => {
+    if (import.meta.env.DEV) {
+      console.error('[window.error]', event.error || event.message)
+    }
+  })
+}
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
