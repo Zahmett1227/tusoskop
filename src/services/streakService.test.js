@@ -43,9 +43,39 @@ describe("streakService", () => {
     );
   });
 
-  it("iki gün önce aktif olan kullanıcının serisini 1'e sıfırlar", async () => {
+  it("migrate olmuş kullanıcıda iki gün önce aktifse seriyi 1'e sıfırlar", async () => {
+    firestoreMocks.getDoc.mockResolvedValue(
+      snap({
+        currentStreak: 5,
+        longestStreak: 8,
+        lastActiveDate: getLocalDateKeyOffset(-2),
+        streakDateScheme: "local",
+      })
+    );
+    await updateStreak("u1");
+    expect(firestoreMocks.setDoc).toHaveBeenCalledWith(
+      expect.anything(),
+      expect.objectContaining({ currentStreak: 1, streakDateScheme: "local" }),
+      { merge: true }
+    );
+  });
+
+  it("UTC→yerel geçişinde (migrate olmamış, 2 gün geride) seriyi tek seferlik korur", async () => {
+    // Eski UTC anahtarı yüzünden 'dün' çözümü -2 görünen kullanıcı: grace ile devam.
     firestoreMocks.getDoc.mockResolvedValue(
       snap({ currentStreak: 5, longestStreak: 8, lastActiveDate: getLocalDateKeyOffset(-2) })
+    );
+    await updateStreak("u1");
+    expect(firestoreMocks.setDoc).toHaveBeenCalledWith(
+      expect.anything(),
+      expect.objectContaining({ currentStreak: 6, streakDateScheme: "local" }),
+      { merge: true }
+    );
+  });
+
+  it("migrate olmamış ama 3 gün geride ise seriyi sıfırlar (grace yalnız -2 için)", async () => {
+    firestoreMocks.getDoc.mockResolvedValue(
+      snap({ currentStreak: 5, longestStreak: 8, lastActiveDate: getLocalDateKeyOffset(-3) })
     );
     await updateStreak("u1");
     expect(firestoreMocks.setDoc).toHaveBeenCalledWith(

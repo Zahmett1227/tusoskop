@@ -60,7 +60,12 @@ export default function PerformanceChartCard({
   const premium = isUserPremium(userData, user);
 
   useEffect(() => {
-    if (!user?.uid) return;
+    if (!user?.uid) {
+      // Misafir/oturumsuz: yükleme yok — skeleton sonsuz dönmesin, empty-state göster.
+      setLoading(false);
+      return;
+    }
+    setLoading(true);
     let active = true;
 
     async function loadExamHistory() {
