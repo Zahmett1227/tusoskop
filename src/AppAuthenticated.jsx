@@ -319,7 +319,7 @@ export default function AppAuthenticated() {
       title: base.title,
       description: base.description,
       remainingInfo: "",
-      ctaLabel: "Plus'ı İncele",
+      ctaLabel: "Sınırsız aç →",
       secondaryLabel: "Şimdilik Vazgeç",
       premiumMessage: "Aylık bir kahve ücretine Plus üyelik almak ister misiniz?",
       premiumDescription:
