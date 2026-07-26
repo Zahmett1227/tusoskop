@@ -978,7 +978,7 @@ export default function AppAuthenticated() {
             title={limitModal.title}
             description={limitModal.description}
             remainingInfo={limitModal.remainingInfo}
-            ctaLabel={limitModal.ctaLabel || "Plus'ı İncele"}
+            ctaLabel={limitModal.ctaLabel || "Sınırsız aç →"}
             secondaryLabel={limitModal.secondaryLabel || "Şimdilik Vazgeç"}
             premiumMessage={limitModal.premiumMessage || "Aylık bir kahve ücretine Plus üyelik almak ister misiniz?"}
             premiumDescription={limitModal.premiumDescription || "Plus ile soru çözme sınırları kalkar; denemeler, tekrarlar ve gelişmiş analizler tamamen açılır."}
