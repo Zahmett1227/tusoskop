@@ -52,7 +52,7 @@ export function useTopicStudyFlow({
       description:
         "Free planda günlük ücretsiz soru hakkınızla çalışmaya devam edebilirsiniz. Ders ve konu seçerek sınırsız çalışma Plus üyelikte açılır.",
       remainingInfo: "",
-      ctaLabel: "Plus'ı İncele",
+      ctaLabel: "Sınırsız aç →",
       secondaryLabel: "Free ile Devam Et",
       premiumMessage: "Aylık bir kahve ücretine Plus üyelik almak ister misiniz?",
       premiumDescription:
