@@ -56,7 +56,11 @@ export const KONTENJAN_DATA = [
   { dal: "Nöroloji", kontenjan: 298, tabanPuan: 45.47, yerlesen: 258, puanTuru: "K" },
   { dal: "Nükleer Tıp", kontenjan: 47, tabanPuan: 53.86, yerlesen: 44, puanTuru: "K" },
   { dal: "Ortopedi ve Travmatoloji", kontenjan: 287, tabanPuan: 46.57, yerlesen: 274, puanTuru: "K" },
-  { dal: "Plastik, Rekonstrüktif ve Estetik Cerrahi", kontenjan: 209, tabanPuan: 61.78, yerlesen: 210, puanTuru: "K" },
+  // yerlesen 210 → 209 (13 Ağu 2026): kontenjanından fazla yerleşme kaydı
+  // vardı; tek bir yerleştirmede bu mümkün değil. kontenjan ÖSYM'nin önceden
+  // ilan ettiği kadro sayısı olduğu için yerleşen kadroya indirildi — dal artık
+  // tam dolu (209/209).
+  { dal: "Plastik, Rekonstrüktif ve Estetik Cerrahi", kontenjan: 209, tabanPuan: 61.78, yerlesen: 209, puanTuru: "K" },
   { dal: "Radyasyon Onkolojisi", kontenjan: 58, tabanPuan: 64.86, yerlesen: 55, puanTuru: "K" },
   { dal: "Radyoloji", kontenjan: 366, tabanPuan: 45.48, yerlesen: 352, puanTuru: "K" },
   { dal: "Ruh Sağlığı ve Hastalıkları", kontenjan: 229, tabanPuan: 55.95, yerlesen: 226, puanTuru: "K" },
@@ -85,11 +89,14 @@ export const KONTENJAN_TOPLAM_YERLESEN = KONTENJAN_DATA.reduce((sum, r) => sum +
 // taşıyan "tus kontenjanları" sorgusunda kötüydü (%0,9 · 1.907 gösterim) —
 // içeriğin ağırlığı taban puandaydı, kontenjanın kendisi hakkında sayfada
 // neredeyse hiç bilgi yoktu. Aşağıdaki türetilmiş sayılar o boşluğu doldurur.
-// Boş kalan kadro DAL BAZINDA ve negatife düşmeden toplanır. Global çıkarma
-// (toplamKontenjan − toplamYerlesen) kullanılamaz: veride kontenjanından fazla
-// yerleşen bir dal var (Plastik, Rekonstrüktif ve Estetik Cerrahi 210/209) ve
-// global çıkarma bu fazlalığı başka dalların boş kadrosundan düşerek boş kadro
-// sayısını olduğundan az gösteriyordu (2.028 yerine gerçek değer 2.029).
+// Boş kalan kadro DAL BAZINDA ve negatife düşmeden toplanır; global çıkarma
+// (toplamKontenjan − toplamYerlesen) KULLANILMAZ.
+//
+// Neden koruma duruyor: veride bir dal kontenjanından fazla yerleşme ile
+// girilmişti (Plastik Cerrahi 210/209) ve global çıkarma bu fazlalığı başka
+// dalların boş kadrosundan düşerek toplamı olduğundan az gösteriyordu. O satır
+// düzeltildi, ama aynı hata yeni dönem verisi girilirken tekrar edebilir —
+// max(...,0) bu durumda toplamı sessizce bozulmaktan korur.
 const bosKalan = (r) => Math.max(r.kontenjan - r.yerlesen, 0);
 
 export const KONTENJAN_OZET = {
