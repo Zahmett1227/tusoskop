@@ -126,6 +126,40 @@ export function calculateTusResult({ temelDogru, temelYanlis, klinikDogru, klini
 }
 
 /**
+ * "Kaç net kaç puan getirir?" referans tablosu — /tus-puan-hesaplama
+ * sayfasındaki statik tablo. Hem React (`NetScoreTable`) hem statik prerender
+ * (`renderNetScoreTable`) buradan beslenir, böylece tablo hesaplayıcıyla
+ * ASLA çelişmez (ikisi de computeTPuani/computeKPuani kullanır).
+ *
+ * ÖNEMLİ varsayım: T ve K puanı iki bölümün netine AYRI AYRI bağlıdır; tek bir
+ * "net" sayısı puanı belirlemeye yetmez. Bu tablo, her iki bölümde de aynı neti
+ * yapan dengeli bir aday varsayar. Bölümler arası dağılım değiştiğinde puan da
+ * değişir — kesin sonuç için sayfadaki hesaplayıcı kullanılmalıdır. Tabloyu
+ * gösteren her iki katman da bu uyarıyı görünür şekilde basmak zorundadır.
+ */
+export function buildNetScoreTable({ from = 10, to = 90, step = 5 } = {}) {
+  const rows = [];
+  for (let net = from; net <= to; net += step) {
+    const tPuani = computeTPuani(net, net);
+    const kPuani = computeKPuani(net, net);
+    // Baraj T ve K için AYRI AYRI değerlendirilir: bir aday K'dan barajı
+    // geçerken T'den geçemeyebilir (ya da tersi). Tek bir "baraj üstü/altı"
+    // etiketi bu satırlarda yanlış olur — örn. 10 net/bölümde T 45.3 (geçer)
+    // ama K 44.7 (geçmez). Bu yüzden durum puan türü bazında yazılır.
+    const tGecer = tPuani >= TUS_BARAJ_PUANI;
+    const kGecer = kPuani >= TUS_BARAJ_PUANI;
+    let barajDurumu;
+    if (tGecer && kGecer) barajDurumu = "T ve K geçer";
+    else if (tGecer) barajDurumu = "Sadece T geçer";
+    else if (kGecer) barajDurumu = "Sadece K geçer";
+    else barajDurumu = "Baraj altı";
+
+    rows.push({ sectionNet: net, toplamNet: net * 2, tPuani, kPuani, barajDurumu });
+  }
+  return rows;
+}
+
+/**
  * Ters hesap: hedef T veya K puanına ulaşmak için, bir bölümün neti SABİT
  * tutulurken diğer bölümde gereken net (z-skor formülünün cebirsel tersi).
  * Section sınırlarının (0-100) dışına çıkarsa clamp edilmeden ham değer döner;

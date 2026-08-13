@@ -11,13 +11,22 @@ import {
   KONTENJAN_DAL_COUNT,
   KONTENJAN_TOPLAM,
   KONTENJAN_DONEM_LABEL,
+  KONTENJAN_LASTMOD,
+  KONTENJAN_OZET,
+  KONTENJAN_YIL,
 } from "./kontenjanData.js";
+import { TUS_BARAJ_PUANI } from "./tusScoring.js";
 
 export const SITE_URL = "https://www.tusoskop.com";
 export const BRAND_NAME = "Tusoskop";
 export const APP_STORE_URL = "https://apps.apple.com/tr/app/tusoskop/id6776331691?l=tr";
 export const OG_IMAGE = `${SITE_URL}/tusoskop-mark.png`;
-export const LASTMOD = "2026-06-24";
+
+// sitemap.xml <lastmod> varsayılanı (YYYY-AA-GG). İçerik/şablon değişikliği
+// yapıldığında bump edilir. Verisi bağımsız değişen sayfalar (kontenjan gibi)
+// sitemapEntries içinde kendi lastmod'unu geçer — böylece tek bir sayfanın
+// verisi güncellendiğinde tüm site "değişti" sinyali vermez.
+export const LASTMOD = "2026-08-13";
 
 // Pazarlama etiketleri — soru bankasından otomatik türetilir, asla abartmaz.
 export const QUESTION_COUNT_LABEL = questionCountLabel(); // örn. "10.000+"
@@ -44,6 +53,13 @@ export const MAIN_NAV_LINKS = [
   { name: "Hakkımızda", path: "/hakkimizda" },
   { name: "Sık Sorulan Sorular", path: "/tusoskop-sss" },
 ];
+
+// Kontenjan tablosundan mini denemeye köprü. Organik trafiğin %80'inden
+// fazlası kontenjan sayfasına iniyor; oradan funnel'a geçen kullanıcıyı
+// reklam trafiğinden ayırt edebilmek için sabit attribution parametreleri.
+// (campaign_code yalnızca attribution içindir — kampanyayı slug belirler.)
+export const KONTENJAN_CTA_QUIZ_URL =
+  "/coz/mini-tus?campaign_code=seo_kontenjan&utm_source=seo&utm_medium=organic&utm_campaign=kontenjan_tablosu";
 
 export function buildSiteNavigationNodes() {
   return MAIN_NAV_LINKS.map((link, index) => ({
@@ -145,6 +161,8 @@ const contentSeoPages = [
     links: [
       ["Tusoskop özellikleri", "/tusoskop-ozellikleri"],
       ["Tusoskop fiyatlandırma", "/fiyatlandirma"],
+      ["Hakkımızda", "/hakkimizda"],
+      ["Sık sorulan sorular", "/tusoskop-sss"],
       ["Ana sayfa", "/"],
     ],
   },
@@ -185,6 +203,8 @@ const contentSeoPages = [
     links: [
       ["TUS soru çözme uygulaması", "/tus-soru-cozme-uygulamasi"],
       ["TUS deneme analizi", "/tus-deneme-analizi"],
+      ["TUS kontenjan tablosu", "/tus-kontenjan-tablosu"],
+      ["TUS mobil uygulama", "/tus-mobil-uygulama"],
     ],
   },
   {
@@ -260,7 +280,11 @@ const contentSeoPages = [
         ],
       },
     ],
-    links: [["TUS deneme analizi", "/tus-deneme-analizi"]],
+    links: [
+      ["TUS deneme analizi", "/tus-deneme-analizi"],
+      ["TUS puan hesaplama", "/tus-puan-hesaplama"],
+      ["TUS çalışma takip sistemi", "/tus-calisma-takip-sistemi"],
+    ],
   },
   {
     slug: "tus-deneme-analizi",
@@ -300,11 +324,20 @@ const contentSeoPages = [
       ["TUS deneme çözme platformu", "/tus-deneme-cozme-platformu"],
       ["TUS çalışma takip sistemi", "/tus-calisma-takip-sistemi"],
       ["TUS puan hesaplama", "/tus-puan-hesaplama"],
+      ["TUS kontenjan tablosu", "/tus-kontenjan-tablosu"],
     ],
   },
   {
     slug: "tus-puan-hesaplama",
     tool: "score",
+    // Gövde içi branş indeksi. Bu sayfa ve kontenjan tablosu, sitedeki iki
+    // indekslenmiş/otoriter sayfa; 11 branş sayfası ise yalnızca footer'dan
+    // link alıyordu (Google footer'ı boilerplate sayıp iskonto eder) ve GSC'de
+    // "Keşfedildi – dizine eklenmedi" durumundaydı. Buradan verilen bağlam içi
+    // linkler o sayfalara gerçek tarama önceliği taşır.
+    subjectIndexHeading: "Netini artırmak için hangi dersten çalışacaksın?",
+    subjectIndexIntro:
+      "Tahmini puanını gördün. Netini yükseltmek için ders seç ve o dersin TUS tarzı sorularını konu konu çözmeye başla.",
     title: "TUS Puan Hesaplama — Net ve Tahmini TUS Puanı | Tusoskop",
     description:
       "TUS puan hesaplama aracı: Temel ve Klinik Tıp net sayını gir, tahmini T Puanı ve K Puanını anında gör. Net nasıl hesaplanır, yanlış doğruyu götürür mü? Ücretsiz.",
@@ -334,6 +367,20 @@ const contentSeoPages = [
         ],
       },
       {
+        heading: "Kaç net kaç puan getirir?",
+        paragraphs: [
+          "Yukarıdaki tablo, her iki bölümde de aynı neti yapan dengeli bir aday için netin tahmini T ve K puanı karşılığını gösterir. Örneğin iki bölümde de 50'şer net (toplam 100 net) yapan bir aday yaklaşık 65 T Puanı ve 65 K Puanı alır.",
+          "Tek bir \"net\" sayısı puanı tam olarak belirlemez: T Puanı Temel bölümü, K Puanı Klinik bölümü daha ağır tarttığı için netlerin bölümler arasındaki dağılımı sonucu değiştirir. Aynı toplam netle Temel ağırlıklı çalışan bir aday daha yüksek T Puanı, Klinik ağırlıklı çalışan bir aday daha yüksek K Puanı alır. Kendi dağılımın için yukarıdaki hesaplayıcıyı kullan.",
+        ],
+      },
+      {
+        heading: "TUS baraj puanı kaç?",
+        paragraphs: [
+          `TUS'ta baraj puanı ${TUS_BARAJ_PUANI}'tir. Bir puan türünden (T veya K) ${TUS_BARAJ_PUANI} puanın altında kalan aday, o puan türüyle değerlendirilen dallara tercih yapamaz.`,
+          "Baraj T ve K için ayrı ayrı değerlendirilir; bir adayın K Puanı barajı geçerken T Puanı geçmeyebilir. Bu durumda yalnızca klinik dallara tercih yapılabilir. Hesaplayıcı her iki puanı da gösterdiği için baraj durumunu iki puan türü için birden görebilirsin.",
+        ],
+      },
+      {
         heading: "Tahmini puan ile gerçek TUS puanı farkı",
         paragraphs: [
           "Buradaki sonuç tahminidir. Gerçek TUS puanı; sınava giren adayların o dönemdeki ortalaması ve standart sapmasına göre standardize edildiği için dönemden döneme değişir.",
@@ -342,6 +389,15 @@ const contentSeoPages = [
       },
     ],
     faq: [
+      {
+        question: "Kaç net kaç puan getirir?",
+        answer:
+          "Her iki bölümde de eşit net yapan bir aday için yaklaşık karşılıklar: 30'ar net (toplam 60) ≈ 55 puan, 40'ar net (toplam 80) ≈ 60 puan, 50'şer net (toplam 100) ≈ 65 puan, 60'ar net (toplam 120) ≈ 70 puan. Netlerin Temel ve Klinik arasındaki dağılımı T ve K puanını farklı etkilediği için kesin sonuç hesaplayıcıdan alınmalıdır.",
+      },
+      {
+        question: "TUS baraj puanı kaç?",
+        answer: `TUS'ta baraj puanı ${TUS_BARAJ_PUANI}'tir. Bir puan türünden (T veya K) ${TUS_BARAJ_PUANI} puanın altında kalan aday o puan türüyle değerlendirilen dallara tercih yapamaz. Baraj T ve K için ayrı ayrı değerlendirilir.`,
+      },
       {
         question: "TUS'ta yanlış doğruyu götürür mü?",
         answer:
@@ -377,16 +433,24 @@ const contentSeoPages = [
       ["TUS deneme analizi", "/tus-deneme-analizi"],
       ["TUS soru çözme uygulaması", "/tus-soru-cozme-uygulamasi"],
       ["TUS kontenjan tablosu", "/tus-kontenjan-tablosu"],
+      ["TUS hazırlık platformu", "/tus-hazirlik-platformu"],
     ],
   },
   {
     slug: "tus-kontenjan-tablosu",
     tool: "kontenjan",
+    // Bkz. /tus-puan-hesaplama'daki aynı alanların açıklaması.
+    subjectIndexHeading: "Hedeflediğin dalın taban puanına hangi dersten çalışarak ulaşacaksın?",
+    subjectIndexIntro:
+      "Taban puanlar netin karşılığı. Ders seç, o dersin TUS tarzı sorularını konu konu çözerek netini yükselt.",
     kontenjanData: KONTENJAN_DATA,
     kontenjanDonem: KONTENJAN_DONEM_LABEL,
-    title: `TUS Kontenjan Tablosu ${KONTENJAN_DONEM_LABEL} — Taban Puanlar | Tusoskop`,
+    // Title 60 karakterin altında tutulur: eski sürüm tam dönem etiketiyle
+    // 78 karakterdi ve Google SERP'te "…2026-TUS 1. D…" diye kesiyordu.
+    // Tam dönem bilgisi H1'de ve tablo üstündeki meta satırında duruyor.
+    title: `TUS Kontenjan Tablosu ${KONTENJAN_YIL} — Taban Puanlar | Tusoskop`,
     description:
-      `${KONTENJAN_DONEM_LABEL} TUS kontenjan tablosu: ${KONTENJAN_DAL_COUNT} uzmanlık dalı için kontenjan, taban puan ve yerleşen sayısı. Dala göre ara, kontenjana veya taban puana göre sırala.`,
+      `${KONTENJAN_DAL_COUNT} uzmanlık dalı için TUS kontenjan, taban puan ve yerleşen sayısı — ${KONTENJAN_DONEM_LABEL} verileri. Dala göre ara, taban puana göre sırala.`,
     h1: `TUS Kontenjan Tablosu — ${KONTENJAN_DONEM_LABEL}`,
     intro:
       `${KONTENJAN_DONEM_LABEL} yerleştirme sonuçlarına göre ${KONTENJAN_DAL_COUNT} uzmanlık dalının kontenjan, taban puan ve yerleşen aday sayısını aşağıda bulabilirsin. Dal adına göre arayabilir, kontenjan veya taban puana göre sıralayabilirsin.`,
@@ -404,10 +468,25 @@ const contentSeoPages = [
         ],
       },
       {
+        heading: "TUS kontenjanları nasıl dağılıyor?",
+        paragraphs: [
+          `${KONTENJAN_DONEM_LABEL} döneminde ${KONTENJAN_DAL_COUNT} uzmanlık dalı için toplam ${KONTENJAN_OZET.toplamKontenjan.toLocaleString("tr-TR")} kontenjan açıldı; bunların ${KONTENJAN_OZET.toplamYerlesen.toLocaleString("tr-TR")} tanesi doldu (%${KONTENJAN_OZET.dolulukYuzde} doluluk) ve ${KONTENJAN_OZET.bosKalanKontenjan.toLocaleString("tr-TR")} kontenjan boş kaldı.`,
+          `Kontenjan dağılımı dallar arasında çok dengesiz: en yüksek kontenjanlı beş dal (${KONTENJAN_OZET.enCokKontenjan.map((r) => r.dal).join(", ")}) tek başına toplamın önemli bir kısmını oluşturuyor. ${KONTENJAN_DAL_COUNT} dalın ${KONTENJAN_OZET.dolmayanDalSayisi} tanesi kontenjanını dolduramadı — yani açılan kadroların bir kısmı her dönem boş kalıyor.`,
+        ],
+      },
+      {
+        heading: "Boş kalan kontenjanlar ne anlama geliyor?",
+        paragraphs: [
+          `Boş kontenjan, o dala yeterli tercih gelmediğini gösterir. Bu dönemde en çok boş kalan dallar: ${KONTENJAN_OZET.enCokBosKalan.map((r) => `${r.dal} (${r.bos})`).join(", ")}.`,
+          `Kontenjanı dolmayan dallarda taban puan yine de oluşur; bu, o dala yerleşen en düşük puanlı adayın puanıdır ve rekabet görece düşük olduğu için çoğu zaman baraja yakın kalır. Taban puan yalnızca hiç yerleşme olmayan dallarda oluşmaz — bu dönemde bu durumda olan ${KONTENJAN_OZET.tabanPuaniOlusmayanDalSayisi} dal var ve tabloda "—" ile gösterilir.`,
+          "Boş kontenjan, barajı geçen adaylar için bu dalların gerçekçi bir seçenek olabileceğini gösterir. Öte yandan boş kontenjan çoğu zaman o dalın çalışma koşulları veya tercih edilirliğiyle ilgilidir — sadece sayıya değil, dalın kendisine de bakmak gerekir.",
+        ],
+      },
+      {
         heading: "Kontenjan tablosu nasıl okunmalı?",
         paragraphs: [
           "Bir dalın taban puanı, o dönemde o dala yerleşebilmek için gereken asgari puanı gösterir. Kontenjanı yüksek fakat taban puanı düşük dallarda yerleşme ihtimali görece daha yüksektir.",
-          "'Yerleşen' sütunu, kontenjanın ne kadarının dolduğunu gösterir; kontenjanın tamamı dolmamışsa taban puan oluşmamış olabilir (tabloda '—' ile gösterilir).",
+          "'Yerleşen' sütunu, kontenjanın ne kadarının dolduğunu gösterir. Kontenjanın tamamı dolmasa bile o dala yerleşen olduğu sürece taban puan oluşur; taban puan yalnızca hiç yerleşme olmayan dallarda oluşmaz (tabloda '—' ile gösterilir).",
         ],
       },
       {
@@ -425,6 +504,14 @@ const contentSeoPages = [
     ],
     faq: [
       {
+        question: "TUS'ta toplam kaç kontenjan var?",
+        answer: `${KONTENJAN_DONEM_LABEL} döneminde ${KONTENJAN_DAL_COUNT} uzmanlık dalı için toplam ${KONTENJAN_OZET.toplamKontenjan.toLocaleString("tr-TR")} kontenjan açıldı. Bunların ${KONTENJAN_OZET.toplamYerlesen.toLocaleString("tr-TR")} tanesi doldu (%${KONTENJAN_OZET.dolulukYuzde}), ${KONTENJAN_OZET.bosKalanKontenjan.toLocaleString("tr-TR")} kontenjan boş kaldı.`,
+      },
+      {
+        question: "En çok kontenjan hangi dallara ayrılıyor?",
+        answer: `En yüksek kontenjanlı dallar: ${KONTENJAN_OZET.enCokKontenjan.map((r) => `${r.dal} (${r.kontenjan})`).join(", ")}.`,
+      },
+      {
         question: "TUS kontenjan tablosu ne sıklıkla güncellenir?",
         answer:
           "Her TUS döneminin (yılda iki kez) yerleştirme sonuçları açıklandıkça tablo güncellenir. Şu an gösterilen veri " + KONTENJAN_DONEM_LABEL + " dönemine aittir.",
@@ -432,7 +519,7 @@ const contentSeoPages = [
       {
         question: "Taban puan neden bazı dallarda gösterilmiyor?",
         answer:
-          "Kontenjanın tamamı dolmadıysa o dalda taban puan oluşmaz; tabloda bu durum '—' ile belirtilir.",
+          "Taban puan, o dala yerleşen en düşük puanlı adayın puanıdır; dolayısıyla kontenjan tamamen dolmasa bile yerleşme olduğu sürece taban puan oluşur. Taban puan yalnızca hiç yerleşme olmayan dallarda gösterilmez; tabloda bu durum '—' ile belirtilir.",
       },
       {
         question: "Kontenjan tablosu ile puan hesaplama aracı birlikte nasıl kullanılır?",
@@ -448,6 +535,7 @@ const contentSeoPages = [
     links: [
       ["TUS puan hesaplama", "/tus-puan-hesaplama"],
       ["TUS deneme analizi", "/tus-deneme-analizi"],
+      ["TUS hazırlık platformu", "/tus-hazirlik-platformu"],
     ],
   },
   {
@@ -562,7 +650,12 @@ const contentSeoPages = [
         ],
       },
     ],
-    links: [["App Store'da Tusoskop", APP_STORE_URL]],
+    links: [
+      ["TUS soru çözme uygulaması", "/tus-soru-cozme-uygulamasi"],
+      ["TUS konu bazlı soru çözme", "/tus-konu-bazli-soru-cozme"],
+      ["Tusoskop özellikleri", "/tusoskop-ozellikleri"],
+      ["App Store'da Tusoskop", APP_STORE_URL],
+    ],
   },
   {
     slug: "tus-calisma-takip-sistemi",
@@ -602,6 +695,7 @@ const contentSeoPages = [
       ["TUS deneme analizi", "/tus-deneme-analizi"],
       ["Yanlış ve favori soru takibi", "/tus-yanlis-takibi"],
       ["Tusoskop özellikleri", "/tusoskop-ozellikleri"],
+      ["TUS kontenjan tablosu", "/tus-kontenjan-tablosu"],
     ],
   },
   {
@@ -641,6 +735,8 @@ const contentSeoPages = [
     links: [
       ["TUS çalışma takip sistemi", "/tus-calisma-takip-sistemi"],
       ["Tusoskop fiyatlandırma", "/fiyatlandirma"],
+      ["Tusoskop nedir?", "/tusoskop-nedir"],
+      ["TUS mobil uygulama", "/tus-mobil-uygulama"],
     ],
   },
   {
@@ -679,7 +775,10 @@ const contentSeoPages = [
     ],
     links: [
       ["Tusoskop özellikleri", "/tusoskop-ozellikleri"],
+      ["Hakkımızda", "/hakkimizda"],
+      ["Sık sorulan sorular", "/tusoskop-sss"],
       ["Kullanım koşulları", "/kullanim-kosullari"],
+      ["Gizlilik sözleşmesi", "/gizlilik-sozlesmesi"],
     ],
   },
   {
@@ -773,6 +872,8 @@ const contentSeoPages = [
     links: [
       ["Tusoskop nedir?", "/tusoskop-nedir"],
       ["Tusoskop özellikleri", "/tusoskop-ozellikleri"],
+      ["Tusoskop fiyatlandırma", "/fiyatlandirma"],
+      ["TUS mobil uygulama", "/tus-mobil-uygulama"],
     ],
   },
 ];
@@ -781,16 +882,35 @@ const contentSeoPages = [
 // Her ders için "TUS {Ders} Soruları" sayfası: gerçek soru sayısı + soru
 // bankamızdan örnek bir soru. "tus {ders} soruları" aramalarını hedefler.
 
-function relatedSubjectLinks(currentSlug) {
-  const others = SUBJECTS.filter((s) => s.slug !== currentSlug).slice(0, 2);
+// Kardeş branş linkleri — HALKA (round-robin) dağıtım.
+//
+// Eski sürüm `SUBJECTS.filter(...).slice(0, 2)` kullanıyordu; bu her zaman
+// listenin ilk iki dersini (Anatomi + Biyokimya) seçtiği için 9 branş sayfası
+// gövde içi hiçbir iç link almıyordu — yalnızca her sayfada tekrarlanan
+// footer'da görünüyorlardı, Google ise footer linklerini boilerplate sayıp
+// büyük ölçüde iskonto ediyor. Sonuç: GSC'de 20 sayfa "Keşfedildi – şu anda
+// dizine eklenmedi" (taranmamış bile).
+//
+// Halka dağıtımda her ders kendinden sonraki RELATED_SUBJECT_COUNT derse link
+// verir; böylece her ders tam olarak o kadar iç link ALIR. Dağılım eşit ve
+// ders listesi büyüse de bozulmaz.
+const RELATED_SUBJECT_COUNT = 3;
+
+function relatedSubjectLinks(currentIndex) {
+  const total = SUBJECTS.length;
+  const others = Array.from(
+    { length: Math.min(RELATED_SUBJECT_COUNT, total - 1) },
+    (_, offset) => SUBJECTS[(currentIndex + offset + 1) % total]
+  );
   return [
     ...others.map((s) => [`TUS ${s.name} Soruları`, `/${s.slug}`]),
     ["TUS Soru Çözme Uygulaması", "/tus-soru-cozme-uygulamasi"],
     ["TUS Puan Hesaplama", "/tus-puan-hesaplama"],
+    ["TUS Kontenjan Tablosu", "/tus-kontenjan-tablosu"],
   ];
 }
 
-const subjectSeoPages = SUBJECTS.map((subject) => ({
+const subjectSeoPages = SUBJECTS.map((subject, subjectIndex) => ({
   slug: subject.slug,
   isSubject: true,
   subject: subject.name,
@@ -846,7 +966,7 @@ const subjectSeoPages = SUBJECTS.map((subject) => ({
       answer: `Free planda günde ${FREE_DAILY_QUESTIONS} soru ve ${FREE_DAILY_TOPIC_TESTS} konu testi ücretsizdir; Plus erişimde limitler kalkar.`,
     },
   ],
-  links: relatedSubjectLinks(subject.slug),
+  links: relatedSubjectLinks(subjectIndex),
 }));
 
 export const subjectIndexLinks = SUBJECTS.map((s) => [`TUS ${s.name} Soruları`, `/${s.slug}`]);
@@ -924,19 +1044,29 @@ export const legalStaticPages = [
   },
 ];
 
+// Sayfa bazlı <lastmod> — verisi bağımsız güncellenen sayfalar kendi tarihini
+// taşır. Google, lastmod'u güvenilir bulmazsa (her sayfada aynı/sabit tarih)
+// tamamen yok sayar; kontenjan verisi güncellendiğinde yeniden taranması için
+// bu ayrım şart.
+const PAGE_LASTMOD = {
+  "tus-kontenjan-tablosu": KONTENJAN_LASTMOD,
+};
+
 export const sitemapEntries = [
-  { path: "/", changefreq: "weekly", priority: "1.0" },
+  { path: "/", changefreq: "weekly", priority: "1.0", lastmod: LASTMOD },
   ...seoPages.map((page) => ({
     path: `/${page.slug}`,
     changefreq: page.slug === "tusoskop-sss" ? "monthly" : "weekly",
     priority: ["tusoskop-nedir", "tus-soru-cozme-uygulamasi", "tus-hazirlik-platformu"].includes(page.slug)
       ? "0.9"
       : "0.8",
+    lastmod: PAGE_LASTMOD[page.slug] ?? LASTMOD,
   })),
   ...legalStaticPages.map((page) => ({
     path: `/${page.slug}`,
     changefreq: "yearly",
     priority: "0.3",
+    lastmod: PAGE_LASTMOD[page.slug] ?? LASTMOD,
   })),
 ];
 

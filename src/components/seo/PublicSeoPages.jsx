@@ -15,10 +15,12 @@ import {
   applyScoreDeduction,
   netForTargetPuan,
   puanBandi,
+  buildNetScoreTable,
 } from "../../seo/tusScoring";
 import {
   APP_STORE_URL,
   BRAND_NAME,
+  KONTENJAN_CTA_QUIZ_URL,
   OG_IMAGE,
   SITE_URL,
   buildSiteNavigationNodes,
@@ -32,7 +34,7 @@ import {
   LESSON_COUNT,
   subjectIndexLinks,
 } from "../../seo/seoContent";
-import { KONTENJAN_DATA, KONTENJAN_DONEM_LABEL } from "../../seo/kontenjanData";
+import { KONTENJAN_DATA, KONTENJAN_DONEM_LABEL, KONTENJAN_OZET } from "../../seo/kontenjanData";
 import { SUBJECTS } from "../../data/subjects";
 import {
   EYLUL_PAKETI,
@@ -42,6 +44,10 @@ import {
 import { isInAppBrowser } from "../../utils/device";
 
 const OPTION_KEYS = ["A", "B", "C", "D", "E"];
+// Sayfada gösterilen (ve dolayısıyla FAQPage şemasına giren) soru sayısı.
+// Statik prerender'daki (generate-seo-pages.mjs) aynı isimli sabitle senkron
+// tutulmalı: şemaya konan FAQ, sayfada görünenle birebir aynı olmak zorunda.
+const FAQ_VISIBLE_LIMIT = 8;
 const TEMEL_DERSLER = SUBJECTS.filter((s) => s.type === "Temel").map((s) => s.name);
 const KLINIK_DERSLER = SUBJECTS.filter((s) => s.type === "Klinik").map((s) => s.name);
 
@@ -995,7 +1001,187 @@ function KontenjanTable({ data, donem }) {
           </tbody>
         </table>
       </div>
+      <KontenjanNextStep />
     </section>
+  );
+}
+
+/**
+ * "Kaç net kaç puan?" referans tablosu (/tus-puan-hesaplama). Satırlar
+ * `buildNetScoreTable()` ile üretildiği için hesaplayıcıyla aynı formülü
+ * kullanır — statik prerender'daki `renderNetScoreTable()` ile birebir aynı.
+ *
+ * Uyarı satırı ZORUNLU: tablo iki bölümde de eşit net yapan dengeli bir aday
+ * varsayar; dağılım değişince puan değişir.
+ */
+function NetScoreTable() {
+  const rows = useMemo(() => buildNetScoreTable(), []);
+  return (
+    <section aria-label="Net puan karşılığı tablosu" className="mt-9">
+      <h2 className="text-2xl font-black tracking-tight">Kaç net kaç puan getirir?</h2>
+      <p className="mt-2 text-sm leading-relaxed text-slate-400">
+        Aşağıdaki tablo, <b className="text-slate-300">her iki bölümde de aynı neti</b> yapan dengeli bir aday içindir.
+        Netlerin Temel ve Klinik arasındaki dağılımı değiştiğinde T ve K puanı da değişir — kendi dağılımın için
+        yukarıdaki hesaplayıcıyı kullan. Değerler tahminidir.
+      </p>
+      <div className="mt-5 overflow-x-auto rounded-3xl border border-slate-800">
+        <table className="w-full border-collapse text-sm">
+          <thead>
+            <tr className="bg-slate-900/70 text-left text-[11px] font-black uppercase tracking-wider text-slate-400">
+              <th scope="col" className="px-4 py-3">Bölüm başına net</th>
+              <th scope="col" className="px-4 py-3">Toplam net</th>
+              <th scope="col" className="px-4 py-3">Tahmini T Puanı</th>
+              <th scope="col" className="px-4 py-3">Tahmini K Puanı</th>
+              <th scope="col" className="px-4 py-3">Baraj ({TUS_BARAJ_PUANI})</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.sectionNet} className="border-t border-slate-800">
+                <td className="px-4 py-2.5 font-bold text-slate-200">{r.sectionNet}</td>
+                <td className="px-4 py-2.5 font-semibold text-slate-300">{r.toplamNet}</td>
+                <td className="px-4 py-2.5 font-black text-emerald-300">{r.tPuani}</td>
+                <td className="px-4 py-2.5 font-black text-emerald-300">{r.kPuani}</td>
+                <td className="px-4 py-2.5 font-semibold text-slate-300">{r.barajDurumu}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
+
+/**
+ * Kontenjan özeti (/tus-kontenjan-tablosu). Sayfa "tus taban puanları"nda iyi
+ * sıralanırken kendi adını taşıyan "tus kontenjanları" sorgusunda kötüydü;
+ * içerik ağırlığı taban puandaydı. Bu blok kontenjanın kendisini anlatır ve
+ * tüm sayılar KONTENJAN_DATA'dan türetilir (elle güncellenmez).
+ * Statik prerender'daki `renderKontenjanOzet()` ile birebir aynı.
+ */
+function KontenjanOzet() {
+  const o = KONTENJAN_OZET;
+  const tr = (n) => n.toLocaleString("tr-TR");
+  // "Toplam kontenjan" bilerek yok: sayfa başındaki stats kartlarında zaten var,
+  // burada tekrar etmek aynı sayıyı iki kez göstermek olurdu.
+  const cards = [
+    [tr(o.toplamYerlesen), "Yerleşen aday"],
+    [`%${o.dolulukYuzde}`, "Doluluk oranı"],
+    [tr(o.bosKalanKontenjan), "Boş kalan kontenjan"],
+  ];
+  const columns = [
+    ["En çok kontenjan ayrılan dallar", o.enCokKontenjan.map((r) => [r.dal, tr(r.kontenjan)])],
+    ["En çok boş kalan kontenjanlar", o.enCokBosKalan.map((r) => [r.dal, tr(r.bos)])],
+  ];
+  return (
+    <section aria-label="Kontenjan özeti" className="mt-8">
+      <h2 className="text-2xl font-black tracking-tight">{KONTENJAN_DONEM_LABEL} kontenjan özeti</h2>
+      <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+        {cards.map(([value, label]) => (
+          <div key={label} className="rounded-2xl border border-slate-800 bg-slate-900/55 px-3 py-4 text-center">
+            <p className="text-2xl font-black tracking-tight text-emerald-300">{value}</p>
+            <p className="mt-1 text-xs font-bold text-slate-400">{label}</p>
+          </div>
+        ))}
+      </div>
+      <div className="mt-5 grid gap-3.5 sm:grid-cols-2">
+        {columns.map(([title, items]) => (
+          <div key={title} className="rounded-3xl border border-slate-800 bg-slate-900/55 p-4">
+            <p className="text-xs font-black uppercase tracking-wider text-slate-500">{title}</p>
+            <ul className="mt-2.5 grid gap-2">
+              {items.map(([dal, value]) => (
+                <li key={dal} className="flex items-baseline justify-between gap-3 text-sm text-slate-300">
+                  <span>{dal}</span>
+                  <b className="shrink-0 font-black text-emerald-300">{value}</b>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <p className="mt-3.5 text-sm text-slate-400">
+        {KONTENJAN_DATA.length} dalın <b className="text-emerald-300">{o.dolmayanDalSayisi}</b> tanesi kontenjanını
+        dolduramadı. Bu dallarda taban puan yine oluşur; taban puan yalnızca hiç yerleşme olmayan{" "}
+        <b className="text-emerald-300">{o.tabanPuaniOlusmayanDalSayisi}</b> dalda oluşmamıştır (tabloda
+        &ldquo;&mdash;&rdquo;).
+      </p>
+    </section>
+  );
+}
+
+/**
+ * Gövde içi branş indeksi — yalnızca `subjectIndexHeading` tanımlı sayfalarda
+ * (puan hesaplama + kontenjan tablosu) çıkar. Statik prerender'daki
+ * `renderSubjectIndex()` ile aynı metni taşımalı.
+ *
+ * Neden gövdede: 11 branş sayfası yalnızca her sayfada tekrarlanan footer'dan
+ * link alıyordu; Google footer linklerini boilerplate sayıp iskonto ettiği
+ * için bu sayfalar GSC'de "Keşfedildi – şu anda dizine eklenmedi" (yani hiç
+ * taranmamış) durumundaydı. Sitedeki iki otoriter sayfadan verilen bağlam içi
+ * link, tarama önceliğini doğrudan etkiler.
+ */
+function SubjectIndexBlock({ page }) {
+  if (!page.subjectIndexHeading) return null;
+  return (
+    <section
+      aria-label="Branşa göre TUS soruları"
+      className="mt-10 rounded-3xl border border-slate-800 bg-slate-900/45 p-5"
+    >
+      <h2 className="text-2xl font-black tracking-tight">{page.subjectIndexHeading}</h2>
+      <p className="mt-3 max-w-[620px] text-[15px] leading-relaxed text-slate-300">{page.subjectIndexIntro}</p>
+      <div className="mt-4 flex flex-wrap gap-3">
+        {subjectIndexLinks.map(([label, href]) => (
+          <a
+            key={label}
+            href={href}
+            className="rounded-2xl border border-slate-700 px-4 py-2 text-sm font-bold text-slate-200 hover:border-emerald-300/70 hover:text-white"
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/**
+ * Kontenjan tablosu → sıradaki adım köprüsü. Statik prerender'daki
+ * `renderKontenjanCta()` ile BİREBİR aynı metni taşımalı (iki katman senkron).
+ *
+ * Neden: organik trafiğin %80'inden fazlası bu sayfaya iniyor ama sayfa
+ * kullanıcıyı bilgiyle baş başa bırakıp orada bitiyordu. Taban puana bakan
+ * kişinin doğal sonraki sorusu "benim puanım ne olur?" — o yüzden köprü
+ * puan hesaplama aracına ve mini denemeye gider.
+ */
+function KontenjanNextStep() {
+  return (
+    <aside
+      aria-label="Sıradaki adım"
+      className="mt-7 rounded-[22px] border border-emerald-300/30 bg-gradient-to-b from-emerald-300/10 to-slate-900/45 p-6"
+    >
+      <p className="text-xs font-black uppercase tracking-[0.24em] text-emerald-300">Sıradaki adım</p>
+      <h2 className="mt-2.5 text-xl font-black tracking-tight text-white sm:text-2xl">
+        Bu taban puanlara kaç netle ulaşılır?
+      </h2>
+      <p className="mt-2.5 max-w-[620px] text-[15px] text-slate-300">
+        Tablodaki taban puanlar netin karşılığıdır. Kendi tahmini T ve K puanını hesapla, hedeflediğin dalın taban
+        puanıyla karşılaştır — ya da 20 soruluk Mini TUS ile şu an nerede olduğunu gör.
+      </p>
+      <div className="mt-4 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap">
+        <a
+          href="/tus-puan-hesaplama"
+          className="inline-flex items-center justify-center rounded-2xl bg-emerald-300 px-[18px] py-3 text-[15px] font-black text-slate-950"
+        >
+          TUS Puan Hesaplama →
+        </a>
+        <a
+          href={KONTENJAN_CTA_QUIZ_URL}
+          className="inline-flex items-center justify-center rounded-2xl border border-slate-700 bg-slate-950/50 px-[18px] py-3 text-[15px] font-extrabold text-slate-200 hover:border-emerald-300"
+        >
+          20 soruluk Mini TUS çöz →
+        </a>
+      </div>
+    </aside>
   );
 }
 
@@ -1117,7 +1303,7 @@ function PricingComparison() {
 export function SeoLandingPage({ page }) {
   const faq = useMemo(() => page.faq ?? commonFaq, [page.faq]);
   // JSON-LD FAQ şeması, sayfada görünen soru setiyle birebir aynı olmalı.
-  const visibleFaq = useMemo(() => faq.slice(0, 6), [faq]);
+  const visibleFaq = useMemo(() => faq.slice(0, FAQ_VISIBLE_LIMIT), [faq]);
   const path = `/${page.slug}`;
   usePageMetadata({
     title: page.title,
@@ -1149,9 +1335,17 @@ export function SeoLandingPage({ page }) {
             <SampleQuestionCard sample={page.sample} subject={page.subject} />
             {page.isSubject ? <SubjectTopics subject={page.subject} topics={page.topics} /> : null}
             {page.slug === "fiyatlandirma" ? <PricingComparison /> : null}
-            {page.tool === "score" ? <TusScoreCalculator /> : null}
+            {page.tool === "score" ? (
+              <>
+                <TusScoreCalculator />
+                <NetScoreTable />
+              </>
+            ) : null}
             {page.tool === "kontenjan" ? (
-              <KontenjanTable data={page.kontenjanData} donem={page.kontenjanDonem} />
+              <>
+                <KontenjanOzet />
+                <KontenjanTable data={page.kontenjanData} donem={page.kontenjanDonem} />
+              </>
             ) : null}
             <div className="mt-10 space-y-9">
               {page.sections.map((section) => (
@@ -1167,6 +1361,8 @@ export function SeoLandingPage({ page }) {
                 </section>
               ))}
             </div>
+
+            <SubjectIndexBlock page={page} />
 
             {page.links?.length ? (
               <nav aria-label="İlgili Tusoskop sayfaları" className="mt-10 rounded-3xl border border-slate-800 bg-slate-900/45 p-5">

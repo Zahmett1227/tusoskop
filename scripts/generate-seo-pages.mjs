@@ -1,9 +1,9 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import {
   APP_STORE_URL,
   BRAND_NAME,
-  LASTMOD,
+  KONTENJAN_CTA_QUIZ_URL,
   OG_IMAGE,
   SITE_URL,
   buildSiteNavigationNodes,
@@ -18,6 +18,7 @@ import {
 import {
   TUS_SECTION_QUESTIONS,
   TUS_DEDUCTION_RATE,
+  buildNetScoreTable,
   TUS_BARAJ_PUANI,
   TEMEL_ORTALAMA,
   TEMEL_STDDEV,
@@ -26,13 +27,134 @@ import {
   T_PUANI_AGIRLIK,
   K_PUANI_AGIRLIK,
 } from "../src/seo/tusScoring.js";
-import { KONTENJAN_DATA } from "../src/seo/kontenjanData.js";
+import {
+  KONTENJAN_DAL_COUNT,
+  KONTENJAN_DATA,
+  KONTENJAN_DONEM_LABEL,
+  KONTENJAN_OZET,
+} from "../src/seo/kontenjanData.js";
 import { SUBJECTS } from "../src/data/subjects.js";
 
 const TEMEL_DERSLER = SUBJECTS.filter((s) => s.type === "Temel").map((s) => s.name);
 const KLINIK_DERSLER = SUBJECTS.filter((s) => s.type === "Klinik").map((s) => s.name);
 
 const publicDir = path.resolve("public");
+
+// Sayfada gösterilen (ve dolayısıyla FAQPage şemasına giren) soru sayısı.
+// React tarafındaki aynı isimli sabitle senkron tutulmalı.
+const FAQ_VISIBLE_LIMIT = 8;
+
+// --- Ölçüm (analytics) ----------------------------------------------------
+// Statik SEO sayfaları React ağacının tamamen dışında üretiliyor; bu yüzden
+// `src/lib/metaPixel.js` ve `src/lib/clarity.js` buraya ulaşmıyordu ve 26
+// sayfanın hiçbirinde pixel/analytics yoktu (organik trafik ölçülemiyor,
+// retarget edilemiyordu). Aşağısı o iki modülün statik sayfa karşılığı:
+// aynı env değişkenlerini okur, ID yoksa hiçbir şey basmaz.
+//
+// Vercel build ortamında env'ler gerçek process.env değişkenleridir; yerel
+// `npm run build` için .env dosyasından da okunur (bu script Vite'tan önce
+// çalıştığı için import.meta.env yok).
+async function loadEnvFallback(keys) {
+  const missing = keys.filter((key) => !process.env[key]);
+  if (!missing.length) return;
+  try {
+    const raw = await readFile(path.resolve(".env"), "utf8");
+    for (const line of raw.split("\n")) {
+      const match = /^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/.exec(line);
+      if (!match) continue;
+      const [, key, value] = match;
+      if (missing.includes(key) && !process.env[key]) {
+        process.env[key] = value.trim().replace(/^["']|["']$/g, "");
+      }
+    }
+  } catch {
+    // .env yoksa sorun değil — ID'ler tanımsız kalır, analytics basılmaz.
+  }
+}
+
+await loadEnvFallback(["VITE_META_PIXEL_ID", "VITE_CLARITY_PROJECT_ID"]);
+
+// ID'ler inline <script> içine gömüldüğü için biçim doğrulaması zorunlu:
+// beklenmeyen karakter varsa ID'yi yok sayıyoruz (script injection önlemi).
+function safeId(value, pattern) {
+  const trimmed = String(value ?? "").trim();
+  return pattern.test(trimmed) ? trimmed : "";
+}
+
+const META_PIXEL_ID = safeId(process.env.VITE_META_PIXEL_ID, /^[0-9]{6,32}$/);
+const CLARITY_PROJECT_ID = safeId(process.env.VITE_CLARITY_PROJECT_ID, /^[a-z0-9]{4,32}$/i);
+
+// Sessiz başarısızlık tam da düzeltmeye çalıştığımız hataydı (26 sayfa aylarca
+// ölçümsüz kaldı). Env eksikse build log'unda görünür olsun — repoya commit
+// edilen public/*.html env'siz üretilir, gerçek ID'ler Vercel build'inde girer.
+if (!META_PIXEL_ID) console.warn("[seo] VITE_META_PIXEL_ID yok — statik sayfalarda Meta Pixel BASILMADI.");
+if (!CLARITY_PROJECT_ID) console.warn("[seo] VITE_CLARITY_PROJECT_ID yok — statik sayfalarda Clarity BASILMADI.");
+
+/**
+ * Meta Pixel + Clarity'yi ilk paint'ten sonra yükler (CWV'yi bozmamak için
+ * `load` sonrası / requestIdleCallback ile). Ayrıca SEO sayfalarındaki üç
+ * dönüşüm sinyalini olay olarak gönderir:
+ *   SeoLoginClick  → /giris tıklaması
+ *   SeoQuizClick   → /coz mini deneme tıklaması
+ *   AppStoreClick  → App Store tıklaması (funnel'daki isimle aynı)
+ *
+ * App Store linki farklı origin'e hard-navigasyon yaptığı için pixel isteği
+ * kesiliyordu (bkz. PublicQuizFunnel'daki aynı hata); orada kanıtlanmış
+ * preventDefault + ~250ms gecikme deseni burada da uygulanır.
+ */
+function renderAnalytics(page) {
+  if (!META_PIXEL_ID && !CLARITY_PROJECT_ID) return "";
+  const pixelBoot = META_PIXEL_ID
+    ? `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${META_PIXEL_ID}');fbq('track','PageView');`
+    : "";
+  const clarityBoot = CLARITY_PROJECT_ID
+    ? `!function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)}(window,document,'clarity','script','${CLARITY_PROJECT_ID}');clarity('set','page_type','seo_static');clarity('set','page_slug','${escapeJs(page.slug)}');`
+    : "";
+  return `
+    <script>
+      (function(){
+        var SLUG='${escapeJs(page.slug)}';
+        var booted=false;
+        function boot(){
+          if(booted)return;
+          booted=true;
+          ${pixelBoot}
+          ${clarityBoot}
+        }
+        // Dinleyici SENKRON kaydedilir, boot'un içinde DEĞİL: boot idle'a
+        // erteleniyor (requestIdleCallback yoksa 1200ms setTimeout) ve o
+        // aralıkta yapılan /giris, /coz veya App Store tıklaması aksi halde
+        // hiç ölçülmezdi — tam da bu değişikliğin ölçmeye çalıştığı dönüşüm.
+        // Tıklama boot'tan önce gelirse pixel/clarity o anda yüklenir; her iki
+        // snippet de çağrıları kuyrukladığı için event kaybolmaz.
+        document.addEventListener('click',function(ev){
+          var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+          if(!a)return;
+          var href=a.getAttribute('href')||'';
+          var name=null;
+          if(href.indexOf('apps.apple.com')!==-1)name='AppStoreClick';
+          else if(href.indexOf('/coz/')===0)name='SeoQuizClick';
+          else if(href==='/giris')name='SeoLoginClick';
+          if(!name)return;
+          boot();
+          if(typeof clarity==='function'){try{clarity('event',name);}catch(e){}}
+          if(typeof fbq!=='function')return;
+          try{fbq('trackCustom',name,{page_slug:SLUG});}catch(e){}
+          // Dış origin'e giden App Store linkinde isteğin gitmesini bekle.
+          if(name==='AppStoreClick'&&!a.target){
+            ev.preventDefault();
+            setTimeout(function(){window.location.href=a.href;},250);
+          }
+        },true);
+        if('requestIdleCallback' in window)requestIdleCallback(boot,{timeout:2500});
+        else setTimeout(boot,1200);
+      })();
+    </script>`;
+}
+
+function escapeJs(value) {
+  return String(value).replace(/[\\'"<>\r\n]/g, "");
+}
 
 function escapeHtml(value) {
   return String(value)
@@ -155,7 +277,9 @@ const css = `
   .section{border-bottom:1px solid #1e293b;padding-bottom:28px}
   .section:last-child{border-bottom:0}
   .section p+p{margin-top:12px}
-  .related,.faq{margin-top:38px;border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:26px;padding:20px}
+  .related,.faq,.subject-index{margin-top:38px;border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:26px;padding:20px}
+  .subject-index h2{font-size:clamp(20px,2.6vw,26px);margin-bottom:10px}
+  .subject-index p{font-size:15px;max-width:620px}
   .link-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
   .pill{border:1px solid #334155;border-radius:16px;padding:9px 13px;color:#e2e8f0;font-size:14px;font-weight:800}
   .pill:hover{border-color:#6ee7b7}
@@ -256,7 +380,20 @@ const css = `
   .reverse-out small{display:block;font-size:12px;font-weight:700;color:#94a3b8}
   .reverse-out b{display:block;margin-top:2px;font-size:20px;font-weight:900;color:#fff}
   .reverse-warn{margin-top:6px;font-size:11px;font-weight:700;color:#fbbf24}
-  @media (max-width:560px){.calc-grid{grid-template-columns:1fr}.calc-out{grid-template-columns:1fr}.reverse-out-grid{grid-template-columns:1fr}}
+  .ozet-grid{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .ozet-col{border:1px solid #1e293b;background:rgba(15,23,42,.55);border-radius:18px;padding:16px}
+  .ozet-list{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}
+  .ozet-list li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:14px;color:#cbd5e1}
+  .ozet-list b{font-weight:900;color:#6ee7b7;flex:0 0 auto}
+  @media (max-width:560px){.ozet-grid{grid-template-columns:1fr}}
+  .next-step{margin-top:28px;border:1px solid rgba(110,231,183,.3);background:linear-gradient(180deg,rgba(110,231,183,.09),rgba(15,23,42,.45));border-radius:22px;padding:24px}
+  .next-step h2{margin-bottom:10px}
+  .next-step p{max-width:620px;font-size:15px}
+  .next-step-links{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
+  .next-step-cta{display:inline-flex;align-items:center;border-radius:16px;background:#6ee7b7;color:#020617;font-weight:900;padding:12px 18px;font-size:15px}
+  .next-step-alt{display:inline-flex;align-items:center;border-radius:16px;border:1px solid #334155;background:rgba(2,6,23,.5);color:#e2e8f0;font-weight:800;padding:12px 18px;font-size:15px}
+  .next-step-alt:hover{border-color:#6ee7b7}
+  @media (max-width:560px){.calc-grid{grid-template-columns:1fr}.calc-out{grid-template-columns:1fr}.reverse-out-grid{grid-template-columns:1fr}.next-step-links{flex-direction:column}.next-step-cta,.next-step-alt{justify-content:center}}
   @media (max-width:720px){.nav{display:none}main{padding-top:38px}.topbar-inner{padding-inline:14px}}
 `;
 
@@ -647,7 +784,29 @@ function renderKontenjanTable(data, donem) {
           search.addEventListener('input',applyFilter);
         })();
       </script>
+      ${renderKontenjanCta()}
     </section>`;
+}
+
+/**
+ * Kontenjan tablosu → sıradaki adım köprüsü. React'teki KontenjanTable'ın
+ * sonundaki blokla BİREBİR aynı metni taşımalı (iki katman senkron).
+ *
+ * Neden: organik trafiğin %80'inden fazlası bu sayfaya iniyor ama sayfa
+ * kullanıcıyı bilgiyle baş başa bırakıp orada bitiyordu. Taban puana bakan
+ * kişinin doğal sonraki sorusu "benim puanım ne olur?" — o yüzden köprü
+ * puan hesaplama aracına ve mini denemeye gider.
+ */
+function renderKontenjanCta() {
+  return `<aside class="next-step" aria-label="Sıradaki adım">
+        <p class="eyebrow" style="margin:0">Sıradaki adım</p>
+        <h2 style="margin-top:10px;font-size:clamp(20px,2.6vw,26px)">Bu taban puanlara kaç netle ulaşılır?</h2>
+        <p>Tablodaki taban puanlar netin karşılığıdır. Kendi tahmini T ve K puanını hesapla, hedeflediğin dalın taban puanıyla karşılaştır — ya da 20 soruluk Mini TUS ile şu an nerede olduğunu gör.</p>
+        <div class="next-step-links">
+          <a class="next-step-cta" href="/tus-puan-hesaplama">TUS Puan Hesaplama &rarr;</a>
+          <a class="next-step-alt" href="${escapeHtml(KONTENJAN_CTA_QUIZ_URL)}">20 soruluk Mini TUS &ccedil;&ouml;z &rarr;</a>
+        </div>
+      </aside>`;
 }
 
 // /fiyatlandirma kıyas bloğu — React'teki PricingComparison'ın statik eşi
@@ -678,10 +837,110 @@ function renderPricingComparison() {
     </section>`;
 }
 
+/**
+ * "Kaç net kaç puan?" referans tablosu (/tus-puan-hesaplama). Satırlar
+ * `buildNetScoreTable()` ile üretildiği için hesaplayıcıyla aynı formülü
+ * kullanır — React'teki `NetScoreTable` ile birebir aynı içerik.
+ *
+ * Uyarı satırı ZORUNLU: tablo iki bölümde de eşit net yapan dengeli bir aday
+ * varsayar; dağılım değişince puan değişir.
+ */
+function renderNetScoreTable() {
+  const rows = buildNetScoreTable()
+    .map(
+      (r) =>
+        `<tr><td>${r.sectionNet}</td><td>${r.toplamNet}</td><td class="puan">${r.tPuani}</td><td class="puan">${r.kPuani}</td><td>${escapeHtml(r.barajDurumu)}</td></tr>`
+    )
+    .join("");
+  return `<section aria-label="Net puan karşılığı tablosu" style="margin-top:34px">
+        <h2>Kaç net kaç puan getirir?</h2>
+        <p class="calc-note" style="margin-top:8px">Aşağıdaki tablo, <b>her iki bölümde de aynı neti</b> yapan dengeli bir aday içindir. Netlerin Temel ve Klinik arasındaki dağılımı değiştiğinde T ve K puanı da değişir — kendi dağılımın için yukarıdaki hesaplayıcıyı kullan. Değerler tahminidir.</p>
+        <div class="ref-table">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Bölüm başına net</th>
+                <th scope="col">Toplam net</th>
+                <th scope="col">Tahmini T Puanı</th>
+                <th scope="col">Tahmini K Puanı</th>
+                <th scope="col">Baraj (${TUS_BARAJ_PUANI})</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+      </section>`;
+}
+
+/**
+ * Kontenjan özeti (/tus-kontenjan-tablosu). Sayfa "tus taban puanları"nda iyi
+ * sıralanırken kendi adını taşıyan "tus kontenjanları" sorgusunda kötüydü;
+ * içerik ağırlığı taban puandaydı. Bu blok kontenjanın kendisini anlatır ve
+ * tüm sayılar KONTENJAN_DATA'dan türetilir (elle güncellenmez).
+ * React'teki `KontenjanOzet` ile birebir aynı içerik.
+ */
+function renderKontenjanOzet() {
+  const o = KONTENJAN_OZET;
+  const tr = (n) => n.toLocaleString("tr-TR");
+  // "Toplam kontenjan" bilerek yok: sayfa başındaki stats kartlarında zaten var,
+  // burada tekrar etmek aynı sayıyı iki kez göstermek olurdu.
+  const cards = [
+    [tr(o.toplamYerlesen), "Yerleşen aday"],
+    [`%${o.dolulukYuzde}`, "Doluluk oranı"],
+    [tr(o.bosKalanKontenjan), "Boş kalan kontenjan"],
+  ];
+  return `<section aria-label="Kontenjan özeti" style="margin-top:30px">
+        <h2>${escapeHtml(KONTENJAN_DONEM_LABEL)} kontenjan özeti</h2>
+        <div class="stats" style="margin-top:16px">
+          ${cards.map(([value, label]) => `<div class="stat"><b>${escapeHtml(value)}</b><span>${escapeHtml(label)}</span></div>`).join("")}
+        </div>
+        <div class="ozet-grid">
+          <div class="ozet-col">
+            <p class="footer-tags-title">En çok kontenjan ayrılan dallar</p>
+            <ul class="ozet-list">
+              ${o.enCokKontenjan.map((r) => `<li><span>${escapeHtml(r.dal)}</span><b>${tr(r.kontenjan)}</b></li>`).join("")}
+            </ul>
+          </div>
+          <div class="ozet-col">
+            <p class="footer-tags-title">En çok boş kalan kontenjanlar</p>
+            <ul class="ozet-list">
+              ${o.enCokBosKalan.map((r) => `<li><span>${escapeHtml(r.dal)}</span><b>${tr(r.bos)}</b></li>`).join("")}
+            </ul>
+          </div>
+        </div>
+        <p class="calc-note">${KONTENJAN_DAL_COUNT} dalın <b>${o.dolmayanDalSayisi}</b> tanesi kontenjanını dolduramadı. Bu dallarda taban puan yine oluşur; taban puan yalnızca hiç yerleşme olmayan <b>${o.tabanPuaniOlusmayanDalSayisi}</b> dalda oluşmamıştır (tabloda &ldquo;&mdash;&rdquo;).</p>
+      </section>`;
+}
+
+/**
+ * Gövde içi branş indeksi — yalnızca `subjectIndexHeading` tanımlı sayfalarda
+ * (puan hesaplama + kontenjan tablosu) çıkar. React'teki `SubjectIndexBlock`
+ * ile aynı metni taşımalı.
+ *
+ * Neden gövdede: 11 branş sayfası yalnızca her sayfada tekrarlanan footer'dan
+ * link alıyordu; Google footer linklerini boilerplate sayıp iskonto ettiği
+ * için bu sayfalar GSC'de "Keşfedildi – şu anda dizine eklenmedi" (yani hiç
+ * taranmamış) durumundaydı. Sitedeki iki otoriter sayfadan verilen bağlam içi
+ * link, tarama önceliğini doğrudan etkiler.
+ */
+function renderSubjectIndex(page) {
+  if (!page.subjectIndexHeading) return "";
+  return `<section class="subject-index" aria-label="Branşa göre TUS soruları">
+        <h2>${escapeHtml(page.subjectIndexHeading)}</h2>
+        <p>${escapeHtml(page.subjectIndexIntro)}</p>
+        <div class="link-list">
+          ${subjectIndexLinks.map(([label, href]) => `<a class="pill" href="${escapeHtml(href)}">${escapeHtml(label)}</a>`).join("")}
+        </div>
+      </section>`;
+}
+
 function renderPage(page, isLegal = false) {
   const pagePath = `/${page.slug}`;
   // Sayfada görünen FAQ seti — legal sayfalarda FAQ gösterilmez.
-  const visibleFaq = isLegal ? [] : (page.faq ?? commonFaq).slice(0, 6);
+  // FAQ_VISIBLE_LIMIT React tarafındaki (PublicSeoPages.jsx) limitle AYNI
+  // olmalı: JSON-LD'ye giren FAQ, sayfada görünen FAQ ile birebir aynı olmak
+  // zorunda (Google kuralı). Limiti bir katmanda değiştirmek şemayı bozar.
+  const visibleFaq = isLegal ? [] : (page.faq ?? commonFaq).slice(0, FAQ_VISIBLE_LIMIT);
   const related = page.links?.length
     ? `<nav class="related" aria-label="İlgili sayfalar">
         <h2>İlgili bağlantılar</h2>
@@ -738,8 +997,8 @@ function renderPage(page, isLegal = false) {
       ${renderSample(page.sample, page.subject)}
       ${page.isSubject ? renderTopics(page.subject, page.topics) : ""}
       ${page.slug === "fiyatlandirma" ? renderPricingComparison() : ""}
-      ${page.tool === "score" ? renderScoreTool() : ""}
-      ${page.tool === "kontenjan" ? renderKontenjanTable(page.kontenjanData, page.kontenjanDonem) : ""}
+      ${page.tool === "score" ? renderScoreTool() + renderNetScoreTable() : ""}
+      ${page.tool === "kontenjan" ? renderKontenjanOzet() + renderKontenjanTable(page.kontenjanData, page.kontenjanDonem) : ""}
       ${appStore}
       <div class="sections">
         ${page.sections.map((section) => `
@@ -749,10 +1008,12 @@ function renderPage(page, isLegal = false) {
           </section>
         `).join("")}
       </div>
+      ${renderSubjectIndex(page)}
       ${related}
       ${faqBlock}
     </main>
     ${renderFooter()}
+    ${renderAnalytics(page)}
   </body>
 </html>
 `;
@@ -784,7 +1045,7 @@ async function writeRobots() {
 async function writeSitemap() {
   const urls = sitemapEntries.map((entry) => `  <url>
     <loc>${pageUrl(entry.path)}</loc>
-    <lastmod>${LASTMOD}</lastmod>
+    <lastmod>${entry.lastmod}</lastmod>
     <changefreq>${entry.changefreq}</changefreq>
     <priority>${entry.priority}</priority>
   </url>`).join("\n");

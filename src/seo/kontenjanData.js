@@ -20,6 +20,16 @@
 
 export const KONTENJAN_DONEM_LABEL = "2026-TUS 1. Dönem (Mart 2026)";
 
+// SEO title/description'da kullanılan kısa yıl etiketi. Tam dönem etiketi
+// (KONTENJAN_DONEM_LABEL) title'ı 78 karaktere çıkarıp SERP'te kestiriyordu;
+// yıl başlıkta, tam dönem H1 ve sayfa içinde kalır.
+export const KONTENJAN_YIL = "2026";
+
+// Bu veri setinin son güncellenme tarihi (YYYY-AA-GG). sitemap.xml'de bu
+// sayfanın <lastmod>'u olarak kullanılır — yeni dönem verisi eklendiğinde
+// KONTENJAN_DATA ile BİRLİKTE güncellenmeli, yoksa Google yeniden taramaz.
+export const KONTENJAN_LASTMOD = "2026-08-13";
+
 export const KONTENJAN_DATA = [
   { dal: "Acil Tıp", kontenjan: 583, tabanPuan: 45.02, yerlesen: 439, puanTuru: "K" },
   { dal: "Adli Tıp", kontenjan: 43, tabanPuan: 54.45, yerlesen: 40, puanTuru: "K" },
@@ -46,7 +56,11 @@ export const KONTENJAN_DATA = [
   { dal: "Nöroloji", kontenjan: 298, tabanPuan: 45.47, yerlesen: 258, puanTuru: "K" },
   { dal: "Nükleer Tıp", kontenjan: 47, tabanPuan: 53.86, yerlesen: 44, puanTuru: "K" },
   { dal: "Ortopedi ve Travmatoloji", kontenjan: 287, tabanPuan: 46.57, yerlesen: 274, puanTuru: "K" },
-  { dal: "Plastik, Rekonstrüktif ve Estetik Cerrahi", kontenjan: 209, tabanPuan: 61.78, yerlesen: 210, puanTuru: "K" },
+  // yerlesen 210 → 209 (13 Ağu 2026): kontenjanından fazla yerleşme kaydı
+  // vardı; tek bir yerleştirmede bu mümkün değil. kontenjan ÖSYM'nin önceden
+  // ilan ettiği kadro sayısı olduğu için yerleşen kadroya indirildi — dal artık
+  // tam dolu (209/209).
+  { dal: "Plastik, Rekonstrüktif ve Estetik Cerrahi", kontenjan: 209, tabanPuan: 61.78, yerlesen: 209, puanTuru: "K" },
   { dal: "Radyasyon Onkolojisi", kontenjan: 58, tabanPuan: 64.86, yerlesen: 55, puanTuru: "K" },
   { dal: "Radyoloji", kontenjan: 366, tabanPuan: 45.48, yerlesen: 352, puanTuru: "K" },
   { dal: "Ruh Sağlığı ve Hastalıkları", kontenjan: 229, tabanPuan: 55.95, yerlesen: 226, puanTuru: "K" },
@@ -68,3 +82,40 @@ export const KONTENJAN_DATA = [
 export const KONTENJAN_DAL_COUNT = KONTENJAN_DATA.length;
 export const KONTENJAN_TOPLAM = KONTENJAN_DATA.reduce((sum, r) => sum + r.kontenjan, 0);
 export const KONTENJAN_TOPLAM_YERLESEN = KONTENJAN_DATA.reduce((sum, r) => sum + r.yerlesen, 0);
+
+// Kontenjan özeti — yukarıdaki tablodan TÜRETİLİR, elle güncellenmez.
+//
+// Neden: sayfa "tus taban puanları" sorgusunda iyi (%3,8 CTR) ama kendi adını
+// taşıyan "tus kontenjanları" sorgusunda kötüydü (%0,9 · 1.907 gösterim) —
+// içeriğin ağırlığı taban puandaydı, kontenjanın kendisi hakkında sayfada
+// neredeyse hiç bilgi yoktu. Aşağıdaki türetilmiş sayılar o boşluğu doldurur.
+// Boş kalan kadro DAL BAZINDA ve negatife düşmeden toplanır; global çıkarma
+// (toplamKontenjan − toplamYerlesen) KULLANILMAZ.
+//
+// Neden koruma duruyor: veride bir dal kontenjanından fazla yerleşme ile
+// girilmişti (Plastik Cerrahi 210/209) ve global çıkarma bu fazlalığı başka
+// dalların boş kadrosundan düşerek toplamı olduğundan az gösteriyordu. O satır
+// düzeltildi, ama aynı hata yeni dönem verisi girilirken tekrar edebilir —
+// max(...,0) bu durumda toplamı sessizce bozulmaktan korur.
+const bosKalan = (r) => Math.max(r.kontenjan - r.yerlesen, 0);
+
+export const KONTENJAN_OZET = {
+  toplamKontenjan: KONTENJAN_TOPLAM,
+  toplamYerlesen: KONTENJAN_TOPLAM_YERLESEN,
+  bosKalanKontenjan: KONTENJAN_DATA.reduce((sum, r) => sum + bosKalan(r), 0),
+  dolulukYuzde: Math.round((100 * KONTENJAN_TOPLAM_YERLESEN) / KONTENJAN_TOPLAM),
+  dolmayanDalSayisi: KONTENJAN_DATA.filter((r) => r.yerlesen < r.kontenjan).length,
+  // DİKKAT: "kontenjanı dolmayan" ile "taban puanı oluşmayan" AYNI ŞEY DEĞİL.
+  // Kontenjanı dolmayan 36 dalın 35'inde taban puan yine oluşmuştur (ör. Acil
+  // Tıp 439/583, taban 45.02). Taban puan yalnızca hiç yerleşme olmayan dalda
+  // oluşmaz. Metinlerde bu ikisini birbirinin yerine kullanma.
+  tabanPuaniOlusmayanDalSayisi: KONTENJAN_DATA.filter((r) => r.tabanPuan == null).length,
+  enCokKontenjan: KONTENJAN_DATA.slice()
+    .sort((a, b) => b.kontenjan - a.kontenjan)
+    .slice(0, 5)
+    .map((r) => ({ dal: r.dal, kontenjan: r.kontenjan, yerlesen: r.yerlesen })),
+  enCokBosKalan: KONTENJAN_DATA.slice()
+    .sort((a, b) => bosKalan(b) - bosKalan(a))
+    .slice(0, 5)
+    .map((r) => ({ dal: r.dal, bos: bosKalan(r), kontenjan: r.kontenjan })),
+};
