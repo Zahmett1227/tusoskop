@@ -11,13 +11,20 @@ import {
   KONTENJAN_DAL_COUNT,
   KONTENJAN_TOPLAM,
   KONTENJAN_DONEM_LABEL,
+  KONTENJAN_LASTMOD,
+  KONTENJAN_YIL,
 } from "./kontenjanData.js";
 
 export const SITE_URL = "https://www.tusoskop.com";
 export const BRAND_NAME = "Tusoskop";
 export const APP_STORE_URL = "https://apps.apple.com/tr/app/tusoskop/id6776331691?l=tr";
 export const OG_IMAGE = `${SITE_URL}/tusoskop-mark.png`;
-export const LASTMOD = "2026-06-24";
+
+// sitemap.xml <lastmod> varsayılanı (YYYY-AA-GG). İçerik/şablon değişikliği
+// yapıldığında bump edilir. Verisi bağımsız değişen sayfalar (kontenjan gibi)
+// sitemapEntries içinde kendi lastmod'unu geçer — böylece tek bir sayfanın
+// verisi güncellendiğinde tüm site "değişti" sinyali vermez.
+export const LASTMOD = "2026-08-13";
 
 // Pazarlama etiketleri — soru bankasından otomatik türetilir, asla abartmaz.
 export const QUESTION_COUNT_LABEL = questionCountLabel(); // örn. "10.000+"
@@ -44,6 +51,13 @@ export const MAIN_NAV_LINKS = [
   { name: "Hakkımızda", path: "/hakkimizda" },
   { name: "Sık Sorulan Sorular", path: "/tusoskop-sss" },
 ];
+
+// Kontenjan tablosundan mini denemeye köprü. Organik trafiğin %80'inden
+// fazlası kontenjan sayfasına iniyor; oradan funnel'a geçen kullanıcıyı
+// reklam trafiğinden ayırt edebilmek için sabit attribution parametreleri.
+// (campaign_code yalnızca attribution içindir — kampanyayı slug belirler.)
+export const KONTENJAN_CTA_QUIZ_URL =
+  "/coz/mini-tus?campaign_code=seo_kontenjan&utm_source=seo&utm_medium=organic&utm_campaign=kontenjan_tablosu";
 
 export function buildSiteNavigationNodes() {
   return MAIN_NAV_LINKS.map((link, index) => ({
@@ -384,9 +398,12 @@ const contentSeoPages = [
     tool: "kontenjan",
     kontenjanData: KONTENJAN_DATA,
     kontenjanDonem: KONTENJAN_DONEM_LABEL,
-    title: `TUS Kontenjan Tablosu ${KONTENJAN_DONEM_LABEL} — Taban Puanlar | Tusoskop`,
+    // Title 60 karakterin altında tutulur: eski sürüm tam dönem etiketiyle
+    // 78 karakterdi ve Google SERP'te "…2026-TUS 1. D…" diye kesiyordu.
+    // Tam dönem bilgisi H1'de ve tablo üstündeki meta satırında duruyor.
+    title: `TUS Kontenjan Tablosu ${KONTENJAN_YIL} — Taban Puanlar | Tusoskop`,
     description:
-      `${KONTENJAN_DONEM_LABEL} TUS kontenjan tablosu: ${KONTENJAN_DAL_COUNT} uzmanlık dalı için kontenjan, taban puan ve yerleşen sayısı. Dala göre ara, kontenjana veya taban puana göre sırala.`,
+      `${KONTENJAN_DAL_COUNT} uzmanlık dalı için TUS kontenjan, taban puan ve yerleşen sayısı — ${KONTENJAN_DONEM_LABEL} verileri. Dala göre ara, taban puana göre sırala.`,
     h1: `TUS Kontenjan Tablosu — ${KONTENJAN_DONEM_LABEL}`,
     intro:
       `${KONTENJAN_DONEM_LABEL} yerleştirme sonuçlarına göre ${KONTENJAN_DAL_COUNT} uzmanlık dalının kontenjan, taban puan ve yerleşen aday sayısını aşağıda bulabilirsin. Dal adına göre arayabilir, kontenjan veya taban puana göre sıralayabilirsin.`,
@@ -924,19 +941,29 @@ export const legalStaticPages = [
   },
 ];
 
+// Sayfa bazlı <lastmod> — verisi bağımsız güncellenen sayfalar kendi tarihini
+// taşır. Google, lastmod'u güvenilir bulmazsa (her sayfada aynı/sabit tarih)
+// tamamen yok sayar; kontenjan verisi güncellendiğinde yeniden taranması için
+// bu ayrım şart.
+const PAGE_LASTMOD = {
+  "tus-kontenjan-tablosu": KONTENJAN_LASTMOD,
+};
+
 export const sitemapEntries = [
-  { path: "/", changefreq: "weekly", priority: "1.0" },
+  { path: "/", changefreq: "weekly", priority: "1.0", lastmod: LASTMOD },
   ...seoPages.map((page) => ({
     path: `/${page.slug}`,
     changefreq: page.slug === "tusoskop-sss" ? "monthly" : "weekly",
     priority: ["tusoskop-nedir", "tus-soru-cozme-uygulamasi", "tus-hazirlik-platformu"].includes(page.slug)
       ? "0.9"
       : "0.8",
+    lastmod: PAGE_LASTMOD[page.slug] ?? LASTMOD,
   })),
   ...legalStaticPages.map((page) => ({
     path: `/${page.slug}`,
     changefreq: "yearly",
     priority: "0.3",
+    lastmod: PAGE_LASTMOD[page.slug] ?? LASTMOD,
   })),
 ];
 

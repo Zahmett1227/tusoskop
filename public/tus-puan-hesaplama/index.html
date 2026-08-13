@@ -158,7 +158,14 @@
   .reverse-out small{display:block;font-size:12px;font-weight:700;color:#94a3b8}
   .reverse-out b{display:block;margin-top:2px;font-size:20px;font-weight:900;color:#fff}
   .reverse-warn{margin-top:6px;font-size:11px;font-weight:700;color:#fbbf24}
-  @media (max-width:560px){.calc-grid{grid-template-columns:1fr}.calc-out{grid-template-columns:1fr}.reverse-out-grid{grid-template-columns:1fr}}
+  .next-step{margin-top:28px;border:1px solid rgba(110,231,183,.3);background:linear-gradient(180deg,rgba(110,231,183,.09),rgba(15,23,42,.45));border-radius:22px;padding:24px}
+  .next-step h2{margin-bottom:10px}
+  .next-step p{max-width:620px;font-size:15px}
+  .next-step-links{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
+  .next-step-cta{display:inline-flex;align-items:center;border-radius:16px;background:#6ee7b7;color:#020617;font-weight:900;padding:12px 18px;font-size:15px}
+  .next-step-alt{display:inline-flex;align-items:center;border-radius:16px;border:1px solid #334155;background:rgba(2,6,23,.5);color:#e2e8f0;font-weight:800;padding:12px 18px;font-size:15px}
+  .next-step-alt:hover{border-color:#6ee7b7}
+  @media (max-width:560px){.calc-grid{grid-template-columns:1fr}.calc-out{grid-template-columns:1fr}.reverse-out-grid{grid-template-columns:1fr}.next-step-links{flex-direction:column}.next-step-cta,.next-step-alt{justify-content:center}}
   @media (max-width:720px){.nav{display:none}main{padding-top:38px}.topbar-inner{padding-inline:14px}}
 </style>
   </head>
@@ -489,5 +496,6 @@
         </nav>
       </div>
     </footer>
+    
   </body>
 </html>

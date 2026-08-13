@@ -19,6 +19,7 @@ import {
 import {
   APP_STORE_URL,
   BRAND_NAME,
+  KONTENJAN_CTA_QUIZ_URL,
   OG_IMAGE,
   SITE_URL,
   buildSiteNavigationNodes,
@@ -995,7 +996,49 @@ function KontenjanTable({ data, donem }) {
           </tbody>
         </table>
       </div>
+      <KontenjanNextStep />
     </section>
+  );
+}
+
+/**
+ * Kontenjan tablosu → sıradaki adım köprüsü. Statik prerender'daki
+ * `renderKontenjanCta()` ile BİREBİR aynı metni taşımalı (iki katman senkron).
+ *
+ * Neden: organik trafiğin %80'inden fazlası bu sayfaya iniyor ama sayfa
+ * kullanıcıyı bilgiyle baş başa bırakıp orada bitiyordu. Taban puana bakan
+ * kişinin doğal sonraki sorusu "benim puanım ne olur?" — o yüzden köprü
+ * puan hesaplama aracına ve mini denemeye gider.
+ */
+function KontenjanNextStep() {
+  return (
+    <aside
+      aria-label="Sıradaki adım"
+      className="mt-7 rounded-[22px] border border-emerald-300/30 bg-gradient-to-b from-emerald-300/10 to-slate-900/45 p-6"
+    >
+      <p className="text-xs font-black uppercase tracking-[0.24em] text-emerald-300">Sıradaki adım</p>
+      <h2 className="mt-2.5 text-xl font-black tracking-tight text-white sm:text-2xl">
+        Bu taban puanlara kaç netle ulaşılır?
+      </h2>
+      <p className="mt-2.5 max-w-[620px] text-[15px] text-slate-300">
+        Tablodaki taban puanlar netin karşılığıdır. Kendi tahmini T ve K puanını hesapla, hedeflediğin dalın taban
+        puanıyla karşılaştır — ya da 20 soruluk Mini TUS ile şu an nerede olduğunu gör.
+      </p>
+      <div className="mt-4 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap">
+        <a
+          href="/tus-puan-hesaplama"
+          className="inline-flex items-center justify-center rounded-2xl bg-emerald-300 px-[18px] py-3 text-[15px] font-black text-slate-950"
+        >
+          TUS Puan Hesaplama →
+        </a>
+        <a
+          href={KONTENJAN_CTA_QUIZ_URL}
+          className="inline-flex items-center justify-center rounded-2xl border border-slate-700 bg-slate-950/50 px-[18px] py-3 text-[15px] font-extrabold text-slate-200 hover:border-emerald-300"
+        >
+          20 soruluk Mini TUS çöz →
+        </a>
+      </div>
+    </aside>
   );
 }
 

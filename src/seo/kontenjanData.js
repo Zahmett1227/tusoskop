@@ -20,6 +20,16 @@
 
 export const KONTENJAN_DONEM_LABEL = "2026-TUS 1. Dönem (Mart 2026)";
 
+// SEO title/description'da kullanılan kısa yıl etiketi. Tam dönem etiketi
+// (KONTENJAN_DONEM_LABEL) title'ı 78 karaktere çıkarıp SERP'te kestiriyordu;
+// yıl başlıkta, tam dönem H1 ve sayfa içinde kalır.
+export const KONTENJAN_YIL = "2026";
+
+// Bu veri setinin son güncellenme tarihi (YYYY-AA-GG). sitemap.xml'de bu
+// sayfanın <lastmod>'u olarak kullanılır — yeni dönem verisi eklendiğinde
+// KONTENJAN_DATA ile BİRLİKTE güncellenmeli, yoksa Google yeniden taramaz.
+export const KONTENJAN_LASTMOD = "2026-08-13";
+
 export const KONTENJAN_DATA = [
   { dal: "Acil Tıp", kontenjan: 583, tabanPuan: 45.02, yerlesen: 439, puanTuru: "K" },
   { dal: "Adli Tıp", kontenjan: 43, tabanPuan: 54.45, yerlesen: 40, puanTuru: "K" },

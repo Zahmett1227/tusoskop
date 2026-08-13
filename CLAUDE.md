@@ -216,6 +216,23 @@ TUS özelliklerini agresif pazarlayan SEO altyapısı. Amaç: özellikleri rakam
 - **FAQ JSON-LD ↔ sayfa hizalaması (önemli):** Şemaya konan FAQ, sayfada görünen FAQ ile **birebir aynı** olmalı (Google kuralı). `SeoLandingPage` ve üretici `slice(0,6)` ile görünen seti hem render'a hem şemaya verir; FAQ boşsa (legal sayfalar) FAQPage düğümü hiç eklenmez.
 - Footer'da branş linkleri kompakt: kısa ders adları (Anatomi, Biyokimya…), `flex-wrap` tek satır.
 
+### Statik SEO sayfalarında ölçüm (Ağu 2026)
+
+Statik sayfalar React ağacının **tamamen dışında** üretiliyor; bu yüzden `src/lib/metaPixel.js` / `src/lib/clarity.js` oralara hiç ulaşmıyordu ve 26 sayfa aylarca ölçümsüz kaldı (organik trafik ölçülemiyor, retarget edilemiyordu). Çözüm: `generate-seo-pages.mjs` içindeki `renderAnalytics(page)`.
+
+- **Env kaynağı aynı**: `VITE_META_PIXEL_ID` + `VITE_CLARITY_PROJECT_ID`. Bu script Vite'tan **önce** çalıştığı için `import.meta.env` yok → `process.env` + `.env` fallback (`loadEnvFallback`) kullanılır. Vercel'de env'ler zaten gerçek process değişkeni.
+- **ID yoksa hiçbir şey basılmaz** (uygulama kırılmaz) ama build log'una `[seo] ... BASILMADI` uyarısı düşer. Sessiz başarısızlık tam da düzeltilen hataydı — uyarıyı kaldırma.
+- ID'ler inline `<script>` içine gömüldüğü için `safeId()` ile biçim doğrulaması yapılır (injection önlemi).
+- CWV bozulmasın diye `requestIdleCallback` (fallback: 1200ms setTimeout) sonrası yüklenir.
+- SEO'ya özel event'ler: `SeoLoginClick` (`/giris`), `SeoQuizClick` (`/coz/…`), `AppStoreClick`. App Store linki dış origin'e hard-nav yaptığı için funnel'daki kanıtlanmış `preventDefault` + ~250ms gecikme deseni burada da uygulanır. Clarity'de `page_type=seo_static` + `page_slug` tag'i ile segmentlenir.
+- **`public/**/index.html` git'te takip ediliyor** → repoya **env'siz** (analytics'siz) üretilmiş hâli commit edilir; gerçek ID'ler Vercel build'inde girer. Lokalde env'li üretip commit etme.
+
+### Kontenjan → funnel köprüsü ve sitemap lastmod
+
+- Organik trafiğin **%80'inden fazlası** `/tus-kontenjan-tablosu`'na iniyor (Ağu 2026 GSC: 28 günde 516 tıklama; toplam ~622). Sayfa kullanıcıyı bilgiyle baş başa bırakıp bitiyordu → `renderKontenjanCta()` (statik) + `KontenjanNextStep` (React) köprüsü eklendi: **TUS Puan Hesaplama** + **20 soruluk Mini TUS**. İkisi **birebir aynı metni** taşımalı. Hedef URL tek kaynak: `seoContent.js > KONTENJAN_CTA_QUIZ_URL` (`campaign_code=seo_kontenjan`, `utm_medium=organic` ile reklam trafiğinden ayrışır).
+- **Title kuralı**: kontenjan title'ı tam dönem etiketiyle 78 karaktere çıkıyor ve SERP'te kesiliyordu. Artık `KONTENJAN_YIL` ("2026") kullanılır; tam dönem H1'de ve tablo meta satırında kalır. Yeni dönemde `KONTENJAN_YIL`'ı da güncelle.
+- **sitemap `lastmod` artık sayfa bazlı**: `sitemapEntries` her girişe `lastmod` koyar; `PAGE_LASTMOD` haritası kontenjan sayfasını `KONTENJAN_LASTMOD` ile ayırır. Google, tüm sayfalarda sabit/aynı tarih görürse `lastmod`'u tamamen yok sayar. **Kontenjan verisi güncellenince `KONTENJAN_LASTMOD` de bump edilmeli**, yoksa yeniden taranmaz.
+
 ### Meta (Facebook) Pixel — dönüşüm izleme (main)
 
 `src/lib/metaPixel.js` — Clarity (`src/lib/clarity.js`) ile aynı desen: pixel ID **yalnızca** `.env`'den (`VITE_META_PIXEL_ID`), `fbq` base snippet'i `initMetaPixel()` ile JS'ten yüklenir (index.html'e inline snippet **yok**). Pixel ID ya da `fbq` yoksa (ad-blocker) tüm event'ler sessizce atlanır, uygulama çökmez.

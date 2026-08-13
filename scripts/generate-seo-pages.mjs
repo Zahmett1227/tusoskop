@@ -1,9 +1,9 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import {
   APP_STORE_URL,
   BRAND_NAME,
-  LASTMOD,
+  KONTENJAN_CTA_QUIZ_URL,
   OG_IMAGE,
   SITE_URL,
   buildSiteNavigationNodes,
@@ -33,6 +33,108 @@ const TEMEL_DERSLER = SUBJECTS.filter((s) => s.type === "Temel").map((s) => s.na
 const KLINIK_DERSLER = SUBJECTS.filter((s) => s.type === "Klinik").map((s) => s.name);
 
 const publicDir = path.resolve("public");
+
+// --- Ölçüm (analytics) ----------------------------------------------------
+// Statik SEO sayfaları React ağacının tamamen dışında üretiliyor; bu yüzden
+// `src/lib/metaPixel.js` ve `src/lib/clarity.js` buraya ulaşmıyordu ve 26
+// sayfanın hiçbirinde pixel/analytics yoktu (organik trafik ölçülemiyor,
+// retarget edilemiyordu). Aşağısı o iki modülün statik sayfa karşılığı:
+// aynı env değişkenlerini okur, ID yoksa hiçbir şey basmaz.
+//
+// Vercel build ortamında env'ler gerçek process.env değişkenleridir; yerel
+// `npm run build` için .env dosyasından da okunur (bu script Vite'tan önce
+// çalıştığı için import.meta.env yok).
+async function loadEnvFallback(keys) {
+  const missing = keys.filter((key) => !process.env[key]);
+  if (!missing.length) return;
+  try {
+    const raw = await readFile(path.resolve(".env"), "utf8");
+    for (const line of raw.split("\n")) {
+      const match = /^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/.exec(line);
+      if (!match) continue;
+      const [, key, value] = match;
+      if (missing.includes(key) && !process.env[key]) {
+        process.env[key] = value.trim().replace(/^["']|["']$/g, "");
+      }
+    }
+  } catch {
+    // .env yoksa sorun değil — ID'ler tanımsız kalır, analytics basılmaz.
+  }
+}
+
+await loadEnvFallback(["VITE_META_PIXEL_ID", "VITE_CLARITY_PROJECT_ID"]);
+
+// ID'ler inline <script> içine gömüldüğü için biçim doğrulaması zorunlu:
+// beklenmeyen karakter varsa ID'yi yok sayıyoruz (script injection önlemi).
+function safeId(value, pattern) {
+  const trimmed = String(value ?? "").trim();
+  return pattern.test(trimmed) ? trimmed : "";
+}
+
+const META_PIXEL_ID = safeId(process.env.VITE_META_PIXEL_ID, /^[0-9]{6,32}$/);
+const CLARITY_PROJECT_ID = safeId(process.env.VITE_CLARITY_PROJECT_ID, /^[a-z0-9]{4,32}$/i);
+
+// Sessiz başarısızlık tam da düzeltmeye çalıştığımız hataydı (26 sayfa aylarca
+// ölçümsüz kaldı). Env eksikse build log'unda görünür olsun — repoya commit
+// edilen public/*.html env'siz üretilir, gerçek ID'ler Vercel build'inde girer.
+if (!META_PIXEL_ID) console.warn("[seo] VITE_META_PIXEL_ID yok — statik sayfalarda Meta Pixel BASILMADI.");
+if (!CLARITY_PROJECT_ID) console.warn("[seo] VITE_CLARITY_PROJECT_ID yok — statik sayfalarda Clarity BASILMADI.");
+
+/**
+ * Meta Pixel + Clarity'yi ilk paint'ten sonra yükler (CWV'yi bozmamak için
+ * `load` sonrası / requestIdleCallback ile). Ayrıca SEO sayfalarındaki üç
+ * dönüşüm sinyalini olay olarak gönderir:
+ *   SeoLoginClick  → /giris tıklaması
+ *   SeoQuizClick   → /coz mini deneme tıklaması
+ *   AppStoreClick  → App Store tıklaması (funnel'daki isimle aynı)
+ *
+ * App Store linki farklı origin'e hard-navigasyon yaptığı için pixel isteği
+ * kesiliyordu (bkz. PublicQuizFunnel'daki aynı hata); orada kanıtlanmış
+ * preventDefault + ~250ms gecikme deseni burada da uygulanır.
+ */
+function renderAnalytics(page) {
+  if (!META_PIXEL_ID && !CLARITY_PROJECT_ID) return "";
+  const pixelBoot = META_PIXEL_ID
+    ? `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${META_PIXEL_ID}');fbq('track','PageView');`
+    : "";
+  const clarityBoot = CLARITY_PROJECT_ID
+    ? `!function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)}(window,document,'clarity','script','${CLARITY_PROJECT_ID}');clarity('set','page_type','seo_static');clarity('set','page_slug','${escapeJs(page.slug)}');`
+    : "";
+  return `
+    <script>
+      (function(){
+        var SLUG='${escapeJs(page.slug)}';
+        function boot(){
+          ${pixelBoot}
+          ${clarityBoot}
+          document.addEventListener('click',function(ev){
+            var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+            if(!a)return;
+            var href=a.getAttribute('href')||'';
+            var name=null;
+            if(href.indexOf('apps.apple.com')!==-1)name='AppStoreClick';
+            else if(href.indexOf('/coz/')===0)name='SeoQuizClick';
+            else if(href==='/giris')name='SeoLoginClick';
+            if(!name)return;
+            if(typeof clarity==='function'){try{clarity('event',name);}catch(e){}}
+            if(typeof fbq!=='function')return;
+            try{fbq('trackCustom',name,{page_slug:SLUG});}catch(e){}
+            // Dış origin'e giden App Store linkinde isteğin gitmesini bekle.
+            if(name==='AppStoreClick'&&!a.target){
+              ev.preventDefault();
+              setTimeout(function(){window.location.href=a.href;},250);
+            }
+          },true);
+        }
+        if('requestIdleCallback' in window)requestIdleCallback(boot,{timeout:2500});
+        else setTimeout(boot,1200);
+      })();
+    </script>`;
+}
+
+function escapeJs(value) {
+  return String(value).replace(/[\\'"<>\r\n]/g, "");
+}
 
 function escapeHtml(value) {
   return String(value)
@@ -256,7 +358,14 @@ const css = `
   .reverse-out small{display:block;font-size:12px;font-weight:700;color:#94a3b8}
   .reverse-out b{display:block;margin-top:2px;font-size:20px;font-weight:900;color:#fff}
   .reverse-warn{margin-top:6px;font-size:11px;font-weight:700;color:#fbbf24}
-  @media (max-width:560px){.calc-grid{grid-template-columns:1fr}.calc-out{grid-template-columns:1fr}.reverse-out-grid{grid-template-columns:1fr}}
+  .next-step{margin-top:28px;border:1px solid rgba(110,231,183,.3);background:linear-gradient(180deg,rgba(110,231,183,.09),rgba(15,23,42,.45));border-radius:22px;padding:24px}
+  .next-step h2{margin-bottom:10px}
+  .next-step p{max-width:620px;font-size:15px}
+  .next-step-links{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
+  .next-step-cta{display:inline-flex;align-items:center;border-radius:16px;background:#6ee7b7;color:#020617;font-weight:900;padding:12px 18px;font-size:15px}
+  .next-step-alt{display:inline-flex;align-items:center;border-radius:16px;border:1px solid #334155;background:rgba(2,6,23,.5);color:#e2e8f0;font-weight:800;padding:12px 18px;font-size:15px}
+  .next-step-alt:hover{border-color:#6ee7b7}
+  @media (max-width:560px){.calc-grid{grid-template-columns:1fr}.calc-out{grid-template-columns:1fr}.reverse-out-grid{grid-template-columns:1fr}.next-step-links{flex-direction:column}.next-step-cta,.next-step-alt{justify-content:center}}
   @media (max-width:720px){.nav{display:none}main{padding-top:38px}.topbar-inner{padding-inline:14px}}
 `;
 
@@ -647,7 +756,29 @@ function renderKontenjanTable(data, donem) {
           search.addEventListener('input',applyFilter);
         })();
       </script>
+      ${renderKontenjanCta()}
     </section>`;
+}
+
+/**
+ * Kontenjan tablosu → sıradaki adım köprüsü. React'teki KontenjanTable'ın
+ * sonundaki blokla BİREBİR aynı metni taşımalı (iki katman senkron).
+ *
+ * Neden: organik trafiğin %80'inden fazlası bu sayfaya iniyor ama sayfa
+ * kullanıcıyı bilgiyle baş başa bırakıp orada bitiyordu. Taban puana bakan
+ * kişinin doğal sonraki sorusu "benim puanım ne olur?" — o yüzden köprü
+ * puan hesaplama aracına ve mini denemeye gider.
+ */
+function renderKontenjanCta() {
+  return `<aside class="next-step" aria-label="Sıradaki adım">
+        <p class="eyebrow" style="margin:0">Sıradaki adım</p>
+        <h2 style="margin-top:10px;font-size:clamp(20px,2.6vw,26px)">Bu taban puanlara kaç netle ulaşılır?</h2>
+        <p>Tablodaki taban puanlar netin karşılığıdır. Kendi tahmini T ve K puanını hesapla, hedeflediğin dalın taban puanıyla karşılaştır — ya da 20 soruluk Mini TUS ile şu an nerede olduğunu gör.</p>
+        <div class="next-step-links">
+          <a class="next-step-cta" href="/tus-puan-hesaplama">TUS Puan Hesaplama &rarr;</a>
+          <a class="next-step-alt" href="${escapeHtml(KONTENJAN_CTA_QUIZ_URL)}">20 soruluk Mini TUS &ccedil;&ouml;z &rarr;</a>
+        </div>
+      </aside>`;
 }
 
 // /fiyatlandirma kıyas bloğu — React'teki PricingComparison'ın statik eşi
@@ -753,6 +884,7 @@ function renderPage(page, isLegal = false) {
       ${faqBlock}
     </main>
     ${renderFooter()}
+    ${renderAnalytics(page)}
   </body>
 </html>
 `;
@@ -784,7 +916,7 @@ async function writeRobots() {
 async function writeSitemap() {
   const urls = sitemapEntries.map((entry) => `  <url>
     <loc>${pageUrl(entry.path)}</loc>
-    <lastmod>${LASTMOD}</lastmod>
+    <lastmod>${entry.lastmod}</lastmod>
     <changefreq>${entry.changefreq}</changefreq>
     <priority>${entry.priority}</priority>
   </url>`).join("\n");
