@@ -15,6 +15,7 @@ import {
   applyScoreDeduction,
   netForTargetPuan,
   puanBandi,
+  buildNetScoreTable,
 } from "../../seo/tusScoring";
 import {
   APP_STORE_URL,
@@ -33,7 +34,7 @@ import {
   LESSON_COUNT,
   subjectIndexLinks,
 } from "../../seo/seoContent";
-import { KONTENJAN_DATA, KONTENJAN_DONEM_LABEL } from "../../seo/kontenjanData";
+import { KONTENJAN_DATA, KONTENJAN_DONEM_LABEL, KONTENJAN_OZET } from "../../seo/kontenjanData";
 import { SUBJECTS } from "../../data/subjects";
 import {
   EYLUL_PAKETI,
@@ -43,6 +44,10 @@ import {
 import { isInAppBrowser } from "../../utils/device";
 
 const OPTION_KEYS = ["A", "B", "C", "D", "E"];
+// Sayfada gösterilen (ve dolayısıyla FAQPage şemasına giren) soru sayısı.
+// Statik prerender'daki (generate-seo-pages.mjs) aynı isimli sabitle senkron
+// tutulmalı: şemaya konan FAQ, sayfada görünenle birebir aynı olmak zorunda.
+const FAQ_VISIBLE_LIMIT = 8;
 const TEMEL_DERSLER = SUBJECTS.filter((s) => s.type === "Temel").map((s) => s.name);
 const KLINIK_DERSLER = SUBJECTS.filter((s) => s.type === "Klinik").map((s) => s.name);
 
@@ -1002,6 +1007,107 @@ function KontenjanTable({ data, donem }) {
 }
 
 /**
+ * "Kaç net kaç puan?" referans tablosu (/tus-puan-hesaplama). Satırlar
+ * `buildNetScoreTable()` ile üretildiği için hesaplayıcıyla aynı formülü
+ * kullanır — statik prerender'daki `renderNetScoreTable()` ile birebir aynı.
+ *
+ * Uyarı satırı ZORUNLU: tablo iki bölümde de eşit net yapan dengeli bir aday
+ * varsayar; dağılım değişince puan değişir.
+ */
+function NetScoreTable() {
+  const rows = useMemo(() => buildNetScoreTable(), []);
+  return (
+    <section aria-label="Net puan karşılığı tablosu" className="mt-9">
+      <h2 className="text-2xl font-black tracking-tight">Kaç net kaç puan getirir?</h2>
+      <p className="mt-2 text-sm leading-relaxed text-slate-400">
+        Aşağıdaki tablo, <b className="text-slate-300">her iki bölümde de aynı neti</b> yapan dengeli bir aday içindir.
+        Netlerin Temel ve Klinik arasındaki dağılımı değiştiğinde T ve K puanı da değişir — kendi dağılımın için
+        yukarıdaki hesaplayıcıyı kullan. Değerler tahminidir.
+      </p>
+      <div className="mt-5 overflow-x-auto rounded-3xl border border-slate-800">
+        <table className="w-full border-collapse text-sm">
+          <thead>
+            <tr className="bg-slate-900/70 text-left text-[11px] font-black uppercase tracking-wider text-slate-400">
+              <th scope="col" className="px-4 py-3">Bölüm başına net</th>
+              <th scope="col" className="px-4 py-3">Toplam net</th>
+              <th scope="col" className="px-4 py-3">Tahmini T Puanı</th>
+              <th scope="col" className="px-4 py-3">Tahmini K Puanı</th>
+              <th scope="col" className="px-4 py-3">Baraj ({TUS_BARAJ_PUANI})</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.sectionNet} className="border-t border-slate-800">
+                <td className="px-4 py-2.5 font-bold text-slate-200">{r.sectionNet}</td>
+                <td className="px-4 py-2.5 font-semibold text-slate-300">{r.toplamNet}</td>
+                <td className="px-4 py-2.5 font-black text-emerald-300">{r.tPuani}</td>
+                <td className="px-4 py-2.5 font-black text-emerald-300">{r.kPuani}</td>
+                <td className="px-4 py-2.5 font-semibold text-slate-300">{r.barajDurumu}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
+
+/**
+ * Kontenjan özeti (/tus-kontenjan-tablosu). Sayfa "tus taban puanları"nda iyi
+ * sıralanırken kendi adını taşıyan "tus kontenjanları" sorgusunda kötüydü;
+ * içerik ağırlığı taban puandaydı. Bu blok kontenjanın kendisini anlatır ve
+ * tüm sayılar KONTENJAN_DATA'dan türetilir (elle güncellenmez).
+ * Statik prerender'daki `renderKontenjanOzet()` ile birebir aynı.
+ */
+function KontenjanOzet() {
+  const o = KONTENJAN_OZET;
+  const tr = (n) => n.toLocaleString("tr-TR");
+  // "Toplam kontenjan" bilerek yok: sayfa başındaki stats kartlarında zaten var,
+  // burada tekrar etmek aynı sayıyı iki kez göstermek olurdu.
+  const cards = [
+    [tr(o.toplamYerlesen), "Yerleşen aday"],
+    [`%${o.dolulukYuzde}`, "Doluluk oranı"],
+    [tr(o.bosKalanKontenjan), "Boş kalan kontenjan"],
+  ];
+  const columns = [
+    ["En çok kontenjan ayrılan dallar", o.enCokKontenjan.map((r) => [r.dal, tr(r.kontenjan)])],
+    ["En çok boş kalan kontenjanlar", o.enCokBosKalan.map((r) => [r.dal, tr(r.bos)])],
+  ];
+  return (
+    <section aria-label="Kontenjan özeti" className="mt-8">
+      <h2 className="text-2xl font-black tracking-tight">{KONTENJAN_DONEM_LABEL} kontenjan özeti</h2>
+      <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+        {cards.map(([value, label]) => (
+          <div key={label} className="rounded-2xl border border-slate-800 bg-slate-900/55 px-3 py-4 text-center">
+            <p className="text-2xl font-black tracking-tight text-emerald-300">{value}</p>
+            <p className="mt-1 text-xs font-bold text-slate-400">{label}</p>
+          </div>
+        ))}
+      </div>
+      <div className="mt-5 grid gap-3.5 sm:grid-cols-2">
+        {columns.map(([title, items]) => (
+          <div key={title} className="rounded-3xl border border-slate-800 bg-slate-900/55 p-4">
+            <p className="text-xs font-black uppercase tracking-wider text-slate-500">{title}</p>
+            <ul className="mt-2.5 grid gap-2">
+              {items.map(([dal, value]) => (
+                <li key={dal} className="flex items-baseline justify-between gap-3 text-sm text-slate-300">
+                  <span>{dal}</span>
+                  <b className="shrink-0 font-black text-emerald-300">{value}</b>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <p className="mt-3.5 text-sm text-slate-400">
+        {KONTENJAN_DATA.length} dalın <b className="text-emerald-300">{o.dolmayanDalSayisi}</b> tanesi kontenjanını
+        dolduramadı; kontenjanı dolmayan dallarda taban puan oluşmaz (tabloda &ldquo;&mdash;&rdquo;).
+      </p>
+    </section>
+  );
+}
+
+/**
  * Gövde içi branş indeksi — yalnızca `subjectIndexHeading` tanımlı sayfalarda
  * (puan hesaplama + kontenjan tablosu) çıkar. Statik prerender'daki
  * `renderSubjectIndex()` ile aynı metni taşımalı.
@@ -1195,7 +1301,7 @@ function PricingComparison() {
 export function SeoLandingPage({ page }) {
   const faq = useMemo(() => page.faq ?? commonFaq, [page.faq]);
   // JSON-LD FAQ şeması, sayfada görünen soru setiyle birebir aynı olmalı.
-  const visibleFaq = useMemo(() => faq.slice(0, 6), [faq]);
+  const visibleFaq = useMemo(() => faq.slice(0, FAQ_VISIBLE_LIMIT), [faq]);
   const path = `/${page.slug}`;
   usePageMetadata({
     title: page.title,
@@ -1227,9 +1333,17 @@ export function SeoLandingPage({ page }) {
             <SampleQuestionCard sample={page.sample} subject={page.subject} />
             {page.isSubject ? <SubjectTopics subject={page.subject} topics={page.topics} /> : null}
             {page.slug === "fiyatlandirma" ? <PricingComparison /> : null}
-            {page.tool === "score" ? <TusScoreCalculator /> : null}
+            {page.tool === "score" ? (
+              <>
+                <TusScoreCalculator />
+                <NetScoreTable />
+              </>
+            ) : null}
             {page.tool === "kontenjan" ? (
-              <KontenjanTable data={page.kontenjanData} donem={page.kontenjanDonem} />
+              <>
+                <KontenjanOzet />
+                <KontenjanTable data={page.kontenjanData} donem={page.kontenjanDonem} />
+              </>
             ) : null}
             <div className="mt-10 space-y-9">
               {page.sections.map((section) => (

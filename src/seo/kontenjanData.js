@@ -78,3 +78,27 @@ export const KONTENJAN_DATA = [
 export const KONTENJAN_DAL_COUNT = KONTENJAN_DATA.length;
 export const KONTENJAN_TOPLAM = KONTENJAN_DATA.reduce((sum, r) => sum + r.kontenjan, 0);
 export const KONTENJAN_TOPLAM_YERLESEN = KONTENJAN_DATA.reduce((sum, r) => sum + r.yerlesen, 0);
+
+// Kontenjan özeti — yukarıdaki tablodan TÜRETİLİR, elle güncellenmez.
+//
+// Neden: sayfa "tus taban puanları" sorgusunda iyi (%3,8 CTR) ama kendi adını
+// taşıyan "tus kontenjanları" sorgusunda kötüydü (%0,9 · 1.907 gösterim) —
+// içeriğin ağırlığı taban puandaydı, kontenjanın kendisi hakkında sayfada
+// neredeyse hiç bilgi yoktu. Aşağıdaki türetilmiş sayılar o boşluğu doldurur.
+const bosKalan = (r) => r.kontenjan - r.yerlesen;
+
+export const KONTENJAN_OZET = {
+  toplamKontenjan: KONTENJAN_TOPLAM,
+  toplamYerlesen: KONTENJAN_TOPLAM_YERLESEN,
+  bosKalanKontenjan: KONTENJAN_TOPLAM - KONTENJAN_TOPLAM_YERLESEN,
+  dolulukYuzde: Math.round((100 * KONTENJAN_TOPLAM_YERLESEN) / KONTENJAN_TOPLAM),
+  dolmayanDalSayisi: KONTENJAN_DATA.filter((r) => r.yerlesen < r.kontenjan).length,
+  enCokKontenjan: KONTENJAN_DATA.slice()
+    .sort((a, b) => b.kontenjan - a.kontenjan)
+    .slice(0, 5)
+    .map((r) => ({ dal: r.dal, kontenjan: r.kontenjan, yerlesen: r.yerlesen })),
+  enCokBosKalan: KONTENJAN_DATA.slice()
+    .sort((a, b) => bosKalan(b) - bosKalan(a))
+    .slice(0, 5)
+    .map((r) => ({ dal: r.dal, bos: bosKalan(r), kontenjan: r.kontenjan })),
+};

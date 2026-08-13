@@ -18,6 +18,7 @@ import {
 import {
   TUS_SECTION_QUESTIONS,
   TUS_DEDUCTION_RATE,
+  buildNetScoreTable,
   TUS_BARAJ_PUANI,
   TEMEL_ORTALAMA,
   TEMEL_STDDEV,
@@ -26,13 +27,22 @@ import {
   T_PUANI_AGIRLIK,
   K_PUANI_AGIRLIK,
 } from "../src/seo/tusScoring.js";
-import { KONTENJAN_DATA } from "../src/seo/kontenjanData.js";
+import {
+  KONTENJAN_DAL_COUNT,
+  KONTENJAN_DATA,
+  KONTENJAN_DONEM_LABEL,
+  KONTENJAN_OZET,
+} from "../src/seo/kontenjanData.js";
 import { SUBJECTS } from "../src/data/subjects.js";
 
 const TEMEL_DERSLER = SUBJECTS.filter((s) => s.type === "Temel").map((s) => s.name);
 const KLINIK_DERSLER = SUBJECTS.filter((s) => s.type === "Klinik").map((s) => s.name);
 
 const publicDir = path.resolve("public");
+
+// Sayfada gösterilen (ve dolayısıyla FAQPage şemasına giren) soru sayısı.
+// React tarafındaki aynı isimli sabitle senkron tutulmalı.
+const FAQ_VISIBLE_LIMIT = 8;
 
 // --- Ölçüm (analytics) ----------------------------------------------------
 // Statik SEO sayfaları React ağacının tamamen dışında üretiliyor; bu yüzden
@@ -360,6 +370,12 @@ const css = `
   .reverse-out small{display:block;font-size:12px;font-weight:700;color:#94a3b8}
   .reverse-out b{display:block;margin-top:2px;font-size:20px;font-weight:900;color:#fff}
   .reverse-warn{margin-top:6px;font-size:11px;font-weight:700;color:#fbbf24}
+  .ozet-grid{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .ozet-col{border:1px solid #1e293b;background:rgba(15,23,42,.55);border-radius:18px;padding:16px}
+  .ozet-list{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}
+  .ozet-list li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:14px;color:#cbd5e1}
+  .ozet-list b{font-weight:900;color:#6ee7b7;flex:0 0 auto}
+  @media (max-width:560px){.ozet-grid{grid-template-columns:1fr}}
   .next-step{margin-top:28px;border:1px solid rgba(110,231,183,.3);background:linear-gradient(180deg,rgba(110,231,183,.09),rgba(15,23,42,.45));border-radius:22px;padding:24px}
   .next-step h2{margin-bottom:10px}
   .next-step p{max-width:620px;font-size:15px}
@@ -812,6 +828,81 @@ function renderPricingComparison() {
 }
 
 /**
+ * "Kaç net kaç puan?" referans tablosu (/tus-puan-hesaplama). Satırlar
+ * `buildNetScoreTable()` ile üretildiği için hesaplayıcıyla aynı formülü
+ * kullanır — React'teki `NetScoreTable` ile birebir aynı içerik.
+ *
+ * Uyarı satırı ZORUNLU: tablo iki bölümde de eşit net yapan dengeli bir aday
+ * varsayar; dağılım değişince puan değişir.
+ */
+function renderNetScoreTable() {
+  const rows = buildNetScoreTable()
+    .map(
+      (r) =>
+        `<tr><td>${r.sectionNet}</td><td>${r.toplamNet}</td><td class="puan">${r.tPuani}</td><td class="puan">${r.kPuani}</td><td>${escapeHtml(r.barajDurumu)}</td></tr>`
+    )
+    .join("");
+  return `<section aria-label="Net puan karşılığı tablosu" style="margin-top:34px">
+        <h2>Kaç net kaç puan getirir?</h2>
+        <p class="calc-note" style="margin-top:8px">Aşağıdaki tablo, <b>her iki bölümde de aynı neti</b> yapan dengeli bir aday içindir. Netlerin Temel ve Klinik arasındaki dağılımı değiştiğinde T ve K puanı da değişir — kendi dağılımın için yukarıdaki hesaplayıcıyı kullan. Değerler tahminidir.</p>
+        <div class="ref-table">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Bölüm başına net</th>
+                <th scope="col">Toplam net</th>
+                <th scope="col">Tahmini T Puanı</th>
+                <th scope="col">Tahmini K Puanı</th>
+                <th scope="col">Baraj (${TUS_BARAJ_PUANI})</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+      </section>`;
+}
+
+/**
+ * Kontenjan özeti (/tus-kontenjan-tablosu). Sayfa "tus taban puanları"nda iyi
+ * sıralanırken kendi adını taşıyan "tus kontenjanları" sorgusunda kötüydü;
+ * içerik ağırlığı taban puandaydı. Bu blok kontenjanın kendisini anlatır ve
+ * tüm sayılar KONTENJAN_DATA'dan türetilir (elle güncellenmez).
+ * React'teki `KontenjanOzet` ile birebir aynı içerik.
+ */
+function renderKontenjanOzet() {
+  const o = KONTENJAN_OZET;
+  const tr = (n) => n.toLocaleString("tr-TR");
+  // "Toplam kontenjan" bilerek yok: sayfa başındaki stats kartlarında zaten var,
+  // burada tekrar etmek aynı sayıyı iki kez göstermek olurdu.
+  const cards = [
+    [tr(o.toplamYerlesen), "Yerleşen aday"],
+    [`%${o.dolulukYuzde}`, "Doluluk oranı"],
+    [tr(o.bosKalanKontenjan), "Boş kalan kontenjan"],
+  ];
+  return `<section aria-label="Kontenjan özeti" style="margin-top:30px">
+        <h2>${escapeHtml(KONTENJAN_DONEM_LABEL)} kontenjan özeti</h2>
+        <div class="stats" style="margin-top:16px">
+          ${cards.map(([value, label]) => `<div class="stat"><b>${escapeHtml(value)}</b><span>${escapeHtml(label)}</span></div>`).join("")}
+        </div>
+        <div class="ozet-grid">
+          <div class="ozet-col">
+            <p class="footer-tags-title">En çok kontenjan ayrılan dallar</p>
+            <ul class="ozet-list">
+              ${o.enCokKontenjan.map((r) => `<li><span>${escapeHtml(r.dal)}</span><b>${tr(r.kontenjan)}</b></li>`).join("")}
+            </ul>
+          </div>
+          <div class="ozet-col">
+            <p class="footer-tags-title">En çok boş kalan kontenjanlar</p>
+            <ul class="ozet-list">
+              ${o.enCokBosKalan.map((r) => `<li><span>${escapeHtml(r.dal)}</span><b>${tr(r.bos)}</b></li>`).join("")}
+            </ul>
+          </div>
+        </div>
+        <p class="calc-note">${KONTENJAN_DAL_COUNT} dalın <b>${o.dolmayanDalSayisi}</b> tanesi kontenjanını dolduramadı; kontenjanı dolmayan dallarda taban puan oluşmaz (tabloda &ldquo;&mdash;&rdquo;).</p>
+      </section>`;
+}
+
+/**
  * Gövde içi branş indeksi — yalnızca `subjectIndexHeading` tanımlı sayfalarda
  * (puan hesaplama + kontenjan tablosu) çıkar. React'teki `SubjectIndexBlock`
  * ile aynı metni taşımalı.
@@ -836,7 +927,10 @@ function renderSubjectIndex(page) {
 function renderPage(page, isLegal = false) {
   const pagePath = `/${page.slug}`;
   // Sayfada görünen FAQ seti — legal sayfalarda FAQ gösterilmez.
-  const visibleFaq = isLegal ? [] : (page.faq ?? commonFaq).slice(0, 6);
+  // FAQ_VISIBLE_LIMIT React tarafındaki (PublicSeoPages.jsx) limitle AYNI
+  // olmalı: JSON-LD'ye giren FAQ, sayfada görünen FAQ ile birebir aynı olmak
+  // zorunda (Google kuralı). Limiti bir katmanda değiştirmek şemayı bozar.
+  const visibleFaq = isLegal ? [] : (page.faq ?? commonFaq).slice(0, FAQ_VISIBLE_LIMIT);
   const related = page.links?.length
     ? `<nav class="related" aria-label="İlgili sayfalar">
         <h2>İlgili bağlantılar</h2>
@@ -893,8 +987,8 @@ function renderPage(page, isLegal = false) {
       ${renderSample(page.sample, page.subject)}
       ${page.isSubject ? renderTopics(page.subject, page.topics) : ""}
       ${page.slug === "fiyatlandirma" ? renderPricingComparison() : ""}
-      ${page.tool === "score" ? renderScoreTool() : ""}
-      ${page.tool === "kontenjan" ? renderKontenjanTable(page.kontenjanData, page.kontenjanDonem) : ""}
+      ${page.tool === "score" ? renderScoreTool() + renderNetScoreTable() : ""}
+      ${page.tool === "kontenjan" ? renderKontenjanOzet() + renderKontenjanTable(page.kontenjanData, page.kontenjanDonem) : ""}
       ${appStore}
       <div class="sections">
         ${page.sections.map((section) => `

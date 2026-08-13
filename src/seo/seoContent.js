@@ -12,8 +12,10 @@ import {
   KONTENJAN_TOPLAM,
   KONTENJAN_DONEM_LABEL,
   KONTENJAN_LASTMOD,
+  KONTENJAN_OZET,
   KONTENJAN_YIL,
 } from "./kontenjanData.js";
+import { TUS_BARAJ_PUANI } from "./tusScoring.js";
 
 export const SITE_URL = "https://www.tusoskop.com";
 export const BRAND_NAME = "Tusoskop";
@@ -365,6 +367,20 @@ const contentSeoPages = [
         ],
       },
       {
+        heading: "Kaç net kaç puan getirir?",
+        paragraphs: [
+          "Yukarıdaki tablo, her iki bölümde de aynı neti yapan dengeli bir aday için netin tahmini T ve K puanı karşılığını gösterir. Örneğin iki bölümde de 50'şer net (toplam 100 net) yapan bir aday yaklaşık 65 T Puanı ve 65 K Puanı alır.",
+          "Tek bir \"net\" sayısı puanı tam olarak belirlemez: T Puanı Temel bölümü, K Puanı Klinik bölümü daha ağır tarttığı için netlerin bölümler arasındaki dağılımı sonucu değiştirir. Aynı toplam netle Temel ağırlıklı çalışan bir aday daha yüksek T Puanı, Klinik ağırlıklı çalışan bir aday daha yüksek K Puanı alır. Kendi dağılımın için yukarıdaki hesaplayıcıyı kullan.",
+        ],
+      },
+      {
+        heading: "TUS baraj puanı kaç?",
+        paragraphs: [
+          `TUS'ta baraj puanı ${TUS_BARAJ_PUANI}'tir. Bir puan türünden (T veya K) ${TUS_BARAJ_PUANI} puanın altında kalan aday, o puan türüyle değerlendirilen dallara tercih yapamaz.`,
+          "Baraj T ve K için ayrı ayrı değerlendirilir; bir adayın K Puanı barajı geçerken T Puanı geçmeyebilir. Bu durumda yalnızca klinik dallara tercih yapılabilir. Hesaplayıcı her iki puanı da gösterdiği için baraj durumunu iki puan türü için birden görebilirsin.",
+        ],
+      },
+      {
         heading: "Tahmini puan ile gerçek TUS puanı farkı",
         paragraphs: [
           "Buradaki sonuç tahminidir. Gerçek TUS puanı; sınava giren adayların o dönemdeki ortalaması ve standart sapmasına göre standardize edildiği için dönemden döneme değişir.",
@@ -373,6 +389,15 @@ const contentSeoPages = [
       },
     ],
     faq: [
+      {
+        question: "Kaç net kaç puan getirir?",
+        answer:
+          "Her iki bölümde de eşit net yapan bir aday için yaklaşık karşılıklar: 30'ar net (toplam 60) ≈ 55 puan, 40'ar net (toplam 80) ≈ 60 puan, 50'şer net (toplam 100) ≈ 65 puan, 60'ar net (toplam 120) ≈ 70 puan. Netlerin Temel ve Klinik arasındaki dağılımı T ve K puanını farklı etkilediği için kesin sonuç hesaplayıcıdan alınmalıdır.",
+      },
+      {
+        question: "TUS baraj puanı kaç?",
+        answer: `TUS'ta baraj puanı ${TUS_BARAJ_PUANI}'tir. Bir puan türünden (T veya K) ${TUS_BARAJ_PUANI} puanın altında kalan aday o puan türüyle değerlendirilen dallara tercih yapamaz. Baraj T ve K için ayrı ayrı değerlendirilir.`,
+      },
       {
         question: "TUS'ta yanlış doğruyu götürür mü?",
         answer:
@@ -443,6 +468,20 @@ const contentSeoPages = [
         ],
       },
       {
+        heading: "TUS kontenjanları nasıl dağılıyor?",
+        paragraphs: [
+          `${KONTENJAN_DONEM_LABEL} döneminde ${KONTENJAN_DAL_COUNT} uzmanlık dalı için toplam ${KONTENJAN_OZET.toplamKontenjan.toLocaleString("tr-TR")} kontenjan açıldı; bunların ${KONTENJAN_OZET.toplamYerlesen.toLocaleString("tr-TR")} tanesi doldu (%${KONTENJAN_OZET.dolulukYuzde} doluluk) ve ${KONTENJAN_OZET.bosKalanKontenjan.toLocaleString("tr-TR")} kontenjan boş kaldı.`,
+          `Kontenjan dağılımı dallar arasında çok dengesiz: en yüksek kontenjanlı beş dal (${KONTENJAN_OZET.enCokKontenjan.map((r) => r.dal).join(", ")}) tek başına toplamın önemli bir kısmını oluşturuyor. ${KONTENJAN_DAL_COUNT} dalın ${KONTENJAN_OZET.dolmayanDalSayisi} tanesi kontenjanını dolduramadı — yani açılan kadroların bir kısmı her dönem boş kalıyor.`,
+        ],
+      },
+      {
+        heading: "Boş kalan kontenjanlar ne anlama geliyor?",
+        paragraphs: [
+          `Boş kontenjan, o dala yeterli tercih gelmediğini gösterir. Bu dönemde en çok boş kalan dallar: ${KONTENJAN_OZET.enCokBosKalan.map((r) => `${r.dal} (${r.bos})`).join(", ")}.`,
+          "Kontenjanı dolmayan dallarda taban puan oluşmaz ve rekabet görece düşüktür; barajı geçen adaylar için bu dallar gerçekçi bir seçenek olabilir. Öte yandan boş kontenjan çoğu zaman o dalın çalışma koşulları veya tercih edilirliğiyle ilgilidir — sadece sayıya değil, dalın kendisine de bakmak gerekir.",
+        ],
+      },
+      {
         heading: "Kontenjan tablosu nasıl okunmalı?",
         paragraphs: [
           "Bir dalın taban puanı, o dönemde o dala yerleşebilmek için gereken asgari puanı gösterir. Kontenjanı yüksek fakat taban puanı düşük dallarda yerleşme ihtimali görece daha yüksektir.",
@@ -463,6 +502,14 @@ const contentSeoPages = [
       },
     ],
     faq: [
+      {
+        question: "TUS'ta toplam kaç kontenjan var?",
+        answer: `${KONTENJAN_DONEM_LABEL} döneminde ${KONTENJAN_DAL_COUNT} uzmanlık dalı için toplam ${KONTENJAN_OZET.toplamKontenjan.toLocaleString("tr-TR")} kontenjan açıldı. Bunların ${KONTENJAN_OZET.toplamYerlesen.toLocaleString("tr-TR")} tanesi doldu (%${KONTENJAN_OZET.dolulukYuzde}), ${KONTENJAN_OZET.bosKalanKontenjan.toLocaleString("tr-TR")} kontenjan boş kaldı.`,
+      },
+      {
+        question: "En çok kontenjan hangi dallara ayrılıyor?",
+        answer: `En yüksek kontenjanlı dallar: ${KONTENJAN_OZET.enCokKontenjan.map((r) => `${r.dal} (${r.kontenjan})`).join(", ")}.`,
+      },
       {
         question: "TUS kontenjan tablosu ne sıklıkla güncellenir?",
         answer:
