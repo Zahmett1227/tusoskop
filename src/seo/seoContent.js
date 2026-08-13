@@ -486,7 +486,7 @@ const contentSeoPages = [
         heading: "Kontenjan tablosu nasıl okunmalı?",
         paragraphs: [
           "Bir dalın taban puanı, o dönemde o dala yerleşebilmek için gereken asgari puanı gösterir. Kontenjanı yüksek fakat taban puanı düşük dallarda yerleşme ihtimali görece daha yüksektir.",
-          "'Yerleşen' sütunu, kontenjanın ne kadarının dolduğunu gösterir; kontenjanın tamamı dolmamışsa taban puan oluşmamış olabilir (tabloda '—' ile gösterilir).",
+          "'Yerleşen' sütunu, kontenjanın ne kadarının dolduğunu gösterir. Kontenjanın tamamı dolmasa bile o dala yerleşen olduğu sürece taban puan oluşur; taban puan yalnızca hiç yerleşme olmayan dallarda oluşmaz (tabloda '—' ile gösterilir).",
         ],
       },
       {
@@ -519,7 +519,7 @@ const contentSeoPages = [
       {
         question: "Taban puan neden bazı dallarda gösterilmiyor?",
         answer:
-          "Kontenjanın tamamı dolmadıysa o dalda taban puan oluşmaz; tabloda bu durum '—' ile belirtilir.",
+          "Taban puan, o dala yerleşen en düşük puanlı adayın puanıdır; dolayısıyla kontenjan tamamen dolmasa bile yerleşme olduğu sürece taban puan oluşur. Taban puan yalnızca hiç yerleşme olmayan dallarda gösterilmez; tabloda bu durum '—' ile belirtilir.",
       },
       {
         question: "Kontenjan tablosu ile puan hesaplama aracı birlikte nasıl kullanılır?",
