@@ -57,7 +57,9 @@
   .section{border-bottom:1px solid #1e293b;padding-bottom:28px}
   .section:last-child{border-bottom:0}
   .section p+p{margin-top:12px}
-  .related,.faq{margin-top:38px;border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:26px;padding:20px}
+  .related,.faq,.subject-index{margin-top:38px;border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:26px;padding:20px}
+  .subject-index h2{font-size:clamp(20px,2.6vw,26px);margin-bottom:10px}
+  .subject-index p{font-size:15px;max-width:620px}
   .link-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
   .pill{border:1px solid #334155;border-radius:16px;padding:9px 13px;color:#e2e8f0;font-size:14px;font-weight:800}
   .pill:hover{border-color:#6ee7b7}
@@ -223,10 +225,11 @@
           </section>
         
       </div>
+      
       <nav class="related" aria-label="İlgili sayfalar">
         <h2>İlgili bağlantılar</h2>
         <div class="link-list">
-          <a class="pill" href="/tusoskop-ozellikleri">Tusoskop özellikleri</a><a class="pill" href="/fiyatlandirma">Tusoskop fiyatlandırma</a><a class="pill" href="/">Ana sayfa</a>
+          <a class="pill" href="/tusoskop-ozellikleri">Tusoskop özellikleri</a><a class="pill" href="/fiyatlandirma">Tusoskop fiyatlandırma</a><a class="pill" href="/hakkimizda">Hakkımızda</a><a class="pill" href="/tusoskop-sss">Sık sorulan sorular</a><a class="pill" href="/">Ana sayfa</a>
         </div>
       </nav>
       <section class="faq">

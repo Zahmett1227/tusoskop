@@ -159,6 +159,8 @@ const contentSeoPages = [
     links: [
       ["Tusoskop özellikleri", "/tusoskop-ozellikleri"],
       ["Tusoskop fiyatlandırma", "/fiyatlandirma"],
+      ["Hakkımızda", "/hakkimizda"],
+      ["Sık sorulan sorular", "/tusoskop-sss"],
       ["Ana sayfa", "/"],
     ],
   },
@@ -199,6 +201,8 @@ const contentSeoPages = [
     links: [
       ["TUS soru çözme uygulaması", "/tus-soru-cozme-uygulamasi"],
       ["TUS deneme analizi", "/tus-deneme-analizi"],
+      ["TUS kontenjan tablosu", "/tus-kontenjan-tablosu"],
+      ["TUS mobil uygulama", "/tus-mobil-uygulama"],
     ],
   },
   {
@@ -274,7 +278,11 @@ const contentSeoPages = [
         ],
       },
     ],
-    links: [["TUS deneme analizi", "/tus-deneme-analizi"]],
+    links: [
+      ["TUS deneme analizi", "/tus-deneme-analizi"],
+      ["TUS puan hesaplama", "/tus-puan-hesaplama"],
+      ["TUS çalışma takip sistemi", "/tus-calisma-takip-sistemi"],
+    ],
   },
   {
     slug: "tus-deneme-analizi",
@@ -314,11 +322,20 @@ const contentSeoPages = [
       ["TUS deneme çözme platformu", "/tus-deneme-cozme-platformu"],
       ["TUS çalışma takip sistemi", "/tus-calisma-takip-sistemi"],
       ["TUS puan hesaplama", "/tus-puan-hesaplama"],
+      ["TUS kontenjan tablosu", "/tus-kontenjan-tablosu"],
     ],
   },
   {
     slug: "tus-puan-hesaplama",
     tool: "score",
+    // Gövde içi branş indeksi. Bu sayfa ve kontenjan tablosu, sitedeki iki
+    // indekslenmiş/otoriter sayfa; 11 branş sayfası ise yalnızca footer'dan
+    // link alıyordu (Google footer'ı boilerplate sayıp iskonto eder) ve GSC'de
+    // "Keşfedildi – dizine eklenmedi" durumundaydı. Buradan verilen bağlam içi
+    // linkler o sayfalara gerçek tarama önceliği taşır.
+    subjectIndexHeading: "Netini artırmak için hangi dersten çalışacaksın?",
+    subjectIndexIntro:
+      "Tahmini puanını gördün. Netini yükseltmek için ders seç ve o dersin TUS tarzı sorularını konu konu çözmeye başla.",
     title: "TUS Puan Hesaplama — Net ve Tahmini TUS Puanı | Tusoskop",
     description:
       "TUS puan hesaplama aracı: Temel ve Klinik Tıp net sayını gir, tahmini T Puanı ve K Puanını anında gör. Net nasıl hesaplanır, yanlış doğruyu götürür mü? Ücretsiz.",
@@ -391,11 +408,16 @@ const contentSeoPages = [
       ["TUS deneme analizi", "/tus-deneme-analizi"],
       ["TUS soru çözme uygulaması", "/tus-soru-cozme-uygulamasi"],
       ["TUS kontenjan tablosu", "/tus-kontenjan-tablosu"],
+      ["TUS hazırlık platformu", "/tus-hazirlik-platformu"],
     ],
   },
   {
     slug: "tus-kontenjan-tablosu",
     tool: "kontenjan",
+    // Bkz. /tus-puan-hesaplama'daki aynı alanların açıklaması.
+    subjectIndexHeading: "Hedeflediğin dalın taban puanına hangi dersten çalışarak ulaşacaksın?",
+    subjectIndexIntro:
+      "Taban puanlar netin karşılığı. Ders seç, o dersin TUS tarzı sorularını konu konu çözerek netini yükselt.",
     kontenjanData: KONTENJAN_DATA,
     kontenjanDonem: KONTENJAN_DONEM_LABEL,
     // Title 60 karakterin altında tutulur: eski sürüm tam dönem etiketiyle
@@ -465,6 +487,7 @@ const contentSeoPages = [
     links: [
       ["TUS puan hesaplama", "/tus-puan-hesaplama"],
       ["TUS deneme analizi", "/tus-deneme-analizi"],
+      ["TUS hazırlık platformu", "/tus-hazirlik-platformu"],
     ],
   },
   {
@@ -579,7 +602,12 @@ const contentSeoPages = [
         ],
       },
     ],
-    links: [["App Store'da Tusoskop", APP_STORE_URL]],
+    links: [
+      ["TUS soru çözme uygulaması", "/tus-soru-cozme-uygulamasi"],
+      ["TUS konu bazlı soru çözme", "/tus-konu-bazli-soru-cozme"],
+      ["Tusoskop özellikleri", "/tusoskop-ozellikleri"],
+      ["App Store'da Tusoskop", APP_STORE_URL],
+    ],
   },
   {
     slug: "tus-calisma-takip-sistemi",
@@ -619,6 +647,7 @@ const contentSeoPages = [
       ["TUS deneme analizi", "/tus-deneme-analizi"],
       ["Yanlış ve favori soru takibi", "/tus-yanlis-takibi"],
       ["Tusoskop özellikleri", "/tusoskop-ozellikleri"],
+      ["TUS kontenjan tablosu", "/tus-kontenjan-tablosu"],
     ],
   },
   {
@@ -658,6 +687,8 @@ const contentSeoPages = [
     links: [
       ["TUS çalışma takip sistemi", "/tus-calisma-takip-sistemi"],
       ["Tusoskop fiyatlandırma", "/fiyatlandirma"],
+      ["Tusoskop nedir?", "/tusoskop-nedir"],
+      ["TUS mobil uygulama", "/tus-mobil-uygulama"],
     ],
   },
   {
@@ -696,7 +727,10 @@ const contentSeoPages = [
     ],
     links: [
       ["Tusoskop özellikleri", "/tusoskop-ozellikleri"],
+      ["Hakkımızda", "/hakkimizda"],
+      ["Sık sorulan sorular", "/tusoskop-sss"],
       ["Kullanım koşulları", "/kullanim-kosullari"],
+      ["Gizlilik sözleşmesi", "/gizlilik-sozlesmesi"],
     ],
   },
   {
@@ -790,6 +824,8 @@ const contentSeoPages = [
     links: [
       ["Tusoskop nedir?", "/tusoskop-nedir"],
       ["Tusoskop özellikleri", "/tusoskop-ozellikleri"],
+      ["Tusoskop fiyatlandırma", "/fiyatlandirma"],
+      ["TUS mobil uygulama", "/tus-mobil-uygulama"],
     ],
   },
 ];
@@ -798,16 +834,35 @@ const contentSeoPages = [
 // Her ders için "TUS {Ders} Soruları" sayfası: gerçek soru sayısı + soru
 // bankamızdan örnek bir soru. "tus {ders} soruları" aramalarını hedefler.
 
-function relatedSubjectLinks(currentSlug) {
-  const others = SUBJECTS.filter((s) => s.slug !== currentSlug).slice(0, 2);
+// Kardeş branş linkleri — HALKA (round-robin) dağıtım.
+//
+// Eski sürüm `SUBJECTS.filter(...).slice(0, 2)` kullanıyordu; bu her zaman
+// listenin ilk iki dersini (Anatomi + Biyokimya) seçtiği için 9 branş sayfası
+// gövde içi hiçbir iç link almıyordu — yalnızca her sayfada tekrarlanan
+// footer'da görünüyorlardı, Google ise footer linklerini boilerplate sayıp
+// büyük ölçüde iskonto ediyor. Sonuç: GSC'de 20 sayfa "Keşfedildi – şu anda
+// dizine eklenmedi" (taranmamış bile).
+//
+// Halka dağıtımda her ders kendinden sonraki RELATED_SUBJECT_COUNT derse link
+// verir; böylece her ders tam olarak o kadar iç link ALIR. Dağılım eşit ve
+// ders listesi büyüse de bozulmaz.
+const RELATED_SUBJECT_COUNT = 3;
+
+function relatedSubjectLinks(currentIndex) {
+  const total = SUBJECTS.length;
+  const others = Array.from(
+    { length: Math.min(RELATED_SUBJECT_COUNT, total - 1) },
+    (_, offset) => SUBJECTS[(currentIndex + offset + 1) % total]
+  );
   return [
     ...others.map((s) => [`TUS ${s.name} Soruları`, `/${s.slug}`]),
     ["TUS Soru Çözme Uygulaması", "/tus-soru-cozme-uygulamasi"],
     ["TUS Puan Hesaplama", "/tus-puan-hesaplama"],
+    ["TUS Kontenjan Tablosu", "/tus-kontenjan-tablosu"],
   ];
 }
 
-const subjectSeoPages = SUBJECTS.map((subject) => ({
+const subjectSeoPages = SUBJECTS.map((subject, subjectIndex) => ({
   slug: subject.slug,
   isSubject: true,
   subject: subject.name,
@@ -863,7 +918,7 @@ const subjectSeoPages = SUBJECTS.map((subject) => ({
       answer: `Free planda günde ${FREE_DAILY_QUESTIONS} soru ve ${FREE_DAILY_TOPIC_TESTS} konu testi ücretsizdir; Plus erişimde limitler kalkar.`,
     },
   ],
-  links: relatedSubjectLinks(subject.slug),
+  links: relatedSubjectLinks(subjectIndex),
 }));
 
 export const subjectIndexLinks = SUBJECTS.map((s) => [`TUS ${s.name} Soruları`, `/${s.slug}`]);

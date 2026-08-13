@@ -1002,6 +1002,41 @@ function KontenjanTable({ data, donem }) {
 }
 
 /**
+ * Gövde içi branş indeksi — yalnızca `subjectIndexHeading` tanımlı sayfalarda
+ * (puan hesaplama + kontenjan tablosu) çıkar. Statik prerender'daki
+ * `renderSubjectIndex()` ile aynı metni taşımalı.
+ *
+ * Neden gövdede: 11 branş sayfası yalnızca her sayfada tekrarlanan footer'dan
+ * link alıyordu; Google footer linklerini boilerplate sayıp iskonto ettiği
+ * için bu sayfalar GSC'de "Keşfedildi – şu anda dizine eklenmedi" (yani hiç
+ * taranmamış) durumundaydı. Sitedeki iki otoriter sayfadan verilen bağlam içi
+ * link, tarama önceliğini doğrudan etkiler.
+ */
+function SubjectIndexBlock({ page }) {
+  if (!page.subjectIndexHeading) return null;
+  return (
+    <section
+      aria-label="Branşa göre TUS soruları"
+      className="mt-10 rounded-3xl border border-slate-800 bg-slate-900/45 p-5"
+    >
+      <h2 className="text-2xl font-black tracking-tight">{page.subjectIndexHeading}</h2>
+      <p className="mt-3 max-w-[620px] text-[15px] leading-relaxed text-slate-300">{page.subjectIndexIntro}</p>
+      <div className="mt-4 flex flex-wrap gap-3">
+        {subjectIndexLinks.map(([label, href]) => (
+          <a
+            key={label}
+            href={href}
+            className="rounded-2xl border border-slate-700 px-4 py-2 text-sm font-bold text-slate-200 hover:border-emerald-300/70 hover:text-white"
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/**
  * Kontenjan tablosu → sıradaki adım köprüsü. Statik prerender'daki
  * `renderKontenjanCta()` ile BİREBİR aynı metni taşımalı (iki katman senkron).
  *
@@ -1210,6 +1245,8 @@ export function SeoLandingPage({ page }) {
                 </section>
               ))}
             </div>
+
+            <SubjectIndexBlock page={page} />
 
             {page.links?.length ? (
               <nav aria-label="İlgili Tusoskop sayfaları" className="mt-10 rounded-3xl border border-slate-800 bg-slate-900/45 p-5">

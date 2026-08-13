@@ -257,7 +257,9 @@ const css = `
   .section{border-bottom:1px solid #1e293b;padding-bottom:28px}
   .section:last-child{border-bottom:0}
   .section p+p{margin-top:12px}
-  .related,.faq{margin-top:38px;border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:26px;padding:20px}
+  .related,.faq,.subject-index{margin-top:38px;border:1px solid #1e293b;background:rgba(15,23,42,.62);border-radius:26px;padding:20px}
+  .subject-index h2{font-size:clamp(20px,2.6vw,26px);margin-bottom:10px}
+  .subject-index p{font-size:15px;max-width:620px}
   .link-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
   .pill{border:1px solid #334155;border-radius:16px;padding:9px 13px;color:#e2e8f0;font-size:14px;font-weight:800}
   .pill:hover{border-color:#6ee7b7}
@@ -809,6 +811,28 @@ function renderPricingComparison() {
     </section>`;
 }
 
+/**
+ * Gövde içi branş indeksi — yalnızca `subjectIndexHeading` tanımlı sayfalarda
+ * (puan hesaplama + kontenjan tablosu) çıkar. React'teki `SubjectIndexBlock`
+ * ile aynı metni taşımalı.
+ *
+ * Neden gövdede: 11 branş sayfası yalnızca her sayfada tekrarlanan footer'dan
+ * link alıyordu; Google footer linklerini boilerplate sayıp iskonto ettiği
+ * için bu sayfalar GSC'de "Keşfedildi – şu anda dizine eklenmedi" (yani hiç
+ * taranmamış) durumundaydı. Sitedeki iki otoriter sayfadan verilen bağlam içi
+ * link, tarama önceliğini doğrudan etkiler.
+ */
+function renderSubjectIndex(page) {
+  if (!page.subjectIndexHeading) return "";
+  return `<section class="subject-index" aria-label="Branşa göre TUS soruları">
+        <h2>${escapeHtml(page.subjectIndexHeading)}</h2>
+        <p>${escapeHtml(page.subjectIndexIntro)}</p>
+        <div class="link-list">
+          ${subjectIndexLinks.map(([label, href]) => `<a class="pill" href="${escapeHtml(href)}">${escapeHtml(label)}</a>`).join("")}
+        </div>
+      </section>`;
+}
+
 function renderPage(page, isLegal = false) {
   const pagePath = `/${page.slug}`;
   // Sayfada görünen FAQ seti — legal sayfalarda FAQ gösterilmez.
@@ -880,6 +904,7 @@ function renderPage(page, isLegal = false) {
           </section>
         `).join("")}
       </div>
+      ${renderSubjectIndex(page)}
       ${related}
       ${faqBlock}
     </main>
