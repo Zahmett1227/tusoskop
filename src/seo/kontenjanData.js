@@ -85,14 +85,24 @@ export const KONTENJAN_TOPLAM_YERLESEN = KONTENJAN_DATA.reduce((sum, r) => sum +
 // taşıyan "tus kontenjanları" sorgusunda kötüydü (%0,9 · 1.907 gösterim) —
 // içeriğin ağırlığı taban puandaydı, kontenjanın kendisi hakkında sayfada
 // neredeyse hiç bilgi yoktu. Aşağıdaki türetilmiş sayılar o boşluğu doldurur.
-const bosKalan = (r) => r.kontenjan - r.yerlesen;
+// Boş kalan kadro DAL BAZINDA ve negatife düşmeden toplanır. Global çıkarma
+// (toplamKontenjan − toplamYerlesen) kullanılamaz: veride kontenjanından fazla
+// yerleşen bir dal var (Plastik, Rekonstrüktif ve Estetik Cerrahi 210/209) ve
+// global çıkarma bu fazlalığı başka dalların boş kadrosundan düşerek boş kadro
+// sayısını olduğundan az gösteriyordu (2.028 yerine gerçek değer 2.029).
+const bosKalan = (r) => Math.max(r.kontenjan - r.yerlesen, 0);
 
 export const KONTENJAN_OZET = {
   toplamKontenjan: KONTENJAN_TOPLAM,
   toplamYerlesen: KONTENJAN_TOPLAM_YERLESEN,
-  bosKalanKontenjan: KONTENJAN_TOPLAM - KONTENJAN_TOPLAM_YERLESEN,
+  bosKalanKontenjan: KONTENJAN_DATA.reduce((sum, r) => sum + bosKalan(r), 0),
   dolulukYuzde: Math.round((100 * KONTENJAN_TOPLAM_YERLESEN) / KONTENJAN_TOPLAM),
   dolmayanDalSayisi: KONTENJAN_DATA.filter((r) => r.yerlesen < r.kontenjan).length,
+  // DİKKAT: "kontenjanı dolmayan" ile "taban puanı oluşmayan" AYNI ŞEY DEĞİL.
+  // Kontenjanı dolmayan 36 dalın 35'inde taban puan yine oluşmuştur (ör. Acil
+  // Tıp 439/583, taban 45.02). Taban puan yalnızca hiç yerleşme olmayan dalda
+  // oluşmaz. Metinlerde bu ikisini birbirinin yerine kullanma.
+  tabanPuaniOlusmayanDalSayisi: KONTENJAN_DATA.filter((r) => r.tabanPuan == null).length,
   enCokKontenjan: KONTENJAN_DATA.slice()
     .sort((a, b) => b.kontenjan - a.kontenjan)
     .slice(0, 5)

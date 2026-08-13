@@ -1101,7 +1101,9 @@ function KontenjanOzet() {
       </div>
       <p className="mt-3.5 text-sm text-slate-400">
         {KONTENJAN_DATA.length} dalın <b className="text-emerald-300">{o.dolmayanDalSayisi}</b> tanesi kontenjanını
-        dolduramadı; kontenjanı dolmayan dallarda taban puan oluşmaz (tabloda &ldquo;&mdash;&rdquo;).
+        dolduramadı. Bu dallarda taban puan yine oluşur; taban puan yalnızca hiç yerleşme olmayan{" "}
+        <b className="text-emerald-300">{o.tabanPuaniOlusmayanDalSayisi}</b> dalda oluşmamıştır (tabloda
+        &ldquo;&mdash;&rdquo;).
       </p>
     </section>
   );

@@ -478,7 +478,8 @@ const contentSeoPages = [
         heading: "Boş kalan kontenjanlar ne anlama geliyor?",
         paragraphs: [
           `Boş kontenjan, o dala yeterli tercih gelmediğini gösterir. Bu dönemde en çok boş kalan dallar: ${KONTENJAN_OZET.enCokBosKalan.map((r) => `${r.dal} (${r.bos})`).join(", ")}.`,
-          "Kontenjanı dolmayan dallarda taban puan oluşmaz ve rekabet görece düşüktür; barajı geçen adaylar için bu dallar gerçekçi bir seçenek olabilir. Öte yandan boş kontenjan çoğu zaman o dalın çalışma koşulları veya tercih edilirliğiyle ilgilidir — sadece sayıya değil, dalın kendisine de bakmak gerekir.",
+          `Kontenjanı dolmayan dallarda taban puan yine de oluşur; bu, o dala yerleşen en düşük puanlı adayın puanıdır ve rekabet görece düşük olduğu için çoğu zaman baraja yakın kalır. Taban puan yalnızca hiç yerleşme olmayan dallarda oluşmaz — bu dönemde bu durumda olan ${KONTENJAN_OZET.tabanPuaniOlusmayanDalSayisi} dal var ve tabloda "—" ile gösterilir.`,
+          "Boş kontenjan, barajı geçen adaylar için bu dalların gerçekçi bir seçenek olabileceğini gösterir. Öte yandan boş kontenjan çoğu zaman o dalın çalışma koşulları veya tercih edilirliğiyle ilgilidir — sadece sayıya değil, dalın kendisine de bakmak gerekir.",
         ],
       },
       {

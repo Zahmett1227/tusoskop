@@ -114,28 +114,38 @@ function renderAnalytics(page) {
     <script>
       (function(){
         var SLUG='${escapeJs(page.slug)}';
+        var booted=false;
         function boot(){
+          if(booted)return;
+          booted=true;
           ${pixelBoot}
           ${clarityBoot}
-          document.addEventListener('click',function(ev){
-            var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
-            if(!a)return;
-            var href=a.getAttribute('href')||'';
-            var name=null;
-            if(href.indexOf('apps.apple.com')!==-1)name='AppStoreClick';
-            else if(href.indexOf('/coz/')===0)name='SeoQuizClick';
-            else if(href==='/giris')name='SeoLoginClick';
-            if(!name)return;
-            if(typeof clarity==='function'){try{clarity('event',name);}catch(e){}}
-            if(typeof fbq!=='function')return;
-            try{fbq('trackCustom',name,{page_slug:SLUG});}catch(e){}
-            // Dış origin'e giden App Store linkinde isteğin gitmesini bekle.
-            if(name==='AppStoreClick'&&!a.target){
-              ev.preventDefault();
-              setTimeout(function(){window.location.href=a.href;},250);
-            }
-          },true);
         }
+        // Dinleyici SENKRON kaydedilir, boot'un içinde DEĞİL: boot idle'a
+        // erteleniyor (requestIdleCallback yoksa 1200ms setTimeout) ve o
+        // aralıkta yapılan /giris, /coz veya App Store tıklaması aksi halde
+        // hiç ölçülmezdi — tam da bu değişikliğin ölçmeye çalıştığı dönüşüm.
+        // Tıklama boot'tan önce gelirse pixel/clarity o anda yüklenir; her iki
+        // snippet de çağrıları kuyrukladığı için event kaybolmaz.
+        document.addEventListener('click',function(ev){
+          var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+          if(!a)return;
+          var href=a.getAttribute('href')||'';
+          var name=null;
+          if(href.indexOf('apps.apple.com')!==-1)name='AppStoreClick';
+          else if(href.indexOf('/coz/')===0)name='SeoQuizClick';
+          else if(href==='/giris')name='SeoLoginClick';
+          if(!name)return;
+          boot();
+          if(typeof clarity==='function'){try{clarity('event',name);}catch(e){}}
+          if(typeof fbq!=='function')return;
+          try{fbq('trackCustom',name,{page_slug:SLUG});}catch(e){}
+          // Dış origin'e giden App Store linkinde isteğin gitmesini bekle.
+          if(name==='AppStoreClick'&&!a.target){
+            ev.preventDefault();
+            setTimeout(function(){window.location.href=a.href;},250);
+          }
+        },true);
         if('requestIdleCallback' in window)requestIdleCallback(boot,{timeout:2500});
         else setTimeout(boot,1200);
       })();
@@ -898,7 +908,7 @@ function renderKontenjanOzet() {
             </ul>
           </div>
         </div>
-        <p class="calc-note">${KONTENJAN_DAL_COUNT} dalın <b>${o.dolmayanDalSayisi}</b> tanesi kontenjanını dolduramadı; kontenjanı dolmayan dallarda taban puan oluşmaz (tabloda &ldquo;&mdash;&rdquo;).</p>
+        <p class="calc-note">${KONTENJAN_DAL_COUNT} dalın <b>${o.dolmayanDalSayisi}</b> tanesi kontenjanını dolduramadı. Bu dallarda taban puan yine oluşur; taban puan yalnızca hiç yerleşme olmayan <b>${o.tabanPuaniOlusmayanDalSayisi}</b> dalda oluşmamıştır (tabloda &ldquo;&mdash;&rdquo;).</p>
       </section>`;
 }
 
