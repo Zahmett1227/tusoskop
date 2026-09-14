@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { accentThemes } from "../theme/accentThemes";
-import { isUserPremium } from "../utils/premiumUtils";
+import { hasPlusAccess } from "../utils/premiumUtils";
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -205,7 +205,7 @@ export default function ExamAnalysisScreen({
   userData,
 }) {
   const theme = accentTheme || accentThemes.emerald;
-  const premium = isUserPremium(userData);
+  const premium = hasPlusAccess(userData);
   const [showWrongModal, setShowWrongModal] = useState(false);
 
   if (!examAnalysis) return null;

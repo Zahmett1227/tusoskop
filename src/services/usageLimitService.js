@@ -2,7 +2,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { httpsCallable } from "firebase/functions";
 import { db, functions } from "../firebase";
 import { FREE_LIMITS } from "../config/limits";
-import { isUserPremium } from "../utils/premiumUtils";
+import { hasPlusAccess } from "../utils/premiumUtils";
 
 const USAGE_KEY = "tusoskopUsage";
 
@@ -198,7 +198,7 @@ async function getMonthlyFullExamUsage(user) {
   }
 }
 
-const passIfPremium = (userData) => (isUserPremium(userData) ? { allowed: true } : null);
+const passIfPremium = (userData) => (hasPlusAccess(userData) ? { allowed: true } : null);
 
 export async function canAnswerQuestion(user, userData) {
   if (passIfPremium(userData)) return { allowed: true };

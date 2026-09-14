@@ -12,7 +12,7 @@ import { SUBJECTS } from "../data/subjects";
 import { FIXED_EXAM_CARD_SUBTITLE } from "../data/exams";
 import { SUBJECT_QUESTION_COUNTS } from "../data/questions";
 import { accentThemes } from "../theme/accentThemes";
-import { isUserPremium } from "../utils/premiumUtils";
+import { hasPlusAccess } from "../utils/premiumUtils";
 import {
   getStudyCollectionSummary,
 } from "../services/studyCollectionService";
@@ -100,7 +100,7 @@ export default function Dashboard({
       : "min-h-dvh bg-[#05070d] text-white");
   const appCardShell = isLightTheme ? "app-card app-card--light" : "app-card";
   const hex = accentHex(accentThemeKey);
-  const premiumActive = isUserPremium(userData);
+  const premiumActive = hasPlusAccess(userData);
   const { questionUsed: freeQuestionUsed, examUsed: freeExamUsed, reviewUsed: freeReviewUsed } =
     getFreeUsageUsed(remainingUsage);
   const [myTarget, setMyTarget] = useState(65.0);

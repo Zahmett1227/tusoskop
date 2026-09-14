@@ -13,7 +13,7 @@ import {
   resolveQuestionsFromReviews,
 } from "../services/smartReviewService";
 import { FREE_LIMITS } from "../config/limits";
-import { isUserPremium } from "../utils/premiumUtils";
+import { hasPlusAccess } from "../utils/premiumUtils";
 import PerformanceChartCard from "./PerformanceChartCard";
 import FsrsActivityCard from "./study/FsrsActivityCard";
 import AiDailyPlanCard from "./study/AiDailyPlanCard";
@@ -94,7 +94,7 @@ export default function StudyCollectionScreen({
     setLoading(true);
     setHasError(false);
     try {
-      const isPremium = isUserPremium(userData);
+      const isPremium = hasPlusAccess(userData);
       const dueLimit = isPremium ? MAX_SESSION_DUE : FREE_LIMITS.dailyReviewQuestions;
       const [wrong, favorites, dueReviews, smartSummary] = await Promise.all([
         getWrongQuestions(user, userData),

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { setClarityTag, trackClarityEvent } from "../lib/clarity";
-import { isUserPremium } from "../utils/premiumUtils";
+import { hasPlusAccess } from "../utils/premiumUtils";
 import {
   canStartTopicTest,
   incrementTopicTestUsage,
@@ -87,7 +87,7 @@ export function useTopicStudyFlow({
       questionSetupNonPremiumHandledRef.current = false;
       return;
     }
-    if (isUserPremium(userData)) return;
+    if (hasPlusAccess(userData)) return;
     if (questionSetupNonPremiumHandledRef.current) return;
     questionSetupNonPremiumHandledRef.current = true;
     openSubjectTopicPlusGate();
@@ -95,7 +95,7 @@ export function useTopicStudyFlow({
   }, [view, userData, setView, openSubjectTopicPlusGate]);
 
   const openTopicSetup = useCallback(() => {
-    if (!isUserPremium(userData)) {
+    if (!hasPlusAccess(userData)) {
       openSubjectTopicPlusGate();
       return;
     }
@@ -105,7 +105,7 @@ export function useTopicStudyFlow({
 
   const startTopicTest = useCallback(
     async (questionLimit = "all", topicOverride) => {
-      if (!isUserPremium(userData)) {
+      if (!hasPlusAccess(userData)) {
         openSubjectTopicPlusGate();
         return;
       }

@@ -15,7 +15,7 @@ import { auth, db } from "../firebase";
 import { collection, doc, getDoc, getDocs, limit, query, where } from "firebase/firestore";
 import { accentThemes } from "../theme/accentThemes";
 import { FREE_LIMITS, PLUS_LIMITS } from "../config/limits";
-import { isUserPremium } from "../utils/premiumUtils";
+import { hasPlusAccess } from "../utils/premiumUtils";
 import {
   buildChartRows,
   loadNormalizedLocalExamHistory,
@@ -56,7 +56,7 @@ export default function PerformanceChartCard({
   const [myTarget, setMyTarget] = useState(65);
   const [examHistoryMerged, setExamHistoryMerged] = useState([]);
   const [loadError, setLoadError] = useState(false);
-  const premium = isUserPremium(userData);
+  const premium = hasPlusAccess(userData);
 
   useEffect(() => {
     if (!user?.uid) return;

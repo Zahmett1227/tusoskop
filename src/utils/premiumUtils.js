@@ -1,3 +1,5 @@
+import { WEB_FREE_ACCESS_CAMPAIGN } from "../config/freeAccessCampaign";
+
 const toSafeDate = (value) => {
   if (!value) return null;
   if (value instanceof Date) return Number.isNaN(value.getTime()) ? null : value;
@@ -24,6 +26,43 @@ export function isUserPremium(userData) {
 
 export function isPremiumActive(userData) {
   return isUserPremium(userData);
+}
+
+/** Capacitor native (iOS/Android) içinde mi çalışıyoruz? Web'de her zaman false. */
+export function isNativeApp() {
+  try {
+    return (
+      typeof window !== "undefined" &&
+      typeof window.Capacitor?.isNativePlatform === "function" &&
+      window.Capacitor.isNativePlatform() === true
+    );
+  } catch {
+    return false;
+  }
+}
+
+/** Web ücretsiz erişim kampanyası şu an aktif mi? Native uygulamada her zaman false. */
+export function isWebFreeAccessActive(now = new Date(), campaign = WEB_FREE_ACCESS_CAMPAIGN) {
+  if (!campaign?.enabled) return false;
+  if (isNativeApp()) return false;
+  const start = toSafeDate(campaign.startsAt);
+  const end = toSafeDate(campaign.endsAt);
+  if (!start || !end) return false;
+  const time = now.getTime();
+  return time >= start.getTime() && time <= end.getTime();
+}
+
+export function getWebFreeAccessEndLabel(campaign = WEB_FREE_ACCESS_CAMPAIGN) {
+  return formatPremiumUntil(campaign?.endsAt);
+}
+
+/**
+ * Özellik kilitleri için: gerçek Plus üyeliği VEYA web ücretsiz kampanyası.
+ * Ödeme tespiti ve admin sayımları gibi "gerçekten ödemiş mi?" soruları için
+ * `isUserPremium` kullanılmaya devam edilmeli.
+ */
+export function hasPlusAccess(userData, now = new Date()) {
+  return isUserPremium(userData) || isWebFreeAccessActive(now);
 }
 
 export function formatPremiumUntil(value) {

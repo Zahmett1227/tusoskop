@@ -49,7 +49,7 @@ import { getCurrentWeekId } from "./utils/weekIdUtils";
 import MobileBottomNav from "./components/MobileBottomNav";
 import { LEGAL_PAGES } from "./content/legalPages";
 import { FREE_LIMITS } from "./config/limits";
-import { isUserPremium } from "./utils/premiumUtils";
+import { hasPlusAccess } from "./utils/premiumUtils";
 import {
   canStartFullExam,
   canStartReview,
@@ -298,7 +298,7 @@ export default function AppAuthenticated() {
   }, [user?.uid, QUESTIONS, userData, refreshSmartReviewSummary]);
 
   const bottomNavExamLocked =
-    !isUserPremium(userData) && (remainingUsage?.fullExamRemaining ?? 1) <= 0;
+    !hasPlusAccess(userData) && (remainingUsage?.fullExamRemaining ?? 1) <= 0;
 
   const [limitModal, setLimitModal] = useState({
     open: false,
@@ -454,7 +454,7 @@ export default function AppAuthenticated() {
         });
         return;
       }
-      const safeList = isUserPremium(userData)
+      const safeList = hasPlusAccess(userData)
         ? list
         : list.slice(0, Math.min(FREE_LIMITS.dailyReviewQuestions, gate.allowedCount || FREE_LIMITS.dailyReviewQuestions));
       studyState.resetStudyState();
@@ -712,7 +712,7 @@ export default function AppAuthenticated() {
       break;
 
     case "questionSetup":
-      if (!isUserPremium(userData)) {
+      if (!hasPlusAccess(userData)) {
         screenContent = (
           <Dashboard
             setView={guardedSetView}

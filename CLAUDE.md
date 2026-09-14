@@ -244,6 +244,18 @@ Statik sayfalar React ağacının **tamamen dışında** üretiliyor; bu yüzden
 - **StartTrial YOK:** Üründe abonelik denemesi kavramı yok (free katman + PayTR Plus). Bilerek eklenmedi.
 - **Env:** `VITE_META_PIXEL_ID` (`.env.example`'da belgeli, boşsa pixel devre dışı). Events Manager → **Web** veri kaynağı (Uygulama değil — `fbq` WKWebView içinde web olarak çalışır).
 
+## Web Ücretsiz Erişim Kampanyası (main — iOS'a cherry-pick ETME)
+
+15 Eylül – 31 Ekim 2026: web'de tüm Plus özellikleri ücretsiz; iOS uygulaması etkilenmez.
+
+- Tarihler: `src/config/freeAccessCampaign.js` (`enabled`, `startsAt`, `endsAt`). Bitişte kendiliğinden kapanır.
+- `premiumUtils.hasPlusAccess(userData)` = `isUserPremium || isWebFreeAccessActive()` → **özellik kilitleri** bunu kullanır.
+- `isUserPremium` = **gerçekten ödemiş mi** → PaytrCheckoutModal ödeme tespiti, AdminPanel/AdminUserRow sayımları, Clarity `plan_status`.
+- `isWebFreeAccessActive()` Capacitor native'de her zaman `false` (yanlışlıkla iOS'a geçse bile açılmaz).
+- Sunucu (`incrementUsage`) değişmedi: istemci `passIfPremium` ile hiç çağırmıyor. Functions/PayTR deploy'u gerekmez.
+- `enforceWrongQuestionsLimitForFreeUser` web'de Firestore'dan **silmez** (okuma tarafı 30'a keser); native'de eski davranış.
+- Testlerde kampanya `src/test/setupTests.js` ile kapalı (free-limit testleri gerçek tarihe bağlı olmasın).
+
 ## Sık Yapılan İşlemler
 
 ### iOS'a değişiklik göndermek

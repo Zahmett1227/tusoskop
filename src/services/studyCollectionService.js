@@ -9,7 +9,7 @@ import {
 import { db } from "../firebase";
 import { trackClarityEvent } from "../lib/clarity";
 import { FREE_LIMITS } from "../config/limits";
-import { isUserPremium } from "../utils/premiumUtils";
+import { hasPlusAccess, isNativeApp } from "../utils/premiumUtils";
 import { readLocalStorageJson } from "../utils/safeLocalStorage";
 
 const WRONG_KEY = "tusoskopWrongQuestions";
@@ -152,7 +152,7 @@ async function readWrongFromFirestore(user, userData) {
   const list = sortWrongItems(
     dedupeWrongByQuestionId(snap.docs.map((d) => normalizeWrongItem(d.data())))
   );
-  return isUserPremium(userData) ? list : list.slice(0, FREE_LIMITS.maxWrongQuestions);
+  return hasPlusAccess(userData) ? list : list.slice(0, FREE_LIMITS.maxWrongQuestions);
 }
 
 async function readFavoritesFromFirestore(user) {
@@ -165,7 +165,7 @@ async function readFavoritesFromFirestore(user) {
 
 function readWrongFromLocal(userData) {
   const list = sortWrongItems(dedupeWrongByQuestionId(getLocalArray(WRONG_KEY)));
-  return isUserPremium(userData) ? list : list.slice(0, FREE_LIMITS.maxWrongQuestions);
+  return hasPlusAccess(userData) ? list : list.slice(0, FREE_LIMITS.maxWrongQuestions);
 }
 
 function readFavoritesFromLocal() {
@@ -234,15 +234,20 @@ export function applyWrongQuestionsBatchToLocal(entries = [], userData = null) {
     map.set(normalized.questionId, normalized);
   }
   let list = sortWrongItems([...map.values()]);
-  list = isUserPremium(userData) ? list : list.slice(0, FREE_LIMITS.maxWrongQuestions);
+  list = hasPlusAccess(userData) ? list : list.slice(0, FREE_LIMITS.maxWrongQuestions);
   const trimmed = list.slice(0, 1000);
   setLocalArray(WRONG_KEY, trimmed);
   return trimmed;
 }
 
-/** Ücretsiz kullanıcı yanlış listesi limiti — Firestore fazlalıklarını bir kez temizler. */
+/**
+ * Ücretsiz kullanıcı yanlış listesi limiti — Firestore fazlalıklarını bir kez temizler.
+ * Web'de silme yapılmaz: free kullanıcı listede yine en fazla 30 yanlış görür (okuma
+ * tarafı keser) ama geçmişi Firestore'da korunur; Plus alınca / kampanyada geri gelir.
+ */
 export async function enforceWrongQuestionsLimitForFreeUser(user, userData = null) {
-  if (!user?.uid || isUserPremium(userData)) return;
+  if (!isNativeApp()) return;
+  if (!user?.uid || hasPlusAccess(userData)) return;
   try {
     const all = await readWrongFromFirestore(user, userData);
     const allIds = new Set(all.map((item) => String(item.questionId)));
@@ -274,7 +279,7 @@ export async function addWrongQuestion(user, question, selectedAnswer, userData 
       } else {
         current.push(merged);
       }
-      const capped = isUserPremium(userData)
+      const capped = hasPlusAccess(userData)
         ? current
         : sortWrongItems(current).slice(0, FREE_LIMITS.maxWrongQuestions);
       const trimmed = capped.slice(0, 1000);
@@ -372,7 +377,7 @@ export async function updateWrongQuestionAfterReview(
       current.push(next);
     }
     const sorted = sortWrongItems(current);
-    const limited = isUserPremium(userData) ? sorted : sorted.slice(0, FREE_LIMITS.maxWrongQuestions);
+    const limited = hasPlusAccess(userData) ? sorted : sorted.slice(0, FREE_LIMITS.maxWrongQuestions);
     setLocalArray(WRONG_KEY, limited);
     return next;
   } catch {
@@ -501,7 +506,7 @@ export async function buildTodayReviewQueue(user, questions, userData = null) {
     const seen = new Set();
 
     scoredWrong.forEach((item) => {
-      const maxQueue = isUserPremium(userData) ? MAX_TODAY_QUEUE : FREE_LIMITS.dailyReviewQuestions;
+      const maxQueue = hasPlusAccess(userData) ? MAX_TODAY_QUEUE : FREE_LIMITS.dailyReviewQuestions;
       if (queue.length >= maxQueue) return;
       if (seen.has(item.questionId)) return;
       seen.add(item.questionId);
@@ -509,7 +514,7 @@ export async function buildTodayReviewQueue(user, questions, userData = null) {
     });
 
     for (const fav of favoriteQuestions) {
-      const maxQueue = isUserPremium(userData) ? MAX_TODAY_QUEUE : FREE_LIMITS.dailyReviewQuestions;
+      const maxQueue = hasPlusAccess(userData) ? MAX_TODAY_QUEUE : FREE_LIMITS.dailyReviewQuestions;
       if (queue.length >= maxQueue) break;
       if (seen.has(fav.questionId)) continue;
       const q = mapById.get(fav.questionId);
@@ -518,7 +523,7 @@ export async function buildTodayReviewQueue(user, questions, userData = null) {
       queue.push(q);
     }
 
-    const maxQueue = isUserPremium(userData) ? MAX_TODAY_QUEUE : FREE_LIMITS.dailyReviewQuestions;
+    const maxQueue = hasPlusAccess(userData) ? MAX_TODAY_QUEUE : FREE_LIMITS.dailyReviewQuestions;
     if (queue.length < maxQueue) {
       scoredWrong
         .filter((item) => favoriteSet.has(item.questionId))

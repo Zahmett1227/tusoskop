@@ -3,7 +3,7 @@ import { auth, db } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { trackClarityEvent } from "../lib/clarity";
 import { FREE_LIMITS } from "../config/limits";
-import { isUserPremium } from "../utils/premiumUtils";
+import { hasPlusAccess } from "../utils/premiumUtils";
 import {
   bumpLocalUsage,
   canAnswerQuestion,
@@ -501,7 +501,7 @@ export function useStudyState({
       const isFavoriteNow = favoriteQuestionIds.has(Number(question?.id));
       if (
         !isFavoriteNow &&
-        !isUserPremium(userData) &&
+        !hasPlusAccess(userData) &&
         favoriteQuestionIds.size >= FREE_LIMITS.maxFavorites
       ) {
         setLimitModal({

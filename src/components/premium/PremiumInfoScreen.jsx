@@ -10,7 +10,11 @@ import {
 import { setClarityTag, trackClarityEvent } from "../../lib/clarity";
 import { trackInitiateCheckout } from "../../lib/metaPixel";
 import { EYLUL_PAKETI, DERSHANE_ANCHOR } from "../../constants/eylulPaketi";
-import { isUserPremium } from "../../utils/premiumUtils";
+import {
+  getWebFreeAccessEndLabel,
+  isUserPremium,
+  isWebFreeAccessActive,
+} from "../../utils/premiumUtils";
 import CoffeeAnimation from "./CoffeeAnimation";
 import PaytrCheckoutModal from "./PaytrCheckoutModal";
 import Footer from "../layout/Footer";
@@ -151,6 +155,7 @@ export default function PremiumInfoScreen({
   const uidShort = user?.uid ? shortAccountId(user.uid) : "";
   const uidLine =
     user?.uid && uidShort ? uidShort : "Hesap bilgisi bulunamadı";
+  const showFreeCampaignNotice = isWebFreeAccessActive() && !isUserPremium(userData);
 
   return (
     <div className="min-h-dvh bg-gradient-to-b from-[#fdfcfa] via-[#fcfbf9] to-[#f5f0ea] text-black px-3 py-5 pb-12 sm:px-4 md:px-8 md:py-10">
@@ -171,6 +176,16 @@ export default function PremiumInfoScreen({
             className="rounded-3xl border border-amber-200/80 bg-[#fff8ef] px-4 py-3.5 text-sm font-medium text-[#3d2a18] shadow-sm"
           >
             {banner}
+          </div>
+        ) : null}
+
+        {showFreeCampaignNotice ? (
+          <div
+            role="status"
+            className="rounded-3xl border border-emerald-200 bg-emerald-50 px-4 py-3.5 text-sm font-semibold text-emerald-900 shadow-sm"
+          >
+            🎁 {getWebFreeAccessEndLabel()} tarihine kadar web'de tüm Plus özellikleri
+            ücretsiz. Şu an satın almana gerek yok.
           </div>
         ) : null}
 

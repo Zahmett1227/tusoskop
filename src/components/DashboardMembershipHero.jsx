@@ -1,6 +1,11 @@
 import React from "react";
 import { PRICING } from "../constants/pricing";
-import { formatPremiumUntil } from "../utils/premiumUtils";
+import {
+  formatPremiumUntil,
+  getWebFreeAccessEndLabel,
+  isUserPremium,
+  isWebFreeAccessActive,
+} from "../utils/premiumUtils";
 
 function isExpiredPlus(userData) {
   if (!userData) return false;
@@ -26,6 +31,9 @@ export default function DashboardMembershipHero({
 }) {
   const lifetime = Boolean(userData?.lifetimePremium);
   const untilLabel = formatPremiumUntil(userData?.premiumUntil);
+  // Web ücretsiz kampanyası: erişim açık ama gerçek Plus üyeliği yok.
+  const freeCampaign = premiumActive && !isUserPremium(userData) && isWebFreeAccessActive();
+  const campaignEndLabel = getWebFreeAccessEndLabel();
 
   const outer = isLightTheme
     ? "border-slate-200 bg-white shadow-sm hover:shadow-md"
@@ -39,11 +47,15 @@ export default function DashboardMembershipHero({
       ? "bg-emerald-500/10"
       : "bg-indigo-500/12";
 
-  const leftTitle = premiumActive ? "Plus aktif" : "Ücretsiz plan";
-  const leftLead = premiumActive
+  const leftTitle = freeCampaign ? "Ücretsiz erişim" : premiumActive ? "Plus aktif" : "Ücretsiz plan";
+  const leftLead = freeCampaign
+    ? "Web'e özel kampanya: tüm Plus özellikleri şu an ücretsiz."
+    : premiumActive
     ? "Sınırsız çalışma akışın açık. Tüm Plus avantajlarından yararlanıyorsun."
     : "Günlük soru, deneme ve tekrar limitlerini buradan takip edebilirsin.";
-  const leftMeta = premiumActive
+  const leftMeta = freeCampaign
+    ? `${campaignEndLabel} tarihine kadar aktif.`
+    : premiumActive
     ? lifetime
       ? "Ömür boyu erişim aktif."
       : untilLabel && untilLabel !== "-"
@@ -51,12 +63,16 @@ export default function DashboardMembershipHero({
         : "Plus erişimin hazır."
     : "Limitler her gün yenilenir.";
 
-  const rightBadge = premiumActive ? "Plus" : "Önerilen";
-  const rightBadgeSub = premiumActive ? "Aktif üyelik" : "Sınırsız erişim";
-  const rightHeadline = premiumActive
+  const rightBadge = freeCampaign ? "Kampanya" : premiumActive ? "Plus" : "Önerilen";
+  const rightBadgeSub = freeCampaign ? "Web'e özel" : premiumActive ? "Aktif üyelik" : "Sınırsız erişim";
+  const rightHeadline = freeCampaign
+    ? "Tüm özellikler ücretsiz."
+    : premiumActive
     ? "Avantajların aktif."
     : "Plus ile tüm sınırları kaldır.";
-  const rightSub = premiumActive
+  const rightSub = freeCampaign
+    ? `Sınırsız soru, deneme ve tekrar ${campaignEndLabel} tarihine kadar açık.`
+    : premiumActive
     ? "Sınırsız soru, sınırsız deneme ve gelişmiş analiz erişimin hazır."
     : "Sınırsız soru çöz, deneme sınırlarını kaldır ve tekrar akışını kesintisiz sürdür.";
   const ctaLabel = premiumActive ? "Plan detayı" : "Plus'ı İncele";
@@ -65,7 +81,7 @@ export default function DashboardMembershipHero({
     ? "border-slate-200/90 bg-white/90 text-slate-800 shadow-sm"
     : "border-white/10 bg-white/[0.04] text-slate-100 backdrop-blur-sm";
 
-  const expiredPlus = isExpiredPlus(userData);
+  const expiredPlus = !freeCampaign && isExpiredPlus(userData);
 
   return (
     <>
