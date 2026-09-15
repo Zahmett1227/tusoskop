@@ -16,6 +16,49 @@ import {
   KONTENJAN_YIL,
 } from "./kontenjanData.js";
 import { TUS_BARAJ_PUANI } from "./tusScoring.js";
+import { WEB_FREE_ACCESS_CAMPAIGN } from "../config/freeAccessCampaign.js";
+import { PLUS_PLANS } from "../config/plusPlans.js";
+
+// --- Web ücretsiz erişim kampanyası (src/config/freeAccessCampaign.js) -----
+// Tarayıcıda sayfa açılışındaki tarihe, statik prerender'da BUILD tarihine göre
+// değerlendirilir. Kampanya bitince statik sayfalardaki metnin kalkması için
+// siteyi yeniden deploy etmek gerekir (görünen banner inline script ile kendi gizlenir).
+function isFreeCampaignLive(now = new Date()) {
+  const campaign = WEB_FREE_ACCESS_CAMPAIGN;
+  if (!campaign?.enabled || !campaign.startsAt || !campaign.endsAt) return false;
+  const start = new Date(campaign.startsAt).getTime();
+  const end = new Date(campaign.endsAt).getTime();
+  const time = now.getTime();
+  return Number.isFinite(start) && Number.isFinite(end) && time >= start && time <= end;
+}
+
+export const FREE_CAMPAIGN_LIVE = isFreeCampaignLive();
+export const FREE_CAMPAIGN_ENDS_AT = WEB_FREE_ACCESS_CAMPAIGN?.endsAt ?? null;
+// "31 Ekim 2026" — Türkiye saatine göre.
+export const FREE_CAMPAIGN_END_LABEL = FREE_CAMPAIGN_ENDS_AT
+  ? new Date(FREE_CAMPAIGN_ENDS_AT).toLocaleDateString("tr-TR", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      timeZone: "Europe/Istanbul",
+    })
+  : "";
+export const FREE_CAMPAIGN_HEADLINE = "Sınırlı süre: Tusoskop Plus şimdi tamamen ücretsiz!";
+export const FREE_CAMPAIGN_SEO_LINE = `Geçici süreyle ücretsiz: ${FREE_CAMPAIGN_END_LABEL} tarihine kadar web'de tüm Plus özellikleri ücretsiz — sınırsız soru, sınırsız deneme, akıllı tekrar ve AI çalışma planı. Kart yok, ödeme yok.`;
+
+// Ana sayfa "ne yapabilirsin" kartlarındaki ücretsiz kullanım kartı (React + statik ortak).
+export const FREE_USAGE_FEATURE = FREE_CAMPAIGN_LIVE
+  ? [
+      "Sınırlı Süre Tamamen Ücretsiz",
+      `${FREE_CAMPAIGN_END_LABEL} tarihine kadar web'de tüm Plus özellikleri ücretsiz. Sonrasında da her gün ${FREE_DAILY_QUESTIONS} soru ve ${FREE_DAILY_TOPIC_TESTS} konu testi ücretsiz.`,
+    ]
+  : [
+      `Günde ${FREE_DAILY_QUESTIONS} Soru Ücretsiz`,
+      `Free planda her gün ${FREE_DAILY_QUESTIONS} soru ve ${FREE_DAILY_TOPIC_TESTS} konu testi ücretsiz. Nöbet arasında telefonundan çöz.`,
+    ];
+
+const PLUS_STARTS_AT = PLUS_PLANS[0]?.totalPriceLabel ?? "";
+const PLUS_PRICE_LIST = PLUS_PLANS.map((plan) => `${plan.label} ${plan.totalPriceLabel}`).join(", ");
 
 export const SITE_URL = "https://www.tusoskop.com";
 export const BRAND_NAME = "Tusoskop";
@@ -26,7 +69,7 @@ export const OG_IMAGE = `${SITE_URL}/tusoskop-mark.png`;
 // yapıldığında bump edilir. Verisi bağımsız değişen sayfalar (kontenjan gibi)
 // sitemapEntries içinde kendi lastmod'unu geçer — böylece tek bir sayfanın
 // verisi güncellendiğinde tüm site "değişti" sinyali vermez.
-export const LASTMOD = "2026-08-13";
+export const LASTMOD = "2026-09-15";
 
 // Pazarlama etiketleri — soru bankasından otomatik türetilir, asla abartmaz.
 export const QUESTION_COUNT_LABEL = questionCountLabel(); // örn. "10.000+"
@@ -36,7 +79,9 @@ export const LESSON_COUNT_LABEL = `${LESSON_COUNT} ders`;
 export const HERO_STATS = [
   { value: QUESTION_COUNT_LABEL, label: "TUS tarzı soru" },
   { value: `${LESSON_COUNT}`, label: "Ders / branş" },
-  { value: `${FREE_DAILY_QUESTIONS}`, label: "Günlük ücretsiz soru" },
+  FREE_CAMPAIGN_LIVE
+    ? { value: "₺0", label: "Sınırlı süre tüm Plus" }
+    : { value: `${FREE_DAILY_QUESTIONS}`, label: "Günlük ücretsiz soru" },
   { value: "AI", label: "Çalışma planı" },
 ];
 
@@ -73,11 +118,12 @@ export function buildSiteNavigationNodes() {
 export const homeSeo = {
   path: "/",
   title: `TUS Soru Bankası — ${QUESTION_COUNT_LABEL} Soru, Deneme ve Analiz | Tusoskop`,
-  description:
-    `Tusoskop'ta ${QUESTION_COUNT_LABEL} yüksek kaliteli TUS tarzı soruyu ${LESSON_COUNT} dersten ve istediğin konudan seçerek çöz. Deneme, yanlış takibi, akıllı tekrar (FSRS), AI çalışma planı, haftalık lig ve performans analizi tek platformda.`,
+  description: FREE_CAMPAIGN_LIVE
+    ? `Geçici süreyle ücretsiz: ${FREE_CAMPAIGN_END_LABEL} tarihine kadar Tusoskop Plus web'de tamamen ücretsiz! ${QUESTION_COUNT_LABEL} TUS tarzı soru, deneme, akıllı tekrar (FSRS), AI çalışma planı ve haftalık lig.`
+    : `Tusoskop'ta ${QUESTION_COUNT_LABEL} yüksek kaliteli TUS tarzı soruyu ${LESSON_COUNT} dersten ve istediğin konudan seçerek çöz. Deneme, yanlış takibi, akıllı tekrar (FSRS), AI çalışma planı, haftalık lig ve performans analizi tek platformda.`,
   h1: "TUS Hazırlığı İçin Soru Çözme, Deneme ve Analiz Platformu",
   answer:
-    `Tusoskop; TUS'a hazırlanan tıp öğrencileri ve hekimler için ${QUESTION_COUNT_LABEL} yüksek kaliteli TUS tarzı soruyu ${LESSON_COUNT} dersten ve istediğin konudan seçerek çözmeni sağlar. Konu bazlı test, deneme çözümü, yanlış/favori takibi, bilimsel aralıklı tekrar (FSRS), AI destekli çalışma planı, haftalık lig ve performans analizini tek bir web ve mobil platformda sunar.`,
+    `Tusoskop; TUS'a hazırlanan tıp öğrencileri ve hekimler için ${QUESTION_COUNT_LABEL} yüksek kaliteli TUS tarzı soruyu ${LESSON_COUNT} dersten ve istediğin konudan seçerek çözmeni sağlar. Konu bazlı test, deneme çözümü, yanlış/favori takibi, bilimsel aralıklı tekrar (FSRS), AI destekli çalışma planı, haftalık lig ve performans analizini tek bir web ve mobil platformda sunar.${FREE_CAMPAIGN_LIVE ? ` ${FREE_CAMPAIGN_SEO_LINE}` : ""}`,
 };
 
 export const commonFaq = [
@@ -99,7 +145,9 @@ export const commonFaq = [
   {
     question: "Tusoskop ücretsiz soru çözdürüyor mu?",
     answer:
-      `Evet. Free planda her gün ${FREE_DAILY_QUESTIONS} soru ve ${FREE_DAILY_TOPIC_TESTS} konu testi ücretsiz çözülebilir. Plus erişimde günlük soru ve konu testi limiti kalkar.`,
+      FREE_CAMPAIGN_LIVE
+        ? `Evet. Geçici süreyle ${FREE_CAMPAIGN_END_LABEL} tarihine kadar web'de tüm Plus özellikleri ücretsiz: sınırsız soru, deneme, tekrar ve AI çalışma planı. Kampanya bitince Free planda her gün ${FREE_DAILY_QUESTIONS} soru ve ${FREE_DAILY_TOPIC_TESTS} konu testi ücretsiz çözülmeye devam eder.`
+        : `Evet. Free planda her gün ${FREE_DAILY_QUESTIONS} soru ve ${FREE_DAILY_TOPIC_TESTS} konu testi ücretsiz çözülebilir. Plus erişimde günlük soru ve konu testi limiti kalkar.`,
   },
   {
     question: "Tusoskop yanlışları nasıl tekrar ettiriyor?",
@@ -742,12 +790,25 @@ const contentSeoPages = [
   {
     slug: "fiyatlandirma",
     title: "Tusoskop Fiyatlandırma | TUS Soru Platformu",
-    description:
-      "Tusoskop fiyatlandırma seçeneklerini, ücretsiz kullanım imkanlarını ve TUS hazırlığı için sunulan dijital özellikleri incele.",
+    description: FREE_CAMPAIGN_LIVE
+      ? `Geçici süreyle ücretsiz: ${FREE_CAMPAIGN_END_LABEL} tarihine kadar Tusoskop Plus web'de ücretsiz. Kampanya sonrası Plus paketleri ${PLUS_STARTS_AT}'den başlar.`
+      : "Tusoskop fiyatlandırma seçeneklerini, ücretsiz kullanım imkanlarını ve TUS hazırlığı için sunulan dijital özellikleri incele.",
     h1: "Tusoskop Fiyatlandırma",
-    intro:
-      "Tusoskop ücretsiz kullanılabilir; günlük soru hakkın dolduğunda ise Plus'a geçebilirsin. Plus paketleri 89,90₺'den başlar. Sınav dönemi için Eylül Paketi (3 aylık, sınava kadar sınırsız) 209,70₺'dir — TUS dershanelerinin ~120.000₺'ye ulaşan paketlerinin yanında hazırlık bütçesinde büyük fark yaratır.",
+    intro: FREE_CAMPAIGN_LIVE
+      ? `${FREE_CAMPAIGN_SEO_LINE} Kampanya bittikten sonra Tusoskop'u yine ücretsiz kullanabilir, günlük soru hakkın dolduğunda Plus'a geçebilirsin: ${PLUS_PRICE_LIST}.`
+      : `Tusoskop ücretsiz kullanılabilir; günlük soru hakkın dolduğunda ise Plus'a geçebilirsin. Plus paketleri ${PLUS_STARTS_AT}'den başlar: ${PLUS_PRICE_LIST}.`,
     sections: [
+      ...(FREE_CAMPAIGN_LIVE
+        ? [
+            {
+              heading: "Geçici süreyle ücretsiz kampanya",
+              paragraphs: [
+                `${FREE_CAMPAIGN_END_LABEL} tarihine kadar tusoskop.com üzerinde tüm Plus özellikleri ücretsizdir: sınırsız soru, sınırsız deneme, sınırsız tekrar kuyruğu, ders/konu seçerek çözme, detaylı analiz ve AI çalışma planı. Kart bilgisi veya ödeme istenmez; Google ya da Apple ile giriş yapman yeterli.`,
+                "Kampanya süresi dolduğunda ücretsiz plan limitleri geri gelir; biriktirdiğin yanlış, favori ve tekrar geçmişin hesabında saklanır.",
+              ],
+            },
+          ]
+        : []),
       {
         heading: "Tusoskop ücretli mi?",
         paragraphs: [
@@ -757,19 +818,14 @@ const contentSeoPages = [
       {
         heading: "Ücretsiz kullanım var mı?",
         paragraphs: [
-          "Evet. Uygulamada ücretsiz kullanım hakkı bulunur; günlük soru ve deneme limitleri uygulama içindeki güncel kurallara göre uygulanır. Önce ücretsiz deneyip sonra Plus'a geçebilirsin.",
+          `Evet. Free planda her gün ${FREE_DAILY_QUESTIONS} soru ve ${FREE_DAILY_TOPIC_TESTS} konu testi ücretsizdir; deneme hakkı aylık olarak yenilenir. Önce ücretsiz deneyip sonra Plus'a geçebilirsin.`,
         ],
       },
       {
         heading: "Premium (Plus) özellikler neler?",
         paragraphs: [
-          "Plus erişim; sınırsız soru çözme, sınırsız deneme, sınırsız tekrar kuyruğu, tam favori/yanlış geçmişi ve gelişmiş deneme net grafiği sunar. Akıllı tekrar (FSRS) ve haftalık Türkiye ligi tüm kullanıcılara açıktır.",
-        ],
-      },
-      {
-        heading: "Eylül Paketi nedir?",
-        paragraphs: [
-          "Eylül Paketi, 3 aylık Plus planının sınav dönemi çerçevesidir: 209,70₺ karşılığında sınava kadar (90 gün) sınırsız erişim — günde yaklaşık 2,3₺. Fiyat, standart 3 aylık planla aynıdır. Ödeme PayTR ile güvenli şekilde alınır ve onaylandığı anda hesabına tanımlanır.",
+          "Plus erişim; sınırsız soru çözme, ders/konu seçerek çözme, sınırsız deneme, sınırsız tekrar kuyruğu, tam favori/yanlış geçmişi, gelişmiş deneme net grafiği ve AI destekli günlük çalışma planı sunar. Akıllı tekrar (FSRS) ve haftalık lig tüm kullanıcılara açıktır.",
+          "Ödeme PayTR ile güvenli şekilde alınır ve onaylandığı anda hesabına tanımlanır.",
         ],
       },
     ],
@@ -866,7 +922,9 @@ const contentSeoPages = [
       {
         question: "Tusoskop ücretli mi?",
         answer:
-          "Tusoskop'ta ücretsiz kullanım ve Plus erişim seçenekleri bulunabilir. Güncel fiyatlar uygulama içinde görüntülenmelidir.",
+          FREE_CAMPAIGN_LIVE
+            ? `Geçici süreyle hayır: ${FREE_CAMPAIGN_END_LABEL} tarihine kadar web'de tüm Plus özellikleri ücretsiz. Sonrasında Free plan ücretsiz kalır; Plus paketleri ${PLUS_STARTS_AT}'den başlar.`
+            : `Tusoskop'u Free planda ücretsiz kullanabilirsin. Limitleri kaldırmak için Plus paketleri ${PLUS_STARTS_AT}'den başlar.`,
       },
     ],
     links: [
@@ -920,11 +978,13 @@ const subjectSeoPages = SUBJECTS.map((subject, subjectIndex) => ({
   stats: [
     { value: `${subject.count}`, label: `${subject.name} sorusu` },
     { value: QUESTION_COUNT_LABEL, label: "Toplam soru" },
-    { value: `${FREE_DAILY_QUESTIONS}`, label: "Günlük ücretsiz" },
+    FREE_CAMPAIGN_LIVE
+      ? { value: "₺0", label: "Sınırlı süre tüm Plus" }
+      : { value: `${FREE_DAILY_QUESTIONS}`, label: "Günlük ücretsiz" },
   ],
   title: `TUS ${subject.name} Soruları — ${subject.count} Soru Çöz | Tusoskop`,
   description:
-    `Tusoskop'ta ${subject.count} TUS tarzı ${subject.name} sorusunu konu konu seçerek çöz. Yanlışlarını akıllı tekrarla pekiştir, performansını analiz et. Örnek soruyu hemen incele.`,
+    `${FREE_CAMPAIGN_LIVE ? "Geçici süreyle ücretsiz! " : ""}Tusoskop'ta ${subject.count} TUS tarzı ${subject.name} sorusunu konu konu seçerek çöz. Yanlışlarını akıllı tekrarla pekiştir, performansını analiz et. Örnek soruyu hemen incele.`,
   h1: `TUS ${subject.name} Soruları`,
   intro:
     `Tusoskop'ta ${subject.name} dersine ait ${subject.count} TUS tarzı soruyu konu konu seçerek çözebilirsin. Aşağıda soru bankamızdan gerçek bir ${subject.name} örnek sorusu ve açıklaması yer alıyor.`,
@@ -963,7 +1023,9 @@ const subjectSeoPages = SUBJECTS.map((subject, subjectIndex) => ({
     },
     {
       question: "Tusoskop ücretsiz mi?",
-      answer: `Free planda günde ${FREE_DAILY_QUESTIONS} soru ve ${FREE_DAILY_TOPIC_TESTS} konu testi ücretsizdir; Plus erişimde limitler kalkar.`,
+      answer: FREE_CAMPAIGN_LIVE
+        ? `Geçici süreyle evet: ${FREE_CAMPAIGN_END_LABEL} tarihine kadar web'de tüm Plus özellikleri ücretsiz. Kampanya sonrasında Free planda günde ${FREE_DAILY_QUESTIONS} soru ve ${FREE_DAILY_TOPIC_TESTS} konu testi ücretsiz olmaya devam eder.`
+        : `Free planda günde ${FREE_DAILY_QUESTIONS} soru ve ${FREE_DAILY_TOPIC_TESTS} konu testi ücretsizdir; Plus erişimde limitler kalkar.`,
     },
   ],
   links: relatedSubjectLinks(subjectIndex),

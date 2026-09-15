@@ -9,12 +9,8 @@ import {
 } from "../../config/support";
 import { setClarityTag, trackClarityEvent } from "../../lib/clarity";
 import { trackInitiateCheckout } from "../../lib/metaPixel";
-import { EYLUL_PAKETI, DERSHANE_ANCHOR } from "../../constants/eylulPaketi";
-import {
-  getWebFreeAccessEndLabel,
-  isUserPremium,
-  isWebFreeAccessActive,
-} from "../../utils/premiumUtils";
+import { isUserPremium } from "../../utils/premiumUtils";
+import { FreeCampaignHero } from "../campaign/FreeCampaign";
 import CoffeeAnimation from "./CoffeeAnimation";
 import PaytrCheckoutModal from "./PaytrCheckoutModal";
 import Footer from "../layout/Footer";
@@ -155,7 +151,7 @@ export default function PremiumInfoScreen({
   const uidShort = user?.uid ? shortAccountId(user.uid) : "";
   const uidLine =
     user?.uid && uidShort ? uidShort : "Hesap bilgisi bulunamadı";
-  const showFreeCampaignNotice = isWebFreeAccessActive() && !isUserPremium(userData);
+  const showFreeCampaign = !isUserPremium(userData);
 
   return (
     <div className="min-h-dvh bg-gradient-to-b from-[#fdfcfa] via-[#fcfbf9] to-[#f5f0ea] text-black px-3 py-5 pb-12 sm:px-4 md:px-8 md:py-10">
@@ -179,14 +175,12 @@ export default function PremiumInfoScreen({
           </div>
         ) : null}
 
-        {showFreeCampaignNotice ? (
-          <div
-            role="status"
-            className="rounded-3xl border border-emerald-200 bg-emerald-50 px-4 py-3.5 text-sm font-semibold text-emerald-900 shadow-sm"
-          >
-            🎁 {getWebFreeAccessEndLabel()} tarihine kadar web'de tüm Plus özellikleri
-            ücretsiz. Şu an satın almana gerek yok.
-          </div>
+        {showFreeCampaign ? (
+          <FreeCampaignHero
+            tone="light"
+            ctaLabel="Ücretsiz çözmeye başla 🚀"
+            onCta={onBack}
+          />
         ) : null}
 
         {/* Hero */}
@@ -371,30 +365,6 @@ export default function PremiumInfoScreen({
             </div>
           </div>
 
-          {/* Dershane çıpası — satın alma anında fiyat karşılaştırması (plan K6/§08) */}
-          <div className="rounded-[1.75rem] border border-[#d9c3ac] bg-gradient-to-r from-[#fff8ef] via-white to-[#f8eadb] px-4 py-4 shadow-sm sm:px-6 sm:py-5">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <div className="min-w-0">
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#9a7758]">
-                  {EYLUL_PAKETI.name}
-                </p>
-                <p className="mt-1.5 text-base sm:text-lg font-black leading-snug text-[#2a1a0f]">
-                  TUS dershaneleri {DERSHANE_ANCHOR.priceLabel}; {EYLUL_PAKETI.name} ile
-                  sınava kadar sınırsız {EYLUL_PAKETI.priceLabel}.
-                </p>
-                <p className="mt-1 text-xs font-semibold text-[#6f5946]">
-                  {EYLUL_PAKETI.proofLine}
-                </p>
-              </div>
-              <div className="shrink-0 text-center sm:text-right">
-                <p className="text-2xl font-black tabular-nums text-emerald-700">
-                  {EYLUL_PAKETI.perDayLabel}
-                </p>
-                <p className="text-[11px] font-bold text-[#6f5946]">90 gün · sınava kadar</p>
-              </div>
-            </div>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 items-stretch">
             {PLUS_PLANS.map((plan) => {
               const is1m = plan.id === "plus_1m";
@@ -426,11 +396,6 @@ export default function PremiumInfoScreen({
                   ) : null}
 
                   <div className="relative pr-2">
-                    {plan.id === EYLUL_PAKETI.planId ? (
-                      <p className="mb-1.5 text-[10px] font-black uppercase tracking-[0.16em] text-[#9a6b32]">
-                        🍂 {EYLUL_PAKETI.name} · {EYLUL_PAKETI.tagline}
-                      </p>
-                    ) : null}
                     <h3 className="text-xl sm:text-2xl font-extrabold text-neutral-950 leading-tight">
                       {plan.label}
                     </h3>

@@ -213,7 +213,7 @@ TUS özelliklerini agresif pazarlayan SEO altyapısı. Amaç: özellikleri rakam
 | Ana sayfa statik fallback | `scripts/render-home-seo.mjs` → `vite.config.js` | `renderHomeSeoStatic()` ile ana sayfa içeriği `#root` içine **gerçek DOM** olarak gömülür (noscript DEĞİL). curl/JS'siz tarayıcı/AI botları okur; React mount olunca `PublicHome` yerini alır |
 
 - SEO sayfaları `seoContent.js`'teki `seoPages = [...contentSeoPages, ...subjectSeoPages]` dizisinden gelir. Routing `getSeoPageByPath` ile; yeni slug eklemek otomatik olarak routing + sitemap + prerender'a girer.
-- **FAQ JSON-LD ↔ sayfa hizalaması (önemli):** Şemaya konan FAQ, sayfada görünen FAQ ile **birebir aynı** olmalı (Google kuralı). `SeoLandingPage` ve üretici `slice(0,6)` ile görünen seti hem render'a hem şemaya verir; FAQ boşsa (legal sayfalar) FAQPage düğümü hiç eklenmez.
+- **FAQ JSON-LD ↔ sayfa hizalaması (önemli):** Şemaya konan FAQ, sayfada görünen FAQ ile **birebir aynı** olmalı (Google kuralı). `SeoLandingPage` ve üretici `slice(0, FAQ_VISIBLE_LIMIT=8)` ile görünen seti hem render'a hem şemaya verir; FAQ boşsa (legal sayfalar) FAQPage düğümü hiç eklenmez.
 - Footer'da branş linkleri kompakt: kısa ders adları (Anatomi, Biyokimya…), `flex-wrap` tek satır.
 
 ### Statik SEO sayfalarında ölçüm (Ağu 2026)
@@ -252,9 +252,13 @@ Statik sayfalar React ağacının **tamamen dışında** üretiliyor; bu yüzden
 - `premiumUtils.hasPlusAccess(userData)` = `isUserPremium || isWebFreeAccessActive()` → **özellik kilitleri** bunu kullanır.
 - `isUserPremium` = **gerçekten ödemiş mi** → PaytrCheckoutModal ödeme tespiti, AdminPanel/AdminUserRow sayımları, Clarity `plan_status`.
 - `isWebFreeAccessActive()` Capacitor native'de her zaman `false` (yanlışlıkla iOS'a geçse bile açılmaz).
-- Sunucu (`incrementUsage`) değişmedi: istemci `passIfPremium` ile hiç çağırmıyor. Functions/PayTR deploy'u gerekmez.
+- Sunucu `incrementUsage` değişmedi: istemci `passIfPremium` ile hiç çağırmıyor.
+- **AI çalışma planı** (`generateDailyStudyPlan`) sunucu kapısı: `isPremiumServer || isWebFreeAccessRequest(request)` — kampanya tarihleri `functions/constants.js > WEB_FREE_ACCESS_CAMPAIGN` (istemci config'iyle aynı tutulmalı) + `Origin` = tusoskop.com/www. iOS (capacitor://localhost) etkilenmez. **Functions deploy gerektirir**; backend tek kaynak kuralı gereği `ios-appstore-v2`'ye de cherry-pick edilmeli.
 - `enforceWrongQuestionsLimitForFreeUser` web'de Firestore'dan **silmez** (okuma tarafı 30'a keser); native'de eski davranış.
 - Testlerde kampanya `src/test/setupTests.js` ile kapalı (free-limit testleri gerçek tarihe bağlı olmasın).
+- **Görseller** `src/components/campaign/FreeCampaign.jsx`: `FreeCampaignRibbon` (üst şerit, geri sayım), `FreeCampaignHero` (dönen gökkuşağı çerçeve + GÜN/SAAT/DAKİKA/SANİYE; `tone`/`compact`), `FreeCampaignCelebration` (tarayıcı başına 1 kez konfeti modalı, localStorage `tusoskop_free_campaign_2026_celebrated`). Efekt CSS'i `src/index.css` "Web ücretsiz kampanyası efektleri" (prefers-reduced-motion'da kapalı). Hepsi kampanya aktif değilse `null`.
+- Yerleşim: public header + ana sayfa + SEO sayfaları (React), `/giris`, `/coz` (AppRoot şeridi + sonuç ekranı kartı), uygulama kabuğu (yalnızca `BOTTOM_NAV_VIEWS` + `premiumInfo`; soru/deneme ekranlarında yok), Dashboard kartı + kutlama, Plus ekranı. Uygulama içinde **gerçek Plus kullanıcılarına gösterilmez** (`isUserPremium`).
+- **SEO:** `seoContent.js > FREE_CAMPAIGN_LIVE` (tarayıcıda açılış, statikte BUILD tarihine göre) → home description/answer, HERO_STATS, FAQ cevapları, branş stat + meta, `/fiyatlandirma`. Statik bloklar `scripts/render-free-campaign-static.mjs` (inline script geri sayar, bitişte `[data-free-campaign]`'i kaldırır). `index.html` meta açıklamaları build'de `vite.config.js` ile `homeSeo.description`'a eşitlenir. **Kampanya bitince (1 Kas 2026) siteyi yeniden deploy et** ki statik metin/meta temizlensin.
 
 ## Sık Yapılan İşlemler
 
@@ -293,7 +297,7 @@ Meta Traffic reklamlarından gelen kullanıcı için **login-öncesi 3 soruluk m
 
 > **Asıl nihai Meta Ads stratejisi/mimarisi için:** `META_ADS_MEDIA_PLAN.md` (Temmuz→Eylül 2026 planı — C1/C2/C3/C4 kampanya mimarisi, 10 kreatif fikri, bütçe, sinyal merdiveni QuizComplete→CompleteRegistration→Purchase, 9 haftalık takvim, guardrail'ler). Her yeni kampanya/bütçe/hedefleme kararı bu plana göre değerlendirilmeli. `META_ADS_CAMPAIGN_LOG.md` ise bu planın kronolojik uygulama günlüğüdür — ikisi birlikte okunmalı.
 
-> **Satış katmanı — Eylül Paketi (K6/§07-7, 13 Tem 2026):** Tek doğruluk kaynağı **`src/constants/eylulPaketi.js`** — "Eylül Paketi" = 3 aylık Plus planının (plus_3m, 209,70₺) sezonluk çerçevesi; dershane çıpası **~120.000₺** (kullanıcı beyanı). Kullanıldığı yerler: `/fiyatlandirma` kıyas bloğu (`PublicSeoPages.jsx` `PricingComparison` + `generate-seo-pages.mjs` `renderPricingComparison` — **ikisi senkron tutulmalı**), funnel sonuç ekranı kartı (`funnel/EylulPaketiCard.jsx`), `PremiumInfoScreen` çerçevesi. **Deep-link `/app?intent=plus`** → `AppAuthenticated` doğrudan `premiumInfo` view'ını açar (girişliyse hemen, anonimse giriş sonrası). Satış hunisi köprü sinyali: `metaPixel.js` `trackInitiateCheckout` (PremiumInfoScreen token başarısında). **Dürüstlük guardrail'i:** dershane ≠ Tusoskop (ders anlatımı vs soru bankası); kıyas çerçeve, kanıt satırı ("10.000+ soru · akıllı tekrar · haftalık lig") zorunlu.
+> **Eylül Paketi KALDIRILDI (15 Eyl 2026):** `src/constants/eylulPaketi.js`, `EylulPaketiCard`, limit modalı/Plus ekranı çıpaları, `/fiyatlandirma` dershane kıyası (React + statik) ve `k6-eylul-paketi` reklam kreatifi silindi. `/fiyatlandirma` artık `PLUS_PLANS`'tan gerçek plan listesi gösterir (`PlusPlansBlock` / `renderPlusPlansStatic`). `META_ADS_*.md` günlüklerindeki Eylül Paketi kayıtları tarihçedir. Korunanlar: **deep-link `/app?intent=plus`** → `AppAuthenticated` doğrudan `premiumInfo` view'ını açar (girişliyse hemen, anonimse giriş sonrası); satış hunisi sinyali `metaPixel.js` `trackInitiateCheckout` (PremiumInfoScreen token başarısında).
 
 ### Mimari
 - `src/main.jsx` → `src/AppRoot.jsx`: `/coz/` path'i **ağır App ağacından izole** (auth/QuestionsProvider yüklenmez), lazy `PublicQuizFunnel`. Firebase SDK sadece "Web'de devam et" login'inde dinamik import → en hızlı ilk render.

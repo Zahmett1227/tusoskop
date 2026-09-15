@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { EYLUL_PAKETI, DERSHANE_ANCHOR } from "../../constants/eylulPaketi";
 import { getMailtoQuickSupport } from "../../config/support";
 import { setClarityTag, trackClarityEvent } from "../../lib/clarity";
 import CoffeeAnimation from "./CoffeeAnimation";
@@ -69,39 +68,6 @@ export default function LimitReachedModal({
             {remainingInfo}
           </p>
         ) : null}
-
-        {/* Eylül Paketi çıpası — en yüksek niyet anında (limit dolunca) güçlü
-            değer kıyası. Dershane ≈120.000₺ vs Eylül Paketi 209,70₺ (plan §08/K6).
-            Yanıltıcı "indirim" değil, etiketli kıyas (dürüstlük guardrail'i). */}
-        <div className="rounded-2xl border border-[#d9c3ac] bg-gradient-to-br from-[#fffbf7] to-[#fff8ef] px-4 py-3.5 mb-5">
-          <p className="text-[10px] font-black uppercase tracking-[0.16em] text-[#9a6b32]">
-            🍂 {EYLUL_PAKETI.name} · sınava kadar sınırsız
-          </p>
-          <div className="mt-2.5 flex items-stretch gap-2">
-            <div className="flex-1 rounded-xl border border-neutral-200 bg-white/70 px-3 py-2">
-              <p className="text-[10px] font-bold uppercase tracking-wide text-neutral-400">
-                Dershane
-              </p>
-              <p className="mt-0.5 text-base font-black text-neutral-400">
-                {DERSHANE_ANCHOR.priceLabel}
-              </p>
-            </div>
-            <div className="flex-1 rounded-xl border border-emerald-300/70 bg-emerald-50 px-3 py-2">
-              <p className="text-[10px] font-bold uppercase tracking-wide text-emerald-700">
-                {EYLUL_PAKETI.name}
-              </p>
-              <p className="mt-0.5 text-base font-black text-emerald-700">
-                {EYLUL_PAKETI.priceLabel}
-                <span className="ml-1 text-[11px] font-bold text-neutral-500">
-                  {EYLUL_PAKETI.perDayLabel}
-                </span>
-              </p>
-            </div>
-          </div>
-          <p className="mt-2 text-[11px] font-semibold text-[#6f5946]">
-            ✓ {EYLUL_PAKETI.proofLine}
-          </p>
-        </div>
 
         <div className="mb-5 space-y-2">
           <p className="text-xs md:text-sm font-semibold text-neutral-700">

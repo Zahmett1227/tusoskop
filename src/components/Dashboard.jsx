@@ -12,7 +12,8 @@ import { SUBJECTS } from "../data/subjects";
 import { FIXED_EXAM_CARD_SUBTITLE } from "../data/exams";
 import { SUBJECT_QUESTION_COUNTS } from "../data/questions";
 import { accentThemes } from "../theme/accentThemes";
-import { hasPlusAccess } from "../utils/premiumUtils";
+import { hasPlusAccess, isUserPremium } from "../utils/premiumUtils";
+import { FreeCampaignHero } from "./campaign/FreeCampaign";
 import {
   getStudyCollectionSummary,
 } from "../services/studyCollectionService";
@@ -278,6 +279,10 @@ export default function Dashboard({
             />
           )}
         </header>
+
+        {userData && !isUserPremium(userData) ? (
+          <FreeCampaignHero compact tone={isLightTheme ? "light" : "dark"} className="mb-6" />
+        ) : null}
 
         {/* Akıllı Tekrar Kartı — mobil öncelikli premium hero CTA */}
         <section

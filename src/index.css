@@ -225,6 +225,133 @@ button:active {
   .animate-toast-in { animation: none; }
 }
 
+/* ─── Web ücretsiz kampanyası efektleri (src/components/campaign) ────────── */
+@keyframes campaignGradientPan {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes campaignShine {
+  0% { transform: translateX(-160%) skewX(-20deg); }
+  55%, 100% { transform: translateX(420%) skewX(-20deg); }
+}
+
+@keyframes campaignFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(10deg); }
+}
+
+@keyframes campaignPing {
+  0% { transform: scale(1); opacity: 0.85; }
+  80%, 100% { transform: scale(2.6); opacity: 0; }
+}
+
+@keyframes campaignTick {
+  0% { transform: translateY(-40%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes campaignSpin {
+  to { rotate: 360deg; }
+}
+
+@keyframes campaignPop {
+  0% { transform: scale(0.86) translateY(12px); opacity: 0; }
+  60% { transform: scale(1.02) translateY(0); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes campaignConfetti {
+  0% { transform: translate3d(0, -12vh, 0) rotate(0deg); opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translate3d(var(--campaign-drift, 0px), 105vh, 0) rotate(var(--campaign-spin, 540deg)); opacity: 0; }
+}
+
+.campaign-gradient {
+  background: linear-gradient(110deg, #b45309, #be185d, #6d28d9, #047857, #b45309);
+  background-size: 320% 320%;
+  animation: campaignGradientPan 9s ease infinite;
+}
+
+.campaign-text-gradient {
+  background: linear-gradient(90deg, #fbbf24, #f472b6, #a78bfa, #34d399, #fbbf24);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: campaignGradientPan 6s ease infinite;
+}
+
+.campaign-text-gradient--light {
+  background-image: linear-gradient(90deg, #b45309, #be185d, #6d28d9, #047857, #b45309);
+}
+
+.campaign-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.campaign-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 30%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.38), transparent);
+  animation: campaignShine 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Dönen gökkuşağı çerçeve: dıştaki kutu 2px padding, içteki kutu kendi zeminini boyar. */
+.campaign-border {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.campaign-border::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 220%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  background: conic-gradient(from 0deg, #f59e0b, #ec4899, #8b5cf6, #10b981, #22d3ee, #f59e0b);
+  animation: campaignSpin 7s linear infinite;
+  z-index: -1;
+}
+
+.campaign-float { animation: campaignFloat 4.5s ease-in-out infinite; }
+.campaign-ping { animation: campaignPing 1.6s cubic-bezier(0, 0, 0.2, 1) infinite; }
+.campaign-tick { animation: campaignTick 0.35s ease-out; }
+.campaign-pop { animation: campaignPop 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+.campaign-confetti-piece {
+  position: absolute;
+  top: 0;
+  display: block;
+  border-radius: 2px;
+  animation-name: campaignConfetti;
+  animation-timing-function: cubic-bezier(0.25, 0.6, 0.45, 1);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .campaign-gradient,
+  .campaign-text-gradient,
+  .campaign-shine::after,
+  .campaign-border::before,
+  .campaign-float,
+  .campaign-ping,
+  .campaign-tick,
+  .campaign-pop {
+    animation: none;
+  }
+  .campaign-confetti-piece { display: none; }
+}
+
 /* ─── iOS cihaz sınıfı: sadece .ios-device içinde aktif özel kurallar ─────── */
 .ios-device {
   /* Cam/blur efektleri iOS GPU'da çok daha iyi çalışır */

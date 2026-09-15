@@ -4,11 +4,16 @@ import {
   homeSeo,
   QUESTION_COUNT_LABEL,
   LESSON_COUNT,
-  FREE_DAILY_QUESTIONS,
-  FREE_DAILY_TOPIC_TESTS,
+  FREE_USAGE_FEATURE,
   HERO_STATS,
   subjectIndexLinks,
+  FREE_CAMPAIGN_LIVE,
 } from "../src/seo/seoContent.js";
+import {
+  renderFreeCampaignBannerStatic,
+  renderFreeCampaignRibbonStatic,
+  renderFreeCampaignRuntime,
+} from "./render-free-campaign-static.mjs";
 
 function escapeHtml(value) {
   return String(value)
@@ -28,12 +33,9 @@ const features = [
     "Akıllı Tekrar (FSRS)",
     "Yanlış yaptığın soruyu, beynin tam unutmaya başladığı anda bilimsel aralıklı tekrarla yeniden karşına çıkarırız.",
   ],
-  [
-    `Günde ${FREE_DAILY_QUESTIONS} Soru Ücretsiz`,
-    `Free planda her gün ${FREE_DAILY_QUESTIONS} soru ve ${FREE_DAILY_TOPIC_TESTS} konu testi ücretsiz; nöbet arasında telefonundan çöz.`,
-  ],
+  FREE_USAGE_FEATURE,
   ["AI Çalışma Planı", "Yapay zeka eksik konularını bulup sana günlük çalışma planı çıkarır."],
-  ["Haftalık Ligde Yarış", "Binlerce TUS adayıyla aynı ligde yarış, haftalık sıralamada yüksel."],
+  ["Haftalık Ligde Yarış", "TUS adaylarıyla haftalık ligde yarış, haftalık sıralamada yüksel."],
 ];
 
 const seoLinks = [
@@ -113,6 +115,7 @@ const css = `
 export function renderHomeSeoStatic() {
   return `<div id="seo-home">
     <style>${css}</style>
+    ${renderFreeCampaignRibbonStatic()}
     <header class="topbar">
       <div class="wrap">
         <a class="brand" href="/"><img src="/tusoskop-mark.png" alt="" width="34" height="34" /><span>Tusoskop</span></a>
@@ -125,7 +128,7 @@ export function renderHomeSeoStatic() {
           <a href="/hakkimizda">Hakkımızda</a>
           <a href="/tusoskop-sss">SSS</a>
         </nav>
-        <a class="cta" href="/giris">Giriş Yap</a>
+        <a class="cta" href="/giris">${FREE_CAMPAIGN_LIVE ? "🎁 Ücretsiz Başla" : "Giriş Yap"}</a>
       </div>
     </header>
     <main class="wrap">
@@ -141,6 +144,7 @@ export function renderHomeSeoStatic() {
           <a class="btn btn-primary" href="/giris">Hemen Başla</a>
           <a class="btn btn-ghost" href="${escapeHtml(APP_STORE_URL)}">App Store'da Gör</a>
         </div>
+        ${renderFreeCampaignBannerStatic()}
       </section>
 
       <section>
@@ -192,5 +196,6 @@ export function renderHomeSeoStatic() {
         </nav>
       </div>
     </footer>
+    ${renderFreeCampaignRuntime()}
   </div>`;
 }

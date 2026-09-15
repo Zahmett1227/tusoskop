@@ -2,6 +2,7 @@
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { renderHomeSeoStatic } from "./scripts/render-home-seo.mjs";
+import { homeSeo } from "./src/seo/seoContent.js";
 
 // Ana sayfa (/) için gerçek DOM fallback'i. SEO içeriği <noscript> içinde
 // DEĞİL, doğrudan #root içinde servis edilir: curl, JS'siz tarayıcı ve AI
@@ -12,10 +13,16 @@ function homeSeoFallbackPlugin() {
   return {
     name: "home-seo-fallback",
     transformIndexHtml(html) {
-      return html.replace(
-        '<div id="root"></div>',
-        `<div id="root">${renderHomeSeoStatic()}</div>`,
-      );
+      // Meta açıklamaları seoContent.homeSeo ile tek kaynaktan (kampanya metni dahil).
+      const description = homeSeo.description.replaceAll("&", "&amp;").replaceAll('"', "&quot;");
+      return html
+        .replace(/(<meta name="description" content=")[^"]*(")/, `$1${description}$2`)
+        .replace(/(<meta property="og:description" content=")[^"]*(")/, `$1${description}$2`)
+        .replace(/(<meta name="twitter:description" content=")[^"]*(")/, `$1${description}$2`)
+        .replace(
+          '<div id="root"></div>',
+          `<div id="root">${renderHomeSeoStatic()}</div>`,
+        );
     },
   };
 }

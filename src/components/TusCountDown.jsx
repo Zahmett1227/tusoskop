@@ -55,9 +55,15 @@ export default function TusCountdown({ isLightTheme = false }) {
           </p>
 
           {timeLeft.finished ? (
-            <h2 className={`text-2xl md:text-4xl font-black ${isLightTheme ? "text-slate-900" : "text-white"}`}>
-              TUS günü geldi.... Hazırlan Asker
-            </h2>
+            <>
+              <h2 className={`text-2xl md:text-4xl font-black ${isLightTheme ? "text-slate-900" : "text-white"}`}>
+                Sıradaki TUS için hazırlık başladı
+              </h2>
+              {/* TARGET_DATE: 2027-TUS 1. Dönem tarihi ÖSYM takviminde açıklanınca güncellenmeli. */}
+              <p className={`mt-3 text-sm md:text-base ${isLightTheme ? "text-slate-600" : "text-slate-400"}`}>
+                2027-TUS 1. Dönem tarihi ÖSYM takviminde açıklanınca sayaç yeniden başlayacak.
+              </p>
+            </>
           ) : (
             <>
               <h2 className={`text-2xl md:text-4xl font-black leading-tight ${isLightTheme ? "text-slate-900" : "text-white"}`}>

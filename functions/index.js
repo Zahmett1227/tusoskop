@@ -9,7 +9,7 @@ const { onCall, onRequest, HttpsError } = require("firebase-functions/v2/https")
 const { onDocumentCreated } = require("firebase-functions/v2/firestore");
 const { defineSecret } = require("firebase-functions/params");
 const { getFirestore, FieldValue } = require("firebase-admin/firestore");
-const { FREE_LIMITS } = require("./constants");
+const { FREE_LIMITS, WEB_FREE_ACCESS_CAMPAIGN } = require("./constants");
 const { tryPublishSocialContentHandler } = require("./socialPublisher");
 const {
   exchangeAuthCodeForRefreshToken,
@@ -61,6 +61,20 @@ function premiumUntilToDate(value) {
   }
   const d = new Date(value);
   return Number.isNaN(d.getTime()) ? null : d;
+}
+
+const WEB_ORIGINS = new Set(["https://tusoskop.com", "https://www.tusoskop.com"]);
+
+/** Web ücretsiz kampanyası aktif mi ve çağrı web sitesinden mi geliyor? (iOS hariç) */
+function isWebFreeAccessRequest(request, now = new Date()) {
+  const campaign = WEB_FREE_ACCESS_CAMPAIGN;
+  if (!campaign?.enabled) return false;
+  const origin = request?.rawRequest?.headers?.origin;
+  if (!WEB_ORIGINS.has(origin)) return false;
+  const start = new Date(campaign.startsAt).getTime();
+  const end = new Date(campaign.endsAt).getTime();
+  const time = now.getTime();
+  return time >= start && time <= end;
 }
 
 function isPremiumServer(data) {
@@ -456,10 +470,10 @@ exports.generateDailyStudyPlan = onCall(
 
     const uid = request.auth.uid;
 
-    // Sadece premium kullanıcılar AI planı alabilir
+    // Sadece premium kullanıcılar AI planı alabilir (web ücretsiz kampanyası süresince web'den herkes)
     const userSnap = await db.doc(`users/${uid}`).get();
     const userData = userSnap.exists ? userSnap.data() : {};
-    if (!isPremiumServer(userData)) {
+    if (!isPremiumServer(userData) && !isWebFreeAccessRequest(request)) {
       throw new HttpsError(
         "permission-denied",
         "Bu özellik premium kullanıcılara özeldir."

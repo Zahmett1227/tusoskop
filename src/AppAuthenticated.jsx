@@ -49,7 +49,12 @@ import { getCurrentWeekId } from "./utils/weekIdUtils";
 import MobileBottomNav from "./components/MobileBottomNav";
 import { LEGAL_PAGES } from "./content/legalPages";
 import { FREE_LIMITS } from "./config/limits";
-import { hasPlusAccess } from "./utils/premiumUtils";
+import { hasPlusAccess, isUserPremium } from "./utils/premiumUtils";
+import {
+  FreeCampaignCelebration,
+  FreeCampaignHero,
+  FreeCampaignRibbon,
+} from "./components/campaign/FreeCampaign";
 import {
   canStartFullExam,
   canStartReview,
@@ -109,6 +114,8 @@ const BOTTOM_NAV_VIEWS = new Set([
   "tracker",
   "leaderboard",
 ]);
+// Soru çözme/deneme gibi odak ekranlarında kampanya şeridi gösterilmez.
+const CAMPAIGN_RIBBON_VIEWS = new Set([...BOTTOM_NAV_VIEWS, "premiumInfo"]);
 function RouteFallback() {
   return (
     <div className="min-h-dvh bg-slate-950 text-white flex items-center justify-center px-6">
@@ -185,7 +192,7 @@ export default function AppAuthenticated() {
     return () => clearTimeout(id);
   }, []);
 
-  // Deep-link: /fiyatlandirma "Eylül Paketi'ni Al" CTA'sı /app?intent=plus'a
+  // Deep-link: /fiyatlandirma "Plus'a geç" CTA'sı /app?intent=plus'a
   // gelir. Girişli kullanıcıda flaş olmasın diye başlangıç view'ı doğrudan
   // premiumInfo (auth çözülünce switch premiumInfo render eder). Anonimde bu
   // değer useAppAuthBootstrap'ın onAuthStateChanged(null) → setView("dashboard")
@@ -647,6 +654,7 @@ export default function AppAuthenticated() {
     }
     return (
       <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
+        <FreeCampaignRibbon />
         <div
           className="flex flex-col items-center justify-center bg-slate-950 text-white p-6 min-h-dvh"
           style={{ paddingTop: "calc(2rem + env(safe-area-inset-top))" }}
@@ -663,9 +671,10 @@ export default function AppAuthenticated() {
             />
           </div>
           <h1 className={`text-5xl font-black mb-2 ${accentTheme.text} tracking-tighter`}>TUSOSKOP</h1>
-          <p className="text-slate-400 mb-10 text-center max-w-sm">
+          <p className="text-slate-400 mb-8 text-center max-w-sm">
             TUS hazırlık sürecini dijital asistanınla yönet. Verilerini bulutta sakla.
           </p>
+          <FreeCampaignHero compact className="mb-8 w-full max-w-2xl text-left" />
           <SignInOptions
             accentTheme={accentTheme}
             onAppleLogin={handleLoginWithApple}
@@ -687,6 +696,8 @@ export default function AppAuthenticated() {
   }
 
   const showBottomNav = BOTTOM_NAV_VIEWS.has(view);
+  // Kampanya görselleri yalnızca ödeme yapmamış kullanıcıya (userData yüklendikten sonra).
+  const showFreeCampaign = Boolean(userData) && !isUserPremium(userData);
   let screenContent;
   switch (view) {
     case "dashboard":
@@ -953,9 +964,11 @@ export default function AppAuthenticated() {
 
   return (
     <div className={`app-shell safe-screen ${iosDevice ? "ios-device" : ""}`}>
+      {showFreeCampaign && CAMPAIGN_RIBBON_VIEWS.has(view) ? <FreeCampaignRibbon /> : null}
       <Suspense fallback={<RouteFallback />}>
         {screenContent}
       </Suspense>
+      {showFreeCampaign && view === "dashboard" ? <FreeCampaignCelebration /> : null}
       {studyState.questionActionLoading.active && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/70 backdrop-blur-sm px-6">
           <div className="rounded-3xl border border-slate-700 bg-slate-900/90 px-6 py-5 text-center shadow-2xl">

@@ -29,19 +29,15 @@ import {
   pageUrl,
   HERO_STATS,
   QUESTION_COUNT_LABEL,
-  FREE_DAILY_QUESTIONS,
-  FREE_DAILY_TOPIC_TESTS,
+  FREE_USAGE_FEATURE,
   LESSON_COUNT,
   subjectIndexLinks,
 } from "../../seo/seoContent";
 import { KONTENJAN_DATA, KONTENJAN_DONEM_LABEL, KONTENJAN_OZET } from "../../seo/kontenjanData";
 import { SUBJECTS } from "../../data/subjects";
-import {
-  EYLUL_PAKETI,
-  DERSHANE_ANCHOR,
-  PRICING_COMPARISON_ROWS,
-} from "../../constants/eylulPaketi";
-import { isInAppBrowser } from "../../utils/device";
+import { PLUS_PLANS } from "../../config/plusPlans";
+import { FreeCampaignHero, FreeCampaignRibbon } from "../campaign/FreeCampaign";
+import { useFreeCampaignCountdown } from "../campaign/useFreeCampaignCountdown";
 
 const OPTION_KEYS = ["A", "B", "C", "D", "E"];
 // Sayfada gösterilen (ve dolayısıyla FAQPage şemasına giren) soru sayısı.
@@ -269,7 +265,10 @@ function usePageMetadata({ title, description, path = "/", faq = commonFaq, brea
 }
 
 function PublicHeader() {
+  const campaign = useFreeCampaignCountdown();
   return (
+    <>
+    <FreeCampaignRibbon ctaHref="/giris" ctaLabel="Ücretsiz başla" />
     <header className="sticky top-0 z-20 border-b border-slate-800/80 bg-slate-950/88 px-4 py-3 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
         <a href="/" className="flex items-center gap-3 text-white no-underline">
@@ -289,10 +288,11 @@ function PublicHeader() {
           href="/giris"
           className="rounded-2xl bg-emerald-300 px-4 py-2 text-sm font-black text-slate-950 shadow-lg shadow-emerald-950/20 transition hover:bg-emerald-200"
         >
-          Giriş Yap
+          {campaign.active ? "🎁 Ücretsiz Başla" : "Giriş Yap"}
         </a>
       </div>
     </header>
+    </>
   );
 }
 
@@ -382,15 +382,12 @@ export function PublicHome({ accentTheme, onAppleLogin, onGoogleLogin }) {
       "Akıllı Tekrar (FSRS)",
       "Yanlış yaptığın soruyu, beynin tam unutmaya başladığı anda bilimsel aralıklı tekrarla yeniden karşına çıkarırız.",
     ],
-    [
-      `Günde ${FREE_DAILY_QUESTIONS} Soru Ücretsiz`,
-      `Free planda her gün ${FREE_DAILY_QUESTIONS} soru ve ${FREE_DAILY_TOPIC_TESTS} konu testi ücretsiz. Nöbet arasında telefonundan çöz.`,
-    ],
+    FREE_USAGE_FEATURE,
     [
       "AI Çalışma Planı",
       "Yapay zeka eksik konularını bulup sana günlük çalışma planı çıkarsın; neyi çözeceğini düşünme.",
     ],
-    ["Haftalık Ligde Yarış", "Binlerce TUS adayıyla aynı ligde yarış, haftalık sıralamada yüksel ve motivasyonunu koru."],
+    ["Haftalık Ligde Yarış", "TUS adaylarıyla haftalık ligde yarış, haftalık sıralamada yüksel ve motivasyonunu koru."],
   ];
 
   return (
@@ -424,6 +421,12 @@ export function PublicHome({ accentTheme, onAppleLogin, onGoogleLogin }) {
             </div>
           </div>
         </section>
+
+        <div className="px-4 pb-12">
+          <div className="mx-auto max-w-6xl">
+            <FreeCampaignHero ctaLabel="Hemen ücretsiz başla 🚀" ctaHref="/giris" />
+          </div>
+        </div>
 
         <section className="border-y border-slate-800 bg-slate-900/35 px-4 py-12">
           <div className="mx-auto max-w-6xl">
@@ -1186,114 +1189,49 @@ function KontenjanNextStep() {
 }
 
 /**
- * /fiyatlandirma kıyas bloğu (plan §07-7 / K6). Dershane çıpası (~120.000₺) +
- * Eylül Paketi (209,70₺) + zorunlu kanıt satırı + satın alma CTA'sı.
- * CTA → /app?intent=plus: anonim kullanıcı önce giriş yapar, ardından uygulama
- * doğrudan Plus satın alma ekranını açar (bkz. AppAuthenticated intent=plus).
+ * /fiyatlandirma plan listesi — gerçek fiyatlar src/config/plusPlans.js'ten.
+ * Statik eşi: scripts/render-free-campaign-static.mjs > renderPlusPlansStatic.
  */
-function PricingComparison() {
-  // In-app tarayıcı (Instagram/Facebook) Google girişini engelliyor; hard-nav
-  // /app?intent=plus anonim kullanıcıyı giriş duvarına toslatır (C3 retarget
-  // trafiği burayı iner). Bu durumda "Tarayıcıda Aç / link kopyala" göster.
-  const inApp = isInAppBrowser();
-  const [copied, setCopied] = useState(false);
-  const plusUrl =
-    typeof window !== "undefined"
-      ? `${window.location.origin}/app?intent=plus`
-      : "/app?intent=plus";
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(plusUrl);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2500);
-    } catch {
-      /* clipboard yoksa sessiz — kullanıcı "Tarayıcıda Aç"ı kullanır */
-    }
-  };
+function PlusPlansBlock() {
+  const campaign = useFreeCampaignCountdown();
   return (
-    <section aria-label="Eylül Paketi karşılaştırması" className="mt-10">
-      <div className="rounded-3xl border border-emerald-400/30 bg-gradient-to-b from-emerald-400/[0.08] to-slate-900/40 p-5 md:p-8">
-        <p className="text-xs font-black uppercase tracking-[0.22em] text-emerald-300">
-          Eylül Paketi
-        </p>
+    <section aria-label="Plus paketleri" className="mt-10">
+      <div className="rounded-3xl border border-slate-800 bg-slate-900/45 p-5 md:p-8">
+        <p className="text-xs font-black uppercase tracking-[0.22em] text-emerald-300">Plus paketleri</p>
         <h2 className="mt-3 text-2xl font-black leading-tight tracking-tight md:text-3xl">
-          Dershaneye {DERSHANE_ANCHOR.priceLabel} vermeden önce
+          Sınırsız soru, deneme ve tekrar
         </h2>
-        <p className="mt-3 max-w-2xl text-base leading-relaxed text-slate-300">
-          Aynı hazırlık dönemine dershaneler {DERSHANE_ANCHOR.priceLabel} isterken,
-          Tusoskop {EYLUL_PAKETI.name} sınava kadar sınırsız soru çözme ve akıllı
-          tekrar sunar — <span className="font-bold text-emerald-200">{EYLUL_PAKETI.priceLabel}</span>{" "}
-          ({EYLUL_PAKETI.perDayLabel}).
-        </p>
-
-        <div className="mt-6 grid gap-3 sm:grid-cols-2">
-          {PRICING_COMPARISON_ROWS.map((row) => (
+        {campaign.active ? (
+          <p className="mt-3 font-bold text-emerald-300">
+            🎁 Sınırlı süre: şu an web&apos;de ödeme gerekmez — tüm Plus özellikleri ücretsiz.
+          </p>
+        ) : null}
+        <div className="mt-6 grid gap-3 sm:grid-cols-3">
+          {PLUS_PLANS.map((plan) => (
             <div
-              key={row.key}
+              key={plan.id}
               className={`rounded-2xl border p-5 ${
-                row.highlight
-                  ? "border-emerald-300/70 bg-emerald-300/10"
-                  : "border-slate-700 bg-slate-900/50"
+                plan.highlight ? "border-emerald-300/70 bg-emerald-300/10" : "border-slate-700 bg-slate-900/50"
               }`}
             >
-              <p className={`text-sm font-bold ${row.highlight ? "text-emerald-200" : "text-slate-300"}`}>
-                {row.title}
+              <p className={`text-sm font-bold ${plan.highlight ? "text-emerald-200" : "text-slate-300"}`}>{plan.label}</p>
+              <p className="mt-2 text-3xl font-black tracking-tight text-slate-100">{plan.totalPriceLabel}</p>
+              <p className="mt-2 text-sm text-slate-400">
+                {plan.durationLabel} · aylık {plan.monthlyPriceLabel}
               </p>
-              <p className={`mt-2 text-3xl font-black tracking-tight ${row.highlight ? "text-emerald-300" : "text-slate-200"}`}>
-                {row.price}
-              </p>
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">{row.detail}</p>
             </div>
           ))}
         </div>
-
-        {/* Kanıt satırı — plan K6 guardrail'i: kıyasın yanında ZORUNLU. */}
-        <p className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-bold text-slate-200">
-          <span className="text-emerald-300" aria-hidden>✓</span>
-          {EYLUL_PAKETI.proofLine}
-        </p>
-
-        {inApp ? (
-          <div className="mt-6 rounded-2xl border border-amber-400/40 bg-amber-400/10 p-4">
-            <p className="text-sm font-black text-amber-200">Satın alma için tarayıcıda aç</p>
-            <p className="mt-1 text-xs leading-relaxed text-amber-100/90">
-              Instagram/Facebook uygulama-içi tarayıcısındasın; giriş burada
-              çalışmayabilir. Sağ üstteki <span className="font-semibold">&quot;•••&quot;</span>{" "}
-              menüsünden <span className="font-semibold">&quot;Tarayıcıda Aç&quot;</span>ı seç ya da
-              linki kopyalayıp Safari/Chrome&apos;da aç.
-            </p>
-            <button
-              type="button"
-              onClick={handleCopy}
-              className="mt-3 inline-flex min-h-11 items-center justify-center rounded-xl bg-emerald-300 px-5 font-black text-slate-950 transition hover:bg-emerald-200"
-            >
-              {copied ? "Link kopyalandı ✓" : "Satın alma linkini kopyala"}
-            </button>
-          </div>
-        ) : (
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a
-              href="/app?intent=plus"
-              className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-emerald-300 px-6 font-black text-slate-950 transition hover:bg-emerald-200"
-            >
-              {EYLUL_PAKETI.name}&apos;ni Al · {EYLUL_PAKETI.priceLabel}
-            </a>
-            <a
-              href="/app?intent=plus"
-              className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-slate-700 px-6 font-bold text-white transition hover:border-emerald-300/70"
-            >
-              Önce ücretsiz dene
-            </a>
-          </div>
-        )}
-
-        {/* Dürüstlük notu: farklı tür ürün — abartısız konumlandırma. */}
+        <div className="mt-6">
+          <a
+            href={campaign.active ? "/giris" : "/app?intent=plus"}
+            className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-emerald-300 px-6 font-black text-slate-950 transition hover:bg-emerald-200"
+          >
+            {campaign.active ? "Şimdi ücretsiz başla" : "Plus'a geç"}
+          </a>
+        </div>
         <p className="mt-5 text-xs leading-relaxed text-slate-500">
-          {DERSHANE_ANCHOR.note}. Tusoskop bir soru çözme ve akıllı tekrar
-          platformudur (ders anlatımı değil); kıyas hazırlık bütçesi içindir.
-          Plus paketleri 89,90₺&apos;den başlar, {EYLUL_PAKETI.name}{" "}
-          ({EYLUL_PAKETI.durationLabel}) {EYLUL_PAKETI.priceLabel}&apos;dir.
-          Ödeme PayTR ile güvenli alınır, onay anında hesabına tanımlanır.
+          Ödeme PayTR ile güvenli alınır ve onaylandığı anda hesabına tanımlanır.
         </p>
       </div>
     </section>
@@ -1327,6 +1265,7 @@ export function SeoLandingPage({ page }) {
             <div className="mt-6">
               <AnswerBox>{page.intro}</AnswerBox>
             </div>
+            <FreeCampaignHero compact ctaLabel="Ücretsiz başla 🚀" ctaHref="/giris" className="mt-8" />
             {page.stats?.length ? (
               <div className="mt-6">
                 <StatGrid stats={page.stats} />
@@ -1334,7 +1273,7 @@ export function SeoLandingPage({ page }) {
             ) : null}
             <SampleQuestionCard sample={page.sample} subject={page.subject} />
             {page.isSubject ? <SubjectTopics subject={page.subject} topics={page.topics} /> : null}
-            {page.slug === "fiyatlandirma" ? <PricingComparison /> : null}
+            {page.slug === "fiyatlandirma" ? <PlusPlansBlock /> : null}
             {page.tool === "score" ? (
               <>
                 <TusScoreCalculator />
