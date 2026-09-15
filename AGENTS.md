@@ -23,7 +23,7 @@ All commands are documented in README.md and `package.json` scripts. Key ones:
 ### Caveats
 
 - The `.npmrc` sets `legacy-peer-deps=true`; always use `npm ci` (not `npm install`) to respect the lockfile.
-- Cloud Functions (`functions/`) target Node 20 but work fine under Node 22 locally (engine warning is benign).
+- Cloud Functions (`functions/`) target Node 22 (`functions/package.json` engines; Node 20 runtime is decommissioned on Google Cloud on 2026-10-30).
 - Firebase config is hardcoded in `src/firebase.js`; no env-var setup is needed for the dev server to start, but authentication and Firestore calls require internet access to Firebase's remote services.
 - Playwright E2E tests use the `vite preview` server (port 4173) against the production build in `dist/`. The `dist/` folder must exist before running `npm run test:e2e`.
 - ESLint ignores `src/data/questionChunks` and `functions/` directories.
