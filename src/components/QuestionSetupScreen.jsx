@@ -15,6 +15,7 @@ import {
 } from "../utils/topicStudyMemory";
 import { getWrongReviewCardCopy } from "../utils/questionSetupWrongCard";
 import { useToast } from "../context/ToastContext";
+import { MobileBottomNavSpacer } from "./MobileBottomNav";
 
 export default function QuestionSetupScreen({
   subjectCatalog,
@@ -414,6 +415,7 @@ export default function QuestionSetupScreen({
           <p className="text-center text-sm text-slate-500 py-4">Başlamak için bir ders seçin.</p>
         )}
       </div>
+      <MobileBottomNavSpacer />
     </div>
   );
 }

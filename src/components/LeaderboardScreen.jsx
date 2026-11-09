@@ -19,6 +19,7 @@ import UserRankCard from "./leaderboard/UserRankCard";
 import LeaderboardList from "./leaderboard/LeaderboardList";
 import LeaderboardPodium from "./leaderboard/LeaderboardPodium";
 import NicknameSetupModal from "./leaderboard/NicknameSetupModal";
+import { MobileBottomNavSpacer } from "./MobileBottomNav";
 
 const LEAGUE_CONFIG = {
   temel: {
@@ -219,7 +220,7 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
         </div>
       </div>
 
-      <div className="max-w-lg mx-auto px-4 py-5 pb-32 space-y-5">
+      <div className="max-w-lg mx-auto px-4 py-5 pb-8 space-y-5">
         {/* Hafta etiketi */}
         <p className="text-xs text-slate-600 font-medium text-center">{formatWeekLabel(weekId)}</p>
 
@@ -425,6 +426,7 @@ export default function LeaderboardScreen({ user, accentTheme, accentThemeKey, g
           </>
         )}
       </div>
+      <MobileBottomNavSpacer />
 
       {/* Nickname Setup Modal */}
       {showNicknameModal && (

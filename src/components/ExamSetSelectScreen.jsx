@@ -1,5 +1,6 @@
 import React from "react";
 import { EXAM_SETS, FIXED_EXAM_CARD_SUBTITLE } from "../data/exams";
+import { MobileBottomNavSpacer } from "./MobileBottomNav";
 
 export default function ExamSetSelectScreen({ onSelectSet, goDashboard }) {
   const categories = [
@@ -11,7 +12,7 @@ export default function ExamSetSelectScreen({ onSelectSet, goDashboard }) {
   return (
     <div
       className="min-h-dvh bg-[#05070d] text-white p-4 md:p-10 overflow-y-auto"
-      style={{ paddingTop: "calc(1rem + env(safe-area-inset-top))", paddingBottom: "calc(5rem + env(safe-area-inset-bottom))" }}
+      style={{ paddingTop: "calc(1rem + env(safe-area-inset-top))", paddingBottom: "calc(1.5rem + env(safe-area-inset-bottom))" }}
     >
       <div className="max-w-7xl mx-auto">
         <header className="mb-12 flex justify-between items-end">
@@ -68,6 +69,7 @@ export default function ExamSetSelectScreen({ onSelectSet, goDashboard }) {
           ))}
         </div>
       </div>
+      <MobileBottomNavSpacer />
     </div>
   );
 }

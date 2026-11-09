@@ -80,6 +80,22 @@ const TABS = [
   },
 ];
 
+// Alt menü `fixed` olduğu için ekran içeriğinin son kısmını örter.
+// Gerçek yükseklik ≈ 6rem (pt-2 + 40px ikon + etiket + 10px alt boşluk) + safe-area.
+// Alt-menülü her ekran içeriğinin SONUNA bu boşluğu koymalı; yüksekliği tek yerden yönetmek için buradadır.
+export const MOBILE_BOTTOM_NAV_SPACE = "calc(6.5rem + env(safe-area-inset-bottom))";
+
+export function MobileBottomNavSpacer() {
+  return (
+    <div
+      className="md:hidden shrink-0"
+      style={{ height: MOBILE_BOTTOM_NAV_SPACE }}
+      aria-hidden="true"
+      data-testid="mobile-bottom-nav-spacer"
+    />
+  );
+}
+
 export default function MobileBottomNav({
   currentView,
   setView,

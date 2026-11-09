@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 import { useQuestions } from "../hooks/useQuestions";
 import { useQuestionHistory } from "../hooks/useQuestionHistory";
 import { getTopicStatsFromHistory } from "../utils/questionHistoryUtils";
+import { MobileBottomNavSpacer } from "./MobileBottomNav";
 
 const SUBJECT_ORDER = [
   "Fizyoloji",
@@ -280,6 +281,7 @@ export default function TopicTracker({ onBack, user }) {
           </div>
         )})}
       </div>
+      <MobileBottomNavSpacer />
     </div>
   );
 }

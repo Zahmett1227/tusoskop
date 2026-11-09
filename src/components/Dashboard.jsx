@@ -28,6 +28,7 @@ import { getSmartReviewSummary, getSmartReviews } from "../services/smartReviewS
 import { buildTopicRows, groupReviewsBySubject } from "../utils/smartReviewUtils";
 import { useToast } from "../context/ToastContext";
 import DashboardLeaderboardWidget from "./leaderboard/DashboardLeaderboardWidget";
+import { MobileBottomNavSpacer } from "./MobileBottomNav";
 
 const ACCENT_HEX = {
   emerald: "#34d399",
@@ -857,11 +858,7 @@ export default function Dashboard({
         ) : null}
 
         {/* Alt navigasyon bar için boşluk — sadece mobil */}
-        <div
-          className="md:hidden"
-          style={{ height: "calc(4.5rem + env(safe-area-inset-bottom))" }}
-          aria-hidden="true"
-        />
+        <MobileBottomNavSpacer />
 
       </div>
     </div>

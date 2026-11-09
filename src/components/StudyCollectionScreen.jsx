@@ -17,6 +17,7 @@ import { hasPlusAccess } from "../utils/premiumUtils";
 import PerformanceChartCard from "./PerformanceChartCard";
 import FsrsActivityCard from "./study/FsrsActivityCard";
 import AiDailyPlanCard from "./study/AiDailyPlanCard";
+import { MobileBottomNavSpacer } from "./MobileBottomNav";
 
 const ACCENT_HEX = {
   emerald: "#34d399",
@@ -204,7 +205,7 @@ export default function StudyCollectionScreen({
         backgroundImage: `radial-gradient(125% 80% at 50% -10%, ${hex}12, transparent 55%)`,
       }}
     >
-      <div className="mx-auto w-full max-w-2xl px-4 pb-28 md:px-6">
+      <div className="mx-auto w-full max-w-2xl px-4 pb-8 md:px-6">
         {/* Üst bar */}
         <div className="flex items-center justify-between gap-3 py-3">
           <button
@@ -534,6 +535,7 @@ export default function StudyCollectionScreen({
           <p className="mt-4 text-center text-xs text-slate-600">Yükleniyor…</p>
         )}
       </div>
+      <MobileBottomNavSpacer />
     </div>
   );
 }
